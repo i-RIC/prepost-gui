@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/centerandwidth">
+        <file>images/imgGridCreationCenterAndWidth.png</file>
+    </qresource>
+</RCC>

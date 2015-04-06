@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/post/post2d">
+        <file>images/iconVis2D.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/libs/rawdata/riversurvey">
+        <file>images/cursorCrosssectionRotate.png</file>
+        <file>images/cursorExpand.png</file>
+        <file>images/cursorShiftCenter.png</file>
+        <file>images/iconRiverCrosssection.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/compoundchannel">
+        <file>images/imgGridCreationCompoundChannel.png</file>
+    </qresource>
+</RCC>

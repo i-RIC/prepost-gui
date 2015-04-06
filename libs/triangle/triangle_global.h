@@ -1,0 +1,12 @@
+#ifndef TRIANGLE_GLOBAL_H
+#define TRIANGLE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(TRIANGLE_LIBRARY)
+#  define TRIANGLEDLL_EXPORT Q_DECL_EXPORT
+#else
+#  define TRIANGLEDLL_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // TRIANGLE_GLOBAL_H

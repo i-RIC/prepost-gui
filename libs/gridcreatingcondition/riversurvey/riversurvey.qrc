@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/riversurvey">
+        <file>images/imgGridCreationRiverSurveyDiv.png</file>
+    </qresource>
+</RCC>

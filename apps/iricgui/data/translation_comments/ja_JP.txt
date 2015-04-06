@@ -1,0 +1,2 @@
+これは iRIC で使用する辞書ファイルです。
+<translation> と </translation> の間に、翻訳後の文字列を追記してください。

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolverDefinition
+name="samplesolver"
+caption="Sample Solver"
+version="1.0"
+copyright="Example Company"
+release="2012.04.01"
+homepage="http://example.com/"
+executable="solver.exe"
+iterationtype="time"
+gridtype="structured2d"
+>
+  <CalculationCondition>
+		<Tab name="basic" caption="Basic Settings">
+			<Item name="maxIteretions" caption="Maximum number of Iterations">
+				<Definition valueType="integer" default="10">
+			</Definition>
+		</Item>
+		<Item name="timeStep" caption="Time Step">
+			<Definition valueType="real" default="0.1">
+			</Definition>
+		</Item>
+		</Tab>
+		<Tab name="surfaceElevation" caption="Water Surface Elevation">
+			<Item name="surfaceType" caption="Type">
+				<Definition valueType="integer" default="0">
+					<Enumeration caption="Constant" value="0" />
+					<Enumeration caption="Time Dependent" value="1" />
+				</Definition>
+			</Item>
+			<Item name="constantSurface" caption="Constant Value">
+				<Definition valueType="real" default="1">
+					<Condition type="isEqual" target="surfaceType" value="0"/>
+				</Definition>
+			</Item>
+			<Item name="variableSurface" caption="Time Dependent Value">
+				<Definition valueType="functional">
+					<Parameter valueType="real" caption="Time(s)"/>
+					<Value valueType="real" caption="Elevation(m) "/>
+					<Condition type="isEqual" target="surfaceType" value="1"/>
+				</Definition>
+			</Item>
+		</Tab>
+	</CalculationCondition>
+	<GridRelatedCondition>
+		<Item name="Elevation" caption="Elevation">
+			<Definition position="node" valueType="real" default="max" />
+		</Item>
+		<Item name="Obstacle" caption="Obstacle">
+			<Definition position="cell" valueType="integer" default="0">
+				<Enumeration value="0" caption="Normal cell" />
+				<Enumeration value="1" caption="Obstacle" />
+			</Definition>
+		</Item>
+	</GridRelatedCondition>
+	<BoundaryCondition name="inflow" caption="Inflow" position="node">
+		<Item name="Type" caption="Type">
+			<Definition valueType="integer" default="0" >
+				<Enumeration value="0" caption="Constant" />
+				<Enumeration value="1" caption="Variable" />
+			</Definition>
+		</Item>
+		<Item name="ConstantDischarge" caption="Constant Discharge">
+			<Definition valueType="real" default="0" >
+				<Condition type="isEqual" target="Type" value="0"/>
+			</Definition>
+		</Item>
+		<Item name="FunctionalDischarge" caption="Variable Discharge">
+			<Definition conditionType="functional">
+				<Parameter valueType="real" caption="Time"/>
+				<Value valueType="real" caption="Discharge(m3/s)"/>
+				<Condition type="isEqual" target="Type" value="1"/>
+			</Definition>
+		</Item>
+	</BoundaryCondition>
+</SolverDefinition>

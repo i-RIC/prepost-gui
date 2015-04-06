@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GridGeneratorDefinition 
+  name="samplecreator"
+  caption="Sample Grid Creator"
+  version="1.0"
+  copyright="Example Company"
+  executable="generator.exe"
+  gridtype="structured2d"
+>
+  <GridGeneratingCondition>
+    <Tab name="size" caption="Grid Size">
+      <Item name="imax" caption="IMax">
+        <Definition valueType="integer" default="10" max="10000" min="1" />
+      </Item>
+      <Item name="jmax" caption="JMax">
+        <Definition valueType="integer" default="10" max="10000" min="1" />
+      </Item>
+    </Tab>
+    <Tab name="elevation" caption="Elevation output">
+      <Item name="elev_on" caption="Output">
+        <Definition valueType="integer" default="0">
+          <Enumeration caption="Enabled" value="1" />
+          <Enumeration caption="Disabled" value="0" />
+        </Definition>
+      </Item>
+      <Item name="elev_value" caption="Value">
+        <Definition valueType="real" default="0">
+          <Condition type="isEqual" target="elev_on" value="1" />
+        </Definition>
+      </Item>
+    </Tab>
+  </GridGeneratingCondition>
+  <ErrorCodes>
+    <ErrorCode value="1" caption="IMax * JMax must be smaller than 100,000." />
+  </ErrorCodes>
+</GridGeneratorDefinition>

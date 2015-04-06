@@ -1,0 +1,24 @@
+#ifndef UNSTRUCTURED2DGRIDTRIANGLEIMPORTER_H
+#define UNSTRUCTURED2DGRIDTRIANGLEIMPORTER_H
+
+#include <guicore/pre/grid/gridimporterinterface.h>
+#include <QObject>
+
+class Unstructured2dGridTriangleImporter : public QObject, public GridImporterInterface
+{
+	Q_OBJECT
+	Q_PLUGIN_METADATA(IID GridImporterInterface_iid FILE "extrafilters.json")
+	Q_INTERFACES(GridImporterInterface)
+public:
+	Unstructured2dGridTriangleImporter();
+	~Unstructured2dGridTriangleImporter(){}
+	QString caption() const;
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt)
+	{
+		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
+	}
+	const QStringList fileDialogFilters();
+	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
+};
+
+#endif // UNSTRUCTURED2DGRIDTRIANGLEIMPORTER_H

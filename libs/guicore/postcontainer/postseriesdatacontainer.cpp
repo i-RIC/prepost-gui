@@ -1,0 +1,48 @@
+#include "postseriesdatacontainer.h"
+#include "postsolutioninfo.h"
+#include "../project/projectcgnsfile.h"
+#include <misc/stringtool.h>
+#include <cgnslib.h>
+#include <iriclib.h>
+#include <QRegExp>
+
+PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem *parent)
+	: PostDataContainer(parent)
+{
+	m_dimension = dim;
+	m_baseId = 0;
+	m_cellDim = 0;
+}
+
+bool PostSeriesDataContainer::setBaseId(const int fn)
+{
+	// if m_baseID is already set, we do not have to do it again.
+	if (m_baseId != 0){return true;}
+
+	int ier;
+	int numBases;
+	int targetDim = PostSolutionInfo::toIntDimension(m_dimension);
+	ier = cg_nbases(fn, &numBases);
+	if (ier != 0){return false;}
+	for (int B = 1; B <= numBases; ++B){
+		char basename[32];
+		int phys_dim;
+		ier = cg_base_read(fn, B, basename, &m_cellDim, &phys_dim);
+		if (ier != 0){return false;}
+		if (targetDim == m_cellDim){
+			m_baseId = B;
+			return true;
+		}
+	}
+	return false;
+}
+
+void PostSeriesDataContainer::loadFromCgnsFile(const int fn)
+{
+	bool ret;
+	// set baseId.
+	ret = setBaseId(fn);
+	if (ret == false){return;}
+	ret = loadData(fn);
+	emit dataUpdated();
+}

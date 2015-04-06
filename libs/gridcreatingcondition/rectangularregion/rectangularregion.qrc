@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/gridcreatingcondition/rectangularregion">
+        <file>images/imgGridCreationRectangular.png</file>
+    </qresource>
+</RCC>

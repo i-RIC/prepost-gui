@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolverDefinition 
+	xmlns="www.iric.net/SolverDefinition/1.0"
+	name="solver_test1" caption="solver_test1" version="1.0" copyright="MHIR"
+	release="2013.10.1" homepage="http://www.google.com"
+	executable="dummy.exe"
+	iterationtype="time"
+	gridtype="structured2d"
+>
+	<CalculationCondition>
+		<Tab name="params" caption="Parameters">
+			<Content>
+				<Items>
+					<Item name="intval" caption="Integer Value">
+						<Definition conditionType="constant" valueType="integer" option="true" default="0" >
+							<Enumerations>
+								<Enumeration value="0" caption="Value0"/>
+								<Enumeration value="1" caption="Value1"/>
+							</Enumerations>
+						</Definition>
+					</Item>
+					<Item name="doubleval" caption="Double Value">
+						<Definition conditionType="constant" valueType="real" default="0" />
+					</Item>
+					<Item name="singleval" caption="Single Value">
+						<Definition conditionType="constant" valueType="real" default="0" />
+					</Item>
+					<Item name="stringval" caption="String Value">
+						<Definition conditionType="constant" valueType="string" default="0" />
+					</Item>
+					<Item name="func1" caption="Functional1">
+						<Definition conditionType="functional">
+							<Parameter valueType="real" caption="Time"/>
+							<Value valueType="real" caption="Value"/>
+						</Definition>
+					</Item>
+					<Item name="func2" caption="Functional2">
+						<Definition conditionType="functional">
+							<Parameter name="time" valueType="real" caption="Time"/>
+							<Value name="value1" valueType="real" caption="Value1"/>
+							<Value name="value2" valueType="real" caption="Value2"/>
+						</Definition>
+					</Item>
+				</Items>
+			</Content>
+		</Tab>
+	</CalculationCondition>
+	<GridRelatedCondition>
+		<Item name="node_real" caption="node_real">
+			<Definition position="node" valueType="real" default="0" />
+		</Item>
+		<Item name="node_int" caption="node_int">
+			<Definition position="node" valueType="integer" option="true" default="0" >
+				<Enumerations>
+					<Enumeration value="0" caption="Value0"/>
+					<Enumeration value="1" caption="Value1"/>
+				</Enumerations>
+			</Definition>
+		</Item>
+
+		<Item name="cell_real" caption="node_real">
+			<Definition position="cell" valueType="real" default="0" />
+		</Item>
+		<Item name="cell_int" caption="node_int">
+			<Definition position="cell" valueType="integer" default="0">
+				<Enumerations>
+					<Enumeration value="0" caption="Value0"/>
+					<Enumeration value="1" caption="Value1"/>
+				</Enumerations>
+			</Definition>
+		</Item>
+	</GridRelatedCondition>
+</SolverDefinition>
