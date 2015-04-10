@@ -39,6 +39,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
+#include <misc/informationdialog.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/post2d/post2dwindow.h>
@@ -294,11 +295,33 @@ void iRICMainWindow::openProject(const QString& filename)
 	QFileInfo fileinfo(filename);
 	if (fileinfo.isDir()){
 		// Project directory is opened.
-		if (! iRIC::isAscii(filename)){
-			QMessageBox::warning(this, tr("Warning"), tr("Project folder path has to consist of only English characters. Please move or rename the project folder."));
-			return;
+		QSettings settings;
+		bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
+		if (copyFolderProject){
+			// project folder is copyed to new work folder
+			QString wFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
+			m_projectData = new ProjectData(filename, this);
+			// open project file. copying folder executed.
+			qApp->processEvents();
+			if (! m_projectData->copyTo(wFolder, true)){
+				// copying failed or canceled.
+				closeProject();
+				setCursor(Qt::ArrowCursor);
+				return;
+			}
+		} else {
+			if (! iRIC::isAscii(filename)){
+				QMessageBox::warning(this, tr("Warning"), tr("Project folder path has to consist of only English characters. Please move or rename the project folder."));
+				return;
+			}
+			m_projectData = new ProjectData(filename, this);
+			m_projectData->setFilename(filename, true);
+
+			InformationDialog::warning(
+						this, tr("Warning"),
+						tr("The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. "
+							 "If you want to keep the current project, please save it to another project first."), "projectfolder_notice");
 		}
-		m_projectData = new ProjectData(filename, this);
 	} else{
 		// Project file is opened.
 		QString wFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
@@ -312,6 +335,8 @@ void iRICMainWindow::openProject(const QString& filename)
 			return;
 		}
 	}
+	m_projectData->setFilename(filename, fileinfo.isDir());
+
 	try {
 		m_projectData->loadSolverInformation();
 	} catch (ErrorMessage& m){
@@ -472,36 +497,34 @@ bool iRICMainWindow::closeProject()
 	if (m_projectData == 0){return true;}
 	bool result = true;
 	if (m_projectData->mainfile()->isModified()){
-		QMessageBox::StandardButton button = QMessageBox::warning(
-			this,
-			tr("Warning"),
-			tr("This Project is modified. Do you want to save?"),
-			QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
-			QMessageBox::Cancel
-				);
-		switch (button){
-		case QMessageBox::Yes:
-			// save data.
+		if (! m_projectData->isInWorkspace()){
+			// always save.
 			result = saveProject();
-			break;
-		case QMessageBox::No:
-			// not needed to save.
-			result = true;
-			break;
-		case QMessageBox::Cancel:
-			result = false;
-			break;
+		} else {
+			QMessageBox::StandardButton button = QMessageBox::warning(
+				this,
+				tr("Warning"),
+				tr("This Project is modified. Do you want to save?"),
+				QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
+				QMessageBox::Cancel
+					);
+			switch (button){
+			case QMessageBox::Yes:
+				// save data.
+				result = saveProject();
+				break;
+			case QMessageBox::No:
+				// not needed to save.
+				result = true;
+				break;
+			case QMessageBox::Cancel:
+				result = false;
+				break;
+			}
 		}
 	}
 	if (! result){
 		return false;
-	}
-	// if the project is modified, and user did not select to save the project,
-	// and the project is saved into folders (not *.ipro files), then
-	// projec mainfile only is overwritten. CGNS files are not touched,
-	// because it sometimes takes HUGE time.
-	if (m_projectData->mainfile()->isModified() && m_projectData->folderProject()){
-		m_projectData->saveExceptCGNS();
 	}
 
 	m_actionManager->unregisterAdditionalToolBar();
@@ -623,28 +646,19 @@ bool iRICMainWindow::saveProject()
 		warnSolverRunning();
 		return false;
 	}
-	if (m_projectData->folderProject()){
-		setCursor(Qt::WaitCursor);
-		bool ok = m_projectData->save();
-		setCursor(Qt::ArrowCursor);
-		if (ok){
-			statusBar()->showMessage(tr("Project successfully saved to %1.").arg(m_projectData->workDirectory()), STATUSBAR_DISPLAYTIME);
-		}
-		return ok;
-	} else {
-		if (m_projectData->filename() == ""){
-			// select how to save: project file or folder.
-			ProjectTypeSelectDialog dialog(this);
-			int ret = dialog.exec();
-			if (ret == QDialog::Rejected){return false;}
-			if (dialog.folderProject()){
-				return saveProjectAsFolder();
-			} else {
-				return saveProjectAsFile();
-			}
+
+	if (m_projectData->filename() == ""){
+		// select how to save: project file or folder.
+		ProjectTypeSelectDialog dialog(this);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected){return false;}
+		if (dialog.folderProject()){
+			return saveProjectAsFolder();
 		} else {
-			return saveProject(m_projectData->filename(), false);
+			return saveProjectAsFile();
 		}
+	} else {
+		return saveProject(m_projectData->filename(), m_projectData->folderProject());
 	}
 }
 
@@ -653,14 +667,31 @@ bool iRICMainWindow::saveProject(const QString &filename, bool folder)
 	m_isSaving = true;
 	bool ret;
 	setCursor(Qt::WaitCursor);
+	// save data to work folder.
+	ret = m_projectData->save();
+	if (! ret){
+		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
+		m_isSaving = false;
+		return false;
+	}
+
+	QSettings settings;
+	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
+
 	if (folder){
-		ret = m_projectData->save();
-		if (ret){
-			if (m_projectData->folderProject()){
-				// it alread is a folder project.
-				ret = m_projectData->copyTo(filename);
+		if (! m_projectData->isInWorkspace()){
+			// working on the project folder.
+			if (m_projectData->filename() == filename){
+				// do nothing.
 			} else {
-				// it was a file project.
+				// copy project.
+				ret = m_projectData->copyTo(filename, true);
+			}
+		} else {
+			// working on the working folder.
+			if (copyFolderProject){
+				ret = m_projectData->copyTo(filename, false);
+			} else {
 				ret = m_projectData->moveTo(filename);
 			}
 		}
@@ -671,16 +702,22 @@ bool iRICMainWindow::saveProject(const QString &filename, bool folder)
 			m_isSaving = false;
 			return false;
 		}
-		if (m_projectData->folderProject()){
+		if (! m_projectData->isInWorkspace()){
+			// working on the project folder.
 			QString newWorkFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
-			ret = m_projectData->copyTo(newWorkFolder);
+			ret = m_projectData->copyTo(newWorkFolder, true);
 			if (ret){
 				ret = m_projectData->save(filename);
 			}
 		} else {
+			// working on the working folder.
 			ret = m_projectData->save(filename);
 		}
 	}
+	if (ret){
+		m_projectData->setFilename(filename, folder);
+	}
+
 	setCursor(Qt::ArrowCursor);
 	if (! ret){
 		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
@@ -1143,14 +1180,14 @@ void iRICMainWindow::updateWindowTitle(){
 		setWindowTitle(tr("iRIC %1").arg(m_versionNumber.toString()));
 		return;
 	}
-	if (m_projectData->folderProject()){
-		fname = m_projectData->workDirectory();
+	if (m_projectData->filename() == ""){
+		// Not named yet.
+		fname = tr("Untitled");
 	} else {
-		if (m_projectData->filename() == ""){
-			// Not named yet.
-			fname = tr("Untitled");
+		QFileInfo finfo(m_projectData->filename());
+		if (m_projectData->folderProject()){
+			fname = QDir::toNativeSeparators(finfo.absoluteFilePath());
 		} else {
-			QFileInfo finfo(m_projectData->filename());
 			fname = finfo.fileName();
 		}
 	}

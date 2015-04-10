@@ -80,9 +80,6 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 		QDir parent = wdir;
 		parent.cdUp();
 		parent.mkdir(wdir.dirName());
-	} else {
-		// project folder is opened.
-		m_folderProject = true;
 	}
 	// create ProjectMainFile.
 	m_mainfile = new ProjectMainFile(this);
@@ -106,8 +103,9 @@ ProjectData::~ProjectData()
 	delete m_mainfile;
 	// close lock file
 	unlock();
-	// remove the workdirectory recursively
-	if (! m_folderProject){
+
+	// remove the workdirectory recursively, if it is under workspace.
+	if (isInWorkspace()){
 		iRIC::rmdirRecursively(m_workDirectory);
 	}
 }
@@ -283,7 +281,7 @@ bool ProjectData::save(const QString &filename)
 		bool ok = QFile::remove(filename);
 		if (! ok){
 			// unable to remove the file.
-			QMessageBox::critical(mainWindow(), tr("Error"), tr("Could not overwrite %1.").arg(filename));
+			QMessageBox::critical(mainWindow(), tr("Error"), tr("Could not overwrite %1.").arg(QDir::toNativeSeparators(filename)));
 			QFile::remove(outfile);
 			return false;
 		}
@@ -424,6 +422,18 @@ void ProjectData::unlock()
 
 bool ProjectData::moveTo(const QString& newWorkFolder)
 {
+	if (QFile::exists(newWorkFolder)){
+		if (! iRIC::rmdirRecursively(newWorkFolder)){
+			return false;
+		}
+		qApp->processEvents();
+		QFileInfo finfo(newWorkFolder);
+		QDir dir(finfo.absolutePath());
+		if (! dir.mkdir(finfo.fileName())){
+			return false;
+		}
+		qApp->processEvents();
+	}
 	#ifdef Q_OS_WIN32
 		QString oldDrive = m_workDirectory.left(1).toUpper();
 		QString newDrive = newWorkFolder.left(1).toUpper();
@@ -431,7 +441,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 			// moving is done between different drives.
 			// execute copy and remove.
 			QString currentWorkDirectory = m_workDirectory;
-			bool ok = copyTo(newWorkFolder);
+			bool ok = copyTo(newWorkFolder, true);
 			if (! ok){return false;}
 			ok = iRIC::rmdirRecursively(currentWorkDirectory);
 			// return true, even if rmdir failed.
@@ -499,22 +509,26 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 	}
 	// moving succeeded.
 	m_workDirectory = newWorkFolder;
-	m_folderProject = true;
 	ok = lock();
 	return ok;
 }
 
-bool ProjectData::copyTo(const QString& newWorkFolder)
+bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 {
-/*
-	if (QFile::exists(newWorkFolder))
-	{
-		// The specified folder or file already exists. Try to remove it first.
-		bool ok = iRIC::rmdirRecursively(newWorkFolder);
-		// removing the existing folder failed.
-		if (! ok){return false;}
+	if (QFile::exists(newWorkFolder)){
+		QFileInfo finfo(newWorkFolder);
+		QString parentPath = finfo.absolutePath();
+		QDir dir(parentPath);
+		QString dirName = finfo.fileName();
+		if (! iRIC::rmdirRecursively(newWorkFolder)){
+			return false;
+		}
+		qApp->processEvents();
+		if (! dir.mkdir(dirName)){
+			return false;
+		}
+		qApp->processEvents();
 	}
-*/
 	// copy current folder to new folder.
 	unlock();
 	mainfile()->postSolutionInfo()->close();
@@ -553,22 +567,29 @@ bool ProjectData::copyTo(const QString& newWorkFolder)
 		if (m_canceled){
 			// not finished, but canceled.
 			thread->terminate();
+			thread->wait();
 			delete thread;
-			lock();
-			return false;
+
+			goto ERROR;
 		}
 	}
 	bool ok = thread->result();
 	if (! ok){
-		// moving failed. keep the current workspace.
-		lock();
-		return false;
+		goto ERROR;
 	}
-	// moving succeeded.
-	m_workDirectory = newWorkFolder;
-	m_folderProject = true;
+
+	// copying succeeded.
+	if (switchToNewFolder){
+		m_workDirectory = newWorkFolder;
+	}
+
 	ok = lock();
 	return ok;
+
+ERROR:
+	iRIC::rmdirRecursively(newWorkFolder);
+	lock();
+	return false;
 }
 
 bool ProjectData::hasHugeCgns()
@@ -589,4 +610,10 @@ void ProjectData::openPostProcessors()
 {
 	// load post-processor settings
 	mainfile()->openPostProcessors();
+}
+
+bool ProjectData::isInWorkspace()
+{
+	QString wsPath = m_mainWindow->workspace()->workspace().absolutePath();
+	return m_workDirectory.contains(wsPath);
 }

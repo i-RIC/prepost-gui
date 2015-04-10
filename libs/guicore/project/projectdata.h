@@ -43,9 +43,9 @@ public:
 	/// File name to save (or loaded from)
 	const QString& filename(){return m_filename;}
 	/// Set file name to save
-	void setFilename(const QString& fname){
+	void setFilename(const QString& fname, bool isFolder){
 		m_filename = fname;
-		m_folderProject = false;
+		m_folderProject = isFolder;
 	}
 	/// Unzip the specified file into workfolder.
 	bool open(const QString& filename);
@@ -82,14 +82,16 @@ public:
 	const QString tmpFileName();
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
-	/// Move the work folder to the specified folder. Old folder also is kept.
-	bool copyTo(const QString& newWorkFolder);
+	/// Copy the work folder to the specified folder. Old folder also is kept.
+	bool copyTo(const QString& newWorkFolder, bool switchToNewFolder);
 	/// Whether it is a folder project.
 	bool folderProject(){return m_folderProject;}
 	/// Returns true when CGNS file size exceeds 2 GB.
 	bool hasHugeCgns();
 	/// Open the post-processors using the settings in project file.
 	void openPostProcessors();
+	/// Project data work directory is inside workspace.
+	bool isInWorkspace();
 
 public slots:
 	/// Open work directory with Explorer.

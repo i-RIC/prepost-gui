@@ -26,6 +26,8 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget *parent) :
 	}
 	QString workspace = settings.value("general/workspace", defaultWorkspace()).value<QString>();
 	ui->workDirWidget->setDirname(workspace);
+	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
+	ui->folderCopyCheckBox->setChecked(copyFolderProject);
 }
 
 PreferencePageGeneral::~PreferencePageGeneral()
@@ -56,6 +58,7 @@ void PreferencePageGeneral::update()
 	QLocale loc = m_locales.at(locIndex);
 	settings.setValue("general/locale", loc.name());
 	settings.setValue("general/workspace", ui->workDirWidget->dirname());
+	settings.setValue("general/copyfolderproject", ui->folderCopyCheckBox->isChecked());
 }
 
 void PreferencePageGeneral::setupLanguageComboBox()
