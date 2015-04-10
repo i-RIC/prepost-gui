@@ -4,12 +4,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1643"/>
+        <location filename="../rawdatapolygon.cpp" line="1654"/>
         <source>Polygon value change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1801"/>
+        <location filename="../rawdatapolygon.cpp" line="1812"/>
         <source>Polygon property edit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -94,7 +94,7 @@
     </message>
     <message>
         <location filename="../rawdatapolygon.cpp" line="980"/>
-        <location filename="../rawdatapolygon.cpp" line="1475"/>
+        <location filename="../rawdatapolygon.cpp" line="1486"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -104,48 +104,48 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1400"/>
+        <location filename="../rawdatapolygon.cpp" line="1411"/>
         <source>Add New Hole Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1456"/>
-        <location filename="../rawdatapolygon.cpp" line="1636"/>
+        <location filename="../rawdatapolygon.cpp" line="1467"/>
+        <location filename="../rawdatapolygon.cpp" line="1647"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1456"/>
+        <location filename="../rawdatapolygon.cpp" line="1467"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1475"/>
+        <location filename="../rawdatapolygon.cpp" line="1486"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1636"/>
+        <location filename="../rawdatapolygon.cpp" line="1647"/>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1692"/>
+        <location filename="../rawdatapolygon.cpp" line="1703"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1693"/>
+        <location filename="../rawdatapolygon.cpp" line="1704"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1877"/>
+        <location filename="../rawdatapolygon.cpp" line="1888"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rawdatapolygon.cpp" line="1877"/>
+        <location filename="../rawdatapolygon.cpp" line="1888"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>

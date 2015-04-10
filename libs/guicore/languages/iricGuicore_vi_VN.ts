@@ -587,37 +587,37 @@ Do you really want to import this file?</source>
 <context>
     <name>GridRelatedConditionDimensionTimeSliderSelectWidget</name>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="285"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="286"/>
         <source>Step &amp;Backward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="288"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="289"/>
         <source>Step &amp;Forward</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="291"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="292"/>
         <source>&amp;Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="294"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="295"/>
         <source>Go to &amp;Last Step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="297"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="298"/>
         <source>&amp;Start/Stop Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="300"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="301"/>
         <source>S&amp;top Animation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="303"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="304"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1246,38 +1246,38 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectData</name>
     <message>
-        <location filename="../project/projectdata.cpp" line="141"/>
+        <location filename="../project/projectdata.cpp" line="139"/>
         <source>Loading project file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="256"/>
+        <location filename="../project/projectdata.cpp" line="254"/>
         <source>Saving project file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="286"/>
+        <location filename="../project/projectdata.cpp" line="284"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="286"/>
+        <location filename="../project/projectdata.cpp" line="284"/>
         <source>Could not overwrite %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="396"/>
+        <location filename="../project/projectdata.cpp" line="394"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="397"/>
+        <location filename="../project/projectdata.cpp" line="395"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="472"/>
-        <location filename="../project/projectdata.cpp" line="539"/>
+        <location filename="../project/projectdata.cpp" line="482"/>
+        <location filename="../project/projectdata.cpp" line="553"/>
         <source>Saving project...</source>
         <translation type="unfinished"></translation>
     </message>

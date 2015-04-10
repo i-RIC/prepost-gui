@@ -589,37 +589,37 @@ Do you really want to import this file?</source>
 <context>
     <name>GridRelatedConditionDimensionTimeSliderSelectWidget</name>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="285"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="286"/>
         <source>Step &amp;Backward</source>
         <translation>一つ前へ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="288"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="289"/>
         <source>Step &amp;Forward</source>
         <translation>一つ次へ(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="291"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="292"/>
         <source>&amp;Reset</source>
         <translation>先頭へ(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="294"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="295"/>
         <source>Go to &amp;Last Step</source>
         <translation>最後のステップへ(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="297"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="298"/>
         <source>&amp;Start/Stop Animation</source>
         <translation>開始/停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="300"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="301"/>
         <source>S&amp;top Animation</source>
         <translation>停止(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="303"/>
+        <location filename="../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp" line="304"/>
         <source>&amp;Animation Speed Setting...</source>
         <translation>再生の速度の編集(&amp;A)...</translation>
     </message>
@@ -1255,38 +1255,38 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectData</name>
     <message>
-        <location filename="../project/projectdata.cpp" line="141"/>
+        <location filename="../project/projectdata.cpp" line="139"/>
         <source>Loading project file...</source>
         <translation>プロジェクトファイルを読み込んでいます...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="256"/>
+        <location filename="../project/projectdata.cpp" line="254"/>
         <source>Saving project file...</source>
         <translation>プロジェクトファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="286"/>
+        <location filename="../project/projectdata.cpp" line="284"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="286"/>
+        <location filename="../project/projectdata.cpp" line="284"/>
         <source>Could not overwrite %1.</source>
         <translation>%1 を上書き保存できませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="396"/>
+        <location filename="../project/projectdata.cpp" line="394"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="397"/>
+        <location filename="../project/projectdata.cpp" line="395"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="472"/>
-        <location filename="../project/projectdata.cpp" line="539"/>
+        <location filename="../project/projectdata.cpp" line="482"/>
+        <location filename="../project/projectdata.cpp" line="553"/>
         <source>Saving project...</source>
         <translation>プロジェクトを保存しています...</translation>
     </message>

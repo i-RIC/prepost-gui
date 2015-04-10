@@ -1179,22 +1179,22 @@ This algorithm can be used only for structured grids.</source>
         <translation>格子セル属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="193"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="195"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="194"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="196"/>
         <source>Input the new value of %1 at the selected grid cells.</source>
         <translation>選択された格子セルでの、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="218"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="220"/>
         <source>Apply variation to %1</source>
         <translation>%1 に変化量を適用</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="219"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditioncelldataitem.cpp" line="221"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
@@ -1268,59 +1268,59 @@ This algorithm can be used only for structured grids.</source>
         <translation>格子点属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="263"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="265"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="264"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="266"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="289"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="291"/>
         <source>Apply variation to %1</source>
         <translation>%1 に変化量を適用</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="290"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="292"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation>選択された格子セルでの、%1 の変化量を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="323"/>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="349"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="325"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="351"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="323"/>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="349"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="325"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="351"/>
         <source>To open a Crosssection Window, Please select only one grid node.</source>
         <translation>断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="420"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="422"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="422"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="424"/>
         <source>Export as Topography Data</source>
         <translation>地勢データとしてエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="428"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="430"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="448"/>
         <source>Grid condition successfully exported to %1.</source>
         <translation>格子属性は %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="450"/>
+        <location filename="../datamodel/preprocessorgridrelatedconditionnodedataitem.cpp" line="452"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>

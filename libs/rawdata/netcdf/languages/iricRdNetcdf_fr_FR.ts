@@ -122,7 +122,7 @@
     </message>
     <message>
         <location filename="../rawdatanetcdfxbandimporter.cpp" line="38"/>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;time&quot;.</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
