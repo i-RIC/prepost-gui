@@ -22,6 +22,7 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 	try {
 		iRICMainWindowInterface* mainW = projectData()->mainWindow();
 		m_dialog = new CgnsFileInputConditionDialog(projectData()->solverDefinition(), mainW->locale() , mainW);
+		m_dialog->setWorkFolder(projectData()->workDirectory());
 		connect(m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));
 		m_isDeletable = false;
 		m_isSet = false;
@@ -81,6 +82,9 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 
 bool PreProcessorInputConditionDataItem::importInputCondition(const QString& filename)
 {
+	projectData()->mainfile()->postSolutionInfo()->close();
+	QString fname = projectData()->currentCgnsFileName();
+	m_dialog->setFileName(fname);
 	bool ret = m_dialog->import(filename);
 	if (ret){m_isSet = true;}
 	return ret;
@@ -88,5 +92,7 @@ bool PreProcessorInputConditionDataItem::importInputCondition(const QString& fil
 
 bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& filename)
 {
+	QString fname = projectData()->currentCgnsFileName();
+	m_dialog->setFileName(fname);
 	return m_dialog->doExport(filename);
 }
