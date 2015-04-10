@@ -60,6 +60,11 @@ bool CgnsGridExporter::createTempCgns(Grid* grid, QString& tmpname, int& fn, int
 bool CgnsGridExporter::closeAndMoveCgns(const QString& tmpname, int fn, const QString& cgnsname){
 	cg_close(fn);
 
+	// if it already exists, remove it first.
+	QFile cgnsfile(cgnsname);
+	if (cgnsfile.exists()){
+		cgnsfile.remove();
+	}
 	// copy to the specified file.
 	bool ret = QFile::copy(tmpname, cgnsname);
 	if (! ret){return false;}
