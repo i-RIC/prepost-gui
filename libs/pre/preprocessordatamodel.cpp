@@ -200,11 +200,11 @@ void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (projectData()->mainWindow()->preProcessorWindow());
 	if (pre->importInputCondition(fname)){
-		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
+		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
 		setModified();
-	}else{
+	} else {
 		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Importing calculation condition failed."));
 	}
 }
@@ -219,10 +219,10 @@ void PreProcessorDataModel::exportCalcCondition()
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (mainW->preProcessorWindow());
 	mainW->statusBar()->showMessage(tr("Exporting calculation condition..."));
 	if (pre->exportInputCondition(fname)){
-		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(fname), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
-	}else{
+	} else {
 		mainW->statusBar()->clearMessage();
 		QMessageBox::critical(mainW, tr("Fail"), tr("Exporting calculation condition failed."));
 	}

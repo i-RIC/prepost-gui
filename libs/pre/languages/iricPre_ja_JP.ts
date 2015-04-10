@@ -423,9 +423,13 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="193"/>
-        <location filename="../preprocessordatamodel.cpp" line="203"/>
         <source>Calculation Condition is successfully imported from the specified file.</source>
         <translation>計算条件のインポートが成功しました。</translation>
+    </message>
+    <message>
+        <location filename="../preprocessordatamodel.cpp" line="203"/>
+        <source>Calculation Condition is successfully imported from %1.</source>
+        <translation>計算条件が %1 からインポートされました。</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="208"/>
