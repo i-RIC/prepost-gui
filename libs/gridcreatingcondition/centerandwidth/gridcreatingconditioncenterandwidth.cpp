@@ -626,6 +626,7 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
+		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
 	void undo()
@@ -701,6 +702,7 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
+		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
 	void undo()
@@ -790,6 +792,7 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
+		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
 	void undo()
@@ -925,6 +928,7 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->gridCreated(m_condition->createGrid());
 		}
+		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
 	void undo()
@@ -1135,6 +1139,7 @@ public:
 		m_condition->updateMouseCursor(m_condition->graphicsView());
 		m_condition->updateActionStatus();
 		m_condition->create(m_condition->preProcessorWindow());
+		m_condition->setModified();
 	}
 private:
 	GridCreatingConditionCenterAndWidth* m_condition;
