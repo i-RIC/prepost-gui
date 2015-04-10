@@ -17,6 +17,7 @@ public:
 	static bool writeSolverInfo(const QString& filename, const SolverDefinitionAbstract* solverDef);
 	static bool writeSolverInfo(int fn, const SolverDefinitionAbstract* solverDef);
 	static bool readSolverInfo(const QString& filename, QString& solverName, VersionNumber& version);
+	static bool readSolverInfo(int fn, QString& solverName, VersionNumber& version);
 	static const QString acceptablePattern();
 private:
 	static bool checkSolverInfo(int fn, const SolverDefinitionAbstract* solverDef);

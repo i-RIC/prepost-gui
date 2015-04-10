@@ -137,39 +137,14 @@ bool ProjectCgnsFile::readSolverInfo(const QString& filename, QString& solverNam
 {
 	int fn;
 	int ret;
-	int dim;
-	cgsize_t dimVec[3];
-	char arrayName[BUFFERLEN];
-	DataType_t dataType;
 
 	ret = cg_open(iRIC::toStr(filename).c_str(), CG_MODE_READ, &fn);
 	if (ret != 0){goto ERROR_OPENING;}
-	// goto "iRIC/SolverInformation"
-	ret = cg_gopath(fn, "/iRIC/SolverInformation");
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
-	int narrays;
-	ret = cg_narrays(&narrays);
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
 
-	// the first one is "Name" array.
-	ret = cg_array_info(1, arrayName, &dataType, &dim, dimVec);
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
-	if (QString(arrayName) != "Name"){goto ERROR_AFTER_OPENING;}
-	char* buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(1, buffer);
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
-	solverName = buffer;
-	delete buffer;
+	if (! readSolverInfo(fn, solverName, version)){
+		goto ERROR_AFTER_OPENING;
+	}
 
-	// the second one is "Version" array.
-	ret = cg_array_info(2, arrayName, &dataType, &dim, dimVec);
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
-	if (QString(arrayName) != "Version"){goto ERROR_AFTER_OPENING;}
-	buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(2, buffer);
-	if (ret != 0){goto ERROR_AFTER_OPENING;}
-	version.fromString(buffer);
-	delete buffer;
 	ret = cg_close(fn);
 	return (ret == 0);
 
@@ -177,6 +152,40 @@ ERROR_AFTER_OPENING:
 	cg_close(fn);
 ERROR_OPENING:
 	return false;
+}
+
+bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber& version)
+{
+	int ret;
+	int dim;
+	cgsize_t dimVec[3];
+	char arrayName[BUFFERLEN];
+	DataType_t dataType;
+
+	// goto "iRIC/SolverInformation"
+	ret = cg_gopath(fn, "/iRIC/SolverInformation");
+	if (ret != 0){return false;}
+	// the first one is "Name" array.
+	ret = cg_array_info(1, arrayName, &dataType, &dim, dimVec);
+	if (ret != 0){return false;}
+	if (QString(arrayName) != "Name"){return false;}
+	char* buffer = new char[dimVec[0] + 1];
+	ret = cg_array_read(1, buffer);
+	if (ret != 0){return false;}
+	solverName = buffer;
+	delete buffer;
+
+	// the second one is "Version" array.
+	ret = cg_array_info(2, arrayName, &dataType, &dim, dimVec);
+	if (ret != 0){return false;}
+	if (QString(arrayName) != "Version"){return false;}
+	buffer = new char[dimVec[0] + 1];
+	ret = cg_array_read(2, buffer);
+	if (ret != 0){return false;}
+	version.fromString(buffer);
+	delete buffer;
+
+	return true;
 }
 
 const QString ProjectCgnsFile::acceptablePattern()

@@ -113,7 +113,7 @@ bool CgnsGridImporter::openCgnsFileForImporting(Grid* grid, const QString& filen
 	}
 	cg_iRIC_Set_ZoneId_Mul(fn, zoneid);
 	// Check the compatibility.
-	bret = ProjectCgnsFile::readSolverInfo(tmpname, solverName, versionNumber);
+	bret = ProjectCgnsFile::readSolverInfo(fn, solverName, versionNumber);
 	if (bret == true){
 		SolverDefinition* solverDef = getProjectData(grid)->solverDefinition();
 		if (solverDef->name() != solverName || (! solverDef->version().compatibleWith(versionNumber))){
