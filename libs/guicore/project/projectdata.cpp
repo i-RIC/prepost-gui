@@ -614,6 +614,7 @@ void ProjectData::openPostProcessors()
 
 bool ProjectData::isInWorkspace()
 {
+	if (m_mainWindow == 0){return false;}
 	QString wsPath = m_mainWindow->workspace()->workspace().absolutePath();
 	return m_workDirectory.contains(wsPath);
 }

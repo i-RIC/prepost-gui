@@ -4,6 +4,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+#include <misc/filesystemfunction.h>
 #include "preprocessorwindow.h"
 #include <guicore/misc/mouseboundingbox.h>
 #include "datamodel/preprocessorrootdataitem.h"
@@ -154,25 +155,26 @@ void PreProcessorDataModel::importCalcCondition()
 
 void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& fname)
 {
+	QFileInfo finfo(fname);
 	// load the project data.
 	ProjectWorkspace* w = projectData()->mainWindow()->workspace();
-	QString tmpworkfoler = ProjectData::newWorkfolderName(w->workspace());
-	ProjectData tmpProj(tmpworkfoler, 0);
-	tmpProj.open(fname);
-	tmpProj.loadCgnsList();
+	QString tmpWorkfolder = ProjectData::newWorkfolderName(w->workspace());
+	ProjectData* tmpProj = new ProjectData(tmpWorkfolder, 0);
+	tmpProj->open(fname);
+	tmpProj->loadCgnsList();
 
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (projectData()->mainWindow()->preProcessorWindow());
 	// now it's loaded. find how many cgns files are included.
-	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj.mainfile()->cgnsFileList()->cgnsFiles();
+	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj->mainfile()->cgnsFileList()->cgnsFiles();
 	if (list.count() == 1){
 		// automatically use the only cgns file.
-		QString fullname = tmpProj.workCgnsFileName(list.first()->filename());
+		QString fullname = tmpProj->workCgnsFileName(list.first()->filename());
 		bool ret = pre->importInputCondition(fullname);
 		if (! ret){
 			// not imported.
-			return;
+			goto ERROR;
 		}
-	}else{
+	} else {
 		QStringList items;
 		QList<CgnsFileList::CgnsFileEntry*>::iterator it;
 		for (it = list.begin(); it != list.end(); ++it){
@@ -182,18 +184,24 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 		QString projname = tmpp.fileName();
 		bool ok;
 		QString solname = QInputDialog::getItem(projectData()->mainWindow(), tr("Select case"), tr("Please select from which case in %1 to import calculation conditions.").arg(projname), items, 0, false, &ok);
-		if (! ok){return;}
-		QString fullname = tmpProj.workCgnsFileName(solname);
+		if (! ok){goto ERROR;}
+		QString fullname = tmpProj->workCgnsFileName(solname);
 		bool ret = pre->importInputCondition(fullname);
 		if (! ret){
 			// not imported.
-			return;
+			goto ERROR;
 		}
 	}
+	delete tmpProj;
+	iRIC::rmdirRecursively(tmpWorkfolder);
 	QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
-	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
 	setModified();
+	return;
+
+ERROR:
+	delete tmpProj;
+	iRIC::rmdirRecursively(tmpWorkfolder);
 }
 
 void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
