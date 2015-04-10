@@ -436,11 +436,11 @@ EXPORT_SUCCEED:
 	}
 	if (ret){
 		// exporting succeeded.
-		projectData()->mainWindow()->statusBar()->showMessage(tr("Grid successfully exported to %1.").arg(filename), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		projectData()->mainWindow()->statusBar()->showMessage(tr("Grid successfully exported to %1.").arg(QDir::toNativeSeparators(filename)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 	}else{
 		// exporting failed.
 		projectData()->mainWindow()->statusBar()->clearMessage();
-		QMessageBox::critical(mainWindow(), tr("Error"), tr("Exporting grid to %1 failed.").arg(filename));
+		QMessageBox::critical(mainWindow(), tr("Error"), tr("Exporting grid to %1 failed.").arg(QDir::toNativeSeparators(filename)));
 	}
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
