@@ -30,7 +30,7 @@ public:
 	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
-	const QString& currentCondition() const {return m_currentSolution;}
+	const QString& currentSolution() const {return m_currentSolution;}
 	void updateZDepthRangeItemCount();
 	void assignActionZValues(const ZDepthRange& range);
 	void update();
@@ -44,6 +44,10 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void addCustomMenuItems(QMenu* menu);
+	bool exportKMLHeader(QXmlStreamWriter& writer);
+	bool exportKMLFooter(QXmlStreamWriter& writer);
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time);
+
 public slots:
 	void exclusivelyCheck(Post2dWindowNodeScalarDataItem* item);
 protected:

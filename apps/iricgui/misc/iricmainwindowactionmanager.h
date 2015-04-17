@@ -196,6 +196,8 @@ public:
 	QAction* calcResultExportActionInCalcMenu;
 	/// Action to export Particles data into VTK files
 	QAction* particleExportAction;
+	/// Action to export Google Earth KML for street view.
+	QAction* svKmlExportAction;
 	/// Action to reload Calculation Result.
 	QAction* calcResultReloadAction;
 	QAction* calcResultReloadToolBarAction;

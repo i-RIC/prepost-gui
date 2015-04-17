@@ -298,7 +298,8 @@ HEADERS += guicore_global.h \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldelegate.h \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.h \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.h \
-    pre/gridcond/base/gridrelatedconditiondimensionscontainer.h
+    pre/gridcond/base/gridrelatedconditiondimensionscontainer.h \
+    base/svkmlexportwindow.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \

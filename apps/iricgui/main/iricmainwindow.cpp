@@ -21,6 +21,7 @@
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/base/clipboardoperatablewindow.h>
 #include <guicore/base/particleexportwindow.h>
+#include <guicore/base/svkmlexportwindow.h>
 #include <guicore/base/windowwithzindex.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -1863,6 +1864,118 @@ void iRICMainWindow::exportParticles()
 		step += pInfo->exportSkipRate();
 		++ fileIndex;
 	}
+	m_continuousSnapshotInProgress = false;
+}
+
+void iRICMainWindow::exportStKML()
+{
+	if (m_SolverConsoleWindow->isSolverRunning()){
+		warnSolverRunning();
+		return;
+	}
+	SVKmlExportWindow* ew = dynamic_cast<SVKmlExportWindow*>(m_Center->activeSubWindow()->widget());
+	if (ew == 0){
+		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
+		return;
+	}
+
+	// check whether it has result.
+	if (! m_projectData->mainfile()->postSolutionInfo()->hasResults()){
+		QMessageBox::information(this, tr("Information"), tr("Calculation result does not exists."));
+		return;
+	}
+
+	QList<QString> zones = ew->contourDrawingZones();
+	QString zoneName;
+	if (zones.count() == 0){
+		// No valid grid.
+		QMessageBox::warning(this, tr("Error"), tr("No contour is drawn now."));
+		return;
+	} else if (zones.count() == 1){
+		zoneName = zones.at(0);
+	} if (zones.count() > 1){
+		ItemSelectingDialog dialog;
+		dialog.setItems(zones);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected){
+			return;
+		}
+		zoneName = zones.at(dialog.selectIndex());
+	}
+	// show setting dialog
+	PostDataExportDialog expDialog(this);
+
+	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
+	expDialog.hideFormat();
+	expDialog.hideDataRange();
+	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
+	expDialog.setAllTimeSteps(pInfo->exportAllSteps());
+	expDialog.setStartTimeStep(pInfo->exportStartStep());
+	expDialog.setEndTimeStep(pInfo->exportEndStep());
+	if (pInfo->exportFolder() == ""){
+		pInfo->setExportFolder(LastIODirectory::get());
+	}
+	expDialog.setOutputFolder(pInfo->exportFolder());
+	expDialog.setSkipRate(pInfo->exportSkipRate());
+	expDialog.setWindowTitle(tr("Export Google Earth KML for street view"));
+
+	if (expDialog.exec() != QDialog::Accepted){return;}
+	pInfo->setExportAllSteps(expDialog.allTimeSteps());
+	pInfo->setExportStartStep(expDialog.startTimeStep());
+	pInfo->setExportEndStep(expDialog.endTimeStep());
+	pInfo->setExportFolder(expDialog.outputFolder());
+	pInfo->setExportSkipRate(expDialog.skipRate());
+
+	QDir outputFolder(pInfo->exportFolder());
+	QFile mainKML(outputFolder.absoluteFilePath("output.kml"));
+	bool ok = mainKML.open(QFile::WriteOnly);
+	QXmlStreamWriter w(&mainKML);
+	w.setAutoFormatting(true);
+	w.writeStartDocument("1.0");
+	w.writeDefaultNamespace("http://earth.google.com/kml/2.2");
+	w.writeStartElement("kml");
+
+	ok = ew->exportKMLHeader(w, zoneName);
+	if (! ok){return;}
+
+	// start exporting.
+	QProgressDialog dialog(this);
+	dialog.setRange(pInfo->exportStartStep(), pInfo->exportEndStep());
+	dialog.setWindowTitle(tr("Export Google Earth KML for street view"));
+	dialog.setLabelText(tr("Saving KML files..."));
+	dialog.setFixedSize(300, 100);
+	dialog.setModal(true);
+	dialog.show();
+
+	m_continuousSnapshotInProgress = true;
+
+	int step = pInfo->exportStartStep();
+	int fileIndex = 1;
+	while (step <= pInfo->exportEndStep()){
+		dialog.setValue(step);
+		qApp->processEvents();
+		if (dialog.wasCanceled()){
+			m_continuousSnapshotInProgress = false;
+			return;
+		}
+		m_animationController->setCurrentStepIndex(step);
+		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
+		bool ok = ew->exportKMLForTimestep(w, fileIndex, time, zoneName);
+		if (! ok){
+			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
+			m_continuousSnapshotInProgress = false;
+			return;
+		}
+		step += pInfo->exportSkipRate();
+		++ fileIndex;
+	}
+
+	ok = ew->exportKMLFooter(w, zoneName);
+
+	w.writeEndElement();
+	w.writeEndDocument();
+	mainKML.close();
+
 	m_continuousSnapshotInProgress = false;
 }
 

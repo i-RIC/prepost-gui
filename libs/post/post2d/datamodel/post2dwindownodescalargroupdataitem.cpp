@@ -15,6 +15,8 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guibase/coordinatesystem.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -26,10 +28,15 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
+#include <QMessageBox>
+#include <QMainWindow>
+#include <QDateTime>
+#include <QVector3D>
 
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
 #include <vtkAppendPolyData.h>
+#include <vtkCell.h>
 #include <vtkCellData.h>
 #include <vtkCleanPolyData.h>
 #include <vtkClipPolyData.h>
@@ -43,7 +50,6 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkScalarBarActor.h>
-#include <vtkStringArray.h>
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
@@ -765,4 +771,202 @@ void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu *menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
+}
+
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
+{
+	// check the condition.
+	if (m_contour != ContourSettingWidget::ContourFigure){
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, display with Contour Fringe."));
+		return false;
+	}
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
+	if (stc->autoRange()){
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, value range should be set up manually."));
+		return false;
+	}
+	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
+	if (cs == 0){
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, coordinate system should be specified."));
+		return false;
+	}
+
+
+	writer.writeStartElement("Document");
+	writer.writeTextElement("name", "iRIC Calculation Result");
+	writer.writeTextElement("open", "1");
+
+	// output styles.
+	for (int i = 0; i < m_numberOfDivisions; ++i){
+		double val = stc->manualMin() + i * (stc->manualMax() - stc->manualMin()) / (m_numberOfDivisions - 1);
+		double rgb[3];
+		stc->vtkObj()->GetColor(val, rgb);
+		QColor col;
+		col.setRedF(rgb[0]);
+		col.setGreenF(rgb[1]);
+		col.setBlueF(rgb[2]);
+		QString colorStr = QString("%1%2%3%4").arg("c8").arg(col.blue(), 2, 16, QChar('0')).arg(col.green(), 2, 16, QChar('0')).arg(col.red(), 2, 16, QChar('0'));
+
+		writer.writeStartElement("Style");
+		writer.writeAttribute("id", QString("PolyColor%1").arg(i + 1));
+
+		writer.writeStartElement("LineStyle");
+		writer.writeTextElement("color", colorStr);
+		writer.writeEndElement();
+
+		writer.writeStartElement("PolyStyle");
+		writer.writeTextElement("color", colorStr);
+		writer.writeEndElement();
+
+		writer.writeEndElement();
+	}
+
+	return true;
+}
+
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writer)
+{
+	writer.writeEndElement();
+	return true;
+}
+
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time)
+{
+	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
+
+	// Folder start
+	writer.writeStartElement("Folder");
+	// TimeStamp Start
+	QDateTime datetime(QDate(2011, 1, 1));
+	datetime = datetime.addSecs(static_cast<int>(time));
+	writer.writeStartElement("TimeStamp");
+	writer.writeTextElement("when", datetime.toString("yyyy-MM-ddTHH:mm:ssZ"));
+	// TimeStamp End
+	writer.writeEndElement();
+
+	// name
+	writer.writeTextElement("name", QString("iRIC output t = %1").arg(time));
+
+	// output each cell data.
+	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	vtkPointSet* ps = cont->data();
+	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str());
+	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*> (ps);
+	bool isStructured = (stGrid != 0);
+
+	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId){
+
+		QList<QVector3D> points;
+		vtkCell* cell = ps->GetCell(cellId);
+		QList<vtkIdType> pointIds;
+
+		for (int pId = 0; pId < cell->GetNumberOfPoints(); ++pId){
+			vtkIdType pointId = cell->GetPointId(pId);
+			pointIds.append(pointId);
+		}
+
+		for (int i = 0; i < pointIds.size(); ++i){
+			vtkIdType pointId = pointIds.at(i);
+			double v[3];
+			double lon, lat;
+			ps->GetPoint(pointId, v);
+			cs->mapGridToGeo(v[0], v[1], &lon, &lat);
+			double val = da->GetTuple1(pointId);
+			points.append(QVector3D(lon, lat, val));
+		}
+		// find north, south, west, east
+		double north, south, west, east;
+		double sum = 0;
+		for (int i = 0; i < points.size(); ++i){
+			QVector3D v = points.at(i);
+			sum += v.z();
+			if (i == 0 || v.y() > north){north = v.y();}
+			if (i == 0 || v.y() < south){south = v.y();}
+			if (i == 0 || v.x() > east){east = v.x();}
+			if (i == 0 || v.x() < west){west = v.x();}
+		}
+
+		double averageDepth = sum / points.size();
+
+		if (averageDepth < stc->manualMin()){continue;}
+
+		writer.writeStartElement("Placemark");
+		// name
+		writer.writeTextElement("name", QString("depth = %1 [m]").arg(averageDepth));
+		// description
+		QString descString;
+		if (isStructured){
+			int i, j, k;
+			cont->getCellIJKIndex(static_cast<int>(cellId), &i, &j, &k);
+			descString = QString("i = %1 j = %2").arg(i + 1).arg(j + 1);
+		} else {
+			descString = QString("index = %1").arg(cellId + 1);
+		}
+		writer.writeTextElement("description", descString);
+		// styleurl
+		// @todo fix this.
+		QString styleUrl = "#PolyColor1";
+		writer.writeTextElement("styleUrl", styleUrl);
+/*
+		// Region Start
+		writer.writeStartElement("Region");
+
+		// LOD
+		writer.writeStartElement("Lod");
+		writer.writeTextElement("minLodPixels", "1400");
+		writer.writeEndElement();
+
+		// LatLonAltBox Start
+		writer.writeStartElement("LatLonAltBox");
+		writer.writeTextElement("north", QString::number(north, 'g', 12));
+		writer.writeTextElement("south", QString::number(south, 'g', 12));
+		writer.writeTextElement("east", QString::number(east, 'g', 12));
+		writer.writeTextElement("west", QString::number(west, 'g', 12));
+		writer.writeTextElement("minAltitude", "0");
+		writer.writeTextElement("maxAltitude", "20");
+		writer.writeTextElement("altitudeMode", "relativeToGround");
+		// LatLonAltBox End
+		writer.writeEndElement();
+
+		// Region End
+		writer.writeEndElement();
+*/
+		// Polygon Start
+		writer.writeStartElement("Polygon");
+		writer.writeTextElement("extrude", "1");
+		writer.writeTextElement("altitudeMode", "relativeToGround");
+		// outerBoundaryIs Start
+		writer.writeStartElement("outerBoundaryIs");
+		// LinearRing Start
+		writer.writeStartElement("LinearRing");
+		QStringList coords;
+		for (int i = 0; i < points.size(); ++i){
+			QVector3D v = points.at(i);
+			coords.append(QString("%1,%2,%3").arg(QString::number(v.x(), 'f', 12)).arg(QString::number(v.y(), 'f', 12)).arg(QString::number(v.z(), 'g', 12)));
+		}
+		QVector3D vlast = points.at(0);
+		coords.append(QString("%1,%2,%3").arg(QString::number(vlast.x(), 'f', 12)).arg(QString::number(vlast.y(), 'f', 12)).arg(QString::number(vlast.z(), 'g', 12)));
+		QString coordsStr("\r\n");
+		coordsStr.append(coords.join("\r\n"));
+		coordsStr.append("\r\n");
+		writer.writeTextElement("coordinates", coordsStr);
+
+		// LinearRing End
+		writer.writeEndElement();
+		// outerBoundaryIs End
+		writer.writeEndElement();
+
+		// Polygon End
+		writer.writeEndElement();
+
+		// Placemark end
+		writer.writeEndElement();
+	}
+
+	// Folder end
+	writer.writeEndElement();
+	return true;
 }

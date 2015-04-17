@@ -9,6 +9,7 @@
 #include <guicore/base/windowwithobjectbrowser.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/particleexportwindow.h>
+#include <guicore/base/svkmlexportwindow.h>
 
 class QAction;
 class QToolBar;
@@ -25,7 +26,8 @@ class Post2dWindow :
 		public AdditionalMenuWindow,
 		public WindowWithObjectBrowser,
 		public WindowWithPropertyBrowser,
-		public ParticleExportWindow
+		public ParticleExportWindow,
+		public SVKmlExportWindow
 {
 	Q_OBJECT
 public:
@@ -44,6 +46,11 @@ public:
 	int index(){return m_index;}
 	bool exportParticles(const QString &filePrefix, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();
+	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename);
+	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename);
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename);
+	QList<QString> contourDrawingZones();
+
 	bool hasTransparentPart();
 public slots:
 	void cameraFit();

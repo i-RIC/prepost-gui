@@ -158,6 +158,8 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(calcResultExportActionInFileMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
 	particleExportAction = new QAction(tr("&Particles..."), this);
 	connect(particleExportAction, SIGNAL(triggered()), m_parent, SLOT(exportParticles()));
+	svKmlExportAction = new QAction(tr("&Google Earth KML for street view"), this);
+	connect(svKmlExportAction, SIGNAL(triggered()), m_parent, SLOT(exportStKML()));
 
 	m_fileMenu->addSeparator();
 
@@ -235,6 +237,7 @@ void iRICMainWindowActionManager::setupExportMenu()
 	m_exportMenu->addAction(exportLogAction);
 	m_exportMenu->addAction(calcResultExportActionInFileMenu);
 	m_exportMenu->addAction(particleExportAction);
+	m_exportMenu->addAction(svKmlExportAction);
 	m_exportMenu->addAction(exportVisGraphAction);
 }
 

@@ -1,4 +1,5 @@
 #include "datamodel/post2dwindowgridtypedataitem.h"
+#include "datamodel/post2dwindownodescalargroupdataitem.h"
 #include "datamodel/post2dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post2dwindowrootdataitem.h"
 #include "datamodel/post2dwindowzonedataitem.h"
@@ -201,6 +202,49 @@ QList<QString> Post2dWindow::particleDrawingZones()
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
 			Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != ""){
+				ret.append(zItem->zoneName());
+			}
+		}
+	}
+	return ret;
+}
+
+bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename)
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	return sItem->exportKMLHeader(writer);
+}
+
+bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename)
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	return sItem->exportKMLFooter(writer);
+}
+
+bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename)
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	return sItem->exportKMLForTimestep(writer, index, time);
+}
+
+QList<QString> Post2dWindow::contourDrawingZones()
+{
+	QList<QString> ret;
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
+	for (int i = 0; i < gtItems.count(); ++i){
+		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
+		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
+		for (int j = 0; j < zItems.count(); ++j){
+			Post2dWindowZoneDataItem* zItem = zItems.at(j);
+			Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->currentSolution() != ""){
 				ret.append(zItem->zoneName());
 			}
 		}

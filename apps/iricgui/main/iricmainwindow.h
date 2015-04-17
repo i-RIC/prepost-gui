@@ -139,6 +139,8 @@ public slots:
 	void exportCalculationResult();
 	/// Export Particles into VTK files.
 	void exportParticles();
+	/// Export Google Earth KML for street view
+	void exportStKML();
 	/// Import Visualization/Graph settings.
 	void importVisGraphSetting();
 	/// Export Visualization/Graph settings.
