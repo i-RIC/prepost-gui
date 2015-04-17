@@ -278,7 +278,8 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != 0){
-		m_mapper->SetInputData(g->vtkFilteredCells());
+		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
+		if (cellsAlgo != 0){m_mapper->SetInputConnection(cellsAlgo->GetOutputPort());}
 //		m_mapper->SetInputData(g->vtkGrid());
 	}
 	updateActorSettings();

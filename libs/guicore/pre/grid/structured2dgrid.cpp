@@ -18,6 +18,7 @@
 #include <vtkCellArray.h>
 #include <vtkStringArray.h>
 #include <vtkPointData.h>
+#include <vtkTrivialProducer.h>
 #include <QGraphicsItemGroup>
 #include <QGraphicsLineItem>
 #include <QGraphicsTextItem>
@@ -441,12 +442,14 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	double *cv = m_vtkGrid->GetPoint(vid);
 	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax){
 		// 2. If the point is out of the region, the whole grid is out of the region.
+		vtkSmartPointer<vtkTrivialProducer> emptyAlgo = vtkSmartPointer<vtkTrivialProducer>::New();
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
 		emptyPoly->SetPoints(m_vtkGrid->GetPoints());
+		emptyAlgo->SetOutput(emptyPoly);
 
-		m_vtkFilteredShape = emptyPoly;
-		m_vtkFilteredPoints = emptyPoly;
-		m_vtkFilteredCells = emptyPoly;
+		m_vtkFilteredShapeAlgorithm = emptyAlgo;
+		m_vtkFilteredPointsAlgorithm = emptyAlgo;
+		m_vtkFilteredCellsAlgorithm = emptyAlgo;
 		return;
 	}
 
@@ -547,24 +550,21 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	vtkSmartPointer<vtkGeometryFilter> geo = vtkSmartPointer<vtkGeometryFilter>::New();
 	geo->SetInputConnection(exGrid->GetOutputPort());
 
-	geo->Update();
-	vtkSmartPointer<vtkPolyData> clippedGrid = geo->GetOutput();
-
 	m_drawnIMin = lineLimitIMin2;
 	m_drawnIMax = lineLimitIMax2;
 	m_drawnJMin = lineLimitJMin2;
 	m_drawnJMax = lineLimitJMax2;
 
-	m_vtkFilteredShape = clippedGrid;
-	m_vtkFilteredPoints = clippedGrid;
-	m_vtkFilteredCells = clippedGrid;
+	m_vtkFilteredShapeAlgorithm = geo;
+	m_vtkFilteredPointsAlgorithm = geo;
+	m_vtkFilteredCellsAlgorithm = geo;
 
 	int tmpIMin = (m_drawnIMin / exRate) * exRate;
 	int tmpIMax = qMin((m_drawnIMax / exRate + 1) * exRate, m_dimensionI - 1);
 	int tmpJMin = (m_drawnJMin / exRate) * exRate;
 	int tmpJMax = qMin((m_drawnJMax / exRate + 1) * exRate, m_dimensionJ - 1);
 
-	m_vtkFilteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
+	vtkSmartPointer<vtkPolyData> filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 	vtkSmartPointer<vtkStringArray> sa = vtkSmartPointer<vtkStringArray>::New();
@@ -586,9 +586,14 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 		sa->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1)));
 		++ cellid;
 	}
-	m_vtkFilteredIndexGrid->SetPoints(igPoints);
-	m_vtkFilteredIndexGrid->SetVerts(ca);
-	m_vtkFilteredIndexGrid->GetPointData()->AddArray(sa);
+	filteredIndexGrid->SetPoints(igPoints);
+	filteredIndexGrid->SetVerts(ca);
+	filteredIndexGrid->GetPointData()->AddArray(sa);
+
+
+	vtkSmartPointer<vtkTrivialProducer> prod = vtkSmartPointer<vtkTrivialProducer>::New();
+	prod->SetOutput(filteredIndexGrid);
+	m_vtkFilteredIndexGridAlgorithm = prod;
 }
 
 int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& region)

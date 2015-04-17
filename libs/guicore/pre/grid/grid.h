@@ -6,7 +6,7 @@
 #include "../../solverdef/solverdefinitiongridtype.h"
 #include <vtkPointSet.h>
 #include <vtkSmartPointer.h>
-#include <vtkPolyData.h>
+#include <vtkAlgorithm.h>
 #include <QList>
 #include <QMap>
 #include <cgnslib.h>
@@ -22,7 +22,6 @@ class QStringList;
 class GridInternalImporter;
 class GridInternalExporter;
 class GridRelatedConditionContainer;
-class vtkPolyData;
 
 /// Abstract class to store Grid
 class GUICOREDLL_EXPORT Grid : public ProjectDataItem
@@ -48,10 +47,10 @@ public:
 	/// The pointer to VTK container that holds the data in deed.
 	vtkPointSet* vtkGrid() const {return m_vtkGrid;}
 
-	vtkPolyData* vtkFilteredShape() const {return m_vtkFilteredShape;}
-	vtkPolyData* vtkFilteredPoints() const {return m_vtkFilteredPoints;}
-	vtkPolyData* vtkFilteredCells() const {return m_vtkFilteredCells;}
-	virtual vtkPolyData* vtkFilteredIndexGrid() const {return 0;}
+	vtkAlgorithm* vtkFilteredShapeAlgorithm() const {return m_vtkFilteredShapeAlgorithm;}
+	vtkAlgorithm* vtkFilteredPointsAlgorithm() const {return m_vtkFilteredPointsAlgorithm;}
+	vtkAlgorithm* vtkFilteredCellsAlgorithm() const {return m_vtkFilteredCellsAlgorithm;}
+	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return 0;}
 
 	/// The list of grid related conditions
 	QList<GridRelatedConditionContainer*>& gridRelatedConditions(){
@@ -89,9 +88,9 @@ protected:
 	bool saveGridRelatedConditions(int fn, int B, int Z);
 	static int zoneId(const QString &zonename, int fn, int B, cgsize_t sizes[9]);
 	vtkPointSet* m_vtkGrid;
-	vtkSmartPointer<vtkPolyData> m_vtkFilteredShape;
-	vtkSmartPointer<vtkPolyData> m_vtkFilteredPoints;
-	vtkSmartPointer<vtkPolyData> m_vtkFilteredCells;
+	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredShapeAlgorithm;
+	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;
+	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
 	QList<GridRelatedConditionContainer*> m_gridRelatedConditions;
 	QMap<QString, GridRelatedConditionContainer*> m_gridRelatedConditionNameMap;
 //	GridImporterFactory* m_importerFactory;

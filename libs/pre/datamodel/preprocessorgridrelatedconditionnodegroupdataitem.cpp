@@ -386,8 +386,11 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::informGridUpdate()
 	if (g != 0){
 //		m_isolineFilter->SetInputData(g->vtkGrid());
 //		m_fringeMapper->SetInputData(g->vtkGrid());
-		m_isolineFilter->SetInputData(g->vtkFilteredCells());
-		m_fringeMapper->SetInputData(g->vtkFilteredCells());
+		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
+		if (cellsAlgo != 0){
+			m_isolineFilter->SetInputConnection(cellsAlgo->GetOutputPort());
+			m_fringeMapper->SetInputConnection(cellsAlgo->GetOutputPort());
+		}
 	}
 	updateActorSettings();
 }

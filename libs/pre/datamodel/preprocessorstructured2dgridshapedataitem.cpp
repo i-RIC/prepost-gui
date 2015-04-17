@@ -89,9 +89,10 @@ void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 		Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
 
 		m_outlineFilter->SetInputData(grid->vtkGrid());
-		m_wireframeMapper->SetInputData(grid->vtkFilteredShape());
-		m_indexMapper->SetInputData(grid->vtkFilteredIndexGrid());
-
+		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
+		if (shapeAlgo != 0){ m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
+		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
+		if (indexGridAlgo != 0){ m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
 	}
 	updateActorSettings();
 }

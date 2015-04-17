@@ -89,7 +89,7 @@ public:
 	int drawnIMax() const {return m_drawnIMax;}
 	int drawnJMin() const {return m_drawnJMin;}
 	int drawnJMax() const {return m_drawnJMax;}
-	vtkPolyData* vtkFilteredIndexGrid() const {return m_vtkFilteredIndexGrid;}
+	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return m_vtkFilteredIndexGridAlgorithm;}
 
 private:
 	void init();
@@ -100,7 +100,7 @@ private:
 	bool lineAtIIntersect(int i, const RectRegion& region);
 	bool lineAtJIntersect(int j, const RectRegion& region);
 
-	vtkSmartPointer<vtkPolyData> m_vtkFilteredIndexGrid;
+	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredIndexGridAlgorithm;
 
 	unsigned int m_drawnIMin;
 	unsigned int m_drawnIMax;

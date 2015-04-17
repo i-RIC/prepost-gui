@@ -67,8 +67,10 @@ void PreProcessorUnstructured2dGridShapeDataItem::informGridUpdate()
 	if (g != 0){
 		Unstructured2DGrid* grid = dynamic_cast<Unstructured2DGrid*>(g);
 
-		m_wireframeMapper->SetInputData(grid->vtkFilteredShape());
-		m_indexMapper->SetInputData(grid->vtkFilteredIndexGrid());
+		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
+		if (shapeAlgo != 0){m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
+		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
+		if (indexGridAlgo != 0){m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
 	}
 	updateActorSettings();
 }

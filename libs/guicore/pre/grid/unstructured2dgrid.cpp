@@ -9,6 +9,8 @@
 #include <vtkPointData.h>
 #include <vtkCellArray.h>
 #include <vtkMaskPolyData.h>
+#include <vtkPolyDataAlgorithm.h>
+#include <vtkTrivialProducer.h>
 
 #include <QString>
 #include <QSet>
@@ -228,23 +230,28 @@ void Unstructured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double y
 
 void Unstructured2DGrid::setupIndexArray()
 {
-	if (m_vtkFilteredCells == 0){return;}
+	if (m_vtkFilteredCellsAlgorithm == 0){return;}
 
-	int ccounts2 = m_vtkFilteredCells->GetNumberOfCells();
+	vtkAlgorithm* tmpalgo = m_vtkFilteredCellsAlgorithm;
+	vtkPolyDataAlgorithm* algo = dynamic_cast<vtkPolyDataAlgorithm*>(tmpalgo);
+	algo->Update();
+	vtkSmartPointer<vtkPolyData> filteredCells = algo->GetOutput();
+	int ccounts2 = filteredCells->GetNumberOfCells();
 	vtkSmartPointer<vtkPolyData> tmpIndexPolyData;
 	if (ccounts2 > MAX_DRAWINDEXCOUNT){
 		vtkSmartPointer<vtkMaskPolyData> maskPoly2 = vtkSmartPointer<vtkMaskPolyData>::New();
 		int ratio = static_cast<int>(ccounts2 / MAX_DRAWINDEXCOUNT);
 		if (ratio == 1){ratio = 2;}
 		maskPoly2->SetOnRatio(ratio);
-		maskPoly2->SetInputData(m_vtkFilteredCells);
+		maskPoly2->SetInputData(filteredCells);
 		maskPoly2->Update();
 		tmpIndexPolyData = maskPoly2->GetOutput();
 	} else {
-		tmpIndexPolyData = m_vtkFilteredCells;
+		tmpIndexPolyData = filteredCells;
 	}
 
-	m_vtkFilteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
+
+	vtkSmartPointer<vtkPolyData> filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 	vtkSmartPointer<vtkStringArray> sa = vtkSmartPointer<vtkStringArray>::New();
@@ -269,7 +276,11 @@ void Unstructured2DGrid::setupIndexArray()
 			}
 		}
 	}
-	m_vtkFilteredIndexGrid->SetPoints(igPoints);
-	m_vtkFilteredIndexGrid->SetVerts(ca);
-	m_vtkFilteredIndexGrid->GetPointData()->AddArray(sa);
+	filteredIndexGrid->SetPoints(igPoints);
+	filteredIndexGrid->SetVerts(ca);
+	filteredIndexGrid->GetPointData()->AddArray(sa);
+
+	vtkSmartPointer<vtkTrivialProducer> prod = vtkSmartPointer<vtkTrivialProducer>::New();
+	prod->SetOutput(filteredIndexGrid);
+	m_vtkFilteredIndexGridAlgorithm = prod;
 }

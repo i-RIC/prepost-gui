@@ -5,7 +5,6 @@
 #include "grid2d.h"
 #include <vtkUnstructuredGrid.h>
 #include <vtkSmartPointer.h>
-#include <vtkPolyData.h>
 
 /// Unstructured two-dimensional grid
 class GUICOREDLL_EXPORT Unstructured2DGrid : public Grid2D {
@@ -26,13 +25,13 @@ public:
 	const unsigned int cellCount() const {
 		return m_vtkGrid->GetNumberOfCells();
 	}
-	vtkPolyData* vtkFilteredIndexGrid() const {return m_vtkFilteredIndexGrid;}
+	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return m_vtkFilteredIndexGridAlgorithm;}
 	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
 private:
 	void init();
 	void setupIndexArray();
 
-	vtkSmartPointer<vtkPolyData> m_vtkFilteredIndexGrid;
+	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredIndexGridAlgorithm;
 };
 
 #endif // UNSTRUCTURED2DGRID_H

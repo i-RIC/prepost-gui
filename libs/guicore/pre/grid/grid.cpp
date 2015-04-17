@@ -179,17 +179,16 @@ void Grid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ym
 		int ratio = static_cast<int>(ccounts / MAX_DRAWCELLCOUNT);
 		if (ratio == 1){ratio = 2;}
 		maskPoly->SetOnRatio(ratio);
-		maskPoly->SetInputData(clippedGrid);
-		maskPoly->Update();
-		m_vtkFilteredShape = maskPoly->GetOutput();
-		m_vtkFilteredPoints = maskPoly->GetOutput();
-		m_vtkFilteredCells = maskPoly->GetOutput();
+		maskPoly->SetInputConnection(gfilter->GetOutputPort());
 
+		m_vtkFilteredShapeAlgorithm = maskPoly;
+		m_vtkFilteredPointsAlgorithm = maskPoly;
+		m_vtkFilteredCellsAlgorithm = maskPoly;
 		m_isMasked = true;
 	} else {
-		m_vtkFilteredShape = clippedGrid;
-		m_vtkFilteredPoints = clippedGrid;
-		m_vtkFilteredCells = clippedGrid;
+		m_vtkFilteredShapeAlgorithm = gfilter;
+		m_vtkFilteredPointsAlgorithm = gfilter;
+		m_vtkFilteredCellsAlgorithm = gfilter;
 	}
 }
 
