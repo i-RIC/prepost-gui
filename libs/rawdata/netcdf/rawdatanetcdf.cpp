@@ -233,11 +233,16 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		size_t dimSize;
 		ret = nc_inq_dimlen(ncid, dDimId, &dimSize);
 
+		if (dimSize == 0){
+			// no data to load for this dimension.
+			break;
+		}
+
 		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != 0){
-			int* vals = new int[c->count()];
+			int* vals = new int[dimSize];
 			ret = nc_get_var_int(ncid, dVarId, vals);
 			QList<QVariant> vals1;
-			for (int j = 0; j < c->count(); ++j){
+			for (int j = 0; j < dimSize; ++j){
 				QVariant v(*(vals + j));
 				vals1.append(v);
 			}
@@ -249,10 +254,10 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 				// @todo add error handling!
 			}
 		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != 0){
-			double* vals = new double[c->count()];
+			double* vals = new double[dimSize];
 			ret = nc_get_var_double(ncid, dVarId, vals);
 			QList<QVariant> vals1;
-			for (int j = 0; j < c->count(); ++j){
+			for (int j = 0; j < dimSize; ++j){
 				QVariant v(*(vals + j));
 				vals1.append(v);
 			}
