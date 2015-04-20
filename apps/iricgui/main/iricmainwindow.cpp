@@ -1869,6 +1869,12 @@ void iRICMainWindow::exportParticles()
 
 void iRICMainWindow::exportStKML()
 {
+	static QString outputFileName;
+	if (outputFileName == ""){
+		QDir dir(LastIODirectory::get());
+		outputFileName = dir.absoluteFilePath("output.kml");
+	}
+
 	if (m_SolverConsoleWindow->isSolverRunning()){
 		warnSolverRunning();
 		return;
@@ -1908,14 +1914,12 @@ void iRICMainWindow::exportStKML()
 	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
 	expDialog.hideFormat();
 	expDialog.hideDataRange();
+	expDialog.setFileMode();
+	expDialog.setOutputFileName(outputFileName);
 	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
 	expDialog.setAllTimeSteps(pInfo->exportAllSteps());
 	expDialog.setStartTimeStep(pInfo->exportStartStep());
 	expDialog.setEndTimeStep(pInfo->exportEndStep());
-	if (pInfo->exportFolder() == ""){
-		pInfo->setExportFolder(LastIODirectory::get());
-	}
-	expDialog.setOutputFolder(pInfo->exportFolder());
 	expDialog.setSkipRate(pInfo->exportSkipRate());
 	expDialog.setWindowTitle(tr("Export Google Earth KML for street view"));
 
@@ -1926,8 +1930,8 @@ void iRICMainWindow::exportStKML()
 	pInfo->setExportFolder(expDialog.outputFolder());
 	pInfo->setExportSkipRate(expDialog.skipRate());
 
-	QDir outputFolder(pInfo->exportFolder());
-	QFile mainKML(outputFolder.absoluteFilePath("output.kml"));
+	outputFileName = expDialog.outputFileName();
+	QFile mainKML(outputFileName);
 	bool ok = mainKML.open(QFile::WriteOnly);
 	QXmlStreamWriter w(&mainKML);
 	w.setAutoFormatting(true);

@@ -837,6 +837,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
 
+	double div = (stc->manualMax() - stc->manualMin()) / m_numberOfDivisions;
+
 	// Folder start
 	writer.writeStartElement("Folder");
 	// TimeStamp Start
@@ -879,6 +881,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		}
 		// find north, south, west, east
 		double north, south, west, east;
+		double minval;
+		double maxval;
 		double sum = 0;
 		for (int i = 0; i < points.size(); ++i){
 			QVector3D v = points.at(i);
@@ -887,6 +891,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			if (i == 0 || v.y() < south){south = v.y();}
 			if (i == 0 || v.x() > east){east = v.x();}
 			if (i == 0 || v.x() < west){west = v.x();}
+			if (i == 0 || v.z() > maxval){maxval = v.z();}
+			if (i == 0 || v.z() < minval){minval = v.z();}
 		}
 
 		double averageDepth = sum / points.size();
@@ -907,17 +913,19 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		}
 		writer.writeTextElement("description", descString);
 		// styleurl
-		// @todo fix this.
-		QString styleUrl = "#PolyColor1";
+		int colorIndex = (averageDepth / div) + 1;
+		if (colorIndex < 1){colorIndex = 1;}
+		if (colorIndex > m_numberOfDivisions){colorIndex = m_numberOfDivisions;}
+
+		QString styleUrl = QString("#PolyColor%1").arg(colorIndex);
 		writer.writeTextElement("styleUrl", styleUrl);
-/*
 		// Region Start
 		writer.writeStartElement("Region");
 
 		// LOD
-		writer.writeStartElement("Lod");
-		writer.writeTextElement("minLodPixels", "1400");
-		writer.writeEndElement();
+//		writer.writeStartElement("Lod");
+//		writer.writeTextElement("minLodPixels", "10");
+//		writer.writeEndElement();
 
 		// LatLonAltBox Start
 		writer.writeStartElement("LatLonAltBox");
@@ -925,15 +933,14 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		writer.writeTextElement("south", QString::number(south, 'g', 12));
 		writer.writeTextElement("east", QString::number(east, 'g', 12));
 		writer.writeTextElement("west", QString::number(west, 'g', 12));
-		writer.writeTextElement("minAltitude", "0");
-		writer.writeTextElement("maxAltitude", "20");
+		writer.writeTextElement("minAltitude", QString::number(minval, 'g', 12));
+		writer.writeTextElement("maxAltitude", QString::number(maxval, 'g', 12));
 		writer.writeTextElement("altitudeMode", "relativeToGround");
 		// LatLonAltBox End
 		writer.writeEndElement();
 
 		// Region End
 		writer.writeEndElement();
-*/
 		// Polygon Start
 		writer.writeStartElement("Polygon");
 		writer.writeTextElement("extrude", "1");

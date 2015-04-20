@@ -2,6 +2,7 @@
 #include "ui_filenameeditwidget.h"
 #include <QFileInfo>
 #include <QFileDialog>
+#include <QDir>
 
 FilenameEditWidget::FilenameEditWidget(QWidget *parent) :
 	QWidget(parent),
@@ -22,13 +23,13 @@ void FilenameEditWidget::setFilename(const QString& filename)
 	QFileInfo finfo(filename);
 	QString fname = filename;
 	if (finfo.isAbsolute() &&
-	    ! m_baseDir.isNull() &&
-	    filename.left(m_baseDir.length()) == m_baseDir)
+			! m_baseDir.isNull() &&
+			filename.left(m_baseDir.length()) == m_baseDir)
 	{
 		// store relative path.
 		fname = filename.right(filename.length() - m_baseDir.length() - 1);
 	}
-	ui->lineEdit->setText(fname);
+	ui->lineEdit->setText(QDir::toNativeSeparators(fname));
 }
 
 void FilenameEditWidget::setFilter(const QString& filter)
@@ -38,7 +39,7 @@ void FilenameEditWidget::setFilter(const QString& filter)
 
 const QString FilenameEditWidget::filename() const
 {
-	return ui->lineEdit->text().trimmed();
+	return QDir::fromNativeSeparators(ui->lineEdit->text().trimmed());
 }
 
 void FilenameEditWidget::openDialog()
@@ -52,7 +53,7 @@ void FilenameEditWidget::openDialog()
 	QString fname = QFileDialog::getOpenFileName(this, tr("Select File"), dir, m_filter);
 	if (! fname.isNull()){
 		if (! m_baseDir.isNull() &&
-		    fname.left(m_baseDir.length()) == m_baseDir)
+				fname.left(m_baseDir.length()) == m_baseDir)
 		{
 			fname = fname.right(fname.length() - m_baseDir.length() - 1);
 		}

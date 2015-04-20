@@ -11,20 +11,22 @@ namespace Ui {
 
 class GUICOREDLL_EXPORT PostDataExportDialog : public QDialog
 {
-    Q_OBJECT
+		Q_OBJECT
 
 public:
 	enum Format {fmVTK, fmCSV};
-    explicit PostDataExportDialog(QWidget *parent = 0);
-    ~PostDataExportDialog();
+	explicit PostDataExportDialog(QWidget *parent = 0);
+	~PostDataExportDialog();
 	void setTimeValues(QList<double> timevalues);
 	void setIJKRange(int inum, int jnum, int knum);
 
 	void hideFormat();
 	void hideDataRange();
+	void setFileMode();
 
 	void setFormat(Format f);
 	void setOutputFolder(const QString& folder);
+	void setOutputFileName(const QString& filename);
 	void setAllTimeSteps(bool all);
 	void setStartTimeStep(int start);
 	void setEndTimeStep(int end);
@@ -40,7 +42,8 @@ public:
 	void setKMax(int kmax);
 
 	Format format();
-	const QString outputFolder();
+	const QString outputFolder() const;
+	const QString outputFileName() const;
 	bool allTimeSteps();
 	int startTimeStep();
 	int endTimeStep();
@@ -56,6 +59,7 @@ public:
 	int skipRate();
 	void accept();
 	void updateSkipRateMaximum();
+
 private slots:
 	void allCheckChange(bool checked);
 	void handleStartChange(int val);
@@ -69,8 +73,9 @@ private slots:
 	void handleKMaxChange(int val);
 	void handleRefButtonClick();
 	void toggleRangeGroupBox();
+
 private:
-    Ui::PostDataExportDialog *ui;
+		Ui::PostDataExportDialog *ui;
 };
 
 #endif // POSTDATAEXPORTDIALOG_H

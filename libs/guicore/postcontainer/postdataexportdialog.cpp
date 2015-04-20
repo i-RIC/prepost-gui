@@ -4,10 +4,13 @@
 #include <QMessageBox>
 
 PostDataExportDialog::PostDataExportDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::PostDataExportDialog)
+	QDialog(parent),
+	ui(new Ui::PostDataExportDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
+
+	ui->fileLabel->hide();
+	ui->fileEdit->hide();
 
 	connect(ui->dataAllCheckBox, SIGNAL(toggled(bool)), this, SLOT(allCheckChange(bool)));
 	connect(ui->dataStartSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStartChange(int)));
@@ -28,9 +31,21 @@ PostDataExportDialog::PostDataExportDialog(QWidget *parent) :
 
 PostDataExportDialog::~PostDataExportDialog()
 {
-    delete ui;
+	delete ui;
 }
 
+void PostDataExportDialog::setFileMode()
+{
+	ui->folderLabel->hide();
+	ui->folderEdit->hide();
+	ui->folderRefButton->hide();
+	ui->prefixLabel->hide();
+	ui->prefixEdit->hide();
+
+	ui->fileLabel->show();
+	ui->fileEdit->show();
+	updateGeometry();
+}
 
 void PostDataExportDialog::setTimeValues(QList<double> timevalues)
 {
@@ -92,6 +107,11 @@ void PostDataExportDialog::setFormat(Format f)
 void PostDataExportDialog::setOutputFolder(const QString& folder)
 {
 	ui->folderEdit->setText(QDir::toNativeSeparators(folder));
+}
+
+void PostDataExportDialog::setOutputFileName(const QString& filename)
+{
+	ui->fileEdit->setFilename(filename);
 }
 
 void PostDataExportDialog::setAllTimeSteps(bool all)
@@ -186,9 +206,14 @@ PostDataExportDialog::Format PostDataExportDialog::format()
 	}
 }
 
-const QString PostDataExportDialog::outputFolder()
+const QString PostDataExportDialog::outputFolder() const
 {
 	return ui->folderEdit->text();
+}
+
+const QString PostDataExportDialog::outputFileName() const
+{
+	return ui->fileEdit->filename();
 }
 
 bool PostDataExportDialog::allTimeSteps()
@@ -352,10 +377,12 @@ void PostDataExportDialog::handleRefButtonClick()
 
 void PostDataExportDialog::accept()
 {
-	QString folderName = QDir::fromNativeSeparators(ui->folderEdit->text());
-	if (! QFile::exists(folderName)){
-		QMessageBox::warning(this, tr("Warning"), tr("Folder %1 does not exists.").arg(ui->folderEdit->text()));
-		return;
+	if (ui->folderEdit->isVisible()){
+		QString folderName = QDir::fromNativeSeparators(ui->folderEdit->text());
+		if (! QFile::exists(folderName)){
+			QMessageBox::warning(this, tr("Warning"), tr("Folder %1 does not exists.").arg(ui->folderEdit->text()));
+			return;
+		}
 	}
 	QDialog::accept();
 }

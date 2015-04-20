@@ -12,6 +12,7 @@ namespace Ui {
 class GUIBASEDLL_EXPORT FilenameEditWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	explicit FilenameEditWidget(QWidget *parent = 0);
 	~FilenameEditWidget();
