@@ -96,7 +96,7 @@
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="58"/>
         <source>&amp;Measured Data</source>
-        <translation>&amp;実測値(&amp;M)</translation>
+        <translation>実測値(&amp;M)</translation>
     </message>
     <message>
         <location filename="../post2dwindowactionmanager.cpp" line="60"/>
