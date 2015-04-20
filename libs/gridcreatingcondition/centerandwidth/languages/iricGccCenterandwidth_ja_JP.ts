@@ -56,32 +56,32 @@
         <translation>中心線の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="672"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="673"/>
         <source>Move Center Line Vertex</source>
         <translation>中心線の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="748"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="750"/>
         <source>Insert Center Line Vertex</source>
         <translation>中心線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="892"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="895"/>
         <source>Remove Center Line Vertex</source>
         <translation>中心線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1122"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1126"/>
         <source>Finish Defining Polyline</source>
         <translation>中心線の定義の終了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1416"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1421"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1416"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1421"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子の中心線を定義してください。中心線は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>

@@ -231,17 +231,17 @@
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.ui" line="29"/>
+        <location filename="../filenameeditwidget.ui" line="41"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="12"/>
+        <location filename="../filenameeditwidget.cpp" line="13"/>
         <source>All files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="52"/>
+        <location filename="../filenameeditwidget.cpp" line="53"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>

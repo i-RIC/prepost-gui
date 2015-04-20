@@ -1037,98 +1037,103 @@ Do you really want to import this file?</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="103"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="113"/>
+        <source>Output file:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="123"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="109"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="129"/>
         <source>All timesteps</source>
         <translation>全タイムステップ</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="118"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="138"/>
         <source>Start:</source>
         <translation>開始:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="135"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="155"/>
         <source>End:</source>
         <translation>終了:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="152"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="172"/>
         <source>Skip rate :</source>
         <translation>間引き:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="191"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="103"/>
         <source>Prefix:</source>
         <translation>プレフィックス:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="201"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="211"/>
         <source>Region</source>
         <translation>領域</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="207"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="217"/>
         <source>Full region</source>
         <translation>全領域</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="214"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="224"/>
         <source>I Min</source>
         <translation>I 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="237"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="247"/>
         <source>I Max</source>
         <translation>I 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="260"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="270"/>
         <source>J Min</source>
         <translation>J 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="283"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="293"/>
         <source>J Max</source>
         <translation>J 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="306"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="316"/>
         <source>K Min</source>
         <translation>K 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="329"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="339"/>
         <source>K Max</source>
         <translation>K 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="370"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="370"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="380"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="397"/>
         <source>Show &amp;Detail</source>
         <translation>詳細を表示(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="348"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="373"/>
         <source>Select Folder</source>
         <translation>フォルダの選択</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="357"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="383"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="357"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="383"/>
         <source>Folder %1 does not exists.</source>
         <translation>フォルダ %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="368"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="395"/>
         <source>&amp;Hide Detail</source>
         <translation>詳細を隠す(&amp;H)</translation>
     </message>
@@ -1699,78 +1704,78 @@ Do you really want to import this file?</source>
 <context>
     <name>Structured2DGrid</name>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="222"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="223"/>
         <source>An edge line intersects with that of another cell in this grid.</source>
         <translation>格子線が、他のセルの格子線と交差しています。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="228"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="229"/>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
         <translation>辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="235"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="236"/>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
         <translation>セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="241"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="242"/>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
         <translation>格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="250"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="251"/>
         <source>* Cells where edges intersect</source>
         <translation>* 格子線が交差しているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="271"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="317"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="353"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="388"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="417"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="272"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="318"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="354"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="389"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="418"/>
         <source>Not exist</source>
         <translation>ありません</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="282"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="283"/>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
         <translation>* 辺のアスペクト比が %1 以上のセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="297"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="307"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="298"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="308"/>
         <source>I, J, Aspect ratio</source>
         <translation>I, J, アスペクト比</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="299"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="300"/>
         <source>Edge length too small</source>
         <translation>辺の長さが小さすぎます</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="326"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="327"/>
         <source>* Cells where angle of cell vertex is below %1</source>
         <translation>* セルの頂点の角度が %1 以下になっているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="344"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="345"/>
         <source>I, J, Angle</source>
         <translation>I, J, 角度</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="362"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="363"/>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
         <translation>セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="378"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="407"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="379"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="408"/>
         <source>I, J, Variation</source>
         <translation>I, J, 変化率</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="393"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="394"/>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>

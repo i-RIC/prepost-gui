@@ -35,12 +35,12 @@
 <context>
     <name>Post2dWindow</name>
     <message>
-        <location filename="../post2dwindow.cpp" line="40"/>
+        <location filename="../post2dwindow.cpp" line="41"/>
         <source>Post-processing (2D): %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="177"/>
+        <location filename="../post2dwindow.cpp" line="178"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -505,8 +505,30 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="52"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="58"/>
         <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
+        <source>To export KML for street view, display with Contour Fringe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
+        <source>To export KML for street view, value range should be set up manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1084,12 +1106,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="443"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="449"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="579"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="585"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1127,7 +1149,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="148"/>
+        <location filename="../post2dwindow.cpp" line="149"/>
         <source>Edit Background Color</source>
         <translation type="unfinished"></translation>
     </message>

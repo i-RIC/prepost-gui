@@ -56,32 +56,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="672"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="673"/>
         <source>Move Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="748"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="750"/>
         <source>Insert Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="892"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="895"/>
         <source>Remove Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1122"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1126"/>
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1416"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1421"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1416"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1421"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
