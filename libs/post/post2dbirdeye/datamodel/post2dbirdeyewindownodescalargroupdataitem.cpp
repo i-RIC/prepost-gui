@@ -608,9 +608,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeW
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post2dBirdEyeWindowNodeScalarDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dBirdEyeWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dBirdEyeWindowNodeScalarDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

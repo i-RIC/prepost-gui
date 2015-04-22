@@ -178,9 +178,8 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::update()
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post3dWindowNodeVectorStreamlineDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post3dWindowNodeVectorStreamlineDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

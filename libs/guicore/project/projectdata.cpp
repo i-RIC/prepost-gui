@@ -371,16 +371,14 @@ void ProjectData::showPropertyDialog()
 
 void ProjectData::checkGridConditions()
 {
-	QList<SolverDefinitionGridType*>::const_iterator it;
 	QStringList ngtypes;
 	const QList<SolverDefinitionGridType*> gtypes = m_solverDefinition->gridTypes();
-	for (it = gtypes.begin(); it != gtypes.end(); ++it){
+	for (auto it = gtypes.begin(); it != gtypes.end(); ++it){
 		const SolverDefinitionGridType* gt = *it;
 		bool ok = false;
 		ok = (gt->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid);
 		const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
-		QList<SolverDefinitionGridRelatedCondition*>::const_iterator cit;
-		for (cit = conds.begin(); cit != conds.end(); ++cit){
+		for (auto cit = conds.begin(); cit != conds.end(); ++cit){
 			const SolverDefinitionGridRelatedCondition* cond = *cit;
 			ok = ok || (cond->name() == "Elevation");
 		}

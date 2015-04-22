@@ -86,12 +86,10 @@ Post2dWindowCellFlagSettingDialog::~Post2dWindowCellFlagSettingDialog()
 void Post2dWindowCellFlagSettingDialog::setupDialog()
 {
 //	const QList<SolverDefinitionGridRelatedCondition*>& conds = m_gridType->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedCondition*>::const_iterator it;
 	// create list.
 	ui->tableWidget->clearContents();
 	ui->tableWidget->setRowCount(0);
-	QList<Post2dWindowCellFlagSetting>::iterator it2;
-	for (it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
+	for (auto it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
 		ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
 		int rownum = ui->tableWidget->rowCount() - 1;
 
@@ -207,8 +205,7 @@ void Post2dWindowCellFlagSettingDialog::handleShownSelectionChange(const QItemSe
 {
 	QSet<int> rows;
 	int lastrow = 0;
-	QList<QItemSelectionRange>::const_iterator it;
-	for (it = selected.begin(); it != selected.end(); ++it){
+	for (auto it = selected.begin(); it != selected.end(); ++it){
 		QItemSelectionRange range = *it;
 		for (int row = range.top(); row <= range.bottom(); ++row){
 			rows.insert(row);

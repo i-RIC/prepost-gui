@@ -231,8 +231,7 @@ void PreProcessorBCDataItem::updateElements()
 	if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode){
 		m_verticesGrid->Reset();
 		m_verticesGrid->SetPoints(tmpparent->grid()->vtkGrid()->GetPoints());
-		QSet<vtkIdType>::const_iterator it;
-		for (it = m_indices.begin(); it != m_indices.end(); ++it){
+		for (auto it = m_indices.begin(); it != m_indices.end(); ++it){
 			vtkIdType index = *it;
 			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
 			v->GetPointIds()->SetId(0, index);
@@ -243,8 +242,7 @@ void PreProcessorBCDataItem::updateElements()
 		m_verticesActor->VisibilityOn();
 	} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pCell){
 		vtkSmartPointer<vtkIdList> cellids = vtkSmartPointer<vtkIdList>::New();
-		QSet<vtkIdType>::const_iterator it;
-		for (it = m_indices.begin(); it != m_indices.end(); ++it){
+		for (auto it = m_indices.begin(); it != m_indices.end(); ++it){
 			int index = *it;
 			cellids->InsertNextId(index);
 		}
@@ -257,9 +255,8 @@ void PreProcessorBCDataItem::updateElements()
 		m_edgesPolyData->Reset();
 		m_edgesPolyData->SetPoints(ps->GetPoints());
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-		QSet<Edge>::const_iterator it;
 		vtkIdType nodes[2];
-		for (it = m_edges.begin(); it != m_edges.end(); ++it){
+		for (auto it = m_edges.begin(); it != m_edges.end(); ++it){
 			Edge e = *it;
 			nodes[0] = e.vertex1();
 			nodes[1] = e.vertex2();
@@ -306,8 +303,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 		vtkPoints* points = pset->GetPoints();
 		int pnum = 0;
 		if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode){
-			QSet<vtkIdType>::const_iterator it;
-			for (it = m_indices.begin(); it != m_indices.end(); ++it){
+			for (auto it = m_indices.begin(); it != m_indices.end(); ++it){
 				double tmpv[3];
 				points->GetPoint(*it, tmpv);
 				for (int i = 0; i < 3; ++i) {
@@ -316,8 +312,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 				++ pnum;
 			}
 		} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pCell){
-			QSet<vtkIdType>::const_iterator it;
-			for (it = m_indices.begin(); it != m_indices.end(); ++it){
+			for (auto it = m_indices.begin(); it != m_indices.end(); ++it){
 				vtkCell* cell = pset->GetCell(*it);
 				for (int i = 0; i < cell->GetNumberOfPoints(); ++i){
 					double tmpv[3];
@@ -329,8 +324,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 				}
 			}
 		} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pEdge){
-			QSet<Edge>::const_iterator it;
-			for (it = m_edges.begin(); it != m_edges.end(); ++it){
+			for (auto it = m_edges.begin(); it != m_edges.end(); ++it){
 				double tmpv[3];
 				points->GetPoint(it->vertex1(), tmpv);
 				for (int i = 0; i < 3; ++i) {
@@ -643,16 +637,14 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 	QList<unsigned int> tmplist;
 	if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 			m_condition->position() == SolverDefinitionBoundaryCondition::pCell){
-		QSet<vtkIdType>::const_iterator it;
-		for (it = m_indices.begin(); it != m_indices.end(); ++it){
+		for (auto it = m_indices.begin(); it != m_indices.end(); ++it){
 			int index = *it;
 			tmplist.append(index);
 		}
 		qSort(tmplist);
 	} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pEdge){
 		QVector<Edge> tmpedges;
-		QSet<Edge>::iterator it;
-		for (it = m_edges.begin(); it != m_edges.end(); ++it){
+		for (auto it = m_edges.begin(); it != m_edges.end(); ++it){
 			Edge e = *it;
 			tmpedges.append(e);
 		}

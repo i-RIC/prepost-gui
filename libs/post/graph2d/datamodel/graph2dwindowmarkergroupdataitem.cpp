@@ -71,8 +71,7 @@ void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 	// delete all current children.
 	dataModel()->objectBrowserView()->blockSignals(true);
 	dataModel()->itemModel()->blockSignals(true);
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		delete *it;
 	}
 	// setup new items.

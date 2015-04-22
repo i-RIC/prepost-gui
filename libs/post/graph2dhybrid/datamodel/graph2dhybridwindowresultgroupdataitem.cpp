@@ -67,8 +67,7 @@ void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
 		return;
 	}
 	updating = true;
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(*it);
 		item->update(fn);
 	}
@@ -87,8 +86,7 @@ void Graph2dHybridWindowResultGroupDataItem::doSaveToProjectMainFile(QXmlStreamW
 
 void Graph2dHybridWindowResultGroupDataItem::updateChildren(const Graph2dHybridWindowResultSetting& setting){
 	// delete all current children.
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		delete *it;
 	}
 	m_childItems.clear();

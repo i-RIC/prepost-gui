@@ -310,9 +310,8 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 	if (baseid == 0){
 		// no base for dimension dim.
 		if (zonenames.count() == 0){return false;}
-		QList<PostZoneDataContainer*>::iterator it;
 		zonenames.clear();
-		for (it = containers.begin(); it != containers.end(); ++it){
+		for (auto it = containers.begin(); it != containers.end(); ++it){
 			delete *it;
 		}
 		containers.clear();
@@ -334,8 +333,7 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 	}
 	zonenames = tmpzonenames;
 	// clear the current zone containers first.
-	QList<PostZoneDataContainer*>::iterator it;
-	for (it = containers.begin(); it != containers.end(); ++it){
+	for (auto it = containers.begin(); it != containers.end(); ++it){
 		delete *it;
 	}
 	containers.clear();

@@ -198,8 +198,7 @@ void Post3dWindowContourGroupDataItem::setSetting(const QString& sol, ContourSet
 
 void Post3dWindowContourGroupDataItem::updateChildActors()
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		f->update();
 		vtkAlgorithmOutput *algo = f->getOutputPort();
@@ -457,8 +456,7 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 	GraphicsWindowDataItem::updateVisibility(visible);
 
 	bool childVis = false;
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		if (f->standardItem()->checkState() == Qt::Checked){
 			childVis = true;
@@ -540,8 +538,7 @@ LookupTableContainer* Post3dWindowContourGroupDataItem::lookupTable()
 QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowContourGroupDataItem::faceMap()
 {
 	QMap<QString, Post3dWindowFaceDataItem::Setting> map;
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* fItem = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		map.insert(fItem->standardItem()->text(), fItem->setting());
 	}

@@ -234,8 +234,7 @@ double RawDataRiverPathPointExpandDialog::getRatio(RawDataRiverPathPoint* p){
 void RawDataRiverPathPointExpandDialog::getRatios(QList<double>& ratios)
 {
 	ratios.clear();
-	QList<RawDataRiverPathPoint*>::iterator it;
-	for (it = m_points.begin(); it != m_points.end(); ++it){
+	for (auto it = m_points.begin(); it != m_points.end(); ++it){
 		double r = getRatio(*it);
 		ratios.append(r);
 	}

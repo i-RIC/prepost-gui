@@ -405,10 +405,8 @@ Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(co
 
 bool Graph2dHybridWindowResultSetting::dataAvailable()
 {
-	QMap<XAxisMode, QMap<DimType, QList<DataTypeInfo*> > >::iterator it;
-	for (it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it){
-		QMap<DimType, QList<DataTypeInfo*> >::iterator it2;
-		for (it2 = it.value().begin(); it2 != it.value().end(); ++it2){
+	for (auto it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it){
+		for (auto it2 = it.value().begin(); it2 != it.value().end(); ++it2){
 			if (it2.value().count() > 0){return true;}
 		}
 	}

@@ -87,8 +87,7 @@ public:
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
 		bool same = true;
 		V val;
-		QVector<vtkIdType>::iterator it;
-		it = indices.begin();
+		auto it = indices.begin();
 		if (it == indices.end()){
 			// no point is selected!
 			clearValue();
@@ -113,8 +112,7 @@ public:
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
 		vtkDataArray* oldValues = c->dataArrayCopy();
 		V val = value();
-		QVector<vtkIdType>::iterator it;
-		for (it = indices.begin(); it != indices.end(); ++it){
+		for (auto it = indices.begin(); it != indices.end(); ++it){
 			c->setValue(*it, val);
 		}
 		vtkDataArray* newValues = c->dataArrayCopy();

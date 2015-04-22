@@ -57,8 +57,7 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 
 Post3dWindowGridTypeDataItem::~Post3dWindowGridTypeDataItem()
 {
-	QList<Post3dWindowZoneDataItem*>::iterator z_it;
-	for(z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
+	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
 		delete *z_it;
 	}
 }

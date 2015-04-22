@@ -96,13 +96,11 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 {
 	m_setting = setting;
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
-	QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >::const_iterator it;
 	ui->xAxisComboBox->blockSignals(true);
-	for (it = map.begin(); it != map.end(); ++it){
+	for (auto it = map.begin(); it != map.end(); ++it){
 		bool dataExist = false;
 		const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = it.value();
-		QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >::const_iterator it2;
-		for (it2 = m.begin(); it2 != m.end(); ++it2){
+		for (auto it2 = m.begin(); it2 != m.end(); ++it2){
 			dataExist = dataExist || (it2.value().count() > 0);
 		}
 		if (dataExist){

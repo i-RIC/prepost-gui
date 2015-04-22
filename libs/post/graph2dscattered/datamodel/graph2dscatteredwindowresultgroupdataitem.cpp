@@ -29,8 +29,7 @@ void Graph2dScatteredWindowResultGroupDataItem::updateData(int fn)
 		return;
 	}
 	updating = true;
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Graph2dScatteredWindowResultDataItem* item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(*it);
 		item->update(fn);
 	}
@@ -49,8 +48,7 @@ void Graph2dScatteredWindowResultGroupDataItem::doSaveToProjectMainFile(QXmlStre
 
 void Graph2dScatteredWindowResultGroupDataItem::updateChildren(const Graph2dScatteredWindowResultSetting& setting){
 	// delete all current children.
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		delete *it;
 	}
 	m_childItems.clear();

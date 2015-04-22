@@ -55,8 +55,7 @@ void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 	if(projectData()->mainfile()->backgroundImages().size() == 0) return;
 
 	QList<BackgroundImageInfo*> images = projectData()->mainfile()->backgroundImages();
-	QList<BackgroundImageInfo*>::iterator it;
-	for(it = images.begin(); it != images.end(); ++it){
+	for (auto it = images.begin(); it != images.end(); ++it){
 		Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(*it, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(iItem);

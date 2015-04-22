@@ -1918,8 +1918,7 @@ void RawDataPolygon::copyShape(RawDataPolygon* polygon)
 void RawDataPolygon::doApplyOffset(double x, double y)
 {
 	applyOffsetToAbstractPolygon(m_gridRegionPolygon, x, y);
-	QList<RawDataPolygonHolePolygon*>::iterator it;
-	for (it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it){
+	for (auto it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it){
 		applyOffsetToAbstractPolygon(*it, x, y);
 	}
 	updateGrid(true);

@@ -32,14 +32,13 @@ void PreProcessorCustomMappingSetting::load(const QDomNode& node)
 
 void PreProcessorCustomMappingSetting::save(QXmlStreamWriter& writer) const
 {
-	QMap<QString, bool>::const_iterator it;
-	for (it = attSettings.begin(); it != attSettings.end(); ++it){
+	for (auto it = attSettings.begin(); it != attSettings.end(); ++it){
 		QString name = it.key();
 		bool val = it.value();
 		QString aName = QString("att_%1").arg(name);
 		iRIC::setBooleanAttribute(writer, attName(aName), val);
 	}
-	for (it = bcSettings.begin(); it != bcSettings.end(); ++it){
+	for (auto it = bcSettings.begin(); it != bcSettings.end(); ++it){
 		QString name = it.key();
 		bool val = it.value();
 		QString aName = QString("bc_%1").arg(name);

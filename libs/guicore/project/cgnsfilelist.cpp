@@ -40,8 +40,7 @@ void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	{
 		writer.writeAttribute("current", m_current->filename());
 	}
-	QMap<QString, CgnsFileEntry*>::iterator it;
-	for (it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
 		writer.writeStartElement("CgnsFileEntry");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -50,8 +49,7 @@ void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles()
 {
 	QList<CgnsFileList::CgnsFileEntry*> ret;
-	QMap<QString, CgnsFileEntry*>::iterator it;
-	for (it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
 		ret.push_back(*it);
 	}
 	return ret;
@@ -92,8 +90,7 @@ void CgnsFileList::remove(const QString& name){
 QStringList CgnsFileList::containedFiles()
 {
 	QStringList ret;
-	QMap<QString, CgnsFileEntry*>::iterator it;
-	for (it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
 		QString fname = (*it)->filename();
 		fname.append(".cgn");
 		ret << fname;

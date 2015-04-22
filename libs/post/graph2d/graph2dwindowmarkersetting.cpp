@@ -32,8 +32,7 @@ QList<Graph2dWindowDataItem*> Graph2dWindowMarkerSetting::setupItems(Graph2dWind
 QList<Graph2dWindowDataItem*> Graph2dWindowMarkerSetting::setupItems(const QList<Graph2dWindowMarkerSettingItem>& settings, Graph2dWindowDataItem* parent)
 {
 	QList<Graph2dWindowDataItem*> ret;
-	QList<Graph2dWindowMarkerSettingItem>::const_iterator it;
-	for (it = settings.begin(); it != settings.end(); ++it){
+	for (auto it = settings.begin(); it != settings.end(); ++it){
 		Graph2dWindowMarkerDataItem* item = new Graph2dWindowMarkerDataItem(*it, parent);
 		ret.append(item);
 	}

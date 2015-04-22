@@ -574,8 +574,7 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent())->gridType();
 	const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedCondition*>::const_iterator it;
-	for (it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it){
 		const SolverDefinitionGridRelatedCondition* cond = *it;
 		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
 		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);

@@ -136,8 +136,7 @@ unsigned int RawDataRiverCrosssection::numOfAltitudes(bool OnlyActive){
 		return static_cast<unsigned int>(m_altitudeInfo.count());
 	}
 	unsigned int actives = 0;
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		if (it->active()){
 			++actives;
 		}
@@ -163,9 +162,8 @@ QList<int> RawDataRiverCrosssection::selectRegion(double position1, double posit
 		heightmax = height1;
 	}
 	QList<int> result;
-	AltitudeList::iterator it;
-	int i;
-	for (i = 0, it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++i, ++it){
+	int i = 0;
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++i, ++it){
 		if (
 			it->position() >= posmin &&
 			it->position() <= posmax &&
@@ -180,8 +178,6 @@ QList<int> RawDataRiverCrosssection::selectRegion(double position1, double posit
 }
 
 void RawDataRiverCrosssection::movePoint(double Hoffset, double Voffset, const QList<int>& Indices){
-	AltitudeList::iterator it;
-
 	for (int i = 0; i < Indices.count(); ++i){
 		if (m_fixedPointLSet && Indices.at(i) == m_fixedPointL){
 			Hoffset = 0;
@@ -262,9 +258,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 
 	// When fixed points or the end points are included, they can not be inactivated.
 	if (! a){
-		RawDataRiverCrosssection::AltitudeList::iterator ia;
-		QList<int>::const_iterator ii;
-		for (ii = indices.begin(); ii != indices.end(); ++ii){
+		for (auto ii = indices.begin(); ii != indices.end(); ++ii){
 			int index = *ii;
 			// Left fixed point exists
 			if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)){
@@ -276,8 +270,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 			}
 		}
 	}
-	QList<int>::const_iterator ii;
-	for (ii = indices.begin(); ii != indices.end(); ++ii){
+	for (auto ii = indices.begin(); ii != indices.end(); ++ii){
 		(*(m_altitudeInfo.begin() + (*ii))).setActive(a);
 //		m_altitudeInfo[*ii].setActive(a);
 	}
@@ -293,8 +286,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 
 bool RawDataRiverCrosssection::enoughActivePoints(){
 	int count = 0;
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		if (it->active()){
 			++count;
 			if (count == 2){return true;}

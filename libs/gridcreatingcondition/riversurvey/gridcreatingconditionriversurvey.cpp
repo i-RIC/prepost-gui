@@ -1115,8 +1115,7 @@ void GridCreatingConditionRiverSurvey::setAnalogyCtrlPoints()
 			tmpp = tmpp->nextPoint();
 		}
 	}
-	std::map<RawDataRiverPathPoint*, iset>::iterator psetit;
-	for (psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit){
+	for (auto psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit){
 		CtrlPointSelectionInfo sinfo;
 		sinfo.Point = psetit->first;
 

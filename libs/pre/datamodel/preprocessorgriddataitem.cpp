@@ -175,8 +175,7 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 			m_grid->loadFromCgnsFile(fn);
 		}
 	}
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->loadFromCgnsFile(fn);
 	}
 	// loading data finished.
@@ -243,8 +242,7 @@ void PreProcessorGridDataItem::importGrid()
 	const QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(tmpgrid->gridType());
 	for (auto it = importerList.begin(); it != importerList.end(); ++it){
 		QStringList flist = (*it)->fileDialogFilters();
-		QStringList::iterator fit;
-		for (fit = flist.begin(); fit != flist.end(); ++fit){
+		for (auto fit = flist.begin(); fit != flist.end(); ++fit){
 			filters.append(*fit);
 			importers.append(*it);
 		}

@@ -154,13 +154,11 @@ void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, con
 
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 {
-	QList<SolverDefinitionGridRelatedCondition*>::const_iterator it;
-	for (it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
-	QList<SolverDefinitionGridRelatedComplexCondition*>::const_iterator cit;
-	for (cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit){
+	for (auto cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit){
 		SolverDefinitionGridRelatedComplexCondition* cond = *cit;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}

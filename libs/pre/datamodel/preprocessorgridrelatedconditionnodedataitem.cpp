@@ -370,8 +370,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::openVerticalCrossSectionWindo
 
 void PreProcessorGridRelatedConditionNodeDataItem::updateCrossectionWindows()
 {
-	QList<PreProcessorGridCrosssectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
 		PreProcessorGridCrosssectionWindow* w = (*w_it)->window();
 		w->setupData();
 		w->updateView();
@@ -380,8 +379,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::updateCrossectionWindows()
 
 void PreProcessorGridRelatedConditionNodeDataItem::requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item)
 {
-	QList<PreProcessorGridCrosssectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		if (*it == item){
 			m_crosssectionWindows.erase(it);
 			delete item;
@@ -392,8 +390,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::requestCrosssectionWindowDele
 
 void PreProcessorGridRelatedConditionNodeDataItem::unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item)
 {
-	QList<PreProcessorGridCrosssectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		if (*it == item){
 			m_crosssectionWindows.erase(it);
 			return;
@@ -403,8 +400,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::unregisterCrosssectionWindow(
 
 void PreProcessorGridRelatedConditionNodeDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
 {
-	QList<PreProcessorGridCrosssectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		PreProcessorGridCrosssectionWindowProjectDataItem* item = *it;
 		item->window()->informSelectedVerticesChanged(vertices);
 	}

@@ -119,19 +119,17 @@ PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(model->rootDataItem());
 	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
 	bool ngexists = false;
 	bool okexists = false;
-	for (it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
+	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
 		PreProcessorGridTypeDataItem* typeItem = (*it);
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it2;
-		for (it2 = conds.begin(); it2 != conds.end(); ++it2){
+		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2){
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
 			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
 			if (g->grid() == 0){
 				ngexists = true;
-			}else{
+			} else {
 				okexists = true;
 			}
 		}
@@ -159,17 +157,15 @@ const QString PreProcessorWindow::checkGrid(bool detail)
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(model->rootDataItem());
 	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
 	QList<QString> gridNames;
 	QList<QString> gridMessages;
 	QFile logFile(model->projectData()->absoluteFileName("gridcheck.txt"));
 	logFile.open(QFile::WriteOnly | QFile::Text);
 	QTextStream logStream(&logFile);
-	for (it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
+	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
 		PreProcessorGridTypeDataItem* typeItem = (*it);
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it2;
-		for (it2 = conds.begin(); it2 != conds.end(); ++it2){
+		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2){
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
 			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
 			Grid* grid = g->grid();

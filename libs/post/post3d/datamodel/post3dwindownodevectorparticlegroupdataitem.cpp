@@ -271,9 +271,8 @@ void Post3dWindowNodeVectorParticleGroupDataItem::update()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post3dWindowNodeVectorParticleDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowNodeVectorParticleDataItem* tmpItem = dynamic_cast<Post3dWindowNodeVectorParticleDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

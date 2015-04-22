@@ -108,9 +108,8 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	ugrid->BuildLinks();
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = grid2d->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 

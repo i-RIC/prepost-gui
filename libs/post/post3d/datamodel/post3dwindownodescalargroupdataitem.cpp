@@ -371,9 +371,8 @@ void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScala
 
 void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post3dWindowNodeScalarDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post3dWindowNodeScalarDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

@@ -49,8 +49,7 @@ void ColorSource::doLoadFromProjectMainFile(const QDomNode& node)
 
 void ColorSource::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList<QColor>::iterator it;
-	for (it = m_colors.begin(); it != m_colors.end(); ++it){
+	for (auto it = m_colors.begin(); it != m_colors.end(); ++it){
 		QColor c = *it;
 		writer.writeStartElement("Color");
 		writer.writeAttribute("value", iRIC::QColorToString(c));

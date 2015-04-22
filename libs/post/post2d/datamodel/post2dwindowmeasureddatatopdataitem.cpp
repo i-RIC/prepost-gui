@@ -57,8 +57,7 @@ void Post2dWindowMeasuredDataTopDataItem::setupChildItem()
 {
 	if (projectData()->mainfile()->measuredDatas().count() == 0){return;}
 	const QList<MeasuredData*>& measuredDatas = projectData()->mainfile()->measuredDatas();
-	QList<MeasuredData*>::const_iterator it;
-	for (it = measuredDatas.begin(); it != measuredDatas.end(); ++it){
+	for (auto it = measuredDatas.begin(); it != measuredDatas.end(); ++it){
 		MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(*it, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(fItem);
@@ -77,8 +76,7 @@ void Post2dWindowMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void Post2dWindowMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("MeasuredDataFile");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -88,8 +86,7 @@ void Post2dWindowMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 const QList<MeasuredDataFileDataItem *> Post2dWindowMeasuredDataTopDataItem::fileDataItems() const
 {
 	QList<MeasuredDataFileDataItem*> ret;
-	QList <GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		MeasuredDataFileDataItem* item = dynamic_cast<MeasuredDataFileDataItem*>(*it);
 		ret.append(item);
 	}
@@ -128,7 +125,7 @@ void Post2dWindowMeasuredDataTopDataItem::addChildItem()
 
 void Post2dWindowMeasuredDataTopDataItem::deleteChildItem(int index)
 {
-	QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	delete *(it + index);
 	dynamic_cast<Post2dWindowRootDataItem*>(parent())->updateItemMap();
 	renderGraphicsView();

@@ -85,8 +85,7 @@ void Post2dWindowRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Post2dWindowRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter &writer){
 	writer.writeAttribute("name", m_condition->name());
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("RawData");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

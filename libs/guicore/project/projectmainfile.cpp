@@ -77,8 +77,7 @@ ProjectMainFile::~ProjectMainFile()
 {
 	/// delete m_backgroundImages manually, so that background images destructor
 	/// can access m_renderers.
-	QList<BackgroundImageInfo*>::iterator it;
-	for (it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
+	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
 		delete *it;
 	}
 

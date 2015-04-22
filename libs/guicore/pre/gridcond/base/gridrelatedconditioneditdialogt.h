@@ -39,8 +39,7 @@ public:
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
 		bool same = true;
 		V val;
-		QVector<unsigned int>::iterator it;
-		it = indices.begin();
+		auto it = indices.begin();
 		val = c->value(*it);
 		++it;
 		while (same && it != indices.end()){
@@ -59,8 +58,7 @@ public:
 		if (! m_valueSelected){return;}
 		V val = value();
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
-		QVector<unsigned int>::iterator it;
-		for (it = indices.begin(); it != indices.end(); ++it){
+		for (auto it = indices.begin(); it != indices.end(); ++it){
 			c->setValue(*it, val);
 		}
 		c->dataArray()->Modified();

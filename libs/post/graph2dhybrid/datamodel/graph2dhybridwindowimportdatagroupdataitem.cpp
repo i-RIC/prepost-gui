@@ -26,8 +26,7 @@ Graph2dHybridWindowImportDataGroupDataItem::~Graph2dHybridWindowImportDataGroupD
 
 void Graph2dHybridWindowImportDataGroupDataItem::updateData()
 {
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Graph2dHybridWindowImportDataDataItem* item = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(*it);
 		item->update();
 	}

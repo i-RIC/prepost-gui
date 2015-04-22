@@ -64,8 +64,7 @@ PreProcessorGridRelatedConditionNodeGroupDataItem::PreProcessorGridRelatedCondit
 	p->standardItem()->takeRow(m_standardItem->row());
 	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	const QList<SolverDefinitionGridRelatedCondition*>& conds = typeItem->gridType()->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedCondition*>::const_iterator it;
-	for (it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it){
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		if (cond->position() == SolverDefinitionGridRelatedCondition::Node){
 			// this is a node condition.
@@ -76,8 +75,7 @@ PreProcessorGridRelatedConditionNodeGroupDataItem::PreProcessorGridRelatedCondit
 	}
 
 	const QList<SolverDefinitionGridRelatedComplexCondition*>& compconds = typeItem->gridType()->gridRelatedComplexConditions();
-	QList<SolverDefinitionGridRelatedComplexCondition*>::const_iterator cit;
-	for (cit = compconds.begin(); cit != compconds.end(); ++cit){
+	for (auto cit = compconds.begin(); cit != compconds.end(); ++cit){
 		SolverDefinitionGridRelatedComplexCondition* cond = *cit;
 		if (cond->position() == SolverDefinitionGridRelatedComplexCondition::Node){
 			// this is a node condition.
@@ -152,9 +150,8 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::exclusivelyCheck(PreProc
 
 void PreProcessorGridRelatedConditionNodeGroupDataItem::setCurrentCondition(const QString& currentCond)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	PreProcessorGridRelatedConditionNodeDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorGridRelatedConditionNodeDataItem* tmpItem = dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it);
 		if (tmpItem->condition()->name() == currentCond){
 			current = tmpItem;
@@ -275,13 +272,12 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::updateActorSettings()
 void PreProcessorGridRelatedConditionNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_opacityPercent = loadOpacityPercent(node);
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		QString name = dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it)->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name);
 		if (! childNode.isNull()){(*it)->loadFromProjectMainFile(childNode);}
 	}
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorGridRelatedConditionNodeDataItem* tmpItem = dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it);
 		if (tmpItem->standardItem()->checkState() == Qt::Checked){
 			// this is the current Condition!
@@ -293,8 +289,7 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::doLoadFromProjectMainFil
 void PreProcessorGridRelatedConditionNodeGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writeOpacityPercent(m_opacityPercent, writer);
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("NodeAttribute");
 		writer.writeAttribute("name", dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it)->condition()->name());
 		(*it)->saveToProjectMainFile(writer);
@@ -403,8 +398,7 @@ PreProcessorGridRelatedConditionNodeDataItem* PreProcessorGridRelatedConditionNo
 const QList<PreProcessorGridRelatedConditionNodeDataItem*> PreProcessorGridRelatedConditionNodeGroupDataItem::conditions() const
 {
 	QList<PreProcessorGridRelatedConditionNodeDataItem*> ret;
-	QList <GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		ret.append(dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it));
 	}
 	return ret;
@@ -425,8 +419,7 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::handleStandardItemChange
 
 void PreProcessorGridRelatedConditionNodeGroupDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin();it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin();it != m_childItems.end(); ++it){
 		PreProcessorGridRelatedConditionNodeDataItem* item =
 				dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(*it);
 		item->informSelectedVerticesChanged(vertices);
@@ -522,8 +515,7 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::updateAttributeBrowser(v
 
 	QList<PropertyBrowserAttribute> atts;
 	const QList<GridRelatedConditionContainer*> conds = grid->gridRelatedConditions();
-	QList<GridRelatedConditionContainer*>::const_iterator it;
-	for (it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it){
 		GridRelatedConditionContainer* cond = *it;
 		GridRelatedConditionIntegerNodeContainer* icond = dynamic_cast<GridRelatedConditionIntegerNodeContainer*>(cond);
 		GridRelatedConditionRealNodeContainer* rcond = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);

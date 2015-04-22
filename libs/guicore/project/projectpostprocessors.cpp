@@ -29,8 +29,7 @@ ProjectPostProcessors::~ProjectPostProcessors()
 	// remove all post processors from the MDI area of main window.
 	QMdiArea* area = dynamic_cast<QMdiArea*> (projectData()->mainWindow()->centralWidget());
 
-	QList<PostProcessorWindowProjectDataItem*>::iterator it;
-	for (it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
 		area->removeSubWindow((*it)->window()->parentWidget());
 	}
 }

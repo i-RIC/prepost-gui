@@ -66,8 +66,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 
 PreProcessorGridTypeDataItem::~PreProcessorGridTypeDataItem()
 {
-	QMap<QString, ScalarsToColorsContainer*>::iterator it;
-	for (it = m_scalarsToColors.begin(); it != m_scalarsToColors.end(); ++it){
+	for (auto it = m_scalarsToColors.begin(); it != m_scalarsToColors.end(); ++it){
 		delete it.value();
 	}
 }
@@ -79,8 +78,7 @@ const QString& PreProcessorGridTypeDataItem::name() const
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const QString& zonename) const
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		if ((*it)->zoneName() == zonename){return *it;}
 	}
 	return 0;
@@ -133,8 +131,7 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	bool ok = true;
 	// first, try "Region".
 	QString nomination(tr("Region"));
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		ok = ok && ((*it)->caption() != nomination);
 	}
 	if (ok){return nomination;}
@@ -145,8 +142,7 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	while (! ok){
 		nom = nomination.arg(i);
 		ok = true;
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-		for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 			ok = ok && ((*it)->caption() != nom);
 		}
 		++i;
@@ -164,8 +160,7 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 	while (! ok){
 		nom = nametemplate.arg(i);
 		ok = true;
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-		for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 			ok = ok && ((*it)->zoneName() != nom);
 		}
 		++i;
@@ -177,8 +172,7 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child)
 {
 	PreProcessorDataItem::unregisterChild(child);
-	QList <PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		if (*it == child){
 			m_conditions.erase(it);
 			return;
@@ -189,8 +183,7 @@ void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child
 
 bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& caption)
 {
-	QList <PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		if ((*it)->caption() == caption){
 			return false;
 		}
@@ -208,9 +201,8 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 	while (! c.isNull()){
 		if (c.nodeName() == "Region"){
 			// find whether a corresponding condition already exists.
-			QList <PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
 			bool found = false;
-			for (it = m_conditions.begin(); ! found && it != m_conditions.end(); ++it){
+			for (auto it = m_conditions.begin(); ! found && it != m_conditions.end(); ++it){
 				if ((*it)->zoneName() == c.toElement().attribute("zoneName")){
 					// found!
 					found = true;
@@ -246,8 +238,7 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	m_rawdataTop->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 	// write region datas.
-	QList <PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		writer.writeStartElement("Region");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -256,15 +247,13 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType* type)
 {
-	QList<SolverDefinitionGridRelatedCondition*>::iterator it;
 	QList<SolverDefinitionGridRelatedCondition*> conditions = type->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedComplexCondition*>::iterator it2;
 	QList<SolverDefinitionGridRelatedComplexCondition*> conditions2 = type->gridRelatedComplexConditions();
-	for (it = conditions.begin(); it != conditions.end(); ++it){
+	for (auto it = conditions.begin(); it != conditions.end(); ++it){
 		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(0);
 		m_scalarsToColors.insert((*it)->name(), c);
 	}
-	for (it2 = conditions2.begin(); it2 != conditions2.end(); ++it2){
+	for (auto it2 = conditions2.begin(); it2 != conditions2.end(); ++it2){
 		ScalarsToColorsContainer* c = (*it2)->createScalarsToColorsContainer(0);
 		m_scalarsToColors.insert((*it2)->name(), c);
 	}

@@ -49,8 +49,7 @@ void Graph2dWindowMarkerSettingDialog::setSetting(const Graph2dWindowMarkerSetti
 void Graph2dWindowMarkerSettingDialog::setupList()
 {
 	ui->markerListWidget->clear();
-	QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem>::iterator it;
-	for (it = m_setting.items().begin(); it != m_setting.items().end(); ++it){
+	for (auto it = m_setting.items().begin(); it != m_setting.items().end(); ++it){
 		Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item = *it;
 		ui->markerListWidget->addItem(label(item));
 	}

@@ -269,8 +269,7 @@ void Post3dWindowArrowGroupDataItem::handlePropertyDialogAccepted(QDialog* propD
 QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowArrowGroupDataItem::faceMap()
 {
 	QMap<QString, Post3dWindowFaceDataItem::Setting> map;
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* fItem = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		map.insert(fItem->standardItem()->text(), fItem->setting());
 	}
@@ -288,8 +287,7 @@ public:
 	}
 	void redo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_newMap.begin(); it != m_newMap.end(); ++it){
+		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -299,8 +297,7 @@ public:
 	}
 	void undo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
+		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -311,8 +308,7 @@ public:
 private:
 	void removeChildren()
 	{
-		QList<GraphicsWindowDataItem*>::iterator it;
-		for (it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
+		for (auto it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
 			delete (*it);
 		}
 		m_item->updateItemMap();
@@ -513,10 +509,9 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 	vtkPoints* inPoints = inPS->GetPoints();
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 
-	QSet<vtkIdType>::iterator it;
 	outPD->CopyAllocate(inPD, pointIds.size());
 	vtkIdType newId = 0;
-	for (it = pointIds.begin(); it != pointIds.end(); ++it){
+	for (auto it = pointIds.begin(); it != pointIds.end(); ++it){
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 		outPD->CopyData(inPD, pointid, newId);

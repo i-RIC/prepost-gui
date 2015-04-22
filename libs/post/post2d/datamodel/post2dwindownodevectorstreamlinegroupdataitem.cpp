@@ -180,9 +180,8 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post2dWindowNodeVectorStreamlineDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorStreamlineDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

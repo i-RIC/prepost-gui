@@ -88,17 +88,16 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	for (int i = rows - 1; i >= 0; --i){
 		m_standardItem->takeRow(i);
 	}
-	QList<GraphicsWindowDataItem*>::const_iterator it;
 	// setup current children set as tmpItemSet.
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> tmpItemMap;
 
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		tmpItemMap.insert(item->bcDataItem(), item);
 	}
 	m_childItems.clear();
 	const QList<GraphicsWindowDataItem*>& children = bcgitem->childItems();
-	for (it = children.begin(); it != children.end(); ++it){
+	for (auto it = children.begin(); it != children.end(); ++it){
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (*it);
 		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
 		if (bcsItem == 0){
@@ -113,8 +112,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		m_itemMap.insert(bcItem, bcsItem);
 	}
 	// needless items removed.
-	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*>::iterator mit;
-	for (mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit){
+	for (auto mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit){
 		delete mit.value();
 	}
 	updateItemMap();
@@ -123,8 +121,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 
 void PreProcessorBCSettingGroupDataItem::loadItems()
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		item->loadData();
 	}
@@ -172,8 +169,7 @@ void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 		return;
 	}
 
-	QList<GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		item->executeMapping(true, 0);
 	}

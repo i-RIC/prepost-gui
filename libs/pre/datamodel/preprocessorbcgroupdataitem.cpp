@@ -58,11 +58,10 @@ PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 {
 	cg_iRIC_Init_BC_Names();
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Grid* grid = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 
 	if (m_projectBuildNumber > 3507){
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 			bcItem->setGrid(grid);
 			bcItem->loadFromCgnsFile(fn);
@@ -98,7 +97,7 @@ void PreProcessorBCGroupDataItem::renumberItemsForProject()
 
 	int number = 1;
 	int condIndex = -1;
-	QList <GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	while (it != m_childItems.end()){
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
@@ -122,7 +121,7 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 
 	int number = 1;
 	int condIndex = -1;
-	QList <GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	while (it != m_childItems.end()){
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		if (tmpItem->isValid()){
@@ -179,8 +178,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 void PreProcessorBCGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	renumberItemsForProject();
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		GraphicsWindowDataItem* item = *it;
 		writer.writeStartElement("BoundaryCondition");
 		item->saveToProjectMainFile(writer);
@@ -229,7 +227,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	QString tmpName(QString("New %1").arg(bc->englishCaption()));
 	item->setName(tmpName);
 	int number = 1;
-	QList <GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	while (it != m_childItems.end()){
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();

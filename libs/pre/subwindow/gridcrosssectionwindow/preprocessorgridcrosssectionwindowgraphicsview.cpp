@@ -248,8 +248,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainte
 	QSet<int> drawnRows;
 
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
-		QModelIndexList::iterator it;
-		for (it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it){
 			QModelIndex index = *it;
 			if (drawnRows.contains(index.row())){continue;}
 			double distance = getDistance(m_parentWindow->targetIndex(), 0, index.row());
@@ -261,8 +260,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainte
 		}
 	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
 		double offset = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionJ() - 1) * 0.5;
-		QModelIndexList::iterator it;
-		for (it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it){
 			QModelIndex index = *it;
 			if (drawnRows.contains(index.row())){continue;}
 			double distance = getDistance(m_parentWindow->targetIndex(), 0, index.row());
@@ -939,9 +937,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::updateActionStatus()
 		m_editAction->setDisabled(true);
 	} else {
 		bool continuous = true;
-		QModelIndexList::iterator it, it2;
-		it = rows.begin();
-		it2 = it;
+		auto it = rows.begin();
+		auto it2 = it;
 		++it2;
 		while (it2 != rows.end()){
 			continuous = continuous && (it2->row() == it->row() + 1);
@@ -965,8 +962,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->condition()->caption()));
 	QVector<vtkIdType> targets;
 	QModelIndexList selIndices = selectionModel()->selectedIndexes();
-	QModelIndexList::iterator it;
-	for (it = selIndices.begin(); it != selIndices.end(); ++it){
+	for (auto it = selIndices.begin(); it != selIndices.end(); ++it){
 		QModelIndex index = *it;
 		vtkIdType targetindex;
 		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){

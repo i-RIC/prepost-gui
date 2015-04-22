@@ -100,10 +100,9 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	vtkPoints* inPoints = tmpgrid->GetPoints();
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 
-	QSet<vtkIdType>::iterator it;
 	outPD->CopyAllocate(inPD, pointIds.size());
 	vtkIdType newId = 0;
-	for (it = pointIds.begin(); it != pointIds.end(); ++it){
+	for (auto it = pointIds.begin(); it != pointIds.end(); ++it){
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 		outPD->CopyData(inPD, pointid, newId);

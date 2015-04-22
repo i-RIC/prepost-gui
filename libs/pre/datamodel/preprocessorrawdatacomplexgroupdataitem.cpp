@@ -95,13 +95,12 @@ void PreProcessorRawDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	RawDataFactory& factory = RawDataFactory::instance();
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
-	QList<RawDataCreator*>::const_iterator it;
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_addSignalMapper){delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (it = creators.begin(); it != creators.end(); ++it){
+	for (auto it = creators.begin(); it != creators.end(); ++it){
 		if ((*it)->isCreatable()){
 			QString title = (*it)->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));

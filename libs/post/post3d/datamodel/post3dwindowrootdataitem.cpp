@@ -34,8 +34,7 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 	// build grid type data items.
-	QList<SolverDefinitionGridType*>::const_iterator it;
-	for (it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it){
 		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(*it, this);
 		m_gridTypeDataItems.append(item);
 		m_childItems.append(item);

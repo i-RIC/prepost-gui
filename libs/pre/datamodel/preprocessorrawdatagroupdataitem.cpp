@@ -478,14 +478,13 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 	boolMap = new bool[dataCount];
 	QList<RawDataMapperSetting*> settings;
 	if (dimensions()->containers().count() == 0){
-		QList <GraphicsWindowDataItem*>::iterator it;
 		// initialize
 
 		// reset the boolmap.
 		for (int i = 0; i < dataCount; ++i){
 			*(boolMap + i) = false;
 		}
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 			RawData* rawdata = item->rawData();
 			RawDataMapper* mapper = rawdata->mapper();
@@ -499,7 +498,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 			*(boolMap + i) = false;
 		}
 		int idx = 0;
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 			RawData* rawdata = item->rawData();
 			RawDataMapper* mapper = rawdata->mapper();
@@ -513,7 +512,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 		}
 		// terminate
 		idx = 0;
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 			RawData* rawdata = item->rawData();
 			RawDataMapper* mapper = rawdata->mapper();
@@ -523,13 +522,12 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 		}
 	} else {
 		int currentIndex = dimensions()->currentIndex();
-		QList <GraphicsWindowDataItem*>::iterator it;
 		// initialize
 
 		for (int i = 0; i < dataCount; ++i){
 			*(boolMap + i) = false;
 		}
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 			RawData* rawdata = item->rawData();
 			RawDataMapper* mapper = rawdata->mapper();
@@ -543,7 +541,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 				*(boolMap + i) = false;
 			}
 			int idx = 0;
-			for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+			for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 				PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 				RawData* rawdata = item->rawData();
 				RawDataMapper* mapper = rawdata->mapper();
@@ -558,7 +556,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 		}
 		// terminate
 		int idx = 0;
-		for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 			RawData* rawdata = item->rawData();
 			RawDataMapper* mapper = rawdata->mapper();
@@ -614,8 +612,7 @@ bool PreProcessorRawDataGroupDataItem::getValueRange(double* min, double* max)
 	*max = 0;
 	bool first = true;
 	bool result = false;
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 		// background item is not used for this.
 		if (m_backgroundItem == item){continue;}
@@ -640,11 +637,9 @@ bool PreProcessorRawDataGroupDataItem::getValueRange(double* min, double* max)
 
 		if (m_importSignalMapper){delete m_importSignalMapper;}
 		m_importSignalMapper = new QSignalMapper(this);
-		QList<RawDataCreator*>::const_iterator it;
-		for (it = creators.begin(); it != creators.end(); ++it){
+		for (auto it = creators.begin(); it != creators.end(); ++it){
 				const QList<RawDataImporter*>& importers = (*it)->importers();
-				QList<RawDataImporter*>::const_iterator imp_it;
-				for (imp_it = importers.begin(); imp_it != importers.end(); ++imp_it){
+				for (auto imp_it = importers.begin(); imp_it != importers.end(); ++imp_it){
 						QString title = (*imp_it)->caption();
 						QAction* importAction = menu->addAction(title.append("..."));
 						m_importSignalMapper->setMapping(importAction, *imp_it);
@@ -660,8 +655,7 @@ bool PreProcessorRawDataGroupDataItem::getValueRange(double* min, double* max)
 const QList<PreProcessorRawdataDataItemInterface*> PreProcessorRawDataGroupDataItem::rawDatas() const
 {
 	QList<PreProcessorRawdataDataItemInterface*> ret;
-	QList <GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(*it);
 		ret.append(item);
 	}
@@ -747,8 +741,7 @@ bool PreProcessorRawDataGroupDataItem::importAvailable()
 	RawDataFactory& factory = RawDataFactory::instance();
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
-	QList<RawDataCreator*>::const_iterator it;
-	for (it = creators.begin(); it != creators.end(); ++it){
+	for (auto it = creators.begin(); it != creators.end(); ++it){
 		const QList<RawDataImporter*>& imps = (*it)->importers();
 		if (imps.count() > 0){return true;}
 	}
@@ -758,8 +751,7 @@ bool PreProcessorRawDataGroupDataItem::importAvailable()
 QStringList PreProcessorRawDataGroupDataItem::getRawDatasNotMapped()
 {
 	QStringList ret;
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 		RawData* rawData = item->rawData();
 		if (! rawData->isMapped()){
@@ -966,8 +958,7 @@ void PreProcessorRawDataGroupDataItem::openCrossSectionWindow(RawDataRiverSurvey
 
 void PreProcessorRawDataGroupDataItem::updateCrossectionWindows()
 {
-	QList<RawDataRiverSurveyCrosssectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
 		RawDataRiverSurveyCrosssectionWindow* w = (*w_it)->window();
 		w->updateRiverSurveys();
 	}

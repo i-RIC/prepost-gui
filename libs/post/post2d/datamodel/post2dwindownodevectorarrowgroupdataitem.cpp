@@ -316,9 +316,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post2dWindowNodeVectorArrowDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeVectorArrowDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorArrowDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

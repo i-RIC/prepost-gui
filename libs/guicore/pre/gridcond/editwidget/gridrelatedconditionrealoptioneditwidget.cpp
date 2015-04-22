@@ -22,7 +22,6 @@ void GridRelatedConditionRealOptionEditWidget::setupWidget()
 	m_widget->clear();
 	m_values.clear();
 
-	QMap<double, QString>::iterator it;
 	int i = 0;
 	if (m_valueCleared){
 		m_widget->addItem("");
@@ -30,7 +29,7 @@ void GridRelatedConditionRealOptionEditWidget::setupWidget()
 		++i;
 	}
 	int index = 0;
-	for (it = m_enumerations.begin(); it != m_enumerations.end(); ++it){
+	for (auto it = m_enumerations.begin(); it != m_enumerations.end(); ++it){
 		m_widget->addItem(it.value());
 		m_values.append(it.key());
 		if (it.key() == m_value){index = i;}
@@ -50,6 +49,7 @@ QSize GridRelatedConditionRealOptionEditWidget::sizeHint() const
 {
 	return m_widget->sizeHint();
 }
+
 QSize GridRelatedConditionRealOptionEditWidget::minimumSizeHint() const
 {
 	return m_widget->sizeHint();

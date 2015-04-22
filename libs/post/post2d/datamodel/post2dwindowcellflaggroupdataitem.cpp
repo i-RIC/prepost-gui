@@ -76,8 +76,7 @@ void Post2dWindowCellFlagGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
 QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
 {
 	QList<Post2dWindowCellFlagSetting> ret;
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		Post2dWindowCellFlagSetting setting;
 		setting.attributeName = item->attributeName();
@@ -91,9 +90,8 @@ QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
 
 void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCellFlagSetting>& settings, int opacity)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
 	QMap<Post2dWindowCellFlagSetting, Post2dWindowCellFlagDataItem*> map;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		Post2dWindowCellFlagSetting setting;
 		setting.attributeName = item->attributeName();

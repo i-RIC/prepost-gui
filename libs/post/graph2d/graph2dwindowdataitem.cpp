@@ -92,8 +92,7 @@ void Graph2dWindowDataItem::setEnabled(bool enabled)
 
 void Graph2dWindowDataItem::unregisterChild(Graph2dWindowDataItem* child)
 {
-	QList <Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		if (*it == child){
 			m_childItems.erase(it);
 			return;
@@ -248,8 +247,7 @@ void Graph2dWindowDataItem::updateExpandState(QTreeView* view)
 	if (m_standardItem != 0){
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->updateExpandState(view);
 	}
 }
@@ -259,8 +257,7 @@ void Graph2dWindowDataItem::reflectExpandState(QTreeView* view)
 	if (m_standardItem != 0){
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->reflectExpandState(view);
 	}
 }
@@ -309,8 +306,7 @@ void Graph2dWindowDataItem::updateVisibility(bool visible)
 	setVisible(visible);
 	// cascade to update the visibility of actors those are
 	// handled by the child instances.
-	QList<Graph2dWindowDataItem*>::iterator c_it;
-	for (c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it){
+	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it){
 		(*c_it)->updateVisibility(visible);
 	}
 }

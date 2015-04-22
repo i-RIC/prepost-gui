@@ -35,9 +35,8 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 	// build grid type data items.
-	QList<SolverDefinitionGridType*>::const_iterator it;
 	QList<Post2dWindowGridTypeDataItem*> gtitems;
-	for (it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it){
 		Post2dWindowGridTypeDataItem* item = new Post2dWindowGridTypeDataItem(*it, this);
 		m_gridTypeDataItems.append(item);
 		gtitems.append(item);

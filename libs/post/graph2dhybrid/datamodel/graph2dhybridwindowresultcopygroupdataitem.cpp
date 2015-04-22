@@ -21,8 +21,7 @@ Graph2dHybridWindowResultCopyGroupDataItem::~Graph2dHybridWindowResultCopyGroupD
 
 void Graph2dHybridWindowResultCopyGroupDataItem::updateData()
 {
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Graph2dHybridWindowResultCopyDataItem* item = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(*it);
 		item->update();
 	}

@@ -624,9 +624,8 @@ void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScala
 
 void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	Post2dWindowNodeScalarDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dWindowNodeScalarDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;

@@ -420,9 +420,8 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 
 void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 {
-	QList<RiverGridCtrlSolver*>::iterator it;
 	// clear first.
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		delete (*it);
 	}
 	m_gridSolvers.clear();
@@ -451,15 +450,14 @@ void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 	// prepare interpolators.
 	unsigned int lindices = static_cast<unsigned int>(p->CenterToLeftCtrlPoints.size());
 	unsigned int rindices = static_cast<unsigned int>(p->CenterToRightCtrlPoints.size());
-	QVector<Interpolator2D1*>::iterator rit;
 	p = rs->headPoint();
 	while (p != 0){
-		for (rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
+		for (auto rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
 			if (*rit != 0){
 				delete (*rit);
 			}
 		}
-		for (rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
+		for (auto rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
 			if (*rit != 0){
 				delete (*rit);
 			}
@@ -471,7 +469,7 @@ void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 		p = p->nextPoint();
 	}
 	if (m_abort || m_restart || m_canceled){return;}
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		(*it)->update();
 		if (m_abort || m_restart || m_canceled){return;}
 	}
