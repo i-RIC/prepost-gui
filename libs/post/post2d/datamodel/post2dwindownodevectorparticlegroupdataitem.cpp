@@ -55,7 +55,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		if (tmparray->GetNumberOfComponents() == 1){
 			// vector attribute.
 			continue;
@@ -148,7 +148,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 	m_particleGrids.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	vtkPointSet* ps = cont->data();
 	vtkPointData* pd = ps->GetPointData();
@@ -237,13 +237,13 @@ void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	if (m_standardItem->checkState() == Qt::Unchecked){return;}
 	if (m_currentSolution == ""){return;}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneContainer == 0){return;}
+	if (zoneContainer == nullptr){return;}
 	unsigned int currentStep = 0;
-	if (zoneContainer != 0){
+	if (zoneContainer != nullptr){
 		currentStep = zoneContainer->solutionInfo()->currentStep();
 	}
 	setupActors();
-	if (zoneContainer == 0 || zoneContainer->data() == 0){
+	if (zoneContainer == nullptr || zoneContainer->data() == nullptr){
 		resetParticles();
 		goto TIMEHANDLING;
 	}
@@ -277,7 +277,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::update()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	Post2dWindowNodeVectorParticleDataItem* current = 0;
+	Post2dWindowNodeVectorParticleDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeVectorParticleDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorParticleDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
@@ -285,7 +285,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QStri
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -302,7 +302,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 		vtkPointSet* pointsGrid = newParticles(i);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		if (pointsGrid != 0){
+		if (pointsGrid != nullptr){
 			for (vtkIdType i = 0; i < pointsGrid->GetNumberOfPoints(); ++i){
 				double p[3];
 				pointsGrid->GetPoint(i, p);
@@ -464,7 +464,7 @@ vtkPointSet* Post2dWindowNodeVectorParticleGroupDataItem::getRegion()
 		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
 		return m_regionClippedPolyData;
 	}
-	return 0;
+	return nullptr;
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::informSelection(VTKGraphicsView * /*v*/)

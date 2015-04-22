@@ -16,7 +16,7 @@ namespace Ui {
 class PreProcessorScalarBarLegendBoxSettingDialog : public QDialog {
 	Q_OBJECT
 public:
-	PreProcessorScalarBarLegendBoxSettingDialog(QWidget *parent = 0);
+	PreProcessorScalarBarLegendBoxSettingDialog(QWidget *parent = nullptr);
 	~PreProcessorScalarBarLegendBoxSettingDialog();
 
 	void setupComboBox(PreProcessorRawDataTopDataItemInterface* item);

@@ -15,7 +15,7 @@ class GUICOREDLL_EXPORT GridRelatedCellConditionPropertyDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridRelatedCellConditionPropertyDialog(QWidget *parent = 0);
+	GridRelatedCellConditionPropertyDialog(QWidget *parent = nullptr);
 	~GridRelatedCellConditionPropertyDialog();
 	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
 	ScalarsToColorsEditWidget* scalarsToColorsEditWidget() const;

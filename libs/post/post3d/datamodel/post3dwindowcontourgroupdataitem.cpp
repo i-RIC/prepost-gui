@@ -59,7 +59,7 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowD
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){
+		if (tmparray == nullptr){
 			continue;
 		}
 		if (tmparray->GetNumberOfComponents() > 1){
@@ -405,7 +405,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupColorFringeActorAndMapper(vtkAl
 void Post3dWindowContourGroupDataItem::updateScalarBarActorSetting()
 {
 	LookupTableContainer* lookup = lookupTable();
-	if (lookup == 0) return;
+	if (lookup == nullptr) return;
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorBarTitleMap.value(m_currentSolution)).c_str());
@@ -447,7 +447,7 @@ void Post3dWindowContourGroupDataItem::update()
 void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 {
 	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	bool dataOK = (zoneData != 0 && zoneData->data() != 0);
+	bool dataOK = (zoneData != nullptr && zoneData->data() != nullptr);
 	if (! dataOK){
 		m_scalarBarWidget->SetEnabled(0);
 		return;
@@ -476,7 +476,7 @@ void Post3dWindowContourGroupDataItem::handleStandardItemChange()
 void Post3dWindowContourGroupDataItem::showSettingDialog()
 {
 	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propertyDialog(mainWindow()));
-	if (dialog == 0){return;}
+	if (dialog == nullptr){return;}
 	int ret = dialog->exec();
 	if (ret == QDialog::Accepted){
 		handlePropertyDialogAccepted(dialog);
@@ -491,9 +491,9 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == 0 || zoneData->data() == 0){
+	if (zoneData == nullptr || zoneData->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setZoneData(zoneData);
 	dialog->setCurrentSolution(m_currentSolution);

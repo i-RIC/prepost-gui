@@ -26,7 +26,7 @@ public:
 		lmCustom
 	};
 
-	explicit DistanceMeasureCopyPropertyDialog(QWidget *parent = 0);
+	explicit DistanceMeasureCopyPropertyDialog(QWidget *parent = nullptr);
 	~DistanceMeasureCopyPropertyDialog();
 
 	void setName(const QString& name);

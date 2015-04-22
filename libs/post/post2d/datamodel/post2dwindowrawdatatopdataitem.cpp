@@ -47,7 +47,7 @@ void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
 		Post2dWindowRawDataGroupDataItem* item = m_itemNameMap.value(name);
-		if (item != 0){
+		if (item != nullptr){
 			item->loadFromProjectMainFile(child);
 		}
 	}

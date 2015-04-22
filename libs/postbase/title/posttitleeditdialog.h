@@ -14,7 +14,7 @@ class POSTBASEDLL_EXPORT PostTitleEditDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PostTitleEditDialog(QWidget *parent = 0);
+	explicit PostTitleEditDialog(QWidget *parent = nullptr);
 	~PostTitleEditDialog();
 	void setEnabled(bool enabled);
 	bool isEnabled() const;

@@ -24,7 +24,7 @@ class BoundaryConditionDialog : public QDialog {
 	Q_OBJECT
 public:
 	/// Constructor
-	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget *parent = 0);
+	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget *parent = nullptr);
 	/// Destructor
 	~BoundaryConditionDialog();
 	void setNameAndNumber(QString name, int number);

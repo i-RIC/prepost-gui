@@ -161,7 +161,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::setupWindowComboBox()
 	ui->windowComboBox->clear();
 	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it, ++idx){
 		Post2dWindow* post = dynamic_cast<Post2dWindow*>((*it)->widget());
-		if (post == 0) continue;
+		if (post == nullptr) continue;
 		// add only post2dwindows.
 		ui->windowComboBox->addItem((*it)->windowTitle(), QVariant(idx));
 		// idx is the index of (*it) in the list m_wizard->windowList().

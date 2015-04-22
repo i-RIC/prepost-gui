@@ -13,7 +13,7 @@
 
 class GridCreatingConditionCenterAndWidthCoordinatesEditDialogDelegate : public QStyledItemDelegate {
 public:
-	GridCreatingConditionCenterAndWidthCoordinatesEditDialogDelegate(QObject* = 0){}
+	GridCreatingConditionCenterAndWidthCoordinatesEditDialogDelegate(QObject* = nullptr){}
 	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &,
 		const QModelIndex &) const
 	{

@@ -11,17 +11,17 @@ Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::Structured15
 
 Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::~Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem()
 {
-	if (m_window != 0){
+	if (m_window != nullptr){
 		Structured15DGridWithCrossSectionCrossSectionWindow* w = m_window;
-		m_window = 0;
+		m_window = nullptr;
 		delete w->parent();
 	}
 }
 
 void Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != 0){
-		m_window = 0;
+	if (m_window != nullptr){
+		m_window = nullptr;
 		dynamic_cast<PreProcessorNormal15DGridWithCrossSectionShapeDataItem*>(parent())->requestCrossSectionWindowDelete(this);
 	}
 }

@@ -25,7 +25,7 @@ ProjectPostProcessors::ProjectPostProcessors(ProjectDataItem* parent)
 
 ProjectPostProcessors::~ProjectPostProcessors()
 {
-	if (projectData()->mainWindow() == 0){return;}
+	if (projectData()->mainWindow() == nullptr){return;}
 	// remove all post processors from the MDI area of main window.
 	QMdiArea* area = dynamic_cast<QMdiArea*> (projectData()->mainWindow()->centralWidget());
 
@@ -39,14 +39,14 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool
 	QDomNode child = node.firstChild();
 	QWidget* parentWindow = projectData()->mainWindow();
 	while (! child.isNull()){
-		PostProcessorWindowProjectDataItem* di = 0;
+		PostProcessorWindowProjectDataItem* di = nullptr;
 		if (import){
 			QDomElement elem = child.toElement();
 			di = m_factory->factory(elem.attribute("type"), this, parentWindow);
 		} else {
 			di = m_factory->restore(child, this, parentWindow);
 		}
-		if (di != 0){
+		if (di != nullptr){
 			add(di);
 			try {
 				di->loadFromProjectMainFile(child);
@@ -71,7 +71,7 @@ void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* newitem)
 {
 	iRICMainWindowInterface* w = projectData()->mainWindow();
-	if (w == 0){return 0;}
+	if (w == nullptr){return nullptr;}
 	QMdiArea* area = dynamic_cast<QMdiArea*> (w->centralWidget());
 	QMdiSubWindow* container = area->addSubWindow(newitem->window());
 	container->setWindowIcon(newitem->window()->icon());

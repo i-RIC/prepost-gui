@@ -107,7 +107,7 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	for (int i = 0; i < arrs; ++i){
 		vtkAbstractArray* aa = pd->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*> (aa);
-		if (da == 0){continue;}
+		if (da == nullptr){continue;}
 		if (da->GetNumberOfComponents() != 1){continue;}
 		QString name = da->GetName();
 		ui->xAxisComboBox->addItem(name);
@@ -129,7 +129,7 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	}
 	// if it is a structured grid add distance from upper.
 //	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(ps);
-//	if (grid != 0){
+//	if (grid != nullptr){
 //		ui->xAxisComboBox->addItem(tr("Stream-wise Distance"));
 //		m_xAxisValues.append(Graph2dScatteredWindowResultSetting::XAXIS_STREAM_WISE_DISTANCE);
 //	}

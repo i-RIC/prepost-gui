@@ -43,18 +43,18 @@ QString RawDataRiverSurveyCreator::defaultCaption(unsigned int index)
 RawData* RawDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition)
 {
 	RawData* rawdata = RawDataCreator::restore(node, parent, condition);
-	if (rawdata != 0){return rawdata;}
+	if (rawdata != nullptr){return rawdata;}
 	QDomElement elem = node.toElement();
 	QString name = elem.attribute("name");
 	if (name.contains("riversurvey")){
 		return create(parent, condition);
 	}
-	return 0;
+	return nullptr;
 }
 
 bool RawDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridRelatedCondition* condition)
 {
-	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == 0){return false;}
+	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == nullptr){return false;}
 	if (condition->position() == SolverDefinitionGridRelatedCondition::CellCenter){return false;}
 	if (condition->isOption()){return false;}
 	if (condition->dimensions().size() != 0){return false;}

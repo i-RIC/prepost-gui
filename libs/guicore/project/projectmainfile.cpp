@@ -59,7 +59,7 @@ const QString ProjectMainFile::BGDIR = "backgroundimages";
 ProjectMainFile::ProjectMainFile(ProjectData* parent)
 	: ProjectDataItem(0)
 {
-	m_coordinateSystem = 0;
+	m_coordinateSystem = nullptr;
 	m_offset = QVector2D(0, 0);
 	m_isModified = false;
 	m_isWaitigHttpResponse = false;
@@ -86,7 +86,7 @@ ProjectMainFile::~ProjectMainFile()
 	delete m_postProcessors;
 
 	// free coordinate system convert object
-	if (m_coordinateSystem != 0){
+	if (m_coordinateSystem != nullptr){
 		m_coordinateSystem->free();
 	}
 }
@@ -116,7 +116,7 @@ bool ProjectMainFile::switchCgnsFile(const QString& name)
 	m_cgnsFileList->setCurrent(name);
 
 	// save data to the old cgns file.
-	if (c != 0 && c->filename() != name){
+	if (c != nullptr && c->filename() != name){
 		bool ret = saveCgnsFile(c->filename());
 		if (! ret){return false;}
 	}
@@ -250,7 +250,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	// coordinate system
 	QString coordName = element.attribute("coordinateSystem");
 	m_coordinateSystem = projectData()->mainWindow()->coordinateSystemBuilder()->system(coordName);
-	if (m_coordinateSystem != 0){
+	if (m_coordinateSystem != nullptr){
 		m_coordinateSystem->init();
 	}
 
@@ -287,7 +287,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("solverName", m_solverName);
 	writer.writeAttribute("solverVersion", m_solverVersion.toString());
 
-	if (m_coordinateSystem != 0){
+	if (m_coordinateSystem != nullptr){
 		writer.writeAttribute("coordinateSystem", m_coordinateSystem->name());
 	}
 
@@ -1019,11 +1019,11 @@ bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 
 void ProjectMainFile::setCoordinateSystem(CoordinateSystem* system)
 {
-	if (m_coordinateSystem != 0){
+	if (m_coordinateSystem != nullptr){
 		m_coordinateSystem->free();
 	}
 	m_coordinateSystem = system;
-	if (m_coordinateSystem != 0){m_coordinateSystem->init();}
+	if (m_coordinateSystem != nullptr){m_coordinateSystem->init();}
 }
 
 void ProjectMainFile::setOffset(double x, double y)

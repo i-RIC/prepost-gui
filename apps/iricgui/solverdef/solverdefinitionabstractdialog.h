@@ -15,7 +15,7 @@ class SolverDefinitionAbstractDialog : public QDialog {
 	Q_OBJECT
 public:
 	/// Constructor
-	SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget *parent = 0);
+	SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget *parent = nullptr);
 	/// Destructor
 	~SolverDefinitionAbstractDialog();
 

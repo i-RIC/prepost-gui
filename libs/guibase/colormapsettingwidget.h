@@ -46,7 +46,7 @@ public:
 			midValue = 0;
 		}
 	};
-	ColorMapSettingWidget(QWidget *parent = 0);
+	ColorMapSettingWidget(QWidget *parent = nullptr);
 	~ColorMapSettingWidget();
 	void setColorMap(ColorMap colorMap);
 	ColorMap colorMap();

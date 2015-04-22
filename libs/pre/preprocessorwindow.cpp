@@ -232,7 +232,7 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	QList<QMenu*> menus;
-	if (m_dataModel != 0){
+	if (m_dataModel != nullptr){
 		menus.append(model->additionalMenus());
 	}
 	menus.append(m_actionManager->calcCondMenu());
@@ -241,7 +241,7 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
 
 QToolBar* PreProcessorWindow::getAdditionalToolBar()
 {
-	if (m_dataModel == 0){return 0;}
+	if (m_dataModel == nullptr){return nullptr;}
 	return m_dataModel->operationToolBar();
 }
 
@@ -358,7 +358,7 @@ void PreProcessorWindow::closeEvent(QCloseEvent* e){
 void PreProcessorWindow::showEvent(QShowEvent * /*e*/)
 {
 	ProjectMainFile* mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
-	if (mainfile == 0){return;}
+	if (mainfile == nullptr){return;}
 	mainfile->addRenderer(m_dataModel->graphicsView()->mainRenderer());
 }
 
@@ -388,7 +388,7 @@ void PreProcessorWindow::handleAdditionalMenusUpdate(const QList<QMenu*>& m)
 
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
-	if (m_dataModel == 0){return;}
+	if (m_dataModel == nullptr){return;}
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	model->addGridImportMenu(menu);
 }
@@ -401,7 +401,7 @@ void PreProcessorWindow::addGridExportMenu(QMenu* menu)
 
 void PreProcessorWindow::setupRawDataImportMenu()
 {
-	if (m_dataModel == 0){return;}
+	if (m_dataModel == nullptr){return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	model->setupRawDataImportMenu(menu);
@@ -416,7 +416,7 @@ void PreProcessorWindow::setupRawDataExportMenu()
 
 void PreProcessorWindow::setupHydraulicDataImportMenu()
 {
-	if (m_dataModel == 0){return;}
+	if (m_dataModel == nullptr){return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	model->setupHydraulicDataImportMenu(menu);
@@ -425,7 +425,7 @@ void PreProcessorWindow::setupHydraulicDataImportMenu()
 
 void PreProcessorWindow::informUnfocusRiverCrosssectionWindows()
 {
-	if (m_dataModel == 0){return;}
+	if (m_dataModel == nullptr){return;}
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
 	model->informUnfocusRiverCrosssectionWindows();
 }

@@ -16,7 +16,7 @@
 class ColorMapCustomSettingDialogColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorMapCustomSettingDialogColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	ColorMapCustomSettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		if (index.column() == 1){

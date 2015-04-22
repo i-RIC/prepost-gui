@@ -15,7 +15,7 @@ class Graph2dHybridWindowDrawSettingDialog : public QDialog
 	Q_OBJECT
 	
 public:
-	explicit Graph2dHybridWindowDrawSettingDialog(QWidget *parent = 0);
+	explicit Graph2dHybridWindowDrawSettingDialog(QWidget *parent = nullptr);
 	~Graph2dHybridWindowDrawSettingDialog();
 
 	void setResultSettings(const QList<Graph2dHybridWindowResultSetting::Setting>& list);

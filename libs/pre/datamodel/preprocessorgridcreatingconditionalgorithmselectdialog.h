@@ -15,7 +15,7 @@ class PreProcessorGridCreatingConditionAlgorithmSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget *parent = 0);
+	explicit PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget *parent = nullptr);
 	~PreProcessorGridCreatingConditionAlgorithmSelectDialog();
 	void setCreators(const QList<GridCreatingConditionCreator*>& creators);
 	void setCurrent(GridCreatingConditionCreator* creator);

@@ -15,7 +15,7 @@ class RawDataRiverPathPointRotateDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget *parent = nullptr);
 	~RawDataRiverPathPointRotateDialog();
 	void setCurrentRelativeAngle(double current);
 public slots:

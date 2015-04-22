@@ -44,7 +44,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 
 	for (int i = 0; i < num; ++i){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		QString name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() > 1){
 			// vector attributes.

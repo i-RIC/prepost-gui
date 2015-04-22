@@ -161,7 +161,7 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
 
 	SolverDefinitionGridType* gt = cont->gridType();

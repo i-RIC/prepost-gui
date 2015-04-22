@@ -34,7 +34,7 @@ public:
 	void allocate()
 	{
 		vtkIntArray* da = dataArray();
-		if (da == 0){
+		if (da == nullptr){
 			// not found maybe reset?
 			da = vtkIntArray::New();
 			da->SetName(iRIC::toStr(name()).c_str());

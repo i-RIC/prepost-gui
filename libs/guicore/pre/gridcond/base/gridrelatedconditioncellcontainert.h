@@ -24,7 +24,7 @@ public:
 	void allocate(){
 		vtkDataArray* a = GridRelatedConditionContainerT<V>::m_grid->vtkGrid()->GetCellData()->GetArray(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());
 		DA* da = DA::SafeDownCast(a);
-		if (da == 0){
+		if (da == nullptr){
 			// not found maybe reset?
 			da = DA::New();
 			da->SetName(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());

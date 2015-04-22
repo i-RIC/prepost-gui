@@ -15,7 +15,7 @@ class Graph2dHybridWindowContinuousExportDialog : public QDialog
 public:
 	enum RegionMode{rmCurrentOnly, rmAll, rmCustom };
 	enum TimeMode {tmCurrentOnly, tmAll, tmCustom };
-    explicit Graph2dHybridWindowContinuousExportDialog(QWidget *parent = 0);
+    explicit Graph2dHybridWindowContinuousExportDialog(QWidget *parent = nullptr);
     ~Graph2dHybridWindowContinuousExportDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4]);
 	void setTimesteps(QList<double> steps);

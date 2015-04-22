@@ -16,7 +16,7 @@ class VerificationSettingDialog : public QDialog
 	Q_OBJECT
 	
 public:
-	explicit VerificationSettingDialog(QWidget *parent = 0);
+	explicit VerificationSettingDialog(QWidget *parent = nullptr);
 	~VerificationSettingDialog();
 	void setPostSolutionInfo(PostSolutionInfo* info);
 	void setMeasuredDatas(const QList<MeasuredData*>& data);

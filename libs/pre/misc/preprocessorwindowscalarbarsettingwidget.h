@@ -26,7 +26,7 @@ public:
 		double positionY;
 	};
 
-	PreProcessorWindowScalarBarSettingWidget(QWidget *parent = 0);
+	PreProcessorWindowScalarBarSettingWidget(QWidget *parent = nullptr);
 	~PreProcessorWindowScalarBarSettingWidget();
 
 	void setVisibility(bool visible);

@@ -32,8 +32,8 @@ RawDataRiverSurveyCrosssectionWindowGraphicsView::RawDataRiverSurveyCrosssection
 	fTopMargin = 0.2f;
 	fBottomMargin = 0.2f;
 	m_mouseEventMode = meNormal;
-	m_rubberBand = 0;
-	m_rightClickingMenu = 0;
+	m_rubberBand = nullptr;
+	m_rightClickingMenu = nullptr;
 	m_gridMode = false;
 
 	// Set cursors for mouse view change events.
@@ -61,7 +61,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::setupActions()
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::setupMenu()
 {
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == nullptr){
 		m_rightClickingMenu = new QMenu(this);
 		m_rightClickingMenu->addAction(m_activateAction);
 		m_rightClickingMenu->addAction(m_inactivateAction);
@@ -100,7 +100,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 
 		for (int i = 0; i < m_parentWindow->m_riverPathPoints.count(); ++i){
 			RawDataRiverPathPoint* p = m_parentWindow->m_riverPathPoints.at(i);
-			if (p == 0){continue;}
+			if (p == nullptr){continue;}
 			bool enabled = m_parentWindow->m_riverSurveyEnables.at(i);
 			if (! enabled){continue;}
 			QColor c = m_parentWindow->m_riverSurveyColors.at(i);
@@ -123,7 +123,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(RawDataRiverPathPoint* point, const QColor& color, QPainter& painter)
 {
-	if (point == 0){return;}
+	if (point == nullptr){return;}
 	RawDataRiverCrosssection& cross = point->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	bool first = true;
@@ -143,7 +143,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(RawDataRiverPath
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& painter)
 {
-	if (m_parentWindow->m_editTargetPoint == 0){return;}
+	if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
@@ -185,7 +185,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionCircle(QPainter &painter)
 {
-	if (m_parentWindow->m_editTargetPoint == 0){return;}
+	if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
@@ -219,7 +219,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 	QBrush inactiveBrush(Qt::blue, Qt::SolidPattern);
 
 	RawDataRiverPathPoint* blackpoint = m_parentWindow->m_gridCreatingConditionPoint;
-	if (blackpoint == 0){return;}
+	if (blackpoint == nullptr){return;}
 	RawDataRiverCrosssection& cross = blackpoint->crosssection();
 	painter.setPen(pen);
 	painter.setBrush(inactiveBrush);
@@ -264,7 +264,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSquare(QPainter& pain
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionSquare(QPainter& painter)
 {
 	RawDataRiverPathPoint* blackpoint = m_parentWindow->m_gridCreatingConditionPoint;
-	if (blackpoint == 0){return;}
+	if (blackpoint == nullptr){return;}
 	std::list<CtrlPointSelectionInfo>& sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
 
 	QPointF point;
@@ -447,7 +447,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawScales(QPainter& pain
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawWaterSurfaceElevation(RawDataRiverPathPoint* point, QPainter& painter, const QMatrix& matrix)
 {
-	if (point == 0){return;}
+	if (point == nullptr){return;}
 	if (! point->waterSurfaceElevationSpecified()){return;}
 	double ele = point->waterSurfaceElevationValue();
 
@@ -495,7 +495,7 @@ QRectF RawDataRiverSurveyCrosssectionWindowGraphicsView::getRegion(){
 	bool first = true;
 	for (int i = 0; i < m_parentWindow->m_riverPathPoints.count(); ++i){
 		RawDataRiverPathPoint* p = m_parentWindow->m_riverPathPoints[i];
-		if (p == 0){continue;}
+		if (p == nullptr){continue;}
 		RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		for (int j = 0; j < alist.count(); ++j){
 			RawDataRiverCrosssection::Altitude alt = alist.at(j);
@@ -640,7 +640,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataRiverSurveyCrosssectionDragEditCommand* comm = dynamic_cast<const RawDataRiverSurveyCrosssectionDragEditCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (m_point != comm->m_point){return false;}
 		if (! m_dragging){return false;}
 		m_after = comm->m_after;
@@ -796,7 +796,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 			if (event->button() == Qt::LeftButton){
 				// start selecting.
 				m_mouseEventMode = meSelecting;
-				if (m_rubberBand == 0){
+				if (m_rubberBand == nullptr){
 					m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 				}
 				m_rubberOrigin = event->pos();
@@ -1003,7 +1003,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 		m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->updateShapeData();
 		m_parentWindow->m_gridCreatingConditionRiverSurvey->renderGraphicsView();
 	} else {
-		if (m_parentWindow->m_editTargetPoint == 0){return;}
+		if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 		QItemSelection selection;
 
 		RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
@@ -1057,7 +1057,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::updateActionStatus()
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == 0){return;}
+	if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
 	RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList before, after;
@@ -1073,7 +1073,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == 0){return;}
+	if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
 	RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList before, after;
@@ -1094,7 +1094,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
 {
-	if (m_parentWindow->m_editTargetPoint == 0){return;}
+	if (m_parentWindow->m_editTargetPoint == nullptr){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
 	int from = rows.front().row();
 	int to = rows.back().row();

@@ -16,7 +16,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidget : public QWidget
 public:
 	/// Constructor
 	CgnsFileInputConditionWidget(QDomNode n){
-		m_dependency = 0;
+		m_dependency = nullptr;
 	}
 	virtual ~CgnsFileInputConditionWidget(){}
 	void setDependency(CgnsFileInputConditionDependency* dep);

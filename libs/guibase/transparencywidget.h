@@ -14,7 +14,7 @@ class GUIBASEDLL_EXPORT TransparencyWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit TransparencyWidget(QWidget *parent = 0);
+	explicit TransparencyWidget(QWidget *parent = nullptr);
 	~TransparencyWidget();
 	void setOpacity(int opacity);
 	int opacity();

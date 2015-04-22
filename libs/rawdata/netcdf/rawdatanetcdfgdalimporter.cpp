@@ -64,7 +64,7 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	m_sr->exportToProj4(&projDef);
 	m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
 	m_coordinateSystem->setName(projDef);
-	if (m_coordinateSystem == 0){return false;}
+	if (m_coordinateSystem == nullptr){return false;}
 
 	CPLFree(projDef);
 

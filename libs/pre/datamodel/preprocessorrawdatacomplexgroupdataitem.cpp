@@ -221,7 +221,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 		PreProcessorRawdataDataItem* di = dynamic_cast<PreProcessorRawdataDataItem*> (*it);
 		RawData* rd = di->rawData();
 		RawDataPolygon* p = dynamic_cast<RawDataPolygon*>(rd);
-		if (p != 0){
+		if (p != nullptr){
 			int currentVal = p->variantValue().toInt();
 			int newVal = valueMap.value(currentVal, newDefault);
 			p->setVariantValue(newVal);
@@ -236,7 +236,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	for (ccit = conds.begin(); ccit != conds.end(); ++ccit){
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
 		Grid* g = ccItem->gridDataItem()->grid();
-		if (g == 0){continue;}
+		if (g == nullptr){continue;}
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		GridRelatedComplexConditionContainer* cont2 = dynamic_cast<GridRelatedComplexConditionContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i){

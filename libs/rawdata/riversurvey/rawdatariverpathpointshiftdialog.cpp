@@ -24,7 +24,7 @@ RawDataRiverPathPointShiftDialog::RawDataRiverPathPointShiftDialog(RawDataRiverS
 	bool isMaxSet = false;
 	RawDataRiverPathPoint* p = rs->headPoint();
 	p = p->nextPoint();
-	while (p != 0){
+	while (p != nullptr){
 		if (p->IsSelected){
 			if (! isMaxSet || p->crosssection().leftBank(true).position() > m_leftMax){
 				m_leftMax = p->crosssection().leftBank(true).position();
@@ -55,7 +55,7 @@ public:
 
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != 0){
+		while (p != nullptr){
 			if (p->IsSelected){
 				m_points.append(p);
 				m_oldPositions.append(p->position());

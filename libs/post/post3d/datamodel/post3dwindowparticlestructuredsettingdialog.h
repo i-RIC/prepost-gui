@@ -15,7 +15,7 @@ class Post3dWindowParticleStructuredSettingDialog : public QDialog
 {
     Q_OBJECT
 public:
-	explicit Post3dWindowParticleStructuredSettingDialog(QWidget *parent = 0);
+	explicit Post3dWindowParticleStructuredSettingDialog(QWidget *parent = nullptr);
 	~Post3dWindowParticleStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available){m_activeAvailable = available;}

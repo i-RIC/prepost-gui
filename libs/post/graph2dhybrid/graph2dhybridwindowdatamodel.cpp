@@ -112,9 +112,9 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != 0){
+	if (cont != nullptr){
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != 0){
+		if (sGrid != nullptr){
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -446,9 +446,9 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != 0){
+	if (cont != nullptr){
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != 0){
+		if (sGrid != nullptr){
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -1295,9 +1295,9 @@ void Graph2dHybridWindowDataModel::showSettingDialog()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != 0){
+	if (cont != nullptr){
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != 0){
+		if (sGrid != nullptr){
 			// structured
 			sGrid->GetDimensions(dims);
 		}
@@ -1324,7 +1324,7 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	int index;
 	PostSolutionInfo* sol = postSolutionInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	switch (tinfo->dataType){
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
@@ -1378,9 +1378,9 @@ void Graph2dHybridWindowDataModel::applySettings()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != 0){
+	if (cont != nullptr){
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != 0){
+		if (sGrid != nullptr){
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -1452,14 +1452,14 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 
 	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI){goto CONDITIONERROR;}
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = m_setting.targetDataTypeInfo();
-	if (info->gridType == 0){goto CONDITIONERROR;}
+	if (info->gridType == nullptr){goto CONDITIONERROR;}
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* citem = projectData()->mainWindow()->preProcessorWindow()->dataModel()->getGridAndGridCreatingConditionDataItem(info->gridType->name(), info->zoneName);
-	if (citem == 0){goto CONDITIONERROR;}
+	if (citem == nullptr){goto CONDITIONERROR;}
 	PreProcessorGridCreatingConditionDataItemInterface * condItem = citem->creatingConditionDataItem();
 	GridCreatingCondition* cond = condItem->condition();
-	if (cond == 0){goto CONDITIONERROR;}
+	if (cond == nullptr){goto CONDITIONERROR;}
 	GridCreatingConditionRiverSurvey* condrs = dynamic_cast<GridCreatingConditionRiverSurvey*>(cond);
-	if (condrs == 0){goto CONDITIONERROR;}
+	if (condrs == nullptr){goto CONDITIONERROR;}
 	RawDataRiverPathPoint* start = condrs->lastStartPoint();
 	RawDataRiverPathPoint* end = condrs->lastEndPoint();
 
@@ -1488,7 +1488,7 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 		iValue += (pp->CenterLineCtrlPoints.count() + 1);
 		pp = pp->nextPoint();
 	}
-	if (pp != 0){
+	if (pp != nullptr){
 		double val = xvalues.at(iValue);
 		QString name = "KP %1";
 

@@ -12,7 +12,7 @@ class GUIBASEDLL_EXPORT ContourSettingWidget : public QWidget {
 	Q_OBJECT
 public:
 	enum Contour {Points, Isolines, ContourFigure, ColorFringe};
-	ContourSettingWidget(QWidget *parent = 0);
+	ContourSettingWidget(QWidget *parent = nullptr);
 	~ContourSettingWidget();
 	void setContour(Contour contour);
 	Contour contour();

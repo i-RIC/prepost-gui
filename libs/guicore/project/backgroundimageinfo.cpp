@@ -235,12 +235,12 @@ void BackgroundImageInfo::fitImageToData()
 	// fit to the data in the preprocessor window.
 	double bounds[6];
 	int vis;
-	if (m_preProcessorActor != 0){
+	if (m_preProcessorActor != nullptr){
 		vis = m_preProcessorActor->GetVisibility();
 		m_preProcessorActor->SetVisibility(0);
 	}
 	iricMainWindow()->preProcessorWindow()->dataModel()->graphicsView()->mainRenderer()->ComputeVisiblePropBounds(bounds);
-	if (m_preProcessorActor != 0){
+	if (m_preProcessorActor != nullptr){
 		m_preProcessorActor->SetVisibility(vis);
 	}
 	double targetX = bounds[1] - bounds[0];

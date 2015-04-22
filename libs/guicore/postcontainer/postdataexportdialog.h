@@ -15,7 +15,7 @@ class GUICOREDLL_EXPORT PostDataExportDialog : public QDialog
 
 public:
 	enum Format {fmVTK, fmCSV};
-	explicit PostDataExportDialog(QWidget *parent = 0);
+	explicit PostDataExportDialog(QWidget *parent = nullptr);
 	~PostDataExportDialog();
 	void setTimeValues(QList<double> timevalues);
 	void setIJKRange(int inum, int jnum, int knum);

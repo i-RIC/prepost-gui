@@ -14,7 +14,7 @@ class Graph2dScatteredWindowSettingWidget : public QWidget
 	Q_OBJECT
 	
 public:
-	explicit Graph2dScatteredWindowSettingWidget(QWidget *parent = 0);
+	explicit Graph2dScatteredWindowSettingWidget(QWidget *parent = nullptr);
 	~Graph2dScatteredWindowSettingWidget();
 	void setSetting(Graph2dScatteredWindowResultSetting::Setting* setting);
 	void clear();

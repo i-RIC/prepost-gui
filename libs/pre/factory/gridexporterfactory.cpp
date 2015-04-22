@@ -9,11 +9,11 @@
 #include <QPluginLoader>
 #include <QSettings>
 
-GridExporterFactory* GridExporterFactory::m_instance = 0;
+GridExporterFactory* GridExporterFactory::m_instance = nullptr;
 
 void GridExporterFactory::init()
 {
-	if (m_instance != 0){
+	if (m_instance != nullptr){
 		delete m_instance;
 	}
 	m_instance = new GridExporterFactory();
@@ -40,7 +40,7 @@ GridExporterFactory::GridExporterFactory()
 			QFileInfo finfo(fileName);
 			QString dictName = QString("%1_%2.qm").arg(finfo.baseName()).arg(locale);
 			QFile dictFile(pluginDir.filePath(dictName));
-			QTranslator* translator = 0;
+			QTranslator* translator = nullptr;
 			if (dictFile.exists()){
 				translator = new QTranslator(this);
 				translator->load(QString("%1_%2").arg(finfo.baseName()).arg(locale), pluginDir.absolutePath());
@@ -62,7 +62,7 @@ GridExporterFactory::GridExporterFactory()
 			continue;
 
 LOADERROR:
-			if (translator != 0){
+			if (translator != nullptr){
 				delete translator;
 			}
 		}

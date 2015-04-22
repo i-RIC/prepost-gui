@@ -45,7 +45,7 @@ void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* z
 	ui->physicalValueComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i){
 		vtkDataArray* a = pd->GetArray(i);
-		if (a == 0){continue;}
+		if (a == nullptr){continue;}
 		if (a->GetNumberOfComponents() != 1){continue;}
 		QString name = a->GetName();
 		ui->physicalValueComboBox->addItem(name);
@@ -186,7 +186,7 @@ void Post3dWindowContourGroupSettingDialog::removeFaceSetting()
 
 void Post3dWindowContourGroupSettingDialog::switchFaceSetting(QListWidgetItem *current, QListWidgetItem * /*previous*/)
 {
-	if (current == 0) return;
+	if (current == nullptr) return;
 
 	QString currentLabel = current->text();
 	ui->faceSettingWidget->setSetting(m_faceMap.value(currentLabel));

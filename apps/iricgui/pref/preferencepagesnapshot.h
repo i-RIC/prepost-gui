@@ -14,7 +14,7 @@ class PreferencePageSnapshot : public PreferencePage
     Q_OBJECT
 
 public:
-    explicit PreferencePageSnapshot(QWidget *parent = 0);
+    explicit PreferencePageSnapshot(QWidget *parent = nullptr);
     ~PreferencePageSnapshot();
 	void update();
 private:

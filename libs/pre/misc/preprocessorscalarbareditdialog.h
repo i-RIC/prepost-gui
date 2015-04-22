@@ -12,7 +12,7 @@ namespace Ui {
 class PreProcessorScalarBarEditDialog : public QDialog {
 	Q_OBJECT
 public:
-	PreProcessorScalarBarEditDialog(QWidget *parent = 0);
+	PreProcessorScalarBarEditDialog(QWidget *parent = nullptr);
 	~PreProcessorScalarBarEditDialog();
 
 	void setScalarBarTitle(const QString& title);

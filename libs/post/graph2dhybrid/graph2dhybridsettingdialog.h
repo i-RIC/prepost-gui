@@ -13,7 +13,7 @@ class Graph2dHybridSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Graph2dHybridSettingDialog(QWidget *parent = 0);
+    explicit Graph2dHybridSettingDialog(QWidget *parent = nullptr);
     ~Graph2dHybridSettingDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
 	const Graph2dHybridWindowResultSetting& setting(){return m_setting;}

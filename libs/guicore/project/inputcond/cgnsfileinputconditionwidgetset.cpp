@@ -250,7 +250,7 @@ void CgnsFileInputConditionWidgetSet::enableWidgets()
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it){
 		CgnsFileInputConditionWidget* w = it.value();
 		CgnsFileInputConditionDependency* dep = w->dependency();
-		if (dep != 0){
+		if (dep != nullptr){
 			dep->check();
 		}
 	}

@@ -19,7 +19,7 @@ class Post2dWindowStreamlineUnstructuredSettingDialog : public QDialog
 {
     Q_OBJECT
 public:
-	explicit Post2dWindowStreamlineUnstructuredSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowStreamlineUnstructuredSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowStreamlineUnstructuredSettingDialog();
 	void setDataItem(Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item){
 		m_dataItem = item;

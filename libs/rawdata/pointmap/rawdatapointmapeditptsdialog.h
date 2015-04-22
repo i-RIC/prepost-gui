@@ -13,13 +13,14 @@ class RawDataPointmapEditPtsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit RawDataPointmapEditPtsDialog(RawDataPointmap *pmap, QWidget *parent = 0);
-    ~RawDataPointmapEditPtsDialog();
+	explicit RawDataPointmapEditPtsDialog(RawDataPointmap *pmap, QWidget *parent = nullptr);
+	~RawDataPointmapEditPtsDialog();
 	double pointX();
 	double pointY();
 	double value();
+
 private:
-    Ui::RawDataPointmapEditPtsDialog *ui;
+	Ui::RawDataPointmapEditPtsDialog *ui;
 	RawDataPointmap* m_pointMap;
 };
 

@@ -13,7 +13,7 @@ public:
 	PostProcessorWindowProjectDataItem(ProjectDataItem* parent, QWidget* /*parentWindow*/)
 		: ProjectDataItem(parent)
 	{
-		m_window = 0;
+		m_window = nullptr;
 	}
 	~PostProcessorWindowProjectDataItem();
 	void informWindowClose();

@@ -13,7 +13,7 @@ class MeasuredDataVectorSettingDialog : public QDialog {
 	Q_OBJECT
 
 public:
-	explicit MeasuredDataVectorSettingDialog(QWidget *parent = 0);
+	explicit MeasuredDataVectorSettingDialog(QWidget *parent = nullptr);
 	~MeasuredDataVectorSettingDialog();
 	void setData(MeasuredData *data);
 	bool isEnabled() const;

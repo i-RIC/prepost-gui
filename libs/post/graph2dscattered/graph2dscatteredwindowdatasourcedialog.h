@@ -18,7 +18,7 @@ class Graph2dScatteredWindowDataSourceDialog : public QDialog
 	Q_OBJECT
 	
 public:
-	explicit Graph2dScatteredWindowDataSourceDialog(QWidget *parent = 0);
+	explicit Graph2dScatteredWindowDataSourceDialog(QWidget *parent = nullptr);
 	~Graph2dScatteredWindowDataSourceDialog();
 	void setDimension(PostSolutionInfo::Dimension dim){m_dimension = dim;}
 	void setZoneDataContainer(PostZoneDataContainer* cont);

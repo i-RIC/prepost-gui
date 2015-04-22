@@ -13,7 +13,7 @@ class StartPageRecentSolverList : public QWidget
 private:
 	const static int MAXSOLVERS = 6;
 public:
-	explicit StartPageRecentSolverList(QWidget *parent = 0);
+	explicit StartPageRecentSolverList(QWidget *parent = nullptr);
 	void setSolverList(SolverDefinitionList* solverList);
 signals:
 	void solverSelected(SolverDefinitionAbstract* solverDef);

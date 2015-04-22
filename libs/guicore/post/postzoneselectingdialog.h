@@ -18,7 +18,7 @@ class GUICOREDLL_EXPORT PostZoneSelectingDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit PostZoneSelectingDialog(QWidget *parent = 0);
+	explicit PostZoneSelectingDialog(QWidget *parent = nullptr);
 	~PostZoneSelectingDialog();
 	void setContainers(const QList<PostZoneDataContainer*>& containers);
 	QString gridTypeName();

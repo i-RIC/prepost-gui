@@ -12,7 +12,7 @@ class PreferenceDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreferenceDialog(QWidget *parent = 0);
+	explicit PreferenceDialog(QWidget *parent = nullptr);
 	~PreferenceDialog();
 	bool save();
 

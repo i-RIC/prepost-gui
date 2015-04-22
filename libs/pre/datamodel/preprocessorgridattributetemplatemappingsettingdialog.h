@@ -12,7 +12,7 @@ class PreProcessorGridAttributeTemplateMappingSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget *parent = 0);
+    explicit PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget *parent = nullptr);
     ~PreProcessorGridAttributeTemplateMappingSettingDialog();
 
 	bool autoMode();

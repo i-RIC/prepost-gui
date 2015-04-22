@@ -16,7 +16,7 @@ class RawDataRiverCrosssectionAltitudeMoveDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget *parent = 0);
+	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget *parent = nullptr);
 	~RawDataRiverCrosssectionAltitudeMoveDialog();
 public slots:
 	void accept();

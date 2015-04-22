@@ -110,7 +110,7 @@ void GridBirdEyeWindowDataModel::setDefaultColor()
 	Grid* g = dItem->grid();
 
 	m_customColor = Qt::blue;
-	if (g->gridRelatedCondition(ELEVATION) != 0){
+	if (g->gridRelatedCondition(ELEVATION) != nullptr){
 		m_colorType = ctNode;
 		m_attributeName = ELEVATION;
 	} else {

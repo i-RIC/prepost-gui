@@ -12,9 +12,10 @@ class RawDataPointmapRealImporterFilterDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataPointmapRealImporterFilterDialog(QWidget *parent = 0);
+	explicit RawDataPointmapRealImporterFilterDialog(QWidget *parent = nullptr);
 	~RawDataPointmapRealImporterFilterDialog();
 	int filterValue();
+
 private:
 	Ui::RawDataPointmapRealImporterFilterDialog *ui;
 };

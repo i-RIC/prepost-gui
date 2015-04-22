@@ -8,10 +8,10 @@ GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, Pro
 	m_mainWindow = w;
 	m_graphicsView = dynamic_cast<VTKGraphicsView*>(w->centralWidget());
 /*
-	m_rootDataItem = 0;
-	m_rightClickMenu = 0;
+	m_rootDataItem = nullptr;
+	m_rightClickMenu = nullptr;
 	m_operationToolBar = new iRICToolBar(tr("Operation ToolBar"), iricMainWindow());
-	m_selectedItem = 0;
+	m_selectedItem = nullptr;
 	m_dataLoaded = false;
 
 	m_dataRange.setRange(0, 100);

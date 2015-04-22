@@ -17,7 +17,7 @@ public:
 		cpElevation
 	};
 
-	explicit RawDataRiverSurveyImporterSettingDialog(QWidget *parent = 0);
+	explicit RawDataRiverSurveyImporterSettingDialog(QWidget *parent = nullptr);
 	~RawDataRiverSurveyImporterSettingDialog();
 
 	CenterPointSetting centerPointSetting() const;

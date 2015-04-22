@@ -11,9 +11,9 @@
 #include <QSet>
 
 RawDataCreator::RawDataCreator()
-	: QObject(0)
+	: QObject(nullptr)
 {
-	m_emptyData = 0;
+	m_emptyData = nullptr;
 }
 
 RawDataCreator::~RawDataCreator()

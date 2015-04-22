@@ -100,7 +100,7 @@ bool PostZoneDataContainer::loadZoneSize(const int fn)
 
 bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentStep)
 {
-	if (m_data != 0){
+	if (m_data != nullptr){
 		m_data->Initialize();
 		m_labelData->Initialize();
 	}else{
@@ -1007,7 +1007,7 @@ bool PostZoneDataContainer::setupIndexData()
 		newElevArray->SetName(origElevArray->GetName());
 	}
 
-	if (sGrid != 0){
+	if (sGrid != nullptr){
 		// structured grid.
 		int dims[3];
 		sGrid->GetDimensions(dims);
@@ -1024,7 +1024,7 @@ bool PostZoneDataContainer::setupIndexData()
 			sGrid->GetPoint(nodeIndex(i, 0, 0), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1).arg(1)).c_str());
-			if (newElevArray != 0){
+			if (newElevArray != nullptr){
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(i, 0, 0)));
 			}
 		}
@@ -1033,7 +1033,7 @@ bool PostZoneDataContainer::setupIndexData()
 			sGrid->GetPoint(nodeIndex(0, j, 0), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1).arg(1)).c_str());
-			if (newElevArray != 0){
+			if (newElevArray != nullptr){
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, j, 0)));
 			}
 		}
@@ -1042,13 +1042,13 @@ bool PostZoneDataContainer::setupIndexData()
 			sGrid->GetPoint(nodeIndex(0, 0, k), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(1).arg(k + 1)).c_str());
-			if (newElevArray != 0){
+			if (newElevArray != nullptr){
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, 0, k)));
 			}
 		}
 		m_labelData->SetPoints(points);
 		m_labelData->GetPointData()->AddArray(indexArray);
-		if (newElevArray != 0){
+		if (newElevArray != nullptr){
 			m_labelData->GetPointData()->AddArray(newElevArray);
 		}
 	} else {
@@ -1108,12 +1108,12 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 	return;
 ERROR:
 	m_loadOK = false;
-	m_data = 0;
+	m_data = nullptr;
 }
 
 void PostZoneDataContainer::loadIfEmpty(const int fn)
 {
-	if (m_data != 0){return;}
+	if (m_data != nullptr){return;}
 	loadFromCgnsFile(fn);
 }
 
@@ -1191,7 +1191,7 @@ bool PostZoneDataContainer::IBCExists()
 	int n = data->GetNumberOfArrays();
 	for (int i = 0; i < n; ++i){
 		vtkDataArray* array = data->GetArray(i);
-		if (array == 0){continue;}
+		if (array == nullptr){continue;}
 		if (IBC == array->GetName()){return true;}
 	}
 	return false;
@@ -1204,7 +1204,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 	QString tmpFile = iRIC::getTempFileName(dir);
 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(m_data);
-	if (sgrid != 0){
+	if (sgrid != nullptr){
 		vtkStructuredGridWriter* writer = vtkStructuredGridWriter::New();
 		vtkExtractGrid* extract = vtkExtractGrid::New();
 		extract->SetVOI(imin, imax, jmin, jmax, kmin, kmax);
@@ -1218,7 +1218,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 		extract->Delete();
 	}
 	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(m_data);
-	if (ugrid != 0){
+	if (ugrid != nullptr){
 		vtkUnstructuredGridWriter* writer = vtkUnstructuredGridWriter::New();
 		QString header("iRIC output t = %1");
 		writer->SetHeader(iRIC::toStr(header.arg(time)).c_str());
@@ -1260,7 +1260,7 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 	vtkPointData* pData = m_data->GetPointData();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(m_data);
 
-	if (sgrid != 0){
+	if (sgrid != nullptr){
 		int dim[3];
 		sgrid->GetDimensions(dim);
 		stream << "iRIC output t = " << time << "\r\n";
@@ -1328,7 +1328,7 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 		}
 	}
 	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(m_data);
-	if (ugrid != 0){
+	if (ugrid != nullptr){
 		stream << "iRIC output t = " << time << "\r\n";
 		stream << ugrid->GetNumberOfPoints();
 		stream << "\r\n";
@@ -1338,7 +1338,7 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 		stream << ",Y";
 		for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 			vtkDataArray* array = pData->GetArray(i);
-			if (array == 0){continue;}
+			if (array == nullptr){continue;}
 			int comps = array->GetNumberOfComponents();
 			QString name = pData->GetArrayName(i);
 			if (comps == 1){
@@ -1359,7 +1359,7 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 			stream << "," << pos[0] << "," << pos[1];
 			for (int l = 0; l < pData->GetNumberOfArrays(); ++l){
 				vtkDataArray* array = pData->GetArray(l);
-				if (array == 0){continue;}
+				if (array == nullptr){continue;}
 				int comps = array->GetNumberOfComponents();
 				if (comps == 1){
 					stream << "," << array->GetTuple1(i);
@@ -1392,7 +1392,7 @@ const QString PostZoneDataContainer::elevationName()
 
 vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
-	if (vtkStructuredGrid::SafeDownCast(m_data) != 0){
+	if (vtkStructuredGrid::SafeDownCast(m_data) != nullptr){
 		// Structured Data
 		return filteredDataStructured(xmin, xmax, ymin, ymax, masked);
 	} else {

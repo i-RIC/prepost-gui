@@ -577,7 +577,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCenterAndWidthDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthDefineNewPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_condition != m_condition){return false;}
 		m_newPoint = comm->m_newPoint;
@@ -653,7 +653,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCenterAndWidthMoveCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_condition != m_condition){return false;}
 		m_offset += comm->m_offset;
@@ -728,7 +728,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCenterAndWidthMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_condition != m_condition){return false;}
 		if (comm->m_vertexId != m_vertexId){return false;}
@@ -834,7 +834,7 @@ public:
 	bool mergeWith(const QUndoCommand *other)
 	{
 		const GridCreatingConditionCenterAndWidthAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthAddVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (m_condition != comm->m_condition){return false;}
 		if (m_vertexId != comm->m_vertexId){return false;}

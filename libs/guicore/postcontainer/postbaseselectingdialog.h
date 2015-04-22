@@ -18,7 +18,7 @@ public:
 		Dimension2 = 2,
 		Dimension3 = 4
 	};
-	explicit PostBaseSelectingDialog(QWidget *parent = 0);
+	explicit PostBaseSelectingDialog(QWidget *parent = nullptr);
 	~PostBaseSelectingDialog();
 	void setAvailableDimensions(int dimensions);
 	BaseDimension selectedDimension();

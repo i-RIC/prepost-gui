@@ -32,8 +32,8 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
 	: ProjectDataItem(parent)
 {
 	m_currentStep = 0;
-	m_iterationSteps = 0;
-	m_timeSteps = 0;
+	m_iterationSteps = nullptr;
+	m_timeSteps = nullptr;
 	m_timerId = 0;
 	m_fileId = 0;
 	m_iterationType = SolverDefinition::NoIteration;
@@ -67,13 +67,13 @@ PostSolutionInfo::~PostSolutionInfo()
 void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 {
 	m_iterationType = type;
-	if (m_iterationSteps != 0){
+	if (m_iterationSteps != nullptr){
 		delete m_iterationSteps;
-		m_iterationSteps = 0;
+		m_iterationSteps = nullptr;
 	}
-	if (m_timeSteps != 0){
+	if (m_timeSteps != nullptr){
 		delete m_timeSteps;
-		m_timeSteps = 0;
+		m_timeSteps = nullptr;
 	}
 
 	switch (m_iterationType)
@@ -420,7 +420,7 @@ bool PostSolutionInfo::hasResults()
 {
 	if (m_timeSteps != 0){
 		return m_timeSteps->dataExists();
-	}else if (m_iterationSteps != 0){
+	}else if (m_iterationSteps != nullptr){
 		return m_iterationSteps->dataExists();
 	}else{
 		return false;
@@ -446,10 +446,10 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		return;
 	}
 	m_fileId = fn;
-	if (m_timeSteps != 0) {
+	if (m_timeSteps != nullptr) {
 		m_timeSteps->checkStepsUpdate(m_fileId);
 	}
-	if (m_iterationSteps != 0) {
+	if (m_iterationSteps != nullptr) {
 		m_iterationSteps->checkStepsUpdate(m_fileId);
 	}
 	checking = false;
@@ -481,10 +481,10 @@ void PostSolutionInfo::handleTimeStepsUpdate(const QList<double>& steps)
 
 void PostSolutionInfo::informCgnsSteps()
 {
-	if (m_timeSteps != 0) {
+	if (m_timeSteps != nullptr) {
 		m_timeSteps->informSteps();
 	}
-	if (m_iterationSteps != 0) {
+	if (m_iterationSteps != nullptr) {
 		m_iterationSteps->informSteps();
 	}
 }
@@ -505,12 +505,12 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 void PostSolutionInfo::loadFromCgnsFile(const int fn)
 {
 	m_currentStep = 0;
-	if (m_timeSteps != 0){
+	if (m_timeSteps != nullptr){
 		m_timeSteps->blockSignals(true);
 		m_timeSteps->loadFromCgnsFile(fn);
 		m_timeSteps->blockSignals(false);
 	}
-	if (m_iterationSteps != 0){
+	if (m_iterationSteps != nullptr){
 		m_iterationSteps->blockSignals(true);
 		m_iterationSteps->loadFromCgnsFile(fn);
 		m_iterationSteps->blockSignals(false);
@@ -592,10 +592,10 @@ bool PostSolutionInfo::isDataAvailable3D()
 bool PostSolutionInfo::stepsExist()
 {
 	bool ret = false;
-	if (m_timeSteps != 0) {
+	if (m_timeSteps != nullptr) {
 		ret = m_timeSteps->dataExists();
 	}
-	if (m_iterationSteps != 0) {
+	if (m_iterationSteps != nullptr) {
 		ret = m_iterationSteps->dataExists();
 	}
 	return ret;
@@ -603,7 +603,7 @@ bool PostSolutionInfo::stepsExist()
 
 double PostSolutionInfo::currentTimeStep()
 {
-	if (m_timeSteps == 0){return 0;}
+	if (m_timeSteps == nullptr){return 0;}
 	if (m_currentStep >= m_timeSteps->timesteps().count()){return 0;}
 	return m_timeSteps->timesteps().at(m_currentStep);
 }
@@ -752,7 +752,7 @@ void PostSolutionInfo::exportCalculationResult()
 	expDialog.setStartTimeStep(m_exportStartStep);
 	expDialog.setEndTimeStep(m_exportEndStep);
 	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data());
-	if (sGrid != 0){
+	if (sGrid != nullptr){
 		// structured grid
 		int dim[3];
 		sGrid->GetDimensions(dim);

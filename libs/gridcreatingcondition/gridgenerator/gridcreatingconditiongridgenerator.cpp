@@ -391,7 +391,7 @@ bool GridCreatingConditionGridGenerator::ready() const
 
 void GridCreatingConditionGridGenerator::setupMenu()
 {
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == nullptr){
 		PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
 		m_rightClickingMenu = new QMenu();
 		m_rightClickingMenu->addAction(p->createAction());

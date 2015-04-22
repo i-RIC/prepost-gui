@@ -19,7 +19,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionDialog : public QDialog {
 	Q_OBJECT
 public:
 	/// Constructor
-	CgnsFileInputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget *parent = 0);
+	CgnsFileInputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget *parent = nullptr);
 	/// Destructor
 	~CgnsFileInputConditionDialog();
 	void setFileName(const QString& fileName){m_fileName = fileName;}

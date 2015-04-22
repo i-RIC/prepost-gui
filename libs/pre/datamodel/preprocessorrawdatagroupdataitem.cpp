@@ -70,7 +70,7 @@ PreProcessorRawDataGroupDataItem::PreProcessorRawDataGroupDataItem(SolverDefinit
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_addSignalMapper = 0;
+	m_addSignalMapper = nullptr;
 
 	m_importAction = new QAction(tr("&Import..."), this);
 	m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
@@ -180,7 +180,7 @@ void PreProcessorRawDataGroupDataItem::import()
 	QString filename = QFileDialog::getOpenFileName(preProcessorWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
 	if (filename.isNull()){return;}
 
-	RawDataImporter* importer = 0;
+	RawDataImporter* importer = nullptr;
 	for (int i = 0; i < filters.count(); ++i){
 		if (filters[i] == selectedFilter){
 			if (i == 0){
@@ -197,7 +197,7 @@ void PreProcessorRawDataGroupDataItem::import()
 			}
 		}
 	}
-	Q_ASSERT(importer != 0);
+	Q_ASSERT(importer != nullptr);
 
 	// execute import.
 	int dataCount;
@@ -207,9 +207,9 @@ void PreProcessorRawDataGroupDataItem::import()
 		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return;
 	}
-	PreProcessorRawdataDataItem* item = 0;
+	PreProcessorRawdataDataItem* item = nullptr;
 
-	WaitDialog* wDialog = 0;
+	WaitDialog* wDialog = nullptr;
 	m_cancelImport = false;
 	if (dataCount >= 5) {
 		wDialog = new WaitDialog(mainWindow());
@@ -231,12 +231,12 @@ void PreProcessorRawDataGroupDataItem::import()
 		importer->creator()->setNameAndDefaultCaption(this->childItems(), rawdata);
 		rawdata->setupDataItem();
 		if (rawdata->requestCoordinateSystem()){
-			if (projectData()->mainfile()->coordinateSystem() == 0){
+			if (projectData()->mainfile()->coordinateSystem() == nullptr){
 				QMessageBox::information(preProcessorWindow(), tr("Information"), tr("To import the geographic data, specify coodrinate system first."), QMessageBox::Ok);
 				int dialogRet = projectData()->mainfile()->showCoordinateSystemDialog();
 				if (dialogRet == QDialog::Rejected){
 					delete item;
-					item = 0;
+					item = nullptr;
 					goto ERROR;
 				}
 			}
@@ -247,7 +247,7 @@ void PreProcessorRawDataGroupDataItem::import()
 			// failed.
 			QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 			delete item;
-			item = 0;
+			item = nullptr;
 			goto ERROR;
 		} else {
 			QVector2D o = offset();
@@ -258,12 +258,12 @@ void PreProcessorRawDataGroupDataItem::import()
 			// add the item, in the front.
 			m_childItems.push_front(item);
 		}
-		if (wDialog != 0){
+		if (wDialog != nullptr){
 			wDialog->setProgress(i + 1);
 		}
 		setupConnectionToRawData(rawdata);
 	}
-	if (wDialog != 0){
+	if (wDialog != nullptr){
 		wDialog->hide();
 		delete wDialog;
 	}
@@ -287,7 +287,7 @@ void PreProcessorRawDataGroupDataItem::import()
 	return;
 
 ERROR:
-	if (wDialog != 0){
+	if (wDialog != nullptr){
 		wDialog->hide();
 		delete wDialog;
 	}
@@ -410,7 +410,7 @@ void PreProcessorRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 		QDomNode child = children.at(i);
 		// restore
 		RawData* rawdata = factory.restore(child, item, m_condition);
-		if (rawdata != 0){
+		if (rawdata != nullptr){
 			item->setRawData(rawdata);
 			// load data.
 			item->loadFromProjectMainFile(child);
@@ -505,7 +505,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 			mapper->setTarget(grid, container, rawdata);
 			mapper->map(boolMap, settings.at(idx));
 			++idx;
-			if (dialog != 0){
+			if (dialog != nullptr){
 				dialog->setProgress(dialog->progress() + 1);
 				qApp->processEvents();
 			}
@@ -548,7 +548,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog *di
 				mapper->setTarget(grid, container, rawdata);
 				mapper->map(boolMap, settings.at(idx));
 				++idx;
-				if (dialog != 0){
+				if (dialog != nullptr){
 					dialog->setProgress(dialog->progress() + 1);
 					qApp->processEvents();
 				}
@@ -595,7 +595,7 @@ void PreProcessorRawDataGroupDataItem::setDefaultValue(Grid* grid)
 void PreProcessorRawDataGroupDataItem::informValueRangeChange()
 {
 	PreProcessorRawDataTopDataItem* topItem = dynamic_cast<PreProcessorRawDataTopDataItem*>(parent());
-	if (topItem != 0){
+	if (topItem != nullptr){
 		topItem->informValueRangeChange(m_condition->name());
 	}
 }
@@ -766,12 +766,12 @@ void PreProcessorRawDataGroupDataItem::addCopyPolygon(RawDataPolygon* polygon)
 	RawDataFactory& factory = RawDataFactory::instance();
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
-	RawDataPolygonCreator* c = 0;
+	RawDataPolygonCreator* c = nullptr;
 	for (int i = 0; i < creators.count(); ++i){
 		c = dynamic_cast<RawDataPolygonCreator*>(creators[i]);
-		if (c != 0){break;}
+		if (c != nullptr){break;}
 	}
-	if (c == 0){return;}
+	if (c == nullptr){return;}
 
 	// create a new Rawdata item.
 	PreProcessorRawdataDataItem* item = new PreProcessorRawdataDataItem(this);
@@ -855,12 +855,12 @@ void PreProcessorRawDataGroupDataItem::exportAllPolygons()
 	if (filename.isEmpty()){return;}
 	QString dbfFilename;
 	RawDataPolygonRealCreator* c = new RawDataPolygonRealCreator();
-	RawDataPolygonShapeExporter* exporter = 0;
+	RawDataPolygonShapeExporter* exporter = nullptr;
 	for (int i = 0; i < c->exporters().count(); ++i){
 		exporter = dynamic_cast<RawDataPolygonShapeExporter*>(c->exporters().at(i));
-		if (exporter != 0){break;}
+		if (exporter != nullptr){break;}
 	}
-	if (exporter == 0){goto ERROR;}
+	if (exporter == nullptr){goto ERROR;}
 
 	bool isDouble;
 	dbfFilename = filename;
@@ -873,7 +873,7 @@ void PreProcessorRawDataGroupDataItem::exportAllPolygons()
 	for (int i = 0; i < m_childItems.count(); ++i){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();
-		if (dynamic_cast<RawDataPolygon*>(rd) == 0){continue;}
+		if (dynamic_cast<RawDataPolygon*>(rd) == nullptr){continue;}
 		codecOK = codecOK && codec->canEncode(rd->caption());
 	}
 	if (! codecOK){
@@ -885,7 +885,7 @@ void PreProcessorRawDataGroupDataItem::exportAllPolygons()
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();
 		RawDataPolygon* rdp = dynamic_cast<RawDataPolygon*>(rd);
-		if ((rdp) == 0){continue;}
+		if ((rdp) == nullptr){continue;}
 		SHPObject* obj = exporter->getSHPObject(rdp, shpHandle, index);
 		SHPWriteObject(shpHandle, -1, obj);
 		SHPDestroyObject(obj);
@@ -910,7 +910,7 @@ void PreProcessorRawDataGroupDataItem::deleteAll()
 	for (int i = m_childItems.count() - 1; i >= 0; --i){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();
-		if (dynamic_cast<RawDataBackground*>(rd) != 0){continue;}
+		if (dynamic_cast<RawDataBackground*>(rd) != nullptr){continue;}
 
 		QModelIndex index = item->standardItem()->index();
 		dataModel()->deleteItem(index);
@@ -923,7 +923,7 @@ bool PreProcessorRawDataGroupDataItem::polygonExists() const
 	for (int i = 0; i < m_childItems.count(); ++i){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();
-		ret = ret || (dynamic_cast<RawDataPolygon*>(rd) != 0);
+		ret = ret || (dynamic_cast<RawDataPolygon*>(rd) != nullptr);
 	}
 	return ret;
 }

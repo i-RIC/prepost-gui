@@ -41,7 +41,7 @@ Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverD
 		int num = pd->GetNumberOfArrays();
 		for (int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -86,7 +86,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 		int num = pd->GetNumberOfArrays();
 		for(int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -121,9 +121,9 @@ void Post2dBirdEyeWindowGridTypeDataItem::updateLookupTableRanges()
 		min = 0; max = 0;
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 			Post2dBirdEyeWindowZoneDataItem* zitem = *zit;
-			if (zitem->dataContainer() == 0 || zitem->dataContainer()->data() == 0){continue;}
+			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr){continue;}
 			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-			if (dArray != 0){
+			if (dArray != nullptr){
 				dArray->GetRange(range);
 				if (first || range[0] < min){min = range[0];}
 				if (first || range[1] > max){max = range[1];}
@@ -152,8 +152,8 @@ void Post2dBirdEyeWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNo
 		for (int i = 0; i < tables.length(); ++i){
 			QDomNode ltNode = tables.at(i);
 			QString ltName = ltNode.toElement().attribute("name");
-			LookupTableContainer* cont = m_lookupTables.value(ltName, 0);
-			if (cont != 0){
+			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
+			if (cont != nullptr){
 				cont->loadFromProjectMainFile(ltNode);
 			}
 		}
@@ -164,8 +164,8 @@ void Post2dBirdEyeWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNo
 		for (int i = 0; i < zones.length(); ++i){
 			QDomNode zoneNode = zones.at(i);
 			QString zoneName = zoneNode.toElement().attribute("name");
-			Post2dBirdEyeWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, 0);
-			if (zdi != 0){
+			Post2dBirdEyeWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
+			if (zdi != nullptr){
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
 		}

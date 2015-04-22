@@ -52,7 +52,7 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 			// try to add.
 			RawDataProxy* proxy = rawData->getProxy();
 			connect(rawData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
-			if (proxy != 0){
+			if (proxy != nullptr){
 				Post2dWindowRawDataDataItem* pItem = new Post2dWindowRawDataDataItem(this);
 				pItem->setRawDataProxy(proxy);
 				proxy->setupDataItem();

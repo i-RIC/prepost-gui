@@ -8,18 +8,18 @@
 
 RawDataRiverSurveyCrosssectionWindowDelegate::RawDataRiverSurveyCrosssectionWindowDelegate()
 {
-	m_editor = 0;
-	m_crosssection = 0;
-	m_checkBox = 0;
-	m_model = 0;
+	m_editor = nullptr;
+	m_crosssection = nullptr;
+	m_checkBox = nullptr;
+	m_model = nullptr;
 }
 
 void RawDataRiverSurveyCrosssectionWindowDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
-	if (m_crosssection == 0){return;}
+	if (m_crosssection == nullptr){return;}
 	QVariant dat = index.model()->data(index, Qt::EditRole);
 	if (index.column() == 0){
-		CenteredCheckBox* checkbox = new CenteredCheckBox(0);
+		CenteredCheckBox* checkbox = new CenteredCheckBox(nullptr);
 		checkbox->setChecked(dat.toBool());
 		if (m_crosssection->fixedPointLSet() &&
 			(index.row() == m_crosssection->fixedPointLIndex() || index.row() == 0))
@@ -43,7 +43,7 @@ void RawDataRiverSurveyCrosssectionWindowDelegate::paint(QPainter *painter, cons
 }
 
 QWidget* RawDataRiverSurveyCrosssectionWindowDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem & option, const QModelIndex &index) const {
-	if (m_crosssection == 0){return 0;}
+	if (m_crosssection == nullptr){return nullptr;}
 	QVariant dat = index.model()->data(index, Qt::DisplayRole);
 	if (dat.type() == QVariant::Double){
 		// Float. Edit with RealEdit
@@ -67,7 +67,7 @@ QWidget* RawDataRiverSurveyCrosssectionWindowDelegate::createEditor(QWidget *par
 }
 
 void RawDataRiverSurveyCrosssectionWindowDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const {
-	if (m_crosssection == 0){return;}
+	if (m_crosssection == nullptr){return;}
 	QVariant dat = index.model()->data(index, Qt::DisplayRole);
 	if (dat.type() == QVariant::Double){
 		// Float. Edit with RealEdit
@@ -119,6 +119,6 @@ void RawDataRiverSurveyCrosssectionWindowDelegate::handleCheckboxToggle(bool tog
 void RawDataRiverSurveyCrosssectionWindowDelegate::handleEditorDestroy(QObject* e)
 {
 	if (m_editor == e){
-		m_editor = 0;
+		m_editor = nullptr;
 	}
 }

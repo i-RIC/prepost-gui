@@ -13,7 +13,7 @@ class Graph2dScatteredWindowDrawSettingDialog : public QDialog
 	Q_OBJECT
 	
 public:
-	explicit Graph2dScatteredWindowDrawSettingDialog(QWidget *parent = 0);
+	explicit Graph2dScatteredWindowDrawSettingDialog(QWidget *parent = nullptr);
 	~Graph2dScatteredWindowDrawSettingDialog();
 	
 	void setResultSettings(const QList<Graph2dScatteredWindowResultSetting::Setting>& list);

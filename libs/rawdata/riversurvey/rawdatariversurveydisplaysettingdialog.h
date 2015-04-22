@@ -14,7 +14,7 @@ class RawDataRiverSurveyDisplaySettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverSurveyDisplaySettingDialog(QWidget *parent = 0);
+	explicit RawDataRiverSurveyDisplaySettingDialog(QWidget *parent = nullptr);
 	~RawDataRiverSurveyDisplaySettingDialog();
 	void setColormapVisible(bool visible);
 	void setOpacityPercent(int opacity);

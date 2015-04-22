@@ -20,7 +20,7 @@ class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog : public 
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractPolygon* polygon, GridCreatingConditionCompoundChannel* cond, QWidget *parent = 0);
+	explicit GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractPolygon* polygon, GridCreatingConditionCompoundChannel* cond, QWidget *parent = nullptr);
 	~GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog();
 public slots:
 	void accept();

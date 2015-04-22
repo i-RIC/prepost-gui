@@ -242,7 +242,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	// add it simply.
 	m_childItems.insert(it, item);
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	if (gItem->grid() != 0){
+	if (gItem->grid() != nullptr){
 		gItem->grid()->setModified();
 	}
 

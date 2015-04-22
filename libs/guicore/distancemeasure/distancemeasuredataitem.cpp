@@ -217,7 +217,7 @@ public:
 	int id() const {return iRIC::generateCommandId("DistanceMeasureDefineCommand");}
 	virtual bool mergeWith(const QUndoCommand *other){
 		const DistanceMeasureDefineCommand* other2 = dynamic_cast<const DistanceMeasureDefineCommand*>(other);
-		if (other2 == 0) return false;
+		if (other2 == nullptr) return false;
 		m_newPoint1 = other2->m_newPoint1;
 		m_newPoint2 = other2->m_newPoint2;
 		m_finish = other2->m_finish;
@@ -285,7 +285,7 @@ public:
 	int id() const {return iRIC::generateCommandId("DistanceMeasureMoveVertexCommand");}
 	virtual bool mergeWith(const QUndoCommand *other){
 		const DistanceMeasureMoveVertexCommand* other2 = dynamic_cast<const DistanceMeasureMoveVertexCommand*>(other);
-		if (other2 == 0){return false;}
+		if (other2 == nullptr){return false;}
 		if (m_point != other2->m_point){return false;}
 		if (m_finish){return false;}
 		m_newPoint = other2->m_newPoint;
@@ -340,7 +340,7 @@ public:
 	int id() const {return iRIC::generateCommandId("DistanceMeasureTranslateCommand");}
 	virtual bool mergeWith(const QUndoCommand *other){
 		const DistanceMeasureTranslateCommand* other2 = dynamic_cast<const DistanceMeasureTranslateCommand*>(other);
-		if (other2 == 0){return false;}
+		if (other2 == nullptr){return false;}
 		if (m_finish){return false;}
 		m_diff = other2->m_diff;
 		m_finish = other2->m_finish;

@@ -18,7 +18,7 @@ GridImporterFactory* GridImporterFactory::m_instance = 0;
 
 void GridImporterFactory::init()
 {
-	if (m_instance != 0){
+	if (m_instance != nullptr){
 		delete m_instance;
 	}
 	m_instance = new GridImporterFactory();
@@ -51,7 +51,7 @@ GridImporterFactory::GridImporterFactory()
 			QFileInfo finfo(fileName);
 			QString dictName = QString("%1_%2.qm").arg(finfo.baseName()).arg(locale);
 			QFile dictFile(pluginDir.filePath(dictName));
-			QTranslator* translator = 0;
+			QTranslator* translator = nullptr;
 			if (dictFile.exists()){
 				translator = new QTranslator(this);
 				translator->load(QString("%1_%2").arg(finfo.baseName()).arg(locale), pluginDir.absolutePath());
@@ -73,7 +73,7 @@ GridImporterFactory::GridImporterFactory()
 			continue;
 
 LOADERROR:
-			if (translator != 0){
+			if (translator != nullptr){
 				delete translator;
 			}
 		}

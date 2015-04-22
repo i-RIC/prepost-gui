@@ -23,14 +23,14 @@
 GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
 	: GridCreatingCondition(parent, creator)
 {
-	m_rightClickingMenu = 0;
+	m_rightClickingMenu = nullptr;
 	clear();
 	graphicsView()->ResetCameraClippingRange();
 }
 
 GridCreatingConditionGridCombine::~GridCreatingConditionGridCombine()
 {
-	if (m_rightClickingMenu != 0){
+	if (m_rightClickingMenu != nullptr){
 		delete m_rightClickingMenu;
 	}
 }
@@ -63,7 +63,7 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	GridRelatedConditionContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
 	GridRelatedConditionRealNodeContainer* rnContainer = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
-	if (rnContainer != 0){
+	if (rnContainer != nullptr){
 		for (int j = 0; j < m_jMax; j++){
 			for (int i = 0; i < m_iMax; i++){
 				rnContainer->setValue(m_iMax * j + i, z8[i + 1][j + 1]);
@@ -74,7 +74,7 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	}
 	c = grid->gridRelatedCondition("CellCondition");
 	GridRelatedConditionIntegerCellContainer* icContainer = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
-	if (icContainer != 0){
+	if (icContainer != nullptr){
 		for (int j = 0; j < m_jMax - 1; j++){
 			for (int i = 0; i < m_iMax - 1; i++){
 				icContainer->setValue((m_iMax - 1) * j + i, obst[i + 1][j + 1]);
@@ -546,8 +546,8 @@ void GridCreatingConditionGridCombine::clear()
 	alpha = 0.95;
 	beta = 999;
 
-	mainstreamGrid = 0;
-	tributaryGrid = 0;
+	mainstreamGrid = nullptr;
+	tributaryGrid = nullptr;
 	m_iMax = 0;
 	m_jMax = 0;
 }

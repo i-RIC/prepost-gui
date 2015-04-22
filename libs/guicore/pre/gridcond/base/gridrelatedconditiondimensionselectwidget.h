@@ -10,7 +10,7 @@ class GridRelatedConditionDimensionSelectWidget : public QWidget
 	Q_OBJECT
 
 public:
-	GridRelatedConditionDimensionSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent = 0);
+	GridRelatedConditionDimensionSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent = nullptr);
 	~GridRelatedConditionDimensionSelectWidget();
 	GridRelatedConditionDimensionContainer* container() const {return m_container;}
 

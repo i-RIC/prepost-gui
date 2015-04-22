@@ -251,7 +251,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 {
 	Structured2DGrid* mg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->mainstreamComboBox->currentText()));
 	Structured2DGrid* tg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->tributaryComboBox->currentText()));
-	if (mg == 0 || tg == 0){
+	if (mg == nullptr || tg == nullptr){
 		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 		return;
 	} else {
@@ -262,7 +262,6 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	int ti = tg->dimensionI();
 	int tj = tg->dimensionJ();
 	offset = tj - 1;
-
 
 	// Bind
 	if (ui->bindRadioButton->isChecked()){

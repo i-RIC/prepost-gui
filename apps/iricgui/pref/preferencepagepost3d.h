@@ -9,11 +9,13 @@ namespace Ui {
 
 class PreferencePagePost3d : public PreferencePage
 {
-    Q_OBJECT
+	Q_OBJECT
+
 public:
-    explicit PreferencePagePost3d(QWidget *parent = 0);
-    ~PreferencePagePost3d();
+	explicit PreferencePagePost3d(QWidget *parent = nullptr);
+	~PreferencePagePost3d();
 	void update();
+
 private:
     Ui::PreferencePagePost3d *ui;
 };

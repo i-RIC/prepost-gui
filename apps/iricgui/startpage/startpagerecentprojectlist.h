@@ -10,7 +10,7 @@ class StartPageRecentProjectList : public QWidget
 private:
 	const static int MAXPROJECTS = 6;
 public:
-	explicit StartPageRecentProjectList(QWidget *parent = 0);
+	explicit StartPageRecentProjectList(QWidget *parent = nullptr);
 signals:
 	void projectSelected(const QString& filename);
 private slots:

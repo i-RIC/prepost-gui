@@ -11,7 +11,7 @@
 StartPageLinks::StartPageLinks(QWidget *parent) :
 	QWidget(parent)
 {
-	m_layout = 0;
+	m_layout = nullptr;
 }
 
 void StartPageLinks::setupLinks(const QString& locale)

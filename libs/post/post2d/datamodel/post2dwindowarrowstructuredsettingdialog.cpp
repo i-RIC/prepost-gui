@@ -153,7 +153,7 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 	ui->solutionComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		QString name = tmparray->GetName();
 		if (pd->GetArray(i)->GetNumberOfComponents() <= 1){
 			// scalar attributes.

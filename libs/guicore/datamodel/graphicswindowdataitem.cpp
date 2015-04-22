@@ -25,7 +25,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, Graphic
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == 0){
+	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr){
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -34,7 +34,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const Q
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(icon, itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == 0){
+	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr){
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -43,7 +43,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const Q
 GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent)
 	: ProjectDataItem(parent)
 {
-	m_standardItem = 0;
+	m_standardItem = nullptr;
 	init();
 }
 
@@ -54,16 +54,16 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem(){
 		delete *it;
 	}
 	ProjectDataItem* tmp_parent = parent();
-	if (tmp_parent != 0){
+	if (tmp_parent != nullptr){
 		GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(tmp_parent);
-		if (p != 0){p->unregisterChild(this);}
+		if (p != nullptr){p->unregisterChild(this);}
 	}
 	m_isDestructing = false;
 
 	// remove the item from QStandardItemModel.
 	QStandardItem* item = m_standardItem;
-	if (item != 0){
-		if (item->parent() == 0 || item->parent()->row() == -1){
+	if (item != nullptr){
+		if (item->parent() == nullptr || item->parent()->row() == -1){
 			// maybe this is the top level item of the model
 			QStandardItemModel* model = dataModel()->itemModel();
 			QStandardItem* i = model->item(item->row());
@@ -72,7 +72,7 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem(){
 				dataModel()->itemModel()->removeRow(item->row());
 			}
 		}else{
-			if (item->parent() != 0){
+			if (item->parent() != nullptr){
 				QStandardItem* i = item->parent()->child(item->row());
 				if (i == item){
 					item->parent()->removeRow(item->row());
@@ -86,13 +86,13 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem(){
 
 bool GraphicsWindowDataItem::isEnabled()
 {
-	if (m_standardItem == 0){return false;}
+	if (m_standardItem == nullptr){return false;}
 	return (m_standardItem->checkState() == Qt::Checked);
 }
 
 void GraphicsWindowDataItem::setEnabled(bool enabled)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (enabled){
 		m_standardItem->setCheckState(Qt::Checked);
 	}else{
@@ -115,7 +115,7 @@ void GraphicsWindowDataItem::init()
 	if (m_standardItem){
 		m_standardItem->setEditable(false);
 	}
-	m_standardItemCopy = 0;
+	m_standardItemCopy = nullptr;
 	m_isDeletable = true;
 	m_isReorderable = false;
 	m_isDestructing = false;
@@ -129,7 +129,7 @@ void GraphicsWindowDataItem::init()
 
 void GraphicsWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map)
 {
-	if (m_standardItem != 0){
+	if (m_standardItem != nullptr){
 		map.insert(m_standardItem, this);
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -166,7 +166,7 @@ void GraphicsWindowDataItem::closeCgnsFile()
 
 void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (m_standardItem->isCheckable()){
 		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
 	}
@@ -174,7 +174,7 @@ void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 
 void GraphicsWindowDataItem::saveCheckState(QXmlStreamWriter& writer)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (m_standardItem->isCheckable()){
 		QString checkState;
 		checkState.setNum(m_standardItem->checkState());
@@ -199,7 +199,7 @@ void GraphicsWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 }
 void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 {
-	if (m_standardItem != 0){
+	if (m_standardItem != nullptr){
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -209,7 +209,7 @@ void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 
 void GraphicsWindowDataItem::reflectExpandState(QTreeView* view)
 {
-	if (m_standardItem != 0){
+	if (m_standardItem != nullptr){
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -249,7 +249,7 @@ void GraphicsWindowDataItem::updateVisibilityWithoutRendering()
 void GraphicsWindowDataItem::updateVisibility(bool visible)
 {
 	bool my_visible = true;
-	if (m_standardItem == 0){
+	if (m_standardItem == nullptr){
 		my_visible = true;
 	}else if (m_standardItem->isCheckable()){
 		switch (m_standardItem->checkState()){
@@ -310,7 +310,7 @@ QMainWindow* GraphicsWindowDataItem::mainWindow()
 bool GraphicsWindowDataItem::isAncientChecked()
 {
 	QStandardItem* i = dynamic_cast<GraphicsWindowDataItem*>(parent())->m_standardItem;
-	if (i == 0){return true;}
+	if (i == nullptr){return true;}
 	if (i->isCheckable() && i->checkState() == Qt::Unchecked){
 		return false;
 	}
@@ -369,7 +369,7 @@ void GraphicsWindowDataItem::moveDown()
 void GraphicsWindowDataItem::showPropertyDialog()
 {
 	QDialog* propDialog = propertyDialog(mainWindow());
-	if (propDialog == 0){return;}
+	if (propDialog == nullptr){return;}
 	int result = propDialog->exec();
 	if (result == QDialog::Accepted){
 		handlePropertyDialogAccepted(propDialog);

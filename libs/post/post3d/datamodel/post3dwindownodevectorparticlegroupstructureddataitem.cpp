@@ -197,9 +197,9 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
 
 vtkPointSet* Post3dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
 {
-	vtkStructuredGrid* exGrid = 0;
+	vtkStructuredGrid* exGrid = nullptr;
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return 0;}
+	if (cont == nullptr || cont->data() == nullptr){return nullptr;}
 	Post3dWindowStructuredParticleSetSetting& setting = m_settings[i];
 	switch (setting.spaceMode){
 	case Post3dWindowStructuredParticleSetSetting::smNormal:

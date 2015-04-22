@@ -11,11 +11,11 @@ class RawDataPointmap;
 
 class RawDataPointmapInterpolatePoints : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit RawDataPointmapInterpolatePoints(RawDataPointmap *pmap, QWidget *parent = 0);
-    ~RawDataPointmapInterpolatePoints();
+	explicit RawDataPointmapInterpolatePoints(RawDataPointmap *pmap, QWidget *parent = nullptr);
+	~RawDataPointmapInterpolatePoints();
 	std::vector<double> xinterp, yinterp, zinterp;
 
 private:

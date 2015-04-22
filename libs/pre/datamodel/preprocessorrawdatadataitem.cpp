@@ -31,7 +31,7 @@
 PreProcessorRawdataDataItem::PreProcessorRawdataDataItem(PreProcessorDataItem* parent)
 : PreProcessorRawdataDataItemInterface("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
-	m_rawData = 0;
+	m_rawData = nullptr;
 	m_isReorderable = true;
 	m_exportAction = new QAction(tr("&Export..."), this);
 	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
@@ -41,9 +41,9 @@ PreProcessorRawdataDataItem::PreProcessorRawdataDataItem(PreProcessorDataItem* p
 PreProcessorRawdataDataItem::~PreProcessorRawdataDataItem()
 {
 	if (m_rawData){delete m_rawData;}
-	m_rawData = 0;
+	m_rawData = nullptr;
 	PreProcessorRawDataGroupDataItem* gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(parent());
-	if (gItem != 0){
+	if (gItem != nullptr){
 		gItem->informValueRangeChange();
 	}
 }
@@ -101,7 +101,7 @@ bool PreProcessorRawdataDataItem::addToolBarButtons(QToolBar* tb)
 			dynamic_cast<PreProcessorRawDataGroupDataItem*> (parent());
 
 	bool added = gItem->addToolBarButtons(tb);
-	QAction* sep = 0;
+	QAction* sep = nullptr;
 	if (added){
 		sep = tb->addSeparator();
 	}
@@ -133,13 +133,13 @@ void PreProcessorRawdataDataItem::exportRawdata()
 	QString filename = QFileDialog::getSaveFileName(mainW, tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
 	if (filename.isNull()){return;}
 
-	RawDataExporter* exporter = 0;
+	RawDataExporter* exporter = nullptr;
 	for (int i = 0; i < filters.count(); ++i){
 		if (filters[i] == selectedFilter){
 			exporter = exporters[i];
 		}
 	}
-	Q_ASSERT(exporter != 0);
+	Q_ASSERT(exporter != nullptr);
 
 	// execute export.
 	exporter->doEmport(m_rawData, filename, selectedFilter, mainW, projectData());
@@ -240,7 +240,7 @@ void PreProcessorRawdataDataItem::informDataChange()
 
 bool PreProcessorRawdataDataItem::getValueRange(double* min, double* max)
 {
-	if (m_rawData == 0){return false;}
+	if (m_rawData == nullptr){return false;}
 	return m_rawData->getValueRange(min, max);
 }
 
@@ -259,7 +259,7 @@ bool PreProcessorRawdataDataItem::setupExportMenu(QMenu* /*menu*/)
 {
 	bool ok = false;
 /*
-		if (m_exportSignalMapper != 0){delete m_exportSignalMapper;}
+		if (m_exportSignalMapper != nullptr){delete m_exportSignalMapper;}
 		m_exportSignalMapper = new QSignalMapper(this);
 		const QList<RawDataExporter*>& exporters = m_rawData->exporters();
 		for (auto exp_it = exporters.begin(); exp_it != exporters.end(); ++exp_it){

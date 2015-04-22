@@ -142,7 +142,7 @@ Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const Q
 	{
 		if ((*it)->name() == name){return *it;}
 	}
-	return 0;
+	return nullptr;
 }
 
 void Post3dWindowRootDataItem::updateZoneList()
@@ -184,7 +184,7 @@ Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const QString& 
 	{
 		Post3dWindowGridTypeDataItem* gtItem = *it;
 		Post3dWindowZoneDataItem* i = gtItem->zoneData(name);
-		if (i != 0){return i;}
+		if (i != nullptr){return i;}
 	}
-	return 0;
+	return nullptr;
 }

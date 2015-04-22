@@ -146,7 +146,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::exclusivelyCheck(PreProc
 
 void PreProcessorGridRelatedConditionCellGroupDataItem::setCurrentCondition(const QString& currentCond)
 {
-	PreProcessorGridRelatedConditionCellDataItem* current = 0;
+	PreProcessorGridRelatedConditionCellDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorGridRelatedConditionCellDataItem* tmpItem = dynamic_cast<PreProcessorGridRelatedConditionCellDataItem*>(*it);
 		if (tmpItem->condition()->name() == currentCond){
@@ -154,7 +154,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::setCurrentCondition(cons
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentCondition = currentCond;
@@ -165,7 +165,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::updateActorSettings()
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0){
+	if (g == nullptr){
 		// grid is not setup yet.
 		return;
 	}
@@ -272,9 +272,9 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::assignActionZValues(cons
 void PreProcessorGridRelatedConditionCellGroupDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != 0){
+	if (g != nullptr){
 		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
-		if (cellsAlgo != 0){m_mapper->SetInputConnection(cellsAlgo->GetOutputPort());}
+		if (cellsAlgo != nullptr){m_mapper->SetInputConnection(cellsAlgo->GetOutputPort());}
 //		m_mapper->SetInputData(g->vtkGrid());
 	}
 	updateActorSettings();
@@ -392,7 +392,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::updateAttributeBrowser(v
 		GridRelatedConditionContainer* cond = *it;
 		GridRelatedConditionIntegerCellContainer* icond = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(cond);
 		GridRelatedConditionRealCellContainer* rcond = dynamic_cast<GridRelatedConditionRealCellContainer*>(cond);
-		if (icond != 0){
+		if (icond != nullptr){
 			if (icond->condition()->isOption()){
 				SolverDefinitionIntegerOptionCellGridRelatedCondition* optCond =
 						dynamic_cast<SolverDefinitionIntegerOptionCellGridRelatedCondition*>(icond->condition());
@@ -402,7 +402,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::updateAttributeBrowser(v
 				PropertyBrowserAttribute att(icond->condition()->caption(), icond->value(cellid));
 				atts.append(att);
 			}
-		} else if (rcond != 0){
+		} else if (rcond != nullptr){
 			PropertyBrowserAttribute att(rcond->condition()->caption(), rcond->value(cellid));
 			atts.append(att);
 		}
@@ -441,7 +441,7 @@ vtkIdType PreProcessorGridRelatedConditionCellGroupDataItem::findCell(const QPoi
 
 	double point[3];
 	point[0] = x; point[1] = y; point[2] = 0;
-	vtkCell* hintCell = 0;
+	vtkCell* hintCell = nullptr;
 	double pcoords[4];
 	double weights[4];
 	int subid;
@@ -452,7 +452,7 @@ vtkIdType PreProcessorGridRelatedConditionCellGroupDataItem::findCell(const QPoi
 bool PreProcessorGridRelatedConditionCellGroupDataItem::addToolBarButtons(QToolBar *toolbar)
 {
 	PreProcessorGridRelatedConditionCellDataItem* activeItem = activeChildItem();
-	if (activeItem == 0){return false;}
+	if (activeItem == nullptr){return false;}
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*> (parent());
 	Grid* grid = gitem->grid();
 	GridRelatedConditionContainer* cont = grid->gridRelatedCondition(activeItem->condition()->name());

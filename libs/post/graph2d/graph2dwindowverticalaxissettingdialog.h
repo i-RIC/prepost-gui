@@ -13,7 +13,7 @@ class Graph2dWindowVerticalAxisSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Graph2dWindowVerticalAxisSettingDialog(QWidget *parent = 0);
+    explicit Graph2dWindowVerticalAxisSettingDialog(QWidget *parent = nullptr);
     ~Graph2dWindowVerticalAxisSettingDialog();
 	void setSetting(const Graph2dWindowVerticalAxisSetting& setting);
 	void setAutoRange(double min, double max);

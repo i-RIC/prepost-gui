@@ -15,7 +15,7 @@ class GUIBASEDLL_EXPORT CgnsZoneSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit CgnsZoneSelectDialog(QWidget *parent = 0);
+	explicit CgnsZoneSelectDialog(QWidget *parent = nullptr);
 	~CgnsZoneSelectDialog();
 	void setZones(const QList<int>& zoneids, const QList<QString>& zonenames);
 	int zoneId();

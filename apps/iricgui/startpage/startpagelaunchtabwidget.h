@@ -15,7 +15,7 @@ class StartPageLaunchTabWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit StartPageLaunchTabWidget(QWidget *parent = 0);
+	explicit StartPageLaunchTabWidget(QWidget *parent = nullptr);
 	~StartPageLaunchTabWidget();
 	void setSolverList(SolverDefinitionList* solverList);
 signals:

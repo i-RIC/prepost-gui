@@ -16,7 +16,7 @@ class GridCreatingConditionRiverSurveyPointRegionAddDialog : public QDialog {
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent = 0);
+	explicit GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointRegionAddDialog();
 	void setData(RawDataRiverSurvey* rs);
 	void setStartPoint(RawDataRiverPathPoint* p);

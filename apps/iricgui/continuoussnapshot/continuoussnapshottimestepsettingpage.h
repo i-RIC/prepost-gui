@@ -12,7 +12,7 @@ namespace Ui {
 class ContinuousSnapshotTimestepSettingPage : public QWizardPage {
 	Q_OBJECT
 public:
-	ContinuousSnapshotTimestepSettingPage(QWidget *parent = 0);
+	ContinuousSnapshotTimestepSettingPage(QWidget *parent = nullptr);
 	~ContinuousSnapshotTimestepSettingPage();
 
 	void initializePage();

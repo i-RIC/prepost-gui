@@ -85,14 +85,14 @@ void PreProcessorStructured2dGridShapeDataItem::setupActors()
 void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != 0){
+	if (g != nullptr){
 		Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
 
 		m_outlineFilter->SetInputData(grid->vtkGrid());
 		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != 0){ m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
+		if (shapeAlgo != nullptr){ m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
 		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != 0){ m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
+		if (indexGridAlgo != nullptr){ m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
 	}
 	updateActorSettings();
 }
@@ -108,7 +108,7 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0){
+	if (g == nullptr){
 		// grid is not setup yet.
 		return;
 	}

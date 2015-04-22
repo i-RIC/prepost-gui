@@ -57,7 +57,7 @@ public:
 	void redo()
 	{
 		m_after.restore();
-		m_condition->m_selectedZone.point = 0;
+		m_condition->m_selectedZone.point = nullptr;
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}

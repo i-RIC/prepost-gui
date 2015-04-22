@@ -23,7 +23,7 @@ public:
 	/// Foldeer name of workspace.
 	const static QString FOLDERNAME;
 	/// Constructor
-	explicit ProjectWorkspace(QObject *parent = 0);
+	explicit ProjectWorkspace(QObject *parent = nullptr);
 	/// The list of workfolders in the current workspace.
 	const QList<WorkfolderInfo*> workfolders() const {return m_workfolderList;}
 	/// Return the list of workfolders under this workspace,

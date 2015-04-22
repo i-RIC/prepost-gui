@@ -63,7 +63,7 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){
+		if (tmparray == nullptr){
 			continue;
 		}
 		if (tmparray->GetNumberOfComponents() > 1){
@@ -95,9 +95,9 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == 0){return;}
+	if (ps == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 
 	// update current active scalar
@@ -225,7 +225,7 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setGridTypeDataItem(gtItem);
 	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
 
-	if (zItem->dataContainer() == 0 || zItem->dataContainer()->data() == 0){return 0;}
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr){return nullptr;}
 
 	dialog->setEnabled(true);
 	dialog->setZoneData(zItem->dataContainer());
@@ -371,7 +371,7 @@ void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScala
 
 void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	Post3dWindowNodeScalarDataItem* current = 0;
+	Post3dWindowNodeScalarDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post3dWindowNodeScalarDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
@@ -379,7 +379,7 @@ void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& curr
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;

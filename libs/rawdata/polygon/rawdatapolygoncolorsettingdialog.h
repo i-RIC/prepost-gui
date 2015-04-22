@@ -9,9 +9,10 @@ namespace Ui {
 
 class RawDataPolygonColorSettingDialog : public QDialog {
 	Q_OBJECT
+
 public:
 	enum Mapping {Value, Arbitrary};
-	RawDataPolygonColorSettingDialog(QWidget *parent = 0);
+	RawDataPolygonColorSettingDialog(QWidget *parent = nullptr);
 	~RawDataPolygonColorSettingDialog();
 	void setMapping(Mapping m);
 	void setOpacityPercent(int o);

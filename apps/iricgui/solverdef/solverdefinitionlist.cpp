@@ -26,7 +26,7 @@ SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLoc
 		inst.mkdir(solversFolder);
 	}
 	// initially, dialog is not prepared.
-	m_dialog = 0;
+	m_dialog = nullptr;
 
 	// setup filesystem watcher
 	QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
@@ -87,7 +87,7 @@ QString SolverDefinitionList::absoluteSolverPath(const QString& solverFolder)
 
 SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
 {
-	if (m_dialog == 0){
+	if (m_dialog == nullptr){
 		m_dialog = new SolverDefinitionListDialog(this, parent);
 	}
 	m_dialog->setup();

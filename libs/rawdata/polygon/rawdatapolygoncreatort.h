@@ -19,7 +19,7 @@ public:
 	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition)
 	{
 		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(condition);
-		if (cond == 0){return false;}
+		if (cond == nullptr){return false;}
 		if (condition->dimensions().size() > 0){return false;}
 		return true;
 	}

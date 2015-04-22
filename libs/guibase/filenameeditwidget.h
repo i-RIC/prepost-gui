@@ -14,7 +14,7 @@ class GUIBASEDLL_EXPORT FilenameEditWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit FilenameEditWidget(QWidget *parent = 0);
+	explicit FilenameEditWidget(QWidget *parent = nullptr);
 	~FilenameEditWidget();
 	void setFilename(const QString& filename);
 	void setFilter(const QString& filter);

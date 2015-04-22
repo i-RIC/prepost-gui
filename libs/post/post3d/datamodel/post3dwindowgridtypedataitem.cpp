@@ -41,12 +41,12 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers3D();
 	if (containers.size() != 0){
 		vtkPointSet* ps = containers.at(0)->data();
-		if (ps == 0){return;}
+		if (ps == nullptr){return;}
 		vtkPointData* pd = ps->GetPointData();
 		int num = pd->GetNumberOfArrays();
 		for (int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 
 			setupScalarsToColors(name);
@@ -79,7 +79,7 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 	int zoneNum = 0;
 	for (auto it = zones.begin(); it != zones.end(); ++it){
 		const PostZoneDataContainer* cont = (*it);
-		if (cont->data() == 0){continue;}
+		if (cont->data() == nullptr){continue;}
 		if (cont->gridType() == m_gridType){
 			Post3dWindowZoneDataItem* zdata = new Post3dWindowZoneDataItem(cont->zoneName(), num++, this);
 			m_zoneDatas.append(zdata);
@@ -90,12 +90,12 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	if (m_lookupTables.count() == 0 && zoneNum != 0){
 		vtkPointSet* ps = zones.at(0)->data();
-		if (ps != 0){
+		if (ps != nullptr){
 			vtkPointData* pd = ps->GetPointData();
 			int num = pd->GetNumberOfArrays();
 			for (int i = 0; i < num; ++i){
 				vtkAbstractArray* tmparray = pd->GetArray(i);
-				if (tmparray == 0){continue;}
+				if (tmparray == nullptr){continue;}
 				QString name = tmparray->GetName();
 				setupScalarsToColors(name);
 			}
@@ -132,10 +132,10 @@ void Post3dWindowGridTypeDataItem::updateLookupTableRanges()
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 			Post3dWindowZoneDataItem* zitem = *zit;
 			PostZoneDataContainer* cont = zitem->dataContainer();
-			if (cont == 0){continue;}
-			if (cont->data() == 0){continue;}
+			if (cont == nullptr){continue;}
+			if (cont->data() == nullptr){continue;}
 			vtkDataArray* dArray = cont->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-			if (dArray != 0){
+			if (dArray != nullptr){
 				dArray->GetRange(range);
 				if (first || range[0] < min){min = range[0];}
 				if (first || range[1] > max){max = range[1];}
@@ -164,8 +164,8 @@ void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < tables.length(); ++i){
 			QDomNode ltNode = tables.at(i);
 			QString ltName = ltNode.toElement().attribute("name");
-			LookupTableContainer* cont = m_lookupTables.value(ltName, 0);
-			if (cont != 0){
+			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
+			if (cont != nullptr){
 				cont->loadFromProjectMainFile(ltNode);
 			}
 		}
@@ -176,8 +176,8 @@ void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < zones.length(); ++i){
 			QDomNode zoneNode = zones.at(i);
 			QString zoneName = zoneNode.toElement().attribute("name");
-			Post3dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, 0);
-			if (zdi != 0){
+			Post3dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
+			if (zdi != nullptr){
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
 		}
@@ -222,10 +222,10 @@ void Post3dWindowGridTypeDataItem::setValueRange(const QString& name)
 	bool first = true;
 	for (auto it = containers.begin(); it != containers.end(); ++it){
 		vtkPointSet* ps = (*it)->data();
-		if(ps == 0) break;
+		if(ps == nullptr) break;
 		double range[3];
 		vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-		if(da == 0) break;
+		if(da == nullptr) break;
 		da->GetRange(range);
 		if (first || range[0] < min){min = range[0];}
 		if (first || range[1] > max){max = range[1];}

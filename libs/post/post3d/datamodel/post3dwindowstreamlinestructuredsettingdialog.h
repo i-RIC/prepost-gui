@@ -15,7 +15,7 @@ class Post3dWindowStreamlineStructuredSettingDialog : public QDialog
 {
     Q_OBJECT
 public:
-	explicit Post3dWindowStreamlineStructuredSettingDialog(QWidget *parent = 0);
+	explicit Post3dWindowStreamlineStructuredSettingDialog(QWidget *parent = nullptr);
 	~Post3dWindowStreamlineStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available){m_activeAvailable = available;}

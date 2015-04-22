@@ -46,7 +46,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::editScalarBar()
 
 void PreProcessorScalarBarLegendBoxSettingDialog::setCondition(SolverDefinitionGridRelatedCondition* condition)
 {
-	if (condition == 0){return;}
+	if (condition == nullptr){return;}
 	int idx = ui->scalarComboBox->findText(condition->caption());
 	ui->scalarComboBox->setCurrentIndex(idx);
 }

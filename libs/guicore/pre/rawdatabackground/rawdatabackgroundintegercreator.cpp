@@ -2,4 +2,4 @@
 #include "../../solverdef/solverdefinitiongridrelatedconditiont.h"
 #include "rawdatabackground.h"
 
-RawDataBackgroundIntegerCreator* RawDataBackgroundIntegerCreator::m_instance = 0;
+RawDataBackgroundIntegerCreator* RawDataBackgroundIntegerCreator::m_instance = nullptr;

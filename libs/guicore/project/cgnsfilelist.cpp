@@ -36,7 +36,7 @@ void CgnsFileList::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	if (m_current != 0)
+	if (m_current != nullptr)
 	{
 		writer.writeAttribute("current", m_current->filename());
 	}
@@ -62,13 +62,13 @@ bool CgnsFileList::exists(const QString& name)
 
 CgnsFileList::CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
 {
-	if (m_cgnsFiles.contains(name) && (m_current == 0 || m_current->filename() != name))
+	if (m_cgnsFiles.contains(name) && (m_current == nullptr || m_current->filename() != name))
 	{
 		m_current = m_cgnsFiles.value(name);
 		emit cgnsFileSwitched(name);
 		return m_current;
 	}
-	return 0;
+	return nullptr;
 }
 
 void CgnsFileList::add(const QString& name){
@@ -80,7 +80,7 @@ void CgnsFileList::add(const QString& name){
 void CgnsFileList::remove(const QString& name){
 	if (m_cgnsFiles.contains(name)){
 		CgnsFileEntry* entry = m_cgnsFiles.value(name);
-		if (entry == m_current){m_current = 0;}
+		if (entry == m_current){m_current = nullptr;}
 		delete entry;
 		m_cgnsFiles.remove(name);
 		emit cgnsFilesUpdated(cgnsFiles());

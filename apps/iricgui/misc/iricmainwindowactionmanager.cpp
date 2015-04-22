@@ -28,7 +28,7 @@
 iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
 {
 	m_parent = parent;
-	m_additionalToolBar = 0;
+	m_additionalToolBar = nullptr;
 	init();
 }
 
@@ -44,8 +44,8 @@ void iRICMainWindowActionManager::init(){
 
 	setupSimulationMenu();
 
-	m_animationMenu = 0;
-	m_animationToolbar = 0;
+	m_animationMenu = nullptr;
+	m_animationToolbar = nullptr;
 
 	setupToolMenu();
 
@@ -127,7 +127,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_importMenuInFileMenu->setDisabled(true);
 	connect(m_importMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
 	connect(m_importMenuInFileMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
-	m_rawDataImportMenu = 0;
+	m_rawDataImportMenu = nullptr;
 
 	importCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
 	importCgnsAction = new QAction(tr("Calculation &Result..."), this);
@@ -619,7 +619,7 @@ void iRICMainWindowActionManager::projectFileOpen()
 	// all import actions are enabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != 0){
+	if (m_rawDataImportMenu != nullptr){
 		m_rawDataImportMenu->setEnabled(true);
 	}
 	importCalcCondAction->setEnabled(true);
@@ -668,7 +668,7 @@ void iRICMainWindowActionManager::projectFileClose()
 	// all import actions are excepts CGNS import action are disabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != 0){
+	if (m_rawDataImportMenu != nullptr){
 		m_rawDataImportMenu->setEnabled(false);
 	}
 	importCalcCondAction->setEnabled(false);
@@ -819,7 +819,7 @@ void iRICMainWindowActionManager::updateMenuBar(){
 		m_menuBar->addMenu(*it);
 	}
 	m_menuBar->addMenu(m_simulationMenu);
-	if (m_animationMenu != 0){
+	if (m_animationMenu != nullptr){
 		viewAnimationToolBarAction->setVisible(true);
 		if (m_isPostWindowActive){
 			m_menuBar->addMenu(m_animationMenu);
@@ -845,7 +845,7 @@ void iRICMainWindowActionManager::updateMenuBar(){
 
 void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 {
-	if (subwindow == 0){
+	if (subwindow == nullptr){
 		// Window out side of iRIC is focused.
 		// Do nothing.
 		return;
@@ -853,33 +853,33 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 	// handle additional menus.
 	AdditionalMenuWindow* menuWindow = dynamic_cast<AdditionalMenuWindow*>(subwindow);
 	QList<QMenu*> additionalMenus;
-	QToolBar* toolBar = 0;
-	if (menuWindow != 0){
+	QToolBar* toolBar = nullptr;
+	if (menuWindow != nullptr){
 		QWidget* widget = dynamic_cast<QWidget*>(subwindow);
 		connect(widget, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), this, SLOT(updateAdditionalMenus(QList<QMenu*>)));
 		additionalMenus = menuWindow->getAdditionalMenus();
 		toolBar = menuWindow->getAdditionalToolBar();
 	}
 	setAdditionalMenus(additionalMenus);
-	if (subwindow != 0){
+	if (subwindow != nullptr){
 		// update Additional tool bar
-		if (m_additionalToolBar != 0){
+		if (m_additionalToolBar != nullptr){
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
-		if (toolBar != 0){
+		if (toolBar != nullptr){
 			m_parent->addToolBar(toolBar);
 			toolBar->show();
 		}
 		m_additionalToolBar = toolBar;
 	}else{
-		if (m_additionalToolBar != 0){
+		if (m_additionalToolBar != nullptr){
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
 		m_additionalToolBar = toolBar;
 	}
 	// investigate whether it is a post processor.
 	PostProcessorWindow* postWindow = dynamic_cast<PostProcessorWindow*>(subwindow);
-	m_isPostWindowActive = (subwindow != 0 && postWindow != 0);
+	m_isPostWindowActive = (subwindow != nullptr && postWindow != nullptr);
 	// update camera control menus (enable or disable).
 	updateCameraConnections(subwindow);
 	// update "Object Browser" menu in View menu.
@@ -924,7 +924,7 @@ void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
 	WindowWithObjectBrowser* window = dynamic_cast<WindowWithObjectBrowser*>(w);
 	viewObjectBrowserAction->disconnect();
-	if (window == 0){
+	if (window == nullptr){
 		viewObjectBrowserAction->setDisabled(true);
 		viewObjectBrowserAction->setChecked(false);
 	}else{
@@ -940,7 +940,7 @@ void iRICMainWindowActionManager::updatePropertyBrowserMenu(QWidget* w)
 {
 	WindowWithPropertyBrowser* window = dynamic_cast<WindowWithPropertyBrowser*>(w);
 	viewPropertyBrowserAction->disconnect();
-	if (window == 0){
+	if (window == nullptr){
 		viewPropertyBrowserAction->setDisabled(true);
 		viewPropertyBrowserAction->setChecked(false);
 	}else{

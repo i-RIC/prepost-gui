@@ -14,7 +14,7 @@ class GUIBASEDLL_EXPORT ItemSelectingDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit ItemSelectingDialog(QWidget *parent = 0);
+	explicit ItemSelectingDialog(QWidget *parent = nullptr);
 	~ItemSelectingDialog();
 	void setMessage(const QString& message);
 	void setItems(const QList<QString>& items);

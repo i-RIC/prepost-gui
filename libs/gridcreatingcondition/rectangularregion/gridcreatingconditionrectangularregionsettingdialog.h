@@ -15,7 +15,7 @@ class GridCreatingConditionRectangularRegionSettingDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget *parent = 0);
+	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget *parent = nullptr);
 	~GridCreatingConditionRectangularRegionSettingDialog();
 
 	void setXMin(double xmin);

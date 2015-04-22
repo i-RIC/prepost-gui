@@ -45,7 +45,7 @@ QString RawDataPointmapRealCreator::defaultCaption(unsigned int index)
 }
 
 bool RawDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridRelatedCondition* condition){
-	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == 0){return false;}
+	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == nullptr){return false;}
 	if (condition->dimensions().size() > 0){return false;}
 	return true;
 }

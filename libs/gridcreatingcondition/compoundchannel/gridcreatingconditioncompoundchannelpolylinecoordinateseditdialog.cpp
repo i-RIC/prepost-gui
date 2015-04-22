@@ -14,7 +14,7 @@
 
 class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate : public QStyledItemDelegate {
 public:
-	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate(QObject* = 0){}
+	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate(QObject* = nullptr){}
 	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &,
 		const QModelIndex &) const
 	{

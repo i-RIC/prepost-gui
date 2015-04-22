@@ -13,10 +13,10 @@ namespace Ui {
 
 class Graph2dScatteredWindowControlWidget : public QWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-	explicit Graph2dScatteredWindowControlWidget(QWidget *parent = 0);
+	explicit Graph2dScatteredWindowControlWidget(QWidget *parent = nullptr);
 	~Graph2dScatteredWindowControlWidget();
 	void fitSize();
 

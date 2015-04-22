@@ -14,7 +14,7 @@ namespace Ui {
 class PreProcessorGridAttributeMappingSettingTopEditDialog : public QDialog {
 	Q_OBJECT
 public:
-	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget *parent = 0);
+	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget *parent = nullptr);
 	~PreProcessorGridAttributeMappingSettingTopEditDialog();
 	PreProcessorGridAttributeMappingMode::Mode mappingMode();
 	void setMappingMode(PreProcessorGridAttributeMappingMode::Mode mm);

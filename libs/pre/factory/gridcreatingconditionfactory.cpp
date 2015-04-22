@@ -73,6 +73,6 @@ GridCreatingCondition* GridCreatingConditionFactory::restore(const QDomNode& nod
 {
 	QString creatorName = node.toElement().attribute("name");
 	GridCreatingConditionCreator* creator = getCreator(creatorName);
-	if (creator == 0){return 0;}
+	if (creator == nullptr){return nullptr;}
 	return creator->restore(node, item);
 }

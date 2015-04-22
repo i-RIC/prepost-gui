@@ -111,7 +111,7 @@ public:
 	 * @brief コンストラクタ
 	 */
 	RiverSplineSolver(){
-		m_headPoint = 0;
+		m_headPoint = nullptr;
 	}
 	/**
 	 * @brief デストラクタ

@@ -27,10 +27,10 @@ RawDataRiverPathPointInsertDialog::RawDataRiverPathPointInsertDialog(RawDataRive
 	}
 	m_newPoint = new RawDataRiverPathPoint();
 	m_rs = rs;
-	if ((insert && target->previousPoint()->firstPoint()) || (! insert && target->nextPoint() == 0)){
+	if ((insert && target->previousPoint()->firstPoint()) || (! insert && target->nextPoint() == nullptr)){
 		ui->coordRatioRadioButton->setDisabled(true);
 		ui->crossCreateRadioButton->setDisabled(true);
-		m_lineCenter = 0;
+		m_lineCenter = nullptr;
 	}else{
 		m_lineCenter = m_insertTarget->riverCenter()->copy();
 	}
@@ -220,7 +220,7 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		if (m_insert && m_insertTarget->firstPoint()){
 			tmpdbl1 = m_insertTarget->nextPoint()->crosssection().leftBank(true).position();
 			tmpdbl2 = m_insertTarget->nextPoint()->crosssection().rightBank(true).position();
-		}else if ((! m_insert) && m_insertTarget->nextPoint() == 0){
+		}else if ((! m_insert) && m_insertTarget->nextPoint() == nullptr){
 			tmpdbl1 = m_insertTarget->crosssection().leftBank(true).position();
 			tmpdbl2 = m_insertTarget->crosssection().rightBank(true).position();
 		}else{
@@ -256,7 +256,7 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		// copy crosssection from the specified river path point.
 		QString rppName = ui->crossCopyComboBox->currentText();
 		RawDataRiverPathPoint* p = m_rs->m_headPoint->nextPoint();
-		while (p != 0){
+		while (p != nullptr){
 			if (p->name() == rppName){
 				break;
 			}
@@ -357,7 +357,7 @@ void RawDataRiverPathPointInsertDialog::setupComboBox(){
 	combo->clear();
 	RawDataRiverPathPoint* p = m_rs->m_headPoint->nextPoint();
 	int i = 0;
-	while (p != 0){
+	while (p != nullptr){
 		combo->addItem(p->name());
 		if (m_insert && p == m_insertTarget->nextPoint()){
 			index = i;
@@ -387,7 +387,7 @@ void RawDataRiverPathPointInsertDialog::setDefaultName()
 		min = m_insertTarget->nextPoint()->name().toDouble() + small;
 		def = m_insertTarget->nextPoint()->name().toDouble() + offset;
 		max = def + bigoffset;
-	} else if (m_insertTarget->nextPoint() == 0){
+	} else if (m_insertTarget->nextPoint() == nullptr){
 		// we are going to add point after the last point.
 		max = m_insertTarget->name().toDouble() - small;
 		def = m_insertTarget->name().toDouble() - offset;
@@ -413,7 +413,7 @@ void RawDataRiverPathPointInsertDialog::setDefaultPosition()
 			defaultPosition = m_insertTarget->position() * 0.5 + m_insertTarget->nextPoint()->position() * 0.5;
 		}
 	}else{
-		if (m_insertTarget->nextPoint() == 0){
+		if (m_insertTarget->nextPoint() == nullptr){
 			QVector2D diff = m_insertTarget->position() - m_insertTarget->previousPoint()->position();
 			defaultPosition = m_insertTarget->position() + diff;
 		}else{

@@ -81,7 +81,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	PreProcessorGridAndGridCreatingConditionDataItem* gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (gagItem->gridDataItem());
 	PreProcessorBCGroupDataItem* bcgitem = gItem->bcGroupDataItem();
-	if (bcgitem == 0){return;}
+	if (bcgitem == nullptr){return;}
 
 	m_itemMap.clear();
 	int rows = m_standardItem->rowCount();
@@ -100,7 +100,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	for (auto it = children.begin(); it != children.end(); ++it){
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (*it);
 		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
-		if (bcsItem == 0){
+		if (bcsItem == nullptr){
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
 		} else {
 			if (! bcsItem->bcDataItem()->hideSetting()){
@@ -164,7 +164,7 @@ void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
-	if (grid == 0 && ! noDraw){
+	if (grid == nullptr && ! noDraw){
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		return;
 	}

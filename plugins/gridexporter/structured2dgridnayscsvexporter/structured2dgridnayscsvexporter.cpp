@@ -35,7 +35,7 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 	QFile f(filename);
 	if (f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text)){
 		GridRelatedConditionContainer* c = grid2d->gridRelatedCondition("Elevation");
-		if (c == 0){
+		if (c == nullptr){
 			// this grid does not have Elevation node. Impossible to export data.
 			return false;
 		}

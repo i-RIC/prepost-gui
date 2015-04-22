@@ -21,7 +21,7 @@ class GUICOREDLL_EXPORT ColorTransferFunctionEditWidget : public ScalarsToColors
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit ColorTransferFunctionEditWidget(QWidget *parent = 0);
+	explicit ColorTransferFunctionEditWidget(QWidget *parent = nullptr);
 	virtual ~ColorTransferFunctionEditWidget();
 	void save();
 

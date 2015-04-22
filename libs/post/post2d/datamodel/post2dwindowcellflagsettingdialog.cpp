@@ -21,7 +21,7 @@
 class ColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	ColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
@@ -139,7 +139,7 @@ int Post2dWindowCellFlagSettingDialog::opacityPercent()
 void Post2dWindowCellFlagSettingDialog::moveUp()
 {
 	QList<QTableWidgetItem*> items = ui->tableWidget->selectedItems();
-	QTableWidgetItem* item = 0;
+	QTableWidgetItem* item = nullptr;
 	int newrow = 0;
 	for (int i = 0; i < items.count(); ++i){
 		item = items.at(i);
@@ -158,7 +158,7 @@ void Post2dWindowCellFlagSettingDialog::moveUp()
 void Post2dWindowCellFlagSettingDialog::moveDown()
 {
 	QList<QTableWidgetItem*> items = ui->tableWidget->selectedItems();
-	QTableWidgetItem* item = 0;
+	QTableWidgetItem* item = nullptr;
 	int newrow = 0;
 	for (int i = 0; i < items.count(); ++i){
 		item = items.at(i);

@@ -20,7 +20,7 @@ private:
 	RawDataFactory();
 public:
 	static RawDataFactory& instance(){
-		if (m_instance == 0){
+		if (m_instance == nullptr){
 			m_instance = new RawDataFactory();
 		}
 		return *m_instance;

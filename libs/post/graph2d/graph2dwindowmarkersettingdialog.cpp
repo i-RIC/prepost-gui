@@ -7,8 +7,8 @@ Graph2dWindowMarkerSettingDialog::Graph2dWindowMarkerSettingDialog(QWidget *pare
 	QDialog(parent),
 	ui(new Ui::Graph2dWindowMarkerSettingDialog)
 {
-	m_item = 0;
-	m_colorSource = new ColorSource(0);
+	m_item = nullptr;
+	m_colorSource = new ColorSource(nullptr);
 	ui->setupUi(this);
 	connect(ui->markerListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(itemChanged(int)));
 
@@ -66,7 +66,7 @@ void Graph2dWindowMarkerSettingDialog::updateLabel()
 	static bool updating = false;
 	if (updating){return;}
 	updating = true;
-	if (m_item == 0){
+	if (m_item == nullptr){
 		updating = false;
 		return;
 	}
@@ -79,7 +79,7 @@ void Graph2dWindowMarkerSettingDialog::updateLabel()
 	}
 	m_item->setLabel(label);
 	QListWidgetItem* cItem = ui->markerListWidget->currentItem();
-	if (cItem != 0){cItem->setText(label);}
+	if (cItem != nullptr){cItem->setText(label);}
 	updating = false;
 }
 
@@ -112,7 +112,7 @@ const QString Graph2dWindowMarkerSettingDialog::autoLabel()
 void Graph2dWindowMarkerSettingDialog::itemChanged(int index)
 {
 	if (index == -1){
-		m_item = 0;
+		m_item = nullptr;
 		ui->orientationGroupBox->setEnabled(false);
 		ui->oriHorizontalRadioButton->setChecked(true);
 		ui->markerValueGroupBox->setEnabled(false);
@@ -175,7 +175,7 @@ void Graph2dWindowMarkerSettingDialog::itemChanged(int index)
 
 void Graph2dWindowMarkerSettingDialog::oriantationChanged()
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	if (ui->oriHorizontalRadioButton->isChecked()){
 		m_item->setOrientation(Graph2dWindowMarkerSetting::oHorizontal);
 	}else{
@@ -186,14 +186,14 @@ void Graph2dWindowMarkerSettingDialog::oriantationChanged()
 
 void Graph2dWindowMarkerSettingDialog::valueChanged(double val)
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	m_item->setValue(val);
 	updateLabel();
 }
 
 void Graph2dWindowMarkerSettingDialog::labelChanged()
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	if (ui->labelAutoRadioButton->isChecked()){
 		m_item->setLabelMode(Graph2dWindowMarkerSetting::lmAuto);
 	}else{
@@ -225,7 +225,7 @@ void Graph2dWindowMarkerSettingDialog::removeItem()
 	m_setting.items().removeAt(index);
 	ui->markerListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->markerListWidget->takeItem(index);
-	if (item != 0){delete item;}
+	if (item != nullptr){delete item;}
 	ui->markerListWidget->blockSignals(false);
 	int newindex = index;
 	if (newindex > ui->markerListWidget->count() - 1){
@@ -236,7 +236,7 @@ void Graph2dWindowMarkerSettingDialog::removeItem()
 
 void Graph2dWindowMarkerSettingDialog::axisChanged()
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	if (ui->axisLeftRadioButton->isChecked()){
 		m_item->setAxis(QwtPlot::yLeft);
 	}else{
@@ -245,7 +245,7 @@ void Graph2dWindowMarkerSettingDialog::axisChanged()
 }
 void Graph2dWindowMarkerSettingDialog::styleChanged(int index)
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	Qt::PenStyle penStyle;
 	switch (index){
 	case 0:
@@ -265,18 +265,18 @@ void Graph2dWindowMarkerSettingDialog::styleChanged(int index)
 }
 void Graph2dWindowMarkerSettingDialog::colorChanged(const QColor& col)
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	m_item->setColor(col);
 }
 
 void Graph2dWindowMarkerSettingDialog::showLineChanged(bool show)
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	m_item->setShowLine(show);
 }
 
 void Graph2dWindowMarkerSettingDialog::alignCenterChanged(bool center)
 {
-	if (m_item == 0){return;}
+	if (m_item == nullptr){return;}
 	m_item->setAlignCenter(center);
 }

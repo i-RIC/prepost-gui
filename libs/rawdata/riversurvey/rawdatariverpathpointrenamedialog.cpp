@@ -19,7 +19,7 @@ RawDataRiverPathPointRenameDialog::RawDataRiverPathPointRenameDialog(RawDataRive
 	double min;
 	double max;
 	double small = 0.01;
-	if (p->nextPoint() == 0){
+	if (p->nextPoint() == nullptr){
 		min = current - 100;
 	} else {
 		min = p->nextPoint()->name().toDouble() + small;

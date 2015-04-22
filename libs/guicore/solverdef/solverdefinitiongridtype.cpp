@@ -29,7 +29,7 @@ SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QS
 	m_isOptional = false;
 	m_isPrimary = true;
 	m_defaultGridType = gtUnknownGrid;
-	m_emptyGrid = 0;
+	m_emptyGrid = nullptr;
 }
 
 void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
@@ -56,7 +56,7 @@ SolverDefinitionGridType::~SolverDefinitionGridType()
 	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
 		delete *it;
 	}
-	if (m_emptyGrid != 0){
+	if (m_emptyGrid != nullptr){
 		delete m_emptyGrid;
 	}
 }
@@ -96,7 +96,7 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 			m_gridRelatedComplexConditions.append(c);
 			m_gridRelatedComplexConditionNameMap.insert(c->name(), c);
 		} else {
-			SolverDefinitionGridRelatedCondition* c = 0;
+			SolverDefinitionGridRelatedCondition* c = nullptr;
 			QString pos = defElem.attribute("position");
 			if (defElem.attribute("position") == "cell"){
 				if (defElem.attribute("valueType") == "integer"){
@@ -127,7 +127,7 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 					}
 				}
 			}
-			if (c != 0){
+			if (c != nullptr){
 				m_gridRelatedConditions.append(c);
 				m_gridRelatedConditionNameMap.insert(c->name(), c);
 			}
@@ -166,7 +166,7 @@ void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
-	Grid* ret = 0;
+	Grid* ret = nullptr;
 	switch (m_defaultGridType)
 	{
 	case gtNormal1DGrid:
@@ -176,18 +176,18 @@ Grid* SolverDefinitionGridType::createEmptyGrid()
 		// @todo not implemented yet.
 		break;
 	case gtNormal1_5DGridWithCrosssection:
-		ret = new Structured15DGridWithCrossSection(0);
+		ret = new Structured15DGridWithCrossSection(nullptr);
 		break;
 	case gtStructured2DGrid:
-		ret = new Structured2DGrid(0);
+		ret = new Structured2DGrid(nullptr);
 		break;
 	case gtUnstructured2DGrid:
-		ret = new Unstructured2DGrid(0);
+		ret = new Unstructured2DGrid(nullptr);
 		break;
 	case gtUnknownGrid:
 		break;
 	}
-	if (ret != 0){
+	if (ret != nullptr){
 		buildGridRelatedConditions(ret);
 	}
 	return ret;
@@ -209,11 +209,11 @@ PreProcessorGridDataItem* SolverDefinitionGridType::createGridDataItem(PreProces
 	{
 	case gtNormal1DGrid:
 		// @todo not implemented yet.
-		return 0;
+		return nullptr;
 		break;
 	case gtNormal1_5DGrid:
 		// @todo not implemented yet.
-		return 0;
+		return nullptr;
 		break;
 	case gtNormal1_5DGridWithCrosssection:
 		return new PreProcessorNormal15DGridWithCrossSectionDataItem(parent);
@@ -226,7 +226,7 @@ PreProcessorGridDataItem* SolverDefinitionGridType::createGridDataItem(PreProces
 		break;
 	case gtUnknownGrid:
 	default:
-		return 0;
+		return nullptr;
 		break;
 	}
 }

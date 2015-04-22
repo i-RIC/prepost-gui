@@ -13,7 +13,7 @@ class Graph2dScatteredAxisSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-	explicit Graph2dScatteredAxisSettingDialog(QWidget *parent = 0);
+	explicit Graph2dScatteredAxisSettingDialog(QWidget *parent = nullptr);
 	~Graph2dScatteredAxisSettingDialog();
 	void setSetting(const Graph2dScatteredWindowResultSetting& setting);
 	const Graph2dScatteredWindowResultSetting& setting(){return m_setting;}

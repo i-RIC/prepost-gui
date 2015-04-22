@@ -15,7 +15,7 @@ class NewProjectSolverSelectingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget *parent = 0);
+	explicit NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget *parent = nullptr);
 	~NewProjectSolverSelectingDialog();
 	SolverDefinitionAbstract* selectedSolver();
 	void setSolver(const QString& folderName);

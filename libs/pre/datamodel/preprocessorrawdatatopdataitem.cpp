@@ -86,14 +86,14 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 	// for scalar bar / legend box
 	m_visible = true;
 	// first, no scalar bar / legend box shown.
-	m_condition = 0;
+	m_condition = nullptr;
 	setupActors();
 }
 
 PreProcessorRawDataTopDataItem::~PreProcessorRawDataTopDataItem()
 {
-	m_scalarBarWidget->SetInteractor(0);
-	m_legendBoxWidget->SetInteractor(0);
+	m_scalarBarWidget->SetInteractor(nullptr);
+	m_legendBoxWidget->SetInteractor(nullptr);
 }
 
 void PreProcessorRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -105,7 +105,7 @@ void PreProcessorRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
 		PreProcessorRawDataGroupDataItemInterface* item = m_itemNameMap.value(name);
-		if (item != 0){
+		if (item != nullptr){
 			item->loadFromProjectMainFile(child);
 		}
 	}
@@ -134,7 +134,7 @@ const QList<PreProcessorRawDataGroupDataItemInterface*> PreProcessorRawDataTopDa
 
 PreProcessorRawDataGroupDataItemInterface* PreProcessorRawDataTopDataItem::groupDataItem(const QString& name)
 {
-	return m_itemNameMap.value(name, 0);
+	return m_itemNameMap.value(name, nullptr);
 }
 
 void PreProcessorRawDataTopDataItem::informValueRangeChange(const QString& name)
@@ -150,8 +150,8 @@ void PreProcessorRawDataTopDataItem::informDataChange()
 void PreProcessorRawDataTopDataItem::setupScalarBar()
 {
 	PreProcessorScalarBarLegendBoxSettingDialog* dialog = new PreProcessorScalarBarLegendBoxSettingDialog(preProcessorWindow());
-	if (m_condition != 0){
-		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != 0 || m_condition->isOption()){
+	if (m_condition != nullptr){
+		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr || m_condition->isOption()){
 			PreProcessorRawDataGroupDataItem* gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*> (groupDataItem(m_condition->name()));
 			ScalarBarSetting& setting = gItem->scalarBarSetting();
 			setting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
@@ -201,22 +201,22 @@ void PreProcessorRawDataTopDataItem::setupActors()
 
 void PreProcessorRawDataTopDataItem::updateActorSettings()
 {
-	if (m_scalarBarWidget == 0){return;}
-	if (m_legendBoxWidget == 0){return;}
+	if (m_scalarBarWidget == nullptr){return;}
+	if (m_legendBoxWidget == nullptr){return;}
 	m_scalarBarWidget->SetEnabled(0);
 	m_legendBoxWidget->SetEnabled(0);
 
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	PreProcessorRawDataGroupDataItem* rdgItem = dynamic_cast<PreProcessorRawDataGroupDataItem*> (groupDataItem(m_condition->name()));
-	if (rdgItem == 0) return;
+	if (rdgItem == nullptr) return;
 
-	if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != 0  || m_condition->isOption()){
+	if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr  || m_condition->isOption()){
 		// discrete
 		if (! m_visible) return;
 		m_legendBoxWidget->SetEnabled(1);
 
 		PreProcessorRawDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
-		if (gItem == 0) return;
+		if (gItem == nullptr) return;
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
 		m_labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
@@ -227,12 +227,12 @@ void PreProcessorRawDataTopDataItem::updateActorSettings()
 		if (! m_visible) return;
 		m_scalarBarWidget->SetEnabled(1);
 		PreProcessorRawDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
-		if (gItem == 0) return;
+		if (gItem == nullptr) return;
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 		LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(gtItem->scalarsToColors(m_condition->name()));
-		if (cont == 0) return;
+		if (cont == nullptr) return;
 		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
 		scalarBarActor->SetLookupTable(cont->vtkObj());
 		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
@@ -245,7 +245,7 @@ void PreProcessorRawDataTopDataItem::updateActorSettings()
 
 void PreProcessorRawDataTopDataItem::updateLegendBoxItems()
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 	ColorTransferFunctionContainer* ctfCont = dynamic_cast<ColorTransferFunctionContainer*>(gtItem->scalarsToColors(m_condition->name()));
 	vtkLegendBoxActor* lActor = m_legendBoxWidget->GetLegendBoxActor();

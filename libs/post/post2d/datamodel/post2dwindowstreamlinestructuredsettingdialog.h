@@ -15,7 +15,7 @@ class Post2dWindowStreamlineStructuredSettingDialog : public QDialog
 {
     Q_OBJECT
 public:
-	explicit Post2dWindowStreamlineStructuredSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowStreamlineStructuredSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowStreamlineStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available){m_activeAvailable = available;}

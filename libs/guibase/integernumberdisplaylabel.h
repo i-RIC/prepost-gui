@@ -13,7 +13,7 @@ public:
 		cmEmpty,
 		cmLines
 	};
-	explicit IntegerNumberDisplayLabel(QWidget *parent = 0);
+	explicit IntegerNumberDisplayLabel(QWidget *parent = nullptr);
 	ClearMode clearMode(){return m_clearMode;}
 	void setClearMode(ClearMode cm){m_clearMode = cm;}
 

@@ -13,7 +13,7 @@ public:
 		cmEmpty,
 		cmLines,
 	};
-	explicit RealNumberDisplayLabel(QWidget *parent = 0);
+	explicit RealNumberDisplayLabel(QWidget *parent = nullptr);
 	ClearMode clearMode(){return m_clearMode;}
 	void setClearMode(ClearMode cm){m_clearMode = cm;}
 public slots:

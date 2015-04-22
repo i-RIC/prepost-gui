@@ -17,7 +17,7 @@ Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, Graph2dWi
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(itemlabel);
-	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == 0){
+	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == nullptr){
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -26,7 +26,7 @@ Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, const QIc
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(icon, itemlabel);
-	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == 0){
+	if (dynamic_cast<Graph2dWindowRootDataItem*>(parent) == nullptr){
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -35,7 +35,7 @@ Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, const QIc
 Graph2dWindowDataItem::Graph2dWindowDataItem(ProjectDataItem* parent)
 	: ProjectDataItem(parent)
 {
-	m_standardItem = 0;
+	m_standardItem = nullptr;
 	init();
 }
 
@@ -46,16 +46,16 @@ Graph2dWindowDataItem::~Graph2dWindowDataItem(){
 		delete *it;
 	}
 	ProjectDataItem* tmp_parent = parent();
-	if (tmp_parent != 0){
+	if (tmp_parent != nullptr){
 		Graph2dWindowDataItem* p = dynamic_cast<Graph2dWindowDataItem*>(tmp_parent);
-		if (p != 0){p->unregisterChild(this);}
+		if (p != nullptr){p->unregisterChild(this);}
 	}
 	m_isDestructing = false;
 
 	// remove the item from QStandardItemModel.
 	QStandardItem* item = m_standardItem;
-	if (item != 0){
-		if (item->parent() == 0 || item->parent()->row() == -1){
+	if (item != nullptr){
+		if (item->parent() == nullptr || item->parent()->row() == -1){
 			// maybe this is the top level item of the model
 			QStandardItemModel* model = dataModel()->itemModel();
 			QStandardItem* i = model->item(item->row());
@@ -64,7 +64,7 @@ Graph2dWindowDataItem::~Graph2dWindowDataItem(){
 				dataModel()->itemModel()->removeRow(item->row());
 			}
 		}else{
-			if (item->parent() != 0){
+			if (item->parent() != nullptr){
 				QStandardItem* i = item->parent()->child(item->row());
 				if (i == item){
 					item->parent()->removeRow(item->row());
@@ -76,13 +76,13 @@ Graph2dWindowDataItem::~Graph2dWindowDataItem(){
 
 bool Graph2dWindowDataItem::isEnabled()
 {
-	if (m_standardItem == 0){return false;}
+	if (m_standardItem == nullptr){return false;}
 	return (m_standardItem->checkState() == Qt::Checked);
 }
 
 void Graph2dWindowDataItem::setEnabled(bool enabled)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (enabled){
 		m_standardItem->setCheckState(Qt::Checked);
 	}else{
@@ -105,7 +105,7 @@ void Graph2dWindowDataItem::init()
 	if (m_standardItem){
 		m_standardItem->setEditable(false);
 	}
-	m_standardItemCopy = 0;
+	m_standardItemCopy = nullptr;
 	m_isDeletable = true;
 	m_isReorderable = false;
 	m_isDestructing = false;
@@ -211,7 +211,7 @@ void Graph2dWindowDataItem::closeCgnsFile()
 
 void Graph2dWindowDataItem::loadCheckState(const QDomNode& node)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (m_standardItem->isCheckable()){
 		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
 	}
@@ -219,7 +219,7 @@ void Graph2dWindowDataItem::loadCheckState(const QDomNode& node)
 
 void Graph2dWindowDataItem::saveCheckState(QXmlStreamWriter& writer)
 {
-	if (m_standardItem == 0){return;}
+	if (m_standardItem == nullptr){return;}
 	if (m_standardItem->isCheckable()){
 		QString checkState;
 		checkState.setNum(m_standardItem->checkState());
@@ -244,7 +244,7 @@ void Graph2dWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 }
 void Graph2dWindowDataItem::updateExpandState(QTreeView* view)
 {
-	if (m_standardItem != 0){
+	if (m_standardItem != nullptr){
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -254,7 +254,7 @@ void Graph2dWindowDataItem::updateExpandState(QTreeView* view)
 
 void Graph2dWindowDataItem::reflectExpandState(QTreeView* view)
 {
-	if (m_standardItem != 0){
+	if (m_standardItem != nullptr){
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -288,7 +288,7 @@ void Graph2dWindowDataItem::updateVisibility()
 void Graph2dWindowDataItem::updateVisibility(bool visible)
 {
 	bool my_visible = true;
-	if (m_standardItem == 0){
+	if (m_standardItem == nullptr){
 		my_visible = true;
 	}else if (m_standardItem->isCheckable()){
 		switch (m_standardItem->checkState()){
@@ -324,7 +324,7 @@ QMainWindow* Graph2dWindowDataItem::mainWindow()
 bool Graph2dWindowDataItem::isAncientChecked()
 {
 	QStandardItem* i = dynamic_cast<Graph2dWindowDataItem*>(parent())->m_standardItem;
-	if (i == 0){return true;}
+	if (i == nullptr){return true;}
 	if (i->isCheckable() && i->checkState() == Qt::Unchecked){
 		return false;
 	}
@@ -383,7 +383,7 @@ void Graph2dWindowDataItem::moveDown()
 void Graph2dWindowDataItem::showPropertyDialog()
 {
 	QDialog* propDialog = propertyDialog(mainWindow());
-	if (propDialog == 0){return;}
+	if (propDialog == nullptr){return;}
 	int result = propDialog->exec();
 	if (result == QDialog::Accepted){
 		handlePropertyDialogAccepted(propDialog);

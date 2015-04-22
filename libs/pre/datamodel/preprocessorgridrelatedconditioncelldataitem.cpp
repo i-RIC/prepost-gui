@@ -95,7 +95,7 @@ void PreProcessorGridRelatedConditionCellDataItem::doSaveToProjectMainFile(QXmlS
 	QString mod;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g != 0){
+	if (g != nullptr){
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		mod.setNum(static_cast<int>(cont->isCustomModified()));
 		writer.writeAttribute("isCustomModified", mod);
@@ -106,7 +106,7 @@ void PreProcessorGridRelatedConditionCellDataItem::loadFromCgnsFile(const int /*
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g == 0){return;}
+	if (g == nullptr){return;}
 	GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
 }
@@ -140,7 +140,7 @@ void PreProcessorGridRelatedConditionCellDataItem::mousePressEvent(QMouseEvent* 
 
 void PreProcessorGridRelatedConditionCellDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	static QMenu* menu = 0;
+	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton){
 		if (m_definingBoundingBox){
@@ -151,11 +151,11 @@ void PreProcessorGridRelatedConditionCellDataItem::mouseReleaseEvent(QMouseEvent
 		v->setCursor(tmpparent->normalCursor());
 	} else if (event->button() == Qt::RightButton){
 		PreProcessorGridRelatedConditionCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(parent());
-		if (menu != 0){delete menu;}
+		if (menu != nullptr){delete menu;}
 		menu = new QMenu(projectData()->mainWindow());
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(tmpparent->selectedCells().count() > 0);
-		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == 0){
+		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == nullptr){
 			menu->addAction(m_editVariationAction);
 			m_editVariationAction->setEnabled(tmpparent->selectedCells().count() > 0);
 		}

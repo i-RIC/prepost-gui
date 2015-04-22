@@ -13,18 +13,18 @@ RawDataRiverSurveyCrosssectionWindowProjectDataItem::RawDataRiverSurveyCrosssect
 
 
 RawDataRiverSurveyCrosssectionWindowProjectDataItem::~RawDataRiverSurveyCrosssectionWindowProjectDataItem(){
-	if (m_window != 0){
+	if (m_window != nullptr){
 		RawDataRiverSurveyCrosssectionWindow* w = m_window;
-		m_window = 0;
+		m_window = nullptr;
 		delete w->parent();
 	}
 }
 
 void RawDataRiverSurveyCrosssectionWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != 0){
+	if (m_window != nullptr){
 		PreProcessorRawDataGroupDataItemInterface* gItem = m_window->groupDataItem();
-		m_window = 0;
+		m_window = nullptr;
 		gItem->requestCrosssectionWindowDelete(this);
 	}
 }

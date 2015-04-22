@@ -46,7 +46,7 @@ public:
 	QToolBar* additionalToolBar(){return m_additionalToolBar;}
 	QToolBar* animationToolbar(){return m_animationToolbar;}
 	void unregisterAdditionalToolBar(){
-		m_additionalToolBar = 0;
+		m_additionalToolBar = nullptr;
 	}
 	QMenu* recentProjectsMenu(){return m_recentProjectsMenu;}
 	void informSubWindowChange(QWidget* subwindow);

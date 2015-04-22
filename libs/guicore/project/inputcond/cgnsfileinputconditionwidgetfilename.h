@@ -12,7 +12,7 @@ class SolverDefinitionTranslator;
 class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilenameEdit : public QLineEdit {
 	Q_OBJECT
 public:
-	CgnsFileInputConditionWidgetFilenameEdit(QWidget* parent = 0) : QLineEdit(parent){}
+	CgnsFileInputConditionWidgetFilenameEdit(QWidget* parent = nullptr) : QLineEdit(parent){}
 	bool checkContent();
 
 protected:

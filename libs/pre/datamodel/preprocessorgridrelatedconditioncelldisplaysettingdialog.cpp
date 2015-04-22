@@ -10,7 +10,7 @@
 class PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate : public QItemDelegate
 {
 public:
-	PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);

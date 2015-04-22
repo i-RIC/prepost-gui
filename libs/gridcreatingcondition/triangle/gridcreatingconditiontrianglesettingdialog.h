@@ -12,7 +12,7 @@ class GridCreatingConditionTriangleSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionTriangleSettingDialog(QWidget *parent = 0);
+	explicit GridCreatingConditionTriangleSettingDialog(QWidget *parent = nullptr);
 	~GridCreatingConditionTriangleSettingDialog();
 	bool angleConstraint();
 	void setAngleConstraint(bool c);

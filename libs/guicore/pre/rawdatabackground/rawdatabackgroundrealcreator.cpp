@@ -1,4 +1,4 @@
 #include "rawdatabackgroundrealcreator.h"
 
-RawDataBackgroundRealCreator* RawDataBackgroundRealCreator::m_instance = 0;
+RawDataBackgroundRealCreator* RawDataBackgroundRealCreator::m_instance = nullptr;
 

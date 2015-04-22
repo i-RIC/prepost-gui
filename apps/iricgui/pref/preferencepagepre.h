@@ -10,15 +10,15 @@ namespace Ui {
 
 class PreferencePagePre : public PreferencePage
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit PreferencePagePre(QWidget *parent = 0);
-    ~PreferencePagePre();
+	explicit PreferencePagePre(QWidget *parent = nullptr);
+	~PreferencePagePre();
 	void update();
 private:
 	QSettings m_settings;
-    Ui::PreferencePagePre *ui;
+	Ui::PreferencePagePre *ui;
 };
 
 #endif // PREFERENCEPAGEPRE_H

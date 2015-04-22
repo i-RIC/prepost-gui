@@ -29,7 +29,7 @@ int GridRelatedNodeConditionPropertyDialog::numberOfDivision()
 {
 	ScalarsToColorsEditWidget* w = ui->scalarsToColorsWidget->widget();
 	LookupTableEditWidget* widget = dynamic_cast<LookupTableEditWidget*>(w);
-	if (widget != 0){
+	if (widget != nullptr){
 		return widget->divisionNumber();
 	} else {
 		return 10;
@@ -40,7 +40,7 @@ void GridRelatedNodeConditionPropertyDialog::setNumberOfDivision(int n)
 {
 	ScalarsToColorsEditWidget* w = ui->scalarsToColorsWidget->widget();
 	LookupTableEditWidget* widget = dynamic_cast<LookupTableEditWidget*>(w);
-	if (widget != 0){
+	if (widget != nullptr){
 		return widget->setDivisionNumber(n);
 	}
 }
@@ -49,7 +49,7 @@ void GridRelatedNodeConditionPropertyDialog::setScalarsToColorsEditWidget(Scalar
 {
 	ui->scalarsToColorsWidget->setWidget(widget);
 	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(widget);
-	if (ltWidget != 0){
+	if (ltWidget != nullptr){
 		connect(ui->contourSettingWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ltWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
 	}
 

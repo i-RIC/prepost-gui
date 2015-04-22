@@ -36,21 +36,21 @@ void GraphicsWindowRootDataItem::updateItemMap()
 void GraphicsWindowRootDataItem::handleItemChange(QStandardItem *changedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(changedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemChange();
 }
 
 void GraphicsWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemClicked();
 }
 
 void GraphicsWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemDoubleClicked();
 }
 
@@ -141,7 +141,7 @@ void GraphicsWindowRootDataItem::moveDownItem(QStandardItem *item)
 
 GraphicsWindowDataItem* GraphicsWindowRootDataItem::modelItemFromItem(QStandardItem* item)
 {
-	return m_itemMap.value(item, 0);
+	return m_itemMap.value(item, nullptr);
 }
 
 void GraphicsWindowRootDataItem::loadFromCgnsFile(const int fn)

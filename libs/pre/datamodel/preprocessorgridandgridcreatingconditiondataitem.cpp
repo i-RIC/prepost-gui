@@ -95,7 +95,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	}
 	m_childItems.append(m_gridDataItem);
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
-	if (gItem->bcGroupDataItem() == 0){
+	if (gItem->bcGroupDataItem() == nullptr){
 		m_standardItem->takeChild(m_bcSettingGroupDataItem->standardItem()->row());
 	}
 
@@ -106,7 +106,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	// create connections.
 	connect(m_creatingConditionDataItem, SIGNAL(gridCreated()), this, SLOT(informGridCreation()));
 	connect(dynamic_cast<PreProcessorGridTypeDataItem*>(p)->rawdataTop(), SIGNAL(dataChanged()), m_mappingSettingDataItem, SLOT(informRawDataChange()));
-	if (gItem->bcGroupDataItem() != 0){
+	if (gItem->bcGroupDataItem() != nullptr){
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
 	}
@@ -180,14 +180,14 @@ void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu*
 bool PreProcessorGridAndGridCreatingConditionDataItem::gridEdited() const
 {
 	Grid* g = m_gridDataItem->grid();
-	if (g == 0){return false;}
+	if (g == nullptr){return false;}
 	return g->isModified();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::toggleGridEditFlag()
 {
 	Grid* g = m_gridDataItem->grid();
-	if (g == 0){return;}
+	if (g == nullptr){return;}
 	g->setModified();
 }
 

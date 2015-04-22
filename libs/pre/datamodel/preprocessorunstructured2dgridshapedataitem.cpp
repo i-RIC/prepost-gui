@@ -64,13 +64,13 @@ void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 void PreProcessorUnstructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != 0){
+	if (g != nullptr){
 		Unstructured2DGrid* grid = dynamic_cast<Unstructured2DGrid*>(g);
 
 		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != 0){m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
+		if (shapeAlgo != nullptr){m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
 		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != 0){m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
+		if (indexGridAlgo != nullptr){m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
 	}
 	updateActorSettings();
 }
@@ -85,7 +85,7 @@ void PreProcessorUnstructured2dGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0){
+	if (g == nullptr){
 		// grid is not setup yet.
 		return;
 	}

@@ -25,7 +25,7 @@ Graph2dWindowMarkerGroupDataItem::Graph2dWindowMarkerGroupDataItem(Graph2dWindow
 
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
-	m_colorSource = 0;
+	m_colorSource = nullptr;
 }
 
 Graph2dWindowMarkerGroupDataItem::~Graph2dWindowMarkerGroupDataItem()

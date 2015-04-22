@@ -41,21 +41,21 @@ void Graph2dWindowRootDataItem::updateItemMap()
 void Graph2dWindowRootDataItem::handleItemChange(QStandardItem *changedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(changedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemChange();
 }
 
 void Graph2dWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemClicked();
 }
 
 void Graph2dWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == 0){return;}
+	if (dataItem == nullptr){return;}
 	dataItem->handleStandardItemDoubleClicked();
 }
 
@@ -149,7 +149,7 @@ void Graph2dWindowRootDataItem::moveDownItem(QStandardItem *item)
 
 Graph2dWindowDataItem* Graph2dWindowRootDataItem::modelItemFromItem(QStandardItem* item)
 {
-	return m_itemMap.value(item, 0);
+	return m_itemMap.value(item, nullptr);
 }
 
 void Graph2dWindowRootDataItem::loadFromCgnsFile(const int fn)

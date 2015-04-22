@@ -17,7 +17,7 @@ class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit CoordinateSystemSelectDialog(QWidget *parent = 0);
+	explicit CoordinateSystemSelectDialog(QWidget *parent = nullptr);
 	~CoordinateSystemSelectDialog();
 	void setBuilder(CoordinateSystemBuilder* builder){m_builder = builder;}
 	void setCoordinateSystem(CoordinateSystem* cs);

@@ -19,7 +19,7 @@ class GUICOREDLL_EXPORT MousePositionWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit MousePositionWidget(QWidget *parent = 0);
+	explicit MousePositionWidget(QWidget *parent = nullptr);
 	~MousePositionWidget();
 	void setProjectData(ProjectData* data){m_projectData = data;}
 

@@ -85,7 +85,7 @@ void VTKGraphicsView::scale(double s)
 
 void VTKGraphicsView::keyPressEvent(QKeyEvent* event)
 {
-	if (m_activeDataItem != 0){
+	if (m_activeDataItem != nullptr){
 		m_activeDataItem->keyPressEvent(event, this);
 	} else if (m_interactive){
 		QVTKWidget::keyPressEvent(event);
@@ -94,7 +94,7 @@ void VTKGraphicsView::keyPressEvent(QKeyEvent* event)
 
 void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 {
-	if (m_activeDataItem != 0){
+	if (m_activeDataItem != nullptr){
 		m_activeDataItem->keyReleaseEvent(event, this);
 	} else if (m_interactive){
 		QVTKWidget::keyReleaseEvent(event);
@@ -103,7 +103,7 @@ void VTKGraphicsView::keyReleaseEvent(QKeyEvent* event)
 
 void VTKGraphicsView::mouseDoubleClickEvent(QMouseEvent* event)
 {
-	if (m_activeDataItem != 0){
+	if (m_activeDataItem != nullptr){
 		m_activeDataItem->mouseDoubleClickEvent(event, this);
 	} else if (m_interactive){
 		QVTKWidget::mouseDoubleClickEvent(event);
@@ -145,12 +145,12 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 		}
 	} else {
 		// the mouse press event is informed to the active data item.
-		if (m_activeDataItem != 0){
+		if (m_activeDataItem != nullptr){
 			m_activeDataItem->mousePressEvent(event, this);
 		} else if (m_interactive){
 			vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 			vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-			i->SetInteractorStyle(0);
+			i->SetInteractorStyle(nullptr);
 			QVTKWidget::mousePressEvent(event);
 			i->SetInteractorStyle(style);
 		}
@@ -170,7 +170,7 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 
 	// invoke appropriate vtk event
 	this->unsetCursor();
-	if (m_activeDataItem != 0){
+	if (m_activeDataItem != nullptr){
 		if (m_isViewChanging){
 			m_activeDataItem->viewOperationEnded(this);
 			GraphicsWindowDataModel* m = dynamic_cast<GraphicsWindowDataModel*> (m_model);
@@ -181,7 +181,7 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 	} else if (m_interactive){
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-		i->SetInteractorStyle(0);
+		i->SetInteractorStyle(nullptr);
 		QVTKWidget::mouseReleaseEvent(event);
 		i->SetInteractorStyle(style);
 	}
@@ -209,12 +209,12 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 	if (m_isViewChanging){
 		// do the QVTKWidget implementation.
 		QVTKWidget::mouseMoveEvent(event);
-	} else if (m_activeDataItem != 0){
+	} else if (m_activeDataItem != nullptr){
 		m_activeDataItem->mouseMoveEvent(event, this);
 	} else if (m_interactive){
 		vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 		vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-		i->SetInteractorStyle(0);
+		i->SetInteractorStyle(nullptr);
 		QVTKWidget::mouseMoveEvent(event);
 		i->SetInteractorStyle(style);
 	}
@@ -223,7 +223,7 @@ void VTKGraphicsView::mouseMoveEvent(QMouseEvent* event)
 void VTKGraphicsView::wheelEvent(QWheelEvent *event)
 {
 	QVTKWidget::wheelEvent(event);
-	if (m_activeDataItem != 0){
+	if (m_activeDataItem != nullptr){
 		m_activeDataItem->wheelEvent(event, this);
 	}
 	m_model->viewOperationEndedGlobal();
@@ -236,7 +236,7 @@ void VTKGraphicsView::standardKeyPressEvent(QKeyEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::keyPressEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -245,7 +245,7 @@ void VTKGraphicsView::standardKeyReleaseEvent(QKeyEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::keyReleaseEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -254,7 +254,7 @@ void VTKGraphicsView::standardMouseDoubleClickEvent(QMouseEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::mouseDoubleClickEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -263,7 +263,7 @@ void VTKGraphicsView::standardMousePressEvent(QMouseEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::mousePressEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -272,7 +272,7 @@ void VTKGraphicsView::standardMouseReleaseEvent(QMouseEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::mouseReleaseEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -281,7 +281,7 @@ void VTKGraphicsView::standardMouseMoveEvent(QMouseEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::mouseMoveEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -290,7 +290,7 @@ void VTKGraphicsView::standardWheelEvent(QWheelEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();
 	vtkSmartPointer<vtkInteractorObserver> style = i->GetInteractorStyle();
-	i->SetInteractorStyle(0);
+	i->SetInteractorStyle(nullptr);
 	QVTKWidget::wheelEvent(event);
 	i->SetInteractorStyle(style);
 }
@@ -377,7 +377,7 @@ void VTKGraphicsViewArbitraryMove::redo()
 	m_view->mainRenderer()->SetActiveCamera(m_newCamera);
 	m_view->m_model->viewOperationEndedGlobal();
 	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(m_view->m_model);
-	if (model != 0){
+	if (model != nullptr){
 		model->update2Ds();
 	}
 	m_view->mainRenderer()->GetRenderWindow()->Render();
@@ -406,9 +406,9 @@ QImage VTKGraphicsView::getImage()
 
 void VTKGraphicsView::update2Ds()
 {
-	if (m_model == 0){return;}
+	if (m_model == nullptr){return;}
 	GraphicsWindowDataModel* model = dynamic_cast<GraphicsWindowDataModel*>(m_model);
-	if (model == 0){return;}
+	if (model == nullptr){return;}
 	model->update2Ds();
 }
 

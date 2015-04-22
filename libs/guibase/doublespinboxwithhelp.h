@@ -14,7 +14,7 @@ class GUIBASEDLL_EXPORT DoubleSpinBoxWithHelp : public QWidget
 	Q_OBJECT
 
 public:
-	explicit DoubleSpinBoxWithHelp(QWidget *parent = 0);
+	explicit DoubleSpinBoxWithHelp(QWidget *parent = nullptr);
 	~DoubleSpinBoxWithHelp();
 
 	void setMinimum(double min);

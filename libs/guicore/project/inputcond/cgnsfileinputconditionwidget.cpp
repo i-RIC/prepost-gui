@@ -3,7 +3,7 @@
 #include <misc/xmlsupport.h>
 
 void CgnsFileInputConditionWidget::setDependency(CgnsFileInputConditionDependency* dep){
-	if (m_dependency != 0){delete m_dependency;}
+	if (m_dependency != nullptr){delete m_dependency;}
 	m_dependency = dep;
 }
 

@@ -39,7 +39,7 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
 		for (auto rit = rItems.begin(); rit != rItems.end(); ++rit){
 			PreProcessorRawdataDataItemInterface* rItem = *rit;
-			riverSurveyFound = riverSurveyFound || (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != 0);
+			riverSurveyFound = riverSurveyFound || (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != nullptr);
 		}
 	}
 	if (! riverSurveyFound){

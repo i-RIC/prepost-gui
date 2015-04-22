@@ -25,7 +25,7 @@ public:
 			numOfLabels = 2;
 		}
 	};
-	explicit XYAxisDisplaySettingDialog(QWidget *parent = 0);
+	explicit XYAxisDisplaySettingDialog(QWidget *parent = nullptr);
 	~XYAxisDisplaySettingDialog();
 	void setXAxisSetting(const Setting& xSetting);
 	const Setting xAxisSetting();

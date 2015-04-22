@@ -14,7 +14,7 @@ class SolverDefinitionListDialog : public QDialog {
 	Q_OBJECT
 public:
 	/// Constructor
-	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget *parent = 0);
+	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget *parent = nullptr);
 	/// Destructor
 	~SolverDefinitionListDialog();
 	/// Setup dialog items

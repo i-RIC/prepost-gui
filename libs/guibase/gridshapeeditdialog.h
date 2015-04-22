@@ -17,7 +17,7 @@ class GUIBASEDLL_EXPORT GridShapeEditDialog : public QDialog {
 
 public:
 	enum Shape {Outline, Wireframe};
-	GridShapeEditDialog(QWidget *parent = 0);
+	GridShapeEditDialog(QWidget *parent = nullptr);
 	~GridShapeEditDialog();
 	void hideShape();
 	void hideIndex();

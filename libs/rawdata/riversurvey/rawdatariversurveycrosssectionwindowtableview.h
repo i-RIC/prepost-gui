@@ -7,7 +7,7 @@ class RawDataRiverSurveyCrosssectionWindowTableView : public QTableView
 {
 	Q_OBJECT
 public:
-	explicit RawDataRiverSurveyCrosssectionWindowTableView(QWidget *parent = 0);
+	explicit RawDataRiverSurveyCrosssectionWindowTableView(QWidget *parent = nullptr);
 protected:
 	void resizeEvent(QResizeEvent *event);
 //	void mouseMoveEvent(QMouseEvent *event);

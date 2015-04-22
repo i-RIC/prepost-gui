@@ -272,7 +272,7 @@ CgnsFileInputConditionDependency::Condition* CgnsFileInputConditionDependency::b
 	CgnsFileInputConditionDependency* d
 		)
 {
-	CgnsFileInputConditionDependency::Condition* ret = 0;
+	CgnsFileInputConditionDependency::Condition* ret = nullptr;
 	QString type = node.toElement().attribute("type");
 	if (type == "always"){
 		ret = new CgnsFileInputConditionDependencyConditionAlways(node, cs, d);

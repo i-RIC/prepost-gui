@@ -11,11 +11,11 @@ namespace Ui {
 
 class Graph2dHybridWindowLineSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit Graph2dHybridWindowLineSettingDialog(QWidget *parent = 0);
-    ~Graph2dHybridWindowLineSettingDialog();
+	explicit Graph2dHybridWindowLineSettingDialog(QWidget *parent = nullptr);
+	~Graph2dHybridWindowLineSettingDialog();
 	void setLineWidth(int width);
 	int lineWidth();
 	void setCustomColor(QColor col);
@@ -24,7 +24,7 @@ public:
 	Graph2dHybridWindowResultSetting::AxisSide axisSide();
 
 private:
-    Ui::Graph2dHybridWindowLineSettingDialog *ui;
+	Ui::Graph2dHybridWindowLineSettingDialog *ui;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWLINESETTINGDIALOG_H

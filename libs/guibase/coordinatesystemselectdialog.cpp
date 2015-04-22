@@ -8,7 +8,7 @@ CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget *parent) :
 	ui(new Ui::CoordinateSystemSelectDialog)
 {
 	ui->setupUi(this);
-	m_currentSystem = 0;
+	m_currentSystem = nullptr;
 	connect(ui->searchEdit, SIGNAL(textEdited(QString)), this, SLOT(updateList()));
 	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(updateCurrent(int)));
 }

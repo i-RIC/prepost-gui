@@ -13,7 +13,7 @@ namespace Ui {
 class ContinuousSnapshotWindowSelectionPage : public QWizardPage {
 	Q_OBJECT
 public:
-	ContinuousSnapshotWindowSelectionPage(QWidget *parent = 0);
+	ContinuousSnapshotWindowSelectionPage(QWidget *parent = nullptr);
 	~ContinuousSnapshotWindowSelectionPage();
 
 	void setupWindowList();

@@ -12,7 +12,7 @@ class OffsetSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit OffsetSettingDialog(QWidget *parent = 0);
+	explicit OffsetSettingDialog(QWidget *parent = nullptr);
 	~OffsetSettingDialog();
 	void setOffset(double x, double y);
 	double offsetX() const;\

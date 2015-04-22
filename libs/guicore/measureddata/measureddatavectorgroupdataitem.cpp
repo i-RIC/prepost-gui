@@ -353,7 +353,7 @@ void MeasuredDataVectorGroupDataItem::update()
 
 void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	MeasuredDataVectorDataItem* current = 0;
+	MeasuredDataVectorDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		MeasuredDataVectorDataItem* tmpItem = dynamic_cast<MeasuredDataVectorDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
@@ -381,7 +381,7 @@ void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 void MeasuredDataVectorGroupDataItem::updatePolyData()
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == 0 || md->pointData() == 0){return;}
+	if (md == nullptr || md->pointData() == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	updateScaleFactor();
 	VTKGraphicsView* view = dataModel()->graphicsView();
@@ -448,7 +448,7 @@ void MeasuredDataVectorGroupDataItem::updateLegendData()
 QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == 0 || md->pointData() == 0){
+	if (md == nullptr || md->pointData() == nullptr){
 		return 0;
 	}
 	if (md->vectorNames().size() == 0){

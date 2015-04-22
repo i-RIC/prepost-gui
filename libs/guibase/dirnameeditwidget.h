@@ -13,7 +13,7 @@ class GUIBASEDLL_EXPORT DirnameEditWidget : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit DirnameEditWidget(QWidget *parent = 0);
+	explicit DirnameEditWidget(QWidget *parent = nullptr);
 	~DirnameEditWidget();
 	void setDirname(const QString& dirname);
 	const QString dirname() const;

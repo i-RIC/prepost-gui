@@ -48,8 +48,8 @@ void iRICMainWindowMiscDialogManager::aboutCurrentSolver()
 
 void iRICMainWindowMiscDialogManager::mouseHelp()
 {
-	static MouseHelpDialog* dialog = 0;
-	if (dialog == 0){
+	static MouseHelpDialog* dialog = nullptr;
+	if (dialog == nullptr){
 		dialog = new MouseHelpDialog(m_mainWindow);
 	}
 	dialog->show();

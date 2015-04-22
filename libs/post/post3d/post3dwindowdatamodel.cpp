@@ -56,7 +56,7 @@ void Post3dWindowDataModel::init()
 	// Discard the old data.
 	// We do not need the next line, because the m_rootDataItem
 	// is deleted automatically when the last projectdata is deleted.
-	// if (m_rootDataItem != 0){delete m_rootDataItem;}
+	// if (m_rootDataItem != nullptr){delete m_rootDataItem;}
 	// build new data.
 	m_graphicsView = new Post3dWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
 
@@ -85,16 +85,16 @@ PostSolutionInfo* Post3dWindowDataModel::postSolutionInfo()
 void Post3dWindowDataModel::gridShapeSetting()
 {
 	Post3dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post3dWindowGridShapeDataItem * item = zItem->gridShapeDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	item->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::surfaceSetting()
 {
 	Post3dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 //	Post3dWindowSurfaceGroupDataItem* item = zItem->
 //	item->showPropertyDialog();
 }
@@ -102,7 +102,7 @@ void Post3dWindowDataModel::surfaceSetting()
 void Post3dWindowDataModel::contourSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	Post3dWindowContourGroupDataItem* citem = item->contourGroupItem();
 	citem->showSettingDialog();
 }
@@ -110,7 +110,7 @@ void Post3dWindowDataModel::contourSetting()
 void Post3dWindowDataModel::arrowSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	Post3dWindowArrowGroupDataItem* aitem = item->arrowGroupDataItem();
 	aitem->showSettingDialog();
 }
@@ -118,7 +118,7 @@ void Post3dWindowDataModel::arrowSetting()
 void Post3dWindowDataModel::streamlineSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	Post3dWindowNodeVectorStreamlineGroupDataItem* sitem = item->streamlineGroupDataItem();
 	sitem->showPropertyDialog();
 }
@@ -126,7 +126,7 @@ void Post3dWindowDataModel::streamlineSetting()
 void Post3dWindowDataModel::particleSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	Post3dWindowNodeVectorParticleGroupDataItem * pitem = item->particleGroupDataItem();
 	pitem->showPropertyDialog();
 }
@@ -134,7 +134,7 @@ void Post3dWindowDataModel::particleSetting()
 void Post3dWindowDataModel::isosurfaceSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	Post3dWindowNodeScalarGroupDataItem* iitem = item->scalarGroupDataItem();
 	iitem->showPropertyDialog();;
 }
@@ -142,13 +142,13 @@ void Post3dWindowDataModel::isosurfaceSetting()
 Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 {
 	GraphicsWindowDataItem* item = m_selectedItem;
-	while (item != 0){
+	while (item != nullptr){
 		Post3dWindowZoneDataItem* zitem = dynamic_cast<Post3dWindowZoneDataItem*>(item);
 		// zone item found!
-		if (zitem != 0){return zitem;}
+		if (zitem != nullptr){return zitem;}
 		// try parent item.
 		item = dynamic_cast<GraphicsWindowDataItem*>(item->parent());
-		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != 0){
+		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr){
 			// reached to root node.
 			break;
 		}
@@ -157,12 +157,12 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers3D();
 	Post3dWindowZoneDataItem* zitem;
-	if (containers.count() == 0){return 0;}
+	if (containers.count() == 0){return nullptr;}
 	if (containers.count() > 1){
 		PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
-		if (ret != QDialog::Accepted){return 0;}
+		if (ret != QDialog::Accepted){return nullptr;}
 		QString gridType = dialog.gridTypeName();
 		QString zone = dialog.zoneName();
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);

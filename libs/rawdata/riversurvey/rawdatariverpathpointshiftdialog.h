@@ -15,7 +15,7 @@ class RawDataRiverPathPointShiftDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget *parent = nullptr);
 	~RawDataRiverPathPointShiftDialog();
 public slots:
 	void accept();

@@ -29,7 +29,7 @@ PRivPath RawDataRiverSurveyImporter::RivAlloc ( double KP, char *str)
 			return p;
 
 	// Not found.
-	if ((node = new RivPath()) == 0){return 0;}
+	if ((node = new RivPath()) == nullptr){return nullptr;}
 
 	node->KP    = KP;
 	node->strKP = str;
@@ -184,7 +184,7 @@ bool RawDataRiverSurveyImporter::RivRead (const QString& name, bool *with4points
 	PRivPath node;      //RivPath•Ï”‚Ö‚Ìƒ|ƒCƒ“ƒ^
 
 	*with4points = true;
-	m_RivRoot = 0;
+	m_RivRoot = nullptr;
 	// Open river survey data file
 	file.open(QIODevice::ReadOnly | QIODevice::Text);
 
@@ -383,7 +383,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			newpoint->CenterToRightCtrlPoints.push_back(rightPoint);
 			newpoint->InhibitInterpolatorUpdate = false;
 
-			if (rs->m_headPoint == 0){
+			if (rs->m_headPoint == nullptr){
 				rs->m_headPoint = newpoint;
 			}else{
 				tail->addPathPoint(newpoint);
@@ -441,7 +441,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			newpoint->shiftCenter(shiftValue);
 			newpoint->InhibitInterpolatorUpdate = false;
 
-			if (rs->m_headPoint == 0){
+			if (rs->m_headPoint == nullptr){
 				rs->m_headPoint = newpoint;
 			}else{
 				tail->addPathPoint(newpoint);

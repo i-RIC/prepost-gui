@@ -64,7 +64,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 	ui->indexMaxLabel->hide();
 	ui->indexMaxSlider->hide();
 
-	if (info == 0){return;}
+	if (info == nullptr){return;}
 	switch (info->dataType){
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		break;

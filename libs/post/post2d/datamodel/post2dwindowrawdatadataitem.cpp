@@ -6,7 +6,7 @@
 Post2dWindowRawDataDataItem::Post2dWindowRawDataDataItem(GraphicsWindowDataItem* parent)
 	: RawDataProxyDataItem(parent)
 {
-	m_rawDataProxy = 0;
+	m_rawDataProxy = nullptr;
 	m_isReorderable = false;
 	m_isDeletable = false;
 }
@@ -14,7 +14,7 @@ Post2dWindowRawDataDataItem::Post2dWindowRawDataDataItem(GraphicsWindowDataItem*
 Post2dWindowRawDataDataItem::~Post2dWindowRawDataDataItem()
 {
 	if (m_rawDataProxy){delete m_rawDataProxy;}
-	m_rawDataProxy = 0;
+	m_rawDataProxy = nullptr;
 }
 
 void Post2dWindowRawDataDataItem::setRawDataProxy(RawDataProxy *proxy)

@@ -145,7 +145,7 @@ void VerificationSettingDialog::selectZone(int zoneid)
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){
+		if (tmparray == nullptr){
 			continue;
 		}
 		if (tmparray->GetNumberOfComponents() > 1){

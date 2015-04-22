@@ -844,7 +844,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataPMInterpLineAddPointCommand* comm = dynamic_cast<const RawDataPMInterpLineAddPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_pointMap != m_pointMap){return false;}
 		m_newPoint = comm->m_newPoint;
@@ -908,7 +908,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataPMPolygonAddPointCommand* comm = dynamic_cast<const RawDataPMPolygonAddPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_pointMap != m_pointMap){return false;}
 		m_newPoint = comm->m_newPoint;
@@ -934,7 +934,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		}
 		points->Modified();
 
-		vtkDataArray* da = 0;
+		vtkDataArray* da = nullptr;
 		if (pm->valueType == iRICLib::PointMap::vtInt){
 			vtkIntArray* intDa = vtkIntArray::New();
 			intDa->SetName(VALUES);
@@ -2280,7 +2280,7 @@ void RawDataPointmap::showPolygonSelectedPoints(bool xOr) {
 	m_selectedVerticesGrid->Reset();
 	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
 
-	for(int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++)
+	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++)
 	{
 		double x[3];
 		this->m_selectedVerticesGrid->GetPoint(i,x);
@@ -2791,7 +2791,7 @@ void RawDataPointmap::clearNewPoints()
 void RawDataPointmap::resetSelectionPolygon()
 {
 	int numpolypts = this->m_vtkPolygon->GetPoints()->GetNumberOfPoints();
-	for(int i = 0; i < numpolypts; i++) {
+	for (int i = 0; i < numpolypts; i++) {
 		iRICUndoStack::instance().undo();
 	}
 	this->m_vtkPolygon->GetPoints()->Reset();
@@ -2801,7 +2801,7 @@ void RawDataPointmap::resetSelectionPolygon()
 void RawDataPointmap::unwindSelectedInterp()
 {
 	int numIntPts = this->m_vtkInterpPolygon->GetNumberOfPoints();
-	for(int i = 0; i < numIntPts; i++) {
+	for (int i = 0; i < numIntPts; i++) {
 		iRICUndoStack::instance().undo();
 	}
 

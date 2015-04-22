@@ -102,7 +102,7 @@ PreProcessorGridCrosssectionWindowGraphicsView::PreProcessorGridCrosssectionWind
 	fBottomMargin = 0.1f;
 	m_mouseEventMode = meNormal;
 	m_rubberBand = 0;
-	m_rightClickingMenu = 0;
+	m_rightClickingMenu = nullptr;
 
 	// Set cursors for mouse view change events.
 	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
@@ -123,7 +123,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::setupActions()
 
 void PreProcessorGridCrosssectionWindowGraphicsView::setupMenu()
 {
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == nullptr){
 		m_rightClickingMenu = new QMenu(this);
 		m_rightClickingMenu->addAction(m_editAction);
 	}
@@ -678,7 +678,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent
 			if (event->button() == Qt::LeftButton){
 				// start selecting.
 				m_mouseEventMode = meSelecting;
-				if (m_rubberBand == 0){
+				if (m_rubberBand == nullptr){
 					m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 				}
 				m_rubberOrigin = event->pos();

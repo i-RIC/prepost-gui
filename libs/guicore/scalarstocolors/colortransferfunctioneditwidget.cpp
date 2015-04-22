@@ -12,7 +12,7 @@
 class ColorTransferFunctionEditWidgetColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);

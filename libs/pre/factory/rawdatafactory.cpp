@@ -7,10 +7,10 @@
 #include <rawdata/netcdf/rawdatanetcdfintegercreator.h>
 #include <rawdata/netcdf/rawdatanetcdfrealcreator.h>
 
-RawDataFactory* RawDataFactory::m_instance = 0;
+RawDataFactory* RawDataFactory::m_instance = nullptr;
 
 RawDataFactory::RawDataFactory()
-	: QObject(0)
+	: QObject(nullptr)
 {
 	// @todo add RawDataCreator instances into
 	// m_creators here when you added new
@@ -40,5 +40,5 @@ RawData* RawDataFactory::restore(const QDomNode& node, ProjectDataItem* item, So
 		RawData* ret = (*it)->restore(node, item, cond);
 		if (ret){return ret;}
 	}
-	return 0;
+	return nullptr;
 }

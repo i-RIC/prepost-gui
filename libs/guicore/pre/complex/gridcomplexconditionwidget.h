@@ -26,7 +26,7 @@ public:
 	class Setting {
 	public:
 		Setting(){
-			containerSet = 0;
+			containerSet = nullptr;
 		}
 		~Setting(){}
 		CgnsFileInputConditionContainerSet* containerSet;
@@ -36,7 +36,7 @@ public:
 	};
 
 	/// Constructor
-	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget *parent = 0);
+	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget *parent = nullptr);
 	/// Destructor
 	~GridComplexConditionWidget();
 	void setNameAndNumber(QString name, int number);

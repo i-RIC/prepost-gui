@@ -38,7 +38,7 @@
 Post2dWindowDataModel::Post2dWindowDataModel(Post2dWindow* w, ProjectDataItem* parent)
 	: Graphics2DWindowDataModel(w, parent)
 {
-	m_objectBrowserView = 0;
+	m_objectBrowserView = nullptr;
 	init();
 }
 
@@ -54,7 +54,7 @@ void Post2dWindowDataModel::init()
 	// Discard the old data.
 	// We do not need the next line, because the m_rootDataItem
 	// is deleted automatically when the last projectdata is deleted.
-	// if (m_rootDataItem != 0){delete m_rootDataItem;}
+	// if (m_rootDataItem != nullptr){delete m_rootDataItem;}
 	// build new data.
 	m_graphicsView = new Post2dWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
 	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
@@ -84,18 +84,18 @@ PostSolutionInfo* Post2dWindowDataModel::postSolutionInfo()
 void Post2dWindowDataModel::gridShapeSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowGridShapeDataItem * item = zItem->gridShapeDataItem();
-	if (item == 0){return;}
+	if (item == nullptr){return;}
 	item->showPropertyDialog();
 }
 
 void Post2dWindowDataModel::contourSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowNodeScalarGroupDataItem* item = zItem->scalarGroupDataItem();
-	if (item == 0){
+	if (item == nullptr){
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
 	}
@@ -105,9 +105,9 @@ void Post2dWindowDataModel::contourSetting()
 void Post2dWindowDataModel::vectorSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowNodeVectorArrowGroupDataItem* item = zItem->arrowGroupDataItem();
-	if (item == 0){
+	if (item == nullptr){
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Arrow setting is not available, because this result does not contain vector values."));
 		return;
 	}
@@ -117,9 +117,9 @@ void Post2dWindowDataModel::vectorSetting()
 void Post2dWindowDataModel::streamlineSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowNodeVectorStreamlineGroupDataItem * item = zItem->streamlineDataItem();
-	if (item == 0){
+	if (item == nullptr){
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Streamline setting is not available, because this result does not contain vector values."));
 		return;
 	}
@@ -129,9 +129,9 @@ void Post2dWindowDataModel::streamlineSetting()
 void Post2dWindowDataModel::particleSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowNodeVectorParticleGroupDataItem* item = zItem->particleDataItem();
-	if (item == 0){
+	if (item == nullptr){
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Particle setting is not available, because this result does not contain vector values."));
 		return;
 	}
@@ -141,7 +141,7 @@ void Post2dWindowDataModel::particleSetting()
 void Post2dWindowDataModel::cellFlagSetting()
 {
 	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == 0){return;}
+	if (zItem == nullptr){return;}
 	Post2dWindowCellFlagGroupDataItem* item = zItem->cellFlagGroupDataItem();
 	item->showPropertyDialog();
 }
@@ -149,13 +149,13 @@ void Post2dWindowDataModel::cellFlagSetting()
 Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 {
 	GraphicsWindowDataItem* item = m_selectedItem;
-	while (item != 0){
+	while (item != nullptr){
 		Post2dWindowZoneDataItem* zitem = dynamic_cast<Post2dWindowZoneDataItem*>(item);
 		// zone item found!
-		if (zitem != 0){return zitem;}
+		if (zitem != nullptr){return zitem;}
 		// try parent item.
 		item = dynamic_cast<GraphicsWindowDataItem*>(item->parent());
-		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != 0){
+		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr){
 			// reached to root node.
 			break;
 		}
@@ -166,13 +166,13 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 	Post2dWindowZoneDataItem* zitem;
 	if (containers.count() == 0){
 		// No zone container exists.
-		return 0;
+		return nullptr;
 	} else if (containers.count() > 1){
 		// Multiple zone containers found.
 		PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
-		if (ret != QDialog::Accepted){return 0;}
+		if (ret != QDialog::Accepted){return nullptr;}
 		QString gridType = dialog.gridTypeName();
 		QString zone = dialog.zoneName();
 		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
@@ -191,12 +191,12 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 
 MeasuredDataFileDataItem* Post2dWindowDataModel::getMeasuredDataFileDataItem(){
 	GraphicsWindowDataItem* item = m_selectedItem;
-	while (item != 0){
+	while (item != nullptr){
 		MeasuredDataFileDataItem* mitem = dynamic_cast<MeasuredDataFileDataItem*>(item);
-		if (mitem != 0){return mitem;}
+		if (mitem != nullptr){return mitem;}
 		// try parent item.
 		item = dynamic_cast<GraphicsWindowDataItem*>(item->parent());
-		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != 0){
+		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr){
 			// reached to root node.
 			break;
 		}
@@ -206,7 +206,7 @@ MeasuredDataFileDataItem* Post2dWindowDataModel::getMeasuredDataFileDataItem(){
 	if (mdItem->childItems().count() == 1){
 		return dynamic_cast<MeasuredDataFileDataItem*>(mdItem->childItems().at(0));
 	}
-	return 0;
+	return nullptr;
 }
 
 void Post2dWindowDataModel::createCameraConnections()
@@ -229,13 +229,13 @@ void Post2dWindowDataModel::timeSetting()
 void Post2dWindowDataModel::measuredDataPointSetting()
 {
 	MeasuredDataFileDataItem* fItem = getMeasuredDataFileDataItem();
-	if (fItem == 0){return;}
+	if (fItem == nullptr){return;}
 	fItem->pointGroupDataItem()->showPropertyDialog();
 }
 
 void Post2dWindowDataModel::measuredDataVectorSetting()
 {
 	MeasuredDataFileDataItem* fItem = getMeasuredDataFileDataItem();
-	if (fItem == 0){return;}
+	if (fItem == nullptr){return;}
 	fItem->vectorGroupDataItem()->showPropertyDialog();
 }

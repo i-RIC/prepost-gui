@@ -10,11 +10,13 @@ namespace Ui {
 
 class PreferencePagePost2d : public PreferencePage
 {
-    Q_OBJECT
+	Q_OBJECT
+
 public:
-    explicit PreferencePagePost2d(QWidget *parent = 0);
-    ~PreferencePagePost2d();
+	explicit PreferencePagePost2d(QWidget *parent = nullptr);
+	~PreferencePagePost2d();
 	void update();
+
 private:
 	QSettings m_settings;
     Ui::PreferencePagePost2d *ui;

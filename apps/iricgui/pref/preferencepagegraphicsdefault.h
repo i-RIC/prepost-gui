@@ -10,11 +10,11 @@ namespace Ui {
 
 class PreferencePageGraphicsDefault : public PreferencePage
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit PreferencePageGraphicsDefault(QWidget *parent = 0);
-    ~PreferencePageGraphicsDefault();
+	explicit PreferencePageGraphicsDefault(QWidget *parent = nullptr);
+	~PreferencePageGraphicsDefault();
 	void update();
 private:
 	QSettings m_settings;

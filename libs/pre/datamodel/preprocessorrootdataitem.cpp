@@ -131,7 +131,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 			model->appendRow(gccitem->standardItem());
 			// Boundary condition setting node here if needed.
 			PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*> (citem->gridDataItem());
-			if (gitem->bcGroupDataItem() != 0){
+			if (gitem->bcGroupDataItem() != nullptr){
 				PreProcessorBCSettingGroupDataItem* bcsgitem = citem->bcSettingGroupDataItem();
 				citem->standardItem()->takeChild(bcsgitem->standardItem()->row());
 				model->appendRow(bcsgitem->standardItem());
@@ -256,7 +256,7 @@ PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const Q
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		if ((*it)->name() == name){return *it;}
 	}
-	return 0;
+	return nullptr;
 }
 
 class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
@@ -366,19 +366,19 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	PreProcessorRawdataDataItem* dItem = dynamic_cast<PreProcessorRawdataDataItem*>(dataItem);
-	PreProcessorRawDataGroupDataItem* gItem = 0;
+	PreProcessorRawDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
-	if (dItem != 0){
+	if (dItem != nullptr){
 		gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(dItem->parent());
 	}
 
-	if (bcsitem != 0){
+	if (bcsitem != nullptr){
 		GraphicsWindowRootDataItem::deleteItem(bcsitem->bcDataItem()->standardItem());
 	} else {
 		GraphicsWindowRootDataItem::deleteItem(item);
 	}
 
-	if (gItem != 0){
+	if (gItem != nullptr){
 		gItem->informDataChange();
 	}
 }

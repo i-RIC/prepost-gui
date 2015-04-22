@@ -72,7 +72,7 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){
+		if (tmparray == nullptr){
 			continue;
 		}
 		if (tmparray->GetNumberOfComponents() > 1){
@@ -118,7 +118,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	vtkPointSet* ps = cont->data();
 	if (m_currentSolution == ""){return;}
 	// update current active scalar
@@ -288,7 +288,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == 0){return;}
+	if (stc == nullptr){return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 	m_isolineFilter->SetInputData(m_valueClippedPolyData);
@@ -303,7 +303,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == 0){return;}
+	if (stc == nullptr){return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -370,7 +370,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == 0){return;}
+	if (stc == nullptr){return;}
 	m_fringeMapper->SetInputData(m_valueClippedPolyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_currentSolution).c_str());
@@ -384,7 +384,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == 0){return;}
+	if (stc == nullptr){return;}
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(m_currentSolution)).c_str());
@@ -412,9 +412,9 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent());
-	if (zItem->dataContainer() == 0 || zItem->dataContainer()->data() == 0){
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setEnabled(true);
 	dialog->setZoneData(zItem->dataContainer());
@@ -624,7 +624,7 @@ void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScala
 
 void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	Post2dWindowNodeScalarDataItem* current = 0;
+	Post2dWindowNodeScalarDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dWindowNodeScalarDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
@@ -632,7 +632,7 @@ void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& curr
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -786,7 +786,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 		return false;
 	}
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	if (cs == 0){
+	if (cs == nullptr){
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, coordinate system should be specified."));
 		return false;
 	}
@@ -856,7 +856,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	vtkPointSet* ps = cont->data();
 	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str());
 	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*> (ps);
-	bool isStructured = (stGrid != 0);
+	bool isStructured = (stGrid != nullptr);
 
 	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId){
 

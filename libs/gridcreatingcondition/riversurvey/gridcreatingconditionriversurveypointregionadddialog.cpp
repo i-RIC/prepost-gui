@@ -143,9 +143,9 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverS
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	double lengthSum = 0;
 	int numSections = 0;
-	while (p != 0){
+	while (p != nullptr){
 		m_points.push_back(p);
-		if (p->nextPoint() != 0){
+		if (p->nextPoint() != nullptr){
 			lengthSum += (p->position() - p->nextPoint()->position()).length();
 			++ numSections;
 		}

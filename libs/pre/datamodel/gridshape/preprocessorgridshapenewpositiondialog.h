@@ -11,7 +11,7 @@ namespace Ui {
 class PreProcessorGridShapeNewPositionDialog : public QDialog {
 	Q_OBJECT
 public:
-	PreProcessorGridShapeNewPositionDialog(QWidget *parent = 0);
+	PreProcessorGridShapeNewPositionDialog(QWidget *parent = nullptr);
 	~PreProcessorGridShapeNewPositionDialog();
 
 	const QVector2D position();

@@ -13,7 +13,7 @@ class TRIANGLEDLL_EXPORT TriangleExecuteThread : public QThread
 {
 	Q_OBJECT
 public:
-	explicit TriangleExecuteThread(QObject *parent = 0);
+	explicit TriangleExecuteThread(QObject *parent = nullptr);
 	void setIOs(triangulateio* in, triangulateio* out){
 		m_in = in;
 		m_out = out;

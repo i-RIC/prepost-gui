@@ -42,14 +42,14 @@ void Grid::initPointers()
 {
 //	m_importerFactory = 0;
 //	m_exporterFactory = 0;
-	m_vtkGrid = 0;
+	m_vtkGrid = nullptr;
 	m_isModified = false;
 	m_isMasked = false;
 }
 
 Grid::~Grid()
 {
-	if (m_vtkGrid != 0){
+	if (m_vtkGrid != nullptr){
 		m_vtkGrid->Delete();
 	}
 }

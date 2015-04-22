@@ -11,7 +11,7 @@ public:
 	GridRelatedConditionEditWidgetContainer(QWidget* parent)
 		: QWidget(parent)
 	{
-		m_widget = 0;
+		m_widget = nullptr;
 	}
 	void setWidget(GridRelatedConditionEditWidget* w){
 		m_widget = w;

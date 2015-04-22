@@ -66,12 +66,12 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	vtkStructuredGrid* tmpgrid = m_arrowExtract->GetOutput();
 
 	vtkDataArray* da = tmpgrid->GetPointData()->GetArray(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-	vtkIntArray* IBCArray = 0;
-	if (da != 0){
+	vtkIntArray* IBCArray = nullptr;
+	if (da != nullptr){
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
 	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
-	if (vectorArray == 0){
+	if (vectorArray == nullptr){
 		m_currentSolution = "";
 		return;
 	}
@@ -116,8 +116,8 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){
-		return 0;
+	if (cont == nullptr || cont->data() == nullptr){
+		return nullptr;
 	}
 	Post2dWindowArrowStructuredSettingDialog * dialog = new Post2dWindowArrowStructuredSettingDialog(p);
 	dialog->setZoneData(cont);

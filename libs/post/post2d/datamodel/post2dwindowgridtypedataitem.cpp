@@ -38,7 +38,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isZoneDataItemsSetup = false;
 
 	PreProcessorRawDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->rawDataTopDataItem(type->name());
-	if (tItem != 0){
+	if (tItem != nullptr){
 		m_rawDataItem = new Post2dWindowRawDataTopDataItem(tItem, this);
 		m_childItems.append(m_rawDataItem);
 	}
@@ -53,7 +53,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 		int num = pd->GetNumberOfArrays();
 		for (int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -98,7 +98,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 		int num = pd->GetNumberOfArrays();
 		for(int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -133,9 +133,9 @@ void Post2dWindowGridTypeDataItem::updateLookupTableRanges()
 		min = 0; max = 0;
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 			Post2dWindowZoneDataItem* zitem = *zit;
-			if (zitem->dataContainer() == 0 || zitem->dataContainer()->data() == 0){continue;}
+			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr){continue;}
 			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-			if (dArray != 0){
+			if (dArray != nullptr){
 				dArray->GetRange(range);
 				if (first || range[0] < min){min = range[0];}
 				if (first || range[1] > max){max = range[1];}
@@ -165,7 +165,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 			QDomNode ltNode = tables.at(i);
 			QString ltName = ltNode.toElement().attribute("name");
 			LookupTableContainer* cont = m_lookupTables.value(ltName, 0);
-			if (cont != 0){
+			if (cont != nullptr){
 				cont->loadFromProjectMainFile(ltNode);
 			}
 		}
@@ -180,8 +180,8 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < zones.length(); ++i){
 			QDomNode zoneNode = zones.at(i);
 			QString zoneName = zoneNode.toElement().attribute("name");
-			Post2dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, 0);
-			if (zdi != 0){
+			Post2dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
+			if (zdi != nullptr){
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
 		}

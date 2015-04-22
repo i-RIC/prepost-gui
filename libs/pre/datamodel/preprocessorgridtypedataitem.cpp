@@ -250,11 +250,11 @@ void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType
 	QList<SolverDefinitionGridRelatedCondition*> conditions = type->gridRelatedConditions();
 	QList<SolverDefinitionGridRelatedComplexCondition*> conditions2 = type->gridRelatedComplexConditions();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it){
-		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(0);
+		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it)->name(), c);
 	}
 	for (auto it2 = conditions2.begin(); it2 != conditions2.end(); ++it2){
-		ScalarsToColorsContainer* c = (*it2)->createScalarsToColorsContainer(0);
+		ScalarsToColorsContainer* c = (*it2)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it2)->name(), c);
 	}
 }
@@ -268,13 +268,13 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	double max = 0;
 	// check raw data
 	PreProcessorRawDataGroupDataItemInterface* i = m_rawdataTop->groupDataItem(name);
-	if (i == 0){return;}
+	if (i == nullptr){return;}
 	valueExist = i->getValueRange(&min, &max);
 
 	// check grid values.
 	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		Grid* g = (*it)->gridDataItem()->grid();
-		if (g != 0){
+		if (g != nullptr){
 			GridRelatedConditionContainer* c = g->gridRelatedCondition(name);
 			double tmpmin, tmpmax;
 			if (c->getValueRange(&tmpmin, &tmpmax)){

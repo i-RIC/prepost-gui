@@ -13,7 +13,7 @@ class MouseHelpDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit MouseHelpDialog(QWidget *parent = 0);
+	explicit MouseHelpDialog(QWidget *parent = nullptr);
 	~MouseHelpDialog();
 protected:
 	void closeEvent(QCloseEvent *);

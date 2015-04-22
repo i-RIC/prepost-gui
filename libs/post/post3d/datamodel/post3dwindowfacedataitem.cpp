@@ -33,7 +33,7 @@ public:
 		m_command->redoStandardItem();
 
 		Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != 0){
+		if (p2 != nullptr){
 			p2->setupAppendFilter();
 			p2->updatePolyData();
 		}
@@ -47,7 +47,7 @@ public:
 		m_command->undoStandardItem();
 
 		Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != 0){
+		if (p2 != nullptr){
 			p2->setupAppendFilter();
 			p2->updatePolyData();
 		}
@@ -66,19 +66,19 @@ Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, Graphic
 	m_standardItem->setCheckable(true);
 
 	m_filter = vtkSmartPointer<vtkExtractGrid>::New();
-	m_actor = 0;
+	m_actor = nullptr;
 	m_dataOK = false;
 }
 
 void Post3dWindowFaceDataItem::update()
 {
 	m_dataOK = false;
-	if (m_actor != 0){m_actor->VisibilityOff();}
+	if (m_actor != nullptr){m_actor->VisibilityOff();}
 	Post3dWindowZoneDataItem* zdi = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 	PostZoneDataContainer* cont = zdi->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* pd = cont->data();
-	if (pd == 0){return;}
+	if (pd == nullptr){return;}
 	m_dataOK = true;
 
 	m_filter->SetInputData(pd);
@@ -86,7 +86,7 @@ void Post3dWindowFaceDataItem::update()
 
 Post3dWindowFaceDataItem::~Post3dWindowFaceDataItem()
 {
-	if (m_actor != 0){
+	if (m_actor != nullptr){
 		renderer()->RemoveActor(m_actor);
 	}
 	m_isCommandExecuting = true;
@@ -94,7 +94,7 @@ Post3dWindowFaceDataItem::~Post3dWindowFaceDataItem()
 	m_isCommandExecuting = false;
 
 	Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != 0){
+	if (p2 != nullptr){
 		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
 	}
 }
@@ -189,7 +189,7 @@ void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 
 void Post3dWindowFaceDataItem::setActor(vtkActor* actor)
 {
-	if (m_actor != 0){
+	if (m_actor != nullptr){
 		renderer()->RemoveActor(m_actor);
 	}
 	m_actor = actor;
@@ -218,14 +218,14 @@ void Post3dWindowFaceDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting == true){return;}
 	Post3dWindowContourGroupDataItem* p1 = dynamic_cast<Post3dWindowContourGroupDataItem*>(parent());
-	if (p1 != 0){p1->handleStandardItemChange();}
+	if (p1 != nullptr){p1->handleStandardItemChange();}
 	Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != 0){
+	if (p2 != nullptr){
 		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
 	}
 }
 
 void Post3dWindowFaceDataItem::innerUpdateZScale(double scale){
-	if (m_actor == 0){return;}
+	if (m_actor == nullptr){return;}
 	m_actor->SetScale(1, 1, scale);
 }

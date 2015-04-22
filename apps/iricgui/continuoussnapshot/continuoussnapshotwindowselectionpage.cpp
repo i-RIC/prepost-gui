@@ -33,7 +33,7 @@ void ContinuousSnapshotWindowSelectionPage::setupWindowList()
 	QList<QMdiSubWindow*> list = center->subWindowList(QMdiArea::ActivationHistoryOrder);
 	for (auto it = list.begin(); it != list.end(); ++it){
 		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
-		if (post == 0) continue;
+		if (post == nullptr) continue;
 		QListWidgetItem* item = new QListWidgetItem((*it)->windowTitle(), ui->targetListWidget);
 		item->setCheckState(Qt::Checked);
 	}
@@ -78,7 +78,7 @@ bool ContinuousSnapshotWindowSelectionPage::validatePage()
 	bool hasTransparent = false;
 	for (auto it = list.begin(); it != list.end(); ++it){
 		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
-		if (post == 0) continue;
+		if (post == nullptr) continue;
 		QListWidgetItem* item = ui->targetListWidget->findItems((*it)->windowTitle(), Qt::MatchExactly).at(0);
 		if (item->checkState() == Qt::Checked){
 			m_wizard->addWindowList(*it);

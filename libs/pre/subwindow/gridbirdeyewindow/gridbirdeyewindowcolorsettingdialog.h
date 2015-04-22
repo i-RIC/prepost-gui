@@ -17,7 +17,7 @@ class GridBirdEyeWindowColorSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit GridBirdEyeWindowColorSettingDialog(QWidget *parent = 0);
+    explicit GridBirdEyeWindowColorSettingDialog(QWidget *parent = nullptr);
     ~GridBirdEyeWindowColorSettingDialog();
 	void setGridType(SolverDefinitionGridType* type);
 	void setColorType(GridBirdEyeWindowDataModel::ColorType type);
