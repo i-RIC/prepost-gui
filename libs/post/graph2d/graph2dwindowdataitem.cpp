@@ -42,8 +42,7 @@ Graph2dWindowDataItem::Graph2dWindowDataItem(ProjectDataItem* parent)
 Graph2dWindowDataItem::~Graph2dWindowDataItem(){
 	// delete all child items.
 	m_isDestructing = true;
-	QList <Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		delete *it;
 	}
 	ProjectDataItem* tmp_parent = parent();
@@ -119,8 +118,7 @@ void Graph2dWindowDataItem::init()
 void Graph2dWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, Graph2dWindowDataItem*>& map)
 {
 	map.insert(m_standardItem, this);
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->innerUpdateItemMap(map);
 	}
 }
@@ -193,24 +191,21 @@ void Graph2dWindowDataItem::handleStandardItemChange()
 
 void Graph2dWindowDataItem::loadFromCgnsFile(const int fn)
 {
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->loadFromCgnsFile(fn);
 	}
 }
 
 void Graph2dWindowDataItem::saveToCgnsFile(const int fn)
 {
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->saveToCgnsFile(fn);
 	}
 }
 
 void Graph2dWindowDataItem::closeCgnsFile()
 {
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->closeCgnsFile();
 	}
 }
@@ -350,10 +345,9 @@ void Graph2dWindowDataItem::moveUp()
 
 	// reorder the m_childList of parent.
 	Graph2dWindowDataItem* tmpparent = dynamic_cast<Graph2dWindowDataItem*>(parent());
-	QList<Graph2dWindowDataItem*>::iterator it, it2;
-	for (it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
+	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
 		if ((*it) == this){
-			it2 = it;
+			auto it2 = it;
 			-- it2;
 			tmpparent->m_childItems.erase(it);
 			tmpparent->m_childItems.insert(it2, this);
@@ -375,10 +369,9 @@ void Graph2dWindowDataItem::moveDown()
 
 	// reorder the m_childList of parent.
 	Graph2dWindowDataItem* tmpparent = dynamic_cast<Graph2dWindowDataItem*>(parent());
-	QList<Graph2dWindowDataItem*>::iterator it, it2;
-	for (it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
+	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
 		if ((*it) == this){
-			it2 = it;
+			auto it2 = it;
 			++ it2;
 			++ it2;
 			tmpparent->m_childItems.erase(it);
@@ -422,8 +415,7 @@ void Graph2dWindowDataItem::assignActionZValues(const ZDepthRange& range)
 	double rangeWidth = range.width();
 	double divNum = 0;
 	divNum += m_childItems.count() - 1;
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
 		if (itemCount > 0){
 			divNum += itemCount;
@@ -432,7 +424,7 @@ void Graph2dWindowDataItem::assignActionZValues(const ZDepthRange& range)
 	if (divNum == 0){divNum = 1;}
 	double divWidth = rangeWidth / divNum;
 	double max = range.max();
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
 		int itemCount2 = 0;
 		if (itemCount > 0){
@@ -451,8 +443,7 @@ void Graph2dWindowDataItem::assignActionZValues(const ZDepthRange& range)
 QStringList Graph2dWindowDataItem::containedFiles()
 {
 	QStringList ret;
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		ret << (*it)->containedFiles();
 	}
 	return ret;
@@ -461,9 +452,8 @@ QStringList Graph2dWindowDataItem::containedFiles()
 void Graph2dWindowDataItem::updateZDepthRangeItemCount()
 {
 	// update the ZDepthRange itemcount of child items first.
-	QList <Graph2dWindowDataItem*>::iterator it;
 	int sum = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		(*it)->updateZDepthRangeItemCount();
 		sum += (*it)->zDepthRange().itemCount();
 	}

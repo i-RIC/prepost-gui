@@ -228,8 +228,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	// keep selection status
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	QList<QItemSelectionRange>::iterator sit;
-	for (sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();

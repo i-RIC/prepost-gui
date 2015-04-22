@@ -34,8 +34,7 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(condDataItem->parent()->parent());
 	PreProcessorRawDataTopDataItemInterface* rtItem = gtItem->rawdataTop();
 	QList<PreProcessorRawDataGroupDataItemInterface*> gItems = rtItem->groupDataItems();
-	QList<PreProcessorRawDataGroupDataItemInterface*>::iterator git;
-	for (git = gItems.begin(); git != gItems.end(); ++git){
+	for (auto git = gItems.begin(); git != gItems.end(); ++git){
 		PreProcessorRawDataGroupDataItemInterface* gItem = *git;
 		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
 		QList<PreProcessorRawdataDataItemInterface*>::iterator rit;

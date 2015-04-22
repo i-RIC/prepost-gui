@@ -53,8 +53,7 @@ void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinit
 
 SolverDefinitionGridType::~SolverDefinitionGridType()
 {
-	QList<SolverDefinitionGridRelatedCondition*>::iterator it;
-	for (it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
 		delete *it;
 	}
 	if (m_emptyGrid != 0){

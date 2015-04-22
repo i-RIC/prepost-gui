@@ -1853,8 +1853,7 @@ public:
 	{
 		if (m_redoed){
 			// remove the points.
-			QList<RawDataRiverPathPoint*>::iterator it;
-			for (it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
+			for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
 				delete (*it);
 			}
 		}
@@ -1883,8 +1882,7 @@ public:
 	void redo()
 	{
 		m_rs->m_gridThread->cancel();
-		QList<RawDataRiverPathPoint*>::iterator it;
-		for (it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
+		for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
 			RawDataRiverPathPoint* p = (*it);
 			p->remove();
 		}

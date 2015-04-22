@@ -77,8 +77,7 @@ void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void PreProcessorMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("MeasuredDataFile");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

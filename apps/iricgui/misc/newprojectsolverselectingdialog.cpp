@@ -14,8 +14,7 @@ NewProjectSolverSelectingDialog::NewProjectSolverSelectingDialog(SolverDefinitio
 
 	// setup widgets;
 	QList<SolverDefinitionAbstract*> solvers  = list->solverList();
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = solvers.begin(); it != solvers.end(); ++it){
+	for (auto it = solvers.begin(); it != solvers.end(); ++it){
 		SolverDefinitionAbstract* abst = *it;
 		QString caption = abst->caption();
 		ui->solverList->addItem(caption);
@@ -39,9 +38,8 @@ SolverDefinitionAbstract* NewProjectSolverSelectingDialog::selectedSolver()
 void NewProjectSolverSelectingDialog::setSolver(const QString& folderName)
 {
 	int i = 0;
-	QList<SolverDefinitionAbstract*>::iterator it;
 	QList<SolverDefinitionAbstract*> solvers = m_solverList->solverList();
-	for (it = solvers.begin(); it != solvers.end(); ++it){
+	for (auto it = solvers.begin(); it != solvers.end(); ++it){
 		SolverDefinitionAbstract* abst = *it;
 		if (abst->folderName() == folderName){
 			ui->solverList->setCurrentRow(i);

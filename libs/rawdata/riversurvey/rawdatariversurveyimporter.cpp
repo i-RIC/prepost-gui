@@ -314,9 +314,8 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 		for (int i = 0; i < p->np; ++i){
 			tmppt.insert(p->pt[i].x, p->pt[i].y);
 		}
-		QMultiMap<double, double>::iterator it;
 		int i = 0;
-		for (it = tmppt.begin(); it != tmppt.end(); ++it, ++i){
+		for (auto it = tmppt.begin(); it != tmppt.end(); ++it, ++i){
 			p->pt[i].x = it.key();
 			p->pt[i].y = it.value();
 		}

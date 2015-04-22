@@ -116,13 +116,12 @@ void PreProcessorRawDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	RawDataFactory& factory = RawDataFactory::instance();
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
-	QList<RawDataCreator*>::const_iterator it;
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_addSignalMapper){delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (it = creators.begin(); it != creators.end(); ++it){
+	for (auto it = creators.begin(); it != creators.end(); ++it){
 		if ((*it)->isCreatable()){
 			QString title = (*it)->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));
@@ -156,21 +155,18 @@ void PreProcessorRawDataGroupDataItem::import()
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
 
-	QList<RawDataCreator*>::const_iterator it;
 	QStringList availableExtensions;
 	QMap<QString, RawDataImporter*> extMap;
-	for (it = creators.begin(); it != creators.end(); ++it){
+	for (auto it = creators.begin(); it != creators.end(); ++it){
 		const QList<RawDataImporter*>& imps = (*it)->importers();
-		QList<RawDataImporter*>::const_iterator imp_it;
-		for (imp_it = imps.begin(); imp_it != imps.end(); ++imp_it){
+		for (auto imp_it = imps.begin(); imp_it != imps.end(); ++imp_it){
 			QStringList fils = (*imp_it)->fileDialogFilters();
 			QStringList exts = (*imp_it)->acceptableExtensions();
-			QStringList::iterator f_it;
-			for (f_it = fils.begin(); f_it != fils.end(); ++f_it){
+			for (auto f_it = fils.begin(); f_it != fils.end(); ++f_it){
 				filters.append(*f_it);
 				importers.append(*imp_it);
 			}
-			for (f_it = exts.begin(); f_it != exts.end(); ++f_it){
+			for (auto f_it = exts.begin(); f_it != exts.end(); ++f_it){
 				availableExtensions << QString("*.").append(*f_it);
 				extMap.insert(*f_it, *imp_it);
 			}
@@ -315,8 +311,7 @@ void PreProcessorRawDataGroupDataItem::doExport()
 	QStringList dataNames;
 	QList<PreProcessorRawdataDataItem*> datas;
 
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 		if (item->isExportAvailable()){
 			datas.append(item);
@@ -392,8 +387,7 @@ void PreProcessorRawDataGroupDataItem::addBackground()
 void PreProcessorRawDataGroupDataItem::moveBackgroundToLast()
 {
 	// make m_backgroundItem the last item in m_childItems.
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		if (*it == m_backgroundItem){
 			m_childItems.erase(it);
 			break;
@@ -442,8 +436,7 @@ void PreProcessorRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 void PreProcessorRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_condition->name());
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("RawData");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -452,8 +445,7 @@ void PreProcessorRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 
 bool PreProcessorRawDataGroupDataItem::isChildCaptionAvailable(const QString& caption)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		if (dynamic_cast<PreProcessorRawdataDataItem*>(*it)->rawData()->caption() == caption){
 			return false;
 		}
@@ -949,8 +941,7 @@ void PreProcessorRawDataGroupDataItem::saveToCgnsFile(const int fn)
 	int index = 1;
 	cg_user_data_write(iRIC::toStr(m_condition->name()).c_str());
 	cg_gorel(fn, iRIC::toStr(m_condition->name()).c_str(), 0, NULL);
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawdataDataItem* ritem = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 		ritem->setIndex(index);
 		ritem->saveToCgnsFile(fn);
@@ -984,26 +975,23 @@ void PreProcessorRawDataGroupDataItem::updateCrossectionWindows()
 
 void PreProcessorRawDataGroupDataItem::toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs)
 {
-	QList<RawDataRiverSurveyCrosssectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
-		RawDataRiverSurveyCrosssectionWindow* w = (*w_it)->window();
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+		RawDataRiverSurveyCrosssectionWindow* w = (*it)->window();
 		w->toggleGridCreatingMode(gridMode, rs);
 	}
 }
 
 void PreProcessorRawDataGroupDataItem::informCtrlPointUpdateToCrosssectionWindows()
 {
-	QList<RawDataRiverSurveyCrosssectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
-		RawDataRiverSurveyCrosssectionWindow* w = (*w_it)->window();
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+		RawDataRiverSurveyCrosssectionWindow* w = (*it)->window();
 		w->update();
 	}
 }
 
 void PreProcessorRawDataGroupDataItem::requestCrosssectionWindowDelete(RawDataRiverSurveyCrosssectionWindowProjectDataItem* item)
 {
-	QList<RawDataRiverSurveyCrosssectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		if (*it == item){
 			m_crosssectionWindows.erase(it);
 			delete item;

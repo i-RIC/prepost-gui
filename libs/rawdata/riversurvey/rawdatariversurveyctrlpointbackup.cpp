@@ -53,8 +53,7 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 }
 
 void RawDataRiverSurveyCtrlPointBackup::restore(){
-	QList<CtrlPoints>::iterator it;
-	for (it = m_ctrlPoints.begin(); it != m_ctrlPoints.end(); ++it){
+	for (auto it = m_ctrlPoints.begin(); it != m_ctrlPoints.end(); ++it){
 		myRestore(*it);
 	}
 }

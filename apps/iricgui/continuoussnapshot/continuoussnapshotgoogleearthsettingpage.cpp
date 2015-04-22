@@ -157,10 +157,9 @@ bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 
 void ContinuousSnapshotGoogleEarthSettingPage::setupWindowComboBox()
 {
-	QList<QMdiSubWindow*>::const_iterator it;
-	int idx;
+	int idx = 0;
 	ui->windowComboBox->clear();
-	for (it = m_wizard->windowList().begin(), idx = 0; it != m_wizard->windowList().end(); ++it, ++idx){
+	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it, ++idx){
 		Post2dWindow* post = dynamic_cast<Post2dWindow*>((*it)->widget());
 		if (post == 0) continue;
 		// add only post2dwindows.
@@ -174,10 +173,9 @@ void ContinuousSnapshotGoogleEarthSettingPage::setupWindowComboBox()
 
 void ContinuousSnapshotGoogleEarthSettingPage::setupBackgroundComboBox()
 {
-	QList<BackgroundImageInfo*>::const_iterator it;
-	int idx;
+	int idx = 0;
 	ui->backgroundComboBox->clear();
-	for (it = m_wizard->backgroundList().begin(), idx = 0; it != m_wizard->backgroundList().end(); ++it, ++idx){
+	for (auto it = m_wizard->backgroundList().begin(); it != m_wizard->backgroundList().end(); ++it, ++idx){
 		BackgroundImageInfo* bg = *it;
 		ui->backgroundComboBox->addItem(bg->caption(), QVariant(idx));
 		// idx is the index of (*it) in the list of m_wizard->backgroundList().
@@ -247,8 +245,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::worldToImage(QPointF& p)
 //	double newx, newy;
 
 	// m_wizard->backgroundList().size() should be positive
-	QList<BackgroundImageInfo*>::const_iterator it;
-	it = m_wizard->backgroundList().begin() + m_wizard->targetBackground();
+	auto it = m_wizard->backgroundList().begin() + m_wizard->targetBackground();
 	BackgroundImageInfo* bg = *it;
 
 	// image width
@@ -356,8 +353,7 @@ QSize ContinuousSnapshotGoogleEarthSettingPage::targetSnapshotSize()
 		ret.setHeight(m_wizard->snapshotSize().height());
 		break;
 	case ContinuousSnapshotWizard::Respectively:
-		QList<QMdiSubWindow*>::const_iterator it;
-		it = m_wizard->windowList().begin() + m_wizard->targetWindow();
+		auto it = m_wizard->windowList().begin() + m_wizard->targetWindow();
 		QWidget* w = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
 		ret.setWidth(w->width());
 		ret.setHeight(w->height());

@@ -2195,8 +2195,7 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 		}
 	}
 	// points included in oldSelectedVertices should be added.
-	QSet<vtkIdType>::iterator it;
-	for (it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
+	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
 		vtkIdType pointId = *it;
 		newSelectedVertices.append(pointId);
 	}
@@ -2256,10 +2255,9 @@ void RawDataPointmap::selectPointsNearPoint(const QVector2D &pos, bool xOr)
 			oldSelectedVertices.insert(pointToAdd);
 		}
 	}
-	QSet<vtkIdType>::iterator it;
 	vtkCellArray* vArr = vtkCellArray::New();
 	vArr->Allocate(oldSelectedVertices.count(), 10);
-	for (it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
+	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
 		vtkIdType vertexId = *it;
 		vArr->InsertNextCell(1, &vertexId);
 	}
@@ -2897,8 +2895,7 @@ QVector<vtkIdType> RawDataPointmap::selectedVertices()
 		}
 	}
 //	qDebug("Selected Points in m_selectedVerticesGrid End");
-	QSet<vtkIdType>::iterator it;
-	for (it = tmpsel.begin(); it != tmpsel.end(); ++it){
+	for (auto it = tmpsel.begin(); it != tmpsel.end(); ++it){
 		selected.push_back(*it);
 	}
 	qSort(selected);
@@ -2944,7 +2941,7 @@ void RawDataPointmap::updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints
 		QVector<vtkIdType> newindices;
 		for (int i = 0; i < oldindices.count(); ++i){
 			vtkIdType oldindex = oldindices[i];
-			QList<vtkIdType>::const_iterator lb = qLowerBound(keyIds, oldindex);
+			auto lb = qLowerBound(keyIds, oldindex);
 			vtkIdType tmpId = *lb;
 			int listIndex;
 			if (lb == keyIds.end()){
@@ -2996,7 +2993,7 @@ void RawDataPointmap::updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints
 		QVector<vtkIdType> newindices;
 		for (int i = 0; i < oldindices.count(); ++i){
 			vtkIdType oldindex = oldindices[i];
-			QList<vtkIdType>::const_iterator lb = qLowerBound(keyIds, oldindex);
+			auto lb = qLowerBound(keyIds, oldindex);
 			vtkIdType tmpId = *lb;
 			int listIndex;
 			if (lb == keyIds.end()){
@@ -3024,7 +3021,7 @@ bool RawDataPointmap::pointsUsedForBreakLines(const QVector<vtkIdType>& points)
 
 		for (int j = 0; j < linePoints.count(); ++j){
 			vtkIdType linePoint = linePoints[j];
-			QVector<vtkIdType>::const_iterator it = qFind(points, linePoint);
+			auto it = qFind(points, linePoint);
 			if (it != points.end()){
 				// found.
 				return true;

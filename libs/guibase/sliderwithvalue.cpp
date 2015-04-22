@@ -99,8 +99,7 @@ void SliderWithValue::setValues(const QList<int>& values)
 	m_slider->blockSignals(true);
 	m_slider->setMinimum(values[0]);
 	m_slider->setMaximum(values[values.count() - 1]);
-	QList<int>::const_iterator it;
-	for (it = values.begin(); it != values.end(); ++it){
+	for (auto it = values.begin(); it != values.end(); ++it){
 		m_values.append(*it);
 	}
 	QLayout* l = layout();

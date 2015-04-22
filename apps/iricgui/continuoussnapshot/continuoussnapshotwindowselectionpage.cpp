@@ -31,8 +31,7 @@ void ContinuousSnapshotWindowSelectionPage::setupWindowList()
 {
 	QMdiArea* center = dynamic_cast<QMdiArea*>(m_mainWindow->centralWidget());
 	QList<QMdiSubWindow*> list = center->subWindowList(QMdiArea::ActivationHistoryOrder);
-	QList<QMdiSubWindow*>::iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
 		if (post == 0) continue;
 		QListWidgetItem* item = new QListWidgetItem((*it)->windowTitle(), ui->targetListWidget);
@@ -74,11 +73,10 @@ bool ContinuousSnapshotWindowSelectionPage::validatePage()
 {
 	QMdiArea* center = dynamic_cast<QMdiArea*>(m_mainWindow->centralWidget());
 	QList<QMdiSubWindow*> list = center->subWindowList(QMdiArea::ActivationHistoryOrder);
-	QList<QMdiSubWindow*>::iterator it;
 	// Windows
 	m_wizard->clearWindowList();
 	bool hasTransparent = false;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
 		if (post == 0) continue;
 		QListWidgetItem* item = ui->targetListWidget->findItems((*it)->windowTitle(), Qt::MatchExactly).at(0);
@@ -130,9 +128,8 @@ void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint &p, QSize &
 	QPoint min;
 	QPoint max;
 
-	QList<QMdiSubWindow*>::const_iterator it;
 	bool first = true;
-	for (it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it){
+	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it){
 		QMdiSubWindow* sub = *it;
 		// post window graphics view
 		QWidget* post = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();

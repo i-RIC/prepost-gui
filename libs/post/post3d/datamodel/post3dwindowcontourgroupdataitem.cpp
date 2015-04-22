@@ -559,8 +559,7 @@ public:
 	}
 	void redo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_newMap.begin(); it != m_newMap.end(); ++it){
+		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -570,8 +569,7 @@ public:
 	}
 	void undo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
+		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -582,8 +580,7 @@ public:
 private:
 	void removeChildren()
 	{
-		QList<GraphicsWindowDataItem*>::iterator it;
-		for (it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
+		for (auto it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
 			delete (*it);
 		}
 		m_item->updateItemMap();

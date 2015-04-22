@@ -75,8 +75,7 @@ void PreferencePageGeneral::setupLanguageComboBox()
 	m_locales.append(QLocale(QLocale::Spanish));
 	m_locales.append(QLocale(QLocale::Russian));
 
-	QList<QLocale>::iterator it;
-	for (it = m_locales.begin(); it != m_locales.end(); ++it){
+	for (auto it = m_locales.begin(); it != m_locales.end(); ++it){
 		QLocale loc = (*it);
 		combo->addItem(QLocale::languageToString(loc.language()), QVariant(loc.name()));
 	}

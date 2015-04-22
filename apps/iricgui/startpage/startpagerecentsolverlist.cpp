@@ -15,9 +15,8 @@ StartPageRecentSolverList::StartPageRecentSolverList(QWidget *parent) :
 void StartPageRecentSolverList::setSolverList(SolverDefinitionList* solverList)
 {
 	QList<SolverDefinitionAbstract*> list = solverList->solverList();
-	QList<SolverDefinitionAbstract*>::iterator it;
 	QMap<QString, SolverDefinitionAbstract*> sMap;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		sMap.insert((*it)->folderName(), *it);
 	}
 	QSettings setting;

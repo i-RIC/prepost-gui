@@ -970,7 +970,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 	dialog.show();
 
 	int step = m_start;
-	QStringList::const_iterator fit = wizard->fileList().begin();
+	auto fit = wizard->fileList().begin();
 	QPoint position = wizard->beginPosition();
 	QSize size = wizard->snapshotSize();
 	QList<QSize> sizes;
@@ -984,7 +984,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			return;
 		}
 		m_animationController->setCurrentStepIndex(step);
-		QList<QMdiSubWindow*>::const_iterator it;
 		switch (m_output){
 		case ContinuousSnapshotWizard::Onefile:
 		{
@@ -1004,7 +1003,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 				painter.setBackgroundMode(Qt::OpaqueMode);
 			}
 			QPoint begin(0, 0);
-			for (it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
+			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
 				QMdiSubWindow* sub = *it;
 				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
 				QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
@@ -1032,8 +1031,8 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			break;
 		}
 		case ContinuousSnapshotWizard::Respectively:
-			int i;
-			for (it = wizard->windowList().begin(), i = 0; it != wizard->windowList().end(); ++it, ++i){
+			int i = 0;
+			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it, ++i){
 				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>((*it)->widget());
 				window->setTransparent(m_transparent);
 				QPixmap pixmap = window->snapshot();
@@ -1057,7 +1056,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 		QStringList outputFilenames;
 		QString inputFilename;
 		QString outputFilename;
-		QList<QMdiSubWindow*>::const_iterator it;
 		switch (wizard->output()){
 		case ContinuousSnapshotWizard::Onefile:
 			inputFilename = QString("img_%%1d%2").arg(wizard->suffixLength()).arg(wizard->extension());
@@ -1067,7 +1065,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			break;
 		case ContinuousSnapshotWizard::Respectively:
 			int idx = 0;
-			for (it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
+			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
 				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(wizard->suffixLength()).arg(wizard->extension());
 				outputFilename = QString("window%1.wmv").arg(idx + 1);
 				inputFilenames.append(inputFilename);
@@ -1528,9 +1526,8 @@ void iRICMainWindow::updateWindowZIndices()
 {
 	// @todo this fails! investigate the reason.
 	QList<QMdiSubWindow*> wlist = m_Center->subWindowList(QMdiArea::StackingOrder);
-	QList<QMdiSubWindow*>::iterator it;
 	int index = 1;
-	for (it = wlist.begin(); it != wlist.end(); ++it){
+	for (auto it = wlist.begin(); it != wlist.end(); ++it){
 		QMdiSubWindow* w = (*it);
 		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
 		w2->setZindex(index++);
@@ -1541,16 +1538,14 @@ void iRICMainWindow::reflectWindowZIndices()
 {
 	QMap<int, QMdiSubWindow*> windowsToShow;
 	QList<QMdiSubWindow*> wlist = m_Center->subWindowList();
-	QList<QMdiSubWindow*>::iterator it;
-	for (it = wlist.begin(); it != wlist.end(); ++it){
+	for (auto it = wlist.begin(); it != wlist.end(); ++it){
 		QMdiSubWindow* w = (*it);
 		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
 		if (w->isVisible()){
 			windowsToShow.insert(w2->zindex(), w);
 		}
 	}
-	QMap<int, QMdiSubWindow*>::iterator m_it;
-	for (m_it = windowsToShow.begin(); m_it != windowsToShow.end(); ++m_it){
+	for (auto m_it = windowsToShow.begin(); m_it != windowsToShow.end(); ++m_it){
 		QMdiSubWindow* w = m_it.value();
 		w->clearFocus();
 		w->setFocus();

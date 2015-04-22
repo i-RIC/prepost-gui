@@ -27,8 +27,7 @@ public:
 	}
 	void undo()
 	{
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_before.begin(); it != m_before.end(); ++it){
+		for (auto it = m_before.begin(); it != m_before.end(); ++it){
 			(*it)->restore();
 		}
 		m_condition->updateShapeData();
@@ -36,8 +35,7 @@ public:
 	}
 	void redo()
 	{
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_after.begin(); it != m_after.end(); ++it){
+		for (auto it = m_after.begin(); it != m_after.end(); ++it){
 			(*it)->restore();
 		}
 		m_condition->updateShapeData();

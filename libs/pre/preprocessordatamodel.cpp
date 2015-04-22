@@ -176,8 +176,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 		}
 	} else {
 		QStringList items;
-		QList<CgnsFileList::CgnsFileEntry*>::iterator it;
-		for (it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it){
 			items << (*it)->filename();
 		}
 		QFileInfo tmpp(fname);
@@ -251,8 +250,7 @@ void PreProcessorDataModel::setupAdditinalMenus()
 	while (m_oldDummyMenusList.count() > OLDMENULIST_MAX){
 		QList<QMenu*> oldDummyMenus = m_oldDummyMenusList.at(0);
 		m_oldDummyMenusList.pop_front();
-		QList<QMenu*>::iterator it;
-		for (it = oldDummyMenus.begin(); it != oldDummyMenus.end(); ++it){
+		for (auto it = oldDummyMenus.begin(); it != oldDummyMenus.end(); ++it){
 			delete *it;
 		}
 	}
@@ -279,7 +277,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 	if (item != 0){
 		// Rawdata dataitem is selected.
 		QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorRawDataGroupDataItem*>(item->parent())->condition());
-		for (QList<RawDataCreator*>::iterator it = creators.begin(); it != creators.end(); ++it){
+		for (auto it = creators.begin(); it != creators.end(); ++it){
 			if (dynamic_cast<RawDataPolygonCreator*>(*it) != 0){
 				polygonCreator = *it;
 			}
@@ -321,7 +319,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 		if (gitem != 0){
 			// Rawdatagroup dataitem is selected.
 			QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(gitem->condition());
-			for (QList<RawDataCreator*>::iterator it = creators.begin(); it != creators.end(); ++it){
+			for (auto it = creators.begin(); it != creators.end(); ++it){
 				if (dynamic_cast<RawDataPolygonCreator*>(*it) != 0){
 					polygonCreator = *it;
 				}
@@ -377,7 +375,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 	PreProcessorGridTypeDataItem* gti = getGridTypeItem(m_selectedItem);
 	if (gti != 0){
 		QList<PreProcessorRawDataGroupDataItemInterface*> groups = gti->rawdataTop()->groupDataItems();
-		for (QList<PreProcessorRawDataGroupDataItemInterface*>::iterator it = groups.begin(); it != groups.end(); ++it){
+		for (auto it = groups.begin(); it != groups.end(); ++it){
 			PreProcessorRawDataGroupDataItemInterface* groupDataitem = *it;
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
@@ -571,8 +569,7 @@ PreProcessorGridDataItem* PreProcessorDataModel::getGridItem(GraphicsWindowDataI
 	// try to find some grid dataitem in one of the gridtypes.
 	PreProcessorRootDataItem* rItem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator gtIt;
-	for (gtIt = gtItems.begin(); gtIt != gtItems.end(); ++gtIt){
+	for (auto gtIt = gtItems.begin(); gtIt != gtItems.end(); ++gtIt){
 		PreProcessorGridTypeDataItem* gtItem = *gtIt;
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
 		if (conds.count() > 0){
@@ -836,7 +833,7 @@ void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu *menu)
 	menu->clear();
 
 	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
-	for (QList<HydraulicDataImporter*>::iterator it = importers.begin(); it != importers.end(); ++it){
+	for (auto it = importers.begin(); it != importers.end(); ++it){
 		HydraulicDataImporter* imp = *it;
 		QAction* action = menu->addAction(imp->caption());
 		connect(action, SIGNAL(triggered()), this, SLOT(importHydraulicData()));
@@ -989,8 +986,7 @@ void PreProcessorDataModel::setupBoundaryConditionSettingMenuContent()
 	}
 	bcsMenu->addSeparator();
 	const QList<QAction*>& addActions = bcsgItem->addActions();
-	QList<QAction*>::const_iterator it;
-	for (it = addActions.begin(); it != addActions.end(); ++it){
+	for (auto it = addActions.begin(); it != addActions.end(); ++it){
 		bcsMenu->addAction(*it);
 	}
 	bcsMenu->addSeparator();
@@ -1010,14 +1006,12 @@ void PreProcessorDataModel::setupRawDataAddActions(PreProcessorRawDataGroupDataI
 {
 	if (m_rawDataAddSignalMapper != 0){delete m_rawDataAddSignalMapper;}
 	m_rawDataAddSignalMapper = new QSignalMapper(this);
-	QMap<RawDataCreator*, QAction*>::iterator it;
-	for (it = m_rawDataAddActions.begin(); it != m_rawDataAddActions.end(); ++it){
+	for (auto it = m_rawDataAddActions.begin(); it != m_rawDataAddActions.end(); ++it){
 		delete *it;
 	}
 	m_rawDataAddActions.clear();
 	QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(item->condition());
-	QList<RawDataCreator*>::iterator cit;
-	for (cit = creators.begin(); cit != creators.end(); ++cit){
+	for (auto cit = creators.begin(); cit != creators.end(); ++cit){
 		QAction* action = new QAction(tr("Add New %1").arg((*cit)->caption()), this);
 		m_rawDataAddActions.insert(*cit, action);
 		m_rawDataAddSignalMapper->setMapping(action, *cit);
@@ -1042,16 +1036,13 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 {
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = gtItems.begin(); it != gtItems.end(); ++it){
+	for (auto it = gtItems.begin(); it != gtItems.end(); ++it){
 		PreProcessorGridTypeDataItem* gtItem = *it;
 		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
-		QList<PreProcessorRawDataGroupDataItemInterface*>::iterator it2;
-		for (it2 = gitems.begin(); it2 != gitems.end(); ++it2){
+		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2){
 			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
 			QList<PreProcessorRawdataDataItemInterface*> rawdatas = gItem->rawDatas();
-			QList<PreProcessorRawdataDataItemInterface*>::iterator it3;
-			for (it3 = rawdatas.begin(); it3 != rawdatas.end(); ++it3){
+			for (auto it3 = rawdatas.begin(); it3 != rawdatas.end(); ++it3){
 				PreProcessorRawdataDataItemInterface* dItem = *it3;
 				RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(dItem->rawData());
 				if (rs != 0){
@@ -1072,15 +1063,13 @@ bool PreProcessorDataModel::checkMappingStatus()
 {
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
 	bool mapExexuted = false;
-	for (it = gtItems.begin(); it != gtItems.end(); ++it){
+	for (auto it = gtItems.begin(); it != gtItems.end(); ++it){
 		QStringList notMapped;
 		PreProcessorGridTypeDataItem* gtItem = *it;
 		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
-		QList<PreProcessorRawDataGroupDataItemInterface*>::iterator it2;
 		QList<PreProcessorRawDataGroupDataItemInterface*> groupsToMap;
-		for (it2 = gitems.begin(); it2 != gitems.end(); ++it2){
+		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2){
 			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
 			QStringList rawdatasNotMapped = dynamic_cast<PreProcessorRawDataGroupDataItem*> (gItem)->getRawDatasNotMapped();
 			if (rawdatasNotMapped.count() > 0){
@@ -1094,8 +1083,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 			if (ret == QMessageBox::Yes){
 				// execute mapping for each grids.
 				const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
-				QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator cit;
-				for (cit = conditions.begin(); cit != conditions.end(); ++cit){
+				for (auto cit = conditions.begin(); cit != conditions.end(); ++cit){
 					PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *cit;
 					PreProcessorGridAndGridCreatingConditionDataItem* cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (cond);
 					PreProcessorGridAttributeMappingSettingTopDataItem* tItem = cond2->mappingSettingDataItem();
@@ -1111,12 +1099,10 @@ bool PreProcessorDataModel::checkMappingStatus()
 		}
 
 		const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator cit;
-		for (cit = conditions.begin(); cit != conditions.end(); ++cit){
+		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit){
 			PreProcessorGridAndGridCreatingConditionDataItem* cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (*cit);
 			const QList <GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
-			QList <GraphicsWindowDataItem*>::const_iterator cit;
-			for (cit = bcslist.begin(); cit != bcslist.end(); ++cit){
+			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit){
 				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
 				if (! bcsdi->isMapped()){
 					int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
@@ -1144,7 +1130,7 @@ void PreProcessorDataModel::importHydraulicData()
 
 	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
 	HydraulicDataImporter* importer = 0;
-	for (QList<HydraulicDataImporter*>::iterator it = importers.begin(); it != importers.end(); ++it){
+	for (auto it = importers.begin(); it != importers.end(); ++it){
 		HydraulicDataImporter* imp = *it;
 		if (imp->caption() == action->text()){
 			importer = imp;
@@ -1157,16 +1143,13 @@ void PreProcessorDataModel::importHydraulicData()
 
 	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> titems = ritem->gridTypeDataItems();
-	QList<PreProcessorGridTypeDataItem*>::iterator tit;
-	for (tit = titems.begin(); tit != titems.end(); ++tit) {
+	for (auto tit = titems.begin(); tit != titems.end(); ++tit) {
 		PreProcessorGridTypeDataItem* titem = *tit;
 		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = titem->rawdataTop()->groupDataItems();
-		QList<PreProcessorRawDataGroupDataItemInterface*>::iterator git;
-		for (git = gitems.begin(); git != gitems.end(); ++git) {
+		for (auto git = gitems.begin(); git != gitems.end(); ++git) {
 			PreProcessorRawDataGroupDataItemInterface* gitem = *git;
 			QList<PreProcessorRawdataDataItemInterface*> ditems = gitem->rawDatas();
-			QList<PreProcessorRawdataDataItemInterface*>::iterator dit;
-			for (dit = ditems.begin(); dit != ditems.end(); ++dit) {
+			for (auto dit = ditems.begin(); dit != ditems.end(); ++dit) {
 				PreProcessorRawdataDataItemInterface* ditem = *dit;
 				RawData* rdata = ditem->rawData();
 				if (importer->canImportTo(rdata)) {

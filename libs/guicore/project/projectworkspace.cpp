@@ -28,8 +28,7 @@ ProjectWorkspace::ProjectWorkspace(QObject *parent) :
 
 void ProjectWorkspace::updateWorkfolderList()
 {
-	QList<WorkfolderInfo*>::iterator it;
-	for (it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
+	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
 		delete *it;
 	}
 	m_workfolderList.clear();
@@ -45,8 +44,7 @@ void ProjectWorkspace::updateWorkfolderList()
 QList<WorkfolderInfo*> ProjectWorkspace::trashWorkfolders()
 {
 	QList<WorkfolderInfo*> ret;
-	QList<WorkfolderInfo*>::iterator it;
-	for (it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
+	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
 		if (! (*it)->isLocked()){
 			ret.push_back(*it);
 		}
@@ -56,8 +54,7 @@ QList<WorkfolderInfo*> ProjectWorkspace::trashWorkfolders()
 void ProjectWorkspace::trashAllTrashWorkfolders()
 {
 	QList<WorkfolderInfo*> trashes = trashWorkfolders();
-	QList<WorkfolderInfo*>::iterator it;
-	for (it = trashes.begin(); it != trashes.end(); ++it){
+	for (auto it = trashes.begin(); it != trashes.end(); ++it){
 		trashWorkfolder((*it)->folderName());
 	}
 }

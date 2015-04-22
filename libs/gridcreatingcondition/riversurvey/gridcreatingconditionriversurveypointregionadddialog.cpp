@@ -34,8 +34,7 @@ public:
 	void undo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_before.begin(); it != m_before.end(); ++it){
+		for (auto it = m_before.begin(); it != m_before.end(); ++it){
 			(*it)->restore();
 		}
 
@@ -47,8 +46,7 @@ public:
 	void redo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_after.begin(); it != m_after.end(); ++it){
+		for (auto it = m_after.begin(); it != m_after.end(); ++it){
 			(*it)->restore();
 		}
 

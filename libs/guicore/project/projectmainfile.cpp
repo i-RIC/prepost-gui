@@ -667,7 +667,7 @@ bool ProjectMainFile::mkdirBGDIR()
 
 void ProjectMainFile::deleteImage(const QModelIndex &index)
 {
-	QList<BackgroundImageInfo*>::iterator it = m_backgroundImages.begin();
+	auto it = m_backgroundImages.begin();
 	BackgroundImageInfo* image = *(it + index.row());
 	QString fname = image->caption();
 	m_backgroundImages.erase(it + index.row());
@@ -699,7 +699,7 @@ void ProjectMainFile::moveUpImage(const QModelIndex &index)
 		// Can not move up
 		return;
 	}
-	QList<BackgroundImageInfo*>::iterator it = m_backgroundImages.begin();
+	auto it = m_backgroundImages.begin();
 	int i = m_backgroundImages.indexOf(*(it + index.row()));
 	int j = m_backgroundImages.indexOf(*(it + index.row() - 1));
 	m_backgroundImages.swap(i, j);
@@ -713,7 +713,7 @@ void ProjectMainFile::moveDownImage(const QModelIndex &index)
 		// Can not move down
 		return;
 	}
-	QList<BackgroundImageInfo*>::iterator it = m_backgroundImages.begin();
+	auto it = m_backgroundImages.begin();
 	int i = m_backgroundImages.indexOf(*(it + index.row()));
 	int j = m_backgroundImages.indexOf(*(it + index.row() + 1));
 	m_backgroundImages.swap(i, j);
@@ -723,7 +723,7 @@ void ProjectMainFile::moveDownImage(const QModelIndex &index)
 
 void ProjectMainFile::deleteMeasuredData(const QModelIndex &index)
 {
-	QList<MeasuredData*>::iterator it = m_measuredDatas.begin();
+	auto it = m_measuredDatas.begin();
 	MeasuredData* md = *(it + index.row());
 	m_measuredDatas.erase(it + index.row());
 	delete md;
@@ -740,7 +740,7 @@ void ProjectMainFile::moveUpMeasuredData(const QModelIndex &index)
 		// Can not move up
 		return;
 	}
-	QList<BackgroundImageInfo*>::iterator it = m_backgroundImages.begin();
+	auto it = m_backgroundImages.begin();
 	int i = m_backgroundImages.indexOf(*(it + index.row()));
 	int j = m_backgroundImages.indexOf(*(it + index.row() - 1));
 	m_backgroundImages.swap(i, j);
@@ -754,7 +754,7 @@ void ProjectMainFile::moveDownMeasuredData(const QModelIndex &index)
 		// Can not move down
 		return;
 	}
-	QList<MeasuredData*>::iterator it = m_measuredDatas.begin();
+	auto it = m_measuredDatas.begin();
 	int i = m_measuredDatas.indexOf(*(it + index.row()));
 	int j = m_measuredDatas.indexOf(*(it + index.row() + 1));
 	m_measuredDatas.swap(i, j);
@@ -764,8 +764,7 @@ void ProjectMainFile::moveDownMeasuredData(const QModelIndex &index)
 
 void ProjectMainFile::addRenderer(vtkRenderer *ren)
 {
-	QList<vtkRenderer*>::iterator it;
-	for (it = m_renderers.begin(); it != m_renderers.end(); ++it){
+	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it){
 		if (*it == ren) return;
 	}
 	m_renderers.append(ren);
@@ -773,8 +772,7 @@ void ProjectMainFile::addRenderer(vtkRenderer *ren)
 
 void ProjectMainFile::removeRenderer(vtkRenderer *ren)
 {
-	QList<vtkRenderer*>::iterator it;
-	for (it = m_renderers.begin(); it != m_renderers.end(); ++it){
+	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it){
 		if (*it == ren){
 			m_renderers.erase(it);
 			return;
@@ -843,8 +841,7 @@ void ProjectMainFile::loadBackgrounds(const QDomNode& node)
 
 void ProjectMainFile::saveBackgrounds(QXmlStreamWriter& writer)
 {
-	QList<BackgroundImageInfo*>::iterator it;
-	for (it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
+	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
 		BackgroundImageInfo* bg = *it;
 		writer.writeStartElement("BackgroundImageInfo");
 		bg->saveToProjectMainFile(writer);
@@ -871,9 +868,8 @@ void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 
 void ProjectMainFile::saveMeasuredDatas(QXmlStreamWriter& writer)
 {
-	QList<MeasuredData*>::iterator it;
 	int index = 1;
-	for (it = m_measuredDatas.begin(); it != m_measuredDatas.end(); ++it){
+	for (auto it = m_measuredDatas.begin(); it != m_measuredDatas.end(); ++it){
 		MeasuredData* md = *it;
 		md->setIndex(index);
 		writer.writeStartElement("MeasuredData");
@@ -885,9 +881,8 @@ void ProjectMainFile::saveMeasuredDatas(QXmlStreamWriter& writer)
 
 void ProjectMainFile::updateActorVisibility(int idx, bool vis)
 {
-	QList<BackgroundImageInfo*>::iterator it;
 	if (idx < 0){} else {
-		it = m_backgroundImages.begin();
+		auto it = m_backgroundImages.begin();
 		BackgroundImageInfo* bg = *(it + idx);
 		bg->setVisible(vis);
 	}
@@ -901,9 +896,8 @@ QStringList ProjectMainFile::backgroundImageFiles()
 	QDir dir(projectData()->workDirectory());
 	if (! dir.cd(BGDIR)) return ret;
 
-	QStringList::iterator it;
 	QStringList list = dir.entryList(QDir::Files);
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		QString tmp = *it;
 		QString path(BGDIR);
 		path.append("/").append(tmp);

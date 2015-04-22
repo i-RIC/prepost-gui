@@ -227,8 +227,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGr
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item->parent()->parent());
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* itemParent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(item->parent());
 
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator it;
-	for (it = gt->conditions().begin(); it != gt->conditions().end(); ++it){
+	for (auto it = gt->conditions().begin(); it != gt->conditions().end(); ++it){
 		if (*it == itemParent) continue;
 		ui->mainstreamComboBox->addItem((*it)->caption());
 		ui->tributaryComboBox->addItem((*it)->caption());

@@ -241,8 +241,7 @@ void PreProcessorGridDataItem::importGrid()
 
 	Grid* tmpgrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType()->emptyGrid();
 	const QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(tmpgrid->gridType());
-	QList<GridImporterInterface*>::const_iterator it;
-	for (it = importerList.begin(); it != importerList.end(); ++it){
+	for (auto it = importerList.begin(); it != importerList.end(); ++it){
 		QStringList flist = (*it)->fileDialogFilters();
 		QStringList::iterator fit;
 		for (fit = flist.begin(); fit != flist.end(); ++fit){
@@ -374,11 +373,9 @@ void PreProcessorGridDataItem::exportGrid()
 	QList<GridExporterInterface*> exporters;
 
 	const QList<GridExporterInterface*> exporterList = GridExporterFactory::instance().list(m_grid->gridType());
-	QList<GridExporterInterface*>::const_iterator it;
-	for (it = exporterList.begin(); it != exporterList.end(); ++it){
+	for (auto it = exporterList.begin(); it != exporterList.end(); ++it){
 		QStringList flist = (*it)->fileDialogFilters();
-		QStringList::iterator fit;
-		for (fit = flist.begin(); fit != flist.end(); ++fit){
+		for (auto fit = flist.begin(); fit != flist.end(); ++fit){
 			filters.append(*fit);
 			exporters.append(*it);
 		}
@@ -627,8 +624,7 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 		}
 	}
 
-	QSet<vtkIdType>::iterator s_it;
-	for (s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it){
+	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it){
 		ret.append(*s_it);
 	}
 	return ret;
@@ -709,8 +705,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 		}
 	}
 
-	QSet<vtkIdType>::iterator s_it;
-	for (s_it = selectedCellsSet.begin(); s_it != selectedCellsSet.end(); ++s_it){
+	for (auto s_it = selectedCellsSet.begin(); s_it != selectedCellsSet.end(); ++s_it){
 		m_selectedCells.append(*s_it);
 	}
 	updateSelectedCellsGraphics();
@@ -749,7 +744,6 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	}
 
 	QSet<Edge> selectedEdgesSet;
-	QSet<Edge>::iterator s_it;
 	if (xOr){
 		for (int i = 0; i < m_selectedEdges.count(); ++i){
 			selectedEdgesSet.insert(m_selectedEdges.at(i));
@@ -802,7 +796,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	}
 
 	m_selectedEdges.clear();
-	for (s_it = selectedEdgesSet.begin(); s_it != selectedEdgesSet.end(); ++s_it){
+	for (auto s_it = selectedEdgesSet.begin(); s_it != selectedEdgesSet.end(); ++s_it){
 		m_selectedEdges.append(*s_it);
 	}
 
@@ -1119,7 +1113,7 @@ void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 {
 	if (m_grid == 0){return;}
 	QList<GridRelatedConditionContainer*> conds = m_grid->gridRelatedConditions();
-	for (QList<GridRelatedConditionContainer*>::iterator it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it){
 		informgridRelatedConditionChange((*it)->name());
 	}
 }
@@ -1320,9 +1314,8 @@ vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 		}
 	}
 
-	QSet<Edge>::const_iterator it;
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	for (it = edges.begin(); it != edges.end(); ++it){
+	for (auto it = edges.begin(); it != edges.end(); ++it){
 		vtkIdType nodes[2];
 		nodes[0] = it->vertex1();
 		nodes[1] = it->vertex2();
@@ -1399,10 +1392,9 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 
 QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtkIdType> &vertices) const
 {
-	QSet<vtkIdType>::const_iterator v_it;
 	QSet<vtkIdType> selectedCellNoms;
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-	for (v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
+	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
 		m_grid->vtkGrid()->GetPointCells(*v_it, idlist);
 		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
 			vtkIdType cellid = idlist->GetId(i);
@@ -1411,7 +1403,7 @@ QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtk
 	}
 
 	QVector<vtkIdType> ret;
-	for (v_it = selectedCellNoms.begin(); v_it != selectedCellNoms.end(); ++v_it){
+	for (auto v_it = selectedCellNoms.begin(); v_it != selectedCellNoms.end(); ++v_it){
 		bool allSelected = true;
 		m_grid->vtkGrid()->GetCellPoints(*v_it, idlist);
 		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
@@ -1428,14 +1420,12 @@ QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtk
 
 QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdType> &vertices) const
 {
-	QSet<vtkIdType>::const_iterator v_it;
-	QSet<Edge>::iterator e_it;
 	QSet<Edge> selectedEdgeNoms;
 
 	vtkPolyData* pd = buildEdges();
 
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-	for (v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
+	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
 		pd->GetPointCells(*v_it, idlist);
 		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
 			vtkIdType cellid = idlist->GetId(i);
@@ -1446,7 +1436,7 @@ QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdTyp
 	}
 
 	QVector<Edge> ret;
-	for (e_it = selectedEdgeNoms.begin(); e_it != selectedEdgeNoms.end(); ++e_it){
+	for (auto e_it = selectedEdgeNoms.begin(); e_it != selectedEdgeNoms.end(); ++e_it){
 		if (vertices.contains(e_it->vertex1()) && vertices.contains(e_it->vertex2())){
 			ret.append(*e_it);
 		}

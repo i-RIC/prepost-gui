@@ -7,8 +7,7 @@ void RawDataRiverCrosssection::expand(double ratio){
 	if (ratio == 0){
 		return;
 	}
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		it->setPosition(it->position() * ratio);
 	}
 	m_leftShift *= ratio;
@@ -16,18 +15,16 @@ void RawDataRiverCrosssection::expand(double ratio){
 
 void RawDataRiverCrosssection::moveCenter(double offset){
 	// 河川中心の位置が動いたとき、あわせて断面の情報を更新する。
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		it->setPosition(it->position() - offset);
 	}
 	m_leftShift += offset;
 }
 
 int RawDataRiverCrosssection::addPoint(double position, double height){
-	AltitudeList::iterator it;
-	int i;
+	int i = 0;
 	for (
-		it = m_altitudeInfo.begin(), i = 0;
+		auto it = m_altitudeInfo.begin();
 		it != m_altitudeInfo.end() && it->position() < position;
 		++it, ++i
 		){
@@ -61,9 +58,7 @@ void RawDataRiverCrosssection::removePoint(int index) /*throw (ErrorCodes)*/ {
 }
 
 void RawDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (ErrorCodes)*/ {
-	QList<int>::const_iterator it;
-
-	for (it = indices.begin(); it != indices.end(); ++it){
+	for (auto it = indices.begin(); it != indices.end(); ++it){
 		int index = *it;
 		if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)){
 			throw ec_FixDelete;
@@ -74,7 +69,7 @@ void RawDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (E
 	}
 
 	int offset = 0;
-	for (it = indices.begin(); it != indices.end(); ++it){
+	for (auto it = indices.begin(); it != indices.end(); ++it){
 		int index = *it - offset;
 		m_altitudeInfo.removeAt(index);
 		++offset;

@@ -72,8 +72,7 @@ void RawDataRiverSurveyBackgroundGridCreateThread::run()
 			m_bgGridCopyFinishCondition.wait(&m_mutex);
 		}
 		m_mutex.unlock();
-		QMap<RawDataRiverPathPoint*, vtkPointSet*>::iterator it;
-		for (it = m_partialGrids.begin(); it != m_partialGrids.end(); ++it){
+		for (auto it = m_partialGrids.begin(); it != m_partialGrids.end(); ++it){
 			vtkPointSet* tmpgrid = it.value();
 			tmpgrid->Delete();
 		}
@@ -164,16 +163,14 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		if (m_canceled){break;}
 		if (! m_useDivisionPoints){
 			if (p->backgroundLGridLines().size() != JDIVNUM - 1){
-				QVector<Interpolator2D1*>::iterator it;
-				for (it = p->backgroundLGridLines().begin(); it != p->backgroundLGridLines().end(); ++it){
+				for (auto it = p->backgroundLGridLines().begin(); it != p->backgroundLGridLines().end(); ++it){
 					delete *it;
 				}
 				p->backgroundLGridLines().clear();
 				p->backgroundLGridLines().insert(0, JDIVNUM - 1, 0);
 			}
 			if (p->backgroundRGridLines().size() != JDIVNUM - 1){
-				QVector<Interpolator2D1*>::iterator it;
-				for (it = p->backgroundRGridLines().begin(); it != p->backgroundRGridLines().end(); ++it){
+				for (auto it = p->backgroundRGridLines().begin(); it != p->backgroundRGridLines().end(); ++it){
 					delete *it;
 				}
 				p->backgroundRGridLines().clear();
@@ -183,8 +180,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		p = p->nextPoint();
 	}
 	// build background interpolators.
-	QList<RiverBackgroundGridCtrlSolver*>::iterator s_it;
-	for (s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
+	for (auto s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
 		// check condition to exit.
 		if (m_abort){return false;}
 
@@ -300,7 +296,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		gridOffset += IDIVNUM;
 		p = p->nextPoint();
 	}
-	for (s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
+	for (auto s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
 		delete (*s_it);
 	}
 	points->Modified();
@@ -358,9 +354,8 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	points->InsertPoint(gridISize * gridJSize - 1, 0, 0, 0);
 	tmpgrid->vtkGrid()->SetPoints(points);
 
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = tmpgrid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 	// update grid interpolator.

@@ -353,9 +353,8 @@ void MeasuredDataVectorGroupDataItem::update()
 
 void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	MeasuredDataVectorDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		MeasuredDataVectorDataItem* tmpItem = dynamic_cast<MeasuredDataVectorDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;
@@ -585,10 +584,9 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 		vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
 
 		outPoints->SetDataTypeToDouble();
-		QSet<vtkIdType>::iterator it;
 		outPD->CopyAllocate(inPD, points.size());
 		int newId = 0;
-		for (it = points.begin(); it != points.end(); ++it){
+		for (auto it = points.begin(); it != points.end(); ++it){
 				vtkIdType pointid = *it;
 				outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 				outPD->CopyData(inPD, pointid, newId);

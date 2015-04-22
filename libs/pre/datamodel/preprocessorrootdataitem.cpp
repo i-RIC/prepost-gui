@@ -52,10 +52,9 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 
 	// build grid type data items.
-	QList<SolverDefinitionGridType*>::const_iterator it;
 	int i = 0;
 	QList<PreProcessorGridTypeDataItem*> gtitems;
-	for (it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it){
 		SolverDefinitionGridType* gt = *it;
 		if (gt->defaultGridType() == SolverDefinitionGridType::gtUnknownGrid){
 			// dummy grid type.
@@ -105,8 +104,7 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		delete *it;
 	}
 }
@@ -145,8 +143,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	}else{
 		// current solver support more than two grid types, or the only
 		// grid type allows multiple grids.
-		QList<PreProcessorGridTypeDataItem*>::iterator it;
-		for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 			model->appendRow((*it)->standardItem());
 		}
 	}
@@ -179,8 +176,7 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
 	if (! bgNode.isNull()){m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
 
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		QDomNode c = node.firstChild();
 		while (! c.isNull()){
 			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()){
@@ -234,8 +230,7 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -258,8 +253,7 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const QString& name)
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		if ((*it)->name() == name){return *it;}
 	}
 	return 0;
@@ -354,8 +348,7 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 
 bool PreProcessorRootDataItem::gridEdited()
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		bool edited = (*it)->gridEdited();
 		if (edited){return true;}
 	}
@@ -364,8 +357,7 @@ bool PreProcessorRootDataItem::gridEdited()
 
 void PreProcessorRootDataItem::toggleGridEditFlag()
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		(*it)->toggleGridEditFlag();
 	}
 }

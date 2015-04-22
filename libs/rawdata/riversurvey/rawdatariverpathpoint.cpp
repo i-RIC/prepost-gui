@@ -110,13 +110,12 @@ void RawDataRiverPathPoint::updateRiverShapeInterpolators(){
 void RawDataRiverPathPoint::UpdateGridInterpolators(){
 	if (! InhibitInterpolatorUpdate){
 		// 今は、全ての補間曲線を更新する。
-		QVector<Interpolator2D1*>::iterator it;
-		for (it = m_LGridLines.begin(); it != m_LGridLines.end(); ++it){
+		for (auto it = m_LGridLines.begin(); it != m_LGridLines.end(); ++it){
 			if (*it != 0){
 				(*it)->updateParameters();
 			}
 		}
-		for (it = m_RGridLines.begin(); it != m_RGridLines.end(); ++it){
+		for (auto it = m_RGridLines.begin(); it != m_RGridLines.end(); ++it){
 			if (*it != 0){
 				(*it)->updateParameters();
 			}
@@ -362,7 +361,6 @@ double RawDataRiverPathPoint::GridCtrlParameter(Bank bank, int index1, int index
 QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num){
 	QList<QVector2D> result;
 	QVector<double> tmpdbls;
-	QVector<double>::iterator dblit;
 	double t0;
 	double t1;
 	double t;
@@ -403,7 +401,7 @@ QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position
 		}else{
 			throw (ec_OutOfCtrlZoneRange);
 		}
-		for (dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
+		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
 			result.push_back(CtrlPointPosition2D(pposCenterToLeft, *dblit));
 		}
 		break;
@@ -443,7 +441,7 @@ QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position
 		}else{
 			throw (ec_OutOfCtrlZoneRange);
 		}
-		for (dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
+		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
 			result.push_back(CtrlPointPosition2D(pposCenterToRight, *dblit));
 		}
 		break;
@@ -635,13 +633,13 @@ void RawDataRiverPathPoint::UpdateCtrlSections(){
 			lengths.push_back((tmpp->nextPoint()->position() - tmpp->position()).length());
 		}
 		double lengthsum = 0;
-		for (std::vector<double>::iterator it = lengths.begin(); it != lengths.end(); ++it){
+		for (auto it = lengths.begin(); it != lengths.end(); ++it){
 			lengthsum += *it;
 		}
 		m_CtrlSections.clear();
 		m_CtrlSections.reserve(lengths.size());
 		double subsum = 0;
-		for (std::vector<double>::iterator it = lengths.begin(); it != lengths.end(); ++it){
+		for (auto it = lengths.begin(); it != lengths.end(); ++it){
 			subsum += *it;
 			m_CtrlSections.push_back(subsum / lengthsum);
 		}
@@ -1009,8 +1007,7 @@ void RawDataRiverPathPoint::save(QDataStream& s)
 	// cross section info
 	// count
 	s << m_crosssection.AltitudeInfo().count();
-	RawDataRiverCrosssection::AltitudeList::iterator it;
-	for (it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
+	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
 		RawDataRiverCrosssection::Altitude alt = (*it);
 		s << alt.position() << alt.height() << alt.active();
 	}
@@ -1297,12 +1294,11 @@ QList<int> RawDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 	}
 	RawDataRiverCrosssection& cross = m_crosssection;
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::Iterator it;
 
 	int leftlimit = -1;
 	int rightlimit = -1;
 	int idx = 0;
-	for (it = alist.begin(); it != alist.end(); ++it) {
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = *it;
 		if (alt.position() > 0){break;}
 		if (alt.height() > m_waterSurfaceElevationValue){
@@ -1310,7 +1306,7 @@ QList<int> RawDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 		}
 		++ idx;
 	}
-	for (it = alist.begin(); it != alist.end(); ++it) {
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = *it;
 		if (alt.position() < 0){continue;}
 		if (alt.height() > m_waterSurfaceElevationValue){
@@ -1405,9 +1401,8 @@ void RawDataRiverPathPoint::saveToiRICLibObject(iRICLib::RiverPathPoint* p)
 
 	p->leftShift = m_crosssection.leftShift();
 
-	QList<RawDataRiverCrosssection::Altitude>::Iterator it;
 	p->altitudes.clear();
-	for (it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
+	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
 		RawDataRiverCrosssection::Altitude alt = *it;
 		iRICLib::Altitude libalt;
 		libalt.position = alt.position();

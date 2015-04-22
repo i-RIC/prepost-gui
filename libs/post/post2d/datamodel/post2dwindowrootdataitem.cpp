@@ -93,8 +93,7 @@ Post2dWindowRootDataItem::~Post2dWindowRootDataItem()
 	delete m_measuredDataTopDataItem;
 	delete m_backgroundImagesDataItem;
 
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for(it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		delete *it;
 	}
 	delete m_titleDataItem;
@@ -109,8 +108,7 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->clear();
 
 	// add gridtypes.
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		model->appendRow((*it)->standardItem());
 	}
 	// add measured data item row.
@@ -131,8 +129,7 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 
 void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		QDomNode c = node.firstChild();
 		while (! c.isNull()){
 			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()){
@@ -164,8 +161,7 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 //	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
 //	writer.writeEndElement();
 
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -185,8 +181,7 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 Post2dWindowGridTypeDataItem* Post2dWindowRootDataItem::gridTypeDataItem(const QString& name)
 {
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		if ((*it)->name() == name){return *it;}
 	}
@@ -200,8 +195,7 @@ void Post2dWindowRootDataItem::updateZoneList()
 	// when user starts solver execution. so, it is removed now.
 /*
 	dataModel()->itemModel()->blockSignals(true);
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		(*it)->setupZoneDataItems();
 	}
@@ -220,8 +214,7 @@ void Post2dWindowRootDataItem::update()
 {
 	QTime time;
 	time.start();
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		(*it)->update();
 	}
@@ -236,8 +229,7 @@ void Post2dWindowRootDataItem::update()
 
 Post2dWindowZoneDataItem* Post2dWindowRootDataItem::zoneDataItem(const QString& name)
 {
-	QList<Post2dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		Post2dWindowGridTypeDataItem* gtItem = *it;
 		Post2dWindowZoneDataItem* i = gtItem->zoneData(name);

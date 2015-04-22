@@ -151,15 +151,13 @@ Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCros
 	if (item->selectedVertices().count() < 1) return 0;
 
 	vtkIdType index = item->selectedVertices().at(0);
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it;
-	it = g->crossSections().begin();
+	auto it = g->crossSections().begin();
 	return *(it + index);
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionWindows()
 {
-	QList<Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
 		Structured15DGridWithCrossSectionCrossSectionWindow* w = (*w_it)->window();
 		bool ok = w->updateComboBoxes();
 		if (ok){
@@ -171,8 +169,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionW
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item)
 {
-	QList<Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		if (*it == item){
 			m_crosssectionWindows.erase(it);
 			delete item;

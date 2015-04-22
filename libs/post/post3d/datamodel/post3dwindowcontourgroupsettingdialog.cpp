@@ -121,8 +121,7 @@ void Post3dWindowContourGroupSettingDialog::setFaceMap(const QMap<QString, Post3
 	if (m_faceMap.size() < 1) return;
 
 	ui->faceSettingWidget->setEnabled(true);
-	QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-	for (it = m_faceMap.begin(); it != m_faceMap.end(); ++it){
+	for (auto it = m_faceMap.begin(); it != m_faceMap.end(); ++it){
 		ui->faceListWidget->addItem(it.key());
 	}
 	ui->faceListWidget->setCurrentRow(0, QItemSelectionModel::SelectCurrent);
@@ -172,8 +171,7 @@ void Post3dWindowContourGroupSettingDialog::removeFaceSetting()
 	m_isRemoving = true;
 
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
-	QList<QListWidgetItem*>::iterator it;
-	for (it = items.begin(); it != items.end(); ++it){
+	for (auto it = items.begin(); it != items.end(); ++it){
 		QListWidgetItem* widgetItem = *it;
 		m_faceMap.remove(widgetItem->text());
 	}

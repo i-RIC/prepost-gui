@@ -91,13 +91,11 @@ public:
 	}
 	/// Destructor
 	~CgnsFileInputConditionDependencyConditionAnd(){
-		QList<CgnsFileInputConditionDependency::Condition*>::iterator it;
-		for (it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
+		for (auto it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
 	}
 	bool match(){
 		bool ret = true;
-		QList<CgnsFileInputConditionDependency::Condition*>::iterator it;
-		for (it = m_children.begin(); it != m_children.end(); ++it){
+		for (auto it = m_children.begin(); it != m_children.end(); ++it){
 			ret = ret && (*it)->match();
 		}
 		return ret;
@@ -121,13 +119,11 @@ public:
 	}
 	/// Destructor
 	~CgnsFileInputConditionDependencyConditionOr(){
-		QList<CgnsFileInputConditionDependency::Condition*>::iterator it;
-		for (it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
+		for (auto it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
 	}
 	bool match(){
 		bool ret = false;
-		QList<CgnsFileInputConditionDependency::Condition*>::iterator it;
-		for (it = m_children.begin(); it != m_children.end(); ++it){
+		for (auto it = m_children.begin(); it != m_children.end(); ++it){
 			ret = ret || (*it)->match();
 		}
 		return ret;

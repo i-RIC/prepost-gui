@@ -283,8 +283,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	valueExist = i->getValueRange(&min, &max);
 
 	// check grid values.
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator it;
-	for (it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
 		Grid* g = (*it)->gridDataItem()->grid();
 		if (g != 0){
 			GridRelatedConditionContainer* c = g->gridRelatedCondition(name);
@@ -321,8 +320,7 @@ void PreProcessorGridTypeDataItem::assignActionZValues(const ZDepthRange& range)
 	double rangeWidth = range.width();
 	double divNum = 0;
 	divNum += m_childItems.count() - 1;
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
 		if (itemCount >= 0){
 			divNum += itemCount;
@@ -330,8 +328,7 @@ void PreProcessorGridTypeDataItem::assignActionZValues(const ZDepthRange& range)
 	}
 	double divWidth = rangeWidth / divNum;
 	// assign regions to GridAndGridCreatingConditionDataItem instances.
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator cit;
-	for (cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
 		int itemCount = ((*cit)->zDepthRange().itemCount() - 1);
 		int itemCount2 = 0;
 		if (itemCount >= 0){
@@ -360,8 +357,7 @@ void PreProcessorGridTypeDataItem::updateNewGridActionStatus()
 
 bool PreProcessorGridTypeDataItem::gridEdited() const
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator cit;
-	for (cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
 		bool edited = (*cit)->gridEdited();
 		if (edited){return true;}
 	}
@@ -370,8 +366,7 @@ bool PreProcessorGridTypeDataItem::gridEdited() const
 
 void PreProcessorGridTypeDataItem::toggleGridEditFlag()
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::iterator cit;
-	for (cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
 		(*cit)->toggleGridEditFlag();
 	}
 }

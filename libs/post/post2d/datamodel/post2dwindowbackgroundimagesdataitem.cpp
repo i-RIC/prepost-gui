@@ -88,7 +88,7 @@ void Post2dWindowBackgroundImagesDataItem::addChildItem()
 
 void Post2dWindowBackgroundImagesDataItem::deleteChildItem(int i)
 {
-	QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	delete *(it + i);
 	dynamic_cast<Post2dWindowRootDataItem*>(parent())->updateItemMap();
 	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -107,8 +107,8 @@ void Post2dWindowBackgroundImagesDataItem::moveUpChildItem(int i)
 	m_standardItem->insertRows(i - 1, items);
 
 	// reorder the m_childItems.
-	QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin() + i;
-	QList<GraphicsWindowDataItem*>::iterator it2 = it - 1;
+	auto it = m_childItems.begin() + i;
+	auto it2 = it - 1;
 	GraphicsWindowDataItem* item = *it;
 	int idx = m_childItems.indexOf(*it);
 	int idx2 = m_childItems.indexOf(*it2);
@@ -128,8 +128,8 @@ void Post2dWindowBackgroundImagesDataItem::moveDownChildItem(int i)
 	m_standardItem->insertRows(i + 1, items);
 
 	// reorder the m_childList.
-	QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin() + i;
-	QList<GraphicsWindowDataItem*>::iterator it2 = it + 1;
+	auto it = m_childItems.begin() + i;
+	auto it2 = it + 1;
 	GraphicsWindowDataItem* item = *it;
 	int idx = m_childItems.indexOf(*it);
 	int idx2 = m_childItems.indexOf(*it2);
@@ -164,7 +164,7 @@ void Post2dWindowBackgroundImagesDataItem::updateChildCheckState(int idx, bool v
 			m_standardItem->setCheckState(Qt::Unchecked);
 		}
 	} else {
-		QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin() + idx;
+		auto it = m_childItems.begin() + idx;
 		Post2dWindowBackgroundImageDataItem* item = dynamic_cast<Post2dWindowBackgroundImageDataItem*>(*it);
 		if (vis){
 			item->standardItem()->setCheckState(Qt::Checked);
@@ -188,7 +188,6 @@ void Post2dWindowBackgroundImagesDataItem::deleteAll()
 	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all background images?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No){return;}
 
-	QList <GraphicsWindowDataItem*>::Iterator it;
 	while (m_childItems.count() > 0){
 		GraphicsWindowDataItem* item = *(m_childItems.begin());
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());

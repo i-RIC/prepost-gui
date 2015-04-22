@@ -62,8 +62,7 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool
 
 void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList<PostProcessorWindowProjectDataItem*>::iterator it;
-	for (it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
 		writer.writeStartElement("PostProcessor");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -84,8 +83,7 @@ QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* ne
 
 void ProjectPostProcessors::requestDelete(PostProcessorWindowProjectDataItem* item)
 {
-	QList<PostProcessorWindowProjectDataItem*>::iterator it;
-	for (it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
 		if (*it == item){
 			m_postProcessorWindows.erase(it);
 			delete item;

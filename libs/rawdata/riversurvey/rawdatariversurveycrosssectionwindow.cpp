@@ -240,8 +240,7 @@ void RawDataRiverSurveyCrosssectionWindow::setupData()
 	// keep selection status
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	QList<QItemSelectionRange>::iterator sit;
-	for (sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -256,11 +255,10 @@ void RawDataRiverSurveyCrosssectionWindow::setupData()
 
 	RawDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it;
 	int row = 0;
 
 	RawDataRiverCrosssection::Altitude alt;
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		alt = *it;
 		m_model->insertRow(row);
 		m_model->setData(m_model->index(row, 0), QVariant(alt.active()));
@@ -388,7 +386,7 @@ bool RawDataRiverSurveyCrosssectionWindow::syncData()
 	RawDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	RawDataRiverCrosssection::AltitudeList old = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it = old.begin();
+	auto it = old.begin();
 	// whether activations are valid or not
 	QList<int> indices;
 	for (int i = 0; i < m_model->rowCount(); ++i){
@@ -461,11 +459,10 @@ void RawDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
 	QModelIndexList rows = m_selectionModel->selectedRows();
-	QModelIndexList::iterator it;
 
 	// delete
 	QList<int> indices;
-	for (it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it){
 		QModelIndex index = *it;
 		indices.append(index.row());
 	}

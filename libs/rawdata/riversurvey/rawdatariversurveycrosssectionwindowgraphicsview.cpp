@@ -126,11 +126,10 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawLine(RawDataRiverPath
 	if (point == 0){return;}
 	RawDataRiverCrosssection& cross = point->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it;
 	bool first = true;
 	QPointF oldpoint, newpoint;
 	painter.setPen(color);
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		RawDataRiverCrosssection::Altitude alt = *it;
 		if (! alt.active()){continue;}
 		newpoint = m_matrix.map(QPointF(alt.position(), alt.height()));
@@ -153,9 +152,8 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawCircle(QPainter& pain
 
 	RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it;
 	painter.setPen(pen);
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		RawDataRiverCrosssection::Altitude alt = *it;
 		if (alt.active()){
 			painter.setBrush(activeBrush);
@@ -198,8 +196,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionCircle(QPain
 	painter.setPen(pen);
 	QModelIndexList list = selectionModel()->selectedIndexes();
 	QSet<int> drawnRows;
-	QModelIndexList::iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		QModelIndex index = *it;
 		if (drawnRows.contains(index.row())){continue;}
 		const RawDataRiverCrosssection::Altitude& alt = alist.at(index.row());
@@ -272,8 +269,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::drawSelectionSquare(QPain
 
 	QPointF point;
 	QRectF r;
-	std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = sel.begin(); it != sel.end(); ++it){
+	for (auto it = sel.begin(); it != sel.end(); ++it){
 		CtrlPointSelectionInfo info = *it;
 		if (info.Point == blackpoint){
 			if (info.Position == RawDataRiverPathPoint::pposCenterToLeft){
@@ -670,7 +666,6 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		if (m_gridMode){
 			// find selected points near the mouse cursor.
 			std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
-			std::list<CtrlPointSelectionInfo>::iterator it;
 			QPointF mins(event->x() - 5, event->y() + 5);
 			QPointF maxs(event->x() + 5, event->y() - 5);
 			QMatrix invMatrix = m_matrix.inverted();
@@ -680,7 +675,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 				CtrlPointSelectionInfo info = sel.front();
 				if (info.Point == m_parentWindow->m_gridCreatingConditionPoint){
 					if (info.Position == RawDataRiverPathPoint::pposCenterToLeft){
-						for (it = sel.begin(); it != sel.end(); ++it){
+						for (auto it = sel.begin(); it != sel.end(); ++it){
 							info = *it;
 							RawDataRiverCrosssection::Altitude alt = info.Point->lXSec()->interpolate(info.Point->CtrlPoints(info.Position).at(info.Index));
 							if (alt.position() >= mappedMins.x() &&
@@ -693,7 +688,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 							}
 						}
 					} else if (info.Position == RawDataRiverPathPoint::pposCenterToRight){
-						for (it = sel.begin(); it != sel.end(); ++it){
+						for (auto it = sel.begin(); it != sel.end(); ++it){
 							info = *it;
 							RawDataRiverCrosssection::Altitude alt = info.Point->rXSec()->interpolate(info.Point->CtrlPoints(info.Position).at(info.Index));
 							if (alt.position() >= mappedMins.x() &&
@@ -711,7 +706,6 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		} else {
 			// find selected points near the mouse cursor.
 			QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
-			QList<QModelIndex>::iterator it;
 			RawDataRiverPathPoint* p = m_parentWindow->m_editTargetPoint;
 			RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 			QPointF mins(event->x() - 5, event->y() + 5);
@@ -720,7 +714,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 			QPointF mappedMins = invMatrix.map(mins);
 			QPointF mappedMaxs = invMatrix.map(maxs);
 			if (continuousSelection()){
-				for (it = selectedPoints.begin(); it != selectedPoints.end(); ++it){
+				for (auto it = selectedPoints.begin(); it != selectedPoints.end(); ++it){
 					int index = it->row();
 					RawDataRiverCrosssection::Altitude& alt = alist[index];
 					if (alt.position() >= mappedMins.x() &&
@@ -1014,11 +1008,10 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::selectPoints(const QPoint
 
 		RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 		RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-		RawDataRiverCrosssection::AltitudeList::iterator it;
 		int row = 0;
 		QModelIndex firstIndex;
 		bool firstset = false;
-		for (it = alist.begin(); it != alist.end(); ++it){
+		for (auto it = alist.begin(); it != alist.end(); ++it){
 			RawDataRiverCrosssection::Altitude alt = *it;
 			if (alt.position() >= mappedMins.x() &&
 				alt.position() <= mappedMaxs.x() &&
@@ -1051,9 +1044,8 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::updateActionStatus()
 		m_moveAction->setDisabled(true);
 	}else{
 		bool continuous = true;
-		QModelIndexList::iterator it, it2;
-		it = rows.begin();
-		it2 = it;
+		auto it = rows.begin();
+		auto it2 = it;
 		++it2;
 		while (it2 != rows.end()){
 			continuous = continuous && (it2->row() == it->row() + 1);
@@ -1067,12 +1059,11 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 {
 	if (m_parentWindow->m_editTargetPoint == 0){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
-	QModelIndexList::iterator it;
 	RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList before, after;
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
-	for (it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it){
 		QModelIndex index = *it;
 		alist[index.row()].setActive(true);
 	}
@@ -1084,13 +1075,12 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 {
 	if (m_parentWindow->m_editTargetPoint == 0){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
-	QModelIndexList::iterator it;
 	RawDataRiverCrosssection& cross = m_parentWindow->m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList before, after;
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
 	QList<int> indices;
-	for (it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it){
 		QModelIndex index = *it;
 		indices.append(index.row());
 	}
@@ -1106,7 +1096,6 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
 {
 	if (m_parentWindow->m_editTargetPoint == 0){return;}
 	QModelIndexList rows = selectionModel()->selectedRows();
-	QModelIndexList::iterator it;
 	int from = rows.front().row();
 	int to = rows.back().row();
 	RawDataRiverCrosssectionAltitudeMoveDialog dialog(m_parentWindow->m_editTargetPoint, from, to, m_parentWindow->m_targetRiverSurvey, m_parentWindow, this);
@@ -1116,7 +1105,6 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
 void RawDataRiverSurveyCrosssectionWindowGraphicsView::updateAltitudeList(RawDataRiverCrosssection::AltitudeList& alist, const QPoint& start, const QPoint& end)
 {
 	QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
-	QList<QModelIndex>::iterator it;
 	QPointF startF(start);
 	QPointF endF(end);
 	QMatrix invMatrix = m_matrix.inverted();
@@ -1130,7 +1118,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::updateAltitudeList(RawDat
 		xoffset = m_dragLimit.max;
 	}
 	double yoffset = mappedEndF.y() - mappedStartF.y();
-	for (it = selectedPoints.begin(); it != selectedPoints.end(); ++it){
+	for (auto it = selectedPoints.begin(); it != selectedPoints.end(); ++it){
 		int index = it->row();
 		RawDataRiverCrosssection::Altitude& alt = alist[index];
 		alt.setPosition(alt.position() + xoffset);
@@ -1147,7 +1135,6 @@ double RawDataRiverSurveyCrosssectionWindowGraphicsView::getGridCtrlPointOffset(
 	QPointF mappedEndF = invMatrix.map(endF);
 	double xoffset = mappedEndF.x() - mappedStartF.x();
 	std::list<CtrlPointSelectionInfo> sel = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
-	std::list<CtrlPointSelectionInfo>::iterator it;
 	CtrlPointSelectionInfo info = sel.front();
 	if (info.Position == RawDataRiverPathPoint::pposCenterToLeft){
 		xoffset /= (info.Point->lXSec()->interpolate(1).position());
@@ -1212,8 +1199,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::inspectGridLimits(double*
 {
 	std::list<CtrlPointSelectionInfo>& list = m_parentWindow->m_gridCreatingConditionRiverSurvey->gridCreatingCondition()->selectedCtrlPointInfoList();
 	std::list<CtrlPointSelectionInfo> tmplist;
-	std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		if (it->Index < it->Point->CtrlPoints(it->Position).size()){
 			// valid point.
 			tmplist.push_back(*it);
@@ -1259,7 +1245,7 @@ bool RawDataRiverSurveyCrosssectionWindowGraphicsView::continuousGridSelection()
 	else if (list.size() == 1){return true;}
 	else {
 		bool ok = true;
-		std::list<CtrlPointSelectionInfo>::iterator it = list.begin();
+		auto it = list.begin();
 		CtrlPointSelectionInfo tmpinfo = *it++;
 		while (it != list.end()){
 			ok = ok && (tmpinfo.Point == it->Point && tmpinfo.Index + 1 == it->Index);

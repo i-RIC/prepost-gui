@@ -137,22 +137,20 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn){
 	setupZoneDataContainers(tmpfn);
 	checkBaseIterativeDataExist(tmpfn);
 	qDebug("setupZoneDataContainer(): %d", time.elapsed());
-	QList<PostZoneDataContainer*>::iterator it;
 	bool errorOccured = false;
-	for (it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it){
+	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it){
 		errorOccured = errorOccured || (! (*it)->handleCurrentStepUpdate(tmpfn));
 	}
-	for (it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it){
+	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it){
 		time.start();
 		errorOccured = errorOccured || (! (*it)->handleCurrentStepUpdate(tmpfn));
 		qDebug("handleCurrentStepUpdate() for 2D: %d", time.elapsed());
 	}
-	for (it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it){
+	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it){
 		errorOccured = errorOccured || (! (*it)->handleCurrentStepUpdate(tmpfn));
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
-	QList<PostDataContainer*>::iterator it2;
-	for (it2 = m_otherContainers.begin(); it2 != m_otherContainers.end(); ++it2){
+	for (auto it2 = m_otherContainers.begin(); it2 != m_otherContainers.end(); ++it2){
 		time.start();
 		errorOccured = errorOccured || (! (*it2)->handleCurrentStepUpdate(tmpfn));
 		qDebug("handleCurrentStepUpdate() for others: %d", time.elapsed());
@@ -214,9 +212,8 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 	if (baseid == 0){
 		// no base for dimension dim.
 		if (zonenames.count() == 0){return false;}
-		QList<PostZoneDataContainer*>::iterator it;
 		zonenames.clear();
-		for (it = containers.begin(); it != containers.end(); ++it){
+		for (auto it = containers.begin(); it != containers.end(); ++it){
 			delete *it;
 		}
 		containers.clear();
@@ -249,20 +246,17 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 	}
 	zonenames = tmpzonenames;
 	// clear the current zone containers first.
-	QList<PostZoneDataContainer*>::iterator it;
-	for (it = containers.begin(); it != containers.end(); ++it){
+	for (auto it = containers.begin(); it != containers.end(); ++it){
 		delete *it;
 	}
 	containers.clear();
 	containerNameMap.clear();
-	QStringList::iterator slit;
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	QList<SolverDefinitionGridType*>::iterator gtit;
-	for (slit = zonenames.begin(); slit != zonenames.end(); ++slit){
+	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit){
 		QString zoneName = *slit;
 		bool found = false;
 		if (zoneName == "iRICZone"){
-			for (gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
+			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
 				if ((*gtit)->isPrimary() && ! (*gtit)->isOptional()){
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
 					cont->loadFromCgnsFile(fn);
@@ -272,7 +266,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 				}
 			}
 		} else {
-			for (gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
+			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
 				if (zoneName.contains((*gtit)->name())){
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
 					cont->loadFromCgnsFile(fn);
@@ -346,13 +340,11 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 	}
 	containers.clear();
 	containerNameMap.clear();
-	QStringList::iterator slit;
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	QList<SolverDefinitionGridType*>::iterator gtit;
-	for (slit = zonenames.begin(); slit != zonenames.end(); ++slit){
+	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit){
 		QString zoneName = *slit;
 		if (zoneName == "iRICZone"){
-			for (gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
+			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
 				if ((*gtit)->isPrimary() && ! (*gtit)->isOptional()){
 					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
 					containers.append(cont);
@@ -360,7 +352,7 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 				}
 			}
 		}else{
-			for (gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
+			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit){
 				if (zoneName.contains((*gtit)->name())){
 					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
 					containers.append(cont);
@@ -468,8 +460,7 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 void PostSolutionInfo::handleIterationStepsUpdate(const QList<int>& steps)
 {
 	QList<QString> strSteps;
-	QList<int>::const_iterator it;
-	for (it = steps.begin(); it != steps.end(); ++it){
+	for (auto it = steps.begin(); it != steps.end(); ++it){
 		strSteps.push_back(QString("i = %1").arg(*it));
 	}
 	// inform the containers that the steps are updated.
@@ -481,8 +472,7 @@ void PostSolutionInfo::handleIterationStepsUpdate(const QList<int>& steps)
 void PostSolutionInfo::handleTimeStepsUpdate(const QList<double>& steps)
 {
 	QList<QString> strSteps;
-	QList<double>::const_iterator it;
-	for (it = steps.begin(); it != steps.end(); ++it){
+	for (auto it = steps.begin(); it != steps.end(); ++it){
 		strSteps.push_back(QString("t = %1 s").arg(iRIC::timeSecondValueStr(*it)));
 	}
 	// inform the containers that the steps are updated.
@@ -533,14 +523,13 @@ void PostSolutionInfo::loadFromCgnsFile(const int fn)
 void PostSolutionInfo::closeCgnsFile()
 {
 	// clear the current zone containers first.
-	QList<PostZoneDataContainer*>::iterator it;
-	for (it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it){
+	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it){
 		delete *it;
 	}
-	for (it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it){
+	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it){
 		delete *it;
 	}
-	for (it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it){
+	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it){
 		delete *it;
 	}
 	m_zoneContainers1D.clear();
@@ -740,8 +729,7 @@ void PostSolutionInfo::exportCalculationResult()
 	} if (tmpContainers.count() > 1){
 		ItemSelectingDialog dialog;
 		QList<QString> zonelist;
-		QList<PostZoneDataContainer*>::iterator it;
-		for (it = tmpContainers.begin(); it != tmpContainers.end(); ++it){
+		for (auto it = tmpContainers.begin(); it != tmpContainers.end(); ++it){
 			zonelist.append((*it)->zoneName());
 		}
 		dialog.setItems(zonelist);

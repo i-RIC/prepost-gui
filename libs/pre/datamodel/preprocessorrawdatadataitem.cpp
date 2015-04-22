@@ -117,14 +117,12 @@ void PreProcessorRawdataDataItem::exportRawdata()
 	QMainWindow* mainW = projectData()->mainWindow();
 
 	const QList<RawDataExporter*>& exps = m_rawData->exporters();
-	QList<RawDataExporter*>::const_iterator exp_it;
 	QStringList filters;
 	QList<RawDataExporter*> exporters;
-	for (exp_it = exps.begin(); exp_it != exps.end(); ++exp_it){
+	for (auto exp_it = exps.begin(); exp_it != exps.end(); ++exp_it){
 		RawDataExporter* exp = *exp_it;
 		QStringList fils = exp->fileDialogFilters();
-		QStringList::iterator s_it;
-		for (s_it = fils.begin(); s_it != fils.end(); ++s_it){
+		for (auto s_it = fils.begin(); s_it != fils.end(); ++s_it){
 			filters.append(*s_it);
 			exporters.append(exp);
 		}
@@ -264,8 +262,7 @@ bool PreProcessorRawdataDataItem::setupExportMenu(QMenu* /*menu*/)
 		if (m_exportSignalMapper != 0){delete m_exportSignalMapper;}
 		m_exportSignalMapper = new QSignalMapper(this);
 		const QList<RawDataExporter*>& exporters = m_rawData->exporters();
-		QList<RawDataExporter*>::const_iterator exp_it;
-		for (exp_it = exporters.begin(); exp_it != exporters.end(); ++exp_it){
+		for (auto exp_it = exporters.begin(); exp_it != exporters.end(); ++exp_it){
 				QString title = (*exp_it)->caption();
 				QAction* exportAction = menu->addAction(title.append("..."));
 				m_exportSignalMapper->setMapping(exportAction, *exp_it);

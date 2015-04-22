@@ -591,14 +591,12 @@ void iRICMainWindowActionManager::setupHelpMenu()
 void iRICMainWindowActionManager::updateSolverList(SolverDefinitionList* /*list*/){
 /*
 		QList<QAction*> actions = m_newProjectMenu->actions();
-		QList<QAction*>::iterator it;
-		for (it = actions.begin(); it != actions.end(); ++it){
+		for (auto it = actions.begin(); it != actions.end(); ++it){
 				m_newProjectSignals->removeMappings(*it);
 		}
 		m_newProjectMenu->clear();
 		QList<SolverDefinitionAbstract*> sdlist = list->solverList();
-		QList<SolverDefinitionAbstract*>::iterator sd_it;
-		for (sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
+		for (auto sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
 				SolverDefinitionAbstract* abst = (*sd_it);
 				QAction *act = new QAction(abst->caption(), m_newProjectMenu);
 				m_newProjectMenu->addAction(act);
@@ -789,15 +787,13 @@ void iRICMainWindowActionManager::setProjectData(ProjectData *d)
 
 void iRICMainWindowActionManager::enableActions(const QList<QAction*>& actions, bool enable)
 {
-	QList<QAction*>::const_iterator it;
-	for (it = actions.begin(); it != actions.end(); ++it){
+	for (auto it = actions.begin(); it != actions.end(); ++it){
 		(*it)->setEnabled(enable);
 	}
 }
 
 void iRICMainWindowActionManager::uncheckActions(const QList<QAction *> &actions){
-	QList<QAction*>::const_iterator it;
-	for (it = actions.begin(); it != actions.end(); ++it){
+	for (auto it = actions.begin(); it != actions.end(); ++it){
 		(*it)->setChecked(false);
 	}
 }
@@ -819,8 +815,7 @@ void iRICMainWindowActionManager::updateMenuBar(){
 	m_menuBar->addMenu(m_fileMenu);
 	m_menuBar->addMenu(m_importMenu);
 
-	QList<QMenu*>::iterator it;
-	for (it = m_additionalMenus.begin(); it != m_additionalMenus.end(); ++it){
+	for (auto it = m_additionalMenus.begin(); it != m_additionalMenus.end(); ++it){
 		m_menuBar->addMenu(*it);
 	}
 	m_menuBar->addMenu(m_simulationMenu);
@@ -968,14 +963,13 @@ void iRICMainWindowActionManager::updateCameraAction(QAction* a, QWidget* w, con
 void iRICMainWindowActionManager::updateWindowList()
 {
 	QList<QAction*> actions = m_viewMenu->actions();
-	QList<QAction*>::iterator it, it2;
-	it = actions.begin();
+	auto it = actions.begin();
 	while ((*it) != m_windowMenuSeparetor){
 		++it;
 	}
 	// now it is m_windowMenuSeparator. goto the first window item.
 	++it;
-	for (it2 = it; it2 != actions.end(); ++it2){
+	for (auto it2 = it; it2 != actions.end(); ++it2){
 		m_windowActivationMapper->removeMappings(*it2);
 		delete *it2;
 	}
@@ -983,9 +977,8 @@ void iRICMainWindowActionManager::updateWindowList()
 	// now, build window list.
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
-	QList<QMdiSubWindow*>::iterator lit;
 	int i = 1;
-	for (lit = windowList.begin(); lit != windowList.end(); ++lit){
+	for (auto lit = windowList.begin(); lit != windowList.end(); ++lit){
 		QMdiSubWindow* w = *lit;
 		QString tmp = QString("%1%2 ").append(w->windowTitle());
 		QString title;

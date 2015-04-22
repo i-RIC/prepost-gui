@@ -14,8 +14,7 @@ CgnsZoneSelectDialog::~CgnsZoneSelectDialog()
 }
 
 void CgnsZoneSelectDialog::setZones(const QList<int>& zoneids, const QList<QString>& zonenames){
-	QList<QString>::const_iterator it;
-	for (it = zonenames.begin(); it != zonenames.end(); ++it){
+	for (auto it = zonenames.begin(); it != zonenames.end(); ++it){
 		ui->comboBox->addItem(*it);
 	}
 	m_zoneIds = zoneids;

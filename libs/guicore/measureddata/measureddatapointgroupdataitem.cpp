@@ -585,9 +585,8 @@ void MeasuredDataPointGroupDataItem::exclusivelyCheck(MeasuredDataPointDataItem*
 
 void MeasuredDataPointGroupDataItem::setCurrentMeasuredValue(const QString& value)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
 	MeasuredDataPointDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		MeasuredDataPointDataItem* tmpItem = dynamic_cast<MeasuredDataPointDataItem*>(*it);
 		if (tmpItem->name() == value){
 			current = tmpItem;

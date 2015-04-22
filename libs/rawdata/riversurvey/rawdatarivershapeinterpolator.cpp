@@ -36,20 +36,18 @@ void LinearLXSecInterpolator::updateParameters(){
 		leftbank = m_parent->crosssection().leftBank(true);
 	}catch (RawDataRiverCrosssection::ErrorCodes /* codes */){}
 	// まず、オブジェクトを削除
-	std::map<double, LinearAltitudeInterpolator*>::iterator l_it;
-	for (l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
+	for (auto l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
 		delete l_it->second;
 	}
 	m_interpolators.clear();
 	RawDataRiverCrosssection::AltitudeList& AList = m_parent->crosssection().AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it, it2;
-	it = AList.begin();
+	auto it = AList.begin();
 	if (it == AList.end()) return;
 	while (it != AList.end() - 1 && it->position() <= 0){
 		while (it != AList.end() - 1 && ! it->active()){
 			++it;
 		}
-		it2 = it;
+		auto it2 = it;
 		if (it2 != AList.end() - 1){++it2;}
 		while (it2 != AList.end() - 1 && ! it2->active()){
 			++it2;
@@ -71,8 +69,7 @@ RawDataRiverCrosssection::Altitude LinearLXSecInterpolator::interpolate(double t
 	if (t < 0 || t > 1){
 		throw ec_OutOfInterpolationRange;
 	}
-	std::map<double, LinearAltitudeInterpolator*>::iterator it;
-	it = m_interpolators.lower_bound(t);
+	auto it = m_interpolators.lower_bound(t);
 	return (it->second)->interpolate(t);
 }
 
@@ -88,21 +85,19 @@ void LinearRXSecInterpolator::updateParameters(){
 		rightbank = m_parent->crosssection().rightBank(true);
 	}catch (RawDataRiverCrosssection::ErrorCodes /* codes */){}
 	// まず、オブジェクトを削除
-	std::map<double, LinearAltitudeInterpolator*>::iterator l_it;
-	for (l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
+	for (auto l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
 		delete l_it->second;
 	}
 	m_interpolators.clear();
 	RawDataRiverCrosssection::AltitudeList& AList = m_parent->crosssection().AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it, it2;
-	it = AList.end();
+	auto it = AList.end();
 	if (it == AList.begin()) return;
 	--it;
 	while (it != AList.begin() && it->position() >= 0){
 		while (it != AList.begin() && ! it->active()){
 			--it;
 		}
-		it2 = it;
+		auto it2 = it;
 		if (it2 != AList.begin()){--it2;}
 		while (it2 != AList.begin() && ! it2->active()){
 			--it2;
@@ -124,8 +119,7 @@ RawDataRiverCrosssection::Altitude LinearRXSecInterpolator::interpolate(double t
 	if (t < 0 || t > 1){
 		throw ec_OutOfInterpolationRange;
 	}
-	std::map<double, LinearAltitudeInterpolator*>::iterator it;
-	it = m_interpolators.lower_bound(t);
+	auto it = m_interpolators.lower_bound(t);
 	return (it->second)->interpolate(t);
 }
 

@@ -165,11 +165,8 @@ void SolverDefinitionTranslationChecker::save(const QString& solverfolder, const
 	w.writeComment(comment);
 	w.writeStartElement("context");
 
-	QMap<QString, QString>::iterator mapit;
-	QList<TranslationMessage>::iterator listit;
-
 	// write valid elements and lacking elements, in the order of appearance.
-	for (listit = m_messages.begin(); listit != m_messages.end(); ++listit){
+	for (auto listit = m_messages.begin(); listit != m_messages.end(); ++listit){
 		listit->save(w);
 	}
 	// obsolete elements are not written any more.

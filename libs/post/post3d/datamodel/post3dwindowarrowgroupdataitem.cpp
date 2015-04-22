@@ -535,8 +535,7 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 void Post3dWindowArrowGroupDataItem::setupAppendFilter()
 {
 	m_appendFilter->RemoveAllInputs();
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		if (f->standardItem()->checkState() == Qt::Checked){
 			f->update();

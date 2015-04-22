@@ -60,8 +60,7 @@ public:
 	void undo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_before.begin(); it != m_before.end(); ++it){
+		for (auto it = m_before.begin(); it != m_before.end(); ++it){
 			(*it)->restore();
 		}
 
@@ -73,8 +72,7 @@ public:
 	void redo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_after.begin(); it != m_after.end(); ++it){
+		for (auto it = m_after.begin(); it != m_after.end(); ++it){
 			(*it)->restore();
 		}
 
@@ -94,14 +92,12 @@ private:
 		iset RightRemoveIndices;
 
 		std::set<RawDataRiverPathPoint*> points;
-		std::set<RawDataRiverPathPoint*>::iterator pit;
 		std::map<RawDataRiverPathPoint*, iset> PointIndices;
 
 		bool RemoveCenterToLeft = false;
 		bool RemoveCenterToRight = false;
 
-		std::list<CtrlPointSelectionInfo>::iterator it;
-		for (it = m_condition->m_selectedCtrlPointInfoList.begin(); it != m_condition->m_selectedCtrlPointInfoList.end(); ++it){
+		for (auto it = m_condition->m_selectedCtrlPointInfoList.begin(); it != m_condition->m_selectedCtrlPointInfoList.end(); ++it){
 			if (it->Position == RawDataRiverPathPoint::pposCenterToLeft){
 				RemoveCenterToLeft = true;
 				LeftRemoveIndices.insert(it->Index);
@@ -110,13 +106,11 @@ private:
 				RightRemoveIndices.insert(it->Index);
 			} else {
 				points.insert(it->Point);
-				std::map<RawDataRiverPathPoint*, iset>::iterator psetit;
-				psetit = PointIndices.find(it->Point);
+				auto psetit = PointIndices.find(it->Point);
 				if (psetit == PointIndices.end()){
 					std::pair<RawDataRiverPathPoint*, iset> pi_pair =
 						std::pair<RawDataRiverPathPoint*, iset>(it->Point, EmptyIndices);
-					std::pair<std::map<RawDataRiverPathPoint*, iset>::iterator, bool> insertresult =
-						PointIndices.insert(pi_pair);
+					auto insertresult = PointIndices.insert(pi_pair);
 					psetit = insertresult.first;
 				}
 				psetit->second.insert(it->Index);
@@ -136,7 +130,7 @@ private:
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToRight);
 			m_before.push_back(backup);
 		}
-		for (pit = points.begin(); pit != points.end(); ++pit){
+		for (auto pit = points.begin(); pit != points.end(); ++pit){
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(*pit, RawDataRiverPathPoint::zposCenterLine);
 			m_before.push_back(backup);
@@ -159,8 +153,7 @@ private:
 				tmpp = tmpp->nextPoint();
 			}
 		}
-		std::map<RawDataRiverPathPoint*, iset>::iterator psetit;
-		for (psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit){
+		for (auto psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit){
 			(psetit->first)->removeCtrlPoints(RawDataRiverPathPoint::zposCenterLine, psetit->second);
 		}
 
@@ -175,7 +168,7 @@ private:
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToRight);
 			m_after.push_back(backup);
 		}
-		for (pit = points.begin(); pit != points.end(); ++pit){
+		for (auto pit = points.begin(); pit != points.end(); ++pit){
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(*pit, RawDataRiverPathPoint::zposCenterLine);
 			m_after.push_back(backup);
@@ -269,14 +262,12 @@ bool GridCreatingConditionRiverSurvey::init()
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*> (parent()->parent()->parent());
 	PreProcessorRawDataTopDataItemInterface* rtItem = gtItem->rawdataTop();
 	QList<PreProcessorRawDataGroupDataItemInterface*> gItems = rtItem->groupDataItems();
-	QList<PreProcessorRawDataGroupDataItemInterface*>::iterator git;
 	bool found = false;
 
-	for (git = gItems.begin(); ! found && git != gItems.end(); ++git){
+	for (auto git = gItems.begin(); ! found && git != gItems.end(); ++git){
 		PreProcessorRawDataGroupDataItemInterface* gItem = *git;
 		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
-		QList<PreProcessorRawdataDataItemInterface*>::iterator rit;
-		for (rit = rItems.begin(); ! found && rit != rItems.end(); ++rit){
+		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit){
 			PreProcessorRawdataDataItemInterface* rItem = *rit;
 			if (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != 0){
 				// this is a river survey data!
@@ -660,8 +651,7 @@ void GridCreatingConditionRiverSurvey::mouseMoveEvent(QMouseEvent* event, PrePro
 		isCtrlPointsContinuousSelection()){
 		m_mouseEventMode = meNormal;
 		// check whether the mouse pointer is near to one of the selected points
-		std::list<CtrlPointSelectionInfo>::iterator it;
-		for (it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+		for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
 			CtrlPointSelectionInfo info = *it;
 			try {
 				QVector2D tmpv = info.Point->CtrlPointPosition2D(info.Position, info.Index);
@@ -1036,10 +1026,9 @@ bool GridCreatingConditionRiverSurvey::ctrlPointXORSelectRegion(
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	p->SelectCtrlPointsRegion(p0, v0, v1, tmplist);
 
-	std::list<CtrlPointSelectionInfo>::iterator it, it2;
-	for (it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
 		bool found = false;
-		for (it2 = tmplist.begin(); ! found && it2 != tmplist.end(); ++it2){
+		for (auto it2 = tmplist.begin(); ! found && it2 != tmplist.end(); ++it2){
 			if (*it == *it2){
 				found = true;
 				tmplist.erase(it2);
@@ -1071,15 +1060,13 @@ void GridCreatingConditionRiverSurvey::setAnalogyCtrlPoints()
 	iset RightRemoveIndices;
 
 	std::set<RawDataRiverPathPoint*> points;
-	std::set<RawDataRiverPathPoint*>::iterator pit;
 	std::map<RawDataRiverPathPoint*, iset> PointIndices;
 
 	bool RemoveCenterToLeft = false;
 	bool RemoveCenterToRight = false;
 
 	// Search Control Points relative to selected Control Points.
-	std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
 		if (it->Position == RawDataRiverPathPoint::pposCenterToLeft){
 			RemoveCenterToLeft = true;
 			LeftRemoveIndices.insert(it->Index);
@@ -1088,27 +1075,23 @@ void GridCreatingConditionRiverSurvey::setAnalogyCtrlPoints()
 			RightRemoveIndices.insert(it->Index);
 		}else{
 			points.insert(it->Point);
-			std::map<RawDataRiverPathPoint*, iset>::iterator psetit;
-			psetit = PointIndices.find(it->Point);
+			auto psetit = PointIndices.find(it->Point);
 			if (psetit == PointIndices.end()){
 				std::pair<RawDataRiverPathPoint*, iset> pi_pair =
 					std::pair<RawDataRiverPathPoint*, iset>(it->Point, EmptyIndices);
-				std::pair<std::map<RawDataRiverPathPoint*, iset>::iterator, bool> insertresult =
-					PointIndices.insert(pi_pair);
+				auto insertresult = PointIndices.insert(pi_pair);
 				psetit = insertresult.first;
 			}
 			psetit->second.insert(it->Index);
 		}
 	}
 
-	iset::iterator itt;
-
 	// Save Control Point Information of above Control Points. ---> m_analogyCtrlPointInfoList
 	if (RemoveCenterToLeft){
 		RawDataRiverPathPoint* tmpp = m_riverSurvey->headPoint();
 		if (tmpp != 0){tmpp = tmpp->nextPoint();}
 		while (tmpp != 0){
-			for (itt = LeftRemoveIndices.begin(); itt != LeftRemoveIndices.end(); ++itt){
+			for (auto itt = LeftRemoveIndices.begin(); itt != LeftRemoveIndices.end(); ++itt){
 				CtrlPointSelectionInfo sinfo;
 				sinfo.Point = tmpp;
 				sinfo.Position = RawDataRiverPathPoint::pposCenterToLeft;
@@ -1122,7 +1105,7 @@ void GridCreatingConditionRiverSurvey::setAnalogyCtrlPoints()
 		RawDataRiverPathPoint* tmpp = m_riverSurvey->headPoint();
 		if (tmpp != 0){tmpp = tmpp->nextPoint();}
 		while (tmpp != 0){
-			for (itt = RightRemoveIndices.begin(); itt != RightRemoveIndices.end(); ++itt){
+			for (auto itt = RightRemoveIndices.begin(); itt != RightRemoveIndices.end(); ++itt){
 				CtrlPointSelectionInfo sinfo;
 				sinfo.Point = tmpp;
 				sinfo.Position = RawDataRiverPathPoint::pposCenterToRight;
@@ -1138,17 +1121,17 @@ void GridCreatingConditionRiverSurvey::setAnalogyCtrlPoints()
 		sinfo.Point = psetit->first;
 
 		sinfo.Position = RawDataRiverPathPoint::pposLeftBank;
-		for (itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
+		for (auto itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
 			sinfo.Index = *itt;
 			m_analogyCtrlPointInfoList.push_back(sinfo);
 		}
 		sinfo.Position = RawDataRiverPathPoint::pposCenterLine;
-		for (itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
+		for (auto itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
 			sinfo.Index = *itt;
 			m_analogyCtrlPointInfoList.push_back(sinfo);
 		}
 		sinfo.Position = RawDataRiverPathPoint::pposRightBank;
-		for (itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
+		for (auto itt = psetit->second.begin(); itt != psetit->second.end(); ++itt){
 			sinfo.Index = *itt;
 			m_analogyCtrlPointInfoList.push_back(sinfo);
 		}
@@ -1328,14 +1311,13 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 
 	// コントロールポイントの描画設定
 	m_ctrlPoints->Reset();
-	QVector<double>::iterator cit;
 	int ctrlPointIndex = 0;
 
 	p = m_riverSurvey->headPoint()->nextPoint();
 	while (p != 0){
 
 		// control points on crosssection (left bank side)
-		for (cit = p->CenterToLeftCtrlPoints.begin(); cit != p->CenterToLeftCtrlPoints.end(); ++cit){
+		for (auto cit = p->CenterToLeftCtrlPoints.begin(); cit != p->CenterToLeftCtrlPoints.end(); ++cit){
 
 			QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposCenterToLeft, *cit);
 			point[0] = vec.x();
@@ -1351,7 +1333,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		}
 
 		// control points on crosssection (right bank side)
-		for (cit = p->CenterToRightCtrlPoints.begin(); cit != p->CenterToRightCtrlPoints.end(); ++cit){
+		for (auto cit = p->CenterToRightCtrlPoints.begin(); cit != p->CenterToRightCtrlPoints.end(); ++cit){
 
 			QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposCenterToRight, *cit);
 			point[0] = vec.x();
@@ -1369,7 +1351,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		if (p->nextPoint() != 0){
 
 			// control points on center line
-			for (cit = p->CenterLineCtrlPoints.begin(); cit != p->CenterLineCtrlPoints.end(); ++cit){
+			for (auto cit = p->CenterLineCtrlPoints.begin(); cit != p->CenterLineCtrlPoints.end(); ++cit){
 
 				QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposCenterLine, *cit);
 				point[0] = vec.x();
@@ -1385,7 +1367,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 			}
 
 			// control points on left bank.
-			for (cit = p->LeftBankCtrlPoints.begin(); cit != p->LeftBankCtrlPoints.end(); ++cit){
+			for (auto cit = p->LeftBankCtrlPoints.begin(); cit != p->LeftBankCtrlPoints.end(); ++cit){
 
 				QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposLeftBank, *cit);
 				point[0] = vec.x();
@@ -1401,7 +1383,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 			}
 
 			// control points on right bank.
-			for (cit = p->RightBankCtrlPoints.begin(); cit != p->RightBankCtrlPoints.end(); ++cit){
+			for (auto cit = p->RightBankCtrlPoints.begin(); cit != p->RightBankCtrlPoints.end(); ++cit){
 
 				QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposRightBank, *cit);
 				point[0] = vec.x();
@@ -1472,8 +1454,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		m_selectedCtrlZone->SetDimensions(pointlist.count(), 1, 1);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		QList<QVector2D>::iterator it;
-		for (it = pointlist.begin(); it != pointlist.end(); ++it){
+		for (auto it = pointlist.begin(); it != pointlist.end(); ++it){
 			QVector2D v = (*it);
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
@@ -1486,8 +1467,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 	m_selectedCtrlPoints->Reset();
 
 	int selectedCtrlPointIndex = 0;
-	std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
 		point[0] = it->Point->CtrlPointPosition2D(it->Position, it->Index).x();
 		point[1] = it->Point->CtrlPointPosition2D(it->Position, it->Index).y();
 		m_selectedCtrlPointPoints->InsertNextPoint(point);
@@ -1505,8 +1485,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 	m_analogyCtrlPoints->Reset();
 
 	int analogyCtrlPointIndex = 0;
-	//std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = m_analogyCtrlPointInfoList.begin(); it != m_analogyCtrlPointInfoList.end(); ++it){
+	for (auto it = m_analogyCtrlPointInfoList.begin(); it != m_analogyCtrlPointInfoList.end(); ++it){
 		point[0] = it->Point->CtrlPointPosition2D(it->Position, it->Index).x();
 		point[1] = it->Point->CtrlPointPosition2D(it->Position, it->Index).y();
 		m_analogyCtrlPointPoints->InsertNextPoint(point);
@@ -1551,9 +1530,8 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 
 void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 {
-	QList<RiverGridCtrlSolver*>::iterator it;
 	// clear first.
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		delete (*it);
 	}
 	m_gridSolvers.clear();
@@ -1577,15 +1555,14 @@ void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 	// prepare interpolators.
 	unsigned int lindices = static_cast<unsigned int>(p->CenterToLeftCtrlPoints.size());
 	unsigned int rindices = static_cast<unsigned int>(p->CenterToRightCtrlPoints.size());
-	QVector<Interpolator2D1*>::iterator rit;
 	p = m_riverSurvey->headPoint();
 	while (p != 0){
-		for (rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
+		for (auto rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
 			if (*rit != 0){
 				delete (*rit);
 			}
 		}
-		for (rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
+		for (auto rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
 			if (*rit != 0){
 				delete (*rit);
 			}
@@ -1596,7 +1573,7 @@ void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 		p->RGridLines().insert(0, rindices, 0);
 		p = p->nextPoint();
 	}
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		(*it)->update();
 	}
 }
@@ -1629,9 +1606,8 @@ void GridCreatingConditionRiverSurvey::createGrid(RawDataRiverPathPoint* start, 
 	points->InsertPoint(dimI * dimJ - 1, 0, 0, 0);
 	grid->vtkGrid()->SetPoints(points);
 
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 	// update grid interpolator.
@@ -1745,9 +1721,8 @@ bool GridCreatingConditionRiverSurvey::selectCtrlZone(RawDataRiverPathPoint* p, 
 	unsigned int maxindex = static_cast<unsigned int>(p->CtrlPoints(pos).size());
 	for (unsigned int i = 0; ! found && i <= maxindex; ++i){
 		QList<QVector2D> vectorlist = p->CtrlZonePoints(pos, i, ZONEDIV);
-		QList<QVector2D>::iterator it;
 		QVector2D v0, v1;
-		it = vectorlist.begin();
+		auto it = vectorlist.begin();
 		v0 = *it++;
 		while (! found && it != vectorlist.end()){
 			v1 = *it++;
@@ -1781,7 +1756,7 @@ bool GridCreatingConditionRiverSurvey::isCtrlPointsContinuousSelection()
 		return true;
 	}else{
 		bool ok = true;
-		std::list<CtrlPointSelectionInfo>::iterator it = m_selectedCtrlPointInfoList.begin();
+		auto it = m_selectedCtrlPointInfoList.begin();
 		CtrlPointSelectionInfo tmpinfo = *it++;
 		while (it != m_selectedCtrlPointInfoList.end()){
 			ok = ok && (tmpinfo.Point == it->Point && tmpinfo.Index + 1 == it->Index);
@@ -1794,8 +1769,7 @@ bool GridCreatingConditionRiverSurvey::isCtrlPointsContinuousSelection()
 void GridCreatingConditionRiverSurvey::invalidateSelectedCtrlPoints()
 {
 	std::list<CtrlPointSelectionInfo> tmplist;
-	std::list<CtrlPointSelectionInfo>::iterator it;
-	for (it = m_selectedCtrlPointInfoList.begin();
+	for (auto it = m_selectedCtrlPointInfoList.begin();
 			 it != m_selectedCtrlPointInfoList.end();
 			 ++it){
 		if (it->Index < it->Point->CtrlPoints(it->Position).size()){

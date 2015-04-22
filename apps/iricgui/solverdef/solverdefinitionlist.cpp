@@ -63,8 +63,7 @@ void SolverDefinitionList::updateSolverList()
 
 void SolverDefinitionList::clean()
 {
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = m_solverList.begin(); it != m_solverList.end(); ++it){
+	for (auto it = m_solverList.begin(); it != m_solverList.end(); ++it){
 		delete *it;
 	}
 	m_solverList.clear();
@@ -97,8 +96,7 @@ SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
 
 const QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
 {
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = m_solverList.begin(); it != m_solverList.end(); ++it){
+	for (auto it = m_solverList.begin(); it != m_solverList.end(); ++it){
 		SolverDefinitionAbstract* solver = *it;
 		if (solver->name() == p->mainfile()->solverName() &&
 				solver->version().compatibleWith(p->mainfile()->solverVersion()))

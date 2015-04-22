@@ -51,9 +51,8 @@ void SolverDefinitionTranslationUpdateWizard::accept()
 		folderDir = QDir(pc->folderName());
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
-	QList<QLocale>::iterator lit;
 	QString filelist;
-	for (lit = allLangs.begin(); lit != allLangs.end(); ++lit){
+	for (auto lit = allLangs.begin(); lit != allLangs.end(); ++lit){
 		QLocale locale = *lit;
 		QVariant val = field(QString("lang%1").arg(locale.name()));
 		if (val.toBool() == true){
@@ -117,14 +116,13 @@ SettingPage::SettingPage(QWidget* parent)
 
 	layout->addWidget(targetGroupBox);
 	QList<QLocale> langs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
-	QList<QLocale>::iterator it;
 	QGroupBox* langGroupBox = new QGroupBox(tr("Languages"), this);
 
 	QScrollArea* langsArea = new QScrollArea();
 	langsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	QVBoxLayout* llayout = new QVBoxLayout();
     llayout->setSizeConstraint(QLayout::SetMinimumSize);
-	for (it = langs.begin(); it != langs.end(); ++it){
+	for (auto it = langs.begin(); it != langs.end(); ++it){
 		QCheckBox* check = new QCheckBox(this);
 		QLocale locale = *it;
 		check->setText(QLocale::languageToString(locale.language()));
@@ -167,14 +165,12 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 void SettingPage::init(SolverDefinitionList *list, const QList<GridCreatingConditionCreator*>& gclist)
 {
 	QList<SolverDefinitionAbstract*> slist = list->solverList();
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = slist.begin(); it != slist.end(); ++it){
+	for (auto it = slist.begin(); it != slist.end(); ++it){
 		SolverDefinitionAbstract* abst = *it;
 		m_solverCombobox->addItem(abst->caption(), abst->name());
 	}
 
-	QList<GridCreatingConditionCreator*>::const_iterator git;
-	for (git = gclist.begin(); git != gclist.end(); ++git){
+	for (auto git = gclist.begin(); git != gclist.end(); ++git){
 		GridCreatingConditionCreator* c = *git;
 		m_gridGenComboBox->addItem(c->caption(), c->name());
 	}
@@ -234,9 +230,8 @@ void ConfirmPage::initializePage()
 		folderDir = QDir(pc->folderName());
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
-	QList<QLocale>::iterator lit;
 	QString filelist;
-	for (lit = allLangs.begin(); lit != allLangs.end(); ++lit){
+	for (auto lit = allLangs.begin(); lit != allLangs.end(); ++lit){
 		QLocale locale = *lit;
 		QVariant val = field(QString("lang%1").arg(locale.name()));
 		if (val.toBool() == true){
