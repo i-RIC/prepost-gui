@@ -145,4 +145,4 @@ private:
 	double m_leftShift;
 };
 
-#endif RAWDATARIVERCROSSSECTION_H
+#endif // RAWDATARIVERCROSSSECTION_H
