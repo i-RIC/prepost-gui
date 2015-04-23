@@ -29,7 +29,7 @@ public:
 			// not found maybe reset?
 			da = DA::New();
 			da->SetName(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());
-			m_grid->vtkGrid()->GetPointData()->AddArray(da);
+			GridRelatedConditionContainerT<V>::m_grid->vtkGrid()->GetPointData()->AddArray(da);
 			da->Delete();
 		}
 		da->Allocate(dataCount());
