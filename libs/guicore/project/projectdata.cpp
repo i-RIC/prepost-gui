@@ -522,6 +522,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 	thread->start();
 	/// wait for 3 seconds first.
 	int waitTime = 3000;
+	bool ok = false;
 	m_finished = thread->wait(waitTime);
 	qApp->processEvents();
 	if (! m_finished){
@@ -556,7 +557,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 			goto ERROR;
 		}
 	}
-	bool ok = thread->result();
+	ok = thread->result();
 	if (! ok){
 		goto ERROR;
 	}
