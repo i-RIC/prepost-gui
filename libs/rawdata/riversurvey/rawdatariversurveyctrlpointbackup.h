@@ -2,7 +2,7 @@
 #define RAWDATARIVERSURVEYCTRLPOINTBACKUP_H
 
 #include "rd_riversurvey_global.h"
-#include <Qlist>
+#include <QList>
 #include <QVector>
 #include "rawdatariverpathpoint.h"
 
