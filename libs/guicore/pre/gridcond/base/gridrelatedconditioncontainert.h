@@ -38,7 +38,7 @@ public:
 	{
 		GridRelatedConditionDimensionsContainer* dims = dimensions();
 		bool allok = true;
-		if (dims->containers().size() == 0){
+		if (dims == 0 || dims->containers().size() == 0){
 			allok = loadFromCgnsFileForIndex(fn, B, Z, 0);
 		} else {
 			for (int index = 0; index <= dims->maxIndex(); ++index){

@@ -26,8 +26,11 @@ const QString& GridRelatedConditionContainer::name() const
 GridRelatedConditionDimensionsContainer* GridRelatedConditionContainer::dimensions() const
 {
 	ProjectDataItem *item = m_grid->parent();
+	if (item == 0){return 0;}
 	item = item->parent();
+	if (item == 0){return 0;}
 	item = item->parent();
+	if (item == 0){return 0;}
 	PreProcessorGridTypeDataItemInterface* gtItem =
 			dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
 	return gtItem->rawdataTop()->groupDataItem(name())->dimensions();
