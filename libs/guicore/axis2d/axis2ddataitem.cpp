@@ -48,7 +48,7 @@ void Axis2dDataItem::setupActors()
 	m_actor->SetZAxisLabelText(".");
 #else
 	m_actor->SetZAxisLabelText("");
-#endif;
+#endif
 
 	m_widget = vtkSmartPointer<vtkOrientationMarkerWidget>::New();
 	m_widget->SetOutlineColor(.5, .5, .5);
