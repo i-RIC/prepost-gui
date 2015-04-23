@@ -19,13 +19,17 @@ public:
 		m_isComplexCondition = false;
 	}
 	/// Constructor
-	CgnsFileInputConditionContainer(const QString& name){
+	CgnsFileInputConditionContainer(const QString& name)
+		: QObject(0)
+	{
 		m_name = name;
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = false;
 	}
 	/// Constructor (with copying)
-	CgnsFileInputConditionContainer(const CgnsFileInputConditionContainer& c){
+	CgnsFileInputConditionContainer(const CgnsFileInputConditionContainer& c)
+		: QObject(0)
+	{
 		m_name = c.m_name;
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = false;
