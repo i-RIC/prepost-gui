@@ -85,7 +85,7 @@ private:
 	/// Background color
 	const QColor backgroundColor() const;
 	/// Set background color;
-	void setBackgroundColor(QColor& c);
+    void setBackgroundColor(const QColor& c);
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
 	ProjectData* m_projectData;
 	QPlainTextEdit* m_console;

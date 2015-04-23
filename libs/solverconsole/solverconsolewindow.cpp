@@ -303,7 +303,7 @@ const QColor SolverConsoleWindow::backgroundColor() const
 	return p.color(QPalette::Base);
 }
 
-void SolverConsoleWindow::setBackgroundColor(QColor& c)
+void SolverConsoleWindow::setBackgroundColor(const QColor &c)
 {
 	QPalette p = m_console->palette();
 	p.setColor(QPalette::Base, c);
