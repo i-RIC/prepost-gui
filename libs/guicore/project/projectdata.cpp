@@ -116,7 +116,7 @@ const QString ProjectData::absoluteFileName(const QString& relativeFileName) con
 	return workdir.absoluteFilePath(relativeFileName);
 }
 
-bool ProjectData::open(const QString &filename)
+bool ProjectData::unzipFrom(const QString &filename)
 {
 	// Unzip archive file
 	QProcess* process = iRIC::createUnzipArchiveProcess(filename, workDirectory());
@@ -205,24 +205,8 @@ bool ProjectData::save()
 	return ret;
 }
 
-bool ProjectData::saveExceptCGNS()
+bool ProjectData::zipTo(const QString &filename)
 {
-	mainWindow()->enterModelessDialogMode();
-	qApp->processEvents();
-	mainWindow()->setCursor(Qt::WaitCursor);
-	bool ret = mainfile()->saveExceptCGNS();
-	mainWindow()->setCursor(Qt::ArrowCursor);
-	mainWindow()->exitModelessDialogMode();
-	return ret;
-}
-
-bool ProjectData::save(const QString &filename)
-{
-	QTime time;
-	time.start();
-	bool ret = save();
-	if (ret == false){return false;}
-	int saveTime = time.elapsed();
 	QStringList filelist;
 	QDir workdir(workDirectory());
 	filelist << workdir.relativeFilePath(mainfile()->filename());
@@ -238,8 +222,7 @@ bool ProjectData::save(const QString &filename)
 	connect(process, SIGNAL(finished(int)), this, SLOT(handleFinish()));
 
 	// wait for 3 second first.
-	int waitTime = 3000 - saveTime;
-	if (waitTime < 10){waitTime = 10;}
+	int waitTime = 3000;
 	m_finished = process->waitForFinished(waitTime);
 	qApp->processEvents();
 	if (! m_finished){
@@ -259,7 +242,7 @@ bool ProjectData::save(const QString &filename)
 			qApp->processEvents();
 			process->waitForFinished(200);
 			m_waitDialog->setProgress(prog);
-			++prog;
+			++ prog;
 		}
 		m_waitDialog->setFinished();
 		m_waitDialog->hide();

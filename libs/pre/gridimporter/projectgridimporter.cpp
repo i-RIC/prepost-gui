@@ -42,7 +42,7 @@ bool ProjectGridImporter::import(Grid* grid, const QString& filename, const QStr
 	ProjectWorkspace* w = getProjectData(grid)->mainWindow()->workspace();
 	QString tmpworkfolder = ProjectData::newWorkfolderName(w->workspace());
 	ProjectData tmpProj(tmpworkfolder, 0);
-	tmpProj.open(filename);
+	tmpProj.unzipFrom(filename);
 	try {
 		tmpProj.loadSolverInformation();
 	} catch (ErrorMessage& /*m*/){

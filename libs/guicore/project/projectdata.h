@@ -48,19 +48,17 @@ public:
 		m_folderProject = isFolder;
 	}
 	/// Unzip the specified file into workfolder.
-	bool open(const QString& filename);
+	bool unzipFrom(const QString& zipFilename);
 	/// Load solver information from a project file.
 	void loadSolverInformation();
 	/// Load project data from a project file.
 	void load();
 	/// Load only CGNS file list from a project file.
 	void loadCgnsList();
-	/// Save project data into a project file.
-	bool save(const QString& filename);
+	/// Compress the workfolder content to specified zip file..
+	bool zipTo(const QString& filename);
 	/// Save project data into the work folder.
 	bool save();
-	/// Save project data except for CGNS files.
-	bool saveExceptCGNS();
 	/// Main file (project.xml)
 	ProjectMainFile* mainfile(){return m_mainfile;}
 	/// Solver definition

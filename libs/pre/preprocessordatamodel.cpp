@@ -160,7 +160,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	ProjectWorkspace* w = projectData()->mainWindow()->workspace();
 	QString tmpWorkfolder = ProjectData::newWorkfolderName(w->workspace());
 	ProjectData* tmpProj = new ProjectData(tmpWorkfolder, 0);
-	tmpProj->open(fname);
+	tmpProj->unzipFrom(fname);
 	tmpProj->loadCgnsList();
 
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (projectData()->mainWindow()->preProcessorWindow());

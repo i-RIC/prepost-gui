@@ -329,7 +329,7 @@ void iRICMainWindow::openProject(const QString& filename)
 		m_projectData = new ProjectData(wFolder, this);
 		// open project file. unzipping executed.
 		qApp->processEvents();
-		if (! m_projectData->open(filename)){
+		if (! m_projectData->unzipFrom(filename)){
 			// unzipping failed or canceled.
 			closeProject();
 			setCursor(Qt::ArrowCursor);
@@ -708,11 +708,11 @@ bool iRICMainWindow::saveProject(const QString &filename, bool folder)
 			QString newWorkFolder = ProjectData::newWorkfolderName(m_workspace->workspace());
 			ret = m_projectData->copyTo(newWorkFolder, true);
 			if (ret){
-				ret = m_projectData->save(filename);
+				ret = m_projectData->zipTo(filename);
 			}
 		} else {
 			// working on the working folder.
-			ret = m_projectData->save(filename);
+			ret = m_projectData->zipTo(filename);
 		}
 	}
 	if (ret){
