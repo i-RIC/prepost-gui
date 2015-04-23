@@ -329,6 +329,7 @@ void MeasuredData::setupPolyData()
 	argstr.append("pcj");
 	char* arg = new char[argstr.length() + 1];
 	strcpy(arg, iRIC::toStr(argstr).c_str());
+	bool finished = false;
 
 	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
 
@@ -337,13 +338,13 @@ void MeasuredData::setupPolyData()
 
 	if (m_pointData->GetPoints()->GetNumberOfPoints() < 3){
 		out.numberoftriangles = 0;
-		goto finialization;
+		goto finalization;
 	}
 	// start execution!
 	thread->start();
 
 	// wait for 1 second
-	bool finished = thread->wait(1000);
+	finished = thread->wait(1000);
 
 	if (! finished){
 		int prog = 10;
@@ -365,7 +366,7 @@ void MeasuredData::setupPolyData()
 		waitDialog->hide();
 		delete waitDialog;
 	}
-finialization:
+finalization:
 	delete in.pointlist;
 	delete arg;
 
