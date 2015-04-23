@@ -67,6 +67,7 @@ public:
 	void requestCrosssectionWindowDelete(RawDataRiverSurveyCrosssectionWindowProjectDataItem* item);
 	bool addToolBarButtons(QToolBar* /*parent*/);
 	QStringList containedFiles();
+	void setDimensionsToFirst();
 
 public slots:
 	void addRawData(QObject* creator);

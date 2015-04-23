@@ -16,6 +16,8 @@ public:
 	virtual SolverDefinitionGridType* gridType() = 0;
 	virtual const QList<PreProcessorRawDataGroupDataItemInterface*> groupDataItems() const = 0;
 	virtual PreProcessorRawDataGroupDataItemInterface* groupDataItem(const QString& name) = 0;
+	/// Set all dimensions to the first.
+	virtual void setDimensionsToFirst() = 0;
 };
 
 #endif // PREPROCESSORRAWDATATOPDATAITEMINTERFACE_H

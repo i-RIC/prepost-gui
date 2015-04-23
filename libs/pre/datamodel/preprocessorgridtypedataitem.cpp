@@ -235,6 +235,8 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		}
 		c = c.nextSibling();
 	}
+	// Reset RawData dimensions
+	m_rawdataTop->setDimensionsToFirst();
 }
 
 void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -336,3 +336,13 @@ void PreProcessorRawDataTopDataItem::saveToCgnsFile(const int fn)
 		gItem->saveComplexGroupsToCgnsFile(fn);
 	}
 }
+
+void PreProcessorRawDataTopDataItem::setDimensionsToFirst()
+{
+	QList<GraphicsWindowDataItem*>::iterator it;
+	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		PreProcessorRawDataGroupDataItem* gItem =
+				dynamic_cast<PreProcessorRawDataGroupDataItem*>(*it);
+		gItem->setDimensionsToFirst();
+	}
+}

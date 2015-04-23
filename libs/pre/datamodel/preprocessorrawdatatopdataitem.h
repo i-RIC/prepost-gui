@@ -45,11 +45,16 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void saveToCgnsFile(const int fn);
+	/// Set all dimensions to the first.
+	void setDimensionsToFirst();
+
 public slots:
 	void setupScalarBar();
+
 signals:
 	void valueRangeChanged(const QString& name);
 	void dataChanged();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

@@ -104,6 +104,9 @@ PreProcessorRawDataGroupDataItem::PreProcessorRawDataGroupDataItem(SolverDefinit
 
 	// add background data item.
 	addBackground();
+
+	// dummy filename
+	m_filename = "dummy.dat";
 }
 
 PreProcessorRawDataGroupDataItem::~PreProcessorRawDataGroupDataItem()
@@ -436,7 +439,7 @@ void PreProcessorRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 	// the background item should be at the last always.
 //	moveBackgroundToLast();
-	informValueRangeChange();
+//	informValueRangeChange();
 }
 
 void PreProcessorRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -1065,4 +1068,9 @@ void PreProcessorRawDataGroupDataItem::setupConnectionToRawData(RawData* rawdata
 		GridRelatedConditionDimensionContainer* cont = dims->containers().at(i);
 		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), rawdata, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
 	}
+}
+
+void PreProcessorRawDataGroupDataItem::setDimensionsToFirst()
+{
+	m_dimensions->setCurrentIndex(0, true);
 }

@@ -94,7 +94,6 @@ public:
 		QDataStream s(&f);
 		int count = m_values.size();
 		s << count;
-		m_values.clear();
 		for (int i = 0; i < count; ++i){
 			s << m_values.at(i);
 		}

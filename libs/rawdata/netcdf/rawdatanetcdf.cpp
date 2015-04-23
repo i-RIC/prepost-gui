@@ -20,6 +20,7 @@
 #include <vtkExtractGrid.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkCellArray.h>
+#include <vtkCellData.h>
 
 #include <netcdf.h>
 
@@ -271,6 +272,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		}
 	}
 	nc_close(ncid);
+	updateShapeData();
 }
 
 void RawDataNetcdf::saveExternalData(const QString& filename)
@@ -460,6 +462,16 @@ void RawDataNetcdf::updateShapeData()
 	}
 
 	points->Modified();
+
+	vtkDataArray* da = m_grid->GetCellData()->GetArray("values");
+	da->Initialize();
+	int size = xSize() * ySize();
+	da->Allocate(size);
+	for (int i = 0; i < size; ++i){
+		da->InsertNextTuple1(0);
+	}
+	da->Modified();
+
 	updateRegionPolyData();
 }
 

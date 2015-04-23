@@ -207,8 +207,8 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! dmNode.isNull()){m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
 	updateItemMap();
 	updateZDepthRange();
-	dataModel()->graphicsView()->ResetCameraClippingRange();
-	updateVisibility();
+//	dataModel()->graphicsView()->ResetCameraClippingRange();
+//	updateVisibility();
 }
 void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
