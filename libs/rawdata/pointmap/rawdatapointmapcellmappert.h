@@ -48,7 +48,7 @@ public:
 				pointCenter[0] = pointCenter[1] = pointCenter[2] = 0;
 				vtkCell* cell = RawDataCellMapperT<V, DA>::m_grid->vtkGrid()->GetCell(i);
 				for (int j = 0; j < cell->GetNumberOfPoints(); ++j){
-					m_grid->vtkGrid()->GetPoint(cell->GetPointId(j), point);
+					RawDataMapper::m_grid->vtkGrid()->GetPoint(cell->GetPointId(j), point);
 					for (int k = 0; k < 3; ++k){
 						pointCenter[k] += point[k];
 					}
