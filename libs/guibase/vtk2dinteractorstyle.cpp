@@ -1,4 +1,4 @@
-#include "vtk2DInteractorStyle.h"
+#include "vtk2dinteractorstyle.h"
 
 #include <vtkRenderWindowInteractor.h>
 #include <vtkObjectFactory.h>
