@@ -45,7 +45,8 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 		msg = msg.arg(trFilename).arg(errorStr).arg(errorLine).arg(errorColumn);
 		throw ErrorMessage(msg);
 	}
-	iRIC::removeAllComments(doc.documentElement());
+	QDomElement docElem = doc.documentElement();
+	iRIC::removeAllComments(&docElem);
 	QDomNode TSNode = doc.documentElement();
 	QDomNode contextNode = TSNode.firstChild();
 	int msgIndex = 1;

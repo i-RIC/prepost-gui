@@ -44,9 +44,9 @@ QString iRIC::getText(const QDomNode& node)
 	return "";
 }
 
-void iRIC::removeAllComments(QDomNode& node)
+void iRIC::removeAllComments(QDomNode* node)
 {
-	QDomNodeList children = node.childNodes();
+	QDomNodeList children = node->childNodes();
 	QList<QDomNode> commentNodes;
 	for (int i = 0; i < children.count(); ++i){
 		QDomNode childNode = children.at(i);
@@ -54,11 +54,11 @@ void iRIC::removeAllComments(QDomNode& node)
 			commentNodes.append(childNode);
 		} else {
 			// search child node recursively.
-			removeAllComments(childNode);
+			removeAllComments(&childNode);
 		}
 	}
 	for (int i = 0; i < commentNodes.count(); ++i){
-		node.removeChild(commentNodes[i]);
+		node->removeChild(commentNodes[i]);
 	}
 }
 

@@ -106,5 +106,6 @@ void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const {
 		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
 		throw ErrorMessage(msg);
 	}
-	iRIC::removeAllComments(doc->documentElement());
+	QDomElement docElem = doc->documentElement();
+	iRIC::removeAllComments(&docElem);
 }

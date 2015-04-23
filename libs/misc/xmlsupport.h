@@ -19,7 +19,7 @@ QDomNode MISCDLL_EXPORT getChildNodeWithAttribute(const QDomNode& parent, const 
 /// Get the text included in the node.
 QString MISCDLL_EXPORT getText(const QDomNode& node);
 /// Remove all comment nodes under the specified node.
-void MISCDLL_EXPORT removeAllComments(QDomNode& node);
+void MISCDLL_EXPORT removeAllComments(QDomNode *node);
 bool MISCDLL_EXPORT getBooleanAttribute(const QDomNode& node, const QString& name, bool defaultVal = false);
 void MISCDLL_EXPORT setBooleanAttribute(QXmlStreamWriter& writer, const QString& name, bool value);
 int MISCDLL_EXPORT getIntAttribute(const QDomNode& node, const QString& name, int defaultVal = 0);
