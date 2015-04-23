@@ -1,6 +1,6 @@
 #include "cgnsfileinputconditionwidgetfunctionaldelegate.h"
 
-#include <QSpinbox>
+#include <QSpinBox>
 #include <QModelIndex>
 
 #include <guibase/realnumbereditwidget.h>
