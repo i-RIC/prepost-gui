@@ -18,6 +18,7 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 	int nsteps;
 	int ier;
 	int B;
+    bool changed = false;
 	// goto base.
 	ier = cg_iRIC_GotoBase(fn, &B);
 	if (ier != 0){goto ERRORMSG;}
@@ -67,7 +68,7 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 			break;
 		}
 	}
-	bool changed = (tmplist != m_timesteps);
+    changed = (tmplist != m_timesteps);
 	m_timesteps = tmplist;
 	if (changed){
 		emit stepsUpdated(m_timesteps);

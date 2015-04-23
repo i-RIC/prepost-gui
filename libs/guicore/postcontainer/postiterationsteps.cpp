@@ -18,6 +18,7 @@ void PostIterationSteps::loadFromCgnsFile(const int fn)
 	int nsteps;
 	int ier;
 	int B;
+	bool changed = false;
 	// goto Base.
 	ier = cg_iRIC_GotoBase(fn, &B);
 	if (ier != 0){goto ERRORMSG;}
@@ -67,7 +68,7 @@ void PostIterationSteps::loadFromCgnsFile(const int fn)
 			break;
 		}
 	}
-	bool changed = (tmplist != m_iterationsteps);
+	changed = (tmplist != m_iterationsteps);
 	m_iterationsteps = tmplist;
 	if (changed){
 		emit stepsUpdated(m_iterationsteps);
