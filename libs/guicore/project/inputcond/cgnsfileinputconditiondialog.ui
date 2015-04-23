@@ -52,7 +52,7 @@
   <customwidget>
    <class>CgnsFileInputConditionPageContainer</class>
    <extends>QWidget</extends>
-   <header>cgnsfileinputconditionpagecontainer.h</header>
+   <header>project/inputcond/cgnsfileinputconditionpagecontainer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
