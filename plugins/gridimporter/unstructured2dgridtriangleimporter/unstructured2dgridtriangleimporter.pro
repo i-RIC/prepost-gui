@@ -26,8 +26,9 @@ LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1
 
-HEADERS = unstructured2dgridtriangleimporter.h
-SOURCES = unstructured2dgridtriangleimporter.cpp
+# Input
+HEADERS += unstructured2dgridtriangleimporter.h
+SOURCES += unstructured2dgridtriangleimporter.cpp
 TRANSLATIONS += languages/unstructured2dgridtriangleimporter_es_ES.ts \
                 languages/unstructured2dgridtriangleimporter_fr_FR.ts \
                 languages/unstructured2dgridtriangleimporter_id_ID.ts \

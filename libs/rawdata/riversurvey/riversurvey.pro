@@ -82,79 +82,79 @@ LIBS += -liriclib
 
 # Input
 HEADERS += gridcreatingconditionriversurveyinterface.h \
-					 rawdatarivercrosssection.h \
-					 rawdatarivercrosssectionaltitudemovedialog.h \
-					 rawdatariverpathpoint.h \
-					 rawdatariverpathpointexpanddialog.h \
-					 rawdatariverpathpointextensionadddialog.h \
-					 rawdatariverpathpointinsertdialog.h \
-					 rawdatariverpathpointmovedialog.h \
-					 rawdatariverpathpointrenamedialog.h \
-					 rawdatariverpathpointrotatedialog.h \
-					 rawdatariverpathpointshiftdialog.h \
-					 rawdatarivershapeinterpolator.h \
-					 rawdatariversurvey.h \
-					 rawdatariversurveybackgroundgridcreatethread.h \
-					 rawdatariversurveycreator.h \
-					 rawdatariversurveycrosssectionwindow.h \
-					 rawdatariversurveycrosssectionwindowdelegate.h \
-					 rawdatariversurveycrosssectionwindowgraphicsview.h \
-					 rawdatariversurveycrosssectionwindowprojectdataitem.h \
-					 rawdatariversurveycrosssectionwindowtableview.h \
-					 rawdatariversurveyctrlpointbackup.h \
-					 rawdatariversurveydisplaysettingdialog.h \
-					 rawdatariversurveyexporter.h \
-					 rawdatariversurveyimporter.h \
-					 rawdatariversurveyimportersettingdialog.h \
-					 rawdatariversurveynodemapper.h \
-					 rawdatariversurveyproxy.h \
-					 rawdatariversurveyvtkexporter.h \
-					 rd_riversurvey_global.h
+           rawdatarivercrosssection.h \
+           rawdatarivercrosssectionaltitudemovedialog.h \
+           rawdatariverpathpoint.h \
+           rawdatariverpathpointexpanddialog.h \
+           rawdatariverpathpointextensionadddialog.h \
+           rawdatariverpathpointinsertdialog.h \
+           rawdatariverpathpointmovedialog.h \
+           rawdatariverpathpointrenamedialog.h \
+           rawdatariverpathpointrotatedialog.h \
+           rawdatariverpathpointshiftdialog.h \
+           rawdatarivershapeinterpolator.h \
+           rawdatariversurvey.h \
+           rawdatariversurveybackgroundgridcreatethread.h \
+           rawdatariversurveycreator.h \
+           rawdatariversurveycrosssectionwindow.h \
+           rawdatariversurveycrosssectionwindowdelegate.h \
+           rawdatariversurveycrosssectionwindowgraphicsview.h \
+           rawdatariversurveycrosssectionwindowprojectdataitem.h \
+           rawdatariversurveycrosssectionwindowtableview.h \
+           rawdatariversurveyctrlpointbackup.h \
+           rawdatariversurveydisplaysettingdialog.h \
+           rawdatariversurveyexporter.h \
+           rawdatariversurveyimporter.h \
+           rawdatariversurveyimportersettingdialog.h \
+           rawdatariversurveynodemapper.h \
+           rawdatariversurveyproxy.h \
+           rawdatariversurveyvtkexporter.h \
+           rd_riversurvey_global.h
 FORMS += rawdatarivercrosssectionaltitudemovedialog.ui \
-				 rawdatariverpathpointexpanddialog.ui \
-				 rawdatariverpathpointextensionadddialog.ui \
-				 rawdatariverpathpointinsertdialog.ui \
-				 rawdatariverpathpointmovedialog.ui \
-				 rawdatariverpathpointrenamedialog.ui \
-				 rawdatariverpathpointrotatedialog.ui \
-				 rawdatariverpathpointshiftdialog.ui \
-				 rawdatariversurveycrosssectionwindow.ui \
-				 rawdatariversurveydisplaysettingdialog.ui \
-				 rawdatariversurveyimportersettingdialog.ui
+         rawdatariverpathpointexpanddialog.ui \
+         rawdatariverpathpointextensionadddialog.ui \
+         rawdatariverpathpointinsertdialog.ui \
+         rawdatariverpathpointmovedialog.ui \
+         rawdatariverpathpointrenamedialog.ui \
+         rawdatariverpathpointrotatedialog.ui \
+         rawdatariverpathpointshiftdialog.ui \
+         rawdatariversurveycrosssectionwindow.ui \
+         rawdatariversurveydisplaysettingdialog.ui \
+         rawdatariversurveyimportersettingdialog.ui
 SOURCES += rawdatarivercrosssection.cpp \
-					 rawdatarivercrosssectionaltitudemovedialog.cpp \
-					 rawdatariverpathpoint.cpp \
-					 rawdatariverpathpointexpanddialog.cpp \
-					 rawdatariverpathpointextensionadddialog.cpp \
-					 rawdatariverpathpointinsertdialog.cpp \
-					 rawdatariverpathpointmovedialog.cpp \
-					 rawdatariverpathpointrenamedialog.cpp \
-					 rawdatariverpathpointrotatedialog.cpp \
-					 rawdatariverpathpointshiftdialog.cpp \
-					 rawdatarivershapeinterpolator.cpp \
-					 rawdatariversurvey.cpp \
-					 rawdatariversurveybackgroundgridcreatethread.cpp \
-					 rawdatariversurveycreator.cpp \
-					 rawdatariversurveycrosssectionwindow.cpp \
-					 rawdatariversurveycrosssectionwindowdelegate.cpp \
-					 rawdatariversurveycrosssectionwindowgraphicsview.cpp \
-					 rawdatariversurveycrosssectionwindowprojectdataitem.cpp \
-					 rawdatariversurveycrosssectionwindowtableview.cpp \
-					 rawdatariversurveyctrlpointbackup.cpp \
-					 rawdatariversurveydisplaysettingdialog.cpp \
-					 rawdatariversurveyexporter.cpp \
-					 rawdatariversurveyimporter.cpp \
-					 rawdatariversurveyimportersettingdialog.cpp \
-					 rawdatariversurveynodemapper.cpp \
-					 rawdatariversurveyproxy.cpp \
-					 rawdatariversurveyvtkexporter.cpp
+           rawdatarivercrosssectionaltitudemovedialog.cpp \
+           rawdatariverpathpoint.cpp \
+           rawdatariverpathpointexpanddialog.cpp \
+           rawdatariverpathpointextensionadddialog.cpp \
+           rawdatariverpathpointinsertdialog.cpp \
+           rawdatariverpathpointmovedialog.cpp \
+           rawdatariverpathpointrenamedialog.cpp \
+           rawdatariverpathpointrotatedialog.cpp \
+           rawdatariverpathpointshiftdialog.cpp \
+           rawdatarivershapeinterpolator.cpp \
+           rawdatariversurvey.cpp \
+           rawdatariversurveybackgroundgridcreatethread.cpp \
+           rawdatariversurveycreator.cpp \
+           rawdatariversurveycrosssectionwindow.cpp \
+           rawdatariversurveycrosssectionwindowdelegate.cpp \
+           rawdatariversurveycrosssectionwindowgraphicsview.cpp \
+           rawdatariversurveycrosssectionwindowprojectdataitem.cpp \
+           rawdatariversurveycrosssectionwindowtableview.cpp \
+           rawdatariversurveyctrlpointbackup.cpp \
+           rawdatariversurveydisplaysettingdialog.cpp \
+           rawdatariversurveyexporter.cpp \
+           rawdatariversurveyimporter.cpp \
+           rawdatariversurveyimportersettingdialog.cpp \
+           rawdatariversurveynodemapper.cpp \
+           rawdatariversurveyproxy.cpp \
+           rawdatariversurveyvtkexporter.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricRdRiversurvey_es_ES.ts \
-								languages/iricRdRiversurvey_fr_FR.ts \
-								languages/iricRdRiversurvey_id_ID.ts \
-								languages/iricRdRiversurvey_ja_JP.ts \
-								languages/iricRdRiversurvey_ko_KR.ts \
-								languages/iricRdRiversurvey_ru_RU.ts \
-								languages/iricRdRiversurvey_th_TH.ts \
-								languages/iricRdRiversurvey_vi_VN.ts \
-								languages/iricRdRiversurvey_zh_CN.ts
+                languages/iricRdRiversurvey_fr_FR.ts \
+                languages/iricRdRiversurvey_id_ID.ts \
+                languages/iricRdRiversurvey_ja_JP.ts \
+                languages/iricRdRiversurvey_ko_KR.ts \
+                languages/iricRdRiversurvey_ru_RU.ts \
+                languages/iricRdRiversurvey_th_TH.ts \
+                languages/iricRdRiversurvey_vi_VN.ts \
+                languages/iricRdRiversurvey_zh_CN.ts

@@ -128,11 +128,11 @@ SOURCES += rawdatapolygon.cpp \
            rawdatapolygonshapeexporter.cpp \
            rawdatapolygontrianglethread.cpp
 TRANSLATIONS += languages/iricRdPolygon_es_ES.ts \
-								languages/iricRdPolygon_fr_FR.ts \
-								languages/iricRdPolygon_id_ID.ts \
-								languages/iricRdPolygon_ja_JP.ts \
-								languages/iricRdPolygon_ko_KR.ts \
-								languages/iricRdPolygon_ru_RU.ts \
-								languages/iricRdPolygon_th_TH.ts \
-								languages/iricRdPolygon_vi_VN.ts \
-								languages/iricRdPolygon_zh_CN.ts
+                languages/iricRdPolygon_fr_FR.ts \
+                languages/iricRdPolygon_id_ID.ts \
+                languages/iricRdPolygon_ja_JP.ts \
+                languages/iricRdPolygon_ko_KR.ts \
+                languages/iricRdPolygon_ru_RU.ts \
+                languages/iricRdPolygon_th_TH.ts \
+                languages/iricRdPolygon_vi_VN.ts \
+                languages/iricRdPolygon_zh_CN.ts

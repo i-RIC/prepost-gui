@@ -48,7 +48,8 @@ LIBS += -liricGuicore
 HEADERS += solverconsole_global.h \
            solverconsolewindow.h \
            solverconsolewindowprojectdataitem.h
-SOURCES += solverconsolewindow.cpp solverconsolewindowprojectdataitem.cpp
+SOURCES += solverconsolewindow.cpp \
+           solverconsolewindowprojectdataitem.cpp
 RESOURCES += solverconsole.qrc
 TRANSLATIONS += languages/iricSolverconsole_es_ES.ts \
                 languages/iricSolverconsole_fr_FR.ts \

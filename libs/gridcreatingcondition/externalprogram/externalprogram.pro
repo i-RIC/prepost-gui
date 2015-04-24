@@ -85,19 +85,19 @@ LIBS += \
 
 # Input
 HEADERS += gcc_externalprogram_global.h \
-					 gridcreatingconditioncreatorexternalprogram.h \
-					 gridcreatingconditionexternalprogram.h \
-					 gridcreatingconditionexternalprogramsettingdialog.h
+           gridcreatingconditioncreatorexternalprogram.h \
+           gridcreatingconditionexternalprogram.h \
+           gridcreatingconditionexternalprogramsettingdialog.h
 FORMS += gridcreatingconditionexternalprogramsettingdialog.ui
 SOURCES += gridcreatingconditioncreatorexternalprogram.cpp \
-					 gridcreatingconditionexternalprogram.cpp \
-					 gridcreatingconditionexternalprogramsettingdialog.cpp
+           gridcreatingconditionexternalprogram.cpp \
+           gridcreatingconditionexternalprogramsettingdialog.cpp
 TRANSLATIONS += languages/iricGccExternalprogram_es_ES.ts \
-								languages/iricGccExternalprogram_fr_FR.ts \
-								languages/iricGccExternalprogram_id_ID.ts \
-								languages/iricGccExternalprogram_ja_JP.ts \
-								languages/iricGccExternalprogram_ko_KR.ts \
-								languages/iricGccExternalprogram_ru_RU.ts \
-								languages/iricGccExternalprogram_th_TH.ts \
-								languages/iricGccExternalprogram_vi_VN.ts \
-								languages/iricGccExternalprogram_zh_CN.ts
+                languages/iricGccExternalprogram_fr_FR.ts \
+                languages/iricGccExternalprogram_id_ID.ts \
+                languages/iricGccExternalprogram_ja_JP.ts \
+                languages/iricGccExternalprogram_ko_KR.ts \
+                languages/iricGccExternalprogram_ru_RU.ts \
+                languages/iricGccExternalprogram_th_TH.ts \
+                languages/iricGccExternalprogram_vi_VN.ts \
+                languages/iricGccExternalprogram_zh_CN.ts

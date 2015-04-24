@@ -25,8 +25,9 @@ LIBS += -liricGuicore
 LIBS += \
 	-lvtkCommonCore-6.1
 
-HEADERS = structured2dgridnaysgridimporter.h
-SOURCES = structured2dgridnaysgridimporter.cpp
+# Input
+HEADERS += structured2dgridnaysgridimporter.h
+SOURCES += structured2dgridnaysgridimporter.cpp
 TRANSLATIONS += languages/structured2dgridnaysgridimporter_es_ES.ts \
                 languages/structured2dgridnaysgridimporter_fr_FR.ts \
                 languages/structured2dgridnaysgridimporter_id_ID.ts \

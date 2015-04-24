@@ -111,58 +111,58 @@ unix {
 
 # Input
 HEADERS += rawdatapointmap.h \
-					 rawdatapointmapaddpointdialog.h \
-					 rawdatapointmapbreakline.h \
-					 rawdatapointmapcellmappert.h \
-					 rawdatapointmapdelptsgreaterthandialog.h \
-					 rawdatapointmapdelptslessthandialog.h \
-					 rawdatapointmapeditptsdialog.h \
-					 rawdatapointmapinterpolatepoints.h \
-					 rawdatapointmapmappingmode.h \
-					 rawdatapointmapnodemappert.h \
-					 rawdatapointmaprealcreator.h \
-					 rawdatapointmaprealexporter.h \
-					 rawdatapointmaprealimporter.h \
-					 rawdatapointmaprealimporterfilterdialog.h \
-					 rawdatapointmaprepresentationdialog.h \
-					 rawdatapointmapstlexporter.h \
-					 rawdatapointmapstlimporter.h \
-					 rawdatapointmapt.h \
-					 rawdatapointmaptemplatemappingsetting.h \
-					 rawdatapointmaptemplatenodemappert.h \
-					 rawdatapointmapvtkexporter.h \
-					 rd_pointmap_global.h
+           rawdatapointmapaddpointdialog.h \
+           rawdatapointmapbreakline.h \
+           rawdatapointmapcellmappert.h \
+           rawdatapointmapdelptsgreaterthandialog.h \
+           rawdatapointmapdelptslessthandialog.h \
+           rawdatapointmapeditptsdialog.h \
+           rawdatapointmapinterpolatepoints.h \
+           rawdatapointmapmappingmode.h \
+           rawdatapointmapnodemappert.h \
+           rawdatapointmaprealcreator.h \
+           rawdatapointmaprealexporter.h \
+           rawdatapointmaprealimporter.h \
+           rawdatapointmaprealimporterfilterdialog.h \
+           rawdatapointmaprepresentationdialog.h \
+           rawdatapointmapstlexporter.h \
+           rawdatapointmapstlimporter.h \
+           rawdatapointmapt.h \
+           rawdatapointmaptemplatemappingsetting.h \
+           rawdatapointmaptemplatenodemappert.h \
+           rawdatapointmapvtkexporter.h \
+           rd_pointmap_global.h
 FORMS += rawdatapointmapaddpointdialog.ui \
-				 rawdatapointmapdelptsgreaterthandialog.ui \
-				 rawdatapointmapdelptslessthandialog.ui \
-				 rawdatapointmapeditptsdialog.ui \
-				 rawdatapointmapinterpolatepoints.ui \
-				 rawdatapointmaprealimporterfilterdialog.ui \
-				 rawdatapointmaprepresentationdialog.ui
+         rawdatapointmapdelptsgreaterthandialog.ui \
+         rawdatapointmapdelptslessthandialog.ui \
+         rawdatapointmapeditptsdialog.ui \
+         rawdatapointmapinterpolatepoints.ui \
+         rawdatapointmaprealimporterfilterdialog.ui \
+         rawdatapointmaprepresentationdialog.ui
 SOURCES += rawdatapointmap.cpp \
-					 rawdatapointmapaddpointdialog.cpp \
-					 rawdatapointmapbreakline.cpp \
-					 rawdatapointmapdelptsgreaterthandialog.cpp \
-					 rawdatapointmapdelptslessthandialog.cpp \
-					 rawdatapointmapeditptsdialog.cpp \
-					 rawdatapointmapinterpolatepoints.cpp \
-					 rawdatapointmapmappingmode.cpp \
-					 rawdatapointmaprealcreator.cpp \
-					 rawdatapointmaprealexporter.cpp \
-					 rawdatapointmaprealimporter.cpp \
-					 rawdatapointmaprealimporterfilterdialog.cpp \
-					 rawdatapointmaprepresentationdialog.cpp \
-					 rawdatapointmapstlexporter.cpp \
-					 rawdatapointmapstlimporter.cpp \
-					 rawdatapointmaptemplatemappingsetting.cpp \
-					 rawdatapointmapvtkexporter.cpp
+           rawdatapointmapaddpointdialog.cpp \
+           rawdatapointmapbreakline.cpp \
+           rawdatapointmapdelptsgreaterthandialog.cpp \
+           rawdatapointmapdelptslessthandialog.cpp \
+           rawdatapointmapeditptsdialog.cpp \
+           rawdatapointmapinterpolatepoints.cpp \
+           rawdatapointmapmappingmode.cpp \
+           rawdatapointmaprealcreator.cpp \
+           rawdatapointmaprealexporter.cpp \
+           rawdatapointmaprealimporter.cpp \
+           rawdatapointmaprealimporterfilterdialog.cpp \
+           rawdatapointmaprepresentationdialog.cpp \
+           rawdatapointmapstlexporter.cpp \
+           rawdatapointmapstlimporter.cpp \
+           rawdatapointmaptemplatemappingsetting.cpp \
+           rawdatapointmapvtkexporter.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricRdPointmap_es_ES.ts \
-								languages/iricRdPointmap_fr_FR.ts \
-								languages/iricRdPointmap_id_ID.ts \
-								languages/iricRdPointmap_ja_JP.ts \
-								languages/iricRdPointmap_ko_KR.ts \
-								languages/iricRdPointmap_ru_RU.ts \
-								languages/iricRdPointmap_th_TH.ts \
-								languages/iricRdPointmap_vi_VN.ts \
-								languages/iricRdPointmap_zh_CN.ts
+                languages/iricRdPointmap_fr_FR.ts \
+                languages/iricRdPointmap_id_ID.ts \
+                languages/iricRdPointmap_ja_JP.ts \
+                languages/iricRdPointmap_ko_KR.ts \
+                languages/iricRdPointmap_ru_RU.ts \
+                languages/iricRdPointmap_th_TH.ts \
+                languages/iricRdPointmap_vi_VN.ts \
+                languages/iricRdPointmap_zh_CN.ts

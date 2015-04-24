@@ -19,19 +19,29 @@ QT += network widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../misc/debug"
-} else {
-	LIBS += -L"../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../misc/debug"
+	} else {
+		LIBS += -L"../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../misc"
 }
 LIBS += -liricMisc
 
 # iricTriangle
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../triangle/debug"
-} else {
-	LIBS += -L"../triangle/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../triangle/debug"
+	} else {
+		LIBS += -L"../triangle/release"
+	}
+}
+unix {
+	LIBS += -L"../triangle"
 }
 LIBS += -liricTriangle
 
@@ -74,9 +84,9 @@ LIBS += \
 	-lvtkFiltersTexture-6.1 \
 	-lvtkGUISupportQt-6.1 \
 	-lvtkInteractionWidgets-6.1 \
-	-lvtkIoImage-6.1 \
-	-lvtkIoCore-6.1 \
-	-lvtkIoLegacy-6.1 \
+	-lvtkIOImage-6.1 \
+	-lvtkIOCore-6.1 \
+	-lvtkIOLegacy-6.1 \
 	-lvtkRenderingAnnotation-6.1 \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingFreeType-6.1 \
@@ -103,6 +113,7 @@ HEADERS += guicore_global.h \
            base/propertybrowser.h \
            base/snapshotenabledwindow.h \
            base/svgsnapshotenabledwindow.h \
+           base/svkmlexportwindow.h \
            base/windowwithobjectbrowser.h \
            base/windowwithpropertybrowser.h \
            base/windowwithzindex.h \
@@ -270,6 +281,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridrelatedconditioncontainert.h \
            pre/gridcond/base/gridrelatedconditiondimensioncontainer.h \
            pre/gridcond/base/gridrelatedconditiondimensioncontainert.h \
+           pre/gridcond/base/gridrelatedconditiondimensionscontainer.h \
            pre/gridcond/base/gridrelatedconditiondimensionselectwidget.h \
            pre/gridcond/base/gridrelatedconditioneditdialog.h \
            pre/gridcond/base/gridrelatedconditioneditdialogt.h \
@@ -297,9 +309,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridrelatedconditionrealvariationeditwidget.h \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldelegate.h \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.h \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.h \
-    pre/gridcond/base/gridrelatedconditiondimensionscontainer.h \
-    base/svkmlexportwindow.h
+           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
@@ -468,6 +478,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridrelatedconditioncontainer.cpp \
            pre/gridcond/base/gridrelatedconditiondimensioncontainer.cpp \
+           pre/gridcond/base/gridrelatedconditiondimensionscontainer.cpp \
            pre/gridcond/base/gridrelatedconditiondimensionselectwidget.cpp \
            pre/gridcond/base/gridrelatedconditioneditdialog.cpp \
            pre/gridcond/base/gridrelatedconditionvariationeditdialog.cpp \
@@ -482,8 +493,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridrelatedconditionrealvariationeditwidget.cpp \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldelegate.cpp \
            project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.cpp \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.cpp \
-    pre/gridcond/base/gridrelatedconditiondimensionscontainer.cpp
+           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

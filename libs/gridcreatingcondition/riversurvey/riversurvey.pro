@@ -93,25 +93,25 @@ LIBS += \
 
 # Input
 HEADERS += gcc_riversurvey_global.h \
-					 gridcreatingconditioncreatorriversurvey.h \
-					 gridcreatingconditionriversurvey.h \
-					 gridcreatingconditionriversurveypointadddialog.h \
-					 gridcreatingconditionriversurveypointmovedialog.h \
-					 gridcreatingconditionriversurveypointregionadddialog.h \
-					 gridcreatingconditionriversurveypointrepositiondialog.h \
-					 gridcreatingconditionriversurveyregiondialog.h
+           gridcreatingconditioncreatorriversurvey.h \
+           gridcreatingconditionriversurvey.h \
+           gridcreatingconditionriversurveypointadddialog.h \
+           gridcreatingconditionriversurveypointmovedialog.h \
+           gridcreatingconditionriversurveypointregionadddialog.h \
+           gridcreatingconditionriversurveypointrepositiondialog.h \
+           gridcreatingconditionriversurveyregiondialog.h
 FORMS += gridcreatingconditionriversurveypointadddialog.ui \
-				 gridcreatingconditionriversurveypointmovedialog.ui \
-				 gridcreatingconditionriversurveypointregionadddialog.ui \
-				 gridcreatingconditionriversurveypointrepositiondialog.ui \
-				 gridcreatingconditionriversurveyregiondialog.ui
+         gridcreatingconditionriversurveypointmovedialog.ui \
+         gridcreatingconditionriversurveypointregionadddialog.ui \
+         gridcreatingconditionriversurveypointrepositiondialog.ui \
+         gridcreatingconditionriversurveyregiondialog.ui
 SOURCES += gridcreatingconditioncreatorriversurvey.cpp \
-					 gridcreatingconditionriversurvey.cpp \
-					 gridcreatingconditionriversurveypointadddialog.cpp \
-					 gridcreatingconditionriversurveypointmovedialog.cpp \
-					 gridcreatingconditionriversurveypointregionadddialog.cpp \
-					 gridcreatingconditionriversurveypointrepositiondialog.cpp \
-					 gridcreatingconditionriversurveyregiondialog.cpp
+           gridcreatingconditionriversurvey.cpp \
+           gridcreatingconditionriversurveypointadddialog.cpp \
+           gridcreatingconditionriversurveypointmovedialog.cpp \
+           gridcreatingconditionriversurveypointregionadddialog.cpp \
+           gridcreatingconditionriversurveypointrepositiondialog.cpp \
+           gridcreatingconditionriversurveyregiondialog.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGccRiversurvey_es_ES.ts \
                 languages/iricGccRiversurvey_fr_FR.ts \

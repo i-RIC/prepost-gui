@@ -13,10 +13,15 @@ include( ../../../paths.pri )
 
 # iricGuicore library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../../libs/guicore/debug"
-} else {
-	LIBS += -L"../../../libs/guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../../libs/guicore/debug"
+	} else {
+		LIBS += -L"../../../libs/guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../../libs/guicore"
 }
 LIBS += -liricGuicore
 
@@ -25,8 +30,9 @@ LIBS += -liricGuicore
 LIBS += \
 	-lvtkCommonCore-6.1
 
-HEADERS = structured2dgridnayscsvexporter.h
-SOURCES = structured2dgridnayscsvexporter.cpp
+# Input
+HEADERS += structured2dgridnayscsvexporter.h
+SOURCES += structured2dgridnayscsvexporter.cpp
 TRANSLATIONS += languages/structured2dgridnayscsvexporter_es_ES.ts \
                 languages/structured2dgridnayscsvexporter_fr_FR.ts \
                 languages/structured2dgridnayscsvexporter_id_ID.ts \
