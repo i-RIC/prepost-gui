@@ -20,7 +20,7 @@ int IRICLIBDLL cg_iRIC_InitRead_Base(int fid, char* basename);
 
 int IRICLIBDLL cg_iRIC_InitRead(int fid);
 
-int IRICLIBDLL cg_iRIC_Flush(char* filename, int* fid);
+int IRICLIBDLL cg_iRIC_Flush(char* name, int* fid);
 
 int IRICLIBDLL cg_iRIC_GotoBase(int fid, int* B);
 
