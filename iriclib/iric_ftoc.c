@@ -81,6 +81,14 @@ void IRICLIBDLL FMNAME(cg_iric_initread_f, CG_IRIC_INITREAD_F) (int *fid, int *i
 	*ier = cg_iRIC_InitRead(*fid);
 }
 
+void IRICLIBDLL FMNAME(cg_iric_flush_f, CG_IRIC_FLUSH_F) (STR_PSTR(filename), int *fid, int *ier STR_PLEN(filename)) {
+	char c_filename[STRINGMAXLEN+1];
+	*ier = cg_iRIC_Flush(c_filename, fid);
+
+	if (*ier) return;
+	string_2_F_string(c_filename, STR_PTR(filename), STR_LEN(filename), ier);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_gotocc_f, CG_IRIC_GOTOCC_F) (int *fid, int *ier) {
 	*ier = cg_iRIC_GotoCC(*fid);
 }

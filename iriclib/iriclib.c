@@ -345,10 +345,9 @@ static int local_gotocomplexchild_create_Mul(int fid, char* groupname, int num, 
 	return ier;
 }
 
-void local_init_properties(int fid){
-	int i, j, oldlength;
+void local_init_fileindex(int fid){
 	// extend arrays if necessary.
-	if (! (fileindex && fid < FILEID_MAX)){
+	if (! (fileindex && fid < fileindexlength)){
 		oldlength = fileindexlength;
 		fileindexlength = (fid / FILEID_MAX + 1) * FILEID_MAX;
 		fileindex = realloc(fileindex, sizeof(int) * fileindexlength);
@@ -356,6 +355,12 @@ void local_init_properties(int fid){
 			fileindex[i] = -1;
 		}
 	}
+}
+
+void local_init_properties(int fid){
+	int i, j, oldlength;
+
+	local_init_fileindex(fid);
 
 	if (fileindex[fid] != -1){
 		// this fid is already used. reuse it.
@@ -1014,6 +1019,26 @@ int cg_iRIC_InitRead_Base(int fid, char* bname)
 int cg_iRIC_InitRead(int fid)
 {
 	return cg_iRIC_InitRead_Base(fid, NULL);
+}
+
+int cg_iRIC_Flush(char* filename, int* fid){
+	int ier;
+	// close the CGNS fie first.
+	ier = cg_close(*fid);
+	if (ier != 0){return ier;}
+
+	int findex = fileindex[*fid];
+
+	// clear the dictionary
+	fileindex[*fid] = -1;
+
+	// open the file again
+	ier = cg_open(filename, CG_MODE_MODIFY, fid);
+	if (ier != 0){return ier;}
+
+	local_init_fileindex(*fid);
+	fileindex[*fid] = findex;
+	return 0;
 }
 
 int cg_iRIC_GotoBase(int fid, int* B){
