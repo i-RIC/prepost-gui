@@ -38,7 +38,8 @@ GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExterna
 		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
 		throw ErrorMessage(msg);
 	}
-	iRIC::removeAllComments(doc.documentElement());
+	QDomElement docElem = doc.documentElement();
+	iRIC::removeAllComments(&docElem);
 	QDomNode SDNode = doc.documentElement();
 	QDomElement sdElem = SDNode.toElement();
 
