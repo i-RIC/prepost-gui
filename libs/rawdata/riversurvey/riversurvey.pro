@@ -18,28 +18,43 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
 }
-LIBS += -liricMisc
+unix {
+	LIBS += -L"../../misc"
+}
+	LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
@@ -55,8 +70,8 @@ LIBS += \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkFiltersExtraction-6.1 \
 	-lvtkFiltersGeometry-6.1 \
-	-lvtkIoCore-6.1 \
-	-lvtkIoLegacy-6.1 \
+	-lvtkIOCore-6.1 \
+	-lvtkIOLegacy-6.1 \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1

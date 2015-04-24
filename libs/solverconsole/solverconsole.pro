@@ -18,19 +18,29 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../misc/debug"
-} else {
-	LIBS += -L"../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../misc/debug"
+	} else {
+		LIBS += -L"../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../misc"
 }
 LIBS += -liricMisc
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../guicore/debug"
-} else {
-	LIBS += -L"../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../guicore/debug"
+	} else {
+		LIBS += -L"../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../guicore"
 }
 LIBS += -liricGuicore
 

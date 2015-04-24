@@ -20,37 +20,57 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
 # iricTriangle
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../triangle/debug"
-} else {
-	LIBS += -L"../../triangle/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../triangle/debug"
+	} else {
+		LIBS += -L"../../triangle/release"
+	}
 }
- LIBS += -liricTriangle
+unix {
+	LIBS += -L"../../triangle"
+}
+LIBS += -liricTriangle
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
@@ -68,10 +88,10 @@ LIBS += \
 	-lvtkCommonTransforms-6.1 \
 	-lvtkFiltersCore-6.1 \
 	-lvtkFiltersGeneral-6.1 \
-	-lvtkIoCore-6.1 \
-	-lvtkIoExport-6.1 \
-	-lvtkIoGeometry-6.1 \
-	-lvtkIoLegacy-6.1 \
+	-lvtkIOCore-6.1 \
+	-lvtkIOExport-6.1 \
+	-lvtkIOGeometry-6.1 \
+	-lvtkIOLegacy-6.1 \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLabel-6.1 \
 	-lvtkRenderingLOD-6.1
@@ -82,7 +102,12 @@ LIBS += -liriclib
 
 # GDAL
 
-LIBS += -lgdal_i
+win32 {
+	LIBS += -lgdal_i
+}
+unix {
+	LIBS += -lgdal
+}
 
 # Input
 HEADERS += rawdatapointmap.h \
