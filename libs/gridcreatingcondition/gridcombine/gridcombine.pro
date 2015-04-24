@@ -18,28 +18,43 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
@@ -56,7 +71,6 @@ LIBS += \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLabel-6.1
 
-# Input
 # Input
 HEADERS += gcc_gridcombine_global.h \
            gridcreatingconditioncreatorgridcombine.h \

@@ -18,37 +18,57 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32{
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
 # iricRdRiversurvey
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../rawdata/riversurvey/debug"
-} else {
-	LIBS += -L"../../rawdata/riversurvey/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../rawdata/riversurvey/debug"
+	} else {
+		LIBS += -L"../../rawdata/riversurvey/release"
+	}
+}
+unix {
+	LIBS += -L"../../rawdata/riversurvey"
 }
 LIBS += -liricRdRiversurvey
 

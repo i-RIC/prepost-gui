@@ -20,10 +20,15 @@ QT += xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../misc/debug"
-} else {
-	LIBS += -L"../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../misc/debug"
+	} else {
+		LIBS += -L"../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../misc"
 }
 LIBS += -liricMisc
 
@@ -33,18 +38,27 @@ LIBS += -liricMisc
 
 # Qwt
 
-CONFIG(debug, debug|release) {
-	LIBS += -lqwtd
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -lqwtd
+	}else {
+		LIBS += -lqwt
+		DEFINES += QT_NO_DEBUG_OUTPUT
+		DEFINES += QT_NO_WARNING_OUTPUT
+	}
 }
-else {
+unix {
 	LIBS += -lqwt
-	DEFINES += QT_NO_DEBUG_OUTPUT
-	DEFINES += QT_NO_WARNING_OUTPUT
 }
 
 # proj.4
 
-LIBS += -lproj_i
+win32 {
+	LIBS += -lproj_i
+}
+unix {
+	LIBS += -lproj
+}
 
 # VTK
 

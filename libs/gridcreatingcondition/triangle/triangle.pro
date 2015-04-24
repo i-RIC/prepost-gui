@@ -20,37 +20,57 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
 	LIBS += -L"../../misc/release"
 }
 LIBS += -liricMisc
 
 # iricTriangle
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../triangle/debug"
-} else {
-	LIBS += -L"../../triangle/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../triangle/debug"
+	} else {
+		LIBS += -L"../../triangle/release"
+	}
+}
+unix {
+	LIBS += -L"../../triangle"
 }
 LIBS += -liricTriangle
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
 	LIBS += -L"../../guibase/release"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
