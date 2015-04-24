@@ -46,7 +46,7 @@
   <customwidget>
    <class>ProjectPropertyBasicInfoWidget</class>
    <extends>QWidget</extends>
-   <header>projectpropertybasicinfowidget.h</header>
+   <header>projectproperty/projectpropertybasicinfowidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

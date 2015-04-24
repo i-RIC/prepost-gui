@@ -60,25 +60,25 @@
   <customwidget>
    <class>PreferencePageGeneral</class>
    <extends>QWidget</extends>
-   <header>preferencepagegeneral.h</header>
+   <header>pref/preferencepagegeneral.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>PreferencePageGraphicsDefault</class>
    <extends>QWidget</extends>
-   <header>preferencepagegraphicsdefault.h</header>
+   <header>pref/preferencepagegraphicsdefault.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>PreferencePageGridCheck</class>
    <extends>QWidget</extends>
-   <header>preferencepagegridcheck.h</header>
+   <header>pref/preferencepagegridcheck.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>PreferencePageProxy</class>
    <extends>QWidget</extends>
-   <header>preferencepageproxy.h</header>
+   <header>pref/preferencepageproxy.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

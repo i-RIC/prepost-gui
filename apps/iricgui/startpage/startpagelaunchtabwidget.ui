@@ -141,13 +141,13 @@
   <customwidget>
    <class>StartPageRecentProjectList</class>
    <extends>QWidget</extends>
-   <header>startpagerecentprojectlist.h</header>
+   <header>startpage/startpagerecentprojectlist.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>StartPageRecentSolverList</class>
    <extends>QWidget</extends>
-   <header>startpagerecentsolverlist.h</header>
+   <header>startpage/startpagerecentsolverlist.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

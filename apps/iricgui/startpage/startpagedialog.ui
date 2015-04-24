@@ -201,13 +201,13 @@ QTabBar::tab:only-one {
   <customwidget>
    <class>StartPageLaunchTabWidget</class>
    <extends>QWidget</extends>
-   <header>startpagelaunchtabwidget.h</header>
+   <header>startpage/startpagelaunchtabwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>StartPageHelpTabWidget</class>
    <extends>QWidget</extends>
-   <header>startpagehelptabwidget.h</header>
+   <header>startpage/startpagehelptabwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
