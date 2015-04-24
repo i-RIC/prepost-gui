@@ -1037,6 +1037,7 @@ int cg_iRIC_Flush(char* filename, int* fid){
 	ier = cg_open(filename, CG_MODE_MODIFY, fid);
 	if (ier != 0){return ier;}
 
+	lastfileid = *fid;
 	local_init_fileindex(*fid);
 	fileindex[*fid] = findex;
 	return 0;
