@@ -346,6 +346,7 @@ static int local_gotocomplexchild_create_Mul(int fid, char* groupname, int num, 
 }
 
 void local_init_fileindex(int fid){
+	int i, oldlength;
 	// extend arrays if necessary.
 	if (! (fileindex && fid < fileindexlength)){
 		oldlength = fileindexlength;
@@ -358,7 +359,7 @@ void local_init_fileindex(int fid){
 }
 
 void local_init_properties(int fid){
-	int i, j, oldlength;
+	int i, j;
 
 	local_init_fileindex(fid);
 
