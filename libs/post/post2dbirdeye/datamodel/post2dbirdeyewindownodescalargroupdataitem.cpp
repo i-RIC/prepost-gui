@@ -123,6 +123,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	createValueClippedPolyData();
 	switch(m_contour)
 	{
+	case ContourSettingWidget::Points:
+		// do nothing.
+		break;
 	case ContourSettingWidget::Isolines:
 		setupIsolineSetting();
 		break;
@@ -384,6 +387,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	m_titleTextSetting.applySetting(a->GetTitleTextProperty());
 	m_labelTextSetting.applySetting(a->GetLabelTextProperty());
 	switch (m_contour) {
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		a->SetMaximumNumberOfColors(m_numberOfDivisions);
 		break;

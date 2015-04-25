@@ -261,6 +261,8 @@ void Graph2dWindowMarkerSettingDialog::styleChanged(int index)
 	case 3:
 		penStyle = Qt::DashDotLine;
 		break;
+	default:
+		penStyle = Qt::SolidLine;
 	}
 	m_item->setPenStyle(penStyle);
 }
