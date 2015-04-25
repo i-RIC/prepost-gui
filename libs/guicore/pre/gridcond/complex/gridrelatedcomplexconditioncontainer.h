@@ -69,7 +69,7 @@ public:
 		copy->DeepCopy(dataArray());
 		return copy;
 	}
-	const unsigned int dataCount() const {
+	unsigned int dataCount() const {
 		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node){
 			return m_grid->nodeCount();
 		} else {

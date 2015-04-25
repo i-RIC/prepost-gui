@@ -21,8 +21,8 @@ public:
 	void setVertex(unsigned int index, const QVector2D &v);
 	bool loadFromCgnsFile(const int fn, int B, int Z);
 	bool saveToCgnsFile(const int fn, int B, char* zonename);
-	const unsigned int vertexCount() const {return m_vertexGrid->GetNumberOfPoints();}
-	const unsigned int cellCount() const {return nodeCount() - 1;}
+	unsigned int vertexCount() const {return m_vertexGrid->GetNumberOfPoints();}
+	unsigned int cellCount() const {return nodeCount() - 1;}
 	void setPoints(vtkPoints* points);
 	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections(){
 		return m_crossSections;

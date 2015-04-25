@@ -31,7 +31,7 @@ public:
 	virtual bool saveToCgnsFile(int fn, int B, int Z) = 0;
 
 	virtual void allocate() = 0;
-	virtual const unsigned int dataCount() const = 0;
+	virtual unsigned int dataCount() const = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
 	bool isCustomModified(){return m_isCustomModified;}
 	void setCustomModified(bool c){m_isCustomModified = c;}

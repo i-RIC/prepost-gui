@@ -108,7 +108,7 @@ private:
 	/// Background color
 	const QColor backgroundColor() const;
 	/// Set background color;
-	void setBackgroundColor(QColor& c);
+	void setBackgroundColor(const QColor& c);
 	/// Object browser
 	PreObjectBrowser* m_objectBrowser;
 	PreProcessorDataModelInterface* m_dataModel;

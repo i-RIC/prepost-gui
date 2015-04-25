@@ -1,5 +1,5 @@
 #include <cmath>
-#include "gridcreatingconditionriversurvey15D.h"
+#include "gridcreatingconditionriversurvey15d.h"
 #include "gridcreatingconditionriversurvey15dpointadddialog.h"
 #include "gridcreatingconditionriversurvey15dpointmovedialog.h"
 #include "gridcreatingconditionriversurvey15dpointregionadddialog.h"

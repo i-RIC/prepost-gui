@@ -2257,7 +2257,7 @@ bool GridCreatingConditionCompoundChannel::activePolylineHasThreeVertices()
 	return line.count() >= 3;
 }
 
-GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getLeftBank(QVector<QPointF>& centerLine)
+GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getLeftBank(const QVector<QPointF>& centerLine)
 {
 	QPointF p;
 
@@ -2315,7 +2315,7 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	return getLowWaterEdgeSpline(headEdge, middleEdge, tailEdge, discardHead, discardTail, QVector2D(hintVec.x(), hintVec.y()));
 }
 
-GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getRightBank(QVector<QPointF>& centerLine)
+GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getRightBank(const QVector<QPointF> &centerLine)
 {
 	QPointF p;
 
@@ -2446,7 +2446,7 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	return ret;
 }
 
-GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getLeftEdge(QVector<QPointF>& leftBank)
+GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getLeftEdge(const QVector<QPointF>& leftBank)
 {
 	QPointF p;
 	// centerToLeft vector at head
@@ -2501,7 +2501,7 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 	return getRegionEdgeSpline(headEdge, middleEdge, tailEdge, discardHead, discardTail, QVector2D(hintVec.x(), hintVec.y()));
 }
 
-GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getRightEdge(QVector<QPointF>& rightBank)
+GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel::getRightEdge(const QVector<QPointF>& rightBank)
 {
 	QPointF p;
 	// centerToRight vector at head

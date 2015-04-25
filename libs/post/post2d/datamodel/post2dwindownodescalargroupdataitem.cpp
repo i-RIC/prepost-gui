@@ -53,6 +53,7 @@
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
+#include <vtkScalarsToColors.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)

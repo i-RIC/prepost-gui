@@ -149,12 +149,12 @@ private:
 	void applyConstraintToGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge);
 	void relaxGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, double relax);
 
-	GridCreatingConditionCompoundChannelSpline getLeftBank(QVector<QPointF>& centerLine);
-	GridCreatingConditionCompoundChannelSpline getRightBank(QVector<QPointF>& centerLine);
+	GridCreatingConditionCompoundChannelSpline getLeftBank(const QVector<QPointF>& centerLine);
+	GridCreatingConditionCompoundChannelSpline getRightBank(const QVector<QPointF>& centerLine);
 	GridCreatingConditionCompoundChannelSpline getLowWaterEdgeSpline(int headEdge, int middleEdge, int tailEdge, bool discardHead, bool discardTail, const QVector2D& hintVec);
 
-	GridCreatingConditionCompoundChannelSpline getLeftEdge(QVector<QPointF>& leftBank);
-	GridCreatingConditionCompoundChannelSpline getRightEdge(QVector<QPointF>& rightBank);
+	GridCreatingConditionCompoundChannelSpline getLeftEdge(const QVector<QPointF>& leftBank);
+	GridCreatingConditionCompoundChannelSpline getRightEdge(const QVector<QPointF>& rightBank);
 	GridCreatingConditionCompoundChannelSpline getRegionEdgeSpline(int splitEdge);
 	GridCreatingConditionCompoundChannelSpline getRegionEdgeSpline(int headEdge, int middleEdge, int tailEdge, bool discardHead, bool discardTail, const QVector2D& hintVec);
 

@@ -180,7 +180,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	int d;
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
-
+	vtkPoints* points = 0;
 	double *dataX, *dataY, *dataZ;
 	size_t numPoints = NVertexI * NVertexJ * NVertexK;
 	dataX = new double[numPoints];
@@ -247,7 +247,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 		}
 	}
 
-	vtkPoints* points = vtkPoints::New();
+	points = vtkPoints::New();
 	for (int k = 0; k < NVertexK; ++k){
 		for (int j = 0; j < NVertexJ; ++j){
 			for (int i = 0; i < NVertexI; ++i){

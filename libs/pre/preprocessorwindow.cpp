@@ -449,7 +449,7 @@ const QColor PreProcessorWindow::backgroundColor() const
 	return qColor;
 }
 
-void PreProcessorWindow::setBackgroundColor(QColor& c)
+void PreProcessorWindow::setBackgroundColor(const QColor &c)
 {
 	double vtkColor[3];
 	iRIC::QColorToVTKColor(c, vtkColor);

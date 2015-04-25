@@ -2,6 +2,7 @@
 #define ENUMLOADER_H
 
 #include <QMap>
+#include <QDomNodeList>
 #include <misc/xmlsupport.h>
 #include "solverdefinitiontranslator.h"
 

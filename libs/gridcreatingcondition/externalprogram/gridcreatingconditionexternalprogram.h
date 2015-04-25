@@ -4,6 +4,7 @@
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 
 #include <QLocale>
+#include <QPoint>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>

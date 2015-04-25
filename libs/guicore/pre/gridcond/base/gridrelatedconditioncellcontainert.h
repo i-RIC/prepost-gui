@@ -59,7 +59,7 @@ public:
 		copy->SetName(orig->GetName());
 		return copy;
 	}
-	const unsigned int dataCount() const {
+	unsigned int dataCount() const {
 		return GridRelatedConditionContainerT<V>::m_grid->cellCount();
 	}
 };

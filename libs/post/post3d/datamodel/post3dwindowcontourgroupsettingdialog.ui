@@ -228,7 +228,7 @@
   <customwidget>
    <class>Post3dWindowFaceSettingWidget</class>
    <extends>QWidget</extends>
-   <header>post3dwindowfacesettingwidget.h</header>
+   <header>datamodel/post3dwindowfacesettingwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

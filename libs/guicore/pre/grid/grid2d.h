@@ -13,7 +13,7 @@ public:
 	/// Constructor
 	Grid2D(const QString& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	/// Returns the number of vertices in this grid.
-	virtual const unsigned int vertexCount() const = 0;
+	virtual unsigned int vertexCount() const = 0;
 	/// Returns the coordinates of the vertex specified by the index.
 	virtual const QVector2D vertex(unsigned int index) const = 0;
 	/// Set the coordinates of the vertex specified by the index.

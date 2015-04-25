@@ -62,11 +62,11 @@ public:
 	}
 	void addGridRelatedCondition(GridRelatedConditionContainer* cond);
 	/// Returns the number of nodes
-	const unsigned int nodeCount() const {
+	unsigned int nodeCount() const {
 		return m_vtkGrid->GetNumberOfPoints();
 	}
 	/// Returns the number of cells
-	virtual const unsigned int cellCount() const = 0;
+	virtual unsigned int cellCount() const = 0;
 	virtual void setModified(){
 		m_isModified = true;
 		m_vtkGrid->Modified();

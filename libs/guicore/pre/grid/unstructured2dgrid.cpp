@@ -39,7 +39,7 @@ void Unstructured2DGrid::init()
 //	m_exporterFactory = new Unstructured2DGridExporterFactory(this);
 }
 
-const unsigned int Unstructured2DGrid::vertexCount() const
+unsigned int Unstructured2DGrid::vertexCount() const
 {
 	return m_vtkGrid->GetPoints()->GetNumberOfPoints();
 }

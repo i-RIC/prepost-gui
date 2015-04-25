@@ -1448,27 +1448,34 @@ void Graph2dHybridWindowDataModel::updateData(int fn)
 void Graph2dHybridWindowDataModel::addKPMarkers()
 {
 	QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem> items;
-	QVector<double> xvalues;
-
-	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI){goto CONDITIONERROR;}
-	Graph2dHybridWindowResultSetting::DataTypeInfo* info = m_setting.targetDataTypeInfo();
-	if (info->gridType == 0){goto CONDITIONERROR;}
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* citem = projectData()->mainWindow()->preProcessorWindow()->dataModel()->getGridAndGridCreatingConditionDataItem(info->gridType->name(), info->zoneName);
-	if (citem == 0){goto CONDITIONERROR;}
-	PreProcessorGridCreatingConditionDataItemInterface * condItem = citem->creatingConditionDataItem();
-	GridCreatingCondition* cond = condItem->condition();
-	if (cond == 0){goto CONDITIONERROR;}
-	GridCreatingConditionRiverSurvey* condrs = dynamic_cast<GridCreatingConditionRiverSurvey*>(cond);
-	if (condrs == 0){goto CONDITIONERROR;}
-	RawDataRiverPathPoint* start = condrs->lastStartPoint();
-	RawDataRiverPathPoint* end = condrs->lastEndPoint();
+	Graph2dHybridWindowResultSetting::DataTypeInfo* info = 0;
+	PreProcessorGridAndGridCreatingConditionDataItemInterface* citem = 0;
+	PreProcessorGridCreatingConditionDataItemInterface * condItem = 0;
+	GridCreatingCondition* cond = 0;
+	GridCreatingConditionRiverSurvey* condrs = 0;
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*> (m_rootDataItem);
 	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*> (root->resultGroupItem()->childItems().at(0));
-	xvalues = ditem->xValues();
-
-	RawDataRiverPathPoint* pp = start;
+	QVector<double> xvalues = ditem->xValues();
 	int iValue = 0;
+	RawDataRiverPathPoint* start = 0;
+	RawDataRiverPathPoint* end = 0;
+	RawDataRiverPathPoint* pp = 0;
+
+	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI){goto CONDITIONERROR;}
+	info = m_setting.targetDataTypeInfo();
+	if (info->gridType == 0){goto CONDITIONERROR;}
+	citem = projectData()->mainWindow()->preProcessorWindow()->dataModel()->getGridAndGridCreatingConditionDataItem(info->gridType->name(), info->zoneName);
+	if (citem == 0){goto CONDITIONERROR;}
+	condItem = citem->creatingConditionDataItem();
+	cond = condItem->condition();
+	if (cond == 0){goto CONDITIONERROR;}
+	condrs = dynamic_cast<GridCreatingConditionRiverSurvey*>(cond);
+	if (condrs == 0){goto CONDITIONERROR;}
+	start = condrs->lastStartPoint();
+	end = condrs->lastEndPoint();
+	pp = start;
+
 	while (pp != end){
 		double val = xvalues.at(iValue);
 		QString name = "KP %1";

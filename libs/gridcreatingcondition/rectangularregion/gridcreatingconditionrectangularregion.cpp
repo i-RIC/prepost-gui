@@ -1,7 +1,7 @@
 #include "gridcreatingconditionrectangularregion.h"
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/base/PreProcessorGridTypeDataIteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 //#include "pre/datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 //#include "pre/datamodel/preprocessorgriddataitem.h"

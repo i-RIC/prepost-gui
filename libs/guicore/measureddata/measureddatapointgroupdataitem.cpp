@@ -301,7 +301,6 @@ void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
 
 	for (int i = 0; i < m_numberOfDivisions; i++){
-		double epsilon = delta/10;
 		double valueLo = range[0] + static_cast<double> (i) * delta;
 		double valueHi = range[0] + static_cast<double> (i + 1) * delta;
 		clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
@@ -393,6 +392,9 @@ void MeasuredDataPointGroupDataItem::setupScalarBarSetting()
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_scalarBarSetting.numberOfLabels);
 	switch (m_contour) {
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		a->SetMaximumNumberOfColors(m_numberOfDivisions);
 		break;
