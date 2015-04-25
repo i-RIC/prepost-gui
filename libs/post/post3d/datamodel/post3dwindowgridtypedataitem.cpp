@@ -134,7 +134,7 @@ void Post3dWindowGridTypeDataItem::updateLookupTableRanges()
 		ScalarsToColorsContainer* cont = it.value();
 		QList<Post3dWindowZoneDataItem*>::iterator zit;
 		bool first = true;
-		double range[2], min, max;
+		double range[2], min = 0, max = 0;
 		for (zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 			Post3dWindowZoneDataItem* zitem = *zit;
 			PostZoneDataContainer* cont = zitem->dataContainer();

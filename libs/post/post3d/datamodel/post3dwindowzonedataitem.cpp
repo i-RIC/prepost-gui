@@ -56,8 +56,6 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(QString zoneName, int zoneNum
 
 	m_isDeletable = false;
 
-	PostZoneDataContainer* cont = dataContainer();
-
 	m_shapeDataItem = new Post3dWindowGridShapeDataItem(this);
 	m_contourGroupItem = new Post3dWindowContourGroupDataItem(this);
 	m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupDataItem(this);

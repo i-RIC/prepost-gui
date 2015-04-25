@@ -215,6 +215,9 @@ void Post3dWindowContourGroupDataItem::updateChildActors()
 vtkActor* Post3dWindowContourGroupDataItem::setupActorAndMapper(vtkAlgorithmOutput* algo)
 {
 	switch (m_contour){
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		return setupIsolinesActorAndMapper(algo);
 	case ContourSettingWidget::ContourFigure:
@@ -223,6 +226,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupActorAndMapper(vtkAlgorithmOutp
 	default:
 		return setupColorFringeActorAndMapper(algo);
 	}
+	return 0;
 }
 
 vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgorithmOutput* algo)
@@ -415,6 +419,9 @@ void Post3dWindowContourGroupDataItem::updateScalarBarActorSetting()
 	m_titleTextSetting.applySetting(a->GetTitleTextProperty());
 	m_labelTextSetting.applySetting(a->GetLabelTextProperty());
 	switch (m_contour) {
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		a->SetMaximumNumberOfColors(m_numberOfDivision);
 		break;
@@ -455,7 +462,7 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 	}
 
 	GraphicsWindowDataItem::updateVisibility(visible);
-
+/*
 	bool childVis = false;
 	QList<GraphicsWindowDataItem*>::iterator it;
 	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
@@ -465,7 +472,7 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 			break;
 		}
 	}
-
+*/
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
 	m_scalarBarWidget->SetEnabled(m_scalarBarSetting.visible && v);
 }
