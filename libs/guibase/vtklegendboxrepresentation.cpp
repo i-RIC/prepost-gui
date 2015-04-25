@@ -94,6 +94,7 @@ void vtkLegendBoxRepresentation::WidgetInteraction(double eventPos[2])
 	// Let superclass move things around.
 	this->Superclass::WidgetInteraction(eventPos);
 
+/*
 	// Check to see if we need to change the orientation.
 	double *fpos1 = this->PositionCoordinate->GetValue();
 	double *fpos2 = this->Position2Coordinate->GetValue();
@@ -106,7 +107,6 @@ void vtkLegendBoxRepresentation::WidgetInteraction(double eventPos[2])
 	double center[2];
 	center[0] = fpos1[0] + 0.5*fpos2[0];
 	center[1] = fpos1[1] + 0.5*fpos2[1];
-/*
 	bool orientationSwapped = false;
 	if (fabs(center[0] - 0.5) > 0.2+fabs(center[1] - 0.5))
 		{

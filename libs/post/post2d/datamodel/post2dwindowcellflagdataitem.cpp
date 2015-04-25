@@ -39,8 +39,6 @@ Post2dWindowCellFlagDataItem::~Post2dWindowCellFlagDataItem()
 
 void Post2dWindowCellFlagDataItem::setupActors()
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-
 	m_extractCells = vtkSmartPointer<vtkExtractCells>::New();
 
 	m_mapper = vtkSmartPointer<vtkDataSetMapper>::New();

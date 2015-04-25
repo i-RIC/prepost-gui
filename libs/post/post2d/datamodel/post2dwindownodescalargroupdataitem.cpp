@@ -129,6 +129,9 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	createValueClippedPolyData();
 	switch(m_contour)
 	{
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		setupIsolineSetting();
 		break;
@@ -395,6 +398,9 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	m_labelTextSetting.applySetting(a->GetLabelTextProperty());
 
 	switch (m_contour) {
+	case ContourSettingWidget::Points:
+		// do nothing
+		break;
 	case ContourSettingWidget::Isolines:
 		a->SetMaximumNumberOfColors(m_numberOfDivisions);
 		break;
@@ -832,7 +838,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time)
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
@@ -881,9 +887,9 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			points.append(QVector3D(lon, lat, val));
 		}
 		// find north, south, west, east
-		double north, south, west, east;
-		double minval;
-		double maxval;
+		double north = 0, south = 0, west = 0, east = 0;
+		double minval = 0;
+		double maxval = 0;
 		double sum = 0;
 		for (int i = 0; i < points.size(); ++i){
 			QVector3D v = points.at(i);
