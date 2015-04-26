@@ -47,11 +47,18 @@ LIBS += -liricTriangle
 
 # iricGuibase
 
+
+win32{
 CONFIG(debug, debug|release) {
 	LIBS += -L"../guibase/debug"
 } else {
 	LIBS += -L"../guibase/release"
 }
+}
+unix{
+LIBS += -L"../guibase"
+}
+
 LIBS += -liricGuibase
 
 ######################
@@ -95,7 +102,14 @@ LIBS += \
 	-lvtkRenderingQt-6.1
 
 # cgnslib
+
+win32{
 LIBS += -lcgnsdll
+}
+unix{
+LIBS += -lcgns
+}
+
 
 # iriclib
 

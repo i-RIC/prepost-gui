@@ -18,55 +18,85 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
 # iricPostbase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../postbase/debug"
-} else {
-	LIBS += -L"../../postbase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../postbase/debug"
+	} else {
+		LIBS += -L"../../postbase/release"
+	}
+}
+unix {
+	LIBS += -L"../../postbase"
 }
 LIBS += -liricPostbase
 
 # iricGraph2d
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../graph2d/debug"
-} else {
-	LIBS += -L"../graph2d/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../graph2d/debug"
+	} else {
+		LIBS += -L"../graph2d/release"
+	}
+}
+unix {
+	LIBS += -L"../graph2d"
 }
 LIBS += -liricGraph2d
 
 # iricRdRiversurvey
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../rawdata/riversurvey/debug"
-} else {
-	LIBS += -L"../../rawdata/riversurvey/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../rawdata/riversurvey/debug"
+	} else {
+		LIBS += -L"../../rawdata/riversurvey/release"
+	}
+}
+unix {
+	LIBS += -L"../../rawdata/riversurvey"
 }
 LIBS += -liricRdRiversurvey
 
@@ -76,10 +106,17 @@ LIBS += -liricRdRiversurvey
 
 # Qwt
 
-CONFIG(debug, debug|release) {
-	LIBS += -lqwtd
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -lqwtd
+	}
+	else {
+		LIBS += -lqwt
+		DEFINES += QT_NO_DEBUG_OUTPUT
+		DEFINES += QT_NO_WARNING_OUTPUT
+	}
 }
-else {
+unix {
 	LIBS += -lqwt
 	DEFINES += QT_NO_DEBUG_OUTPUT
 	DEFINES += QT_NO_WARNING_OUTPUT
@@ -91,11 +128,15 @@ LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkCommonExecutionModel-6.1 \
-	-lvtkFiltersExtraction-6.1 
-
+	-lvtkFiltersExtraction-6.1
 
 # cgnslib
-LIBS += -lcgnsdll
+win32 {
+	LIBS += -lcgnsdll
+}
+unix {
+	LIBS += -lcgns
+}
 
 # Input
 HEADERS += graph2dhybrid_global.h \

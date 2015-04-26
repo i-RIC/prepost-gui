@@ -18,37 +18,57 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../misc/debug"
-} else {
-	LIBS += -L"../../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../misc/debug"
+	} else {
+		LIBS += -L"../../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guibase/debug"
-} else {
-	LIBS += -L"../../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guibase/debug"
+	} else {
+		LIBS += -L"../../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../guicore/debug"
-} else {
-	LIBS += -L"../../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../guicore/debug"
+	} else {
+		LIBS += -L"../../guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../guicore"
 }
 LIBS += -liricGuicore
 
 # iricPostbase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../postbase/debug"
-} else {
-	LIBS += -L"../../postbase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../postbase/debug"
+	} else {
+		LIBS += -L"../../postbase/release"
+	}
+}
+unix {
+	LIBS += -L"../../postbase"
 }
 LIBS += -liricPostbase
 
@@ -58,10 +78,17 @@ LIBS += -liricPostbase
 
 # Qwt
 
-CONFIG(debug, debug|release) {
-	LIBS += -lqwtd
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -lqwtd
+	}
+	else {
+		LIBS += -lqwt
+		DEFINES += QT_NO_DEBUG_OUTPUT
+		DEFINES += QT_NO_WARNING_OUTPUT
+	}
 }
-else {
+unix {
 	LIBS += -lqwt
 	DEFINES += QT_NO_DEBUG_OUTPUT
 	DEFINES += QT_NO_WARNING_OUTPUT
