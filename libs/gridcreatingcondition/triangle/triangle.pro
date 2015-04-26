@@ -28,7 +28,7 @@ win32 {
 	}
 }
 unix {
-	LIBS += -L"../../misc/release"
+	LIBS += -L"../../misc"
 }
 LIBS += -liricMisc
 
@@ -56,7 +56,7 @@ win32 {
 	}
 }
 unix {
-	LIBS += -L"../../guibase/release"
+	LIBS += -L"../../guibase"
 }
 LIBS += -liricGuibase
 
