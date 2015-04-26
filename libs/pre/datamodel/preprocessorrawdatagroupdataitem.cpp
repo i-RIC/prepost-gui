@@ -875,20 +875,24 @@ void PreProcessorRawDataGroupDataItem::exportAllPolygons()
 	QString dbfFilename;
 	RawDataPolygonRealCreator* c = new RawDataPolygonRealCreator();
 	RawDataPolygonShapeExporter* exporter = 0;
+	bool isDouble;
+	QTextCodec* codec = QTextCodec::codecForLocale();
+	SHPHandle shpHandle;
+	DBFHandle dbfHandle;
+	bool codecOK = true;
+	int index = 0;
+
 	for (int i = 0; i < c->exporters().count(); ++i){
 		exporter = dynamic_cast<RawDataPolygonShapeExporter*>(c->exporters().at(i));
 		if (exporter != 0){break;}
 	}
 	if (exporter == 0){goto ERROR;}
 
-	bool isDouble;
 	dbfFilename = filename;
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
-	SHPHandle shpHandle = exporter->getSHPHandle(filename);
-	DBFHandle dbfHandle = exporter->getDBFHandle(dbfFilename, condition(), &isDouble);
+	shpHandle = exporter->getSHPHandle(filename);
+	dbfHandle = exporter->getDBFHandle(dbfFilename, condition(), &isDouble);
 
-	QTextCodec* codec = QTextCodec::codecForLocale();
-	bool codecOK = true;
 	for (int i = 0; i < m_childItems.count(); ++i){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();
@@ -899,7 +903,6 @@ void PreProcessorRawDataGroupDataItem::exportAllPolygons()
 		codec = QTextCodec::codecForName("UTF-8");
 	}
 
-	int index = 0;
 	for (int i = m_childItems.count() - 1; i >= 0; --i){
 		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*> (m_childItems.at(i));
 		RawData* rd = item->rawData();

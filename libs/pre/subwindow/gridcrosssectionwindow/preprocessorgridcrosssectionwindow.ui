@@ -48,13 +48,13 @@
   <customwidget>
    <class>PreProcessorGridCrosssectionWindowGraphicsView</class>
    <extends>QWidget</extends>
-   <header>preprocessorgridcrosssectionwindowgraphicsview.h</header>
+   <header>subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>PreProcessorGridCrosssectionWindowTableView</class>
    <extends>QTableView</extends>
-   <header>preprocessorgridcrosssectionwindowtableview.h</header>
+   <header>subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowtableview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

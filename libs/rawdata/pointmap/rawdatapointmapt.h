@@ -2,7 +2,6 @@
 #define RAWDATAPOINTMAPT_H
 
 #include "rawdatapointmap.h"
-#include "rawdatapointmaptemplatenodemappert.h"
 #include "rawdatapointmapmappingmode.h"
 #include "rawdatapointmaptemplatemappingsetting.h"
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -11,19 +10,14 @@
 #include <vtkPointData.h>
 #include <vtkVertex.h>
 
+class RawDataMapper;
+
 template <class V, class DA>
 class RawDataPointMapT : public RawDataPointmap
 {
 public:
-	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
-		: RawDataPointmap(d, creator, condition)
-	{
-		vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
-		values->SetName("values");
-		m_vtkGrid->GetPointData()->AddArray(values);
+	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 
-		m_templateMapper = new RawDataPointmapTemplateNodeMapperT<V, DA>(creator);
-	}
 	DA* vtkValues(){return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));}
 	V value(vtkIdType index){return vtkValues()->GetValue(index);}
 	void setValue(vtkIdType index, V val){return vtkValues()->SetValue(index, val);}
@@ -36,31 +30,50 @@ public:
 		*max = range[1];
 		return true;
 	}
-	RawDataMapper* mapper()
-	{
-		if (m_gridRelatedCondition->position() == SolverDefinitionGridRelatedCondition::CellCenter){
-			return RawData::mapper();
-		}
-		PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());
-		if (gtItem->gridType()->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid){
-			return RawData::mapper();
-		}
-
-		if (RawDataPointmapMappingMode::mode == RawDataPointmapMappingMode::mTIN){
-			return RawData::mapper();
-		}
-
-		RawDataPointmapTemplateMappingSetting s = RawDataPointmapTemplateMappingSetting::setting;
-		m_templateMapper->setAutoMode(s.tempAutoMode);
-		m_templateMapper->setStreamWiseLength(s.tempStreamWiseLength);
-		m_templateMapper->setCrossStreamLength(s.tempCrossStreamLength);
-		m_templateMapper->setNumExpansions(s.tempNumExpansion);
-		m_templateMapper->setWeightPowVal(s.tempWeightExponent);
-		return m_templateMapper;
-	}
+	RawDataMapper* mapper();
 
 private:
-	RawDataPointmapTemplateNodeMapperT<V, DA>* m_templateMapper;
+	RawDataMapper* m_templateMapper;
 };
+
+#include "rawdatapointmaptemplatenodemappert.h"
+
+template <class V, class DA>
+RawDataPointMapT<V, DA>::RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+	: RawDataPointmap(d, creator, condition)
+{
+	vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
+	values->SetName("values");
+	m_vtkGrid->GetPointData()->AddArray(values);
+
+	m_templateMapper = new RawDataPointmapTemplateNodeMapperT<V, DA>(creator);
+}
+
+template <class V, class DA>
+RawDataMapper* RawDataPointMapT<V, DA>::mapper()
+{
+	if (m_gridRelatedCondition->position() == SolverDefinitionGridRelatedCondition::CellCenter){
+		return RawData::mapper();
+	}
+	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());
+	if (gtItem->gridType()->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid){
+		return RawData::mapper();
+	}
+
+	if (RawDataPointmapMappingMode::mode == RawDataPointmapMappingMode::mTIN){
+		return RawData::mapper();
+	}
+
+	RawDataPointmapTemplateMappingSetting s = RawDataPointmapTemplateMappingSetting::setting;
+	RawDataPointmapTemplateNodeMapperT<V, DA>* tMapper =
+			dynamic_cast<RawDataPointmapTemplateNodeMapperT<V, DA>* >(m_templateMapper);
+
+	tMapper->setAutoMode(s.tempAutoMode);
+	tMapper->setStreamWiseLength(s.tempStreamWiseLength);
+	tMapper->setCrossStreamLength(s.tempCrossStreamLength);
+	tMapper->setNumExpansions(s.tempNumExpansion);
+	tMapper->setWeightPowVal(s.tempWeightExponent);
+	return tMapper;
+}
 
 #endif // RAWDATAPOINTMAPT_H

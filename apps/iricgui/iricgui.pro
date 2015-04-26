@@ -22,129 +22,185 @@ RC_FILE = iricgui.rc
 
 #iricMisc library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/misc/debug"
-} else {
-	LIBS += -L"../../libs/misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/misc/debug"
+	} else {
+		LIBS += -L"../../libs/misc/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/misc"
 }
 LIBS += -liricMisc
 
 #iricGuibase library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/guibase/debug"
-} else {
-	LIBS += -L"../../libs/guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/guibase/debug"
+	} else {
+		LIBS += -L"../../libs/guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/guibase"
 }
 LIBS += -liricGuibase
 
 #iricGuicore library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/guicore/debug"
-} else {
-	LIBS += -L"../../libs/guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/guicore/debug"
+	} else {
+		LIBS += -L"../../libs/guicore/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/guicore"
 }
 LIBS += -liricGuicore
 
 #iricSolverconsole library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/solverconsole/debug"
-} else {
-	LIBS += -L"../../libs/solverconsole/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/solverconsole/debug"
+	} else {
+		LIBS += -L"../../libs/solverconsole/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/solverconsole"
 }
 LIBS += -liricSolverconsole
 
 #iricPre library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/pre/debug"
-} else {
-	LIBS += -L"../../libs/pre/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/pre/debug"
+	} else {
+		LIBS += -L"../../libs/pre/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/pre"
 }
 LIBS += -liricPre
 
 #iricPost2d library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/post2d/debug"
-} else {
-	LIBS += -L"../../libs/post/post2d/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/post2d/debug"
+	} else {
+		LIBS += -L"../../libs/post/post2d/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/post/post2d"
 }
 LIBS += -liricPost2d
 
 #iricPost2dbirdeye library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/post2dbirdeye/debug"
-} else {
-	LIBS += -L"../../libs/post/post2dbirdeye/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/post2dbirdeye/debug"
+	} else {
+		LIBS += -L"../../libs/post/post2dbirdeye/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/post/post2dbirdeye"
 }
 LIBS += -liricPost2dbirdeye
 
 #iricPost3d library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/post3d/debug"
-} else {
-	LIBS += -L"../../libs/post/post3d/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/post3d/debug"
+	} else {
+		LIBS += -L"../../libs/post/post3d/release"
+	}
 }
-LIBS += -liricPost3d
-
-#iricPost3d library
-
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/post3d/debug"
-} else {
-	LIBS += -L"../../libs/post/post3d/release"
+unix {
+	LIBS += -L"../../libs/post/post3d"
 }
 LIBS += -liricPost3d
 
 #iricGraph2d library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/graph2d/debug"
-} else {
-	LIBS += -L"../../libs/post/graph2d/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/graph2d/debug"
+	} else {
+		LIBS += -L"../../libs/post/graph2d/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/post/graph2d"
 }
 LIBS += -liricGraph2d
 
 #iricGraph2dhybrid library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/graph2dhybrid/debug"
-} else {
-	LIBS += -L"../../libs/post/graph2dhybrid/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/graph2dhybrid/debug"
+	} else {
+		LIBS += -L"../../libs/post/graph2dhybrid/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/post/graph2dhybrid"
 }
 LIBS += -liricGraph2dhybrid
 
 #iricGraph2dscattered library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/post/graph2dscattered/debug"
-} else {
-	LIBS += -L"../../libs/post/graph2dscattered/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/post/graph2dscattered/debug"
+	} else {
+		LIBS += -L"../../libs/post/graph2dscattered/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/post/graph2dscattered"
 }
 LIBS += -liricGraph2dscattered
 
 #iricRdRiversurvey library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/rawdata/riversurvey/debug"
-} else {
-	LIBS += -L"../../libs/rawdata/riversurvey/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/rawdata/riversurvey/debug"
+	} else {
+		LIBS += -L"../../libs/rawdata/riversurvey/release"
+	}
+}
+unix {
+	LIBS += -L"../../libs/rawdata/riversurvey"
 }
 LIBS += -liricRdRiversurvey
 
 #iricGccexternalprogram library
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../../libs/gridcreatingcondition/externalprogram/debug"
-} else {
-	LIBS += -L"../../libs/gridcreatingcondition/externalprogram/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../libs/gridcreatingcondition/externalprogram/debug"
+	} else {
+		LIBS += -L"../../libs/gridcreatingcondition/externalprogram/release"
+	}
 }
-LIBS += -liricGccexternalprogram
+unix {
+	LIBS += -L"../../libs/gridcreatingcondition/externalprogram"
+}
+LIBS += -liricGccExternalprogram
 
 ######################
 # External libraries #
@@ -152,10 +208,16 @@ LIBS += -liricGccexternalprogram
 
 # Qwt
 
-CONFIG(debug, debug|release) {
-	LIBS += -lqwtd
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -lqwtd
+	} else {
+		LIBS += -lqwt
+		DEFINES += QT_NO_DEBUG_OUTPUT
+		DEFINES += QT_NO_WARNING_OUTPUT
+	}
 }
-else {
+unix {
 	LIBS += -lqwt
 	DEFINES += QT_NO_DEBUG_OUTPUT
 	DEFINES += QT_NO_WARNING_OUTPUT
@@ -164,13 +226,13 @@ else {
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-6.1 \
-	-lvtkCommonDataModel-6.1 \
-	-lvtkInteractionStyle-6.1 \
-	-lvtkIoExport-6.1 \
-	-lvtkRenderingFreeType-6.1 \
-	-lvtkRenderingFreeTypeOpenGL-6.1 \
-	-lvtkRenderingOpenGL-6.1
+	-lvtkCommonCore-6.2 \
+	-lvtkCommonDataModel-6.2 \
+	-lvtkInteractionStyle-6.2 \
+	-lvtkIOExport-6.2 \
+	-lvtkRenderingFreeType-6.2 \
+	-lvtkRenderingFreeTypeOpenGL-6.2 \
+	-lvtkRenderingOpenGL-6.2
 
 INCLUDEPATH += ../../libs
 

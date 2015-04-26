@@ -33,7 +33,7 @@
   <customwidget>
    <class>PreProcessorWindowScalarBarSettingWidget</class>
    <extends>QWidget</extends>
-   <header>preprocessorwindowscalarbarsettingwidget.h</header>
+   <header>misc/preprocessorwindowscalarbarsettingwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

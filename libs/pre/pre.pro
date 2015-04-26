@@ -18,163 +18,253 @@ QT += widgets xml
 
 # iricMisc
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../misc/debug"
-} else {
-	LIBS += -L"../misc/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../misc/debug"
+	} else {
+		LIBS += -L"../misc/release"
+	}
+}
+unix {
+	LIBS += -L"../misc"
 }
 LIBS += -liricMisc
 
 # iricGuibase
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../guibase/debug"
-} else {
-	LIBS += -L"../guibase/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../guibase/debug"
+	} else {
+		LIBS += -L"../guibase/release"
+	}
+}
+unix {
+	LIBS += -L"../guibase"
 }
 LIBS += -liricGuibase
 
 # iricGuicore
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../guicore/debug"
-} else {
-	LIBS += -L"../guicore/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../guicore/debug"
+	} else {
+		LIBS += -L"../guicore/release"
+	}
 }
+unix {
+	LIBS += -L"../guicore"
+}
+
 LIBS += -liricGuicore
 
 # iricRdRiversurvey
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../rawdata/riversurvey/debug"
-} else {
-	LIBS += -L"../rawdata/riversurvey/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../rawdata/riversurvey/debug"
+	} else {
+		LIBS += -L"../rawdata/riversurvey/release"
+	}
+}
+unix {
+	LIBS += -L"../rawdata/riversurvey"
 }
 LIBS += -liricRdRiversurvey
 
 # iricRdPointmap
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../rawdata/pointmap/debug"
-} else {
-	LIBS += -L"../rawdata/pointmap/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../rawdata/pointmap/debug"
+	} else {
+		LIBS += -L"../rawdata/pointmap/release"
+	}
+}
+unix {
+	LIBS += -L"../rawdata/pointmap"
 }
 LIBS += -liricRdPointmap
 
 # iricRdPolygon
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../rawdata/polygon/debug"
-} else {
-	LIBS += -L"../rawdata/polygon/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../rawdata/polygon/debug"
+	} else {
+		LIBS += -L"../rawdata/polygon/release"
+	}
+}
+unix {
+	LIBS += -L"../rawdata/polygon"
 }
 LIBS += -liricRdPolygon
 
 # iricRdNetcdf
-
-CONFIG(debug, debug|release) {
-	LIBS += -L"../rawdata/netcdf/debug"
-} else {
-	LIBS += -L"../rawdata/netcdf/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../rawdata/netcdf/debug"
+	} else {
+		LIBS += -L"../rawdata/netcdf/release"
+	}
+}
+unix {
+	LIBS += -L"../rawdata/netcdf"
 }
 LIBS += -liricRdNetcdf
 
 # iricGccCenterandwidth
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/centerandwidth/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/centerandwidth/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/centerandwidth/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/centerandwidth/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/centerandwidth"
 }
 LIBS += -liricGccCenterandwidth
 
 # iricGccCompoundchannel
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/compoundchannel/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/compoundchannel/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/compoundchannel/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/compoundchannel/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/compoundchannel"
 }
 LIBS += -liricGccCompoundchannel
 
 # iricGccExternalprogram
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/externalprogram/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/externalprogram/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/externalprogram/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/externalprogram/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/externalprogram"
 }
 LIBS += -liricGccExternalprogram
 
 # iricGccGridcombine
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/gridcombine/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/gridcombine/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/gridcombine/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/gridcombine/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/gridcombine"
 }
 LIBS += -liricGccGridcombine
 
 # iricGccGridgenerator
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/gridgenerator/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/gridgenerator/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/gridgenerator/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/gridgenerator/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/gridgenerator"
 }
 LIBS += -liricGccGridgenerator
 
 # iricGccRectangularregion
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/rectangularregion/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/rectangularregion/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/rectangularregion/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/rectangularregion/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/rectangularregion"
 }
 LIBS += -liricGccRectangularregion
 
 # iricGccRectangularregionlonlat
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/rectangularregionlonlat/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/rectangularregionlonlat"
 }
 LIBS += -liricGccRectangularregionlonlat
 
 # iricGccRiversurvey
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/riversurvey/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/riversurvey/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/riversurvey/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/riversurvey/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/riversurvey"
 }
 LIBS += -liricGccRiversurvey
 
 # iricGccRiversurvey15d
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/riversurvey15d/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/riversurvey15d/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/riversurvey15d/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/riversurvey15d/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/riversurvey15d"
 }
 LIBS += -liricGccRiversurvey15d
 
 # iricGccTriangle
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../gridcreatingcondition/triangle/debug"
-} else {
-	LIBS += -L"../gridcreatingcondition/triangle/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../gridcreatingcondition/triangle/debug"
+	} else {
+		LIBS += -L"../gridcreatingcondition/triangle/release"
+	}
+}
+unix {
+	LIBS += -L"../gridcreatingcondition/triangle"
 }
 LIBS += -liricGccTriangle
 
 # iricHdRiversurveywaterelevation
 
-CONFIG(debug, debug|release) {
-	LIBS += -L"../hydraulicdata/riversurveywaterelevation/debug"
-} else {
-	LIBS += -L"../hydraulicdata/riversurveywaterelevation/release"
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../hydraulicdata/riversurveywaterelevation/debug"
+	} else {
+		LIBS += -L"../hydraulicdata/riversurveywaterelevation/release"
+	}
+}
+unix {
+	LIBS += -L"../hydraulicdata/riversurveywaterelevation"
 }
 LIBS += -liricHdRiversurveywaterelevation
 
@@ -197,9 +287,9 @@ LIBS += \
 	-lvtkFiltersTexture-6.1 \
 	-lvtkGUISupportQt-6.1 \
 	-lvtkInteractionWidgets-6.1 \
-	-lvtkIoImage-6.1 \
-	-lvtkIoCore-6.1 \
-	-lvtkIoLegacy-6.1 \
+	-lvtkIOImage-6.1 \
+	-lvtkIOCore-6.1 \
+	-lvtkIOLegacy-6.1 \
 	-lvtkRenderingAnnotation-6.1 \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingFreeType-6.1 \
@@ -207,8 +297,12 @@ LIBS += \
 	-lvtkRenderingLOD-6.1
 
 # cgnslib
-
-LIBS += -lcgnsdll
+win32 {
+	LIBS += -lcgnsdll
+}
+unix {
+	LIBS += -lcgns
+}
 
 # iriclib
 
@@ -216,7 +310,9 @@ LIBS += -liriclib
 
 # shapelib
 
-LIBS += -lshapelib_i
+win32 {
+	LIBS += -lshapelib_i
+}
 
 # Input
 HEADERS += griddisplaysetting.h \

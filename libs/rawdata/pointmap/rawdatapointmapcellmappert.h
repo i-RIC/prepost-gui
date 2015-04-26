@@ -8,6 +8,8 @@
 #include <vtkSmartPointer.h>
 #include <misc/doublemappingsetting.h>
 
+#include <QSet>
+
 class RawDataPointmapCellMapperSetting : public RawDataMapperSetting
 {
 public:

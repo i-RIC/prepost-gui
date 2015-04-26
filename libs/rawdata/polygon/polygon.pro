@@ -91,7 +91,10 @@ LIBS += -liriclib
 
 # shapelib
 
+
+win32{
 LIBS += -lshapelib_i
+}
 
 # Input
 HEADERS += rawdatapolygon.h \

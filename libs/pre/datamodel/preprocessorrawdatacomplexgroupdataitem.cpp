@@ -52,14 +52,15 @@ PreProcessorRawDataComplexGroupDataItem::~PreProcessorRawDataComplexGroupDataIte
 void PreProcessorRawDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 {
 	int count = 0;
+	SolverDefinitionGridRelatedComplexCondition* compCond = 0;
+	int defId = -1;
+
 	clear();
 	int ret = cg_iRIC_Read_Complex_Count(const_cast<char *>(iRIC::toStr(m_condition->name()).c_str()), &count);
 	if (ret != 0){
 		goto INITGROUPS;
 	}
-	SolverDefinitionGridRelatedComplexCondition* compCond =
-			dynamic_cast<SolverDefinitionGridRelatedComplexCondition*> (condition());
-	int defId = -1;
+	compCond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition*> (condition());
 	for (int i = 0; i < count; ++i){
 		GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
 		w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());

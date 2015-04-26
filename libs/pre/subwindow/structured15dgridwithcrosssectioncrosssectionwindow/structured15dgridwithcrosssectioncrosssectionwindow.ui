@@ -42,13 +42,13 @@
   <customwidget>
    <class>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</class>
    <extends>QWidget</extends>
-   <header>structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h</header>
+   <header>subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>Structured15DGridWithCrossSectionCrossSectionWindowTableView</class>
    <extends>QTableWidget</extends>
-   <header>structured15dgridwithcrosssectioncrosssectionwindowtableview.h</header>
+   <header>subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

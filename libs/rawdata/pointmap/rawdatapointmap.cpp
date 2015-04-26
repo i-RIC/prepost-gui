@@ -2571,7 +2571,7 @@ void RawDataPointmap::addBreakLine()
 	} else {
 		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result = QMessageBox::Yes){
+			if (result == QMessageBox::Yes){
 				m_representation = RawDataPointmapRepresentationDialog::Wireframe;
 				updateRepresentation();
 				renderGraphicsView();
@@ -2593,7 +2593,7 @@ void RawDataPointmap::removeBreakLine()
 	} else {
 		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result = QMessageBox::Yes){
+			if (result == QMessageBox::Yes){
 				m_representation = RawDataPointmapRepresentationDialog::Wireframe;
 				updateRepresentation();
 				renderGraphicsView();
@@ -2653,7 +2653,7 @@ void RawDataPointmap::editPointsDelete()
 	if (m_representation != RawDataPointmapRepresentationDialog::Points){
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result = QMessageBox::Yes){
+		if (result == QMessageBox::Yes){
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2709,7 +2709,7 @@ void RawDataPointmap::editPointsLessThan()
 	if (m_representation != RawDataPointmapRepresentationDialog::Points){
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result = QMessageBox::Yes){
+		if (result == QMessageBox::Yes){
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2734,7 +2734,7 @@ void RawDataPointmap::editPointsGreaterThan()
 	if (m_representation != RawDataPointmapRepresentationDialog::Points){
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result = QMessageBox::Yes){
+		if (result == QMessageBox::Yes){
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2827,7 +2827,7 @@ void RawDataPointmap::interpolatePoints(bool on)
 		if (m_representation != RawDataPointmapRepresentationDialog::Points){
 			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you interpolate points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result = QMessageBox::Yes){
+			if (result == QMessageBox::Yes){
 				m_representation = RawDataPointmapRepresentationDialog::Points;
 				updateRepresentation();
 			} else {
@@ -2853,7 +2853,7 @@ void RawDataPointmap::addPoints(bool on)
 		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
 			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result = QMessageBox::Yes){
+			if (result == QMessageBox::Yes){
 				m_representation = RawDataPointmapRepresentationDialog::Points;
 				updateRepresentation();
 			} else {

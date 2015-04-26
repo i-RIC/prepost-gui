@@ -98,7 +98,12 @@ LIBS += -lnetcdf
 
 #gdal
 
-LIBS += -lgdal_i
+win32 {
+	LIBS += -lgdal_i
+}
+unix {
+	LIBS += -lgdal
+}
 
 # Input
 HEADERS += rawdatanetcdf.h \

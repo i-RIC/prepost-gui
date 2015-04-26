@@ -47,10 +47,11 @@ GridExporterFactory::GridExporterFactory()
 			}
 			QPluginLoader loader(pluginDir.absoluteFilePath(fileName));
 			QObject* plugin = loader.instance();
+			GridExporterInterface* exporter = 0;
 			if (! plugin){
 				goto LOADERROR;
 			}
-			GridExporterInterface* exporter = qobject_cast<GridExporterInterface*> (plugin);
+			exporter = qobject_cast<GridExporterInterface*> (plugin);
 			if (! exporter){
 				delete plugin;
 				goto LOADERROR;

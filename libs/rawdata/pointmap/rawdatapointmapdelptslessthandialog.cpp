@@ -14,8 +14,8 @@ RawDataPointMapDelPtsLessThanDialog::RawDataPointMapDelPtsLessThanDialog(RawData
 	QVector<vtkIdType> selectedVertices = m_pointMap->selectedVertices();
 	vtkDataArray* vArr = m_pointMap->vtkGrid()->GetPointData()->GetArray("values");
 
-	double min;
-	double max;
+	double min = 0;
+	double max = 0;
 
 	for (vtkIdType i = 0; i < selectedVertices.count(); ++i){
 		double val = vArr->GetTuple1(selectedVertices[i]);
