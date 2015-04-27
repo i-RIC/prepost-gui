@@ -55,10 +55,9 @@ bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename
 		<< tmpp->name() << "\t" << tmpp->crosssection().numOfAltitudes(true) << endl;
 		int i = 0;
 		double left = tmpp->crosssection().leftBank(true).position();
-		const RawDataRiverCrosssection::AltitudeList& list = tmpp->crosssection().AltitudeInfo();
-		for (auto it = list.begin(); it != list.end(); ++it){
-			if (it->active()){
-				outstream << it->position() - left << "\t" << it->height() << "\t";
+		for (RawDataRiverCrosssection::Altitude& alt : tmpp->crosssection().AltitudeInfo()){
+			if (alt.active()){
+				outstream << alt.position() - left << "\t" << alt.height() << "\t";
 			}
 			++i;
 			if (i == 5){

@@ -84,8 +84,7 @@ public:
 		RawDataPolygon* polygon = dynamic_cast<RawDataPolygon* >(RawDataMapperT<V>::m_rawdata);
 		V value = RawDataMapperT<V>::fromVariant(polygon->variantValue());
 		const QList<IntegerRangeContainer::Range>& ranges = setting->ranges.ranges();
-		for (int i = 0; i < ranges.size(); ++i){
-			const IntegerRangeContainer::Range& r = ranges.at(i);
+		for (const IntegerRangeContainer::Range& r : ranges){
 			for (unsigned int j = r.from; j <= r.to; ++j){
 				if (*(boolMap + j) == false){
 					da->SetValue(static_cast<vtkIdType>(j), value);

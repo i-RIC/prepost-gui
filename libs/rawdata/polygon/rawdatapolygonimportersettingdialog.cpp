@@ -17,8 +17,7 @@ RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const Q
 
 	QList<QByteArray> codecs = QTextCodec::availableCodecs();
 	qSort(codecs);
-	for (int i = 0; i < codecs.count(); ++i){
-		QByteArray name = codecs.at(i);
+	for (const QByteArray& name : codecs){
 		ui->encodingComboBox->addItem(QString(name));
 	}
 	QTextCodec* defaultCodec = QTextCodec::codecForLocale();

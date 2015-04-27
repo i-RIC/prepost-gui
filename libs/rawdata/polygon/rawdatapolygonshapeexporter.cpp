@@ -28,8 +28,7 @@ SHPObject* RawDataPolygonShapeExporter::getSHPObject(RawDataPolygon* polygon, SH
 	QPolygonF region = polygon->m_gridRegionPolygon->polygon();
 	*partStart = 0;
 	nVertices += region.count();
-	for (int i = 0; i < region.count(); ++i){
-		QPointF p = region.at(i);
+	for (QPointF p : region){
 		xlist.append(p.x() + xoffset);
 		ylist.append(p.y() + yoffset);
 	}
@@ -38,8 +37,7 @@ SHPObject* RawDataPolygonShapeExporter::getSHPObject(RawDataPolygon* polygon, SH
 		QPolygonF hole = holepol->polygon();
 		*(partStart + i + 1) = nVertices;
 		nVertices += hole.count();
-		for (int j = 0; j < hole.count(); ++j){
-			QPointF p = hole.at(j);
+		for (QPointF p : hole){
 			xlist.append(p.x() + xoffset);
 			ylist.append(p.y() + yoffset);
 		}

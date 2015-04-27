@@ -53,8 +53,7 @@ void RawDataRiverSurveyNodeMapper::map(bool *boolMap, RawDataMapperSetting* s)
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(RawDataNodeMapperT<double, vtkDoubleArray>::m_rawdata);
 	vtkStructuredGrid* grid = rs->backgroundGrid();
 	vtkDoubleArray* vals = vtkDoubleArray::SafeDownCast(grid->GetPointData()->GetArray("Data"));
-	for (int i = 0; i < s2->settings.size(); ++i){
-		const DoubleMappingSetting& setting = s2->settings.at(i);
+	for (const DoubleMappingSetting& setting : s2->settings){
 		if (*(boolMap + setting.target) == false){
 			double value = 0;
 			for (int j = 0; j < setting.indices.size(); ++j){

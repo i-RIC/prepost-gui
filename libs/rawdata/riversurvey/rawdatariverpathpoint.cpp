@@ -110,14 +110,14 @@ void RawDataRiverPathPoint::updateRiverShapeInterpolators(){
 void RawDataRiverPathPoint::UpdateGridInterpolators(){
 	if (! InhibitInterpolatorUpdate){
 		// 今は、全ての補間曲線を更新する。
-		for (auto it = m_LGridLines.begin(); it != m_LGridLines.end(); ++it){
-			if (*it != nullptr){
-				(*it)->updateParameters();
+		for (Interpolator2D1* interpolator : m_LGridLines){
+			if (interpolator != nullptr){
+				interpolator->updateParameters();
 			}
 		}
-		for (auto it = m_RGridLines.begin(); it != m_RGridLines.end(); ++it){
-			if (*it != nullptr){
-				(*it)->updateParameters();
+		for (Interpolator2D1* interpolator : m_RGridLines){
+			if (interpolator != nullptr){
+				interpolator->updateParameters();
 			}
 		}
 	}

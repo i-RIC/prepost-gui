@@ -53,12 +53,12 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 }
 
 void RawDataRiverSurveyCtrlPointBackup::restore(){
-	for (auto it = m_ctrlPoints.begin(); it != m_ctrlPoints.end(); ++it){
-		myRestore(*it);
+	for (const CtrlPoints& p : m_ctrlPoints){
+		myRestore(p);
 	}
 }
 
-void RawDataRiverSurveyCtrlPointBackup::myRestore(CtrlPoints& points){
+void RawDataRiverSurveyCtrlPointBackup::myRestore(const CtrlPoints& points){
 	switch (points.position){
 	case RawDataRiverPathPoint::pposCenterToLeft:
 		points.point->CenterToLeftCtrlPoints = points.ctrlPointVector;

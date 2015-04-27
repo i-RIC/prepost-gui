@@ -7,16 +7,16 @@ void RawDataRiverCrosssection::expand(double ratio){
 	if (ratio == 0){
 		return;
 	}
-	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
-		it->setPosition(it->position() * ratio);
+	for (Altitude& alt : m_altitudeInfo){
+		alt.setPosition(alt.position() * ratio);
 	}
 	m_leftShift *= ratio;
 }
 
 void RawDataRiverCrosssection::moveCenter(double offset){
 	// 河川中心の位置が動いたとき、あわせて断面の情報を更新する。
-	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
-		it->setPosition(it->position() - offset);
+	for (Altitude& alt : m_altitudeInfo){
+		alt.setPosition(alt.position() - offset);
 	}
 	m_leftShift += offset;
 }

@@ -19,7 +19,7 @@ private:
 		RawDataRiverPathPoint::CtrlZonePosition position;
 		QVector<double> ctrlPointVector;
 	};
-	void myRestore(CtrlPoints& points);
+	void myRestore(const CtrlPoints& points);
 	/// @brief Backuped control points
 	QList<CtrlPoints> m_ctrlPoints;
 };
