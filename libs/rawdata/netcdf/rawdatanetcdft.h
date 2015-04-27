@@ -5,6 +5,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <misc/stringtool.h>
 #include <vtkSmartPointer.h>
 #include <vtkCellData.h>
@@ -133,9 +134,10 @@ protected:
 		delete start;
 
 		nc_close(ncid);
+		dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
 	}
 
-	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* cont, const QList<QVariant>& before, const QList<QVariant>& after)
+	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/)
 	{
 
 	}

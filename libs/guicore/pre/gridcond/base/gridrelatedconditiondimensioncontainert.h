@@ -75,14 +75,15 @@ public:
 		if (!ok){ return false; }
 		QDataStream s(&f);
 		int count;
+		QList<V> vals;
 		V value;
 		s >> count;
-		m_values.clear();
 		for (int i = 0; i < count; ++i){
 			s >> value;
-			m_values.append(value);
+			vals.append(value);
 		}
 		f.close();
+		setValues(vals);
 		return true;
 	}
 

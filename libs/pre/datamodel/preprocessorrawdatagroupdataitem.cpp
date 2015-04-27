@@ -424,6 +424,7 @@ void PreProcessorRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 			// load data.
 			item->loadFromProjectMainFile(child);
 			rawdata->setupDataItem();
+			setupConnectionToRawData(rawdata);
 			item->loadCheckState(child);
 			// insert the new item BEFORE the background item.
 			int last = m_childItems.count() - 1;

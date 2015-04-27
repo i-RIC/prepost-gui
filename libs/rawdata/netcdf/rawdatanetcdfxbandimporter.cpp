@@ -28,7 +28,7 @@ const QStringList RawDataNetcdfXbandImporter::acceptableExtensions()
 	return ret;
 }
 
-bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
+bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
 {
 	m_groupDataItem = item;
 
