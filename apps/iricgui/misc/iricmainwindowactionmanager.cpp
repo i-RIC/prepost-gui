@@ -787,14 +787,14 @@ void iRICMainWindowActionManager::setProjectData(ProjectData *d)
 
 void iRICMainWindowActionManager::enableActions(const QList<QAction*>& actions, bool enable)
 {
-	for (auto it = actions.begin(); it != actions.end(); ++it){
-		(*it)->setEnabled(enable);
+	for (QAction* a : actions){
+		a->setEnabled(enable);
 	}
 }
 
 void iRICMainWindowActionManager::uncheckActions(const QList<QAction *> &actions){
-	for (auto it = actions.begin(); it != actions.end(); ++it){
-		(*it)->setChecked(false);
+	for (QAction* a : actions){
+		a->setChecked(false);
 	}
 }
 
@@ -815,8 +815,8 @@ void iRICMainWindowActionManager::updateMenuBar(){
 	m_menuBar->addMenu(m_fileMenu);
 	m_menuBar->addMenu(m_importMenu);
 
-	for (auto it = m_additionalMenus.begin(); it != m_additionalMenus.end(); ++it){
-		m_menuBar->addMenu(*it);
+	for (QMenu* m : m_additionalMenus){
+		m_menuBar->addMenu(m);
 	}
 	m_menuBar->addMenu(m_simulationMenu);
 	if (m_animationMenu != nullptr){
@@ -826,12 +826,12 @@ void iRICMainWindowActionManager::updateMenuBar(){
 			m_animationToolbar->show();
 			viewAnimationToolBarAction->setEnabled(true);
 			saveContinuousSnapShotAction->setEnabled(true);
-		}else{
+		} else {
 			m_animationToolbar->hide();
 			viewAnimationToolBarAction->setDisabled(true);
 			saveContinuousSnapShotAction->setDisabled(true);
 		}
-	}else{
+	} else {
 		viewAnimationToolBarAction->setVisible(false);
 	}
 	// tool menu is hidden, because the functions in tools will be used
@@ -978,8 +978,7 @@ void iRICMainWindowActionManager::updateWindowList()
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
 	int i = 1;
-	for (auto lit = windowList.begin(); lit != windowList.end(); ++lit){
-		QMdiSubWindow* w = *lit;
+	for (QMdiSubWindow* w : windowList){
 		QString tmp = QString("%1%2 ").append(w->windowTitle());
 		QString title;
 		if (i < 10){

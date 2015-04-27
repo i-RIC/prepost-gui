@@ -227,11 +227,11 @@ void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGr
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item->parent()->parent());
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* itemParent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(item->parent());
 
-	for (auto it = gt->conditions().begin(); it != gt->conditions().end(); ++it){
-		if (*it == itemParent) continue;
-		ui->mainstreamComboBox->addItem((*it)->caption());
-		ui->tributaryComboBox->addItem((*it)->caption());
-		m_gridMap.insert((*it)->caption(), (*it)->gridDataItem()->grid());
+	for (PreProcessorGridAndGridCreatingConditionDataItemInterface* iface : gt->conditions()){
+		if (iface == itemParent) continue;
+		ui->mainstreamComboBox->addItem(iface->caption());
+		ui->tributaryComboBox->addItem(iface->caption());
+		m_gridMap.insert(iface->caption(), iface->gridDataItem()->grid());
 	}
 }
 

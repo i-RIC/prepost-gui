@@ -14,15 +14,14 @@ StartPageRecentSolverList::StartPageRecentSolverList(QWidget *parent) :
 
 void StartPageRecentSolverList::setSolverList(SolverDefinitionList* solverList)
 {
-	QList<SolverDefinitionAbstract*> list = solverList->solverList();
 	QMap<QString, SolverDefinitionAbstract*> sMap;
-	for (auto it = list.begin(); it != list.end(); ++it){
-		sMap.insert((*it)->folderName(), *it);
+	for (SolverDefinitionAbstract* solver : solverList->solverList()){
+		sMap.insert(solver->folderName(), solver);
 	}
 	QSettings setting;
 	QStringList recentSolvers = setting.value("general/recentsolvers", QStringList()).toStringList();
-	for (int i = 0; i < recentSolvers.count(); ++i){
-		SolverDefinitionAbstract* sd = sMap.value(recentSolvers.at(i), 0);
+	for (const QString& solver : recentSolvers){
+		SolverDefinitionAbstract* sd = sMap.value(solver, 0);
 		if (sd != 0){add(sd);}
 	}
 	m_layout->addStretch(1);

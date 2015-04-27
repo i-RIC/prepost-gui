@@ -26,9 +26,7 @@ void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 {
 	m_postSolutionInfo = info;
 	ui->gridComboBox->clear();
-	const QList<PostZoneDataContainer*>& containers = info->zoneContainers2D();
-	for (int i = 0; i < containers.size(); ++i){
-		PostZoneDataContainer* cont = containers.at(i);
+	for (PostZoneDataContainer* cont : info->zoneContainers2D()){
 		ui->gridComboBox->addItem(cont->zoneName());
 	}
 	selectZone(0);
@@ -46,8 +44,7 @@ void VerificationSettingDialog::setMeasuredDatas(const QList<MeasuredData*>& dat
 {
 	m_measuredData = data;
 	ui->fileComboBox->clear();
-	for (int i = 0; i < data.size(); ++i){
-		MeasuredData* md = data.at(i);
+	for (MeasuredData* md : data){
 		ui->fileComboBox->addItem(md->name());
 	}
 	selectFile(0);

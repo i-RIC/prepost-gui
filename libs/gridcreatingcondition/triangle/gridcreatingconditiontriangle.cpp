@@ -118,14 +118,14 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 GridCreatingConditionTriangle::~GridCreatingConditionTriangle()
 {
 	delete m_gridRegionPolygon;
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
-		delete m_remeshPolygons[i];
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+		delete pol;
 	}
-	for (int i = 0; i < m_holePolygons.count(); ++i){
-		delete m_holePolygons[i];
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+		delete pol;
 	}
-	for (int i = 0; i < m_divisionLines.count(); ++i){
-		delete m_divisionLines[i];
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+		delete line;
 	}
 	delete m_rightClickingMenu;
 }
@@ -1449,19 +1449,19 @@ void GridCreatingConditionTriangle::saveExternalData(const QString& filename){
 	s << m_gridRegionPolygon->polygon();
 	int divLines = m_divisionLines.count();
 	s << divLines;
-	for (int i = 0; i < m_divisionLines.count(); ++i){
-		s << m_divisionLines[i]->polyLine();
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+		s << line->polyLine();
 	}
 	int remeshPolygons = m_remeshPolygons.count();
 	s << remeshPolygons;
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
-		s << m_remeshPolygons[i]->polygon();
-		s << m_remeshPolygons[i]->cellSize();
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+		s << pol->polygon();
+		s << pol->cellSize();
 	}
 	int holePolygons = m_holePolygons.count();
 	s << holePolygons;
-	for (int i = 0; i < m_holePolygons.count(); ++i){
-		s << m_holePolygons[i]->polygon();
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+		s << pol->polygon();
 	}
 	f.close();
 }
@@ -1475,17 +1475,14 @@ void GridCreatingConditionTriangle::assignActionZValues(const ZDepthRange& range
 {
 	m_depthRange = range;
 	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());
-	for (int i = 0; i < m_divisionLines.count(); ++i){
-		GridCreatingConditionTriangleDivisionLine* l = m_divisionLines[i];
-		l->setZDepthRange(range.min(), range.max());
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+		line->setZDepthRange(range.min(), range.max());
 	}
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
-		GridCreatingConditionTriangleRemeshPolygon* p = m_remeshPolygons[i];
-		p->setZDepthRange(range.min(), range.max());
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+		pol->setZDepthRange(range.min(), range.max());
 	}
-	for (int i = 0; i < m_holePolygons.count(); ++i){
-		GridCreatingConditionTriangleHolePolygon* p = m_holePolygons[i];
-		p->setZDepthRange(range.min(), range.max());
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+		pol->setZDepthRange(range.min(), range.max());
 	}
 }
 
@@ -1543,18 +1540,18 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 		if (m_selectMode == smPolygon){
 			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
 				m_mouseEventMode = meMoveVertexPrepare;
-			}else if (m_selectedPolygon->isPolygonSelectable(worldPos)){
+			} else if (m_selectedPolygon->isPolygonSelectable(worldPos)){
 				m_mouseEventMode = meTranslatePrepare;
-			}else{
+			} else {
 				m_mouseEventMode = meNormal;
 			}
 		}
 		if (m_selectMode == smLine){
 			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
 				m_mouseEventMode = meMoveVertexPrepare;
-			}else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
+			} else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
 				m_mouseEventMode = meTranslatePrepare;
-			}else{
+			} else {
 				m_mouseEventMode = meNormal;
 			}
 		}

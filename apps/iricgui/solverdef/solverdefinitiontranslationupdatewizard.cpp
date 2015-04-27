@@ -51,9 +51,7 @@ void SolverDefinitionTranslationUpdateWizard::accept()
 		folderDir = QDir(pc->folderName());
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
-	QString filelist;
-	for (auto lit = allLangs.begin(); lit != allLangs.end(); ++lit){
-		QLocale locale = *lit;
+	for (const QLocale& locale : allLangs){
 		QVariant val = field(QString("lang%1").arg(locale.name()));
 		if (val.toBool() == true){
 			// update or create the translation file.
@@ -121,10 +119,9 @@ SettingPage::SettingPage(QWidget* parent)
 	QScrollArea* langsArea = new QScrollArea();
 	langsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	QVBoxLayout* llayout = new QVBoxLayout();
-    llayout->setSizeConstraint(QLayout::SetMinimumSize);
-	for (auto it = langs.begin(); it != langs.end(); ++it){
+	llayout->setSizeConstraint(QLayout::SetMinimumSize);
+	for (const QLocale& locale : langs){
 		QCheckBox* check = new QCheckBox(this);
-		QLocale locale = *it;
 		check->setText(QLocale::languageToString(locale.language()));
 		registerField(QString("lang%1").arg(locale.name()), check);
 		llayout->addWidget(check);
@@ -148,10 +145,10 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 	// The list of supported languages are shown here.
 	// Please insert all the languages that iRIC may support.
 	ret.append(QLocale::Japanese);
-    ret.append(QLocale::Korean);
-    ret.append(QLocale::Thai);
-    ret.append(QLocale::Indonesian);
-    ret.append(QLocale::Chinese);
+	ret.append(QLocale::Korean);
+	ret.append(QLocale::Thai);
+	ret.append(QLocale::Indonesian);
+	ret.append(QLocale::Chinese);
 	ret.append(QLocale::French);
 	ret.append(QLocale::Spanish);
 	ret.append(QLocale::Russian);
@@ -165,13 +162,11 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 void SettingPage::init(SolverDefinitionList *list, const QList<GridCreatingConditionCreator*>& gclist)
 {
 	QList<SolverDefinitionAbstract*> slist = list->solverList();
-	for (auto it = slist.begin(); it != slist.end(); ++it){
-		SolverDefinitionAbstract* abst = *it;
+	for (SolverDefinitionAbstract* abst : slist){
 		m_solverCombobox->addItem(abst->caption(), abst->name());
 	}
 
-	for (auto git = gclist.begin(); git != gclist.end(); ++git){
-		GridCreatingConditionCreator* c = *git;
+	for (GridCreatingConditionCreator* c : gclist){
 		m_gridGenComboBox->addItem(c->caption(), c->name());
 	}
 }
@@ -231,12 +226,11 @@ void ConfirmPage::initializePage()
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
 	QString filelist;
-	for (auto lit = allLangs.begin(); lit != allLangs.end(); ++lit){
-		QLocale locale = *lit;
+	for (const QLocale& locale : allLangs){
 		QVariant val = field(QString("lang%1").arg(locale.name()));
 		if (val.toBool() == true){
 			QString fname = SolverDefinitionTranslator::filenameFromLocale(locale);
-            filelist.append(QDir::toNativeSeparators(folderDir.absoluteFilePath(fname))).append("\n");
+			filelist.append(QDir::toNativeSeparators(folderDir.absoluteFilePath(fname))).append("\n");
 		}
 	}
 	m_textEdit->setText(filelist);

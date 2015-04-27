@@ -1918,9 +1918,8 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (auto it = clist.begin(); it != clist.end(); ++it){
-		(*it)->allocate();
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+		c->allocate();
 	}
 	grid->setModified();
 	return grid;

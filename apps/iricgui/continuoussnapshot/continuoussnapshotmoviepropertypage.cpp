@@ -37,8 +37,7 @@ void ContinuousSnapshotMoviePropertyPage::initializePage()
 	case ContinuousSnapshotWizard::Respectively:
 		ui->filenameTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
-		for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it){
-			QMdiSubWindow* sub = *it;
+		for (QMdiSubWindow* sub : m_wizard->windowList()){
 			ui->filenameTableWidget->setVerticalHeaderItem(idx, new QTableWidgetItem(sub->windowTitle()));
 			ui->filenameTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("window%1.wmv").arg(idx + 1)));
 			++idx;

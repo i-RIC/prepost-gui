@@ -30,11 +30,10 @@ ContinuousSnapshotWindowSelectionPage::~ContinuousSnapshotWindowSelectionPage()
 void ContinuousSnapshotWindowSelectionPage::setupWindowList()
 {
 	QMdiArea* center = dynamic_cast<QMdiArea*>(m_mainWindow->centralWidget());
-	QList<QMdiSubWindow*> list = center->subWindowList(QMdiArea::ActivationHistoryOrder);
-	for (auto it = list.begin(); it != list.end(); ++it){
-		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
+	for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder)){
+		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>(sub->widget());
 		if (post == nullptr) continue;
-		QListWidgetItem* item = new QListWidgetItem((*it)->windowTitle(), ui->targetListWidget);
+		QListWidgetItem* item = new QListWidgetItem(sub->windowTitle(), ui->targetListWidget);
 		item->setCheckState(Qt::Checked);
 	}
 }
@@ -72,16 +71,15 @@ void ContinuousSnapshotWindowSelectionPage::initializePage()
 bool ContinuousSnapshotWindowSelectionPage::validatePage()
 {
 	QMdiArea* center = dynamic_cast<QMdiArea*>(m_mainWindow->centralWidget());
-	QList<QMdiSubWindow*> list = center->subWindowList(QMdiArea::ActivationHistoryOrder);
 	// Windows
 	m_wizard->clearWindowList();
 	bool hasTransparent = false;
-	for (auto it = list.begin(); it != list.end(); ++it){
-		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>((*it)->widget());
+	for (QMdiSubWindow* sub : center->subWindowList(QMdiArea::ActivationHistoryOrder)){
+		PostProcessorWindow* post = dynamic_cast<PostProcessorWindow*>(sub->widget());
 		if (post == nullptr) continue;
-		QListWidgetItem* item = ui->targetListWidget->findItems((*it)->windowTitle(), Qt::MatchExactly).at(0);
+		QListWidgetItem* item = ui->targetListWidget->findItems(sub->windowTitle(), Qt::MatchExactly).at(0);
 		if (item->checkState() == Qt::Checked){
-			m_wizard->addWindowList(*it);
+			m_wizard->addWindowList(sub);
 			hasTransparent = hasTransparent || post->hasTransparentPart();
 		}
 	}
@@ -129,8 +127,7 @@ void ContinuousSnapshotWindowSelectionPage::measurePixmapSize(QPoint &p, QSize &
 	QPoint max;
 
 	bool first = true;
-	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it){
-		QMdiSubWindow* sub = *it;
+	for (QMdiSubWindow* sub : m_wizard->windowList()){
 		// post window graphics view
 		QWidget* post = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
 		QPoint beginPos = sub->pos() + sub->widget()->pos() + post->pos();

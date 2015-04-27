@@ -34,8 +34,8 @@ public:
 	void undo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		for (auto it = m_before.begin(); it != m_before.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+			backup->restore();
 		}
 
 		m_condition->updateShapeData();
@@ -46,8 +46,8 @@ public:
 	void redo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		for (auto it = m_after.begin(); it != m_after.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+			backup->restore();
 		}
 
 		m_condition->updateShapeData();

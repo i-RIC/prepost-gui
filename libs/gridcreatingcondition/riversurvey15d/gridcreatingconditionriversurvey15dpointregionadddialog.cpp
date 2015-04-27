@@ -27,16 +27,16 @@ public:
 	}
 	void undo()
 	{
-		for (auto it = m_before.begin(); it != m_before.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 	void redo()
 	{
-		for (auto it = m_after.begin(); it != m_after.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();

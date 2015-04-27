@@ -56,8 +56,8 @@ public:
 	}
 	void undo()
 	{
-		for (auto it = m_before.begin(); it != m_before.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
@@ -65,8 +65,8 @@ public:
 
 	void redo()
 	{
-		for (auto it = m_after.begin(); it != m_after.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
@@ -92,10 +92,10 @@ private:
 			if (it->Position == RawDataRiverPathPoint::pposCenterToLeft){
 				RemoveCenterToLeft = true;
 				LeftRemoveIndices.insert(it->Index);
-			}else if (it->Position == RawDataRiverPathPoint::pposCenterToRight){
+			} else if (it->Position == RawDataRiverPathPoint::pposCenterToRight){
 				RemoveCenterToRight = true;
 				RightRemoveIndices.insert(it->Index);
-			}else{
+			} else {
 				points.insert(it->Point);
 				auto psetit = PointIndices.find(it->Point);
 				if (psetit == PointIndices.end()){
@@ -122,9 +122,9 @@ private:
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToRight);
 			m_before.push_back(backup);
 		}
-		for (auto pit = points.begin(); pit != points.end(); ++pit){
+		for (RawDataRiverPathPoint* point : points){
 			backup = new RawDataRiverSurveyCtrlPointBackup();
-			backup->backup(*pit, RawDataRiverPathPoint::zposCenterLine);
+			backup->backup(point, RawDataRiverPathPoint::zposCenterLine);
 			m_before.push_back(backup);
 		}
 

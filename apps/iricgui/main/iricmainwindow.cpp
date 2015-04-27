@@ -1003,8 +1003,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 				painter.setBackgroundMode(Qt::OpaqueMode);
 			}
 			QPoint begin(0, 0);
-			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
-				QMdiSubWindow* sub = *it;
+			for (QMdiSubWindow* sub : wizard->windowList()){
 				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
 				QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
 				window->setTransparent(m_transparent);
@@ -1032,8 +1031,8 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 		}
 		case ContinuousSnapshotWizard::Respectively:
 			int i = 0;
-			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it, ++i){
-				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>((*it)->widget());
+			for (QMdiSubWindow* sub : wizard->windowList()){
+				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
 				window->setTransparent(m_transparent);
 				QPixmap pixmap = window->snapshot();
 				pixmap.save(*fit);
@@ -1043,6 +1042,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 					addKMLElement(step, url, m_north, m_south, m_west, m_east, m_angle, writer);
 				}
 				++fit;
+				++ i;
 			}
 			break;
 		}
@@ -1525,10 +1525,8 @@ void iRICMainWindow::removeFromRecentSolvers(const QString& foldername)
 void iRICMainWindow::updateWindowZIndices()
 {
 	// @todo this fails! investigate the reason.
-	QList<QMdiSubWindow*> wlist = m_Center->subWindowList(QMdiArea::StackingOrder);
 	int index = 1;
-	for (auto it = wlist.begin(); it != wlist.end(); ++it){
-		QMdiSubWindow* w = (*it);
+	for (QMdiSubWindow* w : m_Center->subWindowList(QMdiArea::StackingOrder)){
 		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
 		w2->setZindex(index++);
 	}

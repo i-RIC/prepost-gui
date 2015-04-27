@@ -57,7 +57,7 @@ public:
 			m_messageType = type;
 		}
 		/// Save the information contained in this instance into translation file.
-		void save(QXmlStreamWriter& writer);
+		void save(QXmlStreamWriter& writer) const;
 		/// The source message.
 		const QString& source() const {return m_source;}
 		/// The translated message.
