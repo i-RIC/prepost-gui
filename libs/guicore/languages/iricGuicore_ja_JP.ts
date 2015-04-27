@@ -753,7 +753,7 @@ Do you really want to import this file?</source>
         <translation>不正なデータが見つかりました。: %1</translation>
     </message>
     <message>
-        <location filename="../project/measureddata.cpp" line="357"/>
+        <location filename="../project/measureddata.cpp" line="358"/>
         <source>Importing Measured Data...</source>
         <translation>実測値をインポートしています...</translation>
     </message>
@@ -1141,12 +1141,12 @@ Do you really want to import this file?</source>
 <context>
     <name>PostIterationSteps</name>
     <message>
-        <location filename="../postcontainer/postiterationsteps.cpp" line="78"/>
+        <location filename="../postcontainer/postiterationsteps.cpp" line="79"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postiterationsteps.cpp" line="78"/>
+        <location filename="../postcontainer/postiterationsteps.cpp" line="79"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
@@ -1206,12 +1206,12 @@ Do you really want to import this file?</source>
 <context>
     <name>PostTimeSteps</name>
     <message>
-        <location filename="../postcontainer/posttimesteps.cpp" line="78"/>
+        <location filename="../postcontainer/posttimesteps.cpp" line="79"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/posttimesteps.cpp" line="78"/>
+        <location filename="../postcontainer/posttimesteps.cpp" line="79"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
@@ -1265,33 +1265,33 @@ Do you really want to import this file?</source>
         <translation>プロジェクトファイルを読み込んでいます...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="254"/>
+        <location filename="../project/projectdata.cpp" line="237"/>
         <source>Saving project file...</source>
         <translation>プロジェクトファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="284"/>
+        <location filename="../project/projectdata.cpp" line="267"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="284"/>
+        <location filename="../project/projectdata.cpp" line="267"/>
         <source>Could not overwrite %1.</source>
         <translation>%1 を上書き保存できませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="394"/>
+        <location filename="../project/projectdata.cpp" line="377"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="395"/>
+        <location filename="../project/projectdata.cpp" line="378"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="482"/>
-        <location filename="../project/projectdata.cpp" line="553"/>
+        <location filename="../project/projectdata.cpp" line="465"/>
+        <location filename="../project/projectdata.cpp" line="537"/>
         <source>Saving project...</source>
         <translation>プロジェクトを保存しています...</translation>
     </message>
@@ -1318,10 +1318,10 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="419"/>
         <location filename="../project/projectmainfile.cpp" line="448"/>
         <location filename="../project/projectmainfile.cpp" line="477"/>
-        <location filename="../project/projectmainfile.cpp" line="937"/>
-        <location filename="../project/projectmainfile.cpp" line="983"/>
-        <location filename="../project/projectmainfile.cpp" line="1003"/>
-        <location filename="../project/projectmainfile.cpp" line="1010"/>
+        <location filename="../project/projectmainfile.cpp" line="941"/>
+        <location filename="../project/projectmainfile.cpp" line="987"/>
+        <location filename="../project/projectmainfile.cpp" line="1007"/>
+        <location filename="../project/projectmainfile.cpp" line="1014"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1353,9 +1353,9 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="627"/>
         <location filename="../project/projectmainfile.cpp" line="638"/>
         <location filename="../project/projectmainfile.cpp" line="641"/>
-        <location filename="../project/projectmainfile.cpp" line="834"/>
-        <location filename="../project/projectmainfile.cpp" line="839"/>
-        <location filename="../project/projectmainfile.cpp" line="992"/>
+        <location filename="../project/projectmainfile.cpp" line="838"/>
+        <location filename="../project/projectmainfile.cpp" line="843"/>
+        <location filename="../project/projectmainfile.cpp" line="996"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1415,47 +1415,47 @@ Do you really want to import this file?</source>
         <translation>不正な画像ファイルが指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="806"/>
+        <location filename="../project/projectmainfile.cpp" line="810"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="808"/>
+        <location filename="../project/projectmainfile.cpp" line="812"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="838"/>
+        <location filename="../project/projectmainfile.cpp" line="842"/>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="924"/>
+        <location filename="../project/projectmainfile.cpp" line="928"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="925"/>
+        <location filename="../project/projectmainfile.cpp" line="929"/>
         <source>Open Measured Data File</source>
         <translation>実測値データファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="983"/>
+        <location filename="../project/projectmainfile.cpp" line="987"/>
         <source>Error occured while loading %1.</source>
         <translation>%1 の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="992"/>
+        <location filename="../project/projectmainfile.cpp" line="996"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation>このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1003"/>
+        <location filename="../project/projectmainfile.cpp" line="1007"/>
         <source>There is no visualization/graph windows.</source>
         <translation>可視化・グラフウィンドウがありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1010"/>
+        <location filename="../project/projectmainfile.cpp" line="1014"/>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
@@ -1589,12 +1589,12 @@ Do you really want to import this file?</source>
         <translation>距離計測の再定義</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="439"/>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="441"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="546"/>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="548"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>

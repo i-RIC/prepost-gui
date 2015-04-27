@@ -17,7 +17,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../versionnumber.cpp" line="42"/>
+        <location filename="../versionnumber.cpp" line="43"/>
         <source> Revision %1</source>
         <translation> リビジョン %1</translation>
     </message>

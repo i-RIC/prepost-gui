@@ -205,7 +205,7 @@
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="524"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="531"/>
         <source>Contour Setting</source>
         <translation>コンター設定</translation>
     </message>
@@ -444,9 +444,13 @@
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="33"/>
         <source>Particles</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="33"/>
+        <source>Particles (auto)</source>
+        <translation>パーティクル (自動)</translation>
     </message>
 </context>
 <context>
@@ -644,13 +648,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="16"/>
         <source>Particles</source>
-        <translation type="vanished">粒子</translation>
+        <translation>粒子</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="16"/>
         <source>Particles (auto)</source>
-        <translation>パーティクル (自動)</translation>
+        <translation type="vanished">パーティクル (自動)</translation>
     </message>
 </context>
 <context>

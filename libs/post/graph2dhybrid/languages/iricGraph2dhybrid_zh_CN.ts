@@ -560,7 +560,7 @@
     <message>
         <location filename="../graph2dhybridwindowdatamodel.cpp" line="1097"/>
         <location filename="../graph2dhybridwindowdatamodel.cpp" line="1109"/>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1514"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1521"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -576,7 +576,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1515"/>
+        <location filename="../graph2dhybridwindowdatamodel.cpp" line="1522"/>
         <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="unfinished"></translation>
     </message>

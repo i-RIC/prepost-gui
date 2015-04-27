@@ -1559,7 +1559,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>グループの編集(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatacomplexgroupdataitem.cpp" line="99"/>
+        <location filename="../datamodel/preprocessorrawdatacomplexgroupdataitem.cpp" line="100"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
@@ -1592,85 +1592,85 @@ This algorithm can be used only for structured grids.</source>
         <translation>凡例の設定...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="120"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="123"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="179"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="182"/>
         <source>All importable files (%1)</source>
         <translation>全てのインポート可能なファイル (%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="187"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="196"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="922"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="199"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="928"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="196"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="199"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation>データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="255"/>
         <source>Import failed</source>
         <translation>インポート失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="255"/>
         <source>Importing data from %1 failed.</source>
         <translation>%1 からデータをインポートするのに失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="225"/>
         <source>Importing data...</source>
         <translation>データをインポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="242"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="242"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="337"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="340"/>
         <source>Select data to export</source>
         <translation>エクスポートするデータの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="337"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="340"/>
         <source>Please select which data to export.</source>
         <translation>エクスポートするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="684"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="687"/>
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="870"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="873"/>
         <source>Export Polygons</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="870"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="873"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="922"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="928"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>

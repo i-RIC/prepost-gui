@@ -505,29 +505,29 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="58"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="59"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -544,7 +544,7 @@
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="37"/>
-        <source>Particles</source>
+        <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -861,7 +861,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
         <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="16"/>
-        <source>Particles (auto)</source>
+        <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1106,12 +1106,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="449"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="456"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="585"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="592"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>

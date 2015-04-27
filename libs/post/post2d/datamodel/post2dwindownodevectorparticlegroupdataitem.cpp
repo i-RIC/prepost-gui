@@ -34,7 +34,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Particles"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+	: Post2dWindowDataItem(tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);

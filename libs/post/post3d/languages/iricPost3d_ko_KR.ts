@@ -205,7 +205,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="524"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="531"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -441,7 +441,7 @@
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="33"/>
-        <source>Particles</source>
+        <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -621,7 +621,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
         <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="16"/>
-        <source>Particles (auto)</source>
+        <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

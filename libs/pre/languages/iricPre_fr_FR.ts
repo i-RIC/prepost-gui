@@ -1548,7 +1548,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatacomplexgroupdataitem.cpp" line="99"/>
+        <location filename="../datamodel/preprocessorrawdatacomplexgroupdataitem.cpp" line="100"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1581,85 +1581,85 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="120"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="123"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="179"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="182"/>
         <source>All importable files (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="187"/>
         <source>Select file to import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="196"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="922"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="199"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="928"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="196"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="199"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="255"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="214"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="255"/>
         <source>Importing data from %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="225"/>
         <source>Importing data...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="242"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="242"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="337"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="340"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="337"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="340"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="684"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="687"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="870"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="873"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="870"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="873"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="922"/>
+        <location filename="../datamodel/preprocessorrawdatagroupdataitem.cpp" line="928"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>

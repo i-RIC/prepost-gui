@@ -505,31 +505,31 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="58"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="59"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="780"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="786"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="791"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
 </context>
 <context>
@@ -543,9 +543,13 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="37"/>
         <source>Particles</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="37"/>
+        <source>Particles (auto)</source>
+        <translation>パーティクル (自動)</translation>
     </message>
 </context>
 <context>
@@ -892,13 +896,13 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
+        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="16"/>
         <source>Particles</source>
-        <translation type="vanished">粒子</translation>
+        <translation>粒子</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="16"/>
         <source>Particles (auto)</source>
-        <translation>パーティクル (自動)</translation>
+        <translation type="vanished">パーティクル (自動)</translation>
     </message>
 </context>
 <context>
@@ -1158,12 +1162,12 @@ p, li { white-space: pre-wrap; }
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="449"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="456"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="585"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="592"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>

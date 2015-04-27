@@ -13,7 +13,7 @@
 #include <QSettings>
 
 Post3dWindowParticlesTopDataItem::Post3dWindowParticlesTopDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconPaper.png"), p)
+	: Post3dWindowDataItem(tr("Particles"), QIcon(":/libs/guibase/images/iconPaper.png"), p)
 {
 	QSettings setting;
 

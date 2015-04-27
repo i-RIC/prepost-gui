@@ -115,12 +115,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="439"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="445"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="569"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="575"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>

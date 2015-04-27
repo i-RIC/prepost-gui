@@ -4,12 +4,12 @@
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="114"/>
+        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="115"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="114"/>
+        <location filename="../gridcreatingconditioncreatorexternalprogram.cpp" line="115"/>
         <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
         <translation type="unfinished"></translation>
