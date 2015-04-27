@@ -147,7 +147,7 @@ iRICMainWindow::iRICMainWindow(QWidget *parent)
 	updatePostActionStatus();
 	loadMetaData();
 	updateWindowTitle();
-	connect(m_Center, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(ActiveSubwindowChanged(QMdiSubWindow*)));
+	connect(m_centralWidget, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(ActiveSubwindowChanged(QMdiSubWindow*)));
 
 	restoreWindowState();
 
@@ -164,23 +164,23 @@ iRICMainWindow::~iRICMainWindow()
 void iRICMainWindow::setupBasicSubWindows()
 {
 	QMdiSubWindow* w = 0;
-	m_PreProcessorWindow = new PreProcessorWindow(this);
-	w = m_Center->addSubWindow(m_PreProcessorWindow);
+	m_preProcessorWindow = new PreProcessorWindow(this);
+	w = m_centralWidget->addSubWindow(m_preProcessorWindow);
 	w->setWindowIcon(QIcon(":/images/iconPreprocessing.png"));
 	w->hide();
 
-	m_SolverConsoleWindow = new SolverConsoleWindow(this);
-	w = m_Center->addSubWindow(m_SolverConsoleWindow);
+	m_solverConsoleWindow = new SolverConsoleWindow(this);
+	w = m_centralWidget->addSubWindow(m_solverConsoleWindow);
 	w->setWindowIcon(QIcon(":/libs/solverconsole/images/iconSolver.png"));
 	w->hide();
 }
 
 void iRICMainWindow::setupCentralWidget(){
-	m_Center = new QMdiArea(this);
-	m_Center->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-	m_Center->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-	m_Center->setActivationOrder(QMdiArea::CreationOrder);
-	setCentralWidget(m_Center);
+	m_centralWidget = new QMdiArea(this);
+	m_centralWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+	m_centralWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+	m_centralWidget->setActivationOrder(QMdiArea::CreationOrder);
+	setCentralWidget(m_centralWidget);
 }
 
 void iRICMainWindow::newProject()
@@ -232,7 +232,7 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract *solver){
 		return;
 	}
 
-	if (! dynamic_cast<PreProcessorWindow*>(m_PreProcessorWindow)->isSetupCorrectly()){
+	if (! dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow)->isSetupCorrectly()){
 		QMessageBox::critical(this, tr("Error"), tr("Error occured while loading Solver definition file."));
 		closeProject();
 		return;
@@ -248,12 +248,12 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract *solver){
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
 
 	// show pre-processor window first.
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->setupDefaultGeometry();
 	pre->parentWidget()->show();
 	m_actionManager->informSubWindowChange(pre);
-	m_SolverConsoleWindow->setupDefaultGeometry();
-	m_SolverConsoleWindow->parentWidget()->hide();
+	m_solverConsoleWindow->setupDefaultGeometry();
+	m_solverConsoleWindow->parentWidget()->hide();
 }
 
 void iRICMainWindow::openProject()
@@ -389,8 +389,8 @@ void iRICMainWindow::openProject(const QString& filename)
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
 
 	// hide condole window.
-	m_SolverConsoleWindow->setupDefaultGeometry();
-	m_SolverConsoleWindow->parentWidget()->hide();
+	m_solverConsoleWindow->setupDefaultGeometry();
+	m_solverConsoleWindow->parentWidget()->hide();
 
 	// show preprocessor window.
 	focusPreProcessorWindow();
@@ -478,12 +478,12 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
 
 	// show pre-processor window first.
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->setupDefaultGeometry();
 	pre->parentWidget()->show();
-	m_actionManager->informSubWindowChange(m_PreProcessorWindow);
-	m_SolverConsoleWindow->setupDefaultGeometry();
-	m_SolverConsoleWindow->parentWidget()->hide();
+	m_actionManager->informSubWindowChange(m_preProcessorWindow);
+	m_solverConsoleWindow->setupDefaultGeometry();
+	m_solverConsoleWindow->parentWidget()->hide();
 
 	m_isOpening = false;
 	LastIODirectory::set(QFileInfo(fname).absolutePath());
@@ -531,10 +531,10 @@ bool iRICMainWindow::closeProject()
 	m_actionManager->unregisterAdditionalToolBar();
 	addToolBarBreak(Qt::TopToolBarArea);
 	m_actionManager->projectFileClose();
-	m_PreProcessorWindow->parentWidget()->hide();
-	m_SolverConsoleWindow->parentWidget()->hide();
+	m_preProcessorWindow->parentWidget()->hide();
+	m_solverConsoleWindow->parentWidget()->hide();
 	m_postWindowFactory->resetWindowCounts();
-	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_SolverConsoleWindow->parentWidget()));
+	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
 	m_projectData = 0;
 	m_mousePositionWidget->setProjectData(0);
@@ -585,7 +585,7 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 	if (cw != 0){
 		cw->informFocusIn();
 	} else {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 		pre->informUnfocusRiverCrosssectionWindows();
 	}
 	m_mousePositionWidget->clear();
@@ -595,7 +595,7 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 
 void iRICMainWindow::focusPreProcessorWindow()
 {
-	QWidget* parent = m_PreProcessorWindow->parentWidget();
+	QWidget* parent = m_preProcessorWindow->parentWidget();
 	parent->show();
 	parent->setFocus();
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
@@ -603,7 +603,7 @@ void iRICMainWindow::focusPreProcessorWindow()
 
 void iRICMainWindow::focusSolverConsoleWindow()
 {
-	QWidget* parent = m_SolverConsoleWindow->parentWidget();
+	QWidget* parent = m_solverConsoleWindow->parentWidget();
 	parent->show();
 	parent->setFocus();
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(parent));
@@ -744,7 +744,7 @@ void iRICMainWindow::closeEvent(QCloseEvent *event)
 			event->ignore();
 			return;
 		}
-		m_SolverConsoleWindow->terminateSolver();
+		m_solverConsoleWindow->terminateSolver();
 	}
 	if (m_isSaving){
 		event->ignore();
@@ -777,8 +777,8 @@ void iRICMainWindow::cut()
 
 void iRICMainWindow::copy()
 {
-	QWidget* widget = m_Center->activeSubWindow()->widget();
-	if (widget == m_SolverConsoleWindow){
+	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
+	if (widget == m_solverConsoleWindow){
 		dynamic_cast<SolverConsoleWindow*>(widget)->copy();
 	}
 }
@@ -790,7 +790,7 @@ void iRICMainWindow::paste()
 
 void iRICMainWindow::snapshot()
 {
-	QWidget* widget = m_Center->activeSubWindow()->widget();
+	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
 	SnapshotEnabledWindow* enabledWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
 	if (enabledWindow != 0)
 	{
@@ -854,11 +854,11 @@ void iRICMainWindow::snapshotSvg()
 
 void iRICMainWindow::continuousSnapshot()
 {
-	if (m_SolverConsoleWindow->isSolverRunning()){
+	if (m_solverConsoleWindow->isSolverRunning()){
 		QMessageBox::warning(this, tr("Warning"), tr("This menu is not available while the solver is running."), QMessageBox::Ok);
 		return;
 	}
-	QWidget* widget = m_Center->activeSubWindow()->widget();
+	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
 	SnapshotEnabledWindow* enableWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
 	if (enableWindow != 0){
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
@@ -1204,7 +1204,7 @@ void iRICMainWindow::warnSolverRunning()
 
 bool iRICMainWindow::isSolverRunning()
 {
-	return m_SolverConsoleWindow->isSolverRunning();
+	return m_solverConsoleWindow->isSolverRunning();
 }
 
 void iRICMainWindow::switchCgnsFile(const QString& newcgns){
@@ -1232,17 +1232,17 @@ void iRICMainWindow::handleCgnsSwitch()
 
 	// clear solver console window.
 	if (! m_isOpening){
-		m_SolverConsoleWindow->clear();
+		m_solverConsoleWindow->clear();
 	}
 
 	// create a connection so that when the solver finishes
 	// the calculation, the the cgns file automatically
 	// checks wheter the steps stored in the CGNS file
 	// is updated.
-	connect(m_SolverConsoleWindow, SIGNAL(solverStarted()), m_projectData->mainfile()->postSolutionInfo(), SLOT(checkCgnsStepsUpdate()));
-	connect(m_SolverConsoleWindow, SIGNAL(solverStarted()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverStart()));
-	connect(m_SolverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(checkCgnsStepsUpdate()));
-	connect(m_SolverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverFinish()));
+	connect(m_solverConsoleWindow, SIGNAL(solverStarted()), m_projectData->mainfile()->postSolutionInfo(), SLOT(checkCgnsStepsUpdate()));
+	connect(m_solverConsoleWindow, SIGNAL(solverStarted()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverStart()));
+	connect(m_solverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(checkCgnsStepsUpdate()));
+	connect(m_solverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverFinish()));
 }
 
 void iRICMainWindow::exportCurrentCgnsFile(){
@@ -1527,7 +1527,7 @@ void iRICMainWindow::removeFromRecentSolvers(const QString& foldername)
 void iRICMainWindow::updateWindowZIndices()
 {
 	// @todo this fails! investigate the reason.
-	QList<QMdiSubWindow*> wlist = m_Center->subWindowList(QMdiArea::StackingOrder);
+	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList(QMdiArea::StackingOrder);
 	QList<QMdiSubWindow*>::iterator it;
 	int index = 1;
 	for (it = wlist.begin(); it != wlist.end(); ++it){
@@ -1540,7 +1540,7 @@ void iRICMainWindow::updateWindowZIndices()
 void iRICMainWindow::reflectWindowZIndices()
 {
 	QMap<int, QMdiSubWindow*> windowsToShow;
-	QList<QMdiSubWindow*> wlist = m_Center->subWindowList();
+	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList();
 	QList<QMdiSubWindow*>::iterator it;
 	for (it = wlist.begin(); it != wlist.end(); ++it){
 		QMdiSubWindow* w = (*it);
@@ -1758,7 +1758,7 @@ void iRICMainWindow::saveWindowState()
 
 void iRICMainWindow::exportCalculationResult()
 {
-	if (m_SolverConsoleWindow->isSolverRunning()){
+	if (m_solverConsoleWindow->isSolverRunning()){
 		warnSolverRunning();
 		return;
 	}
@@ -1771,11 +1771,11 @@ void iRICMainWindow::exportCalculationResult()
 
 void iRICMainWindow::exportParticles()
 {
-	if (m_SolverConsoleWindow->isSolverRunning()){
+	if (m_solverConsoleWindow->isSolverRunning()){
 		warnSolverRunning();
 		return;
 	}
-	ParticleExportWindow* ew = dynamic_cast<ParticleExportWindow*>(m_Center->activeSubWindow()->widget());
+	ParticleExportWindow* ew = dynamic_cast<ParticleExportWindow*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == 0){
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
@@ -1875,11 +1875,11 @@ void iRICMainWindow::exportStKML()
 		outputFileName = dir.absoluteFilePath("output.kml");
 	}
 
-	if (m_SolverConsoleWindow->isSolverRunning()){
+	if (m_solverConsoleWindow->isSolverRunning()){
 		warnSolverRunning();
 		return;
 	}
-	SVKmlExportWindow* ew = dynamic_cast<SVKmlExportWindow*>(m_Center->activeSubWindow()->widget());
+	SVKmlExportWindow* ew = dynamic_cast<SVKmlExportWindow*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == 0){
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
@@ -2055,18 +2055,18 @@ void iRICMainWindow::exportVisGraphSetting()
 
 void iRICMainWindow::tileSubWindows()
 {
-	m_Center->tileSubWindows();
-	m_Center->hide();
-	m_Center->show();
+	m_centralWidget->tileSubWindows();
+	m_centralWidget->hide();
+	m_centralWidget->show();
 }
 
 void iRICMainWindow::initForSolverDefinition()
 {
 	// initializes pre-processor for the specified solver definition.
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->initForSolverDefinition();
 	// initializes solver console window for the specified solver definition.
-	m_SolverConsoleWindow->projectDataItem()->initForSolverDefinition();
+	m_solverConsoleWindow->projectDataItem()->initForSolverDefinition();
 }
 
 void iRICMainWindow::loadSubWindowsFromProjectMainFile(const QDomNode& node)
@@ -2075,14 +2075,14 @@ void iRICMainWindow::loadSubWindowsFromProjectMainFile(const QDomNode& node)
 	QDomNode tmpNode = iRIC::getChildNode(node, "PreProcessorWindow");
 	if (! tmpNode.isNull())
 	{
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 		pre->projectDataItem()->loadFromProjectMainFile(tmpNode);
 	}
 	// read setting about Console Window
 	tmpNode = iRIC::getChildNode(node, "SolverConsoleWindow");
 	if (! tmpNode.isNull())
 	{
-		m_SolverConsoleWindow->projectDataItem()->loadFromProjectMainFile(tmpNode);
+		m_solverConsoleWindow->projectDataItem()->loadFromProjectMainFile(tmpNode);
 	}
 
 	// read setting abound Post processors
@@ -2097,14 +2097,14 @@ void iRICMainWindow::saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer)
 	// write setting about PreProcessor
 	writer.writeStartElement("PreProcessorWindow");
 	// delegate to PreProcessorWindowProjectDataItem
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	// write setting about SolverConsoleWindow
 	writer.writeStartElement("SolverConsoleWindow");
 	// delegate to SolverConsoleWindowProjectDataItem
-	m_SolverConsoleWindow->projectDataItem()->saveToProjectMainFile(writer);
+	m_solverConsoleWindow->projectDataItem()->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	writer.writeStartElement("PostProcessorFactory");
@@ -2114,47 +2114,47 @@ void iRICMainWindow::saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer)
 
 QStringList iRICMainWindow::containedFiles() const
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	return pre->projectDataItem()->containedFiles();
 }
 
 void iRICMainWindow::loadFromCgnsFile(const int fn)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->loadFromCgnsFile(fn);
 }
 
 void iRICMainWindow::saveToCgnsFile(const int fn)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->saveToCgnsFile(fn);
 }
 
 void iRICMainWindow::closeCgnsFile()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->closeCgnsFile();
 }
 
 void iRICMainWindow::toggleGridEditFlag()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->projectDataItem()->toggleGridEditFlag();
 }
 
 void iRICMainWindow::clearResults()
 {
-	m_SolverConsoleWindow->clear();
+	m_solverConsoleWindow->clear();
 }
 
 bool iRICMainWindow::clearResultsIfGridIsEdited()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	bool gridEdited = pre->projectDataItem()->gridEdited();
 	bool hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
 	if (gridEdited && hasResult){
 		// grid is edited, and the CGNS has calculation result.
-		int ret = QMessageBox::warning(m_PreProcessorWindow, tr("Warning"), tr("The grids are edited. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
 		if (ret == QMessageBox::Cancel){return false;}
 		m_projectData->mainfile()->clearResults();
 	}
@@ -2164,9 +2164,9 @@ bool iRICMainWindow::clearResultsIfGridIsEdited()
 void iRICMainWindow::setProjectData(ProjectData* projectData)
 {
 	projectData->mainfile()->postProcessors()->setFactory(m_postWindowFactory);
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_PreProcessorWindow);
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
 	pre->setProjectData(projectData);
-	m_SolverConsoleWindow->setProjectData(projectData);
+	m_solverConsoleWindow->setProjectData(projectData);
 	m_actionManager->setProjectData(projectData);
 }
 

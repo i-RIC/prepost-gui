@@ -47,11 +47,11 @@ public:
 	~iRICMainWindow();
 	/// THe PreProcessorWindow
 	PreProcessorWindowInterface* preProcessorWindow(){
-		return m_PreProcessorWindow;
+		return m_preProcessorWindow;
 	}
 	/// The SolverConsoleWindow
 	SolverConsoleWindow* solverConsoleWindow(){
-		return m_SolverConsoleWindow;
+		return m_solverConsoleWindow;
 	}
 	const QLocale locale(){return m_locale;}
 	bool isSolverRunning();
@@ -92,10 +92,10 @@ private:
 	/// Initialize settings.
 	void initSetting();
 	/// The central widget
-	QMdiArea* m_Center;
+	QMdiArea* m_centralWidget;
 	// pointers to inner windows
-	PreProcessorWindowInterface* m_PreProcessorWindow;
-	SolverConsoleWindow* m_SolverConsoleWindow;
+	PreProcessorWindowInterface* m_preProcessorWindow;
+	SolverConsoleWindow* m_solverConsoleWindow;
 
 protected:
 	void closeEvent(QCloseEvent *);
