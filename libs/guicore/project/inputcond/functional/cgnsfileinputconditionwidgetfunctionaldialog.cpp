@@ -242,7 +242,7 @@ void CgnsFileInputConditionWidgetFunctionalDialog::clear(){
 void CgnsFileInputConditionWidgetFunctionalDialog::selectionChange(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/){
 	QItemSelection selection = m_selectionModel->selection();
 	bool deletable = false;
-	for (QList<QItemSelectionRange>::iterator it = selection.begin(); it != selection.end(); ++it){
+	for (auto it = selection.begin(); it != selection.end(); ++it){
 		deletable = deletable || (it->left() == 0 && it->right() == m_model->columnCount() - 1);
 	}
 	ui.removeButton->setDisabled(! deletable);
@@ -250,7 +250,7 @@ void CgnsFileInputConditionWidgetFunctionalDialog::selectionChange(const QItemSe
 
 void CgnsFileInputConditionWidgetFunctionalDialog::removeSelected(){
 	QItemSelection selection = m_selectionModel->selection();
-	for (QList<QItemSelectionRange>::iterator it = selection.begin(); it != selection.end(); ++it){
+	for (auto it = selection.begin(); it != selection.end(); ++it){
 		if (it->left() == 0 && it->right() == m_model->columnCount() - 1){
 			// delete this.
 			m_model->removeRows(it->top(), (it->bottom() - it->top() + 1));

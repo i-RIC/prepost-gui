@@ -41,12 +41,12 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers3D();
 	if (containers.size() != 0){
 		vtkPointSet* ps = containers.at(0)->data();
-		if (ps == 0){return;}
+		if (ps == nullptr){return;}
 		vtkPointData* pd = ps->GetPointData();
 		int num = pd->GetNumberOfArrays();
 		for (int i = 0; i < num; ++i){
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			QString name = tmparray->GetName();
 
 			setupScalarsToColors(name);
@@ -57,8 +57,7 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 
 Post3dWindowGridTypeDataItem::~Post3dWindowGridTypeDataItem()
 {
-	QList<Post3dWindowZoneDataItem*>::iterator z_it;
-	for(z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
+	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
 		delete *z_it;
 	}
 }
@@ -71,18 +70,16 @@ const QString& Post3dWindowGridTypeDataItem::name()
 void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 {
 	// first, clear the current zonedata.
-	QList<Post3dWindowZoneDataItem*>::iterator z_it;
-	for (z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
+	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
 		delete *z_it;
 	}
 	m_zoneDatas.clear();
 	const QList<PostZoneDataContainer*>& zones = postSolutionInfo()->zoneContainers3D();
-	QList<PostZoneDataContainer*>::const_iterator it;
 	int num = 0;
 	int zoneNum = 0;
-	for (it = zones.begin(); it != zones.end(); ++it){
+	for (auto it = zones.begin(); it != zones.end(); ++it){
 		const PostZoneDataContainer* cont = (*it);
-		if (cont->data() == 0){continue;}
+		if (cont->data() == nullptr){continue;}
 		if (cont->gridType() == m_gridType){
 			Post3dWindowZoneDataItem* zdata = new Post3dWindowZoneDataItem(cont->zoneName(), num++, this);
 			m_zoneDatas.append(zdata);
@@ -93,12 +90,12 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	if (m_lookupTables.count() == 0 && zoneNum != 0){
 		vtkPointSet* ps = zones.at(0)->data();
-		if (ps != 0){
+		if (ps != nullptr){
 			vtkPointData* pd = ps->GetPointData();
 			int num = pd->GetNumberOfArrays();
 			for (int i = 0; i < num; ++i){
 				vtkAbstractArray* tmparray = pd->GetArray(i);
-				if (tmparray == 0){continue;}
+				if (tmparray == nullptr){continue;}
 				QString name = tmparray->GetName();
 				setupScalarsToColors(name);
 			}
@@ -120,28 +117,25 @@ void Post3dWindowGridTypeDataItem::update()
 	// update LookupTable range.
 	updateLookupTableRanges();
 
-	QList<Post3dWindowZoneDataItem*>::iterator it;
-	for (it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it){
+	for (auto it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it){
 		(*it)->update();
 	}
 }
 
 void Post3dWindowGridTypeDataItem::updateLookupTableRanges()
 {
-	QMap<QString, LookupTableContainer*>::iterator it;
-	for (it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it){
+	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it){
 		QString name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
-		QList<Post3dWindowZoneDataItem*>::iterator zit;
 		bool first = true;
 		double range[2], min = 0, max = 0;
-		for (zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
+		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 			Post3dWindowZoneDataItem* zitem = *zit;
 			PostZoneDataContainer* cont = zitem->dataContainer();
-			if (cont == 0){continue;}
-			if (cont->data() == 0){continue;}
+			if (cont == nullptr){continue;}
+			if (cont->data() == nullptr){continue;}
 			vtkDataArray* dArray = cont->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-			if (dArray != 0){
+			if (dArray != nullptr){
 				dArray->GetRange(range);
 				if (first || range[0] < min){min = range[0];}
 				if (first || range[1] > max){max = range[1];}
@@ -170,8 +164,8 @@ void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < tables.length(); ++i){
 			QDomNode ltNode = tables.at(i);
 			QString ltName = ltNode.toElement().attribute("name");
-			LookupTableContainer* cont = m_lookupTables.value(ltName, 0);
-			if (cont != 0){
+			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
+			if (cont != nullptr){
 				cont->loadFromProjectMainFile(ltNode);
 			}
 		}
@@ -182,8 +176,8 @@ void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < zones.length(); ++i){
 			QDomNode zoneNode = zones.at(i);
 			QString zoneName = zoneNode.toElement().attribute("name");
-			Post3dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, 0);
-			if (zdi != 0){
+			Post3dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
+			if (zdi != nullptr){
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
 		}
@@ -194,8 +188,7 @@ void Post3dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 {
 	writer.writeAttribute("name", m_gridType->name());
 	writer.writeStartElement("LookupTables");
-	QMap<QString, LookupTableContainer*>::iterator lit;
-	for (lit = m_lookupTables.begin(); lit != m_lookupTables.end(); ++lit) {
+	for (auto lit = m_lookupTables.begin(); lit != m_lookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
 		writer.writeAttribute("name", lit.key());
 		LookupTableContainer* cont = lit.value();
@@ -204,8 +197,7 @@ void Post3dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	}
 	writer.writeEndElement();
 	writer.writeStartElement("Zones");
-	QList<Post3dWindowZoneDataItem*>::iterator zit;
-	for (zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
+	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
 		Post3dWindowZoneDataItem* zitem = *zit;
 		writer.writeStartElement("Zone");
 		zitem->saveToProjectMainFile(writer);
@@ -226,15 +218,14 @@ void Post3dWindowGridTypeDataItem::setValueRange(const QString& name)
 	double max = 0.000001;
 
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers3D();
-	QList<PostZoneDataContainer*>::iterator it;
 
 	bool first = true;
-	for(it = containers.begin(); it != containers.end(); ++it){
+	for (auto it = containers.begin(); it != containers.end(); ++it){
 		vtkPointSet* ps = (*it)->data();
-		if(ps == 0) break;
+		if(ps == nullptr) break;
 		double range[3];
 		vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-		if(da == 0) break;
+		if(da == nullptr) break;
 		da->GetRange(range);
 		if (first || range[0] < min){min = range[0];}
 		if (first || range[1] > max){max = range[1];}

@@ -26,7 +26,7 @@ Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Post2dWindowNodeVecto
 {
 	setupDefaultValues();
 	setupTmpSource();
-	m_dialog = 0;
+	m_dialog = nullptr;
 }
 
 Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem()
@@ -38,9 +38,9 @@ QDialog* Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::propertyDial
 {
 	Post2dWindowStreamlineUnstructuredSettingDialog* dialog = new Post2dWindowStreamlineUnstructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){
+	if (cont == nullptr || cont->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setDataItem(this);
 	dialog->setZoneData(cont);
@@ -239,7 +239,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::clearSetting()
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::exitDialogMode()
 {
-	m_dialog = 0;
+	m_dialog = nullptr;
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
@@ -248,7 +248,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mousePressEvent(
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		m_dialog->informButtonDown(p);
 	}
 }
@@ -259,14 +259,14 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseReleaseEven
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		m_dialog->informButtonUp(p);
 	}
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent *event, VTKGraphicsView * /*v*/)
 {
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		dataModel()->graphicsView()->emitWorldPosition(event->x(), event->y());
 	}
 }

@@ -4,7 +4,7 @@
 PreProcessorGridCrosssectionWindowTableView::PreProcessorGridCrosssectionWindowTableView(QWidget *parent) :
 	QTableView(parent)
 {
-	m_editor = 0;
+	m_editor = nullptr;
 	m_editIndex = QModelIndex();
 	setMouseTracking(true);
 	setEditTriggers(

@@ -36,11 +36,11 @@
 Graph2dWindowDataModel::Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* parent)
 	: ProjectDataItem(parent)
 {
-	m_rootDataItem = 0;
+	m_rootDataItem = nullptr;
 	m_mainWindow = w;
-	m_rightClickMenu = 0;
+	m_rightClickMenu = nullptr;
 	m_operationToolBar = new iRICToolBar(iricMainWindow());
-	m_selectedItem = 0;
+	m_selectedItem = nullptr;
 	m_dataLoaded = false;
 
 	m_itemModel = new QStandardItemModel(this);
@@ -74,12 +74,12 @@ void Graph2dWindowDataModel::closeCgnsFile()
 void Graph2dWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
 {
 	if (QApplication::mouseButtons() == Qt::RightButton){
-		if (m_rightClickMenu != 0){delete m_rightClickMenu;}
+		if (m_rightClickMenu != nullptr){delete m_rightClickMenu;}
 		m_rightClickMenu = new QMenu(projectData()->mainWindow());
 		QStandardItem* pressedItem = m_itemModel->itemFromIndex(index);
 		Graph2dWindowDataItem* dataItem = m_rootDataItem->modelItemFromItem(pressedItem);
 		// no corresponding item found.
-		if (dataItem == 0){return;}
+		if (dataItem == nullptr){return;}
 
 		dataItem->addCustomMenuItems(m_rightClickMenu);
 		if (dataItem->isReorderable()){
@@ -95,8 +95,8 @@ void Graph2dWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, 
 			}
 			m_rightClickMenu->addAction(m_objectBrowserView->deleteAction());
 		}
-		QDialog* propDialog = dataItem->propertyDialog(0);
-		if (propDialog != 0){
+		QDialog* propDialog = dataItem->propertyDialog(nullptr);
+		if (propDialog != nullptr){
 			m_rightClickMenu->addSeparator();
 			m_rightClickMenu->addAction(m_objectBrowserView->propertyAction());
 			delete propDialog;
@@ -114,7 +114,7 @@ void Graph2dWindowDataModel::handleObjectBrowserClick(const QModelIndex& index)
 
 	// active dataitem is changed.
 	Graph2dWindowDataItem* i = m_rootDataItem->modelItemFromItem(clickedItem);
-	if (i != 0){
+	if (i != nullptr){
 //		m_graphicsView->setActiveDataItem(i);
 	}
 }
@@ -134,7 +134,7 @@ void Graph2dWindowDataModel::deleteItem(const QModelIndex& index)
 {
 	QStandardItem* item = m_itemModel->itemFromIndex(index);
 	m_rootDataItem->deleteItem(item);
-//	m_graphicsView->setActiveDataItem(0);
+//	m_graphicsView->setActiveDataItem(nullptr);
 	// deleting operation is not undo-able!
 	iRICUndoStack::instance().clear();
 }
@@ -154,7 +154,7 @@ void Graph2dWindowDataModel::moveDownItem(const QModelIndex &index)
 {
 	QStandardItem* item = m_itemModel->itemFromIndex(index);
 	QStandardItem* pItem = item->parent();
-	if (pItem != 0 && (item->index().row() == pItem->rowCount() - 1)){
+	if (pItem != nullptr && (item->index().row() == pItem->rowCount() - 1)){
 		m_objectBrowserView->moveDownAction()->setDisabled(true);
 		return;
 	}
@@ -178,7 +178,7 @@ void Graph2dWindowDataModel::updateOperationToolBar(const QModelIndex& index, QW
 	m_operationToolBar->addAction(m_objectBrowserView->moveDownAction());
 	m_operationToolBar->addAction(m_objectBrowserView->deleteAction());
 
-	if (dataItem != 0){
+	if (dataItem != nullptr){
 		QAction* sep = m_operationToolBar->addSeparator();
 		// add additinal buttons related to currently selected item.
 		bool added = dataItem->addToolBarButtons(m_operationToolBar);
@@ -231,7 +231,7 @@ void Graph2dWindowDataModel::handleObjectBrowserDeselection(const QModelIndex& /
 //	QStandardItem* item = m_itemModel->itemFromIndex(previous);
 //	Graph2dWindowDataItem* dataItem = m_rootDataItem->modelItemFromItem(item);
 //	if (dataItem){dataItem->informDeselection(m_graphicsView);}
-//	m_graphicsView->setActiveDataItem(0);
+//	m_graphicsView->setActiveDataItem(nullptr);
 }
 
 void Graph2dWindowDataModel::handleObjectBrowserSelection(const QModelIndex& current)

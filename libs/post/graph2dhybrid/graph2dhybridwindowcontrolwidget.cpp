@@ -52,7 +52,7 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 	ui->kSlider->hide();
 	ui->indexLabel->hide();
 	ui->indexSlider->hide();
-	if (info == 0){return;}
+	if (info == nullptr){return;}
 	switch (info->dataType){
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		break;

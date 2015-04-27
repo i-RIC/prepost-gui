@@ -14,7 +14,7 @@ class Post3dWindowFaceSettingWidget : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit Post3dWindowFaceSettingWidget(QWidget *parent = 0);
+	explicit Post3dWindowFaceSettingWidget(QWidget *parent = nullptr);
 	~Post3dWindowFaceSettingWidget();
 	void setZoneData(PostZoneDataContainer* zd);
 	void setSetting(const Post3dWindowFaceDataItem::Setting& setting);

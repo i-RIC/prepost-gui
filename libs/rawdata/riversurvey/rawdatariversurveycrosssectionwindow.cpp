@@ -28,12 +28,12 @@
 class RawDataRiverSurveyCrosssectionWindowTableDelegate : public QItemDelegate
 {
 public:
-	RawDataRiverSurveyCrosssectionWindowTableDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	RawDataRiverSurveyCrosssectionWindowTableDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		if (index.column() == 0){
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
-			CenteredCheckBox* checkbox = new CenteredCheckBox(0);
+			CenteredCheckBox* checkbox = new CenteredCheckBox(nullptr);
 			checkbox->setChecked(dat.toBool());
 			checkbox->resize(option.rect.size());
 			QPixmap pixmap(option.rect.size());
@@ -60,13 +60,13 @@ RawDataRiverSurveyCrosssectionWindow::RawDataRiverSurveyCrosssectionWindow(PrePr
 	m_settingUp = false;
 	m_projectDataItem = pdi;
 
-	m_targetRiverSurvey = 0;
-	m_editTargetPoint = 0;
-	m_gridCreatingConditionRiverSurvey = 0;
-	m_gridCreatingConditionPoint = 0;
+	m_targetRiverSurvey = nullptr;
+	m_editTargetPoint = nullptr;
+	m_gridCreatingConditionRiverSurvey = nullptr;
+	m_gridCreatingConditionPoint = nullptr;
 
 	m_icon = QIcon(":/libs/rawdata/riversurvey/images/iconRiverCrosssection.png");
-	m_colorSource = new ColorSource(0);
+	m_colorSource = new ColorSource(nullptr);
 
 	ui->setupUi(this);
 	QList<int> hSizes;
@@ -171,7 +171,7 @@ void RawDataRiverSurveyCrosssectionWindow::updateComboBoxes()
 		RawDataRiverSurvey* rs = m_riverSurveys.at(i);
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != 0){
+		while (p != nullptr){
 			tmpNames.insert(p->name().toDouble(), false);
 			p = p->nextPoint();
 		}
@@ -236,12 +236,11 @@ void RawDataRiverSurveyCrosssectionWindow::setupData()
 {
 	m_settingUp = true;
 	// detach table view once.
-	ui->tableView->setModel(0);
+	ui->tableView->setModel(nullptr);
 	// keep selection status
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	QList<QItemSelectionRange>::iterator sit;
-	for (sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -252,15 +251,14 @@ void RawDataRiverSurveyCrosssectionWindow::setupData()
 	}
 	clear();
 
-	if (m_editTargetPoint == 0){return;}
+	if (m_editTargetPoint == nullptr){return;}
 
 	RawDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it;
 	int row = 0;
 
 	RawDataRiverCrosssection::Altitude alt;
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		alt = *it;
 		m_model->insertRow(row);
 		m_model->setData(m_model->index(row, 0), QVariant(alt.active()));
@@ -388,7 +386,7 @@ bool RawDataRiverSurveyCrosssectionWindow::syncData()
 	RawDataRiverCrosssection& cross = m_editTargetPoint->crosssection();
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	RawDataRiverCrosssection::AltitudeList old = cross.AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it = old.begin();
+	auto it = old.begin();
 	// whether activations are valid or not
 	QList<int> indices;
 	for (int i = 0; i < m_model->rowCount(); ++i){
@@ -461,11 +459,10 @@ void RawDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 	RawDataRiverCrosssection::AltitudeList& alist = cross.AltitudeInfo();
 	before = alist;
 	QModelIndexList rows = m_selectionModel->selectedRows();
-	QModelIndexList::iterator it;
 
 	// delete
 	QList<int> indices;
-	for (it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it){
 		QModelIndex index = *it;
 		indices.append(index.row());
 	}
@@ -513,7 +510,7 @@ void RawDataRiverSurveyCrosssectionWindow::inactivateByWEAll()
 
 	RawDataRiverPathPoint *p = m_targetRiverSurvey->headPoint()->nextPoint();
 	bool exec = false;
-	while (p != 0) {
+	while (p != nullptr) {
 		if (! p->waterSurfaceElevationSpecified()){
 			p = p->nextPoint();
 			continue;
@@ -622,7 +619,7 @@ void RawDataRiverSurveyCrosssectionWindow::toggleGridCreatingMode(bool gridMode,
 	if (gridMode){
 		m_gridCreatingConditionRiverSurvey = rs;
 	} else {
-		m_gridCreatingConditionRiverSurvey = 0;
+		m_gridCreatingConditionRiverSurvey = nullptr;
 	}
 	ui->surveysTableWidget->setDisabled(gridMode);
 	updateRiverPathPoints();
@@ -688,7 +685,7 @@ void RawDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	for (int i = 0; i < items.count(); ++i){
 		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*> (items.at(i));
 		RawDataRiverSurvey* rawdata = dynamic_cast<RawDataRiverSurvey*>(item->rawData());
-		if (rawdata != 0){
+		if (rawdata != nullptr){
 			m_riverSurveys.append(rawdata);
 			m_riverSurveyEnables.append(enableMap.value(rawdata, true));
 			m_riverSurveyColors.append(colorMap.value(rawdata, m_colorSource->getColor(i)));
@@ -697,7 +694,7 @@ void RawDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	int index = m_riverSurveys.indexOf(m_targetRiverSurvey);
 	if (index == -1){
 		if (m_riverSurveys.count() == 0){
-			m_targetRiverSurvey = 0;
+			m_targetRiverSurvey = nullptr;
 		} else {
 			m_targetRiverSurvey = m_riverSurveys[0];
 		}
@@ -796,19 +793,19 @@ void RawDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 {
 	int index = m_riverSurveys.indexOf(m_targetRiverSurvey);
 	if (index == -1){
-		m_editTargetPoint = 0;
+		m_editTargetPoint = nullptr;
 	} else if (! m_riverSurveyEnables[index]){
-		m_editTargetPoint = 0;
-	} else if (m_gridCreatingConditionRiverSurvey != 0){
-		m_editTargetPoint = 0;
+		m_editTargetPoint = nullptr;
+	} else if (m_gridCreatingConditionRiverSurvey != nullptr){
+		m_editTargetPoint = nullptr;
 	} else {
 		m_editTargetPoint = m_riverPathPoints[index];
 	}
 
 	RawDataRiverSurveyCrosssectionWindowDelegate* del =
 			dynamic_cast<RawDataRiverSurveyCrosssectionWindowDelegate*>(ui->tableView->itemDelegate());
-	if (m_editTargetPoint == 0){
-		del->setCrosssection(0);
+	if (m_editTargetPoint == nullptr){
+		del->setCrosssection(nullptr);
 	} else {
 		del->setCrosssection(&(m_editTargetPoint->crosssection()));
 	}
@@ -818,7 +815,7 @@ void RawDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 	// set watersurface elevation
 	ui->weCheckBox->blockSignals(true);
 	ui->weSpinBox->blockSignals(true);
-	if (m_editTargetPoint == 0){
+	if (m_editTargetPoint == nullptr){
 		ui->weCheckBox->setEnabled(false);
 		ui->weCheckBox->setChecked(false);
 		ui->weSpinBox->setEnabled(false);
@@ -838,19 +835,19 @@ void RawDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	for (int i = 0; i < m_riverSurveys.count(); ++i){
 		RawDataRiverPathPoint* p = m_riverSurveys.at(i)->headPoint();
 		p = p->nextPoint();
-		while (p != 0 && p->name().toDouble() != m_crosssectionName){
+		while (p != nullptr && p->name().toDouble() != m_crosssectionName){
 			p = p->nextPoint();
 		}
 		m_riverPathPoints.append(p);
 	}
-	if (m_gridCreatingConditionRiverSurvey != 0){
+	if (m_gridCreatingConditionRiverSurvey != nullptr){
 		RawDataRiverPathPoint* p = m_gridCreatingConditionRiverSurvey->headPoint();
 		p = p->nextPoint();
-		while (p != 0 && p->name().toDouble() != m_crosssectionName){
+		while (p != nullptr && p->name().toDouble() != m_crosssectionName){
 			p = p->nextPoint();
 		}
 		m_gridCreatingConditionPoint = p;
 	} else {
-		m_gridCreatingConditionPoint = 0;
+		m_gridCreatingConditionPoint = nullptr;
 	}
 }

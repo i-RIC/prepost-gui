@@ -34,8 +34,7 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 	// build grid type data items.
-	QList<SolverDefinitionGridType*>::const_iterator it;
-	for (it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it){
 		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(*it, this);
 		m_gridTypeDataItems.append(item);
 		m_childItems.append(item);
@@ -72,8 +71,7 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 
 Post3dWindowRootDataItem::~Post3dWindowRootDataItem()
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for(it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		delete *it;
 	}
 	delete m_titleDataItem;
@@ -86,8 +84,7 @@ void Post3dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->clear();
 
 	// add gridtypes.
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		model->appendRow((*it)->standardItem());
 	}
 	// add title item row.
@@ -100,8 +97,7 @@ void Post3dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 
 void Post3dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		QDomNode c = node.firstChild();
 		while (! c.isNull()){
 			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()){
@@ -126,8 +122,7 @@ void Post3dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -143,12 +138,11 @@ void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const QString& name)
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		if ((*it)->name() == name){return *it;}
 	}
-	return 0;
+	return nullptr;
 }
 
 void Post3dWindowRootDataItem::updateZoneList()
@@ -158,8 +152,7 @@ void Post3dWindowRootDataItem::updateZoneList()
 	// when user starts solver execution. so, it is removed now.
 /*
 	dataModel()->itemModel()->blockSignals(true);
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		(*it)->setupZoneDataItems();
 	}
@@ -177,8 +170,7 @@ void Post3dWindowRootDataItem::updateZoneList()
 
 void Post3dWindowRootDataItem::update()
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		(*it)->update();
 	}
@@ -188,12 +180,11 @@ void Post3dWindowRootDataItem::update()
 
 Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const QString& name)
 {
-	QList<Post3dWindowGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
 	{
 		Post3dWindowGridTypeDataItem* gtItem = *it;
 		Post3dWindowZoneDataItem* i = gtItem->zoneData(name);
-		if (i != 0){return i;}
+		if (i != nullptr){return i;}
 	}
-	return 0;
+	return nullptr;
 }

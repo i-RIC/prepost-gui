@@ -38,7 +38,7 @@ void Graph2dScatteredWindowGridResultDataItem::updateValues(int fn)
 
 	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
 	PostZoneDataContainer* cont = postInfo->zoneContainer(s.dimension(), s.zoneName());
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 
 	vtkPointSet *ps = cont->data();
 

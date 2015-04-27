@@ -72,8 +72,7 @@ void RawDataRiverSurveyBackgroundGridCreateThread::run()
 			m_bgGridCopyFinishCondition.wait(&m_mutex);
 		}
 		m_mutex.unlock();
-		QMap<RawDataRiverPathPoint*, vtkPointSet*>::iterator it;
-		for (it = m_partialGrids.begin(); it != m_partialGrids.end(); ++it){
+		for (auto it = m_partialGrids.begin(); it != m_partialGrids.end(); ++it){
 			vtkPointSet* tmpgrid = it.value();
 			tmpgrid->Delete();
 		}
@@ -127,7 +126,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 	int pointCount = 0;
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(parent());
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != 0){
+	while (p != nullptr){
 		++pointCount;
 		p = p->nextPoint();
 	}
@@ -155,7 +154,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 	}
 	// setup interpolators.
 	p = rs->headPoint();
-	while (p != 0){
+	while (p != nullptr){
 		// check condition to exit.
 		if (m_abort){return false;}
 
@@ -164,16 +163,14 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		if (m_canceled){break;}
 		if (! m_useDivisionPoints){
 			if (p->backgroundLGridLines().size() != JDIVNUM - 1){
-				QVector<Interpolator2D1*>::iterator it;
-				for (it = p->backgroundLGridLines().begin(); it != p->backgroundLGridLines().end(); ++it){
+				for (auto it = p->backgroundLGridLines().begin(); it != p->backgroundLGridLines().end(); ++it){
 					delete *it;
 				}
 				p->backgroundLGridLines().clear();
 				p->backgroundLGridLines().insert(0, JDIVNUM - 1, 0);
 			}
 			if (p->backgroundRGridLines().size() != JDIVNUM - 1){
-				QVector<Interpolator2D1*>::iterator it;
-				for (it = p->backgroundRGridLines().begin(); it != p->backgroundRGridLines().end(); ++it){
+				for (auto it = p->backgroundRGridLines().begin(); it != p->backgroundRGridLines().end(); ++it){
 					delete *it;
 				}
 				p->backgroundRGridLines().clear();
@@ -183,8 +180,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		p = p->nextPoint();
 	}
 	// build background interpolators.
-	QList<RiverBackgroundGridCtrlSolver*>::iterator s_it;
-	for (s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
+	for (auto s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
 		// check condition to exit.
 		if (m_abort){return false;}
 
@@ -210,7 +206,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 	int gridOffset = 0;
 
 	// create grid.
-	while (p != 0){
+	while (p != nullptr){
 		// check condition to exit.
 		if (m_abort){return false;}
 
@@ -249,7 +245,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 			data->InsertValue(index, height);
 		}
 
-		if (p->nextPoint() != 0){
+		if (p->nextPoint() != nullptr){
 			// points on center line
 			for (int i = 0; i < IDIVNUM - 1; ++i){
 				vec = p->myCtrlPointPosition2D(&RawDataRiverPathPoint::riverCenter, (i + 1) / static_cast<double>(IDIVNUM));
@@ -300,7 +296,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		gridOffset += IDIVNUM;
 		p = p->nextPoint();
 	}
-	for (s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
+	for (auto s_it = solvers.begin(); s_it != solvers.end(); ++s_it){
 		delete (*s_it);
 	}
 	points->Modified();
@@ -314,7 +310,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 	p = rs->headPoint()->nextPoint();
 	gridOffset = 0;
 
-	while (p != 0){
+	while (p != nullptr){
 		if (! p->previousPoint()->firstPoint()){
 			vtkSmartPointer<vtkExtractGrid> extract = vtkSmartPointer<vtkExtractGrid>::New();
 			extract->SetInputData(m_grid);
@@ -338,7 +334,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(parent());
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	RawDataRiverPathPoint* lastp = p;
-	while (lastp->nextPoint() != 0){
+	while (lastp->nextPoint() != nullptr){
 		lastp = lastp->nextPoint();
 	}
 	// calculate gridsize.
@@ -346,7 +342,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	int gridJSize = p->CenterToLeftCtrlPoints.size() + p->CenterToRightCtrlPoints.size() + 3;
 
 	// initializes grid.
-	Structured2DGrid* tmpgrid = new Structured2DGrid(0);
+	Structured2DGrid* tmpgrid = new Structured2DGrid(nullptr);
 	tmpgrid->setDimensions(gridISize, gridJSize);
 	PreProcessorRawdataDataItemInterface* rawItem = dynamic_cast<PreProcessorRawdataDataItemInterface*>(rs->parent());
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(rawItem->parent()->parent()->parent());
@@ -358,9 +354,8 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	points->InsertPoint(gridISize * gridJSize - 1, 0, 0, 0);
 	tmpgrid->vtkGrid()->SetPoints(points);
 
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = tmpgrid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 	// update grid interpolator.
@@ -393,7 +388,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	m_grid->SetDimensions(gridISize, gridJSize, 1);
 	m_grid->SetPoints(tmpgrid->vtkGrid()->GetPoints());
 	vtkDataArray* tmpData = tmpgrid->vtkGrid()->GetPointData()->GetArray("Elevation");
-	if (tmpData != 0){
+	if (tmpData != nullptr){
 		vtkSmartPointer<vtkDoubleArray> data = vtkSmartPointer<vtkDoubleArray>::New();
 		data->DeepCopy(tmpData);
 		data->SetName(DATA);
@@ -402,7 +397,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	}
 
 	// create partial grids.
-	while (p != 0){
+	while (p != nullptr){
 		if (! p->previousPoint()->firstPoint()){
 			vtkSmartPointer<vtkExtractGrid> extract = vtkSmartPointer<vtkExtractGrid>::New();
 			extract->SetInputData(m_grid);
@@ -425,9 +420,8 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 
 void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 {
-	QList<RiverGridCtrlSolver*>::iterator it;
 	// clear first.
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		delete (*it);
 	}
 	m_gridSolvers.clear();
@@ -456,16 +450,15 @@ void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 	// prepare interpolators.
 	unsigned int lindices = static_cast<unsigned int>(p->CenterToLeftCtrlPoints.size());
 	unsigned int rindices = static_cast<unsigned int>(p->CenterToRightCtrlPoints.size());
-	QVector<Interpolator2D1*>::iterator rit;
 	p = rs->headPoint();
-	while (p != 0){
-		for (rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
-			if (*rit != 0){
+	while (p != nullptr){
+		for (auto rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit){
+			if (*rit != nullptr){
 				delete (*rit);
 			}
 		}
-		for (rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
-			if (*rit != 0){
+		for (auto rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit){
+			if (*rit != nullptr){
 				delete (*rit);
 			}
 		}
@@ -476,7 +469,7 @@ void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 		p = p->nextPoint();
 	}
 	if (m_abort || m_restart || m_canceled){return;}
-	for (it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
+	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it){
 		(*it)->update();
 		if (m_abort || m_restart || m_canceled){return;}
 	}

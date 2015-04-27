@@ -21,7 +21,7 @@ class MeasuredDataPointSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit MeasuredDataPointSettingDialog(QWidget *parent = 0);
+	explicit MeasuredDataPointSettingDialog(QWidget *parent = nullptr);
 	~MeasuredDataPointSettingDialog();
 	void setData(MeasuredData* md);
 	void setCurrentMeasuredValue(QString sol);

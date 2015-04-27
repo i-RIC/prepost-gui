@@ -239,7 +239,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::reject()
 void Post2dWindowParticleUnstructuredSettingDialog::activeDataChanged(int index)
 {
 	if (index == -1 || index >= m_settings.count()){
-		m_activeSetting = 0;
+		m_activeSetting = nullptr;
 		return;
 	}
 	m_activeSetting = &(m_settings[index]);
@@ -264,7 +264,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::pointsEdited()
 	if (ui->point1YEdit->text() == ""){return;}
 	if (ui->point2XEdit->text() == ""){return;}
 	if (ui->point2YEdit->text() == ""){return;}
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->point1 = QVector2D(ui->point1XEdit->value(), ui->point1YEdit->value());
 	m_activeSetting->point2 = QVector2D(ui->point2XEdit->value(), ui->point2YEdit->value());
 
@@ -280,25 +280,25 @@ void Post2dWindowParticleUnstructuredSettingDialog::handleButtonPress(QAbstractB
 
 void Post2dWindowParticleUnstructuredSettingDialog::numPointsChanged(int num)
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->numberOfPoints = num;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::colorChanged(const QColor &color)
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->color = color;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::sizeChanged(int size)
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->size = size;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::addData()
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	Post2dWindowUnstructuredParticleSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -314,7 +314,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != 0){delete item;}
+	if (item != nullptr){delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
 	if (current >= m_settings.count()){current = m_settings.count() - 1;}
@@ -366,7 +366,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 	ui->solutionComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i){
 		vtkDataArray* da = pd->GetArray(i);
-		if (da == 0){continue;}
+		if (da == nullptr){continue;}
 		QString name = da->GetName();
 		if (da->GetNumberOfComponents() <= 1){
 			// scalar attributes.
@@ -394,7 +394,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSettingList()
 
 void Post2dWindowParticleUnstructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_applying = true;
 	ui->pointsMouseRadioButton->setChecked(true);
 	if (m_activeSetting->pointsSet){

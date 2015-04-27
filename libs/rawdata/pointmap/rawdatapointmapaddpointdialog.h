@@ -11,15 +11,15 @@ namespace Ui {
 
 class RawDataPointmapAddPointDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit RawDataPointmapAddPointDialog(RawDataPointmap *pmap, QWidget *parent = 0);
-    ~RawDataPointmapAddPointDialog();
+	explicit RawDataPointmapAddPointDialog(RawDataPointmap *pmap, QWidget *parent = nullptr);
+	~RawDataPointmapAddPointDialog();
 	std::vector<double> xpoint, ypoint, zpoint;
 
 private:
-    Ui::RawDataPointmapAddPointDialog *ui;
+	Ui::RawDataPointmapAddPointDialog *ui;
 	RawDataPointmap* m_pmap;
 
 private slots:

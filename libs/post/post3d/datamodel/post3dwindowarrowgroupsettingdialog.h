@@ -19,7 +19,7 @@ namespace Ui {
 class Post3dWindowArrowGroupSettingDialog : public QDialog {
 		Q_OBJECT
 public:
-	Post3dWindowArrowGroupSettingDialog(QWidget *parent = 0);
+	Post3dWindowArrowGroupSettingDialog(QWidget *parent = nullptr);
 	~Post3dWindowArrowGroupSettingDialog();
 	void setColor(const QColor &color);
 	QColor color();

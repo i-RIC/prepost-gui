@@ -19,13 +19,16 @@ class RawDataPolygonCoordinatesEditDialog : public QDialog
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit RawDataPolygonCoordinatesEditDialog(RawDataPolygon* polygon, QWidget *parent = 0);
+	explicit RawDataPolygonCoordinatesEditDialog(RawDataPolygon* polygon, QWidget *parent = nullptr);
 	~RawDataPolygonCoordinatesEditDialog();
+
 public slots:
 	void accept();
 	void reject();
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	QVector<QVector2D> getCoords();
 	void setupData();

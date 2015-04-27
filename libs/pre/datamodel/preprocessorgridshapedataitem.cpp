@@ -184,7 +184,7 @@ public:
 	int id() const {return iRIC::generateCommandId("GridPointMouseMove");}
 	virtual bool mergeWith(const QUndoCommand *other){
 		const GridPointMouseMoveCommand* other2 = dynamic_cast<const GridPointMouseMoveCommand*>(other);
-		if (other2 == 0){return false;}
+		if (other2 == nullptr){return false;}
 		if (other2->m_dataItem != m_dataItem){return false;}
 		if (other2->m_first){return false;}
 		m_newPoints = other2->m_newPoints;
@@ -297,7 +297,7 @@ void PreProcessorGridShapeDataItem::mousePressEvent(QMouseEvent* event, VTKGraph
 
 void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	static QMenu* menu = 0;
+	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	if (event->button() == Qt::LeftButton){
 		if (m_definingBoundingBox){
@@ -308,12 +308,12 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 	} else if (event->button() == Qt::RightButton){
 		QPoint releasePoint(event->x(), event->y());
 		if (isNear(m_pressPoint, releasePoint)){
-			if (menu != 0){delete menu;}
+			if (menu != nullptr){delete menu;}
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 
 			Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-			if (grid2d != 0 && grid2d->gridRelatedCondition("Elevation") != 0){
+			if (grid2d != nullptr && grid2d->gridRelatedCondition("Elevation") != nullptr){
 				menu->addSeparator();
 
 				menu->addAction(m_openXsectionWindowAction);
@@ -357,7 +357,7 @@ void PreProcessorGridShapeDataItem::editShape()
 		tmpparent->grid()->vtkGrid()->GetPoint(pid, x);
 		dialog.setPosition(x[0], x[1]);
 		Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-		if (grid2d != 0){
+		if (grid2d != nullptr){
 			// This is a structured 2d grid.
 			unsigned int i, j;
 			grid2d->getIJIndex(pid, &i, &j);
@@ -406,7 +406,7 @@ void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != 0){
+	if (nItem != nullptr){
 		nItem->openCrossSectionWindow();
 	}
 }
@@ -415,7 +415,7 @@ void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != 0){
+	if (nItem != nullptr){
 		nItem->openVerticalCrossSectionWindow();
 	}
 }
@@ -435,7 +435,7 @@ void PreProcessorGridShapeDataItem::updateActionStatus()
 void PreProcessorGridShapeDataItem::updateAxesRegion()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0){return;}
+	if (g == nullptr){return;}
 	double bounds[6];
 	g->vtkGrid()->GetBounds(bounds);
 	if (! m_xAxisSetting.isAuto){

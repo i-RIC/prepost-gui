@@ -26,9 +26,9 @@ QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog
 {
 	Post2dWindowParticleUnstructuredSettingDialog* dialog = new Post2dWindowParticleUnstructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){
+	if (cont == nullptr || cont->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setDataItem(this);
 	dialog->setZoneData(cont);
@@ -174,7 +174,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::clearSetting()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::exitDialogMode()
 {
-	m_dialog = 0;
+	m_dialog = nullptr;
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
@@ -183,7 +183,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QM
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		m_dialog->informButtonDown(p);
 	}
 }
@@ -194,14 +194,14 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		m_dialog->informButtonUp(p);
 	}
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent *event, VTKGraphicsView * /*v*/)
 {
-	if (m_dialog != 0){
+	if (m_dialog != nullptr){
 		dataModel()->graphicsView()->emitWorldPosition(event->x(), event->y());
 	}
 }

@@ -25,7 +25,7 @@ public:
 	int currentIndex() const;
 	QList<int> calculateIndices(int index);
 	int maxIndex() const;
-	int calculateIndex(GridRelatedConditionDimensionContainer* cont = 0, int index = 0, int size = 0) const;
+	int calculateIndex(GridRelatedConditionDimensionContainer* cont = nullptr, int index = 0, int size = 0) const;
 
 signals:
 	void currentIndexChanged();

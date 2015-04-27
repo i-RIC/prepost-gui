@@ -12,8 +12,8 @@ class GUICOREDLL_EXPORT ScalarsToColorsContainer : public ProjectDataItem
 public:
 	ScalarsToColorsContainer(ProjectDataItem* d) : ProjectDataItem(d)
 	{
-		m_vtkObj = 0;
-		m_vtkDarkObj = 0;
+		m_vtkObj = nullptr;
+		m_vtkDarkObj = nullptr;
 	}
 	virtual ~ScalarsToColorsContainer();
 	vtkScalarsToColors* vtkObj(){

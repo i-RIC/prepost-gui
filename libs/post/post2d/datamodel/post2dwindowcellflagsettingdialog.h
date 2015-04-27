@@ -19,7 +19,7 @@ class Post2dWindowCellFlagSettingDialog : public QDialog
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit Post2dWindowCellFlagSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowCellFlagSettingDialog(QWidget *parent = nullptr);
     ~Post2dWindowCellFlagSettingDialog();
 	void setGridType(SolverDefinitionGridType* gt){m_gridType = gt;}
 	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings){

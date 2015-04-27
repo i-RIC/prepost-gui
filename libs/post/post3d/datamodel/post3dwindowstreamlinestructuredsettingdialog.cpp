@@ -67,7 +67,7 @@ const QString Post3dWindowStreamlineStructuredSettingDialog::solution()
 void Post3dWindowStreamlineStructuredSettingDialog::activeDataChanged(int index)
 {
 	if (index == -1 || index >= m_settings.count()){
-		m_activeSetting = 0;
+		m_activeSetting = nullptr;
 		return;
 	}
 	m_activeSetting = &(m_settings[index]);
@@ -80,7 +80,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::iMinChanged(int min)
 	if (ui->imaxSlider->value() < min){
 		ui->imaxSlider->setValue(min);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.iMin = min - 1;
 	}
 }
@@ -91,7 +91,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::iMaxChanged(int max)
 	if (ui->iminSlider->value() > max){
 		ui->iminSlider->setValue(max);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.iMax = max - 1;
 	}
 }
@@ -102,7 +102,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::jMinChanged(int min)
 	if (ui->jmaxSlider->value() < min){
 		ui->jmaxSlider->setValue(min);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.jMin = min - 1;
 	}
 }
@@ -113,7 +113,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::jMaxChanged(int max)
 	if (ui->jminSlider->value() > max){
 		ui->jminSlider->setValue(max);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.jMax = max - 1;
 	}
 }
@@ -124,7 +124,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::kMinChanged(int min)
 	if (ui->kmaxSlider->value() < min){
 		ui->kmaxSlider->setValue(min);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.kMin = min - 1;
 	}
 }
@@ -135,7 +135,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::kMaxChanged(int max)
 	if (ui->kminSlider->value() > max){
 		ui->kminSlider->setValue(max);
 	}
-	if (m_activeSetting != 0){
+	if (m_activeSetting != nullptr){
 		m_activeSetting->range.kMax = max - 1;
 	}
 }
@@ -144,19 +144,19 @@ void Post3dWindowStreamlineStructuredSettingDialog::handleSpaceSliderChange(int 
 {
 	if (val < m_skipNominations.count()){
 		ui->spaceValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-		if (m_activeSetting != 0){
+		if (m_activeSetting != nullptr){
 			m_activeSetting->spaceMode = Post3dWindowStructuredStreamlineSetSetting::smSkip;
 			m_activeSetting->spaceSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->spaceSlider->value() - 1);
 		}
 	} else if (val > m_skipNominations.count()){
 		ui->spaceValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
-		if (m_activeSetting != 0){
+		if (m_activeSetting != nullptr){
 			m_activeSetting->spaceMode = Post3dWindowStructuredStreamlineSetSetting::smSubdivide;
 			m_activeSetting->spaceDivision = m_subDivNominations.at(ui->spaceSlider->value() - m_skipNominations.count() - 1);
 		}
 	} else{
 		ui->spaceValueLabel->setText("1");
-		if (m_activeSetting != 0){
+		if (m_activeSetting != nullptr){
 			m_activeSetting->spaceMode = Post3dWindowStructuredStreamlineSetSetting::smNormal;
 		}
 	}
@@ -164,13 +164,13 @@ void Post3dWindowStreamlineStructuredSettingDialog::handleSpaceSliderChange(int 
 
 void Post3dWindowStreamlineStructuredSettingDialog::colorChanged(const QColor &color)
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->color = color;
 }
 
 void Post3dWindowStreamlineStructuredSettingDialog::widthChanged(int width)
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_activeSetting->width = width;
 }
 
@@ -198,7 +198,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZo
 	ui->solutionComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		QString name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() <= 1){
 			// scalar attributes.
@@ -226,7 +226,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::setupSettingList()
 
 void Post3dWindowStreamlineStructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	m_applying = true;
 	ui->iminSlider->setValue(m_activeSetting->range.iMin + 1);
 	ui->imaxSlider->setValue(m_activeSetting->range.iMax + 1);
@@ -259,7 +259,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::applySettings()
 
 void Post3dWindowStreamlineStructuredSettingDialog::addData()
 {
-	if (m_activeSetting == 0){return;}
+	if (m_activeSetting == nullptr){return;}
 	Post3dWindowStructuredStreamlineSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -275,7 +275,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != 0){delete item;}
+	if (item != nullptr){delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
 	if (current >= m_settings.count()){current = m_settings.count() - 1;}

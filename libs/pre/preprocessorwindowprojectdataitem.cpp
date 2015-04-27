@@ -75,12 +75,12 @@ PreProcessorWindowProjectDataItem::~PreProcessorWindowProjectDataItem()
 	if (parent->isVisible()){
 		parent->m_isLastHiding = true;
 	}
-	if (parent->m_dataModel != 0){
+	if (parent->m_dataModel != nullptr){
 		delete parent->m_dataModel;
-		parent->m_dataModel = 0;
+		parent->m_dataModel = nullptr;
 	}
-	parent->m_projectDataItem = 0;
-	parent->m_graphicsView->setActiveDataItem(0);
+	parent->m_projectDataItem = nullptr;
+	parent->m_graphicsView->setActiveDataItem(nullptr);
 }
 
 

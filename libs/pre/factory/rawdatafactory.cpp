@@ -7,10 +7,10 @@
 #include <rawdata/netcdf/rawdatanetcdfintegercreator.h>
 #include <rawdata/netcdf/rawdatanetcdfrealcreator.h>
 
-RawDataFactory* RawDataFactory::m_instance = 0;
+RawDataFactory* RawDataFactory::m_instance = nullptr;
 
 RawDataFactory::RawDataFactory()
-	: QObject(0)
+	: QObject(nullptr)
 {
 	// @todo add RawDataCreator instances into
 	// m_creators here when you added new
@@ -26,8 +26,7 @@ RawDataFactory::RawDataFactory()
 const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinitionGridRelatedCondition* condition) const
 {
 	QList<RawDataCreator*> ret;
-	QList<RawDataCreator*>::const_iterator it;
-	for (it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
 		if ((*it)->isCompatibleWith(condition)){
 			ret.append(*it);
 		}
@@ -37,10 +36,9 @@ const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinition
 
 RawData* RawDataFactory::restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridRelatedCondition* cond) const
 {
-	QList<RawDataCreator*>::const_iterator it;
-	for (it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
 		RawData* ret = (*it)->restore(node, item, cond);
 		if (ret){return ret;}
 	}
-	return 0;
+	return nullptr;
 }

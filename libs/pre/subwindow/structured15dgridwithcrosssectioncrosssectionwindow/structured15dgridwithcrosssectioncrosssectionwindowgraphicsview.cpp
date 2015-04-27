@@ -18,7 +18,7 @@ Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::Structured15DGr
 	fBottomMargin = 0.1f;
 	m_mouseEventMode = meNormal;
 	m_rubberBand = 0;
-	m_rightClickingMenu = 0;
+	m_rightClickingMenu = nullptr;
 
 	// Set cursors for mouse view change events.
 	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
@@ -38,7 +38,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::setupActio
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::setupMenu()
 {
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == nullptr){
 		m_rightClickingMenu = new QMenu(this);
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
@@ -97,12 +97,11 @@ QMatrix Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::getMatr
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawLine(Structured15DGridWithCrossSectionCrossSection *section, QPainter &painter)
 {
-	if (section == 0) return;
+	if (section == nullptr) return;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = section->altitudeInfo();
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>::iterator it;
 	bool first = true;
 	QPointF oldpoint, newpoint;
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		newpoint = m_matrix.map(QPointF(alt.m_position, alt.m_height));
 		if (! first){
@@ -120,9 +119,8 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawCircle
 
 	Structured15DGridWithCrossSectionCrossSection* cross = m_parentWindow->m_blackLineCrossSection;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>::iterator it;
 	painter.setPen(pen);
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		painter.setBrush(activeBrush);
 		QPointF point = m_matrix.map(QPointF(alt.m_position, alt.m_height));
@@ -140,8 +138,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawSelect
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
 	painter.setPen(pen);
 	QModelIndexList list = selectionModel()->selectedRows();
-	QModelIndexList::iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		QModelIndex index = *it;
 		const Structured15DGridWithCrossSectionCrossSection::Altitude& alt = alist.at(index.row());
 		painter.setBrush(activeBrush);
@@ -442,7 +439,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mousePress
 			if (event->button() == Qt::LeftButton){
 				// start selecting.
 				m_mouseEventMode = meSelecting;
-				if (m_rubberBand == 0){
+				if (m_rubberBand == nullptr){
 					m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 				}
 				m_rubberOrigin = event->pos();
@@ -566,9 +563,8 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::selectPoin
 
 	Structured15DGridWithCrossSectionCrossSection* cross = m_parentWindow->m_blackLineCrossSection;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>::iterator it;
 	int row = 0;
-	for (it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it){
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		if (alt.m_position >= mappedMins.x() &&
 		    alt.m_position <= mappedMaxs.x() &&
@@ -590,9 +586,8 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::updateActi
 		m_moveAction->setDisabled(true);
 	} else {
 		bool continuous = true;
-		QModelIndexList::iterator it, it2;
-		it = rows.begin();
-		it2 = it;
+		auto it = rows.begin();
+		auto it2 = it;
 		++it2;
 		while (it2 != rows.end()){
 			continuous = continuous && (it2->row() == it->row() + 1);
@@ -605,7 +600,6 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::updateActi
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::moveSelectedRows()
 {
 	QModelIndexList rows = selectionModel()->selectedRows();
-	QModelIndexList::iterator it;
 	int from = rows.front().row();
 	int to = rows.back().row();
 	Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog dialog(m_parentWindow->m_blackLineCrossSection, from, to, m_parentWindow, m_parentWindow->m_shapeItem, this);

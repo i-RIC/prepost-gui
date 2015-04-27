@@ -48,8 +48,7 @@ GridCreatingConditionFactory::GridCreatingConditionFactory(QWidget* mainWindow)
 
 void GridCreatingConditionFactory::setupNameMap()
 {
-	QList<GridCreatingConditionCreator*>::iterator it;
-	for (it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
 		m_creatorNameMap.insert((*it)->name(), *it);
 	}
 }
@@ -57,8 +56,7 @@ void GridCreatingConditionFactory::setupNameMap()
 const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(SolverDefinitionGridType::GridType gt) const
 {
 	QList<GridCreatingConditionCreator*> ret;
-	QList<GridCreatingConditionCreator*>::const_iterator it;
-	for (it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
 		if ((*it)->gridType() == gt){
 			ret.append(*it);
 		}
@@ -75,6 +73,6 @@ GridCreatingCondition* GridCreatingConditionFactory::restore(const QDomNode& nod
 {
 	QString creatorName = node.toElement().attribute("name");
 	GridCreatingConditionCreator* creator = getCreator(creatorName);
-	if (creator == 0){return 0;}
+	if (creator == nullptr){return nullptr;}
 	return creator->restore(node, item);
 }

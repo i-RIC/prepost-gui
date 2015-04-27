@@ -14,7 +14,7 @@ class ProjectPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit ProjectPropertyDialog(QWidget *parent = 0);
+	explicit ProjectPropertyDialog(QWidget *parent = nullptr);
 	~ProjectPropertyDialog();
 	void setProjectData(ProjectData* data);
 private:

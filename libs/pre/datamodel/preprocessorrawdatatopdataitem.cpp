@@ -46,12 +46,10 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 
 	// add child nodes.
 	QList<SolverDefinitionGridRelatedCondition*> list = gridType()->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedCondition*>::iterator it;
 	QList<SolverDefinitionGridRelatedComplexCondition*> list2 = gridType()->gridRelatedComplexConditions();
-	QList<SolverDefinitionGridRelatedComplexCondition*>::iterator it2;
 
 	// node simple items
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		if (cond->position() != SolverDefinitionGridRelatedCondition::Node){continue;}
 		PreProcessorRawDataGroupDataItem* i = new PreProcessorRawDataGroupDataItem(cond, this);
@@ -59,7 +57,7 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 		m_itemNameMap.insert((*it)->name(), i);
 	}
 	// node complex items
-	for (it2 = list2.begin(); it2 != list2.end(); ++it2){
+	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2){
 		SolverDefinitionGridRelatedComplexCondition* cond = *it2;
 		if (cond->position() != SolverDefinitionGridRelatedCondition::Node){continue;}
 		PreProcessorRawDataComplexGroupDataItem* i = new PreProcessorRawDataComplexGroupDataItem(cond, this);
@@ -67,7 +65,7 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 		m_itemNameMap.insert((*it2)->name(), i);
 	}
 	// cell simple items
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
 		PreProcessorRawDataGroupDataItem* i = new PreProcessorRawDataGroupDataItem(cond, this);
@@ -75,7 +73,7 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 		m_itemNameMap.insert((*it)->name(), i);
 	}
 	// cell complex items
-	for (it2 = list2.begin(); it2 != list2.end(); ++it2){
+	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2){
 		SolverDefinitionGridRelatedComplexCondition* cond = *it2;
 		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
 		PreProcessorRawDataComplexGroupDataItem* i = new PreProcessorRawDataComplexGroupDataItem(cond, this);
@@ -88,14 +86,14 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 	// for scalar bar / legend box
 	m_visible = true;
 	// first, no scalar bar / legend box shown.
-	m_condition = 0;
+	m_condition = nullptr;
 	setupActors();
 }
 
 PreProcessorRawDataTopDataItem::~PreProcessorRawDataTopDataItem()
 {
-	m_scalarBarWidget->SetInteractor(0);
-	m_legendBoxWidget->SetInteractor(0);
+	m_scalarBarWidget->SetInteractor(nullptr);
+	m_legendBoxWidget->SetInteractor(nullptr);
 }
 
 void PreProcessorRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -107,7 +105,7 @@ void PreProcessorRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
 		PreProcessorRawDataGroupDataItemInterface* item = m_itemNameMap.value(name);
-		if (item != 0){
+		if (item != nullptr){
 			item->loadFromProjectMainFile(child);
 		}
 	}
@@ -117,8 +115,7 @@ void PreProcessorRawDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 {
 	m_titleTextSetting.save(writer);
 	m_labelTextSetting.save(writer);
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("RawDataGroup");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -128,8 +125,7 @@ void PreProcessorRawDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 const QList<PreProcessorRawDataGroupDataItemInterface*> PreProcessorRawDataTopDataItem::groupDataItems() const
 {
 	QList<PreProcessorRawDataGroupDataItemInterface*> ret;
-	QList <GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawDataGroupDataItemInterface* item = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(*it);
 		ret.append(item);
 	}
@@ -138,7 +134,7 @@ const QList<PreProcessorRawDataGroupDataItemInterface*> PreProcessorRawDataTopDa
 
 PreProcessorRawDataGroupDataItemInterface* PreProcessorRawDataTopDataItem::groupDataItem(const QString& name)
 {
-	return m_itemNameMap.value(name, 0);
+	return m_itemNameMap.value(name, nullptr);
 }
 
 void PreProcessorRawDataTopDataItem::informValueRangeChange(const QString& name)
@@ -154,8 +150,8 @@ void PreProcessorRawDataTopDataItem::informDataChange()
 void PreProcessorRawDataTopDataItem::setupScalarBar()
 {
 	PreProcessorScalarBarLegendBoxSettingDialog* dialog = new PreProcessorScalarBarLegendBoxSettingDialog(preProcessorWindow());
-	if (m_condition != 0){
-		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != 0 || m_condition->isOption()){
+	if (m_condition != nullptr){
+		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr || m_condition->isOption()){
 			PreProcessorRawDataGroupDataItem* gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*> (groupDataItem(m_condition->name()));
 			ScalarBarSetting& setting = gItem->scalarBarSetting();
 			setting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
@@ -191,12 +187,11 @@ void PreProcessorRawDataTopDataItem::setupActors()
 	m_legendBoxWidget->SetEnabled(0);
 	m_legendBoxWidget->SetInteractor(iren);
 
-	QList<PreProcessorRawDataGroupDataItemInterface*>::iterator it;
 	QList<PreProcessorRawDataGroupDataItemInterface*> groups = groupDataItems();
 	QString attName;
 
 	// for legend box
-	for (it = groups.begin(); it != groups.end(); ++it){
+	for (auto it = groups.begin(); it != groups.end(); ++it){
 		if (! (*it)->condition()->isOption()) continue;
 		attName = (*it)->condition()->name();
 		break;
@@ -206,22 +201,22 @@ void PreProcessorRawDataTopDataItem::setupActors()
 
 void PreProcessorRawDataTopDataItem::updateActorSettings()
 {
-	if (m_scalarBarWidget == 0){return;}
-	if (m_legendBoxWidget == 0){return;}
+	if (m_scalarBarWidget == nullptr){return;}
+	if (m_legendBoxWidget == nullptr){return;}
 	m_scalarBarWidget->SetEnabled(0);
 	m_legendBoxWidget->SetEnabled(0);
 
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	PreProcessorRawDataGroupDataItem* rdgItem = dynamic_cast<PreProcessorRawDataGroupDataItem*> (groupDataItem(m_condition->name()));
-	if (rdgItem == 0) return;
+	if (rdgItem == nullptr) return;
 
-	if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != 0  || m_condition->isOption()){
+	if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr  || m_condition->isOption()){
 		// discrete
 		if (! m_visible) return;
 		m_legendBoxWidget->SetEnabled(1);
 
 		PreProcessorRawDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
-		if (gItem == 0) return;
+		if (gItem == nullptr) return;
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
 		m_labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
@@ -232,12 +227,12 @@ void PreProcessorRawDataTopDataItem::updateActorSettings()
 		if (! m_visible) return;
 		m_scalarBarWidget->SetEnabled(1);
 		PreProcessorRawDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
-		if (gItem == 0) return;
+		if (gItem == nullptr) return;
 		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->scalarBarSetting();
 		sbSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 		LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(gtItem->scalarsToColors(m_condition->name()));
-		if (cont == 0) return;
+		if (cont == nullptr) return;
 		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
 		scalarBarActor->SetLookupTable(cont->vtkObj());
 		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
@@ -250,17 +245,16 @@ void PreProcessorRawDataTopDataItem::updateActorSettings()
 
 void PreProcessorRawDataTopDataItem::updateLegendBoxItems()
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 	ColorTransferFunctionContainer* ctfCont = dynamic_cast<ColorTransferFunctionContainer*>(gtItem->scalarsToColors(m_condition->name()));
 	vtkLegendBoxActor* lActor = m_legendBoxWidget->GetLegendBoxActor();
 	lActor->SetNumberOfEntries(ctfCont->englishEnumerations().size());
 	vtkColorTransferFunction* ctf = dynamic_cast<vtkColorTransferFunction*>(ctfCont->vtkObj());
-	QMap<double, QString>::const_iterator mapIt;
 	int index = 0;
 	double color[3] = {0, 0, 0};
 	// set entries
-	for (mapIt = ctfCont->englishEnumerations().begin(); mapIt != ctfCont->englishEnumerations().end(); mapIt++){
+	for (auto mapIt = ctfCont->englishEnumerations().begin(); mapIt != ctfCont->englishEnumerations().end(); mapIt++){
 		vtkSphereSource* sphere = vtkSphereSource::New();
 		double num = mapIt.key();
 		QString label = mapIt.value();
@@ -274,8 +268,7 @@ void PreProcessorRawDataTopDataItem::updateLegendBoxItems()
 QStringList PreProcessorRawDataTopDataItem::getRawDatasNotMapped()
 {
 	QStringList ret;
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawDataGroupDataItem* item = dynamic_cast<PreProcessorRawDataGroupDataItem*>(*it);
 		ret.append(item->getRawDatasNotMapped());
 	}
@@ -329,8 +322,7 @@ void PreProcessorRawDataTopDataItem::saveToCgnsFile(const int fn)
 	cg_iRIC_GotoRawDataTop(fn);
 	GraphicsWindowDataItem::saveToCgnsFile(fn);
 
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorRawDataGroupDataItem* gItem =
 				dynamic_cast<PreProcessorRawDataGroupDataItem*>(*it);
 		gItem->saveComplexGroupsToCgnsFile(fn);

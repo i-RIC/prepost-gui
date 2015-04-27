@@ -12,7 +12,7 @@ namespace Ui {
 class ContinuousSnapshotFilePropertyPage : public QWizardPage {
 	Q_OBJECT
 public:
-	ContinuousSnapshotFilePropertyPage(QWidget *parent = 0);
+	ContinuousSnapshotFilePropertyPage(QWidget *parent = nullptr);
 	~ContinuousSnapshotFilePropertyPage();
 
 	void initializePage();

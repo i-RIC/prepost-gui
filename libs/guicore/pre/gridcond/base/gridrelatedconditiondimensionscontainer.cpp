@@ -87,7 +87,7 @@ int GridRelatedConditionDimensionsContainer::calculateIndex(GridRelatedCondition
 	int factor = 1;
 	for (int i = 0; i < m_containers.size(); ++i){
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
-		if (cont != 0 && cont == container){
+		if (cont != nullptr && cont == container){
 			ret = ret + factor * index;
 			if (size != 0){
 				factor = factor * size;
@@ -111,7 +111,7 @@ void GridRelatedConditionDimensionsContainer::handleIndexChange(bool noDraw)
 
 	PreProcessorRawDataGroupDataItemInterface* gItem =
 			dynamic_cast<PreProcessorRawDataGroupDataItemInterface*> (parent());
-	if (gItem != 0 && ! noDraw){
+	if (gItem != nullptr && ! noDraw){
 		gItem->renderGraphicsView();
 	}
 }

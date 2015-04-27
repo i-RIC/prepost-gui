@@ -27,18 +27,16 @@ public:
 	}
 	void undo()
 	{
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_before.begin(); it != m_before.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 	void redo()
 	{
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_after.begin(); it != m_after.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
@@ -110,7 +108,7 @@ GridCreatingConditionRiverSurvey15DPointRegionAddDialog::~GridCreatingConditionR
 void GridCreatingConditionRiverSurvey15DPointRegionAddDialog::setData(RawDataRiverSurvey* rs)
 {
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != 0){
+	while (p != nullptr){
 		m_points.push_back(p);
 		p = p->nextPoint();
 	}

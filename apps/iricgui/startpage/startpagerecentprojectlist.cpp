@@ -16,8 +16,8 @@ void StartPageRecentProjectList::setupItems()
 {
 	QSettings setting;
 	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
-	for (int i = 0; i < recentProjects.count(); ++i){
-		add(recentProjects.at(i));
+	for (const QString& proj : recentProjects){
+		add(proj);
 	}
 	setup();
 }

@@ -25,7 +25,7 @@ Graph2dWindowMarkerGroupDataItem::Graph2dWindowMarkerGroupDataItem(Graph2dWindow
 
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
-	m_colorSource = 0;
+	m_colorSource = nullptr;
 }
 
 Graph2dWindowMarkerGroupDataItem::~Graph2dWindowMarkerGroupDataItem()
@@ -71,8 +71,7 @@ void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 	// delete all current children.
 	dataModel()->objectBrowserView()->blockSignals(true);
 	dataModel()->itemModel()->blockSignals(true);
-	QList<Graph2dWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		delete *it;
 	}
 	// setup new items.

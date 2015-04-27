@@ -28,7 +28,7 @@
 iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
 {
 	m_parent = parent;
-	m_additionalToolBar = 0;
+	m_additionalToolBar = nullptr;
 	init();
 }
 
@@ -44,8 +44,8 @@ void iRICMainWindowActionManager::init(){
 
 	setupSimulationMenu();
 
-	m_animationMenu = 0;
-	m_animationToolbar = 0;
+	m_animationMenu = nullptr;
+	m_animationToolbar = nullptr;
 
 	setupToolMenu();
 
@@ -127,7 +127,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_importMenuInFileMenu->setDisabled(true);
 	connect(m_importMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
 	connect(m_importMenuInFileMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
-	m_rawDataImportMenu = 0;
+	m_rawDataImportMenu = nullptr;
 
 	importCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
 	importCgnsAction = new QAction(tr("Calculation &Result..."), this);
@@ -591,14 +591,12 @@ void iRICMainWindowActionManager::setupHelpMenu()
 void iRICMainWindowActionManager::updateSolverList(SolverDefinitionList* /*list*/){
 /*
 		QList<QAction*> actions = m_newProjectMenu->actions();
-		QList<QAction*>::iterator it;
-		for (it = actions.begin(); it != actions.end(); ++it){
+		for (auto it = actions.begin(); it != actions.end(); ++it){
 				m_newProjectSignals->removeMappings(*it);
 		}
 		m_newProjectMenu->clear();
 		QList<SolverDefinitionAbstract*> sdlist = list->solverList();
-		QList<SolverDefinitionAbstract*>::iterator sd_it;
-		for (sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
+		for (auto sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
 				SolverDefinitionAbstract* abst = (*sd_it);
 				QAction *act = new QAction(abst->caption(), m_newProjectMenu);
 				m_newProjectMenu->addAction(act);
@@ -621,7 +619,7 @@ void iRICMainWindowActionManager::projectFileOpen()
 	// all import actions are enabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != 0){
+	if (m_rawDataImportMenu != nullptr){
 		m_rawDataImportMenu->setEnabled(true);
 	}
 	importCalcCondAction->setEnabled(true);
@@ -670,7 +668,7 @@ void iRICMainWindowActionManager::projectFileClose()
 	// all import actions are excepts CGNS import action are disabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != 0){
+	if (m_rawDataImportMenu != nullptr){
 		m_rawDataImportMenu->setEnabled(false);
 	}
 	importCalcCondAction->setEnabled(false);
@@ -789,16 +787,14 @@ void iRICMainWindowActionManager::setProjectData(ProjectData *d)
 
 void iRICMainWindowActionManager::enableActions(const QList<QAction*>& actions, bool enable)
 {
-	QList<QAction*>::const_iterator it;
-	for (it = actions.begin(); it != actions.end(); ++it){
-		(*it)->setEnabled(enable);
+	for (QAction* a : actions){
+		a->setEnabled(enable);
 	}
 }
 
 void iRICMainWindowActionManager::uncheckActions(const QList<QAction *> &actions){
-	QList<QAction*>::const_iterator it;
-	for (it = actions.begin(); it != actions.end(); ++it){
-		(*it)->setChecked(false);
+	for (QAction* a : actions){
+		a->setChecked(false);
 	}
 }
 
@@ -819,24 +815,23 @@ void iRICMainWindowActionManager::updateMenuBar(){
 	m_menuBar->addMenu(m_fileMenu);
 	m_menuBar->addMenu(m_importMenu);
 
-	QList<QMenu*>::iterator it;
-	for (it = m_additionalMenus.begin(); it != m_additionalMenus.end(); ++it){
-		m_menuBar->addMenu(*it);
+	for (QMenu* m : m_additionalMenus){
+		m_menuBar->addMenu(m);
 	}
 	m_menuBar->addMenu(m_simulationMenu);
-	if (m_animationMenu != 0){
+	if (m_animationMenu != nullptr){
 		viewAnimationToolBarAction->setVisible(true);
 		if (m_isPostWindowActive){
 			m_menuBar->addMenu(m_animationMenu);
 			m_animationToolbar->show();
 			viewAnimationToolBarAction->setEnabled(true);
 			saveContinuousSnapShotAction->setEnabled(true);
-		}else{
+		} else {
 			m_animationToolbar->hide();
 			viewAnimationToolBarAction->setDisabled(true);
 			saveContinuousSnapShotAction->setDisabled(true);
 		}
-	}else{
+	} else {
 		viewAnimationToolBarAction->setVisible(false);
 	}
 	// tool menu is hidden, because the functions in tools will be used
@@ -850,7 +845,7 @@ void iRICMainWindowActionManager::updateMenuBar(){
 
 void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 {
-	if (subwindow == 0){
+	if (subwindow == nullptr){
 		// Window out side of iRIC is focused.
 		// Do nothing.
 		return;
@@ -858,33 +853,33 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 	// handle additional menus.
 	AdditionalMenuWindow* menuWindow = dynamic_cast<AdditionalMenuWindow*>(subwindow);
 	QList<QMenu*> additionalMenus;
-	QToolBar* toolBar = 0;
-	if (menuWindow != 0){
+	QToolBar* toolBar = nullptr;
+	if (menuWindow != nullptr){
 		QWidget* widget = dynamic_cast<QWidget*>(subwindow);
 		connect(widget, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), this, SLOT(updateAdditionalMenus(QList<QMenu*>)));
 		additionalMenus = menuWindow->getAdditionalMenus();
 		toolBar = menuWindow->getAdditionalToolBar();
 	}
 	setAdditionalMenus(additionalMenus);
-	if (subwindow != 0){
+	if (subwindow != nullptr){
 		// update Additional tool bar
-		if (m_additionalToolBar != 0){
+		if (m_additionalToolBar != nullptr){
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
-		if (toolBar != 0){
+		if (toolBar != nullptr){
 			m_parent->addToolBar(toolBar);
 			toolBar->show();
 		}
 		m_additionalToolBar = toolBar;
 	}else{
-		if (m_additionalToolBar != 0){
+		if (m_additionalToolBar != nullptr){
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
 		m_additionalToolBar = toolBar;
 	}
 	// investigate whether it is a post processor.
 	PostProcessorWindow* postWindow = dynamic_cast<PostProcessorWindow*>(subwindow);
-	m_isPostWindowActive = (subwindow != 0 && postWindow != 0);
+	m_isPostWindowActive = (subwindow != nullptr && postWindow != nullptr);
 	// update camera control menus (enable or disable).
 	updateCameraConnections(subwindow);
 	// update "Object Browser" menu in View menu.
@@ -929,7 +924,7 @@ void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
 	WindowWithObjectBrowser* window = dynamic_cast<WindowWithObjectBrowser*>(w);
 	viewObjectBrowserAction->disconnect();
-	if (window == 0){
+	if (window == nullptr){
 		viewObjectBrowserAction->setDisabled(true);
 		viewObjectBrowserAction->setChecked(false);
 	}else{
@@ -945,7 +940,7 @@ void iRICMainWindowActionManager::updatePropertyBrowserMenu(QWidget* w)
 {
 	WindowWithPropertyBrowser* window = dynamic_cast<WindowWithPropertyBrowser*>(w);
 	viewPropertyBrowserAction->disconnect();
-	if (window == 0){
+	if (window == nullptr){
 		viewPropertyBrowserAction->setDisabled(true);
 		viewPropertyBrowserAction->setChecked(false);
 	}else{
@@ -968,14 +963,13 @@ void iRICMainWindowActionManager::updateCameraAction(QAction* a, QWidget* w, con
 void iRICMainWindowActionManager::updateWindowList()
 {
 	QList<QAction*> actions = m_viewMenu->actions();
-	QList<QAction*>::iterator it, it2;
-	it = actions.begin();
+	auto it = actions.begin();
 	while ((*it) != m_windowMenuSeparetor){
 		++it;
 	}
 	// now it is m_windowMenuSeparator. goto the first window item.
 	++it;
-	for (it2 = it; it2 != actions.end(); ++it2){
+	for (auto it2 = it; it2 != actions.end(); ++it2){
 		m_windowActivationMapper->removeMappings(*it2);
 		delete *it2;
 	}
@@ -983,10 +977,8 @@ void iRICMainWindowActionManager::updateWindowList()
 	// now, build window list.
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
-	QList<QMdiSubWindow*>::iterator lit;
 	int i = 1;
-	for (lit = windowList.begin(); lit != windowList.end(); ++lit){
-		QMdiSubWindow* w = *lit;
+	for (QMdiSubWindow* w : windowList){
 		QString tmp = QString("%1%2 ").append(w->windowTitle());
 		QString title;
 		if (i < 10){

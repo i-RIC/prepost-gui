@@ -28,8 +28,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setDisplay(bool disp)
 void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorRawDataTopDataItemInterface* item)
 {
 	QList<PreProcessorRawDataGroupDataItemInterface*> groups = item->groupDataItems();
-	QList<PreProcessorRawDataGroupDataItemInterface*>::iterator it;
-	for (it = groups.begin(); it != groups.end(); ++it){
+	for (auto it = groups.begin(); it != groups.end(); ++it){
 		PreProcessorRawDataGroupDataItemInterface* group = *it;
 		QString text = group->condition()->caption();
 		int position = static_cast<int>(group->condition()->position());
@@ -47,7 +46,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::editScalarBar()
 
 void PreProcessorScalarBarLegendBoxSettingDialog::setCondition(SolverDefinitionGridRelatedCondition* condition)
 {
-	if (condition == 0){return;}
+	if (condition == nullptr){return;}
 	int idx = ui->scalarComboBox->findText(condition->caption());
 	ui->scalarComboBox->setCurrentIndex(idx);
 }

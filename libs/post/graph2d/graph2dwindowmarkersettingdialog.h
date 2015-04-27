@@ -15,7 +15,7 @@ class Graph2dWindowMarkerSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Graph2dWindowMarkerSettingDialog(QWidget *parent = 0);
+    explicit Graph2dWindowMarkerSettingDialog(QWidget *parent = nullptr);
     ~Graph2dWindowMarkerSettingDialog();
 	void setSetting(const Graph2dWindowMarkerSetting& setting);
 	const Graph2dWindowMarkerSetting& setting(){return m_setting;}

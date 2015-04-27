@@ -73,7 +73,7 @@ RawDataMapperSetting* RawDataPointmapTemplateNodeMapperT<V, DA>::initialize(bool
 	RawDataPointmapTemplateNodeMapperSetting* s = new RawDataPointmapTemplateNodeMapperSetting();
 	RawDataPointMapT<V, DA>* pointmap = dynamic_cast<RawDataPointMapT<V, DA>* >(RawDataMapper::m_rawdata);
 	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(RawDataMapper::m_grid);
-	if (grid2d == 0){return s;}
+	if (grid2d == nullptr){return s;}
 	if (RawDataNodeMapperT<V, DA>::container()->condition()->isOption()){
 		// @todo not implemented yet.
 

@@ -69,7 +69,7 @@ Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataI
 		if (pd->GetArray(i)->GetNumberOfComponents() == 1){
 			if (! first) continue;
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == 0){continue;}
+			if (tmparray == nullptr){continue;}
 			m_scalarValueName = tmparray->GetName();
 			first = false;
 			continue;
@@ -189,7 +189,7 @@ void Post3dWindowArrowGroupDataItem::setSetting(const QString& sol, LengthMode l
 void Post3dWindowArrowGroupDataItem::showSettingDialog()
 {
 	Post3dWindowArrowGroupSettingDialog* dialog = dynamic_cast<Post3dWindowArrowGroupSettingDialog*>(propertyDialog(mainWindow()));
-	if (dialog == 0){return;}
+	if (dialog == nullptr){return;}
 	int ret = dialog->exec();
 	if (ret == QDialog::Accepted){
 		handlePropertyDialogAccepted(dialog);
@@ -202,9 +202,9 @@ QDialog* Post3dWindowArrowGroupDataItem::propertyDialog(QWidget* p)
 	Post3dWindowArrowGroupSettingDialog* dialog = new Post3dWindowArrowGroupSettingDialog(p);
 	dialog->setEnabled(true);
 	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == 0 || zoneData->data() == 0){
+	if (zoneData == nullptr || zoneData->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setZoneData(zoneData);
 	dialog->setCurrentSolution(m_currentSolution);
@@ -269,8 +269,7 @@ void Post3dWindowArrowGroupDataItem::handlePropertyDialogAccepted(QDialog* propD
 QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowArrowGroupDataItem::faceMap()
 {
 	QMap<QString, Post3dWindowFaceDataItem::Setting> map;
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* fItem = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		map.insert(fItem->standardItem()->text(), fItem->setting());
 	}
@@ -288,8 +287,7 @@ public:
 	}
 	void redo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_newMap.begin(); it != m_newMap.end(); ++it){
+		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -299,8 +297,7 @@ public:
 	}
 	void undo(){
 		removeChildren();
-		QMap<QString, Post3dWindowFaceDataItem::Setting>::iterator it;
-		for (it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
+		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it){
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
 			m_item->m_childItems.append(f);
@@ -311,8 +308,7 @@ public:
 private:
 	void removeChildren()
 	{
-		QList<GraphicsWindowDataItem*>::iterator it;
-		for (it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
+		for (auto it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it){
 			delete (*it);
 		}
 		m_item->updateItemMap();
@@ -422,9 +418,9 @@ void Post3dWindowArrowGroupDataItem::updateActorSettings()
 	m_arrowActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == 0){return;}
+	if (ps == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0){return;}
@@ -472,9 +468,9 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 	m_activePoints->SetPoints(outPoints);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == 0){return;}
+	if (ps == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	if (m_appendFilter->GetNumberOfInputConnections(0) == 0){return;}
 	vtkPointData* pd = ps->GetPointData();
@@ -513,10 +509,9 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 	vtkPoints* inPoints = inPS->GetPoints();
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 
-	QSet<vtkIdType>::iterator it;
 	outPD->CopyAllocate(inPD, pointIds.size());
 	vtkIdType newId = 0;
-	for (it = pointIds.begin(); it != pointIds.end(); ++it){
+	for (auto it = pointIds.begin(); it != pointIds.end(); ++it){
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 		outPD->CopyData(inPD, pointid, newId);
@@ -535,8 +530,7 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 void Post3dWindowArrowGroupDataItem::setupAppendFilter()
 {
 	m_appendFilter->RemoveAllInputs();
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
 		if (f->standardItem()->checkState() == Qt::Checked){
 			f->update();
@@ -600,7 +594,7 @@ void Post3dWindowArrowGroupDataItem::calculateStandardValue()
 	if (m_lengthMode == lenCustom){return;}
 	QVector<double> lenVec;
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	vtkPointSet* ps = cont->data();
 	if (m_currentSolution == ""){return;}
 	vtkPointData* pd = ps->GetPointData();

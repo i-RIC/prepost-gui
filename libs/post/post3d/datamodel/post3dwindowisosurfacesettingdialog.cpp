@@ -45,7 +45,7 @@ void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zon
 	ui->physicalValueComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		QString name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() > 1) {
 			continue;		// vector attributes.

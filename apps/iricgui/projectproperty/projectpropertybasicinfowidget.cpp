@@ -18,7 +18,7 @@ ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget *parent) 
 	QWidget(parent),
 	ui(new Ui::ProjectPropertyBasicInfoWidget)
 {
-	m_projectData = 0;
+	m_projectData = nullptr;
 	ui->setupUi(this);
 	connect(ui->csEditButton, SIGNAL(clicked()), this, SLOT(showSelectCoordinateSystemDialog()));
 	connect(ui->coEditButton, SIGNAL(clicked()), this, SLOT(showSetOffsetDialog()));
@@ -85,7 +85,7 @@ void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()
 {
-	if (m_projectData->mainfile()->coordinateSystem() != 0){
+	if (m_projectData->mainfile()->coordinateSystem() != nullptr){
 		ui->csWidget->setText(m_projectData->mainfile()->coordinateSystem()->caption());
 	}else{
 		ui->csWidget->setText(tr("(Not specified)"));

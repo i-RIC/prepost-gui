@@ -103,16 +103,16 @@ QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram
 	QDir gcsdir(targetDirectory);
 	QStringList subdirs = gcsdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
 
-	for (int i = 0; i < subdirs.size(); ++i){
-		QString defFileName = QDir(gcsdir.absoluteFilePath(subdirs.at(i))).absoluteFilePath(SolverDefinition::FILENAME);
+	for (const QString& subdir : subdirs){
+		QString defFileName = QDir(gcsdir.absoluteFilePath(subdir)).absoluteFilePath(SolverDefinition::FILENAME);
 		if (! QFile::exists(defFileName)){continue;}
 
 		// definition.xml exists.
 		try {
-			GridCreatingConditionCreatorExternalProgram* creator = new GridCreatingConditionCreatorExternalProgram(gcsdir.absoluteFilePath(subdirs.at(i)), locale);
+			GridCreatingConditionCreatorExternalProgram* creator = new GridCreatingConditionCreatorExternalProgram(gcsdir.absoluteFilePath(subdir), locale);
 			ret.append(creator);
 		} catch (ErrorMessage& e){
-			QMessageBox::warning(mainWindow, tr("Warning"), tr("Error occured while loading grid creator definition file in folder \"%1\". This grid creator is ignored.\n%2").arg(subdirs.at(i)).arg(e));
+			QMessageBox::warning(mainWindow, tr("Warning"), tr("Error occured while loading grid creator definition file in folder \"%1\". This grid creator is ignored.\n%2").arg(subdir).arg(e));
 		}
 	}
 	return ret;

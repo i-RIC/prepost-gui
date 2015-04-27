@@ -45,7 +45,7 @@ public:
 	const static int TABLE_COLOR_WIDTH = 40;
 	const static int TABLE_ROWHEIGHT = 24;
 
-	explicit RawDataRiverSurveyCrosssectionWindow(PreProcessorRawDataGroupDataItemInterface* gitem, RawDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget *parent = 0);
+	explicit RawDataRiverSurveyCrosssectionWindow(PreProcessorRawDataGroupDataItemInterface* gitem, RawDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget *parent = nullptr);
 	~RawDataRiverSurveyCrosssectionWindow();
 	void setRiverSurvey(RawDataRiverSurvey* rs);
 	void setCrosssection(double name);
@@ -145,7 +145,7 @@ public:
 class RawDataRiverSurveyCrosssectionEditCommand : public QUndoCommand
 {
 public:
-	RawDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, RawDataRiverPathPoint* p, const RawDataRiverCrosssection::AltitudeList& after, const RawDataRiverCrosssection::AltitudeList& before, RawDataRiverSurveyCrosssectionWindow* w, RawDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = 0);
+	RawDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, RawDataRiverPathPoint* p, const RawDataRiverCrosssection::AltitudeList& after, const RawDataRiverCrosssection::AltitudeList& before, RawDataRiverSurveyCrosssectionWindow* w, RawDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
 	void redo();
 	void undo();
 private:

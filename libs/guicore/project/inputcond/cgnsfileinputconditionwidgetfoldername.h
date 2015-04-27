@@ -12,7 +12,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFoldernameEdit : public QLin
 	Q_OBJECT
 
 public:
-	CgnsFileInputConditionWidgetFoldernameEdit(QWidget* parent = 0) : QLineEdit(parent){}
+	CgnsFileInputConditionWidgetFoldernameEdit(QWidget* parent = nullptr) : QLineEdit(parent){}
 	bool checkContent();
 
 protected:

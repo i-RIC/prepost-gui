@@ -8,7 +8,7 @@
 class GUIBASEDLL_EXPORT ColorEditWidget : public QLabel {
 	Q_OBJECT
 public:
-	ColorEditWidget(QWidget *parent = 0);
+	ColorEditWidget(QWidget *parent = nullptr);
 	void setColor(const QColor& c);
 	QColor color();
 signals:

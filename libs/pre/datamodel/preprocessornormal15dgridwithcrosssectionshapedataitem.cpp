@@ -58,7 +58,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::setupActors()
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != 0){
+	if (g != nullptr){
 		Structured15DGridWithCrossSection* grid = dynamic_cast<Structured15DGridWithCrossSection*>(g);
 
 		m_edgeMapper->SetInputData(grid->vtkGrid());
@@ -79,7 +79,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 	m_actorCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0){
+	if (g == nullptr){
 		return;
 	}
 
@@ -148,18 +148,16 @@ Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCros
 	PreProcessorNormal15DGridWithCrossSectionDataItem* item = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(parent());
 	Structured15DGridWithCrossSection* g = dynamic_cast<Structured15DGridWithCrossSection*>(item->grid());
 
-	if (item->selectedVertices().count() < 1) return 0;
+	if (item->selectedVertices().count() < 1) return nullptr;
 
 	vtkIdType index = item->selectedVertices().at(0);
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it;
-	it = g->crossSections().begin();
+	auto it = g->crossSections().begin();
 	return *(it + index);
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionWindows()
 {
-	QList<Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem*>::iterator w_it;
-	for (w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
 		Structured15DGridWithCrossSectionCrossSectionWindow* w = (*w_it)->window();
 		bool ok = w->updateComboBoxes();
 		if (ok){
@@ -171,8 +169,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionW
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item)
 {
-	QList<Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem*>::iterator it;
-	for (it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
 		if (*it == item){
 			m_crosssectionWindows.erase(it);
 			delete item;
@@ -183,7 +180,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSection
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	static QMenu* menu = 0;
+	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	if (event->button() == Qt::LeftButton){
 		if (m_definingBoundingBox){
@@ -194,7 +191,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(Q
 	} else if (event->button() == Qt::RightButton){
 		QPoint releasePoint(event->x(), event->y());
 		if (isNear(m_pressPoint, releasePoint)){
-			if (menu != 0){delete menu;}
+			if (menu != nullptr){delete menu;}
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 			menu->addAction(m_openCrossSectionWindowAction);

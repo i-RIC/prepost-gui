@@ -22,7 +22,7 @@ class GUICOREDLL_EXPORT PropertyBrowserView : public QWidget
 public:
 	static const int ROWHEIGHT = 24;
 
-	explicit PropertyBrowserView(QWidget *parent = 0);
+	explicit PropertyBrowserView(QWidget *parent = nullptr);
 	~PropertyBrowserView();
 	void setTargetDataItem(AttributeBrowserTargetDataItem* item);
 	void resetForVertex(bool structured);

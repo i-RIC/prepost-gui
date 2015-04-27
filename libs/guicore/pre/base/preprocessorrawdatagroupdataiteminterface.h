@@ -22,7 +22,7 @@ public:
 	{}
 	virtual SolverDefinitionGridRelatedCondition* condition() = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
-	virtual void setupEditWidget(GridRelatedConditionEditWidget* widget = 0) = 0;
+	virtual void setupEditWidget(GridRelatedConditionEditWidget* widget = nullptr) = 0;
 	virtual void addCopyPolygon(RawDataPolygon* polygon) = 0;
 	virtual const QList<PreProcessorRawdataDataItemInterface*> rawDatas() const = 0;
 	virtual GridRelatedConditionDimensionsContainer* dimensions() const = 0;

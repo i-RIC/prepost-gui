@@ -24,7 +24,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 	if (item->hideSetting()){
 		QStandardItem* p = m_standardItem->parent();
 		p->removeRow(m_standardItem->row());
-		m_standardItem = 0;
+		m_standardItem = nullptr;
 	} else {
 		m_standardItem->setCheckable(true);
 		m_standardItem->setCheckState(Qt::Checked);
@@ -40,7 +40,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 	m_polygon->setupMenu();
 	m_polygon->setMapping(RawDataPolygonColorSettingDialog::Arbitrary);
 
-	m_rightClickingMenu = new QMenu(0);
+	m_rightClickingMenu = new QMenu(nullptr);
 	m_rightClickingMenu->setTitle(tr("Polygon"));
 	m_rightClickingMenu->addAction(m_editAction);
 	m_rightClickingMenu->addSeparator();
@@ -97,7 +97,7 @@ void PreProcessorBCSettingDataItem::handleStandardItemChange()
 
 void PreProcessorBCSettingDataItem::informSelection(VTKGraphicsView* v)
 {
-	if (m_polygon->m_selectedPolygon == 0){
+	if (m_polygon->m_selectedPolygon == nullptr){
 		m_polygon->m_selectMode = RawDataPolygon::smPolygon;
 		m_polygon->m_selectedPolygon = m_polygon->m_gridRegionPolygon;
 	}
@@ -206,9 +206,9 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dial
 	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent()->parent());
 	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
-	if (grid == 0 && ! noDraw){
+	if (grid == nullptr && ! noDraw){
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
-		if (dialog != 0){
+		if (dialog != nullptr){
 			dialog->setProgress(dialog->progress() + 1);
 		}
 		return;

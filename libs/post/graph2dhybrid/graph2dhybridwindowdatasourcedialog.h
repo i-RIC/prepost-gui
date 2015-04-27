@@ -21,7 +21,7 @@ class Graph2dHybridWindowDataSourceDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit Graph2dHybridWindowDataSourceDialog(QWidget *parent = 0);
+    explicit Graph2dHybridWindowDataSourceDialog(QWidget *parent = nullptr);
     ~Graph2dHybridWindowDataSourceDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
 	void setImportData(Graph2dHybridWindowImportDataGroupDataItem* group);

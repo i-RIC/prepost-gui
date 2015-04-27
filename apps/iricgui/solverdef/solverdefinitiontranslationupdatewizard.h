@@ -16,7 +16,7 @@ class IntroductionPage : public QWizardPage
 {
 	Q_OBJECT
 public:
-	IntroductionPage(QWidget* parent = 0);
+	IntroductionPage(QWidget* parent = nullptr);
 private:
 	QLabel* m_label;
 };
@@ -25,7 +25,7 @@ class SettingPage : public QWizardPage
 {
 	Q_OBJECT
 public:
-	SettingPage(QWidget* parent = 0);
+	SettingPage(QWidget* parent = nullptr);
 	void init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist);
 	QList<QLocale> selectedLanguages();
 	void initializePage();
@@ -41,7 +41,7 @@ class ConfirmPage : public QWizardPage
 {
 	Q_OBJECT
 public:
-	ConfirmPage(QWidget* parent = 0);
+	ConfirmPage(QWidget* parent = nullptr);
 	void initializePage();
 private:
 	QTextEdit* m_textEdit;

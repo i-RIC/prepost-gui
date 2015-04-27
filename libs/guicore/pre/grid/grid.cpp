@@ -42,14 +42,14 @@ void Grid::initPointers()
 {
 //	m_importerFactory = 0;
 //	m_exporterFactory = 0;
-	m_vtkGrid = 0;
+	m_vtkGrid = nullptr;
 	m_isModified = false;
 	m_isMasked = false;
 }
 
 Grid::~Grid()
 {
-	if (m_vtkGrid != 0){
+	if (m_vtkGrid != nullptr){
 		m_vtkGrid->Delete();
 	}
 }
@@ -111,9 +111,8 @@ bool Grid::loadGridRelatedConditions(int fn, int B, int Z)
 {
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
-	QList<GridRelatedConditionContainer*>::iterator it;
 	bool allok = true;
-	for (it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
 		(*it)->allocate();
 		bool ret = (*it)->loadFromCgnsFile(fn, B, Z);
 		allok = allok && ret;
@@ -129,9 +128,8 @@ bool Grid::saveGridRelatedConditions(int fn, int B, int Z)
 	cg_goto(fn, B, "Zone_t", Z, "end");
 	cg_user_data_write("GridConditions");
 
-	QList<GridRelatedConditionContainer*>::iterator it;
 	bool allok = true;
-	for (it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
 		bool ret = (*it)->saveToCgnsFile(fn, B, Z);
 		allok = allok && ret;
 	}

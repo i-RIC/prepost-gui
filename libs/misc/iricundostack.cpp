@@ -2,7 +2,7 @@
 
 const int iRICUndoStack::UNDOLIMIT = 5;
 
-iRICUndoStack* iRICUndoStack::m_instance = 0;
+iRICUndoStack* iRICUndoStack::m_instance = nullptr;
 
 iRICUndoStack::iRICUndoStack(QObject *parent) :
 	QUndoStack(parent)

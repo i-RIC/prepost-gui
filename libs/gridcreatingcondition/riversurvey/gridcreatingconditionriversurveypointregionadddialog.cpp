@@ -34,9 +34,8 @@ public:
 	void undo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_before.begin(); it != m_before.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+			backup->restore();
 		}
 
 		m_condition->updateShapeData();
@@ -47,9 +46,8 @@ public:
 	void redo()
 	{
 		m_condition->cancelBackgroundGridUpdate();
-		std::list<RawDataRiverSurveyCtrlPointBackup*>::iterator it;
-		for (it = m_after.begin(); it != m_after.end(); ++it){
-			(*it)->restore();
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+			backup->restore();
 		}
 
 		m_condition->updateShapeData();
@@ -145,9 +143,9 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverS
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	double lengthSum = 0;
 	int numSections = 0;
-	while (p != 0){
+	while (p != nullptr){
 		m_points.push_back(p);
-		if (p->nextPoint() != 0){
+		if (p->nextPoint() != nullptr){
 			lengthSum += (p->position() - p->nextPoint()->position()).length();
 			++ numSections;
 		}

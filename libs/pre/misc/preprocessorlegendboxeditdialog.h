@@ -11,7 +11,7 @@ namespace Ui {
 class PreProcessorLegendBoxEditDialog : public QDialog {
 	Q_OBJECT
 public:
-	PreProcessorLegendBoxEditDialog(QWidget *parent = 0);
+	PreProcessorLegendBoxEditDialog(QWidget *parent = nullptr);
 	~PreProcessorLegendBoxEditDialog();
 
 	void setWidth(double width);

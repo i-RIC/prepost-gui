@@ -24,7 +24,7 @@ private:
 	const static int ROWHEIGHT = 20;
 
 public:
-	explicit ColorMapCustomSettingDialog(QWidget *parent = 0);
+	explicit ColorMapCustomSettingDialog(QWidget *parent = nullptr);
 	~ColorMapCustomSettingDialog();
 	void setCustomSetting(const ColorMapSettingWidget::CustomSetting& setting);
 	ColorMapSettingWidget::CustomSetting customSetting();

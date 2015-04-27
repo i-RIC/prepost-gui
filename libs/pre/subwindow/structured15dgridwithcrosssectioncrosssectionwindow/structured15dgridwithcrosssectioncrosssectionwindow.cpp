@@ -91,8 +91,7 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 	m_blackLineComboBox->blockSignals(true);
 	m_blackLineComboBox->clear();
 
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it;
-	for (it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
+	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
 		m_blackLineComboBox->addItem((*it)->name());
 	}
 	if (m_blackLineCrossSection != 0){
@@ -112,8 +111,7 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 void Structured15DGridWithCrossSectionCrossSectionWindow::setTarget(Structured15DGridWithCrossSectionCrossSection* cs)
 {
 	m_blackLineCrossSection = cs;
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it;
-	for (it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
+	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
 		if ((*it) != cs) continue;
 		break;
 	}
@@ -148,8 +146,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	// keep selection status.
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	QList<QItemSelectionRange>::iterator sit;
-	for (sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -161,11 +158,10 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 
 	clear();
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& info = m_blackLineCrossSection->altitudeInfo();
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>::iterator it;
 	int row = 0;
 
 	Structured15DGridWithCrossSectionCrossSection::Altitude alt;
-	for (it = info.begin(); it != info.end(); ++it){
+	for (auto it = info.begin(); it != info.end(); ++it){
 		alt = *it;
 		m_model->insertRow(row);
 		m_model->setData(m_model->index(row, 0), QVariant(alt.m_position));
@@ -290,8 +286,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::syncData()
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::blackComboBoxChange(int newindex)
 {
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it;
-	it = m_grid->crossSections().begin();
+	auto it = m_grid->crossSections().begin();
 	setTarget(*(it + newindex));
 }
 
@@ -300,9 +295,8 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::deleteSelectedRows()
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> before, after;
 	before = m_blackLineCrossSection->altitudeInfo();
 	QModelIndexList rows = m_selectionModel->selectedRows();
-	QModelIndexList::iterator it;
 	int removedRows = 0;
-	for (it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it){
 		QModelIndex index = *it;
 		int row = index.row() - removedRows;
 		m_model->removeRow(row);

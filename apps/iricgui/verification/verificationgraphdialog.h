@@ -25,12 +25,12 @@ public:
 	~VerificationGraphDialog();
 	void setPostSolutionInfo(PostSolutionInfo* info){
 		m_postSolutionInfo = info;
-		m_activePostData = 0;
+		m_activePostData = nullptr;
 		m_activeResult = "";
 	}
 	void setMeasuredValues(const QList<MeasuredData*> measuredData){
 		m_measuredData = measuredData;
-		m_activeMeasuredData = 0;
+		m_activeMeasuredData = nullptr;
 		m_activeValue = "";
 	}
 public slots:

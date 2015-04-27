@@ -18,7 +18,7 @@ public:
 
 private:
 	static void showDialog(QWidget* parent, const QString& title, const QString& message, const QString& name, const QPixmap& pixmap);
-	explicit InformationDialog(QWidget *parent = 0);
+	explicit InformationDialog(QWidget *parent = nullptr);
 	void setMessage(const QString& message);
 	void setIcon(const QPixmap& pixmap);
 	bool dontShowAgain();

@@ -27,7 +27,7 @@ GridCreatingConditionRiverSurvey15DRegionDialog::~GridCreatingConditionRiverSurv
 void GridCreatingConditionRiverSurvey15DRegionDialog::setData(RawDataRiverSurvey* rs)
 {
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != 0){
+	while (p != nullptr){
 		m_points.push_back(p);
 		p = p->nextPoint();
 	}

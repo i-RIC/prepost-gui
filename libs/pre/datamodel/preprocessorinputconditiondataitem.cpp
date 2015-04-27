@@ -27,7 +27,7 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 		m_isDeletable = false;
 		m_isSet = false;
 	} catch (ErrorMessage&){
-		m_dialog = 0;
+		m_dialog = nullptr;
 	}
 }
 

@@ -151,9 +151,8 @@ void PropertyBrowserView::updateAttributes(const QList<PropertyBrowserAttribute>
 	for (int i = rows - 1; i >= 0; --i){
 		table->removeRow(i);
 	}
-	QList<PropertyBrowserAttribute>::const_iterator it;
 	int index = 0;
-	for (it = attr.begin(); it != attr.end(); ++it){
+	for (auto it = attr.begin(); it != attr.end(); ++it){
 		PropertyBrowserAttribute a = *it;
 		table->insertRow(index);
 		QTableWidgetItem* labelItem = new QTableWidgetItem(a.name);

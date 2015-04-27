@@ -36,20 +36,18 @@ void LinearLXSecInterpolator::updateParameters(){
 		leftbank = m_parent->crosssection().leftBank(true);
 	}catch (RawDataRiverCrosssection::ErrorCodes /* codes */){}
 	// まず、オブジェクトを削除
-	std::map<double, LinearAltitudeInterpolator*>::iterator l_it;
-	for (l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
+	for (auto l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
 		delete l_it->second;
 	}
 	m_interpolators.clear();
 	RawDataRiverCrosssection::AltitudeList& AList = m_parent->crosssection().AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it, it2;
-	it = AList.begin();
+	auto it = AList.begin();
 	if (it == AList.end()) return;
 	while (it != AList.end() - 1 && it->position() <= 0){
 		while (it != AList.end() - 1 && ! it->active()){
 			++it;
 		}
-		it2 = it;
+		auto it2 = it;
 		if (it2 != AList.end() - 1){++it2;}
 		while (it2 != AList.end() - 1 && ! it2->active()){
 			++it2;
@@ -71,8 +69,7 @@ RawDataRiverCrosssection::Altitude LinearLXSecInterpolator::interpolate(double t
 	if (t < 0 || t > 1){
 		throw ec_OutOfInterpolationRange;
 	}
-	std::map<double, LinearAltitudeInterpolator*>::iterator it;
-	it = m_interpolators.lower_bound(t);
+	auto it = m_interpolators.lower_bound(t);
 	return (it->second)->interpolate(t);
 }
 
@@ -88,21 +85,19 @@ void LinearRXSecInterpolator::updateParameters(){
 		rightbank = m_parent->crosssection().rightBank(true);
 	}catch (RawDataRiverCrosssection::ErrorCodes /* codes */){}
 	// まず、オブジェクトを削除
-	std::map<double, LinearAltitudeInterpolator*>::iterator l_it;
-	for (l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
+	for (auto l_it = m_interpolators.begin(); l_it != m_interpolators.end(); ++l_it){
 		delete l_it->second;
 	}
 	m_interpolators.clear();
 	RawDataRiverCrosssection::AltitudeList& AList = m_parent->crosssection().AltitudeInfo();
-	RawDataRiverCrosssection::AltitudeList::iterator it, it2;
-	it = AList.end();
+	auto it = AList.end();
 	if (it == AList.begin()) return;
 	--it;
 	while (it != AList.begin() && it->position() >= 0){
 		while (it != AList.begin() && ! it->active()){
 			--it;
 		}
-		it2 = it;
+		auto it2 = it;
 		if (it2 != AList.begin()){--it2;}
 		while (it2 != AList.begin() && ! it2->active()){
 			--it2;
@@ -124,8 +119,7 @@ RawDataRiverCrosssection::Altitude LinearRXSecInterpolator::interpolate(double t
 	if (t < 0 || t > 1){
 		throw ec_OutOfInterpolationRange;
 	}
-	std::map<double, LinearAltitudeInterpolator*>::iterator it;
-	it = m_interpolators.lower_bound(t);
+	auto it = m_interpolators.lower_bound(t);
 	return (it->second)->interpolate(t);
 }
 
@@ -138,9 +132,9 @@ void RiverSplineSolver::update(){
 			new RiverLinearInterpolator(this, getVector(tmpp->nextPoint()), getVector(tmpp->nextPoint()));
 		setInterpolator(interpolator, tmpp);
 		tmpp = tmpp->nextPoint();
-		while (tmpp != 0){
+		while (tmpp != nullptr){
 			RawDataRiverPathPoint* nextp = tmpp->nextPoint();
-			if (nextp == 0){nextp = tmpp;}
+			if (nextp == nullptr){nextp = tmpp;}
 			RiverLinearInterpolator* interpolator =
 			    new RiverLinearInterpolator(this, getVector(tmpp), getVector(nextp));
 			setInterpolator(interpolator, tmpp);
@@ -150,8 +144,8 @@ void RiverSplineSolver::update(){
 		// まず、区間の数と、各区間の長さを調べる。
 		int num = 0;
 		RawDataRiverPathPoint* tmpp = m_headPoint;
-		if (tmpp != 0){tmpp = tmpp->nextPoint();}
-		while (tmpp != 0 && tmpp->nextPoint() != 0){
+		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
+		while (tmpp != nullptr && tmpp->nextPoint() != nullptr){
 			++num;
 			tmpp = tmpp->nextPoint();
 		}
@@ -166,9 +160,9 @@ void RiverSplineSolver::update(){
 		m_YD.insert(0, num, 0);
 		m_Dist.insert(0, num, 0);
 		tmpp = m_headPoint;
-		if (tmpp != 0){tmpp = tmpp->nextPoint();}
+		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
 		int i = 0;
-		while (tmpp != 0 && tmpp->nextPoint() != 0){
+		while (tmpp != nullptr && tmpp->nextPoint() != nullptr){
 			// Distvectorに、区間の長さを入れる。
 			m_Dist[i] = (getVector(tmpp->nextPoint()) - getVector(tmpp)).length();
 			// m_XA に 座標の x 座標をコピー
@@ -178,7 +172,7 @@ void RiverSplineSolver::update(){
 			++i;
 			tmpp = tmpp->nextPoint();
 		}
-		if (tmpp != 0){
+		if (tmpp != nullptr){
 			// m_XA に 座標の x 座標をコピー
 			m_XA[i] = getVector(tmpp).x();
 			// m_YA に 座標の y 座標をコピー
@@ -270,7 +264,7 @@ QVector2D RiverCenterLineSolver::getVector(RawDataRiverPathPoint* p){
 }
 
 void RiverCenterLineSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p){
-	if (p->riverCenter() != 0){
+	if (p->riverCenter() != nullptr){
 		delete p->riverCenter();
 	}
 	p->setRiverCenter(interpolator);
@@ -285,7 +279,7 @@ QVector2D RiverLeftBankSolver::getVector(RawDataRiverPathPoint* p){
 }
 
 void RiverLeftBankSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p){
-	if (p->leftBank() != 0){
+	if (p->leftBank() != nullptr){
 		delete p->leftBank();
 	}
 	p->setLeftBank(interpolator);
@@ -300,7 +294,7 @@ QVector2D RiverRightBankSolver::getVector(RawDataRiverPathPoint* p){
 }
 
 void RiverRightBankSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p){
-	if (p->rightBank() != 0){
+	if (p->rightBank() != nullptr){
 		delete p->rightBank();
 	}
 	p->setRightBank(interpolator);

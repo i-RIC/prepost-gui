@@ -77,7 +77,7 @@ GridCreatingConditionCompoundChannel::GridCreatingConditionCompoundChannel(Proje
 
 	m_centerLine = new GridCreatingConditionCompoundChannelCenterLine(this);
 	m_centerLine->setActive(false);
-	m_selectedLine = 0;
+	m_selectedLine = nullptr;
 
 	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
@@ -328,7 +328,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolygonDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolygonDefineNewPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetPolygon != m_targetPolygon){return false;}
@@ -398,7 +398,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolygonMoveCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolygonMoveCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetPolygon != m_targetPolygon){return false;}
@@ -467,7 +467,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolygonMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolygonMoveVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetPolygon != m_targetPolygon){return false;}
@@ -567,7 +567,7 @@ public:
 	bool mergeWith(const QUndoCommand *other)
 	{
 		const GridCreatingConditionCompoundChannelPolygonAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolygonAddVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (m_polygon != comm->m_polygon){return false;}
 		if (m_vertexId != comm->m_vertexId){return false;}
@@ -640,7 +640,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_condition != m_condition){return false;}
 		m_newPoint = comm->m_newPoint;
@@ -709,7 +709,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolyLineMoveCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolyLineMoveCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetLine != m_targetLine){return false;}
@@ -778,7 +778,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const GridCreatingConditionCompoundChannelPolyLineMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolyLineMoveVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetLine != m_targetLine){return false;}
@@ -878,7 +878,7 @@ public:
 	bool mergeWith(const QUndoCommand *other)
 	{
 		const GridCreatingConditionCompoundChannelPolyLineAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionCompoundChannelPolyLineAddVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (m_polygon != comm->m_polygon){return false;}
 		if (m_targetLine != comm->m_targetLine){return false;}
@@ -1410,7 +1410,7 @@ void GridCreatingConditionCompoundChannel::definePolygon(bool doubleClick)
 	if (doubleClick){
 		minCount = 3;
 	}
-	if (m_selectedPolygon == 0){return;}
+	if (m_selectedPolygon == nullptr){return;}
 	if (m_selectedPolygon->polygon().count() <= minCount){
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
@@ -1433,7 +1433,7 @@ void GridCreatingConditionCompoundChannel::defineLine(bool doubleClick)
 	if (doubleClick){
 		minCount = 1;
 	}
-	if (m_selectedLine == 0){return;}
+	if (m_selectedLine == nullptr){return;}
 	if (m_selectedLine->polyLine().count() <= minCount){
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygonal line must have two vertices at least."));
 		return;
@@ -1485,8 +1485,8 @@ void GridCreatingConditionCompoundChannel::loadExternalData(const QString& filen
 	s >> points;
 	m_centerLine->setPolyLine(points);
 	m_selectMode = smNone;
-	m_selectedPolygon = 0;
-	m_selectedLine = 0;
+	m_selectedPolygon = nullptr;
+	m_selectedLine = nullptr;
 	updateActionStatus();
 	f.close();
 
@@ -1710,14 +1710,14 @@ void GridCreatingConditionCompoundChannel::reverseCenterLine()
 void GridCreatingConditionCompoundChannel::editCoordinates()
 {
 	m_mouseEventMode = meEditVerticesDialog;
-	if (m_selectedPolygon != 0){
+	if (m_selectedPolygon != nullptr){
 		GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog* dialog = new GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(m_selectedPolygon, this, preProcessorWindow());
 		dialog->show();
 		iricMainWindow()->enterModelessDialogMode();
 		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
 	}
-	if (m_selectedLine != 0){
+	if (m_selectedLine != nullptr){
 		GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog* dialog = new GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(m_selectedLine, this, preProcessorWindow());
 		dialog->show();
 		iricMainWindow()->enterModelessDialogMode();
@@ -1754,7 +1754,7 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	m_iterations = dialog.iterations();
 
 	Grid* grid = createGrid();
-	if (grid == 0){return false;}
+	if (grid == nullptr){return false;}
 	emit gridCreated(grid);
 	return true;
 }
@@ -1763,19 +1763,19 @@ void GridCreatingConditionCompoundChannel::clear()
 {
 	initParams();
 
-	if (m_gridRegionPolygon != 0){delete m_gridRegionPolygon;}
+	if (m_gridRegionPolygon != nullptr){delete m_gridRegionPolygon;}
 	m_gridRegionPolygon = new GridCreatingConditionCompoundChannelGridRegionPolygon(this);
 	m_gridRegionPolygon->setActive(true);
 	m_selectedPolygon = m_gridRegionPolygon;
 
-	if (m_lowWaterChannelPolygon != 0){delete m_lowWaterChannelPolygon;}
+	if (m_lowWaterChannelPolygon != nullptr){delete m_lowWaterChannelPolygon;}
 	m_lowWaterChannelPolygon = new GridCreatingConditionCompoundChannelLowWaterChannelPolygon(this);
 	m_lowWaterChannelPolygon->setActive(false);
 
-	if (m_centerLine != 0){delete m_centerLine;}
+	if (m_centerLine != nullptr){delete m_centerLine;}
 	m_centerLine = new GridCreatingConditionCompoundChannelCenterLine(this);
 	m_centerLine->setActive(false);
-	m_selectedLine = 0;
+	m_selectedLine = nullptr;
 
 	m_status = stDefiningRegion;
 	m_mouseEventMode = meBeforeDefining;
@@ -1872,9 +1872,8 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 	grid->setModified();
@@ -1899,11 +1898,11 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 		relaxGrid(tmpGrid, m_relaxation);
 		applyConstraintToGrid(tmpGrid, leftEdge, leftBank, centerLine, rightBank, rightEdge);
 		qApp->processEvents();
-		if (m_canceled){return 0;}
+		if (m_canceled){return nullptr;}
 		waitDialog.setProgress(n + 1);
 	}
 	waitDialog.hide();
-	Structured2DGrid* grid = new Structured2DGrid(0);
+	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
 	gt->gridType()->buildGridRelatedConditions(grid);
 	grid->setDimensions(isize, jsize);
@@ -1919,10 +1918,8 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
-		(*it)->allocate();
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+		c->allocate();
 	}
 	grid->setModified();
 	return grid;
@@ -2148,7 +2145,7 @@ bool GridCreatingConditionCompoundChannel::selectObject(QPoint point)
 		m_selectMode = smLine;
 		m_selectedLine = m_centerLine;
 		m_selectedLine->setActive(true);
-		m_selectedPolygon = 0;
+		m_selectedPolygon = nullptr;
 		selected = true;
 	}
 
@@ -2169,7 +2166,7 @@ bool GridCreatingConditionCompoundChannel::selectObject(QPoint point)
 			m_selectMode = smPolygon;
 			m_selectedPolygon = m_lowWaterChannelPolygon;
 			m_selectedPolygon->setActive(true);
-			m_selectedLine = 0;
+			m_selectedLine = nullptr;
 		}
 	}
 	// check whether the grid region can be selected.
@@ -2189,13 +2186,13 @@ bool GridCreatingConditionCompoundChannel::selectObject(QPoint point)
 			m_selectMode = smPolygon;
 			m_selectedPolygon = m_gridRegionPolygon;
 			m_selectedPolygon->setActive(true);
-			m_selectedLine = 0;
+			m_selectedLine = nullptr;
 		}
 	}
 	if (! selected){
 		m_selectMode = smNone;
-		m_selectedLine = 0;
-		m_selectedPolygon = 0;
+		m_selectedLine = nullptr;
+		m_selectedPolygon = nullptr;
 	}
 	if (m_selectMode != oldSelectMode){return true;}
 	if (m_selectMode == smPolygon){
@@ -2245,14 +2242,14 @@ bool GridCreatingConditionCompoundChannel::checkCondition()
 
 bool GridCreatingConditionCompoundChannel::activePolygonHasFourVertices()
 {
-	if (m_selectedPolygon == 0){return false;}
+	if (m_selectedPolygon == nullptr){return false;}
 	QPolygonF pol = m_selectedPolygon->polygon();
 	return pol.count() > 4;
 }
 
 bool GridCreatingConditionCompoundChannel::activePolylineHasThreeVertices()
 {
-	if (m_selectedLine == 0){return false;}
+	if (m_selectedLine == nullptr){return false;}
 	QVector<QPointF> line = m_selectedLine->polyLine();
 	return line.count() >= 3;
 }

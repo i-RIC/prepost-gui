@@ -15,7 +15,7 @@
 
 class GridCreatingConditionTrianglePolygonCoordinatesEditDialogDelegate : public QStyledItemDelegate {
 public:
-	GridCreatingConditionTrianglePolygonCoordinatesEditDialogDelegate(QObject* = 0){}
+	GridCreatingConditionTrianglePolygonCoordinatesEditDialogDelegate(QObject* = nullptr){}
 	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem & /*option*/,
 		const QModelIndex & /*index*/) const
 	{

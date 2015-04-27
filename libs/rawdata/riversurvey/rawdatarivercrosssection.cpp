@@ -7,8 +7,7 @@ void RawDataRiverCrosssection::expand(double ratio){
 	if (ratio == 0){
 		return;
 	}
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		it->setPosition(it->position() * ratio);
 	}
 	m_leftShift *= ratio;
@@ -16,18 +15,16 @@ void RawDataRiverCrosssection::expand(double ratio){
 
 void RawDataRiverCrosssection::moveCenter(double offset){
 	// 河川中心の位置が動いたとき、あわせて断面の情報を更新する。
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		it->setPosition(it->position() - offset);
 	}
 	m_leftShift += offset;
 }
 
 int RawDataRiverCrosssection::addPoint(double position, double height){
-	AltitudeList::iterator it;
-	int i;
+	int i = 0;
 	for (
-		it = m_altitudeInfo.begin(), i = 0;
+		auto it = m_altitudeInfo.begin();
 		it != m_altitudeInfo.end() && it->position() < position;
 		++it, ++i
 		){
@@ -61,9 +58,7 @@ void RawDataRiverCrosssection::removePoint(int index) /*throw (ErrorCodes)*/ {
 }
 
 void RawDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (ErrorCodes)*/ {
-	QList<int>::const_iterator it;
-
-	for (it = indices.begin(); it != indices.end(); ++it){
+	for (auto it = indices.begin(); it != indices.end(); ++it){
 		int index = *it;
 		if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)){
 			throw ec_FixDelete;
@@ -74,7 +69,7 @@ void RawDataRiverCrosssection::removePoint(const QList<int>& indices) /*throw (E
 	}
 
 	int offset = 0;
-	for (it = indices.begin(); it != indices.end(); ++it){
+	for (auto it = indices.begin(); it != indices.end(); ++it){
 		int index = *it - offset;
 		m_altitudeInfo.removeAt(index);
 		++offset;
@@ -141,8 +136,7 @@ unsigned int RawDataRiverCrosssection::numOfAltitudes(bool OnlyActive){
 		return static_cast<unsigned int>(m_altitudeInfo.count());
 	}
 	unsigned int actives = 0;
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		if (it->active()){
 			++actives;
 		}
@@ -168,9 +162,8 @@ QList<int> RawDataRiverCrosssection::selectRegion(double position1, double posit
 		heightmax = height1;
 	}
 	QList<int> result;
-	AltitudeList::iterator it;
-	int i;
-	for (i = 0, it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++i, ++it){
+	int i = 0;
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++i, ++it){
 		if (
 			it->position() >= posmin &&
 			it->position() <= posmax &&
@@ -185,8 +178,6 @@ QList<int> RawDataRiverCrosssection::selectRegion(double position1, double posit
 }
 
 void RawDataRiverCrosssection::movePoint(double Hoffset, double Voffset, const QList<int>& Indices){
-	AltitudeList::iterator it;
-
 	for (int i = 0; i < Indices.count(); ++i){
 		if (m_fixedPointLSet && Indices.at(i) == m_fixedPointL){
 			Hoffset = 0;
@@ -267,9 +258,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 
 	// When fixed points or the end points are included, they can not be inactivated.
 	if (! a){
-		RawDataRiverCrosssection::AltitudeList::iterator ia;
-		QList<int>::const_iterator ii;
-		for (ii = indices.begin(); ii != indices.end(); ++ii){
+		for (auto ii = indices.begin(); ii != indices.end(); ++ii){
 			int index = *ii;
 			// Left fixed point exists
 			if (m_fixedPointLSet && (index == 0 || index == m_fixedPointL)){
@@ -281,8 +270,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 			}
 		}
 	}
-	QList<int>::const_iterator ii;
-	for (ii = indices.begin(); ii != indices.end(); ++ii){
+	for (auto ii = indices.begin(); ii != indices.end(); ++ii){
 		(*(m_altitudeInfo.begin() + (*ii))).setActive(a);
 //		m_altitudeInfo[*ii].setActive(a);
 	}
@@ -298,8 +286,7 @@ void RawDataRiverCrosssection::activate(const QList<int>& indices, bool a) /*thr
 
 bool RawDataRiverCrosssection::enoughActivePoints(){
 	int count = 0;
-	AltitudeList::iterator it;
-	for (it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
+	for (auto it = m_altitudeInfo.begin(); it != m_altitudeInfo.end(); ++it){
 		if (it->active()){
 			++count;
 			if (count == 2){return true;}

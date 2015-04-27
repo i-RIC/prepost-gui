@@ -69,7 +69,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){
+		if (tmparray == nullptr){
 			continue;
 		}
 		if (tmparray->GetNumberOfComponents() == 1){
@@ -203,7 +203,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	if (m_lengthMode == lenCustom){return;}
 	QVector<double> lenVec;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	vtkPointSet* ps = cont->data();
 	if (m_currentSolution == ""){return;}
 	vtkPointData* pd = ps->GetPointData();
@@ -260,7 +260,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	vtkPointSet* ps = cont->data();
 	if (m_currentSolution == ""){return;}
 	vtkPointData* pd = ps->GetPointData();
@@ -316,16 +316,15 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	Post2dWindowNodeVectorArrowDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	Post2dWindowNodeVectorArrowDataItem* current = nullptr;
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeVectorArrowDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorArrowDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -345,7 +344,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return;}
+	if (cont == nullptr || cont->data() == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdRadius(m_arrowSetting.arrowSize());

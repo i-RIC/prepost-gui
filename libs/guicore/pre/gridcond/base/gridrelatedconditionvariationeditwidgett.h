@@ -87,8 +87,7 @@ public:
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
 		vtkDataArray* oldValues = c->dataArrayCopy();
 		V val = value();
-		QVector<vtkIdType>::iterator it;
-		for (it = indices.begin(); it != indices.end(); ++it){
+		for (auto it = indices.begin(); it != indices.end(); ++it){
 			c->setValue(*it, c->value(*it) + val);
 		}
 		vtkDataArray* newValues = c->dataArrayCopy();

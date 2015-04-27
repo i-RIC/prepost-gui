@@ -13,7 +13,7 @@ class PreferencePageProxy : public PreferencePage
 {
 	Q_OBJECT
 public:
-	explicit PreferencePageProxy(QWidget *parent = 0);
+	explicit PreferencePageProxy(QWidget *parent = nullptr);
 	~PreferencePageProxy();
 	void update();
 

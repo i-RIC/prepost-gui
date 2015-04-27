@@ -16,7 +16,7 @@ class GUICOREDLL_EXPORT GridRelatedNodeConditionPropertyDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridRelatedNodeConditionPropertyDialog(QWidget *parent = 0);
+	GridRelatedNodeConditionPropertyDialog(QWidget *parent = nullptr);
 	~GridRelatedNodeConditionPropertyDialog();
 	void setContour(ContourSettingWidget::Contour contour);
 	ContourSettingWidget::Contour contour();

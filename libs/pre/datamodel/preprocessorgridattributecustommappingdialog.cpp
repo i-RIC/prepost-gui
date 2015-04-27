@@ -67,16 +67,14 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 PreProcessorCustomMappingSetting PreProcessorGridAttributeCustomMappingDialog::setting() const
 {
 	PreProcessorCustomMappingSetting ret;
-	QMap<PreProcessorGridAttributeMappingSettingDataItem*, QCheckBox*>::const_iterator it1;
-	for (it1 = m_attMap.begin(); it1 != m_attMap.end(); ++it1){
-		PreProcessorGridAttributeMappingSettingDataItem* item = it1.key();
-		QCheckBox* checkBox = it1.value();
+	for (auto it = m_attMap.begin(); it != m_attMap.end(); ++it){
+		PreProcessorGridAttributeMappingSettingDataItem* item = it.key();
+		QCheckBox* checkBox = it.value();
 		ret.attSettings.insert(item->condition()->name(), checkBox->isChecked());
 	}
-	QMap<PreProcessorBCSettingDataItem*, QCheckBox*>::const_iterator it2;
-	for (it2 = m_bcMap.begin(); it2 != m_bcMap.end(); ++it2){
-		PreProcessorBCSettingDataItem* item = it2.key();
-		QCheckBox* checkBox = it2.value();
+	for (auto it = m_bcMap.begin(); it != m_bcMap.end(); ++it){
+		PreProcessorBCSettingDataItem* item = it.key();
+		QCheckBox* checkBox = it.value();
 		ret.bcSettings.insert(item->bcDataItem()->uniqueName(), checkBox->isChecked());
 	}
 	return ret;
@@ -84,14 +82,12 @@ PreProcessorCustomMappingSetting PreProcessorGridAttributeCustomMappingDialog::s
 
 void PreProcessorGridAttributeCustomMappingDialog::checkAll()
 {
-	QMap<PreProcessorGridAttributeMappingSettingDataItem*, QCheckBox*>::iterator it1;
-	for (it1 = m_attMap.begin(); it1 != m_attMap.end(); ++it1){
-		QCheckBox* checkBox = it1.value();
+	for (auto it = m_attMap.begin(); it != m_attMap.end(); ++it){
+		QCheckBox* checkBox = it.value();
 		checkBox->setChecked(true);
 	}
-	QMap<PreProcessorBCSettingDataItem*, QCheckBox*>::iterator it2;
-	for (it2 = m_bcMap.begin(); it2 != m_bcMap.end(); ++it2){
-		QCheckBox* checkBox = it2.value();
+	for (auto it = m_bcMap.begin(); it != m_bcMap.end(); ++it){
+		QCheckBox* checkBox = it.value();
 		checkBox->setChecked(true);
 	}
 }

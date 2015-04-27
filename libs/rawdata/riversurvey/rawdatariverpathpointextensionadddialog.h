@@ -16,7 +16,7 @@ class RawDataRiverPathPointExtensionAddDialog : public QDialog
 	Q_OBJECT
 public:
 	enum LineMode {Left, Right};
-	explicit RawDataRiverPathPointExtensionAddDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointExtensionAddDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget *parent = nullptr);
 	~RawDataRiverPathPointExtensionAddDialog();
 	void setLineMode(LineMode lm){
 		m_lineMode = lm;

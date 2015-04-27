@@ -26,7 +26,7 @@ SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLoc
 		inst.mkdir(solversFolder);
 	}
 	// initially, dialog is not prepared.
-	m_dialog = 0;
+	m_dialog = nullptr;
 
 	// setup filesystem watcher
 	QFileSystemWatcher* watcher = new QFileSystemWatcher(this);
@@ -44,15 +44,15 @@ void SolverDefinitionList::updateSolverList()
 	QDir solversdir(m_targetDirectory);
 	QStringList subdirs = solversdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
 
-	for (int i = 0; i < subdirs.size(); ++i){
-		QString defFileName = QDir(solversdir.absoluteFilePath(subdirs.at(i))).absoluteFilePath(SolverDefinition::FILENAME);
+	for (const QString& subdir : subdirs){
+		QString defFileName = QDir(solversdir.absoluteFilePath(subdir)).absoluteFilePath(SolverDefinition::FILENAME);
 		if (QFile::exists(defFileName)){
 			// definition.xml exists.
 			try {
-				SolverDefinitionAbstract* abst = new SolverDefinitionAbstract(solversdir.absoluteFilePath(subdirs.at(i)), m_locale, this);
+				SolverDefinitionAbstract* abst = new SolverDefinitionAbstract(solversdir.absoluteFilePath(subdir), m_locale, this);
 				m_solverList.append(abst);
 			} catch (ErrorMessage& e){
-				QMessageBox::warning(parentWidget, tr("Warning"), tr("Error occured while loading solver definition file in folder \"%1\". This solver is ignored.\n%2").arg(subdirs.at(i)).arg(e));
+				QMessageBox::warning(parentWidget, tr("Warning"), tr("Error occured while loading solver definition file in folder \"%1\". This solver is ignored.\n%2").arg(subdir).arg(e));
 			}
 		}
 	}
@@ -63,8 +63,7 @@ void SolverDefinitionList::updateSolverList()
 
 void SolverDefinitionList::clean()
 {
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = m_solverList.begin(); it != m_solverList.end(); ++it){
+	for (auto it = m_solverList.begin(); it != m_solverList.end(); ++it){
 		delete *it;
 	}
 	m_solverList.clear();
@@ -88,7 +87,7 @@ QString SolverDefinitionList::absoluteSolverPath(const QString& solverFolder)
 
 SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
 {
-	if (m_dialog == 0){
+	if (m_dialog == nullptr){
 		m_dialog = new SolverDefinitionListDialog(this, parent);
 	}
 	m_dialog->setup();
@@ -97,9 +96,7 @@ SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
 
 const QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
 {
-	QList<SolverDefinitionAbstract*>::iterator it;
-	for (it = m_solverList.begin(); it != m_solverList.end(); ++it){
-		SolverDefinitionAbstract* solver = *it;
+	for (SolverDefinitionAbstract* solver : m_solverList){
 		if (solver->name() == p->mainfile()->solverName() &&
 				solver->version().compatibleWith(p->mainfile()->solverVersion()))
 		{

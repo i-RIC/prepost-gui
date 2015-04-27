@@ -9,9 +9,10 @@ namespace Ui {
 
 class RawDataPointmapRepresentationDialog : public QDialog {
 	Q_OBJECT
+
 public:
 	enum Representation {Points, Wireframe, Surface};
-	RawDataPointmapRepresentationDialog(QWidget *parent = 0);
+	RawDataPointmapRepresentationDialog(QWidget *parent = nullptr);
 	~RawDataPointmapRepresentationDialog();
 	void setRepresentation(Representation r);
 	void setOpacityPercent(int opacity);

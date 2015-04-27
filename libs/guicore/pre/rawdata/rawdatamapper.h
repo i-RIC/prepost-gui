@@ -19,9 +19,9 @@ public:
 	/// Constructor
 	RawDataMapper(RawDataCreator* parent) : QObject(parent)
 	{
-		m_grid = 0;
-		m_container = 0;
-		m_rawdata = 0;
+		m_grid = nullptr;
+		m_container = nullptr;
+		m_rawdata = nullptr;
 	}
 	void setTarget(Grid* grid, GridRelatedConditionContainer* container, RawData* rawdata)
 	{

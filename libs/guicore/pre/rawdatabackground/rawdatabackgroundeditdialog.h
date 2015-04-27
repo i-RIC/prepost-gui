@@ -16,7 +16,7 @@ class RawDataBackgroundEditDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataBackgroundEditDialog(QWidget *parent = 0);
+	explicit RawDataBackgroundEditDialog(QWidget *parent = nullptr);
 	~RawDataBackgroundEditDialog();
 	RawDataBackground::Type type(){return m_type;}
 	void setType(RawDataBackground::Type t){m_type = t;}

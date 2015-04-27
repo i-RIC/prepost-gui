@@ -13,7 +13,7 @@ namespace Ui {
 class ContinuousSnapshotGoogleEarthSettingPage : public QWizardPage {
 	Q_OBJECT
 public:
-	ContinuousSnapshotGoogleEarthSettingPage(QWidget *parent = 0);
+	ContinuousSnapshotGoogleEarthSettingPage(QWidget *parent = nullptr);
 	~ContinuousSnapshotGoogleEarthSettingPage();
 
 	void initializePage();

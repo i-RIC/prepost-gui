@@ -14,7 +14,7 @@ class PreferencePageGeneral : public PreferencePage
 {
 	Q_OBJECT
 public:
-	explicit PreferencePageGeneral(QWidget *parent = 0);
+	explicit PreferencePageGeneral(QWidget *parent = nullptr);
 	~PreferencePageGeneral();
 	bool checkSetting();
 	void update();

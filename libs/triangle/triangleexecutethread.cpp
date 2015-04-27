@@ -9,14 +9,14 @@
 TriangleExecuteThread::TriangleExecuteThread(QObject *parent) :
 	QThread(parent)
 {
-	m_in = 0;
-	m_out = 0;
-	m_args = 0;
+	m_in = nullptr;
+	m_out = nullptr;
+	m_args = nullptr;
 }
 
 void TriangleExecuteThread::run()
 {
-	triangulate(m_args, m_in, m_out, 0);
+	triangulate(m_args, m_in, m_out, nullptr);
 
 	if (m_fileArgs != ""){
 		QProcess* process = new QProcess(this);

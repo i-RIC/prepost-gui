@@ -51,7 +51,7 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneNam
 	if (cont->scalarValueExists()){
 		m_scalarGroupDataItem = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this);
 	}else{
-		m_scalarGroupDataItem = 0;
+		m_scalarGroupDataItem = nullptr;
 	}
 
 	m_childItems.append(m_shapeDataItem);
@@ -67,7 +67,7 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != 0){
+	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr){
 		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 	}
 }
@@ -79,7 +79,7 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_scalarGroupDataItem != 0){
+	if (m_scalarGroupDataItem != nullptr){
 		writer.writeStartElement("ScalarGroup");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -113,7 +113,7 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 	m_shapeDataItem->update();
 	qDebug("Grid shape: %d", time.elapsed());
 
-	if (m_scalarGroupDataItem != 0){
+	if (m_scalarGroupDataItem != nullptr){
 		time.restart();
 		m_scalarGroupDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());

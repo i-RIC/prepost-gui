@@ -25,7 +25,7 @@ GridCreatingConditionRectangularRegion::GridCreatingConditionRectangularRegion(P
 	: GridCreatingCondition(parent, creator)
 {
 	m_mouseEventMode = meNormal;
-	m_rightClickingMenu = 0;
+	m_rightClickingMenu = nullptr;
 	clear();
 	graphicsView()->ResetCameraClippingRange();
 
@@ -236,7 +236,7 @@ void GridCreatingConditionRectangularRegion::doSaveToProjectMainFile(QXmlStreamW
 bool GridCreatingConditionRectangularRegion::createGrid(double xmin, double xmax, double ymin, double ymax, double step)
 {
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
-	if (grid == 0){return false;}
+	if (grid == nullptr){return false;}
 	m_xMin = xmin;
 	m_xMax = xmax;
 	m_yMin = ymin;
@@ -251,7 +251,7 @@ void GridCreatingConditionRectangularRegion::previewGrid(double xmin, double xma
 {
 	createRectangularRegion(xmin, xmax, ymin, ymax);
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
-	if (grid == 0){return;}
+	if (grid == nullptr){return;}
 	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
 	mapper->SetInputData(grid->vtkGrid());
 	vtkActor* actor = vtkActor::New();
@@ -271,20 +271,20 @@ void GridCreatingConditionRectangularRegion::previewGrid(double xmin, double xma
 
 Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double xmin, double xmax, double ymin, double ymax, double stepSize)
 {
-	Structured2DGrid* grid = new Structured2DGrid(0);
+	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
 	gt->gridType()->buildGridRelatedConditions(grid);
 
 	unsigned int imax = floor((xmax - xmin) / stepSize);
 	unsigned int jmax = floor((ymax - ymin) / stepSize);
-	if (imax == 0 || jmax == 0){return 0;}
+	if (imax == 0 || jmax == 0){return nullptr;}
 
 	imax += 1;
 	jmax += 1;
 
 	if (imax * jmax > MAXGRIDSIZE || imax * jmax < 0){
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
-		return 0;
+		return nullptr;
 	}
 	grid->setDimensions(imax, jmax);
 	vtkPoints* points = vtkPoints::New();
@@ -298,10 +298,8 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
-		(*it)->allocate();
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+		c->allocate();
 	}
 	grid->setModified();
 	return grid;
@@ -337,7 +335,7 @@ void GridCreatingConditionRectangularRegion::clear()
 	m_yMax = 0;
 	m_stepSize = 0;
 
-	if (m_rectangularActor != 0){
+	if (m_rectangularActor != nullptr){
 		m_rectangularActor->VisibilityOff();
 		m_rectangularFrameActor->VisibilityOff();
 	}

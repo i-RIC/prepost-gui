@@ -14,7 +14,7 @@ namespace Ui {
 class GUICOREDLL_EXPORT ScalarsToColorsEditDialog : public QDialog
 {
 public:
-	ScalarsToColorsEditDialog(QWidget *parent = 0);
+	ScalarsToColorsEditDialog(QWidget *parent = nullptr);
 	void setWidget(ScalarsToColorsEditWidget* w);
 	ScalarsToColorsEditWidget* widget(){return m_widget;}
 	void setContainer(ScalarsToColorsContainer* container);

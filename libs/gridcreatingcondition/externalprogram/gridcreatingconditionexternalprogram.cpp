@@ -48,7 +48,7 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 GridCreatingConditionExternalProgram::~GridCreatingConditionExternalProgram()
 {
 	delete m_definition;
-	if (m_rightClickingMenu != 0){
+	if (m_rightClickingMenu != nullptr){
 		delete m_rightClickingMenu;
 	}
 }
@@ -182,8 +182,8 @@ void GridCreatingConditionExternalProgram::deleteGrid(const QString& fname)
 	}
 	// zone names are known, so remove them.
 	cg_goto(fn, B, "end");
-	for (int i = 0; i < zoneNames.count(); ++i){
-		cg_delete_node(const_cast<char*>(iRIC::toStr(zoneNames.at(i)).c_str()));
+	for (const QString& zoneName : zoneNames){
+		cg_delete_node(const_cast<char*>(iRIC::toStr(zoneName).c_str()));
 	}
 	cg_close(fn);
 }

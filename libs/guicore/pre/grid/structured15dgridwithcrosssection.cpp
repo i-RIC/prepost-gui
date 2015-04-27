@@ -195,8 +195,7 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, char
 	cg_goto(fn, B, "Zone_t", zoneid, "end");
 	cg_user_data_write("GridCrosssections");
 	int index = 1;
-	QList<Structured15DGridWithCrossSectionCrossSection*>::iterator it2;
-	for (it2 = m_crossSections.begin(); it2 != m_crossSections.end(); it2++){
+	for (auto it2 = m_crossSections.begin(); it2 != m_crossSections.end(); it2++){
 		(*it2)->saveToCgnsFile(fn, B, zoneid, index);
 		index++;
 	}

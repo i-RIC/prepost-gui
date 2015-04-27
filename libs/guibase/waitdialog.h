@@ -13,7 +13,7 @@ class GUIBASEDLL_EXPORT WaitDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit WaitDialog(QWidget *parent = 0);
+	explicit WaitDialog(QWidget *parent = nullptr);
 	~WaitDialog();
 	void setMessage(const QString& message);
 	void showProgressBar();

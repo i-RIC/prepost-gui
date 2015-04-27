@@ -18,7 +18,7 @@
 
 class RawDataPolygonCoordinatesEditDialogDelegate : public QStyledItemDelegate {
 public:
-	RawDataPolygonCoordinatesEditDialogDelegate(QObject* = 0){}
+	RawDataPolygonCoordinatesEditDialogDelegate(QObject* = nullptr){}
 	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem & /*option*/,
 		const QModelIndex & /*index*/) const
 	{

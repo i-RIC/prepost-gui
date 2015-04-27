@@ -21,7 +21,7 @@ private:
 	const static int WIDTH_MAX = 300;
 public:
 	/// Constructor
-	CgnsFileInputConditionPageList(QWidget* w = 0);
+	CgnsFileInputConditionPageList(QWidget* w = nullptr);
 	void setup(const QDomElement& elem, const SolverDefinitionTranslator& translator);
 	void selectFirstItem();
 signals:

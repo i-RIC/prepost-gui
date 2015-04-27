@@ -15,7 +15,7 @@ class RawDataRiverPathPointMoveDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit RawDataRiverPathPointMoveDialog(RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointMoveDialog(RawDataRiverSurvey* rs, QWidget *parent = nullptr);
 	~RawDataRiverPathPointMoveDialog();
 	void setSingleSelection(bool single);
 	void setCurrentCenter(const QVector2D& current);

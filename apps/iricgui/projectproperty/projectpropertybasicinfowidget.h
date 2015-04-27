@@ -14,7 +14,7 @@ class ProjectPropertyBasicInfoWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit ProjectPropertyBasicInfoWidget(QWidget *parent = 0);
+	explicit ProjectPropertyBasicInfoWidget(QWidget *parent = nullptr);
 	~ProjectPropertyBasicInfoWidget();
 	void setProjectData(ProjectData* data);
 

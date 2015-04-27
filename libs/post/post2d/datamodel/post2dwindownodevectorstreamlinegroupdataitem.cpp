@@ -42,7 +42,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++){
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == nullptr){continue;}
 		if (tmparray->GetNumberOfComponents() == 1){
 			// scalar attribute.
 			continue;
@@ -137,9 +137,9 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	m_streamTracers.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == 0){return;}
+	if (ps == nullptr){return;}
 	if (m_currentSolution == ""){return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0){return;}
@@ -180,16 +180,15 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	Post2dWindowNodeVectorStreamlineDataItem* current = 0;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	Post2dWindowNodeVectorStreamlineDataItem* current = nullptr;
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		Post2dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorStreamlineDataItem*>(*it);
 		if (tmpItem->name() == currentSol){
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != nullptr){
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -213,7 +212,7 @@ vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 		return m_regionClippedPolyData;
 	}
 	// only to avoid warning.
-	return 0;
+	return nullptr;
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamTracer* tracer)

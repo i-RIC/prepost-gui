@@ -16,7 +16,7 @@ namespace Ui {
 class Post2dWindowArrowStructuredSettingDialog : public QDialog {
 		Q_OBJECT
 public:
-	explicit Post2dWindowArrowStructuredSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowArrowStructuredSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowArrowStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer *data);
 	void setSolution(const QString& sol);

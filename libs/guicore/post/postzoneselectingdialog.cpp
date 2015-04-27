@@ -18,8 +18,7 @@ PostZoneSelectingDialog::~PostZoneSelectingDialog()
 
 void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>& containers)
 {
-	QList<PostZoneDataContainer*>::const_iterator it;
-	for (it = containers.begin(); it != containers.end(); ++it){
+	for (auto it = containers.begin(); it != containers.end(); ++it){
 		PostZoneDataContainer* cont = *it;
 		if (! m_gridTypes.contains(cont->gridType())){
 			m_gridTypes.append(cont->gridType());
@@ -33,8 +32,7 @@ void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>&
 
 void PostZoneSelectingDialog::setupGridTypeComboBox()
 {
-	QList<SolverDefinitionGridType*>::iterator it;
-	for (it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it){
+	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it){
 		SolverDefinitionGridType* gtype = *it;
 		ui->gridTypeComboBox->addItem(gtype->caption());
 	}
@@ -49,8 +47,7 @@ void PostZoneSelectingDialog::setupZoneList(int index)
 	SolverDefinitionGridType* gt = m_gridTypes.at(index);
 	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(gt);
 	ui->zoneList->clear();
-	QList<PostZoneDataContainer*>::const_iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		PostZoneDataContainer* c = *it;
 		ui->zoneList->addItem(c->caption());
 	}

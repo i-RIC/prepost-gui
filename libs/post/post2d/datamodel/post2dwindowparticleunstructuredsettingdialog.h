@@ -19,7 +19,7 @@ class Post2dWindowParticleUnstructuredSettingDialog : public QDialog
 {
     Q_OBJECT
 public:
-	explicit Post2dWindowParticleUnstructuredSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowParticleUnstructuredSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowParticleUnstructuredSettingDialog();
 	void setDataItem(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item){
 		m_dataItem = item;

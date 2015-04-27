@@ -12,7 +12,7 @@ class GUIBASEDLL_EXPORT CenteredCheckBox : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit CenteredCheckBox(QWidget *parent = 0);
+	explicit CenteredCheckBox(QWidget *parent = nullptr);
 	QIcon icon() const {return m_checkBox->icon();}
 	QSize iconSize() const {return m_checkBox->iconSize();}
 	bool isCheckable() const {return m_checkBox->isCheckable();}

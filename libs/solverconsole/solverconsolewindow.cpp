@@ -31,7 +31,7 @@ SolverConsoleWindow::~SolverConsoleWindow()
 /*
 	m_destructing = true;
 
-	if (m_process != 0){
+	if (m_process != nullptr){
 		m_process->kill();
 		delete m_process;
 	}
@@ -41,7 +41,7 @@ SolverConsoleWindow::~SolverConsoleWindow()
 void SolverConsoleWindow::init()
 {
 	setMinimumSize(480, 360);
-	m_projectData = 0;
+	m_projectData = nullptr;
 	m_destructing = false;
 
 	exportLogAction = new QAction(tr("&Export solver console log..."), this);
@@ -60,7 +60,7 @@ void SolverConsoleWindow::init()
 	setCentralWidget(m_console);
 	setupSolverEnvironment();
 
-	m_process = 0;
+	m_process = nullptr;
 
 	updateWindowTitle();
 }
@@ -88,7 +88,7 @@ SolverConsoleWindowProjectDataItem* SolverConsoleWindow::projectDataItem()
 
 bool SolverConsoleWindow::isSolverRunning()
 {
-	return m_process != 0;
+	return m_process != nullptr;
 }
 
 void SolverConsoleWindow::startSolver()
@@ -170,7 +170,7 @@ void SolverConsoleWindow::startSolver()
 }
 void SolverConsoleWindow::terminateSolver()
 {
-	if (m_process == 0){return;}
+	if (m_process == nullptr){return;}
 	QMessageBox::StandardButton button =  QMessageBox::question(
 		this,
 		tr("Confirm Solver Termination"),
@@ -204,7 +204,7 @@ void SolverConsoleWindow::readStdout()
 void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 {
 	delete m_process;
-	m_process = 0;
+	m_process = nullptr;
 	m_projectDataItem->close();
 
 	if (m_destructing){return;}
@@ -228,7 +228,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 void SolverConsoleWindow::updateWindowTitle()
 {
 	ProjectData* data = m_projectData;
-	if (data == 0)
+	if (data == nullptr)
 	{
 		// Project is not loaded yet.
 		setWindowTitle(QString(tr("Solver Console")));
@@ -236,7 +236,7 @@ void SolverConsoleWindow::updateWindowTitle()
 	}
 	QString solver = m_projectData->solverDefinition()->caption();
 	QString status;
-	if (m_process != 0){
+	if (m_process != nullptr){
 		status = tr("running");
 	}else{
 		status = tr("stopped");

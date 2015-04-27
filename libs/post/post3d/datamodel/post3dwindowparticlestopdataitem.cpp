@@ -40,7 +40,7 @@ void Post3dWindowParticlesTopDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->particleData() == 0){return;}
+	if (cont == nullptr || cont->particleData() == nullptr){return;}
 
 	m_actor->GetProperty()->SetPointSize(m_size);
 	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());

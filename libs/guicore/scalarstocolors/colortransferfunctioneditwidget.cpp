@@ -12,7 +12,7 @@
 class ColorTransferFunctionEditWidgetColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
@@ -71,10 +71,9 @@ void ColorTransferFunctionEditWidget::setupWidget()
 {
 	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(m_container);
 	QMap<double, QString> enums = cont->enumerations();
-	QMap<double, QString>::iterator it;
 	m_colors.clear();
 	ui->tableWidget->blockSignals(true);
-	for (it = enums.begin(); it != enums.end(); ++it){
+	for (auto it = enums.begin(); it != enums.end(); ++it){
 		ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
 		int rownum = ui->tableWidget->rowCount() - 1;
 
@@ -99,11 +98,10 @@ void ColorTransferFunctionEditWidget::save()
 {
 	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(m_container);
 	QMap<double, QString> enums = cont->enumerations();
-	QMap<double, QString>::iterator it;
 	QMap<double, QColor> colors;
 
 	int index = 0;
-	for (it = enums.begin(); it != enums.end(); ++it, ++index){
+	for (auto it = enums.begin(); it != enums.end(); ++it, ++index){
 		colors.insert(it.key(), m_colors.at(index));
 	}
 	cont->setColors(colors);

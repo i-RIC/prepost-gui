@@ -81,27 +81,26 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	PreProcessorGridAndGridCreatingConditionDataItem* gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (gagItem->gridDataItem());
 	PreProcessorBCGroupDataItem* bcgitem = gItem->bcGroupDataItem();
-	if (bcgitem == 0){return;}
+	if (bcgitem == nullptr){return;}
 
 	m_itemMap.clear();
 	int rows = m_standardItem->rowCount();
 	for (int i = rows - 1; i >= 0; --i){
 		m_standardItem->takeRow(i);
 	}
-	QList<GraphicsWindowDataItem*>::const_iterator it;
 	// setup current children set as tmpItemSet.
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> tmpItemMap;
 
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		tmpItemMap.insert(item->bcDataItem(), item);
 	}
 	m_childItems.clear();
 	const QList<GraphicsWindowDataItem*>& children = bcgitem->childItems();
-	for (it = children.begin(); it != children.end(); ++it){
+	for (auto it = children.begin(); it != children.end(); ++it){
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (*it);
 		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
-		if (bcsItem == 0){
+		if (bcsItem == nullptr){
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
 		} else {
 			if (! bcsItem->bcDataItem()->hideSetting()){
@@ -113,8 +112,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		m_itemMap.insert(bcItem, bcsItem);
 	}
 	// needless items removed.
-	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*>::iterator mit;
-	for (mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit){
+	for (auto mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit){
 		delete mit.value();
 	}
 	updateItemMap();
@@ -123,8 +121,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 
 void PreProcessorBCSettingGroupDataItem::loadItems()
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		item->loadData();
 	}
@@ -167,13 +164,12 @@ void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
-	if (grid == 0 && ! noDraw){
+	if (grid == nullptr && ! noDraw){
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		return;
 	}
 
-	QList<GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
 		item->executeMapping(true, 0);
 	}

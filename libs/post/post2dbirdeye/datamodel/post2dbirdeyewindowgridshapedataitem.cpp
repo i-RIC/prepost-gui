@@ -183,8 +183,8 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
-	if (cont->data() == 0){return;}
+	if (cont == nullptr){return;}
+	if (cont->data() == nullptr){return;}
 
 	vtkPointSet* ps = cont->data();
 	vtkPointSet* labeldata = cont->labelData();

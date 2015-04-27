@@ -8,8 +8,8 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	case RawDataRiverPathPoint::zposCenterToLeft:
 		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
-		if (tmpp != 0){tmpp = tmpp->nextPoint();}
-		while (tmpp != 0){
+		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
+		while (tmpp != nullptr){
 			points.point = tmpp;
 			points.position = position;
 			points.ctrlPointVector = tmpp->CenterToLeftCtrlPoints;
@@ -20,8 +20,8 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	case RawDataRiverPathPoint::zposCenterToRight:
 		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
-		if (tmpp != 0){tmpp = tmpp->nextPoint();}
-		while (tmpp != 0){
+		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
+		while (tmpp != nullptr){
 			points.point = tmpp;
 			points.position = position;
 			points.ctrlPointVector = tmpp->CenterToRightCtrlPoints;
@@ -53,8 +53,7 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 }
 
 void RawDataRiverSurveyCtrlPointBackup::restore(){
-	QList<CtrlPoints>::iterator it;
-	for (it = m_ctrlPoints.begin(); it != m_ctrlPoints.end(); ++it){
+	for (auto it = m_ctrlPoints.begin(); it != m_ctrlPoints.end(); ++it){
 		myRestore(*it);
 	}
 }

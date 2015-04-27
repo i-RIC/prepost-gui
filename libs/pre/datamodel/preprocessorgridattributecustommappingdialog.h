@@ -21,7 +21,7 @@ class PreProcessorGridAttributeCustomMappingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreProcessorGridAttributeCustomMappingDialog(QWidget *parent = 0);
+	explicit PreProcessorGridAttributeCustomMappingDialog(QWidget *parent = nullptr);
 	~PreProcessorGridAttributeCustomMappingDialog();
 	void setSettings(const QList<PreProcessorGridAttributeMappingSettingDataItem*>& atts, const QList<PreProcessorBCSettingDataItem*>& bcs, const PreProcessorCustomMappingSetting& setting);
 	PreProcessorCustomMappingSetting setting() const;

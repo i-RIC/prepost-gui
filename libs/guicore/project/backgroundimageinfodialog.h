@@ -15,7 +15,7 @@ class BackgroundImageInfoDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit BackgroundImageInfoDialog(QWidget *parent = 0);
+	explicit BackgroundImageInfoDialog(QWidget *parent = nullptr);
 	~BackgroundImageInfoDialog();
 	void setInfo(BackgroundImageInfo* info){m_info = info;}
 	void setImageWidth(int width){m_imageWidth = width;}

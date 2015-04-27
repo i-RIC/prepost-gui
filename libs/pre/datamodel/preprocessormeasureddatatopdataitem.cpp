@@ -77,8 +77,7 @@ void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void PreProcessorMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("MeasuredDataFile");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -88,8 +87,7 @@ void PreProcessorMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 const QList<MeasuredDataFileDataItem *> PreProcessorMeasuredDataTopDataItem::fileDataItems() const
 {
 	QList<MeasuredDataFileDataItem*> ret;
-	QList <GraphicsWindowDataItem*>::const_iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		MeasuredDataFileDataItem* item = dynamic_cast<MeasuredDataFileDataItem*>(*it);
 		ret.append(item);
 	}
@@ -127,7 +125,7 @@ void PreProcessorMeasuredDataTopDataItem::addChildItem()
 
 void PreProcessorMeasuredDataTopDataItem::deleteChildItem(int index)
 {
-	QList<GraphicsWindowDataItem*>::iterator it = m_childItems.begin();
+	auto it = m_childItems.begin();
 	delete *(it + index);
 	dynamic_cast<PreProcessorRootDataItem*>(parent())->updateItemMap();
 	renderGraphicsView();

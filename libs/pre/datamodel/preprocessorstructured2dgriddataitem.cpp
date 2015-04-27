@@ -25,10 +25,10 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		m_childItems.append(m_bcGroupDataItem);
 	} else {
-		m_bcGroupDataItem = 0;
+		m_bcGroupDataItem = nullptr;
 	}
 
-	m_selectMenu = 0;
+	m_selectMenu = nullptr;
 	m_regionSelectAction = new QAction(tr("Select I-J &Region..."), this);
 	// @todo not implemented, so disabled.
 	m_regionSelectAction->setDisabled(true);
@@ -51,7 +51,7 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 	m_editMenu->addAction(m_nodeEditAction);
 	m_editMenu->addAction(m_cellEditAction);
 
-	if (m_bcGroupDataItem != 0){
+	if (m_bcGroupDataItem != nullptr){
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
 	m_menu->addAction(m_deleteAction);
@@ -67,10 +67,10 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 
 void PreProcessorStructured2dGridDataItem::updateActionStatus()
 {
-//	m_selectMenu->setEnabled(m_grid != 0);
-//	m_regionSelectAction->setEnabled(m_grid != 0);
-	m_editMenu->setEnabled(m_grid != 0);
-	m_displayMenu->setEnabled(m_grid != 0);
+//	m_selectMenu->setEnabled(m_grid != nullptr);
+//	m_regionSelectAction->setEnabled(m_grid != nullptr);
+	m_editMenu->setEnabled(m_grid != nullptr);
+	m_displayMenu->setEnabled(m_grid != nullptr);
 
 	PreProcessorGridDataItem::updateActionStatus();
 }

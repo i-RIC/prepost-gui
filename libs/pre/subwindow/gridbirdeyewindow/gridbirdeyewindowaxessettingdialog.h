@@ -12,7 +12,7 @@ class GridBirdEyeWindowAxesSettingDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit GridBirdEyeWindowAxesSettingDialog(QWidget *parent = 0);
+    explicit GridBirdEyeWindowAxesSettingDialog(QWidget *parent = nullptr);
     ~GridBirdEyeWindowAxesSettingDialog();
 	void setAxesVisible(bool visible);
 	bool axesVisible();

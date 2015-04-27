@@ -73,19 +73,20 @@ public:
 		CgnsFileInputConditionContainerSet* cs,
 		CgnsFileInputConditionDependency * d
 	    );
+
 public slots:
 	void check(){
-		QList<Action*>::iterator it;
 		if (m_condition->match()){
-			for (it = m_actions.begin(); it != m_actions.end(); ++it){
+			for (auto it = m_actions.begin(); it != m_actions.end(); ++it){
 				(*it)->positiveAction();
 			}
 		}else{
-			for (it = m_actions.begin(); it != m_actions.end(); ++it){
+			for (auto it = m_actions.begin(); it != m_actions.end(); ++it){
 				(*it)->negativeAction();
 			}
 		}
 	}
+
 private:
 	Condition* m_condition;
 	QList<Action*> m_actions;

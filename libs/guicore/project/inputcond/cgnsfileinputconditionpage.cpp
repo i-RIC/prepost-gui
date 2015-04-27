@@ -25,7 +25,7 @@ void CgnsFileInputConditionPage::load(const QDomNode& node, CgnsFileInputConditi
 	QDomElement elem = node.toElement();
 	m_name = elem.attribute("name");
 	QVBoxLayout* masterLayout = new QVBoxLayout(this);
-	QLayout* layout = 0;
+	QLayout* layout = nullptr;
 	// obtain "Content" node.
 	QDomNode contNode = iRIC::getChildNode(node, "Content");
 	if (! contNode.isNull()){
@@ -128,7 +128,7 @@ QObject* CgnsFileInputConditionPage::loadRec(const QDomNode& node, CgnsFileInput
 		}
 		return l;
 	}
-	return 0;
+	return nullptr;
 }
 
 void CgnsFileInputConditionPage::loadBL(QBoxLayout* layout, const QDomNodeList& list, CgnsFileInputConditionWidgetSet *ws, const SolverDefinitionTranslator& t)
@@ -136,7 +136,7 @@ void CgnsFileInputConditionPage::loadBL(QBoxLayout* layout, const QDomNodeList& 
 	for (unsigned int i = 0; i < list.length(); ++i){
 		QDomNode c = list.item(i);
 		QObject* obj = loadRec(c, ws, t);
-		if (obj == 0){continue;}
+		if (obj == nullptr){continue;}
 		if (QWidget * w = qobject_cast<QWidget *>(obj)){
 			layout->addWidget(w);
 		} else if (QLayout * l = qobject_cast<QLayout*>(obj)){
@@ -153,7 +153,7 @@ void CgnsFileInputConditionPage::loadGL(QGridLayout* layout, const QDomNodeList&
 		int row = e.attribute("row").toInt();
 		int col = e.attribute("col").toInt();
 		QObject* obj = loadRec(c, ws, t);
-		if (obj == 0){continue;}
+		if (obj == nullptr){continue;}
 		if (QWidget * w = qobject_cast<QWidget*>(obj)){
 			layout->addWidget(w, row, col);
 		}else if (QLayout * l = qobject_cast<QLayout*>(obj)){

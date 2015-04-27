@@ -79,12 +79,10 @@ void ContinuousSnapshotConfirmPage::initializePage()
 	int rate = m_wizard->samplingRate();
 	int index = 1;
 	while (step <= m_wizard->stop()){
-		QStringList::const_iterator it;
-		for (it = m_wizard->prefixList().begin(); it != m_wizard->prefixList().end(); ++it){
-			QString filename = *it;
-			filename.append(QString("%1").arg(index, len, 10, QChar('0')));
-			filename.append(m_wizard->extension());
-			QString absolute = QDir(m_wizard->fileIODirectory()).absoluteFilePath(filename);
+		for (QString prefix : m_wizard->prefixList()){
+			prefix.append(QString("%1").arg(index, len, 10, QChar('0')));
+			prefix.append(m_wizard->extension());
+			QString absolute = QDir(m_wizard->fileIODirectory()).absoluteFilePath(prefix);
 			m_fileList->addItem(QDir::toNativeSeparators(absolute));
 			m_wizard->addFileList(absolute);
 		}
@@ -92,9 +90,8 @@ void ContinuousSnapshotConfirmPage::initializePage()
 		step += rate;
 	}
 	if (m_wizard->outputMovie()){
-		QStringList::const_iterator it;
-		for (it = m_wizard->prefixList().begin(); it != m_wizard->prefixList().end(); ++it){
-			QString movieFilename = QString("%1.wmv").arg(*it);
+		for (const QString& prefix : m_wizard->prefixList()){
+			QString movieFilename = QString("%1.wmv").arg(prefix);
 			QString absMovieFilename = QDir(m_wizard->fileIODirectory()).absoluteFilePath(movieFilename);
 			m_fileList->addItem(QDir::toNativeSeparators(absMovieFilename));
 		}

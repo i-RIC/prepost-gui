@@ -25,7 +25,7 @@ class POST2D_EXPORT Post2dWindowContourSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit Post2dWindowContourSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowContourSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowContourSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
 	void setCurrentSolution(QString sol);

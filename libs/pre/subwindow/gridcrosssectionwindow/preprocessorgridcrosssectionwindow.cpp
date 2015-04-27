@@ -228,8 +228,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	// keep selection status
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	QList<QItemSelectionRange>::iterator sit;
-	for (sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -402,7 +401,7 @@ void PreProcessorGridCrosssectionWindow::redComboBoxChange(int newindex)
 	m_redLineIndex = newindex - 1;
 /*
 	if (newindex == 0){
-		m_redLinePoint = 0;
+		m_redLinePoint = nullptr;
 	}else{
 		m_redLinePoint = m_riverSurvey->headPoint();
 		for (int i = 0; i < newindex; ++i){
@@ -419,7 +418,7 @@ void PreProcessorGridCrosssectionWindow::blueComboBoxChange(int newindex)
 	m_blueLineIndex = newindex - 1;
 /*
 	if (newindex == 0){
-		m_blueLinePoint = 0;
+		m_blueLinePoint = nullptr;
 	}else{
 		m_blueLinePoint = m_riverSurvey->headPoint();
 		for (int i = 0; i < newindex; ++i){

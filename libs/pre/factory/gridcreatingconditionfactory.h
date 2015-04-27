@@ -22,7 +22,7 @@ private:
 	GridCreatingConditionFactory(QWidget* mainWindow);
 public:
 	static GridCreatingConditionFactory& instance(QWidget* mainWindow){
-		if (m_instance == 0){
+		if (m_instance == nullptr){
 			m_instance = new GridCreatingConditionFactory(mainWindow);
 		}
 		return *m_instance;

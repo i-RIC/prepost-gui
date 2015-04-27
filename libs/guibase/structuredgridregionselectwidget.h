@@ -15,7 +15,7 @@ class GUIBASEDLL_EXPORT StructuredGridRegionSelectWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit StructuredGridRegionSelectWidget(QWidget *parent = 0);
+	explicit StructuredGridRegionSelectWidget(QWidget *parent = nullptr);
 	~StructuredGridRegionSelectWidget();
 	void setGridDimensions(int idim, int jdim);
 	void setiMin(int imin);

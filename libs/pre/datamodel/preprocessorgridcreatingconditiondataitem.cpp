@@ -56,7 +56,7 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(gType);
 
 	// default condition is not set.
-	m_condition = 0;
+	m_condition = nullptr;
 	if (cList.count() < 1){
 		// users can not switch algorithmn to create grid.
 		m_switchAlgorithmAction->setDisabled(true);
@@ -76,7 +76,7 @@ void PreProcessorGridCreatingConditionDataItem::setCondition(GridCreatingConditi
 
 void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
 {
-	if (m_condition == 0){
+	if (m_condition == nullptr){
 		menu->addAction(m_switchAlgorithmAction);
 		return;
 	}
@@ -89,24 +89,24 @@ void PreProcessorGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
 
 bool PreProcessorGridCreatingConditionDataItem::addToolBarButtons(QToolBar* tb)
 {
-	if (m_condition == 0){return false;}
+	if (m_condition == nullptr){return false;}
 	return m_condition->addToolBarButtons(tb);
 }
 
 void PreProcessorGridCreatingConditionDataItem::assignActionZValues(const ZDepthRange& range)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->assignActionZValues(range);
 }
 
 void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		delete m_condition;
 	}
 	m_condition = GridCreatingConditionFactory::instance(iricMainWindow()).restore(node, this);
 	m_createAction->setDisabled(true);
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		m_condition->setupActors();
 		m_condition->informDeselection(dataModel()->graphicsView());
 		m_condition->assignActionZValues(m_zDepthRange);
@@ -118,7 +118,7 @@ void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const 
 		}else{
 			// error occured while initializing.
 			delete m_condition;
-			m_condition = 0;
+			m_condition = nullptr;
 		}
 	}
 	updateVisibilityWithoutRendering();
@@ -126,7 +126,7 @@ void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const 
 
 void PreProcessorGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		writer.writeAttribute("name", m_condition->name());
 		m_condition->saveToProjectMainFile(writer);
 	}
@@ -134,14 +134,14 @@ void PreProcessorGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStre
 
 void PreProcessorGridCreatingConditionDataItem::innerUpdate2Ds()
 {
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		m_condition->update2Ds();
 	}
 }
 
 void PreProcessorGridCreatingConditionDataItem::createGrid()
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	PreProcessorGridAndGridCreatingConditionDataItem* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
 	// this operation is not possible while the solver is running.
@@ -150,7 +150,7 @@ void PreProcessorGridCreatingConditionDataItem::createGrid()
 		mw->warnSolverRunning();
 		return;
 	}
-	if (gridDataItem->grid() != 0){
+	if (gridDataItem->grid() != nullptr){
 		if (QMessageBox::No == QMessageBox::warning(
 				dataModel()->mainWindow(),
 				tr("Warning"),
@@ -172,9 +172,9 @@ void PreProcessorGridCreatingConditionDataItem::createGrid()
 }
 
 void PreProcessorGridCreatingConditionDataItem::silentDeleteCondition(){
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	delete m_condition;
-	m_condition = 0;
+	m_condition = nullptr;
 	m_createAction->setDisabled(true);
 }
 
@@ -187,9 +187,9 @@ void PreProcessorGridCreatingConditionDataItem::deleteCondition()
 		QMessageBox::Yes | QMessageBox::No,
 		QMessageBox::No);
 	if (ret == QMessageBox::No){return;}
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	delete m_condition;
-	m_condition = 0;
+	m_condition = nullptr;
 	m_createAction->setDisabled(true);
 	renderGraphicsView();
 
@@ -206,7 +206,7 @@ void PreProcessorGridCreatingConditionDataItem::resetCondition()
 		QMessageBox::Yes | QMessageBox::No,
 		QMessageBox::No);
 	if (ret == QMessageBox::No){return;}
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->clear();
 	renderGraphicsView();
 
@@ -218,7 +218,7 @@ void PreProcessorGridCreatingConditionDataItem::resetCondition()
 
 void PreProcessorGridCreatingConditionDataItem::handleNewGrid(Grid *newgrid)
 {
-	if (newgrid == 0){return;}
+	if (newgrid == nullptr){return;}
 	PreProcessorGridAndGridCreatingConditionDataItem* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
 	bool ok = gridDataItem->setGrid(newgrid);
@@ -231,7 +231,7 @@ void PreProcessorGridCreatingConditionDataItem::handleNewGrid(Grid *newgrid)
 
 void PreProcessorGridCreatingConditionDataItem::handleTmpGrid(Grid* tmpgrid)
 {
-	if (tmpgrid == 0){return;}
+	if (tmpgrid == nullptr){return;}
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
 	bool ok = gridDataItem->setGrid(tmpgrid);
@@ -245,88 +245,88 @@ void PreProcessorGridCreatingConditionDataItem::moveGrid()
 
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemClicked()
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->handleStandardItemClicked();
 }
 
 void PreProcessorGridCreatingConditionDataItem::handleStandardItemDoubleClicked()
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->handleStandardItemDoubleClicked();
 }
 
 void PreProcessorGridCreatingConditionDataItem::informSelection(VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::informDeselection(VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::viewOperationEnded(VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 void PreProcessorGridCreatingConditionDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
 QStringList PreProcessorGridCreatingConditionDataItem::containedFiles()
 {
-	if (m_condition == 0){return QStringList();}
+	if (m_condition == nullptr){return QStringList();}
 	return m_condition->containedFiles();
 }
 
 QMenu* PreProcessorGridCreatingConditionDataItem::menu()
 {
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		return m_condition->menu();
 	} else {
-		return 0;
+		return nullptr;
 	}
 }
 
 void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 {
-	if (m_condition != 0 && QMessageBox::Cancel == QMessageBox::warning(mainWindow(), tr("Warning"), tr("When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)){
+	if (m_condition != nullptr && QMessageBox::Cancel == QMessageBox::warning(mainWindow(), tr("Warning"), tr("When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)){
 		return;
 	}
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
@@ -335,7 +335,7 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(gType);
 	PreProcessorGridCreatingConditionAlgorithmSelectDialog dialog;
 	dialog.setCreators(cList);
-	if (m_condition != 0){
+	if (m_condition != nullptr){
 		dialog.setCurrent(m_condition->creator());
 	}
 	if (QDialog::Accepted != dialog.exec()){
@@ -357,7 +357,7 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	bool ret = newcond->init();
 	if (ret){
 		// initialization succeeded.
-		if (m_condition != 0){
+		if (m_condition != nullptr){
 			m_condition->informDeselection(dataModel()->graphicsView());
 			delete m_condition;
 		}
@@ -380,6 +380,6 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 
 void PreProcessorGridCreatingConditionDataItem::doApplyOffset(double x, double y)
 {
-	if (m_condition == 0){return;}
+	if (m_condition == nullptr){return;}
 	m_condition->applyOffset(x, y);
 }

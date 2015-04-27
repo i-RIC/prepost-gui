@@ -230,7 +230,7 @@ void Unstructured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double y
 
 void Unstructured2DGrid::setupIndexArray()
 {
-	if (m_vtkFilteredCellsAlgorithm == 0){return;}
+	if (m_vtkFilteredCellsAlgorithm == nullptr){return;}
 
 	vtkAlgorithm* tmpalgo = m_vtkFilteredCellsAlgorithm;
 	vtkPolyDataAlgorithm* algo = dynamic_cast<vtkPolyDataAlgorithm*>(tmpalgo);

@@ -12,7 +12,7 @@ class GridCreatingConditionTriangleRemeshDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionTriangleRemeshDialog(QWidget *parent = 0);
+	explicit GridCreatingConditionTriangleRemeshDialog(QWidget *parent = nullptr);
 	~GridCreatingConditionTriangleRemeshDialog();
 	void setArea(double area);
 	double area();

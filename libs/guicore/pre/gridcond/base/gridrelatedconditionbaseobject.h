@@ -10,7 +10,7 @@ class GridRelatedConditionBaseObject : public QObject
 
 public:
 	/// Constructor
-	GridRelatedConditionBaseObject(SolverDefinitionGridRelatedCondition* cond, QObject* parent = 0)
+	GridRelatedConditionBaseObject(SolverDefinitionGridRelatedCondition* cond, QObject* parent = nullptr)
 		: QObject(parent)
 	{
 		m_condition = cond;

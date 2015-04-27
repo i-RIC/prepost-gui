@@ -10,15 +10,16 @@ namespace Ui {
 
 class PreferencePageGridCheck : public PreferencePage
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit PreferencePageGridCheck(QWidget *parent = 0);
-    ~PreferencePageGridCheck();
+	explicit PreferencePageGridCheck(QWidget *parent = nullptr);
+	~PreferencePageGridCheck();
 	void update();
+
 private:
 	QSettings m_settings;
-    Ui::PreferencePageGridCheck *ui;
+	Ui::PreferencePageGridCheck *ui;
 };
 
 #endif // PREFERENCEPAGEGRIDCHECK_H

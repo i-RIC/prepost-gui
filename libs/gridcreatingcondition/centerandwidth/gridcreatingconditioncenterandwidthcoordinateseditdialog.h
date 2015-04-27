@@ -19,7 +19,7 @@ class GridCreatingConditionCenterAndWidthCoordinatesEditDialog : public QDialog
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionCenterAndWidthCoordinatesEditDialog(GridCreatingConditionCenterAndWidth* cond, QWidget *parent = 0);
+	explicit GridCreatingConditionCenterAndWidthCoordinatesEditDialog(GridCreatingConditionCenterAndWidth* cond, QWidget *parent = nullptr);
 	~GridCreatingConditionCenterAndWidthCoordinatesEditDialog();
 public slots:
 	void accept();

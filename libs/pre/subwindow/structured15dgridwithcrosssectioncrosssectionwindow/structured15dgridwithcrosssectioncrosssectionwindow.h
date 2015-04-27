@@ -23,7 +23,7 @@ class Structured15DGridWithCrossSectionCrossSectionWindow : public QMainWindow
 {
 	Q_OBJECT
 public:
-	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget *parent = 0);
+	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget *parent = nullptr);
 	~Structured15DGridWithCrossSectionCrossSectionWindow();
 	QAction* deleteAction(){return m_deleteAction;}
 	void setupData();

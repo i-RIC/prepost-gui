@@ -30,7 +30,7 @@ bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename
 	RawDataRiverPathPoint* lastp = rs->headPoint()->nextPoint();
 	QVector2D offset = pd->mainfile()->offset();
 	while (1){
-		if (lastp->nextPoint() == 0){break;}
+		if (lastp->nextPoint() == nullptr){break;}
 		lastp = lastp->nextPoint();
 	}
 	// now, export from the last one.
@@ -56,8 +56,7 @@ bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename
 		int i = 0;
 		double left = tmpp->crosssection().leftBank(true).position();
 		const RawDataRiverCrosssection::AltitudeList& list = tmpp->crosssection().AltitudeInfo();
-		RawDataRiverCrosssection::AltitudeList::const_iterator it;
-		for (it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it){
 			if (it->active()){
 				outstream << it->position() - left << "\t" << it->height() << "\t";
 			}

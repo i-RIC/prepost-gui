@@ -80,27 +80,27 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
 	QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
-	if (! contourGroupNode.isNull() && m_contourGroupItem != 0){
+	if (! contourGroupNode.isNull() && m_contourGroupItem != nullptr){
 		m_contourGroupItem->loadFromProjectMainFile(contourGroupNode);
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != 0){
+	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr){
 		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 	}
 	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
-	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != 0){
+	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr){
 		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupNode);
 	}
 	QDomNode streamlineGroupNode = iRIC::getChildNode(node, "StreamlineGroup");
-	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != 0){
+	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr){
 		m_streamlineGroupDataItem->loadFromProjectMainFile(streamlineGroupNode);
 	}
 	QDomNode particleGroupNode = iRIC::getChildNode(node, "ParticleGroup");
-	if (! particleGroupNode.isNull() && m_particleGroupDataItem != 0){
+	if (! particleGroupNode.isNull() && m_particleGroupDataItem != nullptr){
 		m_particleGroupDataItem->loadFromProjectMainFile(particleGroupNode);
 	}
 	QDomNode particlesNode = iRIC::getChildNode(node, "SolverParticles");
-	if (! particlesNode.isNull() && m_particlesDataItem != 0){
+	if (! particlesNode.isNull() && m_particlesDataItem != nullptr){
 		m_particlesDataItem->loadFromProjectMainFile(particlesNode);
 	}
 }
@@ -112,32 +112,32 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_contourGroupItem != 0){
+	if (m_contourGroupItem != nullptr){
 		writer.writeStartElement("ContourGroup");
 		m_contourGroupItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_scalarGroupDataItem != 0){
+	if (m_scalarGroupDataItem != nullptr){
 		writer.writeStartElement("ScalarGroup");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_arrowGroupDataItem != 0) {
+	if (m_arrowGroupDataItem != nullptr) {
 		writer.writeStartElement("ArrowGroup");
 		m_arrowGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_streamlineGroupDataItem != 0) {
+	if (m_streamlineGroupDataItem != nullptr) {
 		writer.writeStartElement("StreamlineGroup");
 		m_streamlineGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_particleGroupDataItem != 0) {
+	if (m_particleGroupDataItem != nullptr) {
 		writer.writeStartElement("ParticleGroup");
 		m_particleGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_particlesDataItem != 0) {
+	if (m_particlesDataItem != nullptr) {
 		writer.writeStartElement("SolverParticles");
 		m_particlesDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();

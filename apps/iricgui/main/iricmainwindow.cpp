@@ -99,7 +99,7 @@ iRICMainWindow::iRICMainWindow(QWidget *parent)
 	// ask whether the user wants to resume the trash workspaces.
 
 	// initially, projectdata is not loaded.
-	m_projectData = 0;
+	m_projectData = nullptr;
 	m_postWindowFactory = new PostProcessorWindowFactory(this);
 
 	// load plugins.
@@ -163,7 +163,7 @@ iRICMainWindow::~iRICMainWindow()
 
 void iRICMainWindow::setupBasicSubWindows()
 {
-	QMdiSubWindow* w = 0;
+	QMdiSubWindow* w = nullptr;
 	m_preProcessorWindow = new PreProcessorWindow(this);
 	w = m_centralWidget->addSubWindow(m_preProcessorWindow);
 	w->setWindowIcon(QIcon(":/images/iconPreprocessing.png"));
@@ -495,7 +495,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 
 bool iRICMainWindow::closeProject()
 {
-	if (m_projectData == 0){return true;}
+	if (m_projectData == nullptr){return true;}
 	bool result = true;
 	if (m_projectData->mainfile()->isModified()){
 		if (! m_projectData->isInWorkspace()){
@@ -536,7 +536,7 @@ bool iRICMainWindow::closeProject()
 	m_postWindowFactory->resetWindowCounts();
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
-	m_projectData = 0;
+	m_projectData = nullptr;
 	m_mousePositionWidget->setProjectData(0);
 	updateWindowTitle();
 	updatePostActionStatus();
@@ -560,7 +560,7 @@ void iRICMainWindow::setupForNewProjectData()
 	AnimationController* ac = dynamic_cast<AnimationController*> (m_animationController);
 	ac->setup(m_projectData->solverDefinition()->iterationType());
 	QToolBar* at = ac->animationToolBar();
-	if (at != 0){addToolBar(at);}
+	if (at != nullptr){addToolBar(at);}
 
 	m_actionManager->setAnimationWidgets(ac->animationMenu(), at);
 	m_actionManager->updateMenuBar();
@@ -571,18 +571,18 @@ void iRICMainWindow::setupForNewProjectData()
 
 void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 {
-	if (m_projectData == 0){
+	if (m_projectData == nullptr){
 		// project is not open.
 		return;
 	}
-	if (newActiveWindow == 0){
+	if (newActiveWindow == nullptr){
 		// Window of other program is activated.
-		m_actionManager->informSubWindowChange(0);
+		m_actionManager->informSubWindowChange(nullptr);
 		return;
 	}
 	QWidget* innerWindow = newActiveWindow->widget();
 	RawDataRiverSurveyCrosssectionWindow* cw = dynamic_cast<RawDataRiverSurveyCrosssectionWindow*>(innerWindow);
-	if (cw != 0){
+	if (cw != nullptr){
 		cw->informFocusIn();
 	} else {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
@@ -792,7 +792,7 @@ void iRICMainWindow::snapshot()
 {
 	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
 	SnapshotEnabledWindow* enabledWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
-	if (enabledWindow != 0)
+	if (enabledWindow != nullptr)
 	{
 		enabledWindow->setTransparent(false);
 		QPixmap pixmap = enabledWindow->snapshot();
@@ -805,7 +805,7 @@ void iRICMainWindow::snapshot()
 			pixmap.save(filename);
 		} else if (finfo.suffix() == "pdf" || finfo.suffix() == "eps" || finfo.suffix() == "svg"){
 			vtkRenderWindow* renderWindow = enabledWindow->getVtkRenderWindow();
-			if (renderWindow == 0){
+			if (renderWindow == nullptr){
 				QMessageBox::warning(this, tr("Warning"), tr("This window do not support snapshot with this file type."));
 				return;
 			}
@@ -860,7 +860,7 @@ void iRICMainWindow::continuousSnapshot()
 	}
 	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
 	SnapshotEnabledWindow* enableWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
-	if (enableWindow != 0){
+	if (enableWindow != nullptr){
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
 		wizard->setOutput(m_output);
@@ -970,7 +970,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 	dialog.show();
 
 	int step = m_start;
-	QStringList::const_iterator fit = wizard->fileList().begin();
+	auto fit = wizard->fileList().begin();
 	QPoint position = wizard->beginPosition();
 	QSize size = wizard->snapshotSize();
 	QList<QSize> sizes;
@@ -984,7 +984,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			return;
 		}
 		m_animationController->setCurrentStepIndex(step);
-		QList<QMdiSubWindow*>::const_iterator it;
 		switch (m_output){
 		case ContinuousSnapshotWizard::Onefile:
 		{
@@ -1004,8 +1003,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 				painter.setBackgroundMode(Qt::OpaqueMode);
 			}
 			QPoint begin(0, 0);
-			for (it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
-				QMdiSubWindow* sub = *it;
+			for (QMdiSubWindow* sub : wizard->windowList()){
 				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
 				QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
 				window->setTransparent(m_transparent);
@@ -1032,9 +1030,9 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			break;
 		}
 		case ContinuousSnapshotWizard::Respectively:
-			int i;
-			for (it = wizard->windowList().begin(), i = 0; it != wizard->windowList().end(); ++it, ++i){
-				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>((*it)->widget());
+			int i = 0;
+			for (QMdiSubWindow* sub : wizard->windowList()){
+				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
 				window->setTransparent(m_transparent);
 				QPixmap pixmap = window->snapshot();
 				pixmap.save(*fit);
@@ -1044,6 +1042,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 					addKMLElement(step, url, m_north, m_south, m_west, m_east, m_angle, writer);
 				}
 				++fit;
+				++ i;
 			}
 			break;
 		}
@@ -1057,7 +1056,6 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 		QStringList outputFilenames;
 		QString inputFilename;
 		QString outputFilename;
-		QList<QMdiSubWindow*>::const_iterator it;
 		switch (wizard->output()){
 		case ContinuousSnapshotWizard::Onefile:
 			inputFilename = QString("img_%%1d%2").arg(wizard->suffixLength()).arg(wizard->extension());
@@ -1067,7 +1065,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard *wizard, QX
 			break;
 		case ContinuousSnapshotWizard::Respectively:
 			int idx = 0;
-			for (it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
+			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it){
 				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(wizard->suffixLength()).arg(wizard->extension());
 				outputFilename = QString("window%1.wmv").arg(idx + 1);
 				inputFilenames.append(inputFilename);
@@ -1177,7 +1175,7 @@ QString iRICMainWindow::timeString(int time)
 
 void iRICMainWindow::updateWindowTitle(){
 	QString fname = "";
-	if (m_projectData == 0){
+	if (m_projectData == nullptr){
 		setWindowTitle(tr("iRIC %1").arg(m_versionNumber.toString()));
 		return;
 	}
@@ -1257,7 +1255,7 @@ void iRICMainWindow::exportCurrentCgnsFile(){
 
 void iRICMainWindow::setCurrentStep(unsigned int newstep)
 {
-	if (m_projectData  != 0){
+	if (m_projectData != nullptr){
 		m_projectData->mainfile()->postSolutionInfo()->setCurrentStep(newstep);
 	}
 }
@@ -1371,9 +1369,9 @@ void iRICMainWindow::enterModelessDialogMode()
 	menuBar()->setDisabled(true);
 	m_actionManager->mainToolBar()->setDisabled(true);
 	QToolBar *t = m_actionManager->animationToolbar();
-	if (t != 0){t->setDisabled(true);}
+	if (t != nullptr){t->setDisabled(true);}
 	t = m_actionManager->additionalToolBar();
-	if (t != 0){t->setDisabled(true);}
+	if (t != nullptr){t->setDisabled(true);}
 }
 
 void iRICMainWindow::exitModelessDialogMode()
@@ -1381,9 +1379,9 @@ void iRICMainWindow::exitModelessDialogMode()
 	menuBar()->setDisabled(false);
 	m_actionManager->mainToolBar()->setDisabled(false);
 	QToolBar *t = m_actionManager->animationToolbar();
-	if (t != 0){t->setDisabled(false);}
+	if (t != nullptr){t->setDisabled(false);}
 	t = m_actionManager->additionalToolBar();
-	if (t != 0){t->setDisabled(false);}
+	if (t != nullptr){t->setDisabled(false);}
 }
 
 void iRICMainWindow::showPreferenceDialog()
@@ -1527,11 +1525,8 @@ void iRICMainWindow::removeFromRecentSolvers(const QString& foldername)
 void iRICMainWindow::updateWindowZIndices()
 {
 	// @todo this fails! investigate the reason.
-	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList(QMdiArea::StackingOrder);
-	QList<QMdiSubWindow*>::iterator it;
 	int index = 1;
-	for (it = wlist.begin(); it != wlist.end(); ++it){
-		QMdiSubWindow* w = (*it);
+	for (QMdiSubWindow* w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)){
 		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
 		w2->setZindex(index++);
 	}
@@ -1541,16 +1536,14 @@ void iRICMainWindow::reflectWindowZIndices()
 {
 	QMap<int, QMdiSubWindow*> windowsToShow;
 	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList();
-	QList<QMdiSubWindow*>::iterator it;
-	for (it = wlist.begin(); it != wlist.end(); ++it){
+	for (auto it = wlist.begin(); it != wlist.end(); ++it){
 		QMdiSubWindow* w = (*it);
 		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
 		if (w->isVisible()){
 			windowsToShow.insert(w2->zindex(), w);
 		}
 	}
-	QMap<int, QMdiSubWindow*>::iterator m_it;
-	for (m_it = windowsToShow.begin(); m_it != windowsToShow.end(); ++m_it){
+	for (auto m_it = windowsToShow.begin(); m_it != windowsToShow.end(); ++m_it){
 		QMdiSubWindow* w = m_it.value();
 		w->clearFocus();
 		w->setFocus();
@@ -1567,7 +1560,7 @@ void iRICMainWindow::setupStatusBar()
 
 void iRICMainWindow::updatePostActionStatus()
 {
-	if (m_projectData == 0){
+	if (m_projectData == nullptr){
 		m_actionManager->importVisGraphAction->setDisabled(true);
 		m_actionManager->importVisGraphActionInCalcMenu->setDisabled(true);
 		m_actionManager->windowCreateNew2dPostProcessorAction->setDisabled(true);
@@ -1776,7 +1769,7 @@ void iRICMainWindow::exportParticles()
 		return;
 	}
 	ParticleExportWindow* ew = dynamic_cast<ParticleExportWindow*>(m_centralWidget->activeSubWindow()->widget());
-	if (ew == 0){
+	if (ew == nullptr){
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
 	}
@@ -1880,7 +1873,7 @@ void iRICMainWindow::exportStKML()
 		return;
 	}
 	SVKmlExportWindow* ew = dynamic_cast<SVKmlExportWindow*>(m_centralWidget->activeSubWindow()->widget());
-	if (ew == 0){
+	if (ew == nullptr){
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
 	}
@@ -2004,7 +1997,7 @@ const QString iRICMainWindow::tmpFileName(int len) const
 
 void iRICMainWindow::checkCgnsStepsUpdate()
 {
-	if (m_projectData == 0){return;}
+	if (m_projectData == nullptr){return;}
 	setCursor(Qt::WaitCursor);
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();
 	setCursor(Qt::ArrowCursor);

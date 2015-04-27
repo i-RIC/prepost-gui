@@ -62,11 +62,11 @@ void Post2dWindowCellFlagDataItem::update()
 
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (cont == 0){return;}
+	if (cont == nullptr){return;}
 	vtkPointSet* set = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
-	if (set == 0){return;}
+	if (set == nullptr){return;}
 	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(iRIC::toStr(m_attributeName).c_str()));
-	if (cellvals == 0){
+	if (cellvals == nullptr){
 		// no data available.
 		return;
 	}

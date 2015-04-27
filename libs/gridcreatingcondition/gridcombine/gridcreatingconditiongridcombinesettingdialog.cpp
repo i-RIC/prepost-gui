@@ -227,12 +227,11 @@ void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGr
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item->parent()->parent());
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* itemParent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(item->parent());
 
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::const_iterator it;
-	for (it = gt->conditions().begin(); it != gt->conditions().end(); ++it){
-		if (*it == itemParent) continue;
-		ui->mainstreamComboBox->addItem((*it)->caption());
-		ui->tributaryComboBox->addItem((*it)->caption());
-		m_gridMap.insert((*it)->caption(), (*it)->gridDataItem()->grid());
+	for (PreProcessorGridAndGridCreatingConditionDataItemInterface* iface : gt->conditions()){
+		if (iface == itemParent) continue;
+		ui->mainstreamComboBox->addItem(iface->caption());
+		ui->tributaryComboBox->addItem(iface->caption());
+		m_gridMap.insert(iface->caption(), iface->gridDataItem()->grid());
 	}
 }
 
@@ -252,7 +251,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 {
 	Structured2DGrid* mg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->mainstreamComboBox->currentText()));
 	Structured2DGrid* tg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->tributaryComboBox->currentText()));
-	if (mg == 0 || tg == 0){
+	if (mg == nullptr || tg == nullptr){
 		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 		return;
 	} else {
@@ -263,7 +262,6 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	int ti = tg->dimensionI();
 	int tj = tg->dimensionJ();
 	offset = tj - 1;
-
 
 	// Bind
 	if (ui->bindRadioButton->isChecked()){

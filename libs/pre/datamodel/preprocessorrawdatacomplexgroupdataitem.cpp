@@ -96,13 +96,12 @@ void PreProcessorRawDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	RawDataFactory& factory = RawDataFactory::instance();
 	// create add menu.
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
-	QList<RawDataCreator*>::const_iterator it;
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_addSignalMapper){delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (it = creators.begin(); it != creators.end(); ++it){
+	for (auto it = creators.begin(); it != creators.end(); ++it){
 		if ((*it)->isCreatable()){
 			QString title = (*it)->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));
@@ -223,7 +222,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 		PreProcessorRawdataDataItem* di = dynamic_cast<PreProcessorRawdataDataItem*> (*it);
 		RawData* rd = di->rawData();
 		RawDataPolygon* p = dynamic_cast<RawDataPolygon*>(rd);
-		if (p != 0){
+		if (p != nullptr){
 			int currentVal = p->variantValue().toInt();
 			int newVal = valueMap.value(currentVal, newDefault);
 			p->setVariantValue(newVal);
@@ -238,7 +237,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	for (ccit = conds.begin(); ccit != conds.end(); ++ccit){
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
 		Grid* g = ccItem->gridDataItem()->grid();
-		if (g == 0){continue;}
+		if (g == nullptr){continue;}
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		GridRelatedComplexConditionContainer* cont2 = dynamic_cast<GridRelatedComplexConditionContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i){

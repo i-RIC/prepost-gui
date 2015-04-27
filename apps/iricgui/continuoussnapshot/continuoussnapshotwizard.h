@@ -16,7 +16,7 @@ class ContinuousSnapshotIntroductionPage : public QWizardPage
 {
 	Q_OBJECT
 public:
-	ContinuousSnapshotIntroductionPage(QWidget* parent = 0);
+	ContinuousSnapshotIntroductionPage(QWidget* parent = nullptr);
 private:
 	QLabel* m_label;
 };
@@ -25,7 +25,7 @@ class ContinuousSnapshotConfirmPage : public QWizardPage
 {
 	Q_OBJECT
 public:
-	ContinuousSnapshotConfirmPage(QWidget* parent = 0);
+	ContinuousSnapshotConfirmPage(QWidget* parent = nullptr);
 	void initializePage();
 private:
 	ContinuousSnapshotWizard* m_wizard;

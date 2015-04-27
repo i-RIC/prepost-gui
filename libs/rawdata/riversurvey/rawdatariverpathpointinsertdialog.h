@@ -18,7 +18,7 @@ class RawDataRiverPathPointInsertDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget *parent = nullptr);
 	~RawDataRiverPathPointInsertDialog();
 public slots:
 	void accept();

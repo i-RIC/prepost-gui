@@ -19,7 +19,7 @@ public:
 	explicit GridCreatingConditionRiverSurveyPointMoveDialog(
 		GridCreatingConditionRiverSurvey* gc,
 		double lowerLimit, double upperLimit,
-		QWidget *parent = 0);
+		QWidget *parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointMoveDialog();
 
 	void apply();

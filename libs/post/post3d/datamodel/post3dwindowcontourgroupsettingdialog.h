@@ -27,7 +27,7 @@ class Post3dWindowContourGroupSettingDialog : public QDialog
 		Q_OBJECT
 
 public:
-	explicit Post3dWindowContourGroupSettingDialog(QWidget *parent = 0);
+	explicit Post3dWindowContourGroupSettingDialog(QWidget *parent = nullptr);
 	~Post3dWindowContourGroupSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
 	void setCurrentSolution(QString sol);

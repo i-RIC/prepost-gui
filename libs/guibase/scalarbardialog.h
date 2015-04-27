@@ -17,7 +17,7 @@ class GUIBASEDLL_EXPORT ScalarBarDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit ScalarBarDialog(QWidget *parent = 0);
+	explicit ScalarBarDialog(QWidget *parent = nullptr);
 	~ScalarBarDialog();
 
 	void setSetting(const ScalarBarSetting& setting);

@@ -120,10 +120,8 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
-		(*it)->allocate();
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+		c->allocate();
 	}
 	GridRelatedConditionContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
@@ -392,7 +390,7 @@ bool GridCreatingConditionGridGenerator::ready() const
 
 void GridCreatingConditionGridGenerator::setupMenu()
 {
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == nullptr){
 		PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
 		m_rightClickingMenu = new QMenu();
 		m_rightClickingMenu->addAction(p->createAction());

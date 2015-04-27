@@ -96,13 +96,11 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 {
 	m_setting = setting;
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
-	QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >::const_iterator it;
 	ui->xAxisComboBox->blockSignals(true);
-	for (it = map.begin(); it != map.end(); ++it){
+	for (auto it = map.begin(); it != map.end(); ++it){
 		bool dataExist = false;
 		const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = it.value();
-		QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >::const_iterator it2;
-		for (it2 = m.begin(); it2 != m.end(); ++it2){
+		for (auto it2 = m.begin(); it2 != m.end(); ++it2){
 			dataExist = dataExist || (it2.value().count() > 0);
 		}
 		if (dataExist){
@@ -113,7 +111,7 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	ui->xAxisComboBox->blockSignals(false);
 	int index = m_xAxisModes.indexOf(m_setting.xAxisMode());
 	if (index != -1){
-		m_setting.setTargetDataTypeInfo(0);
+		m_setting.setTargetDataTypeInfo(nullptr);
 		ui->xAxisComboBox->setCurrentIndex(index);
 		if (index == 0){
 			changeAxis(0);
@@ -127,8 +125,8 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > > & m = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > & map2 = m[m_setting.xAxisMode()];
 	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list;
-	QWidget* targetWidget = 0;
-	if (info != 0){
+	QWidget* targetWidget = nullptr;
+	if (info != nullptr){
 		switch (info->dataType){
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			list = map2[Graph2dHybridWindowResultSetting::dimBase];
@@ -160,10 +158,10 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 		}
 	}
 	QListWidget* listWidget = getActiveListWidget();
-	if (listWidget != 0){
+	if (listWidget != nullptr){
 		updateLists(listWidget);
 	}
-	if (m_setting.targetDataTypeInfo() == 0){
+	if (m_setting.targetDataTypeInfo() == nullptr){
 		ui->pointDataComboBox->setEnabled(true);
 		ui->pointDataListWidget->setEnabled(true);
 		ui->oneDimDataComboBox->setEnabled(true);
@@ -193,7 +191,7 @@ const Graph2dHybridWindowResultSetting& Graph2dHybridWindowDataSourceDialog::set
 
 void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 {
-	if (m_setting.targetDataTypeInfo() != 0){
+	if (m_setting.targetDataTypeInfo() != nullptr){
 		int ret = QMessageBox::warning(this, tr("Warning"), tr("Current setting will be discarded, are you sure?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No){
 			int idx = m_xAxisModes.indexOf(m_setting.xAxisMode());
@@ -206,7 +204,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 
 	Graph2dHybridWindowResultSetting::XAxisMode axis = m_xAxisModes[index];
 	m_setting.setXAxisMode(axis);
-	m_setting.setTargetDataTypeInfo(0);
+	m_setting.setTargetDataTypeInfo(nullptr);
 	m_setting.targetDatas().clear();
 	clearTargetDataTypeInfo();
 
@@ -386,7 +384,7 @@ void Graph2dHybridWindowDataSourceDialog::changeThreeDimComboBox(int index)
 
 void Graph2dHybridWindowDataSourceDialog::addSetting()
 {
-	if (m_setting.targetDataTypeInfo() == 0){
+	if (m_setting.targetDataTypeInfo() == nullptr){
 		// set targetDataTypeInfo first.
 		setTargetDataTypeInfo();
 	}
@@ -516,7 +514,7 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 	ui->twoDimDataListWidget->setEnabled(false);
 	ui->threeDimDataComboBox->setEnabled(false);
 	ui->threeDimDataListWidget->setEnabled(false);
-	if (target != 0){target->setEnabled(true);}
+	if (target != nullptr){target->setEnabled(true);}
 }
 
 void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
@@ -529,13 +527,13 @@ void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
 	ui->twoDimDataListWidget->setEnabled(true);
 	ui->threeDimDataComboBox->setEnabled(true);
 	ui->threeDimDataListWidget->setEnabled(true);
-	m_setting.setTargetDataTypeInfo(0);
+	m_setting.setTargetDataTypeInfo(nullptr);
 }
 
 QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
 {
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	if (tinfo != 0){
+	if (tinfo != nullptr){
 		switch (tinfo->dataType){
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			return ui->pointDataListWidget;
@@ -563,7 +561,7 @@ QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
 	} else if (ui->threeDimDataListWidget->isEnabled() && ui->threeDimDataListWidget->currentRow() != - 1){
 		return ui->threeDimDataListWidget;
 	}
-	return 0;
+	return nullptr;
 }
 
 void Graph2dHybridWindowDataSourceDialog::updateButtonStatus()
@@ -583,7 +581,7 @@ void Graph2dHybridWindowDataSourceDialog::updateButtonStatus()
 
 void Graph2dHybridWindowDataSourceDialog::accept()
 {
-	if (m_setting.targetDataTypeInfo() == 0){
+	if (m_setting.targetDataTypeInfo() == nullptr){
 		QMessageBox::warning(this, tr("Warning"), tr("No data is selected."));
 		return;
 	}

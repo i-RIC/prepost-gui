@@ -239,7 +239,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 			break;
 		}
 
-		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != 0){
+		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr){
 			int* vals = new int[dimSize];
 			ret = nc_get_var_int(ncid, dVarId, vals);
 			QList<QVariant> vals1;
@@ -254,7 +254,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 				// invalid!
 				// @todo add error handling!
 			}
-		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != 0){
+		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != nullptr){
 			double* vals = new double[dimSize];
 			ret = nc_get_var_double(ncid, dVarId, vals);
 			QList<QVariant> vals1;
@@ -714,7 +714,7 @@ int RawDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 		int ret;
 		int varId = varIds.at(i);
 		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
-		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != 0){
+		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr){
 			GridRelatedConditionDimensionIntegerContainer* c2 =
 					dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c);
 			int* vals = new int[c->count()];

@@ -17,8 +17,8 @@ AnimationController::AnimationController(QWidget* parent)
 	m_followLastStep = true;
 	m_animationActions = new AnimationController::AnimationActions(this);
 	m_animationActions->actionToggleFollowLastStep->setChecked(m_followLastStep);
-	m_animationMenu = 0;
-	m_animationToolBar = 0;
+	m_animationMenu = nullptr;
+	m_animationToolBar = nullptr;
 	setupConnections();
 	setup(SolverDefinition::NoIteration);
 	m_parent = parent;
@@ -156,13 +156,13 @@ void AnimationController::toggleFollowLastStep(bool follow)
 
 void AnimationController::setup(SolverDefinition::IterationType iType)
 {
-	if (m_animationMenu != 0){
+	if (m_animationMenu != nullptr){
 		delete m_animationMenu;
-		m_animationMenu = 0;
+		m_animationMenu = nullptr;
 	}
-	if (m_animationToolBar != 0){
+	if (m_animationToolBar != nullptr){
 		delete m_animationToolBar;
-		m_animationToolBar = 0;
+		m_animationToolBar = nullptr;
 	}
 	if (iType == SolverDefinition::NoIteration){
 		// no menu, toolbar for animations.

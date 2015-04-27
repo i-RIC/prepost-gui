@@ -15,7 +15,7 @@ class GridCreatingConditionGridCombineSettingDialog : public QDialog {
 	Q_OBJECT
 public:
 	enum Type {Bind, Left, Right};
-	GridCreatingConditionGridCombineSettingDialog(QWidget *parent = 0);
+	GridCreatingConditionGridCombineSettingDialog(QWidget *parent = nullptr);
 	~GridCreatingConditionGridCombineSettingDialog();
 
 	void setType(Type type);

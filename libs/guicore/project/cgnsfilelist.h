@@ -34,7 +34,7 @@ public:
 	};
 	/// Constructor
 	CgnsFileList(ProjectDataItem* parent) : ProjectDataItem(parent){
-		m_current = 0;
+		m_current = nullptr;
 	}
 	~CgnsFileList();
 	QList<CgnsFileEntry*> cgnsFiles();

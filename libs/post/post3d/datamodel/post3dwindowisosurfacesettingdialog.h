@@ -21,7 +21,7 @@ class Post3dWindowIsosurfaceSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit Post3dWindowIsosurfaceSettingDialog(QWidget *parent = 0);
+	explicit Post3dWindowIsosurfaceSettingDialog(QWidget *parent = nullptr);
 	~Post3dWindowIsosurfaceSettingDialog();
 
 	void setZoneData(PostZoneDataContainer* zoneData);

@@ -28,9 +28,8 @@ void PreProcessorGridCreatingConditionAlgorithmSelectDialog::setCreators(const Q
 {
 	m_creators = creators;
 	ui->algoListWidget->clear();
-	QList<GridCreatingConditionCreator*>::iterator it;
 	int row = 0;
-	for (it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
 		GridCreatingConditionCreator* creator = *it;
 		ui->algoListWidget->addItem(creator->caption());
 		++ row;

@@ -34,8 +34,7 @@ void CgnsFileInputConditionWidgetSet::setup(const QDomNode& condNode, CgnsFileIn
 
 void CgnsFileInputConditionWidgetSet::clear()
 {
-	QMap<QString, CgnsFileInputConditionWidget*>::iterator it;
-	for (it = m_widgets.begin(); it != m_widgets.end(); ++it){
+	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it){
 		delete (*it);
 	}
 	m_widgets.clear();
@@ -47,7 +46,7 @@ void CgnsFileInputConditionWidgetSet::buildWidgets(const QDomNode& condNode, Cgn
 		buildWidgetsCustom(condNode, cset, t);
 	} else {
 		QDomNodeList pages = condNode.childNodes();
-		for (unsigned int i = 0; i < pages.length(); ++i){
+		for (int i = 0; i < pages.length(); ++i){
 			QDomNode page = pages.item(i);
 			buildWidgetsCustom(page, cset, t);
 		}
@@ -60,7 +59,7 @@ void CgnsFileInputConditionWidgetSet::buildWidgetsSimple(const QDomNode& contNod
 	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");
 	if (itemsNode.isNull()){return;}
 	QDomNodeList items = itemsNode.childNodes();
-	for (unsigned int i = 0; i < items.length(); ++i){
+	for (int i = 0; i < items.length(); ++i){
 		QDomNode itemNode = items.item(i);
 		buildWidget(itemNode, cset, t);
 	}
@@ -73,7 +72,7 @@ void CgnsFileInputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNod
 
 void CgnsFileInputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, CgnsFileInputConditionContainerSet& cset, const SolverDefinitionTranslator& t){
 	QDomNodeList children = node.childNodes();
-	for (unsigned int i = 0; i < children.length(); ++i){
+	for (int i = 0; i < children.length(); ++i){
 		QDomNode c = children.item(i);
 		if (c.nodeType() == QDomNode::ElementNode){
 			if (c.nodeName() == "Item"){
@@ -143,7 +142,7 @@ void CgnsFileInputConditionWidgetSet::buildDeps(const QDomNode& ccNode, CgnsFile
 		buildDepsCustom(ccNode, cset);
 	} else {
 		QDomNodeList pages = ccNode.childNodes();
-		for (unsigned int i = 0; i < pages.length(); ++i){
+		for (int i = 0; i < pages.length(); ++i){
 			QDomNode page = pages.item(i);
 			buildDepsCustom(page, cset);
 		}
@@ -165,7 +164,7 @@ void CgnsFileInputConditionWidgetSet::buildDepsSimple(const QDomNode& tabNode, C
 
 	// Now, I've got the itemsNode!
 	QDomNodeList items = itemsNode.childNodes();
-	for (unsigned int j = 0; j < items.length(); ++j){
+	for (int j = 0; j < items.length(); ++j){
 		QDomNode itemNode = items.item(j);
 		buildDepsItem(itemNode, cset);
 	}
@@ -175,7 +174,7 @@ void CgnsFileInputConditionWidgetSet::buildDepsCustom(const QDomNode& pageNode, 
 }
 void CgnsFileInputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, CgnsFileInputConditionContainerSet& cset){
 	QDomNodeList children = node.childNodes();
-	for (unsigned int i = 0; i < children.length(); ++i){
+	for (int i = 0; i < children.length(); ++i){
 		QDomNode c = children.item(i);
 		if (c.nodeType() == QDomNode::ElementNode){
 			if (c.nodeName() == "Item"){
@@ -236,8 +235,7 @@ void CgnsFileInputConditionWidgetSet::addTooltip(QWidget* widget, QDomNode defNo
 
 void CgnsFileInputConditionWidgetSet::disableWidgets()
 {
-	QMap<QString, CgnsFileInputConditionWidget*>::iterator it;
-	for (it = m_widgets.begin(); it != m_widgets.end(); ++it){
+	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it){
 		CgnsFileInputConditionWidget* w = it.value();
 		w->setDisabled(true);
 	}
@@ -245,15 +243,14 @@ void CgnsFileInputConditionWidgetSet::disableWidgets()
 
 void CgnsFileInputConditionWidgetSet::enableWidgets()
 {
-	QMap<QString, CgnsFileInputConditionWidget*>::iterator it;
-	for (it = m_widgets.begin(); it != m_widgets.end(); ++it){
+	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it){
 		CgnsFileInputConditionWidget* w = it.value();
 		w->setEnabled(true);
 	}
-	for (it = m_widgets.begin(); it != m_widgets.end(); ++it){
+	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it){
 		CgnsFileInputConditionWidget* w = it.value();
 		CgnsFileInputConditionDependency* dep = w->dependency();
-		if (dep != 0){
+		if (dep != nullptr){
 			dep->check();
 		}
 	}

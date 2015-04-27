@@ -14,7 +14,7 @@ class Graph2dHybridWindowSettingWidget : public QWidget
 	Q_OBJECT
 	
 public:
-	explicit Graph2dHybridWindowSettingWidget(QWidget *parent = 0);
+	explicit Graph2dHybridWindowSettingWidget(QWidget *parent = nullptr);
 	~Graph2dHybridWindowSettingWidget();
 	void setSetting(Graph2dHybridWindowResultSetting::Setting* setting);
 	void setId(const QString& id);

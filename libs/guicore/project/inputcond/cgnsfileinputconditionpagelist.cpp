@@ -20,7 +20,7 @@ CgnsFileInputConditionPageList::CgnsFileInputConditionPageList(QWidget* w)
 void CgnsFileInputConditionPageList::selectFirstItem()
 {
 	QTreeWidgetItem* first = topLevelItem(0);
-	if (first != 0){
+	if (first != nullptr){
 		first->setSelected(true);
 	}
 }

@@ -47,7 +47,7 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 	ier = cg_nsols(fn, m_baseId, m_zoneId, &numSols);
 	if (ier != 0){return false;}
 	m_data.clear();
-	double* buffer = 0;
+	double* buffer = nullptr;
 	QRegExp rx("^(.+) \\(magnitude\\)$");
 	bool magnitude = (rx.indexIn(m_physName) != -1);
 	QString tmpPhysName = m_physName;
@@ -75,7 +75,7 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 			for (int dim = 1; dim <= dimension; ++dim){
 				dataLen = dataLen * dimVector[dim - 1];
 			}
-			if (buffer == 0){
+			if (buffer == nullptr){
 				buffer = new double[dataLen];
 			}
 			ier = cg_array_read_as(j, RealDouble, buffer);

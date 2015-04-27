@@ -21,7 +21,7 @@ public:
 		cmOpenOtherProject,
 		cmNone,
 	};
-	explicit StartPageDialog(QWidget *parent = 0);
+	explicit StartPageDialog(QWidget *parent = nullptr);
 	~StartPageDialog();
 	CommandMode commandMode(){return m_commandMode;}
 	SolverDefinitionAbstract* solverDefinition(){return m_solverDefinition;}

@@ -36,9 +36,9 @@ VerificationGraphDialog::VerificationGraphDialog(iRICMainWindow *parent) :
 
 	m_mainWindow = parent;
 
-	m_pointsCurve = 0;
-	m_lineCurve = 0;
-	m_dotLineCurve = 0;
+	m_pointsCurve = nullptr;
+	m_lineCurve = nullptr;
+	m_dotLineCurve = nullptr;
 
 	m_zeroMarker = new QwtPlotMarker();
 	m_zeroMarker->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
@@ -98,7 +98,7 @@ bool VerificationGraphDialog::setting()
 	ui->typeComboBox->blockSignals(true);
 	ui->typeComboBox->clear();
 
-	if (sgrid == 0){
+	if (sgrid == nullptr){
 		// unstructured grid.
 	} else {
 		// structured grid.
@@ -109,7 +109,7 @@ bool VerificationGraphDialog::setting()
 	ui->typeComboBox->addItem(tr("Measured Values vs. Residual Errors"));
 
 	ui->typeComboBox->blockSignals(false);
-	if (sgrid == 0){
+	if (sgrid == nullptr){
 		switch (m_graphType){
 		case gtMVvsCR:
 			ui->typeComboBox->setCurrentIndex(0);
@@ -193,7 +193,7 @@ void VerificationGraphDialog::setType(int type)
 	vtkPointSet* ps = m_activePostData->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
-	if (sgrid == 0){
+	if (sgrid == nullptr){
 		// unstructured grid.
 		switch (type){
 		case 0:
@@ -253,7 +253,7 @@ void VerificationGraphDialog::updateGraph()
 	vtkDoubleArray* crda = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_activeResult).c_str()));
 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	if (sgrid != 0){
+	if (sgrid != nullptr){
 		int dimensions[3];
 		sgrid->GetDimensions(dimensions);
 		int centerJ = dimensions[1] / 2;
@@ -306,7 +306,7 @@ void VerificationGraphDialog::updateGraph()
 		meanCalcVal += cval;
 		meanMeasuredVal += mval;
 
-		if (sgrid != 0){
+		if (sgrid != nullptr){
 			int i, j, k;
 			double dist = 0;
 			for (int l = 0; l < cell->GetNumberOfPoints(); ++l){
@@ -430,20 +430,20 @@ void VerificationGraphDialog::updateGraph()
 
 void VerificationGraphDialog::clearData()
 {
-	if (m_pointsCurve != 0){
+	if (m_pointsCurve != nullptr){
 		m_pointsCurve->detach();
 		delete m_pointsCurve;
-		m_pointsCurve = 0;
+		m_pointsCurve = nullptr;
 	}
-	if (m_lineCurve != 0){
+	if (m_lineCurve != nullptr){
 		m_lineCurve->detach();
 		delete m_lineCurve;
-		m_lineCurve = 0;
+		m_lineCurve = nullptr;
 	}
-	if (m_dotLineCurve != 0){
+	if (m_dotLineCurve != nullptr){
 		m_dotLineCurve->detach();
 		delete m_dotLineCurve;
-		m_dotLineCurve = 0;
+		m_dotLineCurve = nullptr;
 	}
 	xVals.clear();
 	yVals.clear();

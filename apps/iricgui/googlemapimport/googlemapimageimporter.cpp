@@ -34,7 +34,7 @@ GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMai
 {
 	m_projectData = projectData;
 	m_googleMapAccessManager = new QNetworkAccessManager(this);
-	m_googleMapFile = 0;
+	m_googleMapFile = nullptr;
 	m_isWaitingHttpResponse = false;
 
 	NetworkSetting setting;
@@ -51,7 +51,7 @@ void GoogleMapImageImporter::importImages()
 {
 	ProjectMainFile* mainFile = m_projectData->mainfile();
 	CoordinateSystem* coordSystem = mainFile->coordinateSystem();
-	if (coordSystem == 0){
+	if (coordSystem == nullptr){
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To import background image using Google Map API, you must specify coordinate system for this project."));
 		return;
 	}
@@ -182,7 +182,7 @@ void GoogleMapImageImporter::importImages()
 	}
 
 FINISH_GOOGLEAPI:
-	m_googleMapReply = 0;
+	m_googleMapReply = nullptr;
 
 	wdialog->hide();
 	delete wdialog;
@@ -191,7 +191,7 @@ FINISH_GOOGLEAPI:
 
 void GoogleMapImageImporter::abortGoogleMapRequest()
 {
-	if (m_googleMapReply == 0){return;}
+	if (m_googleMapReply == nullptr){return;}
 	m_googleMapReply->abort();
 }
 

@@ -10,7 +10,7 @@
 class PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate : public QItemDelegate
 {
 public:
-	PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate(QObject* parent = 0): QItemDelegate(parent){}
+	PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
 	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
 	{
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
@@ -72,12 +72,10 @@ PreProcessorGridRelatedConditionCellDisplaySettingDialog::~PreProcessorGridRelat
 void PreProcessorGridRelatedConditionCellDisplaySettingDialog::setupDialog()
 {
 /*
-	QList<SolverDefinitionPreProcessorGridRelatedCondition*>::const_iterator it;
 	// create list.
 	ui->tableWidget->clearContents();
 	ui->tableWidget->setRowCount(0);
-	QList<Post2dWindowCellFlagSetting>::iterator it2;
-	for (it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
+	for (auto it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
 		ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
 		int rownum = ui->tableWidget->rowCount() - 1;
 
@@ -137,8 +135,7 @@ void PreProcessorGridRelatedConditionCellDisplaySettingDialog::handleShownSelect
 {
 	QSet<int> rows;
 	int lastrow = 0;
-	QList<QItemSelectionRange>::const_iterator it;
-	for (it = selected.begin(); it != selected.end(); ++it){
+	for (auto it = selected.begin(); it != selected.end(); ++it){
 		QItemSelectionRange range = *it;
 		for (int row = range.top(); row <= range.bottom(); ++row){
 			rows.insert(row);

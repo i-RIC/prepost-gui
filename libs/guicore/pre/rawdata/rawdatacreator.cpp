@@ -11,9 +11,9 @@
 #include <QSet>
 
 RawDataCreator::RawDataCreator()
-	: QObject(0)
+	: QObject(nullptr)
 {
-	m_emptyData = 0;
+	m_emptyData = nullptr;
 }
 
 RawDataCreator::~RawDataCreator()
@@ -38,8 +38,7 @@ void RawDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem
 	QSet<QString> captionSet;
 
 	// first, setup nameSet and captionSet.
-	QList<GraphicsWindowDataItem*>::const_iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		RawData* rawdata = dynamic_cast<PreProcessorRawdataDataItemInterface*>(*it)->rawData();
 		if (rawdata->name() != ""){nameSet.insert(rawdata->name());}
 		if (rawdata->caption() != ""){captionSet.insert(rawdata->caption());}

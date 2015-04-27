@@ -46,7 +46,7 @@ public:
 		m_apply = apply;
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != 0){
+		while (p != nullptr){
 			if (p->IsSelected){
 				m_point = p;
 				break;

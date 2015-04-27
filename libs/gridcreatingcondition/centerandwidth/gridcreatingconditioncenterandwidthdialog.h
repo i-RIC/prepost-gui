@@ -13,7 +13,7 @@ class QAbstractButton;
 class GridCreatingConditionCenterAndWidthDialog : public QDialog {
 	Q_OBJECT
 public:
-	GridCreatingConditionCenterAndWidthDialog(QWidget *parent = 0);
+	GridCreatingConditionCenterAndWidthDialog(QWidget *parent = nullptr);
 	~GridCreatingConditionCenterAndWidthDialog();
 	int iMax();
 	int jMax();

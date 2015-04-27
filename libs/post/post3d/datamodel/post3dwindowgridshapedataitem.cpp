@@ -134,8 +134,8 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0){return;}
-	if (cont->data() == 0){return;}
+	if (cont == nullptr){return;}
+	if (cont->data() == nullptr){return;}
 
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
 	vtkPointSet* labeldata = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
@@ -392,7 +392,7 @@ void Post3dWindowGridShapeDataItem::innerUpdateZScale(double scale)
 void Post3dWindowGridShapeDataItem::updateAxesRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (ps == 0){return;}
+	if (ps == nullptr){return;}
 	double bounds[6];
 	ps->GetBounds(bounds);
 	iRIC::fattenBounds(bounds, 0.1);

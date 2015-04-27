@@ -17,7 +17,7 @@ namespace Ui {
 class Post2dWindowArrowUnstructuredSettingDialog : public QDialog {
 		Q_OBJECT
 public:
-	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget *parent = 0);
+	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget *parent = nullptr);
 	~Post2dWindowArrowUnstructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer *data);
 	bool isEnabled() const;

@@ -114,9 +114,9 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 
 vtkPointSet* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::getSource(int i)
 {
-	vtkStructuredGrid* exGrid = 0;
+	vtkStructuredGrid* exGrid = nullptr;
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){return 0;}
+	if (cont == nullptr || cont->data() == nullptr){return nullptr;}
 	Post3dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
 	switch (setting.spaceMode){
 	case Post3dWindowStructuredStreamlineSetSetting::smNormal:
@@ -136,9 +136,9 @@ QDialog* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 {
 	Post3dWindowStreamlineStructuredSettingDialog* dialog = new Post3dWindowStreamlineStructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){
+	if (cont == nullptr || cont->data() == nullptr){
 		delete dialog;
-		return 0;
+		return nullptr;
 	}
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());

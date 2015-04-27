@@ -52,7 +52,7 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 			// try to add.
 			RawDataProxy* proxy = rawData->getProxy();
 			connect(rawData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
-			if (proxy != 0){
+			if (proxy != nullptr){
 				Post2dWindowRawDataDataItem* pItem = new Post2dWindowRawDataDataItem(this);
 				pItem->setRawDataProxy(proxy);
 				proxy->setupDataItem();
@@ -85,8 +85,7 @@ void Post2dWindowRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Post2dWindowRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter &writer){
 	writer.writeAttribute("name", m_condition->name());
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("RawData");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

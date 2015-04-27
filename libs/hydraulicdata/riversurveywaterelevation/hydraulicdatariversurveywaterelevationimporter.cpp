@@ -23,7 +23,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 
 	QMap<double, RawDataRiverPathPoint*> pmap;
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != 0) {
+	while (p != nullptr) {
 		double name = p->name().toDouble();
 		pmap.insert(name, p);
 		p = p->nextPoint();
@@ -45,7 +45,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 			double kp = pieces.value(0).toDouble();
 			double height = pieces.value(1).toDouble();
 			RawDataRiverPathPoint* point = pmap.value(kp, 0);
-			if (point == 0) {
+			if (point == nullptr) {
 				skipped.append(QString::number(kp));
 			} else {
 				point->setWaterSurfaceElevation(height);
@@ -63,7 +63,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 bool HydraulicDataRiverSurveyWaterElevationImporter::canImportTo(RawData* data)
 {
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*> (data);
-	return (rs != 0);
+	return (rs != nullptr);
 }
 
 const QStringList HydraulicDataRiverSurveyWaterElevationImporter::fileDialogFilters() {

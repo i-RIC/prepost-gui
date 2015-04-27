@@ -60,10 +60,8 @@ void SolverDefinitionListDialog::setup()
 
 	table->setRowCount(solvers.count());
 	QTableWidgetItem* item;
-	QList<SolverDefinitionAbstract*>::iterator it;
 	int i = 0;
-	for (it = solvers.begin(); it != solvers.end(); ++it){
-		SolverDefinitionAbstract* abst = (*it);
+	for (SolverDefinitionAbstract* abst : solvers){
 		item = new QTableWidgetItem(abst->caption());
 		table->setItem(i, 0, item);
 		item = new QTableWidgetItem(abst->version().toString());

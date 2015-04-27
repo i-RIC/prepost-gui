@@ -23,7 +23,7 @@ public:
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
 	bool isSet(){return m_isSet;}
-	bool isSetupCorrectly(){return m_dialog != 0;}
+	bool isSetupCorrectly(){return m_dialog != nullptr;}
 public slots:
 	void setModified(){
 		PreProcessorDataItem::setModified();

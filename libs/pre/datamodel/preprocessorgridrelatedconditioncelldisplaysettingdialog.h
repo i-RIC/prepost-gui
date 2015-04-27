@@ -16,7 +16,7 @@ class PreProcessorGridRelatedConditionCellDisplaySettingDialog : public QDialog
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit PreProcessorGridRelatedConditionCellDisplaySettingDialog(QWidget *parent = 0);
+	explicit PreProcessorGridRelatedConditionCellDisplaySettingDialog(QWidget *parent = nullptr);
     ~PreProcessorGridRelatedConditionCellDisplaySettingDialog();
 
 	void setupDialog();

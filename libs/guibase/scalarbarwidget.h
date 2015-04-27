@@ -17,7 +17,7 @@ class GUIBASEDLL_EXPORT ScalarBarWidget : public QWidget {
 	Q_OBJECT
 
 public:
-	explicit ScalarBarWidget(QWidget *parent = 0);
+	explicit ScalarBarWidget(QWidget *parent = nullptr);
 	~ScalarBarWidget();
 
 	void setSetting(const ScalarBarSetting& setting);

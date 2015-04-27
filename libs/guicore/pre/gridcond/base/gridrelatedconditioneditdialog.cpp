@@ -8,7 +8,7 @@ GridRelatedConditionEditDialog::GridRelatedConditionEditDialog(QWidget *parent) 
 	QDialog(parent),
 	ui(new Ui::GridRelatedConditionEditDialog)
 {
-	m_widget = 0;
+	m_widget = nullptr;
 	m_cancelInhibited = false;
 	ui->setupUi(this);
 }

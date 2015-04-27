@@ -42,7 +42,7 @@ private:
 	static const int MAX_RECENT_SOLVERS;
 public:
 	/// Constructor
-	iRICMainWindow(QWidget *parent = 0);
+	iRICMainWindow(QWidget *parent = nullptr);
 	/// Destructor
 	~iRICMainWindow();
 	/// THe PreProcessorWindow
@@ -214,7 +214,7 @@ private:
 	void removeFromRecentSolvers(const QString& foldername);
 	void loadMetaData();
 	void handleWizardAccepted(ContinuousSnapshotWizard* wizard);
-	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = 0);
+	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);
 	QString timeString(int time);
 

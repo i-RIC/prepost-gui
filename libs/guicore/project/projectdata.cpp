@@ -72,7 +72,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 {
 	m_mainWindow = parent;
 	m_workDirectory = workdir;
-	m_solverDefinition = 0;
+	m_solverDefinition = nullptr;
 	m_folderProject = false;
 	// if the workdirectory doesn't exists, make it.
 	QDir wdir(m_workDirectory);
@@ -83,11 +83,11 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 	}
 	// create ProjectMainFile.
 	m_mainfile = new ProjectMainFile(this);
-	m_lockFile = 0;
+	m_lockFile = nullptr;
 	lock();
 	connect(m_mainfile, SIGNAL(cgnsFileSwitched()), parent, SLOT(handleCgnsSwitch()));
 
-	if (parent == 0){
+	if (parent == nullptr){
 		// this project data should not attatched to mainwindow.
 		return;
 	}
@@ -96,7 +96,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 
 ProjectData::~ProjectData()
 {
-	if (m_solverDefinition != 0){
+	if (m_solverDefinition != nullptr){
 		delete m_solverDefinition;
 	}
 	// delete mainfile
@@ -126,7 +126,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 	m_finished = process->waitForFinished(3000);
 	qApp->processEvents();
 	iRICMainWindowInterface* mw = mainWindow();
-	if (mw != 0){mw->enterModelessDialogMode();}
+	if (mw != nullptr){mw->enterModelessDialogMode();}
 	if (! m_finished){
 		int prog = 10;
 		// show dialog and wait.
@@ -148,7 +148,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 		}
 		m_waitDialog->hide();
 		delete m_waitDialog;
-		m_waitDialog = 0;
+		m_waitDialog = nullptr;
 		if (m_canceled){
 			// not finished, but canceled.
 			process->kill();
@@ -158,7 +158,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 		}
 	}
 	delete process;
-	if (mw != 0){mw->exitModelessDialogMode();}
+	if (mw != nullptr){mw->exitModelessDialogMode();}
 	// save the filename.
 	m_filename = filename;
 	return true;
@@ -247,7 +247,7 @@ bool ProjectData::zipTo(const QString &filename)
 		m_waitDialog->setFinished();
 		m_waitDialog->hide();
 		delete m_waitDialog;
-		m_waitDialog = 0;
+		m_waitDialog = nullptr;
 		if (m_canceled){
 			// not finished, but canceled.
 			process->kill();
@@ -354,16 +354,14 @@ void ProjectData::showPropertyDialog()
 
 void ProjectData::checkGridConditions()
 {
-	QList<SolverDefinitionGridType*>::const_iterator it;
 	QStringList ngtypes;
 	const QList<SolverDefinitionGridType*> gtypes = m_solverDefinition->gridTypes();
-	for (it = gtypes.begin(); it != gtypes.end(); ++it){
+	for (auto it = gtypes.begin(); it != gtypes.end(); ++it){
 		const SolverDefinitionGridType* gt = *it;
 		bool ok = false;
 		ok = (gt->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid);
 		const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
-		QList<SolverDefinitionGridRelatedCondition*>::const_iterator cit;
-		for (cit = conds.begin(); cit != conds.end(); ++cit){
+		for (auto cit = conds.begin(); cit != conds.end(); ++cit){
 			const SolverDefinitionGridRelatedCondition* cond = *cit;
 			ok = ok || (cond->name() == "Elevation");
 		}
@@ -387,7 +385,7 @@ bool ProjectData::lock()
 	bool ok = m_lockFile->open(QIODevice::WriteOnly);
 	if (! ok){
 		delete m_lockFile;
-		m_lockFile = 0;
+		m_lockFile = nullptr;
 		return false;
 	}
 	return true;
@@ -395,12 +393,12 @@ bool ProjectData::lock()
 
 void ProjectData::unlock()
 {
-	if (m_lockFile == 0){return;}
+	if (m_lockFile == nullptr){return;}
 	m_lockFile->close();
 	delete m_lockFile;
 	QString lockFilename = QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
 	QFile::remove(lockFilename);
-	m_lockFile = 0;
+	m_lockFile = nullptr;
 }
 
 bool ProjectData::moveTo(const QString& newWorkFolder)
@@ -475,7 +473,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 		m_waitDialog->setFinished();
 		m_waitDialog->hide();
 		delete m_waitDialog;
-		m_waitDialog = 0;
+		m_waitDialog = nullptr;
 		if (m_canceled){
 			// not finished, but canceled.
 			thread->terminate();
@@ -547,7 +545,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 		m_waitDialog->setFinished();
 		m_waitDialog->hide();
 		delete m_waitDialog;
-		m_waitDialog = 0;
+		m_waitDialog = nullptr;
 		if (m_canceled){
 			// not finished, but canceled.
 			thread->terminate();
@@ -598,7 +596,7 @@ void ProjectData::openPostProcessors()
 
 bool ProjectData::isInWorkspace()
 {
-	if (m_mainWindow == 0){return false;}
+	if (m_mainWindow == nullptr){return false;}
 	QString wsPath = m_mainWindow->workspace()->workspace().absolutePath();
 	return m_workDirectory.contains(wsPath);
 }

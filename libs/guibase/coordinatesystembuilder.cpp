@@ -29,11 +29,11 @@ CoordinateSystemBuilder::CoordinateSystemBuilder(QObject *parent)
 				def = rx.cap(2).trimmed();
 			}
 			CoordinateSystem* system = buildFromProj4String(def);
-			if (! name.isEmpty() && ! caption.isEmpty() && ! system == 0){
+			if (! name.isEmpty() && ! caption.isEmpty() && system != nullptr){
 				system->setName(name);
 				system->setCaption(caption);
 				m_systems.append(system);
-			} else if (system != 0){
+			} else if (system != nullptr){
 				delete system;
 			}
 		}

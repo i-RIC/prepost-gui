@@ -12,7 +12,7 @@ class ProjectTypeSelectDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ProjectTypeSelectDialog(QWidget *parent = 0);
+    explicit ProjectTypeSelectDialog(QWidget *parent = nullptr);
     ~ProjectTypeSelectDialog();
 	bool folderProject();
 private:

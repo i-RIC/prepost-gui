@@ -11,7 +11,7 @@
 #include <QDomNode>
 #include <QTextStream>
 
-void SolverDefinitionTranslationChecker::TranslationMessage::save(QXmlStreamWriter& writer)
+void SolverDefinitionTranslationChecker::TranslationMessage::save(QXmlStreamWriter& writer) const
 {
 	writer.writeStartElement("message");
 	writer.writeTextElement("source", m_source);
@@ -166,12 +166,9 @@ void SolverDefinitionTranslationChecker::save(const QString& solverfolder, const
 	w.writeComment(comment);
 	w.writeStartElement("context");
 
-	QMap<QString, QString>::iterator mapit;
-	QList<TranslationMessage>::iterator listit;
-
 	// write valid elements and lacking elements, in the order of appearance.
-	for (listit = m_messages.begin(); listit != m_messages.end(); ++listit){
-		listit->save(w);
+	for (const TranslationMessage& m : m_messages){
+		m.save(w);
 	}
 	// obsolete elements are not written any more.
 /*

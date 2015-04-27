@@ -21,8 +21,7 @@ void ItemSelectingDialog::setMessage(const QString& message)
 void ItemSelectingDialog::setItems(const QList<QString>& items)
 {
 	ui->comboBox->clear();
-	QList<QString>::const_iterator it;
-	for (it = items.begin(); it != items.end(); ++it) {
+	for (auto it = items.begin(); it != items.end(); ++it) {
 		ui->comboBox->addItem(*it);
 	}
 	ui->comboBox->setCurrentIndex(0);

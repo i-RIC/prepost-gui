@@ -66,9 +66,8 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	grid2d->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>::iterator it;
 	QList<GridRelatedConditionContainer*>& clist = grid2d->gridRelatedConditions();
-	for (it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it){
 		(*it)->allocate();
 	}
 	double *x = new double[imax * jmax];

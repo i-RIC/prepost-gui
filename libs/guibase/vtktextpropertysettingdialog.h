@@ -16,7 +16,7 @@ class GUIBASEDLL_EXPORT vtkTextPropertySettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit vtkTextPropertySettingDialog(QWidget *parent = 0);
+	explicit vtkTextPropertySettingDialog(QWidget *parent = nullptr);
 	~vtkTextPropertySettingDialog();
 
 	vtkTextPropertySettingContainer setting();

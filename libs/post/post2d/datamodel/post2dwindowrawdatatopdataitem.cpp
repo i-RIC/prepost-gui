@@ -18,8 +18,7 @@ Post2dWindowRawDataTopDataItem::Post2dWindowRawDataTopDataItem(PreProcessorRawDa
 
 	// add child nodes.
 	QList<SolverDefinitionGridRelatedCondition*> list = ditem->gridType()->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedCondition*>::iterator it;
-	for (it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it){
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		QString tmpname = cond->name();
 		if (tmpname.toLower().left(9) != "elevation"){continue;}
@@ -48,7 +47,7 @@ void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
 		Post2dWindowRawDataGroupDataItem* item = m_itemNameMap.value(name);
-		if (item != 0){
+		if (item != nullptr){
 			item->loadFromProjectMainFile(child);
 		}
 	}
@@ -56,8 +55,7 @@ void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void Post2dWindowRawDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QList <GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
 		writer.writeStartElement("RawDataGroup");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

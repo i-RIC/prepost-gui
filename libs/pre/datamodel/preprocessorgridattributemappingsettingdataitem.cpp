@@ -18,7 +18,7 @@ PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappin
 
 	// this node does not have corresponding standard item.
 //	m_standardItem->parent()->removeRow(m_standardItem->row());
-//	m_standardItem = 0;
+//	m_standardItem = nullptr;
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(const QDomNode& node)

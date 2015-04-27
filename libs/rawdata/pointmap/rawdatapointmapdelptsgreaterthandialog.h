@@ -15,7 +15,7 @@ class RawDataPointmapDelPtsGreaterThanDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit RawDataPointmapDelPtsGreaterThanDialog(RawDataPointmap *pmap, QWidget *parent = 0);
+    explicit RawDataPointmapDelPtsGreaterThanDialog(RawDataPointmap *pmap, QWidget *parent = nullptr);
     ~RawDataPointmapDelPtsGreaterThanDialog();
 	double limitValue();
 	const QVector<vtkIdType>& selectedPoints(){return m_selectedPoints;}

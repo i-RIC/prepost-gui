@@ -52,10 +52,9 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 
 	// build grid type data items.
-	QList<SolverDefinitionGridType*>::const_iterator it;
 	int i = 0;
 	QList<PreProcessorGridTypeDataItem*> gtitems;
-	for (it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it){
 		SolverDefinitionGridType* gt = *it;
 		if (gt->defaultGridType() == SolverDefinitionGridType::gtUnknownGrid){
 			// dummy grid type.
@@ -105,8 +104,7 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		delete *it;
 	}
 }
@@ -133,7 +131,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 			model->appendRow(gccitem->standardItem());
 			// Boundary condition setting node here if needed.
 			PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*> (citem->gridDataItem());
-			if (gitem->bcGroupDataItem() != 0){
+			if (gitem->bcGroupDataItem() != nullptr){
 				PreProcessorBCSettingGroupDataItem* bcsgitem = citem->bcSettingGroupDataItem();
 				citem->standardItem()->takeChild(bcsgitem->standardItem()->row());
 				model->appendRow(bcsgitem->standardItem());
@@ -145,8 +143,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	}else{
 		// current solver support more than two grid types, or the only
 		// grid type allows multiple grids.
-		QList<PreProcessorGridTypeDataItem*>::iterator it;
-		for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 			model->appendRow((*it)->standardItem());
 		}
 	}
@@ -179,8 +176,7 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
 	if (! bgNode.isNull()){m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
 
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		QDomNode c = node.firstChild();
 		while (! c.isNull()){
 			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()){
@@ -234,8 +230,7 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -258,11 +253,10 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const QString& name)
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		if ((*it)->name() == name){return *it;}
 	}
-	return 0;
+	return nullptr;
 }
 
 class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
@@ -354,8 +348,7 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 
 bool PreProcessorRootDataItem::gridEdited()
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		bool edited = (*it)->gridEdited();
 		if (edited){return true;}
 	}
@@ -364,8 +357,7 @@ bool PreProcessorRootDataItem::gridEdited()
 
 void PreProcessorRootDataItem::toggleGridEditFlag()
 {
-	QList<PreProcessorGridTypeDataItem*>::iterator it;
-	for (it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
 		(*it)->toggleGridEditFlag();
 	}
 }
@@ -374,19 +366,19 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	PreProcessorRawdataDataItem* dItem = dynamic_cast<PreProcessorRawdataDataItem*>(dataItem);
-	PreProcessorRawDataGroupDataItem* gItem = 0;
+	PreProcessorRawDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
-	if (dItem != 0){
+	if (dItem != nullptr){
 		gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(dItem->parent());
 	}
 
-	if (bcsitem != 0){
+	if (bcsitem != nullptr){
 		GraphicsWindowRootDataItem::deleteItem(bcsitem->bcDataItem()->standardItem());
 	} else {
 		GraphicsWindowRootDataItem::deleteItem(item);
 	}
 
-	if (gItem != 0){
+	if (gItem != nullptr){
 		gItem->informDataChange();
 	}
 }

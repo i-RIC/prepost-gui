@@ -19,7 +19,7 @@ class GridCreatingConditionTrianglePolyLineCoordinatesEditDialog : public QDialo
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(GridCreatingConditionTriangle* polygon, QWidget *parent = 0);
+	explicit GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(GridCreatingConditionTriangle* polygon, QWidget *parent = nullptr);
 	~GridCreatingConditionTrianglePolyLineCoordinatesEditDialog();
 public slots:
 	void accept();

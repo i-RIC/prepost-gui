@@ -8,7 +8,7 @@ GridRelatedConditionVariationEditDialog::GridRelatedConditionVariationEditDialog
 	QDialog(parent),
 	ui(new Ui::GridRelatedConditionVariationEditDialog)
 {
-	m_widget = 0;
+	m_widget = nullptr;
 	ui->setupUi(this);
 }
 

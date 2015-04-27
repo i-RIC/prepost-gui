@@ -29,7 +29,7 @@ void CgnsFileInputConditionContainerSet::setup(const QDomNode& condNode, bool fo
 	} else {
 		// multiple pages exists.
 		QDomNodeList pages = condNode.childNodes();
-		for (unsigned int i = 0; i < pages.length(); ++i){
+		for (int i = 0; i < pages.length(); ++i){
 			QDomNode page = pages.item(i);
 			// access content/items/
 			setupCustom(page);
@@ -39,16 +39,14 @@ void CgnsFileInputConditionContainerSet::setup(const QDomNode& condNode, bool fo
 
 void CgnsFileInputConditionContainerSet::setBCProperty(const QString& bcname, int bcindex)
 {
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		it.value()->setBCProperty(bcname, bcindex);
 	}
 }
 
 void CgnsFileInputConditionContainerSet::setComplexProperty(const QString& compname, int compindex)
 {
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		it.value()->setComplexProperty(compname, compindex);
 	}
 }
@@ -59,7 +57,7 @@ void CgnsFileInputConditionContainerSet::setupSimple(const QDomNode& contNode)
 	if (itemsNode.isNull()){return;}
 	// Now, I've got the itemsNode!
 	QDomNodeList items = itemsNode.childNodes();
-	for (unsigned int j = 0; j < items.length(); ++j){
+	for (int j = 0; j < items.length(); ++j){
 		QDomNode itemNode = items.item(j);
 		setupContaner(itemNode);
 	}
@@ -72,7 +70,7 @@ void CgnsFileInputConditionContainerSet::setupCustom(const QDomNode& contNode)
 
 void CgnsFileInputConditionContainerSet::setupCustomRec(const QDomNode& node){
 	QDomNodeList children = node.childNodes();
-	for (unsigned int i = 0; i < children.length(); ++i){
+	for (int i = 0; i < children.length(); ++i){
 		QDomNode c = children.item(i);
 		if (c.nodeType() == QDomNode::ElementNode){
 			if (c.nodeName() == "Item"){
@@ -135,23 +133,20 @@ void CgnsFileInputConditionContainerSet::setupContaner(const QDomNode& itemNode)
 }
 
 void CgnsFileInputConditionContainerSet::setDefaultValues(){
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		(*it)->clear();
 	}
 }
 
 int CgnsFileInputConditionContainerSet::load(){
 	// @todo no error checking (for example, wrong value, lacking nodes..) are implemented.
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		(*it)->load();
 	}
 	return 0;
 }
 int CgnsFileInputConditionContainerSet::save(){
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		int ret = (*it)->save();
 		if (ret != 0){return ret;}
 	}
@@ -160,8 +155,7 @@ int CgnsFileInputConditionContainerSet::save(){
 
 void CgnsFileInputConditionContainerSet::reset()
 {
-	QMap<QString, CgnsFileInputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it){
+	for (auto it = m_containers.begin(); it != m_containers.end(); ++it){
 		(*it)->clear();
 	}
 }
@@ -174,20 +168,16 @@ CgnsFileInputConditionContainerSet* CgnsFileInputConditionContainerSet::clone() 
 	ret->m_strings = m_strings;
 	ret->m_functionals = m_functionals;
 
-	QMap<QString, CgnsFileInputConditionContainerInteger>::iterator it_int;
-	for (it_int = ret->m_integers.begin(); it_int != ret->m_integers.end(); ++it_int){
+	for (auto it_int = ret->m_integers.begin(); it_int != ret->m_integers.end(); ++it_int){
 		ret->m_containers.insert(it_int.key(), &(it_int.value()));
 	}
-	QMap<QString, CgnsFileInputConditionContainerReal>::iterator it_real;
-	for (it_real = ret->m_reals.begin(); it_real != ret->m_reals.end(); ++it_real){
+	for (auto it_real = ret->m_reals.begin(); it_real != ret->m_reals.end(); ++it_real){
 		ret->m_containers.insert(it_real.key(), &(it_real.value()));
 	}
-	QMap<QString, CgnsFileInputConditionContainerString>::iterator it_str;
-	for (it_str = ret->m_strings.begin(); it_str != ret->m_strings.end(); ++it_str){
+	for (auto it_str = ret->m_strings.begin(); it_str != ret->m_strings.end(); ++it_str){
 		ret->m_containers.insert(it_str.key(), &(it_str.value()));
 	}
-	QMap<QString, CgnsFileInputConditionContainerFunctional>::iterator it_func;
-	for (it_func = ret->m_functionals.begin(); it_func != ret->m_functionals.end(); ++it_func){
+	for (auto it_func = ret->m_functionals.begin(); it_func != ret->m_functionals.end(); ++it_func){
 		ret->m_containers.insert(it_func.key(), &(it_func.value()));
 	}
 
@@ -196,20 +186,16 @@ CgnsFileInputConditionContainerSet* CgnsFileInputConditionContainerSet::clone() 
 
 void CgnsFileInputConditionContainerSet::copyValues(const CgnsFileInputConditionContainerSet* set)
 {
-	QMap<QString, CgnsFileInputConditionContainerInteger>::iterator it_int;
-	for (it_int = m_integers.begin(); it_int != m_integers.end(); ++it_int){
+	for (auto it_int = m_integers.begin(); it_int != m_integers.end(); ++it_int){
 		it_int.value() = set->m_integers.value(it_int.key());
 	}
-	QMap<QString, CgnsFileInputConditionContainerReal>::iterator it_real;
-	for (it_real = m_reals.begin(); it_real != m_reals.end(); ++it_real){
+	for (auto it_real = m_reals.begin(); it_real != m_reals.end(); ++it_real){
 		it_real.value() = set->m_reals.value(it_real.key());
 	}
-	QMap<QString, CgnsFileInputConditionContainerString>::iterator it_str;
-	for (it_str = m_strings.begin(); it_str != m_strings.end(); ++it_str){
+	for (auto it_str = m_strings.begin(); it_str != m_strings.end(); ++it_str){
 		it_str.value() = set->m_strings.value(it_str.key());
 	}
-	QMap<QString, CgnsFileInputConditionContainerFunctional>::iterator it_func;
-	for (it_func = m_functionals.begin(); it_func != m_functionals.end(); ++it_func){
+	for (auto it_func = m_functionals.begin(); it_func != m_functionals.end(); ++it_func){
 		it_func.value() = set->m_functionals.value(it_func.key());
 	}
 }

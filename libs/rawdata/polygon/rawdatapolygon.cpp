@@ -69,13 +69,13 @@ RawDataPolygon::RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, Solv
 	initParams();
 
 	m_shapeUpdating = false;
-	m_triangleThread = 0;
+	m_triangleThread = nullptr;
 
 	m_gridRegionPolygon = new RawDataPolygonRegionPolygon(this);
 		m_gridRegionPolygon->setSelected(true);
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != 0){
-			m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
+	if (stcc != nullptr){
+		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
 	m_gridRegionPolygon->setMapping(m_mapping);
 	m_gridRegionPolygon->setColor(m_color);
@@ -123,7 +123,7 @@ RawDataPolygon::RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, Solv
 	m_grid->GetPointData()->SetActiveScalars("polygonvalue");
 
 	m_paintMapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	if (stcc != 0){
+	if (stcc != nullptr){
 		m_paintMapper->SetLookupTable(stcc->vtkObj());
 	}
 	m_paintMapper->SetUseLookupTableScalarRange(true);
@@ -375,7 +375,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataPolygonPolygonDefineNewPointCommand* comm = dynamic_cast<const RawDataPolygonPolygonDefineNewPointCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetPolygon != m_targetPolygon){return false;}
@@ -454,7 +454,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataPolygonPolygonMoveCommand* comm = dynamic_cast<const RawDataPolygonPolygonMoveCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		m_offset += comm->m_offset;
@@ -531,7 +531,7 @@ public:
 	}
 	bool mergeWith(const QUndoCommand *other){
 		const RawDataPolygonPolygonMoveVertexCommand* comm = dynamic_cast<const RawDataPolygonPolygonMoveVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (comm->m_polygon != m_polygon){return false;}
 		if (comm->m_targetPolygon != m_targetPolygon){return false;}
@@ -641,7 +641,7 @@ public:
 	bool mergeWith(const QUndoCommand *other)
 	{
 		const RawDataPolygonPolygonAddVertexCommand* comm = dynamic_cast<const RawDataPolygonPolygonAddVertexCommand*>(other);
-		if (comm == 0){return false;}
+		if (comm == nullptr){return false;}
 		if (comm->m_keyDown){return false;}
 		if (m_polygon != comm->m_polygon){return false;}
 		if (m_vertexId != comm->m_vertexId){return false;}
@@ -975,7 +975,7 @@ void RawDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	if (doubleClick){
 		minCount = 3;
 	}
-	if (m_selectedPolygon == 0){return;}
+	if (m_selectedPolygon == nullptr){return;}
 	if (m_selectedPolygon->polygon().count() <= minCount){
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
@@ -1039,7 +1039,7 @@ void RawDataPolygon::doSaveToProjectMainFile(QXmlStreamWriter& writer){
 
 void RawDataPolygon::loadExternalData(const QString& filename){
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != 0){
+	if (stcc != nullptr){
 		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
 	m_gridRegionPolygon->setMapping(m_mapping);
@@ -1049,7 +1049,7 @@ void RawDataPolygon::loadExternalData(const QString& filename){
 		iRICLib::Polygon* pol = new iRICLib::Polygon();
 		GridRelatedConditionDimensionsContainer* dims = dimensions();
 		bool noDim = true;
-		if (dims != 0){
+		if (dims != nullptr){
 			noDim = dims->containers().size() == 0;
 		}
 
@@ -1158,7 +1158,7 @@ void RawDataPolygon::saveExternalData(const QString& filename){
 	}
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
 	bool noDim = true;
-	if (dims != 0){
+	if (dims != nullptr){
 		noDim = dims->containers().size() == 0;
 	}
 	pol->save(iRIC::toStr(filename).c_str(), noDim);
@@ -1189,7 +1189,7 @@ void RawDataPolygon::updateMouseEventMode()
 	graphicsView()->viewportToWorld(dx, dy);
 	QVector2D worldPos(dx, dy);
 	bool shapeUpdating = m_shapeUpdating;
-		shapeUpdating = shapeUpdating || (m_triangleThread != 0 && m_triangleThread->isOutputting());
+		shapeUpdating = shapeUpdating || (m_triangleThread != nullptr && m_triangleThread->isOutputting());
 	switch (m_mouseEventMode){
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
@@ -1261,9 +1261,9 @@ void RawDataPolygon::updateActionStatus()
 		m_holeModeAction->setDisabled(true);
 		m_holeModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
-		if (dynamic_cast<RawDataPolygonRegionPolygon*>(m_selectedPolygon) != 0){
+		if (dynamic_cast<RawDataPolygonRegionPolygon*>(m_selectedPolygon) != nullptr){
 //			m_defineModeAction->setChecked(true);
-		} else if (dynamic_cast<RawDataPolygonHolePolygon*>(m_selectedPolygon) != 0){
+		} else if (dynamic_cast<RawDataPolygonHolePolygon*>(m_selectedPolygon) != nullptr){
 			m_holeModeAction->setChecked(true);
 		}
 		break;
@@ -1300,7 +1300,7 @@ void RawDataPolygon::updateActionStatus()
 
 		m_holeModeAction->setEnabled(true);
 		m_holeModeAction->setChecked(false);
-		if (m_selectedPolygon != 0){
+		if (m_selectedPolygon != nullptr){
 			m_addVertexAction->setEnabled(true);
 			m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
 			m_coordEditAction->setEnabled(true);
@@ -1355,7 +1355,7 @@ void RawDataPolygon::updateActionStatus()
 void RawDataPolygon::editCoordinates()
 {
 	m_mouseEventMode = meEditVerticesDialog;
-	if (m_selectedPolygon != 0){
+	if (m_selectedPolygon != nullptr){
 		RawDataPolygonCoordinatesEditDialog* dialog = new RawDataPolygonCoordinatesEditDialog(this, preProcessorWindow());
 		dialog->show();
 		iricMainWindow()->enterModelessDialogMode();
@@ -1394,7 +1394,7 @@ void RawDataPolygon::initParams()
 
 	int maxIndex = 1;
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
-	if (dims != 0){
+	if (dims != nullptr){
 		maxIndex = dimensions()->maxIndex();
 	}
 	for (int i = 0; i <= maxIndex; ++i){
@@ -1458,7 +1458,7 @@ void RawDataPolygon::addHolePolygon()
 	RawDataPolygonHolePolygon* pol = new RawDataPolygonHolePolygon(this);
 	setupHolePolygon(pol);
 		pol->setSelected(true);
-		if (m_selectedPolygon != 0){
+		if (m_selectedPolygon != nullptr){
 				m_selectedPolygon->setSelected(false);
 	}
 	m_selectMode = smPolygon;
@@ -1471,7 +1471,7 @@ void RawDataPolygon::setupHolePolygon(RawDataPolygonHolePolygon* pol)
 {
 	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
-	if (stcc != 0){
+	if (stcc != nullptr){
 		pol->setLookupTable(scalarsToColorsContainer()->vtkDarkObj());
 	}
 	pol->setActive(true);
@@ -1481,12 +1481,12 @@ void RawDataPolygon::setupHolePolygon(RawDataPolygonHolePolygon* pol)
 
 void RawDataPolygon::deletePolygon(bool force)
 {
-	if (m_selectedPolygon == 0){return;}
+	if (m_selectedPolygon == nullptr){return;}
 	if (! force){
 		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this polygon?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No){return;}
 	}
-	if (dynamic_cast<RawDataPolygonRegionPolygon*>(m_selectedPolygon) != 0){
+	if (dynamic_cast<RawDataPolygonRegionPolygon*>(m_selectedPolygon) != nullptr){
 		delete m_gridRegionPolygon;
 		m_gridRegionPolygon = new RawDataPolygonRegionPolygon(this);
 		m_gridRegionPolygon->setActive(true);
@@ -1494,11 +1494,11 @@ void RawDataPolygon::deletePolygon(bool force)
 		m_gridRegionPolygon->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 		m_selectedPolygon = m_gridRegionPolygon;
 		m_mouseEventMode = meBeforeDefining;
-	} else if (dynamic_cast<RawDataPolygonHolePolygon*>(m_selectedPolygon) != 0){
+	} else if (dynamic_cast<RawDataPolygonHolePolygon*>(m_selectedPolygon) != nullptr){
 		RawDataPolygonHolePolygon* tmpPoly = dynamic_cast<RawDataPolygonHolePolygon*>(m_selectedPolygon);
 		m_holePolygons.removeOne(tmpPoly);
 		delete m_selectedPolygon;
-		m_selectedPolygon = 0;
+		m_selectedPolygon = nullptr;
 		m_selectMode = smNone;
 		m_mouseEventMode = meNormal;
 	}
@@ -1527,7 +1527,7 @@ bool RawDataPolygon::selectObject(QPoint point)
 	double selectlimit = graphicsView()->stdRadius(5);
 
 	// find polygon that contains this point.
-	RawDataPolygonAbstractPolygon* newSelPol = 0;
+	RawDataPolygonAbstractPolygon* newSelPol = nullptr;
 	bool selected = false;
 	for (int i = m_holePolygons.count() - 1; i >= 0 && (! selected); --i){
 		RawDataPolygonAbstractPolygon* pol = m_holePolygons[i];
@@ -1564,14 +1564,14 @@ bool RawDataPolygon::selectObject(QPoint point)
 			}
 		}
 	}
-	if (newSelPol != 0){
+	if (newSelPol != nullptr){
 		m_selectMode = smPolygon;
 		m_selectedPolygon = newSelPol;
 				m_selectedPolygon->setSelected(true);
 	}
 	if (! selected){
 		m_selectMode = smNone;
-		m_selectedPolygon = 0;
+		m_selectedPolygon = nullptr;
 	}
 
 	if (m_selectMode != oldSelectMode){return true;}
@@ -1585,9 +1585,9 @@ void RawDataPolygon::deselectAll()
 {
 //	m_editMaxAreaAction->disconnect();
 	if (m_selectMode == smPolygon){
-		if (m_selectedPolygon != 0){
-						m_selectedPolygon->setSelected(false);
-			m_selectedPolygon = 0;
+		if (m_selectedPolygon != nullptr){
+			m_selectedPolygon->setSelected(false);
+			m_selectedPolygon = nullptr;
 		}
 	}
 	m_selectMode = smNone;
@@ -1637,7 +1637,7 @@ bool RawDataPolygon::checkCondition()
 
 bool RawDataPolygon::activePolygonHasFourVertices()
 {
-	if (m_selectedPolygon == 0){return false;}
+	if (m_selectedPolygon == nullptr){return false;}
 	QPolygonF pol = m_selectedPolygon->polygon();
 	return pol.count() > 4;
 }
@@ -1678,7 +1678,7 @@ const QVariant& RawDataPolygon::variantValue() const
 {
 	int index = 0;
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
-	if (dims != 0){
+	if (dims != nullptr){
 		index = dims->currentIndex();
 	}
 	return m_variantValues.at(index);
@@ -1687,7 +1687,7 @@ const QVariant& RawDataPolygon::variantValue() const
 void RawDataPolygon::setVariantValue(const QVariant &v){
 	int index = 0;
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
-	if (dims != 0){
+	if (dims != nullptr){
 		index = dims->currentIndex();
 	}
 	m_variantValues[index] = v;
@@ -1734,7 +1734,7 @@ const QPolygonF RawDataPolygon::polygon() const
 
 void RawDataPolygon::updateScalarValues() {
 	vtkPoints* points = m_grid->GetPoints();
-	if (points == 0){return;}
+	if (points == nullptr){return;}
 	m_scalarValues->Reset();
 	double doubleval = variantValue().toDouble();
 	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
@@ -1750,24 +1750,24 @@ void RawDataPolygon::updateScalarValues() {
 
 void RawDataPolygon::updateGrid(bool noDraw)
 {
-		if (m_triangleThread != 0 && m_triangleThread->isOutputting()){
-				// it has already started outputting. Wait until it ends.
-				while (m_triangleThread->isOutputting()){
-						m_triangleThread->wait(100);
+	if (m_triangleThread != nullptr && m_triangleThread->isOutputting()){
+		// it has already started outputting. Wait until it ends.
+		while (m_triangleThread->isOutputting()){
+			m_triangleThread->wait(100);
 		}
 	}
-		if (m_triangleThread == 0){
-				m_triangleThread = new RawDataPolygonTriangleThread(this);
-				connect(m_triangleThread, SIGNAL(shapeUpdated()), this, SLOT(renderGraphics()));
-		}
+	if (m_triangleThread == nullptr){
+		m_triangleThread = new RawDataPolygonTriangleThread(this);
+		connect(m_triangleThread, SIGNAL(shapeUpdated()), this, SLOT(renderGraphics()));
+	}
 	m_triangleThread->setNoDraw(noDraw);
 	if (! noDraw){
 		m_paintActor->SetVisibility(0);
 	}
-		if (m_triangleThread->isRunning()){
-				m_triangleThread->cancel();
-		}
-		m_triangleThread->update();
+	if (m_triangleThread->isRunning()){
+		m_triangleThread->cancel();
+	}
+	m_triangleThread->update();
 }
 
 void RawDataPolygon::editColorSetting()
@@ -1778,17 +1778,17 @@ void RawDataPolygon::editColorSetting()
 void RawDataPolygon::setMapping(RawDataPolygonColorSettingDialog::Mapping m)
 {
 	m_mapping = m;
-		if (m_mapping == RawDataPolygonColorSettingDialog::Arbitrary){
+	if (m_mapping == RawDataPolygonColorSettingDialog::Arbitrary){
 		m_paintMapper->SetScalarVisibility(false);
 		setColor(m_color);
-		} else {
+	} else {
 		m_paintMapper->SetScalarVisibility(true);
 	}
 	m_gridRegionPolygon->setMapping(m);
-		for (int i = 0; i < m_holePolygons.count(); ++i){
-				RawDataPolygonHolePolygon* p = m_holePolygons.at(i);
-				p->setMapping(m);
-		}
+	for (int i = 0; i < m_holePolygons.count(); ++i){
+		RawDataPolygonHolePolygon* p = m_holePolygons.at(i);
+		p->setMapping(m);
+	}
 	updateGrid();
 	renderGraphicsView();
 }
@@ -1918,8 +1918,7 @@ void RawDataPolygon::copyShape(RawDataPolygon* polygon)
 void RawDataPolygon::doApplyOffset(double x, double y)
 {
 	applyOffsetToAbstractPolygon(m_gridRegionPolygon, x, y);
-	QList<RawDataPolygonHolePolygon*>::iterator it;
-	for (it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it){
+	for (auto it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it){
 		applyOffsetToAbstractPolygon(*it, x, y);
 	}
 	updateGrid(true);

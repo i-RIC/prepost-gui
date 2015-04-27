@@ -12,7 +12,7 @@ namespace Ui {
 class ContinuousSnapshotMoviePropertyPage : public QWizardPage {
 	Q_OBJECT
 public:
-	ContinuousSnapshotMoviePropertyPage(QWidget *parent = 0);
+	ContinuousSnapshotMoviePropertyPage(QWidget *parent = nullptr);
 	~ContinuousSnapshotMoviePropertyPage();
 
 	void initializePage();

@@ -33,7 +33,7 @@ RawData::RawData(ProjectDataItem *d, RawDataCreator* creator, SolverDefinitionGr
 	m_editNameAction = new QAction(tr("Edit &Name..."), this);
 	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
 	mapperFunc = &RawData::nodeMappers;
-	if (condition != 0 && condition->position() == SolverDefinitionGridRelatedCondition::CellCenter){
+	if (condition != nullptr && condition->position() == SolverDefinitionGridRelatedCondition::CellCenter){
 		mapperFunc = &RawData::cellMappers;
 	}
 	m_mapped = false;
@@ -50,7 +50,7 @@ const QString& RawData::typeName() const
 
 QList<RawDataMapper*> RawData::nodeMappers()
 {
-	if (m_creator == 0){
+	if (m_creator == nullptr){
 		QList<RawDataMapper*> l;
 		return l;
 	}
@@ -59,7 +59,7 @@ QList<RawDataMapper*> RawData::nodeMappers()
 
 QList<RawDataMapper*> RawData::cellMappers()
 {
-	if (m_creator == 0){
+	if (m_creator == nullptr){
 		QList<RawDataMapper*> l;
 		return l;
 	}
@@ -68,7 +68,7 @@ QList<RawDataMapper*> RawData::cellMappers()
 
 QList<RawDataImporter*> RawData::importers()
 {
-	if (m_creator == 0){
+	if (m_creator == nullptr){
 		QList<RawDataImporter*> l;
 		return l;
 	}
@@ -77,7 +77,7 @@ QList<RawDataImporter*> RawData::importers()
 
 QList<RawDataExporter*> RawData::exporters()
 {
-	if (m_creator == 0){
+	if (m_creator == nullptr){
 		QList<RawDataExporter*> l;
 		return l;
 	}
@@ -86,7 +86,7 @@ QList<RawDataExporter*> RawData::exporters()
 
 const QIcon RawData::icon() const
 {
-	if (m_creator == 0){return QIcon();}
+	if (m_creator == nullptr){return QIcon();}
 	return m_creator->icon();
 }
 
@@ -142,7 +142,7 @@ vtkActor2DCollection* RawData::actor2DCollection()
 void RawData::setDefaultMapper()
 {
 	QList<RawDataMapper*> tmpmappers = mappers();
-	if (tmpmappers.count() == 0){m_mapper = 0;}
+	if (tmpmappers.count() == 0){m_mapper = nullptr;}
 	m_mapper = *(tmpmappers.begin());
 }
 
@@ -172,7 +172,7 @@ ScalarsToColorsContainer* RawData::scalarsToColorsContainer()
 {
 	ProjectDataItem* groupdi1 = parent()->parent();
 	PreProcessorRawDataGroupDataItemInterface* groupdi2 = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(groupdi1);
-	if (groupdi2 == 0){return 0;}
+	if (groupdi2 == nullptr){return nullptr;}
 	PreProcessorGridTypeDataItemInterface* typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi1->parent()->parent());
 	ScalarsToColorsContainer* stc = typedi->scalarsToColors(groupdi2->condition()->name());
 	return stc;
@@ -242,6 +242,6 @@ void RawData::saveToCgnsFile(const int /*fn*/)
 GridRelatedConditionDimensionsContainer* RawData::dimensions() const
 {
 	PreProcessorRawDataGroupDataItemInterface* item = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
-	if (item == 0){return 0;}
+	if (item == nullptr){return nullptr;}
 	return item->dimensions();
 }

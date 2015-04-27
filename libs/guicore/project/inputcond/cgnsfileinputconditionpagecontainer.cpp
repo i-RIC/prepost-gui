@@ -14,8 +14,7 @@ CgnsFileInputConditionPageContainer::CgnsFileInputConditionPageContainer(QWidget
 
 CgnsFileInputConditionPageContainer::~CgnsFileInputConditionPageContainer()
 {
-	QMap<QString, CgnsFileInputConditionPage*>::iterator it;
-	for (it = m_pages.begin(); it != m_pages.end(); ++it){
+	for (auto it = m_pages.begin(); it != m_pages.end(); ++it){
 		delete *it;
 	}
 	m_pages.clear();
