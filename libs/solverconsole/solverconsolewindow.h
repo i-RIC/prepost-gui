@@ -10,6 +10,7 @@
 #include <QCloseEvent>
 #include <QByteArray>
 #include <QProcess>
+#include <QProcessEnvironment>
 
 class QPlainTextEdit;
 class ProjectData;
@@ -28,6 +29,7 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	public WindowWithZIndex
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	SolverConsoleWindow(){init();}
@@ -39,13 +41,7 @@ public:
 	void setProjectData(ProjectData* d);
 	SolverConsoleWindowProjectDataItem* projectDataItem();
 	/// Implementation of close event.
-	/**
-	 * Ignore the close event, and just hide the parent window.
-	 */
-	void closeEvent(QCloseEvent* e){
-		parentWidget()->hide();
-		e->ignore();
-	}
+	void closeEvent(QCloseEvent* e);
 	/// Returns true when the solver is running.
 	bool isSolverRunning();
 	/// Setup window position and size to the default.
@@ -60,12 +56,14 @@ public:
 	QPixmap snapshot();
 
 	QAction* exportLogAction;
+
 public slots:
 	/// Start the solver execution
 	void startSolver();
 	/// Terminate the solver execution
 	void terminateSolver();
 	void editBackgroundColor();
+
 private slots:
 	/// Handle the signal that informs that the solver has output at stderr.
 	void readStderr();
@@ -73,25 +71,32 @@ private slots:
 	void readStdout();
 	/// Handle the signal that informs that the solver has finished calculation.
 	void handleSolverFinish(int, QProcess::ExitStatus);
+
 signals:
 	/// Solver started the calculation;
 	void solverStarted();
 	/// Solver finished the calculation;
 	void solverFinished();
+
 private:
 	/// Initialization
 	void init();
+	/// setup QProcessEnvironment to run solver.
+	void setupSolverEnvironment();
 	void appendLogLine(const QString& line);
 	/// Background color
 	const QColor backgroundColor() const;
 	/// Set background color;
-    void setBackgroundColor(const QColor& c);
+	void setBackgroundColor(const QColor& c);
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
 	ProjectData* m_projectData;
 	QPlainTextEdit* m_console;
 	QProcess* m_process;
 	bool m_solverKilled;
 	bool m_destructing;
+	/// Process execution environment
+	QProcessEnvironment m_env;
+
 public:
 	friend class SolverConsoleWindowProjectDataItem;
 	friend class SolverConsoleWindowBackgroundColorCommand;

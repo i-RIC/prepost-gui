@@ -23,6 +23,7 @@
 #include <QAction>
 #include <QFont>
 #include <QSettings>
+#include <QApplication>
 #include <QProcessEnvironment>
 
 SolverConsoleWindow::~SolverConsoleWindow()
@@ -56,12 +57,22 @@ void SolverConsoleWindow::init()
 	font.setStyleHint(QFont::Courier);
 	font.setPointSize(9);
 	m_console->setFont(font);
-
 	setCentralWidget(m_console);
+	setupSolverEnvironment();
 
 	m_process = 0;
 
 	updateWindowTitle();
+}
+
+void SolverConsoleWindow::setupSolverEnvironment()
+{
+	m_env = QProcessEnvironment::systemEnvironment();
+	QDir execDir = QDir(qApp->applicationDirPath());
+	QString path = QDir::toNativeSeparators(execDir.absolutePath());
+	path.append(";");
+	path.append(m_env.value("PATH"));
+	m_env.insert("PATH", path);
 }
 
 void SolverConsoleWindow::setProjectData(ProjectData* d)
@@ -135,10 +146,9 @@ void SolverConsoleWindow::startSolver()
 	m_process->setWorkingDirectory(wd);
 
 	// set language setting to the environment.
-	QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	env.insert("iRIC_LANG", locale);
-	m_process->setProcessEnvironment(env);
+	m_env.insert("iRIC_LANG", locale);
+	m_process->setProcessEnvironment(m_env);
 
 	// create connections.
 	connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
@@ -308,4 +318,9 @@ void SolverConsoleWindow::setBackgroundColor(const QColor &c)
 	QPalette p = m_console->palette();
 	p.setColor(QPalette::Base, c);
 	m_console->setPalette(p);
+}
+
+void SolverConsoleWindow::closeEvent(QCloseEvent* e){
+	parentWidget()->hide();
+	e->ignore();
 }
