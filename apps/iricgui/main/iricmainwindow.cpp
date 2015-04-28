@@ -55,7 +55,6 @@
 #include "../projectproperty/projectpropertydialog.h"
 
 #include <QApplication>
-#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDesktopWidget>
 #include <QFileDialog>
@@ -150,6 +149,7 @@ iRICMainWindow::iRICMainWindow(QWidget *parent)
 	connect(m_centralWidget, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(ActiveSubwindowChanged(QMdiSubWindow*)));
 
 	restoreWindowState();
+	setupProcessEnvironment();
 
 	statusBar()->showMessage(tr("Ready"));
 }
@@ -2174,4 +2174,14 @@ bool iRICMainWindow::checkWorkFolderWorks()
 		return false;
 	}
 	return true;
+}
+
+void iRICMainWindow::setupProcessEnvironment()
+{
+	m_processEnvironment = QProcessEnvironment::systemEnvironment();
+	QDir execDir = QDir(qApp->applicationDirPath());
+	QString path = QDir::toNativeSeparators(execDir.absolutePath());
+	path.append(";");
+	path.append(m_processEnvironment.value("PATH"));
+	m_processEnvironment.insert("PATH", path);
 }

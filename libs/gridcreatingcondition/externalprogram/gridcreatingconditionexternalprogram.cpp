@@ -8,6 +8,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <misc/stringtool.h>
 #include <misc/filesystemfunction.h>
 
@@ -84,6 +85,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	QProcess process(this);
 	QString wd = projectData()->workDirectory();
 	process.setWorkingDirectory(wd);
+	process.setProcessEnvironment(projectData()->mainWindow()->processEnvironment());
 	QStringList args;
 	args << fname;
 

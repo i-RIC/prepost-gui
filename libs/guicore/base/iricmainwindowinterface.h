@@ -13,6 +13,7 @@ class AnimationControllerInterface;
 class CoordinateSystemBuilder;
 class VersionNumber;
 class ProjectData;
+class QProcessEnvironment;
 
 class GUICOREDLL_EXPORT iRICMainWindowInterface : public QMainWindow {
 public:
@@ -43,6 +44,7 @@ public:
 	virtual bool clearResultsIfGridIsEdited() = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;
 	virtual const QLocale locale() = 0;
+	virtual const QProcessEnvironment& processEnvironment() const = 0;
 
 public slots:
 	virtual bool saveProject() = 0;

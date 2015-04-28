@@ -81,8 +81,6 @@ signals:
 private:
 	/// Initialization
 	void init();
-	/// setup QProcessEnvironment to run solver.
-	void setupSolverEnvironment();
 	void appendLogLine(const QString& line);
 	/// Background color
 	const QColor backgroundColor() const;
@@ -94,8 +92,6 @@ private:
 	QProcess* m_process;
 	bool m_solverKilled;
 	bool m_destructing;
-	/// Process execution environment
-	QProcessEnvironment m_env;
 
 public:
 	friend class SolverConsoleWindowProjectDataItem;

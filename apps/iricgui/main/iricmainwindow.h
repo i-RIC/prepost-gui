@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLocale>
 #include <QList>
+#include <QProcessEnvironment>
 
 #include <misc/versionnumber.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -80,6 +81,7 @@ public:
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
 	void importCalculationResult(const QString& filename);
+	const QProcessEnvironment& processEnvironment() const {return m_processEnvironment;}
 
 private:
 	void parseArgs();
@@ -204,7 +206,6 @@ private:
 	void setupForNewProjectData();
 	/// Update window title depending on the current project data
 	void updateWindowTitle();
-//	void newDocument();
 	void setupAnimationToolbar();
 	void setupStatusBar();
 	/// Update Recent Projects list
@@ -216,6 +217,7 @@ private:
 	void handleWizardAccepted(ContinuousSnapshotWizard* wizard);
 	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);
+	void setupProcessEnvironment();
 	QString timeString(int time);
 
 	MousePositionWidget* m_mousePositionWidget;
@@ -290,6 +292,9 @@ private:
 	PostProcessorWindowFactory* m_postWindowFactory;
 
 	bool m_debugMode;
+
+	QProcessEnvironment m_processEnvironment;
+
 public:
 	friend class ProjectData;
 	friend class iRICMainWindowActionManager;
