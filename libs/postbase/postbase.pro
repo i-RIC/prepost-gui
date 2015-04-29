@@ -68,7 +68,7 @@ LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
 	-lvtkRenderingCore-6.1 \
-	-lvtkRenderingFreetype-6.1
+	-lvtkRenderingFreeType-6.1
 
 # Input
 HEADERS += postallzoneselectingdialog.h \

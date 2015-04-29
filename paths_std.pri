@@ -84,3 +84,8 @@ INCLUDEPATH += "E:/iricdev_2013/lib/install//netcdf-4.3.2/release/include"
 #internal libs
 INCLUDEPATH += "E:/iricdev_2013/src/libs"
 
+CONFIG += c++11
+
+target.path = /usr/local/iRIC
+INSTALLS += target
+
