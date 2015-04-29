@@ -16,6 +16,8 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 
+const int PreProcessorGridCrosssectionWindow::DEFAULT_TABLE_WIDTH = 200;
+
 PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structured2DGrid* grid, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget *parent) :
 	QMainWindow(parent),
 	ui(new Ui::PreProcessorGridCrosssectionWindow)
