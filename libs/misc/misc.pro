@@ -9,6 +9,8 @@ DEFINES += MISC_LIBRARY
 
 QT += widgets xml
 
+include( ../../paths.pri )
+
 # Input
 HEADERS += arrowsettingcontainer.h \
            doublemappingsetting.h \

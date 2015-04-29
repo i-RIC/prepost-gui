@@ -4,6 +4,7 @@
 #include <QDataStream>
 #include <vtkObject.h>
 
+/// VTK cell edge. It has two vertex as vtkIdType, i.e. indices.
 class Edge {
 public:
 	Edge (){

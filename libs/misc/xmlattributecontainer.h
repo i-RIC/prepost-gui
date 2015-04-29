@@ -7,6 +7,7 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
+/// Container class that has I/O function to store data as xml attributes.
 class MISCDLL_EXPORT XmlAttributeContainer
 {
 public:
