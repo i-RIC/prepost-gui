@@ -76,22 +76,22 @@ protected:
 /// system.
 class MISCDLL_EXPORT LatitudeLongitude {
 public:
-/// Constructor without initializing()
-LatitudeLongitude() : m_latitude(), m_longitude()
-{}
+	/// Constructor without initializing()
+	LatitudeLongitude() : m_latitude(), m_longitude()
+	{}
 
-/// Constructor with initializing
-LatitudeLongitude(double latitude, double longitude):
-	m_latitude(latitude), m_longitude(longitude)
-{}
+	/// Constructor with initializing
+	LatitudeLongitude(double latitude, double longitude):
+		m_latitude(latitude), m_longitude(longitude)
+	{}
 	/// Latitude
-	LatitudeLongitudeAngle latitude(){return m_latitude;}
+	LatitudeLongitudeAngle& latitude(){return m_latitude;}
 	/// Latitude (for const)
-	const LatitudeLongitudeAngle latitude() const{return m_latitude;}
+	const LatitudeLongitudeAngle& latitude() const{return m_latitude;}
 	/// Longitude
-	LatitudeLongitudeAngle longitude(){return m_longitude;}
+	LatitudeLongitudeAngle& longitude(){return m_longitude;}
 	/// Longitude (for const)
-	const LatitudeLongitudeAngle longitude() const{return m_longitude;}
+	const LatitudeLongitudeAngle& longitude() const{return m_longitude;}
 	/// Set latitude value
 	void setLatitude(double latitude){
 		m_latitude.setValue(latitude);
@@ -103,6 +103,7 @@ LatitudeLongitude(double latitude, double longitude):
 	QVector2D toQVector2D(){
 		return QVector2D(m_latitude.value(), m_longitude.value());
 	}
+
 protected:
 	LatitudeLongitudeAngle m_latitude;
 	LatitudeLongitudeAngle m_longitude;
