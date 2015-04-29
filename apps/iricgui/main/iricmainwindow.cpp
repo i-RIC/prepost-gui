@@ -1675,7 +1675,7 @@ void iRICMainWindow::parseArgs()
 	setDebugMode(true);
 #else
 	setDebugMode(false);
-#endif;
+#endif
 
 	for (int i = 0; i < args.count(); ++i){
 		QString arg = args.at(i);
