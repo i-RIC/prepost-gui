@@ -3,7 +3,6 @@
 
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <QMap>
-#include <vtkLODActor.h>
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
 #include <vtkPolyDataMapper.h>
@@ -59,8 +58,7 @@ private:
 	void updateAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
 
 	QString m_currentCondition;
-	vtkSmartPointer<vtkLODActor> m_actor;
-//	vtkSmartPointer<vtkDataSetMapper> m_mapper;
+	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 	QMap<QString, PreProcessorGridRelatedConditionCellDataItem*> m_nameMap;
 

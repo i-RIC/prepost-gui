@@ -3,7 +3,6 @@
 
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <QMap>
-#include <vtkLODActor.h>
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
 #include <vtkPolyData.h>
@@ -62,12 +61,12 @@ private:
 
 	QString m_currentCondition;
 	vtkSmartPointer<vtkPolyData> m_contourPolyData;
-	vtkSmartPointer<vtkLODActor> m_contourActor;
+	vtkSmartPointer<vtkActor> m_contourActor;
 	vtkSmartPointer<vtkDataSetMapper> m_contourMapper;
 	vtkSmartPointer<vtkActor> m_isolineActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_isolineMapper;
 	vtkSmartPointer<vtkContourFilter> m_isolineFilter;
-	vtkSmartPointer<vtkLODActor> m_fringeActor;
+	vtkSmartPointer<vtkActor> m_fringeActor;
 	vtkSmartPointer<vtkDataSetMapper> m_fringeMapper;
 
 	QAction* m_showAttributeBrowserAction;

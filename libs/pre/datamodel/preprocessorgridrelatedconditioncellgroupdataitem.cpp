@@ -36,7 +36,6 @@
 #include <QToolBar>
 
 #include <vtkActorCollection.h>
-#include <vtkLODActor.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkPolyDataMapper.h>
@@ -226,12 +225,10 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::informDataChange(const Q
 
 
 void PreProcessorGridRelatedConditionCellGroupDataItem::setupActors(){
-	m_actor = vtkSmartPointer<vtkLODActor>::New();
-	m_actor->SetNumberOfCloudPoints(0);
+	m_actor = vtkSmartPointer<vtkActor>::New();
 	m_actor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_actor);
 
-//	m_mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	m_mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_mapper->SetScalarVisibility(true);
 	m_actor->SetMapper(m_mapper);

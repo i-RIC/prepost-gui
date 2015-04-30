@@ -36,7 +36,6 @@
 #include <QToolBar>
 
 #include <vtkActorCollection.h>
-#include <vtkLODActor.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkPolyDataMapper.h>
@@ -304,16 +303,13 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::informDataChange(const Q
 
 
 void PreProcessorGridRelatedConditionNodeGroupDataItem::setupActors(){
-	m_contourActor = vtkSmartPointer<vtkLODActor>::New();
-	// Draw 5000 points from grid vertices.
-	m_contourActor->SetNumberOfCloudPoints(5000);
+	m_contourActor = vtkSmartPointer<vtkActor>::New();
 	// Make the point size a little big.
 	m_contourActor->GetProperty()->SetPointSize(2);
 	m_contourActor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_contourActor);
 
-	m_fringeActor = vtkSmartPointer<vtkLODActor>::New();
-	m_fringeActor->SetNumberOfCloudPoints(5000);
+	m_fringeActor = vtkSmartPointer<vtkActor>::New();
 	m_fringeActor->GetProperty()->SetPointSize(2);
 	m_fringeActor->GetProperty()->SetLighting(false);
 	renderer()->AddActor(m_fringeActor);
