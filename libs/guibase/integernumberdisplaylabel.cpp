@@ -1,6 +1,6 @@
 #include "integernumberdisplaylabel.h"
 
-IntegerNumberDisplayLabel::IntegerNumberDisplayLabel(QWidget *parent) :
+IntegerNumberDisplayLabel::IntegerNumberDisplayLabel(QWidget* parent) :
 	QLabel(parent)
 {
 	setFrameShape(QFrame::WinPanel);
@@ -19,9 +19,9 @@ void IntegerNumberDisplayLabel::setValue(unsigned int value)
 
 void IntegerNumberDisplayLabel::clear()
 {
-	if (m_clearMode == cmLines){
+	if (m_clearMode == cmLines) {
 		setText(tr("------"));
-	}else{
+	} else {
 		setText("");
 	}
 }

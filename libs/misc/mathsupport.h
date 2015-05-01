@@ -9,7 +9,8 @@ class QVector2D;
 class QPointF;
 class QPolygonF;
 
-namespace iRIC {
+namespace iRIC
+{
 	qreal MISCDLL_EXPORT outerProduct(const QVector2D& v1, const QVector2D& v2);
 	qreal MISCDLL_EXPORT angleRadian(const QVector2D& v1, const QVector2D& v2);
 	qreal MISCDLL_EXPORT angle(const QVector2D& v1, const QVector2D& v2);

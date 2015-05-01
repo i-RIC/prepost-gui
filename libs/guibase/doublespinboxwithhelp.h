@@ -5,8 +5,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class DoubleSpinBoxWithHelp;
+namespace Ui
+{
+	class DoubleSpinBoxWithHelp;
 }
 
 class GUIBASEDLL_EXPORT DoubleSpinBoxWithHelp : public QWidget
@@ -14,7 +15,7 @@ class GUIBASEDLL_EXPORT DoubleSpinBoxWithHelp : public QWidget
 	Q_OBJECT
 
 public:
-	explicit DoubleSpinBoxWithHelp(QWidget *parent = nullptr);
+	explicit DoubleSpinBoxWithHelp(QWidget* parent = nullptr);
 	~DoubleSpinBoxWithHelp();
 
 	void setMinimum(double min);
@@ -28,7 +29,7 @@ private:
 	void updateHelp();
 
 private:
-	Ui::DoubleSpinBoxWithHelp *ui;
+	Ui::DoubleSpinBoxWithHelp* ui;
 };
 
 #endif // DOUBLESPINBOXWITHHELP_H

@@ -8,7 +8,7 @@
 class MISCDLL_EXPORT ErrorMessage : public QString
 {
 public:
-		ErrorMessage(const QString& msg);
+	ErrorMessage(const QString& msg);
 };
 
 #endif // ERRORMESSAGE_H

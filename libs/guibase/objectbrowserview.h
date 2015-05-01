@@ -19,7 +19,7 @@ public:
 	QAction* moveDownAction() const {return m_moveDownAction;}
 	QAction* propertyAction() const {return m_propertyAction;}
 	QSize sizeHint() const {return QSize(250, 200);}
-	void setCommandExecution(bool exec){m_commandExecution = exec;}
+	void setCommandExecution(bool exec) {m_commandExecution = exec;}
 	void select(const QModelIndex& index);
 
 protected slots:
@@ -33,21 +33,21 @@ signals:
 	void selectionChanged();
 	void itemSelected(const QModelIndex& selected);
 	void itemDeselected(const QModelIndex& deselected);
-	void pressed(const QModelIndex &index, const QPoint& globalPos);
-	void requestDeleteItem(const QModelIndex &index);
-	void requestMoveUpItem(const QModelIndex &index);
-	void requestMoveDownItem(const QModelIndex &index);
-	void requestShowPropertyDialog(const QModelIndex &index);
-	void requestDeleteImage(const QModelIndex &index);
-	void requestMoveUpImage(const QModelIndex &index);
-	void requestMoveDownImage(const QModelIndex &index);
-	void requestDeleteMeasuredData(const QModelIndex &index);
-	void requestMoveUpMeasuredData(const QModelIndex &index);
-	void requestMoveDownMeasuredData(const QModelIndex &index);
+	void pressed(const QModelIndex& index, const QPoint& globalPos);
+	void requestDeleteItem(const QModelIndex& index);
+	void requestMoveUpItem(const QModelIndex& index);
+	void requestMoveDownItem(const QModelIndex& index);
+	void requestShowPropertyDialog(const QModelIndex& index);
+	void requestDeleteImage(const QModelIndex& index);
+	void requestMoveUpImage(const QModelIndex& index);
+	void requestMoveDownImage(const QModelIndex& index);
+	void requestDeleteMeasuredData(const QModelIndex& index);
+	void requestMoveUpMeasuredData(const QModelIndex& index);
+	void requestMoveDownMeasuredData(const QModelIndex& index);
 
 protected:
 	void mousePressEvent(QMouseEvent* event);
-	void currentChanged(const QModelIndex &current, const QModelIndex &previous);
+	void currentChanged(const QModelIndex& current, const QModelIndex& previous);
 	QPoint m_pressGlobalPos;
 	QAction* m_moveUpAction;
 	QAction* m_moveDownAction;

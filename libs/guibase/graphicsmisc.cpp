@@ -14,22 +14,22 @@
 #include <vtkTextActor.h>
 #include <vtkCaptionActor2D.h>
 
-namespace iRIC {
+namespace iRIC
+{
 
 	QPixmap pixmapFromVTKImage(QSize size, vtkImageData* image)
 	{
-		vtkUnsignedCharArray* arr = vtkUnsignedCharArray::SafeDownCast(
-			image->GetPointData()->GetScalars());
+		vtkUnsignedCharArray* arr = vtkUnsignedCharArray::SafeDownCast(image->GetPointData()->GetScalars());
 
 		int pixelcount = (size.width() + 1) * size.height();
 		int rgbsize = pixelcount * 3;
-		unsigned char *buffer = new unsigned char[rgbsize];
+		unsigned char* buffer = new unsigned char[rgbsize];
 		int linebits = (size.width() * 3 + 3) / 4 * 4;
-		for (int j = 0; j < size.height(); ++j){
-			for (int i = 0; i < size.width(); ++i){
+		for (int j = 0; j < size.height(); ++j) {
+			for (int i = 0; i < size.width(); ++i) {
 				int myOffset  = i * 3 + (size.height() - j - 1) * linebits;
 				int vtkOffset = (i + j * size.width()) * 3;
-				*(buffer + myOffset    ) = arr->GetValue(vtkOffset    ); // R
+				*(buffer + myOffset) = arr->GetValue(vtkOffset);             // R
 				*(buffer + myOffset + 1) = arr->GetValue(vtkOffset + 1); // G
 				*(buffer + myOffset + 2) = arr->GetValue(vtkOffset + 2); // B
 			}

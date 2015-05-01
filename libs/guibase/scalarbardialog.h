@@ -8,7 +8,8 @@
 
 class vtkTextPropertySettingContainer;
 
-namespace Ui {
+namespace Ui
+{
 	class ScalarBarDialog;
 }
 
@@ -17,7 +18,7 @@ class GUIBASEDLL_EXPORT ScalarBarDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit ScalarBarDialog(QWidget *parent = nullptr);
+	explicit ScalarBarDialog(QWidget* parent = nullptr);
 	~ScalarBarDialog();
 
 	void setSetting(const ScalarBarSetting& setting);
@@ -31,7 +32,7 @@ public:
 	const vtkTextPropertySettingContainer& labelTextSetting() const;
 
 private:
-	Ui::ScalarBarDialog *ui;
+	Ui::ScalarBarDialog* ui;
 };
 
 #endif // SCALARBARDIALOG_H

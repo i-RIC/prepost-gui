@@ -14,7 +14,7 @@ class GUIBASEDLL_EXPORT SliderWithValue : public QWidget
 	Q_OBJECT
 
 public:
-	explicit SliderWithValue(QWidget *parent = nullptr);
+	explicit SliderWithValue(QWidget* parent = nullptr);
 	~SliderWithValue();
 	int value();
 	void setTickInterval(int ti);

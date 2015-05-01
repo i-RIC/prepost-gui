@@ -6,7 +6,8 @@
 #include <QList>
 #include <QString>
 
-namespace Ui {
+namespace Ui
+{
 	class CgnsZoneSelectDialog;
 }
 
@@ -15,12 +16,12 @@ class GUIBASEDLL_EXPORT CgnsZoneSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit CgnsZoneSelectDialog(QWidget *parent = nullptr);
+	explicit CgnsZoneSelectDialog(QWidget* parent = nullptr);
 	~CgnsZoneSelectDialog();
 	void setZones(const QList<int>& zoneids, const QList<QString>& zonenames);
 	int zoneId();
 private:
-	Ui::CgnsZoneSelectDialog *ui;
+	Ui::CgnsZoneSelectDialog* ui;
 	QList<int> m_zoneIds;
 };
 

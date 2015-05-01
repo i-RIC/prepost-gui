@@ -18,13 +18,13 @@ vtkStandardNewMacro(vtkLegendBoxWidget);
 //-------------------------------------------------------------------------
 vtkLegendBoxWidget::vtkLegendBoxWidget()
 {
-  this->Selectable = 0;
-  this->Repositionable = 1;
+	this->Selectable = 0;
+	this->Repositionable = 1;
 
-  // Override the subclasses callback to handle the Repositionable flag.
-  this->CallbackMapper->SetCallbackMethod(vtkCommand::MouseMoveEvent,
-                                          vtkWidgetEvent::Move,
-                                          this, vtkLegendBoxWidget::MoveAction);
+	// Override the subclasses callback to handle the Repositionable flag.
+	this->CallbackMapper->SetCallbackMethod(vtkCommand::MouseMoveEvent,
+																					vtkWidgetEvent::Move,
+																					this, vtkLegendBoxWidget::MoveAction);
 }
 
 //-------------------------------------------------------------------------
@@ -33,89 +33,81 @@ vtkLegendBoxWidget::~vtkLegendBoxWidget()
 }
 
 //-----------------------------------------------------------------------------
-void vtkLegendBoxWidget::SetRepresentation(vtkLegendBoxRepresentation *rep)
+void vtkLegendBoxWidget::SetRepresentation(vtkLegendBoxRepresentation* rep)
 {
-  this->SetWidgetRepresentation(rep);
+	this->SetWidgetRepresentation(rep);
 }
 
 //-----------------------------------------------------------------------------
-void vtkLegendBoxWidget::SetLegendBoxActor(vtkLegendBoxActor *actor)
+void vtkLegendBoxWidget::SetLegendBoxActor(vtkLegendBoxActor* actor)
 {
-  vtkLegendBoxRepresentation *rep = this->GetLegendBoxRepresentation();
-  if (!rep)
-    {
-    this->CreateDefaultRepresentation();
-    rep = this->GetLegendBoxRepresentation();
-    }
+	vtkLegendBoxRepresentation* rep = this->GetLegendBoxRepresentation();
+	if (!rep) {
+		this->CreateDefaultRepresentation();
+		rep = this->GetLegendBoxRepresentation();
+	}
 
-  if (rep->GetLegendBoxActor() != actor)
-    {
-    rep->SetLegendBoxActor(actor);
-    this->Modified();
-    }
+	if (rep->GetLegendBoxActor() != actor) {
+		rep->SetLegendBoxActor(actor);
+		this->Modified();
+	}
 }
 
 //-----------------------------------------------------------------------------
-vtkLegendBoxActor *vtkLegendBoxWidget::GetLegendBoxActor()
+vtkLegendBoxActor* vtkLegendBoxWidget::GetLegendBoxActor()
 {
-  vtkLegendBoxRepresentation *rep = this->GetLegendBoxRepresentation();
-  if (!rep)
-    {
-    this->CreateDefaultRepresentation();
-    rep = this->GetLegendBoxRepresentation();
-    }
+	vtkLegendBoxRepresentation* rep = this->GetLegendBoxRepresentation();
+	if (!rep) {
+		this->CreateDefaultRepresentation();
+		rep = this->GetLegendBoxRepresentation();
+	}
 
-  return rep->GetLegendBoxActor();
+	return rep->GetLegendBoxActor();
 }
 
 //-----------------------------------------------------------------------------
 void vtkLegendBoxWidget::CreateDefaultRepresentation()
 {
-  if (!this->WidgetRep)
-    {
-    vtkLegendBoxRepresentation *rep = vtkLegendBoxRepresentation::New();
-    this->SetRepresentation(rep);
-    rep->Delete();
-    }
+	if (!this->WidgetRep) {
+		vtkLegendBoxRepresentation* rep = vtkLegendBoxRepresentation::New();
+		this->SetRepresentation(rep);
+		rep->Delete();
+	}
 }
 
 //-------------------------------------------------------------------------
 void vtkLegendBoxWidget::SetCursor(int cState)
 {
-  if (   !this->Repositionable && !this->Selectable
-      && cState == vtkBorderRepresentation::Inside)
-    {
-    // Don't have a special cursor for the inside if we cannot reposition.
-    this->RequestCursorShape(VTK_CURSOR_DEFAULT);
-    }
-  else
-    {
-    this->Superclass::SetCursor(cState);
-    }
+	if (!this->Repositionable && !this->Selectable
+			&& cState == vtkBorderRepresentation::Inside) {
+		// Don't have a special cursor for the inside if we cannot reposition.
+		this->RequestCursorShape(VTK_CURSOR_DEFAULT);
+	} else {
+		this->Superclass::SetCursor(cState);
+	}
 }
 
 //-------------------------------------------------------------------------
-void vtkLegendBoxWidget::MoveAction(vtkAbstractWidget *w)
+void vtkLegendBoxWidget::MoveAction(vtkAbstractWidget* w)
 {
-  // The the superclass handle most stuff.
-  vtkLegendBoxWidget::Superclass::MoveAction(w);
+	// The the superclass handle most stuff.
+	vtkLegendBoxWidget::Superclass::MoveAction(w);
 
-  vtkLegendBoxWidget *self = reinterpret_cast<vtkLegendBoxWidget*>(w);
-  vtkLegendBoxRepresentation *representation=self->GetLegendBoxRepresentation();
+	vtkLegendBoxWidget* self = reinterpret_cast<vtkLegendBoxWidget*>(w);
+	vtkLegendBoxRepresentation* representation=self->GetLegendBoxRepresentation();
 
-  // Handle the case where we suppress widget translation.
-  if (   !self->Repositionable
-      && (   representation->GetInteractionState()
-          == vtkBorderRepresentation::Inside ) )
-    {
-    representation->MovingOff();
-    }
+	// Handle the case where we suppress widget translation.
+	if (!self->Repositionable
+			&& (representation->GetInteractionState()
+					== vtkBorderRepresentation::Inside)) {
+		representation->MovingOff();
+	}
 }
 
 //-------------------------------------------------------------------------
 void vtkLegendBoxWidget::PrintSelf(ostream& os, vtkIndent indent)
 {
-  this->Superclass::PrintSelf(os,indent);
+	this->Superclass::PrintSelf(os,indent);
 
-  os << indent << "Repositionable: " << this->Repositionable << endl;
+	os << indent << "Repositionable: " << this->Repositionable << endl;
 }

@@ -2,7 +2,7 @@
 
 #include <QColorDialog>
 
-ColorEditWidget::ColorEditWidget(QWidget *parent) :
+ColorEditWidget::ColorEditWidget(QWidget* parent) :
 	QLabel(parent)
 {
 	setFrameShape(QFrame::WinPanel);
@@ -11,7 +11,7 @@ ColorEditWidget::ColorEditWidget(QWidget *parent) :
 	setMaximumSize(45, 20);
 }
 
-void ColorEditWidget::setColor(const QColor &c)
+void ColorEditWidget::setColor(const QColor& c)
 {
 	m_color = c;
 	QString r = QString::number(m_color.red());
@@ -33,13 +33,13 @@ void ColorEditWidget::mousePressEvent(QMouseEvent* /*ev*/)
 	setStyleSheet("");
 	QColor color = QColorDialog::getColor(this->color(), this);
 	bool changed = false;
-	if (color.isValid()){
+	if (color.isValid()) {
 		changed = (m_color != color);
 		setColor(color);
-	}else{
+	} else {
 		setStyleSheet(ss);
 	}
-	if (changed){
+	if (changed) {
 		emit colorChanged(color);
 	}
 }

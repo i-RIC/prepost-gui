@@ -8,13 +8,14 @@
 class GUIBASEDLL_EXPORT RealNumberEditWidget : public QLineEdit
 {
 	Q_OBJECT
+
 public:
 	RealNumberEditWidget(QWidget* parent = nullptr);
-	void setEventCheck(bool check = true){
+	void setEventCheck(bool check = true) {
 		m_eventCheck = check;
 	}
 	void setValue(double newvalue);
-	double value(){
+	double value() {
 		return m_doubleValue;
 	}
 

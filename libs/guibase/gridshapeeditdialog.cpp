@@ -1,7 +1,7 @@
 #include "gridshapeeditdialog.h"
 #include "ui_gridshapeeditdialog.h"
 
-GridShapeEditDialog::GridShapeEditDialog(QWidget *parent) :
+GridShapeEditDialog::GridShapeEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridShapeEditDialog)
 {
@@ -64,7 +64,7 @@ QColor GridShapeEditDialog::indexColor()
 
 void GridShapeEditDialog::setShape(Shape shape)
 {
-	if (shape == Outline){
+	if (shape == Outline) {
 		ui->outlineRadioButton->setChecked(true);
 	} else {
 		ui->allRadioButton->setChecked(true);
@@ -73,7 +73,7 @@ void GridShapeEditDialog::setShape(Shape shape)
 
 GridShapeEditDialog::Shape GridShapeEditDialog::shape()
 {
-	if (ui->outlineRadioButton->isChecked()){
+	if (ui->outlineRadioButton->isChecked()) {
 		return Outline;
 	} else {
 		return Wireframe;
@@ -82,7 +82,7 @@ GridShapeEditDialog::Shape GridShapeEditDialog::shape()
 
 void GridShapeEditDialog::outlineToggled(bool toggled)
 {
-	if (toggled){
+	if (toggled) {
 		ui->indexVisibleCheckBox->setChecked(false);
 	}
 }

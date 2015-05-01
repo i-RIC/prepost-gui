@@ -13,9 +13,9 @@ namespace iRIC
 	{
 		// if the target file already exists, remove it first.
 		QFile f(zipfilename);
-		if (f.exists()){
+		if (f.exists()) {
 			bool ret = f.remove(zipfilename);
-			if (ret == false){
+			if (ret == false) {
 				// failed to remove!
 				return false;
 			}
@@ -41,7 +41,8 @@ namespace iRIC
 		QProcess* process = createUnzipArchiveProcess(zipfilename, targetfolder);
 		process->waitForFinished(-1);
 	}
-	QProcess* createUnzipArchiveProcess(const QString& zipfilename, const QString& targetfolder){
+	QProcess* createUnzipArchiveProcess(const QString& zipfilename, const QString& targetfolder)
+	{
 		QString exepath = QCoreApplication::instance()->QCoreApplication::instance()->applicationDirPath();
 		QString unzipexe = QDir(exepath).absoluteFilePath("unzip.exe");
 		QProcess* zipprocess = new QProcess();

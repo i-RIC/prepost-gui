@@ -17,23 +17,23 @@ public:
 	};
 	/// Constructor
 	vtkTextPropertySettingContainer();
-	virtual ~vtkTextPropertySettingContainer(){}
+	virtual ~vtkTextPropertySettingContainer() {}
 
 	FontFamily fontFamily() const {return m_fontFamily;}
-	void setFontFamily(FontFamily ff){m_fontFamily = ff;}
+	void setFontFamily(FontFamily ff) {m_fontFamily = ff;}
 	const QColor& fontColor() const {return m_fontColor;}
-	void setFontColor(const QColor& c){m_fontColor = c;}
+	void setFontColor(const QColor& c) {m_fontColor = c;}
 	int fontSize() const {return m_fontSize;}
-	void setFontSize(int size){m_fontSize = size;}
+	void setFontSize(int size) {m_fontSize = size;}
 	bool isBold() const {return m_isBold;}
-	void setBold(bool bold){m_isBold = bold;}
+	void setBold(bool bold) {m_isBold = bold;}
 	bool isItalic() const {return m_isItalic;}
-	void setItalic(bool italic){m_isItalic = italic;}
+	void setItalic(bool italic) {m_isItalic = italic;}
 	bool isShadow() const {return m_isShadow;}
-	void setShadow(bool shadow){m_isShadow = shadow;}
+	void setShadow(bool shadow) {m_isShadow = shadow;}
 
-	void load(const QDomNode &);
-	void save(QXmlStreamWriter &) const;
+	void load(const QDomNode&);
+	void save(QXmlStreamWriter&) const;
 
 	void getSetting(vtkTextProperty* prop);
 	void applySetting(vtkTextProperty* prop);

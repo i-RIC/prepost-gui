@@ -11,11 +11,11 @@ public:
 	/// Constructor
 	LineStyleInformation();
 	qreal width() const {return m_width;}
-	void setWidth(qreal w){m_width = w;}
+	void setWidth(qreal w) {m_width = w;}
 	const QColor& color() const {return m_color;}
-	void setColor(const QColor& c){m_color = c;}
+	void setColor(const QColor& c) {m_color = c;}
 	Qt::PenStyle penStyle() const {return m_penStyle;}
-	void setPenStyle(Qt::PenStyle ps){m_penStyle = ps;}
+	void setPenStyle(Qt::PenStyle ps) {m_penStyle = ps;}
 
 private:
 	qreal m_width;

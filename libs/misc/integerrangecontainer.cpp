@@ -2,12 +2,12 @@
 
 void IntegerRangeContainer::append(unsigned int newval)
 {
-	if (m_ranges.size() == 0){
+	if (m_ranges.size() == 0) {
 		appendNewRange(newval);
 		return;
 	}
 	Range& lastRange = m_ranges.last();
-	if (lastRange.to == newval - 1){
+	if (lastRange.to == newval - 1) {
 		lastRange.to = newval;
 	} else {
 		appendNewRange(newval);

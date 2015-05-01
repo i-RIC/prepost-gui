@@ -15,7 +15,7 @@ public:
 	const QString& name() const {return m_name;}
 	const QString& caption() const {return m_caption;}
 	const QString& searchTarget() const {return m_searchTarget;}
-	void setName(const QString& name){m_name = name;}
+	void setName(const QString& name) {m_name = name;}
 	void setCaption(const QString& caption);
 	void init();
 	void free();

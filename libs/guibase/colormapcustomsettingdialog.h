@@ -8,7 +8,8 @@
 #include <QList>
 #include <QColor>
 
-namespace Ui {
+namespace Ui
+{
 	class ColorMapCustomSettingDialog;
 }
 
@@ -24,7 +25,7 @@ private:
 	const static int ROWHEIGHT = 20;
 
 public:
-	explicit ColorMapCustomSettingDialog(QWidget *parent = nullptr);
+	explicit ColorMapCustomSettingDialog(QWidget* parent = nullptr);
 	~ColorMapCustomSettingDialog();
 	void setCustomSetting(const ColorMapSettingWidget::CustomSetting& setting);
 	ColorMapSettingWidget::CustomSetting customSetting();
@@ -39,7 +40,7 @@ private slots:
 	void handleItemClick(QTableWidgetItem* item);
 
 private:
-	Ui::ColorMapCustomSettingDialog *ui;
+	Ui::ColorMapCustomSettingDialog* ui;
 	QList<QColor> m_arbitraryColors;
 };
 

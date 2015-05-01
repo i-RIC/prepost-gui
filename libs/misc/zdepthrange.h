@@ -12,12 +12,12 @@ public:
 
 	double min() const {return m_min;}
 	double max() const {return m_max;}
-	void setMin(double min){m_min = min;}
-	void setMax(double max){m_max = max;}
-	void setRange(double min, double max){m_min = min;m_max = max;}
+	void setMin(double min) {m_min = min;}
+	void setMax(double max) {m_max = max;}
+	void setRange(double min, double max) {m_min = min; m_max = max;}
 	double width() const {return m_max - m_min;}
 	unsigned int itemCount() const {return m_itemCount;}
-	void setItemCount(unsigned int count){m_itemCount = count;}
+	void setItemCount(unsigned int count) {m_itemCount = count;}
 
 private:
 	double m_min;

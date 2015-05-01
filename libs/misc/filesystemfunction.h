@@ -5,7 +5,8 @@ class QString;
 
 #include "misc_global.h"
 
-namespace iRIC {
+namespace iRIC
+{
 	/// Mkdir recursively
 	bool MISCDLL_EXPORT mkdirRecursively(const QString& dirname);
 	/// Remove folder recursively

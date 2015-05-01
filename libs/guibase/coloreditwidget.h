@@ -5,14 +5,18 @@
 
 #include <QLabel>
 
-class GUIBASEDLL_EXPORT ColorEditWidget : public QLabel {
+class GUIBASEDLL_EXPORT ColorEditWidget : public QLabel
+{
 	Q_OBJECT
+
 public:
-	ColorEditWidget(QWidget *parent = nullptr);
+	ColorEditWidget(QWidget* parent = nullptr);
 	void setColor(const QColor& c);
 	QColor color();
+
 signals:
 	void colorChanged(const QColor& c);
+
 protected:
 	void mousePressEvent(QMouseEvent* ev);
 	QColor m_color;

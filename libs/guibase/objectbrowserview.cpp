@@ -32,16 +32,16 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent)
 
 void ObjectBrowserView::deleteCurrentItem()
 {
-	if (QMessageBox::No == QMessageBox::warning(this, tr("Delete item"), tr("Are you sure you want to delete this item?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)){
+	if (QMessageBox::No == QMessageBox::warning(this, tr("Delete item"), tr("Are you sure you want to delete this item?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
 		return;
 	}
 	QModelIndex selected = *(selectedIndexes().begin());
 	QStandardItemModel* itemModel = dynamic_cast<QStandardItemModel*>(model());
 	QStandardItem* parentItem = itemModel->itemFromIndex(selected.parent());
 	QString qstr = parentItem->data(Qt::UserRole + 10).toString();
-	if (qstr == "BACKGROUNDIMAGES"){
+	if (qstr == "BACKGROUNDIMAGES") {
 		emit requestDeleteImage(selected);
-	} else if (qstr == "MEASUREDDATAS"){
+	} else if (qstr == "MEASUREDDATAS") {
 		emit requestDeleteMeasuredData(selected);
 	} else {
 		emit requestDeleteItem(selected);
@@ -54,7 +54,7 @@ void ObjectBrowserView::moveUpCurrentItem()
 	QStandardItemModel* itemModel = dynamic_cast<QStandardItemModel*>(model());
 	QStandardItem* parentItem = itemModel->itemFromIndex(selected.parent());
 	QString qstr = parentItem->data(Qt::UserRole + 10).toString();
-	if (qstr == "BACKGROUNDIMAGES"){
+	if (qstr == "BACKGROUNDIMAGES") {
 		emit requestMoveUpImage(selected);
 	} else {
 		emit requestMoveUpItem(selected);
@@ -67,7 +67,7 @@ void ObjectBrowserView::moveDownCurrentItem()
 	QStandardItemModel* itemModel = dynamic_cast<QStandardItemModel*>(model());
 	QStandardItem* parentItem = itemModel->itemFromIndex(selected.parent());
 	QString qstr = parentItem->data(Qt::UserRole + 10).toString();
-	if (qstr == "BACKGROUNDIMAGES"){
+	if (qstr == "BACKGROUNDIMAGES") {
 		emit requestMoveDownImage(selected);
 	} else {
 		emit requestMoveDownItem(selected);
@@ -96,21 +96,18 @@ class ObjectBrowserViewCurrentChangeCommand : public QUndoCommand
 {
 public:
 	ObjectBrowserViewCurrentChangeCommand(const QModelIndex& before, const QModelIndex& after, ObjectBrowserView* view)
-		: QUndoCommand(QObject::tr("Selection Change"))
-	{
+		: QUndoCommand(QObject::tr("Selection Change")) {
 		m_before = before;
 		m_after = after;
 		m_view = view;
 	}
-	void undo()
-	{
+	void undo() {
 		m_view->setCommandExecution(true);
 		m_view->selectionModel()->clear();
 		m_view->selectionModel()->setCurrentIndex(m_before, QItemSelectionModel::SelectCurrent);
 		m_view->setCommandExecution(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_view->setCommandExecution(true);
 		m_view->selectionModel()->clear();
 		m_view->selectionModel()->setCurrentIndex(m_after, QItemSelectionModel::SelectCurrent);
@@ -122,34 +119,30 @@ private:
 	ObjectBrowserView* m_view;
 };
 
-void ObjectBrowserView::currentChanged(const QModelIndex &current, const QModelIndex &previous)
+void ObjectBrowserView::currentChanged(const QModelIndex& current, const QModelIndex& previous)
 {
 //	if (m_isPushing){return;}
-/*
-	if (! m_commandExecution){
-		m_isPushing = true;
-		iRICUndoStack::instance().push(new ObjectBrowserViewCurrentChangeCommand(previous, current, this));
-		m_isPushing = false;
-	}
-*/
-	if (previous.isValid()){emit itemDeselected(previous);}
-	if (current.isValid()){emit itemSelected(current);}
+	/*
+		if (! m_commandExecution){
+			m_isPushing = true;
+			iRICUndoStack::instance().push(new ObjectBrowserViewCurrentChangeCommand(previous, current, this));
+			m_isPushing = false;
+		}
+	*/
+	if (previous.isValid()) {emit itemDeselected(previous);}
+	if (current.isValid()) {emit itemSelected(current);}
 	emit selectionChanged();
 }
 
 void ObjectBrowserView::select(const QModelIndex& newindex)
 {
 	QModelIndex oldindex;
-	if (selectedIndexes().count() == 0){
+	if (selectedIndexes().count() == 0) {
 		oldindex = newindex;
-	}else{
+	} else {
 		oldindex = *(selectedIndexes().begin());
 	}
 	QUndoCommand* command = new ObjectBrowserViewCurrentChangeCommand(oldindex, newindex, this);
-//	if (m_commandExecution){
-		command->redo();
-		delete command;
-//	}else{
-//		iRICUndoStack::instance().push(command);
-//	}
+	command->redo();
+	delete command;
 }

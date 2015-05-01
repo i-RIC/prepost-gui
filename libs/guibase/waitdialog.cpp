@@ -2,7 +2,7 @@
 #include "ui_waitdialog.h"
 #include <cmath>
 
-WaitDialog::WaitDialog(QWidget *parent) :
+WaitDialog::WaitDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::WaitDialog)
 {
@@ -17,7 +17,7 @@ WaitDialog::~WaitDialog()
 	delete ui;
 }
 
-void WaitDialog::setMessage(const QString &message)
+void WaitDialog::setMessage(const QString& message)
 {
 	ui->messageLabel->setText(message);
 }
@@ -39,24 +39,25 @@ void WaitDialog::setRange(int min, int max)
 
 void WaitDialog::setProgress(int value)
 {
-	if (m_unknownLimitMode){
+	if (m_unknownLimitMode) {
 		int val = 100 * (1 - exp(- value / static_cast<double>(m_param)));
 		ui->progressBar->setValue(val);
-	}else{
+	} else {
 		ui->progressBar->setValue(value);
 	}
 }
 
 int WaitDialog::progress() const
 {
-	if (m_unknownLimitMode){
+	if (m_unknownLimitMode) {
 		// does not work correctly.
 		return 0;
 	}
 	return ui->progressBar->value();
 }
 
-void WaitDialog::setFinished(){
+void WaitDialog::setFinished()
+{
 	ui->progressBar->setValue(100);
 }
 

@@ -12,7 +12,7 @@ const QString TimeFormat::formattedString(double seconds, Format format)
 {
 	QString ret;
 	seconds = iRIC::timeSecondValue(seconds);
-	switch (format){
+	switch (format) {
 	case fmSecond:
 		ret = secondString(seconds);
 		ret.append(" sec");
@@ -32,13 +32,13 @@ const QString TimeFormat::formattedString(double seconds, Format format)
 
 const QString TimeFormat::secondString(double seconds, int secondLength)
 {
-	if (seconds > INTDISPLAY_LIMIT){
+	if (seconds > INTDISPLAY_LIMIT) {
 		return QString::number(seconds);
 	}
 	int milisec = static_cast<int>(seconds * 1000);
 	int tmpint = milisec - (milisec / 1000) * 1000;
 	QVector<int> seclist;
-	for (int i = 0; i < 3; ++i){
+	for (int i = 0; i < 3; ++i) {
 		int tmpint2 = tmpint;
 		tmpint2 /= 10;
 		tmpint2 *= 10;
@@ -46,8 +46,8 @@ const QString TimeFormat::secondString(double seconds, int secondLength)
 		tmpint = tmpint2 / 10;
 	}
 	int precision = 3;
-	for (int i = 0; i < 3; ++i){
-		if (seclist[i] == 0){
+	for (int i = 0; i < 3; ++i) {
+		if (seclist[i] == 0) {
 			-- precision;
 		} else {
 			break;
@@ -55,10 +55,10 @@ const QString TimeFormat::secondString(double seconds, int secondLength)
 	}
 
 	double sec = milisec / 1000.;
-	if (precision == 0){
+	if (precision == 0) {
 		int intsec = static_cast<int>(sec);
 		QString str;
-		if (secondLength == 2){
+		if (secondLength == 2) {
 			str.sprintf("%02d", intsec);
 		} else {
 			str.sprintf("%d", intsec);
@@ -69,7 +69,7 @@ const QString TimeFormat::secondString(double seconds, int secondLength)
 		QString header;
 		QString format("%1.%2f");
 		QString f2;
-		if (secondLength == 2){
+		if (secondLength == 2) {
 			header = "%0";
 		} else {
 			header = "%";
@@ -84,7 +84,7 @@ const QString TimeFormat::minuteSecondString(double seconds, int minuteLength)
 {
 	QString fmt("%1:%2");
 	double minutes = std::floor(seconds / 60);
-	if (minutes > INTDISPLAY_LIMIT){
+	if (minutes > INTDISPLAY_LIMIT) {
 		return fmt.arg(minutes, minuteLength).arg(secondString(seconds - minutes * 60, 2));
 	} else {
 		int minutes = static_cast<int>(seconds / 60);
@@ -95,9 +95,9 @@ const QString TimeFormat::minuteSecondString(double seconds, int minuteLength)
 const QString TimeFormat::hourMinuteSecondString(double seconds, int hourLength)
 {
 	double hours = std::floor(seconds / 3600);
-	if (hours == 0){return minuteSecondString(seconds);}
+	if (hours == 0) {return minuteSecondString(seconds);}
 	QString fmt("%1:%2");
-	if (hours > INTDISPLAY_LIMIT){
+	if (hours > INTDISPLAY_LIMIT) {
 		return fmt.arg(hours, hourLength).arg(minuteSecondString(seconds - hours * 3600, 2));
 	} else {
 		int hours = static_cast<int>(seconds / 3600);
@@ -108,8 +108,8 @@ const QString TimeFormat::hourMinuteSecondString(double seconds, int hourLength)
 const QString TimeFormat::dayHourMinuteSecondString(double seconds)
 {
 	double days = std::floor(seconds / 86400);
-	if (days == 0){return hourMinuteSecondString(seconds);}
-	if (days > INTDISPLAY_LIMIT){
+	if (days == 0) {return hourMinuteSecondString(seconds);}
+	if (days > INTDISPLAY_LIMIT) {
 		QString fmt("%1:%2");
 		return fmt.arg(days).arg(hourMinuteSecondString(seconds - days * 86400, 2));
 	} else {

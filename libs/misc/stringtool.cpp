@@ -10,7 +10,8 @@
 #define CSVPARSER_STATUS_STR          2
 #define CSVPARSER_STATUS_INNERQUOT    3
 
-namespace iRIC {
+namespace iRIC
+{
 	std::string toStr(const QString& str)
 	{
 		std::string ret = str.toLocal8Bit().constData();
@@ -33,8 +34,7 @@ namespace iRIC {
 		b = qstring.mid(5, 2).toInt(&bOK, 16);
 
 		QColor color(0, 0, 0);
-		if(rOK && gOK && bOK)
-		{
+		if (rOK && gOK && bOK) {
 			color.setRgb(r, g, b);
 		}
 
@@ -61,20 +61,20 @@ namespace iRIC {
 		bool wrapped = false;
 		QList<QString> ret;
 		QString current;
-		while (index < line.count()){
+		while (index < line.count()) {
 			QChar c = line.at(index);
-			if (c == '\r' || c == '\n'){continue;}
-			if (wrapped){
-				if (c == '"'){
+			if (c == '\r' || c == '\n') {continue;}
+			if (wrapped) {
+				if (c == '"') {
 					wrapped = false;
 				} else {
 					current.append(c);
 				}
 			} else {
-				if (c == ','){
+				if (c == ',') {
 					ret.append(current);
 					current = "";
-				} else if (c == '"'){
+				} else if (c == '"') {
 					wrapped = true;
 				} else {
 					current.append(c);
@@ -82,7 +82,7 @@ namespace iRIC {
 			}
 			++ index;
 		}
-		if (! current.isEmpty()){
+		if (! current.isEmpty()) {
 			ret.append(current);
 		}
 		return ret;

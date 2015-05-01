@@ -8,9 +8,10 @@
 class GUIBASEDLL_EXPORT MarginWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
-	explicit MarginWidget(QWidget *parent = nullptr);
-	void setMargin(int m){m_margin = m;}
+	explicit MarginWidget(QWidget* parent = nullptr);
+	void setMargin(int m) {m_margin = m;}
 	void setWidget(QWidget* w);
 	QWidget* widget() const {return m_widget;}
 

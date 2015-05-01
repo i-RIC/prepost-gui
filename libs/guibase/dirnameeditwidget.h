@@ -5,15 +5,17 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class DirnameEditWidget;
 }
 
 class GUIBASEDLL_EXPORT DirnameEditWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
-	explicit DirnameEditWidget(QWidget *parent = nullptr);
+	explicit DirnameEditWidget(QWidget* parent = nullptr);
 	~DirnameEditWidget();
 	void setDirname(const QString& dirname);
 	const QString dirname() const;
@@ -22,7 +24,7 @@ private slots:
 	void openDialog();
 
 private:
-	Ui::DirnameEditWidget *ui;
+	Ui::DirnameEditWidget* ui;
 };
 
 #endif // DIRNAMEEDITWIDGET_H

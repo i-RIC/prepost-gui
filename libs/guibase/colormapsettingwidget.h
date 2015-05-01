@@ -7,16 +7,19 @@
 #include <QColor>
 #include <QList>
 
-namespace Ui {
+namespace Ui
+{
 	class ColorMapSettingWidget;
 }
 
-class GUIBASEDLL_EXPORT ColorMapSettingWidget : public QWidget {
+class GUIBASEDLL_EXPORT ColorMapSettingWidget : public QWidget
+{
 	Q_OBJECT
 
 public:
 	enum ColorMap {Rainbow, Grayscale, Custom};
-	class CustomSetting {
+	class CustomSetting
+	{
 	public:
 		struct CustomColor {
 			double value;
@@ -46,7 +49,7 @@ public:
 			midValue = 0;
 		}
 	};
-	ColorMapSettingWidget(QWidget *parent = nullptr);
+	ColorMapSettingWidget(QWidget* parent = nullptr);
 	~ColorMapSettingWidget();
 	void setColorMap(ColorMap colorMap);
 	ColorMap colorMap();
@@ -62,7 +65,7 @@ private slots:
 	void openCustomSettingDialog();
 
 private:
-	Ui::ColorMapSettingWidget *ui;
+	Ui::ColorMapSettingWidget* ui;
 
 	CustomSetting m_customSetting;
 };

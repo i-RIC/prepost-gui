@@ -1,7 +1,7 @@
 #include "itemselectingdialog.h"
 #include "ui_itemselectingdialog.h"
 
-ItemSelectingDialog::ItemSelectingDialog(QWidget *parent) :
+ItemSelectingDialog::ItemSelectingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::ItemSelectingDialog)
 {

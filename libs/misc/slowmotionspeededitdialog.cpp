@@ -1,7 +1,7 @@
 #include "slowmotionspeededitdialog.h"
 #include "ui_slowmotionspeededitdialog.h"
 
-SlowmotionSpeedEditDialog::SlowmotionSpeedEditDialog(QWidget *parent) :
+SlowmotionSpeedEditDialog::SlowmotionSpeedEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::SlowmotionSpeedEditDialog)
 {

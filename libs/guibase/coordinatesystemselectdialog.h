@@ -8,8 +8,9 @@
 class CoordinateSystem;
 class CoordinateSystemBuilder;
 
-namespace Ui {
-class CoordinateSystemSelectDialog;
+namespace Ui
+{
+	class CoordinateSystemSelectDialog;
 }
 
 class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
@@ -17,11 +18,11 @@ class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit CoordinateSystemSelectDialog(QWidget *parent = nullptr);
+	explicit CoordinateSystemSelectDialog(QWidget* parent = nullptr);
 	~CoordinateSystemSelectDialog();
-	void setBuilder(CoordinateSystemBuilder* builder){m_builder = builder;}
+	void setBuilder(CoordinateSystemBuilder* builder) {m_builder = builder;}
 	void setCoordinateSystem(CoordinateSystem* cs);
-	CoordinateSystem* coordinateSystem(){return m_currentSystem;}
+	CoordinateSystem* coordinateSystem() {return m_currentSystem;}
 
 private slots:
 	void updateList();
@@ -33,7 +34,7 @@ private:
 	QList<CoordinateSystem*> m_listSystems;
 	CoordinateSystem* m_currentSystem;
 
-	Ui::CoordinateSystemSelectDialog *ui;
+	Ui::CoordinateSystemSelectDialog* ui;
 };
 
 #endif // COORDINATESYSTEMSELECTDIALOG_H

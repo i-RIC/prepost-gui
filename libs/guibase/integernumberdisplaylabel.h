@@ -13,9 +13,9 @@ public:
 		cmEmpty,
 		cmLines
 	};
-	explicit IntegerNumberDisplayLabel(QWidget *parent = nullptr);
-	ClearMode clearMode(){return m_clearMode;}
-	void setClearMode(ClearMode cm){m_clearMode = cm;}
+	explicit IntegerNumberDisplayLabel(QWidget* parent = nullptr);
+	ClearMode clearMode() {return m_clearMode;}
+	void setClearMode(ClearMode cm) {m_clearMode = cm;}
 
 public slots:
 	void setValue(unsigned int value);

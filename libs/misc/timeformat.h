@@ -5,9 +5,10 @@
 
 class QString;
 
-class MISCDLL_EXPORT TimeFormat{
+class MISCDLL_EXPORT TimeFormat
+{
 public:
-	enum Format{
+	enum Format {
 		fmSecond, ///< ss sec
 		fmMinuteSecond, ///< mm:ss
 		fmHourMinuteSecond, ///< hh:mm:ss

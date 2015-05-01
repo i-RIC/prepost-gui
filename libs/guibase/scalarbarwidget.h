@@ -9,15 +9,17 @@
 
 class ScalarBarSetting;
 
-namespace Ui {
+namespace Ui
+{
 	class ScalarBarWidget;
 }
 
-class GUIBASEDLL_EXPORT ScalarBarWidget : public QWidget {
+class GUIBASEDLL_EXPORT ScalarBarWidget : public QWidget
+{
 	Q_OBJECT
 
 public:
-	explicit ScalarBarWidget(QWidget *parent = nullptr);
+	explicit ScalarBarWidget(QWidget* parent = nullptr);
 	~ScalarBarWidget();
 
 	void setSetting(const ScalarBarSetting& setting);
@@ -38,7 +40,7 @@ private:
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 
-	Ui::ScalarBarWidget *ui;
+	Ui::ScalarBarWidget* ui;
 };
 
 #endif // SCALARBARWIDGET_H

@@ -1,19 +1,21 @@
 #include "latitudelongitude.h"
 #include <cmath>
 
-double LatitudeLongitudeAngle::value() const {
+double LatitudeLongitudeAngle::value() const
+{
 	double tmpdbl = m_angle + m_minute / 60. + m_second / 3600.;
-	if (m_flag){
+	if (m_flag) {
 		return tmpdbl;
-	}else{
+	} else {
 		return - tmpdbl;
 	}
 }
 
-void LatitudeLongitudeAngle::setValue(double value){
-	if (value >= 0){
+void LatitudeLongitudeAngle::setValue(double value)
+{
+	if (value >= 0) {
 		m_flag = true;
-	}else{
+	} else {
 		m_flag = false;
 		value = - value;
 	}

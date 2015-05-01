@@ -1,6 +1,6 @@
 #include "objectbrowser.h"
 
-ObjectBrowser::ObjectBrowser(QWidget *parent)
+ObjectBrowser::ObjectBrowser(QWidget* parent)
 	: QDockWidget(parent)
 {
 

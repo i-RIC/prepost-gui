@@ -1,9 +1,9 @@
 #include "doublespinboxwithhelp.h"
 #include "ui_doublespinboxwithhelp.h"
 
-DoubleSpinBoxWithHelp::DoubleSpinBoxWithHelp(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::DoubleSpinBoxWithHelp)
+DoubleSpinBoxWithHelp::DoubleSpinBoxWithHelp(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::DoubleSpinBoxWithHelp)
 {
 	ui->setupUi(this);
 }

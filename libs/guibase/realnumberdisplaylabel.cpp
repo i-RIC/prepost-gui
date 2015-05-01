@@ -1,6 +1,6 @@
 #include "realnumberdisplaylabel.h"
 
-RealNumberDisplayLabel::RealNumberDisplayLabel(QWidget *parent) :
+RealNumberDisplayLabel::RealNumberDisplayLabel(QWidget* parent) :
 	QLabel(parent)
 {
 	setFrameShape(QFrame::WinPanel);
@@ -19,9 +19,9 @@ void RealNumberDisplayLabel::setValue(double value)
 
 void RealNumberDisplayLabel::clear()
 {
-	if (m_clearMode == cmLines){
+	if (m_clearMode == cmLines) {
 		setText(tr("------"));
-	}else{
+	} else {
 		setText("");
 	}
 }

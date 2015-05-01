@@ -1,7 +1,8 @@
 #include "colortool.h"
 #include <QColor>
 
-namespace iRIC {
+namespace iRIC
+{
 
 	void QColorToVTKColor(const QColor& from, double to[3])
 	{

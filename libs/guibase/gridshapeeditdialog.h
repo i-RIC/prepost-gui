@@ -8,16 +8,18 @@
 
 class QComboBox;
 
-namespace Ui {
+namespace Ui
+{
 	class GridShapeEditDialog;
 }
 
-class GUIBASEDLL_EXPORT GridShapeEditDialog : public QDialog {
+class GUIBASEDLL_EXPORT GridShapeEditDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
 	enum Shape {Outline, Wireframe};
-	GridShapeEditDialog(QWidget *parent = nullptr);
+	GridShapeEditDialog(QWidget* parent = nullptr);
 	~GridShapeEditDialog();
 	void hideShape();
 	void hideIndex();
@@ -34,7 +36,7 @@ private slots:
 	void outlineToggled(bool toggled);
 
 private:
-	Ui::GridShapeEditDialog *ui;
+	Ui::GridShapeEditDialog* ui;
 };
 
 #endif // GRIDSHAPEEDITDIALOG_H

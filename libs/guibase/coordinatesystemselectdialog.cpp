@@ -3,7 +3,7 @@
 #include "coordinatesystembuilder.h"
 #include "coordinatesystem.h"
 
-CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget *parent) :
+CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::CoordinateSystemSelectDialog)
 {
@@ -18,7 +18,8 @@ CoordinateSystemSelectDialog::~CoordinateSystemSelectDialog()
 	delete ui;
 }
 
-void CoordinateSystemSelectDialog::setCoordinateSystem(CoordinateSystem* cs){
+void CoordinateSystemSelectDialog::setCoordinateSystem(CoordinateSystem* cs)
+{
 	m_currentSystem = cs;
 	updateList();
 }
@@ -34,20 +35,20 @@ void CoordinateSystemSelectDialog::updateList()
 	ui->listWidget->addItem(tr("(Not Specified)"));
 	m_listSystems.append(0);
 
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		CoordinateSystem* cs = list.at(i);
-		if (cs->searchTarget().contains(searchStr)){
+		if (cs->searchTarget().contains(searchStr)) {
 			ui->listWidget->addItem(cs->caption());
 			m_listSystems.append(cs);
 		}
 	}
 	int index = m_listSystems.indexOf(m_currentSystem);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->listWidget->setCurrentRow(index);
 }
 
 void CoordinateSystemSelectDialog::updateCurrent(int index)
 {
-	if (index == -1){return;}
+	if (index == -1) {return;}
 	m_currentSystem = m_listSystems.at(index);
 }

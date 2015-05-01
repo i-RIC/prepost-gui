@@ -1,7 +1,7 @@
 #include "structuredgridregionselectwidget.h"
 #include "ui_structuredgridregionselectwidget.h"
 
-StructuredGridRegionSelectWidget::StructuredGridRegionSelectWidget(QWidget *parent) :
+StructuredGridRegionSelectWidget::StructuredGridRegionSelectWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::StructuredGridRegionSelectWidget)
 {
@@ -93,28 +93,28 @@ StructuredGridRegion::Range2d StructuredGridRegionSelectWidget::region()
 
 void StructuredGridRegionSelectWidget::handleIMinChange(int imin)
 {
-	if (ui->iMaxSlider->value() < imin){
+	if (ui->iMaxSlider->value() < imin) {
 		ui->iMaxSlider->setValue(imin);
 	}
 }
 
 void StructuredGridRegionSelectWidget::handleIMaxChange(int imax)
 {
-	if (ui->iMinSlider->value() > imax){
+	if (ui->iMinSlider->value() > imax) {
 		ui->iMinSlider->setValue(imax);
 	}
 }
 
 void StructuredGridRegionSelectWidget::handleJMinChange(int jmin)
 {
-	if (ui->jMaxSlider->value() < jmin){
+	if (ui->jMaxSlider->value() < jmin) {
 		ui->jMaxSlider->setValue(jmin);
 	}
 }
 
 void StructuredGridRegionSelectWidget::handleJMaxChange(int jmax)
 {
-	if (ui->jMinSlider->value() > jmax){
+	if (ui->jMinSlider->value() > jmax) {
 		ui->jMinSlider->setValue(jmax);
 	}
 }

@@ -12,16 +12,16 @@ class MISCDLL_EXPORT ArrowSettingContainer : public XmlAttributeContainer
 
 public:
 	ArrowSettingContainer();
-	virtual ~ArrowSettingContainer(){}
+	virtual ~ArrowSettingContainer() {}
 	/// The size of cone of arrow (in pixels)
 	int arrowSize() const {return m_arrowSize;}
 	/// The width of arrow axis (in pixels)
 	int lineWidth() const {return m_lineWidth;}
-	void setArrowSize(int size){m_arrowSize = size;}
-	void setLineWidth(int width){m_lineWidth = width;}
+	void setArrowSize(int size) {m_arrowSize = size;}
+	void setLineWidth(int width) {m_lineWidth = width;}
 
-	void load(const QDomNode &);
-	void save(QXmlStreamWriter &) const;
+	void load(const QDomNode&);
+	void save(QXmlStreamWriter&) const;
 
 private:
 	int m_arrowSize;

@@ -6,15 +6,17 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
+namespace Ui
+{
 	class ItemSelectingDialog;
 }
 
 class GUIBASEDLL_EXPORT ItemSelectingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
-	explicit ItemSelectingDialog(QWidget *parent = nullptr);
+	explicit ItemSelectingDialog(QWidget* parent = nullptr);
 	~ItemSelectingDialog();
 	void setMessage(const QString& message);
 	void setItems(const QList<QString>& items);
@@ -22,7 +24,7 @@ public:
 	int selectIndex();
 
 private:
-	Ui::ItemSelectingDialog *ui;
+	Ui::ItemSelectingDialog* ui;
 };
 
 #endif // ITEMSELECTINGDIALOG_H

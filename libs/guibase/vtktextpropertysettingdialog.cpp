@@ -3,7 +3,7 @@
 
 #include "vtktextpropertysettingcontainer.h"
 
-vtkTextPropertySettingDialog::vtkTextPropertySettingDialog(QWidget *parent) :
+vtkTextPropertySettingDialog::vtkTextPropertySettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::vtkTextPropertySettingDialog)
 {

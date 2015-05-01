@@ -5,5 +5,5 @@ IntegerNumberEditWidget::IntegerNumberEditWidget(QWidget* parent)
 {
 	// Set minimum and maximum to the range supported by 32 bit integer.
 	setMinimum(- 2147483646);
-	setMaximum(  2147483647);
+	setMaximum(2147483647);
 }

@@ -10,7 +10,7 @@ class GUIBASEDLL_EXPORT ObjectBrowser : public QDockWidget
 	Q_OBJECT
 
 public:
-	ObjectBrowser(QWidget *parent = nullptr);
+	ObjectBrowser(QWidget* parent = nullptr);
 };
 
 #endif // OBJECTBROWSER_H

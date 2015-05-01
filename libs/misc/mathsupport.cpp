@@ -10,7 +10,8 @@
 #define TIME_PRECISION 3
 #define VERYSMALL 1.0E-20
 
-namespace iRIC {
+namespace iRIC
+{
 	qreal outerProduct(const QVector2D& v1, const QVector2D& v2)
 	{
 		return v1.x() * v2.y() - v1.y() * v2.x();
@@ -20,14 +21,14 @@ namespace iRIC {
 	{
 		qreal dotprod = QVector2D::dotProduct(v1, v2);
 		double cosVal = dotprod / (v1.length() * v2.length());
-		if (cosVal <= -1){return M_PI;}
-		if (cosVal >= 1){return 0;}
+		if (cosVal <= -1) {return M_PI;}
+		if (cosVal >= 1) {return 0;}
 		qreal angle1 = acos(cosVal);
 		QVector2D tmp = v1;
 		rotateVector90(tmp);
-		if (QVector2D::dotProduct(tmp, v2) < 0){
+		if (QVector2D::dotProduct(tmp, v2) < 0) {
 			return 2 * M_PI - angle1;
-		}else{
+		} else {
 			return angle1;
 		}
 	}
@@ -81,8 +82,8 @@ namespace iRIC {
 
 	bool isInsideParallelogram(const QVector2D& target, const QVector2D& vertex, const QVector2D& dir1, const QVector2D& dir2)
 	{
-		if (dir1.lengthSquared() < VERYSMALL){return false;}
-		if (dir2.lengthSquared() < VERYSMALL){return false;}
+		if (dir1.lengthSquared() < VERYSMALL) {return false;}
+		if (dir2.lengthSquared() < VERYSMALL) {return false;}
 		QVector2D dv = target - vertex;
 		QVector2D v1 = dir1;
 		v1.normalize();
@@ -93,36 +94,36 @@ namespace iRIC {
 		double innerprod1 = QVector2D::dotProduct(dv, v1);
 		double innerprod2 = QVector2D::dotProduct(dv, v2);
 		return (
-			0 <= innerprod1 && innerprod1 <= length1 &&
-			0 <= innerprod2 && innerprod2 <= length2
-		);
+						 0 <= innerprod1 && innerprod1 <= length1 &&
+						 0 <= innerprod2 && innerprod2 <= length2
+					 );
 	}
 
 	double roundedValue(double val, int precision)
 	{
-		if (val <= 0){return val;}
+		if (val <= 0) {return val;}
 
 		int e = 0;
 		double tmpv = val;
-		while (tmpv > 10){
+		while (tmpv > 10) {
 			tmpv = tmpv / 10;
 			++ e;
 		}
-		while (tmpv < 1){
+		while (tmpv < 1) {
 			tmpv = tmpv * 10;
 			-- e;
 		}
 		int p = precision - 1;
-		for (int i = 0; i < p; ++i){
+		for (int i = 0; i < p; ++i) {
 			tmpv = tmpv * 10;
 			-- e;
 		}
 		double ret = std::floor(tmpv + 0.5);
-		while (e > 0){
+		while (e > 0) {
 			ret = ret * 10;
 			-- e;
 		}
-		while (e < 0){
+		while (e < 0) {
 			ret = ret / 10;
 			++ e;
 		}
@@ -131,13 +132,13 @@ namespace iRIC {
 
 	double pointRoundedValue(double val, int precision)
 	{
-		if (val <= 0){return val;}
+		if (val <= 0) {return val;}
 		double tmpv = val;
-		for (int i = 0; i < precision; ++i){
+		for (int i = 0; i < precision; ++i) {
 			tmpv = tmpv * 10;
 		}
 		tmpv = std::floor(tmpv + 0.5);
-		for (int i = 0; i < precision; ++i){
+		for (int i = 0; i < precision; ++i) {
 			tmpv = tmpv / 10;
 		}
 		return tmpv;
@@ -155,13 +156,13 @@ namespace iRIC {
 
 	bool hasIntersection(const QPolygonF& polygon)
 	{
-		for (int i = 0; i < polygon.count() - 1; ++i){
-			for (int j = i + 1; j < polygon.count() - 1; ++j){
+		for (int i = 0; i < polygon.count() - 1; ++i) {
+			for (int j = i + 1; j < polygon.count() - 1; ++j) {
 				QLineF line1(polygon.at(i), polygon.at(i + 1));
 				QLineF line2(polygon.at(j), polygon.at(j + 1));
 				QPointF p;
-				if (line1.intersect(line2, &p) == QLineF::BoundedIntersection){
-					if (p != line1.p1() && p != line1.p2()){
+				if (line1.intersect(line2, &p) == QLineF::BoundedIntersection) {
+					if (p != line1.p1() && p != line1.p2()) {
 						return true;
 					}
 				}

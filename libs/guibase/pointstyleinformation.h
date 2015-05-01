@@ -18,6 +18,7 @@ public:
 	qreal size() const {return m_size;}
 	QColor color() const {return m_color;}
 	PointShape pointShape() const {return m_pointShape;}
+
 private:
 	qreal m_size;
 	QColor m_color;

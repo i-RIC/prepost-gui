@@ -7,8 +7,9 @@
 
 class vtkTextPropertySettingContainer;
 
-namespace Ui {
-class vtkTextPropertySettingDialog;
+namespace Ui
+{
+	class vtkTextPropertySettingDialog;
 }
 
 class GUIBASEDLL_EXPORT vtkTextPropertySettingDialog : public QDialog
@@ -16,7 +17,7 @@ class GUIBASEDLL_EXPORT vtkTextPropertySettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit vtkTextPropertySettingDialog(QWidget *parent = nullptr);
+	explicit vtkTextPropertySettingDialog(QWidget* parent = nullptr);
 	~vtkTextPropertySettingDialog();
 
 	vtkTextPropertySettingContainer setting();
@@ -27,7 +28,7 @@ public:
 
 private:
 	QString m_prefix;
-	Ui::vtkTextPropertySettingDialog *ui;
+	Ui::vtkTextPropertySettingDialog* ui;
 };
 
 #endif // VTKTEXTPROPERTYSETTINGDIALOG_H

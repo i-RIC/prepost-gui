@@ -8,8 +8,9 @@
 class QString;
 class QColor;
 
-namespace iRIC {
-	/// convert QString into std::string
+namespace iRIC
+{
+/// convert QString into std::string
 	std::string MISCDLL_EXPORT toStr(const QString& str);
 	bool MISCDLL_EXPORT isAscii(const QString& str);
 	QColor MISCDLL_EXPORT QColorFromString(QString qstring);

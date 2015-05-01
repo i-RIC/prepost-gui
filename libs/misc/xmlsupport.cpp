@@ -9,9 +9,8 @@
 QDomNode iRIC::getChildNode(const QDomNode& parent, const QString& nodeName)
 {
 	QDomNode child = parent.firstChild();
-	while (! child.isNull())
-	{
-		if (child.nodeName() == nodeName){
+	while (! child.isNull()) {
+		if (child.nodeName() == nodeName) {
 			return child;
 		}
 		child = child.nextSibling();
@@ -21,9 +20,8 @@ QDomNode iRIC::getChildNode(const QDomNode& parent, const QString& nodeName)
 QDomNode iRIC::getChildNodeWithAttribute(const QDomNode& parent, const QString& nodeName, const QString& attName, const QString& attVal)
 {
 	QDomNode child = parent.firstChild();
-	while (! child.isNull())
-	{
-		if (child.nodeName() == nodeName && child.toElement().attribute(attName) == attVal){
+	while (! child.isNull()) {
+		if (child.nodeName() == nodeName && child.toElement().attribute(attName) == attVal) {
 			return child;
 		}
 		child = child.nextSibling();
@@ -34,9 +32,8 @@ QDomNode iRIC::getChildNodeWithAttribute(const QDomNode& parent, const QString& 
 QString iRIC::getText(const QDomNode& node)
 {
 	QDomNode child = node.firstChild();
-	while (! child.isNull())
-	{
-		if (child.isText() || child.isCDATASection()){
+	while (! child.isNull()) {
+		if (child.isText() || child.isCDATASection()) {
 			return child.toText().data();
 		}
 		child = child.nextSibling();
@@ -48,16 +45,16 @@ void iRIC::removeAllComments(QDomNode* node)
 {
 	QDomNodeList children = node->childNodes();
 	QList<QDomNode> commentNodes;
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomNode childNode = children.at(i);
-		if (childNode.nodeType() == QDomNode::CommentNode){
+		if (childNode.nodeType() == QDomNode::CommentNode) {
 			commentNodes.append(childNode);
 		} else {
 			// search child node recursively.
 			removeAllComments(&childNode);
 		}
 	}
-	for (int i = 0; i < commentNodes.count(); ++i){
+	for (int i = 0; i < commentNodes.count(); ++i) {
 		node->removeChild(commentNodes[i]);
 	}
 }
@@ -65,21 +62,21 @@ void iRIC::removeAllComments(QDomNode* node)
 bool iRIC::getBooleanAttribute(const QDomNode& node, const QString& name, bool defaultVal)
 {
 	QString attVal = node.toElement().attribute(name);
-	if (attVal == ""){return defaultVal;}
+	if (attVal == "") {return defaultVal;}
 	return (attVal == "true" || attVal == "1");
 }
 
 void iRIC::setBooleanAttribute(QXmlStreamWriter& writer, const QString& name, bool value)
 {
 	QString valstr = "false";
-	if (value){valstr = "true";}
+	if (value) {valstr = "true";}
 	writer.writeAttribute(name, valstr);
 }
 
 int iRIC::getIntAttribute(const QDomNode& node, const QString& name, int defaultVal)
 {
 	QString val = node.toElement().attribute(name);
-	if (val == ""){return defaultVal;}
+	if (val == "") {return defaultVal;}
 	return val.toInt();
 }
 
@@ -91,7 +88,7 @@ void iRIC::setIntAttribute(QXmlStreamWriter& writer, const QString& name, int va
 double iRIC::getDoubleAttribute(const QDomNode& node, const QString& name, double defaultVal)
 {
 	QString val = node.toElement().attribute(name);
-	if (val == ""){return defaultVal;}
+	if (val == "") {return defaultVal;}
 	return val.toDouble();
 }
 
@@ -103,7 +100,7 @@ void iRIC::setDoubleAttribute(QXmlStreamWriter& writer, const QString& name, dou
 QColor iRIC::getColorAttribute(const QDomNode& node, const QString& name, QColor defaultVal)
 {
 	QString colval = node.toElement().attribute(name);
-	if (colval == ""){return defaultVal;}
+	if (colval == "") {return defaultVal;}
 	return QColor(colval);
 }
 

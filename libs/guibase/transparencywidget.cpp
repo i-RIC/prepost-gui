@@ -1,22 +1,22 @@
 #include "transparencywidget.h"
 #include "ui_transparencywidget.h"
 
-TransparencyWidget::TransparencyWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::TransparencyWidget)
+TransparencyWidget::TransparencyWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::TransparencyWidget)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	connect(ui->checkBox, SIGNAL(toggled(bool)), this, SLOT(handleCheck(bool)));
 }
 
 TransparencyWidget::~TransparencyWidget()
 {
-    delete ui;
+	delete ui;
 }
 
 void TransparencyWidget::setOpacity(int opacity)
 {
-	if (opacity == 100){
+	if (opacity == 100) {
 		ui->checkBox->setChecked(false);
 		ui->horizontalSlider->setValue(0);
 	} else {
@@ -32,7 +32,7 @@ int TransparencyWidget::opacity()
 
 void TransparencyWidget::handleCheck(bool checked)
 {
-	if (! checked){
+	if (! checked) {
 		ui->horizontalSlider->setValue(0);
 	}
 }

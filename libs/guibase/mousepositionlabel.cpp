@@ -1,7 +1,7 @@
 #include "mousepositionlabel.h"
 
-MousePositionLabel::MousePositionLabel(QWidget *parent) :
-    QLabel(parent)
+MousePositionLabel::MousePositionLabel(QWidget* parent) :
+	QLabel(parent)
 {
 	setFrameShape(QFrame::WinPanel);
 	setFrameShadow(QFrame::Sunken);

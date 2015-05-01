@@ -7,7 +7,8 @@
 class MISCDLL_EXPORT IntegerRangeContainer
 {
 public:
-	class Range {
+	class Range
+	{
 	public:
 		unsigned int from;
 		unsigned int to;

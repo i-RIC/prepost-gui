@@ -1,16 +1,16 @@
 #include "scalarbardialog.h"
 #include "ui_scalarbardialog.h"
 
-ScalarBarDialog::ScalarBarDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::ScalarBarDialog)
+ScalarBarDialog::ScalarBarDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::ScalarBarDialog)
 {
-		ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 ScalarBarDialog::~ScalarBarDialog()
 {
-		delete ui;
+	delete ui;
 }
 
 void ScalarBarDialog::setSetting(const ScalarBarSetting& setting)

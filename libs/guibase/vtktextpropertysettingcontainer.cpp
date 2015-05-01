@@ -14,7 +14,7 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer()
 	m_isShadow = false;
 }
 
-void vtkTextPropertySettingContainer::load(const QDomNode &node)
+void vtkTextPropertySettingContainer::load(const QDomNode& node)
 {
 	m_fontFamily = static_cast<FontFamily>(iRIC::getIntAttribute(node, attName("fontFamily"), 0));
 	m_fontColor = iRIC::getColorAttribute(node, attName("fontColor"));
@@ -24,7 +24,7 @@ void vtkTextPropertySettingContainer::load(const QDomNode &node)
 	m_isShadow = iRIC::getBooleanAttribute(node, attName("fontIsShadow"));
 }
 
-void vtkTextPropertySettingContainer::save(QXmlStreamWriter &writer) const
+void vtkTextPropertySettingContainer::save(QXmlStreamWriter& writer) const
 {
 	iRIC::setIntAttribute(writer, attName("fontFamily"), static_cast<int>(m_fontFamily));
 	iRIC::setColorAttribute(writer, attName("fontColor"), m_fontColor);
@@ -36,11 +36,11 @@ void vtkTextPropertySettingContainer::save(QXmlStreamWriter &writer) const
 
 void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 {
-	if (prop->GetFontFamily() == VTK_ARIAL){
+	if (prop->GetFontFamily() == VTK_ARIAL) {
 		m_fontFamily = ffArial;
-	} else if (prop->GetFontFamily() == VTK_COURIER){
+	} else if (prop->GetFontFamily() == VTK_COURIER) {
 		m_fontFamily = ffCourier;
-	} else if (prop->GetFontFamily() == VTK_TIMES){
+	} else if (prop->GetFontFamily() == VTK_TIMES) {
 		m_fontFamily = ffTimes;
 	}
 	double r, g, b;
@@ -55,11 +55,11 @@ void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 
 void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 {
-	if (m_fontFamily == ffArial){
+	if (m_fontFamily == ffArial) {
 		prop->SetFontFamilyToArial();
-	} else if (m_fontFamily == ffCourier){
+	} else if (m_fontFamily == ffCourier) {
 		prop->SetFontFamilyToCourier();
-	} else if (m_fontFamily == ffTimes){
+	} else if (m_fontFamily == ffTimes) {
 		prop->SetFontFamilyToTimes();
 	}
 	prop->SetColor(m_fontColor.redF(), m_fontColor.greenF(), m_fontColor.blueF());

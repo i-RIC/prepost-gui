@@ -3,7 +3,7 @@
 #include <QFileDialog>
 #include <QDir>
 
-DirnameEditWidget::DirnameEditWidget(QWidget *parent) :
+DirnameEditWidget::DirnameEditWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::DirnameEditWidget)
 {
@@ -30,7 +30,7 @@ void DirnameEditWidget::openDialog()
 {
 	QString dir = QDir::fromNativeSeparators(ui->lineEdit->text());
 	dir = QFileDialog::getExistingDirectory(this, tr("Select Directory"), dir);
-	if (! dir.isNull()){
+	if (! dir.isNull()) {
 		ui->lineEdit->setText(QDir::toNativeSeparators(dir));
 	}
 }

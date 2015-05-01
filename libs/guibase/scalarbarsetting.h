@@ -16,7 +16,7 @@ class GUIBASEDLL_EXPORT ScalarBarSetting : public XmlAttributeContainer
 public:
 	static const int DEFAULT_NUMOFLABELS = 8;
 	static const QString DEFAULT_LABELFORMAT;
-	enum Orientation{oVertical, oHorizontal};
+	enum Orientation {oVertical, oHorizontal};
 
 	/// Constructor
 	ScalarBarSetting();

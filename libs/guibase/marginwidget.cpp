@@ -1,7 +1,7 @@
 #include "marginwidget.h"
 #include <QGridLayout>
 
-MarginWidget::MarginWidget(QWidget *parent) :
+MarginWidget::MarginWidget(QWidget* parent) :
 	QWidget(parent)
 {
 	m_margin = 5;

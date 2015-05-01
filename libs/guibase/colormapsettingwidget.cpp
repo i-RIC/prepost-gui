@@ -2,7 +2,7 @@
 #include "ui_colormapsettingwidget.h"
 #include "colormapcustomsettingdialog.h"
 
-ColorMapSettingWidget::ColorMapSettingWidget(QWidget *parent) :
+ColorMapSettingWidget::ColorMapSettingWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::ColorMapSettingWidget)
 {
@@ -17,8 +17,7 @@ ColorMapSettingWidget::~ColorMapSettingWidget()
 
 void ColorMapSettingWidget::setColorMap(ColorMap colorMap)
 {
-	switch (colorMap)
-	{
+	switch (colorMap) {
 	case Rainbow:
 		ui->rainbowRadioButton->setChecked(true);
 		break;
@@ -33,9 +32,9 @@ void ColorMapSettingWidget::setColorMap(ColorMap colorMap)
 
 ColorMapSettingWidget::ColorMap ColorMapSettingWidget::colorMap()
 {
-	if (ui->rainbowRadioButton->isChecked()) return Rainbow;
-	if (ui->grayscaleRadioButton->isChecked()) return Grayscale;
-	if (ui->customRadioButton->isChecked()) return Custom;
+	if (ui->rainbowRadioButton->isChecked()) { return Rainbow; }
+	if (ui->grayscaleRadioButton->isChecked()) { return Grayscale; }
+	if (ui->customRadioButton->isChecked()) { return Custom; }
 	//default
 	return Rainbow;
 }
@@ -45,7 +44,7 @@ void ColorMapSettingWidget::openCustomSettingDialog()
 	ColorMapCustomSettingDialog dialog(this);
 	dialog.setCustomSetting(m_customSetting);
 	int ret = dialog.exec();
-	if (ret == QDialog::Accepted){
+	if (ret == QDialog::Accepted) {
 		m_customSetting = dialog.customSetting();
 	}
 }
@@ -53,7 +52,7 @@ void ColorMapSettingWidget::openCustomSettingDialog()
 void ColorMapSettingWidget::disableCustom()
 {
 	ui->customRadioButton->setDisabled(true);
-	if (ui->customRadioButton->isChecked()){
+	if (ui->customRadioButton->isChecked()) {
 		ui->rainbowRadioButton->setChecked(true);
 	}
 }

@@ -5,7 +5,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class TransparencyWidget;
 }
 
@@ -14,7 +15,7 @@ class GUIBASEDLL_EXPORT TransparencyWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit TransparencyWidget(QWidget *parent = nullptr);
+	explicit TransparencyWidget(QWidget* parent = nullptr);
 	~TransparencyWidget();
 	void setOpacity(int opacity);
 	int opacity();
@@ -23,7 +24,7 @@ private slots:
 	void handleCheck(bool checked);
 
 private:
-	Ui::TransparencyWidget *ui;
+	Ui::TransparencyWidget* ui;
 };
 
 #endif // TRANSPARENCYWIDGET_H

@@ -12,13 +12,13 @@ ArrowSettingContainer::ArrowSettingContainer()
 	m_lineWidth = DEFAULT_LINEWIDTH;
 }
 
-void ArrowSettingContainer::load(const QDomNode &node)
+void ArrowSettingContainer::load(const QDomNode& node)
 {
 	m_arrowSize = iRIC::getIntAttribute(node, attName("arrowSize"), DEFAULT_ARROWSIZE);
 	m_lineWidth = iRIC::getIntAttribute(node, attName("arrowLineWidth"), DEFAULT_LINEWIDTH);
 }
 
-void ArrowSettingContainer::save(QXmlStreamWriter &writer) const
+void ArrowSettingContainer::save(QXmlStreamWriter& writer) const
 {
 	iRIC::setIntAttribute(writer, attName("arrowSize"), m_arrowSize);
 	iRIC::setIntAttribute(writer, attName("arrowLineWidth"), m_lineWidth);

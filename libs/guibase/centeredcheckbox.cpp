@@ -1,7 +1,7 @@
 #include "centeredcheckbox.h"
 #include <QHBoxLayout>
 
-CenteredCheckBox::CenteredCheckBox(QWidget *parent) :
+CenteredCheckBox::CenteredCheckBox(QWidget* parent) :
 	QWidget(parent)
 {
 	setAutoFillBackground(true);

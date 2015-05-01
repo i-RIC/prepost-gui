@@ -3,7 +3,7 @@
 #include <QSpinBox>
 #include <QHBoxLayout>
 
-SliderWithValue::SliderWithValue(QWidget *parent) :
+SliderWithValue::SliderWithValue(QWidget* parent) :
 	QWidget(parent)
 {
 	m_slider = new QSlider(this);
@@ -53,11 +53,12 @@ void SliderWithValue::setTickPosition(QSlider::TickPosition position)
 	m_slider->setTickPosition(position);
 }
 
-int	SliderWithValue::tickInterval() const {
+int	SliderWithValue::tickInterval() const
+{
 	return m_slider->tickInterval();
 }
 
-QSlider::TickPosition SliderWithValue::tickPosition () const
+QSlider::TickPosition SliderWithValue::tickPosition() const
 {
 	return m_slider->tickPosition();
 }
@@ -99,7 +100,7 @@ void SliderWithValue::setValues(const QList<int>& values)
 	m_slider->blockSignals(true);
 	m_slider->setMinimum(values[0]);
 	m_slider->setMaximum(values[values.count() - 1]);
-	for (int val : values){
+for (int val : values) {
 		m_values.append(val);
 	}
 	QLayout* l = layout();
@@ -128,12 +129,12 @@ void SliderWithValue::setValues(const QList<double>& values)
 	m_values = values;
 
 	QSize size;
-	for (int i = 0; i < values.count(); ++i){
+	for (int i = 0; i < values.count(); ++i) {
 		QString label("%1");
 		m_label->setText(label.arg(values.at(i)));
 		QSize sizeHint = m_label->sizeHint();
-		if (i == 0 || sizeHint.width() > size.width()){size.setWidth(sizeHint.width());}
-		if (i == 0 || sizeHint.height() > size.height()){size.setHeight(sizeHint.height());}
+		if (i == 0 || sizeHint.width() > size.width()) {size.setWidth(sizeHint.width());}
+		if (i == 0 || sizeHint.height() > size.height()) {size.setHeight(sizeHint.height());}
 	}
 	m_label->setFixedWidth(size.width());
 
@@ -154,7 +155,7 @@ void SliderWithValue::setValues(const QList<double>& values)
 void SliderWithValue::updateValues()
 {
 	QList<int> vals;
-	for (int i = m_slider->minimum(); i <= m_slider->maximum(); ++i){
+	for (int i = m_slider->minimum(); i <= m_slider->maximum(); ++i) {
 		vals.append(i);
 	}
 	setValues(vals);
@@ -162,7 +163,7 @@ void SliderWithValue::updateValues()
 
 void SliderWithValue::updateLabel()
 {
-	if (m_slider->value() >= m_values.count() || m_slider->value() < 0){
+	if (m_slider->value() >= m_values.count() || m_slider->value() < 0) {
 		m_label->setText("");
 		return;
 	}

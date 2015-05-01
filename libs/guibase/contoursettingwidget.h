@@ -4,15 +4,17 @@
 #include "guibase_global.h"
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class ContourSettingWidget;
 }
 
-class GUIBASEDLL_EXPORT ContourSettingWidget : public QWidget {
+class GUIBASEDLL_EXPORT ContourSettingWidget : public QWidget
+{
 	Q_OBJECT
 public:
 	enum Contour {Points, Isolines, ContourFigure, ColorFringe};
-	ContourSettingWidget(QWidget *parent = nullptr);
+	ContourSettingWidget(QWidget* parent = nullptr);
 	~ContourSettingWidget();
 	void setContour(Contour contour);
 	Contour contour();
@@ -26,7 +28,7 @@ private slots:
 	void handleContourChange();
 
 private:
-	Ui::ContourSettingWidget *ui;
+	Ui::ContourSettingWidget* ui;
 };
 
 #endif // CONTOURSETTINGWIDGET_H

@@ -3,24 +3,24 @@
 #include "scalarbarsetting.h"
 #include "vtktextpropertysettingdialog.h"
 
-ScalarBarWidget::ScalarBarWidget(QWidget *parent) :
-		QWidget(parent),
-		ui(new Ui::ScalarBarWidget)
+ScalarBarWidget::ScalarBarWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::ScalarBarWidget)
 {
-		ui->setupUi(this);
-		connect(ui->titleFontButton, SIGNAL(clicked()), this, SLOT(editTitleTextSetting()));
-		connect(ui->labelFontButton, SIGNAL(clicked()), this, SLOT(editLabelTextSetting()));
+	ui->setupUi(this);
+	connect(ui->titleFontButton, SIGNAL(clicked()), this, SLOT(editTitleTextSetting()));
+	connect(ui->labelFontButton, SIGNAL(clicked()), this, SLOT(editLabelTextSetting()));
 }
 
 ScalarBarWidget::~ScalarBarWidget()
 {
-		delete ui;
+	delete ui;
 }
 
 void ScalarBarWidget::setSetting(const ScalarBarSetting& setting)
 {
 	ui->displayCheckBox->setChecked(setting.visible);
-	if (setting.orientation == ScalarBarSetting::oHorizontal){
+	if (setting.orientation == ScalarBarSetting::oHorizontal) {
 		ui->horizontalRadioButton->setChecked(true);
 	} else {
 		ui->verticalRadioButton->setChecked(true);
@@ -42,9 +42,9 @@ const ScalarBarSetting ScalarBarWidget::setting()
 {
 	ScalarBarSetting ret;
 	ret.visible = ui->displayCheckBox->isChecked();
-	if (ui->horizontalRadioButton->isChecked()){
+	if (ui->horizontalRadioButton->isChecked()) {
 		ret.orientation = ScalarBarSetting::oHorizontal;
-	} else if (ui->verticalRadioButton->isChecked()){
+	} else if (ui->verticalRadioButton->isChecked()) {
 		ret.orientation = ScalarBarSetting::oVertical;
 	}
 	ret.numberOfLabels = ui->numberSpinBox->value();
@@ -77,7 +77,7 @@ void ScalarBarWidget::editTitleTextSetting()
 	dialog.setSetting(m_titleTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_titleTextSetting = dialog.setting();
 }
 
@@ -87,6 +87,6 @@ void ScalarBarWidget::editLabelTextSetting()
 	dialog.setSetting(m_labelTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_labelTextSetting = dialog.setting();
 }

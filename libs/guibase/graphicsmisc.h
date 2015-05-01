@@ -11,7 +11,8 @@ class vtkCubeAxesActor2D;
 class vtkAxesActor;
 class vtkScalarBarActor;
 
-namespace iRIC {
+namespace iRIC
+{
 	QPixmap GUIBASEDLL_EXPORT pixmapFromVTKImage(QSize size, vtkImageData* image);
 	void GUIBASEDLL_EXPORT fattenBounds(double bounds[6], double rate);
 	void GUIBASEDLL_EXPORT setupCubeActor2D(vtkCubeAxesActor2D* actor);

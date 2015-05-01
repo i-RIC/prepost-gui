@@ -6,7 +6,8 @@
 #include "structuredgridregion.h"
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class StructuredGridRegionSelectWidget;
 }
 
@@ -15,7 +16,7 @@ class GUIBASEDLL_EXPORT StructuredGridRegionSelectWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit StructuredGridRegionSelectWidget(QWidget *parent = nullptr);
+	explicit StructuredGridRegionSelectWidget(QWidget* parent = nullptr);
 	~StructuredGridRegionSelectWidget();
 	void setGridDimensions(int idim, int jdim);
 	void setiMin(int imin);
@@ -38,7 +39,7 @@ private slots:
 	void handleJMaxChange(int jmax);
 
 private:
-	Ui::StructuredGridRegionSelectWidget *ui;
+	Ui::StructuredGridRegionSelectWidget* ui;
 };
 
 #endif // STRUCTUREDGRIDREGIONSELECTWIDGET_H

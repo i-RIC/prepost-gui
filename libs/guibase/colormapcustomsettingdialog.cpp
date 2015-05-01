@@ -16,10 +16,9 @@
 class ColorMapCustomSettingDialogColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorMapCustomSettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
-	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
-	{
-		if (index.column() == 1){
+	ColorMapCustomSettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
+		if (index.column() == 1) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
 			QColor col = dat.value<QColor>();
 			QBrush brush(col);
@@ -28,15 +27,15 @@ public:
 			QItemDelegate::paint(painter, option, index);
 		}
 	}
-	QWidget* createEditor(QWidget *parent, const QStyleOptionViewItem & /*option*/, const QModelIndex & index) const {
-		if (index.column() == 1){
+	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& index) const {
+		if (index.column() == 1) {
 			return new ColorEditWidget(parent);
 		} else {
 			return new RealNumberEditWidget(parent);
 		}
 	}
-	void setEditorData(QWidget *editor, const QModelIndex &index) const {
-		if (index.column() == 1){
+	void setEditorData(QWidget* editor, const QModelIndex& index) const {
+		if (index.column() == 1) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
 			ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 			w->setColor(dat.value<QColor>());
@@ -46,8 +45,8 @@ public:
 			w->setValue(dat.toDouble());
 		}
 	}
-	void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const {
-		if (index.column() == 1){
+	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const {
+		if (index.column() == 1) {
 			ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 			QColor c = w->color();
 			model->setData(index, c, Qt::DisplayRole);
@@ -58,15 +57,15 @@ public:
 			model->setData(index, val, Qt::DisplayRole);
 		}
 	}
-	void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex & /*index*/) const {
+	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& /*index*/) const {
 		editor->setGeometry(option.rect);
 	}
 };
 
 
-ColorMapCustomSettingDialog::ColorMapCustomSettingDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::ColorMapCustomSettingDialog)
+ColorMapCustomSettingDialog::ColorMapCustomSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::ColorMapCustomSettingDialog)
 {
 	ui->setupUi(this);
 	ui->arbitraryTableWidget->setColumnWidth(0, VALUEWIDTH);
@@ -84,12 +83,12 @@ ColorMapCustomSettingDialog::ColorMapCustomSettingDialog(QWidget *parent) :
 
 ColorMapCustomSettingDialog::~ColorMapCustomSettingDialog()
 {
-		delete ui;
+	delete ui;
 }
 
 void ColorMapCustomSettingDialog::setCustomSetting(const ColorMapSettingWidget::CustomSetting& setting)
 {
-	switch (setting.type){
+	switch (setting.type) {
 	case ColorMapSettingWidget::CustomSetting::tTwoColors:
 		ui->typeComboBox->setCurrentIndex(0);
 		ui->minColorWidget->setColor(setting.minColor);
@@ -106,7 +105,7 @@ void ColorMapCustomSettingDialog::setCustomSetting(const ColorMapSettingWidget::
 		ui->typeComboBox->setCurrentIndex(2);
 		ui->arbitraryTableWidget->blockSignals(true);
 		ui->arbitraryTableWidget->setRowCount(setting.arbitrarySettings.count());
-		for (int i = 0; i < setting.arbitrarySettings.count(); ++i){
+		for (int i = 0; i < setting.arbitrarySettings.count(); ++i) {
 			double value = setting.arbitrarySettings.at(i).value;
 			QColor col = setting.arbitrarySettings.at(i).color;
 
@@ -135,7 +134,7 @@ bool valueLessThan(const ColorMapSettingWidget::CustomSetting::CustomColor& c1, 
 ColorMapSettingWidget::CustomSetting ColorMapCustomSettingDialog::customSetting()
 {
 	ColorMapSettingWidget::CustomSetting ret;
-	switch (ui->typeComboBox->currentIndex()){
+	switch (ui->typeComboBox->currentIndex()) {
 	case 0:
 		ret.type = ColorMapSettingWidget::CustomSetting::tTwoColors;
 		ret.minColor = ui->minColorWidget->color();
@@ -150,7 +149,7 @@ ColorMapSettingWidget::CustomSetting ColorMapCustomSettingDialog::customSetting(
 		break;
 	case 2:
 		ret.type = ColorMapSettingWidget::CustomSetting::tArbitrary;
-		for (int i = 0; i < ui->arbitraryTableWidget->rowCount(); ++i){
+		for (int i = 0; i < ui->arbitraryTableWidget->rowCount(); ++i) {
 			QTableWidgetItem* item = ui->arbitraryTableWidget->item(i, 0);
 			ColorMapSettingWidget::CustomSetting::CustomColor cc;
 			cc.value = item->data(Qt::DisplayRole).toDouble();
@@ -171,7 +170,7 @@ void ColorMapCustomSettingDialog::typeUpdated(int type)
 	ui->maxColorWidget->setDisabled(true);
 	ui->midValueEdit->setDisabled(true);
 	ui->arbitraryGroupBox->setDisabled(true);
-	switch (type){
+	switch (type) {
 	case 0:
 		// two colors
 		ui->minColorWidget->setEnabled(true);
@@ -196,7 +195,7 @@ void ColorMapCustomSettingDialog::addColor()
 	double val = 0;
 	QColor col = Qt::white;
 	int rowCount = ui->arbitraryTableWidget->rowCount();
-	if (rowCount > 0){
+	if (rowCount > 0) {
 		val = ui->arbitraryTableWidget->item(rowCount - 1, 0)->data(Qt::DisplayRole).toDouble() + 1;
 		col = m_arbitraryColors.last();
 	}
@@ -216,7 +215,7 @@ void ColorMapCustomSettingDialog::addColor()
 void ColorMapCustomSettingDialog::removeColor()
 {
 	int row = ui->arbitraryTableWidget->currentRow();
-	if (row < 0){return;}
+	if (row < 0) {return;}
 	m_arbitraryColors.removeAt(row);
 	ui->arbitraryTableWidget->removeRow(row);
 }
@@ -225,10 +224,10 @@ void ColorMapCustomSettingDialog::importColors()
 {
 	QString dir = LastIODirectory::get();
 	QString fname = QFileDialog::getOpenFileName(this, tr("Import Colormap Setting"), dir, tr("CSV file (*.csv)"));
-	if (fname == ""){return;}
+	if (fname == "") {return;}
 
 	// check whether the file exists.
-	if (! QFile::exists(fname)){
+	if (! QFile::exists(fname)) {
 		// the file does not exists.
 		QMessageBox::warning(this, tr("Warning"), tr("File %1 does not exists.").arg(QDir::toNativeSeparators(fname)));
 		return;
@@ -236,7 +235,7 @@ void ColorMapCustomSettingDialog::importColors()
 
 	// import colors.
 	QFile file(fname);
-	if (! file.open(QFile::ReadOnly | QFile::Text)){
+	if (! file.open(QFile::ReadOnly | QFile::Text)) {
 		QMessageBox::warning(this, tr("Warning"), tr("File %1 could not be opened.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
@@ -247,17 +246,17 @@ void ColorMapCustomSettingDialog::importColors()
 	QString line;
 	do {
 		line = stream.readLine();
-		if (! line.isEmpty()){
+		if (! line.isEmpty()) {
 			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-			if (pieces.count() < 4){continue;}
+			if (pieces.count() < 4) {continue;}
 			bool ok;
 			double val = pieces[0].toDouble(&ok);
 			int r = pieces[1].toInt();
 			int g = pieces[2].toInt();
 			int b = pieces[3].toInt();
-			if (r < 0 || r > 255){continue;}
-			if (g < 0 || g > 255){continue;}
-			if (b < 0 || b > 255){continue;}
+			if (r < 0 || r > 255) {continue;}
+			if (g < 0 || g > 255) {continue;}
+			if (b < 0 || b > 255) {continue;}
 
 			values.append(val);
 			colors.append(QColor(r, g, b));
@@ -268,7 +267,7 @@ void ColorMapCustomSettingDialog::importColors()
 
 	ui->arbitraryTableWidget->blockSignals(true);
 	ui->arbitraryTableWidget->setRowCount(values.count());
-	for (int i = 0; i < values.count(); ++i){
+	for (int i = 0; i < values.count(); ++i) {
 		double value = values.at(i);
 		QColor col = colors.at(i);
 
@@ -294,17 +293,17 @@ void ColorMapCustomSettingDialog::exportColors()
 	QString dir = LastIODirectory::get();
 
 	QString fname = QFileDialog::getSaveFileName(this, tr("Export Colormap Setting"), dir, tr("CSV file (*.csv)"));
-	if (fname == ""){return;}
+	if (fname == "") {return;}
 
 	// export colors.
 	QFile file(fname);
-	if (! file.open(QFile::WriteOnly | QFile::Text)){
+	if (! file.open(QFile::WriteOnly | QFile::Text)) {
 		QMessageBox::warning(this, tr("Warning"), tr("File %1 could not be opened.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
 	QTextStream stream(&file);
 	QString line;
-	for (int i = 0; i < ui->arbitraryTableWidget->rowCount(); ++i){
+	for (int i = 0; i < ui->arbitraryTableWidget->rowCount(); ++i) {
 		double val = ui->arbitraryTableWidget->item(i, 0)->data(Qt::DisplayRole).toDouble();
 		QColor col = m_arbitraryColors.at(i);
 		stream << val << "," << col.red() << "," << col.green() << "," << col.blue() << endl;
@@ -318,16 +317,16 @@ void ColorMapCustomSettingDialog::exportColors()
 
 void ColorMapCustomSettingDialog::handleItemEdit(QTableWidgetItem* item)
 {
-	if (item->column() != 1){return;}
+	if (item->column() != 1) {return;}
 	QColor col = item->data(Qt::DisplayRole).value<QColor>();
 	m_arbitraryColors[item->row()] = col;
 }
 
 void ColorMapCustomSettingDialog::handleItemClick(QTableWidgetItem* item)
 {
-	if (item->column() != 1){return;}
+	if (item->column() != 1) {return;}
 	QColor col = item->data(Qt::DisplayRole).value<QColor>();
 	QColor newcolor = QColorDialog::getColor(col, this);
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	item->setData(Qt::DisplayRole, newcolor);
 }

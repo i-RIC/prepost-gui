@@ -37,7 +37,7 @@ void ScalarBarSetting::initForLegendBox()
 
 void ScalarBarSetting::loadFromRepresentation(vtkScalarBarRepresentation* rep)
 {
-	if (rep->GetOrientation() == 1){
+	if (rep->GetOrientation() == 1) {
 		orientation = oVertical;
 	} else {
 		orientation = oHorizontal;
@@ -68,7 +68,7 @@ void ScalarBarSetting::loadFromRepresentation(vtkLegendBoxRepresentation* rep)
 
 void ScalarBarSetting::saveToRepresentation(vtkScalarBarRepresentation* rep)
 {
-	if (orientation == oVertical){
+	if (orientation == oVertical) {
 		rep->SetOrientation(1);
 	} else {
 		rep->SetOrientation(0);

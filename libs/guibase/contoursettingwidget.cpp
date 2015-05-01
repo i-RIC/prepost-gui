@@ -1,7 +1,7 @@
 #include "contoursettingwidget.h"
 #include "ui_contoursettingwidget.h"
 
-ContourSettingWidget::ContourSettingWidget(QWidget *parent) :
+ContourSettingWidget::ContourSettingWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::ContourSettingWidget)
 {
@@ -19,8 +19,7 @@ ContourSettingWidget::~ContourSettingWidget()
 
 void ContourSettingWidget::setContour(Contour contour)
 {
-	switch (contour)
-	{
+	switch (contour) {
 	case Points:
 		ui->pointsButton->setChecked(true);
 		break;
@@ -38,16 +37,16 @@ void ContourSettingWidget::setContour(Contour contour)
 
 void ContourSettingWidget::handleContourChange()
 {
-	if (ui->pointsButton->isChecked()){
+	if (ui->pointsButton->isChecked()) {
 		emit contourChanged(Points);
 	}
-	if (ui->isolinesButton->isChecked()){
+	if (ui->isolinesButton->isChecked()) {
 		emit contourChanged(Isolines);
 	}
-	if (ui->contourFigureButton->isChecked()){
+	if (ui->contourFigureButton->isChecked()) {
 		emit contourChanged(ContourFigure);
 	}
-	if (ui->colorFringeButton->isChecked()){
+	if (ui->colorFringeButton->isChecked()) {
 		emit contourChanged(ColorFringe);
 	}
 	emit contourChanged();
@@ -55,10 +54,10 @@ void ContourSettingWidget::handleContourChange()
 
 ContourSettingWidget::Contour ContourSettingWidget::contour()
 {
-	if (ui->pointsButton->isChecked()) return Points;
-	if (ui->isolinesButton->isChecked()) return Isolines;
-	if (ui->contourFigureButton->isChecked()) return ContourFigure;
-	if (ui->colorFringeButton->isChecked()) return ColorFringe;
+	if (ui->pointsButton->isChecked()) { return Points; }
+	if (ui->isolinesButton->isChecked()) { return Isolines; }
+	if (ui->contourFigureButton->isChecked()) { return ContourFigure; }
+	if (ui->colorFringeButton->isChecked()) { return ColorFringe; }
 	//default
 	return Isolines;
 }
@@ -70,7 +69,7 @@ void ContourSettingWidget::hidePoints()
 
 void ContourSettingWidget::setNoPolyData(bool nopolydata)
 {
-	if (! nopolydata){return;}
+	if (! nopolydata) {return;}
 	ui->pointsButton->setChecked(true);
 	ui->isolinesButton->setDisabled(true);
 	ui->contourFigureButton->setDisabled(true);

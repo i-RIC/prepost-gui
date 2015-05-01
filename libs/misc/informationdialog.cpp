@@ -3,16 +3,16 @@
 #include <QMessageBox>
 #include <QSettings>
 
-InformationDialog::InformationDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::InformationDialog)
+InformationDialog::InformationDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::InformationDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 InformationDialog::~InformationDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void InformationDialog::information(QWidget* parent, const QString& title, const QString& message, const QString& name)
@@ -47,7 +47,7 @@ void InformationDialog::showDialog(QWidget* parent, const QString& title, const 
 	QSettings settings;
 	QString fullname = QString("infodialog/%1").arg(name);
 	bool dontshowagain = settings.value(fullname, false).value<bool>();
-	if (dontshowagain){
+	if (dontshowagain) {
 		// do not show!
 		return;
 	}

@@ -8,17 +8,20 @@
 class GUIBASEDLL_EXPORT RealNumberDisplayLabel : public QLabel
 {
 	Q_OBJECT
+
 public:
 	enum ClearMode {
 		cmEmpty,
 		cmLines,
 	};
-	explicit RealNumberDisplayLabel(QWidget *parent = nullptr);
-	ClearMode clearMode(){return m_clearMode;}
-	void setClearMode(ClearMode cm){m_clearMode = cm;}
+	explicit RealNumberDisplayLabel(QWidget* parent = nullptr);
+	ClearMode clearMode() {return m_clearMode;}
+	void setClearMode(ClearMode cm) {m_clearMode = cm;}
+
 public slots:
 	void setValue(double value);
 	void clear();
+
 private:
 	ClearMode m_clearMode;
 };

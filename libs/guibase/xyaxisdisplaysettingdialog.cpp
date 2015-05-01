@@ -1,16 +1,16 @@
 #include "xyaxisdisplaysettingdialog.h"
 #include "ui_xyaxisdisplaysettingdialog.h"
 
-XYAxisDisplaySettingDialog::XYAxisDisplaySettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::XYAxisDisplaySettingDialog)
+XYAxisDisplaySettingDialog::XYAxisDisplaySettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::XYAxisDisplaySettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 XYAxisDisplaySettingDialog::~XYAxisDisplaySettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void XYAxisDisplaySettingDialog::setXAxisSetting(const Setting& xSetting)

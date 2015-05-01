@@ -27,11 +27,11 @@ class MISCDLL_EXPORT VersionNumber
 {
 public:
 	/// Constructor
-	VersionNumber(){
+	VersionNumber() {
 		init();
 	}
 	/// Constructor (with initialization)
-	VersionNumber(unsigned int major, unsigned int minor = 0, unsigned int fix = 0, unsigned int build = 0){
+	VersionNumber(unsigned int major, unsigned int minor = 0, unsigned int fix = 0, unsigned int build = 0) {
 		init();
 		m_major = major;
 		m_minor = minor;
@@ -39,25 +39,25 @@ public:
 		m_build = build;
 	}
 	/// Constructor (with initialization with string version number)
-	VersionNumber(const QString& version){
+	VersionNumber(const QString& version) {
 		fromString(version);
 	}
 	/// Major version number
-	unsigned int major()const{return m_major;}
+	unsigned int major()const {return m_major;}
 	/// Minor version number
-	unsigned int minor()const{return m_minor;}
+	unsigned int minor()const {return m_minor;}
 	/// Fix version number
-	unsigned int fix()const{return m_fix;}
+	unsigned int fix()const {return m_fix;}
 	/// Build number
-	unsigned int build()const{return m_build;}
+	unsigned int build()const {return m_build;}
 	/// Set major version number
-	void setMajor(unsigned int major){m_major = major;}
+	void setMajor(unsigned int major) {m_major = major;}
 	/// Set minor version number
-	void setMinor(unsigned int minor){m_minor = minor;}
+	void setMinor(unsigned int minor) {m_minor = minor;}
 	/// Set fix version number
-	void setFix(unsigned int fix){m_fix = fix;}
+	void setFix(unsigned int fix) {m_fix = fix;}
 	/// Set build number
-	void setBuild(unsigned int build){m_build = build;}
+	void setBuild(unsigned int build) {m_build = build;}
 	/// Full version number as string
 	const QString toString()const;
 	/// Version number as string (for about dialog)
@@ -75,7 +75,7 @@ public:
 	bool compatibleWith(const VersionNumber& v) const;
 	bool operator ==(const VersionNumber& v) const;
 	bool operator !=(const VersionNumber& v) const {
-		return ! (operator==(v));
+		return !(operator==(v));
 	}
 private:
 	void init();
