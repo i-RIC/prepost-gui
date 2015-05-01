@@ -1,11 +1,12 @@
 #include "rawdatafactory.h"
+
 #include <guicore/pre/rawdata/rawdatacreator.h>
-#include <rawdata/polygon/rawdatapolygonintegercreator.h>
-#include <rawdata/polygon/rawdatapolygonrealcreator.h>
-#include <rawdata/pointmap/rawdatapointmaprealcreator.h>
-#include <rawdata/riversurvey/rawdatariversurveycreator.h>
 #include <rawdata/netcdf/rawdatanetcdfintegercreator.h>
 #include <rawdata/netcdf/rawdatanetcdfrealcreator.h>
+#include <rawdata/pointmap/rawdatapointmaprealcreator.h>
+#include <rawdata/polygon/rawdatapolygonintegercreator.h>
+#include <rawdata/polygon/rawdatapolygonrealcreator.h>
+#include <rawdata/riversurvey/rawdatariversurveycreator.h>
 
 RawDataFactory* RawDataFactory::m_instance = nullptr;
 

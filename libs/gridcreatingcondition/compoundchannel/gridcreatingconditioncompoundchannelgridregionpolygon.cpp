@@ -1,4 +1,5 @@
 #include "gridcreatingconditioncompoundchannelgridregionpolygon.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionCompoundChannelGridRegionPolygon::GridCreatingConditionCompoundChannelGridRegionPolygon(GridCreatingConditionCompoundChannel* parent)

@@ -1,23 +1,24 @@
-#include "preprocessorwindowprojectdataitem.h"
-#include "preprocessorwindowactionmanager.h"
-#include "datamodel/preprocessorrootdataitem.h"
 #include "datamodel/preprocessorinputconditiondataitem.h"
-#include "preprocessorwindow.h"
-#include "preprocessordatamodel.h"
+#include "datamodel/preprocessorrootdataitem.h"
 #include "preobjectbrowser.h"
 #include "preobjectbrowserview.h"
-#include <misc/xmlsupport.h>
-#include <guicore/project/projectmainfile.h>
+#include "preprocessordatamodel.h"
 #include "preprocessorgraphicsview.h"
-#include <guicore/datamodel/propertybrowserview.h>
+#include "preprocessorwindow.h"
+#include "preprocessorwindowactionmanager.h"
+#include "preprocessorwindowprojectdataitem.h"
+
 #include <guicore/base/propertybrowser.h>
+#include <guicore/datamodel/propertybrowserview.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/project/projectmainfile.h>
+#include <misc/xmlsupport.h>
 
-#include <QXmlStreamWriter>
 #include <QString>
+#include <QXmlStreamWriter>
 
-#include <vtkRenderer.h>
 #include <vtkCamera.h>
+#include <vtkRenderer.h>
 
 PreProcessorWindowProjectDataItem::PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent) :
 	ProjectDataItem(parent)

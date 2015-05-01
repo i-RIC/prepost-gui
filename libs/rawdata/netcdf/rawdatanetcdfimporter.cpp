@@ -1,22 +1,22 @@
 #include "rawdatanetcdf.h"
 #include "rawdatanetcdfimporter.h"
-#include "rawdatanetcdfimportersettingdialog.h"
 #include "rawdatanetcdfimporterdateselectdialog.h"
+#include "rawdatanetcdfimportersettingdialog.h"
+
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimensiont.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-
-#include <misc/stringtool.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimensiont.h>
 #include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
 
-#include <QStringList>
-#include <QString>
+#include <QDateTime>
+#include <QDir>
 #include <QFileInfo>
 #include <QMessageBox>
-#include <QDir>
 #include <QRegExp>
-#include <QDateTime>
+#include <QString>
+#include <QStringList>
 
 const QStringList RawDataNetcdfImporter::fileDialogFilters()
 {

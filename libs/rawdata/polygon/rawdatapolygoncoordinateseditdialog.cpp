@@ -1,7 +1,8 @@
+#include "ui_rawdatapolygoncoordinateseditdialog.h"
+
 #include "rawdatapolygon.h"
 #include "rawdatapolygonabstractpolygon.h"
 #include "rawdatapolygoncoordinateseditdialog.h"
-#include "ui_rawdatapolygoncoordinateseditdialog.h"
 
 #include <guibase/realnumbereditwidget.h>
 #include <misc/iricundostack.h>
@@ -10,8 +11,8 @@
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
 #include <QUndoCommand>
-#include <QVector>
 #include <QVector2D>
+#include <QVector>
 
 #include <vtkPoints.h>
 #include <vtkPolygon.h>

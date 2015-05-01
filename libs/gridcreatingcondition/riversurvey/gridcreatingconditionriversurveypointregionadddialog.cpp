@@ -1,16 +1,16 @@
-#include "gridcreatingconditionriversurveypointregionadddialog.h"
 #include "ui_gridcreatingconditionriversurveypointregionadddialog.h"
-#include "gridcreatingconditionriversurvey.h"
 
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
+#include "gridcreatingconditionriversurvey.h"
+#include "gridcreatingconditionriversurvey.h"
+#include "gridcreatingconditionriversurveypointregionadddialog.h"
+
+#include <misc/iricundostack.h>
 #include <rawdata/riversurvey/rawdatariverpathpoint.h>
 #include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
 
 #include <QMessageBox>
-
 #include <QUndoCommand>
-#include "gridcreatingconditionriversurvey.h"
-#include <misc/iricundostack.h>
 
 /*!
  * Command for region add of control points.

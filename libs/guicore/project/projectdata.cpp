@@ -1,31 +1,32 @@
+#include "../base/iricmainwindowinterface.h"
+#include "../postcontainer/postsolutioninfo.h"
+#include "../pre/base/preprocessorwindowinterface.h"
+#include "../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "../solverdef/solverdefinitiongridtype.h"
+#include "cgnsfilelist.h"
 #include "projectdata.h"
 #include "projectmainfile.h"
-#include "cgnsfilelist.h"
-#include <misc/filesystemfunction.h>
-#include "../base/iricmainwindowinterface.h"
-#include <misc/ziparchive.h>
-#include <guibase/waitdialog.h>
-#include "../pre/base/preprocessorwindowinterface.h"
-//#include "projectpropertydialog.h"
-//#include "solverconsole/solverconsolewindow.h"
+#include "projectworkspace.h"
+//#include "commongui/waitdialog.h"
 //#include "main/iricmainwindowactionmanager.h"
 //#include "project/projectpropertydialog.h"
-#include "../solverdef/solverdefinitiongridtype.h"
-#include "../solverdef/solverdefinitiongridrelatedcondition.h"
-//#include "commongui/waitdialog.h"
-#include "projectworkspace.h"
-#include "../postcontainer/postsolutioninfo.h"
+//#include "projectpropertydialog.h"
+//#include "solverconsole/solverconsolewindow.h"
 
-#include <QDir>
-#include <QFile>
-#include <QTime>
+#include <guibase/waitdialog.h>
+#include <misc/filesystemfunction.h>
+#include <misc/ziparchive.h>
+
+#include <QCoreApplication>
 #include <QCryptographicHash>
 #include <QDesktopServices>
-#include <QUrl>
+#include <QDir>
+#include <QFile>
 #include <QMessageBox>
-#include <QCoreApplication>
-#include <QThread>
 #include <QProcess>
+#include <QThread>
+#include <QTime>
+#include <QUrl>
 
 class ProjectDataMoveThread : public QThread
 {

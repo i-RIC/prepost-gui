@@ -1,11 +1,12 @@
 #include "hydraulicdatariversurveywaterelevationimporter.h"
+
 #include <rawdata/riversurvey/rawdatariversurvey.h>
 
-#include <QStringList>
 #include <QFile>
-#include <QTextStream>
 #include <QMap>
 #include <QMessageBox>
+#include <QStringList>
+#include <QTextStream>
 
 HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterElevationImporter()
 {

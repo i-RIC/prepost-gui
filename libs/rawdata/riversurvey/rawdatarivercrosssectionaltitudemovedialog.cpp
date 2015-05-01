@@ -1,9 +1,10 @@
+#include "ui_rawdatarivercrosssectionaltitudemovedialog.h"
+
 #include "rawdatarivercrosssection.h"
 #include "rawdatarivercrosssectionaltitudemovedialog.h"
 #include "rawdatariverpathpoint.h"
 #include "rawdatariversurvey.h"
 #include "rawdatariversurveycrosssectionwindow.h"
-#include "ui_rawdatarivercrosssectionaltitudemovedialog.h"
 
 #include <misc/iricundostack.h>
 

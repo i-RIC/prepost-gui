@@ -1,17 +1,20 @@
 #include "posttimedataitem.h"
 #include "posttimeeditdialog.h"
-#include <misc/stringtool.h>
-#include <misc/iricundostack.h>
-#include <guicore/postcontainer/postsolutioninfo.h>
+
 #include <guibase/colortool.h>
-#include <QSettings>
+#include <guicore/postcontainer/postsolutioninfo.h>
+#include <misc/iricundostack.h>
+#include <misc/stringtool.h>
+
+#include <QDomElement>
 #include <QIcon>
+#include <QSettings>
 #include <QStandardItem>
 #include <QUndoCommand>
-#include <QDomElement>
+
+#include <vtkActor2DCollection.h>
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
-#include <vtkActor2DCollection.h>
 
 PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Time"), QIcon(":/libs/guibase/images/iconPaper.png"),parent)

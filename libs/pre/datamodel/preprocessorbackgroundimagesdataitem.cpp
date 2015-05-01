@@ -1,16 +1,18 @@
-#include "preprocessorbackgroundimagesdataitem.h"
-#include "preprocessorbackgroundimagedataitem.h"
-#include "preprocessorrootdataitem.h"
 #include "../preprocessorgraphicsview.h"
-#include <guicore/project/projectdata.h>
-#include <guicore/project/projectmainfile.h>
+#include "preprocessorbackgroundimagedataitem.h"
+#include "preprocessorbackgroundimagesdataitem.h"
+#include "preprocessorrootdataitem.h"
+
 #include <guibase/objectbrowserview.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 
 #include <QMenu>
 #include <QMessageBox>
-#include <vtkRenderer.h>
+
 #include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 
 PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent)
 	: PreProcessorDataItem(tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

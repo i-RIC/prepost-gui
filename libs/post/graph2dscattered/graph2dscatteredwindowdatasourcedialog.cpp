@@ -1,13 +1,15 @@
-#include "graph2dscatteredwindowdatasourcedialog.h"
 #include "ui_graph2dscatteredwindowdatasourcedialog.h"
+
+#include "graph2dscatteredwindowdatasourcedialog.h"
+
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QString>
 #include <QStringList>
 
-#include <vtkPointSet.h>
 #include <vtkPointData.h>
+#include <vtkPointSet.h>
 #include <vtkStructuredGrid.h>
 
 Graph2dScatteredWindowDataSourceDialog::Graph2dScatteredWindowDataSourceDialog(QWidget* parent) :

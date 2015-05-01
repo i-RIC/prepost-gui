@@ -1,23 +1,24 @@
-#include "rawdatanetcdfgdalimporter.h"
 #include "rawdatanetcdf.h"
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <misc/stringtool.h>
-#include <misc/filesystemfunction.h>
+#include "rawdatanetcdfgdalimporter.h"
+
 #include <guibase/coordinatesystem.h>
 #include <guibase/coordinatesystembuilder.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
+
+#include <QApplication>
+#include <QFileInfo>
+#include <QList>
+#include <QMessageBox>
+#include <QProcess>
 
 #include <gdal_priv.h>
 #include <ogr_spatialref.h>
-
-#include <QMessageBox>
-#include <QApplication>
-#include <QProcess>
-#include <QList>
-#include <QFileInfo>
 
 const QStringList RawDataNetcdfGdalImporter::fileDialogFilters()
 {

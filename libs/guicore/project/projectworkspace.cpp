@@ -1,10 +1,11 @@
-#include <QDir>
-#include <QSettings>
-#include <QCryptographicHash>
-
 #include "projectworkspace.h"
 #include "workfolderinfo.h"
+
 #include <misc/filesystemfunction.h>
+
+#include <QCryptographicHash>
+#include <QDir>
+#include <QSettings>
 
 const QString ProjectWorkspace::FOLDERNAME = ".iRIC_workspace";
 

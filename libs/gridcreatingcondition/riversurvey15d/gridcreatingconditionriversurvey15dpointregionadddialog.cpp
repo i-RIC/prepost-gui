@@ -1,10 +1,12 @@
-#include "gridcreatingconditionriversurvey15dpointregionadddialog.h"
 #include "ui_gridcreatingconditionriversurvey15dpointregionadddialog.h"
+
 #include "gridcreatingconditionriversurvey15d.h"
-#include <rawdata/riversurvey/rawdatariversurvey.h>
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
+#include "gridcreatingconditionriversurvey15dpointregionadddialog.h"
+
 #include <misc/iricundostack.h>
+#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
 
 #include <QMessageBox>
 #include <QUndoCommand>

@@ -1,5 +1,6 @@
-#include "transparencywidget.h"
 #include "ui_transparencywidget.h"
+
+#include "transparencywidget.h"
 
 TransparencyWidget::TransparencyWidget(QWidget* parent) :
 	QWidget(parent),

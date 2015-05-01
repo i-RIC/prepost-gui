@@ -1,7 +1,9 @@
+#include "../project/projectcgnsfile.h"
 #include "postbaseiterativeseriesdatacontainer.h"
 #include "postsolutioninfo.h"
-#include "../project/projectcgnsfile.h"
+
 #include <misc/stringtool.h>
+
 #include <cgnslib.h>
 
 #if CGNS_VERSION < 3100

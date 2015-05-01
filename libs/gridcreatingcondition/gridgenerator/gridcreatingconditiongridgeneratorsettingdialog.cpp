@@ -1,5 +1,6 @@
-#include "gridcreatingconditiongridgeneratorsettingdialog.h"
 #include "ui_gridcreatingconditiongridgeneratorsettingdialog.h"
+
+#include "gridcreatingconditiongridgeneratorsettingdialog.h"
 
 GridCreatingConditionGridGeneratorSettingDialog::GridCreatingConditionGridGeneratorSettingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,18 +1,19 @@
-#include "rawdatanetcdfxbandimporter.h"
 #include "rawdatanetcdft.h"
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <misc/stringtool.h>
-#include <misc/filesystemfunction.h>
+#include "rawdatanetcdfxbandimporter.h"
 
-#include <QFileInfo>
-#include <QDir>
-#include <QMessageBox>
+#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
+
 #include <QApplication>
-#include <QProcess>
+#include <QDir>
+#include <QFileInfo>
 #include <QList>
+#include <QMessageBox>
+#include <QProcess>
 
 const QStringList RawDataNetcdfXbandImporter::fileDialogFilters()
 {

@@ -1,6 +1,7 @@
-#include "lookuptableeditwidget.h"
 #include "ui_lookuptableeditwidget.h"
+
 #include "lookuptablecontainer.h"
+#include "lookuptableeditwidget.h"
 
 LookupTableEditWidget::LookupTableEditWidget(QWidget* /*parent*/)
 	: ui(new Ui::LookupTableEditWidget)

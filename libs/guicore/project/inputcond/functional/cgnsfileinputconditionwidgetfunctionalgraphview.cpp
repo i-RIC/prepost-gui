@@ -1,4 +1,5 @@
 #include "cgnsfileinputconditionwidgetfunctionalgraphview.h"
+
 #include <QPainter>
 
 void CgnsFileInputConditionWidgetFunctionalGraphview::dataChanged(const QModelIndex& /*topLeft*/, const QModelIndex& /*bottomRight*/)

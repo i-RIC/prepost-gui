@@ -1,8 +1,8 @@
 #include "rawdatapointmapstlexporter.h"
 #include "rawdatapointmapt.h"
+
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-
 #include <misc/stringtool.h>
 
 #include <vtkDoubleArray.h>

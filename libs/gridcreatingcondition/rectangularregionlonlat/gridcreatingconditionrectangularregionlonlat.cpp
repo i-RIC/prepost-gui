@@ -1,24 +1,24 @@
 #include "gridcreatingconditionrectangularregionlonlat.h"
 #include "gridcreatingconditionrectangularregionlonlatsettingdialog.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <misc/informationdialog.h>
+#include <misc/iricundostack.h>
 
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
 
-#include <misc/iricundostack.h>
-
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
 #include <vtkCollectionIterator.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 
 GridCreatingConditionRectangularRegionLonLat::GridCreatingConditionRectangularRegionLonLat(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
 	: GridCreatingCondition(parent, creator)

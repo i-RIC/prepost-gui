@@ -3,6 +3,7 @@
 #include <QColor>
 #include <QString>
 #include <QTextCodec>
+
 #include <string>
 
 #define CSVPARSER_STATUS_AFTERITEM    0

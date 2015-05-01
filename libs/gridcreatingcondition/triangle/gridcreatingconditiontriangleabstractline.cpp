@@ -1,13 +1,14 @@
-#include "gridcreatingconditiontriangleabstractline.h"
 #include "gridcreatingconditiontriangle.h"
+#include "gridcreatingconditiontriangleabstractline.h"
 
 #include <misc/errormessage.h>
 
 #include <QPointF>
-#include <vtkRenderer.h>
-#include <vtkProperty.h>
-#include <vtkVertex.h>
+
 #include <vtkLine.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
+#include <vtkVertex.h>
 
 GridCreatingConditionTriangleAbstractLine::GridCreatingConditionTriangleAbstractLine(GridCreatingConditionTriangle* parent)
 {

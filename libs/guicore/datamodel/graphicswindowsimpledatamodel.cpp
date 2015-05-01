@@ -1,5 +1,6 @@
 #include "graphicswindowsimpledatamodel.h"
 #include "vtkgraphicsview.h"
+
 #include <QMainWindow>
 
 GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, ProjectDataItem* parent)

@@ -1,7 +1,8 @@
 #include "qundocommandhelper.h"
-#include <QString>
+
 #include <QByteArray>
 #include <QCryptographicHash>
+#include <QString>
 
 namespace iRIC
 {

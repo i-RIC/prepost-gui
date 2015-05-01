@@ -1,12 +1,13 @@
 #include "objectbrowserview.h"
-#include <QMouseEvent>
+
+#include <misc/iricundostack.h>
+
 #include <QAction>
 #include <QIcon>
 #include <QMessageBox>
-#include <QUndoCommand>
+#include <QMouseEvent>
 #include <QStandardItemModel>
-
-#include <misc/iricundostack.h>
+#include <QUndoCommand>
 
 ObjectBrowserView::ObjectBrowserView(QWidget* parent)
 	: QTreeView(parent)

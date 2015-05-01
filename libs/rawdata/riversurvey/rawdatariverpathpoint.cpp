@@ -2,16 +2,16 @@
 #include "rawdatariverpathpoint.h"
 #include "rawdatarivershapeinterpolator.h"
 
-#include <algorithm>
-#include <cmath>
-#include <iriclib_riversurvey.h>
-
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioncontainert.h>
 #include <misc/mathsupport.h>
 
 #include <QList>
 #include <QVector>
+
+#include <algorithm>
+#include <cmath>
+#include <iriclib_riversurvey.h>
 
 void RawDataRiverPathPoint::initializeInnerValues()
 {

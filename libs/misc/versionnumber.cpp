@@ -1,4 +1,5 @@
 #include "versionnumber.h"
+
 #include <QStringList>
 
 const QString VersionNumber::toString()const

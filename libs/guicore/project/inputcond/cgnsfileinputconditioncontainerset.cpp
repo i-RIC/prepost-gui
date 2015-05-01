@@ -1,12 +1,12 @@
 #include "cgnsfileinputconditioncontainerset.h"
 #include "cgnsfileinputconditiondialog.h"
 
-#include <misc/xmlsupport.h>
 #include <misc/errormessage.h>
+#include <misc/xmlsupport.h>
 
+#include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
-#include <QDomElement>
 #include <QMessageBox>
 
 CgnsFileInputConditionContainerSet::CgnsFileInputConditionContainerSet(QWidget* widget)

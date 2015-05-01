@@ -1,17 +1,17 @@
-#include "cgnsfileinputconditionpage.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditionpage.h"
 #include "cgnsfileinputconditionwidget.h"
 #include "cgnsfileinputconditionwidgetset.h"
 
 #include <misc/xmlsupport.h>
 
-#include <QLabel>
 #include <QDomNodeList>
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
 #include <QFormLayout>
+#include <QGridLayout>
 #include <QGroupBox>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QVBoxLayout>
 
 CgnsFileInputConditionPage::CgnsFileInputConditionPage(const QDomNode& node, CgnsFileInputConditionWidgetSet* ws, const SolverDefinitionTranslator& t, QWidget* parent)
 	: QWidget(parent)

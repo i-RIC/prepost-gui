@@ -4,12 +4,12 @@
 #include "graph2dhybridwindowresultgroupdataitem.h"
 #include "graph2dhybridwindowrootdataitem.h"
 
-#include <qwt_plot.h>
-
 #include <guibase/qwtplotcustomcurve.h>
 #include <misc/xmlsupport.h>
 
 #include <QStandardItem>
+
+#include <qwt_plot.h>
 
 Graph2dHybridWindowResultCopyDataItem::Graph2dHybridWindowResultCopyDataItem(Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowDataItem("" , QIcon(":/libs/guibase/images/iconPaper.png"), parent)

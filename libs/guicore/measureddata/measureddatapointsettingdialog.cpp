@@ -1,12 +1,14 @@
-#include "measureddatapointsettingdialog.h"
 #include "ui_measureddatapointsettingdialog.h"
+
 #include "../project/measureddata.h"
+#include "measureddatapointsettingdialog.h"
+
 #include <guibase/scalarbardialog.h>
+
+#include <QMessageBox>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
-
-#include <QMessageBox>
 
 MeasuredDataPointSettingDialog::MeasuredDataPointSettingDialog(QWidget* parent) :
 	QDialog(parent),

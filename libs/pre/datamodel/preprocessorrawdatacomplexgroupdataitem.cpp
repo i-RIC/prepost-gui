@@ -1,32 +1,32 @@
-#include "preprocessorrawdatacomplexgroupdataitem.h"
+#include "../factory/rawdatafactory.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
+#include "preprocessorgridtypedataitem.h"
+#include "preprocessorrawdatacomplexgroupdataitem.h"
+#include "preprocessorrawdatadataitem.h"
+#include "preprocessorrawdatatopdataitem.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/complex/gridcomplexconditiondialog.h>
 #include <guicore/pre/complex/gridcomplexconditionwidget.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <misc/iricundostack.h>
-#include <misc/stringtool.h>
-#include <guicore/project/projectdata.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
-#include <guicore/pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.h>
-#include "preprocessorgridtypedataitem.h"
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include "preprocessorrawdatatopdataitem.h"
-#include <guicore/pre/rawdatabackground/rawdatabackgroundcomplex.h>
-#include "preprocessorrawdatadataitem.h"
-#include "../factory/rawdatafactory.h"
-#include <guicore/pre/rawdata/rawdatacreator.h>
-#include <rawdata/polygon/rawdatapolygon.h>
 #include <guicore/pre/gridcond/complex/gridrelatedcomplexconditioncontainer.h>
-
+#include <guicore/pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.h>
+#include <guicore/pre/rawdata/rawdatacreator.h>
+#include <guicore/pre/rawdatabackground/rawdatabackgroundcomplex.h>
+#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
-
-#include <iriclib.h>
+#include <misc/stringtool.h>
+#include <rawdata/polygon/rawdatapolygon.h>
 
 #include <QAction>
 #include <QMenu>
+
+#include <iriclib.h>
 
 PreProcessorRawDataComplexGroupDataItem::PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)
 	: PreProcessorRawDataGroupDataItem(cond, parent)

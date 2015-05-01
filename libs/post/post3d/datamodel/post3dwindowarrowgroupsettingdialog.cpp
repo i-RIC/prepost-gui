@@ -1,5 +1,6 @@
-#include "post3dwindowarrowgroupsettingdialog.h"
 #include "ui_post3dwindowarrowgroupsettingdialog.h"
+
+#include "post3dwindowarrowgroupsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/arrowsettingcontainer.h>

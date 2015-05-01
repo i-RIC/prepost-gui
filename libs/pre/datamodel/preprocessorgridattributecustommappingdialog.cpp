@@ -1,12 +1,15 @@
-#include "preprocessorgridattributecustommappingdialog.h"
 #include "ui_preprocessorgridattributecustommappingdialog.h"
-#include "preprocessorgridattributemappingsettingdataitem.h"
-#include "preprocessorbcsettingdataitem.h"
+
 #include "preprocessorbcdataitem.h"
+#include "preprocessorbcsettingdataitem.h"
+#include "preprocessorgridattributecustommappingdialog.h"
+#include "preprocessorgridattributemappingsettingdataitem.h"
+
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+
 #include <QCheckBox>
-#include <QVBoxLayout>
 #include <QGroupBox>
+#include <QVBoxLayout>
 
 PreProcessorGridAttributeCustomMappingDialog::PreProcessorGridAttributeCustomMappingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -21,12 +21,12 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 
+#include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkLookupTable.h>
 #include <vtkPointData.h>
 #include <vtkPolyData.h>
 #include <vtkProperty.h>
-#include <vtkCellArray.h>
 #include <vtkRenderer.h>
 #include <vtkRungeKutta4.h>
 #include <vtkStructuredGridGeometryFilter.h>

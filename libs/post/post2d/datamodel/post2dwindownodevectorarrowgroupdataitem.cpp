@@ -4,8 +4,6 @@
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <cmath>
-
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -36,6 +34,8 @@
 #include <vtkStructuredGrid.h>
 #include <vtkTextProperty.h>
 #include <vtkTriangle.h>
+
+#include <cmath>
 
 const double Post2dWindowNodeVectorArrowGroupDataItem::MINLIMIT = 1.0E-6;
 

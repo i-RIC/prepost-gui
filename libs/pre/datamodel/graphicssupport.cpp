@@ -1,5 +1,6 @@
-#include <cmath>
 #include <QTransform>
+
+#include <cmath>
 
 namespace iRIC
 {

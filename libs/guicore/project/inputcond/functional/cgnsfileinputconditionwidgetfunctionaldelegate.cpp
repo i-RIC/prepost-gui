@@ -1,9 +1,9 @@
 #include "cgnsfileinputconditionwidgetfunctionaldelegate.h"
 
-#include <QSpinBox>
-#include <QModelIndex>
-
 #include <guibase/realnumbereditwidget.h>
+
+#include <QModelIndex>
+#include <QSpinBox>
 
 QWidget* CgnsFileInputConditionWidgetFunctionalDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& index) const
 {

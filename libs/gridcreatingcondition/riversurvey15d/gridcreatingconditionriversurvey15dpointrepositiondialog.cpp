@@ -1,9 +1,11 @@
-#include "gridcreatingconditionriversurvey15dpointrepositiondialog.h"
 #include "ui_gridcreatingconditionriversurvey15dpointrepositiondialog.h"
+
 #include "gridcreatingconditionriversurvey15d.h"
+#include "gridcreatingconditionriversurvey15dpointrepositiondialog.h"
+
 #include <misc/iricundostack.h>
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
 #include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
 
 #include <QUndoCommand>
 

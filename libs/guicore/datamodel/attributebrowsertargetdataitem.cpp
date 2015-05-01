@@ -1,17 +1,17 @@
 #include "attributebrowsertargetdataitem.h"
 #include "vtkgraphicsview.h"
-#include <guibase/graphicsmisc.h>
 
+#include <guibase/graphicsmisc.h>
 #include <misc/errormessage.h>
 
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkProperty.h>
+#include <QPolygonF>
+#include <QVector2D>
+
 #include <vtkCellArray.h>
 #include <vtkPolygon.h>
-
-#include <QVector2D>
-#include <QPolygonF>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 
 AttributeBrowserTargetDataItem::AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(parent)

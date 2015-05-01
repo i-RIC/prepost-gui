@@ -1,13 +1,13 @@
-#include "rawdatacreator.h"
-//#include "rawdatafactory.h"
-//#include "pre/datamodel/preprocessorrawdatagroupdataitem.h"
-//#include "pre/datamodel/preprocessorrawdatadataitem.h"
 #include "../../datamodel/graphicswindowdataitem.h"
 #include "../base/preprocessorrawdatadataiteminterface.h"
 #include "rawdata.h"
+#include "rawdatacreator.h"
+//#include "pre/datamodel/preprocessorrawdatadataitem.h"
+//#include "pre/datamodel/preprocessorrawdatagroupdataitem.h"
+//#include "rawdatafactory.h"
 
-#include <QDomNode>
 #include <QDomElement>
+#include <QDomNode>
 #include <QSet>
 
 RawDataCreator::RawDataCreator()

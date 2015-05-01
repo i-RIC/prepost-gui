@@ -1,16 +1,17 @@
 #include "post2dwindowparticlestopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <postbase/postparticlebasicpropertydialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
+#include <postbase/postparticlebasicpropertydialog.h>
 
-#include <vtkRenderer.h>
-#include <vtkProperty.h>
-#include <vtkPointData.h>
 #include <QSettings>
+
+#include <vtkPointData.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
 
 Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Particles"), QIcon(":/libs/guibase/images/iconPaper.png"), p)

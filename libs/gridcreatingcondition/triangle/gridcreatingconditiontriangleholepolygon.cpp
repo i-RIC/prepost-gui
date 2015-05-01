@@ -1,4 +1,5 @@
 #include "gridcreatingconditiontriangleholepolygon.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionTriangleHolePolygon::GridCreatingConditionTriangleHolePolygon(GridCreatingConditionTriangle* parent)

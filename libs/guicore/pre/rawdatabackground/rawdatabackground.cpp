@@ -1,15 +1,15 @@
-#include "rawdatabackground.h"
 #include "../base/preprocessorrawdatadataiteminterface.h"
 #include "../base/preprocessorrawdatagroupdataiteminterface.h"
 #include "../gridcond/base/gridrelatedconditioneditdialog.h"
-//#include "pre/preprocessorwindow.h"
+#include "rawdatabackground.h"
 #include "rawdatabackgroundeditdialog.h"
+//#include "pre/preprocessorwindow.h"
 
 #include <misc/iricundostack.h>
 
 #include <QFile>
-#include <QMenu>
 #include <QMainWindow>
+#include <QMenu>
 #include <QStandardItem>
 #include <QUndoCommand>
 

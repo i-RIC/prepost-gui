@@ -1,10 +1,13 @@
+#include "../project/projectcgnsfile.h"
 #include "postseriesdatacontainer.h"
 #include "postsolutioninfo.h"
-#include "../project/projectcgnsfile.h"
+
 #include <misc/stringtool.h>
+
+#include <QRegExp>
+
 #include <cgnslib.h>
 #include <iriclib.h>
-#include <QRegExp>
 
 PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent)
 	: PostDataContainer(parent)

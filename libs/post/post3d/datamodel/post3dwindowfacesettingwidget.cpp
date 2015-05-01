@@ -1,5 +1,6 @@
-#include "post3dwindowfacesettingwidget.h"
 #include "ui_post3dwindowfacesettingwidget.h"
+
+#include "post3dwindowfacesettingwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 

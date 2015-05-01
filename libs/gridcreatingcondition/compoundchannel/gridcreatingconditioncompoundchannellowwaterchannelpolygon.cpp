@@ -1,4 +1,5 @@
 #include "gridcreatingconditioncompoundchannellowwaterchannelpolygon.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionCompoundChannelLowWaterChannelPolygon::GridCreatingConditionCompoundChannelLowWaterChannelPolygon(GridCreatingConditionCompoundChannel* parent)

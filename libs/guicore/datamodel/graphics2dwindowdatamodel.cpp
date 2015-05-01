@@ -1,11 +1,12 @@
 #include "graphics2dwindowdatamodel.h"
 #include "vtk2dgraphicsview.h"
+
 #include <misc/iricundostack.h>
 
 #include <QUndoCommand>
 
-#include <vtkRenderer.h>
 #include <vtkCamera.h>
+#include <vtkRenderer.h>
 
 Graphics2DWindowDataModel::Graphics2DWindowDataModel(QMainWindow* w, ProjectDataItem* parent)
 	: GraphicsWindowDataModel(w, parent)

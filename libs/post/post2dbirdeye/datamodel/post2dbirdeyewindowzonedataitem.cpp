@@ -1,32 +1,33 @@
-#include <guicore/project/projectdata.h>
-#include "post2dbirdeyewindowzonedataitem.h"
-#include "post2dbirdeyewindowgridshapedataitem.h"
-#include "post2dbirdeyewindowgridtypedataitem.h"
-#include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
-#include "post2dbirdeyewindownodescalargroupdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/xmlsupport.h>
 #include "../post2dbirdeyewindowdatamodel.h"
 #include "../post2dbirdeyewindowgraphicsview.h"
+#include "post2dbirdeyewindowgridshapedataitem.h"
+#include "post2dbirdeyewindowgridtypedataitem.h"
+#include "post2dbirdeyewindownodescalargroupdataitem.h"
+#include "post2dbirdeyewindowzonedataitem.h"
 
-#include <vtkVertex.h>
-#include <vtkTriangle.h>
+#include <guicore/postcontainer/postsolutioninfo.h>
+#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/xmlsupport.h>
+
+#include <QAction>
+#include <QDomNode>
+#include <QFileDialog>
+#include <QGraphicsItem>
+#include <QIcon>
+#include <QMenu>
+#include <QMouseEvent>
+#include <QSignalMapper>
+#include <QStandardItem>
+#include <QTime>
+#include <QXmlStreamWriter>
+
+#include <vtkProperty.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkProperty.h>
-
-#include <QIcon>
-#include <QStandardItem>
-#include <QDomNode>
-#include <QXmlStreamWriter>
-#include <QMenu>
-#include <QAction>
-#include <QFileDialog>
-#include <QSignalMapper>
-#include <QGraphicsItem>
-#include <QMouseEvent>
-#include <QTime>
+#include <vtkTriangle.h>
+#include <vtkVertex.h>
 
 #include <cgnslib.h>
 #include <iriclib.h>

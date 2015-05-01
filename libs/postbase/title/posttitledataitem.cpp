@@ -1,15 +1,18 @@
 #include "posttitledataitem.h"
 #include "posttitleeditdialog.h"
-#include <misc/stringtool.h>
-#include <misc/iricundostack.h>
+
 #include <guibase/colortool.h>
+#include <misc/iricundostack.h>
+#include <misc/stringtool.h>
+
+#include <QDomElement>
 #include <QIcon>
 #include <QStandardItem>
 #include <QUndoCommand>
-#include <QDomElement>
+
+#include <vtkActor2DCollection.h>
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
-#include <vtkActor2DCollection.h>
 
 PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.png"),parent)

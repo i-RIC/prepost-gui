@@ -1,27 +1,28 @@
+#include "../../datamodel/preprocessorgriddataitem.h"
+#include "../../datamodel/preprocessorgridtypedataitem.h"
+#include "gridbirdeyewindow.h"
+#include "gridbirdeyewindowaxessettingdialog.h"
+#include "gridbirdeyewindowcolorsettingdialog.h"
 #include "gridbirdeyewindowdatamodel.h"
 #include "gridbirdeyewindowgraphicsview.h"
-#include "gridbirdeyewindow.h"
-#include "gridbirdeyewindowcolorsettingdialog.h"
+
+#include <guibase/graphicsmisc.h>
 #include <guicore/pre/grid/grid.h>
-#include "../../datamodel/preprocessorgridtypedataitem.h"
-#include "../../datamodel/preprocessorgriddataitem.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <guibase/graphicsmisc.h>
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include "gridbirdeyewindowaxessettingdialog.h"
 
 #include <QInputDialog>
 #include <QUndoCommand>
 
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
-#include <vtkTextProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 #include <vtkScalarBarActor.h>
+#include <vtkTextProperty.h>
 
 #define ELEVATION "Elevation"
 

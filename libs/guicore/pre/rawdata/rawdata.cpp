@@ -1,21 +1,22 @@
-#include "rawdata.h"
-#include "rawdatacreator.h"
-#include "../../datamodel/vtkgraphicsview.h"
+#include "../../base/iricmainwindowinterface.h"
 #include "../../datamodel/graphicswindowdataitem.h"
 #include "../../datamodel/graphicswindowdatamodel.h"
-#include "../../base/iricmainwindowinterface.h"
+#include "../../datamodel/vtkgraphicsview.h"
 #include "../../project/projectdata.h"
-#include "../base/preprocessorrawdatadataiteminterface.h"
-#include "../base/preprocessorrawdatagroupdataiteminterface.h"
+#include "../base/preprocessorgraphicsviewinterface.h"
 #include "../base/preprocessorgridtypedataiteminterface.h"
 #include "../base/preprocessorrawdatadataiteminterface.h"
-#include "../base/preprocessorgraphicsviewinterface.h"
+#include "../base/preprocessorrawdatadataiteminterface.h"
+#include "../base/preprocessorrawdatagroupdataiteminterface.h"
+#include "rawdata.h"
+#include "rawdatacreator.h"
 
 #include <guibase/objectbrowserview.h>
 #include <misc/stringtool.h>
 #include <misc/zdepthrange.h>
-#include <QMenu>
+
 #include <QList>
+#include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 

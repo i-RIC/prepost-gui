@@ -1,7 +1,8 @@
-#include "postprocessorwindow.h"
 #include "../project/projectdata.h"
 #include "../project/projectmainfile.h"
+#include "postprocessorwindow.h"
 #include "postprocessorwindowprojectdataitem.h"
+
 #include <QMdiSubWindow>
 
 const int PostProcessorWindow::MINWIDTH = 120;

@@ -1,6 +1,7 @@
-#include "propertybrowserview.h"
 #include "ui_propertybrowserview.h"
+
 #include "attributebrowsertargetdataitem.h"
+#include "propertybrowserview.h"
 
 #include <QVector2D>
 

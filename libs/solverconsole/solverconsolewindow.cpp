@@ -1,29 +1,29 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
-#include <guicore/solverdef/solverdefinition.h>
+
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-
+#include <guicore/solverdef/solverdefinition.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 
-#include <QString>
+#include <QAction>
+#include <QColorDialog>
 #include <QFile>
+#include <QFileDialog>
+#include <QFont>
 #include <QIODevice>
+#include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QProcess>
-#include <QMessageBox>
-#include <QColorDialog>
-#include <QUndoCommand>
-#include <QFileDialog>
-#include <QAction>
-#include <QFont>
-#include <QSettings>
 #include <QProcessEnvironment>
+#include <QSettings>
+#include <QString>
+#include <QUndoCommand>
 
 SolverConsoleWindow::~SolverConsoleWindow()
 {

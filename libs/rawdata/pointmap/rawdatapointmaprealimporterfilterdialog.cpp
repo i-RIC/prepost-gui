@@ -1,5 +1,6 @@
-#include "rawdatapointmaprealimporterfilterdialog.h"
 #include "ui_rawdatapointmaprealimporterfilterdialog.h"
+
+#include "rawdatapointmaprealimporterfilterdialog.h"
 
 RawDataPointmapRealImporterFilterDialog::RawDataPointmapRealImporterFilterDialog(QWidget* parent) :
 	QDialog(parent),

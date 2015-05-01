@@ -1,6 +1,7 @@
+#include "ui_post3dwindowcontourgroupsettingdialog.h"
+
 #include "post3dwindowcontourgroupsettingdialog.h"
 #include "post3dwindowgridtypedataitem.h"
-#include "ui_post3dwindowcontourgroupsettingdialog.h"
 
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>

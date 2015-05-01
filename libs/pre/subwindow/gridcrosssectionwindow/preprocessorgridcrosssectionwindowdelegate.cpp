@@ -1,9 +1,9 @@
 #include "preprocessorgridcrosssectionwindowdelegate.h"
 
-#include <QSpinBox>
-#include <QModelIndex>
-
 #include <guibase/realnumbereditwidget.h>
+
+#include <QModelIndex>
+#include <QSpinBox>
 
 QWidget* PreProcessorGridCrosssectionWindowDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& index) const
 {

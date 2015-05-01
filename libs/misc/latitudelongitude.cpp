@@ -1,4 +1,5 @@
 #include "latitudelongitude.h"
+
 #include <cmath>
 
 double LatitudeLongitudeAngle::value() const

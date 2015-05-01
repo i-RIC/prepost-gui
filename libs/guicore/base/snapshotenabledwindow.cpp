@@ -1,10 +1,10 @@
-#include "snapshotenabledwindow.h"
 #include "../datamodel/vtkgraphicsview.h"
+#include "snapshotenabledwindow.h"
+
+#include <QBitmap>
 
 #include <vtkFloatArray.h>
 #include <vtkRenderWindow.h>
-
-#include <QBitmap>
 
 SnapshotEnabledWindow::SnapshotEnabledWindow()
 {

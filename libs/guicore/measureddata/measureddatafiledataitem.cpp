@@ -1,26 +1,25 @@
+#include "../base/iricmainwindowinterface.h"
+#include "../datamodel/graphicswindowdatamodel.h"
+#include "../project/measureddata.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectorgroupdataitem.h"
-#include "../datamodel/graphicswindowdatamodel.h"
-#include "../project/measureddata.h"
 
-#include "../base/iricmainwindowinterface.h"
-
-#include <misc/xmlsupport.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
+#include <misc/xmlsupport.h>
 
-#include <QIcon>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-#include <QDomNode>
-#include <QDomElement>
-#include <QMenu>
 #include <QAction>
-#include <QStatusBar>
-#include <QFileDialog>
 #include <QDir>
+#include <QDomElement>
+#include <QDomNode>
+#include <QFileDialog>
+#include <QIcon>
+#include <QMenu>
 #include <QMessageBox>
+#include <QStandardItem>
+#include <QStatusBar>
+#include <QXmlStreamWriter>
 
 MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

@@ -1,7 +1,8 @@
-#include "postzoneselectingdialog.h"
 #include "ui_postzoneselectingdialog.h"
+
 #include "../postcontainer/postzonedatacontainer.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "postzoneselectingdialog.h"
 
 PostZoneSelectingDialog::PostZoneSelectingDialog(QWidget* parent) :
 	QDialog(parent),

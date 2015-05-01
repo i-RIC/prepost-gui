@@ -1,13 +1,12 @@
-#include "cgnsfileinputconditionwidgetinteger.h"
+#include "../../solverdef/solverdefinitiontranslator.h"
 #include "cgnsfileinputconditioncontainerinteger.h"
 #include "cgnsfileinputconditioncontainerset.h"
-#include "../../solverdef/solverdefinitiontranslator.h"
-
+#include "cgnsfileinputconditionwidgetinteger.h"
 //#include "../Dependency/ccdMisc.h"
 
-#include <QSpinBox>
-#include <QHBoxLayout>
 #include <QDomElement>
+#include <QHBoxLayout>
+#include <QSpinBox>
 
 CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, CgnsFileInputConditionContainerInteger* cont, const CgnsFileInputConditionContainerSet& /*cs*/) : CgnsFileInputConditionWidget(defnode)
 {

@@ -5,8 +5,6 @@
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
 
-#include <qwt_plot.h>
-
 #include <guibase/qwtplotcustomcurve.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/colorsource.h>
@@ -22,6 +20,7 @@
 #include <vtkUnstructuredGrid.h>
 
 #include <cgnslib.h>
+#include <qwt_plot.h>
 
 Graph2dHybridWindowResultSetting::Graph2dHybridWindowResultSetting()
 {

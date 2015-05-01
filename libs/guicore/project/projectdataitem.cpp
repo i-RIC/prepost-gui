@@ -1,15 +1,17 @@
-#include "projectdataitem.h"
-#include "projectdata.h"
-#include "projectmainfile.h"
 #include "../base/iricmainwindowinterface.h"
 #include "../base/windowwithzindex.h"
+#include "projectdata.h"
+#include "projectdataitem.h"
+#include "projectmainfile.h"
+
 #include <misc/xmlsupport.h>
+
+#include <QDir>
+#include <QDomElement>
 #include <QPoint>
 #include <QRect>
 #include <QWidget>
 #include <QXmlStreamWriter>
-#include <QDomElement>
-#include <QDir>
 
 #include <vtkCamera.h>
 

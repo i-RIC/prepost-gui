@@ -1,20 +1,20 @@
 #include "gridcreatingconditioncreatorexternalprogram.h"
 #include "gridcreatingconditionexternalprogram.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
-#include <guicore/base/iricmainwindowinterface.h>
-
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
 
+#include <QCoreApplication>
+#include <QDir>
 #include <QDomDocument>
 #include <QDomElement>
 #include <QDomNode>
-#include <QDir>
+#include <QMessageBox>
 #include <QString>
 #include <QTextStream>
-#include <QCoreApplication>
-#include <QMessageBox>
 
 GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExternalProgram(const QString& folderName, const QLocale& locale)
 	: GridCreatingConditionCreator()

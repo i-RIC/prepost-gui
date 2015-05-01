@@ -1,5 +1,6 @@
-#include "post2dwindowcellflagsettingdialog.h"
 #include "ui_post2dwindowcellflagsettingdialog.h"
+
+#include "post2dwindowcellflagsettingdialog.h"
 
 #include <guibase/coloreditwidget.h>
 #include <guicore/project/colorsource.h>

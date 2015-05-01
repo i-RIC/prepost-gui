@@ -1,13 +1,13 @@
 #include "vtksubdividegrid.h"
 
 #include <vtkCellData.h>
+#include <vtkIndent.h>
 #include <vtkInformation.h>
 #include <vtkInformationVector.h>
 #include <vtkObjectFactory.h>
 #include <vtkPointData.h>
 #include <vtkStreamingDemandDrivenPipeline.h>
 #include <vtkStructuredGrid.h>
-#include <vtkIndent.h>
 
 vtkCxxRevisionMacro(vtkSubdivideGrid, "$Revision: 1.47 $");
 vtkStandardNewMacro(vtkSubdivideGrid);

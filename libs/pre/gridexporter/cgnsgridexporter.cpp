@@ -1,8 +1,9 @@
 #include "cgnsgridexporter.h"
+
+#include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/pre/grid/grid.h>
 #include <misc/stringtool.h>
 
 #include <cgnslib.h>

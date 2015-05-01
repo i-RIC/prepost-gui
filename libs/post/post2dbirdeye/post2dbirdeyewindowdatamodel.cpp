@@ -7,8 +7,6 @@
 #include "post2dbirdeyewindowdatamodel.h"
 #include "post2dbirdeyewindowgraphicsview.h"
 
-#include <cmath>
-
 #include <guibase/objectbrowserview.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -27,6 +25,8 @@
 #include <vtkLight.h>
 #include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
+
+#include <cmath>
 
 #define _USE_MATH_DEFINES
 

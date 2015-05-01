@@ -1,31 +1,32 @@
+#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
+#include "../preprocessorgraphicsview.h"
 #include "preprocessormeasureddatatopdataitem.h"
+#include "preprocessorrootdataitem.h"
+
+#include <guibase/objectbrowserview.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/measureddata/measureddatafiledataitem.h>
 #include <guicore/measureddata/measureddatapointgroupdataitem.h>
 #include <guicore/measureddata/measureddatavectorgroupdataitem.h>
-#include "preprocessorrootdataitem.h"
-#include <guicore/project/projectdata.h>
-#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <misc/stringtool.h>
-#include <guibase/objectbrowserview.h>
-#include <guicore/project/projectmainfile.h>
-#include "../preprocessorgraphicsview.h"
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/project/measureddata.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/project/measureddata.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
+#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <misc/stringtool.h>
 
-#include <vtkRenderer.h>
-#include <vtkTextProperty.h>
-#include <vtkColorTransferFunction.h>
-#include <vtkRenderWindow.h>
-
+#include <QAction>
+#include <QDomNode>
 #include <QIcon>
+#include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
-#include <QAction>
-#include <QMenu>
-#include <QDomNode>
+
+#include <vtkColorTransferFunction.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkTextProperty.h>
 
 PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
 	: PreProcessorDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

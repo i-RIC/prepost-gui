@@ -1,5 +1,7 @@
 #include "gridrelatedconditionintegervariationeditwidget.h"
+
 #include <guibase/integernumbereditwidget.h>
+
 #include <QVBoxLayout>
 
 GridRelatedConditionIntegerVariationEditWidget::GridRelatedConditionIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<int>* cond)

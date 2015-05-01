@@ -1,14 +1,15 @@
-#include "cgnsfileinputconditionwidgetrealoption.h"
-#include "cgnsfileinputconditioncontainerreal.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditioncontainerreal.h"
+#include "cgnsfileinputconditionwidgetrealoption.h"
+
 #include <misc/xmlsupport.h>
 
+#include <QComboBox>
+#include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
-#include <QDomElement>
-#include <QVariant>
-#include <QComboBox>
 #include <QHBoxLayout>
+#include <QVariant>
 
 CgnsFileInputConditionWidgetRealOption::CgnsFileInputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerReal* cont) : CgnsFileInputConditionWidget(defnode)
 {

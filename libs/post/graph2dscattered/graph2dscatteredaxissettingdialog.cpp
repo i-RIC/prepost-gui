@@ -1,5 +1,7 @@
-#include "graph2dscatteredaxissettingdialog.h"
 #include "ui_graph2dscatteredaxissettingdialog.h"
+
+#include "graph2dscatteredaxissettingdialog.h"
+
 #include <QMessageBox>
 
 #define RANGEMIN 1E-8

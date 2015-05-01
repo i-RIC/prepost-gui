@@ -1,6 +1,7 @@
 #include "structured15dgridwithcrosssectioncgnsimporter.h"
 
 #include <guicore/project/projectcgnsfile.h>
+
 #include <cgnslib.h>
 
 bool Structured15DGridWithCrossSectionCgnsImporter::isZoneCompatible(int fn, int B, int Z)

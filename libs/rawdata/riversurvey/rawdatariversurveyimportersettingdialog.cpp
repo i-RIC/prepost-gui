@@ -1,5 +1,6 @@
-#include "rawdatariversurveyimportersettingdialog.h"
 #include "ui_rawdatariversurveyimportersettingdialog.h"
+
+#include "rawdatariversurveyimportersettingdialog.h"
 
 RawDataRiverSurveyImporterSettingDialog::RawDataRiverSurveyImporterSettingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,6 +1,6 @@
-#include "rawdatabackgroundcomplex.h"
 #include "../base/preprocessorrawdatacomplexgroupdataiteminterface.h"
 #include "../complex/gridcomplexconditionwidget.h"
+#include "rawdatabackgroundcomplex.h"
 
 RawDataBackgroundComplex::RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
 	: RawDataBackground(d, creator, condition)

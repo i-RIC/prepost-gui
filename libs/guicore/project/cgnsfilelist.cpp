@@ -1,4 +1,5 @@
 #include "cgnsfilelist.h"
+
 #include <QDomElement>
 
 CgnsFileList::~CgnsFileList()

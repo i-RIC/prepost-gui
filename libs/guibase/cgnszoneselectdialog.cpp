@@ -1,5 +1,6 @@
-#include "cgnszoneselectdialog.h"
 #include "ui_cgnszoneselectdialog.h"
+
+#include "cgnszoneselectdialog.h"
 
 CgnsZoneSelectDialog::CgnsZoneSelectDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,10 +1,10 @@
 #include "post2dwindowrawdatagroupdataitem.h"
 #include "post2dwindowrawdatatopdataitem.h"
-#include <pre/datamodel/preprocessorrawdatatopdataitem.h>
 
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <pre/datamodel/preprocessorrawdatatopdataitem.h>
 
 Post2dWindowRawDataTopDataItem::Post2dWindowRawDataTopDataItem(PreProcessorRawDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent)
 	: Post2dWindowDataItem(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

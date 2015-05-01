@@ -1,14 +1,15 @@
-#include "solverdefinitiongridrelatedcondition.h"
-#include "solverdefinitiontranslator.h"
-#include "solverdefinitiongridrelatedconditiondimensioncreator.h"
-#include <misc/xmlsupport.h>
-#include "../scalarstocolors/lookuptablecontainer.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
-#include "../scalarstocolors/lookuptableeditwidget.h"
-#include "../scalarstocolors/colortransferfunctioneditwidget.h"
-#include "../scalarstocolors/scalarstocolorseditdialog.h"
 #include "../pre/gridcond/base/gridrelatedconditioneditdialog.h"
 #include "../pre/gridcond/base/gridrelatedconditionvariationeditdialog.h"
+#include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "../scalarstocolors/colortransferfunctioneditwidget.h"
+#include "../scalarstocolors/lookuptablecontainer.h"
+#include "../scalarstocolors/lookuptableeditwidget.h"
+#include "../scalarstocolors/scalarstocolorseditdialog.h"
+#include "solverdefinitiongridrelatedcondition.h"
+#include "solverdefinitiongridrelatedconditiondimensioncreator.h"
+#include "solverdefinitiontranslator.h"
+
+#include <misc/xmlsupport.h>
 
 #include <QSettings>
 

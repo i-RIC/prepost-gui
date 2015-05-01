@@ -1,6 +1,6 @@
-#include "postprocessorwindowprojectdataitem.h"
-#include "postprocessorwindow.h"
 #include "../project/projectpostprocessors.h"
+#include "postprocessorwindow.h"
+#include "postprocessorwindowprojectdataitem.h"
 
 PostProcessorWindowProjectDataItem::~PostProcessorWindowProjectDataItem()
 {

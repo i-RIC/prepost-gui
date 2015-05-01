@@ -1,5 +1,6 @@
-#include "contoursettingwidget.h"
 #include "ui_contoursettingwidget.h"
+
+#include "contoursettingwidget.h"
 
 ContourSettingWidget::ContourSettingWidget(QWidget* parent) :
 	QWidget(parent),

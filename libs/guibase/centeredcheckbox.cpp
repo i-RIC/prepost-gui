@@ -1,4 +1,5 @@
 #include "centeredcheckbox.h"
+
 #include <QHBoxLayout>
 
 CenteredCheckBox::CenteredCheckBox(QWidget* parent) :

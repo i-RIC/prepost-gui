@@ -1,17 +1,21 @@
-#include "gridcreatingconditiontrianglepolygoncoordinateseditdialog.h"
 #include "ui_gridcreatingconditiontrianglepolygoncoordinateseditdialog.h"
-#include <misc/iricundostack.h>
-#include <guibase/realnumbereditwidget.h>
+
 #include "gridcreatingconditiontriangle.h"
 #include "gridcreatingconditiontriangleabstractpolygon.h"
+#include "gridcreatingconditiontrianglepolygoncoordinateseditdialog.h"
+
+#include <guibase/realnumbereditwidget.h>
+#include <misc/iricundostack.h>
+
+#include <QPolygonF>
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
-#include <QVector>
-#include <QVector2D>
-#include <QPolygonF>
 #include <QUndoCommand>
-#include <vtkPolygon.h>
+#include <QVector2D>
+#include <QVector>
+
 #include <vtkPoints.h>
+#include <vtkPolygon.h>
 
 class GridCreatingConditionTrianglePolygonCoordinatesEditDialogDelegate : public QStyledItemDelegate
 {

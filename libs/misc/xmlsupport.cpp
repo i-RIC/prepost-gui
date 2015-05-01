@@ -1,8 +1,9 @@
 #include "xmlsupport.h"
-#include <QList>
-#include <QDomNode>
-#include <QString>
+
 #include <QColor>
+#include <QDomNode>
+#include <QList>
+#include <QString>
 #include <QXmlStreamWriter>
 
 /// Get the first child node that has the name nodeName.

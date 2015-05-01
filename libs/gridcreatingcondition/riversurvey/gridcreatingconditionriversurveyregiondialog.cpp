@@ -1,6 +1,7 @@
-#include "gridcreatingconditionriversurveyregiondialog.h"
 #include "ui_gridcreatingconditionriversurveyregiondialog.h"
+
 #include "gridcreatingconditionriversurvey.h"
+#include "gridcreatingconditionriversurveyregiondialog.h"
 
 #include <rawdata/riversurvey/rawdatariversurvey.h>
 

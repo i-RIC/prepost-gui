@@ -1,6 +1,6 @@
-#include "cgnsfileinputconditionwidgetreal.h"
-#include "cgnsfileinputconditioncontainerreal.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditioncontainerreal.h"
+#include "cgnsfileinputconditionwidgetreal.h"
 
 #include <guibase/realnumbereditwidget.h>
 

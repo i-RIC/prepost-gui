@@ -1,8 +1,9 @@
-#include "solverdefinitiongridrelatedcomplexcondition.h"
 #include "../pre/gridcond/complex/gridrelatedcomplexconditioncontainer.h"
 #include "../pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.h"
 #include "../pre/rawdatabackground/rawdatabackgroundcomplexcreator.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinitiongridrelatedcomplexcondition.h"
+
 #include <misc/xmlsupport.h>
 
 void SolverDefinitionGridRelatedComplexCondition::load(const QDomElement node)

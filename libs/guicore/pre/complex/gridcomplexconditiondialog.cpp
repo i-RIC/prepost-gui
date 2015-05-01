@@ -1,15 +1,16 @@
-#include "gridcomplexconditiondialog.h"
-#include "gridcomplexconditionwidget.h"
 #include "ui_gridcomplexconditiondialog.h"
+
 #include "../../base/iricmainwindowinterface.h"
-#include "../base/preprocessorrawdatacomplexgroupdataiteminterface.h"
+#include "../../project/colorsource.h"
 #include "../../project/projectdata.h"
 #include "../../solverdef/solverdefinitiongridrelatedcomplexcondition.h"
-#include "../../project/colorsource.h"
+#include "../base/preprocessorrawdatacomplexgroupdataiteminterface.h"
+#include "gridcomplexconditiondialog.h"
+#include "gridcomplexconditionwidget.h"
 
-#include <QWidget>
-#include <QTextCodec>
 #include <QMessageBox>
+#include <QTextCodec>
+#include <QWidget>
 
 GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorRawDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent)
 	: QDialog(parent),

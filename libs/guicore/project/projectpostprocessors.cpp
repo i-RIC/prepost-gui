@@ -1,21 +1,22 @@
-#include "projectpostprocessors.h"
-//#include "projectdata.h"
-//#include "post/postprocessorwindowfactory.h"
-//#include "main/iricmainwindow.h"
-//#include "post/postprocessorwindowprojectdataitem.h"
-//#include "post/postprocessorwindow.h"
-#include "../post/postprocessorwindow.h"
-#include "../post/postprocessorwindowprojectdataitem.h"
-#include "../post/postprocessorwindowfactoryinterface.h"
-#include "projectdata.h"
 #include "../base/iricmainwindowinterface.h"
-#include <misc/errormessage.h>
+#include "../post/postprocessorwindow.h"
 #include "../post/postprocessorwindowfactoryinterface.h"
+#include "../post/postprocessorwindowfactoryinterface.h"
+#include "../post/postprocessorwindowprojectdataitem.h"
+#include "projectdata.h"
+#include "projectpostprocessors.h"
+//#include "main/iricmainwindow.h"
+//#include "post/postprocessorwindow.h"
+//#include "post/postprocessorwindowfactory.h"
+//#include "post/postprocessorwindowprojectdataitem.h"
+//#include "projectdata.h"
+
+#include <misc/errormessage.h>
 
 #include <QDomNode>
-#include <QXmlStreamWriter>
 #include <QMdiArea>
 #include <QMdiSubWindow>
+#include <QXmlStreamWriter>
 
 ProjectPostProcessors::ProjectPostProcessors(ProjectDataItem* parent)
 	: ProjectDataItem(parent)

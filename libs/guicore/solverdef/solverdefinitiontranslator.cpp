@@ -4,10 +4,10 @@
 #include <misc/xmlsupport.h>
 
 #include <QDir>
-#include <QXmlInputSource>
 #include <QDomDocument>
 #include <QDomNode>
 #include <QString>
+#include <QXmlInputSource>
 
 const QString SolverDefinitionTranslator::translate(const QString& src) const
 {

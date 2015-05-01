@@ -1,5 +1,6 @@
-#include "gridrelatedcellconditionpropertydialog.h"
 #include "ui_gridrelatedcellconditionpropertydialog.h"
+
+#include "gridrelatedcellconditionpropertydialog.h"
 
 GridRelatedCellConditionPropertyDialog::GridRelatedCellConditionPropertyDialog(QWidget* parent) :
 	QDialog(parent),

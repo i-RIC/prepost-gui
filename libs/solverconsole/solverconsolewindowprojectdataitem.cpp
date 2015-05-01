@@ -1,22 +1,22 @@
-#include "solverconsolewindowprojectdataitem.h"
 #include "solverconsolewindow.h"
-#include <guicore/project/projectdata.h>
+#include "solverconsolewindowprojectdataitem.h"
+
 #include <guicore/base/iricmainwindowinterface.h>
-
-#include <misc/xmlsupport.h>
+#include <guicore/project/projectdata.h>
 #include <misc/lastiodirectory.h>
+#include <misc/xmlsupport.h>
 
-#include <QDomNode>
-#include <QDomElement>
-#include <QXmlStreamWriter>
-#include <QPlainTextEdit>
-#include <QFile>
-#include <QFileInfo>
-#include <QTextStream>
 #include <QAction>
+#include <QDomElement>
+#include <QDomNode>
+#include <QFile>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
+#include <QPlainTextEdit>
 #include <QStatusBar>
+#include <QTextStream>
+#include <QXmlStreamWriter>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent)

@@ -1,36 +1,36 @@
-#include "measureddatavectorgroupdataitem.h"
-#include "measureddatavectordataitem.h"
-#include "measureddatafiledataitem.h"
 #include "../datamodel/graphicswindowdatamodel.h"
-#include <misc/stringtool.h>
-#include "../scalarstocolors/lookuptablecontainer.h"
 #include "../datamodel/vtk2dgraphicsview.h"
+#include "../scalarstocolors/lookuptablecontainer.h"
+#include "measureddatafiledataitem.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
+#include "measureddatavectordataitem.h"
+#include "measureddatavectorgroupdataitem.h"
 #include "measureddatavectorsettingdialog.h"
 
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 
-#include <cmath>
-
-#include <vtkPointData.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkCamera.h>
-#include <vtkTextProperty.h>
-#include <vtkPolyDataMapper2D.h>
-#include <vtkLine.h>
-#include <vtkTriangle.h>
-#include <vtkProperty2D.h>
-#include <vtkGeometryFilter.h>
-#include <vtkActor2DCollection.h>
-#include <vtkDoubleArray.h>
-#include <vtkVertex.h>
-
-#include <QSettings>
-#include <QVector2D>
 #include <QDomElement>
 #include <QSet>
+#include <QSettings>
+#include <QVector2D>
+
+#include <vtkActor2DCollection.h>
+#include <vtkCamera.h>
+#include <vtkDoubleArray.h>
+#include <vtkGeometryFilter.h>
+#include <vtkLine.h>
+#include <vtkPointData.h>
+#include <vtkPolyDataMapper2D.h>
+#include <vtkProperty.h>
+#include <vtkProperty2D.h>
+#include <vtkRenderer.h>
+#include <vtkTextProperty.h>
+#include <vtkTriangle.h>
+#include <vtkVertex.h>
+
+#include <cmath>
 
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 

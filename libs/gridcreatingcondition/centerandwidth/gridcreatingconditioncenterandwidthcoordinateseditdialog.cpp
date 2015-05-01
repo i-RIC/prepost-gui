@@ -1,15 +1,19 @@
-#include "gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
 #include "ui_gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
-#include <misc/iricundostack.h>
-#include <guibase/realnumbereditwidget.h>
+
 #include "gridcreatingconditioncenterandwidth.h"
+#include "gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
+
+#include <guibase/realnumbereditwidget.h>
+#include <misc/iricundostack.h>
+
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
-#include <QVector>
-#include <QVector2D>
 #include <QUndoCommand>
-#include <vtkPolygon.h>
+#include <QVector2D>
+#include <QVector>
+
 #include <vtkPoints.h>
+#include <vtkPolygon.h>
 
 class GridCreatingConditionCenterAndWidthCoordinatesEditDialogDelegate : public QStyledItemDelegate
 {

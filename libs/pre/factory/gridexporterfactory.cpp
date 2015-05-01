@@ -1,13 +1,14 @@
-#include "gridexporterfactory.h"
-#include <guicore/pre/grid/gridexporterinterface.h>
 #include "../gridexporter/cgnsgridexporter.h"
+#include "gridexporterfactory.h"
+
+#include <guicore/pre/grid/gridexporterinterface.h>
 
 #include <QApplication>
 #include <QDir>
 #include <QFileInfo>
-#include <QTranslator>
 #include <QPluginLoader>
 #include <QSettings>
+#include <QTranslator>
 
 GridExporterFactory* GridExporterFactory::m_instance = nullptr;
 

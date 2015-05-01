@@ -1,7 +1,7 @@
-#include "solverdefinitionintegeroptionnodegridrelatedcondition.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionintegeroptioneditwidget.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "../project/colorsource.h"
+#include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinitionintegeroptionnodegridrelatedcondition.h"
 
 SolverDefinitionIntegerOptionNodeGridRelatedCondition::SolverDefinitionIntegerOptionNodeGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator)
 	: SolverDefinitionIntegerNodeGridRelatedCondition(node, translator)

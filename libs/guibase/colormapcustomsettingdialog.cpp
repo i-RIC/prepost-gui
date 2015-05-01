@@ -1,17 +1,18 @@
-#include "colormapcustomsettingdialog.h"
 #include "ui_colormapcustomsettingdialog.h"
-#include "realnumbereditwidget.h"
+
 #include "coloreditwidget.h"
+#include "colormapcustomsettingdialog.h"
+#include "realnumbereditwidget.h"
 
 #include <misc/lastiodirectory.h>
 
-#include <QItemDelegate>
-#include <QPainter>
+#include <QColor>
 #include <QColorDialog>
 #include <QFileDialog>
+#include <QItemDelegate>
 #include <QMessageBox>
+#include <QPainter>
 #include <QTextStream>
-#include <QColor>
 
 class ColorMapCustomSettingDialogColorEditDelegate : public QItemDelegate
 {

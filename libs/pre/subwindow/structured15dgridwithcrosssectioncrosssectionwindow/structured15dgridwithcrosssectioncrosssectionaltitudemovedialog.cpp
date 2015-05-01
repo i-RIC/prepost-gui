@@ -1,8 +1,10 @@
-#include "structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h"
 #include "ui_structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h"
-#include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
-#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
+
 #include "../../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.h"
+#include "structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h"
+#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
+
+#include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
 #include <misc/iricundostack.h>
 
 #include <QPushButton>

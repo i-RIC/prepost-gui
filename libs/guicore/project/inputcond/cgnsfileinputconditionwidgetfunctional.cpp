@@ -1,11 +1,11 @@
-#include "cgnsfileinputconditionwidgetfunctional.h"
-#include "cgnsfileinputconditioncontainerfunctional.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditioncontainerfunctional.h"
+#include "cgnsfileinputconditionwidgetfunctional.h"
 #include "functional/cgnsfileinputconditionwidgetfunctionaldialog.h"
 
-#include <QPushButton>
-#include <QHBoxLayout>
 #include <QFileDialog>
+#include <QHBoxLayout>
+#include <QPushButton>
 
 CgnsFileInputConditionWidgetFunctional::CgnsFileInputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerFunctional* cont) : CgnsFileInputConditionWidget(defnode)
 {

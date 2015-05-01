@@ -1,19 +1,20 @@
-#include "unstructured2dgrid.h"
-#include "../gridcond/base/gridrelatedconditioncontainer.h"
-#include <misc/stringtool.h>
 #include "../../project/projectcgnsfile.h"
+#include "../gridcond/base/gridrelatedconditioncontainer.h"
+#include "unstructured2dgrid.h"
 
-#include <vtkSmartPointer.h>
-#include <vtkTriangle.h>
-#include <vtkStringArray.h>
-#include <vtkPointData.h>
+#include <misc/stringtool.h>
+
+#include <QSet>
+#include <QString>
+
 #include <vtkCellArray.h>
 #include <vtkMaskPolyData.h>
+#include <vtkPointData.h>
 #include <vtkPolyDataAlgorithm.h>
+#include <vtkSmartPointer.h>
+#include <vtkStringArray.h>
+#include <vtkTriangle.h>
 #include <vtkTrivialProducer.h>
-
-#include <QString>
-#include <QSet>
 
 #include <cgnslib.h>
 #include <iriclib.h>

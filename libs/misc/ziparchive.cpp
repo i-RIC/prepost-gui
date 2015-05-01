@@ -1,11 +1,11 @@
 #include "ziparchive.h"
 
-#include <QString>
-#include <QStringList>
-#include <QProcess>
+#include <QCoreApplication>
 #include <QDir>
 #include <QFile>
-#include <QCoreApplication>
+#include <QProcess>
+#include <QString>
+#include <QStringList>
 
 namespace iRIC
 {

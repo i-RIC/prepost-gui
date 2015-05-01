@@ -1,6 +1,7 @@
-#include "rawdatabackgroundeditdialog.h"
 #include "ui_rawdatabackgroundeditdialog.h"
+
 #include "../gridcond/base/gridrelatedconditioneditwidget.h"
+#include "rawdatabackgroundeditdialog.h"
 
 RawDataBackgroundEditDialog::RawDataBackgroundEditDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,23 +1,21 @@
-#include "cgnsfileinputconditionwidgetset.h"
-
+#include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditioncontainerset.h"
+#include "cgnsfileinputconditiondependency.h"
+#include "cgnsfileinputconditionwidgetfilename.h"
+#include "cgnsfileinputconditionwidgetfoldername.h"
+#include "cgnsfileinputconditionwidgetfunctional.h"
 #include "cgnsfileinputconditionwidgetinteger.h"
 #include "cgnsfileinputconditionwidgetintegeroption.h"
 #include "cgnsfileinputconditionwidgetreal.h"
 #include "cgnsfileinputconditionwidgetrealoption.h"
+#include "cgnsfileinputconditionwidgetset.h"
 #include "cgnsfileinputconditionwidgetstring.h"
-#include "cgnsfileinputconditionwidgetfilename.h"
-#include "cgnsfileinputconditionwidgetfoldername.h"
-#include "cgnsfileinputconditionwidgetfunctional.h"
-
-#include "cgnsfileinputconditioncontainerset.h"
-#include "cgnsfileinputconditiondependency.h"
-#include <misc/xmlsupport.h>
-#include "../../solverdef/solverdefinitiontranslator.h"
 
 #include <misc/errormessage.h>
+#include <misc/xmlsupport.h>
 
-#include <QDomNode>
 #include <QDomElement>
+#include <QDomNode>
 #include <QDomNodeList>
 
 CgnsFileInputConditionWidgetSet::~CgnsFileInputConditionWidgetSet()

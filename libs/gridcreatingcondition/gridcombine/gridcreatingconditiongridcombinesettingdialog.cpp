@@ -1,11 +1,12 @@
-#include "gridcreatingconditiongridcombinesettingdialog.h"
 #include "ui_gridcreatingconditiongridcombinesettingdialog.h"
 
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include "gridcreatingconditiongridcombinesettingdialog.h"
+
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/grid/structured2dgrid.h>
 
 #include <QPushButton>
 

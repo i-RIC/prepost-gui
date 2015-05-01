@@ -1,24 +1,24 @@
-#include "cgnsfileinputconditionwidgetfunctionaldialog.h"
+#include "../../../solverdef/solverdefinitiontranslator.h"
 #include "../cgnsfileinputconditionwidgetfunctional.h"
 #include "cgnsfileinputconditionwidgetfunctionaldelegate.h"
-#include "../../../solverdef/solverdefinitiontranslator.h"
-#include <guibase/qwtplotcustomcurve.h>
+#include "cgnsfileinputconditionwidgetfunctionaldialog.h"
 
-#include <misc/xmlsupport.h>
+#include <guibase/qwtplotcustomcurve.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
-
-#include <qwt_scale_engine.h>
+#include <misc/xmlsupport.h>
 
 #include <QFile>
+#include <QFileDialog>
 #include <QFileInfo>
-#include <QTextStream>
-#include <QStandardItemModel>
 #include <QItemSelection>
 #include <QItemSelectionRange>
-#include <QFileDialog>
-#include <QModelIndex>
 #include <QMessageBox>
+#include <QModelIndex>
+#include <QStandardItemModel>
+#include <QTextStream>
+
+#include <qwt_scale_engine.h>
 
 CgnsFileInputConditionWidgetFunctionalDialog::CgnsFileInputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent)
 	: QDialog(parent)

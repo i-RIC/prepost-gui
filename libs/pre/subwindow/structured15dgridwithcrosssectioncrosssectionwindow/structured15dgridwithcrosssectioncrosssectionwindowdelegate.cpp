@@ -1,4 +1,5 @@
 #include "structured15dgridwithcrosssectioncrosssectionwindowdelegate.h"
+
 #include <guibase/realnumbereditwidget.h>
 
 Structured15DGridWithCrossSectionCrossSectionWindowDelegate::Structured15DGridWithCrossSectionCrossSectionWindowDelegate()

@@ -1,10 +1,11 @@
+#include "graph2dscatteredwindow.h"
 #include "graph2dscatteredwindowactionmanager.h"
 #include "graph2dscatteredwindowdatamodel.h"
-#include "graph2dscatteredwindow.h"
+
 #include <guibase/irictoolbar.h>
 
-#include <QIcon>
 #include <QAction>
+#include <QIcon>
 #include <QMenu>
 
 Graph2dScatteredWindowActionManager::Graph2dScatteredWindowActionManager(Graph2dScatteredWindow* parent)

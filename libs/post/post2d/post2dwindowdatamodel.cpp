@@ -12,8 +12,6 @@
 #include "post2dwindowdatamodel.h"
 #include "post2dwindowgraphicsview.h"
 
-#include <cmath>
-
 #include <guibase/itemselectingdialog.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/measureddata/measureddatafiledataitem.h>
@@ -30,6 +28,8 @@
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QStandardItemModel>
+
+#include <cmath>
 
 #define _USE_MATH_DEFINES
 

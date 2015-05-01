@@ -1,20 +1,22 @@
-#include <cmath>
-
+#include "../graph2dscatteredwindowresultsetting.h"
+#include "../graph2dscatteredwindowview.h"
 #include "graph2dscatteredwindowresultdataitem.h"
 #include "graph2dscatteredwindowresultgroupdataitem.h"
-#include "../graph2dscatteredwindowview.h"
-#include <guicore/postcontainer/postzonedatacontainer.h>
-#include "../graph2dscatteredwindowresultsetting.h"
-#include <misc/stringtool.h>
+
 #include <guibase/qwtplotcustomcurve.h>
+#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <misc/stringtool.h>
+
 #include <QStandardItem>
 #include <QVector3D>
 
-#include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
+#include <vtkDoubleArray.h>
 #include <vtkExtractGrid.h>
 #include <vtkPointData.h>
-#include <vtkDoubleArray.h>
+#include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+
+#include <cmath>
 
 Graph2dScatteredWindowResultDataItem::Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent)
 	: Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.png"), parent)

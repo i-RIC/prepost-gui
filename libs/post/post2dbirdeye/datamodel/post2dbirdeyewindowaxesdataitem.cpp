@@ -1,14 +1,15 @@
 #include "post2dbirdeyewindowaxesdataitem.h"
+
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
+#include <vtkActorCollection.h>
 #include <vtkCaptionActor2D.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 #include <vtkTextActor.h>
 #include <vtkTextProperty.h>
-#include <vtkProperty.h>
-#include <vtkActorCollection.h>
 
 Post2dBirdEyeWindowAxesDataItem::Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent)
 	: Post2dBirdEyeWindowDataItem(tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)

@@ -1,6 +1,9 @@
-#include "graph2dwindowmarkersettingdialog.h"
 #include "ui_graph2dwindowmarkersettingdialog.h"
+
+#include "graph2dwindowmarkersettingdialog.h"
+
 #include <guicore/project/colorsource.h>
+
 #include <qwt_plot.h>
 
 Graph2dWindowMarkerSettingDialog::Graph2dWindowMarkerSettingDialog(QWidget* parent) :

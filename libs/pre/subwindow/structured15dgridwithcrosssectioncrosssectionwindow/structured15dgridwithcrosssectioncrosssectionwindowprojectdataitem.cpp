@@ -1,6 +1,6 @@
-#include "structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h"
-#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "../../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.h"
+#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
+#include "structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h"
 
 Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parentWindow)
 	: ProjectDataItem(item)

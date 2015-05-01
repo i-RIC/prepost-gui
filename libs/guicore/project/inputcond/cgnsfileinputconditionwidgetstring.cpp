@@ -1,8 +1,9 @@
-#include "cgnsfileinputconditionwidgetstring.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "cgnsfileinputconditioncontainerstring.h"
-#include <QLineEdit>
+#include "cgnsfileinputconditionwidgetstring.h"
+
 #include <QHBoxLayout>
+#include <QLineEdit>
 #include <QMessageBox>
 #include <QTextCodec>
 

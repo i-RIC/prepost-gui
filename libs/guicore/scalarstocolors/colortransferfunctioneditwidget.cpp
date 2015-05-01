@@ -1,13 +1,14 @@
-#include "colortransferfunctioneditwidget.h"
 #include "ui_colortransferfunctioneditwidget.h"
+
 #include "colortransferfunctioncontainer.h"
+#include "colortransferfunctioneditwidget.h"
 
 #include <guibase/coloreditwidget.h>
 
-#include <QStringList>
-#include <QItemDelegate>
 #include <QColorDialog>
+#include <QItemDelegate>
 #include <QPainter>
+#include <QStringList>
 
 class ColorTransferFunctionEditWidgetColorEditDelegate : public QItemDelegate
 {

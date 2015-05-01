@@ -1,8 +1,10 @@
-#include "gridcreatingconditionriversurvey15dregiondialog.h"
 #include "ui_gridcreatingconditionriversurvey15dregiondialog.h"
+
 #include "gridcreatingconditionriversurvey15d.h"
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include "gridcreatingconditionriversurvey15dregiondialog.h"
+
 #include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <rawdata/riversurvey/rawdatariversurvey.h>
 
 #include <QMessageBox>
 

@@ -1,6 +1,7 @@
+#include "ui_rawdatapointmapinterpolatepoints.h"
+
 #include "rawdatapointmap.h"
 #include "rawdatapointmapinterpolatepoints.h"
-#include "ui_rawdatapointmapinterpolatepoints.h"
 
 #include <QMessageBox>
 

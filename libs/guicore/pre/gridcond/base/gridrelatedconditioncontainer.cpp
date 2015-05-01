@@ -1,11 +1,12 @@
-#include "../../../solverdef/solverdefinitiongridrelatedcondition.h"
-#include "gridrelatedconditioncontainer.h"
-#include "../../../pre/base/preprocessorrawdatagroupdataiteminterface.h"
 #include "../../../pre/base/preprocessorgriddataiteminterface.h"
 #include "../../../pre/base/preprocessorgridtypedataiteminterface.h"
+#include "../../../pre/base/preprocessorrawdatagroupdataiteminterface.h"
 #include "../../../pre/base/preprocessorrawdatatopdataiteminterface.h"
-#include "gridrelatedconditiondimensionscontainer.h"
+#include "../../../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "gridrelatedconditioncontainer.h"
 #include "gridrelatedconditiondimensioncontainer.h"
+#include "gridrelatedconditiondimensionscontainer.h"
+
 #include <misc/filesystemfunction.h>
 
 #include <QDir>

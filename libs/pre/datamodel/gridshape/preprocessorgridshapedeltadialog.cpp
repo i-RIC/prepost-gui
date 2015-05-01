@@ -1,5 +1,6 @@
-#include "preprocessorgridshapedeltadialog.h"
 #include "ui_preprocessorgridshapedeltadialog.h"
+
+#include "preprocessorgridshapedeltadialog.h"
 
 PreProcessorGridShapeDeltaDialog::PreProcessorGridShapeDeltaDialog(QWidget* parent) :
 	QDialog(parent),

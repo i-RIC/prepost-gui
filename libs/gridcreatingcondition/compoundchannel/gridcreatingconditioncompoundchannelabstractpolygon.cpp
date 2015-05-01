@@ -1,17 +1,18 @@
-#include "gridcreatingconditioncompoundchannelabstractpolygon.h"
 #include "gridcreatingconditioncompoundchannel.h"
+#include "gridcreatingconditioncompoundchannelabstractpolygon.h"
 
 #include <misc/errormessage.h>
 
-#include <QPolygonF>
-#include <QPointF>
 #include <QMap>
-#include <vtkRenderer.h>
-#include <vtkProperty.h>
-#include <vtkVertex.h>
-#include <vtkTriangle.h>
+#include <QPointF>
+#include <QPolygonF>
+
 #include <vtkLine.h>
 #include <vtkPoints.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
+#include <vtkTriangle.h>
+#include <vtkVertex.h>
 
 GridCreatingConditionCompoundChannelAbstractPolygon::GridCreatingConditionCompoundChannelAbstractPolygon(GridCreatingConditionCompoundChannel* parent)
 {

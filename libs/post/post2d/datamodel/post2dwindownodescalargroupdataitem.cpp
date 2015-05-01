@@ -5,33 +5,33 @@
 #include "post2dwindownodescalargroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guibase/coordinatesystem.h>
-#include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDateTime>
 #include <QDomNode>
 #include <QList>
+#include <QMainWindow>
 #include <QMenu>
+#include <QMessageBox>
 #include <QMouseEvent>
 #include <QStandardItem>
 #include <QUndoCommand>
-#include <QXmlStreamWriter>
-#include <QMessageBox>
-#include <QMainWindow>
-#include <QDateTime>
 #include <QVector3D>
+#include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
@@ -50,10 +50,10 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkScalarBarActor.h>
+#include <vtkScalarsToColors.h>
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
-#include <vtkScalarsToColors.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)

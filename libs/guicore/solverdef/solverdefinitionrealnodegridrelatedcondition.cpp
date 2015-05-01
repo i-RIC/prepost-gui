@@ -1,7 +1,7 @@
-#include "solverdefinitionrealnodegridrelatedcondition.h"
 #include "../pre/gridcond/container/gridrelatedconditionrealnodecontainer.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionrealeditwidget.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionrealvariationeditwidget.h"
+#include "solverdefinitionrealnodegridrelatedcondition.h"
 
 GridRelatedConditionContainer* SolverDefinitionRealNodeGridRelatedCondition::buildContainer(Grid* grid)
 {

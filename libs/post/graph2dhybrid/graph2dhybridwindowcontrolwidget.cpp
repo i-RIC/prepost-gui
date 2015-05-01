@@ -1,5 +1,6 @@
-#include "graph2dhybridwindowcontrolwidget.h"
 #include "ui_graph2dhybridwindowcontrolwidget.h"
+
+#include "graph2dhybridwindowcontrolwidget.h"
 
 #include <misc/xmlsupport.h>
 

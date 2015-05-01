@@ -1,8 +1,9 @@
+#include "ui_rawdatariverpathpointmovedialog.h"
+
 #include "rawdatariverpathpoint.h"
 #include "rawdatariverpathpointmovedialog.h"
 #include "rawdatariversurvey.h"
 #include "rawdatariversurveybackgroundgridcreatethread.h"
-#include "ui_rawdatariverpathpointmovedialog.h"
 
 #include <misc/iricundostack.h>
 

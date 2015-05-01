@@ -1,4 +1,5 @@
 #include "colortransferfunctioncontainer.h"
+
 #include <guibase/colortool.h>
 
 #include <vtkColorTransferFunction.h>

@@ -1,6 +1,7 @@
+#include "ui_rawdatapointmapaddpointdialog.h"
+
 #include "rawdatapointmap.h"
 #include "rawdatapointmapaddpointdialog.h"
-#include "ui_rawdatapointmapaddpointdialog.h"
 
 RawDataPointmapAddPointDialog::RawDataPointmapAddPointDialog(RawDataPointmap* pmap, QWidget* parent) :
 	QDialog(parent),

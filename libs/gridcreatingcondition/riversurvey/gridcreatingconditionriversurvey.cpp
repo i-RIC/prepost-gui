@@ -1,49 +1,48 @@
-#include <cmath>
 #include "gridcreatingconditionriversurvey.h"
-#include "gridcreatingconditionriversurveyregiondialog.h"
-#include "gridcreatingconditionriversurveypointregionadddialog.h"
 #include "gridcreatingconditionriversurveypointadddialog.h"
 #include "gridcreatingconditionriversurveypointmovedialog.h"
+#include "gridcreatingconditionriversurveypointregionadddialog.h"
 #include "gridcreatingconditionriversurveypointrepositiondialog.h"
-#include <misc/zdepthrange.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include "gridcreatingconditionriversurveyregiondialog.h"
+
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-
-#include <misc/iricundostack.h>
-#include <misc/mathsupport.h>
-
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/misc/mouseboundingbox.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
+#include <misc/zdepthrange.h>
+#include <rawdata/riversurvey/rawdatariversurvey.h>
 #include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/misc/mouseboundingbox.h>
 
-#include <vtkRenderer.h>
-#include <vtkVertex.h>
-#include <vtkLine.h>
-#include <vtkProperty.h>
-#include <vtkExtractGrid.h>
-#include <vtkPoints.h>
-#include <vtkStructuredGridGeometryFilter.h>
-#include <vtkGeometryFilter.h>
-
-#include <QMenu>
-#include <QMouseEvent>
 #include <QInputEvent>
-#include <QXmlStreamWriter>
+#include <QMenu>
 #include <QMessageBox>
+#include <QMouseEvent>
 #include <QToolBar>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
+#include <vtkExtractGrid.h>
+#include <vtkGeometryFilter.h>
+#include <vtkLine.h>
+#include <vtkPoints.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
+#include <vtkStructuredGridGeometryFilter.h>
+#include <vtkVertex.h>
+
+#include <cmath>
 
 class GridCreatingConditionCtrlPointDeleteCommand : public QUndoCommand
 {

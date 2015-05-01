@@ -1,11 +1,12 @@
 #include "cgnsfileinputconditioncontainerfunctional.h"
+
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
+
 #include <iriclib.h>
 #include <stdlib.h>
-
-#include <QDomNode>
 
 CgnsFileInputConditionContainerFunctional::CgnsFileInputConditionContainerFunctional()
 	: CgnsFileInputConditionContainer()

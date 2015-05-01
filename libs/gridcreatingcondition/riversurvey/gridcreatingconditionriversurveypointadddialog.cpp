@@ -1,13 +1,14 @@
-#include "gridcreatingconditionriversurveypointadddialog.h"
 #include "ui_gridcreatingconditionriversurveypointadddialog.h"
-#include <misc/iricundostack.h>
-#include "gridcreatingconditionriversurvey.h"
 
+#include "gridcreatingconditionriversurvey.h"
+#include "gridcreatingconditionriversurveypointadddialog.h"
+
+#include <misc/iricundostack.h>
 #include <rawdata/riversurvey/rawdatariversurvey.h>
 #include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
 
-#include <QUndoCommand>
 #include <QMap>
+#include <QUndoCommand>
 #include <QVector>
 
 GridCreatingConditionRiverSurveyPointAddDialog::GridCreatingConditionRiverSurveyPointAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent) :

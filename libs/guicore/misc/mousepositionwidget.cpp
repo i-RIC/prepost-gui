@@ -1,5 +1,6 @@
-#include "mousepositionwidget.h"
 #include "ui_mousepositionwidget.h"
+
+#include "mousepositionwidget.h"
 
 MousePositionWidget::MousePositionWidget(QWidget* parent) :
 	QWidget(parent),

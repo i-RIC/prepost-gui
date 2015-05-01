@@ -1,4 +1,5 @@
 #include "preprocessorbackgroundimagedataitem.h"
+
 #include <guibase/objectbrowserview.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/backgroundimageinfodialog.h>

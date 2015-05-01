@@ -1,6 +1,9 @@
-#include "preprocessorgridcreatingconditionalgorithmselectdialog.h"
 #include "ui_preprocessorgridcreatingconditionalgorithmselectdialog.h"
+
+#include "preprocessorgridcreatingconditionalgorithmselectdialog.h"
+
 #include <guicore/pre/gridcreatingcondition/gridcreatingconditioncreator.h>
+
 #include <QWidget>
 
 #define LISTWIDTH 280

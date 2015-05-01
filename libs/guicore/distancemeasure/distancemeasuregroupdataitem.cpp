@@ -1,12 +1,12 @@
-#include "distancemeasuregroupdataitem.h"
-#include "distancemeasuredataitem.h"
 #include "../datamodel/graphicswindowdatamodel.h"
-#include <guibase/objectbrowserview.h>
+#include "distancemeasuredataitem.h"
+#include "distancemeasuregroupdataitem.h"
 
+#include <guibase/objectbrowserview.h>
 #include <misc/iricundostack.h>
 
-#include <QMenu>
 #include <QDomNode>
+#include <QMenu>
 
 DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

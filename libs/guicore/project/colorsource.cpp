@@ -1,10 +1,12 @@
 #include "colorsource.h"
+
 #include <misc/stringtool.h>
+
 #include <QDomDocument>
-#include <QDomNode>
 #include <QDomElement>
-#include <QXmlStreamWriter>
+#include <QDomNode>
 #include <QFile>
+#include <QXmlStreamWriter>
 
 ColorSource::ColorSource(ProjectDataItem* d)
 	: ProjectDataItem(d)

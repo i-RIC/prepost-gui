@@ -1,5 +1,6 @@
-#include "preprocessorgridattributetemplatemappingsettingdialog.h"
 #include "ui_preprocessorgridattributetemplatemappingsettingdialog.h"
+
+#include "preprocessorgridattributetemplatemappingsettingdialog.h"
 
 PreProcessorGridAttributeTemplateMappingSettingDialog::PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,5 +1,5 @@
-#include "graphicswindowdrawcommands.h"
 #include "graphicswindowdataitem.h"
+#include "graphicswindowdrawcommands.h"
 
 GraphicsWindowDrawOnRedo::GraphicsWindowDrawOnRedo(GraphicsWindowDataItem* item)
 	: QUndoCommand(QObject::tr("Draw"))

@@ -1,20 +1,23 @@
-#include <gdal_priv.h>
-#include "rawdatapointmapt.h"
 #include "rawdatapointmaprealimporter.h"
 #include "rawdatapointmaprealimporterfilterdialog.h"
+#include "rawdatapointmapt.h"
+
 #include <misc/stringtool.h>
+
 #include <QFile>
-#include <QTextStream>
-#include <QMessageBox>
 #include <QFileInfo>
+#include <QMessageBox>
+#include <QTextStream>
 
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
+#include <vtkSTLReader.h>
 #include <vtkSmartPointer.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkVertex.h>
-#include <vtkSTLReader.h>
+
+#include <gdal_priv.h>
 
 RawDataPointmapRealImporter::RawDataPointmapRealImporter(RawDataCreator* creator)
 	: RawDataImporter(creator)

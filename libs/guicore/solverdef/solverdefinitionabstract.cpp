@@ -1,9 +1,9 @@
-#include "solverdefinitionabstract.h"
 #include "solverdefinition.h"
+#include "solverdefinitionabstract.h"
 #include "solverdefinitiontranslator.h"
 
-#include <misc/xmlsupport.h>
 #include <misc/errormessage.h>
+#include <misc/xmlsupport.h>
 
 #include <QDir>
 #include <QDomDocument>

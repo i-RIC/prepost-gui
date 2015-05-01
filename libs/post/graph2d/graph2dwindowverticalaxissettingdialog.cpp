@@ -1,5 +1,6 @@
-#include "graph2dwindowverticalaxissettingdialog.h"
 #include "ui_graph2dwindowverticalaxissettingdialog.h"
+
+#include "graph2dwindowverticalaxissettingdialog.h"
 
 Graph2dWindowVerticalAxisSettingDialog::Graph2dWindowVerticalAxisSettingDialog(QWidget* parent) :
 	QDialog(parent),

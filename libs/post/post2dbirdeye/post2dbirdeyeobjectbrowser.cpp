@@ -1,9 +1,10 @@
 #include "post2dbirdeyeobjectbrowser.h"
 #include "post2dbirdeyeobjectbrowserview.h"
-#include <QtGui/QStandardItemModel>
-#include <QtGui/QIcon>
+
 #include <QItemSelection>
 #include <QItemSelectionRange>
+#include <QtGui/QIcon>
+#include <QtGui/QStandardItemModel>
 
 void Post2dBirdEyeObjectBrowser::init()
 {

@@ -1,46 +1,46 @@
-#include "measureddatapointgroupdataitem.h"
-#include "measureddatapointdataitem.h"
-#include "measureddatafiledataitem.h"
-#include "measureddatapointsettingdialog.h"
-#include <misc/xmlsupport.h>
-#include <misc/stringtool.h>
+#include "../datamodel/vtkgraphicsview.h"
 #include "../pre/grid/grid.h"
-#include "../scalarstocolors/lookuptablecontainer.h"
 #include "../project/measureddata.h"
 #include "../scalarstocolors/lookuptablecontainer.h"
+#include "../scalarstocolors/lookuptablecontainer.h"
+#include "measureddatafiledataitem.h"
+#include "measureddatapointdataitem.h"
+#include "measureddatapointgroupdataitem.h"
+#include "measureddatapointsettingdialog.h"
+
 #include <guibase/graphicsmisc.h>
-#include "../datamodel/vtkgraphicsview.h"
 #include <guibase/scalarbarsetting.h>
-
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QList>
 #include <QStandardItem>
-#include <QXmlStreamWriter>
-#include <QDomNode>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
-#include <vtkActorCollection.h>
 #include <vtkActor2DCollection.h>
-#include <vtkLODActor.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkContourFilter.h>
-#include <vtkPointData.h>
+#include <vtkActorCollection.h>
 #include <vtkAppendPolyData.h>
-#include <vtkClipPolyData.h>
-#include <vtkCleanPolyData.h>
-#include <vtkDoubleArray.h>
 #include <vtkCellData.h>
+#include <vtkCleanPolyData.h>
+#include <vtkClipPolyData.h>
+#include <vtkContourFilter.h>
+#include <vtkDataSetMapper.h>
+#include <vtkDoubleArray.h>
+#include <vtkGeometryFilter.h>
+#include <vtkLODActor.h>
+#include <vtkPointData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkScalarBarActor.h>
+#include <vtkStringArray.h>
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
-#include <vtkScalarBarActor.h>
 #include <vtkTextProperty.h>
-#include <vtkGeometryFilter.h>
-#include <vtkStringArray.h>
-#include <vtkDataSetMapper.h>
 
 MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p)
 	: GraphicsWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)

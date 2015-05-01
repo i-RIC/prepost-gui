@@ -1,5 +1,6 @@
-#include "graph2dhybridsettingdialog.h"
 #include "ui_graph2dhybridsettingdialog.h"
+
+#include "graph2dhybridsettingdialog.h"
 
 #include <QMessageBox>
 

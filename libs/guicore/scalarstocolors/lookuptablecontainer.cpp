@@ -1,9 +1,11 @@
 #include "lookuptablecontainer.h"
-#include <misc/xmlsupport.h>
+
 #include <guibase/colortool.h>
-#include <vtkColorTransferFunction.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomNode>
+
+#include <vtkColorTransferFunction.h>
 
 LookupTableContainer::LookupTableContainer()
 	: ScalarsToColorsContainer(0)

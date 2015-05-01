@@ -1,5 +1,6 @@
-#include "gridbirdeyewindowaxessettingdialog.h"
 #include "ui_gridbirdeyewindowaxessettingdialog.h"
+
+#include "gridbirdeyewindowaxessettingdialog.h"
 
 GridBirdEyeWindowAxesSettingDialog::GridBirdEyeWindowAxesSettingDialog(QWidget* parent) :
 	QDialog(parent),

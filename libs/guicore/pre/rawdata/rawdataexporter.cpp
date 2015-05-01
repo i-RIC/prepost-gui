@@ -1,5 +1,5 @@
-#include "rawdataexporter.h"
 #include "rawdatacreator.h"
+#include "rawdataexporter.h"
 
 RawDataExporter::RawDataExporter(RawDataCreator* creator)
 	: QObject(creator)

@@ -1,5 +1,6 @@
-#include "post3dwindowparticlestructuredsettingdialog.h"
 #include "ui_post3dwindowparticlestructuredsettingdialog.h"
+
+#include "post3dwindowparticlestructuredsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

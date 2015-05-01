@@ -1,5 +1,6 @@
-#include "graph2dscatteredwindowdrawsettingdialog.h"
 #include "ui_graph2dscatteredwindowdrawsettingdialog.h"
+
+#include "graph2dscatteredwindowdrawsettingdialog.h"
 
 Graph2dScatteredWindowDrawSettingDialog::Graph2dScatteredWindowDrawSettingDialog(QWidget* parent) :
 	QDialog(parent),

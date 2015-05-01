@@ -1,5 +1,5 @@
-#include "propertybrowser.h"
 #include "../datamodel/propertybrowserview.h"
+#include "propertybrowser.h"
 
 PropertyBrowser::PropertyBrowser(QWidget* parent)
 	: QDockWidget(parent)

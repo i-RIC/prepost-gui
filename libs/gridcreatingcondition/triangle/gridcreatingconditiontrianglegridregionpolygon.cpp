@@ -1,4 +1,5 @@
 #include "gridcreatingconditiontrianglegridregionpolygon.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionTriangleGridRegionPolygon::GridCreatingConditionTriangleGridRegionPolygon(GridCreatingConditionTriangle* parent)

@@ -1,13 +1,14 @@
-#include "graph2dscatteredwindowrootdataitem.h"
-#include "../graph2dscatteredwindowdatamodel.h"
 #include "../graph2dscatteredwindow.h"
-#include "graph2dscatteredwindowresultgroupdataitem.h"
-#include <misc/xmlsupport.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include "../graph2dscatteredwindowview.h"
 #include "../graph2dscatteredwindowdatamodel.h"
-#include <guicore/postcontainer/postsolutioninfo.h>
+#include "../graph2dscatteredwindowdatamodel.h"
+#include "../graph2dscatteredwindowview.h"
 #include "graph2dscatteredwindowresultgroupdataitem.h"
+#include "graph2dscatteredwindowresultgroupdataitem.h"
+#include "graph2dscatteredwindowrootdataitem.h"
+
+#include <guicore/postcontainer/postsolutioninfo.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/xmlsupport.h>
 
 #include <QStandardItemModel>
 #include <QXmlStreamWriter>

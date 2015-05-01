@@ -1,14 +1,15 @@
+#include "ui_rawdatariverpathpointrenamedialog.h"
+
 #include "rawdatariverpathpoint.h"
 #include "rawdatariverpathpointrenamedialog.h"
 #include "rawdatariversurvey.h"
-#include "ui_rawdatariverpathpointrenamedialog.h"
-
-#include <sstream>
 
 #include <misc/iricundostack.h>
 
 #include <QMessageBox>
 #include <QUndoCommand>
+
+#include <sstream>
 
 RawDataRiverPathPointRenameDialog::RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),

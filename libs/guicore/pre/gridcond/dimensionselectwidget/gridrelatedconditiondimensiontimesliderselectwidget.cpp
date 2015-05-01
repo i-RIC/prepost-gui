@@ -1,17 +1,18 @@
-#include "gridrelatedconditiondimensiontimesliderselectwidget.h"
 #include "../base/gridrelatedconditiondimensioncontainer.h"
-#include <misc/slowmotionspeededitdialog.h>
-#include <guibase/irictoolbar.h>
+#include "gridrelatedconditiondimensiontimesliderselectwidget.h"
 
-#include <QHBoxLayout>
+#include <guibase/irictoolbar.h>
+#include <misc/slowmotionspeededitdialog.h>
+
 #include <QAction>
-#include <QVariant>
-#include <QLabel>
-#include <QTimer>
-#include <QSlider>
-#include <QIcon>
 #include <QDateTime>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QLabel>
+#include <QSlider>
 #include <QTextStream>
+#include <QTimer>
+#include <QVariant>
 
 GridRelatedConditionDimensionTimeSliderSelectWidget::GridRelatedConditionDimensionTimeSliderSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent) :
 	GridRelatedConditionDimensionSelectWidget(container, parent)

@@ -1,37 +1,38 @@
-#include "preprocessorbcdataitem.h"
 #include "../bc/boundaryconditiondialog.h"
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
-#include <guicore/project/projectdata.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/solverdef/solverdefinitionboundarycondition.h>
-#include "preprocessorgriddataitem.h"
+#include "preprocessorbcdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
-#include <guicore/pre/grid/grid.h>
-#include <misc/iricundostack.h>
-#include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/project/projectcgnsfile.h>
+#include "preprocessorgriddataitem.h"
 
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
+#include <guicore/project/projectcgnsfile.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/errormessage.h>
+#include <misc/iricundostack.h>
+#include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-#include <misc/lastiodirectory.h>
 
 #include <QMenu>
-#include <QXmlStreamWriter>
 #include <QMouseEvent>
+#include <QXmlStreamWriter>
 
-#include <vtkRenderer.h>
-#include <vtkVertex.h>
+#include <vtkActor2DCollection.h>
+#include <vtkCellArray.h>
+#include <vtkExtractEdges.h>
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
+#include <vtkRenderer.h>
 #include <vtkTextProperty.h>
-#include <vtkActor2DCollection.h>
-#include <vtkExtractEdges.h>
-#include <vtkCellArray.h>
+#include <vtkVertex.h>
 
-#include <iriclib.h>
 #include <cgnslib.h>
+#include <iriclib.h>
+
 #define TMPBCNAME "bc"
 
 PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting)

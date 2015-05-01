@@ -1,11 +1,13 @@
 #include "preprocessorgridattributemappingsettingdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
 #include "preprocessorrawdatagroupdataitem.h"
+
 #include <guicore/pre/grid/grid.h>
-#include <QXmlStreamWriter>
+#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+
 #include <QDomElement>
 #include <QStandardItem>
+#include <QXmlStreamWriter>
 
 PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorRawDataGroupDataItem* rawdataGroup, PreProcessorDataItem* parent)
 	: PreProcessorDataItem(parent)

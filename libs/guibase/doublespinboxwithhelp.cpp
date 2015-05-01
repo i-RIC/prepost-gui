@@ -1,5 +1,6 @@
-#include "doublespinboxwithhelp.h"
 #include "ui_doublespinboxwithhelp.h"
+
+#include "doublespinboxwithhelp.h"
 
 DoubleSpinBoxWithHelp::DoubleSpinBoxWithHelp(QWidget* parent) :
 	QWidget(parent),

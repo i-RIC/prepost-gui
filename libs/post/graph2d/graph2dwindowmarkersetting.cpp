@@ -1,11 +1,12 @@
-#include "graph2dwindowmarkersetting.h"
 #include "datamodel/graph2dwindowmarkerdataitem.h"
-#include <misc/xmlsupport.h>
-#include <qwt_plot.h>
+#include "graph2dwindowmarkersetting.h"
 
+#include <misc/xmlsupport.h>
 
 #include <QDomNode>
 #include <QXmlStreamWriter>
+
+#include <qwt_plot.h>
 
 Graph2dWindowMarkerSetting::Graph2dWindowMarkerSetting()
 {

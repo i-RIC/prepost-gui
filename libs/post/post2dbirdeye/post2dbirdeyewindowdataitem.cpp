@@ -1,8 +1,9 @@
-#include "post2dbirdeyewindowdataitem.h"
-#include <guicore/project/projectdata.h>
-#include "post2dbirdeyewindowgraphicsview.h"
-#include "post2dbirdeyewindowdatamodel.h"
 #include "post2dbirdeyewindow.h"
+#include "post2dbirdeyewindowdataitem.h"
+#include "post2dbirdeyewindowdatamodel.h"
+#include "post2dbirdeyewindowgraphicsview.h"
+
+#include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
 Post2dBirdEyeWindow* Post2dBirdEyeWindowDataItem::postProcessorWindow()

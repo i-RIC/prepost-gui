@@ -1,9 +1,9 @@
+#include "projectdata.h"
+#include "workfolderinfo.h"
+
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
-
-#include "workfolderinfo.h"
-#include "projectdata.h"
 
 WorkfolderInfo::WorkfolderInfo(const QString& workfolder, QObject* parent)
 	: QObject(parent)

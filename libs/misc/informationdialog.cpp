@@ -1,5 +1,7 @@
-#include "informationdialog.h"
 #include "ui_informationdialog.h"
+
+#include "informationdialog.h"
+
 #include <QMessageBox>
 #include <QSettings>
 

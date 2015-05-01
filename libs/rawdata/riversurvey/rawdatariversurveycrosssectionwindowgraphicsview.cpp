@@ -6,8 +6,6 @@
 #include "rawdatariversurveycrosssectionwindow.h"
 #include "rawdatariversurveycrosssectionwindowgraphicsview.h"
 
-#include <cmath>
-
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/project/projectdataitem.h>
 #include <misc/iricundostack.h>
@@ -24,6 +22,8 @@
 #include <QTableView>
 #include <QTextStream>
 #include <QWheelEvent>
+
+#include <cmath>
 
 RawDataRiverSurveyCrosssectionWindowGraphicsView::RawDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w)
 	: QAbstractItemView(w)

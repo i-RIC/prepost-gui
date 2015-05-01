@@ -1,14 +1,15 @@
-#include "axis3ddataitem.h"
-#include <guibase/graphicsmisc.h>
 #include "../datamodel/vtkgraphicsview.h"
+#include "axis3ddataitem.h"
 
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
+#include <guibase/graphicsmisc.h>
+
+#include <vtkActorCollection.h>
 #include <vtkCaptionActor2D.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 #include <vtkTextActor.h>
 #include <vtkTextProperty.h>
-#include <vtkProperty.h>
-#include <vtkActorCollection.h>
 
 Axis3dDataItem::Axis3dDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)

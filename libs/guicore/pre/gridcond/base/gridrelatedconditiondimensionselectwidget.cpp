@@ -1,5 +1,5 @@
-#include "gridrelatedconditiondimensionselectwidget.h"
 #include "gridrelatedconditiondimensioncontainer.h"
+#include "gridrelatedconditiondimensionselectwidget.h"
 
 GridRelatedConditionDimensionSelectWidget::GridRelatedConditionDimensionSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent)
 	: QWidget(parent)

@@ -1,9 +1,10 @@
+#include "ui_rawdatariversurveycrosssectionwindow.h"
+
 #include "rawdatarivercrosssection.h"
 #include "rawdatariversurvey.h"
 #include "rawdatariversurveycrosssectionwindow.h"
 #include "rawdatariversurveycrosssectionwindowdelegate.h"
 #include "rawdatariversurveycrosssectionwindowprojectdataitem.h"
-#include "ui_rawdatariversurveycrosssectionwindow.h"
 
 #include <guibase/centeredcheckbox.h>
 #include <guibase/coloreditwidget.h>

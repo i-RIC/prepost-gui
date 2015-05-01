@@ -1,17 +1,19 @@
-#include "gridcreatingconditioncompoundchannelabstractline.h"
 #include "gridcreatingconditioncompoundchannel.h"
+#include "gridcreatingconditioncompoundchannelabstractline.h"
 
 #include <misc/errormessage.h>
 
 #include <QPointF>
-#include <vtkRenderer.h>
-#include <vtkProperty.h>
-#include <vtkVertex.h>
-#include <vtkLine.h>
-#include <vtkTextProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkPointData.h>
+
 #include <vtkActor2DCollection.h>
+#include <vtkLine.h>
+#include <vtkPointData.h>
+#include <vtkProperty.h>
+#include <vtkProperty2D.h>
+#include <vtkRenderer.h>
+#include <vtkTextProperty.h>
+#include <vtkVertex.h>
+
 #define LABEL "label"
 
 GridCreatingConditionCompoundChannelAbstractLine::GridCreatingConditionCompoundChannelAbstractLine(GridCreatingConditionCompoundChannel* parent)

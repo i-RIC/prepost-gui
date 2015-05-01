@@ -1,10 +1,11 @@
-#include "gridcreatingconditionriversurveypointmovedialog.h"
 #include "ui_gridcreatingconditionriversurveypointmovedialog.h"
 
 #include "gridcreatingconditionriversurvey.h"
-#include <misc/iricundostack.h>
-#include <QUndoCommand>
+#include "gridcreatingconditionriversurveypointmovedialog.h"
 
+#include <misc/iricundostack.h>
+
+#include <QUndoCommand>
 
 GridCreatingConditionRiverSurveyPointMoveDialog::GridCreatingConditionRiverSurveyPointMoveDialog(
 	GridCreatingConditionRiverSurvey* gc, double lowerLimit, double upperLimit, QWidget* parent) :

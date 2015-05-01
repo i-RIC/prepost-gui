@@ -12,8 +12,6 @@
 #include "post3dwindowdatamodel.h"
 #include "post3dwindowgraphicsview.h"
 
-#include <cmath>
-
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/post/postzoneselectingdialog.h>
@@ -30,6 +28,8 @@
 #include <QStandardItemModel>
 
 #include <vtkRenderWindow.h>
+
+#include <cmath>
 
 #define _USE_MATH_DEFINES
 

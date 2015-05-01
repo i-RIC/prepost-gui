@@ -1,7 +1,10 @@
 #include "vtktextpropertysettingcontainer.h"
+
 #include <misc/xmlsupport.h>
+
 #include <QDomNode>
 #include <QXmlStreamWriter>
+
 #include <vtkTextProperty.h>
 
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer()

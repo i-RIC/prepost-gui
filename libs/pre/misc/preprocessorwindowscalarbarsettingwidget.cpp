@@ -1,5 +1,7 @@
-#include "preprocessorwindowscalarbarsettingwidget.h"
 #include "ui_preprocessorwindowscalarbarsettingwidget.h"
+
+#include "preprocessorwindowscalarbarsettingwidget.h"
+
 #include <guibase/vtktextpropertysettingdialog.h>
 
 PreProcessorWindowScalarBarSettingWidget::Setting::Setting()

@@ -1,6 +1,7 @@
+#include "ui_gridrelatedconditioneditdialog.h"
+
 #include "../../../solverdef/solverdefinitiongridrelatedcondition.h"
 #include "gridrelatedconditioneditdialog.h"
-#include "ui_gridrelatedconditioneditdialog.h"
 
 #include <QString>
 

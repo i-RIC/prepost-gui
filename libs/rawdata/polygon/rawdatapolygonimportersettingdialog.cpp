@@ -1,12 +1,13 @@
-#include "rawdatapolygonimportersettingdialog.h"
 #include "ui_rawdatapolygonimportersettingdialog.h"
 
-#include <shapefil.h>
+#include "rawdatapolygonimportersettingdialog.h"
 
 #include <misc/stringtool.h>
 
 #include <QMessageBox>
 #include <QTextCodec>
+
+#include <shapefil.h>
 
 RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget* parent) :
 	QDialog(parent),

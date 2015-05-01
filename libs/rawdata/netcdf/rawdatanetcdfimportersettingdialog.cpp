@@ -1,7 +1,10 @@
-#include "rawdatanetcdfimportersettingdialog.h"
 #include "ui_rawdatanetcdfimportersettingdialog.h"
+
+#include "rawdatanetcdfimportersettingdialog.h"
+
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+
 #include <QLabel>
 
 RawDataNetcdfImporterSettingDialog::RawDataNetcdfImporterSettingDialog(QWidget* parent) :

@@ -1,5 +1,6 @@
-#include "distancemeasurecopypropertydialog.h"
 #include "ui_distancemeasurecopypropertydialog.h"
+
+#include "distancemeasurecopypropertydialog.h"
 
 #include <QVector2D>
 

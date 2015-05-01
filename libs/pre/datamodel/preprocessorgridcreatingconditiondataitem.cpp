@@ -1,28 +1,29 @@
+#include "../factory/gridcreatingconditionfactory.h"
+#include "../preprocessordatamodel.h"
+#include "../preprocessorgraphicsview.h"
+#include "../preprocessorwindow.h"
+#include "preprocessorbcsettinggroupdataitem.h"
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgridcreatingconditionalgorithmselectdialog.h"
 #include "preprocessorgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgridtypedataitem.h"
+
+#include <gridcreatingcondition/centerandwidth/gridcreatingconditioncenterandwidthdialog.h>
+#include <guibase/objectbrowserview.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingconditioncreator.h>
-#include "../factory/gridcreatingconditionfactory.h"
-#include "preprocessorgridtypedataitem.h"
-#include "preprocessorbcsettinggroupdataitem.h"
-#include "../preprocessordatamodel.h"
-#include "../preprocessorwindow.h"
-#include "../preprocessorgraphicsview.h"
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <gridcreatingcondition/centerandwidth/gridcreatingconditioncenterandwidthdialog.h>
-#include "preprocessorgridcreatingconditionalgorithmselectdialog.h"
 #include <misc/iricundostack.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guibase/objectbrowserview.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
-#include <QXmlStreamWriter>
-#include <QMenu>
 #include <QAction>
-#include <QStandardItem>
+#include <QMenu>
 #include <QMessageBox>
+#include <QStandardItem>
+#include <QXmlStreamWriter>
 
 PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* dataitem)
 	: PreProcessorGridCreatingConditionDataItemInterface(dataitem)

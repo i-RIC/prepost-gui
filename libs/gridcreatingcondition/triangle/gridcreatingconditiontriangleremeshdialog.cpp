@@ -1,5 +1,7 @@
-#include "gridcreatingconditiontriangleremeshdialog.h"
 #include "ui_gridcreatingconditiontriangleremeshdialog.h"
+
+#include "gridcreatingconditiontriangleremeshdialog.h"
+
 #include <QMessageBox>
 #include <QPushButton>
 

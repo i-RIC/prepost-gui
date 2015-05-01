@@ -1,16 +1,15 @@
+#include "vtklegendboxrepresentation.h"
 #include "vtklegendboxwidget.h"
 
 #include <vtkCallbackCommand.h>
 #include <vtkCoordinate.h>
+#include <vtkLegendBoxActor.h>
 #include <vtkObjectFactory.h>
-#include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
-#include <vtkLegendBoxActor.h>
+#include <vtkRenderer.h>
 #include <vtkWidgetCallbackMapper.h>
 #include <vtkWidgetEvent.h>
-
-#include "vtklegendboxrepresentation.h"
 
 vtkCxxRevisionMacro(vtkLegendBoxWidget, "$Revision: 1.8 $");
 vtkStandardNewMacro(vtkLegendBoxWidget);

@@ -1,8 +1,6 @@
 #include "rawdatapointmap.h"
 #include "rawdatapointmapbreakline.h"
 
-#include <fstream>
-
 #include <misc/errormessage.h>
 
 #include <QPointF>
@@ -13,6 +11,8 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkVertex.h>
+
+#include <fstream>
 
 RawDataPointmapBreakLine::RawDataPointmapBreakLine(RawDataPointmap* parent)
 	: QObject(parent)

@@ -1,5 +1,6 @@
-#include "gridcreatingconditioncompoundchannelsettingdialog.h"
 #include "ui_gridcreatingconditioncompoundchannelsettingdialog.h"
+
+#include "gridcreatingconditioncompoundchannelsettingdialog.h"
 
 #include <QPushButton>
 

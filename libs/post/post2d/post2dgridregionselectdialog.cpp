@@ -1,5 +1,6 @@
-#include "post2dgridregionselectdialog.h"
 #include "ui_post2dgridregionselectdialog.h"
+
+#include "post2dgridregionselectdialog.h"
 
 Post2dGridRegionSelectDialog::Post2dGridRegionSelectDialog(QWidget* parent) :
 	QDialog(parent),

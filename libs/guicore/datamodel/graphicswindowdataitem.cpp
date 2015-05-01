@@ -1,25 +1,26 @@
-#include "graphicswindowdataitem.h"
-#include "graphicswindowrootdataitem.h"
-#include "graphicswindowdatamodel.h"
-#include "vtkgraphicsview.h"
-
 #include "../project/projectdata.h"
 #include "../project/projectmainfile.h"
+#include "graphicswindowdataitem.h"
+#include "graphicswindowdatamodel.h"
+#include "graphicswindowrootdataitem.h"
+#include "vtkgraphicsview.h"
+
 #include <misc/iricundostack.h>
 
-#include <QStandardItem>
-#include <QMessageBox>
-#include <QMainWindow>
-#include <QDomNode>
 #include <QAction>
-#include <QXmlStreamWriter>
+#include <QDomNode>
+#include <QMainWindow>
+#include <QMessageBox>
+#include <QStandardItem>
 #include <QTreeView>
 #include <QUndoCommand>
-#include <vtkActorCollection.h>
-#include <vtkActor2DCollection.h>
+#include <QXmlStreamWriter>
+
 #include <vtkActor.h>
-#include <vtkRenderWindow.h>
+#include <vtkActor2DCollection.h>
+#include <vtkActorCollection.h>
 #include <vtkCollectionIterator.h>
+#include <vtkRenderWindow.h>
 
 GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent)
 	: ProjectDataItem(parent)

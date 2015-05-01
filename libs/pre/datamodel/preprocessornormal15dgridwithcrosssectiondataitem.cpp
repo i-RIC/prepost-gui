@@ -1,14 +1,15 @@
-#include "preprocessornormal15dgridwithcrosssectiondataitem.h"
-#include "preprocessorstructured2dgridshapedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
 #include "preprocessorbcgroupdataitem.h"
+#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
+#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
+#include "preprocessornormal15dgridwithcrosssectiondataitem.h"
 #include "preprocessornormal15dgridwithcrosssectionshapedataitem.h"
+#include "preprocessorstructured2dgridshapedataitem.h"
+
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
-#include <QMenu>
 #include <QAction>
+#include <QMenu>
 
 PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent)
 	: PreProcessorGridDataItem(parent)

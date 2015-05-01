@@ -1,5 +1,6 @@
-#include "graph2dhybridwindowdrawsettingdialog.h"
 #include "ui_graph2dhybridwindowdrawsettingdialog.h"
+
+#include "graph2dhybridwindowdrawsettingdialog.h"
 
 Graph2dHybridWindowDrawSettingDialog::Graph2dHybridWindowDrawSettingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,6 +1,12 @@
-#include "solverdefinitiongridtype.h"
-#include <misc/xmlsupport.h>
+#include "../pre/grid/grid.h"
+#include "../pre/grid/structured15dgridwithcrosssection.h"
+#include "../pre/grid/structured2dgrid.h"
+#include "../pre/grid/unstructured2dgrid.h"
+#include "../project/inputcond/cgnsfileinputconditionwidget.h"
+#include "solverdefinitionboundarycondition.h"
+#include "solverdefinitiongridrelatedcomplexcondition.h"
 #include "solverdefinitiongridrelatedcondition.h"
+#include "solverdefinitiongridtype.h"
 #include "solverdefinitionintegercellgridrelatedcondition.h"
 #include "solverdefinitionintegernodegridrelatedcondition.h"
 #include "solverdefinitionintegeroptioncellgridrelatedcondition.h"
@@ -9,16 +15,11 @@
 #include "solverdefinitionrealnodegridrelatedcondition.h"
 #include "solverdefinitionrealoptioncellgridrelatedcondition.h"
 #include "solverdefinitionrealoptionnodegridrelatedcondition.h"
-#include "solverdefinitiongridrelatedcomplexcondition.h"
-#include "../project/inputcond/cgnsfileinputconditionwidget.h"
-#include "../pre/grid/grid.h"
-#include "../pre/grid/structured2dgrid.h"
-#include "../pre/grid/unstructured2dgrid.h"
-#include "../pre/grid/structured15dgridwithcrosssection.h"
+//#include "pre/datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h"
 //#include "pre/datamodel/preprocessorstructured2dgriddataitem.h"
 //#include "pre/datamodel/preprocessorunstructured2dgriddataitem.h"
-//#include "pre/datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h"
-#include "solverdefinitionboundarycondition.h"
+
+#include <misc/xmlsupport.h>
 
 SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QString& caption)
 	: SolverDefinitionNode()

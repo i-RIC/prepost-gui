@@ -1,5 +1,6 @@
-#include "posttitleeditdialog.h"
 #include "ui_posttitleeditdialog.h"
+
+#include "posttitleeditdialog.h"
 
 PostTitleEditDialog::PostTitleEditDialog(QWidget* parent) :
 	QDialog(parent),

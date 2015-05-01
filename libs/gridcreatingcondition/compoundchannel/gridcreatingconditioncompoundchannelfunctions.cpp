@@ -1,6 +1,8 @@
 #include "gridcreatingconditioncompoundchannelfunctions.h"
-#include <cmath>
+
 #include <QVector2D>
+
+#include <cmath>
 
 #define BIGDOUBLE 1.0E12;
 

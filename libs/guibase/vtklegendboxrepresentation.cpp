@@ -1,8 +1,8 @@
 #include "vtklegendboxrepresentation.h"
 
+#include <vtkLegendBoxActor.h>
 #include <vtkObjectFactory.h>
 #include <vtkPropCollection.h>
-#include <vtkLegendBoxActor.h>
 #include <vtkSmartPointer.h>
 #include <vtkTextProperty.h>
 

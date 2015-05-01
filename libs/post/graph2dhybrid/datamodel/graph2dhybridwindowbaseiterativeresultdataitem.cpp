@@ -4,9 +4,6 @@
 #include "graph2dhybridwindowresultcopydataitem.h"
 #include "graph2dhybridwindowresultgroupdataitem.h"
 
-#include <cmath>
-#include <qwt_plot_curve.h>
-
 #include <guicore/postcontainer/postbaseiterativeseriesdatacontainer.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <misc/stringtool.h>
@@ -18,6 +15,9 @@
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 #include <vtkSmartPointer.h>
+
+#include <cmath>
+#include <qwt_plot_curve.h>
 
 Graph2dHybridWindowBaseIterativeResultDataItem::Graph2dHybridWindowBaseIterativeResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)

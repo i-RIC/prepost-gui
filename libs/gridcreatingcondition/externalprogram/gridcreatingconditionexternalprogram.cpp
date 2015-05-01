@@ -1,32 +1,32 @@
 #include "gridcreatingconditionexternalprogram.h"
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
-#include <guicore/solverdef/solverdefinition.h>
 //#include "pre/preprocessorwindow.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/project/projectcgnsfile.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/project/projectdata.h>
+//#include "project/projectdata.h"
+
+#include <guibase/waitdialog.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <misc/stringtool.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/project/projectcgnsfile.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
 
-//#include "project/projectdata.h"
-#include <guibase/waitdialog.h>
-
-#include <QMenu>
-#include <QMessageBox>
-#include <QProcess>
 #include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QMenu>
+#include <QMessageBox>
 #include <QMouseEvent>
+#include <QProcess>
 
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
 #include <vtkCollectionIterator.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 
 #include <cgnslib.h>
 #include <iriclib.h>

@@ -1,10 +1,11 @@
-#include "timeformat.h"
-#include "stringtool.h"
 #include "mathsupport.h"
+#include "stringtool.h"
+#include "timeformat.h"
 
-#include <cmath>
 #include <QString>
 #include <QVector>
+
+#include <cmath>
 
 #define INTDISPLAY_LIMIT 10000000
 

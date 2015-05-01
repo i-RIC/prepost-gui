@@ -1,9 +1,10 @@
 #include "preobjectbrowser.h"
 #include "preobjectbrowserview.h"
-#include <QtGui/QStandardItemModel>
-#include <QtGui/QIcon>
+
 #include <QItemSelection>
 #include <QItemSelectionRange>
+#include <QtGui/QIcon>
+#include <QtGui/QStandardItemModel>
 
 void PreObjectBrowser::init()
 {

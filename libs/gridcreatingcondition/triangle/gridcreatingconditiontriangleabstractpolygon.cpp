@@ -1,14 +1,15 @@
-#include "gridcreatingconditiontriangleabstractpolygon.h"
 #include "gridcreatingconditiontriangle.h"
+#include "gridcreatingconditiontriangleabstractpolygon.h"
 
 #include <misc/errormessage.h>
 
-#include <QPolygonF>
 #include <QPointF>
-#include <vtkRenderer.h>
+#include <QPolygonF>
+
 #include <vtkProperty.h>
-#include <vtkVertex.h>
+#include <vtkRenderer.h>
 #include <vtkTriangle.h>
+#include <vtkVertex.h>
 
 GridCreatingConditionTriangleAbstractPolygon::GridCreatingConditionTriangleAbstractPolygon(GridCreatingConditionTriangle* parent)
 {

@@ -1,6 +1,7 @@
+#include "ui_graph2dhybridwindowsettingwidget.h"
+
 #include "../graph2dhybridwindowresultsetting.h"
 #include "graph2dhybridwindowsettingwidget.h"
-#include "ui_graph2dhybridwindowsettingwidget.h"
 
 Graph2dHybridWindowSettingWidget::Graph2dHybridWindowSettingWidget(QWidget* parent) :
 	QWidget(parent),

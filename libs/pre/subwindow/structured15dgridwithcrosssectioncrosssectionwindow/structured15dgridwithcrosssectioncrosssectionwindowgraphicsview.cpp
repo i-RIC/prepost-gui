@@ -1,13 +1,13 @@
-#include <cmath>
-
-#include "structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h"
-#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h"
+#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
+#include "structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.h"
 
 #include <QAction>
 #include <QMenu>
-#include <QPainter>
 #include <QMouseEvent>
+#include <QPainter>
+
+#include <cmath>
 
 Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView(QWidget* w)
 	: QAbstractItemView(w)

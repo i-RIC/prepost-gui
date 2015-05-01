@@ -1,27 +1,23 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../postcontainer/postsolutioninfo.h"
+#include "../pre/base/preprocessordatamodelinterface.h"
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitionabstract.h"
-#include "../pre/base/preprocessordatamodelinterface.h"
 #include "backgroundimageinfo.h"
 #include "cgnsfilelist.h"
 #include "measureddata.h"
+#include "offsetsettingdialog.h"
 #include "projectcgnsfile.h"
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"
 #include "projectpostprocessors.h"
 #include "projectworkspace.h"
-#include "offsetsettingdialog.h"
-#include <guibase/coordinatesystemselectdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-
-#include <cgnslib.h>
-#include <cmath>
-#include <iriclib.h>
 
 #include <guibase/coordinatesystem.h>
 #include <guibase/coordinatesystembuilder.h>
+#include <guibase/coordinatesystemselectdialog.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
@@ -46,12 +42,16 @@
 #include <QStringList>
 #include <QThread>
 #include <QTime>
+#include <QUndoCommand>
 #include <QUrl>
 #include <QXmlStreamWriter>
-#include <QUndoCommand>
 
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
+
+#include <cgnslib.h>
+#include <cmath>
+#include <iriclib.h>
 
 const QString ProjectMainFile::FILENAME = "project.xml";
 const QString ProjectMainFile::BGDIR = "backgroundimages";

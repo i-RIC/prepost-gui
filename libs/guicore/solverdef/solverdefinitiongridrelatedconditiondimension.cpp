@@ -1,6 +1,6 @@
-#include "solverdefinitiongridrelatedconditiondimension.h"
 #include "../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensioncomboboxselectwidget.h"
 #include "../pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.h"
+#include "solverdefinitiongridrelatedconditiondimension.h"
 
 SolverDefinitionGridRelatedConditionDimension::~SolverDefinitionGridRelatedConditionDimension()
 {

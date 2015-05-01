@@ -1,6 +1,7 @@
+#include "ui_rawdatapointmapeditptsdialog.h"
+
 #include "rawdatapointmap.h"
 #include "rawdatapointmapeditptsdialog.h"
-#include "ui_rawdatapointmapeditptsdialog.h"
 
 #include <vtkPointData.h>
 

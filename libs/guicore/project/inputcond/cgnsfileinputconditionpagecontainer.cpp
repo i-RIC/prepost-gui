@@ -1,5 +1,6 @@
-#include "cgnsfileinputconditionpagecontainer.h"
 #include "cgnsfileinputconditionpage.h"
+#include "cgnsfileinputconditionpagecontainer.h"
+
 #include <QDomElement>
 #include <QHBoxLayout>
 

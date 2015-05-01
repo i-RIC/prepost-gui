@@ -1,11 +1,12 @@
 #include "preobjectbrowserview.h"
-#include <QMouseEvent>
+
+#include <misc/iricundostack.h>
+
 #include <QAction>
 #include <QIcon>
 #include <QMessageBox>
+#include <QMouseEvent>
 #include <QUndoCommand>
-
-#include <misc/iricundostack.h>
 
 PreObjectBrowserView::PreObjectBrowserView(QWidget* parent)
 	: ObjectBrowserView(parent)

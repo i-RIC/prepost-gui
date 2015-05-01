@@ -1,5 +1,5 @@
-#include "gridinternalexporter.h"
 #include "grid.h"
+#include "gridinternalexporter.h"
 
 GridInternalExporter::GridInternalExporter()
 	: QObject(0), GridExporterInterface()

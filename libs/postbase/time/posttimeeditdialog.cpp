@@ -1,5 +1,6 @@
-#include "posttimeeditdialog.h"
 #include "ui_posttimeeditdialog.h"
+
+#include "posttimeeditdialog.h"
 
 PostTimeEditDialog::PostTimeEditDialog(QWidget* parent) :
 	QDialog(parent),

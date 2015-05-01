@@ -1,41 +1,43 @@
 #include "gridcreatingconditioncenterandwidth.h"
+#include "gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
 #include "gridcreatingconditioncenterandwidthdialog.h"
-#include <misc/zdepthrange.h>
+
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/misc/qundocommandhelper.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/xmlsupport.h>
-#include <misc/iricundostack.h>
-#include <guicore/misc/qundocommandhelper.h>
-#include "gridcreatingconditioncenterandwidthcoordinateseditdialog.h"
 #include <misc/informationdialog.h>
+#include <misc/iricundostack.h>
+#include <misc/xmlsupport.h>
+#include <misc/zdepthrange.h>
 
-#include <vtkProperty.h>
-#include <vtkVertex.h>
-#include <vtkLine.h>
-#include <vtkRenderer.h>
-#include <vtkActorCollection.h>
-#include <vtkActor2DCollection.h>
-#include <vtkRenderWindow.h>
-#include <vtkCardinalSpline.h>
-#include <vtkParametricSpline.h>
-#include <vtkParametricFunctionSource.h>
-#include <vtkCollectionIterator.h>
-#include <vtkTextProperty.h>
-
-#include <QMenu>
 #include <QFile>
-#include <QMouseEvent>
-#include <QXmlStreamWriter>
+#include <QMenu>
 #include <QMessageBox>
+#include <QMouseEvent>
 #include <QToolBar>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
+
+#include <vtkActor2DCollection.h>
+#include <vtkActorCollection.h>
+#include <vtkCardinalSpline.h>
+#include <vtkCollectionIterator.h>
+#include <vtkLine.h>
+#include <vtkParametricFunctionSource.h>
+#include <vtkParametricSpline.h>
+#include <vtkProperty.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkTextProperty.h>
+#include <vtkVertex.h>
+
 #define LABEL "label"
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator)

@@ -1,51 +1,52 @@
+#include "../preprocessorgraphicsview.h"
+#include "../preprocessorwindow.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridrelatedconditionnodedataitem.h"
 #include "preprocessorgridrelatedconditionnodegroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include "preprocessorrawdatatopdataitem.h"
+
 #include <guibase/contoursettingwidget.h>
-#include "preprocessorgriddataitem.h"
-#include "../preprocessorwindow.h"
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/gridrelatednodeconditionpropertydialog.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditionvariationeditdialog.h>
-#include "../preprocessorgraphicsview.h"
-#include <misc/xmlsupport.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/gridcond/gridrelatednodeconditionpropertydialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
 #include <guicore/scalarstocolors/lookuptableeditwidget.h>
-#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h"
-#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-
+#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <misc/errormessage.h>
-#include <misc/stringtool.h>
 #include <misc/lastiodirectory.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 #include <QDomNode>
-#include <QVector>
-#include <QMouseEvent>
-#include <QMenu>
+#include <QFileDialog>
 #include <QMdiArea>
 #include <QMdiSubWindow>
+#include <QMenu>
 #include <QMessageBox>
+#include <QMouseEvent>
+#include <QStandardItem>
 #include <QStatusBar>
 #include <QTextStream>
-#include <QFileDialog>
+#include <QVector>
+#include <QXmlStreamWriter>
 
-#include <vtkCollectionIterator.h>
-#include <vtkRenderer.h>
-#include <vtkPointData.h>
 #include <vtkCell.h>
+#include <vtkCollectionIterator.h>
+#include <vtkPointData.h>
+#include <vtkRenderer.h>
 #include <vtkVariant.h>
+
 #include <string>
 
 PreProcessorGridRelatedConditionNodeDataItem::PreProcessorGridRelatedConditionNodeDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)

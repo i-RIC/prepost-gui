@@ -1,22 +1,24 @@
-#include "boundaryconditiondialog.h"
 #include "ui_boundaryconditiondialog.h"
-#include <guicore/project/projectdata.h>
-#include <guicore/project/inputcond/cgnsfileinputconditioncontainerset.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
+
 #include "../datamodel/preprocessorbcdataitem.h"
+#include "boundaryconditiondialog.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/project/inputcond/cgnsfileinputconditioncontainerset.h>
+#include <guicore/project/inputcond/cgnsfileinputconditionpage.h>
+#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
+#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
+#include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionpage.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <misc/xmlsupport.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomDocument>
 #include <QDomNode>
-#include <QPushButton>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QTextCodec>
 
 #include <cgnslib.h>

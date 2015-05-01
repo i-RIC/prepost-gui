@@ -1,4 +1,5 @@
 #include "gridcreatingconditiontriangledivisionline.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionTriangleDivisionLine::GridCreatingConditionTriangleDivisionLine(GridCreatingConditionTriangle* parent)

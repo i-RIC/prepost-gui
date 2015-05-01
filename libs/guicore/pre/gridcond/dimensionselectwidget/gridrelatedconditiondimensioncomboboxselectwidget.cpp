@@ -1,7 +1,8 @@
 #include "ui_gridrelatedconditiondimensioncomboboxselectwidget.h"
-#include "gridrelatedconditiondimensioncomboboxselectwidget.h"
-#include "../base/gridrelatedconditiondimensioncontainer.h"
+
 #include "../../../solverdef/solverdefinitiongridrelatedconditiondimension.h"
+#include "../base/gridrelatedconditiondimensioncontainer.h"
+#include "gridrelatedconditiondimensioncomboboxselectwidget.h"
 
 GridRelatedConditionDimensionComboboxSelectWidget::GridRelatedConditionDimensionComboboxSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent) :
 	GridRelatedConditionDimensionSelectWidget(container, parent),

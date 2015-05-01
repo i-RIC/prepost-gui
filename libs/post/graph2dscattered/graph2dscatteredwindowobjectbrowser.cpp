@@ -1,9 +1,10 @@
 #include "graph2dscatteredwindowobjectbrowser.h"
 #include "graph2dscatteredwindowobjectbrowserview.h"
-#include <QtGui/QStandardItemModel>
-#include <QtGui/QIcon>
+
 #include <QItemSelection>
 #include <QItemSelectionRange>
+#include <QtGui/QIcon>
+#include <QtGui/QStandardItemModel>
 
 void Graph2dScatteredWindowObjectBrowser::init()
 {

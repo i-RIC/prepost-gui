@@ -1,8 +1,9 @@
-#include "mouseboundingbox.h"
 #include "../datamodel/vtk2dgraphicsview.h"
+#include "mouseboundingbox.h"
+
+#include <vtkCamera.h>
 #include <vtkPoints.h>
 #include <vtkProperty.h>
-#include <vtkCamera.h>
 #include <vtkRenderer.h>
 #include <vtkTriangle.h>
 

@@ -1,6 +1,7 @@
-#include "scalarbarwidget.h"
 #include "ui_scalarbarwidget.h"
+
 #include "scalarbarsetting.h"
+#include "scalarbarwidget.h"
 #include "vtktextpropertysettingdialog.h"
 
 ScalarBarWidget::ScalarBarWidget(QWidget* parent) :

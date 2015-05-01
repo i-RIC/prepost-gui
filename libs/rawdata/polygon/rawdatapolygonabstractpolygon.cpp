@@ -4,9 +4,9 @@
 #include <misc/errormessage.h>
 #include <misc/mathsupport.h>
 
+#include <QMutexLocker>
 #include <QPointF>
 #include <QPolygonF>
-#include <QMutexLocker>
 
 #include <vtkPointData.h>
 #include <vtkProperty.h>

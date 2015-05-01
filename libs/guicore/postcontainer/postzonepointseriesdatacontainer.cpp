@@ -1,10 +1,13 @@
-#include <cmath>
-#include "postzonepointseriesdatacontainer.h"
-#include "postsolutioninfo.h"
 #include "../project/projectcgnsfile.h"
+#include "postsolutioninfo.h"
+#include "postzonepointseriesdatacontainer.h"
+
 #include <misc/stringtool.h>
-#include <cgnslib.h>
+
 #include <QRegExp>
+
+#include <cgnslib.h>
+#include <cmath>
 
 PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent)
 	: PostSeriesDataContainer(dim, parent)

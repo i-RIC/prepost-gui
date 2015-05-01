@@ -1,6 +1,7 @@
+#include "ui_post2dwindowarrowstructuredsettingdialog.h"
+
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowarrowstructuredsettingdialog.h"
-#include "ui_post2dwindowarrowstructuredsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

@@ -3,14 +3,15 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/iricundostack.h>
 #include <misc/arrowsettingcontainer.h>
+#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 #include <QDomElement>
 #include <QSet>
 #include <QUndoCommand>
 
+#include <vtkCellArray.h>
 #include <vtkCellData.h>
 #include <vtkDoubleArray.h>
 #include <vtkIntArray.h>
@@ -18,7 +19,6 @@
 #include <vtkQuad.h>
 #include <vtkStructuredGrid.h>
 #include <vtkVertex.h>
-#include <vtkCellArray.h>
 
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowNodeVectorArrowGroupDataItem(p)

@@ -1,18 +1,22 @@
+#include "../project/projectcgnsfile.h"
 #include "postdummy3dzonedatacontainer.h"
 #include "postsolutioninfo.h"
-#include "../project/projectcgnsfile.h"
+
 #include <misc/stringtool.h>
-#include <cgnslib.h>
-#include <iriclib.h>
+
+#include <QRegExp>
+
+#include <vtkCellData.h>
+#include <vtkDataSetAttributes.h>
+#include <vtkDoubleArray.h>
+#include <vtkFloatArray.h>
+#include <vtkIntArray.h>
+#include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
-#include <vtkDataSetAttributes.h>
-#include <vtkPointData.h>
-#include <vtkCellData.h>
-#include <vtkIntArray.h>
-#include <vtkFloatArray.h>
-#include <vtkDoubleArray.h>
-#include <QRegExp>
+
+#include <cgnslib.h>
+#include <iriclib.h>
 
 bool PostDummy3DZoneDataContainer::loadStructuredGrid(const int fn, const int currentStep)
 {

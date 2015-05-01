@@ -1,36 +1,38 @@
+#include "../preprocessorgraphicsview.h"
+#include "../preprocessorwindow.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridrelatedconditioncelldataitem.h"
 #include "preprocessorgridrelatedconditioncellgroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include "preprocessorrawdatatopdataitem.h"
+
 #include <guibase/contoursettingwidget.h>
-#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
-#include "preprocessorgriddataitem.h"
-#include "../preprocessorwindow.h"
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/gridrelatedcellconditionpropertydialog.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditionvariationeditdialog.h>
-#include "../preprocessorgraphicsview.h"
-#include <misc/xmlsupport.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/gridcond/gridrelatedcellconditionpropertydialog.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <misc/stringtool.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <misc/xmlsupport.h>
 
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 #include <QDomNode>
-#include <QVector>
-#include <QMouseEvent>
 #include <QMenu>
+#include <QMouseEvent>
+#include <QStandardItem>
+#include <QVector>
+#include <QXmlStreamWriter>
 
+#include <vtkCell.h>
+#include <vtkCellData.h>
 #include <vtkCollectionIterator.h>
 #include <vtkRenderer.h>
-#include <vtkCellData.h>
-#include <vtkCell.h>
+
 #include <string>
 
 PreProcessorGridRelatedConditionCellDataItem::PreProcessorGridRelatedConditionCellDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)

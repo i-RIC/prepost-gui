@@ -1,18 +1,19 @@
-#include "graph2dwindowmarkergroupdataitem.h"
 #include "../graph2dwindowmarkersettingdialog.h"
 #include "../graph2dwindowview.h"
 #include "graph2dwindowmarkerdataitem.h"
-#include <misc/xmlsupport.h>
-#include <misc/stringtool.h>
-#include <guibase/objectbrowserview.h>
+#include "graph2dwindowmarkergroupdataitem.h"
 
-#include <QMenu>
-#include <QList>
+#include <guibase/objectbrowserview.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
+
 #include <QAction>
+#include <QDomNode>
+#include <QList>
+#include <QMainWindow>
+#include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
-#include <QMainWindow>
-#include <QDomNode>
 
 #include <qwt_plot_curve.h>
 #include <qwt_scale_div.h>

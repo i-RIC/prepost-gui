@@ -1,12 +1,13 @@
-#include "graph2dscatteredwindowresultsetting.h"
-#include <postbase/postallzoneselectingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guibase/qwtplotcustomcurve.h>
-#include <misc/xmlsupport.h>
-#include "datamodel/graph2dscatteredwindowresultgroupdataitem.h"
 #include "datamodel/graph2dscatteredwindowgridresultdataitem.h"
+#include "datamodel/graph2dscatteredwindowresultgroupdataitem.h"
+#include "graph2dscatteredwindowresultsetting.h"
+
+#include <guibase/qwtplotcustomcurve.h>
+#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/colorsource.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/xmlsupport.h>
+#include <postbase/postallzoneselectingdialog.h>
 
 #include <qwt_plot.h>
 

@@ -1,37 +1,38 @@
+#include "../misc/preprocessorgridattributemappingmode.h"
+#include "../preprocessorwindow.h"
+#include "preprocessorbcgroupdataitem.h"
+#include "preprocessorbcsettinggroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgridattributemappingsettingtopdataitem.h"
 #include "preprocessorgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridtypedataitem.h"
-#include "preprocessorbcsettinggroupdataitem.h"
-#include "preprocessorgridattributemappingsettingtopdataitem.h"
-#include "preprocessorrootdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include "preprocessorgridshapedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
 #include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorbcgroupdataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
-#include "../preprocessorwindow.h"
-#include <guicore/pre/grid/grid.h>
-#include <guicore/project/projectdata.h>
-#include <misc/xmlsupport.h>
-#include <misc/filesystemfunction.h>
-#include <misc/iricundostack.h>
-#include "../misc/preprocessorgridattributemappingmode.h"
+#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridshapedataitem.h"
+#include "preprocessorgridtypedataitem.h"
 #include "preprocessornormal15dgridwithcrosssectiondataitem.h"
+#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorrootdataitem.h"
 #include "preprocessorstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
 
+#include <guicore/pre/grid/grid.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/filesystemfunction.h>
+#include <misc/iricundostack.h>
+#include <misc/xmlsupport.h>
+
+#include <QAction>
+#include <QDir>
+#include <QDomElement>
+#include <QMenu>
+#include <QMessageBox>
+#include <QStandardItem>
+#include <QXmlStreamWriter>
+
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
-
-#include <QDomElement>
-#include <QXmlStreamWriter>
-#include <QStandardItem>
-#include <QMessageBox>
-#include <QDir>
-#include <QMenu>
-#include <QAction>
 
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* p)
 	: PreProcessorGridAndGridCreatingConditionDataItemInterface(caption, p)

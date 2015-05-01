@@ -1,5 +1,6 @@
-#include "structuredgridregionselectwidget.h"
 #include "ui_structuredgridregionselectwidget.h"
+
+#include "structuredgridregionselectwidget.h"
 
 StructuredGridRegionSelectWidget::StructuredGridRegionSelectWidget(QWidget* parent) :
 	QWidget(parent),

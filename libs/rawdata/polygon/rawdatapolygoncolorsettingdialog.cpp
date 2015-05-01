@@ -1,5 +1,6 @@
-#include "rawdatapolygoncolorsettingdialog.h"
 #include "ui_rawdatapolygoncolorsettingdialog.h"
+
+#include "rawdatapolygoncolorsettingdialog.h"
 
 RawDataPolygonColorSettingDialog::RawDataPolygonColorSettingDialog(QWidget* parent) :
 	QDialog(parent),

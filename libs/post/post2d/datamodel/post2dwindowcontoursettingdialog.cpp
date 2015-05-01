@@ -1,7 +1,8 @@
+#include "ui_post2dwindowcontoursettingdialog.h"
+
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataiteminterface.h"
-#include "ui_post2dwindowcontoursettingdialog.h"
 
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>

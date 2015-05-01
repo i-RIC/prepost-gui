@@ -1,4 +1,5 @@
 #include "scalarstocolorscontainer.h"
+
 #include <vtkScalarsToColors.h>
 
 ScalarsToColorsContainer::~ScalarsToColorsContainer()

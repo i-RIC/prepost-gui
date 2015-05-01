@@ -1,14 +1,14 @@
-#include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcdataitem.h"
-#include "preprocessorgridtypedataitem.h"
+#include "preprocessorbcgroupdataitem.h"
 #include "preprocessorgriddataitem.h"
+#include "preprocessorgridtypedataitem.h"
+
+#include <guibase/objectbrowserview.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
-
-#include <guicore/pre/grid/grid.h>
 #include <misc/stringtool.h>
-#include <guicore/project/colorsource.h>
-#include <guibase/objectbrowserview.h>
 #include <misc/versionnumber.h>
 
 #include <QMenu>

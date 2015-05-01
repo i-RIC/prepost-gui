@@ -1,7 +1,7 @@
-#include "measureddatavectorsettingdialog.h"
 #include "ui_measureddatavectorsettingdialog.h"
 
 #include "../project/measureddata.h"
+#include "measureddatavectorsettingdialog.h"
 
 #include <QtGlobal>
 

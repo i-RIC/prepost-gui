@@ -1,7 +1,7 @@
-#include "solverdefinitionintegeroptioncellgridrelatedcondition.h"
-#include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionintegeroptioneditwidget.h"
 #include "../project/colorsource.h"
+#include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinitionintegeroptioncellgridrelatedcondition.h"
 
 #include <vtkColorTransferFunction.h>
 

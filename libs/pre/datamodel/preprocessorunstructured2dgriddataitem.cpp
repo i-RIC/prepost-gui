@@ -1,12 +1,14 @@
+#include "preprocessorbcgroupdataitem.h"
+#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
+#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridtypedataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgridshapedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridtypedataitem.h"
-#include "preprocessorbcgroupdataitem.h"
+
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <QMenu>
+
 #include <QAction>
+#include <QMenu>
 
 PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(PreProcessorDataItem* parent)
 	: PreProcessorGridDataItem(parent)

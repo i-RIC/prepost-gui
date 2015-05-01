@@ -1,6 +1,6 @@
-#include "graph2dscatteredwindowresultgroupdataitem.h"
 #include "../graph2dscatteredwindowview.h"
 #include "graph2dscatteredwindowresultdataitem.h"
+#include "graph2dscatteredwindowresultgroupdataitem.h"
 
 #include <QIcon>
 #include <QStandardItem>

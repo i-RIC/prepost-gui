@@ -1,7 +1,7 @@
 #include "vtk2dinteractorstyle.h"
 
-#include <vtkRenderWindowInteractor.h>
 #include <vtkObjectFactory.h>
+#include <vtkRenderWindowInteractor.h>
 
 vtkStandardNewMacro(vtk2DInteractorStyle);
 

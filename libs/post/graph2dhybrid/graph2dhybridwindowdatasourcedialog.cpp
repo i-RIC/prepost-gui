@@ -1,9 +1,10 @@
+#include "ui_graph2dhybridwindowdatasourcedialog.h"
+
 #include "datamodel/graph2dhybridwindowimportdatadataitem.h"
 #include "datamodel/graph2dhybridwindowimportdatagroupdataitem.h"
 #include "graph2dhybridwindowdatasourcedialog.h"
 #include "graph2dhybridwindowlinesettingdialog.h"
 #include "graph2dhybridwindowresultsetting.h"
-#include "ui_graph2dhybridwindowdatasourcedialog.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/lastiodirectory.h>

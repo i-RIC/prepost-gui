@@ -4,12 +4,12 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QDomNode>
 #include <QDomElement>
+#include <QDomNode>
 #include <QXmlStreamWriter>
 
-#include <vtkScalarBarRepresentation.h>
 #include <vtkScalarBarActor.h>
+#include <vtkScalarBarRepresentation.h>
 
 const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%-#6.3g";
 

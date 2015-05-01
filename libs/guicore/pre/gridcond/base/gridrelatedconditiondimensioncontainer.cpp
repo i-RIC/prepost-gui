@@ -1,5 +1,5 @@
-#include "gridrelatedconditiondimensioncontainer.h"
 #include "../../../solverdef/solverdefinitiongridrelatedconditiondimension.h"
+#include "gridrelatedconditiondimensioncontainer.h"
 
 GridRelatedConditionDimensionContainer::GridRelatedConditionDimensionContainer(SolverDefinitionGridRelatedConditionDimension* def)
 	: GridRelatedConditionBaseObject(def->condition())

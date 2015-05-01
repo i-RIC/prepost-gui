@@ -1,5 +1,6 @@
-#include "xyaxisdisplaysettingdialog.h"
 #include "ui_xyaxisdisplaysettingdialog.h"
+
+#include "xyaxisdisplaysettingdialog.h"
 
 XYAxisDisplaySettingDialog::XYAxisDisplaySettingDialog(QWidget* parent) :
 	QDialog(parent),

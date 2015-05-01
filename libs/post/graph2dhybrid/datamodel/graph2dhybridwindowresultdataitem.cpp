@@ -5,8 +5,6 @@
 #include "graph2dhybridwindowresultdataitem.h"
 #include "graph2dhybridwindowresultgroupdataitem.h"
 
-#include <cmath>
-
 #include <guibase/qwtplotcustomcurve.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
@@ -18,6 +16,8 @@
 #include <vtkPointData.h>
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
+
+#include <cmath>
 
 Graph2dHybridWindowResultDataItem::Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowDataItem(title, QIcon(":/libs/guibase/images/iconPaper.png"), parent)

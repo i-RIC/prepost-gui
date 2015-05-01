@@ -1,13 +1,13 @@
-#include "cgnsfileinputconditionwidgetfilename.h"
-#include "cgnsfileinputconditioncontainerstring.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditioncontainerstring.h"
+#include "cgnsfileinputconditionwidgetfilename.h"
 
-#include <QLineEdit>
-#include <QPushButton>
-#include <QHBoxLayout>
 #include <QFileDialog>
-#include <QTextCodec>
+#include <QHBoxLayout>
+#include <QLineEdit>
 #include <QMessageBox>
+#include <QPushButton>
+#include <QTextCodec>
 
 QString CgnsFileInputConditionWidgetFilename::defaultFolder;
 

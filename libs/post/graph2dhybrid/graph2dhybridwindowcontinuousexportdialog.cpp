@@ -1,5 +1,6 @@
-#include "graph2dhybridwindowcontinuousexportdialog.h"
 #include "ui_graph2dhybridwindowcontinuousexportdialog.h"
+
+#include "graph2dhybridwindowcontinuousexportdialog.h"
 
 #include <QMessageBox>
 

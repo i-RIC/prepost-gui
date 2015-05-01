@@ -1,6 +1,7 @@
+#include "ui_post2dwindowstreamlinestructuredsettingdialog.h"
+
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowstreamlinestructuredsettingdialog.h"
-#include "ui_post2dwindowstreamlinestructuredsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

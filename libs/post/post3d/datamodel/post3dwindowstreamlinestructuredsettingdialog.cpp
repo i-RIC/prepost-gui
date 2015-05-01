@@ -1,5 +1,6 @@
-#include "post3dwindowstreamlinestructuredsettingdialog.h"
 #include "ui_post3dwindowstreamlinestructuredsettingdialog.h"
+
+#include "post3dwindowstreamlinestructuredsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

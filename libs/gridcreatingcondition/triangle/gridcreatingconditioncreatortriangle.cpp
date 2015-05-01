@@ -1,6 +1,8 @@
 #include "gridcreatingconditioncreatortriangle.h"
 #include "gridcreatingconditiontriangle.h"
+
 #include <guibase/irictoolbar.h>
+
 #include <QAction>
 #include <QIcon>
 

@@ -1,9 +1,10 @@
 #include "cgnsfileinputconditioncontainerstring.h"
-#include <iriclib.h>
 
 #include <misc/stringtool.h>
 
 #include <QDomNode>
+
+#include <iriclib.h>
 
 void CgnsFileInputConditionContainerString::setup(const QDomNode& defNode)
 {

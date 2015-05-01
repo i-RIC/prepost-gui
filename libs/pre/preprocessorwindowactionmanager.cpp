@@ -1,11 +1,12 @@
-#include "preprocessorwindowactionmanager.h"
-#include "preprocessorwindow.h"
 #include "preprocessordatamodel.h"
+#include "preprocessorwindow.h"
+#include "preprocessorwindowactionmanager.h"
+
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
-#include <QIcon>
 #include <QAction>
+#include <QIcon>
 #include <QMenu>
 
 PreProcessorWindowActionManager::PreProcessorWindowActionManager(PreProcessorWindow* parent)

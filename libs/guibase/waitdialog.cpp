@@ -1,5 +1,7 @@
-#include "waitdialog.h"
 #include "ui_waitdialog.h"
+
+#include "waitdialog.h"
+
 #include <cmath>
 
 WaitDialog::WaitDialog(QWidget* parent) :

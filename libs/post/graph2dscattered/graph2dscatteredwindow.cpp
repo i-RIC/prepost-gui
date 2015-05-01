@@ -1,14 +1,15 @@
 #include "graph2dscatteredwindow.h"
-#include "graph2dscatteredwindowprojectdataitem.h"
 #include "graph2dscatteredwindowactionmanager.h"
-#include "graph2dscatteredwindowobjectbrowser.h"
-#include <guicore/postcontainer/postsolutioninfo.h>
-#include "graph2dscatteredwindowview.h"
-#include "graph2dscatteredwindowdatamodel.h"
 #include "graph2dscatteredwindowcontrolwidget.h"
+#include "graph2dscatteredwindowdatamodel.h"
+#include "graph2dscatteredwindowobjectbrowser.h"
+#include "graph2dscatteredwindowprojectdataitem.h"
+#include "graph2dscatteredwindowview.h"
 
-#include <QPainter>
+#include <guicore/postcontainer/postsolutioninfo.h>
+
 #include <QDockWidget>
+#include <QPainter>
 
 Graph2dScatteredWindow::Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi)
 	: PostProcessorWindow(parent, index, pdi)

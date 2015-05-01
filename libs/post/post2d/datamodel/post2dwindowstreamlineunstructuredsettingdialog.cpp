@@ -1,7 +1,8 @@
+#include "ui_post2dwindowstreamlineunstructuredsettingdialog.h"
+
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 #include "post2dwindowstreamlineunstructuredsettingdialog.h"
-#include "ui_post2dwindowstreamlineunstructuredsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

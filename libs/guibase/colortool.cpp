@@ -1,4 +1,5 @@
 #include "colortool.h"
+
 #include <QColor>
 
 namespace iRIC

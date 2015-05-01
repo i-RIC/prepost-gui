@@ -1,5 +1,7 @@
-#include "postdataexportdialog.h"
 #include "ui_postdataexportdialog.h"
+
+#include "postdataexportdialog.h"
+
 #include <QFileDialog>
 #include <QMessageBox>
 

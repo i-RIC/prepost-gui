@@ -1,10 +1,11 @@
-#include <cmath>
-
-#include "gridcreatingconditionrectangularregionsettingdialog.h"
 #include "ui_gridcreatingconditionrectangularregionsettingdialog.h"
+
 #include "gridcreatingconditionrectangularregion.h"
+#include "gridcreatingconditionrectangularregionsettingdialog.h"
 
 #include <QPushButton>
+
+#include <cmath>
 
 GridCreatingConditionRectangularRegionSettingDialog::GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget* parent) :
 	QDialog(parent),

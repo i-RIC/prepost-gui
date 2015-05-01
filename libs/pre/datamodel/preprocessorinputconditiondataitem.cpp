@@ -1,18 +1,19 @@
 #include "preprocessorinputconditiondataitem.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/inputcond/cgnsfileinputconditiondialog.h>
 #include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/postcontainer/postsolutioninfo.h>
 #include <misc/errormessage.h>
-#include <misc/stringtool.h>
 #include <misc/lastiodirectory.h>
+#include <misc/stringtool.h>
 
-#include <QStandardItem>
-#include <QMenu>
 #include <QAction>
 #include <QLocale>
+#include <QMenu>
+#include <QStandardItem>
 
 #include <cgnslib.h>
 

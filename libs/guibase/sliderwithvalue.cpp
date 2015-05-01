@@ -1,7 +1,8 @@
 #include "sliderwithvalue.h"
+
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include <QHBoxLayout>
 
 SliderWithValue::SliderWithValue(QWidget* parent) :
 	QWidget(parent)

@@ -1,7 +1,6 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowmeasureddatatopdataitem.h"
 #include "post2dwindowrootdataitem.h"
-#include <pre/misc/preprocessorscalarbarlegendboxsettingdialog.h>
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -13,6 +12,7 @@
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <misc/stringtool.h>
+#include <pre/misc/preprocessorscalarbarlegendboxsettingdialog.h>
 
 #include <QAction>
 #include <QIcon>

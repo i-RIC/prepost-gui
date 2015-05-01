@@ -1,6 +1,4 @@
 #include "solverdefinitionboundarycondition.h"
-//#include "pre/preprocessordataitem.h"
-//#include "pre/datamodel/preprocessorbcdataitem.h"
 
 /*
 PreProcessorBCDataItem* SolverDefinitionBoundaryCondition::createConditionDataItem(SolverDefinition* def, PreProcessorDataItem* parent)

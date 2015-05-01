@@ -1,7 +1,7 @@
-#include "vtktextpropertysettingdialog.h"
 #include "ui_vtktextpropertysettingdialog.h"
 
 #include "vtktextpropertysettingcontainer.h"
+#include "vtktextpropertysettingdialog.h"
 
 vtkTextPropertySettingDialog::vtkTextPropertySettingDialog(QWidget* parent) :
 	QDialog(parent),

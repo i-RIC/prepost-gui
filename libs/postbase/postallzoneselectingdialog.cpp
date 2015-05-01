@@ -1,5 +1,6 @@
-#include "postallzoneselectingdialog.h"
 #include "ui_postallzoneselectingdialog.h"
+
+#include "postallzoneselectingdialog.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>

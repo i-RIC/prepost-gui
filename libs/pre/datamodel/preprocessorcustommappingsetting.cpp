@@ -1,4 +1,5 @@
 #include "preprocessorcustommappingsetting.h"
+
 #include <misc/xmlsupport.h>
 
 #include <QRegExp>

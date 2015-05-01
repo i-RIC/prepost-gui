@@ -1,5 +1,5 @@
-#include "cgnsfileinputconditionpagelist.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "cgnsfileinputconditionpagelist.h"
 
 #include <QDomNode>
 #include <QTreeWidgetItem>

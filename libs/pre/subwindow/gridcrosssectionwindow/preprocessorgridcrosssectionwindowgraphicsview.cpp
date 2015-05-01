@@ -1,28 +1,30 @@
-#include <cmath>
-#include "preprocessorgridcrosssectionwindowgraphicsview.h"
-#include "preprocessorgridcrosssectionwindow.h"
-#include "preprocessorgridcrosssectionwindowprojectdataitem.h"
-#include <guicore/base/iricmainwindowinterface.h>
-#include <misc/iricundostack.h>
-#include <guicore/project/projectdataitem.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
 #include "../../datamodel/preprocessorgriddataitem.h"
 #include "../../datamodel/preprocessorgridrelatedconditionnodedataitem.h"
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
-#include <guicore/misc/qundocommandhelper.h>
+#include "preprocessorgridcrosssectionwindow.h"
+#include "preprocessorgridcrosssectionwindowgraphicsview.h"
+#include "preprocessorgridcrosssectionwindowprojectdataitem.h"
 
-#include <QPainter>
-#include <QMouseEvent>
-#include <QRect>
-#include <QItemSelection>
-#include <QModelIndexList>
-#include <QMenu>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/misc/qundocommandhelper.h>
+#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
+#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/project/projectdataitem.h>
+#include <misc/iricundostack.h>
+
 #include <QAction>
-#include <QTableView>
+#include <QItemSelection>
+#include <QMenu>
 #include <QMessageBox>
+#include <QModelIndexList>
+#include <QMouseEvent>
+#include <QPainter>
+#include <QRect>
 #include <QSet>
+#include <QTableView>
 #include <QWheelEvent>
+
+#include <cmath>
 
 class Structured2DGridCrosssectionEditCommand : public QUndoCommand
 {

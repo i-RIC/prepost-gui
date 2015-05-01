@@ -1,19 +1,20 @@
 #include "gridbirdeyewindow.h"
 #include "gridbirdeyewindowactionmanager.h"
-#include "gridbirdeyewindowgraphicsview.h"
 #include "gridbirdeyewindowdatamodel.h"
-#include <guibase/graphicsmisc.h>
+#include "gridbirdeyewindowgraphicsview.h"
+
 #include <guibase/colortool.h>
+#include <guibase/graphicsmisc.h>
 #include <misc/iricundostack.h>
 
-#include <QLabel>
 #include <QAction>
-#include <QToolBar>
 #include <QColorDialog>
+#include <QLabel>
+#include <QToolBar>
 #include <QUndoCommand>
 
-#include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
 
 GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item)
 	: QMainWindow(parent)

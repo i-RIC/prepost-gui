@@ -1,5 +1,7 @@
-#include "gridcreatingconditioncenterandwidthdialog.h"
 #include "ui_gridcreatingconditioncenterandwidthdialog.h"
+
+#include "gridcreatingconditioncenterandwidthdialog.h"
+
 #include <QMessageBox>
 
 GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDialog(QWidget* parent) :

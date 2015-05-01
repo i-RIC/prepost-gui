@@ -1,22 +1,23 @@
+#include "../preprocessorgraphicsview.h"
+#include "preprocessorbcdataitem.h"
+#include "preprocessorbcsettingdataitem.h"
 #include "preprocessorbcsettinggroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorbcsettingdataitem.h"
-#include "preprocessorbcdataitem.h"
+
+#include <guibase/waitdialog.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
-#include "../preprocessorgraphicsview.h"
+#include <misc/xmlsupport.h>
 #include <rawdata/polygon/rawdatapolygonabstractpolygon.h>
 #include <rawdata/polygon/rawdatapolygonregionpolygon.h>
-#include <misc/xmlsupport.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guibase/waitdialog.h>
 
 #include <QAction>
+#include <QFile>
+#include <QKeyEvent>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
-#include <QKeyEvent>
-#include <QFile>
 
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent)
 	: PreProcessorRawdataDataItemInterface(item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)

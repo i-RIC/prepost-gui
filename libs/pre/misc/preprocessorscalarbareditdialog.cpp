@@ -1,5 +1,6 @@
-#include "preprocessorscalarbareditdialog.h"
 #include "ui_preprocessorscalarbareditdialog.h"
+
+#include "preprocessorscalarbareditdialog.h"
 
 PreProcessorScalarBarEditDialog::PreProcessorScalarBarEditDialog(QWidget* parent) :
 	QDialog(parent),

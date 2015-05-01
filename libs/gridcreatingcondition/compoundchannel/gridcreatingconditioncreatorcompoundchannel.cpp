@@ -1,5 +1,6 @@
-#include "gridcreatingconditioncreatorcompoundchannel.h"
 #include "gridcreatingconditioncompoundchannel.h"
+#include "gridcreatingconditioncreatorcompoundchannel.h"
+
 #include <QAction>
 #include <QIcon>
 

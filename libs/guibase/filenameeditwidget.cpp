@@ -1,8 +1,10 @@
-#include "filenameeditwidget.h"
 #include "ui_filenameeditwidget.h"
-#include <QFileInfo>
-#include <QFileDialog>
+
+#include "filenameeditwidget.h"
+
 #include <QDir>
+#include <QFileDialog>
+#include <QFileInfo>
 
 FilenameEditWidget::FilenameEditWidget(QWidget* parent) :
 	QWidget(parent),

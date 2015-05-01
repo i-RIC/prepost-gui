@@ -1,4 +1,5 @@
 #include "structured15dgridwithcrosssectioncrosssectionwindowtableview.h"
+
 #include <QResizeEvent>
 
 Structured15DGridWithCrossSectionCrossSectionWindowTableView::Structured15DGridWithCrossSectionCrossSectionWindowTableView(QWidget* parent)

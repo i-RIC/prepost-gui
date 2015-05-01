@@ -1,6 +1,7 @@
 #include "structured2dgridcgnsimporter.h"
 
 #include <guicore/project/projectcgnsfile.h>
+
 #include <cgnslib.h>
 
 bool Structured2DGridCgnsImporter::isZoneCompatible(int fn, int B, int Z)

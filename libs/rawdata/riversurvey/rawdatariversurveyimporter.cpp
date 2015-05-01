@@ -4,10 +4,6 @@
 #include "rawdatariversurveyimporter.h"
 #include "rawdatariversurveyimportersettingdialog.h"
 
-#include <cmath>
-#include <iomanip>
-#include <sstream>
-
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 
@@ -16,6 +12,10 @@
 #include <QMultiMap>
 #include <QTextStream>
 #include <QVector2D>
+
+#include <cmath>
+#include <iomanip>
+#include <sstream>
 
 #define	SEPARATOR	" \t"
 

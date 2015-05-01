@@ -1,6 +1,6 @@
-#include "rawdataproxy.h"
-#include "rawdata.h"
 #include "../../datamodel/rawdataproxydataitem.h"
+#include "rawdata.h"
+#include "rawdataproxy.h"
 
 QMainWindow* RawDataProxy::mainWindow() const
 {

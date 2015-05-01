@@ -11,11 +11,6 @@
 #include "graph2dhybridwindowresultgroupdataitem.h"
 #include "graph2dhybridwindowrootdataitem.h"
 
-#include <qwt_plot_curve.h>
-#include <qwt_plot_marker.h>
-#include <qwt_scale_div.h>
-#include <qwt_scale_engine.h>
-
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -38,6 +33,10 @@
 #include <vtkStructuredGrid.h>
 
 #include <cgnslib.h>
+#include <qwt_plot_curve.h>
+#include <qwt_plot_marker.h>
+#include <qwt_scale_div.h>
+#include <qwt_scale_engine.h>
 
 Graph2dHybridWindowResultGroupDataItem::Graph2dHybridWindowResultGroupDataItem(Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowDataItem(tr("Calcuation Results"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

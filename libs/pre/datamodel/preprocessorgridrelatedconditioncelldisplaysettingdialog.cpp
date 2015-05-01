@@ -1,11 +1,13 @@
-#include "preprocessorgridrelatedconditioncelldisplaysettingdialog.h"
 #include "ui_preprocessorgridrelatedconditioncelldisplaysettingdialog.h"
+
+#include "preprocessorgridrelatedconditioncelldisplaysettingdialog.h"
+
 #include <guibase/coloreditwidget.h>
 
-#include <QItemDelegate>
 #include <QColorDialog>
-#include <QTableWidgetItem>
+#include <QItemDelegate>
 #include <QPainter>
+#include <QTableWidgetItem>
 
 class PreProcessorGridRelatedConditionCellDisplaySettingDialogColorEditDelegate : public QItemDelegate
 {

@@ -1,25 +1,26 @@
-#include "preprocessorgridtypedataitem.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include "preprocessorrawdatatopdataitem.h"
-#include "preprocessorgridandgridcreatingconditiondataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorgriddataitem.h"
-#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include "preprocessorrootdataitem.h"
 #include "preprocessorbackgroundimagesdataitem.h"
-#include <guicore/pre/grid/grid.h>
-#include <misc/xmlsupport.h>
-#include <misc/iricundostack.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgriddataitem.h"
+#include "preprocessorgridtypedataitem.h"
+#include "preprocessorrawdatagroupdataitem.h"
+#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorrootdataitem.h"
+
+#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
+#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/scalarstocolors/scalarstocolorscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/iricundostack.h>
+#include <misc/xmlsupport.h>
 
-#include <QMenu>
 #include <QAction>
+#include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 

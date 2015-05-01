@@ -1,17 +1,18 @@
 #include "graph2dwindowdataitem.h"
-#include "graph2dwindowrootdataitem.h"
 #include "graph2dwindowdatamodel.h"
-#include <misc/iricundostack.h>
+#include "graph2dwindowrootdataitem.h"
 #include "graph2dwindowview.h"
 
-#include <QStandardItem>
-#include <QMessageBox>
-#include <QDomNode>
+#include <misc/iricundostack.h>
+
 #include <QAction>
-#include <QXmlStreamWriter>
-#include <QTreeView>
+#include <QDomNode>
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QStandardItem>
+#include <QTreeView>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 Graph2dWindowDataItem::Graph2dWindowDataItem(const QString& itemlabel, Graph2dWindowDataItem* parent)
 	: ProjectDataItem(parent)

@@ -1,6 +1,6 @@
+#include "gridbirdeyewindow.h"
 #include "gridbirdeyewindowactionmanager.h"
 //#include "gridbirdeyewindowdatamodel.h"
-#include "gridbirdeyewindow.h"
 
 #include <QAction>
 #include <QMenu>

@@ -1,6 +1,6 @@
-#include "solverdefinitionrealoptionnodegridrelatedcondition.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionrealoptioneditwidget.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
+#include "solverdefinitionrealoptionnodegridrelatedcondition.h"
 
 SolverDefinitionRealOptionNodeGridRelatedCondition::SolverDefinitionRealOptionNodeGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator)
 	: SolverDefinitionRealNodeGridRelatedCondition(node, translator)

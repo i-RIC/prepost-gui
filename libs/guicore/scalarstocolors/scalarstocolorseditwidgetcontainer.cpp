@@ -1,8 +1,8 @@
+#include "scalarstocolorseditwidget.h"
 #include "scalarstocolorseditwidgetcontainer.h"
 
-#include "scalarstocolorseditwidget.h"
-#include <QWidget>
 #include <QVBoxLayout>
+#include <QWidget>
 
 ScalarsToColorsEditWidgetContainer::ScalarsToColorsEditWidgetContainer(QWidget* parent)
 	: QWidget(parent)

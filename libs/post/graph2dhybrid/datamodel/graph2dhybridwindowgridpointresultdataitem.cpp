@@ -6,9 +6,6 @@
 #include "graph2dhybridwindowresultcopydataitem.h"
 #include "graph2dhybridwindowresultgroupdataitem.h"
 
-#include <cmath>
-#include <qwt_plot_curve.h>
-
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -24,6 +21,9 @@
 #include <vtkPointData.h>
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
+
+#include <cmath>
+#include <qwt_plot_curve.h>
 
 Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
 	: Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)

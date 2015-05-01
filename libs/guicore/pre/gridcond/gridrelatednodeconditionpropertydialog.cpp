@@ -1,6 +1,7 @@
-#include "gridrelatednodeconditionpropertydialog.h"
 #include "ui_gridrelatednodeconditionpropertydialog.h"
+
 #include "../../scalarstocolors/lookuptableeditwidget.h"
+#include "gridrelatednodeconditionpropertydialog.h"
 
 GridRelatedNodeConditionPropertyDialog::GridRelatedNodeConditionPropertyDialog(QWidget* parent) :
 	QDialog(parent),

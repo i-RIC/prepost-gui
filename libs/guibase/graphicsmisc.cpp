@@ -3,16 +3,16 @@
 #include <QImage>
 #include <QPixmap>
 
-#include <vtkImageData.h>
-#include <vtkUnsignedCharArray.h>
-#include <vtkPointData.h>
-#include <vtkCubeAxesActor2D.h>
-#include <vtkProperty2D.h>
-#include <vtkTextProperty.h>
-#include <vtkScalarBarActor.h>
 #include <vtkAxesActor.h>
-#include <vtkTextActor.h>
 #include <vtkCaptionActor2D.h>
+#include <vtkCubeAxesActor2D.h>
+#include <vtkImageData.h>
+#include <vtkPointData.h>
+#include <vtkProperty2D.h>
+#include <vtkScalarBarActor.h>
+#include <vtkTextActor.h>
+#include <vtkTextProperty.h>
+#include <vtkUnsignedCharArray.h>
 
 namespace iRIC
 {

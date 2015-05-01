@@ -1,10 +1,13 @@
+#include "../solverdef/solverdefinitionabstract.h"
 #include "projectcgnsfile.h"
+
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
-#include "../solverdef/solverdefinitionabstract.h"
+
+#include <QString>
+
 #include <cgnslib.h>
 #include <iriclib.h>
-#include <QString>
 
 #if CGNS_VERSION < 3100
 #define cgsize_t int

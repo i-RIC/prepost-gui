@@ -3,8 +3,6 @@
 #include "rawdatapolygonimporter.h"
 #include "rawdatapolygonimportersettingdialog.h"
 
-#include <shapefil.h>
-
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridrelatedconditioneditwidget.h>
 #include <guicore/pre/rawdata/rawdatacreator.h>
@@ -14,6 +12,8 @@
 #include <QMessageBox>
 #include <QStringList>
 #include <QTextCodec>
+
+#include <shapefil.h>
 
 const QStringList RawDataPolygonImporter::fileDialogFilters()
 {

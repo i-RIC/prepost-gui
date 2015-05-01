@@ -1,20 +1,23 @@
-#include "post2dbirdeyewindowgridtypedataitem.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include "post2dbirdeyewindowzonedataitem.h"
 #include "../post2dbirdeyewindow.h"
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/grid/grid.h>
+#include "post2dbirdeyewindowgridtypedataitem.h"
+#include "post2dbirdeyewindowzonedataitem.h"
+
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/xmlsupport.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
-#include <QMenu>
-#include <QList>
+#include <misc/xmlsupport.h>
+
 #include <QAction>
+#include <QList>
+#include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
+
 #include <vtkPointData.h>
 
 Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent)

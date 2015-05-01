@@ -1,10 +1,13 @@
-#include "gridcreatingconditiontriangleremeshpolygon.h"
-#include "gridcreatingconditiontriangleremeshdialog.h"
 #include "gridcreatingconditiontriangle.h"
+#include "gridcreatingconditiontriangleremeshdialog.h"
+#include "gridcreatingconditiontriangleremeshpolygon.h"
+
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
+
 #include <QUndoCommand>
+
 #include <vtkProperty.h>
 
 GridCreatingConditionTriangleRemeshPolygon::GridCreatingConditionTriangleRemeshPolygon(GridCreatingConditionTriangle* parent)

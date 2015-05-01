@@ -1,5 +1,6 @@
-#include "postparticlebasicpropertydialog.h"
 #include "ui_postparticlebasicpropertydialog.h"
+
+#include "postparticlebasicpropertydialog.h"
 
 PostParticleBasicPropertyDialog::PostParticleBasicPropertyDialog(QWidget* parent) :
 	QDialog(parent),

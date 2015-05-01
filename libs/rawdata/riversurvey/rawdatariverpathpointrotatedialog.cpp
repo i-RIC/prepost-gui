@@ -1,8 +1,9 @@
+#include "ui_rawdatariverpathpointrotatedialog.h"
+
 #include "rawdatariverpathpoint.h"
 #include "rawdatariverpathpointrotatedialog.h"
 #include "rawdatariversurvey.h"
 #include "rawdatariversurveybackgroundgridcreatethread.h"
-#include "ui_rawdatariverpathpointrotatedialog.h"
 
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>

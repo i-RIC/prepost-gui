@@ -1,24 +1,25 @@
 #include "cgnsgridimporter.h"
-#include <guicore/project/projectdata.h>
-#include <guicore/project/projectcgnsfile.h>
-#include <misc/versionnumber.h>
-#include <misc/stringtool.h>
-#include <guicore/solverdef/solverdefinition.h>
-#include <guibase/cgnszoneselectdialog.h>
-#include <guicore/project/projectdata.h>
-#include <guicore/pre/grid/grid.h>
 
-#include <QObject>
+#include <guibase/cgnszoneselectdialog.h>
+#include <guicore/pre/grid/grid.h>
+#include <guicore/project/projectcgnsfile.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinition.h>
+#include <misc/stringtool.h>
+#include <misc/versionnumber.h>
+
 #include <QFile>
+#include <QInputDialog>
+#include <QMessageBox>
+#include <QObject>
+#include <QString>
 #include <QTextStream>
 #include <QVector2D>
-#include <QString>
-#include <QMessageBox>
-#include <QInputDialog>
-#include <sstream>
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <sstream>
 
 CgnsGridImporter::CgnsGridImporter()
 	: GridInternalImporter()

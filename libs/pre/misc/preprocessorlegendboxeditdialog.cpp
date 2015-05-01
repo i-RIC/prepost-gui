@@ -1,5 +1,7 @@
-#include "preprocessorlegendboxeditdialog.h"
 #include "ui_preprocessorlegendboxeditdialog.h"
+
+#include "preprocessorlegendboxeditdialog.h"
+
 #include <guibase/vtktextpropertysettingdialog.h>
 
 PreProcessorLegendBoxEditDialog::PreProcessorLegendBoxEditDialog(QWidget* parent) :

@@ -1,36 +1,37 @@
-#include "preprocessorrawdatatopdataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorrawdatacomplexgroupdataitem.h"
+#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodedataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
 #include "preprocessorgridrelatedconditioncelldataitem.h"
-#include <guicore/project/projectdata.h>
-#include <guicore/project/projectmainfile.h>
-#include <guicore/solverdef/solverdefinition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
-#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
-#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <misc/stringtool.h>
+#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
+#include "preprocessorgridrelatedconditionnodedataitem.h"
+#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorrawdatacomplexgroupdataitem.h"
+#include "preprocessorrawdatagroupdataitem.h"
+#include "preprocessorrawdatatopdataitem.h"
+
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-
-#include <vtkRenderer.h>
-#include <vtkRenderWindow.h>
-#include <vtkTextProperty.h>
-#include <vtkColorTransferFunction.h>
-#include <vtkSphereSource.h>
-#include <vtkScalarBarActor.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
+#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/solverdef/solverdefinition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
 
 #include <QIcon>
 #include <QStandardItem>
 #include <QXmlStreamWriter>
+
+#include <vtkColorTransferFunction.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkScalarBarActor.h>
+#include <vtkSphereSource.h>
+#include <vtkTextProperty.h>
 
 #include <iriclib.h>
 

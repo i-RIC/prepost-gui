@@ -1,4 +1,5 @@
 #include "graph2dwindowview.h"
+
 #include <qwt_legend.h>
 
 Graph2dWindowView::Graph2dWindowView(QWidget* parent)

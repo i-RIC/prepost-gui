@@ -1,5 +1,6 @@
 #include "rawdatanetcdfgdalrealimporter.h"
 #include "rawdatanetcdft.h"
+
 #include <gdal_priv.h>
 
 int RawDataNetcdfGdalRealImporter::outputValues(int ncid, int varId, GDALRasterBand* band, RawDataNetcdf* data)

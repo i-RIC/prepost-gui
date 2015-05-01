@@ -1,6 +1,7 @@
-#include "colormapsettingwidget.h"
 #include "ui_colormapsettingwidget.h"
+
 #include "colormapcustomsettingdialog.h"
+#include "colormapsettingwidget.h"
 
 ColorMapSettingWidget::ColorMapSettingWidget(QWidget* parent) :
 	QWidget(parent),

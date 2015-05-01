@@ -1,14 +1,13 @@
 #include "solverdefinition.h"
-
-#include "solverdefinitiontranslator.h"
 #include "solverdefinitiongridtype.h"
+#include "solverdefinitiontranslator.h"
 
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomDocument>
-#include <QDomNode>
 #include <QDomElement>
+#include <QDomNode>
 
 const QString SolverDefinition::FILENAME = QString("definition.xml");
 const QString SolverDefinition::README = QString("README");

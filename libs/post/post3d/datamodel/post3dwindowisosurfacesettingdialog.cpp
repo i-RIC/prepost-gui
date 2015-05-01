@@ -1,10 +1,12 @@
-#include "post3dwindowgridtypedataitem.h"
-#include "post3dwindowisosurfacesettingdialog.h"
 #include "ui_post3dwindowisosurfacesettingdialog.h"
 
+#include "post3dwindowgridtypedataitem.h"
+#include "post3dwindowisosurfacesettingdialog.h"
+
+#include <guibase/structuredgridregion.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guibase/structuredgridregion.h>
+
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 

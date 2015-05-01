@@ -1,6 +1,8 @@
-#include "gridcreatingconditioncreatorcenterandwidth.h"
 #include "gridcreatingconditioncenterandwidth.h"
+#include "gridcreatingconditioncreatorcenterandwidth.h"
+
 #include <guibase/irictoolbar.h>
+
 #include <QAction>
 #include <QIcon>
 

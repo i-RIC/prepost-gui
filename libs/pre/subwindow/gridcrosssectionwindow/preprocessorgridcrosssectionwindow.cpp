@@ -1,20 +1,22 @@
-#include "preprocessorgridcrosssectionwindow.h"
 #include "ui_preprocessorgridcrosssectionwindow.h"
+
+#include "preprocessorgridcrosssectionwindow.h"
 #include "preprocessorgridcrosssectionwindowdelegate.h"
 #include "preprocessorgridcrosssectionwindowprojectdataitem.h"
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+
 #include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
 #include <misc/iricundostack.h>
 
-#include <QLabel>
+#include <QAction>
+#include <QCloseEvent>
 #include <QComboBox>
+#include <QItemSelectionModel>
+#include <QLabel>
+#include <QMessageBox>
+#include <QModelIndexList>
 #include <QRadioButton>
 #include <QStandardItemModel>
-#include <QItemSelectionModel>
-#include <QAction>
-#include <QModelIndexList>
-#include <QCloseEvent>
-#include <QMessageBox>
 
 const int PreProcessorGridCrosssectionWindow::DEFAULT_TABLE_WIDTH = 200;
 

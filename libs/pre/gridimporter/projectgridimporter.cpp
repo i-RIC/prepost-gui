@@ -1,23 +1,23 @@
+#include "cgnsgridimporter.h"
 #include "projectgridimporter.h"
+
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
-#include <misc/stringtool.h>
-#include <guicore/project/projectworkspace.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include "cgnsgridimporter.h"
-#include <guicore/base/iricmainwindowinterface.h>
-
+#include <guicore/project/projectworkspace.h>
 #include <misc/errormessage.h>
+#include <misc/stringtool.h>
 
-#include <QObject>
 #include <QFile>
+#include <QMessageBox>
+#include <QObject>
+#include <QString>
 #include <QTextStream>
 #include <QVector2D>
-#include <QString>
-#include <QMessageBox>
-#include <sstream>
 
 #include <cgnslib.h>
+#include <sstream>
 
 ProjectGridImporter::ProjectGridImporter()
 	: GridInternalImporter()

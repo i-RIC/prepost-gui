@@ -1,5 +1,7 @@
-#include "graph2dscatteredwindowcontrolwidget.h"
 #include "ui_graph2dscatteredwindowcontrolwidget.h"
+
+#include "graph2dscatteredwindowcontrolwidget.h"
+
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>

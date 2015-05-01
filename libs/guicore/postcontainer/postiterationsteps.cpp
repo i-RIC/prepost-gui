@@ -1,11 +1,13 @@
-#include "postiterationsteps.h"
+#include "../base/iricmainwindowinterface.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
-#include "../base/iricmainwindowinterface.h"
+#include "postiterationsteps.h"
+
+#include <QMessageBox>
+#include <QString>
+
 #include <cgnslib.h>
 #include <iriclib.h>
-#include <QString>
-#include <QMessageBox>
 
 #if CGNS_VERSION < 3100
 #define cgsize_t int

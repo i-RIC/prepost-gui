@@ -1,17 +1,21 @@
-#include "gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.h"
 #include "ui_gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.h"
-#include <misc/iricundostack.h>
-#include <guibase/realnumbereditwidget.h>
+
 #include "gridcreatingconditioncompoundchannel.h"
 #include "gridcreatingconditioncompoundchannelabstractpolygon.h"
+#include "gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.h"
+
+#include <guibase/realnumbereditwidget.h>
+#include <misc/iricundostack.h>
+
+#include <QPolygonF>
 #include <QStandardItemModel>
 #include <QStyledItemDelegate>
-#include <QVector>
-#include <QVector2D>
-#include <QPolygonF>
 #include <QUndoCommand>
-#include <vtkPolygon.h>
+#include <QVector2D>
+#include <QVector>
+
 #include <vtkPoints.h>
+#include <vtkPolygon.h>
 
 class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialogDelegate : public QStyledItemDelegate
 {

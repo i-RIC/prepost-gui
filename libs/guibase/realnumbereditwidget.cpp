@@ -1,7 +1,9 @@
 #include "realnumbereditwidget.h"
-#include <cmath>
+
 #include <QDoubleValidator>
 #include <QMessageBox>
+
+#include <cmath>
 
 RealNumberEditWidget::RealNumberEditWidget(QWidget* parent)
 	: QLineEdit(parent)

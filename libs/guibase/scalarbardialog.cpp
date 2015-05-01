@@ -1,5 +1,6 @@
-#include "scalarbardialog.h"
 #include "ui_scalarbardialog.h"
+
+#include "scalarbardialog.h"
 
 ScalarBarDialog::ScalarBarDialog(QWidget* parent) :
 	QDialog(parent),

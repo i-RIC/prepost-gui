@@ -1,16 +1,17 @@
-#include "graph2dscatteredwindowprojectdataitem.h"
 #include "graph2dscatteredwindow.h"
+#include "graph2dscatteredwindowactionmanager.h"
+#include "graph2dscatteredwindowcontrolwidget.h"
 #include "graph2dscatteredwindowdatamodel.h"
 #include "graph2dscatteredwindowobjectbrowser.h"
-#include "graph2dscatteredwindowview.h"
-#include "graph2dscatteredwindowactionmanager.h"
 #include "graph2dscatteredwindowobjectbrowserview.h"
+#include "graph2dscatteredwindowprojectdataitem.h"
+#include "graph2dscatteredwindowview.h"
+#include "graph2dscatteredwindowview.h"
+
+#include <guibase/marginwidget.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include "graph2dscatteredwindowview.h"
-#include "graph2dscatteredwindowcontrolwidget.h"
 #include <misc/xmlsupport.h>
-#include <guibase/marginwidget.h>
 
 Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
 	: PostProcessorWindowProjectDataItem(parent, parentWindow)

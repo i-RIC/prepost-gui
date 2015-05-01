@@ -1,30 +1,29 @@
-#include "measureddata.h"
 #include "../base/iricmainwindowinterface.h"
-#include <guibase/waitdialog.h>
+#include "measureddata.h"
 
+#include <guibase/waitdialog.h>
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 
-#include <QRegExp>
-#include <QMap>
-#include <QSet>
-#include <QDir>
-#include <QFile>
-#include <QDomNode>
-#include <QXmlStreamWriter>
-#include <QTextStream>
 #include <QCoreApplication>
+#include <QDir>
+#include <QDomNode>
+#include <QFile>
+#include <QMap>
+#include <QRegExp>
+#include <QSet>
 #include <QTextCodec>
+#include <QTextStream>
+#include <QXmlStreamWriter>
 
-#include <vtkSmartPointer.h>
-#include <vtkPoints.h>
-#include <vtkPointData.h>
+#include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
+#include <vtkPointData.h>
+#include <vtkPoints.h>
 #include <vtkPolyDataReader.h>
 #include <vtkPolyDataWriter.h>
-#include <vtkCellArray.h>
-
 #include <vtkPolyDataWriter.h>
+#include <vtkSmartPointer.h>
 
 #define REAL double
 #define VOID void

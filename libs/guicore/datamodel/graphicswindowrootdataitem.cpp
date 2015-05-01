@@ -1,14 +1,14 @@
-#include "graphicswindowrootdataitem.h"
 #include "graphicswindowdatamodel.h"
-#include <guibase/objectbrowserview.h>
+#include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
-#include <misc/iricundostack.h>
 
+#include <guibase/objectbrowserview.h>
+#include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 
 #include <QStandardItemModel>
-#include <QXmlStreamWriter>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 #include <QVTKWidget.h>
 #include <vtkRenderWindow.h>

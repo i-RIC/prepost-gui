@@ -1,4 +1,5 @@
 #include "gridcreatingconditioncompoundchannelcenterline.h"
+
 #include <vtkProperty.h>
 
 GridCreatingConditionCompoundChannelCenterLine::GridCreatingConditionCompoundChannelCenterLine(GridCreatingConditionCompoundChannel* parent)

@@ -1,12 +1,12 @@
 #include "gridcreatingconditioncompoundchannelspline.h"
-#include <QVector>
+
+#include <QLineF>
 #include <QPointF>
 #include <QVector2D>
-#include <QLineF>
-//#include <QFile>
-//#include <QTextStream>
+#include <QVector>
 
 #include <vtkPoints.h>
+
 #define SUBDIV 5
 #define ITERATION 10
 

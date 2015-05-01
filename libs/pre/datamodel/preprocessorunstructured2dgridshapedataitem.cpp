@@ -1,19 +1,21 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorunstructured2dgridshapedataitem.h"
+
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
-#include <misc/xmlsupport.h>
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QXmlStreamWriter>
-#include <vtkCollectionIterator.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkPolyDataMapper.h>
+
 #include <vtkActor2DCollection.h>
+#include <vtkCollectionIterator.h>
 #include <vtkPointData.h>
-#include <vtkTextProperty.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkProperty.h>
 #include <vtkProperty2D.h>
+#include <vtkRenderer.h>
+#include <vtkTextProperty.h>
 
 PreProcessorUnstructured2dGridShapeDataItem::PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent)
 	: PreProcessorGridShapeDataItem(parent)

@@ -1,6 +1,8 @@
-#include "gridcreatingconditionriversurvey15dpointmovedialog.h"
 #include "ui_gridcreatingconditionriversurvey15dpointmovedialog.h"
+
 #include "gridcreatingconditionriversurvey15d.h"
+#include "gridcreatingconditionriversurvey15dpointmovedialog.h"
+
 #include <misc/iricundostack.h>
 
 #include <QUndoCommand>

@@ -1,9 +1,11 @@
-#include "preprocessorscalarbarlegendboxsettingdialog.h"
 #include "ui_preprocessorscalarbarlegendboxsettingdialog.h"
-#include "../datamodel/preprocessorrawdatatopdataitem.h"
+
 #include "../datamodel/preprocessorrawdatagroupdataitem.h"
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include "../datamodel/preprocessorrawdatatopdataitem.h"
+#include "preprocessorscalarbarlegendboxsettingdialog.h"
+
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
+#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 
 PreProcessorScalarBarLegendBoxSettingDialog::PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,5 +1,6 @@
-#include "scalarstocolorseditdialog.h"
 #include "ui_scalarstocolorseditdialog.h"
+
+#include "scalarstocolorseditdialog.h"
 #include "scalarstocolorseditwidget.h"
 
 #include <QVBoxLayout>

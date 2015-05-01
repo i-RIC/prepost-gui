@@ -1,13 +1,14 @@
-#include <cmath>
-
+#include "../graph2dscatteredwindowresultsetting.h"
 #include "graph2dscatteredwindowgridresultdataitem.h"
 #include "graph2dscatteredwindowresultgroupdataitem.h"
+
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include "../graph2dscatteredwindowresultsetting.h"
 #include <misc/stringtool.h>
 
-#include <vtkPointSet.h>
 #include <vtkPointData.h>
+#include <vtkPointSet.h>
+
+#include <cmath>
 
 Graph2dScatteredWindowGridResultDataItem::Graph2dScatteredWindowGridResultDataItem(const Graph2dScatteredWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
 	: Graph2dScatteredWindowResultDataItem(setting.name(), index, setting, parent)

@@ -1,7 +1,9 @@
-#include "gridbirdeyewindowcolorsettingdialog.h"
 #include "ui_gridbirdeyewindowcolorsettingdialog.h"
-#include <guicore/solverdef/solverdefinitiongridtype.h>
+
+#include "gridbirdeyewindowcolorsettingdialog.h"
+
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 
 GridBirdEyeWindowColorSettingDialog::GridBirdEyeWindowColorSettingDialog(QWidget* parent) :
 	QDialog(parent),

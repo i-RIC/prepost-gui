@@ -1,6 +1,8 @@
-#include "backgroundimageinfodialog.h"
 #include "ui_backgroundimageinfodialog.h"
+
 #include "backgroundimageinfo.h"
+#include "backgroundimageinfodialog.h"
+
 #include <cmath>
 
 #define M_PI 3.1415926535

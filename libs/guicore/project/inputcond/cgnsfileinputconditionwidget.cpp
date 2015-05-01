@@ -1,5 +1,6 @@
-#include "cgnsfileinputconditionwidget.h"
 #include "cgnsfileinputconditiondependency.h"
+#include "cgnsfileinputconditionwidget.h"
+
 #include <misc/xmlsupport.h>
 
 void CgnsFileInputConditionWidget::setDependency(CgnsFileInputConditionDependency* dep)

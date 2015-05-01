@@ -2,12 +2,11 @@
 #include "gridcreatingconditionriversurvey.h"
 
 #include <guibase/irictoolbar.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-
+#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <rawdata/riversurvey/rawdatariversurvey.h>
 
 #include <QAction>

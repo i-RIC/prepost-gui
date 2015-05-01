@@ -1,10 +1,9 @@
 #include "../post3dwindowgraphicsview.h"
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindowarrowgroupdataitem.h"
 #include "post3dwindowarrowgroupsettingdialog.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
-
-#include <cmath>
 
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -13,7 +12,6 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include "../post3dwindowgraphicsview.h"
 
 #include <QMainWindow>
 #include <QSet>
@@ -25,6 +23,7 @@
 #include <vtkActor2DCollection.h>
 #include <vtkAlgorithmOutput.h>
 #include <vtkCamera.h>
+#include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkGeometryFilter.h>
 #include <vtkIdentityTransform.h>
@@ -39,7 +38,8 @@
 #include <vtkTransform.h>
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
-#include <vtkCellArray.h>
+
+#include <cmath>
 
 Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* p)
 	: Post3dWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)

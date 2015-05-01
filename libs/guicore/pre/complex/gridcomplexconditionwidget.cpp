@@ -1,19 +1,21 @@
-#include "gridcomplexconditionwidget.h"
 #include "ui_gridcomplexconditionwidget.h"
+
+#include "../../base/iricmainwindowinterface.h"
 #include "../../project/inputcond/cgnsfileinputconditioncontainerset.h"
+#include "../../project/inputcond/cgnsfileinputconditionpage.h"
 #include "../../project/inputcond/cgnsfileinputconditionwidgetset.h"
 #include "../../project/inputcond/cgnsfileinputconditionwidgetset.h"
 #include "../../solverdef/solverdefinition.h"
-#include "../../base/iricmainwindowinterface.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
-#include "../../project/inputcond/cgnsfileinputconditionpage.h"
-#include <misc/xmlsupport.h>
+#include "gridcomplexconditionwidget.h"
+
 #include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomDocument>
 #include <QDomNode>
-#include <QPushButton>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QTextCodec>
 
 #include <cgnslib.h>

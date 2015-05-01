@@ -1,6 +1,7 @@
-#include "graph2dscatteredwindowsettingwidget.h"
 #include "ui_graph2dscatteredwindowsettingwidget.h"
+
 #include "graph2dscatteredwindowresultsetting.h"
+#include "graph2dscatteredwindowsettingwidget.h"
 
 Graph2dScatteredWindowSettingWidget::Graph2dScatteredWindowSettingWidget(QWidget* parent) :
 	QWidget(parent),

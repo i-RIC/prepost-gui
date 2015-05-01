@@ -1,16 +1,17 @@
+#include "ui_rawdatariverpathpointinsertdialog.h"
+
 #include "rawdatariverpathpoint.h"
 #include "rawdatariverpathpointinsertdialog.h"
 #include "rawdatariversurvey.h"
 #include "rawdatariversurveybackgroundgridcreatethread.h"
-#include "ui_rawdatariverpathpointinsertdialog.h"
-
-#include <sstream>
 
 #include <misc/interpolator.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 
 #include <QUndoCommand>
+
+#include <sstream>
 
 RawDataRiverPathPointInsertDialog::RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),

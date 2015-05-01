@@ -1,5 +1,6 @@
-#include "postbaseselectingdialog.h"
 #include "ui_postbaseselectingdialog.h"
+
+#include "postbaseselectingdialog.h"
 
 PostBaseSelectingDialog::PostBaseSelectingDialog(QWidget* parent) :
 	QDialog(parent),

@@ -1,10 +1,11 @@
 #include "cgnsfileinputconditioncontainerreal.h"
-#include <iriclib.h>
 
 #include <misc/stringtool.h>
 
-#include <QDomNode>
 #include <QDomElement>
+#include <QDomNode>
+
+#include <iriclib.h>
 
 void CgnsFileInputConditionContainerReal::setup(const QDomNode& defNode)
 {

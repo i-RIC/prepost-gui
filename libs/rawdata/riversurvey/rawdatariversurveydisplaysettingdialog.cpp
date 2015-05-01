@@ -1,5 +1,6 @@
-#include "rawdatariversurveydisplaysettingdialog.h"
 #include "ui_rawdatariversurveydisplaysettingdialog.h"
+
+#include "rawdatariversurveydisplaysettingdialog.h"
 
 RawDataRiverSurveyDisplaySettingDialog::RawDataRiverSurveyDisplaySettingDialog(QWidget* parent) :
 	QDialog(parent),

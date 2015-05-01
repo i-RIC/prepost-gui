@@ -1,19 +1,19 @@
-#include "preprocessorbcsettinggroupdataitem.h"
-#include "preprocessorbcsettingdataitem.h"
-#include "preprocessorbcgroupdataitem.h"
 #include "preprocessorbcdataitem.h"
+#include "preprocessorbcgroupdataitem.h"
+#include "preprocessorbcsettingdataitem.h"
+#include "preprocessorbcsettinggroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include <guicore/solverdef/solverdefinitionboundarycondition.h>
-#include <guicore/project/projectdata.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
 
-#include <misc/stringtool.h>
 #include <guibase/objectbrowserview.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitionboundarycondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
 
-#include <QMenu>
 #include <QMap>
+#include <QMenu>
 #include <QMessageBox>
 
 #include <iriclib.h>

@@ -1,7 +1,7 @@
-#include "solverdefinitionintegercellgridrelatedcondition.h"
 #include "../pre/gridcond/container/gridrelatedconditionintegercellcontainer.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionintegereditwidget.h"
 #include "../pre/gridcond/editwidget/gridrelatedconditionintegervariationeditwidget.h"
+#include "solverdefinitionintegercellgridrelatedcondition.h"
 
 GridRelatedConditionContainer* SolverDefinitionIntegerCellGridRelatedCondition::buildContainer(Grid* grid)
 {

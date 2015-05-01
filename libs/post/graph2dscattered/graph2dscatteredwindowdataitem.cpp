@@ -1,7 +1,8 @@
-#include "graph2dscatteredwindowdataitem.h"
-#include <guicore/project/projectdata.h>
-#include "graph2dscatteredwindowdatamodel.h"
 #include "graph2dscatteredwindow.h"
+#include "graph2dscatteredwindowdataitem.h"
+#include "graph2dscatteredwindowdatamodel.h"
+
+#include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
 Graph2dScatteredWindow* Graph2dScatteredWindowDataItem::graphWindow()

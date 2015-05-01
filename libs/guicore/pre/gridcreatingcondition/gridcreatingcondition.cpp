@@ -1,11 +1,11 @@
-#include "gridcreatingcondition.h"
-#include "gridcreatingconditioncreator.h"
 #include "../base/preprocessordataitem.h"
+#include "../base/preprocessorgraphicsviewinterface.h"
 #include "../base/preprocessorgridcreatingconditiondataiteminterface.h"
 #include "../base/preprocessorwindowinterface.h"
-#include "../base/preprocessorgraphicsviewinterface.h"
-//#include "pre/preprocessorwindow.h"
+#include "gridcreatingcondition.h"
+#include "gridcreatingconditioncreator.h"
 //#include "pre/preprocessorgraphicsview.h"
+//#include "pre/preprocessorwindow.h"
 
 #include <QMenu>
 

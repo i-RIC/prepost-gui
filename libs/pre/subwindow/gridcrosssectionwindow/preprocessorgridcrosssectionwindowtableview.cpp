@@ -1,4 +1,5 @@
 #include "preprocessorgridcrosssectionwindowtableview.h"
+
 #include <QResizeEvent>
 
 PreProcessorGridCrosssectionWindowTableView::PreProcessorGridCrosssectionWindowTableView(QWidget* parent) :

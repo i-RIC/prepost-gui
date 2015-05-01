@@ -13,8 +13,6 @@
 #include "rawdatariversurveydisplaysettingdialog.h"
 #include "rawdatariversurveyproxy.h"
 
-#include <iriclib_riversurvey.h>
-
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/misc/qundocommandhelper.h>
@@ -62,6 +60,8 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 #include <vtkVertex.h>
+
+#include <iriclib_riversurvey.h>
 
 RawDataRiverSurvey::RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
 	: RawData(d, creator, condition)

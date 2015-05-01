@@ -1,5 +1,7 @@
-#include "offsetsettingdialog.h"
 #include "ui_offsetsettingdialog.h"
+
+#include "offsetsettingdialog.h"
+
 #include <QMessageBox>
 
 OffsetSettingDialog::OffsetSettingDialog(QWidget* parent) :

@@ -1,6 +1,6 @@
-#include "solverdefinitiongridrelatedconditiont.h"
 #include "../pre/rawdatabackground/rawdatabackgroundintegercreator.h"
 #include "../pre/rawdatabackground/rawdatabackgroundrealcreator.h"
+#include "solverdefinitiongridrelatedconditiont.h"
 
 RawData* SolverDefinitionGridRelatedIntegerCondition::buildBackgroundRawData(ProjectDataItem* parent)
 {

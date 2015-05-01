@@ -1,4 +1,5 @@
 #include "gridrelatedconditionrealoptioneditwidget.h"
+
 #include <QComboBox>
 #include <QVBoxLayout>
 

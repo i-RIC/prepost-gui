@@ -1,21 +1,23 @@
-#include <cmath>
-
+#include "../graph2dwindowmarkersetting.h"
+#include "../graph2dwindowview.h"
 #include "graph2dwindowmarkerdataitem.h"
 #include "graph2dwindowmarkergroupdataitem.h"
-#include "../graph2dwindowview.h"
-#include "../graph2dwindowmarkersetting.h"
-#include <misc/stringtool.h>
+
 #include <guibase/qwtplotcustommarker.h>
-#include <qwt_plot.h>
+#include <misc/stringtool.h>
+
+#include <QPen>
 #include <QStandardItem>
 #include <QVector3D>
-#include <QPen>
 
-#include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
+#include <vtkDoubleArray.h>
 #include <vtkExtractGrid.h>
 #include <vtkPointData.h>
-#include <vtkDoubleArray.h>
+#include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+
+#include <cmath>
+#include <qwt_plot.h>
 
 Graph2dWindowMarkerDataItem::Graph2dWindowMarkerDataItem(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item, Graph2dWindowDataItem* parent)
 	: Graph2dWindowDataItem(item.label(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)

@@ -1,19 +1,21 @@
-#include "cgnsfileinputconditiondialog.h"
 #include "ui_cgnsfileinputconditiondialog.h"
-#include "../projectcgnsfile.h"
+
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "../projectcgnsfile.h"
 #include "cgnsfileinputconditioncontainerset.h"
+#include "cgnsfileinputconditiondialog.h"
 #include "cgnsfileinputconditionwidgetset.h"
 #include "cgnsfileinputconditionwidgetset.h"
-#include <misc/xmlsupport.h>
-#include <misc/stringtool.h>
+
 #include <misc/filesystemfunction.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QDomDocument>
 #include <QDomNode>
-#include <QPushButton>
 #include <QMessageBox>
+#include <QPushButton>
 
 #include <cgnslib.h>
 #include <iriclib.h>

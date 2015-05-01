@@ -1,5 +1,6 @@
-#include "gridcreatingconditiontrianglesettingdialog.h"
 #include "ui_gridcreatingconditiontrianglesettingdialog.h"
+
+#include "gridcreatingconditiontrianglesettingdialog.h"
 
 GridCreatingConditionTriangleSettingDialog::GridCreatingConditionTriangleSettingDialog(QWidget* parent) :
 	QDialog(parent),

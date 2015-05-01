@@ -1,32 +1,33 @@
-#include "postsolutioninfo.h"
-#include "postiterationsteps.h"
-#include "posttimesteps.h"
-#include "postzonedatacontainer.h"
-#include "postdummy3dzonedatacontainer.h"
+#include "../base/iricmainwindowinterface.h"
 #include "../project/projectdata.h"
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
-#include <misc/stringtool.h>
-#include <misc/mathsupport.h>
-#include "postbaseselectingdialog.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "postbaseselectingdialog.h"
 #include "postdataexportdialog.h"
-#include "../base/iricmainwindowinterface.h"
-#include <guibase/itemselectingdialog.h>
+#include "postdummy3dzonedatacontainer.h"
+#include "postiterationsteps.h"
+#include "postsolutioninfo.h"
+#include "posttimesteps.h"
+#include "postzonedatacontainer.h"
 
+#include <guibase/itemselectingdialog.h>
 #include <misc/lastiodirectory.h>
+#include <misc/mathsupport.h>
+#include <misc/stringtool.h>
+
+#include <QCoreApplication>
+#include <QMessageBox>
+#include <QProgressDialog>
+#include <QThread>
+#include <QTime>
+#include <QTimerEvent>
+#include <QXmlStreamWriter>
+
+#include <vtkStructuredGrid.h>
 
 #include <cgnslib.h>
 #include <iriclib.h>
-#include <QXmlStreamWriter>
-#include <QTimerEvent>
-#include <QThread>
-#include <QTime>
-#include <QMessageBox>
-#include <QProgressDialog>
-#include <QCoreApplication>
-
-#include <vtkStructuredGrid.h>
 
 PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
 	: ProjectDataItem(parent)

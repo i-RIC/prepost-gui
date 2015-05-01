@@ -1,7 +1,8 @@
-#include "gridrelatedconditiondimensionscontainer.h"
 #include "../../../solverdef/solverdefinitiongridrelatedcondition.h"
 #include "../../../solverdef/solverdefinitiongridrelatedconditiondimension.h"
 #include "gridrelatedconditioncontainer.h"
+#include "gridrelatedconditiondimensionscontainer.h"
+
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 
 GridRelatedConditionDimensionsContainer::GridRelatedConditionDimensionsContainer(SolverDefinitionGridRelatedCondition* conddef, QObject* parent)

@@ -1,16 +1,17 @@
 #include "post3dwindowparticlestopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
-#include <postbase/postparticlebasicpropertydialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
+#include <postbase/postparticlebasicpropertydialog.h>
 
-#include <vtkRenderer.h>
-#include <vtkProperty.h>
-#include <vtkPointData.h>
 #include <QSettings>
+
+#include <vtkPointData.h>
+#include <vtkProperty.h>
+#include <vtkRenderer.h>
 
 Post3dWindowParticlesTopDataItem::Post3dWindowParticlesTopDataItem(Post3dWindowDataItem* p)
 	: Post3dWindowDataItem(tr("Particles"), QIcon(":/libs/guibase/images/iconPaper.png"), p)

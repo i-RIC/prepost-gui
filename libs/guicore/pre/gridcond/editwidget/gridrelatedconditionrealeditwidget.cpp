@@ -1,5 +1,7 @@
 #include "gridrelatedconditionrealeditwidget.h"
+
 #include <guibase/realnumbereditwidget.h>
+
 #include <QVBoxLayout>
 
 GridRelatedConditionRealEditWidget::GridRelatedConditionRealEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<double>* cond)

@@ -1,5 +1,6 @@
-#include "gridshapeeditdialog.h"
 #include "ui_gridshapeeditdialog.h"
+
+#include "gridshapeeditdialog.h"
 
 GridShapeEditDialog::GridShapeEditDialog(QWidget* parent) :
 	QDialog(parent),

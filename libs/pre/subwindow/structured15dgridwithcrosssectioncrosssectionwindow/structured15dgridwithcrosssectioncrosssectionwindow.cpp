@@ -1,18 +1,19 @@
-#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "ui_structured15dgridwithcrosssectioncrosssectionwindow.h"
+
 #include "../../datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 #include "../../datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h"
 #include "../../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.h"
-#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "structured15dgridwithcrosssectioncrosssectionwindowdelegate.h"
 #include "structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h"
+
+#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include <misc/iricundostack.h>
 #include <rawdata/riversurvey/rawdatariverpathpoint.h>
 
-#include <misc/iricundostack.h>
-
-#include <QStandardItemModel>
-#include <QLabel>
 #include <QComboBox>
+#include <QLabel>
+#include <QStandardItemModel>
 
 Structured15DGridWithCrossSectionCrossSectionWindow::Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindow(parent),

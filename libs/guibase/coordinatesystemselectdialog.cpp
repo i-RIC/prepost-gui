@@ -1,7 +1,8 @@
-#include "coordinatesystemselectdialog.h"
 #include "ui_coordinatesystemselectdialog.h"
-#include "coordinatesystembuilder.h"
+
 #include "coordinatesystem.h"
+#include "coordinatesystembuilder.h"
+#include "coordinatesystemselectdialog.h"
 
 CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
 	QDialog(parent),

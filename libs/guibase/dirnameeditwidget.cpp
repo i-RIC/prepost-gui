@@ -1,7 +1,9 @@
-#include "dirnameeditwidget.h"
 #include "ui_dirnameeditwidget.h"
-#include <QFileDialog>
+
+#include "dirnameeditwidget.h"
+
 #include <QDir>
+#include <QFileDialog>
 
 DirnameEditWidget::DirnameEditWidget(QWidget* parent) :
 	QWidget(parent),
