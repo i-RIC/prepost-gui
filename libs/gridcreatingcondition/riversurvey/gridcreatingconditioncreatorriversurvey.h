@@ -7,13 +7,13 @@
 class GCC_RIVERSURVEY_EXPORT GridCreatingConditionCreatorRiverSurvey : public GridCreatingConditionCreator
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCreatorRiverSurvey();
 	~GridCreatingConditionCreatorRiverSurvey() {}
-	// temporary
-	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
-	GridCreatingCondition* create(ProjectDataItem* parent);
-	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const;
+	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	GridCreatingCondition* create(ProjectDataItem* parent) override;
+	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const override;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORCENTERANDWIDTH_H

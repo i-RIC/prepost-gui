@@ -7,12 +7,12 @@
 class GCC_CENTERANDWIDTH_EXPORT GridCreatingConditionCreatorCenterAndWidth : public GridCreatingConditionCreator
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCreatorCenterAndWidth();
 	~GridCreatingConditionCreatorCenterAndWidth() {}
-	// temporary
-	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
-	GridCreatingCondition* create(ProjectDataItem* parent);
+	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORCENTERANDWIDTH_H

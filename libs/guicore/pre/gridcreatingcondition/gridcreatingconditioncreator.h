@@ -25,7 +25,7 @@ public:
 	const QString& name() const {return m_name;}
 	const QString& caption() const {return m_caption;}
 	const QString& description() const {return m_description;}
-	virtual bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* ditem);
+	virtual bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* ditem) const;
 
 protected:
 	QString m_name;

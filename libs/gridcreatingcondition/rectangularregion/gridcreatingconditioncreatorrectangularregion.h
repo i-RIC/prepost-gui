@@ -7,12 +7,12 @@
 class GCC_RECTANGULARREGION_EXPORT GridCreatingConditionCreatorRectangularRegion : public GridCreatingConditionCreator
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCreatorRectangularRegion();
 	~GridCreatingConditionCreatorRectangularRegion() {}
-
-	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
-	GridCreatingCondition* create(ProjectDataItem* parent);
+	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORRECTANGULARREGION_H

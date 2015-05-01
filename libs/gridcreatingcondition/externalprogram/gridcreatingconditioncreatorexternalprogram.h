@@ -12,13 +12,14 @@ class QWidget;
 class GCC_EXTERNALPROGRAM_EXPORT GridCreatingConditionCreatorExternalProgram : public GridCreatingConditionCreator
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCreatorExternalProgram(const QString& folderName, const QLocale& locale);
 	~GridCreatingConditionCreatorExternalProgram() {}
 	/// Returns Grid Type.
-	SolverDefinitionGridType::GridType gridType() const {return m_gridType;}
+	SolverDefinitionGridType::GridType gridType() const override {return m_gridType;}
 	/// Create grid creating condition instance.
-	GridCreatingCondition* create(ProjectDataItem* parent);
+	GridCreatingCondition* create(ProjectDataItem* parent) override;
 	/// Folder Name
 	const QString& folderName() {return m_folderName;}
 	// get the list of creators.
