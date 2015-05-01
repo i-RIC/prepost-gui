@@ -57,25 +57,25 @@ public:
 	};
 	GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionCenterAndWidth();
-	bool create(QWidget* parent);
+	bool create(QWidget* parent) override;
 
-	bool ready() const;
+	bool ready() const override;
 
-	void setupActors();
-	void setupMenu();
+	void setupActors() override;
+	void setupMenu() override;
 	void setActorProperties(vtkProperty* prop);
-	void informSelection(PreProcessorGraphicsViewInterface* v);
-	void informDeselection(PreProcessorGraphicsViewInterface* v);
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* v);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v);
+	void informSelection(PreProcessorGraphicsViewInterface* v) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& /*range*/);
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+	void assignActionZValues(const ZDepthRange& /*range*/) override;
 	const QVector<QPointF> polyLine();
 	void setPolyLine(const QVector<QPointF>& polyline);
 	bool isVertexSelectable(const QVector2D& pos);
@@ -94,19 +94,20 @@ public:
 	int jMax() {return m_jMax;}
 	double width() {return m_width;}
 	double length() {return m_length;}
-	bool addToolBarButtons(QToolBar* /*tb*/);
-	void clear();
-	void showInitialDialog();
+	bool addToolBarButtons(QToolBar* /*tb*/) override;
+	void clear() override;
+	void showInitialDialog() override;
+
 protected:
 	// @todo not implemented yet.
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 	// @todo not implemented yet.
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
 	void loadCenterAndWidthFromProjectMainFile(const QDomNode& /*node*/);
 	void saveCenterAndWidthToProjectMainFile(QXmlStreamWriter& /*writer*/);
-	void loadExternalData(const QString& /*filename*/);
-	void saveExternalData(const QString& /*filename*/);
-	void doApplyOffset(double x, double y);
+	void loadExternalData(const QString& /*filename*/) override;
+	void saveExternalData(const QString& /*filename*/) override;
+	void doApplyOffset(double x, double y) override;
 
 	vtkSmartPointer<vtkPolyLine> m_vtkPolyLine;
 	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
@@ -143,6 +144,7 @@ protected:
 	int m_tmpIMax;
 	int m_tmpJMax;
 	double m_tmpWidth;
+
 private slots:
 	void restoreMouseEventMode();
 	void addVertexMode(bool on);
@@ -151,6 +153,7 @@ private slots:
 	void deletePolyLine();
 	void handleDialogApplied(QDialog* d);
 	void reverseCenterLineDirection();
+
 private:
 	void updateShapeData();
 	void updateMouseEventMode();
@@ -171,6 +174,7 @@ private:
 
 	bool m_isAccepted;
 	bool m_isGridCreated;
+
 public:
 	friend class GridCreatingConditionCreatorCenterAndWidth;
 	friend class GridCreatingConditionCenterAndWidthFinishDefiningCommand;

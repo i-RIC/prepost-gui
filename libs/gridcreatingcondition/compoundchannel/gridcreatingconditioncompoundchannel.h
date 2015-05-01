@@ -60,9 +60,11 @@ private:
 class GridCreatingConditionCompoundChannel : public GridCreatingCondition
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
+
 public:
 	enum SelectMode {
 		smNone,
@@ -99,29 +101,30 @@ public:
 	/// Constructor
 	GridCreatingConditionCompoundChannel(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionCompoundChannel();
-	void setupMenu();
-	bool addToolBarButtons(QToolBar* /*parent*/);
-	void informSelection(PreProcessorGraphicsViewInterface* v);
-	void informDeselection(PreProcessorGraphicsViewInterface* v);
-	void addCustomMenuItems(QMenu* menu);
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& range);
+	void setupMenu() override;
+	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	void informSelection(PreProcessorGraphicsViewInterface* v) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void addCustomMenuItems(QMenu* menu) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+	void assignActionZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
 	QColor color() {return m_color;}
 	void setupScalarArray();
-	void clear();
-	bool ready() const {return true;}
-	bool create(QWidget* parent);
-	void update2Ds();
-	void showInitialDialog();
+	void clear() override;
+	bool ready() const override {return true;}
+	bool create(QWidget* parent) override;
+	void update2Ds() override;
+	void showInitialDialog() override;
+
 private slots:
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
@@ -129,16 +132,19 @@ private slots:
 	void restoreMouseEventMode();
 	void cancel() {m_canceled = true;}
 	void reverseCenterLine();
+
 protected:
+
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 	void updateFilename() {
 		m_filename = "gridcreatingcondition.dat";
 	}
 private:
+
 	bool checkCondition();
 	bool selectObject(QPoint point);
 	bool activePolygonHasFourVertices();
@@ -201,6 +207,7 @@ private:
 
 	double m_relaxation;
 	int m_iterations;
+
 public:
 	friend class GridCreatingConditionCompoundChannelCreator;
 	friend class GridCreatingConditionCompoundChannelSwitchStatusCommand;
