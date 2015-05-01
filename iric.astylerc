@@ -1,0 +1,15 @@
+--indent-cases
+--pad-header
+--unpad-paren
+--keep-one-line-blocks
+--keep-one-line-statements
+--indent=force-tab=2
+--indent-namespaces
+--add-brackets
+-A3
+--brackets=break
+--align-pointer=type
+--align-reference=type
+--min-conditional-indent=0
+--mode=c
+--lineend=windows
