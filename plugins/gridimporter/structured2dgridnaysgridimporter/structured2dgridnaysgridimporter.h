@@ -14,13 +14,13 @@ public:
 	/// Constructor
 	Structured2DGridNaysGridImporter();
 	~Structured2DGridNaysGridImporter(){}
-	QString caption() const;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt)
+	QString caption() const override;
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
 	{
 		return gt == SolverDefinitionGridType::gtStructured2DGrid;
 	}
-	const QStringList fileDialogFilters();
-	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
+	QStringList fileDialogFilters() const override;
+	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };
 
 #endif // STRUCTURED2DGRIDNAYSGRIDIMPORTER_H

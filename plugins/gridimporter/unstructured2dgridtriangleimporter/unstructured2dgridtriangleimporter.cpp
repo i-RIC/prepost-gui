@@ -20,7 +20,7 @@ Unstructured2dGridTriangleImporter::Unstructured2dGridTriangleImporter()
 
 }
 
-const QStringList Unstructured2dGridTriangleImporter::fileDialogFilters()
+QStringList Unstructured2dGridTriangleImporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << tr("TRIANGLE node files (*.node)");

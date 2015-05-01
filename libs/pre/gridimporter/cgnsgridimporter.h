@@ -12,9 +12,9 @@ class CgnsGridImporter : public GridInternalImporter
 public:
 	CgnsGridImporter();
 	virtual ~CgnsGridImporter() {}
-	QString caption() const;
-	const QStringList fileDialogFilters();
-	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
+	QString caption() const override;
+	QStringList fileDialogFilters() const override;
+	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 
 	bool openCgnsFileForImporting(Grid* grid, const QString& filename, QString& tmpname, int& fn, int& base, int& zoneid, QWidget* parent);
 	void closeAndRemoveTempCgnsFile(int fn, const QString& filename);

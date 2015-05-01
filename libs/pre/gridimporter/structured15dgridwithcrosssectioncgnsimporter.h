@@ -7,7 +7,7 @@ class Structured15DGridWithCrossSectionCgnsImporter : public CgnsGridImporter
 {
 public:
 	Structured15DGridWithCrossSectionCgnsImporter() : CgnsGridImporter() {}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) {
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override {
 		return gt ==SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
 	}
 

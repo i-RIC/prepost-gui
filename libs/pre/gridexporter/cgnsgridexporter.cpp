@@ -19,7 +19,7 @@ QString CgnsGridExporter::caption() const
 	return tr("CGNS file");
 }
 
-const QStringList CgnsGridExporter::fileDialogFilters()
+QStringList CgnsGridExporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("CGNS files (*.cgn)");

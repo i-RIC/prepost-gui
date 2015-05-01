@@ -30,7 +30,7 @@ QString ProjectGridImporter::caption() const
 	return tr("Project file");
 }
 
-const QStringList ProjectGridImporter::fileDialogFilters()
+QStringList ProjectGridImporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("iRIC Project files (*.ipro)");

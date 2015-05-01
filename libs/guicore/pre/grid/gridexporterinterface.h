@@ -16,9 +16,9 @@ public:
 	virtual ~GridExporterInterface() {}
 	virtual QString caption() const = 0;
 	/// Can be used for exporting the specified grid type.
-	virtual bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) = 0;
+	virtual bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const = 0;
 	/// Return filter string for QFileDialog
-	virtual const QStringList fileDialogFilters() = 0;
+	virtual QStringList fileDialogFilters() const = 0;
 	/// Export grid data into external file.
 	virtual bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) = 0;
 };

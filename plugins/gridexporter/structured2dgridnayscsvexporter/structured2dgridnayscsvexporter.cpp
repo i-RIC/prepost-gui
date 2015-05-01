@@ -18,7 +18,7 @@ QString Structured2DGridNaysCSVExporter::caption() const
 	return tr("RIC-Nays CSV");
 }
 
-const QStringList Structured2DGridNaysCSVExporter::fileDialogFilters()
+QStringList Structured2DGridNaysCSVExporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("iRIC Grid CSV files (*.csv)");

@@ -20,7 +20,7 @@ QString Structured2DGridVTKExporter::caption() const
 	return tr("VTK file");
 }
 
-const QStringList Structured2DGridVTKExporter::fileDialogFilters()
+QStringList Structured2DGridVTKExporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("VTK files (*.vtk)");

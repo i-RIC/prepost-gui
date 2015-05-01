@@ -10,13 +10,13 @@ public:
 	/// Constructor
 	Unstructured2DGridVTKExporter();
 	~Unstructured2DGridVTKExporter(){}
-	QString caption() const;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt)
+	QString caption() const override;
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
 	{
 		return gt = SolverDefinitionGridType::gtUnstructured2DGrid;
 	}
-	const QStringList fileDialogFilters();
-	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
+	QStringList fileDialogFilters() const override;
+	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };
 
 #endif // UNSTRUCTURED2DGRIDVTKEXPORTER_H

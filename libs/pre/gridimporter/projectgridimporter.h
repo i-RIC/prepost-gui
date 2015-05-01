@@ -14,8 +14,8 @@ class ProjectGridImporter : public GridInternalImporter
 public:
 	ProjectGridImporter();
 	virtual ~ProjectGridImporter() {}
-	QString caption() const;
-	const QStringList fileDialogFilters();
+	QString caption() const override;
+	QStringList fileDialogFilters() const override;
 	/// Import grid data from external file.
 	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
 

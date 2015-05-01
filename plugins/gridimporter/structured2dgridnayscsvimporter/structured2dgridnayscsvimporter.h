@@ -9,18 +9,19 @@ class Structured2DGridNaysCSVImporter : public QObject, public GridImporterInter
 	Q_OBJECT
 	Q_PLUGIN_METADATA(IID GridImporterInterface_iid FILE "extrafilters.json")
 	Q_INTERFACES(GridImporterInterface)
+
 public:
 	/// Constructor
 	Structured2DGridNaysCSVImporter();
 	~Structured2DGridNaysCSVImporter(){}
-	QString caption() const;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt)
+	QString caption() const override;
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
 	{
 		return gt == SolverDefinitionGridType::gtStructured2DGrid;
 	}
-	const QStringList fileDialogFilters();
+	QStringList fileDialogFilters() const override;
 	/// Import grid data from external file.
-	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);
+	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };
 
 #endif // STRUCTURED2DGRIDNAYSCSVIMPORTER_H

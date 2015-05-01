@@ -22,7 +22,7 @@ QString Structured2DGridNaysGridImporter::caption() const
 	return tr("RIC-Nays Grid file");
 }
 
-const QStringList Structured2DGridNaysGridImporter::fileDialogFilters()
+QStringList Structured2DGridNaysGridImporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << tr("RIC-Nays grid file (*.grid)");

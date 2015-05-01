@@ -27,7 +27,7 @@ CgnsGridImporter::CgnsGridImporter()
 
 }
 
-const QStringList CgnsGridImporter::fileDialogFilters()
+QStringList CgnsGridImporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("CGNS files (*.cgn)");

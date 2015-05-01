@@ -17,7 +17,7 @@ QString Structured2DGridNaysGridExporter::caption() const
 	return tr("RIC-Nays Grid file");
 }
 
-const QStringList Structured2DGridNaysGridExporter::fileDialogFilters()
+QStringList Structured2DGridNaysGridExporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << QObject::tr("RIC-Nays grid files (*.grid)");

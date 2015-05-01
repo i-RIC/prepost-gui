@@ -22,7 +22,7 @@ QString Structured2DGridNaysCSVImporter::caption() const
 	return tr("iRIC Grid CSV file");
 }
 
-const QStringList Structured2DGridNaysCSVImporter::fileDialogFilters()
+QStringList Structured2DGridNaysCSVImporter::fileDialogFilters() const
 {
 	QStringList ret;
 	ret << tr("iRIC Grid CSV files (*.csv)");
