@@ -13,16 +13,15 @@ class TRIANGLEDLL_EXPORT TriangleExecuteThread : public QThread
 {
 	Q_OBJECT
 public:
-	explicit TriangleExecuteThread(QObject *parent = nullptr);
-	void setIOs(triangulateio* in, triangulateio* out){
+	explicit TriangleExecuteThread(QObject* parent = nullptr);
+	void setIOs(triangulateio* in, triangulateio* out) {
 		m_in = in;
 		m_out = out;
 	}
-	void setArgs(char* args){
+	void setArgs(char* args) {
 		m_args = args;
 	}
-	void setFileOutputSetting(QString exeFile, QString args, QString filename, QString workFolder)
-	{
+	void setFileOutputSetting(QString exeFile, QString args, QString filename, QString workFolder) {
 		m_exeFile = exeFile;
 		m_fileArgs = args;
 		m_fileName = filename;

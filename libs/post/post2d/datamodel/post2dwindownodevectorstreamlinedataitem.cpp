@@ -23,7 +23,7 @@ Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataIt
 	m_standardItemCopy = m_standardItem->clone();
 
 	connect(this, SIGNAL(changed(Post2dWindowNodeVectorStreamlineDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem*)));
 
 }
 
@@ -33,7 +33,7 @@ void Post2dWindowNodeVectorStreamlineDataItem::handleStandardItemChange()
 	setModified();
 }
 
-void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
@@ -53,7 +53,7 @@ void Post2dWindowNodeVectorStreamlineDataItem::mouseReleaseEvent(QMouseEvent* ev
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeVectorStreamlineDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeVectorStreamlineDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);

@@ -18,10 +18,10 @@ Post2dWindowRawDataTopDataItem::Post2dWindowRawDataTopDataItem(PreProcessorRawDa
 
 	// add child nodes.
 	QList<SolverDefinitionGridRelatedCondition*> list = ditem->gridType()->gridRelatedConditions();
-	for (auto it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it) {
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		QString tmpname = cond->name();
-		if (tmpname.toLower().left(9) != "elevation"){continue;}
+		if (tmpname.toLower().left(9) != "elevation") {continue;}
 		Post2dWindowRawDataGroupDataItem* i = new Post2dWindowRawDataGroupDataItem(cond, this);
 		m_childItems.append(i);
 		m_itemNameMap.insert(cond->name(), i);
@@ -33,8 +33,8 @@ Post2dWindowRawDataTopDataItem::Post2dWindowRawDataTopDataItem(PreProcessorRawDa
 
 void Post2dWindowRawDataTopDataItem::updateChildren()
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Post2dWindowRawDataGroupDataItem* gItem = dynamic_cast<Post2dWindowRawDataGroupDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Post2dWindowRawDataGroupDataItem* gItem = dynamic_cast<Post2dWindowRawDataGroupDataItem*>(m_childItems.at(i));
 		gItem->updateChildren();
 	}
 	assignActionZValues(m_zDepthRange);
@@ -43,11 +43,11 @@ void Post2dWindowRawDataTopDataItem::updateChildren()
 void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList children = node.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
 		Post2dWindowRawDataGroupDataItem* item = m_itemNameMap.value(name);
-		if (item != nullptr){
+		if (item != nullptr) {
 			item->loadFromProjectMainFile(child);
 		}
 	}
@@ -55,7 +55,7 @@ void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void Post2dWindowRawDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("RawDataGroup");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

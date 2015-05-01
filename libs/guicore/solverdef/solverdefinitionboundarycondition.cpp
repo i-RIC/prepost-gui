@@ -17,11 +17,11 @@ void SolverDefinitionBoundaryCondition::load(const QDomElement& node, const Solv
 
 	m_element = node;
 	QString pos = node.attribute("position").toLower();
-	if (pos == "node"){
+	if (pos == "node") {
 		m_position = pNode;
-	} else if (pos == "cell"){
+	} else if (pos == "cell") {
 		m_position = pCell;
-	} else if (pos == "edge"){
+	} else if (pos == "edge") {
 		m_position = pEdge;
 	}
 }

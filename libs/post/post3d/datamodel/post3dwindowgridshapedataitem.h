@@ -29,19 +29,19 @@ public:
 	void handleStandardItemDoubleClicked();
 	QColor color();
 	QColor indexColor();
-	GridShapeEditDialog::Shape shape(){return m_shape;}
-	void informSelection(VTKGraphicsView *v);
-	void informDeselection(VTKGraphicsView *v);
+	GridShapeEditDialog::Shape shape() {return m_shape;}
+	void informSelection(VTKGraphicsView* v);
+	void informDeselection(VTKGraphicsView* v);
 	void update();
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog *propDialog);
+	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void innerUpdateZScale(double scale);
 private:
 	void setupActors();
-	void setColor(const QColor &color);
+	void setColor(const QColor& color);
 	void setIndexColor(const QColor& color);
 	void updateActorSettings();
 	void loadShapeFromProjectMainFile(const QDomNode& shapeNode);

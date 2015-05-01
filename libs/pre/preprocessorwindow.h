@@ -46,7 +46,7 @@ public:
 	/// Constructor
 	PreProcessorWindow(QWidget* parent);
 	/// Destructor
-	virtual ~PreProcessorWindow(){}
+	virtual ~PreProcessorWindow() {}
 	/// Set newly created project data.
 	void setProjectData(ProjectData* d);
 	PreProcessorWindowProjectDataItem* projectDataItem();
@@ -81,7 +81,7 @@ public:
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
 	const PreProcessorDataModelInterface* dataModel() const {return m_dataModel;}
-	PreProcessorDataModelInterface* dataModel(){ return m_dataModel; }
+	PreProcessorDataModelInterface* dataModel() { return m_dataModel; }
 
 public slots:
 	void cameraFit();

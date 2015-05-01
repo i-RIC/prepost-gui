@@ -9,7 +9,8 @@
 #include <QHBoxLayout>
 #include <QDomElement>
 
-CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, CgnsFileInputConditionContainerInteger* cont, const CgnsFileInputConditionContainerSet& /*cs*/) : CgnsFileInputConditionWidget(defnode){
+CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, CgnsFileInputConditionContainerInteger* cont, const CgnsFileInputConditionContainerSet& /*cs*/) : CgnsFileInputConditionWidget(defnode)
+{
 	m_spinBox = new QSpinBox(this);
 	m_spinBox->setMinimumWidth(100);
 	m_spinBox->setAlignment(Qt::AlignRight);
@@ -21,12 +22,12 @@ CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNod
 	QDomElement defElem = defnode.toElement();
 	// min
 	QString minstr = defElem.attribute("min");
-	if (minstr != ""){
+	if (minstr != "") {
 		bool ok;
 		int minval = minstr.toInt(&ok);
-		if (ok){
+		if (ok) {
 			m_spinBox->setMinimum(minval);
-		}else{
+		} else {
 			// todo build minimum container.
 			/*
 			   CalculationCondition::Dependency::buildMinimumContainer(
@@ -37,12 +38,12 @@ CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNod
 	}
 	// max
 	QString maxstr = defElem.attribute("max");
-	if (maxstr != ""){
+	if (maxstr != "") {
 		bool ok;
 		int maxval = maxstr.toInt(&ok);
-		if (ok){
+		if (ok) {
 			m_spinBox->setMaximum(maxval);
-		}else{
+		} else {
 			// todo build maximum container.
 			/*
 			   CalculationCondition::Dependency::buildMaximumContainer(
@@ -57,13 +58,16 @@ CgnsFileInputConditionWidgetInteger::CgnsFileInputConditionWidgetInteger(QDomNod
 	connect(m_container, SIGNAL(valueChanged(int)), m_spinBox, SLOT(setValue(int)));
 	connect(m_spinBox, SIGNAL(valueChanged(int)), this, SLOT(informChange(int)));
 }
-void CgnsFileInputConditionWidgetInteger::setMaximum(const QVariant& value){
+void CgnsFileInputConditionWidgetInteger::setMaximum(const QVariant& value)
+{
 	m_spinBox->setMaximum(value.toInt());
 }
-void CgnsFileInputConditionWidgetInteger::setMinimum(const QVariant& value){
+void CgnsFileInputConditionWidgetInteger::setMinimum(const QVariant& value)
+{
 	m_spinBox->setMinimum(value.toInt());
 }
 
-void CgnsFileInputConditionWidgetInteger::informChange(int value){
+void CgnsFileInputConditionWidgetInteger::informChange(int value)
+{
 	m_container->setValue(value);
 }

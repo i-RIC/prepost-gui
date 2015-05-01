@@ -13,7 +13,7 @@ GridCreatingConditionCreatorRectangularRegion::GridCreatingConditionCreatorRecta
 	    );
 }
 
-GridCreatingCondition* GridCreatingConditionCreatorRectangularRegion::create(ProjectDataItem *parent)
+GridCreatingCondition* GridCreatingConditionCreatorRectangularRegion::create(ProjectDataItem* parent)
 {
 	return new GridCreatingConditionRectangularRegion(parent, this);
 }

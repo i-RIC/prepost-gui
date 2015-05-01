@@ -46,18 +46,18 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
 	m_arrowMask->SetInputData(ps);
-	if (m_samplingMode == smAll){
+	if (m_samplingMode == smAll) {
 		m_arrowMask->SetOnRatio(1);
 		m_arrowMask->RandomModeOff();
 		m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
-	} else if (m_samplingMode == smRate){
+	} else if (m_samplingMode == smRate) {
 		m_arrowMask->SetOnRatio(m_samplingRate);
 		m_arrowMask->RandomModeOff();
 		m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
-	} else if (m_samplingMode == smNumber){
+	} else if (m_samplingMode == smNumber) {
 		m_arrowMask->RandomModeOn();
 		m_arrowMask->SetMaximumNumberOfPoints(m_samplingNumber);
-	} else{
+	} else {
 		// default. same as smAll.
 		m_arrowMask->SetOnRatio(1);
 		m_arrowMask->RandomModeOff();
@@ -68,30 +68,30 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 
 	vtkDataArray* da = tmpgrid->GetPointData()->GetArray(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
 	vtkIntArray* IBCArray = nullptr;
-	if (da != nullptr){
+	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
 	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
-	if (vectorArray == nullptr){
+	if (vectorArray == nullptr) {
 		m_currentSolution = "";
 		return;
 	}
 	QSet<vtkIdType> pointIds;
 	double minlimitsqr = m_minimumValue * m_minimumValue;
-	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i) {
 		bool active = true;
-		if (m_regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0){
+		if (m_regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
 			active = false;
 		}
 		double val = 0;
-		for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j){
+		for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j) {
 			double tmpval = vectorArray->GetComponent(i, j);
 			val += tmpval * tmpval;
 		}
-		if (val < minlimitsqr){
+		if (val < minlimitsqr) {
 			active = false;
 		}
-		if (active){
+		if (active) {
 			pointIds.insert(i);
 		}
 	}
@@ -102,7 +102,7 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 
 	outPD->CopyAllocate(inPD, pointIds.size());
 	vtkIdType newId = 0;
-	for (auto it = pointIds.begin(); it != pointIds.end(); ++it){
+	for (auto it = pointIds.begin(); it != pointIds.end(); ++it) {
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 		outPD->CopyData(inPD, pointid, newId);
@@ -116,13 +116,13 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QWidget* p)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){
+	if (cont == nullptr || cont->data() == nullptr) {
 		return nullptr;
 	}
-	if (! cont->vectorValueExists()){
+	if (! cont->vectorValueExists()) {
 		return nullptr;
 	}
-	Post2dWindowArrowUnstructuredSettingDialog * dialog = new Post2dWindowArrowUnstructuredSettingDialog(p);
+	Post2dWindowArrowUnstructuredSettingDialog* dialog = new Post2dWindowArrowUnstructuredSettingDialog(p);
 	dialog->setZoneData(cont);
 	dialog->setMapping(m_mapping);
 	dialog->setColor(m_color);
@@ -130,7 +130,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 	dialog->setSamplingMode(m_samplingMode);
 	dialog->setSamplingRate(m_samplingRate);
 	dialog->setSamplingNumber(m_samplingNumber);
-	if (! cont->IBCExists()){
+	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
 	dialog->setRegionMode(m_regionMode);
@@ -147,8 +147,7 @@ class Post2dWindowArrowUnstructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowArrowUnstructuredSetProperty(const QString& solutionName, Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping, const QColor& color, const QString& scalarName, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm, int rate, int num, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::LengthMode lm, double stdLen, int legendLen, double minVal, const ArrowSettingContainer& arrowSetting, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Arrow Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Arrow Setting")) {
 		m_newSolutionName = solutionName;
 		m_newMapping = mapping;
 		m_newColor = color;
@@ -177,8 +176,7 @@ public:
 
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newSolutionName);
 		m_item->m_mapping = m_newMapping;
@@ -197,8 +195,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldSolutionName);
 		m_item->m_mapping = m_oldMapping;

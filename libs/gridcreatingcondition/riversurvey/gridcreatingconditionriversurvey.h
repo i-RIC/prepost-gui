@@ -89,10 +89,10 @@ public:
 	void updateShapeData();
 	void updateShapeData(bool omitBackgroundUpdate);
 
-	GridCtrlOffsetInfo& GCPOffsetInfo(){return m_GCPOffsetInfo;}
+	GridCtrlOffsetInfo& GCPOffsetInfo() {return m_GCPOffsetInfo;}
 	void invalidateSelectedCtrlPoints();
 	void clear();
-	std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList(){return m_selectedCtrlPointInfoList;}
+	std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() {return m_selectedCtrlPointInfoList;}
 
 	RawDataRiverPathPoint* lastStartPoint() const {return m_lastStartPoint;}
 	RawDataRiverPathPoint* lastEndPoint() const {return m_lastEndPoint;}

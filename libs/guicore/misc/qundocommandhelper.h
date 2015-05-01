@@ -4,7 +4,8 @@
 #include "../guicore_global.h"
 class QString;
 
-namespace iRIC {
+namespace iRIC
+{
 	int GUICOREDLL_EXPORT generateCommandId(const QString& commandName);
 }
 

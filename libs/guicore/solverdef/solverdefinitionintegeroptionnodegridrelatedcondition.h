@@ -9,8 +9,8 @@ class SolverDefinitionIntegerOptionNodeGridRelatedCondition : public SolverDefin
 public:
 	SolverDefinitionIntegerOptionNodeGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator);
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
-	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/){return 0;}
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget *parent);
+	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
+	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
 };
 

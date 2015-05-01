@@ -9,17 +9,19 @@
 
 class GridCreatingConditionRiverSurvey;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurveyPointMoveDialog;
 }
 
-class GridCreatingConditionRiverSurveyPointMoveDialog : public QDialog {
+class GridCreatingConditionRiverSurveyPointMoveDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	explicit GridCreatingConditionRiverSurveyPointMoveDialog(
 		GridCreatingConditionRiverSurvey* gc,
 		double lowerLimit, double upperLimit,
-		QWidget *parent = nullptr);
+		QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointMoveDialog();
 
 	void apply();
@@ -32,7 +34,7 @@ private:
 	void doReset();
 
 private:
-	Ui::GridCreatingConditionRiverSurveyPointMoveDialog *ui;
+	Ui::GridCreatingConditionRiverSurveyPointMoveDialog* ui;
 
 	GridCreatingConditionRiverSurvey* m_condition;
 	double m_LowerLimit;

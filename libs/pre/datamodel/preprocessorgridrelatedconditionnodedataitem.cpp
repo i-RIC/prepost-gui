@@ -63,7 +63,7 @@ PreProcessorGridRelatedConditionNodeDataItem::PreProcessorGridRelatedConditionNo
 	m_numberOfDivision = 10;
 
 	connect(this, SIGNAL(changed(PreProcessorGridRelatedConditionNodeDataItem*)),
-		parent, SLOT(exclusivelyCheck(PreProcessorGridRelatedConditionNodeDataItem*)));
+					parent, SLOT(exclusivelyCheck(PreProcessorGridRelatedConditionNodeDataItem*)));
 
 	m_editValueAction = new QAction(tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -98,7 +98,7 @@ QDialog* PreProcessorGridRelatedConditionNodeDataItem::propertyDialog(QWidget* p
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
 	ScalarsToColorsContainer* stc = typedi->scalarsToColors(iRIC::toStr(m_condition->name()).c_str());
 	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(stcWidget);
-	if (ltWidget != nullptr){
+	if (ltWidget != nullptr) {
 		ltWidget->showDivisionNumber();
 	}
 	stcWidget->setContainer(stc);
@@ -111,7 +111,7 @@ QDialog* PreProcessorGridRelatedConditionNodeDataItem::propertyDialog(QWidget* p
 	return dialog;
 }
 
-void PreProcessorGridRelatedConditionNodeDataItem::handlePropertyDialogAccepted(QDialog *propDialog)
+void PreProcessorGridRelatedConditionNodeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridRelatedNodeConditionPropertyDialog* dialog = dynamic_cast<GridRelatedNodeConditionPropertyDialog*>(propDialog);
 
@@ -126,7 +126,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::doLoadFromProjectMainFile(con
 {
 	m_isCustomModified = static_cast<bool>(node.toElement().attribute("isCustomModified", "0").toInt());
 	QDomNode contourNode = iRIC::getChildNode(node, "Contour");
-	if (! contourNode.isNull()){
+	if (! contourNode.isNull()) {
 		loadContourFromProjectMainFile(contourNode);
 	}
 }
@@ -136,7 +136,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::doSaveToProjectMainFile(QXmlS
 	QString mod;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g != nullptr){
+	if (g != nullptr) {
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		mod.setNum(static_cast<int>(cont->isCustomModified()));
 		writer.writeAttribute("isCustomModified", mod);
@@ -151,7 +151,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::loadFromCgnsFile(const int /*
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g == nullptr){return;}
+	if (g == nullptr) {return;}
 	GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
 }
@@ -171,25 +171,25 @@ void PreProcessorGridRelatedConditionNodeDataItem::saveContourToProjectMainFile(
 
 void PreProcessorGridRelatedConditionNodeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_definingBoundingBox){
+	if (m_definingBoundingBox) {
 		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMouseMoveEvent(event, v);
 	} else {
 		dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
 	}
-/*
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (tmpparent->grid()->isMasked()){
-		v->setCursor(Qt::ForbiddenCursor);
-	} else {
-		v->setCursor(Qt::ArrowCursor);
-	}
-*/
+	/*
+		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+		if (tmpparent->grid()->isMasked()){
+			v->setCursor(Qt::ForbiddenCursor);
+		} else {
+			v->setCursor(Qt::ArrowCursor);
+		}
+	*/
 }
 
 void PreProcessorGridRelatedConditionNodeDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		// start drawing the mouse bounding box.
 		m_definingBoundingBox = true;
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMousePressEvent(event, v);
@@ -200,27 +200,27 @@ void PreProcessorGridRelatedConditionNodeDataItem::mouseReleaseEvent(QMouseEvent
 {
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (event->button() == Qt::LeftButton){
-		if (m_definingBoundingBox){
+	if (event->button() == Qt::LeftButton) {
+		if (m_definingBoundingBox) {
 			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
 		}
 		m_definingBoundingBox = false;
 		dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(parent())->fixAttributeBrowser(QPoint(event->x(), event->y()), v);
-	} else if (event->button() == Qt::RightButton){
-		if (menu != nullptr){delete menu;}
+	} else if (event->button() == Qt::RightButton) {
+		if (menu != nullptr) {delete menu;}
 		menu = new QMenu(projectData()->mainWindow());
 		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 		bool vertexSelected = (tmpparent->selectedVertices().count() > 0);
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(vertexSelected);
-		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == nullptr){
+		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == nullptr) {
 			menu->addAction(m_editVariationAction);
 			m_editVariationAction->setEnabled(vertexSelected);
 		}
 
 		Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
 
-		if (sgrid != nullptr){
+		if (sgrid != nullptr) {
 			menu->addSeparator();
 			menu->addAction(m_openXsectionWindowAction);
 			m_openXsectionWindowAction->setEnabled(vertexSelected);
@@ -234,13 +234,13 @@ void PreProcessorGridRelatedConditionNodeDataItem::mouseReleaseEvent(QMouseEvent
 	}
 }
 
-void PreProcessorGridRelatedConditionNodeDataItem::keyPressEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridRelatedConditionNodeDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	gitem->nodeSelectingKeyPressEvent(event, v);
 }
 
-void PreProcessorGridRelatedConditionNodeDataItem::keyReleaseEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridRelatedConditionNodeDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	gitem->nodeSelectingKeyReleaseEvent(event, v);
@@ -257,7 +257,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::addCustomMenuItems(QMenu* men
 void PreProcessorGridRelatedConditionNodeDataItem::editValue()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -273,7 +273,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::editValue()
 	Grid* g = tmpparent->grid();
 	dialog->scanAndSetDefault(g->gridRelatedCondition(m_condition->name()), targets);
 
-	if (QDialog::Accepted == dialog->exec()){
+	if (QDialog::Accepted == dialog->exec()) {
 		dialog->applyValue(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
 	}
 	delete dialog;
@@ -282,19 +282,19 @@ void PreProcessorGridRelatedConditionNodeDataItem::editValue()
 void PreProcessorGridRelatedConditionNodeDataItem::editVariation()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
 	GridRelatedConditionVariationEditDialog* dialog = m_condition->variationEditDialog(preProcessorWindow());
-	if (dialog == nullptr){return;}
+	if (dialog == nullptr) {return;}
 	dialog->setWindowTitle(QString(tr("Apply variation to %1").arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the variation of %1 at the selected grid nodes.")).arg(m_condition->caption()));
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	QVector<vtkIdType> targets = tmpparent->selectedVertices();
 	Grid* g = tmpparent->grid();
 
-	if (QDialog::Accepted == dialog->exec()){
+	if (QDialog::Accepted == dialog->exec()) {
 		dialog->applyVariation(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
 	}
 	delete dialog;
@@ -321,7 +321,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::informDataChange()
 void PreProcessorGridRelatedConditionNodeDataItem::openCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (gItem->selectedVertices().count() > 1){
+	if (gItem->selectedVertices().count() > 1) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Crosssection Window, Please select only one grid node."));
 		return;
 	}
@@ -347,7 +347,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::openCrossSectionWindow()
 void PreProcessorGridRelatedConditionNodeDataItem::openVerticalCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (gItem->selectedVertices().count() > 1){
+	if (gItem->selectedVertices().count() > 1) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("To open a Crosssection Window, Please select only one grid node."));
 		return;
 	}
@@ -370,7 +370,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::openVerticalCrossSectionWindo
 
 void PreProcessorGridRelatedConditionNodeDataItem::updateCrossectionWindows()
 {
-	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it) {
 		PreProcessorGridCrosssectionWindow* w = (*w_it)->window();
 		w->setupData();
 		w->updateView();
@@ -379,8 +379,8 @@ void PreProcessorGridRelatedConditionNodeDataItem::updateCrossectionWindows()
 
 void PreProcessorGridRelatedConditionNodeDataItem::requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
-		if (*it == item){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
+		if (*it == item) {
 			m_crosssectionWindows.erase(it);
 			delete item;
 			return;
@@ -390,8 +390,8 @@ void PreProcessorGridRelatedConditionNodeDataItem::requestCrosssectionWindowDele
 
 void PreProcessorGridRelatedConditionNodeDataItem::unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
-		if (*it == item){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
+		if (*it == item) {
 			m_crosssectionWindows.erase(it);
 			return;
 		}
@@ -400,7 +400,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::unregisterCrosssectionWindow(
 
 void PreProcessorGridRelatedConditionNodeDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
 		PreProcessorGridCrosssectionWindowProjectDataItem* item = *it;
 		item->window()->informSelectedVerticesChanged(vertices);
 	}
@@ -409,7 +409,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::informSelectedVerticesChanged
 void PreProcessorGridRelatedConditionNodeDataItem::exportToFile()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -418,11 +418,11 @@ void PreProcessorGridRelatedConditionNodeDataItem::exportToFile()
 	QString filter(tr("Topography File (*.tpo)"));
 
 	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Export as Topography Data"), dir, filter);
-	if (fname == "") return;
+	if (fname == "") { return; }
 
 	try {
 		QFile file(fname);
-		if (! file.open(QFile::WriteOnly | QFile::Text)){
+		if (! file.open(QFile::WriteOnly | QFile::Text)) {
 			throw ErrorMessage(tr("Error occured while opening the file."));
 		}
 		QTextStream stream(&file);
@@ -434,7 +434,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::exportToFile()
 		stream << vtkGrid->GetNumberOfPoints() << endl;
 
 		// output values
-		for (vtkIdType i = 0; i < vtkGrid->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < vtkGrid->GetNumberOfPoints(); ++i) {
 			double x[3];
 			vtkGrid->GetPoint(i, x);
 			double val = da->GetVariantValue(i).ToDouble();
@@ -444,22 +444,21 @@ void PreProcessorGridRelatedConditionNodeDataItem::exportToFile()
 		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
-	} catch (ErrorMessage& message){
+	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}
 }
 
 void PreProcessorGridRelatedConditionNodeDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	if (PreProcessorGridRelatedConditionNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(this->parent()))
-	{
+	if (PreProcessorGridRelatedConditionNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(this->parent())) {
 		gitem->updateActorSettings();
 	}
 }
 
-bool PreProcessorGridRelatedConditionNodeDataItem::addToolBarButtons(QToolBar *toolbar)
+bool PreProcessorGridRelatedConditionNodeDataItem::addToolBarButtons(QToolBar* toolbar)
 {
 	PreProcessorDataItem* item =
-			dynamic_cast<PreProcessorDataItem*> (parent());
+		dynamic_cast<PreProcessorDataItem*>(parent());
 	return item->addToolBarButtons(toolbar);
 }

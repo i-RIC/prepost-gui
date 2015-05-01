@@ -14,11 +14,11 @@ class Graph2dScatteredWindowObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 public:
 	/// Constructor
-	Graph2dScatteredWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent){init();}
+	Graph2dScatteredWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
 	/// Destructor
-	~Graph2dScatteredWindowObjectBrowser(){}
+	~Graph2dScatteredWindowObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Graph2dScatteredWindowObjectBrowserView* view(){return m_view;}
+	Graph2dScatteredWindowObjectBrowserView* view() {return m_view;}
 public slots:
 	void expandAll();
 private:

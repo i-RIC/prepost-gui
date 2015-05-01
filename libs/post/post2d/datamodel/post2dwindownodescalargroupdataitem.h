@@ -38,7 +38,7 @@ public:
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void setCurrentSolution(const QString& currentSol);
 	bool hasTransparentPart();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);

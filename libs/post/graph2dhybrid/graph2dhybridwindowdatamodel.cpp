@@ -112,9 +112,9 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr){
+	if (cont != nullptr) {
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr){
+		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -153,7 +153,7 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	dialog.setTimeSkip(m_timeSkip);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	QString folder = dialog.folder();
 	LastIODirectory::set(folder);
@@ -176,32 +176,32 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 	int timeStepCount = (m_timeEnd - m_timeStart) / m_timeSkip + 1;
 	int dataCount = 1;
 
-	switch (tinfo->dataType){
+	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		dataCount = 1;
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1);
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			dataCount = (m_jMax - m_jMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1);
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			dataCount = (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
 		}
 		break;
@@ -220,44 +220,44 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 
 	int timeStep = m_timeStart;
 	int imageIndex = 0;
-	while (timeStep <= m_timeEnd){
+	while (timeStep <= m_timeEnd) {
 		iricMainWindow()->animationController()->setCurrentStepIndex(timeStep);
 
 		pdialog.setValue(imageIndex);
 		qApp->processEvents();
-		if (pdialog.wasCanceled()){
+		if (pdialog.wasCanceled()) {
 			return;
 		}
 		Graph2dHybridWindow* window = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
 		QPixmap pixmap;
 		QString filename;
 		bool ok;
-		switch (tinfo->dataType){
+		switch (tinfo->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			pixmap = window->snapshot();
 			filename = QDir(folder).absoluteFilePath(m_prefix);
 			filename.append(QString("_Time=%1.png").arg(timeStep + 1));
 			ok = savePixmap(pixmap, filename);
-			if (! ok){
+			if (! ok) {
 				showErrorMessage(filename);
 				return;
 			}
 			++ imageIndex;
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
 					pixmap = window->snapshot();
 					filename = QDir(folder).absoluteFilePath(m_prefix);
 					filename.append(QString("_Time=%1_I=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)));
 					ok = savePixmap(pixmap, filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
@@ -265,57 +265,57 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
 						pixmap = window->snapshot();
 						filename = QDir(folder).absoluteFilePath(m_prefix);
 						filename.append(QString("_Time=%1_I=%2_J=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
 						ok = savePixmap(pixmap, filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
-				for (int j = m_jMin; j <= m_jMax; ++j){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+				for (int j = m_jMin; j <= m_jMax; ++j) {
 					window->controlWidget()->setJValue(j);
 					pixmap = window->snapshot();
 					filename = QDir(folder).absoluteFilePath(m_prefix);
 					filename.append(QString("_Time=%1_J=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)));
 					ok = savePixmap(pixmap, filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
 					pixmap = window->snapshot();
 					filename = QDir(folder).absoluteFilePath(m_prefix);
 					filename.append(QString("_Time=%1_I=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)));
 					ok = savePixmap(pixmap, filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
@@ -323,23 +323,23 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
-						for (int k = m_kMin; k <= m_kMax; ++k){
+						for (int k = m_kMin; k <= m_kMax; ++k) {
 							window->controlWidget()->setKValue(k);
 							pixmap = window->snapshot();
 							filename = QDir(folder).absoluteFilePath(m_prefix);
 							filename.append(QString("_Time=%1_I=%2_J=%3_K=%4.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
 							ok = savePixmap(pixmap, filename);
-							if (! ok){
+							if (! ok) {
 								showErrorMessage(filename);
 								return;
 							}
 							qApp->processEvents();
-							if (pdialog.wasCanceled()){
+							if (pdialog.wasCanceled()) {
 								return;
 							}
 							++ imageIndex;
@@ -347,63 +347,63 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
-				for (int j = m_jMin; j <= m_jMax; ++j){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+				for (int j = m_jMin; j <= m_jMax; ++j) {
 					window->controlWidget()->setJValue(j);
-					for (int k = m_kMin; k <= m_kMax; ++k){
+					for (int k = m_kMin; k <= m_kMax; ++k) {
 						window->controlWidget()->setKValue(k);
 						pixmap = window->snapshot();
 						filename = QDir(folder).absoluteFilePath(m_prefix);
 						filename.append(QString("_Time=%1_J=%2_K=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
 						ok = savePixmap(pixmap, filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int k = m_kMin; k <= m_kMax; ++k){
+					for (int k = m_kMin; k <= m_kMax; ++k) {
 						window->controlWidget()->setKValue(k);
 						pixmap = window->snapshot();
 						filename = QDir(folder).absoluteFilePath(m_prefix);
 						filename.append(QString("_Time=%1_I=%2_K=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(k + 1, m_kMax)));
 						ok = savePixmap(pixmap, filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
 						pixmap = window->snapshot();
 						filename = QDir(folder).absoluteFilePath(m_prefix);
 						filename.append(QString("_Time=%1_I=%2_J=%3.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
 						ok = savePixmap(pixmap, filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
@@ -415,18 +415,18 @@ void Graph2dHybridWindowDataModel::specialSnapshot()
 		case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-			for (int idx = m_indexMin; idx <= m_indexMax; ++idx){
+			for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
 				window->controlWidget()->setIndexValue(idx);
 				pixmap = window->snapshot();
 				filename = QDir(folder).absoluteFilePath(m_prefix);
 				filename.append(QString("_Time=%1_Index=%2.png").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
 				ok = savePixmap(pixmap, filename);
-				if (! ok){
+				if (! ok) {
 					showErrorMessage(filename);
 					return;
 				}
 				qApp->processEvents();
-				if (pdialog.wasCanceled()){
+				if (pdialog.wasCanceled()) {
 					return;
 				}
 				++ imageIndex;
@@ -446,9 +446,9 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr){
+	if (cont != nullptr) {
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr){
+		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -488,7 +488,7 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	dialog.setWindowTitle(tr("CSV Export Setting"));
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	QString folder = dialog.folder();
 	LastIODirectory::set(folder);
@@ -511,32 +511,32 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 	int timeStepCount = (m_timeEnd - m_timeStart) / m_timeSkip + 1;
 	int dataCount = 1;
 
-	switch (tinfo->dataType){
+	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		dataCount = 1;
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1);
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			dataCount = (m_jMax - m_jMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1);
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			dataCount = (m_jMax - m_jMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_kMax - m_kMin + 1);
-		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
+		} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
 			dataCount = (m_iMax - m_iMin + 1) * (m_jMax - m_jMin + 1);
 		}
 		break;
@@ -555,41 +555,41 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 
 	int timeStep = m_timeStart;
 	int imageIndex = 0;
-	while (timeStep <= m_timeEnd){
+	while (timeStep <= m_timeEnd) {
 		iricMainWindow()->animationController()->setCurrentStepIndex(timeStep);
 
 		pdialog.setValue(imageIndex);
 		qApp->processEvents();
-		if (pdialog.wasCanceled()){
+		if (pdialog.wasCanceled()) {
 			return;
 		}
 		Graph2dHybridWindow* window = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
 		QString filename;
 		bool ok;
-		switch (tinfo->dataType){
+		switch (tinfo->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 			filename.append(QString(".csv"));
 			ok = exportCsv(filename);
-			if (! ok){
+			if (! ok) {
 				showErrorMessage(filename);
 				return;
 			}
 			++ imageIndex;
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
 					filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 					filename.append(QString("_I=%1.csv").arg(formattedNumber(i + 1, m_iMax)));
 					ok = exportCsv(filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
@@ -597,54 +597,54 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
 						filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 						filename.append(QString("_I=%1_J=%2.csv").arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
 						ok = exportCsv(filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
-				for (int j = m_jMin; j <= m_jMax; ++j){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+				for (int j = m_jMin; j <= m_jMax; ++j) {
 					window->controlWidget()->setJValue(j);
 					filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 					filename.append(QString("_Time=%1_J=%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)));
 					ok = exportCsv(filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
 					filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 					filename.append(QString("_Time=%1_I=%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)));
 					ok = exportCsv(filename);
-					if (! ok){
+					if (! ok) {
 						showErrorMessage(filename);
 						return;
 					}
 					qApp->processEvents();
-					if (pdialog.wasCanceled()){
+					if (pdialog.wasCanceled()) {
 						return;
 					}
 					++ imageIndex;
@@ -652,22 +652,22 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
-						for (int k = m_kMin; k <= m_kMax; ++k){
+						for (int k = m_kMin; k <= m_kMax; ++k) {
 							window->controlWidget()->setKValue(k);
 							filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 							filename.append(QString("_I=%1_J=%2_K=%3.csv").arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
 							ok = exportCsv(filename);
-							if (! ok){
+							if (! ok) {
 								showErrorMessage(filename);
 								return;
 							}
 							qApp->processEvents();
-							if (pdialog.wasCanceled()){
+							if (pdialog.wasCanceled()) {
 								return;
 							}
 							++ imageIndex;
@@ -675,60 +675,60 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
-				for (int j = m_jMin; j <= m_jMax; ++j){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+				for (int j = m_jMin; j <= m_jMax; ++j) {
 					window->controlWidget()->setJValue(j);
-					for (int k = m_kMin; k <= m_kMax; ++k){
+					for (int k = m_kMin; k <= m_kMax; ++k) {
 						window->controlWidget()->setKValue(k);
 						filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 						filename.append(QString("_Time=%1_J=%2_K=%3.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(j + 1, m_jMax)).arg(formattedNumber(k + 1, m_kMax)));
 						ok = exportCsv(filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int k = m_kMin; k <= m_kMax; ++k){
+					for (int k = m_kMin; k <= m_kMax; ++k) {
 						window->controlWidget()->setKValue(k);
 						filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 						filename.append(QString("_Time=%1_I=%2_K=%3.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(k + 1, m_kMax)));
 						ok = exportCsv(filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
 					}
 					pdialog.setValue(imageIndex);
 				}
-			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
-				for (int i = m_iMin; i <= m_iMax; ++i){
+			} else if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+				for (int i = m_iMin; i <= m_iMax; ++i) {
 					window->controlWidget()->setIValue(i);
-					for (int j = m_jMin; j <= m_jMax; ++j){
+					for (int j = m_jMin; j <= m_jMax; ++j) {
 						window->controlWidget()->setJValue(j);
 						filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 						filename.append(QString("_Time=%1_I=%2_J=%3.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(i + 1, m_iMax)).arg(formattedNumber(j + 1, m_jMax)));
 						ok = exportCsv(filename);
-						if (! ok){
+						if (! ok) {
 							showErrorMessage(filename);
 							return;
 						}
 						qApp->processEvents();
-						if (pdialog.wasCanceled()){
+						if (pdialog.wasCanceled()) {
 							return;
 						}
 						++ imageIndex;
@@ -740,17 +740,17 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 		case Graph2dHybridWindowResultSetting::dtDim1DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim2DUnstructured:
 		case Graph2dHybridWindowResultSetting::dtDim3DUnstructured:
-			for (int idx = m_indexMin; idx <= m_indexMax; ++idx){
+			for (int idx = m_indexMin; idx <= m_indexMax; ++idx) {
 				window->controlWidget()->setIndexValue(idx);
 				filename = QDir(folder).absoluteFilePath(m_csvPrefix);
 				filename.append(QString("_Time=%1_Index=%2.csv").arg(formattedNumber(timeStep + 1, m_timeEnd)).arg(formattedNumber(idx + 1, m_indexMax)));
 				ok = exportCsv(filename);
-				if (! ok){
+				if (! ok) {
 					showErrorMessage(filename);
 					return;
 				}
 				qApp->processEvents();
-				if (pdialog.wasCanceled()){
+				if (pdialog.wasCanceled()) {
 					return;
 				}
 				++ imageIndex;
@@ -766,9 +766,9 @@ void Graph2dHybridWindowDataModel::specialCsvExport()
 bool Graph2dHybridWindowDataModel::savePixmap(const QPixmap& pixmap, const QString& filename)
 {
 	// rename the temporary file to the target file.
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		// remove first.
-		if (! QFile::remove(filename)){
+		if (! QFile::remove(filename)) {
 			// unable to remove. fail.
 			return false;
 		}
@@ -776,7 +776,8 @@ bool Graph2dHybridWindowDataModel::savePixmap(const QPixmap& pixmap, const QStri
 	return pixmap.save(filename);
 }
 
-void Graph2dHybridWindowDataModel::showErrorMessage(const QString& filename){
+void Graph2dHybridWindowDataModel::showErrorMessage(const QString& filename)
+{
 	QMessageBox::critical(mainWindow(), tr("Error"), tr("Saving snapshot image to %1 failed.").arg(filename));
 }
 
@@ -784,7 +785,7 @@ QString Graph2dHybridWindowDataModel::formattedNumber(int number, int max)
 {
 	int limit = 10;
 	int len = 1;
-	while (max >= limit){
+	while (max >= limit) {
 		limit *= 10;
 		++ len;
 	}
@@ -815,7 +816,7 @@ void Graph2dHybridWindowDataModel::drawSetting()
 	Graph2dHybridWindowResultGroupDataItem* rgroup = root->resultGroupItem();
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
 	QList<Graph2dHybridWindowResultSetting::Setting> resultSettings;
-	for (int i = 0; i < resultList.count(); ++i){
+	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
 		resultSettings.append(item->setting());
 	}
@@ -825,7 +826,7 @@ void Graph2dHybridWindowDataModel::drawSetting()
 	QList <Graph2dWindowDataItem*> resultCopyList = cgroup->childItems();
 	QList<Graph2dHybridWindowResultSetting::Setting> copySettings;
 	QList<QString> copyIds;
-	for (int i = 0; i < resultCopyList.count(); ++i){
+	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* cdi = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
 		copySettings.append(cdi->setting());
 		copyIds.append(cdi->id());
@@ -836,7 +837,7 @@ void Graph2dHybridWindowDataModel::drawSetting()
 	QList <Graph2dWindowDataItem*> importDataList = igroup->childItems();
 	QList<Graph2dHybridWindowResultSetting::Setting> importDataSettings;
 	QList<QString> importDataIds;
-	for (int i = 0; i < importDataList.count(); ++i){
+	for (int i = 0; i < importDataList.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* ddi = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(importDataList.at(i));
 		importDataSettings.append(ddi->setting());
 		importDataIds.append(ddi->id());
@@ -845,39 +846,39 @@ void Graph2dHybridWindowDataModel::drawSetting()
 
 	int ret = dialog.exec();
 
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	resultSettings = dialog.resultSettings();
-	for (int i = 0; i < resultList.count(); ++i){
+	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
 		item->setSetting(resultSettings.at(i));
 	}
 	m_setting.targetDatas() = resultSettings;
 
 	copySettings = dialog.copySettings();
-	for (int i = 0; i < resultCopyList.count(); ++i){
+	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* item = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
 		item->setSetting(copySettings.at(i));
 	}
 
 	QList<bool> copyDeleted = dialog.copyDeleted();
-	for (int i = copyDeleted.count() - 1; i >= 0; --i){
+	for (int i = copyDeleted.count() - 1; i >= 0; --i) {
 		bool deleted = copyDeleted[i];
-		if (deleted){
+		if (deleted) {
 			delete resultCopyList.at(i);
 		}
 	}
 
 	importDataSettings = dialog.importDataSettings();
-	for (int i = 0; i < importDataList.count(); ++i){
+	for (int i = 0; i < importDataList.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* item = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(importDataList.at(i));
 		item->setSetting(importDataSettings.at(i));
 	}
 
 	QList<bool> importDataDeleted = dialog.importDataDeleted();
-	for (int i = importDataDeleted.count() - 1; i >= 0; --i){
+	for (int i = importDataDeleted.count() - 1; i >= 0; --i) {
 		bool deleted = importDataDeleted[i];
-		if (deleted){
+		if (deleted) {
 			delete importDataList.at(i);
 		}
 	}
@@ -896,16 +897,16 @@ void Graph2dHybridWindowDataModel::exportCsv()
 {
 	iRICMainWindowInterface* mainW = projectData()->mainWindow();
 	QString iodir = LastIODirectory::get();
-	if (mainW->isSolverRunning()){
+	if (mainW->isSolverRunning()) {
 		mainW->warnSolverRunning();
 		return;
 	}
 	QString fname = QFileDialog::getSaveFileName(
-		mainW, tr("Export CSV file"), iodir, tr("CSV file (*.csv)"));
-	if (fname == ""){return;}
+										mainW, tr("Export CSV file"), iodir, tr("CSV file (*.csv)"));
+	if (fname == "") {return;}
 
 	bool ok = exportCsv(fname);
-	if (! ok){
+	if (! ok) {
 		QMessageBox::critical(mainW, tr("Error"), tr("Saving %1 failed.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
@@ -924,74 +925,74 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowResultGroupDataItem* rgroup = root->resultGroupItem();
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
-	for (int i = 0; i < resultList.count(); ++i){
+	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
 		QVector<double> tmpX = item->xValues();
 		QVector<double> tmpY = item->yValues();
-		if (prevX != tmpX){
+		if (prevX != tmpX) {
 			titles.append("X");
 			values.append(tmpX);
 			prevX = tmpX;
 		}
 		titles.append(item->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()){maxCount = tmpY.count();}
+		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
 	}
 	Graph2dHybridWindowResultCopyGroupDataItem* cgroup = root->resultCopyGroupItem();
 	QList <Graph2dWindowDataItem*> resultCopyList = cgroup->childItems();
-	for (int i = 0; i < resultCopyList.count(); ++i){
+	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* cdi = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
 		QVector<double> tmpX = cdi->xValues();
 		QVector<double> tmpY = cdi->yValues();
-		if (prevX != tmpX){
+		if (prevX != tmpX) {
 			titles.append("X");
 			values.append(tmpX);
 		}
 		titles.append(cdi->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()){maxCount = tmpY.count();}
+		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
 	}
 
 	Graph2dHybridWindowImportDataGroupDataItem* igroup = root->importDataGroupItem();
 	QList <Graph2dWindowDataItem*> importDataList = igroup->childItems();
-	for (int i = 0; i < importDataList.count(); ++i){
+	for (int i = 0; i < importDataList.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* ddi = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(importDataList.at(i));
 		QVector<double> tmpX = ddi->xValues();
 		QVector<double> tmpY = ddi->yValues();
-		if (prevX != tmpX){
+		if (prevX != tmpX) {
 			titles.append("X");
 			values.append(tmpX);
 		}
 		titles.append(ddi->title());
 		values.append(tmpY);
-		if (maxCount < tmpY.count()){maxCount = tmpY.count();}
+		if (maxCount < tmpY.count()) {maxCount = tmpY.count();}
 	}
 
 	QFile csvFile(filename);
 	bool ok = csvFile.open(QIODevice::WriteOnly);
-	if (! ok){return false;}
+	if (! ok) {return false;}
 	QTextStream stream(&csvFile);
 
 	// output header
-	for (int i = 0; i < titles.count(); ++i){
-		if (i != 0){ stream << ",";}
+	for (int i = 0; i < titles.count(); ++i) {
+		if (i != 0) { stream << ",";}
 		stream << "\"" << titles.at(i) << "\"";
 
 	}
 	stream << "\r\n";
-	for (int i = 0; i < maxCount; ++i){
+	for (int i = 0; i < maxCount; ++i) {
 		QList<QString> tmpvals;
-		for (int j = 0; j < values.count(); ++j){
+		for (int j = 0; j < values.count(); ++j) {
 			const QVector<double>& vals = values.at(j);
-			if (i < vals.count()){
+			if (i < vals.count()) {
 				double v = vals.at(i);
 				tmpvals.append(QString::number(v));
 			} else {
 				tmpvals.append("");
 			}
 		}
-		for (int j = 0; j < tmpvals.count(); ++j){
-			if (j != 0){ stream << ",";}
+		for (int j = 0; j < tmpvals.count(); ++j) {
+			if (j != 0) { stream << ",";}
 			stream << tmpvals.at(j);
 		}
 		stream << "\r\n";
@@ -1018,23 +1019,23 @@ void Graph2dHybridWindowDataModel::updateTitle()
 	int currentStep = postSolutionInfo()->currentStep();
 	const QList<double>& timesteps = postSolutionInfo()->timeSteps()->timesteps();
 	double time;
-	if (timesteps.count() == 0){
+	if (timesteps.count() == 0) {
 		time = 0;
 	} else {
-		if (currentStep < timesteps.count()){
+		if (currentStep < timesteps.count()) {
 			time = timesteps.at(currentStep);
 		} else {
 			time = 0;
 		}
 	}
-	if (m_setting.addIndicesToTitle()){
+	if (m_setting.addIndicesToTitle()) {
 		QString suffix;
 		Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 		Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
 		Graph2dHybridWindowControlWidget* c = w->controlWidget();
-		switch (m_setting.xAxisMode()){
+		switch (m_setting.xAxisMode()) {
 		case Graph2dHybridWindowResultSetting::xaTime:
-			switch (tinfo->dataType){
+			switch (tinfo->dataType) {
 			case Graph2dHybridWindowResultSetting::dtBaseIterative:
 				suffix = "";
 				break;
@@ -1055,7 +1056,7 @@ void Graph2dHybridWindowDataModel::updateTitle()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::xaI:
-			switch (tinfo->dataType){
+			switch (tinfo->dataType) {
 			case Graph2dHybridWindowResultSetting::dtDim1DStructured:
 				suffix = tr("Time = %1 sec").arg(time);
 				break;
@@ -1068,7 +1069,7 @@ void Graph2dHybridWindowDataModel::updateTitle()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::xaJ:
-			switch (tinfo->dataType){
+			switch (tinfo->dataType) {
 			case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 				suffix = tr("Time = %1 sec, I = %2").arg(time).arg(c->iValue() + 1);
 				break;
@@ -1078,7 +1079,7 @@ void Graph2dHybridWindowDataModel::updateTitle()
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::xaK:
-			switch (tinfo->dataType){
+			switch (tinfo->dataType) {
 			case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 				suffix = tr("Time = %1 sec, I = %2, J = %3").arg(time).arg(c->iValue() + 1).arg(c->jValue() + 1);
 				break;
@@ -1093,32 +1094,32 @@ void Graph2dHybridWindowDataModel::updateTitle()
 bool Graph2dHybridWindowDataModel::setupInitialSetting()
 {
 	PostSolutionInfo* sInfo = postSolutionInfo();
-		if (! sInfo->isDataAvailable()){
+	if (! sInfo->isDataAvailable()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
 		return false;
 	}
 	// initially, setup physical value settings.
 	bool loaded = m_setting.init(postSolutionInfo(), currentCgnsFileName());
-	if (! loaded){
+	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
 	}
 
 	// check whether data to displayed on time window available.
-	if (! m_setting.dataAvailable()){
+	if (! m_setting.dataAvailable()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
 		return false;
 	}
 
 	Graph2dHybridWindowDataSourceDialog* dialog = new Graph2dHybridWindowDataSourceDialog(mainWindow());
-	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*> (m_rootDataItem);
+	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowImportDataGroupDataItem* gItem = rItem->importDataGroupItem();
 
 	dialog->setMainWindow(projectData()->mainWindow());
 	dialog->setSetting(m_setting);
 	dialog->setImportData(gItem);
 	int ret = dialog->exec();
-	if (ret == QDialog::Rejected){
+	if (ret == QDialog::Rejected) {
 		return false;
 	}
 	m_setting = dialog->setting();
@@ -1134,20 +1135,20 @@ bool Graph2dHybridWindowDataModel::setupInitialSetting()
 void Graph2dHybridWindowDataModel::applyAxisSetting()
 {
 	Graph2dWindowView* v = view();
-	if (m_setting.xAxisLog()){
+	if (m_setting.xAxisLog()) {
 		v->setAxisScaleEngine(QwtPlot::xBottom, new QwtLogScaleEngine());
 	} else {
 		v->setAxisScaleEngine(QwtPlot::xBottom, new QwtLinearScaleEngine());
 	}
-	if (m_setting.xAxisReverse() && m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaTime){
+	if (m_setting.xAxisReverse() && m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaTime) {
 		v->axisScaleEngine(QwtPlot::xBottom)->setAttribute(QwtScaleEngine::Inverted, true);
 	} else {
 		v->axisScaleEngine(QwtPlot::xBottom)->setAttribute(QwtScaleEngine::Inverted, false);
 	}
-	if (m_setting.xAxisAutoRange()){
+	if (m_setting.xAxisAutoRange()) {
 		v->setAxisAutoScale(QwtPlot::xBottom);
 	} else {
-		if (m_setting.xAxisReverse()){
+		if (m_setting.xAxisReverse()) {
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMax(), m_setting.xAxisValueMin());
 		} else {
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMin(), m_setting.xAxisValueMax());
@@ -1156,19 +1157,19 @@ void Graph2dHybridWindowDataModel::applyAxisSetting()
 	v->setAxisTitle(QwtPlot::xBottom, m_setting.xAxisLabel());
 
 	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
-	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asLeft)){
+	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asLeft)) {
 		v->enableAxis(QwtPlot::yLeft);
 		v->setAxisTitle(QwtPlot::yLeft, m_setting.yAxisLeftTitle());
-		if (m_setting.yAxisLeftLog()){
+		if (m_setting.yAxisLeftLog()) {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLogScaleEngine());
 		} else {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLinearScaleEngine());
 		}
 		// control range.
-		if (m_setting.yAxisLeftAutoRange()){
+		if (m_setting.yAxisLeftAutoRange()) {
 			v->setAxisAutoScale(QwtPlot::yLeft);
 		} else {
-			if (m_setting.yAxisLeftReverse()){
+			if (m_setting.yAxisLeftReverse()) {
 				v->setAxisScale(QwtPlot::yLeft, m_setting.yAxisLeftMax(), m_setting.yAxisLeftMin());
 			} else {
 				v->setAxisScale(QwtPlot::yLeft, m_setting.yAxisLeftMin(), m_setting.yAxisLeftMax());
@@ -1178,19 +1179,19 @@ void Graph2dHybridWindowDataModel::applyAxisSetting()
 	} else {
 		v->enableAxis(QwtPlot::yLeft, false);
 	}
-	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asRight)){
+	if (root->axisNeeded(Graph2dHybridWindowResultSetting::asRight)) {
 		v->enableAxis(QwtPlot::yRight);
 		v->setAxisTitle(QwtPlot::yRight, m_setting.yAxisRightTitle());
-		if (m_setting.yAxisRightLog()){
+		if (m_setting.yAxisRightLog()) {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLogScaleEngine());
 		} else {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLinearScaleEngine());
 		}
 		// control range.
-		if (m_setting.yAxisRightAutoRange()){
+		if (m_setting.yAxisRightAutoRange()) {
 			v->setAxisAutoScale(QwtPlot::yRight);
 		} else {
-			if (m_setting.yAxisRightReverse()){
+			if (m_setting.yAxisRightReverse()) {
 				v->setAxisScale(QwtPlot::yRight, m_setting.yAxisRightMax(), m_setting.yAxisRightMin());
 			} else {
 				v->setAxisScale(QwtPlot::yRight, m_setting.yAxisRightMin(), m_setting.yAxisRightMax());
@@ -1214,9 +1215,9 @@ void Graph2dHybridWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel::Ax
 {
 	Graph2dWindowView* v = view();
 	QwtScaleDiv sDiv;
-	if (as == Graph2dWindowDataModel::asLeft){
+	if (as == Graph2dWindowDataModel::asLeft) {
 		sDiv = v->axisScaleDiv(QwtPlot::yLeft);
-	}else{
+	} else {
 		sDiv = v->axisScaleDiv(QwtPlot::yRight);
 	}
 	*min = qMin(sDiv.lowerBound(), sDiv.upperBound());
@@ -1225,14 +1226,14 @@ void Graph2dHybridWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel::Ax
 
 void Graph2dHybridWindowDataModel::updateTime()
 {
-	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 		int currentStep = postSolutionInfo()->currentStep();
 		const QList<double>& timesteps = postSolutionInfo()->timeSteps()->timesteps();
-		if (timesteps.count() == 0){
+		if (timesteps.count() == 0) {
 			m_timeMarker->setXValue(0);
 		} else {
-			if (currentStep < timesteps.count()){
-				if (m_setting.timeValueType() == Graph2dHybridWindowResultSetting::tvtTime){
+			if (currentStep < timesteps.count()) {
+				if (m_setting.timeValueType() == Graph2dHybridWindowResultSetting::tvtTime) {
 					m_timeMarker->setXValue(timesteps.at(currentStep));
 				} else {
 					m_timeMarker->setXValue(currentStep + 1);
@@ -1251,7 +1252,7 @@ void Graph2dHybridWindowDataModel::updateTime()
 void Graph2dHybridWindowDataModel::dataSourceSetting()
 {
 	Graph2dHybridWindowDataSourceDialog* dialog = new Graph2dHybridWindowDataSourceDialog(mainWindow());
-	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*> (m_rootDataItem);
+	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	Graph2dHybridWindowImportDataGroupDataItem* gItem = rItem->importDataGroupItem();
 
 	dialog->setMainWindow(projectData()->mainWindow());
@@ -1259,10 +1260,10 @@ void Graph2dHybridWindowDataModel::dataSourceSetting()
 	dialog->setImportData(gItem);
 	int ret = dialog->exec();
 
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	const Graph2dHybridWindowResultSetting& newSetting = dialog->setting();
-	if (m_setting.xAxisMode() != newSetting.xAxisMode()){
+	if (m_setting.xAxisMode() != newSetting.xAxisMode()) {
 		// X axis is changed. clear all copys.
 		rItem->resultCopyGroupItem()->clear();
 	}
@@ -1279,13 +1280,13 @@ void Graph2dHybridWindowDataModel::dataSourceSetting()
 void Graph2dHybridWindowDataModel::showSettingDialog()
 {
 	Graph2dHybridSettingDialog dialog(mainWindow());
-	if (m_setting.yAxisLeftAutoRange()){
+	if (m_setting.yAxisLeftAutoRange()) {
 		double min, max;
 		getYAxisValueRange(Graph2dWindowDataModel::asLeft, &min, &max);
 		m_setting.setYAxisLeftMin(min);
 		m_setting.setYAxisLeftMax(max);
 	}
-	if (m_setting.yAxisRightAutoRange()){
+	if (m_setting.yAxisRightAutoRange()) {
 		double min, max;
 		getYAxisValueRange(Graph2dWindowDataModel::asRight, &min, &max);
 		m_setting.setYAxisRightMin(min);
@@ -1295,14 +1296,14 @@ void Graph2dHybridWindowDataModel::showSettingDialog()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr){
+	if (cont != nullptr) {
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr){
+		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
 		}
 	}
-	if (m_setting.xAxisAutoRange()){
+	if (m_setting.xAxisAutoRange()) {
 		double min, max;
 		getXAxisValueRange(&min, &max);
 		m_setting.setXAxisValueMin(min);
@@ -1310,7 +1311,7 @@ void Graph2dHybridWindowDataModel::showSettingDialog()
 	}
 	dialog.setSetting(m_setting);
 
-	if (QDialog::Rejected == dialog.exec()){return;}
+	if (QDialog::Rejected == dialog.exec()) {return;}
 	m_setting = dialog.setting();
 	applySettings();
 	view()->replot();
@@ -1324,8 +1325,8 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	int index;
 	PostSolutionInfo* sol = postSolutionInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont == nullptr){return;}
-	switch (tinfo->dataType){
+	if (cont == nullptr) {return;}
+	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
@@ -1335,7 +1336,7 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 		break;
 	}
 
-	switch (tinfo->dataType){
+	switch (tinfo->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
@@ -1378,9 +1379,9 @@ void Graph2dHybridWindowDataModel::applySettings()
 	PostSolutionInfo* sol = postSolutionInfo();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
-	if (cont != nullptr){
+	if (cont != nullptr) {
 		vtkStructuredGrid* sGrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-		if (sGrid != nullptr){
+		if (sGrid != nullptr) {
 			// structured
 			sGrid->GetDimensions(dims);
 			dims[3] = 1;
@@ -1404,7 +1405,7 @@ void Graph2dHybridWindowDataModel::applySettings()
 	updateTitle();
 
 	w->controlWidget()->setSetting(m_setting, dims);
-	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+	if (m_setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 		m_timeMarker->attach(v);
 	} else {
 		m_timeMarker->detach();
@@ -1416,17 +1417,17 @@ void Graph2dHybridWindowDataModel::updateData()
 	int ier, fn;
 	bool myopen = false;
 	fn = postSolutionInfo()->fileId();
-	if (fn == 0){
+	if (fn == 0) {
 		// file not opened.
 		QString cgnsFilename = currentCgnsFileName();
 		ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-		if (ier != 0){return;}
+		if (ier != 0) {return;}
 		myopen = true;
 	}
 
 	updateData(fn);
 
-	if (myopen){
+	if (myopen) {
 		cg_close(fn);
 	}
 	updateTitle();
@@ -1436,7 +1437,7 @@ void Graph2dHybridWindowDataModel::updateData()
 void Graph2dHybridWindowDataModel::updateData(int fn)
 {
 	static bool updating = false;
-	if (updating == true){
+	if (updating == true) {
 		return;
 	}
 	updating = true;
@@ -1450,33 +1451,33 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 	QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem> items;
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = 0;
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* citem = 0;
-	PreProcessorGridCreatingConditionDataItemInterface * condItem = 0;
+	PreProcessorGridCreatingConditionDataItemInterface* condItem = 0;
 	GridCreatingCondition* cond = 0;
 	GridCreatingConditionRiverSurvey* condrs = 0;
 
-	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*> (m_rootDataItem);
-	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*> (root->resultGroupItem()->childItems().at(0));
+	Graph2dHybridWindowRootDataItem* root = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
+	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*>(root->resultGroupItem()->childItems().at(0));
 	QVector<double> xvalues = ditem->xValues();
 	int iValue = 0;
 	RawDataRiverPathPoint* start = 0;
 	RawDataRiverPathPoint* end = 0;
 	RawDataRiverPathPoint* pp = 0;
 
-	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI){goto CONDITIONERROR;}
+	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI) {goto CONDITIONERROR;}
 	info = m_setting.targetDataTypeInfo();
-	if (info->gridType == nullptr){goto CONDITIONERROR;}
+	if (info->gridType == nullptr) {goto CONDITIONERROR;}
 	citem = projectData()->mainWindow()->preProcessorWindow()->dataModel()->getGridAndGridCreatingConditionDataItem(info->gridType->name(), info->zoneName);
-	if (citem == nullptr){goto CONDITIONERROR;}
+	if (citem == nullptr) {goto CONDITIONERROR;}
 	condItem = citem->creatingConditionDataItem();
 	cond = condItem->condition();
-	if (cond == nullptr){goto CONDITIONERROR;}
+	if (cond == nullptr) {goto CONDITIONERROR;}
 	condrs = dynamic_cast<GridCreatingConditionRiverSurvey*>(cond);
-	if (condrs == nullptr){goto CONDITIONERROR;}
+	if (condrs == nullptr) {goto CONDITIONERROR;}
 	start = condrs->lastStartPoint();
 	end = condrs->lastEndPoint();
 	pp = start;
 
-	while (pp != end){
+	while (pp != end) {
 		double val = xvalues.at(iValue);
 		QString name = "KP %1";
 
@@ -1495,7 +1496,7 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 		iValue += (pp->CenterLineCtrlPoints.count() + 1);
 		pp = pp->nextPoint();
 	}
-	if (pp != nullptr){
+	if (pp != nullptr) {
 		double val = xvalues.at(iValue);
 		QString name = "KP %1";
 
@@ -1519,11 +1520,11 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 
 CONDITIONERROR:
 	QMessageBox::warning(mainWindow(), tr("Warning"),
-						 tr("This function can be used when the following conditions are satisfied: <ul>"
-							"<li>Graph for two-dimensional structured grid result is drawn.</li>"
-							"<li>X-axis is I-direction in the grid.</li>"
-							"<li>The grid is created using the algorithm \"Create grid from from river survey data\"</li>"
-							"</ul>"));
+											 tr("This function can be used when the following conditions are satisfied: <ul>"
+													"<li>Graph for two-dimensional structured grid result is drawn.</li>"
+													"<li>X-axis is I-direction in the grid.</li>"
+													"<li>The grid is created using the algorithm \"Create grid from from river survey data\"</li>"
+													"</ul>"));
 	return;
 
 }
@@ -1531,16 +1532,16 @@ CONDITIONERROR:
 void Graph2dHybridWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	bool ok = m_setting.init(postSolutionInfo(), currentCgnsFileName());
-	if (! ok){
+	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}
 	QDomNode sNode = iRIC::getChildNode(node, "Setting");
-	if (! sNode.isNull()){
+	if (! sNode.isNull()) {
 		m_setting.loadFromProjectMainFile(sNode);
 	}
 	Graph2dWindowDataModel::doLoadFromProjectMainFile(node);
 
-	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*> (m_rootDataItem);
+	Graph2dHybridWindowRootDataItem* rItem = dynamic_cast<Graph2dHybridWindowRootDataItem*>(m_rootDataItem);
 	rItem->resultGroupItem()->updateChildren(m_setting);
 
 	applySettings();

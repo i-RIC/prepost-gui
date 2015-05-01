@@ -10,7 +10,7 @@ CgnsFileInputConditionDependency::CgnsFileInputConditionDependency()
 	m_condition = 0;
 }
 
-CgnsFileInputConditionDependency::Condition::Condition(CgnsFileInputConditionDependency * c)
+CgnsFileInputConditionDependency::Condition::Condition(CgnsFileInputConditionDependency* c)
 {
 	c->setCondition(this);
 }
@@ -24,7 +24,7 @@ CgnsFileInputConditionDependency::Action* CgnsFileInputConditionDependency::buil
 	CgnsFileInputConditionContainerSet* cs,
 	CgnsFileInputConditionWidgetSet* ws,
 	CgnsFileInputConditionWidget* w
-	)
+)
 {
 	// @todo not implemented yet.
 	return 0;
@@ -36,15 +36,14 @@ class CgnsFileInputConditionDependencyConditionAlways : public CgnsFileInputCond
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionAlways(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QString targName = node.toElement().attribute("target");
 		CgnsFileInputConditionContainer* target = cs->container(targName);
 		QObject::connect(target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionAlways(){}
-	bool match(){return true;}
+	~CgnsFileInputConditionDependencyConditionAlways() {}
+	bool match() {return true;}
 };
 
 class CgnsFileInputConditionDependencyConditionNot : public CgnsFileInputConditionDependency::Condition
@@ -52,24 +51,23 @@ class CgnsFileInputConditionDependencyConditionNot : public CgnsFileInputConditi
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionNot(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		m_child = 0;
 		const QDomNodeList& list = node.childNodes();
-		for (int i = 0; i < list.count(); ++i){
+		for (int i = 0; i < list.count(); ++i) {
 			m_child = CgnsFileInputConditionDependency::buildCondition(list.item(i), cs, dep);
 			// use the first child only.
 			break;
 		}
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionNot(){
-		if (m_child){
+	~CgnsFileInputConditionDependencyConditionNot() {
+		if (m_child) {
 			delete m_child;
 		}
 	}
 
-	bool match(){
+	bool match() {
 		return ! m_child->match();
 	}
 private:
@@ -81,21 +79,20 @@ class CgnsFileInputConditionDependencyConditionAnd : public CgnsFileInputConditi
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionAnd(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		const QDomNodeList& list = node.childNodes();
-		for (int i = 0; i < list.count(); ++i){
+		for (int i = 0; i < list.count(); ++i) {
 			CgnsFileInputConditionDependency::Condition* child = CgnsFileInputConditionDependency::buildCondition(list.item(i), cs, dep);
 			m_children.append(child);
 		}
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionAnd(){
-		for (auto it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
+	~CgnsFileInputConditionDependencyConditionAnd() {
+		for (auto it = m_children.begin(); it != m_children.end(); ++it) {delete *it;}
 	}
-	bool match(){
+	bool match() {
 		bool ret = true;
-		for (auto it = m_children.begin(); it != m_children.end(); ++it){
+		for (auto it = m_children.begin(); it != m_children.end(); ++it) {
 			ret = ret && (*it)->match();
 		}
 		return ret;
@@ -109,21 +106,20 @@ class CgnsFileInputConditionDependencyConditionOr : public CgnsFileInputConditio
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionOr(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		const QDomNodeList& list = node.childNodes();
-		for (int i = 0; i < list.count(); ++i){
+		for (int i = 0; i < list.count(); ++i) {
 			CgnsFileInputConditionDependency::Condition* child = CgnsFileInputConditionDependency::buildCondition(list.item(i), cs, dep);
 			m_children.append(child);
 		}
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionOr(){
-		for (auto it = m_children.begin(); it != m_children.end(); ++it){delete *it;}
+	~CgnsFileInputConditionDependencyConditionOr() {
+		for (auto it = m_children.begin(); it != m_children.end(); ++it) {delete *it;}
 	}
-	bool match(){
+	bool match() {
 		bool ret = false;
-		for (auto it = m_children.begin(); it != m_children.end(); ++it){
+		for (auto it = m_children.begin(); it != m_children.end(); ++it) {
 			ret = ret || (*it)->match();
 		}
 		return ret;
@@ -138,13 +134,12 @@ class CgnsFileInputConditionDependencyConditionIsEqual : public CgnsFileInputCon
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionIsEqual(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QDomElement elem = node.toElement();
 		QString targName = elem.attribute("target");
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
-		if (m_target == 0){
+		if (m_target == 0) {
 			// target is not correctly specified.
 			throw ErrorMessage("target is not correctly specified.");
 		}
@@ -153,8 +148,8 @@ public:
 		QObject::connect(m_target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionIsEqual(){}
-	bool match(){
+	~CgnsFileInputConditionDependencyConditionIsEqual() {}
+	bool match() {
 		QVariant currentValue = m_target->variantValue();
 		return currentValue == m_value;
 	}
@@ -167,8 +162,7 @@ class CgnsFileInputConditionDependencyConditionIsGreaterEqual : public CgnsFileI
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionIsGreaterEqual(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QDomElement elem = node.toElement();
 		QString targName = elem.attribute("target");
 		QString valueStr = elem.attribute("value");
@@ -178,8 +172,8 @@ public:
 		QObject::connect(m_target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionIsGreaterEqual(){}
-	bool match(){
+	~CgnsFileInputConditionDependencyConditionIsGreaterEqual() {}
+	bool match() {
 		QVariant currentValue = m_target->variantValue();
 		return currentValue.toDouble() >= m_value.toDouble();
 	}
@@ -193,8 +187,7 @@ class CgnsFileInputConditionDependencyConditionIsGreaterThan : public CgnsFileIn
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionIsGreaterThan(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QDomElement elem = node.toElement();
 		QString targName = elem.attribute("target");
 		QString valueStr = elem.attribute("value");
@@ -204,8 +197,8 @@ public:
 		QObject::connect(m_target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionIsGreaterThan(){}
-	bool match(){
+	~CgnsFileInputConditionDependencyConditionIsGreaterThan() {}
+	bool match() {
 		QVariant currentValue = m_target->variantValue();
 		return currentValue.toDouble() > m_value.toDouble();
 	}
@@ -219,8 +212,7 @@ class CgnsFileInputConditionDependencyConditionIsLessEqual : public CgnsFileInpu
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionIsLessEqual(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QDomElement elem = node.toElement();
 		QString targName = elem.attribute("target");
 		QString valueStr = elem.attribute("value");
@@ -230,8 +222,8 @@ public:
 		QObject::connect(m_target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionIsLessEqual(){}
-	bool match(){
+	~CgnsFileInputConditionDependencyConditionIsLessEqual() {}
+	bool match() {
 		QVariant currentValue = m_target->variantValue();
 		return currentValue.toDouble() <= m_value.toDouble();
 	}
@@ -245,8 +237,7 @@ class CgnsFileInputConditionDependencyConditionIsLessThan : public CgnsFileInput
 public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionIsLessThan(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
-		: CgnsFileInputConditionDependency::Condition(dep)
-	{
+		: CgnsFileInputConditionDependency::Condition(dep) {
 		QDomElement elem = node.toElement();
 		QString targName = elem.attribute("target");
 		QString valueStr = elem.attribute("value");
@@ -256,8 +247,8 @@ public:
 		QObject::connect(m_target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
 	/// Destructor
-	~CgnsFileInputConditionDependencyConditionIsLessThan(){}
-	bool match(){
+	~CgnsFileInputConditionDependencyConditionIsLessThan() {}
+	bool match() {
 		QVariant currentValue = m_target->variantValue();
 		return currentValue.toDouble() < m_value.toDouble();
 	}
@@ -270,29 +261,29 @@ CgnsFileInputConditionDependency::Condition* CgnsFileInputConditionDependency::b
 	const QDomNode& node,
 	CgnsFileInputConditionContainerSet* cs,
 	CgnsFileInputConditionDependency* d
-		)
+)
 {
 	CgnsFileInputConditionDependency::Condition* ret = nullptr;
 	QString type = node.toElement().attribute("type");
-	if (type == "always"){
+	if (type == "always") {
 		ret = new CgnsFileInputConditionDependencyConditionAlways(node, cs, d);
-	}else if (type == "isEqual"){
+	} else if (type == "isEqual") {
 		ret = new CgnsFileInputConditionDependencyConditionIsEqual(node, cs, d);
-	}else if (type == "isGreaterEqual"){
+	} else if (type == "isGreaterEqual") {
 		ret = new CgnsFileInputConditionDependencyConditionIsGreaterEqual(node, cs, d);
-	}else if (type == "isGreaterThan"){
+	} else if (type == "isGreaterThan") {
 		ret = new CgnsFileInputConditionDependencyConditionIsGreaterThan(node, cs, d);
-	}else if (type == "isLessEqual"){
+	} else if (type == "isLessEqual") {
 		ret = new CgnsFileInputConditionDependencyConditionIsLessEqual(node, cs, d);
-	}else if (type == "isLessThan"){
+	} else if (type == "isLessThan") {
 		ret = new CgnsFileInputConditionDependencyConditionIsLessThan(node, cs, d);
-	}else if (type == "and"){
+	} else if (type == "and") {
 		ret = new CgnsFileInputConditionDependencyConditionAnd(node, cs, d);
-	}else if (type == "or"){
+	} else if (type == "or") {
 		ret = new CgnsFileInputConditionDependencyConditionOr(node, cs, d);
-	}else if (type == "not"){
+	} else if (type == "not") {
 		ret = new CgnsFileInputConditionDependencyConditionNot(node, cs, d);
-	}else{
+	} else {
 		throw ErrorMessage(QString("Unknown condition type %1").arg(type));
 	}
 	return ret;

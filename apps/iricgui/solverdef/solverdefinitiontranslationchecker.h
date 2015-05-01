@@ -30,7 +30,8 @@ public:
 	 * - Source string in the original language (English)
 	 * - Translated message (in Japanese, French etc.)
 	 */
-	class TranslationMessage {
+	class TranslationMessage
+	{
 	public:
 		/// An enumeration that defines the types of messages
 		enum MessageType {
@@ -39,19 +40,19 @@ public:
 			TypeObsolete,        ///< THe messages not used anymore.
 		};
 		/// Constructor (without translation)
-		TranslationMessage(const QString& src){
+		TranslationMessage(const QString& src) {
 			m_source = src;
 			m_messageType = TypeUnfinished;
 		}
 		/// Constructor (with translation)
-		TranslationMessage(const QString& src, const QString& trans){
+		TranslationMessage(const QString& src, const QString& trans) {
 			m_source = src;
 			m_translation = trans;
 			m_messageType = TypeNormal;
-			if (m_translation == ""){m_messageType = TypeUnfinished;}
+			if (m_translation == "") {m_messageType = TypeUnfinished;}
 		}
 		/// Constructor (with translation and type)
-		TranslationMessage(const QString& src, const QString& trans, MessageType type){
+		TranslationMessage(const QString& src, const QString& trans, MessageType type) {
 			m_source = src;
 			m_translation = trans;
 			m_messageType = type;
@@ -70,8 +71,7 @@ public:
 		QString m_translation;
 	};
 	/// Constructor
-	SolverDefinitionTranslationChecker(const QString& solverfolder, const QLocale& locale)
-	{
+	SolverDefinitionTranslationChecker(const QString& solverfolder, const QLocale& locale) {
 		load(solverfolder, locale);
 		save(solverfolder, locale);
 	}

@@ -37,7 +37,7 @@ void Graph2dScatteredWindowRootDataItem::setupStandardModel(QStandardItemModel* 
 void Graph2dScatteredWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode resultNode = iRIC::getChildNode(node, "CalculationResult");
-	if (! resultNode.isNull()){
+	if (! resultNode.isNull()) {
 		m_resultGroupItem->loadFromProjectMainFile(resultNode);
 	}
 	updateItemMap();

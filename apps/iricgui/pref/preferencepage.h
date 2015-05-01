@@ -10,7 +10,7 @@ public:
 		: QWidget(parent, f)
 	{}
 	virtual void update() = 0;
-	virtual bool checkSetting(){return true;}
+	virtual bool checkSetting() {return true;}
 };
 
 #endif // PREFERENCEPAGE_H

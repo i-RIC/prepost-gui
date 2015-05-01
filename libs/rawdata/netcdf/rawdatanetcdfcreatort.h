@@ -15,15 +15,13 @@ class RawDataNetcdfCreatorT : public RawDataNetcdfCreator
 public:
 	/// Constructor
 	RawDataNetcdfCreatorT()
-		: RawDataNetcdfCreator()
-	{
+		: RawDataNetcdfCreator() {
 		m_nodeMappers.append(new RawDataNetcdfNodeMapperT<V, DA>(this));
 		m_cellMappers.append(new RawDataNetcdfCellMapperT<V, DA>(this));
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition)
-	{
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) {
 		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(condition);
-		if (cond == 0){return false;}
+		if (cond == 0) {return false;}
 		return true;
 	}
 };

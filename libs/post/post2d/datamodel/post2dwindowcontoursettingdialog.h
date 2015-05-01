@@ -11,7 +11,8 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
+namespace Ui
+{
 	class Post2dWindowContourSettingDialog;
 }
 
@@ -25,7 +26,7 @@ class POST2D_EXPORT Post2dWindowContourSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit Post2dWindowContourSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowContourSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowContourSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
 	void setCurrentSolution(QString sol);
@@ -72,7 +73,7 @@ private:
 	QList<QString> m_solutions;
 	StructuredGridRegion::RegionMode m_regionMode;
 	StructuredGridRegion::Range2d m_region;
-	Ui::Post2dWindowContourSettingDialog *ui;
+	Ui::Post2dWindowContourSettingDialog* ui;
 
 	bool m_activeAvailable;
 	bool m_unstructured;

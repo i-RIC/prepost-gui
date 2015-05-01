@@ -21,8 +21,7 @@ class GridRelatedConditionEditVariationCommand : public QObject, public QUndoCom
 	Q_OBJECT
 public:
 	GridRelatedConditionEditVariationCommand(const QString& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
-		: QUndoCommand(tr("Edit grid attribute value(s)"))
-	{
+		: QUndoCommand(tr("Edit grid attribute value(s)")) {
 		m_newValues = newValues;
 		m_oldValues = oldValues;
 		m_attributes = atts;
@@ -31,15 +30,13 @@ public:
 		m_newValues->SetName(iRIC::toStr(m_name).c_str());
 		m_dataItem = dItem;
 	}
-	void undo()
-	{
+	void undo() {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_oldValues);
 		m_dataItem->updateAttributeActorSettings();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
 	}
-	void redo()
-	{
+	void redo() {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_newValues);
 		m_dataItem->updateAttributeActorSettings();
 		m_dataItem->informgridRelatedConditionChange(m_name);
@@ -59,35 +56,32 @@ class GridRelatedConditionVariationEditWidgetT : public GridRelatedConditionVari
 {
 public:
 	GridRelatedConditionVariationEditWidgetT(QWidget* parent, SolverDefinitionGridRelatedConditionT<V>* cond)
-		: GridRelatedConditionVariationEditWidget(parent, cond)
-	{
+		: GridRelatedConditionVariationEditWidget(parent, cond) {
 		m_value = 0;
 	}
-	void setValue(V value){
+	void setValue(V value) {
 		m_value = value;
 		setupWidget();
 	}
-	V value(){
+	V value() {
 		getValueFromInnerWidget();
 		return m_value;
 	}
-	void setVariantValue(const QVariant& v)
-	{
-		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* > (m_gridRelatedCondition);
+	void setVariantValue(const QVariant& v) {
+		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(m_gridRelatedCondition);
 		V tmpval = cond->fromVariant(v);
 		setValue(tmpval);
 	}
 
-	QVariant variantValue(){
+	QVariant variantValue() {
 		return QVariant(value());
 	}
 
-	void applyVariation(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
-	{
-		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* > (container);
+	void applyVariation(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) {
+		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* >(container);
 		vtkDataArray* oldValues = c->dataArrayCopy();
 		V val = value();
-		for (auto it = indices.begin(); it != indices.end(); ++it){
+		for (auto it = indices.begin(); it != indices.end(); ++it) {
 			c->setValue(*it, c->value(*it) + val);
 		}
 		vtkDataArray* newValues = c->dataArrayCopy();

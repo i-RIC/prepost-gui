@@ -18,10 +18,10 @@ class Post3dWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class Post3dWindow :
-		public PostProcessorWindow,
-		public AdditionalMenuWindow,
-		public WindowWithObjectBrowser,
-		public ParticleExportWindow
+	public PostProcessorWindow,
+	public AdditionalMenuWindow,
+	public WindowWithObjectBrowser,
+	public ParticleExportWindow
 {
 	Q_OBJECT
 public:
@@ -30,15 +30,15 @@ public:
 	/// Destructor
 	~Post3dWindow();
 	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch(){}
+	void handleCgnsSwitch() {}
 	/// switch to the new index.
-	void changeIndex(uint /*newindex*/){}
+	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot();
 	vtkRenderWindow* getVtkRenderWindow();
 	QList<QMenu*> getAdditionalMenus();
 	ObjectBrowser* objectBrowser();
-	int index(){return m_index;}
-	bool exportParticles(const QString &filename, int fileIndex, double time, const QString& zonename);
+	int index() {return m_index;}
+	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();
 	bool hasTransparentPart();
 public slots:

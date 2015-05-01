@@ -1,7 +1,7 @@
 #include "graph2dscatteredwindowdrawsettingdialog.h"
 #include "ui_graph2dscatteredwindowdrawsettingdialog.h"
 
-Graph2dScatteredWindowDrawSettingDialog::Graph2dScatteredWindowDrawSettingDialog(QWidget *parent) :
+Graph2dScatteredWindowDrawSettingDialog::Graph2dScatteredWindowDrawSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::Graph2dScatteredWindowDrawSettingDialog)
 {
@@ -20,7 +20,7 @@ void Graph2dScatteredWindowDrawSettingDialog::setResultSettings(const QList<Grap
 {
 	m_resultSettings = list;
 	ui->resultListWidget->clear();
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		Graph2dScatteredWindowResultSetting::Setting setting = list.at(i);
 		ui->resultListWidget->addItem(setting.name());
 	}

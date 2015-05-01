@@ -9,8 +9,9 @@
 #include <QList>
 #include <QMap>
 
-namespace Ui {
-		class MeasuredDataPointSettingDialog;
+namespace Ui
+{
+	class MeasuredDataPointSettingDialog;
 }
 
 class LookupTableContainer;
@@ -21,13 +22,13 @@ class MeasuredDataPointSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit MeasuredDataPointSettingDialog(QWidget *parent = nullptr);
+	explicit MeasuredDataPointSettingDialog(QWidget* parent = nullptr);
 	~MeasuredDataPointSettingDialog();
 	void setData(MeasuredData* md);
 	void setCurrentMeasuredValue(QString sol);
 	void setContour(ContourSettingWidget::Contour c);
 	void setNumberOfDivision(int div);
-	void setLookupTables(const QMap<QString, LookupTableContainer*>& lookuptables){
+	void setLookupTables(const QMap<QString, LookupTableContainer*>& lookuptables) {
 		m_lookupTables = lookuptables;
 	}
 	void setPointSize(int pointSize);
@@ -58,7 +59,7 @@ private slots:
 	void showColorBarDialog();
 
 private:
-	Ui::MeasuredDataPointSettingDialog *ui;
+	Ui::MeasuredDataPointSettingDialog* ui;
 
 	QMap<QString, QString> m_scalarBarTitleMap;
 	ScalarBarSetting m_scalarBarSetting;

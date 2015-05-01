@@ -16,7 +16,7 @@ QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 {
 	Post2dWindowParticleStructuredSettingDialog* dialog = new Post2dWindowParticleStructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->data() == 0){
+	if (cont == 0 || cont->data() == 0) {
 		delete dialog;
 		return 0;
 	}
@@ -37,8 +37,7 @@ class Post2dWindowParticleStructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowParticleStructuredSetProperty(const QString& sol, Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm, int tsr, int tdiv, const QList<Post2dWindowStructuredParticleSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post2dWindowNodeVectorParticleGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Particle Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Particle Setting")) {
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newTimeMode = tm;
@@ -57,8 +56,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->setCurrentSolution(m_oldSolution);
@@ -71,8 +69,7 @@ public:
 		m_item->updateActorSettings();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->setCurrentSolution(m_newSolution);
@@ -140,15 +137,15 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	for (int i = 0; i < m_extractGrids.count(); ++i){
+	for (int i = 0; i < m_extractGrids.count(); ++i) {
 		m_extractGrids[i]->Delete();
 	}
 	m_extractGrids.clear();
-	for (int i = 0; i < m_subdivideGrids.count(); ++i){
+	for (int i = 0; i < m_subdivideGrids.count(); ++i) {
 		m_subdivideGrids[i]->Delete();
 	}
 	m_subdivideGrids.clear();
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowStructuredParticleSetSetting& setting = m_settings[i];
 		vtkExtractGrid* ext = vtkExtractGrid::New();
 		ext->SetInputData(zoneContainer->data());
@@ -158,7 +155,7 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 		ext->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
 		div->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
 		ext->SetSampleRate(1, 1, 1);
-		if (setting.spaceMode == Post2dWindowStructuredParticleSetSetting::smSkip){
+		if (setting.spaceMode == Post2dWindowStructuredParticleSetSetting::smSkip) {
 			ext->SetSampleRate(setting.spaceSamplingRate, setting.spaceSamplingRate, 1);
 		}
 		div->SetDivideRate(setting.spaceDivision, setting.spaceDivision, 1);
@@ -172,7 +169,7 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupParticleSources
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupActors()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowStructuredParticleSetSetting& setting = m_settings[i];
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
@@ -196,9 +193,9 @@ vtkPointSet* Post2dWindowNodeVectorParticleGroupStructuredDataItem::newParticles
 {
 	vtkStructuredGrid* exGrid = nullptr;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return nullptr;}
+	if (cont == nullptr || cont->data() == nullptr) {return nullptr;}
 	Post2dWindowStructuredParticleSetSetting& setting = m_settings[i];
-	switch (setting.spaceMode){
+	switch (setting.spaceMode) {
 	case Post2dWindowStructuredParticleSetSetting::smNormal:
 	case Post2dWindowStructuredParticleSetSetting::smSkip:
 		m_extractGrids[i]->Update();
@@ -217,9 +214,9 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::doLoadFromProjectMai
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);
 	m_settings.clear();
 	QDomNode particlesNode = iRIC::getChildNode(node, "Particles");
-	if (! particlesNode.isNull()){
+	if (! particlesNode.isNull()) {
 		QDomNodeList particles = particlesNode.childNodes();
-		for (int i = 0; i < particles.length(); ++i){
+		for (int i = 0; i < particles.length(); ++i) {
 			QDomElement elem = particles.at(i).toElement();
 			Post2dWindowStructuredParticleSetSetting s;
 			s.range.iMin = elem.attribute("regionIMin").toInt();
@@ -241,7 +238,7 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::doSaveToProjectMainF
 {
 	Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(writer);
 	writer.writeStartElement("Particles");
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowStructuredParticleSetSetting& setting = m_settings[i];
 		writer.writeStartElement("Particle");
 		writer.writeAttribute("regionIMin", QString::number(setting.range.iMin));

@@ -65,11 +65,11 @@ public:
 	void cellSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void cellSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 
-	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v){
+	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v) {
 		nodeSelectingKeyPressEvent(event, v);
 	}
 
-	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v){
+	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) {
 		nodeSelectingKeyReleaseEvent(event, v);
 	}
 
@@ -79,11 +79,11 @@ public:
 	void edgeSelectingMousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void edgeSelectingMouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 
-	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v){
+	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v) {
 		nodeSelectingKeyPressEvent(event, v);
 	}
 
-	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v){
+	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) {
 		nodeSelectingKeyReleaseEvent(event, v);
 	}
 
@@ -98,43 +98,43 @@ public:
 	void informgridRelatedConditionChangeAll();
 	void informgridRelatedConditionChange(const QString& name);
 	void silentDeleteGrid();
-	PreProcessorGridShapeDataItem* shapeDataItem(){return m_shapeDataItem;}
-	PreProcessorGridRelatedConditionNodeGroupDataItem* nodeGroupDataItem(){return m_nodeGroupDataItem;}
-	PreProcessorGridRelatedConditionCellGroupDataItem* cellGroupDataItem(){return m_cellGroupDataItem;}
-	PreProcessorBCGroupDataItem* bcGroupDataItem(){return m_bcGroupDataItem;}
-	void setSelectedVertices(const QVector<vtkIdType> &vertices);
-	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType> &vertices) const;
-	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType> &vertices) const;
+	PreProcessorGridShapeDataItem* shapeDataItem() {return m_shapeDataItem;}
+	PreProcessorGridRelatedConditionNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
+	PreProcessorGridRelatedConditionCellGroupDataItem* cellGroupDataItem() {return m_cellGroupDataItem;}
+	PreProcessorBCGroupDataItem* bcGroupDataItem() {return m_bcGroupDataItem;}
+	void setSelectedVertices(const QVector<vtkIdType>& vertices);
+	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
+	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
 
 	bool isImportAvailable();
 	bool isExportAvailable();
-	QAction* importAction(){return m_importAction;}
-	QAction* exportAction(){return m_exportAction;}
-	QAction* displaySettingAction(){return m_displaySettingAction;}
-	QAction* deleteAction(){return m_deleteAction;}
-	QAction* polygonSelectAction(){return m_polygonSelectAction;}
+	QAction* importAction() {return m_importAction;}
+	QAction* exportAction() {return m_exportAction;}
+	QAction* displaySettingAction() {return m_displaySettingAction;}
+	QAction* deleteAction() {return m_deleteAction;}
+	QAction* polygonSelectAction() {return m_polygonSelectAction;}
 	QAction* mappingAction();
-	QAction* nodeEditAction(){return m_nodeEditAction;}
-	QAction* nodeDisplaySettingAction(){return m_nodeDisplaySettingAction;}
-	QAction* cellEditAction(){return m_cellEditAction;}
-	QAction* cellDisplaySettingAction(){return m_cellDisplaySettingAction;}
-	QAction* setupScalarBarAction(){return m_setupScalarBarAction;}
-	QAction* birdEyeWindowAction(){return m_birdEyeWindowAction;}
+	QAction* nodeEditAction() {return m_nodeEditAction;}
+	QAction* nodeDisplaySettingAction() {return m_nodeDisplaySettingAction;}
+	QAction* cellEditAction() {return m_cellEditAction;}
+	QAction* cellDisplaySettingAction() {return m_cellDisplaySettingAction;}
+	QAction* setupScalarBarAction() {return m_setupScalarBarAction;}
+	QAction* birdEyeWindowAction() {return m_birdEyeWindowAction;}
 
-	QMenu* menu(){return m_menu;}
+	QMenu* menu() {return m_menu;}
 	vtkPolyData* selectedVerticesPolyData() const {return m_selectedVerticesPolyData;}
 	const QVector<vtkIdType>& selectedVertices() const {return m_selectedVertices;}
 	const QVector<vtkIdType>& selectedCells() const {return m_selectedCells;}
 	const QVector<Edge>& selectedEdges() const {return m_selectedEdges;}
 	void updateAttributeActorSettings();
 
-	void setNodeDataItem(PreProcessorGridRelatedConditionNodeDataItem* nodeItem){m_nodeDataItem = nodeItem;}
-	void setCellDataItem(PreProcessorGridRelatedConditionCellDataItem* cellItem){m_cellDataItem = cellItem;}
+	void setNodeDataItem(PreProcessorGridRelatedConditionNodeDataItem* nodeItem) {m_nodeDataItem = nodeItem;}
+	void setCellDataItem(PreProcessorGridRelatedConditionCellDataItem* cellItem) {m_cellDataItem = cellItem;}
 	QCursor normalCursor();
 	void informGridChange();
 	void informBirdEyeWindowClose();
-	void doViewOperationEndedGlobal(VTKGraphicsView *);
-	void updateSimplefiedGrid(VTKGraphicsView *v = nullptr);
+	void doViewOperationEndedGlobal(VTKGraphicsView*);
+	void updateSimplefiedGrid(VTKGraphicsView* v = nullptr);
 	void updateRegionPolyData();
 
 	void updateObjectBrowserTree();
@@ -164,7 +164,7 @@ private:
 	void closeBirdEyeWindow();
 	void informSelectedVerticesChanged();
 protected:
-	void renderGraphicsView(){GraphicsWindowDataItem::renderGraphicsView();}
+	void renderGraphicsView() {GraphicsWindowDataItem::renderGraphicsView();}
 	void doApplyOffset(double x, double y);
 	virtual void setupMenu() = 0;
 	virtual void updateActionStatus();

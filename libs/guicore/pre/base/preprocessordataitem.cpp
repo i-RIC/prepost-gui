@@ -9,7 +9,8 @@ void PreProcessorDataItem::editCaption()
 	view->edit(m_standardItem->index());
 }
 
-MouseBoundingBox* PreProcessorDataItem::mouseBoundingBox(){
+MouseBoundingBox* PreProcessorDataItem::mouseBoundingBox()
+{
 	return dataModel()->mouseBoundingBox();
 }
 

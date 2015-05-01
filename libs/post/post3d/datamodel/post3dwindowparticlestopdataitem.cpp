@@ -40,7 +40,7 @@ void Post3dWindowParticlesTopDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->particleData() == nullptr){return;}
+	if (cont == nullptr || cont->particleData() == nullptr) {return;}
 
 	m_actor->GetProperty()->SetPointSize(m_size);
 	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
@@ -99,8 +99,7 @@ QDialog* Post3dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 class Post3dWindowParticlesTopSetProperty : public QUndoCommand
 {
 public:
-	Post3dWindowParticlesTopSetProperty(const QColor& color, int size, Post3dWindowParticlesTopDataItem* item)
-	{
+	Post3dWindowParticlesTopSetProperty(const QColor& color, int size, Post3dWindowParticlesTopDataItem* item) {
 		m_newColor = color;
 		m_newSize = size;
 
@@ -110,8 +109,7 @@ public:
 		m_item = item;
 	}
 
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_color = m_oldColor;
 		m_item->m_size = m_oldSize;
@@ -119,8 +117,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_color = m_newColor;
 		m_item->m_size = m_newSize;

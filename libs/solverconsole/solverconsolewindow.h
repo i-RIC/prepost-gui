@@ -32,9 +32,9 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 
 public:
 	/// Constructor
-	SolverConsoleWindow(){init();}
+	SolverConsoleWindow() {init();}
 	/// Constructor
-	SolverConsoleWindow(QWidget* /*parent*/){init();}
+	SolverConsoleWindow(QWidget* /*parent*/) {init();}
 	/// Destructor
 	~SolverConsoleWindow();
 	/// Set newly created project data.
@@ -48,7 +48,7 @@ public:
 	void setupDefaultGeometry();
 	/// Update Window title depending on Solver name and status
 	void updateWindowTitle();
-	bool acceptCopy(){return true;}
+	bool acceptCopy() {return true;}
 	void copy();
 	/// Clear the console log.
 	void clear();

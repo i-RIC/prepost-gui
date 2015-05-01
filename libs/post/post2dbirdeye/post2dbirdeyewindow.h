@@ -19,9 +19,9 @@ class Post2dBirdEyeWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class Post2dBirdEyeWindow :
-		public PostProcessorWindow,
-		public AdditionalMenuWindow,
-		public WindowWithObjectBrowser
+	public PostProcessorWindow,
+	public AdditionalMenuWindow,
+	public WindowWithObjectBrowser
 {
 	Q_OBJECT
 public:
@@ -30,14 +30,14 @@ public:
 	/// Destructor
 	~Post2dBirdEyeWindow();
 	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch(){}
+	void handleCgnsSwitch() {}
 	/// switch to the new index.
-	void changeIndex(uint /*newindex*/){}
+	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot();
 	vtkRenderWindow* getVtkRenderWindow();
 	QList<QMenu*> getAdditionalMenus();
 	ObjectBrowser* objectBrowser();
-	int index(){return m_index;}
+	int index() {return m_index;}
 public slots:
 	void cameraFit();
 	void cameraZoomIn();

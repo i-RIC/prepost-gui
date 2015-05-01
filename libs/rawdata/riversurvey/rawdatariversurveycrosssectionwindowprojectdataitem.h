@@ -15,7 +15,7 @@ public:
 	~RawDataRiverSurveyCrosssectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();
-	RawDataRiverSurveyCrosssectionWindow* window(){
+	RawDataRiverSurveyCrosssectionWindow* window() {
 		return m_window;
 	}
 protected:

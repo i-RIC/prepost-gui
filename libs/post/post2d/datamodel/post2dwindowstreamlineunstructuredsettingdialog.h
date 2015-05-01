@@ -7,7 +7,8 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 
-namespace Ui {
+namespace Ui
+{
 	class Post2dWindowStreamlineUnstructuredSettingDialog;
 }
 
@@ -17,25 +18,25 @@ class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem;
 
 class Post2dWindowStreamlineUnstructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post2dWindowStreamlineUnstructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowStreamlineUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowStreamlineUnstructuredSettingDialog();
-	void setDataItem(Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item){
+	void setDataItem(Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item) {
 		m_dataItem = item;
 	}
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
 	const QString solution();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings() {return m_settings;}
 
 	void informButtonDown(const QVector2D& p);
 	void informButtonUp(const QVector2D& p);
@@ -61,7 +62,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-	Ui::Post2dWindowStreamlineUnstructuredSettingDialog *ui;
+	Ui::Post2dWindowStreamlineUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* m_dataItem;
 	QList<QString> m_solutions;
 	bool m_isPointsSet;

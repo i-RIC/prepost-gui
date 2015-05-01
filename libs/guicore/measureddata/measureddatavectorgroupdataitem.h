@@ -40,20 +40,20 @@ public:
 	void update();
 public slots:
 	void exclusivelyCheck(MeasuredDataVectorDataItem*);
-	void showSettingDialog(){showPropertyDialog();}
+	void showSettingDialog() {showPropertyDialog();}
 protected:
 	QDialog* propertyDialog(QWidget* p);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-		vtkPointSet* getPointSet();
+	vtkPointSet* getPointSet();
 	void innerUpdate2Ds();
 	void updateColorSetting();
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	void setCurrentSolution(const QString &currentSol);
-	const QString& currentSolution(){return m_currentSolution;}
+	void setCurrentSolution(const QString& currentSol);
+	const QString& currentSolution() {return m_currentSolution;}
 	void doApplyOffset(double x, double y);
 private:
 	void setupActors();
@@ -65,7 +65,7 @@ protected:
 	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
 	vtkSmartPointer<vtkAppendPolyData> m_appendPolyData;
 	vtkSmartPointer<vtkPolyData> m_polyData;
-		vtkSmartPointer<vtkUnstructuredGrid> m_activePoints;
+	vtkSmartPointer<vtkUnstructuredGrid> m_activePoints;
 
 	vtkSmartPointer<vtkHedgeHog> m_hedgeHog;
 	vtkSmartPointer<vtkGlyph3D> m_arrowGlyph;

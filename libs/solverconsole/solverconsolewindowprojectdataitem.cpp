@@ -18,7 +18,7 @@
 #include <QMessageBox>
 #include <QStatusBar>
 
-SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem *parent) :
+SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent)
 {
 	m_solverConsoleWindow = w;
@@ -49,7 +49,7 @@ void SolverConsoleWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	QString logText = iRIC::getText(consoleLog);
 	QString fname = filename();
 	QFileInfo finfo(fname);
-	if (finfo.size() == 0){
+	if (finfo.size() == 0) {
 		// write the log.
 		QFile f(fname);
 		f.open(QFile::WriteOnly | QFile::Text);
@@ -62,7 +62,7 @@ void SolverConsoleWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	m_solverConsoleWindow->setBackgroundColor(col);
 }
 
-void SolverConsoleWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter & writer)
+void SolverConsoleWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// save window geometry
 	ProjectDataItem::writeWindowGeometry(m_solverConsoleWindow->parentWidget(), writer);
@@ -91,18 +91,18 @@ void SolverConsoleWindowProjectDataItem::append(const QString& line)
 void SolverConsoleWindowProjectDataItem::appendToLines(const QString& line)
 {
 	m_lines.append(line);
-	while (m_lines.count() > MAXLINES){
+	while (m_lines.count() > MAXLINES) {
 		m_lines.pop_front();
 	}
 }
 
-void SolverConsoleWindowProjectDataItem::loadExternalData(const QString &filename)
+void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filename)
 {
 	QFile f(filename);
 	// open, and write nothing.
 	f.open(QFile::ReadOnly | QFile::Text);
 	QTextStream ts(&f);
-	while (! ts.atEnd()){
+	while (! ts.atEnd()) {
 		QString line = ts.readLine();
 		appendToLines(line);
 	}
@@ -112,7 +112,7 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString &filenam
 	m_solverConsoleWindow->m_console->moveCursor(QTextCursor::End);
 
 	QFileInfo finfo(f);
-	if (finfo.size() != 0){
+	if (finfo.size() != 0) {
 		// enable export action.
 		m_solverConsoleWindow->exportLogAction->setEnabled(true);
 	}
@@ -133,21 +133,21 @@ void SolverConsoleWindowProjectDataItem::exportConsoleLog()
 {
 	QString defName =  QDir(LastIODirectory::get()).absoluteFilePath("consolelog.txt");
 	QString fname = QFileDialog::getSaveFileName(
-		projectData()->mainWindow(), tr("Select File to Export"), defName, tr("Text file (*.txt)")
-			);
-	if (fname == ""){return;}
+										projectData()->mainWindow(), tr("Select File to Export"), defName, tr("Text file (*.txt)")
+									);
+	if (fname == "") {return;}
 	projectData()->mainWindow()->statusBar()->showMessage(tr("Exporting solver console log..."));
 	bool ret = true;
-	if (QFile::exists(fname)){
+	if (QFile::exists(fname)) {
 		// if the file already existed, remove it first.
 		ret = QFile::remove(fname);
 	}
 	ret = ret && QFile::copy(filename(), fname);
-	if (ret){
+	if (ret) {
 		projectData()->mainWindow()->statusBar()->showMessage(tr("Solver console log is successfully exported to %1.").arg(fname), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
-	}else{
+	} else {
 		projectData()->mainWindow()->statusBar()->clearMessage();
 		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Exporting solver console log failed."));
 	}

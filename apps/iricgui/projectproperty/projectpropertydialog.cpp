@@ -1,7 +1,7 @@
 #include "projectpropertydialog.h"
 #include "ui_projectpropertydialog.h"
 
-ProjectPropertyDialog::ProjectPropertyDialog(QWidget *parent) :
+ProjectPropertyDialog::ProjectPropertyDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::ProjectPropertyDialog)
 {

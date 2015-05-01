@@ -1,7 +1,7 @@
 #include "propertybrowser.h"
 #include "../datamodel/propertybrowserview.h"
 
-PropertyBrowser::PropertyBrowser(QWidget *parent)
+PropertyBrowser::PropertyBrowser(QWidget* parent)
 	: QDockWidget(parent)
 {
 	// window properties
@@ -19,7 +19,7 @@ PropertyBrowser::~PropertyBrowser()
 
 }
 
-void PropertyBrowser::hideEvent(QHideEvent *)
+void PropertyBrowser::hideEvent(QHideEvent*)
 {
 	m_view->resetAttributes();
 }

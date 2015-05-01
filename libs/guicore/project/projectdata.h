@@ -33,17 +33,17 @@ public:
 	/// File name of lock file (that is put just under the workfolder)
 	const static QString LOCKFILENAME;
 	/// Constructor
-	explicit ProjectData(const QString& workdir, iRICMainWindowInterface *parent);
+	explicit ProjectData(const QString& workdir, iRICMainWindowInterface* parent);
 	/// Destructor
 	virtual ~ProjectData();
 	/// Returns the absolute file path of a file included in the project data.
 	const QString absoluteFileName(const QString& relativeFileName) const;
 	/// Work directory
-	const QString& workDirectory(){return m_workDirectory;}
+	const QString& workDirectory() {return m_workDirectory;}
 	/// File name to save (or loaded from)
-	const QString& filename(){return m_filename;}
+	const QString& filename() {return m_filename;}
 	/// Set file name to save
-	void setFilename(const QString& fname, bool isFolder){
+	void setFilename(const QString& fname, bool isFolder) {
 		m_filename = fname;
 		m_folderProject = isFolder;
 	}
@@ -60,9 +60,9 @@ public:
 	/// Save project data into the work folder.
 	bool save();
 	/// Main file (project.xml)
-	ProjectMainFile* mainfile(){return m_mainfile;}
+	ProjectMainFile* mainfile() {return m_mainfile;}
 	/// Solver definition
-	SolverDefinition* solverDefinition(){return m_solverDefinition;}
+	SolverDefinition* solverDefinition() {return m_solverDefinition;}
 	/// Setter function for solver definition
 	void setSolverDefinition(SolverDefinition* def);
 	/// Switch to the default cgns file.
@@ -76,14 +76,14 @@ public:
 	const QString workCgnsFileName(const QString& name);
 	const QString currentCgnsFileName();
 	/// iRIC Main Window.
-	iRICMainWindowInterface* mainWindow(){return m_mainWindow;}
+	iRICMainWindowInterface* mainWindow() {return m_mainWindow;}
 	const QString tmpFileName();
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
 	/// Copy the work folder to the specified folder. Old folder also is kept.
 	bool copyTo(const QString& newWorkFolder, bool switchToNewFolder);
 	/// Whether it is a folder project.
-	bool folderProject(){return m_folderProject;}
+	bool folderProject() {return m_folderProject;}
 	/// Returns true when CGNS file size exceeds 2 GB.
 	bool hasHugeCgns();
 	/// Open the post-processors using the settings in project file.
@@ -97,9 +97,9 @@ public slots:
 
 private slots:
 	/// Cancel open / save operation.
-	void cancel(){m_canceled = true;}
+	void cancel() {m_canceled = true;}
 	/// Event handler for open / save operation finish signal.
-	void handleFinish(){m_finished = true;}
+	void handleFinish() {m_finished = true;}
 
 private:
 	/// Open lock file as write mode, so that other process can know that this project

@@ -21,7 +21,7 @@ public:
 	PreProcessorBCDataItem* condition(const QString& type, int num);
 	void addCustomMenuItems(QMenu* menu);
 	void updateZDepthRangeItemCount();
-	QMenu* bcMenu(){return m_bcMenu;}
+	QMenu* bcMenu() {return m_bcMenu;}
 	void updateBCMenu(PreProcessorBCDataItem* item);
 	void clear();
 	void clearPoints();

@@ -9,7 +9,7 @@ void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int
 	// Goto "GridCrosssections" node.
 	int ier;
 	ier = cg_goto(fn, B, "Zone_t", Z, "GridCrosssections", 0, "end");
-	if (ier != 0){
+	if (ier != 0) {
 		// the corresponding node does not exists.
 		return;
 	}
@@ -20,12 +20,12 @@ void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int
 	int dataDimension;
 	cgsize_t dimensionVector[3];
 	ier = cg_array_info(index, arrayName, &dt, &dataDimension, dimensionVector);
-	if (ier) return;
+	if (ier) { return; }
 	int size = dimensionVector[0];
-	if (dt == RealSingle){
+	if (dt == RealSingle) {
 		float* data = new float[size * dimensionVector[1]];
 		ier = cg_array_read(index, data);
-		for (int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 //			double tmpDistance = *(data + i);
 //			double tmpAltitude = *(data + i + size);
 //			m_distance.push_back(tmpDistance);
@@ -39,7 +39,7 @@ void Structured15DGridWithCrossSectionCrossSection::loadFromCgnsFile(int fn, int
 	} else {
 		double* data = new double[size * dimensionVector[1]];
 		ier = cg_array_read(index, data);
-		for (int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 //			m_distance.push_back(*(data + i));
 //			m_altitude.push_back(*(data + i + size));
 			Altitude alt;
@@ -69,7 +69,7 @@ void Structured15DGridWithCrossSectionCrossSection::saveToCgnsFile(int fn, int B
 	dimensions[1] = 2;
 	dimensions[2] = 0;
 	double* data = new double[size * 2];
-	for (int i = 0; i < size; i++){
+	for (int i = 0; i < size; i++) {
 //		data[i] = m_distance.at(i);
 //		data[size + i] = m_altitude.at(i);
 		data[i] = m_altitudeInfo.at(i).m_position;

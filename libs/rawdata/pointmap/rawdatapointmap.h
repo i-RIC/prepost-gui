@@ -49,7 +49,7 @@ class RawDataPointmap : public RawData
 {
 	Q_OBJECT
 public:
-	enum MappingMode{
+	enum MappingMode {
 		mmTIN,
 		mmTemplate
 	};
@@ -82,8 +82,8 @@ public:
 	/// Constructor
 	RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 	virtual ~RawDataPointmap();
-	vtkPolyData* vtkGrid(){return m_vtkGrid;}
-	vtkPolyData* delaunayedPolyData(){return m_vtkDelaunayedPolyData;}
+	vtkPolyData* vtkGrid() {return m_vtkGrid;}
+	vtkPolyData* delaunayedPolyData() {return m_vtkDelaunayedPolyData;}
 	const QPolygonF polygon();
 
 	/// Execute the delaunay division.
@@ -107,10 +107,10 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
 	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	vtkPolygon* getVtkPolygon(){return m_vtkPolygon;}
+	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
 	vtkPolygon* getVtkInterpPolygon() {return m_vtkInterpPolygon;}
 	vtkDoubleArray* getVtkInterpValue() {return m_vtkInterpValue;}
-	vtkPolyData* selectedVerticesGrid(){return m_selectedVerticesGrid;}
+	vtkPolyData* selectedVerticesGrid() {return m_selectedVerticesGrid;}
 	QVector<vtkIdType> selectedVertices();
 	void definePolygon(bool doubleClick, bool xOr);
 	void showPolygonSelectedPoints(bool xOr);
@@ -124,7 +124,7 @@ public:
 	void enablePointSelectedActions(bool val);
 	void finishAddPoint();
 	void finishInterpPoint();
-	bool needRemeshing(){return m_needRemeshing;}
+	bool needRemeshing() {return m_needRemeshing;}
 
 public slots:
 	void remeshTINS(bool nodialog = false);
@@ -177,7 +177,7 @@ private slots:
 	void editPointsExport();
 	void editPointsLessThan();
 	void editPointsGreaterThan();
-	void cancel(){m_canceled = true;}
+	void cancel() {m_canceled = true;}
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

@@ -18,15 +18,15 @@ RawDataCreator::RawDataCreator()
 
 RawDataCreator::~RawDataCreator()
 {
-	if (m_emptyData){
+	if (m_emptyData) {
 		delete m_emptyData;
 	}
 }
 
-RawData* RawDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition)
+RawData* RawDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
 {
 	QDomElement elem = node.toElement();
-	if (elem.attribute("type") == m_typeName){
+	if (elem.attribute("type") == m_typeName) {
 		return create(parent, condition);
 	}
 	return 0;
@@ -38,17 +38,17 @@ void RawDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem
 	QSet<QString> captionSet;
 
 	// first, setup nameSet and captionSet.
-	for (auto it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it) {
 		RawData* rawdata = dynamic_cast<PreProcessorRawdataDataItemInterface*>(*it)->rawData();
-		if (rawdata->name() != ""){nameSet.insert(rawdata->name());}
-		if (rawdata->caption() != ""){captionSet.insert(rawdata->caption());}
+		if (rawdata->name() != "") {nameSet.insert(rawdata->name());}
+		if (rawdata->caption() != "") {captionSet.insert(rawdata->caption());}
 	}
 	unsigned int idx = 1;
 	bool ok = false;
-	while (! ok){
+	while (! ok) {
 		QString tmpname = data->creator()->name(idx);
 		QString tmpcap = data->creator()->defaultCaption(idx);
-		if (! nameSet.contains(tmpname) && ! captionSet.contains(tmpcap)){
+		if (! nameSet.contains(tmpname) && ! captionSet.contains(tmpcap)) {
 			data->setName(tmpname);
 			data->setCaption(tmpcap);
 			ok = true;

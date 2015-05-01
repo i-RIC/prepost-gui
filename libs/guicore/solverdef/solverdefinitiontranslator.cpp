@@ -9,10 +9,11 @@
 #include <QDomNode>
 #include <QString>
 
-const QString SolverDefinitionTranslator::translate(const QString& src) const {
-	if (m_dictionary.contains(src)){
+const QString SolverDefinitionTranslator::translate(const QString& src) const
+{
+	if (m_dictionary.contains(src)) {
 		return m_dictionary.value(src);
-	}else{
+	} else {
 		return src;
 	}
 }
@@ -28,7 +29,7 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 	// get translation file name
 	QDir solFolder(solverfolder);
 	QString trFilename = solFolder.absoluteFilePath(filenameFromLocale(locale));
-	if (! QFile::exists(trFilename)){
+	if (! QFile::exists(trFilename)) {
 		// translation file for specified locale doesn't exists.
 		return;
 	}
@@ -39,7 +40,7 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 	QFile trFile(trFilename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&trFile, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(trFilename).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -50,21 +51,21 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 	QDomNode TSNode = doc.documentElement();
 	QDomNode contextNode = TSNode.firstChild();
 	int msgIndex = 1;
-	while (! contextNode.isNull()){
-		if (contextNode.nodeName() != "context"){
+	while (! contextNode.isNull()) {
+		if (contextNode.nodeName() != "context") {
 			QString msg = errorHeader;
 			msg.append("%1: Only context node is allowed under TS node, but %2 node is found.");
 			msg = msg.arg(trFilename).arg(contextNode.nodeName());
 			throw ErrorMessage(msg);
 		}
 		QDomNode messageNode = contextNode.firstChild();
-		while (! messageNode.isNull()){
-			if (messageNode.nodeName() == "name"){
+		while (! messageNode.isNull()) {
+			if (messageNode.nodeName() == "name") {
 				// skip this node
 				messageNode = messageNode.nextSibling();
 				continue;
 			}
-			if (messageNode.nodeName() != "message"){
+			if (messageNode.nodeName() != "message") {
 				QString msg = errorHeader;
 				msg.append("Only name or message node is allowed under context node, but %1 node is found.");
 				msg = msg.arg(trFilename).arg(messageNode.nodeName());
@@ -72,19 +73,19 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 			}
 			QDomNode sourceNode = iRIC::getChildNode(messageNode, "source");
 			QDomNode transNode = iRIC::getChildNode(messageNode, "translation");
-			if (sourceNode.isNull()){
+			if (sourceNode.isNull()) {
 				QString msg = errorHeader;
 				msg.append("No source node is found under %2th message node.");
 				msg = msg.arg(trFilename).arg(msgIndex);
 				throw ErrorMessage(msg);
 			}
-			if (transNode.isNull()){
+			if (transNode.isNull()) {
 				QString msg = errorHeader;
 				msg.append("No translation node is found under %2th message node.");
 				msg = msg.arg(trFilename).arg(msgIndex);
 				throw ErrorMessage(msg);
 			}
-			if (transNode.toElement().attribute("type", "") != "unfinished" && iRIC::getText(transNode) != ""){
+			if (transNode.toElement().attribute("type", "") != "unfinished" && iRIC::getText(transNode) != "") {
 				m_dictionary.insert(iRIC::getText(sourceNode), iRIC::getText(transNode));
 			}
 			// register the message to the dictionary.

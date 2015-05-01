@@ -29,7 +29,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent()->parent());
 	SolverDefinitionGridType* gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().count(); ++i){
+	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
 		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);
 		QString str(tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
@@ -60,8 +60,8 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 	cg_iRIC_Init_BC_Names();
 	Grid* grid = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 
-	if (m_projectBuildNumber > 3507){
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	if (m_projectBuildNumber > 3507) {
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 			PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 			bcItem->setGrid(grid);
 			bcItem->loadFromCgnsFile(fn);
@@ -70,11 +70,11 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 		// for backward compatibility.
 		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 		const QList<SolverDefinitionBoundaryCondition*>& conditions = gtItem->gridType()->boundaryConditions();
-		for (int i = 0; i < conditions.count(); ++i){
+		for (int i = 0; i < conditions.count(); ++i) {
 			SolverDefinitionBoundaryCondition* bc = conditions.at(i);
 			int number;
 			cg_iRIC_Read_BC_Count(const_cast<char*>(iRIC::toStr(bc->name()).c_str()), &number);
-			for (int j = 0; j < number; ++j){
+			for (int j = 0; j < number; ++j) {
 				PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
 				bcItem->setProjectNumber(j + 1);
 				bcItem->setCgnsNumber(j + 1);
@@ -98,11 +98,11 @@ void PreProcessorBCGroupDataItem::renumberItemsForProject()
 	int number = 1;
 	int condIndex = -1;
 	auto it = m_childItems.begin();
-	while (it != m_childItems.end()){
+	while (it != m_childItems.end()) {
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
 		int tmpindex = conditions.indexOf(tmpbc);
-		if (tmpindex != condIndex){
+		if (tmpindex != condIndex) {
 			number = 1;
 			condIndex = tmpindex;
 		} else {
@@ -122,12 +122,12 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 	int number = 1;
 	int condIndex = -1;
 	auto it = m_childItems.begin();
-	while (it != m_childItems.end()){
+	while (it != m_childItems.end()) {
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-		if (tmpItem->isValid()){
+		if (tmpItem->isValid()) {
 			SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
 			int tmpindex = conditions.indexOf(tmpbc);
-			if (tmpindex != condIndex){
+			if (tmpindex != condIndex) {
 				number = 1;
 				condIndex = tmpindex;
 			} else {
@@ -145,7 +145,7 @@ void PreProcessorBCGroupDataItem::saveToCgnsFile(const int fn)
 {
 	renumberItemsForCgns();
 	cg_iRIC_Clear_BC();
-	for (int i = 0; i < m_childItems.count(); ++i){
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		m_childItems[i]->saveToCgnsFile(fn);
 	}
 }
@@ -160,7 +160,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	m_projectBuildNumber = projectData()->version().build();
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	QDomNodeList childNodes = node.childNodes();
-	for (int i = 0; i < childNodes.count(); ++i){
+	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomElement childElem = childNodes.at(i).toElement();
 		QString condType = childElem.attribute("type");
 		SolverDefinitionBoundaryCondition* bc = gtItem->gridType()->boundaryCondition(condType);
@@ -178,7 +178,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 void PreProcessorBCGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	renumberItemsForProject();
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		GraphicsWindowDataItem* item = *it;
 		writer.writeStartElement("BoundaryCondition");
 		item->saveToProjectMainFile(writer);
@@ -188,7 +188,7 @@ void PreProcessorBCGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 
 void PreProcessorBCGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	for (int i = 0; i < m_addActions.count(); ++i){
+	for (int i = 0; i < m_addActions.count(); ++i) {
 		menu->addAction(m_addActions[i]);
 	}
 }
@@ -197,18 +197,18 @@ void PreProcessorBCGroupDataItem::addCondition()
 {
 	QAction* a = dynamic_cast<QAction*>(sender());
 	int index = 0;
-	for (index = 0; index < m_addActions.count(); ++index){
-		if (m_addActions[index] == a){break;}
+	for (index = 0; index < m_addActions.count(); ++index) {
+		if (m_addActions[index] == a) {break;}
 	}
 
 	PreProcessorBCDataItem* item = addCondition(index, true);
-	if (item == 0){return;}
+	if (item == 0) {return;}
 
 	dataModel()->objectBrowserView()->expand(m_standardItem->index());
 	dataModel()->objectBrowserView()->select(item->standardItem()->index());
 	dataModel()->handleObjectBrowserSelection(item->standardItem()->index());
 	bool ok = item->showDialog();
-	if (! ok){
+	if (! ok) {
 		// Cancel button is clicked.
 		delete item;
 		dataModel()->handleObjectBrowserClick(m_standardItem->index());
@@ -218,7 +218,7 @@ void PreProcessorBCGroupDataItem::addCondition()
 
 PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, bool hideSetting)
 {
-	if (index > m_addActions.count()){return 0;}
+	if (index > m_addActions.count()) {return 0;}
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	SolverDefinitionGridType* gtype = gtItem->gridType();
@@ -228,12 +228,12 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	item->setName(tmpName);
 	int number = 1;
 	auto it = m_childItems.begin();
-	while (it != m_childItems.end()){
+	while (it != m_childItems.end()) {
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
 		int tmpindex = gtype->boundaryConditions().indexOf(tmpbc);
-		if (tmpindex == index){++ number;}
-		if (tmpindex > index){break;}
+		if (tmpindex == index) {++ number;}
+		if (tmpindex > index) {break;}
 		++ it;
 	}
 	item->setProjectNumber(number);
@@ -242,16 +242,16 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	// add it simply.
 	m_childItems.insert(it, item);
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	if (gItem->grid() != nullptr){
+	if (gItem->grid() != nullptr) {
 		gItem->grid()->setModified();
 	}
 
 	// setup object browser tree again.
 	int rows = m_standardItem->rowCount();
-	for (int row = rows - 1; row >= 0; --row){
+	for (int row = rows - 1; row >= 0; --row) {
 		m_standardItem->takeRow(row);
 	}
-	for (int i = 0; i < m_childItems.count(); ++i){
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems.at(i);
 		m_standardItem->appendRow(item->standardItem());
 	}
@@ -260,18 +260,18 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	emit itemsUpdated();
 
 	return item;
-/*
-	dataModel()->objectBrowserView()->expand(m_standardItem->index());
-	dataModel()->objectBrowserView()->select(item->standardItem()->index());
-	dataModel()->handleObjectBrowserSelection(item->standardItem()->index());
-	bool ok = item->showDialog();
-	if (! ok){
-		// Cancel button is clicked.
-		delete item;
-		dataModel()->handleObjectBrowserClick(m_standardItem->index());
-		updateItemMap();
-	}
-*/
+	/*
+		dataModel()->objectBrowserView()->expand(m_standardItem->index());
+		dataModel()->objectBrowserView()->select(item->standardItem()->index());
+		dataModel()->handleObjectBrowserSelection(item->standardItem()->index());
+		bool ok = item->showDialog();
+		if (! ok){
+			// Cancel button is clicked.
+			delete item;
+			dataModel()->handleObjectBrowserClick(m_standardItem->index());
+			updateItemMap();
+		}
+	*/
 }
 
 
@@ -283,11 +283,11 @@ void PreProcessorBCGroupDataItem::updateZDepthRangeItemCount()
 void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
 {
 	m_bcMenu->clear();
-	for (int i = 0; i < m_addActions.count(); ++i){
+	for (int i = 0; i < m_addActions.count(); ++i) {
 		m_bcMenu->addAction(m_addActions[i]);
 	}
 	m_bcMenu->addSeparator();
-	if (item == 0){
+	if (item == 0) {
 		// add dummy menu items.
 		m_bcMenu->addAction(m_dummyEditAction);
 		m_bcMenu->addAction(m_dummyDeleteAction);
@@ -306,7 +306,7 @@ void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
 void PreProcessorBCGroupDataItem::clear()
 {
 	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i){
+	for (int i = 0; i < itemCopys.count(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
 		delete item;
 	}
@@ -317,9 +317,9 @@ void PreProcessorBCGroupDataItem::clear()
 void PreProcessorBCGroupDataItem::clearPoints()
 {
 	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i){
+	for (int i = 0; i < itemCopys.count(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (item);
+		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->clearPoints();
 	}
 }
@@ -327,9 +327,9 @@ void PreProcessorBCGroupDataItem::clearPoints()
 void PreProcessorBCGroupDataItem::setGrid(Grid* grid)
 {
 	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i){
+	for (int i = 0; i < itemCopys.count(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (item);
+		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->setGrid(grid);
 	}
 }

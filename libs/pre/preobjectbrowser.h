@@ -14,11 +14,11 @@ class PreObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 public:
 	/// Constructor
-	PreObjectBrowser(QWidget* parent) : ObjectBrowser(parent){init();}
+	PreObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
 	/// Destructor
-	~PreObjectBrowser(){}
+	~PreObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	PreObjectBrowserView* view(){return m_view;}
+	PreObjectBrowserView* view() {return m_view;}
 public slots:
 	void expandAll();
 private:

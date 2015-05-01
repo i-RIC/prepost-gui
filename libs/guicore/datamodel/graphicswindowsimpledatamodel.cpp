@@ -7,27 +7,10 @@ GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, Pro
 {
 	m_mainWindow = w;
 	m_graphicsView = dynamic_cast<VTKGraphicsView*>(w->centralWidget());
-/*
-	m_rootDataItem = nullptr;
-	m_rightClickMenu = nullptr;
-	m_operationToolBar = new iRICToolBar(tr("Operation ToolBar"), iricMainWindow());
-	m_selectedItem = nullptr;
-	m_dataLoaded = false;
-
-	m_dataRange.setRange(0, 100);
-	m_hoverRange.setRange(110, 120);
-	m_labelRange.setRange(130, 140);
-	m_itemModel = new QStandardItemModel(this);
-*/
 }
 
 GraphicsWindowSimpleDataModel::~GraphicsWindowSimpleDataModel()
 {
-/*
-	if (m_operationToolBar){
-		delete m_operationToolBar;
-	}
-*/
 }
 
 void GraphicsWindowSimpleDataModel::zoomIn()

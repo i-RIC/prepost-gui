@@ -29,7 +29,7 @@
 
 #define LABEL "Label"
 
-DistanceMeasureDataItem::DistanceMeasureDataItem(const QString &name, GraphicsWindowDataItem *parent)
+DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(name, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 
 {
@@ -177,8 +177,7 @@ class DistanceMeasureDefineCommand : public QUndoCommand
 {
 public:
 	DistanceMeasureDefineCommand(const QVector2D& v1, const QVector2D& v2, bool finish, DistanceMeasureDataItem* item)
-		: QUndoCommand(QObject::tr("Define Distance Measure"))
-	{
+		: QUndoCommand(QObject::tr("Define Distance Measure")) {
 		m_item = item;
 
 		m_newPoint1 = v1;
@@ -188,8 +187,7 @@ public:
 		m_oldPoint2 = m_item->m_point2;
 		m_finish = finish;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->m_point1 = m_oldPoint1;
 		m_item->m_point2 = m_oldPoint2;
 		m_item->m_mouseEventMode = DistanceMeasureDataItem::meBeforeDefining;
@@ -199,11 +197,10 @@ public:
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->m_point1 = m_newPoint1;
 		m_item->m_point2 = m_newPoint2;
-		if (m_finish){
+		if (m_finish) {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
 		} else {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meDefining;
@@ -215,9 +212,9 @@ public:
 		m_item->renderGraphicsView();
 	}
 	int id() const {return iRIC::generateCommandId("DistanceMeasureDefineCommand");}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const DistanceMeasureDefineCommand* other2 = dynamic_cast<const DistanceMeasureDefineCommand*>(other);
-		if (other2 == nullptr) return false;
+		if (other2 == nullptr) { return false; }
 		m_newPoint1 = other2->m_newPoint1;
 		m_newPoint2 = other2->m_newPoint2;
 		m_finish = other2->m_finish;
@@ -239,25 +236,23 @@ class DistanceMeasureMoveVertexCommand : public QUndoCommand
 {
 public:
 	DistanceMeasureMoveVertexCommand(int point, const QVector2D& v, bool finish, DistanceMeasureDataItem* item)
-		: QUndoCommand(QObject::tr("Move Distance Measure Point"))
-	{
+		: QUndoCommand(QObject::tr("Move Distance Measure Point")) {
 		m_item = item;
 
 		m_point = point;
 		m_newPoint = v;
 
-		if (point == 1){
+		if (point == 1) {
 			m_oldPoint = m_item->m_point1;
-		} else if (point == 2){
+		} else if (point == 2) {
 			m_oldPoint = m_item->m_point2;
 		}
 		m_finish = finish;
 	}
-	void undo()
-	{
-		if (m_point == 1){
+	void undo() {
+		if (m_point == 1) {
 			m_item->m_point1 = m_oldPoint;
-		} else if (m_point == 2){
+		} else if (m_point == 2) {
 			m_item->m_point2 = m_oldPoint;
 		}
 		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
@@ -266,14 +261,13 @@ public:
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 	}
-	void redo()
-	{
-		if (m_point == 1){
+	void redo() {
+		if (m_point == 1) {
 			m_item->m_point1 = m_newPoint;
-		} else if (m_point == 2){
+		} else if (m_point == 2) {
 			m_item->m_point2 = m_newPoint;
 		}
-		if (m_finish){
+		if (m_finish) {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
 		} else {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meMoveVertex;
@@ -283,11 +277,11 @@ public:
 		m_item->renderGraphicsView();
 	}
 	int id() const {return iRIC::generateCommandId("DistanceMeasureMoveVertexCommand");}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const DistanceMeasureMoveVertexCommand* other2 = dynamic_cast<const DistanceMeasureMoveVertexCommand*>(other);
-		if (other2 == nullptr){return false;}
-		if (m_point != other2->m_point){return false;}
-		if (m_finish){return false;}
+		if (other2 == nullptr) {return false;}
+		if (m_point != other2->m_point) {return false;}
+		if (m_finish) {return false;}
 		m_newPoint = other2->m_newPoint;
 		m_finish = other2->m_finish;
 		return true;
@@ -305,8 +299,7 @@ class DistanceMeasureTranslateCommand : public QUndoCommand
 {
 public:
 	DistanceMeasureTranslateCommand(const QVector2D& v, bool finish, DistanceMeasureDataItem* item)
-		: QUndoCommand(QObject::tr("Translate Distance Measure"))
-	{
+		: QUndoCommand(QObject::tr("Translate Distance Measure")) {
 		m_item = item;
 
 		m_diff = v;
@@ -314,8 +307,7 @@ public:
 		m_origPoint2 = m_item->m_dragStartPoint2;
 		m_finish = finish;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->m_point1 = m_origPoint1;
 		m_item->m_point2 = m_origPoint2;
 		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
@@ -324,11 +316,10 @@ public:
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->m_point1 = m_origPoint1 + m_diff;
 		m_item->m_point2 = m_origPoint2 + m_diff;
-		if (m_finish){
+		if (m_finish) {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
 		} else {
 			m_item->m_mouseEventMode = DistanceMeasureDataItem::meTranslate;
@@ -338,10 +329,10 @@ public:
 		m_item->renderGraphicsView();
 	}
 	int id() const {return iRIC::generateCommandId("DistanceMeasureTranslateCommand");}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const DistanceMeasureTranslateCommand* other2 = dynamic_cast<const DistanceMeasureTranslateCommand*>(other);
-		if (other2 == nullptr){return false;}
-		if (m_finish){return false;}
+		if (other2 == nullptr) {return false;}
+		if (m_finish) {return false;}
 		m_diff = other2->m_diff;
 		m_finish = other2->m_finish;
 		return true;
@@ -363,19 +354,19 @@ void DistanceMeasureDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView
 	y = event->y();
 	v2->viewportToWorld(x, y);
 	QVector2D globalPos(x, y);
-	if (m_mouseEventMode == meDefining){
+	if (m_mouseEventMode == meDefining) {
 		QVector2D newv2 = updatePoint2ByShift(m_point1, globalPos);
 		iRICUndoStack::instance().push(new DistanceMeasureDefineCommand(m_point1, newv2, false, this));
-	} else if (m_mouseEventMode == meMoveVertex){
+	} else if (m_mouseEventMode == meMoveVertex) {
 		QVector2D otherp;
-		if (m_dragPointTarget == 1){
+		if (m_dragPointTarget == 1) {
 			otherp = m_point2;
 		} else {
 			otherp = m_point1;
 		}
 		QVector2D newv = updatePoint2ByShift(otherp, globalPos);
 		iRICUndoStack::instance().push(new DistanceMeasureMoveVertexCommand(m_dragPointTarget, newv, false, this));
-	} else if (m_mouseEventMode == meTranslate){
+	} else if (m_mouseEventMode == meTranslate) {
 		x = m_dragStartPoint.x();
 		y = m_dragStartPoint.y();
 		v2->viewportToWorld(x, y);
@@ -390,7 +381,7 @@ void DistanceMeasureDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView
 void DistanceMeasureDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_dragStartPoint = QPoint(event->x(), event->y());
-	if (event->button() != Qt::LeftButton){return;}
+	if (event->button() != Qt::LeftButton) {return;}
 	VTK2DGraphicsView* v2 = dynamic_cast<VTK2DGraphicsView*>(v);
 	double x, y;
 	x = event->x();
@@ -398,11 +389,11 @@ void DistanceMeasureDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsVie
 	v2->viewportToWorld(x, y);
 	QVector2D tmpv(x, y);
 
-	if (m_mouseEventMode == meBeforeDefining){
+	if (m_mouseEventMode == meBeforeDefining) {
 		iRICUndoStack::instance().push(new DistanceMeasureDefineCommand(tmpv, tmpv, false, this));
-	} else if (m_mouseEventMode == meMoveVertexPrepare){
+	} else if (m_mouseEventMode == meMoveVertexPrepare) {
 		iRICUndoStack::instance().push(new DistanceMeasureMoveVertexCommand(m_dragPointTarget, tmpv, false, this));
-	} else if (m_mouseEventMode == meTranslatePrepare){
+	} else if (m_mouseEventMode == meTranslatePrepare) {
 		m_dragStartPoint1 = m_point1;
 		m_dragStartPoint2 = m_point2;
 		iRICUndoStack::instance().push(new DistanceMeasureTranslateCommand(QVector2D(0, 0), false, this));
@@ -411,17 +402,17 @@ void DistanceMeasureDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsVie
 
 void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_mouseEventMode == DistanceMeasureDataItem::meDefining && event->button() == Qt::LeftButton){
+	if (m_mouseEventMode == DistanceMeasureDataItem::meDefining && event->button() == Qt::LeftButton) {
 		iRICUndoStack::instance().push(new DistanceMeasureDefineCommand(m_point1, m_point2, true, this));
-	} else if (m_mouseEventMode == DistanceMeasureDataItem::meMoveVertex && event->button() == Qt::LeftButton){
+	} else if (m_mouseEventMode == DistanceMeasureDataItem::meMoveVertex && event->button() == Qt::LeftButton) {
 		QVector2D tmpv;
-		if (m_dragPointTarget == 1){
+		if (m_dragPointTarget == 1) {
 			tmpv = m_point1;
-		} else if (m_dragPointTarget == 2){
+		} else if (m_dragPointTarget == 2) {
 			tmpv = m_point2;
 		}
 		iRICUndoStack::instance().push(new DistanceMeasureMoveVertexCommand(m_dragPointTarget, tmpv, true, this));
-	} else if (m_mouseEventMode == DistanceMeasureDataItem::meTranslate && event->button() == Qt::LeftButton){
+	} else if (m_mouseEventMode == DistanceMeasureDataItem::meTranslate && event->button() == Qt::LeftButton) {
 		VTK2DGraphicsView* v2 = dynamic_cast<VTK2DGraphicsView*>(v);
 		double x, y;
 		x = event->x();
@@ -434,9 +425,9 @@ void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsV
 		QVector2D startGlobalPos(x, y);
 		iRICUndoStack::instance().push(new DistanceMeasureTranslateCommand(globalPos - startGlobalPos, true, this));
 	}
-	if (event->button() == Qt::RightButton){
+	if (event->button() == Qt::RightButton) {
 		QPoint endp(event->x(), event->y());
-		if (isNear(m_dragStartPoint, endp)){
+		if (isNear(m_dragStartPoint, endp)) {
 			m_redefineAction->setEnabled(m_defined);
 
 			m_rightClickingMenu->move(event->globalPos());
@@ -447,16 +438,16 @@ void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsV
 
 void DistanceMeasureDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (event->key() == Qt::Key_Shift){
+	if (event->key() == Qt::Key_Shift) {
 		m_shiftPressed = true;
 	}
-	if (m_mouseEventMode == meDefining && event->key() == Qt::Key_Shift){
+	if (m_mouseEventMode == meDefining && event->key() == Qt::Key_Shift) {
 		QVector2D newv2 = updatePoint2ByShift(m_point1, m_point2);
 		iRICUndoStack::instance().push(new DistanceMeasureDefineCommand(m_point1, newv2, false, this));
-	} else if (m_mouseEventMode == meMoveVertex && event->key() == Qt::Key_Shift){
+	} else if (m_mouseEventMode == meMoveVertex && event->key() == Qt::Key_Shift) {
 		QVector2D movep;
 		QVector2D otherp;
-		if (m_dragPointTarget == 1){
+		if (m_dragPointTarget == 1) {
 			movep = m_point1;
 			otherp = m_point2;
 		} else {
@@ -469,7 +460,7 @@ void DistanceMeasureDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /
 }
 void DistanceMeasureDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (event->key() == Qt::Key_Shift){
+	if (event->key() == Qt::Key_Shift) {
 		m_shiftPressed = false;
 	}
 }
@@ -491,7 +482,7 @@ void DistanceMeasureDataItem::updateActorSettings()
 	m_labelPoints->SetPoint(0, mid.x(), mid.y(), 0);
 	vtkTextProperty* txtProp = m_labelMapper->GetLabelTextProperty();
 
-	switch (m_labelPosition){
+	switch (m_labelPosition) {
 	case DistanceMeasureCopyPropertyDialog::lpTopCenter:
 		txtProp->SetJustificationToCentered();
 		txtProp->SetVerticalJustificationToBottom();
@@ -515,12 +506,12 @@ void DistanceMeasureDataItem::updateActorSettings()
 	}
 
 	QString label;
-	if (m_labelMode == DistanceMeasureCopyPropertyDialog::lmAuto){
+	if (m_labelMode == DistanceMeasureCopyPropertyDialog::lmAuto) {
 		label = autoLabel();
 	} else {
 		label = m_customLabel;
 	}
-	switch (m_labelPosition){
+	switch (m_labelPosition) {
 	case DistanceMeasureCopyPropertyDialog::lpMiddleLeft:
 		label = label.append("   ");
 		break;
@@ -544,12 +535,12 @@ void DistanceMeasureDataItem::updateActorSettings()
 	actorCollection()->RemoveItem(m_lineActor);
 	actor2DCollection()->RemoveItem(m_labelActor);
 
-	if (m_defined){
-		if (m_showMarkers){
+	if (m_defined) {
+		if (m_showMarkers) {
 			actorCollection()->AddItem(m_pointsActor);
 		}
 		actorCollection()->AddItem(m_lineActor);
-		if (m_showLabel){
+		if (m_showLabel) {
 			actor2DCollection()->AddItem(m_labelActor);
 		}
 	}
@@ -592,8 +583,7 @@ class DistanceMeasureCopyEditPropertyCommand : public QUndoCommand
 {
 public:
 	DistanceMeasureCopyEditPropertyCommand(const QString& name, const QVector2D& v1, const QVector2D& v2, bool showLabel, DistanceMeasureCopyPropertyDialog::LabelPosition lp, DistanceMeasureCopyPropertyDialog::LabelMode lm, int fontSize, const QString& customLabel, bool showMarker, int markerSize, QColor color, DistanceMeasureDataItem* item)
-		: QUndoCommand(QObject::tr("Edit Distance Measure Property"))
-	{
+		: QUndoCommand(QObject::tr("Edit Distance Measure Property")) {
 
 		m_item = item;
 
@@ -621,8 +611,7 @@ public:
 		m_oldMarkerSize = m_item->m_markerSize;
 		m_oldColor = m_item->m_color;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->m_isCommandExecuting = true;
 		m_item->standardItem()->setText(m_oldName);
 		m_item->m_point1 = m_oldPoint1;
@@ -640,8 +629,7 @@ public:
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->m_isCommandExecuting = true;
 		m_item->standardItem()->setText(m_newName);
 		m_item->m_point1 = m_newPoint1;
@@ -690,11 +678,11 @@ private:
 
 void DistanceMeasureDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	DistanceMeasureCopyPropertyDialog* dialog = dynamic_cast<DistanceMeasureCopyPropertyDialog*> (propDialog);
+	DistanceMeasureCopyPropertyDialog* dialog = dynamic_cast<DistanceMeasureCopyPropertyDialog*>(propDialog);
 	iRICUndoStack::instance().push(new DistanceMeasureCopyEditPropertyCommand(dialog->name(), dialog->point1(), dialog->point2(),
-																																						dialog->showLabel(), dialog->labelPosition(),
-																																						dialog->labelMode(), dialog->fontSize(), dialog->customLabel(),
-																																						dialog->showMarkers(), dialog->markerSize(), dialog->color(), this));
+																 dialog->showLabel(), dialog->labelPosition(),
+																 dialog->labelMode(), dialog->fontSize(), dialog->customLabel(),
+																 dialog->showMarkers(), dialog->markerSize(), dialog->color(), this));
 }
 
 QString DistanceMeasureDataItem::autoLabel() const
@@ -709,10 +697,10 @@ void DistanceMeasureDataItem::showPropDialog()
 
 QVector2D DistanceMeasureDataItem::updatePoint2ByShift(const QVector2D& v1, const QVector2D& v2)
 {
-	if (! m_shiftPressed){return v2;}
+	if (! m_shiftPressed) {return v2;}
 	double xdist = qAbs(v2.x() - v1.x());
 	double ydist = qAbs(v2.y() - v1.y());
-	if (xdist >= ydist){
+	if (xdist >= ydist) {
 		return QVector2D(v2.x(), v1.y());
 	} else {
 		return QVector2D(v1.x(), v2.y());
@@ -741,7 +729,7 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	m_defined = iRIC::getBooleanAttribute(node, "defined");
 	m_isCommandExecuting = false;
 
-	if (m_defined){
+	if (m_defined) {
 		m_mouseEventMode = meNormal;
 	} else {
 		m_mouseEventMode = meBeforeDefining;
@@ -778,20 +766,17 @@ class DistanceMeasureRedefineCommand : public QUndoCommand
 {
 public:
 	DistanceMeasureRedefineCommand(DistanceMeasureDataItem* item)
-		: QUndoCommand(QObject::tr("Redefine Distance Measure"))
-	{
+		: QUndoCommand(QObject::tr("Redefine Distance Measure")) {
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->m_defined = true;
 		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->m_defined = false;
 		m_item->m_mouseEventMode = DistanceMeasureDataItem::meBeforeDefining;
 
@@ -809,7 +794,7 @@ void DistanceMeasureDataItem::redefine()
 	iRICUndoStack::instance().push(new DistanceMeasureRedefineCommand(this));
 }
 
-void DistanceMeasureDataItem::informSelection(VTKGraphicsView * v)
+void DistanceMeasureDataItem::informSelection(VTKGraphicsView* v)
 {
 	updateMouseCursor(v);
 }
@@ -824,9 +809,9 @@ void DistanceMeasureDataItem::updateMouseCursor()
 	updateMouseCursor(dataModel()->graphicsView());
 }
 
-void DistanceMeasureDataItem::updateMouseCursor(VTKGraphicsView *v)
+void DistanceMeasureDataItem::updateMouseCursor(VTKGraphicsView* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 		v->setCursor(Qt::ArrowCursor);
 		break;
@@ -852,14 +837,14 @@ void DistanceMeasureDataItem::updateMouseCursor(VTKGraphicsView *v)
 void DistanceMeasureDataItem::updateMouseEventMode(const QVector2D& v, VTKGraphicsView* view)
 {
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meMoveVertexPrepare:
 	case meTranslatePrepare:
-		if ((m_point1 - v).length() < view2->stdRadius(5)){
+		if ((m_point1 - v).length() < view2->stdRadius(5)) {
 			m_mouseEventMode = meMoveVertexPrepare;
 			m_dragPointTarget = 1;
-		} else if ((m_point2 - v).length() < view2->stdRadius(5)){
+		} else if ((m_point2 - v).length() < view2->stdRadius(5)) {
 			m_mouseEventMode = meMoveVertexPrepare;
 			m_dragPointTarget = 2;
 		} else {
@@ -869,7 +854,7 @@ void DistanceMeasureDataItem::updateMouseEventMode(const QVector2D& v, VTKGraphi
 			double width = view2->stdRadius(5);
 			vertical *= width;
 			QVector2D posv = m_point1 - vertical * 0.5;
-			if (iRIC::isInsideParallelogram(v, posv, horizontal, vertical)){
+			if (iRIC::isInsideParallelogram(v, posv, horizontal, vertical)) {
 				m_mouseEventMode = meTranslatePrepare;
 			} else {
 				m_mouseEventMode = meNormal;

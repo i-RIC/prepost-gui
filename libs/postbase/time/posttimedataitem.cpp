@@ -13,7 +13,7 @@
 #include <vtkTextProperty.h>
 #include <vtkActor2DCollection.h>
 
-PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem *parent)
+PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Time"), QIcon(":/libs/guibase/images/iconPaper.png"),parent)
 {
 	m_standardItem->setCheckable(true);
@@ -65,8 +65,7 @@ class PostCommonTimeEditCommand : public QUndoCommand
 {
 public:
 	PostCommonTimeEditCommand(const PostTimeSetting& setting, PostTimeDataItem* item)
-		: QUndoCommand(PostTimeDataItem::tr("Edit time setting"))
-	{
+		: QUndoCommand(PostTimeDataItem::tr("Edit time setting")) {
 		m_newEnabled = true;
 		m_newSetting = setting;
 
@@ -75,16 +74,14 @@ public:
 
 		m_dataItem = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_dataItem->setIsCommandExecuting(true);
 		m_dataItem->setEnabled(m_newEnabled);
 		m_dataItem->m_setting = m_newSetting;
 		m_dataItem->updateActorSettings();
 		m_dataItem->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_dataItem->setIsCommandExecuting(true);
 		m_dataItem->setEnabled(m_oldEnabled);
 		m_dataItem->m_setting = m_oldSetting;

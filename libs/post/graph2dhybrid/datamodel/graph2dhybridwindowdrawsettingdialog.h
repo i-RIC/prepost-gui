@@ -6,16 +6,17 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
-class Graph2dHybridWindowDrawSettingDialog;
+namespace Ui
+{
+	class Graph2dHybridWindowDrawSettingDialog;
 }
 
 class Graph2dHybridWindowDrawSettingDialog : public QDialog
 {
 	Q_OBJECT
-	
+
 public:
-	explicit Graph2dHybridWindowDrawSettingDialog(QWidget *parent = nullptr);
+	explicit Graph2dHybridWindowDrawSettingDialog(QWidget* parent = nullptr);
 	~Graph2dHybridWindowDrawSettingDialog();
 
 	void setResultSettings(const QList<Graph2dHybridWindowResultSetting::Setting>& list);
@@ -58,7 +59,7 @@ private:
 	QList<bool> m_copyDeleted;
 	QList<bool> m_importDataDeleted;
 
-	Ui::Graph2dHybridWindowDrawSettingDialog *ui;
+	Ui::Graph2dHybridWindowDrawSettingDialog* ui;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWDRAWSETTINGDIALOG_H

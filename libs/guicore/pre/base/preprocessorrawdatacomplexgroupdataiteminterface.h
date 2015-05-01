@@ -9,7 +9,8 @@ class RawDataBackgroundComplex;
 class SolverDefinitionGridRelatedCondition;
 class GridComplexConditionWidget;
 
-class PreProcessorRawDataComplexGroupDataItemInterface {
+class PreProcessorRawDataComplexGroupDataItemInterface
+{
 public:
 	virtual SolverDefinitionGridRelatedCondition* condition() = 0;
 	virtual ProjectData* projectData() = 0;

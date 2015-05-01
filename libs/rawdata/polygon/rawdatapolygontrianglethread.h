@@ -13,8 +13,8 @@ class RawDataPolygonTriangleThread : public QThread
 public:
 	explicit RawDataPolygonTriangleThread(RawDataPolygon* parent);
 	~RawDataPolygonTriangleThread();
-	bool isOutputting(){return m_isOutputting;}
-	void setNoDraw(bool nodraw){m_noDraw = nodraw;}
+	bool isOutputting() {return m_isOutputting;}
+	void setNoDraw(bool nodraw) {m_noDraw = nodraw;}
 	void update();
 	void cancel();
 protected:

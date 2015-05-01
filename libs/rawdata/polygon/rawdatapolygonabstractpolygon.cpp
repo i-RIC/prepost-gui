@@ -60,11 +60,11 @@ bool RawDataPolygonAbstractPolygon::isEdgeSelectable(const QVector2D& pos, doubl
 	double pcoords[3];
 	double weights[32];
 	double d = limitdist * limitdist;
-	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i) {
 		vtkCell* cell = m_edgeGrid->GetCell(i);
 		double dist;
-		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-			if (dist < d){
+		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)) {
+			if (dist < d) {
 				// this is the selected edge.
 				m_selectedEdgeId = i;
 				return true;
@@ -86,14 +86,14 @@ const QPolygonF RawDataPolygonAbstractPolygon::polygon(QPointF offset) const
 	QPolygonF ret;
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	vtkPoints* points = m_vtkPolygon->GetPoints();
-	if (points->GetNumberOfPoints() == 0){return ret;}
+	if (points->GetNumberOfPoints() == 0) {return ret;}
 	int vCount = idlist->GetNumberOfIds();
 	QPointF lastP, newP;
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-		if (i == 0 || lastP != newP){
+		if (i == 0 || lastP != newP) {
 			ret << newP;
 		}
 		lastP = newP;
@@ -103,7 +103,7 @@ const QPolygonF RawDataPolygonAbstractPolygon::polygon(QPointF offset) const
 	vtkIdType id = idlist->GetId(0);
 	double* p = points->GetPoint(id);
 	newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-	if (lastP != newP){
+	if (lastP != newP) {
 		ret << newP;
 	}
 	return ret;
@@ -112,17 +112,17 @@ const QPolygonF RawDataPolygonAbstractPolygon::polygon(QPointF offset) const
 void RawDataPolygonAbstractPolygon::setPolygon(const QPolygonF& p)
 {
 	QMutexLocker locker(&m_mutex);
-	if (p.size() == 0){
+	if (p.size() == 0) {
 		m_vtkPolygon->Initialize();
 		return;
 	}
-	if (! p.isClosed()){
+	if (! p.isClosed()) {
 		throw ErrorMessage(tr("Please specify a closed polygon!"));
 	}
 	m_vtkPolygon->Initialize();
 	vtkPoints* points = m_vtkPolygon->GetPoints();
 	points->SetNumberOfPoints(p.count() - 1);
-	for (int i = 0; i < p.count() - 1; ++i){
+	for (int i = 0; i < p.count() - 1; ++i) {
 		QPointF point = p.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -190,21 +190,21 @@ void RawDataPolygonAbstractPolygon::updateShapeData()
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	idlist->Reset();
 	idlist->SetNumberOfIds(points->GetNumberOfPoints());
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
 		idlist->SetId(i, i);
 	}
 	idlist->Modified();
 
 	// set the polygon into grid.
 	m_vtkGrid->Reset();
-	if (m_vtkPolygon->GetPoints()->GetNumberOfPoints() > 0){
+	if (m_vtkPolygon->GetPoints()->GetNumberOfPoints() > 0) {
 		// triangulate the polygon, and add the triangle cells into the grid.
 		vtkSmartPointer<vtkIdList> triIds = vtkSmartPointer<vtkIdList>::New();
 		m_vtkPolygon->Triangulate(triIds);
 		vtkIdType triFirst = 0;
-		while (triFirst < triIds->GetNumberOfIds()){
+		while (triFirst < triIds->GetNumberOfIds()) {
 			vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-			for (int i = 0; i < 3; ++i){
+			for (int i = 0; i < 3; ++i) {
 				tri->GetPointIds()->SetId(i, triIds->GetId(triFirst + i));
 			}
 			m_vtkGrid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
@@ -218,7 +218,7 @@ void RawDataPolygonAbstractPolygon::updateShapeData()
 	int edgeCount = m_vtkPolygon->GetNumberOfEdges();
 	m_edgeGrid->SetPoints(m_vtkPolygon->GetPoints());
 	m_edgeGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkCell* nextCell = m_vtkPolygon->GetEdge(i);
 		m_edgeGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
 	}
@@ -230,7 +230,7 @@ void RawDataPolygonAbstractPolygon::updateShapeData()
 	vtkIdType vertexId = 0;
 	int vertexCount = m_vtkPolygon->GetNumberOfPoints();
 	m_vertexGrid->Allocate(vertexCount);
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		vtkVertex* nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_vertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
@@ -262,7 +262,7 @@ void RawDataPolygonAbstractPolygon::setZDepthRange(double /*min*/, double max)
 void RawDataPolygonAbstractPolygon::setActive(bool active)
 {
 	m_parent->actorCollection()->RemoveItem(m_vertexActor);
-	if (active){
+	if (active) {
 		m_parent->actorCollection()->AddItem(m_vertexActor);
 		m_edgeActor->GetProperty()->SetLineWidth(RawDataPolygon::selectedEdgeWidth);
 	} else {
@@ -275,7 +275,7 @@ void RawDataPolygonAbstractPolygon::setActive(bool active)
 void RawDataPolygonAbstractPolygon::setSelected(bool selected)
 {
 	m_parent->actorCollection()->RemoveItem(m_paintActor);
-	if (selected){
+	if (selected) {
 		m_parent->actorCollection()->AddItem(m_paintActor);
 	} else {
 		m_paintActor->VisibilityOff();
@@ -293,7 +293,7 @@ QPointF RawDataPolygonAbstractPolygon::innerPoint(QPointF offset) const
 	int baseId = 0;
 	int pnum = m_vtkPolygon->GetNumberOfPoints();
 
-	for (int i = 0; i < pnum && ! found; ++i){
+	for (int i = 0; i < pnum && ! found; ++i) {
 		m_vtkPolygon->GetPoints()->GetPoint(baseId, v);
 		basePoint = QVector2D(v[0] - offset.x(), v[1] - offset.y());
 		m_vtkPolygon->GetPoints()->GetPoint((baseId + 1) % pnum, v);
@@ -306,12 +306,12 @@ QPointF RawDataPolygonAbstractPolygon::innerPoint(QPointF offset) const
 
 		nom = basePoint + v1 + v2;
 		nomP = QPointF(nom.x(), nom.y());
-		if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+		if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 			return nomP;
-		}else{
+		} else {
 			nom = basePoint - v1 - v2;
 			nomP = QPointF(nom.x(), nom.y());
-			if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+			if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 				return nomP;
 			}
 		}
@@ -330,7 +330,7 @@ bool RawDataPolygonAbstractPolygon::isClockwise() const
 	int pnum = m_vtkPolygon->GetNumberOfPoints() - 1;
 
 	bool nomOK = false;
-	for (int i = 0; i < pnum && ! found; ++i){
+	for (int i = 0; i < pnum && ! found; ++i) {
 		m_vtkPolygon->GetPoints()->GetPoint(baseId, v);
 		basePoint = QVector2D(v[0], v[1]);
 		m_vtkPolygon->GetPoints()->GetPoint((baseId + 1) % pnum, v);
@@ -343,16 +343,16 @@ bool RawDataPolygonAbstractPolygon::isClockwise() const
 
 		nom = basePoint + v1 + v2;
 		nomP = QPointF(nom.x(), nom.y());
-		if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+		if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 			nomOK = true;
-		} else{
+		} else {
 			nom = basePoint - v1 - v2;
 			nomP = QPointF(nom.x(), nom.y());
-			if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+			if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 				nomOK = true;
 			}
 		}
-		if (nomOK){
+		if (nomOK) {
 			// innerPoint found.
 			QVector2D v0 = basePoint - p2;
 			QVector2D v1 = QVector2D(nomP.x() - p2.x(), nomP.y() - p2.y());

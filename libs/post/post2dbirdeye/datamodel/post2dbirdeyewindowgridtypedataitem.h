@@ -19,11 +19,11 @@ public:
 	virtual ~Post2dBirdEyeWindowGridTypeDataItem();
 	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
 	const QString& name();
-	Post2dBirdEyeWindowZoneDataItem* zoneData(const QString& name){
+	Post2dBirdEyeWindowZoneDataItem* zoneData(const QString& name) {
 		return m_zoneDataNameMap.value(name);
 	}
-	SolverDefinitionGridType* gridType(){return m_gridType;}
-	LookupTableContainer* lookupTable(const QString& attName){return m_lookupTables.value(attName, 0);}
+	SolverDefinitionGridType* gridType() {return m_gridType;}
+	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
 protected:

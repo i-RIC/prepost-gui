@@ -2,7 +2,7 @@
 #include "ui_rawdatabackgroundeditdialog.h"
 #include "../gridcond/base/gridrelatedconditioneditwidget.h"
 
-RawDataBackgroundEditDialog::RawDataBackgroundEditDialog(QWidget *parent) :
+RawDataBackgroundEditDialog::RawDataBackgroundEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataBackgroundEditDialog)
 {
@@ -25,24 +25,24 @@ void RawDataBackgroundEditDialog::setWidget(GridRelatedConditionEditWidget* w)
 
 void RawDataBackgroundEditDialog::setupDialog()
 {
-	if (m_type == RawDataBackground::Custom){
+	if (m_type == RawDataBackground::Custom) {
 		ui->customRadioButton->click();
 		ui->customWidget->widget()->setVariantValue(m_customValue);
-	}else if (m_type == RawDataBackground::Maximum){
+	} else if (m_type == RawDataBackground::Maximum) {
 		ui->maxRadioButton->click();
-	}else {
+	} else {
 		ui->minRadioButton->click();
 	}
 }
 
 void RawDataBackgroundEditDialog::accept()
 {
-	if (ui->customRadioButton->isChecked()){
+	if (ui->customRadioButton->isChecked()) {
 		m_type = RawDataBackground::Custom;
 		m_customValue = ui->customWidget->widget()->variantValue();
-	}else if (ui->maxRadioButton->isChecked()){
+	} else if (ui->maxRadioButton->isChecked()) {
 		m_type = RawDataBackground::Maximum;
-	}else{
+	} else {
 		m_type = RawDataBackground::Minimum;
 	}
 	QDialog::accept();
@@ -50,9 +50,9 @@ void RawDataBackgroundEditDialog::accept()
 
 void RawDataBackgroundEditDialog::updateCustomWidgetStatus()
 {
-	if (ui->customRadioButton->isChecked()){
+	if (ui->customRadioButton->isChecked()) {
 		ui->customWidget->setEnabled(true);
-	}else{
+	} else {
 		ui->customWidget->setDisabled(true);
 	}
 }

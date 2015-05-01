@@ -22,7 +22,7 @@
 #include <QDir>
 #include <QMessageBox>
 
-MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem *parent)
+MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
 	m_subFolder = "file";
@@ -52,9 +52,9 @@ MeasuredDataFileDataItem::~MeasuredDataFileDataItem()
 void MeasuredDataFileDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode pdNode = iRIC::getChildNode(node, "PointData");
-	if (! pdNode.isNull()){m_pointGroupDataItem->loadFromProjectMainFile(pdNode);}
+	if (! pdNode.isNull()) {m_pointGroupDataItem->loadFromProjectMainFile(pdNode);}
 	QDomNode vdNode = iRIC::getChildNode(node, "VectorData");
-	if (! vdNode.isNull()){m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
+	if (! vdNode.isNull()) {m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
 }
 
 void MeasuredDataFileDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -75,12 +75,12 @@ void MeasuredDataFileDataItem::exportToFile()
 	QString dir = LastIODirectory::get();
 	QString filter(tr("CSV file (*.csv)"));
 	QString fname = QFileDialog::getSaveFileName(iricMainWindow(), tr("Export Measured Data"), dir, filter);
-	if (fname == "") return;
+	if (fname == "") { return; }
 
 	try {
 		m_measuredData->exportToFile(fname);
 		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
-	} catch (ErrorMessage& message){
+	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}
 }

@@ -5,16 +5,17 @@
 
 #include <QWidget>
 
-namespace Ui {
-class Graph2dScatteredWindowSettingWidget;
+namespace Ui
+{
+	class Graph2dScatteredWindowSettingWidget;
 }
 
 class Graph2dScatteredWindowSettingWidget : public QWidget
 {
 	Q_OBJECT
-	
+
 public:
-	explicit Graph2dScatteredWindowSettingWidget(QWidget *parent = nullptr);
+	explicit Graph2dScatteredWindowSettingWidget(QWidget* parent = nullptr);
 	~Graph2dScatteredWindowSettingWidget();
 	void setSetting(Graph2dScatteredWindowResultSetting::Setting* setting);
 	void clear();
@@ -32,7 +33,7 @@ private slots:
 
 private:
 	Graph2dScatteredWindowResultSetting::Setting* m_setting;
-	Ui::Graph2dScatteredWindowSettingWidget *ui;
+	Ui::Graph2dScatteredWindowSettingWidget* ui;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWSETTINGWIDGET_H

@@ -5,7 +5,8 @@
 #include <QDialog>
 #include "postsolutioninfo.h"
 
-namespace Ui {
+namespace Ui
+{
 	class PostBaseSelectingDialog;
 }
 
@@ -18,7 +19,7 @@ public:
 		Dimension2 = 2,
 		Dimension3 = 4
 	};
-	explicit PostBaseSelectingDialog(QWidget *parent = nullptr);
+	explicit PostBaseSelectingDialog(QWidget* parent = nullptr);
 	~PostBaseSelectingDialog();
 	void setAvailableDimensions(int dimensions);
 	BaseDimension selectedDimension();
@@ -26,7 +27,7 @@ public:
 	static PostSolutionInfo::Dimension getPostDimension(BaseDimension dim);
 
 private:
-	Ui::PostBaseSelectingDialog *ui;
+	Ui::PostBaseSelectingDialog* ui;
 };
 
 #endif // POSTBASESELECTINGDIALOG_H

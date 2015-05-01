@@ -41,10 +41,10 @@ public:
 	void handleStandardItemDoubleClicked();
 	QColor color();
 	QColor indexColor();
-	GridShapeEditDialog::Shape shape(){return m_shape;}
+	GridShapeEditDialog::Shape shape() {return m_shape;}
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(2);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

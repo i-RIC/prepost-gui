@@ -14,11 +14,11 @@ class Post3dObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 public:
 	/// Constructor
-	Post3dObjectBrowser(QWidget* parent) : ObjectBrowser(parent){init();}
+	Post3dObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
 	/// Destructor
-	~Post3dObjectBrowser(){}
+	~Post3dObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Post3dObjectBrowserView* view(){return m_view;}
+	Post3dObjectBrowserView* view() {return m_view;}
 public slots:
 	void expandAll();
 private:

@@ -34,8 +34,7 @@ public:
 	};
 	/// Constructor
 	SolverDefinition(const QString& solverfolder, const QLocale& locale)
-		: m_abstract(solverfolder, locale, 0)
-	{
+		: m_abstract(solverfolder, locale, 0) {
 		load(locale);
 	}
 	/// Destructor
@@ -61,7 +60,7 @@ public:
 	/// The folder that contains files related to solver.
 	const QDir& folder() const {return m_abstract.folder();}
 	const QList<SolverDefinitionGridType*> gridTypes() const {return m_gridTypes;}
-    SolverDefinitionGridType* dummyGridType() const {return m_dummyGridType;}
+	SolverDefinitionGridType* dummyGridType() const {return m_dummyGridType;}
 	SolverDefinitionGridType* gridType(const QString& name) const {return m_gridTypeNameMap.value(name);}
 	const QDomDocument& document() const {return m_document;}
 
@@ -79,7 +78,7 @@ protected:
 	IterationType m_iterationType;
 	QString m_executableFilename;
 	QList<SolverDefinitionGridType*> m_gridTypes;
-    SolverDefinitionGridType* m_dummyGridType;
+	SolverDefinitionGridType* m_dummyGridType;
 	QMap<QString, SolverDefinitionGridType*> m_gridTypeNameMap;
 	QDomDocument m_document;
 };

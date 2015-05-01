@@ -43,29 +43,29 @@ private:
 	static const int MAX_RECENT_SOLVERS;
 public:
 	/// Constructor
-	iRICMainWindow(QWidget *parent = nullptr);
+	iRICMainWindow(QWidget* parent = nullptr);
 	/// Destructor
 	~iRICMainWindow();
 	/// THe PreProcessorWindow
-	PreProcessorWindowInterface* preProcessorWindow(){
+	PreProcessorWindowInterface* preProcessorWindow() {
 		return m_preProcessorWindow;
 	}
 	/// The SolverConsoleWindow
-	SolverConsoleWindow* solverConsoleWindow(){
+	SolverConsoleWindow* solverConsoleWindow() {
 		return m_solverConsoleWindow;
 	}
-	const QLocale locale(){return m_locale;}
+	const QLocale locale() {return m_locale;}
 	bool isSolverRunning();
 	void warnSolverRunning();
 	void switchCgnsFile(const QString& newcgns);
-	ProjectWorkspace* workspace(){return m_workspace;}
+	ProjectWorkspace* workspace() {return m_workspace;}
 	const VersionNumber versionNumber() const {return m_versionNumber;}
 	void setDebugMode(bool debug);
-	bool isDebugMode(){return m_debugMode;}
-	bool continuousSnapshotInProgress(){return m_continuousSnapshotInProgress;}
-	void setContinuousSnapshotInProgress(bool prog){m_continuousSnapshotInProgress = prog;}
+	bool isDebugMode() {return m_debugMode;}
+	bool continuousSnapshotInProgress() {return m_continuousSnapshotInProgress;}
+	void setContinuousSnapshotInProgress(bool prog) {m_continuousSnapshotInProgress = prog;}
 	const QString tmpFileName(int len = 0) const;
-	AnimationControllerInterface* animationController(){return m_animationController;}
+	AnimationControllerInterface* animationController() {return m_animationController;}
 	CoordinateSystemBuilder* coordinateSystemBuilder() const {return m_coordinateSystemBuilder;}
 	void initForSolverDefinition();
 	void loadSubWindowsFromProjectMainFile(const QDomNode& node);
@@ -77,7 +77,7 @@ public:
 	void toggleGridEditFlag();
 	void clearResults();
 	bool clearResultsIfGridIsEdited();
-	void setProjectData(ProjectData *projectData);
+	void setProjectData(ProjectData* projectData);
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
 	void importCalculationResult(const QString& filename);
@@ -100,7 +100,8 @@ private:
 	SolverConsoleWindow* m_solverConsoleWindow;
 
 protected:
-	void closeEvent(QCloseEvent *);
+	void closeEvent(QCloseEvent*);
+
 public slots:
 	/// open start dialog.
 	void openStartDialog();
@@ -112,7 +113,7 @@ public slots:
 	 * This method is defined to make it possible to recieve signal
 	 * QSignalMap::map(QObject*) .
 	 */
-	void newProject(QObject* solver){
+	void newProject(QObject* solver) {
 		newProject(reinterpret_cast<SolverDefinitionAbstract*>(solver));
 	}
 	/// Create new project for the specified solver.
@@ -174,6 +175,7 @@ public slots:
 
 signals:
 	void allPostProcessorsUpdated();
+
 private slots:
 	void showProjectPropertyDialog();
 	/// Cut.

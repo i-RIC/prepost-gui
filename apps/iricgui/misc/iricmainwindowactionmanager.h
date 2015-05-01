@@ -26,9 +26,9 @@ public:
 	/// Constructor
 	iRICMainWindowActionManager(iRICMainWindow* parent);
 	/// Return the menubar it manages.
-	QMenuBar* menuBar(){return m_menuBar;}
+	QMenuBar* menuBar() {return m_menuBar;}
 	/// Return the main toolbar.
-	QToolBar* mainToolBar(){return m_mainToolBar;}
+	QToolBar* mainToolBar() {return m_mainToolBar;}
 	/// Set new project data, and create appropriate connections.
 	void setProjectData(ProjectData* d);
 	/// Set the pointer of animation menu.
@@ -40,18 +40,18 @@ public:
 	 * shown / hidden in this function.
 	 */
 	void updateMenuBar();
-	void setAdditionalMenus(const QList<QMenu*>& menus){
+	void setAdditionalMenus(const QList<QMenu*>& menus) {
 		m_additionalMenus = menus;
 	}
-	QToolBar* additionalToolBar(){return m_additionalToolBar;}
-	QToolBar* animationToolbar(){return m_animationToolbar;}
-	void unregisterAdditionalToolBar(){
+	QToolBar* additionalToolBar() {return m_additionalToolBar;}
+	QToolBar* animationToolbar() {return m_animationToolbar;}
+	void unregisterAdditionalToolBar() {
 		m_additionalToolBar = nullptr;
 	}
-	QMenu* recentProjectsMenu(){return m_recentProjectsMenu;}
+	QMenu* recentProjectsMenu() {return m_recentProjectsMenu;}
 	void informSubWindowChange(QWidget* subwindow);
 	/// Signal mapper to map signals to create new project.
-	QSignalMapper* newProjectSignals(){return m_newProjectSignals;}
+	QSignalMapper* newProjectSignals() {return m_newProjectSignals;}
 	/// Action to create new project data
 	QAction* newAction;
 	/// Action to open project data
@@ -232,9 +232,9 @@ public slots:
 	/// when a project file is opened.
 	void projectFileClose();
 	/// Focus is moved to preProcessorWindow
-	void focusPreProcessorWindow(){}
+	void focusPreProcessorWindow() {}
 	/// Leave focus from PreProcessorWindow
-	void leavePreProcessorWindow(){}
+	void leavePreProcessorWindow() {}
 	/// List of solvers that appears in "File" menu is updated.
 	void updateSolverList(SolverDefinitionList*);
 	void updateAdditionalMenus(const QList<QMenu*>& menus);

@@ -31,31 +31,35 @@ CgnsFileInputConditionWidgetFunctionalDialog::CgnsFileInputConditionWidgetFuncti
 	setupConnections();
 }
 
-CgnsFileInputConditionWidgetFunctionalDialog::~CgnsFileInputConditionWidgetFunctionalDialog(){
+CgnsFileInputConditionWidgetFunctionalDialog::~CgnsFileInputConditionWidgetFunctionalDialog()
+{
 	clearGraphData();
 	delete tableViewDelegate;
 }
 
 void CgnsFileInputConditionWidgetFunctionalDialog::clearGraphData()
 {
-	for (int i = 0; i < m_graphCurves.count(); ++i){
+	for (int i = 0; i < m_graphCurves.count(); ++i) {
 		delete m_graphCurves[i];
 	}
 	m_graphCurves.clear();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::setInt(const QVariant& v, QVariant& target){
+void CgnsFileInputConditionWidgetFunctionalDialog::setInt(const QVariant& v, QVariant& target)
+{
 	target = v.toInt();
 }
-void CgnsFileInputConditionWidgetFunctionalDialog::setDouble(const QVariant& v, QVariant& target){
+void CgnsFileInputConditionWidgetFunctionalDialog::setDouble(const QVariant& v, QVariant& target)
+{
 	target = v.toDouble();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::setupConnections(){
+void CgnsFileInputConditionWidgetFunctionalDialog::setupConnections()
+{
 	connect(ui.clearButton, SIGNAL(clicked()), this, SLOT(clear()));
 	connect(
-		m_selectionModel, SIGNAL(selectionChanged(const QItemSelection &, const QItemSelection &)),
-		this, SLOT(selectionChange(const QItemSelection &, const QItemSelection &)));
+		m_selectionModel, SIGNAL(selectionChanged(const QItemSelection&, const QItemSelection&)),
+		this, SLOT(selectionChange(const QItemSelection&, const QItemSelection&)));
 	connect(ui.importButton, SIGNAL(clicked()), this, SLOT(import()));
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(add()));
 	connect(ui.removeButton, SIGNAL(clicked()), this, SLOT(removeSelected()));
@@ -65,96 +69,97 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setupConnections(){
 
 	connect(m_model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(updateGraph()));
 }
-void CgnsFileInputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t){
+void CgnsFileInputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
+{
 	int valueCount = 0;
 	QDomNode valueNode = node.firstChild();
-	while (! valueNode.isNull()){
-		if (valueNode.nodeName() == "Value"){++ valueCount;}
+	while (! valueNode.isNull()) {
+		if (valueNode.nodeName() == "Value") {++ valueCount;}
 		valueNode = valueNode.nextSibling();
 	}
 	m_model = new QStandardItemModel(0, 1 + valueCount, this);
 	QDomNode paramNode = iRIC::getChildNode(node, "Parameter");
-	if (paramNode.isNull()){
+	if (paramNode.isNull()) {
 		// this item doesn't contain "Parameter" Node!.
-		throw (ErrorMessage("Parameter node is not stored!"));
+		throw(ErrorMessage("Parameter node is not stored!"));
 	}
 	QDomElement paramElem = paramNode.toElement();
 	QString paramCaption = t.translate(paramElem.attribute("caption"));
 	QStringList leftValueCaptions, rightValueCaptions;
 	m_model->setHeaderData(0, Qt::Horizontal, paramCaption);
 	QString paramType = paramElem.attribute("valueType");
-	if (paramType == "real"){
+	if (paramType == "real") {
 		m_paramfunc = CgnsFileInputConditionWidgetFunctionalDialog::setDouble;
 	} else {
 		m_paramfunc = CgnsFileInputConditionWidgetFunctionalDialog::setInt;
 	}
 	bool isAxisLog = false;
-	if (paramElem.hasAttribute("axislog")){
+	if (paramElem.hasAttribute("axislog")) {
 		isAxisLog = (paramElem.attribute("axislog") == "true");
 	}
-	if (isAxisLog){
+	if (isAxisLog) {
 		ui.graphView->setAxisScaleEngine(QwtPlot::xBottom, new QwtLogScaleEngine());
 	}
 
 	valueNode = node.firstChild();
 	int valueIndex = 0;
-	while (! valueNode.isNull()){
-		if (valueNode.nodeName() == "Value"){
+	while (! valueNode.isNull()) {
+		if (valueNode.nodeName() == "Value") {
 			QDomElement valueElem = valueNode.toElement();
 			QString valueCaption = t.translate(valueElem.attribute("caption"));
 			m_valueCaptions.append(valueCaption);
 			m_model->setHeaderData(1 + valueIndex, Qt::Horizontal, valueCaption);
 			QString valueType = valueElem.attribute("valueType");
-			if (valueType == "real"){
+			if (valueType == "real") {
 				m_valuefuncs.append(CgnsFileInputConditionWidgetFunctionalDialog::setDouble);
 			} else {
 				m_valuefuncs.append(CgnsFileInputConditionWidgetFunctionalDialog::setInt);
 			}
 			AxisSetting axisSetting;
-			if (valueElem.hasAttribute("axis")){
+			if (valueElem.hasAttribute("axis")) {
 				QString axis = valueElem.attribute("axis");
-				if (axis == "left"){axisSetting = asLeft;}
-				else if (axis == "right"){axisSetting = asRight;}
-			} else if (valueElem.attribute("hide") == "true"){
+				if (axis == "left") {axisSetting = asLeft;}
+				else if (axis == "right") {axisSetting = asRight;}
+			} else if (valueElem.attribute("hide") == "true") {
 				axisSetting = asNone;
 			} else {
-				if (valueIndex == 0){
+				if (valueIndex == 0) {
 					axisSetting = asLeft;
 				} else {
 					axisSetting = asRight;
 				}
 			}
 			m_axisSettings.append(axisSetting);
-			if (axisSetting == asLeft){
+			if (axisSetting == asLeft) {
 				leftValueCaptions.append(valueCaption);
-			} else if (axisSetting == asRight){
+			} else if (axisSetting == asRight) {
 				rightValueCaptions.append(valueCaption);
 			}
 			bool isStep = false;
-			if (valueElem.hasAttribute("step")){
+			if (valueElem.hasAttribute("step")) {
 				isStep = (valueElem.attribute("step") == "true");
 			}
 			bool isAxisLog = false;
-			if (valueElem.hasAttribute("axislog")){
+			if (valueElem.hasAttribute("axislog")) {
 				isAxisLog = (valueElem.attribute("axislog") == "true");
 			}
-			if (isAxisLog){
-				if (axisSetting == asLeft){
+			if (isAxisLog) {
+				if (axisSetting == asLeft) {
 					ui.graphView->setAxisScaleEngine(QwtPlot::yLeft, new QwtLogScaleEngine());
-				} else if (axisSetting == asRight){
+				} else if (axisSetting == asRight) {
 					ui.graphView->setAxisScaleEngine(QwtPlot::yRight, new QwtLogScaleEngine());
 				}
 			}
 			m_valueIsSteps.append(isStep);
 			bool isAxisReverse = false;
-			if (valueElem.hasAttribute("axisreverse")){
+			if (valueElem.hasAttribute("axisreverse")) {
 				isAxisReverse = (valueElem.attribute("axisreverse") == "true");
 			}
 			m_axisReverses.append(isAxisReverse);
-			if (isAxisReverse){
-				if (axisSetting == asLeft){
+			if (isAxisReverse) {
+				if (axisSetting == asLeft) {
 					ui.graphView->axisScaleEngine(QwtPlot::yLeft)->setAttribute(QwtScaleEngine::Inverted, true);
-				} else if (axisSetting == asRight){
+				} else if (axisSetting == asRight) {
 					ui.graphView->axisScaleEngine(QwtPlot::yRight)->setAttribute(QwtScaleEngine::Inverted, true);
 				}
 			}
@@ -166,14 +171,14 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setupModel(QDomNode node, con
 	m_selectionModel = new QItemSelectionModel(m_model);
 
 	// if data is changed, sort() is always called.
-	connect(m_model, SIGNAL(dataChanged(const QModelIndex &, const QModelIndex &)), this, SLOT(sort()));
+	connect(m_model, SIGNAL(dataChanged(const QModelIndex&, const QModelIndex&)), this, SLOT(sort()));
 
 	ui.graphView->setAxisTitle(QwtPlot::xBottom, paramCaption);
-	if (leftValueCaptions.count() > 0){
+	if (leftValueCaptions.count() > 0) {
 		ui.graphView->setAxisTitle(QwtPlot::yLeft, leftValueCaptions.join(", "));
 		ui.graphView->enableAxis(QwtPlot::yLeft, true);
 	}
-	if (rightValueCaptions.count() > 0){
+	if (rightValueCaptions.count() > 0) {
 		ui.graphView->setAxisTitle(QwtPlot::yRight, rightValueCaptions.join(", "));
 		ui.graphView->enableAxis(QwtPlot::yRight, true);
 	}
@@ -184,10 +189,11 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setupModel(QDomNode node, con
 	ui.graphView->setAxisFont(QwtPlot::yRight, axisFont);
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::setupData(){
+void CgnsFileInputConditionWidgetFunctionalDialog::setupData()
+{
 	clear();
 	m_model->blockSignals(true);
-	for (int i = 0; i < m_container.param().size(); ++i){
+	for (int i = 0; i < m_container.param().size(); ++i) {
 		QVariant doubletmpx;
 		QVariant tmpx;
 		m_model->insertRow(i);
@@ -195,9 +201,9 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setupData(){
 		(*m_paramfunc)(doubletmpx, tmpx);
 		m_model->setData(m_model->index(i, 0, QModelIndex()), tmpx);
 	}
-	for (int j = 0; j < m_valuefuncs.size(); ++j){
+	for (int j = 0; j < m_valuefuncs.size(); ++j) {
 		QVector<double>& values = m_container.value(j);
-		for (int i = 0; i < values.size(); ++i){
+		for (int i = 0; i < values.size(); ++i) {
 			QVariant doubletmpy;
 			QVariant tmpy;
 			doubletmpy = values.at(i);
@@ -208,50 +214,55 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setupData(){
 	m_model->blockSignals(false);
 	sort();
 	int rows = m_model->rowCount(QModelIndex());
-	for (int i = 0; i < rows; ++i){
+	for (int i = 0; i < rows; ++i) {
 		ui.tableView->setRowHeight(i, CgnsFileInputConditionWidgetFunctionalDialog::defaultRowHeight);
 	}
 	ui.removeButton->setDisabled(true);
 	updateGraph();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::setupViews(){
+void CgnsFileInputConditionWidgetFunctionalDialog::setupViews()
+{
 	ui.tableView->setModel(m_model);
 	ui.tableView->setSelectionModel(m_selectionModel);
 	tableViewDelegate = new CgnsFileInputConditionWidgetFunctionalDelegate(this);
 	ui.tableView->setItemDelegate(tableViewDelegate);
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::saveModel(){
+void CgnsFileInputConditionWidgetFunctionalDialog::saveModel()
+{
 	sort();
 	int rows = m_model->rowCount(QModelIndex());
 	m_container.clear();
-	for (int i = 0; i < rows; ++i){
+	for (int i = 0; i < rows; ++i) {
 		m_container.param().push_back(m_model->data(m_model->index(i, 0, QModelIndex())).toDouble());
-		for (int j = 0; j < m_valuefuncs.count(); ++j){
+		for (int j = 0; j < m_valuefuncs.count(); ++j) {
 			m_container.value(j).push_back(m_model->data(m_model->index(i, 1 + j, QModelIndex())).toDouble());
 		}
 	}
 }
-void CgnsFileInputConditionWidgetFunctionalDialog::clear(){
+void CgnsFileInputConditionWidgetFunctionalDialog::clear()
+{
 	int rows = m_model->rowCount(QModelIndex());
 	m_model->removeRows(0, rows, QModelIndex());
 	updateGraph();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::selectionChange(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/){
+void CgnsFileInputConditionWidgetFunctionalDialog::selectionChange(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/)
+{
 	QItemSelection selection = m_selectionModel->selection();
 	bool deletable = false;
-	for (auto it = selection.begin(); it != selection.end(); ++it){
+	for (auto it = selection.begin(); it != selection.end(); ++it) {
 		deletable = deletable || (it->left() == 0 && it->right() == m_model->columnCount() - 1);
 	}
 	ui.removeButton->setDisabled(! deletable);
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::removeSelected(){
+void CgnsFileInputConditionWidgetFunctionalDialog::removeSelected()
+{
 	QItemSelection selection = m_selectionModel->selection();
-	for (auto it = selection.begin(); it != selection.end(); ++it){
-		if (it->left() == 0 && it->right() == m_model->columnCount() - 1){
+	for (auto it = selection.begin(); it != selection.end(); ++it) {
+		if (it->left() == 0 && it->right() == m_model->columnCount() - 1) {
 			// delete this.
 			m_model->removeRows(it->top(), (it->bottom() - it->top() + 1));
 		}
@@ -259,18 +270,19 @@ void CgnsFileInputConditionWidgetFunctionalDialog::removeSelected(){
 	updateGraph();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::import(){
+void CgnsFileInputConditionWidgetFunctionalDialog::import()
+{
 	QString fileName;
 	QString dir = LastIODirectory::get();
 	fileName = QFileDialog::getOpenFileName(this, tr("Choose a text file"), dir, tr("Text files (*.csv *.txt);;All files (*.*)"));
-	if (fileName.isEmpty()){
+	if (fileName.isEmpty()) {
 		return;
 	}
 	dir = QFileInfo(fileName).absolutePath();
 	LastIODirectory::set(dir);
 
 	QFile file(fileName);
-	if (! file.open(QFile::ReadOnly | QFile::Text)){
+	if (! file.open(QFile::ReadOnly | QFile::Text)) {
 		QMessageBox::critical(this, tr("Error"), tr("Error occured while opening the file."));
 		return;
 	}
@@ -282,7 +294,7 @@ void CgnsFileInputConditionWidgetFunctionalDialog::import(){
 	m_model->blockSignals(true);
 	do {
 		line = stream.readLine();
-		if (! line.isEmpty()){
+		if (! line.isEmpty()) {
 			QVariant tmp;
 			QVariant tmp2;
 			m_model->insertRow(row);
@@ -290,7 +302,7 @@ void CgnsFileInputConditionWidgetFunctionalDialog::import(){
 			tmp = pieces.value(0);
 			(*m_paramfunc)(tmp, tmp2);
 			m_model->setData(m_model->index(row, 0), tmp2);
-			for (int i = 0; i < m_valuefuncs.count(); ++i){
+			for (int i = 0; i < m_valuefuncs.count(); ++i) {
 				tmp = pieces.value(i + 1);
 				(*m_valuefuncs[i])(tmp, tmp2);
 				m_model->setData(m_model->index(row, i + 1), tmp2);
@@ -303,19 +315,20 @@ void CgnsFileInputConditionWidgetFunctionalDialog::import(){
 	m_preventGraph = false;
 
 	int rows = m_model->rowCount();
-	for (int i = 0; i < rows; ++i){
+	for (int i = 0; i < rows; ++i) {
 		ui.tableView->setRowHeight(i, CgnsFileInputConditionWidgetFunctionalDialog::defaultRowHeight);
 	}
 	sort();
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::add(){
+void CgnsFileInputConditionWidgetFunctionalDialog::add()
+{
 	int lastrow = m_model->rowCount();
 	m_model->insertRow(lastrow);
 	ui.tableView->setRowHeight(lastrow, CgnsFileInputConditionWidgetFunctionalDialog::defaultRowHeight);
 	QVariant param, val;
 	QVariant tmpparam, tmpval;
-	if (lastrow == 0){
+	if (lastrow == 0) {
 		param = 0;
 	} else {
 		param = m_model->data(m_model->index(lastrow - 1, 0)).toDouble() + 1;
@@ -323,14 +336,15 @@ void CgnsFileInputConditionWidgetFunctionalDialog::add(){
 	val = 0;
 	(*m_paramfunc)(param, tmpparam);
 	m_model->setData(m_model->index(lastrow, 0, QModelIndex()), tmpparam);
-	for (int i = 0; i < m_valuefuncs.count(); ++i){
+	for (int i = 0; i < m_valuefuncs.count(); ++i) {
 		(*m_valuefuncs[i])(val, tmpval);
 		m_model->setData(m_model->index(lastrow, i + 1, QModelIndex()), tmpval);
 	}
 }
 
-void CgnsFileInputConditionWidgetFunctionalDialog::sort(){
-	if (m_preventSort){return;}
+void CgnsFileInputConditionWidgetFunctionalDialog::sort()
+{
+	if (m_preventSort) {return;}
 	m_model->sort(0);
 	updateGraph();
 }
@@ -343,22 +357,22 @@ void CgnsFileInputConditionWidgetFunctionalDialog::setData(const CgnsFileInputCo
 
 void CgnsFileInputConditionWidgetFunctionalDialog::updateGraph()
 {
-	if (m_preventGraph){return;}
+	if (m_preventGraph) {return;}
 
 	clearGraphData();
 	int dataCount = m_model->rowCount();
-	double *x, *y;
+	double* x, *y;
 
-	for (int j = 0; j < m_axisSettings.count(); ++j){
+	for (int j = 0; j < m_axisSettings.count(); ++j) {
 		QwtPlotCurve* pc = new QwtPlotCustomCurve();
-		if (m_valueIsSteps.at(j)){
+		if (m_valueIsSteps.at(j)) {
 			x = new double[dataCount * 3 + 1];
 			y = new double[dataCount * 3 + 1];
 			double firstx = 0;
 			double x0 = m_model->data(m_model->index(0, 0)).toDouble();
-			if (dataCount == 1){
+			if (dataCount == 1) {
 				firstx = x0 - 1;
-			} else if (dataCount > 0){
+			} else if (dataCount > 0) {
 				double x1 = m_model->data(m_model->index(1, 0)).toDouble();
 				double firstwidth = x1 - x0;
 				firstx = x0 - firstwidth;
@@ -366,7 +380,7 @@ void CgnsFileInputConditionWidgetFunctionalDialog::updateGraph()
 			double xstart = firstx;
 			* (x) = xstart;
 			* (y) = 0;
-			for (int i = 0; i < dataCount; ++i){
+			for (int i = 0; i < dataCount; ++i) {
 				double xend = m_model->data(m_model->index(i, 0)).toDouble();
 				double yval =  m_model->data(m_model->index(i, j + 1)).toDouble();
 				double xdelta = 0;
@@ -384,19 +398,19 @@ void CgnsFileInputConditionWidgetFunctionalDialog::updateGraph()
 			x = new double[dataCount];
 			y = new double[dataCount];
 
-			for (int i = 0; i < dataCount; ++i){
+			for (int i = 0; i < dataCount; ++i) {
 				*(x + i) = m_model->data(m_model->index(i, 0)).toDouble();
 			}
-			for (int i = 0; i < dataCount; ++i){
+			for (int i = 0; i < dataCount; ++i) {
 				*(y + i) = m_model->data(m_model->index(i, j + 1)).toDouble();
 			}
 			pc->setSamples(x, y, dataCount);
 		}
 
-		if (m_axisSettings[j] == asLeft){
+		if (m_axisSettings[j] == asLeft) {
 			pc->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
 			pc->attach(ui.graphView);
-		} else if (m_axisSettings[j] == asRight){
+		} else if (m_axisSettings[j] == asRight) {
 			pc->setAxes(QwtPlot::xBottom, QwtPlot::yRight);
 			pc->attach(ui.graphView);
 		} else {

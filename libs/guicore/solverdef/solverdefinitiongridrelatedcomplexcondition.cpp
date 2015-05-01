@@ -8,7 +8,7 @@
 void SolverDefinitionGridRelatedComplexCondition::load(const QDomElement node)
 {
 	QDomElement defNode = iRIC::getChildNode(node, "Definition").toElement();
-	if (defNode.attribute("position") == "cell"){
+	if (defNode.attribute("position") == "cell") {
 		m_position = CellCenter;
 	}
 	m_element = defNode;

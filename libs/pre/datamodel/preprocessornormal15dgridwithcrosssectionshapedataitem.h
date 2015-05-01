@@ -24,7 +24,7 @@ public:
 	void informGridUpdate();
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(2);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
 	void addCustomMenuItems(QMenu* menu);
 	void updateActionStatus();
 	void updateCrossSectionWindows();

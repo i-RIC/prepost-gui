@@ -7,15 +7,17 @@
 class Grid;
 class PreProcessorGridCreatingConditionDataItemInterface;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionGridCombineSettingDialog;
 }
 
-class GridCreatingConditionGridCombineSettingDialog : public QDialog {
+class GridCreatingConditionGridCombineSettingDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	enum Type {Bind, Left, Right};
-	GridCreatingConditionGridCombineSettingDialog(QWidget *parent = nullptr);
+	GridCreatingConditionGridCombineSettingDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionGridCombineSettingDialog();
 
 	void setType(Type type);
@@ -64,7 +66,7 @@ signals:
 private slots:
 	void changeFlowEndingIndex(int index);
 private:
-	Ui::GridCreatingConditionGridCombineSettingDialog *ui;
+	Ui::GridCreatingConditionGridCombineSettingDialog* ui;
 	QMap<QString, Grid*> m_gridMap;
 	int offset;
 };

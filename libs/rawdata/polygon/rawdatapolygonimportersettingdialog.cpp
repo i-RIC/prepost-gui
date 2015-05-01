@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <QTextCodec>
 
-RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const QString &filename, GridRelatedConditionEditWidget* widget, QWidget *parent) :
+RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataPolygonImporterSettingDialog)
 {
@@ -17,7 +17,7 @@ RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const Q
 
 	QList<QByteArray> codecs = QTextCodec::availableCodecs();
 	qSort(codecs);
-	for (const QByteArray& name : codecs){
+	for (const QByteArray& name : codecs) {
 		ui->encodingComboBox->addItem(QString(name));
 	}
 	QTextCodec* defaultCodec = QTextCodec::codecForLocale();
@@ -35,11 +35,11 @@ RawDataPolygonImporterSettingDialog::~RawDataPolygonImporterSettingDialog()
 	delete ui;
 }
 
-void RawDataPolygonImporterSettingDialog::setLabels(const QStringList &labels)
+void RawDataPolygonImporterSettingDialog::setLabels(const QStringList& labels)
 {
 	ui->nameComboBox->clear();
 	ui->valueComboBox->clear();
-	for (int i = 0; i < labels.count(); ++i){
+	for (int i = 0; i < labels.count(); ++i) {
 		QString label = labels.at(i);
 		ui->nameComboBox->addItem(label);
 		ui->valueComboBox->addItem(label);
@@ -50,7 +50,7 @@ void RawDataPolygonImporterSettingDialog::setLabels(const QStringList &labels)
 	ui->tableWidget->setHorizontalHeaderLabels(labels);
 }
 
-void RawDataPolygonImporterSettingDialog::setData(const QList<QList<QVariant> > &data)
+void RawDataPolygonImporterSettingDialog::setData(const QList<QList<QVariant> >& data)
 {
 	ui->tableWidget->setRowCount(data.count());
 	for (int i = 0; i < data.count(); ++i) {
@@ -75,7 +75,7 @@ int RawDataPolygonImporterSettingDialog::valueIndex() const
 
 void RawDataPolygonImporterSettingDialog::accept()
 {
-	if (nameSetting() == nsLoadFromDBF && valueSetting() == vsLoadFromDBF && nameIndex() == valueIndex()){
+	if (nameSetting() == nsLoadFromDBF && valueSetting() == vsLoadFromDBF && nameIndex() == valueIndex()) {
 		QMessageBox::warning(this, tr("Warning"), tr("You cannot specify the same column for both Name and Value."));
 		return;
 	}
@@ -144,7 +144,7 @@ void RawDataPolygonImporterSettingDialog::updateTable()
 
 RawDataPolygonImporterSettingDialog::NameSetting RawDataPolygonImporterSettingDialog::nameSetting() const
 {
-	if (ui->nameAttributeRadioButton->isChecked()){
+	if (ui->nameAttributeRadioButton->isChecked()) {
 		return nsLoadFromDBF;
 	} else {
 		return nsAuto;
@@ -153,7 +153,7 @@ RawDataPolygonImporterSettingDialog::NameSetting RawDataPolygonImporterSettingDi
 
 RawDataPolygonImporterSettingDialog::ValueSetting RawDataPolygonImporterSettingDialog::valueSetting() const
 {
-	if (ui->valueAttributeRadioButton->isChecked()){
+	if (ui->valueAttributeRadioButton->isChecked()) {
 		return vsLoadFromDBF;
 	} else {
 		return vsSpecify;

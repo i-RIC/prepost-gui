@@ -25,11 +25,11 @@ ProjectPostProcessors::ProjectPostProcessors(ProjectDataItem* parent)
 
 ProjectPostProcessors::~ProjectPostProcessors()
 {
-	if (projectData()->mainWindow() == nullptr){return;}
+	if (projectData()->mainWindow() == nullptr) {return;}
 	// remove all post processors from the MDI area of main window.
-	QMdiArea* area = dynamic_cast<QMdiArea*> (projectData()->mainWindow()->centralWidget());
+	QMdiArea* area = dynamic_cast<QMdiArea*>(projectData()->mainWindow()->centralWidget());
 
-	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it) {
 		area->removeSubWindow((*it)->window()->parentWidget());
 	}
 }
@@ -38,19 +38,19 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool
 {
 	QDomNode child = node.firstChild();
 	QWidget* parentWindow = projectData()->mainWindow();
-	while (! child.isNull()){
+	while (! child.isNull()) {
 		PostProcessorWindowProjectDataItem* di = nullptr;
-		if (import){
+		if (import) {
 			QDomElement elem = child.toElement();
 			di = m_factory->factory(elem.attribute("type"), this, parentWindow);
 		} else {
 			di = m_factory->restore(child, this, parentWindow);
 		}
-		if (di != nullptr){
+		if (di != nullptr) {
 			add(di);
 			try {
 				di->loadFromProjectMainFile(child);
-			} catch (ErrorMessage m){
+			} catch (ErrorMessage m) {
 				m_postProcessorWindows.removeOne(di);
 				delete di;
 			}
@@ -61,7 +61,7 @@ void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node, bool
 
 void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it) {
 		writer.writeStartElement("PostProcessor");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -71,8 +71,8 @@ void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* newitem)
 {
 	iRICMainWindowInterface* w = projectData()->mainWindow();
-	if (w == nullptr){return nullptr;}
-	QMdiArea* area = dynamic_cast<QMdiArea*> (w->centralWidget());
+	if (w == nullptr) {return nullptr;}
+	QMdiArea* area = dynamic_cast<QMdiArea*>(w->centralWidget());
 	QMdiSubWindow* container = area->addSubWindow(newitem->window());
 	container->setWindowIcon(newitem->window()->icon());
 
@@ -82,8 +82,8 @@ QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* ne
 
 void ProjectPostProcessors::requestDelete(PostProcessorWindowProjectDataItem* item)
 {
-	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it){
-		if (*it == item){
+	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it) {
+		if (*it == item) {
 			m_postProcessorWindows.erase(it);
 			delete item;
 			return;

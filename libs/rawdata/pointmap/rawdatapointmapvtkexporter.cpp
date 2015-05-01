@@ -47,16 +47,16 @@ bool RawDataPointmapVTKExporter::doEmport(RawData* data, const QString& filename
 	writer->Delete();
 
 	// rename the temporary file to the target file.
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		// remove first.
-		if (! QFile::remove(filename)){
+		if (! QFile::remove(filename)) {
 			// unable to remove. fail.
 			QFile::remove(tmpFile);
 			return false;
 		}
 	}
 	bool ok = QFile::rename(tmpFile, filename);
-	if (! ok){
+	if (! ok) {
 		// rename failed.
 		QFile::remove(tmpFile);
 		return false;

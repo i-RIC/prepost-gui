@@ -13,7 +13,7 @@ Post2dBirdEyeWindowNodeScalarDataItem::Post2dBirdEyeWindowNodeScalarDataItem(con
 	m_name = name;
 
 	connect(this, SIGNAL(changed(Post2dBirdEyeWindowNodeScalarDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem*)));
 }
 
 void Post2dBirdEyeWindowNodeScalarDataItem::handleStandardItemChange()

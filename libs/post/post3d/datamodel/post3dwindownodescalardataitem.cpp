@@ -14,7 +14,7 @@ Post3dWindowNodeScalarDataItem::Post3dWindowNodeScalarDataItem(
 	m_name = name;
 
 	connect(this, SIGNAL(changed(Post3dWindowNodeScalarDataItem*)),
-		parent, SLOT(exclusivelyCheck(Post3dWindowNodeScalarDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post3dWindowNodeScalarDataItem*)));
 }
 
 void Post3dWindowNodeScalarDataItem::handleStandardItemChange()

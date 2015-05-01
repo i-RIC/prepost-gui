@@ -26,9 +26,9 @@ public:
 	vtkPointSet* labelData() const {return m_labelData;}
 	vtkPolyData* particleData() const {return m_particleData;}
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	int baseId(){return m_baseId;}
-	int zoneId(){return m_zoneId;}
-	bool handleCurrentStepUpdate(const int fn){
+	int baseId() {return m_baseId;}
+	int zoneId() {return m_zoneId;}
+	bool handleCurrentStepUpdate(const int fn) {
 		loadFromCgnsFile(fn);
 		return m_loadOK;
 	}
@@ -40,9 +40,9 @@ public:
 	bool scalarValueExists() const;
 	bool vectorValueExists() const;
 	int nodeIndex(int i, int j, int k) const;
-	void getNodeIJKIndex(int index, int *i, int *j, int *k) const;
+	void getNodeIJKIndex(int index, int* i, int* j, int* k) const;
 	int cellIndex(int i, int j, int k) const;
-	void getCellIJKIndex(int index, int *i, int *j, int *k) const;
+	void getCellIJKIndex(int index, int* i, int* j, int* k) const;
 	bool saveToVTKFile(const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax);
 	bool saveToCSVFile(const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax);
 	void loadIfEmpty(const int fn);
@@ -60,8 +60,8 @@ protected:
 	virtual bool loadVectorData(const int fn, const int solid);
 	bool loadCellFlagData(const int fn);
 	bool setupIndexData();
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
 	vtkPolyData* filteredDataStructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;

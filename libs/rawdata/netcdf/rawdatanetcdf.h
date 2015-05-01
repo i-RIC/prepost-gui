@@ -28,30 +28,28 @@ class RawDataNetcdf : public RawData
 	Q_OBJECT
 
 private:
-	class RectRegion {
+	class RectRegion
+	{
 	public:
 		double xMin;
 		double xMax;
 		double yMin;
 		double yMax;
-		RectRegion(double xmin, double xmax, double ymin, double ymax)
-		{
+		RectRegion(double xmin, double xmax, double ymin, double ymax) {
 			xMin = xmin;
 			xMax = xmax;
 			yMin = ymin;
 			yMax = ymax;
 		}
 
-		bool pointIsInside(double x, double y) const
-		{
-			if (x < xMin){return false;}
-			if (x > xMax){return false;}
-			if (y < yMin){return false;}
-			if (y > yMax){return false;}
+		bool pointIsInside(double x, double y) const {
+			if (x < xMin) {return false;}
+			if (x > xMax) {return false;}
+			if (y < yMin) {return false;}
+			if (y > yMax) {return false;}
 			return true;
 		}
-		bool intersect(const QLineF& line) const
-		{
+		bool intersect(const QLineF& line) const {
 			bool isInside1 = pointIsInside(line.x1(), line.y1());
 			bool isInside2 = pointIsInside(line.x2(), line.y2());
 			return (isInside1 != isInside2);
@@ -88,10 +86,10 @@ public:
 
 	int defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId);
 	int defineDimensions(int ncid, QList<int>& dimIds, QList<int>& varIds);
-	int defineValue(int ncid, int xId, int yId, const QList<int>& dimIds, int *varId);
+	int defineValue(int ncid, int xId, int yId, const QList<int>& dimIds, int* varId);
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const QList<int>& varIds);
-	bool requestCoordinateSystem(){return true;}
+	bool requestCoordinateSystem() {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v);
 	virtual double thresholdValue() = 0;
@@ -119,7 +117,7 @@ protected:
 	void doApplyOffset(double x, double y);
 	int getValueVarId(int ncid, int* varId);
 
-	void getIJIndex(vtkIdType id, unsigned int *i, unsigned int *j) const;
+	void getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const;
 	unsigned int vertexIndex(unsigned int i, unsigned int j) const;
 
 	int lineLimitI(int j, int iIn, int iOut, int dimI, int dimJ, const RectRegion& region) const;

@@ -50,11 +50,11 @@ bool RawDataPointmapBreakLine::isEdgeSelectable(const QVector2D& pos, double lim
 	double pcoords[3];
 	double weights[32];
 	double d = limitdist * limitdist;
-	for (vtkIdType i = 0; i < m_edges->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < m_edges->GetNumberOfCells(); ++i) {
 		vtkCell* cell = m_edges->GetCell(i);
 		double dist;
-		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-			if (dist < d){
+		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)) {
+			if (dist < d) {
 				// this is the selected edge.
 				m_selectedEdgeId = i;
 				return true;
@@ -69,14 +69,14 @@ const QVector<QPointF> RawDataPointmapBreakLine::polyLine() const
 	QVector<QPointF> ret;
 	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
-	if (points->GetNumberOfPoints() == 0){return ret;}
+	if (points->GetNumberOfPoints() == 0) {return ret;}
 	int vCount = idlist->GetNumberOfIds();
 	QPointF lastP, newP;
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		newP = QPointF(*p, *(p + 1));
-		if (i == 0 || lastP != newP){
+		if (i == 0 || lastP != newP) {
 			ret << newP;
 		}
 		lastP = newP;
@@ -95,7 +95,7 @@ void RawDataPointmapBreakLine::setPolyLine(const QVector<QPointF>& polyline)
 	m_vtkPolyLine->Initialize();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
 	points->SetNumberOfPoints(polyline.count());
-	for (int i = 0; i < polyline.count(); ++i){
+	for (int i = 0; i < polyline.count(); ++i) {
 		QPointF point = polyline.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -154,7 +154,7 @@ void RawDataPointmapBreakLine::updateShapeData()
 
 	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
 	idlist->Initialize();
-	for (int i = 0; i < m_vertexIndices.count(); ++i){
+	for (int i = 0; i < m_vertexIndices.count(); ++i) {
 		idlist->InsertNextId(m_vertexIndices[i]);
 	}
 	// edge grid is constructed.
@@ -165,22 +165,22 @@ void RawDataPointmapBreakLine::updateShapeData()
 	vtkCellArray* edges = vtkCellArray::New();
 	edges->Allocate(edgeCount);
 	vtkIdType points[2];
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		points[0] = idlist->GetId(i);
 		points[1] = idlist->GetId(i + 1);
 		edges->InsertNextCell(2, points);
 	}
 	m_edges->SetLines(edges);
 	edges->Delete();
-/*
-	vtkLine* tmpEdge = vtkLine::New();
-	for (int i = 0; i < edgeCount; ++i){
-		tmpEdge->GetPointIds()->SetId(0, idlist->GetId(i));
-		tmpEdge->GetPointIds()->SetId(1, idlist->GetId(i + 1));
-		m_edges->InsertNextCell(tmpEdge->GetCellType(), tmpEdge->GetPointIds());
-	}
-	tmpEdge->Delete();
-*/
+	/*
+		vtkLine* tmpEdge = vtkLine::New();
+		for (int i = 0; i < edgeCount; ++i){
+			tmpEdge->GetPointIds()->SetId(0, idlist->GetId(i));
+			tmpEdge->GetPointIds()->SetId(1, idlist->GetId(i + 1));
+			m_edges->InsertNextCell(tmpEdge->GetCellType(), tmpEdge->GetPointIds());
+		}
+		tmpEdge->Delete();
+	*/
 // m_edges->BuildLinks();
 	m_edges->Modified();
 
@@ -192,20 +192,20 @@ void RawDataPointmapBreakLine::updateShapeData()
 	vtkCellArray* vertices = vtkCellArray::New();
 	vertices->Allocate(vertexCount);
 	vtkIdType pointId;
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		pointId = idlist->GetId(i);
 		vertices->InsertNextCell(1, &pointId);
 	}
 	m_vertices->SetVerts(vertices);
 	vertices->Delete();
-/*
-	vtkVertex* tmpVertex = vtkVertex::New();
-	for (int i = 0; i < vertexCount; ++i){
-		tmpVertex->GetPointIds()->SetId(0, idlist->GetId(i));
-		m_vertices->InsertNextCell(tmpVertex->GetCellType(), tmpVertex->GetPointIds());
-	}
-	tmpVertex->Delete();
-*/
+	/*
+		vtkVertex* tmpVertex = vtkVertex::New();
+		for (int i = 0; i < vertexCount; ++i){
+			tmpVertex->GetPointIds()->SetId(0, idlist->GetId(i));
+			m_vertices->InsertNextCell(tmpVertex->GetCellType(), tmpVertex->GetPointIds());
+		}
+		tmpVertex->Delete();
+	*/
 //    m_vertices->BuildLinks();
 	m_vertices->Modified();
 }
@@ -221,7 +221,7 @@ void RawDataPointmapBreakLine::setActive(bool active)
 	vtkActorCollection* col = m_parent->actorCollection();
 	m_verticesActor->VisibilityOff();
 	col->RemoveItem(m_verticesActor);
-	if (active){
+	if (active) {
 		col->AddItem(m_verticesActor);
 	}
 	m_parent->updateVisibilityWithoutRendering();
@@ -234,7 +234,7 @@ void RawDataPointmapBreakLine::setHidden(bool hidden)
 	col->RemoveItem(m_edgesActor);
 	m_verticesActor->VisibilityOff();
 	m_edgesActor->VisibilityOff();
-	if (! hidden){
+	if (! hidden) {
 		col->AddItem(m_edgesActor);
 	}
 	m_parent->updateVisibilityWithoutRendering();

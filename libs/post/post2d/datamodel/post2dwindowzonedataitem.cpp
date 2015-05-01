@@ -68,42 +68,42 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNum
 
 	m_shapeDataItem = new Post2dWindowGridShapeDataItem(this);
 
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		m_scalarGroupDataItem = new Post2dWindowNodeScalarGroupDataItem(this);
-	}else{
+	} else {
 		m_scalarGroupDataItem = nullptr;
 	}
-	if (cont->vectorValueExists()){
-		if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (cont->vectorValueExists()) {
+		if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 			m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(this);
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(this);
-		}else{
+		} else {
 			m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupStructuredDataItem(this);
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupStructuredDataItem(this);
 		}
-	}else{
+	} else {
 		m_arrowGroupDataItem = nullptr;
 		m_streamlineGroupDataItem = nullptr;
 		m_particleGroupDataItem = nullptr;
 	}
-	if (cont->particleData() != nullptr){
+	if (cont->particleData() != nullptr) {
 		m_particlesDataItem = new Post2dWindowParticlesTopDataItem(this);
 	}
 
 	m_childItems.append(m_shapeDataItem);
-	if (cont->vectorValueExists()){
+	if (cont->vectorValueExists()) {
 		m_childItems.append(m_arrowGroupDataItem);
-		if (m_particleGroupDataItem != nullptr){
+		if (m_particleGroupDataItem != nullptr) {
 			m_childItems.append(m_particleGroupDataItem);
 		}
 		m_childItems.append(m_streamlineGroupDataItem);
 	}
-	if (cont->particleData() != nullptr){
+	if (cont->particleData() != nullptr) {
 		m_childItems.append(m_particlesDataItem);
 	}
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		m_childItems.append(m_scalarGroupDataItem);
 	}
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
@@ -146,31 +146,31 @@ void Post2dWindowZoneDataItem::setupActors()
 void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){
+	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr){
+	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 	}
 	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
-	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr){
+	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
 		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupNode);
 	}
 	QDomNode streamlineGroupNode = iRIC::getChildNode(node, "StreamlineGroup");
-	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr){
+	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr) {
 		m_streamlineGroupDataItem->loadFromProjectMainFile(streamlineGroupNode);
 	}
 	QDomNode particleGroupNode = iRIC::getChildNode(node, "ParticleGroup");
-	if (! particleGroupNode.isNull() && m_particleGroupDataItem != nullptr){
+	if (! particleGroupNode.isNull() && m_particleGroupDataItem != nullptr) {
 		m_particleGroupDataItem->loadFromProjectMainFile(particleGroupNode);
 	}
 	QDomNode cellFlagGroupNode = iRIC::getChildNode(node, "CellFlagGroup");
-	if (! cellFlagGroupNode.isNull() && m_cellFlagGroupDataItem != nullptr){
+	if (! cellFlagGroupNode.isNull() && m_cellFlagGroupDataItem != nullptr) {
 		m_cellFlagGroupDataItem->loadFromProjectMainFile(cellFlagGroupNode);
 	}
 	QDomNode particlesNode = iRIC::getChildNode(node, "SolverParticles");
-	if (! particlesNode.isNull() && m_particlesDataItem != nullptr){
+	if (! particlesNode.isNull() && m_particlesDataItem != nullptr) {
 		m_particlesDataItem->loadFromProjectMainFile(particlesNode);
 	}
 }
@@ -182,7 +182,7 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_scalarGroupDataItem != nullptr){
+	if (m_scalarGroupDataItem != nullptr) {
 		writer.writeStartElement("ScalarGroup");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -219,12 +219,12 @@ void Post2dWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
 
 }
 
-void Post2dWindowZoneDataItem::informSelection(VTKGraphicsView *v)
+void Post2dWindowZoneDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informSelection(v);
 }
 
-void Post2dWindowZoneDataItem::informDeselection(VTKGraphicsView *v)
+void Post2dWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informDeselection(v);
 }
@@ -240,7 +240,7 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 	dataModel()->graphicsView()->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 
 	PostZoneDataContainer* cont = dataContainer();
-	if (cont != nullptr && cont->data() != nullptr){
+	if (cont != nullptr && cont->data() != nullptr) {
 		m_filteredData = dataContainer()->filteredData(xmin, xmax, ymin, ymax, m_isMasked);
 		m_filteredData->UnRegister(0);
 	}
@@ -250,32 +250,32 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 	m_shapeDataItem->update();
 	qDebug("Grid shape: %d", time.elapsed());
 
-	if (m_scalarGroupDataItem != nullptr){
+	if (m_scalarGroupDataItem != nullptr) {
 		time.restart();
 		m_scalarGroupDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
 	}
-	if (m_arrowGroupDataItem != nullptr){
+	if (m_arrowGroupDataItem != nullptr) {
 		time.restart();
 		m_arrowGroupDataItem->update();
 		qDebug("Arrows: %d", time.elapsed());
 	}
-	if (m_streamlineGroupDataItem != nullptr){
+	if (m_streamlineGroupDataItem != nullptr) {
 		time.restart();
 		m_streamlineGroupDataItem->update();
 		qDebug("Streamlines: %d", time.elapsed());
 	}
-	if (m_particleGroupDataItem != nullptr && ! noparticle){
+	if (m_particleGroupDataItem != nullptr && ! noparticle) {
 		time.restart();
 		m_particleGroupDataItem->update();
 		qDebug("Particles: %d", time.elapsed());
 	}
-	if (m_cellFlagGroupDataItem != nullptr){
+	if (m_cellFlagGroupDataItem != nullptr) {
 		time.restart();
 		m_cellFlagGroupDataItem->update();
 		qDebug("Cell flags: %d", time.elapsed());
 	}
-	if (m_particlesDataItem != nullptr){
+	if (m_particlesDataItem != nullptr) {
 		time.restart();
 		m_particlesDataItem->update();
 		qDebug("Solver Particles: %d", time.elapsed());
@@ -309,22 +309,22 @@ void Post2dWindowZoneDataItem::assignActionZValues(const ZDepthRange& range)
 	r.setRange(min, max);
 	m_shapeDataItem->setZDepthRange(r);
 
-	if (cont->particleData() != nullptr){
+	if (cont->particleData() != nullptr) {
 		// Particles (auto)
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
-		if (m_particlesDataItem != nullptr){
+		if (m_particlesDataItem != nullptr) {
 			r = m_particlesDataItem->zDepthRange();
 			r.setRange(min, max);
 			m_particlesDataItem->setZDepthRange(r);
 		}
 	}
 
-	if (cont->vectorValueExists()){
+	if (cont->vectorValueExists()) {
 		// Particles
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
-		if (m_particleGroupDataItem != nullptr){
+		if (m_particleGroupDataItem != nullptr) {
 			r = m_particleGroupDataItem->zDepthRange();
 			r.setRange(min, max);
 			m_particleGroupDataItem->setZDepthRange(r);
@@ -353,7 +353,7 @@ void Post2dWindowZoneDataItem::assignActionZValues(const ZDepthRange& range)
 	m_cellFlagGroupDataItem->setZDepthRange(r);
 
 	// Contour
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
 		r = m_scalarGroupDataItem->zDepthRange();
@@ -364,21 +364,21 @@ void Post2dWindowZoneDataItem::assignActionZValues(const ZDepthRange& range)
 
 void Post2dWindowZoneDataItem::initNodeAttributeBrowser()
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	PostZoneDataContainer* cont = dataContainer();
 	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		pb->view()->resetForVertex(true);
-	} else if (usgrid != nullptr){
+	} else if (usgrid != nullptr) {
 		pb->view()->resetForVertex(false);
 	}
 }
 
 void Post2dWindowZoneDataItem::clearNodeAttributeBrowser()
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	pb->view()->hideAll();
 	m_attributeBrowserFixed = false;
@@ -386,13 +386,13 @@ void Post2dWindowZoneDataItem::clearNodeAttributeBrowser()
 
 void Post2dWindowZoneDataItem::fixNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	if (! pb->isVisible()){return;}
+	if (! pb->isVisible()) {return;}
 
 	vtkIdType vid = findVertex(p, v);
 	m_attributeBrowserFixed = (vid >= 0);
-	if (vid < 0){
+	if (vid < 0) {
 		// no point is near.
 		pb->view()->resetAttributes();
 		return;
@@ -406,13 +406,13 @@ void Post2dWindowZoneDataItem::fixNodeAttributeBrowser(const QPoint& p, VTKGraph
 void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
 
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	if (! pb->isVisible()){return;}
-	if (m_attributeBrowserFixed){return;}
+	if (! pb->isVisible()) {return;}
+	if (m_attributeBrowserFixed) {return;}
 
 	vtkIdType vid = findVertex(p, v);
-	if (vid < 0){
+	if (vid < 0) {
 		// no point is near.
 		pb->view()->resetAttributes();
 		return;
@@ -432,7 +432,7 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 
 	PostZoneDataContainer* cont = dataContainer();
 	vtkIdType vid = cont->data()->FindPoint(x, y, 0);
-	if (vid < 0){
+	if (vid < 0) {
 		// no point is near.
 		return -1;
 	}
@@ -443,7 +443,7 @@ vtkIdType Post2dWindowZoneDataItem::findVertex(const QPoint& p, VTKGraphicsView*
 	QVector2D vec2(vertex[0], vertex[1]);
 	double distance = (vec2 - vec1).length();
 	double limitDist = v2->stdRadius(5);
-	if (distance > limitDist){
+	if (distance > limitDist) {
 		// no point is near.
 		return -1;
 	}
@@ -456,16 +456,16 @@ void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(vtkIdType vid, double 
 	QList<PropertyBrowserAttribute> atts;
 
 	int count = cont->data()->GetPointData()->GetNumberOfArrays();
-	for (int i = 0; i < count; ++i){
+	for (int i = 0; i < count; ++i) {
 		vtkAbstractArray* arr = cont->data()->GetPointData()->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
-		if (da == nullptr){continue;}
-		if (da->GetNumberOfComponents() == 1){
+		if (da == nullptr) {continue;}
+		if (da->GetNumberOfComponents() == 1) {
 			// scalar value
 			double val = da->GetComponent(vid, 0);
 			PropertyBrowserAttribute att(da->GetName(), val);
 			atts.append(att);
-		} else if (da->GetNumberOfComponents() == 3){
+		} else if (da->GetNumberOfComponents() == 3) {
 			// vector value
 			double val = da->GetComponent(vid, 0);
 			QString attName = da->GetName();
@@ -483,47 +483,47 @@ void Post2dWindowZoneDataItem::updateNodeAttributeBrowser(vtkIdType vid, double 
 	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
 
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		int i, j, k;
 		cont->getNodeIJKIndex(vid, &i, &j, &k);
 		pb->view()->setVertexAttributes(i, j, x, y, atts);
-	} else if (usgrid != nullptr){
+	} else if (usgrid != nullptr) {
 		pb->view()->setVertexAttributes(vid, x, y, atts);
 	}
 }
 
 void Post2dWindowZoneDataItem::initCellAttributeBrowser()
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	PostZoneDataContainer* cont = dataContainer();
 	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		pb->view()->resetForCell(true);
-	} else if (usgrid){
+	} else if (usgrid) {
 		pb->view()->resetForCell(false);
 	}
 }
 
 void Post2dWindowZoneDataItem::clearCellAttributeBrowser()
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 	pb->view()->hideAll();
 }
 
 void Post2dWindowZoneDataItem::fixCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	if (! pb->isVisible()){return;}
+	if (! pb->isVisible()) {return;}
 
 	vtkIdType cellid = findCell(p, v);
 	m_attributeBrowserFixed = (cellid >= 0);
-	if (cellid < 0){
+	if (cellid < 0) {
 		// it is not inside a cell.
 		pb->view()->resetAttributes();
 		return;
@@ -533,13 +533,13 @@ void Post2dWindowZoneDataItem::fixCellAttributeBrowser(const QPoint& p, VTKGraph
 
 void Post2dWindowZoneDataItem::updateCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
-	if (! pb->isVisible()){return;}
-	if (m_attributeBrowserFixed){return;}
+	if (! pb->isVisible()) {return;}
+	if (m_attributeBrowserFixed) {return;}
 
 	vtkIdType cellid = findCell(p, v);
-	if (cellid < 0){
+	if (cellid < 0) {
 		// it is not inside a cell.
 		pb->view()->resetAttributes();
 		return;
@@ -566,7 +566,7 @@ vtkIdType Post2dWindowZoneDataItem::findCell(const QPoint& p, VTKGraphicsView* v
 
 void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* /*v*/)
 {
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	PropertyBrowser* pb = w->propertyBrowser();
 
 	PostZoneDataContainer* cont = dataContainer();
@@ -574,17 +574,17 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent())->gridType();
 	const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
-	for (auto it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
+		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
 		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
-		if (icond == nullptr){continue;}
+		if (icond == nullptr) {continue;}
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 
 		vtkIntArray* cellVals = vtkIntArray::SafeDownCast(cont->data()->GetCellData()->GetArray(iRIC::toStr(icond->name()).c_str()));
 		int val = cellVals->GetValue(cellid);
-		if (el != nullptr){
+		if (el != nullptr) {
 			PropertyBrowserAttribute att(cond->caption(), el->enumerations().value(val));
 			atts.append(att);
 		} else {
@@ -596,7 +596,7 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	vtkCell* cell = cont->data()->GetCell(cellid);
 	vtkPoints* points = cont->data()->GetPoints();
 	double* vv;
-	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < cell->GetNumberOfPoints(); ++i) {
 		vv = points->GetPoint(cell->GetPointIds()->GetId(i));
 		polygon.append(QPointF(*vv, *(vv + 1)));
 	}
@@ -606,11 +606,11 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	vtkUnstructuredGrid* usgrid = dynamic_cast<vtkUnstructuredGrid*>(cont->data());
 
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		int i, j, k;
 		cont->getCellIJKIndex(cellid, &i, &j, &k);
 		pb->view()->setCellAttributes(i, j, polygon, atts);
-	} else if (usgrid != nullptr){
+	} else if (usgrid != nullptr) {
 		pb->view()->setCellAttributes(cellid, polygon, atts);
 	}
 }
@@ -618,14 +618,14 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 void Post2dWindowZoneDataItem::showNodeAttributeBrowser()
 {
 	initNodeAttributeBrowser();
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }
 
 void Post2dWindowZoneDataItem::showCellAttributeBrowser()
 {
 	initCellAttributeBrowser();
-	Post2dWindow* w = dynamic_cast<Post2dWindow*> (mainWindow());
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }
 
@@ -637,7 +637,7 @@ void Post2dWindowZoneDataItem::doViewOperationEndedGlobal(VTKGraphicsView* /*v*/
 void Post2dWindowZoneDataItem::updateRegionPolyData()
 {
 	PostZoneDataContainer* cont = dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 
 	vtkPointSet* ds = dataContainer()->data();
 	double bounds[6];

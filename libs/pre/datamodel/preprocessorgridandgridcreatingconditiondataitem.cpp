@@ -52,8 +52,8 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_subFolder = m_zoneName;
 	QDir subdir2(workdir.absoluteFilePath(relativeSubPath()));
 
-	if (subdir1.exists()){
-		if (subdir2.exists()){
+	if (subdir1.exists()) {
+		if (subdir2.exists()) {
 			// new folder and old folder both exists. remove the old folder.
 			iRIC::rmdirRecursively(subdir1.absolutePath());
 		} else {
@@ -73,7 +73,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_childItems.append(m_mappingSettingDataItem);
 
 	SolverDefinitionGridType* gType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType();
-	switch (gType->defaultGridType()){
+	switch (gType->defaultGridType()) {
 	case SolverDefinitionGridType::gtNormal1DGrid:
 		// @todo not implemented yet.
 		break;
@@ -95,7 +95,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	}
 	m_childItems.append(m_gridDataItem);
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
-	if (gItem->bcGroupDataItem() == nullptr){
+	if (gItem->bcGroupDataItem() == nullptr) {
 		m_standardItem->takeChild(m_bcSettingGroupDataItem->standardItem()->row());
 	}
 
@@ -106,7 +106,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	// create connections.
 	connect(m_creatingConditionDataItem, SIGNAL(gridCreated()), this, SLOT(informGridCreation()));
 	connect(dynamic_cast<PreProcessorGridTypeDataItem*>(p)->rawdataTop(), SIGNAL(dataChanged()), m_mappingSettingDataItem, SLOT(informRawDataChange()));
-	if (gItem->bcGroupDataItem() != nullptr){
+	if (gItem->bcGroupDataItem() != nullptr) {
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
 	}
@@ -118,19 +118,19 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile
 	m_zoneName = elem.attribute("zoneName");
 	// load grid creating condition information.
 	QDomNode condNode = iRIC::getChildNode(node, "GridCreatingCondition");
-	if (! condNode.isNull()){m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
+	if (! condNode.isNull()) {m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
 	// load boundary condition setting information.
 	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditionSetting");
-	if (! bcNode.isNull()){m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
+	if (! bcNode.isNull()) {m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
 	// load grid information.
 	QDomNode gridNode = iRIC::getChildNode(node, "Grid");
-	if (! gridNode.isNull()){m_gridDataItem->loadFromProjectMainFile(gridNode);}
+	if (! gridNode.isNull()) {m_gridDataItem->loadFromProjectMainFile(gridNode);}
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
-	if (gItem->bcGroupDataItem()){
+	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	if (gItem->bcGroupDataItem()) {
 		gItem->bcGroupDataItem()->renumberItemsForProject();
 	}
 
@@ -153,7 +153,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(Q
 	writer.writeEndElement();
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString &)
+void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString&)
 {
 
 }
@@ -180,20 +180,20 @@ void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu*
 bool PreProcessorGridAndGridCreatingConditionDataItem::gridEdited() const
 {
 	Grid* g = m_gridDataItem->grid();
-	if (g == nullptr){return false;}
+	if (g == nullptr) {return false;}
 	return g->isModified();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::toggleGridEditFlag()
 {
 	Grid* g = m_gridDataItem->grid();
-	if (g == nullptr){return;}
+	if (g == nullptr) {return;}
 	g->setModified();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()
 {
-	if (QMessageBox::No == QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to discard grid creating condition and grid?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)){
+	if (QMessageBox::No == QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to discard grid creating condition and grid?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
 		return;
 	}
 	m_gridDataItem->silentDeleteGrid();
@@ -207,13 +207,13 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 	m_mappingSettingDataItem->setDefaultValues();
 
 
-	if (PreProcessorGridAttributeMappingMode::mode == PreProcessorGridAttributeMappingMode::mAuto){
+	if (PreProcessorGridAttributeMappingMode::mode == PreProcessorGridAttributeMappingMode::mAuto) {
 		int ret = QMessageBox::information(mainWindow(), tr("Confirmation"), tr("Do you want to map geographic data to grid attributes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
-		if (ret == QMessageBox::Yes){
+		if (ret == QMessageBox::Yes) {
 			m_mappingSettingDataItem->executeMapping();
 			m_bcSettingGroupDataItem->executeMapping(true);
 		}
 	}
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
+	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
 	gItem->informgridRelatedConditionChangeAll();
 }

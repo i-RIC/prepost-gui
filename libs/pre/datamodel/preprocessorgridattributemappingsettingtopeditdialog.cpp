@@ -2,7 +2,7 @@
 #include "ui_preprocessorgridattributemappingsettingtopeditdialog.h"
 #include "preprocessorgridattributetemplatemappingsettingdialog.h"
 
-PreProcessorGridAttributeMappingSettingTopEditDialog::PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget *parent) :
+PreProcessorGridAttributeMappingSettingTopEditDialog::PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PreProcessorGridAttributeMappingSettingTopEditDialog)
 {
@@ -17,7 +17,7 @@ PreProcessorGridAttributeMappingSettingTopEditDialog::~PreProcessorGridAttribute
 
 PreProcessorGridAttributeMappingMode::Mode PreProcessorGridAttributeMappingSettingTopEditDialog::mappingMode()
 {
-	if (ui->autoRadioButton->isChecked()){
+	if (ui->autoRadioButton->isChecked()) {
 		return PreProcessorGridAttributeMappingMode::mAuto;
 	} else {
 		return PreProcessorGridAttributeMappingMode::mManual;
@@ -27,7 +27,7 @@ PreProcessorGridAttributeMappingMode::Mode PreProcessorGridAttributeMappingSetti
 
 void PreProcessorGridAttributeMappingSettingTopEditDialog::setMappingMode(PreProcessorGridAttributeMappingMode::Mode mm)
 {
-	if (mm == PreProcessorGridAttributeMappingMode::mAuto){
+	if (mm == PreProcessorGridAttributeMappingMode::mAuto) {
 		ui->autoRadioButton->setChecked(true);
 	} else {
 		ui->manualRadioButton->setChecked(true);
@@ -36,7 +36,7 @@ void PreProcessorGridAttributeMappingSettingTopEditDialog::setMappingMode(PrePro
 
 RawDataPointmapMappingMode::Mode PreProcessorGridAttributeMappingSettingTopEditDialog::pointmapMappingMode()
 {
-	if (ui->TINRadioButton->isChecked()){
+	if (ui->TINRadioButton->isChecked()) {
 		return RawDataPointmapMappingMode::mTIN;
 	} else {
 		return RawDataPointmapMappingMode::mTemplate;
@@ -45,7 +45,7 @@ RawDataPointmapMappingMode::Mode PreProcessorGridAttributeMappingSettingTopEditD
 
 void PreProcessorGridAttributeMappingSettingTopEditDialog::setPointmapMappingMode(RawDataPointmapMappingMode::Mode mm)
 {
-	if (mm == RawDataPointmapMappingMode::mTIN){
+	if (mm == RawDataPointmapMappingMode::mTIN) {
 		ui->TINRadioButton->setChecked(true);
 	} else {
 		ui->templateRadioButton->setChecked(true);
@@ -62,7 +62,7 @@ void PreProcessorGridAttributeMappingSettingTopEditDialog::showDetailDialog()
 	dialog.setWeightExponent(m_weightExponent);
 
 	int result = dialog.exec();
-	if (result == QDialog::Rejected){return;}
+	if (result == QDialog::Rejected) {return;}
 
 	m_autoMode = dialog.autoMode();
 	m_streamWiseLength = dialog.streamWiseLength();

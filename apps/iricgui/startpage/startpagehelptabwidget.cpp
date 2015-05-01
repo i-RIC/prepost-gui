@@ -3,7 +3,7 @@
 
 #include <QVBoxLayout>
 
-StartPageHelpTabWidget::StartPageHelpTabWidget(QWidget *parent) :
+StartPageHelpTabWidget::StartPageHelpTabWidget(QWidget* parent) :
 	QWidget(parent)
 {
 	m_links = new StartPageLinks(parent);
@@ -12,7 +12,7 @@ StartPageHelpTabWidget::StartPageHelpTabWidget(QWidget *parent) :
 	setLayout(layout);
 }
 
-void StartPageHelpTabWidget::setLocale(const QString &locale)
+void StartPageHelpTabWidget::setLocale(const QString& locale)
 {
 	m_links->setupLinks(locale);
 }

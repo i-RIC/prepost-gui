@@ -9,7 +9,7 @@
 #include <QMessageBox>
 #include <QTableWidgetItem>
 
-SolverDefinitionListDialog::SolverDefinitionListDialog(SolverDefinitionList* list, QWidget *parent) :
+SolverDefinitionListDialog::SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::SolverDefinitionListDialog)
 {
@@ -26,10 +26,10 @@ SolverDefinitionListDialog::~SolverDefinitionListDialog()
 	delete ui;
 }
 
-void SolverDefinitionListDialog::changeEvent(QEvent *e)
+void SolverDefinitionListDialog::changeEvent(QEvent* e)
 {
 	QDialog::changeEvent(e);
-	switch (e->type()){
+	switch (e->type()) {
 	case QEvent::LanguageChange:
 		ui->retranslateUi(this);
 		break;
@@ -41,7 +41,7 @@ void SolverDefinitionListDialog::changeEvent(QEvent *e)
 void SolverDefinitionListDialog::setup()
 {
 	QList<SolverDefinitionAbstract*> solvers = m_solverList->solverList();
-	QTableWidget *table = ui->solverListTable;
+	QTableWidget* table = ui->solverListTable;
 
 	table->clear();
 
@@ -61,7 +61,7 @@ void SolverDefinitionListDialog::setup()
 	table->setRowCount(solvers.count());
 	QTableWidgetItem* item;
 	int i = 0;
-	for (SolverDefinitionAbstract* abst : solvers){
+	for (SolverDefinitionAbstract* abst : solvers) {
 		item = new QTableWidgetItem(abst->caption());
 		table->setItem(i, 0, item);
 		item = new QTableWidgetItem(abst->version().toString());
@@ -80,7 +80,7 @@ void SolverDefinitionListDialog::handleCellDoubleClick(int row, int /*column*/)
 
 void SolverDefinitionListDialog::showDetailOfCurrent()
 {
-	QTableWidget *table = ui->solverListTable;
+	QTableWidget* table = ui->solverListTable;
 	showDetail(table->currentRow());
 }
 

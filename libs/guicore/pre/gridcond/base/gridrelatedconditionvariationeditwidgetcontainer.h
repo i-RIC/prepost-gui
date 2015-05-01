@@ -9,18 +9,17 @@ class GridRelatedConditionVariationEditWidgetContainer : public QWidget
 {
 public:
 	GridRelatedConditionVariationEditWidgetContainer(QWidget* parent)
-		: QWidget(parent)
-	{
+		: QWidget(parent) {
 		m_widget = nullptr;
 	}
-	void setWidget(GridRelatedConditionVariationEditWidget* w){
+	void setWidget(GridRelatedConditionVariationEditWidget* w) {
 		m_widget = w;
 		QVBoxLayout* l = new QVBoxLayout();
 		l->setMargin(0);
 		l->addWidget(w);
 		setLayout(l);
 	}
-	GridRelatedConditionVariationEditWidget* widget(){return m_widget;}
+	GridRelatedConditionVariationEditWidget* widget() {return m_widget;}
 	QSize sizeHint() const {
 		return m_widget->sizeHint();
 	}

@@ -95,11 +95,11 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 	void assignActionZValues(const ZDepthRange& range);
 	void definePolygon(bool doubleClick, bool noEditVal = false);
-	QColor color(){return m_color;}
+	QColor color() {return m_color;}
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* d);
 	void setMapping(RawDataPolygonColorSettingDialog::Mapping m);
-	RawDataPolygonColorSettingDialog::Mapping mapping(){return m_mapping;}
+	RawDataPolygonColorSettingDialog::Mapping mapping() {return m_mapping;}
 	QColor doubleToColor(double d);
 	void clear();
 	bool ready() const {return true;}
@@ -110,9 +110,9 @@ public:
 	void setPolygon(const QPolygonF& p);
 	void addHolePolygon(const QPolygonF& p);
 	const QPolygonF polygon() const;
-	vtkUnstructuredGrid* grid(){return m_grid;}
+	vtkUnstructuredGrid* grid() {return m_grid;}
 	bool getValueRange(double* min, double* max);
-	void updateFilename(){
+	void updateFilename() {
 		m_filename = m_name;
 		m_filename.append(".dat");
 	}
@@ -120,7 +120,7 @@ public:
 	void copyShape(RawDataPolygon* polygon);
 	MouseEventMode mouseEventMode() const {return m_mouseEventMode;}
 	SelectMode selectMode() const {return m_selectMode;}
-	void setBCSettingMode(bool mode){
+	void setBCSettingMode(bool mode) {
 		m_bcSettingMode = mode;
 	}
 

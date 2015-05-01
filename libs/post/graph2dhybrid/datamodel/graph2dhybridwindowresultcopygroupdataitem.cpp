@@ -21,7 +21,7 @@ Graph2dHybridWindowResultCopyGroupDataItem::~Graph2dHybridWindowResultCopyGroupD
 
 void Graph2dHybridWindowResultCopyGroupDataItem::updateData()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Graph2dHybridWindowResultCopyDataItem* item = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(*it);
 		item->update();
 	}
@@ -30,7 +30,7 @@ void Graph2dHybridWindowResultCopyGroupDataItem::updateData()
 void Graph2dHybridWindowResultCopyGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList list = node.childNodes();
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		QDomNode child = list.at(i);
 		Graph2dHybridWindowResultCopyDataItem* citem = new Graph2dHybridWindowResultCopyDataItem(this);
 		citem->loadFromProjectMainFile(child);
@@ -41,8 +41,8 @@ void Graph2dHybridWindowResultCopyGroupDataItem::doLoadFromProjectMainFile(const
 
 void Graph2dHybridWindowResultCopyGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowResultCopyDataItem* citem = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowResultCopyDataItem* citem = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("Copy");
 		citem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -56,7 +56,7 @@ void Graph2dHybridWindowResultCopyGroupDataItem::addItem(Graph2dHybridWindowResu
 
 void Graph2dHybridWindowResultCopyGroupDataItem::clear()
 {
-	for (int i = m_childItems.count() - 1; i >= 0; --i){
+	for (int i = m_childItems.count() - 1; i >= 0; --i) {
 		delete m_childItems.at(i);
 	}
 }
@@ -64,8 +64,8 @@ void Graph2dHybridWindowResultCopyGroupDataItem::clear()
 bool Graph2dHybridWindowResultCopyGroupDataItem::axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const
 {
 	bool needed = false;
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowResultCopyDataItem* rItem = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowResultCopyDataItem* rItem = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(m_childItems.at(i));
 		needed = needed || rItem->axisNeeded(as);
 	}
 	return needed;

@@ -3,14 +3,16 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionGridGeneratorSettingDialog;
 }
 
-class GridCreatingConditionGridGeneratorSettingDialog : public QDialog {
+class GridCreatingConditionGridGeneratorSettingDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	GridCreatingConditionGridGeneratorSettingDialog(QWidget *parent = 0);
+	GridCreatingConditionGridGeneratorSettingDialog(QWidget* parent = 0);
 	~GridCreatingConditionGridGeneratorSettingDialog();
 
 	enum ChannelShape {SingleSection, SimpleCompound, ComplexCompound};
@@ -76,7 +78,7 @@ public:
 	void setupConnections();
 	void setupDisability();
 private:
-	Ui::GridCreatingConditionGridGeneratorSettingDialog *ui;
+	Ui::GridCreatingConditionGridGeneratorSettingDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONGRIDGENERATORSETTINGDIALOG_H

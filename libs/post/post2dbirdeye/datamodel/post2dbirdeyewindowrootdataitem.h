@@ -26,15 +26,15 @@ public:
 	~Post2dBirdEyeWindowRootDataItem();
 
 	/// Background image data item
-	Post2dBirdEyeWindowBackgroundImagesDataItem* backgroundImagesDataItem(){
+	Post2dBirdEyeWindowBackgroundImagesDataItem* backgroundImagesDataItem() {
 		return m_backgroundImagesDataItem;
 	}
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post2dBirdEyeWindowGridTypeDataItem*>& gridTypeDataItems(){return m_gridTypeDataItems;}
+	const QList<Post2dBirdEyeWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
 	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
 	Post2dBirdEyeWindowZoneDataItem* zoneDataItem(const QString& name);
-	PostTitleDataItem* titleDataItem(){return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem(){return m_timeDataItem;}
+	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
+	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
 private slots:
 	void updateZoneList();
 	void update();

@@ -84,7 +84,7 @@ public:
 		double lowerLimit;
 		double upperLimit;
 	};
-	GridCtrlOffsetInfo& GCPOffsetInfo(){return m_GCPOffsetInfo;}
+	GridCtrlOffsetInfo& GCPOffsetInfo() {return m_GCPOffsetInfo;}
 	void invalidateSelectedCtrlPoints();
 	void clear();
 protected:

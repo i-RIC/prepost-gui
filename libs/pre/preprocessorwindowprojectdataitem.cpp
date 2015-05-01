@@ -37,7 +37,7 @@ void PreProcessorWindowProjectDataItem::initForSolverDefinition()
 	parent->m_dataModel->updateOperationToolBar(QModelIndex(), parent);
 	parent->m_isLastHiding = false;
 
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (parent->m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(parent->m_dataModel);
 	PreProcessorRootDataItem* rItem = dynamic_cast<PreProcessorRootDataItem*>(model->rootDataItem());
 	parent->propertyBrowser()->view()->setTargetDataItem(rItem->attributeBrowserTargetDataItem());
 
@@ -72,10 +72,10 @@ PreProcessorWindowProjectDataItem::~PreProcessorWindowProjectDataItem()
 	// explicitly delete the datamodel, so that it is sure
 	// datamodel is destructed earlier than graphicsview.
 	PreProcessorWindow* parent = m_preProcessorWindow;
-	if (parent->isVisible()){
+	if (parent->isVisible()) {
 		parent->m_isLastHiding = true;
 	}
-	if (parent->m_dataModel != nullptr){
+	if (parent->m_dataModel != nullptr) {
 		delete parent->m_dataModel;
 		parent->m_dataModel = nullptr;
 	}
@@ -94,19 +94,19 @@ void PreProcessorWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode
 	ProjectDataItem::loadWindowGeometry(m_preProcessorWindow->parentWidget(), node);
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
-	if (! cameraNode.isNull()){
+	if (! cameraNode.isNull()) {
 		vtkCamera* camera = m_preProcessorWindow->m_dataModel->graphicsView()->mainRenderer()->GetActiveCamera();
 		ProjectDataItem::loadCamera(camera, cameraNode);
 	}
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
-	if (! modelNode.isNull()){
+	if (! modelNode.isNull()) {
 		parent->m_dataModel->loadFromProjectMainFile(modelNode);
 		parent->m_dataModel->reflectExpandState(parent->m_objectBrowser->view());
 	}
 }
 
-void PreProcessorWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter & writer)
+void PreProcessorWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	/// save background color
 	ProjectDataItem::writeBackgroundColor(m_preProcessorWindow->backgroundColor(), writer);
@@ -145,18 +145,18 @@ void PreProcessorWindowProjectDataItem::closeCgnsFile()
 
 QStringList PreProcessorWindowProjectDataItem::containedFiles()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_preProcessorWindow->m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
 	return model->m_rootDataItem->containedFiles();
 }
 
 bool PreProcessorWindowProjectDataItem::gridEdited()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_preProcessorWindow->m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
 	return model->gridEdited();
 }
 
 void PreProcessorWindowProjectDataItem::toggleGridEditFlag()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_preProcessorWindow->m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
 	model->toggleGridEditFlag();
 }

@@ -13,41 +13,39 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionContainer : public QObject
 	Q_OBJECT
 public:
 	/// Constructor
-	CgnsFileInputConditionContainer(){
+	CgnsFileInputConditionContainer() {
 		m_name = QString();
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = false;
 	}
 	/// Constructor
 	CgnsFileInputConditionContainer(const QString& name)
-		: QObject(0)
-	{
+		: QObject(0) {
 		m_name = name;
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = false;
 	}
 	/// Constructor (with copying)
 	CgnsFileInputConditionContainer(const CgnsFileInputConditionContainer& c)
-		: QObject(0)
-	{
+		: QObject(0) {
 		m_name = c.m_name;
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = false;
 	}
-	void setBCProperty(const QString& bcname, int bcindex){
+	void setBCProperty(const QString& bcname, int bcindex) {
 		m_bcName = bcname;
 		m_bcIndex = bcindex;
 		m_isBoundaryCondition = true;
 		m_isComplexCondition = false;
 	}
-	void setComplexProperty(const QString& compname, int compindex){
+	void setComplexProperty(const QString& compname, int compindex) {
 		m_complexName = compname;
 		m_complexIndex = compindex;
 		m_isBoundaryCondition = false;
 		m_isComplexCondition = true;
 	}
 
-	void setName(const QString& name){m_name = name;}
+	void setName(const QString& name) {m_name = name;}
 	virtual void clear() = 0;
 	virtual int load() = 0;
 	virtual int save() = 0;

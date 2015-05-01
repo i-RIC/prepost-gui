@@ -40,13 +40,13 @@ QString RawDataRiverSurveyCreator::defaultCaption(unsigned int index)
 	return QString(tr("RiverSurvey %1")).arg(index);
 }
 
-RawData* RawDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition)
+RawData* RawDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
 {
 	RawData* rawdata = RawDataCreator::restore(node, parent, condition);
-	if (rawdata != nullptr){return rawdata;}
+	if (rawdata != nullptr) {return rawdata;}
 	QDomElement elem = node.toElement();
 	QString name = elem.attribute("name");
-	if (name.contains("riversurvey")){
+	if (name.contains("riversurvey")) {
 		return create(parent, condition);
 	}
 	return nullptr;
@@ -54,9 +54,9 @@ RawData* RawDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataIte
 
 bool RawDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridRelatedCondition* condition)
 {
-	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == nullptr){return false;}
-	if (condition->position() == SolverDefinitionGridRelatedCondition::CellCenter){return false;}
-	if (condition->isOption()){return false;}
-	if (condition->dimensions().size() != 0){return false;}
+	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == nullptr) {return false;}
+	if (condition->position() == SolverDefinitionGridRelatedCondition::CellCenter) {return false;}
+	if (condition->isOption()) {return false;}
+	if (condition->dimensions().size() != 0) {return false;}
 	return true;
 }

@@ -18,12 +18,12 @@ public:
 	~Post3dWindowGridTypeDataItem();
 	const QList<Post3dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
 	const QString& name();
-	Post3dWindowZoneDataItem* zoneData(const QString& name){
+	Post3dWindowZoneDataItem* zoneData(const QString& name) {
 		return m_zoneDataNameMap.value(name);
 	}
-	SolverDefinitionGridType* gridType(){return m_gridType;}
+	SolverDefinitionGridType* gridType() {return m_gridType;}
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* lookupTable(const QString& attName){return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
 	void setValueRange(const QString& name);
 	void setupZoneDataItems();
 	void update();

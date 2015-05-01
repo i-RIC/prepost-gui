@@ -29,7 +29,7 @@ Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent
 	w->setCentralWidget(w->m_dataModel->graphicsView());
 	w->m_objectBrowser->setModel(w->m_dataModel->itemModel());
 
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*> (w->m_dataModel->m_rootDataItem);
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(w->m_dataModel->m_rootDataItem);
 	w->propertyBrowser()->view()->setTargetDataItem(rItem->attributeBrowserTargetDataItem());
 	// first, objectbrowser view is expanded.
 	w->m_objectBrowser->expandAll();
@@ -58,13 +58,13 @@ void Post2dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
-	if (! modelNode.isNull()){
+	if (! modelNode.isNull()) {
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
-	if (! cameraNode.isNull()){
+	if (! cameraNode.isNull()) {
 		vtkCamera* camera = w->m_dataModel->graphicsView()->mainRenderer()->GetActiveCamera();
 		ProjectDataItem::loadCamera(camera, cameraNode);
 	}

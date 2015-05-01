@@ -118,13 +118,13 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 GridCreatingConditionTriangle::~GridCreatingConditionTriangle()
 {
 	delete m_gridRegionPolygon;
-	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons) {
 		delete pol;
 	}
-	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons) {
 		delete pol;
 	}
-	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines) {
 		delete line;
 	}
 	delete m_rightClickingMenu;
@@ -182,18 +182,19 @@ QColor GridCreatingConditionTriangle::doubleToColor(double /*d*/)
 	return Qt::red;
 }
 
-void GridCreatingConditionTriangle::setColor(double r, double g, double b){
-	m_color = QColor((int) (r * 255), (int) (g * 255), (int) (b * 255));
+void GridCreatingConditionTriangle::setColor(double r, double g, double b)
+{
+	m_color = QColor((int)(r * 255), (int)(g * 255), (int)(b * 255));
 }
 
-void GridCreatingConditionTriangle::setColor(const QColor &color)
+void GridCreatingConditionTriangle::setColor(const QColor& color)
 {
 	setColor(color.red() / 255.0, color.green() / 255.0, color.blue() / 255.0);
 }
 
 void GridCreatingConditionTriangle::informSelection(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_selectMode){
+	switch (m_selectMode) {
 	case smPolygon:
 		m_selectedPolygon->setActive(true);
 		break;
@@ -209,7 +210,7 @@ void GridCreatingConditionTriangle::informSelection(PreProcessorGraphicsViewInte
 
 void GridCreatingConditionTriangle::informDeselection(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_selectMode){
+	switch (m_selectMode) {
 	case smPolygon:
 		m_selectedPolygon->setActive(false);
 		break;
@@ -232,21 +233,18 @@ class GridCreatingConditionTrianglePolygonFinishDefiningCommand : public QUndoCo
 {
 public:
 	GridCreatingConditionTrianglePolygonFinishDefiningCommand(GridCreatingConditionTriangle* polygon)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Finish Defining Polygon"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Finish Defining Polygon")) {
 		m_polygon = polygon;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
 		m_polygon->m_selectedPolygon = m_targetPolygon;
 		m_polygon->m_selectedPolygon->setActive(true);
 		m_polygon->updateMouseCursor(m_polygon->graphicsView());
 		m_polygon->updateActionStatus();
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
 		m_targetPolygon->finishDefinition();
 		m_polygon->updateMouseCursor(m_polygon->graphicsView());
@@ -261,13 +259,11 @@ class GridCreatingConditionTrianglePolylineFinishDefiningCommand : public QUndoC
 {
 public:
 	GridCreatingConditionTrianglePolylineFinishDefiningCommand(GridCreatingConditionTriangle* polygon)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Finish Defining Break Line"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Finish Defining Break Line")) {
 		m_polygon = polygon;
 		m_targetLine = m_polygon->m_selectedLine;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
 		m_polygon->m_selectMode = GridCreatingConditionTriangle::smLine;
 		m_polygon->m_selectedLine = m_targetLine;
@@ -275,8 +271,7 @@ public:
 		m_polygon->updateMouseCursor(m_polygon->graphicsView());
 		m_polygon->updateActionStatus();
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
 		m_targetLine->finishDefinition();
 		m_polygon->updateMouseCursor(m_polygon->graphicsView());
@@ -289,11 +284,11 @@ private:
 
 void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return){
-		if (m_mouseEventMode == meDefining){
-			if (m_selectMode == smPolygon){
+	if (event->key() == Qt::Key_Return) {
+		if (m_mouseEventMode == meDefining) {
+			if (m_selectMode == smPolygon) {
 				definePolygon(false);
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				defineLine(false);
 			}
 		}
@@ -305,10 +300,10 @@ void GridCreatingConditionTriangle::keyReleaseEvent(QKeyEvent* /*event*/, PrePro
 
 void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode == meDefining){
-		if (m_selectMode == smPolygon){
+	if (m_mouseEventMode == meDefining) {
+		if (m_selectMode == smPolygon) {
 			definePolygon(true);
-		} else if (m_selectMode == smLine){
+		} else if (m_selectMode == smLine) {
 			defineLine(true);
 		}
 	}
@@ -318,8 +313,7 @@ class GridCreatingConditionTrianglePolygonDefineNewPointCommand : public QUndoCo
 {
 public:
 	GridCreatingConditionTrianglePolygonDefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Polygon Point"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Polygon Point")) {
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -328,14 +322,13 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown){
+		if (m_keyDown) {
 			// add new point.
 			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
 			pol->GetPoints()->Modified();
-		}else{
+		} else {
 			// modify the last point.
 			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
 			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
@@ -345,15 +338,14 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown){
+		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
 			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
 			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 			pol->GetPoints()->Modified();
-		}else{
+		} else {
 			// this does not happen. no implementation needed.
 		}
 		pol->Modified();
@@ -363,12 +355,12 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolygonDefineNewPoint");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolygonDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolygonDefineNewPointCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_polygon != m_polygon){return false;}
-		if (comm->m_targetPolygon != m_targetPolygon){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_polygon != m_polygon) {return false;}
+		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
 		m_newPoint = comm->m_newPoint;
 		return true;
 	}
@@ -383,8 +375,7 @@ class GridCreatingConditionTrianglePolygonMoveCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTrianglePolygonMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Polygon"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Polygon")) {
 		m_keyDown = keyDown;
 		double dx = from.x();
 		double dy = from.y();
@@ -398,11 +389,10 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] += m_offset.x();
@@ -414,11 +404,10 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] -= m_offset.x();
@@ -433,12 +422,12 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolygonMove");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolygonMoveCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolygonMoveCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_polygon != m_polygon){return false;}
-		if (comm->m_targetPolygon != m_targetPolygon){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_polygon != m_polygon) {return false;}
+		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -453,8 +442,7 @@ class GridCreatingConditionTrianglePolygonMoveVertexCommand : public QUndoComman
 {
 public:
 	GridCreatingConditionTrianglePolygonMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Polygon Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Polygon Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = vertexId;
 		double dx = from.x();
@@ -469,8 +457,7 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
 		double p[3];
@@ -484,8 +471,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
 		double p[3];
@@ -502,13 +488,13 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolygonMoveVertex");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolygonMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolygonMoveVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_polygon != m_polygon){return false;}
-		if (comm->m_targetPolygon != m_targetPolygon){return false;}
-		if (comm->m_vertexId != m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_polygon != m_polygon) {return false;}
+		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
+		if (comm->m_vertexId != m_vertexId) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -524,8 +510,7 @@ class GridCreatingConditionTrianglePolygonAddVertexCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTrianglePolygonAddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Insert Polygon Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Insert Polygon Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = (edgeId + 1) % (pol->m_selectedPolygon->getVtkPolygon()->GetNumberOfPoints() + 1);
 		double dx = point.x();
@@ -535,30 +520,29 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void redo()
-	{
-		if (m_keyDown){
+	void redo() {
+		if (m_keyDown) {
 			// add vertex.
 			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			positions.append(m_vertexPosition);
-			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
 			points->Modified();
-		}else{
+		} else {
 			// just modify the vertex position
 			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 			points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
@@ -568,25 +552,24 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
-		if (m_keyDown){
+	void undo() {
+		if (m_keyDown) {
 			// remove vertex.
 			vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			// skip vertex in m_vertexId[
-			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
@@ -594,20 +577,19 @@ public:
 			m_targetPolygon->getVtkPolygon()->Modified();
 			m_targetPolygon->updateShapeData();
 			m_polygon->renderGraphicsView();
-		}else{
+		} else {
 			// this never happens.
 		}
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolygonAddVertex");
 	}
-	bool mergeWith(const QUndoCommand *other)
-	{
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolygonAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolygonAddVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (m_polygon != comm->m_polygon){return false;}
-		if (m_vertexId != comm->m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (m_polygon != comm->m_polygon) {return false;}
+		if (m_vertexId != comm->m_vertexId) {return false;}
 		m_vertexPosition = comm->m_vertexPosition;
 		return true;
 	}
@@ -624,8 +606,7 @@ class GridCreatingConditionTrianglePolyLineDefineNewPointCommand : public QUndoC
 {
 public:
 	GridCreatingConditionTrianglePolyLineDefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* cond)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Break Line Point"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Break Line Point")) {
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -634,18 +615,17 @@ public:
 		m_condition = cond;
 		m_targetLine = m_condition->m_selectedLine;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown){
+		if (m_keyDown) {
 			// add new point.
 			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 0){
+			if (numOfPoints == 0) {
 				m_condition->m_mouseEventMode = GridCreatingConditionTriangle::meDefining;
 			}
 			line->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
 			line->GetPoints()->Modified();
-		}else{
+		} else {
 			// modify the last point.
 			vtkIdType lastId = line->GetNumberOfPoints() - 1;
 			line->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
@@ -655,18 +635,17 @@ public:
 		m_targetLine->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* line = m_targetLine->getVtkLine();
-		if (m_keyDown){
+		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
 			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 1){
+			if (numOfPoints == 1) {
 				m_condition->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
 			}
 			line->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 			line->GetPoints()->Modified();
-		}else{
+		} else {
 			// this does not happen. no implementation needed.
 		}
 		line->Modified();
@@ -676,11 +655,11 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolyLineDefineNewPoint");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolyLineDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolyLineDefineNewPointCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_condition != m_condition){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_condition != m_condition) {return false;}
 		m_newPoint = comm->m_newPoint;
 		return true;
 	}
@@ -695,8 +674,7 @@ class GridCreatingConditionTrianglePolyLineMoveCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTrianglePolyLineMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Break Line"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Break Line")) {
 		m_keyDown = keyDown;
 		double dx = from.x();
 		double dy = from.y();
@@ -710,11 +688,10 @@ public:
 		m_polygon = pol;
 		m_targetLine = m_polygon->m_selectedLine;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* pol = m_targetLine->getVtkLine();
 		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] += m_offset.x();
@@ -726,11 +703,10 @@ public:
 		m_targetLine->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* pol = m_targetLine->getVtkLine();
 		vtkPoints* points = pol->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] -= m_offset.x();
@@ -745,12 +721,12 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolyLineMove");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolyLineMoveCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolyLineMoveCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_polygon != m_polygon){return false;}
-		if (comm->m_targetLine != m_targetLine){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_polygon != m_polygon) {return false;}
+		if (comm->m_targetLine != m_targetLine) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -765,8 +741,7 @@ class GridCreatingConditionTrianglePolyLineMoveVertexCommand : public QUndoComma
 {
 public:
 	GridCreatingConditionTrianglePolyLineMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Break Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Move Break Line Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = vertexId;
 		double dx = from.x();
@@ -781,8 +756,7 @@ public:
 		m_polygon = pol;
 		m_targetLine = m_polygon->m_selectedLine;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* pol = m_targetLine->getVtkLine();
 		vtkPoints* points = pol->GetPoints();
 		double p[3];
@@ -796,8 +770,7 @@ public:
 		m_targetLine->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* pol = m_targetLine->getVtkLine();
 		vtkPoints* points = pol->GetPoints();
 		double p[3];
@@ -814,13 +787,13 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolyLineMoveVertex");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolyLineMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolyLineMoveVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_polygon != m_polygon){return false;}
-		if (comm->m_targetLine != m_targetLine){return false;}
-		if (comm->m_vertexId != m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_polygon != m_polygon) {return false;}
+		if (comm->m_targetLine != m_targetLine) {return false;}
+		if (comm->m_vertexId != m_vertexId) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -836,8 +809,7 @@ class GridCreatingConditionTrianglePolyLineAddVertexCommand : public QUndoComman
 {
 public:
 	GridCreatingConditionTrianglePolyLineAddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Insert Break Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Insert Break Line Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = edgeId + 1;
 		double dx = point.x();
@@ -847,30 +819,29 @@ public:
 		m_polygon = pol;
 		m_targetLine = m_polygon->m_selectedLine;
 	}
-	void redo()
-	{
-		if (m_keyDown){
+	void redo() {
+		if (m_keyDown) {
 			// add vertex.
 			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			positions.append(m_vertexPosition);
-			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
 			points->Modified();
-		}else{
+		} else {
 			// just modify the vertex position
 			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
 			points->SetPoint(m_vertexId, m_vertexPosition.x(), m_vertexPosition.y(), 0);
@@ -880,25 +851,24 @@ public:
 		m_targetLine->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
-		if (m_keyDown){
+	void undo() {
+		if (m_keyDown) {
 			// remove vertex.
 			vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			// skip vertex in m_vertexId[
-			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
@@ -906,21 +876,20 @@ public:
 			m_targetLine->getVtkLine()->Modified();
 			m_targetLine->updateShapeData();
 			m_polygon->renderGraphicsView();
-		}else{
+		} else {
 			// this never happens.
 		}
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionTrianglePolyLineAddVertex");
 	}
-	bool mergeWith(const QUndoCommand *other)
-	{
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionTrianglePolyLineAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionTrianglePolyLineAddVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (m_polygon != comm->m_polygon){return false;}
-		if (m_targetLine != comm->m_targetLine){return false;}
-		if (m_vertexId != comm->m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (m_polygon != comm->m_polygon) {return false;}
+		if (m_targetLine != comm->m_targetLine) {return false;}
+		if (m_vertexId != comm->m_vertexId) {return false;}
 		m_vertexPosition = comm->m_vertexPosition;
 		return true;
 	}
@@ -934,7 +903,7 @@ private:
 
 void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meTranslatePrepare:
 	case meMoveVertexPrepare:
@@ -951,33 +920,33 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 		break;
 	case meDefining:
 		// update the position of the last point.
-		if (m_selectMode == smPolygon){
+		if (m_selectMode == smPolygon) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonDefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
-		} else if (m_selectMode == smLine){
+		} else if (m_selectMode == smLine) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineDefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
-		if (m_selectMode == smPolygon){
+		if (m_selectMode == smPolygon) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonMoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
-		} else if (m_selectMode == smLine){
+		} else if (m_selectMode == smLine) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineMoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
-		if (m_selectMode == smPolygon){
+		if (m_selectMode == smPolygon) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonMoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
-		} else if (m_selectMode == smLine){
+		} else if (m_selectMode == smLine) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineMoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedLine->selectedVertexId(), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
-		if (m_selectMode == smPolygon){
+		if (m_selectMode == smPolygon) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonAddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
-		} else if (m_selectMode == smLine){
+		} else if (m_selectMode == smLine) {
 			iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineAddVertexCommand(false, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 		}
 		break;
@@ -992,8 +961,7 @@ class GridCreatingConditionTrianglePolygonRemoveVertexCommand : public QUndoComm
 {
 public:
 	GridCreatingConditionTrianglePolygonRemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Remove Polygon Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Remove Polygon Vertex")) {
 		m_vertexId = vertexId;
 		double p[3];
 		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
@@ -1001,23 +969,22 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -1027,23 +994,22 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -1063,8 +1029,7 @@ class GridCreatingConditionTrianglePolyLineRemoveVertexCommand : public QUndoCom
 {
 public:
 	GridCreatingConditionTrianglePolyLineRemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Remove Break Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Remove Break Line Vertex")) {
 		m_vertexId = vertexId;
 		double p[3];
 		pol->m_selectedLine->getVtkLine()->GetPoints()->GetPoint(m_vertexId, p);
@@ -1072,23 +1037,22 @@ public:
 		m_polygon = pol;
 		m_targetLine = m_polygon->m_selectedLine;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		// skip vertex in m_vertexId[
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -1098,23 +1062,22 @@ public:
 		m_targetLine->updateShapeData();
 		m_polygon->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPoints* points = m_targetLine->getVtkLine()->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -1132,17 +1095,17 @@ private:
 
 void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 
 		// left click
 		double worldX = static_cast<double>(event->x());
 		double worldY = static_cast<double>(event->y());
 		v->viewportToWorld(worldX, worldY);
 
-		switch (m_mouseEventMode){
+		switch (m_mouseEventMode) {
 		case meNormal:
 			// new selected polygon.
-			if (selectObject(event->pos())){
+			if (selectObject(event->pos())) {
 				// selection changed.
 				updateMouseEventMode();
 				updateMouseCursor(v);
@@ -1153,34 +1116,34 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		case meBeforeDefining:
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 		case meDefining:
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meTranslatePrepare:
-			if (selectObject(event->pos())){
+			if (selectObject(event->pos())) {
 				// selection changed.
 				updateMouseEventMode();
 				updateMouseCursor(v);
 				updateActionStatus();
 				renderGraphicsView();
-			}else{
+			} else {
 				// start translating
 				m_mouseEventMode = meTranslate;
 				m_currentPoint = QPoint(event->x(), event->y());
 				updateMouseCursor(v);
 				// push the first translation command.
-				if (m_selectMode == smPolygon){
+				if (m_selectMode == smPolygon) {
 					iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonMoveCommand(true, m_currentPoint, m_currentPoint, this));
-				} else if (m_selectMode == smLine){
+				} else if (m_selectMode == smLine) {
 					iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineMoveCommand(true, m_currentPoint, m_currentPoint, this));
 				}
 			}
@@ -1189,17 +1152,17 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			m_mouseEventMode = meMoveVertex;
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first move command.
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonMoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineMoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedLine->selectedVertexId(), this));
 			}
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonAddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineAddVertexCommand(true, m_selectedLine->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 			}
 			break;
@@ -1207,18 +1170,18 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 			// do nothing.
 			break;
 		case meRemoveVertexPrepare:
-			if (m_selectMode == smPolygon){
-				if (m_selectedPolygon->polygon().count() == 1){
+			if (m_selectMode == smPolygon) {
+				if (m_selectedPolygon->polygon().count() == 1) {
 					// you are going to remove the last point.
 					deletePolygon(true);
-				}else{
+				} else {
 					iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolygonRemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
 				}
-			} else if (m_selectMode == smLine){
-				if (m_selectedLine->polyLine().count() == 1){
+			} else if (m_selectMode == smLine) {
+				if (m_selectedLine->polyLine().count() == 1) {
 					// you are going to remove the last point.
 					deleteLine(true);
-				}else{
+				} else {
 					iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineRemoveVertexCommand(m_selectedLine->selectedVertexId(), this));
 				}
 			}
@@ -1243,7 +1206,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 		}
 		updateMouseCursor(v);
 		updateActionStatus();
-	}else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -1251,8 +1214,8 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 
 void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
-		switch (m_mouseEventMode){
+	if (event->button() == Qt::LeftButton) {
+		switch (m_mouseEventMode) {
 		case meNormal:
 		case meTranslatePrepare:
 		case meMoveVertexPrepare:
@@ -1278,9 +1241,9 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 			break;
 		}
 		m_inhibitSelect = false;
-	}else if (event->button() == Qt::RightButton){
-		if (m_mouseEventMode == meEditVerticesDialog){return;}
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	} else if (event->button() == Qt::RightButton) {
+		if (m_mouseEventMode == meEditVerticesDialog) {return;}
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -1290,7 +1253,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 
 void GridCreatingConditionTriangle::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meAddVertexNotPossible:
 	case meRemoveVertexNotPossible:
@@ -1326,11 +1289,11 @@ void GridCreatingConditionTriangle::addCustomMenuItems(QMenu* /*menu*/)
 void GridCreatingConditionTriangle::definePolygon(bool doubleClick)
 {
 	int minCount = 4;
-	if (doubleClick){
+	if (doubleClick) {
 		minCount = 3;
 	}
-	if (m_selectedPolygon == nullptr){return;}
-	if (m_selectedPolygon->polygon().count() <= minCount){
+	if (m_selectedPolygon == nullptr) {return;}
+	if (m_selectedPolygon->polygon().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
 	}
@@ -1345,11 +1308,11 @@ void GridCreatingConditionTriangle::definePolygon(bool doubleClick)
 void GridCreatingConditionTriangle::defineLine(bool doubleClick)
 {
 	int minCount = 2;
-	if (doubleClick){
+	if (doubleClick) {
 		minCount = 1;
 	}
-	if (m_selectedLine == nullptr){return;}
-	if (m_selectedLine->polyLine().count() <= minCount){
+	if (m_selectedLine == nullptr) {return;}
+	if (m_selectedLine->polyLine().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line must have two vertices at least."));
 		return;
 	}
@@ -1363,9 +1326,9 @@ void GridCreatingConditionTriangle::defineLine(bool doubleClick)
 
 void GridCreatingConditionTriangle::addVertexMode(bool on)
 {
-	if (on){
+	if (on) {
 		m_mouseEventMode = meAddVertexNotPossible;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
@@ -1373,19 +1336,20 @@ void GridCreatingConditionTriangle::addVertexMode(bool on)
 
 void GridCreatingConditionTriangle::removeVertexMode(bool on)
 {
-	if (on){
+	if (on) {
 		m_mouseEventMode = meRemoveVertexNotPossible;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
 }
 
-void GridCreatingConditionTriangle::doLoadFromProjectMainFile(const QDomNode& /*node*/){}
+void GridCreatingConditionTriangle::doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 
-void GridCreatingConditionTriangle::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+void GridCreatingConditionTriangle::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
-void GridCreatingConditionTriangle::loadExternalData(const QString& filename){
+void GridCreatingConditionTriangle::loadExternalData(const QString& filename)
+{
 	clear();
 
 	QFile f(filename);
@@ -1395,18 +1359,18 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename){
 	s >> m_angleConstraint >> m_angle;
 	s >> m_areaConstraint >> m_area;
 	s >> poly;
-	if (poly.size() > 0){
+	if (poly.size() > 0) {
 		m_mouseEventMode = meNormal;
 		m_gridRegionPolygon->setPolygon(poly);
 		informDeselection(graphicsView());
-	}else{
+	} else {
 		m_mouseEventMode = meBeforeDefining;
 	}
 	int divLines;
 	int remeshPolygons;
 	int holePolygons;
 	s >> divLines;
-	for (int i = 0; i < divLines; ++i){
+	for (int i = 0; i < divLines; ++i) {
 		QVector<QPointF> line;
 		s >> line;
 		GridCreatingConditionTriangleDivisionLine* tmpLine = new GridCreatingConditionTriangleDivisionLine(this);
@@ -1415,7 +1379,7 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename){
 		m_divisionLines.append(tmpLine);
 	}
 	s >> remeshPolygons;
-	for (int i = 0; i < remeshPolygons; ++i){
+	for (int i = 0; i < remeshPolygons; ++i) {
 		QPolygonF pol;
 		double area;
 		s >> pol;
@@ -1427,7 +1391,7 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename){
 		m_remeshPolygons.append(tmpPol);
 	}
 	s >> holePolygons;
-	for (int i = 0; i < holePolygons; ++i){
+	for (int i = 0; i < holePolygons; ++i) {
 		QPolygonF pol;
 		s >> pol;
 		GridCreatingConditionTriangleHolePolygon* tmpPol = new GridCreatingConditionTriangleHolePolygon(this);
@@ -1440,7 +1404,8 @@ void GridCreatingConditionTriangle::loadExternalData(const QString& filename){
 	f.close();
 }
 
-void GridCreatingConditionTriangle::saveExternalData(const QString& filename){
+void GridCreatingConditionTriangle::saveExternalData(const QString& filename)
+{
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
@@ -1449,18 +1414,18 @@ void GridCreatingConditionTriangle::saveExternalData(const QString& filename){
 	s << m_gridRegionPolygon->polygon();
 	int divLines = m_divisionLines.count();
 	s << divLines;
-	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines) {
 		s << line->polyLine();
 	}
 	int remeshPolygons = m_remeshPolygons.count();
 	s << remeshPolygons;
-	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons) {
 		s << pol->polygon();
 		s << pol->cellSize();
 	}
 	int holePolygons = m_holePolygons.count();
 	s << holePolygons;
-	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons) {
 		s << pol->polygon();
 	}
 	f.close();
@@ -1475,13 +1440,13 @@ void GridCreatingConditionTriangle::assignActionZValues(const ZDepthRange& range
 {
 	m_depthRange = range;
 	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());
-	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines){
+	for (GridCreatingConditionTriangleDivisionLine* line : m_divisionLines) {
 		line->setZDepthRange(range.min(), range.max());
 	}
-	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons){
+	for (GridCreatingConditionTriangleRemeshPolygon* pol : m_remeshPolygons) {
 		pol->setZDepthRange(range.min(), range.max());
 	}
-	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons){
+	for (GridCreatingConditionTriangleHolePolygon* pol : m_holePolygons) {
 		pol->setZDepthRange(range.min(), range.max());
 	}
 }
@@ -1493,37 +1458,37 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 	dy = m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
 	QVector2D worldPos(dx, dy);
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
-		if (m_selectMode == smNone){return;}
-		if (m_selectMode == smPolygon){
-			if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smNone) {return;}
+		if (m_selectMode == smPolygon) {
+			if (m_selectedPolygon->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meAddVertexPrepare;
-			}else{
+			} else {
 				m_mouseEventMode = meAddVertexNotPossible;
 			}
 		}
-		if (m_selectMode == smLine){
-			if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smLine) {
+			if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meAddVertexPrepare;
-			}else{
+			} else {
 				m_mouseEventMode = meAddVertexNotPossible;
 			}
 		}
 		break;
 	case meRemoveVertexNotPossible:
 	case meRemoveVertexPrepare:
-		if (m_selectMode == smNone){return;}
-		if (m_selectMode == smPolygon){
-			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smNone) {return;}
+		if (m_selectMode == smPolygon) {
+			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
 				m_mouseEventMode = meRemoveVertexNotPossible;
 			}
 		}
-		if (m_selectMode == smLine){
-			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smLine) {
+			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meRemoveVertexPrepare;
 			} else {
 				m_mouseEventMode = meRemoveVertexNotPossible;
@@ -1536,20 +1501,20 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (m_selectMode == smNone){return;}
-		if (m_selectMode == smPolygon){
-			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smNone) {return;}
+		if (m_selectMode == smPolygon) {
+			if (m_selectedPolygon->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meMoveVertexPrepare;
-			} else if (m_selectedPolygon->isPolygonSelectable(worldPos)){
+			} else if (m_selectedPolygon->isPolygonSelectable(worldPos)) {
 				m_mouseEventMode = meTranslatePrepare;
 			} else {
 				m_mouseEventMode = meNormal;
 			}
 		}
-		if (m_selectMode == smLine){
-			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))){
+		if (m_selectMode == smLine) {
+			if (m_selectedLine->isVertexSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meMoveVertexPrepare;
-			} else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
+			} else if (m_selectedLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meTranslatePrepare;
 			} else {
 				m_mouseEventMode = meNormal;
@@ -1569,7 +1534,7 @@ void GridCreatingConditionTriangle::updateMouseEventMode()
 
 void GridCreatingConditionTriangle::updateActionStatus()
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meBeforeDefining:
 	case meDefining:
 		m_addVertexAction->setDisabled(true);
@@ -1586,13 +1551,13 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_divlineModeAction->setDisabled(true);
 		m_divlineModeAction->setChecked(false);
 		m_deleteAction->setDisabled(true);
-		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr){
+		if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 			m_defineModeAction->setChecked(true);
-		} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr){
+		} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 			m_refineModeAction->setChecked(true);
-		} else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr){
+		} else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr) {
 			m_holeModeAction->setChecked(true);
-		} else if (dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine) != nullptr){
+		} else if (dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine) != nullptr) {
 			m_divlineModeAction->setChecked(true);
 		}
 		break;
@@ -1617,15 +1582,15 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_addVertexAction->setChecked(false);
 		m_removeVertexAction->setChecked(false);
 
-		if (m_selectMode != smNone){
+		if (m_selectMode != smNone) {
 			m_addVertexAction->setEnabled(true);
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				m_removeVertexAction->setEnabled(activePolylineHasThreeVertices());
 			}
 			m_coordEditAction->setEnabled(true);
-		}else{
+		} else {
 			m_addVertexAction->setDisabled(true);
 			m_removeVertexAction->setDisabled(true);
 			m_coordEditAction->setDisabled(true);
@@ -1639,16 +1604,16 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_holeModeAction->setChecked(false);
 		m_divlineModeAction->setEnabled(true);
 		m_divlineModeAction->setChecked(false);
-		if (m_selectedPolygon != nullptr){
+		if (m_selectedPolygon != nullptr) {
 			m_addVertexAction->setEnabled(true);
 			m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
 			m_coordEditAction->setEnabled(true);
 			m_deleteAction->setEnabled(true);
 			m_editMaxAreaAction->setDisabled(true);
-			if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr){
+			if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 				m_editMaxAreaAction->setEnabled(true);
 			}
-		} else if (m_selectedLine != nullptr){
+		} else if (m_selectedLine != nullptr) {
 			m_addVertexAction->setEnabled(true);
 			m_removeVertexAction->setEnabled(activePolylineHasThreeVertices());
 			m_coordEditAction->setEnabled(true);
@@ -1668,15 +1633,15 @@ void GridCreatingConditionTriangle::updateActionStatus()
 		m_addVertexAction->setChecked(true);
 		m_removeVertexAction->setChecked(false);
 
-		if (m_selectMode != smNone){
+		if (m_selectMode != smNone) {
 			m_addVertexAction->setEnabled(true);
-			if (m_selectMode == smPolygon){
+			if (m_selectMode == smPolygon) {
 				m_removeVertexAction->setEnabled(activePolygonHasFourVertices());
-			} else if (m_selectMode == smLine){
+			} else if (m_selectMode == smLine) {
 				m_removeVertexAction->setEnabled(activePolylineHasThreeVertices());
 			}
 			m_coordEditAction->setEnabled(true);
-		}else{
+		} else {
 			m_addVertexAction->setDisabled(true);
 			m_removeVertexAction->setDisabled(true);
 			m_coordEditAction->setDisabled(true);
@@ -1716,24 +1681,24 @@ void GridCreatingConditionTriangle::updateActionStatus()
 
 void GridCreatingConditionTriangle::editCoordinates()
 {
-/*
-	m_mouseEventMode = meEditVerticesDialog;
-	GridCreatingConditionTriangleCoordinatesEditDialog* dialog = new GridCreatingConditionTriangleCoordinatesEditDialog(this, preProcessorWindow());
-	dialog->show();
-	iricMainWindow()->enterModelessDialogMode();
-	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
-	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-*/
+	/*
+		m_mouseEventMode = meEditVerticesDialog;
+		GridCreatingConditionTriangleCoordinatesEditDialog* dialog = new GridCreatingConditionTriangleCoordinatesEditDialog(this, preProcessorWindow());
+		dialog->show();
+		iricMainWindow()->enterModelessDialogMode();
+		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
+		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+	*/
 
 	m_mouseEventMode = meEditVerticesDialog;
-	if (m_selectedPolygon != nullptr){
+	if (m_selectedPolygon != nullptr) {
 		GridCreatingConditionTrianglePolygonCoordinatesEditDialog* dialog = new GridCreatingConditionTrianglePolygonCoordinatesEditDialog(this, preProcessorWindow());
 		dialog->show();
 		iricMainWindow()->enterModelessDialogMode();
 		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
 	}
-	if (m_selectedLine != nullptr){
+	if (m_selectedLine != nullptr) {
 		GridCreatingConditionTrianglePolyLineCoordinatesEditDialog* dialog = new GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(this, preProcessorWindow());
 		dialog->show();
 		iricMainWindow()->enterModelessDialogMode();
@@ -1749,8 +1714,8 @@ void GridCreatingConditionTriangle::restoreMouseEventMode()
 
 bool GridCreatingConditionTriangle::create(QWidget* parent)
 {
-	if (! checkCondition()){return false;}
-	if (m_area == 0){
+	if (! checkCondition()) {return false;}
+	if (m_area == 0) {
 		// specify default value.
 		QRectF rect = m_gridRegionPolygon->polygon().boundingRect();
 		m_area = iRIC::roundedValue(rect.width() * rect.height() / 100, 1);
@@ -1760,7 +1725,7 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	dialog.setAngle(m_angle);
 	dialog.setAreaConstraint(m_areaConstraint);
 	dialog.setArea(m_area);
-	if (QDialog::Rejected == dialog.exec()){
+	if (QDialog::Rejected == dialog.exec()) {
 		return false;
 	}
 	m_angleConstraint = dialog.angleConstraint();
@@ -1769,7 +1734,7 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	m_area = dialog.area();
 
 	Grid* grid = createGrid();
-	if (grid == nullptr){return false;}
+	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;
 }
@@ -1777,11 +1742,11 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 void GridCreatingConditionTriangle::clear()
 {
 	initParams();
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
+	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
 		delete m_remeshPolygons[i];
 	}
 	m_remeshPolygons.clear();
-	for (int i = 0; i < m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_holePolygons.count(); ++i) {
 		delete m_holePolygons[i];
 	}
 	m_holePolygons.clear();
@@ -1818,18 +1783,18 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	pointCount += (pol.count() - 1);
 	segmentCount += (pol.count() - 1);
 	QPointF offset = pol.boundingRect().topLeft();
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
+	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
 		pol = m_remeshPolygons[i]->polygon();
 		pointCount += (pol.count() - 1);
 		segmentCount += (pol.count() - 1);
 		++regionCount;
 	}
-	for (int i = 0; i < m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_holePolygons.count(); ++i) {
 		pol = m_holePolygons[i]->polygon();
 		pointCount += (pol.count() - 1);
 		segmentCount += (pol.count() - 1);
 	}
-	for (int i = 0; i < m_divisionLines.count(); ++i){
+	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		line = m_divisionLines[i]->polyLine();
 		pointCount += line.count();
 		segmentCount += (line.count() - 1);
@@ -1866,7 +1831,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	in.numberofedges = 0;
 
 	pol = m_gridRegionPolygon->polygon(offset);
-	for (int i = 0; i < pol.count() - 1; ++i){
+	for (int i = 0; i < pol.count() - 1; ++i) {
 		*(in.pointlist + i * 2)     = pol.at(i).x();
 		*(in.pointlist + i * 2 + 1) = pol.at(i).y();
 		*(in.segmentlist + i * 2) = i + 1;
@@ -1876,9 +1841,9 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	*(in.regionlist)     = innerP.x();
 	*(in.regionlist + 1) = innerP.y();
 	*(in.regionlist + 2) = 0;
-	if (m_areaConstraint){
+	if (m_areaConstraint) {
 		*(in.regionlist + 3) = m_area;
-	}else{
+	} else {
 		// no area constraint.
 		QRectF rect = pol.boundingRect();
 		*(in.regionlist + 3) = rect.width() * rect.height();
@@ -1886,17 +1851,17 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	int pOffset = 2 * (pol.count() - 1);
 	int sOffset = (pol.count() - 1);
 	int aOffset = 1;
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
+	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
 		GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
 		pol = rpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j){
+		for (int j = 0; j < pol.count() - 1; ++j) {
 			*(in.pointlist + j * 2 + pOffset)     = pol.at(j).x();
 			*(in.pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
 			*(in.segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
 			*(in.segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
 		}
 		innerP = rpol->innerPoint(offset);
-		*(in.regionlist + 4 * aOffset    ) = innerP.x();
+		*(in.regionlist + 4 * aOffset) = innerP.x();
 		*(in.regionlist + 4 * aOffset + 1) = innerP.y();
 		*(in.regionlist + 4 * aOffset + 2) = 0;
 		*(in.regionlist + 4 * aOffset + 3) = rpol->cellSize();
@@ -1904,28 +1869,28 @@ Grid* GridCreatingConditionTriangle::createGrid()
 		sOffset += (pol.count() - 1);
 		++aOffset;
 	}
-	for (int i = 0; i < m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_holePolygons.count(); ++i) {
 		GridCreatingConditionTriangleHolePolygon* hpol = m_holePolygons[i];
 		pol = hpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j){
+		for (int j = 0; j < pol.count() - 1; ++j) {
 			*(in.pointlist + j * 2 + pOffset)     = pol.at(j).x();
 			*(in.pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
 			*(in.segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
 			*(in.segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
 		}
 		innerP = hpol->innerPoint(offset);
-		*(in.holelist + i * 2    ) = innerP.x();
+		*(in.holelist + i * 2) = innerP.x();
 		*(in.holelist + i * 2 + 1) = innerP.y();
 		pOffset += 2 * (pol.count() - 1);
 		sOffset += (pol.count() - 1);
 	}
-	for (int i = 0; i < m_divisionLines.count(); ++i){
+	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine(offset);
-		for (int j = 0; j < l.count(); ++j){
+		for (int j = 0; j < l.count(); ++j) {
 			*(in.pointlist + j * 2 + pOffset)     = l.at(j).x();
 			*(in.pointlist + j * 2 + 1 + pOffset) = l.at(j).y();
-			if (j != 0){
+			if (j != 0) {
 				*(in.segmentlist + (j - 1) * 2 + sOffset * 2) = j + pOffset / 2;
 				*(in.segmentlist + (j - 1) * 2 + 1 + sOffset * 2) = j + 1 + pOffset / 2;
 			}
@@ -1951,10 +1916,10 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	QString argstr;
 	argstr.append("p");
-	if (m_angleConstraint){
+	if (m_angleConstraint) {
 		argstr.append(QString("q%1").arg(m_angle));
 	}
-	if (m_areaConstraint || m_remeshPolygons.count() > 0){
+	if (m_areaConstraint || m_remeshPolygons.count() > 0) {
 		argstr.append("a");
 	}
 	argstr.append("D");
@@ -1981,22 +1946,22 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	QFile f(QString("%1/%2").arg(workFolder).arg(polyFileName));
 	f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text);
 	QTextStream o(&f);
-		o.setRealNumberPrecision(20);
-		o.setRealNumberNotation(QTextStream::ScientificNotation);
+	o.setRealNumberPrecision(20);
+	o.setRealNumberNotation(QTextStream::ScientificNotation);
 	o << in.numberofpoints << " 2 0 0\n";
-	for (int i = 0; i < in.numberofpoints; ++i){
+	for (int i = 0; i < in.numberofpoints; ++i) {
 		o << i + 1 << " " << *(in.pointlist + i * 2) << " " << *(in.pointlist + i * 2 + 1) << "\n";
 	}
 	o << in.numberofsegments << " 0\n";
-	for (int i = 0; i < in.numberofsegments; ++i){
+	for (int i = 0; i < in.numberofsegments; ++i) {
 		o << i + 1 << " " << *(in.segmentlist + i * 2) << " " << *(in.segmentlist + i * 2 + 1) << "\n";
 	}
 	o << in.numberofholes << "\n";
-	for (int i = 0; i < in.numberofholes; ++i){
+	for (int i = 0; i < in.numberofholes; ++i) {
 		o << i + 1 << " " << *(in.holelist + i * 2) << " " << *(in.holelist + i * 2 + 1) << "\n";
 	}
 	o << in.numberofregions << "\n";
-	for (int i = 0; i < in.numberofregions; ++i){
+	for (int i = 0; i < in.numberofregions; ++i) {
 		o << i + 1 << " " << *(in.regionlist + i * 4) << " " << *(in.regionlist + i * 4 + 1) << " " << *(in.regionlist + i * 4 + 2) << " " << *(in.regionlist + i * 4 + 3) << "\n";
 	}
 	f.close();
@@ -2007,7 +1972,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	bool finished = thread->wait(2000);
 	m_canceled = false;
 
-	if (! finished){
+	if (! finished) {
 		int prog = 10;
 		// Not finished yet. Show wait dialog.
 		WaitDialog* waitDialog = new WaitDialog(preProcessorWindow());
@@ -2018,7 +1983,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 		waitDialog->setMessage(tr("Generating grid..."));
 		connect(waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
 		waitDialog->show();
-		while (! finished && ! m_canceled){
+		while (! finished && ! m_canceled) {
 			qApp->processEvents();
 			finished = thread->wait(200);
 			waitDialog->setProgress(prog);
@@ -2026,7 +1991,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 		}
 		waitDialog->hide();
 		delete waitDialog;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled;
 			thread->terminate();
 			thread->wait();
@@ -2041,11 +2006,11 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	delete in.regionlist;
 	delete in.holelist;
 
-	if (m_canceled){
-		if (out.pointlist != NULL){
+	if (m_canceled) {
+		if (out.pointlist != NULL) {
 			trifree(out.pointlist);
 		}
-		if (out.trianglelist != NULL){
+		if (out.trianglelist != NULL) {
 			trifree(out.trianglelist);
 		}
 		return nullptr;
@@ -2054,9 +2019,9 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	vtkPoints* points = vtkPoints::New();
 	points->Allocate(out.numberofpoints);
 	points->SetDataTypeToDouble();
-	for (int i = 0; i < out.numberofpoints; ++i){
+	for (int i = 0; i < out.numberofpoints; ++i) {
 		double v[3];
-		v[0] = *(out.pointlist + i * 2    ) + offset.x();
+		v[0] = *(out.pointlist + i * 2) + offset.x();
 		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
 		v[2] = 0;
 		points->InsertNextPoint(v);
@@ -2064,7 +2029,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	grid->vtkGrid()->SetPoints(points);
 
 	grid->vtkGrid()->Allocate(out.numberoftriangles);
-	for (int i = 0; i < out.numberoftriangles; ++i){
+	for (int i = 0; i < out.numberoftriangles; ++i) {
 		vtkIdType id1, id2, id3;
 		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
 		id1 = *(out.trianglelist + i * 3) - 1;
@@ -2078,15 +2043,15 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	// allocate memory for all grid related conditions.
 	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (auto it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}
 	grid->setModified();
 	grid->vtkGrid()->BuildLinks();
-	if (out.pointlist != NULL){
+	if (out.pointlist != NULL) {
 		trifree(out.pointlist);
 	}
-	if (out.trianglelist != NULL){
+	if (out.trianglelist != NULL) {
 		trifree(out.trianglelist);
 	}
 
@@ -2097,19 +2062,17 @@ class GridCreatingConditionTriangleAddRemeshPolygonCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTriangleAddRemeshPolygonCommand(GridCreatingConditionTriangleRemeshPolygon* newPoly, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Remesh Polygon"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Remesh Polygon")) {
 		m_polygon = pol;
 		m_targetPolygon = newPoly;
 		m_undoed = false;
 	}
-	virtual ~GridCreatingConditionTriangleAddRemeshPolygonCommand(){
-		if (m_undoed){
+	virtual ~GridCreatingConditionTriangleAddRemeshPolygonCommand() {
+		if (m_undoed) {
 //			delete m_targetPolygon;
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
@@ -2122,8 +2085,7 @@ public:
 		m_polygon->renderGraphicsView();
 		m_undoed = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
@@ -2144,7 +2106,7 @@ void GridCreatingConditionTriangle::addRefinementPolygon()
 	GridCreatingConditionTriangleRemeshPolygon* pol = new GridCreatingConditionTriangleRemeshPolygon(this);
 	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 	pol->setActive(true);
-	if (m_selectedPolygon != nullptr){
+	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setActive(false);
 	}
 	m_selectedPolygon = pol;
@@ -2158,19 +2120,17 @@ class GridCreatingConditionTriangleAddHolePolygonCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTriangleAddHolePolygonCommand(GridCreatingConditionTriangleHolePolygon* newPoly, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Hole Polygon"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Hole Polygon")) {
 		m_polygon = pol;
 		m_targetPolygon = newPoly;
 		m_undoed = false;
 	}
-	virtual ~GridCreatingConditionTriangleAddHolePolygonCommand(){
-		if (m_undoed){
+	virtual ~GridCreatingConditionTriangleAddHolePolygonCommand() {
+		if (m_undoed) {
 //			delete m_targetPolygon;
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
@@ -2183,8 +2143,7 @@ public:
 		m_polygon->renderGraphicsView();
 		m_undoed = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
@@ -2205,10 +2164,10 @@ void GridCreatingConditionTriangle::addHolePolygon()
 	GridCreatingConditionTriangleHolePolygon* pol = new GridCreatingConditionTriangleHolePolygon(this);
 	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 	pol->setActive(true);
-	if (m_selectedPolygon != nullptr){
+	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setActive(false);
 	}
-	if (m_selectedLine != nullptr){
+	if (m_selectedLine != nullptr) {
 		m_selectedLine->setActive(false);
 		m_selectedLine = nullptr;
 	}
@@ -2222,19 +2181,17 @@ class GridCreatingConditionTriangleAddDivisionLineCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionTriangleAddDivisionLineCommand(GridCreatingConditionTriangleDivisionLine* newLine, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Break Line"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangle::tr("Add New Break Line")) {
 		m_polygon = pol;
 		m_targetLine = newLine;
 		m_undoed = false;
 	}
-	virtual ~GridCreatingConditionTriangleAddDivisionLineCommand(){
-		if (m_undoed){
+	virtual ~GridCreatingConditionTriangleAddDivisionLineCommand() {
+		if (m_undoed) {
 //			delete m_targetLine;
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meBeforeDefining;
@@ -2247,8 +2204,7 @@ public:
 		m_polygon->renderGraphicsView();
 		m_undoed = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GridCreatingConditionTriangle::meNormal;
@@ -2269,11 +2225,11 @@ void GridCreatingConditionTriangle::addDivisionLine()
 	GridCreatingConditionTriangleDivisionLine* l = new GridCreatingConditionTriangleDivisionLine(this);
 	l->setZDepthRange((m_depthRange.min() + m_depthRange.max()) * 0.5, m_depthRange.max());
 	l->setActive(true);
-	if (m_selectedPolygon != nullptr){
+	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setActive(false);
 		m_selectedPolygon = nullptr;
 	}
-	if (m_selectedLine != nullptr){
+	if (m_selectedLine != nullptr) {
 		m_selectedLine->setActive(false);
 	}
 	m_selectMode = smLine;
@@ -2284,26 +2240,26 @@ void GridCreatingConditionTriangle::addDivisionLine()
 
 void GridCreatingConditionTriangle::deletePolygon(bool force)
 {
-	if (m_selectedPolygon == nullptr){return;}
-	if (! force){
+	if (m_selectedPolygon == nullptr) {return;}
+	if (! force) {
 		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this polygon?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return;}
+		if (ret == QMessageBox::No) {return;}
 	}
-	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr){
+	if (dynamic_cast<GridCreatingConditionTriangleGridRegionPolygon*>(m_selectedPolygon) != nullptr) {
 		delete m_gridRegionPolygon;
 		m_gridRegionPolygon = new GridCreatingConditionTriangleGridRegionPolygon(this);
 		m_gridRegionPolygon->setActive(true);
 		m_gridRegionPolygon->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 		m_selectedPolygon = m_gridRegionPolygon;
 		m_mouseEventMode = meBeforeDefining;
-	}else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr){
+	} else if (dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon) != nullptr) {
 		GridCreatingConditionTriangleRemeshPolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleRemeshPolygon*>(m_selectedPolygon);
 		m_remeshPolygons.removeOne(tmpPoly);
 		delete m_selectedPolygon;
 		m_selectedPolygon = nullptr;
 		m_selectMode = smNone;
 		m_mouseEventMode = meNormal;
-	}else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr){
+	} else if (dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon) != nullptr) {
 		GridCreatingConditionTriangleHolePolygon* tmpPoly = dynamic_cast<GridCreatingConditionTriangleHolePolygon*>(m_selectedPolygon);
 		m_holePolygons.removeOne(tmpPoly);
 		delete m_selectedPolygon;
@@ -2321,10 +2277,10 @@ void GridCreatingConditionTriangle::deletePolygon(bool force)
 
 void GridCreatingConditionTriangle::deleteLine(bool force)
 {
-	if (m_selectedLine == nullptr){return;}
-	if (! force){
+	if (m_selectedLine == nullptr) {return;}
+	if (! force) {
 		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this line?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return;}
+		if (ret == QMessageBox::No) {return;}
 	}
 	GridCreatingConditionTriangleDivisionLine* tmpLine = dynamic_cast<GridCreatingConditionTriangleDivisionLine*>(m_selectedLine);
 	m_divisionLines.removeOne(tmpLine);
@@ -2359,17 +2315,17 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 	// check whether the division line can be selected.
 	bool selected = false;
 	GridCreatingConditionTriangleAbstractLine* newSelLine = nullptr;
-	for (int i = m_divisionLines.count() - 1; i >= 0 && (! selected); --i){
+	for (int i = m_divisionLines.count() - 1; i >= 0 && (! selected); --i) {
 		GridCreatingConditionTriangleAbstractLine* l = m_divisionLines[i];
-		if (l->isEdgeSelectable(pv, selectlimit)){
+		if (l->isEdgeSelectable(pv, selectlimit)) {
 			newSelLine = l;
 			selected = true;
-		} else if (l->isVertexSelectable(pv, selectlimit)){
+		} else if (l->isVertexSelectable(pv, selectlimit)) {
 			newSelLine = l;
 			selected = true;
 		}
 	}
-	if (newSelLine != nullptr){
+	if (newSelLine != nullptr) {
 		m_selectMode = smLine;
 		m_selectedLine = newSelLine;
 		m_selectedLine->setActive(true);
@@ -2378,24 +2334,24 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 
 	// find polygon that contains this point.
 	GridCreatingConditionTriangleAbstractPolygon* newSelPol = nullptr;
-	for (int i = m_remeshPolygons.count() - 1; i >= 0 && (! selected); --i){
+	for (int i = m_remeshPolygons.count() - 1; i >= 0 && (! selected); --i) {
 		GridCreatingConditionTriangleAbstractPolygon* pol = m_remeshPolygons[i];
 		QPolygonF polF = pol->polygon();
-		if (polF.count() <= 3){
+		if (polF.count() <= 3) {
 			// it contains only two points.
-			if (pol->isEdgeSelectable(pv, selectlimit)){
+			if (pol->isEdgeSelectable(pv, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
 				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
 				connect(m_editMaxAreaAction, SIGNAL(triggered()), rpol, SLOT(editGridSize()));
-			}else if (pol->isVertexSelectable(pv, selectlimit)){
+			} else if (pol->isVertexSelectable(pv, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
 				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
 				connect(m_editMaxAreaAction, SIGNAL(triggered()), rpol, SLOT(editGridSize()));
 			}
-		}else{
-			if (polF.containsPoint(p, Qt::OddEvenFill)){
+		} else {
+			if (polF.containsPoint(p, Qt::OddEvenFill)) {
 				newSelPol = pol;
 				selected = true;
 				GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
@@ -2403,58 +2359,58 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 			}
 		}
 	}
-	for (int i = m_holePolygons.count() - 1; i >= 0 && (! selected); --i){
+	for (int i = m_holePolygons.count() - 1; i >= 0 && (! selected); --i) {
 		GridCreatingConditionTriangleAbstractPolygon* pol = m_holePolygons[i];
 		QPolygonF polF = pol->polygon();
-		if (polF.count() <= 3){
-			if (pol->isEdgeSelectable(pv, selectlimit)){
+		if (polF.count() <= 3) {
+			if (pol->isEdgeSelectable(pv, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
-			}else if (pol->isVertexSelectable(pv, selectlimit)){
+			} else if (pol->isVertexSelectable(pv, selectlimit)) {
 				newSelPol = pol;
 				selected = true;
 			}
-		}else{
-			if (pol->polygon().containsPoint(p, Qt::OddEvenFill)){
+		} else {
+			if (pol->polygon().containsPoint(p, Qt::OddEvenFill)) {
 				newSelPol = pol;
 				selected = true;
 			}
 		}
 	}
-	if (! selected){
+	if (! selected) {
 		QPolygonF polF = m_gridRegionPolygon->polygon();
-		if (polF.count() <= 3){
-			if (m_gridRegionPolygon->isEdgeSelectable(pv, selectlimit)){
+		if (polF.count() <= 3) {
+			if (m_gridRegionPolygon->isEdgeSelectable(pv, selectlimit)) {
 				newSelPol = m_gridRegionPolygon;
 				selected = true;
-			}else if (m_gridRegionPolygon->isVertexSelectable(pv, selectlimit)){
+			} else if (m_gridRegionPolygon->isVertexSelectable(pv, selectlimit)) {
 				newSelPol = m_gridRegionPolygon;
 				selected = true;
 			}
-		}else{
-			if (m_gridRegionPolygon->polygon().containsPoint(p, Qt::OddEvenFill)){
+		} else {
+			if (m_gridRegionPolygon->polygon().containsPoint(p, Qt::OddEvenFill)) {
 				newSelPol = m_gridRegionPolygon;
 				selected = true;
 			}
 		}
 	}
-	if (newSelPol != nullptr){
+	if (newSelPol != nullptr) {
 		m_selectMode = smPolygon;
 		m_selectedPolygon = newSelPol;
 		m_selectedPolygon->setActive(true);
 		m_selectedLine = nullptr;
 	}
-	if (! selected){
+	if (! selected) {
 		m_selectMode = smNone;
 		m_selectedLine = nullptr;
 		m_selectedPolygon = nullptr;
 	}
 
-	if (m_selectMode != oldSelectMode){return true;}
-	if (m_selectMode == smPolygon){
+	if (m_selectMode != oldSelectMode) {return true;}
+	if (m_selectMode == smPolygon) {
 		return m_selectedPolygon != oldSelectedPolygon;
 	}
-	if (m_selectMode == smLine){
+	if (m_selectMode == smLine) {
 		return m_selectedLine != oldSelectedLine;
 	}
 	return false;
@@ -2463,13 +2419,13 @@ bool GridCreatingConditionTriangle::selectObject(QPoint point)
 void GridCreatingConditionTriangle::deselectAll()
 {
 	m_editMaxAreaAction->disconnect();
-	if (m_selectMode == smPolygon){
-		if (m_selectedPolygon != nullptr){
+	if (m_selectMode == smPolygon) {
+		if (m_selectedPolygon != nullptr) {
 			m_selectedPolygon->setActive(false);
 			m_selectedPolygon = nullptr;
 		}
-	} else if (m_selectMode == smLine){
-		if (m_selectedLine != nullptr){
+	} else if (m_selectMode == smLine) {
+		if (m_selectedLine != nullptr) {
 			m_selectedLine->setActive(false);
 			m_selectedLine = nullptr;
 		}
@@ -2479,89 +2435,89 @@ void GridCreatingConditionTriangle::deselectAll()
 
 bool GridCreatingConditionTriangle::checkCondition()
 {
-	if (m_gridRegionPolygon->polygon().count() < 3){
+	if (m_gridRegionPolygon->polygon().count() < 3) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon have to consists of more than three vertices."));
 		return false;
 	}
-	if (iRIC::hasIntersection(m_gridRegionPolygon->polygon())){
+	if (iRIC::hasIntersection(m_gridRegionPolygon->polygon())) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid region polygon shape is invalid."));
 		return false;
 	}
 	QPolygonF gridPol = m_gridRegionPolygon->polygon();
 	QList<QPolygonF> polygons;
-	for (int i = 0; i < m_remeshPolygons.count(); ++i){
+	for (int i = 0; i < m_remeshPolygons.count(); ++i) {
 		GridCreatingConditionTriangleRemeshPolygon* rpol = m_remeshPolygons[i];
-		if (rpol->polygon().count() < 3){
+		if (rpol->polygon().count() < 3) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygon have to consists of more than three vertices"));
 			return false;
 		}
-		if (iRIC::hasIntersection(rpol->polygon())){
+		if (iRIC::hasIntersection(rpol->polygon())) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygon shape is invalid."));
 			return false;
 		}
-		if (gridPol.intersected(rpol->polygon()) != rpol->polygon()){
+		if (gridPol.intersected(rpol->polygon()) != rpol->polygon()) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygon have to be inside grid region."));
 			return false;
 		}
 		polygons.append(rpol->polygon());
 	}
-	for (int i = 0; i < m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_holePolygons.count(); ++i) {
 		GridCreatingConditionTriangleHolePolygon* hpol = m_holePolygons[i];
-		if (hpol->polygon().count() < 3){
+		if (hpol->polygon().count() < 3) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon have to consists of more than three vertices"));
 			return false;
 		}
-		if (iRIC::hasIntersection(hpol->polygon())){
+		if (iRIC::hasIntersection(hpol->polygon())) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon shape is invalid."));
 			return false;
 		}
-		if (gridPol.intersected(hpol->polygon()) != hpol->polygon()){
+		if (gridPol.intersected(hpol->polygon()) != hpol->polygon()) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon have to be inside grid region."));
 			return false;
 		}
 		polygons.append(hpol->polygon());
 	}
-	for (int i = 0; i < polygons.count(); ++i){
-		for (int j = i + 1; j < polygons.count(); ++j){
+	for (int i = 0; i < polygons.count(); ++i) {
+		for (int j = i + 1; j < polygons.count(); ++j) {
 			QPolygonF pol1 = polygons[i];
 			QPolygonF pol2 = polygons[j];
-			if (! pol1.intersected(pol2).isEmpty()){
+			if (! pol1.intersected(pol2).isEmpty()) {
 				// intersects!
 				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Remesh polygons and hole polygons can not have intersections."));
 				return false;
 			}
 		}
 	}
-	for (int i = 0; i < m_divisionLines.count(); ++i){
+	for (int i = 0; i < m_divisionLines.count(); ++i) {
 		GridCreatingConditionTriangleDivisionLine* line = m_divisionLines[i];
 		QVector<QPointF> l = line->polyLine();
-		if (l.count() < 2){
+		if (l.count() < 2) {
 			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to consists of more more than two vertices"));
 			return false;
 		}
-		for (int j = 0; j < l.count(); ++j){
-			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)){
+		for (int j = 0; j < l.count(); ++j) {
+			if (! gridPol.containsPoint(l[j], Qt::OddEvenFill)) {
 				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to be inside grid region."));
 				return false;
 			}
 		}
-		for (int j = 0; j < l.count() - 1; ++j){
+		for (int j = 0; j < l.count() - 1; ++j) {
 			QLineF tmpline(l[j], l[j + 1]);
-			for (int k = 0; k < polygons.count(); ++k){
+			for (int k = 0; k < polygons.count(); ++k) {
 				QPolygonF pol = polygons[k];
-				for (int m = 0; m < pol.count() - 1; ++m){
+				for (int m = 0; m < pol.count() - 1; ++m) {
 					QLineF tmpline2(pol[m], pol[m + 1]);
-					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)){
+					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)) {
 						QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to have no intersection with any region edges."));
 						return false;
 					}
 				}
 			}
-			for (int k = i + 1; k < m_divisionLines.count(); ++ k){
+			for (int k = i + 1; k < m_divisionLines.count(); ++ k) {
 				QVector<QPointF> l2 = m_divisionLines[k]->polyLine();
-				for (int m = 0; m < l2.count() - 1; ++m){
+				for (int m = 0; m < l2.count() - 1; ++m) {
 					QLineF tmpline2(l2[m], l2[m + 1]);
-					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)){
+					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, 0)) {
 						QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to have no intersection with other break lines."));
 						return false;
 					}
@@ -2574,14 +2530,14 @@ bool GridCreatingConditionTriangle::checkCondition()
 
 bool GridCreatingConditionTriangle::activePolygonHasFourVertices()
 {
-	if (m_selectedPolygon == nullptr){return false;}
+	if (m_selectedPolygon == nullptr) {return false;}
 	QPolygonF pol = m_selectedPolygon->polygon();
 	return pol.count() > 4;
 }
 
 bool GridCreatingConditionTriangle::activePolylineHasThreeVertices()
 {
-	if (m_selectedLine == nullptr){return false;}
+	if (m_selectedLine == nullptr) {return false;}
 	QVector<QPointF> line = m_selectedLine->polyLine();
 	return line.count() >= 3;
 }
@@ -2596,20 +2552,17 @@ void GridCreatingConditionTriangle::doApplyOffset(double x, double y)
 	QPolygonF region = this->m_gridRegionPolygon->polygon(QPointF(x, y));
 	this->m_gridRegionPolygon->setPolygon(region);
 
-	for (int i = 0; i < this->m_remeshPolygons.count(); ++i)
-	{
+	for (int i = 0; i < this->m_remeshPolygons.count(); ++i) {
 		QPolygonF hole = this->m_remeshPolygons[i]->polygon(QPointF(x, y));
 		this->m_remeshPolygons[i]->setPolygon(hole);
 	}
 
-	for (int i = 0; i < this->m_holePolygons.count(); ++i)
-	{
+	for (int i = 0; i < this->m_holePolygons.count(); ++i) {
 		QPolygonF hole = this->m_holePolygons[i]->polygon(QPointF(x, y));
 		this->m_holePolygons[i]->setPolygon(hole);
 	}
 
-	for (int i = 0; i < this->m_divisionLines.count(); ++i)
-	{
+	for (int i = 0; i < this->m_divisionLines.count(); ++i) {
 		QVector<QPointF> polyline = this->m_divisionLines[i]->polyLine(QPointF(x, y));
 		this->m_divisionLines[i]->setPolyLine(polyline);
 	}

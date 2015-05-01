@@ -11,12 +11,12 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowParticleUnstructuredSettingDialog::Post2dWindowParticleUnstructuredSettingDialog(QWidget *parent) :
-    QDialog(parent),
+Post2dWindowParticleUnstructuredSettingDialog::Post2dWindowParticleUnstructuredSettingDialog(QWidget* parent) :
+	QDialog(parent),
 	ui(new Ui::Post2dWindowParticleUnstructuredSettingDialog)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	m_timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
 	setupNominations();
@@ -44,7 +44,7 @@ Post2dWindowParticleUnstructuredSettingDialog::Post2dWindowParticleUnstructuredS
 
 Post2dWindowParticleUnstructuredSettingDialog::~Post2dWindowParticleUnstructuredSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -55,7 +55,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setZoneData(PostZoneDataCont
 void Post2dWindowParticleUnstructuredSettingDialog::setSolution(const QString& sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
@@ -68,16 +68,16 @@ const QString Post2dWindowParticleUnstructuredSettingDialog::solution()
 void Post2dWindowParticleUnstructuredSettingDialog::setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm)
 {
 	m_timeMode = tm;
-	if (m_timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal){
+	if (m_timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
 		ui->timeSlider->setValue(m_skipNominations.count());
 	}
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::setTimeSamplingRate(int sr)
 {
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSkip){return;}
-	for (int i = 0; i < m_skipNominations.count(); ++i){
-		if (m_skipNominations.at(i) == sr){
+	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSkip) {return;}
+	for (int i = 0; i < m_skipNominations.count(); ++i) {
+		if (m_skipNominations.at(i) == sr) {
 			ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
 			return;
 		}
@@ -86,9 +86,9 @@ void Post2dWindowParticleUnstructuredSettingDialog::setTimeSamplingRate(int sr)
 
 void Post2dWindowParticleUnstructuredSettingDialog::setTimeDivision(int sd)
 {
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide){return;}
-	for (int i = 0; i < m_subDivNominations.count(); ++i){
-		if (m_subDivNominations.at(i) == sd){
+	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {return;}
+	for (int i = 0; i < m_subDivNominations.count(); ++i) {
+		if (m_subDivNominations.at(i) == sd) {
 			ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
 			return;
 		}
@@ -97,30 +97,30 @@ void Post2dWindowParticleUnstructuredSettingDialog::setTimeDivision(int sd)
 
 Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleUnstructuredSettingDialog::timeMode()
 {
-	if (ui->timeSlider->value() == m_skipNominations.count()){
+	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	} else if (ui->timeSlider->value() < m_skipNominations.count()){
+	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmSkip;
-	} else{
+	} else {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
 	}
 }
 
 int Post2dWindowParticleUnstructuredSettingDialog::timeSamplingRate()
 {
-	if (ui->timeSlider->value() >= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
 }
 
 int Post2dWindowParticleUnstructuredSettingDialog::timeDivision()
 {
-	if (ui->timeSlider->value() <= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::informButtonDown(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked()){
+	if (ui->pointsMouseRadioButton->isChecked()) {
 		ui->point1XEdit->setValue(p.x());
 		ui->point1YEdit->setValue(p.y());
 		ui->point2XEdit->setValue(p.x());
@@ -132,7 +132,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::informButtonDown(const QVect
 
 void Post2dWindowParticleUnstructuredSettingDialog::informButtonUp(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked()){
+	if (ui->pointsMouseRadioButton->isChecked()) {
 		ui->point2XEdit->setValue(p.x());
 		ui->point2YEdit->setValue(p.y());
 	}
@@ -142,7 +142,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::informButtonUp(const QVector
 
 void Post2dWindowParticleUnstructuredSettingDialog::updateMousePosition(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked() && m_pressed){
+	if (ui->pointsMouseRadioButton->isChecked() && m_pressed) {
 		ui->point2XEdit->setValue(p.x());
 		ui->point2YEdit->setValue(p.y());
 		apply();
@@ -153,8 +153,7 @@ class Post2dWindowParticleUnstructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowParticleUnstructuredSetProperty(const QString& sol, Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm, int tsr, int tdiv, const QList<Post2dWindowUnstructuredParticleSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Particle Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Particle Setting")) {
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newTimeMode = tm;
@@ -173,8 +172,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->setCurrentSolution(m_oldSolution);
@@ -187,8 +185,7 @@ public:
 		m_item->updateActorSettings();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->setCurrentSolution(m_newSolution);
@@ -238,7 +235,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::reject()
 
 void Post2dWindowParticleUnstructuredSettingDialog::activeDataChanged(int index)
 {
-	if (index == -1 || index >= m_settings.count()){
+	if (index == -1 || index >= m_settings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
@@ -248,9 +245,9 @@ void Post2dWindowParticleUnstructuredSettingDialog::activeDataChanged(int index)
 
 void Post2dWindowParticleUnstructuredSettingDialog::handleTimeSliderChange(int val)
 {
-	if (val < m_skipNominations.count()){
+	if (val < m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-	} else if (val > m_skipNominations.count()){
+	} else if (val > m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
 	} else {
 		ui->timeValueLabel->setText("1");
@@ -259,12 +256,12 @@ void Post2dWindowParticleUnstructuredSettingDialog::handleTimeSliderChange(int v
 
 void Post2dWindowParticleUnstructuredSettingDialog::pointsEdited()
 {
-	if (m_applying){return;}
-	if (ui->point1XEdit->text() == ""){return;}
-	if (ui->point1YEdit->text() == ""){return;}
-	if (ui->point2XEdit->text() == ""){return;}
-	if (ui->point2YEdit->text() == ""){return;}
-	if (m_activeSetting == nullptr){return;}
+	if (m_applying) {return;}
+	if (ui->point1XEdit->text() == "") {return;}
+	if (ui->point1YEdit->text() == "") {return;}
+	if (ui->point2XEdit->text() == "") {return;}
+	if (ui->point2YEdit->text() == "") {return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->point1 = QVector2D(ui->point1XEdit->value(), ui->point1YEdit->value());
 	m_activeSetting->point2 = QVector2D(ui->point2XEdit->value(), ui->point2YEdit->value());
 
@@ -273,32 +270,32 @@ void Post2dWindowParticleUnstructuredSettingDialog::pointsEdited()
 
 void Post2dWindowParticleUnstructuredSettingDialog::handleButtonPress(QAbstractButton* button)
 {
-	if (button == ui->buttonBox->button(QDialogButtonBox::Apply)){
+	if (button == ui->buttonBox->button(QDialogButtonBox::Apply)) {
 		apply();
 	}
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::numPointsChanged(int num)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->numberOfPoints = num;
 }
 
-void Post2dWindowParticleUnstructuredSettingDialog::colorChanged(const QColor &color)
+void Post2dWindowParticleUnstructuredSettingDialog::colorChanged(const QColor& color)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->color = color;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::sizeChanged(int size)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->size = size;
 }
 
 void Post2dWindowParticleUnstructuredSettingDialog::addData()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	Post2dWindowUnstructuredParticleSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -314,10 +311,10 @@ void Post2dWindowParticleUnstructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != nullptr){delete item;}
+	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
-	if (current >= m_settings.count()){current = m_settings.count() - 1;}
+	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_settings[current]);
 	applySettings();
@@ -327,18 +324,19 @@ void Post2dWindowParticleUnstructuredSettingDialog::removeData()
 void Post2dWindowParticleUnstructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable){
+	if (! m_activeAvailable) {
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
 	dialog.setRegionMode(m_regionMode);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_regionMode = dialog.regionMode();
 }
 
-void Post2dWindowParticleUnstructuredSettingDialog::apply(){
+void Post2dWindowParticleUnstructuredSettingDialog::apply()
+{
 	QVector2D v1(ui->point1XEdit->value(), ui->point1YEdit->value());
 	QVector2D v2(ui->point2XEdit->value(), ui->point2YEdit->value());
 	m_dataItem->setSetting(v1, v2, ui->numPointsSpinBox->value(), ui->sizeSpinBox->value());
@@ -348,7 +346,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupNominations()
 {
 	int noms[] = {2, 3, 4, 5, 0};
 	int idx = 0;
-	while (noms[idx] != 0){
+	while (noms[idx] != 0) {
 		m_subDivNominations.append(noms[idx]);
 		m_skipNominations.append(noms[idx]);
 		++ idx;
@@ -364,11 +362,11 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 	SolverDefinitionGridType* gt = zoneData->gridType();
 	int num = pd->GetNumberOfArrays();
 	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkDataArray* da = pd->GetArray(i);
-		if (da == nullptr){continue;}
+		if (da == nullptr) {continue;}
 		QString name = da->GetName();
-		if (da->GetNumberOfComponents() <= 1){
+		if (da->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;
 		}
@@ -376,7 +374,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 		m_solutions.append(name);
 	}
 	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1){
+	if (m_solutions.count() <= 1) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}
@@ -384,7 +382,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 
 void Post2dWindowParticleUnstructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -394,10 +392,10 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSettingList()
 
 void Post2dWindowParticleUnstructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_applying = true;
 	ui->pointsMouseRadioButton->setChecked(true);
-	if (m_activeSetting->pointsSet){
+	if (m_activeSetting->pointsSet) {
 		ui->point1XEdit->setValue(m_activeSetting->point1.x());
 		ui->point1YEdit->setValue(m_activeSetting->point1.y());
 		ui->point2XEdit->setValue(m_activeSetting->point2.x());

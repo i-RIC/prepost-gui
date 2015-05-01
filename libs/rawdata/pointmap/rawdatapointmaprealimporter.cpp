@@ -18,8 +18,8 @@
 
 RawDataPointmapRealImporter::RawDataPointmapRealImporter(RawDataCreator* creator)
 	: RawDataImporter(creator)
-	  , poDataset(NULL)
-	  , poBand(NULL)
+	, poDataset(NULL)
+	, poBand(NULL)
 {
 	m_caption = tr("DEM etc. (*.tpo, *.anc, *.dat, *.stl)");
 }
@@ -27,7 +27,7 @@ RawDataPointmapRealImporter::RawDataPointmapRealImporter(RawDataCreator* creator
 bool RawDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridRelatedCondition* /*condition*/, PreProcessorRawDataGroupDataItemInterface* /*item*/, QWidget* w)
 {
 	RawDataPointmapRealImporterFilterDialog filterDialog(w);
-	if (filterDialog.exec() != QDialog::Accepted){
+	if (filterDialog.exec() != QDialog::Accepted) {
 		return false;
 	}
 	m_filterValue = filterDialog.filterValue();
@@ -44,9 +44,9 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 	vtkSmartPointer<vtkDoubleArray> values = vtkSmartPointer<vtkDoubleArray>::New();
 
 	double xt[3];
-	if (m_selectedFilter == tr("Topography File (*.tpo *.anc)") || finfo.suffix() == "tpo" || finfo.suffix() == "anc"){
+	if (m_selectedFilter == tr("Topography File (*.tpo *.anc)") || finfo.suffix() == "tpo" || finfo.suffix() == "anc") {
 		QFile file(m_filename);
-		if (! file.open(QIODevice::ReadOnly)){
+		if (! file.open(QIODevice::ReadOnly)) {
 			QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(m_filename));
 			return false;
 		}
@@ -59,28 +59,28 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 		QMultiMap<double, double>* map = new QMultiMap<double, double>;
 		do {
 			in >> x[0] >> x[1] >> x[2];
-			if (map->contains(x[0], x[1])) continue;
-			if (in.status() == QTextStream::Ok && filterCounter == 0){
-				xt[0] = x[0];xt[1] = x[1];xt[2] = 0;
+			if (map->contains(x[0], x[1])) { continue; }
+			if (in.status() == QTextStream::Ok && filterCounter == 0) {
+				xt[0] = x[0]; xt[1] = x[1]; xt[2] = 0;
 				points->InsertNextPoint(xt);
 				values->InsertNextValue(x[2]);
 				map->insert(x[0], x[1]);
 				counter++;
 			}
 			++ filterCounter;
-			if (filterCounter == m_filterValue){
+			if (filterCounter == m_filterValue) {
 				filterCounter = 0;
 			}
-			if (in.status() == QTextStream::ReadCorruptData){
+			if (in.status() == QTextStream::ReadCorruptData) {
 				return false;
 			}
 		} while (! in.atEnd());
 		map->clear();
 		delete map;
 		file.close();
-	} else if (m_selectedFilter == tr("RIC-Nays DEM (*.dat *.txt)") || finfo.suffix() == "dat" || finfo.suffix() == "txt"){
+	} else if (m_selectedFilter == tr("RIC-Nays DEM (*.dat *.txt)") || finfo.suffix() == "dat" || finfo.suffix() == "txt") {
 		QFile file(m_filename);
-		if (! file.open(QIODevice::ReadOnly)){
+		if (! file.open(QIODevice::ReadOnly)) {
 			QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(m_filename));
 			return false;
 		}
@@ -95,28 +95,27 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 			qstr.replace(",", " ");
 			QTextStream in2(&qstr, QIODevice::ReadOnly);
 			in2 >> index >> x[0] >> x[1] >> x[2];
-			if (map->contains(x[0], x[1])) continue;
-			if (in.status() == QTextStream::Ok && filterCounter == 0){
-				xt[0] = x[0];xt[1] = x[1];xt[2] = 0;
+			if (map->contains(x[0], x[1])) { continue; }
+			if (in.status() == QTextStream::Ok && filterCounter == 0) {
+				xt[0] = x[0]; xt[1] = x[1]; xt[2] = 0;
 				points->InsertNextPoint(xt);
 				values->InsertNextValue(x[2]);
 				map->insert(x[0], x[1]);
 				counter++;
 			}
 			++ filterCounter;
-			if (filterCounter == m_filterValue){
+			if (filterCounter == m_filterValue) {
 				filterCounter = 0;
 			}
-			if (in.status() == QTextStream::ReadCorruptData){
+			if (in.status() == QTextStream::ReadCorruptData) {
 				return false;
 			}
-		}
-		while (! in.atEnd());
+		} while (! in.atEnd());
 		map->clear();
 		delete map;
-		if (points->GetNumberOfPoints() < 3){return false;}
+		if (points->GetNumberOfPoints() < 3) {return false;}
 		file.close();
-	} else if (m_selectedFilter == tr("USGS NED (*.adf)") || finfo.suffix() == "adf"){
+	} else if (m_selectedFilter == tr("USGS NED (*.adf)") || finfo.suffix() == "adf") {
 		// read USGS National Elevation Data (NED) data format.
 		// Data available through http://seamless.usgs.gov/
 		// filename will be "w001001.adf" always .adf format is read using GDAL library
@@ -127,13 +126,13 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 			// Following variables for debug
 			// QVector<double> xloc, yloc, zloc;
 			// QVector<double> lat, lon;
-			this->poDataset = (GDALDataset *) GDALOpen(m_filename.toLocal8Bit().constData(), GA_ReadOnly );
-			if ( poDataset == NULL ){
+			this->poDataset = (GDALDataset*) GDALOpen(m_filename.toLocal8Bit().constData(), GA_ReadOnly);
+			if (poDataset == NULL) {
 				std::cerr << "Cannot open file NED adf file for reading" << std::endl;
 				return false;
 			}
 			double adfGeoTransform[6];
-			if (poDataset->GetGeoTransform(adfGeoTransform) == CE_None){
+			if (poDataset->GetGeoTransform(adfGeoTransform) == CE_None) {
 				QString* txt();
 				char str[250];
 
@@ -177,19 +176,20 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				//				poBand->GetColorInterpretation()) );
 				//p_MainWindow->textEdit->appendPlainText(QString(str));
 
-				adfMinMax[0] = poBand->GetMinimum( &bGotMin );
-				adfMinMax[1] = poBand->GetMaximum( &bGotMax );
-				if( ! (bGotMin && bGotMax) )
+				adfMinMax[0] = poBand->GetMinimum(&bGotMin);
+				adfMinMax[1] = poBand->GetMaximum(&bGotMax);
+				if (!(bGotMin && bGotMax)) {
 					GDALComputeRasterMinMax((GDALRasterBandH)poBand, TRUE, adfMinMax);
+				}
 
 				//sprintf_s(str, "Min=%.3fd, Max=%.3f\n", adfMinMax[0], adfMinMax[1] );
 				//p_MainWindow->textEdit->appendPlainText(QString(str));
 
 				GDALDataType dataType = poBand->GetRasterDataType();
-				const char *projRef = poDataset->GetProjectionRef();
-				const char *projgcp = poDataset->GetGCPProjection();
+				const char* projRef = poDataset->GetProjectionRef();
+				const char* projgcp = poDataset->GetGCPProjection();
 
-				double *pafScanline;
+				double* pafScanline;
 				int   nXSize = poBand->GetXSize();
 				int	  nYSize = poBand->GetYSize();
 				double InPixel;
@@ -202,8 +202,8 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				// Maybe useful in the future. At this time we use some other code to do transformations from
 				// Lat/Lon to UTM.
 
-					const char *pszProjection = this->poDataset->GetProjectionRef();
-					char *pszPrettyWkt, *pszPrettyWkt2;
+				const char* pszProjection = this->poDataset->GetProjectionRef();
+				char* pszPrettyWkt, *pszPrettyWkt2;
 				//	int err = this->oSourceSRS.SetFromUserInput(pszProjection);
 				//	err = this->oSourceSRS.exportToPrettyWkt(&pszPrettyWkt);
 				//	p_MainWindow->textEdit->appendPlainText(QString(pszPrettyWkt));
@@ -255,7 +255,7 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 						//out << easting << " " << northing << " " << InPixel << "\n";
 					}
 				}
-			} else if( this->poDataset->GetGCPCount() > 0) {
+			} else if (this->poDataset->GetGCPCount() > 0) {
 				//int gcpCount = this->poDataset->GetGCPCount();
 				//const GDAL_GCP* gcp = this->poDataset->GetGCPs();
 				//double pixel;
@@ -365,7 +365,7 @@ bool RawDataPointmapRealImporter::import(RawData* data, const QString& filename,
 		if (points->GetNumberOfPoints() < 3){return false;}
 		file.close();
 	} else if (selectedFilter == tr("USGS NED (*.adf)")){
-		
+
 		   // read USGS National Elevation Data (NED) data format.
 		   // Data available through http://seamless.usgs.gov/
 		   // filename will be "w001001.adf" always .adf format is read using GDAL library
@@ -534,7 +534,7 @@ bool RawDataPointmapRealImporter::import(RawData* data, const QString& filename,
 		        return false;
 		    }
 		   }
-		 
+
 	}
 	pmap->setPoints(points, values);
 	pmap->doDelaunay();

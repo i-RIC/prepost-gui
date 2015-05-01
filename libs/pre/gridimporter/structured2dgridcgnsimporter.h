@@ -6,8 +6,8 @@
 class Structured2DGridCgnsImporter : public CgnsGridImporter
 {
 public:
-	Structured2DGridCgnsImporter() : CgnsGridImporter(){}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt){
+	Structured2DGridCgnsImporter() : CgnsGridImporter() {}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) {
 		return gt == SolverDefinitionGridType::gtStructured2DGrid;
 	}
 

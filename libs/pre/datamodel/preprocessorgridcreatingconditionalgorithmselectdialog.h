@@ -6,7 +6,8 @@
 
 class GridCreatingConditionCreator;
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorGridCreatingConditionAlgorithmSelectDialog;
 }
 
@@ -15,7 +16,7 @@ class PreProcessorGridCreatingConditionAlgorithmSelectDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget *parent = nullptr);
+	explicit PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget* parent = nullptr);
 	~PreProcessorGridCreatingConditionAlgorithmSelectDialog();
 	void setCreators(const QList<GridCreatingConditionCreator*>& creators);
 	void setCurrent(GridCreatingConditionCreator* creator);
@@ -23,7 +24,7 @@ public:
 private slots:
 	void handleCurrentChange(int index);
 private:
-	Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog *ui;
+	Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog* ui;
 	QList<GridCreatingConditionCreator*> m_creators;
 };
 

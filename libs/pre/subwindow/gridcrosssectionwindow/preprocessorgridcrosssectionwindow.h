@@ -22,7 +22,8 @@ class PreProcessorGridCrosssectionWindowGraphicsView;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
 class PreProcessorGridRelatedConditionNodeDataItem;
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorGridCrosssectionWindow;
 }
 
@@ -34,20 +35,20 @@ class PreProcessorGridCrosssectionWindow : public QMainWindow
 public:
 	const static int DEFAULT_TABLE_WIDTH;
 	enum Direction {dirI, dirJ};
-	explicit PreProcessorGridCrosssectionWindow(Structured2DGrid* g, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget *parent = nullptr);
+	explicit PreProcessorGridCrosssectionWindow(Structured2DGrid* g, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~PreProcessorGridCrosssectionWindow();
 	void setTarget(Direction dir, int index);
-	const QString& condition(){return m_condition;}
-	Direction targetDirection(){return m_direction;}
-	int targetIndex(){return m_blackLineIndex;}
+	const QString& condition() {return m_condition;}
+	Direction targetDirection() {return m_direction;}
+	int targetIndex() {return m_blackLineIndex;}
 	void setupData();
 	bool updateComboBoxes();
 	QTableView* tableView();
 	void informFocusIn();
-	Structured2DGrid* grid(){return m_grid;}
+	Structured2DGrid* grid() {return m_grid;}
 	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem();
-	void informSelectedVerticesChanged(const QVector<vtkIdType> &vertices);
-	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem(){return m_projectDataItem;}
+	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem() {return m_projectDataItem;}
 	const QIcon& icon() const {return m_icon;}
 public slots:
 	void updateView();
@@ -79,7 +80,7 @@ private:
 	void setupToolBar();
 	void setupModel();
 	void setupView();
-	Ui::PreProcessorGridCrosssectionWindow *ui;
+	Ui::PreProcessorGridCrosssectionWindow* ui;
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
 	QIcon m_icon;

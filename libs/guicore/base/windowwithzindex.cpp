@@ -1,6 +1,7 @@
 #include "windowwithzindex.h"
 
-WindowWithZIndex::WindowWithZIndex(){
+WindowWithZIndex::WindowWithZIndex()
+{
 	m_zindex = 0;
 }
 

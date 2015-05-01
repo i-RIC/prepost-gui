@@ -52,10 +52,10 @@ Post2dWindowBackgroundImagesDataItem::~Post2dWindowBackgroundImagesDataItem()
 
 void Post2dWindowBackgroundImagesDataItem::setupChildItem()
 {
-	if(projectData()->mainfile()->backgroundImages().size() == 0) return;
+	if (projectData()->mainfile()->backgroundImages().size() == 0) { return; }
 
 	QList<BackgroundImageInfo*> images = projectData()->mainfile()->backgroundImages();
-	for (auto it = images.begin(); it != images.end(); ++it){
+	for (auto it = images.begin(); it != images.end(); ++it) {
 		Post2dWindowBackgroundImageDataItem* iItem = new Post2dWindowBackgroundImageDataItem(*it, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(iItem);
@@ -93,7 +93,7 @@ void Post2dWindowBackgroundImagesDataItem::deleteChildItem(int i)
 	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowBackgroundImageDataItem* bgItem = dynamic_cast<Post2dWindowBackgroundImageDataItem*>(*it);
 		QModelIndex idx = bgItem->standardItem()->index();
-		if (idx != dataModel()->objectBrowserView()->currentIndex()) continue;
+		if (idx != dataModel()->objectBrowserView()->currentIndex()) { continue; }
 		bgItem->updateMoveUpDownActions(dataModel()->objectBrowserView());
 	}
 	renderGraphicsView();
@@ -156,8 +156,8 @@ void Post2dWindowBackgroundImagesDataItem::addCustomMenuItems(QMenu* menu)
 void Post2dWindowBackgroundImagesDataItem::updateChildCheckState(int idx, bool vis)
 {
 	dataModel()->itemModel()->blockSignals(true);
-	if (idx < 0){
-		if (vis){
+	if (idx < 0) {
+		if (vis) {
 			m_standardItem->setCheckState(Qt::Checked);
 		} else {
 			m_standardItem->setCheckState(Qt::Unchecked);
@@ -165,7 +165,7 @@ void Post2dWindowBackgroundImagesDataItem::updateChildCheckState(int idx, bool v
 	} else {
 		auto it = m_childItems.begin() + idx;
 		Post2dWindowBackgroundImageDataItem* item = dynamic_cast<Post2dWindowBackgroundImageDataItem*>(*it);
-		if (vis){
+		if (vis) {
 			item->standardItem()->setCheckState(Qt::Checked);
 		} else {
 			item->standardItem()->setCheckState(Qt::Unchecked);
@@ -185,9 +185,9 @@ void Post2dWindowBackgroundImagesDataItem::handleStandardItemChange()
 void Post2dWindowBackgroundImagesDataItem::deleteAll()
 {
 	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all background images?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-	if (ret == QMessageBox::No){return;}
+	if (ret == QMessageBox::No) {return;}
 
-	while (m_childItems.count() > 0){
+	while (m_childItems.count() > 0) {
 		GraphicsWindowDataItem* item = *(m_childItems.begin());
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());
 	}

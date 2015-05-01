@@ -4,14 +4,16 @@
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorLegendBoxEditDialog;
 }
 
-class PreProcessorLegendBoxEditDialog : public QDialog {
+class PreProcessorLegendBoxEditDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	PreProcessorLegendBoxEditDialog(QWidget *parent = nullptr);
+	PreProcessorLegendBoxEditDialog(QWidget* parent = nullptr);
 	~PreProcessorLegendBoxEditDialog();
 
 	void setWidth(double width);
@@ -32,7 +34,7 @@ private slots:
 private:
 	vtkTextPropertySettingContainer m_entryTextSetting;
 
-	Ui::PreProcessorLegendBoxEditDialog *ui;
+	Ui::PreProcessorLegendBoxEditDialog* ui;
 };
 
 #endif // PREPROCESSORLEGENDBOXEDITDIALOG_H

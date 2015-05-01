@@ -18,7 +18,7 @@ GridImporterFactory* GridImporterFactory::m_instance = 0;
 
 void GridImporterFactory::init()
 {
-	if (m_instance != nullptr){
+	if (m_instance != nullptr) {
 		delete m_instance;
 	}
 	m_instance = new GridImporterFactory();
@@ -45,36 +45,36 @@ GridImporterFactory::GridImporterFactory()
 
 	QStringList nameFilters;
 	nameFilters.append("*.dll");
-	foreach (QString folderName, pluginsDir.entryList(QDir::Dirs)){
+	for (const QString& folderName : pluginsDir.entryList(QDir::Dirs)) {
 		QDir pluginDir(pluginsDir.filePath(folderName));
-		foreach (QString fileName, pluginDir.entryList(nameFilters, QDir::Files)){
+		for (const QString& fileName : pluginDir.entryList(nameFilters, QDir::Files)) {
 			QFileInfo finfo(fileName);
 			QString dictName = QString("%1_%2.qm").arg(finfo.baseName()).arg(locale);
 			QFile dictFile(pluginDir.filePath(dictName));
 			QTranslator* translator = nullptr;
-			if (dictFile.exists()){
+			if (dictFile.exists()) {
 				translator = new QTranslator(this);
 				translator->load(QString("%1_%2").arg(finfo.baseName()).arg(locale), pluginDir.absolutePath());
 			}
 			QPluginLoader loader(pluginDir.absoluteFilePath(fileName));
 			QObject* plugin = loader.instance();
 			GridImporterInterface* importer = 0;
-			if (! plugin){
+			if (! plugin) {
 				goto LOADERROR;
 			}
 			importer = qobject_cast<GridImporterInterface*> (plugin);
-			if (! importer){
+			if (! importer) {
 				delete plugin;
 				goto LOADERROR;
 			}
-			if (translator){
+			if (translator) {
 				qApp->installTranslator(translator);
 			}
 			m_importerList.append(importer);
 			continue;
 
 LOADERROR:
-			if (translator != nullptr){
+			if (translator != nullptr) {
 				delete translator;
 			}
 		}
@@ -83,8 +83,7 @@ LOADERROR:
 
 GridImporterFactory::~GridImporterFactory()
 {
-	for (int i = 0; i < m_importerList.size(); ++i){
-		GridImporterInterface* iface = m_importerList.at(i);
+	for (GridImporterInterface* iface : m_importerList) {
 		delete iface;
 	}
 	m_importerList.clear();
@@ -93,9 +92,8 @@ GridImporterFactory::~GridImporterFactory()
 const QList<GridImporterInterface*> GridImporterFactory::list(SolverDefinitionGridType::GridType gt) const
 {
 	QList<GridImporterInterface*> ret;
-	for (int i = 0; i < m_importerList.size(); ++i){
-		GridImporterInterface* iface = m_importerList.at(i);
-		if (iface->isGridTypeSupported(gt)){
+	for (GridImporterInterface* iface : m_importerList) {
+		if (iface->isGridTypeSupported(gt)) {
 			ret.append(iface);
 		}
 	}

@@ -32,7 +32,8 @@ iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
 	init();
 }
 
-void iRICMainWindowActionManager::init(){
+void iRICMainWindowActionManager::init()
+{
 	m_isPostWindowActive = false;
 	m_isProjectFileOpen = false;
 	m_menuBar = new QMenuBar(m_parent);
@@ -472,18 +473,18 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	connect(windowCreateNew3dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create3dPostWindow()));
 
 	m_resultMenu->addSeparator();
-/*
-	windowCreateNewGraph2dPositionWindowAction = new QAction(tr("Open new Graph Window (Position X-axis)"), m_resultMenu);
-	windowCreateNewGraph2dPositionWindowAction->setIcon(QIcon(":/images/iconVisGraphPosition.png"));
-	m_resultMenu->addAction(windowCreateNewGraph2dPositionWindowAction);
-	connect(windowCreateNewGraph2dPositionWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dPositionWindow()));
-*/
-/*
-	windowCreateNewGraph2dTimeWindowAction = new QAction(tr("Open new Graph Window (Time X-axis)"), m_resultMenu);
-	windowCreateNewGraph2dTimeWindowAction->setIcon(QIcon(":/images/iconVisGraphTime.png"));
-	m_resultMenu->addAction(windowCreateNewGraph2dTimeWindowAction);
-	connect(windowCreateNewGraph2dTimeWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dTimeWindow()));
-*/
+	/*
+		windowCreateNewGraph2dPositionWindowAction = new QAction(tr("Open new Graph Window (Position X-axis)"), m_resultMenu);
+		windowCreateNewGraph2dPositionWindowAction->setIcon(QIcon(":/images/iconVisGraphPosition.png"));
+		m_resultMenu->addAction(windowCreateNewGraph2dPositionWindowAction);
+		connect(windowCreateNewGraph2dPositionWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dPositionWindow()));
+	*/
+	/*
+		windowCreateNewGraph2dTimeWindowAction = new QAction(tr("Open new Graph Window (Time X-axis)"), m_resultMenu);
+		windowCreateNewGraph2dTimeWindowAction->setIcon(QIcon(":/images/iconVisGraphTime.png"));
+		m_resultMenu->addAction(windowCreateNewGraph2dTimeWindowAction);
+		connect(windowCreateNewGraph2dTimeWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dTimeWindow()));
+	*/
 	windowCreateNewGraph2dHybridWindowAction = new QAction(tr("Open new Graph Window"), m_resultMenu);
 	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.png"));
 	m_resultMenu->addAction(windowCreateNewGraph2dHybridWindowAction);
@@ -588,22 +589,23 @@ void iRICMainWindowActionManager::setupHelpMenu()
 	connect(aboutAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(about()));
 }
 
-void iRICMainWindowActionManager::updateSolverList(SolverDefinitionList* /*list*/){
-/*
-		QList<QAction*> actions = m_newProjectMenu->actions();
-		for (auto it = actions.begin(); it != actions.end(); ++it){
-				m_newProjectSignals->removeMappings(*it);
-		}
-		m_newProjectMenu->clear();
-		QList<SolverDefinitionAbstract*> sdlist = list->solverList();
-		for (auto sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
-				SolverDefinitionAbstract* abst = (*sd_it);
-				QAction *act = new QAction(abst->caption(), m_newProjectMenu);
-				m_newProjectMenu->addAction(act);
-				connect(act, SIGNAL(triggered()), m_newProjectSignals, SLOT(map()));
-				m_newProjectSignals->setMapping(act, (*sd_it));
-		}
- */
+void iRICMainWindowActionManager::updateSolverList(SolverDefinitionList* /*list*/)
+{
+	/*
+			QList<QAction*> actions = m_newProjectMenu->actions();
+			for (auto it = actions.begin(); it != actions.end(); ++it){
+					m_newProjectSignals->removeMappings(*it);
+			}
+			m_newProjectMenu->clear();
+			QList<SolverDefinitionAbstract*> sdlist = list->solverList();
+			for (auto sd_it = sdlist.begin(); sd_it != sdlist.end(); ++sd_it){
+					SolverDefinitionAbstract* abst = (*sd_it);
+					QAction *act = new QAction(abst->caption(), m_newProjectMenu);
+					m_newProjectMenu->addAction(act);
+					connect(act, SIGNAL(triggered()), m_newProjectSignals, SLOT(map()));
+					m_newProjectSignals->setMapping(act, (*sd_it));
+			}
+	 */
 }
 
 void iRICMainWindowActionManager::projectFileOpen()
@@ -619,7 +621,7 @@ void iRICMainWindowActionManager::projectFileOpen()
 	// all import actions are enabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != nullptr){
+	if (m_rawDataImportMenu != nullptr) {
 		m_rawDataImportMenu->setEnabled(true);
 	}
 	importCalcCondAction->setEnabled(true);
@@ -668,7 +670,7 @@ void iRICMainWindowActionManager::projectFileClose()
 	// all import actions are excepts CGNS import action are disabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != nullptr){
+	if (m_rawDataImportMenu != nullptr) {
 		m_rawDataImportMenu->setEnabled(false);
 	}
 	importCalcCondAction->setEnabled(false);
@@ -769,7 +771,7 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(aboutMouseAction);
 }
 
-void iRICMainWindowActionManager::setProjectData(ProjectData *d)
+void iRICMainWindowActionManager::setProjectData(ProjectData* d)
 {
 	importCalcCondAction->disconnect();
 	connect(importCalcCondAction, SIGNAL(triggered()), d->mainfile(), SLOT(importCalcCondition()));
@@ -787,13 +789,14 @@ void iRICMainWindowActionManager::setProjectData(ProjectData *d)
 
 void iRICMainWindowActionManager::enableActions(const QList<QAction*>& actions, bool enable)
 {
-	for (QAction* a : actions){
+for (QAction* a : actions) {
 		a->setEnabled(enable);
 	}
 }
 
-void iRICMainWindowActionManager::uncheckActions(const QList<QAction *> &actions){
-	for (QAction* a : actions){
+void iRICMainWindowActionManager::uncheckActions(const QList<QAction*>& actions)
+{
+	for (QAction* a : actions) {
 		a->setChecked(false);
 	}
 }
@@ -810,18 +813,19 @@ void iRICMainWindowActionManager::handleSolverFinish()
 	solverRunAction->setEnabled(true);
 }
 
-void iRICMainWindowActionManager::updateMenuBar(){
+void iRICMainWindowActionManager::updateMenuBar()
+{
 	m_menuBar->clear();
 	m_menuBar->addMenu(m_fileMenu);
 	m_menuBar->addMenu(m_importMenu);
 
-	for (QMenu* m : m_additionalMenus){
+	for (QMenu* m : m_additionalMenus) {
 		m_menuBar->addMenu(m);
 	}
 	m_menuBar->addMenu(m_simulationMenu);
-	if (m_animationMenu != nullptr){
+	if (m_animationMenu != nullptr) {
 		viewAnimationToolBarAction->setVisible(true);
-		if (m_isPostWindowActive){
+		if (m_isPostWindowActive) {
 			m_menuBar->addMenu(m_animationMenu);
 			m_animationToolbar->show();
 			viewAnimationToolBarAction->setEnabled(true);
@@ -845,7 +849,7 @@ void iRICMainWindowActionManager::updateMenuBar(){
 
 void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 {
-	if (subwindow == nullptr){
+	if (subwindow == nullptr) {
 		// Window out side of iRIC is focused.
 		// Do nothing.
 		return;
@@ -854,25 +858,25 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 	AdditionalMenuWindow* menuWindow = dynamic_cast<AdditionalMenuWindow*>(subwindow);
 	QList<QMenu*> additionalMenus;
 	QToolBar* toolBar = nullptr;
-	if (menuWindow != nullptr){
+	if (menuWindow != nullptr) {
 		QWidget* widget = dynamic_cast<QWidget*>(subwindow);
 		connect(widget, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), this, SLOT(updateAdditionalMenus(QList<QMenu*>)));
 		additionalMenus = menuWindow->getAdditionalMenus();
 		toolBar = menuWindow->getAdditionalToolBar();
 	}
 	setAdditionalMenus(additionalMenus);
-	if (subwindow != nullptr){
+	if (subwindow != nullptr) {
 		// update Additional tool bar
-		if (m_additionalToolBar != nullptr){
+		if (m_additionalToolBar != nullptr) {
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
-		if (toolBar != nullptr){
+		if (toolBar != nullptr) {
 			m_parent->addToolBar(toolBar);
 			toolBar->show();
 		}
 		m_additionalToolBar = toolBar;
-	}else{
-		if (m_additionalToolBar != nullptr){
+	} else {
+		if (m_additionalToolBar != nullptr) {
 			m_parent->removeToolBar(m_additionalToolBar);
 		}
 		m_additionalToolBar = toolBar;
@@ -892,7 +896,8 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 	updateMenuBar();
 }
 
-void iRICMainWindowActionManager::setAnimationWidgets(QMenu* m, QToolBar* t){
+void iRICMainWindowActionManager::setAnimationWidgets(QMenu* m, QToolBar* t)
+{
 	m_animationMenu = m;
 	m_animationToolbar = t;
 	disconnect(viewAnimationToolBarAction);
@@ -924,10 +929,10 @@ void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
 	WindowWithObjectBrowser* window = dynamic_cast<WindowWithObjectBrowser*>(w);
 	viewObjectBrowserAction->disconnect();
-	if (window == nullptr){
+	if (window == nullptr) {
 		viewObjectBrowserAction->setDisabled(true);
 		viewObjectBrowserAction->setChecked(false);
-	}else{
+	} else {
 		viewObjectBrowserAction->setEnabled(true);
 		ObjectBrowser* o = window->objectBrowser();
 		viewObjectBrowserAction->setChecked(o->isVisible());
@@ -940,10 +945,10 @@ void iRICMainWindowActionManager::updatePropertyBrowserMenu(QWidget* w)
 {
 	WindowWithPropertyBrowser* window = dynamic_cast<WindowWithPropertyBrowser*>(w);
 	viewPropertyBrowserAction->disconnect();
-	if (window == nullptr){
+	if (window == nullptr) {
 		viewPropertyBrowserAction->setDisabled(true);
 		viewPropertyBrowserAction->setChecked(false);
-	}else{
+	} else {
 		viewPropertyBrowserAction->setEnabled(true);
 		PropertyBrowser* p = window->propertyBrowser();
 		viewPropertyBrowserAction->setChecked(p->isVisible());
@@ -964,12 +969,12 @@ void iRICMainWindowActionManager::updateWindowList()
 {
 	QList<QAction*> actions = m_viewMenu->actions();
 	auto it = actions.begin();
-	while ((*it) != m_windowMenuSeparetor){
+	while ((*it) != m_windowMenuSeparetor) {
 		++it;
 	}
 	// now it is m_windowMenuSeparator. goto the first window item.
 	++it;
-	for (auto it2 = it; it2 != actions.end(); ++it2){
+	for (auto it2 = it; it2 != actions.end(); ++it2) {
 		m_windowActivationMapper->removeMappings(*it2);
 		delete *it2;
 	}
@@ -978,12 +983,12 @@ void iRICMainWindowActionManager::updateWindowList()
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
 	int i = 1;
-	for (QMdiSubWindow* w : windowList){
+	for (QMdiSubWindow* w : windowList) {
 		QString tmp = QString("%1%2 ").append(w->windowTitle());
 		QString title;
-		if (i < 10){
+		if (i < 10) {
 			title = tmp.arg("&").arg(i);
-		}else{
+		} else {
 			title = tmp.arg("").arg(i);
 		}
 		QAction* a = new QAction(title, m_viewMenu);
@@ -998,13 +1003,13 @@ void iRICMainWindowActionManager::updateWindowList()
 
 void iRICMainWindowActionManager::addGridImportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_parent->preProcessorWindow());
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridImportMenu(menu);
 }
 
 void iRICMainWindowActionManager::addGridExportMenu(QMenu* menu)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_parent->preProcessorWindow());
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_parent->preProcessorWindow());
 	pre->addGridExportMenu(menu);
 }
 

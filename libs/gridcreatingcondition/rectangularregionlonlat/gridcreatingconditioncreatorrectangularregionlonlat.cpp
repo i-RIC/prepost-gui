@@ -14,7 +14,7 @@ GridCreatingConditionCreatorRectangularRegionLonLat::GridCreatingConditionCreato
 			);
 }
 
-GridCreatingCondition* GridCreatingConditionCreatorRectangularRegionLonLat::create(ProjectDataItem *parent)
+GridCreatingCondition* GridCreatingConditionCreatorRectangularRegionLonLat::create(ProjectDataItem* parent)
 {
 	return new GridCreatingConditionRectangularRegionLonLat(parent, this);
 }

@@ -30,12 +30,12 @@ public:
 
 	const QVector<QPointF> polyLine() const;
 	const QVector<vtkIdType>& vertexIndices() const {return m_vertexIndices;}
-	vtkPolyLine* getVtkLine(){return m_vtkPolyLine;}
+	vtkPolyLine* getVtkLine() {return m_vtkPolyLine;}
 	void setPolyLine(const QVector<QPointF>& polyline);
 	void setVertexIndices(const QVector<vtkIdType>& indices);
 	void setZDepthRange(double min, double max);
 	void updateShapeData();
-	int selectedEdgeId(){return m_selectedEdgeId;}
+	int selectedEdgeId() {return m_selectedEdgeId;}
 
 	void setActive(bool active);
 	void setHidden(bool hidden);
@@ -49,16 +49,16 @@ private:
 	/// The polygon data container.
 	vtkSmartPointer<vtkPolyLine> m_vtkPolyLine;
 	/// The grid that has cells, those consists of the edge of m_vtkPolyLine.
-    vtkSmartPointer<vtkPolyData> m_edges;
-    vtkSmartPointer<vtkPolyData> m_vertices;
+	vtkSmartPointer<vtkPolyData> m_edges;
+	vtkSmartPointer<vtkPolyData> m_vertices;
 protected:
 	RawDataPointmap* m_parent;
 
 	QVector<vtkIdType> m_vertexIndices;
-    vtkSmartPointer<vtkActor> m_edgesActor;
-    vtkSmartPointer<vtkActor> m_verticesActor;
-    vtkSmartPointer<vtkPolyDataMapper> m_edgesMapper;
-    vtkSmartPointer<vtkPolyDataMapper> m_verticesMapper;
+	vtkSmartPointer<vtkActor> m_edgesActor;
+	vtkSmartPointer<vtkActor> m_verticesActor;
+	vtkSmartPointer<vtkPolyDataMapper> m_edgesMapper;
+	vtkSmartPointer<vtkPolyDataMapper> m_verticesMapper;
 };
 
 #endif // RAWDATAPOINTMAPBREAKLINE_H

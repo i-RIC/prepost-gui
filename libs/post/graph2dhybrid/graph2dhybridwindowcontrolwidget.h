@@ -7,17 +7,18 @@
 class QDomNode;
 class QXmlStreamWriter;
 
-namespace Ui {
-    class Graph2dHybridWindowControlWidget;
+namespace Ui
+{
+	class Graph2dHybridWindowControlWidget;
 }
 
 class Graph2dHybridWindowControlWidget : public QWidget
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit Graph2dHybridWindowControlWidget(QWidget *parent = nullptr);
-    ~Graph2dHybridWindowControlWidget();
+	explicit Graph2dHybridWindowControlWidget(QWidget* parent = nullptr);
+	~Graph2dHybridWindowControlWidget();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4]);
 	void setIValue(int i);
 	void setJValue(int j);
@@ -43,7 +44,7 @@ signals:
 	void kValueChanged(int k);
 	void indexValueChanged(int index);
 private:
-    Ui::Graph2dHybridWindowControlWidget *ui;
+	Ui::Graph2dHybridWindowControlWidget* ui;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWCONTROLWIDGET_H

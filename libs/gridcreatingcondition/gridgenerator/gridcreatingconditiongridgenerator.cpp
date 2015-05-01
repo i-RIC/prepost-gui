@@ -29,12 +29,12 @@ GridCreatingConditionGridGenerator::GridCreatingConditionGridGenerator(ProjectDa
 
 GridCreatingConditionGridGenerator::~GridCreatingConditionGridGenerator()
 {
-	if (m_rightClickingMenu != 0){
+	if (m_rightClickingMenu != 0) {
 		delete m_rightClickingMenu;
 	}
 }
 
-bool GridCreatingConditionGridGenerator::create(QWidget *parent)
+bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 {
 	GridCreatingConditionGridGeneratorSettingDialog* dialog = new GridCreatingConditionGridGeneratorSettingDialog(parent);
 
@@ -69,7 +69,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	dialog->setupDisability();
 
 	int result = dialog->exec();
-	if (result == QDialog::Rejected){
+	if (result == QDialog::Rejected) {
 		return false;
 	}
 	j_chn = dialog->channelShape();
@@ -100,7 +100,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	delta_b = dialog->widthVariation();
 
 	delete dialog;
-	if (! setupParameters()){
+	if (! setupParameters()) {
 		// error occured.
 		return false;
 	}
@@ -112,23 +112,23 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 
-	for (int j = 0; j < m_jMax; j++){
-		for (int i = 0; i < m_iMax; i++){
+	for (int j = 0; j < m_jMax; j++) {
+		for (int i = 0; i < m_iMax; i++) {
 			points->InsertPoint(m_iMax * j + i, xp[i][j], yp[i][j], 0.0);
 		}
 	}
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	GridRelatedConditionContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
 	GridRelatedConditionRealNodeContainer* rnContainer = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
-	if (rnContainer != 0){
-		for (int j = 0; j < m_jMax; j++){
-			for (int i = 0; i < m_iMax; i++){
+	if (rnContainer != 0) {
+		for (int j = 0; j < m_jMax; j++) {
+			for (int i = 0; i < m_iMax; i++) {
 				rnContainer->setValue(m_iMax * j + i, zp[i][j]);
 			}
 		}
@@ -137,9 +137,9 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	}
 	c = grid->gridRelatedCondition("CellCondition");
 	GridRelatedConditionIntegerCellContainer* icContainer = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
-	if (icContainer != 0){
-		for (int j = 0; j < m_jMax - 1; j++){
-			for (int i = 0; i < m_iMax - 1; i++){
+	if (icContainer != 0) {
+		for (int j = 0; j < m_jMax - 1; j++) {
+			for (int i = 0; i < m_iMax - 1; i++) {
 				icContainer->setValue((m_iMax - 1) * j + i, obst[i][j]);
 			}
 		}
@@ -147,7 +147,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 		icContainer->setMapped(true);
 	}
 	grid->setModified();
-	for (int i = 0; i < m_iMax; i++){
+	for (int i = 0; i < m_iMax; i++) {
 		delete[] xp[i];
 		delete[] yp[i];
 		delete[] zp[i];
@@ -156,7 +156,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget *parent)
 	delete[] yp;
 	delete[] zp;
 
-	for (int i = 0; i < m_iMax - 1; i++){
+	for (int i = 0; i < m_iMax - 1; i++) {
 		delete[] obst[i];
 	}
 	delete[] obst;
@@ -172,14 +172,14 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	double ddy[6];
 	double yyp[6];
 
-	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::ComplexCompound){
+	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::ComplexCompound) {
 		wid[3] = width_ct;
 	}
 	ndy[4] = ny_m;
 	ndy[2] = ndy[4];
 	wid[2] = alpha_l * height_l;
 	wid[4] = wid[2];
-	if (height_l < 1e-4){
+	if (height_l < 1e-4) {
 		ndy[2] = 0;
 		ndy[4] = 0;
 	}
@@ -192,15 +192,15 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	double dy0 = width / ny;
 
 	double* y0;
-	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection){
+	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection) {
 		y0 = new double[ny + 1];
-		for (int j = 0; j <= ny; j++){
+		for (int j = 0; j <= ny; j++) {
 			y0[j] = - width / 2. + j * dy0;
 		}
-	} else if (j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound){
+	} else if (j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound) {
 		jp[0] = 0;
 		yyp[0] = 0;
-		for (int m = 1; m <= 5; m++){
+		for (int m = 1; m <= 5; m++) {
 			yyp[m] = yyp[m - 1] + wid[m];
 			jp[m] = jp[m - 1] + ndy[m];
 			ddy[m] = wid[m] / ndy[m];
@@ -208,8 +208,8 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 		width = yyp[5];
 		ny = jp[5];
 		y0 = new double[ny + 1];
-		for (int m = 1; m <= 5; m++){
-			for (int j = jp[m - 1] + 1; j <= jp[m]; j++){
+		for (int m = 1; m <= 5; m++) {
+			for (int j = jp[m - 1] + 1; j <= jp[m]; j++) {
 				y0[j] = - width / 2. + yyp[m - 1] + ddy[m] * (j - jp[m - 1]);
 			}
 		}
@@ -219,7 +219,7 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	m_iMax = nx + 1;
 	m_jMax = ny + 1;
 
-	if (m_iMax * m_jMax > MAXGRIDSIZE){
+	if (m_iMax * m_jMax > MAXGRIDSIZE) {
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return false;
 	}
@@ -239,9 +239,9 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	double yy = 0.;
 	double ymax = - 9999.;
 	double ymin = 9999.;
-	for (int i = 1; i <= nx; i++){
+	for (int i = 1; i <= nx; i++) {
 		double phi;
-		for (int ii = 1; ii <= 1000; ii++){
+		for (int ii = 1; ii <= 1000; ii++) {
 			ss = ss + dds;
 			phi = phi0 * sin((2 * M_PI / sl) * ss);
 			xx = xx + dds * cos(phi);
@@ -263,22 +263,22 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	xp = new double*[m_iMax];
 	yp = new double*[m_iMax];
 	zp = new double*[m_iMax];
-	for (int i = 0; i < m_iMax; i++){
+	for (int i = 0; i < m_iMax; i++) {
 		xp[i] = new double[m_jMax];
 		yp[i] = new double[m_jMax];
 		zp[i] = new double[m_jMax];
 	}
-	for (int i = 0; i <= nx; i++){
+	for (int i = 0; i <= nx; i++) {
 		double w_l;
 		double w_r;
 		if (j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound ||
-				(j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection && j_width == GridCreatingConditionGridGeneratorSettingDialog::Constant)){
+				(j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection && j_width == GridCreatingConditionGridGeneratorSettingDialog::Constant)) {
 			w_l = width / 2.;
 			w_r = width / 2.;
-		} else if (j_width_type == GridCreatingConditionGridGeneratorSettingDialog::Both){
+		} else if (j_width_type == GridCreatingConditionGridGeneratorSettingDialog::Both) {
 			w_l = width / 2. + (delta_b / 2.) * (1. - cos(2. * M_PI * s[i] / sl));
 			w_r = width / 2. + (delta_b / 2.) * (1. - cos(2. * M_PI * s[i] / sl));
-		} else if (j_width_type == GridCreatingConditionGridGeneratorSettingDialog::Left){
+		} else if (j_width_type == GridCreatingConditionGridGeneratorSettingDialog::Left) {
 			w_l = width / 2. + (delta_b / 2.) * (1. - cos(2. * M_PI * s[i] / sl));
 			w_r = width / 2.;
 		} else {
@@ -289,31 +289,31 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 		double yp_r = ycenter[i] - w_r * cos(pp[i]);
 		double xp_l = xcenter[i] - w_l * sin(pp[i]);
 		double yp_l = ycenter[i] + w_l * cos(pp[i]);
-		for (int j = 0; j <= ny; j++){
+		for (int j = 0; j <= ny; j++) {
 			xp[i][j] = xp_r + (xp_l - xp_r) * j / ny;
 			yp[i][j] = yp_r + (yp_l - yp_r) * j / ny;
 			zp[i][j] = - slope * s[i];
 			if (j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound &&
 					j >= jp[2] &&
-					j <= jp[3]){
+					j <= jp[3]) {
 				zp[i][j] = zp[i][j] - height_l;
 			}
 		}
 	}
 
 	// Straight Bank
-	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::ComplexCompound){
+	if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::ComplexCompound) {
 		double dyy;
-		for (int i = 0; i <= nx; i++){
+		for (int i = 0; i <= nx; i++) {
 			yy = ymax - yp[i][jp[4]];
 			dyy = yy / (jp[5] - jp[4]);
-			for (int j = jp[4] + 1; j <= jp[5]; j++){
+			for (int j = jp[4] + 1; j <= jp[5]; j++) {
 				xp[i][j] = xp[i][jp[4]];
 				yp[i][j] = yp[i][jp[4]] + dyy * (j - jp[4]);
 			}
 			yy = yp[i][jp[1]] - ymin;
 			dyy = yy / jp[1];
-			for (int j = 0; j <= jp[1]; j++){
+			for (int j = 0; j <= jp[1]; j++) {
 				xp[i][j] = xp[i][jp[1]];
 				yp[i][j] = ymin + dyy * j;
 			}
@@ -322,18 +322,18 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 
 	// bed shape
 	if (j_bar == GridCreatingConditionGridGeneratorSettingDialog::AlternateBar ||
-			j_bar == GridCreatingConditionGridGeneratorSettingDialog::Parabolic){
-		for (int i = 0; i <= nx; i++){
-			for (int j = 0; j <= ny; j++){
-				if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection){
-					if (j_bar == GridCreatingConditionGridGeneratorSettingDialog::AlternateBar){
+			j_bar == GridCreatingConditionGridGeneratorSettingDialog::Parabolic) {
+		for (int i = 0; i <= nx; i++) {
+			for (int j = 0; j <= ny; j++) {
+				if (j_chn == GridCreatingConditionGridGeneratorSettingDialog::SingleSection) {
+					if (j_bar == GridCreatingConditionGridGeneratorSettingDialog::AlternateBar) {
 						zp[i][j] = zp[i][j] - amp * cos(2. * M_PI * (s[i] - delta) / sl) * cos(M_PI * (y0[j] - y0[0]) / (2. * y0[ny]));
 					} else {
 						zp[i][j] = zp[i][j] + 4. * amp / pow(width, 2) * pow(y0[j] - y0[0] - width / 2., 2) - amp;
 					}
 				} else {
-					if (j >= jp[2] && j <= jp[3]){
-						if (j_bar == GridCreatingConditionGridGeneratorSettingDialog::AlternateBar){
+					if (j >= jp[2] && j <= jp[3]) {
+						if (j_bar == GridCreatingConditionGridGeneratorSettingDialog::AlternateBar) {
 							zp[i][j] = zp[i][j] - amp * cos(2. * M_PI * (s[i] - delta) / sl) * cos(M_PI * (y0[j] - y0[jp[2]]) / wid[3]);
 						} else {
 							zp[i][j] = zp[i][j] + 4. * amp / pow(wid[3], 2) * pow(y0[j] - y0[jp[2]], 2) - amp;
@@ -351,11 +351,11 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	delete[] y0;
 
 	obst = new int*[m_iMax - 1];
-	for (int i = 0; i < m_iMax - 1; i++){
+	for (int i = 0; i < m_iMax - 1; i++) {
 		obst[i] = new int[m_jMax - 1];
 	}
-	for (int i = 0; i < m_iMax - 1; i++){
-		for (int j = 0; j < m_jMax - 1; j++){
+	for (int i = 0; i < m_iMax - 1; i++) {
+		for (int j = 0; j < m_jMax - 1; j++) {
 			obst[i][j] = 0;
 		}
 	}
@@ -363,7 +363,7 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 	int is[2][2];
 	int js[2][2];
 	if (j_fix == GridCreatingConditionGridGeneratorSettingDialog::Fixed &&
-			j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound){
+			j_chn >= GridCreatingConditionGridGeneratorSettingDialog::SimpleCompound) {
 		is[0][0] = 0;
 		is[1][0] = nx;
 		js[0][0] = 0;
@@ -372,9 +372,9 @@ bool GridCreatingConditionGridGenerator::setupParameters()
 		is[1][1] = nx;
 		js[0][1] = jp[4];
 		js[1][1] = ny;
-		for (int n = 0; n <= 1; n++){
-			for (int i = is[0][n]; i < is[1][n]; i++){
-				for (int j = js[0][n]; j < js[1][n]; j++){
+		for (int n = 0; n <= 1; n++) {
+			for (int i = is[0][n]; i < is[1][n]; i++) {
+				for (int j = js[0][n]; j < js[1][n]; j++) {
 					obst[i][j] = 1;
 				}
 			}
@@ -390,7 +390,7 @@ bool GridCreatingConditionGridGenerator::ready() const
 
 void GridCreatingConditionGridGenerator::setupMenu()
 {
-	if (m_rightClickingMenu == nullptr){
+	if (m_rightClickingMenu == nullptr) {
 		PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
 		m_rightClickingMenu = new QMenu();
 		m_rightClickingMenu->addAction(p->createAction());
@@ -402,7 +402,7 @@ void GridCreatingConditionGridGenerator::setupMenu()
 void GridCreatingConditionGridGenerator::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode generatorNode = iRIC::getChildNode(node, "GridGenerator");
-	if (! generatorNode.isNull()){
+	if (! generatorNode.isNull()) {
 		loadGridGeneratorFromProjectMainFile(generatorNode);
 	}
 }
@@ -483,7 +483,7 @@ void GridCreatingConditionGridGenerator::saveGridGeneratorToProjectMainFile(QXml
 
 void GridCreatingConditionGridGenerator::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
+	if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -491,8 +491,8 @@ void GridCreatingConditionGridGenerator::mousePressEvent(QMouseEvent* event, Pre
 
 void GridCreatingConditionGridGenerator::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

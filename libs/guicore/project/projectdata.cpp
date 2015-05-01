@@ -27,17 +27,17 @@
 #include <QThread>
 #include <QProcess>
 
-class ProjectDataMoveThread : public QThread {
+class ProjectDataMoveThread : public QThread
+{
 public:
 	ProjectDataMoveThread(const QString& from, const QString& to, QObject* parent)
-		: QThread(parent)
-	{
+		: QThread(parent) {
 		m_from = from;
 		m_to = to;
 	}
-	bool result(){return m_result;}
+	bool result() {return m_result;}
 protected:
-	void run(){
+	void run() {
 		m_result = iRIC::moveDirContent(m_from, m_to);
 	}
 private:
@@ -46,17 +46,17 @@ private:
 	bool m_result;
 };
 
-class ProjectDataCopyThread : public QThread {
+class ProjectDataCopyThread : public QThread
+{
 public:
 	ProjectDataCopyThread(const QString& from, const QString& to, QObject* parent)
-		: QThread(parent)
-	{
+		: QThread(parent) {
 		m_from = from;
 		m_to = to;
 	}
-	bool result(){return m_result;}
+	bool result() {return m_result;}
 protected:
-	void run(){
+	void run() {
 		m_result = iRIC::copyDirRecursively(m_from, m_to);
 	}
 private:
@@ -67,7 +67,7 @@ private:
 
 const QString ProjectData::LOCKFILENAME = "lock";
 
-ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent) :
+ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent) :
 	QObject(parent)
 {
 	m_mainWindow = parent;
@@ -76,7 +76,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 	m_folderProject = false;
 	// if the workdirectory doesn't exists, make it.
 	QDir wdir(m_workDirectory);
-	if (! wdir.exists()){
+	if (! wdir.exists()) {
 		QDir parent = wdir;
 		parent.cdUp();
 		parent.mkdir(wdir.dirName());
@@ -87,7 +87,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 	lock();
 	connect(m_mainfile, SIGNAL(cgnsFileSwitched()), parent, SLOT(handleCgnsSwitch()));
 
-	if (parent == nullptr){
+	if (parent == nullptr) {
 		// this project data should not attatched to mainwindow.
 		return;
 	}
@@ -96,7 +96,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface *parent
 
 ProjectData::~ProjectData()
 {
-	if (m_solverDefinition != nullptr){
+	if (m_solverDefinition != nullptr) {
 		delete m_solverDefinition;
 	}
 	// delete mainfile
@@ -105,7 +105,7 @@ ProjectData::~ProjectData()
 	unlock();
 
 	// remove the workdirectory recursively, if it is under workspace.
-	if (isInWorkspace()){
+	if (isInWorkspace()) {
 		iRIC::rmdirRecursively(m_workDirectory);
 	}
 }
@@ -116,7 +116,7 @@ const QString ProjectData::absoluteFileName(const QString& relativeFileName) con
 	return workdir.absoluteFilePath(relativeFileName);
 }
 
-bool ProjectData::unzipFrom(const QString &filename)
+bool ProjectData::unzipFrom(const QString& filename)
 {
 	// Unzip archive file
 	QProcess* process = iRIC::createUnzipArchiveProcess(filename, workDirectory());
@@ -126,8 +126,8 @@ bool ProjectData::unzipFrom(const QString &filename)
 	m_finished = process->waitForFinished(3000);
 	qApp->processEvents();
 	iRICMainWindowInterface* mw = mainWindow();
-	if (mw != nullptr){mw->enterModelessDialogMode();}
-	if (! m_finished){
+	if (mw != nullptr) {mw->enterModelessDialogMode();}
+	if (! m_finished) {
 		int prog = 10;
 		// show dialog and wait.
 		m_canceled = false;
@@ -140,7 +140,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 
 		m_waitDialog->show();
 		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled){
+		while (! m_finished && ! m_canceled) {
 			qApp->processEvents();
 			process->waitForFinished(200);
 			m_waitDialog->setProgress(prog);
@@ -149,7 +149,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 		m_waitDialog->hide();
 		delete m_waitDialog;
 		m_waitDialog = nullptr;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled.
 			process->kill();
 			delete process;
@@ -158,7 +158,7 @@ bool ProjectData::unzipFrom(const QString &filename)
 		}
 	}
 	delete process;
-	if (mw != nullptr){mw->exitModelessDialogMode();}
+	if (mw != nullptr) {mw->exitModelessDialogMode();}
 	// save the filename.
 	m_filename = filename;
 	return true;
@@ -170,7 +170,8 @@ void ProjectData::loadSolverInformation()
 	mainfile()->loadSolverInformation();
 }
 
-void ProjectData::setSolverDefinition(SolverDefinition* def){
+void ProjectData::setSolverDefinition(SolverDefinition* def)
+{
 	m_solverDefinition = def;
 	// check solver definition.
 	checkGridConditions();
@@ -205,7 +206,7 @@ bool ProjectData::save()
 	return ret;
 }
 
-bool ProjectData::zipTo(const QString &filename)
+bool ProjectData::zipTo(const QString& filename)
 {
 	QStringList filelist;
 	QDir workdir(workDirectory());
@@ -225,7 +226,7 @@ bool ProjectData::zipTo(const QString &filename)
 	int waitTime = 3000;
 	m_finished = process->waitForFinished(waitTime);
 	qApp->processEvents();
-	if (! m_finished){
+	if (! m_finished) {
 		int prog = 10;
 		// show dialog and wait.
 		m_canceled = false;
@@ -238,7 +239,7 @@ bool ProjectData::zipTo(const QString &filename)
 
 		m_waitDialog->show();
 		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled){
+		while (! m_finished && ! m_canceled) {
 			qApp->processEvents();
 			process->waitForFinished(200);
 			m_waitDialog->setProgress(prog);
@@ -248,7 +249,7 @@ bool ProjectData::zipTo(const QString &filename)
 		m_waitDialog->hide();
 		delete m_waitDialog;
 		m_waitDialog = nullptr;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled.
 			process->kill();
 			delete process;
@@ -260,9 +261,9 @@ bool ProjectData::zipTo(const QString &filename)
 		}
 	}
 	delete process;
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);
-		if (! ok){
+		if (! ok) {
 			// unable to remove the file.
 			QMessageBox::critical(mainWindow(), tr("Error"), tr("Could not overwrite %1.").arg(QDir::toNativeSeparators(filename)));
 			QFile::remove(outfile);
@@ -287,7 +288,7 @@ const QString ProjectData::newWorkfolderName(const QDir& workspace)
 	hash.addData(QByteArray(1, qrand()));
 
 	QString dirname = hash.result().toHex();
-	while (workspace.exists(dirname)){
+	while (workspace.exists(dirname)) {
 		hash.addData(QByteArray(1, qrand()));
 		dirname = hash.result().toHex();
 	}
@@ -336,7 +337,7 @@ const QString ProjectData::tmpFileName()
 	QDir workDir(m_workDirectory);
 
 	QString filename = hash.result().toHex();
-	while (workDir.exists(filename)){
+	while (workDir.exists(filename)) {
 		hash.addData(QByteArray(1, qrand()));
 		filename = hash.result().toHex();
 	}
@@ -356,20 +357,20 @@ void ProjectData::checkGridConditions()
 {
 	QStringList ngtypes;
 	const QList<SolverDefinitionGridType*> gtypes = m_solverDefinition->gridTypes();
-	for (auto it = gtypes.begin(); it != gtypes.end(); ++it){
+	for (auto it = gtypes.begin(); it != gtypes.end(); ++it) {
 		const SolverDefinitionGridType* gt = *it;
 		bool ok = false;
 		ok = (gt->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid);
 		const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
-		for (auto cit = conds.begin(); cit != conds.end(); ++cit){
+		for (auto cit = conds.begin(); cit != conds.end(); ++cit) {
 			const SolverDefinitionGridRelatedCondition* cond = *cit;
 			ok = ok || (cond->name() == "Elevation");
 		}
-		if (! ok){
+		if (! ok) {
 			ngtypes.append(gt->caption());
 		}
 	}
-	if (! ngtypes.empty()){
+	if (! ngtypes.empty()) {
 		// NG grid types were found.
 		QMessageBox::warning(
 			m_mainWindow, tr("Warning"),
@@ -383,7 +384,7 @@ bool ProjectData::lock()
 	QString lockFilename = QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
 	m_lockFile = new QFile(lockFilename, this);
 	bool ok = m_lockFile->open(QIODevice::WriteOnly);
-	if (! ok){
+	if (! ok) {
 		delete m_lockFile;
 		m_lockFile = nullptr;
 		return false;
@@ -393,7 +394,7 @@ bool ProjectData::lock()
 
 void ProjectData::unlock()
 {
-	if (m_lockFile == nullptr){return;}
+	if (m_lockFile == nullptr) {return;}
 	m_lockFile->close();
 	delete m_lockFile;
 	QString lockFilename = QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
@@ -403,42 +404,42 @@ void ProjectData::unlock()
 
 bool ProjectData::moveTo(const QString& newWorkFolder)
 {
-	if (QFile::exists(newWorkFolder)){
-		if (! iRIC::rmdirRecursively(newWorkFolder)){
+	if (QFile::exists(newWorkFolder)) {
+		if (! iRIC::rmdirRecursively(newWorkFolder)) {
 			return false;
 		}
 		qApp->processEvents();
 		QFileInfo finfo(newWorkFolder);
 		QDir dir(finfo.absolutePath());
-		if (! dir.mkdir(finfo.fileName())){
+		if (! dir.mkdir(finfo.fileName())) {
 			return false;
 		}
 		qApp->processEvents();
 	}
-	#ifdef Q_OS_WIN32
-		QString oldDrive = m_workDirectory.left(1).toUpper();
-		QString newDrive = newWorkFolder.left(1).toUpper();
-		if (oldDrive != newDrive){
-			// moving is done between different drives.
-			// execute copy and remove.
-			QString currentWorkDirectory = m_workDirectory;
-			bool ok = copyTo(newWorkFolder, true);
-			if (! ok){return false;}
-			ok = iRIC::rmdirRecursively(currentWorkDirectory);
-			// return true, even if rmdir failed.
-			return true;
-		}
-	#endif // Q_OS_WIN32
-
-/*
-	if (QFile::exists(newWorkFolder))
-	{
-		// The specified folder or file already exists. Try to remove it first.
-		bool ok = iRIC::rmdirRecursively(newWorkFolder);
-		// removing the existing folder failed.
-		if (! ok){return false;}
+#ifdef Q_OS_WIN32
+	QString oldDrive = m_workDirectory.left(1).toUpper();
+	QString newDrive = newWorkFolder.left(1).toUpper();
+	if (oldDrive != newDrive) {
+		// moving is done between different drives.
+		// execute copy and remove.
+		QString currentWorkDirectory = m_workDirectory;
+		bool ok = copyTo(newWorkFolder, true);
+		if (! ok) {return false;}
+		ok = iRIC::rmdirRecursively(currentWorkDirectory);
+		// return true, even if rmdir failed.
+		return true;
 	}
-*/
+#endif // Q_OS_WIN32
+
+	/*
+		if (QFile::exists(newWorkFolder))
+		{
+			// The specified folder or file already exists. Try to remove it first.
+			bool ok = iRIC::rmdirRecursively(newWorkFolder);
+			// removing the existing folder failed.
+			if (! ok){return false;}
+		}
+	*/
 	// move current folder to new folder.
 	unlock();
 	mainfile()->postSolutionInfo()->close();
@@ -451,7 +452,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 	int waitTime = 3000;
 	m_finished = thread->wait(waitTime);
 	qApp->processEvents();
-	if (! m_finished){
+	if (! m_finished) {
 		int prog = 10;
 		// show dialog and wait.
 		m_canceled = false;
@@ -464,7 +465,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 
 		m_waitDialog->show();
 		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled){
+		while (! m_finished && ! m_canceled) {
 			qApp->processEvents();
 			thread->wait(200);
 			m_waitDialog->setProgress(prog);
@@ -474,7 +475,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 		m_waitDialog->hide();
 		delete m_waitDialog;
 		m_waitDialog = nullptr;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled.
 			thread->terminate();
 			delete thread;
@@ -483,7 +484,7 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 		}
 	}
 	bool ok = thread->result();
-	if (! ok){
+	if (! ok) {
 		// moving failed. keep the current workspace.
 		lock();
 		return false;
@@ -496,16 +497,16 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 
 bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 {
-	if (QFile::exists(newWorkFolder)){
+	if (QFile::exists(newWorkFolder)) {
 		QFileInfo finfo(newWorkFolder);
 		QString parentPath = finfo.absolutePath();
 		QDir dir(parentPath);
 		QString dirName = finfo.fileName();
-		if (! iRIC::rmdirRecursively(newWorkFolder)){
+		if (! iRIC::rmdirRecursively(newWorkFolder)) {
 			return false;
 		}
 		qApp->processEvents();
-		if (! dir.mkdir(dirName)){
+		if (! dir.mkdir(dirName)) {
 			return false;
 		}
 		qApp->processEvents();
@@ -523,7 +524,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 	bool ok = false;
 	m_finished = thread->wait(waitTime);
 	qApp->processEvents();
-	if (! m_finished){
+	if (! m_finished) {
 		int prog = 10;
 		// show dialog and wait.
 		m_canceled = false;
@@ -536,7 +537,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 
 		m_waitDialog->show();
 		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled){
+		while (! m_finished && ! m_canceled) {
 			qApp->processEvents();
 			thread->wait(200);
 			m_waitDialog->setProgress(prog);
@@ -546,7 +547,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 		m_waitDialog->hide();
 		delete m_waitDialog;
 		m_waitDialog = nullptr;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled.
 			thread->terminate();
 			thread->wait();
@@ -556,12 +557,12 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 		}
 	}
 	ok = thread->result();
-	if (! ok){
+	if (! ok) {
 		goto ERROR;
 	}
 
 	// copying succeeded.
-	if (switchToNewFolder){
+	if (switchToNewFolder) {
 		m_workDirectory = newWorkFolder;
 	}
 
@@ -577,11 +578,11 @@ ERROR:
 bool ProjectData::hasHugeCgns()
 {
 	QList<CgnsFileList::CgnsFileEntry*> cgnsFiles = m_mainfile->cgnsFileList()->cgnsFiles();
-	for (int i = 0; i < cgnsFiles.count(); ++i){
+	for (int i = 0; i < cgnsFiles.count(); ++i) {
 		CgnsFileList::CgnsFileEntry* entry = cgnsFiles.at(i);
 		QString filename = workCgnsFileName(entry->filename());
 		QFileInfo finfo(filename);
-		if (finfo.size() > 2000000000){
+		if (finfo.size() > 2000000000) {
 			return true;
 		}
 	}
@@ -596,7 +597,7 @@ void ProjectData::openPostProcessors()
 
 bool ProjectData::isInWorkspace()
 {
-	if (m_mainWindow == nullptr){return false;}
+	if (m_mainWindow == nullptr) {return false;}
 	QString wsPath = m_mainWindow->workspace()->workspace().absolutePath();
 	return m_workDirectory.contains(wsPath);
 }

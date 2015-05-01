@@ -34,7 +34,7 @@ public:
 	virtual ~PreProcessorBCDataItem();
 	void loadFromCgnsFile(const int fn);
 	void saveToCgnsFile(const int fn);
-	void handleStandardItemDoubleClicked(){showDialog();}
+	void handleStandardItemDoubleClicked() {showDialog();}
 	void handleStandardItemChange();
 	void setName(const QString& name);
 	void setProjectNumber(int num);
@@ -44,7 +44,7 @@ public:
 	void setColor(const QColor& color);
 	QColor color() const;
 	int opacityPercent() const;
-	SolverDefinitionBoundaryCondition* condition(){return m_condition;}
+	SolverDefinitionBoundaryCondition* condition() {return m_condition;}
 	bool isValid() const;
 	QString uniqueName() const;
 
@@ -53,21 +53,21 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent *, VTKGraphicsView *);
-	void keyReleaseEvent(QKeyEvent *, VTKGraphicsView *);
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void addCustomMenuItems(QMenu* menu);
 	void setGrid(Grid* grid);
 	void clearPoints();
 	void assignIndices(const QSet<vtkIdType>& vertices);
 	bool isCustomModified() const {return m_isCustomModified;}
 	QString caption() const;
-	void setMapped(bool mapped){m_mapped = mapped;}
+	void setMapped(bool mapped) {m_mapped = mapped;}
 	bool mapped() const {return m_mapped;}
 
-	QAction* editAction(){return m_editAction;}
-	QAction* deleteAction(){return PreProcessorDataItem::deleteAction();}
-	QAction* assignAction(){return m_assignAction;}
-	QAction* releaseAction(){return m_releaseAction;}
+	QAction* editAction() {return m_editAction;}
+	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}
+	QAction* assignAction() {return m_assignAction;}
+	QAction* releaseAction() {return m_releaseAction;}
 	bool hideSetting() const {return m_hideSetting;}
 
 protected:
@@ -80,7 +80,7 @@ public slots:
 	bool showDialog();
 
 private slots:
-	void setModified(){
+	void setModified() {
 		PreProcessorDataItem::setModified();
 	}
 	void assignSelectedElements();

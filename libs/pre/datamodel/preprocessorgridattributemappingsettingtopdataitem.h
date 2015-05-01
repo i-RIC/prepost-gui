@@ -21,7 +21,7 @@ public slots:
 	void executeMapping();
 	void customMapping(bool nomessage = false);
 	void customMapping(const QString& attName, bool nomessage = false);
-	QAction* customMappingAction(){return m_customMappingAction;}
+	QAction* customMappingAction() {return m_customMappingAction;}
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

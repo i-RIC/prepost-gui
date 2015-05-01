@@ -22,16 +22,16 @@ public:
 	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 
 	void updateMoveUpDownActions(ObjectBrowserView* view);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(2);}
-	BackgroundImageInfo* imageInfo(){return m_imageInfo;}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
+	BackgroundImageInfo* imageInfo() {return m_imageInfo;}
 	QAction* fixAction();
 private slots:
 	void applyImageChange();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& ){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& ){}
-	void assignActionZValues(const ZDepthRange &range);
+	void doLoadFromProjectMainFile(const QDomNode&) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
+	void assignActionZValues(const ZDepthRange& range);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* dialog);
 

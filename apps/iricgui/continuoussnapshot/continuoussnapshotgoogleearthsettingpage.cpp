@@ -15,7 +15,7 @@
 #include <QMdiSubWindow>
 #include <QVector2D>
 
-ContinuousSnapshotGoogleEarthSettingPage::ContinuousSnapshotGoogleEarthSettingPage(QWidget *parent) :
+ContinuousSnapshotGoogleEarthSettingPage::ContinuousSnapshotGoogleEarthSettingPage(QWidget* parent) :
 	QWizardPage(parent),
 	ui(new Ui::ContinuousSnapshotGoogleEarthSettingPage)
 {
@@ -36,7 +36,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 	setupWindowComboBox();
 	setupBackgroundComboBox();
 
-	if (m_wizard->backgroundList().size() == 0){
+	if (m_wizard->backgroundList().size() == 0) {
 		ui->googleEarthCheckBox->setChecked(false);
 		this->setEnabled(false);
 		return;
@@ -48,7 +48,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 	double tmp;
 	// bottom left latitude
 	tmp = m_wizard->leftLatitude();
-	if (tmp < 0){
+	if (tmp < 0) {
 		// North (+) / South (-)
 		ui->leftLatitudeComboBox->setCurrentIndex(1);
 		tmp = - tmp;
@@ -64,7 +64,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 	ui->leftLatitudeSecondSpinBox->setValue(tmp);
 	// bottom left longitude
 	tmp = m_wizard->leftLongitude();
-	if (tmp < 0){
+	if (tmp < 0) {
 		// East (+) / West (-)
 		ui->leftLongitudeComboBox->setCurrentIndex(1);
 		tmp = - tmp;
@@ -81,7 +81,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 
 	// bottom right latitude
 	tmp = m_wizard->rightLatitude();
-	if (tmp < 0){
+	if (tmp < 0) {
 		ui->rightLatitudeComboBox->setCurrentIndex(1);
 		tmp = - tmp;
 	} else {
@@ -96,7 +96,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 	ui->rightLatitudeSecondSpinBox->setValue(tmp);
 	// bottom right longitude
 	tmp = m_wizard->rightLongitude();
-	if (tmp < 0){
+	if (tmp < 0) {
 		ui->rightLongitudeComboBox->setCurrentIndex(1);
 		tmp = - tmp;
 	} else {
@@ -116,7 +116,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::initializePage()
 
 bool ContinuousSnapshotGoogleEarthSettingPage::validatePage()
 {
-	if (! ui->googleEarthCheckBox->isChecked()) return true;
+	if (! ui->googleEarthCheckBox->isChecked()) { return true; }
 
 	// set the latitude and longitude
 	int flag;
@@ -159,15 +159,15 @@ void ContinuousSnapshotGoogleEarthSettingPage::setupWindowComboBox()
 {
 	int idx = 0;
 	ui->windowComboBox->clear();
-	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it, ++idx){
+	for (auto it = m_wizard->windowList().begin(); it != m_wizard->windowList().end(); ++it, ++idx) {
 		Post2dWindow* post = dynamic_cast<Post2dWindow*>((*it)->widget());
-		if (post == nullptr) continue;
+		if (post == nullptr) { continue; }
 		// add only post2dwindows.
 		ui->windowComboBox->addItem((*it)->windowTitle(), QVariant(idx));
 		// idx is the index of (*it) in the list m_wizard->windowList().
 	}
 	int current = ui->windowComboBox->findData(QVariant(m_wizard->targetWindow()), Qt::UserRole);
-	if (current < 0) current = 0;
+	if (current < 0) { current = 0; }
 	ui->windowComboBox->setCurrentIndex(current);
 }
 
@@ -175,17 +175,17 @@ void ContinuousSnapshotGoogleEarthSettingPage::setupBackgroundComboBox()
 {
 	int idx = 0;
 	ui->backgroundComboBox->clear();
-	for (auto it = m_wizard->backgroundList().begin(); it != m_wizard->backgroundList().end(); ++it, ++idx){
+	for (auto it = m_wizard->backgroundList().begin(); it != m_wizard->backgroundList().end(); ++it, ++idx) {
 		BackgroundImageInfo* bg = *it;
 		ui->backgroundComboBox->addItem(bg->caption(), QVariant(idx));
 		// idx is the index of (*it) in the list of m_wizard->backgroundList().
 	}
 	int current = ui->backgroundComboBox->findData(QVariant(m_wizard->targetBackground()), Qt::UserRole);
-	if (current < 0) current = 0;
+	if (current < 0) { current = 0; }
 	ui->backgroundComboBox->setCurrentIndex(current);
 }
 
-void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF &p)
+void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF& p)
 {
 	QList<QMdiSubWindow*>::const_iterator it;
 	QWidget* center;
@@ -194,10 +194,10 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF &p)
 	int tmpX = 0;
 	int tmpY = 0;
 	QPoint offset(0, 0);
-	switch (m_wizard->output()){
+	switch (m_wizard->output()) {
 	case ContinuousSnapshotWizard::Onefile:
 		// calculate the offset
-		switch (m_wizard->layout()){
+		switch (m_wizard->layout()) {
 		case ContinuousSnapshotWizard::Asis:
 			it = m_wizard->windowList().begin() + target;
 			center = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
@@ -207,7 +207,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF &p)
 		case ContinuousSnapshotWizard::Horizontally:
 			for (it = m_wizard->windowList().begin(), idx = 0;
 			     it != m_wizard->windowList().end(), idx < target;
-			     ++it, ++idx){
+			     ++it, ++idx) {
 				center = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
 				tmpX += center->width();
 			}
@@ -216,7 +216,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::snapshotToWorld(QPointF &p)
 		case ContinuousSnapshotWizard::Vertically:
 			for (it = m_wizard->windowList().begin(), idx = 0;
 			     it != m_wizard->windowList().end(), idx < target;
-			     ++it, ++idx){
+			     ++it, ++idx) {
 				center = dynamic_cast<QMainWindow*>((*it)->widget())->centralWidget();
 				tmpY += center->height();
 			}
@@ -268,14 +268,14 @@ void ContinuousSnapshotGoogleEarthSettingPage::imageToLatLong(QPointF& p)
 	QVector2D dv = point1 - point0;
 
 	// overlay on the boundary of east/west longitude
-	if (point0.x() * point1.x() < 0){
-		if (point1.x() > 0){
+	if (point0.x() * point1.x() < 0) {
+		if (point1.x() > 0) {
 			point0.setX(point0.x() + 360);
 		} else {
 			point1.setX(point1.x() + 360);
 		}
 	}
-	if (dv.lengthSquared() > (point1 - point0).lengthSquared()){
+	if (dv.lengthSquared() > (point1 - point0).lengthSquared()) {
 		dv = point1 - point0;
 	}
 
@@ -347,7 +347,7 @@ void ContinuousSnapshotGoogleEarthSettingPage::calculateKMLInformation()
 QSize ContinuousSnapshotGoogleEarthSettingPage::targetSnapshotSize()
 {
 	QSize ret;
-	switch (m_wizard->output()){
+	switch (m_wizard->output()) {
 	case ContinuousSnapshotWizard::Onefile:
 		ret.setWidth(m_wizard->snapshotSize().width());
 		ret.setHeight(m_wizard->snapshotSize().height());

@@ -1,7 +1,7 @@
 #include "rawdatapointmaprepresentationdialog.h"
 #include "ui_rawdatapointmaprepresentationdialog.h"
 
-RawDataPointmapRepresentationDialog::RawDataPointmapRepresentationDialog(QWidget *parent) :
+RawDataPointmapRepresentationDialog::RawDataPointmapRepresentationDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataPointmapRepresentationDialog)
 {
@@ -16,8 +16,7 @@ RawDataPointmapRepresentationDialog::~RawDataPointmapRepresentationDialog()
 
 void RawDataPointmapRepresentationDialog::setRepresentation(Representation r)
 {
-	switch (r)
-	{
+	switch (r) {
 	case Points:
 		ui->pointsRadioButton->click();
 		break;
@@ -32,16 +31,16 @@ void RawDataPointmapRepresentationDialog::setRepresentation(Representation r)
 
 RawDataPointmapRepresentationDialog::Representation RawDataPointmapRepresentationDialog::representation()
 {
-	if (ui->pointsRadioButton->isChecked()) return Points;
-	if (ui->wireframeRadioButton->isChecked()) return Wireframe;
-	if (ui->surfaceRadioButton->isChecked()) return Surface;
+	if (ui->pointsRadioButton->isChecked()) { return Points; }
+	if (ui->wireframeRadioButton->isChecked()) { return Wireframe; }
+	if (ui->surfaceRadioButton->isChecked()) { return Surface; }
 	//default
 	return Points;
 }
 
 void RawDataPointmapRepresentationDialog::setOpacityPercent(int opacity)
 {
-	if (ui->surfaceRadioButton->isChecked()){
+	if (ui->surfaceRadioButton->isChecked()) {
 		ui->transparencyWidget->setOpacity(opacity);
 	}
 }
@@ -53,7 +52,7 @@ int RawDataPointmapRepresentationDialog::opacityPercent()
 
 void RawDataPointmapRepresentationDialog::setHideBreakLines(bool hide)
 {
-    ui->hideBreaklinesCheckBox->setChecked(hide);
+	ui->hideBreaklinesCheckBox->setChecked(hide);
 }
 
 void RawDataPointmapRepresentationDialog::setPointSize(int size)
@@ -63,7 +62,7 @@ void RawDataPointmapRepresentationDialog::setPointSize(int size)
 
 bool RawDataPointmapRepresentationDialog::hideBreakLines()
 {
-    return ui->hideBreaklinesCheckBox->isChecked();
+	return ui->hideBreaklinesCheckBox->isChecked();
 }
 
 int RawDataPointmapRepresentationDialog::pointSize()

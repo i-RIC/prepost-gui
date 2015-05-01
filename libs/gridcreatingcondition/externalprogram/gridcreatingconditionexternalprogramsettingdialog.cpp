@@ -16,7 +16,7 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget *parent) :
+GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
 {
@@ -63,8 +63,8 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 
 	// setup errormessages.
 	QDomNode ecsNode = iRIC::getChildNode(def.document().documentElement(), "ErrorCodes");
-	if (! ecsNode.isNull()){
-		for (int i = 0; i < ecsNode.childNodes().count(); ++i){
+	if (! ecsNode.isNull()) {
+		for (int i = 0; i < ecsNode.childNodes().count(); ++i) {
 			QDomNode ecNode = ecsNode.childNodes().at(i);
 			QDomElement ecElem = ecNode.toElement();
 			int errorCode = ecElem.attribute("value").toInt();
@@ -79,11 +79,11 @@ bool GridCreatingConditionExternalProgramSettingDialog::load()
 	int fn;
 	int ret;
 	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0){return false;}
+	if (ret != 0) {return false;}
 	cg_iRIC_Init(fn);
-	if (ret != 0){goto ERROR;}
+	if (ret != 0) {goto ERROR;}
 	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0){goto ERROR;}
+	if (ret != 0) {goto ERROR;}
 	m_containerSet->load();
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
@@ -100,11 +100,11 @@ bool GridCreatingConditionExternalProgramSettingDialog::save()
 	int fn;
 	int ret;
 	ret = cg_open(iRIC::toStr(m_filename).c_str(), CG_MODE_MODIFY, &fn);
-	if (ret != 0){return false;}
+	if (ret != 0) {return false;}
 	cg_iRIC_Init(fn);
-	if (ret != 0){goto ERROR;}
+	if (ret != 0) {goto ERROR;}
 	ret = cg_iRIC_GotoCC(fn);
-	if (ret != 0){goto ERROR;}
+	if (ret != 0) {goto ERROR;}
 	m_containerSet->save();
 	cg_close(fn);
 	return true;
@@ -116,16 +116,16 @@ ERROR:
 
 void GridCreatingConditionExternalProgramSettingDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		reset();
 	}
 }
 
 void GridCreatingConditionExternalProgramSettingDialog::reset(bool nodialog)
 {
-	if (! nodialog){
+	if (! nodialog) {
 		int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to reset all grid creating conditions to default values?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return;}
+		if (ret == QMessageBox::No) {return;}
 	}
 	m_containerSet->reset();
 }
@@ -133,7 +133,7 @@ void GridCreatingConditionExternalProgramSettingDialog::reset(bool nodialog)
 void GridCreatingConditionExternalProgramSettingDialog::accept()
 {
 	bool ok = save();
-	if (! ok){
+	if (! ok) {
 		QMessageBox::critical(parentWidget(), tr("Error"), tr("Error occured while saving."));
 	}
 	QDialog::accept();
@@ -141,7 +141,7 @@ void GridCreatingConditionExternalProgramSettingDialog::accept()
 
 const QString GridCreatingConditionExternalProgramSettingDialog::errorMessage(int errorcode) const
 {
-	if (m_errorMessages.contains(errorcode)){
+	if (m_errorMessages.contains(errorcode)) {
 		return m_errorMessages.value(errorcode);
 	} else {
 		return QString(tr("Unknown error (Error code: %1)")).arg(errorcode);

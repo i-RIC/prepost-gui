@@ -10,12 +10,12 @@ class Structured15DGridWithCrossSectionCrossSection : public QObject
 {
 public:
 	struct Altitude {
-public:
+	public:
 		double m_position;
 		double m_height;
 	};
 	struct CtrlPointsAddMethod {
-public:
+	public:
 		enum {
 			am_Uniform,          ///< Uniform
 			am_EqRatio_Ratio     ///< Equal ratio
@@ -24,17 +24,16 @@ public:
 		double param; ///< parameter
 	};
 	Structured15DGridWithCrossSectionCrossSection(QString name, Grid* grid)
-		: QObject(grid)
-	{
+		: QObject(grid) {
 		m_grid = grid;
 		m_name = name;
 	}
-	Grid* grid(){return m_grid;}
+	Grid* grid() {return m_grid;}
 	void loadFromCgnsFile(int fn, int B, int Z, int index);
 	void saveToCgnsFile(int fn, int B, int Z, int index);
-	const QString& name(){return m_name;}
-	QVector<Altitude>& altitudeInfo(){return m_altitudeInfo;}
-	void setAltitudeInfo(const QVector<Altitude>& alt){m_altitudeInfo = alt;}
+	const QString& name() {return m_name;}
+	QVector<Altitude>& altitudeInfo() {return m_altitudeInfo;}
+	void setAltitudeInfo(const QVector<Altitude>& alt) {m_altitudeInfo = alt;}
 //	QVector<double>& altitude(){return m_altitude;}
 //	QVector<double>& distance(){return m_distnace;}
 protected:

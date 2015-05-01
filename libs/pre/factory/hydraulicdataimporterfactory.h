@@ -15,8 +15,8 @@ private:
 	 */
 	HydraulicDataImporterFactory();
 public:
-	static HydraulicDataImporterFactory& instance(){
-		if (m_instance == nullptr){
+	static HydraulicDataImporterFactory& instance() {
+		if (m_instance == nullptr) {
 			m_instance = new HydraulicDataImporterFactory();
 		}
 		return *m_instance;

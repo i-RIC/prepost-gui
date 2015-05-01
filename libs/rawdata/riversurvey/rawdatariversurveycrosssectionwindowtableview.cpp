@@ -2,7 +2,7 @@
 
 #include <QResizeEvent>
 
-RawDataRiverSurveyCrosssectionWindowTableView::RawDataRiverSurveyCrosssectionWindowTableView(QWidget *parent) :
+RawDataRiverSurveyCrosssectionWindowTableView::RawDataRiverSurveyCrosssectionWindowTableView(QWidget* parent) :
 	QTableView(parent)
 {
 	m_editor = nullptr;
@@ -17,7 +17,7 @@ RawDataRiverSurveyCrosssectionWindowTableView::RawDataRiverSurveyCrosssectionWin
 		QAbstractItemView::CurrentChanged);
 }
 
-void RawDataRiverSurveyCrosssectionWindowTableView::resizeEvent(QResizeEvent *event)
+void RawDataRiverSurveyCrosssectionWindowTableView::resizeEvent(QResizeEvent* event)
 {
 	int aWidth = activeWidth;
 	int restWidth = (event->size().width() - activeWidth - columnMargin) / 3;

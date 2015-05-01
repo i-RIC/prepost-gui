@@ -12,7 +12,7 @@ public:
 		: RawDataMapperT<V>(parent)
 	{}
 protected:
-	GridRelatedConditionNodeContainerT<V, DA> * container(){
+	GridRelatedConditionNodeContainerT<V, DA>* container() {
 		return dynamic_cast<GridRelatedConditionNodeContainerT<V, DA>* >(RawDataMapperT<V>::container());
 	}
 };

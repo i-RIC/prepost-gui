@@ -44,12 +44,12 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	m_childItems.append(m_rawdataTop);
 
 	// add default grid, if this gridtype is not optional
-	if (! type->isOptional()){
+	if (! type->isOptional()) {
 		QString zonename;
-		if (type->isPrimary()){
+		if (type->isPrimary()) {
 			// use the special name
 			zonename = "iRICZone";
-		}else{
+		} else {
 			zonename = nextChildZonename();
 		}
 		PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(zonename, nextChildCaption(), this);
@@ -66,7 +66,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 
 PreProcessorGridTypeDataItem::~PreProcessorGridTypeDataItem()
 {
-	for (auto it = m_scalarsToColors.begin(); it != m_scalarsToColors.end(); ++it){
+	for (auto it = m_scalarsToColors.begin(); it != m_scalarsToColors.end(); ++it) {
 		delete it.value();
 	}
 }
@@ -78,8 +78,8 @@ const QString& PreProcessorGridTypeDataItem::name() const
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const QString& zonename) const
 {
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
-		if ((*it)->zoneName() == zonename){return *it;}
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
+		if ((*it)->zoneName() == zonename) {return *it;}
 	}
 	return 0;
 }
@@ -88,7 +88,7 @@ bool PreProcessorGridTypeDataItem::isChildDeletable(PreProcessorGridAndGridCreat
 {
 	// if this gridtype is not optional and there is only one
 	// condition, this item is not deletable.
-	if (! m_gridType->isOptional() && m_conditions.count() == 1){
+	if (! m_gridType->isOptional() && m_conditions.count() == 1) {
 		return false;
 	}
 	return true;
@@ -96,10 +96,10 @@ bool PreProcessorGridTypeDataItem::isChildDeletable(PreProcessorGridAndGridCreat
 
 void PreProcessorGridTypeDataItem::addCustomMenuItems(QMenu* menu)
 {
-	if (m_gridType->multiple()){
+	if (m_gridType->multiple()) {
 		menu->addAction(m_addNewGridAction);
-	}else{
-		if (m_conditions.count() == 0){
+	} else {
+		if (m_conditions.count() == 0) {
 			menu->addAction(m_addNewGridAction);
 		}
 	}
@@ -110,7 +110,7 @@ void PreProcessorGridTypeDataItem::addNewCondition()
 	PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
 	// In case there is only one grid type, add the grid creating condition item as root item.
 	int row = standardItem()->row();
-	if (row == - 1){
+	if (row == - 1) {
 		standardItem()->takeRow(cond->standardItem()->row());
 		// find the background image row.
 		PreProcessorRootDataItem* rootItem = dynamic_cast<PreProcessorRootDataItem*>(parent());
@@ -131,18 +131,18 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	bool ok = true;
 	// first, try "Region".
 	QString nomination(tr("Region"));
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		ok = ok && ((*it)->caption() != nomination);
 	}
-	if (ok){return nomination;}
+	if (ok) {return nomination;}
 	nomination = tr("Region%1");
 	QString nom;
 	ok = false;
 	int i = 2;
-	while (! ok){
+	while (! ok) {
 		nom = nomination.arg(i);
 		ok = true;
-		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
+		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 			ok = ok && ((*it)->caption() != nom);
 		}
 		++i;
@@ -157,10 +157,10 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 	QString nom;
 	bool ok = false;
 	int i = 1;
-	while (! ok){
+	while (! ok) {
 		nom = nametemplate.arg(i);
 		ok = true;
-		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
+		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 			ok = ok && ((*it)->zoneName() != nom);
 		}
 		++i;
@@ -172,8 +172,8 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child)
 {
 	PreProcessorDataItem::unregisterChild(child);
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
-		if (*it == child){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
+		if (*it == child) {
 			m_conditions.erase(it);
 			return;
 		}
@@ -183,8 +183,8 @@ void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child
 
 bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& caption)
 {
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
-		if ((*it)->caption() == caption){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
+		if ((*it)->caption() == caption) {
 			return false;
 		}
 	}
@@ -195,25 +195,25 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 {
 	// load raw data.
 	QDomNode rdNode = iRIC::getChildNode(node, "RawData");
-	if (! rdNode.isNull()){m_rawdataTop->loadFromProjectMainFile(rdNode);}
+	if (! rdNode.isNull()) {m_rawdataTop->loadFromProjectMainFile(rdNode);}
 	// load region datas.
 	QDomNode c = node.firstChild();
-	while (! c.isNull()){
-		if (c.nodeName() == "Region"){
+	while (! c.isNull()) {
+		if (c.nodeName() == "Region") {
 			// find whether a corresponding condition already exists.
 			bool found = false;
-			for (auto it = m_conditions.begin(); ! found && it != m_conditions.end(); ++it){
-				if ((*it)->zoneName() == c.toElement().attribute("zoneName")){
+			for (auto it = m_conditions.begin(); ! found && it != m_conditions.end(); ++it) {
+				if ((*it)->zoneName() == c.toElement().attribute("zoneName")) {
 					// found!
 					found = true;
 					(*it)->loadFromProjectMainFile(c);
 				}
 			}
-			if (! found){
+			if (! found) {
 				PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
 				cond->loadFromProjectMainFile(c);
 				int row = standardItem()->row();
-				if (row == - 1){
+				if (row == - 1) {
 					standardItem()->takeRow(cond->standardItem()->row());
 					// find the background image row.
 					PreProcessorRootDataItem* rootItem = dynamic_cast<PreProcessorRootDataItem*>(parent());
@@ -240,7 +240,7 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	m_rawdataTop->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 	// write region datas.
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		writer.writeStartElement("Region");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -251,11 +251,11 @@ void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType
 {
 	QList<SolverDefinitionGridRelatedCondition*> conditions = type->gridRelatedConditions();
 	QList<SolverDefinitionGridRelatedComplexCondition*> conditions2 = type->gridRelatedComplexConditions();
-	for (auto it = conditions.begin(); it != conditions.end(); ++it){
+	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
 		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it)->name(), c);
 	}
-	for (auto it2 = conditions2.begin(); it2 != conditions2.end(); ++it2){
+	for (auto it2 = conditions2.begin(); it2 != conditions2.end(); ++it2) {
 		ScalarsToColorsContainer* c = (*it2)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it2)->name(), c);
 	}
@@ -270,27 +270,27 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	double max = 0;
 	// check raw data
 	PreProcessorRawDataGroupDataItemInterface* i = m_rawdataTop->groupDataItem(name);
-	if (i == nullptr){return;}
+	if (i == nullptr) {return;}
 	valueExist = i->getValueRange(&min, &max);
 
 	// check grid values.
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it){
+	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		Grid* g = (*it)->gridDataItem()->grid();
-		if (g != nullptr){
+		if (g != nullptr) {
 			GridRelatedConditionContainer* c = g->gridRelatedCondition(name);
 			double tmpmin, tmpmax;
-			if (c->getValueRange(&tmpmin, &tmpmax)){
-				if (tmpmin < min || (! valueExist)){min = tmpmin;}
-				if (tmpmax > max || (! valueExist)){max = tmpmax;}
+			if (c->getValueRange(&tmpmin, &tmpmax)) {
+				if (tmpmin < min || (! valueExist)) {min = tmpmin;}
+				if (tmpmax > max || (! valueExist)) {max = tmpmax;}
 				valueExist = true;
 			}
 		}
 	}
-	if (max - min < 1E-4){
+	if (max - min < 1E-4) {
 		// the width is too small.
 		double mid = (min + max) * 0.5;
 		double width = mid * 0.01;
-		if (width < 1E-4){
+		if (width < 1E-4) {
 			width = 1E-4;
 		}
 		min = mid - width;
@@ -304,29 +304,29 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 
 void PreProcessorGridTypeDataItem::assignActionZValues(const ZDepthRange& range)
 {
-	if (m_childItems.count() == 0){return;}
+	if (m_childItems.count() == 0) {return;}
 
 	/// assign ZDepthRanges to child items.
 	double max = range.max();
 	double rangeWidth = range.width();
 	double divNum = 0;
 	divNum += m_childItems.count() - 1;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
-		if (itemCount >= 0){
+		if (itemCount >= 0) {
 			divNum += itemCount;
 		}
 	}
 	double divWidth = rangeWidth / divNum;
 	// assign regions to GridAndGridCreatingConditionDataItem instances.
-	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		int itemCount = ((*cit)->zDepthRange().itemCount() - 1);
 		int itemCount2 = 0;
-		if (itemCount >= 0){
+		if (itemCount >= 0) {
 			itemCount2 = itemCount;
 		}
 		double min = max - itemCount2 * divWidth;
-		if (min < range.min()){min = range.min();}
+		if (min < range.min()) {min = range.min();}
 		ZDepthRange r = (*cit)->zDepthRange();
 		r.setMin(min);
 		r.setMax(max);
@@ -348,16 +348,16 @@ void PreProcessorGridTypeDataItem::updateNewGridActionStatus()
 
 bool PreProcessorGridTypeDataItem::gridEdited() const
 {
-	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		bool edited = (*cit)->gridEdited();
-		if (edited){return true;}
+		if (edited) {return true;}
 	}
 	return false;
 }
 
 void PreProcessorGridTypeDataItem::toggleGridEditFlag()
 {
-	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit){
+	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
 		(*cit)->toggleGridEditFlag();
 	}
 }

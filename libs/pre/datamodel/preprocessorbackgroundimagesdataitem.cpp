@@ -60,10 +60,10 @@ void PreProcessorBackgroundImagesDataItem::deleteChildItem(int i)
 	auto it = m_childItems.begin();
 	delete *(it + i);
 	dynamic_cast<PreProcessorRootDataItem*>(parent())->updateItemMap();
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorBackgroundImageDataItem* bgItem = dynamic_cast<PreProcessorBackgroundImageDataItem*>(*it);
 		QModelIndex idx = bgItem->standardItem()->index();
-		if (idx != dataModel()->objectBrowserView()->currentIndex()) continue;
+		if (idx != dataModel()->objectBrowserView()->currentIndex()) { continue; }
 		bgItem->updateMoveUpDownActions(dataModel()->objectBrowserView());
 	}
 	renderGraphicsView();
@@ -126,8 +126,8 @@ void PreProcessorBackgroundImagesDataItem::addCustomMenuItems(QMenu* menu)
 void PreProcessorBackgroundImagesDataItem::updateChildCheckState(int idx, bool vis)
 {
 	dataModel()->itemModel()->blockSignals(true);
-	if (idx < 0){
-		if (vis){
+	if (idx < 0) {
+		if (vis) {
 			m_standardItem->setCheckState(Qt::Checked);
 		} else {
 			m_standardItem->setCheckState(Qt::Unchecked);
@@ -135,7 +135,7 @@ void PreProcessorBackgroundImagesDataItem::updateChildCheckState(int idx, bool v
 	} else {
 		auto it = m_childItems.begin() + idx;
 		PreProcessorBackgroundImageDataItem* item = dynamic_cast<PreProcessorBackgroundImageDataItem*>(*it);
-		if (vis){
+		if (vis) {
 			item->standardItem()->setCheckState(Qt::Checked);
 		} else {
 			item->standardItem()->setCheckState(Qt::Unchecked);
@@ -154,9 +154,9 @@ void PreProcessorBackgroundImagesDataItem::handleStandardItemChange()
 void PreProcessorBackgroundImagesDataItem::deleteAll()
 {
 	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all background images?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-	if (ret == QMessageBox::No){return;}
+	if (ret == QMessageBox::No) {return;}
 
-	while (m_childItems.count() > 0){
+	while (m_childItems.count() > 0) {
 		GraphicsWindowDataItem* item = *(m_childItems.begin());
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());
 	}

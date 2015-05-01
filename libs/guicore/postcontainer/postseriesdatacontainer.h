@@ -10,11 +10,11 @@ class GUICOREDLL_EXPORT PostSeriesDataContainer : public PostDataContainer
 public:
 	PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}
-	bool handleCurrentStepUpdate(const int /*fn*/){
+	bool handleCurrentStepUpdate(const int /*fn*/) {
 		// do nothing.
 		return true;
 	}
-	void update(const int fn){
+	void update(const int fn) {
 		loadFromCgnsFile(fn);
 	}
 	void loadFromCgnsFile(const int /*fn*/);

@@ -5,7 +5,8 @@
 
 class QAbstractButton;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRectangularRegionSettingDialog;
 }
 
@@ -15,7 +16,7 @@ class GridCreatingConditionRectangularRegionSettingDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget *parent = nullptr);
+	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRectangularRegionSettingDialog();
 
 	void setXMin(double xmin);
@@ -37,9 +38,9 @@ private slots:
 
 	void handleButtonClick(QAbstractButton* button);
 protected:
-	void showEvent(QShowEvent *);
+	void showEvent(QShowEvent*);
 private:
-	Ui::GridCreatingConditionRectangularRegionSettingDialog *ui;
+	Ui::GridCreatingConditionRectangularRegionSettingDialog* ui;
 	GridCreatingConditionRectangularRegion* m_condition;
 	void apply();
 };

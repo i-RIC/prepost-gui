@@ -4,8 +4,9 @@
 #include "preferencepage.h"
 #include <QSettings>
 
-namespace Ui {
-    class PreferencePageGraphicsDefault;
+namespace Ui
+{
+	class PreferencePageGraphicsDefault;
 }
 
 class PreferencePageGraphicsDefault : public PreferencePage
@@ -13,12 +14,12 @@ class PreferencePageGraphicsDefault : public PreferencePage
 	Q_OBJECT
 
 public:
-	explicit PreferencePageGraphicsDefault(QWidget *parent = nullptr);
+	explicit PreferencePageGraphicsDefault(QWidget* parent = nullptr);
 	~PreferencePageGraphicsDefault();
 	void update();
 private:
 	QSettings m_settings;
-	Ui::PreferencePageGraphicsDefault *ui;
+	Ui::PreferencePageGraphicsDefault* ui;
 
 };
 

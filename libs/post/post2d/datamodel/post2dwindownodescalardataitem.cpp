@@ -19,7 +19,7 @@ Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const QString& na
 	m_name = name;
 
 	connect(this, SIGNAL(changed(Post2dWindowNodeScalarDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post2dWindowNodeScalarDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post2dWindowNodeScalarDataItem*)));
 }
 
 void Post2dWindowNodeScalarDataItem::handleStandardItemChange()
@@ -27,7 +27,7 @@ void Post2dWindowNodeScalarDataItem::handleStandardItemChange()
 	emit changed(this);
 }
 
-void Post2dWindowNodeScalarDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeScalarDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
@@ -54,7 +54,7 @@ void Post2dWindowNodeScalarDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeScalarDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);

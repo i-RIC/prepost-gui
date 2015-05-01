@@ -24,6 +24,7 @@ QSize ScalarsToColorsEditWidgetContainer::sizeHint() const
 	return m_widget->sizeHint();
 }
 
-void ScalarsToColorsEditWidgetContainer::save(){
+void ScalarsToColorsEditWidgetContainer::save()
+{
 	m_widget->save();
 }

@@ -48,11 +48,11 @@ bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 	PostAllZoneSelectingDialog dialog(0);
 	bool ok = dialog.setPostSolutionInfo(sol);
 	// if setup fail, return false;
-	if (! ok){return false;}
+	if (! ok) {return false;}
 
-	if (dialog.needToSelect()){
+	if (dialog.needToSelect()) {
 		int result = dialog.exec();
-		if (result == QDialog::Rejected){return false;}
+		if (result == QDialog::Rejected) {return false;}
 	}
 	m_dimension = dialog.dimension();
 	PostZoneDataContainer* cont = dialog.container();
@@ -91,8 +91,8 @@ void Graph2dScatteredWindowResultSetting::loadFromProjectMainFile(const QDomNode
 
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
-	if (! datasNode.isNull()){
-		for (int i = 0; i < datasNode.childNodes().count(); ++i){
+	if (! datasNode.isNull()) {
+		for (int i = 0; i < datasNode.childNodes().count(); ++i) {
 			Graph2dScatteredWindowResultSetting::Setting setting;
 			setting.loadFromProjectMainFile(datasNode.childNodes().at(i));
 			m_targetDatas.append(setting);
@@ -129,7 +129,7 @@ void Graph2dScatteredWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter
 
 	// targetDatas
 	writer.writeStartElement("TargetDatas");
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		writer.writeStartElement("TargetData");
 		const Graph2dScatteredWindowResultSetting::Setting& setting = m_targetDatas.at(i);
 		setting.saveToProjectMainFile(writer);
@@ -138,7 +138,7 @@ void Graph2dScatteredWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter
 	writer.writeEndElement();
 }
 
-void Graph2dScatteredWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode &node)
+void Graph2dScatteredWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 
@@ -149,7 +149,7 @@ void Graph2dScatteredWindowResultSetting::Setting::loadFromProjectMainFile(const
 	m_symbolSize = iRIC::getIntAttribute(node, "symbolSize");
 }
 
-void Graph2dScatteredWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter &writer) const
+void Graph2dScatteredWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter& writer) const
 {
 	writer.writeAttribute("name", m_name);
 	iRIC::setIntAttribute(writer, "axisSide", static_cast<int>(m_axisSide));
@@ -158,9 +158,9 @@ void Graph2dScatteredWindowResultSetting::Setting::saveToProjectMainFile(QXmlStr
 	iRIC::setIntAttribute(writer, "symbolSize", m_symbolSize);
 }
 
-void Graph2dScatteredWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve *curve) const
+void Graph2dScatteredWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
 {
-	if (m_axisSide == Graph2dScatteredWindowResultSetting::asLeft){
+	if (m_axisSide == Graph2dScatteredWindowResultSetting::asLeft) {
 		curve->setYAxis(QwtPlot::yLeft);
 	} else {
 		curve->setYAxis(QwtPlot::yRight);
@@ -188,7 +188,7 @@ void Graph2dScatteredWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve
 
 QwtSymbol::Style Graph2dScatteredWindowResultSetting::getSymbolStyle(SymbolType st)
 {
-	switch (st){
+	switch (st) {
 	case symCircle:
 		return QwtSymbol::Ellipse;
 		break;
@@ -212,11 +212,12 @@ QwtSymbol::Style Graph2dScatteredWindowResultSetting::getSymbolStyle(SymbolType 
 	}
 }
 
-const QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as){
+const QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as)
+{
 	QStringList labels;
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
-		if (s.axisSide() == as){
+		if (s.axisSide() == as) {
 			labels.append(s.name());
 		}
 	}
@@ -225,9 +226,9 @@ const QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as){
 
 bool Graph2dScatteredWindowResultSetting::axisNeeded(AxisSide as)
 {
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
-		if (s.axisSide() == as){return true;}
+		if (s.axisSide() == as) {return true;}
 	}
 	return false;
 }
@@ -235,7 +236,7 @@ bool Graph2dScatteredWindowResultSetting::axisNeeded(AxisSide as)
 QList<Graph2dWindowDataItem*> Graph2dScatteredWindowResultSetting::setupItems(Graph2dScatteredWindowResultGroupDataItem* gItem) const
 {
 	QList<Graph2dWindowDataItem*> ret;
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		Graph2dScatteredWindowGridResultDataItem* item = new Graph2dScatteredWindowGridResultDataItem(m_targetDatas[i], i, gItem);
 		ret.append(item);
 	}
@@ -245,13 +246,13 @@ QList<Graph2dWindowDataItem*> Graph2dScatteredWindowResultSetting::setupItems(Gr
 void Graph2dScatteredWindowResultSetting::setAutoXAxisLabel()
 {
 	QString xAxisLabel;
-	if (m_xAxis == XAXIS_POSITION_X){
+	if (m_xAxis == XAXIS_POSITION_X) {
 		m_xAxisLabel = Graph2dScatteredWindowResultDataItem::tr("Position X");
-	} else if (m_xAxis == XAXIS_POSITION_Y){
+	} else if (m_xAxis == XAXIS_POSITION_Y) {
 		m_xAxisLabel = Graph2dScatteredWindowResultDataItem::tr("Position Y");
-	} else if (m_xAxis == XAXIS_POSITION_Z){
+	} else if (m_xAxis == XAXIS_POSITION_Z) {
 		m_xAxisLabel = Graph2dScatteredWindowResultDataItem::tr("Position Z");
-	} else if (m_xAxis == XAXIS_STREAM_WISE_DISTANCE){
+	} else if (m_xAxis == XAXIS_STREAM_WISE_DISTANCE) {
 		m_xAxisLabel = Graph2dScatteredWindowResultDataItem::tr("Stream-wise Distance");
 	} else {
 		m_xAxisLabel = m_xAxis;

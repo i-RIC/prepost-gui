@@ -161,19 +161,19 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
 
 	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		m_wireframeMapper->SetInputData(ps);
 		m_wireframeActor->GetProperty()->SetColor(m_color);
 		m_actorCollection->AddItem(m_wireframeActor);
-	}else{
+	} else {
 		vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 		vtkSmartPointer<vtkStructuredGrid> tmpgrid = grid;
 		vtkSmartPointer<vtkDataSetMapper> mapper;
-		switch(m_shape){
+		switch (m_shape) {
 		case GridShapeEditDialog::Outline:
 			m_outlineFilter->SetInputData(tmpgrid);
 			m_outlineActor->GetProperty()->SetColor(m_color);
@@ -190,28 +190,28 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 			break;
 		}
 	}
-	if (m_indexVisible){
+	if (m_indexVisible) {
 		vtkPointSet* labeldata = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
 		m_indexMapper->SetInputData(labeldata);
 		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
-/*
-	if (m_axesVisible){
-		m_axesActor->GetProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
-		m_actor2DCollection->AddItem(m_axesActor);
-		updateAxesRegion();
-	}
-*/
+	/*
+		if (m_axesVisible){
+			m_axesActor->GetProperty()->SetColor(m_axesColor);
+			m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
+			m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
+			m_actor2DCollection->AddItem(m_axesActor);
+			updateAxesRegion();
+		}
+	*/
 	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){
+	if (! shapeNode.isNull()) {
 		loadShapeFromProjectMainFile(shapeNode);
 	}
 }
@@ -238,7 +238,7 @@ void Post2dWindowGridShapeDataItem::loadShapeFromProjectMainFile(const QDomNode&
 	updateActorSettings();
 }
 
-void Post2dWindowGridShapeDataItem::saveShapeToProjectMainFile(QXmlStreamWriter & writer)
+void Post2dWindowGridShapeDataItem::saveShapeToProjectMainFile(QXmlStreamWriter& writer)
 {
 	QString qstr;
 	writer.writeAttribute("shape", qstr.setNum((int)m_shape));
@@ -266,7 +266,7 @@ QDialog* Post2dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		dialog->hideShape();
 	}
 	return dialog;
@@ -276,8 +276,7 @@ class Post2dWindowGridShapeDataSetSetting : public QUndoCommand
 {
 public:
 	Post2dWindowGridShapeDataSetSetting(bool enabled, GridShapeEditDialog::Shape shape, QColor color, bool indexVisible, QColor indexColor, Post2dWindowGridShapeDataItem* item)
-		: QUndoCommand(QObject::tr("Update Grid Shape Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Grid Shape Setting")) {
 		m_newEnabled = enabled;
 		m_newShape = shape;
 		m_newColor = color;
@@ -296,8 +295,7 @@ public:
 
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->m_shape = m_newShape;
@@ -311,8 +309,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_shape = m_oldShape;
@@ -355,10 +352,10 @@ void Post2dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDi
 
 QColor Post2dWindowGridShapeDataItem::color()
 {
-	return QColor (
-			(int)(m_color[0] * 255),
-			(int)(m_color[1] * 255),
-			(int)(m_color[2] * 255));
+	return QColor(
+					 (int)(m_color[0] * 255),
+					 (int)(m_color[1] * 255),
+					 (int)(m_color[2] * 255));
 }
 
 void Post2dWindowGridShapeDataItem::setColor(const QColor& color)
@@ -370,10 +367,10 @@ void Post2dWindowGridShapeDataItem::setColor(const QColor& color)
 
 QColor Post2dWindowGridShapeDataItem::indexColor()
 {
-	return QColor (
-			(int)(m_indexColor[0] * 255),
-			(int)(m_indexColor[1] * 255),
-			(int)(m_indexColor[2] * 255));
+	return QColor(
+					 (int)(m_indexColor[0] * 255),
+					 (int)(m_indexColor[1] * 255),
+					 (int)(m_indexColor[2] * 255));
 }
 
 void Post2dWindowGridShapeDataItem::setIndexColor(const QColor& color)

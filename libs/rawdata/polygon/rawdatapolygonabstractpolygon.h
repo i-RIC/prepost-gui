@@ -31,13 +31,13 @@ public:
 	bool isPolygonSelectable(const QVector2D& pos);
 
 	const QPolygonF polygon(QPointF offset = QPointF(0, 0)) const;
-	vtkPolygon* getVtkPolygon(){return m_vtkPolygon;}
+	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
 	void setPolygon(const QPolygonF& p);
 	void setZDepthRange(double min, double max);
 	void updateShapeData();
 	void updateScalarValues();
-	int selectedVertexId(){return m_selectedVertexId;}
-	int selectedEdgeId(){return m_selectedEdgeId;}
+	int selectedVertexId() {return m_selectedVertexId;}
+	int selectedEdgeId() {return m_selectedEdgeId;}
 
 	mutable QMutex m_mutex;
 
@@ -45,7 +45,7 @@ public:
 	void setSelected(bool selected);
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
 	bool isClockwise() const;
-	virtual void finishDefinition(){}
+	virtual void finishDefinition() {}
 	void setLookupTable(vtkScalarsToColors* t);
 	void setColor(const QColor& color);
 	void setMapping(RawDataPolygonColorSettingDialog::Mapping m);

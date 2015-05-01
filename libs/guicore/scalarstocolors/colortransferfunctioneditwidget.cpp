@@ -12,39 +12,38 @@
 class ColorTransferFunctionEditWidgetColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
-	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
-	{
+	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		QColor col = dat.value<QColor>();
 		QBrush brush(col);
 		painter->fillRect(option.rect, brush);
 	}
-	QWidget* createEditor(QWidget *parent, const QStyleOptionViewItem & /*option*/, const QModelIndex & /*index*/) const {
+	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const {
 		ColorEditWidget* w = new ColorEditWidget(parent);
 		return w;
 	}
-	void setEditorData(QWidget *editor, const QModelIndex &index) const {
+	void setEditorData(QWidget* editor, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 		w->setColor(dat.value<QColor>());
 	}
-	void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const {
+	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const {
 		ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 		QColor c = w->color();
 		model->setData(index, c, Qt::DisplayRole);
 		model->setData(index, c, Qt::BackgroundRole);
 	}
-	void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex & /*index*/) const {
+	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& /*index*/) const {
 		editor->setGeometry(option.rect);
 	}
 };
 
-ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget *parent) :
-		ScalarsToColorsEditWidget(parent),
-		ui(new Ui::ColorTransferFunctionEditWidget)
+ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget* parent) :
+	ScalarsToColorsEditWidget(parent),
+	ui(new Ui::ColorTransferFunctionEditWidget)
 {
-		ui->setupUi(this);
+	ui->setupUi(this);
 
 	QStringList hlabels;
 	hlabels << tr("Attribute");
@@ -64,7 +63,7 @@ ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget *parent
 
 ColorTransferFunctionEditWidget::~ColorTransferFunctionEditWidget()
 {
-		delete ui;
+	delete ui;
 }
 
 void ColorTransferFunctionEditWidget::setupWidget()
@@ -73,7 +72,7 @@ void ColorTransferFunctionEditWidget::setupWidget()
 	QMap<double, QString> enums = cont->enumerations();
 	m_colors.clear();
 	ui->tableWidget->blockSignals(true);
-	for (auto it = enums.begin(); it != enums.end(); ++it){
+	for (auto it = enums.begin(); it != enums.end(); ++it) {
 		ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
 		int rownum = ui->tableWidget->rowCount() - 1;
 
@@ -101,25 +100,25 @@ void ColorTransferFunctionEditWidget::save()
 	QMap<double, QColor> colors;
 
 	int index = 0;
-	for (auto it = enums.begin(); it != enums.end(); ++it, ++index){
+	for (auto it = enums.begin(); it != enums.end(); ++it, ++index) {
 		colors.insert(it.key(), m_colors.at(index));
 	}
 	cont->setColors(colors);
 }
 
-void ColorTransferFunctionEditWidget::handleItemEdit(QTableWidgetItem * item)
+void ColorTransferFunctionEditWidget::handleItemEdit(QTableWidgetItem* item)
 {
-	if (item->column() == 1){
+	if (item->column() == 1) {
 		QColor col = item->data(Qt::DisplayRole).value<QColor>();
 		m_colors[item->row()] = col;
 	}
 }
 
-void ColorTransferFunctionEditWidget::handleItemClick(QTableWidgetItem * item)
+void ColorTransferFunctionEditWidget::handleItemClick(QTableWidgetItem* item)
 {
-	if (item->column() != 1){return;}
+	if (item->column() != 1) {return;}
 	QColor col = item->data(Qt::DisplayRole).value<QColor>();
 	QColor newcolor = QColorDialog::getColor(col, this);
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	item->setData(Qt::DisplayRole, newcolor);
 }

@@ -14,11 +14,11 @@ class Post2dBirdEyeObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 public:
 	/// Constructor
-	Post2dBirdEyeObjectBrowser(QWidget* parent) : ObjectBrowser(parent){init();}
+	Post2dBirdEyeObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
 	/// Destructor
-	~Post2dBirdEyeObjectBrowser(){}
+	~Post2dBirdEyeObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Post2dBirdEyeObjectBrowserView* view(){return m_view;}
+	Post2dBirdEyeObjectBrowserView* view() {return m_view;}
 public slots:
 	void expandAll();
 private:

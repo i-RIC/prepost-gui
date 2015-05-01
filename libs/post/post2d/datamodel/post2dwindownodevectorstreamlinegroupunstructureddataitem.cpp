@@ -38,7 +38,7 @@ QDialog* Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::propertyDial
 {
 	Post2dWindowStreamlineUnstructuredSettingDialog* dialog = new Post2dWindowStreamlineUnstructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){
+	if (cont == nullptr || cont->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
@@ -86,26 +86,26 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 {
-	for (int i = 0; i < m_sourcePoints.count(); ++i){
+	for (int i = 0; i < m_sourcePoints.count(); ++i) {
 		m_sourcePoints[i]->Delete();
 	}
 	m_sourcePoints.clear();
 
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredStreamlineSetSetting& setting = m_settings[i];
 
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
 		QVector2D diffVec = setting.point2 - setting.point1;
 		QVector2D v;
-		for (int j = 0; j < setting.numberOfPoints; ++j){
+		for (int j = 0; j < setting.numberOfPoints; ++j) {
 			double param = j / (double)(setting.numberOfPoints - 1);
 			v = setting.point1 + param * diffVec;
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
 		vtkUnstructuredGrid* grid = vtkUnstructuredGrid::New();
 		grid->SetPoints(points);
-		for (int j = 0; j <setting.numberOfPoints; ++j){
+		for (int j = 0; j <setting.numberOfPoints; ++j) {
 			vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 			vertex->GetPointIds()->SetId(0, j);
 			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -151,9 +151,9 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 
 	m_settings.clear();
 	QDomNode streamlinesNode = iRIC::getChildNode(node, "Streamlines");
-	if (! streamlinesNode.isNull()){
+	if (! streamlinesNode.isNull()) {
 		QDomNodeList streamlines = streamlinesNode.childNodes();
-		for (int i = 0; i < streamlines.length(); ++i){
+		for (int i = 0; i < streamlines.length(); ++i) {
 			QDomElement elem = streamlines.at(i).toElement();
 			Post2dWindowUnstructuredStreamlineSetSetting s;
 			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
@@ -176,7 +176,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectM
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Streamlines");
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredStreamlineSetSetting& setting = m_settings[i];
 		writer.writeStartElement("Streamline");
 		writer.writeAttribute("point1X", QString::number(setting.point1.x()));
@@ -217,13 +217,13 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const
 	points->SetDataTypeToDouble();
 	QVector2D diffVec = m_point2 - m_point1;
 	QVector2D v;
-	for (int i = 0; i < m_numberOfPoints; ++i){
+	for (int i = 0; i < m_numberOfPoints; ++i) {
 		double param = i / (double)(m_numberOfPoints - 1);
 		v = m_point1 + param * diffVec;
 		points->InsertNextPoint(v.x(), v.y(), 0);
 	}
 	m_previewPoints->SetPoints(points);
-	for (int i = 0; i < m_numberOfPoints; ++i){
+	for (int i = 0; i < m_numberOfPoints; ++i) {
 		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
 		m_previewPoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -248,7 +248,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mousePressEvent(
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		m_dialog->informButtonDown(p);
 	}
 }
@@ -259,14 +259,14 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseReleaseEven
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		m_dialog->informButtonUp(p);
 	}
 }
 
-void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent *event, VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		dataModel()->graphicsView()->emitWorldPosition(event->x(), event->y());
 	}
 }

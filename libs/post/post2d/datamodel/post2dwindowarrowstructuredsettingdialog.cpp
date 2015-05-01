@@ -11,12 +11,12 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::Post2dWindowArrowStructuredSettingDialog)
+Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post2dWindowArrowStructuredSettingDialog)
 {
-		ui->setupUi(this);
-		ui->colorbarSettingButton->hide();
+	ui->setupUi(this);
+	ui->colorbarSettingButton->hide();
 	connect(ui->samplingAllRadioButton, SIGNAL(toggled(bool)), this, SLOT(samplingAllToggle(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
 	m_activeAvailable = true;
@@ -24,7 +24,7 @@ Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDial
 
 Post2dWindowArrowStructuredSettingDialog::~Post2dWindowArrowStructuredSettingDialog()
 {
-		delete ui;
+	delete ui;
 }
 
 void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -37,7 +37,7 @@ void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer
 void Post2dWindowArrowStructuredSettingDialog::setSolution(const QString& sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
@@ -50,7 +50,7 @@ const QString Post2dWindowArrowStructuredSettingDialog::solution()
 void Post2dWindowArrowStructuredSettingDialog::setScalarValue(const QString& scalar)
 {
 	int index = m_scalars.indexOf(scalar);
-	if (index == -1) index = 0;
+	if (index == -1) { index = 0; }
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
@@ -72,7 +72,7 @@ const QColor Post2dWindowArrowStructuredSettingDialog::color() const
 
 void Post2dWindowArrowStructuredSettingDialog::setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping)
 {
-	switch (mapping){
+	switch (mapping) {
 	case Post2dWindowNodeVectorArrowGroupDataItem::Specific:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -84,8 +84,8 @@ void Post2dWindowArrowStructuredSettingDialog::setMapping(Post2dWindowNodeVector
 
 Post2dWindowNodeVectorArrowGroupDataItem::Mapping Post2dWindowArrowStructuredSettingDialog::mapping()
 {
-	if (ui->specificRadioButton->isChecked()) return Post2dWindowNodeVectorArrowGroupDataItem::Specific;
-	if (ui->scalarRadioButton->isChecked()) return Post2dWindowNodeVectorArrowGroupDataItem::Scalar;
+	if (ui->specificRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Specific; }
+	if (ui->scalarRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Scalar; }
 	// default
 	return Post2dWindowNodeVectorArrowGroupDataItem::Specific;
 }
@@ -108,7 +108,7 @@ void Post2dWindowArrowStructuredSettingDialog::setSamplingRates(int irate, int j
 {
 	ui->iSamplingRateSpinBox->setValue(irate);
 	ui->jSamplingRateSpinBox->setValue(jrate);
-	if (irate == 1 && jrate == 1){
+	if (irate == 1 && jrate == 1) {
 		ui->samplingAllRadioButton->setChecked(true);
 	} else {
 		ui->samplingSkipRadioButton->setChecked(true);
@@ -151,11 +151,11 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 	SolverDefinitionGridType* gt = zoneData->gridType();
 	int num = pd->GetNumberOfArrays();
 	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
+		if (tmparray == nullptr) {continue;}
 		QString name = tmparray->GetName();
-		if (pd->GetArray(i)->GetNumberOfComponents() <= 1){
+		if (pd->GetArray(i)->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			ui->scalarComboBox->addItem(gt->solutionCaption(name));
 			m_scalars.append(name);
@@ -166,7 +166,7 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 		}
 	}
 	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1){
+	if (m_solutions.count() <= 1) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}
@@ -174,7 +174,7 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 
 void Post2dWindowArrowStructuredSettingDialog::samplingAllToggle(bool toggled)
 {
-	if (! toggled){return;}
+	if (! toggled) {return;}
 	ui->iSamplingRateSpinBox->setValue(1);
 	ui->jSamplingRateSpinBox->setValue(1);
 }
@@ -182,14 +182,14 @@ void Post2dWindowArrowStructuredSettingDialog::samplingAllToggle(bool toggled)
 void Post2dWindowArrowStructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable){
+	if (! m_activeAvailable) {
 		dialog.disableActive();
 	}
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
 	dialog.setRegionMode(m_regionMode);
 	dialog.setRegion(m_range);
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_regionMode = dialog.regionMode();
 	m_range = dialog.region();
 }
@@ -201,7 +201,7 @@ void Post2dWindowArrowStructuredSettingDialog::disableActive()
 
 void Post2dWindowArrowStructuredSettingDialog::setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm)
 {
-	if (lm == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto){
+	if (lm == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
 		ui->lengthAutoCheckBox->setChecked(true);
 	} else {
 		ui->lengthAutoCheckBox->setChecked(false);
@@ -210,7 +210,7 @@ void Post2dWindowArrowStructuredSettingDialog::setLengthMode(Post2dWindowNodeVec
 
 Post2dWindowNodeVectorArrowGroupDataItem::LengthMode Post2dWindowArrowStructuredSettingDialog::lengthMode()
 {
-	if (ui->lengthAutoCheckBox->isChecked()){
+	if (ui->lengthAutoCheckBox->isChecked()) {
 		return Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
 	} else {
 		return Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;

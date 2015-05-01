@@ -3,7 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class StartPageLaunchTabWidget;
 }
 
@@ -15,7 +16,7 @@ class StartPageLaunchTabWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit StartPageLaunchTabWidget(QWidget *parent = nullptr);
+	explicit StartPageLaunchTabWidget(QWidget* parent = nullptr);
 	~StartPageLaunchTabWidget();
 	void setSolverList(SolverDefinitionList* solverList);
 signals:
@@ -26,7 +27,7 @@ signals:
 private slots:
 	void openProject();
 private:
-	Ui::StartPageLaunchTabWidget *ui;
+	Ui::StartPageLaunchTabWidget* ui;
 };
 
 #endif // STARTPAGELAUNCHTABWIDGET_H

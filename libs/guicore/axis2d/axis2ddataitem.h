@@ -14,7 +14,7 @@ class GUICOREDLL_EXPORT Axis2dDataItem : public GraphicsWindowDataItem
 public:
 	Axis2dDataItem(GraphicsWindowDataItem* parent);
 	virtual ~Axis2dDataItem();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);

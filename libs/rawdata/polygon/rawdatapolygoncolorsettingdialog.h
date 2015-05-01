@@ -3,16 +3,18 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataPolygonColorSettingDialog;
 }
 
-class RawDataPolygonColorSettingDialog : public QDialog {
+class RawDataPolygonColorSettingDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
 	enum Mapping {Value, Arbitrary};
-	RawDataPolygonColorSettingDialog(QWidget *parent = nullptr);
+	RawDataPolygonColorSettingDialog(QWidget* parent = nullptr);
 	~RawDataPolygonColorSettingDialog();
 	void setMapping(Mapping m);
 	void setOpacityPercent(int o);
@@ -22,7 +24,7 @@ public:
 	int opacityPercent();
 
 private:
-	Ui::RawDataPolygonColorSettingDialog *ui;
+	Ui::RawDataPolygonColorSettingDialog* ui;
 };
 
 #endif // RAWDATAPOLYGONCOLORSETTINGDIALOG_H

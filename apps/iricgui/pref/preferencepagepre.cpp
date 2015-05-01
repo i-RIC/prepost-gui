@@ -3,11 +3,11 @@
 
 #include <QColor>
 
-PreferencePagePre::PreferencePagePre(QWidget *parent) :
-    PreferencePage(parent),
-    ui(new Ui::PreferencePagePre)
+PreferencePagePre::PreferencePagePre(QWidget* parent) :
+	PreferencePage(parent),
+	ui(new Ui::PreferencePagePre)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	m_settings.beginGroup("preprocessor");
 
 	QColor gridColor = m_settings.value("gridcolor", QColor(Qt::black)).value<QColor>();
@@ -20,7 +20,7 @@ PreferencePagePre::PreferencePagePre(QWidget *parent) :
 
 PreferencePagePre::~PreferencePagePre()
 {
-    delete ui;
+	delete ui;
 }
 
 void PreferencePagePre::update()

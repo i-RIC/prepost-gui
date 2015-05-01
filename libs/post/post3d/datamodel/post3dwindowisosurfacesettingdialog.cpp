@@ -8,9 +8,9 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post3dWindowIsosurfaceSettingDialog::Post3dWindowIsosurfaceSettingDialog(QWidget *parent) :
-QDialog(parent),
-ui(new Ui::Post3dWindowIsosurfaceSettingDialog)
+Post3dWindowIsosurfaceSettingDialog::Post3dWindowIsosurfaceSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post3dWindowIsosurfaceSettingDialog)
 {
 	ui->setupUi(this);
 	ui->enabledCheckBox->hide();
@@ -45,7 +45,7 @@ void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zon
 	ui->physicalValueComboBox->blockSignals(true);
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
+		if (tmparray == nullptr) {continue;}
 		QString name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() > 1) {
 			continue;		// vector attributes.
@@ -75,7 +75,7 @@ void Post3dWindowIsosurfaceSettingDialog::setEnabled(bool enabled)
 void Post3dWindowIsosurfaceSettingDialog::setCurrentSolution(QString sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){
+	if (index == -1) {
 		// not set yet. select the first one.
 		index = 0;
 	}
@@ -131,7 +131,7 @@ bool Post3dWindowIsosurfaceSettingDialog::fullRange()
 
 void Post3dWindowIsosurfaceSettingDialog::setRange(StructuredGridRegion::Range3d range)
 {
-	if (ui->fullRangeCheckBox->isChecked()){return;}
+	if (ui->fullRangeCheckBox->isChecked()) {return;}
 	ui->iminSlider->setValue(range.iMin + 1);
 	ui->imaxSlider->setValue(range.iMax + 1);
 	ui->jminSlider->setValue(range.jMin + 1);
@@ -170,7 +170,7 @@ void Post3dWindowIsosurfaceSettingDialog::fullRangeChanged(bool full)
 	ui->jmaxSlider->setDisabled(full);
 	ui->kminSlider->setDisabled(full);
 	ui->kmaxSlider->setDisabled(full);
-	if (full){
+	if (full) {
 		ui->iminSlider->setValue(1);
 		ui->imaxSlider->setValue(ui->imaxSlider->maximum());
 		ui->jminSlider->setValue(1);
@@ -182,42 +182,42 @@ void Post3dWindowIsosurfaceSettingDialog::fullRangeChanged(bool full)
 
 void Post3dWindowIsosurfaceSettingDialog::iMinChanged(int min)
 {
-	if (ui->imaxSlider->value() < min){
+	if (ui->imaxSlider->value() < min) {
 		ui->imaxSlider->setValue(min);
 	}
 }
 
 void Post3dWindowIsosurfaceSettingDialog::iMaxChanged(int max)
 {
-	if (ui->iminSlider->value() > max){
+	if (ui->iminSlider->value() > max) {
 		ui->iminSlider->setValue(max);
 	}
 }
 
 void Post3dWindowIsosurfaceSettingDialog::jMinChanged(int min)
 {
-	if (ui->jmaxSlider->value() < min){
+	if (ui->jmaxSlider->value() < min) {
 		ui->jmaxSlider->setValue(min);
 	}
 }
 
 void Post3dWindowIsosurfaceSettingDialog::jMaxChanged(int max)
 {
-	if (ui->jminSlider->value() > max){
+	if (ui->jminSlider->value() > max) {
 		ui->jminSlider->setValue(max);
 	}
 }
 
 void Post3dWindowIsosurfaceSettingDialog::kMinChanged(int min)
 {
-	if (ui->kmaxSlider->value() < min){
+	if (ui->kmaxSlider->value() < min) {
 		ui->kmaxSlider->setValue(min);
 	}
 }
 
 void Post3dWindowIsosurfaceSettingDialog::kMaxChanged(int max)
 {
-	if (ui->kminSlider->value() > max){
+	if (ui->kminSlider->value() > max) {
 		ui->kminSlider->setValue(max);
 	}
 }

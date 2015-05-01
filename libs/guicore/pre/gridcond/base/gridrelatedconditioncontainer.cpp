@@ -25,21 +25,21 @@ const QString& GridRelatedConditionContainer::name() const
 
 GridRelatedConditionDimensionsContainer* GridRelatedConditionContainer::dimensions() const
 {
-	ProjectDataItem *item = m_grid->parent();
-	if (item == 0){return 0;}
+	ProjectDataItem* item = m_grid->parent();
+	if (item == 0) {return 0;}
 	item = item->parent();
-	if (item == 0){return 0;}
+	if (item == 0) {return 0;}
 	item = item->parent();
-	if (item == 0){return 0;}
+	if (item == 0) {return 0;}
 	PreProcessorGridTypeDataItemInterface* gtItem =
-			dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
+		dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
 	return gtItem->rawdataTop()->groupDataItem(name())->dimensions();
 }
 
 const QString GridRelatedConditionContainer::temporaryExternalFilename(int index) const
 {
 	ProjectDataItem* item = m_grid->parent();
-	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*> (item);
+	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);
 	QString format("%1_%2.dat");
 	QString filename = format.arg(m_condition->name()).arg(index + 1);
 	QDir subDir(gItem->subPath());
@@ -56,7 +56,7 @@ void GridRelatedConditionContainer::handleDimensionCurrentIndexChange(int oldInd
 	loadFromExternalFile(fname);
 	setModified();
 	PreProcessorGridDataItemInterface* gItem =
-			dynamic_cast<PreProcessorGridDataItemInterface*> (m_grid->parent());
+		dynamic_cast<PreProcessorGridDataItemInterface*>(m_grid->parent());
 	gItem->updateSimplefiedGrid();
 }
 
@@ -73,8 +73,8 @@ void GridRelatedConditionContainer::updateConnections()
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
 	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
 	const QList<GridRelatedConditionDimensionContainer*>& conts = dims->containers();
-	for (int i = 0; i < conts.size(); ++i){
-	GridRelatedConditionDimensionContainer * cont = conts.at(i);
+	for (int i = 0; i < conts.size(); ++i) {
+		GridRelatedConditionDimensionContainer* cont = conts.at(i);
 		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), this, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
 	}
 }

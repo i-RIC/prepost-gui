@@ -1,7 +1,7 @@
 #include "gridrelatedcellconditionpropertydialog.h"
 #include "ui_gridrelatedcellconditionpropertydialog.h"
 
-GridRelatedCellConditionPropertyDialog::GridRelatedCellConditionPropertyDialog(QWidget *parent) :
+GridRelatedCellConditionPropertyDialog::GridRelatedCellConditionPropertyDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridRelatedCellConditionPropertyDialog)
 {

@@ -50,7 +50,7 @@ void Post2dBirdEyeWindowAxesDataItem::updateVisibility(bool visible)
 	m_widget->SetEnabled(v);
 }
 
-void Post2dBirdEyeWindowAxesDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dBirdEyeWindowAxesDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_widget->SetInteractive(1);
 }

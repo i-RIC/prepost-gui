@@ -6,8 +6,7 @@
 
 class Post2dWindowParticleStructuredSetProperty;
 
-struct Post2dWindowStructuredParticleSetSetting
-{
+struct Post2dWindowStructuredParticleSetSetting {
 	enum SpaceMode {smNormal, smSubdivide, smSkip};
 	/// Range to generate grid
 	StructuredGridRegion::Range2d range;
@@ -25,8 +24,7 @@ class Post2dWindowNodeVectorParticleGroupStructuredDataItem : public Post2dWindo
 	Q_OBJECT
 public:
 	Post2dWindowNodeVectorParticleGroupStructuredDataItem(Post2dWindowDataItem* parent)
-		: Post2dWindowNodeVectorParticleGroupDataItem(parent)
-	{
+		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
 		setDefaultValues();
 	}
 protected:

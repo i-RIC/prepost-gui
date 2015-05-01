@@ -9,8 +9,8 @@ class Unstructured2DGridProjectImporter : public ProjectGridImporter
 	Q_INTERFACES(GridImporterInterface)
 
 public:
-	Unstructured2DGridProjectImporter() : ProjectGridImporter(){}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt){
+	Unstructured2DGridProjectImporter() : ProjectGridImporter() {}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) {
 		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
 	}
 

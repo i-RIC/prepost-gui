@@ -7,8 +7,9 @@
 class QDomNode;
 class QXmlStreamWriter;
 
-namespace Ui {
-    class Graph2dScatteredWindowControlWidget;
+namespace Ui
+{
+	class Graph2dScatteredWindowControlWidget;
 }
 
 class Graph2dScatteredWindowControlWidget : public QWidget
@@ -16,7 +17,7 @@ class Graph2dScatteredWindowControlWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit Graph2dScatteredWindowControlWidget(QWidget *parent = nullptr);
+	explicit Graph2dScatteredWindowControlWidget(QWidget* parent = nullptr);
 	~Graph2dScatteredWindowControlWidget();
 	void fitSize();
 
@@ -26,7 +27,7 @@ signals:
 	void drawButtonClicked();
 
 private:
-	Ui::Graph2dScatteredWindowControlWidget *ui;
+	Ui::Graph2dScatteredWindowControlWidget* ui;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWCONTROLWIDGET_H

@@ -19,7 +19,7 @@ PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(P
 	m_childItems.append(m_cellGroupDataItem);
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0){
+	if (gtItem->gridType()->boundaryConditions().count() > 0) {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		m_childItems.append(m_bcGroupDataItem);
 	} else {
@@ -42,7 +42,7 @@ void PreProcessorUnstructured2dGridDataItem::setupMenu()
 	m_editMenu->addAction(m_nodeEditAction);
 	m_editMenu->addAction(m_cellEditAction);
 
-	if (m_bcGroupDataItem != 0){
+	if (m_bcGroupDataItem != 0) {
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
 	m_menu->addAction(m_deleteAction);

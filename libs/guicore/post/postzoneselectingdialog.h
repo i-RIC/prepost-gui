@@ -7,7 +7,8 @@
 #include <QList>
 #include <QMap>
 
-namespace Ui {
+namespace Ui
+{
 	class PostZoneSelectingDialog;
 }
 
@@ -18,7 +19,7 @@ class GUICOREDLL_EXPORT PostZoneSelectingDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit PostZoneSelectingDialog(QWidget *parent = nullptr);
+	explicit PostZoneSelectingDialog(QWidget* parent = nullptr);
 	~PostZoneSelectingDialog();
 	void setContainers(const QList<PostZoneDataContainer*>& containers);
 	QString gridTypeName();
@@ -29,7 +30,7 @@ private slots:
 
 private:
 	void setupGridTypeComboBox();
-	Ui::PostZoneSelectingDialog *ui;
+	Ui::PostZoneSelectingDialog* ui;
 	QList<SolverDefinitionGridType*> m_gridTypes;
 	QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > m_zoneLists;
 };

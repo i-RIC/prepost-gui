@@ -7,17 +7,17 @@ class ClipboardOperatableWindow
 {
 public:
 	/// Returns true if this window support cut();
-	virtual bool acceptCut(){return false;}
+	virtual bool acceptCut() {return false;}
 	/// Cut operation
-	virtual void cut(){}
+	virtual void cut() {}
 	/// Returns true if this window support copy();
-	virtual bool acceptCopy(){return false;}
+	virtual bool acceptCopy() {return false;}
 	/// Copy operation
-	virtual void copy(){}
+	virtual void copy() {}
 	/// Returns true if this window support paste();
-	virtual bool acceptPaste(){return false;}
+	virtual bool acceptPaste() {return false;}
 	/// Paste operation
-	virtual void paste(){}
+	virtual void paste() {}
 };
 
 #endif // CLIPBOARDOPERATABLEWINDOW_H

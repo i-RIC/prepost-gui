@@ -4,11 +4,11 @@
 
 #include <vtkPointData.h>
 
-RawDataPointMapDelPtsLessThanDialog::RawDataPointMapDelPtsLessThanDialog(RawDataPointmap *pmap, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::RawDataPointMapDelPtsLessThanDialog)
+RawDataPointMapDelPtsLessThanDialog::RawDataPointMapDelPtsLessThanDialog(RawDataPointmap* pmap, QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::RawDataPointMapDelPtsLessThanDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	m_pointMap = pmap;
 	QVector<vtkIdType> selectedVertices = m_pointMap->selectedVertices();
@@ -17,10 +17,10 @@ RawDataPointMapDelPtsLessThanDialog::RawDataPointMapDelPtsLessThanDialog(RawData
 	double min = 0;
 	double max = 0;
 
-	for (vtkIdType i = 0; i < selectedVertices.count(); ++i){
+	for (vtkIdType i = 0; i < selectedVertices.count(); ++i) {
 		double val = vArr->GetTuple1(selectedVertices[i]);
-		if (i == 0 || val < min){min = val;}
-		if (i == 0 || val > max){max = val;}
+		if (i == 0 || val < min) {min = val;}
+		if (i == 0 || val > max) {max = val;}
 	}
 	ui->maxPointValue->setValue(max);
 	ui->minPointValue->setValue(min);
@@ -30,7 +30,7 @@ RawDataPointMapDelPtsLessThanDialog::RawDataPointMapDelPtsLessThanDialog(RawData
 
 RawDataPointMapDelPtsLessThanDialog::~RawDataPointMapDelPtsLessThanDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void RawDataPointMapDelPtsLessThanDialog::accept()
@@ -45,9 +45,9 @@ void RawDataPointMapDelPtsLessThanDialog::accept()
 	QVector<vtkIdType> selectedVertices = m_pointMap->selectedVertices();
 	vtkDataArray* vArr = m_pointMap->vtkGrid()->GetPointData()->GetArray("values");
 
-	for (vtkIdType i = 0; i < selectedVertices.count(); ++i){
+	for (vtkIdType i = 0; i < selectedVertices.count(); ++i) {
 		double val = vArr->GetTuple1(selectedVertices[i]);
-		if (val <= limitVal){
+		if (val <= limitVal) {
 			m_selectedPoints.append(selectedVertices[i]);
 		}
 	}

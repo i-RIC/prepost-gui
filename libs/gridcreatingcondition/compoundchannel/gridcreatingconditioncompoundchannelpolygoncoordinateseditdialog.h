@@ -5,7 +5,8 @@
 #include <QVector>
 #include <QVector2D>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog;
 }
 
@@ -20,7 +21,7 @@ class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog : public 
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractPolygon* polygon, GridCreatingConditionCompoundChannel* cond, QWidget *parent = nullptr);
+	explicit GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractPolygon* polygon, GridCreatingConditionCompoundChannel* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog();
 public slots:
 	void accept();
@@ -32,7 +33,7 @@ private:
 	void setupData();
 	void apply();
 
-	Ui::GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog *ui;
+	Ui::GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog* ui;
 	GridCreatingConditionCompoundChannelAbstractPolygon* m_polygon;
 	GridCreatingConditionCompoundChannel* m_condition;
 	QStandardItemModel* m_model;

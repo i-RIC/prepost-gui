@@ -38,7 +38,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::setupActio
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::setupMenu()
 {
-	if (m_rightClickingMenu == nullptr){
+	if (m_rightClickingMenu == nullptr) {
 		m_rightClickingMenu = new QMenu(this);
 		m_rightClickingMenu->addAction(m_moveAction);
 		m_rightClickingMenu->addAction(m_parentWindow->deleteAction());
@@ -77,17 +77,17 @@ QMatrix Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::getMatr
 	QMatrix translate1, scale, translate2;
 	double xlength = region.right() - region.left();
 	double ylength = region.bottom() - region.top();
-	if (xlength == 0) xlength = 1;
-	if (ylength == 0) ylength = 1;
+	if (xlength == 0) { xlength = 1; }
+	if (ylength == 0) { ylength = 1; }
 
 	translate1 = QMatrix(1, 0, 0, 1, - (region.left() - fLeftMargin * xlength), - (region.bottom() + fBottomMargin * ylength));
 
 	double xscale =
-	    (viewport.right() - viewport.left() - iLeftMargin - iRightMargin) /
-	    (region.right() - region.left() + (fLeftMargin + fRightMargin) * xlength);
+		(viewport.right() - viewport.left() - iLeftMargin - iRightMargin) /
+		(region.right() - region.left() + (fLeftMargin + fRightMargin) * xlength);
 	double yscale = -
-	                (viewport.bottom() - viewport.top() - iTopMargin - iBottomMargin) /
-	                (region.bottom() - region.top() + (fTopMargin + fBottomMargin) * ylength);
+									(viewport.bottom() - viewport.top() - iTopMargin - iBottomMargin) /
+									(region.bottom() - region.top() + (fTopMargin + fBottomMargin) * ylength);
 	scale = QMatrix(xscale, 0, 0, yscale, 0, 0);
 
 	translate2 = QMatrix(1, 0, 0, 1, viewport.left() + iLeftMargin, viewport.top() + iTopMargin);
@@ -95,16 +95,16 @@ QMatrix Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::getMatr
 	return translate1 * scale * translate2;
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawLine(Structured15DGridWithCrossSectionCrossSection *section, QPainter &painter)
+void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawLine(Structured15DGridWithCrossSectionCrossSection* section, QPainter& painter)
 {
-	if (section == nullptr) return;
+	if (section == nullptr) { return; }
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = section->altitudeInfo();
 	bool first = true;
 	QPointF oldpoint, newpoint;
-	for (auto it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		newpoint = m_matrix.map(QPointF(alt.m_position, alt.m_height));
-		if (! first){
+		if (! first) {
 			painter.drawLine(oldpoint, newpoint);
 		}
 		oldpoint = newpoint;
@@ -120,7 +120,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawCircle
 	Structured15DGridWithCrossSectionCrossSection* cross = m_parentWindow->m_blackLineCrossSection;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
 	painter.setPen(pen);
-	for (auto it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		painter.setBrush(activeBrush);
 		QPointF point = m_matrix.map(QPointF(alt.m_position, alt.m_height));
@@ -138,7 +138,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawSelect
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
 	painter.setPen(pen);
 	QModelIndexList list = selectionModel()->selectedRows();
-	for (auto it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it) {
 		QModelIndex index = *it;
 		const Structured15DGridWithCrossSectionCrossSection::Altitude& alt = alist.at(index.row());
 		painter.setBrush(activeBrush);
@@ -169,28 +169,28 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 
 	double xdwidth = (maxs.x() - mins.x()) / 3;
 	int i = 0;
-	while (xdwidth > 10){
+	while (xdwidth > 10) {
 		xdwidth /= 10.;
 		++i;
 	}
-	while (xdwidth < 1){
+	while (xdwidth < 1) {
 		xdwidth *= 10.;
 		--i;
 	}
 	// now 1 < xdwidth < 10.
 	double dx;
 	double pow10 = 10;
-	if (i < 0){
+	if (i < 0) {
 		pow10 = 0.1;
 		i = - i;
 	}
-	if (xdwidth > 5){
+	if (xdwidth > 5) {
 		xdwidth = 5 * std::pow(pow10, i);
 		dx = 0.2;
-	}else if (xdwidth > 2){
+	} else if (xdwidth > 2) {
 		xdwidth = 2 * std::pow(pow10, i);
 		dx = 0.5;
-	}else{
+	} else {
 		xdwidth = std::pow(pow10, i);
 		dx = 1.0;
 	}
@@ -203,7 +203,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 	painter.drawLine(from, to);
 
 	double x = rulemin;
-	while (x < maxs.x()){
+	while (x < maxs.x()) {
 		from = matrix.map(QPointF(x, maxs.y()));
 		from.setY(yoffset);
 		to = matrix.map(QPointF(x, maxs.y()));
@@ -218,7 +218,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 	}
 	// draw X sub scales.
 	x = rulemin;
-	while (x < maxs.x()){
+	while (x < maxs.x()) {
 		x += xdwidth * dx;
 		from = matrix.map(QPointF(x, maxs.y()));
 		from.setY(from.y() + yoffset);
@@ -230,28 +230,28 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 	// next, for y.
 	double ydwidth = std::abs((maxs.y() - mins.y()) / 3);
 	i = 0;
-	while (ydwidth > 10){
+	while (ydwidth > 10) {
 		ydwidth /= 10.;
 		++i;
 	}
-	while (ydwidth < 1){
+	while (ydwidth < 1) {
 		ydwidth *= 10.;
 		--i;
 	}
 	// now 1 < ydwidth < 10.
 	double dy;
 	pow10 = 10;
-	if (i < 0){
+	if (i < 0) {
 		pow10 = 0.1;
 		i = - i;
 	}
-	if (ydwidth > 5){
+	if (ydwidth > 5) {
 		ydwidth = 5 * std::pow(pow10, i);
 		dy = 0.2;
-	}else if (ydwidth > 2){
+	} else if (ydwidth > 2) {
 		ydwidth = 2 * std::pow(pow10, i);
 		dy = 0.5;
-	}else{
+	} else {
 		ydwidth = std::pow(pow10, i);
 		dy = 1.0;
 	}
@@ -263,7 +263,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 	painter.drawLine(from, to);
 
 	double y = rulemin;
-	while (y < maxs.y()){
+	while (y < maxs.y()) {
 		from = matrix.map(QPointF(mins.x(), y));
 		from.setX(xoffset);
 		to.setX(xoffset + mainruler);
@@ -278,7 +278,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::drawScales
 	}
 	// draw Y sub scales.
 	y = rulemin;
-	while (y < maxs.y()){
+	while (y < maxs.y()) {
 		y += ydwidth * dy;
 		from = matrix.map(QPointF(mins.x(), y));
 		from.setX(xoffset);
@@ -311,13 +311,13 @@ QRectF Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::getRegio
 {
 	QRectF ret(0., 0., 0., 0.);
 	QAbstractItemModel* m = model();
-	for (int i = 0; i < m->rowCount(); ++i){
+	for (int i = 0; i < m->rowCount(); ++i) {
 		double x = m->data(m->index(i, 0)).toDouble();
 		double y = m->data(m->index(i, 1)).toDouble();
-		if (i == 0 || x < ret.left()) ret.setLeft(x);
-		if (i == 0 || x > ret.right()) ret.setRight(x);
-		if (i == 0 || y < ret.top()) ret.setTop(y);
-		if (i == 0 || y > ret.bottom()) ret.setBottom(y);
+		if (i == 0 || x < ret.left()) { ret.setLeft(x); }
+		if (i == 0 || x > ret.right()) { ret.setRight(x); }
+		if (i == 0 || y < ret.top()) { ret.setTop(y); }
+		if (i == 0 || y > ret.bottom()) { ret.setBottom(y); }
 	}
 	return ret;
 }
@@ -384,43 +384,41 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mouseMoveE
 {
 	int diffx = event->x() - m_oldPosition.x();
 	int diffy = event->y() - m_oldPosition.y();
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 		// do nothing.
 		break;
 	case meTranslating:
 		translate(diffx, diffy);
 		break;
-	case meZooming:
-	{
-		double scaleX = 1 + diffx * 0.02;
-		double scaleY = 1 - diffy * 0.02;
-		if (scaleX < 0.5) scaleX = 0.5;
-		if (scaleY < 0.5) scaleY = 0.5;
-		if (scaleX > 2) scaleX = 2;
-		if (scaleY > 2) scaleY = 2;
-		zoom(scaleX, scaleY);
-		break;
-	}
-	case meSelecting:
-	{
-		QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
-		QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
-		QRect rect(topLeft, size);
-		m_rubberBand->setGeometry(rect);
-		viewport()->update();
-		break;
-	}
+	case meZooming: {
+			double scaleX = 1 + diffx * 0.02;
+			double scaleY = 1 - diffy * 0.02;
+			if (scaleX < 0.5) { scaleX = 0.5; }
+			if (scaleY < 0.5) { scaleY = 0.5; }
+			if (scaleX > 2) { scaleX = 2; }
+			if (scaleY > 2) { scaleY = 2; }
+			zoom(scaleX, scaleY);
+			break;
+		}
+	case meSelecting: {
+			QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
+			QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
+			QRect rect(topLeft, size);
+			m_rubberBand->setGeometry(rect);
+			viewport()->update();
+			break;
+		}
 	}
 	m_oldPosition = event->pos();
 }
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mousePressEvent(QMouseEvent* event)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
-		if (event->modifiers() == Qt::ControlModifier){
-			switch (event->button()){
+		if (event->modifiers() == Qt::ControlModifier) {
+			switch (event->button()) {
 			case Qt::LeftButton:
 				// translate
 				m_mouseEventMode = meTranslating;
@@ -436,16 +434,16 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mousePress
 			m_oldPosition = event->pos();
 			updateMouseCursor();
 		} else {
-			if (event->button() == Qt::LeftButton){
+			if (event->button() == Qt::LeftButton) {
 				// start selecting.
 				m_mouseEventMode = meSelecting;
-				if (m_rubberBand == nullptr){
+				if (m_rubberBand == nullptr) {
 					m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 				}
 				m_rubberOrigin = event->pos();
 				m_rubberBand->setGeometry(m_rubberOrigin.x(), m_rubberOrigin.y(), 0, 0);
 				m_rubberBand->show();
-			} else if (event->button() == Qt::RightButton){
+			} else if (event->button() == Qt::RightButton) {
 				m_dragStartPoint = event->pos();
 			}
 		}
@@ -455,10 +453,10 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mousePress
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
-		if (event->button() == Qt::RightButton){
-			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())){
+		if (event->button() == Qt::RightButton) {
+			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
 				m_rightClickingMenu->move(event->globalPos());
@@ -485,14 +483,14 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mouseRelea
 	}
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::wheelEvent(QWheelEvent *event)
+void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::wheelEvent(QWheelEvent* event)
 {
-	if (event->orientation() == Qt::Horizontal){return;}
+	if (event->orientation() == Qt::Horizontal) {return;}
 	int numDegrees = event->delta() / 8;
 	int numSteps = numDegrees / 15;
-	if (numSteps > 0){
+	if (numSteps > 0) {
 		cameraZoomIn();
-	}else{
+	} else {
 		cameraZoomOut();
 	}
 }
@@ -537,7 +535,7 @@ int Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::moveWidth()
 
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::updateMouseCursor()
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 		setCursor(Qt::ArrowCursor);
 		break;
@@ -564,13 +562,12 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::selectPoin
 	Structured15DGridWithCrossSectionCrossSection* cross = m_parentWindow->m_blackLineCrossSection;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& alist = cross->altitudeInfo();
 	int row = 0;
-	for (auto it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt = *it;
 		if (alt.m_position >= mappedMins.x() &&
-		    alt.m_position <= mappedMaxs.x() &&
-		    alt.m_height >= mappedMins.y() &&
-		    alt.m_height <= mappedMaxs.y())
-		{
+				alt.m_position <= mappedMaxs.x() &&
+				alt.m_height >= mappedMins.y() &&
+				alt.m_height <= mappedMaxs.y()) {
 			selection.merge(QItemSelection(model()->index(row, 0), model()->index(row, 1)), QItemSelectionModel::Select);
 		}
 		++row;
@@ -582,14 +579,14 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::selectPoin
 void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::updateActionStatus()
 {
 	QModelIndexList rows = selectionModel()->selectedRows();
-	if (rows.count() == 0){
+	if (rows.count() == 0) {
 		m_moveAction->setDisabled(true);
 	} else {
 		bool continuous = true;
 		auto it = rows.begin();
 		auto it2 = it;
 		++it2;
-		while (it2 != rows.end()){
+		while (it2 != rows.end()) {
 			continuous = continuous && (it2->row() == it->row() + 1);
 			++it, ++it2;
 		}

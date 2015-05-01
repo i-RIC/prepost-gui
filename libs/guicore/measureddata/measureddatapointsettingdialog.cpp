@@ -8,8 +8,8 @@
 
 #include <QMessageBox>
 
-MeasuredDataPointSettingDialog::MeasuredDataPointSettingDialog(QWidget *parent) :
-    QDialog(parent),
+MeasuredDataPointSettingDialog::MeasuredDataPointSettingDialog(QWidget* parent) :
+	QDialog(parent),
 	ui(new Ui::MeasuredDataPointSettingDialog)
 {
 	ui->setupUi(this);
@@ -20,7 +20,7 @@ MeasuredDataPointSettingDialog::MeasuredDataPointSettingDialog(QWidget *parent) 
 
 MeasuredDataPointSettingDialog::~MeasuredDataPointSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
@@ -31,7 +31,7 @@ void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
 	ui->measuredValueComboBox->blockSignals(true);
 
 	m_measuredValues = md->pointNames();
-	for (int i = 0; i < m_measuredValues.count(); ++i){
+	for (int i = 0; i < m_measuredValues.count(); ++i) {
 		ui->measuredValueComboBox->addItem(m_measuredValues.at(i));
 	}
 	ui->measuredValueComboBox->blockSignals(false);
@@ -40,9 +40,9 @@ void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
 void MeasuredDataPointSettingDialog::setCurrentMeasuredValue(QString sol)
 {
 	int index = m_measuredValues.indexOf(sol);
-	if (index == -1){
+	if (index == -1) {
 		// not set yet. select the first one.
-		index = 0;	
+		index = 0;
 	}
 	ui->measuredValueComboBox->setCurrentIndex(index);
 	measuredValueChanged(index);
@@ -89,8 +89,7 @@ void MeasuredDataPointSettingDialog::measuredValueChanged(int index)
 void MeasuredDataPointSettingDialog::accept()
 {
 	if ((! ui->colormapWidget->autoRange()) &&
-		(ui->colormapWidget->upperLimit() < ui->colormapWidget->lowerLimit()))
-	{
+			(ui->colormapWidget->upperLimit() < ui->colormapWidget->lowerLimit())) {
 		QMessageBox::critical(this, tr("Error"), tr("For value range, max value is smaller than min value."));
 		return;
 	}
@@ -155,7 +154,7 @@ void MeasuredDataPointSettingDialog::showColorBarDialog()
 	dialog.setTitle(m_scalarBarTitleMap[currentMeasuredValue()]);
 	dialog.setSetting(m_scalarBarSetting);
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_scalarBarTitleMap[currentMeasuredValue()] = dialog.title();
 	m_scalarBarSetting = dialog.setting();
 }

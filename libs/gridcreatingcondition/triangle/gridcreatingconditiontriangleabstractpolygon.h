@@ -27,16 +27,16 @@ public:
 	bool isPolygonSelectable(const QVector2D& pos);
 
 	const QPolygonF polygon(QPointF offset = QPointF(0, 0)) const;
-	vtkPolygon* getVtkPolygon(){return m_vtkPolygon;}
+	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
 	void setPolygon(const QPolygonF& p);
 	void setZDepthRange(double min, double max);
 	void updateShapeData();
-	int selectedVertexId(){return m_selectedVertexId;}
-	int selectedEdgeId(){return m_selectedEdgeId;}
+	int selectedVertexId() {return m_selectedVertexId;}
+	int selectedEdgeId() {return m_selectedEdgeId;}
 
 	void setActive(bool active);
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
-	virtual void finishDefinition(){}
+	virtual void finishDefinition() {}
 private:
 	void setupContainers();
 	void setupActors();

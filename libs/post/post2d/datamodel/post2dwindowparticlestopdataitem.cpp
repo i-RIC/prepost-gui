@@ -40,7 +40,7 @@ void Post2dWindowParticlesTopDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->particleData() == 0){return;}
+	if (cont == 0 || cont->particleData() == 0) {return;}
 
 	m_actor->GetProperty()->SetPointSize(m_size);
 	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
@@ -99,8 +99,7 @@ QDialog* Post2dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 class Post2dWindowParticlesTopSetProperty : public QUndoCommand
 {
 public:
-	Post2dWindowParticlesTopSetProperty(const QColor& color, int size, Post2dWindowParticlesTopDataItem* item)
-	{
+	Post2dWindowParticlesTopSetProperty(const QColor& color, int size, Post2dWindowParticlesTopDataItem* item) {
 		m_newColor = color;
 		m_newSize = size;
 
@@ -110,8 +109,7 @@ public:
 		m_item = item;
 	}
 
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_color = m_oldColor;
 		m_item->m_size = m_oldSize;
@@ -119,8 +117,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_color = m_newColor;
 		m_item->m_size = m_newSize;

@@ -1,16 +1,16 @@
 #include "gridbirdeyewindowaxessettingdialog.h"
 #include "ui_gridbirdeyewindowaxessettingdialog.h"
 
-GridBirdEyeWindowAxesSettingDialog::GridBirdEyeWindowAxesSettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::GridBirdEyeWindowAxesSettingDialog)
+GridBirdEyeWindowAxesSettingDialog::GridBirdEyeWindowAxesSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::GridBirdEyeWindowAxesSettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 GridBirdEyeWindowAxesSettingDialog::~GridBirdEyeWindowAxesSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void GridBirdEyeWindowAxesSettingDialog::setAxesVisible(bool visible)

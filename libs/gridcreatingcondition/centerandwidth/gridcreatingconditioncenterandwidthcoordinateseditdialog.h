@@ -5,7 +5,8 @@
 #include <QVector>
 #include <QVector2D>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionCenterAndWidthCoordinatesEditDialog;
 }
 
@@ -19,7 +20,7 @@ class GridCreatingConditionCenterAndWidthCoordinatesEditDialog : public QDialog
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionCenterAndWidthCoordinatesEditDialog(GridCreatingConditionCenterAndWidth* cond, QWidget *parent = nullptr);
+	explicit GridCreatingConditionCenterAndWidthCoordinatesEditDialog(GridCreatingConditionCenterAndWidth* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthCoordinatesEditDialog();
 public slots:
 	void accept();
@@ -31,7 +32,7 @@ private:
 	void setupData();
 	void apply();
 
-	Ui::GridCreatingConditionCenterAndWidthCoordinatesEditDialog *ui;
+	Ui::GridCreatingConditionCenterAndWidthCoordinatesEditDialog* ui;
 	GridCreatingConditionCenterAndWidth* m_condition;
 	QStandardItemModel* m_model;
 	bool m_applyed;

@@ -11,7 +11,7 @@ class Post2dWindowBackgroundImagesDataItem : public Post2dWindowDataItem
 public:
 	Post2dWindowBackgroundImagesDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowBackgroundImagesDataItem();
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(10);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(10);}
 	void addCustomMenuItems(QMenu* menu);
 	void visiblePropBounds(double bounds[6]);
 	void handleStandardItemChange();
@@ -27,8 +27,8 @@ signals:
 	void selectBackgroundImage(const QModelIndex& current);
 	void requestRemoveRenderer(vtkRenderer* ren);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
 	QAction* m_addAction;
 	QAction* m_deleteAllAction;

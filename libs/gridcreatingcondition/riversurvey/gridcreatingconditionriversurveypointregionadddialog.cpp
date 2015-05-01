@@ -25,16 +25,14 @@ public:
 		int points,
 		double distance,
 		GridCreatingConditionRiverSurvey* cond)
-		: QUndoCommand(GridCreatingConditionRiverSurvey::tr("Add Control Points regionally"))
-	{
+		: QUndoCommand(GridCreatingConditionRiverSurvey::tr("Add Control Points regionally")) {
 		m_condition = cond;
 		ctrlPointsRegionAdd(start, end, specifydistance, points, distance);
 	}
 
-	void undo()
-	{
+	void undo() {
 		m_condition->cancelBackgroundGridUpdate();
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before) {
 			backup->restore();
 		}
 
@@ -43,10 +41,9 @@ public:
 		m_condition->informCtrlPointUpdateToCrosssectionWindows();
 	}
 
-	void redo()
-	{
+	void redo() {
 		m_condition->cancelBackgroundGridUpdate();
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after) {
 			backup->restore();
 		}
 
@@ -56,14 +53,13 @@ public:
 	}
 
 private:
-	void ctrlPointsRegionAdd(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end, bool specifydistance, int points, double distance)
-	{
+	void ctrlPointsRegionAdd(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end, bool specifydistance, int points, double distance) {
 		RawDataRiverPathPoint* tmpp;
 		RawDataRiverSurveyCtrlPointBackup* backup;
 
 		// Make backup.
 		tmpp = start;
-		while (tmpp != end){
+		while (tmpp != end) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(tmpp, RawDataRiverPathPoint::zposCenterLine);
 			m_before.push_back(backup);
@@ -72,7 +68,7 @@ private:
 
 		// 制御点データを設定
 		tmpp = start;
-		while (tmpp != end){
+		while (tmpp != end) {
 			int tmppoints = 0;
 			if (specifydistance) {
 				double tmpdist = (tmpp->position() - tmpp->nextPoint()->position()).length();
@@ -84,7 +80,7 @@ private:
 			QVector<double> tmpv;
 			tmpv.reserve(tmppoints);
 			double delta = 1. / static_cast<double>(tmppoints + 1);
-			for (int i = 0; i < tmppoints; ++i){
+			for (int i = 0; i < tmppoints; ++i) {
 				tmpv.push_back(delta * (i + 1));
 			}
 			tmpp->CenterLineCtrlPoints = tmpv;
@@ -95,7 +91,7 @@ private:
 
 		// Make backup.
 		tmpp = start;
-		while (tmpp != end){
+		while (tmpp != end) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(tmpp, RawDataRiverPathPoint::zposCenterLine);
 			m_after.push_back(backup);
@@ -104,13 +100,13 @@ private:
 	}
 
 private:
-	GridCreatingConditionRiverSurvey *m_condition;
+	GridCreatingConditionRiverSurvey* m_condition;
 	std::list<RawDataRiverSurveyCtrlPointBackup*> m_before;
 	std::list<RawDataRiverSurveyCtrlPointBackup*> m_after;
 };
 
 
-GridCreatingConditionRiverSurveyPointRegionAddDialog::GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent) :
+GridCreatingConditionRiverSurveyPointRegionAddDialog::GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRiverSurveyPointRegionAddDialog)
 {
@@ -126,10 +122,10 @@ GridCreatingConditionRiverSurveyPointRegionAddDialog::~GridCreatingConditionRive
 	delete ui;
 }
 
-void GridCreatingConditionRiverSurveyPointRegionAddDialog::changeEvent(QEvent *e)
+void GridCreatingConditionRiverSurveyPointRegionAddDialog::changeEvent(QEvent* e)
 {
 	QDialog::changeEvent(e);
-	switch (e->type()){
+	switch (e->type()) {
 	case QEvent::LanguageChange:
 		ui->retranslateUi(this);
 		break;
@@ -143,20 +139,20 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverS
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	double lengthSum = 0;
 	int numSections = 0;
-	while (p != nullptr){
+	while (p != nullptr) {
 		m_points.push_back(p);
-		if (p->nextPoint() != nullptr){
+		if (p->nextPoint() != nullptr) {
 			lengthSum += (p->position() - p->nextPoint()->position()).length();
 			++ numSections;
 		}
 		p = p->nextPoint();
 	}
 	// setup start combobox
-	for (int i = 0; i < m_points.count() - 1; ++i){
+	for (int i = 0; i < m_points.count() - 1; ++i) {
 		ui->startComboBox->addItem(m_points.at(i)->name());
 	}
 	// setup end combobox
-	for (int i = 1; i < m_points.count(); ++i){
+	for (int i = 1; i < m_points.count(); ++i) {
 		ui->endComboBox->addItem(m_points.at(i)->name());
 	}
 	// set default values
@@ -172,35 +168,35 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverS
 void GridCreatingConditionRiverSurveyPointRegionAddDialog::setStartPoint(RawDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
-	if (index == - 1){index = 0;}
+	if (index == - 1) {index = 0;}
 	ui->startComboBox->setCurrentIndex(index);
 }
 
 void GridCreatingConditionRiverSurveyPointRegionAddDialog::setEndPoint(RawDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
-	if (index == - 1){index = m_points.count() - 2;}
+	if (index == - 1) {index = m_points.count() - 2;}
 	ui->endComboBox->setCurrentIndex(index);
 }
 
 RawDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::startPoint()
 {
 	int index = ui->startComboBox->currentIndex();
-	if (index < 0 || index > m_points.count() - 1){return 0;}
+	if (index < 0 || index > m_points.count() - 1) {return 0;}
 	return m_points.at(index);
 }
 
 RawDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::endPoint()
 {
 	int index = ui->endComboBox->currentIndex();
-	if (index < 0 || index > m_points.count() - 2){return 0;}
+	if (index < 0 || index > m_points.count() - 2) {return 0;}
 	return m_points.at(index + 1);
 }
 
 void GridCreatingConditionRiverSurveyPointRegionAddDialog::handleStartUpdate()
 {
 	int index = ui->startComboBox->currentIndex();
-	if (ui->endComboBox->currentIndex() < index){
+	if (ui->endComboBox->currentIndex() < index) {
 		ui->endComboBox->setCurrentIndex(index);
 	}
 	m_condition->selectCreateRegion(startPoint(), endPoint());
@@ -209,7 +205,7 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::handleStartUpdate()
 void GridCreatingConditionRiverSurveyPointRegionAddDialog::handleEndUpdate()
 {
 	int index = ui->endComboBox->currentIndex();
-	if (ui->startComboBox->currentIndex() > index){
+	if (ui->startComboBox->currentIndex() > index) {
 		ui->startComboBox->setCurrentIndex(index);
 	}
 	m_condition->selectCreateRegion(startPoint(), endPoint());
@@ -219,18 +215,18 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::accept()
 {
 	bool doOK = true;
 
-	if (m_condition->checkCtrlPointsRegion(startPoint(), endPoint())){
+	if (m_condition->checkCtrlPointsRegion(startPoint(), endPoint())) {
 		QMessageBox::StandardButton button = QMessageBox::warning(
 			this, tr("Confirmation"),
 			tr("The control points which already exist in this region are overwritten."),
 			(QMessageBox::Ok | QMessageBox::Cancel),
 			QMessageBox::Cancel);
-		if (button == QMessageBox::Cancel){
+		if (button == QMessageBox::Cancel) {
 			doOK = false;
 		}
 	}
 
-	if (doOK){
+	if (doOK) {
 		int divNum = ui->divNumSpinBox->value();
 		iRICUndoStack::instance().push(
 			new GridCreatingConditionCtrlPointRegionAddCommand(startPoint(), endPoint(), ui->distanceRadioButton->isChecked(), divNum - 1, ui->distanceSpinBox->value(), m_condition));

@@ -5,8 +5,9 @@
 #include <QList>
 #include "gridbirdeyewindowdatamodel.h"
 
-namespace Ui {
-    class GridBirdEyeWindowColorSettingDialog;
+namespace Ui
+{
+	class GridBirdEyeWindowColorSettingDialog;
 }
 
 class SolverDefinitionGridType;
@@ -14,11 +15,11 @@ class SolverDefinitionGridRelatedCondition;
 
 class GridBirdEyeWindowColorSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit GridBirdEyeWindowColorSettingDialog(QWidget *parent = nullptr);
-    ~GridBirdEyeWindowColorSettingDialog();
+	explicit GridBirdEyeWindowColorSettingDialog(QWidget* parent = nullptr);
+	~GridBirdEyeWindowColorSettingDialog();
 	void setGridType(SolverDefinitionGridType* type);
 	void setColorType(GridBirdEyeWindowDataModel::ColorType type);
 	void setAttributeName(const QString& name);
@@ -34,7 +35,7 @@ public:
 private:
 	QList<SolverDefinitionGridRelatedCondition*> m_nodeConds;
 	QList<SolverDefinitionGridRelatedCondition*> m_cellConds;
-	Ui::GridBirdEyeWindowColorSettingDialog *ui;
+	Ui::GridBirdEyeWindowColorSettingDialog* ui;
 };
 
 #endif // GRIDBIRDEYEWINDOWCOLORSETTINGDIALOG_H

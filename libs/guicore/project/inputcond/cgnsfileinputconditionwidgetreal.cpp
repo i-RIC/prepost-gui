@@ -7,7 +7,8 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 
-CgnsFileInputConditionWidgetReal::CgnsFileInputConditionWidgetReal(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, CgnsFileInputConditionContainerReal* cont) : CgnsFileInputConditionWidget(defnode){
+CgnsFileInputConditionWidgetReal::CgnsFileInputConditionWidgetReal(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, CgnsFileInputConditionContainerReal* cont) : CgnsFileInputConditionWidget(defnode)
+{
 	m_lineEdit = new RealNumberEditWidget(this);
 	m_lineEdit->setMinimumWidth(100);
 	m_lineEdit->setAlignment(Qt::AlignRight);
@@ -23,14 +24,17 @@ CgnsFileInputConditionWidgetReal::CgnsFileInputConditionWidgetReal(QDomNode defn
 	connect(m_lineEdit, SIGNAL(valueChanged(double)), this, SLOT(getWidgetValue(double)));
 	connect(m_Container, SIGNAL(valueChanged(double)), this, SLOT(setValue(double)));
 }
-void CgnsFileInputConditionWidgetReal::setValue(double v){
+void CgnsFileInputConditionWidgetReal::setValue(double v)
+{
 	m_lineEdit->setValue(v);
 }
 
-void CgnsFileInputConditionWidgetReal::getWidgetValue(double v){
+void CgnsFileInputConditionWidgetReal::getWidgetValue(double v)
+{
 	m_Container->setValue(v);
 }
 
-void CgnsFileInputConditionWidgetReal::setDisabled(bool disable){
+void CgnsFileInputConditionWidgetReal::setDisabled(bool disable)
+{
 	m_lineEdit->setDisabled(disable);
 }

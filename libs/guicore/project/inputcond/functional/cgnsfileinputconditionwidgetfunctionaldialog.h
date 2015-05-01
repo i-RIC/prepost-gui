@@ -27,7 +27,7 @@ private:
 public:
 	CgnsFileInputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent = 0);
 	~CgnsFileInputConditionWidgetFunctionalDialog();
-	const CgnsFileInputConditionContainerFunctional& container(){
+	const CgnsFileInputConditionContainerFunctional& container() {
 		return m_container;
 	}
 public:
@@ -45,7 +45,7 @@ private:
 	QItemSelectionModel* m_selectionModel;
 	Ui::CgnsFileInputConditionWidgetFunctionalDialog ui;
 public slots:
-	void accept(){
+	void accept() {
 		saveModel();
 		emit accepted();
 		hide();
@@ -64,7 +64,7 @@ private:
 	static void setDouble(const QVariant& v, QVariant& target);
 	void (*m_paramfunc)(const QVariant&, QVariant&);
 	QList<void (*)(const QVariant&, QVariant&)> m_valuefuncs;
-	QStyledItemDelegate *tableViewDelegate;
+	QStyledItemDelegate* tableViewDelegate;
 	QList<QwtPlotCurve*> m_graphCurves;
 	QList<QwtArrayData*> m_graphDatas;
 	QList<AxisSetting> m_axisSettings;

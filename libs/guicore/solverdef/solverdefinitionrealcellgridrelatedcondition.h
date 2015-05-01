@@ -8,8 +8,7 @@ class SolverDefinitionRealCellGridRelatedCondition : public SolverDefinitionGrid
 public:
 	/// Constructor
 	SolverDefinitionRealCellGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionGridRelatedRealCondition(node, translator)
-	{
+		: SolverDefinitionGridRelatedRealCondition(node, translator) {
 		m_position = CellCenter;
 	}
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);

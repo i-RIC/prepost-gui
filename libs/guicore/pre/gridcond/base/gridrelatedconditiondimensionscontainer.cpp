@@ -8,7 +8,7 @@ GridRelatedConditionDimensionsContainer::GridRelatedConditionDimensionsContainer
 	: QObject(parent)
 {
 	const QList<SolverDefinitionGridRelatedConditionDimension*>& dims = conddef->dimensions();
-	for (int i = 0; i < dims.count(); ++i){
+	for (int i = 0; i < dims.count(); ++i) {
 		SolverDefinitionGridRelatedConditionDimension* dim = dims.at(i);
 		GridRelatedConditionDimensionContainer* cont = dim->buildContainer();
 		m_containers.append(cont);
@@ -22,10 +22,10 @@ GridRelatedConditionDimensionsContainer::GridRelatedConditionDimensionsContainer
 
 GridRelatedConditionDimensionsContainer::~GridRelatedConditionDimensionsContainer()
 {
-	for (int i = 0; i < m_containers.count(); ++i){
+	for (int i = 0; i < m_containers.count(); ++i) {
 		delete m_containers.at(i);
 	}
-	for (int i = 0; i < m_selectWidgets.count(); ++i){
+	for (int i = 0; i < m_selectWidgets.count(); ++i) {
 		delete m_selectWidgets.at(i);
 	}
 }
@@ -39,20 +39,20 @@ QList<int> GridRelatedConditionDimensionsContainer::calculateIndices(int index)
 {
 	QList<int> ret;
 	int factor = 1;
-	for (int i = 0; i < m_containers.size() - 1; ++i){
+	for (int i = 0; i < m_containers.size() - 1; ++i) {
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
-		if (container->count() != 0){
+		if (container->count() != 0) {
 			factor = factor * container->count();
 		}
 	}
-	for (int i = m_containers.size() - 1; i >= 0; --i){
+	for (int i = m_containers.size() - 1; i >= 0; --i) {
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
 		int index2 = index / factor;
 		ret.push_front(index2);
 		index = index % factor;
-		if (i != 0){
+		if (i != 0) {
 			container = m_containers.at(i - 1);
-			if (container->count() != 0){
+			if (container->count() != 0) {
 				factor = factor / container->count();
 			}
 		}
@@ -63,7 +63,7 @@ QList<int> GridRelatedConditionDimensionsContainer::calculateIndices(int index)
 void GridRelatedConditionDimensionsContainer::setCurrentIndex(int newIndex, bool noDraw)
 {
 	QList<int> indices = calculateIndices(newIndex);
-	for (int i = 0; i < m_containers.size(); ++i){
+	for (int i = 0; i < m_containers.size(); ++i) {
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
 		container->setCurrentIndex(indices.at(i), noDraw);
 	}
@@ -72,9 +72,9 @@ void GridRelatedConditionDimensionsContainer::setCurrentIndex(int newIndex, bool
 int GridRelatedConditionDimensionsContainer::maxIndex() const
 {
 	int max = 1;
-	for (int i = 0; i < m_containers.size(); ++i){
+	for (int i = 0; i < m_containers.size(); ++i) {
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
-		if (container->count() != 0){
+		if (container->count() != 0) {
 			max = max * container->count();
 		}
 	}
@@ -85,16 +85,16 @@ int GridRelatedConditionDimensionsContainer::calculateIndex(GridRelatedCondition
 {
 	int ret = 0;
 	int factor = 1;
-	for (int i = 0; i < m_containers.size(); ++i){
+	for (int i = 0; i < m_containers.size(); ++i) {
 		GridRelatedConditionDimensionContainer* container = m_containers.at(i);
-		if (cont != nullptr && cont == container){
+		if (cont != nullptr && cont == container) {
 			ret = ret + factor * index;
-			if (size != 0){
+			if (size != 0) {
 				factor = factor * size;
 			}
 		} else {
 			ret = ret + factor * container->currentIndex();
-			if (container->count() != 0){
+			if (container->count() != 0) {
 				factor = factor * container->count();
 			}
 		}
@@ -110,8 +110,8 @@ void GridRelatedConditionDimensionsContainer::handleIndexChange(bool noDraw)
 	m_currentIndex = newIndex;
 
 	PreProcessorRawDataGroupDataItemInterface* gItem =
-			dynamic_cast<PreProcessorRawDataGroupDataItemInterface*> (parent());
-	if (gItem != nullptr && ! noDraw){
+		dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent());
+	if (gItem != nullptr && ! noDraw) {
 		gItem->renderGraphicsView();
 	}
 }

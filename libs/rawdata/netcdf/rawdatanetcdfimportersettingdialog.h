@@ -4,8 +4,9 @@
 #include <QDialog>
 #include <QComboBox>
 
-namespace Ui {
-class RawDataNetcdfImporterSettingDialog;
+namespace Ui
+{
+	class RawDataNetcdfImporterSettingDialog;
 }
 
 class SolverDefinitionGridRelatedCondition;
@@ -15,13 +16,14 @@ class RawDataNetcdfImporterSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	class NcVariable {
+	class NcVariable
+	{
 	public:
 		QString name;
 		QList<QString> dimensions;
 	};
 
-	explicit RawDataNetcdfImporterSettingDialog(QWidget *parent = 0);
+	explicit RawDataNetcdfImporterSettingDialog(QWidget* parent = 0);
 	~RawDataNetcdfImporterSettingDialog();
 
 	void setCondition(SolverDefinitionGridRelatedCondition*	condition);
@@ -37,7 +39,7 @@ private:
 	QList<QComboBox*> m_dimComboBoxes;
 	QList<NcVariable> m_variables;
 
-	Ui::RawDataNetcdfImporterSettingDialog *ui;
+	Ui::RawDataNetcdfImporterSettingDialog* ui;
 };
 
 #endif // RAWDATANETCDFIMPORTERSETTINGDIALOG_H

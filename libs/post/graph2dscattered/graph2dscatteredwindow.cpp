@@ -10,7 +10,7 @@
 #include <QPainter>
 #include <QDockWidget>
 
-Graph2dScatteredWindow::Graph2dScatteredWindow(QWidget *parent, int index, Graph2dScatteredWindowProjectDataItem* pdi)
+Graph2dScatteredWindow::Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi)
 	: PostProcessorWindow(parent, index, pdi)
 {
 	init();
@@ -50,7 +50,7 @@ void Graph2dScatteredWindow::init()
 void Graph2dScatteredWindow::setupDefaultGeometry(int index)
 {
 	QWidget* parent = parentWidget();
-	if (parent->isMaximized()){return;}
+	if (parent->isMaximized()) {return;}
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 }

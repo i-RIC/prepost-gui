@@ -58,7 +58,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-	virtual void informSelection(VTKGraphicsView * v);
+	virtual void informSelection(VTKGraphicsView* v);
 	virtual void informDeselection(VTKGraphicsView* v);
 	void setPoints(const QVector2D& v1, const QVector2D& v2);
 	QDialog* propertyDialog(QWidget* parent);

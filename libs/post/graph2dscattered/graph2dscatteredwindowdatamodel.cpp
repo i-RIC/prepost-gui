@@ -70,26 +70,26 @@ PostSolutionInfo* Graph2dScatteredWindowDataModel::postSolutionInfo()
 void Graph2dScatteredWindowDataModel::axisSetting()
 {
 	Graph2dScatteredAxisSettingDialog dialog(mainWindow());
-	if (m_setting.yAxisLeftAutoRange()){
+	if (m_setting.yAxisLeftAutoRange()) {
 		double min, max;
 		getYAxisValueRange(Graph2dWindowDataModel::asLeft, &min, &max);
 		m_setting.setYAxisLeftMin(min);
 		m_setting.setYAxisLeftMax(max);
 	}
-	if (m_setting.yAxisRightAutoRange()){
+	if (m_setting.yAxisRightAutoRange()) {
 		double min, max;
 		getYAxisValueRange(Graph2dWindowDataModel::asRight, &min, &max);
 		m_setting.setYAxisRightMin(min);
 		m_setting.setYAxisRightMax(max);
 	}
-	if (m_setting.xAxisAutoRange()){
+	if (m_setting.xAxisAutoRange()) {
 		double min, max;
 		getXAxisValueRange(&min, &max);
 		m_setting.setXAxisValueMin(min);
 		m_setting.setXAxisValueMax(max);
 	}
 	dialog.setSetting(m_setting);
-	if (QDialog::Rejected == dialog.exec()){return;}
+	if (QDialog::Rejected == dialog.exec()) {return;}
 	m_setting = dialog.setting();
 	applySettings();
 	view()->replot();
@@ -98,9 +98,9 @@ void Graph2dScatteredWindowDataModel::axisSetting()
 bool Graph2dScatteredWindowDataModel::savePixmap(const QPixmap& pixmap, const QString& filename)
 {
 	// rename the temporary file to the target file.
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		// remove first.
-		if (! QFile::remove(filename)){
+		if (! QFile::remove(filename)) {
 			// unable to remove. fail.
 			return false;
 		}
@@ -108,7 +108,8 @@ bool Graph2dScatteredWindowDataModel::savePixmap(const QPixmap& pixmap, const QS
 	return pixmap.save(filename);
 }
 
-void Graph2dScatteredWindowDataModel::showErrorMessage(const QString& filename){
+void Graph2dScatteredWindowDataModel::showErrorMessage(const QString& filename)
+{
 	QMessageBox::critical(mainWindow(), tr("Error"), tr("Saving snapshot image to %1 failed.").arg(filename));
 }
 
@@ -116,7 +117,7 @@ QString Graph2dScatteredWindowDataModel::formattedNumber(int number, int max)
 {
 	int limit = 10;
 	int len = 1;
-	while (max >= limit){
+	while (max >= limit) {
 		limit *= 10;
 		++ len;
 	}
@@ -137,17 +138,17 @@ void Graph2dScatteredWindowDataModel::drawSetting()
 	Graph2dScatteredWindowResultGroupDataItem* rgroup = root->resultGroupItem();
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
 	QList<Graph2dScatteredWindowResultSetting::Setting> resultSettings;
-	for (int i = 0; i < resultList.count(); ++i){
+	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dScatteredWindowResultDataItem* item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(resultList.at(i));
 		resultSettings.append(item->setting());
 	}
 	dialog.setResultSettings(resultSettings);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	resultSettings = dialog.resultSettings();
-	for (int i = 0; i < resultList.count(); ++i){
+	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dScatteredWindowResultDataItem* item = dynamic_cast<Graph2dScatteredWindowResultDataItem*>(resultList.at(i));
 		item->setSetting(resultSettings.at(i));
 	}
@@ -164,16 +165,16 @@ void Graph2dScatteredWindowDataModel::updateTitle()
 	int currentStep = postSolutionInfo()->currentStep();
 	const QList<double>& timesteps = postSolutionInfo()->timeSteps()->timesteps();
 	double time;
-	if (timesteps.count() == 0){
+	if (timesteps.count() == 0) {
 		time = 0;
 	} else {
-		if (currentStep < timesteps.count()){
+		if (currentStep < timesteps.count()) {
 			time = timesteps.at(currentStep);
 		} else {
 			time = 0;
 		}
 	}
-	if (m_setting.addTimeToTitle()){
+	if (m_setting.addTimeToTitle()) {
 		QString suffix = tr("Time = %1 sec").arg(time);
 		title.append(" : ").append(suffix);
 	}
@@ -183,18 +184,18 @@ void Graph2dScatteredWindowDataModel::updateTitle()
 bool Graph2dScatteredWindowDataModel::setupInitialSetting()
 {
 	PostSolutionInfo* sInfo = postSolutionInfo();
-		if (! sInfo->isDataAvailable()){
+	if (! sInfo->isDataAvailable()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("No calculation result exists."));
 		return false;
 	}
 	// initially, setup physical value settings.
 	bool loaded = m_setting.init(postSolutionInfo());
-	if (! loaded){
+	if (! loaded) {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Graph window setup fail. Calculation result is not loaded properly."));
 		return false;
 	}
 
-	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*> (m_rootDataItem);
+	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 
 	Graph2dScatteredWindowDataSourceDialog dialog(mainWindow());
 	dialog.setDimension(m_setting.dimension());
@@ -202,7 +203,7 @@ bool Graph2dScatteredWindowDataModel::setupInitialSetting()
 	dialog.setSetting(m_setting);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){
+	if (ret == QDialog::Rejected) {
 		return false;
 	}
 
@@ -218,20 +219,20 @@ bool Graph2dScatteredWindowDataModel::setupInitialSetting()
 void Graph2dScatteredWindowDataModel::applyAxisSetting()
 {
 	Graph2dWindowView* v = view();
-	if (m_setting.xAxisLog()){
+	if (m_setting.xAxisLog()) {
 		v->setAxisScaleEngine(QwtPlot::xBottom, new QwtLogScaleEngine());
 	} else {
 		v->setAxisScaleEngine(QwtPlot::xBottom, new QwtLinearScaleEngine());
 	}
-	if (m_setting.xAxisReverse()){
+	if (m_setting.xAxisReverse()) {
 		v->axisScaleEngine(QwtPlot::xBottom)->setAttribute(QwtScaleEngine::Inverted, true);
 	} else {
 		v->axisScaleEngine(QwtPlot::xBottom)->setAttribute(QwtScaleEngine::Inverted, false);
 	}
-	if (m_setting.xAxisAutoRange()){
+	if (m_setting.xAxisAutoRange()) {
 		v->setAxisAutoScale(QwtPlot::xBottom);
 	} else {
-		if (m_setting.xAxisReverse()){
+		if (m_setting.xAxisReverse()) {
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMax(), m_setting.xAxisValueMin());
 		} else {
 			v->setAxisScale(QwtPlot::xBottom, m_setting.xAxisValueMin(), m_setting.xAxisValueMax());
@@ -240,19 +241,19 @@ void Graph2dScatteredWindowDataModel::applyAxisSetting()
 	v->setAxisTitle(QwtPlot::xBottom, m_setting.xAxisLabel());
 
 	Graph2dScatteredWindowRootDataItem* root = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
-	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asLeft)){
+	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asLeft)) {
 		v->enableAxis(QwtPlot::yLeft);
 		v->setAxisTitle(QwtPlot::yLeft, m_setting.yAxisLeftTitle());
-		if (m_setting.yAxisLeftLog()){
+		if (m_setting.yAxisLeftLog()) {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLogScaleEngine());
 		} else {
 			v->setAxisScaleEngine(QwtPlot::yLeft, new QwtLinearScaleEngine());
 		}
 		// control range.
-		if (m_setting.yAxisLeftAutoRange()){
+		if (m_setting.yAxisLeftAutoRange()) {
 			v->setAxisAutoScale(QwtPlot::yLeft);
 		} else {
-			if (m_setting.yAxisLeftReverse()){
+			if (m_setting.yAxisLeftReverse()) {
 				v->setAxisScale(QwtPlot::yLeft, m_setting.yAxisLeftMax(), m_setting.yAxisLeftMin());
 			} else {
 				v->setAxisScale(QwtPlot::yLeft, m_setting.yAxisLeftMin(), m_setting.yAxisLeftMax());
@@ -262,19 +263,19 @@ void Graph2dScatteredWindowDataModel::applyAxisSetting()
 	} else {
 		v->enableAxis(QwtPlot::yLeft, false);
 	}
-	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asRight)){
+	if (root->axisNeeded(Graph2dScatteredWindowResultSetting::asRight)) {
 		v->enableAxis(QwtPlot::yRight);
 		v->setAxisTitle(QwtPlot::yRight, m_setting.yAxisRightTitle());
-		if (m_setting.yAxisRightLog()){
+		if (m_setting.yAxisRightLog()) {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLogScaleEngine());
 		} else {
 			v->setAxisScaleEngine(QwtPlot::yRight, new QwtLinearScaleEngine());
 		}
 		// control range.
-		if (m_setting.yAxisRightAutoRange()){
+		if (m_setting.yAxisRightAutoRange()) {
 			v->setAxisAutoScale(QwtPlot::yRight);
 		} else {
-			if (m_setting.yAxisRightReverse()){
+			if (m_setting.yAxisRightReverse()) {
 				v->setAxisScale(QwtPlot::yRight, m_setting.yAxisRightMax(), m_setting.yAxisRightMin());
 			} else {
 				v->setAxisScale(QwtPlot::yRight, m_setting.yAxisRightMin(), m_setting.yAxisRightMax());
@@ -298,9 +299,9 @@ void Graph2dScatteredWindowDataModel::getYAxisValueRange(Graph2dWindowDataModel:
 {
 	Graph2dWindowView* v = view();
 	QwtScaleDiv sDiv;
-	if (as == Graph2dWindowDataModel::asLeft){
+	if (as == Graph2dWindowDataModel::asLeft) {
 		sDiv = v->axisScaleDiv(QwtPlot::yLeft);
-	}else{
+	} else {
 		sDiv = v->axisScaleDiv(QwtPlot::yRight);
 	}
 	*min = qMin(sDiv.lowerBound(), sDiv.upperBound());
@@ -316,7 +317,7 @@ void Graph2dScatteredWindowDataModel::updateTime()
 
 void Graph2dScatteredWindowDataModel::dataSourceSetting()
 {
-	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*> (m_rootDataItem);
+	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 
 	Graph2dScatteredWindowDataSourceDialog dialog(mainWindow());
 	dialog.setDimension(m_setting.dimension());
@@ -324,7 +325,7 @@ void Graph2dScatteredWindowDataModel::dataSourceSetting()
 	dialog.setSetting(m_setting);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){
+	if (ret == QDialog::Rejected) {
 		return;
 	}
 
@@ -349,17 +350,17 @@ void Graph2dScatteredWindowDataModel::updateData()
 	int ier, fn;
 	bool myopen = false;
 	fn = postSolutionInfo()->fileId();
-	if (fn == 0){
+	if (fn == 0) {
 		// file not opened.
 		QString cgnsFilename = currentCgnsFileName();
 		ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-		if (ier != 0){return;}
+		if (ier != 0) {return;}
 		myopen = true;
 	}
 
 	updateData(fn);
 
-	if (myopen){
+	if (myopen) {
 		cg_close(fn);
 	}
 	updateTitle();
@@ -369,7 +370,7 @@ void Graph2dScatteredWindowDataModel::updateData()
 void Graph2dScatteredWindowDataModel::updateData(int fn)
 {
 	static bool updating = false;
-	if (updating == true){
+	if (updating == true) {
 		return;
 	}
 	updating = true;
@@ -381,16 +382,16 @@ void Graph2dScatteredWindowDataModel::updateData(int fn)
 void Graph2dScatteredWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	bool ok = m_setting.init(postSolutionInfo());
-	if (! ok){
+	if (! ok) {
 		throw ErrorMessage("No solution found.");
 	}
 	QDomNode sNode = iRIC::getChildNode(node, "Setting");
-	if (! sNode.isNull()){
+	if (! sNode.isNull()) {
 		m_setting.loadFromProjectMainFile(sNode);
 	}
 	Graph2dWindowDataModel::doLoadFromProjectMainFile(node);
 
-	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*> (m_rootDataItem);
+	Graph2dScatteredWindowRootDataItem* rItem = dynamic_cast<Graph2dScatteredWindowRootDataItem*>(m_rootDataItem);
 	rItem->resultGroupItem()->updateChildren(m_setting);
 
 	applySettings();

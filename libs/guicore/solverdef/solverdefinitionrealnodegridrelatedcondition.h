@@ -8,8 +8,7 @@ class SolverDefinitionRealNodeGridRelatedCondition : public SolverDefinitionGrid
 public:
 	/// Constructor
 	SolverDefinitionRealNodeGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionGridRelatedRealCondition(node, translator)
-	{
+		: SolverDefinitionGridRelatedRealCondition(node, translator) {
 		m_position = Node;
 	}
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);

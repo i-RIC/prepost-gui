@@ -9,23 +9,24 @@
 
 class PostZoneDataContainer;
 
-namespace Ui {
-class Graph2dScatteredWindowDataSourceDialog;
+namespace Ui
+{
+	class Graph2dScatteredWindowDataSourceDialog;
 }
 
 class Graph2dScatteredWindowDataSourceDialog : public QDialog
 {
 	Q_OBJECT
-	
+
 public:
-	explicit Graph2dScatteredWindowDataSourceDialog(QWidget *parent = nullptr);
+	explicit Graph2dScatteredWindowDataSourceDialog(QWidget* parent = nullptr);
 	~Graph2dScatteredWindowDataSourceDialog();
-	void setDimension(PostSolutionInfo::Dimension dim){m_dimension = dim;}
+	void setDimension(PostSolutionInfo::Dimension dim) {m_dimension = dim;}
 	void setZoneDataContainer(PostZoneDataContainer* cont);
 
 	void setSetting(Graph2dScatteredWindowResultSetting& setting);
 	Graph2dScatteredWindowResultSetting setting() const;
-	
+
 private:
 	void setup();
 
@@ -33,7 +34,7 @@ private:
 	PostZoneDataContainer* m_container;
 	Graph2dScatteredWindowResultSetting m_setting;
 
-	Ui::Graph2dScatteredWindowDataSourceDialog *ui;
+	Ui::Graph2dScatteredWindowDataSourceDialog* ui;
 
 	QList<Graph2dScatteredWindowResultSetting::Setting*> m_initialSettings;
 

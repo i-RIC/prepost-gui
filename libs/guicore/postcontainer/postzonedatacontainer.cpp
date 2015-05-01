@@ -50,18 +50,18 @@ PostZoneDataContainer::PostZoneDataContainer(const QString& baseName, const QStr
 bool PostZoneDataContainer::setBaseId(const int fn)
 {
 	// if m_baseID is already set, we do not have to do it again.
-	if (m_baseId != 0){return true;}
+	if (m_baseId != 0) {return true;}
 
 	int ier;
 	int numBases;
 	ier = cg_nbases(fn, &numBases);
-	if (ier != 0){return false;}
-	for (int B = 1; B <= numBases; ++B){
+	if (ier != 0) {return false;}
+	for (int B = 1; B <= numBases; ++B) {
 		char basename[32];
 		int phys_dim;
 		ier = cg_base_read(fn, B, basename, &m_cellDim, &phys_dim);
-		if (ier != 0){return false;}
-		if (m_baseName == basename){
+		if (ier != 0) {return false;}
+		if (m_baseName == basename) {
 			m_baseId = B;
 			return true;
 		}
@@ -72,17 +72,17 @@ bool PostZoneDataContainer::setBaseId(const int fn)
 bool PostZoneDataContainer::setZoneId(const int fn)
 {
 	// if m_zoneID is already set, we do not have to do it again.
-	if (m_zoneId != 0){return true;}
+	if (m_zoneId != 0) {return true;}
 
 	int ier;
 	int numZones;
 	ier = cg_nzones(fn, m_baseId, &numZones);
-	if (ier != 0){return false;}
-	for (int Z = 1; Z <= numZones; ++Z){
+	if (ier != 0) {return false;}
+	for (int Z = 1; Z <= numZones; ++Z) {
 		char zonename[32];
 		ier = cg_zone_read(fn, m_baseId, Z, zonename, m_sizes);
-		if (ier != 0){return false;}
-		if (m_zoneName == zonename){
+		if (ier != 0) {return false;}
+		if (m_zoneName == zonename) {
 			m_zoneId = Z;
 			return true;
 		}
@@ -100,25 +100,25 @@ bool PostZoneDataContainer::loadZoneSize(const int fn)
 
 bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentStep)
 {
-	if (m_data != nullptr){
+	if (m_data != nullptr) {
 		m_data->Initialize();
 		m_labelData->Initialize();
-	}else{
+	} else {
 		m_data = vtkSmartPointer<vtkStructuredGrid>::New();
 		m_labelData = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	}
 	vtkPointSet* p1 = m_data;
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(p1);
 	int NVertexI, NVertexJ, NVertexK;
-	if (m_cellDim == 1){
+	if (m_cellDim == 1) {
 		NVertexI = m_sizes[0];
 		NVertexJ = 1;
 		NVertexK = 1;
-	} else if (m_cellDim == 2){
+	} else if (m_cellDim == 2) {
 		NVertexI = m_sizes[0];
 		NVertexJ = m_sizes[1];
 		NVertexK = 1;
-	} else if (m_cellDim == 3){
+	} else if (m_cellDim == 3) {
 		NVertexI = m_sizes[0];
 		NVertexJ = m_sizes[1];
 		NVertexK = m_sizes[2];
@@ -133,23 +133,23 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
 	bool iterativeCoordinates = false;
-	if (ier == 0){
+	if (ier == 0) {
 		// zone iterative data exists.
 		// try to read the array information of GridCoordinagesPointers.
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0){return false;}
+		if (ier != 0) {return false;}
 		int narrays;
 		ier = cg_narrays(&narrays);
-		if (ier != 0){return false;}
-		for (int i = 1; i <= narrays; ++i){
+		if (ier != 0) {return false;}
+		for (int i = 1; i <= narrays; ++i) {
 			char arrayname[ProjectCgnsFile::BUFFERLEN];
 			DataType_t dataType;
 			int dimension;
 			cgsize_t dimVector[3];
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "GridCoordinatesPointers"){
+			if (QString(arrayname) == "GridCoordinatesPointers") {
 				// GridCoordinatesPointers found.
-				char *pointers;
+				char* pointers;
 				// dimension = 2, dimVector = [32, NumberOfSteps].
 				pointers = new char[dimVector[0] * dimVector[1]];
 				cg_array_read(i, pointers);
@@ -165,11 +165,11 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 			}
 		}
 	}
-	if (! iterativeCoordinates){
+	if (! iterativeCoordinates) {
 		// The grid shape used as input grid is also used as result grid.
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridCoordinates", 0, "end");
 	}
-	if (ier != 0){
+	if (ier != 0) {
 		// grid data does not exists.
 		return false;
 	}
@@ -181,80 +181,80 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
 	vtkPoints* points = 0;
-	double *dataX, *dataY, *dataZ;
+	double* dataX, *dataY, *dataZ;
 	size_t numPoints = NVertexI * NVertexJ * NVertexK;
 	dataX = new double[numPoints];
 	dataY = new double[numPoints];
 	dataZ = new double[numPoints];
 
 	// RealSingle or RealDouble
-	if (dType == RealSingle){
-		float *tmpX, *tmpY, *tmpZ;
+	if (dType == RealSingle) {
+		float* tmpX, *tmpY, *tmpZ;
 		tmpX = new float[numPoints];
 		tmpY = new float[numPoints];
 		tmpZ = new float[numPoints];
 
 		// the first one must be X.
 		ier = cg_array_read(1, tmpX);
-		if (ier != 0){goto FREETMP;}
-		if (m_cellDim >= 2){
+		if (ier != 0) {goto FREETMP;}
+		if (m_cellDim >= 2) {
 			// the second one must be Y.
 			ier = cg_array_read(2, tmpY);
-			if (ier != 0){goto FREETMP;}
+			if (ier != 0) {goto FREETMP;}
 		} else {
-			for (unsigned int i = 0; i < numPoints; ++i){*(tmpY + i) = 0;}
+			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpY + i) = 0;}
 		}
-		if (m_cellDim == 3){
+		if (m_cellDim == 3) {
 			// the third one must be Z.
 			ier = cg_array_read(3, tmpZ);
-			if (ier != 0){goto FREETMP;}
+			if (ier != 0) {goto FREETMP;}
 		} else {
-			for (unsigned int i = 0; i < numPoints; ++i){*(tmpZ + i) = 0;}
+			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpZ + i) = 0;}
 		}
-		for (unsigned int i = 0; i < numPoints; i++){
+		for (unsigned int i = 0; i < numPoints; i++) {
 			*(dataX + i) = *(tmpX + i);
 			*(dataY + i) = *(tmpY + i);
 			*(dataZ + i) = *(tmpZ + i);
 		}
 
-		FREETMP:
+FREETMP:
 
 		delete[] tmpX;
 		delete[] tmpY;
 		delete[] tmpZ;
 
-		if (ier != 0){
+		if (ier != 0) {
 			goto FREEDATA;
 		}
 	} else {
 		// the first one must be X.
 		ier = cg_array_read(1, dataX);
-		if (ier != 0){goto FREEDATA;}
+		if (ier != 0) {goto FREEDATA;}
 
-		if (m_cellDim >= 2){
+		if (m_cellDim >= 2) {
 			// the second one must be Y.
 			ier = cg_array_read(2, dataY);
-			if (ier != 0){goto FREEDATA;}
-		}else{
-			for (unsigned int i = 0; i < numPoints; ++i){*(dataY + i) = 0;}
+			if (ier != 0) {goto FREEDATA;}
+		} else {
+			for (unsigned int i = 0; i < numPoints; ++i) {*(dataY + i) = 0;}
 		}
-		if (m_cellDim == 3){
+		if (m_cellDim == 3) {
 			// the third one must be Z.
 			ier = cg_array_read(3, dataZ);
-			if (ier != 0){goto FREEDATA;}
-		}else{
-			for (unsigned int i = 0; i < numPoints; ++i){*(dataZ + i) = 0;}
+			if (ier != 0) {goto FREEDATA;}
+		} else {
+			for (unsigned int i = 0; i < numPoints; ++i) {*(dataZ + i) = 0;}
 		}
 	}
 
 	points = vtkPoints::New();
-	for (int k = 0; k < NVertexK; ++k){
-		for (int j = 0; j < NVertexJ; ++j){
-			for (int i = 0; i < NVertexI; ++i){
+	for (int k = 0; k < NVertexK; ++k) {
+		for (int j = 0; j < NVertexJ; ++j) {
+			for (int i = 0; i < NVertexI; ++i) {
 				points->InsertNextPoint(
-						*(dataX + i + NVertexI * (j + NVertexJ * k)),
-						*(dataY + i + NVertexI * (j + NVertexJ * k)),
-						*(dataZ + i + NVertexI * (j + NVertexJ * k)));
+					*(dataX + i + NVertexI * (j + NVertexJ * k)),
+					*(dataY + i + NVertexI * (j + NVertexJ * k)),
+					*(dataZ + i + NVertexI * (j + NVertexJ * k)));
 			}
 		}
 	}
@@ -262,7 +262,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	grid->Modified();
 	points->Delete();
 
-	FREEDATA:
+FREEDATA:
 
 	delete[] dataX;
 	delete[] dataY;
@@ -272,9 +272,9 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 
 bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int currentStep)
 {
-	if (m_data != 0){
+	if (m_data != 0) {
 		m_data->Initialize();
-	}else{
+	} else {
 		m_data = vtkSmartPointer<vtkUnstructuredGrid>::New();
 		m_labelData = m_data;
 	}
@@ -286,23 +286,23 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	int ier;
 	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
 	bool iterativeCoordinates = false;
-	if (ier == 0){
+	if (ier == 0) {
 		// zone iterative data exists.
 		// try to read the array information of GridCoordinagesPointers.
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0){return false;}
+		if (ier != 0) {return false;}
 		int narrays;
 		ier = cg_narrays(&narrays);
-		if (ier != 0){return false;}
-		for (int i = 1; i <= narrays; ++i){
+		if (ier != 0) {return false;}
+		for (int i = 1; i <= narrays; ++i) {
 			char arrayname[ProjectCgnsFile::BUFFERLEN];
 			DataType_t dataType;
 			int dimension;
 			cgsize_t dimVector[3];
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "GridCoordinatesPointers"){
+			if (QString(arrayname) == "GridCoordinatesPointers") {
 				// GridCoordinatesPointers found.
-				char *pointers;
+				char* pointers;
 				// dimension = 2, dimVector = [32, NumberOfSteps].
 				pointers = new char[dimVector[0] * dimVector[1]];
 				cg_array_read(i, pointers);
@@ -318,11 +318,11 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 			}
 		}
 	}
-	if (! iterativeCoordinates){
+	if (! iterativeCoordinates) {
 		// The grid shape used as input grid is also used as result grid.
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridCoordinates", 0, "end");
 	}
-	if (ier != 0){
+	if (ier != 0) {
 		// grid data does not exists.
 		return false;
 	}
@@ -334,34 +334,34 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
 
-	double *dataX, *dataY, *dataZ;
+	double* dataX, *dataY, *dataZ;
 	size_t numPoints = NVertex;
 	dataX = new double[numPoints];
 	dataY = new double[numPoints];
 	dataZ = new double[numPoints];
 
 	// RealSingle or RealDouble
-	if (dType == RealSingle){
-		float *tmpX, *tmpY, *tmpZ;
+	if (dType == RealSingle) {
+		float* tmpX, *tmpY, *tmpZ;
 		tmpX = new float[numPoints];
 		tmpY = new float[numPoints];
 		tmpZ = new float[numPoints];
 
 		// the first one must be X.
 		ier = cg_array_read(1, tmpX);
-		if (m_cellDim >= 2){
+		if (m_cellDim >= 2) {
 			// the second one must be Y.
 			ier = cg_array_read(2, tmpY);
 		} else {
-			for (unsigned int i = 0; i < numPoints; ++i){*(tmpY + i) = 0;}
+			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpY + i) = 0;}
 		}
-		if (m_cellDim == 3){
+		if (m_cellDim == 3) {
 			// the third one must be Z.
 			ier = cg_array_read(3, tmpZ);
 		} else {
-			for (unsigned int i = 0; i < numPoints; ++i){*(tmpZ + i) = 0;}
+			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpZ + i) = 0;}
 		}
-		for (unsigned int i = 0; i < numPoints; i++){
+		for (unsigned int i = 0; i < numPoints; i++) {
 			*(dataX + i) = *(tmpX + i);
 			*(dataY + i) = *(tmpY + i);
 			*(dataZ + i) = *(tmpZ + i);
@@ -373,26 +373,26 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 		// the first one must be X.
 		ier = cg_array_read(1, dataX);
 
-		if (m_cellDim >= 2){
+		if (m_cellDim >= 2) {
 			// the second one must be Y.
 			ier = cg_array_read(2, dataY);
-		}else{
-			for (unsigned int i = 0; i < numPoints; ++i){*(dataY + i) = 0;}
+		} else {
+			for (unsigned int i = 0; i < numPoints; ++i) {*(dataY + i) = 0;}
 		}
-		if (m_cellDim == 3){
+		if (m_cellDim == 3) {
 			// the third one must be Z.
 			ier = cg_array_read(3, dataZ);
-		}else{
-			for (unsigned int i = 0; i < numPoints; ++i){*(dataZ + i) = 0;}
+		} else {
+			for (unsigned int i = 0; i < numPoints; ++i) {*(dataZ + i) = 0;}
 		}
 	}
 
 	vtkPoints* points = vtkPoints::New();
-	for (int i = 0; i < NVertex; ++i){
+	for (int i = 0; i < NVertex; ++i) {
 		points->InsertNextPoint(
-				*(dataX + i),
-				*(dataY + i),
-				*(dataZ + i));
+			*(dataX + i),
+			*(dataY + i),
+			*(dataZ + i));
 	}
 	grid->SetPoints(points);
 
@@ -408,13 +408,13 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 
 	int numSections;
 	cg_nsections(fn, m_baseId, m_zoneId, &numSections);
-	for (int S = 1; S <= numSections; ++S){
+	for (int S = 1; S <= numSections; ++S) {
 		ElementType_t eType;
 		cgsize_t startIndex, endIndex;
 		int nBndry, parent_flag;
 		char buffer[32];
 		cg_section_read(fn, m_baseId, m_zoneId, S, buffer, &eType, &startIndex, &endIndex, &nBndry, &parent_flag);
-		if (QString(buffer) == ELEMNODENAME){
+		if (QString(buffer) == ELEMNODENAME) {
 			// the target element node found!
 			// eType must be TRI3.
 			cgsize_t numCells;
@@ -424,7 +424,7 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 			elements = new cgsize_t[3 * numCells];
 			cg_elements_read(fn, m_baseId, m_zoneId, S, elements, NULL);
 			grid->Allocate(numCells);
-			for (int i = 0; i < numCells; ++i){
+			for (int i = 0; i < numCells; ++i) {
 				vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
 				int id0 = *(elements + i * 3) - 1;
 				int id1 = *(elements + i * 3 + 1) - 1;
@@ -446,9 +446,9 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	vtkSmartPointer<vtkCellArray> verts = vtkSmartPointer<vtkCellArray>::New();
 
-	if (m_particleData != 0){
+	if (m_particleData != 0) {
 		m_particleData->Initialize();
-	}else{
+	} else {
 		m_particleData = vtkSmartPointer<vtkPolyData>::New();
 	}
 	// Find ParticleResult node.
@@ -456,7 +456,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	QString tmpNodeName = QString("ParticleSolution%1").arg(currentStep + 1);
 	strcpy(nodeName, iRIC::toStr(tmpNodeName).c_str());
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, nodeName, 0, "end");
-	if (ier != 0){
+	if (ier != 0) {
 		// particle data does not exists.
 		// and it is not an error, because particle is optional data.
 		return true;
@@ -470,7 +470,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	// get the number of particles.
 	cg_array_info(1, aName, &dType, &d, dVector);
 
-	double *dataX, *dataY, *dataZ;
+	double* dataX, *dataY, *dataZ;
 	size_t numParticles = dVector[0];
 	dataX = new double[numParticles];
 	dataY = new double[numParticles];
@@ -480,43 +480,43 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 
 	// Read X
 	ier = cg_array_info(1, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateX" || dVector[0] != numParticles){
+	if (ier != 0 || QString(aName) != "CoordinateX" || dVector[0] != numParticles) {
 		goto ERROR;
 	}
 	ier = cg_array_read(1, dataX);
-	if (ier != 0){goto ERROR;}
+	if (ier != 0) {goto ERROR;}
 
 	// Read Y
 	ier = cg_array_info(2, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateY" || dVector[0] != numParticles){
+	if (ier != 0 || QString(aName) != "CoordinateY" || dVector[0] != numParticles) {
 		goto ERROR;
 	}
 	ier = cg_array_read(2, dataY);
-	if (ier != 0){goto ERROR;}
+	if (ier != 0) {goto ERROR;}
 
 	// Read Z (optional)
 	ier = cg_array_info(3, aName, &dType, &d, dVector);
-	if (ier != 0 || QString(aName) != "CoordinateZ"){
+	if (ier != 0 || QString(aName) != "CoordinateZ") {
 		// Z data does not exist;
-		for (size_t i = 0; i < numParticles; ++i){
+		for (size_t i = 0; i < numParticles; ++i) {
 			*(dataZ + i) = 0;
 		}
 		firstAttId = 3;
 	} else {
-		if (dVector[0] != numParticles){
+		if (dVector[0] != numParticles) {
 			goto ERROR;
 		}
 		ier = cg_array_read(3, dataZ);
-		if (ier != 0){goto ERROR;}
+		if (ier != 0) {goto ERROR;}
 	}
 
 	// X, Y, Z are setup.
 
-	for (int i = 0; i < numParticles; ++i){
+	for (int i = 0; i < numParticles; ++i) {
 		points->InsertNextPoint(
-				*(dataX + i),
-				*(dataY + i),
-				*(dataZ + i));
+			*(dataX + i),
+			*(dataY + i),
+			*(dataZ + i));
 		vtkIdType pId = i;
 		verts->InsertNextCell(1, &pId);
 	}
@@ -527,40 +527,40 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	// load attributes
 	int numArrays;
 	ier = cg_narrays(&numArrays);
-	if (ier != 0){goto ERROR;}
+	if (ier != 0) {goto ERROR;}
 
-	for (int i = firstAttId; i <= numArrays; ++i){
+	for (int i = firstAttId; i <= numArrays; ++i) {
 		ier = cg_array_info(i, aName, &dType, &d, dVector);
-		if (ier != 0){goto ERROR;}
-		if (dVector[0] != numParticles){
+		if (ier != 0) {goto ERROR;}
+		if (dVector[0] != numParticles) {
 			goto ERROR;
 		}
-		if (dType == Integer){
-			int *att = new int[numParticles];
+		if (dType == Integer) {
+			int* att = new int[numParticles];
 			ier = cg_array_read(i, att);
-			if (ier != 0){
+			if (ier != 0) {
 				delete[] att;
 				goto ERROR;
 			}
 			vtkSmartPointer<vtkIntArray> attArray = vtkSmartPointer<vtkIntArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (int j = 0; j < numParticles; ++j){
+			for (int j = 0; j < numParticles; ++j) {
 				attArray->InsertNextValue(*(att + j));
 			}
 			m_particleData->GetPointData()->AddArray(attArray);
 			delete[] att;
-		} else if (dType == RealDouble){
-			double *att = new double[numParticles];
+		} else if (dType == RealDouble) {
+			double* att = new double[numParticles];
 			ier = cg_array_read(i, att);
-			if (ier != 0){
+			if (ier != 0) {
 				delete[] att;
 				goto ERROR;
 			}
 			vtkSmartPointer<vtkDoubleArray> attArray = vtkSmartPointer<vtkDoubleArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (int j = 0; j < numParticles; ++j){
+			for (int j = 0; j < numParticles; ++j) {
 				attArray->InsertNextValue(*(att + j));
 			}
 			m_particleData->GetPointData()->AddArray(attArray);
@@ -581,26 +581,26 @@ ERROR:
 }
 
 
-bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, int *solid)
+bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, int* solid)
 {
 	int ier;
 	char zoneItername[32];
 	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
-	if (ier == 0){
+	if (ier == 0) {
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, zoneItername, 0, "end");
-		if (ier != 0){return false;}
+		if (ier != 0) {return false;}
 		int narrays;
 		ier = cg_narrays(&narrays);
-		if (ier != 0){return false;}
-		for (int i = 1; i <= narrays; ++i){
+		if (ier != 0) {return false;}
+		for (int i = 1; i <= narrays; ++i) {
 			char arrayname[32];
 			DataType_t dataType;
 			int dimension;
 			cgsize_t dimVector[3];
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
-			if (QString(arrayname) == "FlowSolutionPointers"){
+			if (QString(arrayname) == "FlowSolutionPointers") {
 				// FlowSolutionPointers found.
-				char *pointers;
+				char* pointers;
 				// dimension = 2, dimVector = [32, NumberOfSteps].
 				pointers = new char[dimVector[0] * dimVector[1]];
 				cg_array_read(i, pointers);
@@ -613,12 +613,12 @@ bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, in
 				// now, find the solution data and set solId.
 				int nsols;
 				cg_nsols(fn, m_baseId, m_zoneId, &nsols);
-				for (int j = 1; j <= nsols; ++j){
+				for (int j = 1; j <= nsols; ++j) {
 					char solname[32];
 					GridLocation_t location;
 					ier = cg_sol_info(fn, m_baseId, m_zoneId, j, solname, &location);
-					if (ier != 0){return false;}
-					if (currentSolution == solname){
+					if (ier != 0) {return false;}
+					if (currentSolution == solname) {
 						*solid = j;
 						return true;
 					}
@@ -638,20 +638,20 @@ bool PostZoneDataContainer::loadScalarData(const int fn, const int solid)
 	char solname[32];
 	GridLocation_t location;
 	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	vtkDataSetAttributes* data;
-	if (location == Vertex){
+	if (location == Vertex) {
 		// vertex.
 		data = m_data->GetPointData();
-	}else{
+	} else {
 		// cell center.
 		data = m_data->GetCellData();
 	}
 	int narrays;
 	cg_narrays(&narrays);
-	for (int i = 1; i <= narrays; ++i){
+	for (int i = 1; i <= narrays; ++i) {
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
@@ -663,56 +663,56 @@ bool PostZoneDataContainer::loadScalarData(const int fn, const int solid)
 		QRegExp rx;
 		// For example, "VelocityX"
 		rx = QRegExp("(.*)X$");
-		if (rx.indexIn(name) != -1){continue;}
+		if (rx.indexIn(name) != -1) {continue;}
 		// For example, "VelocityY"
 		rx = QRegExp("(.*)Y$");
-		if (rx.indexIn(name) != -1){continue;}
+		if (rx.indexIn(name) != -1) {continue;}
 		// For example, "VelocityZ"
 		rx = QRegExp("(.*)Z$");
-		if (rx.indexIn(name) != -1){continue;}
+		if (rx.indexIn(name) != -1) {continue;}
 
 		int datalen = 1;
-		for (int j = 0; j < dimension; ++j){
+		for (int j = 0; j < dimension; ++j) {
 			datalen *= dimVector[j];
 		}
-		if (datatype == Integer){
+		if (datatype == Integer) {
 			int* data2 = new int[datalen];
 			cg_array_read(i, data2);
 			vtkSmartPointer<vtkIntArray> tmpArray = vtkSmartPointer<vtkIntArray>::New();
 			tmpArray->SetName(arrayname);
 			tmpArray->Allocate(datalen);
-			if (IBC == arrayname){
+			if (IBC == arrayname) {
 				// for IBC values, special handling is done: 0 is inactive the others are all active.
-				for (int j = 0; j < datalen; ++j){
+				for (int j = 0; j < datalen; ++j) {
 					int val = *(data2 + j);
-					if (val != 0){val = 1;}
+					if (val != 0) {val = 1;}
 					tmpArray->InsertNextValue(val);
 				}
 			} else {
-				for (int j = 0; j < datalen; ++j){
+				for (int j = 0; j < datalen; ++j) {
 					tmpArray->InsertNextValue(*(data2 + j));
 				}
 			}
 			delete data2;
 			data->AddArray(tmpArray);
-		} else if (datatype == RealSingle){
+		} else if (datatype == RealSingle) {
 			float* data2 = new float[datalen];
 			cg_array_read(i, data2);
 			vtkSmartPointer<vtkFloatArray> tmpArray = vtkSmartPointer<vtkFloatArray>::New();
 			tmpArray->SetName(arrayname);
 			tmpArray->Allocate(datalen);
-			for (int j = 0; j < datalen; ++j){
+			for (int j = 0; j < datalen; ++j) {
 				tmpArray->InsertNextValue(*(data2 + j));
 			}
 			delete data2;
 			data->AddArray(tmpArray);
-		} else if (datatype == RealDouble){
+		} else if (datatype == RealDouble) {
 			double* data2 = new double[datalen];
 			cg_array_read(i, data2);
 			vtkSmartPointer<vtkDoubleArray> tmpArray = vtkSmartPointer<vtkDoubleArray>::New();
 			tmpArray->SetName(arrayname);
 			tmpArray->Allocate(datalen);
-			for (int j = 0; j < datalen; ++j){
+			for (int j = 0; j < datalen; ++j) {
 				tmpArray->InsertNextValue(*(data2 + j));
 			}
 			delete data2;
@@ -729,14 +729,14 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 	char solname[32];
 	GridLocation_t location;
 	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	vtkDataSetAttributes* data;
-	if (location == Vertex){
+	if (location == Vertex) {
 		// vertex.
 		data = m_data->GetPointData();
-	}else{
+	} else {
 		// cell center.
 		data = m_data->GetCellData();
 	}
@@ -744,7 +744,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 	cg_narrays(&narrays);
 
 	// try to find vector attributes.
-	for (int i = 1; i <= narrays; ++i){
+	for (int i = 1; i <= narrays; ++i) {
 		char arrayname[30];
 		DataType_t datatype;
 		int dimension;
@@ -755,7 +755,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 		QRegExp rx;
 		// find solution with name "VelocityX", for example.
 		rx = QRegExp("(.*)X$");
-		if (rx.indexIn(name) != -1){
+		if (rx.indexIn(name) != -1) {
 			int indexX, indexY, indexZ;
 			// vector data found.
 			QString vectorName = rx.cap(1);
@@ -766,37 +766,37 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 			// try to find Y component. i.e. "VelocityY"
 			QString yname = vectorName;
 			yname.append("Y");
-			for (int j = 1; j <= narrays; ++j){
+			for (int j = 1; j <= narrays; ++j) {
 				char arrayname2[30];
 				DataType_t datatype2;
 				int dimension2;
 				cgsize_t dimVector2[3];
 				cg_array_info(j, arrayname2, &datatype2, &dimension2, dimVector2);
-				if (yname == arrayname2 && datatype == datatype2 && dimension == dimension2){
+				if (yname == arrayname2 && datatype == datatype2 && dimension == dimension2) {
 					indexY = j;
 				}
 			}
-			if (indexY != 0){
+			if (indexY != 0) {
 				// try to find Z component. i.e. "VelocityZ"
 				QString zname = vectorName;
 				zname.append("Z");
-				for (int j = 1; j <= narrays; ++j){
+				for (int j = 1; j <= narrays; ++j) {
 					char arrayname2[30];
 					DataType_t datatype2;
 					int dimension2;
 					cgsize_t dimVector2[3];
 					cg_array_info(j, arrayname2, &datatype2, &dimension2, dimVector2);
-					if (zname == arrayname2 && datatype == datatype2 && dimension == dimension2){
+					if (zname == arrayname2 && datatype == datatype2 && dimension == dimension2) {
 						indexZ = j;
 					}
 				}
 			}
 			// OK, indexX, indexY, indexZ are set correctly.
 			unsigned int datalen = 1;
-			for (int j = 0; j < dimension; ++j){
+			for (int j = 0; j < dimension; ++j) {
 				datalen *= dimVector[j];
 			}
-			if (datatype == Integer){
+			if (datatype == Integer) {
 				int* dataX = new int[datalen];
 				int* dataY = new int[datalen];
 				int* dataZ = new int[datalen];
@@ -804,18 +804,18 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				// read x.
 				cg_array_read(indexX, dataX);
 				// read y.
-				if (indexY != 0){
+				if (indexY != 0) {
 					cg_array_read(indexY, dataY);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataY + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
 				}
 				// read z
-				if (indexZ != 0){
+				if (indexZ != 0) {
 					cg_array_read(indexZ, dataZ);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataZ + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
 				}
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					double sum = 0;
 					sum += *(dataX + j) * (*(dataX + j));
 					sum += *(dataY + j) * (*(dataY + j));
@@ -827,7 +827,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
 				tmpArray->SetNumberOfComponents(3);
 				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
 				}
 				delete dataX;
@@ -838,12 +838,12 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
 				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
 				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					magArray->InsertNextValue(*(dataMag + j));
 				}
 				delete dataMag;
 				data->AddArray(magArray);
-			}else if (datatype == RealSingle){
+			} else if (datatype == RealSingle) {
 				float* dataX = new float[datalen];
 				float* dataY = new float[datalen];
 				float* dataZ = new float[datalen];
@@ -851,18 +851,18 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				// read x.
 				cg_array_read(indexX, dataX);
 				// read y.
-				if (indexY != 0){
+				if (indexY != 0) {
 					cg_array_read(indexY, dataY);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataY + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
 				}
 				// read z
-				if (indexZ != 0){
+				if (indexZ != 0) {
 					cg_array_read(indexZ, dataZ);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataZ + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
 				}
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					double sum = 0;
 					sum += *(dataX + j) * (*(dataX + j));
 					sum += *(dataY + j) * (*(dataY + j));
@@ -874,7 +874,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
 				tmpArray->SetNumberOfComponents(3);
 				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
 				}
 				delete dataX;
@@ -885,12 +885,12 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
 				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
 				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					magArray->InsertNextValue(*(dataMag + j));
 				}
 				delete dataMag;
 				data->AddArray(magArray);
-			}else if (datatype == RealDouble){
+			} else if (datatype == RealDouble) {
 				double* dataX = new double[datalen];
 				double* dataY = new double[datalen];
 				double* dataZ = new double[datalen];
@@ -898,18 +898,18 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				// read x.
 				cg_array_read(indexX, dataX);
 				// read y.
-				if (indexY != 0){
+				if (indexY != 0) {
 					cg_array_read(indexY, dataY);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataY + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
 				}
 				// read z
-				if (indexZ != 0){
+				if (indexZ != 0) {
 					cg_array_read(indexZ, dataZ);
-				}else{
-					for (unsigned int j = 0; j < datalen; ++j){*(dataZ + j) = 0;}
+				} else {
+					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
 				}
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					double sum = 0;
 					sum += *(dataX + j) * (*(dataX + j));
 					sum += *(dataY + j) * (*(dataY + j));
@@ -921,7 +921,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
 				tmpArray->SetNumberOfComponents(3);
 				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
 				}
 				delete dataX;
@@ -932,7 +932,7 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
 				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
 				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j){
+				for (unsigned int j = 0; j < datalen; ++j) {
 					magArray->InsertNextValue(*(dataMag + j));
 				}
 				delete dataMag;
@@ -945,43 +945,43 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 
 bool PostZoneDataContainer::loadCellFlagData(const int fn)
 {
-	if (m_cellDim != 2){
+	if (m_cellDim != 2) {
 		// cell flag data can be loaded only when m_cellDim == 2.
 		return true;
 	}
 
 	const QList<SolverDefinitionGridRelatedCondition*>& conds = m_gridType->gridRelatedConditions();
-	for (auto it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
-		if (! cond->isOption()){continue;}
+		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		if (! cond->isOption()) {continue;}
 		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
-		if (icond == 0){continue;}
+		if (icond == 0) {continue;}
 
 		// this is a cell flag to load.
 		int ier;
 		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridConditions", 0, iRIC::toStr(cond->name()).c_str(), 0, "end");
-		if (ier != 0){
+		if (ier != 0) {
 			// Corresponding node does not exists.
 			return false;
 		}
 		// Find "Value" array.
 		int narrays;
 		cg_narrays(&narrays);
-		for (int i = 1; i <= narrays; ++i){
+		for (int i = 1; i <= narrays; ++i) {
 			char arrayName[ProjectCgnsFile::BUFFERLEN];
 			DataType_t dt;
 			int dataDimension;
 			cgsize_t dimensionVector[3];
 			cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
-			if (QString(arrayName) == "Value"){
+			if (QString(arrayName) == "Value") {
 				// We've found the array!
 				// load data.
 				vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
 				unsigned int count = m_data->GetNumberOfCells();
 				int* data = new int[count];
 				ier = cg_array_read(i, data);
-				for (unsigned int j = 0; j < count; ++j){
+				for (unsigned int j = 0; j < count; ++j) {
 					iarray->InsertNextValue(*(data + j));
 				}
 				delete[] data;
@@ -1001,60 +1001,60 @@ bool PostZoneDataContainer::setupIndexData()
 	indexArray->SetName(iRIC::toStr(labelName).c_str());
 	vtkSmartPointer<vtkDoubleArray> newElevArray;
 	vtkSmartPointer<vtkDoubleArray> origElevArray;
-	if (elevationName() != ""){
+	if (elevationName() != "") {
 		origElevArray = vtkDoubleArray::SafeDownCast(m_data->GetPointData()->GetArray(iRIC::toStr(elevationName()).c_str()));
 		newElevArray = vtkSmartPointer<vtkDoubleArray>::New();
 		newElevArray->SetName(origElevArray->GetName());
 	}
 
-	if (sGrid != nullptr){
+	if (sGrid != nullptr) {
 		// structured grid.
 		int dims[3];
 		sGrid->GetDimensions(dims);
 		QString label;
-		if (dims[2] == 1){
+		if (dims[2] == 1) {
 			label = QString("(%1,%2)");
 		} else {
 			label = QString("(%1,%2,%3)");
 		}
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		for (int i = 0; i < dims[0]; ++i){
+		for (int i = 0; i < dims[0]; ++i) {
 			double p[3];
 			sGrid->GetPoint(nodeIndex(i, 0, 0), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1).arg(1)).c_str());
-			if (newElevArray != nullptr){
+			if (newElevArray != nullptr) {
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(i, 0, 0)));
 			}
 		}
-		for (int j = 1; j < dims[1]; ++j){
+		for (int j = 1; j < dims[1]; ++j) {
 			double p[3];
 			sGrid->GetPoint(nodeIndex(0, j, 0), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1).arg(1)).c_str());
-			if (newElevArray != nullptr){
+			if (newElevArray != nullptr) {
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, j, 0)));
 			}
 		}
-		for (int k = 1; k < dims[2]; ++k){
+		for (int k = 1; k < dims[2]; ++k) {
 			double p[3];
 			sGrid->GetPoint(nodeIndex(0, 0, k), p);
 			points->InsertNextPoint(p);
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(1).arg(1).arg(k + 1)).c_str());
-			if (newElevArray != nullptr){
+			if (newElevArray != nullptr) {
 				newElevArray->InsertNextValue(origElevArray->GetValue(nodeIndex(0, 0, k)));
 			}
 		}
 		m_labelData->SetPoints(points);
 		m_labelData->GetPointData()->AddArray(indexArray);
-		if (newElevArray != nullptr){
+		if (newElevArray != nullptr) {
 			m_labelData->GetPointData()->AddArray(newElevArray);
 		}
 	} else {
 		// unstructured grid.
 		QString label("(%1)");
-		for (int i = 0; i < m_data->GetNumberOfPoints(); ++i){
+		for (int i = 0; i < m_data->GetNumberOfPoints(); ++i) {
 			indexArray->InsertNextValue(iRIC::toStr(label.arg(i + 1)).c_str());
 		}
 		m_labelData->GetPointData()->AddArray(indexArray);
@@ -1070,32 +1070,32 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 	bool ret;
 	// set baseId.
 	ret = setBaseId(fn);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	// set zoneId.
 	ret = setZoneId(fn);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	// first, check whether structured or unstructured.
 	ZoneType_t type;
 	cg_zone_type(fn, m_baseId, m_zoneId, &type);
 	ret = loadZoneSize(fn);
-	if (ret == false){goto ERROR;}
-	if (type == Structured){
+	if (ret == false) {goto ERROR;}
+	if (type == Structured) {
 		ret = loadStructuredGrid(fn, currentStep);
-		if (ret == false){goto ERROR;}
-	}else{
+		if (ret == false) {goto ERROR;}
+	} else {
 		ret = loadUnstructuredGrid(fn, currentStep);
-		if (ret == false){goto ERROR;}
+		if (ret == false) {goto ERROR;}
 	}
 	// load solution data.
 	int solid;
 	ret = getSoluionId(fn, currentStep, &solid);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	ret = loadScalarData(fn, solid);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	ret = loadVectorData(fn, solid);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	ret = loadCellFlagData(fn);
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	ret = setupIndexData();
 
 	// load particles
@@ -1113,7 +1113,7 @@ ERROR:
 
 void PostZoneDataContainer::loadIfEmpty(const int fn)
 {
-	if (m_data != nullptr){return;}
+	if (m_data != nullptr) {return;}
 	loadFromCgnsFile(fn);
 }
 
@@ -1125,7 +1125,7 @@ int PostZoneDataContainer::nodeIndex(int i, int j, int k) const
 	return i + dim[0] * (j + dim[1] * k);
 }
 
-void PostZoneDataContainer::getNodeIJKIndex(int index, int *i, int *j, int *k) const
+void PostZoneDataContainer::getNodeIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
@@ -1144,7 +1144,7 @@ int PostZoneDataContainer::cellIndex(int i, int j, int k) const
 	return i + (dim[0] - 1) * (j + (dim[1] - 1) * k);
 }
 
-void PostZoneDataContainer::getCellIJKIndex(int index, int *i, int *j, int *k) const
+void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) const
 {
 	int dim[3];
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_data);
@@ -1159,10 +1159,10 @@ bool PostZoneDataContainer::scalarValueExists() const
 {
 	vtkPointData* data = m_data->GetPointData();
 	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i){
+	for (int i = 0; i < n; ++i) {
 		vtkDataArray* array = data->GetArray(i);
-		if (array == 0){continue;}
-		if (array->GetNumberOfComponents() == 1){
+		if (array == 0) {continue;}
+		if (array->GetNumberOfComponents() == 1) {
 			// This is a scalar value.
 			return true;
 		}
@@ -1174,10 +1174,10 @@ bool PostZoneDataContainer::vectorValueExists() const
 {
 	vtkPointData* data = m_data->GetPointData();
 	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i){
+	for (int i = 0; i < n; ++i) {
 		vtkDataArray* array = data->GetArray(i);
-		if (array == 0){continue;}
-		if (array->GetNumberOfComponents() == 3){
+		if (array == 0) {continue;}
+		if (array->GetNumberOfComponents() == 3) {
 			// This is a vector value.
 			return true;
 		}
@@ -1189,10 +1189,10 @@ bool PostZoneDataContainer::IBCExists()
 {
 	vtkPointData* data = m_data->GetPointData();
 	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i){
+	for (int i = 0; i < n; ++i) {
 		vtkDataArray* array = data->GetArray(i);
-		if (array == nullptr){continue;}
-		if (IBC == array->GetName()){return true;}
+		if (array == nullptr) {continue;}
+		if (IBC == array->GetName()) {return true;}
 	}
 	return false;
 }
@@ -1204,7 +1204,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 	QString tmpFile = iRIC::getTempFileName(dir);
 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(m_data);
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		vtkStructuredGridWriter* writer = vtkStructuredGridWriter::New();
 		vtkExtractGrid* extract = vtkExtractGrid::New();
 		extract->SetVOI(imin, imax, jmin, jmax, kmin, kmax);
@@ -1218,7 +1218,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 		extract->Delete();
 	}
 	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(m_data);
-	if (ugrid != nullptr){
+	if (ugrid != nullptr) {
 		vtkUnstructuredGridWriter* writer = vtkUnstructuredGridWriter::New();
 		QString header("iRIC output t = %1");
 		writer->SetHeader(iRIC::toStr(header.arg(time)).c_str());
@@ -1227,16 +1227,16 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 		writer->Update();
 		writer->Delete();
 	}
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);
-		if (! ok){
+		if (! ok) {
 			// error occured while removing old file.
 			QFile::remove(tmpFile);
 			return false;
 		}
 	}
 	bool ok = QFile::rename(tmpFile, filename);
-	if (! ok){
+	if (! ok) {
 		QFile::remove(tmpFile);
 		return false;
 	}
@@ -1245,47 +1245,47 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 
 bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
 {
-	if (QFile::exists(filename)){
+	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);
-		if (! ok){
+		if (! ok) {
 			return false;
 		}
 	}
 
 	QFile f(filename);
 	bool ok = f.open(QIODevice::WriteOnly);
-	if (! ok){return false;}
+	if (! ok) {return false;}
 	QTextStream stream(&f);
 
 	vtkPointData* pData = m_data->GetPointData();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(m_data);
 
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		int dim[3];
 		sgrid->GetDimensions(dim);
 		stream << "iRIC output t = " << time << "\r\n";
 		stream << dim[0];
-		if (dim[1] != 1){stream << "," << dim[1];}
-		if (dim[2] != 1){stream << "," << dim[2];}
+		if (dim[1] != 1) {stream << "," << dim[1];}
+		if (dim[2] != 1) {stream << "," << dim[2];}
 		stream << "\r\n";
 		// header
 		stream << "I";
-		if (dim[1] != 1){stream << ",J";}
-		if (dim[2] != 1){stream << ",K";}
+		if (dim[1] != 1) {stream << ",J";}
+		if (dim[2] != 1) {stream << ",K";}
 		stream << ",X";
 		stream << ",Y";
-		if (dim[2] != 1){stream << ",Z";}
-		for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
+		if (dim[2] != 1) {stream << ",Z";}
+		for (int i = 0; i < pData->GetNumberOfArrays(); ++i) {
 			vtkDataArray* array = pData->GetArray(i);
 			int comps = array->GetNumberOfComponents();
 			QString name = pData->GetArrayName(i);
-			if (comps == 1){
+			if (comps == 1) {
 				stream << "," << name;
-			} else if (comps == 2){
+			} else if (comps == 2) {
 				stream << "," << name << "X," << name << "Y";
-			} else if (comps == 3){
+			} else if (comps == 3) {
 				stream << "," << name << "X," << name << "Y";
-				if (dim[2] != 1){
+				if (dim[2] != 1) {
 					stream << "," << name << "Z";
 				}
 			}
@@ -1294,30 +1294,30 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 
 		stream.setRealNumberNotation(QTextStream::ScientificNotation);
 		// data
-		for (int k = kmin; k <= kmax; ++k){
-			for (int j = jmin; j <= jmax; ++j){
-				for (int i = imin; i <= imax; ++i){
+		for (int k = kmin; k <= kmax; ++k) {
+			for (int j = jmin; j <= jmax; ++j) {
+				for (int i = imin; i <= imax; ++i) {
 					stream << (i + 1);
-					if (dim[1] != 1){stream << "," << (j + 1);}
-					if (dim[2] != 1){stream << "," << (k + 1);}
+					if (dim[1] != 1) {stream << "," << (j + 1);}
+					if (dim[2] != 1) {stream << "," << (k + 1);}
 					double pos[3];
 					sgrid->GetPoint(nodeIndex(i, j, k), pos);
 					stream.setRealNumberPrecision(15);
 					stream << "," << pos[0] << "," << pos[1];
-					if (dim[2] != 1){stream << "," << pos[2];}
+					if (dim[2] != 1) {stream << "," << pos[2];}
 					stream.setRealNumberPrecision(8);
-					for (int l = 0; l < pData->GetNumberOfArrays(); ++l){
+					for (int l = 0; l < pData->GetNumberOfArrays(); ++l) {
 						vtkDataArray* array = pData->GetArray(l);
 						int comps = array->GetNumberOfComponents();
-						if (comps == 1){
+						if (comps == 1) {
 							stream << "," << array->GetTuple1(nodeIndex(i, j, k));
-						} else if (comps == 2){
+						} else if (comps == 2) {
 							double* tuples = array->GetTuple2(nodeIndex(i, j, k));
 							stream << "," << *tuples << "," << *(tuples + 1);
-						} else if (comps == 3){
+						} else if (comps == 3) {
 							double* tuples = array->GetTuple3(nodeIndex(i, j, k));
 							stream << "," << *tuples << "," << *(tuples + 1);
-							if (dim[2] != 1){
+							if (dim[2] != 1) {
 								stream << "," << *(tuples + 2);
 							}
 						}
@@ -1328,7 +1328,7 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 		}
 	}
 	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(m_data);
-	if (ugrid != nullptr){
+	if (ugrid != nullptr) {
 		stream << "iRIC output t = " << time << "\r\n";
 		stream << ugrid->GetNumberOfPoints();
 		stream << "\r\n";
@@ -1336,37 +1336,37 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 		stream << "I";
 		stream << ",X";
 		stream << ",Y";
-		for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
+		for (int i = 0; i < pData->GetNumberOfArrays(); ++i) {
 			vtkDataArray* array = pData->GetArray(i);
-			if (array == nullptr){continue;}
+			if (array == nullptr) {continue;}
 			int comps = array->GetNumberOfComponents();
 			QString name = pData->GetArrayName(i);
-			if (comps == 1){
+			if (comps == 1) {
 				stream << "," << name;
-			} else if (comps == 2){
+			} else if (comps == 2) {
 				stream << "," << name << "X," << name << "Y";
-			} else if (comps == 3){
+			} else if (comps == 3) {
 				stream << "," << name << "X," << name << "Y";
 			}
 		}
 		stream << "\r\n";
 		// data
-		for (int i = 0; i < ugrid->GetNumberOfPoints(); ++i){
+		for (int i = 0; i < ugrid->GetNumberOfPoints(); ++i) {
 			stream << i;
 			double pos[3];
 			ugrid->GetPoint(i, pos);
 			// unstructured grid is limited to two-dimensional.
 			stream << "," << pos[0] << "," << pos[1];
-			for (int l = 0; l < pData->GetNumberOfArrays(); ++l){
+			for (int l = 0; l < pData->GetNumberOfArrays(); ++l) {
 				vtkDataArray* array = pData->GetArray(l);
-				if (array == nullptr){continue;}
+				if (array == nullptr) {continue;}
 				int comps = array->GetNumberOfComponents();
-				if (comps == 1){
+				if (comps == 1) {
 					stream << "," << array->GetTuple1(i);
-				} else if (comps == 2){
+				} else if (comps == 2) {
 					double* tuples = array->GetTuple2(i);
 					stream << "," << *tuples << "," << *(tuples + 1);
-				} else if (comps == 3){
+				} else if (comps == 3) {
 					double* tuples = array->GetTuple3(i);
 					stream << "," << *tuples << "," << *(tuples + 1);
 				}
@@ -1381,9 +1381,9 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 const QString PostZoneDataContainer::elevationName()
 {
 	int num = m_data->GetPointData()->GetNumberOfArrays();
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		QString tmpname = m_data->GetPointData()->GetAbstractArray(i)->GetName();
-		if (tmpname.toLower().left(9) == "elevation"){
+		if (tmpname.toLower().left(9) == "elevation") {
 			return tmpname;
 		}
 	}
@@ -1392,7 +1392,7 @@ const QString PostZoneDataContainer::elevationName()
 
 vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
-	if (vtkStructuredGrid::SafeDownCast(m_data) != nullptr){
+	if (vtkStructuredGrid::SafeDownCast(m_data) != nullptr) {
 		// Structured Data
 		return filteredDataStructured(xmin, xmax, ymin, ymax, masked);
 	} else {
@@ -1418,8 +1418,8 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 
 	// 1. Find the grid vertex that is the nearest to the region center.
 	vtkIdType vid = m_data->FindPoint(xcenter, ycenter, 0);
-	double *cv = m_data->GetPoint(vid);
-	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax){
+	double* cv = m_data->GetPoint(vid);
+	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
 		emptyPoly->SetPoints(m_data->GetPoints());
@@ -1437,28 +1437,28 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 
 	// test I = 0
 	m_data->GetPoint(nodeIndex(0, centerJ, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMin = 0;
 	} else {
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
 	}
 	// test I = imax
 	m_data->GetPoint(nodeIndex(m_sizes[0] - 1, centerJ, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMax = m_sizes[0] - 1;
 	} else {
 		lineLimitIMax = lineLimitI(centerJ, centerI, m_sizes[0] - 1, region);
 	}
 	// test J = 0
 	m_data->GetPoint(nodeIndex(centerI, 0, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMin = 0;
 	} else {
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
 	}
 	// test J = jmax
 	m_data->GetPoint(nodeIndex(centerI, m_sizes[1] - 1, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMax = m_sizes[1] - 1;
 	} else {
 		lineLimitJMax = lineLimitJ(centerI, centerJ, m_sizes[1] - 1, region);
@@ -1467,20 +1467,20 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
 
 	// test I min direction
-	if (lineLimitIMin == 0){
+	if (lineLimitIMin == 0) {
 		lineLimitIMin2 = 0;
 	} else {
-		if (lineAtIIntersect(0, region)){
+		if (lineAtIIntersect(0, region)) {
 			lineLimitIMin2 = 0;
 		} else {
 			lineLimitIMin2 = lineLimitI2(lineLimitIMin, 0, region);
 		}
 	}
 	// test I max direction
-	if (lineLimitIMax == m_sizes[0] - 1){
+	if (lineLimitIMax == m_sizes[0] - 1) {
 		lineLimitIMax2 = m_sizes[0] - 1;
 	} else {
-		if (lineAtIIntersect(m_sizes[0] - 1, region)){
+		if (lineAtIIntersect(m_sizes[0] - 1, region)) {
 			lineLimitIMax2 = m_sizes[0] - 1;
 		} else {
 			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_sizes[0] - 1, region);
@@ -1488,20 +1488,20 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	}
 
 	// test J min direction
-	if (lineLimitJMin == 0){
+	if (lineLimitJMin == 0) {
 		lineLimitJMin2 = 0;
 	} else {
-		if (lineAtJIntersect(0, region)){
+		if (lineAtJIntersect(0, region)) {
 			lineLimitJMin2 = 0;
 		} else {
 			lineLimitJMin2 = lineLimitJ2(lineLimitJMin, 0, region);
 		}
 	}
 	// test J max direction
-	if (lineLimitJMax == m_sizes[1] - 1){
+	if (lineLimitJMax == m_sizes[1] - 1) {
 		lineLimitJMax2 = m_sizes[1] - 1;
 	} else {
-		if (lineAtJIntersect(m_sizes[1] - 1, region)){
+		if (lineAtJIntersect(m_sizes[1] - 1, region)) {
 			lineLimitJMax2 = m_sizes[1] - 1;
 		} else {
 			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_sizes[1] - 1, region);
@@ -1514,7 +1514,7 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
-	while (extractedGrid->GetNumberOfCells() > Grid::MAX_DRAWCELLCOUNT){
+	while (extractedGrid->GetNumberOfCells() > Grid::MAX_DRAWCELLCOUNT) {
 		exRate *= 2;
 		exGrid->SetSampleRate(exRate, exRate, 1);
 		exGrid->Update();
@@ -1592,13 +1592,13 @@ vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(double xmin, double
 
 int PostZoneDataContainer::lineLimitI(int j, int iIn, int iOut, const RectRegion& region) const
 {
-	if (qAbs(iOut - iIn) == 1){
+	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
 	}
 	int i = (iIn + iOut) / 2;
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitI(j, i, iOut, region);
 	} else {
 		return lineLimitI(j, iIn, i, region);
@@ -1607,13 +1607,13 @@ int PostZoneDataContainer::lineLimitI(int j, int iIn, int iOut, const RectRegion
 
 int PostZoneDataContainer::lineLimitJ(int i, int jIn, int jOut, const RectRegion& region) const
 {
-	if (qAbs(jOut - jIn) == 1){
+	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
 	}
 	int j = (jIn + jOut) / 2;
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitJ(i, j, jOut, region);
 	} else {
 		return lineLimitJ(i, jIn, j, region);
@@ -1622,11 +1622,11 @@ int PostZoneDataContainer::lineLimitJ(int i, int jIn, int jOut, const RectRegion
 
 int PostZoneDataContainer::lineLimitI2(int iIn, int iOut, const RectRegion& region) const
 {
-	if (qAbs(iOut - iIn) == 1){
+	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
 	}
 	int i = (iIn + iOut) / 2;
-	if (lineAtIIntersect(i, region)){
+	if (lineAtIIntersect(i, region)) {
 		return lineLimitI2(i, iOut, region);
 	} else {
 		return lineLimitI2(iIn, i, region);
@@ -1635,11 +1635,11 @@ int PostZoneDataContainer::lineLimitI2(int iIn, int iOut, const RectRegion& regi
 
 int PostZoneDataContainer::lineLimitJ2(int jIn, int jOut, const RectRegion& region) const
 {
-	if (qAbs(jOut - jIn) == 1){
+	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
 	}
 	int j = (jIn + jOut) / 2;
-	if (lineAtJIntersect(j, region)){
+	if (lineAtJIntersect(j, region)) {
 		return lineLimitJ2(j, jOut, region);
 	} else {
 		return lineLimitJ2(jIn, j, region);
@@ -1652,11 +1652,11 @@ bool PostZoneDataContainer::lineAtIIntersect(int i, const RectRegion& region) co
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(i, 0, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < m_sizes[1]; ++j){
+	for (int j = 1; j < m_sizes[1]; ++j) {
 		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
-		if (region.intersect(line)){return true;}
+		if (region.intersect(line)) {return true;}
 	}
 	return false;
 }
@@ -1667,11 +1667,11 @@ bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) co
 	double tmpv[3];
 	m_data->GetPoint(nodeIndex(0, j, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < m_sizes[0]; ++i){
+	for (int i = 1; i < m_sizes[0]; ++i) {
 		m_data->GetPoint(nodeIndex(i, j, 0), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
-		if (region.intersect(line)){return true;}
+		if (region.intersect(line)) {return true;}
 	}
 	return false;
 }

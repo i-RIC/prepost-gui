@@ -13,7 +13,7 @@ public:
 	~Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();
-	Structured15DGridWithCrossSectionCrossSectionWindow* window(){
+	Structured15DGridWithCrossSectionCrossSectionWindow* window() {
 		return m_window;
 	}
 protected:

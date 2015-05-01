@@ -56,11 +56,11 @@ bool GridCreatingConditionTriangleAbstractPolygon::isEdgeSelectable(const QVecto
 	double pcoords[3];
 	double weights[32];
 	double d = limitdist * limitdist;
-	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i) {
 		vtkCell* cell = m_edgeGrid->GetCell(i);
 		double dist;
-		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-			if (dist < d){
+		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)) {
+			if (dist < d) {
 				// this is the selected edge.
 				m_selectedEdgeId = i;
 				return true;
@@ -81,14 +81,14 @@ const QPolygonF GridCreatingConditionTriangleAbstractPolygon::polygon(QPointF of
 	QPolygonF ret;
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	vtkPoints* points = m_vtkPolygon->GetPoints();
-	if (points->GetNumberOfPoints() == 0){return ret;}
+	if (points->GetNumberOfPoints() == 0) {return ret;}
 	int vCount = idlist->GetNumberOfIds();
 	QPointF lastP, newP;
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-		if (i == 0 || lastP != newP){
+		if (i == 0 || lastP != newP) {
 			ret << newP;
 		}
 		lastP = newP;
@@ -98,7 +98,7 @@ const QPolygonF GridCreatingConditionTriangleAbstractPolygon::polygon(QPointF of
 	vtkIdType id = idlist->GetId(0);
 	double* p = points->GetPoint(id);
 	newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-	if (lastP != newP){
+	if (lastP != newP) {
 		ret << newP;
 	}
 	return ret;
@@ -106,13 +106,13 @@ const QPolygonF GridCreatingConditionTriangleAbstractPolygon::polygon(QPointF of
 
 void GridCreatingConditionTriangleAbstractPolygon::setPolygon(const QPolygonF& p)
 {
-	if (! p.isClosed()){
+	if (! p.isClosed()) {
 		throw ErrorMessage(tr("Please specify a closed polygon!"));
 	}
 	m_vtkPolygon->Initialize();
 	vtkPoints* points = m_vtkPolygon->GetPoints();
 	points->SetNumberOfPoints(p.count() - 1);
-	for (int i = 0; i < p.count() - 1; ++i){
+	for (int i = 0; i < p.count() - 1; ++i) {
 		QPointF point = p.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -173,21 +173,21 @@ void GridCreatingConditionTriangleAbstractPolygon::updateShapeData()
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	idlist->Reset();
 	idlist->SetNumberOfIds(points->GetNumberOfPoints());
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
 		idlist->SetId(i, i);
 	}
 	idlist->Modified();
 
 	// set the polygon into grid.
 	m_vtkGrid->Reset();
-	if (m_vtkPolygon->GetPoints()->GetNumberOfPoints() > 0){
+	if (m_vtkPolygon->GetPoints()->GetNumberOfPoints() > 0) {
 		// triangulate the polygon, and add the triangle cells into the grid.
 		vtkSmartPointer<vtkIdList> triIds = vtkSmartPointer<vtkIdList>::New();
 		m_vtkPolygon->Triangulate(triIds);
 		vtkIdType triFirst = 0;
-		while (triFirst < triIds->GetNumberOfIds()){
+		while (triFirst < triIds->GetNumberOfIds()) {
 			vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-			for (int i = 0; i < 3; ++i){
+			for (int i = 0; i < 3; ++i) {
 				tri->GetPointIds()->SetId(i, triIds->GetId(triFirst + i));
 			}
 			m_vtkGrid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
@@ -200,7 +200,7 @@ void GridCreatingConditionTriangleAbstractPolygon::updateShapeData()
 	m_edgeGrid->Reset();
 	int edgeCount = m_vtkPolygon->GetNumberOfEdges();
 	m_edgeGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkCell* nextCell = m_vtkPolygon->GetEdge(i);
 		m_edgeGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
 	}
@@ -213,7 +213,7 @@ void GridCreatingConditionTriangleAbstractPolygon::updateShapeData()
 	vtkIdType vertexId = 0;
 	int vertexCount = m_vtkPolygon->GetNumberOfPoints();
 	m_vertexGrid->Allocate(vertexCount);
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		vtkVertex* nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_vertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
@@ -232,9 +232,9 @@ void GridCreatingConditionTriangleAbstractPolygon::setZDepthRange(double min, do
 
 void GridCreatingConditionTriangleAbstractPolygon::setActive(bool active)
 {
-	if (active){
+	if (active) {
 		m_parent->actorCollection()->AddItem(m_vertexActor);
-	}else{
+	} else {
 		m_vertexActor->VisibilityOff();
 		m_parent->actorCollection()->RemoveItem(m_vertexActor);
 	}
@@ -251,7 +251,7 @@ QPointF GridCreatingConditionTriangleAbstractPolygon::innerPoint(QPointF offset)
 	int baseId = 0;
 	int pnum = m_vtkPolygon->GetNumberOfPoints();
 
-	for (int i = 0; i < pnum && ! found; ++i){
+	for (int i = 0; i < pnum && ! found; ++i) {
 		m_vtkPolygon->GetPoints()->GetPoint(baseId, v);
 		basePoint = QVector2D(v[0] - offset.x(), v[1] - offset.y());
 		m_vtkPolygon->GetPoints()->GetPoint((baseId + 1) % pnum, v);
@@ -264,12 +264,12 @@ QPointF GridCreatingConditionTriangleAbstractPolygon::innerPoint(QPointF offset)
 
 		nom = basePoint + v1 + v2;
 		nomP = QPointF(nom.x(), nom.y());
-		if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+		if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 			return nomP;
-		}else{
+		} else {
 			nom = basePoint - v1 - v2;
 			nomP = QPointF(nom.x(), nom.y());
-			if (poly.containsPoint(nomP, Qt::OddEvenFill)){
+			if (poly.containsPoint(nomP, Qt::OddEvenFill)) {
 				return nomP;
 			}
 		}

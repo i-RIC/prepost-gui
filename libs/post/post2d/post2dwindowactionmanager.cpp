@@ -57,7 +57,7 @@ void Post2dWindowActionManager::setupMeasuredDataMenu()
 {
 	m_measuredDataMenu = new QMenu(tr("&Measured Data"), m_post2dWindow);
 
-    measuredDataPointAction = new QAction(tr("&Scalar..."), this);
+	measuredDataPointAction = new QAction(tr("&Scalar..."), this);
 	m_measuredDataMenu->addAction(measuredDataPointAction);
 
 	measuredDataVectorAction = new QAction(tr("&Arrows..."), this);

@@ -1,7 +1,7 @@
 #include "rawdatanetcdfimporterdateselectdialog.h"
 #include "ui_rawdatanetcdfimporterdateselectdialog.h"
 
-RawDataNetcdfImporterDateSelectDialog::RawDataNetcdfImporterDateSelectDialog(QWidget *parent) :
+RawDataNetcdfImporterDateSelectDialog::RawDataNetcdfImporterDateSelectDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataNetcdfImporterDateSelectDialog)
 {

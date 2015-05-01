@@ -31,8 +31,8 @@ public:
 	void addCustomMenuItems(QMenu* menu);
 
 	// Standard mouse event handlers
-	void informSelection(VTKGraphicsView *v);
-	void informDeselection(VTKGraphicsView *v);
+	void informSelection(VTKGraphicsView* v);
+	void informDeselection(VTKGraphicsView* v);
 
 	void informgridRelatedConditionChange(const QString& name);
 	void updateZDepthRangeItemCount();
@@ -40,16 +40,16 @@ public:
 	PostZoneDataContainer* dataContainer();
 	vtkPolyData* filteredData() const {return m_filteredData;}
 	bool isMasked() const {return m_isMasked;}
-	int zoneNumber(){return m_zoneNumber;}
-	QString zoneName(){return m_zoneName;}
+	int zoneNumber() {return m_zoneNumber;}
+	QString zoneName() {return m_zoneName;}
 	void update(bool noparticle = false);
-	Post2dWindowGridShapeDataItem* gridShapeDataItem(){return m_shapeDataItem;}
-	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem(){return m_scalarGroupDataItem;}
-	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem(){return m_arrowGroupDataItem;}
-	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem(){return m_streamlineGroupDataItem;}
-	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem(){return m_particleGroupDataItem;}
-	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem(){return m_cellFlagGroupDataItem;}
-	Post2dWindowParticlesTopDataItem* particlesDataItem(){return m_particlesDataItem;}
+	Post2dWindowGridShapeDataItem* gridShapeDataItem() {return m_shapeDataItem;}
+	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem() {return m_scalarGroupDataItem;}
+	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() {return m_arrowGroupDataItem;}
+	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() {return m_streamlineGroupDataItem;}
+	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() {return m_particleGroupDataItem;}
+	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() {return m_cellFlagGroupDataItem;}
+	Post2dWindowParticlesTopDataItem* particlesDataItem() {return m_particlesDataItem;}
 
 	void initNodeAttributeBrowser();
 	void clearNodeAttributeBrowser();

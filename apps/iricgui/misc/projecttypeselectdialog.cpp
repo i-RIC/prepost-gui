@@ -1,16 +1,16 @@
 #include "projecttypeselectdialog.h"
 #include "ui_projecttypeselectdialog.h"
 
-ProjectTypeSelectDialog::ProjectTypeSelectDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::ProjectTypeSelectDialog)
+ProjectTypeSelectDialog::ProjectTypeSelectDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::ProjectTypeSelectDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 ProjectTypeSelectDialog::~ProjectTypeSelectDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 bool ProjectTypeSelectDialog::folderProject()

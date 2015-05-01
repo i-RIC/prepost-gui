@@ -45,7 +45,7 @@ PreProcessorGridRelatedConditionCellDataItem::PreProcessorGridRelatedConditionCe
 	m_standardItemCopy = m_standardItem->clone();
 
 	connect(this, SIGNAL(changed(PreProcessorGridRelatedConditionCellDataItem*)),
-		parent, SLOT(exclusivelyCheck(PreProcessorGridRelatedConditionCellDataItem*)));
+					parent, SLOT(exclusivelyCheck(PreProcessorGridRelatedConditionCellDataItem*)));
 
 	m_editValueAction = new QAction(tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -76,7 +76,7 @@ QDialog* PreProcessorGridRelatedConditionCellDataItem::propertyDialog(QWidget* p
 	return dialog;
 }
 
-void PreProcessorGridRelatedConditionCellDataItem::handlePropertyDialogAccepted(QDialog *propDialog)
+void PreProcessorGridRelatedConditionCellDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridRelatedCellConditionPropertyDialog* dialog = dynamic_cast<GridRelatedCellConditionPropertyDialog*>(propDialog);
 
@@ -95,7 +95,7 @@ void PreProcessorGridRelatedConditionCellDataItem::doSaveToProjectMainFile(QXmlS
 	QString mod;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g != nullptr){
+	if (g != nullptr) {
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		mod.setNum(static_cast<int>(cont->isCustomModified()));
 		writer.writeAttribute("isCustomModified", mod);
@@ -106,32 +106,32 @@ void PreProcessorGridRelatedConditionCellDataItem::loadFromCgnsFile(const int /*
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
-	if (g == nullptr){return;}
+	if (g == nullptr) {return;}
 	GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
 }
 
 void PreProcessorGridRelatedConditionCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_definingBoundingBox){
+	if (m_definingBoundingBox) {
 		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMouseMoveEvent(event, v);
 	} else {
 		dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
 	}
-/*
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (tmpparent->grid()->isMasked()){
-		v->setCursor(Qt::ForbiddenCursor);
-	} else {
-		v->setCursor(Qt::ArrowCursor);
-	}
-*/
+	/*
+		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+		if (tmpparent->grid()->isMasked()){
+			v->setCursor(Qt::ForbiddenCursor);
+		} else {
+			v->setCursor(Qt::ArrowCursor);
+		}
+	*/
 }
 
 void PreProcessorGridRelatedConditionCellDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		// start drawing the mouse bounding box.
 		m_definingBoundingBox = true;
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMousePressEvent(event, v);
@@ -142,20 +142,20 @@ void PreProcessorGridRelatedConditionCellDataItem::mouseReleaseEvent(QMouseEvent
 {
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (event->button() == Qt::LeftButton){
-		if (m_definingBoundingBox){
+	if (event->button() == Qt::LeftButton) {
+		if (m_definingBoundingBox) {
 			tmpparent->cellSelectingMouseReleaseEvent(event, v);
 		}
 		m_definingBoundingBox = false;
 		dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(parent())->fixAttributeBrowser(QPoint(event->x(), event->y()), v);
 		v->setCursor(tmpparent->normalCursor());
-	} else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		PreProcessorGridRelatedConditionCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(parent());
-		if (menu != nullptr){delete menu;}
+		if (menu != nullptr) {delete menu;}
 		menu = new QMenu(projectData()->mainWindow());
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(tmpparent->selectedCells().count() > 0);
-		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == nullptr){
+		if (! m_condition->isOption() && dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) == nullptr) {
 			menu->addAction(m_editVariationAction);
 			m_editVariationAction->setEnabled(tmpparent->selectedCells().count() > 0);
 		}
@@ -166,13 +166,13 @@ void PreProcessorGridRelatedConditionCellDataItem::mouseReleaseEvent(QMouseEvent
 	}
 }
 
-void PreProcessorGridRelatedConditionCellDataItem::keyPressEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridRelatedConditionCellDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	gitem->cellSelectingKeyPressEvent(event, v);
 }
 
-void PreProcessorGridRelatedConditionCellDataItem::keyReleaseEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridRelatedConditionCellDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	gitem->cellSelectingKeyReleaseEvent(event, v);
@@ -187,7 +187,7 @@ void PreProcessorGridRelatedConditionCellDataItem::addCustomMenuItems(QMenu* men
 void PreProcessorGridRelatedConditionCellDataItem::editValue()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -203,7 +203,7 @@ void PreProcessorGridRelatedConditionCellDataItem::editValue()
 	Grid* g = tmpparent->grid();
 	dialog->scanAndSetDefault(g->gridRelatedCondition(m_condition->name()), targets);
 
-	if (QDialog::Accepted == dialog->exec()){
+	if (QDialog::Accepted == dialog->exec()) {
 		dialog->applyValue(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
 	}
 	delete dialog;
@@ -212,7 +212,7 @@ void PreProcessorGridRelatedConditionCellDataItem::editValue()
 void PreProcessorGridRelatedConditionCellDataItem::editVariation()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -223,7 +223,7 @@ void PreProcessorGridRelatedConditionCellDataItem::editVariation()
 	QVector<vtkIdType> targets = tmpparent->selectedCells();
 	Grid* g = tmpparent->grid();
 
-	if (QDialog::Accepted == dialog->exec()){
+	if (QDialog::Accepted == dialog->exec()) {
 		dialog->applyVariation(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
 	}
 	delete dialog;
@@ -248,9 +248,9 @@ void PreProcessorGridRelatedConditionCellDataItem::informDataChange()
 }
 
 
-bool PreProcessorGridRelatedConditionCellDataItem::addToolBarButtons(QToolBar *toolbar)
+bool PreProcessorGridRelatedConditionCellDataItem::addToolBarButtons(QToolBar* toolbar)
 {
 	PreProcessorDataItem* item =
-			dynamic_cast<PreProcessorDataItem*> (parent());
+		dynamic_cast<PreProcessorDataItem*>(parent());
 	return item->addToolBarButtons(toolbar);
 }

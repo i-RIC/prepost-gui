@@ -7,7 +7,7 @@
 
 
 GridCreatingConditionRiverSurveyPointMoveDialog::GridCreatingConditionRiverSurveyPointMoveDialog(
-	GridCreatingConditionRiverSurvey* gc, double lowerLimit, double upperLimit, QWidget *parent) :
+	GridCreatingConditionRiverSurvey* gc, double lowerLimit, double upperLimit, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRiverSurveyPointMoveDialog)
 {
@@ -44,7 +44,7 @@ void GridCreatingConditionRiverSurveyPointMoveDialog::accept()
 void GridCreatingConditionRiverSurveyPointMoveDialog::doOffset(bool preview)
 {
 	this->setSValue();
-	if (m_SValue > 0){
+	if (m_SValue > 0) {
 		iRICUndoStack::instance().push(
 			new GridCreatingConditionCtrlPointMoveCommand(preview, m_SValue * m_UpperLimit, m_condition));
 	} else {
@@ -56,7 +56,7 @@ void GridCreatingConditionRiverSurveyPointMoveDialog::doOffset(bool preview)
 
 void GridCreatingConditionRiverSurveyPointMoveDialog::doReset()
 {
-	if (m_applied){
+	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
 	m_applied = false;
@@ -77,9 +77,9 @@ void GridCreatingConditionRiverSurveyPointMoveDialog::reject()
 
 void GridCreatingConditionRiverSurveyPointMoveDialog::on_buttonBox_clicked(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }

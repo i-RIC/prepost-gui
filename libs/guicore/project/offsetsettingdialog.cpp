@@ -2,7 +2,7 @@
 #include "ui_offsetsettingdialog.h"
 #include <QMessageBox>
 
-OffsetSettingDialog::OffsetSettingDialog(QWidget *parent) :
+OffsetSettingDialog::OffsetSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::OffsetSettingDialog)
 {
@@ -33,13 +33,13 @@ double OffsetSettingDialog::offsetY() const
 void OffsetSettingDialog::accept()
 {
 	bool xOK = isPrecisionGood(ui->xEdit->value());
-	if (! xOK){
+	if (! xOK) {
 		QMessageBox::warning(this, tr("Warning"), tr("X value is not appropriate. Please input more simple value."));
 		return;
 	}
 
 	bool yOK = isPrecisionGood(ui->yEdit->value());
-	if (! yOK){
+	if (! yOK) {
 		QMessageBox::warning(this, tr("Warning"), tr("Y value is not appropriate. Please input more simple value."));
 		return;
 	}
@@ -47,7 +47,8 @@ void OffsetSettingDialog::accept()
 	QDialog::accept();
 }
 
-bool OffsetSettingDialog::isPrecisionGood(double v){
+bool OffsetSettingDialog::isPrecisionGood(double v)
+{
 	QString vstr = QString::number(v);
 	double v2 = vstr.toDouble();
 	return (v == v2);

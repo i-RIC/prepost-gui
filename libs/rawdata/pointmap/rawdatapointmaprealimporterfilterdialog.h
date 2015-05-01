@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataPointmapRealImporterFilterDialog;
 }
 
@@ -12,12 +13,12 @@ class RawDataPointmapRealImporterFilterDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataPointmapRealImporterFilterDialog(QWidget *parent = nullptr);
+	explicit RawDataPointmapRealImporterFilterDialog(QWidget* parent = nullptr);
 	~RawDataPointmapRealImporterFilterDialog();
 	int filterValue();
 
 private:
-	Ui::RawDataPointmapRealImporterFilterDialog *ui;
+	Ui::RawDataPointmapRealImporterFilterDialog* ui;
 };
 
 #endif // RAWDATAPOINTMAPREALIMPORTERFILTERDIALOG_H

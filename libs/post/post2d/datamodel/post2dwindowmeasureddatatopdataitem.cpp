@@ -25,7 +25,7 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem *parent)
+Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
 	: Post2dWindowDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
 	m_subFolder = "measureddata";
@@ -55,9 +55,9 @@ Post2dWindowMeasuredDataTopDataItem::~Post2dWindowMeasuredDataTopDataItem()
 
 void Post2dWindowMeasuredDataTopDataItem::setupChildItem()
 {
-	if (projectData()->mainfile()->measuredDatas().count() == 0){return;}
+	if (projectData()->mainfile()->measuredDatas().count() == 0) {return;}
 	const QList<MeasuredData*>& measuredDatas = projectData()->mainfile()->measuredDatas();
-	for (auto it = measuredDatas.begin(); it != measuredDatas.end(); ++it){
+	for (auto it = measuredDatas.begin(); it != measuredDatas.end(); ++it) {
 		MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(*it, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(fItem);
@@ -76,17 +76,17 @@ void Post2dWindowMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void Post2dWindowMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("MeasuredDataFile");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
-const QList<MeasuredDataFileDataItem *> Post2dWindowMeasuredDataTopDataItem::fileDataItems() const
+const QList<MeasuredDataFileDataItem*> Post2dWindowMeasuredDataTopDataItem::fileDataItems() const
 {
 	QList<MeasuredDataFileDataItem*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		MeasuredDataFileDataItem* item = dynamic_cast<MeasuredDataFileDataItem*>(*it);
 		ret.append(item);
 	}

@@ -55,7 +55,7 @@ void Graph2dScatteredWindowProjectDataItem::doLoadFromProjectMainFile(const QDom
 	Graph2dScatteredWindow* w = dynamic_cast<Graph2dScatteredWindow*>(m_window);
 
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
-	if (! modelNode.isNull()){
+	if (! modelNode.isNull()) {
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}

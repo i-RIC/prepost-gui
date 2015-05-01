@@ -3,11 +3,11 @@
 
 #include <QMessageBox>
 
-Graph2dHybridWindowContinuousExportDialog::Graph2dHybridWindowContinuousExportDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Graph2dHybridWindowContinuousExportDialog)
+Graph2dHybridWindowContinuousExportDialog::Graph2dHybridWindowContinuousExportDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Graph2dHybridWindowContinuousExportDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	connect(ui->currentRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(regionCurrentToggled(bool)));
 	connect(ui->fullRegionCheckBox, SIGNAL(toggled(bool)), this, SLOT(fullRegionToggled(bool)));
 	connect(ui->iMinSlider, SIGNAL(valueChanged(int)), this, SLOT(iMinChanged(int)));
@@ -27,7 +27,7 @@ Graph2dHybridWindowContinuousExportDialog::Graph2dHybridWindowContinuousExportDi
 
 Graph2dHybridWindowContinuousExportDialog::~Graph2dHybridWindowContinuousExportDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4])
@@ -64,12 +64,12 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 	ui->indexMaxLabel->hide();
 	ui->indexMaxSlider->hide();
 
-	if (info == nullptr){return;}
-	switch (info->dataType){
+	if (info == nullptr) {return;}
+	switch (info->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -77,7 +77,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -86,12 +86,12 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 			ui->jMinSlider->show();
 			ui->jMaxLabel->show();
 			ui->jMaxSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jMinLabel->show();
 			ui->jMinSlider->show();
 			ui->jMaxLabel->show();
 			ui->jMaxSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -99,7 +99,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -112,7 +112,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 			ui->kMinSlider->show();
 			ui->kMaxLabel->show();
 			ui->kMaxSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jMinLabel->show();
 			ui->jMinSlider->show();
 			ui->jMaxLabel->show();
@@ -121,7 +121,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 			ui->kMinSlider->show();
 			ui->kMaxLabel->show();
 			ui->kMaxSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -130,7 +130,7 @@ void Graph2dHybridWindowContinuousExportDialog::setSetting(const Graph2dHybridWi
 			ui->kMinSlider->show();
 			ui->kMaxLabel->show();
 			ui->kMaxSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
 			ui->iMinLabel->show();
 			ui->iMinSlider->show();
 			ui->iMaxLabel->show();
@@ -176,10 +176,10 @@ void Graph2dHybridWindowContinuousExportDialog::setPrefix(const QString& prefix)
 
 void Graph2dHybridWindowContinuousExportDialog::setRegionMode(RegionMode rm)
 {
-	if (rm == rmCurrentOnly){
+	if (rm == rmCurrentOnly) {
 		ui->currentRegionCheckBox->setChecked(true);
 		regionCurrentToggled(true);
-	} else if (rm == rmAll){
+	} else if (rm == rmAll) {
 		fullRegionToggled(true);
 		ui->fullRegionCheckBox->setChecked(true);
 	} else {
@@ -190,63 +190,63 @@ void Graph2dHybridWindowContinuousExportDialog::setRegionMode(RegionMode rm)
 
 void Graph2dHybridWindowContinuousExportDialog::setIMin(int imin)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->iMinSlider->setValue(imin + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setIMax(int imax)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->iMaxSlider->setValue(imax + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setJMin(int jmin)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->jMinSlider->setValue(jmin + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setJMax(int jmax)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->jMaxSlider->setValue(jmax + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setKMin(int kmin)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->kMinSlider->setValue(kmin + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setKMax(int kmax)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->kMaxSlider->setValue(kmax + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setIndexMin(int idxmin)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->indexMinSlider->setValue(idxmin + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setIndexMax(int idxmax)
 {
-	if (regionMode() != rmCustom){return;}
+	if (regionMode() != rmCustom) {return;}
 	ui->indexMaxSlider->setValue(idxmax + 1);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setTimeMode(TimeMode tm)
 {
-	if (tm == tmCurrentOnly){
+	if (tm == tmCurrentOnly) {
 		ui->timeCurrentOnlyCheckBox->setChecked(true);
 		ui->timeStartSlider->setValue(m_currentStep);
 		ui->timeEndSlider->setValue(m_currentStep);
-	} else if (tm == tmAll){
+	} else if (tm == tmAll) {
 		ui->timeAllCheckBox->setChecked(true);
 		ui->timeStartSlider->setValue(ui->timeStartSlider->minimum());
 		ui->timeEndSlider->setValue(ui->timeEndSlider->maximum());
-	} else if (tm == tmCustom){
+	} else if (tm == tmCustom) {
 		ui->timeCurrentOnlyCheckBox->setChecked(false);
 		ui->timeAllCheckBox->setChecked(false);
 	}
@@ -254,22 +254,22 @@ void Graph2dHybridWindowContinuousExportDialog::setTimeMode(TimeMode tm)
 
 void Graph2dHybridWindowContinuousExportDialog::setStartTimeStep(int startstep)
 {
-	if (ui->timeCurrentOnlyCheckBox->isChecked()){return;}
-	if (ui->timeAllCheckBox->isChecked()){return;}
+	if (ui->timeCurrentOnlyCheckBox->isChecked()) {return;}
+	if (ui->timeAllCheckBox->isChecked()) {return;}
 	ui->timeStartSlider->setValue(startstep);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setEndTimeStep(int endstep)
 {
-	if (ui->timeCurrentOnlyCheckBox->isChecked()){return;}
-	if (ui->timeAllCheckBox->isChecked()){return;}
+	if (ui->timeCurrentOnlyCheckBox->isChecked()) {return;}
+	if (ui->timeAllCheckBox->isChecked()) {return;}
 	ui->timeEndSlider->setValue(endstep);
 }
 
 void Graph2dHybridWindowContinuousExportDialog::setTimeSkip(int skip)
 {
-	if (ui->timeCurrentOnlyCheckBox->isChecked()){return;}
-	if (ui->timeAllCheckBox->isChecked()){return;}
+	if (ui->timeCurrentOnlyCheckBox->isChecked()) {return;}
+	if (ui->timeAllCheckBox->isChecked()) {return;}
 	ui->samplingSpinBox->setValue(skip);
 }
 
@@ -285,9 +285,9 @@ const QString Graph2dHybridWindowContinuousExportDialog::prefix()
 
 Graph2dHybridWindowContinuousExportDialog::RegionMode Graph2dHybridWindowContinuousExportDialog::regionMode()
 {
-	if (ui->currentRegionCheckBox->isChecked()){
+	if (ui->currentRegionCheckBox->isChecked()) {
 		return rmCurrentOnly;
-	} else if (ui->fullRegionCheckBox->isChecked()){
+	} else if (ui->fullRegionCheckBox->isChecked()) {
 		return rmAll;
 	} else {
 		return rmCustom;
@@ -335,9 +335,9 @@ int Graph2dHybridWindowContinuousExportDialog::indexMax()
 
 Graph2dHybridWindowContinuousExportDialog::TimeMode Graph2dHybridWindowContinuousExportDialog::timeMode()
 {
-	if (ui->timeCurrentOnlyCheckBox->isChecked()){
+	if (ui->timeCurrentOnlyCheckBox->isChecked()) {
 		return tmCurrentOnly;
-	} else if (ui->timeAllCheckBox->isChecked()){
+	} else if (ui->timeAllCheckBox->isChecked()) {
 		return tmAll;
 	} else {
 		return tmCustom;
@@ -362,11 +362,11 @@ int Graph2dHybridWindowContinuousExportDialog::timeSkip()
 
 void Graph2dHybridWindowContinuousExportDialog::accept()
 {
-	if (! QFile::exists(ui->directoryEditWidget->dirname())){
+	if (! QFile::exists(ui->directoryEditWidget->dirname())) {
 		QMessageBox::warning(this, tr("Warning"), tr("Folder %1 does not exists."), QDir::toNativeSeparators(ui->directoryEditWidget->dirname()));
 		return;
 	}
-	if (ui->prefixEdit->text() == ""){
+	if (ui->prefixEdit->text() == "") {
 		QMessageBox::warning(this, tr("Warning"), tr("Please input prefix."));
 		return;
 	}
@@ -376,7 +376,7 @@ void Graph2dHybridWindowContinuousExportDialog::accept()
 void Graph2dHybridWindowContinuousExportDialog::regionCurrentToggled(bool toggled)
 {
 	ui->fullRegionCheckBox->setEnabled(! toggled);
-	if (! toggled){return;}
+	if (! toggled) {return;}
 	ui->fullRegionCheckBox->setChecked(false);
 	ui->iMinSlider->setValue(m_i + 1);
 	ui->iMaxSlider->setValue(m_i + 1);
@@ -391,7 +391,7 @@ void Graph2dHybridWindowContinuousExportDialog::regionCurrentToggled(bool toggle
 void Graph2dHybridWindowContinuousExportDialog::fullRegionToggled(bool toggled)
 {
 	ui->currentRegionCheckBox->setEnabled(! toggled);
-	if (! toggled){return;}
+	if (! toggled) {return;}
 	ui->currentRegionCheckBox->setChecked(false);
 	ui->iMinSlider->setValue(ui->iMinSlider->minimum());
 	ui->iMaxSlider->setValue(ui->iMaxSlider->maximum());
@@ -405,56 +405,56 @@ void Graph2dHybridWindowContinuousExportDialog::fullRegionToggled(bool toggled)
 
 void Graph2dHybridWindowContinuousExportDialog::iMinChanged(int imin)
 {
-	if (ui->iMaxSlider->value() < imin){
+	if (ui->iMaxSlider->value() < imin) {
 		ui->iMaxSlider->setValue(imin);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::iMaxChanged(int imax)
 {
-	if (ui->iMinSlider->value() > imax){
+	if (ui->iMinSlider->value() > imax) {
 		ui->iMinSlider->setValue(imax);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::jMinChanged(int jmin)
 {
-	if (ui->jMaxSlider->value() < jmin){
+	if (ui->jMaxSlider->value() < jmin) {
 		ui->jMaxSlider->setValue(jmin);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::jMaxChanged(int jmax)
 {
-	if (ui->jMinSlider->value() > jmax){
+	if (ui->jMinSlider->value() > jmax) {
 		ui->jMinSlider->setValue(jmax);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::kMinChanged(int kmin)
 {
-	if (ui->kMaxSlider->value() < kmin){
+	if (ui->kMaxSlider->value() < kmin) {
 		ui->kMaxSlider->setValue(kmin);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::kMaxChanged(int kmax)
 {
-	if (ui->kMinSlider->value() > kmax){
+	if (ui->kMinSlider->value() > kmax) {
 		ui->kMinSlider->setValue(kmax);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::indexMinChanged(int imin)
 {
-	if (ui->indexMaxSlider->value() < imin){
+	if (ui->indexMaxSlider->value() < imin) {
 		ui->indexMaxSlider->setValue(imin);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::indexMaxChanged(int imax)
 {
-	if (ui->indexMinSlider->value() > imax){
+	if (ui->indexMinSlider->value() > imax) {
 		ui->indexMinSlider->setValue(imax);
 	}
 }
@@ -462,7 +462,7 @@ void Graph2dHybridWindowContinuousExportDialog::indexMaxChanged(int imax)
 void Graph2dHybridWindowContinuousExportDialog::timeCurrentToggled(bool toggled)
 {
 	ui->timeAllCheckBox->setEnabled(! toggled);
-	if (toggled){
+	if (toggled) {
 		ui->timeAllCheckBox->setChecked(false);
 		ui->timeStartSlider->setValue(m_currentStep);
 		ui->timeEndSlider->setValue(m_currentStep);
@@ -472,7 +472,7 @@ void Graph2dHybridWindowContinuousExportDialog::timeCurrentToggled(bool toggled)
 void Graph2dHybridWindowContinuousExportDialog::timeAllToggled(bool toggled)
 {
 	ui->timeCurrentOnlyCheckBox->setEnabled(! toggled);
-	if (toggled){
+	if (toggled) {
 		ui->timeCurrentOnlyCheckBox->setChecked(false);
 		ui->timeStartSlider->setValue(ui->timeStartSlider->minimum());
 		ui->timeEndSlider->setValue(ui->timeEndSlider->maximum());
@@ -481,14 +481,14 @@ void Graph2dHybridWindowContinuousExportDialog::timeAllToggled(bool toggled)
 
 void Graph2dHybridWindowContinuousExportDialog::timeStartChanged(int start)
 {
-	if (ui->timeEndSlider->value() < start){
+	if (ui->timeEndSlider->value() < start) {
 		ui->timeEndSlider->setValue(start);
 	}
 }
 
 void Graph2dHybridWindowContinuousExportDialog::timeEndChanged(int end)
 {
-	if (ui->timeStartSlider->value() > end){
+	if (ui->timeStartSlider->value() > end) {
 		ui->timeStartSlider->setValue(end);
 	}
 }

@@ -11,7 +11,7 @@ class RawDataPolygonProxy : public RawDataProxy
 {
 	Q_OBJECT
 public:
-	RawDataPolygonProxy(RawDataPolygon* rawdata) : RawDataProxy(rawdata){}
+	RawDataPolygonProxy(RawDataPolygon* rawdata) : RawDataProxy(rawdata) {}
 	void setupActors();
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 //	virtual void setupMenu(){}

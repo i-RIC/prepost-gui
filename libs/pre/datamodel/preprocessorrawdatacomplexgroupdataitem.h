@@ -23,7 +23,7 @@ public:
 	void loadFromCgnsFile(const int fn);
 	void saveComplexGroupsToCgnsFile(const int fn);
 	void addCustomMenuItems(QMenu* menu);
-	ProjectData* projectData(){return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
+	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
 	void setupEditWidget(GridRelatedConditionEditWidget* widget);
 	void applyScalarsToColorsSetting();
 	SolverDefinitionGridRelatedCondition* condition();

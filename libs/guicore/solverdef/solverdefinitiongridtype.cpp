@@ -53,10 +53,10 @@ void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinit
 
 SolverDefinitionGridType::~SolverDefinitionGridType()
 {
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
 		delete *it;
 	}
-	if (m_emptyGrid != nullptr){
+	if (m_emptyGrid != nullptr) {
 		delete m_emptyGrid;
 	}
 }
@@ -65,32 +65,33 @@ void SolverDefinitionGridType::setGridType(const QDomElement& elem)
 {
 	QString gtype = elem.attribute("gridtype", "structured2d");
 	m_availableGridTypes.clear();
-	if (gtype == "1d"){
+	if (gtype == "1d") {
 		m_defaultGridType = gtNormal1DGrid;
-	}else if (gtype == "1.5d"){
+	} else if (gtype == "1.5d") {
 		m_defaultGridType = gtNormal1_5DGrid;
-	}else if (gtype == "1.5d_withcrosssection"){
+	} else if (gtype == "1.5d_withcrosssection") {
 		m_defaultGridType = gtNormal1_5DGridWithCrosssection;
-	}else if (gtype == "structured2d"){
+	} else if (gtype == "structured2d") {
 		m_defaultGridType = gtStructured2DGrid;
-	}else if (gtype == "unstructured2d"){
+	} else if (gtype == "unstructured2d") {
 		m_defaultGridType = gtUnstructured2DGrid;
-	}else{
+	} else {
 		m_defaultGridType = gtUnknownGrid;
 	}
-	if (m_defaultGridType != gtUnknownGrid){
+	if (m_defaultGridType != gtUnknownGrid) {
 		m_availableGridTypes.append(m_defaultGridType);
 	}
 }
 
-void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator){
+void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
+{
 	QDomNode itemNode = node.firstChild();
-	while (! itemNode.isNull()){
+	while (! itemNode.isNull()) {
 		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 		QDomElement itemElem = itemNode.toElement();
 		QDomElement defElem = defNode.toElement();
 
-		if (defElem.attribute("valueType") == "complex"){
+		if (defElem.attribute("valueType") == "complex") {
 			// Complex condition
 			SolverDefinitionGridRelatedComplexCondition* c = new SolverDefinitionGridRelatedComplexCondition(itemElem, translator);
 			m_gridRelatedComplexConditions.append(c);
@@ -98,36 +99,36 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 		} else {
 			SolverDefinitionGridRelatedCondition* c = nullptr;
 			QString pos = defElem.attribute("position");
-			if (defElem.attribute("position") == "cell"){
-				if (defElem.attribute("valueType") == "integer"){
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)){
+			if (defElem.attribute("position") == "cell") {
+				if (defElem.attribute("valueType") == "integer") {
+					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
 						c = new SolverDefinitionIntegerOptionCellGridRelatedCondition(itemElem, translator);
 					} else {
 						c = new SolverDefinitionIntegerCellGridRelatedCondition(itemElem, translator);
 					}
-				} else if (defElem.attribute("valueType") == "real"){
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)){
+				} else if (defElem.attribute("valueType") == "real") {
+					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
 						c = new SolverDefinitionRealOptionCellGridRelatedCondition(itemElem, translator);
 					} else {
 						c = new SolverDefinitionRealCellGridRelatedCondition(itemElem, translator);
 					}
 				}
-			}else if (defElem.attribute("position") == "node"){
-				if (defElem.attribute("valueType") == "integer"){
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)){
+			} else if (defElem.attribute("position") == "node") {
+				if (defElem.attribute("valueType") == "integer") {
+					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
 						c = new SolverDefinitionIntegerOptionNodeGridRelatedCondition(itemElem, translator);
 					} else {
 						c = new SolverDefinitionIntegerNodeGridRelatedCondition(itemElem, translator);
 					}
-				}else if (defElem.attribute("valueType") == "real"){
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)){
+				} else if (defElem.attribute("valueType") == "real") {
+					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
 						c = new SolverDefinitionRealOptionNodeGridRelatedCondition(itemElem, translator);
 					} else {
 						c = new SolverDefinitionRealNodeGridRelatedCondition(itemElem, translator);
 					}
 				}
 			}
-			if (c != nullptr){
+			if (c != nullptr) {
 				m_gridRelatedConditions.append(c);
 				m_gridRelatedConditionNameMap.insert(c->name(), c);
 			}
@@ -139,8 +140,8 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
 {
 	QDomNode itemNode = node.firstChild();
-	while (! itemNode.isNull()){
-		if (itemNode.nodeName() != "BoundaryCondition"){
+	while (! itemNode.isNull()) {
+		if (itemNode.nodeName() != "BoundaryCondition") {
 			itemNode = itemNode.nextSibling();
 			continue;
 		}
@@ -154,11 +155,11 @@ void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, con
 
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 {
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
 		SolverDefinitionGridRelatedCondition* cond = *it;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
-	for (auto cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit){
+	for (auto cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit) {
 		SolverDefinitionGridRelatedComplexCondition* cond = *cit;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
@@ -167,8 +168,7 @@ void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
 	Grid* ret = nullptr;
-	switch (m_defaultGridType)
-	{
+	switch (m_defaultGridType) {
 	case gtNormal1DGrid:
 		// @todo not implemented yet.
 		break;
@@ -187,7 +187,7 @@ Grid* SolverDefinitionGridType::createEmptyGrid()
 	case gtUnknownGrid:
 		break;
 	}
-	if (ret != nullptr){
+	if (ret != nullptr) {
 		buildGridRelatedConditions(ret);
 	}
 	return ret;
@@ -195,9 +195,9 @@ Grid* SolverDefinitionGridType::createEmptyGrid()
 
 const QString SolverDefinitionGridType::solutionCaption(const QString& name)
 {
-	if (m_solutionCaptions.contains(name)){
+	if (m_solutionCaptions.contains(name)) {
 		return m_solutionCaptions.value(name);
-	}else{
+	} else {
 		return name;
 	}
 }

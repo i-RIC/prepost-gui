@@ -2,7 +2,7 @@
 
 #include <QStandardItem>
 
-MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem *parent)
+MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	m_name = name;
@@ -13,8 +13,7 @@ MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const QString& name, cons
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	connect(this, SIGNAL(changed(MeasuredDataVectorDataItem*)),
-			parent, SLOT(exclusivelyCheck(MeasuredDataVectorDataItem*)));
+	connect(this, SIGNAL(changed(MeasuredDataVectorDataItem*)), parent, SLOT(exclusivelyCheck(MeasuredDataVectorDataItem*)));
 }
 
 void MeasuredDataVectorDataItem::handleStandardItemChange()

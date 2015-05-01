@@ -17,7 +17,7 @@ void ColorTransferFunctionContainer::update()
 	ctf->RemoveAllPoints();
 	ctfDark->RemoveAllPoints();
 	double c[3];
-	for (auto it = m_colors.begin(); it != m_colors.end(); ++it){
+	for (auto it = m_colors.begin(); it != m_colors.end(); ++it) {
 		iRIC::QColorToVTKColor(it.value(), c);
 		ctf->AddRGBPoint(it.key(), c[0], c[1], c[2]);
 		ctfDark->AddRGBPoint(it.key(), c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);

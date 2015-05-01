@@ -58,7 +58,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::setupActors()
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != nullptr){
+	if (g != nullptr) {
 		Structured15DGridWithCrossSection* grid = dynamic_cast<Structured15DGridWithCrossSection*>(g);
 
 		m_edgeMapper->SetInputData(grid->vtkGrid());
@@ -71,7 +71,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 {
 	vtkCollectionIterator* it = m_actorCollection->NewIterator();
 	it->GoToFirstItem();
-	while (! it->IsDoneWithTraversal()){
+	while (! it->IsDoneWithTraversal()) {
 		vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
 		actor->VisibilityOff();
 		it->GoToNextItem();
@@ -79,7 +79,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 	m_actorCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == nullptr){
+	if (g == nullptr) {
 		return;
 	}
 
@@ -91,10 +91,10 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 	updateVisibility();
 }
 
-void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doLoadFromProjectMainFile(const QDomNode & /*node*/)
+void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
 
-void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter & /*writer*/)
+void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informSelection(VTKGraphicsView* /*v*/)
@@ -112,7 +112,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informDeselection(V
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(false);
 }
 
-void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::assignActionZValues(const ZDepthRange &range)
+void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::assignActionZValues(const ZDepthRange& range)
 {
 	m_edgeActor->SetPosition(0, 0, range.min());
 	m_vertexActor->SetPosition(0, 0, range.max());
@@ -148,7 +148,7 @@ Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCros
 	PreProcessorNormal15DGridWithCrossSectionDataItem* item = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(parent());
 	Structured15DGridWithCrossSection* g = dynamic_cast<Structured15DGridWithCrossSection*>(item->grid());
 
-	if (item->selectedVertices().count() < 1) return nullptr;
+	if (item->selectedVertices().count() < 1) { return nullptr; }
 
 	vtkIdType index = item->selectedVertices().at(0);
 	auto it = g->crossSections().begin();
@@ -157,10 +157,10 @@ Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCros
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionWindows()
 {
-	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it){
+	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it) {
 		Structured15DGridWithCrossSectionCrossSectionWindow* w = (*w_it)->window();
 		bool ok = w->updateComboBoxes();
-		if (ok){
+		if (ok) {
 			w->setupData();
 			w->updateView();
 		}
@@ -169,8 +169,8 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionW
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it){
-		if (*it == item){
+	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
+		if (*it == item) {
 			m_crosssectionWindows.erase(it);
 			delete item;
 			return;
@@ -182,16 +182,16 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(Q
 {
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	if (event->button() == Qt::LeftButton){
-		if (m_definingBoundingBox){
+	if (event->button() == Qt::LeftButton) {
+		if (m_definingBoundingBox) {
 			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
 		}
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;
-	} else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		QPoint releasePoint(event->x(), event->y());
-		if (isNear(m_pressPoint, releasePoint)){
-			if (menu != nullptr){delete menu;}
+		if (isNear(m_pressPoint, releasePoint)) {
+			if (menu != nullptr) {delete menu;}
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 			menu->addAction(m_openCrossSectionWindowAction);

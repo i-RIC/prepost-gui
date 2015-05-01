@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-class GoogleMapImageImportSettingDialog;
+namespace Ui
+{
+	class GoogleMapImageImportSettingDialog;
 }
 
 class GoogleMapImageImportSettingDialog : public QDialog
@@ -12,7 +13,7 @@ class GoogleMapImageImportSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GoogleMapImageImportSettingDialog(QWidget *parent = nullptr);
+	explicit GoogleMapImageImportSettingDialog(QWidget* parent = nullptr);
 	~GoogleMapImageImportSettingDialog();
 	void setZoom(int zoom);
 	void setZoomMax(int zoomMax);
@@ -21,7 +22,7 @@ public:
 	QString maptype() const;
 
 private:
-	Ui::GoogleMapImageImportSettingDialog *ui;
+	Ui::GoogleMapImageImportSettingDialog* ui;
 };
 
 #endif // GOOGLEMAPIMAGEIMPORTSETTINGDIALOG_H

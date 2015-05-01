@@ -6,8 +6,8 @@
 class Structured15DGridWithCrossSectionProjectImporter : public ProjectGridImporter
 {
 public:
-	Structured15DGridWithCrossSectionProjectImporter() : ProjectGridImporter(){}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt){
+	Structured15DGridWithCrossSectionProjectImporter() : ProjectGridImporter() {}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) {
 		return gt ==SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
 	}
 

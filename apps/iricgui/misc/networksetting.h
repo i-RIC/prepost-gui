@@ -26,13 +26,13 @@ public:
 	QString userName() const {return m_userName;}
 	QString password() const {return m_password;}
 
-	void setProxyMode(ProxyMode m){m_proxyMode = m;}
-	void setProxySite(const QString& site){m_proxySite = site;}
-	void setProxyPort(int port){m_proxyPort = port;}
+	void setProxyMode(ProxyMode m) {m_proxyMode = m;}
+	void setProxySite(const QString& site) {m_proxySite = site;}
+	void setProxyPort(int port) {m_proxyPort = port;}
 
-	void setNeedAuthentication(bool auth){m_needAuthentication = auth;}
-	void setUserName(const QString& name){m_userName = name;}
-	void setPassword(const QString& p){m_password = p;}
+	void setNeedAuthentication(bool auth) {m_needAuthentication = auth;}
+	void setUserName(const QString& name) {m_userName = name;}
+	void setPassword(const QString& p) {m_password = p;}
 
 private:
 	void load();

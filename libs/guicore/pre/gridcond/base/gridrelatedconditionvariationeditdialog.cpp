@@ -4,7 +4,7 @@
 
 #include <QString>
 
-GridRelatedConditionVariationEditDialog::GridRelatedConditionVariationEditDialog(QWidget *parent) :
+GridRelatedConditionVariationEditDialog::GridRelatedConditionVariationEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridRelatedConditionVariationEditDialog)
 {
@@ -17,7 +17,7 @@ GridRelatedConditionVariationEditDialog::~GridRelatedConditionVariationEditDialo
 	delete ui;
 }
 
-void GridRelatedConditionVariationEditDialog::setWidget(GridRelatedConditionVariationEditWidget *w)
+void GridRelatedConditionVariationEditDialog::setWidget(GridRelatedConditionVariationEditWidget* w)
 {
 	m_widget = w;
 	ui->widget->setWidget(w);

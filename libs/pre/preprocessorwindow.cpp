@@ -46,7 +46,8 @@ PreProcessorWindow::PreProcessorWindow(QWidget* parent)
 	init();
 }
 
-void PreProcessorWindow::init(){
+void PreProcessorWindow::init()
+{
 	setMinimumSize(480, 360);
 	setWindowTitle(tr("Pre-processing Window"));
 
@@ -83,7 +84,7 @@ void PreProcessorWindow::setupDefaultGeometry()
 {
 	QWidget* parent = parentWidget();
 	parent->move(0, 0);
-	if (! parent->isMaximized()){
+	if (! parent->isMaximized()) {
 		parent->resize(700, 500);
 	}
 	m_propertyBrowser->hide();
@@ -92,58 +93,58 @@ void PreProcessorWindow::setupDefaultGeometry()
 
 void PreProcessorWindow::showCalcConditionDialog()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->showCalcConditionDialog();
 }
 
 bool PreProcessorWindow::importInputCondition(const QString& filename)
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	return model->importInputCondition(filename);
 }
 
 bool PreProcessorWindow::exportInputCondition(const QString& filename)
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	return model->exportInputCondition(filename);
 }
 
 bool PreProcessorWindow::isInputConditionSet()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	return model->isInputConditionSet();
 }
 
 PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(model->rootDataItem());
 	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
 	bool ngexists = false;
 	bool okexists = false;
-	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
+	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it) {
 		PreProcessorGridTypeDataItem* typeItem = (*it);
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2){
+		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2) {
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
 			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
-			if (g->grid() == 0){
+			if (g->grid() == 0) {
 				ngexists = true;
 			} else {
 				okexists = true;
 			}
 		}
 	}
-	if (okexists){
-		if (ngexists){
+	if (okexists) {
+		if (ngexists) {
 			return PreProcessorWindow::grPartiallyUnfinished;
-		}else{
+		} else {
 			return PreProcessorWindow::grFinished;
 		}
-	}else{
-		if (ngexists){
+	} else {
+		if (ngexists) {
 			return PreProcessorWindow::grUnfinished;
-		}else{
+		} else {
 			// there is no grid item.
 			// we do not need to set up grids.
 			return PreProcessorWindow::grFinished;
@@ -154,7 +155,7 @@ PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 const QString PreProcessorWindow::checkGrid(bool detail)
 {
 	QString ret;
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(model->rootDataItem());
 	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
 	QList<QString> gridNames;
@@ -162,14 +163,14 @@ const QString PreProcessorWindow::checkGrid(bool detail)
 	QFile logFile(model->projectData()->absoluteFileName("gridcheck.txt"));
 	logFile.open(QFile::WriteOnly | QFile::Text);
 	QTextStream logStream(&logFile);
-	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it){
+	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it) {
 		PreProcessorGridTypeDataItem* typeItem = (*it);
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2){
+		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2) {
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
 			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
 			Grid* grid = g->grid();
-			if (grid == 0){
+			if (grid == 0) {
 				gridNames.append(cond->caption());
 				QString msg = "<ul>";
 				msg += "<li>" + tr("Grid is not created or imported yet.") + "</li>";
@@ -177,14 +178,14 @@ const QString PreProcessorWindow::checkGrid(bool detail)
 				gridMessages.append(msg);
 				continue;
 			}
-			if (detail){
+			if (detail) {
 				logStream << tr("Checking grid %1 ...").arg(cond->caption()) << endl;
 				QStringList messages = grid->checkShape(logStream);
 				if (messages.count() > 0) {
 					gridNames.append(cond->caption());
 					QString msg;
 					msg = "<ul>";
-					for (int i = 0; i < messages.count(); ++i){
+					for (int i = 0; i < messages.count(); ++i) {
 						QString tmpmsg = messages.at(i);
 						msg += "<li>" + tmpmsg + "</li>";
 					}
@@ -195,9 +196,9 @@ const QString PreProcessorWindow::checkGrid(bool detail)
 		}
 	}
 	logFile.close();
-	if (gridNames.count() == 0){
+	if (gridNames.count() == 0) {
 		return ret;
-	} else if (gridNames.count() == 1){
+	} else if (gridNames.count() == 1) {
 		ret = gridMessages.at(0);
 		return ret;
 	} else {
@@ -218,7 +219,7 @@ QPixmap PreProcessorWindow::snapshot()
 	PreProcessorGraphicsViewInterface* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) makeBackgroundTransparent(view, pixmap);
+	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
 
 	return pixmap;
 }
@@ -230,9 +231,9 @@ vtkRenderWindow* PreProcessorWindow::getVtkRenderWindow()
 
 QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	QList<QMenu*> menus;
-	if (m_dataModel != nullptr){
+	if (m_dataModel != nullptr) {
 		menus.append(model->additionalMenus());
 	}
 	menus.append(m_actionManager->calcCondMenu());
@@ -241,7 +242,7 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
 
 QToolBar* PreProcessorWindow::getAdditionalToolBar()
 {
-	if (m_dataModel == nullptr){return nullptr;}
+	if (m_dataModel == nullptr) {return nullptr;}
 	return m_dataModel->operationToolBar();
 }
 
@@ -299,19 +300,16 @@ class PreProcessorWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:
 	PreProcessorWindowEditBackgroundColorCommand(const QColor& newcolor, PreProcessorWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color"))
-	{
+		: QUndoCommand(QObject::tr("Edit Background Color")) {
 		m_newColor = newcolor;
 		m_oldColor = w->backgroundColor();
 		m_window = w;
 	}
-	void undo()
-	{
+	void undo() {
 		m_window->setBackgroundColor(m_oldColor);
 		m_window->m_graphicsView->update();
 	}
-	void redo()
-	{
+	void redo() {
 		m_window->setBackgroundColor(m_newColor);
 		m_window->m_graphicsView->update();
 	}
@@ -325,7 +323,7 @@ void PreProcessorWindow::editBackgroundColor()
 {
 	QColor oldcolor = backgroundColor();
 	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	iRICUndoStack::instance().push(new PreProcessorWindowEditBackgroundColorCommand(newcolor, this));
 }
 
@@ -333,48 +331,46 @@ class PreProcessorWindowCloseCommand : public QUndoCommand
 {
 public:
 	PreProcessorWindowCloseCommand(PreProcessorWindow* pre)
-		: QUndoCommand(QObject::tr("Close PreProcessor Window"))
-	{
+		: QUndoCommand(QObject::tr("Close PreProcessor Window")) {
 		m_preWindow = pre;
 	}
-	void undo()
-	{
+	void undo() {
 		m_preWindow->parentWidget()->show();
 	}
-	void redo()
-	{
+	void redo() {
 		m_preWindow->parentWidget()->hide();
 	}
 private:
 	PreProcessorWindow* m_preWindow;
 };
 
-void PreProcessorWindow::closeEvent(QCloseEvent* e){
+void PreProcessorWindow::closeEvent(QCloseEvent* e)
+{
 	iRICUndoStack::instance().push(new PreProcessorWindowCloseCommand(this));
 //	parentWidget()->hide();
 	e->ignore();
 }
 
-void PreProcessorWindow::showEvent(QShowEvent * /*e*/)
+void PreProcessorWindow::showEvent(QShowEvent* /*e*/)
 {
 	ProjectMainFile* mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
-	if (mainfile == nullptr){return;}
+	if (mainfile == nullptr) {return;}
 	mainfile->addRenderer(m_dataModel->graphicsView()->mainRenderer());
 }
 
-void PreProcessorWindow::hideEvent(QHideEvent * /*e*/)
+void PreProcessorWindow::hideEvent(QHideEvent* /*e*/)
 {
-	if (m_isFirstHiding){
+	if (m_isFirstHiding) {
 		m_isFirstHiding = false;
 		return;
 	}
-	if (m_isLastHiding){
+	if (m_isLastHiding) {
 		m_isLastHiding = false;
 		return;
 	}
-	if (m_projectDataItem == 0){return;}
+	if (m_projectDataItem == 0) {return;}
 	ProjectMainFile* mainfile = dynamic_cast<ProjectMainFile*>(m_projectDataItem->parent());
-	if (mainfile == 0){return;}
+	if (mainfile == 0) {return;}
 	mainfile->removeRenderer(m_dataModel->graphicsView()->mainRenderer());
 }
 
@@ -388,51 +384,51 @@ void PreProcessorWindow::handleAdditionalMenusUpdate(const QList<QMenu*>& m)
 
 void PreProcessorWindow::addGridImportMenu(QMenu* menu)
 {
-	if (m_dataModel == nullptr){return;}
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	if (m_dataModel == nullptr) {return;}
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->addGridImportMenu(menu);
 }
 
 void PreProcessorWindow::addGridExportMenu(QMenu* menu)
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->addGridExportMenu(menu);
 }
 
 void PreProcessorWindow::setupRawDataImportMenu()
 {
-	if (m_dataModel == nullptr){return;}
+	if (m_dataModel == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->setupRawDataImportMenu(menu);
 }
 
 void PreProcessorWindow::setupRawDataExportMenu()
 {
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->setupRawDataExportMenu(menu);
 }
 
 void PreProcessorWindow::setupHydraulicDataImportMenu()
 {
-	if (m_dataModel == nullptr){return;}
+	if (m_dataModel == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->setupHydraulicDataImportMenu(menu);
 }
 
 
 void PreProcessorWindow::informUnfocusRiverCrosssectionWindows()
 {
-	if (m_dataModel == nullptr){return;}
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	if (m_dataModel == nullptr) {return;}
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	model->informUnfocusRiverCrosssectionWindows();
 }
 
 bool PreProcessorWindow::isSetupCorrectly() const
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	return model->isSetupCorrectly();
 }
 
@@ -445,7 +441,7 @@ const QColor PreProcessorWindow::backgroundColor() const
 	return qColor;
 }
 
-void PreProcessorWindow::setBackgroundColor(const QColor &c)
+void PreProcessorWindow::setBackgroundColor(const QColor& c)
 {
 	double vtkColor[3];
 	iRIC::QColorToVTKColor(c, vtkColor);
@@ -454,6 +450,6 @@ void PreProcessorWindow::setBackgroundColor(const QColor &c)
 
 bool PreProcessorWindow::checkMappingStatus()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	return model->checkMappingStatus();
 }

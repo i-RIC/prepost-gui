@@ -56,20 +56,20 @@ public:
 	/// Solver name
 	const QString& solverName() const {return m_solverName;}
 	/// Set solver name
-	void setSolverName(const QString& name){m_solverName = name;}
+	void setSolverName(const QString& name) {m_solverName = name;}
 	/// Solver version number
-	const VersionNumber& solverVersion(){return m_solverVersion;}
+	const VersionNumber& solverVersion() {return m_solverVersion;}
 	/// Set solver version number
-	void setSolverVersion(const VersionNumber& version){m_solverVersion = version;}
+	void setSolverVersion(const VersionNumber& version) {m_solverVersion = version;}
 	/// iRIC version number
-	const VersionNumber& iRICVersion(){return m_iRICVersion;}
-	void setIRICVersion(const VersionNumber& v){
+	const VersionNumber& iRICVersion() {return m_iRICVersion;}
+	void setIRICVersion(const VersionNumber& v) {
 		m_iRICVersion = v;
 	}
 	/// Cgns file list
-	CgnsFileList* cgnsFileList(){return m_cgnsFileList;}
+	CgnsFileList* cgnsFileList() {return m_cgnsFileList;}
 	/// Solution information
-	PostSolutionInfo* postSolutionInfo(){return m_postSolutionInfo;}
+	PostSolutionInfo* postSolutionInfo() {return m_postSolutionInfo;}
 	bool hasResults();
 	QStringList containedFiles();
 	const QString currentCgnsFileName() const;
@@ -78,9 +78,9 @@ public:
 	/// Save current cgns file.
 	bool saveCgnsFile();
 	/// Return true when the work data is modified.
-	bool isModified(){return m_isModified;}
+	bool isModified() {return m_isModified;}
 	/// PostProcessors.
-	ProjectPostProcessors* postProcessors(){return m_postProcessors;}
+	ProjectPostProcessors* postProcessors() {return m_postProcessors;}
 	void loadFromCgnsFile(const int fn);
 	void saveToCgnsFile(const int fn);
 	void toggleGridEditFlag();
@@ -89,7 +89,7 @@ public:
 	const QList<BackgroundImageInfo*> backgroundImages() const {return m_backgroundImages;}
 	const QList<MeasuredData*>& measuredDatas() const {return m_measuredDatas;}
 	/// Renderers for background images
-	QList<vtkRenderer*> renderers(){return m_renderers;}
+	QList<vtkRenderer*> renderers() {return m_renderers;}
 
 	void updateActorVisibility(int idx, bool vis);
 	void importCgnsFile(const QString& filename);
@@ -134,8 +134,8 @@ public slots:
 
 	/// Remove renderer
 	void removeRenderer(vtkRenderer* ren);
-	void addRenderer(vtkRenderer *ren);
-	void clearModified(){m_isModified = false;}
+	void addRenderer(vtkRenderer* ren);
+	void clearModified() {m_isModified = false;}
 	void setupOffset();
 
 protected:

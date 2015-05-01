@@ -5,14 +5,16 @@
 
 class ContinuousSnapshotWizard;
 
-namespace Ui {
+namespace Ui
+{
 	class ContinuousSnapshotTimestepSettingPage;
 }
 
-class ContinuousSnapshotTimestepSettingPage : public QWizardPage {
+class ContinuousSnapshotTimestepSettingPage : public QWizardPage
+{
 	Q_OBJECT
 public:
-	ContinuousSnapshotTimestepSettingPage(QWidget *parent = nullptr);
+	ContinuousSnapshotTimestepSettingPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotTimestepSettingPage();
 
 	void initializePage();
@@ -28,7 +30,7 @@ private:
 	int m_stopTimestep;
 	int m_samplingRate;
 
-	Ui::ContinuousSnapshotTimestepSettingPage *ui;
+	Ui::ContinuousSnapshotTimestepSettingPage* ui;
 };
 
 #endif // CONTINUOUSSNAPSHOTTIMESTEPSETTINGPAGE_H

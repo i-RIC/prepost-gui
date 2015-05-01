@@ -5,10 +5,11 @@
 #include <QString>
 #include <QColor>
 
-class POSTBASEDLL_EXPORT PostTitleSetting {
+class POSTBASEDLL_EXPORT PostTitleSetting
+{
 public:
 	/// Constructor
-	PostTitleSetting(){
+	PostTitleSetting() {
 		fontSize = 20;
 		color = Qt::black;
 	}

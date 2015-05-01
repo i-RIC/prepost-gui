@@ -4,11 +4,11 @@
 
 #include <vtkPointData.h>
 
-RawDataPointmapEditPtsDialog::RawDataPointmapEditPtsDialog(RawDataPointmap *pmap, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::RawDataPointmapEditPtsDialog)
+RawDataPointmapEditPtsDialog::RawDataPointmapEditPtsDialog(RawDataPointmap* pmap, QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::RawDataPointmapEditPtsDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	m_pointMap = pmap;
 	QVector<vtkIdType> selectedVertices = m_pointMap->selectedVertices();
@@ -18,10 +18,10 @@ RawDataPointmapEditPtsDialog::RawDataPointmapEditPtsDialog(RawDataPointmap *pmap
 	double max = 0;
 	double average = 0;
 
-	for (vtkIdType i = 0; i < selectedVertices.count(); ++i){
+	for (vtkIdType i = 0; i < selectedVertices.count(); ++i) {
 		double val = vArr->GetTuple1(selectedVertices[i]);
-		if (i == 0 || val < min){min = val;}
-		if (i == 0 || val > max){max = val;}
+		if (i == 0 || val < min) {min = val;}
+		if (i == 0 || val > max) {max = val;}
 		average += val;
 	}
 	average /= selectedVertices.count();
@@ -30,7 +30,7 @@ RawDataPointmapEditPtsDialog::RawDataPointmapEditPtsDialog(RawDataPointmap *pmap
 	ui->minPointValue->setValue(min);
 	ui->numPoints->setText(QString::number(selectedVertices.count()));
 
-	if (selectedVertices.count() == 1){
+	if (selectedVertices.count() == 1) {
 		double pos[3];
 		vtkIdType selV = selectedVertices[0];
 		m_pointMap->vtkGrid()->GetPoints()->GetPoint(selV, pos);
@@ -49,7 +49,7 @@ RawDataPointmapEditPtsDialog::RawDataPointmapEditPtsDialog(RawDataPointmap *pmap
 
 RawDataPointmapEditPtsDialog::~RawDataPointmapEditPtsDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 double RawDataPointmapEditPtsDialog::pointX()

@@ -109,7 +109,7 @@ const QVector<QPointF> GridCreatingConditionCenterAndWidth::polyLine()
 	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
 	int vCount = idlist->GetNumberOfIds();
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		ret << QPointF(*p, *(p + 1));
@@ -117,12 +117,12 @@ const QVector<QPointF> GridCreatingConditionCenterAndWidth::polyLine()
 	return ret;
 }
 
-void GridCreatingConditionCenterAndWidth::setPolyLine(const QVector<QPointF> &polyline)
+void GridCreatingConditionCenterAndWidth::setPolyLine(const QVector<QPointF>& polyline)
 {
 	m_vtkPolyLine = vtkSmartPointer<vtkPolyLine>::New();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
 	points->SetNumberOfPoints(polyline.count());
-	for (int i = 0; i < polyline.count(); ++i){
+	for (int i = 0; i < polyline.count(); ++i) {
 		QPointF point = polyline.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -140,7 +140,7 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 	idlist->SetNumberOfIds(pointCount);
 
 	// update idlist.
-	for (vtkIdType i = 0; i < pointCount; ++i){
+	for (vtkIdType i = 0; i < pointCount; ++i) {
 		idlist->SetId(i, i);
 	}
 
@@ -150,7 +150,7 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 	int edgeCount = m_vtkPolyLine->GetNumberOfPoints() - 1;
 	m_edgeGrid->Allocate(edgeCount);
 	vtkLine* nextEdge = vtkLine::New();
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		nextEdge->GetPointIds()->SetId(0, edgeId);
 		nextEdge->GetPointIds()->SetId(1, edgeId + 1);
 		m_edgeGrid->InsertNextCell(nextEdge->GetCellType(), nextEdge->GetPointIds());
@@ -164,11 +164,11 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 	// labels are constructed;
 	m_labelArray->Reset();
 	int vertexCount = m_vtkPolyLine->GetNumberOfPoints();
-	if (vertexCount > 0){
+	if (vertexCount > 0) {
 		m_labelArray->InsertNextValue("  Upstream");
 	}
-	for (int i = 1; i < vertexCount; ++i){
-		if (i == vertexCount - 1){
+	for (int i = 1; i < vertexCount; ++i) {
+		if (i == vertexCount - 1) {
 			m_labelArray->InsertNextValue("  Downstream");
 		} else {
 			m_labelArray->InsertNextValue("");
@@ -179,7 +179,7 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 	vtkIdType vertexId = 0;
 	m_vertexGrid->Allocate(vertexCount);
 	vtkVertex* nextVertex = vtkVertex::New();
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_vertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
 		vertexId += 1;
@@ -192,21 +192,21 @@ void GridCreatingConditionCenterAndWidth::updateShapeData()
 
 bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining){
+	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid creating condition definition not finished yet."));
 		return false;
 	}
-	if (polyLine().count() < 2){
+	if (polyLine().count() < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Grid center line is not defined yet. Please click in the main region to define the grid center line."));
 		return false;
 	}
 
 	createSpline(m_vtkPolyLine->GetPoints(), m_iMax);
 	showDialog(parent);
-	if (! m_isAccepted){return false;}
+	if (! m_isAccepted) {return false;}
 
 	Grid* grid = createGrid();
-	if (grid == 0){return false;}
+	if (grid == 0) {return false;}
 	m_isGridCreated = true;
 
 	emit gridCreated(grid);
@@ -215,7 +215,7 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 
 Grid* GridCreatingConditionCenterAndWidth::createGrid()
 {
-	if (m_iMax * m_jMax > MAXGRIDSIZE){
+	if (m_iMax * m_jMax > MAXGRIDSIZE) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return 0;
 	}
@@ -230,16 +230,16 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 	points->SetDataTypeToDouble();
 	points->Allocate(m_iMax * m_jMax);
 
-	for (int j = 0; j < m_jMax; j++){
-		for (int i = 0; i < m_iMax; i++){
+	for (int j = 0; j < m_jMax; j++) {
+		for (int i = 0; i < m_iMax; i++) {
 			double p1[3], p2[3];
-			if (i == 0){
+			if (i == 0) {
 				m_splinePoints->GetPoint(i, p1);
 				m_splinePoints->GetPoint(i + 1, p2);
-			}else if (i == m_iMax - 1){
+			} else if (i == m_iMax - 1) {
 				m_splinePoints->GetPoint(i, p1);
 				m_splinePoints->GetPoint(i - 1, p2);
-			}else{
+			} else {
 				m_splinePoints->GetPoint(i - 1, p1);
 				m_splinePoints->GetPoint(i + 1, p2);
 			}
@@ -249,11 +249,11 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 			dx = (m_width / (m_jMax - 1)) * dx / s;
 			dy = (m_width / (m_jMax - 1)) * dy / s;
 			int center = (m_jMax - 1) / 2;
-			if (i == 0){
+			if (i == 0) {
 				points->InsertPoint(m_iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
-			}else if (i == m_iMax - 1){
+			} else if (i == m_iMax - 1) {
 				points->InsertPoint(m_iMax * j + i, p1[0] + (center - j) * (- dy), p1[1] + (center - j) * dx, 0.0);
-			}else{
+			} else {
 				m_splinePoints->GetPoint(i, p1);
 				points->InsertPoint(m_iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
 			}
@@ -263,14 +263,14 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	grid->setModified();
 	return grid;
 }
 
-void GridCreatingConditionCenterAndWidth::showDialog(QWidget *parent)
+void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = new GridCreatingConditionCenterAndWidthDialog(parent);
 	connect(dialog, SIGNAL(applied(QDialog*)), this, SLOT(handleDialogApplied(QDialog*)));
@@ -285,17 +285,17 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget *parent)
 	dialog->setCrossStreamLabel();
 
 	int result = dialog->exec();
-	if (result == QDialog::Accepted){
+	if (result == QDialog::Accepted) {
 		handleDialogAccepted(dialog);
 		m_isAccepted = true;
-	}else{
+	} else {
 		handleDialogRejected(dialog);
 		m_isAccepted = false;
 	}
 	delete dialog;
 }
 
-void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog *d)
+void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
 	setIMax(dialog->iMax());
@@ -304,14 +304,14 @@ void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog *d)
 	createSpline(m_vertexGrid->GetPoints(), m_iMax - 1);
 
 	Grid* g = createGrid();
-	if (g == 0){return;}
+	if (g == 0) {return;}
 	m_tmpMapper->SetInputData(g->vtkGrid());
 	m_tmpActor->VisibilityOn();
 	renderGraphicsView();
 	m_tmpActor->VisibilityOff();
 }
 
-void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog *d)
+void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
 	setIMax(dialog->iMax());
@@ -336,10 +336,10 @@ bool GridCreatingConditionCenterAndWidth::ready() const
 
 void GridCreatingConditionCenterAndWidth::setupActors()
 {
-	if (actorCollection()->GetNumberOfItems() > 0){
+	if (actorCollection()->GetNumberOfItems() > 0) {
 		vtkCollectionIterator* it = actorCollection()->NewIterator();
 		it->GoToFirstItem();
-		while (! it->IsDoneWithTraversal()){
+		while (! it->IsDoneWithTraversal()) {
 			vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
 			renderer()->RemoveActor(actor);
 			it->GoToNextItem();
@@ -417,7 +417,7 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 	m_rightClickingMenu->addAction(m_conditionDataItem->clearAction());
 }
 
-void GridCreatingConditionCenterAndWidth::setActorProperties(vtkProperty *prop)
+void GridCreatingConditionCenterAndWidth::setActorProperties(vtkProperty* prop)
 {
 	prop->SetLighting(false);
 	prop->SetColor(0, 0, 0);
@@ -444,8 +444,8 @@ void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphic
 
 void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->key() == Qt::Key_Return){
-		if (m_mouseEventMode == meDefining){
+	if (event->key() == Qt::Key_Return) {
+		if (m_mouseEventMode == meDefining) {
 			definePolyLine();
 		}
 	}
@@ -456,15 +456,15 @@ void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, 
 
 void GridCreatingConditionCenterAndWidth::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode == meDefining){
+	if (m_mouseEventMode == meDefining) {
 		definePolyLine();
 	}
 }
 
 void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int division)
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining){return;}
-	if (! points->GetNumberOfPoints()) return;
+	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {return;}
+	if (! points->GetNumberOfPoints()) { return; }
 
 	m_spline->SetPoints(points);
 	m_spline->Modified();
@@ -481,7 +481,7 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	u[0] = 0.0;
 	m_spline->Evaluate(u, Pt, Du);
 	m_splinePoints->InsertPoint(0, Pt);
-	for (int i = 1; i <= d; i++){
+	for (int i = 1; i <= d; i++) {
 		u[0] = i * (1.0 / d);
 		m_spline->Evaluate(u, Pt, Du);
 		m_splinePoints->InsertPoint(i, Pt);
@@ -500,13 +500,13 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	m_splinePoints->InsertPoint(0, Pt);
 	vtkIdType c = 1;
 	double cumulativeLength = m_length / division;
-	for (int i = 0; i < d; i++){
-		if (length[i] > cumulativeLength){
+	for (int i = 0; i < d; i++) {
+		if (length[i] > cumulativeLength) {
 			u[0] = (i - 1) * (1.0 / d) + (1.0 / d) * ((cumulativeLength - length[i - 1]) / (length[i] - length[i - 1]));
 			m_spline->Evaluate(u, Pt, Du);
 			m_splinePoints->InsertPoint(c, Pt);
 			c++;
-			if (c == division){
+			if (c == division) {
 				u[0] = 1.0;
 				m_spline->Evaluate(u, Pt, Du);
 				m_splinePoints->InsertPoint(c, Pt);
@@ -523,8 +523,7 @@ class GridCreatingConditionCenterAndWidthDefineNewPointCommand : public QUndoCom
 {
 public:
 	GridCreatingConditionCenterAndWidthDefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Add New Center Line Point"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Add New Center Line Point")) {
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -532,18 +531,17 @@ public:
 		m_newPoint = QVector2D(dx, dy);
 		m_condition = cond;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
-		if (m_keyDown){
+		if (m_keyDown) {
 			// add new point.
 			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 0){
+			if (numOfPoints == 0) {
 				m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meDefining;
 			}
 			line->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
 			line->GetPoints()->Modified();
-		}else{
+		} else {
 			// modify the last point.
 			vtkIdType lastId = line->GetNumberOfPoints() - 1;
 			line->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
@@ -553,18 +551,17 @@ public:
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
-		if (m_keyDown){
+		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
 			vtkIdType numOfPoints = line->GetPoints()->GetNumberOfPoints();
-			if (numOfPoints == 1){
+			if (numOfPoints == 1) {
 				m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meBeforeDefining;
 			}
 			line->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 			line->GetPoints()->Modified();
-		}else{
+		} else {
 			// this does not happen. no implementation needed.
 		}
 		line->Modified();
@@ -574,11 +571,11 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthDefineNewPoint");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionCenterAndWidthDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthDefineNewPointCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_condition != m_condition){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_condition != m_condition) {return false;}
 		m_newPoint = comm->m_newPoint;
 		return true;
 	}
@@ -592,8 +589,7 @@ class GridCreatingConditionCenterAndWidthMoveCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionCenterAndWidthMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line")) {
 		m_keyDown = keyDown;
 		double dx = from.x();
 		double dy = from.y();
@@ -606,11 +602,10 @@ public:
 		m_offset = toVec - fromVec;
 		m_condition = cond;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* line =  m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] += m_offset.x();
@@ -620,18 +615,17 @@ public:
 		points->Modified();
 		line->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
 		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* line =  m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			double p[3];
 			points->GetPoint(i, p);
 			p[0] -= m_offset.x();
@@ -641,7 +635,7 @@ public:
 		points->Modified();
 		line->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
@@ -650,11 +644,11 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMove");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionCenterAndWidthMoveCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_condition != m_condition){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_condition != m_condition) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -668,8 +662,7 @@ class GridCreatingConditionCenterAndWidthMoveVertexCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionCenterAndWidthMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = vertexId;
 		double dx = from.x();
@@ -683,8 +676,7 @@ public:
 		m_offset = toVec - fromVec;
 		m_condition = cond;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
 		double p[3];
@@ -696,15 +688,14 @@ public:
 		points->Modified();
 		line->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
 		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
 		double p[3];
@@ -716,7 +707,7 @@ public:
 		points->Modified();
 		line->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
@@ -725,12 +716,12 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMoveVertex");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionCenterAndWidthMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_condition != m_condition){return false;}
-		if (comm->m_vertexId != m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_condition != m_condition) {return false;}
+		if (comm->m_vertexId != m_vertexId) {return false;}
 		m_offset += comm->m_offset;
 		return true;
 	}
@@ -745,8 +736,7 @@ class GridCreatingConditionCenterAndWidthAddVertexCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionCenterAndWidthAddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex")) {
 		m_keyDown = keyDown;
 		m_vertexId = (edgeId + 1) % cond->m_vtkPolyLine->GetNumberOfPoints();
 		double dx = point.x();
@@ -755,25 +745,24 @@ public:
 		m_vertexPosition = QVector2D(dx, dy);
 		m_condition = cond;
 	}
-	void redo()
-	{
-		if (m_keyDown){
+	void redo() {
+		if (m_keyDown) {
 			// add vertex.
 			vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			positions.append(m_vertexPosition);
-			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
@@ -786,57 +775,55 @@ public:
 		}
 		m_condition->m_vtkPolyLine->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
 		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
-		if (m_keyDown){
+	void undo() {
+		if (m_keyDown) {
 			// remove vertex.
 			vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
 			QVector<QVector2D> positions;
 			positions.reserve(points->GetNumberOfPoints());
 			double p[3];
-			for (vtkIdType i = 0; i < m_vertexId; ++i){
+			for (vtkIdType i = 0; i < m_vertexId; ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			// skip vertex in m_vertexId[
-			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+			for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 				points->GetPoint(i, p);
 				positions.append(QVector2D(p[0], p[1]));
 			}
 			points->SetNumberOfPoints(positions.count());
-			for (vtkIdType i = 0; i < positions.count(); ++i){
+			for (vtkIdType i = 0; i < positions.count(); ++i) {
 				QVector2D v = positions.at(i);
 				points->SetPoint(i, v.x(), v.y(), 0);
 			}
 			points->Modified();
 			m_condition->m_vtkPolyLine->Modified();
 			m_condition->updateShapeData();
-			if (m_condition->m_isGridCreated){
+			if (m_condition->m_isGridCreated) {
 				m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 				emit m_condition->tmpGridCreated(m_condition->createGrid());
 			}
 			m_condition->renderGraphicsView();
-		}else{
+		} else {
 			// this never happens.
 		}
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthAddVertex");
 	}
-	bool mergeWith(const QUndoCommand *other)
-	{
+	bool mergeWith(const QUndoCommand* other) {
 		const GridCreatingConditionCenterAndWidthAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthAddVertexCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (m_condition != comm->m_condition){return false;}
-		if (m_vertexId != comm->m_vertexId){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (m_condition != comm->m_condition) {return false;}
+		if (m_vertexId != comm->m_vertexId) {return false;}
 		m_vertexPosition = comm->m_vertexPosition;
 		return true;
 	}
@@ -849,7 +836,7 @@ private:
 
 void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meTranslatePrepare:
 	case meMoveVertexPrepare:
@@ -890,31 +877,29 @@ class GridCreatingConditionCenterAndWidthRemoveVertexCommand : public QUndoComma
 {
 public:
 	GridCreatingConditionCenterAndWidthRemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Remove Center Line Vertex"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Remove Center Line Vertex")) {
 		m_vertexId = vertexId;
 		double p[3];
 		cond->m_vtkPolyLine->GetPoints()->GetPoint(m_vertexId, p);
 		m_vertexPosition = QVector2D(p[0], p[1]);
 		m_condition = cond;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		// skip vertex in m_vertexId
-		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId + 1; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -922,37 +907,36 @@ public:
 		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meNormal;
 		m_condition->m_vtkPolyLine->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->gridCreated(m_condition->createGrid());
 		}
 		m_condition->setModified();
 		m_condition->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
 		QVector<QVector2D> positions;
 		positions.reserve(points->GetNumberOfPoints());
 		double p[3];
-		for (vtkIdType i = 0; i < m_vertexId; ++i){
+		for (vtkIdType i = 0; i < m_vertexId; ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		positions.append(m_vertexPosition);
-		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = m_vertexId; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			positions.append(QVector2D(p[0], p[1]));
 		}
 		points->SetNumberOfPoints(positions.count());
-		for (vtkIdType i = 0; i < positions.count(); ++i){
+		for (vtkIdType i = 0; i < positions.count(); ++i) {
 			QVector2D v = positions.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
 		points->Modified();
 		m_condition->m_vtkPolyLine->Modified();
 		m_condition->updateShapeData();
-		if (m_condition->m_isGridCreated){
+		if (m_condition->m_isGridCreated) {
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->gridCreated(m_condition->createGrid());
 		}
@@ -966,13 +950,13 @@ private:
 
 void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		// left click
 		double worldX = static_cast<double>(event->x());
 		double worldY = static_cast<double>(event->y());
 		v->viewportToWorld(worldX, worldY);
 
-		switch (m_mouseEventMode){
+		switch (m_mouseEventMode) {
 		case meNormal:
 			// do nothing.
 			break;
@@ -1022,7 +1006,7 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		}
 		updateMouseCursor(v);
 		updateActionStatus();
-	} else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -1030,12 +1014,12 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 
 void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
-		switch (m_mouseEventMode){
+	if (event->button() == Qt::LeftButton) {
+		switch (m_mouseEventMode) {
 		case meTranslate:
 		case meMoveVertex:
 		case meAddVertex:
-			if (m_isGridCreated) emit gridCreated(createGrid());
+			if (m_isGridCreated) { emit gridCreated(createGrid()); }
 		case meNormal:
 		case meTranslatePrepare:
 		case meMoveVertexPrepare:
@@ -1055,9 +1039,9 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 			break;
 		}
 		updateMouseCursor(v);
-	}else if (event->button() == Qt::RightButton){
-		if (m_mouseEventMode == meEditVerticesDialog){return;}
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	} else if (event->button() == Qt::RightButton) {
+		if (m_mouseEventMode == meEditVerticesDialog) {return;}
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -1067,8 +1051,9 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 
 void GridCreatingConditionCenterAndWidth::deletePolyLine()
 {
-	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining)
-	m_vertexGrid->Initialize();
+	if (m_mouseEventMode == meBeforeDefining || m_mouseEventMode == meDefining) {
+		m_vertexGrid->Initialize();
+	}
 	m_edgeGrid->Initialize();
 	m_vtkPolyLine->GetPointIds()->Initialize();
 	m_vtkPolyLine->GetPoints()->Initialize();
@@ -1091,7 +1076,7 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 
 bool GridCreatingConditionCenterAndWidth::isVertexSelectable(const QVector2D& pos)
 {
-	if (m_selectedVertexId == -1){return false;}
+	if (m_selectedVertexId == -1) {return false;}
 	m_selectedVertexId = m_edgeGrid->FindPoint(pos.x(), pos.y(), 0.0);
 	QVector<QPointF> p = polyLine();
 	PreProcessorGraphicsViewInterface* v = graphicsView();
@@ -1110,7 +1095,7 @@ bool GridCreatingConditionCenterAndWidth::isEdgeSelectable(const QVector2D& pos)
 	double d = graphicsView()->stdRadius(5);
 	d = d * d;
 	vtkIdType id = m_edgeGrid->FindCell(x, NULL, 0, d, subId, pcoords, weights);
-	if (id >= 0){
+	if (id >= 0) {
 		m_selectedEdgeId = id;
 		return true;
 	}
@@ -1121,18 +1106,15 @@ class GridCreatingConditionCenterAndWidthFinishDefiningCommand : public QUndoCom
 {
 public:
 	GridCreatingConditionCenterAndWidthFinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline"))
-	{
+		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")) {
 		m_condition = condition;
 	}
-	void undo()
-	{
+	void undo() {
 		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meDefining;
 		m_condition->updateMouseCursor(m_condition->graphicsView());
 		m_condition->updateActionStatus();
 	}
-	void redo()
-	{
+	void redo() {
 		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meNormal;
 		m_condition->updateMouseCursor(m_condition->graphicsView());
 		m_condition->updateActionStatus();
@@ -1145,7 +1127,7 @@ private:
 
 void GridCreatingConditionCenterAndWidth::definePolyLine()
 {
-	if (m_vtkPolyLine->GetPoints()->GetNumberOfPoints() < 2){
+	if (m_vtkPolyLine->GetPoints()->GetNumberOfPoints() < 2) {
 		// not enough points defined!
 		return;
 	}
@@ -1156,7 +1138,7 @@ void GridCreatingConditionCenterAndWidth::definePolyLine()
 
 void GridCreatingConditionCenterAndWidth::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meAddVertexNotPossible:
 	case meRemoveVertexNotPossible:
@@ -1185,20 +1167,22 @@ void GridCreatingConditionCenterAndWidth::updateMouseCursor(PreProcessorGraphics
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::doLoadFromProjectMainFile(const QDomNode& node){
+void GridCreatingConditionCenterAndWidth::doLoadFromProjectMainFile(const QDomNode& node)
+{
 	QDomNode centerNode = iRIC::getChildNode(node, "CenterAndWidth");
-	if (! centerNode.isNull()){
+	if (! centerNode.isNull()) {
 		loadCenterAndWidthFromProjectMainFile(centerNode);
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::doSaveToProjectMainFile(QXmlStreamWriter& writer){
+void GridCreatingConditionCenterAndWidth::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
 	writer.writeStartElement("CenterAndWidth");
 	saveCenterAndWidthToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 
-void GridCreatingConditionCenterAndWidth::loadCenterAndWidthFromProjectMainFile(const QDomNode & node)
+void GridCreatingConditionCenterAndWidth::loadCenterAndWidthFromProjectMainFile(const QDomNode& node)
 {
 	m_iMax = node.toElement().attribute("imax", "11").toInt();
 	m_jMax = node.toElement().attribute("jmax", "11").toInt();
@@ -1215,33 +1199,35 @@ void GridCreatingConditionCenterAndWidth::saveCenterAndWidthToProjectMainFile(QX
 	writer.writeAttribute("length", qstr.setNum(m_length));
 }
 
-void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filename){
+void GridCreatingConditionCenterAndWidth::loadExternalData(const QString& filename)
+{
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
 	QVector<QPointF> v;
-	while (! s.atEnd()){
+	while (! s.atEnd()) {
 		double a, b;
 		s >> a >> b;
 		v.append(QPointF(a, b));
 	}
 	f.close();
 	setPolyLine(v);
-	if (polyLine().size() > 0){
+	if (polyLine().size() > 0) {
 		m_mouseEventMode = meNormal;
 		m_isGridCreated = true;
-	}else{
+	} else {
 		m_mouseEventMode = meBeforeDefining;
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filename){
+void GridCreatingConditionCenterAndWidth::saveExternalData(const QString& filename)
+{
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
 	QVector<QPointF> v = polyLine();
 	int vSize = v.size();
-	for (int i = 0; i < vSize; i++){
+	for (int i = 0; i < vSize; i++) {
 		s << v.at(i).x();
 		s << v.at(i).y();
 	}
@@ -1295,20 +1281,20 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 	dy = m_currentPoint.y();
 	graphicsView()->viewportToWorld(dx, dy);
 	QVector2D worldPos(dx, dy);
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
-		if (isEdgeSelectable(worldPos)){
+		if (isEdgeSelectable(worldPos)) {
 			m_mouseEventMode = meAddVertexPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meAddVertexNotPossible;
 		}
 		break;
 	case meRemoveVertexNotPossible:
 	case meRemoveVertexPrepare:
-		if (isVertexSelectable(worldPos)){
+		if (isVertexSelectable(worldPos)) {
 			m_mouseEventMode = meRemoveVertexPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meRemoveVertexNotPossible;
 		}
 		break;
@@ -1318,11 +1304,11 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 	case meTranslate:
 	case meMoveVertex:
 	case meAddVertex:
-		if (isVertexSelectable(worldPos)){
+		if (isVertexSelectable(worldPos)) {
 			m_mouseEventMode = meMoveVertexPrepare;
-		}else if (isEdgeSelectable(worldPos)){
+		} else if (isEdgeSelectable(worldPos)) {
 			m_mouseEventMode = meTranslatePrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meNormal;
 		}
 		break;
@@ -1337,7 +1323,7 @@ void GridCreatingConditionCenterAndWidth::updateMouseEventMode()
 
 void GridCreatingConditionCenterAndWidth::updateActionStatus()
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meBeforeDefining:
 	case meDefining:
 	case meTranslate:
@@ -1381,9 +1367,9 @@ void GridCreatingConditionCenterAndWidth::updateActionStatus()
 
 void GridCreatingConditionCenterAndWidth::addVertexMode(bool on)
 {
-	if (on){
+	if (on) {
 		m_mouseEventMode = meAddVertexNotPossible;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
@@ -1391,9 +1377,9 @@ void GridCreatingConditionCenterAndWidth::addVertexMode(bool on)
 
 void GridCreatingConditionCenterAndWidth::removeVertexMode(bool on)
 {
-	if (on){
+	if (on) {
 		m_mouseEventMode = meRemoveVertexNotPossible;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
@@ -1423,7 +1409,7 @@ void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 {
 	QVector<QPointF> points = polyLine();
 	QVector<QPointF> revPoints;
-	for (int i = points.count() - 1; i >= 0; --i){
+	for (int i = points.count() - 1; i >= 0; --i) {
 		revPoints.append(points.at(i));
 	}
 	setPolyLine(revPoints);
@@ -1433,7 +1419,7 @@ void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()
 void GridCreatingConditionCenterAndWidth::doApplyOffset(double x, double y)
 {
 	QVector<QPointF> polyline = polyLine();
-	for (int i = 0; i < polyline.size(); ++ i){
+	for (int i = 0; i < polyline.size(); ++ i) {
 		QPointF p = polyline.at(i);
 		p.setX(p.x() - x);
 		p.setY(p.y() - y);

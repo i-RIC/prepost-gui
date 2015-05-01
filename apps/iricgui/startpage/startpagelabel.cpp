@@ -3,7 +3,7 @@
 #include <QFont>
 #include <QPainter>
 
-StartPageLabel::StartPageLabel(QWidget *parent) :
+StartPageLabel::StartPageLabel(QWidget* parent) :
 	QWidget(parent)
 {
 	setCursor(Qt::PointingHandCursor);
@@ -14,7 +14,7 @@ StartPageLabel::~StartPageLabel()
 {}
 
 
-void StartPageLabel::paintEvent(QPaintEvent *)
+void StartPageLabel::paintEvent(QPaintEvent*)
 {
 	QPainter painter(this);
 	QRect r = rect();
@@ -32,7 +32,7 @@ void StartPageLabel::paintEvent(QPaintEvent *)
 	painter.drawText(subtitleRect, Qt::AlignLeft | Qt::AlignVCenter, m_subtitle);
 }
 
-void StartPageLabel::mousePressEvent(QMouseEvent *)
+void StartPageLabel::mousePressEvent(QMouseEvent*)
 {
 	emit clicked();
 }

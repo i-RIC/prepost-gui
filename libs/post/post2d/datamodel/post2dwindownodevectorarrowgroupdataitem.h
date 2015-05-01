@@ -33,13 +33,13 @@ public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
 	const static double MINLIMIT;
-	enum Mapping{Specific, Scalar};
-	enum LegendMode{lmAuto, lmCustom};
-	enum LengthMode{lenAuto, lenCustom};
+	enum Mapping {Specific, Scalar};
+	enum LegendMode {lmAuto, lmCustom};
+	enum LengthMode {lenAuto, lenCustom};
 	/// Constructor
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -60,8 +60,8 @@ protected:
 	void informGridUpdate();
 	virtual void updateActivePoints() = 0;
 //	virtual vtkPointSet* getPointSet() = 0;
-	void setCurrentSolution(const QString &currentSol);
-	const QString& currentSolution(){return m_currentSolution;}
+	void setCurrentSolution(const QString& currentSol);
+	const QString& currentSolution() {return m_currentSolution;}
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 

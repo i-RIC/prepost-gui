@@ -18,12 +18,11 @@ class RawDataPointMapT : public RawDataPointmap
 public:
 	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 
-	DA* vtkValues(){return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));}
-	V value(vtkIdType index){return vtkValues()->GetValue(index);}
-	void setValue(vtkIdType index, V val){return vtkValues()->SetValue(index, val);}
-	bool getValueRange(double* min, double* max)
-	{
-		if (vtkValues()->GetNumberOfTuples() == 0){return false;}
+	DA* vtkValues() {return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));}
+	V value(vtkIdType index) {return vtkValues()->GetValue(index);}
+	void setValue(vtkIdType index, V val) {return vtkValues()->SetValue(index, val);}
+	bool getValueRange(double* min, double* max) {
+		if (vtkValues()->GetNumberOfTuples() == 0) {return false;}
 		double range[2];
 		vtkValues()->GetRange(range);
 		*min = range[0];
@@ -52,21 +51,21 @@ RawDataPointMapT<V, DA>::RawDataPointMapT(ProjectDataItem* d, RawDataCreator* cr
 template <class V, class DA>
 RawDataMapper* RawDataPointMapT<V, DA>::mapper()
 {
-	if (m_gridRelatedCondition->position() == SolverDefinitionGridRelatedCondition::CellCenter){
+	if (m_gridRelatedCondition->position() == SolverDefinitionGridRelatedCondition::CellCenter) {
 		return RawData::mapper();
 	}
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());
-	if (gtItem->gridType()->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid){
+	if (gtItem->gridType()->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid) {
 		return RawData::mapper();
 	}
 
-	if (RawDataPointmapMappingMode::mode == RawDataPointmapMappingMode::mTIN){
+	if (RawDataPointmapMappingMode::mode == RawDataPointmapMappingMode::mTIN) {
 		return RawData::mapper();
 	}
 
 	RawDataPointmapTemplateMappingSetting s = RawDataPointmapTemplateMappingSetting::setting;
 	RawDataPointmapTemplateNodeMapperT<V, DA>* tMapper =
-			dynamic_cast<RawDataPointmapTemplateNodeMapperT<V, DA>* >(m_templateMapper);
+		dynamic_cast<RawDataPointmapTemplateNodeMapperT<V, DA>* >(m_templateMapper);
 
 	tMapper->setAutoMode(s.tempAutoMode);
 	tMapper->setStreamWiseLength(s.tempStreamWiseLength);

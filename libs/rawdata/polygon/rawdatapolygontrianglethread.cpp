@@ -13,7 +13,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
 
-RawDataPolygonTriangleThread::RawDataPolygonTriangleThread(RawDataPolygon *parent) :
+RawDataPolygonTriangleThread::RawDataPolygonTriangleThread(RawDataPolygon* parent) :
 	QThread(parent)
 {
 	m_polygon = parent;
@@ -34,9 +34,10 @@ RawDataPolygonTriangleThread::~RawDataPolygonTriangleThread()
 	wait();
 }
 
-void RawDataPolygonTriangleThread::update(){
+void RawDataPolygonTriangleThread::update()
+{
 	QMutexLocker locker(&m_mutex);
-	if (! isRunning()){
+	if (! isRunning()) {
 		start(LowestPriority);
 	} else {
 		m_restart = true;
@@ -57,21 +58,21 @@ void RawDataPolygonTriangleThread::run()
 		runTriangle();
 
 		m_mutex.lock();
-		if (m_canceled){
+		if (m_canceled) {
 			m_canceled = false;
 			m_cancelCondition.wakeOne();
 		}
 		m_mutex.unlock();
-		while (1){
+		while (1) {
 			QMutexLocker locker(&m_mutex);
-			if (m_abort){
+			if (m_abort) {
 				return;
 			}
-			if (m_canceled){
+			if (m_canceled) {
 				m_canceled = false;
 				m_cancelCondition.wakeOne();
 			}
-			if (m_restart){
+			if (m_restart) {
 				// restart requested!
 				m_restart = false;
 				break;
@@ -85,7 +86,7 @@ void RawDataPolygonTriangleThread::run()
 
 		// when restart is requested, comes here.
 		// wait for 500 ms before starting the process.
-		for (int i = 0; i < 50 && ! m_canceled; ++i){
+		for (int i = 0; i < 50 && ! m_canceled; ++i) {
 			msleep(10);
 		}
 	}
@@ -96,7 +97,7 @@ void RawDataPolygonTriangleThread::runTriangle()
 {
 	m_polygon->m_grid->Reset();
 	m_polygon->m_grid->Modified();
-	if (! m_polygon->checkCondition()){
+	if (! m_polygon->checkCondition()) {
 		return;
 	}
 	QPolygonF pol = m_polygon->m_gridRegionPolygon->polygon();
@@ -106,7 +107,7 @@ void RawDataPolygonTriangleThread::runTriangle()
 	pointCount += (pol.count() - 1);
 	segmentCount += (pol.count() - 1);
 	QPointF offset = pol.boundingRect().topLeft();
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
 		pol = m_polygon->m_holePolygons[i]->polygon();
 		pointCount += (pol.count() - 1);
 		segmentCount += (pol.count() - 1);
@@ -143,7 +144,7 @@ void RawDataPolygonTriangleThread::runTriangle()
 	in.numberofedges = 0;
 
 	pol = m_polygon->m_gridRegionPolygon->polygon(offset);
-	for (int i = 0; i < pol.count() - 1; ++i){
+	for (int i = 0; i < pol.count() - 1; ++i) {
 		*(in.pointlist + i * 2)	 = pol.at(i).x();
 		*(in.pointlist + i * 2 + 1) = pol.at(i).y();
 		*(in.segmentlist + i * 2) = i + 1;
@@ -157,17 +158,17 @@ void RawDataPolygonTriangleThread::runTriangle()
 	*(in.regionlist + 3) = rect.width() * rect.height();
 	int pOffset = 2 * (pol.count() - 1);
 	int sOffset = (pol.count() - 1);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i){
+	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
 		RawDataPolygonHolePolygon* hpol = m_polygon->m_holePolygons[i];
 		pol = hpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j){
+		for (int j = 0; j < pol.count() - 1; ++j) {
 			*(in.pointlist + j * 2 + pOffset)	 = pol.at(j).x();
 			*(in.pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
 			*(in.segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
 			*(in.segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
 		}
 		innerP = hpol->innerPoint(offset);
-		*(in.holelist + i * 2	) = innerP.x();
+		*(in.holelist + i * 2) = innerP.x();
 		*(in.holelist + i * 2 + 1) = innerP.y();
 		pOffset += 2 * (pol.count() - 1);
 		sOffset += (pol.count() - 1);
@@ -207,9 +208,9 @@ void RawDataPolygonTriangleThread::runTriangle()
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->Allocate(out.numberofpoints);
 	points->SetDataTypeToDouble();
-	for (int i = 0; i < out.numberofpoints; ++i){
+	for (int i = 0; i < out.numberofpoints; ++i) {
 		double v[3];
-		v[0] = *(out.pointlist + i * 2	) + offset.x();
+		v[0] = *(out.pointlist + i * 2) + offset.x();
 		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
 		v[2] = 0;
 		points->InsertNextPoint(v);
@@ -218,7 +219,7 @@ void RawDataPolygonTriangleThread::runTriangle()
 
 	m_polygon->m_grid->SetPoints(points);
 	m_polygon->m_grid->Allocate(out.numberoftriangles);
-	for (int i = 0; i < out.numberoftriangles; ++i){
+	for (int i = 0; i < out.numberoftriangles; ++i) {
 		vtkIdType id1, id2, id3;
 		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
 		id1 = *(out.trianglelist + i * 3) - 1;
@@ -232,15 +233,15 @@ void RawDataPolygonTriangleThread::runTriangle()
 	m_polygon->m_grid->BuildLinks();
 	m_polygon->m_paintActor->GetProperty()->SetOpacity(m_polygon->m_opacityPercent / 100.);
 
-	if (out.pointlist != NULL){
+	if (out.pointlist != NULL) {
 		trifree(out.pointlist);
 	}
-	if (out.trianglelist != NULL){
+	if (out.trianglelist != NULL) {
 		trifree(out.trianglelist);
 	}
 	m_polygon->updateScalarValues();
 	m_isOutputting = false;
-	if (! (m_abort || m_restart || m_canceled) && (! m_noDraw)){
+	if (!(m_abort || m_restart || m_canceled) && (! m_noDraw)) {
 		emit shapeUpdated();
 	}
 }

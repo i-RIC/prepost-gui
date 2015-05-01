@@ -13,7 +13,7 @@ class ProjectGridImporter : public GridInternalImporter
 
 public:
 	ProjectGridImporter();
-	virtual ~ProjectGridImporter(){}
+	virtual ~ProjectGridImporter() {}
 	QString caption() const;
 	const QStringList fileDialogFilters();
 	/// Import grid data from external file.

@@ -38,24 +38,24 @@ void Graph2dWindowRootDataItem::updateItemMap()
 	innerUpdateItemMap(m_itemMap);
 }
 
-void Graph2dWindowRootDataItem::handleItemChange(QStandardItem *changedItem)
+void Graph2dWindowRootDataItem::handleItemChange(QStandardItem* changedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(changedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemChange();
 }
 
 void Graph2dWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemClicked();
 }
 
 void Graph2dWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemDoubleClicked();
 }
 
@@ -63,7 +63,7 @@ void Graph2dWindowRootDataItem::deleteItem(QStandardItem* item)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(item);
 	// delete the item.
-	if (dataItem){delete dataItem;}
+	if (dataItem) {delete dataItem;}
 	// rebuild m_itemMap.
 	updateItemMap();
 	// render graphics view.
@@ -76,21 +76,18 @@ void Graph2dWindowRootDataItem::deleteItem(QStandardItem* item)
 class Graph2dWindowRootDataItemMoveUpCommand : public QUndoCommand
 {
 public:
-	Graph2dWindowRootDataItemMoveUpCommand(Graph2dWindowDataItem * item, ObjectBrowserView* view)
-		: QUndoCommand(QObject::tr("Move up item"))
-	{
+	Graph2dWindowRootDataItemMoveUpCommand(Graph2dWindowDataItem* item, ObjectBrowserView* view)
+		: QUndoCommand(QObject::tr("Move up item")) {
 		m_item = item;
 		m_view = view;
 	}
-	void redo()
-	{
+	void redo() {
 		m_view->setCommandExecution(true);
 		m_item->moveUp();
 		m_view->select(m_item->standardItem()->index());
 		m_view->setCommandExecution(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_view->setCommandExecution(true);
 		m_item->moveDown();
 		m_view->select(m_item->standardItem()->index());
@@ -101,11 +98,11 @@ private:
 	ObjectBrowserView* m_view;
 };
 
-void Graph2dWindowRootDataItem::moveUpItem(QStandardItem *item)
+void Graph2dWindowRootDataItem::moveUpItem(QStandardItem* item)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(item);
 	// move up the item.
-	if (dataItem){
+	if (dataItem) {
 		iRICUndoStack::instance().push(new Graph2dWindowRootDataItemMoveUpCommand(dataItem, m_dataModel->objectBrowserView()));
 	}
 }
@@ -114,20 +111,17 @@ class Graph2dWindowRootDataItemMoveDownCommand : public QUndoCommand
 {
 public:
 	Graph2dWindowRootDataItemMoveDownCommand(Graph2dWindowDataItem* item, ObjectBrowserView* view)
-		: QUndoCommand(QObject::tr("Move down item"))
-	{
+		: QUndoCommand(QObject::tr("Move down item")) {
 		m_item = item;
 		m_view = view;
 	}
-	void redo()
-	{
+	void redo() {
 		m_view->setCommandExecution(true);
 		m_item->moveDown();
 		m_view->select(m_item->standardItem()->index());
 		m_view->setCommandExecution(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_view->setCommandExecution(true);
 		m_item->moveUp();
 		m_view->select(m_item->standardItem()->index());
@@ -138,11 +132,11 @@ private:
 	ObjectBrowserView* m_view;
 };
 
-void Graph2dWindowRootDataItem::moveDownItem(QStandardItem *item)
+void Graph2dWindowRootDataItem::moveDownItem(QStandardItem* item)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(item);
 	// move down the item.
-	if (dataItem){
+	if (dataItem) {
 		iRICUndoStack::instance().push(new Graph2dWindowRootDataItemMoveDownCommand(dataItem, m_dataModel->objectBrowserView()));
 	}
 }

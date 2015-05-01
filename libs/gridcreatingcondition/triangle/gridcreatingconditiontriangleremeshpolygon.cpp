@@ -21,7 +21,7 @@ GridCreatingConditionTriangleRemeshPolygon::GridCreatingConditionTriangleRemeshP
 
 void GridCreatingConditionTriangleRemeshPolygon::finishDefinition()
 {
-	if (m_isCellSizeSet == false){
+	if (m_isCellSizeSet == false) {
 		QRectF rect = polygon().boundingRect();
 		m_cellSize = iRIC::roundedValue(rect.width() * rect.height() / 100, 1);
 		editGridSize(true);
@@ -33,21 +33,18 @@ class GridCreatingConditionTriangleRemeshPolygonEditGridSizeCommand : public QUn
 {
 public:
 	GridCreatingConditionTriangleRemeshPolygonEditGridSizeCommand(double area, GridCreatingConditionTriangleRemeshPolygon* pol)
-		: QUndoCommand(GridCreatingConditionTriangleRemeshPolygon::tr("Edit refinement maximum area"))
-	{
+		: QUndoCommand(GridCreatingConditionTriangleRemeshPolygon::tr("Edit refinement maximum area")) {
 		m_newSize = area;
 		m_oldSet = pol->m_isCellSizeSet;
 		m_oldSize = pol->m_cellSize;
 
 		m_polygon = pol;
 	}
-	void undo()
-	{
+	void undo() {
 		m_polygon->m_isCellSizeSet = m_oldSet;
 		m_polygon->m_cellSize = m_oldSize;
 	}
-	void redo()
-	{
+	void redo() {
 		m_polygon->m_isCellSizeSet = true;
 		m_polygon->m_cellSize = m_newSize;
 	}
@@ -58,13 +55,14 @@ private:
 	GridCreatingConditionTriangleRemeshPolygon* m_polygon;
 };
 
-void GridCreatingConditionTriangleRemeshPolygon::editGridSize(bool required){
+void GridCreatingConditionTriangleRemeshPolygon::editGridSize(bool required)
+{
 	GridCreatingConditionTriangleRemeshDialog dialog(m_parent->preProcessorWindow());
 	dialog.setArea(m_cellSize);
-	if (required){
+	if (required) {
 		dialog.setRequired();
 	}
-	if (QDialog::Rejected == dialog.exec()){
+	if (QDialog::Rejected == dialog.exec()) {
 		return;
 	}
 	iRICUndoStack::instance().push(new GridCreatingConditionTriangleRemeshPolygonEditGridSizeCommand(dialog.area(), this));

@@ -77,7 +77,7 @@ ProjectMainFile::~ProjectMainFile()
 {
 	/// delete m_backgroundImages manually, so that background images destructor
 	/// can access m_renderers.
-	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
+	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it) {
 		delete *it;
 	}
 
@@ -86,7 +86,7 @@ ProjectMainFile::~ProjectMainFile()
 	delete m_postProcessors;
 
 	// free coordinate system convert object
-	if (m_coordinateSystem != nullptr){
+	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->free();
 	}
 }
@@ -116,9 +116,9 @@ bool ProjectMainFile::switchCgnsFile(const QString& name)
 	m_cgnsFileList->setCurrent(name);
 
 	// save data to the old cgns file.
-	if (c != nullptr && c->filename() != name){
+	if (c != nullptr && c->filename() != name) {
 		bool ret = saveCgnsFile(c->filename());
-		if (! ret){return false;}
+		if (! ret) {return false;}
 	}
 
 	// discard data loaded from cgns file.
@@ -126,7 +126,7 @@ bool ProjectMainFile::switchCgnsFile(const QString& name)
 
 	// load data from the new cgns file.
 	bool ok = loadCgnsFile(name);
-	if (! ok){return false;}
+	if (! ok) {return false;}
 
 	emit cgnsFileSwitched();
 	return true;
@@ -143,7 +143,7 @@ void ProjectMainFile::loadSolverInformation()
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
 
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(fname).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -189,7 +189,7 @@ void ProjectMainFile::loadCgnsList()
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
 
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(fname).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -197,8 +197,7 @@ void ProjectMainFile::loadCgnsList()
 	}
 	// read cgns file list
 	QDomNode tmpNode = iRIC::getChildNode(doc.documentElement(), "CgnsFileList");
-	if (! tmpNode.isNull())
-	{
+	if (! tmpNode.isNull()) {
 		m_cgnsFileList->loadFromProjectMainFile(tmpNode);
 	}
 }
@@ -207,7 +206,7 @@ bool ProjectMainFile::save()
 {
 	// save cgns file.
 	bool ret = saveCgnsFile();
-	if (! ret){return false;}
+	if (! ret) {return false;}
 	ret = saveExceptCGNS();
 	m_isModified = false;
 	return ret;
@@ -250,7 +249,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	// coordinate system
 	QString coordName = element.attribute("coordinateSystem");
 	m_coordinateSystem = projectData()->mainWindow()->coordinateSystemBuilder()->system(coordName);
-	if (m_coordinateSystem != nullptr){
+	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->init();
 	}
 
@@ -262,20 +261,19 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 
 	// read cgns file list
 	QDomNode tmpNode = iRIC::getChildNode(node, "CgnsFileList");
-	if (! tmpNode.isNull())
-	{
+	if (! tmpNode.isNull()) {
 		m_cgnsFileList->loadFromProjectMainFile(tmpNode);
 	}
 
 	// read measured data
 	tmpNode = iRIC::getChildNode(node, "MeasuredDatas");
-	if (! tmpNode.isNull()){
+	if (! tmpNode.isNull()) {
 		loadMeasuredDatas(tmpNode);
 	}
 
 	// read setting about Backgrounds
 	tmpNode = iRIC::getChildNode(node, "Backgrounds");
-	if (! tmpNode.isNull()){
+	if (! tmpNode.isNull()) {
 		loadBackgrounds(tmpNode);
 	}
 	m_projectData->mainWindow()->loadSubWindowsFromProjectMainFile(node);
@@ -287,7 +285,7 @@ void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("solverName", m_solverName);
 	writer.writeAttribute("solverVersion", m_solverVersion.toString());
 
-	if (m_coordinateSystem != nullptr){
+	if (m_coordinateSystem != nullptr) {
 		writer.writeAttribute("coordinateSystem", m_coordinateSystem->name());
 	}
 
@@ -324,9 +322,9 @@ QStringList ProjectMainFile::containedFiles()
 	// Add files those exists in the work folder.
 	QDir workDir(projectData()->workDirectory());
 	QStringList files = workDir.entryList(QStringList(), QDir::Files, QDir::Name);
-	for (int i = 0; i < files.size(); ++i){
+	for (int i = 0; i < files.size(); ++i) {
 		QString filename = files.at(i);
-		if (filename == ProjectData::LOCKFILENAME){continue;}
+		if (filename == ProjectData::LOCKFILENAME) {continue;}
 		ret << filename;
 	}
 	// Add CGNS files.
@@ -344,21 +342,21 @@ QStringList ProjectMainFile::containedFiles()
 void ProjectMainFile::importCgnsFile()
 {
 	QString fname = QFileDialog::getOpenFileName(
-		m_projectData->mainWindow(), tr("Import CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
-			);
-	if (fname == ""){return;}
+										m_projectData->mainWindow(), tr("Import CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
+									);
+	if (fname == "") {return;}
 	importCgnsFile(fname);
 }
 
 void ProjectMainFile::importCgnsFile(const QString& fname)
 {
 	QString fnamebody = QFileInfo(fname).baseName();
-	if (m_cgnsFileList->exists(fnamebody)){
+	if (m_cgnsFileList->exists(fnamebody)) {
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("Solution %1 already exists.").arg(fnamebody)));
 		return;
 	}
 	QRegExp rx(ProjectCgnsFile::acceptablePattern());
-	if (rx.indexIn(fnamebody) == - 1){
+	if (rx.indexIn(fnamebody) == - 1) {
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("CGNS file whose name contains characters other than alphabets and numbers can not be imported.")));
 		return;
 	}
@@ -371,18 +369,18 @@ void ProjectMainFile::importCgnsFile(const QString& fname)
 	VersionNumber versionNumber;
 
 	bool ret = ProjectCgnsFile::readSolverInfo(to, solverName, versionNumber);
-	if (ret == true){
-		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))){
+	if (ret == true) {
+		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))) {
 			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"),
-				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
+														tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
 			return;
 		}
-	}else{
+	} else {
 		// error occured reading solver information.
 		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-			tr("This CGNS file does not have solver information. "
-				"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.\nDo you really want to import this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return;}
+																	 tr("This CGNS file does not have solver information. "
+																			"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.\nDo you really want to import this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret == QMessageBox::No) {return;}
 	}
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
@@ -395,12 +393,12 @@ void ProjectMainFile::importCgnsFile(const QString& fname)
 bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newname)
 {
 	QString fnamebody = QFileInfo(newname).baseName();
-	if (m_cgnsFileList->exists(fnamebody)){
+	if (m_cgnsFileList->exists(fnamebody)) {
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("Solution %1 already exists.").arg(fnamebody)));
 		return false;
 	}
 	QRegExp rx(ProjectCgnsFile::acceptablePattern());
-	if (rx.indexIn(fnamebody) == - 1){
+	if (rx.indexIn(fnamebody) == - 1) {
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), QString(tr("CGNS file whose name contains characters other than alphabets and numbers can not be imported.")));
 		return false;
 	}
@@ -413,18 +411,18 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 	VersionNumber versionNumber;
 
 	bool ret = ProjectCgnsFile::readSolverInfo(to, solverName, versionNumber);
-	if (ret == true){
-		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))){
+	if (ret == true) {
+		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))) {
 			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"),
-				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
+														tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
 			return false;
 		}
-	}else{
+	} else {
 		// error occured reading solver information.
 		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-			tr("This CGNS file does not have solver information. "
-				"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.\nDo you really want to import this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return false;}
+																	 tr("This CGNS file does not have solver information. "
+																			"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.\nDo you really want to import this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		if (ret == QMessageBox::No) {return false;}
 	}
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
@@ -438,12 +436,12 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 void ProjectMainFile::exportCurrentCgnsFile()
 {
 	QString fname = QFileDialog::getSaveFileName(
-		m_projectData->mainWindow(), tr("Export CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
-			);
-	if (fname == ""){return;}
-	if (QFile::exists(fname)){
+										m_projectData->mainWindow(), tr("Export CGNS file"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
+									);
+	if (fname == "") {return;}
+	if (QFile::exists(fname)) {
 		// if the specified file already exests, remove it first.
-		if (! QFile::remove(fname)){
+		if (! QFile::remove(fname)) {
 			QMessageBox::warning(m_projectData->mainWindow(), tr("Error"), tr("Exporting CGNS file failed. Specified file is locked by other process."));
 			return;
 		}
@@ -470,7 +468,7 @@ bool ProjectMainFile::loadCgnsFile(const QString& name)
 	int fn;
 	int ret;
 	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	if (ret != 0){
+	if (ret != 0) {
 		QString shortFilename = name;
 		shortFilename.append(".cgn");
 		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg(shortFilename));
@@ -495,10 +493,10 @@ bool ProjectMainFile::saveCgnsFile(const QString& name)
 
 	// check grid status
 	try {
-		if (! clearResultsIfGridIsEdited()){
+		if (! clearResultsIfGridIsEdited()) {
 			return false;
 		}
-	} catch (ErrorMessage& m){
+	} catch (ErrorMessage& m) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("%1 Saving project file failed.").arg(m));
 		return false;
 	}
@@ -512,22 +510,22 @@ bool ProjectMainFile::saveCgnsFile(const QString& name)
 	time.start();
 	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
 	qDebug("cg_open(): %d", time.elapsed());
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	// write solver information
 	bool ret = ProjectCgnsFile::writeSolverInfo(fn, &(m_projectData->solverDefinition()->abstract()));
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	// save data.
 	time.start();
 	try {
 		saveToCgnsFile(fn);
-	} catch (ErrorMessage& m){
+	} catch (ErrorMessage& m) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("%1 Saving project file failed.").arg(m));
 		goto ERROR;
 	}
 	qDebug("saveToCgnsFile(): %d", time.elapsed());
 	time.start();
 	ier = cg_configure(CG_CONFIG_COMPRESS, reinterpret_cast<void*>(1));
-	if (ier != 0){goto ERROR;}
+	if (ier != 0) {goto ERROR;}
 	cg_close(fn);
 	qDebug("cg_close(): %d", time.elapsed());
 	return true;
@@ -571,10 +569,10 @@ void ProjectMainFile::clearResults()
 	ProjectCgnsFile::createNewFile(fname, 2, 2);
 	int fn, ier;
 	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
-	if (ier != 0){return;}
+	if (ier != 0) {return;}
 	// write solver information
 	bool ret = ProjectCgnsFile::writeSolverInfo(fn, &(m_projectData->solverDefinition()->abstract()));
-	if (ret == false){goto ERROR;}
+	if (ret == false) {goto ERROR;}
 	// save data.
 	toggleGridEditFlag();
 	saveToCgnsFile(fn);
@@ -599,14 +597,14 @@ void ProjectMainFile::addBackgroundImage()
 	QString filter(tr("All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)"));
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
 	QString fname = QFileDialog::getOpenFileName(mdiArea->currentSubWindow(), tr("Open Image file"), dir, filter);
-	if (fname == "") return;
+	if (fname == "") { return; }
 
 	QFileInfo finfo(fname);
 	// check whether a image file with the same filename exists.
 	QString filename = finfo.fileName();
-	for (int i = 0; i < m_backgroundImages.count(); ++i){
+	for (int i = 0; i < m_backgroundImages.count(); ++i) {
 		BackgroundImageInfo* imgInfo = m_backgroundImages.at(i);
-		if (imgInfo->fileName().toLower() == filename.toLower()){
+		if (imgInfo->fileName().toLower() == filename.toLower()) {
 			// file with the same name already exists.
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("A background image with the same name already exists."));
 			return;
@@ -614,29 +612,29 @@ void ProjectMainFile::addBackgroundImage()
 	}
 
 	// copy to the project file.
-	if (! mkdirBGDIR()){
+	if (! mkdirBGDIR()) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 		return;
 	}
 	QDir wkDir = QDir(projectData()->workDirectory());
 
 	QString to = wkDir.absoluteFilePath(QFileInfo(fname).fileName());
-	if (! wkDir.exists(QFileInfo(fname).fileName())){
-		if (! QFile::copy(fname, to)){
+	if (! wkDir.exists(QFileInfo(fname).fileName())) {
+		if (! QFile::copy(fname, to)) {
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 			return;
 		}
 	}
 
 	QString ext = finfo.suffix().toLower();
-	if (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "tif"){
+	if (ext == "jpg" || ext == "jpeg" || ext == "png" || ext == "tif") {
 		try {
 			BackgroundImageInfo* image = new BackgroundImageInfo(to, fname, this);
 			addBackgroundImage(image);
-		} catch (ErrorMessage m){
+		} catch (ErrorMessage m) {
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
 		}
-	}else{
+	} else {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Invalid image file is specified."));
 	}
 }
@@ -651,20 +649,20 @@ void ProjectMainFile::addBackgroundImage(BackgroundImageInfo* image)
 bool ProjectMainFile::mkdirBGDIR()
 {
 	QDir wkDir = QDir(projectData()->workDirectory());
-	if (wkDir.cd(BGDIR)){
+	if (wkDir.cd(BGDIR)) {
 		// It already exists.
 		return true;
 	}
 
 	// create directory.
 	wkDir.mkdir(BGDIR);
-	if (! wkDir.cd(BGDIR)){
+	if (! wkDir.cd(BGDIR)) {
 		return false;
 	}
 	return true;
 }
 
-void ProjectMainFile::deleteImage(const QModelIndex &index)
+void ProjectMainFile::deleteImage(const QModelIndex& index)
 {
 	auto it = m_backgroundImages.begin();
 	BackgroundImageInfo* image = *(it + index.row());
@@ -675,13 +673,13 @@ void ProjectMainFile::deleteImage(const QModelIndex &index)
 
 	// remove background image file from project file.
 	bool del = true;
-	for (it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
+	for (it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it) {
 		BackgroundImageInfo* info = *it;
-		if (fname != info->caption()) continue;
+		if (fname != info->caption()) { continue; }
 		del = false;
 		break;
 	}
-	if (del){
+	if (del) {
 		QDir wkDir = QDir(projectData()->workDirectory());
 		wkDir.cd(BGDIR);
 		wkDir.remove(fname);
@@ -692,9 +690,9 @@ void ProjectMainFile::deleteImage(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::moveUpImage(const QModelIndex &index)
+void ProjectMainFile::moveUpImage(const QModelIndex& index)
 {
-	if (index.row() == 0){
+	if (index.row() == 0) {
 		// Can not move up
 		return;
 	}
@@ -706,9 +704,9 @@ void ProjectMainFile::moveUpImage(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::moveDownImage(const QModelIndex &index)
+void ProjectMainFile::moveDownImage(const QModelIndex& index)
 {
-	if (index.row() == m_backgroundImages.size() - 1){
+	if (index.row() == m_backgroundImages.size() - 1) {
 		// Can not move down
 		return;
 	}
@@ -720,7 +718,7 @@ void ProjectMainFile::moveDownImage(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::deleteMeasuredData(const QModelIndex &index)
+void ProjectMainFile::deleteMeasuredData(const QModelIndex& index)
 {
 	auto it = m_measuredDatas.begin();
 	MeasuredData* md = *(it + index.row());
@@ -733,9 +731,9 @@ void ProjectMainFile::deleteMeasuredData(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::moveUpMeasuredData(const QModelIndex &index)
+void ProjectMainFile::moveUpMeasuredData(const QModelIndex& index)
 {
-	if (index.row() == 0){
+	if (index.row() == 0) {
 		// Can not move up
 		return;
 	}
@@ -747,9 +745,9 @@ void ProjectMainFile::moveUpMeasuredData(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::moveDownMeasuredData(const QModelIndex &index)
+void ProjectMainFile::moveDownMeasuredData(const QModelIndex& index)
 {
-	if (index.row() == m_measuredDatas.size() - 1){
+	if (index.row() == m_measuredDatas.size() - 1) {
 		// Can not move down
 		return;
 	}
@@ -761,18 +759,18 @@ void ProjectMainFile::moveDownMeasuredData(const QModelIndex &index)
 	setModified();
 }
 
-void ProjectMainFile::addRenderer(vtkRenderer *ren)
+void ProjectMainFile::addRenderer(vtkRenderer* ren)
 {
-	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it){
-		if (*it == ren) return;
+	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it) {
+		if (*it == ren) { return; }
 	}
 	m_renderers.append(ren);
 }
 
-void ProjectMainFile::removeRenderer(vtkRenderer *ren)
+void ProjectMainFile::removeRenderer(vtkRenderer* ren)
 {
-	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it){
-		if (*it == ren){
+	for (auto it = m_renderers.begin(); it != m_renderers.end(); ++it) {
+		if (*it == ren) {
 			m_renderers.erase(it);
 			return;
 		}
@@ -783,27 +781,27 @@ void ProjectMainFile::checkVersionCompatibility()
 {
 	VersionNumber iRICVer = iricMainWindow()->versionNumber();
 	VersionNumber projVer = m_iRICVersion;
-	if (iRICVer.compatibleWith(projVer)){
+	if (iRICVer.compatibleWith(projVer)) {
 		// OK, no problem.
 		return;
 	}
 	// check for exceptional cases.
 
 	// if iRIC ver. is 1.9 and project ver. is 2.0, it is accepted.
-	if (iRICVer.major() == 1 && iRICVer.minor() == 9 && projVer.major() == 2 && projVer.minor() == 0){
+	if (iRICVer.major() == 1 && iRICVer.minor() == 9 && projVer.major() == 2 && projVer.minor() == 0) {
 		return;
 	}
 	// if iRIC ver. is 2.0 and project ver. is 1.9, it is accepted.
-	if (iRICVer.major() == 2 && iRICVer.minor() == 0 && projVer.major() == 1 && projVer.minor() == 9){
+	if (iRICVer.major() == 2 && iRICVer.minor() == 0 && projVer.major() == 1 && projVer.minor() == 9) {
 		return;
 	}
 	// if iRIC ver. is 3.0 and project ver. is 2.x, it is accepted.
-	if (iRICVer.major() == 3 && projVer.major() == 2){
+	if (iRICVer.major() == 3 && projVer.major() == 2) {
 		return;
 	}
 
 	// error.
-	if (iRICVer.major() > projVer.major()){
+	if (iRICVer.major() > projVer.major()) {
 		throw ErrorMessage(tr("This project file cannot be read, because it was created by too old iRIC (version %1).").arg(projVer.toString()));
 	} else {
 		throw ErrorMessage(tr("This project file cannot be read, because it was created by newer iRIC (version %1).").arg(projVer.toString()));
@@ -812,26 +810,26 @@ void ProjectMainFile::checkVersionCompatibility()
 
 void ProjectMainFile::loadBackgrounds(const QDomNode& node)
 {
-	for (int i = 0; i < m_backgroundImages.size(); ++i){
+	for (int i = 0; i < m_backgroundImages.size(); ++i) {
 		delete m_backgroundImages.at(i);
 	}
 	m_backgroundImages.clear();
 	QDomNodeList children = node.childNodes();
 	int len = children.count();
-	for (int i = 0; i < len; ++i){
+	for (int i = 0; i < len; ++i) {
 		QDomNode child = children.at(len - 1 - i);
 		QDomElement elem = child.toElement();
 		QString fname = elem.attribute("filename");
 		QString absolutePath = projectData()->workDirectory();
 		absolutePath.append("/").append(BGDIR).append("/").append(fname);
 		QFileInfo finfo(absolutePath);
-		if (finfo.exists()){
+		if (finfo.exists()) {
 			try {
 				BackgroundImageInfo* image = new BackgroundImageInfo(absolutePath, absolutePath, this);
 				m_backgroundImages.push_front(image);
 				image->loadFromProjectMainFile(child);
 				emit backgroundImageAdded();
-			} catch (ErrorMessage m){
+			} catch (ErrorMessage m) {
 				QMessageBox::warning(iricMainWindow(), tr("Warning"), m);
 			}
 		} else {
@@ -844,7 +842,7 @@ void ProjectMainFile::loadBackgrounds(const QDomNode& node)
 
 void ProjectMainFile::saveBackgrounds(QXmlStreamWriter& writer)
 {
-	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it){
+	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it) {
 		BackgroundImageInfo* bg = *it;
 		writer.writeStartElement("BackgroundImageInfo");
 		bg->saveToProjectMainFile(writer);
@@ -855,13 +853,13 @@ void ProjectMainFile::saveBackgrounds(QXmlStreamWriter& writer)
 
 void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 {
-	for (int i = 0; i < m_measuredDatas.size(); ++i){
+	for (int i = 0; i < m_measuredDatas.size(); ++i) {
 		delete m_measuredDatas.at(i);
 	}
 	m_measuredDatas.clear();
 	QDomNodeList children = node.childNodes();
 	int len = children.count();
-	for (int i = 0; i < len; ++i){
+	for (int i = 0; i < len; ++i) {
 		QDomNode child = children.at(len - 1 - i);
 		MeasuredData* md = new MeasuredData(this);
 		m_measuredDatas.push_front(md);
@@ -872,7 +870,7 @@ void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 void ProjectMainFile::saveMeasuredDatas(QXmlStreamWriter& writer)
 {
 	int index = 1;
-	for (auto it = m_measuredDatas.begin(); it != m_measuredDatas.end(); ++it){
+	for (auto it = m_measuredDatas.begin(); it != m_measuredDatas.end(); ++it) {
 		MeasuredData* md = *it;
 		md->setIndex(index);
 		writer.writeStartElement("MeasuredData");
@@ -884,7 +882,7 @@ void ProjectMainFile::saveMeasuredDatas(QXmlStreamWriter& writer)
 
 void ProjectMainFile::updateActorVisibility(int idx, bool vis)
 {
-	if (idx < 0){} else {
+	if (idx < 0) {} else {
 		auto it = m_backgroundImages.begin();
 		BackgroundImageInfo* bg = *(it + idx);
 		bg->setVisible(vis);
@@ -897,10 +895,10 @@ QStringList ProjectMainFile::backgroundImageFiles()
 	QStringList ret;
 
 	QDir dir(projectData()->workDirectory());
-	if (! dir.cd(BGDIR)) return ret;
+	if (! dir.cd(BGDIR)) { return ret; }
 
 	QStringList list = dir.entryList(QDir::Files);
-	for (auto it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it) {
 		QString tmp = *it;
 		QString path(BGDIR);
 		path.append("/").append(tmp);
@@ -920,7 +918,7 @@ void ProjectMainFile::addMeasuredData()
 	QString dir = LastIODirectory::get();
 	QString filter(tr("Text Files (*.csv *.txt);;All Files (*.*)"));
 	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Open Measured Data File"), dir, filter);
-	if (fname == "") return;
+	if (fname == "") { return; }
 
 	QFileInfo finfo(fname);
 	try {
@@ -930,7 +928,7 @@ void ProjectMainFile::addMeasuredData()
 		emit measuredDataAdded();
 		setModified();
 		LastIODirectory::set(finfo.absolutePath());
-	} catch (ErrorMessage& message){
+	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}
 }
@@ -945,12 +943,13 @@ void ProjectMainFile::openPostProcessors()
 	// read setting about Post Processors
 	// Post processor settings are loaded later.
 	QDomNode tmpNode = iRIC::getChildNode(docElem, "PostProcessors");
-	if (! tmpNode.isNull()){
+	if (! tmpNode.isNull()) {
 		m_postProcessors->loadFromProjectMainFile(tmpNode);
 	}
 }
 
-void ProjectMainFile::loadDom(QDomDocument& doc) {
+void ProjectMainFile::loadDom(QDomDocument& doc)
+{
 	QString fname = filename();
 	QFile f(fname);
 	QString errorStr;
@@ -958,7 +957,7 @@ void ProjectMainFile::loadDom(QDomDocument& doc) {
 	int errorColumn;
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(fname).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -976,7 +975,7 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 	int errorColumn;
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Error occured while loading %1.").arg(filename));
 		return false;
 	}
@@ -985,9 +984,9 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 	QString solverVersion = elem.attribute("solverVersion");
 	VersionNumber vn(solverVersion);
 
-	if (solvername != m_solverName || ! m_solverVersion.compatibleWith(vn)){
+	if (solvername != m_solverName || ! m_solverVersion.compatibleWith(vn)) {
 		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?").arg(solvername).arg(solverVersion), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return false;}
+		if (ret == QMessageBox::No) {return false;}
 	}
 	m_postProcessors->loadFromProjectMainFile(doc.documentElement(), true);
 
@@ -996,13 +995,13 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 
 bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 {
-	if (m_postProcessors->windowCount() == 0){
+	if (m_postProcessors->windowCount() == 0) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("There is no visualization/graph windows."));
 		return false;
 	}
 	QFile f(filename);
 	bool ok = f.open(QFile::WriteOnly);
-	if (! ok){
+	if (! ok) {
 		// Failed opening the file.
 		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("File %1 could not be opened.").arg(filename));
 		return false;
@@ -1023,11 +1022,11 @@ bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 
 void ProjectMainFile::setCoordinateSystem(CoordinateSystem* system)
 {
-	if (m_coordinateSystem != nullptr){
+	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->free();
 	}
 	m_coordinateSystem = system;
-	if (m_coordinateSystem != nullptr){m_coordinateSystem->init();}
+	if (m_coordinateSystem != nullptr) {m_coordinateSystem->init();}
 }
 
 void ProjectMainFile::setOffset(double x, double y)
@@ -1042,15 +1041,15 @@ void ProjectMainFile::setOffset(double x, double y)
 class ProjectSetOffsetCommand : public QUndoCommand
 {
 public:
-	ProjectSetOffsetCommand(const QVector2D& newoffset, ProjectMainFile* file){
+	ProjectSetOffsetCommand(const QVector2D& newoffset, ProjectMainFile* file) {
 		m_newOffset = newoffset;
 		m_oldOffset = file->offset();
 		m_projectMainFile = file;
 	}
-	void redo(){
+	void redo() {
 		m_projectMainFile->setOffset(m_newOffset.x(), m_newOffset.y());
 	}
-	void undo(){
+	void undo() {
 		m_projectMainFile->setOffset(m_oldOffset.x(), m_oldOffset.y());
 	}
 
@@ -1066,7 +1065,7 @@ void ProjectMainFile::setupOffset()
 	OffsetSettingDialog dialog;
 	dialog.setOffset(m_offset.x(), m_offset.y());
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	iRICUndoStack::instance().push(new ProjectSetOffsetCommand(QVector2D(dialog.offsetX(), dialog.offsetY()), this));
 }
@@ -1078,7 +1077,7 @@ int ProjectMainFile::showCoordinateSystemDialog()
 	dialog.setBuilder(mainW->coordinateSystemBuilder());
 	dialog.setCoordinateSystem(coordinateSystem());
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return ret;}
+	if (ret == QDialog::Rejected) {return ret;}
 	setCoordinateSystem(dialog.coordinateSystem());
 	return ret;
 }

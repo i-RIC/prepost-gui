@@ -29,7 +29,7 @@
 const double GoogleMapImageImporter::METERPERPIXEL_AT_EQUATOR_1 = 78272.137219; //
 const int GoogleMapImageImporter::MAX_GOOGLEAPI_COUNT = 50;
 
-GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMainWindowInterface *parent)
+GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMainWindowInterface* parent)
 	: QObject(parent)
 {
 	m_projectData = projectData;
@@ -41,7 +41,7 @@ GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMai
 	QList<QNetworkProxy> proxies = setting.queryProxy();
 	QNetworkProxy proxy;
 	proxy.setType(QNetworkProxy::NoProxy);
-	if (proxies.size() != 0){
+	if (proxies.size() != 0) {
 		proxy = proxies.first();
 	}
 	m_googleMapAccessManager->setProxy(proxy);
@@ -51,7 +51,7 @@ void GoogleMapImageImporter::importImages()
 {
 	ProjectMainFile* mainFile = m_projectData->mainfile();
 	CoordinateSystem* coordSystem = mainFile->coordinateSystem();
-	if (coordSystem == nullptr){
+	if (coordSystem == nullptr) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To import background image using Google Map API, you must specify coordinate system for this project."));
 		return;
 	}
@@ -62,7 +62,7 @@ void GoogleMapImageImporter::importImages()
 
 	double centerLon, centerLat;
 	double width = qMax(xmax - xmin, ymax - ymin);
-	if (width < 1.0E-6){
+	if (width < 1.0E-6) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("This function can not be used when there is no data to be drawn."));
 		return;
 	}
@@ -72,7 +72,7 @@ void GoogleMapImageImporter::importImages()
 	double meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
 	meterPerPixel *= std::cos(centerLat / 180 * 3.141592);
 
-	while (width / meterPerPixel < 640 && zoomlevel <= 20){
+	while (width / meterPerPixel < 640 && zoomlevel <= 20) {
 		++ zoomlevel;
 		meterPerPixel /= 2.;
 	}
@@ -80,25 +80,25 @@ void GoogleMapImageImporter::importImages()
 	int maxzoomlevel = zoomlevel;
 
 	int gcount = 1;
-	while (gcount * gcount <= MAX_GOOGLEAPI_COUNT){
+	while (gcount * gcount <= MAX_GOOGLEAPI_COUNT) {
 		++ gcount;
 	}
 	-- gcount;
-	if (gcount == 0){gcount = 1;}
+	if (gcount == 0) {gcount = 1;}
 
-	while (width / meterPerPixel < (640 * gcount) && maxzoomlevel <= 20){
+	while (width / meterPerPixel < (640 * gcount) && maxzoomlevel <= 20) {
 		++ maxzoomlevel;
 		meterPerPixel /= 2.0;
 	}
 	-- maxzoomlevel;
-	if (maxzoomlevel < zoomlevel){maxzoomlevel = zoomlevel;}
+	if (maxzoomlevel < zoomlevel) {maxzoomlevel = zoomlevel;}
 
 	GoogleMapImageImportSettingDialog dialog(mainWindow());
 	dialog.setZoom(zoomlevel);
 	dialog.setZoomMax(maxzoomlevel);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	coordSystem->mapGeoToGrid(centerLon, centerLat, &xcenter, &ycenter);
 
@@ -110,26 +110,26 @@ void GoogleMapImageImporter::importImages()
 	meterPerPixel = METERPERPIXEL_AT_EQUATOR_1;
 	meterPerPixel *= std::cos(centerLat / 180 * 3.141592);
 
-	while (zoomlevel < zoom){
+	while (zoomlevel < zoom) {
 		++ zoomlevel;
 		meterPerPixel /= 2.;
 	}
 
 	// copy to the project file.
-	if (! mainFile->mkdirBGDIR()){
+	if (! mainFile->mkdirBGDIR()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 		return;
 	}
 	int pixelWidth = static_cast<int>(width / meterPerPixel);
 	int icount = ((pixelWidth - 1) / 640) + 1;
-	if (icount > gcount){icount = gcount;}
+	if (icount > gcount) {icount = gcount;}
 
 	WaitDialog* wdialog = new WaitDialog(mainWindow());
 	connect(wdialog, SIGNAL(canceled()), this, SLOT(abortGoogleMapRequest()));
 	wdialog->show();
 
-	for (int j = 0; j < icount; ++j){
-		for (int i = 0; i < icount; ++i){
+	for (int j = 0; j < icount; ++j) {
+		for (int i = 0; i < icount; ++i) {
 			double tmpCenterX = xcenter + ((i + 0.5) / icount - 0.5) * width;
 			double tmpCenterY = ycenter + ((j + 0.5) / icount - 0.5) * width;
 
@@ -144,13 +144,13 @@ void GoogleMapImageImporter::importImages()
 			connect(m_googleMapReply, SIGNAL(finished()), this, SLOT(handleGoogleMapDone()));
 
 			qApp->processEvents();
-			while (m_isWaitingHttpResponse){
+			while (m_isWaitingHttpResponse) {
 				qApp->thread()->wait(100);
 				qApp->processEvents();
 			}
 
-			if (m_googleMapReply->error() != QNetworkReply::NoError){
-				if (m_googleMapReply->error() != QNetworkReply::OperationCanceledError){
+			if (m_googleMapReply->error() != QNetworkReply::NoError) {
+				if (m_googleMapReply->error() != QNetworkReply::OperationCanceledError) {
 					QMessageBox::critical(mainWindow(), tr("Error"), m_googleMapReply->errorString());
 				}
 				goto FINISH_GOOGLEAPI;
@@ -159,7 +159,7 @@ void GoogleMapImageImporter::importImages()
 				QString fname = getNextGoogleMapFileName();
 				QFile f(fname);
 				bool ok = f.open(QIODevice::WriteOnly);
-				if (! ok){
+				if (! ok) {
 					QMessageBox::warning(mainWindow(), tr("Warning"), tr("The background image file could not be opened. Please try again."));
 					f.close();
 					goto FINISH_GOOGLEAPI;
@@ -175,7 +175,7 @@ void GoogleMapImageImporter::importImages()
 				image->setScale(meterPerPixel);
 
 				mainFile->addBackgroundImage(image);
-			} catch (ErrorMessage m){
+			} catch (ErrorMessage m) {
 				QMessageBox::warning(mainWindow(), tr("Warning"), m);
 			}
 		}
@@ -191,7 +191,7 @@ FINISH_GOOGLEAPI:
 
 void GoogleMapImageImporter::abortGoogleMapRequest()
 {
-	if (m_googleMapReply == nullptr){return;}
+	if (m_googleMapReply == nullptr) {return;}
 	m_googleMapReply->abort();
 }
 

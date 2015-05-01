@@ -37,16 +37,17 @@ public:
 	const static QString XAXIS_POSITION_Z;
 	const static QString XAXIS_STREAM_WISE_DISTANCE;
 
-	class Setting{
+	class Setting
+	{
 	public:
-		Setting(){
+		Setting() {
 			m_name = "";
 			m_axisSide = asLeft;
 			m_customColor = Qt::black;
 			m_symbolType = symCircle;
 			m_symbolSize = 7;
 		}
-		Setting(const QString& name){
+		Setting(const QString& name) {
 			m_name = name;
 			m_axisSide = asLeft;
 			m_customColor = Qt::black;
@@ -55,17 +56,17 @@ public:
 		}
 		void setupCurve(QwtPlotCustomCurve* curve) const;
 		const QString& name() const {return m_name;}
-		void setName(const QString& name){m_name = name;}
+		void setName(const QString& name) {m_name = name;}
 		AxisSide axisSide() const {return m_axisSide;}
-		void setAxisSide(AxisSide as){m_axisSide = as;}
+		void setAxisSide(AxisSide as) {m_axisSide = as;}
 		const QColor& customColor() const {return m_customColor;}
-		void setCustomColor(const QColor& c){m_customColor = c;}
+		void setCustomColor(const QColor& c) {m_customColor = c;}
 		SymbolType symbolType() const {return m_symbolType;}
-		void setSymbolType(SymbolType st){m_symbolType = st;}
+		void setSymbolType(SymbolType st) {m_symbolType = st;}
 		int symbolSize() const {return m_symbolSize;}
-		void setSymbolSize(int size){m_symbolSize = size;}
-		void loadFromProjectMainFile(const QDomNode &node);
-		void saveToProjectMainFile(QXmlStreamWriter &writer) const;
+		void setSymbolSize(int size) {m_symbolSize = size;}
+		void loadFromProjectMainFile(const QDomNode& node);
+		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 	private:
 		QString m_name;
 		AxisSide m_axisSide;
@@ -86,58 +87,58 @@ public:
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dScatteredWindowResultGroupDataItem* gItem) const;
 
 	QString xAxis() const {return m_xAxis;}
-	void setXAxis(const QString& axis){m_xAxis = axis;}
+	void setXAxis(const QString& axis) {m_xAxis = axis;}
 
 	const QString autoYAxisLabel(AxisSide as);
 	bool axisNeeded(AxisSide as);
 
-	QList<Setting>& targetDatas(){return m_targetDatas;}
+	QList<Setting>& targetDatas() {return m_targetDatas;}
 	const QList<Setting>& targetDatas() const {return m_targetDatas;}
 
 	bool xAxisAutoRange() const {return m_xAxisAutoRange;}
-	void setXAxisAutoRange(bool a){m_xAxisAutoRange = a;}
+	void setXAxisAutoRange(bool a) {m_xAxisAutoRange = a;}
 	double xAxisValueMin() const {return m_xAxisValueMin;}
-	void setXAxisValueMin(double min){m_xAxisValueMin = min;}
+	void setXAxisValueMin(double min) {m_xAxisValueMin = min;}
 	double xAxisValueMax() const {return m_xAxisValueMax;}
-	void setXAxisValueMax(double max){m_xAxisValueMax = max;}
+	void setXAxisValueMax(double max) {m_xAxisValueMax = max;}
 	bool xAxisReverse() const {return m_xAxisReverse;}
-	void setXAxisReverse(bool rev){m_xAxisReverse = rev;}
+	void setXAxisReverse(bool rev) {m_xAxisReverse = rev;}
 	bool xAxisLog() const {return m_xAxisLog;}
-	void setXAxisLog(bool log){m_xAxisLog = log;}
+	void setXAxisLog(bool log) {m_xAxisLog = log;}
 	const QString& xAxisLabel() const {return m_xAxisLabel;}
-	void setXAxisLabel(const QString& l){m_xAxisLabel = l;}
+	void setXAxisLabel(const QString& l) {m_xAxisLabel = l;}
 	void setAutoXAxisLabel();
 
 	bool yAxisLeftAutoRange() const {return m_yAxisLeftAutoRange;}
-	void setYAxisLeftAutoRange(bool a){m_yAxisLeftAutoRange = a;}
+	void setYAxisLeftAutoRange(bool a) {m_yAxisLeftAutoRange = a;}
 	double yAxisLeftMin() const {return m_yAxisLeftMin;}
-	void setYAxisLeftMin(double min){m_yAxisLeftMin = min;}
+	void setYAxisLeftMin(double min) {m_yAxisLeftMin = min;}
 	double yAxisLeftMax() const {return m_yAxisLeftMax;}
-	void setYAxisLeftMax(double max){m_yAxisLeftMax = max;}
+	void setYAxisLeftMax(double max) {m_yAxisLeftMax = max;}
 	bool yAxisLeftReverse() const {return m_yAxisLeftReverse;}
-	void setYAxisLeftReverse(bool reverse){m_yAxisLeftReverse = reverse;}
+	void setYAxisLeftReverse(bool reverse) {m_yAxisLeftReverse = reverse;}
 	bool yAxisLeftLog() const {return m_yAxisLeftLog;}
-	void setYAxisLeftLog(bool log){m_yAxisLeftLog = log;}
+	void setYAxisLeftLog(bool log) {m_yAxisLeftLog = log;}
 	QString yAxisLeftTitle() const {return m_yAxisLeftTitle;}
-	void setYAxisLeftTitle(const QString title){m_yAxisLeftTitle = title;}
+	void setYAxisLeftTitle(const QString title) {m_yAxisLeftTitle = title;}
 
 	bool yAxisRightAutoRange() const {return m_yAxisRightAutoRange;}
-	void setYAxisRightAutoRange(bool a){m_yAxisRightAutoRange = a;}
+	void setYAxisRightAutoRange(bool a) {m_yAxisRightAutoRange = a;}
 	double yAxisRightMin() const {return m_yAxisRightMin;}
-	void setYAxisRightMin(double min){m_yAxisRightMin = min;}
+	void setYAxisRightMin(double min) {m_yAxisRightMin = min;}
 	double yAxisRightMax() const {return m_yAxisRightMax;}
-	void setYAxisRightMax(double max){m_yAxisRightMax = max;}
+	void setYAxisRightMax(double max) {m_yAxisRightMax = max;}
 	bool yAxisRightReverse() const {return m_yAxisRightReverse;}
-	void setYAxisRightReverse(bool reverse){m_yAxisRightReverse = reverse;}
+	void setYAxisRightReverse(bool reverse) {m_yAxisRightReverse = reverse;}
 	bool yAxisRightLog() const {return m_yAxisRightLog;}
-	void setYAxisRightLog(bool log){m_yAxisRightLog = log;}
+	void setYAxisRightLog(bool log) {m_yAxisRightLog = log;}
 	QString yAxisRightTitle() const {return m_yAxisRightTitle;}
-	void setYAxisRightTitle(const QString title){m_yAxisRightTitle = title;}
+	void setYAxisRightTitle(const QString title) {m_yAxisRightTitle = title;}
 
-	const QString& title(){return m_title;}
-	void setTitle(const QString& t){m_title = t;}
-	bool addTimeToTitle(){return m_addTimeToTitle;}
-	void setAddTimeToTitle(bool add){m_addTimeToTitle = add;}
+	const QString& title() {return m_title;}
+	void setTitle(const QString& t) {m_title = t;}
+	bool addTimeToTitle() {return m_addTimeToTitle;}
+	void setAddTimeToTitle(bool add) {m_addTimeToTitle = add;}
 
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);

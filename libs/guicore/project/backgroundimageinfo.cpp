@@ -99,24 +99,24 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 
 	QString ext = finfo.suffix().toLower();
 	QString worldFilename = finfo.baseName();
-	if (ext == "jpg" || ext == "jpeg"){
+	if (ext == "jpg" || ext == "jpeg") {
 		// jpeg
 		reader = vtkSmartPointer<vtkJPEGReader>::New();
-		if (dir.exists(worldFilename.append(".jgw"))){
+		if (dir.exists(worldFilename.append(".jgw"))) {
 			m_hasWorldFile = true;
 			m_worldFilename = dir.absoluteFilePath(worldFilename);
 		}
-	} else if (ext == "png"){
+	} else if (ext == "png") {
 		// png
 		reader = vtkSmartPointer<vtkPNGReader>::New();
-		if (dir.exists(worldFilename.append(".pgw"))){
+		if (dir.exists(worldFilename.append(".pgw"))) {
 			m_hasWorldFile = true;
 			m_worldFilename = dir.absoluteFilePath(worldFilename);
 		}
-	} else if (ext == "tif"){
+	} else if (ext == "tif") {
 		// tiff
 		reader = vtkSmartPointer<vtkTIFFReader>::New();
-		if (dir.exists(worldFilename.append(".tfw"))){
+		if (dir.exists(worldFilename.append(".tfw"))) {
 			m_hasWorldFile = true;
 			m_worldFilename = dir.absoluteFilePath(worldFilename);
 		}
@@ -124,7 +124,7 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 
 	QPixmap pixmap;
 	bool ok = pixmap.load(filename);
-	if (! ok){
+	if (! ok) {
 		throw ErrorMessage(tr("Unable to read image %1").arg(finfo.fileName()));
 	}
 	bool scaled = false;
@@ -137,14 +137,14 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 
 	int maxwidth = settings.value("graphics/backgroundimagemaxsize", MAXWIDTH).value<int>();
 
-	if (pixmap.width() > pixmap.height()){
-		if (pixmap.width() > maxwidth){
+	if (pixmap.width() > pixmap.height()) {
+		if (pixmap.width() > maxwidth) {
 			m_resizeScale = static_cast<double>(maxwidth) / pixmap.width();
 			pixmap = pixmap.scaledToWidth(maxwidth);
 			scaled = true;
 		}
 	} else {
-		if (pixmap.height() > maxwidth){
+		if (pixmap.height() > maxwidth) {
 			m_resizeScale = static_cast<double>(maxwidth) / pixmap.height();
 			pixmap = pixmap.scaledToHeight(maxwidth);
 			scaled = true;
@@ -153,7 +153,7 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 
 	QString thumbnailName = getThumbnailFileName(filename);
 
-	if (scaled){
+	if (scaled) {
 		// if scaled to smaller file, it is saved.
 		pixmap.save(thumbnailName);
 	} else {
@@ -161,7 +161,7 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 		QFile::remove(thumbnailName);
 	}
 	QFile thumb(thumbnailName);
-	if (thumb.exists()){
+	if (thumb.exists()) {
 		reader = vtkSmartPointer<vtkJPEGReader>::New();
 		reader->SetFileName(iRIC::toStr(thumbnailName).c_str());
 	} else {
@@ -189,7 +189,7 @@ void BackgroundImageInfo::readImageData(const QString& filename, const QString& 
 
 void BackgroundImageInfo::initializePosition()
 {
-	if (m_hasWorldFile){
+	if (m_hasWorldFile) {
 		readWorldFile(m_worldFilename);
 	} else {
 		fitImageToData();
@@ -224,9 +224,9 @@ void BackgroundImageInfo::readWorldFile(const QString& name)
 	m_translateY = leftTopY + (m_imageHeight) * deltaY;
 	m_aspectRatio = m_imageHeight / static_cast<double>(m_imageWidth);
 
-	if (fabs(deltaX) != fabs(deltaY)){
+	if (fabs(deltaX) != fabs(deltaY)) {
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches."
-			" It is acceptable, but it may be wrong.").arg(QDir::toNativeSeparators(name)));
+												 " It is acceptable, but it may be wrong.").arg(QDir::toNativeSeparators(name)));
 	}
 }
 
@@ -235,18 +235,18 @@ void BackgroundImageInfo::fitImageToData()
 	// fit to the data in the preprocessor window.
 	double bounds[6];
 	int vis;
-	if (m_preProcessorActor != nullptr){
+	if (m_preProcessorActor != nullptr) {
 		vis = m_preProcessorActor->GetVisibility();
 		m_preProcessorActor->SetVisibility(0);
 	}
 	iricMainWindow()->preProcessorWindow()->dataModel()->graphicsView()->mainRenderer()->ComputeVisiblePropBounds(bounds);
-	if (m_preProcessorActor != nullptr){
+	if (m_preProcessorActor != nullptr) {
 		m_preProcessorActor->SetVisibility(vis);
 	}
 	double targetX = bounds[1] - bounds[0];
 	double targetY = bounds[3] - bounds[2];
 	double targetAspectRatio = targetY / targetX;
-	if (targetX < 0 || targetY < 0) return;
+	if (targetX < 0 || targetY < 0) { return; }
 
 	m_translateX = bounds[0];
 	m_translateY = bounds[2];
@@ -257,9 +257,9 @@ void BackgroundImageInfo::fitImageToData()
 	m_aspectRatio = actorAspectRatio;
 
 	double scale;
-	if (targetAspectRatio > actorAspectRatio){
+	if (targetAspectRatio > actorAspectRatio) {
 		scale = targetX / actorX;
-	}else{
+	} else {
 		scale = targetY / actorY;
 	}
 
@@ -271,8 +271,7 @@ class BackgroundImageInfoActorPropertySetting : public QUndoCommand
 {
 public:
 	BackgroundImageInfoActorPropertySetting(double posx, double posy, double scale, double theta, BackgroundImageInfo* info)
-		: QUndoCommand(QObject::tr("Reallocate Background Image"))
-	{
+		: QUndoCommand(QObject::tr("Reallocate Background Image")) {
 		m_oldTranslateX = info->m_oldTranslateX;
 		m_oldTranslateY = info->m_oldTranslateY;
 		m_oldScale = info->m_oldScale;
@@ -285,8 +284,7 @@ public:
 
 		m_info = info;
 	}
-	void undo()
-	{
+	void undo() {
 		m_info->m_translateX = m_oldTranslateX;
 		m_info->m_translateY = m_oldTranslateY;
 		m_info->m_scale = m_oldScale;
@@ -294,8 +292,7 @@ public:
 
 		m_info->informChange();
 	}
-	void redo()
-	{
+	void redo() {
 		m_info->m_translateX = m_newTranslateX;
 		m_info->m_translateY = m_newTranslateY;
 		m_info->m_scale = m_newScale;
@@ -319,8 +316,8 @@ private:
 
 void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_fixed){return;}
-	switch (event->button()){
+	if (m_fixed) {return;}
+	switch (event->button()) {
 	case Qt::LeftButton:
 		m_isTranslating = true;
 		v->setCursor(m_moveCursor);
@@ -355,14 +352,14 @@ void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, V
 
 void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (m_fixed){return;}
-	if (! (m_isRotating || m_isZooming || m_isTranslating)) return;
+	if (m_fixed) {return;}
+	if (!(m_isRotating || m_isZooming || m_isTranslating)) { return; }
 	double worldX = event->x();
 	double worldY = event->y();
 	VTK2DGraphicsView* view = dynamic_cast<VTK2DGraphicsView*>(v);
 	view->viewportToWorld(worldX, worldY);
 
-	if (m_isRotating){
+	if (m_isRotating) {
 		double p[2];
 		double q[2];
 		p[0] = lastX - m_translateX;
@@ -375,11 +372,11 @@ void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VT
 		theta = asin(theta) * 180 / M_PI;
 		// rotate theta degrees about z axis.
 		m_angle += theta;
-	} else if (m_isZooming){
+	} else if (m_isZooming) {
 		view->worldToViewport(lastX, lastY);
 		double scaleFactor = 1 + (lastY - event->y()) / 100;
 		m_scale *= scaleFactor;
-	}else if (m_isTranslating){
+	} else if (m_isTranslating) {
 		m_translateX += (worldX - lastX);
 		m_translateY += (worldY - lastY);
 	}
@@ -391,8 +388,8 @@ void BackgroundImageInfo::mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VT
 
 void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* /*event*/, VTKGraphicsView* v)
 {
-	if (m_fixed){return;}
-	if (! m_isMoving){return;}
+	if (m_fixed) {return;}
+	if (! m_isMoving) {return;}
 	m_isRotating = false;
 	m_isZooming = false;
 	m_isTranslating = false;
@@ -412,9 +409,9 @@ void BackgroundImageInfo::toggleFixState()
 void BackgroundImageInfo::updateFixActionIcon()
 {
 	QIcon icon;
-	if (m_fixed){
+	if (m_fixed) {
 		icon = QIcon(":/libs/guicore/images/iconPinFixed.png");
-	}else{
+	} else {
 		icon = QIcon(":/libs/guicore/images/iconPinFree.png");
 	}
 	m_fixActionWithIcon->setIcon(icon);
@@ -476,7 +473,8 @@ vtkActor* BackgroundImageInfo::refActor()
 	return m_refActor;
 }
 
-QString BackgroundImageInfo::getThumbnailFileName(const QString& origname){
+QString BackgroundImageInfo::getThumbnailFileName(const QString& origname)
+{
 	QFileInfo finfo(origname);
 	return QString("%1/%2_thumb.jpg").arg(finfo.absolutePath()).arg(finfo.baseName());
 }

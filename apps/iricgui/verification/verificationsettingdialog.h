@@ -7,16 +7,17 @@ class PostSolutionInfo;
 class MeasuredData;
 class PostZoneDataContainer;
 
-namespace Ui {
-class VerificationSettingDialog;
+namespace Ui
+{
+	class VerificationSettingDialog;
 }
 
 class VerificationSettingDialog : public QDialog
 {
 	Q_OBJECT
-	
+
 public:
-	explicit VerificationSettingDialog(QWidget *parent = nullptr);
+	explicit VerificationSettingDialog(QWidget* parent = nullptr);
 	~VerificationSettingDialog();
 	void setPostSolutionInfo(PostSolutionInfo* info);
 	void setMeasuredDatas(const QList<MeasuredData*>& data);
@@ -43,7 +44,7 @@ private:
 	PostSolutionInfo* m_postSolutionInfo;
 	QList<MeasuredData*> m_measuredData;
 
-	Ui::VerificationSettingDialog *ui;
+	Ui::VerificationSettingDialog* ui;
 };
 
 #endif // VERIFICATIONSETTINGDIALOG_H

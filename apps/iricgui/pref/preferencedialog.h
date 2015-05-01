@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class PreferenceDialog;
 }
 
@@ -12,7 +13,7 @@ class PreferenceDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PreferenceDialog(QWidget *parent = nullptr);
+	explicit PreferenceDialog(QWidget* parent = nullptr);
 	~PreferenceDialog();
 	bool save();
 
@@ -20,7 +21,7 @@ public slots:
 	void accept();
 
 private:
-	Ui::PreferenceDialog *ui;
+	Ui::PreferenceDialog* ui;
 };
 
 #endif // PREFERENCEDIALOG_H

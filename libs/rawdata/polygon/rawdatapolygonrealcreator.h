@@ -8,8 +8,7 @@ class RawDataPolygonRealCreator : public RawDataPolygonCreatorT<double, vtkDoubl
 {
 public:
 	RawDataPolygonRealCreator()
-		: RawDataPolygonCreatorT<double, vtkDoubleArray>()
-	{
+		: RawDataPolygonCreatorT<double, vtkDoubleArray>() {
 		m_typeName = "realPolygon";
 	}
 };

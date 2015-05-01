@@ -5,7 +5,7 @@
 
 #include <QUrl>
 
-SolverDefinitionAbstractDialog::SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget *parent) :
+SolverDefinitionAbstractDialog::SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::SolverDefinitionAbstractDialog)
 {
@@ -19,10 +19,10 @@ SolverDefinitionAbstractDialog::~SolverDefinitionAbstractDialog()
 	delete ui;
 }
 
-void SolverDefinitionAbstractDialog::changeEvent(QEvent *e)
+void SolverDefinitionAbstractDialog::changeEvent(QEvent* e)
 {
 	QDialog::changeEvent(e);
-	switch (e->type()){
+	switch (e->type()) {
 	case QEvent::LanguageChange:
 		ui->retranslateUi(this);
 		break;
@@ -43,7 +43,7 @@ void SolverDefinitionAbstractDialog::setup()
 	ui->releaseValue->setText(m_solverDefinition->release().toString("yyyy/MM/dd"));
 	QString url = m_solverDefinition->url();
 	QString link;
-	if (url != ""){
+	if (url != "") {
 		QUrl u(url);
 		link.append("<a href=\"").append(u.toString()).append("\">").append(url).append("</a>");
 	}

@@ -110,7 +110,7 @@ void GridBirdEyeWindowDataModel::setDefaultColor()
 	Grid* g = dItem->grid();
 
 	m_customColor = Qt::blue;
-	if (g->gridRelatedCondition(ELEVATION) != nullptr){
+	if (g->gridRelatedCondition(ELEVATION) != nullptr) {
 		m_colorType = ctNode;
 		m_attributeName = ELEVATION;
 	} else {
@@ -137,20 +137,17 @@ class GridBirdEyeWindowEditZScaleCommand : public QUndoCommand
 {
 public:
 	GridBirdEyeWindowEditZScaleCommand(double oldScale, double newScale, GridBirdEyeWindowDataModel* m)
-		: QUndoCommand(GridBirdEyeWindowDataModel::tr("Edit Z-direction Scale"))
-	{
+		: QUndoCommand(GridBirdEyeWindowDataModel::tr("Edit Z-direction Scale")) {
 		m_oldScale = oldScale;
 		m_newScale = newScale;
 		m_model = m;
 	}
-	void undo()
-	{
+	void undo() {
 		m_model->m_warp->SetScaleFactor(m_oldScale);
 		m_model->updateAxes();
 		m_model->fit();
 	}
-	void redo()
-	{
+	void redo() {
 		m_model->m_warp->SetScaleFactor(m_newScale);
 		m_model->updateAxes();
 		m_model->fit();
@@ -167,7 +164,7 @@ void GridBirdEyeWindowDataModel::editZScale()
 	bool ok;
 	QWidget* p = mainWindow();
 	double newZscale = QInputDialog::getDouble(p, tr("Z-direction Scale"), tr("Input new Z-direction scale."), current, 1E-3, 1E3, 3, &ok);
-	if (! ok){return;}
+	if (! ok) {return;}
 	iRICUndoStack::instance().push(new GridBirdEyeWindowEditZScaleCommand(current, newZscale, this));
 }
 
@@ -175,8 +172,7 @@ class GridBirdEyeWindowEditColorCommand : public QUndoCommand
 {
 public:
 	GridBirdEyeWindowEditColorCommand(GridBirdEyeWindowDataModel::ColorType ct, QString attName, QColor customColor, bool axesVisible, QColor axesColor, GridBirdEyeWindowDataModel* m)
-		: QUndoCommand(GridBirdEyeWindowDataModel::tr("Edit Color Setting"))
-	{
+		: QUndoCommand(GridBirdEyeWindowDataModel::tr("Edit Color Setting")) {
 		m_model = m;
 
 		m_newColorType = ct;
@@ -191,8 +187,7 @@ public:
 		m_oldAxesVisible = (m_model->m_cubeAxesActor->GetVisibility() == 1);
 		m_oldAxesColor = m_model->axesColor();
 	}
-	void undo()
-	{
+	void undo() {
 		m_model->m_colorType = m_oldColorType;
 		m_model->m_attributeName = m_oldAttName;
 		m_model->m_customColor = m_oldCustomColor;
@@ -202,8 +197,7 @@ public:
 
 		m_model->updateColor();
 	}
-	void redo()
-	{
+	void redo() {
 		m_model->m_colorType = m_newColorType;
 		m_model->m_attributeName = m_newAttName;
 		m_model->m_customColor = m_newCustomColor;
@@ -243,7 +237,7 @@ void GridBirdEyeWindowDataModel::displaySetting()
 
 	int ret = dialog.exec();
 
-	if (ret != QDialog::Accepted){return;}
+	if (ret != QDialog::Accepted) {return;}
 	iRICUndoStack::instance().push(new GridBirdEyeWindowEditColorCommand(dialog.colorType(), dialog.attributeName(), dialog.customColor(), dialog.axesVisible(), dialog.axesColor(), this));
 }
 
@@ -270,7 +264,7 @@ void GridBirdEyeWindowDataModel::updateColor()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(gItem->parent()->parent());
-	switch (m_colorType){
+	switch (m_colorType) {
 	case ctNode:
 		m_mapper->SetScalarVisibility(1);
 		m_mapper->SetScalarModeToUsePointFieldData();
@@ -299,13 +293,13 @@ void GridBirdEyeWindowDataModel::updateColor()
 void GridBirdEyeWindowDataModel::updateScalarBar()
 {
 	m_scalarBarWidget->SetEnabled(0);
-	if (m_colorType == ctCustom){
+	if (m_colorType == ctCustom) {
 		return;
 	}
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(gItem->parent()->parent());
 	SolverDefinitionGridRelatedCondition* cond = gtItem->gridType()->gridRelatedCondition(m_attributeName);
-	if (cond->isOption()){
+	if (cond->isOption()) {
 		// scalar bar is needless.
 		return;
 	}

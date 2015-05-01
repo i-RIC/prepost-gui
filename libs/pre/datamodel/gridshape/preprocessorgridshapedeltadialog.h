@@ -4,19 +4,21 @@
 #include <QDialog>
 #include <QVector2D>
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorGridShapeDeltaDialog;
 }
 
-class PreProcessorGridShapeDeltaDialog : public QDialog {
+class PreProcessorGridShapeDeltaDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	PreProcessorGridShapeDeltaDialog(QWidget *parent = nullptr);
+	PreProcessorGridShapeDeltaDialog(QWidget* parent = nullptr);
 	~PreProcessorGridShapeDeltaDialog();
 
 	QVector2D delta();
 private:
-	Ui::PreProcessorGridShapeDeltaDialog *ui;
+	Ui::PreProcessorGridShapeDeltaDialog* ui;
 };
 
 #endif // PREPROCESSORGRIDSHAPEDELTADIALOG_H

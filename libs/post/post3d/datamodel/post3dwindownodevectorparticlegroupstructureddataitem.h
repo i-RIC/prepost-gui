@@ -6,8 +6,7 @@
 
 class Post3dWindowParticleStructuredSetProperty;
 
-struct Post3dWindowStructuredParticleSetSetting
-{
+struct Post3dWindowStructuredParticleSetSetting {
 	enum SpaceMode {smNormal, smSubdivide, smSkip};
 	/// Range to generate grid
 	StructuredGridRegion::Range3d range;
@@ -25,8 +24,7 @@ class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindo
 	Q_OBJECT
 public:
 	Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent)
-		: Post3dWindowNodeVectorParticleGroupDataItem(parent)
-	{
+		: Post3dWindowNodeVectorParticleGroupDataItem(parent) {
 		setDefaultValues();
 	}
 protected:

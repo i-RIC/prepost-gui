@@ -6,7 +6,7 @@
 
 #include <QPushButton>
 
-GridCreatingConditionRectangularRegionLonLatSettingDialog::GridCreatingConditionRectangularRegionLonLatSettingDialog(GridCreatingConditionRectangularRegionLonLat* cond, QWidget *parent) :
+GridCreatingConditionRectangularRegionLonLatSettingDialog::GridCreatingConditionRectangularRegionLonLatSettingDialog(GridCreatingConditionRectangularRegionLonLat* cond, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRectangularRegionLonLatSettingDialog)
 {
@@ -59,8 +59,8 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::setStepSize(doub
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMin()
 {
-	if (! isVisible()){return;}
-	if (ui->xMinSpinBox->value() > ui->xMaxSpinBox->value()){
+	if (! isVisible()) {return;}
+	if (ui->xMinSpinBox->value() > ui->xMaxSpinBox->value()) {
 		ui->xMinSpinBox->setValue(ui->xMaxSpinBox->value());
 		updateResultDisplays();
 	}
@@ -68,8 +68,8 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMin()
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMax()
 {
-	if (! isVisible()){return;}
-	if (ui->xMaxSpinBox->value() < ui->xMinSpinBox->value()){
+	if (! isVisible()) {return;}
+	if (ui->xMaxSpinBox->value() < ui->xMinSpinBox->value()) {
 		ui->xMaxSpinBox->setValue(ui->xMinSpinBox->value());
 		updateResultDisplays();
 	}
@@ -77,8 +77,8 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMax()
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMin()
 {
-	if (! isVisible()){return;}
-	if (ui->yMinSpinBox->value() > ui->yMaxSpinBox->value()){
+	if (! isVisible()) {return;}
+	if (ui->yMinSpinBox->value() > ui->yMaxSpinBox->value()) {
 		ui->yMinSpinBox->setValue(ui->yMaxSpinBox->value());
 		updateResultDisplays();
 	}
@@ -86,8 +86,8 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMin()
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMax()
 {
-	if (! isVisible()){return;}
-	if (ui->yMaxSpinBox->value() < ui->yMinSpinBox->value()){
+	if (! isVisible()) {return;}
+	if (ui->yMaxSpinBox->value() < ui->yMinSpinBox->value()) {
 		ui->yMaxSpinBox->setValue(ui->yMinSpinBox->value());
 		updateResultDisplays();
 	}
@@ -95,7 +95,7 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMax()
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
@@ -143,11 +143,11 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::accept()
 		ui->xMinSpinBox->value(), ui->xMaxSpinBox->value(),
 		ui->yMinSpinBox->value(), ui->yMaxSpinBox->value(),
 		ui->stepSizeSpinBox->value());
-	if (! ret){return;}
+	if (! ret) {return;}
 	QDialog::accept();
 }
 
-void GridCreatingConditionRectangularRegionLonLatSettingDialog::showEvent(QShowEvent *e)
+void GridCreatingConditionRectangularRegionLonLatSettingDialog::showEvent(QShowEvent* e)
 {
 	updateResultDisplays();
 	QDialog::showEvent(e);

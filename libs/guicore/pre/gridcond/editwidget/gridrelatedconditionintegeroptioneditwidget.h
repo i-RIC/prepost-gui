@@ -12,7 +12,7 @@ class GridRelatedConditionIntegerOptionEditWidget : public GridRelatedConditionE
 public:
 	GridRelatedConditionIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<int>* cond);
 	~GridRelatedConditionIntegerOptionEditWidget();
-	void setEnumerations(const QMap<int, QString>& enums){
+	void setEnumerations(const QMap<int, QString>& enums) {
 		m_enumerations = enums;
 	}
 	const QMap<int, QString>& enumerations() const {return m_enumerations;}

@@ -8,11 +8,13 @@ class Structured15DGridWithCrossSectionCrossSection;
 class Structured15DGridWithCrossSectionCrossSectionWindow;
 class PreProcessorNormal15DGridWithCrossSectionShapeDataItem;
 
-namespace Ui {
+namespace Ui
+{
 	class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog;
 }
 
-class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog : public QDialog {
+class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	explicit Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog(Structured15DGridWithCrossSectionCrossSection* cross, int from, int to, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parent);
@@ -24,7 +26,7 @@ private slots:
 	void hOffsetChange();
 	void handleButtonClick(QAbstractButton* button);
 private:
-	Ui::Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog *ui;
+	Ui::Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog* ui;
 
 	void setLimits();
 	void doReset();

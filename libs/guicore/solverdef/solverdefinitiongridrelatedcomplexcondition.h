@@ -16,16 +16,15 @@ class GUICOREDLL_EXPORT SolverDefinitionGridRelatedComplexCondition : public Sol
 {
 public:
 	SolverDefinitionGridRelatedComplexCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionGridRelatedIntegerCondition(node, translator)
-	{
+		: SolverDefinitionGridRelatedIntegerCondition(node, translator) {
 		load(node);
 	}
-	~SolverDefinitionGridRelatedComplexCondition(){}
-	const QDomElement& element(){return m_element;}
+	~SolverDefinitionGridRelatedComplexCondition() {}
+	const QDomElement& element() {return m_element;}
 	GridRelatedConditionContainer* container(Grid* grid);
 
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
-	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/){return 0;}
+	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
 	RawData* buildBackgroundRawData(ProjectDataItem* parent);
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);

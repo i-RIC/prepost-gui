@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverPathPointShiftDialog;
 }
 
@@ -15,7 +16,7 @@ class RawDataRiverPathPointShiftDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget *parent = nullptr);
+	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointShiftDialog();
 public slots:
 	void accept();
@@ -29,7 +30,7 @@ private:
 	void customGraphicsUpdate();
 private:
 
-	Ui::RawDataRiverPathPointShiftDialog *ui;
+	Ui::RawDataRiverPathPointShiftDialog* ui;
 	RawDataRiverSurvey* m_rs;
 	double m_leftMax;
 	double m_rightMax;

@@ -15,8 +15,8 @@ class RD_NETCDF_EXPORT RawDataNetcdfGdalImporter : public RawDataImporter
 public:
 	Q_OBJECT
 public:
-	RawDataNetcdfGdalImporter(RawDataCreator* creator) : RawDataImporter(creator){}
-	virtual ~RawDataNetcdfGdalImporter(){}
+	RawDataNetcdfGdalImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
+	virtual ~RawDataNetcdfGdalImporter() {}
 	const QStringList fileDialogFilters();
 	const QStringList acceptableExtensions();
 	bool importData(RawData* data, int index, QWidget* w);

@@ -19,7 +19,7 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-GridComplexConditionWidget::GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget *parent) :
+GridComplexConditionWidget::GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::GridComplexConditionWidget)
 {
@@ -97,7 +97,7 @@ void GridComplexConditionWidget::save(const int /*fn*/)
 	m_colorContainer.setValue(ui->colorWidget->color().name());
 	m_colorContainer.save();
 	m_isDefaultContainer.setValue(0);
-	if (ui->isDefaultCheckBox->isChecked()){m_isDefaultContainer.setValue(1);}
+	if (ui->isDefaultCheckBox->isChecked()) {m_isDefaultContainer.setValue(1);}
 	m_isDefaultContainer.save();
 
 	m_modified = false;
@@ -167,7 +167,7 @@ void GridComplexConditionWidget::setSetting(const GridComplexConditionWidget::Se
 
 void GridComplexConditionWidget::handleDefaultCheck(bool checked)
 {
-	if (checked){
+	if (checked) {
 		ui->isDefaultCheckBox->setEnabled(false);
 	}
 }

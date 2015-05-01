@@ -23,7 +23,7 @@ void Graph2dScatteredWindowDataItem::buildXY(const QVector<double>& xvals, const
 {
 	*x = new double[xvals.size()];
 	*y = new double[yvals.size()];
-	for (int i = 0; i < xvals.size(); ++i){
+	for (int i = 0; i < xvals.size(); ++i) {
 		*(*x + i) = xvals.at(i);
 		*(*y + i) = yvals.at(i);
 	}

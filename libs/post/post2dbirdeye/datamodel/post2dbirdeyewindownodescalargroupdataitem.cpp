@@ -61,12 +61,12 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){
+		if (tmparray == nullptr) {
 			continue;
 		}
-		if (tmparray->GetNumberOfComponents() > 1){
+		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attribute.
 			continue;
 		}
@@ -109,20 +109,19 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	m_warp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(cont->elevationName()).c_str());
 
 	createRangeClippedPolyData();
 	createValueClippedPolyData();
-	switch(m_contour)
-	{
+	switch (m_contour) {
 	case ContourSettingWidget::Points:
 		// do nothing.
 		break;
@@ -136,7 +135,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 		setupColorFringeSetting();
 		break;
 	}
-	if (m_scalarBarSetting.visible){
+	if (m_scalarBarSetting.visible) {
 		m_scalarBarWidget->SetEnabled(1);
 		setupScalarBarSetting();
 	}
@@ -165,7 +164,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const
 	m_labelTextSetting.load(node);
 
 	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		QDomElement titleElem = titles.at(i).toElement();
 		QString val = titleElem.attribute("value");
 		QString title = titleElem.attribute("title");
@@ -197,7 +196,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStr
 
 	// scalar bar titles
 	QMapIterator<QString, QString> i(m_colorbarTitleMap);
-	while (i.hasNext()){
+	while (i.hasNext()) {
 		i.next();
 		writer.writeStartElement("ScalarBarTitle");
 		writer.writeAttribute("value", i.key());
@@ -276,7 +275,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -294,7 +293,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -304,14 +303,14 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
 
-	for (int i = 0; i < m_numberOfDivisions; i++){
-		double valueLo = range[0] + static_cast<double> (i) * delta;
-		double valueHi = range[0] + static_cast<double> (i + 1) * delta;
+	for (int i = 0; i < m_numberOfDivisions; i++) {
+		double valueLo = range[0] + static_cast<double>(i) * delta;
+		double valueHi = range[0] + static_cast<double>(i + 1) * delta;
 		clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if (i == 0){
+		if (i == 0) {
 			clippersLo[i]->SetValue(-HUGE_VAL);
 			clippersLo[i]->SetInputData(m_valueClippedPolyData);
-		}else{
+		} else {
 			clippersLo[i]->SetValue(valueLo);
 			clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
 		}
@@ -319,16 +318,16 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 		clippersLo[i]->Update();
 
 		clippersHi.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if(i < m_numberOfDivisions - 1){
+		if (i < m_numberOfDivisions - 1) {
 			clippersHi[i]->SetValue(valueHi);
-		}else{
+		} else {
 			clippersHi[i]->SetValue(HUGE_VAL);
 		}
 		clippersHi[i]->SetInputConnection(clippersLo[i]->GetOutputPort());
 		clippersHi[i]->GenerateClippedOutputOn();
 		clippersHi[i]->InsideOutOn();
 		clippersHi[i]->Update();
-		if(clippersHi[i]->GetOutput()->GetNumberOfCells() == 0){
+		if (clippersHi[i]->GetOutput()->GetNumberOfCells() == 0) {
 			continue;
 		}
 
@@ -362,7 +361,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	m_warp->SetInputData(m_valueClippedPolyData);
 	m_warp->Update();
 	m_fringeMapper->SetInputData(m_warp->GetOutput());
@@ -378,7 +377,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(m_currentSolution)).c_str());
@@ -408,7 +407,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dBirdEyeWindowZoneDataItem* zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr){
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
@@ -422,7 +421,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->hideOpacity();
 
 	// region setting
-	if (! zItem->dataContainer()->IBCExists()){
+	if (! zItem->dataContainer()->IBCExists()) {
 		dialog->disableActive();
 	}
 	dialog->setRegionMode(m_regionMode);
@@ -442,8 +441,7 @@ class Post2dBirdEyeWindowContourSetProperty : public QUndoCommand
 {
 public:
 	Post2dBirdEyeWindowContourSetProperty(bool enabled, ContourSettingWidget::Contour cont, const QString& sol, int numDiv, const LookupTableContainer& ltc, StructuredGridRegion::RegionMode regionmode, StructuredGridRegion::Range2d range, bool fillupper, bool filllower, QString colorbarTitle, const ScalarBarSetting& scalarBarSetting, const vtkTextPropertySettingContainer& titleCont, const vtkTextPropertySettingContainer& labelCont, Post2dBirdEyeWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Contour Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Contour Setting")) {
 		m_newEnabled = enabled;
 		m_newContour = cont;
 		m_newCurrentSolution = sol;
@@ -476,8 +474,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_contour = m_oldContour;
@@ -502,8 +499,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->m_contour = m_newContour;
@@ -572,22 +568,19 @@ class Post2dBirdEyeWindowContourSelectSolution : public QUndoCommand
 {
 public:
 	Post2dBirdEyeWindowContourSelectSolution(const QString& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -603,11 +596,11 @@ private:
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post2dBirdEyeWindowContourSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post2dBirdEyeWindowContourSelectSolution(item->name(), this));
 	}
 }
@@ -615,14 +608,14 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeW
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post2dBirdEyeWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dBirdEyeWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dBirdEyeWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -631,15 +624,15 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QStrin
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		// unstructured grid.
 		vtkPointSet* ps = cont->data();
 		vtkSmartPointer<vtkGeometryFilter> geoFilter = vtkSmartPointer<vtkGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();
-		if (m_regionMode == StructuredGridRegion::rmFull){
+		if (m_regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
-		} else if (m_regionMode == StructuredGridRegion::rmActive){
+		} else if (m_regionMode == StructuredGridRegion::rmActive) {
 			vtkSmartPointer<vtkClipPolyData> clipper;
 			clipper->SetInputConnection(geoFilter->GetOutputPort());
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
@@ -654,9 +647,9 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();
-		if (m_regionMode == StructuredGridRegion::rmFull){
+		if (m_regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
-		} else if (m_regionMode == StructuredGridRegion::rmActive){
+		} else if (m_regionMode == StructuredGridRegion::rmActive) {
 			vtkSmartPointer<vtkClipPolyData> clipper;
 			clipper->SetInputConnection(geoFilter->GetOutputPort());
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
@@ -664,7 +657,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 			clipper->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(PostZoneDataContainer::IBC).c_str());
 			clipper->Update();
 			m_regionClippedPolyData = clipper->GetOutput();
-		} else if (m_regionMode == StructuredGridRegion::rmCustom){
+		} else if (m_regionMode == StructuredGridRegion::rmCustom) {
 			geoFilter->SetExtent(m_range.iMin, m_range.iMax, m_range.jMin, m_range.jMax, 0, 0);
 			geoFilter->Update();
 			m_regionClippedPolyData = geoFilter->GetOutput();
@@ -679,10 +672,10 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);
-	if (m_fillLower){
+	if (m_fillLower) {
 		lowerClipped = m_regionClippedPolyData;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -695,7 +688,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 		lowerClipped = lowerClipper->GetOutput();
 		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
 	}
-	if (m_fillUpper){
+	if (m_fillUpper) {
 		upperClipped = lowerClipped;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -724,7 +717,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 	Post2dBirdEyeWindowDataItem::updateVisibility(visible);
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
 }

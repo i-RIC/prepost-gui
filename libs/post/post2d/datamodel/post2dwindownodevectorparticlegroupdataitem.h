@@ -27,13 +27,13 @@ class Post2dWindowNodeVectorParticleGroupDataItem : public Post2dWindowDataItem
 private:
 	const static int DEFAULT_SIZE = 3;
 public:
-	enum TimeMode{tmNormal, tmSubdivide, tmSkip};
+	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 	/// Constructor
 	Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorParticleGroupDataItem();
 	void updateActorSettings();
 	void setupClipper();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -42,7 +42,7 @@ public:
 	virtual void assignActionZValues(const ZDepthRange& range);
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	const QString& currentSolution(){return m_currentSolution;}
+	const QString& currentSolution() {return m_currentSolution;}
 
 public slots:
 	void exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*);

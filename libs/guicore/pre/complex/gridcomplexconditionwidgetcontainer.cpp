@@ -19,7 +19,7 @@ GridComplexConditionWidgetContainer::~GridComplexConditionWidgetContainer()
 void GridComplexConditionWidgetContainer::setWidget(QWidget* widget)
 {
 	QLayout* l = layout();
-	if (m_widget != nullptr){
+	if (m_widget != nullptr) {
 		l->removeWidget(m_widget);
 		m_widget->hide();
 	}

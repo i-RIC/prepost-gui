@@ -8,18 +8,20 @@
 
 class GridCreatingConditionRiverSurvey15D;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurvey15DPointMoveDialog;
 }
 
-class GridCreatingConditionRiverSurvey15DPointMoveDialog : public QDialog {
+class GridCreatingConditionRiverSurvey15DPointMoveDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	explicit GridCreatingConditionRiverSurvey15DPointMoveDialog(
 		GridCreatingConditionRiverSurvey15D* gc,
 		double lowerLimit,
 		double upperLimit,
-		QWidget *parent = 0);
+		QWidget* parent = 0);
 	~GridCreatingConditionRiverSurvey15DPointMoveDialog();
 
 	void apply();
@@ -37,7 +39,7 @@ private:
 	double m_SValue;
 	bool m_applied;
 
-	Ui::GridCreatingConditionRiverSurvey15DPointMoveDialog *ui;
+	Ui::GridCreatingConditionRiverSurvey15DPointMoveDialog* ui;
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);

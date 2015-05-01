@@ -3,16 +3,18 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataPointmapRepresentationDialog;
 }
 
-class RawDataPointmapRepresentationDialog : public QDialog {
+class RawDataPointmapRepresentationDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
 	enum Representation {Points, Wireframe, Surface};
-	RawDataPointmapRepresentationDialog(QWidget *parent = nullptr);
+	RawDataPointmapRepresentationDialog(QWidget* parent = nullptr);
 	~RawDataPointmapRepresentationDialog();
 	void setRepresentation(Representation r);
 	void setOpacityPercent(int opacity);
@@ -24,7 +26,7 @@ public:
 	int pointSize();
 
 private:
-	Ui::RawDataPointmapRepresentationDialog *ui;
+	Ui::RawDataPointmapRepresentationDialog* ui;
 };
 
 #endif // RAWDATAPOINTMAPREPRESENTATIONDIALOG_H

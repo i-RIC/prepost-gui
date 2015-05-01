@@ -7,24 +7,23 @@
 class Grid;
 class GridRelatedConditionContainer;
 
-class RawDataMapperSetting {
+class RawDataMapperSetting
+{
 public:
-	RawDataMapperSetting(){}
-	virtual ~RawDataMapperSetting(){}
+	RawDataMapperSetting() {}
+	virtual ~RawDataMapperSetting() {}
 };
 
 class RawDataMapper : public QObject
 {
 public:
 	/// Constructor
-	RawDataMapper(RawDataCreator* parent) : QObject(parent)
-	{
+	RawDataMapper(RawDataCreator* parent) : QObject(parent) {
 		m_grid = nullptr;
 		m_container = nullptr;
 		m_rawdata = nullptr;
 	}
-	void setTarget(Grid* grid, GridRelatedConditionContainer* container, RawData* rawdata)
-	{
+	void setTarget(Grid* grid, GridRelatedConditionContainer* container, RawData* rawdata) {
 		m_grid = grid;
 		m_container = container;
 		m_rawdata = rawdata;
@@ -35,9 +34,9 @@ public:
 	virtual void map(bool* boolMap, RawDataMapperSetting* setting) = 0;
 	/// Terminate mapping setting
 	virtual void terminate(RawDataMapperSetting* setting) = 0;
-	const QString& caption(){return m_caption;}
+	const QString& caption() {return m_caption;}
 protected:
-	RawDataCreator* creator(){
+	RawDataCreator* creator() {
 		return dynamic_cast<RawDataCreator*>(parent());
 	}
 	QString m_caption;

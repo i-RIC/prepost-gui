@@ -6,14 +6,16 @@
 class iRICMainWindow;
 class ContinuousSnapshotWizard;
 
-namespace Ui {
+namespace Ui
+{
 	class ContinuousSnapshotGoogleEarthSettingPage;
 }
 
-class ContinuousSnapshotGoogleEarthSettingPage : public QWizardPage {
+class ContinuousSnapshotGoogleEarthSettingPage : public QWizardPage
+{
 	Q_OBJECT
 public:
-	ContinuousSnapshotGoogleEarthSettingPage(QWidget *parent = nullptr);
+	ContinuousSnapshotGoogleEarthSettingPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotGoogleEarthSettingPage();
 
 	void initializePage();
@@ -35,7 +37,7 @@ private:
 	int m_imageWidth;
 	double m_rate;
 
-	Ui::ContinuousSnapshotGoogleEarthSettingPage *ui;
+	Ui::ContinuousSnapshotGoogleEarthSettingPage* ui;
 };
 
 #endif // CONTINUOUSSNAPSHOTGOOGLEEARTHSETTINGPAGE_H

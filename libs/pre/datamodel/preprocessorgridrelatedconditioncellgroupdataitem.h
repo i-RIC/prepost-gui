@@ -20,29 +20,29 @@ public:
 	PreProcessorGridRelatedConditionCellGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridRelatedConditionCellGroupDataItem();
 	void updateActorSettings();
-	const QString& currentCondition(){return m_currentCondition;}
+	const QString& currentCondition() {return m_currentCondition;}
 	void informDataChange(const QString& name);
 	void setupActors();
 	void updateZDepthRangeItemCount();
 	void assignActionZValues(const ZDepthRange& range);
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void informGridUpdate();
 	void setCurrentCondition(const QString& currentCond);
 	const QList<PreProcessorGridRelatedConditionCellDataItem*> conditions() const;
-	PreProcessorGridRelatedConditionCellDataItem* cellDataItem(const QString& name){return m_nameMap.value(name, 0);}
+	PreProcessorGridRelatedConditionCellDataItem* cellDataItem(const QString& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange();
-	void setOpacityPercent(int o){m_opacityPercent = o;}
-	int opacityPercent(){return m_opacityPercent;}
+	void setOpacityPercent(int o) {m_opacityPercent = o;}
+	int opacityPercent() {return m_opacityPercent;}
 	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
 	void addCustomMenuItems(QMenu* menu);
 	void initAttributeBrowser();
 	void clearAttributeBrowser();
 	void fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	bool addToolBarButtons(QToolBar *toolbar);
+	bool addToolBarButtons(QToolBar* toolbar);
 
 public slots:
 	void exclusivelyCheck(PreProcessorGridRelatedConditionCellDataItem*);

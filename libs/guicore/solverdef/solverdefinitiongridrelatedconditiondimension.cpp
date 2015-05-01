@@ -17,7 +17,7 @@ void SolverDefinitionGridRelatedConditionDimension::load(const QDomElement& node
 
 GridRelatedConditionDimensionSelectWidget* SolverDefinitionGridRelatedConditionDimension::buildSelectWidget(GridRelatedConditionDimensionContainer* container)
 {
-	if (m_name == "Time"){
+	if (m_name == "Time") {
 		return new GridRelatedConditionDimensionTimeSliderSelectWidget(container, 0);
 	} else {
 		return new GridRelatedConditionDimensionComboboxSelectWidget(container, 0);

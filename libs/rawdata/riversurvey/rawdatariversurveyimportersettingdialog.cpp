@@ -1,7 +1,7 @@
 #include "rawdatariversurveyimportersettingdialog.h"
 #include "ui_rawdatariversurveyimportersettingdialog.h"
 
-RawDataRiverSurveyImporterSettingDialog::RawDataRiverSurveyImporterSettingDialog(QWidget *parent) :
+RawDataRiverSurveyImporterSettingDialog::RawDataRiverSurveyImporterSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverSurveyImporterSettingDialog)
 {
@@ -15,9 +15,9 @@ RawDataRiverSurveyImporterSettingDialog::~RawDataRiverSurveyImporterSettingDialo
 
 RawDataRiverSurveyImporterSettingDialog::CenterPointSetting RawDataRiverSurveyImporterSettingDialog::centerPointSetting() const
 {
-	if (ui->middlePointRadioButton->isChecked()){
+	if (ui->middlePointRadioButton->isChecked()) {
 		return cpMiddle;
-	} else if (ui->smallestRadioButton->isChecked()){
+	} else if (ui->smallestRadioButton->isChecked()) {
 		return cpElevation;
 	}
 	return cpMiddle;

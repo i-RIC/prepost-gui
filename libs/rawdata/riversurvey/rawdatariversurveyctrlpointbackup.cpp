@@ -1,15 +1,16 @@
 #include "rawdatariversurveyctrlpointbackup.h"
 
-void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, RawDataRiverPathPoint::CtrlZonePosition position){
+void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, RawDataRiverPathPoint::CtrlZonePosition position)
+{
 	RawDataRiverPathPoint* tmpp;
 	CtrlPoints points;
 	m_ctrlPoints.clear();
-	switch (position){
+	switch (position) {
 	case RawDataRiverPathPoint::zposCenterToLeft:
 		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
-		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
-		while (tmpp != nullptr){
+		if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
+		while (tmpp != nullptr) {
 			points.point = tmpp;
 			points.position = position;
 			points.ctrlPointVector = tmpp->CenterToLeftCtrlPoints;
@@ -20,8 +21,8 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	case RawDataRiverPathPoint::zposCenterToRight:
 		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
-		if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
-		while (tmpp != nullptr){
+		if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
+		while (tmpp != nullptr) {
 			points.point = tmpp;
 			points.position = position;
 			points.ctrlPointVector = tmpp->CenterToRightCtrlPoints;
@@ -52,14 +53,16 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	}
 }
 
-void RawDataRiverSurveyCtrlPointBackup::restore(){
-	for (const CtrlPoints& p : m_ctrlPoints){
+void RawDataRiverSurveyCtrlPointBackup::restore()
+{
+	for (const CtrlPoints& p : m_ctrlPoints) {
 		myRestore(p);
 	}
 }
 
-void RawDataRiverSurveyCtrlPointBackup::myRestore(const CtrlPoints& points){
-	switch (points.position){
+void RawDataRiverSurveyCtrlPointBackup::myRestore(const CtrlPoints& points)
+{
+	switch (points.position) {
 	case RawDataRiverPathPoint::pposCenterToLeft:
 		points.point->CenterToLeftCtrlPoints = points.ctrlPointVector;
 		break;

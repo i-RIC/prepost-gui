@@ -34,9 +34,8 @@ void NetworkSetting::save()
 QList<QNetworkProxy> NetworkSetting::queryProxy(const QNetworkProxyQuery& query)
 {
 	QList<QNetworkProxy> ret;
-	switch (m_proxyMode){
-		case pmNoProxy:
-		{
+	switch (m_proxyMode) {
+	case pmNoProxy: {
 			QNetworkProxy proxy;
 			proxy.setType(QNetworkProxy::NoProxy);
 			ret.append(proxy);
@@ -47,14 +46,13 @@ QList<QNetworkProxy> NetworkSetting::queryProxy(const QNetworkProxyQuery& query)
 		ret.append(QNetworkProxyFactory::systemProxyForQuery());
 		break;
 
-	case pmCustomSetting:
-		{
+	case pmCustomSetting: {
 			QNetworkProxy proxy;
 			proxy.setType(QNetworkProxy::HttpProxy);
 			proxy.setHostName(m_proxySite);
 			proxy.setPort(m_proxyPort);
 
-			if (m_needAuthentication){
+			if (m_needAuthentication) {
 				proxy.setUser(m_userName);
 				proxy.setPassword(m_password);
 			}

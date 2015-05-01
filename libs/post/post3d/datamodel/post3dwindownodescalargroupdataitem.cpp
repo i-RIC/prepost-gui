@@ -45,7 +45,7 @@
 #include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p)
-: Post3dWindowDataItem(tr("Isosurface"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+	: Post3dWindowDataItem(tr("Isosurface"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
 	m_isDeletable = false;
 
@@ -61,12 +61,12 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){
+		if (tmparray == nullptr) {
 			continue;
 		}
-		if (tmparray->GetNumberOfComponents() > 1){
+		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attribute.
 			continue;
 		}
@@ -95,14 +95,14 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == nullptr){return;}
-	if (m_currentSolution == ""){return;}
+	if (ps == nullptr) {return;}
+	if (m_currentSolution == "") {return;}
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	setupIsosurfaceSetting();
 	updateColorSetting();
@@ -197,8 +197,7 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 	this->updateColorSetting();
 
 	// set color
-	if (vtkProperty *p = m_isoSurfaceActor->GetProperty())
-	{
+	if (vtkProperty* p = m_isoSurfaceActor->GetProperty()) {
 		p->SetColor(m_color.red() / 255.0, m_color.green() / 255.0, m_color.blue() / 255.0);
 	}
 
@@ -225,7 +224,7 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setGridTypeDataItem(gtItem);
 	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
 
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr){return nullptr;}
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {return nullptr;}
 
 	dialog->setEnabled(true);
 	dialog->setZoneData(zItem->dataContainer());
@@ -248,11 +247,10 @@ class Post3dWindowIsosurfaceSetProperty : public QUndoCommand
 {
 public:
 	Post3dWindowIsosurfaceSetProperty(
-		bool enabled, const QString& sol, 
-		bool fullrange, StructuredGridRegion::Range3d range, 
+		bool enabled, const QString& sol,
+		bool fullrange, StructuredGridRegion::Range3d range,
 		double isovalue, const QColor& color, Post3dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Contour Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Contour Setting")) {
 		m_newEnabled = enabled;
 		m_newCurrentSolution = sol;
 		m_newFullRange = fullrange;
@@ -269,8 +267,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
@@ -283,8 +280,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->setCurrentSolution(m_newCurrentSolution);
@@ -320,31 +316,28 @@ void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* 
 	Post3dWindowIsosurfaceSettingDialog* dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
 	iRICUndoStack::instance().push(
 		new Post3dWindowIsosurfaceSetProperty(
-		dialog->enabled(), dialog->currentSolution(), 
-		dialog->fullRange(), dialog->range(), 
-		dialog->isoValue(), dialog->color(), this));
+			dialog->enabled(), dialog->currentSolution(),
+			dialog->fullRange(), dialog->range(),
+			dialog->isoValue(), dialog->color(), this));
 }
 
 class Post3dWindowIsosurfaceSelectSolution : public QUndoCommand
 {
 public:
 	Post3dWindowIsosurfaceSelectSolution(const QString& newsol, Post3dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -360,11 +353,11 @@ private:
 
 void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScalarDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post3dWindowIsosurfaceSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post3dWindowIsosurfaceSelectSolution(item->name(), this));
 	}
 }
@@ -372,14 +365,14 @@ void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScala
 void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post3dWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post3dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post3dWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;

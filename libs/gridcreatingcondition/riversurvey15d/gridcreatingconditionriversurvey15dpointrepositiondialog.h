@@ -8,14 +8,16 @@
 
 class GridCreatingConditionRiverSurvey15D;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurvey15DPointRepositionDialog;
 }
 
-class GridCreatingConditionRiverSurvey15DPointRepositionDialog : public QDialog {
+class GridCreatingConditionRiverSurvey15DPointRepositionDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	explicit GridCreatingConditionRiverSurvey15DPointRepositionDialog(GridCreatingConditionRiverSurvey15D* gc, QWidget *parent = nullptr);
+	explicit GridCreatingConditionRiverSurvey15DPointRepositionDialog(GridCreatingConditionRiverSurvey15D* gc, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurvey15DPointRepositionDialog();
 	void apply();
 
@@ -33,7 +35,7 @@ private:
 	RawDataRiverPathPoint::CtrlPointsAddMethod m_method;
 	bool m_applied;
 
-	Ui::GridCreatingConditionRiverSurvey15DPointRepositionDialog *ui;
+	Ui::GridCreatingConditionRiverSurvey15DPointRepositionDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTREPOSITIONDIALOG_H

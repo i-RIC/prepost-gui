@@ -8,7 +8,7 @@
 
 #include <QUndoCommand>
 
-RawDataRiverPathPointMoveDialog::RawDataRiverPathPointMoveDialog(RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointMoveDialog::RawDataRiverPathPointMoveDialog(RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointMoveDialog)
 {
@@ -45,7 +45,7 @@ void RawDataRiverPathPointMoveDialog::setCurrentCenter(const QVector2D& current)
 void RawDataRiverPathPointMoveDialog::setSingleSelection(bool single)
 {
 	ui->centerPointModeRadioButton->setEnabled(single);
-	if (! single){
+	if (! single) {
 		ui->coordX->clear();
 		ui->coordY->clear();
 	}
@@ -55,13 +55,12 @@ class RawDataRiverPathPointMoveCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointMoveCommand(bool apply, QVector2D offset, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Move Traversal Lines"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Move Traversal Lines")) {
 		m_apply = apply;
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != 0){
-			if (p->IsSelected){
+		while (p != 0) {
+			if (p->IsSelected) {
 				m_points.append(p);
 				m_oldPositions.append(p->position());
 				m_newPositions.append(p->position() + offset);
@@ -70,26 +69,24 @@ public:
 		}
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
 
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			QVector2D oldpos = m_oldPositions.at(i);
 			m_points[i]->setPosition(oldpos);
 		}
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->headPoint()->updateRiverShapeInterpolators();
 			m_rs->updateShapeData();
 			m_rs->renderGraphicsView();
 			m_rs->updateCrossectionWindows();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
 
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			QVector2D newpos = m_newPositions.at(i);
 			m_points[i]->setPosition(newpos);
 		}
@@ -109,7 +106,7 @@ private:
 
 void RawDataRiverPathPointMoveDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -120,7 +117,7 @@ void RawDataRiverPathPointMoveDialog::accept()
 
 void RawDataRiverPathPointMoveDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -135,11 +132,11 @@ void RawDataRiverPathPointMoveDialog::doReset()
 	ui->offsetModeRadioButton->setChecked(true);
 	ui->offsetX->setValue(0);
 	ui->offsetY->setValue(0);
-	if (ui->centerPointModeRadioButton->isEnabled()){
+	if (ui->centerPointModeRadioButton->isEnabled()) {
 		ui->coordX->setValue(m_currentCenter.x());
 		ui->coordY->setValue(m_currentCenter.y());
 	}
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -151,7 +148,7 @@ void RawDataRiverPathPointMoveDialog::doReset()
 
 void RawDataRiverPathPointMoveDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -162,7 +159,7 @@ void RawDataRiverPathPointMoveDialog::apply()
 
 void RawDataRiverPathPointMoveDialog::offsetChange()
 {
-	if (ui->offsetModeRadioButton->isChecked() && ui->centerPointModeRadioButton->isEnabled()){
+	if (ui->offsetModeRadioButton->isChecked() && ui->centerPointModeRadioButton->isEnabled()) {
 		double offsetx = ui->offsetX->value();
 		double offsety = ui->offsetY->value();
 		ui->coordX->setValue(m_currentCenter.x() + offsetx);
@@ -172,7 +169,7 @@ void RawDataRiverPathPointMoveDialog::offsetChange()
 
 void RawDataRiverPathPointMoveDialog::centerChange()
 {
-	if (ui->centerPointModeRadioButton->isChecked()){
+	if (ui->centerPointModeRadioButton->isChecked()) {
 		ui->offsetX->setValue(ui->coordX->value() - m_currentCenter.x());
 		ui->offsetY->setValue(ui->coordY->value() - m_currentCenter.y());
 	}
@@ -180,9 +177,9 @@ void RawDataRiverPathPointMoveDialog::centerChange()
 
 void RawDataRiverPathPointMoveDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	}else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }

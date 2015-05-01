@@ -38,7 +38,7 @@ protected:
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
 	void setCurrentSolution(const QString& currentSol);
-	const QString& currentSolution(){return m_currentSolution;}
+	const QString& currentSolution() {return m_currentSolution;}
 	void innerUpdateZScale(double zscale);
 	void applyZScale();
 protected:

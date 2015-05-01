@@ -7,7 +7,7 @@
 #define CAPTION_PADDING 10
 #define MARGINS 30
 
-PreProcessorGridCreatingConditionAlgorithmSelectDialog::PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget *parent) :
+PreProcessorGridCreatingConditionAlgorithmSelectDialog::PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog)
 {
@@ -29,7 +29,7 @@ void PreProcessorGridCreatingConditionAlgorithmSelectDialog::setCreators(const Q
 	m_creators = creators;
 	ui->algoListWidget->clear();
 	int row = 0;
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it) {
 		GridCreatingConditionCreator* creator = *it;
 		ui->algoListWidget->addItem(creator->caption());
 		++ row;

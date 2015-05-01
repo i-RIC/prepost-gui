@@ -16,7 +16,7 @@ GridRelatedConditionEditWidget* SolverDefinitionRealOptionNodeGridRelatedConditi
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionRealOptionNodeGridRelatedCondition::createScalarsToColorsEditWidget(QWidget *parent)
+ScalarsToColorsEditWidget* SolverDefinitionRealOptionNodeGridRelatedCondition::createScalarsToColorsEditWidget(QWidget* parent)
 {
 	return createColorTransferFunctionEditWidget(parent);
 }

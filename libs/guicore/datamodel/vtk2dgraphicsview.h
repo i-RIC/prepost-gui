@@ -11,7 +11,7 @@ class GUICOREDLL_EXPORT VTK2DGraphicsView : public VTKGraphicsView
 	Q_OBJECT
 public:
 	VTK2DGraphicsView(QWidget* parent);
-	virtual ~VTK2DGraphicsView(){}
+	virtual ~VTK2DGraphicsView() {}
 	virtual void fitInView();
 	void rotate(double r);
 	void resetCamera();

@@ -10,23 +10,25 @@
 
 class RawDataRiverPathPoint;
 
-class AltitudeInterpolator : public InterpolatorBase {
+class AltitudeInterpolator : public InterpolatorBase
+{
 public:
-	AltitudeInterpolator(){}
-	virtual ~AltitudeInterpolator(){}
-	virtual void updateParameters(){}
+	AltitudeInterpolator() {}
+	virtual ~AltitudeInterpolator() {}
+	virtual void updateParameters() {}
 	virtual RawDataRiverCrosssection::Altitude interpolate(double t) = 0;
 };
 
-class LinearAltitudeInterpolator : public AltitudeInterpolator {
+class LinearAltitudeInterpolator : public AltitudeInterpolator
+{
 public:
-	LinearAltitudeInterpolator(RawDataRiverCrosssection::Altitude& v0, RawDataRiverCrosssection::Altitude& v1){
+	LinearAltitudeInterpolator(RawDataRiverCrosssection::Altitude& v0, RawDataRiverCrosssection::Altitude& v1) {
 		m_value0 = v0;
 		m_value1 = v1;
 	}
 	LinearAltitudeInterpolator(double t0, RawDataRiverCrosssection::Altitude& v0, double t1, RawDataRiverCrosssection::Altitude& v1);
-	virtual ~LinearAltitudeInterpolator(){}
-	void setValues(RawDataRiverCrosssection::Altitude& v0, RawDataRiverCrosssection::Altitude& v1){
+	virtual ~LinearAltitudeInterpolator() {}
+	void setValues(RawDataRiverCrosssection::Altitude& v0, RawDataRiverCrosssection::Altitude& v1) {
 		m_value0 = v0;
 		m_value1 = v1;
 	}
@@ -37,7 +39,8 @@ private:
 	RawDataRiverCrosssection::Altitude m_value1;
 };
 
-class LinearLXSecInterpolator : public AltitudeInterpolator {
+class LinearLXSecInterpolator : public AltitudeInterpolator
+{
 public:
 	enum ErrorCodes {
 		ec_OutOfInterpolationRange
@@ -49,7 +52,7 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~LinearLXSecInterpolator(){}
+	virtual ~LinearLXSecInterpolator() {}
 	void updateParameters();
 	RawDataRiverCrosssection::Altitude interpolate(double t) /* throw (ErrorCodes)*/;
 protected:
@@ -57,13 +60,14 @@ protected:
 	RawDataRiverPathPoint* m_parent;
 };
 
-class LinearRXSecInterpolator : public AltitudeInterpolator {
+class LinearRXSecInterpolator : public AltitudeInterpolator
+{
 public:
 	enum ErrorCodes {
 		ec_OutOfInterpolationRange
 	};
 	LinearRXSecInterpolator(RawDataRiverPathPoint* parent);
-	virtual ~LinearRXSecInterpolator(){}
+	virtual ~LinearRXSecInterpolator() {}
 	void updateParameters();
 	RawDataRiverCrosssection::Altitude interpolate(double t) /* throw (ErrorCodes)*/;
 protected:
@@ -76,12 +80,13 @@ protected:
  * @brief 親点に関する情報と、何点離れた点に更新があったら、次に伝えるべきかに関する
  * 情報を保持する。
  */
-class RiverInterpolator2D1 : public Interpolator2D1 {
+class RiverInterpolator2D1 : public Interpolator2D1
+{
 public:
-	RiverInterpolator2D1(RawDataRiverPathPoint* parent){
+	RiverInterpolator2D1(RawDataRiverPathPoint* parent) {
 		m_parent = parent;
 	}
-	virtual ~RiverInterpolator2D1(){}
+	virtual ~RiverInterpolator2D1() {}
 	virtual void updateParameters() = 0;
 	virtual QVector2D interpolate(double t) = 0;
 	virtual RiverInterpolator2D1* copy() = 0;
@@ -105,30 +110,31 @@ protected:
  *   格子点の XY 方向の座標を算出する。
  *
  */
-class RD_RIVERSURVEY_EXPORT RiverSplineSolver {
+class RD_RIVERSURVEY_EXPORT RiverSplineSolver
+{
 public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverSplineSolver(){
+	RiverSplineSolver() {
 		m_headPoint = nullptr;
 	}
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~RiverSplineSolver(){}
+	virtual ~RiverSplineSolver() {}
 	/**
 	 * @brief 計算対象の河川横断線群 (互いにつながっている) の、
 	 * 先頭へのポインタを渡す
 	 */
-	void setHeadPoint(RawDataRiverPathPoint* head){
+	void setHeadPoint(RawDataRiverPathPoint* head) {
 		m_headPoint = head;
 	}
 	/**
 	 * @brief スプライン曲線のパラメータ計算を実行する
 	 */
 	void update();
-	static bool linearMode(){return m_linearMode;}
+	static bool linearMode() {return m_linearMode;}
 	static void setLinearMode(bool linearmode, RawDataRiverPathPoint* head, bool noundo = false);
 protected:
 	/**
@@ -176,16 +182,17 @@ private:
 /**
  * @brief 河川横断線の、中心点同士を結ぶスプライン曲線を計算するソルバー
  */
-class RiverCenterLineSolver : public RiverSplineSolver {
+class RiverCenterLineSolver : public RiverSplineSolver
+{
 public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverCenterLineSolver() : RiverSplineSolver(){}
+	RiverCenterLineSolver() : RiverSplineSolver() {}
 	/**
 	 * @brief デストラクタ
 	 */
-	~RiverCenterLineSolver(){}
+	~RiverCenterLineSolver() {}
 protected:
 	QVector2D getVector(RawDataRiverPathPoint* p);
 	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
@@ -194,16 +201,17 @@ protected:
 /**
  * @brief 河川横断線の、左岸同士を結ぶスプライン曲線を計算するソルバー
  */
-class RiverLeftBankSolver : public RiverSplineSolver {
+class RiverLeftBankSolver : public RiverSplineSolver
+{
 public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverLeftBankSolver() : RiverSplineSolver(){}
+	RiverLeftBankSolver() : RiverSplineSolver() {}
 	/**
 	 * @brief デストラクタ
 	 */
-	~RiverLeftBankSolver(){}
+	~RiverLeftBankSolver() {}
 protected:
 	QVector2D getVector(RawDataRiverPathPoint* p);
 	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
@@ -212,16 +220,17 @@ protected:
 /**
  * @brief 河川横断線の、右岸同士を結ぶスプライン曲線を計算するソルバー
  */
-class RiverRightBankSolver : public RiverSplineSolver {
+class RiverRightBankSolver : public RiverSplineSolver
+{
 public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverRightBankSolver() : RiverSplineSolver(){}
+	RiverRightBankSolver() : RiverSplineSolver() {}
 	/**
 	 * @brief デストラクタ
 	 */
-	~RiverRightBankSolver(){}
+	~RiverRightBankSolver() {}
 protected:
 	QVector2D getVector(RawDataRiverPathPoint* p);
 	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
@@ -231,7 +240,8 @@ protected:
  * @brief 河川横断線上に配置された格子生成制御点同士を結ぶ
  * スプライン曲線を計算するソルバー
  */
-class RD_RIVERSURVEY_EXPORT RiverGridCtrlSolver : public RiverSplineSolver {
+class RD_RIVERSURVEY_EXPORT RiverGridCtrlSolver : public RiverSplineSolver
+{
 public:
 	enum Bank {
 		/**
@@ -246,20 +256,20 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverGridCtrlSolver() : RiverSplineSolver(){
+	RiverGridCtrlSolver() : RiverSplineSolver() {
 		m_BankSide = bs_LeftBank;
 		m_Index = 0;
 	}
 	/**
 	 * @brief デストラクタ
 	 */
-	~RiverGridCtrlSolver(){}
-	void SetIndex(int index){m_Index = index;}
+	~RiverGridCtrlSolver() {}
+	void SetIndex(int index) {m_Index = index;}
 	int Index() const {return m_Index;}
 	/**
 	 * @brief 対象とする格子生成制御点が左岸側か、右岸側かを設定
 	 */
-	void SetBankSide(Bank side){
+	void SetBankSide(Bank side) {
 		m_BankSide = side;
 	}
 	Bank BankSide() const {return m_BankSide;}
@@ -275,7 +285,8 @@ private:
  * @brief 河川横断線上に配置された格子生成制御点同士を結ぶ
  * スプライン曲線を計算するソルバー
  */
-class RiverBackgroundGridCtrlSolver : public RiverSplineSolver {
+class RiverBackgroundGridCtrlSolver : public RiverSplineSolver
+{
 public:
 	enum Bank {
 		/**
@@ -290,7 +301,7 @@ public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverBackgroundGridCtrlSolver() : RiverSplineSolver(){
+	RiverBackgroundGridCtrlSolver() : RiverSplineSolver() {
 		m_BankSide = bs_LeftBank;
 		m_Parameter = 0;
 		m_Index = 0;
@@ -298,15 +309,15 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	~RiverBackgroundGridCtrlSolver(){}
-	void SetIndex(int index){m_Index = index;}
+	~RiverBackgroundGridCtrlSolver() {}
+	void SetIndex(int index) {m_Index = index;}
 	int Index() const {return m_Index;}
-	void setParameter(double param){m_Parameter = param;}
+	void setParameter(double param) {m_Parameter = param;}
 	double parameter() const {return m_Parameter;}
 	/**
 	 * @brief 対象とする格子生成制御点が左岸側か、右岸側かを設定
 	 */
-	void SetBankSide(Bank side){
+	void SetBankSide(Bank side) {
 		m_BankSide = side;
 	}
 	Bank BankSide() const {return m_BankSide;}
@@ -326,7 +337,8 @@ private:
  * で渡された RiverSplineSolver オブジェクトに問い合わせることによって
  * 座標を得る。
  */
-class RiverSplineInterpolator : public Interpolator2D1 {
+class RiverSplineInterpolator : public Interpolator2D1
+{
 public:
 	/**
 	 * @brief コンストラクタ
@@ -335,25 +347,25 @@ public:
 	 * 値を返すかの index。 0 の場合、最上流側の河川横断線とそれに隣り合う河川横断線
 	 * との間の区間となる。
 	 */
-	RiverSplineInterpolator(RiverSplineSolver* parent, int index){
+	RiverSplineInterpolator(RiverSplineSolver* parent, int index) {
 		m_parent = parent;
 		m_Index = index;
 	}
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~RiverSplineInterpolator(){}
+	virtual ~RiverSplineInterpolator() {}
 	/**
 	 * @brief 河川形状が編集され、スプライン曲線を再計算する必要が生じたことを親ソルバーに
 	 * 通知
 	 */
-	void updateParameters(){
+	void updateParameters() {
 		m_parent->update();
 	}
 	/**
 	 * @brief 補間して得られる点を返す
 	 */
-	QVector2D interpolate(double t){
+	QVector2D interpolate(double t) {
 		return m_parent->interpolate(m_Index, t);
 	}
 	/**
@@ -369,12 +381,13 @@ protected:
  * @brief 河川横断線同士を結んだスプライン曲線を用いて、補間処理を行うオブジェクトの、コピー
  *
  */
-class RiverSplineInterpolatorCopy : public Interpolator2D1 {
+class RiverSplineInterpolatorCopy : public Interpolator2D1
+{
 public:
 	/**
 	 * @brief コンストラクタ
 	 */
-	RiverSplineInterpolatorCopy(double d, double xa, double xb, double xc, double xd, double ya, double yb, double yc, double yd){
+	RiverSplineInterpolatorCopy(double d, double xa, double xb, double xc, double xd, double ya, double yb, double yc, double yd) {
 		m_D = d;
 		m_XA = xa;
 		m_XB = xb;
@@ -388,29 +401,29 @@ public:
 	/**
 	 * @brief デストラクタ
 	 */
-	virtual ~RiverSplineInterpolatorCopy(){}
-	void updateParameters(){}
+	virtual ~RiverSplineInterpolatorCopy() {}
+	void updateParameters() {}
 	/**
 	 * @brief 補間して得られる点を返す
 	 */
-	QVector2D interpolate(double t){
+	QVector2D interpolate(double t) {
 		t *= m_D;
 		double x =
-				m_XA +
-				m_XB * t +
-				m_XC * t * t +
-				m_XD * t * t * t;
+			m_XA +
+			m_XB * t +
+			m_XC * t * t +
+			m_XD * t * t * t;
 		double y =
-				m_YA +
-				m_YB * t +
-				m_YC * t * t +
-				m_YD * t * t * t;
+			m_YA +
+			m_YB * t +
+			m_YC * t * t +
+			m_YD * t * t * t;
 		return QVector2D(x, y);
 	}
 	/**
 	 * @brief オブジェクトのコピー
 	 */
-	virtual Interpolator2D1* copy(){
+	virtual Interpolator2D1* copy() {
 		Interpolator2D1* copy = new RiverSplineInterpolatorCopy(m_D, m_XA, m_XB, m_XC, m_XD, m_YA, m_YB, m_YC, m_YD);
 		return copy;
 	}
@@ -432,20 +445,21 @@ private:
  * updateParameters() が呼ばれると、親ソルバに Interpolator の再生成を依頼する。
  * RiverShapeSolver::m_LinearMode = true のときのみ使用される。
  */
-class RiverLinearInterpolator : public Interpolator2D1 {
+class RiverLinearInterpolator : public Interpolator2D1
+{
 public:
-	RiverLinearInterpolator(RiverSplineSolver* parent, const QVector2D& v0, const QVector2D& v1) : Interpolator2D1(){
+	RiverLinearInterpolator(RiverSplineSolver* parent, const QVector2D& v0, const QVector2D& v1) : Interpolator2D1() {
 		m_Parent = parent;
 		m_Interpolator.setValues(v0, v1);
 	}
-	virtual ~RiverLinearInterpolator(){}
-	virtual void updateParameters(){
+	virtual ~RiverLinearInterpolator() {}
+	virtual void updateParameters() {
 		m_Parent->update();
 	}
-	virtual QVector2D interpolate(double t){
+	virtual QVector2D interpolate(double t) {
 		return m_Interpolator.interpolate(t);
 	}
-	virtual Interpolator2D1* copy(){
+	virtual Interpolator2D1* copy() {
 		return new RiverLinearInterpolator(m_Parent, m_Interpolator.interpolate(0), m_Interpolator.interpolate(1));
 	}
 private:

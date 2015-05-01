@@ -18,14 +18,14 @@ public:
 		Custom
 	};
 	/// Constructor
-	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition * condition);
+	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 	void addCustomMenuItems(QMenu* menu);
-	void handleStandardItemDoubleClicked(){editValue();}
+	void handleStandardItemDoubleClicked() {editValue();}
 	void setupDataItem();
 	const QVariant& customValue() const {return m_customValue;}
 	virtual QVariant variantValue();
 	Type type() const {return m_type;}
-	void setType(Type t){m_type = t;}
+	void setType(Type t) {m_type = t;}
 	bool getValueRange(double* min, double* max);
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/);

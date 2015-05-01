@@ -4,17 +4,19 @@
 #include <QDialog>
 #include <rawdata/riversurvey/rawdatariverpathpoint.h>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurveyPointAddDialog;
 }
 
 class GridCreatingConditionRiverSurvey;
 class QAbstractButton;
 
-class GridCreatingConditionRiverSurveyPointAddDialog : public QDialog {
+class GridCreatingConditionRiverSurveyPointAddDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	GridCreatingConditionRiverSurveyPointAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent = nullptr);
+	GridCreatingConditionRiverSurveyPointAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointAddDialog();
 public slots:
 	void accept();
@@ -26,7 +28,7 @@ private:
 	void apply();
 	RawDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
 	GridCreatingConditionRiverSurvey* m_condition;
-	Ui::GridCreatingConditionRiverSurveyPointAddDialog *ui;
+	Ui::GridCreatingConditionRiverSurveyPointAddDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONRIVERSURVEYPOINTADDDIALOG_H

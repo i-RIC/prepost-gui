@@ -6,14 +6,16 @@
 
 class Grid;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionCompoundChannelSettingDialog;
 }
 
-class GridCreatingConditionCompoundChannelSettingDialog : public QDialog {
+class GridCreatingConditionCompoundChannelSettingDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	GridCreatingConditionCompoundChannelSettingDialog(QWidget *parent = 0);
+	GridCreatingConditionCompoundChannelSettingDialog(QWidget* parent = 0);
 	~GridCreatingConditionCompoundChannelSettingDialog();
 
 	void setStreamWiseDivision(int div);
@@ -34,7 +36,7 @@ public:
 public slots:
 	void toggleDetailCondition();
 private:
-	Ui::GridCreatingConditionCompoundChannelSettingDialog *ui;
+	Ui::GridCreatingConditionCompoundChannelSettingDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONCOMPOUNDCHANNELSETTINGDIALOG_H

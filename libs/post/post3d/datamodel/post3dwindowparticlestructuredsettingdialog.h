@@ -6,26 +6,27 @@
 #include "../post3dwindowdataitem.h"
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 
-namespace Ui {
-    class Post3dWindowParticleStructuredSettingDialog;
+namespace Ui
+{
+	class Post3dWindowParticleStructuredSettingDialog;
 }
 class PostZoneDataContainer;
 
 class Post3dWindowParticleStructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post3dWindowParticleStructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post3dWindowParticleStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowParticleStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
 	void setTimeMode(Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
 	void setTimeSamplingRate(int sr);
 	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post3dWindowStructuredParticleSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post3dWindowStructuredParticleSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
@@ -33,8 +34,8 @@ public:
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode();
 	int timeSamplingRate();
 	int timeDivision();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post3dWindowStructuredParticleSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post3dWindowStructuredParticleSetSetting>& settings() {return m_settings;}
 private slots:
 	void activeDataChanged(int index);
 
@@ -58,7 +59,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-    Ui::Post3dWindowParticleStructuredSettingDialog *ui;
+	Ui::Post3dWindowParticleStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;

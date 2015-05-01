@@ -9,10 +9,10 @@ class GCC_RECTANGULARREGIONLONLAT_EXPORT GridCreatingConditionCreatorRectangular
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorRectangularRegionLonLat();
-	~GridCreatingConditionCreatorRectangularRegionLonLat(){}
+	~GridCreatingConditionCreatorRectangularRegionLonLat() {}
 
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
-	GridCreatingCondition* create(ProjectDataItem *parent);
+	GridCreatingCondition* create(ProjectDataItem* parent);
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORRECTANGULARREGIONLONLAT_H

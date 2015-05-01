@@ -46,26 +46,24 @@
 #include <QUndoCommand>
 
 
-class GridCreatingConditionCtrlPointDeleteCommand15D : public QUndoCommand {
+class GridCreatingConditionCtrlPointDeleteCommand15D : public QUndoCommand
+{
 public:
 	GridCreatingConditionCtrlPointDeleteCommand15D(GridCreatingConditionRiverSurvey15D* cond)
-		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Delete Selected Control Points"))
-	{
+		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Delete Selected Control Points")) {
 		m_condition = cond;
 		executeDeleteCtrlPoints();
 	}
-	void undo()
-	{
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before){
+	void undo() {
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before) {
 			backup->restore();
 		}
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 
-	void redo()
-	{
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after){
+	void redo() {
+		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after) {
 			backup->restore();
 		}
 		m_condition->updateShapeData();
@@ -73,8 +71,7 @@ public:
 	}
 
 private:
-	void executeDeleteCtrlPoints()
-	{
+	void executeDeleteCtrlPoints() {
 		RawDataRiverSurveyCtrlPointBackup* backup;
 
 		typedef std::set<int> iset;
@@ -88,21 +85,21 @@ private:
 		bool RemoveCenterToLeft = false;
 		bool RemoveCenterToRight = false;
 
-		for (auto it = m_condition->m_selectedCtrlPointInfoList.begin(); it != m_condition->m_selectedCtrlPointInfoList.end(); ++it){
-			if (it->Position == RawDataRiverPathPoint::pposCenterToLeft){
+		for (auto it = m_condition->m_selectedCtrlPointInfoList.begin(); it != m_condition->m_selectedCtrlPointInfoList.end(); ++it) {
+			if (it->Position == RawDataRiverPathPoint::pposCenterToLeft) {
 				RemoveCenterToLeft = true;
 				LeftRemoveIndices.insert(it->Index);
-			} else if (it->Position == RawDataRiverPathPoint::pposCenterToRight){
+			} else if (it->Position == RawDataRiverPathPoint::pposCenterToRight) {
 				RemoveCenterToRight = true;
 				RightRemoveIndices.insert(it->Index);
 			} else {
 				points.insert(it->Point);
 				auto psetit = PointIndices.find(it->Point);
-				if (psetit == PointIndices.end()){
+				if (psetit == PointIndices.end()) {
 					std::pair<RawDataRiverPathPoint*, iset> pi_pair =
-					    std::pair<RawDataRiverPathPoint*, iset>(it->Point, EmptyIndices);
+						std::pair<RawDataRiverPathPoint*, iset>(it->Point, EmptyIndices);
 					auto insertresult =
-					    PointIndices.insert(pi_pair);
+						PointIndices.insert(pi_pair);
 					psetit = insertresult.first;
 				}
 				psetit->second.insert(it->Index);
@@ -112,55 +109,55 @@ private:
 		RawDataRiverPathPoint* headPoint = m_condition->m_riverSurvey->headPoint();
 
 		// バックアップを取る。
-		if (RemoveCenterToLeft){
+		if (RemoveCenterToLeft) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToLeft);
 			m_before.push_back(backup);
 		}
-		if (RemoveCenterToRight){
+		if (RemoveCenterToRight) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToRight);
 			m_before.push_back(backup);
 		}
-		for (RawDataRiverPathPoint* point : points){
+		for (RawDataRiverPathPoint* point : points) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(point, RawDataRiverPathPoint::zposCenterLine);
 			m_before.push_back(backup);
 		}
 
 		// 次に削除を実行する。
-		if (RemoveCenterToLeft){
+		if (RemoveCenterToLeft) {
 			RawDataRiverPathPoint* tmpp = m_condition->m_riverSurvey->headPoint();
-			if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
-			while (tmpp != nullptr){
+			if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
+			while (tmpp != nullptr) {
 				tmpp->removeCtrlPoints(RawDataRiverPathPoint::zposCenterToLeft, LeftRemoveIndices);
 				tmpp = tmpp->nextPoint();
 			}
 		}
-		if (RemoveCenterToRight){
+		if (RemoveCenterToRight) {
 			RawDataRiverPathPoint* tmpp = m_condition->m_riverSurvey->headPoint();
-			if (tmpp != nullptr){tmpp = tmpp->nextPoint();}
-			while (tmpp != nullptr){
+			if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
+			while (tmpp != nullptr) {
 				tmpp->removeCtrlPoints(RawDataRiverPathPoint::zposCenterToRight, RightRemoveIndices);
 				tmpp = tmpp->nextPoint();
 			}
 		}
-		for (auto psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit){
+		for (auto psetit = PointIndices.begin(); psetit != PointIndices.end(); ++psetit) {
 			(psetit->first)->removeCtrlPoints(RawDataRiverPathPoint::zposCenterLine, psetit->second);
 		}
 
 		// バックアップを取る。
-		if (RemoveCenterToLeft){
+		if (RemoveCenterToLeft) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToLeft);
 			m_after.push_back(backup);
 		}
-		if (RemoveCenterToRight){
+		if (RemoveCenterToRight) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToRight);
 			m_after.push_back(backup);
 		}
-		for (auto pit = points.begin(); pit != points.end(); ++pit){
+		for (auto pit = points.begin(); pit != points.end(); ++pit) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(*pit, RawDataRiverPathPoint::zposCenterLine);
 			m_after.push_back(backup);
@@ -170,7 +167,7 @@ private:
 	}
 
 private:
-	GridCreatingConditionRiverSurvey15D *m_condition;
+	GridCreatingConditionRiverSurvey15D* m_condition;
 	std::list<RawDataRiverSurveyCtrlPointBackup*> m_before;
 	std::list<RawDataRiverSurveyCtrlPointBackup*> m_after;
 };
@@ -209,7 +206,7 @@ GridCreatingConditionRiverSurvey15D::~GridCreatingConditionRiverSurvey15D()
 	r->RemoveActor(m_selectedCtrlPointsActor);
 	r->RemoveActor(m_blackSelectedCtrlPointsActor);
 
-	if (m_rightClickingMenu != nullptr){
+	if (m_rightClickingMenu != nullptr) {
 		delete m_rightClickingMenu;
 	}
 }
@@ -240,17 +237,17 @@ bool GridCreatingConditionRiverSurvey15D::ready() const
 bool GridCreatingConditionRiverSurvey15D::init()
 {
 	// set m_riverSurvey.
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*> (parent()->parent()->parent());
+	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent());
 	PreProcessorRawDataTopDataItemInterface* rtItem = gtItem->rawdataTop();
 	QList<PreProcessorRawDataGroupDataItemInterface*> gItems = rtItem->groupDataItems();
 	bool found = false;
 
-	for (auto git = gItems.begin(); ! found && git != gItems.end(); ++git){
+	for (auto git = gItems.begin(); ! found && git != gItems.end(); ++git) {
 		PreProcessorRawDataGroupDataItemInterface* gItem = *git;
 		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
-		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit){
+		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit) {
 			PreProcessorRawdataDataItemInterface* rItem = *rit;
-			if (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != nullptr){
+			if (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != nullptr) {
 				// this is a river survey data!
 
 				// @todo currently, the river survey data found first, is
@@ -264,14 +261,14 @@ bool GridCreatingConditionRiverSurvey15D::init()
 			}
 		}
 	}
-	if (! found){
+	if (! found) {
 		// there is no river survey data.
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Error"), tr("There is no river survey data. This grid creating condition is not available."));
 		return false;
 	}
 	// delete division points on cross sections
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		p->CenterToLeftCtrlPoints.clear();
 		p->CenterToRightCtrlPoints.clear();
 		p = p->nextPoint();
@@ -370,7 +367,7 @@ void GridCreatingConditionRiverSurvey15D::setupActors()
 
 	// register grid with lower resolution.
 	vtkSmartPointer<vtkStructuredGrid> tmpgrid = m_riverCenterLine;
-	for (int i = 0; i < 2; ++i){
+	for (int i = 0; i < 2; ++i) {
 		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
 		ext->SetInputData(tmpgrid);
 		ext->SetSampleRate(3, 1, 1);
@@ -438,7 +435,7 @@ void GridCreatingConditionRiverSurvey15D::setupMenu()
 	m_menu->addSeparator();
 
 	// ContextMenu
-	if (m_rightClickingMenu == nullptr){
+	if (m_rightClickingMenu == nullptr) {
 		m_rightClickingMenu = new QMenu();
 		m_rightClickingMenu->addAction(m_createAction);
 		m_rightClickingMenu->addSeparator();
@@ -501,7 +498,7 @@ void GridCreatingConditionRiverSurvey15D::mouseDoubleClickEvent(QMouseEvent* /*e
 void GridCreatingConditionRiverSurvey15D::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 
-	if (m_mouseEventMode == meNormal){
+	if (m_mouseEventMode == meNormal) {
 		double worldX = (double) event->x();
 		double worldY = (double) event->y();
 		v->viewportToWorld(worldX, worldY);
@@ -517,8 +514,8 @@ void GridCreatingConditionRiverSurvey15D::mouseMoveEvent(QMouseEvent* event, Pre
 
 void GridCreatingConditionRiverSurvey15D::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::LeftButton){
-		if (m_mouseEventMode == meNormal){
+	if (event->button() == Qt::LeftButton) {
+		if (m_mouseEventMode == meNormal) {
 			// Bounding box for selection started.
 			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 			box->setStartPoint(event->x(), event->y());
@@ -531,8 +528,8 @@ void GridCreatingConditionRiverSurvey15D::mousePressEvent(QMouseEvent* event, Pr
 
 void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
-		if (m_mouseEventMode == meNormal){
+	if (event->button() == Qt::LeftButton) {
+		if (m_mouseEventMode == meNormal) {
 
 			// Bounding box for selection ended.
 			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
@@ -542,7 +539,7 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 			QPoint diffVec = box->endPoint() - box->startPoint();
 			QPoint sP = box->startPoint();
 			QPoint eP = box->endPoint();
-			if (- 2 < diffVec.x() && diffVec.x() < 2 && - 2 < diffVec.y() && diffVec.y() < 2){
+			if (- 2 < diffVec.x() && diffVec.x() < 2 && - 2 < diffVec.y() && diffVec.y() < 2) {
 				sP = sP + QPoint(- 4, - 4);
 				eP = eP + QPoint(4, 4);
 			}
@@ -580,14 +577,14 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 			v->restoreUpdateRate();
 
 			// set information of selected division points.
-			if (event->modifiers() == Qt::NoModifier){
+			if (event->modifiers() == Qt::NoModifier) {
 				this->ctrlPointSelectRegion(startP, vec1, vec2);
-			} else if (event->modifiers() == Qt::ShiftModifier){
+			} else if (event->modifiers() == Qt::ShiftModifier) {
 				this->ctrlPointXORSelectRegion(startP, vec1, vec2);
 			}
 
 			// no point is selected. try to select a ctrlzone.
-			if (! m_selectedCtrlPointInfoList.empty()){
+			if (! m_selectedCtrlPointInfoList.empty()) {
 				m_selectedZone.point = nullptr;
 			} else {
 				double target_x = box->startPoint().x();
@@ -601,8 +598,8 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 			updateShapeData();
 			renderGraphicsView();
 		}
-	} else if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, event->pos())){
+	} else if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, event->pos())) {
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
 		}
@@ -612,9 +609,9 @@ void GridCreatingConditionRiverSurvey15D::mouseReleaseEvent(QMouseEvent* event, 
 void GridCreatingConditionRiverSurvey15D::updateMouseCursor(PreProcessorGraphicsViewInterface* /*v*/)
 {}
 
-void GridCreatingConditionRiverSurvey15D::doLoadFromProjectMainFile(const QDomNode& /*node*/){}
+void GridCreatingConditionRiverSurvey15D::doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 
-void GridCreatingConditionRiverSurvey15D::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+void GridCreatingConditionRiverSurvey15D::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
 void GridCreatingConditionRiverSurvey15D::updateZDepthRangeItemCount(ZDepthRange& range)
 {
@@ -653,7 +650,7 @@ bool GridCreatingConditionRiverSurvey15D::addToolBarButtons(QToolBar* /*tb*/)
 void GridCreatingConditionRiverSurvey15D::loadExternalData(const QString& /*filename*/)
 {}
 
-void GridCreatingConditionRiverSurvey15D::saveExternalData(const QString& /*filename*/){}
+void GridCreatingConditionRiverSurvey15D::saveExternalData(const QString& /*filename*/) {}
 
 void GridCreatingConditionRiverSurvey15D::setupActions()
 {
@@ -677,7 +674,7 @@ void GridCreatingConditionRiverSurvey15D::setupActions()
 void GridCreatingConditionRiverSurvey15D::setActionStatus()
 {
 	// menu status when zone and points are not selected.
-	if ((m_selectedZone.point ==0) && (m_selectedCtrlPointInfoList.size() == 0)){
+	if ((m_selectedZone.point ==0) && (m_selectedCtrlPointInfoList.size() == 0)) {
 
 		m_createAction->setEnabled(true);
 		m_addAction->setEnabled(false);
@@ -692,7 +689,7 @@ void GridCreatingConditionRiverSurvey15D::setActionStatus()
 		m_addRegionallyAction->setEnabled(false);
 
 		// menu status when zone is selected.
-		if (m_selectedZone.point != nullptr){
+		if (m_selectedZone.point != nullptr) {
 			m_addAction->setEnabled(true);
 			m_moveAction->setEnabled(false);
 			m_repositionAction->setEnabled(false);
@@ -700,9 +697,9 @@ void GridCreatingConditionRiverSurvey15D::setActionStatus()
 		}
 
 		// menu status when points are selected.
-		if (m_selectedCtrlPointInfoList.size() > 0){
+		if (m_selectedCtrlPointInfoList.size() > 0) {
 			m_addAction->setEnabled(false);
-			if (this->isCtrlPointsContinuousSelection()){
+			if (this->isCtrlPointsContinuousSelection()) {
 				m_moveAction->setEnabled(true);
 				m_repositionAction->setEnabled(true);
 			} else {
@@ -736,7 +733,7 @@ void GridCreatingConditionRiverSurvey15D::addRegionPoints()
 
 void GridCreatingConditionRiverSurvey15D::addPoints()
 {
-	GridCreatingConditionRiverSurvey15DPointAddDialog *dlg = new GridCreatingConditionRiverSurvey15DPointAddDialog(this, preProcessorWindow());
+	GridCreatingConditionRiverSurvey15DPointAddDialog* dlg = new GridCreatingConditionRiverSurvey15DPointAddDialog(this, preProcessorWindow());
 	m_mouseEventMode = meAddPointDialog;
 
 	iricMainWindow()->enterModelessDialogMode();
@@ -747,9 +744,9 @@ void GridCreatingConditionRiverSurvey15D::addPoints()
 
 void GridCreatingConditionRiverSurvey15D::movePoints()
 {
-	GridCreatingConditionRiverSurvey15DPointMoveDialog *dialog =
-	    new GridCreatingConditionRiverSurvey15DPointMoveDialog(
-			this, m_GCPOffsetInfo.lowerLimit, m_GCPOffsetInfo.upperLimit, preProcessorWindow());
+	GridCreatingConditionRiverSurvey15DPointMoveDialog* dialog =
+		new GridCreatingConditionRiverSurvey15DPointMoveDialog(
+		this, m_GCPOffsetInfo.lowerLimit, m_GCPOffsetInfo.upperLimit, preProcessorWindow());
 	m_mouseEventMode = meMovePointDialog;
 
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
@@ -760,8 +757,8 @@ void GridCreatingConditionRiverSurvey15D::movePoints()
 
 void GridCreatingConditionRiverSurvey15D::repositionPoints()
 {
-	GridCreatingConditionRiverSurvey15DPointRepositionDialog *dialog =
-	    new GridCreatingConditionRiverSurvey15DPointRepositionDialog(this, preProcessorWindow());
+	GridCreatingConditionRiverSurvey15DPointRepositionDialog* dialog =
+		new GridCreatingConditionRiverSurvey15DPointRepositionDialog(this, preProcessorWindow());
 	m_mouseEventMode = meRepositionPointDialog;
 
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
@@ -780,7 +777,7 @@ void GridCreatingConditionRiverSurvey15D::deletePoints()
 		(QMessageBox::Yes | QMessageBox::No),
 		QMessageBox::No);
 
-	if (button == QMessageBox::Yes){
+	if (button == QMessageBox::Yes) {
 		iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointDeleteCommand15D(this));
 	}
 
@@ -808,15 +805,15 @@ bool GridCreatingConditionRiverSurvey15D::ctrlPointXORSelectRegion(
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	p->SelectCtrlPointsRegion(p0, v0, v1, tmplist);
 
-	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it) {
 		bool found = false;
-		for (auto it2 = tmplist.begin(); ! found && it2 != tmplist.end(); ++it2){
-			if (*it == *it2){
+		for (auto it2 = tmplist.begin(); ! found && it2 != tmplist.end(); ++it2) {
+			if (*it == *it2) {
 				found = true;
 				tmplist.erase(it2);
 			}
 		}
-		if (! found){
+		if (! found) {
 			tmplist.push_back(*it);
 		}
 	}
@@ -839,7 +836,7 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 	// calculate the number of grid size of m_riverCenterLine etc.
 	int pointCount = 0;
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		++pointCount;
 		p = p->nextPoint();
 	}
@@ -853,7 +850,7 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 	vtkVertex* vtx;
 	int index = 0;
 	p = m_riverSurvey->headPoint()->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		m_centerFixedPoints->InsertNextPoint(point);
@@ -871,10 +868,10 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 	m_ctrlPoints->Reset();
 	int ctrlPointIndex = 0;
 	p = m_riverSurvey->headPoint()->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		// control points
-		if (p->nextPoint() != nullptr){
-			for (auto cit = p->CenterLineCtrlPoints.begin(); cit != p->CenterLineCtrlPoints.end(); ++cit){
+		if (p->nextPoint() != nullptr) {
+			for (auto cit = p->CenterLineCtrlPoints.begin(); cit != p->CenterLineCtrlPoints.end(); ++cit) {
 				QVector2D vec = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposCenterLine, *cit);
 				point[0] = vec.x();
 				point[1] = vec.y();
@@ -894,8 +891,8 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		centerLinePoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr){
-			for (int i = 1; i < LINEDIVS; ++i){
+		if (p->nextPoint() != nullptr) {
+			for (int i = 1; i < LINEDIVS; ++i) {
 				tmpp = p->riverCenter()->interpolate(i / static_cast<double>(LINEDIVS));
 				point[0] = tmpp.x();
 				point[1] = tmpp.y();
@@ -907,14 +904,14 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 
 	// selected zone
 	m_selectedCtrlZone->Initialize();
-	if (m_selectedZone.point != nullptr){
+	if (m_selectedZone.point != nullptr) {
 		// zone is selected!
 		RawDataRiverPathPoint* p = m_selectedZone.point;
 		QList<QVector2D> pointlist = p->CtrlZonePoints(m_selectedZone.position, m_selectedZone.index, ZONEDIV);
 		m_selectedCtrlZone->SetDimensions(pointlist.count(), 1, 1);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		for (auto it = pointlist.begin(); it != pointlist.end(); ++it){
+		for (auto it = pointlist.begin(); it != pointlist.end(); ++it) {
 			QVector2D v = (*it);
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
@@ -927,7 +924,7 @@ void GridCreatingConditionRiverSurvey15D::updateShapeData()
 	m_selectedCtrlPoints->Reset();
 
 	int selectedCtrlPointIndex = 0;
-	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it){
+	for (auto it = m_selectedCtrlPointInfoList.begin(); it != m_selectedCtrlPointInfoList.end(); ++it) {
 		point[0] = it->Point->CtrlPointPosition2D(it->Position, it->Index).x();
 		point[1] = it->Point->CtrlPointPosition2D(it->Position, it->Index).y();
 		m_selectedCtrlPointPoints->InsertNextPoint(point);
@@ -978,12 +975,12 @@ void GridCreatingConditionRiverSurvey15D::createGrid(RawDataRiverPathPoint* star
 	p = m_lastStartPoint;
 	double point[3];
 	point[2] = 0;
-	while (p != m_lastEndPoint){
+	while (p != m_lastEndPoint) {
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		points->InsertNextPoint(point);
 
-		for (auto it = p->CenterLineCtrlPoints.begin(); it != p->CenterLineCtrlPoints.end(); ++it){
+		for (auto it = p->CenterLineCtrlPoints.begin(); it != p->CenterLineCtrlPoints.end(); ++it) {
 			QVector2D v = p->CtrlPointPosition2D(RawDataRiverPathPoint::pposCenterLine, *it);
 			point[0] = v.x();
 			point[1] = v.y();
@@ -998,14 +995,14 @@ void GridCreatingConditionRiverSurvey15D::createGrid(RawDataRiverPathPoint* star
 
 	// grid related conditions
 	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (auto it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}
 
 	// cross sections
 	p = m_lastStartPoint;
 	int index = 1;
-	while (p != m_lastEndPoint->nextPoint()){
+	while (p != m_lastEndPoint->nextPoint()) {
 		// add the cross section of a fixed point
 		appendCrossSectionToGrid(p->crosssection(), grid, p->name());
 
@@ -1021,7 +1018,7 @@ void GridCreatingConditionRiverSurvey15D::createGrid(RawDataRiverPathPoint* star
 
 void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* grid, RawDataRiverPathPoint* p, int dataNum)
 {
-	for (auto it = p->CenterLineCtrlPoints.begin(); it != p->CenterLineCtrlPoints.end(); ++it){
+	for (auto it = p->CenterLineCtrlPoints.begin(); it != p->CenterLineCtrlPoints.end(); ++it) {
 		double ratio = *it;
 		int numPoints = (dataNum - 1) / 2;      // dataNum should be odd.
 
@@ -1042,7 +1039,7 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 		// left bank.
 		QVector2D leftbank = p->leftBank()->interpolate(ratio);
 		double leftbankdist = (leftbank - ctrlPoint).length();
-		for (int i = 1; i <= numPoints; ++i){
+		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->lXSec()->interpolate(tmpt).height();
 			tmpdbl2 = toP->lXSec()->interpolate(tmpt).height();
@@ -1052,7 +1049,7 @@ void GridCreatingConditionRiverSurvey15D::processCtrlPoints(int* index, Grid* gr
 		//right bank.
 		QVector2D rightbank = p->rightBank()->interpolate(ratio);
 		double rightbankdist = (rightbank - ctrlPoint).length();
-		for (int i = 1; i <= numPoints; ++i){
+		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->rXSec()->interpolate(tmpt).height();
 			tmpdbl2 = toP->rXSec()->interpolate(tmpt).height();
@@ -1070,7 +1067,7 @@ void GridCreatingConditionRiverSurvey15D::appendCrossSectionToGrid(RawDataRiverC
 	Structured15DGridWithCrossSectionCrossSection* crosssection = new Structured15DGridWithCrossSectionCrossSection(name, grid);
 	RawDataRiverCrosssection::AltitudeList& alist = cs.AltitudeInfo();
 	double offset = alist.first().position();
-	for (auto it = alist.begin(); it != alist.end(); ++it){
+	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt;
 		alt.m_position = (*it).position() - offset;
 		alt.m_height = (*it).height();
@@ -1092,8 +1089,8 @@ void GridCreatingConditionRiverSurvey15D::selectCreateRegion(RawDataRiverPathPoi
 	point[1] = p->position().y();
 	point[2] = 0;
 	createRegionPoints->InsertNextPoint(point);
-	while (p != end && p->nextPoint() != nullptr){
-		for (int i = 1; i < LINEDIVS; ++i){
+	while (p != end && p->nextPoint() != nullptr) {
+		for (int i = 1; i < LINEDIVS; ++i) {
 			tmpp = p->riverCenter()->interpolate(i / static_cast<double>(LINEDIVS));
 			point[0] = tmpp.x();
 			point[1] = tmpp.y();
@@ -1134,8 +1131,8 @@ void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QVector2D& point,
 	double rwidth = width;
 	bool found = false;
 	bool region;
-	while (! found && p != nullptr){
-		if (p->gridSkip()){
+	while (! found && p != nullptr) {
+		if (p->gridSkip()) {
 			p = p->nextPoint();
 			continue;
 		}
@@ -1143,18 +1140,18 @@ void GridCreatingConditionRiverSurvey15D::selectCtrlZone(const QVector2D& point,
 		p->centerToBanksRegion(mins, maxs);
 		double xwidth = maxs.x() - mins.x();
 		double ywidth = maxs.y() - mins.y();
-		if (p->nextPoint() != nullptr){
+		if (p->nextPoint() != nullptr) {
 			region = true;
 			p->thisToNextRegion(mins, maxs);
 			xwidth = maxs.x() - mins.x();
 			ywidth = maxs.y() - mins.y();
-			if (xwidth != 0 && (point.x() < mins.x() - xwidth || point.x() > maxs.x() + xwidth)){
+			if (xwidth != 0 && (point.x() < mins.x() - xwidth || point.x() > maxs.x() + xwidth)) {
 				region = false;
 			}
-			if (ywidth != 0 && (point.y() < mins.y() - ywidth || point.y() > maxs.y() + ywidth)){
+			if (ywidth != 0 && (point.y() < mins.y() - ywidth || point.y() > maxs.y() + ywidth)) {
 				region = false;
 			}
-			if (region){
+			if (region) {
 				found = found || selectCtrlZone(p, RawDataRiverPathPoint::zposCenterLine, point, rwidth);
 			}
 		}
@@ -1166,19 +1163,19 @@ bool GridCreatingConditionRiverSurvey15D::selectCtrlZone(RawDataRiverPathPoint* 
 {
 	bool found = false;
 	unsigned int maxindex = static_cast<unsigned int>(p->CtrlPoints(pos).size());
-	for (unsigned int i = 0; ! found && i <= maxindex; ++i){
+	for (unsigned int i = 0; ! found && i <= maxindex; ++i) {
 		QList<QVector2D> vectorlist = p->CtrlZonePoints(pos, i, ZONEDIV);
 		QVector2D v0, v1;
 		auto it = vectorlist.begin();
 		v0 = *it++;
-		while (! found && it != vectorlist.end()){
+		while (! found && it != vectorlist.end()) {
 			v1 = *it++;
 			QVector2D horizontal = v1 - v0;
 			QVector2D vertical = (v1 - v0).normalized();
 			iRIC::rotateVector90(vertical);
 			vertical *= width;
 			QVector2D posv = v0 - vertical * 0.5;
-			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)){
+			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {
 				found = true;
 				m_selectedZone.point = p;
 				m_selectedZone.position = pos;
@@ -1200,15 +1197,15 @@ void GridCreatingConditionRiverSurvey15D::restoreMouseEventMode()
 //+++++
 bool GridCreatingConditionRiverSurvey15D::isCtrlPointsContinuousSelection()
 {
-	if (m_selectedCtrlPointInfoList.size() == 0){
+	if (m_selectedCtrlPointInfoList.size() == 0) {
 		return false;
-	}else if (m_selectedCtrlPointInfoList.size() == 1){
+	} else if (m_selectedCtrlPointInfoList.size() == 1) {
 		return true;
-	}else{
+	} else {
 		bool ok = true;
 		auto it = m_selectedCtrlPointInfoList.begin();
 		CtrlPointSelectionInfo tmpinfo = *it++;
-		while (it != m_selectedCtrlPointInfoList.end()){
+		while (it != m_selectedCtrlPointInfoList.end()) {
 			ok = ok && (tmpinfo.Point == it->Point && tmpinfo.Index + 1 == it->Index);
 			tmpinfo = *it++;
 		}
@@ -1226,36 +1223,36 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 	std::list<CtrlPointSelectionInfo> tmplist;
 	for (auto it = m_selectedCtrlPointInfoList.begin();
 	     it != m_selectedCtrlPointInfoList.end();
-	     ++it){
-		if (it->Index < it->Point->CtrlPoints(it->Position).size()){
+	     ++it) {
+		if (it->Index < it->Point->CtrlPoints(it->Position).size()) {
 			// 正しい
 			tmplist.push_back(*it);
 		}
 	}
 	m_selectedCtrlPointInfoList = tmplist;
-	if (isCtrlPointsContinuousSelection()){
+	if (isCtrlPointsContinuousSelection()) {
 		CtrlPointSelectionInfo& info = m_selectedCtrlPointInfoList.front();
-		if (info.Index == 0){
+		if (info.Index == 0) {
 			m_GCPOffsetInfo.lowerLimit =
-			    0.
-			    - info.Point->CtrlPoints(info.Position)[info.Index];
-		}else{
+				0.
+				- info.Point->CtrlPoints(info.Position)[info.Index];
+		} else {
 			m_GCPOffsetInfo.lowerLimit =
-			    info.Point->CtrlPoints(info.Position)[info.Index - 1]
-			    - info.Point->CtrlPoints(info.Position)[info.Index];
+				info.Point->CtrlPoints(info.Position)[info.Index - 1]
+				- info.Point->CtrlPoints(info.Position)[info.Index];
 		}
 		CtrlPointSelectionInfo& info2 = m_selectedCtrlPointInfoList.back();
-		if (info2.Index == info.Point->CtrlPoints(info2.Position).size() - 1){
+		if (info2.Index == info.Point->CtrlPoints(info2.Position).size() - 1) {
 			m_GCPOffsetInfo.upperLimit =
-			    1.
-			    - info2.Point->CtrlPoints(info2.Position)[info2.Index];
-		}else{
+				1.
+				- info2.Point->CtrlPoints(info2.Position)[info2.Index];
+		} else {
 			m_GCPOffsetInfo.upperLimit =
-			    info2.Point->CtrlPoints(info2.Position)[info2.Index + 1]
-			    - info2.Point->CtrlPoints(info2.Position)[info2.Index];
+				info2.Point->CtrlPoints(info2.Position)[info2.Index + 1]
+				- info2.Point->CtrlPoints(info2.Position)[info2.Index];
 		}
 		double d = info.Point->CtrlPoints(info.Position)[info.Index];
-		if ((d + 0.01) > 1){
+		if ((d + 0.01) > 1) {
 			m_GCPOffsetInfo.direction = (
 			    info.Point->CtrlPointPosition2D(info.Position, d) -
 			    info.Point->CtrlPointPosition2D(info.Position, d - 0.01)
@@ -1266,9 +1263,9 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 			    info.Point->CtrlPointPosition2D(info.Position, d)
 			    ).normalized();
 		}
-		if (info.Position == RawDataRiverPathPoint::pposCenterToLeft){
+		if (info.Position == RawDataRiverPathPoint::pposCenterToLeft) {
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().leftBank(true).position());
-		} else if (info.Position == RawDataRiverPathPoint::pposCenterToRight){
+		} else if (info.Position == RawDataRiverPathPoint::pposCenterToRight) {
 			m_GCPOffsetInfo.length = std::abs(info.Point->crosssection().rightBank(true).position());
 		} else {
 			m_GCPOffsetInfo.length = (
@@ -1286,8 +1283,8 @@ bool GridCreatingConditionRiverSurvey15D::checkCtrlPointsRegion(RawDataRiverPath
 
 	// 領域に既にデータがないかをチェック
 	tmpp = start;
-	while (tmpp != end){
-		if (tmpp->CenterLineCtrlPoints.size() > 0){
+	while (tmpp != end) {
+		if (tmpp->CenterLineCtrlPoints.size() > 0) {
 			ans = true;
 		}
 		tmpp = tmpp->nextPoint();
@@ -1314,7 +1311,7 @@ void GridCreatingConditionRiverSurvey15D::clear()
 {
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	QVector<double> emptyVector;
-	while (p != nullptr){
+	while (p != nullptr) {
 		p->LeftBankCtrlPoints = emptyVector;
 		p->RightBankCtrlPoints = emptyVector;
 		p->CenterLineCtrlPoints = emptyVector;

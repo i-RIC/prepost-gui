@@ -22,12 +22,12 @@ class Post2dWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class Post2dWindow :
-		public PostProcessorWindow,
-		public AdditionalMenuWindow,
-		public WindowWithObjectBrowser,
-		public WindowWithPropertyBrowser,
-		public ParticleExportWindow,
-		public SVKmlExportWindow
+	public PostProcessorWindow,
+	public AdditionalMenuWindow,
+	public WindowWithObjectBrowser,
+	public WindowWithPropertyBrowser,
+	public ParticleExportWindow,
+	public SVKmlExportWindow
 {
 	Q_OBJECT
 public:
@@ -36,15 +36,15 @@ public:
 	/// Destructor
 	~Post2dWindow();
 	/// Informed that CGNS file is switched.
-	void handleCgnsSwitch(){}
+	void handleCgnsSwitch() {}
 	/// switch to the new index.
-	void changeIndex(uint /*newindex*/){}
+	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot();
 	vtkRenderWindow* getVtkRenderWindow();
 	QList<QMenu*> getAdditionalMenus();
 	ObjectBrowser* objectBrowser();
-	int index(){return m_index;}
-	bool exportParticles(const QString &filePrefix, int fileIndex, double time, const QString& zonename);
+	int index() {return m_index;}
+	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename);
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename);

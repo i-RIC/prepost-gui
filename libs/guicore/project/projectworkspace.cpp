@@ -8,7 +8,7 @@
 
 const QString ProjectWorkspace::FOLDERNAME = ".iRIC_workspace";
 
-ProjectWorkspace::ProjectWorkspace(QObject *parent) :
+ProjectWorkspace::ProjectWorkspace(QObject* parent) :
 	QObject(parent)
 {
 	QDir homeDir = QDir::home();
@@ -17,7 +17,7 @@ ProjectWorkspace::ProjectWorkspace(QObject *parent) :
 	QString workspace = settings.value("general/workspace", defaultWorkspace).value<QString>();
 	m_workspace = QDir(workspace);
 	// if the workspace doesn't exists, make it.
-	if (! m_workspace.exists()){
+	if (! m_workspace.exists()) {
 		QDir parentDir = m_workspace;
 		parentDir.cdUp();
 		parentDir.mkdir(m_workspace.dirName());
@@ -28,13 +28,13 @@ ProjectWorkspace::ProjectWorkspace(QObject *parent) :
 
 void ProjectWorkspace::updateWorkfolderList()
 {
-	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
+	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it) {
 		delete *it;
 	}
 	m_workfolderList.clear();
 	QStringList subdirs = m_workspace.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
 
-	for (int i = 0; i < subdirs.size(); ++i){
+	for (int i = 0; i < subdirs.size(); ++i) {
 		QString wfFull = m_workspace.absoluteFilePath(subdirs.at(i));
 		WorkfolderInfo* info = new WorkfolderInfo(wfFull, this);
 		m_workfolderList.push_back(info);
@@ -44,8 +44,8 @@ void ProjectWorkspace::updateWorkfolderList()
 QList<WorkfolderInfo*> ProjectWorkspace::trashWorkfolders()
 {
 	QList<WorkfolderInfo*> ret;
-	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it){
-		if (! (*it)->isLocked()){
+	for (auto it = m_workfolderList.begin(); it != m_workfolderList.end(); ++it) {
+		if (!(*it)->isLocked()) {
 			ret.push_back(*it);
 		}
 	}
@@ -54,7 +54,7 @@ QList<WorkfolderInfo*> ProjectWorkspace::trashWorkfolders()
 void ProjectWorkspace::trashAllTrashWorkfolders()
 {
 	QList<WorkfolderInfo*> trashes = trashWorkfolders();
-	for (auto it = trashes.begin(); it != trashes.end(); ++it){
+	for (auto it = trashes.begin(); it != trashes.end(); ++it) {
 		trashWorkfolder((*it)->folderName());
 	}
 }
@@ -73,7 +73,7 @@ const QString ProjectWorkspace::tmpFileName() const
 	QDir workDir(m_workspace.absolutePath());
 
 	QString filename = hash.result().toHex();
-	while (workDir.exists(filename)){
+	while (workDir.exists(filename)) {
 		hash.addData(QByteArray(1, qrand()));
 		filename = hash.result().toHex();
 	}
@@ -85,7 +85,7 @@ void ProjectWorkspace::removeZipTrashes()
 	QStringList nameFilters;
 	nameFilters << "zia*";
 	QStringList trashFiles = m_workspace.entryList(nameFilters, QDir::Files);
-	for (int i = 0; i < trashFiles.count(); ++i){
+	for (int i = 0; i < trashFiles.count(); ++i) {
 		QString trashFile = trashFiles.at(i);
 		m_workspace.remove(trashFile);
 	}

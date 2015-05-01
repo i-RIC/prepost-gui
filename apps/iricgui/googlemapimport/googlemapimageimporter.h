@@ -18,7 +18,7 @@ public:
 	const static int MAX_GOOGLEAPI_COUNT;
 
 	/// Constructor
-	explicit GoogleMapImageImporter(ProjectData* projectdata, iRICMainWindowInterface *parent);
+	explicit GoogleMapImageImporter(ProjectData* projectdata, iRICMainWindowInterface* parent);
 	void importImages();
 
 private slots:

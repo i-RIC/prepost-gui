@@ -13,8 +13,8 @@
 #include <QDateTime>
 #include <QTextStream>
 
-GridRelatedConditionDimensionTimeSliderSelectWidget::GridRelatedConditionDimensionTimeSliderSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget *parent)
-	: GridRelatedConditionDimensionSelectWidget(container, parent)
+GridRelatedConditionDimensionTimeSliderSelectWidget::GridRelatedConditionDimensionTimeSliderSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent) :
+	GridRelatedConditionDimensionSelectWidget(container, parent)
 {
 	m_animationActions = new GridRelatedConditionDimensionTimeSliderSelectWidget::AnimationActions(this);
 	m_runMode = NotRunning;
@@ -79,7 +79,7 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::doApplyValues()
 {
 	m_slider->setEnabled(true);
 	m_slider->setMinimum(0);
-	if (m_container->count() == 0){
+	if (m_container->count() == 0) {
 		m_slider->setMaximum(0);
 		m_slider->setEnabled(false);
 	}
@@ -90,7 +90,7 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::doApplyValues()
 const QString GridRelatedConditionDimensionTimeSliderSelectWidget::stepLabel(int index) const
 {
 	QVariant value = m_container->variantValue(index);
-	if (m_isTime){
+	if (m_isTime) {
 		double dblDatetime = value.toDouble();
 		int intDateTime = static_cast<int>(dblDatetime);
 		QDateTime dateTime = QDateTime::fromTime_t(intDateTime);
@@ -112,39 +112,39 @@ const QString GridRelatedConditionDimensionTimeSliderSelectWidget::stepLabel(int
 
 const QString GridRelatedConditionDimensionTimeSliderSelectWidget::currentStepLabel() const
 {
-	if (m_container->count() == 0){return "";}
+	if (m_container->count() == 0) {return "";}
 	return stepLabel(currentStepIndex());
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::stepForward()
 {
-	if (m_container->count() == 0){return;}
-	if (m_container->currentIndex() == m_container->count() - 1){ return; }
+	if (m_container->count() == 0) {return;}
+	if (m_container->currentIndex() == m_container->count() - 1) { return; }
 	setCurrentIndex(m_container->currentIndex() + 1);
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::stepBackward()
 {
-	if (m_container->currentIndex() == 0){ return; }
+	if (m_container->currentIndex() == 0) { return; }
 	setCurrentIndex(m_container->currentIndex() - 1);
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::stepFirst()
 {
-	if (m_container->currentIndex() == 0){ return; }
+	if (m_container->currentIndex() == 0) { return; }
 	setCurrentIndex(0);
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::stepLast()
 {
-	if (m_container->count() == 0){ return; }
-	if (m_container->currentIndex() == m_container->count() - 1){ return; }
+	if (m_container->count() == 0) { return; }
+	if (m_container->currentIndex() == m_container->count() - 1) { return; }
 	setCurrentIndex(m_container->count() - 1);
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::startSlowmotionAnimation()
 {
-	if (m_runMode != NotRunning){
+	if (m_runMode != NotRunning) {
 		// It is already running.
 		// user wants to stop running.
 		stopAnimation();
@@ -174,25 +174,25 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::editSlowmotionSpeed()
 {
 	SlowmotionSpeedEditDialog dialog(this);
 	dialog.setInterval(m_slowInterval);
-	if (QDialog::Accepted == dialog.exec()){
+	if (QDialog::Accepted == dialog.exec()) {
 		m_slowInterval = dialog.interval();
 	}
 }
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::doSetCurrentIndex(int index)
 {
-	if (m_container->currentIndex() != index){
+	if (m_container->currentIndex() != index) {
 		m_container->setCurrentIndex(index);
 	}
 
 	m_slider->setValue(index);
-	if (m_container->count() == 0){
+	if (m_container->count() == 0) {
 		updateStepLabel("");
 	} else {
 		updateStepLabel(currentStepLabel());
 	}
 	m_rendered = true;
-	if (m_runMode == Running && m_timeouted){
+	if (m_runMode == Running && m_timeouted) {
 		// rendering consumed more time then the timer
 		// interval.
 		// wait just a little more.
@@ -208,7 +208,7 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::updateStepLabel(const 
 
 void GridRelatedConditionDimensionTimeSliderSelectWidget::handleSliderMove(int val)
 {
-	if (val < m_container->count()){
+	if (val < m_container->count()) {
 		updateStepLabel(stepLabel(val));
 	} else {
 		updateStepLabel("");
@@ -237,9 +237,9 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::disableSteppingActions
 void GridRelatedConditionDimensionTimeSliderSelectWidget::updateStartButtonIcon()
 {
 	QIcon icon;
-	if (m_runMode == NotRunning){
+	if (m_runMode == NotRunning) {
 		icon = QIcon(":/images/iconAnimationRun.png");
-	} else if (m_runMode == Running){
+	} else if (m_runMode == Running) {
 		icon = QIcon(":/images/iconAnimationStop.png");
 	}
 	m_animationActions->actionStartAnimation->setIcon(icon);
@@ -249,7 +249,7 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::handleTimerTimeout()
 {
 	// timer is timed out.
 	m_timeouted = true;
-	if (m_rendered){
+	if (m_rendered) {
 		// time outed, and rendering are finished too. then, step next.
 		animationStep();
 	}
@@ -258,9 +258,9 @@ void GridRelatedConditionDimensionTimeSliderSelectWidget::handleTimerTimeout()
 void GridRelatedConditionDimensionTimeSliderSelectWidget::animationStep()
 {
 	// if the user stopped running, finish.
-	if (m_runMode == NotRunning){return;}
+	if (m_runMode == NotRunning) {return;}
 	// if it reached the last step, stop running.
-	if (m_container->currentIndex() == m_container->count() - 1){
+	if (m_container->currentIndex() == m_container->count() - 1) {
 		stopAnimation();
 		return;
 	}

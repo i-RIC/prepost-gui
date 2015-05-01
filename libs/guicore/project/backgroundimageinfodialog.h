@@ -3,8 +3,9 @@
 
 #include <QDialog>
 
-namespace Ui {
-class BackgroundImageInfoDialog;
+namespace Ui
+{
+	class BackgroundImageInfoDialog;
 }
 
 class QAbstractButton;
@@ -15,10 +16,10 @@ class BackgroundImageInfoDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit BackgroundImageInfoDialog(QWidget *parent = nullptr);
+	explicit BackgroundImageInfoDialog(QWidget* parent = nullptr);
 	~BackgroundImageInfoDialog();
-	void setInfo(BackgroundImageInfo* info){m_info = info;}
-	void setImageWidth(int width){m_imageWidth = width;}
+	void setInfo(BackgroundImageInfo* info) {m_info = info;}
+	void setImageWidth(int width) {m_imageWidth = width;}
 	void setProperties(double lbX, double lbY, double scale, double angle);
 	double leftBottomX() const {return m_leftbottomX;}
 	double leftBottomY() const {return m_leftbottomY;}
@@ -54,7 +55,7 @@ private:
 	double m_origAngle;
 
 	BackgroundImageInfo* m_info;
-	Ui::BackgroundImageInfoDialog *ui;
+	Ui::BackgroundImageInfoDialog* ui;
 };
 
 #endif // BACKGROUNDIMAGEINFODIALOG_H

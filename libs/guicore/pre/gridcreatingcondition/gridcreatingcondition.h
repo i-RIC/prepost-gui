@@ -38,35 +38,35 @@ public:
 	GridCreatingConditionCreator* creator() const {return m_creator;}
 	const QString& name() const;
 
-	QMenu* menu(){return m_menu;}
+	QMenu* menu() {return m_menu;}
 	/// setup VTK actors.
-	virtual bool init(){return true;}
-	virtual void showInitialDialog(){}
-	virtual void setupActors(){}
-	virtual void setupMenu(){}
-	virtual void handleStandardItemChange(){}
-	virtual void handleStandardItemClicked(){}
-	virtual void handleStandardItemDoubleClicked(){}
-	virtual void informSelection(PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void informDeselection(PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/){}
-	virtual void addCustomMenuItems(QMenu* /*menu*/){}
+	virtual bool init() {return true;}
+	virtual void showInitialDialog() {}
+	virtual void setupActors() {}
+	virtual void setupMenu() {}
+	virtual void handleStandardItemChange() {}
+	virtual void handleStandardItemClicked() {}
+	virtual void handleStandardItemDoubleClicked() {}
+	virtual void informSelection(PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
-	virtual void assignActionZValues(const ZDepthRange& /*range*/){}
-	virtual bool addToolBarButtons(QToolBar* /*tb*/){return false;}
-	virtual void update2Ds(){}
+	virtual void assignActionZValues(const ZDepthRange& /*range*/) {}
+	virtual bool addToolBarButtons(QToolBar* /*tb*/) {return false;}
+	virtual void update2Ds() {}
 	/// Clear the condition, to make it the default status.
 	virtual void clear() = 0;
 	void updateVisibility();
 	void updateVisibilityWithoutRendering();
 	PreProcessorWindowInterface* preProcessorWindow() const;
-	void applyOffset(double x, double y){doApplyOffset(x, y);}
+	void applyOffset(double x, double y) {doApplyOffset(x, y);}
 
 signals:
 	void gridCreated(Grid* g);
@@ -77,7 +77,7 @@ protected:
 	vtkRenderer* renderer();
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
-	virtual void updateFilename(){}
+	virtual void updateFilename() {}
 	PreProcessorGraphicsViewInterface* graphicsView();
 	PreProcessorDataModelInterface* dataModel();
 	void renderGraphicsView();

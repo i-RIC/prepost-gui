@@ -35,7 +35,7 @@ void GridComplexConditionDialog::setWidgets(QList<GridComplexConditionWidget*> w
 	m_widgets = widgets;
 	updateList();
 
-	if (m_widgets.count() > 0){
+	if (m_widgets.count() > 0) {
 		ui->listWidget->setCurrentRow(0);
 	}
 }
@@ -43,7 +43,7 @@ void GridComplexConditionDialog::setWidgets(QList<GridComplexConditionWidget*> w
 void GridComplexConditionDialog::updateList()
 {
 	ui->listWidget->clear();
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		ui->listWidget->addItem(w->caption());
 	}
@@ -51,7 +51,7 @@ void GridComplexConditionDialog::updateList()
 
 void GridComplexConditionDialog::selectItem(int item)
 {
-	if (item == -1){return;}
+	if (item == -1) {return;}
 	GridComplexConditionWidget* w = m_widgets.at(item);
 	ui->widgetContainer->setWidget(w);
 	disconnect(this, SLOT(updateCurrentName(QString)));
@@ -63,11 +63,11 @@ void GridComplexConditionDialog::selectItem(int item)
 void GridComplexConditionDialog::addItem()
 {
 	SolverDefinitionGridRelatedComplexCondition* compCond =
-			dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_dataItem->condition());
+		dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_dataItem->condition());
 	GridComplexConditionWidget* newWidget = new GridComplexConditionWidget(m_mainWindow, this);
 	newWidget->setup(m_dataItem->projectData()->solverDefinition(), compCond->element(), m_mainWindow->locale());
 	newWidget->setCaption(QString("Item%1").arg(m_widgets.count() + 1));
-	if (m_widgets.count() == 0){
+	if (m_widgets.count() == 0) {
 		// this is the first one. make it the default.
 		newWidget->setIsDefault(true);
 	}
@@ -79,7 +79,7 @@ void GridComplexConditionDialog::addItem()
 
 void GridComplexConditionDialog::removeItem()
 {
-	if (m_widgets.count() == 1){
+	if (m_widgets.count() == 1) {
 		// The user tried to remove the last item.
 		QMessageBox::warning(this, tr("Warning"), tr("There must be one group at least."));
 		return;
@@ -87,12 +87,12 @@ void GridComplexConditionDialog::removeItem()
 	int current = ui->listWidget->currentRow();
 	m_widgets.removeAt(current);
 	updateList();
-	if (m_widgets.count() == 0){
+	if (m_widgets.count() == 0) {
 		// removed the last one.
 		QWidget* w = new QWidget(this);
 		ui->widgetContainer->setWidget(w);
 	} else {
-		if (current >= m_widgets.count()){
+		if (current >= m_widgets.count()) {
 			current = m_widgets.count() - 1;
 		}
 		ui->listWidget->setCurrentRow(current);
@@ -108,24 +108,24 @@ void GridComplexConditionDialog::accept()
 {
 	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
 	bool allok = true;
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		allok = allok && asciiCodec->canEncode(w->caption());
 	}
-	if (! allok){
+	if (! allok) {
 		QMessageBox::warning(this, tr("Warning"), tr("Name has to consist of only English characters."));
 		return;
 	}
 	// Check whether one of the items are set to be default.
 	int defIndex = -1;
-	for (int i = 0; i < m_widgets.count(); ++i){
-		if (m_widgets[i]->isDefault()){
+	for (int i = 0; i < m_widgets.count(); ++i) {
+		if (m_widgets[i]->isDefault()) {
 			defIndex = i;
 		}
 	}
 
 	disconnect(this, SLOT(defaultChecked(bool)));
-	if (defIndex == -1){
+	if (defIndex == -1) {
 		// if no default specified and there is more than one widget, make the first one default.
 		m_widgets[0]->setIsDefault(true);
 	}
@@ -134,10 +134,10 @@ void GridComplexConditionDialog::accept()
 
 void GridComplexConditionDialog::defaultChecked(bool checked)
 {
-	if (! checked){return;}
+	if (! checked) {return;}
 	int current = ui->listWidget->currentRow();
-	for (int i = 0; i < m_widgets.count(); ++i){
-		if (i != current){
+	for (int i = 0; i < m_widgets.count(); ++i) {
+		if (i != current) {
 			m_widgets[i]->setIsDefault(false);
 		}
 	}

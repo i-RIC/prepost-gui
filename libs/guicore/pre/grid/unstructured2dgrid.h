@@ -7,16 +7,17 @@
 #include <vtkSmartPointer.h>
 
 /// Unstructured two-dimensional grid
-class GUICOREDLL_EXPORT Unstructured2DGrid : public Grid2D {
+class GUICOREDLL_EXPORT Unstructured2DGrid : public Grid2D
+{
 	Q_OBJECT
 public:
 	/// Constructor
 	Unstructured2DGrid(ProjectDataItem* parent);
 	/// Constructor
 	Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent);
-	virtual ~Unstructured2DGrid(){}
+	virtual ~Unstructured2DGrid() {}
 	/// Return VTK container object to store the grid.
-	vtkUnstructuredGrid* vtkGrid(){return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
+	vtkUnstructuredGrid* vtkGrid() {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
 	unsigned int vertexCount() const;
 	const QVector2D vertex(unsigned int index) const;
 	void setVertex(unsigned int index, const QVector2D& v);

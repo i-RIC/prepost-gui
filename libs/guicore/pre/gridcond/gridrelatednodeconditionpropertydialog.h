@@ -8,7 +8,8 @@
 
 class ScalarsToColorsEditWidget;
 
-namespace Ui {
+namespace Ui
+{
 	class GridRelatedNodeConditionPropertyDialog;
 }
 
@@ -16,7 +17,7 @@ class GUICOREDLL_EXPORT GridRelatedNodeConditionPropertyDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridRelatedNodeConditionPropertyDialog(QWidget *parent = nullptr);
+	GridRelatedNodeConditionPropertyDialog(QWidget* parent = nullptr);
 	~GridRelatedNodeConditionPropertyDialog();
 	void setContour(ContourSettingWidget::Contour contour);
 	ContourSettingWidget::Contour contour();
@@ -31,7 +32,7 @@ private slots:
 	void handleContourChange();
 
 private:
-	Ui::GridRelatedNodeConditionPropertyDialog *ui;
+	Ui::GridRelatedNodeConditionPropertyDialog* ui;
 };
 
 #endif // GRIDRELATEDNODECONDITIONPROPERTYDIALOG_H

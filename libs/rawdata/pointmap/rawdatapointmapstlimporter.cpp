@@ -40,7 +40,7 @@ bool RawDataPointmapSTLImporter::importData(RawData* data, int /*index*/, QWidge
 	numpoints = polydata->GetNumberOfPoints();
 	points->Allocate(numpoints);
 	values->Allocate(numpoints);
-	for (i = 0; i < numpoints; ++i){
+	for (i = 0; i < numpoints; ++i) {
 		double tmpvec[3];
 		polydata->GetPoints()->GetPoint(i, tmpvec);
 		values->InsertNextValue(tmpvec[2]);
@@ -75,7 +75,7 @@ bool RawDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w
 	QFile file(filename);
 
 	// whether ASCII or Binary
-	if (! file.open(QIODevice::ReadOnly)){
+	if (! file.open(QIODevice::ReadOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename));
 		return false;
 	}
@@ -91,7 +91,7 @@ bool RawDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w
 	file.close();
 
 	// check validation
-	if (! file.open(QIODevice::ReadOnly)){
+	if (! file.open(QIODevice::ReadOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename));
 		return false;
 	}
@@ -100,7 +100,7 @@ bool RawDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w
 		QTextStream ts(&file);
 		QString theader;
 		ts >> theader;
-		if (ts.status() == QTextStream::Ok && theader == tr("solid")) return true;
+		if (ts.status() == QTextStream::Ok && theader == tr("solid")) { return true; }
 	} else {
 		// Binary
 		QDataStream ds(&file);
@@ -114,7 +114,7 @@ bool RawDataPointmapSTLImporter::checkHeader(const QString& filename, QWidget* w
 		const int headerBytes = len + intsize;
 		const int triangleBytes = 50;
 		int fsize = file.size();
-		if (fsize == headerBytes + triangleBytes * num) return true;
+		if (fsize == headerBytes + triangleBytes * num) { return true; }
 	}
 
 	return false;

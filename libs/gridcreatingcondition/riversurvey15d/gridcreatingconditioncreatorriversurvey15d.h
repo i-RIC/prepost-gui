@@ -9,10 +9,10 @@ class GCC_RIVERSURVEY15D_EXPORT GridCreatingConditionCreatorRiverSurvey15D : pub
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorRiverSurvey15D();
-	virtual ~GridCreatingConditionCreatorRiverSurvey15D(){}
+	virtual ~GridCreatingConditionCreatorRiverSurvey15D() {}
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;}
-	GridCreatingCondition* create(ProjectDataItem *parent);
-	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* ) const;
+	GridCreatingCondition* create(ProjectDataItem* parent);
+	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORRIVERSURVEY15D_H

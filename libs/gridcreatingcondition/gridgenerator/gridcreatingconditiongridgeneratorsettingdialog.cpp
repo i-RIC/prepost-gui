@@ -1,7 +1,7 @@
 #include "gridcreatingconditiongridgeneratorsettingdialog.h"
 #include "ui_gridcreatingconditiongridgeneratorsettingdialog.h"
 
-GridCreatingConditionGridGeneratorSettingDialog::GridCreatingConditionGridGeneratorSettingDialog(QWidget *parent) :
+GridCreatingConditionGridGeneratorSettingDialog::GridCreatingConditionGridGeneratorSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionGridGeneratorSettingDialog)
 {
@@ -16,7 +16,7 @@ GridCreatingConditionGridGeneratorSettingDialog::~GridCreatingConditionGridGener
 
 void GridCreatingConditionGridGeneratorSettingDialog::setChannelShape(ChannelShape c)
 {
-	switch (c){
+	switch (c) {
 	case SingleSection:
 		ui->singleSectionRadioButton->setChecked(true);
 		break;
@@ -31,7 +31,7 @@ void GridCreatingConditionGridGeneratorSettingDialog::setChannelShape(ChannelSha
 
 void GridCreatingConditionGridGeneratorSettingDialog::setFloodChannelProperty(FloodChannel f)
 {
-	switch (f){
+	switch (f) {
 	case Fixed:
 		ui->fixedRadioButton->setChecked(true);
 		break;
@@ -43,7 +43,7 @@ void GridCreatingConditionGridGeneratorSettingDialog::setFloodChannelProperty(Fl
 
 void GridCreatingConditionGridGeneratorSettingDialog::setBedShape(BedShape b)
 {
-	switch (b){
+	switch (b) {
 	case Flat:
 		ui->flatRadioButton->setChecked(true);
 		break;
@@ -158,7 +158,7 @@ void GridCreatingConditionGridGeneratorSettingDialog::setBankGridNumber(int grid
 
 void GridCreatingConditionGridGeneratorSettingDialog::setWidthChange(WidthChange wc)
 {
-	switch (wc){
+	switch (wc) {
 	case Constant:
 		ui->constantRadioButton->setChecked(true);
 		break;
@@ -170,7 +170,7 @@ void GridCreatingConditionGridGeneratorSettingDialog::setWidthChange(WidthChange
 
 void GridCreatingConditionGridGeneratorSettingDialog::setWidthChangeType(WidthChangeType wct)
 {
-	switch (wct){
+	switch (wct) {
 	case Both:
 		ui->bothRadioButton->setChecked(true);
 		break;
@@ -190,26 +190,26 @@ void GridCreatingConditionGridGeneratorSettingDialog::setWidthVariation(double v
 
 GridCreatingConditionGridGeneratorSettingDialog::ChannelShape GridCreatingConditionGridGeneratorSettingDialog::channelShape()
 {
-	if (ui->singleSectionRadioButton->isChecked()) return SingleSection;
-	if (ui->simpleCompoundRadioButton->isChecked()) return SimpleCompound;
-	if (ui->complexCompoundRadioButton->isChecked()) return ComplexCompound;
+	if (ui->singleSectionRadioButton->isChecked()) { return SingleSection; }
+	if (ui->simpleCompoundRadioButton->isChecked()) { return SimpleCompound; }
+	if (ui->complexCompoundRadioButton->isChecked()) { return ComplexCompound; }
 	// default
 	return SingleSection;
 }
 
 GridCreatingConditionGridGeneratorSettingDialog::FloodChannel GridCreatingConditionGridGeneratorSettingDialog::floodChannel()
 {
-	if (ui->fixedRadioButton->isChecked()) return Fixed;
-	if (ui->movableRadioButton->isChecked()) return Movable;
+	if (ui->fixedRadioButton->isChecked()) { return Fixed; }
+	if (ui->movableRadioButton->isChecked()) { return Movable; }
 	// default
 	return Fixed;
 }
 
 GridCreatingConditionGridGeneratorSettingDialog::BedShape GridCreatingConditionGridGeneratorSettingDialog::bedShape()
 {
-	if (ui->flatRadioButton->isChecked()) return Flat;
-	if (ui->barRadioButton->isChecked()) return AlternateBar;
-	if (ui->parabolicRadioButton->isChecked()) return Parabolic;
+	if (ui->flatRadioButton->isChecked()) { return Flat; }
+	if (ui->barRadioButton->isChecked()) { return AlternateBar; }
+	if (ui->parabolicRadioButton->isChecked()) { return Parabolic; }
 	// default
 	return Flat;
 }
@@ -316,17 +316,17 @@ int GridCreatingConditionGridGeneratorSettingDialog::bankGridNumber()
 
 GridCreatingConditionGridGeneratorSettingDialog::WidthChange GridCreatingConditionGridGeneratorSettingDialog::widthChange()
 {
-	if (ui->constantRadioButton->isChecked()) return Constant;
-	if (ui->changeRadioButton->isChecked()) return Change;
+	if (ui->constantRadioButton->isChecked()) { return Constant; }
+	if (ui->changeRadioButton->isChecked()) { return Change; }
 	// default
 	return Constant;
 }
 
 GridCreatingConditionGridGeneratorSettingDialog::WidthChangeType GridCreatingConditionGridGeneratorSettingDialog::widthChangeType()
 {
-	if (ui->bothRadioButton->isChecked()) return Both;
-	if (ui->leftRadioButton->isChecked()) return Left;
-	if (ui->rightRadioButton->isChecked()) return Right;
+	if (ui->bothRadioButton->isChecked()) { return Both; }
+	if (ui->leftRadioButton->isChecked()) { return Left; }
+	if (ui->rightRadioButton->isChecked()) { return Right; }
 	// default
 	return Both;
 }

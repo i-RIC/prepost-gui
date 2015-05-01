@@ -38,10 +38,10 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
-		if (tmparray->GetNumberOfComponents() == 1){
+		if (tmparray == nullptr) {continue;}
+		if (tmparray->GetNumberOfComponents() == 1) {
 			// scalar attribute.
 			continue;
 		}
@@ -53,14 +53,14 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 
 Post3dWindowNodeVectorStreamlineGroupDataItem::~Post3dWindowNodeVectorStreamlineGroupDataItem()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		renderer()->RemoveActor(m_streamlineActors[i]);
 		m_streamlineActors[i]->Delete();
 	}
-	for (int i = 0; i < m_streamlineMappers.count(); ++i){
+	for (int i = 0; i < m_streamlineMappers.count(); ++i) {
 		m_streamlineMappers[i]->Delete();
 	}
-	for (int i = 0; i < m_streamTracers.count(); ++i){
+	for (int i = 0; i < m_streamTracers.count(); ++i) {
 		m_streamTracers[i]->Delete();
 	}
 }
@@ -69,22 +69,19 @@ class Post3dWindowStructuredGridStreamlineSelectSolution : public QUndoCommand
 {
 public:
 	Post3dWindowStructuredGridStreamlineSelectSolution(const QString& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Streamline Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Streamline Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -101,11 +98,11 @@ private:
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post3dWindowStructuredGridStreamlineSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post3dWindowStructuredGridStreamlineSelectSolution(item->name(), this));
 	}
 }
@@ -123,7 +120,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		renderer()->RemoveActor(m_streamlineActors[i]);
 		m_streamlineActors[i]->Delete();
 		m_streamlineMappers[i]->Delete();
@@ -135,19 +132,20 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	m_streamTracers.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == nullptr){return;}
-	if (m_currentSolution == ""){return;}
+	if (ps == nullptr) {return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	setupActors();
 	applyZScale();
 	updateVisibilityWithoutRendering();
 }
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::setupClipper(){
+void Post3dWindowNodeVectorStreamlineGroupDataItem::setupClipper()
+{
 	m_IBCClipper = vtkSmartPointer<vtkClipPolyData>::New();
 	m_IBCClipper->SetValue(PostZoneDataContainer::IBCLimit);
 	m_IBCClipper->InsideOutOff();
@@ -160,12 +158,12 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::assignActionZValues(const ZDepthRange& range)
 {
-	if (m_streamlineActors.count() == 0){return;}
-	if (m_streamlineActors.count() == 1){
+	if (m_streamlineActors.count() == 0) {return;}
+	if (m_streamlineActors.count() == 1) {
 		m_streamlineActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		double depth = range.min() + static_cast<double>(i) / (m_streamlineActors.count() - 1) * (range.max() - range.min());
 		m_streamlineActors[i]->SetPosition(0, 0, depth);
 	}
@@ -179,14 +177,14 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::update()
 void Post3dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post3dWindowNodeVectorStreamlineDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post3dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post3dWindowNodeVectorStreamlineDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -200,7 +198,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::innerUpdateZScale(double zsc
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::applyZScale()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		m_streamlineActors[i]->SetScale(1, 1, m_zScale);
 	}
 }
@@ -208,9 +206,9 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::applyZScale()
 vtkPointSet* Post3dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (m_regionMode == StructuredGridRegion::rmFull){
+	if (m_regionMode == StructuredGridRegion::rmFull) {
 		return ps;
-	} else if (m_regionMode == StructuredGridRegion::rmActive){
+	} else if (m_regionMode == StructuredGridRegion::rmActive) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();

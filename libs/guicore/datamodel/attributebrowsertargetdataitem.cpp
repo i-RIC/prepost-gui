@@ -95,17 +95,17 @@ void AttributeBrowserTargetDataItem::setPoint(const QVector2D& v)
 
 void AttributeBrowserTargetDataItem::setPolygon(const QPolygonF& p)
 {
-	if (p.size() == 0){
+	if (p.size() == 0) {
 		m_polygon->Initialize();
 		return;
 	}
-	if (! p.isClosed()){
+	if (! p.isClosed()) {
 		throw ErrorMessage(tr("Please specify a closed polygon!"));
 	}
 	m_polygon->Initialize();
 	vtkPoints* points = m_polygon->GetPoints();
 	points->SetNumberOfPoints(p.count() - 1);
-	for (int i = 0; i < p.count() - 1; ++i){
+	for (int i = 0; i < p.count() - 1; ++i) {
 		QPointF point = p.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -113,22 +113,22 @@ void AttributeBrowserTargetDataItem::setPolygon(const QPolygonF& p)
 	vtkIdList* idlist = m_polygon->GetPointIds();
 	idlist->Reset();
 	idlist->SetNumberOfIds(points->GetNumberOfPoints());
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
 		idlist->SetId(i, i);
 	}
 	idlist->Modified();
 
 	// set the polygon into grid.
 	m_polygonPaint->Reset();
-	if (m_polygon->GetPoints()->GetNumberOfPoints() > 0){
+	if (m_polygon->GetPoints()->GetNumberOfPoints() > 0) {
 		// triangulate the polygon, and add the triangle cells into the grid.
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		vtkSmartPointer<vtkIdList> triIds = vtkSmartPointer<vtkIdList>::New();
 		m_polygon->Triangulate(triIds);
 		vtkIdType triFirst = 0;
-		while (triFirst < triIds->GetNumberOfIds()){
+		while (triFirst < triIds->GetNumberOfIds()) {
 			vtkIdType vertices[3];
-			for (int i = 0; i < 3; ++i){
+			for (int i = 0; i < 3; ++i) {
 				vertices[i] = triIds->GetId(triFirst + i);
 			}
 			ca->InsertNextCell(3, &(vertices[0]));
@@ -142,7 +142,7 @@ void AttributeBrowserTargetDataItem::setPolygon(const QPolygonF& p)
 	m_polygonEdge->Reset();
 	int edgeCount = m_polygon->GetNumberOfEdges();
 	vtkSmartPointer<vtkCellArray> ca2 = vtkSmartPointer<vtkCellArray>::New();
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkIdType vertices[2];
 		vtkCell* nextCell = m_polygon->GetEdge(i);
 		vertices[0] = nextCell->GetPointId(0);

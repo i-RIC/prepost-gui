@@ -10,7 +10,7 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Graph2dScatteredWindowDataSourceDialog::Graph2dScatteredWindowDataSourceDialog(QWidget *parent) :
+Graph2dScatteredWindowDataSourceDialog::Graph2dScatteredWindowDataSourceDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::Graph2dScatteredWindowDataSourceDialog)
 {
@@ -20,9 +20,9 @@ Graph2dScatteredWindowDataSourceDialog::Graph2dScatteredWindowDataSourceDialog(Q
 Graph2dScatteredWindowDataSourceDialog::~Graph2dScatteredWindowDataSourceDialog()
 {
 	delete ui;
-	for (int i = 0; i < m_initialSettings.size(); ++i){
+	for (int i = 0; i < m_initialSettings.size(); ++i) {
 		Graph2dScatteredWindowResultSetting::Setting* s = m_initialSettings.at(i);
-		if (s != 0){delete s;}
+		if (s != 0) {delete s;}
 	}
 }
 
@@ -39,18 +39,18 @@ void Graph2dScatteredWindowDataSourceDialog::setSetting(Graph2dScatteredWindowRe
 
 	// x axis
 	int idx = m_xAxisValues.indexOf(setting.xAxis());
-	if (idx == -1){idx = 0;}
+	if (idx == -1) {idx = 0;}
 	ui->xAxisComboBox->setCurrentIndex(idx);
 
 	// y axis values
-	for (int i = 0; i < m_yAxisValues.size(); ++i){
+	for (int i = 0; i < m_yAxisValues.size(); ++i) {
 		m_initialSettings.append(0);
 	}
 	ui->yAxisListWidget->clearSelection();
-	for (int i = 0; i < tmpdata.size(); ++i){
+	for (int i = 0; i < tmpdata.size(); ++i) {
 		Graph2dScatteredWindowResultSetting::Setting s = tmpdata.at(i);
 		int idx = m_yAxisValues.indexOf(s.name());
-		if (idx == -1){continue;}
+		if (idx == -1) {continue;}
 		Graph2dScatteredWindowResultSetting::Setting* sp = new Graph2dScatteredWindowResultSetting::Setting();
 		*sp = s;
 		m_initialSettings[idx] = sp;
@@ -65,7 +65,7 @@ Graph2dScatteredWindowResultSetting Graph2dScatteredWindowDataSourceDialog::sett
 	// x axis values
 	int idx = ui->xAxisComboBox->currentIndex();
 	QString newXAxis = m_xAxisValues.at(idx);
-	if (m_setting.xAxis() != newXAxis){
+	if (m_setting.xAxis() != newXAxis) {
 		ret.setXAxis(newXAxis);
 		ret.setXAxisAutoRange(true);
 		ret.setXAxisLog(false);
@@ -75,11 +75,11 @@ Graph2dScatteredWindowResultSetting Graph2dScatteredWindowDataSourceDialog::sett
 	QList<Graph2dScatteredWindowResultSetting::Setting>& tmpdata = ret.targetDatas();
 	tmpdata.clear();
 
-	for (int i = 0; i < ui->yAxisListWidget->count(); ++i){
+	for (int i = 0; i < ui->yAxisListWidget->count(); ++i) {
 		QListWidgetItem* item = ui->yAxisListWidget->item(i);
-		if (item->isSelected()){
+		if (item->isSelected()) {
 			Graph2dScatteredWindowResultSetting::Setting* s = m_initialSettings.at(i);
-			if (s != 0){
+			if (s != 0) {
 				tmpdata.append(*s);
 			} else {
 				tmpdata.append(Graph2dScatteredWindowResultSetting::Setting(m_yAxisValues.at(i)));
@@ -104,11 +104,11 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	vtkPointSet* ps = m_container->data();
 	vtkPointData* pd = ps->GetPointData();
 	int arrs = pd->GetNumberOfArrays();
-	for (int i = 0; i < arrs; ++i){
+	for (int i = 0; i < arrs; ++i) {
 		vtkAbstractArray* aa = pd->GetAbstractArray(i);
-		vtkDataArray* da = dynamic_cast<vtkDataArray*> (aa);
-		if (da == nullptr){continue;}
-		if (da->GetNumberOfComponents() != 1){continue;}
+		vtkDataArray* da = dynamic_cast<vtkDataArray*>(aa);
+		if (da == nullptr) {continue;}
+		if (da->GetNumberOfComponents() != 1) {continue;}
 		QString name = da->GetName();
 		ui->xAxisComboBox->addItem(name);
 		ui->yAxisListWidget->addItem(name);
@@ -119,11 +119,11 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	int dim = PostSolutionInfo::toIntDimension(m_dimension);
 	ui->xAxisComboBox->addItem(tr("Position X"));
 	m_xAxisValues.append(Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X);
-	if (dim > 1){
+	if (dim > 1) {
 		ui->xAxisComboBox->addItem(tr("Position Y"));
 		m_xAxisValues.append(Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y);
 	}
-	if (dim > 2){
+	if (dim > 2) {
 		ui->xAxisComboBox->addItem(tr("Position Z"));
 		m_xAxisValues.append(Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z);
 	}

@@ -18,18 +18,18 @@ GridRelatedConditionRealEditWidget::~GridRelatedConditionRealEditWidget()
 
 void GridRelatedConditionRealEditWidget::setupWidget()
 {
-	if (m_valueCleared){
+	if (m_valueCleared) {
 		m_widget->setText("");
-	}else{
+	} else {
 		m_widget->setValue(m_value);
 	}
 }
 
 void GridRelatedConditionRealEditWidget::getValueFromInnerWidget()
 {
-	if (m_widget->text() == ""){
+	if (m_widget->text() == "") {
 		m_valueSelected = false;
-	}else{
+	} else {
 		m_valueSelected = true;
 		m_value = m_widget->value();
 	}

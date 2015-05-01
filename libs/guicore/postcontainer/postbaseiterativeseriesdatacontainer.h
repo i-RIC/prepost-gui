@@ -12,8 +12,8 @@ public:
 	PostBaseIterativeSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& biName, ProjectDataItem* parent);
 protected:
 	bool loadData(const int fn);
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 protected:
 	QString m_baseIterativeName;
 };

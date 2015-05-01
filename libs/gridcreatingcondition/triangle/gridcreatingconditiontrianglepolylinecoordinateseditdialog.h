@@ -5,7 +5,8 @@
 #include <QVector>
 #include <QVector2D>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionTrianglePolyLineCoordinatesEditDialog;
 }
 
@@ -19,7 +20,7 @@ class GridCreatingConditionTrianglePolyLineCoordinatesEditDialog : public QDialo
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(GridCreatingConditionTriangle* polygon, QWidget *parent = nullptr);
+	explicit GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(GridCreatingConditionTriangle* polygon, QWidget* parent = nullptr);
 	~GridCreatingConditionTrianglePolyLineCoordinatesEditDialog();
 public slots:
 	void accept();
@@ -31,7 +32,7 @@ private:
 	void setupData();
 	void apply();
 
-	Ui::GridCreatingConditionTrianglePolyLineCoordinatesEditDialog *ui;
+	Ui::GridCreatingConditionTrianglePolyLineCoordinatesEditDialog* ui;
 	GridCreatingConditionTriangle* m_polygon;
 	QStandardItemModel* m_model;
 	bool m_applyed;

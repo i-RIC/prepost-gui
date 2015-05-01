@@ -11,7 +11,8 @@ class QDomElement;
 class QLocale;
 class iRICMainWindowInterface;
 
-namespace Ui {
+namespace Ui
+{
 	class BoundaryConditionDialog;
 }
 
@@ -20,11 +21,12 @@ class CgnsFileInputConditionContainerSet;
 class CgnsFileInputConditionWidgetSet;
 class iRICMainWindow;
 
-class BoundaryConditionDialog : public QDialog {
+class BoundaryConditionDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	/// Constructor
-	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget *parent = nullptr);
+	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
 	/// Destructor
 	~BoundaryConditionDialog();
 	void setNameAndNumber(QString name, int number);
@@ -59,7 +61,7 @@ private slots:
 private:
 	void reset();
 
-	Ui::BoundaryConditionDialog *ui;
+	Ui::BoundaryConditionDialog* ui;
 	CgnsFileInputConditionContainerSet* m_containerSet;
 	CgnsFileInputConditionWidgetSet* m_widgetSet;
 	PreProcessorBCDataItem* m_dataItem;

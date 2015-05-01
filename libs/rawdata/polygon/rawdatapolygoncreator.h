@@ -12,7 +12,7 @@ public:
 	RawDataPolygonCreator();
 	QString name(unsigned int index);
 	QString defaultCaption(unsigned int index);
-	virtual bool isCreatable(){return true;}
+	virtual bool isCreatable() {return true;}
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
 };
 

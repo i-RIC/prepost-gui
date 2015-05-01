@@ -12,9 +12,9 @@ struct _Point2D {
 struct _RivPath {
 	std::string strKP;  // distance from sea (string)
 	double KP;          // distance from sea (real number)
-	Point2D		*bank;    // pointer to bank coordinates
+	Point2D*		bank;    // pointer to bank coordinates
 	int np;             // number of latitude data
-	Point2D		*pt;      // x=distance from left bank,y=depth
+	Point2D*		pt;      // x=distance from left bank,y=depth
 	PRivPath next;      // next river path point
 	int divIndices[4];
 };
@@ -30,13 +30,13 @@ public:
 	const QStringList fileDialogFilters();
 	const QStringList acceptableExtensions();
 private:
-	PRivPath RivAlloc (double KP, char *str);
+	PRivPath RivAlloc(double KP, char* str);
 	void RivFree(PRivPath node);
 	void RivFreeAll();
 	bool RivSetBank(PRivPath node, PPoint2D left, PPoint2D right);
 	bool RivSetPath(PRivPath node, int np, PPoint2D pt);
 	bool RivSort();
-	bool RivRead(const QString& name, bool *with4points);
+	bool RivRead(const QString& name, bool* with4points);
 
 	PRivPath m_RivRoot;
 	RawDataRiverSurveyImporterSettingDialog::CenterPointSetting m_cpSetting;

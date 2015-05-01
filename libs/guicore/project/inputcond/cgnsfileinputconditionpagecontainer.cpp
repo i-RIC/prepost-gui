@@ -14,7 +14,7 @@ CgnsFileInputConditionPageContainer::CgnsFileInputConditionPageContainer(QWidget
 
 CgnsFileInputConditionPageContainer::~CgnsFileInputConditionPageContainer()
 {
-	for (auto it = m_pages.begin(); it != m_pages.end(); ++it){
+	for (auto it = m_pages.begin(); it != m_pages.end(); ++it) {
 		delete *it;
 	}
 	m_pages.clear();
@@ -23,7 +23,7 @@ CgnsFileInputConditionPageContainer::~CgnsFileInputConditionPageContainer()
 void CgnsFileInputConditionPageContainer::setup(const QDomElement& elem, CgnsFileInputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)
 {
 	QDomNodeList children = elem.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomNode child = children.item(i);
 		CgnsFileInputConditionPage* p = new CgnsFileInputConditionPage(child, ws, t, this);
 		p->hide();

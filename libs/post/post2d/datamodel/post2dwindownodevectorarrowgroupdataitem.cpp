@@ -67,12 +67,12 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){
+		if (tmparray == nullptr) {
 			continue;
 		}
-		if (tmparray->GetNumberOfComponents() == 1){
+		if (tmparray->GetNumberOfComponents() == 1) {
 			// scalar attribute.
 			continue;
 		}
@@ -92,22 +92,19 @@ class Post2dWindowGridArrowSelectSolution : public QUndoCommand
 {
 public:
 	Post2dWindowGridArrowSelectSolution(const QString& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Arrow Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -123,16 +120,17 @@ private:
 
 void Post2dWindowNodeVectorArrowGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post2dWindowGridArrowSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post2dWindowGridArrowSelectSolution(item->name(), this));
 	}
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::setupActors(){
+void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
+{
 	m_arrowActor = vtkSmartPointer<vtkActor>::New();
 	renderer()->AddActor(m_arrowActor);
 	m_arrowActor->GetProperty()->LightingOff();
@@ -200,15 +198,15 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors(){
 
 void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 {
-	if (m_lengthMode == lenCustom){return;}
+	if (m_lengthMode == lenCustom) {return;}
 	QVector<double> lenVec;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_currentSolution).c_str());
-	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i){
+	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
 		lenVec.append(vec.length());
@@ -216,27 +214,27 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	qSort(lenVec);
 	double sum = 0;
 	int count = AUTO_AVERAGECOUNT;
-	if (count > lenVec.count()){count = lenVec.count();}
-	for (int i = 0; i < count; ++i){
+	if (count > lenVec.count()) {count = lenVec.count();}
+	for (int i = 0; i < count; ++i) {
 		sum += lenVec.at(lenVec.count() - i - 1);
 	}
 	double average = sum / count;
-	if (average == 0){average = 1;}
+	if (average == 0) {average = 1;}
 
 	int p = 0;
 	double p2 = 1;
-	while (average > 10){
+	while (average > 10) {
 		average /= 10.;
 		++ p;
 		p2 = 10;
 	}
-	while (average < 1){
+	while (average < 1) {
 		average *= 10;
 		++ p;
 		p2 = 0.1;
 	}
 	average = static_cast<int>(average);
-	for (int i = 0; i < p; ++i){
+	for (int i = 0; i < p; ++i) {
 		average *= p2;
 	}
 	// now average is calculated.
@@ -260,11 +258,11 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 	pd->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
 
 	updateActivePoints();
@@ -283,7 +281,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 void Post2dWindowNodeVectorArrowGroupDataItem::updateColorSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-	switch (m_mapping){
+	switch (m_mapping) {
 	case Specific:
 		m_arrowMapper->ScalarVisibilityOff();
 		m_arrowActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
@@ -317,14 +315,14 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post2dWindowNodeVectorArrowDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowNodeVectorArrowDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorArrowDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -334,7 +332,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
 	double scale = cam->GetParallelScale();
-	if (scale != m_oldCameraScale){
+	if (scale != m_oldCameraScale) {
 		updatePolyData();
 		updateLegendData();
 	}
@@ -344,8 +342,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
-	if (m_currentSolution == ""){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
+	if (m_currentSolution == "") {return;}
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdRadius(m_arrowSetting.arrowSize());
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
@@ -396,10 +394,10 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution).arg(m_standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
-	if (m_mapping == Specific){
+	if (m_mapping == Specific) {
 		// specified color.
 		m_baseArrowActor->GetProperty()->SetColor(m_color.red() / 255., m_color.green() / 255., m_color.blue() / 255.);
-	}else if (m_mapping == Scalar){
+	} else if (m_mapping == Scalar) {
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
@@ -443,7 +441,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStrea
 	m_arrowSetting.save(writer);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
 }
@@ -463,7 +461,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);

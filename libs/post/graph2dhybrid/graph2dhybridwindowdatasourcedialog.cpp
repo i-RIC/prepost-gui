@@ -16,7 +16,7 @@
 #include <QSet>
 #include <QTextStream>
 
-Graph2dHybridWindowDataSourceDialog::Graph2dHybridWindowDataSourceDialog(QWidget *parent) :
+Graph2dHybridWindowDataSourceDialog::Graph2dHybridWindowDataSourceDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::Graph2dHybridWindowDataSourceDialog)
 {
@@ -97,37 +97,37 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	m_setting = setting;
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	ui->xAxisComboBox->blockSignals(true);
-	for (auto it = map.begin(); it != map.end(); ++it){
+	for (auto it = map.begin(); it != map.end(); ++it) {
 		bool dataExist = false;
 		const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = it.value();
-		for (auto it2 = m.begin(); it2 != m.end(); ++it2){
+		for (auto it2 = m.begin(); it2 != m.end(); ++it2) {
 			dataExist = dataExist || (it2.value().count() > 0);
 		}
-		if (dataExist){
+		if (dataExist) {
 			m_xAxisModes.append(it.key());
 			ui->xAxisComboBox->addItem(Graph2dHybridWindowResultSetting::autoXAxisLabel(it.key()));
 		}
 	}
 	ui->xAxisComboBox->blockSignals(false);
 	int index = m_xAxisModes.indexOf(m_setting.xAxisMode());
-	if (index != -1){
+	if (index != -1) {
 		m_setting.setTargetDataTypeInfo(nullptr);
 		ui->xAxisComboBox->setCurrentIndex(index);
-		if (index == 0){
+		if (index == 0) {
 			changeAxis(0);
 		}
 	}
 	m_setting = setting;
-	if (setting.xAxisLabel().isEmpty()){
+	if (setting.xAxisLabel().isEmpty()) {
 		m_setting.setAutoXAxisLabel();
 	}
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = m_setting.targetDataTypeInfo();
-	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > > & m = m_setting.dataTypeInfoMap();
-	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > & map2 = m[m_setting.xAxisMode()];
+	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& m = m_setting.dataTypeInfoMap();
+	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& map2 = m[m_setting.xAxisMode()];
 	QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list;
 	QWidget* targetWidget = nullptr;
-	if (info != nullptr){
-		switch (info->dataType){
+	if (info != nullptr) {
+		switch (info->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			list = map2[Graph2dHybridWindowResultSetting::dimBase];
 			index = list.indexOf(info);
@@ -158,10 +158,10 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 		}
 	}
 	QListWidget* listWidget = getActiveListWidget();
-	if (listWidget != nullptr){
+	if (listWidget != nullptr) {
 		updateLists(listWidget);
 	}
-	if (m_setting.targetDataTypeInfo() == nullptr){
+	if (m_setting.targetDataTypeInfo() == nullptr) {
 		ui->pointDataComboBox->setEnabled(true);
 		ui->pointDataListWidget->setEnabled(true);
 		ui->oneDimDataComboBox->setEnabled(true);
@@ -191,9 +191,9 @@ const Graph2dHybridWindowResultSetting& Graph2dHybridWindowDataSourceDialog::set
 
 void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 {
-	if (m_setting.targetDataTypeInfo() != nullptr){
+	if (m_setting.targetDataTypeInfo() != nullptr) {
 		int ret = QMessageBox::warning(this, tr("Warning"), tr("Current setting will be discarded, are you sure?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){
+		if (ret == QMessageBox::No) {
 			int idx = m_xAxisModes.indexOf(m_setting.xAxisMode());
 			ui->xAxisComboBox->blockSignals(true);
 			ui->xAxisComboBox->setCurrentIndex(idx);
@@ -221,16 +221,16 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	ui->pointDataComboBox->blockSignals(true);
 	ui->pointDataComboBox->clear();
 	list = m[Graph2dHybridWindowResultSetting::dimBase];
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
 		ui->pointDataComboBox->addItem(info->zoneName);
 	}
 	ui->pointDataComboBox->blockSignals(false);
-	if (list.count() == 0){
+	if (list.count() == 0) {
 		ui->pointDataLabel->hide();
 		ui->pointDataComboBox->hide();
 		ui->pointDataListWidget->hide();
-	} else if (list.count() == 1){
+	} else if (list.count() == 1) {
 		ui->pointDataLabel->show();
 		ui->pointDataComboBox->hide();
 		ui->pointDataListWidget->show();
@@ -239,7 +239,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->pointDataComboBox->show();
 		ui->pointDataListWidget->show();
 	}
-	if (list.count() > 0){
+	if (list.count() > 0) {
 		ui->pointDataComboBox->setCurrentIndex(0);
 		changePointComboBox(0);
 	}
@@ -248,16 +248,16 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	ui->oneDimDataComboBox->blockSignals(true);
 	ui->oneDimDataComboBox->clear();
 	list = m[Graph2dHybridWindowResultSetting::dim1D];
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
 		ui->oneDimDataComboBox->addItem(info->zoneName);
 	}
 	ui->oneDimDataComboBox->blockSignals(false);
-	if (list.count() == 0){
+	if (list.count() == 0) {
 		ui->oneDimDataLabel->hide();
 		ui->oneDimDataComboBox->hide();
 		ui->oneDimDataListWidget->hide();
-	} else if (list.count() == 1){
+	} else if (list.count() == 1) {
 		ui->oneDimDataLabel->show();
 		ui->oneDimDataComboBox->hide();
 		ui->oneDimDataListWidget->show();
@@ -266,7 +266,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->oneDimDataComboBox->show();
 		ui->oneDimDataListWidget->show();
 	}
-	if (list.count() > 0){
+	if (list.count() > 0) {
 		ui->oneDimDataComboBox->setCurrentIndex(0);
 		changeOneDimComboBox(0);
 	}
@@ -275,16 +275,16 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	ui->twoDimDataComboBox->blockSignals(true);
 	ui->twoDimDataComboBox->clear();
 	list = m[Graph2dHybridWindowResultSetting::dim2D];
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
 		ui->twoDimDataComboBox->addItem(info->zoneName);
 	}
 	ui->twoDimDataComboBox->blockSignals(false);
-	if (list.count() == 0){
+	if (list.count() == 0) {
 		ui->twoDimDataLabel->hide();
 		ui->twoDimDataComboBox->hide();
 		ui->twoDimDataListWidget->hide();
-	} else if (list.count() == 1){
+	} else if (list.count() == 1) {
 		ui->twoDimDataLabel->show();
 		ui->twoDimDataComboBox->hide();
 		ui->twoDimDataListWidget->show();
@@ -293,7 +293,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->twoDimDataComboBox->show();
 		ui->twoDimDataListWidget->show();
 	}
-	if (list.count() > 0){
+	if (list.count() > 0) {
 		ui->twoDimDataComboBox->setCurrentIndex(0);
 		changeTwoDimComboBox(0);
 	}
@@ -302,16 +302,16 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	ui->threeDimDataComboBox->blockSignals(true);
 	ui->threeDimDataComboBox->clear();
 	list = m[Graph2dHybridWindowResultSetting::dim3D];
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
 		ui->threeDimDataComboBox->addItem(info->zoneName);
 	}
 	ui->threeDimDataComboBox->blockSignals(false);
-	if (list.count() == 0){
+	if (list.count() == 0) {
 		ui->threeDimDataLabel->hide();
 		ui->threeDimDataComboBox->hide();
 		ui->threeDimDataListWidget->hide();
-	} else if (list.count() == 1){
+	} else if (list.count() == 1) {
 		ui->threeDimDataLabel->show();
 		ui->threeDimDataComboBox->hide();
 		ui->threeDimDataListWidget->show();
@@ -320,7 +320,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 		ui->threeDimDataComboBox->show();
 		ui->threeDimDataListWidget->show();
 	}
-	if (list.count() > 0){
+	if (list.count() > 0) {
 		ui->threeDimDataComboBox->setCurrentIndex(0);
 		changeThreeDimComboBox(0);
 	}
@@ -335,7 +335,7 @@ void Graph2dHybridWindowDataSourceDialog::changePointComboBox(int index)
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[index];
 
 	ui->pointDataListWidget->clear();
-	for (int i = 0; i < info->dataNames.count(); ++i){
+	for (int i = 0; i < info->dataNames.count(); ++i) {
 		ui->pointDataListWidget->addItem(info->dataNames[i]);
 	}
 }
@@ -349,7 +349,7 @@ void Graph2dHybridWindowDataSourceDialog::changeOneDimComboBox(int index)
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[index];
 
 	ui->oneDimDataListWidget->clear();
-	for (int i = 0; i < info->dataNames.count(); ++i){
+	for (int i = 0; i < info->dataNames.count(); ++i) {
 		ui->oneDimDataListWidget->addItem(info->dataNames[i]);
 	}
 }
@@ -363,7 +363,7 @@ void Graph2dHybridWindowDataSourceDialog::changeTwoDimComboBox(int index)
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[index];
 
 	ui->twoDimDataListWidget->clear();
-	for (int i = 0; i < info->dataNames.count(); ++i){
+	for (int i = 0; i < info->dataNames.count(); ++i) {
 		ui->twoDimDataListWidget->addItem(info->dataNames[i]);
 	}
 }
@@ -377,14 +377,14 @@ void Graph2dHybridWindowDataSourceDialog::changeThreeDimComboBox(int index)
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[index];
 
 	ui->threeDimDataListWidget->clear();
-	for (int i = 0; i < info->dataNames.count(); ++i){
+	for (int i = 0; i < info->dataNames.count(); ++i) {
 		ui->threeDimDataListWidget->addItem(info->dataNames[i]);
 	}
 }
 
 void Graph2dHybridWindowDataSourceDialog::addSetting()
 {
-	if (m_setting.targetDataTypeInfo() == nullptr){
+	if (m_setting.targetDataTypeInfo() == nullptr) {
 		// set targetDataTypeInfo first.
 		setTargetDataTypeInfo();
 	}
@@ -396,7 +396,7 @@ void Graph2dHybridWindowDataSourceDialog::addSetting()
 	datas.append(s);
 
 	updateLists(listWidget);
-	if (index >= listWidget->count()){index = listWidget->count() - 1;}
+	if (index >= listWidget->count()) {index = listWidget->count() - 1;}
 	listWidget->setCurrentRow(index);
 
 	// update Y axis labels.
@@ -414,10 +414,10 @@ void Graph2dHybridWindowDataSourceDialog::removeSetting()
 	datas.removeAt(row);
 
 	updateLists(listWidget);
-	if (ui->selectedDataListWidget->count() == 0){
+	if (ui->selectedDataListWidget->count() == 0) {
 		clearTargetDataTypeInfo();
 	}
-	if (row >= ui->selectedDataListWidget->count()){row = ui->selectedDataListWidget->count() - 1;}
+	if (row >= ui->selectedDataListWidget->count()) {row = ui->selectedDataListWidget->count() - 1;}
 	ui->selectedDataListWidget->setCurrentRow(row);
 
 	// update Y axis labels.
@@ -430,14 +430,14 @@ void Graph2dHybridWindowDataSourceDialog::removeSetting()
 void Graph2dHybridWindowDataSourceDialog::editSetting()
 {
 	int row = ui->selectedDataListWidget->currentRow();
-	if (row == -1){return;}
+	if (row == -1) {return;}
 	QList<Graph2dHybridWindowResultSetting::Setting>& datas = m_setting.targetDatas();
 	Graph2dHybridWindowResultSetting::Setting& setting = datas[row];
 	Graph2dHybridWindowLineSettingDialog dialog(this);
 	dialog.setCustomColor(setting.customColor());
 	dialog.setLineWidth(setting.lineWidth());
 	dialog.setAxisSide(setting.axisSide());
-	if (dialog.exec() == QDialog::Rejected){
+	if (dialog.exec() == QDialog::Rejected) {
 		return;
 	}
 	setting.setCustomColor(dialog.customColor());
@@ -453,19 +453,19 @@ void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget)
 {
 	QSet<QString> addedItems;
 	const QList<Graph2dHybridWindowResultSetting::Setting>& datas = m_setting.targetDatas();
-	for (int i = 0; i < datas.count(); ++i){
+	for (int i = 0; i < datas.count(); ++i) {
 		addedItems.insert(datas[i].name());
 	}
 	// update listWidget
 	listWidget->clear();
 	QStringList names = m_setting.targetDataTypeInfo()->dataNames;
-	for (int i = 0; i < names.count(); ++i){
-		if (addedItems.contains(names[i])){continue;}
+	for (int i = 0; i < names.count(); ++i) {
+		if (addedItems.contains(names[i])) {continue;}
 		listWidget->addItem(names[i]);
 	}
 	// update selected
 	ui->selectedDataListWidget->clear();
-	for (int i = 0; i < datas.count(); ++i){
+	for (int i = 0; i < datas.count(); ++i) {
 		ui->selectedDataListWidget->addItem(datas[i].name());
 	}
 }
@@ -478,28 +478,28 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
 
 	QWidget* target;
-	if (ui->pointDataListWidget->selectedItems().count() != 0){
+	if (ui->pointDataListWidget->selectedItems().count() != 0) {
 		// point data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dimBase];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->pointDataComboBox->currentIndex()];
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->pointDataListWidget;
 	}
-	if (ui->oneDimDataListWidget->selectedItems().count() != 0){
+	if (ui->oneDimDataListWidget->selectedItems().count() != 0) {
 		// 1D data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim1D];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->oneDimDataComboBox->currentIndex()];
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->oneDimDataListWidget;
 	}
-	if (ui->twoDimDataListWidget->selectedItems().count() != 0){
+	if (ui->twoDimDataListWidget->selectedItems().count() != 0) {
 		// 2D data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim2D];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->twoDimDataComboBox->currentIndex()];
 		m_setting.setTargetDataTypeInfo(type);
 		target = ui->twoDimDataListWidget;
 	}
-	if (ui->threeDimDataListWidget->selectedItems().count() != 0){
+	if (ui->threeDimDataListWidget->selectedItems().count() != 0) {
 		// 3D data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dim3D];
 		Graph2dHybridWindowResultSetting::DataTypeInfo* type = list[ui->threeDimDataComboBox->currentIndex()];
@@ -514,7 +514,7 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 	ui->twoDimDataListWidget->setEnabled(false);
 	ui->threeDimDataComboBox->setEnabled(false);
 	ui->threeDimDataListWidget->setEnabled(false);
-	if (target != nullptr){target->setEnabled(true);}
+	if (target != nullptr) {target->setEnabled(true);}
 }
 
 void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
@@ -533,8 +533,8 @@ void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
 QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
 {
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
-	if (tinfo != nullptr){
-		switch (tinfo->dataType){
+	if (tinfo != nullptr) {
+		switch (tinfo->dataType) {
 		case Graph2dHybridWindowResultSetting::dtBaseIterative:
 			return ui->pointDataListWidget;
 			break;
@@ -552,13 +552,13 @@ QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
 			break;
 		}
 	}
-	if (ui->pointDataListWidget->isEnabled() && ui->pointDataListWidget->currentRow() != - 1){
+	if (ui->pointDataListWidget->isEnabled() && ui->pointDataListWidget->currentRow() != - 1) {
 		return ui->pointDataListWidget;
-	} else if (ui->oneDimDataListWidget->isEnabled() && ui->oneDimDataListWidget->currentRow() != - 1){
+	} else if (ui->oneDimDataListWidget->isEnabled() && ui->oneDimDataListWidget->currentRow() != - 1) {
 		return ui->oneDimDataListWidget;
-	} else if (ui->twoDimDataListWidget->isEnabled() && ui->twoDimDataListWidget->currentRow() != - 1){
+	} else if (ui->twoDimDataListWidget->isEnabled() && ui->twoDimDataListWidget->currentRow() != - 1) {
 		return ui->twoDimDataListWidget;
-	} else if (ui->threeDimDataListWidget->isEnabled() && ui->threeDimDataListWidget->currentRow() != - 1){
+	} else if (ui->threeDimDataListWidget->isEnabled() && ui->threeDimDataListWidget->currentRow() != - 1) {
 		return ui->threeDimDataListWidget;
 	}
 	return nullptr;
@@ -568,11 +568,11 @@ void Graph2dHybridWindowDataSourceDialog::updateButtonStatus()
 {
 	bool addok = false;
 	bool removeok = false;
-	if (ui->pointDataListWidget->isEnabled() && ui->pointDataListWidget->selectedItems().count() != 0){addok = true;}
-	if (ui->oneDimDataListWidget->isEnabled() && ui->oneDimDataListWidget->selectedItems().count() != 0){addok = true;}
-	if (ui->twoDimDataListWidget->isEnabled() && ui->twoDimDataListWidget->selectedItems().count() != 0){addok = true;}
-	if (ui->threeDimDataListWidget->isEnabled() && ui->threeDimDataListWidget->selectedItems().count() != 0){addok = true;}
-	if (ui->selectedDataListWidget->selectedItems().count() != 0){removeok = true;}
+	if (ui->pointDataListWidget->isEnabled() && ui->pointDataListWidget->selectedItems().count() != 0) {addok = true;}
+	if (ui->oneDimDataListWidget->isEnabled() && ui->oneDimDataListWidget->selectedItems().count() != 0) {addok = true;}
+	if (ui->twoDimDataListWidget->isEnabled() && ui->twoDimDataListWidget->selectedItems().count() != 0) {addok = true;}
+	if (ui->threeDimDataListWidget->isEnabled() && ui->threeDimDataListWidget->selectedItems().count() != 0) {addok = true;}
+	if (ui->selectedDataListWidget->selectedItems().count() != 0) {removeok = true;}
 
 	ui->addPushButton->setEnabled(addok);
 	ui->removePushButton->setEnabled(removeok);
@@ -581,12 +581,12 @@ void Graph2dHybridWindowDataSourceDialog::updateButtonStatus()
 
 void Graph2dHybridWindowDataSourceDialog::accept()
 {
-	if (m_setting.targetDataTypeInfo() == nullptr){
+	if (m_setting.targetDataTypeInfo() == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("No data is selected."));
 		return;
 	}
 	m_importDataGroup->setData(m_data);
-	for (int i = 0; i < m_deletedData.count(); ++i){
+	for (int i = 0; i < m_deletedData.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* dItem = m_deletedData.at(i);
 		delete dItem;
 	}
@@ -596,14 +596,14 @@ void Graph2dHybridWindowDataSourceDialog::accept()
 
 void Graph2dHybridWindowDataSourceDialog::reject()
 {
-	for (int i = 0; i < m_addedData.count(); ++i){
+	for (int i = 0; i < m_addedData.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* dItem = m_addedData.at(i);
 		delete dItem;
 	}
 	QDialog::reject();
 }
 
-void Graph2dHybridWindowDataSourceDialog::setImportData(Graph2dHybridWindowImportDataGroupDataItem *group)
+void Graph2dHybridWindowDataSourceDialog::setImportData(Graph2dHybridWindowImportDataGroupDataItem* group)
 {
 	m_importDataGroup = group;
 	m_data = group->data();
@@ -613,13 +613,13 @@ void Graph2dHybridWindowDataSourceDialog::setImportData(Graph2dHybridWindowImpor
 void Graph2dHybridWindowDataSourceDialog::importCsv()
 {
 	QString iodir = LastIODirectory::get();
-	if (m_mainWindow->isSolverRunning()){
+	if (m_mainWindow->isSolverRunning()) {
 		m_mainWindow->warnSolverRunning();
 		return;
 	}
 	QString fname = QFileDialog::getOpenFileName(
-		this, tr("Import CSV file"), iodir, tr("CSV file (*.csv)"));
-	if (fname == ""){return;}
+										this, tr("Import CSV file"), iodir, tr("CSV file (*.csv)"));
+	if (fname == "") {return;}
 
 	QFile csvFile(fname);
 	csvFile.open(QFile::ReadOnly);
@@ -628,15 +628,15 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 	QList<QString> titles = iRIC::parseCSVLine(csvStream.readLine());
 	QList<QVector<double> > values;
 	QVector<double> emptyVec;
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		values.append(emptyVec);
 	}
-	while (! csvStream.atEnd()){
+	while (! csvStream.atEnd()) {
 		QString line = csvStream.readLine();
 		QList<QString> frags = iRIC::parseCSVLine(line);
-		for (int i = 0; i < frags.count(); ++i){
+		for (int i = 0; i < frags.count(); ++i) {
 			QString f = frags[i].trimmed();
-			if (! f.isEmpty()){
+			if (! f.isEmpty()) {
 				double val = f.toDouble();
 				values[i].append(val);
 			}
@@ -644,7 +644,7 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 	}
 	csvFile.close();
 
-	if (titles.at(0) != "X"){
+	if (titles.at(0) != "X") {
 		QMessageBox::critical(this, tr("Error"), tr("The title of the first column has to be \"X\""));
 		return;
 	}
@@ -654,14 +654,14 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 	QFileInfo finfo(fname);
 	QString shortname = finfo.fileName();
 	Graph2dHybridWindowResultSetting::Setting setting;
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		QString title = titles.at(i);
-		if (title == "X"){
+		if (title == "X") {
 			xVals = values.at(i);
 			continue;
 		}
 		yVals = values.at(i);
-		if (xVals.count() != yVals.count()){
+		if (xVals.count() != yVals.count()) {
 			// skip this data.
 			QMessageBox::warning(this, tr("Warning"), tr("The number of data of %1 and %2 mismatch. Data %1 is skipped."));
 			continue;
@@ -680,7 +680,7 @@ void Graph2dHybridWindowDataSourceDialog::importCsv()
 void Graph2dHybridWindowDataSourceDialog::deleteImportItem()
 {
 	int row = ui->importDataList->currentRow();
-	if (row == -1){return;}
+	if (row == -1) {return;}
 	Graph2dHybridWindowImportDataDataItem* item = m_data.at(row);
 	m_data.removeAt(row);
 	m_deletedData.append(item);
@@ -691,7 +691,7 @@ void Graph2dHybridWindowDataSourceDialog::deleteImportItem()
 void Graph2dHybridWindowDataSourceDialog::updateImportDataList()
 {
 	ui->importDataList->clear();
-	for (int i = 0; i < m_data.count(); ++i){
+	for (int i = 0; i < m_data.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* item = m_data.at(i);
 		ui->importDataList->addItem(item->title());
 	}

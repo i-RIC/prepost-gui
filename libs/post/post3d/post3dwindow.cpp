@@ -56,7 +56,7 @@ void Post3dWindow::init()
 void Post3dWindow::setupDefaultGeometry(int index)
 {
 	QWidget* parent = parentWidget();
-	if (parent->isMaximized()){return;}
+	if (parent->isMaximized()) {return;}
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 	restoreState(m_initialState);
@@ -67,7 +67,7 @@ QPixmap Post3dWindow::snapshot()
 	Post3dWindowGraphicsView* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) makeBackgroundTransparent(view, pixmap);
+	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
 
 	return pixmap;
 }
@@ -153,20 +153,17 @@ class Post3dWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:
 	Post3dWindowEditBackgroundColorCommand(double oldc[3], double newc[3], Post3dWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color"))
-	{
-		for (int i = 0; i < 3; ++i){
+		: QUndoCommand(QObject::tr("Edit Background Color")) {
+		for (int i = 0; i < 3; ++i) {
 			m_oldColor[i] = oldc[i];
 			m_newColor[i] = newc[i];
 		}
 		m_window = w;
 	}
-	void undo()
-	{
+	void undo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_oldColor);
 	}
-	void redo()
-	{
+	void redo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_newColor);
 	}
 private:
@@ -183,7 +180,7 @@ void Post3dWindow::editBackgroundColor()
 	QColor oldcolor;
 	iRIC::VTKColorToQColor(vtkOldColor, oldcolor);
 	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	double vtkNewColor[3];
 	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
 	iRICUndoStack::instance().push(new Post3dWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
@@ -194,7 +191,7 @@ void Post3dWindow::editZScale()
 	m_dataModel->editZScale();
 }
 
-bool Post3dWindow::exportParticles(const QString &filename, int fileIndex, double time, const QString& zonename)
+bool Post3dWindow::exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename)
 {
 	Post3dWindowRootDataItem* rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post3dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
@@ -207,13 +204,13 @@ QList<QString> Post3dWindow::particleDrawingZones()
 	QList<QString> ret;
 	Post3dWindowRootDataItem* rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	QList<Post3dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i){
+	for (int i = 0; i < gtItems.count(); ++i) {
 		Post3dWindowGridTypeDataItem* gtItem = gtItems.at(i);
 		QList<Post3dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j){
+		for (int j = 0; j < zItems.count(); ++j) {
 			Post3dWindowZoneDataItem* zItem = zItems.at(j);
 			Post3dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleGroupDataItem();
-			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != ""){
+			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != "") {
 				ret.append(zItem->zoneName());
 			}
 		}

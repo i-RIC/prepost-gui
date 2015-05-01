@@ -64,18 +64,18 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 {
 	int fn, ier;
 	ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-	if (ier != 0){
+	if (ier != 0) {
 		// error occured while opening.
 		return false;
 	}
 	int nbases;
 	ier = cg_nbases(fn, &nbases);
-	if (ier != 0){
+	if (ier != 0) {
 		cg_close(fn);
 		return false;
 	}
 
-	for (int baseid = 1; baseid <= nbases; ++baseid){
+	for (int baseid = 1; baseid <= nbases; ++baseid) {
 		int celldim, physdim;
 		char basename[32];
 		char bitername[32];
@@ -84,7 +84,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 
 		// setup baseIterative.
 		ier = cg_biter_read(fn, baseid, bitername, &nsteps);
-		if (ier == 0){
+		if (ier == 0) {
 			cg_goto(fn, baseid, bitername, 0, "end");
 			int narrays;
 			cg_narrays(&narrays);
@@ -93,18 +93,18 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.dataType = dtBaseIterative;
 			ti.gridType = 0;
 			ti.zoneId = 0;
-			for (int i = 1; i <= narrays; ++i){
+			for (int i = 1; i <= narrays; ++i) {
 				char arrayname[32];
 				DataType_t datatype;
 				int datadim;
 				cgsize_t dimVec[3];
 				cg_array_info(i, arrayname, &datatype, &datadim, dimVec);
 				QString aName(arrayname);
-				if (aName != "TimeValues" && aName != "IterationValues"){
+				if (aName != "TimeValues" && aName != "IterationValues") {
 					ti.dataNames.append(aName);
 				}
 			}
-			if (ti.dataNames.count() > 0){
+			if (ti.dataNames.count() > 0) {
 				m_dataTypeInfos.append(ti);
 			}
 		}
@@ -112,14 +112,14 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 		// for zone datas, use sol.
 		PostSolutionInfo::Dimension dim = PostSolutionInfo::fromIntDimension(celldim);
 		QList<PostZoneDataContainer*> conts = sol->zoneContainers(dim);
-		for (int i = 0; i < conts.count(); ++i){
+		for (int i = 0; i < conts.count(); ++i) {
 			PostZoneDataContainer* cont = conts.at(i);
 			DataTypeInfo ti;
 			ti.dimension = dim;
 			vtkStructuredGrid* sgrid = dynamic_cast<vtkStructuredGrid*>(cont->data());
-			if (sgrid != nullptr){
+			if (sgrid != nullptr) {
 				// structured data.
-				switch (dim){
+				switch (dim) {
 				case PostSolutionInfo::dim1D:
 					ti.dataType = dtDim1DStructured;
 					break;
@@ -134,7 +134,7 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 				}
 			} else {
 				// unstructured data.
-				switch (dim){
+				switch (dim) {
 				case PostSolutionInfo::dim1D:
 					ti.dataType = dtDim1DUnstructured;
 					break;
@@ -151,13 +151,13 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.gridType = cont->gridType();
 			ti.zoneId = cont->zoneId();
 			ti.zoneName = cont->zoneName();
-			if (cont->data() == nullptr){return false;}
+			if (cont->data() == nullptr) {return false;}
 			vtkPointData* pd = cont->data()->GetPointData();
 			int narrays = pd->GetNumberOfArrays();
-			for (int i = 0; i < narrays; ++i){
+			for (int i = 0; i < narrays; ++i) {
 				vtkDataArray* da = pd->GetArray(i);
-				if (da == nullptr){continue;}
-				if (da->GetNumberOfComponents() != 1){
+				if (da == nullptr) {continue;}
+				if (da->GetNumberOfComponents() != 1) {
 					// not scalar value.
 					continue;
 				}
@@ -185,7 +185,7 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	tmpmap.insert(dim2D, emptylist);
 	tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 		DataTypeInfo& di = m_dataTypeInfos[i];
 		DimType dt = dimTypeFromDataType(di.dataType);
 		tmpmap[dt].append(&di);
@@ -199,10 +199,10 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	tmpmap.insert(dim2D, emptylist);
 	tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 		DataTypeInfo& di = m_dataTypeInfos[i];
 		DimType dt;
-		switch (di.dataType){
+		switch (di.dataType) {
 		case dtDim1DStructured:
 		case dtDim2DStructured:
 		case dtDim3DStructured:
@@ -222,10 +222,10 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	tmpmap.insert(dim2D, emptylist);
 	tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 		DataTypeInfo& di = m_dataTypeInfos[i];
 		DimType dt;
-		switch (di.dataType){
+		switch (di.dataType) {
 		case dtDim2DStructured:
 		case dtDim3DStructured:
 			dt = dimTypeFromDataType(di.dataType);
@@ -244,10 +244,10 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	tmpmap.insert(dim2D, emptylist);
 	tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+	for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 		DataTypeInfo& di = m_dataTypeInfos[i];
 		DimType dt;
-		switch (di.dataType){
+		switch (di.dataType) {
 		case dtDim3DStructured:
 			dt = dimTypeFromDataType(di.dataType);
 			tmpmap[dt].append(&di);
@@ -258,34 +258,35 @@ void Graph2dHybridWindowResultSetting::setupMap()
 	}
 	m_dataTypeInfoMap.insert(xaK, tmpmap);
 
-/*
-	// for index
-	tmpmap.clear();
-	tmpmap.insert(dimBase, emptylist);
-	tmpmap.insert(dim1D, emptylist);
-	tmpmap.insert(dim2D, emptylist);
-	tmpmap.insert(dim3D, emptylist);
+	/*
+		// for index
+		tmpmap.clear();
+		tmpmap.insert(dimBase, emptylist);
+		tmpmap.insert(dim1D, emptylist);
+		tmpmap.insert(dim2D, emptylist);
+		tmpmap.insert(dim3D, emptylist);
 
-	for (int i = 0; i < m_dataTypeInfos.count(); ++i){
-		DataTypeInfo& di = m_dataTypeInfos[i];
-		DimType dt;
-		switch (di.dataType){
-		case dtDim1DUnstructured:
-		case dtDim2DUnstructured:
-		case dtDim3DUnstructured:
-			dt = dimTypeFromDataType(di.dataType);
-			tmpmap[dt].append(&di);
-			break;
-		default:
-			;
+		for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+			DataTypeInfo& di = m_dataTypeInfos[i];
+			DimType dt;
+			switch (di.dataType){
+			case dtDim1DUnstructured:
+			case dtDim2DUnstructured:
+			case dtDim3DUnstructured:
+				dt = dimTypeFromDataType(di.dataType);
+				tmpmap[dt].append(&di);
+				break;
+			default:
+				;
+			}
 		}
-	}
-	m_dataTypeInfoMap.insert(xaIndex, tmpmap);
-*/
+		m_dataTypeInfoMap.insert(xaIndex, tmpmap);
+	*/
 }
 
-Graph2dHybridWindowResultSetting::DimType Graph2dHybridWindowResultSetting::dimTypeFromDataType(DataType dt){
-	switch (dt){
+Graph2dHybridWindowResultSetting::DimType Graph2dHybridWindowResultSetting::dimTypeFromDataType(DataType dt)
+{
+	switch (dt) {
 	case dtBaseIterative:
 		return dimBase;
 		break;
@@ -307,30 +308,30 @@ Graph2dHybridWindowResultSetting::DimType Graph2dHybridWindowResultSetting::dimT
 
 bool Graph2dHybridWindowResultSetting::settingExists()
 {
-	if (m_targetDataTypeInfo == nullptr){return false;}
-	if (m_targetDatas.count() == 0){return false;}
+	if (m_targetDataTypeInfo == nullptr) {return false;}
+	if (m_targetDatas.count() == 0) {return false;}
 	return true;
 }
 
 QList<Graph2dWindowDataItem*> Graph2dHybridWindowResultSetting::setupItems(Graph2dHybridWindowResultGroupDataItem* gItem) const
 {
 	QList<Graph2dWindowDataItem*> ret;
-	if (m_targetDataTypeInfo == nullptr){return ret;}
-	if (m_xAxisMode == xaTime){
-		if (m_targetDataTypeInfo->dataType == Graph2dHybridWindowResultSetting::dtBaseIterative){
-			for (int i = 0; i < m_targetDatas.count(); ++i){
+	if (m_targetDataTypeInfo == nullptr) {return ret;}
+	if (m_xAxisMode == xaTime) {
+		if (m_targetDataTypeInfo->dataType == Graph2dHybridWindowResultSetting::dtBaseIterative) {
+			for (int i = 0; i < m_targetDatas.count(); ++i) {
 				Graph2dHybridWindowBaseIterativeResultDataItem* item = new Graph2dHybridWindowBaseIterativeResultDataItem(m_targetDatas[i], i, gItem);
 				ret.append(item);
 			}
 		} else {
-			for (int i = 0; i < m_targetDatas.count(); ++i){
+			for (int i = 0; i < m_targetDatas.count(); ++i) {
 				Graph2dHybridWindowGridPointResultDataItem* item = new Graph2dHybridWindowGridPointResultDataItem(m_targetDatas[i], i, gItem);
 				ret.append(item);
 			}
 		}
 	} else {
 		// xaxis is I or J or K
-		for (int i = 0; i < m_targetDatas.count(); ++i){
+		for (int i = 0; i < m_targetDatas.count(); ++i) {
 			Graph2dHybridWindowGridIJKResultDataItem* item = new Graph2dHybridWindowGridIJKResultDataItem(m_targetDatas[i], i, gItem);
 			ret.append(item);
 		}
@@ -338,11 +339,12 @@ QList<Graph2dWindowDataItem*> Graph2dHybridWindowResultSetting::setupItems(Graph
 	return ret;
 }
 
-const QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as){
+const QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as)
+{
 	QStringList labels;
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
-		if (s.axisSide() == as){
+		if (s.axisSide() == as) {
 			labels.append(s.name());
 		}
 	}
@@ -351,9 +353,9 @@ const QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as){
 
 bool Graph2dHybridWindowResultSetting::axisNeeded(AxisSide as)
 {
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
-		if (s.axisSide() == as){return true;}
+		if (s.axisSide() == as) {return true;}
 	}
 	return false;
 }
@@ -386,13 +388,13 @@ Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(co
 	m_dataTypeInfos = s.m_dataTypeInfos;
 	m_targetDatas = s.m_targetDatas;
 	setupMap();
-	if (s.m_targetDataTypeInfo == nullptr){
+	if (s.m_targetDataTypeInfo == nullptr) {
 		m_targetDataTypeInfo = nullptr;
 	} else {
 		m_targetDataTypeInfo = nullptr;
-		for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+		for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 			DataTypeInfo& info = m_dataTypeInfos[i];
-			if (*s.m_targetDataTypeInfo == info){
+			if (*s.m_targetDataTypeInfo == info) {
 				m_targetDataTypeInfo = &info;
 			}
 		}
@@ -405,9 +407,9 @@ Graph2dHybridWindowResultSetting& Graph2dHybridWindowResultSetting::operator=(co
 
 bool Graph2dHybridWindowResultSetting::dataAvailable()
 {
-	for (auto it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it){
-		for (auto it2 = it.value().begin(); it2 != it.value().end(); ++it2){
-			if (it2.value().count() > 0){return true;}
+	for (auto it = m_dataTypeInfoMap.begin(); it != m_dataTypeInfoMap.end(); ++it) {
+		for (auto it2 = it.value().begin(); it2 != it.value().end(); ++it2) {
+			if (it2.value().count() > 0) {return true;}
 		}
 	}
 	return false;
@@ -420,7 +422,7 @@ QColor Graph2dHybridWindowResultSetting::autoColor(int index) const
 
 const QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm)
 {
-	switch (xm){
+	switch (xm) {
 	case Graph2dHybridWindowResultSetting::xaTime:
 		return Graph2dHybridWindow::tr("Time");
 		break;
@@ -440,7 +442,7 @@ const QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWind
 void Graph2dHybridWindowResultSetting::setAutoXAxisLabel()
 {
 	QString xAxisLabel;
-	if (m_xAxisMode == Graph2dHybridWindowResultSetting::xaTime){
+	if (m_xAxisMode == Graph2dHybridWindowResultSetting::xaTime) {
 		xAxisLabel = autoXAxisTimeLabel(m_xAxisMode, m_timeValueType);
 	} else {
 		xAxisLabel = autoXAxisPositionLabel(m_xAxisMode, m_positionValueType);
@@ -450,7 +452,7 @@ void Graph2dHybridWindowResultSetting::setAutoXAxisLabel()
 
 const QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode /*mode*/, Graph2dHybridWindowResultSetting::TimeValueType t)
 {
-	if (t == Graph2dHybridWindowResultSetting::tvtTime){
+	if (t == Graph2dHybridWindowResultSetting::tvtTime) {
 		return Graph2dHybridWindow::tr("Time");
 	} else {
 		return Graph2dHybridWindow::tr("Count");
@@ -459,10 +461,10 @@ const QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybrid
 
 const QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t)
 {
-	if (t == Graph2dHybridWindowResultSetting::pvtDistance){
+	if (t == Graph2dHybridWindowResultSetting::pvtDistance) {
 		return Graph2dHybridWindow::tr("Distance");
 	} else {
-		switch (mode){
+		switch (mode) {
 		case Graph2dHybridWindowResultSetting::xaI:
 			return Graph2dHybridWindow::tr("I");
 			break;
@@ -480,7 +482,7 @@ const QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHy
 Qt::PenStyle Graph2dHybridWindowResultSetting::getPenStyle(LineType lt)
 {
 
-	switch (lt){
+	switch (lt) {
 	case ltSolidLine:
 		return Qt::SolidLine;
 		break;
@@ -500,7 +502,7 @@ Qt::PenStyle Graph2dHybridWindowResultSetting::getPenStyle(LineType lt)
 
 QwtSymbol::Style Graph2dHybridWindowResultSetting::getSymbolStyle(SymbolType st)
 {
-	switch (st){
+	switch (st) {
 	case symCircle:
 		return QwtSymbol::Ellipse;
 		break;
@@ -524,15 +526,15 @@ QwtSymbol::Style Graph2dHybridWindowResultSetting::getSymbolStyle(SymbolType st)
 	}
 }
 
-void Graph2dHybridWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve *curve) const
+void Graph2dHybridWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
 {
-	if (m_axisSide == Graph2dHybridWindowResultSetting::asLeft){
+	if (m_axisSide == Graph2dHybridWindowResultSetting::asLeft) {
 		curve->setYAxis(QwtPlot::yLeft);
 	} else {
 		curve->setYAxis(QwtPlot::yRight);
 	}
 
-	if (m_styleType == Graph2dHybridWindowResultSetting::stLine){
+	if (m_styleType == Graph2dHybridWindowResultSetting::stLine) {
 		// line
 		QPen pen;
 		pen.setColor(m_customColor);
@@ -600,20 +602,20 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 	m_index = iRIC::getIntAttribute(node, "index");
 
 	QDomNode typeNode = iRIC::getChildNode(node, "targetDataType");
-	if (! typeNode.isNull()){
+	if (! typeNode.isNull()) {
 		DataTypeInfo info;
 		info.loadFromProjectMainFile(typeNode);
-		for (int i = 0; i < m_dataTypeInfos.count(); ++i){
+		for (int i = 0; i < m_dataTypeInfos.count(); ++i) {
 			DataTypeInfo& tmpInfo = m_dataTypeInfos[i];
-			if (tmpInfo == info){
+			if (tmpInfo == info) {
 				m_targetDataTypeInfo = &tmpInfo;
 			}
 		}
 	}
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
-	if (! datasNode.isNull()){
-		for (int i = 0; i < datasNode.childNodes().count(); ++i){
+	if (! datasNode.isNull()) {
+		for (int i = 0; i < datasNode.childNodes().count(); ++i) {
 			Graph2dHybridWindowResultSetting::Setting setting;
 			setting.loadFromProjectMainFile(datasNode.childNodes().at(i));
 			m_targetDatas.append(setting);
@@ -661,7 +663,7 @@ void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& w
 	writer.writeEndElement();
 
 	writer.writeStartElement("TargetDatas");
-	for (int i = 0; i < m_targetDatas.count(); ++i){
+	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		writer.writeStartElement("TargetData");
 		const Graph2dHybridWindowResultSetting::Setting& setting = m_targetDatas.at(i);
 		setting.saveToProjectMainFile(writer);
@@ -679,9 +681,9 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 	zoneName = elem.attribute("zoneName");
 	QDomNode namesNode = iRIC::getChildNode(node, "DataNames");
 	dataNames.clear();
-	if (! namesNode.isNull()){
+	if (! namesNode.isNull()) {
 		QDomNodeList names = namesNode.childNodes();
-		for (int i = 0; i < names.count(); ++i){
+		for (int i = 0; i < names.count(); ++i) {
 			QDomElement elem = names.at(i).toElement();
 			QString name = elem.attribute("name");
 			dataNames.append(name);
@@ -689,14 +691,14 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 	}
 }
 
-void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlStreamWriter &writer) const
+void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlStreamWriter& writer) const
 {
 	iRIC::setIntAttribute(writer, "dataType", static_cast<int>(dataType));
 	iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
 	iRIC::setIntAttribute(writer, "zoneId", zoneId);
 	writer.writeAttribute("zoneName", zoneName);
 	writer.writeStartElement("DataNames");
-	for (int i = 0; i < dataNames.count(); ++i){
+	for (int i = 0; i < dataNames.count(); ++i) {
 		QString name = dataNames.at(i);
 		writer.writeStartElement("DataName");
 		writer.writeAttribute("name", name);
@@ -705,7 +707,7 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlS
 	writer.writeEndElement();
 }
 
-void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode &node)
+void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 
@@ -719,7 +721,7 @@ void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QD
 	m_barChart = iRIC::getBooleanAttribute(node, "barChart", false);
 }
 
-void Graph2dHybridWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter &writer) const
+void Graph2dHybridWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter& writer) const
 {
 	writer.writeAttribute("name", m_name);
 	iRIC::setIntAttribute(writer, "axisSide", static_cast<int>(m_axisSide));

@@ -12,9 +12,9 @@ class GUICOREDLL_EXPORT SolverDefinitionNode
 {
 public:
 	/// constructor
-	SolverDefinitionNode(){}
+	SolverDefinitionNode() {}
 	/// constructor
-	SolverDefinitionNode(QDomElement /*node*/, const SolverDefinitionTranslator& /*translator*/){}
+	SolverDefinitionNode(QDomElement /*node*/, const SolverDefinitionTranslator& /*translator*/) {}
 };
 
 #endif // SOLVERDEFINITIONABSTRACTNODE_H

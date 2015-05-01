@@ -15,7 +15,7 @@ class RawDataRiverSurveyProxy : public RawDataProxy
 {
 	Q_OBJECT
 public:
-	RawDataRiverSurveyProxy(RawDataRiverSurvey* rawdata) : RawDataProxy(rawdata){}
+	RawDataRiverSurveyProxy(RawDataRiverSurvey* rawdata) : RawDataProxy(rawdata) {}
 	~RawDataRiverSurveyProxy();
 	void setupActors();
 

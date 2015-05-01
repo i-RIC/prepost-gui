@@ -13,14 +13,14 @@ class Post2dBirdEyeWindowAxesDataItem : public Post2dBirdEyeWindowDataItem
 public:
 	Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent);
 	~Post2dBirdEyeWindowAxesDataItem();
-	void informSelection(VTKGraphicsView * /*v*/);
+	void informSelection(VTKGraphicsView* /*v*/);
 	void informDeselection(VTKGraphicsView* /*v*/);
 	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
 	void updateVisibility(bool visible);
 private:

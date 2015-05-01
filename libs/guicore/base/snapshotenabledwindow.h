@@ -17,10 +17,10 @@ public:
 	SnapshotEnabledWindow();
 	/// Take snapshot
 	virtual QPixmap snapshot() = 0;
-	virtual vtkRenderWindow* getVtkRenderWindow(){return 0;}
-	virtual bool hasTransparentPart(){return false;}
+	virtual vtkRenderWindow* getVtkRenderWindow() {return 0;}
+	virtual bool hasTransparentPart() {return false;}
 
-	void setTransparent(bool b){m_isTransparent = b;}
+	void setTransparent(bool b) {m_isTransparent = b;}
 	bool transparent() const {return m_isTransparent;}
 
 protected:

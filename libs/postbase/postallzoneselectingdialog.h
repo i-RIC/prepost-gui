@@ -11,16 +11,17 @@
 class SolverDefinitionGridType;
 class PostZoneDataContainer;
 
-namespace Ui {
-class PostAllZoneSelectingDialog;
+namespace Ui
+{
+	class PostAllZoneSelectingDialog;
 }
 
 class POSTBASEDLL_EXPORT PostAllZoneSelectingDialog : public QDialog
 {
 	Q_OBJECT
-	
+
 public:
-	explicit PostAllZoneSelectingDialog(QWidget *parent = 0);
+	explicit PostAllZoneSelectingDialog(QWidget* parent = 0);
 	~PostAllZoneSelectingDialog();
 	bool setPostSolutionInfo(PostSolutionInfo* info);
 	bool needToSelect() const {return m_needToSelect;}
@@ -30,7 +31,7 @@ public:
 private slots:
 	void setupGridTypeCombobox(int index);
 	void setupZoneList(int index);
-	
+
 private:
 	void setupMaps(const QList<PostZoneDataContainer*>& srcList, QList<SolverDefinitionGridType*>& typeList, QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> >& zoneMap);
 
@@ -42,7 +43,7 @@ private:
 
 	bool m_needToSelect;
 	PostSolutionInfo* m_postSolutionInfo;
-	Ui::PostAllZoneSelectingDialog *ui;
+	Ui::PostAllZoneSelectingDialog* ui;
 };
 
 #endif // POSTALLZONESELECTINGDIALOG_H

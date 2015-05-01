@@ -1,7 +1,7 @@
 #include "preprocessorgridcrosssectionwindowtableview.h"
 #include <QResizeEvent>
 
-PreProcessorGridCrosssectionWindowTableView::PreProcessorGridCrosssectionWindowTableView(QWidget *parent) :
+PreProcessorGridCrosssectionWindowTableView::PreProcessorGridCrosssectionWindowTableView(QWidget* parent) :
 	QTableView(parent)
 {
 	m_editor = nullptr;
@@ -14,7 +14,7 @@ PreProcessorGridCrosssectionWindowTableView::PreProcessorGridCrosssectionWindowT
 		QAbstractItemView::CurrentChanged);
 }
 
-void PreProcessorGridCrosssectionWindowTableView::resizeEvent(QResizeEvent *event)
+void PreProcessorGridCrosssectionWindowTableView::resizeEvent(QResizeEvent* event)
 {
 //	int iWidth = indexWidth;
 //	int restWidth = (event->size().width() - iWidth);

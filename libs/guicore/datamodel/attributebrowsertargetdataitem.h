@@ -29,8 +29,8 @@ public:
 	void clear();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 
 private:
 	void setupContainers();

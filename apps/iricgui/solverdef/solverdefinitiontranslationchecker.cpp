@@ -17,20 +17,20 @@ void SolverDefinitionTranslationChecker::TranslationMessage::save(QXmlStreamWrit
 	writer.writeTextElement("source", m_source);
 
 	writer.writeStartElement("translation");
-/*
-	// type ("obsolete" or "unfinished") are not output any more.
-	switch (m_messageType){
-	case TypeObsolete:
-		writer.writeAttribute("type", "obsolete");
-		break;
-	case TypeUnfinished:
-		writer.writeAttribute("type", "unfinished");
-		break;
-	case TypeNormal:
-	default:
-		break;
-	}
-*/
+	/*
+		// type ("obsolete" or "unfinished") are not output any more.
+		switch (m_messageType){
+		case TypeObsolete:
+			writer.writeAttribute("type", "obsolete");
+			break;
+		case TypeUnfinished:
+			writer.writeAttribute("type", "unfinished");
+			break;
+		case TypeNormal:
+		default:
+			break;
+		}
+	*/
 	writer.writeCharacters(m_translation);
 	writer.writeEndElement();
 
@@ -42,7 +42,7 @@ void SolverDefinitionTranslationChecker::load(const QString& solverfolder, const
 	// get translation file name
 	QDir solFolder(solverfolder);
 	QString trFilename = solFolder.absoluteFilePath(SolverDefinitionTranslator::filenameFromLocale(locale));
-	if (QFile::exists(trFilename)){
+	if (QFile::exists(trFilename)) {
 		// load dictionary.
 		QDomDocument doc;
 		QString errorStr;
@@ -51,7 +51,7 @@ void SolverDefinitionTranslationChecker::load(const QString& solverfolder, const
 		QFile trFile(trFilename);
 		QString errorHeader = "Error occured while loading %1\n";
 		bool ok = doc.setContent(&trFile, &errorStr, &errorLine, &errorColumn);
-		if (! ok){
+		if (! ok) {
 			QString msg = errorHeader;
 			msg.append("Parse error %2 at line %3, column %4");
 			msg = msg.arg(trFilename).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -61,21 +61,21 @@ void SolverDefinitionTranslationChecker::load(const QString& solverfolder, const
 		iRIC::removeAllComments(&docElem);
 		QDomNode TSNode = doc.documentElement();
 		QDomNode contextNode = TSNode.firstChild();
-		while (! contextNode.isNull()){
-			if (contextNode.nodeName() != "context"){
+		while (! contextNode.isNull()) {
+			if (contextNode.nodeName() != "context") {
 				QString msg = errorHeader;
 				msg.append("Only context node is allowed under TS node, but %1 node is found.");
 				msg = msg.arg(trFilename).arg(contextNode.nodeName());
 				throw ErrorMessage(msg);
 			}
 			QDomNode messageNode = contextNode.firstChild();
-			while (! messageNode.isNull()){
-				if (messageNode.nodeName() == "name"){
+			while (! messageNode.isNull()) {
+				if (messageNode.nodeName() == "name") {
 					// skip this node
 					messageNode = messageNode.nextSibling();
 					continue;
 				}
-				if (messageNode.nodeName() != "message"){
+				if (messageNode.nodeName() != "message") {
 					QString msg = errorHeader;
 					msg.append("Only name or message node is allowed under context node, but %1 node is found.");
 					msg = msg.arg(trFilename).arg(messageNode.nodeName());
@@ -102,7 +102,7 @@ void SolverDefinitionTranslationChecker::load(const QString& solverfolder, const
 	QFile file(deffilename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&file, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(deffilename).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -113,15 +113,16 @@ void SolverDefinitionTranslationChecker::load(const QString& solverfolder, const
 
 	scanDefinition(SDNode);
 }
-void SolverDefinitionTranslationChecker::scanDefinition(const QDomNode& node){
-	if (! node.isElement()){return;}
+void SolverDefinitionTranslationChecker::scanDefinition(const QDomNode& node)
+{
+	if (! node.isElement()) {return;}
 	QDomElement elem = node.toElement();
-	if (elem.hasAttribute("caption")){
+	if (elem.hasAttribute("caption")) {
 		QString caption = elem.attribute("caption");
 		// Handle it only when it does not exists in m_dic.
-		if (! m_dic.contains(caption)){
+		if (! m_dic.contains(caption)) {
 			m_dic.insert(caption);
-			if (m_uselessTranslations.contains(caption)){
+			if (m_uselessTranslations.contains(caption)) {
 				// It already has translation.
 				m_messages.append(TranslationMessage(caption, m_uselessTranslations.value(caption)));
 				m_uselessTranslations.remove(caption);
@@ -132,7 +133,7 @@ void SolverDefinitionTranslationChecker::scanDefinition(const QDomNode& node){
 		}
 	}
 	QDomNodeList cnodes = node.childNodes();
-	for (uint i = 0; i < cnodes.length(); ++i){
+	for (uint i = 0; i < cnodes.length(); ++i) {
 		scanDefinition(cnodes.item(i));
 	}
 }
@@ -148,7 +149,7 @@ void SolverDefinitionTranslationChecker::save(const QString& solverfolder, const
 	commentFile.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream in(&commentFile);
 	in.setCodec("UTF-8");
-	while (! in.atEnd()){
+	while (! in.atEnd()) {
 		buffer = in.readLine();
 		comment.append(buffer);
 		comment.append("\n");
@@ -167,17 +168,9 @@ void SolverDefinitionTranslationChecker::save(const QString& solverfolder, const
 	w.writeStartElement("context");
 
 	// write valid elements and lacking elements, in the order of appearance.
-	for (const TranslationMessage& m : m_messages){
+	for (const TranslationMessage& m : m_messages) {
 		m.save(w);
 	}
-	// obsolete elements are not written any more.
-/*
-	for (mapit = m_uselessTranslations.begin(); mapit != m_uselessTranslations.end(); ++mapit){
-		if (mapit.value() == ""){continue;}
-		TranslationMessage m(mapit.key(), mapit.value(), TranslationMessage::TypeObsolete);
-		m.save(w);
-	}
-*/
 
 	w.writeEndElement();
 	w.writeEndElement();

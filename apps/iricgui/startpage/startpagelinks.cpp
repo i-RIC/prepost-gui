@@ -8,7 +8,7 @@
 #include <QUrl>
 #include <QVBoxLayout>
 
-StartPageLinks::StartPageLinks(QWidget *parent) :
+StartPageLinks::StartPageLinks(QWidget* parent) :
 	QWidget(parent)
 {
 	m_layout = nullptr;
@@ -20,7 +20,7 @@ void StartPageLinks::setupLinks(const QString& locale)
 	setLayout(m_layout);
 
 	QString resource = QString(":/data/startpagelinks_%1.xml").arg(locale);
-	if (! QFile::exists(resource)){
+	if (! QFile::exists(resource)) {
 		resource = ":/data/startpagelinks.xml";
 	}
 	QFile f(resource);
@@ -33,12 +33,12 @@ void StartPageLinks::setupLinks(const QString& locale)
 	QDomElement element = doc.documentElement().toElement();
 
 	QDomNodeList childNodes = element.childNodes();
-	for (int i = 0; i < childNodes.count(); ++i){
+	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomNode child = childNodes.at(i);
 		QString groupTitle = child.toElement().attribute("title");
 		addGroup(groupTitle);
 		QDomNodeList linkNodes = child.toElement().childNodes();
-		for (int j = 0; j < linkNodes.count(); ++j){
+		for (int j = 0; j < linkNodes.count(); ++j) {
 			QDomElement linkElement = linkNodes.at(j).toElement();
 			addLink(linkElement.attribute("title"), linkElement.attribute("url"));
 		}

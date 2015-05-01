@@ -6,7 +6,7 @@
 #define REAL double
 #define VOID void
 
-TriangleExecuteThread::TriangleExecuteThread(QObject *parent) :
+TriangleExecuteThread::TriangleExecuteThread(QObject* parent) :
 	QThread(parent)
 {
 	m_in = nullptr;
@@ -18,7 +18,7 @@ void TriangleExecuteThread::run()
 {
 	triangulate(m_args, m_in, m_out, nullptr);
 
-	if (m_fileArgs != ""){
+	if (m_fileArgs != "") {
 		QProcess* process = new QProcess(this);
 		QStringList args;
 		args << m_fileArgs << m_fileName;

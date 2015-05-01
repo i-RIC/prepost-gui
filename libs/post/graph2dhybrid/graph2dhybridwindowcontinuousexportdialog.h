@@ -4,19 +4,20 @@
 #include <QDialog>
 #include "graph2dhybridwindowresultsetting.h"
 
-namespace Ui {
-    class Graph2dHybridWindowContinuousExportDialog;
+namespace Ui
+{
+	class Graph2dHybridWindowContinuousExportDialog;
 }
 
 class Graph2dHybridWindowContinuousExportDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-	enum RegionMode{rmCurrentOnly, rmAll, rmCustom };
+	enum RegionMode {rmCurrentOnly, rmAll, rmCustom };
 	enum TimeMode {tmCurrentOnly, tmAll, tmCustom };
-    explicit Graph2dHybridWindowContinuousExportDialog(QWidget *parent = nullptr);
-    ~Graph2dHybridWindowContinuousExportDialog();
+	explicit Graph2dHybridWindowContinuousExportDialog(QWidget* parent = nullptr);
+	~Graph2dHybridWindowContinuousExportDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4]);
 	void setTimesteps(QList<double> steps);
 	void setCurrentStep(int step);
@@ -73,7 +74,7 @@ private slots:
 	void timeStartChanged(int start);
 	void timeEndChanged(int end);
 private:
-    Ui::Graph2dHybridWindowContinuousExportDialog *ui;
+	Ui::Graph2dHybridWindowContinuousExportDialog* ui;
 
 	int m_i;
 	int m_j;

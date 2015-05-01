@@ -4,8 +4,9 @@
 #include "preferencepage.h"
 #include <QSettings>
 
-namespace Ui {
-    class PreferencePagePre;
+namespace Ui
+{
+	class PreferencePagePre;
 }
 
 class PreferencePagePre : public PreferencePage
@@ -13,12 +14,12 @@ class PreferencePagePre : public PreferencePage
 	Q_OBJECT
 
 public:
-	explicit PreferencePagePre(QWidget *parent = nullptr);
+	explicit PreferencePagePre(QWidget* parent = nullptr);
 	~PreferencePagePre();
 	void update();
 private:
 	QSettings m_settings;
-	Ui::PreferencePagePre *ui;
+	Ui::PreferencePagePre* ui;
 };
 
 #endif // PREFERENCEPAGEPRE_H

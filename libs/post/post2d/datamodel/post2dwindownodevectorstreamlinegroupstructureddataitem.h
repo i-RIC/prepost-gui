@@ -5,8 +5,7 @@
 #include <guibase/vtksubdividegrid.h>
 #include <vtkExtractGrid.h>
 
-struct Post2dWindowStructuredStreamlineSetSetting
-{
+struct Post2dWindowStructuredStreamlineSetSetting {
 	enum SpaceMode {smNormal, smSubdivide, smSkip};
 	/// Range to generate
 	StructuredGridRegion::Range2d range;

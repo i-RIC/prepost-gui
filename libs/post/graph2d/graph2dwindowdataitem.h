@@ -42,18 +42,18 @@ public:
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 	/// The QStandardItem that corresponds to this item.
-	QStandardItem* standardItem(){return m_standardItem;}
+	QStandardItem* standardItem() {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
-	virtual void updateItemMap(){dynamic_cast<Graph2dWindowDataItem*>(parent())->updateItemMap();}
+	virtual void updateItemMap() {dynamic_cast<Graph2dWindowDataItem*>(parent())->updateItemMap();}
 	virtual void updateExpandState(QTreeView* view);
 	virtual void reflectExpandState(QTreeView* view);
 	void innerUpdateItemMap(QMap<QStandardItem*, Graph2dWindowDataItem*>& map);
 	/// Handle the event that the corresponding standardItem is changed.
 	virtual void handleStandardItemChange();
 	/// Handle the event that the corresponding standardItem is clicked.
-	virtual void handleStandardItemClicked(){}
+	virtual void handleStandardItemClicked() {}
 	/// Handle the event that the corresponding standardItem is double-clicked.
-	virtual void handleStandardItemDoubleClicked(){}
+	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file
 	virtual void loadFromCgnsFile(const int fn);
 	/// Save data into CGNS file
@@ -61,20 +61,20 @@ public:
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	/// Returns true if this item is deletable.
-	virtual bool isDeletable(){return m_isDeletable;}
+	virtual bool isDeletable() {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
-	virtual bool isReorderable(){return m_isReorderable;}
-	virtual void addCustomMenuItems(QMenu* /*menu*/){}
+	virtual bool isReorderable() {return m_isReorderable;}
+	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 
 	void showPropertyDialog();
 	/// Returns the pointer to a dialog which shows the property edit dialog of this item.
 	/**
 	 * If no property dialog is available, this function returns 0.
 	 */
-	virtual QDialog* propertyDialog(QWidget* /*parent*/){return 0;}
-	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/){}
+	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
+	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 	/// Returns the pointer to a toolbar specific to currently selected item.
-	virtual bool addToolBarButtons(QToolBar* /*parent*/){return false;}
+	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
 	const QList <Graph2dWindowDataItem*>& childItems() const {return m_childItems;}
 	/// Move up the order in object browser.
 	virtual void moveUp();
@@ -82,17 +82,17 @@ public:
 	virtual void moveDown();
 	/// Z depth value range assigned for this item.
 	virtual void updateZDepthRangeItemCount();
-	ZDepthRange zDepthRange(){return m_zDepthRange;}
+	ZDepthRange zDepthRange() {return m_zDepthRange;}
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
 	virtual QStringList containedFiles();
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
-	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/){}
-	void setIsCommandExecuting(bool exec){m_isCommandExecuting = exec;}
+	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
+	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
 protected:
 	virtual void assignActionZValues(const ZDepthRange& range);
-	virtual Graph2dWindowDataModel* dataModel(){return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
+	virtual Graph2dWindowDataModel* dataModel() {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
 	void renderView();
 	virtual void unregisterChild(Graph2dWindowDataItem* child);
 	/// Returns true when alal ancient nodes are checked.
@@ -101,7 +101,7 @@ protected:
 	virtual void init();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
-	virtual void setVisible(bool /*visible*/){}
+	virtual void setVisible(bool /*visible*/) {}
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void loadCheckState(const QDomNode& node);
 	void saveCheckState(QXmlStreamWriter& writer);

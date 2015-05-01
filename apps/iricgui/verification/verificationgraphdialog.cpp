@@ -26,7 +26,7 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-VerificationGraphDialog::VerificationGraphDialog(iRICMainWindow *parent) :
+VerificationGraphDialog::VerificationGraphDialog(iRICMainWindow* parent) :
 	QDialog(parent),
 	ui(new Ui::VerificationGraphDialog)
 {
@@ -83,7 +83,7 @@ bool VerificationGraphDialog::setting()
 	dialog.setActiveValue(m_activeValue);
 
 	int result = dialog.exec();
-	if (result == QDialog::Rejected){return false;}
+	if (result == QDialog::Rejected) {return false;}
 
 	m_timeStep = dialog.timeStep();
 	m_activePostData = dialog.postZoneDataContainer();
@@ -98,7 +98,7 @@ bool VerificationGraphDialog::setting()
 	ui->typeComboBox->blockSignals(true);
 	ui->typeComboBox->clear();
 
-	if (sgrid == nullptr){
+	if (sgrid == nullptr) {
 		// unstructured grid.
 	} else {
 		// structured grid.
@@ -109,8 +109,8 @@ bool VerificationGraphDialog::setting()
 	ui->typeComboBox->addItem(tr("Measured Values vs. Residual Errors"));
 
 	ui->typeComboBox->blockSignals(false);
-	if (sgrid == nullptr){
-		switch (m_graphType){
+	if (sgrid == nullptr) {
+		switch (m_graphType) {
 		case gtMVvsCR:
 			ui->typeComboBox->setCurrentIndex(0);
 			break;
@@ -123,7 +123,7 @@ bool VerificationGraphDialog::setting()
 			break;
 		}
 	} else {
-		switch (m_graphType){
+		switch (m_graphType) {
 		case gtSWDvsValues:
 			ui->typeComboBox->setCurrentIndex(0);
 			break;
@@ -146,38 +146,38 @@ void VerificationGraphDialog::exportData()
 {
 	QString iodir = LastIODirectory::get();
 	QString fname = QFileDialog::getSaveFileName(
-		this, tr("Export CSV file"), iodir, tr("CSV file (*.csv)"));
-	if (fname == ""){return;}
+										this, tr("Export CSV file"), iodir, tr("CSV file (*.csv)"));
+	if (fname == "") {return;}
 	QFile f(fname);
 	bool ok = f.open(QIODevice::WriteOnly);
-	if (! ok){
+	if (! ok) {
 		QMessageBox::critical(this, tr("Error"), tr("%1 cound not be opened.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
 	QTextStream stream(&f);
-	switch (m_graphType){
+	switch (m_graphType) {
 	case gtSWDvsValues:
 		stream << "X, Y, Stream-wise Distance,Measured Values,Calculatioin Result" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i){
+		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << xVals[i] << "," << yVals[i] << "," << m_pointsCurve->sample(i).x() << "," << m_pointsCurve->sample(i).y() << "," << m_lineCurve->sample(i).y() << endl;
 		}
 		m_pointsCurve->data();
 		break;
 	case gtSWDvsError:
 		stream << "Stream-wise Distance,Residual Error" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i){
+		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->data()->sample(i).x() << "," << m_pointsCurve->data()->sample(i).y() << "," << endl;
 		}
 		break;
 	case gtMVvsCR:
 		stream << "Measured Values,Calculatioin Result" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i){
+		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->sample(i).x() << "," << m_pointsCurve->sample(i).y() << "," << endl;
 		}
 		break;
 	case gtMVvsError:
 		stream << "Measured Values,Residual Error" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i){
+		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->sample(i).x() << "," << m_pointsCurve->sample(i).y() << "," << endl;
 		}
 		break;
@@ -193,9 +193,9 @@ void VerificationGraphDialog::setType(int type)
 	vtkPointSet* ps = m_activePostData->data();
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
 
-	if (sgrid == nullptr){
+	if (sgrid == nullptr) {
 		// unstructured grid.
-		switch (type){
+		switch (type) {
 		case 0:
 			m_graphType = gtMVvsCR;
 			break;
@@ -205,7 +205,7 @@ void VerificationGraphDialog::setType(int type)
 		}
 	} else {
 		// structured grid.
-		switch (type){
+		switch (type) {
 		case 0:
 			m_graphType = gtSWDvsValues;
 			break;
@@ -253,7 +253,7 @@ void VerificationGraphDialog::updateGraph()
 	vtkDoubleArray* crda = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_activeResult).c_str()));
 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	if (sgrid != nullptr){
+	if (sgrid != nullptr) {
 		int dimensions[3];
 		sgrid->GetDimensions(dimensions);
 		int centerJ = dimensions[1] / 2;
@@ -264,7 +264,7 @@ void VerificationGraphDialog::updateGraph()
 		vtkIdType index = m_activePostData->nodeIndex(0, centerJ, 0);
 		sgrid->GetPoint(index, point);
 		previousP = QVector2D(point[0], point[1]);
-		for (int i = 0; i < dimensions[0]; ++i){
+		for (int i = 0; i < dimensions[0]; ++i) {
 			index = m_activePostData->nodeIndex(i, centerJ, 0);
 			sgrid->GetPoint(index, point);
 			currentP = QVector2D(point[0], point[1]);
@@ -274,7 +274,7 @@ void VerificationGraphDialog::updateGraph()
 		}
 	}
 
-	for (vtkIdType i = 0; i < mvda->GetNumberOfTuples(); ++i){
+	for (vtkIdType i = 0; i < mvda->GetNumberOfTuples(); ++i) {
 		double mval = mvda->GetValue(i);
 
 		double point[3];
@@ -286,13 +286,13 @@ void VerificationGraphDialog::updateGraph()
 		double weights[4];
 		int subid;
 		cellid = ps->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-		if (cellid < 0){
+		if (cellid < 0) {
 			// this point is outside of the calculation result.
 			continue;
 		}
 		vtkCell* cell = ps->GetCell(cellid);
 		double cval = 0;
-		for (int j = 0; j < cell->GetNumberOfPoints(); ++j){
+		for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
 			vtkIdType vid = cell->GetPointId(j);
 			cval += *(weights + j) * crda->GetValue(vid);
 		}
@@ -306,10 +306,10 @@ void VerificationGraphDialog::updateGraph()
 		meanCalcVal += cval;
 		meanMeasuredVal += mval;
 
-		if (sgrid != nullptr){
+		if (sgrid != nullptr) {
 			int i, j, k;
 			double dist = 0;
-			for (int l = 0; l < cell->GetNumberOfPoints(); ++l){
+			for (int l = 0; l < cell->GetNumberOfPoints(); ++l) {
 				vtkIdType vid = cell->GetPointId(l);
 				m_activePostData->getNodeIJKIndex(vid, &i, &j, &k);
 				double tmpdist = stdDist.at(i);
@@ -324,7 +324,7 @@ void VerificationGraphDialog::updateGraph()
 
 	double Sxy = 0;
 	double Sxx = 0;
-	for (vtkIdType i = 0; i < measuredVals.count(); ++i){
+	for (vtkIdType i = 0; i < measuredVals.count(); ++i) {
 		Sxy += (measuredVals.at(i) - meanMeasuredVal) * (calcVals.at(i) - meanCalcVal);
 		Sxx += (measuredVals.at(i) - meanMeasuredVal) * (measuredVals.at(i) - meanMeasuredVal);
 	}
@@ -335,9 +335,9 @@ void VerificationGraphDialog::updateGraph()
 	QVector<double> liney;
 	double xmin;
 	double xmax;
-	for (int i = 0; i < measuredVals.count(); ++i){
-		if (i == 0 || xmin > measuredVals.at(i)){xmin = measuredVals.at(i);}
-		if (i == 0 || xmax < measuredVals.at(i)){xmax = measuredVals.at(i);}
+	for (int i = 0; i < measuredVals.count(); ++i) {
+		if (i == 0 || xmin > measuredVals.at(i)) {xmin = measuredVals.at(i);}
+		if (i == 0 || xmax < measuredVals.at(i)) {xmax = measuredVals.at(i);}
 	}
 	double width = xmax - xmin;
 	double x = xmin - width * 0.1;
@@ -350,7 +350,7 @@ void VerificationGraphDialog::updateGraph()
 	liney.append(y);
 
 	QString lineTitle = QString("y = %1 * x").arg(b);
-	if (a > 0){
+	if (a > 0) {
 		lineTitle.append(QString(" + %1").arg(a));
 	} else {
 		lineTitle.append(QString(" - %1").arg(-a));
@@ -377,7 +377,7 @@ void VerificationGraphDialog::updateGraph()
 	m_lineCurve = new QwtPlotCurve();
 	m_lineCurve->setLegendAttribute(QwtPlotCurve::LegendShowLine);
 
-	switch (m_graphType){
+	switch (m_graphType) {
 	case gtSWDvsValues:
 		m_pointsCurve->setSamples(distanceVals, measuredVals);
 		m_pointsCurve->setTitle(tr("Measured Values (%1)").arg(m_activeValue));
@@ -430,17 +430,17 @@ void VerificationGraphDialog::updateGraph()
 
 void VerificationGraphDialog::clearData()
 {
-	if (m_pointsCurve != nullptr){
+	if (m_pointsCurve != nullptr) {
 		m_pointsCurve->detach();
 		delete m_pointsCurve;
 		m_pointsCurve = nullptr;
 	}
-	if (m_lineCurve != nullptr){
+	if (m_lineCurve != nullptr) {
 		m_lineCurve->detach();
 		delete m_lineCurve;
 		m_lineCurve = nullptr;
 	}
-	if (m_dotLineCurve != nullptr){
+	if (m_dotLineCurve != nullptr) {
 		m_dotLineCurve->detach();
 		delete m_dotLineCurve;
 		m_dotLineCurve = nullptr;

@@ -5,8 +5,9 @@
 #include "posttitlesetting.h"
 #include <QDialog>
 
-namespace Ui {
-		class PostTitleEditDialog;
+namespace Ui
+{
+	class PostTitleEditDialog;
 }
 
 class POSTBASEDLL_EXPORT PostTitleEditDialog : public QDialog
@@ -14,7 +15,7 @@ class POSTBASEDLL_EXPORT PostTitleEditDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PostTitleEditDialog(QWidget *parent = nullptr);
+	explicit PostTitleEditDialog(QWidget* parent = nullptr);
 	~PostTitleEditDialog();
 	void setEnabled(bool enabled);
 	bool isEnabled() const;
@@ -23,7 +24,7 @@ public:
 	const PostTitleSetting setting();
 
 private:
-		Ui::PostTitleEditDialog *ui;
+	Ui::PostTitleEditDialog* ui;
 };
 
 #endif // POSTTITLEEDITDIALOG_H

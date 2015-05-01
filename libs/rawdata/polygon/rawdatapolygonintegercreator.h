@@ -8,8 +8,7 @@ class RawDataPolygonIntegerCreator : public RawDataPolygonCreatorT<int, vtkIntAr
 {
 public:
 	RawDataPolygonIntegerCreator()
-		: RawDataPolygonCreatorT<int, vtkIntArray>()
-	{
+		: RawDataPolygonCreatorT<int, vtkIntArray>() {
 		m_typeName = "integerPolygon";
 	}
 };

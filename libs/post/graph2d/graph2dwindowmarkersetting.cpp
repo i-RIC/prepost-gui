@@ -32,7 +32,7 @@ QList<Graph2dWindowDataItem*> Graph2dWindowMarkerSetting::setupItems(Graph2dWind
 QList<Graph2dWindowDataItem*> Graph2dWindowMarkerSetting::setupItems(const QList<Graph2dWindowMarkerSettingItem>& settings, Graph2dWindowDataItem* parent)
 {
 	QList<Graph2dWindowDataItem*> ret;
-	for (auto it = settings.begin(); it != settings.end(); ++it){
+	for (auto it = settings.begin(); it != settings.end(); ++it) {
 		Graph2dWindowMarkerDataItem* item = new Graph2dWindowMarkerDataItem(*it, parent);
 		ret.append(item);
 	}
@@ -47,7 +47,7 @@ void Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem::loadFromProject
 	m_labelMode = static_cast<LabelMode>(iRIC::getIntAttribute(node, "labelMode"));
 	m_customLabel = elem.attribute("customLabel");
 	m_label = elem.attribute("label");
-	m_penStyle = static_cast<Qt::PenStyle> (iRIC::getIntAttribute(node, "penStyle"));
+	m_penStyle = static_cast<Qt::PenStyle>(iRIC::getIntAttribute(node, "penStyle"));
 	m_showLine = iRIC::getBooleanAttribute(node, "showLine");
 	m_color = iRIC::getColorAttribute(node, "color");
 	m_axis = iRIC::getIntAttribute(node, "axis");

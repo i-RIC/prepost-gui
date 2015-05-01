@@ -15,7 +15,7 @@ public:
 	QString name(unsigned int index);
 	QString defaultCaption(unsigned int index);
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
-	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition);
+	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
 };
 
 #endif // RAWDATARIVERSURVEYCREATOR_H

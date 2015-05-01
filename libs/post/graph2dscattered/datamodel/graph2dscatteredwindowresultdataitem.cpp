@@ -42,11 +42,11 @@ Graph2dScatteredWindowResultDataItem::~Graph2dScatteredWindowResultDataItem()
 
 void Graph2dScatteredWindowResultDataItem::setVisible(bool visible)
 {
-	if (visible && ! m_attached){
+	if (visible && ! m_attached) {
 		m_attached = true;
 		m_curve->attach(dataModel()->view());
 	}
-	if (! visible && m_attached){
+	if (! visible && m_attached) {
 		m_attached = false;
 		m_curve->detach();
 	}
@@ -56,7 +56,7 @@ void Graph2dScatteredWindowResultDataItem::update(int fn)
 {
 	updateValues(fn);
 
-	double *x, *y;
+	double* x, *y;
 	buildXY(m_xValues, m_yValues, &x, &y);
 
 	m_curve->setSamples(x, y, m_xValues.count());

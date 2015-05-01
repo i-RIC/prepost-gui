@@ -12,15 +12,15 @@ class GUICOREDLL_EXPORT ColorTransferFunctionContainer : public ScalarsToColorsC
 public:
 	ColorTransferFunctionContainer(ProjectDataItem* d);
 	void update();
-	void setColors(QMap<double, QColor> map){
+	void setColors(QMap<double, QColor> map) {
 		m_colors = map;
 		update();
 	}
-	void setEnumerations(QMap<double, QString> map){m_enumerations = map;}
-	void setEnglishEnumerations(QMap<double, QString> map){m_englishEnumerations = map;}
-	const QMap<double, QString>& enumerations(){return m_enumerations;}
-	const QMap<double, QColor> colors(){return m_colors;}
-	const QMap<double, QString>& englishEnumerations(){return m_englishEnumerations;}
+	void setEnumerations(QMap<double, QString> map) {m_enumerations = map;}
+	void setEnglishEnumerations(QMap<double, QString> map) {m_englishEnumerations = map;}
+	const QMap<double, QString>& enumerations() {return m_enumerations;}
+	const QMap<double, QColor> colors() {return m_colors;}
+	const QMap<double, QString>& englishEnumerations() {return m_englishEnumerations;}
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

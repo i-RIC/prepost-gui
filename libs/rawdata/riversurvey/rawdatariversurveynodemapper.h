@@ -13,8 +13,7 @@ class RawDataRiverSurveyNodeMapper : public RawDataNodeMapperT<double, vtkDouble
 {
 public:
 	RawDataRiverSurveyNodeMapper(RawDataCreator* parent)
-		: RawDataNodeMapperT<double, vtkDoubleArray>(parent)
-	{
+		: RawDataNodeMapperT<double, vtkDoubleArray>(parent) {
 		RawDataNodeMapperT<double, vtkDoubleArray>::m_caption = "River survey node mapper";
 	}
 	RawDataMapperSetting* initialize(bool* boolMap);

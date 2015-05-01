@@ -12,7 +12,7 @@ class HydraulicDataImporter : public QObject
 {
 public:
 	/// Constructor
-	HydraulicDataImporter(){}
+	HydraulicDataImporter() {}
 	/// Import hydraulicdata from the specified file.
 	virtual bool import(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w) = 0;
 	/// Returns true if the hydraulic data can be imported to the specified rawdata.

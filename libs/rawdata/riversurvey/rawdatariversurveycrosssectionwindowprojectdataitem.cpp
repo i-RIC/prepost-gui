@@ -12,8 +12,9 @@ RawDataRiverSurveyCrosssectionWindowProjectDataItem::RawDataRiverSurveyCrosssect
 }
 
 
-RawDataRiverSurveyCrosssectionWindowProjectDataItem::~RawDataRiverSurveyCrosssectionWindowProjectDataItem(){
-	if (m_window != nullptr){
+RawDataRiverSurveyCrosssectionWindowProjectDataItem::~RawDataRiverSurveyCrosssectionWindowProjectDataItem()
+{
+	if (m_window != nullptr) {
 		RawDataRiverSurveyCrosssectionWindow* w = m_window;
 		m_window = nullptr;
 		delete w->parent();
@@ -22,7 +23,7 @@ RawDataRiverSurveyCrosssectionWindowProjectDataItem::~RawDataRiverSurveyCrosssec
 
 void RawDataRiverSurveyCrosssectionWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		PreProcessorRawDataGroupDataItemInterface* gItem = m_window->groupDataItem();
 		m_window = nullptr;
 		gItem->requestCrosssectionWindowDelete(this);

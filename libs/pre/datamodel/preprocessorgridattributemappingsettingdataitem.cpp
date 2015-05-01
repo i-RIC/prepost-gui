@@ -24,9 +24,9 @@ PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappin
 void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	if (elem.attribute("mode") == "fromOtherAttribute"){
+	if (elem.attribute("mode") == "fromOtherAttribute") {
 		m_mappingMode = mmFromOtherAttribute;
-	}else{
+	} else {
 		m_mappingMode = mmFromRawData;
 	}
 }
@@ -34,9 +34,9 @@ void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(
 void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	QString modestr;
-	if (m_mappingMode == mmFromRawData){
+	if (m_mappingMode == mmFromRawData) {
 		modestr = "fromRawData";
-	}else{
+	} else {
 		modestr = "fromOtherAttribute";
 	}
 	writer.writeAttribute("name", m_condition->name());
@@ -49,9 +49,9 @@ void PreProcessorGridAttributeMappingSettingDataItem::setDefaultValue(Grid* grid
 	m_rawdataGroupDataItem->setDefaultValue(grid);
 }
 
-void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid, WaitDialog *dialog)
+void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid, WaitDialog* dialog)
 {
-	if (m_mappingMode == mmFromRawData){
+	if (m_mappingMode == mmFromRawData) {
 		// delegate to rawdatagroupdataitem.
 		m_rawdataGroupDataItem->executeMapping(grid, dialog);
 	} else {
@@ -62,7 +62,7 @@ void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid,
 
 int PreProcessorGridAttributeMappingSettingDataItem::mappingCount() const
 {
-	if (m_mappingMode == mmFromRawData){
+	if (m_mappingMode == mmFromRawData) {
 		return m_rawdataGroupDataItem->mappingCount();
 	} else {
 		// @todo not implemented yet.

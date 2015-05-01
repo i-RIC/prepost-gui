@@ -9,10 +9,11 @@
 class CgnsFileInputConditionContainerString;
 class SolverDefinitionTranslator;
 
-class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilenameEdit : public QLineEdit {
+class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilenameEdit : public QLineEdit
+{
 	Q_OBJECT
 public:
-	CgnsFileInputConditionWidgetFilenameEdit(QWidget* parent = nullptr) : QLineEdit(parent){}
+	CgnsFileInputConditionWidgetFilenameEdit(QWidget* parent = nullptr) : QLineEdit(parent) {}
 	bool checkContent();
 
 protected:
@@ -26,11 +27,11 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilename : public CgnsFileIn
 	Q_OBJECT
 public:
 	CgnsFileInputConditionWidgetFilename(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerString* cont);
-	void setDisabled(bool disable){m_edit->setDisabled(disable);}
+	void setDisabled(bool disable) {m_edit->setDisabled(disable);}
 	static QString defaultFolder;
 
 public slots:
-	void setValue(const QString& newvalue){m_edit->setText(newvalue);}
+	void setValue(const QString& newvalue) {m_edit->setText(newvalue);}
 	void getWidgetValue(const QString& newvalue);
 
 private slots:

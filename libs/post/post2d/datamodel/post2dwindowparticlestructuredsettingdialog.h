@@ -6,26 +6,27 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
 
-namespace Ui {
-    class Post2dWindowParticleStructuredSettingDialog;
+namespace Ui
+{
+	class Post2dWindowParticleStructuredSettingDialog;
 }
 class PostZoneDataContainer;
 
 class Post2dWindowParticleStructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post2dWindowParticleStructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowParticleStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowParticleStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
 	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
 	void setTimeSamplingRate(int sr);
 	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowStructuredParticleSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post2dWindowStructuredParticleSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
@@ -33,8 +34,8 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode();
 	int timeSamplingRate();
 	int timeDivision();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post2dWindowStructuredParticleSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post2dWindowStructuredParticleSetSetting>& settings() {return m_settings;}
 private slots:
 	void activeDataChanged(int index);
 
@@ -57,7 +58,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-    Ui::Post2dWindowParticleStructuredSettingDialog *ui;
+	Ui::Post2dWindowParticleStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
 	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;

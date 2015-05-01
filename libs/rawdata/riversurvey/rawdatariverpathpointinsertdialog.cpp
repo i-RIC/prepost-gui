@@ -12,7 +12,7 @@
 
 #include <QUndoCommand>
 
-RawDataRiverPathPointInsertDialog::RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointInsertDialog::RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointInsertDialog)
 {
@@ -20,18 +20,18 @@ RawDataRiverPathPointInsertDialog::RawDataRiverPathPointInsertDialog(RawDataRive
 	ui->setupUi(this);
 	m_applyed = false;
 	m_insert = insert;
-	if (insert){
+	if (insert) {
 		m_insertTarget = target->previousPoint();
-	}else{
+	} else {
 		m_insertTarget = target;
 	}
 	m_newPoint = new RawDataRiverPathPoint();
 	m_rs = rs;
-	if ((insert && target->previousPoint()->firstPoint()) || (! insert && target->nextPoint() == nullptr)){
+	if ((insert && target->previousPoint()->firstPoint()) || (! insert && target->nextPoint() == nullptr)) {
 		ui->coordRatioRadioButton->setDisabled(true);
 		ui->crossCreateRadioButton->setDisabled(true);
 		m_lineCenter = nullptr;
-	}else{
+	} else {
 		m_lineCenter = m_insertTarget->riverCenter()->copy();
 	}
 	initializeItems();
@@ -63,7 +63,7 @@ void RawDataRiverPathPointInsertDialog::initializeItems()
 
 void RawDataRiverPathPointInsertDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
@@ -72,22 +72,19 @@ class RawDataRiverPathPointInsertCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointInsertCommand(bool apply, RawDataRiverPathPoint* prev, RawDataRiverPathPoint* newpoint, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Insert Traversal Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Insert Traversal Line")) {
 		m_apply = apply;
 		m_previousPoint = prev;
 		m_newPoint = newpoint;
 		m_rs = rs;
 		m_redoed = false;
 	}
-	~RawDataRiverPathPointInsertCommand()
-	{
-		if ((! m_redoed) && (! m_apply)){
+	~RawDataRiverPathPointInsertCommand() {
+		if ((! m_redoed) && (! m_apply)) {
 			delete m_newPoint;
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
 		m_previousPoint->addPathPoint(m_newPoint);
 		m_previousPoint->UpdateCtrlSections();
@@ -98,13 +95,12 @@ public:
 		m_rs->updateCrossectionWindows();
 		m_redoed = true;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
 		m_newPoint->remove();
 		m_previousPoint->UpdateCtrlSections();
 		m_rs->updateSplineSolvers();
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->updateShapeData();
 			m_rs->updateSelectionShapeData();
 			m_rs->renderGraphicsView();
@@ -122,7 +118,7 @@ private:
 
 void RawDataRiverPathPointInsertDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -133,7 +129,7 @@ void RawDataRiverPathPointInsertDialog::accept()
 
 void RawDataRiverPathPointInsertDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->updateShapeData();
@@ -145,7 +141,7 @@ void RawDataRiverPathPointInsertDialog::reject()
 
 void RawDataRiverPathPointInsertDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -156,7 +152,7 @@ void RawDataRiverPathPointInsertDialog::apply()
 
 void RawDataRiverPathPointInsertDialog::setPoint(const QVector2D& position)
 {
-	if (! ui->coordClickRadioButton->isChecked()){return;}
+	if (! ui->coordClickRadioButton->isChecked()) {return;}
 	m_newPoint->setPosition(position);
 	ui->coordXEdit->setValue(position.x());
 	ui->coordYEdit->setValue(position.y());
@@ -174,38 +170,38 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 	oss << ui->nameSpinBox->value();
 	m_newPoint->setName(oss.str().c_str());
 	// center point coordinates.
-	if (ui->coordClickRadioButton->isChecked()){
-		if (m_insert){
+	if (ui->coordClickRadioButton->isChecked()) {
+		if (m_insert) {
 			dir = m_insertTarget->nextPoint()->position() - m_newPoint->position();
-		}else{
+		} else {
 			dir = m_newPoint->position() - m_insertTarget->position();
 		}
 		iRIC::rotateVector270(dir);
 		dir.normalize();
 		m_newPoint->setCrosssectionDirection(dir);
-	}else if (ui->coordValueRadioButton->isChecked()){
+	} else if (ui->coordValueRadioButton->isChecked()) {
 		m_newPoint->setPosition(QVector2D(ui->coordXEdit->value(), ui->coordYEdit->value()));
-		if (m_insert){
+		if (m_insert) {
 			dir = m_insertTarget->nextPoint()->position() - m_newPoint->position();
-		}else{
+		} else {
 			dir = m_newPoint->position() - m_insertTarget->position();
 		}
 		iRIC::rotateVector270(dir);
 		dir.normalize();
 		m_newPoint->setCrosssectionDirection(dir);
-	}else if (ui->coordRatioRadioButton->isChecked()){
+	} else if (ui->coordRatioRadioButton->isChecked()) {
 		ratio = ui->coordRatioSpinBox->value();
 		QVector2D pos;
-		if (m_insert){
+		if (m_insert) {
 			pos = m_lineCenter->interpolate(1 - ratio);
 			// modify direction.
 			dir = (m_lineCenter->interpolate(1 - ratio) -
-					 m_lineCenter->interpolate(1 - ratio - 0.01)).normalized();
-		}else{
+						 m_lineCenter->interpolate(1 - ratio - 0.01)).normalized();
+		} else {
 			pos = m_lineCenter->interpolate(ratio);
 			// modify direction.
 			dir = (m_lineCenter->interpolate(ratio + 0.01) -
-					 m_lineCenter->interpolate(ratio)).normalized();
+						 m_lineCenter->interpolate(ratio)).normalized();
 		}
 		m_newPoint->setPosition(pos);
 		ui->coordXEdit->setValue(pos.x());
@@ -215,23 +211,23 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		m_newPoint->setCrosssectionDirection(dir);
 	}
 	// crosssection.
-	if (ui->crossThreeRadioButton->isChecked()){
+	if (ui->crossThreeRadioButton->isChecked()) {
 		double tmpdbl1, tmpdbl2;
-		if (m_insert && m_insertTarget->firstPoint()){
+		if (m_insert && m_insertTarget->firstPoint()) {
 			tmpdbl1 = m_insertTarget->nextPoint()->crosssection().leftBank(true).position();
 			tmpdbl2 = m_insertTarget->nextPoint()->crosssection().rightBank(true).position();
-		}else if ((! m_insert) && m_insertTarget->nextPoint() == nullptr){
+		} else if ((! m_insert) && m_insertTarget->nextPoint() == nullptr) {
 			tmpdbl1 = m_insertTarget->crosssection().leftBank(true).position();
 			tmpdbl2 = m_insertTarget->crosssection().rightBank(true).position();
-		}else{
+		} else {
 			tmpdbl1 = 0.5 * (
-				m_insertTarget->crosssection().leftBank(true).position() +
-				m_insertTarget->nextPoint()->crosssection().leftBank(true).position()
-				);
+									m_insertTarget->crosssection().leftBank(true).position() +
+									m_insertTarget->nextPoint()->crosssection().leftBank(true).position()
+								);
 			tmpdbl2 = 0.5 * (
-				m_insertTarget->crosssection().rightBank(true).position() +
-				m_insertTarget->nextPoint()->crosssection().rightBank(true).position()
-				);
+									m_insertTarget->crosssection().rightBank(true).position() +
+									m_insertTarget->nextPoint()->crosssection().rightBank(true).position()
+								);
 		}
 		m_newPoint->crosssection().AltitudeInfo().clear();
 		m_newPoint->crosssection().addPoint(tmpdbl1, 0);
@@ -239,25 +235,25 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		m_newPoint->crosssection().addPoint(tmpdbl2, 0);
 		int tmpint;
 		RawDataRiverPathPoint* tmpp = m_insertTarget;
-		if (tmpp->firstPoint()){tmpp = tmpp->nextPoint();}
+		if (tmpp->firstPoint()) {tmpp = tmpp->nextPoint();}
 		tmpint = tmpp->CenterToLeftCtrlPoints.size();
 		m_newPoint->CenterToLeftCtrlPoints.clear();
 		m_newPoint->CenterToLeftCtrlPoints.reserve(tmpint);
-		for (int i = 1; i <= tmpint; ++i){
-			m_newPoint->CenterToLeftCtrlPoints.push_back(i / (double) (tmpint + 1));
+		for (int i = 1; i <= tmpint; ++i) {
+			m_newPoint->CenterToLeftCtrlPoints.push_back(i / (double)(tmpint + 1));
 		}
 		tmpint = tmpp->CenterToRightCtrlPoints.size();
 		m_newPoint->CenterToRightCtrlPoints.clear();
 		m_newPoint->CenterToRightCtrlPoints.reserve(tmpint);
-		for (int i = 1; i <= tmpint; ++i){
-			m_newPoint->CenterToRightCtrlPoints.push_back(i / (double) (tmpint + 1));
+		for (int i = 1; i <= tmpint; ++i) {
+			m_newPoint->CenterToRightCtrlPoints.push_back(i / (double)(tmpint + 1));
 		}
-	}else if (ui->crossCopyRadioButton->isChecked()){
+	} else if (ui->crossCopyRadioButton->isChecked()) {
 		// copy crosssection from the specified river path point.
 		QString rppName = ui->crossCopyComboBox->currentText();
 		RawDataRiverPathPoint* p = m_rs->m_headPoint->nextPoint();
-		while (p != nullptr){
-			if (p->name() == rppName){
+		while (p != nullptr) {
+			if (p->name() == rppName) {
 				break;
 			}
 			p = p->nextPoint();
@@ -266,17 +262,17 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		m_newPoint->crosssection().AltitudeInfo() = p->crosssection().AltitudeInfo();
 		m_newPoint->CenterToLeftCtrlPoints = p->CenterToLeftCtrlPoints;
 		m_newPoint->CenterToRightCtrlPoints = p->CenterToRightCtrlPoints;
-	}else if (ui->crossCreateRadioButton->isChecked()){
+	} else if (ui->crossCreateRadioButton->isChecked()) {
 		// delete the 0 points added automatically.
 		m_newPoint->crosssection().AltitudeInfo().clear();
 		int numPoints = ui->crossNumberBox->value() / 2;
 		// create crosssection.
 		LinearInterpolator1D1 interpolator;
-		RawDataRiverPathPoint *fromP, *toP;
-		if (m_insert){
+		RawDataRiverPathPoint* fromP, *toP;
+		if (m_insert) {
 			fromP = m_insertTarget->nextPoint();
 			toP = m_insertTarget;
-		}else{
+		} else {
 			fromP = m_insertTarget;
 			toP = m_insertTarget->nextPoint();
 		}
@@ -289,13 +285,13 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 
 		// left bank.
 		QVector2D leftbank;
-		if (m_insert){
+		if (m_insert) {
 			leftbank = m_insertTarget->leftBank()->interpolate(1. - ratio);
-		}else{
+		} else {
 			leftbank = m_insertTarget->leftBank()->interpolate(ratio);
 		}
 		double leftbankdist = (leftbank - m_newPoint->position()).length();
-		for (int i = 1; i <= numPoints; ++i){
+		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->lXSec()->interpolate(tmpt).height();
 			tmpdbl2 = toP->lXSec()->interpolate(tmpt).height();
@@ -304,13 +300,13 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		}
 		// right bank.
 		QVector2D rightbank;
-		if (m_insert){
+		if (m_insert) {
 			rightbank = m_insertTarget->rightBank()->interpolate(1. - ratio);
-		}else{
+		} else {
 			rightbank = m_insertTarget->rightBank()->interpolate(ratio);
 		}
 		double rightbankdist = (rightbank - m_newPoint->position()).length();
-		for (int i = 1; i <= numPoints; ++i){
+		for (int i = 1; i <= numPoints; ++i) {
 			double tmpt = i / static_cast<double>(numPoints);
 			tmpdbl1 = fromP->rXSec()->interpolate(tmpt).height();
 			tmpdbl2 = toP->rXSec()->interpolate(tmpt).height();
@@ -319,28 +315,28 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 		}
 		// create center to left division points.
 		unsigned int tmpint;
-		if (m_insert){
+		if (m_insert) {
 			tmpint = static_cast<unsigned int>(m_insertTarget->nextPoint()->CenterToLeftCtrlPoints.size());
-		}else{
+		} else {
 			tmpint = static_cast<unsigned int>(m_insertTarget->CenterToLeftCtrlPoints.size());
 		}
 		m_newPoint->CenterToLeftCtrlPoints.clear();
 		m_newPoint->CenterToLeftCtrlPoints.reserve(tmpint);
-		for (unsigned int i = 0; i < tmpint; ++i){
+		for (unsigned int i = 0; i < tmpint; ++i) {
 			tmpdbl1 = fromP->CenterToLeftCtrlPoints[i];
 			tmpdbl2 = toP->CenterToLeftCtrlPoints[i];
 			interpolator.setValues(tmpdbl1, tmpdbl2);
 			m_newPoint->CenterToLeftCtrlPoints.push_back(interpolator.interpolate(ratio));
 		}
 		// create center to right division points.
-		if (m_insert){
+		if (m_insert) {
 			tmpint = static_cast<unsigned int>(m_insertTarget->nextPoint()->CenterToRightCtrlPoints.size());
-		}else{
+		} else {
 			tmpint = static_cast<unsigned int>(m_insertTarget->CenterToRightCtrlPoints.size());
 		}
 		m_newPoint->CenterToRightCtrlPoints.clear();
 		m_newPoint->CenterToRightCtrlPoints.reserve(tmpint);
-		for (unsigned int i = 0; i < tmpint; ++i){
+		for (unsigned int i = 0; i < tmpint; ++i) {
 			tmpdbl1 = fromP->CenterToRightCtrlPoints[i];
 			tmpdbl2 = toP->CenterToRightCtrlPoints[i];
 			interpolator.setValues(tmpdbl1, tmpdbl2);
@@ -351,24 +347,25 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 	m_newPoint->updateXSecInterpolators();
 }
 
-void RawDataRiverPathPointInsertDialog::setupComboBox(){
+void RawDataRiverPathPointInsertDialog::setupComboBox()
+{
 	int index = 0;
 	QComboBox* combo = ui->crossCopyComboBox;
 	combo->clear();
 	RawDataRiverPathPoint* p = m_rs->m_headPoint->nextPoint();
 	int i = 0;
-	while (p != nullptr){
+	while (p != nullptr) {
 		combo->addItem(p->name());
-		if (m_insert && p == m_insertTarget->nextPoint()){
+		if (m_insert && p == m_insertTarget->nextPoint()) {
 			index = i;
 		}
-		if ((! m_insert) && p == m_insertTarget){
+		if ((! m_insert) && p == m_insertTarget) {
 			index = i;
 		}
 		p = p->nextPoint();
 		++i;
 	}
-	if (index < combo->count()){
+	if (index < combo->count()) {
 		combo->setCurrentIndex(index);
 	}
 }
@@ -382,12 +379,12 @@ void RawDataRiverPathPointInsertDialog::setDefaultName()
 	double min;
 	double def;
 	double max;
-	if (m_insertTarget->firstPoint()){
+	if (m_insertTarget->firstPoint()) {
 		// we are going to add point before the first point.
 		min = m_insertTarget->nextPoint()->name().toDouble() + small;
 		def = m_insertTarget->nextPoint()->name().toDouble() + offset;
 		max = def + bigoffset;
-	} else if (m_insertTarget->nextPoint() == nullptr){
+	} else if (m_insertTarget->nextPoint() == nullptr) {
 		// we are going to add point after the last point.
 		max = m_insertTarget->name().toDouble() - small;
 		def = m_insertTarget->name().toDouble() - offset;
@@ -405,18 +402,18 @@ void RawDataRiverPathPointInsertDialog::setDefaultName()
 void RawDataRiverPathPointInsertDialog::setDefaultPosition()
 {
 	QVector2D defaultPosition;
-	if (m_insert){
-		if (m_insertTarget->firstPoint()){
+	if (m_insert) {
+		if (m_insertTarget->firstPoint()) {
 			QVector2D diff = m_insertTarget->position() - m_insertTarget->nextPoint()->position();
 			defaultPosition = m_insertTarget->position() + diff;
-		}else{
+		} else {
 			defaultPosition = m_insertTarget->position() * 0.5 + m_insertTarget->nextPoint()->position() * 0.5;
 		}
-	}else{
-		if (m_insertTarget->nextPoint() == nullptr){
+	} else {
+		if (m_insertTarget->nextPoint() == nullptr) {
 			QVector2D diff = m_insertTarget->position() - m_insertTarget->previousPoint()->position();
 			defaultPosition = m_insertTarget->position() + diff;
-		}else{
+		} else {
 			defaultPosition = m_insertTarget->position() * 0.5 + m_insertTarget->nextPoint()->position() * 0.5;
 		}
 	}
@@ -426,8 +423,8 @@ void RawDataRiverPathPointInsertDialog::setDefaultPosition()
 
 void RawDataRiverPathPointInsertDialog::handleRatioToggle(bool toggled)
 {
-	if (! toggled){
-		if (ui->crossCreateRadioButton->isChecked()){
+	if (! toggled) {
+		if (ui->crossCreateRadioButton->isChecked()) {
 			ui->crossThreeRadioButton->setChecked(true);
 		}
 	}

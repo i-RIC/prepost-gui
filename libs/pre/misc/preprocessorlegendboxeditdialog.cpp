@@ -2,7 +2,7 @@
 #include "ui_preprocessorlegendboxeditdialog.h"
 #include <guibase/vtktextpropertysettingdialog.h>
 
-PreProcessorLegendBoxEditDialog::PreProcessorLegendBoxEditDialog(QWidget *parent) :
+PreProcessorLegendBoxEditDialog::PreProcessorLegendBoxEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PreProcessorLegendBoxEditDialog)
 {
@@ -67,6 +67,6 @@ void PreProcessorLegendBoxEditDialog::editEntryTextSetting()
 	dialog.disableSize();
 	dialog.disableColor();
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_entryTextSetting = dialog.setting();
 }

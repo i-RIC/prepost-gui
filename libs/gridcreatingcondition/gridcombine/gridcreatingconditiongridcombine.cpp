@@ -30,15 +30,15 @@ GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataIt
 
 GridCreatingConditionGridCombine::~GridCreatingConditionGridCombine()
 {
-	if (m_rightClickingMenu != nullptr){
+	if (m_rightClickingMenu != nullptr) {
 		delete m_rightClickingMenu;
 	}
 }
 
-bool GridCreatingConditionGridCombine::create(QWidget *parent)
+bool GridCreatingConditionGridCombine::create(QWidget* parent)
 {
 	showDialog(parent);
-	if (! m_isAccepted){return false;}
+	if (! m_isAccepted) {return false;}
 
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
@@ -48,8 +48,8 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 
-	for (int j = 0; j < m_jMax; j++){
-		for (int i = 0; i < m_iMax; i++){
+	for (int j = 0; j < m_jMax; j++) {
+		for (int i = 0; i < m_iMax; i++) {
 			points->InsertPoint(m_iMax * j + i, x8[i + 1][j + 1], y8[i + 1][j + 1], 0.0);
 		}
 	}
@@ -57,15 +57,15 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 
 	// allocate memory for all grid related conditions.
 	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-	for (auto it = clist.begin(); it != clist.end(); ++it){
+	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}
 	GridRelatedConditionContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
 	GridRelatedConditionRealNodeContainer* rnContainer = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
-	if (rnContainer != nullptr){
-		for (int j = 0; j < m_jMax; j++){
-			for (int i = 0; i < m_iMax; i++){
+	if (rnContainer != nullptr) {
+		for (int j = 0; j < m_jMax; j++) {
+			for (int i = 0; i < m_iMax; i++) {
 				rnContainer->setValue(m_iMax * j + i, z8[i + 1][j + 1]);
 			}
 		}
@@ -74,9 +74,9 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	}
 	c = grid->gridRelatedCondition("CellCondition");
 	GridRelatedConditionIntegerCellContainer* icContainer = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
-	if (icContainer != nullptr){
-		for (int j = 0; j < m_jMax - 1; j++){
-			for (int i = 0; i < m_iMax - 1; i++){
+	if (icContainer != nullptr) {
+		for (int j = 0; j < m_jMax - 1; j++) {
+			for (int i = 0; i < m_iMax - 1; i++) {
 				icContainer->setValue((m_iMax - 1) * j + i, obst[i + 1][j + 1]);
 			}
 		}
@@ -85,7 +85,7 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	}
 	grid->setModified();
 
-	for (int i = 0; i < m_iMax + 1; i++){
+	for (int i = 0; i < m_iMax + 1; i++) {
 		delete[] x8[i];
 		delete[] y8[i];
 		delete[] z8[i];
@@ -94,7 +94,7 @@ bool GridCreatingConditionGridCombine::create(QWidget *parent)
 	delete[] y8;
 	delete[] z8;
 
-	for (int i = 0; i < m_iMax; i++){
+	for (int i = 0; i < m_iMax; i++) {
 		delete[] obst[i];
 	}
 	delete[] obst;
@@ -120,38 +120,38 @@ void GridCreatingConditionGridCombine::setupParameters()
 	double** x8_1 = new double*[ni4_1 + 1];
 	double** y8_1 = new double*[ni4_1 + 1];
 	double** z8_1 = new double*[ni4_1 + 1];
-	for (int i = 0; i < ni4_1 + 1; i++){
+	for (int i = 0; i < ni4_1 + 1; i++) {
 		x8_1[i] = new double[nj4_1 + 1];
 		y8_1[i] = new double[nj4_1 + 1];
 		z8_1[i] = new double[nj4_1 + 1];
 	}
 	rncont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(g1->gridRelatedCondition("Elevation"));
-	for (int i = 0; i < ni4_1 * nj4_1; i++){
+	for (int i = 0; i < ni4_1 * nj4_1; i++) {
 		double point[3];
 		g1->vtkGrid()->GetPoint(i, point);
 		int ii = i % ni4_1 + 1;
 		int jj = i / ni4_1 + 1;
 		x8_1[ii][jj] = point[0];
 		y8_1[ii][jj] = point[1];
-		if (rncont != 0){
+		if (rncont != 0) {
 			z8_1[ii][jj] = rncont->value(i);
-		}else{
+		} else {
 			z8_1[ii][jj] = 0;
 		}
 	}
 
 	// initialize obst4_1
 	int** obst4_1 = new int*[ni4_1];
-	for (int i = 0; i < ni4_1; i++){
+	for (int i = 0; i < ni4_1; i++) {
 		obst4_1[i] = new int[nj4_1];
 	}
 	iccont = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(g1->gridRelatedCondition("CellCondition"));
-	for (int i = 0; i < (ni4_1 - 1) * (nj4_1 - 1); i++){
+	for (int i = 0; i < (ni4_1 - 1) * (nj4_1 - 1); i++) {
 		int ii = i % (ni4_1 - 1) + 1;
 		int jj = i / (ni4_1 - 1) + 1;
-		if (iccont != 0){
+		if (iccont != 0) {
 			obst4_1[ii][jj] = iccont->value(i);
-		}else{
+		} else {
 			obst4_1[ii][jj] = 0;
 		}
 	}
@@ -164,13 +164,13 @@ void GridCreatingConditionGridCombine::setupParameters()
 	double** x8_2 = new double*[ni4_2 + 1];
 	double** y8_2 = new double*[ni4_2 + 1];
 	double** z8_2 = new double*[ni4_2 + 1];
-	for (int i = 0; i < ni4_2 + 1; i++){
+	for (int i = 0; i < ni4_2 + 1; i++) {
 		x8_2[i] = new double[nj4_2 + 1];
 		y8_2[i] = new double[nj4_2 + 1];
 		z8_2[i] = new double[nj4_2 + 1];
 	}
 	rncont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(g2->gridRelatedCondition("Elevation"));
-	for (int i = 0; i < ni4_2 * nj4_2; i++){
+	for (int i = 0; i < ni4_2 * nj4_2; i++) {
 		double point[3];
 		g2->vtkGrid()->GetPoint(i, point);
 		int ii = i % ni4_2 + 1;
@@ -182,11 +182,11 @@ void GridCreatingConditionGridCombine::setupParameters()
 
 	// initialize obst4_2
 	int** obst4_2 = new int*[ni4_2];
-	for (int i = 0; i < ni4_2; i++){
+	for (int i = 0; i < ni4_2; i++) {
 		obst4_2[i] = new int[nj4_2];
 	}
 	iccont = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(g2->gridRelatedCondition("CellCondition"));
-	for (int i = 0; i < (ni4_2 - 1) * (nj4_2 - 1); i++){
+	for (int i = 0; i < (ni4_2 - 1) * (nj4_2 - 1); i++) {
 		int ii = i % (ni4_2 - 1) + 1;
 		int jj = i / (ni4_2 - 1) + 1;
 		obst4_2[ii][jj] = iccont->value(i);
@@ -197,7 +197,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	jx[1] = j_m2;
 	jx[2] = j_t1;
 	jx[3] = j_t2;
-	for (int s = 0; s < 7; s++){
+	for (int s = 0; s < 7; s++) {
 		ix[s] = 0;
 	}
 	ix[3] = i_t1;
@@ -206,8 +206,8 @@ void GridCreatingConditionGridCombine::setupParameters()
 	int ni = ni4_1;
 	int nj = nj4_1 + nj4_2;
 	int jxd = 1;
-	if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Right) jxd = - 1;
-	if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Left) nj = nj4_1 + ni4_2 - 1;
+	if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Right) { jxd = - 1; }
+	if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Left) { nj = nj4_1 + ni4_2 - 1; }
 	m_iMax = ni;
 	m_jMax = nj;
 	if (j_conf > GridCreatingConditionGridCombineSettingDialog::Right &&
@@ -223,45 +223,45 @@ void GridCreatingConditionGridCombine::setupParameters()
 	y8 = new double*[m_iMax + 1];
 	z8 = new double*[m_iMax + 1];
 	obst = new int*[m_iMax];
-	for (int i = 0; i < m_iMax + 1; i++){
+	for (int i = 0; i < m_iMax + 1; i++) {
 		x8[i] = new double[m_jMax + 1];
 		y8[i] = new double[m_jMax + 1];
 		z8[i] = new double[m_jMax + 1];
 	}
-	for (int i = 0; i < m_iMax; i++){
+	for (int i = 0; i < m_iMax; i++) {
 		obst[i] = new int[m_jMax];
 	}
-	for (int i = 1; i <= ni4_1; i++){
-		for (int j = j_m1 + 1; j <= j_m2 + 1; j++){
+	for (int i = 1; i <= ni4_1; i++) {
+		for (int j = j_m1 + 1; j <= j_m2 + 1; j++) {
 			x8[i][j] = x8_1[i][j - j_m1];
 			y8[i][j] = y8_1[i][j - j_m1];
 			z8[i][j] = z8_1[i][j - j_m1];
 		}
 	}
-	for (int i = 1; i <= ni4_1 - 1; i++){
-		for (int j = j_m1 + 1; j <= j_m2; j++){
+	for (int i = 1; i <= ni4_1 - 1; i++) {
+		for (int j = j_m1 + 1; j <= j_m2; j++) {
 			obst[i][j] = obst4_1[i][j - j_m1];
 		}
 	}
 
-	if (j_conf == GridCreatingConditionGridCombineSettingDialog::Bind){
-		for (int i = 1; i <= ni4_1; i++){
-			for (int j = j_t1 + 1; j <= j_t2 + 1; j++){
+	if (j_conf == GridCreatingConditionGridCombineSettingDialog::Bind) {
+		for (int i = 1; i <= ni4_1; i++) {
+			for (int j = j_t1 + 1; j <= j_t2 + 1; j++) {
 				x8[i][j] = x8_2[i][j - j_t1];
 				y8[i][j] = y8_2[i][j - j_t1];
 				z8[i][j] = z8_2[i][j - j_t1];
 			}
 		}
-		for (int i = 1; i <= ni4_1 - 1; i++){
-			for (int j = j_t1 + 1; j <= j_t2; j++){
+		for (int i = 1; i <= ni4_1 - 1; i++) {
+			for (int j = j_t1 + 1; j <= j_t2; j++) {
 				obst[i][j] = obst4_2[i][j - j_t1];
 			}
 		}
 		// obstacle cells outside computational domain
-		for (int i = 1; i <= i_t1; i++){
+		for (int i = 1; i <= i_t1; i++) {
 			obst[i][j_t1] = 1;
 		}
-	} else if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Left){
+	} else if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Left) {
 		int js1 = (1 + jxd) / 2;
 		int js2 = (1 - jxd) / 2;
 		int j_nj;
@@ -270,14 +270,14 @@ void GridCreatingConditionGridCombine::setupParameters()
 		double sl2_x;
 		double sl2_y;
 		int j_p;
-		if (j_conf == GridCreatingConditionGridCombineSettingDialog::Left){
+		if (j_conf == GridCreatingConditionGridCombineSettingDialog::Left) {
 			j_nj = 1;
 			sl1_x = x8_1[1][nj4_1] - p1_x;
 			sl1_y = y8_1[1][nj4_1] - p1_y;
 			sl2_x = x8_1[ni4_1][nj4_1] - p2_x;
 			sl2_y = y8_1[ni4_1][nj4_1] - p2_y;
 			j_p = nj;
-		} else if (j_conf == GridCreatingConditionGridCombineSettingDialog::Right){
+		} else if (j_conf == GridCreatingConditionGridCombineSettingDialog::Right) {
 			j_nj = nj4_2;
 			sl1_x = x8_1[1][1] - p1_x;
 			sl1_y = y8_1[1][1] - p1_y;
@@ -286,15 +286,15 @@ void GridCreatingConditionGridCombine::setupParameters()
 			j_p = 1;
 		}
 
-		for (int i = i_t1 + 1; i <= i_t2 + 1; i++){
-			for (int j = j_t1 + 1; j != j_t2 + 1 + jxd; j += jxd){
+		for (int i = i_t1 + 1; i <= i_t2 + 1; i++) {
+			for (int j = j_t1 + 1; j != j_t2 + 1 + jxd; j += jxd) {
 				x8[i][j] = x8_2[ni4_2 - jxd * (j - j_t1) + jxd][j_nj + jxd * (i - i_t1) - jxd];
 				y8[i][j] = y8_2[ni4_2 - jxd * (j - j_t1) + jxd][j_nj + jxd * (i - i_t1) - jxd];
 				z8[i][j] = z8_2[ni4_2 - jxd * (j - j_t1) + jxd][j_nj + jxd * (i - i_t1) - jxd];
 			}
 		}
-		for (int i = i_t1 + 1; i <= i_t2; i++){
-			for (int j = j_t1 + js1; j != j_t2 + js2 + jxd; j += jxd){
+		for (int i = i_t1 + 1; i <= i_t2; i++) {
+			for (int j = j_t1 + js1; j != j_t2 + js2 + jxd; j += jxd) {
 				obst[i][j] = obst4_2[ni4_2 - jxd * (j - j_t1) - js2][j_nj + jxd * (i - i_t1) - jxd - js2];
 			}
 		}
@@ -302,13 +302,13 @@ void GridCreatingConditionGridCombine::setupParameters()
 		x8[1][j_p] = p1_x;
 		y8[1][j_p] = p1_y;
 		z8[1][j_p] = beta;
-		for (int j = j_t2 + 1 - jxd; j != j_t1 + 1; j -= jxd){
+		for (int j = j_t2 + 1 - jxd; j != j_t1 + 1; j -= jxd) {
 			x8[1][j] = x8[1][j + jxd] + sl1_x / (ni4_2 - 1.) * alpha;
 			y8[1][j] = y8[1][j + jxd] + sl1_y / (ni4_2 - 1.) * alpha;
 			z8[1][j] = beta;
 		}
-		for (int j = j_t2 + 1; j != j_t1 + 1; j -= jxd){
-			for (int i = 2; i <= i_t1; i++){
+		for (int j = j_t2 + 1; j != j_t1 + 1; j -= jxd) {
+			for (int i = 2; i <= i_t1; i++) {
 				x8[i][j] = x8[i - 1][j] + (x8[i_t1 + 1][j] - x8[1][j]) / i_t1 * alpha;
 				y8[i][j] = y8[i - 1][j] + (y8[i_t1 + 1][j] - y8[1][j]) / i_t1 * alpha;
 				z8[i][j] = beta;
@@ -318,28 +318,28 @@ void GridCreatingConditionGridCombine::setupParameters()
 		x8[ni][j_p] = p2_x;
 		y8[ni][j_p] = p2_y;
 		z8[ni][j_p] = beta;
-		for (int j = j_t2 + 1 - jxd; j != j_t1 + 1; j -= jxd){
+		for (int j = j_t2 + 1 - jxd; j != j_t1 + 1; j -= jxd) {
 			x8[ni][j] = x8[ni][j + jxd] + sl2_x / (ni4_2 - 1.) * alpha;
 			y8[ni][j] = y8[ni][j + jxd] + sl2_y / (ni4_2 - 1.) * alpha;
 			z8[ni][j] = beta;
 		}
-		for (int j = j_t2 + 1; j != j_t1 + 1; j -= jxd){
-			for (int i = ni - 1; i >= i_t2 + 2; i--){
+		for (int j = j_t2 + 1; j != j_t1 + 1; j -= jxd) {
+			for (int i = ni - 1; i >= i_t2 + 2; i--) {
 				x8[i][j] = x8[i + 1][j] + (x8[i_t2 + 1][j] - x8[ni][j]) / (ni - 1. - i_t2) * alpha;
 				y8[i][j] = y8[i + 1][j] + (y8[i_t2 + 1][j] - y8[ni][j]) / (ni - 1. - i_t2) * alpha;
 				z8[i][j] = beta;
 			}
 		}
-		for (int j = j_t1 + js1; j != j_t2 + js2 + jxd; j += jxd){
-			for (int i = ni - 1; i >= i_t2 + 1; i--){
+		for (int j = j_t1 + js1; j != j_t2 + js2 + jxd; j += jxd) {
+			for (int i = ni - 1; i >= i_t2 + 1; i--) {
 				obst[i][j] = 1;
 			}
-			for (int i = 1; i <= i_t1; i++){
+			for (int i = 1; i <= i_t1; i++) {
 				obst[i][j] = 1;
 			}
 		}
 	}
-	for (int i = 0; i < ni4_1 + 1; i++){
+	for (int i = 0; i < ni4_1 + 1; i++) {
 		delete[] x8_1[i];
 		delete[] y8_1[i];
 		delete[] z8_1[i];
@@ -348,12 +348,12 @@ void GridCreatingConditionGridCombine::setupParameters()
 	delete[] y8_1;
 	delete[] z8_1;
 
-	for (int i = 0; i < ni4_1; i++){
+	for (int i = 0; i < ni4_1; i++) {
 		delete[] obst4_1[i];
 	}
 	delete[] obst4_1;
 
-	for (int i = 0; i < ni4_2 + 1; i++){
+	for (int i = 0; i < ni4_2 + 1; i++) {
 		delete[] x8_2[i];
 		delete[] y8_2[i];
 		delete[] z8_2[i];
@@ -361,7 +361,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	delete[] x8_2;
 	delete[] y8_2;
 	delete[] z8_2;
-	for (int i = 0; i < ni4_2; i++){
+	for (int i = 0; i < ni4_2; i++) {
 		delete[] obst4_2[i];
 	}
 	delete[] obst4_2;
@@ -377,7 +377,7 @@ void GridCreatingConditionGridCombine::setupMenu()
 	QAction* dummyAction = m_menu->addAction(tr("(No additional operation available)"));
 	dummyAction->setDisabled(true);
 
-	if (m_rightClickingMenu == 0){
+	if (m_rightClickingMenu == 0) {
 		PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
 		m_rightClickingMenu = new QMenu();
 		m_rightClickingMenu->addAction(p->createAction());
@@ -386,7 +386,7 @@ void GridCreatingConditionGridCombine::setupMenu()
 	}
 }
 
-void GridCreatingConditionGridCombine::showDialog(QWidget *parent)
+void GridCreatingConditionGridCombine::showDialog(QWidget* parent)
 {
 	GridCreatingConditionGridCombineSettingDialog* dialog = new GridCreatingConditionGridCombineSettingDialog(parent);
 
@@ -408,7 +408,7 @@ void GridCreatingConditionGridCombine::showDialog(QWidget *parent)
 	dialog->setMainstreamFlowBeginningIndex(i_t1);
 
 	int result = dialog->exec();
-	if (result == QDialog::Accepted){
+	if (result == QDialog::Accepted) {
 		m_isAccepted = true;
 		handleDialogAccepted(dialog);
 	} else {
@@ -418,7 +418,7 @@ void GridCreatingConditionGridCombine::showDialog(QWidget *parent)
 	delete dialog;
 }
 
-void GridCreatingConditionGridCombine::handleDialogAccepted(QDialog *d)
+void GridCreatingConditionGridCombine::handleDialogAccepted(QDialog* d)
 {
 	GridCreatingConditionGridCombineSettingDialog* dialog = dynamic_cast<GridCreatingConditionGridCombineSettingDialog*>(d);
 
@@ -446,7 +446,7 @@ void GridCreatingConditionGridCombine::handleDialogAccepted(QDialog *d)
 void GridCreatingConditionGridCombine::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode combineNode = iRIC::getChildNode(node, "GridCombine");
-	if (! combineNode.isNull()){
+	if (! combineNode.isNull()) {
 		loadGridCombineFromProjectMainFile(combineNode);
 	}
 }
@@ -513,7 +513,7 @@ void GridCreatingConditionGridCombine::saveGridCombineToProjectMainFile(QXmlStre
 
 void GridCreatingConditionGridCombine::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
+	if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -521,8 +521,8 @@ void GridCreatingConditionGridCombine::mousePressEvent(QMouseEvent* event, PrePr
 
 void GridCreatingConditionGridCombine::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

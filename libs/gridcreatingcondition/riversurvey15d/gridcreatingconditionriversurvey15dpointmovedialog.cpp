@@ -15,27 +15,23 @@ public:
 		bool apply,
 		double offset,
 		GridCreatingConditionRiverSurvey15D* cond)
-		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Move Control Points"))
-	{
+		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Move Control Points")) {
 		m_apply = apply;
 		m_condition = cond;
 		executeGCPOffset(offset);
 	}
-	void undo()
-	{
+	void undo() {
 		m_point->CtrlPoints(m_position) = m_before;
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_point->CtrlPoints(m_position) = m_after;
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 private:
-	void executeGCPOffset(double offset)
-	{
+	void executeGCPOffset(double offset) {
 		std::list<CtrlPointSelectionInfo> infoList = m_condition->m_selectedCtrlPointInfoList;
 		CtrlPointSelectionInfo Info = infoList.front();
 		m_point = Info.Point;
@@ -45,7 +41,7 @@ private:
 
 		int minindex = infoList.front().Index;
 		int maxindex = infoList.back().Index;
-		for (int i = minindex; i <= maxindex; ++i){
+		for (int i = minindex; i <= maxindex; ++i) {
 			Info.Point->CtrlPoints(Info.Position)[i] += offset;
 		}
 
@@ -56,7 +52,7 @@ private:
 	}
 
 	bool m_apply;
-	GridCreatingConditionRiverSurvey15D *m_condition;
+	GridCreatingConditionRiverSurvey15D* m_condition;
 	RawDataRiverPathPoint* m_point;
 	RawDataRiverPathPoint::CtrlPointPosition m_position;
 	QVector<double> m_before;
@@ -89,14 +85,14 @@ GridCreatingConditionRiverSurvey15DPointMoveDialog::~GridCreatingConditionRiverS
 
 void GridCreatingConditionRiverSurvey15DPointMoveDialog::apply()
 {
-	if (! m_applied){
+	if (! m_applied) {
 		doOffset();
 	}
 }
 
 void GridCreatingConditionRiverSurvey15DPointMoveDialog::accept()
 {
-	if (! m_applied){
+	if (! m_applied) {
 		doOffset();
 	}
 	QDialog::accept();
@@ -105,7 +101,7 @@ void GridCreatingConditionRiverSurvey15DPointMoveDialog::accept()
 void GridCreatingConditionRiverSurvey15DPointMoveDialog::doOffset()
 {
 	setSValue();
-	if (m_SValue > 0){
+	if (m_SValue > 0) {
 		iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand15D(true, m_SValue * m_UpperLimit, m_condition));
 	} else {
 		iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointMoveCommand15D(true, - m_SValue * m_LowerLimit, m_condition));
@@ -115,7 +111,7 @@ void GridCreatingConditionRiverSurvey15DPointMoveDialog::doOffset()
 
 void GridCreatingConditionRiverSurvey15DPointMoveDialog::doReset()
 {
-	if (m_applied){
+	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
 	m_applied = false;
@@ -127,7 +123,7 @@ void GridCreatingConditionRiverSurvey15DPointMoveDialog::setSValue()
 	bool ok;
 
 	val = QString(ui->lineEdit_TransferQuantityS->text()).toDouble(&ok);
-	if (ok){
+	if (ok) {
 		m_SValue = val;
 	}
 }
@@ -138,11 +134,11 @@ void GridCreatingConditionRiverSurvey15DPointMoveDialog::reject()
 	QDialog::reject();
 }
 
-void GridCreatingConditionRiverSurvey15DPointMoveDialog::handleButtonClick(QAbstractButton *button)
+void GridCreatingConditionRiverSurvey15DPointMoveDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }

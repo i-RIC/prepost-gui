@@ -35,7 +35,7 @@ Graph2dWindowMarkerGroupDataItem::~Graph2dWindowMarkerGroupDataItem()
 void Graph2dWindowMarkerGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList list = node.childNodes();
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		QDomNode child = list.at(i);
 		Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem setting;
 		setting.loadFromProjectMainFile(child);
@@ -47,8 +47,8 @@ void Graph2dWindowMarkerGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Graph2dWindowMarkerGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dWindowMarkerDataItem* mitem = dynamic_cast<Graph2dWindowMarkerDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dWindowMarkerDataItem* mitem = dynamic_cast<Graph2dWindowMarkerDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("Marker");
 		mitem->setting().saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -63,7 +63,8 @@ QDialog* Graph2dWindowMarkerGroupDataItem::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog){
+void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
 	Graph2dWindowMarkerSettingDialog* dialog = dynamic_cast<Graph2dWindowMarkerSettingDialog*>(propDialog);
 	m_setting = dialog->setting();
 	Graph2dWindowView* view = dataModel()->view();
@@ -71,7 +72,7 @@ void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 	// delete all current children.
 	dataModel()->objectBrowserView()->blockSignals(true);
 	dataModel()->itemModel()->blockSignals(true);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		delete *it;
 	}
 	// setup new items.

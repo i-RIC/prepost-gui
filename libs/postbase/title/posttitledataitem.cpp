@@ -11,7 +11,7 @@
 #include <vtkTextProperty.h>
 #include <vtkActor2DCollection.h>
 
-PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem *parent)
+PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.png"),parent)
 {
 	m_standardItem->setCheckable(true);
@@ -64,8 +64,7 @@ class PostCommonTitleEditCommand : public QUndoCommand
 {
 public:
 	PostCommonTitleEditCommand(bool enable, const PostTitleSetting& setting, PostTitleDataItem* item)
-		: QUndoCommand(PostTitleDataItem::tr("Edit title setting"))
-	{
+		: QUndoCommand(PostTitleDataItem::tr("Edit title setting")) {
 		m_newEnabled = enable;
 		m_newSetting = setting;
 
@@ -74,16 +73,14 @@ public:
 
 		m_dataItem = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_dataItem->setIsCommandExecuting(true);
 		m_dataItem->setEnabled(m_newEnabled);
 		m_dataItem->m_setting = m_newSetting;
 		m_dataItem->updateActorSettings();
 		m_dataItem->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_dataItem->setIsCommandExecuting(true);
 		m_dataItem->setEnabled(m_oldEnabled);
 		m_dataItem->m_setting = m_oldSetting;
@@ -110,7 +107,7 @@ void PostTitleDataItem::updateActorSettings()
 {
 	actor2DCollection()->RemoveAllItems();
 	// To avoid VTK warning
-	if (m_setting.title.isEmpty()){
+	if (m_setting.title.isEmpty()) {
 		m_titleActor->VisibilityOff();
 		updateVisibility();
 		return;

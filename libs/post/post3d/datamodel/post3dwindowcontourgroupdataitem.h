@@ -28,9 +28,9 @@ public:
 	/// Constructor
 	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowContourGroupDataItem();
-	QString currentSolution(){return m_currentSolution;}
-	ContourSettingWidget::Contour contour(){return m_contour;}
-	int numberOfDivision(){return m_numberOfDivision;}
+	QString currentSolution() {return m_currentSolution;}
+	ContourSettingWidget::Contour contour() {return m_contour;}
+	int numberOfDivision() {return m_numberOfDivision;}
 	LookupTableContainer* lookupTable();
 	void setSetting(const QString& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleC, const vtkTextPropertySettingContainer& labelC, bool draw);
 	void updateChildActors();
@@ -42,14 +42,14 @@ public:
 	void updateScalarBarActorSetting();
 	void handleStandardItemChange();
 	void update();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& );
-	void doSaveToProjectMainFile(QXmlStreamWriter& );
+	void doLoadFromProjectMainFile(const QDomNode&);
+	void doSaveToProjectMainFile(QXmlStreamWriter&);
 	QDialog* propertyDialog(QWidget* p);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void updateVisibility(bool visible);

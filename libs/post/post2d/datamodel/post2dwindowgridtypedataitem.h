@@ -19,12 +19,12 @@ public:
 	virtual ~Post2dWindowGridTypeDataItem();
 	const QList<Post2dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
 	const QString& name();
-	Post2dWindowZoneDataItem* zoneData(const QString& name){
+	Post2dWindowZoneDataItem* zoneData(const QString& name) {
 		return m_zoneDataNameMap.value(name);
 	}
-	SolverDefinitionGridType* gridType(){return m_gridType;}
+	SolverDefinitionGridType* gridType() {return m_gridType;}
 	Post2dWindowRawDataTopDataItem* rawDataItem() const {return m_rawDataItem;}
-	LookupTableContainer* lookupTable(const QString& attName){return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
 protected:

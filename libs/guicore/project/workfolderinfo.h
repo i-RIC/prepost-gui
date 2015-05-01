@@ -21,7 +21,7 @@ public:
 	/// Absolute path of workfolder
 	const QString& absolutePath() const {return m_absolutePath;}
 	/// Whether the workfolder is locked.
-	bool isLocked(){return m_isLocked;}
+	bool isLocked() {return m_isLocked;}
 
 private:
 	QString m_folderName;

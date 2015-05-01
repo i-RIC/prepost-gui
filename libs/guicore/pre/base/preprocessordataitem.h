@@ -30,9 +30,9 @@ public:
 	PreProcessorDataItem(ProjectDataItem* parent)
 		: GraphicsWindowDataItem(parent)
 	{}
-	virtual ~PreProcessorDataItem(){}
+	virtual ~PreProcessorDataItem() {}
 
-	PreProcessorWindowInterface* preProcessorWindow(){
+	PreProcessorWindowInterface* preProcessorWindow() {
 		return dynamic_cast<PreProcessorWindowInterface*>(mainWindow());
 	}
 
@@ -43,7 +43,7 @@ protected:
 	QAction* deleteAction();
 	MouseBoundingBox* mouseBoundingBox();
 	void copyStandardItem();
-	virtual PreProcessorDataModelInterface* dataModel(){
+	virtual PreProcessorDataModelInterface* dataModel() {
 		return dynamic_cast<PreProcessorDataModelInterface*>(GraphicsWindowDataItem::dataModel());
 	}
 

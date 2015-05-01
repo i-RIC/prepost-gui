@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverPathPointRotateDialog;
 }
 
@@ -15,7 +16,7 @@ class RawDataRiverPathPointRotateDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget *parent = nullptr);
+	explicit RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointRotateDialog();
 	void setCurrentRelativeAngle(double current);
 public slots:
@@ -29,7 +30,7 @@ private:
 	void doReset();
 	void apply();
 
-	Ui::RawDataRiverPathPointRotateDialog *ui;
+	Ui::RawDataRiverPathPointRotateDialog* ui;
 	double m_currentRelativeAngle;
 	RawDataRiverSurvey* m_rs;
 	bool m_applyed;

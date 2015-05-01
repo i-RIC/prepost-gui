@@ -11,7 +11,7 @@
 
 #include <vtkRenderer.h>
 
-Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(BackgroundImageInfo *image, Post2dWindowDataItem *parent)
+Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent)
 	: Post2dWindowDataItem("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	m_imageInfo = image;
@@ -51,7 +51,7 @@ void Post2dWindowBackgroundImageDataItem::mouseReleaseEvent(QMouseEvent* event, 
 	m_imageInfo->mouseReleaseEvent(m_actor, event, v);
 }
 
-void Post2dWindowBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserView *view)
+void Post2dWindowBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
 {
 	QStandardItem* parentItem = dynamic_cast<Post2dWindowDataItem*>(parent())->standardItem();
 	bool isFirst = (m_standardItem->index().row() == 0);
@@ -60,7 +60,7 @@ void Post2dWindowBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserV
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void Post2dWindowBackgroundImageDataItem::assignActionZValues(const ZDepthRange &range)
+void Post2dWindowBackgroundImageDataItem::assignActionZValues(const ZDepthRange& range)
 {
 	double position[3];
 	m_actor->GetPosition(position);

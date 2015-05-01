@@ -8,14 +8,16 @@ class RawDataRiverSurvey;
 class RawDataRiverPathPoint;
 class GridCreatingConditionRiverSurvey15D;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurvey15DRegionDialog;
 }
 
-class GridCreatingConditionRiverSurvey15DRegionDialog : public QDialog {
+class GridCreatingConditionRiverSurvey15DRegionDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	explicit GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget *parent = nullptr);
+	explicit GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurvey15DRegionDialog();
 	void setData(RawDataRiverSurvey* rs);
 	void setStartPoint(RawDataRiverPathPoint* p);
@@ -35,7 +37,7 @@ private:
 	QList<RawDataRiverPathPoint*> m_points;
 	GridCreatingConditionRiverSurvey15D* m_condition;
 
-	Ui::GridCreatingConditionRiverSurvey15DRegionDialog *ui;
+	Ui::GridCreatingConditionRiverSurvey15DRegionDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONRIVERSURVEY15DREGIONDIALOG_H

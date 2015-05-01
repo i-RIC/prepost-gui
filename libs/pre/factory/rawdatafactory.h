@@ -19,8 +19,8 @@ private:
 	 */
 	RawDataFactory();
 public:
-	static RawDataFactory& instance(){
-		if (m_instance == nullptr){
+	static RawDataFactory& instance() {
+		if (m_instance == nullptr) {
 			m_instance = new RawDataFactory();
 		}
 		return *m_instance;

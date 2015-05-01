@@ -3,7 +3,7 @@
 
 #include <QVector2D>
 
-DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget *parent) :
+DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::DistanceMeasureCopyPropertyDialog)
 {
@@ -39,7 +39,7 @@ void DistanceMeasureCopyPropertyDialog::setPoints(const QVector2D& v1, const QVe
 
 void DistanceMeasureCopyPropertyDialog::setLabelPosition(LabelPosition pos)
 {
-	switch (pos){
+	switch (pos) {
 	case lpTopCenter:
 		ui->lpCenterTop->setChecked(true);
 		break;
@@ -59,7 +59,7 @@ void DistanceMeasureCopyPropertyDialog::setLabelPosition(LabelPosition pos)
 
 void DistanceMeasureCopyPropertyDialog::setLabelMode(LabelMode lm)
 {
-	switch (lm){
+	switch (lm) {
 	case lmAuto:
 		ui->labelAutoRadioButton->setChecked(true);
 		break;
@@ -113,19 +113,20 @@ QVector2D DistanceMeasureCopyPropertyDialog::point2() const
 	return ret;
 }
 
-bool DistanceMeasureCopyPropertyDialog::showLabel() const {
+bool DistanceMeasureCopyPropertyDialog::showLabel() const
+{
 	return ui->showLabelCheckBox->isChecked();
 }
 
 DistanceMeasureCopyPropertyDialog::LabelPosition DistanceMeasureCopyPropertyDialog::labelPosition() const
 {
-	if (ui->lpCenterTop->isChecked()){
+	if (ui->lpCenterTop->isChecked()) {
 		return lpTopCenter;
-	} else if (ui->lpCenterBottom->isChecked()){
+	} else if (ui->lpCenterBottom->isChecked()) {
 		return lpBottomCenter;
-	} else if (ui->lpMiddleLeft->isChecked()){
+	} else if (ui->lpMiddleLeft->isChecked()) {
 		return lpMiddleLeft;
-	} else if (ui->lpMiddleRight->isChecked()){
+	} else if (ui->lpMiddleRight->isChecked()) {
 		return lpMiddleRight;
 	}
 	return lpTopCenter;
@@ -133,9 +134,9 @@ DistanceMeasureCopyPropertyDialog::LabelPosition DistanceMeasureCopyPropertyDial
 
 DistanceMeasureCopyPropertyDialog::LabelMode DistanceMeasureCopyPropertyDialog::labelMode() const
 {
-	if (ui->labelAutoRadioButton->isChecked()){
+	if (ui->labelAutoRadioButton->isChecked()) {
 		return lmAuto;
-	} else if (ui->labelCustomRadioButton->isChecked()){
+	} else if (ui->labelCustomRadioButton->isChecked()) {
 		return lmCustom;
 	}
 	return lmAuto;

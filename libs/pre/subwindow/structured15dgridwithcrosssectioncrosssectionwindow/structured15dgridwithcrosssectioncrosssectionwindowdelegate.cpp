@@ -4,10 +4,10 @@
 Structured15DGridWithCrossSectionCrossSectionWindowDelegate::Structured15DGridWithCrossSectionCrossSectionWindowDelegate()
 {}
 
-QWidget* Structured15DGridWithCrossSectionCrossSectionWindowDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+QWidget* Structured15DGridWithCrossSectionCrossSectionWindowDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
 	QVariant dat = index.model()->data(index, Qt::DisplayRole);
-	if (dat.type() == QVariant::Double){
+	if (dat.type() == QVariant::Double) {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* realEdit = new RealNumberEditWidget(parent);
 		return realEdit;
@@ -15,10 +15,10 @@ QWidget* Structured15DGridWithCrossSectionCrossSectionWindowDelegate::createEdit
 	return QStyledItemDelegate::createEditor(parent, option, index);
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const
+void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setEditorData(QWidget* editor, const QModelIndex& index) const
 {
 	QVariant dat = index.model()->data(index, Qt::DisplayRole);
-	if (dat.type() == QVariant::Double){
+	if (dat.type() == QVariant::Double) {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* realEdit = static_cast<RealNumberEditWidget*>(editor);
 		realEdit->setValue(dat.toDouble());
@@ -27,10 +27,10 @@ void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setEditorData(
 	}
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const
+void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
 {
 	QVariant dat = index.model()->data(index, Qt::DisplayPropertyRole);
-	if (dat.type() == QVariant::Double){
+	if (dat.type() == QVariant::Double) {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* realEdit = static_cast<RealNumberEditWidget*>(editor);
 		model->setData(index, realEdit->value(), Qt::EditRole);
@@ -39,7 +39,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::setModelData(Q
 	}
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex & /*index*/) const
+void Structured15DGridWithCrossSectionCrossSectionWindowDelegate::updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& /*index*/) const
 {
 	editor->setGeometry(option.rect);
 }

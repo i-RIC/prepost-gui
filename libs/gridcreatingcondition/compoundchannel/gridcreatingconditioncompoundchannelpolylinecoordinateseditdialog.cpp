@@ -12,31 +12,29 @@
 #include <vtkPolygon.h>
 #include <vtkPoints.h>
 
-class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate : public QStyledItemDelegate {
+class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate : public QStyledItemDelegate
+{
 public:
-	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate(QObject* = nullptr){}
-	QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &,
-		const QModelIndex &) const
-	{
+	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate(QObject* = nullptr) {}
+	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem&,
+												const QModelIndex&) const {
 		RealNumberEditWidget* realEdit = new RealNumberEditWidget(parent);
 		return realEdit;
 	}
-	void setEditorData(QWidget *editor, const QModelIndex &index) const {
+	void setEditorData(QWidget* editor, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		RealNumberEditWidget* realEdit = dynamic_cast<RealNumberEditWidget*>(editor);
 		realEdit->setValue(dat.toDouble());
 	}
-	void setModelData(QWidget *editor, QAbstractItemModel *model,
-		const QModelIndex &index) const
-	{
+	void setModelData(QWidget* editor, QAbstractItemModel* model,
+										const QModelIndex& index) const {
 		// Float. Edit with RealEdit
 		RealNumberEditWidget* realEdit = dynamic_cast<RealNumberEditWidget*>(editor);
 		model->setData(index, realEdit->value(), Qt::EditRole);
 	}
 
-	void updateEditorGeometry(QWidget *editor,
-		const QStyleOptionViewItem &option, const QModelIndex &) const
-	{
+	void updateEditorGeometry(QWidget* editor,
+														const QStyleOptionViewItem& option, const QModelIndex&) const {
 		editor->setGeometry(option.rect);
 	}
 };
@@ -45,36 +43,33 @@ class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand : publi
 {
 public:
 	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCompoundChannelAbstractLine* l, GridCreatingConditionCompoundChannel* cond)
-		: QUndoCommand(GridCreatingConditionCompoundChannel::tr("Edit Center Line Coordinates"))
-	{
+		: QUndoCommand(GridCreatingConditionCompoundChannel::tr("Edit Center Line Coordinates")) {
 		m_apply = apply;
 		m_newCoords = coords;
 		m_line = l;
 		m_condition = cond;
 		double p[3];
 		vtkPoints* points = m_line->getVtkLine()->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
 			m_oldCoords.append(QVector2D(p[0], p[1]));
 		}
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPoints* points = m_line->getVtkLine()->GetPoints();
-		for (vtkIdType i = 0; i < m_oldCoords.count(); ++i){
+		for (vtkIdType i = 0; i < m_oldCoords.count(); ++i) {
 			QVector2D v = m_oldCoords.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
 		points->Modified();
 		m_line->updateShapeData();
-		if (! m_apply){
+		if (! m_apply) {
 			m_condition->renderGraphicsView();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPoints* points = m_line->getVtkLine()->GetPoints();
-		for (vtkIdType i = 0; i < m_newCoords.count(); ++i){
+		for (vtkIdType i = 0; i < m_newCoords.count(); ++i) {
 			QVector2D v = m_newCoords.at(i);
 			points->SetPoint(i, v.x(), v.y(), 0);
 		}
@@ -90,7 +85,7 @@ private:
 	GridCreatingConditionCompoundChannel* m_condition;
 };
 
-GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractLine* line, GridCreatingConditionCompoundChannel* condition, QWidget *parent) :
+GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractLine* line, GridCreatingConditionCompoundChannel* condition, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog)
 {
@@ -110,7 +105,7 @@ GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::~GridCreating
 
 void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -121,7 +116,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::accept()
 
 void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_line->updateShapeData();
@@ -132,7 +127,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::reject()
 
 void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -143,7 +138,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::apply()
 
 void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
@@ -156,7 +151,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::setupDat
 	m_model->setHeaderData(1, Qt::Horizontal, tr("Y"));
 
 	vtkPoints* points = m_line->getVtkLine()->GetPoints();
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		m_model->insertRow(i);
 		double p[3];
 		points->GetPoint(i, p);
@@ -165,7 +160,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::setupDat
 	}
 	// set the model into view.
 	ui->tableView->setModel(m_model);
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 	QAbstractItemDelegate* delegate = new GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialogDelegate(this);
@@ -176,7 +171,7 @@ QVector<QVector2D> GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDi
 {
 	QVector<QVector2D> ret;
 	int rows = m_model->rowCount();
-	for (int i = 0; i < rows; ++i){
+	for (int i = 0; i < rows; ++i) {
 		double x = m_model->data(m_model->index(i, 0, QModelIndex())).toDouble();
 		double y = m_model->data(m_model->index(i, 1, QModelIndex())).toDouble();
 		ret.append(QVector2D(x, y));

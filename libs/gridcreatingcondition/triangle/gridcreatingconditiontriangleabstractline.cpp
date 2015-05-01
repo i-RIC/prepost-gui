@@ -51,11 +51,11 @@ bool GridCreatingConditionTriangleAbstractLine::isEdgeSelectable(const QVector2D
 	double pcoords[3];
 	double weights[32];
 	double d = limitdist * limitdist;
-	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < m_edgeGrid->GetNumberOfCells(); ++i) {
 		vtkCell* cell = m_edgeGrid->GetCell(i);
 		double dist;
-		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-			if (dist < d){
+		if (1 == cell->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)) {
+			if (dist < d) {
 				// this is the selected edge.
 				m_selectedEdgeId = i;
 				return true;
@@ -70,14 +70,14 @@ const QVector<QPointF> GridCreatingConditionTriangleAbstractLine::polyLine(QPoin
 	QVector<QPointF> ret;
 	vtkIdList* idlist = m_vtkPolyLine->GetPointIds();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
-	if (points->GetNumberOfPoints() == 0){return ret;}
+	if (points->GetNumberOfPoints() == 0) {return ret;}
 	int vCount = idlist->GetNumberOfIds();
 	QPointF lastP, newP;
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-		if (i == 0 || lastP != newP){
+		if (i == 0 || lastP != newP) {
 			ret << newP;
 		}
 		lastP = newP;
@@ -90,7 +90,7 @@ void GridCreatingConditionTriangleAbstractLine::setPolyLine(const QVector<QPoint
 	m_vtkPolyLine->Initialize();
 	vtkPoints* points = m_vtkPolyLine->GetPoints();
 	points->SetNumberOfPoints(polyline.count());
-	for (int i = 0; i < polyline.count(); ++i){
+	for (int i = 0; i < polyline.count(); ++i) {
 		QPointF point = polyline.at(i);
 		points->SetPoint(i, point.x(), point.y(), 0);
 	}
@@ -146,7 +146,7 @@ void GridCreatingConditionTriangleAbstractLine::updateShapeData()
 	idlist->SetNumberOfIds(pointCount);
 
 	// update idlist.
-	for (vtkIdType i = 0; i < pointCount; ++i){
+	for (vtkIdType i = 0; i < pointCount; ++i) {
 		idlist->SetId(i, i);
 	}
 
@@ -155,7 +155,7 @@ void GridCreatingConditionTriangleAbstractLine::updateShapeData()
 	vtkIdType edgeId = 0;
 	int edgeCount = m_vtkPolyLine->GetNumberOfPoints() - 1;
 	m_edgeGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkLine* nextEdge = vtkLine::New();
 		nextEdge->GetPointIds()->SetId(0, edgeId);
 		nextEdge->GetPointIds()->SetId(1, edgeId + 1);
@@ -171,7 +171,7 @@ void GridCreatingConditionTriangleAbstractLine::updateShapeData()
 	vtkIdType vertexId = 0;
 	int vertexCount = m_vtkPolyLine->GetNumberOfPoints();
 	m_vertexGrid->Allocate(vertexCount);
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		vtkVertex* nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_vertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
@@ -189,9 +189,9 @@ void GridCreatingConditionTriangleAbstractLine::setZDepthRange(double /*min*/, d
 
 void GridCreatingConditionTriangleAbstractLine::setActive(bool active)
 {
-	if (active){
+	if (active) {
 		m_parent->actorCollection()->AddItem(m_vertexActor);
-	}else{
+	} else {
 		m_vertexActor->VisibilityOff();
 		m_parent->actorCollection()->RemoveItem(m_vertexActor);
 	}

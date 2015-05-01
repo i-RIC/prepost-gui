@@ -9,8 +9,9 @@
 
 #include <vtkIdList.h>
 
-namespace Ui {
-class PropertyBrowserView;
+namespace Ui
+{
+	class PropertyBrowserView;
 }
 
 class AttributeBrowserTargetDataItem;
@@ -22,7 +23,7 @@ class GUICOREDLL_EXPORT PropertyBrowserView : public QWidget
 public:
 	static const int ROWHEIGHT = 24;
 
-	explicit PropertyBrowserView(QWidget *parent = nullptr);
+	explicit PropertyBrowserView(QWidget* parent = nullptr);
 	~PropertyBrowserView();
 	void setTargetDataItem(AttributeBrowserTargetDataItem* item);
 	void resetForVertex(bool structured);
@@ -42,7 +43,7 @@ private:
 	void updateCoords(double x, double y);
 	void updateAttributes(const QList<PropertyBrowserAttribute>& attr);
 	AttributeBrowserTargetDataItem* m_targetDataItem;
-	Ui::PropertyBrowserView *ui;
+	Ui::PropertyBrowserView* ui;
 };
 
 #endif // PROPERTYBROWSERVIEW_H

@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverSurveyDisplaySettingDialog;
 }
 
@@ -14,7 +15,7 @@ class RawDataRiverSurveyDisplaySettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverSurveyDisplaySettingDialog(QWidget *parent = nullptr);
+	explicit RawDataRiverSurveyDisplaySettingDialog(QWidget* parent = nullptr);
 	~RawDataRiverSurveyDisplaySettingDialog();
 	void setColormapVisible(bool visible);
 	void setOpacityPercent(int opacity);
@@ -29,7 +30,7 @@ public:
 	int zScale();
 
 private:
-	Ui::RawDataRiverSurveyDisplaySettingDialog *ui;
+	Ui::RawDataRiverSurveyDisplaySettingDialog* ui;
 };
 
 #endif // RAWDATARIVERSURVEYDISPLAYSETTINGDIALOG_H

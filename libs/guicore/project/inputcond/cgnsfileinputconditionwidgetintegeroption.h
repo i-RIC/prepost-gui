@@ -13,7 +13,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetIntegerOption : public CgnsF
 	Q_OBJECT
 public:
 	CgnsFileInputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerInteger* cont);
-	void setDisabled(bool disable){
+	void setDisabled(bool disable) {
 		m_comboBox->setDisabled(disable);
 	}
 

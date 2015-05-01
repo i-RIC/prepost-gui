@@ -8,11 +8,11 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowParticleStructuredSettingDialog::Post2dWindowParticleStructuredSettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Post2dWindowParticleStructuredSettingDialog)
+Post2dWindowParticleStructuredSettingDialog::Post2dWindowParticleStructuredSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post2dWindowParticleStructuredSettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	m_timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
 	m_applying = false;
@@ -38,7 +38,7 @@ Post2dWindowParticleStructuredSettingDialog::Post2dWindowParticleStructuredSetti
 
 Post2dWindowParticleStructuredSettingDialog::~Post2dWindowParticleStructuredSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Post2dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -56,7 +56,7 @@ void Post2dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContai
 void Post2dWindowParticleStructuredSettingDialog::setSolution(const QString& sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
@@ -69,27 +69,27 @@ const QString Post2dWindowParticleStructuredSettingDialog::solution()
 void Post2dWindowParticleStructuredSettingDialog::setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm)
 {
 	m_timeMode = tm;
-	if (m_timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal){
+	if (m_timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
 		ui->timeSlider->setValue(m_skipNominations.count());
 	}
 }
 
 Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleStructuredSettingDialog::timeMode()
 {
-	if (ui->timeSlider->value() == m_skipNominations.count()){
+	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	} else if (ui->timeSlider->value() < m_skipNominations.count()){
+	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmSkip;
-	} else{
+	} else {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
 	}
 }
 
 void Post2dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 {
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSkip){return;}
-	for (int i = 0; i < m_skipNominations.count(); ++i){
-		if (m_skipNominations.at(i) == sr){
+	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSkip) {return;}
+	for (int i = 0; i < m_skipNominations.count(); ++i) {
+		if (m_skipNominations.at(i) == sr) {
 			ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
 			return;
 		}
@@ -98,15 +98,15 @@ void Post2dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 
 int Post2dWindowParticleStructuredSettingDialog::timeSamplingRate()
 {
-	if (ui->timeSlider->value() >= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
 }
 
 void Post2dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 {
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide){return;}
-	for (int i = 0; i < m_subDivNominations.count(); ++i){
-		if (m_subDivNominations.at(i) == sd){
+	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {return;}
+	for (int i = 0; i < m_subDivNominations.count(); ++i) {
+		if (m_subDivNominations.at(i) == sd) {
 			ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
 			return;
 		}
@@ -115,14 +115,14 @@ void Post2dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 
 int Post2dWindowParticleStructuredSettingDialog::timeDivision()
 {
-	if (ui->timeSlider->value() <= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
 }
 
 void Post2dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
 {
 
-	if (index == -1 || index >= m_settings.count()){
+	if (index == -1 || index >= m_settings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
@@ -132,53 +132,53 @@ void Post2dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
 
 void Post2dWindowParticleStructuredSettingDialog::iMinChanged(int min)
 {
-	if (m_applying){return;}
-	if (ui->imaxSlider->value() < min){
+	if (m_applying) {return;}
+	if (ui->imaxSlider->value() < min) {
 		ui->imaxSlider->setValue(min);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.iMin = min - 1;
 	}
 }
 
 void Post2dWindowParticleStructuredSettingDialog::iMaxChanged(int max)
 {
-	if (m_applying){return;}
-	if (ui->iminSlider->value() > max){
+	if (m_applying) {return;}
+	if (ui->iminSlider->value() > max) {
 		ui->iminSlider->setValue(max);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.iMax = max - 1;
 	}
 }
 
 void Post2dWindowParticleStructuredSettingDialog::jMinChanged(int min)
 {
-	if (m_applying){return;}
-	if (ui->jmaxSlider->value() < min){
+	if (m_applying) {return;}
+	if (ui->jmaxSlider->value() < min) {
 		ui->jmaxSlider->setValue(min);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.jMin = min - 1;
 	}
 }
 
 void Post2dWindowParticleStructuredSettingDialog::jMaxChanged(int max)
 {
-	if (m_applying){return;}
-	if (ui->jminSlider->value() > max){
+	if (m_applying) {return;}
+	if (ui->jminSlider->value() > max) {
 		ui->jminSlider->setValue(max);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.jMax = max - 1;
 	}
 }
 
 void Post2dWindowParticleStructuredSettingDialog::handleTimeSliderChange(int val)
 {
-	if (val < m_skipNominations.count()){
+	if (val < m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-	} else if (val > m_skipNominations.count()){
+	} else if (val > m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
 	} else {
 		ui->timeValueLabel->setText("1");
@@ -187,35 +187,35 @@ void Post2dWindowParticleStructuredSettingDialog::handleTimeSliderChange(int val
 
 void Post2dWindowParticleStructuredSettingDialog::handleSpaceSliderChange(int val)
 {
-	if (val < m_skipNominations.count()){
+	if (val < m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smSkip;
 			m_activeSetting->spaceSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->spaceSlider->value() - 1);
 		}
-	} else if (val > m_skipNominations.count()){
+	} else if (val > m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smSubdivide;
 			m_activeSetting->spaceDivision = m_subDivNominations.at(ui->spaceSlider->value() - m_skipNominations.count() - 1);
 		}
-	} else{
+	} else {
 		ui->spaceValueLabel->setText("1");
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smNormal;
 		}
 	}
 }
 
-void Post2dWindowParticleStructuredSettingDialog::colorChanged(const QColor &color)
+void Post2dWindowParticleStructuredSettingDialog::colorChanged(const QColor& color)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->color = color;
 }
 
 void Post2dWindowParticleStructuredSettingDialog::sizeChanged(int size)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->size = size;
 }
 
@@ -223,7 +223,7 @@ void Post2dWindowParticleStructuredSettingDialog::setupNominations()
 {
 	int noms[] = {2, 3, 4, 5, 0};
 	int idx = 0;
-	while (noms[idx] != 0){
+	while (noms[idx] != 0) {
 		m_subDivNominations.append(noms[idx]);
 		m_skipNominations.append(noms[idx]);
 		++ idx;
@@ -244,11 +244,11 @@ void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 	SolverDefinitionGridType* gt = zoneData->gridType();
 	int num = pd->GetNumberOfArrays();
 	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
+		if (tmparray == nullptr) {continue;}
 		QString name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() <= 1){
+		if (tmparray->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;
 		}
@@ -256,7 +256,7 @@ void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 		m_solutions.append(name);
 	}
 	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() < 2){
+	if (m_solutions.count() < 2) {
 		// solution selection is needless.
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
@@ -265,7 +265,7 @@ void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 
 void Post2dWindowParticleStructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -275,25 +275,25 @@ void Post2dWindowParticleStructuredSettingDialog::setupSettingList()
 
 void Post2dWindowParticleStructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_applying = true;
 	ui->iminSlider->setValue(m_activeSetting->range.iMin + 1);
 	ui->imaxSlider->setValue(m_activeSetting->range.iMax + 1);
 	ui->jminSlider->setValue(m_activeSetting->range.jMin + 1);
 	ui->jmaxSlider->setValue(m_activeSetting->range.jMax + 1);
-	if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smNormal){
+	if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smNormal) {
 		ui->spaceSlider->setValue(m_skipNominations.count());
 		handleSpaceSliderChange(m_skipNominations.count());
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSkip){
-		for (int i = 0; i < m_skipNominations.count(); ++i){
-			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate){
+	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSkip) {
+		for (int i = 0; i < m_skipNominations.count(); ++i) {
+			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate) {
 				ui->spaceSlider->setValue(m_skipNominations.count() - i - 1);
 				handleSpaceSliderChange(m_skipNominations.count() - i - 1);
 			}
 		}
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSubdivide){
-		for (int i = 0; i < m_subDivNominations.count(); ++i){
-			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision){
+	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSubdivide) {
+		for (int i = 0; i < m_subDivNominations.count(); ++i) {
+			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision) {
 				ui->spaceSlider->setValue(m_skipNominations.count() + i + 1);
 				handleSpaceSliderChange(m_skipNominations.count() + i + 1);
 			}
@@ -306,7 +306,7 @@ void Post2dWindowParticleStructuredSettingDialog::applySettings()
 
 void Post2dWindowParticleStructuredSettingDialog::addData()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	Post2dWindowStructuredParticleSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -322,10 +322,10 @@ void Post2dWindowParticleStructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != nullptr){delete item;}
+	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
-	if (current >= m_settings.count()){current = m_settings.count() - 1;}
+	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_settings[current]);
 	applySettings();
@@ -335,14 +335,14 @@ void Post2dWindowParticleStructuredSettingDialog::removeData()
 void Post2dWindowParticleStructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable){
+	if (! m_activeAvailable) {
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
 	dialog.setRegionMode(m_regionMode);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_regionMode = dialog.regionMode();
 }
 

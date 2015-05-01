@@ -2,8 +2,9 @@
 #include "postprocessorwindow.h"
 #include "../project/projectpostprocessors.h"
 
-PostProcessorWindowProjectDataItem::~PostProcessorWindowProjectDataItem(){
-	if (m_window != nullptr){
+PostProcessorWindowProjectDataItem::~PostProcessorWindowProjectDataItem()
+{
+	if (m_window != nullptr) {
 		PostProcessorWindow* w = m_window;
 		m_window = nullptr;
 		delete w;
@@ -12,7 +13,7 @@ PostProcessorWindowProjectDataItem::~PostProcessorWindowProjectDataItem(){
 
 void PostProcessorWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		m_window = nullptr;
 		dynamic_cast<ProjectPostProcessors*>(parent())->requestDelete(this);
 	}

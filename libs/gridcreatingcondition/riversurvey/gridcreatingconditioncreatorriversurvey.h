@@ -9,11 +9,11 @@ class GCC_RIVERSURVEY_EXPORT GridCreatingConditionCreatorRiverSurvey : public Gr
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorRiverSurvey();
-	~GridCreatingConditionCreatorRiverSurvey(){}
+	~GridCreatingConditionCreatorRiverSurvey() {}
 	// temporary
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
 	GridCreatingCondition* create(ProjectDataItem* parent);
-	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* ) const;
+	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORCENTERANDWIDTH_H

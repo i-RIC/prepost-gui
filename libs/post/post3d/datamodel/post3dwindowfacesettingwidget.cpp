@@ -5,7 +5,7 @@
 
 #include <vtkStructuredGrid.h>
 
-Post3dWindowFaceSettingWidget::Post3dWindowFaceSettingWidget(QWidget *parent) :
+Post3dWindowFaceSettingWidget::Post3dWindowFaceSettingWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::Post3dWindowFaceSettingWidget)
 {
@@ -59,7 +59,7 @@ void Post3dWindowFaceSettingWidget::setMyEnabled(bool enabled)
 	m_setting.enabled = enabled;
 	ui->directionGroupBox->setEnabled(enabled);
 	ui->rangeGroupBox->setEnabled(enabled);
-	if (enabled){
+	if (enabled) {
 		applyDirectionSetting();
 	}
 	emit settingChanged();
@@ -78,10 +78,10 @@ void Post3dWindowFaceSettingWidget::sliderRange(int range[6])
 void Post3dWindowFaceSettingWidget::iMinChanged(int imin)
 {
 	m_setting.iMin = imin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirI){
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirI) {
 		ui->iMaxSlider->setValue(imin);
 		m_setting.iMax = imin - 1;
-	} else if (ui->iMaxSlider->value() < imin){
+	} else if (ui->iMaxSlider->value() < imin) {
 		ui->iMaxSlider->setValue(imin);
 		m_setting.iMax = imin - 1;
 	}
@@ -91,7 +91,7 @@ void Post3dWindowFaceSettingWidget::iMinChanged(int imin)
 void Post3dWindowFaceSettingWidget::iMaxChanged(int imax)
 {
 	m_setting.iMax = imax - 1;
-	if (ui->iMinSlider->value() > imax){
+	if (ui->iMinSlider->value() > imax) {
 		ui->iMinSlider->setValue(imax);
 		m_setting.iMin = imax - 1;
 	}
@@ -101,10 +101,10 @@ void Post3dWindowFaceSettingWidget::iMaxChanged(int imax)
 void Post3dWindowFaceSettingWidget::jMinChanged(int jmin)
 {
 	m_setting.jMin = jmin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirJ){
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirJ) {
 		ui->jMaxSlider->setValue(jmin);
 		m_setting.jMax = jmin - 1;
-	}else if (ui->jMaxSlider->value() < jmin){
+	} else if (ui->jMaxSlider->value() < jmin) {
 		ui->jMaxSlider->setValue(jmin);
 		m_setting.jMax = jmin - 1;
 	}
@@ -114,7 +114,7 @@ void Post3dWindowFaceSettingWidget::jMinChanged(int jmin)
 void Post3dWindowFaceSettingWidget::jMaxChanged(int jmax)
 {
 	m_setting.jMax = jmax - 1;
-	if (ui->jMinSlider->value() > jmax){
+	if (ui->jMinSlider->value() > jmax) {
 		ui->jMinSlider->setValue(jmax);
 		m_setting.jMin = jmax - 1;
 	}
@@ -124,10 +124,10 @@ void Post3dWindowFaceSettingWidget::jMaxChanged(int jmax)
 void Post3dWindowFaceSettingWidget::kMinChanged(int kmin)
 {
 	m_setting.kMin = kmin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirK){
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirK) {
 		ui->kMaxSlider->setValue(kmin);
 		m_setting.kMax = kmin - 1;
-	}else if (ui->kMaxSlider->value() < kmin){
+	} else if (ui->kMaxSlider->value() < kmin) {
 		ui->kMaxSlider->setValue(kmin);
 		m_setting.kMax = kmin - 1;
 	}
@@ -137,7 +137,7 @@ void Post3dWindowFaceSettingWidget::kMinChanged(int kmin)
 void Post3dWindowFaceSettingWidget::kMaxChanged(int kmax)
 {
 	m_setting.kMax = kmax - 1;
-	if (ui->kMinSlider->value() > kmax){
+	if (ui->kMinSlider->value() > kmax) {
 		ui->kMinSlider->setValue(kmax);
 		m_setting.kMin = kmax - 1;
 	}
@@ -173,7 +173,7 @@ void Post3dWindowFaceSettingWidget::applyDirectionSetting()
 	ui->iMaxSlider->setEnabled(true);
 	ui->jMaxSlider->setEnabled(true);
 	ui->kMaxSlider->setEnabled(true);
-	switch (m_setting.direction){
+	switch (m_setting.direction) {
 	case Post3dWindowFaceDataItem::dirI:
 		ui->iRadioButton->setChecked(true);
 		ui->iMaxSlider->setDisabled(true);
@@ -194,7 +194,7 @@ void Post3dWindowFaceSettingWidget::applyDirectionSetting()
 
 void Post3dWindowFaceSettingWidget::maximizeRange()
 {
-	switch (m_setting.direction){
+	switch (m_setting.direction) {
 	case Post3dWindowFaceDataItem::dirI:
 		ui->jMinSlider->setValue(ui->jMinSlider->minimum());
 		ui->jMaxSlider->setValue(ui->jMaxSlider->maximum());
@@ -232,7 +232,7 @@ void Post3dWindowFaceSettingWidget::applySliderValues()
 	ui->kMinSlider->setValue(m_setting.kMin + 1);
 	ui->kMaxSlider->setValue(m_setting.kMax + 1);
 
-	switch (m_setting.direction){
+	switch (m_setting.direction) {
 	case Post3dWindowFaceDataItem::dirI:
 		ui->iMaxSlider->setValue(ui->iMinSlider->value());
 		break;

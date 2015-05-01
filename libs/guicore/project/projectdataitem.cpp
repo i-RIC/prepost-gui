@@ -15,7 +15,7 @@
 
 const QString ProjectDataItem::filename()
 {
-	if (m_filename == ""){return "";}
+	if (m_filename == "") {return "";}
 	QDir workdir(projectData()->workDirectory());
 	return workdir.absoluteFilePath(relativeFilename());
 }
@@ -29,7 +29,7 @@ const QString ProjectDataItem::relativeFilename()
 QStringList ProjectDataItem::containedFiles()
 {
 	QStringList ret;
-	if (m_filename != ""){ret.append(relativeFilename());}
+	if (m_filename != "") {ret.append(relativeFilename());}
 	return ret;
 }
 
@@ -38,7 +38,7 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 	// load data from project main file.
 	doLoadFromProjectMainFile(node);
 	// when this item stores data in external file, load it.
-	if (m_filename != ""){
+	if (m_filename != "") {
 		loadExternalData(filename());
 	}
 }
@@ -46,13 +46,13 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 void ProjectDataItem::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// when this item defines a sub folder, create the subfolder.
-	if (m_subFolder != ""){
+	if (m_subFolder != "") {
 		QDir(QDir(projectData()->workDirectory()).absoluteFilePath(parent()->relativeSubPath())).mkdir(m_subFolder);
 	}
 	// save data to project main file.
 	doSaveToProjectMainFile(writer);
 	// when this item stores data in external file, save it.
-	if (m_filename != ""){
+	if (m_filename != "") {
 		saveExternalData(filename());
 	}
 }
@@ -64,12 +64,12 @@ void ProjectDataItem::loadFilename(const QDomNode& node)
 
 void ProjectDataItem::saveFilename(QXmlStreamWriter& writer) const
 {
-	if (! m_filename.isNull()){
+	if (! m_filename.isNull()) {
 		writer.writeAttribute("filename", m_filename);
 	}
 }
 
-void ProjectDataItem::loadWindowGeometry(QWidget *w, const QDomNode &node)
+void ProjectDataItem::loadWindowGeometry(QWidget* w, const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 	QPoint pos;
@@ -84,7 +84,7 @@ void ProjectDataItem::loadWindowGeometry(QWidget *w, const QDomNode &node)
 	w->setVisible(visible);
 
 	bool max = elem.attribute("maximized").toInt();
-	if (max){
+	if (max) {
 		w->showMaximized();
 	}
 //	WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w);
@@ -145,11 +145,11 @@ void ProjectDataItem::writeOpacityPercent(int opacity, QXmlStreamWriter& writer)
 
 QString ProjectDataItem::relativeSubPath() const
 {
-	if (m_subFolder != ""){
+	if (m_subFolder != "") {
 		QString parentPath = parent()->relativeSubPath();
-		if (parentPath != ""){parentPath.append("/");}
+		if (parentPath != "") {parentPath.append("/");}
 		return parentPath.append(m_subFolder);
-	}else{
+	} else {
 		return parent()->relativeSubPath();
 	}
 }
@@ -164,8 +164,8 @@ bool ProjectDataItem::isNear(const QPoint& p1, const QPoint& p2)
 {
 	int xdiff = p2.x() - p1.x();
 	int ydiff = p2.y() - p2.y();
-	if (xdiff < - 2 || xdiff > 2){return false;}
-	if (ydiff < - 2 || ydiff > 2){return false;}
+	if (xdiff < - 2 || xdiff > 2) {return false;}
+	if (ydiff < - 2 || ydiff > 2) {return false;}
 	return true;
 }
 

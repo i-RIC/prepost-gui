@@ -17,7 +17,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <QTextCodec>
 #include <QTranslator>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 	QApplication a(argc, argv);
 	// show splash screen.
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	QStringList nameFilters;
 	nameFilters.append(QString("*_%1.qm").arg(locale));
 	QDir langDir(langFolder);
-	foreach (QString fileName, langDir.entryList(nameFilters, QDir::Files)){
+	foreach (QString fileName, langDir.entryList(nameFilters, QDir::Files)) {
 		QFileInfo finfo(langDir.filePath(fileName));
 		QTranslator* translator = new QTranslator(&a);
 		translator->load(finfo.baseName(), finfo.absolutePath());
@@ -49,20 +49,20 @@ int main(int argc, char *argv[])
 	iRICMainWindow w;
 	w.show();
 	splash.finish(&w);
-	if (w.checkWorkFolderWorks()){
+	if (w.checkWorkFolderWorks()) {
 		// work folder is good. project file can be opened.
 		bool projectFound = false;
-		if (argc > 1){
+		if (argc > 1) {
 			// project file or cgns file specified.
 			QTextCodec* codec = QTextCodec::codecForLocale();
 			int i = 1;
-			while (i < argc && ! projectFound){
+			while (i < argc && ! projectFound) {
 				QString arg(argv[i]);
-				if (arg.left(1) != "-"){
+				if (arg.left(1) != "-") {
 					// This is the project file name.
 					QString projectFile = codec->toUnicode(argv[i]);
 					QFileInfo finfo(projectFile);
-					if (finfo.suffix() == "cgn"){
+					if (finfo.suffix() == "cgn") {
 						// cgns file specified.
 						w.importCalculationResult(projectFile);
 					} else {
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 				++i;
 			}
 		}
-		if (! projectFound){
+		if (! projectFound) {
 			w.openStartDialog();
 		}
 	}

@@ -6,29 +6,30 @@
 #include "../post3dwindowdataitem.h"
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
 
-namespace Ui {
+namespace Ui
+{
 	class Post3dWindowStreamlineStructuredSettingDialog;
 }
 class PostZoneDataContainer;
 
 class Post3dWindowStreamlineStructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post3dWindowStreamlineStructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post3dWindowStreamlineStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowStreamlineStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post3dWindowStructuredStreamlineSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post3dWindowStructuredStreamlineSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
 	const QString solution();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post3dWindowStructuredStreamlineSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post3dWindowStructuredStreamlineSetSetting>& settings() {return m_settings;}
 
 private slots:
 	void activeDataChanged(int index);
@@ -51,7 +52,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-	Ui::Post3dWindowStreamlineStructuredSettingDialog *ui;
+	Ui::Post3dWindowStreamlineStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_settings;

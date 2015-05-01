@@ -15,7 +15,7 @@ public:
 	PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridCreatingConditionDataItem();
 	void setCondition(GridCreatingCondition* condition);
-	GridCreatingCondition* condition(){return m_condition;}
+	GridCreatingCondition* condition() {return m_condition;}
 	void addCustomMenuItems(QMenu* menu);
 	bool addToolBarButtons(QToolBar* /*tb*/);
 	//void handleStandardItemChange();
@@ -32,12 +32,12 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	QStringList containedFiles();
 	void moveGrid();
-	QAction* createAction(){return m_createAction;}
-	QAction* switchAction(){return m_switchAlgorithmAction;}
-	QAction* deleteAction(){return m_deleteAction;}
-	QAction* clearAction(){return m_clearAction;}
+	QAction* createAction() {return m_createAction;}
+	QAction* switchAction() {return m_switchAlgorithmAction;}
+	QAction* deleteAction() {return m_deleteAction;}
+	QAction* clearAction() {return m_clearAction;}
 	QMenu* menu();
-	virtual void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(3);}
+	virtual void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(3);}
 protected:
 	void assignActionZValues(const ZDepthRange& range);
 	void doLoadFromProjectMainFile(const QDomNode& node);

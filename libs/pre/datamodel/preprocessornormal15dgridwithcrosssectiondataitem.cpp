@@ -23,7 +23,7 @@ PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWith
 	m_childItems.append(m_cellGroupDataItem);
 	m_standardItem->takeRow(m_cellGroupDataItem->standardItem()->row());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0){
+	if (gtItem->gridType()->boundaryConditions().count() > 0) {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		m_childItems.append(m_bcGroupDataItem);
 		m_standardItem->takeRow(m_bcGroupDataItem->standardItem()->row());
@@ -43,7 +43,7 @@ void PreProcessorNormal15DGridWithCrossSectionDataItem::setupMenu()
 	m_editMenu->addAction(m_nodeEditAction);
 	m_editMenu->addAction(m_cellEditAction);
 
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		m_menu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
 	m_menu->addAction(m_deleteAction);

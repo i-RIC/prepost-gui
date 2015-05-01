@@ -5,7 +5,7 @@
 
 #define M_PI 3.1415926535
 
-BackgroundImageInfoDialog::BackgroundImageInfoDialog(QWidget *parent) :
+BackgroundImageInfoDialog::BackgroundImageInfoDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::BackgroundImageInfoDialog)
 {
@@ -45,7 +45,7 @@ void BackgroundImageInfoDialog::setProperties(double lbX, double lbY, double sca
 
 void BackgroundImageInfoDialog::update()
 {
-	if (ui->bottomRightRadioButton->isChecked()){
+	if (ui->bottomRightRadioButton->isChecked()) {
 		updateScaleAndAngle();
 	} else {
 		updateRightBottom();
@@ -62,16 +62,16 @@ void BackgroundImageInfoDialog::updateScaleAndAngle()
 	ui->scaleSpinBox->setValue(scale);
 	double rate = ydist / xdist;
 	double angle = 0;
-	if (xdist == 0 || std::abs(rate) > 1E6){
-		if (ydist > 0){
+	if (xdist == 0 || std::abs(rate) > 1E6) {
+		if (ydist > 0) {
 			angle = 90;
 		} else {
 			angle = -90;
 		}
 	} else {
 		angle = std::atan(rate) / M_PI * 180;
-		if (xdist < 0){
-			if (ydist > 0){
+		if (xdist < 0) {
+			if (ydist > 0) {
 				angle += 180;
 			} else {
 				angle -= 180;
@@ -146,9 +146,9 @@ void BackgroundImageInfoDialog::reject()
 
 void BackgroundImageInfoDialog::handleButtonBoxClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		reset();
 	}
 }

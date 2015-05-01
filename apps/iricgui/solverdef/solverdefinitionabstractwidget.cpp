@@ -5,7 +5,7 @@
 
 #include <QUrl>
 
-SolverDefinitionAbstractWidget::SolverDefinitionAbstractWidget(const SolverDefinitionAbstract* solver, QWidget *parent) :
+SolverDefinitionAbstractWidget::SolverDefinitionAbstractWidget(const SolverDefinitionAbstract* solver, QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::SolverDefinitionAbstractWidget)
 {
@@ -31,7 +31,7 @@ void SolverDefinitionAbstractWidget::setup()
 	ui->releaseValue->setText(m_solverDefinition->release().toString("yyyy/MM/dd"));
 	QString url = m_solverDefinition->url();
 	QString link;
-	if (url != ""){
+	if (url != "") {
 		QUrl u(url);
 		link.append("<a href=\"").append(u.toString()).append("\">").append(url).append("</a>");
 	}

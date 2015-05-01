@@ -36,12 +36,12 @@ Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverD
 	// add raw data node and grid data node.
 	// setup ScalarsToColors instances
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers2D();
-	if (containers.size() != 0){
+	if (containers.size() != 0) {
 		vtkPointData* pd = containers.at(0)->data()->GetPointData();
 		int num = pd->GetNumberOfArrays();
-		for (int i = 0; i < num; ++i){
+		for (int i = 0; i < num; ++i) {
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr){continue;}
+			if (tmparray == nullptr) {continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -51,7 +51,7 @@ Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverD
 
 Post2dBirdEyeWindowGridTypeDataItem::~Post2dBirdEyeWindowGridTypeDataItem()
 {
-	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
+	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it) {
 		delete *z_it;
 	}
 }
@@ -64,16 +64,16 @@ const QString& Post2dBirdEyeWindowGridTypeDataItem::name()
 void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 {
 	// first, clear the current zonedata.
-	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it){
+	for (auto z_it = m_zoneDatas.begin(); z_it != m_zoneDatas.end(); ++z_it) {
 		delete *z_it;
 	}
 	m_zoneDatas.clear();
 	const QList<PostZoneDataContainer*>& zones = postSolutionInfo()->zoneContainers2D();
 	int num = 0;
 	int zoneNum = 0;
-	for (auto it = zones.begin(); it != zones.end(); ++it){
+	for (auto it = zones.begin(); it != zones.end(); ++it) {
 		const PostZoneDataContainer* cont = (*it);
-		if (cont->gridType() == m_gridType){
+		if (cont->gridType() == m_gridType) {
 			Post2dBirdEyeWindowZoneDataItem* zdata = new Post2dBirdEyeWindowZoneDataItem(cont->zoneName(), num++, this);
 			m_zoneDatas.append(zdata);
 			m_zoneDataNameMap.insert(cont->zoneName(), zdata);
@@ -81,12 +81,12 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 			++ zoneNum;
 		}
 	}
-	if (m_lookupTables.count() == 0 && zones.size() != 0){
+	if (m_lookupTables.count() == 0 && zones.size() != 0) {
 		vtkPointData* pd = zones.at(0)->data()->GetPointData();
 		int num = pd->GetNumberOfArrays();
-		for(int i = 0; i < num; ++i){
+		for (int i = 0; i < num; ++i) {
 			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr){continue;}
+			if (tmparray == nullptr) {continue;}
 			QString name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
@@ -98,43 +98,42 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 
 void Post2dBirdEyeWindowGridTypeDataItem::update()
 {
-	if (! m_isZoneDataItemsSetup)
-	{
+	if (! m_isZoneDataItemsSetup) {
 		setupZoneDataItems();
 	}
 	// update LookupTable range.
 	updateLookupTableRanges();
 
 	// update child items.
-	for (auto it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it){
+	for (auto it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it) {
 		(*it)->update();
 	}
 }
 
 void Post2dBirdEyeWindowGridTypeDataItem::updateLookupTableRanges()
 {
-	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it){
+	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it) {
 		QString name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
 		bool first = true;
 		double range[2], min, max;
 		min = 0; max = 0;
-		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
+		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 			Post2dBirdEyeWindowZoneDataItem* zitem = *zit;
-			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr){continue;}
+			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr) {continue;}
 			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
-			if (dArray != nullptr){
+			if (dArray != nullptr) {
 				dArray->GetRange(range);
-				if (first || range[0] < min){min = range[0];}
-				if (first || range[1] > max){max = range[1];}
+				if (first || range[0] < min) {min = range[0];}
+				if (first || range[1] > max) {max = range[1];}
 				first = false;
 			}
 		}
-		if (max - min < 1E-4){
+		if (max - min < 1E-4) {
 			// the width is too small.
 			double mid = (min + max) * 0.5;
 			double width = mid * 0.01;
-			if (width < 1E-4){
+			if (width < 1E-4) {
 				width = 1E-4;
 			}
 			min = mid - width;
@@ -147,25 +146,25 @@ void Post2dBirdEyeWindowGridTypeDataItem::updateLookupTableRanges()
 void Post2dBirdEyeWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode ltNode = iRIC::getChildNode(node, "LookupTables");
-	if (! ltNode.isNull()){
+	if (! ltNode.isNull()) {
 		QDomNodeList tables = ltNode.childNodes();
-		for (int i = 0; i < tables.length(); ++i){
+		for (int i = 0; i < tables.length(); ++i) {
 			QDomNode ltNode = tables.at(i);
 			QString ltName = ltNode.toElement().attribute("name");
 			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
-			if (cont != nullptr){
+			if (cont != nullptr) {
 				cont->loadFromProjectMainFile(ltNode);
 			}
 		}
 	}
 	QDomNode zonesNode = iRIC::getChildNode(node, "Zones");
-	if (! zonesNode.isNull()){
+	if (! zonesNode.isNull()) {
 		QDomNodeList zones = zonesNode.childNodes();
-		for (int i = 0; i < zones.length(); ++i){
+		for (int i = 0; i < zones.length(); ++i) {
 			QDomNode zoneNode = zones.at(i);
 			QString zoneName = zoneNode.toElement().attribute("name");
 			Post2dBirdEyeWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
-			if (zdi != nullptr){
+			if (zdi != nullptr) {
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
 		}
@@ -185,7 +184,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	}
 	writer.writeEndElement();
 	writer.writeStartElement("Zones");
-	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit){
+	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 		Post2dBirdEyeWindowZoneDataItem* zitem = *zit;
 		writer.writeStartElement("Zone");
 		zitem->saveToProjectMainFile(writer);

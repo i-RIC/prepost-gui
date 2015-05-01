@@ -22,7 +22,7 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget *parent) :
+BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::BoundaryConditionDialog)
 {
@@ -43,7 +43,7 @@ BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataite
 	m_pointSizeContainer.setName("_pointsize");
 	m_pointSizeContainer.setDefaultValue(7);
 
-	if (dataitem->condition()->position() == SolverDefinitionBoundaryCondition::pCell){
+	if (dataitem->condition()->position() == SolverDefinitionBoundaryCondition::pCell) {
 		ui->pointSizeLabel->hide();
 		ui->pointSizeSpinBox->hide();
 	} else if (dataitem->condition()->position() == SolverDefinitionBoundaryCondition::pEdge) {
@@ -114,7 +114,7 @@ void BoundaryConditionDialog::save(const int /*fn*/)
 	m_colorContainer.save();
 	m_opacityContainer.setValue(ui->transparencyWidget->opacity());
 	m_opacityContainer.save();
-	if (ui->showNameCheckBox->isChecked()){
+	if (ui->showNameCheckBox->isChecked()) {
 		m_showNameContainer.setValue(1);
 	} else {
 		m_showNameContainer.setValue(0);
@@ -131,7 +131,7 @@ void BoundaryConditionDialog::accept()
 	QString name = ui->nameEdit->text();
 	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
 	bool ok = asciiCodec->canEncode(name);
-	if (! ok){
+	if (! ok) {
 		QMessageBox::warning(this, tr("Warning"), tr("Name has to consist of only English characters."));
 		return;
 	}

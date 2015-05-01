@@ -22,7 +22,7 @@ public:
 	QAction* calcCondEditAction;
 	QAction* calcCondImportAction;
 	QAction* calcCondExportAction;
-	QMenu* calcCondMenu(){return m_calcCondMenu;}
+	QMenu* calcCondMenu() {return m_calcCondMenu;}
 	void connectWithDataModel();
 private slots:
 	void informCgnsListUpdate(const QList<CgnsFileList::CgnsFileEntry*>& list);

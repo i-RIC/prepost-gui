@@ -9,25 +9,25 @@
 class QDomElement;
 
 template <class V>
-class EnumLoader {
+class EnumLoader
+{
 public:
 	const QMap<V, QString>& enumerations() const {return m_enumerations;}
 	const QMap<V, QString>& englishEnumerations() const {return m_englishEnumerations;}
 protected:
-	virtual void loadEnumeration(const QDomElement& node, const SolverDefinitionTranslator& translator)
-	{
+	virtual void loadEnumeration(const QDomElement& node, const SolverDefinitionTranslator& translator) {
 		QDomNode def = iRIC::getChildNode(node, "Definition");
-		if (def.isNull()){return;}
+		if (def.isNull()) {return;}
 		QDomNode enums = iRIC::getChildNode(def, "Enumerations");
 		QDomNodeList children;
-		if (! enums.isNull()){
+		if (! enums.isNull()) {
 			children = enums.childNodes();
 		} else {
 			children = def.childNodes();
 		}
-		for (int i = 0; i < children.count(); ++i){
+		for (int i = 0; i < children.count(); ++i) {
 			QDomNode child = children.at(i);
-			if (child.nodeName() == "Enumeration"){
+			if (child.nodeName() == "Enumeration") {
 				QDomElement elem = child.toElement();
 				V key = fromStr(elem.attribute("value"));
 				QString caption = translator.translate(elem.attribute("caption"));
@@ -42,14 +42,16 @@ protected:
 	QMap<V, QString> m_englishEnumerations;
 };
 
-class IntegerEnumLoader : public EnumLoader<int> {
+class IntegerEnumLoader : public EnumLoader<int>
+{
 protected:
-	int fromStr(const QString& str){return str.toInt();}
+	int fromStr(const QString& str) {return str.toInt();}
 };
 
-class RealEnumLoader : public EnumLoader<double> {
+class RealEnumLoader : public EnumLoader<double>
+{
 protected:
-	double fromStr(const QString& str){return str.toDouble();}
+	double fromStr(const QString& str) {return str.toDouble();}
 };
 
 #endif // ENUMLOADER_H

@@ -110,9 +110,9 @@ void PreProcessorGridShapeDataItem::handleStandardItemDoubleClicked()
 QColor PreProcessorGridShapeDataItem::color()
 {
 	return QColor(
-		(int) (m_color[0] * 255),
-		(int) (m_color[1] * 255),
-		(int) (m_color[2] * 255));
+					 (int)(m_color[0] * 255),
+					 (int)(m_color[1] * 255),
+					 (int)(m_color[2] * 255));
 }
 
 void PreProcessorGridShapeDataItem::setColor(const QColor& color)
@@ -125,9 +125,9 @@ void PreProcessorGridShapeDataItem::setColor(const QColor& color)
 QColor PreProcessorGridShapeDataItem::indexColor()
 {
 	return QColor(
-		(int) (m_indexColor[0] * 255),
-		(int) (m_indexColor[1] * 255),
-		(int) (m_indexColor[2] * 255));
+					 (int)(m_indexColor[0] * 255),
+					 (int)(m_indexColor[1] * 255),
+					 (int)(m_indexColor[2] * 255));
 }
 
 void PreProcessorGridShapeDataItem::setIndexColor(const QColor& color)
@@ -155,16 +155,14 @@ void PreProcessorGridShapeDataItem::setAxesColor(const QColor& color)
 class GridPointMouseMoveCommand : public QUndoCommand
 {
 public:
-	GridPointMouseMoveCommand(vtkPoints * newPoints, vtkPoints* oldPoints, bool first, PreProcessorGridDataItem* dItem)
-		: QUndoCommand(PreProcessorGridShapeDataItem::tr("Move Grid Point(s)"))
-	{
+	GridPointMouseMoveCommand(vtkPoints* newPoints, vtkPoints* oldPoints, bool first, PreProcessorGridDataItem* dItem)
+		: QUndoCommand(PreProcessorGridShapeDataItem::tr("Move Grid Point(s)")) {
 		m_newPoints = newPoints;
 		m_oldPoints = oldPoints;
 		m_dataItem = dItem;
 		m_first = first;
 	}
-	void undo()
-	{
+	void undo() {
 		m_dataItem->grid()->vtkGrid()->SetPoints(m_oldPoints);
 		m_dataItem->grid()->setModified();
 		m_dataItem->updateRegionPolyData();
@@ -172,8 +170,7 @@ public:
 		m_dataItem->selectedVerticesPolyData()->Modified();
 		m_dataItem->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_dataItem->grid()->vtkGrid()->SetPoints(m_newPoints);
 		m_dataItem->grid()->setModified();
 		m_dataItem->updateRegionPolyData();
@@ -182,11 +179,11 @@ public:
 		m_dataItem->renderGraphicsView();
 	}
 	int id() const {return iRIC::generateCommandId("GridPointMouseMove");}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const GridPointMouseMoveCommand* other2 = dynamic_cast<const GridPointMouseMoveCommand*>(other);
-		if (other2 == nullptr){return false;}
-		if (other2->m_dataItem != m_dataItem){return false;}
-		if (other2->m_first){return false;}
+		if (other2 == nullptr) {return false;}
+		if (other2->m_dataItem != m_dataItem) {return false;}
+		if (other2->m_first) {return false;}
 		m_newPoints = other2->m_newPoints;
 		return true;
 	}
@@ -200,8 +197,8 @@ private:
 void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGraphicsViewInterface* v2 = dynamic_cast<PreProcessorGraphicsViewInterface*>(v);
-	if (m_draggingSelectedPoints){
-		PreProcessorGridDataItem* p = dynamic_cast<PreProcessorGridDataItem*> (parent());
+	if (m_draggingSelectedPoints) {
+		PreProcessorGridDataItem* p = dynamic_cast<PreProcessorGridDataItem*>(parent());
 		vtkSmartPointer<vtkPoints> newpoints = vtkSmartPointer<vtkPoints>::New();
 		newpoints->DeepCopy(m_pointsBeforeDragging);
 		double x = event->x();
@@ -210,7 +207,7 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 		QVector2D dragEnd(x, y);
 		QVector2D delta = dragEnd - m_dragStartPoint;
 		const QVector<vtkIdType>& selVertices = p->selectedVertices();
-		for (int i = 0; i < selVertices.count(); ++i){
+		for (int i = 0; i < selVertices.count(); ++i) {
 			double x[3];
 			vtkIdType vid = selVertices.at(i);
 			m_pointsBeforeDragging->GetPoint(vid, x);
@@ -220,17 +217,17 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 		}
 		newpoints->Modified();
 		iRICUndoStack::instance().push(new GridPointMouseMoveCommand(newpoints, m_pointsBeforeDragging, false, p));
-	}else if (m_definingBoundingBox){
+	} else if (m_definingBoundingBox) {
 		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent())->nodeSelectingMouseMoveEvent(event, v);
-	}else{
+	} else {
 		// free mouse cursor move.
 		// ingestigate whether there exists a selected point
 		// near enough to the mouse pointer.
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*> (parent());
+		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 
-		if (tmpparent->selectedVertices().count() == 0){return;}
-		if (tmpparent->grid()->isMasked()){
+		if (tmpparent->selectedVertices().count() == 0) {return;}
+		if (tmpparent->grid()->isMasked()) {
 			v->setCursor(Qt::ForbiddenCursor);
 			return;
 		} else {
@@ -250,15 +247,15 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 		vtkSmartPointer<vtkPointLocator> locator = vtkSmartPointer<vtkPointLocator>::New();
 		locator->SetDataSet(tmpparent->grid()->vtkGrid());
 		vtkIdType closestId = locator->FindClosestPointWithinRadius(radius, p, dist2);
-		if (closestId >= 0){
+		if (closestId >= 0) {
 			const QVector<vtkIdType>& selectedVerts = tmpparent->selectedVertices();
 			m_nearSelectedPoint = (selectedVerts.contains(closestId));
-		}else{
+		} else {
 			m_nearSelectedPoint = false;
 		}
-		if (m_nearSelectedPoint){
+		if (m_nearSelectedPoint) {
 			v->setCursor(Qt::OpenHandCursor);
-		}else{
+		} else {
 			v->setCursor(tmpparent->normalCursor());
 		}
 	}
@@ -267,10 +264,10 @@ void PreProcessorGridShapeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphi
 void PreProcessorGridShapeDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGraphicsViewInterface* v2 = dynamic_cast<PreProcessorGraphicsViewInterface*>(v);
-	if (event->button() == Qt::LeftButton){
-		if (m_nearSelectedPoint){
+	if (event->button() == Qt::LeftButton) {
+		if (m_nearSelectedPoint) {
 			iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-			if (mw->isSolverRunning()){
+			if (mw->isSolverRunning()) {
 				mw->warnSolverRunning();
 				return;
 			}
@@ -286,7 +283,7 @@ void PreProcessorGridShapeDataItem::mousePressEvent(QMouseEvent* event, VTKGraph
 			m_dragStartPoint.setX(x);
 			m_dragStartPoint.setY(y);
 			iRICUndoStack::instance().push(new GridPointMouseMoveCommand(m_pointsBeforeDragging, m_pointsBeforeDragging, true, tmpparent));
-		}else{
+		} else {
 			// start drawing the mouse bounding box.
 			m_definingBoundingBox = true;
 			dynamic_cast<PreProcessorGridDataItem*>(parent())->nodeSelectingMousePressEvent(event, v);
@@ -299,21 +296,21 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 {
 	static QMenu* menu = nullptr;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	if (event->button() == Qt::LeftButton){
-		if (m_definingBoundingBox){
+	if (event->button() == Qt::LeftButton) {
+		if (m_definingBoundingBox) {
 			tmpparent->nodeSelectingMouseReleaseEvent(event, v);
 		}
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;
-	} else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		QPoint releasePoint(event->x(), event->y());
-		if (isNear(m_pressPoint, releasePoint)){
-			if (menu != nullptr){delete menu;}
+		if (isNear(m_pressPoint, releasePoint)) {
+			if (menu != nullptr) {delete menu;}
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 
 			Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-			if (grid2d != nullptr && grid2d->gridRelatedCondition("Elevation") != nullptr){
+			if (grid2d != nullptr && grid2d->gridRelatedCondition("Elevation") != nullptr) {
 				menu->addSeparator();
 
 				menu->addAction(m_openXsectionWindowAction);
@@ -326,13 +323,13 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 	}
 }
 
-void PreProcessorGridShapeDataItem::keyPressEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridShapeDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	tmpparent->nodeSelectingKeyPressEvent(event, v);
 }
 
-void PreProcessorGridShapeDataItem::keyReleaseEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorGridShapeDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	tmpparent->nodeSelectingKeyReleaseEvent(event, v);
@@ -341,14 +338,14 @@ void PreProcessorGridShapeDataItem::keyReleaseEvent(QKeyEvent *event, VTKGraphic
 void PreProcessorGridShapeDataItem::editShape()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	const QVector<vtkIdType>& selVertices = tmpparent->selectedVertices();
 
-	if (selVertices.count() == 1){
+	if (selVertices.count() == 1) {
 		// only one node is selected.
 		PreProcessorGridShapeNewPositionDialog dialog(preProcessorWindow());
 		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
@@ -357,15 +354,15 @@ void PreProcessorGridShapeDataItem::editShape()
 		tmpparent->grid()->vtkGrid()->GetPoint(pid, x);
 		dialog.setPosition(x[0], x[1]);
 		Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-		if (grid2d != nullptr){
+		if (grid2d != nullptr) {
 			// This is a structured 2d grid.
 			unsigned int i, j;
 			grid2d->getIJIndex(pid, &i, &j);
 			dialog.setIJ(i, j);
-		}else{
+		} else {
 			dialog.setIndex(pid);
 		}
-		if (QDialog::Accepted == dialog.exec()){
+		if (QDialog::Accepted == dialog.exec()) {
 			// new position was specified.
 			QVector2D pos = dialog.position();
 			x[0] = pos.x();
@@ -377,10 +374,10 @@ void PreProcessorGridShapeDataItem::editShape()
 			newPoints->Modified();
 			iRICUndoStack::instance().push(new GridPointMouseMoveCommand(newPoints, oldPoints, true, tmpparent));
 		}
-	} else if (selVertices.count() > 1){
+	} else if (selVertices.count() > 1) {
 		// more than one node is selected.
 		PreProcessorGridShapeDeltaDialog dialog(preProcessorWindow());
-		if (QDialog::Accepted == dialog.exec()){
+		if (QDialog::Accepted == dialog.exec()) {
 			PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
 			// delta was specified.
 			QVector2D delta = dialog.delta();
@@ -388,7 +385,7 @@ void PreProcessorGridShapeDataItem::editShape()
 			vtkSmartPointer<vtkPoints> newPoints = vtkSmartPointer<vtkPoints>::New();
 			newPoints->DeepCopy(oldPoints);
 
-			for (int i = 0; i < selVertices.count(); ++i){
+			for (int i = 0; i < selVertices.count(); ++i) {
 				vtkIdType pid = selVertices.at(i);
 				double p[3];
 				newPoints->GetPoint(pid, p);
@@ -406,7 +403,7 @@ void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != nullptr){
+	if (nItem != nullptr) {
 		nItem->openCrossSectionWindow();
 	}
 }
@@ -415,7 +412,7 @@ void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
-	if (nItem != nullptr){
+	if (nItem != nullptr) {
 		nItem->openVerticalCrossSectionWindow();
 	}
 }

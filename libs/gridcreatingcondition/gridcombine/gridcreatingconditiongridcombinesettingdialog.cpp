@@ -9,7 +9,7 @@
 
 #include <QPushButton>
 
-GridCreatingConditionGridCombineSettingDialog::GridCreatingConditionGridCombineSettingDialog(QWidget *parent) :
+GridCreatingConditionGridCombineSettingDialog::GridCreatingConditionGridCombineSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionGridCombineSettingDialog)
 {
@@ -23,7 +23,7 @@ GridCreatingConditionGridCombineSettingDialog::~GridCreatingConditionGridCombine
 
 void GridCreatingConditionGridCombineSettingDialog::setType(Type type)
 {
-	switch (type){
+	switch (type) {
 	case Bind:
 		ui->bindRadioButton->click();
 		break;
@@ -36,13 +36,13 @@ void GridCreatingConditionGridCombineSettingDialog::setType(Type type)
 	}
 }
 
-void GridCreatingConditionGridCombineSettingDialog::setMainstreamGridName(const QString &name)
+void GridCreatingConditionGridCombineSettingDialog::setMainstreamGridName(const QString& name)
 {
 	int index = ui->mainstreamComboBox->findText(name);
 	ui->mainstreamComboBox->setCurrentIndex(index);
 }
 
-void GridCreatingConditionGridCombineSettingDialog::setTributaryGridName(const QString &name)
+void GridCreatingConditionGridCombineSettingDialog::setTributaryGridName(const QString& name)
 {
 	int index = ui->tributaryComboBox->findText(name);
 	ui->tributaryComboBox->setCurrentIndex(index);
@@ -110,9 +110,9 @@ void GridCreatingConditionGridCombineSettingDialog::setObstacleElevation(double 
 
 GridCreatingConditionGridCombineSettingDialog::Type GridCreatingConditionGridCombineSettingDialog::type()
 {
-	if (ui->bindRadioButton->isChecked()) return Bind;
-	if (ui->leftRadioButton->isChecked()) return Left;
-	if (ui->rightRadioButton->isChecked()) return Right;
+	if (ui->bindRadioButton->isChecked()) { return Bind; }
+	if (ui->leftRadioButton->isChecked()) { return Left; }
+	if (ui->rightRadioButton->isChecked()) { return Right; }
 	// default
 	return Left;
 }
@@ -222,13 +222,13 @@ void GridCreatingConditionGridCombineSettingDialog::setupDisability()
 	ui->mainstreamFlowEndingSpinBox->setDisabled(true);
 }
 
-void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGridCreatingConditionDataItemInterface *item)
+void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGridCreatingConditionDataItemInterface* item)
 {
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item->parent()->parent());
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* itemParent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(item->parent());
 
-	for (PreProcessorGridAndGridCreatingConditionDataItemInterface* iface : gt->conditions()){
-		if (iface == itemParent) continue;
+	for (PreProcessorGridAndGridCreatingConditionDataItemInterface* iface : gt->conditions()) {
+		if (iface == itemParent) { continue; }
 		ui->mainstreamComboBox->addItem(iface->caption());
 		ui->tributaryComboBox->addItem(iface->caption());
 		m_gridMap.insert(iface->caption(), iface->gridDataItem()->grid());
@@ -237,7 +237,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupComboBox(PreProcessorGr
 
 void GridCreatingConditionGridCombineSettingDialog::informConfluenceTypeChange(bool b)
 {
-	if (b){
+	if (b) {
 		emit gridInformationChanged();
 	}
 }
@@ -251,7 +251,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 {
 	Structured2DGrid* mg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->mainstreamComboBox->currentText()));
 	Structured2DGrid* tg = dynamic_cast<Structured2DGrid*>(m_gridMap.value(ui->tributaryComboBox->currentText()));
-	if (mg == nullptr || tg == nullptr){
+	if (mg == nullptr || tg == nullptr) {
 		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 		return;
 	} else {
@@ -264,8 +264,8 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	offset = tj - 1;
 
 	// Bind
-	if (ui->bindRadioButton->isChecked()){
-		if (mi != ti){
+	if (ui->bindRadioButton->isChecked()) {
+		if (mi != ti) {
 			ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 			return;
 		} else {
@@ -283,7 +283,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	}
 
 	// Left or Right
-	if (tj > mi){
+	if (tj > mi) {
 		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 		return;
 	} else {
@@ -294,7 +294,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	ui->mainstreamFlowEndingSpinBox->setValue(tj - 1);
 
 	// Left
-	if (ui->leftRadioButton->isChecked()){
+	if (ui->leftRadioButton->isChecked()) {
 		ui->mainstreamCrossingBeginningSpinBox->setValue(0);
 		ui->mainstreamCrossingEndingSpinBox->setValue(mj - 1);
 		ui->tributaryCrossingBeginningSpinBox->setValue(mj - 1);
@@ -304,7 +304,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 	}
 
 	// Right
-	if (ui->rightRadioButton->isChecked()){
+	if (ui->rightRadioButton->isChecked()) {
 		ui->mainstreamCrossingBeginningSpinBox->setValue(ti - 1);
 		ui->mainstreamCrossingEndingSpinBox->setValue(mj + ti - 2);
 		ui->tributaryCrossingBeginningSpinBox->setValue(ti - 1);
@@ -316,7 +316,7 @@ void GridCreatingConditionGridCombineSettingDialog::setupGridIndex()
 
 void GridCreatingConditionGridCombineSettingDialog::changeFlowEndingIndex(int index)
 {
-	if (ui->bindRadioButton->isChecked()) return;
+	if (ui->bindRadioButton->isChecked()) { return; }
 
 	ui->mainstreamFlowEndingSpinBox->setValue(index + offset);
 }

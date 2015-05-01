@@ -26,9 +26,9 @@ RawDataFactory::RawDataFactory()
 const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinitionGridRelatedCondition* condition) const
 {
 	QList<RawDataCreator*> ret;
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
-		if ((*it)->isCompatibleWith(condition)){
-			ret.append(*it);
+	for (RawDataCreator* c : m_creators) {
+		if (c->isCompatibleWith(condition)) {
+			ret.append(c);
 		}
 	}
 	return ret;
@@ -36,9 +36,9 @@ const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinition
 
 RawData* RawDataFactory::restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridRelatedCondition* cond) const
 {
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
-		RawData* ret = (*it)->restore(node, item, cond);
-		if (ret){return ret;}
+	for (RawDataCreator* c : m_creators) {
+		RawData* ret = c->restore(node, item, cond);
+		if (ret) {return ret;}
 	}
 	return nullptr;
 }

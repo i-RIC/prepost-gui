@@ -15,13 +15,14 @@ class VersionNumber;
 class ProjectData;
 class QProcessEnvironment;
 
-class GUICOREDLL_EXPORT iRICMainWindowInterface : public QMainWindow {
+class GUICOREDLL_EXPORT iRICMainWindowInterface : public QMainWindow
+{
 public:
 	static const int STATUSBAR_DISPLAYTIME = 5000;
 	/// constructor
 	iRICMainWindowInterface(QWidget* widget);
 	/// destructor
-	virtual ~iRICMainWindowInterface(){}
+	virtual ~iRICMainWindowInterface() {}
 
 	virtual PreProcessorWindowInterface* preProcessorWindow() = 0;
 	virtual void setContinuousSnapshotInProgress(bool prog) = 0;

@@ -3,11 +3,11 @@
 
 #include <QSettings>
 
-PreferencePageSnapshot::PreferencePageSnapshot(QWidget *parent) :
-    PreferencePage(parent),
-    ui(new Ui::PreferencePageSnapshot)
+PreferencePageSnapshot::PreferencePageSnapshot(QWidget* parent) :
+	PreferencePage(parent),
+	ui(new Ui::PreferencePageSnapshot)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	setupTypeComboBox();
 	m_settings.beginGroup("snapshot");
 
@@ -19,12 +19,12 @@ PreferencePageSnapshot::PreferencePageSnapshot(QWidget *parent) :
 
 	QString ext = m_settings.value("type", "png").value<QString>();
 	int index = m_exts.indexOf(ext);
-	if (index != -1){ui->typeComboBox->setCurrentIndex(index);}
+	if (index != -1) {ui->typeComboBox->setCurrentIndex(index);}
 }
 
 PreferencePageSnapshot::~PreferencePageSnapshot()
 {
-    delete ui;
+	delete ui;
 }
 
 void PreferencePageSnapshot::update()

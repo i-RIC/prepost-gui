@@ -4,8 +4,9 @@
 #include <QWidget>
 #include "post3dwindowfacedataitem.h"
 
-namespace Ui {
-    class Post3dWindowFaceSettingWidget;
+namespace Ui
+{
+	class Post3dWindowFaceSettingWidget;
 }
 
 class PostZoneDataContainer;
@@ -14,7 +15,7 @@ class Post3dWindowFaceSettingWidget : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit Post3dWindowFaceSettingWidget(QWidget *parent = nullptr);
+	explicit Post3dWindowFaceSettingWidget(QWidget* parent = nullptr);
 	~Post3dWindowFaceSettingWidget();
 	void setZoneData(PostZoneDataContainer* zd);
 	void setSetting(const Post3dWindowFaceDataItem::Setting& setting);
@@ -41,7 +42,7 @@ private:
 	void applyDirectionSetting();
 	void maximizeRange();
 	void applySliderValues();
-    Ui::Post3dWindowFaceSettingWidget *ui;
+	Ui::Post3dWindowFaceSettingWidget* ui;
 	Post3dWindowFaceDataItem::Setting m_setting;
 	bool m_multiSelected;
 };

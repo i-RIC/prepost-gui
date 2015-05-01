@@ -14,7 +14,7 @@
 
 SolverDefinitionGridRelatedCondition::~SolverDefinitionGridRelatedCondition()
 {
-	for (int i = 0; i < m_dimensions.size(); ++i){
+	for (int i = 0; i < m_dimensions.size(); ++i) {
 		delete m_dimensions.at(i);
 	}
 }
@@ -25,15 +25,15 @@ void SolverDefinitionGridRelatedCondition::load(const QDomElement& node, const S
 	m_englishCaption = node.attribute("caption");
 	m_caption = translator.translate(node.attribute("caption"));
 	QDomNode defNode = iRIC::getChildNode(node, "Definition");
-	if (! defNode.isNull()){
+	if (! defNode.isNull()) {
 		QDomElement e = defNode.toElement();
 		m_variantDefaultValue = e.attribute("default", "");
 		m_variantMaximumValue = e.attribute("max", "");
 		m_variantMaximumValue = e.attribute("min", "");
 		QDomNodeList children = e.childNodes();
-		for (int i = 0; i < children.count(); ++i){
+		for (int i = 0; i < children.count(); ++i) {
 			QDomNode childNode = children.at(i);
-			if (childNode.nodeName() == "Dimension"){
+			if (childNode.nodeName() == "Dimension") {
 				// add dimension
 				SolverDefinitionGridRelatedConditionDimension* dim = SolverDefinitionGridRelatedConditionDimensionCreator::create(childNode.toElement(), translator, this);
 				m_dimensions.append(dim);
@@ -57,7 +57,7 @@ GridRelatedConditionEditDialog* SolverDefinitionGridRelatedCondition::editDialog
 
 GridRelatedConditionVariationEditDialog* SolverDefinitionGridRelatedCondition::variationEditDialog(QWidget* parent)
 {
-	GridRelatedConditionVariationEditDialog * dialog = new GridRelatedConditionVariationEditDialog(parent);
+	GridRelatedConditionVariationEditDialog* dialog = new GridRelatedConditionVariationEditDialog(parent);
 	GridRelatedConditionVariationEditWidget* widget = variationEditWidget(0);
 	dialog->setWidget(widget);
 	return dialog;

@@ -42,7 +42,7 @@ GridCreatingConditionRectangularRegion::~GridCreatingConditionRectangularRegion(
 	delete m_rightClickingMenu;
 }
 
-bool GridCreatingConditionRectangularRegion::create(QWidget * /*parent*/)
+bool GridCreatingConditionRectangularRegion::create(QWidget* /*parent*/)
 {
 	GridCreatingConditionRectangularRegionSettingDialog* dialog = new GridCreatingConditionRectangularRegionSettingDialog(this, preProcessorWindow());
 	dialog->setXMin(m_xMin);
@@ -50,7 +50,7 @@ bool GridCreatingConditionRectangularRegion::create(QWidget * /*parent*/)
 	dialog->setYMin(m_yMin);
 	dialog->setYMax(m_yMax);
 
-	if (m_stepSize == 0){
+	if (m_stepSize == 0) {
 		m_stepSize = std::min((m_xMax - m_xMin) / 10., (m_yMax - m_yMin) / 10.);
 	}
 	dialog->setStepSize(m_stepSize);
@@ -81,10 +81,10 @@ void GridCreatingConditionRectangularRegion::setupMenu()
 
 void GridCreatingConditionRectangularRegion::setupActors()
 {
-	if (actorCollection()->GetNumberOfItems() > 0){
+	if (actorCollection()->GetNumberOfItems() > 0) {
 		vtkCollectionIterator* it = actorCollection()->NewIterator();
 		it->GoToFirstItem();
-		while (! it->IsDoneWithTraversal()){
+		while (! it->IsDoneWithTraversal()) {
 			vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
 			renderer()->RemoveActor(actor);
 			it->GoToNextItem();
@@ -118,8 +118,8 @@ void GridCreatingConditionRectangularRegion::setupActors()
 
 void GridCreatingConditionRectangularRegion::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (m_mouseEventMode != meDragging){return;}
-	if (event->modifiers() == Qt::ControlModifier) return;
+	if (m_mouseEventMode != meDragging) {return;}
+	if (event->modifiers() == Qt::ControlModifier) { return; }
 
 	m_endPoint = QPoint(event->x(), event->y());
 	createRectangularRegionFromMouse();
@@ -127,28 +127,28 @@ void GridCreatingConditionRectangularRegion::mouseMoveEvent(QMouseEvent* event, 
 
 void GridCreatingConditionRectangularRegion::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::LeftButton){
-		if (m_mouseEventMode == meNormal){
+	if (event->button() == Qt::LeftButton) {
+		if (m_mouseEventMode == meNormal) {
 			m_startPoint = QPoint(event->x(), event->y());
 			m_mouseEventMode = meDragging;
 		}
 	}
-	if (event->button() == Qt::RightButton){
+	if (event->button() == Qt::RightButton) {
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
 }
 
 void GridCreatingConditionRectangularRegion::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
-		if (m_mouseEventMode == meDragging){
+	if (event->button() == Qt::LeftButton) {
+		if (m_mouseEventMode == meDragging) {
 			m_endPoint = QPoint(event->x(), event->y());
 			createRectangularRegionFromMouse();
 			m_mouseEventMode = meNormal;
 		}
 	}
-	if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -195,7 +195,7 @@ void GridCreatingConditionRectangularRegion::createRectangularRegion(double xmin
 	points->Delete();
 	grid->Delete();
 
-	if (xmin != xmax && ymin != ymax){
+	if (xmin != xmax && ymin != ymax) {
 		actorCollection()->AddItem(m_rectangularActor);
 		actorCollection()->AddItem(m_rectangularFrameActor);
 	}
@@ -236,7 +236,7 @@ void GridCreatingConditionRectangularRegion::doSaveToProjectMainFile(QXmlStreamW
 bool GridCreatingConditionRectangularRegion::createGrid(double xmin, double xmax, double ymin, double ymax, double step)
 {
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
-	if (grid == nullptr){return false;}
+	if (grid == nullptr) {return false;}
 	m_xMin = xmin;
 	m_xMax = xmax;
 	m_yMin = ymin;
@@ -251,7 +251,7 @@ void GridCreatingConditionRectangularRegion::previewGrid(double xmin, double xma
 {
 	createRectangularRegion(xmin, xmax, ymin, ymax);
 	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
-	if (grid == nullptr){return;}
+	if (grid == nullptr) {return;}
 	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
 	mapper->SetInputData(grid->vtkGrid());
 	vtkActor* actor = vtkActor::New();
@@ -277,12 +277,12 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 
 	unsigned int imax = floor((xmax - xmin) / stepSize);
 	unsigned int jmax = floor((ymax - ymin) / stepSize);
-	if (imax == 0 || jmax == 0){return nullptr;}
+	if (imax == 0 || jmax == 0) {return nullptr;}
 
 	imax += 1;
 	jmax += 1;
 
-	if (imax * jmax > MAXGRIDSIZE || imax * jmax < 0){
+	if (imax * jmax > MAXGRIDSIZE || imax * jmax < 0) {
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return nullptr;
 	}
@@ -290,15 +290,15 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 	points->Allocate((imax - 1) * (jmax - 1));
-	for (unsigned int j = 0; j < jmax; j++){
-		for (unsigned int i = 0; i < imax; i++){
+	for (unsigned int j = 0; j < jmax; j++) {
+		for (unsigned int i = 0; i < imax; i++) {
 			points->InsertPoint(imax * j + i, xmin + stepSize * i, ymin + stepSize * j, 0.);
 		}
 	}
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()){
+	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	grid->setModified();
@@ -335,7 +335,7 @@ void GridCreatingConditionRectangularRegion::clear()
 	m_yMax = 0;
 	m_stepSize = 0;
 
-	if (m_rectangularActor != nullptr){
+	if (m_rectangularActor != nullptr) {
 		m_rectangularActor->VisibilityOff();
 		m_rectangularFrameActor->VisibilityOff();
 	}

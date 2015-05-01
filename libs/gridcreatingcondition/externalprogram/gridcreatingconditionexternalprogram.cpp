@@ -49,16 +49,16 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 GridCreatingConditionExternalProgram::~GridCreatingConditionExternalProgram()
 {
 	delete m_definition;
-	if (m_rightClickingMenu != nullptr){
+	if (m_rightClickingMenu != nullptr) {
 		delete m_rightClickingMenu;
 	}
 }
 
-bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
+bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 {
 	QString fname = filename();
 	QFile f(filename());
-	if (! f.exists()){
+	if (! f.exists()) {
 		QFileInfo finfo(f);
 		QDir projDir(projectData()->workDirectory());
 		QString relativePath = projDir.relativeFilePath(finfo.absolutePath());
@@ -69,7 +69,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	dialog.setFilename(fname);
 	dialog.load();
 	int ret = dialog.exec();
-	if (ret != QDialog::Accepted){return false;}
+	if (ret != QDialog::Accepted) {return false;}
 
 	// delete grid.
 	deleteGrid(fname);
@@ -77,7 +77,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	// CGNS File OK. exexute the external program.
 	QString externalProgram = m_definition->executableFilename();
 	QFile prog(externalProgram);
-	if (! prog.exists()){
+	if (! prog.exists()) {
 		// executable does not exists!!
 		QMessageBox::critical(m_conditionDataItem->preProcessorWindow(), tr("Error"), tr("Grid generation program %1 does not exists.").arg(externalProgram));
 		return false;
@@ -101,19 +101,19 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	// run for three seconds first.
 	bool finished = process.waitForFinished(3000);
 
-	if (! finished){
+	if (! finished) {
 		waitDialog.setProgress(progress);
 		waitDialog.show();
 	}
 	qApp->processEvents();
-	while (! finished && ! m_canceled){
+	while (! finished && ! m_canceled) {
 		finished = process.waitForFinished(1000);
 		qApp->processEvents();
 		waitDialog.setProgress(progress);
 		++ progress;
 	}
 	waitDialog.hide();
-	if (m_canceled){
+	if (m_canceled) {
 		// user canceled execution.
 		return false;
 	}
@@ -129,7 +129,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
 	// load error code first.
 	int errorCode = readErrorCode(fn);
-	if (errorCode != 0){
+	if (errorCode != 0) {
 		cg_close(fn);
 		// error occured while grid is generated.
 		QString msg = dialog.errorMessage(errorCode);
@@ -138,7 +138,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget * /*parent*/)
 	}
 	bool ok = grid->loadFromCgnsFile(fn, 1, 1);
 	cg_close(fn);
-	if (! ok){
+	if (! ok) {
 		// grid generator did not create grid correctly.
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 		return false;
@@ -176,7 +176,7 @@ void GridCreatingConditionExternalProgram::deleteGrid(const QString& fname)
 	QStringList zoneNames;
 	int nzones;
 	ret = cg_nzones(fn, B, &nzones);
-	for (int Z = 1; Z <= nzones; ++Z){
+	for (int Z = 1; Z <= nzones; ++Z) {
 		char zonename[ProjectCgnsFile::BUFFERLEN];
 		cgsize_t size[9];
 		cg_zone_read(fn, B, Z, zonename, &(size[0]));
@@ -184,7 +184,7 @@ void GridCreatingConditionExternalProgram::deleteGrid(const QString& fname)
 	}
 	// zone names are known, so remove them.
 	cg_goto(fn, B, "end");
-	for (const QString& zoneName : zoneNames){
+	for (const QString& zoneName : zoneNames) {
 		cg_delete_node(const_cast<char*>(iRIC::toStr(zoneName).c_str()));
 	}
 	cg_close(fn);
@@ -198,17 +198,17 @@ int GridCreatingConditionExternalProgram::readErrorCode(int fn)
 	cgsize_t dimVec[3];
 	char tmpname[ProjectCgnsFile::BUFFERLEN];
 	ret = cg_goto(fn, 1, "ErrorCode", 0, "end");
-	if (ret != 0){
+	if (ret != 0) {
 		// no error code.
 		return 0;
 	}
 
 	int narrays;
 	ret = cg_narrays(&narrays);
-	if (ret != 0){return 0;}
-	if (narrays < 1){return 0;}
+	if (ret != 0) {return 0;}
+	if (narrays < 1) {return 0;}
 	cg_array_info(1, tmpname, &dataType, &dim, &(dimVec[0]));
-	if (QString(tmpname) != "Value"){return 0;}
+	if (QString(tmpname) != "Value") {return 0;}
 	int errorcode;
 	cg_array_read(1, &errorcode);
 	return errorcode;
@@ -216,7 +216,7 @@ int GridCreatingConditionExternalProgram::readErrorCode(int fn)
 
 void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
+	if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -224,8 +224,8 @@ void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, P
 
 void GridCreatingConditionExternalProgram::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
-	if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

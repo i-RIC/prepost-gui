@@ -1,35 +1,35 @@
 #include "graph2dwindowverticalaxissettingdialog.h"
 #include "ui_graph2dwindowverticalaxissettingdialog.h"
 
-Graph2dWindowVerticalAxisSettingDialog::Graph2dWindowVerticalAxisSettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Graph2dWindowVerticalAxisSettingDialog)
+Graph2dWindowVerticalAxisSettingDialog::Graph2dWindowVerticalAxisSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Graph2dWindowVerticalAxisSettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 Graph2dWindowVerticalAxisSettingDialog::~Graph2dWindowVerticalAxisSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Graph2dWindowVerticalAxisSettingDialog::setSetting(const Graph2dWindowVerticalAxisSetting& setting)
 {
 	m_setting = setting;
-	if (m_setting.rangeMode() == Graph2dWindowVerticalAxisSetting::rmAuto){
+	if (m_setting.rangeMode() == Graph2dWindowVerticalAxisSetting::rmAuto) {
 		ui->autoRangeCheckBox->setChecked(true);
 		ui->rangeMinLineEdit->setValue(m_autoRangeMin);
 		ui->rangeMaxLineEdit->setValue(m_autoRangeMax);
-	}else{
+	} else {
 		ui->autoRangeCheckBox->setChecked(false);
 		ui->rangeMinLineEdit->setValue(m_setting.customRangeMin());
 		ui->rangeMaxLineEdit->setValue(m_setting.customRangeMax());
 	}
-	if (m_setting.labelMode() == Graph2dWindowVerticalAxisSetting::lmAuto){
+	if (m_setting.labelMode() == Graph2dWindowVerticalAxisSetting::lmAuto) {
 		ui->labelAutoRadioButton->setChecked(true);
 		ui->labelCustomLineEdit->setEnabled(false);
 		ui->labelCustomLineEdit->setText("");
-	}else{
+	} else {
 		ui->labelCustomRadioButton->setChecked(true);
 		ui->labelCustomLineEdit->setText(m_setting.customLabel());
 	}
@@ -37,15 +37,15 @@ void Graph2dWindowVerticalAxisSettingDialog::setSetting(const Graph2dWindowVerti
 
 void Graph2dWindowVerticalAxisSettingDialog::accept()
 {
-	if (ui->autoRangeCheckBox->isChecked()){
+	if (ui->autoRangeCheckBox->isChecked()) {
 		m_setting.setRangeMode(Graph2dWindowVerticalAxisSetting::rmAuto);
-	}else{
+	} else {
 		m_setting.setRangeMode(Graph2dWindowVerticalAxisSetting::rmCustom);
 		m_setting.setCustomRange(ui->rangeMinLineEdit->value(), ui->rangeMaxLineEdit->value());
 	}
-	if (ui->labelAutoRadioButton->isChecked()){
+	if (ui->labelAutoRadioButton->isChecked()) {
 		m_setting.setLabelMode(Graph2dWindowVerticalAxisSetting::lmAuto);
-	}else{
+	} else {
 		m_setting.setLabelMode(Graph2dWindowVerticalAxisSetting::lmCustom);
 		m_setting.setCustomLabel(ui->labelCustomLineEdit->text());
 	}

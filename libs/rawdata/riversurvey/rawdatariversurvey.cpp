@@ -135,7 +135,7 @@ RawDataRiverSurvey::~RawDataRiverSurvey()
 	r->RemoveActor(m_crosssectionLinesActor);
 
 	delete m_gridThread;
-	if (m_rightClickingMenu){
+	if (m_rightClickingMenu) {
 		delete m_rightClickingMenu;
 	}
 }
@@ -241,7 +241,7 @@ void RawDataRiverSurvey::setupActors()
 
 	// register grid with lower resolution.
 	vtkSmartPointer<vtkStructuredGrid> tmpgrid = m_riverCenterLine;
-	for (int i = 0; i < 2; ++i){
+	for (int i = 0; i < 2; ++i) {
 		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
 		ext->SetInputData(tmpgrid);
 		ext->SetSampleRate(3, 1, 1);
@@ -270,7 +270,7 @@ void RawDataRiverSurvey::setupActors()
 
 	// register grid with lower resolution.
 	tmpgrid = m_leftBankLine;
-	for (int i = 0; i < 2; ++i){
+	for (int i = 0; i < 2; ++i) {
 		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
 		ext->SetInputData(tmpgrid);
 		ext->SetSampleRate(3, 1, 1);
@@ -301,7 +301,7 @@ void RawDataRiverSurvey::setupActors()
 
 	// register grid with lower resolution.
 	tmpgrid = m_rightBankLine;
-	for (int i = 0; i < 2; ++i){
+	for (int i = 0; i < 2; ++i) {
 		vtkSmartPointer<vtkExtractGrid> ext = vtkSmartPointer<vtkExtractGrid>::New();
 		ext->SetInputData(tmpgrid);
 		ext->SetSampleRate(3, 1, 1);
@@ -383,10 +383,10 @@ void RawDataRiverSurvey::setupActors()
 	col->AddItem(m_rightBankLineActor);
 	col->AddItem(m_firstAndLastCrosssectionsActor);
 	col->AddItem(m_crossectionsActor);
-	if (m_showBackground){
+	if (m_showBackground) {
 		col->AddItem(m_backgroundActor);
 	}
-	if (m_showLines){
+	if (m_showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 	}
 	vtkActor2DCollection* col2 = actor2DCollection();
@@ -494,10 +494,10 @@ void RawDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	col->AddItem(m_rightBankLineActor);
 	col->AddItem(m_crossectionsActor);
 	col->AddItem(m_selectedCrossectionsActor);
-	if (m_showBackground){
+	if (m_showBackground) {
 		col->AddItem(m_backgroundActor);
 	}
-	if (m_showLines){
+	if (m_showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 	}
 	col2->RemoveAllItems();
@@ -516,10 +516,10 @@ void RawDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 	col->AddItem(m_rightBankLineActor);
 	col->AddItem(m_firstAndLastCrosssectionsActor);
 	col->AddItem(m_crossectionsActor);
-	if (m_showBackground){
+	if (m_showBackground) {
 		col->AddItem(m_backgroundActor);
 	}
-	if (m_showLines){
+	if (m_showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 	}
 	col2->RemoveAllItems();
@@ -552,7 +552,7 @@ void RawDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v
 
 void RawDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meTranslatePrepare:
 	case meRotatePrepareRight:
@@ -586,7 +586,7 @@ void RawDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsVie
 
 void RawDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meTranslatePrepare:
 	case meRotatePrepareRight:
@@ -621,7 +621,7 @@ void RawDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 void RawDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	RawDataRiverPathPoint* selP = selectedPoint();
-	if (selP == nullptr){
+	if (selP == nullptr) {
 		// no point is selected.
 		return;
 	}
@@ -632,8 +632,7 @@ class RawDataRiverSurveyTranslateCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveyTranslateCommand(QPoint from, QPoint to, RawDataRiverSurvey* data)
-		: QUndoCommand(RawDataRiverSurvey::tr("Move Traversal Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Move Traversal Line")) {
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
 		double fromX, fromY, toX, toY;
@@ -646,8 +645,8 @@ public:
 		QVector2D offset(toX - fromX, toY - fromY);
 
 		RawDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_points.append(p);
 				m_oldPositions.append(p->position());
 				m_newPositions.append(p->position() + offset);
@@ -655,10 +654,9 @@ public:
 			p = p->nextPoint();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->setPosition(m_newPositions[i]);
 		}
 		m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -667,10 +665,9 @@ public:
 		m_rs->updateCrossectionWindows();
 		m_rs->m_mapped = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->setPosition(m_oldPositions[i]);
 		}
 		m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -681,10 +678,10 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("RawDataRiverSurveyTranslateCommand");
 	}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const RawDataRiverSurveyTranslateCommand* other2 = dynamic_cast<const RawDataRiverSurveyTranslateCommand*>(other);
-		if (other2 == nullptr) return false;
-		if (other2->m_points == m_points){
+		if (other2 == nullptr) { return false; }
+		if (other2->m_points == m_points) {
 			m_newPositions = other2->m_newPositions;
 			return true;
 		}
@@ -702,11 +699,10 @@ class RawDataRiverSurveyMouseRotateCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveyMouseRotateCommand(QPoint from, QPoint to, RawDataRiverSurvey* data)
-		: QUndoCommand(RawDataRiverSurvey::tr("Rotate Traversal Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Rotate Traversal Line")) {
 		RawDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_point = p;
 				break;
 			}
@@ -730,16 +726,14 @@ public:
 		m_newDirection = m_oldDirection;
 		iRIC::rotateVectorRadian(m_newDirection, angle);
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
 		m_point->setCrosssectionDirection(m_newDirection);
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->m_mapped = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
 		m_point->setCrosssectionDirection(m_oldDirection);
 		m_rs->updateShapeData();
@@ -748,10 +742,10 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("RawDataRiverSurveyMouseRotate");
 	}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const RawDataRiverSurveyMouseRotateCommand* other2 = dynamic_cast<const RawDataRiverSurveyMouseRotateCommand*>(other);
-		if (other2 == nullptr) return false;
-		if (other2->m_point == m_point){
+		if (other2 == nullptr) { return false; }
+		if (other2->m_point == m_point) {
 			m_newDirection = other2->m_newDirection;
 			return true;
 		}
@@ -769,8 +763,7 @@ class RawDataRiverSurveyMouseShiftCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveyMouseShiftCommand(QPoint from, QPoint to, RawDataRiverSurvey* data)
-		: QUndoCommand(RawDataRiverSurvey::tr("Shift Center Point"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Shift Center Point")) {
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
 		double fromX, fromY, toX, toY;
@@ -784,19 +777,18 @@ public:
 		RawDataRiverPathPoint* first = nullptr;
 
 		RawDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_points.append(p);
-				if (first == nullptr){first = p;}
+				if (first == nullptr) {first = p;}
 			}
 			p = p->nextPoint();
 		}
 		m_shiftValue = QVector2D::dotProduct(offset, first->crosssectionDirection());
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->shiftCenter(m_shiftValue);
 		}
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -806,10 +798,9 @@ public:
 		m_rs->updateCrossectionWindows();
 		m_rs->m_mapped = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->shiftCenter(- m_shiftValue);
 		}
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -821,10 +812,10 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("RawDataRiverSurveyMouseShift");
 	}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const RawDataRiverSurveyMouseShiftCommand* other2 = dynamic_cast<const RawDataRiverSurveyMouseShiftCommand*>(other);
-		if (other2 == nullptr) return false;
-		if (other2->m_points == m_points){
+		if (other2 == nullptr) { return false; }
+		if (other2->m_points == m_points) {
 			m_shiftValue += other2->m_shiftValue;
 			return true;
 		}
@@ -841,8 +832,7 @@ class RawDataRiverSurveyMouseMoveExtensionCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveyMouseMoveExtensionCommand(bool left, QPoint to, RawDataRiverSurvey* data)
-		: QUndoCommand(RawDataRiverSurvey::tr("Move Extension Line End"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Move Extension Line End")) {
 		m_left = left;
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
@@ -852,26 +842,25 @@ public:
 		gview->viewportToWorld(toX, toY);
 
 		RawDataRiverPathPoint* p = data->m_headPoint->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_point = p;
 				break;
 			}
 			p = p->nextPoint();
 		}
 		m_newPosition = QVector2D(toX, toY);
-		if (m_left){
+		if (m_left) {
 			m_oldPosition = m_point->crosssectionPosition(m_point->crosssection().leftBank(true).position());
-		}else{
+		} else {
 			m_oldPosition = m_point->crosssectionPosition(m_point->crosssection().rightBank(true).position());
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		if (m_left){
+		if (m_left) {
 			m_point->moveExtentionPointLeft(m_newPosition);
-		}else{
+		} else {
 			m_point->moveExtentionPointRight(m_newPosition);
 		}
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -881,12 +870,11 @@ public:
 		m_rs->updateCrossectionWindows();
 		m_rs->m_mapped = false;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		if (m_left){
+		if (m_left) {
 			m_point->moveExtentionPointLeft(m_oldPosition);
-		}else{
+		} else {
 			m_point->moveExtentionPointRight(m_oldPosition);
 		}
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -898,10 +886,10 @@ public:
 	int id() const {
 		return iRIC::generateCommandId(" RawDataRiverPathPointMouseMoveExtension");
 	}
-	virtual bool mergeWith(const QUndoCommand *other){
+	virtual bool mergeWith(const QUndoCommand* other) {
 		const RawDataRiverSurveyMouseMoveExtensionCommand* other2 = dynamic_cast<const RawDataRiverSurveyMouseMoveExtensionCommand*>(other);
-		if (other2 == nullptr) return false;
-		if (other2->m_point == m_point && other2->m_left == m_left){
+		if (other2 == nullptr) { return false; }
+		if (other2->m_point == m_point && other2->m_left == m_left) {
 			m_newPosition = other2->m_newPosition;
 			return true;
 		}
@@ -918,16 +906,16 @@ private:
 
 void RawDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if ((m_mouseEventMode == meAddingExtension || m_mouseEventMode == meInserting) && m_leftButtonDown){
+	if ((m_mouseEventMode == meAddingExtension || m_mouseEventMode == meInserting) && m_leftButtonDown) {
 		graphicsView()->emitWorldPosition(event->x(), event->y());
-	}else{
-		if (m_definingBoundingBox){
+	} else {
+		if (m_definingBoundingBox) {
 			// drawing bounding box using mouse dragging.
 			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 			box->setEndPoint(event->x(), event->y());
 			renderGraphicsView();
-		}else{
-			switch (m_mouseEventMode){
+		} else {
+			switch (m_mouseEventMode) {
 			case meNormal:
 			case meTranslatePrepare:
 			case meRotatePrepareRight:
@@ -972,7 +960,7 @@ void RawDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 				break;
 			case meAddingExtension:
 			case meInserting:
-				if (m_leftButtonDown){
+				if (m_leftButtonDown) {
 					graphicsView()->emitWorldPosition(event->x(), event->y());
 				}
 				break;
@@ -988,21 +976,20 @@ void RawDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 
 void RawDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		m_dragStartPoint = QPoint(event->x(), event->y());
 
-		switch (m_mouseEventMode){
-		case meNormal:
-		{
-			// start drawing the mouse bounding box.
-			m_definingBoundingBox = true;
-			MouseBoundingBox* box = dataModel()->mouseBoundingBox();
-			box->setStartPoint(event->x(), event->y());
-			box->enable();
-			v->GetRenderWindow()->SetDesiredUpdateRate(PreProcessorDataItem::dragUpdateRate);
-			renderGraphicsView();
-		}
-		break;
+		switch (m_mouseEventMode) {
+		case meNormal: {
+				// start drawing the mouse bounding box.
+				m_definingBoundingBox = true;
+				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
+				box->setStartPoint(event->x(), event->y());
+				box->enable();
+				v->GetRenderWindow()->SetDesiredUpdateRate(PreProcessorDataItem::dragUpdateRate);
+				renderGraphicsView();
+			}
+			break;
 		case meTranslatePrepare:
 			m_mouseEventMode = meTranslate;
 			break;
@@ -1047,7 +1034,7 @@ void RawDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 			// do nothing.
 			break;
 		}
-	}else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
 }
@@ -1056,8 +1043,7 @@ class RawDataRiverSurveySelectionChangeCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveySelectionChangeCommand(RawDataRiverSurvey* rs, MouseBoundingBox* box)
-		: QUndoCommand(RawDataRiverSurvey::tr("Selection Change"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Selection Change")) {
 		m_rs = rs;
 		// store old selection info.
 		buildSelectedPointsSet(m_oldSelectedPoints);
@@ -1082,23 +1068,21 @@ public:
 		// store new selection info.
 		buildSelectedPointsSet(m_newSelectedPoints);
 	}
-	void buildSelectedPointsSet(QSet<RawDataRiverPathPoint*>& set)
-	{
+	void buildSelectedPointsSet(QSet<RawDataRiverPathPoint*>& set) {
 		set.clear();
 		RawDataRiverPathPoint* p = m_rs->headPoint();
-		if (p != nullptr){p = p->nextPoint();}
-		while (p != nullptr){
-			if (p->IsSelected){
+		if (p != nullptr) {p = p->nextPoint();}
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				set.insert(p);
 			}
 			p = p->nextPoint();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		RawDataRiverPathPoint* p = m_rs->headPoint();
-		if (p != nullptr){p = p->nextPoint();}
-		while (p != nullptr){
+		if (p != nullptr) {p = p->nextPoint();}
+		while (p != nullptr) {
 			p->IsSelected = m_newSelectedPoints.contains(p);
 			p = p->nextPoint();
 		}
@@ -1106,11 +1090,10 @@ public:
 		m_rs->updateSelectionShapeData();
 		m_rs->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		RawDataRiverPathPoint* p = m_rs->headPoint();
-		if (p != nullptr){p = p->nextPoint();}
-		while (p != nullptr){
+		if (p != nullptr) {p = p->nextPoint();}
+		while (p != nullptr) {
 			p->IsSelected = m_oldSelectedPoints.contains(p);
 			p = p->nextPoint();
 		}
@@ -1127,15 +1110,15 @@ private:
 
 void RawDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
-		switch (m_mouseEventMode){
+	if (event->button() == Qt::LeftButton) {
+		switch (m_mouseEventMode) {
 		case meNormal:
-			if (m_definingBoundingBox){
+			if (m_definingBoundingBox) {
 				// bounding box selecting ended.
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 				box->setEndPoint(event->x(), event->y());
 				box->disable();
-				if (isNear(box->startPoint(), box->endPoint())){
+				if (isNear(box->startPoint(), box->endPoint())) {
 					int x = (box->startPoint().x() + box->endPoint().x()) / 2;
 					int y = (box->startPoint().y() + box->endPoint().y()) / 2;
 					box->setStartPoint(x - 8, y - 8);
@@ -1190,8 +1173,8 @@ void RawDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 		}
 
 
-	} else if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	} else if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -1201,7 +1184,7 @@ void RawDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 
 void RawDataRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meAddingExtension:
 		v->setCursor(Qt::ArrowCursor);
@@ -1240,7 +1223,8 @@ void RawDataRiverSurvey::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editNameAction);
 }
 
-void RawDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node){
+void RawDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
+{
 	RawData::doLoadFromProjectMainFile(node);
 	QDomElement elem = node.toElement();
 	m_showBackground = static_cast<bool>(elem.attribute("showBackground").toInt());
@@ -1249,7 +1233,7 @@ void RawDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node){
 	int linearMode = elem.attribute("interpolateLinear").toInt();
 	bool lMode = (linearMode != 0);
 	RiverSplineSolver::setLinearMode(lMode, m_headPoint);
-	if (lMode){
+	if (lMode) {
 		m_interpolateSplineAction->setChecked(false);
 		m_interpolateLinearAction->setChecked(true);
 	}
@@ -1258,7 +1242,8 @@ void RawDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node){
 	m_crosssectionLinesColor = loadColorAttribute("lineColor", node, Qt::red);
 }
 
-void RawDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer){
+void RawDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
 	RawData::doSaveToProjectMainFile(writer);
 	writer.writeAttribute("showBackground", QString::number(static_cast<int>(m_showBackground)));
 	writeOpacityPercent(m_opacityPercent, writer);
@@ -1267,20 +1252,21 @@ void RawDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer){
 	writeColorAttribute("lineColor", m_crosssectionLinesColor, writer);
 
 	int lMode = 0;
-	if (RiverSplineSolver::linearMode()){
+	if (RiverSplineSolver::linearMode()) {
 		lMode = 1;
 	}
 	writer.writeAttribute("interpolateLinear", QString::number(static_cast<int>(lMode)));
 }
 
-void RawDataRiverSurvey::loadExternalData(const QString& filename){
-	if (projectData()->version().build() >= 3607){
+void RawDataRiverSurvey::loadExternalData(const QString& filename)
+{
+	if (projectData()->version().build() >= 3607) {
 		iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
 
 		rs->load(iRIC::toStr(filename).c_str());
 		RawDataRiverPathPoint* before = m_headPoint;
 		RawDataRiverPathPoint* newPoint;
-		for (int i = 0; i < rs->points.size(); ++i){
+		for (int i = 0; i < rs->points.size(); ++i) {
 			iRICLib::RiverPathPoint* libp = rs->points.at(i);
 			newPoint = new RawDataRiverPathPoint();
 			newPoint->loadFromiRICLibObject(libp);
@@ -1297,7 +1283,7 @@ void RawDataRiverSurvey::loadExternalData(const QString& filename){
 		RawDataRiverPathPoint* newPoint;
 		bool nextExist;
 		s >> nextExist;
-		while (nextExist){
+		while (nextExist) {
 			newPoint = new RawDataRiverPathPoint();
 			newPoint->load(s, projectData()->version());
 			before->addPathPoint(newPoint);
@@ -1310,16 +1296,17 @@ void RawDataRiverSurvey::loadExternalData(const QString& filename){
 	informDeselection(0);
 }
 
-void RawDataRiverSurvey::saveExternalData(const QString& filename){
+void RawDataRiverSurvey::saveExternalData(const QString& filename)
+{
 	iRICLib::RiverSurvey* rs = new iRICLib::RiverSurvey();
 	bool first = true;
 
 	iRICLib::RiverPathPoint* prevP = nullptr;
 	RawDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		iRICLib::RiverPathPoint* libp = new iRICLib::RiverPathPoint();
 		p->saveToiRICLibObject(libp);
-		if (first){
+		if (first) {
 			rs->firstPoint = libp;
 			first = false;
 		} else {
@@ -1338,11 +1325,11 @@ bool RawDataRiverSurvey::getValueRange(double* min, double* max)
 {
 	double range[2];
 	vtkDataArray* data = m_backgroundGrid->GetPointData()->GetArray("Data");
-	if (data == nullptr){
+	if (data == nullptr) {
 		return false;
 	}
 	data->GetRange(range);
-	if (range[0] > range[1]){
+	if (range[0] > range[1]) {
 		// min > max. It means that valid range can not be obtained from data.
 		return false;
 	}
@@ -1379,7 +1366,7 @@ void RawDataRiverSurvey::updateShapeData()
 	// calculate the number of grid size of m_riverCenterLine etc.
 	int pointCount = 0;
 	RawDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		++pointCount;
 		p = p->nextPoint();
 	}
@@ -1396,7 +1383,7 @@ void RawDataRiverSurvey::updateShapeData()
 	vtkLine* line;
 	bool firstOrLast = false;
 	bool first = true;
-	while (p != nullptr){
+	while (p != nullptr) {
 		firstOrLast = first || (p->nextPoint() == nullptr);
 		// left bank
 		QVector2D leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
@@ -1407,9 +1394,9 @@ void RawDataRiverSurvey::updateShapeData()
 
 		// left fixed point
 		QVector2D leftFixed;
-		if (p->crosssection().fixedPointLSet()){
+		if (p->crosssection().fixedPointLSet()) {
 			leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
-		}else{
+		} else {
 			// use left bank.
 			leftFixed = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 		}
@@ -1421,7 +1408,7 @@ void RawDataRiverSurvey::updateShapeData()
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
 		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast){
+		if (firstOrLast) {
 			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1441,7 +1428,7 @@ void RawDataRiverSurvey::updateShapeData()
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
 		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast){
+		if (firstOrLast) {
 			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1450,9 +1437,9 @@ void RawDataRiverSurvey::updateShapeData()
 
 		// right fixed point
 		QVector2D rightFixed;
-		if (p->crosssection().fixedPointRSet()){
+		if (p->crosssection().fixedPointRSet()) {
 			rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
-		}else{
+		} else {
 			// use right bank.
 			rightFixed = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 		}
@@ -1464,7 +1451,7 @@ void RawDataRiverSurvey::updateShapeData()
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
 		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast){
+		if (firstOrLast) {
 			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1482,7 +1469,7 @@ void RawDataRiverSurvey::updateShapeData()
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
 		m_crosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
-		if (firstOrLast){
+		if (firstOrLast) {
 			m_firstAndLastCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1494,8 +1481,8 @@ void RawDataRiverSurvey::updateShapeData()
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		centerLinePoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr){
-			for (int i = 1; i < LINEDIVS; ++i){
+		if (p->nextPoint() != nullptr) {
+			for (int i = 1; i < LINEDIVS; ++i) {
 				tmpp = p->riverCenter()->interpolate(i / static_cast<double>(LINEDIVS));
 				point[0] = tmpp.x();
 				point[1] = tmpp.y();
@@ -1507,8 +1494,8 @@ void RawDataRiverSurvey::updateShapeData()
 		point[0] = tmpp.x();
 		point[1] = tmpp.y();
 		leftBankPoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr){
-			for (int i = 1; i < LINEDIVS; ++i){
+		if (p->nextPoint() != nullptr) {
+			for (int i = 1; i < LINEDIVS; ++i) {
 				tmpp = p->leftBank()->interpolate(i / static_cast<double>(LINEDIVS));
 				point[0] = tmpp.x();
 				point[1] = tmpp.y();
@@ -1520,8 +1507,8 @@ void RawDataRiverSurvey::updateShapeData()
 		point[0] = tmpp.x();
 		point[1] = tmpp.y();
 		rightBankPoints->InsertNextPoint(point);
-		if (p->nextPoint() != nullptr){
-			for (int i = 1; i < LINEDIVS; ++i){
+		if (p->nextPoint() != nullptr) {
+			for (int i = 1; i < LINEDIVS; ++i) {
 				tmpp = p->rightBank()->interpolate(i / static_cast<double>(LINEDIVS));
 				point[0] = tmpp.x();
 				point[1] = tmpp.y();
@@ -1550,7 +1537,7 @@ void RawDataRiverSurvey::updateShapeData()
 	m_rightBankPointSet->SetPoints(m_rightBankPoints);
 	m_labelArray->Reset();
 	p = m_headPoint->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		QString name = p->name();
 		name.prepend(tr("  "));
 		m_labelArray->InsertNextValue(iRIC::toStr(name).c_str());
@@ -1567,13 +1554,13 @@ void RawDataRiverSurvey::updateShapeData()
 
 	p = m_headPoint->nextPoint();
 	vtkIdType pointNum = 0;
-	while (p != nullptr){
+	while (p != nullptr) {
 		double maxHeight;
 		RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
-		for (int i = 0; i < alist.count(); ++i){
+		for (int i = 0; i < alist.count(); ++i) {
 			RawDataRiverCrosssection::Altitude alt = alist[i];
-			if (i == 0 || maxHeight < alt.height()){maxHeight = alt.height();}
+			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
 		// now draw lines.
 		QVector2D offsetDir = p->crosssectionDirection();
@@ -1585,7 +1572,7 @@ void RawDataRiverSurvey::updateShapeData()
 		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
-		for (int i = 1; i < alist.count(); ++i){
+		for (int i = 1; i < alist.count(); ++i) {
 			RawDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_crosssectionLinesScale;
 			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
@@ -1618,11 +1605,11 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 	int index = 0;
 	vtkVertex* nextVertex;
 	vtkLine* line;
-	while (p != nullptr){
+	while (p != nullptr) {
 		// left bank
 		nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedLeftBanks->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
 		}
 		nextVertex->Delete();
@@ -1632,7 +1619,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1642,7 +1629,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		// river center
 		nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedRiverCenters->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
 		}
 		nextVertex->Delete();
@@ -1650,7 +1637,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1661,7 +1648,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1671,7 +1658,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		// right bank
 		nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedRightBanks->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
 		}
 		nextVertex->Delete();
@@ -1679,7 +1666,7 @@ void RawDataRiverSurvey::updateSelectionShapeData()
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			m_selectedCrosssections->InsertNextCell(line->GetCellType(), line->GetPointIds());
 		}
 		line->Delete();
@@ -1702,7 +1689,8 @@ void RawDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(3);
 }
 
-void RawDataRiverSurvey::assignActionZValues(const ZDepthRange& range){
+void RawDataRiverSurvey::assignActionZValues(const ZDepthRange& range)
+{
 	double background = range.min();
 	double backlines = .7 * range.min() + .3 * range.max();
 	double lines = .5 * range.min() + .5 * range.max();
@@ -1787,7 +1775,7 @@ void RawDataRiverSurvey::updateActionStatus()
 	bool singleSelection = (selectCount == 1);
 	bool selectionExists = (selectCount > 0);
 	RawDataRiverPathPoint* selected = nullptr;
-	if (singleSelection){
+	if (singleSelection) {
 		selected = selectedPoint();
 	}
 	m_addUpperSideAction->setEnabled(singleSelection);
@@ -1813,11 +1801,11 @@ void RawDataRiverSurvey::moveSelectedPoints()
 	int selectCount = m_headPoint->selectedPoints();
 	bool singleSelection = (selectCount == 1);
 	RawDataRiverPathPoint* selected = nullptr;
-	if (singleSelection){
+	if (singleSelection) {
 		selected = selectedPoint();
 	}
 	dialog->setSingleSelection(singleSelection);
-	if (singleSelection){
+	if (singleSelection) {
 		dialog->setCurrentCenter(selected->position());
 	}
 	dataModel()->iricMainWindow()->enterModelessDialogMode();
@@ -1826,48 +1814,46 @@ void RawDataRiverSurvey::moveSelectedPoints()
 	dialog->show();
 }
 
-class RawDataRiverPathPointDeleteCommand : public QUndoCommand {
+class RawDataRiverPathPointDeleteCommand : public QUndoCommand
+{
 public:
 	RawDataRiverPathPointDeleteCommand(RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Delete Traversal Lines"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Delete Traversal Lines")) {
 		m_redoed = false;
 		m_rs = rs;
 		RawDataRiverPathPoint* p = m_rs->headPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_deletedPoints.append(p);
 				m_beforePoints.append(p->previousPoint());
 				m_prevSkips.append(p->previousPoint()->gridSkip());
-				if (p->nextPoint() != nullptr){
+				if (p->nextPoint() != nullptr) {
 					m_nextSkips.append(p->nextPoint()->gridSkip());
-				}else{
+				} else {
 					m_nextSkips.append(false);
 				}
 			}
 			p = p->nextPoint();
 		}
 	}
-	~RawDataRiverPathPointDeleteCommand()
-	{
-		if (m_redoed){
+	~RawDataRiverPathPointDeleteCommand() {
+		if (m_redoed) {
 			// remove the points.
-			for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
-				delete (*it);
+			for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it) {
+				delete(*it);
 			}
 		}
 	}
 
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_deletedPoints.count(); ++i){
+		for (int i = 0; i < m_deletedPoints.count(); ++i) {
 			m_beforePoints[i]->addPathPoint(m_deletedPoints.at(i));
 		}
-		for (int i = 0; i < m_deletedPoints.count(); ++i){
+		for (int i = 0; i < m_deletedPoints.count(); ++i) {
 			RawDataRiverPathPoint* p = m_deletedPoints[i];
 			p->previousPoint()->setGridSkip(m_prevSkips[i]);
-			if (p->nextPoint() != nullptr){
+			if (p->nextPoint() != nullptr) {
 				p->nextPoint()->setGridSkip(m_nextSkips[i]);
 			}
 		}
@@ -1878,10 +1864,9 @@ public:
 		m_rs->updateCrossectionWindows();
 		m_redoed = false;
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it){
+		for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it) {
 			RawDataRiverPathPoint* p = (*it);
 			p->remove();
 		}
@@ -1908,15 +1893,15 @@ void RawDataRiverSurvey::deleteSelectedPoints()
 	int num = 0;
 	int selectedNum = 0;
 	RawDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr){
+	while (p != nullptr) {
 		num++;
-		if (p->IsSelected){
+		if (p->IsSelected) {
 			selectedNum++;
 		}
 		p = p->nextPoint();
 	}
 
-	if (num - selectedNum < 2){
+	if (num - selectedNum < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("River survey data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
 	} else {
 		iRICUndoStack::instance().push(new RawDataRiverPathPointDeleteCommand(this));
@@ -1998,19 +1983,17 @@ class RawDataRiverPathPointRemoveExtensionCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointRemoveExtensionCommand(bool left, const QVector2D& pos, RawDataRiverPathPoint* p, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Remove Extension Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Remove Extension Line")) {
 		m_left = left;
 		m_position = pos;
 		m_point = p;
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		if (m_left){
+		if (m_left) {
 			m_point->addExtentionPointLeft(m_position);
-		}else{
+		} else {
 			m_point->addExtentionPointRight(m_position);
 		}
 		m_rs->updateActionStatus();
@@ -2020,12 +2003,11 @@ public:
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		if (m_left){
+		if (m_left) {
 			m_point->removeExtentionPointLeft();
-		}else{
+		} else {
 			m_point->removeExtentionPointRight();
 		}
 		m_rs->updateActionStatus();
@@ -2096,7 +2078,7 @@ void RawDataRiverSurvey::addNewPoint()
 	m_mouseEventMode = meInserting;
 
 	double val = selected->name().toDouble();
-	if (val == 0){
+	if (val == 0) {
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("Insert Target Point name is \"0\". You have to change the name if you want to add a new point."));
 		return;
 	}
@@ -2117,105 +2099,95 @@ void RawDataRiverSurvey::updateMouseEventMode()
 	double stdLen2 = stdLen * stdLen;
 	int selectCount = m_headPoint->selectedPoints();
 	RawDataRiverPathPoint* selected = nullptr;
-	if (selectCount == 1){
+	if (selectCount == 1) {
 		selected = m_headPoint->nextPoint();
-		while (1){
-			if (selected->IsSelected){break;}
+		while (1) {
+			if (selected->IsSelected) {break;}
 			selected = selected->nextPoint();
 		}
 		// only one point is selected.
-		if ((selected->position() - worldPos).lengthSquared() < stdLen2 * 9){
+		if ((selected->position() - worldPos).lengthSquared() < stdLen2 * 9) {
 			// cursor is near to the river center point
 			if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0)
-			{
+					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for moving
 				m_mouseEventMode = meTranslatePrepare;
 			}
 			if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-					(m_keyboardModifiers & Qt::ControlModifier) == 0)
-			{
+					(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 				// preparing for center-point shift
 				m_mouseEventMode = meShiftPrepare;
 			}
-		}else{
+		} else {
 			m_mouseEventMode = meNormal;
 			QVector2D lbank = selected->crosssectionPosition(selected->crosssection().leftBank(true).position());
-			if ((lbank - worldPos).lengthSquared() < stdLen2 * 9){
+			if ((lbank - worldPos).lengthSquared() < stdLen2 * 9) {
 				// cursor is near left bank.
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0)
-				{
+						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
 					m_mouseEventMode = meRotatePrepareLeft;
 				}
 				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
-						selected->crosssection().fixedPointLSet())
-				{
+						selected->crosssection().fixedPointLSet()) {
 					// preparing for center-point shift
 					m_mouseEventMode = meMoveExtensionEndPointPrepareLeft;
 				}
 			}
 			QVector2D rbank = selected->crosssectionPosition(selected->crosssection().rightBank(true).position());
-			if ((rbank - worldPos).lengthSquared() < stdLen2 * 9){
+			if ((rbank - worldPos).lengthSquared() < stdLen2 * 9) {
 				// cursor is near right bank.
 				if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-						(m_keyboardModifiers & Qt::ControlModifier) == 0)
-				{
+						(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 					// preparing for rotating
 					m_mouseEventMode = meRotatePrepareRight;
 				}
 				if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
 						(m_keyboardModifiers & Qt::ControlModifier) == 0 &&
-						selected->crosssection().fixedPointRSet())
-				{
+						selected->crosssection().fixedPointRSet()) {
 					// preparing for center-point shift
 					m_mouseEventMode = meMoveExtensionEndPointPrepareRight;
 				}
 			}
 		}
-	}else{
+	} else {
 		// multiple selection, or none.
 		RawDataRiverPathPoint* p = m_headPoint->nextPoint();
 		m_mouseEventMode = meNormal;
-		while (p != nullptr){
-			if (p->IsSelected){
-				if ((p->position() - worldPos).lengthSquared() < stdLen2 * 9){
+		while (p != nullptr) {
+			if (p->IsSelected) {
+				if ((p->position() - worldPos).lengthSquared() < stdLen2 * 9) {
 					// cursor is near to the river center point
 					if ((m_keyboardModifiers & Qt::ShiftModifier) == 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0)
-					{
+							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for moving
 						m_mouseEventMode = meTranslatePrepare;
 						return;
 					}
 					if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-							(m_keyboardModifiers & Qt::ControlModifier) == 0)
-					{
+							(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 						// preparing for center-point shift
 						m_mouseEventMode = meShiftPrepare;
 						return;
 					}
-				}else{
+				} else {
 					m_mouseEventMode = meNormal;
 					QVector2D lbank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
-					if ((lbank - worldPos).lengthSquared() < stdLen2 * 9){
+					if ((lbank - worldPos).lengthSquared() < stdLen2 * 9) {
 						// cursor is near left bank.
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0)
-						{
+								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
 							m_mouseEventMode = meExpansionPrepareLeft;
 							return;
 						}
 					}
 					QVector2D rbank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
-					if ((rbank - worldPos).lengthSquared() < stdLen2 * 9){
+					if ((rbank - worldPos).lengthSquared() < stdLen2 * 9) {
 						// cursor is near right bank.
 						if ((m_keyboardModifiers & Qt::ShiftModifier) != 0 &&
-								(m_keyboardModifiers & Qt::ControlModifier) == 0)
-						{
+								(m_keyboardModifiers & Qt::ControlModifier) == 0) {
 							// preparing for center-point shift
 							m_mouseEventMode = meExpansionPrepareRight;
 							return;
@@ -2232,8 +2204,8 @@ void RawDataRiverSurvey::updateMouseEventMode()
 RawDataRiverPathPoint* RawDataRiverSurvey::selectedPoint()
 {
 	RawDataRiverPathPoint* p = m_headPoint->nextPoint();
-	while (p != nullptr){
-		if (p->IsSelected){return p;}
+	while (p != nullptr) {
+		if (p->IsSelected) {return p;}
 		p = p->nextPoint();
 	}
 	return nullptr;
@@ -2246,15 +2218,16 @@ void RawDataRiverSurvey::updateSplineSolvers()
 	m_RightBankSolver.update();
 }
 
-void RawDataRiverSurvey::updateBackgroundGrid(){
+void RawDataRiverSurvey::updateBackgroundGrid()
+{
 	m_backgroundGrid = m_gridThread->grid();
 	m_backgroundGrid->GetPointData()->SetActiveScalars("Data");
 
 	RawDataRiverPathPoint* p = m_headPoint->nextPoint();
 	m_gridThread->startBGGridCopy();
-	while (p != nullptr){
+	while (p != nullptr) {
 		vtkPointSet* grid = m_gridThread->partialGrid(p);
-		if (grid != nullptr){
+		if (grid != nullptr) {
 			p->areaGrid()->DeepCopy(grid);
 		}
 		p = p->nextPoint();
@@ -2262,7 +2235,7 @@ void RawDataRiverSurvey::updateBackgroundGrid(){
 	m_gridThread->finishBGGridCopy();
 	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(m_backgroundActor->GetMapper());
 	mapper->SetInputData(m_backgroundGrid);
-	if (isVisible() && m_showBackground){
+	if (isVisible() && m_showBackground) {
 		m_backgroundActor->VisibilityOn();
 	}
 	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
@@ -2281,7 +2254,7 @@ void RawDataRiverSurvey::updateInterpolators()
 
 	// update interpolators for altitude interpolation on crosssections.
 	RawDataRiverPathPoint* tmpp = m_headPoint->nextPoint();
-	while (tmpp != nullptr){
+	while (tmpp != nullptr) {
 		tmpp->updateXSecInterpolators();
 		tmpp = tmpp->nextPoint();
 	}
@@ -2315,7 +2288,7 @@ void RawDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 class RawDataRiverSurveyDisplaySettingCommand : public QUndoCommand
 {
 public:
-	RawDataRiverSurveyDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, RawDataRiverSurvey* s){
+	RawDataRiverSurveyDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, RawDataRiverSurvey* s) {
 		m_survey = s;
 		m_newBgVisible = bgvisible;
 		m_newOpacityPercent = opacityP;
@@ -2329,7 +2302,7 @@ public:
 		m_oldLineColor = m_survey->m_crosssectionLinesColor;
 		m_oldZScale = m_survey->m_crosssectionLinesScale;
 	}
-	void redo(){
+	void redo() {
 		m_survey->m_backgroundActor->SetVisibility(m_newBgVisible);
 		m_survey->m_backgroundActor->GetProperty()->SetOpacity(m_newOpacityPercent / 100.);
 		m_survey->m_showBackground = m_newBgVisible;
@@ -2341,12 +2314,12 @@ public:
 		m_survey->m_crosssectionLinesScale = m_newZScale;
 
 		vtkActorCollection* ac = m_survey->actorCollection();
-		if (m_newBgVisible){
+		if (m_newBgVisible) {
 			ac->AddItem(m_survey->m_backgroundActor);
 		} else {
 			ac->RemoveItem(m_survey->m_backgroundActor);
 		}
-		if (m_newLinesVisible){
+		if (m_newLinesVisible) {
 			ac->AddItem(m_survey->m_crosssectionLinesActor);
 		} else {
 			ac->RemoveItem(m_survey->m_crosssectionLinesActor);
@@ -2354,7 +2327,7 @@ public:
 		m_survey->updateShapeData();
 		m_survey->renderGraphicsView();
 	}
-	void undo(){
+	void undo() {
 		m_survey->m_backgroundActor->SetVisibility(m_oldBgVisible);
 		m_survey->m_backgroundActor->GetProperty()->SetOpacity(m_oldOpacityPercent / 100.);
 		m_survey->m_showBackground = m_oldBgVisible;
@@ -2366,12 +2339,12 @@ public:
 		m_survey->m_crosssectionLinesScale = m_oldZScale;
 
 		vtkActorCollection* ac = m_survey->actorCollection();
-		if (m_oldBgVisible){
+		if (m_oldBgVisible) {
 			ac->AddItem(m_survey->m_backgroundActor);
 		} else {
 			ac->RemoveItem(m_survey->m_backgroundActor);
 		}
-		if (m_oldLinesVisible){
+		if (m_oldLinesVisible) {
 			ac->AddItem(m_survey->m_crosssectionLinesActor);
 		} else {
 			ac->RemoveItem(m_survey->m_crosssectionLinesActor);
@@ -2405,7 +2378,7 @@ void RawDataRiverSurvey::displaySetting()
 	dialog.setZScale(m_crosssectionLinesScale);
 
 	int ret = dialog.exec();
-	if (ret != dialog.Accepted){return;}
+	if (ret != dialog.Accepted) {return;}
 	iRICUndoStack::instance().push(new RawDataRiverSurveyDisplaySettingCommand(dialog.colormapVisible(), dialog.opacityPercent(), dialog.linesVisible(), dialog.lineColor(), dialog.zScale(), this));
 }
 
@@ -2439,21 +2412,21 @@ void RawDataRiverSurvey::updateBackgroundVisibility(bool visible)
 }
 */
 
-void RawDataRiverSurvey::setColoredPoints(RawDataRiverPathPoint *black, RawDataRiverPathPoint *red, RawDataRiverPathPoint *blue)
+void RawDataRiverSurvey::setColoredPoints(RawDataRiverPathPoint* black, RawDataRiverPathPoint* red, RawDataRiverPathPoint* blue)
 {
-	if (black == nullptr){
+	if (black == nullptr) {
 		m_blackCrossectionsActor->VisibilityOff();
 	} else {
 		setupLine(m_blackCrosssection, black);
 		m_blackCrossectionsActor->VisibilityOn();
 	}
-	if (red == nullptr){
+	if (red == nullptr) {
 		m_redCrossectionsActor->VisibilityOff();
 	} else {
 		setupLine(m_redCrosssection, red);
 		m_redCrossectionsActor->VisibilityOn();
 	}
-	if (blue == nullptr){
+	if (blue == nullptr) {
 		m_blueCrossectionsActor->VisibilityOff();
 	} else {
 		setupLine(m_blueCrosssection, blue);
@@ -2482,9 +2455,9 @@ void RawDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, RawDataRiverPathPo
 
 	// left fixed point
 	QVector2D leftFixed;
-	if (p->crosssection().fixedPointLSet()){
+	if (p->crosssection().fixedPointLSet()) {
 		leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
-	}else{
+	} else {
 		// use left bank.
 		leftFixed = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 	}
@@ -2511,9 +2484,9 @@ void RawDataRiverSurvey::setupLine(vtkUnstructuredGrid* grid, RawDataRiverPathPo
 
 	// right fixed point
 	QVector2D rightFixed;
-	if (p->crosssection().fixedPointRSet()){
+	if (p->crosssection().fixedPointRSet()) {
 		rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
-	}else{
+	} else {
 		// use right bank.
 		rightFixed = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 	}
@@ -2564,8 +2537,7 @@ RawDataProxy* RawDataRiverSurvey::getProxy()
 void RawDataRiverSurvey::doApplyOffset(double x, double y)
 {
 	RawDataRiverPathPoint* p = this->m_headPoint->nextPoint();
-	while (p != nullptr)
-	{
+	while (p != nullptr) {
 		QVector2D v = p->position();
 		v.setX(v.x() - x);
 		v.setY(v.y() - y);

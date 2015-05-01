@@ -6,29 +6,30 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorstreamlinegroupstructureddataitem.h"
 
-namespace Ui {
+namespace Ui
+{
 	class Post2dWindowStreamlineStructuredSettingDialog;
 }
 class PostZoneDataContainer;
 
 class Post2dWindowStreamlineStructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post2dWindowStreamlineStructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowStreamlineStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowStreamlineStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowStructuredStreamlineSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post2dWindowStructuredStreamlineSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
 	const QString solution();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings() {return m_settings;}
 
 private slots:
 	void activeDataChanged(int index);
@@ -51,7 +52,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-	Ui::Post2dWindowStreamlineStructuredSettingDialog *ui;
+	Ui::Post2dWindowStreamlineStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
 	QList<Post2dWindowStructuredStreamlineSetSetting> m_settings;

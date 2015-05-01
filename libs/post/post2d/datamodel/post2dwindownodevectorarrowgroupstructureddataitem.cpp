@@ -57,7 +57,7 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	m_arrowExtract->SetInputData(ps);
 	m_arrowExtract->SetSampleRate(m_iSampleRate, m_jSampleRate, 1);
 
-	if (m_regionMode == StructuredGridRegion::rmCustom){
+	if (m_regionMode == StructuredGridRegion::rmCustom) {
 		m_arrowExtract->SetVOI(m_range.iMin, m_range.iMax, m_range.jMin, m_range.jMax, 0, 0);
 	} else {
 		m_arrowExtract->SetVOI(0, dims[0] - 1, 0, dims[1] - 1, 0, dims[2] - 1);
@@ -67,30 +67,30 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 
 	vtkDataArray* da = tmpgrid->GetPointData()->GetArray(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
 	vtkIntArray* IBCArray = nullptr;
-	if (da != nullptr){
+	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
 	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
-	if (vectorArray == nullptr){
+	if (vectorArray == nullptr) {
 		m_currentSolution = "";
 		return;
 	}
 	QSet<vtkIdType> pointIds;
 	double minlimitsqr = m_minimumValue * m_minimumValue;
-	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i) {
 		bool active = true;
-		if (m_regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0){
+		if (m_regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
 			active = false;
 		}
 		double val = 0;
-		for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j){
+		for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j) {
 			double tmpval = vectorArray->GetComponent(i, j);
 			val += tmpval * tmpval;
 		}
-		if (val < minlimitsqr){
+		if (val < minlimitsqr) {
 			active = false;
 		}
-		if (active){
+		if (active) {
 			pointIds.insert(i);
 		}
 	}
@@ -102,7 +102,7 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 
 	outPD->CopyAllocate(inPD, pointIds.size());
 	vtkIdType newId = 0;
-	for (auto it = pointIds.begin(); it != pointIds.end(); ++it){
+	for (auto it = pointIds.begin(); it != pointIds.end(); ++it) {
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
 		outPD->CopyData(inPD, pointid, newId);
@@ -116,15 +116,15 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){
+	if (cont == nullptr || cont->data() == nullptr) {
 		return nullptr;
 	}
-	Post2dWindowArrowStructuredSettingDialog * dialog = new Post2dWindowArrowStructuredSettingDialog(p);
+	Post2dWindowArrowStructuredSettingDialog* dialog = new Post2dWindowArrowStructuredSettingDialog(p);
 	dialog->setZoneData(cont);
 	dialog->setMapping(m_mapping);
 	dialog->setColor(m_color);
 	dialog->setScalarValue(m_scalarValueName);
-	if (! cont->IBCExists()){
+	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
 	dialog->setRegionMode(m_regionMode);
@@ -143,8 +143,7 @@ class Post2dWindowArrowStructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowArrowStructuredSetProperty(const QString& solutionName, Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping, const QColor& color, const QString& scalarName, StructuredGridRegion::RegionMode rm, StructuredGridRegion::Range2d range, int irate, int jrate, Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm, double stdVal, int legendLen, double minVal, const ArrowSettingContainer& acon, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Arrow Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Arrow Setting")) {
 		m_newSolutionName = solutionName;
 		m_newMapping = mapping;
 		m_newColor = color;
@@ -175,8 +174,7 @@ public:
 
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newSolutionName);
 		m_item->m_mapping = m_newMapping;
@@ -196,8 +194,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldSolutionName);
 		m_item->m_mapping = m_oldMapping;

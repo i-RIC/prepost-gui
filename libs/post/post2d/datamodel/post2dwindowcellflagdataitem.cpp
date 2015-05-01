@@ -62,17 +62,17 @@ void Post2dWindowCellFlagDataItem::update()
 
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 	vtkPointSet* set = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
-	if (set == nullptr){return;}
+	if (set == nullptr) {return;}
 	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(iRIC::toStr(m_attributeName).c_str()));
-	if (cellvals == nullptr){
+	if (cellvals == nullptr) {
 		// no data available.
 		return;
 	}
-	for (vtkIdType i = 0; i < set->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < set->GetNumberOfCells(); ++i) {
 		int val = cellvals->GetValue(i);
-		if (val == m_value){
+		if (val == m_value) {
 			idlist->InsertNextId(i);
 		}
 	}
@@ -95,7 +95,7 @@ void Post2dWindowCellFlagDataItem::assignActionZValues(const ZDepthRange& range)
 }
 
 
-void Post2dWindowCellFlagDataItem::setColor(const QColor &col)
+void Post2dWindowCellFlagDataItem::setColor(const QColor& col)
 {
 	m_color = col;
 	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
@@ -107,20 +107,20 @@ void Post2dWindowCellFlagDataItem::setOpacity(int o)
 }
 
 
-void Post2dWindowCellFlagDataItem::doLoadFromProjectMainFile(const QDomNode & node)
+void Post2dWindowCellFlagDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QColor col = loadColorAttribute("color", node, Qt::red);
 	setColor(col);
 }
 
-void Post2dWindowCellFlagDataItem::doSaveToProjectMainFile(QXmlStreamWriter & writer)
+void Post2dWindowCellFlagDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("attributeName", m_attributeName);
 	iRIC::setIntAttribute(writer, "value", m_value);
 	writeColorAttribute("color", m_color, writer);
 }
 
-void Post2dWindowCellFlagDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowCellFlagDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();
 }

@@ -17,7 +17,7 @@ public:
 	/// Constructor
 	RawDataImporter(RawDataCreator* creator);
 	/// Initializes this class to prepare for importing the rawdata from the specified file.
-	bool importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface *item, QWidget* w);
+	bool importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w);
 	/// Import the rawdata into data.
 	virtual bool importData(RawData* data, int index, QWidget* w) = 0;
 	virtual const QStringList fileDialogFilters() = 0;

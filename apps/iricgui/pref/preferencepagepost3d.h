@@ -3,8 +3,9 @@
 
 #include "preferencepage.h"
 
-namespace Ui {
-    class PreferencePagePost3d;
+namespace Ui
+{
+	class PreferencePagePost3d;
 }
 
 class PreferencePagePost3d : public PreferencePage
@@ -12,12 +13,12 @@ class PreferencePagePost3d : public PreferencePage
 	Q_OBJECT
 
 public:
-	explicit PreferencePagePost3d(QWidget *parent = nullptr);
+	explicit PreferencePagePost3d(QWidget* parent = nullptr);
 	~PreferencePagePost3d();
 	void update();
 
 private:
-    Ui::PreferencePagePost3d *ui;
+	Ui::PreferencePagePost3d* ui;
 };
 
 #endif // PREFERENCEPAGEPOST3D_H

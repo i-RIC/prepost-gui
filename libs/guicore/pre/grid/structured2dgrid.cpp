@@ -65,7 +65,7 @@ const QVector2D Structured2DGrid::vertex(unsigned int index) const
 	return QVector2D(v[0], v[1]);
 }
 
-void Structured2DGrid::setVertex(unsigned int index, const QVector2D &v)
+void Structured2DGrid::setVertex(unsigned int index, const QVector2D& v)
 {
 	m_vtkGrid->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
@@ -79,7 +79,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	cgsize_t size[9];
 	char buffer[ProjectCgnsFile::BUFFERLEN];
 	ier = cg_zone_read(fn, base, zoneid, buffer, size);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	// for structured 2d grid, size[0] = NVertexI, size[1] = NVertexJ.
 	m_dimensionI = size[0];
 	m_dimensionJ = size[1];
@@ -88,7 +88,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);
 	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
 	ier = cg_goto(fn, base, "Zone_t", zoneid, "GridCoordinates", 0, "end");
-	if (ier != 0){
+	if (ier != 0) {
 		// grid data does not exists.
 		return false;
 	}
@@ -100,33 +100,33 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	cg_narrays(&narrays);
 	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
 	double* dataX = new double[m_dimensionI * m_dimensionJ];
-	if (dType == RealSingle){
+	if (dType == RealSingle) {
 		float* tmpFloat = new float[m_dimensionI * m_dimensionJ];
 		ier = cg_array_read(1, tmpFloat);
-		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i){
+		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i) {
 			*(dataX + i) = *(tmpFloat + i);
 		}
 		delete[] tmpFloat;
-	}else{
+	} else {
 		ier = cg_array_read(1, dataX);
 	}
 	// the second one must be Y.
 	ier = cg_array_info(2, buffer, &dType, &dim, dimV);
 	double* dataY = new double[m_dimensionI * m_dimensionJ];
-	if (dType == RealSingle){
+	if (dType == RealSingle) {
 		float* tmpFloat = new float[m_dimensionI * m_dimensionJ];
 		ier = cg_array_read(2, tmpFloat);
-		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i){
+		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i) {
 			*(dataY + i) = *(tmpFloat + i);
 		}
 		delete[] tmpFloat;
-	}else{
+	} else {
 		ier = cg_array_read(2, dataY);
 	}
 	vtkPoints* points = vtkPoints::New();
-		points->SetDataTypeToDouble();
-		for (unsigned int j = 0; j < m_dimensionJ; ++j){
-		for (unsigned int i = 0; i < m_dimensionI; ++i){
+	points->SetDataTypeToDouble();
+	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI; ++i) {
 			points->InsertNextPoint(*(dataX + m_dimensionI * j + i), *(dataY + m_dimensionI * j + i), 0);
 		}
 	}
@@ -147,10 +147,10 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
 	cgsize_t sizes[9];
 	// Check whether the corresponsing zone already exists.
 	int zoneid = zoneId(zonename, fn, B, sizes);
-	if (zoneid != 0){
+	if (zoneid != 0) {
 		// Zone already exists! remove this zone first!
 		ier = cg_delete_node(const_cast<char*>(iRIC::toStr(zonename).c_str()));
-		if (ier != 0){return false;}
+		if (ier != 0) {return false;}
 	}
 	// Now, create new zone.
 	sizes[0] = m_dimensionI;
@@ -160,29 +160,29 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
 	sizes[4] = 0;
 	sizes[5] = 0;
 	ier = cg_zone_write(fn, B, iRIC::toStr(zonename).c_str(), sizes, Structured, &zoneid);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 
 	// save grid coordinates.
 	int G;
 	ier = cg_grid_write(fn, B, zoneid, "GridCoordinates", &G);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	int C;
 	// save coordinates.
 	double* dataX = new double[m_dimensionI * m_dimensionJ];
 	double* dataY = new double[m_dimensionI * m_dimensionJ];
 	double points[3];
 
-	for (unsigned int i = 0; i < m_dimensionI; ++i){
-		for (unsigned int j = 0; j < m_dimensionJ; ++j){
+	for (unsigned int i = 0; i < m_dimensionI; ++i) {
+		for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 			m_vtkGrid->GetPoints()->GetPoint(i + m_dimensionI * j, points);
 			*(dataX + i + m_dimensionI * j) = points[0];
 			*(dataY + i + m_dimensionI * j) = points[1];
 		}
 	}
 	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX, &C);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY, &C);
-	if (ier != 0){return false;}
+	if (ier != 0) {return false;}
 
 	delete[] dataX;
 	delete[] dataY;
@@ -194,13 +194,13 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
 	return true;
 }
 
-void Structured2DGrid::getIJIndex(unsigned int index, unsigned int *i, unsigned int *j)
+void Structured2DGrid::getIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
 {
 	*i = index % m_dimensionI;
 	*j = index / m_dimensionI;
 }
 
-void Structured2DGrid::getCellIJIndex(unsigned int index, unsigned int *i, unsigned int *j)
+void Structured2DGrid::getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
 {
 	*i = index % (m_dimensionI - 1);
 	*j = index / (m_dimensionI - 1);
@@ -219,7 +219,7 @@ const QStringList Structured2DGrid::checkShape(QTextStream& stream)
 	settings.beginGroup("gridcheck");
 	if (settings.value("checkcrushed", true).value<bool>()) {
 		// check whether it is crushed
-		if (! isValid(stream)){
+		if (! isValid(stream)) {
 			messages.append(tr("An edge line intersects with that of another cell in this grid."));
 		}
 	}
@@ -249,8 +249,8 @@ bool Structured2DGrid::isValid(QTextStream& stream)
 {
 	bool allOk = true;
 	stream << tr("* Cells where edges intersect") << endl;
-	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j){
-		for (unsigned int i = 0; i < m_dimensionI - 1; ++i){
+	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI - 1; ++i) {
 			QVector2D v0 = vertex(i, j);
 			QVector2D v1 = vertex(i + 1, j);
 			QVector2D v2 = vertex(i + 1, j + 1);
@@ -259,8 +259,8 @@ bool Structured2DGrid::isValid(QTextStream& stream)
 			tmpv1 = iRIC::outerProduct(v2 - v1, v0 - v1);
 			tmpv2 = iRIC::outerProduct(v0 - v3, v2 - v3);
 
-			if (tmpv1 * tmpv2 < 0.0){
-				if (allOk){
+			if (tmpv1 * tmpv2 < 0.0) {
+				if (allOk) {
 					stream << "  I, J" << endl;
 				}
 				stream << "  " << i + 1 << ", " << j + 1 << endl;
@@ -268,21 +268,21 @@ bool Structured2DGrid::isValid(QTextStream& stream)
 			}
 		}
 	}
-	if (allOk){
+	if (allOk) {
 		stream << "  " << tr("Not exist") << endl;
 	}
 	stream << endl;
 	return allOk;
 }
 
-bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream &stream)
+bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream& stream)
 {
 	double lengths[4];
 	QVector2D v[4];
 	bool allOk = true;
 	stream << tr("* Cells where aspect ratio of cell edges exceed %1").arg(limit) << endl;
-	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j){
-		for (unsigned int i = 0; i < m_dimensionI - 1; ++i){
+	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI - 1; ++i) {
 			v[0] = vertex(i, j);
 			v[1] = vertex(i + 1, j);
 			v[2] = vertex(i + 1, j + 1);
@@ -293,8 +293,8 @@ bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream &stream)
 			}
 			for (int k = 0; k < 4; ++k) {
 				// check whether the length is too small.
-				if (lengths[k] < 1.0E-12){
-					if (allOk){
+				if (lengths[k] < 1.0E-12) {
+					if (allOk) {
 						stream << "  " << tr("I, J, Aspect ratio") << endl;
 					}
 					stream << "  " << i + 1 << ", " << j + 1 << ", " << tr("Edge length too small");
@@ -302,9 +302,9 @@ bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream &stream)
 					break;
 				}
 				double ratio = lengths[(k + 1) % 4] / lengths[k];
-				if (ratio > limit || ratio < 1. / limit){
-					if (ratio < 1. / limit){ratio = 1 / ratio;}
-					if (allOk){
+				if (ratio > limit || ratio < 1. / limit) {
+					if (ratio < 1. / limit) {ratio = 1 / ratio;}
+					if (allOk) {
 						stream << "  " << tr("I, J, Aspect ratio") << endl;
 					}
 					stream << "  " << i + 1 << ", " << j + 1 << ", " << ratio << endl;
@@ -314,20 +314,20 @@ bool Structured2DGrid::isAspectRatioOk(double limit, QTextStream &stream)
 			}
 		}
 	}
-	if (allOk){
+	if (allOk) {
 		stream << "  " << tr("Not exist") << endl;
 	}
 	stream << endl;
 	return allOk;
 }
 
-bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream &stream)
+bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream& stream)
 {
 	bool allOk = true;
 	stream << tr("* Cells where angle of cell vertex is below %1").arg(limitAngle) << endl;
 	QVector2D v[4];
-	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j){
-		for (unsigned int i = 0; i < m_dimensionI - 1; ++i){
+	for (unsigned int j = 0; j < m_dimensionJ - 1; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI - 1; ++i) {
 			v[0] = vertex(i, j);
 			v[1] = vertex(i + 1, j);
 			v[2] = vertex(i + 1, j + 1);
@@ -340,8 +340,8 @@ bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream &stream)
 				double dotProd = QVector2D::dotProduct(vec0, vec1);
 				double cosVal = dotProd / (vec0.length() * vec1.length());
 				double angle = acos(cosVal) / M_PI * 180.;
-				if (angle < limitAngle){
-					if (allOk){
+				if (angle < limitAngle) {
+					if (allOk) {
 						stream << "  " << tr("I, J, Angle") << endl;
 					}
 					stream << "  " << i + 1 << ", " << j + 1 << ", " << angle << endl;
@@ -350,71 +350,71 @@ bool Structured2DGrid::isAngleOk(double limitAngle, QTextStream &stream)
 			}
 		}
 	}
-	if (allOk){
+	if (allOk) {
 		stream << "  " << tr("Not exist") << endl;
 	}
 	stream << endl;
 	return allOk;
 }
 
-bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream &stream)
+bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& stream)
 {
 	bool iAllOk = true;
 	stream << tr("* Cells where variation of cell length along i-direction exceed %1").arg(ilimit) << endl;
 	double lengths[2];
 	QVector2D v[3];
-	for (unsigned int j = 0; j < m_dimensionJ; ++j){
-		for (unsigned int i = 0; i < m_dimensionI - 2; ++i){
+	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
+		for (unsigned int i = 0; i < m_dimensionI - 2; ++i) {
 			v[0] = vertex(i, j);
 			v[1] = vertex(i + 1, j);
 			v[2] = vertex(i + 2, j);
 
-			for (int k = 0; k < 2; ++k){
+			for (int k = 0; k < 2; ++k) {
 				lengths[k] = (v[k + 1] - v[k]).length();
 			}
 			double variation = lengths[1] / lengths[0];
-			if (variation < 1){variation = 1. / variation;}
-			if (variation > ilimit){
-				if (iAllOk){
+			if (variation < 1) {variation = 1. / variation;}
+			if (variation > ilimit) {
+				if (iAllOk) {
 					stream << "  " << tr("I, J, Variation") << endl;
 				}
 				int tmpj = j;
-				if (tmpj == m_dimensionJ - 1){tmpj = m_dimensionJ - 2;}
+				if (tmpj == m_dimensionJ - 1) {tmpj = m_dimensionJ - 2;}
 				stream << "  " << i + 2 << ", " << tmpj + 1 << ", " << variation << endl;
 				iAllOk = false;
 			}
 		}
 	}
-	if (iAllOk){
+	if (iAllOk) {
 		stream << "  " << tr("Not exist") << endl;
 	}
 	stream << endl;
 
 	bool jAllOk = true;
 	stream << tr("* Cells where variation of cell length along j-direction exceed %1").arg(jlimit) << endl;
-	for (unsigned int i = 0; i < m_dimensionI; ++i){
-		for (unsigned int j = 0; j < m_dimensionJ - 2; ++j){
+	for (unsigned int i = 0; i < m_dimensionI; ++i) {
+		for (unsigned int j = 0; j < m_dimensionJ - 2; ++j) {
 			v[0] = vertex(i, j);
 			v[1] = vertex(i, j + 1);
 			v[2] = vertex(i, j + 2);
 
-			for (int k = 0; k < 2; ++k){
+			for (int k = 0; k < 2; ++k) {
 				lengths[k] = (v[k + 1] - v[k]).length();
 			}
 			double variation = lengths[1] / lengths[0];
-			if (variation < 1){variation = 1. / variation;}
-			if (variation > jlimit){
-				if (jAllOk){
+			if (variation < 1) {variation = 1. / variation;}
+			if (variation > jlimit) {
+				if (jAllOk) {
 					stream << "  " << tr("I, J, Variation") << endl;
 				}
 				int tmpi = i;
-				if (tmpi == m_dimensionI - 1){tmpi = m_dimensionI - 2;}
+				if (tmpi == m_dimensionI - 1) {tmpi = m_dimensionI - 2;}
 				stream << "  " << tmpi + 1 << ", " << j + 2 << ", " << variation << endl;
 				jAllOk = false;
 			}
 		}
 	}
-	if (jAllOk){
+	if (jAllOk) {
 		stream << "  " << tr("Not exist") << endl;
 	}
 	stream << endl;
@@ -439,8 +439,8 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 
 	// 1. Find the grid vertex that is the nearest to the region center.
 	vtkIdType vid = m_vtkGrid->FindPoint(xcenter, ycenter, 0);
-	double *cv = m_vtkGrid->GetPoint(vid);
-	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax){
+	double* cv = m_vtkGrid->GetPoint(vid);
+	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
 		vtkSmartPointer<vtkTrivialProducer> emptyAlgo = vtkSmartPointer<vtkTrivialProducer>::New();
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
@@ -462,28 +462,28 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 
 	// test I = 0
 	m_vtkGrid->GetPoint(vertexIndex(0, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMin = 0;
 	} else {
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
 	}
 	// test I = imax
 	m_vtkGrid->GetPoint(vertexIndex(m_dimensionI - 1, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMax = m_dimensionI - 1;
 	} else {
 		lineLimitIMax = lineLimitI(centerJ, centerI, m_dimensionI - 1, region);
 	}
 	// test J = 0
 	m_vtkGrid->GetPoint(vertexIndex(centerI, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMin = 0;
 	} else {
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
 	}
 	// test J = jmax
 	m_vtkGrid->GetPoint(vertexIndex(centerI, m_dimensionJ - 1), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMax = m_dimensionJ - 1;
 	} else {
 		lineLimitJMax = lineLimitJ(centerI, centerJ, m_dimensionJ - 1, region);
@@ -492,20 +492,20 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
 
 	// test I min direction
-	if (lineLimitIMin == 0){
+	if (lineLimitIMin == 0) {
 		lineLimitIMin2 = 0;
 	} else {
-		if (lineAtIIntersect(0, region)){
+		if (lineAtIIntersect(0, region)) {
 			lineLimitIMin2 = 0;
 		} else {
 			lineLimitIMin2 = lineLimitI2(lineLimitIMin, 0, region);
 		}
 	}
 	// test I max direction
-	if (lineLimitIMax == m_dimensionI - 1){
+	if (lineLimitIMax == m_dimensionI - 1) {
 		lineLimitIMax2 = m_dimensionI - 1;
 	} else {
-		if (lineAtIIntersect(m_dimensionI - 1, region)){
+		if (lineAtIIntersect(m_dimensionI - 1, region)) {
 			lineLimitIMax2 = m_dimensionI - 1;
 		} else {
 			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_dimensionI - 1, region);
@@ -513,20 +513,20 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	}
 
 	// test J min direction
-	if (lineLimitJMin == 0){
+	if (lineLimitJMin == 0) {
 		lineLimitJMin2 = 0;
 	} else {
-		if (lineAtJIntersect(0, region)){
+		if (lineAtJIntersect(0, region)) {
 			lineLimitJMin2 = 0;
 		} else {
 			lineLimitJMin2 = lineLimitJ2(lineLimitJMin, 0, region);
 		}
 	}
 	// test J max direction
-	if (lineLimitJMax == m_dimensionJ - 1){
+	if (lineLimitJMax == m_dimensionJ - 1) {
 		lineLimitJMax2 = m_dimensionJ - 1;
 	} else {
-		if (lineAtJIntersect(m_dimensionJ - 1, region)){
+		if (lineAtJIntersect(m_dimensionJ - 1, region)) {
 			lineLimitJMax2 = m_dimensionJ - 1;
 		} else {
 			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_dimensionJ - 1, region);
@@ -539,7 +539,7 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
-	while (extractedGrid->GetNumberOfCells() > MAX_DRAWCELLCOUNT){
+	while (extractedGrid->GetNumberOfCells() > MAX_DRAWCELLCOUNT) {
 		exRate *= 2;
 		exGrid->SetSampleRate(exRate, exRate, 1);
 		exGrid->Update();
@@ -572,14 +572,14 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	vtkIdType cellid = 0;
 	double tmpp[3];
 	QString label("(%1,%2)");
-	for (int i = tmpIMin; i <= tmpIMax; i += exRate){
+	for (int i = tmpIMin; i <= tmpIMax; i += exRate) {
 		m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
 		sa->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1)));
 		++ cellid;
 	}
-	for (int j = tmpJMin; j <= tmpJMax; j += exRate){
+	for (int j = tmpJMin; j <= tmpJMax; j += exRate) {
 		m_vtkGrid->GetPoint(vertexIndex(0, j), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
@@ -598,13 +598,13 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 
 int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& region)
 {
-	if (qAbs(iOut - iIn) == 1){
+	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
 	}
 	int i = (iIn + iOut) / 2;
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitI(j, i, iOut, region);
 	} else {
 		return lineLimitI(j, iIn, i, region);
@@ -613,13 +613,13 @@ int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& reg
 
 int Structured2DGrid::lineLimitJ(int i, int jIn, int jOut, const RectRegion& region)
 {
-	if (qAbs(jOut - jIn) == 1){
+	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
 	}
 	int j = (jIn + jOut) / 2;
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])){
+	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitJ(i, j, jOut, region);
 	} else {
 		return lineLimitJ(i, jIn, j, region);
@@ -628,11 +628,11 @@ int Structured2DGrid::lineLimitJ(int i, int jIn, int jOut, const RectRegion& reg
 
 int Structured2DGrid::lineLimitI2(int iIn, int iOut, const RectRegion& region)
 {
-	if (qAbs(iOut - iIn) == 1){
+	if (qAbs(iOut - iIn) == 1) {
 		return iIn;
 	}
 	int i = (iIn + iOut) / 2;
-	if (lineAtIIntersect(i, region)){
+	if (lineAtIIntersect(i, region)) {
 		return lineLimitI2(i, iOut, region);
 	} else {
 		return lineLimitI2(iIn, i, region);
@@ -641,11 +641,11 @@ int Structured2DGrid::lineLimitI2(int iIn, int iOut, const RectRegion& region)
 
 int Structured2DGrid::lineLimitJ2(int jIn, int jOut, const RectRegion& region)
 {
-	if (qAbs(jOut - jIn) == 1){
+	if (qAbs(jOut - jIn) == 1) {
 		return jIn;
 	}
 	int j = (jIn + jOut) / 2;
-	if (lineAtJIntersect(j, region)){
+	if (lineAtJIntersect(j, region)) {
 		return lineLimitJ2(j, jOut, region);
 	} else {
 		return lineLimitJ2(jIn, j, region);
@@ -658,11 +658,11 @@ bool Structured2DGrid::lineAtIIntersect(int i, const RectRegion& region)
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < m_dimensionJ; ++j){
+	for (int j = 1; j < m_dimensionJ; ++j) {
 		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
-		if (region.intersect(line)){return true;}
+		if (region.intersect(line)) {return true;}
 	}
 	return false;
 }
@@ -673,11 +673,11 @@ bool Structured2DGrid::lineAtJIntersect(int j, const RectRegion& region)
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(0, j), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < m_dimensionI; ++i){
+	for (int i = 1; i < m_dimensionI; ++i) {
 		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
-		if (region.intersect(line)){return true;}
+		if (region.intersect(line)) {return true;}
 	}
 	return false;
 }

@@ -17,7 +17,7 @@ GridRelatedConditionEditWidget* SolverDefinitionIntegerOptionNodeGridRelatedCond
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionIntegerOptionNodeGridRelatedCondition::createScalarsToColorsEditWidget(QWidget *parent)
+ScalarsToColorsEditWidget* SolverDefinitionIntegerOptionNodeGridRelatedCondition::createScalarsToColorsEditWidget(QWidget* parent)
 {
 	return createColorTransferFunctionEditWidget(parent);
 }
@@ -30,7 +30,7 @@ ScalarsToColorsContainer* SolverDefinitionIntegerOptionNodeGridRelatedCondition:
 	QMap<double, QColor> cols;
 	ColorSource* src = new ColorSource(d);
 	src->load(":/libs/guicore/data/colorsource_cell.xml");
-	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it){
+	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it) {
 		int num = it.key();
 		engEnums.insert(num, it.value());
 		enums.insert(num, m_enumerations.value(num));

@@ -27,7 +27,7 @@
 #include <QMenu>
 #include <QDomNode>
 
-PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem *parent)
+PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
 	: PreProcessorDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
 	m_subFolder = "measureddata";
@@ -61,12 +61,12 @@ void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 {
 	const QList<MeasuredData*>& mdlist = projectData()->mainfile()->measuredDatas();
 	QDomNodeList children = node.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
 		int index = child.attribute("index").toInt();
-		for (int j = 0; j < mdlist.count(); ++j){
+		for (int j = 0; j < mdlist.count(); ++j) {
 			MeasuredData* md = mdlist.at(j);
-			if (md->index() == index){
+			if (md->index() == index) {
 				MeasuredDataFileDataItem* fitem = new MeasuredDataFileDataItem(md, this);
 				fitem->loadFromProjectMainFile(child);
 				m_childItems.append(fitem);
@@ -77,17 +77,17 @@ void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void PreProcessorMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("MeasuredDataFile");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
-const QList<MeasuredDataFileDataItem *> PreProcessorMeasuredDataTopDataItem::fileDataItems() const
+const QList<MeasuredDataFileDataItem*> PreProcessorMeasuredDataTopDataItem::fileDataItems() const
 {
 	QList<MeasuredDataFileDataItem*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		MeasuredDataFileDataItem* item = dynamic_cast<MeasuredDataFileDataItem*>(*it);
 		ret.append(item);
 	}

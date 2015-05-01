@@ -3,7 +3,7 @@
 #include "../postcontainer/postzonedatacontainer.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 
-PostZoneSelectingDialog::PostZoneSelectingDialog(QWidget *parent) :
+PostZoneSelectingDialog::PostZoneSelectingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PostZoneSelectingDialog)
 {
@@ -13,14 +13,14 @@ PostZoneSelectingDialog::PostZoneSelectingDialog(QWidget *parent) :
 
 PostZoneSelectingDialog::~PostZoneSelectingDialog()
 {
-		delete ui;
+	delete ui;
 }
 
 void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>& containers)
 {
-	for (auto it = containers.begin(); it != containers.end(); ++it){
+	for (auto it = containers.begin(); it != containers.end(); ++it) {
 		PostZoneDataContainer* cont = *it;
-		if (! m_gridTypes.contains(cont->gridType())){
+		if (! m_gridTypes.contains(cont->gridType())) {
 			m_gridTypes.append(cont->gridType());
 			QList<PostZoneDataContainer*> list;
 			m_zoneLists.insert(cont->gridType(), list);
@@ -32,11 +32,11 @@ void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>&
 
 void PostZoneSelectingDialog::setupGridTypeComboBox()
 {
-	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it){
+	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it) {
 		SolverDefinitionGridType* gtype = *it;
 		ui->gridTypeComboBox->addItem(gtype->caption());
 	}
-	if (ui->gridTypeComboBox->count() <= 1){
+	if (ui->gridTypeComboBox->count() <= 1) {
 		ui->gridTypeComboBox->setDisabled(true);
 	}
 	setupZoneList(0);
@@ -47,7 +47,7 @@ void PostZoneSelectingDialog::setupZoneList(int index)
 	SolverDefinitionGridType* gt = m_gridTypes.at(index);
 	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(gt);
 	ui->zoneList->clear();
-	for (auto it = list.begin(); it != list.end(); ++it){
+	for (auto it = list.begin(); it != list.end(); ++it) {
 		PostZoneDataContainer* c = *it;
 		ui->zoneList->addItem(c->caption());
 	}

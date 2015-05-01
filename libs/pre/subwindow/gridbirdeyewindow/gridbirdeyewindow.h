@@ -15,9 +15,9 @@ class GridBirdEyeWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class GridBirdEyeWindow :
-		public QMainWindow,
-		public SnapshotEnabledWindow,
-		public AdditionalMenuWindow
+	public QMainWindow,
+	public SnapshotEnabledWindow,
+	public AdditionalMenuWindow
 {
 	Q_OBJECT
 public:

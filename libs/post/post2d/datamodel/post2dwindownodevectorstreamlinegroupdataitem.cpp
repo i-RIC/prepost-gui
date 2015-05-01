@@ -40,10 +40,10 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
-		if (tmparray->GetNumberOfComponents() == 1){
+		if (tmparray == nullptr) {continue;}
+		if (tmparray->GetNumberOfComponents() == 1) {
 			// scalar attribute.
 			continue;
 		}
@@ -55,14 +55,14 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamlineGroupDataItem()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		renderer()->RemoveActor(m_streamlineActors[i]);
 		m_streamlineActors[i]->Delete();
 	}
-	for (int i = 0; i < m_streamlineMappers.count(); ++i){
+	for (int i = 0; i < m_streamlineMappers.count(); ++i) {
 		m_streamlineMappers[i]->Delete();
 	}
-	for (int i = 0; i < m_streamTracers.count(); ++i){
+	for (int i = 0; i < m_streamTracers.count(); ++i) {
 		m_streamTracers[i]->Delete();
 	}
 }
@@ -71,22 +71,19 @@ class Post2dWindowStructuredGridStreamlineSelectSolution : public QUndoCommand
 {
 public:
 	Post2dWindowStructuredGridStreamlineSelectSolution(const QString& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Streamline Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Streamline Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -103,11 +100,11 @@ private:
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post2dWindowStructuredGridStreamlineSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post2dWindowStructuredGridStreamlineSelectSolution(item->name(), this));
 	}
 }
@@ -125,7 +122,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		renderer()->RemoveActor(m_streamlineActors[i]);
 		m_streamlineActors[i]->Delete();
 		m_streamlineMappers[i]->Delete();
@@ -137,19 +134,20 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	m_streamTracers.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (ps == nullptr){return;}
-	if (m_currentSolution == ""){return;}
+	if (ps == nullptr) {return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	setupActors();
 	updateVisibilityWithoutRendering();
 	assignActionZValues(m_zDepthRange);
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::setupClipper(){
+void Post2dWindowNodeVectorStreamlineGroupDataItem::setupClipper()
+{
 	m_IBCClipper = vtkSmartPointer<vtkClipPolyData>::New();
 	m_IBCClipper->SetValue(PostZoneDataContainer::IBCLimit);
 	m_IBCClipper->InsideOutOff();
@@ -162,12 +160,12 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::assignActionZValues(const ZDepthRange& range)
 {
-	if (m_streamlineActors.count() == 0){return;}
-	if (m_streamlineActors.count() == 1){
+	if (m_streamlineActors.count() == 0) {return;}
+	if (m_streamlineActors.count() == 1) {
 		m_streamlineActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_streamlineActors.count(); ++i){
+	for (int i = 0; i < m_streamlineActors.count(); ++i) {
 		double depth = range.min() + static_cast<double>(i) / (m_streamlineActors.count() - 1) * (range.max() - range.min());
 		m_streamlineActors[i]->SetPosition(0, 0, depth);
 	}
@@ -181,14 +179,14 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post2dWindowNodeVectorStreamlineDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorStreamlineDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -197,9 +195,9 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QSt
 vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (m_regionMode == StructuredGridRegion::rmFull){
+	if (m_regionMode == StructuredGridRegion::rmFull) {
 		return ps;
-	} else if (m_regionMode == StructuredGridRegion::rmActive){
+	} else if (m_regionMode == StructuredGridRegion::rmActive) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();
@@ -241,7 +239,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXml
 	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
 }
@@ -261,7 +259,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::mouseReleaseEvent(QMouseEven
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);

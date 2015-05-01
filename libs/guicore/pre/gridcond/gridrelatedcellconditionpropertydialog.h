@@ -7,7 +7,8 @@
 
 class ScalarsToColorsEditWidget;
 
-namespace Ui {
+namespace Ui
+{
 	class GridRelatedCellConditionPropertyDialog;
 }
 
@@ -15,7 +16,7 @@ class GUICOREDLL_EXPORT GridRelatedCellConditionPropertyDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	GridRelatedCellConditionPropertyDialog(QWidget *parent = nullptr);
+	GridRelatedCellConditionPropertyDialog(QWidget* parent = nullptr);
 	~GridRelatedCellConditionPropertyDialog();
 	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
 	ScalarsToColorsEditWidget* scalarsToColorsEditWidget() const;
@@ -24,7 +25,7 @@ public:
 	void accept();
 
 private:
-	Ui::GridRelatedCellConditionPropertyDialog *ui;
+	Ui::GridRelatedCellConditionPropertyDialog* ui;
 };
 
 #endif // GRIDRELATEDCELLCONDITIONPROPERTYDIALOG_H

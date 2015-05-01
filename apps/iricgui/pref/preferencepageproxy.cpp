@@ -1,13 +1,13 @@
 #include "preferencepageproxy.h"
 #include "ui_preferencepageproxy.h"
 
-PreferencePageProxy::PreferencePageProxy(QWidget *parent) :
+PreferencePageProxy::PreferencePageProxy(QWidget* parent) :
 	PreferencePage(parent),
 	ui(new Ui::PreferencePageProxy)
 {
 	ui->setupUi(this);
 
-	switch (m_setting.proxyMode()){
+	switch (m_setting.proxyMode()) {
 	case NetworkSetting::pmNoProxy:
 		ui->noProxyRadioButton->setChecked(true);
 		break;
@@ -33,11 +33,11 @@ PreferencePageProxy::~PreferencePageProxy()
 
 void PreferencePageProxy::update()
 {
-	if (ui->noProxyRadioButton->isChecked()){
+	if (ui->noProxyRadioButton->isChecked()) {
 		m_setting.setProxyMode(NetworkSetting::pmNoProxy);
-	} else if (ui->systemProxyRadioButton->isChecked()){
+	} else if (ui->systemProxyRadioButton->isChecked()) {
 		m_setting.setProxyMode(NetworkSetting::pmSystemSetting);
-	} else if (ui->customProxyRadioButton->isChecked()){
+	} else if (ui->customProxyRadioButton->isChecked()) {
 		m_setting.setProxyMode(NetworkSetting::pmCustomSetting);
 	}
 	m_setting.setProxySite(ui->proxySiteEdit->text());

@@ -71,12 +71,12 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){
+		if (tmparray == nullptr) {
 			continue;
 		}
-		if (tmparray->GetNumberOfComponents() > 1){
+		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attribute.
 			continue;
 		}
@@ -119,16 +119,15 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return;}
+	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 	createRangeClippedPolyData();
 	createValueClippedPolyData();
-	switch(m_contour)
-	{
+	switch (m_contour) {
 	case ContourSettingWidget::Points:
 		// do nothing
 		break;
@@ -142,7 +141,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 		setupColorFringeSetting();
 		break;
 	}
-	if (m_scalarbarSetting.visible && m_currentSolution != ""){
+	if (m_scalarbarSetting.visible && m_currentSolution != "") {
 		m_scalarBarWidget->SetEnabled(1);
 		setupScalarBarSetting();
 	}
@@ -173,7 +172,7 @@ void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_labelTextSetting.load(node);
 
 	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		QDomElement titleElem = titles.at(i).toElement();
 		QString val = titleElem.attribute("value");
 		QString title = titleElem.attribute("title");
@@ -205,7 +204,7 @@ void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 
 	// scalar bar titles
 	QMapIterator<QString, QString> i(m_colorbarTitleMap);
-	while (i.hasNext()){
+	while (i.hasNext()) {
 		i.next();
 		writer.writeStartElement("ScalarBarTitle");
 		writer.writeAttribute("value", i.key());
@@ -292,7 +291,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 	m_isolineFilter->SetInputData(m_valueClippedPolyData);
@@ -307,7 +306,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -317,14 +316,14 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
 
-	for (int i = 0; i < m_numberOfDivisions; i++){
-		double valueLo = range[0] + static_cast<double> (i) * delta;
-		double valueHi = range[0] + static_cast<double> (i + 1) * delta;
+	for (int i = 0; i < m_numberOfDivisions; i++) {
+		double valueLo = range[0] + static_cast<double>(i) * delta;
+		double valueHi = range[0] + static_cast<double>(i + 1) * delta;
 		clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if (i == 0){
+		if (i == 0) {
 			clippersLo[i]->SetValue(-HUGE_VAL);
 			clippersLo[i]->SetInputData(m_valueClippedPolyData);
-		}else{
+		} else {
 			clippersLo[i]->SetValue(valueLo);
 			clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
 		}
@@ -332,16 +331,16 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 		clippersLo[i]->Update();
 
 		clippersHi.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if(i < m_numberOfDivisions - 1){
+		if (i < m_numberOfDivisions - 1) {
 			clippersHi[i]->SetValue(valueHi);
-		}else{
+		} else {
 			clippersHi[i]->SetValue(HUGE_VAL);
 		}
 		clippersHi[i]->SetInputConnection(clippersLo[i]->GetOutputPort());
 		clippersHi[i]->GenerateClippedOutputOn();
 		clippersHi[i]->InsideOutOn();
 		clippersHi[i]->Update();
-		if(clippersHi[i]->GetOutput()->GetNumberOfCells() == 0){
+		if (clippersHi[i]->GetOutput()->GetNumberOfCells() == 0) {
 			continue;
 		}
 
@@ -374,7 +373,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	m_fringeMapper->SetInputData(m_valueClippedPolyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_currentSolution).c_str());
@@ -388,7 +387,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(m_currentSolution)).c_str());
@@ -419,7 +418,7 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
 	Post2dWindowZoneDataItem* zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent());
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr){
+	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
@@ -433,7 +432,7 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setOpacityPercent(m_opacityPercent);
 
 	// region setting
-	if (! zItem->dataContainer()->IBCExists()){
+	if (! zItem->dataContainer()->IBCExists()) {
 		dialog->disableActive();
 	}
 	dialog->setRegionMode(m_regionMode);
@@ -453,8 +452,7 @@ class Post2dWindowContourSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowContourSetProperty(bool enabled, ContourSettingWidget::Contour cont, const QString& sol, int numDiv, const LookupTableContainer& ltc, StructuredGridRegion::RegionMode regionmode, StructuredGridRegion::Range2d range, bool fillupper, bool filllower, QString colorbarTitle, ScalarBarSetting scalarBarSetting, const vtkTextPropertySettingContainer& titleCont, const vtkTextPropertySettingContainer& labelCont, int opacityPercent, Post2dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Contour Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Contour Setting")) {
 		m_newEnabled = enabled;
 		m_newContour = cont;
 		m_newCurrentSolution = sol;
@@ -489,8 +487,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_contour = m_oldContour;
@@ -516,8 +513,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->m_contour = m_newContour;
@@ -589,22 +585,19 @@ class Post2dWindowContourSelectSolution : public QUndoCommand
 {
 public:
 	Post2dWindowContourSelectSolution(const QString& newsol, Post2dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -620,11 +613,11 @@ private:
 
 void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScalarDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new Post2dWindowContourSelectSolution("", this));
-	}else{
+	} else {
 		stack.push(new Post2dWindowContourSelectSolution(item->name(), this));
 	}
 }
@@ -632,14 +625,14 @@ void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScala
 void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	Post2dWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -649,15 +642,15 @@ void Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
-	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		// unstructured grid.
 		vtkPointSet* ps = polyData;
 		vtkSmartPointer<vtkGeometryFilter> geoFilter = vtkSmartPointer<vtkGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
-		if (m_regionMode == StructuredGridRegion::rmFull){
+		if (m_regionMode == StructuredGridRegion::rmFull) {
 			geoFilter->Update();
 			m_regionClippedPolyData = geoFilter->GetOutput();
-		} else if (m_regionMode == StructuredGridRegion::rmActive){
+		} else if (m_regionMode == StructuredGridRegion::rmActive) {
 			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
 			clipper->SetInputConnection(geoFilter->GetOutputPort());
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
@@ -669,9 +662,9 @@ void Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 		}
 	} else {
 		// structured grid.
-		if (m_regionMode == StructuredGridRegion::rmFull){
+		if (m_regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = polyData;
-		} else if (m_regionMode == StructuredGridRegion::rmActive){
+		} else if (m_regionMode == StructuredGridRegion::rmActive) {
 			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
 			clipper->SetInputData(polyData);
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
@@ -680,7 +673,7 @@ void Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 			clipper->Update();
 			m_regionClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
 			m_regionClippedPolyData->DeepCopy(clipper->GetOutput());
-		} else if (m_regionMode == StructuredGridRegion::rmCustom){
+		} else if (m_regionMode == StructuredGridRegion::rmCustom) {
 			vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 			geoFilter->SetInputData(cont->data());
 			geoFilter->SetExtent(m_range.iMin, m_range.iMax, m_range.jMin, m_range.jMax, 0, 0);
@@ -697,10 +690,10 @@ void Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc == 0){return;}
+	if (stc == 0) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);
-	if (m_fillLower){
+	if (m_fillLower) {
 		lowerClipped = m_regionClippedPolyData;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -713,7 +706,7 @@ void Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 		lowerClipped = lowerClipper->GetOutput();
 		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
 	}
-	if (m_fillUpper){
+	if (m_fillUpper) {
 		upperClipped = lowerClipped;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -730,10 +723,10 @@ void Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 
 bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 {
-	if (standardItem()->checkState() == Qt::Unchecked){return false;}
-	if (m_currentSolution == ""){return false;}
-	if (m_contour == ContourSettingWidget::Isolines){return false;}
-	if (m_opacityPercent == 100){return false;}
+	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
+	if (m_currentSolution == "") {return false;}
+	if (m_contour == ContourSettingWidget::Isolines) {return false;}
+	if (m_opacityPercent == 100) {return false;}
 	return true;
 }
 
@@ -744,7 +737,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 	Post2dWindowDataItem::updateVisibility(visible);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
@@ -773,7 +766,7 @@ void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
@@ -782,18 +775,18 @@ void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu *menu)
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
 {
 	// check the condition.
-	if (m_contour != ContourSettingWidget::ContourFigure){
+	if (m_contour != ContourSettingWidget::ContourFigure) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, display with Contour Fringe."));
 		return false;
 	}
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
-	if (stc->autoRange()){
+	if (stc->autoRange()) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, value range should be set up manually."));
 		return false;
 	}
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	if (cs == nullptr){
+	if (cs == nullptr) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, coordinate system should be specified."));
 		return false;
 	}
@@ -804,7 +797,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 	writer.writeTextElement("open", "1");
 
 	// output styles.
-	for (int i = 0; i < m_numberOfDivisions; ++i){
+	for (int i = 0; i < m_numberOfDivisions; ++i) {
 		double val = stc->manualMin() + i * (stc->manualMax() - stc->manualMin()) / (m_numberOfDivisions - 1);
 		double rgb[3];
 		stc->vtkObj()->GetColor(val, rgb);
@@ -862,21 +855,21 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointSet* ps = cont->data();
 	vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str());
-	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*> (ps);
+	vtkStructuredGrid* stGrid = dynamic_cast<vtkStructuredGrid*>(ps);
 	bool isStructured = (stGrid != nullptr);
 
-	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId){
+	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId) {
 
 		QList<QVector3D> points;
 		vtkCell* cell = ps->GetCell(cellId);
 		QList<vtkIdType> pointIds;
 
-		for (int pId = 0; pId < cell->GetNumberOfPoints(); ++pId){
+		for (int pId = 0; pId < cell->GetNumberOfPoints(); ++pId) {
 			vtkIdType pointId = cell->GetPointId(pId);
 			pointIds.append(pointId);
 		}
 
-		for (int i = 0; i < pointIds.size(); ++i){
+		for (int i = 0; i < pointIds.size(); ++i) {
 			vtkIdType pointId = pointIds.at(i);
 			double v[3];
 			double lon, lat;
@@ -890,27 +883,27 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		double minval = 0;
 		double maxval = 0;
 		double sum = 0;
-		for (int i = 0; i < points.size(); ++i){
+		for (int i = 0; i < points.size(); ++i) {
 			QVector3D v = points.at(i);
 			sum += v.z();
-			if (i == 0 || v.y() > north){north = v.y();}
-			if (i == 0 || v.y() < south){south = v.y();}
-			if (i == 0 || v.x() > east){east = v.x();}
-			if (i == 0 || v.x() < west){west = v.x();}
-			if (i == 0 || v.z() > maxval){maxval = v.z();}
-			if (i == 0 || v.z() < minval){minval = v.z();}
+			if (i == 0 || v.y() > north) {north = v.y();}
+			if (i == 0 || v.y() < south) {south = v.y();}
+			if (i == 0 || v.x() > east) {east = v.x();}
+			if (i == 0 || v.x() < west) {west = v.x();}
+			if (i == 0 || v.z() > maxval) {maxval = v.z();}
+			if (i == 0 || v.z() < minval) {minval = v.z();}
 		}
 
 		double averageDepth = sum / points.size();
 
-		if (averageDepth < stc->manualMin()){continue;}
+		if (averageDepth < stc->manualMin()) {continue;}
 
 		writer.writeStartElement("Placemark");
 		// name
 		writer.writeTextElement("name", QString("depth = %1 [m]").arg(averageDepth));
 		// description
 		QString descString;
-		if (isStructured){
+		if (isStructured) {
 			int i, j, k;
 			cont->getCellIJKIndex(static_cast<int>(cellId), &i, &j, &k);
 			descString = QString("i = %1 j = %2").arg(i + 1).arg(j + 1);
@@ -920,8 +913,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		writer.writeTextElement("description", descString);
 		// styleurl
 		int colorIndex = (averageDepth / div) + 1;
-		if (colorIndex < 1){colorIndex = 1;}
-		if (colorIndex > m_numberOfDivisions){colorIndex = m_numberOfDivisions;}
+		if (colorIndex < 1) {colorIndex = 1;}
+		if (colorIndex > m_numberOfDivisions) {colorIndex = m_numberOfDivisions;}
 
 		QString styleUrl = QString("#PolyColor%1").arg(colorIndex);
 		writer.writeTextElement("styleUrl", styleUrl);
@@ -956,7 +949,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 		// LinearRing Start
 		writer.writeStartElement("LinearRing");
 		QStringList coords;
-		for (int i = 0; i < points.size(); ++i){
+		for (int i = 0; i < points.size(); ++i) {
 			QVector3D v = points.at(i);
 			coords.append(QString("%1,%2,%3").arg(QString::number(v.x(), 'f', 12)).arg(QString::number(v.y(), 'f', 12)).arg(QString::number(v.z(), 'g', 12)));
 		}

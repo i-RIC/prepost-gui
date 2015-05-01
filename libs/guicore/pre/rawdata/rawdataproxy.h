@@ -16,20 +16,19 @@ class GUICOREDLL_EXPORT RawDataProxy : public ProjectDataItem
 {
 	Q_OBJECT
 public:
-	RawDataProxy(RawData* rawdata) : ProjectDataItem(0)
-	{
+	RawDataProxy(RawData* rawdata) : ProjectDataItem(0) {
 		m_rawData = rawdata;
 	}
-	virtual void setupActors(){}
-	virtual void setupMenu(){}
+	virtual void setupActors() {}
+	virtual void setupMenu() {}
 	virtual void setupDataItem();
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
 	virtual void assignActionZValues(const ZDepthRange& range);
 	RawData* rawData() const {return m_rawData;}
-	virtual QDialog* propertyDialog(QWidget* /*parent*/){return 0;}
-	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/){}
+	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
+	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 public slots:
-	virtual void updateGraphics(){}
+	virtual void updateGraphics() {}
 
 protected:
 	QMainWindow* mainWindow() const;

@@ -21,7 +21,7 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 	m_childItems.append(m_cellGroupDataItem);
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0){
+	if (gtItem->gridType()->boundaryConditions().count() > 0) {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		m_childItems.append(m_bcGroupDataItem);
 	} else {
@@ -41,17 +41,17 @@ PreProcessorStructured2dGridDataItem::~PreProcessorStructured2dGridDataItem()
 
 void PreProcessorStructured2dGridDataItem::setupMenu()
 {
-/*
-	m_selectMenu = m_menu->addMenu(tr("Select vertices"));
-	m_selectMenu->addAction(m_polygonSelectAction);
-	m_selectMenu->addAction(m_regionSelectAction);
- */
+	/*
+		m_selectMenu = m_menu->addMenu(tr("Select vertices"));
+		m_selectMenu->addAction(m_polygonSelectAction);
+		m_selectMenu->addAction(m_regionSelectAction);
+	 */
 	m_editMenu = m_menu->addMenu(tr("&Edit"));
 	m_editMenu->addAction(m_shapeDataItem->editAction());
 	m_editMenu->addAction(m_nodeEditAction);
 	m_editMenu->addAction(m_cellEditAction);
 
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
 	m_menu->addAction(m_deleteAction);

@@ -55,16 +55,16 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	for (int i = 0; i < m_extractGrids.count(); ++i){
+	for (int i = 0; i < m_extractGrids.count(); ++i) {
 		m_extractGrids[i]->Delete();
 	}
 	m_extractGrids.clear();
-	for (int i = 0; i < m_subdivideGrids.count(); ++i){
+	for (int i = 0; i < m_subdivideGrids.count(); ++i) {
 		m_subdivideGrids[i]->Delete();
 	}
 	m_subdivideGrids.clear();
 
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
 
 		vtkExtractGrid* ext = vtkExtractGrid::New();
@@ -75,7 +75,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		ext->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
 		div->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
 		ext->SetSampleRate(1, 1, 1);
-		if (setting.spaceMode == Post2dWindowStructuredStreamlineSetSetting::smSkip){
+		if (setting.spaceMode == Post2dWindowStructuredStreamlineSetSetting::smSkip) {
 			ext->SetSampleRate(setting.spaceSamplingRate, setting.spaceSamplingRate, 1);
 		}
 		div->SetDivideRate(setting.spaceDivision, setting.spaceDivision, 1);
@@ -115,9 +115,9 @@ vtkPointSet* Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::getSource(
 {
 	vtkStructuredGrid* exGrid = nullptr;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){return nullptr;}
+	if (cont == nullptr || cont->data() == nullptr) {return nullptr;}
 	Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
-	switch (setting.spaceMode){
+	switch (setting.spaceMode) {
 	case Post2dWindowStructuredStreamlineSetSetting::smNormal:
 	case Post2dWindowStructuredStreamlineSetSetting::smSkip:
 		m_extractGrids[i]->Update();
@@ -135,7 +135,7 @@ QDialog* Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 {
 	Post2dWindowStreamlineStructuredSettingDialog* dialog = new Post2dWindowStreamlineStructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){
+	if (cont == nullptr || cont->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
@@ -153,8 +153,7 @@ class Post2dWindowStreamlineStructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowStreamlineStructuredSetProperty(const QString& sol, const QList<Post2dWindowStructuredStreamlineSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Streamline Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Streamline Setting")) {
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newSettings = settings;
@@ -167,8 +166,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->setCurrentSolution(m_oldSolution);
@@ -179,8 +177,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->setCurrentSolution(m_newSolution);
@@ -218,9 +215,9 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::doLoadFromProjectM
 
 	m_settings.clear();
 	QDomNode streamlinesNode = iRIC::getChildNode(node, "Streamlines");
-	if (! streamlinesNode.isNull()){
+	if (! streamlinesNode.isNull()) {
 		QDomNodeList streamlines = streamlinesNode.childNodes();
-		for (int i = 0; i < streamlines.length(); ++i){
+		for (int i = 0; i < streamlines.length(); ++i) {
 			QDomElement elem = streamlines.at(i).toElement();
 			Post2dWindowStructuredStreamlineSetSetting s;
 			s.range.iMin = elem.attribute("regionIMin").toInt();
@@ -243,7 +240,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::doSaveToProjectMai
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Streamlines");
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
 		writer.writeStartElement("Streamline");
 		writer.writeAttribute("regionIMin", QString::number(setting.range.iMin));

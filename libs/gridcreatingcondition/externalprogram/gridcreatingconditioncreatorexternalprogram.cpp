@@ -32,7 +32,7 @@ GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExterna
 	QFile file(filename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc.setContent(&file, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -52,22 +52,22 @@ GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExterna
 	// get the local language version README first.
 	filename = folder.absoluteFilePath(filename);
 	bool nodesc = false;
-	if (! QFile::exists(filename)){
+	if (! QFile::exists(filename)) {
 		// local language version does not exists;
 		filename = folder.absoluteFilePath(SolverDefinition::README);
-		if (! QFile::exists(filename)){
+		if (! QFile::exists(filename)) {
 			// README does not exists.
 			m_description = "";
 			nodesc = true;
 		}
 	}
-	if (! nodesc){
+	if (! nodesc) {
 		QFile file(filename);
 		QString ret, buffer;
 		file.open(QIODevice::ReadOnly | QIODevice::Text);
 		QTextStream in(&file);
 		in.setCodec("UTF-8");
-		while (! in.atEnd()){
+		while (! in.atEnd()) {
 			buffer = in.readLine();
 			ret.append(buffer);
 			ret.append("\n");
@@ -76,14 +76,14 @@ GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExterna
 	}
 
 	QString gridType = sdElem.attribute("gridtype");
-	if (gridType == "structured2d"){
+	if (gridType == "structured2d") {
 		m_gridType = SolverDefinitionGridType::gtStructured2DGrid;
-	} else if (gridType == "unstructured2d"){
+	} else if (gridType == "unstructured2d") {
 		m_gridType = SolverDefinitionGridType::gtUnstructured2DGrid;
 	}
 }
 
-GridCreatingCondition* GridCreatingConditionCreatorExternalProgram::create(ProjectDataItem *parent)
+GridCreatingCondition* GridCreatingConditionCreatorExternalProgram::create(ProjectDataItem* parent)
 {
 	return new GridCreatingConditionExternalProgram(m_folderName,parent->iricMainWindow()->locale(), parent, this);
 }
@@ -97,21 +97,21 @@ QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram
 	inst.cdUp();
 	inst.cdUp();
 	QString targetDirectory = inst.absoluteFilePath(gcFolder);
-	if (! QDir(targetDirectory).exists()){
+	if (! QDir(targetDirectory).exists()) {
 		inst.mkdir(gcFolder);
 	}
 	QDir gcsdir(targetDirectory);
 	QStringList subdirs = gcsdir.entryList(QStringList(), QDir::Dirs | QDir::NoDotAndDotDot, QDir::Name);
 
-	for (const QString& subdir : subdirs){
+	for (const QString& subdir : subdirs) {
 		QString defFileName = QDir(gcsdir.absoluteFilePath(subdir)).absoluteFilePath(SolverDefinition::FILENAME);
-		if (! QFile::exists(defFileName)){continue;}
+		if (! QFile::exists(defFileName)) {continue;}
 
 		// definition.xml exists.
 		try {
 			GridCreatingConditionCreatorExternalProgram* creator = new GridCreatingConditionCreatorExternalProgram(gcsdir.absoluteFilePath(subdir), locale);
 			ret.append(creator);
-		} catch (ErrorMessage& e){
+		} catch (ErrorMessage& e) {
 			QMessageBox::warning(mainWindow, tr("Warning"), tr("Error occured while loading grid creator definition file in folder \"%1\". This grid creator is ignored.\n%2").arg(subdir).arg(e));
 		}
 	}

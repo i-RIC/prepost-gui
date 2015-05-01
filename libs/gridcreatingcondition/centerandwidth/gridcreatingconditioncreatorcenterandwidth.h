@@ -9,7 +9,7 @@ class GCC_CENTERANDWIDTH_EXPORT GridCreatingConditionCreatorCenterAndWidth : pub
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorCenterAndWidth();
-	~GridCreatingConditionCreatorCenterAndWidth(){}
+	~GridCreatingConditionCreatorCenterAndWidth() {}
 	// temporary
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
 	GridCreatingCondition* create(ProjectDataItem* parent);

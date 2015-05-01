@@ -20,12 +20,12 @@ private:
 public:
 	PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorStructured2dGridShapeDataItem();
-	GridShapeEditDialog::Shape shape(){return m_shape;}
+	GridShapeEditDialog::Shape shape() {return m_shape;}
 	/// Inform that the grid is updated.
 	void informGridUpdate();
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(2);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
 protected:
 	void assignActionZValues(const ZDepthRange& range);
 	void doLoadFromProjectMainFile(const QDomNode& node);

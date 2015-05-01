@@ -5,7 +5,7 @@
 
 void RawDataPolygonProxy::setupActors()
 {
-	RawDataPolygon* pol = dynamic_cast<RawDataPolygon*> (m_rawData);
+	RawDataPolygon* pol = dynamic_cast<RawDataPolygon*>(m_rawData);
 	m_paintActor = vtkSmartPointer<vtkActor>::New();
 	m_paintActor->SetProperty(pol->m_paintActor->GetProperty());
 	m_paintActor->SetMapper(pol->m_paintMapper);

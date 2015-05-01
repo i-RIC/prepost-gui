@@ -15,22 +15,22 @@ public:
 	/// Constructor
 	Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent);
 	/// Return VTK container object to store the grid.
-	vtkUnstructuredGrid* vtkGrid(){return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
-	vtkUnstructuredGrid* vertexGrid(){return m_vertexGrid;}
+	vtkUnstructuredGrid* vtkGrid() {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
+	vtkUnstructuredGrid* vertexGrid() {return m_vertexGrid;}
 	const QVector2D vertex(unsigned int index) const;
-	void setVertex(unsigned int index, const QVector2D &v);
+	void setVertex(unsigned int index, const QVector2D& v);
 	bool loadFromCgnsFile(const int fn, int B, int Z);
 	bool saveToCgnsFile(const int fn, int B, char* zonename);
 	unsigned int vertexCount() const {return m_vertexGrid->GetNumberOfPoints();}
 	unsigned int cellCount() const {return nodeCount() - 1;}
 	void setPoints(vtkPoints* points);
-	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections(){
+	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections() {
 		return m_crossSections;
 	}
-	Structured15DGridWithCrossSectionCrossSection* crossSections(int i){
+	Structured15DGridWithCrossSectionCrossSection* crossSections(int i) {
 		return m_crossSections.at(i);
 	}
-	void setModified(){
+	void setModified() {
 		Grid::setModified();
 		m_vertexGrid->Modified();
 	}

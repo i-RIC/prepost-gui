@@ -27,8 +27,8 @@ public:
 	PreProcessorRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorRawDataGroupDataItem();
 	void addCustomMenuItems(QMenu* menu);
-	void closeCgnsFile(){}
-	SolverDefinitionGridRelatedCondition* condition(){return m_condition;}
+	void closeCgnsFile() {}
+	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	bool isChildCaptionAvailable(const QString& cap);
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
@@ -36,19 +36,19 @@ public:
 	void informValueRangeChange();
 	void informDataChange();
 	bool getValueRange(double* min, double* max);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(10);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(10);}
 	bool importAvailable();
 	const QList<PreProcessorRawdataDataItemInterface*> rawDatas() const;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
-	QString title(){return m_title;}
-	QAction* importAction(){return m_importAction;}
+	QString title() {return m_title;}
+	QAction* importAction() {return m_importAction;}
 	void addImportAction(QMenu* menu);
 	QStringList getRawDatasNotMapped();
 	void addCopyPolygon(RawDataPolygon* polygon);
 	GridRelatedConditionDimensionsContainer* dimensions() const {return m_dimensions;}
 
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
@@ -58,8 +58,8 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	bool polygonExists() const;
 	virtual void saveToCgnsFile(const int fn);
-	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/){}
-	virtual void setupEditWidget(GridRelatedConditionEditWidget* /*widget*/){}
+	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/) {}
+	virtual void setupEditWidget(GridRelatedConditionEditWidget* /*widget*/) {}
 	void updateCrossectionWindows();
 	void openCrossSectionWindow(RawDataRiverSurvey* rs, double crosssection);
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs);
@@ -78,7 +78,7 @@ public slots:
 	void deleteAll();
 
 private slots:
-	void cancelImport(){m_cancelImport = true;}
+	void cancelImport() {m_cancelImport = true;}
 
 signals:
 	void selectRawData(const QModelIndex& current);

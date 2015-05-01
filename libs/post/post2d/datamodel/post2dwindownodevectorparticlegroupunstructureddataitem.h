@@ -8,8 +8,7 @@
 class Post2dWindowParticleUnstructuredSetProperty;
 class Post2dWindowParticleUnstructuredSettingDialog;
 
-struct Post2dWindowUnstructuredParticleSetSetting
-{
+struct Post2dWindowUnstructuredParticleSetSetting {
 	QVector2D point1;
 	QVector2D point2;
 	bool pointsSet;
@@ -25,8 +24,7 @@ class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem : public Post2dWin
 	Q_OBJECT
 public:
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
-		: Post2dWindowNodeVectorParticleGroupDataItem(parent)
-	{
+		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
 		setDefaultValues();
 		setupTmpSource();
 	}
@@ -40,7 +38,7 @@ protected:
 	QDialog* propertyDialog(QWidget* parent);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent *, VTKGraphicsView *);
+	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*);
 	void setSetting(const QVector2D& v1, const QVector2D& v2, int num, int pointSize);
 	void clearSetting();
 	void doLoadFromProjectMainFile(const QDomNode& node);

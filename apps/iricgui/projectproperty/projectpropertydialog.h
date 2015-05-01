@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class ProjectPropertyDialog;
 }
 
@@ -14,11 +15,11 @@ class ProjectPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit ProjectPropertyDialog(QWidget *parent = nullptr);
+	explicit ProjectPropertyDialog(QWidget* parent = nullptr);
 	~ProjectPropertyDialog();
 	void setProjectData(ProjectData* data);
 private:
-	Ui::ProjectPropertyDialog *ui;
+	Ui::ProjectPropertyDialog* ui;
 };
 
 #endif // PROJECTPROPERTYDIALOG_H

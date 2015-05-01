@@ -20,7 +20,7 @@ public:
 	void informGridUpdate();
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(1);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(1);}
 protected:
 	void assignActionZValues(const ZDepthRange& range);
 	QDialog* propertyDialog(QWidget* parent);

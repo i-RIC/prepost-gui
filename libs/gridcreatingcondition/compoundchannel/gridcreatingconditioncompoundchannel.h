@@ -32,24 +32,25 @@ class GridCreatingConditionCompoundChannelAddHolePolygonCommand;
 
 class GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand;
 
-class GridCreatingConditionCompoundChannelTemporaryGrid{
+class GridCreatingConditionCompoundChannelTemporaryGrid
+{
 public:
-	GridCreatingConditionCompoundChannelTemporaryGrid(int isize, int jsize){
+	GridCreatingConditionCompoundChannelTemporaryGrid(int isize, int jsize) {
 		m_isize = isize;
 		m_jsize = jsize;
 		QPointF p(0, 0);
-		for (int j = 0; j < jsize; ++j){
-			for (int i = 0; i < isize; ++i){
+		for (int j = 0; j < jsize; ++j) {
+			for (int i = 0; i < isize; ++i) {
 				m_point.append(p);
 			}
 		}
 	}
 
-	QPointF& point(int i, int j){return m_point[index(i, j)];}
+	QPointF& point(int i, int j) {return m_point[index(i, j)];}
 	int isize() const {return m_isize;}
 	int jsize() const {return m_jsize;}
 private:
-	int index(int i, int j){return m_isize * j + i;}
+	int index(int i, int j) {return m_isize * j + i;}
 	QVector<QPointF> m_point;
 	int m_isize;
 	int m_jsize;
@@ -114,7 +115,7 @@ public:
 	void assignActionZValues(const ZDepthRange& range);
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
-	QColor color(){return m_color;}
+	QColor color() {return m_color;}
 	void setupScalarArray();
 	void clear();
 	bool ready() const {return true;}
@@ -126,7 +127,7 @@ private slots:
 	void removeVertexMode(bool on);
 	void editCoordinates();
 	void restoreMouseEventMode();
-	void cancel(){m_canceled = true;}
+	void cancel() {m_canceled = true;}
 	void reverseCenterLine();
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
@@ -134,7 +135,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void loadExternalData(const QString& filename);
 	void saveExternalData(const QString& filename);
-	void updateFilename(){
+	void updateFilename() {
 		m_filename = "gridcreatingcondition.dat";
 	}
 private:

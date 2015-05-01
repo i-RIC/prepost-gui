@@ -12,24 +12,22 @@ class PreProcessorGridDataItemInterface;
 class GUICOREDLL_EXPORT GridRelatedConditionEditWidget : public QWidget
 {
 public:
-	GridRelatedConditionEditWidget(QWidget *parent, SolverDefinitionGridRelatedCondition* condition)
-		: QWidget(parent)
-	{
+	GridRelatedConditionEditWidget(QWidget* parent, SolverDefinitionGridRelatedCondition* condition)
+		: QWidget(parent) {
 		m_valueCleared = false;
 		m_valueSelected = true;
 		m_gridRelatedCondition = condition;
 	}
-	void clearValue()
-	{
+	void clearValue() {
 		m_valueCleared = true;
 		m_valueSelected = false;
 		setupWidget();
 	}
-	bool valueSelected(){
+	bool valueSelected() {
 		getValueFromInnerWidget();
 		return m_valueSelected;
 	}
-	SolverDefinitionGridRelatedCondition* condition(){
+	SolverDefinitionGridRelatedCondition* condition() {
 		return m_gridRelatedCondition;
 	}
 	virtual void setVariantValue(const QVariant& v) = 0;

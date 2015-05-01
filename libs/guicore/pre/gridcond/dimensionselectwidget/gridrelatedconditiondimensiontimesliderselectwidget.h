@@ -20,7 +20,7 @@ private:
 
 public:
 	const static int SLIDERWIDTH_MAX = 100;
-	explicit GridRelatedConditionDimensionTimeSliderSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget *parent);
+	explicit GridRelatedConditionDimensionTimeSliderSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent);
 	~GridRelatedConditionDimensionTimeSliderSelectWidget();
 
 	/// Returns the index of current step

@@ -18,7 +18,7 @@
 
 const int PreProcessorGridCrosssectionWindow::DEFAULT_TABLE_WIDTH = 200;
 
-PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structured2DGrid* grid, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget *parent) :
+PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structured2DGrid* grid, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindow(parent),
 	ui(new Ui::PreProcessorGridCrosssectionWindow)
 {
@@ -139,14 +139,14 @@ bool PreProcessorGridCrosssectionWindow::updateComboBoxes()
 
 	int maxIndex;
 	QString label;
-	if (m_direction == dirI){
+	if (m_direction == dirI) {
 		maxIndex = m_grid->dimensionJ();
 		label = "J = %1";
-	} else if (m_direction == dirJ){
+	} else if (m_direction == dirJ) {
 		maxIndex = m_grid->dimensionI();
 		label = "I = %1";
 	}
-	for (int index = 1; index <= maxIndex; ++index){
+	for (int index = 1; index <= maxIndex; ++index) {
 		QString l = label.arg(index);
 		m_blackLineComboBox->addItem(l);
 		m_redLineComboBox->addItem(l);
@@ -162,7 +162,7 @@ bool PreProcessorGridCrosssectionWindow::updateComboBoxes()
 void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionWindow::Direction dir, int index)
 {
 	m_direction = dir;
-	if (m_direction == dirI){
+	if (m_direction == dirI) {
 		m_iRadioButton->blockSignals(true);
 		m_iRadioButton->setChecked(true);
 		m_iRadioButton->blockSignals(false);
@@ -175,21 +175,21 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 
 	m_blackLineIndex = index;
 
-	if (m_blackLineIndex > 0){
+	if (m_blackLineIndex > 0) {
 		m_redLineIndex = m_blackLineIndex - 1;
 	} else {
 		m_redLineIndex = - 1;
 	}
 	int dim;
 	QString title;
-	if (m_direction == PreProcessorGridCrosssectionWindow::dirI){
+	if (m_direction == PreProcessorGridCrosssectionWindow::dirI) {
 		dim = m_grid->dimensionJ();
 		title = tr("Grid Crosssection (%1): J = %2");
 	} else {
 		dim = m_grid->dimensionI();
 		title = tr("Grid Crosssection (%1): I = %2");
 	}
-	if (m_blackLineIndex < dim - 1){
+	if (m_blackLineIndex < dim - 1) {
 		m_blueLineIndex = m_blackLineIndex + 1;
 	} else {
 		m_blueLineIndex = - 1;
@@ -230,7 +230,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	// keep selection status
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit) {
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -243,8 +243,8 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	GridRelatedConditionRealNodeContainer* cont =
 		dynamic_cast<GridRelatedConditionRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
 	int row = 0;
-	if (m_direction == dirI){
-		for (int i = 0; i < m_grid->dimensionI(); ++i){
+	if (m_direction == dirI) {
+		for (int i = 0; i < m_grid->dimensionI(); ++i) {
 			double val = cont->value(m_grid->vertexIndex(i, targetIndex()));
 			m_model->insertRow(row);
 			m_model->setData(m_model->index(row, 0), val);
@@ -254,7 +254,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 			++row;
 		}
 	} else {
-		for (int j = 0; j < m_grid->dimensionJ(); ++j){
+		for (int j = 0; j < m_grid->dimensionJ(); ++j) {
 			double val = cont->value(m_grid->vertexIndex(targetIndex(), j));
 			m_model->insertRow(row);
 			m_model->setData(m_model->index(row, 0), val);
@@ -270,13 +270,13 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	ui->tableView->setSelectionModel(m_selectionModel);
 	// restore selection status.
 	selection.clear();
-	for (int i = 0; i < sel.count(); ++i){
+	for (int i = 0; i < sel.count(); ++i) {
 		SelectionRange r = sel.at(i);
 		selection.append(QItemSelectionRange(m_model->index(r.top, r.left), m_model->index(r.bottom, r.right)));
 	}
 	m_selectionModel->select(selection, QItemSelectionModel::Select | QItemSelectionModel::Clear);
 	// update tableview row heights.
-	for (int i = 0; i < m_model->rowCount(); ++i){
+	for (int i = 0; i < m_model->rowCount(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 	m_settingUp = false;
@@ -365,7 +365,7 @@ void PreProcessorGridCrosssectionWindow::cameraZoomOutY()
 
 void PreProcessorGridCrosssectionWindow::handleDataChange()
 {
-	if (m_settingUp){return;}
+	if (m_settingUp) {return;}
 	syncData();
 }
 
@@ -373,13 +373,13 @@ bool PreProcessorGridCrosssectionWindow::syncData()
 {
 	GridRelatedConditionRealNodeContainer* cont =
 		dynamic_cast<GridRelatedConditionRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
-	if (m_direction == dirI){
-		for (int i = 0; i < m_model->rowCount(); ++i){
+	if (m_direction == dirI) {
+		for (int i = 0; i < m_model->rowCount(); ++i) {
 			double data = m_model->data(m_model->index(i, 0)).toDouble();
 			cont->setValue(m_grid->vertexIndex(i, targetIndex()), data);
 		}
 	} else {
-		for (int j = 0; j < m_model->rowCount(); ++j){
+		for (int j = 0; j < m_model->rowCount(); ++j) {
 			double data = m_model->data(m_model->index(j, 0)).toDouble();
 			cont->setValue(m_grid->vertexIndex(targetIndex(), j), data);
 		}
@@ -401,16 +401,16 @@ void PreProcessorGridCrosssectionWindow::blackComboBoxChange(int newindex)
 void PreProcessorGridCrosssectionWindow::redComboBoxChange(int newindex)
 {
 	m_redLineIndex = newindex - 1;
-/*
-	if (newindex == 0){
-		m_redLinePoint = nullptr;
-	}else{
-		m_redLinePoint = m_riverSurvey->headPoint();
-		for (int i = 0; i < newindex; ++i){
-			m_redLinePoint = m_redLinePoint->nextPoint();
+	/*
+		if (newindex == 0){
+			m_redLinePoint = nullptr;
+		}else{
+			m_redLinePoint = m_riverSurvey->headPoint();
+			for (int i = 0; i < newindex; ++i){
+				m_redLinePoint = m_redLinePoint->nextPoint();
+			}
 		}
-	}
-*/
+	*/
 	ui->graphicsView->viewport()->update();
 	informFocusIn();
 }
@@ -418,30 +418,30 @@ void PreProcessorGridCrosssectionWindow::redComboBoxChange(int newindex)
 void PreProcessorGridCrosssectionWindow::blueComboBoxChange(int newindex)
 {
 	m_blueLineIndex = newindex - 1;
-/*
-	if (newindex == 0){
-		m_blueLinePoint = nullptr;
-	}else{
-		m_blueLinePoint = m_riverSurvey->headPoint();
-		for (int i = 0; i < newindex; ++i){
-			m_blueLinePoint = m_blueLinePoint->nextPoint();
+	/*
+		if (newindex == 0){
+			m_blueLinePoint = nullptr;
+		}else{
+			m_blueLinePoint = m_riverSurvey->headPoint();
+			for (int i = 0; i < newindex; ++i){
+				m_blueLinePoint = m_blueLinePoint->nextPoint();
+			}
 		}
-	}
-*/
+	*/
 	ui->graphicsView->viewport()->update();
 	informFocusIn();
 }
 
 void PreProcessorGridCrosssectionWindow::toggleI(bool toggled)
 {
-	if (! toggled){return;}
+	if (! toggled) {return;}
 	setTarget(dirI, 0);
 	cameraFit();
 }
 
 void PreProcessorGridCrosssectionWindow::toggleJ(bool toggled)
 {
-	if (! toggled){return;}
+	if (! toggled) {return;}
 	setTarget(dirJ, 0);
 	cameraFit();
 }

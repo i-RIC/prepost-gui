@@ -20,7 +20,7 @@ public:
 	virtual ~GraphicsWindowSimpleDataModel();
 	/// The view to display pre-processor main region
 	VTKGraphicsView* graphicsView() const {return m_graphicsView;}
-	QMainWindow* mainWindow(){return m_mainWindow;}
+	QMainWindow* mainWindow() {return m_mainWindow;}
 	virtual void viewOperationEndedGlobal();
 
 public slots:

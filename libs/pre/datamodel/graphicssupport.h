@@ -5,7 +5,8 @@
 #include <QTransform>
 class QTransform;
 
-namespace iRIC {
+namespace iRIC
+{
 	qreal getScale(const QTransform& t);
 }
 #endif // GRAPHICSSUPPORT_H

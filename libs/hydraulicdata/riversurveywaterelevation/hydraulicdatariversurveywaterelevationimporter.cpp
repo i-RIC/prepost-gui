@@ -7,16 +7,17 @@
 #include <QMap>
 #include <QMessageBox>
 
-HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterElevationImporter() {
+HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterElevationImporter()
+{
 	m_caption = tr("Water Elevation");
 }
 
 bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*> (data);
+	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
 
 	QFile file(filename);
-	if (! file.open(QIODevice::ReadOnly)){
+	if (! file.open(QIODevice::ReadOnly)) {
 		QMessageBox::critical(w, tr("Error"), tr("File open error occured while opening %1.").arg(filename));
 		return false;
 	}
@@ -40,7 +41,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 	QString line;
 	do {
 		line = in.readLine();
-		if (! line.isEmpty()){
+		if (! line.isEmpty()) {
 			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
 			double kp = pieces.value(0).toDouble();
 			double height = pieces.value(1).toDouble();
@@ -62,11 +63,12 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 
 bool HydraulicDataRiverSurveyWaterElevationImporter::canImportTo(RawData* data)
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*> (data);
+	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
 	return (rs != nullptr);
 }
 
-const QStringList HydraulicDataRiverSurveyWaterElevationImporter::fileDialogFilters() {
+const QStringList HydraulicDataRiverSurveyWaterElevationImporter::fileDialogFilters()
+{
 	QStringList ret;
 	ret.append(tr("CSV file (*.csv)"));
 	ret.append(tr("Text file (*.txt)"));

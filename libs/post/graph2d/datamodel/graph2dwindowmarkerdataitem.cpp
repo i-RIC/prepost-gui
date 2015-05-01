@@ -31,16 +31,16 @@ Graph2dWindowMarkerDataItem::Graph2dWindowMarkerDataItem(const Graph2dWindowMark
 	m_attached = true;
 	m_marker = new QwtPlotCustomMarker();
 	m_marker->setLabel(item.label());
-	if (item.orientation() == Graph2dWindowMarkerSetting::oHorizontal){
-		if (item.alignCenter()){
+	if (item.orientation() == Graph2dWindowMarkerSetting::oHorizontal) {
+		if (item.alignCenter()) {
 			m_marker->setLabelAlignment(Qt::AlignRight|Qt::AlignVCenter);
 		} else {
 			m_marker->setLabelAlignment(Qt::AlignRight|Qt::AlignTop);
 		}
 		m_marker->setYValue(item.value());
 		m_marker->setLineStyle(QwtPlotCustomMarker::HLine);
-	}else{
-		if (item.alignCenter()){
+	} else {
+		if (item.alignCenter()) {
 			m_marker->setLabelAlignment(Qt::AlignCenter|Qt::AlignBottom);
 		} else {
 			m_marker->setLabelAlignment(Qt::AlignLeft|Qt::AlignBottom);
@@ -51,7 +51,7 @@ Graph2dWindowMarkerDataItem::Graph2dWindowMarkerDataItem(const Graph2dWindowMark
 	}
 	m_marker->setAxes(QwtPlot::xBottom, item.axis());
 	QPen pen;
-	if (item.showLine()){
+	if (item.showLine()) {
 		pen.setColor(item.color());
 		pen.setStyle(item.penStyle());
 	} else {
@@ -73,11 +73,11 @@ Graph2dWindowMarkerDataItem::~Graph2dWindowMarkerDataItem()
 
 void Graph2dWindowMarkerDataItem::setVisible(bool visible)
 {
-	if (visible && ! m_attached){
+	if (visible && ! m_attached) {
 		m_attached = true;
 		m_marker->attach(dataModel()->view());
 	}
-	if (! visible && m_attached){
+	if (! visible && m_attached) {
 		m_attached = false;
 		m_marker->detach();
 	}

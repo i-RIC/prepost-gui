@@ -9,9 +9,9 @@
 
 #include <QUndoCommand>
 
-RawDataRiverPathPointExtensionAddDialog::RawDataRiverPathPointExtensionAddDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget *parent)
+RawDataRiverPathPointExtensionAddDialog::RawDataRiverPathPointExtensionAddDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent)
 	: QDialog(parent),
-	  ui(new Ui::RawDataRiverPathPointExtensionAddDialog)
+		ui(new Ui::RawDataRiverPathPointExtensionAddDialog)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
@@ -34,23 +34,21 @@ class RawDataRiverPathPointAddExtensionCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointAddExtensionCommand(bool apply, RawDataRiverPathPointExtensionAddDialog::LineMode lm, const QVector2D& pos, RawDataRiverPathPoint* p, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Add Extension Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Add Extension Line")) {
 		m_apply = apply;
 		m_lineMode = lm;
 		m_position = pos;
 		m_point = p;
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		if (m_lineMode == RawDataRiverPathPointExtensionAddDialog::Left){
+		if (m_lineMode == RawDataRiverPathPointExtensionAddDialog::Left) {
 			m_point->removeExtentionPointLeft();
-		}else{
+		} else {
 			m_point->removeExtentionPointRight();
 		}
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->updateActionStatus();
 			m_rs->headPoint()->updateAllXSecInterpolators();
 			m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -59,12 +57,11 @@ public:
 			m_rs->updateCrossectionWindows();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		if (m_lineMode == RawDataRiverPathPointExtensionAddDialog::Left){
+		if (m_lineMode == RawDataRiverPathPointExtensionAddDialog::Left) {
 			m_point->addExtentionPointLeft(m_position);
-		}else{
+		} else {
 			m_point->addExtentionPointRight(m_position);
 		}
 		m_rs->updateActionStatus();
@@ -85,15 +82,15 @@ private:
 
 void RawDataRiverPathPointExtensionAddDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
 	QVector2D pos;
-	if (ui->clickRadioButton->isChecked()){
+	if (ui->clickRadioButton->isChecked()) {
 		// set by mouse click.
 		pos = m_position;
-	}else{
+	} else {
 		// set by text boxes.
 		pos = QVector2D(ui->positionXEdit->value(), ui->positionYEdit->value());
 	}
@@ -103,7 +100,7 @@ void RawDataRiverPathPointExtensionAddDialog::accept()
 
 void RawDataRiverPathPointExtensionAddDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->updateActionStatus();
@@ -118,15 +115,15 @@ void RawDataRiverPathPointExtensionAddDialog::reject()
 
 void RawDataRiverPathPointExtensionAddDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
 	QVector2D pos;
-	if (ui->clickRadioButton->isChecked()){
+	if (ui->clickRadioButton->isChecked()) {
 		// set by mouse click.
 		pos = m_position;
-	}else{
+	} else {
 		// set by text boxes.
 		pos = QVector2D(ui->positionXEdit->value(), ui->positionYEdit->value());
 	}
@@ -136,14 +133,14 @@ void RawDataRiverPathPointExtensionAddDialog::apply()
 
 void RawDataRiverPathPointExtensionAddDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
 
 void RawDataRiverPathPointExtensionAddDialog::setPoint(const QVector2D& position)
 {
-	if (! ui->clickRadioButton->isChecked()){return;}
+	if (! ui->clickRadioButton->isChecked()) {return;}
 	m_position = position;
 	ui->positionXEdit->setValue(position.x());
 	ui->positionYEdit->setValue(position.y());

@@ -48,12 +48,12 @@ void Graph2dHybridWindowBaseIterativeResultDataItem::updateValues(int fn)
 
 	m_dataContainer->update(fn);
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
-	if (m_dataContainer->data().count() != timesteps.count()){return;}
+	if (m_dataContainer->data().count() != timesteps.count()) {return;}
 
 	m_xValues.fill(0, timesteps.count());
 	m_yValues.fill(0, timesteps.count());
 
-	for (int i = 0; i < timesteps.count(); ++i){
+	for (int i = 0; i < timesteps.count(); ++i) {
 		m_xValues[i] = timesteps.at(i);
 		m_yValues[i] = m_dataContainer->data().at(i);
 	}

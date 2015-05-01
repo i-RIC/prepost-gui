@@ -55,7 +55,7 @@ void Post2dBirdEyeWindow::init()
 void Post2dBirdEyeWindow::setupDefaultGeometry(int index)
 {
 	QWidget* parent = parentWidget();
-	if (parent->isMaximized()){return;}
+	if (parent->isMaximized()) {return;}
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 	restoreState(m_initialState);
@@ -66,7 +66,7 @@ QPixmap Post2dBirdEyeWindow::snapshot()
 	Post2dBirdEyeWindowGraphicsView* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) makeBackgroundTransparent(view, pixmap);
+	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
 
 	return pixmap;
 }
@@ -142,20 +142,17 @@ class Post2dBirdEyeWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:
 	Post2dBirdEyeWindowEditBackgroundColorCommand(double oldc[3], double newc[3], Post2dBirdEyeWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color"))
-	{
-		for (int i = 0; i < 3; ++i){
+		: QUndoCommand(QObject::tr("Edit Background Color")) {
+		for (int i = 0; i < 3; ++i) {
 			m_oldColor[i] = oldc[i];
 			m_newColor[i] = newc[i];
 		}
 		m_window = w;
 	}
-	void undo()
-	{
+	void undo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_oldColor);
 	}
-	void redo()
-	{
+	void redo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_newColor);
 	}
 private:
@@ -172,7 +169,7 @@ void Post2dBirdEyeWindow::editBackgroundColor()
 	QColor oldcolor;
 	iRIC::VTKColorToQColor(vtkOldColor, oldcolor);
 	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	double vtkNewColor[3];
 	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
 	iRICUndoStack::instance().push(new Post2dBirdEyeWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));

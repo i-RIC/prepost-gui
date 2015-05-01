@@ -70,8 +70,7 @@ class RawDataPointMapDeletePointsCommand : public QUndoCommand
 {
 public:
 	RawDataPointMapDeletePointsCommand(const QString& title, QVector<vtkIdType> deletedPoints, RawDataPointmap* p)
-		: QUndoCommand(title)
-	{
+		: QUndoCommand(title) {
 		m_pointMap = p;
 		m_oldPoints = p->vtkGrid()->GetPoints();
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
@@ -81,15 +80,15 @@ public:
 		m_newPoints = vtkSmartPointer<vtkPoints>::New();
 		m_newPoints->SetDataTypeToDouble();
 		QString name = m_oldValues->GetClassName();
-		if (name == "vtkIntArray"){
+		if (name == "vtkIntArray") {
 			m_newValues = vtkSmartPointer<vtkIntArray>::New();
-		} else if (name == "vtkDoubleArray"){
+		} else if (name == "vtkDoubleArray") {
 			m_newValues = vtkSmartPointer<vtkDoubleArray>::New();
 		}
 		// build m_newPoints, m_newValues
 		int pos = 0;
-		for (vtkIdType i = 0; i < m_oldPoints->GetNumberOfPoints(); ++i){
-			if (pos < m_deletedPoints.count() && m_deletedPoints[pos] == i){
+		for (vtkIdType i = 0; i < m_oldPoints->GetNumberOfPoints(); ++i) {
+			if (pos < m_deletedPoints.count() && m_deletedPoints[pos] == i) {
 				// this point is deleted, so skip.
 				++ pos;
 			} else {
@@ -98,8 +97,7 @@ public:
 			}
 		}
 	}
-	void undo()
-	{
+	void undo() {
 		m_time.start();
 		m_pointMap->setPoints(m_oldPoints, m_oldValues);
 		qDebug("Time for setPoints():%d", m_time.elapsed());
@@ -110,8 +108,7 @@ public:
 		m_pointMap->renderGraphicsView();
 		qDebug("Time for renderGraphicsView():%d", m_time.elapsed());
 	}
-	void redo()
-	{
+	void redo() {
 		m_time.start();
 		m_pointMap->setPoints(m_newPoints, m_newValues);
 		qDebug("Time for setPoints():%d", m_time.elapsed());
@@ -135,11 +132,11 @@ private:
 	RawDataPointmap* m_pointMap;
 };
 
-class RawDataPointMapInsertNewPoints : public QUndoCommand {
+class RawDataPointMapInsertNewPoints : public QUndoCommand
+{
 public:
 	RawDataPointMapInsertNewPoints(const QString& title, vtkPoints* newPoints, vtkDataArray* newVals,  RawDataPointmap* p)
-		: QUndoCommand(title)
-	{
+		: QUndoCommand(title) {
 		m_pointMap = p;
 		m_oldPoints = p->vtkGrid()->GetPoints();
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
@@ -148,29 +145,27 @@ public:
 		m_newPoints->SetDataTypeToDouble();
 
 		QString name = m_oldValues->GetClassName();
-		if (name == "vtkIntArray"){
+		if (name == "vtkIntArray") {
 			m_newValues = vtkSmartPointer<vtkIntArray>::New();
-		} else if (name == "vtkDoubleArray"){
+		} else if (name == "vtkDoubleArray") {
 			m_newValues = vtkSmartPointer<vtkDoubleArray>::New();
 		}
 		m_newPoints->DeepCopy(m_oldPoints);
 		m_newValues->DeepCopy(m_oldValues);
 
 		// build m_newPoints, m_newValues
-		for (vtkIdType i = 0; i < newPoints->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < newPoints->GetNumberOfPoints(); ++i) {
 			m_newPoints->InsertNextPoint(newPoints->GetPoint(i));
 			m_newValues->InsertNextTuple1(newVals->GetTuple1(i));
 		}
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->setPoints(m_oldPoints, m_oldValues);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->setPoints(m_newPoints, m_newValues);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->m_mapped = false;
@@ -186,31 +181,30 @@ private:
 	RawDataPointmap* m_pointMap;
 };
 
-class RawDataPointMapEditPoints : public QUndoCommand {
+class RawDataPointMapEditPoints : public QUndoCommand
+{
 public:
 	RawDataPointMapEditPoints(double value, QVector<vtkIdType> editedPoints, RawDataPointmap* p)
-		: QUndoCommand(RawDataPointmap::tr("Edit Points"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Edit Points")) {
 		m_pointMap = p;
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
 
 		QString name = m_oldValues->GetClassName();
-		if (name == "vtkIntArray"){
+		if (name == "vtkIntArray") {
 			m_newValues = vtkSmartPointer<vtkIntArray>::New();
-		} else if (name == "vtkDoubleArray"){
+		} else if (name == "vtkDoubleArray") {
 			m_newValues = vtkSmartPointer<vtkDoubleArray>::New();
 		}
 		m_newValues->SetName(VALUES);
 		m_newValues->DeepCopy(m_oldValues);
 
-		for (int i = 0; i < editedPoints.count(); ++i){
+		for (int i = 0; i < editedPoints.count(); ++i) {
 			vtkIdType id = editedPoints[i];
 			m_newValues->SetTuple1(id, value);
 		}
 		m_newValues->Modified();
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->vtkGrid()->GetPointData()->Initialize();
 		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_oldValues);
 		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
@@ -218,8 +212,7 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->vtkGrid()->GetPointData()->Initialize();
 		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_newValues);
 		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
@@ -235,11 +228,11 @@ private:
 	RawDataPointmap* m_pointMap;
 };
 
-class RawDataPointMapEditSinglePoint : public QUndoCommand {
+class RawDataPointMapEditSinglePoint : public QUndoCommand
+{
 public:
 	RawDataPointMapEditSinglePoint(double x, double y, double value, vtkIdType editedPoint, RawDataPointmap* p)
-		: QUndoCommand(RawDataPointmap::tr("Edit Points"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Edit Points")) {
 		m_pointMap = p;
 		m_newX = x;
 		m_newY = y;
@@ -254,8 +247,7 @@ public:
 
 		m_editedPoint = editedPoint;
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_oldX, m_oldY, 0);
 		m_pointMap->vtkGrid()->GetPoints()->Modified();
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_oldValue);
@@ -264,8 +256,7 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_newX, m_newY, 0);
 		m_pointMap->vtkGrid()->GetPoints()->Modified();
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_newValue);
@@ -292,21 +283,18 @@ class RawDataPointMapAddPointSetReferenceCommand : public QUndoCommand
 {
 public:
 	RawDataPointMapAddPointSetReferenceCommand(double value, RawDataPointmap* p)
-		: QUndoCommand(RawDataPointmap::tr("Select Refecence Point"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Select Refecence Point")) {
 		m_value = value;
 		m_pointMap = p;
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meAddPoint;
 		m_pointMap->m_newPointValue = m_value;
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->m_mapped = false;
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meAddPointSelectReferenceNotPossible;
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->m_mapped = false;
@@ -325,9 +313,8 @@ class RawDataPointMapAddPointCommand : public QUndoCommand
 class RawDataPMAddPointsCommand : public QUndoCommand
 {
 public:
-	RawDataPMAddPointsCommand(RawDataPointmap* p, RawDataPointmapAddPointDialog *ip)
-		: QUndoCommand(QObject::tr("Add Points"))
-	{
+	RawDataPMAddPointsCommand(RawDataPointmap* p, RawDataPointmapAddPointDialog* ip)
+		: QUndoCommand(QObject::tr("Add Points")) {
 
 		this->m_pmap = p;
 		this->m_iPoints = ip;
@@ -360,13 +347,13 @@ public:
 			newvalues->InsertNextValue(value);
 		}
 	}
-	void undo(){
+	void undo() {
 		m_pmap->setPoints(oldpoints, oldvalues);
 		this->m_pmap->m_needRemeshing = true;
 		this->m_pmap->m_mapped = false;
 		this->m_pmap->renderGraphicsView();
 	}
-	void redo(){
+	void redo() {
 		m_pmap->setPoints(newpoints, newvalues);
 		this->m_pmap->m_mapped = false;
 		this->m_pmap->m_needRemeshing = true;
@@ -384,9 +371,8 @@ private:
 class RawDataPMAddInterpPtsCommand : public QUndoCommand
 {
 public:
-	RawDataPMAddInterpPtsCommand(RawDataPointmap* p, RawDataPointmapInterpolatePoints *ip)
-		: QUndoCommand(QObject::tr("Add Interpolation Pts"))
-	{
+	RawDataPMAddInterpPtsCommand(RawDataPointmap* p, RawDataPointmapInterpolatePoints* ip)
+		: QUndoCommand(QObject::tr("Add Interpolation Pts")) {
 
 		this->m_pmap = p;
 		this->m_iPoints = ip;
@@ -396,7 +382,7 @@ public:
 		oldvalues = vtkSmartPointer<vtkDoubleArray>::New();
 		size_t numInterpPts = m_iPoints->xinterp.size();
 
-		for(vtkIdType i = 0; i < this->m_pmap->vtkGrid()->GetPoints()->GetNumberOfPoints(); i++) {
+		for (vtkIdType i = 0; i < this->m_pmap->vtkGrid()->GetPoints()->GetNumberOfPoints(); i++) {
 			double p[3];
 			double value;
 			this->m_pmap->vtkGrid()->GetPoints()->GetPoint(i, p);
@@ -408,7 +394,7 @@ public:
 		}
 
 		// don't use first and last points
-		for(int i = 1; i < numInterpPts-1; i++) {
+		for (int i = 1; i < numInterpPts-1; i++) {
 			double p[3];
 			double value;
 			p[0] = m_iPoints->xinterp[i];
@@ -419,13 +405,13 @@ public:
 			newvalues->InsertNextValue(value);
 		}
 	}
-	void undo(){
+	void undo() {
 		m_pmap->setPoints(oldpoints, oldvalues);
 		this->m_pmap->m_needRemeshing = true;
 		this->m_pmap->m_mapped = false;
 		this->m_pmap->renderGraphicsView();
 	}
-	void redo(){
+	void redo() {
 		m_pmap->setPoints(newpoints, newvalues);
 		this->m_pmap->m_needRemeshing = true;
 		this->m_pmap->m_mapped = false;
@@ -443,12 +429,11 @@ private:
 class RawDataPointmapBreakLineAddCommand : public QUndoCommand
 {
 public:
-	RawDataPointmapBreakLineAddCommand(RawDataPointmap* parent){
+	RawDataPointmapBreakLineAddCommand(RawDataPointmap* parent) {
 		m_breakLine = new RawDataPointmapBreakLine(parent);
 		m_pointMap = parent;
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meBreakLineAddNotPossible;
 		m_breakLine->setActive(true);
 		m_pointMap->m_activeBreakLine = m_breakLine;
@@ -460,8 +445,7 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meNormal;
 		m_breakLine->setActive(false);
 		m_pointMap->m_activeBreakLine = 0;
@@ -481,23 +465,21 @@ class RawDataPointmapBreakLineAddPointCommand : public QUndoCommand
 {
 public:
 	RawDataPointmapBreakLineAddPointCommand(bool preview, vtkIdType addedPoint, RawDataPointmap* parent)
-		: QUndoCommand(RawDataPointmap::tr("Add Break Line Point"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Add Break Line Point")) {
 		m_preview = preview;
 		m_addedPoint = addedPoint,
 		m_breakLine = parent->m_activeBreakLine;
 		m_pointMap = parent;
 	}
-	void redo()
-	{
+	void redo() {
 		QVector<vtkIdType> indices = m_breakLine->vertexIndices();
-		if (indices.count() > 0){
+		if (indices.count() > 0) {
 			m_oldPoint = indices.last();
 			indices.pop_back();
 		} else {
 			m_oldPoint = - 1;
 		}
-		if (m_preview){
+		if (m_preview) {
 			indices.push_back(m_addedPoint);
 		} else {
 			indices.push_back(m_addedPoint);
@@ -508,21 +490,20 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		QVector<vtkIdType> indices = m_breakLine->vertexIndices();
-		if (m_preview){
+		if (m_preview) {
 			indices.pop_back();
-			if (m_oldPoint != - 1){
+			if (m_oldPoint != - 1) {
 				indices.push_back(m_oldPoint);
 			}
 			return;
 		}
-		if (indices.count() > 1){
+		if (indices.count() > 1) {
 			indices.pop_back();
 			indices.pop_back();
 		}
-		if (m_oldPoint != - 1){
+		if (m_oldPoint != - 1) {
 			indices.push_back(m_oldPoint);
 		}
 		m_breakLine->setVertexIndices(indices);
@@ -533,13 +514,12 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("RawDataPointmapBreakLineAddPoint");
 	}
-	bool mergeWith(const QUndoCommand *other)
-	{
+	bool mergeWith(const QUndoCommand* other) {
 		const RawDataPointmapBreakLineAddPointCommand* comm = dynamic_cast<const RawDataPointmapBreakLineAddPointCommand*>(other);
-		if (! m_preview){return false;}
-		if (comm == 0){return false;}
-		if (m_pointMap != comm->m_pointMap){return false;}
-		if (m_breakLine != comm->m_breakLine){return false;}
+		if (! m_preview) {return false;}
+		if (comm == 0) {return false;}
+		if (m_pointMap != comm->m_pointMap) {return false;}
+		if (m_breakLine != comm->m_breakLine) {return false;}
 		m_preview = comm->m_preview;
 		m_addedPoint = comm->m_addedPoint;
 		return true;
@@ -557,13 +537,11 @@ class RawDataPointmapBreakLineFinishDefinitionCommand : public QUndoCommand
 {
 public:
 	RawDataPointmapBreakLineFinishDefinitionCommand(RawDataPointmap* parent)
-		: QUndoCommand(RawDataPointmap::tr("Finish Defining Break Line"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Finish Defining Break Line")) {
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meNormal;
 		m_breakLine->setActive(false);
 		m_pointMap->m_activeBreakLine = 0;
@@ -573,8 +551,7 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meBreakLineAddNotPossible;
 		m_pointMap->m_activeBreakLine = m_breakLine;
 		m_breakLine->setActive(true);
@@ -593,13 +570,11 @@ class RawDataPointmapBreakLineCancelDefinitionCommand : public QUndoCommand
 {
 public:
 	RawDataPointmapBreakLineCancelDefinitionCommand(RawDataPointmap* parent)
-		: QUndoCommand(RawDataPointmap::tr("Cancel Defining Break Line"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Cancel Defining Break Line")) {
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
-	void redo()
-	{
+	void redo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meNormal;
 //		m_breakLine->finishDefinition();
 		m_breakLine->setActive(false);
@@ -612,8 +587,7 @@ public:
 		m_pointMap->m_mapped = false;
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meBreakLineAddNotPossible;
 		m_pointMap->m_activeBreakLine = m_breakLine;
 		m_breakLine->setActive(true);
@@ -693,7 +667,7 @@ RawDataPointmap::RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, So
 
 RawDataPointmap::~RawDataPointmap()
 {
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		delete m_breakLines[i];
 	}
 
@@ -716,7 +690,7 @@ void RawDataPointmap::updateInterpShapeData()
 	vtkIdList* idlist = m_vtkInterpPolygon->GetPointIds();
 	idlist->Reset();
 	idlist->SetNumberOfIds(interpPoints->GetNumberOfPoints());
-	for (int i = 0; i < interpPoints->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < interpPoints->GetNumberOfPoints(); ++i) {
 		idlist->SetId(i, i);
 	}
 	idlist->Modified();
@@ -735,7 +709,7 @@ void RawDataPointmap::updateInterpShapeData()
 	int vertexCount = m_vtkInterpPolygon->GetNumberOfPoints();
 	m_InterpLineGrid->Allocate(vertexCount);
 	m_InterpLineGrid->SetPoints(m_vtkInterpPolygon->GetPoints());
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		vtkVertex* nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_InterpLineGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
@@ -754,7 +728,7 @@ void RawDataPointmap::updateShapeData()
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	idlist->Reset();
 	idlist->SetNumberOfIds(points->GetNumberOfPoints());
-	for (int i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < points->GetNumberOfPoints(); ++i) {
 		idlist->SetId(i, i);
 	}
 	idlist->Modified();
@@ -763,7 +737,7 @@ void RawDataPointmap::updateShapeData()
 	m_polyEdgeGrid->Reset();
 	int edgeCount = m_vtkPolygon->GetNumberOfEdges();
 	m_polyEdgeGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkCell* nextCell = m_vtkPolygon->GetEdge(i);
 		m_polyEdgeGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
 	}
@@ -778,7 +752,7 @@ void RawDataPointmap::updateShapeData()
 	vtkIdType vertexId = 0;
 	int vertexCount = m_vtkPolygon->GetNumberOfPoints();
 	m_polyVertexGrid->Allocate(vertexCount);
-	for (int i = 0; i < vertexCount; ++i){
+	for (int i = 0; i < vertexCount; ++i) {
 		vtkVertex* nextVertex = vtkVertex::New();
 		nextVertex->GetPointIds()->SetId(0, vertexId);
 		m_polyVertexGrid->InsertNextCell(nextVertex->GetCellType(), nextVertex->GetPointIds());
@@ -794,8 +768,7 @@ class RawDataPMInterpLineAddPointCommand : public QUndoCommand
 {
 public:
 	RawDataPMInterpLineAddPointCommand(bool keyDown, const double x, const double y, double zpos, RawDataPointmap* ptmap)
-		: QUndoCommand(RawDataPointmap::tr("Add New Interp Line Point"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Add New Interp Line Point")) {
 		m_keyDown = keyDown;
 		//double dx = point.x();
 		//double dy = point.y();
@@ -804,15 +777,14 @@ public:
 		zposition = zpos;
 		m_pointMap = ptmap;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolygon* pol = m_pointMap->m_vtkInterpPolygon;
 		m_pointMap->m_vtkInterpValue->InsertNextValue(zposition);
-		if (m_keyDown){
+		if (m_keyDown) {
 			// add new point.
 			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0.);
 			pol->GetPoints()->Modified();
-		}else{
+		} else {
 			// modify the last point.
 			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
 			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0.);
@@ -824,16 +796,15 @@ public:
 		m_pointMap->updateInterpShapeData();
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolygon* pol = m_pointMap->m_vtkInterpPolygon;
-		if (m_keyDown){
+		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
 			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
 			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 			pol->GetPoints()->Modified();
 			m_pointMap->m_vtkInterpValue->SetNumberOfValues(numOfPoints-1);
-		}else{
+		} else {
 			// this does not happen. no implementation needed.
 		}
 		pol->Modified();
@@ -842,11 +813,11 @@ public:
 		m_pointMap->updateInterpShapeData();
 		m_pointMap->renderGraphicsView();
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const RawDataPMInterpLineAddPointCommand* comm = dynamic_cast<const RawDataPMInterpLineAddPointCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_pointMap != m_pointMap){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_pointMap != m_pointMap) {return false;}
 		m_newPoint = comm->m_newPoint;
 		return true;
 	}
@@ -862,8 +833,7 @@ class RawDataPMPolygonAddPointCommand : public QUndoCommand
 {
 public:
 	RawDataPMPolygonAddPointCommand(bool keyDown, const QPoint& point, RawDataPointmap* ptmap)
-		: QUndoCommand(RawDataPointmap::tr("Add New Selection Polygon Point"))
-	{
+		: QUndoCommand(RawDataPointmap::tr("Add New Selection Polygon Point")) {
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -871,14 +841,13 @@ public:
 		m_newPoint = QVector2D(dx, dy);
 		m_pointMap = ptmap;
 	}
-	void redo()
-	{
+	void redo() {
 		vtkPolygon* pol = m_pointMap->m_vtkPolygon;
-		if (m_keyDown){
+		if (m_keyDown) {
 			// add new point.
 			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
 			pol->GetPoints()->Modified();
-		}else{
+		} else {
 			// modify the last point.
 			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
 			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
@@ -888,15 +857,14 @@ public:
 		m_pointMap->updateShapeData();
 		m_pointMap->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		vtkPolygon* pol = m_pointMap->m_vtkPolygon;
-		if (m_keyDown){
+		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
 			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
 			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
 			pol->GetPoints()->Modified();
-		}else{
+		} else {
 			// this does not happen. no implementation needed.
 		}
 		pol->Modified();
@@ -906,11 +874,11 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("RawDataPMPolygonAddPoint");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const RawDataPMPolygonAddPointCommand* comm = dynamic_cast<const RawDataPMPolygonAddPointCommand*>(other);
-		if (comm == nullptr){return false;}
-		if (comm->m_keyDown){return false;}
-		if (comm->m_pointMap != m_pointMap){return false;}
+		if (comm == nullptr) {return false;}
+		if (comm->m_keyDown) {return false;}
+		if (comm->m_pointMap != m_pointMap) {return false;}
 		m_newPoint = comm->m_newPoint;
 		return true;
 	}
@@ -922,30 +890,30 @@ private:
 
 void RawDataPointmap::loadExternalData(const QString& filename)
 {
-	if (projectData()->version().build() >= 3607){
+	if (projectData()->version().build() >= 3607) {
 		iRICLib::PointMap* pm = new iRICLib::PointMap();
 		pm->load(iRIC::toStr(filename).c_str());
 		vtkPoints* points = vtkPoints::New();
 		points->SetDataTypeToDouble();
 		points->Allocate(pm->pointCount);
 
-		for (int i = 0; i < pm->pointCount; ++i){
+		for (int i = 0; i < pm->pointCount; ++i) {
 			points->InsertNextPoint(pm->x.at(i), pm->y.at(i), 0);
 		}
 		points->Modified();
 
 		vtkDataArray* da = nullptr;
-		if (pm->valueType == iRICLib::PointMap::vtInt){
+		if (pm->valueType == iRICLib::PointMap::vtInt) {
 			vtkIntArray* intDa = vtkIntArray::New();
 			intDa->SetName(VALUES);
-			for (int i = 0; i < pm->pointCount; ++i){
+			for (int i = 0; i < pm->pointCount; ++i) {
 				intDa->InsertNextValue(pm->intValue.at(i));
 			}
 			da = intDa;
-		} else if (pm->valueType == iRICLib::PointMap::vtReal){
+		} else if (pm->valueType == iRICLib::PointMap::vtReal) {
 			vtkDoubleArray* realDa = vtkDoubleArray::New();
 			realDa->SetName(VALUES);
-			for (int i = 0; i < pm->pointCount; ++i){
+			for (int i = 0; i < pm->pointCount; ++i) {
 				realDa->InsertNextValue(pm->realValue.at(i));
 			}
 			da = realDa;
@@ -960,7 +928,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		vtkIdType pts[3];
 		vtkCellArray* ca = vtkCellArray::New();
 
-		for (vtkIdType i = 0; i < pm->pointCount; ++i){
+		for (vtkIdType i = 0; i < pm->pointCount; ++i) {
 			pts[0] = i;
 			ca->InsertNextCell(1, pts);
 		}
@@ -978,7 +946,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		m_vtkDelaunayedPolyData->GetPointData()->Modified();
 
 		ca = vtkCellArray::New();
-		for (int i = 0; i < pm->triangles.size(); ++i){
+		for (int i = 0; i < pm->triangles.size(); ++i) {
 			iRICLib::PointMapTriangle tri = pm->triangles.at(i);
 			pts[0] = tri.index1 - 1;
 			pts[1] = tri.index2 - 1;
@@ -994,11 +962,11 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		points->Delete();
 		da->Delete();
 
-		for (int i = 0; i < pm->breaklines.size(); ++i){
+		for (int i = 0; i < pm->breaklines.size(); ++i) {
 			iRICLib::PointMapBreakline bl = pm->breaklines.at(i);
 			RawDataPointmapBreakLine* breakline = new RawDataPointmapBreakLine(this);
 			QVector<vtkIdType> indices;
-			for (int j = 0; j < bl.indices.size(); ++j){
+			for (int j = 0; j < bl.indices.size(); ++j) {
 				indices.append(bl.indices.at(j));
 			}
 			breakline->setVertexIndices(indices);
@@ -1017,10 +985,10 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 
 		// read 4th line.
 		QString line;
-		for (int i = 0; i < 4; ++i){
+		for (int i = 0; i < 4; ++i) {
 			line = stream.readLine();
 		}
-		if (line == "DATASET UNSTRUCTURED_GRID"){
+		if (line == "DATASET UNSTRUCTURED_GRID") {
 			// Saved as UNSTRUCTURED GRID. backward compatibility.
 			vtkUnstructuredGridReader* reader = vtkUnstructuredGridReader::New();
 			reader->SetFileName(iRIC::toStr(filename).c_str());
@@ -1031,7 +999,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 			m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
 
 			vtkCellArray* cells = vtkCellArray::New();
-			for (vtkIdType i = 0; i < grid->GetNumberOfCells(); ++i){
+			for (vtkIdType i = 0; i < grid->GetNumberOfCells(); ++i) {
 				vtkCell* cell = grid->GetCell(i);
 				cells->InsertNextCell(cell->GetPointIds());
 			}
@@ -1051,7 +1019,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		// load delaunayed poly data.
 		QString delFilename = finfo.absolutePath().append(QString("/%1_del.vtk").arg(finfo.baseName()));
 		QFile delFile(delFilename);
-		if (delFile.exists()){
+		if (delFile.exists()) {
 			vtkPolyDataReader* reader = vtkPolyDataReader::New();
 			reader->SetFileName(iRIC::toStr(delFilename).c_str());
 			reader->Update();
@@ -1071,12 +1039,12 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		// load break lines
 		QString breaklinesFilename = finfo.absolutePath().append(QString("/%1_breaklines.dat").arg(finfo.baseName()));
 		QFile breaklinesFile(breaklinesFilename);
-		if (breaklinesFile.exists()){
+		if (breaklinesFile.exists()) {
 			breaklinesFile.open(QIODevice::ReadOnly);
 			QDataStream s(&breaklinesFile);
 			int num;
 			s >> num;
-			for (int i = 0; i < num; ++i){
+			for (int i = 0; i < num; ++i) {
 				RawDataPointmapBreakLine* breakline = new RawDataPointmapBreakLine(this);
 				QVector<vtkIdType> indices;
 				s >> indices;
@@ -1100,7 +1068,7 @@ void RawDataPointmap::saveExternalData(const QString& filename)
 	vtkIdType pnum = points->GetNumberOfPoints();
 	pm->x.reserve(pnum);
 	pm->y.reserve(pnum);
-	for (vtkIdType i = 0; i < pnum; ++i){
+	for (vtkIdType i = 0; i < pnum; ++i) {
 		double point[3];
 		points->GetPoint(i, point);
 		pm->x.push_back(point[0]);
@@ -1108,19 +1076,19 @@ void RawDataPointmap::saveExternalData(const QString& filename)
 	}
 
 	QString name = values->GetClassName();
-	if (name == "vtkIntArray"){
+	if (name == "vtkIntArray") {
 		pm->valueType = iRICLib::PointMap::vtInt;
 		pm->intValue.reserve(pnum);
 		vtkIntArray* intValues = vtkIntArray::SafeDownCast(values);
-		for (vtkIdType i = 0; i < pnum; ++i){
+		for (vtkIdType i = 0; i < pnum; ++i) {
 			int value = intValues->GetValue(i);
 			pm->intValue.push_back(value);
 		}
-	} else if (name == "vtkDoubleArray"){
+	} else if (name == "vtkDoubleArray") {
 		pm->valueType = iRICLib::PointMap::vtReal;
 		pm->realValue.reserve(pnum);
 		vtkDoubleArray* realValues = vtkDoubleArray::SafeDownCast(values);
-		for (vtkIdType i = 0; i < pnum; ++i){
+		for (vtkIdType i = 0; i < pnum; ++i) {
 			double value = realValues->GetValue(i);
 			pm->realValue.push_back(value);
 		}
@@ -1128,7 +1096,7 @@ void RawDataPointmap::saveExternalData(const QString& filename)
 
 	vtkIdType tnum = m_vtkDelaunayedPolyData->GetNumberOfCells();
 	pm->triangles.reserve(tnum);
-	for (vtkIdType i = 0; i < tnum; ++i){
+	for (vtkIdType i = 0; i < tnum; ++i) {
 		vtkCell* cell = m_vtkDelaunayedPolyData->GetCell(i);
 		iRICLib::PointMapTriangle tri;
 		tri.index1 = cell->GetPointId(0) + 1;
@@ -1138,12 +1106,12 @@ void RawDataPointmap::saveExternalData(const QString& filename)
 	}
 	int blnum = m_breakLines.size();
 	pm->breaklines.reserve(blnum);
-	for (int i = 0; i < blnum; ++i){
+	for (int i = 0; i < blnum; ++i) {
 		RawDataPointmapBreakLine* breakline = m_breakLines.at(i);
 		const QVector<vtkIdType>& indices = breakline->vertexIndices();
 		iRICLib::PointMapBreakline bl;
 		bl.indices.reserve(indices.size());
-		for (int j = 0; j < indices.size(); ++j){
+		for (int j = 0; j < indices.size(); ++j) {
 			bl.indices.push_back(indices.at(j));
 		}
 		pm->breaklines.push_back(bl);
@@ -1160,7 +1128,8 @@ void RawDataPointmap::updateFilename()
 	m_filename.append(".dat");
 }
 
-void RawDataPointmap::doLoadFromProjectMainFile(const QDomNode& node){
+void RawDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)
+{
 	RawData::doLoadFromProjectMainFile(node);
 	int needremeshing = node.toElement().attribute("needremeshing", "0").toInt();
 	m_needRemeshing = static_cast<bool>(needremeshing);
@@ -1172,18 +1141,19 @@ void RawDataPointmap::doLoadFromProjectMainFile(const QDomNode& node){
 	m_pointSize = (node.toElement().attribute("pointSize", "3").toInt());
 }
 
-void RawDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer){
+void RawDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
 	RawData::doSaveToProjectMainFile(writer);
 	QString qstr;
 
-	if (m_needRemeshing){
+	if (m_needRemeshing) {
 		doDelaunay();
 	}
 	writer.writeAttribute("needremeshing", QString::number(static_cast<int>(m_needRemeshing)));
 	writer.writeAttribute("hidebreaklines", QString::number(static_cast<int>(m_hideBreakLines)));
 	writer.writeAttribute("representation", qstr.setNum((int) m_representation));
 	writeOpacityPercent(m_opacityPercent, writer);
-	if (m_hideBreakLines){
+	if (m_hideBreakLines) {
 		writer.writeAttribute("hideBreaklines", "true");
 	}
 	writer.writeAttribute("pointSize", qstr.setNum(m_pointSize));
@@ -1191,18 +1161,18 @@ void RawDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer){
 
 bool RawDataPointmap::checkBreakLines()
 {
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		RawDataPointmapBreakLine* line1 = m_breakLines[i];
 		QVector<QPointF> l = line1->polyLine();
-		for (int j = 0; j < l.count() - 1; ++j){
+		for (int j = 0; j < l.count() - 1; ++j) {
 			QLineF tmpline(l[j], l[j + 1]);
-			for (int k = i + 1; k < m_breakLines.count(); ++k){
+			for (int k = i + 1; k < m_breakLines.count(); ++k) {
 				QVector<QPointF> l2 = m_breakLines[k]->polyLine();
-				for (int m = 0; m < l2.count() - 1; ++m){
+				for (int m = 0; m < l2.count() - 1; ++m) {
 					QLineF tmpline2(l2[m], l2[m + 1]);
 					QPointF intersectionPoint;
-					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, &intersectionPoint)){
-						if (intersectionPoint != l2[m] && intersectionPoint != l2[m + 1]){
+					if (QLineF::BoundedIntersection == tmpline.intersect(tmpline2, &intersectionPoint)) {
+						if (intersectionPoint != l2[m] && intersectionPoint != l2[m + 1]) {
 							QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Break line have to have no intersection with other break lines."));
 							return false;
 						}
@@ -1217,20 +1187,20 @@ bool RawDataPointmap::checkBreakLines()
 bool RawDataPointmap::doDelaunay(bool allowCancel)
 {
 	bool ok = checkBreakLines();
-	if (! ok){return false;}
+	if (! ok) {return false;}
 
 	triangulateio in, out;
 	QTime time;
 	time.start();
 	int segmentCount = 0;
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		RawDataPointmapBreakLine* bLine = m_breakLines[i];
 		QVector<vtkIdType> indices = bLine->vertexIndices();
-		if (indices.count() < 2){continue;}
+		if (indices.count() < 2) {continue;}
 		vtkIdType prevIndex = indices[0];
-		for (int j = 1; j < indices.count(); ++j){
+		for (int j = 1; j < indices.count(); ++j) {
 			vtkIdType currIndex = indices[j];
-			if (prevIndex != currIndex){++ segmentCount;}
+			if (prevIndex != currIndex) {++ segmentCount;}
 			prevIndex = currIndex;
 		}
 	}
@@ -1252,7 +1222,7 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 	in.segmentmarkerlist = NULL;
 	in.numberofsegments = 0;
 
-	if (segmentCount > 0){
+	if (segmentCount > 0) {
 		in.segmentlist = new int[segmentCount * 2];
 		in.numberofsegments = segmentCount;
 	}
@@ -1268,22 +1238,22 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 	in.normlist = NULL;
 	in.numberofedges = 0;
 
-	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
 		double v[3];
 		m_vtkGrid->GetPoints()->GetPoint(i, v);
 		*(in.pointlist + i * 2)     = v[0];
 		*(in.pointlist + i * 2 + 1) = v[1];
 	}
-	if (segmentCount > 0){
+	if (segmentCount > 0) {
 		int segmentIndex = 0;
-		for (int i = 0; i < m_breakLines.count(); ++i){
+		for (int i = 0; i < m_breakLines.count(); ++i) {
 			RawDataPointmapBreakLine* bLine = m_breakLines[i];
 			QVector<vtkIdType> indices = bLine->vertexIndices();
-			if (indices.count() < 2){continue;}
+			if (indices.count() < 2) {continue;}
 			vtkIdType prevIndex = indices[0];
-			for (int j = 1; j < indices.count(); ++j){
+			for (int j = 1; j < indices.count(); ++j) {
 				vtkIdType currIndex = indices[j];
-				if (prevIndex != currIndex){
+				if (prevIndex != currIndex) {
 					*(in.segmentlist + segmentIndex * 2) = prevIndex + 1;
 					*(in.segmentlist + segmentIndex * 2 + 1) = currIndex + 1;
 					++ segmentIndex;
@@ -1293,25 +1263,25 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 		}
 	}
 	// code for debugging.
-/*
-	QFile f("grid.poly");
-	f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text);
-	QTextStream o(&f);
-	o << in.numberofpoints << " 2 0 0\n";
-	for (int i = 0; i < in.numberofpoints; ++i){
-		o << i + 1 << " " << *(in.pointlist + i * 2) << " " << *(in.pointlist + i * 2 + 1) << "\n";
-	}
-	o << in.numberofsegments << " 0\n";
-	for (int i = 0; i < in.numberofsegments; ++i){
-		o << i + 1 << " " << *(in.segmentlist + i * 2) << " " << *(in.segmentlist + i * 2 + 1) << "\n";
-	}
-	o << "0\n";
-	o << in.numberofregions << "\n";
-	for (int i = 0; i < in.numberofregions; ++i){
-		o << i + 1 << " " << *(in.regionlist + i * 4) << " " << *(in.regionlist + i * 4 + 1) << " " << *(in.regionlist + i * 4 + 2) << " " << *(in.regionlist + i * 4 + 3) << "\n";
-	}
-	f.close();
-*/
+	/*
+		QFile f("grid.poly");
+		f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text);
+		QTextStream o(&f);
+		o << in.numberofpoints << " 2 0 0\n";
+		for (int i = 0; i < in.numberofpoints; ++i){
+			o << i + 1 << " " << *(in.pointlist + i * 2) << " " << *(in.pointlist + i * 2 + 1) << "\n";
+		}
+		o << in.numberofsegments << " 0\n";
+		for (int i = 0; i < in.numberofsegments; ++i){
+			o << i + 1 << " " << *(in.segmentlist + i * 2) << " " << *(in.segmentlist + i * 2 + 1) << "\n";
+		}
+		o << "0\n";
+		o << in.numberofregions << "\n";
+		for (int i = 0; i < in.numberofregions; ++i){
+			o << i + 1 << " " << *(in.regionlist + i * 4) << " " << *(in.regionlist + i * 4 + 1) << " " << *(in.regionlist + i * 4 + 2) << " " << *(in.regionlist + i * 4 + 3) << "\n";
+		}
+		f.close();
+	*/
 	out.pointlist = in.pointlist;
 	out.pointattributelist = NULL;
 	out.pointmarkerlist = NULL;
@@ -1346,7 +1316,7 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 	bool finished = thread->wait(1000);
 	m_canceled = false;
 
-	if (! finished){
+	if (! finished) {
 		int prog = 10;
 		// Not finished yet. Show wait dialog.
 		WaitDialog* waitDialog = new WaitDialog(preProcessorWindow());
@@ -1354,13 +1324,13 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 		waitDialog->setRange(0, 100);
 		waitDialog->setUnknownLimitMode(300);
 		waitDialog->setProgress(prog);
-		if (! allowCancel){
+		if (! allowCancel) {
 			waitDialog->disableCancelButton();
 		}
 		waitDialog->setMessage(tr("Remeshing TINs..."));
 		connect(waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
 		waitDialog->show();
-		while (! finished && ! m_canceled){
+		while (! finished && ! m_canceled) {
 			qApp->processEvents();
 			finished = thread->wait(200);
 			waitDialog->setProgress(prog);
@@ -1368,19 +1338,19 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 		}
 		waitDialog->hide();
 		delete waitDialog;
-		if (m_canceled){
+		if (m_canceled) {
 			// not finished, but canceled;
 			thread->terminate();
 			thread->wait();
 		}
 	}
 	delete in.pointlist;
-	if (segmentCount != 0){
+	if (segmentCount != 0) {
 		delete in.segmentlist;
 	}
 	delete arg;
 	qDebug("Time for executing triangle():%d", time.elapsed());
-	if (! m_canceled){
+	if (! m_canceled) {
 		time.restart();
 		m_vtkDelaunayedPolyData->Reset();
 		m_vtkDelaunayedPolyData->Allocate(out.numberoftriangles);
@@ -1389,7 +1359,7 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 		time.restart();
 		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
 		vtkIdType pts[3];
-		for (int i = 0; i < out.numberoftriangles; ++i){
+		for (int i = 0; i < out.numberoftriangles; ++i) {
 			pts[0] = *(out.trianglelist + i * 3) - 1;
 			pts[1] = *(out.trianglelist + i * 3 + 1) - 1;
 			pts[2] = *(out.trianglelist + i * 3 + 2) - 1;
@@ -1436,7 +1406,7 @@ void RawDataPointmap::buildGridFromPolydata()
 	m_vtkGrid->SetPoints(m_vtkDelaunayedPolyData->GetPoints());
 	m_vtkGrid->GetPointData()->Reset();
 	m_vtkGrid->GetPointData()->AddArray(m_vtkDelaunayedPolyData->GetPointData()->GetArray(VALUES));
-	for (int i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i){
+	for (int i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
 		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
 		m_vtkGrid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -1574,7 +1544,7 @@ void RawDataPointmap::setupActors()
 	actorCollection()->AddItem(m_InterpLineActor);
 	actorCollection()->AddItem(m_selectedActor);
 
-		updateActorSettings();
+	updateActorSettings();
 }
 
 void RawDataPointmap::setupMenu()
@@ -1641,12 +1611,13 @@ bool RawDataPointmap::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-void RawDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values){
+void RawDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values)
+{
 	m_vtkGrid->Reset();
 	m_vtkGrid->SetPoints(points);
 	vtkCellArray* vArr = vtkCellArray::New();
 	vArr->Allocate(points->GetNumberOfPoints());
-	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 		vtkIdType vertexId = i;
 		vArr->InsertNextCell(1, &vertexId);
 	}
@@ -1659,7 +1630,8 @@ void RawDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values){
 	m_vtkGrid->GetPoints()->Modified();
 }
 
-void RawDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values){
+void RawDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values)
+{
 	m_vtkDelaunayedPolyData->DeepCopy(data);
 	values->SetName(VALUES);
 	m_vtkDelaunayedPolyData->GetPointData()->Reset();
@@ -1681,16 +1653,16 @@ void RawDataPointmap::assignActionZValues(const ZDepthRange& range)
 	m_InterpLineActor->SetPosition(0, 0, range.max());
 
 	double breakLineDepth = range.max() * 0.1 + range.min() * 0.9;
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		m_breakLines[i]->setZDepthRange(breakLineDepth, breakLineDepth);
 	}
-	if (m_representation == RawDataPointmapRepresentationDialog::Points){
+	if (m_representation == RawDataPointmapRepresentationDialog::Points) {
 		m_pointsActor->SetPosition(0, 0,   0.5 * range.max() + 0.5 * range.min());
 		m_selectedActor->SetPosition(0, 0, 0.3 * range.max() + 0.7 * range.min());
-	} else if (m_representation == RawDataPointmapRepresentationDialog::Wireframe){
+	} else if (m_representation == RawDataPointmapRepresentationDialog::Wireframe) {
 		m_selectedActor->SetPosition(0, 0, 0.5 * range.max() + 0.5 * range.min());
 		m_actor->SetPosition(0, 0,         0.3 * range.max() + 0.7 * range.min());
-	} else if (m_representation == RawDataPointmapRepresentationDialog::Surface){
+	} else if (m_representation == RawDataPointmapRepresentationDialog::Surface) {
 		m_selectedActor->SetPosition(0, 0, 0.5 * range.max() + 0.5 * range.min());
 		m_actor->SetPosition(0, 0,                                   range.min());
 	}
@@ -1713,11 +1685,11 @@ void RawDataPointmap::handlePropertyDialogAccepted(QDialog* propDialog)
 	m_opacityPercent = repDialog->opacityPercent();
 	m_hideBreakLines = repDialog->hideBreakLines();
 	m_pointSize = repDialog->pointSize();
-	if (m_representation != RawDataPointmapRepresentationDialog::Points && m_needRemeshing){
+	if (m_representation != RawDataPointmapRepresentationDialog::Points && m_needRemeshing) {
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you switch to this mode, you have to remesh TINs. Do you want to remesh now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result == QMessageBox::Yes){
+		if (result == QMessageBox::Yes) {
 			bool ok = doDelaunay();
-			if (! ok){
+			if (! ok) {
 				// triangulation failed.
 				m_representation = RawDataPointmapRepresentationDialog::Points;
 			}
@@ -1740,8 +1712,7 @@ void RawDataPointmap::updateRepresentation()
 	m_pointsActor->GetProperty()->SetPointSize(m_pointSize);
 	m_actor->GetProperty()->SetPointSize(m_pointSize);
 	m_selectedActor->GetProperty()->SetPointSize(m_pointSize + 2);
-	switch (m_representation)
-	{
+	switch (m_representation) {
 	case RawDataPointmapRepresentationDialog::Points:
 		m_pointsMapper->SetInputData(m_vtkGrid);
 		actorCollection()->AddItem(m_pointsActor);
@@ -1765,7 +1736,7 @@ void RawDataPointmap::updateRepresentation()
 void RawDataPointmap::updateActorSettings()
 {
 	updateRepresentation();
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		m_breakLines[i]->setHidden(m_hideBreakLines);
 	}
 }
@@ -1845,14 +1816,14 @@ void RawDataPointmap::setupActions()
 
 void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		// left click
 		double worldX = static_cast<double>(event->x());
 		double worldY = static_cast<double>(event->y());
 		v->viewportToWorld(worldX, worldY);
 		MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 
-		switch (m_mouseEventMode){
+		switch (m_mouseEventMode) {
 		case meNormal:
 		case meNormalWithShift:
 			box->setStartPoint(event->x(), event->y());
@@ -1866,33 +1837,32 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			m_mouseEventMode = meSMPolygon;
 			iRICUndoStack::instance().push(new RawDataPMPolygonAddPointCommand(true, QPoint(event->x(), event->y()), this));
 			break;
-		case meSMInterpPointPrepare:
-		{
-			bool ptduplicate = false;
-			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
-			v->GetPointIds()->SetId(0, this->m_selectedVertexId2);
-			double p[3];
-			this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
-			vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-			int numcells = this->m_InterpLineGrid->GetNumberOfCells();
-			for (vtkIdType i = 0; i < numcells; i++) {
-				this->m_InterpLineGrid->GetCellPoints(i, idlist);
-				if(m_selectedVertexId2 == static_cast<int>(idlist->GetId(0))) {
-					ptduplicate = true;
-					break;
+		case meSMInterpPointPrepare: {
+				bool ptduplicate = false;
+				vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
+				v->GetPointIds()->SetId(0, this->m_selectedVertexId2);
+				double p[3];
+				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
+				vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
+				int numcells = this->m_InterpLineGrid->GetNumberOfCells();
+				for (vtkIdType i = 0; i < numcells; i++) {
+					this->m_InterpLineGrid->GetCellPoints(i, idlist);
+					if (m_selectedVertexId2 == static_cast<int>(idlist->GetId(0))) {
+						ptduplicate = true;
+						break;
+					}
 				}
-			}
-			if (!ptduplicate) {
-				iRICUndoStack::instance().push(new RawDataPMInterpLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
-				lastInterpPointKnown = true;
+				if (!ptduplicate) {
+					iRICUndoStack::instance().push(new RawDataPMInterpLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
+					lastInterpPointKnown = true;
 
-				this->m_InterpLineGrid->Modified();
-				this->lastInterpPointKnown = true;
+					this->m_InterpLineGrid->Modified();
+					this->lastInterpPointKnown = true;
+				}
+				//this->m_vtkSelectedPolyData = m_selectedVerticesGrid->GetData()
+				this->m_mouseEventMode = meSMInterpPoint;
+				this->m_selectedZPos = 0.;
 			}
-			//this->m_vtkSelectedPolyData = m_selectedVerticesGrid->GetData()
-			this->m_mouseEventMode = meSMInterpPoint;
-			this->m_selectedZPos = 0.;
-		}
 			break;
 		case meSMInterpPoint:
 			break;
@@ -1908,7 +1878,7 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		case meSMAddCtrlPoint:
 			if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 0) {
 				iRICUndoStack::instance().push(new RawDataPMInterpLineAddPointCommand(
-					true, worldX, worldY, -9999., this));
+																				 true, worldX, worldY, -9999., this));
 			}
 			break;
 		case meSMAddPointPrepare:
@@ -1916,7 +1886,7 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 				double p[3];
 				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
 				iRICUndoStack::instance().push(new RawDataPMInterpLineAddPointCommand(
-					true, p[0], p[1], this->m_selectedZPos, this));
+																				 true, p[0], p[1], this->m_selectedZPos, this));
 				this->m_mouseEventMode = meSMAddCtrlPoint;
 			}
 			break;
@@ -1933,7 +1903,7 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		case meBreakLineRemove:
 			// remove active break line.
 			m_activeBreakLine->setActive(true);
-			if (QMessageBox::No == QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this break line?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)){
+			if (QMessageBox::No == QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove this break line?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
 				m_activeBreakLine->setActive(false);
 				return;
 			}
@@ -1946,7 +1916,7 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		}
 		updateMouseCursor(v);
-	} else if (event->button() == Qt::RightButton){
+	} else if (event->button() == Qt::RightButton) {
 		// right click
 		m_dragStartPoint = QPoint(event->x(), event->y());
 	}
@@ -1954,11 +1924,11 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 }
 void RawDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	if(doubleclick) {
+	if (doubleclick) {
 		doubleclick = false;
 		return;
 	}
-	if (event->button() == Qt::LeftButton){
+	if (event->button() == Qt::LeftButton) {
 		// left click
 		double worldX = static_cast<double>(event->x());
 		double worldY = static_cast<double>(event->y());
@@ -1966,11 +1936,11 @@ void RawDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 		MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 		bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
 
-		switch (m_mouseEventMode){
+		switch (m_mouseEventMode) {
 		case meNormal:
 		case meNormalWithShift:
 			box->setEndPoint(event->x(), event->y());
-			if (isNear(box->startPoint(), box->endPoint())){
+			if (isNear(box->startPoint(), box->endPoint())) {
 				selectPointsNearPoint(QVector2D(worldX, worldY), xOr);
 			} else {
 				selectPointsInsideBox(box, xOr);
@@ -1980,8 +1950,8 @@ void RawDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 			renderGraphicsView();
 			break;
 		}
-	} else if (event->button() == Qt::RightButton){
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))){
+	} else if (event->button() == Qt::RightButton) {
+		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -1994,7 +1964,7 @@ void RawDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 	m_mouseMovePoint = QPoint(event->x(), event->y());
 	MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
 		box->setEndPoint(event->x(), event->y());
@@ -2023,14 +1993,14 @@ void RawDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 	doubleclick = true;
 	bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
 
-	if (m_mouseEventMode == meSMPolygon){
+	if (m_mouseEventMode == meSMPolygon) {
 		definePolygon(true, xOr);
 
-	} else if( m_mouseEventMode == meSMAddCtrlPoint) {
+	} else if (m_mouseEventMode == meSMAddCtrlPoint) {
 		this->finishAddPoint();
 	} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 		this->finishInterpPoint();
-	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible){
+	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		iRICUndoStack::instance().push(new RawDataPointmapBreakLineFinishDefinitionCommand(this));
 	}
 	this->updateMouseCursor(v);
@@ -2038,18 +2008,18 @@ void RawDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 void RawDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
 		m_mouseEventMode = meNormal;
-		if (xOr){
+		if (xOr) {
 			// shift pressed.
 			m_mouseEventMode = meNormalWithShift;
 		}
 		updateMouseCursor(graphicsView());
 		break;
 	case meSMPolygon:
-		if (event->key() == Qt::Key_Return){
+		if (event->key() == Qt::Key_Return) {
 			definePolygon(false, xOr);
 		}
 		break;
@@ -2058,17 +2028,17 @@ void RawDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		break;
 	}
 
-	if (event->key() == Qt::Key_Return){
-		if (m_mouseEventMode == meSMPolygon){
+	if (event->key() == Qt::Key_Return) {
+		if (m_mouseEventMode == meSMPolygon) {
 			definePolygon(false, xOr);
-		} else if( m_mouseEventMode == meSMAddCtrlPoint) {
+		} else if (m_mouseEventMode == meSMAddCtrlPoint) {
 			this->finishAddPoint();
 		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 			this->finishInterpPoint();
-		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible){
+		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 			iRICUndoStack::instance().push(new RawDataPointmapBreakLineFinishDefinitionCommand(this));
 		}
-	} else if(event->key() == Qt::Key_Alt) {
+	} else if (event->key() == Qt::Key_Alt) {
 		if (m_mouseEventMode == meSMInterpPointPrepare) {
 			m_mouseEventMode = meSMInterpCtrlPoint;
 		} else if (m_mouseEventMode == meSMInterpPoint) {
@@ -2083,11 +2053,11 @@ void RawDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 void RawDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	bool xOr = ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier);
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
 		m_mouseEventMode = meNormal;
-		if (xOr){
+		if (xOr) {
 			// shift pressed.
 			m_mouseEventMode = meNormalWithShift;
 		}
@@ -2106,8 +2076,8 @@ void RawDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsView
 void RawDataPointmap::definePolygon(bool doubleClick, bool xOr)
 {
 	int minCount = 4;
-	if (doubleClick){minCount = 3;}
-	if (polygon().count() <= minCount){
+	if (doubleClick) {minCount = 3;}
+	if (polygon().count() <= minCount) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Polygon must have three vertices at least."));
 		return;
 	}
@@ -2126,13 +2096,13 @@ void RawDataPointmap::definePolygon(bool doubleClick, bool xOr)
 	//stack.endMacro();
 }
 
-void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
+void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
 {
 	vtkTriangle* tri = vtkTriangle::New();
 	double center[3], tmpp[3];
 	center[0] = 0; center[1] = 0; center[2] = 0;
 	vtkIdType pnum = box->vtkGrid()->GetNumberOfPoints();
-	for (vtkIdType i = 0; i < pnum; ++i){
+	for (vtkIdType i = 0; i < pnum; ++i) {
 		box->vtkGrid()->GetPoint(i, tmpp);
 		center[0] += tmpp[0];
 		center[1] += tmpp[1];
@@ -2157,12 +2127,12 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 	tmpg->SetPoints(box->vtkGrid()->GetPoints());
 	tri->Delete();
 	QSet<vtkIdType> oldSelectedVertices;
-	if (xOr){
+	if (xOr) {
 		vtkCellArray* cArr = m_selectedVerticesGrid->GetVerts();
 		cArr->InitTraversal();
-		for (vtkIdType i = 0; i < cArr->GetNumberOfCells(); ++i){
+		for (vtkIdType i = 0; i < cArr->GetNumberOfCells(); ++i) {
 			vtkIdType numPoints;
-			vtkIdType *points;
+			vtkIdType* points;
 			cArr->GetNextCell(numPoints, points);
 			oldSelectedVertices.insert(*(points));
 		}
@@ -2182,10 +2152,10 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 		int subid;
 		m_vtkGrid->GetPoints()->GetPoint(idlist->GetId(i) , p);
 		vtkIdType cellid = tmpg->FindCell(p, hintCell, 0, 1e-4, subid, pcoords, weights);
-		if (cellid >= 0){
+		if (cellid >= 0) {
 			// this is inside the box!
 			vtkIdType pointId = idlist->GetId(i);
-			if (oldSelectedVertices.contains(pointId)){
+			if (oldSelectedVertices.contains(pointId)) {
 				// this should not be included.
 				oldSelectedVertices.remove(pointId);
 			} else {
@@ -2195,7 +2165,7 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 		}
 	}
 	// points included in oldSelectedVertices should be added.
-	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
+	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it) {
 		vtkIdType pointId = *it;
 		newSelectedVertices.append(pointId);
 	}
@@ -2203,7 +2173,7 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 //	qSort(newSelectedVertices);
 	vtkCellArray* vArr = vtkCellArray::New();
 	vArr->Allocate(newSelectedVertices.count(), 10);
-	for (int i = 0; i < newSelectedVertices.count(); ++i){
+	for (int i = 0; i < newSelectedVertices.count(); ++i) {
 		vtkIdType vertexId = newSelectedVertices[i];
 		vArr->InsertNextCell(1, &vertexId);
 //		qDebug(" Index %d", vertexId);
@@ -2216,7 +2186,7 @@ void RawDataPointmap::selectPointsInsideBox(MouseBoundingBox *box, bool xOr)
 	vArr->Delete();
 }
 
-void RawDataPointmap::selectPointsNearPoint(const QVector2D &pos, bool xOr)
+void RawDataPointmap::selectPointsNearPoint(const QVector2D& pos, bool xOr)
 {
 	double point[3] = {pos.x(), pos.y(), 0};
 	vtkIdType nearestId = m_vtkPointLocator->FindClosestPoint(point);
@@ -2226,30 +2196,30 @@ void RawDataPointmap::selectPointsNearPoint(const QVector2D &pos, bool xOr)
 	double limitdist = graphicsView()->stdRadius(5);
 	double dist = (vertexPos - pos).length();
 	vtkIdType pointToAdd = -1;
-	if (dist < limitdist){
+	if (dist < limitdist) {
 		// it is near enough. select this point.
 		pointToAdd = nearestId;
 	}
 	QSet<vtkIdType> oldSelectedVertices;
-	if (xOr){
+	if (xOr) {
 		vtkCellArray* cArr = m_selectedVerticesGrid->GetVerts();
 		cArr->InitTraversal();
-		for (vtkIdType i = 0; i < cArr->GetNumberOfCells(); ++i){
+		for (vtkIdType i = 0; i < cArr->GetNumberOfCells(); ++i) {
 			vtkIdType numPoints;
-			vtkIdType *points;
+			vtkIdType* points;
 			cArr->GetNextCell(numPoints, points);
 			oldSelectedVertices.insert(*(points));
 		}
 	}
 	m_selectedVerticesGrid->Initialize();
-	if (xOr){
+	if (xOr) {
 		m_selectedVerticesGrid->Allocate(oldSelectedVertices.count(), 10);
 	} else {
 		m_selectedVerticesGrid->Allocate(3, 3);
 	}
 	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
-	if (pointToAdd != -1){
-		if (oldSelectedVertices.contains(pointToAdd)){
+	if (pointToAdd != -1) {
+		if (oldSelectedVertices.contains(pointToAdd)) {
 			oldSelectedVertices.remove(pointToAdd);
 		} else {
 			oldSelectedVertices.insert(pointToAdd);
@@ -2257,7 +2227,7 @@ void RawDataPointmap::selectPointsNearPoint(const QVector2D &pos, bool xOr)
 	}
 	vtkCellArray* vArr = vtkCellArray::New();
 	vArr->Allocate(oldSelectedVertices.count(), 10);
-	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it){
+	for (auto it = oldSelectedVertices.begin(); it != oldSelectedVertices.end(); ++it) {
 		vtkIdType vertexId = *it;
 		vArr->InsertNextCell(1, &vertexId);
 	}
@@ -2267,11 +2237,12 @@ void RawDataPointmap::selectPointsNearPoint(const QVector2D &pos, bool xOr)
 	vArr->Delete();
 }
 
-void RawDataPointmap::showPolygonSelectedPoints(bool xOr) {
+void RawDataPointmap::showPolygonSelectedPoints(bool xOr)
+{
 
 	QSet<vtkIdType> oldSelectedVertices;
-	if (xOr){
-		for (vtkIdType j = 0; j < m_selectedVerticesGrid->GetNumberOfCells(); ++j){
+	if (xOr) {
+		for (vtkIdType j = 0; j < m_selectedVerticesGrid->GetNumberOfCells(); ++j) {
 			vtkCell* cell = m_selectedVerticesGrid->GetCell(j);
 			vtkIdType pointId = cell->GetPointId(0);
 			oldSelectedVertices.insert(pointId);
@@ -2280,8 +2251,7 @@ void RawDataPointmap::showPolygonSelectedPoints(bool xOr) {
 	m_selectedVerticesGrid->Reset();
 	m_selectedVerticesGrid->SetPoints(m_vtkGrid->GetPoints());
 
-	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++)
-	{
+	for (int i = 0; i < this->m_selectedVerticesGrid->GetNumberOfPoints(); i++) {
 		double x[3];
 		this->m_selectedVerticesGrid->GetPoint(i,x);
 		double closestPoint[3];
@@ -2290,21 +2260,21 @@ void RawDataPointmap::showPolygonSelectedPoints(bool xOr) {
 		double weights[32];
 		double dist;
 		int inside = this->m_vtkPolygon->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights);
-		if(inside || oldSelectedVertices.contains(i)) {
-		//if( 1 == this->m_vtkPolygon->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
-		//if( 1 == this->m_vtkPolygon->PointInPolygon(x, ){
+		if (inside || oldSelectedVertices.contains(i)) {
+			//if( 1 == this->m_vtkPolygon->EvaluatePosition(x, closestPoint, subId, pcoords, dist, weights)){
+			//if( 1 == this->m_vtkPolygon->PointInPolygon(x, ){
 			vtkSmartPointer<vtkVertex> v = vtkSmartPointer<vtkVertex>::New();
 			v->GetPointIds()->SetId(0,i);
 			this->m_selectedVerticesGrid->InsertNextCell(v->GetCellType(), v->GetPointIds());
 		}
 	}
 //		this->m_selectedVerticesGrid->BuildLinks();
-		this->m_selectedVerticesGrid->Modified();
-		this->enablePointSelectedActions(true);
+	this->m_selectedVerticesGrid->Modified();
+	this->enablePointSelectedActions(true);
 }
 void RawDataPointmap::selectionModePoint(bool on)
 {
-	if (on){
+	if (on) {
 		m_mouseEventMode = meNormal;
 	} else {
 		m_mouseEventMode = meNormal;
@@ -2316,9 +2286,9 @@ void RawDataPointmap::selectionModeBox(bool on)
 {
 	this->clearPointsSelection();
 
-	if (on){
+	if (on) {
 		m_mouseEventMode = meSMBoxNotPossible;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
@@ -2328,9 +2298,9 @@ void RawDataPointmap::selectionModePolygon(bool on)
 {
 	this->clearPointsSelection();
 
-	if (on){
+	if (on) {
 		m_mouseEventMode = RawDataPointmap::meSMPolygonPrepare;
-	}else{
+	} else {
 		m_mouseEventMode = meNormal;
 	}
 	updateActionStatus();
@@ -2359,7 +2329,7 @@ void RawDataPointmap::updateActionStatus()
 	this->m_removeAllBreakLinesAction->setDisabled(true);
 	this->m_removeAllBreakLinesAction->setChecked(false);
 
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
 		this->m_selectionModePoint->setEnabled(true);
@@ -2413,22 +2383,22 @@ void RawDataPointmap::updateMouseEventMode()
 	graphicsView()->viewportToWorld(dx, dy);
 	QVector2D worldPos(dx, dy);
 	double tmppos[3] = {dx, dy, 0};
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meNormalWithShift:
 		// do nothing.
 		break;
 	case meSMInterpPoint:
-		if (isVertexSelectable(worldPos)){
+		if (isVertexSelectable(worldPos)) {
 			m_mouseEventMode = meSMInterpPointPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meSMInterpPoint;
 		}
 		break;
 	case meSMInterpPointPrepare:
-		if (isVertexSelectable(worldPos)){
+		if (isVertexSelectable(worldPos)) {
 			m_mouseEventMode = meSMInterpPointPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meSMInterpPoint;
 		}
 		break;
@@ -2440,16 +2410,16 @@ void RawDataPointmap::updateMouseEventMode()
 		//}
 		break;
 	case meSMAddPoint:
-		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)){
+		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)) {
 			m_mouseEventMode = meSMAddPointPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meSMAddPoint;
 		}
 		break;
 	case meSMAddPointPrepare:
-		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)){
+		if (isVertexSelectable(worldPos) && (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0)) {
 			m_mouseEventMode = meSMAddPointPrepare;
-		}else{
+		} else {
 			m_mouseEventMode = meSMAddPoint;
 		}
 		break;
@@ -2463,11 +2433,11 @@ void RawDataPointmap::updateMouseEventMode()
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
 		m_mouseEventMode = meBreakLineRemoveNotPossible;
-		if (m_activeBreakLine != 0){m_activeBreakLine->setActive(false);}
+		if (m_activeBreakLine != 0) {m_activeBreakLine->setActive(false);}
 		m_activeBreakLine = 0;
-		for (int i = 0; i < m_breakLines.count(); ++i){
+		for (int i = 0; i < m_breakLines.count(); ++i) {
 			RawDataPointmapBreakLine* breakLine = m_breakLines[i];
-			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))){
+			if (breakLine->isEdgeSelectable(worldPos, graphicsView()->stdRadius(5))) {
 				m_mouseEventMode = meBreakLineRemove;
 				m_activeBreakLine = breakLine;
 				break;
@@ -2477,7 +2447,7 @@ void RawDataPointmap::updateMouseEventMode()
 	}
 }
 
-bool RawDataPointmap::isVertexSelectable(const QVector2D &pos)
+bool RawDataPointmap::isVertexSelectable(const QVector2D& pos)
 {
 	double point2[3] = {pos.x(), pos.y(), 0.0};
 	m_selectedVertexId2 = this->m_vtkPointLocator->FindClosestPoint(point2);
@@ -2490,9 +2460,9 @@ bool RawDataPointmap::isVertexSelectable(const QVector2D &pos)
 	return (dist < limitdist);
 }
 
-void RawDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface *v)
+void RawDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 {
-	switch (this->m_mouseEventMode){
+	switch (this->m_mouseEventMode) {
 	case meNormal:
 		v->setCursor(Qt::ArrowCursor);
 		break;
@@ -2548,7 +2518,7 @@ void RawDataPointmap::remeshTINS(bool nodialog)
 	time.start();
 	bool ok = doDelaunay(! nodialog);
 	qDebug("Whole time for doDelaunay():%d", time.elapsed());
-	if (! ok){return;}
+	if (! ok) {return;}
 	graphicsView()->setCursor(Qt::WaitCursor);
 	time.restart();
 	renderGraphicsView();
@@ -2556,20 +2526,20 @@ void RawDataPointmap::remeshTINS(bool nodialog)
 	// This operation is not undo-able.
 	iRICUndoStack::instance().clear();
 	graphicsView()->setCursor(Qt::ArrowCursor);
-	if (! nodialog){
+	if (! nodialog) {
 		QMessageBox::information(preProcessorWindow(), tr("Information"), tr("Remeshing TINs finished."));
 	}
 }
 
 void RawDataPointmap::addBreakLine()
 {
-	if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible){
+	if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		// cancel defining break line.
 		iRICUndoStack::instance().push(new RawDataPointmapBreakLineCancelDefinitionCommand(this));
 	} else {
-		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
+		if (m_representation == RawDataPointmapRepresentationDialog::Surface) {
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes){
+			if (result == QMessageBox::Yes) {
 				m_representation = RawDataPointmapRepresentationDialog::Wireframe;
 				updateRepresentation();
 				renderGraphicsView();
@@ -2586,12 +2556,12 @@ void RawDataPointmap::addBreakLine()
 
 void RawDataPointmap::removeBreakLine()
 {
-	if (m_mouseEventMode == meBreakLineRemoveNotPossible || m_mouseEventMode == meBreakLineRemove){
+	if (m_mouseEventMode == meBreakLineRemoveNotPossible || m_mouseEventMode == meBreakLineRemove) {
 		m_mouseEventMode = meNormal;
 	} else {
-		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
+		if (m_representation == RawDataPointmapRepresentationDialog::Surface) {
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes){
+			if (result == QMessageBox::Yes) {
 				m_representation = RawDataPointmapRepresentationDialog::Wireframe;
 				updateRepresentation();
 				renderGraphicsView();
@@ -2611,9 +2581,9 @@ void RawDataPointmap::removeBreakLine()
 void RawDataPointmap::removeAllBreakLines()
 {
 	int result = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to remove ALL break lines?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-	if (result == QMessageBox::No){return;}
+	if (result == QMessageBox::No) {return;}
 	clearPointsSelection();
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		delete m_breakLines[i];
 	}
 	m_breakLines.clear();
@@ -2625,10 +2595,10 @@ void RawDataPointmap::removeAllBreakLines()
 
 void RawDataPointmap::editPoints()
 {
-	if (m_representation != RawDataPointmapRepresentationDialog::Points){
+	if (m_representation != RawDataPointmapRepresentationDialog::Points) {
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you edit points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result == QMessageBox::Yes){
+		if (result == QMessageBox::Yes) {
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2637,9 +2607,9 @@ void RawDataPointmap::editPoints()
 		}
 	}
 	RawDataPointmapEditPtsDialog dialog(this, preProcessorWindow());
-	if (dialog.exec() != QDialog::Accepted){return;}
+	if (dialog.exec() != QDialog::Accepted) {return;}
 	QVector<vtkIdType> selectedV = selectedVertices();
-	if (selectedV.count() == 1){
+	if (selectedV.count() == 1) {
 		iRICUndoStack::instance().push(new RawDataPointMapEditSinglePoint(dialog.pointX(), dialog.pointY(), dialog.value(), selectedV[0], this));
 	} else {
 		iRICUndoStack::instance().push(new RawDataPointMapEditPoints(dialog.value(), selectedV, this));
@@ -2648,10 +2618,10 @@ void RawDataPointmap::editPoints()
 
 void RawDataPointmap::editPointsDelete()
 {
-	if (m_representation != RawDataPointmapRepresentationDialog::Points){
+	if (m_representation != RawDataPointmapRepresentationDialog::Points) {
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result == QMessageBox::Yes){
+		if (result == QMessageBox::Yes) {
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2659,7 +2629,7 @@ void RawDataPointmap::editPointsDelete()
 			return;
 		}
 	}
-	if (pointsUsedForBreakLines(selectedVertices())){
+	if (pointsUsedForBreakLines(selectedVertices())) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
@@ -2671,12 +2641,12 @@ void RawDataPointmap::editPointsExport()
 {
 	QString defName =  QDir(LastIODirectory::get()).absoluteFilePath("file.tpo");
 	QString fname = QFileDialog::getSaveFileName(
-		projectData()->mainWindow(), tr("Select File to Export"), defName, tr("Topography File (*.tpo)"));
-	if (fname.isNull()){
+										projectData()->mainWindow(), tr("Select File to Export"), defName, tr("Topography File (*.tpo)"));
+	if (fname.isNull()) {
 		return;
 	}
 	QFile file(fname);
-	if (! file.open(QIODevice::WriteOnly)){
+	if (! file.open(QIODevice::WriteOnly)) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Error occured while exporting to %1.").arg(fname));
 		return;
 	}
@@ -2688,9 +2658,9 @@ void RawDataPointmap::editPointsExport()
 	vtkPoints* points = this->m_vtkGrid->GetPoints();
 	vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(this->m_vtkGrid->GetPointData()->GetArray(VALUES));
 	double v[3], val;
-	vtkIdType *pts = 0, npts2;
+	vtkIdType* pts = 0, npts2;
 	m_selectedVerticesGrid->GetVerts()->InitTraversal();
-	for (vtkIdType j = 0; j < m_selectedVerticesGrid->GetVerts()->GetNumberOfCells(); ++j){
+	for (vtkIdType j = 0; j < m_selectedVerticesGrid->GetVerts()->GetNumberOfCells(); ++j) {
 		///*vtkCell* cell = */m_selectedVerticesGrid->GetVerts()->GetCell(j, npts, pts);
 		//vtkIdType pointId = cell->GetPointId(0);
 		m_selectedVerticesGrid->GetVerts()->GetNextCell(npts2, pts);
@@ -2704,10 +2674,10 @@ void RawDataPointmap::editPointsExport()
 
 void RawDataPointmap::editPointsLessThan()
 {
-	if (m_representation != RawDataPointmapRepresentationDialog::Points){
+	if (m_representation != RawDataPointmapRepresentationDialog::Points) {
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result == QMessageBox::Yes){
+		if (result == QMessageBox::Yes) {
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2716,10 +2686,10 @@ void RawDataPointmap::editPointsLessThan()
 		}
 	}
 	RawDataPointMapDelPtsLessThanDialog dialog(this, preProcessorWindow());
-	if (dialog.exec() != QDialog::Accepted){return;}
+	if (dialog.exec() != QDialog::Accepted) {return;}
 	QString title(tr("Delete points less than %1"));
 	QVector<vtkIdType> deletedPoints = dialog.selectedPoints();
-	if (pointsUsedForBreakLines(deletedPoints)){
+	if (pointsUsedForBreakLines(deletedPoints)) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
@@ -2729,10 +2699,10 @@ void RawDataPointmap::editPointsLessThan()
 
 void RawDataPointmap::editPointsGreaterThan()
 {
-	if (m_representation != RawDataPointmapRepresentationDialog::Points){
+	if (m_representation != RawDataPointmapRepresentationDialog::Points) {
 		// @todo message review is needed.
 		int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you delete points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (result == QMessageBox::Yes){
+		if (result == QMessageBox::Yes) {
 			m_representation = RawDataPointmapRepresentationDialog::Points;
 			updateRepresentation();
 			renderGraphicsView();
@@ -2741,10 +2711,10 @@ void RawDataPointmap::editPointsGreaterThan()
 		}
 	}
 	RawDataPointmapDelPtsGreaterThanDialog dialog(this, preProcessorWindow());
-	if (dialog.exec() != QDialog::Accepted){return;}
+	if (dialog.exec() != QDialog::Accepted) {return;}
 	QString title(tr("Delete points greater than %1"));
 	QVector<vtkIdType> deletedPoints = dialog.selectedPoints();
-	if (pointsUsedForBreakLines(deletedPoints)){
+	if (pointsUsedForBreakLines(deletedPoints)) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
@@ -2758,7 +2728,7 @@ const QPolygonF RawDataPointmap::polygon()
 	vtkIdList* idlist = m_vtkPolygon->GetPointIds();
 	vtkPoints* points = m_vtkPolygon->GetPoints();
 	int vCount = idlist->GetNumberOfIds();
-	for (int i = 0; i < vCount; ++i){
+	for (int i = 0; i < vCount; ++i) {
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		ret << QPointF(*p, *(p + 1));
@@ -2821,11 +2791,11 @@ void RawDataPointmap::interpolatePoints(bool on)
 {
 	this->clearPointsSelection();
 
-	if (on){
-		if (m_representation != RawDataPointmapRepresentationDialog::Points){
+	if (on) {
+		if (m_representation != RawDataPointmapRepresentationDialog::Points) {
 			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you interpolate points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes){
+			if (result == QMessageBox::Yes) {
 				m_representation = RawDataPointmapRepresentationDialog::Points;
 				updateRepresentation();
 			} else {
@@ -2847,11 +2817,11 @@ void RawDataPointmap::interpolatePoints(bool on)
 void RawDataPointmap::addPoints(bool on)
 {
 	clearPointsSelection();
-	if (on){
-		if (m_representation == RawDataPointmapRepresentationDialog::Surface){
+	if (on) {
+		if (m_representation == RawDataPointmapRepresentationDialog::Surface) {
 			// @todo message review is needed.
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add points, you have to switch to show points. Do you want to switch to show points now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-			if (result == QMessageBox::Yes){
+			if (result == QMessageBox::Yes) {
 				m_representation = RawDataPointmapRepresentationDialog::Points;
 				updateRepresentation();
 			} else {
@@ -2860,7 +2830,7 @@ void RawDataPointmap::addPoints(bool on)
 		}
 		m_mouseEventMode = RawDataPointmap::meSMAddPoint;
 		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("To add new points, select an existing point first. The value at that point will be used as the "
-																																									 "default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key."), "rawdatapointmapaddpoint");
+																	 "default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key."), "rawdatapointmapaddpoint");
 	} else {
 		this->unwindSelectedInterp();
 		this->resetSelectedInterp();
@@ -2885,27 +2855,20 @@ QVector<vtkIdType> RawDataPointmap::selectedVertices()
 	QVector<vtkIdType> selected;
 //	qDebug("Selected Points in m_selectedVerticesGrid:");
 	vtkIdType numPoints;
-	vtkIdType *points;
+	vtkIdType* points;
 	m_selectedVerticesGrid->GetVerts()->InitTraversal();
-	for (vtkIdType cellId = 0; cellId < m_selectedVerticesGrid->GetVerts()->GetNumberOfCells(); ++cellId){
+	for (vtkIdType cellId = 0; cellId < m_selectedVerticesGrid->GetVerts()->GetNumberOfCells(); ++cellId) {
 		m_selectedVerticesGrid->GetVerts()->GetNextCell(numPoints, points);
-		for (int ptid = 0; ptid < numPoints; ++ptid){
+		for (int ptid = 0; ptid < numPoints; ++ptid) {
 			tmpsel.insert(*(points + ptid));
 //			qDebug(" pointId %d", *(points + ptid));
 		}
 	}
 //	qDebug("Selected Points in m_selectedVerticesGrid End");
-	for (auto it = tmpsel.begin(); it != tmpsel.end(); ++it){
+	for (auto it = tmpsel.begin(); it != tmpsel.end(); ++it) {
 		selected.push_back(*it);
 	}
 	qSort(selected);
-/*
-	qDebug("Selected Points:");
-	for (int i = 0; i < selected.count(); ++i){
-		qDebug(" %d", selected[i]);
-	}
-	qDebug("Selected Points End");
-*/
 	return selected;
 }
 
@@ -2919,9 +2882,9 @@ void RawDataPointmap::updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints
 	vtkIdType keyIdToAddCandidate = 0;
 	vtkIdType offsetToAddCandidate = 0;
 
-	for (int i = 0; i < deletedPoints.size(); ++i){
+	for (int i = 0; i < deletedPoints.size(); ++i) {
 		vtkIdType deletedId = deletedPoints[i];
-		if (deletedId != prevDeletedId + 1){
+		if (deletedId != prevDeletedId + 1) {
 			// 連続でない。
 			keyIds.append(keyIdToAddCandidate);
 			offsets.append(offsetToAddCandidate);
@@ -2936,21 +2899,21 @@ void RawDataPointmap::updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints
 	keyIds.append(keyIdToAddCandidate);
 	offsets.append(offsetToAddCandidate);
 
-	foreach (RawDataPointmapBreakLine* line, m_breakLines){
+	foreach(RawDataPointmapBreakLine* line, m_breakLines) {
 		QVector<vtkIdType> oldindices = line->vertexIndices();
 		QVector<vtkIdType> newindices;
-		for (int i = 0; i < oldindices.count(); ++i){
+		for (int i = 0; i < oldindices.count(); ++i) {
 			vtkIdType oldindex = oldindices[i];
 			auto lb = qLowerBound(keyIds, oldindex);
 			vtkIdType tmpId = *lb;
 			int listIndex;
-			if (lb == keyIds.end()){
+			if (lb == keyIds.end()) {
 				-- lb;
 				tmpId = *lb;
 				listIndex = keyIds.indexOf(tmpId);
 			} else {
 				listIndex = keyIds.indexOf(tmpId);
-				if (tmpId != oldindex){
+				if (tmpId != oldindex) {
 					-- listIndex;
 				}
 			}
@@ -2971,9 +2934,9 @@ void RawDataPointmap::updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints
 	vtkIdType keyIdToAddCandidate = 0;
 	vtkIdType offsetToAddCandidate = 0;
 
-	for (int i = 0; i < deletedPoints.size(); ++i){
+	for (int i = 0; i < deletedPoints.size(); ++i) {
 		vtkIdType deletedId = deletedPoints[i];
-		if (deletedId != prevDeletedId + 1){
+		if (deletedId != prevDeletedId + 1) {
 			// 連続でない。
 			keyIds.append(keyIdToAddCandidate);
 			offsets.append(offsetToAddCandidate);
@@ -2988,21 +2951,21 @@ void RawDataPointmap::updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints
 	keyIds.append(keyIdToAddCandidate);
 	offsets.append(offsetToAddCandidate);
 
-	foreach (RawDataPointmapBreakLine* line, m_breakLines){
+	foreach (RawDataPointmapBreakLine* line, m_breakLines) {
 		QVector<vtkIdType> oldindices = line->vertexIndices();
 		QVector<vtkIdType> newindices;
-		for (int i = 0; i < oldindices.count(); ++i){
+		for (int i = 0; i < oldindices.count(); ++i) {
 			vtkIdType oldindex = oldindices[i];
 			auto lb = qLowerBound(keyIds, oldindex);
 			vtkIdType tmpId = *lb;
 			int listIndex;
-			if (lb == keyIds.end()){
+			if (lb == keyIds.end()) {
 				-- lb;
 				tmpId = *lb;
 				listIndex = keyIds.indexOf(tmpId);
 			} else {
 				listIndex = keyIds.indexOf(tmpId);
-				if (tmpId != oldindex){
+				if (tmpId != oldindex) {
 					-- listIndex;
 				}
 			}
@@ -3015,14 +2978,14 @@ void RawDataPointmap::updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints
 
 bool RawDataPointmap::pointsUsedForBreakLines(const QVector<vtkIdType>& points)
 {
-	for (int i = 0; i < m_breakLines.count(); ++i){
+	for (int i = 0; i < m_breakLines.count(); ++i) {
 		RawDataPointmapBreakLine* line1 = m_breakLines[i];
 		const QVector<vtkIdType>& linePoints = line1->vertexIndices();
 
-		for (int j = 0; j < linePoints.count(); ++j){
+		for (int j = 0; j < linePoints.count(); ++j) {
 			vtkIdType linePoint = linePoints[j];
 			auto it = qFind(points, linePoint);
-			if (it != points.end()){
+			if (it != points.end()) {
 				// found.
 				return true;
 			}
@@ -3034,10 +2997,10 @@ bool RawDataPointmap::pointsUsedForBreakLines(const QVector<vtkIdType>& points)
 void RawDataPointmap::finishAddPoint()
 {
 	if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 1) {
-		RawDataPointmapAddPointDialog *dialog = new RawDataPointmapAddPointDialog(this, preProcessorWindow());
+		RawDataPointmapAddPointDialog* dialog = new RawDataPointmapAddPointDialog(this, preProcessorWindow());
 		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new RawDataPMAddPointsCommand(this,dialog ));
+			iRICUndoStack::instance().push(new RawDataPMAddPointsCommand(this,dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();
@@ -3049,7 +3012,7 @@ void RawDataPointmap::finishAddPoint()
 		msgBox.setInformativeText("Would you like to retry or cancel the add points operation?");
 		msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
 		msgBox.setDefaultButton(QMessageBox::Cancel);
-		if(msgBox.exec() == QMessageBox::Cancel) {
+		if (msgBox.exec() == QMessageBox::Cancel) {
 			this->unwindSelectedInterp();
 			this->resetSelectedInterp();
 		} else {
@@ -3060,11 +3023,11 @@ void RawDataPointmap::finishAddPoint()
 
 void RawDataPointmap::finishInterpPoint()
 {
-	if(this->lastInterpPointKnown && this->m_vtkInterpPolygon->GetNumberOfPoints() > 1) {
-		RawDataPointmapInterpolatePoints *dialog = new RawDataPointmapInterpolatePoints(this, preProcessorWindow());
-		if(dialog->exec() == QDialog::Accepted) {
+	if (this->lastInterpPointKnown && this->m_vtkInterpPolygon->GetNumberOfPoints() > 1) {
+		RawDataPointmapInterpolatePoints* dialog = new RawDataPointmapInterpolatePoints(this, preProcessorWindow());
+		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new RawDataPMAddInterpPtsCommand(this,dialog ));
+			iRICUndoStack::instance().push(new RawDataPMAddInterpPtsCommand(this,dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();
@@ -3076,7 +3039,7 @@ void RawDataPointmap::finishInterpPoint()
 		msgBox.setInformativeText("Would you like to retry or cancel the interpolation?");
 		msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
 		msgBox.setDefaultButton(QMessageBox::Cancel);
-		if(msgBox.exec() == QMessageBox::Cancel) {
+		if (msgBox.exec() == QMessageBox::Cancel) {
 			this->unwindSelectedInterp();
 			this->resetSelectedInterp();
 		} else {
@@ -3089,30 +3052,25 @@ void RawDataPointmap::doApplyOffset(double x, double y)
 {
 	vtkPoints* points = this->m_vtkDelaunayedPolyData->GetPoints();
 	vtkPoints* gridPoints = this->m_vtkGrid->GetPoints();
-	if (points == gridPoints)
-	{
+	if (points == gridPoints) {
 		// opened file was (projectData()->version().build() >= 3607)
 		// see RawDataPointmap::loadExternalData
 		vtkIdType numPoints = points->GetNumberOfPoints();
 		double v[3];
-		for (vtkIdType id = 0; id < numPoints; ++id)
-		{
+		for (vtkIdType id = 0; id < numPoints; ++id) {
 			points->GetPoint(id, v);
 			v[0] -= x;
 			v[1] -= y;
 			points->SetPoint(id, v);
 		}
 		points->Modified();
-	}
-	else
-	{
+	} else {
 		// opened file was (projectData()->version().build() < 3607)
 		// see RawDataPointmap::loadExternalData
 		vtkIdType numPoints = points->GetNumberOfPoints();
 		Q_ASSERT(numPoints == gridPoints->GetNumberOfPoints());
 		double v[3];
-		for (vtkIdType id = 0; id < numPoints; ++id)
-		{
+		for (vtkIdType id = 0; id < numPoints; ++id) {
 			points->GetPoint(id, v);
 			v[0] -= x;
 			v[1] -= y;

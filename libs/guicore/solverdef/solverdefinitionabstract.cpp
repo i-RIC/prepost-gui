@@ -10,7 +10,7 @@
 #include <QDomNode>
 #include <QTextStream>
 
-void SolverDefinitionAbstract::load(const QString &solverfolder, const QLocale &locale)
+void SolverDefinitionAbstract::load(const QString& solverfolder, const QLocale& locale)
 {
 	// holds the copy of the locale.
 	m_locale = locale;
@@ -31,7 +31,7 @@ void SolverDefinitionAbstract::load(const QString &solverfolder, const QLocale &
 	m_copyright = SDNode.attributes().namedItem("copyright").nodeValue();
 	m_url = SDNode.attributes().namedItem("homepage").nodeValue();
 	m_release = QDate::fromString(SDNode.attributes().namedItem("release").nodeValue(), "yyyy.MM.dd");
-	if (! m_release.isValid()){
+	if (! m_release.isValid()) {
 		m_release = QDate::fromString(SDNode.attributes().namedItem("release").nodeValue(), "yyyy.M.d");
 	}
 }
@@ -43,10 +43,10 @@ const QString SolverDefinitionAbstract::description() const
 	filename.append("_").append(m_locale.name());
 	// get the local language version README first.
 	filename = m_folder.absoluteFilePath(filename);
-	if (! QFile::exists(filename)){
+	if (! QFile::exists(filename)) {
 		// local language version does not exists;
 		filename = m_folder.absoluteFilePath(SolverDefinition::README);
-		if (! QFile::exists(filename)){
+		if (! QFile::exists(filename)) {
 			// README does not exists.
 			return "";
 		}
@@ -56,7 +56,7 @@ const QString SolverDefinitionAbstract::description() const
 	file.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
-	while (! in.atEnd()){
+	while (! in.atEnd()) {
 		buffer = in.readLine();
 		ret.append(buffer);
 		ret.append("\n");
@@ -71,10 +71,10 @@ const QString SolverDefinitionAbstract::license() const
 	filename.append("_").append(m_locale.name());
 	// get the local language version LICENSE first.
 	filename = m_folder.absoluteFilePath(filename);
-	if (! QFile::exists(filename)){
+	if (! QFile::exists(filename)) {
 		// local language version does not exists;
 		filename = m_folder.absoluteFilePath(SolverDefinition::LICENSE);
-		if (! QFile::exists(filename)){
+		if (! QFile::exists(filename)) {
 			// LICENSE does not exists.
 			return "";
 		}
@@ -84,7 +84,7 @@ const QString SolverDefinitionAbstract::license() const
 	file.open(QIODevice::ReadOnly | QIODevice::Text);
 	QTextStream in(&file);
 	in.setCodec("UTF-8");
-	while (! in.atEnd()){
+	while (! in.atEnd()) {
 		buffer = in.readLine();
 		ret.append(buffer);
 		ret.append("\n");
@@ -92,7 +92,8 @@ const QString SolverDefinitionAbstract::license() const
 	return ret;
 }
 
-void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const {
+void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const
+{
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
@@ -100,7 +101,7 @@ void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const {
 	QFile file(filename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc->setContent(&file, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);

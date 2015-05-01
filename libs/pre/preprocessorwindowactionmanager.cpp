@@ -40,7 +40,7 @@ void PreProcessorWindowActionManager::setupCalcCondMenu()
 
 void PreProcessorWindowActionManager::connectWithDataModel()
 {
-	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*> (m_preWindow->m_dataModel);
+	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preWindow->m_dataModel);
 	connect(calcCondEditAction, SIGNAL(triggered()), model, SLOT(showCalcConditionDialog()));
 
 	connect(calcCondImportAction, SIGNAL(triggered()), model, SLOT(importCalcCondition()));

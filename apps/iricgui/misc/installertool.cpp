@@ -19,7 +19,7 @@ void InstallerTool::openMaintainanceDialog()
 	QProcess process;
 	process.start(installerFileName());
 	bool finished = false;
-	while (! finished){
+	while (! finished) {
 		finished = process.waitForFinished(100);
 	}
 }

@@ -10,7 +10,8 @@
 
 class ProjectData;
 
-namespace Ui {
+namespace Ui
+{
 	class MousePositionWidget;
 }
 
@@ -19,9 +20,9 @@ class GUICOREDLL_EXPORT MousePositionWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit MousePositionWidget(QWidget *parent = nullptr);
+	explicit MousePositionWidget(QWidget* parent = nullptr);
 	~MousePositionWidget();
-	void setProjectData(ProjectData* data){m_projectData = data;}
+	void setProjectData(ProjectData* data) {m_projectData = data;}
 
 public slots:
 	void updatePosition(const QVector2D& position);
@@ -29,7 +30,7 @@ public slots:
 
 private:
 	ProjectData* m_projectData;
-	Ui::MousePositionWidget *ui;
+	Ui::MousePositionWidget* ui;
 };
 
 #endif // MOUSEPOSITIONWIDGET_H

@@ -14,7 +14,7 @@
 #include <QDateTime>
 #include <QFileInfo>
 
-ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget *parent) :
+ProjectPropertyBasicInfoWidget::ProjectPropertyBasicInfoWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::ProjectPropertyBasicInfoWidget)
 {
@@ -32,16 +32,16 @@ ProjectPropertyBasicInfoWidget::~ProjectPropertyBasicInfoWidget()
 void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 {
 	m_projectData = data;
-	if (data->filename().isNull()){
+	if (data->filename().isNull()) {
 		ui->filenameWidget->setText(tr("(No data)"));
-	}else{
+	} else {
 		ui->filenameWidget->setText(data->filename());
 	}
 	QString projFile = data->absoluteFileName("project.xml");
 	QFileInfo p(projFile);
-	if (! p.exists()){
+	if (! p.exists()) {
 		ui->updateTimeWidget->setText(tr("(Not saved yet)"));
-	}else{
+	} else {
 		QDateTime lm = p.lastModified();
 		ui->updateTimeWidget->setText(lm.toString());
 	}
@@ -50,7 +50,7 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(data->mainWindow()->preProcessorWindow());
 	PreProcessorWindow::GridState gridState = pre->checkGridState();
-	switch (gridState){
+	switch (gridState) {
 	case PreProcessorWindow::grFinished:
 		ui->gridsWidget->setText(tr("Setup finished"));
 		break;
@@ -62,14 +62,14 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 		break;
 	}
 
-	if (pre->isInputConditionSet()){
+	if (pre->isInputConditionSet()) {
 		ui->calcCondWidget->setText(tr("Already set"));
-	}else{
+	} else {
 		ui->calcCondWidget->setText(tr("Not set yet"));
 	}
-	if (data->mainfile()->postSolutionInfo()->isDataAvailable()){
+	if (data->mainfile()->postSolutionInfo()->isDataAvailable()) {
 		ui->resultWidget->setText(tr("Data exists"));
-	}else{
+	} else {
 		ui->resultWidget->setText(tr("No data"));
 	}
 	updateCoordinateSystem();
@@ -79,15 +79,15 @@ void ProjectPropertyBasicInfoWidget::setProjectData(ProjectData* data)
 void ProjectPropertyBasicInfoWidget::showSelectCoordinateSystemDialog()
 {
 	int ret = m_projectData->mainfile()->showCoordinateSystemDialog();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	updateCoordinateSystem();
 }
 
 void ProjectPropertyBasicInfoWidget::updateCoordinateSystem()
 {
-	if (m_projectData->mainfile()->coordinateSystem() != nullptr){
+	if (m_projectData->mainfile()->coordinateSystem() != nullptr) {
 		ui->csWidget->setText(m_projectData->mainfile()->coordinateSystem()->caption());
-	}else{
+	} else {
 		ui->csWidget->setText(tr("(Not specified)"));
 	}
 }

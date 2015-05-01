@@ -34,8 +34,7 @@ public:
 	};
 	/// Constructor
 	SolverDefinitionGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionNode(node, translator)
-	{
+		: SolverDefinitionNode(node, translator) {
 		m_position = Node;
 		m_isOption = false;
 		load(node, translator);

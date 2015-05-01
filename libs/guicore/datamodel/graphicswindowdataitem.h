@@ -52,18 +52,18 @@ public:
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 	/// The QStandardItem that corresponds to this item.
-	QStandardItem* standardItem(){return m_standardItem;}
+	QStandardItem* standardItem() {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
-	virtual void updateItemMap(){dynamic_cast<GraphicsWindowDataItem*>(parent())->updateItemMap();}
+	virtual void updateItemMap() {dynamic_cast<GraphicsWindowDataItem*>(parent())->updateItemMap();}
 	virtual void updateExpandState(QTreeView* view);
 	virtual void reflectExpandState(QTreeView* view);
 	void innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map);
 	/// Handle the event that the corresponding standardItem is changed.
 	virtual void handleStandardItemChange();
 	/// Handle the event that the corresponding standardItem is clicked.
-	virtual void handleStandardItemClicked(){}
+	virtual void handleStandardItemClicked() {}
 	/// Handle the event that the corresponding standardItem is double-clicked.
-	virtual void handleStandardItemDoubleClicked(){}
+	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file
 	virtual void loadFromCgnsFile(const int fn);
 	/// Save data into CGNS file
@@ -71,23 +71,23 @@ public:
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	/// Returns true if this item is deletable.
-	virtual bool isDeletable(){return m_isDeletable;}
+	virtual bool isDeletable() {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
-	virtual bool isReorderable(){return m_isReorderable;}
-	virtual void addCustomMenuItems(QMenu* /*menu*/){}
+	virtual bool isReorderable() {return m_isReorderable;}
+	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	/// This function is called when the corresponding node in object browser is selected.
-	virtual void informSelection(VTKGraphicsView * /*v*/){}
+	virtual void informSelection(VTKGraphicsView* /*v*/) {}
 	/// This function is called when the corresponding node in object browser is deselected.
-	virtual void informDeselection(VTKGraphicsView* /*v*/){}
-	virtual void viewOperationEnded(VTKGraphicsView* /*v*/){}
+	virtual void informDeselection(VTKGraphicsView* /*v*/) {}
+	virtual void viewOperationEnded(VTKGraphicsView* /*v*/) {}
 	virtual void viewOperationEndedGlobal(VTKGraphicsView* /*v*/);
-	virtual void keyPressEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void keyReleaseEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/){}
-	virtual void wheelEvent(QWheelEvent* /*event*/, VTKGraphicsView* /*v*/){}
+	virtual void keyPressEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void keyReleaseEvent(QKeyEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) {}
+	virtual void wheelEvent(QWheelEvent* /*event*/, VTKGraphicsView* /*v*/) {}
 
 	virtual bool hasTransparentPart();
 
@@ -96,10 +96,10 @@ public:
 	/**
 	 * If no property dialog is available, this function returns 0.
 	 */
-	virtual QDialog* propertyDialog(QWidget* /*parent*/){return 0;}
-	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/){}
+	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
+	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 	/// Returns the pointer to a toolbar specific to currently selected item.
-	virtual bool addToolBarButtons(QToolBar* /*parent*/){return false;}
+	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
 	const QList <GraphicsWindowDataItem*>& childItems() const {return m_childItems;}
 	/// Move up the order in object browser.
 	virtual void moveUp();
@@ -107,16 +107,16 @@ public:
 	virtual void moveDown();
 	/// Z depth value range assigned for this item.
 	virtual void updateZDepthRangeItemCount();
-	ZDepthRange zDepthRange(){return m_zDepthRange;}
+	ZDepthRange zDepthRange() {return m_zDepthRange;}
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
-	vtkActorCollection* actorCollection(){return m_actorCollection;}
-	vtkActor2DCollection* actor2DCollection(){return m_actor2DCollection;}
+	vtkActorCollection* actorCollection() {return m_actorCollection;}
+	vtkActor2DCollection* actor2DCollection() {return m_actor2DCollection;}
 	virtual QStringList containedFiles();
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
-	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/){}
-	void setIsCommandExecuting(bool exec){m_isCommandExecuting = exec;}
+	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
+	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
 	void update2Ds();
 	void updateZScale(double scale);
 	void loadCheckState(const QDomNode& node);
@@ -127,7 +127,7 @@ public:
 protected:
 	PostSolutionInfo* postSolutionInfo();
 	virtual void assignActionZValues(const ZDepthRange& range);
-	virtual GraphicsWindowDataModel* dataModel(){return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
+	virtual GraphicsWindowDataModel* dataModel() {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
 	vtkRenderer* renderer();
 	virtual void unregisterChild(GraphicsWindowDataItem* child);
 	/// Returns true when alal ancient nodes are checked.
@@ -136,10 +136,10 @@ protected:
 	virtual void init();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
-	virtual void innerUpdate2Ds(){}
-	virtual void innerUpdateZScale(double /*scale*/){}
-	virtual bool myHasTransparentPart(){return false;}
-	virtual void doViewOperationEndedGlobal(VTKGraphicsView* /*v*/){}
+	virtual void innerUpdate2Ds() {}
+	virtual void innerUpdateZScale(double /*scale*/) {}
+	virtual bool myHasTransparentPart() {return false;}
+	virtual void doViewOperationEndedGlobal(VTKGraphicsView* /*v*/) {}
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);
@@ -177,8 +177,7 @@ class GraphicsWindowDataItemStandardItemChangeCommand : public QUndoCommand
 {
 public:
 	GraphicsWindowDataItemStandardItemChangeCommand(GraphicsWindowDataItem* item)
-		: QUndoCommand(QObject::tr("Object Browser Item Change"))
-	{
+		: QUndoCommand(QObject::tr("Object Browser Item Change")) {
 		m_oldDisplayText = item->m_standardItemCopy->data(Qt::DisplayRole);
 		m_oldCheckState = item->m_standardItemCopy->data(Qt::CheckStateRole);
 
@@ -188,7 +187,7 @@ public:
 		m_item = item;
 	}
 
-	void redoStandardItem(){
+	void redoStandardItem() {
 		m_item->m_standardItemCopy->setData(m_newDisplayText, Qt::DisplayRole);
 		m_item->m_standardItemCopy->setData(m_newCheckState, Qt::CheckStateRole);
 
@@ -198,8 +197,7 @@ public:
 		m_item->setModified();
 	}
 
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 
 		redoStandardItem();
@@ -208,7 +206,7 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 
-	void undoStandardItem(){
+	void undoStandardItem() {
 		m_item->m_standardItemCopy->setData(m_oldDisplayText, Qt::DisplayRole);
 		m_item->m_standardItemCopy->setData(m_oldCheckState, Qt::CheckStateRole);
 
@@ -217,8 +215,7 @@ public:
 
 		m_item->setModified();
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 
 		undoStandardItem();

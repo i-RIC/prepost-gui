@@ -30,22 +30,22 @@ public:
 	~PreProcessorRootDataItem();
 
 	/// Background image data item
-	PreProcessorBackgroundImagesDataItem* backgroundImagesDataItem(){
+	PreProcessorBackgroundImagesDataItem* backgroundImagesDataItem() {
 		return m_backgroundImagesDataItem;
 	}
 	/// Measured values data item;
-	PreProcessorMeasuredDataTopDataItem* measuredDataTopDataItem(){
+	PreProcessorMeasuredDataTopDataItem* measuredDataTopDataItem() {
 		return m_measuredDataTopDataItem;
 	}
 	void setupStandardModel(QStandardItemModel* model);
 	PreProcessorGridTypeDataItem* gridTypeDataItem(const QString& name);
 	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
-	PreProcessorInputConditionDataItem* inputConditionDataItem(){return m_inputConditionDataItem;}
+	PreProcessorInputConditionDataItem* inputConditionDataItem() {return m_inputConditionDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
 
 //	GridAttributeMappingMode gridAttributeMappingMode(){return m_mappingMode;}
 //	GeoGraphicDataMappingMode geodataMappingMode(){return m_geodataMappingMode;}
-	QAction* editGridAttributeMappingSettingAction(){return m_editGridAttributeMappingSettingAction;}
+	QAction* editGridAttributeMappingSettingAction() {return m_editGridAttributeMappingSettingAction;}
 	bool gridEdited();
 	void toggleGridEditFlag();
 	void deleteItem(QStandardItem* item);
@@ -62,7 +62,7 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	PreProcessorDataModel* dataModel(){return dynamic_cast<PreProcessorDataModel*>(m_dataModel);}
+	PreProcessorDataModel* dataModel() {return dynamic_cast<PreProcessorDataModel*>(m_dataModel);}
 private:
 	PreProcessorBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	PreProcessorMeasuredDataTopDataItem* m_measuredDataTopDataItem;

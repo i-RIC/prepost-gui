@@ -27,8 +27,7 @@
 class Structured2DGridCrosssectionEditCommand : public QUndoCommand
 {
 public:
-	Structured2DGridCrosssectionEditCommand(bool apply, const QVector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridRelatedConditionRealNodeContainer* cont, PreProcessorGridRelatedConditionNodeDataItem* dItem)
-	{
+	Structured2DGridCrosssectionEditCommand(bool apply, const QVector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridRelatedConditionRealNodeContainer* cont, PreProcessorGridRelatedConditionNodeDataItem* dItem) {
 		m_apply = apply;
 		m_indices = indices;
 		m_before = before;
@@ -38,15 +37,14 @@ public:
 		m_dataItem = dItem;
 		m_first = true;
 	}
-	void redo()
-	{
-		for (int i = 0; i < m_indices.count(); ++i){
+	void redo() {
+		for (int i = 0; i < m_indices.count(); ++i) {
 			m_container->setValue(m_indices.at(i), m_after.at(i));
 		}
 		m_container->setModified();
 		m_container->grid()->setModified();
 		m_container->setCustomModified(true);
-		if (m_apply){
+		if (m_apply) {
 			m_window->updateView();
 		} else {
 			m_dataItem->renderGraphicsView();
@@ -54,14 +52,13 @@ public:
 		}
 		m_first = false;
 	}
-	void undo()
-	{
-		for (int i = 0; i < m_indices.count(); ++i){
+	void undo() {
+		for (int i = 0; i < m_indices.count(); ++i) {
 			m_container->setValue(m_indices.at(i), m_before.at(i));
 		}
 		m_container->setModified();
 		m_container->grid()->setModified();
-		if (! m_apply){
+		if (! m_apply) {
 			m_dataItem->renderGraphicsView();
 			m_dataItem->updateCrossectionWindows();
 		}
@@ -69,13 +66,13 @@ public:
 	int id() const {
 		return iRIC::generateCommandId("Structured2DGridCrosssectionEdit");
 	}
-	bool mergeWith(const QUndoCommand *other){
+	bool mergeWith(const QUndoCommand* other) {
 		const Structured2DGridCrosssectionEditCommand* comm = dynamic_cast<const Structured2DGridCrosssectionEditCommand*>(other);
-		if (m_window != comm->m_window){return false;}
-		if (m_container != comm->m_container){return false;}
-		if (m_dataItem != comm->m_dataItem){return false;}
-		if (m_indices != comm->m_indices){return false;}
-		if (m_apply == false){return false;}
+		if (m_window != comm->m_window) {return false;}
+		if (m_container != comm->m_container) {return false;}
+		if (m_dataItem != comm->m_dataItem) {return false;}
+		if (m_indices != comm->m_indices) {return false;}
+		if (m_apply == false) {return false;}
 
 		m_after = comm->m_after;
 		m_apply = comm->m_apply;
@@ -123,17 +120,19 @@ void PreProcessorGridCrosssectionWindowGraphicsView::setupActions()
 
 void PreProcessorGridCrosssectionWindowGraphicsView::setupMenu()
 {
-	if (m_rightClickingMenu == nullptr){
+	if (m_rightClickingMenu == nullptr) {
 		m_rightClickingMenu = new QMenu(this);
 		m_rightClickingMenu->addAction(m_editAction);
 	}
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::dataChanged(const QModelIndex& /*topLeft*/, const QModelIndex& /*bottomRight*/){
+void PreProcessorGridCrosssectionWindowGraphicsView::dataChanged(const QModelIndex& /*topLeft*/, const QModelIndex& /*bottomRight*/)
+{
 	viewport()->update();
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /*e*/){
+void PreProcessorGridCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /*e*/)
+{
 	QPainter painter(viewport());
 	QRect vp = painter.viewport();
 	QMatrix matrix = getMatrix(vp);
@@ -150,13 +149,13 @@ void PreProcessorGridCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /*e
 	// red lines
 	pen = QPen(Qt::red, 1);
 	painter.setPen(pen);
-	if (m_parentWindow->m_redLineIndex != - 1){
+	if (m_parentWindow->m_redLineIndex != - 1) {
 		drawLine(m_parentWindow->m_redLineIndex, painter);
 	}
 	// blue lines
 	pen = QPen(Qt::blue, 1);
 	painter.setPen(pen);
-	if (m_parentWindow->m_blueLineIndex != - 1){
+	if (m_parentWindow->m_blueLineIndex != - 1) {
 		drawLine(m_parentWindow->m_blueLineIndex, painter);
 	}
 	// draw circles.
@@ -171,21 +170,21 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawLine(int index, QPainte
 	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
 	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
 	double distance = 0;
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		double v = cond2->value(grid->vertexIndex(0, index));
 		QPointF p0 = m_matrix.map(QPointF(distance, v));
-		for (unsigned int i = 1; i < grid->dimensionI(); ++i){
+		for (unsigned int i = 1; i < grid->dimensionI(); ++i) {
 			distance += getDistance(index, i - 1, i);
 			v = cond2->value(grid->vertexIndex(i, index));
 			QPointF p1 = m_matrix.map(QPointF(distance, v));
 			painter.drawLine(p0, p1);
 			p0 = p1;
 		}
-	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		double offset = getDistance(index, 0, grid->dimensionJ() - 1) * 0.5;
 		double v = cond2->value(grid->vertexIndex(index, 0));
 		QPointF p0 = m_matrix.map(QPointF(offset - distance, v));
-		for (unsigned int j = 1; j < grid->dimensionJ(); ++j){
+		for (unsigned int j = 1; j < grid->dimensionJ(); ++j) {
 			distance += getDistance(index, j - 1, j);
 			v = cond2->value(grid->vertexIndex(index, j));
 			QPointF p1 = m_matrix.map(QPointF(offset - distance, v));
@@ -206,9 +205,9 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawCircle(QPainter& painte
 	painter.setPen(pen);
 	painter.setBrush(activeBrush);
 
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
-		for (unsigned int i = 0; i < grid->dimensionI(); ++i){
-			if (i == 0){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
+		for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
+			if (i == 0) {
 				distance = 0;
 			} else {
 				distance += getDistance(m_parentWindow->targetIndex(), i - 1, i);
@@ -218,10 +217,10 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawCircle(QPainter& painte
 			QRectF r(point.x() - ellipseR, point.y() - ellipseR, ellipseR * 2, ellipseR * 2);
 			painter.drawEllipse(r);
 		}
-	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		double offset = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionJ() - 1) * 0.5;
-		for (unsigned int j = 0; j < grid->dimensionJ(); ++j){
-			if (j == 0){
+		for (unsigned int j = 0; j < grid->dimensionJ(); ++j) {
+			if (j == 0) {
 				distance = 0;
 			} else {
 				distance += getDistance(m_parentWindow->targetIndex(), j - 1, j);
@@ -234,7 +233,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawCircle(QPainter& painte
 	}
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainter &painter)
+void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainter& painter)
 {
 	Structured2DGrid* grid = m_parentWindow->grid();
 	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
@@ -247,10 +246,10 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainte
 	QModelIndexList list = selectionModel()->selectedIndexes();
 	QSet<int> drawnRows;
 
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
-		for (auto it = list.begin(); it != list.end(); ++it){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
+		for (auto it = list.begin(); it != list.end(); ++it) {
 			QModelIndex index = *it;
-			if (drawnRows.contains(index.row())){continue;}
+			if (drawnRows.contains(index.row())) {continue;}
 			double distance = getDistance(m_parentWindow->targetIndex(), 0, index.row());
 			double v = cond2->value(grid->vertexIndex(index.row(), m_parentWindow->targetIndex()));
 			QPointF point = m_matrix.map(QPointF(distance, v));
@@ -258,11 +257,11 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainte
 			painter.drawEllipse(r);
 			drawnRows.insert(index.row());
 		}
-	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		double offset = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionJ() - 1) * 0.5;
-		for (auto it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it) {
 			QModelIndex index = *it;
-			if (drawnRows.contains(index.row())){continue;}
+			if (drawnRows.contains(index.row())) {continue;}
 			double distance = getDistance(m_parentWindow->targetIndex(), 0, index.row());
 			double v = cond2->value(grid->vertexIndex(m_parentWindow->targetIndex(), index.row()));
 			QPointF point = m_matrix.map(QPointF(offset - distance, v));
@@ -273,7 +272,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainte
 	}
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painter, const QMatrix& matrix){
+void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painter, const QMatrix& matrix)
+{
 	QWidget* w = viewport();
 	QMatrix invMatrix = matrix.inverted();
 	QPointF mins, maxs;
@@ -293,25 +293,25 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 
 	double xdwidth = (maxs.x() - mins.x()) / 3;
 	int i = 0;
-	while (xdwidth > 10){
+	while (xdwidth > 10) {
 		xdwidth /= 10.;
 		++i;
 	}
-	while (xdwidth < 1){
+	while (xdwidth < 1) {
 		xdwidth *= 10.;
 		--i;
 	}
 	// now 1 < xdwidth < 10.
 	double dx;
 	double pow10 = 10;
-	if (i < 0){
+	if (i < 0) {
 		pow10 = 0.1;
 		i = - i;
 	}
-	if (xdwidth > 5){
+	if (xdwidth > 5) {
 		xdwidth = 5 * std::pow(pow10, i);
 		dx = 0.2;
-	} else if (xdwidth > 2){
+	} else if (xdwidth > 2) {
 		xdwidth = 2 * std::pow(pow10, i);
 		dx = 0.5;
 	} else {
@@ -327,7 +327,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 	painter.drawLine(from, to);
 
 	double x = rulemin;
-	while (x < maxs.x()){
+	while (x < maxs.x()) {
 		from = matrix.map(QPointF(x, maxs.y()));
 		from.setY(yoffset);
 		to = matrix.map(QPointF(x, maxs.y()));
@@ -342,7 +342,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 	}
 	// draw X sub scales.
 	x = rulemin;
-	while (x < maxs.x()){
+	while (x < maxs.x()) {
 		x += xdwidth * dx;
 		from = matrix.map(QPointF(x, maxs.y()));
 		from.setY(from.y() + yoffset);
@@ -354,25 +354,25 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 	// next, for y.
 	double ydwidth = std::abs((maxs.y() - mins.y()) / 3);
 	i = 0;
-	while (ydwidth > 10){
+	while (ydwidth > 10) {
 		ydwidth /= 10.;
 		++i;
 	}
-	while (ydwidth < 1){
+	while (ydwidth < 1) {
 		ydwidth *= 10.;
 		--i;
 	}
 	// now 1 < ydwidth < 10.
 	double dy;
 	pow10 = 10;
-	if (i < 0){
+	if (i < 0) {
 		pow10 = 0.1;
 		i = - i;
 	}
-	if (ydwidth > 5){
+	if (ydwidth > 5) {
 		ydwidth = 5 * std::pow(pow10, i);
 		dy = 0.2;
-	} else if (ydwidth > 2){
+	} else if (ydwidth > 2) {
 		ydwidth = 2 * std::pow(pow10, i);
 		dy = 0.5;
 	} else {
@@ -387,7 +387,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 	painter.drawLine(from, to);
 
 	double y = rulemin;
-	while (y < maxs.y()){
+	while (y < maxs.y()) {
 		from = matrix.map(QPointF(mins.x(), y));
 		from.setX(xoffset);
 		to.setX(xoffset + mainruler);
@@ -402,7 +402,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 	}
 	// draw Y sub scales.
 	y = rulemin;
-	while (y < maxs.y()){
+	while (y < maxs.y()) {
 		y += ydwidth * dy;
 		from = matrix.map(QPointF(mins.x(), y));
 		from.setX(xoffset);
@@ -411,7 +411,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawScales(QPainter& painte
 		painter.drawLine(from, to);
 	}
 
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		// line at x = 0;
 		from = matrix.map(QPointF(0, 0));
 		from.setY(0);
@@ -439,17 +439,17 @@ QRectF PreProcessorGridCrosssectionWindowGraphicsView::getRegion()
 	Structured2DGrid* grid = m_parentWindow->grid();
 	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
 	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		distance = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionI() - 1);
 		double v = cond2->value(grid->vertexIndex(0, m_parentWindow->targetIndex()));
 		valmin = v;
 		valmax = v;
-		for (unsigned int i = 1; i < grid->dimensionI(); ++i){
+		for (unsigned int i = 1; i < grid->dimensionI(); ++i) {
 			v = cond2->value(grid->vertexIndex(i, m_parentWindow->targetIndex()));
-			if (v < valmin){valmin = v;}
-			if (v > valmax){valmax = v;}
+			if (v < valmin) {valmin = v;}
+			if (v > valmax) {valmax = v;}
 		}
-		if (valmin == valmax){
+		if (valmin == valmax) {
 			double center = valmin;
 			valmin = center - 0.5;
 			valmax = center + 0.5;
@@ -459,17 +459,17 @@ QRectF PreProcessorGridCrosssectionWindowGraphicsView::getRegion()
 		ret.setTop(valmin);
 		ret.setBottom(valmax);
 		return ret;
-	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		distance = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionJ() - 1);
 		double v = cond2->value(grid->vertexIndex(m_parentWindow->targetIndex(), 0));
 		valmin = v;
 		valmax = v;
-		for (unsigned int j = 1; j < grid->dimensionJ(); ++j){
+		for (unsigned int j = 1; j < grid->dimensionJ(); ++j) {
 			v = cond2->value(grid->vertexIndex(m_parentWindow->targetIndex(), j));
-			if (v < valmin){valmin = v;}
-			if (v > valmax){valmax = v;}
+			if (v < valmin) {valmin = v;}
+			if (v > valmax) {valmax = v;}
 		}
-		if (valmin == valmax){
+		if (valmin == valmax) {
 			double center = valmin;
 			valmin = center - 0.5;
 			valmax = center + 0.5;
@@ -483,13 +483,14 @@ QRectF PreProcessorGridCrosssectionWindowGraphicsView::getRegion()
 	return ret;
 }
 
-QMatrix PreProcessorGridCrosssectionWindowGraphicsView::getMatrix(QRect& viewport){
+QMatrix PreProcessorGridCrosssectionWindowGraphicsView::getMatrix(QRect& viewport)
+{
 	QRectF region = m_drawnRegion;
 	QMatrix translate1, scale, translate2;
 	double xlength = region.right() - region.left();
 	double ylength = region.bottom() - region.top();
-	if (xlength == 0){xlength = 1;}
-	if (ylength == 0){ylength = 1;}
+	if (xlength == 0) {xlength = 1;}
+	if (ylength == 0) {ylength = 1;}
 
 	translate1 = QMatrix(1, 0, 0, 1, - (region.left() - fLeftMargin * xlength), - (region.bottom() + fBottomMargin * ylength));
 
@@ -497,8 +498,8 @@ QMatrix PreProcessorGridCrosssectionWindowGraphicsView::getMatrix(QRect& viewpor
 		(viewport.right() - viewport.left() - iLeftMargin - iRightMargin) /
 		(region.right() - region.left() + (fLeftMargin + fRightMargin) * xlength);
 	double yscale = -
-					(viewport.bottom() - viewport.top() - iTopMargin - iBottomMargin) /
-					(region.bottom() - region.top() + (fTopMargin + fBottomMargin) * ylength);
+									(viewport.bottom() - viewport.top() - iTopMargin - iBottomMargin) /
+									(region.bottom() - region.top() + (fTopMargin + fBottomMargin) * ylength);
 	scale = QMatrix(xscale, 0, 0, yscale, 0, 0);
 
 	translate2 = QMatrix(1, 0, 0, 1, viewport.left() + iLeftMargin, viewport.top() + iTopMargin);
@@ -563,12 +564,12 @@ void PreProcessorGridCrosssectionWindowGraphicsView::cameraZoomOutY()
 	zoom(1, 1. / 1.2);
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent *event)
+void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
 	int diffx = event->x() - m_oldPosition.x();
 	int diffy = event->y() - m_oldPosition.y();
 
-	if (m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare){
+	if (m_mouseEventMode == meNormal || m_mouseEventMode == meMovePrepare) {
 		m_mouseEventMode = meNormal;
 
 		// find selected points newr the mouse cursor.
@@ -585,56 +586,54 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent 
 
 		double distance = 0;
 
-		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
-			for (unsigned int i = 0; i < grid->dimensionI(); ++i){
-				if (i > 0){distance += getDistance(m_parentWindow->targetIndex(), i - 1, i);}
+		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
+			for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
+				if (i > 0) {distance += getDistance(m_parentWindow->targetIndex(), i - 1, i);}
 				vtkIdType index = grid->vertexIndex(i, m_parentWindow->targetIndex());
-				if (! selVertices.contains(index)){continue;}
+				if (! selVertices.contains(index)) {continue;}
 				double v = cond2->value(index);
 				QPointF p1 = m_matrix.map(QPointF(distance, v));
 				if (p1.x() >= mins.x() &&
-					p1.x() <= maxs.x() &&
-					p1.y() >= mins.y() &&
-					p1.y() <= maxs.y())
-				{
+						p1.x() <= maxs.x() &&
+						p1.y() >= mins.y() &&
+						p1.y() <= maxs.y()) {
 					m_mouseEventMode = meMovePrepare;
 				}
 			}
-		} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+		} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 			double offset = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionJ() - 1) * 0.5;
-			for (unsigned int j = 0; j < grid->dimensionJ(); ++j){
-				if (j > 0){distance += getDistance(m_parentWindow->targetIndex(), j - 1, j);}
+			for (unsigned int j = 0; j < grid->dimensionJ(); ++j) {
+				if (j > 0) {distance += getDistance(m_parentWindow->targetIndex(), j - 1, j);}
 				unsigned int index = grid->vertexIndex(m_parentWindow->targetIndex(), j);
-				if (! selVertices.contains(index)){continue;}
+				if (! selVertices.contains(index)) {continue;}
 				double v = cond2->value(index);
 				QPointF p1 = m_matrix.map(QPointF(offset - distance, v));
 				if (p1.x() >= mins.x() &&
-					p1.x() <= maxs.x() &&
-					p1.y() >= mins.y() &&
-					p1.y() <= maxs.y())
-				{
+						p1.x() <= maxs.x() &&
+						p1.y() >= mins.y() &&
+						p1.y() <= maxs.y()) {
 					m_mouseEventMode = meMovePrepare;
 				}
 			}
 		}
 		updateMouseCursor();
-	} else if (m_mouseEventMode == meTranslating){
+	} else if (m_mouseEventMode == meTranslating) {
 		translate(diffx, diffy);
-	} else if (m_mouseEventMode == meZooming){
+	} else if (m_mouseEventMode == meZooming) {
 		double scaleX = 1 + diffx * 0.02;
 		double scaleY = 1 - diffy * 0.02;
-		if (scaleX < 0.5){scaleX = 0.5;}
-		if (scaleY < 0.5){scaleY = 0.5;}
-		if (scaleX > 2){scaleX = 2;}
-		if (scaleY > 2){scaleY = 2;}
+		if (scaleX < 0.5) {scaleX = 0.5;}
+		if (scaleY < 0.5) {scaleY = 0.5;}
+		if (scaleX > 2) {scaleX = 2;}
+		if (scaleY > 2) {scaleY = 2;}
 		zoom(scaleX, scaleY);
-	} else if (m_mouseEventMode == meSelecting){
+	} else if (m_mouseEventMode == meSelecting) {
 		QPoint topLeft(qMin(m_rubberOrigin.x(), event->x()), qMin(m_rubberOrigin.y(), event->y()));
 		QSize size(qAbs(m_rubberOrigin.x() - event->x()), qAbs(m_rubberOrigin.y() - event->y()));
 		QRect rect(topLeft, size);
 		m_rubberBand->setGeometry(rect);
 		viewport()->update();
-	} else if (m_mouseEventMode == meMove){
+	} else if (m_mouseEventMode == meMove) {
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
 
 		const QVector<vtkIdType>& selectedVertices = gItem->selectedVertices();
@@ -644,7 +643,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent 
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
 		after.reserve(selectedVertices.size());
-		for (int vid = 0; vid < selectedVertices.size(); ++vid){
+		for (int vid = 0; vid < selectedVertices.size(); ++vid) {
 			before.append(cont->value(selectedVertices.at(vid)));
 			after.append(cont->value(selectedVertices.at(vid)) + offset);
 		}
@@ -654,12 +653,12 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent 
 	m_oldPosition = event->pos();
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent *event)
+void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent* event)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
-		if (event->modifiers() == Qt::ControlModifier){
-			switch (event->button()){
+		if (event->modifiers() == Qt::ControlModifier) {
+			switch (event->button()) {
 			case Qt::LeftButton:
 				// translate
 				m_mouseEventMode = meTranslating;
@@ -675,27 +674,27 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent
 			m_oldPosition = event->pos();
 			updateMouseCursor();
 		} else {
-			if (event->button() == Qt::LeftButton){
+			if (event->button() == Qt::LeftButton) {
 				// start selecting.
 				m_mouseEventMode = meSelecting;
-				if (m_rubberBand == nullptr){
+				if (m_rubberBand == nullptr) {
 					m_rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 				}
 				m_rubberOrigin = event->pos();
 				m_rubberBand->setGeometry(m_rubberOrigin.x(), m_rubberOrigin.y(), 0, 0);
 				m_rubberBand->show();
-			} else if (event->button() == Qt::RightButton){
+			} else if (event->button() == Qt::RightButton) {
 				m_dragStartPoint = event->pos();
 			}
 		}
 		break;
 	case meMovePrepare:
-		if (event->button() == Qt::LeftButton){
+		if (event->button() == Qt::LeftButton) {
 			// start dragging points.
 			m_dragStartPoint = event->pos();
 			m_mouseEventMode = meMove;
 			updateMouseCursor();
-		} else if (event->button() == Qt::RightButton){
+		} else if (event->button() == Qt::RightButton) {
 			m_dragStartPoint = event->pos();
 		}
 		break;
@@ -712,13 +711,13 @@ double PreProcessorGridCrosssectionWindowGraphicsView::getOffset(const QPoint& s
 	return mappedEndF.y() - mappedStartF.y();
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEvent *event)
+void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 	case meMovePrepare:
-		if (event->button() == Qt::RightButton){
-			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())){
+		if (event->button() == Qt::RightButton) {
+			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
 				m_rightClickingMenu->move(event->globalPos());
@@ -735,12 +734,12 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 	case meSelecting:
 		// finish selecting.
 		m_rubberBand->hide();
-		if (ProjectDataItem::isNear(m_rubberOrigin, event->pos())){
+		if (ProjectDataItem::isNear(m_rubberOrigin, event->pos())) {
 			// press point and release point are too near.
 			QPoint p1(event->pos().x() - 3, event->pos().y() - 3);
 			QPoint p2(event->pos().x() + 3, event->pos().y() + 3);
 			selectPoints(p1, p2);
-		}else{
+		} else {
 			// select the point inside the rubberband geometry.
 			selectPoints(m_rubberOrigin, event->pos());
 		}
@@ -757,7 +756,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
 		after.reserve(selectedVertices.size());
-		for (int vid = 0; vid < selectedVertices.size(); ++vid){
+		for (int vid = 0; vid < selectedVertices.size(); ++vid) {
 			before.append(cont->value(selectedVertices.at(vid)));
 			after.append(cont->value(selectedVertices.at(vid)) + offset);
 		}
@@ -768,14 +767,14 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 	}
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::wheelEvent(QWheelEvent *event)
+void PreProcessorGridCrosssectionWindowGraphicsView::wheelEvent(QWheelEvent* event)
 {
-	if (event->orientation() == Qt::Horizontal){return;}
+	if (event->orientation() == Qt::Horizontal) {return;}
 	int numDegrees = event->delta() / 8;
 	int numSteps = numDegrees / 15;
-	if (numSteps > 0){
+	if (numSteps > 0) {
 		cameraZoomIn();
-	}else{
+	} else {
 		cameraZoomOut();
 	}
 }
@@ -790,8 +789,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::zoom(double scaleX, double 
 	qreal newxWidth = xWidth / scaleX;
 	qreal newyWidth = yWidth / scaleY;
 
-	if (newxWidth < 1E-6){newxWidth = 1E-6;}
-	if (newyWidth < 1E-6){newyWidth = 1E-6;}
+	if (newxWidth < 1E-6) {newxWidth = 1E-6;}
+	if (newyWidth < 1E-6) {newyWidth = 1E-6;}
 
 	m_drawnRegion.setLeft(drawnRegionCenterX - newxWidth * 0.5);
 	m_drawnRegion.setRight(drawnRegionCenterX + newxWidth * 0.5);
@@ -823,7 +822,7 @@ int PreProcessorGridCrosssectionWindowGraphicsView::moveWidth()
 
 void PreProcessorGridCrosssectionWindowGraphicsView::updateMouseCursor()
 {
-	switch (m_mouseEventMode){
+	switch (m_mouseEventMode) {
 	case meNormal:
 		setCursor(Qt::ArrowCursor);
 		break;
@@ -855,21 +854,20 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 	Structured2DGrid* grid = m_parentWindow->grid();
 	PreProcessorGridRelatedConditionNodeDataItem* item = m_parentWindow->conditionNodeDataItem();
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->parent()->parent());
-	GridRelatedConditionRealNodeContainer* cont = dynamic_cast<GridRelatedConditionRealNodeContainer*> (grid->gridRelatedCondition(m_parentWindow->condition()));
+	GridRelatedConditionRealNodeContainer* cont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
 	QVector<vtkIdType> selectedVertices;
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		double distance = 0;
-		for (unsigned int i = 0; i < grid->dimensionI(); ++i){
-			if (i != 0){
+		for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
+			if (i != 0) {
 				distance += getDistance(index, i - 1, i);
 			}
 			double x = distance;
 			double y = cont->value(grid->vertexIndex(i, index));
 			if (x >= mappedMins.x() &&
-				x <= mappedMaxs.x() &&
-				y >= mappedMins.y() &&
-				y <= mappedMaxs.y())
-			{
+					x <= mappedMaxs.x() &&
+					y >= mappedMins.y() &&
+					y <= mappedMaxs.y()) {
 				selectedVertices.append(grid->vertexIndex(i, index));
 			}
 		}
@@ -877,17 +875,16 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 	} else {
 		double offset = getDistance(index, 0, grid->dimensionJ() - 1) * 0.5;
 		double distance = 0;
-		for (unsigned int j = 0; j < grid->dimensionJ(); ++j){
-			if (j != 0){
+		for (unsigned int j = 0; j < grid->dimensionJ(); ++j) {
+			if (j != 0) {
 				distance += getDistance(index, j - 1, j);
 			}
 			double x = offset - distance;
 			double y = cont->value(grid->vertexIndex(index, j));
 			if (x >= mappedMins.x() &&
-				x <= mappedMaxs.x() &&
-				y >= mappedMins.y() &&
-				y <= mappedMaxs.y())
-			{
+					x <= mappedMaxs.x() &&
+					y >= mappedMins.y() &&
+					y <= mappedMaxs.y()) {
 				selectedVertices.append(grid->vertexIndex(index, j));
 			}
 		}
@@ -902,22 +899,22 @@ void PreProcessorGridCrosssectionWindowGraphicsView::informSelectedVerticesChang
 	QModelIndex firstIndex;
 	bool firstset = false;
 	Structured2DGrid* grid = m_parentWindow->grid();
-	for (int k = 0; k < vertices.count(); ++k){
+	for (int k = 0; k < vertices.count(); ++k) {
 		int index = vertices.at(k);
 		unsigned int i, j;
 		grid->getIJIndex(index, &i, &j);
-		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
-			if (j == m_parentWindow->targetIndex()){
+		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
+			if (j == m_parentWindow->targetIndex()) {
 				selection.merge(QItemSelection(model()->index(i, 0), model()->index(i, 0)), QItemSelectionModel::Select);
-				if (! firstset){
+				if (! firstset) {
 					firstIndex = model()->index(i, 0);
 					firstset = true;
 				}
 			}
 		} else {
-			if (i == m_parentWindow->targetIndex()){
+			if (i == m_parentWindow->targetIndex()) {
 				selection.merge(QItemSelection(model()->index(j, 0), model()->index(j, 0)), QItemSelectionModel::Select);
-				if (! firstset){
+				if (! firstset) {
 					firstIndex = model()->index(j, 0);
 					firstset = true;
 				}
@@ -933,16 +930,16 @@ void PreProcessorGridCrosssectionWindowGraphicsView::updateActionStatus()
 	QModelIndexList rows = selectionModel()->selectedRows();
 //	m_activateAction->setEnabled(rows.count() > 0);
 //	m_inactivateAction->setEnabled(rows.count() > 0);
-	if (rows.count() == 0){
+	if (rows.count() == 0) {
 		m_editAction->setDisabled(true);
 	} else {
 		bool continuous = true;
 		auto it = rows.begin();
 		auto it2 = it;
 		++it2;
-		while (it2 != rows.end()){
+		while (it2 != rows.end()) {
 			continuous = continuous && (it2->row() == it->row() + 1);
-			++it;++it2;
+			++it; ++it2;
 		}
 		m_editAction->setEnabled(continuous);
 	}
@@ -951,7 +948,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::updateActionStatus()
 void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 {
 	iRICMainWindowInterface* mw = m_parentWindow->projectDataItem()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -962,10 +959,10 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->condition()->caption()));
 	QVector<vtkIdType> targets;
 	QModelIndexList selIndices = selectionModel()->selectedIndexes();
-	for (auto it = selIndices.begin(); it != selIndices.end(); ++it){
+	for (auto it = selIndices.begin(); it != selIndices.end(); ++it) {
 		QModelIndex index = *it;
 		vtkIdType targetindex;
-		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
+		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 			targetindex = grid->vertexIndex(index.row(), m_parentWindow->targetIndex());
 		} else {
 			targetindex = grid->vertexIndex(m_parentWindow->targetIndex(), index.row());
@@ -974,7 +971,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	}
 	dialog->scanAndSetDefault(cont, targets);
 
-	if (QDialog::Accepted == dialog->exec()){
+	if (QDialog::Accepted == dialog->exec()) {
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->projectDataItem()->conditionNodeDataItem()->parent()->parent());
 		dialog->applyValue(cont, targets, grid->vtkGrid()->GetPointData(), gItem);
 	}
@@ -985,16 +982,16 @@ double PreProcessorGridCrosssectionWindowGraphicsView::getDistance(int index, in
 {
 	Structured2DGrid* grid = m_parentWindow->grid();
 	double distance = 0;
-	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI){
+	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		QVector2D p0 = grid->vertex(startIndex, index);
-		for (int i = startIndex; i <= endIndex; ++i){
+		for (int i = startIndex; i <= endIndex; ++i) {
 			QVector2D p1 = grid->vertex(i, index);
 			distance += (p1 - p0).length();
 			p0 = p1;
 		}
-	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ){
+	} else if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirJ) {
 		QVector2D p0 = grid->vertex(index, startIndex);
-		for (int j = startIndex; j <= endIndex; ++j){
+		for (int j = startIndex; j <= endIndex; ++j) {
 			QVector2D p1 = grid->vertex(index, j);
 			distance += (p1 - p0).length();
 			p0 = p1;

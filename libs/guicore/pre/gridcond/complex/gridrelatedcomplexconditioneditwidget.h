@@ -13,10 +13,10 @@ class GridRelatedComplexConditionEditWidget : public GridRelatedConditionEditWid
 public:
 	GridRelatedComplexConditionEditWidget(QWidget* parent, SolverDefinitionGridRelatedComplexCondition* cond);
 	~GridRelatedComplexConditionEditWidget();
-	void setEnumerations(const QMap<int, QString>& enums){
+	void setEnumerations(const QMap<int, QString>& enums) {
 		m_enumerations = enums;
 	}
-	void setDefaultIndex(int idx){
+	void setDefaultIndex(int idx) {
 		m_defaultIndex = idx;
 	}
 	const QMap<int, QString>& enumerations() const {return m_enumerations;}

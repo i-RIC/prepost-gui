@@ -14,8 +14,9 @@ const QString SolverDefinition::FILENAME = QString("definition.xml");
 const QString SolverDefinition::README = QString("README");
 const QString SolverDefinition::LICENSE = QString("LICENSE");
 
-SolverDefinition::~SolverDefinition(){
-	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it){
+SolverDefinition::~SolverDefinition()
+{
+	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it) {
 		delete *it;
 	}
 	delete m_dummyGridType;
@@ -33,7 +34,7 @@ void SolverDefinition::load(const QLocale& locale)
 	QFile file(filename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = m_document.setContent(&file, &errorStr, &errorLine, &errorColumn);
-	if (! ok){
+	if (! ok) {
 		QString msg = errorHeader;
 		msg.append("Parse error %2 at line %3, column %4");
 		msg = msg.arg(filename).arg(errorStr).arg(errorLine).arg(errorColumn);
@@ -49,11 +50,11 @@ void SolverDefinition::load(const QLocale& locale)
 	setIterationType(sdElem);
 	// setup gridtypes
 	QDomNode gdsNode = iRIC::getChildNode(sdElem, "GridTypes");
-	if (gdsNode.isNull()){
+	if (gdsNode.isNull()) {
 		// Try to find "GridRelatedCondition" node just under SolverDefinition node.
 		// if found, it means that this solver supports only one grid, with one gridtype.
 		QDomNode gdCondNode = iRIC::getChildNode(sdElem, "GridRelatedCondition");
-		if (gdCondNode.isNull()){
+		if (gdCondNode.isNull()) {
 			// No grid related condition node found.
 		} else {
 			// found. build one gridtype, using SolverDefinition node.
@@ -63,32 +64,33 @@ void SolverDefinition::load(const QLocale& locale)
 			m_gridTypes.append(gt);
 			m_gridTypeNameMap.insert(gt->name(), gt);
 		}
-		} else {
+	} else {
 		setupGridTypes(gdsNode, translator);
 	}
-		// Create dummy grid type for post-processor to handle grids.
-		m_dummyGridType = new SolverDefinitionGridType(m_abstract.name(), m_abstract.caption());
+	// Create dummy grid type for post-processor to handle grids.
+	m_dummyGridType = new SolverDefinitionGridType(m_abstract.name(), m_abstract.caption());
 }
 
-void SolverDefinition::setIterationType(const QDomElement& elem){
+void SolverDefinition::setIterationType(const QDomElement& elem)
+{
 	QString itype = elem.attribute("iterationtype", "none");
-	if (itype == "none"){
+	if (itype == "none") {
 		m_iterationType = NoIteration;
-	} else if (itype == "time"){
+	} else if (itype == "time") {
 		m_iterationType = TimeIteration;
-	} else if (itype == "convergence"){
+	} else if (itype == "convergence") {
 		m_iterationType = ConvergenceIteration;
 	} else {
 		m_iterationType = NoIteration;
 	}
 }
 
-void SolverDefinition::setupGridTypes(const QDomNode &node, const SolverDefinitionTranslator& translator)
+void SolverDefinition::setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator)
 {
 	QDomNode child = node.firstChild();
 	bool isPrimary = true;
-	while (! child.isNull()){
-		if (child.nodeName() == "GridType"){
+	while (! child.isNull()) {
+		if (child.nodeName() == "GridType") {
 			SolverDefinitionGridType* gt = setupGridType(child, translator, isPrimary);
 			m_gridTypes.append(gt);
 			m_gridTypeNameMap.insert(gt->name(), gt);

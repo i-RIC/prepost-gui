@@ -26,7 +26,7 @@ QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog
 {
 	Post2dWindowParticleUnstructuredSettingDialog* dialog = new Post2dWindowParticleUnstructuredSettingDialog(p);
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr){
+	if (cont == nullptr || cont->data() == nullptr) {
 		delete dialog;
 		return nullptr;
 	}
@@ -76,7 +76,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
@@ -97,24 +97,24 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupParticleSources()
 {
-	for (int i = 0; i < m_sourcePoints.count(); ++i){
+	for (int i = 0; i < m_sourcePoints.count(); ++i) {
 		m_sourcePoints[i]->Delete();
 	}
 	m_sourcePoints.clear();
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
 		QVector2D diffVec = setting.point2 - setting.point1;
 		QVector2D v;
-		for (int j = 0; j < setting.numberOfPoints; ++j){
+		for (int j = 0; j < setting.numberOfPoints; ++j) {
 			double param = j / (double)(setting.numberOfPoints - 1);
 			v = setting.point1 + param * diffVec;
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
 		vtkUnstructuredGrid* grid = vtkUnstructuredGrid::New();
 		grid->SetPoints(points);
-		for (int j = 0; j <setting.numberOfPoints; ++j){
+		for (int j = 0; j <setting.numberOfPoints; ++j) {
 			vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 			vertex->GetPointIds()->SetId(0, j);
 			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -152,13 +152,13 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const Q
 	points->SetDataTypeToDouble();
 	QVector2D diffVec = m_point2 - m_point1;
 	QVector2D v;
-	for (int i = 0; i < m_numberOfPoints; ++i){
+	for (int i = 0; i < m_numberOfPoints; ++i) {
 		double param = i / (double)(m_numberOfPoints - 1);
 		v = m_point1 + param * diffVec;
 		points->InsertNextPoint(v.x(), v.y(), 0);
 	}
 	m_previewPoints->SetPoints(points);
-	for (int i = 0; i < m_numberOfPoints; ++i){
+	for (int i = 0; i < m_numberOfPoints; ++i) {
 		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
 		m_previewPoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -183,7 +183,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QM
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		m_dialog->informButtonDown(p);
 	}
 }
@@ -194,19 +194,19 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
 	QVector2D p(x, y);
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		m_dialog->informButtonUp(p);
 	}
 }
 
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent *event, VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (m_dialog != nullptr){
+	if (m_dialog != nullptr) {
 		dataModel()->graphicsView()->emitWorldPosition(event->x(), event->y());
 	}
 }
 
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActionZValues(const ZDepthRange &range)
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActionZValues(const ZDepthRange& range)
 {
 	m_previewActor->SetPosition(0, 0, range.max());
 	Post2dWindowNodeVectorParticleGroupDataItem::assignActionZValues(range);
@@ -220,9 +220,9 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doLoadFromProjectM
 
 	m_settings.clear();
 	QDomNode particlesNode = iRIC::getChildNode(node, "Particles");
-	if (! particlesNode.isNull()){
+	if (! particlesNode.isNull()) {
 		QDomNodeList particles = particlesNode.childNodes();
-		for (int i = 0; i < particles.length(); ++i){
+		for (int i = 0; i < particles.length(); ++i) {
 			QDomElement elem = particles.at(i).toElement();
 			Post2dWindowUnstructuredParticleSetSetting s;
 			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
@@ -245,7 +245,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doSaveToProjectMai
 	Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Particles");
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
 		writer.writeStartElement("Particle");
 		writer.writeAttribute("point1X", QString::number(setting.point1.x()));

@@ -22,7 +22,7 @@ public:
 	~Graph2dScatteredWindowRootDataItem();
 
 	void setupStandardModel(QStandardItemModel* model);
-	Graph2dScatteredWindowResultGroupDataItem* resultGroupItem(){
+	Graph2dScatteredWindowResultGroupDataItem* resultGroupItem() {
 		return m_resultGroupItem;
 	}
 	void updateData(int fn);

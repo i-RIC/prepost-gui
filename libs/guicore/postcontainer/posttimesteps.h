@@ -11,14 +11,14 @@ class GUICOREDLL_EXPORT PostTimeSteps : public PostAbstractSteps
 	Q_OBJECT
 public:
 	/// Constructor
-	PostTimeSteps(ProjectDataItem* parent) : PostAbstractSteps(parent){}
+	PostTimeSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}
 	void loadFromCgnsFile(const int fn);
-	const QList<double>& timesteps() const{return m_timesteps;}
-	bool dataExists(){return m_timesteps.count() > 0;}
+	const QList<double>& timesteps() const {return m_timesteps;}
+	bool dataExists() {return m_timesteps.count() > 0;}
 	void checkStepsUpdate(int fn);
 	void informSteps();
 protected:
-	void clearArray(){m_timesteps.clear();}
+	void clearArray() {m_timesteps.clear();}
 signals:
 	void stepsUpdated(QList<double> steps);
 	void stepsUpdated(int fn);

@@ -63,11 +63,11 @@ Graph2dHybridWindowResultGroupDataItem::~Graph2dHybridWindowResultGroupDataItem(
 void Graph2dHybridWindowResultGroupDataItem::updateData(int fn)
 {
 	static bool updating = false;
-	if (updating == true){
+	if (updating == true) {
 		return;
 	}
 	updating = true;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(*it);
 		item->update(fn);
 	}
@@ -84,9 +84,10 @@ void Graph2dHybridWindowResultGroupDataItem::doSaveToProjectMainFile(QXmlStreamW
 
 }
 
-void Graph2dHybridWindowResultGroupDataItem::updateChildren(const Graph2dHybridWindowResultSetting& setting){
+void Graph2dHybridWindowResultGroupDataItem::updateChildren(const Graph2dHybridWindowResultSetting& setting)
+{
 	// delete all current children.
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		delete *it;
 	}
 	m_childItems.clear();
@@ -100,9 +101,9 @@ void Graph2dHybridWindowResultGroupDataItem::getAxisValueRange(Graph2dWindowData
 {
 	Graph2dWindowView* view = dataModel()->view();
 	QwtScaleDiv sDiv;
-	if (as == Graph2dWindowDataModel::asLeft){
+	if (as == Graph2dWindowDataModel::asLeft) {
 		sDiv = view->axisScaleDiv(QwtPlot::yLeft);
-	}else{
+	} else {
 		sDiv = view->axisScaleDiv(QwtPlot::yRight);
 	}
 	*min = sDiv.lowerBound();
@@ -115,8 +116,8 @@ void Graph2dHybridWindowResultGroupDataItem::showHorizontalAxisSettingDialog()
 
 void Graph2dHybridWindowResultGroupDataItem::copy(Graph2dHybridWindowResultCopyGroupDataItem* parent)
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(m_childItems.at(i));
 		Graph2dHybridWindowResultCopyDataItem* copy = item->copy(parent);
 		parent->addItem(copy);
 	}
@@ -125,8 +126,8 @@ void Graph2dHybridWindowResultGroupDataItem::copy(Graph2dHybridWindowResultCopyG
 bool Graph2dHybridWindowResultGroupDataItem::axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const
 {
 	bool needed = false;
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowResultDataItem* rItem = dynamic_cast<Graph2dHybridWindowResultDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowResultDataItem* rItem = dynamic_cast<Graph2dHybridWindowResultDataItem*>(m_childItems.at(i));
 		needed = needed || rItem->axisNeeded(as);
 	}
 	return needed;

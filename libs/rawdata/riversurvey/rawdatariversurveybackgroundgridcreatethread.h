@@ -25,11 +25,11 @@ public:
 
 	void update();
 	void cancel();
-	vtkStructuredGrid* grid(){return m_grid;}
-	vtkPointSet* partialGrid(RawDataRiverPathPoint* p){
+	vtkStructuredGrid* grid() {return m_grid;}
+	vtkPointSet* partialGrid(RawDataRiverPathPoint* p) {
 		return m_partialGrids.value(p, 0);
 	}
-	void setUseDivisionPoints(bool use){
+	void setUseDivisionPoints(bool use) {
 		m_useDivisionPoints = use;
 	}
 	void startBGGridCopy();

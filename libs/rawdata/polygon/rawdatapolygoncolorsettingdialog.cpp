@@ -1,7 +1,7 @@
 #include "rawdatapolygoncolorsettingdialog.h"
 #include "ui_rawdatapolygoncolorsettingdialog.h"
 
-RawDataPolygonColorSettingDialog::RawDataPolygonColorSettingDialog(QWidget *parent) :
+RawDataPolygonColorSettingDialog::RawDataPolygonColorSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataPolygonColorSettingDialog)
 {
@@ -15,8 +15,7 @@ RawDataPolygonColorSettingDialog::~RawDataPolygonColorSettingDialog()
 
 void RawDataPolygonColorSettingDialog::setMapping(Mapping m)
 {
-	switch (m)
-	{
+	switch (m) {
 	case Value:
 		ui->byValueRadioButton->click();
 		break;
@@ -33,13 +32,13 @@ void RawDataPolygonColorSettingDialog::setOpacityPercent(int o)
 
 RawDataPolygonColorSettingDialog::Mapping RawDataPolygonColorSettingDialog::mapping()
 {
-	if (ui->byValueRadioButton->isChecked()) return Value;
-	if (ui->arbitraryRadioButton->isChecked()) return Arbitrary;
+	if (ui->byValueRadioButton->isChecked()) { return Value; }
+	if (ui->arbitraryRadioButton->isChecked()) { return Arbitrary; }
 	//default
 	return Value;
 }
 
-void RawDataPolygonColorSettingDialog::setColor(const QColor &color)
+void RawDataPolygonColorSettingDialog::setColor(const QColor& color)
 {
 	ui->colorEditWidget->setColor(color);
 }

@@ -27,14 +27,14 @@
 
 SolverConsoleWindow::~SolverConsoleWindow()
 {
-/*
-	m_destructing = true;
+	/*
+		m_destructing = true;
 
-	if (m_process != nullptr){
-		m_process->kill();
-		delete m_process;
-	}
- */
+		if (m_process != nullptr){
+			m_process->kill();
+			delete m_process;
+		}
+	 */
 }
 
 void SolverConsoleWindow::init()
@@ -83,34 +83,34 @@ void SolverConsoleWindow::startSolver()
 {
 	// Check grid is ready
 	bool ok = m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
-	if (! ok){return;}
+	if (! ok) {return;}
 
 	// Check grid shape
 	QSettings settings;
 	QString msg = m_projectData->mainWindow()->preProcessorWindow()->checkGrid(settings.value("gridcheck/beforeexec", true).value<bool>());
-	if (! msg.isEmpty()){
+	if (! msg.isEmpty()) {
 		QString logFileName = m_projectData->absoluteFileName("gridcheck.txt");
 		msg.append(QString("<a href=\"%1\">").arg(QString("file:///").append(logFileName))).append(tr("Show Detail")).append("</a>");
 		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No){return;}
+		if (ret == QMessageBox::No) {return;}
 	}
 	// If the cgns file already has results, clear them first.
-	if (m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)){
+	if (m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
 		return;
 	}
 	// discard result, and save now.
 	try {
 		m_projectData->mainfile()->clearResults();
-	} catch (ErrorMessage& m){
+	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
 	}
 
 	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
-	if (ret == QMessageBox::Yes){
+	if (ret == QMessageBox::Yes) {
 		// save the project file.
-		if (! m_projectData->mainWindow()->saveProject()){return;}
-	} else if (ret == QMessageBox::Cancel){
+		if (! m_projectData->mainWindow()->saveProject()) {return;}
+	} else if (ret == QMessageBox::Cancel) {
 		return;
 	}
 	clear();
@@ -118,7 +118,7 @@ void SolverConsoleWindow::startSolver()
 	// check solver executable existance
 	QString solver = m_projectData->solverDefinition()->executableFilename();
 	QFile solverExec(solver);
-	if (! solverExec.exists()){
+	if (! solverExec.exists()) {
 		// solver executable does not exists!!
 		QMessageBox::critical(this, tr("Error"), tr("Solver executable file %1 does not exists.").arg(solver));
 		return;
@@ -160,14 +160,14 @@ void SolverConsoleWindow::startSolver()
 }
 void SolverConsoleWindow::terminateSolver()
 {
-	if (m_process == nullptr){return;}
+	if (m_process == nullptr) {return;}
 	QMessageBox::StandardButton button =  QMessageBox::question(
-		this,
-		tr("Confirm Solver Termination"),
-		tr("Do you really want to kill the solver?"),
-		QMessageBox::Yes | QMessageBox::No,
-		QMessageBox::No);
-	if (QMessageBox::Yes == button){
+																					this,
+																					tr("Confirm Solver Termination"),
+																					tr("Do you really want to kill the solver?"),
+																					QMessageBox::Yes | QMessageBox::No,
+																					QMessageBox::No);
+	if (QMessageBox::Yes == button) {
 		m_solverKilled = true;
 		m_process->kill();
 	}
@@ -183,7 +183,7 @@ void SolverConsoleWindow::readStderr()
 
 void SolverConsoleWindow::readStdout()
 {
-	while (m_process->canReadLine()){
+	while (m_process->canReadLine()) {
 		QString data = m_process->readLine(200);
 		// remove "\r",  "\n"
 		data.replace('\r', "").replace('\n', "");
@@ -197,18 +197,18 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	m_process = nullptr;
 	m_projectDataItem->close();
 
-	if (m_destructing){return;}
+	if (m_destructing) {return;}
 	updateWindowTitle();
 	QWidget* parent = parentWidget();
 	parent->show();
 	parent->setFocus();
 
 	emit solverFinished();
-	if (! m_solverKilled){
-		if (status == 0){
+	if (! m_solverKilled) {
+		if (status == 0) {
 			// Finished normally.
 			QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation."));
-		}else{
+		} else {
 			// Finished abnormally.
 			QMessageBox::warning(this, tr("Solver Finished"), tr("The solver finished abnormally."));
 		}
@@ -218,17 +218,16 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 void SolverConsoleWindow::updateWindowTitle()
 {
 	ProjectData* data = m_projectData;
-	if (data == nullptr)
-	{
+	if (data == nullptr) {
 		// Project is not loaded yet.
 		setWindowTitle(QString(tr("Solver Console")));
 		return;
 	}
 	QString solver = m_projectData->solverDefinition()->caption();
 	QString status;
-	if (m_process != nullptr){
+	if (m_process != nullptr) {
 		status = tr("running");
-	}else{
+	} else {
 		status = tr("stopped");
 	}
 	setWindowTitle(QString(tr("Solver Console [%1] (%2)")).arg(solver, status));
@@ -269,18 +268,15 @@ class SolverConsoleWindowBackgroundColorCommand : public QUndoCommand
 {
 public:
 	SolverConsoleWindowBackgroundColorCommand(QColor newc, QColor oldc, SolverConsoleWindow* w)
-		: QUndoCommand(QObject::tr("Background Color Setting"))
-	{
+		: QUndoCommand(QObject::tr("Background Color Setting")) {
 		m_newColor = newc;
 		m_oldColor = oldc;
 		m_window = w;
 	}
-	void redo()
-	{
+	void redo() {
 		m_window->setBackgroundColor(m_newColor);
 	}
-	void undo()
-	{
+	void undo() {
 		m_window->setBackgroundColor(m_oldColor);
 	}
 private:
@@ -293,7 +289,7 @@ void SolverConsoleWindow::editBackgroundColor()
 {
 	QColor c = backgroundColor();
 	QColor newc = QColorDialog::getColor(c, this, tr("Background Color"));
-	if (! newc.isValid()){return;}
+	if (! newc.isValid()) {return;}
 	iRICUndoStack::instance().push(new SolverConsoleWindowBackgroundColorCommand(newc, c, this));
 }
 
@@ -303,14 +299,15 @@ const QColor SolverConsoleWindow::backgroundColor() const
 	return p.color(QPalette::Base);
 }
 
-void SolverConsoleWindow::setBackgroundColor(const QColor &c)
+void SolverConsoleWindow::setBackgroundColor(const QColor& c)
 {
 	QPalette p = m_console->palette();
 	p.setColor(QPalette::Base, c);
 	m_console->setPalette(p);
 }
 
-void SolverConsoleWindow::closeEvent(QCloseEvent* e){
+void SolverConsoleWindow::closeEvent(QCloseEvent* e)
+{
 	parentWidget()->hide();
 	e->ignore();
 }

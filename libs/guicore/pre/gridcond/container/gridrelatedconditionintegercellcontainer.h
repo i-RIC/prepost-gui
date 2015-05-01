@@ -11,7 +11,7 @@ public:
 		: GridRelatedConditionCellContainerT<int, vtkIntArray>(grid, cond)
 	{}
 protected:
-	DataType_t dataType(){return Integer;}
+	DataType_t dataType() {return Integer;}
 };
 
 #endif // GRIDRELATEDCONDITIONINTEGERCELLCONTAINER_H

@@ -11,16 +11,14 @@ class PreProcessorGridDataItemInterface;
 class GridRelatedConditionVariationEditWidget : public QWidget
 {
 public:
-	GridRelatedConditionVariationEditWidget(QWidget *parent, SolverDefinitionGridRelatedCondition* condition)
-		: QWidget(parent)
-	{
+	GridRelatedConditionVariationEditWidget(QWidget* parent, SolverDefinitionGridRelatedCondition* condition)
+		: QWidget(parent) {
 		m_gridRelatedCondition = condition;
 	}
-	void clearValue()
-	{
+	void clearValue() {
 		setupWidget();
 	}
-	SolverDefinitionGridRelatedCondition* condition(){
+	SolverDefinitionGridRelatedCondition* condition() {
 		return m_gridRelatedCondition;
 	}
 	virtual void applyVariation(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;

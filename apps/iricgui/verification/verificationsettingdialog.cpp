@@ -10,7 +10,7 @@
 
 #include <vtkPointData.h>
 
-VerificationSettingDialog::VerificationSettingDialog(QWidget *parent) :
+VerificationSettingDialog::VerificationSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::VerificationSettingDialog)
 {
@@ -26,11 +26,11 @@ void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 {
 	m_postSolutionInfo = info;
 	ui->gridComboBox->clear();
-	for (PostZoneDataContainer* cont : info->zoneContainers2D()){
+	for (PostZoneDataContainer* cont : info->zoneContainers2D()) {
 		ui->gridComboBox->addItem(cont->zoneName());
 	}
 	selectZone(0);
-	if (ui->gridComboBox->count() == 1){
+	if (ui->gridComboBox->count() == 1) {
 		ui->gridLabel->hide();
 		ui->gridComboBox->hide();
 	}
@@ -44,11 +44,11 @@ void VerificationSettingDialog::setMeasuredDatas(const QList<MeasuredData*>& dat
 {
 	m_measuredData = data;
 	ui->fileComboBox->clear();
-	for (MeasuredData* md : data){
+	for (MeasuredData* md : data) {
 		ui->fileComboBox->addItem(md->name());
 	}
 	selectFile(0);
-	if (ui->fileComboBox->count() == 1){
+	if (ui->fileComboBox->count() == 1) {
 		ui->fileLabel->hide();
 		ui->fileComboBox->hide();
 	}
@@ -61,9 +61,9 @@ void VerificationSettingDialog::setTimeStep(int step)
 
 void VerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* cont)
 {
-	for (int i = 0; i < m_postSolutionInfo->zoneContainers2D().count(); ++i){
+	for (int i = 0; i < m_postSolutionInfo->zoneContainers2D().count(); ++i) {
 		PostZoneDataContainer* c = m_postSolutionInfo->zoneContainers2D().at(i);
-		if (c == cont){
+		if (c == cont) {
 			selectZone(i);
 			return;
 		}
@@ -73,9 +73,9 @@ void VerificationSettingDialog::setPostZoneDataContainer(PostZoneDataContainer* 
 
 void VerificationSettingDialog::setActiveResult(const QString& result)
 {
-	for (int i = 0; i < ui->physicalValueComboBox->count(); ++i){
+	for (int i = 0; i < ui->physicalValueComboBox->count(); ++i) {
 		QString item = ui->physicalValueComboBox->itemText(i);
-		if (item == result){
+		if (item == result) {
 			ui->physicalValueComboBox->setCurrentIndex(i);
 			return;
 		}
@@ -84,9 +84,9 @@ void VerificationSettingDialog::setActiveResult(const QString& result)
 
 void VerificationSettingDialog::setMeasuredData(MeasuredData* md)
 {
-	for (int i = 0; i < m_measuredData.count(); ++i){
+	for (int i = 0; i < m_measuredData.count(); ++i) {
 		MeasuredData* d = m_measuredData.at(i);
-		if (d == md){
+		if (d == md) {
 			selectFile(i);
 			return;
 		}
@@ -96,9 +96,9 @@ void VerificationSettingDialog::setMeasuredData(MeasuredData* md)
 
 void VerificationSettingDialog::setActiveValue(const QString& value)
 {
-	for (int i = 0; i < ui->measuredValueComboBox->count(); ++i){
+	for (int i = 0; i < ui->measuredValueComboBox->count(); ++i) {
 		QString item = ui->measuredValueComboBox->itemText(i);
-		if (item == value){
+		if (item == value) {
 			ui->measuredValueComboBox->setCurrentIndex(i);
 			return;
 		}
@@ -140,12 +140,12 @@ void VerificationSettingDialog::selectZone(int zoneid)
 	vtkPointData* pd = ps->GetPointData();
 
 	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++){
+	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){
+		if (tmparray == nullptr) {
 			continue;
 		}
-		if (tmparray->GetNumberOfComponents() > 1){
+		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attribute.
 			continue;
 		}
@@ -159,7 +159,7 @@ void VerificationSettingDialog::selectFile(int fileid)
 {
 	ui->measuredValueComboBox->clear();
 	MeasuredData* md = m_measuredData.at(fileid);
-	for (int i = 0; i < md->pointNames().count(); ++i){
+	for (int i = 0; i < md->pointNames().count(); ++i) {
 		ui->measuredValueComboBox->addItem(md->pointNames().at(i));
 	}
 	ui->measuredValueComboBox->setCurrentIndex(0);
@@ -167,11 +167,11 @@ void VerificationSettingDialog::selectFile(int fileid)
 
 void VerificationSettingDialog::accept()
 {
-	if (activeResult() == ""){
+	if (activeResult() == "") {
 		QMessageBox::warning(this, tr("Warning"), tr("No Physical Value is selected."));
 		return;
 	}
-	if (activeValue() == ""){
+	if (activeValue() == "") {
 		QMessageBox::warning(this, tr("Warning"), tr("No Value is selected."));
 		return;
 	}

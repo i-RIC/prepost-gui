@@ -6,11 +6,11 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
-Graph2dHybridWindowControlWidget::Graph2dHybridWindowControlWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Graph2dHybridWindowControlWidget)
+Graph2dHybridWindowControlWidget::Graph2dHybridWindowControlWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::Graph2dHybridWindowControlWidget)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	ui->iSlider->setRange(0, 100);
 	ui->jSlider->setRange(0, 100);
@@ -33,7 +33,7 @@ Graph2dHybridWindowControlWidget::Graph2dHybridWindowControlWidget(QWidget *pare
 
 Graph2dHybridWindowControlWidget::~Graph2dHybridWindowControlWidget()
 {
-    delete ui;
+	delete ui;
 }
 
 void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResultSetting& setting, int dim[4])
@@ -52,49 +52,49 @@ void Graph2dHybridWindowControlWidget::setSetting(const Graph2dHybridWindowResul
 	ui->kSlider->hide();
 	ui->indexLabel->hide();
 	ui->indexSlider->hide();
-	if (info == nullptr){return;}
-	switch (info->dataType){
+	if (info == nullptr) {return;}
+	switch (info->dataType) {
 	case Graph2dHybridWindowResultSetting::dtBaseIterative:
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim1DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim2DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->jLabel->show();
 			ui->jSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jLabel->show();
 			ui->jSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 		}
 		break;
 	case Graph2dHybridWindowResultSetting::dtDim3DStructured:
-		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+		if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->jLabel->show();
 			ui->jSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			ui->jLabel->show();
 			ui->jSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->kLabel->show();
 			ui->kSlider->show();
-		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK){
+		} else if (setting.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
 			ui->iLabel->show();
 			ui->iSlider->show();
 			ui->jLabel->show();

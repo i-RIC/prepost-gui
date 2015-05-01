@@ -24,24 +24,24 @@ public:
 	void handleStandardItemChange();
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
-	ContourSettingWidget::Contour contour(){return m_contour;}
+	ContourSettingWidget::Contour contour() {return m_contour;}
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent *, VTKGraphicsView *);
-	void keyReleaseEvent(QKeyEvent *, VTKGraphicsView *);
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void addCustomMenuItems(QMenu* menu);
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	SolverDefinitionGridRelatedCondition* condition(){return m_condition;}
+	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	void informDataChange();
-	int numberOfDivision(){return m_numberOfDivision;}
+	int numberOfDivision() {return m_numberOfDivision;}
 
 	void updateCrossectionWindows();
 	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);
 	void unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item);
-	void informSelectedVerticesChanged(const QVector<vtkIdType> &vertices);
-	bool addToolBarButtons(QToolBar *toolbar);
+	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	bool addToolBarButtons(QToolBar* toolbar);
 
 public slots:
 	void openCrossSectionWindow();
@@ -49,7 +49,7 @@ public slots:
 private slots:
 	void editValue();
 	void editVariation();
-	void showDisplaySettingDialog(){showPropertyDialog();}
+	void showDisplaySettingDialog() {showPropertyDialog();}
 	void exportToFile();
 signals:
 	void changed(PreProcessorGridRelatedConditionNodeDataItem*);

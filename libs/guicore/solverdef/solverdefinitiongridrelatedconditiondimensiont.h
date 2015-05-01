@@ -16,7 +16,7 @@ public:
 };
 
 class GUICOREDLL_EXPORT SolverDefinitionGridRelatedConditionIntegerDimension
-		: public SolverDefinitionGridRelatedConditionDimensionT<int>
+	: public SolverDefinitionGridRelatedConditionDimensionT<int>
 {
 public:
 	SolverDefinitionGridRelatedConditionIntegerDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridRelatedCondition* cond)
@@ -25,14 +25,13 @@ public:
 	int fromVariant(const QVariant& v) const {
 		return v.toInt();
 	}
-	GridRelatedConditionDimensionContainer* buildContainer()
-	{
+	GridRelatedConditionDimensionContainer* buildContainer() {
 		return new GridRelatedConditionDimensionIntegerContainer(this);
 	}
 };
 
 class GUICOREDLL_EXPORT SolverDefinitionGridRelatedConditionRealDimension
-		: public SolverDefinitionGridRelatedConditionDimensionT<double>
+	: public SolverDefinitionGridRelatedConditionDimensionT<double>
 {
 public:
 	SolverDefinitionGridRelatedConditionRealDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridRelatedCondition* cond)
@@ -41,8 +40,7 @@ public:
 	double fromVariant(const QVariant& v) const {
 		return v.toDouble();
 	}
-	GridRelatedConditionDimensionContainer* buildContainer()
-	{
+	GridRelatedConditionDimensionContainer* buildContainer() {
 		return new GridRelatedConditionDimensionRealContainer(this);
 	}
 };

@@ -6,16 +6,18 @@
 class iRICMainWindow;
 class ContinuousSnapshotWizard;
 
-namespace Ui {
+namespace Ui
+{
 	class ContinuousSnapshotWindowSelectionPage;
 }
 
-class ContinuousSnapshotWindowSelectionPage : public QWizardPage {
+class ContinuousSnapshotWindowSelectionPage : public QWizardPage
+{
 	Q_OBJECT
-public:
-	ContinuousSnapshotWindowSelectionPage(QWidget *parent = nullptr);
-	~ContinuousSnapshotWindowSelectionPage();
 
+public:
+	ContinuousSnapshotWindowSelectionPage(QWidget* parent = nullptr);
+	~ContinuousSnapshotWindowSelectionPage();
 	void setupWindowList();
 	void initializePage();
 	bool validatePage();
@@ -25,7 +27,7 @@ private:
 	iRICMainWindow* m_mainWindow;
 	ContinuousSnapshotWizard* m_wizard;
 
-	Ui::ContinuousSnapshotWindowSelectionPage *ui;
+	Ui::ContinuousSnapshotWindowSelectionPage* ui;
 };
 
 #endif // CONTINUOUSSNAPSHOTWINDOWSELECTIONPAGE_H

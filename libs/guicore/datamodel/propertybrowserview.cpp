@@ -4,7 +4,7 @@
 
 #include <QVector2D>
 
-PropertyBrowserView::PropertyBrowserView(QWidget *parent) :
+PropertyBrowserView::PropertyBrowserView(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::PropertyBrowserView)
 {
@@ -51,7 +51,7 @@ void PropertyBrowserView::hideAll()
 	ui->attLabel->hide();
 	ui->attributesTable->hide();
 	updateGeometry();
-	if (m_targetDataItem){
+	if (m_targetDataItem) {
 		m_targetDataItem->clear();
 	}
 }
@@ -77,10 +77,10 @@ void PropertyBrowserView::resetAttributes(bool internal)
 	ui->yValueLabel->setText(nullStr);
 	QTableWidget* table = ui->attributesTable;
 	int rows = table->rowCount();
-	for (int i = rows - 1; i >= 0; --i){
+	for (int i = rows - 1; i >= 0; --i) {
 		table->removeRow(i);
 	}
-	if (m_targetDataItem && ! internal){
+	if (m_targetDataItem && ! internal) {
 		m_targetDataItem->clear();
 	}
 }
@@ -91,7 +91,7 @@ void PropertyBrowserView::setVertexAttributes(vtkIdType index, double x, double 
 	updateIndex(index);
 	updateCoords(x, y);
 	updateAttributes(attr);
-	if (m_targetDataItem){
+	if (m_targetDataItem) {
 		m_targetDataItem->setPoint(QVector2D(x, y));
 	}
 }
@@ -102,7 +102,7 @@ void PropertyBrowserView::setVertexAttributes(unsigned int i, unsigned int j, do
 	updateIJ(i, j);
 	updateCoords(x, y);
 	updateAttributes(attr);
-	if (m_targetDataItem){
+	if (m_targetDataItem) {
 		m_targetDataItem->setPoint(QVector2D(x, y));
 	}
 }
@@ -112,7 +112,7 @@ void PropertyBrowserView::setCellAttributes(vtkIdType index, const QPolygonF& po
 	resetAttributes(true);
 	updateIndex(index);
 	updateAttributes(attr);
-	if (m_targetDataItem){
+	if (m_targetDataItem) {
 		m_targetDataItem->setPolygon(polygon);
 	}
 }
@@ -122,7 +122,7 @@ void PropertyBrowserView::setCellAttributes(unsigned int i, unsigned int j, cons
 	resetAttributes(true);
 	updateIJ(i, j);
 	updateAttributes(attr);
-	if (m_targetDataItem){
+	if (m_targetDataItem) {
 		m_targetDataItem->setPolygon(polygon);
 	}
 }
@@ -148,11 +148,11 @@ void PropertyBrowserView::updateAttributes(const QList<PropertyBrowserAttribute>
 {
 	QTableWidget* table = ui->attributesTable;
 	int rows = table->rowCount();
-	for (int i = rows - 1; i >= 0; --i){
+	for (int i = rows - 1; i >= 0; --i) {
 		table->removeRow(i);
 	}
 	int index = 0;
-	for (auto it = attr.begin(); it != attr.end(); ++it){
+	for (auto it = attr.begin(); it != attr.end(); ++it) {
 		PropertyBrowserAttribute a = *it;
 		table->insertRow(index);
 		QTableWidgetItem* labelItem = new QTableWidgetItem(a.name);

@@ -12,11 +12,11 @@ class GridCreatingConditionGridCombine : public GridCreatingCondition
 public:
 	GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionGridCombine();
-	bool create(QWidget *parent);
+	bool create(QWidget* parent);
 	bool ready() const;
 	void setupMenu();
-	void showDialog(QWidget *parent);
-	void handleDialogAccepted(QDialog *d);
+	void showDialog(QWidget* parent);
+	void handleDialogAccepted(QDialog* d);
 	void setupParameters();
 	void clear();
 protected:

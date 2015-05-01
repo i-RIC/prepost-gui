@@ -10,17 +10,17 @@ GridRelatedConditionIntegerVariationEditWidget::GridRelatedConditionIntegerVaria
 	l->setMargin(0);
 	l->addWidget(m_widget);
 	setLayout(l);
-	if (cond->variantMaximumValue() != ""){
+	if (cond->variantMaximumValue() != "") {
 		bool ok;
 		int max = cond->variantMaximumValue().toInt(&ok);
-		if (ok){
+		if (ok) {
 			m_widget->setMaximum(max);
 		}
 	}
-	if (cond->variantMinimumValue() != ""){
+	if (cond->variantMinimumValue() != "") {
 		bool ok;
 		int min = cond->variantMinimumValue().toInt(&ok);
-		if (ok){
+		if (ok) {
 			m_widget->setMinimum(min);
 		}
 	}

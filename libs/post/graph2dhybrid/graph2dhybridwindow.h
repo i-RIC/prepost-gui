@@ -12,17 +12,17 @@ class Graph2dHybridWindowProjectDataItem;
 class Graph2dHybridWindowControlWidget;
 
 class Graph2dHybridWindow :
-		public PostProcessorWindow,
-		public AdditionalMenuWindow
+	public PostProcessorWindow,
+	public AdditionalMenuWindow
 {
 	Q_OBJECT
 public:
-	explicit Graph2dHybridWindow(QWidget *parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
+	explicit Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
 	~Graph2dHybridWindow();
 	QPixmap snapshot();
 	QList<QMenu*> getAdditionalMenus();
 	ObjectBrowser* objectBrowser();
-	Graph2dHybridWindowControlWidget* controlWidget(){return m_controlWidget;}
+	Graph2dHybridWindowControlWidget* controlWidget() {return m_controlWidget;}
 signals:
 	void closeButtonClicked();
 private:

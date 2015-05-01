@@ -16,8 +16,8 @@ CgnsFileInputConditionWidgetString::CgnsFileInputConditionWidgetString(QDomNode 
 	setLayout(layout);
 	setValue(cont->value());
 	connect(m_lineEdit, SIGNAL(editingFinished()), this, SLOT(checkContent()));
-	connect(m_container, SIGNAL(valueChanged(const QString &)), m_lineEdit, SLOT(setText(QString)));
-	connect(m_lineEdit, SIGNAL(textChanged(QString)), this, SLOT(getWidgetValue(const QString &)));
+	connect(m_container, SIGNAL(valueChanged(const QString&)), m_lineEdit, SLOT(setText(QString)));
+	connect(m_lineEdit, SIGNAL(textChanged(QString)), this, SLOT(getWidgetValue(const QString&)));
 }
 
 void CgnsFileInputConditionWidgetString::checkContent()
@@ -25,7 +25,7 @@ void CgnsFileInputConditionWidgetString::checkContent()
 	QString txt = m_lineEdit->text();
 	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
 	bool ok = asciiCodec->canEncode(txt);
-	if (! ok){
+	if (! ok) {
 		QMessageBox::warning(this, tr("Warning"), tr("String has to consist of only English characters."));
 		m_lineEdit->setText("");
 	}
@@ -41,7 +41,7 @@ void CgnsFileInputConditionWidgetString::setValue(const QString& newvalue)
 	m_lineEdit->setText(newvalue);
 }
 
-void CgnsFileInputConditionWidgetString::getWidgetValue(const QString &newvalue)
+void CgnsFileInputConditionWidgetString::getWidgetValue(const QString& newvalue)
 {
 	m_container->setValue(newvalue);
 }

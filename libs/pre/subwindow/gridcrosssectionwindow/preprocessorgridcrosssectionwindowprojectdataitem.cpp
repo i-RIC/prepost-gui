@@ -18,7 +18,7 @@ PreProcessorGridCrosssectionWindowProjectDataItem::PreProcessorGridCrosssectionW
 
 PreProcessorGridCrosssectionWindowProjectDataItem::~PreProcessorGridCrosssectionWindowProjectDataItem()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		PreProcessorGridCrosssectionWindow* w = m_window;
 		m_window = nullptr;
 		delete w->parent();
@@ -28,7 +28,7 @@ PreProcessorGridCrosssectionWindowProjectDataItem::~PreProcessorGridCrosssection
 
 void PreProcessorGridCrosssectionWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		m_window = nullptr;
 		m_item->requestCrosssectionWindowDelete(this);
 	}

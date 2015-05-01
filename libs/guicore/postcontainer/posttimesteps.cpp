@@ -18,17 +18,17 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 	int nsteps;
 	int ier;
 	int B;
-    bool changed = false;
+	bool changed = false;
 	// goto base.
 	ier = cg_iRIC_GotoBase(fn, &B);
-	if (ier != 0){goto ERRORMSG;}
+	if (ier != 0) {goto ERRORMSG;}
 
 	// get the node name of BaseIterativeData_t.
 	ier = cg_biter_read(fn, B, buffer, &nsteps);
-	if (ier != 0){
+	if (ier != 0) {
 		// there's no BaseIterativeData_t.
 		// skip loading and emit signal.
-		if (tmplist != m_timesteps){
+		if (tmplist != m_timesteps) {
 			m_timesteps = tmplist;
 			emit stepsUpdated(tmplist);
 		}
@@ -36,19 +36,19 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 	}
 	// goto baseiterativedata node.
 	ier = cg_goto(fn, B, buffer, 0, "end");
-	if (ier != 0){goto ERRORMSG;}
+	if (ier != 0) {goto ERRORMSG;}
 	int narrays;
 	ier = cg_narrays(&narrays);
-	if (ier != 0){goto ERRORMSG;}
-	for (int i = 1; i <= narrays; ++i){
+	if (ier != 0) {goto ERRORMSG;}
+	for (int i = 1; i <= narrays; ++i) {
 		DataType_t dataType;
 		int dataDimension;
 		cgsize_t dimensionVector[3];
 		// get cg_array_info
 		ier = cg_array_info(i, buffer, &dataType, &dataDimension, dimensionVector);
-		if (ier != 0){goto ERRORMSG;}
+		if (ier != 0) {goto ERRORMSG;}
 		// search for "TimeValues" node.
-		if (QString(buffer) == "TimeValues"){
+		if (QString(buffer) == "TimeValues") {
 			// we've found the node! let's read.
 			double* timesteps;
 			// in case of "TimeValues" node, dataDimension = 1, and dimensionVector[0]
@@ -57,20 +57,20 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 			// and stored in nsteps.
 			timesteps = new double[nsteps];
 			ier = cg_array_read(i, timesteps);
-			for (int j = 0; j < nsteps; ++j){
+			for (int j = 0; j < nsteps; ++j) {
 				tmplist.push_back(timesteps[j]);
 			}
 			// temporary buffer timesteps is not needed anymore.
 			delete timesteps;
 
-			if (ier != 0){goto ERRORMSG;}
+			if (ier != 0) {goto ERRORMSG;}
 			// we do not need to do the rest of i loop.
 			break;
 		}
 	}
-    changed = (tmplist != m_timesteps);
+	changed = (tmplist != m_timesteps);
 	m_timesteps = tmplist;
-	if (changed){
+	if (changed) {
 		emit stepsUpdated(m_timesteps);
 		emit stepsUpdated(fn);
 	}

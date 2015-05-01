@@ -21,24 +21,22 @@ public:
 		: GridRelatedConditionContainerT<int>(grid, cond)
 	{}
 	/// Destructor
-	virtual ~GridRelatedComplexConditionContainer(){}
+	virtual ~GridRelatedComplexConditionContainer() {}
 	/// Returns the value at the specified index.
-	int value(unsigned int index){
+	int value(unsigned int index) {
 		return dataArray()->GetValue(index);
 	}
 	/// Update the value at the specified index.
-	void setValue(unsigned int index, int value)
-	{
+	void setValue(unsigned int index, int value) {
 		dataArray()->SetValue(index, value);
 	}
-	void allocate()
-	{
+	void allocate() {
 		vtkIntArray* da = dataArray();
-		if (da == nullptr){
+		if (da == nullptr) {
 			// not found maybe reset?
 			da = vtkIntArray::New();
 			da->SetName(iRIC::toStr(name()).c_str());
-			if (condition()->position() == SolverDefinitionGridRelatedCondition::Node){
+			if (condition()->position() == SolverDefinitionGridRelatedCondition::Node) {
 				m_grid->vtkGrid()->GetPointData()->AddArray(da);
 			} else {
 				m_grid->vtkGrid()->GetCellData()->AddArray(da);
@@ -47,39 +45,38 @@ public:
 		}
 		da->Allocate(dataCount());
 		int count = dataCount();
-		for (int i = 0; i < count; ++i){
+		for (int i = 0; i < count; ++i) {
 			da->InsertValue(i, 0);
 		}
 	}
 
-	vtkIntArray* dataArray()
-	{
+	vtkIntArray* dataArray() {
 		vtkDataArray* da;
-		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node){
+		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node) {
 			da = GridRelatedConditionContainer::m_grid->vtkGrid()->GetPointData()
-					->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
+					 ->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
 		} else {
 			da = GridRelatedConditionContainer::m_grid->vtkGrid()->GetCellData()
-					->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
+					 ->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
 		}
 		return vtkIntArray::SafeDownCast(da);
 	}
-	vtkIntArray* dataArrayCopy(){
+	vtkIntArray* dataArrayCopy() {
 		vtkIntArray* copy = vtkIntArray::New();
 		copy->DeepCopy(dataArray());
 		return copy;
 	}
 	unsigned int dataCount() const {
-		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node){
+		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node) {
 			return m_grid->nodeCount();
 		} else {
 			return m_grid->cellCount();
 		}
 	}
-	void setModified(){
+	void setModified() {
 		dataArray()->Modified();
 	}
-	bool getValueRange(double* min, double* max){
+	bool getValueRange(double* min, double* max) {
 		double range[2];
 		dataArray()->GetRange(range);
 		*min = range[0];
@@ -88,7 +85,7 @@ public:
 	}
 
 protected:
-	DataType_t dataType(){return Integer;}
+	DataType_t dataType() {return Integer;}
 
 private:
 	SolverDefinitionGridRelatedComplexCondition* condition() const {

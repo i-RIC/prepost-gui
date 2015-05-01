@@ -39,8 +39,7 @@ class Post2dWindowCellFlagGroupSettingCommand : public QUndoCommand
 {
 public:
 	Post2dWindowCellFlagGroupSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, int newo, Post2dWindowCellFlagGroupDataItem* item)
-		:QUndoCommand(Post2dWindowCellFlagGroupDataItem::tr("Cell Flag Setting"))
-	{
+		:QUndoCommand(Post2dWindowCellFlagGroupDataItem::tr("Cell Flag Setting")) {
 		m_newSettings = newsettings;
 		m_newOpacityPercent = newo;
 
@@ -48,13 +47,11 @@ public:
 		m_oldOpacityPercent = item->m_opacityPercent;
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setSettings(m_newSettings, m_newOpacityPercent);
 		m_item->renderGraphicsView();
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setSettings(m_oldSettings, m_oldOpacityPercent);
 		m_item->renderGraphicsView();
 	}
@@ -76,7 +73,7 @@ void Post2dWindowCellFlagGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
 QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
 {
 	QList<Post2dWindowCellFlagSetting> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		Post2dWindowCellFlagSetting setting;
 		setting.attributeName = item->attributeName();
@@ -91,7 +88,7 @@ QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
 void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCellFlagSetting>& settings, int opacity)
 {
 	QMap<Post2dWindowCellFlagSetting, Post2dWindowCellFlagDataItem*> map;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		Post2dWindowCellFlagSetting setting;
 		setting.attributeName = item->attributeName();
@@ -100,18 +97,18 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 		setting.enabled  = (item->standardItem()->checkState() == Qt::Checked);
 		map.insert(setting, item);
 	}
-	for (int i = 0; i < m_childItems.count(); ++i){
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		m_standardItem->takeRow(0);
 	}
 	m_childItems.clear();
-	for (auto cit = settings.begin(); cit != settings.end(); ++cit){
+	for (auto cit = settings.begin(); cit != settings.end(); ++cit) {
 		Post2dWindowCellFlagSetting s = *cit;
 		Post2dWindowCellFlagDataItem* item = map.value(s);
 		item->setColor(s.color);
 		item->setOpacity(opacity);
-		if (s.enabled){
+		if (s.enabled) {
 			item->standardItem()->setCheckState(Qt::Checked);
-		}else{
+		} else {
 			item->standardItem()->setCheckState(Qt::Unchecked);
 		}
 		item->updateVisibilityWithoutRendering();
@@ -132,16 +129,16 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent())->gridType();
 	const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
 	int index = 0;
-	for (auto it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter){continue;}
-		if (! cond->isOption()){continue;}
+		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		if (! cond->isOption()) {continue;}
 		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
-		if (icond == 0){continue;}
+		if (icond == 0) {continue;}
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 		QMap<int, QString> enums = el->enumerations();
-		for (auto it = enums.begin(); it != enums.end(); ++it){
+		for (auto it = enums.begin(); it != enums.end(); ++it) {
 			QColor color = cs->getColor(index ++);
 			QString cap = QString("%1 (%2)").arg(icond->caption(), it.value());
 			Post2dWindowCellFlagDataItem* item = new Post2dWindowCellFlagDataItem(icond->name(), it.key(), color, cap, this);
@@ -156,39 +153,39 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 
 void Post2dWindowCellFlagGroupDataItem::update()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		item->update();
 	}
 }
 
-void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode & node)
+void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_opacityPercent = loadOpacityPercent(node);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		item->setOpacity(m_opacityPercent);
 	}
 	QDomNodeList childNodes = node.childNodes();
-	for (int i = 0; i < childNodes.count(); ++i){
+	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomNode cnode = childNodes.at(i);
 		QDomElement celem = cnode.toElement();
 		QString attName = celem.attribute("attributeName");
 		int value = celem.attribute("value").toInt();
 
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 			Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
-			if (item->attributeName() == attName && item->value() == value){
+			if (item->attributeName() == attName && item->value() == value) {
 				item->loadFromProjectMainFile(cnode);
 			}
 		}
 	}
 }
 
-void Post2dWindowCellFlagGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter & writer)
+void Post2dWindowCellFlagGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writeOpacityPercent(m_opacityPercent, writer);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		writer.writeStartElement("CellFlag");
 		item->saveToProjectMainFile(writer);
@@ -198,16 +195,16 @@ void Post2dWindowCellFlagGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 
 bool Post2dWindowCellFlagGroupDataItem::hasTransparentPart()
 {
-	if (standardItem()->checkState() == Qt::Unchecked){return false;}
-	if (m_opacityPercent == 100){return false;}
-	for (int i = 0; i < m_childItems.count(); ++i){
+	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
+	if (m_opacityPercent == 100) {return false;}
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems[i];
-		if (item->standardItem()->checkState() == Qt::Checked){return true;}
+		if (item->standardItem()->checkState() == Qt::Checked) {return true;}
 	}
 	return false;
 }
 
-void Post2dWindowCellFlagGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowCellFlagGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initCellAttributeBrowser();
 }

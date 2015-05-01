@@ -38,8 +38,8 @@ public:
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void setCurrentMeasuredValue(const QString& value);
 	bool hasTransparentPart();
-	LookupTableContainer* lookupTable(const QString& attName){return m_lookupTables.value(attName, 0);}
-	void informSelection(VTKGraphicsView * v);
+	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -48,7 +48,7 @@ public:
 
 public slots:
 	void exclusivelyCheck(MeasuredDataPointDataItem* item);
-	void showSettingDialog(){showPropertyDialog();}
+	void showSettingDialog() {showPropertyDialog();}
 protected:
 	void updateVisibility(bool visible);
 	void doLoadFromProjectMainFile(const QDomNode& node);
@@ -56,10 +56,10 @@ protected:
 private:
 	void setupActors();
 	void updateActorSettings();
-		void createRangeClippedPolyData();
+	void createRangeClippedPolyData();
 	void createValueClippedPolyData();
 	void setDefaultValues();
-		void setupPointSetting();
+	void setupPointSetting();
 	void setupIsolineSetting();
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
@@ -86,9 +86,9 @@ private:
 	vtkLODActor* m_fringeActor;
 	vtkPolyDataMapper* m_fringeMapper;
 	vtkActor* m_pointsActor;
-		vtkPolyDataMapper* m_pointsMapper;
-		vtkActor* m_blackPointsActor;
-		vtkPolyDataMapper* m_blackPointsMapper;
+	vtkPolyDataMapper* m_pointsMapper;
+	vtkActor* m_blackPointsActor;
+	vtkPolyDataMapper* m_blackPointsMapper;
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
 	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;

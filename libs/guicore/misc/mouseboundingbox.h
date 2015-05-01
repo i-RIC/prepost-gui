@@ -24,9 +24,9 @@ public:
 	void disable();
 	void setZDepth(double z);
 	bool isInsideBox(double x, double y);
-	vtkUnstructuredGrid* vtkGrid(){return m_lineGrid;}
-	vtkUnstructuredGrid* vtkRegionGrid(){return m_regionGrid;}
-	vtkPolygon* getPolygon(){return m_polygon;}
+	vtkUnstructuredGrid* vtkGrid() {return m_lineGrid;}
+	vtkUnstructuredGrid* vtkRegionGrid() {return m_regionGrid;}
+	vtkPolygon* getPolygon() {return m_polygon;}
 protected:
 	vtkSmartPointer<vtkPolygon> m_polygon;
 	vtkSmartPointer<vtkUnstructuredGrid> m_lineGrid;

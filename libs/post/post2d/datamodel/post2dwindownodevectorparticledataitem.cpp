@@ -23,7 +23,7 @@ Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(c
 	m_standardItemCopy = m_standardItem->clone();
 
 	connect(this, SIGNAL(changed(Post2dWindowNodeVectorParticleDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*)));
 }
 
 void Post2dWindowNodeVectorParticleDataItem::handleStandardItemChange()
@@ -32,7 +32,7 @@ void Post2dWindowNodeVectorParticleDataItem::handleStandardItemChange()
 	setModified();
 }
 
-void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
@@ -52,7 +52,7 @@ void Post2dWindowNodeVectorParticleDataItem::mouseReleaseEvent(QMouseEvent* even
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->fixNodeAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu *menu)
+void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);

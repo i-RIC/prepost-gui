@@ -9,14 +9,16 @@ class PreProcessorRawDataTopDataItemInterface;
 class PreProcessorRawDataGroupDataItemInterface;
 class SolverDefinitionGridRelatedCondition;
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorScalarBarLegendBoxSettingDialog;
 }
 
-class PreProcessorScalarBarLegendBoxSettingDialog : public QDialog {
+class PreProcessorScalarBarLegendBoxSettingDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	PreProcessorScalarBarLegendBoxSettingDialog(QWidget *parent = nullptr);
+	PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent = nullptr);
 	~PreProcessorScalarBarLegendBoxSettingDialog();
 
 	void setupComboBox(PreProcessorRawDataTopDataItemInterface* item);
@@ -39,7 +41,7 @@ private:
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 
-	Ui::PreProcessorScalarBarLegendBoxSettingDialog *ui;
+	Ui::PreProcessorScalarBarLegendBoxSettingDialog* ui;
 };
 
 #endif // PREPROCESSORSCALARBARLEGENDBOXSETTINGDIALOG_H

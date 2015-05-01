@@ -13,7 +13,7 @@ class QWidget;
 class GridExporterInterface
 {
 public:
-	virtual ~GridExporterInterface(){}
+	virtual ~GridExporterInterface() {}
 	virtual QString caption() const = 0;
 	/// Can be used for exporting the specified grid type.
 	virtual bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) = 0;

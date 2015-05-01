@@ -5,10 +5,11 @@
 #include <misc/timeformat.h>
 #include <QColor>
 
-class POSTBASEDLL_EXPORT PostTimeSetting {
+class POSTBASEDLL_EXPORT PostTimeSetting
+{
 public:
 	/// Constructor
-	PostTimeSetting(){
+	PostTimeSetting() {
 		timeFormat = TimeFormat::fmSecond;
 		color = Qt::black;
 	}

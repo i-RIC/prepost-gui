@@ -5,14 +5,16 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorScalarBarEditDialog;
 }
 
-class PreProcessorScalarBarEditDialog : public QDialog {
+class PreProcessorScalarBarEditDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	PreProcessorScalarBarEditDialog(QWidget *parent = nullptr);
+	PreProcessorScalarBarEditDialog(QWidget* parent = nullptr);
 	~PreProcessorScalarBarEditDialog();
 
 	void setScalarBarTitle(const QString& title);
@@ -41,7 +43,7 @@ public:
 
 	void hideDisplayCheckBox();
 private:
-	Ui::PreProcessorScalarBarEditDialog *ui;
+	Ui::PreProcessorScalarBarEditDialog* ui;
 };
 
 #endif // PREPROCESSORSCALARBAREDITDIALOG_H

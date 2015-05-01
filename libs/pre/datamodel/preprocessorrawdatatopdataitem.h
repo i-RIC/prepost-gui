@@ -25,7 +25,7 @@ public:
 	PreProcessorRawDataTopDataItem(PreProcessorDataItem* parent);
 	/// Destructor
 	~PreProcessorRawDataTopDataItem();
-	SolverDefinitionGridType* gridType(){
+	SolverDefinitionGridType* gridType() {
 		return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
 	}
 	const QList<PreProcessorRawDataGroupDataItemInterface*> groupDataItems() const;
@@ -36,7 +36,7 @@ public:
 	void updateActorSettings();
 	void updateLegendBoxItems();
 	QStringList getRawDatasNotMapped();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
 	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);

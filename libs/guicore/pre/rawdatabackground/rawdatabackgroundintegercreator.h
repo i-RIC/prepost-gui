@@ -8,13 +8,12 @@ class RawDataBackgroundIntegerCreator : public RawDataBackgroundCreatorT<int, vt
 {
 private:
 	RawDataBackgroundIntegerCreator()
-		: RawDataBackgroundCreatorT<int, vtkIntArray>()
-	{
+		: RawDataBackgroundCreatorT<int, vtkIntArray>() {
 		m_typeName = "integerBackground";
 	}
 public:
-	static RawDataBackgroundIntegerCreator* instance(){
-		if (! m_instance){
+	static RawDataBackgroundIntegerCreator* instance() {
+		if (! m_instance) {
 			m_instance = new RawDataBackgroundIntegerCreator();
 		}
 		return m_instance;

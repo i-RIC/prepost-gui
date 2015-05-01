@@ -12,12 +12,12 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowStreamlineUnstructuredSettingDialog::Post2dWindowStreamlineUnstructuredSettingDialog(QWidget *parent) :
-    QDialog(parent),
+Post2dWindowStreamlineUnstructuredSettingDialog::Post2dWindowStreamlineUnstructuredSettingDialog(QWidget* parent) :
+	QDialog(parent),
 	ui(new Ui::Post2dWindowStreamlineUnstructuredSettingDialog)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	connect(ui->startPositionListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activeDataChanged(int)));
 	connect(ui->point1XEdit, SIGNAL(textChanged(QString)), this, SLOT(pointsEdited()));
@@ -39,7 +39,7 @@ Post2dWindowStreamlineUnstructuredSettingDialog::Post2dWindowStreamlineUnstructu
 
 Post2dWindowStreamlineUnstructuredSettingDialog::~Post2dWindowStreamlineUnstructuredSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -50,7 +50,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setZoneData(PostZoneDataCo
 void Post2dWindowStreamlineUnstructuredSettingDialog::setSolution(const QString& sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
@@ -62,7 +62,7 @@ const QString Post2dWindowStreamlineUnstructuredSettingDialog::solution()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::informButtonDown(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked()){
+	if (ui->pointsMouseRadioButton->isChecked()) {
 		ui->point1XEdit->setValue(p.x());
 		ui->point1YEdit->setValue(p.y());
 		ui->point2XEdit->setValue(p.x());
@@ -74,7 +74,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::informButtonDown(const QVe
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::informButtonUp(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked()){
+	if (ui->pointsMouseRadioButton->isChecked()) {
 		ui->point2XEdit->setValue(p.x());
 		ui->point2YEdit->setValue(p.y());
 	}
@@ -84,7 +84,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::informButtonUp(const QVect
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::updateMousePosition(const QVector2D& p)
 {
-	if (ui->pointsMouseRadioButton->isChecked() && m_pressed){
+	if (ui->pointsMouseRadioButton->isChecked() && m_pressed) {
 		ui->point2XEdit->setValue(p.x());
 		ui->point2YEdit->setValue(p.y());
 		apply();
@@ -95,8 +95,7 @@ class Post2dWindowStreamlineUnstructuredSetProperty : public QUndoCommand
 {
 public:
 	Post2dWindowStreamlineUnstructuredSetProperty(const QString& sol, const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Streamline Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Streamline Setting")) {
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newSettings = settings;
@@ -109,8 +108,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 
 		m_item->setEnabled(m_oldEnabled);
@@ -121,8 +119,7 @@ public:
 		m_item->informGridUpdate();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 
 		m_item->setEnabled(m_newEnabled);
@@ -163,7 +160,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::reject()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::activeDataChanged(int index)
 {
-	if (index == -1 || index >= m_settings.count()){
+	if (index == -1 || index >= m_settings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
@@ -173,12 +170,12 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::activeDataChanged(int inde
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::pointsEdited()
 {
-	if (m_applying){return;}
-	if (ui->point1XEdit->text() == ""){return;}
-	if (ui->point1YEdit->text() == ""){return;}
-	if (ui->point2XEdit->text() == ""){return;}
-	if (ui->point2YEdit->text() == ""){return;}
-	if (m_activeSetting == nullptr){return;}
+	if (m_applying) {return;}
+	if (ui->point1XEdit->text() == "") {return;}
+	if (ui->point1YEdit->text() == "") {return;}
+	if (ui->point2XEdit->text() == "") {return;}
+	if (ui->point2YEdit->text() == "") {return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->point1 = QVector2D(ui->point1XEdit->value(), ui->point1YEdit->value());
 	m_activeSetting->point2 = QVector2D(ui->point2XEdit->value(), ui->point2YEdit->value());
 
@@ -187,32 +184,32 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::pointsEdited()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::handleButtonPress(QAbstractButton* button)
 {
-	if (button == ui->buttonBox->button(QDialogButtonBox::Apply)){
+	if (button == ui->buttonBox->button(QDialogButtonBox::Apply)) {
 		apply();
 	}
 }
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::numPointsChanged(int num)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->numberOfPoints = num;
 }
 
-void Post2dWindowStreamlineUnstructuredSettingDialog::colorChanged(const QColor &color)
+void Post2dWindowStreamlineUnstructuredSettingDialog::colorChanged(const QColor& color)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->color = color;
 }
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::widthChanged(int width)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->width = width;
 }
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::addData()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	Post2dWindowUnstructuredStreamlineSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -228,10 +225,10 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != nullptr){delete item;}
+	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
-	if (current >= m_settings.count()){current = m_settings.count() - 1;}
+	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_settings[current]);
 	applySettings();
@@ -241,18 +238,19 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::removeData()
 void Post2dWindowStreamlineUnstructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable){
+	if (! m_activeAvailable) {
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
 	dialog.setRegionMode(m_regionMode);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_regionMode = dialog.regionMode();
 }
 
-void Post2dWindowStreamlineUnstructuredSettingDialog::apply(){
+void Post2dWindowStreamlineUnstructuredSettingDialog::apply()
+{
 	QVector2D v1(ui->point1XEdit->value(), ui->point1YEdit->value());
 	QVector2D v2(ui->point2XEdit->value(), ui->point2YEdit->value());
 	m_dataItem->setSetting(v1, v2, ui->numPointsSpinBox->value());
@@ -264,11 +262,11 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 	SolverDefinitionGridType* gt = zoneData->gridType();
 	int num = pd->GetNumberOfArrays();
 	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkDataArray* da = pd->GetArray(i);
-		if (da == nullptr){continue;}
+		if (da == nullptr) {continue;}
 		QString name = da->GetName();
-		if (da->GetNumberOfComponents() <= 1){
+		if (da->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;
 		}
@@ -276,7 +274,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 		m_solutions.append(name);
 	}
 	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1){
+	if (m_solutions.count() <= 1) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}
@@ -284,7 +282,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -294,10 +292,10 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSettingList()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_applying = true;
 	ui->pointsMouseRadioButton->setChecked(true);
-	if (m_activeSetting->pointsSet){
+	if (m_activeSetting->pointsSet) {
 		ui->point1XEdit->setValue(m_activeSetting->point1.x());
 		ui->point1YEdit->setValue(m_activeSetting->point1.y());
 		ui->point2XEdit->setValue(m_activeSetting->point2.x());

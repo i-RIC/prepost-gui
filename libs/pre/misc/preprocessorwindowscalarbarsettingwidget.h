@@ -7,11 +7,13 @@
 
 class QButtonGroup;
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorWindowScalarBarSettingWidget;
 }
 
-class PreProcessorWindowScalarBarSettingWidget : public QWidget {
+class PreProcessorWindowScalarBarSettingWidget : public QWidget
+{
 	Q_OBJECT
 public:
 	struct Setting {
@@ -26,7 +28,7 @@ public:
 		double positionY;
 	};
 
-	PreProcessorWindowScalarBarSettingWidget(QWidget *parent = nullptr);
+	PreProcessorWindowScalarBarSettingWidget(QWidget* parent = nullptr);
 	~PreProcessorWindowScalarBarSettingWidget();
 
 	void setVisibility(bool visible);
@@ -67,7 +69,7 @@ private:
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 
-	Ui::PreProcessorWindowScalarBarSettingWidget *ui;
+	Ui::PreProcessorWindowScalarBarSettingWidget* ui;
 	QButtonGroup* m_orientationGroup;
 	QButtonGroup* m_titleGroup;
 };

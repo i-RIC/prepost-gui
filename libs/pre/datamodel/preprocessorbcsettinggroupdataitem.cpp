@@ -57,7 +57,7 @@ void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNod
 
 void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		writer.writeStartElement("BoundaryConditionSetting");
 		m_childItems[i]->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -66,7 +66,7 @@ void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 
 void PreProcessorBCSettingGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	for (int i = 0; i < m_addActions.count(); ++i){
+	for (int i = 0; i < m_addActions.count(); ++i) {
 		menu->addAction(m_addActions[i]);
 	}
 }
@@ -79,31 +79,31 @@ void PreProcessorBCSettingGroupDataItem::updateZDepthRangeItemCount()
 void PreProcessorBCSettingGroupDataItem::updateItems()
 {
 	PreProcessorGridAndGridCreatingConditionDataItem* gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (gagItem->gridDataItem());
+	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
 	PreProcessorBCGroupDataItem* bcgitem = gItem->bcGroupDataItem();
-	if (bcgitem == nullptr){return;}
+	if (bcgitem == nullptr) {return;}
 
 	m_itemMap.clear();
 	int rows = m_standardItem->rowCount();
-	for (int i = rows - 1; i >= 0; --i){
+	for (int i = rows - 1; i >= 0; --i) {
 		m_standardItem->takeRow(i);
 	}
 	// setup current children set as tmpItemSet.
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> tmpItemMap;
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
 		tmpItemMap.insert(item->bcDataItem(), item);
 	}
 	m_childItems.clear();
 	const QList<GraphicsWindowDataItem*>& children = bcgitem->childItems();
-	for (auto it = children.begin(); it != children.end(); ++it){
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*> (*it);
+	for (auto it = children.begin(); it != children.end(); ++it) {
+		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
-		if (bcsItem == nullptr){
+		if (bcsItem == nullptr) {
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
 		} else {
-			if (! bcsItem->bcDataItem()->hideSetting()){
+			if (! bcsItem->bcDataItem()->hideSetting()) {
 				m_standardItem->appendRow(bcsItem->standardItem());
 			}
 			tmpItemMap.remove(bcItem);
@@ -112,7 +112,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		m_itemMap.insert(bcItem, bcsItem);
 	}
 	// needless items removed.
-	for (auto mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit){
+	for (auto mit = tmpItemMap.begin(); mit != tmpItemMap.end(); ++mit) {
 		delete mit.value();
 	}
 	updateItemMap();
@@ -121,8 +121,8 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 
 void PreProcessorBCSettingGroupDataItem::loadItems()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
 		item->loadData();
 	}
 }
@@ -131,7 +131,7 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 {
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	SolverDefinitionGridType* gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().count(); ++i){
+	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
 		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);
 		QString str(tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
@@ -144,13 +144,13 @@ void PreProcessorBCSettingGroupDataItem::addCondition()
 {
 	QAction* a = dynamic_cast<QAction*>(sender());
 	int index = 0;
-	for (index = 0; index < m_addActions.count(); ++index){
-		if (m_addActions[index] == a){break;}
+	for (index = 0; index < m_addActions.count(); ++index) {
+		if (m_addActions[index] == a) {break;}
 	}
-	if (index >= m_addActions.count()){return;}
+	if (index >= m_addActions.count()) {return;}
 
-	PreProcessorGridAndGridCreatingConditionDataItem* item = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*> (item->gridDataItem());
+	PreProcessorGridAndGridCreatingConditionDataItem* item = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->gridDataItem());
 	PreProcessorBCDataItem* bcItem = gItem->bcGroupDataItem()->addCondition(index);
 	PreProcessorBCSettingDataItem* bcsItem = m_itemMap.value(bcItem);
 
@@ -164,16 +164,16 @@ void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
-	if (grid == nullptr && ! noDraw){
+	if (grid == nullptr && ! noDraw) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		return;
 	}
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*> (*it);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
 		item->executeMapping(true, 0);
 	}
-	if (! noDraw){
+	if (! noDraw) {
 		renderGraphicsView();
 	}
 }

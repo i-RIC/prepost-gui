@@ -1,11 +1,11 @@
 #include "preferencepagegridcheck.h"
 #include "ui_preferencepagegridcheck.h"
 
-PreferencePageGridCheck::PreferencePageGridCheck(QWidget *parent) :
-    PreferencePage(parent),
-    ui(new Ui::PreferencePageGridCheck)
+PreferencePageGridCheck::PreferencePageGridCheck(QWidget* parent) :
+	PreferencePage(parent),
+	ui(new Ui::PreferencePageGridCheck)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	m_settings.beginGroup("gridcheck");
 
 	ui->beforeExecCheckBox->setChecked(m_settings.value("beforeexec", true).value<bool>());
@@ -26,7 +26,7 @@ PreferencePageGridCheck::PreferencePageGridCheck(QWidget *parent) :
 
 PreferencePageGridCheck::~PreferencePageGridCheck()
 {
-    delete ui;
+	delete ui;
 }
 
 void PreferencePageGridCheck::update()

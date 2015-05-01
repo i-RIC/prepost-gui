@@ -14,7 +14,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetRealOption : public CgnsFile
 
 public:
 	CgnsFileInputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerReal* cont);
-	void setDisabled(bool disable){
+	void setDisabled(bool disable) {
 		m_comboBox->setDisabled(disable);
 	}
 

@@ -21,7 +21,7 @@
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent)
 	: PreProcessorRawdataDataItemInterface(item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
-	if (item->hideSetting()){
+	if (item->hideSetting()) {
 		QStandardItem* p = m_standardItem->parent();
 		p->removeRow(m_standardItem->row());
 		m_standardItem = nullptr;
@@ -51,7 +51,7 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 	m_rightClickingMenu->addAction(m_polygon->m_holeModeAction);
 	m_rightClickingMenu->addAction(m_polygon->m_deleteAction);
 
-	PreProcessorBCSettingGroupDataItem* gditem = dynamic_cast<PreProcessorBCSettingGroupDataItem*> (parent);
+	PreProcessorBCSettingGroupDataItem* gditem = dynamic_cast<PreProcessorBCSettingGroupDataItem*>(parent);
 	connect(item, SIGNAL(itemUpdated()), this, SLOT(updateItem()));
 	connect(item, SIGNAL(destroyed()), gditem, SLOT(updateItems()));
 	connect(m_editAction, SIGNAL(triggered()), item, SLOT(showDialog()));
@@ -97,7 +97,7 @@ void PreProcessorBCSettingDataItem::handleStandardItemChange()
 
 void PreProcessorBCSettingDataItem::informSelection(VTKGraphicsView* v)
 {
-	if (m_polygon->m_selectedPolygon == nullptr){
+	if (m_polygon->m_selectedPolygon == nullptr) {
 		m_polygon->m_selectMode = RawDataPolygon::smPolygon;
 		m_polygon->m_selectedPolygon = m_polygon->m_gridRegionPolygon;
 	}
@@ -116,10 +116,10 @@ void PreProcessorBCSettingDataItem::viewOperationEnded(VTKGraphicsView* v)
 
 void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
 {
-	if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining){
-		if (m_polygon->selectMode() == RawDataPolygon::smPolygon){
+	if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining) {
+		if (m_polygon->selectMode() == RawDataPolygon::smPolygon) {
 			m_polygon->definePolygon(true, true);
-			if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon){
+			if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
 				m_bcDataItem->showDialog();
 			}
 		}
@@ -139,7 +139,7 @@ void PreProcessorBCSettingDataItem::mousePressEvent(QMouseEvent* event, VTKGraph
 
 void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (isNear(m_dragStartPoint, QPoint(event->x(), event->y())) && event->button() == Qt::RightButton){
+	if (isNear(m_dragStartPoint, QPoint(event->x(), event->y())) && event->button() == Qt::RightButton) {
 		m_rightClickingMenu->move(event->globalPos());
 		m_rightClickingMenu->show();
 	} else {
@@ -147,13 +147,13 @@ void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 	}
 }
 
-void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent *event, VTKGraphicsView* /*v*/)
+void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
-	if (event->key() == Qt::Key_Return){
-		if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining){
-			if (m_polygon->selectMode() == RawDataPolygon::smPolygon){
+	if (event->key() == Qt::Key_Return) {
+		if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining) {
+			if (m_polygon->selectMode() == RawDataPolygon::smPolygon) {
 				m_polygon->definePolygon(false, true);
-				if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon){
+				if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
 					m_bcDataItem->showDialog();
 				}
 			}
@@ -161,7 +161,7 @@ void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent *event, VTKGraphicsV
 	}
 }
 
-void PreProcessorBCSettingDataItem::keyReleaseEvent(QKeyEvent *event, VTKGraphicsView *v)
+void PreProcessorBCSettingDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	m_polygon->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
@@ -177,7 +177,7 @@ void PreProcessorBCSettingDataItem::assignActionZValues(const ZDepthRange& range
 }
 void PreProcessorBCSettingDataItem::updateItem()
 {
-	if (! m_bcDataItem->hideSetting()){
+	if (! m_bcDataItem->hideSetting()) {
 		m_standardItem->setText(m_bcDataItem->standardItem()->text());
 	}
 	m_polygon->m_opacityPercent = m_bcDataItem->opacityPercent();
@@ -186,7 +186,7 @@ void PreProcessorBCSettingDataItem::updateItem()
 
 void PreProcessorBCSettingDataItem::loadExternalData(const QString& filename)
 {
-	if (! QFile::exists(filename)){return;}
+	if (! QFile::exists(filename)) {return;}
 	m_polygon->loadExternalData(filename);
 	updateItem();
 }
@@ -201,19 +201,19 @@ void PreProcessorBCSettingDataItem::updateFilename()
 	m_filename = QString("%1%2.dat").arg(m_bcDataItem->condition()->name()).arg(m_bcDataItem->projectNumber());
 }
 
-void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dialog)
+void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dialog)
 {
 	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent()->parent());
 	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
-	if (grid == nullptr && ! noDraw){
+	if (grid == nullptr && ! noDraw) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
-		if (dialog != nullptr){
+		if (dialog != nullptr) {
 			dialog->setProgress(dialog->progress() + 1);
 		}
 		return;
 	}
-	if (m_bcDataItem->hideSetting()){
+	if (m_bcDataItem->hideSetting()) {
 		// when this is hidden, mapping is not executed.
 		return;
 	}
@@ -225,14 +225,13 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dial
 
 	QSet<vtkIdType> vertices;
 
-	for (vtkIdType vid = 0; vid != pset->GetNumberOfPoints(); ++vid){
+	for (vtkIdType vid = 0; vid != pset->GetNumberOfPoints(); ++vid) {
 		double p[3];
 		pset->GetPoint(vid, p);
 		if (p[0] < bounds[0] ||
 				p[0] > bounds[1] ||
 				p[1] < bounds[2] ||
-				p[1] > bounds[3])
-		{
+				p[1] > bounds[3]) {
 			// this point is not selected.
 			continue;
 		}
@@ -242,9 +241,9 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dial
 		int subid;
 		cellid = polygonGrid->FindCell(p, 0, 0, 1e-4, subid, pcoords, weights);
 		bool in = (cellid >= 0);
-		if (! in){
+		if (! in) {
 			// not found. but if the grid is ugly, sometimes FindCell is not reliable.
-			for (cellid = 0; ! in && cellid < polygonGrid->GetNumberOfCells(); ++cellid){
+			for (cellid = 0; ! in && cellid < polygonGrid->GetNumberOfCells(); ++cellid) {
 				vtkCell* tmpcell = polygonGrid->GetCell(cellid);
 				double dist2;
 				double closestPoint[3];
@@ -252,12 +251,12 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dial
 				in = (ret == 1);
 			}
 		}
-		if (in){
+		if (in) {
 			vertices.insert(vid);
 		}
 	}
 	m_bcDataItem->assignIndices(vertices);
-	if (! noDraw){
+	if (! noDraw) {
 		renderGraphicsView();
 	}
 	m_polygon->setMapped();
@@ -266,7 +265,7 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog *dial
 void PreProcessorBCSettingDataItem::loadData()
 {
 	ProjectDataItem::loadExternalData();
-	if (m_bcDataItem->mapped()){
+	if (m_bcDataItem->mapped()) {
 		m_polygon->setMapped();
 	}
 }

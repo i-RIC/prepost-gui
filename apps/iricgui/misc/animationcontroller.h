@@ -20,26 +20,28 @@ class QTimer;
 class AnimationController : public AnimationControllerInterface
 {
 	Q_OBJECT
+
 private:
 	enum RunMode {
 		NotRunning,
 		Running,
 		SlowRunning
 	};
+
 public:
 	const static int SLIDERWIDTH_MAX = 100;
 	/// constructor
 	AnimationController(QWidget* parent);
 	/// Current setting of followLastStep.
-	bool followLastStep(){return m_followLastStep;}
+	bool followLastStep() {return m_followLastStep;}
 	/// Returns the index of current step
-	unsigned int currentStepIndex(){return m_currentStepIndex;}
+	unsigned int currentStepIndex() {return m_currentStepIndex;}
 	/// Returns the label of current index
-	const QString& currentStep(){return m_stepList[m_currentStepIndex];}
+	const QString& currentStep() {return m_stepList[m_currentStepIndex];}
 	/// Animation menu
-	QMenu* animationMenu(){return m_animationMenu;}
+	QMenu* animationMenu() {return m_animationMenu;}
 	/// Animation toolbar
-	QToolBar* animationToolBar(){return m_animationToolBar;}
+	QToolBar* animationToolBar() {return m_animationToolBar;}
 	/// Setup menus, toolbar for the specified iteration type.
 	void setup(SolverDefinition::IterationType iType);
 	/// Setup animation menu.
@@ -49,7 +51,8 @@ public:
 	/// Clear Steps data.
 	void clearSteps();
 	/// Returns the step list.
-	const QList<QString>& stepList(){return m_stepList;}
+	const QList<QString>& stepList() {return m_stepList;}
+
 public slots:
 	/// Step to next step
 	void stepForward();
@@ -75,13 +78,16 @@ public slots:
 	void updateStepList(const QList<QString>& steps);
 	void setCurrentStepIndex(unsigned int i);
 	void handleRenderingEnded();
+
 private slots:
 	void handleSliderMove(int val);
 	void handleSliderRelease();
 	void handleSlideValueChange(int val);
 	void handleTimerTimeout();
+
 signals:
 	void indexChanged(unsigned int index);
+
 private:
 	void setupConnections();
 	void disableSteppingActions(bool disable = true);
@@ -90,6 +96,7 @@ private:
 	/// Update the time (or iteration) step label.
 	void updateStepLabel(const QString& label);
 	bool m_followLastStep;
+
 public:
 	/// Menu that has actions related to animation control
 	class AnimationActions : public QObject
@@ -106,6 +113,7 @@ public:
 		QAction* actionEditSpeed;
 		QAction* actionToggleFollowLastStep;
 	};
+
 private:
 	AnimationActions* m_animationActions;
 	QMenu* m_animationMenu;

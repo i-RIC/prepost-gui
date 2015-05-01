@@ -3,7 +3,8 @@
 #include <QByteArray>
 #include <QCryptographicHash>
 
-namespace iRIC {
+namespace iRIC
+{
 	int generateCommandId(const QString& commandName)
 	{
 		QByteArray data = QCryptographicHash::hash(commandName.toLatin1(), QCryptographicHash::Md5);

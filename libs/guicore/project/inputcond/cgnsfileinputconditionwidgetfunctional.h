@@ -17,7 +17,7 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFunctional : public CgnsFile
 public:
 	CgnsFileInputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerFunctional* cont);
 	~CgnsFileInputConditionWidgetFunctional();
-	void setDisabled(bool /*disable*/){}
+	void setDisabled(bool /*disable*/) {}
 
 private:
 	CgnsFileInputConditionContainerFunctional* m_container;

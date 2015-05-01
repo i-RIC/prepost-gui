@@ -14,8 +14,8 @@ public:
 signals:
 	void changed(MeasuredDataPointDataItem*);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&){}
-	void doSaveToProjectMainFile(QXmlStreamWriter&){}
+	void doLoadFromProjectMainFile(const QDomNode&) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
 private:
 	QString m_name;
 };

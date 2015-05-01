@@ -15,16 +15,16 @@ public:
 	/// Constructor
 	GridDisplaySetting();
 	ShapeMode shapeMode() const {return m_shapeMode;}
-	void setShapeLineStyle(const LineStyleInformation& ls){m_shapeLineStyle = ls;}
+	void setShapeLineStyle(const LineStyleInformation& ls) {m_shapeLineStyle = ls;}
 	const LineStyleInformation& shapeLineStyle() const {return m_shapeLineStyle;}
-	void setShapePointStyle(const PointStyleInformation& ps){m_shapePointStyle = ps;}
+	void setShapePointStyle(const PointStyleInformation& ps) {m_shapePointStyle = ps;}
 	const PointStyleInformation& shapePointStyle() const {m_shapePointStyle;}
 	bool showNodeValue() const {return m_showNodeValue;}
 	const QString& shownNodeValueName();
-	void setShownNodeValueName(const QString& n){m_shownNodeValueName = n;}
+	void setShownNodeValueName(const QString& n) {m_shownNodeValueName = n;}
 	bool showCellValue() const {return m_showCellValue;}
 	const QString& shownCellValueName();
-	void setShownCellValueName(const QString& n){m_shownCellValueName = n;}
+	void setShownCellValueName(const QString& n) {m_shownCellValueName = n;}
 
 private:
 	ShapeMode m_shapeMode;

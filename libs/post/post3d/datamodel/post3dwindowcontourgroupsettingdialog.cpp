@@ -7,7 +7,7 @@
 
 #include <vtkPointData.h>
 
-Post3dWindowContourGroupSettingDialog::Post3dWindowContourGroupSettingDialog(QWidget *parent) :
+Post3dWindowContourGroupSettingDialog::Post3dWindowContourGroupSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::Post3dWindowContourGroupSettingDialog)
 {
@@ -43,10 +43,10 @@ void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* z
 	ui->physicalValueComboBox->clear();
 	m_solutions.clear();
 	ui->physicalValueComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkDataArray* a = pd->GetArray(i);
-		if (a == nullptr){continue;}
-		if (a->GetNumberOfComponents() != 1){continue;}
+		if (a == nullptr) {continue;}
+		if (a->GetNumberOfComponents() != 1) {continue;}
 		QString name = a->GetName();
 		ui->physicalValueComboBox->addItem(name);
 		m_solutions.append(name);
@@ -118,10 +118,10 @@ void Post3dWindowContourGroupSettingDialog::accept()
 void Post3dWindowContourGroupSettingDialog::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map)
 {
 	m_faceMap = map;
-	if (m_faceMap.size() < 1) return;
+	if (m_faceMap.size() < 1) { return; }
 
 	ui->faceSettingWidget->setEnabled(true);
-	for (auto it = m_faceMap.begin(); it != m_faceMap.end(); ++it){
+	for (auto it = m_faceMap.begin(); it != m_faceMap.end(); ++it) {
 		ui->faceListWidget->addItem(it.key());
 	}
 	ui->faceListWidget->setCurrentRow(0, QItemSelectionModel::SelectCurrent);
@@ -140,9 +140,9 @@ void Post3dWindowContourGroupSettingDialog::addFaceSetting()
 	int idx = 0;
 	bool ok = false;
 	QString label;
-	while (! ok){
+	while (! ok) {
 		label = QString(tr("Face%1")).arg(++idx, 3, 10, QChar('0'));
-		if (ui->faceListWidget->findItems(label, 0).size() == 0){
+		if (ui->faceListWidget->findItems(label, 0).size() == 0) {
 			ok = true;
 		}
 	}
@@ -171,22 +171,22 @@ void Post3dWindowContourGroupSettingDialog::removeFaceSetting()
 	m_isRemoving = true;
 
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
-	for (auto it = items.begin(); it != items.end(); ++it){
+	for (auto it = items.begin(); it != items.end(); ++it) {
 		QListWidgetItem* widgetItem = *it;
 		m_faceMap.remove(widgetItem->text());
 	}
 	qDeleteAll(items);
 
-	if (ui->faceListWidget->count() < 1){
+	if (ui->faceListWidget->count() < 1) {
 		ui->faceSettingWidget->setEnabled(false);
 	}
 
 	m_isRemoving = false;
 }
 
-void Post3dWindowContourGroupSettingDialog::switchFaceSetting(QListWidgetItem *current, QListWidgetItem * /*previous*/)
+void Post3dWindowContourGroupSettingDialog::switchFaceSetting(QListWidgetItem* current, QListWidgetItem* /*previous*/)
 {
-	if (current == nullptr) return;
+	if (current == nullptr) { return; }
 
 	QString currentLabel = current->text();
 	ui->faceSettingWidget->setSetting(m_faceMap.value(currentLabel));
@@ -198,7 +198,7 @@ void Post3dWindowContourGroupSettingDialog::checkSelectedNumber()
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
 	int num = items.size();
 
-	if (num < 2){
+	if (num < 2) {
 		ui->faceSettingWidget->setMultiSelected(false);
 		// temporary?
 		ui->faceSettingWidget->setEnabled(true);
@@ -234,7 +234,7 @@ bool Post3dWindowContourGroupSettingDialog::fillLower()
 	return ui->colormapWidget->fillLower();
 }
 
-void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<QString, QString> &titleMap)
+void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titleMap)
 {
 	m_colorBarTitleMap = titleMap;
 }
@@ -244,7 +244,7 @@ QString Post3dWindowContourGroupSettingDialog::scalarBarTitle()
 	return m_colorBarTitleMap[currentSolution()];
 }
 
-void Post3dWindowContourGroupSettingDialog::setScalarBarSetting(const ScalarBarSetting &setting)
+void Post3dWindowContourGroupSettingDialog::setScalarBarSetting(const ScalarBarSetting& setting)
 {
 	m_scalarBarSetting = setting;
 }
@@ -267,7 +267,7 @@ void Post3dWindowContourGroupSettingDialog::showColorBarDialog()
 	dialog.setTitleTextSetting(m_titleTextSetting);
 	dialog.setLabelTextSetting(m_labelTextSetting);
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_colorBarTitleMap[currentSolution()] = dialog.title();
 	m_scalarBarSetting = dialog.setting();
 	m_titleTextSetting = dialog.titleTextSetting();

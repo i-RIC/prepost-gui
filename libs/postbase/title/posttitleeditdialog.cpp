@@ -1,16 +1,16 @@
 #include "posttitleeditdialog.h"
 #include "ui_posttitleeditdialog.h"
 
-PostTitleEditDialog::PostTitleEditDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::PostTitleEditDialog)
+PostTitleEditDialog::PostTitleEditDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::PostTitleEditDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 PostTitleEditDialog::~PostTitleEditDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void PostTitleEditDialog::setEnabled(bool /*enabled*/)

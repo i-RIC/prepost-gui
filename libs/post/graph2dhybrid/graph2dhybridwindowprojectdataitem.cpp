@@ -54,12 +54,12 @@ void Graph2dHybridWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(m_window);
 
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
-	if (! modelNode.isNull()){
+	if (! modelNode.isNull()) {
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}
 	QDomNode widgetNode = iRIC::getChildNode(node, "Widget");
-	if (! widgetNode.isNull()){
+	if (! widgetNode.isNull()) {
 		w->controlWidget()->loadFromProjectMainFile(widgetNode);
 	}
 

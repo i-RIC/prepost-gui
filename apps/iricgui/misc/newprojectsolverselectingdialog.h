@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class NewProjectSolverSelectingDialog;
 }
 
@@ -15,7 +16,7 @@ class NewProjectSolverSelectingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget *parent = nullptr);
+	explicit NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
 	~NewProjectSolverSelectingDialog();
 	SolverDefinitionAbstract* selectedSolver();
 	void setSolver(const QString& folderName);
@@ -23,7 +24,7 @@ private slots:
 	void listDoubleClicked();
 private:
 	SolverDefinitionList* m_solverList;
-	Ui::NewProjectSolverSelectingDialog *ui;
+	Ui::NewProjectSolverSelectingDialog* ui;
 };
 
 #endif // NEWPROJECTSOLVERSELECTINGDIALOG_H

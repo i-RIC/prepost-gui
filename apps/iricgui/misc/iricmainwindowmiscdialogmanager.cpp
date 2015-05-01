@@ -49,7 +49,7 @@ void iRICMainWindowMiscDialogManager::aboutCurrentSolver()
 void iRICMainWindowMiscDialogManager::mouseHelp()
 {
 	static MouseHelpDialog* dialog = nullptr;
-	if (dialog == nullptr){
+	if (dialog == nullptr) {
 		dialog = new MouseHelpDialog(m_mainWindow);
 	}
 	dialog->show();

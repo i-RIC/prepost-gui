@@ -9,11 +9,10 @@ class CgnsGridExporter : public GridInternalExporter
 	Q_OBJECT
 public:
 	CgnsGridExporter();
-	virtual ~CgnsGridExporter(){}
+	virtual ~CgnsGridExporter() {}
 	virtual QString caption() const;
 	const QStringList fileDialogFilters();
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType /*gt*/)
-	{
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType /*gt*/) {
 		return true;
 	}
 	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent);

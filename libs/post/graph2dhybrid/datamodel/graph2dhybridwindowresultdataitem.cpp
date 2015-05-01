@@ -47,11 +47,11 @@ Graph2dHybridWindowResultDataItem::~Graph2dHybridWindowResultDataItem()
 
 void Graph2dHybridWindowResultDataItem::setVisible(bool visible)
 {
-	if (visible && ! m_attached){
+	if (visible && ! m_attached) {
 		m_attached = true;
 		m_curve->attach(dataModel()->view());
 	}
-	if (! visible && m_attached){
+	if (! visible && m_attached) {
 		m_attached = false;
 		m_curve->detach();
 	}
@@ -66,9 +66,9 @@ void Graph2dHybridWindowResultDataItem::update(int fn)
 
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowDataItem::buildData(
-				m_xValues, m_yValues, s, m_setting, xvals, yvals);
+		m_xValues, m_yValues, s, m_setting, xvals, yvals);
 
-	double *x, *y;
+	double* x, *y;
 	buildXY(xvals, yvals, &x, &y);
 
 	m_curve->setSamples(x, y, xvals.count());

@@ -42,24 +42,24 @@ void Graph2dHybridWindowImportDataDataItem::doLoadFromProjectMainFile(const QDom
 	m_name = elem.attribute("name");
 
 	QDomNode sNode = iRIC::getChildNode(node, "Setting");
-	if (! sNode.isNull()){
+	if (! sNode.isNull()) {
 		m_setting.loadFromProjectMainFile(sNode);
 	}
 	setSetting(m_setting);
 
 	QDomNode xNode = iRIC::getChildNode(node, "XValues");
-	if (! xNode.isNull()){
+	if (! xNode.isNull()) {
 		m_xValues.clear();
-		for (int i = 0; i < xNode.childNodes().count(); ++i){
+		for (int i = 0; i < xNode.childNodes().count(); ++i) {
 			QDomNode n = xNode.childNodes().at(i);
 			QString arg = n.toElement().text();
 			m_xValues.append(arg.toDouble());
 		}
 	}
 	QDomNode yNode = iRIC::getChildNode(node, "YValues");
-	if (! yNode.isNull()){
+	if (! yNode.isNull()) {
 		m_yValues.clear();
-		for (int i = 0; i < yNode.childNodes().count(); ++i){
+		for (int i = 0; i < yNode.childNodes().count(); ++i) {
 			QDomNode n = yNode.childNodes().at(i);
 			QString arg = n.toElement().text();
 			m_yValues.append(arg.toDouble());
@@ -80,14 +80,14 @@ void Graph2dHybridWindowImportDataDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	writer.writeEndElement();
 
 	writer.writeStartElement("XValues");
-	for (int i = 0; i < m_xValues.count(); ++i){
+	for (int i = 0; i < m_xValues.count(); ++i) {
 		double val = m_xValues.at(i);
 		writer.writeTextElement("Value", QString::number(val));
 	}
 	writer.writeEndElement();
 
 	writer.writeStartElement("YValues");
-	for (int i = 0; i < m_yValues.count(); ++i){
+	for (int i = 0; i < m_yValues.count(); ++i) {
 		double val = m_yValues.at(i);
 		writer.writeTextElement("Value", QString::number(val));
 	}
@@ -105,7 +105,8 @@ void Graph2dHybridWindowImportDataDataItem::setData(const QVector<double>& xvals
 	m_yValues = yvals;
 }
 
-void Graph2dHybridWindowImportDataDataItem::setTitle(const QString& title){
+void Graph2dHybridWindowImportDataDataItem::setTitle(const QString& title)
+{
 	m_standardItem->setText(title);
 	m_standardItemCopy = m_standardItem->clone();
 	m_curve->setTitle(title);
@@ -114,17 +115,17 @@ void Graph2dHybridWindowImportDataDataItem::setTitle(const QString& title){
 
 void Graph2dHybridWindowImportDataDataItem::setVisible(bool visible)
 {
-	if (visible && ! m_attached){
+	if (visible && ! m_attached) {
 		m_attached = true;
 		m_curve->attach(dataModel()->view());
 	}
-	if (! visible && m_attached){
+	if (! visible && m_attached) {
 		m_attached = false;
 		m_curve->detach();
 	}
 }
 
-void Graph2dHybridWindowImportDataDataItem::setSetting(const Graph2dHybridWindowResultSetting::Setting &s)
+void Graph2dHybridWindowImportDataDataItem::setSetting(const Graph2dHybridWindowResultSetting::Setting& s)
 {
 	m_setting = s;
 	m_setting.setupCurve(m_curve);
@@ -138,9 +139,9 @@ void Graph2dHybridWindowImportDataDataItem::update()
 
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowDataItem::buildData(
-				m_xValues, m_yValues, s, m_setting, xvals, yvals);
+		m_xValues, m_yValues, s, m_setting, xvals, yvals);
 
-	double *x, *y;
+	double* x, *y;
 	buildXY(xvals, yvals, &x, &y);
 
 	m_curve->setSamples(x, y, xvals.count());

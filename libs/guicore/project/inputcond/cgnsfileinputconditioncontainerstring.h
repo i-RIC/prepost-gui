@@ -11,36 +11,36 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionContainerString : public CgnsFileI
 	Q_OBJECT
 
 public:
-	CgnsFileInputConditionContainerString() : CgnsFileInputConditionContainer(){}
-	CgnsFileInputConditionContainerString(QString n, const QDomNode& defNode) : CgnsFileInputConditionContainer(n){
+	CgnsFileInputConditionContainerString() : CgnsFileInputConditionContainer() {}
+	CgnsFileInputConditionContainerString(QString n, const QDomNode& defNode) : CgnsFileInputConditionContainer(n) {
 		setup(defNode);
 	}
-	CgnsFileInputConditionContainerString(const CgnsFileInputConditionContainerString &i) : CgnsFileInputConditionContainer(i){
+	CgnsFileInputConditionContainerString(const CgnsFileInputConditionContainerString& i) : CgnsFileInputConditionContainer(i) {
 		copyValues(i);
 	}
-	CgnsFileInputConditionContainerString &operator=(const CgnsFileInputConditionContainerString &i){
+	CgnsFileInputConditionContainerString& operator=(const CgnsFileInputConditionContainerString& i) {
 		copyValues(i);
 		return *this;
 	}
-	void clear(){
+	void clear() {
 		m_value = m_default;
 		emit valueChanged(m_value);
 	}
 	int load();
 	int save();
-	virtual QVariant variantValue(){return QVariant(m_value);}
-	void setValue(const QString& v){
-		if (m_value != v){
+	virtual QVariant variantValue() {return QVariant(m_value);}
+	void setValue(const QString& v) {
+		if (m_value != v) {
 			m_value = v;
 			emit valueChanged(m_value);
 			emit valueChanged();
 		}
 	}
-	QString value(){return m_value;}
+	QString value() {return m_value;}
 
 protected:
 	void setup(const QDomNode& defNode);
-	void copyValues(const CgnsFileInputConditionContainerString& i){
+	void copyValues(const CgnsFileInputConditionContainerString& i) {
 		m_name = i.m_name;
 		m_value = i.m_value;
 		m_default = i.m_default;

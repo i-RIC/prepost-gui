@@ -17,16 +17,16 @@ class GUICOREDLL_EXPORT PostSolutionInfo : public ProjectDataItem
 {
 	Q_OBJECT
 public:
-	enum Dimension{dim1D, dim2D, dim3D};
-	enum ExportFormat{efVTK, efCSV};
+	enum Dimension {dim1D, dim2D, dim3D};
+	enum ExportFormat {efVTK, efCSV};
 	/// Constructor
 	PostSolutionInfo(ProjectDataItem* parent);
 	~PostSolutionInfo();
-	SolverDefinition::IterationType iterationType(){return m_iterationType;}
+	SolverDefinition::IterationType iterationType() {return m_iterationType;}
 	void setIterationType(SolverDefinition::IterationType type);
-	PostIterationSteps* iterationSteps(){return m_iterationSteps;}
-	PostTimeSteps* timeSteps(){return m_timeSteps;}
-	int currentStep(){return m_currentStep;}
+	PostIterationSteps* iterationSteps() {return m_iterationSteps;}
+	PostTimeSteps* timeSteps() {return m_timeSteps;}
+	int currentStep() {return m_currentStep;}
 	double currentTimeStep();
 	/// Returns true if the current CGNS file has results.
 	bool hasResults();
@@ -34,17 +34,17 @@ public:
 	void informCgnsSteps();
 	void loadFromCgnsFile(const int fn);
 	void closeCgnsFile();
-	const QList<PostZoneDataContainer*>& zoneContainers1D(){return m_zoneContainers1D;}
-	const QList<PostZoneDataContainer*>& zoneContainers2D(){return m_zoneContainers2D;}
-	const QList<PostZoneDataContainer*>& zoneContainers3D(){return m_zoneContainers3D;}
+	const QList<PostZoneDataContainer*>& zoneContainers1D() {return m_zoneContainers1D;}
+	const QList<PostZoneDataContainer*>& zoneContainers2D() {return m_zoneContainers2D;}
+	const QList<PostZoneDataContainer*>& zoneContainers3D() {return m_zoneContainers3D;}
 	const QList<PostZoneDataContainer*>& zoneContainers(Dimension dim);
-	PostZoneDataContainer* zoneContainer1D(const QString& zonename){
+	PostZoneDataContainer* zoneContainer1D(const QString& zonename) {
 		return m_zoneContainerNameMap1D.value(zonename, 0);
 	}
-	PostZoneDataContainer* zoneContainer2D(const QString& zonename){
+	PostZoneDataContainer* zoneContainer2D(const QString& zonename) {
 		return m_zoneContainerNameMap2D.value(zonename, 0);
 	}
-	PostZoneDataContainer* zoneContainer3D(const QString& zonename){
+	PostZoneDataContainer* zoneContainer3D(const QString& zonename) {
 		return m_zoneContainerNameMap3D.value(zonename, 0);
 	}
 	PostZoneDataContainer* zoneContainer(Dimension dim, const QString& zoneName);
@@ -57,25 +57,25 @@ public:
 	static Dimension fromIntDimension(int dim);
 	void close();
 
-	void setExportAllSteps(bool all){m_exportAllSteps = all;}
-	void setExportStartStep(int s){m_exportStartStep = s;}
-	void setExportEndStep(int e){m_exportEndStep = e;}
-	void setExportFolder(const QString& f){m_exportFolder = f;}
-	void setExportPrefix(QString prefix){m_exportPrefix = prefix;}
-	void setParticleExportPrefix(QString prefix){m_particleExportPrefix = prefix;}
-	void setExportSkipRate(int rate){m_exportSkipRate = rate;}
+	void setExportAllSteps(bool all) {m_exportAllSteps = all;}
+	void setExportStartStep(int s) {m_exportStartStep = s;}
+	void setExportEndStep(int e) {m_exportEndStep = e;}
+	void setExportFolder(const QString& f) {m_exportFolder = f;}
+	void setExportPrefix(QString prefix) {m_exportPrefix = prefix;}
+	void setParticleExportPrefix(QString prefix) {m_particleExportPrefix = prefix;}
+	void setExportSkipRate(int rate) {m_exportSkipRate = rate;}
 
-	bool exportAllSteps(){return m_exportAllSteps;}
-	int exportStartStep(){return m_exportStartStep;}
-	int exportEndStep(){return m_exportEndStep;}
-	QString exportFolder(){return m_exportFolder;}
-	QString exportPrefix(){return m_exportPrefix;}
-	QString particleExportPrefix(){return m_particleExportPrefix;}
-	int exportSkipRate(){return m_exportSkipRate;}
+	bool exportAllSteps() {return m_exportAllSteps;}
+	int exportStartStep() {return m_exportStartStep;}
+	int exportEndStep() {return m_exportEndStep;}
+	QString exportFolder() {return m_exportFolder;}
+	QString exportPrefix() {return m_exportPrefix;}
+	QString particleExportPrefix() {return m_particleExportPrefix;}
+	int exportSkipRate() {return m_exportSkipRate;}
 	/// File ID that can be used with cgnslib functions.
-	int fileId(){return m_fileId;}
+	int fileId() {return m_fileId;}
 protected:
-	void timerEvent(QTimerEvent *);
+	void timerEvent(QTimerEvent*);
 	bool innerSetupZoneDataContainers(int fn, int dimiension, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
 	bool innerSetupDummy3DZoneDataContainers(int fn, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
 	virtual void doLoadFromProjectMainFile(const QDomNode& node);

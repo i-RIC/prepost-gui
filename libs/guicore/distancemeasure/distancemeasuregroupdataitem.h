@@ -11,7 +11,7 @@ class GUICOREDLL_EXPORT DistanceMeasureGroupDataItem : public GraphicsWindowData
 
 public:
 	DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent);
-	void updateZDepthRangeItemCount(){m_zDepthRange.setItemCount(2);}
+	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
 	void addCustomMenuItems(QMenu* menu);
 
 public slots:

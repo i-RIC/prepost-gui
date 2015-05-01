@@ -9,7 +9,7 @@
 #include <QPushButton>
 #include <QUndoCommand>
 
-RawDataRiverPathPointShiftDialog::RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointShiftDialog::RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointShiftDialog)
 {
@@ -24,12 +24,12 @@ RawDataRiverPathPointShiftDialog::RawDataRiverPathPointShiftDialog(RawDataRiverS
 	bool isMaxSet = false;
 	RawDataRiverPathPoint* p = rs->headPoint();
 	p = p->nextPoint();
-	while (p != nullptr){
-		if (p->IsSelected){
-			if (! isMaxSet || p->crosssection().leftBank(true).position() > m_leftMax){
+	while (p != nullptr) {
+		if (p->IsSelected) {
+			if (! isMaxSet || p->crosssection().leftBank(true).position() > m_leftMax) {
 				m_leftMax = p->crosssection().leftBank(true).position();
 			}
-			if (! isMaxSet || p->crosssection().rightBank(true).position() < m_rightMax){
+			if (! isMaxSet || p->crosssection().rightBank(true).position() < m_rightMax) {
 				m_rightMax = p->crosssection().rightBank(true).position();
 			}
 			isMaxSet = true;
@@ -49,14 +49,13 @@ class RawDataRiverPathPointShiftCenterCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointShiftCenterCommand(bool apply, double offset, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Shift River Center Points"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Shift River Center Points")) {
 		m_apply = apply;
 
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_points.append(p);
 				m_oldPositions.append(p->position());
 				m_oldCrosssections.append(p->crosssection().AltitudeInfo());
@@ -68,14 +67,13 @@ public:
 		}
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->setPosition(m_oldPositions[i]);
 			m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
 		}
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->headPoint()->updateAllXSecInterpolators();
 			m_rs->headPoint()->updateRiverShapeInterpolators();
 			m_rs->updateShapeData();
@@ -83,10 +81,9 @@ public:
 			m_rs->updateCrossectionWindows();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->setPosition(m_newPositions[i]);
 			m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
 		}
@@ -109,7 +106,7 @@ private:
 
 void RawDataRiverPathPointShiftDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -119,7 +116,7 @@ void RawDataRiverPathPointShiftDialog::accept()
 
 void RawDataRiverPathPointShiftDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		customGraphicsUpdate();
@@ -130,7 +127,7 @@ void RawDataRiverPathPointShiftDialog::reject()
 void RawDataRiverPathPointShiftDialog::doReset()
 {
 	ui->shiftEdit->setValue(0);
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		customGraphicsUpdate();
@@ -140,7 +137,7 @@ void RawDataRiverPathPointShiftDialog::doReset()
 
 void RawDataRiverPathPointShiftDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -150,9 +147,9 @@ void RawDataRiverPathPointShiftDialog::apply()
 
 void RawDataRiverPathPointShiftDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	}else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }

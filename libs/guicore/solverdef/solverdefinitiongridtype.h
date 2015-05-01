@@ -24,12 +24,11 @@ public:
 		gtStructured2DGrid,
 		gtUnstructured2DGrid
 	};
-    /// constructor for dummy grid
-    SolverDefinitionGridType(const QString& name, const QString& caption);
-    /// constructor
+	/// constructor for dummy grid
+	SolverDefinitionGridType(const QString& name, const QString& caption);
+	/// constructor
 	SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary)
-		: SolverDefinitionNode(node, translator)
-	{
+		: SolverDefinitionNode(node, translator) {
 		load(node, translator);
 		m_isPrimary = isPrimary;
 	}
@@ -50,13 +49,13 @@ public:
 	GridType defaultGridType() const {return m_defaultGridType;}
 	const QString& name() const {return m_name;}
 	const QString& caption() const {return m_caption;}
-	void setCaption(const QString& caption){m_caption = caption;}
+	void setCaption(const QString& caption) {m_caption = caption;}
 	bool isPrimary() const {return m_isPrimary;}
 	bool multiple() const {return m_multiple;}
 	bool isOptional() const {return m_isOptional;}
 	void buildGridRelatedConditions(Grid* grid) const;
 	/// Returns a pointer to a grid that has no data.
-	Grid* emptyGrid(){return m_emptyGrid;}
+	Grid* emptyGrid() {return m_emptyGrid;}
 //	PreProcessorGridDataItem* createGridDataItem(PreProcessorDataItem* parent);
 	Grid* createEmptyGrid();
 	const QString solutionCaption(const QString& name);

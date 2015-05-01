@@ -2,7 +2,7 @@
 #include "ui_gridcreatingconditioncenterandwidthdialog.h"
 #include <QMessageBox>
 
-GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDialog(QWidget *parent) :
+GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionCenterAndWidthDialog)
 {
@@ -19,19 +19,23 @@ GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthD
 	delete ui;
 }
 
-int GridCreatingConditionCenterAndWidthDialog::iMax(){
+int GridCreatingConditionCenterAndWidthDialog::iMax()
+{
 	return ui->streamWiseSpinBox->value() + 1;
 }
 
-int GridCreatingConditionCenterAndWidthDialog::jMax(){
+int GridCreatingConditionCenterAndWidthDialog::jMax()
+{
 	return ui->crossStreamSpinBox->value() + 1;
 }
 
-double GridCreatingConditionCenterAndWidthDialog::width(){
+double GridCreatingConditionCenterAndWidthDialog::width()
+{
 	return ui->gridWidthSpinBox->value();
 }
 
-double GridCreatingConditionCenterAndWidthDialog::length(){
+double GridCreatingConditionCenterAndWidthDialog::length()
+{
 	return m_length;
 }
 
@@ -76,7 +80,7 @@ void GridCreatingConditionCenterAndWidthDialog::setStreamWiseNumber()
 
 void GridCreatingConditionCenterAndWidthDialog::setCrossStreamNumber()
 {
-	if (ui->crossStreamSpinBox->value() % 2 == 1){
+	if (ui->crossStreamSpinBox->value() % 2 == 1) {
 		QMessageBox::warning(this, tr("Warning"),
             tr("Division number in cross-stream direction should be even. incrementing by one."),
 			QMessageBox::Ok, QMessageBox::Ok);
@@ -94,7 +98,7 @@ void GridCreatingConditionCenterAndWidthDialog::apply()
 
 void GridCreatingConditionCenterAndWidthDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }

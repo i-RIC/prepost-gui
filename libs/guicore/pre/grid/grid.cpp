@@ -49,7 +49,7 @@ void Grid::initPointers()
 
 Grid::~Grid()
 {
-	if (m_vtkGrid != nullptr){
+	if (m_vtkGrid != nullptr) {
 		m_vtkGrid->Delete();
 	}
 }
@@ -66,23 +66,24 @@ int Grid::zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9])
 	// get the number of zones;
 	int nzones;
 	cg_nzones(fn, B, &nzones);
-	for (int zoneid = 1; zoneid <= nzones; ++zoneid){
+	for (int zoneid = 1; zoneid <= nzones; ++zoneid) {
 		cg_zone_read(fn, B, zoneid, zn, sizes);
-		if (zonename == zn){
+		if (zonename == zn) {
 			return zoneid;
 		}
 	}
 	return 0;
 }
 
-void Grid::loadFromCgnsFile(const int fn){
+void Grid::loadFromCgnsFile(const int fn)
+{
 	int B;
 	// goto Base.
 	cg_iRIC_GotoBase(fn, &B);
 
 	cgsize_t sizes[9];
 	int zoneid = zoneId(m_zoneName, fn, B, sizes);
-	if (zoneid == 0){
+	if (zoneid == 0) {
 		// Error. No corresponding zone found.
 		return;
 	}
@@ -94,7 +95,7 @@ void Grid::loadFromCgnsFile(const int fn){
 void Grid::saveToCgnsFile(const int fn)
 {
 	// if not modified, do nothing.
-	if (! m_isModified){return;}
+	if (! m_isModified) {return;}
 
 	int B;
 	// goto Base.
@@ -112,7 +113,7 @@ bool Grid::loadGridRelatedConditions(int fn, int B, int Z)
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
 	bool allok = true;
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
 		(*it)->allocate();
 		bool ret = (*it)->loadFromCgnsFile(fn, B, Z);
 		allok = allok && ret;
@@ -129,7 +130,7 @@ bool Grid::saveGridRelatedConditions(int fn, int B, int Z)
 	cg_user_data_write("GridConditions");
 
 	bool allok = true;
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it){
+	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
 		bool ret = (*it)->saveToCgnsFile(fn, B, Z);
 		allok = allok && ret;
 	}
@@ -139,7 +140,7 @@ bool Grid::saveGridRelatedConditions(int fn, int B, int Z)
 bool Grid::isCustomModified()
 {
 	bool modified = false;
-	for (int i = 0; i < m_gridRelatedConditions.count(); ++i){
+	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
 		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
 		modified = modified || c->isCustomModified();
 	}
@@ -147,7 +148,7 @@ bool Grid::isCustomModified()
 }
 void Grid::setCustomModified(bool modified)
 {
-	for (int i = 0; i < m_gridRelatedConditions.count(); ++i){
+	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
 		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
 		c->setCustomModified(modified);
 	}
@@ -172,10 +173,10 @@ void Grid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ym
 	vtkSmartPointer<vtkPolyData> clippedGrid = gfilter->GetOutput();
 
 	int ccounts = clippedGrid->GetNumberOfCells();
-	if (ccounts > MAX_DRAWCELLCOUNT){
+	if (ccounts > MAX_DRAWCELLCOUNT) {
 		vtkSmartPointer<vtkMaskPolyData> maskPoly = vtkSmartPointer<vtkMaskPolyData>::New();
 		int ratio = static_cast<int>(ccounts / MAX_DRAWCELLCOUNT);
-		if (ratio == 1){ratio = 2;}
+		if (ratio == 1) {ratio = 2;}
 		maskPoly->SetOnRatio(ratio);
 		maskPoly->SetInputConnection(gfilter->GetOutputPort());
 
@@ -190,10 +191,10 @@ void Grid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ym
 	}
 }
 
-void Grid::setParent(QObject *parent)
+void Grid::setParent(QObject* parent)
 {
 	QObject::setParent(parent);
-	for (int i = 0; i < m_gridRelatedConditions.count(); ++i){
+	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
 		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
 		c->updateConnections();
 	}

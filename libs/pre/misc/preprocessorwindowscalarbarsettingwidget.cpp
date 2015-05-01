@@ -13,7 +13,7 @@ PreProcessorWindowScalarBarSettingWidget::Setting::Setting()
 	positionY = 0.1;
 }
 
-PreProcessorWindowScalarBarSettingWidget::PreProcessorWindowScalarBarSettingWidget(QWidget *parent) :
+PreProcessorWindowScalarBarSettingWidget::PreProcessorWindowScalarBarSettingWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::PreProcessorWindowScalarBarSettingWidget)
 {
@@ -39,14 +39,14 @@ void PreProcessorWindowScalarBarSettingWidget::setVisibility(bool visible)
 {
 	ui->displayCheckBox->setChecked(false);
 	ui->displayCheckBox->click();
-	if(! visible){
+	if (! visible) {
 		ui->displayCheckBox->click();
 	}
 }
 
 void PreProcessorWindowScalarBarSettingWidget::setOrientation(ScalarBarSetting::Orientation o)
 {
-	switch(o){
+	switch (o) {
 	case ScalarBarSetting::oVertical:
 		ui->verticalRadioButton->click();
 		break;
@@ -119,8 +119,8 @@ bool PreProcessorWindowScalarBarSettingWidget::visibility() const
 
 ScalarBarSetting::Orientation PreProcessorWindowScalarBarSettingWidget::orientation() const
 {
-	if (ui->verticalRadioButton->isChecked()) return ScalarBarSetting::oVertical;
-	if (ui->horizontalRadioButton->isChecked()) return ScalarBarSetting::oHorizontal;
+	if (ui->verticalRadioButton->isChecked()) { return ScalarBarSetting::oVertical; }
+	if (ui->horizontalRadioButton->isChecked()) { return ScalarBarSetting::oHorizontal; }
 	// default
 	return ScalarBarSetting::oVertical;
 }
@@ -197,7 +197,7 @@ void PreProcessorWindowScalarBarSettingWidget::editTitleTextSetting()
 	dialog.setSetting(m_titleTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	m_titleTextSetting = dialog.setting();
 }
@@ -208,7 +208,7 @@ void PreProcessorWindowScalarBarSettingWidget::editLabelTextSetting()
 	dialog.setSetting(m_labelTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	m_labelTextSetting = dialog.setting();
 }

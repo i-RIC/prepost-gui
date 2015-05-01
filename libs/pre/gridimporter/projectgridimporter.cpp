@@ -45,7 +45,7 @@ bool ProjectGridImporter::import(Grid* grid, const QString& filename, const QStr
 	tmpProj.unzipFrom(filename);
 	try {
 		tmpProj.loadSolverInformation();
-	} catch (ErrorMessage& /*m*/){
+	} catch (ErrorMessage& /*m*/) {
 		return false;
 	}
 	tmpProj.loadCgnsList();

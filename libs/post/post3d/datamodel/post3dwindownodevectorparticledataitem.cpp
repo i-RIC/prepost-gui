@@ -21,7 +21,7 @@ Post3dWindowNodeVectorParticleDataItem::Post3dWindowNodeVectorParticleDataItem(c
 	m_standardItemCopy = m_standardItem->clone();
 
 	connect(this, SIGNAL(changed(Post3dWindowNodeVectorParticleDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*)));
 
 }
 

@@ -9,7 +9,7 @@
 
 #include <QUndoCommand>
 
-RawDataRiverPathPointRotateDialog::RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointRotateDialog::RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointRotateDialog)
 {
@@ -41,13 +41,12 @@ class RawDataRiverPathPointRotateCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointRotateCommand(bool apply, double angle, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Rotate Traversal Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Rotate Traversal Line")) {
 		m_apply = apply;
 		RawDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
-		while (p != nullptr){
-			if (p->IsSelected){
+		while (p != nullptr) {
+			if (p->IsSelected) {
 				m_point = p;
 				break;
 			}
@@ -58,18 +57,16 @@ public:
 		iRIC::rotateVector(m_newDirection, angle);
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
 
 		m_point->setCrosssectionDirection(m_oldDirection);
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->updateShapeData();
 			m_rs->renderGraphicsView();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
 
 		m_point->setCrosssectionDirection(m_newDirection);
@@ -88,7 +85,7 @@ private:
 
 void RawDataRiverPathPointRotateDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -98,7 +95,7 @@ void RawDataRiverPathPointRotateDialog::accept()
 
 void RawDataRiverPathPointRotateDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->updateShapeData();
@@ -112,7 +109,7 @@ void RawDataRiverPathPointRotateDialog::doReset()
 	ui->relativeRadioButton->setChecked(true);
 	ui->relativeEdit->setValue(m_currentRelativeAngle);
 	ui->incrementEdit->setValue(0);
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->updateShapeData();
@@ -123,7 +120,7 @@ void RawDataRiverPathPointRotateDialog::doReset()
 
 void RawDataRiverPathPointRotateDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -133,23 +130,23 @@ void RawDataRiverPathPointRotateDialog::apply()
 
 void RawDataRiverPathPointRotateDialog::relativeChange()
 {
-	if (ui->relativeRadioButton->isChecked()){
+	if (ui->relativeRadioButton->isChecked()) {
 		ui->incrementEdit->setValue(ui->relativeEdit->value() - m_currentRelativeAngle);
 	}
 }
 
 void RawDataRiverPathPointRotateDialog::incrementChange()
 {
-	if (ui->incrementRadioButton->isChecked()){
+	if (ui->incrementRadioButton->isChecked()) {
 		ui->relativeEdit->setValue(m_currentRelativeAngle + ui->incrementEdit->value());
 	}
 }
 
 void RawDataRiverPathPointRotateDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	}else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }

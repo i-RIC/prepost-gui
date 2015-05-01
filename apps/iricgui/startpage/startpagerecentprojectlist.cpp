@@ -3,7 +3,7 @@
 
 #include <QSettings>
 
-StartPageRecentProjectList::StartPageRecentProjectList(QWidget *parent) :
+StartPageRecentProjectList::StartPageRecentProjectList(QWidget* parent) :
 	QWidget(parent)
 {
 	m_layout = new QVBoxLayout(this);
@@ -16,15 +16,15 @@ void StartPageRecentProjectList::setupItems()
 {
 	QSettings setting;
 	QStringList recentProjects = setting.value("general/recentprojects", QStringList()).toStringList();
-	for (const QString& proj : recentProjects){
+	for (const QString& proj : recentProjects) {
 		add(proj);
 	}
 	setup();
 }
 
-void StartPageRecentProjectList::add(const QString &projectFileName)
+void StartPageRecentProjectList::add(const QString& projectFileName)
 {
-	if (m_numberOfProjects >= MAXPROJECTS){return;}
+	if (m_numberOfProjects >= MAXPROJECTS) {return;}
 
 	StartPageRecentProject* p = new StartPageRecentProject(projectFileName, this);
 	connect(p, SIGNAL(clicked()), this, SLOT(handleProjectSelection()));

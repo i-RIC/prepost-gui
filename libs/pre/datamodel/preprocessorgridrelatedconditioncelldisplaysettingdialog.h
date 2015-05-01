@@ -5,19 +5,20 @@
 class QTableWidgetItem;
 class QItemSelection;;
 
-namespace Ui {
-    class PreProcessorGridRelatedConditionCellDisplaySettingDialog;
+namespace Ui
+{
+	class PreProcessorGridRelatedConditionCellDisplaySettingDialog;
 }
 
 class PreProcessorGridRelatedConditionCellDisplaySettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit PreProcessorGridRelatedConditionCellDisplaySettingDialog(QWidget *parent = nullptr);
-    ~PreProcessorGridRelatedConditionCellDisplaySettingDialog();
+	explicit PreProcessorGridRelatedConditionCellDisplaySettingDialog(QWidget* parent = nullptr);
+	~PreProcessorGridRelatedConditionCellDisplaySettingDialog();
 
 	void setupDialog();
 private slots:
@@ -25,18 +26,18 @@ private slots:
 	void handleItemEdit(QTableWidgetItem*);
 	void handleShownSelectionChange(const QItemSelection& selected, const QItemSelection& deselected);
 private:
-    Ui::PreProcessorGridRelatedConditionCellDisplaySettingDialog *ui;
+	Ui::PreProcessorGridRelatedConditionCellDisplaySettingDialog* ui;
 
 
 public:
-/*
-	void setGridType(SolverDefinitionGridType* gt){m_gridType = gt;}
-	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings){
-		m_settings = settings;
-		setupDialog();
-	}
-	const QList<Post2dWindowCellFlagSetting>& settings();
-*/
+	/*
+		void setGridType(SolverDefinitionGridType* gt){m_gridType = gt;}
+		void setSettings(const QList<Post2dWindowCellFlagSetting>& settings){
+			m_settings = settings;
+			setupDialog();
+		}
+		const QList<Post2dWindowCellFlagSetting>& settings();
+	*/
 private:
 //	QList<Post2dWindowCellFlagSetting> m_settings;
 };

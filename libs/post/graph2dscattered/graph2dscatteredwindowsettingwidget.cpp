@@ -2,9 +2,9 @@
 #include "ui_graph2dscatteredwindowsettingwidget.h"
 #include "graph2dscatteredwindowresultsetting.h"
 
-Graph2dScatteredWindowSettingWidget::Graph2dScatteredWindowSettingWidget(QWidget *parent) :
-		QWidget(parent),
-		ui(new Ui::Graph2dScatteredWindowSettingWidget)
+Graph2dScatteredWindowSettingWidget::Graph2dScatteredWindowSettingWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::Graph2dScatteredWindowSettingWidget)
 {
 	ui->setupUi(this);
 	connect(ui->labelLineEdit, SIGNAL(textEdited(QString)), this, SLOT(updateLabel(QString)));
@@ -25,7 +25,7 @@ void Graph2dScatteredWindowSettingWidget::setSetting(Graph2dScatteredWindowResul
 	m_setting = setting;
 	this->blockSignals(true);
 	ui->labelLineEdit->setText(setting->name());
-	if (setting->axisSide() == Graph2dScatteredWindowResultSetting::asLeft){
+	if (setting->axisSide() == Graph2dScatteredWindowResultSetting::asLeft) {
 		ui->yAxisLeftRadioButton->setChecked(true);
 	} else {
 		ui->yAxisRightRadioButton->setChecked(true);
@@ -45,7 +45,7 @@ void Graph2dScatteredWindowSettingWidget::updateLabel(const QString& label)
 
 void Graph2dScatteredWindowSettingWidget::updateAxis()
 {
-	if (ui->yAxisLeftRadioButton->isChecked()){
+	if (ui->yAxisLeftRadioButton->isChecked()) {
 		m_setting->setAxisSide(Graph2dScatteredWindowResultSetting::asLeft);
 	} else {
 		m_setting->setAxisSide(Graph2dScatteredWindowResultSetting::asRight);

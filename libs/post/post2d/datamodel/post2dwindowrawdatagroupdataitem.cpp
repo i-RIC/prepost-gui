@@ -25,14 +25,14 @@ Post2dWindowRawDataGroupDataItem::Post2dWindowRawDataGroupDataItem(SolverDefinit
 
 void Post2dWindowRawDataGroupDataItem::updateChildren()
 {
-	Post2dWindowRawDataTopDataItem* tItem = dynamic_cast<Post2dWindowRawDataTopDataItem*> (parent());
+	Post2dWindowRawDataTopDataItem* tItem = dynamic_cast<Post2dWindowRawDataTopDataItem*>(parent());
 	PreProcessorRawDataTopDataItemInterface* rtItem = tItem->preRawDataTopDataItem();
 	PreProcessorRawDataGroupDataItemInterface* gItem = rtItem->groupDataItem(m_condition->name());
 
 	QList <GraphicsWindowDataItem*> oldChildren = m_childItems;
 	QMap<RawData*, Post2dWindowRawDataDataItem*> map;
-	for (int i = 0; i < oldChildren.count(); ++i){
-		Post2dWindowRawDataDataItem* item = dynamic_cast<Post2dWindowRawDataDataItem*> (oldChildren.at(i));
+	for (int i = 0; i < oldChildren.count(); ++i) {
+		Post2dWindowRawDataDataItem* item = dynamic_cast<Post2dWindowRawDataDataItem*>(oldChildren.at(i));
 		map.insert(item->rawDataProxy()->rawData(), item);
 		m_standardItem->takeRow(0);
 	}
@@ -40,10 +40,10 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 	m_itemNameMap.clear();
 
 	QList <GraphicsWindowDataItem*> origChildren = gItem->childItems();
-	for (int i = 0; i < origChildren.count(); ++i){
-		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*> (origChildren.at(i));
+	for (int i = 0; i < origChildren.count(); ++i) {
+		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(origChildren.at(i));
 		RawData* rawData = item->rawData();
-		if (map.contains(rawData)){
+		if (map.contains(rawData)) {
 			m_childItems.append(map.value(rawData));
 			m_standardItem->appendRow(map.value(rawData)->standardItem());
 			oldChildren.removeOne(map.value(rawData));
@@ -52,7 +52,7 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 			// try to add.
 			RawDataProxy* proxy = rawData->getProxy();
 			connect(rawData, SIGNAL(graphicsUpdated()), proxy, SLOT(updateGraphics()));
-			if (proxy != nullptr){
+			if (proxy != nullptr) {
 				Post2dWindowRawDataDataItem* pItem = new Post2dWindowRawDataDataItem(this);
 				pItem->setRawDataProxy(proxy);
 				proxy->setupDataItem();
@@ -62,7 +62,7 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 			}
 		}
 	}
-	for (int i = 0; i < oldChildren.count(); ++i){
+	for (int i = 0; i < oldChildren.count(); ++i) {
 		delete oldChildren.at(i);
 	}
 	assignActionZValues(m_zDepthRange);
@@ -72,10 +72,10 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 void Post2dWindowRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList children = node.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomElement elem = children.at(i).toElement();
 		QString name = elem.attribute("name");
-		if (m_itemNameMap.contains(name)){
+		if (m_itemNameMap.contains(name)) {
 			Post2dWindowRawDataDataItem* item = m_itemNameMap.value(name);
 			item->loadFromProjectMainFile(elem);
 		}
@@ -83,9 +83,10 @@ void Post2dWindowRawDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	updateChildren();
 }
 
-void Post2dWindowRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter &writer){
+void Post2dWindowRawDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
 	writer.writeAttribute("name", m_condition->name());
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("RawData");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();

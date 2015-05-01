@@ -11,7 +11,7 @@ Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::Structured15
 
 Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::~Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		Structured15DGridWithCrossSectionCrossSectionWindow* w = m_window;
 		m_window = nullptr;
 		delete w->parent();
@@ -20,7 +20,7 @@ Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::~Structured1
 
 void Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::informWindowClose()
 {
-	if (m_window != nullptr){
+	if (m_window != nullptr) {
 		m_window = nullptr;
 		dynamic_cast<PreProcessorNormal15DGridWithCrossSectionShapeDataItem*>(parent())->requestCrossSectionWindowDelete(this);
 	}

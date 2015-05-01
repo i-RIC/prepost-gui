@@ -55,7 +55,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 
 	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
 	PostZoneDataContainer* cont = postInfo->zoneContainer(info->dimension, info->zoneName);
-	if (cont == 0){return;}
+	if (cont == 0) {return;}
 
 	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(cont->data());
 	int dimension[3];
@@ -63,7 +63,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 
 	vtkSmartPointer<vtkExtractGrid> extract = vtkSmartPointer<vtkExtractGrid>::New();
 	extract->SetInputData(grid);
-	switch (s.xAxisMode()){
+	switch (s.xAxisMode()) {
 	case Graph2dHybridWindowResultSetting::xaI:
 		extract->SetVOI(0, dimension[0], s.gridJ(), s.gridJ(), s.gridK(), s.gridK());
 		break;
@@ -78,7 +78,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = extract->GetOutput();
 	vtkDataArray* da = extractedGrid->GetPointData()->GetArray(iRIC::toStr(m_physVal).c_str());
-	if (da == 0){
+	if (da == 0) {
 		// no data found.
 		return;
 	}
@@ -88,11 +88,11 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 
 	double distance = 0;
 	double oldp[3];
-	for (int i = 0; i < numT; ++i){
+	for (int i = 0; i < numT; ++i) {
 		// X value setting
 		double p[3];
 		extractedGrid->GetPoint(i, p);
-		if (i == 0){
+		if (i == 0) {
 			oldp[0] = p[0];
 			oldp[1] = p[1];
 			oldp[2] = p[2];
@@ -104,10 +104,10 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 		m_xValues[i] = distance;
 		// y value
 		double value;
-		if (da->GetNumberOfComponents() == 1){
+		if (da->GetNumberOfComponents() == 1) {
 			value = da->GetTuple1(i);
-		} else if (da->GetNumberOfComponents() == 3){
-			double *v;
+		} else if (da->GetNumberOfComponents() == 3) {
+			double* v;
 			v = da->GetTuple3(i);
 			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
 		}
@@ -133,10 +133,10 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridIJKResultDataItem:
 	int currentStep = postInfo->currentStep();
 	const QList<double>& timesteps = postInfo->timeSteps()->timesteps();
 	double time;
-	if (timesteps.count() == 0){
+	if (timesteps.count() == 0) {
 		time = 0;
 	} else {
-		if (currentStep < timesteps.count()){
+		if (currentStep < timesteps.count()) {
 			time = timesteps.at(currentStep);
 		} else {
 			time = 0;
@@ -146,22 +146,22 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridIJKResultDataItem:
 	QStringList args;
 	args.append(m_standardItem->text());
 	args.append(QString::number(time));
-	if (info->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured){
+	if (info->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured) {
 		ret->setId(Graph2dHybridWindowResultCopyDataItem::idt1D, args);
 	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
-		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			args.append(QString::number(c->jValue() + 1));
 			ret->setId(Graph2dHybridWindowResultCopyDataItem::idtI2D, args);
 		} else {
 			args.append(QString::number(c->iValue() + 1));
 			ret->setId(Graph2dHybridWindowResultCopyDataItem::idtJ2D, args);
 		}
-	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured){
-		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI){
+	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
 			args.append(QString::number(c->jValue() + 1));
 			args.append(QString::number(c->kValue() + 1));
 			ret->setId(Graph2dHybridWindowResultCopyDataItem::idtI3D, args);
-		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ){
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
 			args.append(QString::number(c->iValue() + 1));
 			args.append(QString::number(c->kValue() + 1));
 			ret->setId(Graph2dHybridWindowResultCopyDataItem::idtJ3D, args);

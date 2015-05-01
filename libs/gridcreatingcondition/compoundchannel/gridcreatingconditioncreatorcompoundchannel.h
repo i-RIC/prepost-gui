@@ -9,7 +9,7 @@ class GCC_COMPOUNDCHANNEL_EXPORT GridCreatingConditionCreatorCompoundChannel : p
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorCompoundChannel();
-	~GridCreatingConditionCreatorCompoundChannel(){}
+	~GridCreatingConditionCreatorCompoundChannel() {}
 	// temporary
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtStructured2DGrid;}
 	GridCreatingCondition* create(ProjectDataItem* parent);

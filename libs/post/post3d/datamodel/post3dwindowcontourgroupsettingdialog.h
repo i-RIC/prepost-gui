@@ -10,7 +10,8 @@
 #include <QList>
 #include <QMap>
 
-namespace Ui {
+namespace Ui
+{
 	class Post3dWindowContourGroupSettingDialog;
 }
 
@@ -24,10 +25,10 @@ class QListWidgetItem;
 
 class Post3dWindowContourGroupSettingDialog : public QDialog
 {
-		Q_OBJECT
+	Q_OBJECT
 
 public:
-	explicit Post3dWindowContourGroupSettingDialog(QWidget *parent = nullptr);
+	explicit Post3dWindowContourGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowContourGroupSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
 	void setCurrentSolution(QString sol);
@@ -47,7 +48,7 @@ public:
 	bool fillUpper();
 	bool fillLower();
 
-	void setColorBarTitleMap(const QMap<QString, QString> &titleMap);
+	void setColorBarTitleMap(const QMap<QString, QString>& titleMap);
 	void setScalarBarSetting(const ScalarBarSetting& setting);
 	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
 	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
@@ -68,7 +69,7 @@ private slots:
 	void showColorBarDialog();
 private:
 	QList<QString> m_solutions;
-	Ui::Post3dWindowContourGroupSettingDialog *ui;
+	Ui::Post3dWindowContourGroupSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
 	QMap<QString, QString> m_colorBarTitleMap;

@@ -6,8 +6,9 @@
 
 class QColor;
 
-namespace Ui {
-class PostParticleBasicPropertyDialog;
+namespace Ui
+{
+	class PostParticleBasicPropertyDialog;
 }
 
 class POSTBASEDLL_EXPORT PostParticleBasicPropertyDialog : public QDialog
@@ -15,7 +16,7 @@ class POSTBASEDLL_EXPORT PostParticleBasicPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit PostParticleBasicPropertyDialog(QWidget *parent = 0);
+	explicit PostParticleBasicPropertyDialog(QWidget* parent = 0);
 	~PostParticleBasicPropertyDialog();
 	const QColor color() const;
 	int size() const;
@@ -23,7 +24,7 @@ public:
 	void setSize(int size);
 
 private:
-	Ui::PostParticleBasicPropertyDialog *ui;
+	Ui::PostParticleBasicPropertyDialog* ui;
 };
 
 #endif // POSTPARTICLEBASICPROPERTYDIALOG_H

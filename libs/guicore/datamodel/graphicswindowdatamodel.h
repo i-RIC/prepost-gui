@@ -42,7 +42,7 @@ public:
 	void setObjectBrowserView(ObjectBrowserView* v);
 	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
 	void fitOnDataLoad();
-	QToolBar* operationToolBar(){return m_operationToolBar;}
+	QToolBar* operationToolBar() {return m_operationToolBar;}
 	void viewOperationEndedGlobal();
 
 protected:
@@ -57,7 +57,7 @@ public slots:
 	/// Handle double click event on object browser.
 	void handleObjectBrowserDoubleClick(const QModelIndex& index);
 	void handleObjectBrowserChange(QStandardItem* changeditem);
-	virtual void handleObjectBrowserSelectionChange(){}
+	virtual void handleObjectBrowserSelectionChange() {}
 	void handleObjectBrowserDeselection(const QModelIndex& previous);
 	void handleObjectBrowserSelection(const QModelIndex& current);
 	/// Delete the item currently selected on object browser.

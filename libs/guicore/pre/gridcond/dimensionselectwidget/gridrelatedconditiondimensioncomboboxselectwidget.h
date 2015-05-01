@@ -3,8 +3,9 @@
 
 #include "../base/gridrelatedconditiondimensionselectwidget.h"
 
-namespace Ui {
-class GridRelatedConditionDimensionComboboxSelectWidget;
+namespace Ui
+{
+	class GridRelatedConditionDimensionComboboxSelectWidget;
 }
 
 class GridRelatedConditionDimensionComboboxSelectWidget : public GridRelatedConditionDimensionSelectWidget
@@ -12,7 +13,7 @@ class GridRelatedConditionDimensionComboboxSelectWidget : public GridRelatedCond
 	Q_OBJECT
 
 public:
-	explicit GridRelatedConditionDimensionComboboxSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget *parent);
+	explicit GridRelatedConditionDimensionComboboxSelectWidget(GridRelatedConditionDimensionContainer* container, QWidget* parent);
 	~GridRelatedConditionDimensionComboboxSelectWidget();
 
 protected:
@@ -20,7 +21,7 @@ protected:
 	void doSetCurrentIndex(int newIndex);
 
 private:
-	Ui::GridRelatedConditionDimensionComboboxSelectWidget *ui;
+	Ui::GridRelatedConditionDimensionComboboxSelectWidget* ui;
 };
 
 #endif // GRIDRELATEDCONDITIONDIMENSIONCOMBOBOXSELECTWIDGET_H

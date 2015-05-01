@@ -19,9 +19,9 @@ public:
 	QAction* drawKPMarkerSettingAction;
 	QAction* drawAxisSettingAction;
 	QAction* drawCopyAction;
-    QAction* drawLegendAction;
+	QAction* drawLegendAction;
 
-	QMenu* drawMenu(){return m_drawMenu;}
+	QMenu* drawMenu() {return m_drawMenu;}
 	void connectWithDataModel();
 private:
 	void init();

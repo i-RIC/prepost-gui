@@ -6,7 +6,7 @@
 #include <QXmlStreamWriter>
 #include <QFile>
 
-ColorSource::ColorSource(ProjectDataItem *d)
+ColorSource::ColorSource(ProjectDataItem* d)
 	: ProjectDataItem(d)
 {
 	loadDefault();
@@ -30,7 +30,7 @@ void ColorSource::load(const QString& filename)
 	loadFromProjectMainFile(element);
 }
 
-QColor ColorSource::getColor(int index) const 
+QColor ColorSource::getColor(int index) const
 {
 	int i = index % m_colors.count();
 	return m_colors.at(i);
@@ -40,7 +40,7 @@ void ColorSource::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_colors.clear();
 	QDomNodeList childNodes = node.childNodes();
-	for (int i = 0; i < childNodes.count(); ++i){
+	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomNode child = childNodes.at(i);
 		QColor color = iRIC::QColorFromString(child.toElement().attribute("value", "#000000"));
 		m_colors.append(color);
@@ -49,7 +49,7 @@ void ColorSource::doLoadFromProjectMainFile(const QDomNode& node)
 
 void ColorSource::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_colors.begin(); it != m_colors.end(); ++it){
+	for (auto it = m_colors.begin(); it != m_colors.end(); ++it) {
 		QColor c = *it;
 		writer.writeStartElement("Color");
 		writer.writeAttribute("value", iRIC::QColorToString(c));

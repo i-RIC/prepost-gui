@@ -15,7 +15,7 @@ MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent)
 	vtkPoints* points = m_polygon->GetPoints();
 	idlist->SetNumberOfIds(4);
 	points->SetNumberOfPoints(4);
-	for (int i = 0; i < 4; ++i){
+	for (int i = 0; i < 4; ++i) {
 		idlist->SetId(i, i);
 		points->SetPoint(i, 0, 0, 0);
 	}
@@ -23,7 +23,7 @@ MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent)
 	m_lineGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	int edgeCount = m_polygon->GetNumberOfEdges();
 	m_lineGrid->Allocate(edgeCount);
-	for (int i = 0; i < edgeCount; ++i){
+	for (int i = 0; i < edgeCount; ++i) {
 		vtkCell* nextCell = m_polygon->GetEdge(i);
 		m_lineGrid->InsertNextCell(nextCell->GetCellType(), nextCell->GetPointIds());
 	}
@@ -113,7 +113,7 @@ void MouseBoundingBox::setEndPoint(int x, int y)
 	m_graphicsView->viewportToWorld(dx, dy);
 	points->SetPoint(2, dx, dy, 0);
 	// point 3
-	dx = m_startPoint.x();dy = m_endPoint.y();
+	dx = m_startPoint.x(); dy = m_endPoint.y();
 	m_graphicsView->viewportToWorld(dx, dy);
 	points->SetPoint(3, dx, dy, 0);
 

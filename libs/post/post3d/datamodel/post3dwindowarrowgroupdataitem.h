@@ -36,25 +36,25 @@ public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
 
-	enum Mapping{Specific, Scalar};
-	enum LengthMode{lenAuto, lenCustom};
+	enum Mapping {Specific, Scalar};
+	enum LengthMode {lenAuto, lenCustom};
 	/// Constructor
 	Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* parent);
-	const QString& currentSolution(){return m_currentSolution;}
-	void setSetting(const QString& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const QString& scalar, int rate, const ArrowSettingContainer &arrowSetting);
+	const QString& currentSolution() {return m_currentSolution;}
+	void setSetting(const QString& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const QString& scalar, int rate, const ArrowSettingContainer& arrowSetting);
 	void updateActorSettings();
 	void showSettingDialog();
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap();
-	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting> &map);
+	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	void update();
 protected:
-	QDialog* propertyDialog(QWidget *parent);
-	void handlePropertyDialogAccepted(QDialog *propDialog);
+	QDialog* propertyDialog(QWidget* parent);
+	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
 	void innerUpdateZScale(double scale);
 	void innerUpdate2Ds();
-	void updateVisibility(){GraphicsWindowDataItem::updateVisibility();}
+	void updateVisibility() {GraphicsWindowDataItem::updateVisibility();}
 private:
 	void setupActors();
 	void setupAppendFilter();

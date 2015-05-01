@@ -27,22 +27,22 @@ public:
 	Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent);
 
 	// Standard mouse event handlers
-	void informSelection(VTKGraphicsView *);
-	void informDeselection(VTKGraphicsView *);
+	void informSelection(VTKGraphicsView*);
+	void informDeselection(VTKGraphicsView*);
 
 	void informgridRelatedConditionChange(const QString& name);
 
 	PostZoneDataContainer* dataContainer();
-	int zoneNumber(){return m_zoneNumber;}
-	QString zoneName(){return m_zoneName;}
+	int zoneNumber() {return m_zoneNumber;}
+	QString zoneName() {return m_zoneName;}
 	void update();
-	Post3dWindowGridShapeDataItem* gridShapeDataItem(){return m_shapeDataItem;}
-	Post3dWindowContourGroupDataItem* contourGroupItem(){return m_contourGroupItem;}
-	Post3dWindowNodeScalarGroupDataItem* scalarGroupDataItem(){return m_scalarGroupDataItem;}
-	Post3dWindowArrowGroupDataItem* arrowGroupDataItem(){return m_arrowGroupDataItem;}
-	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem(){return m_streamlineGroupDataItem;}
-	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem(){return m_particleGroupDataItem;}
-	Post3dWindowParticlesTopDataItem* particlesDataItem(){return m_particlesDataItem;}
+	Post3dWindowGridShapeDataItem* gridShapeDataItem() {return m_shapeDataItem;}
+	Post3dWindowContourGroupDataItem* contourGroupItem() {return m_contourGroupItem;}
+	Post3dWindowNodeScalarGroupDataItem* scalarGroupDataItem() {return m_scalarGroupDataItem;}
+	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() {return m_arrowGroupDataItem;}
+	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() {return m_streamlineGroupDataItem;}
+	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() {return m_particleGroupDataItem;}
+	Post3dWindowParticlesTopDataItem* particlesDataItem() {return m_particlesDataItem;}
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

@@ -47,15 +47,15 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent *, VTKGraphicsView *);
-	void keyReleaseEvent(QKeyEvent *, VTKGraphicsView *);
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void loadData();
 	void addCustomMenuItems(QMenu* menu);
 	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
 	bool isMapped() const {return m_polygon->isMapped();}
-	RawData* rawData(){return m_polygon;}
-	void informValueRangeChange(){}
-	void informDataChange(){}
+	RawData* rawData() {return m_polygon;}
+	void informValueRangeChange() {}
+	void informDataChange() {}
 
 	QAction* editAction() const {return m_editAction;}
 	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}
@@ -64,7 +64,7 @@ public slots:
 	void executeMapping(bool noDraw, WaitDialog* dialog);
 
 private slots:
-	void setModified(){
+	void setModified() {
 		PreProcessorDataItem::setModified();
 	}
 	void updateItem();

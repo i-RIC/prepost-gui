@@ -6,8 +6,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkExtractGrid.h>
 
-struct Post3dWindowStructuredStreamlineSetSetting
-{
+struct Post3dWindowStructuredStreamlineSetSetting {
 	enum SpaceMode {smNormal, smSubdivide, smSkip};
 	/// Range to generate
 	StructuredGridRegion::Range3d range;

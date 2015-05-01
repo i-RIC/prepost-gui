@@ -1,11 +1,11 @@
 #include "preferencepagepost2d.h"
 #include "ui_preferencepagepost2d.h"
 
-PreferencePagePost2d::PreferencePagePost2d(QWidget *parent) :
-    PreferencePage(parent),
-    ui(new Ui::PreferencePagePost2d)
+PreferencePagePost2d::PreferencePagePost2d(QWidget* parent) :
+	PreferencePage(parent),
+	ui(new Ui::PreferencePagePost2d)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 	m_settings.beginGroup("post2d");
 	ui->gridColorWidget->setColor(m_settings.value("gridcolor", QColor(Qt::black)).value<QColor>());
 
@@ -21,7 +21,7 @@ PreferencePagePost2d::PreferencePagePost2d(QWidget *parent) :
 
 PreferencePagePost2d::~PreferencePagePost2d()
 {
-    delete ui;
+	delete ui;
 }
 
 void PreferencePagePost2d::update()

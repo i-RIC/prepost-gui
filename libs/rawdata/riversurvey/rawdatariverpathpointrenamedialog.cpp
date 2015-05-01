@@ -10,7 +10,7 @@
 #include <QMessageBox>
 #include <QUndoCommand>
 
-RawDataRiverPathPointRenameDialog::RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointRenameDialog::RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointRenameDialog)
 {
@@ -19,12 +19,12 @@ RawDataRiverPathPointRenameDialog::RawDataRiverPathPointRenameDialog(RawDataRive
 	double min;
 	double max;
 	double small = 0.01;
-	if (p->nextPoint() == nullptr){
+	if (p->nextPoint() == nullptr) {
 		min = current - 100;
 	} else {
 		min = p->nextPoint()->name().toDouble() + small;
 	}
-	if (p->previousPoint()->firstPoint()){
+	if (p->previousPoint()->firstPoint()) {
 		max = current + 100;
 	} else {
 		max = p->previousPoint()->name().toDouble() - small;
@@ -45,22 +45,19 @@ class RawDataRiverPathPointRenameCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointRenameCommand(const QString& newname, RawDataRiverPathPoint* p, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Rename Traversal Line"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Rename Traversal Line")) {
 		m_point = p;
 		m_rs = rs;
 		m_newName = newname;
 		m_oldName = m_point->name();
 	}
-	void undo()
-	{
+	void undo() {
 		m_point->setName(m_oldName);
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
 	}
-	void redo()
-	{
+	void redo() {
 		m_point->setName(m_newName);
 		m_rs->setModified();
 		m_rs->updateShapeData();
@@ -80,8 +77,7 @@ void RawDataRiverPathPointRenameDialog::accept()
 	oss << ui->nameSpinBox->value();
 	QString newname = oss.str().c_str();
 
-	if (newname != m_point->name())
-	{
+	if (newname != m_point->name()) {
 		iRICUndoStack::instance().push(new RawDataRiverPathPointRenameCommand(newname, m_point, m_rs));
 	}
 	QDialog::accept();

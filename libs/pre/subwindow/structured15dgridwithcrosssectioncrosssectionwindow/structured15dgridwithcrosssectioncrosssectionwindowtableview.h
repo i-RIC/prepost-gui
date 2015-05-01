@@ -7,9 +7,9 @@ class Structured15DGridWithCrossSectionCrossSectionWindowTableView : public QTab
 {
 	Q_OBJECT
 public:
-	explicit Structured15DGridWithCrossSectionCrossSectionWindowTableView(QWidget *parent = nullptr);
+	explicit Structured15DGridWithCrossSectionCrossSectionWindowTableView(QWidget* parent = nullptr);
 protected:
-	void resizeEvent(QResizeEvent *event);
+	void resizeEvent(QResizeEvent* event);
 private:
 	const static int columnMargin = 0;
 };

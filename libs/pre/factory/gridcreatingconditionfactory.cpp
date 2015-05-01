@@ -36,7 +36,7 @@ GridCreatingConditionFactory::GridCreatingConditionFactory(QWidget* mainWindow)
 	QSettings settings;
 	QString loc = settings.value("general/locale", "").value<QString>();
 	QLocale locale;
-	if (loc == ""){
+	if (loc == "") {
 		// locale is set to the system value.
 		locale = QLocale::system();
 	} else {
@@ -48,7 +48,7 @@ GridCreatingConditionFactory::GridCreatingConditionFactory(QWidget* mainWindow)
 
 void GridCreatingConditionFactory::setupNameMap()
 {
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it) {
 		m_creatorNameMap.insert((*it)->name(), *it);
 	}
 }
@@ -56,9 +56,9 @@ void GridCreatingConditionFactory::setupNameMap()
 const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(SolverDefinitionGridType::GridType gt) const
 {
 	QList<GridCreatingConditionCreator*> ret;
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it){
-		if ((*it)->gridType() == gt){
-			ret.append(*it);
+	for (GridCreatingConditionCreator* creator : m_creators) {
+		if (creator->gridType() == gt) {
+			ret.append(creator);
 		}
 	}
 	return ret;
@@ -73,6 +73,6 @@ GridCreatingCondition* GridCreatingConditionFactory::restore(const QDomNode& nod
 {
 	QString creatorName = node.toElement().attribute("name");
 	GridCreatingConditionCreator* creator = getCreator(creatorName);
-	if (creator == nullptr){return nullptr;}
+	if (creator == nullptr) {return nullptr;}
 	return creator->restore(node, item);
 }

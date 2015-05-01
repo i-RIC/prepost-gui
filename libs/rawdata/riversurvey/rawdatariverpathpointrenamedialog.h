@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverPathPointRenameDialog;
 }
 
@@ -14,12 +15,12 @@ class RawDataRiverPathPointRenameDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget *parent = nullptr);
+	explicit RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointRenameDialog();
 public slots:
 	void accept();
 private:
-	Ui::RawDataRiverPathPointRenameDialog *ui;
+	Ui::RawDataRiverPathPointRenameDialog* ui;
 	RawDataRiverPathPoint* m_point;
 	RawDataRiverSurvey* m_rs;
 };

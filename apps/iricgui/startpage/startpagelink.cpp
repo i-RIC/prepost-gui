@@ -8,7 +8,7 @@ StartPageLink::StartPageLink(const QString& title, const QString& url, QWidget* 
 	m_url = url;
 	setTitle(title);
 	QString shortenUrl = url;
-	if (shortenUrl.length() >= URLMAXLEN){
+	if (shortenUrl.length() >= URLMAXLEN) {
 		QString last = url.right(URLLASTLEN);
 		QString head = url.left(URLMAXLEN - URLLASTLEN - 3);
 		shortenUrl = head;

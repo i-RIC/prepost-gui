@@ -44,7 +44,7 @@ PreProcessorRawDataComplexGroupDataItem::PreProcessorRawDataComplexGroupDataItem
 
 PreProcessorRawDataComplexGroupDataItem::~PreProcessorRawDataComplexGroupDataItem()
 {
-	if (m_dialog){
+	if (m_dialog) {
 		delete m_dialog;
 	}
 }
@@ -56,27 +56,27 @@ void PreProcessorRawDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	int defId = -1;
 
 	clear();
-	int ret = cg_iRIC_Read_Complex_Count(const_cast<char *>(iRIC::toStr(m_condition->name()).c_str()), &count);
-	if (ret != 0){
+	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), &count);
+	if (ret != 0) {
 		goto INITGROUPS;
 	}
-	compCond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition*> (condition());
-	for (int i = 0; i < count; ++i){
+	compCond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(condition());
+	for (int i = 0; i < count; ++i) {
 		GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
 		w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
 		w->setNameAndNumber(m_condition->name(), i + 1);
 		w->load(fn);
-		if (w->isDefault()){defId = i;}
+		if (w->isDefault()) {defId = i;}
 		m_widgets.append(w);
 	}
-	if (defId == -1 && m_widgets.count() > 0){
+	if (defId == -1 && m_widgets.count() > 0) {
 		// make the first group default.
 		m_widgets[0]->setIsDefault(true);
 	}
 
 INITGROUPS:
 
-	if (m_widgets.count() == 0){
+	if (m_widgets.count() == 0) {
 		createDefaultGroup();
 	}
 	updateColorMap();
@@ -84,7 +84,7 @@ INITGROUPS:
 
 void PreProcessorRawDataComplexGroupDataItem::saveComplexGroupsToCgnsFile(const int fn)
 {
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		w->setNameAndNumber(m_condition->name(), i + 1);
 		w->save(fn);
@@ -98,11 +98,11 @@ void PreProcessorRawDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	const QList<RawDataCreator*> creators = factory.compatibleCreators(m_condition);
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
-	if (m_addSignalMapper){delete m_addSignalMapper;}
+	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (auto it = creators.begin(); it != creators.end(); ++it){
-		if ((*it)->isCreatable()){
+	for (auto it = creators.begin(); it != creators.end(); ++it) {
+		if ((*it)->isCreatable()) {
 			QString title = (*it)->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));
 			m_addSignalMapper->setMapping(addAction, *it);
@@ -111,7 +111,7 @@ void PreProcessorRawDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	}
 	connect(m_addSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(addRawData(QObject*)));
 	menu->addAction(m_importAction);
-	if (m_addMenu->actions().count() != 0){
+	if (m_addMenu->actions().count() != 0) {
 		menu->addMenu(m_addMenu);
 	}
 
@@ -133,7 +133,7 @@ void PreProcessorRawDataComplexGroupDataItem::updateColorMap()
 {
 	PreProcessorGridTypeDataItem* tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	ScalarsToColorsContainer* c = tItem->scalarsToColors(m_condition->name());
-	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*> (c);
+	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*>(c);
 
 	QMap<double, QString> enums;
 	QMap<double, QString> englishEnums;
@@ -142,7 +142,7 @@ void PreProcessorRawDataComplexGroupDataItem::updateColorMap()
 //	colors.insert(0, m_undefinedColor);
 //	enums.insert(0, cond->undefinedString());
 //	englishEnums.insert(0, cond->undefinedEnglishString());
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		double val = i + 1;
 		colors.insert(val, w->color());
@@ -165,19 +165,19 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	QList<GridComplexConditionWidget::Setting> settings;
 
 	m_dialog->setWidgets(m_widgets);
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		settings.append(m_widgets[i]->setting());
 	}
 
 	int ret = m_dialog->exec();
 	QList<GridComplexConditionWidget*> widgets = m_dialog->widgets();
-	if (ret == QDialog::Rejected){
-		for (int i = 0; i < widgets.count(); ++i){
-			if (! m_widgets.contains(widgets[i])){
+	if (ret == QDialog::Rejected) {
+		for (int i = 0; i < widgets.count(); ++i) {
+			if (! m_widgets.contains(widgets[i])) {
 				delete widgets[i];
 			}
 		}
-		for (int i = 0; i < m_widgets.count(); ++i){
+		for (int i = 0; i < m_widgets.count(); ++i) {
 			m_widgets[i]->setSetting(settings.at(i));
 		}
 		return;
@@ -191,16 +191,16 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	QList<int> valueMap;
 	int newindex = 1;
 	int newDefault = 0;
-	for (int i = 0; i < m_widgets.count(); ++i){
-		if (m_widgets[i]->isDefault()){
+	for (int i = 0; i < m_widgets.count(); ++i) {
+		if (m_widgets[i]->isDefault()) {
 			newDefault = i + 1;
 		}
 	}
 	// 0 is mapped to new default value
 	valueMap.append(newDefault);
 
-	for (int i = 0; i < oldWidgets.count(); ++i){
-		if (! m_widgets.contains(oldWidgets[i])){
+	for (int i = 0; i < oldWidgets.count(); ++i) {
+		if (! m_widgets.contains(oldWidgets[i])) {
 			deletedItemExist = true;
 			delete oldWidgets[i];
 			valueMap.append(newDefault);
@@ -211,18 +211,17 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 		++ newindex;
 	}
 	// renumber
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		m_widgets[i]->setNameAndNumber(m_condition->name(), i + 1);
 	}
 
 	// modify the rawdata values.
 	QList<GraphicsWindowDataItem*>::Iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it)
-	{
-		PreProcessorRawdataDataItem* di = dynamic_cast<PreProcessorRawdataDataItem*> (*it);
+	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorRawdataDataItem* di = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
 		RawData* rd = di->rawData();
 		RawDataPolygon* p = dynamic_cast<RawDataPolygon*>(rd);
-		if (p != nullptr){
+		if (p != nullptr) {
 			int currentVal = p->variantValue().toInt();
 			int newVal = valueMap.value(currentVal, newDefault);
 			p->setVariantValue(newVal);
@@ -231,16 +230,16 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 
 	// modify grid related condition values.
 	PreProcessorGridTypeDataItem* gtItem =
-			dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>::Iterator ccit;
-	for (ccit = conds.begin(); ccit != conds.end(); ++ccit){
+	for (ccit = conds.begin(); ccit != conds.end(); ++ccit) {
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
 		Grid* g = ccItem->gridDataItem()->grid();
-		if (g == nullptr){continue;}
+		if (g == nullptr) {continue;}
 		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
 		GridRelatedComplexConditionContainer* cont2 = dynamic_cast<GridRelatedComplexConditionContainer*>(cont);
-		for (unsigned int i = 0; i < cont2->dataCount(); ++i){
+		for (unsigned int i = 0; i < cont2->dataCount(); ++i) {
 			int currval = cont2->value(i);
 			int newval = valueMap.value(currval, newDefault);
 			cont2->setValue(i, newval);
@@ -255,7 +254,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
 
-	for (int i = 0; i < settings.count(); ++i){
+	for (int i = 0; i < settings.count(); ++i) {
 		delete settings.at(i).containerSet;
 	}
 
@@ -265,7 +264,7 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 
 void PreProcessorRawDataComplexGroupDataItem::clear()
 {
-	for (int i = 0; i < m_widgets.size(); ++i){
+	for (int i = 0; i < m_widgets.size(); ++i) {
 		delete m_widgets.at(i);
 	}
 	m_widgets.clear();
@@ -276,9 +275,9 @@ void PreProcessorRawDataComplexGroupDataItem::setupEditWidget(GridRelatedConditi
 	GridRelatedComplexConditionEditWidget* w = dynamic_cast<GridRelatedComplexConditionEditWidget*>(widget);
 	QMap<int, QString> enums;
 	int defIndex = 0;
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		enums.insert(i + 1, m_widgets[i]->caption());
-		if (m_widgets[i]->isDefault()){
+		if (m_widgets[i]->isDefault()) {
 			defIndex = i + 1;
 		}
 	}
@@ -297,10 +296,10 @@ void PreProcessorRawDataComplexGroupDataItem::applyScalarsToColorsSetting()
 {
 	PreProcessorGridTypeDataItem* tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	ScalarsToColorsContainer* c = tItem->scalarsToColors(m_condition->name());
-	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*> (c);
+	ColorTransferFunctionContainer* c2 = dynamic_cast<ColorTransferFunctionContainer*>(c);
 
 	QMap<double, QColor> colors = c2->colors();
-	for (int i = 0; i < m_widgets.count(); ++i){
+	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets[i];
 		w->setColor(colors.value(i + 1));
 	}
@@ -315,7 +314,7 @@ void PreProcessorRawDataComplexGroupDataItem::applySettingsToScalarBar()
 void PreProcessorRawDataComplexGroupDataItem::createDefaultGroup()
 {
 	SolverDefinitionGridRelatedComplexCondition* compCond =
-			dynamic_cast<SolverDefinitionGridRelatedComplexCondition*> (condition());
+		dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(condition());
 	GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
 	w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
 	w->setCaption("Default");

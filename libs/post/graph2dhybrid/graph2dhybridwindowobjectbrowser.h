@@ -14,11 +14,11 @@ class Graph2dHybridWindowObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 public:
 	/// Constructor
-	Graph2dHybridWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent){init();}
+	Graph2dHybridWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
 	/// Destructor
-	~Graph2dHybridWindowObjectBrowser(){}
+	~Graph2dHybridWindowObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Graph2dHybridWindowObjectBrowserView* view(){return m_view;}
+	Graph2dHybridWindowObjectBrowserView* view() {return m_view;}
 public slots:
 	void expandAll();
 private:

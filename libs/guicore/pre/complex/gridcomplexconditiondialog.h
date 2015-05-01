@@ -5,8 +5,9 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
-class GridComplexConditionDialog;
+namespace Ui
+{
+	class GridComplexConditionDialog;
 }
 
 class iRICMainWindowInterface;
@@ -20,7 +21,7 @@ class GUICOREDLL_EXPORT GridComplexConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridComplexConditionDialog(PreProcessorRawDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget *parent);
+	explicit GridComplexConditionDialog(PreProcessorRawDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent);
 	~GridComplexConditionDialog();
 	void setWidgets(QList<GridComplexConditionWidget*> widgets);
 	QList<GridComplexConditionWidget*> widgets() const {return m_widgets;}
@@ -42,7 +43,7 @@ private:
 	PreProcessorRawDataComplexGroupDataItemInterface* m_dataItem;
 	iRICMainWindowInterface* m_mainWindow;
 	ColorSource* m_colorSource;
-	Ui::GridComplexConditionDialog *ui;
+	Ui::GridComplexConditionDialog* ui;
 };
 
 #endif // GRIDCOMPLEXCONDITIONDIALOG_H

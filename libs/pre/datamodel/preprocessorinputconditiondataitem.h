@@ -18,14 +18,14 @@ public:
 	void saveToCgnsFile(const int fn);
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	ProjectData* projectData(){return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
-	void handleStandardItemDoubleClicked(){showDialog();}
+	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
+	void handleStandardItemDoubleClicked() {showDialog();}
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
-	bool isSet(){return m_isSet;}
-	bool isSetupCorrectly(){return m_dialog != nullptr;}
+	bool isSet() {return m_isSet;}
+	bool isSetupCorrectly() {return m_dialog != nullptr;}
 public slots:
-	void setModified(){
+	void setModified() {
 		PreProcessorDataItem::setModified();
 	}
 	void showDialog(bool readonly = false);

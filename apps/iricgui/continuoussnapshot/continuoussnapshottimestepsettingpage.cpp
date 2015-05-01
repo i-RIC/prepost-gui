@@ -2,7 +2,7 @@
 #include "continuoussnapshotwizard.h"
 #include "ui_continuoussnapshottimestepsettingpage.h"
 
-ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget *parent) :
+ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget* parent) :
 	QWizardPage(parent),
 	ui(new Ui::ContinuousSnapshotTimestepSettingPage)
 {
@@ -26,9 +26,9 @@ void ContinuousSnapshotTimestepSettingPage::initializePage()
 	ui->samplingSpinBox->setMaximum(m_wizard->timeSteps().size());
 
 	ui->startSlider->setValue(m_wizard->start());
-	if (m_wizard->start() == -1){ui->startSlider->setValue(0);}
+	if (m_wizard->start() == -1) {ui->startSlider->setValue(0);}
 	ui->stopSlider->setValue(m_wizard->stop());
-	if (m_wizard->stop() == -1){ui->stopSlider->setValue(ui->stopSlider->maximum());}
+	if (m_wizard->stop() == -1) {ui->stopSlider->setValue(ui->stopSlider->maximum());}
 	ui->samplingSpinBox->setValue(m_wizard->samplingRate());
 }
 
@@ -42,14 +42,14 @@ bool ContinuousSnapshotTimestepSettingPage::validatePage()
 
 void ContinuousSnapshotTimestepSettingPage::modifyStart(int time)
 {
-	if (ui->startSlider->value() > time){
+	if (ui->startSlider->value() > time) {
 		ui->startSlider->setValue(time);
 	}
 }
 
 void ContinuousSnapshotTimestepSettingPage::modifyStop(int time)
 {
-	if (ui->stopSlider->value() < time){
+	if (ui->stopSlider->value() < time) {
 		ui->stopSlider->setValue(time);
 	}
 }

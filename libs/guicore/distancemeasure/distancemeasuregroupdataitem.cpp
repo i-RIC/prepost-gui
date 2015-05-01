@@ -33,7 +33,7 @@ void DistanceMeasureGroupDataItem::addMeasure()
 	updateItemMap();
 	updateZDepthRange();
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
-	if (view != 0){
+	if (view != 0) {
 		view->select(child->standardItem()->index());
 	}
 
@@ -45,13 +45,14 @@ void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_addAction);
 }
 
-void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node){
-	for (int i = 0; i < m_childItems.count(); ++i){
+void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems.at(i);
 		delete item;
 	}
 	QDomNodeList children = node.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomNode childNode = children.at(i);
 		DistanceMeasureDataItem* item = new DistanceMeasureDataItem("", this);
 		item->loadFromProjectMainFile(childNode);
@@ -59,8 +60,9 @@ void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 	}
 }
 
-void DistanceMeasureGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer){
-	for (int i = 0; i < m_childItems.count(); ++i){
+void DistanceMeasureGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems.at(i);
 		writer.writeStartElement("DistanceMeasure");
 		item->saveToProjectMainFile(writer);

@@ -8,22 +8,24 @@ class QAbstractButton;
 class SolverDefinition;
 class QLocale;
 
-namespace Ui {
+namespace Ui
+{
 	class CgnsFileInputConditionDialog;
 }
 
 class CgnsFileInputConditionContainerSet;
 class CgnsFileInputConditionWidgetSet;
 
-class GUICOREDLL_EXPORT CgnsFileInputConditionDialog : public QDialog {
+class GUICOREDLL_EXPORT CgnsFileInputConditionDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	/// Constructor
-	CgnsFileInputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget *parent = nullptr);
+	CgnsFileInputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent = nullptr);
 	/// Destructor
 	~CgnsFileInputConditionDialog();
-	void setFileName(const QString& fileName){m_fileName = fileName;}
-	void setWorkFolder(const QString& workFolder){m_workFolder = workFolder;}
+	void setFileName(const QString& fileName) {m_fileName = fileName;}
+	void setWorkFolder(const QString& workFolder) {m_workFolder = workFolder;}
 	/// Load data fron CGNS file.
 	void load(const int fn);
 	/// Save data into CGNS file.
@@ -40,7 +42,7 @@ public slots:
 	void reject();
 
 protected:
-	void changeEvent(QEvent *e);
+	void changeEvent(QEvent* e);
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);
@@ -62,7 +64,7 @@ private:
 	bool m_modified;
 	bool m_readonly;
 
-	Ui::CgnsFileInputConditionDialog *ui;
+	Ui::CgnsFileInputConditionDialog* ui;
 public:
 	friend class CgnsFileInputConditionContainerSet;
 };

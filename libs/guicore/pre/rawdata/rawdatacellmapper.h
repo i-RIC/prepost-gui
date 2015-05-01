@@ -6,7 +6,7 @@
 class RawDataCellMapper : public RawDataMapper
 {
 public:
-	RawDataCellMapper(RawData* parent) : RawDataMapper(parent){}
+	RawDataCellMapper(RawData* parent) : RawDataMapper(parent) {}
 	virtual bool map(unsigned int cellIndex) = 0;
 };
 

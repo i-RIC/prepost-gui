@@ -11,14 +11,12 @@ class GridRelatedConditionBaseObject : public QObject
 public:
 	/// Constructor
 	GridRelatedConditionBaseObject(SolverDefinitionGridRelatedCondition* cond, QObject* parent = nullptr)
-		: QObject(parent)
-	{
+		: QObject(parent) {
 		m_condition = cond;
 	}
 	/// The grid related condition that is the ancestor
 	/// of this instance.
-	SolverDefinitionGridRelatedCondition* condition() const
-	{
+	SolverDefinitionGridRelatedCondition* condition() const {
 		return m_condition;
 	}
 protected:

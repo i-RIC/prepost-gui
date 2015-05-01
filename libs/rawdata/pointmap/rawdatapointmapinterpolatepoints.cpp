@@ -8,8 +8,8 @@
 #include <vtkPolygon.h>
 
 void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
-				std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
-				std::vector<double>& yp, std::vector<double>& temp)
+								std::vector<double>& xout, std::vector<double>& yout, int iout, float sigma,
+								std::vector<double>& yp, std::vector<double>& temp)
 {
 
 	// subroutine variables
@@ -75,7 +75,7 @@ void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
 		while (xout[i] > b) {
 			a = b;
 			nj = nj+1;
-			if(nj < n) {
+			if (nj < n) {
 				b = x[nj];
 			}
 		}
@@ -89,15 +89,15 @@ void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
 		exps = exps*exps1;
 		sinhs = 0.5*(exps-1./exps);
 		tmp = (yp[nj]*sinhd1+yp[nj-1]*sinhd2)/
-			sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
+					sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
 		yout[i] = (yp[nj]*sinhd1+yp[nj-1]*sinhd2)/
-			sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
+							sinhs+((y[nj]-yp[nj])*del1+(y[nj-1]-yp[nj-1])*del2)/dels;
 	}
 }
 
-RawDataPointmapInterpolatePoints::RawDataPointmapInterpolatePoints(RawDataPointmap *pmap, QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::RawDataPointmapInterpolatePoints)
+RawDataPointmapInterpolatePoints::RawDataPointmapInterpolatePoints(RawDataPointmap* pmap, QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::RawDataPointmapInterpolatePoints)
 {
 	ui->setupUi(this);
 	ui->incrementEditWidget->setValue(1.0);
@@ -105,12 +105,12 @@ RawDataPointmapInterpolatePoints::RawDataPointmapInterpolatePoints(RawDataPointm
 	int numPts = this->m_pmap->getVtkInterpPolygon()->GetNumberOfPoints();
 	double p[3];
 	double ds;
-	for(int i = 0; i < numPts; i++) {
+	for (int i = 0; i < numPts; i++) {
 		this->m_pmap->getVtkInterpPolygon()->GetPoints()->GetPoint(i,p);
 		p[2] = this->m_pmap->getVtkInterpValue()->GetValue(i);
 		this->xpoint.push_back(p[0]);
 		this->ypoint.push_back(p[1]);
-		if(p[2] > -9999.0) {
+		if (p[2] > -9999.0) {
 			zpoint.push_back(p[2]);
 			zindex.push_back(i);
 			izindex.push_back(0);
@@ -118,14 +118,14 @@ RawDataPointmapInterpolatePoints::RawDataPointmapInterpolatePoints(RawDataPointm
 			izindex.push_back(-1);
 		}
 	}
-	for(int i = 0; i < numPts; i++) {
-		if(i == 0) {
+	for (int i = 0; i < numPts; i++) {
+		if (i == 0) {
 			si.push_back(0);
 			szi.push_back(0);
 		} else {
 			ds = pow((pow((xpoint[i] - xpoint[i-1]),2)+pow((ypoint[i]-ypoint[i-1]),2)),0.5);
 			si.push_back(si[i-1]+ds);
-			if(izindex[i] >= 0) szi.push_back(si[i-1]+ds);
+			if (izindex[i] >= 0) { szi.push_back(si[i-1]+ds); }
 		}
 	}
 	stot = si[numPts-1];
@@ -151,7 +151,7 @@ void RawDataPointmapInterpolatePoints::accept()
 		msgBox.setInformativeText("Would you like to retry or cancel the interpolation points operation?");
 		msgBox.setStandardButtons(QMessageBox::Retry);
 		msgBox.setDefaultButton(QMessageBox::Retry);
-		if (msgBox.exec() == QMessageBox::Retry){
+		if (msgBox.exec() == QMessageBox::Retry) {
 			return;
 		} else {
 			return;
@@ -168,11 +168,11 @@ void RawDataPointmapInterpolatePoints::accept()
 	yinterp.resize(numInterpPts);
 	zinterp.resize(numInterpPts);
 
-	for(int i = 0; i < numInterpPts; i++) {
+	for (int i = 0; i < numInterpPts; i++) {
 		sout.push_back(i*(stot/(numInterpPts-1)));
 	}
 	int nump = xpoint.size();
-	if(nump < 3) {
+	if (nump < 3) {
 		double s0, s1, s2, x1, x2, x3, y1, y2, y3;
 		s0 = si[0]; s1 = si[1]/2.; s2 = si[1];
 		x1 = xpoint[0]; x2 = xpoint[0] + (xpoint[1]-xpoint[0])/2.; x3 = xpoint[1];
@@ -191,8 +191,8 @@ void RawDataPointmapInterpolatePoints::accept()
 		tyctmp.push_back(ypoint[0] + (ypoint[1]-ypoint[0])/2.);
 		tyctmp.push_back(ypoint[1]);
 
-	TSplineSTL(sitmp,txctmp,3,sout,xinterp,numInterpPts,5.,yp,temp);
-	TSplineSTL(sitmp,tyctmp,3,sout,yinterp,numInterpPts,5.,yp,temp);
+		TSplineSTL(sitmp,txctmp,3,sout,xinterp,numInterpPts,5.,yp,temp);
+		TSplineSTL(sitmp,tyctmp,3,sout,yinterp,numInterpPts,5.,yp,temp);
 	} else {
 		TSplineSTL(si,xpoint,numPts,sout,xinterp,numInterpPts,5.,yp,temp);
 		TSplineSTL(si,ypoint,numPts,sout,yinterp,numInterpPts,5.,yp,temp);
@@ -203,7 +203,7 @@ void RawDataPointmapInterpolatePoints::accept()
 	temp.resize(numInterpPts);
 	yp.resize(numInterpPts);
 
-	if(numZPts < 3) {
+	if (numZPts < 3) {
 		double  sz1, sz2, sz3, z1, z2, z3;
 		sz1 = szi[0]; sz2= szi[1]/2.; sz3= szi[1];
 		z1 = zpoint[0]; z2 = zpoint[0] + (zpoint[1]-zpoint[0])/2.; z3 = zpoint[1];
@@ -217,7 +217,7 @@ void RawDataPointmapInterpolatePoints::accept()
 		tzctmp.push_back(zpoint[0] + (zpoint[1]-zpoint[0])/2.);
 		tzctmp.push_back(zpoint[1]);
 
-	TSplineSTL(szitmp,tzctmp,3,sout,zinterp,numInterpPts,10.,yp,temp);
+		TSplineSTL(szitmp,tzctmp,3,sout,zinterp,numInterpPts,10.,yp,temp);
 	} else {
 
 		TSplineSTL(szi,zpoint,numZPts,sout,zinterp,numInterpPts,10.,yp,temp);
@@ -231,5 +231,5 @@ void RawDataPointmapInterpolatePoints::accept()
 		//this->addPoint(xinterp[i], yinterp[i], zinterp[i]);
 	}
 
-QDialog::accept();
+	QDialog::accept();
 }

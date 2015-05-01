@@ -13,17 +13,16 @@ class GUICOREDLL_EXPORT SolverDefinitionBoundaryCondition : public SolverDefinit
 public:
 	enum Position {pNode, pCell, pEdge};
 	SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionNode(node, translator)
-	{
+		: SolverDefinitionNode(node, translator) {
 		load(node, translator);
 	}
-	~SolverDefinitionBoundaryCondition(){}
+	~SolverDefinitionBoundaryCondition() {}
 	const QString& name() const {return m_name;}
 	const QString& caption() const {return m_caption;}
 	const QString& englishCaption() const {return m_englishCaption;}
-	void setCaption(const QString& caption){m_caption = caption;}
-	const QDomElement& element(){return m_element;}
-	Position position(){return m_position;}
+	void setCaption(const QString& caption) {m_caption = caption;}
+	const QDomElement& element() {return m_element;}
+	Position position() {return m_position;}
 //	PreProcessorBCDataItem* createConditionDataItem(SolverDefinition* def, PreProcessorDataItem* parent);
 
 private:

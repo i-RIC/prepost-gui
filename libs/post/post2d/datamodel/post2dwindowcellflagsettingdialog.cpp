@@ -21,39 +21,38 @@
 class ColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent){}
-	void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
-	{
+	ColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
+	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		QColor col = dat.value<QColor>();
 		QBrush brush(col);
 		painter->fillRect(option.rect, brush);
 	}
-	QWidget* createEditor(QWidget *parent, const QStyleOptionViewItem & /*option*/, const QModelIndex & /*index*/) const {
+	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const {
 		ColorEditWidget* w = new ColorEditWidget(parent);
 		return w;
 	}
-	void setEditorData(QWidget *editor, const QModelIndex &index) const {
+	void setEditorData(QWidget* editor, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 		w->setColor(dat.value<QColor>());
 	}
-	void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const {
+	void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const {
 		ColorEditWidget* w = static_cast<ColorEditWidget*>(editor);
 		QColor c = w->color();
 		model->setData(index, c, Qt::DisplayRole);
 		model->setData(index, c, Qt::BackgroundRole);
 	}
-	void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex & /*index*/) const {
+	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& /*index*/) const {
 		editor->setGeometry(option.rect);
 	}
 };
 
-Post2dWindowCellFlagSettingDialog::Post2dWindowCellFlagSettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Post2dWindowCellFlagSettingDialog)
+Post2dWindowCellFlagSettingDialog::Post2dWindowCellFlagSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post2dWindowCellFlagSettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 
 	ui->upButton->setEnabled(false);
 	ui->downButton->setEnabled(false);
@@ -80,7 +79,7 @@ Post2dWindowCellFlagSettingDialog::Post2dWindowCellFlagSettingDialog(QWidget *pa
 
 Post2dWindowCellFlagSettingDialog::~Post2dWindowCellFlagSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 void Post2dWindowCellFlagSettingDialog::setupDialog()
@@ -89,7 +88,7 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 	// create list.
 	ui->tableWidget->clearContents();
 	ui->tableWidget->setRowCount(0);
-	for (auto it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
+	for (auto it2 = m_settings.begin(); it2 != m_settings.end(); ++it2) {
 		ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
 		int rownum = ui->tableWidget->rowCount() - 1;
 
@@ -105,13 +104,13 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 //		flags |= Qt::ItemIsUserCheckable;
 //		flags &= ~Qt::ItemIsTristate;
 		witem->setFlags(flags);
-/*
-		if (s.enabled){
-			witem->setCheckState(Qt::Checked);
-		}else{
-			witem->setCheckState(Qt::Unchecked);
-		}
-*/
+		/*
+				if (s.enabled){
+					witem->setCheckState(Qt::Checked);
+				}else{
+					witem->setCheckState(Qt::Unchecked);
+				}
+		*/
 		ui->tableWidget->setItem(rownum, 0, witem);
 
 		witem = new QTableWidgetItem();
@@ -141,12 +140,12 @@ void Post2dWindowCellFlagSettingDialog::moveUp()
 	QList<QTableWidgetItem*> items = ui->tableWidget->selectedItems();
 	QTableWidgetItem* item = nullptr;
 	int newrow = 0;
-	for (int i = 0; i < items.count(); ++i){
+	for (int i = 0; i < items.count(); ++i) {
 		item = items.at(i);
-		if (item->column() == 0){
+		if (item->column() == 0) {
 			Post2dWindowCellFlagSetting s = m_settings.takeAt(item->row());
 			int insertTo = item->row() - 1;
-			if (insertTo < 0){insertTo = 0;}
+			if (insertTo < 0) {insertTo = 0;}
 			m_settings.insert(insertTo, s);
 			newrow = insertTo;
 		}
@@ -160,18 +159,18 @@ void Post2dWindowCellFlagSettingDialog::moveDown()
 	QList<QTableWidgetItem*> items = ui->tableWidget->selectedItems();
 	QTableWidgetItem* item = nullptr;
 	int newrow = 0;
-	for (int i = 0; i < items.count(); ++i){
+	for (int i = 0; i < items.count(); ++i) {
 		item = items.at(i);
-		if (item->column() == 0){
+		if (item->column() == 0) {
 			Post2dWindowCellFlagSetting s = m_settings.takeAt(item->row());
 			int insertTo = item->row() + 1;
-			if (insertTo >= m_settings.count()){
+			if (insertTo >= m_settings.count()) {
 				m_settings.append(s);
-			}else{
+			} else {
 				m_settings.insert(insertTo, s);
 			}
 			newrow = insertTo;
-			if (newrow >= m_settings.count()){
+			if (newrow >= m_settings.count()) {
 				newrow = m_settings.count() - 1;
 			}
 		}
@@ -180,24 +179,24 @@ void Post2dWindowCellFlagSettingDialog::moveDown()
 	ui->tableWidget->selectRow(newrow);
 }
 
-void Post2dWindowCellFlagSettingDialog::handleItemEdit(QTableWidgetItem * item)
+void Post2dWindowCellFlagSettingDialog::handleItemEdit(QTableWidgetItem* item)
 {
 	Post2dWindowCellFlagSetting& s = m_settings[item->row()];
-	if (item->column() == 0){
+	if (item->column() == 0) {
 		// checkstate changed.
 //		s.enabled = (item->checkState() == Qt::Checked);
-	}else if (item->column() == 1){
+	} else if (item->column() == 1) {
 		QColor col = item->data(Qt::DisplayRole).value<QColor>();
 		s.color = col;
 	}
 }
 
-void Post2dWindowCellFlagSettingDialog::handleItemClick(QTableWidgetItem * item)
+void Post2dWindowCellFlagSettingDialog::handleItemClick(QTableWidgetItem* item)
 {
-	if (item->column() != 1){return;}
+	if (item->column() != 1) {return;}
 	QColor col = item->data(Qt::DisplayRole).value<QColor>();
 	QColor newcolor = QColorDialog::getColor(col, this);
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	item->setData(Qt::DisplayRole, newcolor);
 }
 
@@ -205,9 +204,9 @@ void Post2dWindowCellFlagSettingDialog::handleShownSelectionChange(const QItemSe
 {
 	QSet<int> rows;
 	int lastrow = 0;
-	for (auto it = selected.begin(); it != selected.end(); ++it){
+	for (auto it = selected.begin(); it != selected.end(); ++it) {
 		QItemSelectionRange range = *it;
-		for (int row = range.top(); row <= range.bottom(); ++row){
+		for (int row = range.top(); row <= range.bottom(); ++row) {
 			rows.insert(row);
 			lastrow = row;
 		}

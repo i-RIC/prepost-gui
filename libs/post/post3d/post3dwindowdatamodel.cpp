@@ -85,16 +85,16 @@ PostSolutionInfo* Post3dWindowDataModel::postSolutionInfo()
 void Post3dWindowDataModel::gridShapeSetting()
 {
 	Post3dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == nullptr){return;}
-	Post3dWindowGridShapeDataItem * item = zItem->gridShapeDataItem();
-	if (item == nullptr){return;}
+	if (zItem == nullptr) {return;}
+	Post3dWindowGridShapeDataItem* item = zItem->gridShapeDataItem();
+	if (item == nullptr) {return;}
 	item->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::surfaceSetting()
 {
 	Post3dWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == nullptr){return;}
+	if (zItem == nullptr) {return;}
 //	Post3dWindowSurfaceGroupDataItem* item = zItem->
 //	item->showPropertyDialog();
 }
@@ -102,7 +102,7 @@ void Post3dWindowDataModel::surfaceSetting()
 void Post3dWindowDataModel::contourSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr){return;}
+	if (item == nullptr) {return;}
 	Post3dWindowContourGroupDataItem* citem = item->contourGroupItem();
 	citem->showSettingDialog();
 }
@@ -110,7 +110,7 @@ void Post3dWindowDataModel::contourSetting()
 void Post3dWindowDataModel::arrowSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr){return;}
+	if (item == nullptr) {return;}
 	Post3dWindowArrowGroupDataItem* aitem = item->arrowGroupDataItem();
 	aitem->showSettingDialog();
 }
@@ -118,7 +118,7 @@ void Post3dWindowDataModel::arrowSetting()
 void Post3dWindowDataModel::streamlineSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr){return;}
+	if (item == nullptr) {return;}
 	Post3dWindowNodeVectorStreamlineGroupDataItem* sitem = item->streamlineGroupDataItem();
 	sitem->showPropertyDialog();
 }
@@ -126,15 +126,15 @@ void Post3dWindowDataModel::streamlineSetting()
 void Post3dWindowDataModel::particleSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr){return;}
-	Post3dWindowNodeVectorParticleGroupDataItem * pitem = item->particleGroupDataItem();
+	if (item == nullptr) {return;}
+	Post3dWindowNodeVectorParticleGroupDataItem* pitem = item->particleGroupDataItem();
 	pitem->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::isosurfaceSetting()
 {
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
-	if (item == nullptr){return;}
+	if (item == nullptr) {return;}
 	Post3dWindowNodeScalarGroupDataItem* iitem = item->scalarGroupDataItem();
 	iitem->showPropertyDialog();;
 }
@@ -142,13 +142,13 @@ void Post3dWindowDataModel::isosurfaceSetting()
 Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 {
 	GraphicsWindowDataItem* item = m_selectedItem;
-	while (item != nullptr){
+	while (item != nullptr) {
 		Post3dWindowZoneDataItem* zitem = dynamic_cast<Post3dWindowZoneDataItem*>(item);
 		// zone item found!
-		if (zitem != nullptr){return zitem;}
+		if (zitem != nullptr) {return zitem;}
 		// try parent item.
 		item = dynamic_cast<GraphicsWindowDataItem*>(item->parent());
-		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr){
+		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr) {
 			// reached to root node.
 			break;
 		}
@@ -157,19 +157,19 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers3D();
 	Post3dWindowZoneDataItem* zitem;
-	if (containers.count() == 0){return nullptr;}
-	if (containers.count() > 1){
+	if (containers.count() == 0) {return nullptr;}
+	if (containers.count() > 1) {
 		PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
-		if (ret != QDialog::Accepted){return nullptr;}
+		if (ret != QDialog::Accepted) {return nullptr;}
 		QString gridType = dialog.gridTypeName();
 		QString zone = dialog.zoneName();
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		Post3dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		zitem = gt->zoneData(zone);
 		return zitem;
-	}else{
+	} else {
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		QList<Post3dWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post3dWindowGridTypeDataItem* gt = list.at(0);
@@ -195,7 +195,7 @@ void Post3dWindowDataModel::editZScale()
 {
 	bool ok;
 	double newZscale = QInputDialog::getDouble(mainWindow(), tr("Z-direction Scale"), tr("Input new Z-direction scale."), m_zScale, 1E-6, 1E6, 3, &ok);
-	if (! ok){return;}
+	if (! ok) {return;}
 	m_zScale = newZscale;
 	m_rootDataItem->updateZScale(newZscale);
 	fit();

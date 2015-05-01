@@ -11,10 +11,11 @@ class CgnsFileInputConditionContainerSet;
 class CgnsFileInputConditionWidget;
 class SolverDefinitionTranslator;
 
-class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetSet {
+class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetSet
+{
 public:
 	/// Constructor
-	CgnsFileInputConditionWidgetSet(){}
+	CgnsFileInputConditionWidgetSet() {}
 	/// Destructor
 	~CgnsFileInputConditionWidgetSet();
 	void setup(const QDomNode& condNode, CgnsFileInputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC = false);
@@ -34,7 +35,7 @@ private:
 	void buildDepsCustom(const QDomNode& tabNode, CgnsFileInputConditionContainerSet& cset);
 	void buildDepsCustomRec(const QDomNode& node, CgnsFileInputConditionContainerSet& cset);
 	void buildDepsItem(const QDomNode& itemNode, CgnsFileInputConditionContainerSet& cset);
-	void buildDep(const QDomNode&, CgnsFileInputConditionContainerSet& cset, CgnsFileInputConditionWidget *w);
+	void buildDep(const QDomNode&, CgnsFileInputConditionContainerSet& cset, CgnsFileInputConditionWidget* w);
 	void addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
 	QMap<QString, CgnsFileInputConditionWidget*> m_widgets;
 };

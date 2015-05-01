@@ -57,13 +57,13 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 	const Graph2dHybridWindowResultSetting& setting = dataModel()->setting();
 
-	if (m_dataContainer->data().count() > timesteps.count()){
+	if (m_dataContainer->data().count() > timesteps.count()) {
 		return;
 	}
 	m_xValues.fill(0, timesteps.count());
 	m_yValues.fill(0, timesteps.count());
 
-	for (int i = 0; i < timesteps.count(); ++i){
+	for (int i = 0; i < timesteps.count(); ++i) {
 		m_xValues[i] = timesteps.at(i);
 		m_yValues[i] = m_dataContainer->data().at(i);
 	}
@@ -83,10 +83,10 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridPointResultDataIte
 	int currentStep = postInfo->currentStep();
 	const QList<double>& timesteps = postInfo->timeSteps()->timesteps();
 	double time;
-	if (timesteps.count() == 0){
+	if (timesteps.count() == 0) {
 		time = 0;
 	} else {
-		if (currentStep < timesteps.count()){
+		if (currentStep < timesteps.count()) {
 			time = timesteps.at(currentStep);
 		} else {
 			time = 0;
@@ -95,14 +95,14 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridPointResultDataIte
 
 	QStringList args;
 	args.append(m_standardItem->text());
-	if (info->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured){
+	if (info->dataType == Graph2dHybridWindowResultSetting::dtDim1DStructured) {
 		args.append(QString::number(c->iValue() + 1));
 		ret->setId(Graph2dHybridWindowResultCopyDataItem::idtTime1D, args);
 	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim2DStructured) {
 		args.append(QString::number(c->iValue() + 1));
 		args.append(QString::number(c->jValue() + 1));
 		ret->setId(Graph2dHybridWindowResultCopyDataItem::idtTime2D, args);
-	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured){
+	} else if (info->dataType == Graph2dHybridWindowResultSetting::dtDim3DStructured) {
 		args.append(QString::number(c->iValue() + 1));
 		args.append(QString::number(c->jValue() + 1));
 		args.append(QString::number(c->kValue() + 1));

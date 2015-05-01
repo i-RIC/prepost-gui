@@ -4,7 +4,7 @@
 CgnsFileList::~CgnsFileList()
 {}
 
-void CgnsFileList::CgnsFileEntry::doLoadFromProjectMainFile(const QDomNode &node)
+void CgnsFileList::CgnsFileEntry::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement element = node.toElement();
 	m_filename = element.attribute("filename");
@@ -21,7 +21,7 @@ void CgnsFileList::doLoadFromProjectMainFile(const QDomNode& node)
 	m_cgnsFiles.clear();
 	// All child nodes are CgnsFileEntry nodes.
 	QDomNode child = node.firstChild();
-	while (! child.isNull()){
+	while (! child.isNull()) {
 		CgnsFileEntry* entry = new CgnsFileEntry(this);
 		entry->loadFromProjectMainFile(child);
 		m_cgnsFiles.insert(entry->filename(), entry);
@@ -29,18 +29,16 @@ void CgnsFileList::doLoadFromProjectMainFile(const QDomNode& node)
 	}
 	QDomElement elem = node.toElement();
 	QString curr = elem.attribute("current");
-	if (m_cgnsFiles.contains(curr))
-	{
+	if (m_cgnsFiles.contains(curr)) {
 		m_current = m_cgnsFiles.value(curr);
 	}
 }
 void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	if (m_current != nullptr)
-	{
+	if (m_current != nullptr) {
 		writer.writeAttribute("current", m_current->filename());
 	}
-	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
 		writer.writeStartElement("CgnsFileEntry");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -49,7 +47,7 @@ void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles()
 {
 	QList<CgnsFileList::CgnsFileEntry*> ret;
-	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
 		ret.push_back(*it);
 	}
 	return ret;
@@ -62,8 +60,7 @@ bool CgnsFileList::exists(const QString& name)
 
 CgnsFileList::CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
 {
-	if (m_cgnsFiles.contains(name) && (m_current == nullptr || m_current->filename() != name))
-	{
+	if (m_cgnsFiles.contains(name) && (m_current == nullptr || m_current->filename() != name)) {
 		m_current = m_cgnsFiles.value(name);
 		emit cgnsFileSwitched(name);
 		return m_current;
@@ -71,16 +68,18 @@ CgnsFileList::CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
 	return nullptr;
 }
 
-void CgnsFileList::add(const QString& name){
+void CgnsFileList::add(const QString& name)
+{
 	CgnsFileEntry* entry = new CgnsFileEntry(name, this);
 	m_cgnsFiles.insert(name, entry);
 	emit cgnsFilesUpdated(cgnsFiles());
 }
 
-void CgnsFileList::remove(const QString& name){
-	if (m_cgnsFiles.contains(name)){
+void CgnsFileList::remove(const QString& name)
+{
+	if (m_cgnsFiles.contains(name)) {
 		CgnsFileEntry* entry = m_cgnsFiles.value(name);
-		if (entry == m_current){m_current = nullptr;}
+		if (entry == m_current) {m_current = nullptr;}
 		delete entry;
 		m_cgnsFiles.remove(name);
 		emit cgnsFilesUpdated(cgnsFiles());
@@ -90,7 +89,7 @@ void CgnsFileList::remove(const QString& name){
 QStringList CgnsFileList::containedFiles()
 {
 	QStringList ret;
-	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it){
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
 		QString fname = (*it)->filename();
 		fname.append(".cgn");
 		ret << fname;
@@ -98,10 +97,11 @@ QStringList CgnsFileList::containedFiles()
 	return ret;
 }
 
-QString CgnsFileList::proposeFilename(){
+QString CgnsFileList::proposeFilename()
+{
 	QString name("Case%1");
 	int i = 1;
-	while (m_cgnsFiles.contains(name.arg(i))){
+	while (m_cgnsFiles.contains(name.arg(i))) {
 		++i;
 	}
 	return name.arg(i);

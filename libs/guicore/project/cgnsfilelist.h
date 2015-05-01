@@ -13,18 +13,19 @@ class GUICOREDLL_EXPORT CgnsFileList : public ProjectDataItem
 	Q_OBJECT
 public:
 	/// This class handles the information about a CGNS file in the project.
-	class CgnsFileEntry : public ProjectDataItem {
+	class CgnsFileEntry : public ProjectDataItem
+	{
 	public:
 		/// Constructor
-		CgnsFileEntry(ProjectDataItem* parent) : ProjectDataItem(parent){}
+		CgnsFileEntry(ProjectDataItem* parent) : ProjectDataItem(parent) {}
 		/// Constructor
-		CgnsFileEntry(const QString& filename, ProjectDataItem* parent) : ProjectDataItem(parent){
+		CgnsFileEntry(const QString& filename, ProjectDataItem* parent) : ProjectDataItem(parent) {
 			m_filename = filename;
 		}
 		/// file name (".cgn" is not included. For example "calculation1".
-		const QString& filename(){return m_filename;}
+		const QString& filename() {return m_filename;}
 		/// Comment for this calculation
-		const QString& comment(){return m_comment;}
+		const QString& comment() {return m_comment;}
 	protected:
 		void doLoadFromProjectMainFile(const QDomNode& node);
 		void doSaveToProjectMainFile(QXmlStreamWriter& writer);
@@ -33,12 +34,12 @@ public:
 		QString m_comment;
 	};
 	/// Constructor
-	CgnsFileList(ProjectDataItem* parent) : ProjectDataItem(parent){
+	CgnsFileList(ProjectDataItem* parent) : ProjectDataItem(parent) {
 		m_current = nullptr;
 	}
 	~CgnsFileList();
 	QList<CgnsFileEntry*> cgnsFiles();
-	CgnsFileEntry* current(){return m_current;}
+	CgnsFileEntry* current() {return m_current;}
 	bool exists(const QString& name);
 	CgnsFileEntry* setCurrent(const QString& name);
 	/// Add new cgns file.

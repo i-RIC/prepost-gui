@@ -34,7 +34,7 @@ RawDataRiverSurveyProxy::~RawDataRiverSurveyProxy()
 
 void RawDataRiverSurveyProxy::setupActors()
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*> (m_rawData);
+	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(m_rawData);
 	vtkRenderer* r = renderer();
 	vtkActorCollection* col = actorCollection();
 
@@ -121,7 +121,7 @@ void RawDataRiverSurveyProxy::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 void RawDataRiverSurveyProxy::updateGraphics()
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*> (m_rawData);
+	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(m_rawData);
 
 	m_crosssectionLines->Reset();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -129,13 +129,13 @@ void RawDataRiverSurveyProxy::updateGraphics()
 
 	RawDataRiverPathPoint* p = rs->m_headPoint->nextPoint();
 	vtkIdType pointNum = 0;
-	while (p != 0){
+	while (p != 0) {
 		double maxHeight;
 		RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
-		for (int i = 0; i < alist.count(); ++i){
+		for (int i = 0; i < alist.count(); ++i) {
 			RawDataRiverCrosssection::Altitude alt = alist[i];
-			if (i == 0 || maxHeight < alt.height()){maxHeight = alt.height();}
+			if (i == 0 || maxHeight < alt.height()) {maxHeight = alt.height();}
 		}
 		// now draw lines.
 		QVector2D offsetDir = p->crosssectionDirection();
@@ -147,7 +147,7 @@ void RawDataRiverSurveyProxy::updateGraphics()
 		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
-		for (int i = 1; i < alist.count(); ++i){
+		for (int i = 1; i < alist.count(); ++i) {
 			RawDataRiverCrosssection::Altitude alt = alist[i];
 			offset = (maxHeight - alt.height()) * m_crosssectionLinesScale;
 			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
@@ -175,10 +175,10 @@ void RawDataRiverSurveyProxy::updateGraphics()
 	collection->RemoveItem(m_backgroundActor);
 	collection->RemoveItem(m_crosssectionLinesActor);
 
-	if (m_showBackground){
+	if (m_showBackground) {
 		collection->AddItem(m_backgroundActor);
 	}
-	if (m_showLines){
+	if (m_showLines) {
 		collection->AddItem(m_crosssectionLinesActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -187,7 +187,7 @@ void RawDataRiverSurveyProxy::updateGraphics()
 class RawDataRiverSurveyProxyDisplaySettingCommand : public QUndoCommand
 {
 public:
-	RawDataRiverSurveyProxyDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, RawDataRiverSurveyProxy* s){
+	RawDataRiverSurveyProxyDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, RawDataRiverSurveyProxy* s) {
 		m_survey = s;
 		m_newBgVisible = bgvisible;
 		m_newOpacityPercent = opacityP;
@@ -201,7 +201,7 @@ public:
 		m_oldLineColor = m_survey->m_crosssectionLinesColor;
 		m_oldZScale = m_survey->m_crosssectionLinesScale;
 	}
-	void redo(){
+	void redo() {
 		m_survey->m_showBackground = m_newBgVisible;
 		m_survey->m_opacityPercent = m_newOpacityPercent;
 		m_survey->m_showLines = m_newLinesVisible;
@@ -211,7 +211,7 @@ public:
 		m_survey->updateGraphics();
 		m_survey->renderGraphicsView();
 	}
-	void undo(){
+	void undo() {
 		m_survey->m_showBackground = m_oldBgVisible;
 		m_survey->m_opacityPercent = m_oldOpacityPercent;
 		m_survey->m_showLines = m_oldLinesVisible;
@@ -270,7 +270,7 @@ QDialog* RawDataRiverSurveyProxy::propertyDialog(QWidget* parent)
 
 void RawDataRiverSurveyProxy::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	RawDataRiverSurveyDisplaySettingDialog* dialog = dynamic_cast<RawDataRiverSurveyDisplaySettingDialog*> (propDialog);
+	RawDataRiverSurveyDisplaySettingDialog* dialog = dynamic_cast<RawDataRiverSurveyDisplaySettingDialog*>(propDialog);
 
 	iRICUndoStack::instance().push(new RawDataRiverSurveyProxyDisplaySettingCommand(dialog->colormapVisible(), dialog->opacityPercent(), dialog->linesVisible(), dialog->lineColor(), dialog->zScale(), this));
 }

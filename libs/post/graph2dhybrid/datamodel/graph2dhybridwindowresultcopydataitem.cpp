@@ -32,7 +32,7 @@ Graph2dHybridWindowResultCopyDataItem::Graph2dHybridWindowResultCopyDataItem(Gra
 Graph2dHybridWindowResultCopyDataItem::~Graph2dHybridWindowResultCopyDataItem()
 {
 	delete m_curve;
-	if (m_data != 0){delete m_data;}
+	if (m_data != 0) {delete m_data;}
 }
 
 void Graph2dHybridWindowResultCopyDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -42,33 +42,33 @@ void Graph2dHybridWindowResultCopyDataItem::doLoadFromProjectMainFile(const QDom
 	m_idType = static_cast<IDType>(iRIC::getIntAttribute(node, "idType"));
 
 	QDomNode sNode = iRIC::getChildNode(node, "Setting");
-	if (! sNode.isNull()){
+	if (! sNode.isNull()) {
 		m_setting.loadFromProjectMainFile(sNode);
 	}
 	setSetting(m_setting);
 
 	QDomNode aNode = iRIC::getChildNode(node, "IdArgs");
-	if (! aNode.isNull()){
+	if (! aNode.isNull()) {
 		m_idArgs.clear();
-		for (int i = 0; i < aNode.childNodes().count(); ++i){
+		for (int i = 0; i < aNode.childNodes().count(); ++i) {
 			QDomNode n = aNode.childNodes().at(i);
 			QString arg = n.toElement().text();
 			m_idArgs.append(arg);
 		}
 	}
 	QDomNode xNode = iRIC::getChildNode(node, "XValues");
-	if (! xNode.isNull()){
+	if (! xNode.isNull()) {
 		m_xValues.clear();
-		for (int i = 0; i < xNode.childNodes().count(); ++i){
+		for (int i = 0; i < xNode.childNodes().count(); ++i) {
 			QDomNode n = xNode.childNodes().at(i);
 			QString arg = n.toElement().text();
 			m_xValues.append(arg.toDouble());
 		}
 	}
 	QDomNode yNode = iRIC::getChildNode(node, "YValues");
-	if (! yNode.isNull()){
+	if (! yNode.isNull()) {
 		m_yValues.clear();
-		for (int i = 0; i < yNode.childNodes().count(); ++i){
+		for (int i = 0; i < yNode.childNodes().count(); ++i) {
 			QDomNode n = yNode.childNodes().at(i);
 			QString arg = n.toElement().text();
 			m_yValues.append(arg.toDouble());
@@ -87,21 +87,21 @@ void Graph2dHybridWindowResultCopyDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	writer.writeEndElement();
 
 	writer.writeStartElement("IdArgs");
-	for (int i = 0; i < m_idArgs.count(); ++i){
+	for (int i = 0; i < m_idArgs.count(); ++i) {
 		QString arg = m_idArgs.at(i);
 		writer.writeTextElement("Arg", arg);
 	}
 	writer.writeEndElement();
 
 	writer.writeStartElement("XValues");
-	for (int i = 0; i < m_xValues.count(); ++i){
+	for (int i = 0; i < m_xValues.count(); ++i) {
 		double val = m_xValues.at(i);
 		writer.writeTextElement("Value", QString::number(val));
 	}
 	writer.writeEndElement();
 
 	writer.writeStartElement("YValues");
-	for (int i = 0; i < m_yValues.count(); ++i){
+	for (int i = 0; i < m_yValues.count(); ++i) {
 		double val = m_yValues.at(i);
 		writer.writeTextElement("Value", QString::number(val));
 	}
@@ -119,7 +119,8 @@ void Graph2dHybridWindowResultCopyDataItem::setData(const QVector<double>& xvals
 	m_yValues = yvals;
 }
 
-void Graph2dHybridWindowResultCopyDataItem::setTitle(const QString& title){
+void Graph2dHybridWindowResultCopyDataItem::setTitle(const QString& title)
+{
 	m_standardItem->setText(title);
 	m_standardItemCopy = m_standardItem->clone();
 	m_curve->setTitle(title);
@@ -128,17 +129,17 @@ void Graph2dHybridWindowResultCopyDataItem::setTitle(const QString& title){
 
 void Graph2dHybridWindowResultCopyDataItem::setVisible(bool visible)
 {
-	if (visible && ! m_attached){
+	if (visible && ! m_attached) {
 		m_attached = true;
 		m_curve->attach(dataModel()->view());
 	}
-	if (! visible && m_attached){
+	if (! visible && m_attached) {
 		m_attached = false;
 		m_curve->detach();
 	}
 }
 
-void Graph2dHybridWindowResultCopyDataItem::setSetting(const Graph2dHybridWindowResultSetting::Setting &s)
+void Graph2dHybridWindowResultCopyDataItem::setSetting(const Graph2dHybridWindowResultSetting::Setting& s)
 {
 	m_setting = s;
 	m_setting.setupCurve(m_curve);
@@ -150,15 +151,15 @@ void Graph2dHybridWindowResultCopyDataItem::update()
 	QVector<double> xvals;
 	QVector<double> yvals;
 
-	if (m_data != 0){
+	if (m_data != 0) {
 		delete m_data;
 		m_data = 0;
 	}
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowDataItem::buildData(
-				m_xValues, m_yValues, s, m_setting, xvals, yvals);
+		m_xValues, m_yValues, s, m_setting, xvals, yvals);
 
-	double *x, *y;
+	double* x, *y;
 	buildXY(xvals, yvals, &x, &y);
 
 //	m_data = new QwtArrayData(x, y, xvals.count());
@@ -179,7 +180,7 @@ const QString Graph2dHybridWindowResultCopyDataItem::id()
 {
 	QString temp;
 
-	switch (m_idType){
+	switch (m_idType) {
 	case idtTimeBaseIterative:
 		temp = tr("%1");
 		break;
@@ -214,7 +215,7 @@ const QString Graph2dHybridWindowResultCopyDataItem::id()
 		temp = tr("%1 (t = %2, I = %3, J = %4)");
 		break;
 	}
-	for (int i = 0; i < m_idArgs.count(); ++i){
+	for (int i = 0; i < m_idArgs.count(); ++i) {
 		QString a = m_idArgs.at(i);
 		temp = temp.arg(a);
 	}

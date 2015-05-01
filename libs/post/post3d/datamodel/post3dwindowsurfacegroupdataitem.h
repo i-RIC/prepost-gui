@@ -19,8 +19,8 @@ public:
 	void updateActorSettings();
 	void setupActors();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 private:
 	vtkSmartPointer<vtkExtractGrid> m_extractGrid;
 	vtkSmartPointer<vtkActor> m_actor;

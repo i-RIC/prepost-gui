@@ -4,7 +4,7 @@
 
 #include <rawdata/riversurvey/rawdatariversurvey.h>
 
-GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent) :
+GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRiverSurveyRegionDialog)
 {
@@ -23,16 +23,16 @@ GridCreatingConditionRiverSurveyRegionDialog::~GridCreatingConditionRiverSurveyR
 void GridCreatingConditionRiverSurveyRegionDialog::setData(RawDataRiverSurvey* rs)
 {
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	while (p != 0){
+	while (p != 0) {
 		m_points.push_back(p);
 		p = p->nextPoint();
 	}
 	// setup start combobox
-	for (int i = 0; i < m_points.count() - 1; ++i){
+	for (int i = 0; i < m_points.count() - 1; ++i) {
 		ui->startComboBox->addItem(m_points.at(i)->name());
 	}
 	// setup end combobox
-	for (int i = 1; i < m_points.count(); ++i){
+	for (int i = 1; i < m_points.count(); ++i) {
 		ui->endComboBox->addItem(m_points.at(i)->name());
 	}
 	// set default values
@@ -43,35 +43,35 @@ void GridCreatingConditionRiverSurveyRegionDialog::setData(RawDataRiverSurvey* r
 void GridCreatingConditionRiverSurveyRegionDialog::setStartPoint(RawDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
-	if (index == - 1){index = 0;}
+	if (index == - 1) {index = 0;}
 	ui->startComboBox->setCurrentIndex(index);
 }
 
 void GridCreatingConditionRiverSurveyRegionDialog::setEndPoint(RawDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
-	if (index == - 1){index = m_points.count() - 1;}
+	if (index == - 1) {index = m_points.count() - 1;}
 	ui->endComboBox->setCurrentIndex(index - 1);
 }
 
 RawDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::startPoint()
 {
 	int index = ui->startComboBox->currentIndex();
-	if (index < 0 || index > m_points.count() - 1){return 0;}
+	if (index < 0 || index > m_points.count() - 1) {return 0;}
 	return m_points.at(index);
 }
 
 RawDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::endPoint()
 {
 	int index = ui->endComboBox->currentIndex();
-	if (index < 0 || index > m_points.count() - 2){return 0;}
+	if (index < 0 || index > m_points.count() - 2) {return 0;}
 	return m_points.at(index + 1);
 }
 
 void GridCreatingConditionRiverSurveyRegionDialog::handleStartUpdate()
 {
 	int index = ui->startComboBox->currentIndex();
-	if (ui->endComboBox->currentIndex() < index){
+	if (ui->endComboBox->currentIndex() < index) {
 		ui->endComboBox->setCurrentIndex(index);
 	}
 	m_condition->selectCreateRegion(startPoint(), endPoint());
@@ -80,7 +80,7 @@ void GridCreatingConditionRiverSurveyRegionDialog::handleStartUpdate()
 void GridCreatingConditionRiverSurveyRegionDialog::handleEndUpdate()
 {
 	int index = ui->endComboBox->currentIndex();
-	if (ui->startComboBox->currentIndex() > index){
+	if (ui->startComboBox->currentIndex() > index) {
 		ui->startComboBox->setCurrentIndex(index);
 	}
 	m_condition->selectCreateRegion(startPoint(), endPoint());

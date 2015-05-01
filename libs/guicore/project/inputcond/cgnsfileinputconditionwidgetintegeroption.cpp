@@ -10,7 +10,8 @@
 #include <QComboBox>
 #include <QHBoxLayout>
 
-CgnsFileInputConditionWidgetIntegerOption::CgnsFileInputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerInteger* cont) : CgnsFileInputConditionWidget(defnode){
+CgnsFileInputConditionWidgetIntegerOption::CgnsFileInputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerInteger* cont) : CgnsFileInputConditionWidget(defnode)
+{
 	// add nominations;
 	QList<QDomNode> noms = getEnums(defnode);
 	m_comboBox = new QComboBox(this);
@@ -20,7 +21,7 @@ CgnsFileInputConditionWidgetIntegerOption::CgnsFileInputConditionWidgetIntegerOp
 	layout->setMargin(CgnsFileInputConditionWidget::margin);
 	setLayout(layout);
 
-	for (unsigned int i = 0; i < noms.length(); ++i){
+	for (unsigned int i = 0; i < noms.length(); ++i) {
 		QDomNode nomNode = noms.at(i);
 		QDomElement nomElem = nomNode.toElement();
 		int nomValue = nomElem.attribute("value").toInt();
@@ -34,12 +35,14 @@ CgnsFileInputConditionWidgetIntegerOption::CgnsFileInputConditionWidgetIntegerOp
 	connect(m_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(informChange(int)));
 }
 
-void CgnsFileInputConditionWidgetIntegerOption::setValue(int newvalue){
+void CgnsFileInputConditionWidgetIntegerOption::setValue(int newvalue)
+{
 	int index = m_comboBox->findData(QVariant(newvalue));
 	m_comboBox->setCurrentIndex(index);
 }
 
-void CgnsFileInputConditionWidgetIntegerOption::informChange(int index){
+void CgnsFileInputConditionWidgetIntegerOption::informChange(int index)
+{
 	int value = m_comboBox->itemData(index).toInt();
 	m_container->setValue(value);
 }

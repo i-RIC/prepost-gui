@@ -10,8 +10,8 @@ class GridCreatingConditionTriangleRemeshPolygon : public GridCreatingConditionT
 	Q_OBJECT
 public:
 	GridCreatingConditionTriangleRemeshPolygon(GridCreatingConditionTriangle* parent);
-	void setCellSize(double s){m_cellSize = s;}
-	double cellSize(){return m_cellSize;}
+	void setCellSize(double s) {m_cellSize = s;}
+	double cellSize() {return m_cellSize;}
 	void finishDefinition();
 public slots:
 	void editGridSize(bool required = false);

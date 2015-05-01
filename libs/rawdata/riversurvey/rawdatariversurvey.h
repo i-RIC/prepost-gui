@@ -119,12 +119,12 @@ public:
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
-	RawDataRiverPathPoint* headPoint(){return m_headPoint;}
-	vtkStructuredGrid* backgroundGrid(){return m_backgroundGrid;}
+	RawDataRiverPathPoint* headPoint() {return m_headPoint;}
+	vtkStructuredGrid* backgroundGrid() {return m_backgroundGrid;}
 	void updateCrossectionWindows();
 	void setColoredPoints(RawDataRiverPathPoint* black, RawDataRiverPathPoint* red, RawDataRiverPathPoint* blue);
-	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond){m_gridCreatingCondition = cond;}
-	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition(){return m_gridCreatingCondition;}
+	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond) {m_gridCreatingCondition = cond;}
+	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() {return m_gridCreatingCondition;}
 	void useDivisionPointsForBackgroundGrid(bool use);
 	void refreshBackgroundGrid();
 	void cancelBackgroundGridUpdate();
@@ -161,7 +161,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void loadExternalData(const QString& /*filename*/);
 	void saveExternalData(const QString& /*filename*/);
-	void updateFilename(){
+	void updateFilename() {
 		m_filename = m_name;
 		m_filename.append(".dat");
 	}

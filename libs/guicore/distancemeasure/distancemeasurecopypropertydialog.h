@@ -6,8 +6,9 @@
 #include <QDialog>
 class QVector2D;
 
-namespace Ui {
-class DistanceMeasureCopyPropertyDialog;
+namespace Ui
+{
+	class DistanceMeasureCopyPropertyDialog;
 }
 
 class GUICOREDLL_EXPORT DistanceMeasureCopyPropertyDialog : public QDialog
@@ -26,7 +27,7 @@ public:
 		lmCustom
 	};
 
-	explicit DistanceMeasureCopyPropertyDialog(QWidget *parent = nullptr);
+	explicit DistanceMeasureCopyPropertyDialog(QWidget* parent = nullptr);
 	~DistanceMeasureCopyPropertyDialog();
 
 	void setName(const QString& name);
@@ -57,7 +58,7 @@ private slots:
 	void updateAutoLabel();
 
 private:
-	Ui::DistanceMeasureCopyPropertyDialog *ui;
+	Ui::DistanceMeasureCopyPropertyDialog* ui;
 };
 
 #endif // DISTANCEMEASURECOPYPROPERTYDIALOG_H

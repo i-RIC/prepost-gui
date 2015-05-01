@@ -134,15 +134,15 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr){return;}
-	if (cont->data() == nullptr){return;}
+	if (cont == nullptr) {return;}
+	if (cont->data() == nullptr) {return;}
 
 	vtkPointSet* ps = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->data();
 	vtkPointSet* labeldata = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(ps);
 
 	vtkSmartPointer<vtkStructuredGrid> tmpgrid;
-	switch (m_shape){
+	switch (m_shape) {
 	case GridShapeEditDialog::Outline:
 		m_outlineFilter->SetInputData(ps);
 		m_outlineActor->GetProperty()->SetColor(m_color);
@@ -153,7 +153,7 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 		m_wireframeMapper->SetInputData(ps);
 		m_wireframeActor->GetLODMappers()->RemoveAllItems();
 		tmpgrid = grid;
-		for (int i = 0; i < 3; ++i){
+		for (int i = 0; i < 3; ++i) {
 			vtkSmartPointer<vtkExtractGrid> extractor = vtkSmartPointer<vtkExtractGrid>::New();
 			extractor->SetInputData(tmpgrid);
 			extractor->SetSampleRate(2, 2, 2);
@@ -168,7 +168,7 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 		m_actorCollection->AddItem(m_wireframeActor);
 		break;
 	}
-	if (m_indexVisible){
+	if (m_indexVisible) {
 		m_indexTransformFilter->SetInputData(labeldata);
 		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
@@ -188,7 +188,7 @@ void Post3dWindowGridShapeDataItem::updateActorSettings()
 void Post3dWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){
+	if (! shapeNode.isNull()) {
 		loadShapeFromProjectMainFile(shapeNode);
 	}
 }
@@ -246,8 +246,7 @@ class Post3dWindowGridShapeDataSetSetting : public QUndoCommand
 {
 public:
 	Post3dWindowGridShapeDataSetSetting(bool enabled, GridShapeEditDialog::Shape shape, QColor color, bool indexVisible, QColor indexColor, Post3dWindowGridShapeDataItem* item)
-		: QUndoCommand(QObject::tr("Update Grid Shape Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Grid Shape Setting")) {
 		m_newEnabled = enabled;
 		m_newShape = shape;
 		m_newColor = color;
@@ -266,8 +265,7 @@ public:
 
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
 		m_item->m_shape = m_newShape;
@@ -281,8 +279,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_shape = m_oldShape;
@@ -324,10 +321,10 @@ void Post3dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDi
 
 QColor Post3dWindowGridShapeDataItem::color()
 {
-	return QColor (
-			(int)(m_color[0] * 255),
-			(int)(m_color[1] * 255),
-			(int)(m_color[2] * 255));
+	return QColor(
+					 (int)(m_color[0] * 255),
+					 (int)(m_color[1] * 255),
+					 (int)(m_color[2] * 255));
 }
 
 void Post3dWindowGridShapeDataItem::setColor(const QColor& color)
@@ -339,10 +336,10 @@ void Post3dWindowGridShapeDataItem::setColor(const QColor& color)
 
 QColor Post3dWindowGridShapeDataItem::indexColor()
 {
-	return QColor (
-			(int)(m_indexColor[0] * 255),
-			(int)(m_indexColor[1] * 255),
-			(int)(m_indexColor[2] * 255));
+	return QColor(
+					 (int)(m_indexColor[0] * 255),
+					 (int)(m_indexColor[1] * 255),
+					 (int)(m_indexColor[2] * 255));
 }
 
 void Post3dWindowGridShapeDataItem::setIndexColor(const QColor& color)

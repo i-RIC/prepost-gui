@@ -10,22 +10,24 @@
 class PostZoneDataContainer;
 class ArrowSettingContainer;
 
-namespace Ui {
-		class Post2dWindowArrowUnstructuredSettingDialog;
+namespace Ui
+{
+	class Post2dWindowArrowUnstructuredSettingDialog;
 }
 
-class Post2dWindowArrowUnstructuredSettingDialog : public QDialog {
-		Q_OBJECT
+class Post2dWindowArrowUnstructuredSettingDialog : public QDialog
+{
+	Q_OBJECT
 public:
-	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowUnstructuredSettingDialog();
-	void setZoneData(PostZoneDataContainer *data);
+	void setZoneData(PostZoneDataContainer* data);
 	bool isEnabled() const;
 	void setSolution(const QString& sol);
 	const QString solution();
 	void setScalarValue(const QString& scalar);
 	const QString scalarValue();
-	void setColor(const QColor &color);
+	void setColor(const QColor& color);
 	const QColor color() const;
 	void setSamplingMode(Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm);
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode samplingMode();
@@ -61,7 +63,7 @@ private:
 	QList<QString> m_scalars;
 	bool m_activeAvailable;
 	StructuredGridRegion::RegionMode m_regionMode;
-	Ui::Post2dWindowArrowUnstructuredSettingDialog *ui;
+	Ui::Post2dWindowArrowUnstructuredSettingDialog* ui;
 };
 
 #endif // POST2DWINDOWARROWUNSTRUCTUREDSETTINGDIALOG_H

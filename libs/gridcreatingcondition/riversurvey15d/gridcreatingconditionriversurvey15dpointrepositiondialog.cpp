@@ -17,29 +17,26 @@ public:
 		bool apply,
 		RawDataRiverPathPoint::CtrlPointsAddMethod method,
 		GridCreatingConditionRiverSurvey15D* cond)
-		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Reposition Control Points"))
-	{
+		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Reposition Control Points")) {
 		m_apply = apply;
 		m_condition = cond;
 		buildPoints(method);
 	}
-	void undo()
-	{
+	void undo() {
 		m_point->CtrlPoints(m_position) = m_before;
-		if (! m_apply){
+		if (! m_apply) {
 			m_condition->updateShapeData();
 			m_condition->renderGraphicsView();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_point->CtrlPoints(m_position) = m_after;
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 
 private:
-	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method){
+	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method) {
 		std::list<CtrlPointSelectionInfo>& infoList = m_condition->m_selectedCtrlPointInfoList;
 		CtrlPointSelectionInfo Info = infoList.front();
 		m_point = Info.Point;
@@ -53,7 +50,7 @@ private:
 	}
 
 	bool m_apply;
-	GridCreatingConditionRiverSurvey15D *m_condition;
+	GridCreatingConditionRiverSurvey15D* m_condition;
 	RawDataRiverPathPoint* m_point;
 	RawDataRiverPathPoint::CtrlPointPosition m_position;
 	QVector<double> m_before;
@@ -62,7 +59,7 @@ private:
 
 GridCreatingConditionRiverSurvey15DPointRepositionDialog::GridCreatingConditionRiverSurvey15DPointRepositionDialog(
 	GridCreatingConditionRiverSurvey15D* gc,
-	QWidget *parent) :
+	QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRiverSurvey15DPointRepositionDialog)
 {
@@ -84,14 +81,14 @@ GridCreatingConditionRiverSurvey15DPointRepositionDialog::~GridCreatingCondition
 
 void GridCreatingConditionRiverSurvey15DPointRepositionDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
 
 void GridCreatingConditionRiverSurvey15DPointRepositionDialog::apply()
 {
-	if (m_applied){
+	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
 	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
@@ -101,7 +98,7 @@ void GridCreatingConditionRiverSurvey15DPointRepositionDialog::apply()
 
 void GridCreatingConditionRiverSurvey15DPointRepositionDialog::accept()
 {
-	if (m_applied){
+	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
 	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
@@ -111,7 +108,7 @@ void GridCreatingConditionRiverSurvey15DPointRepositionDialog::accept()
 
 void GridCreatingConditionRiverSurvey15DPointRepositionDialog::reject()
 {
-	if (m_applied){
+	if (m_applied) {
 		iRICUndoStack::instance().undo();
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
@@ -123,9 +120,9 @@ RawDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurvey15DPo
 {
 	RawDataRiverPathPoint::CtrlPointsAddMethod method;
 	method.number = 1;
-	if (ui->uniformRadioButton->isChecked()){
+	if (ui->uniformRadioButton->isChecked()) {
 		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
-	} else if (ui->equalRatioRadioButton->isChecked()){
+	} else if (ui->equalRatioRadioButton->isChecked()) {
 		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
 		method.param = ui->ratioSpinBox->value();
 	}

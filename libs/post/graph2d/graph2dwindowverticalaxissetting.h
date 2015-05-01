@@ -17,26 +17,26 @@ public:
 	};
 	Graph2dWindowVerticalAxisSetting();
 	Graph2dWindowVerticalAxisSetting(ProjectDataItem* parent);
-	RangeMode rangeMode(){
+	RangeMode rangeMode() {
 		return m_rangeMode;
 	}
-	void setRangeMode(RangeMode rm){
+	void setRangeMode(RangeMode rm) {
 		m_rangeMode = rm;
 	}
-	double customRangeMax(){return m_customRangeMax;}
-	double customRangeMin(){return m_customRangeMin;}
-	void setCustomRange(double min, double max){
+	double customRangeMax() {return m_customRangeMax;}
+	double customRangeMin() {return m_customRangeMin;}
+	void setCustomRange(double min, double max) {
 		m_customRangeMin = min;
 		m_customRangeMax = max;
 	}
-	LabelMode labelMode(){
+	LabelMode labelMode() {
 		return m_labelMode;
 	}
-	void setLabelMode(LabelMode lm){
+	void setLabelMode(LabelMode lm) {
 		m_labelMode = lm;
 	}
-	const QString& customLabel(){return m_customLabel;}
-	void setCustomLabel(const QString& label){
+	const QString& customLabel() {return m_customLabel;}
+	void setCustomLabel(const QString& label) {
 		m_customLabel = label;
 	}
 	Graph2dWindowVerticalAxisSetting& operator=(const Graph2dWindowVerticalAxisSetting& setting);

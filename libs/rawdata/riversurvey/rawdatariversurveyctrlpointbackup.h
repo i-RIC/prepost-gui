@@ -9,8 +9,8 @@
 class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCtrlPointBackup
 {
 public:
-	RawDataRiverSurveyCtrlPointBackup(){}
-	virtual ~RawDataRiverSurveyCtrlPointBackup(){}
+	RawDataRiverSurveyCtrlPointBackup() {}
+	virtual ~RawDataRiverSurveyCtrlPointBackup() {}
 	void backup(RawDataRiverPathPoint* point, RawDataRiverPathPoint::CtrlZonePosition position);
 	void restore();
 private:

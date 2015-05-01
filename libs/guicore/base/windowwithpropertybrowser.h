@@ -6,8 +6,7 @@ class PropertyBrowser;
 class WindowWithPropertyBrowser
 {
 public:
-	PropertyBrowser* propertyBrowser()
-	{
+	PropertyBrowser* propertyBrowser() {
 		return m_propertyBrowser;
 	}
 

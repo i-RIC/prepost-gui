@@ -6,7 +6,8 @@
 #include <QVariant>
 #include <QStringList>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataPolygonImporterSettingDialog;
 }
 
@@ -19,7 +20,7 @@ class RawDataPolygonImporterSettingDialog : public QDialog
 public:
 	enum NameSetting {nsLoadFromDBF, nsAuto};
 	enum ValueSetting {vsLoadFromDBF, vsSpecify};
-	explicit RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget *parent = 0);
+	explicit RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget* parent = 0);
 	~RawDataPolygonImporterSettingDialog();
 	NameSetting nameSetting() const;
 	int nameIndex() const;
@@ -32,11 +33,11 @@ public slots:
 private slots:
 	void updateTable();
 private:
-	void setLabels(const QStringList &labels);
-	void setData(const QList<QList<QVariant> > &data);
+	void setLabels(const QStringList& labels);
+	void setData(const QList<QList<QVariant> >& data);
 
 	QString m_filename;
-	Ui::RawDataPolygonImporterSettingDialog *ui;
+	Ui::RawDataPolygonImporterSettingDialog* ui;
 };
 
 #endif // RAWDATAPOLYGONIMPORTERSETTINGDIALOG_H

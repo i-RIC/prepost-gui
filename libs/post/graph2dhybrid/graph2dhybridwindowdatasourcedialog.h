@@ -6,8 +6,9 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
-    class Graph2dHybridWindowDataSourceDialog;
+namespace Ui
+{
+	class Graph2dHybridWindowDataSourceDialog;
 }
 
 class iRICMainWindowInterface;
@@ -18,15 +19,15 @@ class Graph2dHybridWindowImportDataDataItem;
 
 class Graph2dHybridWindowDataSourceDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit Graph2dHybridWindowDataSourceDialog(QWidget *parent = nullptr);
-    ~Graph2dHybridWindowDataSourceDialog();
+	explicit Graph2dHybridWindowDataSourceDialog(QWidget* parent = nullptr);
+	~Graph2dHybridWindowDataSourceDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
 	void setImportData(Graph2dHybridWindowImportDataGroupDataItem* group);
 	const Graph2dHybridWindowResultSetting& setting();
-	void setMainWindow(iRICMainWindowInterface* mainw){m_mainWindow = mainw;}
+	void setMainWindow(iRICMainWindowInterface* mainw) {m_mainWindow = mainw;}
 public slots:
 	void accept();
 	void reject();
@@ -65,7 +66,7 @@ private:
 
 	iRICMainWindowInterface* m_mainWindow;
 
-    Ui::Graph2dHybridWindowDataSourceDialog *ui;
+	Ui::Graph2dHybridWindowDataSourceDialog* ui;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWDATASOURCEDIALOG_H

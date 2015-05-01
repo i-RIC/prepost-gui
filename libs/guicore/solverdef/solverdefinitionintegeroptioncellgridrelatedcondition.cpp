@@ -14,12 +14,12 @@ SolverDefinitionIntegerOptionCellGridRelatedCondition::SolverDefinitionIntegerOp
 
 GridRelatedConditionEditWidget* SolverDefinitionIntegerOptionCellGridRelatedCondition::editWidget(QWidget* parent)
 {
-	GridRelatedConditionIntegerOptionEditWidget * w = new GridRelatedConditionIntegerOptionEditWidget(parent, this);
+	GridRelatedConditionIntegerOptionEditWidget* w = new GridRelatedConditionIntegerOptionEditWidget(parent, this);
 	w->setEnumerations(m_enumerations);
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionIntegerOptionCellGridRelatedCondition::createScalarsToColorsEditWidget(QWidget *parent)
+ScalarsToColorsEditWidget* SolverDefinitionIntegerOptionCellGridRelatedCondition::createScalarsToColorsEditWidget(QWidget* parent)
 {
 	return createColorTransferFunctionEditWidget(parent);
 }
@@ -32,7 +32,7 @@ ScalarsToColorsContainer* SolverDefinitionIntegerOptionCellGridRelatedCondition:
 	QMap<double, QColor> cols;
 	ColorSource* src = new ColorSource(d);
 	src->load(":/libs/guicore/data/colorsource_cell.xml");
-	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it){
+	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it) {
 		int num = it.key();
 		engEnums.insert(num, it.value());
 		enums.insert(num, m_enumerations.value(num));

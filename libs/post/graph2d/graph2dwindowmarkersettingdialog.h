@@ -4,22 +4,23 @@
 #include "graph2dwindowmarkersetting.h"
 #include <QDialog>
 
-namespace Ui {
-    class Graph2dWindowMarkerSettingDialog;
+namespace Ui
+{
+	class Graph2dWindowMarkerSettingDialog;
 }
 
 class ColorSource;
 
 class Graph2dWindowMarkerSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit Graph2dWindowMarkerSettingDialog(QWidget *parent = nullptr);
-    ~Graph2dWindowMarkerSettingDialog();
+	explicit Graph2dWindowMarkerSettingDialog(QWidget* parent = nullptr);
+	~Graph2dWindowMarkerSettingDialog();
 	void setSetting(const Graph2dWindowMarkerSetting& setting);
-	const Graph2dWindowMarkerSetting& setting(){return m_setting;}
-	void setXAxisLabel(const QString& l){m_xAxisLabel = l;}
+	const Graph2dWindowMarkerSetting& setting() {return m_setting;}
+	void setXAxisLabel(const QString& l) {m_xAxisLabel = l;}
 private slots:
 	void itemChanged(int index);
 	void oriantationChanged();
@@ -40,7 +41,7 @@ private:
 	const QString autoLabel();
 	Graph2dWindowMarkerSetting m_setting;
 	Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem* m_item;
-    Ui::Graph2dWindowMarkerSettingDialog *ui;
+	Ui::Graph2dWindowMarkerSettingDialog* ui;
 	QString m_xAxisLabel;
 
 	ColorSource* m_colorSource;

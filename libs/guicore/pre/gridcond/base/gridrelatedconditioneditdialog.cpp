@@ -4,7 +4,7 @@
 
 #include <QString>
 
-GridRelatedConditionEditDialog::GridRelatedConditionEditDialog(QWidget *parent) :
+GridRelatedConditionEditDialog::GridRelatedConditionEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridRelatedConditionEditDialog)
 {
@@ -24,7 +24,7 @@ void GridRelatedConditionEditDialog::inhibitCancel(bool inhibited)
 	m_cancelInhibited = inhibited;
 }
 
-void GridRelatedConditionEditDialog::setWidget(GridRelatedConditionEditWidget *w)
+void GridRelatedConditionEditDialog::setWidget(GridRelatedConditionEditWidget* w)
 {
 	m_widget = w;
 	ui->widget->setWidget(w);
@@ -42,7 +42,7 @@ void GridRelatedConditionEditDialog::accept()
 
 void GridRelatedConditionEditDialog::reject()
 {
-	if (m_cancelInhibited){return;}
+	if (m_cancelInhibited) {return;}
 	QDialog::reject();
 }
 

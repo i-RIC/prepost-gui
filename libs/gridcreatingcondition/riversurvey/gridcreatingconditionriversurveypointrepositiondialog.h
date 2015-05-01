@@ -10,14 +10,16 @@
 class GridCreatingConditionRiverSurvey;
 //class RawDataRiverPathPoint;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurveyPointRepositionDialog;
 }
 
-class GridCreatingConditionRiverSurveyPointRepositionDialog : public QDialog {
+class GridCreatingConditionRiverSurveyPointRepositionDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	explicit GridCreatingConditionRiverSurveyPointRepositionDialog(GridCreatingConditionRiverSurvey* gc, QWidget *parent = nullptr);
+	explicit GridCreatingConditionRiverSurveyPointRepositionDialog(GridCreatingConditionRiverSurvey* gc, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointRepositionDialog();
 
 	void apply();
@@ -28,7 +30,7 @@ private slots:
 	void handleButtonClick(QAbstractButton* button);
 private:
 	RawDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
-	Ui::GridCreatingConditionRiverSurveyPointRepositionDialog *ui;
+	Ui::GridCreatingConditionRiverSurveyPointRepositionDialog* ui;
 
 	GridCreatingConditionRiverSurvey* m_condition;
 	RawDataRiverPathPoint::CtrlPointsAddMethod m_method;

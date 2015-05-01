@@ -5,17 +5,18 @@
 #include <QDialog>
 #include <QPushButton>
 
-namespace Ui {
-		class PostDataExportDialog;
+namespace Ui
+{
+	class PostDataExportDialog;
 }
 
 class GUICOREDLL_EXPORT PostDataExportDialog : public QDialog
 {
-		Q_OBJECT
+	Q_OBJECT
 
 public:
 	enum Format {fmVTK, fmCSV};
-	explicit PostDataExportDialog(QWidget *parent = nullptr);
+	explicit PostDataExportDialog(QWidget* parent = nullptr);
 	~PostDataExportDialog();
 	void setTimeValues(QList<double> timevalues);
 	void setIJKRange(int inum, int jnum, int knum);
@@ -75,7 +76,7 @@ private slots:
 	void toggleRangeGroupBox();
 
 private:
-		Ui::PostDataExportDialog *ui;
+	Ui::PostDataExportDialog* ui;
 };
 
 #endif // POSTDATAEXPORTDIALOG_H

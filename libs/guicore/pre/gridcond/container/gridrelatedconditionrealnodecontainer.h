@@ -11,7 +11,7 @@ public:
 		: GridRelatedConditionNodeContainerT<double, vtkDoubleArray>(grid, cond)
 	{}
 protected:
-	DataType_t dataType(){return RealDouble;}
+	DataType_t dataType() {return RealDouble;}
 };
 
 #endif // GRIDRELATEDCONDITIONREALNODECONTAINER_H

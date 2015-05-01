@@ -63,7 +63,7 @@ public:
 
 	void setupActors();
 	void setupMenu();
-	void setActorProperties(vtkProperty *prop);
+	void setActorProperties(vtkProperty* prop);
 	void informSelection(PreProcessorGraphicsViewInterface* v);
 	void informDeselection(PreProcessorGraphicsViewInterface* v);
 	void viewOperationEnded(PreProcessorGraphicsViewInterface* v);
@@ -90,10 +90,10 @@ public:
 	void setIMax(int i);
 	void setJMax(int j);
 	void setWidth(double w);
-	int iMax(){return m_iMax;}
-	int jMax(){return m_jMax;}
-	double width(){return m_width;}
-	double length(){return m_length;}
+	int iMax() {return m_iMax;}
+	int jMax() {return m_jMax;}
+	double width() {return m_width;}
+	double length() {return m_length;}
 	bool addToolBarButtons(QToolBar* /*tb*/);
 	void clear();
 	void showInitialDialog();

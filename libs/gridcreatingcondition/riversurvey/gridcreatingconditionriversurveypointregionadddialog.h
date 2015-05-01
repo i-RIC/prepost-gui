@@ -8,15 +8,17 @@ class RawDataRiverSurvey;
 class RawDataRiverPathPoint;
 class GridCreatingConditionRiverSurvey;
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionRiverSurveyPointRegionAddDialog;
 }
 
-class GridCreatingConditionRiverSurveyPointRegionAddDialog : public QDialog {
+class GridCreatingConditionRiverSurveyPointRegionAddDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget *parent = nullptr);
+	explicit GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointRegionAddDialog();
 	void setData(RawDataRiverSurvey* rs);
 	void setStartPoint(RawDataRiverPathPoint* p);
@@ -32,10 +34,10 @@ private slots:
 	void handleEndUpdate();
 
 protected:
-	void changeEvent(QEvent *e);
+	void changeEvent(QEvent* e);
 
 private:
-	Ui::GridCreatingConditionRiverSurveyPointRegionAddDialog *ui;
+	Ui::GridCreatingConditionRiverSurveyPointRegionAddDialog* ui;
 
 	QList<RawDataRiverPathPoint*> m_points;
 	GridCreatingConditionRiverSurvey* m_condition;

@@ -27,7 +27,8 @@ class RawDataRiverSurveyCrosssectionWindowGraphicsView;
 class RawDataRiverSurveyCrosssectionWindowProjectDataItem;
 class PreProcessorRawDataGroupDataItemInterface;
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverSurveyCrosssectionWindow;
 }
 
@@ -45,14 +46,14 @@ public:
 	const static int TABLE_COLOR_WIDTH = 40;
 	const static int TABLE_ROWHEIGHT = 24;
 
-	explicit RawDataRiverSurveyCrosssectionWindow(PreProcessorRawDataGroupDataItemInterface* gitem, RawDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget *parent = nullptr);
+	explicit RawDataRiverSurveyCrosssectionWindow(PreProcessorRawDataGroupDataItemInterface* gitem, RawDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~RawDataRiverSurveyCrosssectionWindow();
 	void setRiverSurvey(RawDataRiverSurvey* rs);
 	void setCrosssection(double name);
-	RawDataRiverPathPoint* target(){return m_editTargetPoint;}
-	QAction* deleteAction(){return m_deleteAction;}
-	QAction* inactivateByWEOnlyThisAction(){return m_inactivateByWEOnlyThisAction;}
-	QAction* inactivateByWEAllAction(){return m_inactivateByWEAllAction;}
+	RawDataRiverPathPoint* target() {return m_editTargetPoint;}
+	QAction* deleteAction() {return m_deleteAction;}
+	QAction* inactivateByWEOnlyThisAction() {return m_inactivateByWEOnlyThisAction;}
+	QAction* inactivateByWEAllAction() {return m_inactivateByWEAllAction;}
 	void setupData();
 	void updateSurveysTable();
 	void updateComboBoxes();
@@ -108,7 +109,7 @@ private:
 	void setupModel();
 	void setupView();
 	void updateEditTargetPoint();
-	Ui::RawDataRiverSurveyCrosssectionWindow *ui;
+	Ui::RawDataRiverSurveyCrosssectionWindow* ui;
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
 

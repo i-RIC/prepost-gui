@@ -38,9 +38,9 @@ void Graph2dScatteredWindowGridResultDataItem::updateValues(int fn)
 
 	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
 	PostZoneDataContainer* cont = postInfo->zoneContainer(s.dimension(), s.zoneName());
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 
-	vtkPointSet *ps = cont->data();
+	vtkPointSet* ps = cont->data();
 
 	m_xValues.reserve(ps->GetNumberOfPoints());
 	m_yValues.reserve(ps->GetNumberOfPoints());
@@ -53,26 +53,26 @@ void Graph2dScatteredWindowGridResultDataItem::updateValues(int fn)
 
 void Graph2dScatteredWindowGridResultDataItem::setupData(QVector<double>& vals, const QString& name, vtkPointSet* ps)
 {
-	if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X){
-		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id){
-			double * v = ps->GetPoint(id);
+	if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X) {
+		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
+			double* v = ps->GetPoint(id);
 			vals.append(*v);
 		}
-	} else if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y){
-		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id){
-			double * v = ps->GetPoint(id);
+	} else if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y) {
+		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
+			double* v = ps->GetPoint(id);
 			vals.append(*(v + 1));
 		}
-	} else if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z){
-		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id){
-			double * v = ps->GetPoint(id);
+	} else if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z) {
+		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
+			double* v = ps->GetPoint(id);
 			vals.append(*(v + 2));
 		}
 	} else {
 		vtkPointData* pd = ps->GetPointData();
 		vtkDataArray* da = pd->GetArray(iRIC::toStr(name).c_str());
 		double tuple;
-		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id){
+		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
 			da->GetTuple(id, &tuple);
 			vals.append(tuple);
 		}

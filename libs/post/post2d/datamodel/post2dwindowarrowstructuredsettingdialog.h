@@ -9,21 +9,23 @@
 class PostZoneDataContainer;
 class ArrowSettingContainer;
 
-namespace Ui {
-		class Post2dWindowArrowStructuredSettingDialog;
+namespace Ui
+{
+	class Post2dWindowArrowStructuredSettingDialog;
 }
 
-class Post2dWindowArrowStructuredSettingDialog : public QDialog {
-		Q_OBJECT
+class Post2dWindowArrowStructuredSettingDialog : public QDialog
+{
+	Q_OBJECT
 public:
-	explicit Post2dWindowArrowStructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowArrowStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowStructuredSettingDialog();
-	void setZoneData(PostZoneDataContainer *data);
+	void setZoneData(PostZoneDataContainer* data);
 	void setSolution(const QString& sol);
 	const QString solution();
 	void setScalarValue(const QString& scalar);
 	const QString scalarValue();
-	void setColor(const QColor &color);
+	void setColor(const QColor& color);
 	const QColor color() const;
 	void setRegionMode(StructuredGridRegion::RegionMode regionMode);
 	StructuredGridRegion::RegionMode regionMode() const;
@@ -63,7 +65,7 @@ private:
 	bool m_activeAvailable;
 	StructuredGridRegion::RegionMode m_regionMode;
 	StructuredGridRegion::Range2d m_range;
-	Ui::Post2dWindowArrowStructuredSettingDialog *ui;
+	Ui::Post2dWindowArrowStructuredSettingDialog* ui;
 };
 
 #endif // POST2DWINDOWARROWSTRUCTUREDSETTINGDIALOG_H

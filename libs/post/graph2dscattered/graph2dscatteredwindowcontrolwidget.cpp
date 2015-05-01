@@ -5,9 +5,9 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
-Graph2dScatteredWindowControlWidget::Graph2dScatteredWindowControlWidget(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Graph2dScatteredWindowControlWidget)
+Graph2dScatteredWindowControlWidget::Graph2dScatteredWindowControlWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::Graph2dScatteredWindowControlWidget)
 {
 	ui->setupUi(this);
 

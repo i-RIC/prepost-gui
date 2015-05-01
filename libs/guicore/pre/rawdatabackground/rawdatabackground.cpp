@@ -13,7 +13,7 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 
-RawDataBackground::RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition * condition)
+RawDataBackground::RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
 	: RawData(d, creator, condition)
 {
 	m_name = "background";
@@ -24,11 +24,11 @@ RawDataBackground::RawDataBackground(ProjectDataItem* d, RawDataCreator* creator
 
 	// set default value
 	QVariant def = condition->variantDefaultValue();
-	if (def == "min"){
+	if (def == "min") {
 		m_type = Minimum;
-	} else if (def == "max"){
+	} else if (def == "max") {
 		m_type = Maximum;
-	} else{
+	} else {
 		m_type = Custom;
 		m_customValue = def;
 	}
@@ -53,7 +53,8 @@ void RawDataBackground::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	RawData::doSaveToProjectMainFile(writer);
 }
 
-void RawDataBackground::loadExternalData(const QString& filename){
+void RawDataBackground::loadExternalData(const QString& filename)
+{
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream s(&f);
@@ -66,7 +67,8 @@ void RawDataBackground::loadExternalData(const QString& filename){
 	m_customValue = val;
 }
 
-void RawDataBackground::saveExternalData(const QString& filename){
+void RawDataBackground::saveExternalData(const QString& filename)
+{
 	QFile f(filename);
 	f.open(QIODevice::WriteOnly);
 	QDataStream s(&f);
@@ -85,22 +87,21 @@ class RawDataBackgroundEditValueCommand : public QUndoCommand
 {
 public:
 	RawDataBackgroundEditValueCommand(RawDataBackground* b, RawDataBackground::Type oldt, const QVariant& oldv, RawDataBackground::Type newt, const QVariant& newv)
-		: QUndoCommand(QObject::tr("Background edit value"))
-	{
+		: QUndoCommand(QObject::tr("Background edit value")) {
 		m_background = b;
 		m_oldType = oldt;
 		m_oldValue = oldv;
 		m_newType = newt;
 		m_newValue = newv;
 	}
-	void redo(){
+	void redo() {
 		m_background->m_type = m_newType;
 		m_background->m_customValue = m_newValue;
 		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informValueRangeChange();
 		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informDataChange();
 		m_background->m_mapped = false;
 	}
-	void undo(){
+	void undo() {
 		m_background->m_type = m_oldType;
 		m_background->m_customValue = m_oldValue;
 		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informValueRangeChange();
@@ -116,20 +117,20 @@ private:
 
 void RawDataBackground::editValue()
 {
-	if (m_gridRelatedCondition->isOption()){
+	if (m_gridRelatedCondition->isOption()) {
 		GridRelatedConditionEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
-		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*> (parent()->parent());
+		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 		dialog->setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		dialog->setLabel(tr("Please input new default value."));
 		dialog->setVariantValue(m_customValue);
 		int ret = dialog->exec();
-		if (ret == QDialog::Accepted){
+		if (ret == QDialog::Accepted) {
 			iRICUndoStack::instance().push(new RawDataBackgroundEditValueCommand(this, m_type, m_customValue, m_type, dialog->variantValue()));
 		}
 		delete dialog;
-	}else{
+	} else {
 		RawDataBackgroundEditDialog dialog(preProcessorWindow());
-		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*> (parent()->parent());
+		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 		dialog.setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		GridRelatedConditionEditWidget* widget = m_gridRelatedCondition->editWidget(0);
 		dialog.setWidget(widget);
@@ -137,7 +138,7 @@ void RawDataBackground::editValue()
 		dialog.setCustomValue(m_customValue);
 		dialog.setupDialog();;
 		int ret = dialog.exec();
-		if (ret == QDialog::Accepted){
+		if (ret == QDialog::Accepted) {
 			iRICUndoStack::instance().push(new RawDataBackgroundEditValueCommand(this, m_type, m_customValue, dialog.type(), dialog.customValue()));
 		}
 	}
@@ -145,7 +146,7 @@ void RawDataBackground::editValue()
 
 bool RawDataBackground::getValueRange(double* min, double* max)
 {
-	if (m_type == Custom){
+	if (m_type == Custom) {
 		*min = m_customValue.toDouble();
 		*max = m_customValue.toDouble();
 		return true;
@@ -155,12 +156,12 @@ bool RawDataBackground::getValueRange(double* min, double* max)
 
 QVariant RawDataBackground::variantValue()
 {
-	PreProcessorRawDataGroupDataItemInterface * gi = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorRawDataGroupDataItemInterface* gi = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 	double min, max;
 	gi->getValueRange(&min, &max);
-	if (m_type == Maximum){
+	if (m_type == Maximum) {
 		m_customValue = max;
-	}else if (m_type == Minimum){
+	} else if (m_type == Minimum) {
 		m_customValue = min;
 	}
 	return m_customValue;

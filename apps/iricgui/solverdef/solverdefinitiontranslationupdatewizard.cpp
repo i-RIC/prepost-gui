@@ -42,18 +42,18 @@ void SolverDefinitionTranslationUpdateWizard::accept()
 	const QList<GridCreatingConditionCreator*>& clist = gridCreatorList();
 
 	QDir folderDir;
-	if (field("solverSel").toBool() == true){
+	if (field("solverSel").toBool() == true) {
 		SolverDefinitionAbstract* solver = slist.at(field("solver").toInt());
 		folderDir = QDir(solver->folder());
-	} else if (field("gridGenSel").toBool() == true){
+	} else if (field("gridGenSel").toBool() == true) {
 		GridCreatingConditionCreator* creator = clist.at(field("gridgen").toInt());
 		GridCreatingConditionCreatorExternalProgram* pc = dynamic_cast<GridCreatingConditionCreatorExternalProgram*>(creator);
 		folderDir = QDir(pc->folderName());
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
-	for (const QLocale& locale : allLangs){
+	for (const QLocale& locale : allLangs) {
 		QVariant val = field(QString("lang%1").arg(locale.name()));
-		if (val.toBool() == true){
+		if (val.toBool() == true) {
 			// update or create the translation file.
 			SolverDefinitionTranslationChecker checker(folderDir.absolutePath(), locale);
 		}
@@ -61,7 +61,7 @@ void SolverDefinitionTranslationUpdateWizard::accept()
 	QWizard::accept();
 }
 
-IntroductionPage::IntroductionPage(QWidget *parent)
+IntroductionPage::IntroductionPage(QWidget* parent)
 	: QWizardPage(parent)
 {
 	setTitle(tr("Introduction"));
@@ -74,7 +74,7 @@ IntroductionPage::IntroductionPage(QWidget *parent)
 			"for those you want to create or update translation files."
 		    ));
 	m_label->setWordWrap(true);
-	QVBoxLayout *layout = new QVBoxLayout();
+	QVBoxLayout* layout = new QVBoxLayout();
 	layout->addWidget(m_label);
 	setLayout(layout);
 }
@@ -120,7 +120,7 @@ SettingPage::SettingPage(QWidget* parent)
 	langsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	QVBoxLayout* llayout = new QVBoxLayout();
 	llayout->setSizeConstraint(QLayout::SetMinimumSize);
-	for (const QLocale& locale : langs){
+	for (const QLocale& locale : langs) {
 		QCheckBox* check = new QCheckBox(this);
 		check->setText(QLocale::languageToString(locale.language()));
 		registerField(QString("lang%1").arg(locale.name()), check);
@@ -152,21 +152,17 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 	ret.append(QLocale::French);
 	ret.append(QLocale::Spanish);
 	ret.append(QLocale::Russian);
-/*
-	ret.append(QLocale::Italian);
-	ret.append(QLocale::German);
-*/
 	return ret;
 }
 
-void SettingPage::init(SolverDefinitionList *list, const QList<GridCreatingConditionCreator*>& gclist)
+void SettingPage::init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist)
 {
 	QList<SolverDefinitionAbstract*> slist = list->solverList();
-	for (SolverDefinitionAbstract* abst : slist){
+for (SolverDefinitionAbstract* abst : slist) {
 		m_solverCombobox->addItem(abst->caption(), abst->name());
 	}
 
-	for (GridCreatingConditionCreator* c : gclist){
+for (GridCreatingConditionCreator* c : gclist) {
 		m_gridGenComboBox->addItem(c->caption(), c->name());
 	}
 }
@@ -177,22 +173,22 @@ void SettingPage::initializePage()
 	QList<SolverDefinitionAbstract*> slist = w->solverList()->solverList();
 	const QList<GridCreatingConditionCreator*>& clist = w->gridCreatorList();
 	QDir folderDir;
-	if (field("solverSel").toBool() == true){
+	if (field("solverSel").toBool() == true) {
 		m_solverRadioButton->setChecked(true);
 		int solverId = field("solver").toInt();
-		if (solverId == -1){solverId = 0;}
+		if (solverId == -1) {solverId = 0;}
 		m_solverCombobox->setCurrentIndex(solverId);
 		m_gridGenComboBox->setCurrentIndex(0);
-	} else if (field("gridGenSel").toBool() == true){
+	} else if (field("gridGenSel").toBool() == true) {
 		m_gridGenRadioButton->setChecked(true);
 		int creatorId = field("gridgen").toInt();
-		if (creatorId == -1){creatorId = 0;}
+		if (creatorId == -1) {creatorId = 0;}
 		m_gridGenComboBox->setCurrentIndex(creatorId);
 		m_solverCombobox->setCurrentIndex(0);
 	}
 }
 
-ConfirmPage::ConfirmPage(QWidget * /*parent*/)
+ConfirmPage::ConfirmPage(QWidget* /*parent*/)
 {
 	setTitle(tr("Confirm the result"));
 	setSubTitle(tr(
@@ -216,19 +212,19 @@ void ConfirmPage::initializePage()
 	QList<SolverDefinitionAbstract*> slist = w->solverList()->solverList();
 	const QList<GridCreatingConditionCreator*>& clist = w->gridCreatorList();
 	QDir folderDir;
-	if (field("solverSel").toBool() == true){
+	if (field("solverSel").toBool() == true) {
 		SolverDefinitionAbstract* solver = slist.at(field("solver").toInt());
 		folderDir = QDir(solver->folder());
-	} else if (field("gridGenSel").toBool() == true){
+	} else if (field("gridGenSel").toBool() == true) {
 		GridCreatingConditionCreator* creator = clist.at(field("gridgen").toInt());
 		GridCreatingConditionCreatorExternalProgram* pc = dynamic_cast<GridCreatingConditionCreatorExternalProgram*>(creator);
 		folderDir = QDir(pc->folderName());
 	}
 	QList<QLocale> allLangs = SolverDefinitionTranslationUpdateWizard::supportedLanguages();
 	QString filelist;
-	for (const QLocale& locale : allLangs){
+	for (const QLocale& locale : allLangs) {
 		QVariant val = field(QString("lang%1").arg(locale.name()));
-		if (val.toBool() == true){
+		if (val.toBool() == true) {
 			QString fname = SolverDefinitionTranslator::filenameFromLocale(locale);
 			filelist.append(QDir::toNativeSeparators(folderDir.absoluteFilePath(fname))).append("\n");
 		}

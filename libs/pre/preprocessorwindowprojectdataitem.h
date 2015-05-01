@@ -12,7 +12,7 @@ class PREDLL_EXPORT PreProcessorWindowProjectDataItem : public ProjectDataItem
 	Q_OBJECT
 public:
 	/// constructor
-	explicit PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile *parent);
+	explicit PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent);
 	~PreProcessorWindowProjectDataItem();
 	/// Initializes pre-processor window for the specified solver definition.
 	void initForSolverDefinition();
@@ -24,7 +24,7 @@ public:
 	void toggleGridEditFlag();
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter & writer);
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 private:
 	void createConnections();
 	PreProcessorWindow* m_preProcessorWindow;

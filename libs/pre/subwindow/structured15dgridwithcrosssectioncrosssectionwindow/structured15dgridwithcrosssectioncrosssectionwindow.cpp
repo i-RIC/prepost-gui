@@ -91,12 +91,12 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 	m_blackLineComboBox->blockSignals(true);
 	m_blackLineComboBox->clear();
 
-	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
+	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it) {
 		m_blackLineComboBox->addItem((*it)->name());
 	}
-	if (m_blackLineCrossSection != 0){
+	if (m_blackLineCrossSection != 0) {
 		int index = m_grid->crossSections().indexOf(m_blackLineCrossSection);
-		if (index != - 1){
+		if (index != - 1) {
 			m_blackLineComboBox->setCurrentIndex(index);
 		} else {
 			// maybe this line is deleted.
@@ -111,15 +111,15 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 void Structured15DGridWithCrossSectionCrossSectionWindow::setTarget(Structured15DGridWithCrossSectionCrossSection* cs)
 {
 	m_blackLineCrossSection = cs;
-	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it){
-		if ((*it) != cs) continue;
+	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it) {
+		if ((*it) != cs) { continue; }
 		break;
 	}
 
 	m_blackLineComboBox->blockSignals(true);
 
 	int index = m_grid->crossSections().indexOf(cs);
-	if (index != - 1){
+	if (index != - 1) {
 		m_blackLineComboBox->setCurrentIndex(index);
 	}
 
@@ -146,7 +146,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	// keep selection status.
 	QItemSelection selection = m_selectionModel->selection();
 	QList<SelectionRange> sel;
-	for (auto sit = selection.begin(); sit != selection.end(); ++sit){
+	for (auto sit = selection.begin(); sit != selection.end(); ++sit) {
 		QItemSelectionRange& tmpr = *sit;
 		SelectionRange r;
 		r.left = tmpr.left();
@@ -161,7 +161,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	int row = 0;
 
 	Structured15DGridWithCrossSectionCrossSection::Altitude alt;
-	for (auto it = info.begin(); it != info.end(); ++it){
+	for (auto it = info.begin(); it != info.end(); ++it) {
 		alt = *it;
 		m_model->insertRow(row);
 		m_model->setData(m_model->index(row, 0), QVariant(alt.m_position));
@@ -172,7 +172,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	// restore selection status.
 	// restore selection status.
 	selection.clear();
-	for (int i = 0; i < sel.count(); ++i){
+	for (int i = 0; i < sel.count(); ++i) {
 		SelectionRange r = sel.at(i);
 		selection.append(QItemSelectionRange(m_model->index(r.top, r.left), m_model->index(r.bottom, r.right)));
 	}
@@ -181,7 +181,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	ui->tableView->setModel(m_model);
 	ui->tableView->setSelectionModel(m_selectionModel);
 	// update tableview row heights.
-	for (int i = 0; i < m_model->rowCount(); ++i){
+	for (int i = 0; i < m_model->rowCount(); ++i) {
 		ui->tableView->setRowHeight(i, defaultRowHeight);
 	}
 	m_settingUp = false;
@@ -262,7 +262,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::cameraZoomOutY()
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::handleDataChange()
 {
-	if (m_settingUp) return;
+	if (m_settingUp) { return; }
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> before, after;
 	before = m_blackLineCrossSection->altitudeInfo();
 	syncData();
@@ -275,7 +275,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::syncData()
 	// update the crosssection.
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& info = m_blackLineCrossSection->altitudeInfo();
 	info.clear();
-	for (int i = 0; i < m_model->rowCount(); ++i){
+	for (int i = 0; i < m_model->rowCount(); ++i) {
 		Structured15DGridWithCrossSectionCrossSection::Altitude alt;
 		alt.m_position = m_model->data(m_model->index(i, 0)).toDouble();
 		alt.m_height = m_model->data(m_model->index(i, 1)).toDouble();
@@ -296,7 +296,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::deleteSelectedRows()
 	before = m_blackLineCrossSection->altitudeInfo();
 	QModelIndexList rows = m_selectionModel->selectedRows();
 	int removedRows = 0;
-	for (auto it = rows.begin(); it != rows.end(); ++it){
+	for (auto it = rows.begin(); it != rows.end(); ++it) {
 		QModelIndex index = *it;
 		int row = index.row() - removedRows;
 		m_model->removeRow(row);
@@ -324,7 +324,7 @@ void Structured15DGridCrossSectionEditCommand::redo()
 {
 	m_window->m_blackLineCrossSection->setAltitudeInfo(m_after);
 //	m_point->updateXSecInterpolators();
-	if (m_apply || (m_tableaction && m_first)){
+	if (m_apply || (m_tableaction && m_first)) {
 		m_window->updateView();
 	} else {
 		m_item->updateCrossSectionWindows();
@@ -336,7 +336,7 @@ void Structured15DGridCrossSectionEditCommand::undo()
 {
 	m_window->m_blackLineCrossSection->setAltitudeInfo(m_before);
 //	m_point->updateXSecInterpolators();
-	if (! m_apply){
+	if (! m_apply) {
 		m_item->updateCrossSectionWindows();
 	}
 }

@@ -30,46 +30,46 @@ public:
 	~BackgroundImageInfo();
 
 	const QString& name() const {return m_name;}
-	void setName(const QString& name){
+	void setName(const QString& name) {
 		m_name = name;
 //		updateFilename();
 	}
 	const QString& caption() const {return m_caption;}
-	void setCaption(const QString& cap){m_caption = cap;}
+	void setCaption(const QString& cap) {m_caption = cap;}
 
 	const QString& fileName() const {return m_filename;}
 
 	void mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
-	int imageWidth(){return m_imageWidth;}
-	int imageHeight(){return m_imageHeight;}
+	int imageWidth() {return m_imageWidth;}
+	int imageHeight() {return m_imageHeight;}
 
 	vtkActor* refActor();
-	QAction* fixAction(){return m_fixAction;}
-	QAction* fixActionWithIcon(){return m_fixActionWithIcon;}
-	double aspectRatio(){return m_aspectRatio;}
+	QAction* fixAction() {return m_fixAction;}
+	QAction* fixActionWithIcon() {return m_fixActionWithIcon;}
+	double aspectRatio() {return m_aspectRatio;}
 	void setupActor(vtkActor* actor);
-	bool visible(){return m_visible;}
-	void setVisible(bool visible){m_visible = visible;}
+	bool visible() {return m_visible;}
+	void setVisible(bool visible) {m_visible = visible;}
 	void applySettingToActor(vtkActor* actor);
 
-	double translateX(){return m_translateX;}
-	double translateY(){return m_translateY;}
-	double scale(){return m_scale;}
-	double angle(){return m_angle;}
-	void setPreProcessorActor(vtkActor* actor){
+	double translateX() {return m_translateX;}
+	double translateY() {return m_translateY;}
+	double scale() {return m_scale;}
+	double angle() {return m_angle;}
+	void setPreProcessorActor(vtkActor* actor) {
 		m_preProcessorActor = actor;
 	}
-	void setTranslateX(double x){m_translateX = x;}
-	void setTranslateY(double y){m_translateY = y;}
-	void setScale(double scale){m_scale = scale;}
+	void setTranslateX(double x) {m_translateX = x;}
+	void setTranslateY(double y) {m_translateY = y;}
+	void setScale(double scale) {m_scale = scale;}
 	QDialog* propertyDialog();
 	void handlePropertyDialogAccepted(QDialog* dialog);
 	void applyOffset(double x, double y);
 
 protected slots:
-	void editName(){}
+	void editName() {}
 	void toggleFixState();
 signals:
 	void isChanged();

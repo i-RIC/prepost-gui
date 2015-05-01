@@ -16,13 +16,13 @@ public:
 	~ProjectPostProcessors();
 	QMdiSubWindow* add(PostProcessorWindowProjectDataItem* newitem);
 	void requestDelete(PostProcessorWindowProjectDataItem* item);
-	void loadFromProjectMainFile(const QDomNode &node, bool import = false);
+	void loadFromProjectMainFile(const QDomNode& node, bool import = false);
 	int windowCount() const;
 	void setFactory(PostProcessorWindowFactoryInterface* factory);
 
 protected:
 	// Never used.
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	void doLoadFromProjectMainFile(const QDomNode& node, bool import = false);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 

@@ -21,14 +21,14 @@ SHPObject* RawDataPolygonShapeExporter::getSHPObject(RawDataPolygon* polygon, SH
 	int nParts = polygon->m_holePolygons.count() + 1;
 	int* partStart = new int[nParts];
 	int nVertices = 0;
-	double *padfX, *padfY;
+	double* padfX, *padfY;
 	QList<double> xlist, ylist;
 
 	// output region first.
 	QPolygonF region = polygon->m_gridRegionPolygon->polygon();
 	*partStart = 0;
 	nVertices += region.count();
-	for (QPointF p : region){
+	for (QPointF p : region) {
 		xlist.append(p.x() + xoffset);
 		ylist.append(p.y() + yoffset);
 	}
@@ -37,14 +37,14 @@ SHPObject* RawDataPolygonShapeExporter::getSHPObject(RawDataPolygon* polygon, SH
 		QPolygonF hole = holepol->polygon();
 		*(partStart + i + 1) = nVertices;
 		nVertices += hole.count();
-		for (QPointF p : hole){
+		for (QPointF p : hole) {
 			xlist.append(p.x() + xoffset);
 			ylist.append(p.y() + yoffset);
 		}
 	}
 	padfX = new double[nVertices];
 	padfY = new double[nVertices];
-	for (int i = 0; i < xlist.count(); ++i){
+	for (int i = 0; i < xlist.count(); ++i) {
 		*(padfX + i) = xlist.at(i);
 		*(padfY + i) = ylist.at(i);
 	}
@@ -63,7 +63,7 @@ SHPObject* RawDataPolygonShapeExporter::getSHPObject(RawDataPolygon* polygon, SH
 void RawDataPolygonShapeExporter::outputAttributes(RawDataPolygon* polygon, DBFHandle hDBF, int index, bool isDouble, QTextCodec* codec)
 {
 	DBFWriteStringAttribute(hDBF, index, 0, codec->fromUnicode(polygon->caption()).data());
-	if (isDouble){
+	if (isDouble) {
 		DBFWriteDoubleAttribute(hDBF, index, 1, polygon->variantValue().toDouble());
 	} else {
 		DBFWriteIntegerAttribute(hDBF, index, 1, polygon->variantValue().toInt());
@@ -93,7 +93,7 @@ bool RawDataPolygonShapeExporter::doEmport(RawData* data, const QString& filenam
 	DBFAddField(dbfh, "Name", FTString, 1000, 0);
 	SolverDefinitionGridRelatedCondition* cond = data->gridRelatedCondition();
 	bool valueIsDouble = (dynamic_cast<SolverDefinitionGridRelatedRealCondition*>(cond) != 0);
-	if (valueIsDouble){
+	if (valueIsDouble) {
 		// Real
 		DBFAddField(dbfh, "Value", FTDouble, 40, 6);
 	} else {
@@ -101,7 +101,7 @@ bool RawDataPolygonShapeExporter::doEmport(RawData* data, const QString& filenam
 		DBFAddField(dbfh, "Value", FTInteger, 10, 0);
 	}
 	QTextCodec* codec = QTextCodec::codecForLocale();
-	if (! codec->canEncode(data->caption())){
+	if (! codec->canEncode(data->caption())) {
 		codec = QTextCodec::codecForName("UTF-8");
 	}
 	outputAttributes(pol, dbfh, 0, valueIsDouble, codec);
@@ -123,7 +123,7 @@ DBFHandle RawDataPolygonShapeExporter::getDBFHandle(QString filename, SolverDefi
 	// Add name and value attributes.
 	DBFAddField(dbfh, "Name", FTString, 1000, 0);
 	*isDouble = (dynamic_cast<SolverDefinitionGridRelatedRealCondition*>(cond) != 0);
-	if (*isDouble){
+	if (*isDouble) {
 		// Real
 		DBFAddField(dbfh, "Value", FTDouble, 40, 6);
 	} else {

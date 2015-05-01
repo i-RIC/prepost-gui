@@ -12,7 +12,8 @@ class SolverDefinition;
 class QDomElement;
 class QLocale;
 
-namespace Ui {
+namespace Ui
+{
 	class GridComplexConditionWidget;
 }
 
@@ -20,15 +21,17 @@ class CgnsFileInputConditionWidgetSet;
 class iRICMainWindowInterface;
 class PreProcessorGridRelatedComplexConditionDataItem;
 
-class GUICOREDLL_EXPORT GridComplexConditionWidget : public QWidget {
+class GUICOREDLL_EXPORT GridComplexConditionWidget : public QWidget
+{
 	Q_OBJECT
 public:
-	class Setting {
+	class Setting
+	{
 	public:
-		Setting(){
+		Setting() {
 			containerSet = nullptr;
 		}
-		~Setting(){}
+		~Setting() {}
 		CgnsFileInputConditionContainerSet* containerSet;
 		CgnsFileInputConditionContainerString captionContainer;
 		CgnsFileInputConditionContainerString colorContainer;
@@ -36,7 +39,7 @@ public:
 	};
 
 	/// Constructor
-	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget *parent = nullptr);
+	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget* parent = nullptr);
 	/// Destructor
 	~GridComplexConditionWidget();
 	void setNameAndNumber(QString name, int number);
@@ -66,7 +69,7 @@ private slots:
 
 private:
 
-	Ui::GridComplexConditionWidget *ui;
+	Ui::GridComplexConditionWidget* ui;
 	CgnsFileInputConditionContainerSet* m_containerSet;
 	CgnsFileInputConditionWidgetSet* m_widgetSet;
 	bool m_modified;

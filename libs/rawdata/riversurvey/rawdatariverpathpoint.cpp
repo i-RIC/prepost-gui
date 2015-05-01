@@ -13,7 +13,8 @@
 #include <QList>
 #include <QVector>
 
-void RawDataRiverPathPoint::initializeInnerValues(){
+void RawDataRiverPathPoint::initializeInnerValues()
+{
 	m_crosssection.setParent(this);
 	m_nextPoint = nullptr;
 	m_previousPoint = nullptr;
@@ -30,7 +31,8 @@ void RawDataRiverPathPoint::initializeInnerValues(){
 	m_areaGrid = vtkSmartPointer<vtkStructuredGrid>::New();
 }
 
-void RawDataRiverPathPoint::initializeInterpolators(){
+void RawDataRiverPathPoint::initializeInterpolators()
+{
 	// 現在は、線形補間を行うことにしている。
 	m_riverCenter = nullptr;
 	m_leftBank = nullptr;
@@ -39,10 +41,11 @@ void RawDataRiverPathPoint::initializeInterpolators(){
 	m_rXSec = new LinearRXSecInterpolator(this);
 }
 
-void RawDataRiverPathPoint::addPathPoint(RawDataRiverPathPoint* p){
+void RawDataRiverPathPoint::addPathPoint(RawDataRiverPathPoint* p)
+{
 	// ポインタのつなぎ変え処理を行う。
 	// まず、この一つ先の点に、前の点が入れ替わったことを通知
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->m_previousPoint = p;
 	}
 	// 新しい点のポインタを設定
@@ -53,10 +56,11 @@ void RawDataRiverPathPoint::addPathPoint(RawDataRiverPathPoint* p){
 	m_nextPoint = p;
 }
 
-void RawDataRiverPathPoint::insertPathPoint(RawDataRiverPathPoint* p){
+void RawDataRiverPathPoint::insertPathPoint(RawDataRiverPathPoint* p)
+{
 	// ポインタのつなぎ変え処理を行う。
 	// まず、この点の一つ前の点に、次の点が入れ替わったことを通知
-	if (m_previousPoint != nullptr){
+	if (m_previousPoint != nullptr) {
 		m_previousPoint->m_nextPoint = p;
 	}
 	// 新しい点のポインタを設定
@@ -68,86 +72,93 @@ void RawDataRiverPathPoint::insertPathPoint(RawDataRiverPathPoint* p){
 	m_firstPoint = false;
 }
 
-void RawDataRiverPathPoint::remove(){
+void RawDataRiverPathPoint::remove()
+{
 	// 先頭のもの(= dummy)は削除されないと仮定している。
 	m_previousPoint->m_nextPoint = m_nextPoint;
-	if (m_nextPoint == nullptr){m_previousPoint->setGridSkip(false);}
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint == nullptr) {m_previousPoint->setGridSkip(false);}
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->m_previousPoint = m_previousPoint;
-		if (m_previousPoint->firstPoint()){m_nextPoint->setGridSkip(false);}
+		if (m_previousPoint->firstPoint()) {m_nextPoint->setGridSkip(false);}
 	}
 }
 
-void RawDataRiverPathPoint::movePosition(double offset){
+void RawDataRiverPathPoint::movePosition(double offset)
+{
 	// 新しい河川中心座標を調べる。
 	QVector2D newPosition = crosssectionPosition(offset);
 	m_crosssection.moveCenter(offset);
 	m_position = newPosition;
 }
 
-void RawDataRiverPathPoint::updateAllXSecInterpolators(){
+void RawDataRiverPathPoint::updateAllXSecInterpolators()
+{
 	updateXSecInterpolators();
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->updateAllXSecInterpolators();
 	}
 }
 
-void RawDataRiverPathPoint::updateXSecInterpolators(){
-	if (! InhibitInterpolatorUpdate){
+void RawDataRiverPathPoint::updateXSecInterpolators()
+{
+	if (! InhibitInterpolatorUpdate) {
 		m_lXSec->updateParameters();
 		m_rXSec->updateParameters();
 	}
 }
 
-void RawDataRiverPathPoint::updateRiverShapeInterpolators(){
-	if (! InhibitInterpolatorUpdate){
+void RawDataRiverPathPoint::updateRiverShapeInterpolators()
+{
+	if (! InhibitInterpolatorUpdate) {
 		m_riverCenter->updateParameters();
 		m_leftBank->updateParameters();
 		m_rightBank->updateParameters();
 	}
 }
 
-void RawDataRiverPathPoint::UpdateGridInterpolators(){
-	if (! InhibitInterpolatorUpdate){
+void RawDataRiverPathPoint::UpdateGridInterpolators()
+{
+	if (! InhibitInterpolatorUpdate) {
 		// 今は、全ての補間曲線を更新する。
-		for (Interpolator2D1* interpolator : m_LGridLines){
-			if (interpolator != nullptr){
+	for (Interpolator2D1* interpolator : m_LGridLines) {
+			if (interpolator != nullptr) {
 				interpolator->updateParameters();
 			}
 		}
-		for (Interpolator2D1* interpolator : m_RGridLines){
-			if (interpolator != nullptr){
+		for (Interpolator2D1* interpolator : m_RGridLines) {
+			if (interpolator != nullptr) {
 				interpolator->updateParameters();
 			}
 		}
 	}
 }
 
-QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index) /* throw (ErrorCodes)*/ {
-	if (index < 0){throw ec_OutOfCtrlPointRange;}
+QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index) /* throw (ErrorCodes)*/
+{
+	if (index < 0) {throw ec_OutOfCtrlPointRange;}
 	RawDataRiverCrosssection::Altitude altitude;
-	switch (pos){
+	switch (pos) {
 	case pposCenterToLeft:
-		if (index >= CenterToLeftCtrlPoints.size()){throw ec_OutOfCtrlPointRange;}
+		if (index >= CenterToLeftCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterToLeftCtrlPoints[index]);
 		break;
 	case pposCenterToRight:
-		if (index >= CenterToRightCtrlPoints.size()){throw ec_OutOfCtrlPointRange;}
+		if (index >= CenterToRightCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterToRightCtrlPoints[index]);
 		break;
 	case pposCenterLine:
-		if (index >= CenterLineCtrlPoints.size()){throw ec_OutOfCtrlPointRange;}
+		if (index >= CenterLineCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterLineCtrlPoints[index]);
 		break;
 	case pposLeftBank:
-		if (index >= LeftBankCtrlPoints.size()){throw ec_OutOfCtrlPointRange;}
+		if (index >= LeftBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, LeftBankCtrlPoints[index]);
 		break;
 	case pposRightBank:
-		if (index >= RightBankCtrlPoints.size()){throw ec_OutOfCtrlPointRange;}
+		if (index >= RightBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, RightBankCtrlPoints[index]);
 		break;
-	// ここに来ることはない。 ビルド時の warning 対策のために追加
+		// ここに来ることはない。 ビルド時の warning 対策のために追加
 	default:
 		return QVector2D(0, 0);
 	}
@@ -155,9 +166,9 @@ QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsi
 
 QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, double d)
 {
-	if (d < 0 || d > 1){throw ec_OutOfCtrlPointRange;}
+	if (d < 0 || d > 1) {throw ec_OutOfCtrlPointRange;}
 	RawDataRiverCrosssection::Altitude altitude;
-	switch (pos){
+	switch (pos) {
 	case pposCenterToLeft:
 		altitude = m_lXSec->interpolate(d);
 		return crosssectionPosition(altitude.position());
@@ -180,7 +191,8 @@ QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, doub
 	}
 }
 
-void RawDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1){
+void RawDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1)
+{
 	QVector2D dv = m_position - point0;
 	QVector2D tmpv0 = v0;
 	tmpv0.normalize();
@@ -190,18 +202,18 @@ void RawDataRiverPathPoint::selectRegion(const QVector2D& point0, const QVector2
 	double d1 = QVector2D::dotProduct(dv, tmpv1);
 	if ((! firstPoint()) &&
 			0 < d0 && d0 < v0.length() &&
-			0 < d1 && d1 < v1.length())
-	{
+			0 < d1 && d1 < v1.length()) {
 		IsSelected = true;
-	}else{
+	} else {
 		IsSelected = false;
 	}
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->selectRegion(point0, v0, v1);
 	}
 }
 
-void RawDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1){
+void RawDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1)
+{
 	QVector2D dv = m_position - point0;
 	QVector2D tmpv0 = v0;
 	tmpv0.normalize();
@@ -210,13 +222,12 @@ void RawDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVect
 	double d0 = QVector2D::dotProduct(dv, tmpv0);
 	double d1 = QVector2D::dotProduct(dv, tmpv1);
 	if (0 < d0 && d0 < v0.length() &&
-			0 < d1 && d1 < v1.length())
-	{
+			0 < d1 && d1 < v1.length()) {
 		IsSelected = ! IsSelected;
-	}else{
+	} else {
 		// 何もしない
 	}
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->XORSelectRegion(point0, v0, v1);
 	}
 }
@@ -225,7 +236,7 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 	const QVector2D& point0, const QVector2D& v0, const QVector2D& v1,
 	std::list<CtrlPointSelectionInfo>& info)
 {
-	if (! m_gridSkip){
+	if (! m_gridSkip) {
 		unsigned int i;
 		QVector2D tmpv0 = v0;
 		QVector2D tmpv1 = v1;
@@ -236,13 +247,12 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 		// まず、引っかかる可能性があるかをチェック
 
 		// 左岸を検索
-		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i){
+		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToLeft, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
 			double ip1 = QVector2D::dotProduct(dv, tmpv1);
 			if (0 < ip0 && ip0 < l0 &&
-					0 < ip1 && ip1 < l1)
-			{
+					0 < ip1 && ip1 < l1) {
 				CtrlPointSelectionInfo sinfo;
 				sinfo.Point = this;
 				sinfo.Position = pposCenterToLeft;
@@ -251,13 +261,12 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 			}
 		}
 		// 右岸を検索
-		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i){
+		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToRight, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
 			double ip1 = QVector2D::dotProduct(dv, tmpv1);
 			if (0 < ip0 && ip0 < l0 &&
-					0 < ip1 && ip1 < l1)
-			{
+					0 < ip1 && ip1 < l1) {
 				CtrlPointSelectionInfo sinfo;
 				sinfo.Point = this;
 				sinfo.Position = pposCenterToRight;
@@ -267,17 +276,16 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 		}
 
 		//+++++
-		if (m_nextPoint != 0){
+		if (m_nextPoint != 0) {
 			//+++++
 
 			// 河川中心線を検索
-			for (i = 0; i < CenterLineCtrlPoints.size(); ++i){
+			for (i = 0; i < CenterLineCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposCenterLine, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
-						0 < ip1 && ip1 < l1)
-				{
+						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
 					sinfo.Point = this;
 					sinfo.Position = pposCenterLine;
@@ -286,13 +294,12 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 				}
 			}
 			// 左岸線を検索
-			for (i = 0; i < LeftBankCtrlPoints.size(); ++i){
+			for (i = 0; i < LeftBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposLeftBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
-						0 < ip1 && ip1 < l1)
-				{
+						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
 					sinfo.Point = this;
 					sinfo.Position = pposLeftBank;
@@ -301,13 +308,12 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 				}
 			}
 			// 右岸線を検索
-			for (i = 0; i < RightBankCtrlPoints.size(); ++i){
+			for (i = 0; i < RightBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposRightBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
 				double ip1 = QVector2D::dotProduct(dv, tmpv1);
 				if (0 < ip0 && ip0 < l0 &&
-						0 < ip1 && ip1 < l1)
-				{
+						0 < ip1 && ip1 < l1) {
 					CtrlPointSelectionInfo sinfo;
 					sinfo.Point = this;
 					sinfo.Position = pposRightBank;
@@ -320,36 +326,39 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 		}
 		//+++++
 	}
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->SelectCtrlPointsRegion(point0, v0, v1, info);
 	}
 }
 
 
-QVector2D RawDataRiverPathPoint::GridCtrlPosition(Bank bank, unsigned int index1, double param){
-	if (bank == bk_LeftBank){
+QVector2D RawDataRiverPathPoint::GridCtrlPosition(Bank bank, unsigned int index1, double param)
+{
+	if (bank == bk_LeftBank) {
 		return RawDataRiverPathPoint::myCtrlPointPosition2D(&RawDataRiverPathPoint::LGridLine, index1, param);
-	}else{
+	} else {
 		return RawDataRiverPathPoint::myCtrlPointPosition2D(&RawDataRiverPathPoint::RGridLine, index1, param);
 	}
 }
 
-QVector2D RawDataRiverPathPoint::backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param){
-	if (bank == bk_LeftBank){
+QVector2D RawDataRiverPathPoint::backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param)
+{
+	if (bank == bk_LeftBank) {
 		return RawDataRiverPathPoint::myBgCtrlPointPosition2D(&RawDataRiverPathPoint::backgroundLGridLine, index1, param);
-	}else{
+	} else {
 		return RawDataRiverPathPoint::myBgCtrlPointPosition2D(&RawDataRiverPathPoint::backgroundRGridLine, index1, param);
 	}
 }
 
-double RawDataRiverPathPoint::GridCtrlParameter(Bank bank, int index1, int index2){
+double RawDataRiverPathPoint::GridCtrlParameter(Bank bank, int index1, int index2)
+{
 	double t0, t1, s0, s1;
 	t0 = CenterLineCtrlPoints[index2];
-	if (bank == bk_LeftBank){
+	if (bank == bk_LeftBank) {
 		s0 = CenterToLeftCtrlPoints[index1];
 		s1 = m_nextPoint->CenterToLeftCtrlPoints[index1];
 		t1 = LeftBankCtrlPoints[index2];
-	}else{
+	} else {
 		s0 = CenterToRightCtrlPoints[index1];
 		s1 = m_nextPoint->CenterToRightCtrlPoints[index1];
 		t1 = RightBankCtrlPoints[index2];
@@ -357,164 +366,165 @@ double RawDataRiverPathPoint::GridCtrlParameter(Bank bank, int index1, int index
 	return ((t1 - t0) * s0 + t0) / (1 - (t1 - t0) * (s1 - s0));
 }
 
-QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num){
+QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num)
+{
 	QList<QVector2D> result;
 	QVector<double> tmpdbls;
 	double t0;
 	double t1;
 	double t;
 	double dt;
-	switch (position){
+	switch (position) {
 	case zposCenterToLeft:
 		tmpdbls.reserve(3);
-		if (index == 0){
+		if (index == 0) {
 			tmpdbls.push_back(0);
-			if (CenterToLeftCtrlPoints.size() == 0){
-				if (m_crosssection.fixedPointLSet()){
+			if (CenterToLeftCtrlPoints.size() == 0) {
+				if (m_crosssection.fixedPointLSet()) {
 					tmpdbls.push_back(m_crosssection.fixedPointLDiv());
 				}
 				tmpdbls.push_back(1);
-			}else{
-				if (m_crosssection.fixedPointLSet() && m_crosssection.fixedPointLDiv() < CenterToLeftCtrlPoints[0]){
+			} else {
+				if (m_crosssection.fixedPointLSet() && m_crosssection.fixedPointLDiv() < CenterToLeftCtrlPoints[0]) {
 					tmpdbls.push_back(m_crosssection.fixedPointLDiv());
 				}
 				tmpdbls.push_back(CenterToLeftCtrlPoints[0]);
 			}
-		}else if (index < CenterToLeftCtrlPoints.size()){
+		} else if (index < CenterToLeftCtrlPoints.size()) {
 			tmpdbls.push_back(CenterToLeftCtrlPoints[index - 1]);
 			if (m_crosssection.fixedPointLSet() &&
 					(
-							m_crosssection.fixedPointLDiv() > CenterToLeftCtrlPoints[index - 1] &&
-							m_crosssection.fixedPointLDiv() < CenterToLeftCtrlPoints[index]
+						m_crosssection.fixedPointLDiv() > CenterToLeftCtrlPoints[index - 1] &&
+						m_crosssection.fixedPointLDiv() < CenterToLeftCtrlPoints[index]
 					)
-					){
+				 ) {
 				tmpdbls.push_back(m_crosssection.fixedPointLDiv());
 			}
 			tmpdbls.push_back(CenterToLeftCtrlPoints[index]);
-		}else if (index == CenterToLeftCtrlPoints.size()){
+		} else if (index == CenterToLeftCtrlPoints.size()) {
 			tmpdbls.push_back(CenterToLeftCtrlPoints[index - 1]);
-			if (m_crosssection.fixedPointLSet() && m_crosssection.fixedPointLDiv() > CenterToLeftCtrlPoints[index - 1]){
+			if (m_crosssection.fixedPointLSet() && m_crosssection.fixedPointLDiv() > CenterToLeftCtrlPoints[index - 1]) {
 				tmpdbls.push_back(m_crosssection.fixedPointLDiv());
 			}
 			tmpdbls.push_back(1);
-		}else{
-			throw (ec_OutOfCtrlZoneRange);
+		} else {
+			throw(ec_OutOfCtrlZoneRange);
 		}
-		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
+		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit) {
 			result.push_back(CtrlPointPosition2D(pposCenterToLeft, *dblit));
 		}
 		break;
 	case zposCenterToRight:
 		// 必ず直線 ==> num に関わらず、始点と終点の2点のみ返す
 		tmpdbls.reserve(3);
-		if (index == 0){
+		if (index == 0) {
 			tmpdbls.push_back(0);
-			if (CenterToRightCtrlPoints.size() == 0){
-				if (m_crosssection.fixedPointRSet()){
+			if (CenterToRightCtrlPoints.size() == 0) {
+				if (m_crosssection.fixedPointRSet()) {
 					tmpdbls.push_back(m_crosssection.fixedPointRDiv());
 				}
 				tmpdbls.push_back(1);
-			}else{
-				if (m_crosssection.fixedPointRSet() && m_crosssection.fixedPointRDiv() < CenterToRightCtrlPoints[0]){
+			} else {
+				if (m_crosssection.fixedPointRSet() && m_crosssection.fixedPointRDiv() < CenterToRightCtrlPoints[0]) {
 					tmpdbls.push_back(m_crosssection.fixedPointRDiv());
 				}
 				tmpdbls.push_back(CenterToRightCtrlPoints[0]);
 			}
-		}else if (index < CenterToRightCtrlPoints.size()){
+		} else if (index < CenterToRightCtrlPoints.size()) {
 			tmpdbls.push_back(CenterToRightCtrlPoints[index - 1]);
 			if (m_crosssection.fixedPointRSet() &&
 					(
-							m_crosssection.fixedPointRDiv() > CenterToRightCtrlPoints[index - 1] &&
-							m_crosssection.fixedPointRDiv() < CenterToRightCtrlPoints[index]
+						m_crosssection.fixedPointRDiv() > CenterToRightCtrlPoints[index - 1] &&
+						m_crosssection.fixedPointRDiv() < CenterToRightCtrlPoints[index]
 					)
-					){
+				 ) {
 				tmpdbls.push_back(m_crosssection.fixedPointRDiv());
 			}
 			tmpdbls.push_back(CenterToRightCtrlPoints[index]);
-		}else if (index == CenterToRightCtrlPoints.size()){
+		} else if (index == CenterToRightCtrlPoints.size()) {
 			tmpdbls.push_back(CenterToRightCtrlPoints[index - 1]);
-			if (m_crosssection.fixedPointRSet() && m_crosssection.fixedPointRDiv() > CenterToRightCtrlPoints[index - 1]){
+			if (m_crosssection.fixedPointRSet() && m_crosssection.fixedPointRDiv() > CenterToRightCtrlPoints[index - 1]) {
 				tmpdbls.push_back(m_crosssection.fixedPointRDiv());
 			}
 			tmpdbls.push_back(1);
-		}else{
-			throw (ec_OutOfCtrlZoneRange);
+		} else {
+			throw(ec_OutOfCtrlZoneRange);
 		}
-		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit){
+		for (auto dblit = tmpdbls.begin(); dblit != tmpdbls.end(); ++dblit) {
 			result.push_back(CtrlPointPosition2D(pposCenterToRight, *dblit));
 		}
 		break;
 	case zposCenterLine:
-		if (index == 0){
+		if (index == 0) {
 			t0 = 0;
-			if (CenterLineCtrlPoints.size() == 0){
+			if (CenterLineCtrlPoints.size() == 0) {
 				t1 = 1;
-			}else{
+			} else {
 				t1 = CenterLineCtrlPoints[0];
 			}
-		}else if (index < CenterLineCtrlPoints.size()){
+		} else if (index < CenterLineCtrlPoints.size()) {
 			t0 = CenterLineCtrlPoints[index - 1];
 			t1 = CenterLineCtrlPoints[index];
-		}else if (index == CenterLineCtrlPoints.size()){
+		} else if (index == CenterLineCtrlPoints.size()) {
 			t0 = CenterLineCtrlPoints[index - 1];
 			t1 = 1;
-		}else{
-			throw (ec_OutOfCtrlZoneRange);
+		} else {
+			throw(ec_OutOfCtrlZoneRange);
 		}
 		t = t0;
 		dt = (t1 - t0) / static_cast<double>(num);
-		if (dt < 0.0001){dt = 0.0001;}
-		while (t < t1 - 0.0001){
+		if (dt < 0.0001) {dt = 0.0001;}
+		while (t < t1 - 0.0001) {
 			result.push_back(CtrlPointPosition2D(pposCenterLine, t));
 			t += dt;
 		}
 		result.push_back(CtrlPointPosition2D(pposCenterLine, t1));
 		break;
 	case zposLeftBank:
-		if (index == 0){
+		if (index == 0) {
 			t0 = 0;
-			if (LeftBankCtrlPoints.size() > 0){
+			if (LeftBankCtrlPoints.size() > 0) {
 				t1 = LeftBankCtrlPoints[0];
-			}else{
+			} else {
 				t1 = 1;
 			}
-		}else if (index < LeftBankCtrlPoints.size()){
+		} else if (index < LeftBankCtrlPoints.size()) {
 			t0 = LeftBankCtrlPoints[index - 1];
 			t1 = LeftBankCtrlPoints[index];
-		}else if (index == LeftBankCtrlPoints.size()){
+		} else if (index == LeftBankCtrlPoints.size()) {
 			t0 = LeftBankCtrlPoints[index - 1];
 			t1 = 1;
-		}else{
-			throw (ec_OutOfCtrlZoneRange);
+		} else {
+			throw(ec_OutOfCtrlZoneRange);
 		}
 		t = t0;
 		dt = (t1 - t0) / static_cast<double>(num);
-		while (t < t1 - 0.0001){
+		while (t < t1 - 0.0001) {
 			result.push_back(CtrlPointPosition2D(pposLeftBank, t));
 			t += dt;
 		}
 		result.push_back(CtrlPointPosition2D(pposLeftBank, t1));
 		break;
 	case zposRightBank:
-		if (index == 0){
+		if (index == 0) {
 			t0 = 0;
-			if (RightBankCtrlPoints.size() > 0){
+			if (RightBankCtrlPoints.size() > 0) {
 				t1 = RightBankCtrlPoints[0];
-			}else{
+			} else {
 				t1 = 1;
 			}
-		}else if (index < RightBankCtrlPoints.size()){
+		} else if (index < RightBankCtrlPoints.size()) {
 			t0 = RightBankCtrlPoints[index - 1];
 			t1 = RightBankCtrlPoints[index];
-		}else if (index == RightBankCtrlPoints.size()){
+		} else if (index == RightBankCtrlPoints.size()) {
 			t0 = RightBankCtrlPoints[index - 1];
 			t1 = 1;
-		}else{
-			throw (ec_OutOfCtrlZoneRange);
+		} else {
+			throw(ec_OutOfCtrlZoneRange);
 		}
 		t = t0;
 		dt = (t1 - t0) / static_cast<double>(num);
-		while (t < t1 - 0.0001){
+		while (t < t1 - 0.0001) {
 			result.push_back(CtrlPointPosition2D(pposRightBank, t));
 			t += dt;
 		}
@@ -526,7 +536,7 @@ QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position
 
 void RawDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCodes)*/
 {
-	if (m_previousPoint == nullptr){
+	if (m_previousPoint == nullptr) {
 		throw ec_PreviousPointDontExist;
 	}
 	QVector2D dv = m_previousPoint->position() - m_position;
@@ -536,7 +546,8 @@ void RawDataRiverPathPoint::setCrosssectionAngle(double angle) /* throw (ErrorCo
 	setCrosssectionDirection(dv);
 }
 
-void RawDataRiverPathPoint::setCrosssectionDirection(const QVector2D& v){
+void RawDataRiverPathPoint::setCrosssectionDirection(const QVector2D& v)
+{
 	double rotAngle = iRIC::angleRadian(m_crosssectionDirection, v);
 	m_crosssectionDirection = v;
 	iRIC::rotateVectorRadian(m_crosssectionDirectionL, rotAngle);
@@ -544,29 +555,33 @@ void RawDataRiverPathPoint::setCrosssectionDirection(const QVector2D& v){
 	updateRiverShapeInterpolators();
 }
 
-void RawDataRiverPathPoint::setCrosssectionDirectionL(const QVector2D& direction){
+void RawDataRiverPathPoint::setCrosssectionDirectionL(const QVector2D& direction)
+{
 	m_crosssectionDirectionL = direction;
 }
 
-void RawDataRiverPathPoint::setCrosssectionDirectionR(const QVector2D& direction){
+void RawDataRiverPathPoint::setCrosssectionDirectionR(const QVector2D& direction)
+{
 	m_crosssectionDirectionR = direction;
 }
 
-void RawDataRiverPathPoint::addExtentionPointLeft(const QVector2D& pos){
+void RawDataRiverPathPoint::addExtentionPointLeft(const QVector2D& pos)
+{
 	RawDataRiverCrosssection::Altitude& alt = m_crosssection.leftBank(true);
 	QVector2D fixPoint = crosssectionPosition(alt.position());
 	QVector2D newdirection = pos - fixPoint;
 	double distance = newdirection.length();
 	newdirection.normalize();
 	setCrosssectionDirectionL(- newdirection);
-	if (m_crosssection.fixedPointRSet()){
+	if (m_crosssection.fixedPointRSet()) {
 		m_crosssection.setFixedPointR(m_crosssection.fixedPointRIndex() + 1);
 	}
 	m_crosssection.addPoint(alt.position() - distance, alt.height());
 	m_crosssection.setFixedPointL(1);
 }
 
-void RawDataRiverPathPoint::addExtentionPointRight(const QVector2D& pos){
+void RawDataRiverPathPoint::addExtentionPointRight(const QVector2D& pos)
+{
 	RawDataRiverCrosssection::Altitude& alt = m_crosssection.rightBank(true);
 	QVector2D fixPoint = crosssectionPosition(alt.position());
 	QVector2D newdirection = pos - fixPoint;
@@ -578,12 +593,14 @@ void RawDataRiverPathPoint::addExtentionPointRight(const QVector2D& pos){
 	m_crosssection.setFixedPointR(rightBankIndex);
 }
 
-void RawDataRiverPathPoint::moveExtentionPointLeft(const QVector2D& pos){
+void RawDataRiverPathPoint::moveExtentionPointLeft(const QVector2D& pos)
+{
 	crosssection().unsetFixedPointL();
 	addExtentionPointLeft(pos);
 }
 
-void RawDataRiverPathPoint::moveExtentionPointRight(const QVector2D& pos){
+void RawDataRiverPathPoint::moveExtentionPointRight(const QVector2D& pos)
+{
 	crosssection().unsetFixedPointR();
 	addExtentionPointRight(pos);
 }
@@ -603,58 +620,60 @@ void RawDataRiverPathPoint::shiftCenter(double shiftWidth)
 	double width = shiftWidth;
 	double right = crosssection().rightBank().position();
 	double left = crosssection().leftBank().position();
-	if (left > shiftWidth){
+	if (left > shiftWidth) {
 		width = left + 1.0e-6;
 	}
-	if (right < shiftWidth){
+	if (right < shiftWidth) {
 		width = right - 1.0e-6;
 	}
 	setPosition(m_position + m_crosssectionDirection * width);
 	m_crosssection.moveCenter(width);
 }
 
-void RawDataRiverPathPoint::setPosition(const QVector2D& v){
+void RawDataRiverPathPoint::setPosition(const QVector2D& v)
+{
 	m_position = v;
 }
 
-void RawDataRiverPathPoint::UpdateCtrlSections(){
-	if (m_gridSkip){
+void RawDataRiverPathPoint::UpdateCtrlSections()
+{
+	if (m_gridSkip) {
 		m_CtrlSections.clear();
 		m_CtrlSections.insert(0, 1, 1);
-	}else{
+	} else {
 		std::vector<double> lengths;
-		if (m_nextPoint != nullptr){
+		if (m_nextPoint != nullptr) {
 			lengths.push_back((m_nextPoint->position() - position()).length());
 		}
 		RawDataRiverPathPoint* tmpp = this;
-		while (tmpp->nextPoint() && tmpp->nextPoint()->gridSkip()){
+		while (tmpp->nextPoint() && tmpp->nextPoint()->gridSkip()) {
 			tmpp = tmpp->nextPoint();
 			lengths.push_back((tmpp->nextPoint()->position() - tmpp->position()).length());
 		}
 		double lengthsum = 0;
-		for (auto it = lengths.begin(); it != lengths.end(); ++it){
+		for (auto it = lengths.begin(); it != lengths.end(); ++it) {
 			lengthsum += *it;
 		}
 		m_CtrlSections.clear();
 		m_CtrlSections.reserve(lengths.size());
 		double subsum = 0;
-		for (auto it = lengths.begin(); it != lengths.end(); ++it){
+		for (auto it = lengths.begin(); it != lengths.end(); ++it) {
 			subsum += *it;
 			m_CtrlSections.push_back(subsum / lengthsum);
 		}
 	}
-	if (m_nextPoint != nullptr){
+	if (m_nextPoint != nullptr) {
 		m_nextPoint->UpdateCtrlSections();
 	}
 }
 
-QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f) (), double d)
+QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(), double d)
 {
 	int i = 0;
 	double d0 = 0;
 	double d1 = m_CtrlSections[i];
 	RawDataRiverPathPoint* tmpp = this;
-	while (d > d1){
+	while (d > d1) {
 		++i;
 		d0 = d1;
 		d1 = m_CtrlSections[i];
@@ -665,13 +684,13 @@ QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f) (unsigned int), unsigned int index, double d)
+QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d)
 {
 	int i = 0;
 	double d0 = 0;
 	double d1 = m_CtrlSections[i];
 	RawDataRiverPathPoint* tmpp = this;
-	while (d > d1){
+	while (d > d1) {
 		++i;
 		d0 = d1;
 		d1 = m_CtrlSections[i];
@@ -682,7 +701,7 @@ QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D RawDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f) (unsigned int), unsigned int index, double d)
+QVector2D RawDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d)
 {
 	Interpolator2D1* interpolator = (this->*f)(index);
 	return interpolator->interpolate(d);
@@ -697,25 +716,24 @@ QVector2D RawDataRiverPathPoint::crosssectionPosition(double x)
 	dirr = m_crosssectionDirectionR;
 	QVector2D tmpv;
 	if (
-			m_crosssection.fixedPointLSet() &&
-			x < m_crosssection.fixedPointL().position()
-			)
-	{
+		m_crosssection.fixedPointLSet() &&
+		x < m_crosssection.fixedPointL().position()
+	) {
 		double leftfix = m_crosssection.fixedPointL().position();
 		tmpv = m_position + dir * leftfix + dirl * (x - leftfix);
-	}else if (
-			m_crosssection.fixedPointRSet() &&
-			x > m_crosssection.fixedPointR().position()
-			){
+	} else if (
+		m_crosssection.fixedPointRSet() &&
+		x > m_crosssection.fixedPointR().position()
+	) {
 		double rightfix = m_crosssection.fixedPointR().position();
 		tmpv = m_position + dir * rightfix + dirr * (x - rightfix);
-	}else{
+	} else {
 		tmpv = m_position + m_crosssectionDirection * x;
 	}
 	return tmpv;
 }
 
-void RawDataRiverPathPoint::setName(const QString &newname)
+void RawDataRiverPathPoint::setName(const QString& newname)
 {
 	m_name = newname;
 }
@@ -725,14 +743,14 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	GridRelatedConditionContainerT<double>* elev = dynamic_cast<GridRelatedConditionContainerT<double>*>(grid->gridRelatedCondition("Elevation"));
 	QVector2D vec2d;
 	int index;
-	if (last){
+	if (last) {
 		// export grid points only crosssections.
 		// check grid size.
 		bool error = false;
-		if ((1 + initcount) > grid->dimensionI()){
+		if ((1 + initcount) > grid->dimensionI()) {
 			error = true;
 		}
-		if (error){throw ec_InvalidGridSize;}
+		if (error) {throw ec_InvalidGridSize;}
 
 		unsigned int leftctrlpoints = static_cast<unsigned int>(CenterToLeftCtrlPoints.size());
 		unsigned int rightctrlpoints = static_cast<unsigned int>(CenterToRightCtrlPoints.size());
@@ -740,7 +758,7 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		vec2d = m_position;
 		index = grid->vertexIndex(initcount, rightctrlpoints + 1);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_lXSec->interpolate(0).height());
 		}
 
@@ -748,32 +766,32 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		vec2d = crosssectionPosition(m_lXSec->interpolate(1).position());
 		index = grid->vertexIndex(initcount, leftctrlpoints + rightctrlpoints + 2);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_lXSec->interpolate(1).height());
 		}
 		// right bank.
 		vec2d = crosssectionPosition(m_rXSec->interpolate(1).position());
 		index = grid->vertexIndex(initcount, 0);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_rXSec->interpolate(1).height());
 		}
 		// points between river center and left bank
-		for (unsigned int i = 0; i < leftctrlpoints; ++i){
+		for (unsigned int i = 0; i < leftctrlpoints; ++i) {
 			vec2d = crosssectionPosition(m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).position());
 			index = grid->vertexIndex(initcount, rightctrlpoints + 2 + i);
 			grid->setVertex(index, vec2d);
-			if (elev != nullptr && elevmapping){
+			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).height());
 			}
 		}
 		// points between river center and right bank
-		for (unsigned int i = 0; i < rightctrlpoints; ++i){
+		for (unsigned int i = 0; i < rightctrlpoints; ++i) {
 			// まず断面上の点
 			vec2d = crosssectionPosition(m_rXSec->interpolate(CenterToRightCtrlPoints[i]).position());
 			index = grid->vertexIndex(initcount, rightctrlpoints - i);
 			grid->setVertex(index, vec2d);
-			if (elev != nullptr && elevmapping){
+			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, m_rXSec->interpolate(CenterToRightCtrlPoints[i]).height());
 			}
 		}
@@ -781,10 +799,10 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	}
 	// check grid size.
 	bool error = false;
-	if ((CenterLineCtrlPoints.size() + 1 + initcount) > grid->dimensionI()){
+	if ((CenterLineCtrlPoints.size() + 1 + initcount) > grid->dimensionI()) {
 		error = true;
 	}
-	if (error){throw ec_InvalidGridSize;}
+	if (error) {throw ec_InvalidGridSize;}
 	LinearInterpolator1D1 inter1;
 	double valuethis, valuenext;
 	unsigned int leftctrlpoints = static_cast<unsigned int>(CenterToLeftCtrlPoints.size());
@@ -799,16 +817,16 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	vec2d = m_position;
 	index = grid->vertexIndex(initcount, rightctrlpoints + 1);
 	grid->setVertex(index, vec2d);
-	if (elev != nullptr && elevmapping){
+	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_LeftBank, 0, 0, 0));
 	}
 
 	// points between river center and the river center of the next point.
-	for (unsigned int i = 0; i < CenterLineCtrlPoints.size(); ++i){
+	for (unsigned int i = 0; i < CenterLineCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&RawDataRiverPathPoint::riverCenter, CenterLineCtrlPoints[i]);
 		index = grid->vertexIndex(initcount + i + 1, rightctrlpoints + 1);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_LeftBank, 0, 0, CenterLineCtrlPoints[i]));
 		}
 	}
@@ -819,15 +837,15 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	vec2d = m_leftBank->interpolate(0);
 	index = grid->vertexIndex(initcount, rightctrlpoints + leftctrlpoints + 2);
 	grid->setVertex(index, vec2d);
-	if (elev != nullptr && elevmapping){
+	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_LeftBank, 1, 1, 0));
 	}
 	// points between left bank and the left bank of the next point.
-	for (unsigned int i = 0; i < LeftBankCtrlPoints.size(); ++i){
+	for (unsigned int i = 0; i < LeftBankCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&RawDataRiverPathPoint::leftBank, LeftBankCtrlPoints[i]);
 		index = grid->vertexIndex(initcount + i + 1, rightctrlpoints + leftctrlpoints + 2);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_LeftBank, 1, 1, LeftBankCtrlPoints[i]));
 		}
 	}
@@ -838,55 +856,55 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	vec2d = m_rightBank->interpolate(0);
 	index = grid->vertexIndex(initcount, 0);
 	grid->setVertex(index, vec2d);
-	if (elev != nullptr && elevmapping){
+	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_RightBank, 1, 1, 0));
 	}
 	// points between right bank and the right bank of the next point.
-	for (unsigned int i = 0; i < RightBankCtrlPoints.size(); ++i){
+	for (unsigned int i = 0; i < RightBankCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&RawDataRiverPathPoint::rightBank, RightBankCtrlPoints[i]);
 		index = grid->vertexIndex(initcount + i + 1, 0);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_RightBank, 1, 1, RightBankCtrlPoints[i]));
 		}
 	}
 
 	// points between rever center and left bank
-	for (unsigned int i = 0; i < leftctrlpoints; ++i){
+	for (unsigned int i = 0; i < leftctrlpoints; ++i) {
 		// on cross section
 		vec2d = crosssectionPosition(m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).position());
 		index = grid->vertexIndex(initcount, rightctrlpoints + 2 + i);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(RawDataRiverPathPoint::bk_LeftBank, CenterToLeftCtrlPoints[i], m_nextPoint->CenterToLeftCtrlPoints[i], 0));
 		}
 		// grid points
-		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j){
+		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j) {
 			double param = GridCtrlParameter(bk_LeftBank, i, j);
 			vec2d = GridCtrlPosition(bk_LeftBank, i, param);
 			index = grid->vertexIndex(initcount + 1 + j, rightctrlpoints + 2 + i);
 			grid->setVertex(index, vec2d);
-			if (elev != nullptr && elevmapping){
+			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, myHeight(RawDataRiverPathPoint::bk_LeftBank, CenterToLeftCtrlPoints[i], m_nextPoint->CenterToLeftCtrlPoints[i], param));
 			}
 		}
 	}
 	// points between rever center and right bank
-	for (unsigned int i = 0; i < rightctrlpoints; ++i){
+	for (unsigned int i = 0; i < rightctrlpoints; ++i) {
 		// on cross section
 		vec2d = crosssectionPosition(m_rXSec->interpolate(CenterToRightCtrlPoints[i]).position());
 		index = grid->vertexIndex(initcount, rightctrlpoints - i);
 		grid->setVertex(index, vec2d);
-		if (elev != nullptr && elevmapping){
+		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(RawDataRiverPathPoint::bk_RightBank, CenterToRightCtrlPoints[i], m_nextPoint->CenterToRightCtrlPoints[i], 0));
 		}
 		// grid points
-		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j){
+		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j) {
 			double param = GridCtrlParameter(bk_RightBank, i, j);
 			vec2d = GridCtrlPosition(bk_RightBank, i, param);
 			index = grid->vertexIndex(initcount + 1 + j, rightctrlpoints - i);
 			grid->setVertex(index, vec2d);
-			if (elev != nullptr && elevmapping){
+			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, myHeight(RawDataRiverPathPoint::bk_RightBank, CenterToRightCtrlPoints[i], m_nextPoint->CenterToRightCtrlPoints[i], param));
 			}
 		}
@@ -900,7 +918,7 @@ double RawDataRiverPathPoint::myHeight(RawDataRiverPathPoint::Bank bank, double 
 	double d1 = m_CtrlSections[i];
 	RawDataRiverPathPoint* tmpp = this;
 	LinearInterpolator1D1 inter;
-	while (d > d1){
+	while (d > d1) {
 		++i;
 		d0 = d1;
 		d1 = m_CtrlSections[i];
@@ -910,13 +928,13 @@ double RawDataRiverPathPoint::myHeight(RawDataRiverPathPoint::Bank bank, double 
 	double subt0 = t0 + (t1 - t0) * d0;
 	double subt1 = t0 + (t1 - t0) * d1;
 
-	if (bank == RawDataRiverPathPoint::bk_LeftBank){
+	if (bank == RawDataRiverPathPoint::bk_LeftBank) {
 		// 左岸
 		double valuethis = tmpp->lXSec()->interpolate(subt0).height();
 		double valuenext = tmpp->nextPoint()->lXSec()->interpolate(subt1).height();
 		inter.setValues(valuethis, valuenext);
 		return inter.interpolate(subd);
-	}else{
+	} else {
 		// 右岸
 		double valuethis = tmpp->rXSec()->interpolate(subt0).height();
 		double valuenext = tmpp->nextPoint()->rXSec()->interpolate(subt1).height();
@@ -937,7 +955,7 @@ void RawDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 	int count;
 	s >> count;
 	m_crosssection.AltitudeInfo().clear();
-	for (int i = 0; i < count; ++i){
+	for (int i = 0; i < count; ++i) {
 		RawDataRiverCrosssection::Altitude alt;
 		double pos, height;
 		bool active;
@@ -952,20 +970,20 @@ void RawDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 	int index;
 	// left fixed point
 	s >> tmpbool;
-	if (tmpbool){
+	if (tmpbool) {
 		s >> dir >> index;
 		setCrosssectionDirectionL(dir);
 		m_crosssection.setFixedPointL(index);
-	}else{
+	} else {
 		m_crosssection.unsetFixedPointL();
 	}
 	// right fixed point
 	s >> tmpbool;
-	if (tmpbool){
+	if (tmpbool) {
 		s >> dir >> index;
 		setCrosssectionDirectionR(dir);
 		m_crosssection.setFixedPointR(index);
-	}else{
+	} else {
 		m_crosssection.unsetFixedPointR();
 	}
 	s >> m_gridSkip;
@@ -975,7 +993,7 @@ void RawDataRiverPathPoint::load(QDataStream& s, const VersionNumber& number)
 	s >> CenterLineCtrlPoints;
 	s >> LeftBankCtrlPoints;
 	s >> RightBankCtrlPoints;
-	if (number.major() >= 2 && number.build() > 1920){
+	if (number.major() >= 2 && number.build() > 1920) {
 		// left shift
 		double shift;
 		s >> shift;
@@ -1006,18 +1024,18 @@ void RawDataRiverPathPoint::save(QDataStream& s)
 	// cross section info
 	// count
 	s << m_crosssection.AltitudeInfo().count();
-	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
+	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = (*it);
 		s << alt.position() << alt.height() << alt.active();
 	}
 	// fixed points
 	s << m_crosssection.fixedPointLSet();
-	if (m_crosssection.fixedPointLSet()){
+	if (m_crosssection.fixedPointLSet()) {
 		s << m_crosssectionDirectionL;
 		s << m_crosssection.fixedPointLIndex();
 	}
 	s << m_crosssection.fixedPointRSet();
-	if (m_crosssection.fixedPointRSet()){
+	if (m_crosssection.fixedPointRSet()) {
 		s << m_crosssectionDirectionR;
 		s << m_crosssection.fixedPointRIndex();
 	}
@@ -1045,34 +1063,34 @@ void RawDataRiverPathPoint::centerToBanksRegion(QVector2D& mins, QVector2D& maxs
 	QVector2D rightbank = crosssectionPosition(m_crosssection.rightBank(true).position());
 	double xmin, xmax, ymin, ymax;
 	// from left bank, right bank.
-	if (leftbank.x() < rightbank.x()){
+	if (leftbank.x() < rightbank.x()) {
 		xmin = leftbank.x();
 		xmax = rightbank.x();
-	}else{
+	} else {
 		xmin = rightbank.x();
 		xmax = leftbank.x();
 	}
-	if (leftbank.y() < rightbank.y()){
+	if (leftbank.y() < rightbank.y()) {
 		ymin = leftbank.y();
 		ymax = rightbank.y();
-	}else{
+	} else {
 		ymin = rightbank.y();
 		ymax = leftbank.y();
 	}
 	// if fixed points set, take them into account.
-	if (m_crosssection.fixedPointLSet()){
+	if (m_crosssection.fixedPointLSet()) {
 		QVector2D tmpv = crosssectionPosition(m_crosssection.fixedPointL().position());
-		if (tmpv.x() < xmin){xmin = tmpv.x();}
-		if (tmpv.x() > xmax){xmax = tmpv.x();}
-		if (tmpv.y() < ymin){ymin = tmpv.y();}
-		if (tmpv.y() > ymax){ymax = tmpv.y();}
+		if (tmpv.x() < xmin) {xmin = tmpv.x();}
+		if (tmpv.x() > xmax) {xmax = tmpv.x();}
+		if (tmpv.y() < ymin) {ymin = tmpv.y();}
+		if (tmpv.y() > ymax) {ymax = tmpv.y();}
 	}
-	if (m_crosssection.fixedPointRSet()){
+	if (m_crosssection.fixedPointRSet()) {
 		QVector2D tmpv = crosssectionPosition(m_crosssection.fixedPointR().position());
-		if (tmpv.x() < xmin){xmin = tmpv.x();}
-		if (tmpv.x() > xmax){xmax = tmpv.x();}
-		if (tmpv.y() < ymin){ymin = tmpv.y();}
-		if (tmpv.y() > ymax){ymax = tmpv.y();}
+		if (tmpv.x() < xmin) {xmin = tmpv.x();}
+		if (tmpv.x() > xmax) {xmax = tmpv.x();}
+		if (tmpv.y() < ymin) {ymin = tmpv.y();}
+		if (tmpv.y() > ymax) {ymax = tmpv.y();}
 	}
 	mins = QVector2D(xmin, ymin);
 	maxs = QVector2D(xmax, ymax);
@@ -1086,21 +1104,21 @@ void RawDataRiverPathPoint::thisToNextRegion(QVector2D& mins, QVector2D& maxs)
 	QVector2D nextleftbank  = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.leftBank(true).position());
 	QVector2D nextrightbank = m_nextPoint->crosssectionPosition(m_nextPoint->m_crosssection.rightBank(true).position());
 	xmin = leftbank.x();
-	if (rightbank.x() < xmin){xmin = rightbank.x();}
-	if (nextleftbank.x() < xmin){xmin = nextleftbank.x();}
-	if (nextrightbank.x() < xmin){xmin = nextrightbank.x();}
+	if (rightbank.x() < xmin) {xmin = rightbank.x();}
+	if (nextleftbank.x() < xmin) {xmin = nextleftbank.x();}
+	if (nextrightbank.x() < xmin) {xmin = nextrightbank.x();}
 	xmax = leftbank.x();
-	if (rightbank.x() > xmax){xmax = rightbank.x();}
-	if (nextleftbank.x() > xmax){xmax = nextleftbank.x();}
-	if (nextrightbank.x() > xmax){xmax = nextrightbank.x();}
+	if (rightbank.x() > xmax) {xmax = rightbank.x();}
+	if (nextleftbank.x() > xmax) {xmax = nextleftbank.x();}
+	if (nextrightbank.x() > xmax) {xmax = nextrightbank.x();}
 	ymin = leftbank.y();
-	if (rightbank.y() < ymin){ymin = rightbank.y();}
-	if (nextleftbank.y() < ymin){ymin = nextleftbank.y();}
-	if (nextrightbank.y() < ymin){ymin = nextrightbank.y();}
+	if (rightbank.y() < ymin) {ymin = rightbank.y();}
+	if (nextleftbank.y() < ymin) {ymin = nextleftbank.y();}
+	if (nextrightbank.y() < ymin) {ymin = nextrightbank.y();}
 	ymax = leftbank.y();
-	if (rightbank.y() > ymax){ymax = rightbank.y();}
-	if (nextleftbank.y() > ymax){ymax = nextleftbank.y();}
-	if (nextrightbank.y() > ymax){ymax = nextrightbank.y();}
+	if (rightbank.y() > ymax) {ymax = rightbank.y();}
+	if (nextleftbank.y() > ymax) {ymax = nextleftbank.y();}
+	if (nextrightbank.y() > ymax) {ymax = nextrightbank.y();}
 	mins = QVector2D(xmin, ymin);
 	maxs = QVector2D(xmax, ymax);
 }
@@ -1109,50 +1127,51 @@ void addCtrlPointsToVector(QVector<double>& values, unsigned int index, RawDataR
 {
 	double t0, t1;
 	QVector<double> tmpvalues;
-	if (index == 0){
+	if (index == 0) {
 		t0 = 0;
-		if (values.size() == 0){
+		if (values.size() == 0) {
 			t1 = 1;
-		}else{
+		} else {
 			t1 = values[0];
 		}
-	}else if (index < values.size()){
+	} else if (index < values.size()) {
 		t0 = values[index - 1];
 		t1 = values[index];
-	}else if (index == values.size()){
+	} else if (index == values.size()) {
 		t0 = values[index - 1];
 		t1 = 1;
-	}else{
+	} else {
 		throw RawDataRiverPathPoint::ec_OutOfCtrlZoneRange;
 	}
 	tmpvalues.reserve(values.size() + method.number);
 	unsigned int i;
 	// 手前の点を追加する
-	for (i = 0; i < index; ++i){
+	for (i = 0; i < index; ++i) {
 		tmpvalues.push_back(values[i]);
 	}
-	if (method.method == RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform || method.param == 1){
+	if (method.method == RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform || method.param == 1) {
 		double dt = (t1 - t0) / static_cast<double>(method.number + 1);
-		for (i = 0; i < method.number; ++i){
+		for (i = 0; i < method.number; ++i) {
 			tmpvalues.push_back(t0 + dt * (i + 1));
 		}
-	}else if (method.method == RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio){
+	} else if (method.method == RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio) {
 		double first = (t1 - t0) / ((1 - std::pow(method.param, static_cast<int>(method.number + 1))) / (1 - method.param));
-		for (i = 0; i < method.number; ++i){
+		for (i = 0; i < method.number; ++i) {
 			double t = t0 + first * ((1 - std::pow(method.param, static_cast<int>(i + 1))) / (1 - method.param));
 			tmpvalues.push_back(t);
 		}
 	}
 	// 後の点を追加
-	for (i = index; i < values.size(); ++i){
+	for (i = index; i < values.size(); ++i) {
 		tmpvalues.push_back(values[i]);
 	}
 	// 置き換える
 	values = tmpvalues;
 }
 
-void RawDataRiverPathPoint::addCtrlPoints(CtrlZonePosition position, unsigned int index, CtrlPointsAddMethod method){
-	switch (position){
+void RawDataRiverPathPoint::addCtrlPoints(CtrlZonePosition position, unsigned int index, CtrlPointsAddMethod method)
+{
+	switch (position) {
 	case zposCenterLine:
 	case zposLeftBank:
 	case zposRightBank:
@@ -1176,31 +1195,31 @@ void RawDataRiverPathPoint::reposCtrlPoints(CtrlPointPosition position, int mini
 	int numbers = maxindex - minindex + 1;
 	QVector<double>& vec = CtrlPoints(position);
 	double t0, t1;
-	if (minindex == 0){
+	if (minindex == 0) {
 		t0 = 0;
-	}else{
+	} else {
 		t0 = vec[minindex - 1];
 	}
-	if (maxindex == vec.size() - 1){
+	if (maxindex == vec.size() - 1) {
 		t1 = 1;
-	}else{
+	} else {
 		t1 = vec[maxindex + 1];
 	}
-	if (method.method == CtrlPointsAddMethod::am_Uniform){
+	if (method.method == CtrlPointsAddMethod::am_Uniform) {
 		double dt = (t1 - t0) / static_cast<double>(numbers + 1);
-		for (int i = 0; i < numbers; ++i){
+		for (int i = 0; i < numbers; ++i) {
 			vec[minindex + i] = t0 + dt * (i + 1);
 //			tmpvalues.push_back(t0 + dt * (i+1));
 		}
-	}else if (method.method == CtrlPointsAddMethod::am_EqRatio_Ratio){
+	} else if (method.method == CtrlPointsAddMethod::am_EqRatio_Ratio) {
 		double first;
-		if (method.param == 1){
+		if (method.param == 1) {
 			first = (t1 - t0) / static_cast<double>(numbers + 1);
-		}else{
+		} else {
 			first = (t1 - t0) / ((1 - std::pow(method.param, numbers + 1)) / (1 - method.param));
 		}
 		double t = t0;
-		for (int i = 0; i < numbers; ++i){
+		for (int i = 0; i < numbers; ++i) {
 			t += first;
 			vec[minindex + i] = t;
 			first *= method.param;
@@ -1214,15 +1233,15 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 {
 	QVector<double> tmpvector, tmpvector2, tmpvector3;
 	unsigned int i;
-	switch (position){
+	switch (position) {
 	case zposCenterToLeft:
 		tmpvector.reserve(CenterToLeftCtrlPoints.size() - indices.size());
-		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i){
+		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
 			//			if (i == *(indices.begin())){
-			if (indices.begin() != indices.end() && i == *(indices.begin())){
+			if (indices.begin() != indices.end() && i == *(indices.begin())) {
 				// 飛ばす
 				indices.erase(i);
-			}else{
+			} else {
 				tmpvector.push_back(CenterToLeftCtrlPoints[i]);
 			}
 		}
@@ -1231,11 +1250,11 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 
 	case zposCenterToRight:
 		tmpvector.reserve(CenterToRightCtrlPoints.size() - indices.size());
-		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i){
-			if (indices.begin() != indices.end() && i == *(indices.begin())){
+		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
+			if (indices.begin() != indices.end() && i == *(indices.begin())) {
 				// 飛ばす
 				indices.erase(i);
-			}else{
+			} else {
 				tmpvector.push_back(CenterToRightCtrlPoints[i]);
 			}
 		}
@@ -1246,10 +1265,10 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 	case zposLeftBank:
 	case zposRightBank:
 		tmpvector.reserve(CenterLineCtrlPoints.size() - indices.size());
-		for (i = 0; i < CenterLineCtrlPoints.size(); ++i){
-			if (indices.begin() != indices.end() && i == *(indices.begin())){
+		for (i = 0; i < CenterLineCtrlPoints.size(); ++i) {
+			if (indices.begin() != indices.end() && i == *(indices.begin())) {
 				indices.erase(i);
-			}else{
+			} else {
 				tmpvector.push_back(LeftBankCtrlPoints[i]);
 				tmpvector2.push_back(RightBankCtrlPoints[i]);
 				tmpvector3.push_back(CenterLineCtrlPoints[i]);
@@ -1287,7 +1306,7 @@ double RawDataRiverPathPoint::waterSurfaceElevationValue() const
 
 QList<int> RawDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 {
-	if (! m_waterSurfaceElevationSpecified){
+	if (! m_waterSurfaceElevationSpecified) {
 		QList<int> ret;
 		return ret;
 	}
@@ -1299,16 +1318,16 @@ QList<int> RawDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 	int idx = 0;
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = *it;
-		if (alt.position() > 0){break;}
-		if (alt.height() > m_waterSurfaceElevationValue){
+		if (alt.position() > 0) {break;}
+		if (alt.height() > m_waterSurfaceElevationValue) {
 			leftlimit = idx;
 		}
 		++ idx;
 	}
 	for (auto it = alist.begin(); it != alist.end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = *it;
-		if (alt.position() < 0){continue;}
-		if (alt.height() > m_waterSurfaceElevationValue){
+		if (alt.position() < 0) {continue;}
+		if (alt.height() > m_waterSurfaceElevationValue) {
 			rightlimit = idx;
 			break;
 		}
@@ -1327,16 +1346,18 @@ QList<int> RawDataRiverPathPoint::getPointsToInactivateUsingWaterElevation()
 	return ret;
 }
 
-void moveData(const QVector<double>& from, std::vector<double>& to){
+void moveData(const QVector<double>& from, std::vector<double>& to)
+{
 	to.clear();
-	for (int i = 0; i < from.size(); ++i){
+	for (int i = 0; i < from.size(); ++i) {
 		to.push_back(from[i]);
 	}
 }
 
-void moveData(const std::vector<double>& from, QVector<double>& to){
+void moveData(const std::vector<double>& from, QVector<double>& to)
+{
 	to.clear();
-	for (int i = 0; i < from.size(); ++i){
+	for (int i = 0; i < from.size(); ++i) {
 		to.push_back(from[i]);
 	}
 }
@@ -1354,7 +1375,7 @@ void RawDataRiverPathPoint::loadFromiRICLibObject(const iRICLib::RiverPathPoint*
 	m_crosssection.setLeftShift(p->leftShift);
 	m_crosssection.AltitudeInfo().clear();
 
-	for (int i = 0; i < p->altitudes.size(); ++i){
+	for (int i = 0; i < p->altitudes.size(); ++i) {
 		iRICLib::Altitude libalt = p->altitudes.at(i);
 		RawDataRiverCrosssection::Altitude alt;
 		alt.setPosition(libalt.position);
@@ -1363,13 +1384,13 @@ void RawDataRiverPathPoint::loadFromiRICLibObject(const iRICLib::RiverPathPoint*
 		m_crosssection.AltitudeInfo().append(alt);
 	}
 	m_crosssection.unsetFixedPointL();
-	if (p->fixedPointLSet){
+	if (p->fixedPointLSet) {
 		m_crosssection.setFixedPointL(p->fixedPointLIndex);
 		m_crosssectionDirectionL.setX(p->directionLX);
 		m_crosssectionDirectionL.setY(p->directionLY);
 	}
 	m_crosssection.unsetFixedPointR();
-	if (p->fixedPointRSet){
+	if (p->fixedPointRSet) {
 		m_crosssection.setFixedPointR(p->fixedPointRIndex);
 		m_crosssectionDirectionR.setX(p->directionRX);
 		m_crosssectionDirectionR.setY(p->directionRY);
@@ -1401,12 +1422,12 @@ void RawDataRiverPathPoint::saveToiRICLibObject(iRICLib::RiverPathPoint* p)
 	p->leftShift = m_crosssection.leftShift();
 
 	p->altitudes.clear();
-	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it){
+	for (auto it = m_crosssection.AltitudeInfo().begin(); it != m_crosssection.AltitudeInfo().end(); ++it) {
 		RawDataRiverCrosssection::Altitude alt = *it;
 		iRICLib::Altitude libalt;
 		libalt.position = alt.position();
 		libalt.height = alt.height();
-		if (alt.active()){
+		if (alt.active()) {
 			libalt.active = 1;
 		} else {
 			libalt.active = 0;
@@ -1425,7 +1446,7 @@ void RawDataRiverPathPoint::saveToiRICLibObject(iRICLib::RiverPathPoint* p)
 	p->fixedPointRIndex = m_crosssection.fixedPointRIndex();
 
 	p->gridSkip = 0;
-	if (m_gridSkip){
+	if (m_gridSkip) {
 		p->gridSkip = 1;
 	}
 	moveData(CenterToLeftCtrlPoints, p->centerToLeftCtrlPoints);

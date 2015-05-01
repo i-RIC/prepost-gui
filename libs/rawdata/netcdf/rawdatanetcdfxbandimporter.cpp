@@ -34,7 +34,7 @@ bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 
 	// investigate the condition.
 	const QList<SolverDefinitionGridRelatedConditionDimension*>& dims = condition->dimensions();
-	if (! (dims.size() == 1 && dims.at(0)->name() == "Time")){
+	if (!(dims.size() == 1 && dims.at(0)->name() == "Time")) {
 		QMessageBox::warning(w, tr("Warning"), tr("X band MP rader data can be imported for grid conditions with dimension \"Time\"."));
 		return false;
 	}
@@ -46,7 +46,7 @@ bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	m_tmpFileName = dir.absoluteFilePath("tmp.nc");
 
 	int ret = QMessageBox::information(w, tr("Information"), tr("%1 files in the folder %2 are imported.").arg(filenames.size()).arg(QDir::toNativeSeparators(dir.absolutePath())), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-	if (ret == QMessageBox::Cancel){return false;}
+	if (ret == QMessageBox::Cancel) {return false;}
 
 	// use mlitx2nc to convert files into NetCDF file.
 	QString exepath = qApp->applicationDirPath();
@@ -56,7 +56,7 @@ bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	args << m_tmpFileName << QString::number(filenames.size());
 
 	mlitx2ncProcess->start(exeName, args);
-	for (int i = 0; i < filenames.size(); ++i){
+	for (int i = 0; i < filenames.size(); ++i) {
 		QString fname = QDir::toNativeSeparators(dir.absoluteFilePath(filenames.at(i)));
 		fname.append("\r\n");
 		mlitx2ncProcess->write(iRIC::toStr(fname).c_str());
@@ -69,13 +69,13 @@ bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 
 bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidget* w)
 {
-	RawDataNetcdfReal* netcdf = dynamic_cast<RawDataNetcdfReal*> (data);
+	RawDataNetcdfReal* netcdf = dynamic_cast<RawDataNetcdfReal*>(data);
 
 	int ncid_in, ncid_out;
 	int ret;
 
 	ret = nc_open(iRIC::toStr(m_tmpFileName).c_str(), NC_NOWRITE, &ncid_in);
-	if (ret != NC_NOERR){return false;}
+	if (ret != NC_NOERR) {return false;}
 	QFileInfo finfo(netcdf->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());
 
@@ -84,7 +84,7 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	f.remove();
 
 	ret = nc_create(iRIC::toStr(netcdf->filename()).c_str(), NC_NETCDF4, &ncid_out);
-	if (ret != NC_NOERR){return false;}
+	if (ret != NC_NOERR) {return false;}
 
 	netcdf->m_coordinateSystemType = RawDataNetcdf::LonLat;
 
@@ -116,11 +116,11 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	nc_get_var_double(ncid_in,timeVarId, times);
 
 	netcdf->m_lonValues.clear();
-	for (int i = 0; i < lonLen; ++i){
+	for (int i = 0; i < lonLen; ++i) {
 		netcdf->m_lonValues.append(*(lons + i));
 	}
 	netcdf->m_latValues.clear();
-	for (int i = 0; i < latLen; ++i){
+	for (int i = 0; i < latLen; ++i) {
 		netcdf->m_latValues.append(*(lats + i));
 	}
 
@@ -128,7 +128,7 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	GridRelatedConditionDimensionsContainer* dims = m_groupDataItem->dimensions();
 	GridRelatedConditionDimensionContainer* c = dims->containers().at(0);
 	QList<QVariant> timeVals;
-	for (int i = 0; i < timeLen; ++i){
+	for (int i = 0; i < timeLen; ++i) {
 		timeVals.append(*(times + i));
 	}
 
@@ -136,10 +136,10 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	delete lats;
 	delete lons;
 
-	if (c->variantValues().size() == 0){
+	if (c->variantValues().size() == 0) {
 		c->setVariantValues(timeVals);
 	} else {
-		if (c->variantValues() != timeVals){
+		if (c->variantValues() != timeVals) {
 			QMessageBox::critical(w, tr("Error"), tr("Dimension values for time mismatch.").arg(c->definition()->caption()));
 			return false;
 		}
@@ -168,10 +168,10 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	size_t bufferSize = 0;
 
 	// setup len_in, len_out
-	*(len_in    ) = 1;
+	*(len_in) = 1;
 	*(len_in + 1) = netcdf->latValues().size();
 	*(len_in + 2) = netcdf->lonValues().size();
-	*(len_out   ) = 1;
+	*(len_out) = 1;
 	*(len_out + 1) = netcdf->latValues().size();
 	*(len_out + 2) = netcdf->lonValues().size();
 	bufferSize = netcdf->lonValues().size() * netcdf->latValues().size();
@@ -188,14 +188,14 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 
 	ret = nc_get_att_float(ncid_in, rrVarId, "missing_value", &missingValue);
 
-	for (int i = 0; i < timeLen; ++i){
+	for (int i = 0; i < timeLen; ++i) {
 		*(start_in) = i;
 		*(start_out) = i;
 		nc_get_vara_float(ncid_in, rrVarId, start_in, len_in, floatbuffer);
-		for (int j = 0; j < bufferSize; ++j){
+		for (int j = 0; j < bufferSize; ++j) {
 			float val = *(floatbuffer + j);
 			*(doublebuffer + j) = val;
-			if (*(floatbuffer + j) == missingValue){
+			if (*(floatbuffer + j) == missingValue) {
 				*(doublebuffer + j) = netcdf->missingValue();
 			}
 		}

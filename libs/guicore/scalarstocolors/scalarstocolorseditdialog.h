@@ -7,21 +7,22 @@
 class ScalarsToColorsContainer;
 class ScalarsToColorsEditWidget;
 
-namespace Ui {
+namespace Ui
+{
 	class ScalarsToColorsEditDialog;
 }
 
 class GUICOREDLL_EXPORT ScalarsToColorsEditDialog : public QDialog
 {
 public:
-	ScalarsToColorsEditDialog(QWidget *parent = nullptr);
+	ScalarsToColorsEditDialog(QWidget* parent = nullptr);
 	void setWidget(ScalarsToColorsEditWidget* w);
-	ScalarsToColorsEditWidget* widget(){return m_widget;}
+	ScalarsToColorsEditWidget* widget() {return m_widget;}
 	void setContainer(ScalarsToColorsContainer* container);
 	void accept();
 protected:
 	ScalarsToColorsEditWidget* m_widget;
-	Ui::ScalarsToColorsEditDialog *ui;
+	Ui::ScalarsToColorsEditDialog* ui;
 };
 
 #endif // SCALARSTOCOLORSEDITDIALOG_H

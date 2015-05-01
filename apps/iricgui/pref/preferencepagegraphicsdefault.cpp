@@ -3,7 +3,7 @@
 
 #include <guicore/project/backgroundimageinfo.h>
 
-PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget *parent) :
+PreferencePageGraphicsDefault::PreferencePageGraphicsDefault(QWidget* parent) :
 	PreferencePage(parent),
 	ui(new Ui::PreferencePageGraphicsDefault)
 {

@@ -12,7 +12,7 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget *parent) :
+Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::Post2dWindowContourSettingDialog)
 {
@@ -42,11 +42,11 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 	ui->physicalValueComboBox->blockSignals(true);
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
+		if (tmparray == nullptr) {continue;}
 		QString name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() > 1){
+		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attributes.
 			continue;
 		}
@@ -55,7 +55,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 		m_solutions.append(name);
 	}
 	ui->physicalValueComboBox->blockSignals(false);
-	if (gtype->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid){
+	if (gtype->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		// unstructured grid!
 		m_unstructured = true;
 	} else {
@@ -68,7 +68,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 void Post2dWindowContourSettingDialog::setCurrentSolution(QString sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){
+	if (index == -1) {
 		// not set yet. select the first one.
 		index = 0;
 	}
@@ -86,7 +86,7 @@ void Post2dWindowContourSettingDialog::setNumberOfDivision(int div)
 	ui->colormapWidget->setDivisionNumber(div);
 }
 
-void Post2dWindowContourSettingDialog::setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface * item)
+void Post2dWindowContourSettingDialog::setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface* item)
 {
 	m_gridTypeDataItem = item;
 }
@@ -122,8 +122,7 @@ void Post2dWindowContourSettingDialog::solutionChanged(int index)
 void Post2dWindowContourSettingDialog::accept()
 {
 	if ((! ui->colormapWidget->autoRange()) &&
-		(ui->colormapWidget->upperLimit() < ui->colormapWidget->lowerLimit()))
-	{
+			(ui->colormapWidget->upperLimit() < ui->colormapWidget->lowerLimit())) {
 		QMessageBox::critical(this, tr("Error"), tr("For value range, max value is smaller than min value."));
 		return;
 	}
@@ -177,7 +176,7 @@ void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, Q
 	m_colorBarTitleMap = titlemap;
 }
 
-void Post2dWindowContourSettingDialog::setScalarBarSetting(const ScalarBarSetting &setting)
+void Post2dWindowContourSettingDialog::setScalarBarSetting(const ScalarBarSetting& setting)
 {
 	m_scalarBarSetting = setting;
 }
@@ -215,17 +214,17 @@ void Post2dWindowContourSettingDialog::disableActive()
 void Post2dWindowContourSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable){
+	if (! m_activeAvailable) {
 		dialog.disableActive();
 	}
-	if (m_unstructured){
+	if (m_unstructured) {
 		dialog.hideCustom();
 	}
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
 	dialog.setRegionMode(m_regionMode);
 	dialog.setRegion(m_region);
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 	m_regionMode = dialog.regionMode();
 	m_region = dialog.region();
 }
@@ -239,7 +238,7 @@ void Post2dWindowContourSettingDialog::showScalarBarDialog()
 	dialog.setLabelTextSetting(m_labelTextSetting);
 
 	int ret = dialog.exec();
-	if (ret == QDialog::Rejected){return;}
+	if (ret == QDialog::Rejected) {return;}
 
 	m_colorBarTitleMap[currentSolution()] = dialog.title();
 	m_scalarBarSetting = dialog.setting();

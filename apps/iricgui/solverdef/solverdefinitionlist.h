@@ -25,11 +25,11 @@ public:
 	 */
 	SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent);
 	/// destructor
-	virtual ~SolverDefinitionList(){clean();}
+	virtual ~SolverDefinitionList() {clean();}
 	/// Return absolute path of the folder that contains the solver information.
 	QString absoluteSolverPath(const QString& solverFolder);
 	/// The list of solvers;
-	QList<SolverDefinitionAbstract*> solverList(){return m_solverList;}
+	QList<SolverDefinitionAbstract*> solverList() {return m_solverList;}
 	/// The list of actions to add in File -&gt; New Simulation menu
 	QList<QAction*> actionList();
 	/// The dialog to show solver definition list

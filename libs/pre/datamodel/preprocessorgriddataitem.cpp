@@ -99,10 +99,10 @@ PreProcessorGridDataItem::~PreProcessorGridDataItem()
 	renderer()->RemoveActor(m_selectedCellsLinesActor);
 	renderer()->RemoveActor(m_selectedEdgesActor);
 	closeBirdEyeWindow();
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		delete m_bcGroupDataItem;
 	}
-	if (m_grid != nullptr){
+	if (m_grid != nullptr) {
 		delete m_grid;
 	}
 	delete m_menu;
@@ -111,16 +111,16 @@ PreProcessorGridDataItem::~PreProcessorGridDataItem()
 void PreProcessorGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){m_shapeDataItem->loadFromProjectMainFile(shapeNode);}
+	if (! shapeNode.isNull()) {m_shapeDataItem->loadFromProjectMainFile(shapeNode);}
 
 	QDomNode nodeNode = iRIC::getChildNode(node, "NodeAttributes");
-	if (! nodeNode.isNull()){m_nodeGroupDataItem->loadFromProjectMainFile(nodeNode);}
+	if (! nodeNode.isNull()) {m_nodeGroupDataItem->loadFromProjectMainFile(nodeNode);}
 
 	QDomNode cellNode = iRIC::getChildNode(node, "CellAttributes");
-	if (! cellNode.isNull()){m_cellGroupDataItem->loadFromProjectMainFile(cellNode);}
+	if (! cellNode.isNull()) {m_cellGroupDataItem->loadFromProjectMainFile(cellNode);}
 
 	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditions");
-	if (! bcNode.isNull() && m_bcGroupDataItem != nullptr){
+	if (! bcNode.isNull() && m_bcGroupDataItem != nullptr) {
 		m_bcGroupDataItem->loadFromProjectMainFile(bcNode);
 	}
 }
@@ -139,7 +139,7 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_cellGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		writer.writeStartElement("BoundaryConditions");
 		m_bcGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -156,10 +156,10 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 	cg_nzones(fn, B, &nzones);
 	char zonename[ProjectCgnsFile::BUFFERLEN];
 	cgsize_t size[9];
-	for (int i = 1; i <= nzones; ++i){
+	for (int i = 1; i <= nzones; ++i) {
 		// read zone information.
 		cg_zone_read(fn, 1, i, zonename, size);
-		if (zoneName == zonename){
+		if (zoneName == zonename) {
 			// I've found the zone!
 			// check the type of the grid contained in this zone.
 			ZoneType_t type;
@@ -175,7 +175,7 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 			m_grid->loadFromCgnsFile(fn);
 		}
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->loadFromCgnsFile(fn);
 	}
 	// loading data finished.
@@ -188,13 +188,13 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 
 void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
 {
-	if (m_grid != nullptr){
+	if (m_grid != nullptr) {
 		bool modified = m_grid->isModified();
 		m_grid->saveToCgnsFile(fn);
-		if (m_bcGroupDataItem != nullptr && modified){
+		if (m_bcGroupDataItem != nullptr && modified) {
 			try {
 				m_bcGroupDataItem->saveToCgnsFile(fn);
-			} catch (ErrorMessage& m){
+			} catch (ErrorMessage& m) {
 				m_grid->setModified();
 				throw m;
 			}
@@ -204,7 +204,7 @@ void PreProcessorGridDataItem::saveToCgnsFile(const int fn)
 
 void PreProcessorGridDataItem::closeCgnsFile()
 {
-	if (m_grid != nullptr){
+	if (m_grid != nullptr) {
 		delete m_grid;
 		m_grid = nullptr;
 		m_shapeDataItem->informGridUpdate();
@@ -229,7 +229,7 @@ void PreProcessorGridDataItem::addCustomMenuItems(QMenu* menu)
 void PreProcessorGridDataItem::importGrid()
 {
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
@@ -240,9 +240,9 @@ void PreProcessorGridDataItem::importGrid()
 
 	Grid* tmpgrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType()->emptyGrid();
 	const QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(tmpgrid->gridType());
-	for (auto it = importerList.begin(); it != importerList.end(); ++it){
+	for (auto it = importerList.begin(); it != importerList.end(); ++it) {
 		QStringList flist = (*it)->fileDialogFilters();
-		for (auto fit = flist.begin(); fit != flist.end(); ++fit){
+		for (auto fit = flist.begin(); fit != flist.end(); ++fit) {
 			filters.append(*fit);
 			importers.append(*it);
 		}
@@ -250,17 +250,17 @@ void PreProcessorGridDataItem::importGrid()
 
 	// Select the file to import.
 	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()){return;}
+	if (filename.isNull()) {return;}
 	GridImporterInterface* importer = nullptr;
-	for (int i = 0; i < filters.count(); ++i){
-		if (filters[i] == selectedFilter){
+	for (int i = 0; i < filters.count(); ++i) {
+		if (filters[i] == selectedFilter) {
 			importer = importers[i];
 		}
 	}
 	Q_ASSERT(importer != nullptr);
 
 	// execute import.
-	if (m_grid){
+	if (m_grid) {
 		// delete the current grid first.
 		silentDeleteGrid();
 	}
@@ -273,24 +273,24 @@ void PreProcessorGridDataItem::importGrid()
 	importedGrid->setZoneName(zname);
 	// now, import grid data.
 	bool ret = true;
-	CgnsGridImporter* cgnsImpoter = dynamic_cast<CgnsGridImporter*> (importer);
-	if (cgnsImpoter != nullptr){
+	CgnsGridImporter* cgnsImpoter = dynamic_cast<CgnsGridImporter*>(importer);
+	if (cgnsImpoter != nullptr) {
 		// CGNS importer is a little special.
 		// Boundary condition should be imported too.
 		QString tmpname;
 		int fn, B, zoneid;
 		// create temporary CGNS file.
 		bool internal_ret = cgnsImpoter->openCgnsFileForImporting(importedGrid, filename, tmpname, fn, B, zoneid, mainWindow());
-		if (! internal_ret){goto IMPORT_ERROR_BEFORE_OPEN;}
+		if (! internal_ret) {goto IMPORT_ERROR_BEFORE_OPEN;}
 
 		// load grid
 		internal_ret = importedGrid->loadFromCgnsFile(fn, B, zoneid);
-		if (! internal_ret){goto IMPORT_ERROR_AFTER_OPEN;}
+		if (! internal_ret) {goto IMPORT_ERROR_AFTER_OPEN;}
 
 		m_grid = importedGrid;
 
 		// import boundary condition
-		if (m_bcGroupDataItem != nullptr){
+		if (m_bcGroupDataItem != nullptr) {
 			m_bcGroupDataItem->clear();
 			m_bcGroupDataItem->loadFromCgnsFile(fn);
 		}
@@ -309,7 +309,7 @@ IMPORT_SUCCEED:
 		m_grid = importedGrid;
 	}
 
-	if (! ret){
+	if (! ret) {
 		// import failed.
 		delete m_grid;
 		m_grid = nullptr;
@@ -345,13 +345,13 @@ void PreProcessorGridDataItem::exportGrid()
 	QFile logFile(projectData()->absoluteFileName("gridcheck.txt"));
 	logFile.open(QFile::WriteOnly | QFile::Text);
 	QTextStream logStream(&logFile);
-	if (settings.value("beforeexport", true).value<bool>()){
+	if (settings.value("beforeexport", true).value<bool>()) {
 		// execute checking before exporting.
 		QStringList messages = m_grid->checkShape(logStream);
 		if (messages.count() > 0) {
 			QString msg = tr("The following problems found in this grid. Do you really want to export the grid?");
 			msg += "<ul>";
-			for (int i = 0; i < messages.count(); ++i){
+			for (int i = 0; i < messages.count(); ++i) {
 				QString tmpmsg = messages.at(i);
 				msg += "<li>" + tmpmsg + "</li>";
 			}
@@ -371,9 +371,9 @@ void PreProcessorGridDataItem::exportGrid()
 	QList<GridExporterInterface*> exporters;
 
 	const QList<GridExporterInterface*> exporterList = GridExporterFactory::instance().list(m_grid->gridType());
-	for (auto it = exporterList.begin(); it != exporterList.end(); ++it){
+	for (auto it = exporterList.begin(); it != exporterList.end(); ++it) {
 		QStringList flist = (*it)->fileDialogFilters();
-		for (auto fit = flist.begin(); fit != flist.end(); ++fit){
+		for (auto fit = flist.begin(); fit != flist.end(); ++fit) {
 			filters.append(*fit);
 			exporters.append(*it);
 		}
@@ -381,10 +381,10 @@ void PreProcessorGridDataItem::exportGrid()
 
 	// Select the file to import.
 	QString filename = QFileDialog::getSaveFileName(projectData()->mainWindow(), tr("Select File to Export"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()){return;}
+	if (filename.isNull()) {return;}
 	GridExporterInterface* exporter = nullptr;
-	for (int i = 0; i < filters.count(); ++i){
-		if (filters[i] == selectedFilter){
+	for (int i = 0; i < filters.count(); ++i) {
+		if (filters[i] == selectedFilter) {
 			exporter = exporters[i];
 		}
 	}
@@ -394,24 +394,24 @@ void PreProcessorGridDataItem::exportGrid()
 	projectData()->mainWindow()->statusBar()->showMessage(tr("Exporting Grid..."));
 	bool ret;
 	CgnsGridExporter* cgnsExporter = dynamic_cast<CgnsGridExporter*>(exporter);
-	if (cgnsExporter != nullptr){
+	if (cgnsExporter != nullptr) {
 		// CGNS exporter is a little special.
 		// Boundary condition should be exported too.
 		QString tmpname;
 		int fn, B;
 		// create temporary CGNS file.
 		bool internal_ret = cgnsExporter->createTempCgns(m_grid, tmpname, fn, B);
-		if (! internal_ret){goto EXPORT_ERROR_BEFORE_OPEN;}
+		if (! internal_ret) {goto EXPORT_ERROR_BEFORE_OPEN;}
 
 		// write to the iRICZone.
 		internal_ret = m_grid->saveToCgnsFile(fn, B, "iRICZone");
-		if (! internal_ret){goto EXPORT_ERROR_AFTER_OPEN;}
+		if (! internal_ret) {goto EXPORT_ERROR_AFTER_OPEN;}
 
 		// output boundary condition
-		if (m_bcGroupDataItem != nullptr){
+		if (m_bcGroupDataItem != nullptr) {
 			try {
 				m_bcGroupDataItem->saveToCgnsFile(fn);
-			} catch (ErrorMessage& m){
+			} catch (ErrorMessage& m) {
 				QMessageBox::critical(mainWindow(), tr("Error"), m);
 				goto EXPORT_ERROR_AFTER_OPEN;
 			}
@@ -429,10 +429,10 @@ EXPORT_SUCCEED:
 	} else {
 		ret = exporter->doExport(m_grid, filename, selectedFilter, projectData()->mainWindow());
 	}
-	if (ret){
+	if (ret) {
 		// exporting succeeded.
 		projectData()->mainWindow()->statusBar()->showMessage(tr("Grid successfully exported to %1.").arg(QDir::toNativeSeparators(filename)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
-	}else{
+	} else {
 		// exporting failed.
 		projectData()->mainWindow()->statusBar()->clearMessage();
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("Exporting grid to %1 failed.").arg(QDir::toNativeSeparators(filename)));
@@ -448,21 +448,21 @@ void PreProcessorGridDataItem::showDisplaySettingDialog()
 
 void PreProcessorGridDataItem::deleteGrid()
 {
-	if (m_grid == nullptr){return;}
+	if (m_grid == nullptr) {return;}
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
+	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
 	QMessageBox::StandardButton button = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Are you sure you want to discard the grid?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-	if (button == QMessageBox::No){return;}
+	if (button == QMessageBox::No) {return;}
 	silentDeleteGrid();
 	renderGraphicsView();
 }
 
 bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 {
-		if (m_grid != nullptr){delete m_grid;}
+	if (m_grid != nullptr) {delete m_grid;}
 	m_grid = newGrid;
 	// set parent.
 	m_grid->setParent(this);
@@ -474,7 +474,7 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	// set zone name.
 	QString zname = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(parent())->zoneName();
 	m_grid->setZoneName(zname);
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		m_bcGroupDataItem->setGrid(newGrid);
 		m_bcGroupDataItem->clearPoints();
 	}
@@ -498,7 +498,7 @@ void PreProcessorGridDataItem::setSelectedPointsVisibility(bool visible)
 {
 	m_selectedVerticesActor->VisibilityOff();
 	m_actorCollection->RemoveItem(m_selectedVerticesActor);
-	if (visible){
+	if (visible) {
 		m_actorCollection->AddItem(m_selectedVerticesActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -510,7 +510,7 @@ void PreProcessorGridDataItem::setSelectedCellsVisibility(bool visible)
 	m_selectedCellsLinesActor->VisibilityOff();
 	m_actorCollection->RemoveItem(m_selectedCellsActor);
 	m_actorCollection->RemoveItem(m_selectedCellsLinesActor);
-	if (visible){
+	if (visible) {
 		m_actorCollection->AddItem(m_selectedCellsActor);
 		m_actorCollection->AddItem(m_selectedCellsLinesActor);
 	}
@@ -521,7 +521,7 @@ void PreProcessorGridDataItem::setSelectedEdgesVisibility(bool visible)
 {
 	m_selectedEdgesActor->VisibilityOff();
 	m_actorCollection->RemoveItem(m_selectedEdgesActor);
-	if (visible){
+	if (visible) {
 		m_actorCollection->AddItem(m_selectedEdgesActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -557,7 +557,7 @@ void PreProcessorGridDataItem::updateSelectedVertices(MouseBoundingBox* box, boo
 void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 {
 	m_selectedVerticesPolyData->Reset();
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		m_selectedVerticesPolyData->BuildCells();
 		m_selectedVerticesPolyData->BuildLinks();
 		m_selectedVerticesPolyData->Modified();
@@ -566,7 +566,7 @@ void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 	m_selectedVerticesPolyData->SetPoints(m_grid->vtkGrid()->GetPoints());
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
 	vtkIdType node;
-	for (int i = 0; i < m_selectedVertices.count(); ++i){
+	for (int i = 0; i < m_selectedVertices.count(); ++i) {
 		node = m_selectedVertices.at(i);
 		cells->InsertNextCell(1, &(node));
 	}
@@ -579,14 +579,14 @@ void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBox* box, bool xOr)
 {
 	QVector<vtkIdType> ret;
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		// grid is not setup yet.
 		return ret;
 	}
 //	if (m_grid->isMasked()){return ret;}
 	QSet<vtkIdType> selectedVerticesSet;
-	if (xOr){
-		for (vtkIdType i = 0; i < m_selectedVertices.count(); ++i){
+	if (xOr) {
+		for (vtkIdType i = 0; i < m_selectedVertices.count(); ++i) {
 			selectedVerticesSet.insert(m_selectedVertices.at(i));
 		}
 	}
@@ -594,13 +594,13 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 	vtkPoints* points = m_grid->vtkGrid()->GetPoints();
 	double p[3];
 	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(m_grid);
-	if (sgrid != nullptr){
-		for (int ii = sgrid->drawnIMin(); ii <= sgrid->drawnIMax(); ++ii){
-			for (int jj = sgrid->drawnJMin(); jj <= sgrid->drawnJMax(); ++jj){
+	if (sgrid != nullptr) {
+		for (int ii = sgrid->drawnIMin(); ii <= sgrid->drawnIMax(); ++ii) {
+			for (int jj = sgrid->drawnJMin(); jj <= sgrid->drawnJMax(); ++jj) {
 				vtkIdType idx = sgrid->vertexIndex(ii, jj);
 				points->GetPoint(idx, p);
-				if (box->isInsideBox(p[0], p[1])){
-					if (selectedVerticesSet.contains(idx)){
+				if (box->isInsideBox(p[0], p[1])) {
+					if (selectedVerticesSet.contains(idx)) {
 						selectedVerticesSet.remove(idx);
 					} else {
 						selectedVerticesSet.insert(idx);
@@ -610,10 +610,10 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 		}
 	} else {
 		vtkIdType i;
-		for (i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, p);
-			if (box->isInsideBox(p[0], p[1])){
-				if (selectedVerticesSet.contains(i)){
+			if (box->isInsideBox(p[0], p[1])) {
+				if (selectedVerticesSet.contains(i)) {
 					selectedVerticesSet.remove(i);
 				} else {
 					selectedVerticesSet.insert(i);
@@ -622,7 +622,7 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 		}
 	}
 
-	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it){
+	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it) {
 		ret.append(*s_it);
 	}
 	return ret;
@@ -633,7 +633,7 @@ QSet<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesSet(MouseBoundingBo
 {
 	QVector<vtkIdType> vec = getSelectedVertices(box, xOr);
 	QSet<vtkIdType> set;
-	for (int i = 0; i < vec.size(); ++i){
+	for (int i = 0; i < vec.size(); ++i) {
 		set.insert(vec.at(i));
 	}
 	return set;
@@ -652,14 +652,14 @@ void PreProcessorGridDataItem::informSelectedVerticesChanged()
 
 void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool xOr)
 {
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
 //	if (m_grid->isMasked()){return;}
 
 	bool click = false;
-	if (isNear(box->startPoint(), box->endPoint())){
+	if (isNear(box->startPoint(), box->endPoint())) {
 		QPoint newStart = box->endPoint() - QPoint(2, 2);
 		QPoint newEnd = box->endPoint() + QPoint(2, 2);
 		box->setStartPoint(newStart.x(), newStart.y());
@@ -668,8 +668,8 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 	}
 
 	QSet<vtkIdType> selectedCellsSet;
-	if (xOr){
-		for (vtkIdType i = 0; i < m_selectedCells.count(); ++i){
+	if (xOr) {
+		for (vtkIdType i = 0; i < m_selectedCells.count(); ++i) {
 			selectedCellsSet.insert(m_selectedCells.at(i));
 		}
 	}
@@ -677,7 +677,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 
 	QVector<vtkIdType> selectedCellsVector;
 
-	if (click){
+	if (click) {
 		double point[3];
 		box->vtkGrid()->GetPoint(0, point);
 		// find the cell that contains point.
@@ -686,7 +686,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 		double weights[4];
 		int subid;
 		vtkIdType cellid = m_grid->vtkGrid()->FindCell(point, hintCell, 0, 1e-4, subid, pcoords, weights);
-		if (cellid >= 0){
+		if (cellid >= 0) {
 			selectedCellsVector.append(cellid);
 		}
 	} else {
@@ -694,16 +694,16 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 		QSet<vtkIdType> selectedVertices = getSelectedVerticesSet(box, false);
 		selectedCellsVector = getCellsFromVertices(selectedVertices);
 	}
-	for (int i = 0; i < selectedCellsVector.count(); ++i){
+	for (int i = 0; i < selectedCellsVector.count(); ++i) {
 		vtkIdType cellid = selectedCellsVector.at(i);
-		if (selectedCellsSet.contains(cellid)){
+		if (selectedCellsSet.contains(cellid)) {
 			selectedCellsSet.remove(cellid);
 		} else {
 			selectedCellsSet.insert(cellid);
 		}
 	}
 
-	for (auto s_it = selectedCellsSet.begin(); s_it != selectedCellsSet.end(); ++s_it){
+	for (auto s_it = selectedCellsSet.begin(); s_it != selectedCellsSet.end(); ++s_it) {
 		m_selectedCells.append(*s_it);
 	}
 	updateSelectedCellsGraphics();
@@ -714,7 +714,7 @@ void PreProcessorGridDataItem::updateSelectedCellsGraphics()
 {
 
 	vtkSmartPointer<vtkIdList> cellids = vtkSmartPointer<vtkIdList>::New();
-	for (int i = 0; i < m_selectedCells.count(); ++i){
+	for (int i = 0; i < m_selectedCells.count(); ++i) {
 		cellids->InsertNextId(m_selectedCells[i]);
 	}
 	m_selectedCellsGrid->SetCellList(cellids);
@@ -725,14 +725,14 @@ void PreProcessorGridDataItem::updateSelectedCellsGraphics()
 
 void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool xOr, VTKGraphicsView* v)
 {
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
 //	if (m_grid->isMasked()){return;}
 
 	bool click = false;
-	if (isNear(box->startPoint(), box->endPoint())){
+	if (isNear(box->startPoint(), box->endPoint())) {
 		QPoint center;
 		center.setX((box->startPoint().x() + box->endPoint().x()) / 2);
 		center.setY((box->startPoint().y() + box->endPoint().y()) / 2);
@@ -742,14 +742,14 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	}
 
 	QSet<Edge> selectedEdgesSet;
-	if (xOr){
-		for (int i = 0; i < m_selectedEdges.count(); ++i){
+	if (xOr) {
+		for (int i = 0; i < m_selectedEdges.count(); ++i) {
 			selectedEdgesSet.insert(m_selectedEdges.at(i));
 		}
 	}
 
 	QVector<Edge> selectedEdgesVector;
-	if (click){
+	if (click) {
 		double p[3];
 		VTK2DGraphicsView* v2 = dynamic_cast<VTK2DGraphicsView*>(v);
 		double stdDist = v2->stdRadius(5);
@@ -758,7 +758,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 		vtkPolyData* pd = buildEdges();
 		vtkIdType pointId = pd->FindPoint(p);
 		pd->GetPointCells(pointId, cellIds);
-		for (vtkIdType i = 0; i < cellIds->GetNumberOfIds(); ++i){
+		for (vtkIdType i = 0; i < cellIds->GetNumberOfIds(); ++i) {
 			vtkCell* cell = pd->GetCell(cellIds->GetId(i));
 			Edge edge(cell->GetPointId(0), cell->GetPointId(1));
 			// check whether cell is clicked.
@@ -773,7 +773,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 			iRIC::rotateVector90(vertical);
 			QVector2D posv = v0 - vertical * 0.5;
 			QVector2D point(p[0], p[1]);
-			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)){
+			if (iRIC::isInsideParallelogram(point, posv, horizontal, vertical)) {
 				selectedEdgesVector.append(edge);
 				break;
 			}
@@ -784,9 +784,9 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 		QSet<vtkIdType> selectedVertices = getSelectedVerticesSet(box, false);
 		selectedEdgesVector = getEdgesFromVertices(selectedVertices);
 	}
-	for (int i = 0; i < selectedEdgesVector.count(); ++i){
+	for (int i = 0; i < selectedEdgesVector.count(); ++i) {
 		const Edge& e = selectedEdgesVector.at(i);
-		if (selectedEdgesSet.contains(e)){
+		if (selectedEdgesSet.contains(e)) {
 			selectedEdgesSet.remove(e);
 		} else {
 			selectedEdgesSet.insert(e);
@@ -794,7 +794,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	}
 
 	m_selectedEdges.clear();
-	for (auto s_it = selectedEdgesSet.begin(); s_it != selectedEdgesSet.end(); ++s_it){
+	for (auto s_it = selectedEdgesSet.begin(); s_it != selectedEdgesSet.end(); ++s_it) {
 		m_selectedEdges.append(*s_it);
 	}
 
@@ -807,13 +807,13 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 void PreProcessorGridDataItem::updateSelectedEdgesGraphics()
 {
 	m_selectedEdgesPolyData->Reset();
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		return;
 	}
 	m_selectedEdgesPolyData->SetPoints(m_grid->vtkGrid()->GetPoints());
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
 	vtkIdType nodes[2];
-	for (int i = 0; i < m_selectedEdges.count(); ++i){
+	for (int i = 0; i < m_selectedEdges.count(); ++i) {
 		const Edge& edge = m_selectedEdges.at(i);
 		nodes[0] = edge.vertex1();
 		nodes[1] = edge.vertex2();
@@ -870,7 +870,7 @@ void PreProcessorGridDataItem::nodeSelectingMouseReleaseEvent(QMouseEvent* event
 	MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 	box->setEndPoint(event->x(), event->y());
 
-	if (isNear(box->startPoint(), box->endPoint())){
+	if (isNear(box->startPoint(), box->endPoint())) {
 		QPoint newStart = box->endPoint() - QPoint(2, 2);
 		QPoint newEnd = box->endPoint() + QPoint(2, 2);
 		box->setStartPoint(newStart.x(), newStart.y());
@@ -889,10 +889,10 @@ void PreProcessorGridDataItem::nodeSelectingMouseReleaseEvent(QMouseEvent* event
 void PreProcessorGridDataItem::nodeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 //	if (m_grid != nullptr && m_grid->isMasked()){return;}
-	if ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier){
+	if ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier) {
 		v->setCursor(m_addCursor);
 		m_shiftPressed = true;
-	}else{
+	} else {
 		m_shiftPressed = false;
 	}
 }
@@ -900,10 +900,10 @@ void PreProcessorGridDataItem::nodeSelectingKeyPressEvent(QKeyEvent* event, VTKG
 void PreProcessorGridDataItem::nodeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 //	if (m_grid != nullptr && m_grid->isMasked()){return;}
-	if ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier){
+	if ((event->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier) {
 		v->setCursor(m_addCursor);
 		m_shiftPressed = true;
-	}else{
+	} else {
 		v->unsetCursor();
 		m_shiftPressed = false;
 	}
@@ -1109,9 +1109,9 @@ void PreProcessorGridDataItem::updateZDepthRangeItemCount()
 
 void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 {
-	if (m_grid == nullptr){return;}
+	if (m_grid == nullptr) {return;}
 	QList<GridRelatedConditionContainer*> conds = m_grid->gridRelatedConditions();
-	for (auto it = conds.begin(); it != conds.end(); ++it){
+	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		informgridRelatedConditionChange((*it)->name());
 	}
 }
@@ -1120,12 +1120,12 @@ void PreProcessorGridDataItem::informgridRelatedConditionChange(const QString& n
 {
 	emit gridRelatedConditionChanged(name);
 	PreProcessorGridRelatedConditionNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);
-	if (nItem != nullptr){nItem->updateCrossectionWindows();}
+	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
 }
 
 void PreProcessorGridDataItem::finishGridLoading()
 {
-	if (m_grid != nullptr){
+	if (m_grid != nullptr) {
 		m_selectedVerticesPolyData->SetPoints(m_grid->vtkGrid()->GetPoints());
 		m_selectedCellsGrid->SetInputData(m_grid->vtkGrid());
 		m_selectedEdgesPolyData->SetPoints(m_grid->vtkGrid()->GetPoints());
@@ -1152,7 +1152,7 @@ bool PreProcessorGridDataItem::isImportAvailable()
 
 bool PreProcessorGridDataItem::isExportAvailable()
 {
-	if (m_grid == nullptr){return false;}
+	if (m_grid == nullptr) {return false;}
 	const QList<GridExporterInterface*> exporterList = GridExporterFactory::instance().list(m_grid->gridType());
 	return exporterList.count() > 0;
 }
@@ -1160,7 +1160,7 @@ bool PreProcessorGridDataItem::isExportAvailable()
 QAction* PreProcessorGridDataItem::mappingAction()
 {
 	PreProcessorGridAndGridCreatingConditionDataItem* item =
-			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridAttributeMappingSettingTopDataItem* mItem = item->mappingSettingDataItem();
 	return mItem->customMappingAction();
 }
@@ -1185,14 +1185,14 @@ void PreProcessorGridDataItem::updateActionStatus()
 	m_shapeDataItem->editAction()->setEnabled(m_grid != nullptr && m_selectedVertices.count() > 0);
 
 	PreProcessorGridAttributeMappingSettingTopDataItem* mtItem =
-			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->mappingSettingDataItem();
+		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->mappingSettingDataItem();
 	mtItem->customMappingAction()->setEnabled(m_grid != nullptr);
 }
 
 void PreProcessorGridDataItem::silentDeleteGrid()
 {
-	if (m_grid == nullptr){return;}
-	if (m_bcGroupDataItem != nullptr){
+	if (m_grid == nullptr) {return;}
+	if (m_bcGroupDataItem != nullptr) {
 		m_bcGroupDataItem->clearPoints();
 	}
 	delete m_grid;
@@ -1213,9 +1213,9 @@ void PreProcessorGridDataItem::updateAttributeActorSettings()
 
 QCursor PreProcessorGridDataItem::normalCursor()
 {
-	if (m_shiftPressed){
+	if (m_shiftPressed) {
 		return m_addCursor;
-	}else{
+	} else {
 		return QCursor(Qt::ArrowCursor);
 	}
 }
@@ -1223,7 +1223,7 @@ QCursor PreProcessorGridDataItem::normalCursor()
 void PreProcessorGridDataItem::openBirdEyeWindow()
 {
 	QWidget* w;
-	if (m_birdEyeWindow == nullptr){
+	if (m_birdEyeWindow == nullptr) {
 		m_birdEyeWindow = new GridBirdEyeWindow(iricMainWindow(), this);
 		QMdiArea* cent = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
 		w = cent->addSubWindow(m_birdEyeWindow);
@@ -1242,13 +1242,13 @@ void PreProcessorGridDataItem::openBirdEyeWindow()
 
 void PreProcessorGridDataItem::closeBirdEyeWindow()
 {
-	if (m_birdEyeWindow == nullptr){return;}
+	if (m_birdEyeWindow == nullptr) {return;}
 	delete m_birdEyeWindow->parent();
 }
 
 void PreProcessorGridDataItem::informGridChange()
 {
-	if (m_birdEyeWindow != nullptr){
+	if (m_birdEyeWindow != nullptr) {
 		m_birdEyeWindow->updateGrid();
 	}
 	clearSelection();
@@ -1270,7 +1270,7 @@ void PreProcessorGridDataItem::assignActionZValues(const ZDepthRange& range)
 
 	ZDepthRange r;
 	// Boundary Condition
-	if (m_bcGroupDataItem != nullptr){
+	if (m_bcGroupDataItem != nullptr) {
 		r = m_bcGroupDataItem->zDepthRange();
 		r.setMax(range.max() * 0.9 + range.min() * 0.1);
 		r.setMin(range.max() * 0.8 + range.min() * 0.2);
@@ -1297,15 +1297,15 @@ void PreProcessorGridDataItem::assignActionZValues(const ZDepthRange& range)
 
 vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 {
-	if (m_grid == nullptr){return nullptr;}
+	if (m_grid == nullptr) {return nullptr;}
 	vtkPolyData* polyData = vtkPolyData::New();
 	polyData->SetPoints(m_grid->vtkGrid()->GetPoints());
 	QSet<Edge> edges;
 
-	for (vtkIdType i = 0; i < m_grid->vtkGrid()->GetNumberOfCells(); ++i){
+	for (vtkIdType i = 0; i < m_grid->vtkGrid()->GetNumberOfCells(); ++i) {
 		vtkCell* cell = m_grid->vtkGrid()->GetCell(i);
 		int edgeCount = cell->GetNumberOfEdges();
-		for (int j = 0; j < edgeCount; ++j){
+		for (int j = 0; j < edgeCount; ++j) {
 			vtkCell* edgeCell = cell->GetEdge(j);
 			Edge e(edgeCell->GetPointId(0), edgeCell->GetPointId(1));
 			edges.insert(e);
@@ -1313,7 +1313,7 @@ vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 	}
 
 	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	for (auto it = edges.begin(); it != edges.end(); ++it){
+	for (auto it = edges.begin(); it != edges.end(); ++it) {
 		vtkIdType nodes[2];
 		nodes[0] = it->vertex1();
 		nodes[1] = it->vertex2();
@@ -1328,30 +1328,30 @@ vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 void PreProcessorGridDataItem::updateObjectBrowserTree()
 {
 	QStandardItem* sItem = m_shapeDataItem->standardItem();
-	if (sItem->row() != - 1){
+	if (sItem->row() != - 1) {
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
 	sItem = m_nodeGroupDataItem->standardItem();
-	if (sItem->row() != - 1){
+	if (sItem->row() != - 1) {
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
 	sItem = m_cellGroupDataItem->standardItem();
-	if (sItem->row() != - 1){
+	if (sItem->row() != - 1) {
 		// remove.
 		m_standardItem->takeRow(sItem->row());
 	}
-	if (m_bcGroupDataItem){
+	if (m_bcGroupDataItem) {
 		sItem = m_bcGroupDataItem->standardItem();
-		if (sItem->row() != - 1){
+		if (sItem->row() != - 1) {
 			// remove.
 			m_standardItem->takeRow(sItem->row());
 		}
 	}
 
 	QString cap = tr("Grid");
-	if (m_grid == nullptr){
+	if (m_grid == nullptr) {
 		// do nothing.
 		cap.append(tr(" [No Data]"));
 		m_standardItem->setText(cap);
@@ -1360,11 +1360,11 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 		vtkStructuredGrid* sg = dynamic_cast<vtkStructuredGrid*>(ps);
 		vtkUnstructuredGrid* ug = dynamic_cast<vtkUnstructuredGrid*>(ps);
 
-		if (sg != nullptr){
+		if (sg != nullptr) {
 			int dim[3];
 			sg->GetDimensions(dim);
 			cap.append(tr(" (%1 x %2 = %3)").arg(dim[0]).arg(dim[1]).arg(dim[0] * dim[1]));
-		} else if (ug != nullptr){
+		} else if (ug != nullptr) {
 			int num = ug->GetNumberOfPoints();
 			cap.append(tr(" (%1)").arg(num));
 		}
@@ -1374,41 +1374,41 @@ void PreProcessorGridDataItem::updateObjectBrowserTree()
 		// shape item.
 		m_standardItem->appendRow(m_shapeDataItem->standardItem());
 		// add node group if node data exists.
-		if (m_nodeGroupDataItem->conditions().count() > 0){
+		if (m_nodeGroupDataItem->conditions().count() > 0) {
 			m_standardItem->appendRow(m_nodeGroupDataItem->standardItem());
 		}
 		// add cell group if node data exists.
-		if (m_cellGroupDataItem->conditions().count() > 0){
+		if (m_cellGroupDataItem->conditions().count() > 0) {
 			m_standardItem->appendRow(m_cellGroupDataItem->standardItem());
 		}
 		// add boundary condition group if boundary condition is defined.
-		if (m_bcGroupDataItem){
+		if (m_bcGroupDataItem) {
 			m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
 		}
 	}
 }
 
-QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtkIdType> &vertices) const
+QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtkIdType>& vertices) const
 {
 	QSet<vtkIdType> selectedCellNoms;
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
+	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it) {
 		m_grid->vtkGrid()->GetPointCells(*v_it, idlist);
-		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
+		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i) {
 			vtkIdType cellid = idlist->GetId(i);
 			selectedCellNoms.insert(cellid);
 		}
 	}
 
 	QVector<vtkIdType> ret;
-	for (auto v_it = selectedCellNoms.begin(); v_it != selectedCellNoms.end(); ++v_it){
+	for (auto v_it = selectedCellNoms.begin(); v_it != selectedCellNoms.end(); ++v_it) {
 		bool allSelected = true;
 		m_grid->vtkGrid()->GetCellPoints(*v_it, idlist);
-		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
+		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i) {
 			vtkIdType pointid = idlist->GetId(i);
 			allSelected = allSelected && vertices.contains(pointid);
 		}
-		if (allSelected){
+		if (allSelected) {
 			ret.append(*v_it);
 		}
 	}
@@ -1416,16 +1416,16 @@ QVector<vtkIdType> PreProcessorGridDataItem::getCellsFromVertices(const QSet<vtk
 	return ret;
 }
 
-QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdType> &vertices) const
+QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdType>& vertices) const
 {
 	QSet<Edge> selectedEdgeNoms;
 
 	vtkPolyData* pd = buildEdges();
 
 	vtkSmartPointer<vtkIdList> idlist = vtkSmartPointer<vtkIdList>::New();
-	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it){
+	for (auto v_it = vertices.begin(); v_it != vertices.end(); ++v_it) {
 		pd->GetPointCells(*v_it, idlist);
-		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i){
+		for (vtkIdType i = 0; i < idlist->GetNumberOfIds(); ++i) {
 			vtkIdType cellid = idlist->GetId(i);
 			vtkCell* cell = pd->GetCell(cellid);
 			Edge edge(cell->GetPointId(0), cell->GetPointId(1));
@@ -1434,8 +1434,8 @@ QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdTyp
 	}
 
 	QVector<Edge> ret;
-	for (auto e_it = selectedEdgeNoms.begin(); e_it != selectedEdgeNoms.end(); ++e_it){
-		if (vertices.contains(e_it->vertex1()) && vertices.contains(e_it->vertex2())){
+	for (auto e_it = selectedEdgeNoms.begin(); e_it != selectedEdgeNoms.end(); ++e_it) {
+		if (vertices.contains(e_it->vertex1()) && vertices.contains(e_it->vertex2())) {
 			ret.append(*e_it);
 		}
 	}
@@ -1443,26 +1443,26 @@ QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdTyp
 	return ret;
 }
 
-void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView *v)
+void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 {
 	updateSimplefiedGrid(v);
 }
 
-void PreProcessorGridDataItem::updateSimplefiedGrid(VTKGraphicsView *v)
+void PreProcessorGridDataItem::updateSimplefiedGrid(VTKGraphicsView* v)
 {
-	if (m_grid == nullptr){return;}
-	if (v == nullptr){
+	if (m_grid == nullptr) {return;}
+	if (v == nullptr) {
 		v = dataModel()->graphicsView();
 	}
-	PreProcessorGraphicsView* view = dynamic_cast<PreProcessorGraphicsView*> (v);
+	PreProcessorGraphicsView* view = dynamic_cast<PreProcessorGraphicsView*>(v);
 	double xmin, xmax, ymin, ymax;
 	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 	m_grid->updateSimplifiedGrid(xmin, xmax, ymin, ymax);
-/*
-	if (m_grid->isMasked()){
-		clearSelection();
-	}
-*/
+	/*
+		if (m_grid->isMasked()){
+			clearSelection();
+		}
+	*/
 
 	m_shapeDataItem->informGridUpdate();
 	m_nodeGroupDataItem->informGridUpdate();
@@ -1472,7 +1472,7 @@ void PreProcessorGridDataItem::updateSimplefiedGrid(VTKGraphicsView *v)
 void PreProcessorGridDataItem::updateRegionPolyData()
 {
 	Grid* grid = this->grid();
-	if (grid == nullptr){
+	if (grid == nullptr) {
 		m_regionPolyData->Reset();
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		m_regionPolyData->SetPoints(points);
@@ -1501,10 +1501,10 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 
 void PreProcessorGridDataItem::doApplyOffset(double x, double y)
 {
-	if (m_grid == nullptr){return;}
+	if (m_grid == nullptr) {return;}
 	vtkPoints* points = m_grid->vtkGrid()->GetPoints();
 	vtkIdType numPoints = points->GetNumberOfPoints();
-	for (vtkIdType id = 0; id < numPoints; ++id){
+	for (vtkIdType id = 0; id < numPoints; ++id) {
 		double v[3];
 		points->GetPoint(id, v);
 		v[0] -= x;

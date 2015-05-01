@@ -20,9 +20,9 @@ bool RawDataPointmapRealExporter::doEmport(RawData* data, const QString& filenam
 {
 	// Allocate objects to hold points and vertex cells.
 	RawDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<RawDataPointMapT<double, vtkDoubleArray>*>(data);
-	if (selectedFilter == tr("Topography File (*.tpo)")){
+	if (selectedFilter == tr("Topography File (*.tpo)")) {
 		QFile file(filename);
-		if (! file.open(QIODevice::WriteOnly)){
+		if (! file.open(QIODevice::WriteOnly)) {
 			QMessageBox::critical(w, tr("Error"), tr("Error occured while exporting to %1.").arg(filename));
 			return false;
 		}
@@ -35,7 +35,7 @@ bool RawDataPointmapRealExporter::doEmport(RawData* data, const QString& filenam
 		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
 		QVector2D offset = pd->mainfile()->offset();
 		double v[3], val;
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, v);
 			val = values->GetValue(i);
 			v[0] += offset.x();
@@ -43,9 +43,9 @@ bool RawDataPointmapRealExporter::doEmport(RawData* data, const QString& filenam
 			outs << v[0] << " " << v[1] << " " << val << endl;
 		}
 		file.close();
-	} else if (selectedFilter == tr("RIC-Nays DEM (*.dat)")){
+	} else if (selectedFilter == tr("RIC-Nays DEM (*.dat)")) {
 		QFile file(filename);
-		if (! file.open(QIODevice::WriteOnly)){
+		if (! file.open(QIODevice::WriteOnly)) {
 			QMessageBox::critical(w, tr("Error"), tr("Error occured while exporting to %1.").arg(filename));
 			return false;
 		}
@@ -56,7 +56,7 @@ bool RawDataPointmapRealExporter::doEmport(RawData* data, const QString& filenam
 		vtkDoubleArray* values = vtkDoubleArray::SafeDownCast(pmap->vtkGrid()->GetPointData()->GetArray("values"));
 		QVector2D offset = pd->mainfile()->offset();
 		double v[3], val;
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i){
+		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
 			points->GetPoint(i, v);
 			val = values->GetValue(i);
 			v[0] += offset.x();

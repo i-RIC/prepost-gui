@@ -8,7 +8,8 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
+namespace Ui
+{
 	class Post3dWindowIsosurfaceSettingDialog;
 }
 
@@ -21,7 +22,7 @@ class Post3dWindowIsosurfaceSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit Post3dWindowIsosurfaceSettingDialog(QWidget *parent = nullptr);
+	explicit Post3dWindowIsosurfaceSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowIsosurfaceSettingDialog();
 
 	void setZoneData(PostZoneDataContainer* zoneData);
@@ -35,7 +36,7 @@ public:
 
 	bool enabled();
 
-	void setColor(const QColor &color);
+	void setColor(const QColor& color);
 	const QColor color() const;
 
 	QString currentSolution();
@@ -59,7 +60,7 @@ private slots:
 
 private:
 	QList<QString> m_solutions;
-	Ui::Post3dWindowIsosurfaceSettingDialog *ui;
+	Ui::Post3dWindowIsosurfaceSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 
 };

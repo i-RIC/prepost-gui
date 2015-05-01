@@ -2,9 +2,9 @@
 #include "graph2dhybridwindowsettingwidget.h"
 #include "ui_graph2dhybridwindowsettingwidget.h"
 
-Graph2dHybridWindowSettingWidget::Graph2dHybridWindowSettingWidget(QWidget *parent) :
-		QWidget(parent),
-		ui(new Ui::Graph2dHybridWindowSettingWidget)
+Graph2dHybridWindowSettingWidget::Graph2dHybridWindowSettingWidget(QWidget* parent) :
+	QWidget(parent),
+	ui(new Ui::Graph2dHybridWindowSettingWidget)
 {
 	ui->setupUi(this);
 	connect(ui->labelLineEdit, SIGNAL(textEdited(QString)), this, SLOT(updateLabel(QString)));
@@ -16,7 +16,7 @@ Graph2dHybridWindowSettingWidget::Graph2dHybridWindowSettingWidget(QWidget *pare
 	connect(ui->lineWidthSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateLineWidth(int)));
 	connect(ui->symbolStyleComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(updateSymbolStyle(int)));
 	connect(ui->colorWidget, SIGNAL(colorChanged(QColor)), this, SLOT(updateColor(QColor)));
-		connect(ui->barChartCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateBarChart(bool)));
+	connect(ui->barChartCheckBox, SIGNAL(toggled(bool)), this, SLOT(updateBarChart(bool)));
 	connect(ui->deleteButton,SIGNAL(clicked()), this, SIGNAL(deleteButtonClicked()));
 }
 
@@ -30,14 +30,14 @@ void Graph2dHybridWindowSettingWidget::setSetting(Graph2dHybridWindowResultSetti
 	m_setting = setting;
 	this->blockSignals(true);
 	ui->labelLineEdit->setText(setting->name());
-	if (setting->axisSide() == Graph2dHybridWindowResultSetting::asLeft){
+	if (setting->axisSide() == Graph2dHybridWindowResultSetting::asLeft) {
 		ui->yAxisLeftRadioButton->setChecked(true);
 	} else {
 		ui->yAxisRightRadioButton->setChecked(true);
 	}
 	ui->lineWidthSpinBox->setValue(setting->lineWidth());
 	ui->colorWidget->setColor(setting->customColor());
-	if (setting->styleType() == Graph2dHybridWindowResultSetting::stLine){
+	if (setting->styleType() == Graph2dHybridWindowResultSetting::stLine) {
 		ui->displayStyleLineRadioButton->setChecked(true);
 	} else {
 		ui->displayStyleSymbolRadioButton->setChecked(true);
@@ -87,7 +87,7 @@ void Graph2dHybridWindowSettingWidget::updateLabel(const QString& label)
 
 void Graph2dHybridWindowSettingWidget::updateAxis()
 {
-	if (ui->yAxisLeftRadioButton->isChecked()){
+	if (ui->yAxisLeftRadioButton->isChecked()) {
 		m_setting->setAxisSide(Graph2dHybridWindowResultSetting::asLeft);
 	} else {
 		m_setting->setAxisSide(Graph2dHybridWindowResultSetting::asRight);
@@ -96,7 +96,7 @@ void Graph2dHybridWindowSettingWidget::updateAxis()
 
 void Graph2dHybridWindowSettingWidget::updateDisplayStyle()
 {
-	if (ui->displayStyleLineRadioButton->isChecked()){
+	if (ui->displayStyleLineRadioButton->isChecked()) {
 		m_setting->setStyleType(Graph2dHybridWindowResultSetting::stLine);
 	} else {
 		m_setting->setStyleType(Graph2dHybridWindowResultSetting::stSymbol);
@@ -127,7 +127,7 @@ void Graph2dHybridWindowSettingWidget::updateColor(const QColor& color)
 
 void Graph2dHybridWindowSettingWidget::updateBarChart(bool bar)
 {
-		m_setting->setBarChart(bar);
+	m_setting->setBarChart(bar);
 }
 
 void Graph2dHybridWindowSettingWidget::clear()
@@ -139,5 +139,5 @@ void Graph2dHybridWindowSettingWidget::clear()
 	ui->lineWidthSpinBox->setValue(1);
 	ui->colorWidget->setColor(Qt::black);
 	ui->symbolStyleComboBox->setCurrentIndex(0);
-		ui->barChartCheckBox->setChecked(false);
+	ui->barChartCheckBox->setChecked(false);
 }

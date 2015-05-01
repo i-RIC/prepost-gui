@@ -17,19 +17,19 @@ PostProcessorWindowFactory::PostProcessorWindowFactory(QObject* parent)
 
 PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QString& name, ProjectDataItem* parent, QWidget* parentwindow)
 {
-	if (! m_windowCount.contains(name)){
+	if (! m_windowCount.contains(name)) {
 		m_windowCount.insert(name, 0);
 	}
 	int c = (++ m_windowCount[name]);
-	if (name == "post2dwindow"){
+	if (name == "post2dwindow") {
 		return new Post2dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "post2dbirdeyewindow"){
+	} else if (name == "post2dbirdeyewindow") {
 		return new Post2dBirdEyeWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "post3dwindow"){
+	} else if (name == "post3dwindow") {
 		return new Post3dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "graph2dhybridwindow"){
+	} else if (name == "graph2dhybridwindow") {
 		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "graph2dscatteredwindow"){
+	} else if (name == "graph2dscatteredwindow") {
 		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
 	}
 	return 0;
@@ -38,15 +38,15 @@ PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QS
 PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow) const
 {
 	int c = node.toElement().attribute("index").toInt();
-	if (node.toElement().attribute("type") == "post2dwindow"){
+	if (node.toElement().attribute("type") == "post2dwindow") {
 		return new Post2dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "post2dbirdeyewindow"){
+	} else if (node.toElement().attribute("type") == "post2dbirdeyewindow") {
 		return new Post2dBirdEyeWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "post3dwindow"){
+	} else if (node.toElement().attribute("type") == "post3dwindow") {
 		return new Post3dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "graph2dhybridwindow"){
+	} else if (node.toElement().attribute("type") == "graph2dhybridwindow") {
 		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "graph2dscatteredwindow"){
+	} else if (node.toElement().attribute("type") == "graph2dscatteredwindow") {
 		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
 	}
 	return 0;
@@ -61,7 +61,7 @@ void PostProcessorWindowFactory::loadWindowCounts(const QDomNode& node)
 {
 	resetWindowCounts();
 	QDomNodeList children = node.childNodes();
-	for (int i = 0; i < children.count(); ++i){
+	for (int i = 0; i < children.count(); ++i) {
 		QDomElement elem = children.at(i).toElement();
 		QString name = elem.attribute("name");
 		int value = iRIC::getIntAttribute(elem, "value", 0);

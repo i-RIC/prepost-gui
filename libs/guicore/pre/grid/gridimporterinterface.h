@@ -12,7 +12,7 @@ class QWidget;
 class GridImporterInterface
 {
 public:
-	virtual ~GridImporterInterface(){}
+	virtual ~GridImporterInterface() {}
 	virtual QString caption() const = 0;
 	/// Can be used for importing the specified grid type.
 	virtual bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) = 0;

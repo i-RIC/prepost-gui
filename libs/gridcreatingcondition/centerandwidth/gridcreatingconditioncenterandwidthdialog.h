@@ -4,16 +4,18 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionCenterAndWidthDialog;
 }
 
 class QAbstractButton;
 
-class GridCreatingConditionCenterAndWidthDialog : public QDialog {
+class GridCreatingConditionCenterAndWidthDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	GridCreatingConditionCenterAndWidthDialog(QWidget *parent = nullptr);
+	GridCreatingConditionCenterAndWidthDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthDialog();
 	int iMax();
 	int jMax();
@@ -36,7 +38,7 @@ protected:
 	double m_length;
 private:
 	void apply();
-	Ui::GridCreatingConditionCenterAndWidthDialog *ui;
+	Ui::GridCreatingConditionCenterAndWidthDialog* ui;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTHDIALOG_H

@@ -20,7 +20,7 @@ void LookupTableEditWidget::setupWidget()
 	ui->colorMapSetting->setColorMap(cont->colorMap());
 	ui->colorMapSetting->setCustomSetting(cont->customSetting());
 	ui->autoCheckBox->setChecked(cont->autoRange());
-	if (cont->autoRange()){
+	if (cont->autoRange()) {
 		ui->maxEdit->setDisabled(true);
 		ui->maxEdit->setValue(cont->autoMax());
 		ui->minEdit->setDisabled(true);
@@ -29,7 +29,7 @@ void LookupTableEditWidget::setupWidget()
 		ui->fillLowerCheckBox->setChecked(true);
 		ui->fillUpperCheckBox->setDisabled(true);
 		ui->fillUpperCheckBox->setChecked(true);
-	}else{
+	} else {
 		ui->maxEdit->setEnabled(true);
 		ui->maxEdit->setValue(cont->manualMax());
 		ui->minEdit->setEnabled(true);
@@ -45,7 +45,7 @@ void LookupTableEditWidget::autoRangeUpdate(bool a)
 	ui->minEdit->setDisabled(a);
 	ui->fillLowerCheckBox->setDisabled(a);
 	ui->fillUpperCheckBox->setDisabled(a);
-	if (a){
+	if (a) {
 		ui->fillLowerCheckBox->setChecked(true);
 		ui->fillUpperCheckBox->setChecked(true);
 	}
@@ -57,7 +57,7 @@ void LookupTableEditWidget::save()
 	cont->setColorMap(ui->colorMapSetting->colorMap());
 	cont->setCustomSetting(ui->colorMapSetting->customSetting());
 	cont->setAutoRange(ui->autoCheckBox->isChecked());
-	if (! cont->autoRange()){
+	if (! cont->autoRange()) {
 		cont->setManualMax(ui->maxEdit->value());
 		cont->setManualMin(ui->minEdit->value());
 	}
@@ -136,7 +136,7 @@ void LookupTableEditWidget::showDivisionNumber()
 
 void LookupTableEditWidget::setContourSetting(ContourSettingWidget::Contour contour)
 {
-	switch (contour){
+	switch (contour) {
 	case ContourSettingWidget::Isolines:
 	case ContourSettingWidget::ContourFigure:
 		ui->divisionNumberSpinBox->setEnabled(true);

@@ -3,7 +3,7 @@
 
 #include <QFileDialog>
 
-StartPageLaunchTabWidget::StartPageLaunchTabWidget(QWidget *parent) :
+StartPageLaunchTabWidget::StartPageLaunchTabWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::StartPageLaunchTabWidget)
 {

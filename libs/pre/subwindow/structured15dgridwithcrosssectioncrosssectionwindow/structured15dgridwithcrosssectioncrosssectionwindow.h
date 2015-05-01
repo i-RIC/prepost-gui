@@ -15,7 +15,8 @@ class QStandardItemModel;
 class QItemSelectionModel;
 class QComboBox;
 
-namespace Ui {
+namespace Ui
+{
 	class Structured15DGridWithCrossSectionCrossSectionWindow;
 }
 
@@ -23,13 +24,13 @@ class Structured15DGridWithCrossSectionCrossSectionWindow : public QMainWindow
 {
 	Q_OBJECT
 public:
-	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget *parent = nullptr);
+	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~Structured15DGridWithCrossSectionCrossSectionWindow();
-	QAction* deleteAction(){return m_deleteAction;}
+	QAction* deleteAction() {return m_deleteAction;}
 	void setupData();
 	bool updateComboBoxes();
 	void setTarget(Structured15DGridWithCrossSectionCrossSection* cs);
-	Structured15DGridWithCrossSectionCrossSection* target(){return m_blackLineCrossSection;}
+	Structured15DGridWithCrossSectionCrossSection* target() {return m_blackLineCrossSection;}
 
 public slots:
 	void updateView();
@@ -70,7 +71,7 @@ private:
 	bool m_settingUp;
 	Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* m_projectDataItem;
 
-	Ui::Structured15DGridWithCrossSectionCrossSectionWindow *ui;
+	Ui::Structured15DGridWithCrossSectionCrossSectionWindow* ui;
 
 public:
 	friend class Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView;

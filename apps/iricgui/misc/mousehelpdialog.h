@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <QPixmap>
 
-namespace Ui {
+namespace Ui
+{
 	class MouseHelpDialog;
 }
 
@@ -13,12 +14,14 @@ class MouseHelpDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit MouseHelpDialog(QWidget *parent = nullptr);
+	explicit MouseHelpDialog(QWidget* parent = nullptr);
 	~MouseHelpDialog();
+
 protected:
-	void closeEvent(QCloseEvent *);
+	void closeEvent(QCloseEvent*);
+
 private:
-	Ui::MouseHelpDialog *ui;
+	Ui::MouseHelpDialog* ui;
 	QPixmap m_image;
 };
 

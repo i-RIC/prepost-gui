@@ -33,13 +33,13 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 	bool riverSurveyFound = false;
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(condDataItem->parent()->parent());
 	PreProcessorRawDataTopDataItemInterface* rtItem = gtItem->rawdataTop();
-	for (PreProcessorRawDataGroupDataItemInterface* gItem : rtItem->groupDataItems()){
+	for (PreProcessorRawDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
 		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
-		for (PreProcessorRawdataDataItemInterface* rItem : rItems){
+		for (PreProcessorRawdataDataItemInterface* rItem : rItems) {
 			riverSurveyFound = riverSurveyFound || (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != nullptr);
 		}
 	}
-	if (! riverSurveyFound){
+	if (! riverSurveyFound) {
 		// No river survey data exists. Not available.
 		QWidget* w = condDataItem->mainWindow();
 		QMessageBox::warning(w, tr("Warning"), tr("No river survey data exists in geographic data now. This algorithm is not available."));

@@ -5,7 +5,7 @@
 #include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 
-PreProcessorScalarBarLegendBoxSettingDialog::PreProcessorScalarBarLegendBoxSettingDialog(QWidget *parent) :
+PreProcessorScalarBarLegendBoxSettingDialog::PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PreProcessorScalarBarLegendBoxSettingDialog)
 {
@@ -28,7 +28,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setDisplay(bool disp)
 void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorRawDataTopDataItemInterface* item)
 {
 	QList<PreProcessorRawDataGroupDataItemInterface*> groups = item->groupDataItems();
-	for (auto it = groups.begin(); it != groups.end(); ++it){
+	for (auto it = groups.begin(); it != groups.end(); ++it) {
 		PreProcessorRawDataGroupDataItemInterface* group = *it;
 		QString text = group->condition()->caption();
 		int position = static_cast<int>(group->condition()->position());
@@ -46,7 +46,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::editScalarBar()
 
 void PreProcessorScalarBarLegendBoxSettingDialog::setCondition(SolverDefinitionGridRelatedCondition* condition)
 {
-	if (condition == nullptr){return;}
+	if (condition == nullptr) {return;}
 	int idx = ui->scalarComboBox->findText(condition->caption());
 	ui->scalarComboBox->setCurrentIndex(idx);
 }
@@ -63,13 +63,13 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setLabelTextSetting(const vtkT
 
 SolverDefinitionGridRelatedCondition* PreProcessorScalarBarLegendBoxSettingDialog::condition()
 {
-	PreProcessorRawDataGroupDataItem* group = dynamic_cast<PreProcessorRawDataGroupDataItem*> (m_itemMap.value(ui->scalarComboBox->currentText()));
+	PreProcessorRawDataGroupDataItem* group = dynamic_cast<PreProcessorRawDataGroupDataItem*>(m_itemMap.value(ui->scalarComboBox->currentText()));
 	return group->condition();
 }
 
 void PreProcessorScalarBarLegendBoxSettingDialog::setActor2DVisibility(bool vis)
 {
-	if (vis){
+	if (vis) {
 		ui->displayCheckBox->setCheckState(Qt::Checked);
 	} else {
 		ui->displayCheckBox->setCheckState(Qt::Unchecked);

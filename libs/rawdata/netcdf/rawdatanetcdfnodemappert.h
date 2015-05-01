@@ -12,8 +12,8 @@
 class RawDataNetcdfNodeMapperSetting : public RawDataMapperSetting
 {
 public:
-	RawDataNetcdfNodeMapperSetting() : RawDataMapperSetting(){}
-	~RawDataNetcdfNodeMapperSetting(){}
+	RawDataNetcdfNodeMapperSetting() : RawDataMapperSetting() {}
+	~RawDataNetcdfNodeMapperSetting() {}
 	QList<DoubleMappingSetting> settings;
 };
 
@@ -22,18 +22,16 @@ class RawDataNetcdfNodeMapperT : public RawDataNodeMapperT<V, DA>
 {
 public:
 	RawDataNetcdfNodeMapperT(RawDataCreator* parent)
-		: RawDataNodeMapperT<V, DA>(parent)
-	{
+		: RawDataNodeMapperT<V, DA>(parent) {
 		RawDataNodeMapperT<V, DA>::m_caption = "Raster data node mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap)
-	{
+	RawDataMapperSetting* initialize(bool* boolMap) {
 		RawDataNetcdfNodeMapperSetting* s = new RawDataNetcdfNodeMapperSetting();
 		unsigned int count = RawDataNodeMapperT<V, DA>::container()->dataCount();
 		RawDataNetcdfT<V, DA>* netcdf = dynamic_cast<RawDataNetcdfT<V, DA>* >(RawDataMapper::m_rawdata);
 		vtkStructuredGrid* tmpgrid = netcdf->grid();
-		for (unsigned int i = 0; i < count; ++i){
-			if ( *(boolMap + i)){continue;}
+		for (unsigned int i = 0; i < count; ++i) {
+			if (*(boolMap + i)) {continue;}
 
 			// not mapped yet.
 			double point[3];
@@ -44,7 +42,7 @@ public:
 			double weights[4];
 			int subid;
 			cellid = tmpgrid->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
-			if (cellid >= 0){
+			if (cellid >= 0) {
 				DoubleMappingSetting setting;
 				setting.target = i;
 				setting.indices.append(cellid);
@@ -54,19 +52,18 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s)
-	{
+	void map(bool* boolMap, RawDataMapperSetting* s) {
 		RawDataNetcdfNodeMapperSetting* s2 =
-				dynamic_cast<RawDataNetcdfNodeMapperSetting*> (s);
+			dynamic_cast<RawDataNetcdfNodeMapperSetting*>(s);
 		DA* da = RawDataNodeMapperT<V, DA>::container()->dataArray();
 		RawDataNetcdfT<V, DA>* netcdf = dynamic_cast<RawDataNetcdfT<V, DA>* >(RawDataMapper::m_rawdata);
 		DA* vals = netcdf->vtkValues();
 		V missingValue = netcdf->missingValue();
-		for (int i = 0; i < s2->settings.size(); ++i){
+		for (int i = 0; i < s2->settings.size(); ++i) {
 			const DoubleMappingSetting& setting = s2->settings.at(i);
-			if (*(boolMap + setting.target) == false){
+			if (*(boolMap + setting.target) == false) {
 				V value = vals->GetValue(setting.indices.at(0));
-				if (value != missingValue){
+				if (value != missingValue) {
 					da->SetValue(static_cast<vtkIdType>(setting.target), value);
 					*(boolMap + setting.target) = true;
 				}
@@ -75,8 +72,7 @@ public:
 		da->Modified();
 	}
 
-	void terminate(RawDataMapperSetting* s)
-	{
+	void terminate(RawDataMapperSetting* s) {
 		delete s;
 	}
 };

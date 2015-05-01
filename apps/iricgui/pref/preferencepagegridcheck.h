@@ -4,8 +4,9 @@
 #include "preferencepage.h"
 #include <QSettings>
 
-namespace Ui {
-    class PreferencePageGridCheck;
+namespace Ui
+{
+	class PreferencePageGridCheck;
 }
 
 class PreferencePageGridCheck : public PreferencePage
@@ -13,13 +14,13 @@ class PreferencePageGridCheck : public PreferencePage
 	Q_OBJECT
 
 public:
-	explicit PreferencePageGridCheck(QWidget *parent = nullptr);
+	explicit PreferencePageGridCheck(QWidget* parent = nullptr);
 	~PreferencePageGridCheck();
 	void update();
 
 private:
 	QSettings m_settings;
-	Ui::PreferencePageGridCheck *ui;
+	Ui::PreferencePageGridCheck* ui;
 };
 
 #endif // PREFERENCEPAGEGRIDCHECK_H

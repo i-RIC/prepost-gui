@@ -21,33 +21,30 @@ class Post3dWindowFaceDataItemChangeCommand : public QUndoCommand
 {
 public:
 	Post3dWindowFaceDataItemChangeCommand(Post3dWindowFaceDataItem* item)
-		: QUndoCommand(Post3dWindowFaceDataItem::tr("Object Browser Item Change"))
-	{
+		: QUndoCommand(Post3dWindowFaceDataItem::tr("Object Browser Item Change")) {
 		m_command = new GraphicsWindowDataItemStandardItemChangeCommand(item);
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 
 		m_command->redoStandardItem();
 
-		Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != nullptr){
+		Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
+		if (p2 != nullptr) {
 			p2->setupAppendFilter();
 			p2->updatePolyData();
 		}
 		p2->updateVisibility();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 
 		m_command->undoStandardItem();
 
-		Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
-		if (p2 != nullptr){
+		Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(m_item->parent());
+		if (p2 != nullptr) {
 			p2->setupAppendFilter();
 			p2->updatePolyData();
 		}
@@ -73,12 +70,12 @@ Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, Graphic
 void Post3dWindowFaceDataItem::update()
 {
 	m_dataOK = false;
-	if (m_actor != nullptr){m_actor->VisibilityOff();}
+	if (m_actor != nullptr) {m_actor->VisibilityOff();}
 	Post3dWindowZoneDataItem* zdi = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 	PostZoneDataContainer* cont = zdi->dataContainer();
-	if (cont == nullptr){return;}
+	if (cont == nullptr) {return;}
 	vtkPointSet* pd = cont->data();
-	if (pd == nullptr){return;}
+	if (pd == nullptr) {return;}
 	m_dataOK = true;
 
 	m_filter->SetInputData(pd);
@@ -86,15 +83,15 @@ void Post3dWindowFaceDataItem::update()
 
 Post3dWindowFaceDataItem::~Post3dWindowFaceDataItem()
 {
-	if (m_actor != nullptr){
+	if (m_actor != nullptr) {
 		renderer()->RemoveActor(m_actor);
 	}
 	m_isCommandExecuting = true;
 	m_standardItem->setCheckState(Qt::Unchecked);
 	m_isCommandExecuting = false;
 
-	Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != nullptr){
+	Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
+	if (p2 != nullptr) {
 		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
 	}
 }
@@ -107,11 +104,11 @@ void Post3dWindowFaceDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	setting.enabled = iRIC::getBooleanAttribute(node, "enabled", true);
 	m_standardItem->setText(elem.attribute("name"));
 	QString dir = elem.attribute("direction");
-	if (dir == "I"){
+	if (dir == "I") {
 		setting.direction = dirI;
-	} else if (dir == "J"){
+	} else if (dir == "J") {
 		setting.direction = dirJ;
-	} else if (dir == "K"){
+	} else if (dir == "K") {
 		setting.direction = dirK;
 	}
 	setting.iMin = iRIC::getIntAttribute(node, "IMin");
@@ -128,7 +125,7 @@ void Post3dWindowFaceDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("name", m_standardItem->text());
 	iRIC::setBooleanAttribute(writer, "enabled", m_enabled);
 	QString dirStr;
-	switch (m_direction){
+	switch (m_direction) {
 	case dirI:
 		dirStr = "I";
 		break;
@@ -167,7 +164,7 @@ Post3dWindowFaceDataItem::Setting Post3dWindowFaceDataItem::setting()
 void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 {
 	m_isCommandExecuting = true;
-	if (news.enabled){
+	if (news.enabled) {
 		m_standardItem->setCheckState(Qt::Checked);
 	} else {
 		m_standardItem->setCheckState(Qt::Unchecked);
@@ -181,7 +178,7 @@ void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 	m_kMin = news.kMin;
 	m_kMax = news.kMax;
 	updateFilter();
-	if (draw){
+	if (draw) {
 		renderGraphicsView();
 	}
 	m_isCommandExecuting = false;
@@ -189,14 +186,14 @@ void Post3dWindowFaceDataItem::setSetting(Setting news, bool draw)
 
 void Post3dWindowFaceDataItem::setActor(vtkActor* actor)
 {
-	if (m_actor != nullptr){
+	if (m_actor != nullptr) {
 		renderer()->RemoveActor(m_actor);
 	}
 	m_actor = actor;
 	renderer()->AddActor(m_actor);
 	actorCollection()->RemoveAllItems();
 	actorCollection()->AddItem(m_actor);
-	if (m_dataOK && m_standardItem->checkState() == Qt::Checked){
+	if (m_dataOK && m_standardItem->checkState() == Qt::Checked) {
 		m_actor->VisibilityOn();
 	} else {
 		m_actor->VisibilityOff();
@@ -216,16 +213,17 @@ void Post3dWindowFaceDataItem::updateFilter()
 
 void Post3dWindowFaceDataItem::handleStandardItemChange()
 {
-	if (m_isCommandExecuting == true){return;}
+	if (m_isCommandExecuting == true) {return;}
 	Post3dWindowContourGroupDataItem* p1 = dynamic_cast<Post3dWindowContourGroupDataItem*>(parent());
-	if (p1 != nullptr){p1->handleStandardItemChange();}
-	Post3dWindowArrowGroupDataItem * p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
-	if (p2 != nullptr){
+	if (p1 != nullptr) {p1->handleStandardItemChange();}
+	Post3dWindowArrowGroupDataItem* p2 = dynamic_cast<Post3dWindowArrowGroupDataItem*>(parent());
+	if (p2 != nullptr) {
 		iRICUndoStack::instance().push(new Post3dWindowFaceDataItemChangeCommand(this));
 	}
 }
 
-void Post3dWindowFaceDataItem::innerUpdateZScale(double scale){
-	if (m_actor == nullptr){return;}
+void Post3dWindowFaceDataItem::innerUpdateZScale(double scale)
+{
+	if (m_actor == nullptr) {return;}
 	m_actor->SetScale(1, 1, scale);
 }

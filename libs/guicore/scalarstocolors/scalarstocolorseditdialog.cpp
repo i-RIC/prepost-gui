@@ -4,7 +4,7 @@
 
 #include <QVBoxLayout>
 
-ScalarsToColorsEditDialog::ScalarsToColorsEditDialog(QWidget *parent) :
+ScalarsToColorsEditDialog::ScalarsToColorsEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::ScalarsToColorsEditDialog)
 {

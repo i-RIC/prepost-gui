@@ -25,16 +25,16 @@ public:
 	~Graph2dHybridWindowRootDataItem();
 
 	void setupStandardModel(QStandardItemModel* model);
-	Graph2dHybridWindowResultGroupDataItem* resultGroupItem(){
+	Graph2dHybridWindowResultGroupDataItem* resultGroupItem() {
 		return m_resultGroupItem;
 	}
-	Graph2dHybridWindowResultCopyGroupDataItem* resultCopyGroupItem(){
+	Graph2dHybridWindowResultCopyGroupDataItem* resultCopyGroupItem() {
 		return m_resultCopyGroupItem;
 	}
-	Graph2dHybridWindowImportDataGroupDataItem* importDataGroupItem(){
+	Graph2dHybridWindowImportDataGroupDataItem* importDataGroupItem() {
 		return m_importDataGroupItem;
 	}
-	Graph2dWindowMarkerGroupDataItem* markerGroupItem(){
+	Graph2dWindowMarkerGroupDataItem* markerGroupItem() {
 		return m_markerGroupItem;
 	}
 	void updateData(int fn);

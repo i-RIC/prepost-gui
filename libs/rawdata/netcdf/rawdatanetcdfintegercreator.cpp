@@ -8,7 +8,7 @@ RawDataNetcdfIntegerCreator::RawDataNetcdfIntegerCreator()
 	m_importers.append(new RawDataNetcdfIntegerImporter(this));
 }
 
-RawData* RawDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition)
+RawData* RawDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
 {
 	RawDataNetcdf* data = new RawDataNetcdfInteger(parent, this, condition);
 	data->setPosition(condition->position());

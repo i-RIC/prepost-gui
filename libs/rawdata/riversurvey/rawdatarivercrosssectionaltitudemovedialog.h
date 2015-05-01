@@ -8,7 +8,8 @@ class RawDataRiverPathPoint;
 class RawDataRiverSurvey;
 class RawDataRiverSurveyCrosssectionWindow;
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverCrosssectionAltitudeMoveDialog;
 }
 
@@ -16,7 +17,7 @@ class RawDataRiverCrosssectionAltitudeMoveDialog : public QDialog
 {
 	Q_OBJECT
 public:
-	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget *parent = nullptr);
+	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget* parent = nullptr);
 	~RawDataRiverCrosssectionAltitudeMoveDialog();
 public slots:
 	void accept();
@@ -30,7 +31,7 @@ private:
 	void apply();
 	void updateCrosssection();
 
-	Ui::RawDataRiverCrosssectionAltitudeMoveDialog *ui;
+	Ui::RawDataRiverCrosssectionAltitudeMoveDialog* ui;
 	bool m_leftLimitSet;
 	bool m_rightLimitSet;
 	double m_leftLimit;

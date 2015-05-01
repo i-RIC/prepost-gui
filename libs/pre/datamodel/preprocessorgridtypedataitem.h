@@ -27,7 +27,7 @@ public:
 	void addCustomMenuItems(QMenu* menu);
 	bool isChildCaptionAvailable(const QString& caption);
 	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const {return m_scalarsToColors.value(attName, 0);}
-	QAction* addNewGridAction(){return m_addNewGridAction;}
+	QAction* addNewGridAction() {return m_addNewGridAction;}
 	bool gridEdited() const;
 	void toggleGridEditFlag();
 

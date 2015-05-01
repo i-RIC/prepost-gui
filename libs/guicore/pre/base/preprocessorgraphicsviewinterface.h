@@ -10,7 +10,7 @@ public:
 	/// constructor
 	PreProcessorGraphicsViewInterface(QWidget* widget);
 	/// destructor
-	~PreProcessorGraphicsViewInterface(){}
+	~PreProcessorGraphicsViewInterface() {}
 };
 
 #endif // PREPROCESSORGRAPHICSVIEWINTERFACE_H

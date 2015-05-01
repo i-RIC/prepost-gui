@@ -5,7 +5,7 @@
 
 #include <guicore/solverdef/solverdefinitionabstract.h>
 
-NewProjectSolverSelectingDialog::NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget *parent) :
+NewProjectSolverSelectingDialog::NewProjectSolverSelectingDialog(SolverDefinitionList* list, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::NewProjectSolverSelectingDialog)
 {
@@ -14,7 +14,7 @@ NewProjectSolverSelectingDialog::NewProjectSolverSelectingDialog(SolverDefinitio
 
 	// setup widgets;
 	QList<SolverDefinitionAbstract*> solvers  = list->solverList();
-	for (SolverDefinitionAbstract* abst : solvers){
+	for (SolverDefinitionAbstract* abst : solvers) {
 		QString caption = abst->caption();
 		ui->solverList->addItem(caption);
 		SolverDefinitionAbstractWidget* w = new SolverDefinitionAbstractWidget(abst, this);
@@ -38,8 +38,8 @@ void NewProjectSolverSelectingDialog::setSolver(const QString& folderName)
 {
 	int i = 0;
 	QList<SolverDefinitionAbstract*> solvers = m_solverList->solverList();
-	for (SolverDefinitionAbstract* abst : solvers){
-		if (abst->folderName() == folderName){
+	for (SolverDefinitionAbstract* abst : solvers) {
+		if (abst->folderName() == folderName) {
 			ui->solverList->setCurrentRow(i);
 			return;
 		}

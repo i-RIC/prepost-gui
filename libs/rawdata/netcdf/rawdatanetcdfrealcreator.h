@@ -9,7 +9,7 @@ class RD_NETCDF_EXPORT RawDataNetcdfRealCreator : public RawDataNetcdfCreatorT<d
 {
 public:
 	RawDataNetcdfRealCreator();
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition);
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
 };
 
 #endif // RAWDATANETCDFREALCREATOR_H

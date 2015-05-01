@@ -11,7 +11,7 @@
 #include <QDockWidget>
 #include <QPainter>
 
-Graph2dHybridWindow::Graph2dHybridWindow(QWidget *parent, int index, Graph2dHybridWindowProjectDataItem* pdi)
+Graph2dHybridWindow::Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi)
 	: PostProcessorWindow(parent, index, pdi)
 {
 	init();
@@ -51,7 +51,7 @@ void Graph2dHybridWindow::init()
 void Graph2dHybridWindow::setupDefaultGeometry(int index)
 {
 	QWidget* parent = parentWidget();
-	if (parent->isMaximized()){return;}
+	if (parent->isMaximized()) {return;}
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 }

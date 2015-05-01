@@ -10,9 +10,8 @@ class RawDataBackgroundComplex : public RawDataBackground
 	Q_OBJECT
 public:
 	/// Constructor
-	RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition * condition);
-	void setItem(PreProcessorRawDataComplexGroupDataItemInterface* item)
-	{
+	RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	void setItem(PreProcessorRawDataComplexGroupDataItemInterface* item) {
 		m_item = item;
 	}
 

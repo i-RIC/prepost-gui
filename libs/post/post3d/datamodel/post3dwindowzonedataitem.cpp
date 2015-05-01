@@ -76,31 +76,31 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(QString zoneName, int zoneNum
 void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){
+	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
 	QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
-	if (! contourGroupNode.isNull() && m_contourGroupItem != nullptr){
+	if (! contourGroupNode.isNull() && m_contourGroupItem != nullptr) {
 		m_contourGroupItem->loadFromProjectMainFile(contourGroupNode);
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr){
+	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 	}
 	QDomNode arrowGroupNode = iRIC::getChildNode(node, "ArrowGroup");
-	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr){
+	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
 		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupNode);
 	}
 	QDomNode streamlineGroupNode = iRIC::getChildNode(node, "StreamlineGroup");
-	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr){
+	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr) {
 		m_streamlineGroupDataItem->loadFromProjectMainFile(streamlineGroupNode);
 	}
 	QDomNode particleGroupNode = iRIC::getChildNode(node, "ParticleGroup");
-	if (! particleGroupNode.isNull() && m_particleGroupDataItem != nullptr){
+	if (! particleGroupNode.isNull() && m_particleGroupDataItem != nullptr) {
 		m_particleGroupDataItem->loadFromProjectMainFile(particleGroupNode);
 	}
 	QDomNode particlesNode = iRIC::getChildNode(node, "SolverParticles");
-	if (! particlesNode.isNull() && m_particlesDataItem != nullptr){
+	if (! particlesNode.isNull() && m_particlesDataItem != nullptr) {
 		m_particlesDataItem->loadFromProjectMainFile(particlesNode);
 	}
 }
@@ -112,12 +112,12 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_contourGroupItem != nullptr){
+	if (m_contourGroupItem != nullptr) {
 		writer.writeStartElement("ContourGroup");
 		m_contourGroupItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	if (m_scalarGroupDataItem != nullptr){
+	if (m_scalarGroupDataItem != nullptr) {
 		writer.writeStartElement("ScalarGroup");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -144,12 +144,12 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	}
 }
 
-void Post3dWindowZoneDataItem::informSelection(VTKGraphicsView *v)
+void Post3dWindowZoneDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informSelection(v);
 }
 
-void Post3dWindowZoneDataItem::informDeselection(VTKGraphicsView *v)
+void Post3dWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informDeselection(v);
 }

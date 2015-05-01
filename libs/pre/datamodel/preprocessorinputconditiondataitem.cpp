@@ -26,14 +26,14 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 		connect(m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));
 		m_isDeletable = false;
 		m_isSet = false;
-	} catch (ErrorMessage&){
+	} catch (ErrorMessage&) {
 		m_dialog = nullptr;
 	}
 }
 
 PreProcessorInputConditionDataItem::~PreProcessorInputConditionDataItem()
 {
-	if (m_dialog){
+	if (m_dialog) {
 		delete m_dialog;
 	}
 }
@@ -46,7 +46,7 @@ void PreProcessorInputConditionDataItem::doLoadFromProjectMainFile(const QDomNod
 void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	QString isSetStr;
-	if (m_isSet){isSetStr = "true";}else{isSetStr = "false";}
+	if (m_isSet) {isSetStr = "true";} else {isSetStr = "false";}
 	writer.writeAttribute("isSet", isSetStr);
 }
 
@@ -86,7 +86,7 @@ bool PreProcessorInputConditionDataItem::importInputCondition(const QString& fil
 	QString fname = projectData()->currentCgnsFileName();
 	m_dialog->setFileName(fname);
 	bool ret = m_dialog->import(filename);
-	if (ret){m_isSet = true;}
+	if (ret) {m_isSet = true;}
 	return ret;
 }
 

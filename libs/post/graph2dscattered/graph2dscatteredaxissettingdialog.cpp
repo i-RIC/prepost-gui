@@ -4,9 +4,9 @@
 
 #define RANGEMIN 1E-8
 
-Graph2dScatteredAxisSettingDialog::Graph2dScatteredAxisSettingDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::Graph2dScatteredAxisSettingDialog)
+Graph2dScatteredAxisSettingDialog::Graph2dScatteredAxisSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Graph2dScatteredAxisSettingDialog)
 {
 	ui->setupUi(this);
 
@@ -37,7 +37,7 @@ void Graph2dScatteredAxisSettingDialog::setSetting(const Graph2dScatteredWindowR
 void Graph2dScatteredAxisSettingDialog::accept()
 {
 	applyXAxisSetting();
-	if (ui->yAxisSideComboBox->currentIndex() == 0){
+	if (ui->yAxisSideComboBox->currentIndex() == 0) {
 		saveYAxisLeftSetting();
 	} else {
 		saveYAxisRightSetting();
@@ -45,7 +45,7 @@ void Graph2dScatteredAxisSettingDialog::accept()
 	m_setting.setTitle(ui->titleEdit->text());
 	m_setting.setAddTimeToTitle(ui->showTimeCheckBox->isChecked());
 
-	if (! axisRangesCheck()){
+	if (! axisRangesCheck()) {
 		return;
 	}
 	QDialog::accept();
@@ -58,7 +58,8 @@ void Graph2dScatteredAxisSettingDialog::xAxisRadioButtonToggled()
 	ui->xAxisLabelEdit->setText(m_setting.xAxisLabel());
 }
 
-void Graph2dScatteredAxisSettingDialog::applyYAxisLeftSetting(){
+void Graph2dScatteredAxisSettingDialog::applyYAxisLeftSetting()
+{
 	ui->yAxisValueRangeAutoCheckBox->setChecked(m_setting.yAxisLeftAutoRange());
 	ui->yAxisMinEdit->setValue(m_setting.yAxisLeftMin());
 	ui->yAxisMaxEdit->setValue(m_setting.yAxisLeftMax());
@@ -67,7 +68,8 @@ void Graph2dScatteredAxisSettingDialog::applyYAxisLeftSetting(){
 	ui->yAxisLogCheckBox->setChecked(m_setting.yAxisLeftLog());
 }
 
-void Graph2dScatteredAxisSettingDialog::applyYAxisRightSetting(){
+void Graph2dScatteredAxisSettingDialog::applyYAxisRightSetting()
+{
 	ui->yAxisValueRangeAutoCheckBox->setChecked(m_setting.yAxisRightAutoRange());
 	ui->yAxisMinEdit->setValue(m_setting.yAxisRightMin());
 	ui->yAxisMaxEdit->setValue(m_setting.yAxisRightMax());
@@ -76,7 +78,8 @@ void Graph2dScatteredAxisSettingDialog::applyYAxisRightSetting(){
 	ui->yAxisLogCheckBox->setChecked(m_setting.yAxisRightLog());
 }
 
-void Graph2dScatteredAxisSettingDialog::saveYAxisLeftSetting(){
+void Graph2dScatteredAxisSettingDialog::saveYAxisLeftSetting()
+{
 	m_setting.setYAxisLeftAutoRange(ui->yAxisValueRangeAutoCheckBox->isChecked());
 	m_setting.setYAxisLeftMin(ui->yAxisMinEdit->value());
 	m_setting.setYAxisLeftMax(ui->yAxisMaxEdit->value());
@@ -85,7 +88,8 @@ void Graph2dScatteredAxisSettingDialog::saveYAxisLeftSetting(){
 	m_setting.setYAxisLeftLog(! ui->yAxisValueRangeAutoCheckBox->isChecked() && ui->yAxisLogCheckBox->isChecked());
 }
 
-void Graph2dScatteredAxisSettingDialog::saveYAxisRightSetting(){
+void Graph2dScatteredAxisSettingDialog::saveYAxisRightSetting()
+{
 	m_setting.setYAxisRightAutoRange(ui->yAxisValueRangeAutoCheckBox->isChecked());
 	m_setting.setYAxisRightMin(ui->yAxisMinEdit->value());
 	m_setting.setYAxisRightMax(ui->yAxisMaxEdit->value());
@@ -96,7 +100,7 @@ void Graph2dScatteredAxisSettingDialog::saveYAxisRightSetting(){
 
 void Graph2dScatteredAxisSettingDialog::yAxisComboBoxChange(int index)
 {
-	if (index == 0){
+	if (index == 0) {
 		// save right setting.
 		saveYAxisRightSetting();
 		// apply left setting.
@@ -111,7 +115,7 @@ void Graph2dScatteredAxisSettingDialog::yAxisComboBoxChange(int index)
 
 void Graph2dScatteredAxisSettingDialog::applyXAxisSetting()
 {
-	if (! ui->xAxisValueRangeAutoCheckBox->isChecked()){
+	if (! ui->xAxisValueRangeAutoCheckBox->isChecked()) {
 		m_setting.setXAxisValueMin(ui->xAxisMinEdit->value());
 		m_setting.setXAxisValueMax(ui->xAxisMaxEdit->value());
 	}
@@ -125,29 +129,29 @@ void Graph2dScatteredAxisSettingDialog::applyXAxisSetting()
 bool Graph2dScatteredAxisSettingDialog::axisRangesCheck()
 {
 	// X axis range check
-	if (! m_setting.xAxisAutoRange()){
-		if (m_setting.xAxisValueMax() - m_setting.xAxisValueMin() < RANGEMIN){
+	if (! m_setting.xAxisAutoRange()) {
+		if (m_setting.xAxisValueMax() - m_setting.xAxisValueMin() < RANGEMIN) {
 			QMessageBox::warning(this, tr("Warning"), tr("X-axes range is invalid."));
 			return false;
-		} else if (m_setting.xAxisLog() && m_setting.xAxisValueMin() <= 0){
+		} else if (m_setting.xAxisLog() && m_setting.xAxisValueMin() <= 0) {
 			QMessageBox::warning(this, tr("Warning"), tr("X-axes range is invalid."));
 			return false;
 		}
 	}
-	if (! m_setting.yAxisLeftAutoRange()){
-		if (m_setting.yAxisLeftMax() - m_setting.yAxisLeftMin() < RANGEMIN){
+	if (! m_setting.yAxisLeftAutoRange()) {
+		if (m_setting.yAxisLeftMax() - m_setting.yAxisLeftMin() < RANGEMIN) {
 			QMessageBox::warning(this, tr("Warning"), tr("Left Y-axes range is invalid."));
 			return false;
-		} else if (m_setting.yAxisLeftLog() && m_setting.yAxisLeftMin() <= 0){
+		} else if (m_setting.yAxisLeftLog() && m_setting.yAxisLeftMin() <= 0) {
 			QMessageBox::warning(this, tr("Warning"), tr("Left Y-axes range is invalid."));
 			return false;
 		}
 	}
-	if (! m_setting.yAxisRightAutoRange()){
-		if (m_setting.yAxisRightMax() - m_setting.yAxisRightMin() < RANGEMIN){
+	if (! m_setting.yAxisRightAutoRange()) {
+		if (m_setting.yAxisRightMax() - m_setting.yAxisRightMin() < RANGEMIN) {
 			QMessageBox::warning(this, tr("Warning"), tr("Right Y-axes range is invalid."));
 			return false;
-		} else if (m_setting.yAxisRightLog() && m_setting.yAxisRightMin() <= 0){
+		} else if (m_setting.yAxisRightLog() && m_setting.yAxisRightMin() <= 0) {
 			QMessageBox::warning(this, tr("Warning"), tr("Right Y-axes range is invalid."));
 			return false;
 		}

@@ -85,14 +85,14 @@ void PreProcessorStructured2dGridShapeDataItem::setupActors()
 void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != nullptr){
+	if (g != nullptr) {
 		Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
 
 		m_outlineFilter->SetInputData(grid->vtkGrid());
 		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != nullptr){ m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
+		if (shapeAlgo != nullptr) { m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
 		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != nullptr){ m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
+		if (indexGridAlgo != nullptr) { m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
 	}
 	updateActorSettings();
 }
@@ -108,12 +108,12 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == nullptr){
+	if (g == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
 
-	switch (m_shape){
+	switch (m_shape) {
 	case GridShapeEditDialog::Outline:
 		m_outlineActor->GetProperty()->SetColor(m_color);
 		m_actorCollection->AddItem(m_outlineActor);
@@ -127,20 +127,20 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 		break;
 	}
 
-	if (m_indexVisible){
+	if (m_indexVisible) {
 		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
-/*
-	if (m_axesVisible){
-		m_axesActor->GetProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
+	/*
+		if (m_axesVisible){
+			m_axesActor->GetProperty()->SetColor(m_axesColor);
+			m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
+			m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
 
-		m_actor2DCollection->AddItem(m_axesActor);
-		updateAxesRegion();
-	}
-*/
+			m_actor2DCollection->AddItem(m_axesActor);
+			updateAxesRegion();
+		}
+	*/
 	updateVisibilityWithoutRendering();
 }
 

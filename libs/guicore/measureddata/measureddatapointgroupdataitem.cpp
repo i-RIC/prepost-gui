@@ -42,7 +42,7 @@
 #include <vtkStringArray.h>
 #include <vtkDataSetMapper.h>
 
-MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem *p)
+MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p)
 	: GraphicsWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
 	m_isDeletable = false;
@@ -57,7 +57,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(p)->measuredData();
 
-	for (int i = 0; i < md->pointNames().count(); ++i){
+	for (int i = 0; i < md->pointNames().count(); ++i) {
 		QString name = md->pointNames().at(i);
 		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(name, name, this);
 		m_childItems.append(item);
@@ -71,7 +71,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 		cont->setValueRange(range[0], range[1]);
 		m_lookupTables.insert(name, cont);
 	}
-	if (md->pointNames().count() > 0){
+	if (md->pointNames().count() > 0) {
 		QString name = md->pointNames().at(0);
 		setCurrentMeasuredValue(name);
 		updateActorSettings();
@@ -119,15 +119,14 @@ void MeasuredDataPointGroupDataItem::updateActorSettings()
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 
-	if (md == nullptr || md->polyData() == nullptr){return;}
+	if (md == nullptr || md->polyData() == nullptr) {return;}
 	vtkPointSet* ps = md->polyData();
-	if (m_currentMeasuredValue == ""){return;}
+	if (m_currentMeasuredValue == "") {return;}
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 	createValueClippedPolyData();
-	switch(m_contour)
-	{
+	switch (m_contour) {
 	case ContourSettingWidget::Points:
 		setupPointSetting();
 		break;
@@ -141,7 +140,7 @@ void MeasuredDataPointGroupDataItem::updateActorSettings()
 		setupColorFringeSetting();
 		break;
 	}
-	if (m_scalarBarSetting.visible){
+	if (m_scalarBarSetting.visible) {
 		m_scalarBarWidget->SetEnabled(1);
 		setupScalarBarSetting();
 	}
@@ -256,7 +255,7 @@ void MeasuredDataPointGroupDataItem::setupActors()
 
 void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
 {
-		m_zDepthRange.setItemCount(2);
+	m_zDepthRange.setItemCount(2);
 }
 
 void MeasuredDataPointGroupDataItem::assignActionZValues(const ZDepthRange& range)
@@ -276,7 +275,7 @@ void MeasuredDataPointGroupDataItem::update()
 void MeasuredDataPointGroupDataItem::setupIsolineSetting()
 {
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 	m_isolineFilter->SetInputData(m_valueClippedPolyData);
@@ -290,7 +289,7 @@ void MeasuredDataPointGroupDataItem::setupIsolineSetting()
 void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 {
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -300,14 +299,14 @@ void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
 
-	for (int i = 0; i < m_numberOfDivisions; i++){
-		double valueLo = range[0] + static_cast<double> (i) * delta;
-		double valueHi = range[0] + static_cast<double> (i + 1) * delta;
+	for (int i = 0; i < m_numberOfDivisions; i++) {
+		double valueLo = range[0] + static_cast<double>(i) * delta;
+		double valueHi = range[0] + static_cast<double>(i + 1) * delta;
 		clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if (i == 0){
+		if (i == 0) {
 			clippersLo[i]->SetValue(-HUGE_VAL);
 			clippersLo[i]->SetInputData(m_valueClippedPolyData);
-		}else{
+		} else {
 			clippersLo[i]->SetValue(valueLo);
 			clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
 		}
@@ -315,16 +314,16 @@ void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 		clippersLo[i]->Update();
 
 		clippersHi.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if(i < m_numberOfDivisions - 1){
+		if (i < m_numberOfDivisions - 1) {
 			clippersHi[i]->SetValue(valueHi);
-		}else{
+		} else {
 			clippersHi[i]->SetValue(HUGE_VAL);
 		}
 		clippersHi[i]->SetInputConnection(clippersLo[i]->GetOutputPort());
 		clippersHi[i]->GenerateClippedOutputOn();
 		clippersHi[i]->InsideOutOn();
 		clippersHi[i]->Update();
-		if(clippersHi[i]->GetOutput()->GetNumberOfCells() == 0){
+		if (clippersHi[i]->GetOutput()->GetNumberOfCells() == 0) {
 			continue;
 		}
 
@@ -356,7 +355,7 @@ void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 void MeasuredDataPointGroupDataItem::setupPointSetting()
 {
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	m_pointsActor->GetProperty()->SetPointSize(m_pointSize);
 	m_pointsMapper->SetInputData(m_valueClippedPolyData);
 	m_pointsMapper->SetScalarModeToUsePointFieldData();
@@ -373,7 +372,7 @@ void MeasuredDataPointGroupDataItem::setupPointSetting()
 void MeasuredDataPointGroupDataItem::setupColorFringeSetting()
 {
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	m_fringeMapper->SetInputData(m_valueClippedPolyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_currentMeasuredValue).c_str());
@@ -386,7 +385,7 @@ void MeasuredDataPointGroupDataItem::setupColorFringeSetting()
 void MeasuredDataPointGroupDataItem::setupScalarBarSetting()
 {
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(m_currentMeasuredValue)).c_str());
 	a->SetLookupTable(stc->vtkObj());
@@ -410,10 +409,10 @@ void MeasuredDataPointGroupDataItem::setupScalarBarSetting()
 QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr){
+	if (md == nullptr || md->pointData() == nullptr) {
 		return nullptr;
 	}
-	if (md->pointNames().size() == 0){
+	if (md->pointNames().size() == 0) {
 		return nullptr;
 	}
 	MeasuredDataPointSettingDialog* dialog = new MeasuredDataPointSettingDialog(p);
@@ -438,8 +437,7 @@ class MeasuredDataPointSetProperty : public QUndoCommand
 {
 public:
 	MeasuredDataPointSetProperty(ContourSettingWidget::Contour cont, const QString& sol, int numDiv, const LookupTableContainer& ltc, bool fillupper, bool filllower, int pointSize, QString colorbarTitle, const ScalarBarSetting& scalarBarSetting, int opacityPercent, MeasuredDataPointGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Contour Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Contour Setting")) {
 		m_newContour = cont;
 		m_newCurrentSolution = sol;
 		m_newNumberOfDivision = numDiv;
@@ -455,7 +453,7 @@ public:
 		m_oldCurrentSolution = item->m_currentMeasuredValue;
 		m_oldNumberOfDivision = item->m_numberOfDivisions;
 		LookupTableContainer* lut = item->lookupTable(m_oldCurrentSolution);
-		if (lut != nullptr){
+		if (lut != nullptr) {
 			m_oldLookupTable = *lut;
 		}
 		m_oldFillUpper = item->m_fillUpper;
@@ -467,8 +465,7 @@ public:
 
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_contour = m_oldContour;
 		m_item->setCurrentMeasuredValue(m_oldCurrentSolution);
@@ -487,8 +484,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_contour = m_newContour;
 		m_item->setCurrentMeasuredValue(m_newCurrentSolution);
@@ -545,22 +541,19 @@ class MeasuredDataPointSelectValue : public QUndoCommand
 {
 public:
 	MeasuredDataPointSelectValue(const QString& newsol, MeasuredDataPointGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentMeasuredValue;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentMeasuredValue(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentMeasuredValue(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -576,9 +569,9 @@ private:
 
 void MeasuredDataPointGroupDataItem::exclusivelyCheck(MeasuredDataPointDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new MeasuredDataPointSelectValue("", this));
 	} else {
 		stack.push(new MeasuredDataPointSelectValue(item->name(), this));
@@ -588,14 +581,14 @@ void MeasuredDataPointGroupDataItem::exclusivelyCheck(MeasuredDataPointDataItem*
 void MeasuredDataPointGroupDataItem::setCurrentMeasuredValue(const QString& value)
 {
 	MeasuredDataPointDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		MeasuredDataPointDataItem* tmpItem = dynamic_cast<MeasuredDataPointDataItem*>(*it);
-		if (tmpItem->name() == value){
+		if (tmpItem->name() == value) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != nullptr){
+	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentMeasuredValue = value;
@@ -608,7 +601,7 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	vtkPointSet* pd = nullptr;
-	if (md->noPolyData() || m_contour == ContourSettingWidget::Points){
+	if (md->noPolyData() || m_contour == ContourSettingWidget::Points) {
 		pd = md->pointData();
 	} else {
 		pd = md->polyData();
@@ -616,10 +609,10 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 	pd->GetPointData()->SetActiveScalars(iRIC::toStr(m_currentMeasuredValue).c_str());
 
 	LookupTableContainer* stc = lookupTable(m_currentMeasuredValue);
-	if (stc == nullptr){return;}
+	if (stc == nullptr) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);
-	if (m_fillLower){
+	if (m_fillLower) {
 		lowerClipped = pd;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -629,7 +622,7 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 		lowerClipper->Update();
 		lowerClipped = lowerClipper->GetOutput();
 	}
-	if (m_fillUpper){
+	if (m_fillUpper) {
 		upperClipped = lowerClipped;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> upperClipper = vtkSmartPointer<vtkClipPolyData>::New();
@@ -645,10 +638,10 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 
 bool MeasuredDataPointGroupDataItem::hasTransparentPart()
 {
-	if (standardItem()->checkState() == Qt::Unchecked){return false;}
-	if (m_currentMeasuredValue == ""){return false;}
-	if (m_contour == ContourSettingWidget::Isolines || m_contour == ContourSettingWidget::Points){return false;}
-	if (m_opacityPercent == 100){return false;}
+	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
+	if (m_currentMeasuredValue == "") {return false;}
+	if (m_contour == ContourSettingWidget::Isolines || m_contour == ContourSettingWidget::Points) {return false;}
+	if (m_opacityPercent == 100) {return false;}
 	return true;
 }
 
@@ -656,14 +649,14 @@ void MeasuredDataPointGroupDataItem::updateVisibility(bool visible)
 {
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
 	int scalarBarVisible = 0;
-	if (v && m_scalarBarSetting.visible){
+	if (v && m_scalarBarSetting.visible) {
 		scalarBarVisible = 1;
 	}
 	m_scalarBarWidget->SetEnabled(scalarBarVisible);
 	GraphicsWindowDataItem::updateVisibility(visible);
 }
 
-void MeasuredDataPointGroupDataItem::informSelection(VTKGraphicsView * /*v*/)
+void MeasuredDataPointGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_scalarBarWidget->SetRepositionable(1);
 }

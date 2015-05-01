@@ -126,9 +126,9 @@ void PreProcessorDataModel::showCalcConditionDialog()
 {
 	iRICMainWindowInterface* mainW = iricMainWindow();
 	bool solverRunning = mainW->isSolverRunning();
-	if (solverRunning){
+	if (solverRunning) {
 		int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("The solver is running. You can see the calculation condition settings, but can not overwrite."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
-		if (ret == QMessageBox::Cancel){return;}
+		if (ret == QMessageBox::Cancel) {return;}
 	}
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	root->m_inputConditionDataItem->showDialog(solverRunning);
@@ -138,12 +138,12 @@ void PreProcessorDataModel::importCalcCondition()
 {
 	QString selectedFilter;
 	QString fname = QFileDialog::getOpenFileName(
-		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn)"), &selectedFilter
-			);
-	if (fname == ""){return;}
-	if (selectedFilter == tr("iRIC project file (*.ipro)")){
+										iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn)"), &selectedFilter
+									);
+	if (fname == "") {return;}
+	if (selectedFilter == tr("iRIC project file (*.ipro)")) {
 		importCalcConditionFromOtherProject(fname);
-	} else if (selectedFilter == tr("CGNS file (*.cgn)")){
+	} else if (selectedFilter == tr("CGNS file (*.cgn)")) {
 		importCalcConditionFromCGNS(fname);
 	} else {
 		// invalid!
@@ -163,30 +163,30 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	tmpProj->unzipFrom(fname);
 	tmpProj->loadCgnsList();
 
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (projectData()->mainWindow()->preProcessorWindow());
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	// now it's loaded. find how many cgns files are included.
 	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj->mainfile()->cgnsFileList()->cgnsFiles();
-	if (list.count() == 1){
+	if (list.count() == 1) {
 		// automatically use the only cgns file.
 		QString fullname = tmpProj->workCgnsFileName(list.first()->filename());
 		bool ret = pre->importInputCondition(fullname);
-		if (! ret){
+		if (! ret) {
 			// not imported.
 			goto ERROR;
 		}
 	} else {
 		QStringList items;
-		for (auto it = list.begin(); it != list.end(); ++it){
+		for (auto it = list.begin(); it != list.end(); ++it) {
 			items << (*it)->filename();
 		}
 		QFileInfo tmpp(fname);
 		QString projname = tmpp.fileName();
 		bool ok;
 		QString solname = QInputDialog::getItem(projectData()->mainWindow(), tr("Select case"), tr("Please select from which case in %1 to import calculation conditions.").arg(projname), items, 0, false, &ok);
-		if (! ok){goto ERROR;}
+		if (! ok) {goto ERROR;}
 		QString fullname = tmpProj->workCgnsFileName(solname);
 		bool ret = pre->importInputCondition(fullname);
-		if (! ret){
+		if (! ret) {
 			// not imported.
 			goto ERROR;
 		}
@@ -205,8 +205,8 @@ ERROR:
 
 void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (projectData()->mainWindow()->preProcessorWindow());
-	if (pre->importInputCondition(fname)){
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
+	if (pre->importInputCondition(fname)) {
 		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
@@ -219,13 +219,13 @@ void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
 void PreProcessorDataModel::exportCalcCondition()
 {
 	QString fname = QFileDialog::getSaveFileName(
-		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
-			);
-	if (fname == ""){return;}
+										projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
+									);
+	if (fname == "") {return;}
 	iRICMainWindowInterface* mainW = projectData()->mainWindow();
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (mainW->preProcessorWindow());
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(mainW->preProcessorWindow());
 	mainW->statusBar()->showMessage(tr("Exporting calculation condition..."));
-	if (pre->exportInputCondition(fname)){
+	if (pre->exportInputCondition(fname)) {
 		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
@@ -247,10 +247,10 @@ void PreProcessorDataModel::setupAdditinalMenus()
 	setupMeasuredValuesMenu();
 
 	// remove old menus.
-	while (m_oldDummyMenusList.count() > OLDMENULIST_MAX){
+	while (m_oldDummyMenusList.count() > OLDMENULIST_MAX) {
 		QList<QMenu*> oldDummyMenus = m_oldDummyMenusList.at(0);
 		m_oldDummyMenusList.pop_front();
-		for (auto it = oldDummyMenus.begin(); it != oldDummyMenus.end(); ++it){
+		for (auto it = oldDummyMenus.begin(); it != oldDummyMenus.end(); ++it) {
 			delete *it;
 		}
 	}
@@ -274,11 +274,11 @@ void PreProcessorDataModel::setupRawDataMenus()
 	m_geographicDataMenu->addAction(editGroupAction);
 	m_geographicDataMenu->addSeparator();
 
-	if (item != nullptr){
+	if (item != nullptr) {
 		// Rawdata dataitem is selected.
 		QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorRawDataGroupDataItem*>(item->parent())->condition());
-		for (auto it = creators.begin(); it != creators.end(); ++it){
-			if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr){
+		for (auto it = creators.begin(); it != creators.end(); ++it) {
+			if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr) {
 				polygonCreator = *it;
 			}
 		}
@@ -288,16 +288,16 @@ void PreProcessorDataModel::setupRawDataMenus()
 		RawData* raw = item->rawData();
 		RawDataRiverSurvey* s = dynamic_cast<RawDataRiverSurvey*>(raw);
 		dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
-		if (s == nullptr){
+		if (s == nullptr) {
 			dummy->setDisabled(true);
-		}else{
+		} else {
 			dummy->addActions(s->menu()->actions());
 		}
 		m_geographicDataMenu->addMenu(dummy);
 
 		RawDataPointmap* pm = dynamic_cast<RawDataPointmap*>(raw);
 		dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
-		if (pm == nullptr){
+		if (pm == nullptr) {
 			dummy->setDisabled(true);
 		} else {
 			dummy->addActions(pm->menu()->actions());
@@ -307,7 +307,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 		RawDataPolygon* pol = dynamic_cast<RawDataPolygon*>(raw);
 		dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
 		dummy->addAction(m_rawDataAddActions.value(polygonCreator));
-		if (pol != nullptr){
+		if (pol != nullptr) {
 			dummy->addSeparator();
 			dummy->addActions(pol->menu()->actions());
 		}
@@ -316,11 +316,11 @@ void PreProcessorDataModel::setupRawDataMenus()
 		exportAllPolygonsAction->setDisabled(true);
 	} else {
 		PreProcessorRawDataGroupDataItem* gitem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(m_selectedItem);
-		if (gitem != nullptr){
+		if (gitem != nullptr) {
 			// Rawdatagroup dataitem is selected.
 			QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(gitem->condition());
-			for (auto it = creators.begin(); it != creators.end(); ++it){
-				if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr){
+			for (auto it = creators.begin(); it != creators.end(); ++it) {
+				if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr) {
 					polygonCreator = *it;
 				}
 			}
@@ -337,7 +337,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 			m_geographicDataMenu->addMenu(dummy);
 
 			PreProcessorRawDataComplexGroupDataItem* cgitem = dynamic_cast<PreProcessorRawDataComplexGroupDataItem*>(gitem);
-			if (cgitem != nullptr){
+			if (cgitem != nullptr) {
 				editGroupAction->setEnabled(true);
 				connect(editGroupAction, SIGNAL(triggered()), cgitem, SLOT(showEditGroupDialog()));
 			}
@@ -373,9 +373,9 @@ void PreProcessorDataModel::setupRawDataMenus()
 
 	// add colormap edit menu for each raw data type.
 	PreProcessorGridTypeDataItem* gti = getGridTypeItem(m_selectedItem);
-	if (gti != nullptr){
+	if (gti != nullptr) {
 		QList<PreProcessorRawDataGroupDataItemInterface*> groups = gti->rawdataTop()->groupDataItems();
-		for (auto it = groups.begin(); it != groups.end(); ++it){
+		for (auto it = groups.begin(); it != groups.end(); ++it) {
 			PreProcessorRawDataGroupDataItemInterface* groupDataitem = *it;
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
@@ -384,7 +384,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 			colorMapMenu->addAction(action);
 		}
 		connect(setupScalarBarAction, SIGNAL(triggered()), gti->rawdataTop(), SLOT(setupScalarBar()));
-	}else{
+	} else {
 		colorMapMenu->setDisabled(true);
 		setupScalarBarAction->setDisabled(true);
 	}
@@ -410,7 +410,8 @@ QMenu* PreProcessorDataModel::setupGridCreationMenu(QMenu* parentMenu, PreProces
 	return gridCreationMenu;
 }
 
-QMenu* PreProcessorDataModel::setupBoundaryConditionSettingMenu(QMenu* parentMenu){
+QMenu* PreProcessorDataModel::setupBoundaryConditionSettingMenu(QMenu* parentMenu)
+{
 	QMenu* bcsMenu = new QMenu(tr("B&oundary Condition Setting"), parentMenu);
 	connect(bcsMenu, SIGNAL(aboutToShow()), this, SLOT(setupBoundaryConditionSettingMenuContent()));
 	return bcsMenu;
@@ -422,7 +423,7 @@ void PreProcessorDataModel::setupGridMenu()
 	// check whether grid or child of grid is selected.
 	PreProcessorGridDataItem* gItem = getGridItem(m_selectedItem);
 	m_gridMenu = new QMenu(tr("&Grid"), mainWindow());
-	if (gItem != nullptr){
+	if (gItem != nullptr) {
 		// ----------------------------
 		// grid creating related menus.
 		// ----------------------------
@@ -433,7 +434,7 @@ void PreProcessorDataModel::setupGridMenu()
 		// grid creating condition menu
 		QMenu* creationMenu = setupGridCreationMenu(m_gridMenu, gcItem);
 		m_gridMenu->addMenu(creationMenu);
-		if (gItem->bcGroupDataItem() != nullptr){
+		if (gItem->bcGroupDataItem() != nullptr) {
 			QMenu* bcsMenu = setupBoundaryConditionSettingMenu(m_gridMenu);
 			m_gridMenu->addMenu(bcsMenu);
 		}
@@ -460,32 +461,32 @@ void PreProcessorDataModel::setupGridMenu()
 
 		// disable node related menus when node dataitem is not selected currently.
 		PreProcessorGridRelatedConditionNodeDataItem* nItem =
-				dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(m_selectedItem);
+			dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(m_selectedItem);
 		gItem->setNodeDataItem(nItem);
-		if (nItem != nullptr){
+		if (nItem != nullptr) {
 			gItem->nodeEditAction()->setEnabled(gItem->selectedVertices().count() > 0);
 			gItem->nodeEditAction()->disconnect();
 			connect(gItem->nodeEditAction(), SIGNAL(triggered()), nItem, SLOT(editValue()));
 			gItem->nodeDisplaySettingAction()->setEnabled(true);
 			gItem->nodeDisplaySettingAction()->disconnect();
 			connect(gItem->nodeDisplaySettingAction(), SIGNAL(triggered()), nItem, SLOT(showDisplaySettingDialog()));
-		}else{
+		} else {
 			gItem->nodeEditAction()->setEnabled(false);
 			gItem->nodeEditAction()->disconnect();
 			gItem->nodeDisplaySettingAction()->setEnabled(false);
 		}
 		// disable cell related menus when cell dataitem is not selected currently.
 		PreProcessorGridRelatedConditionCellDataItem* cItem =
-				dynamic_cast<PreProcessorGridRelatedConditionCellDataItem*>(m_selectedItem);
+			dynamic_cast<PreProcessorGridRelatedConditionCellDataItem*>(m_selectedItem);
 		gItem->setCellDataItem(cItem);
-		if (cItem != nullptr){
+		if (cItem != nullptr) {
 			gItem->cellEditAction()->setEnabled(gItem->selectedCells().count() > 0);
 			gItem->cellEditAction()->disconnect();
 			connect(gItem->cellEditAction(), SIGNAL(triggered()), cItem, SLOT(editValue()));
 			gItem->cellDisplaySettingAction()->setEnabled(true);
 			gItem->cellDisplaySettingAction()->disconnect();
 			connect(gItem->cellDisplaySettingAction(), SIGNAL(triggered()), cItem, SLOT(showDisplaySettingDialog()));
-		}else{
+		} else {
 			gItem->cellEditAction()->setEnabled(false);
 			gItem->cellEditAction()->disconnect();
 			gItem->cellDisplaySettingAction()->setEnabled(false);
@@ -493,7 +494,7 @@ void PreProcessorDataModel::setupGridMenu()
 
 		PreProcessorBCDataItem* bcItem =
 			dynamic_cast<PreProcessorBCDataItem*>(m_selectedItem);
-		if (gItem->bcGroupDataItem() != nullptr){
+		if (gItem->bcGroupDataItem() != nullptr) {
 			gItem->bcGroupDataItem()->bcMenu()->setDisabled(gItem->grid() == nullptr);
 			gItem->bcGroupDataItem()->updateBCMenu(bcItem);
 		}
@@ -513,7 +514,7 @@ void PreProcessorDataModel::setupGridMenu()
 		// add export menu
 		// ----------------------------
 		m_gridMenu->addAction(gItem->exportAction());
-	}else{
+	} else {
 		// Active item is not grid or grid child nodes.
 //		m_gridMenu->setDisabled(true);
 	}
@@ -525,16 +526,16 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 {
 	MeasuredDataFileDataItem* fitem = getMeasuredDataItem(m_selectedItem);
 	m_measuredValuesMenu = new QMenu(tr("&Measured Values"));
-		QAction* pointAction = m_measuredValuesMenu->addAction(tr("&Scalar..."));
+	QAction* pointAction = m_measuredValuesMenu->addAction(tr("&Scalar..."));
 	QAction* vectorAction = m_measuredValuesMenu->addAction(tr("&Arrows..."));
 	m_measuredValuesMenu->addSeparator();
 	QAction* importAction = m_measuredValuesMenu->addAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import..."));
 	connect(importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
 
-	if (fitem == nullptr){
+	if (fitem == nullptr) {
 		pointAction->setDisabled(true);
 		vectorAction->setDisabled(true);
-	} else{
+	} else {
 		connect(pointAction, SIGNAL(triggered()), fitem->pointGroupDataItem(), SLOT(showSettingDialog()));
 		connect(vectorAction, SIGNAL(triggered()), fitem->vectorGroupDataItem(), SLOT(showSettingDialog()));
 	}
@@ -544,38 +545,38 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 
 PreProcessorGridTypeDataItem* PreProcessorDataModel::getGridTypeItem(GraphicsWindowDataItem* item)
 {
-	if (item == nullptr){return nullptr;}
+	if (item == nullptr) {return nullptr;}
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(item);
-	if (r != nullptr){return nullptr;}
+	if (r != nullptr) {return nullptr;}
 	PreProcessorGridTypeDataItem* g = dynamic_cast<PreProcessorGridTypeDataItem*>(item);
-	if (g != nullptr){return g;}
+	if (g != nullptr) {return g;}
 	return getGridTypeItem(dynamic_cast<GraphicsWindowDataItem*>(item->parent()));
 }
 
 PreProcessorGridDataItem* PreProcessorDataModel::getGridItem(GraphicsWindowDataItem* item)
 {
 	PreProcessorGridDataItem* gItem = getGridItemRecursively(item);
-	if (gItem != nullptr){return gItem;}
+	if (gItem != nullptr) {return gItem;}
 	// try to find the gridtype node that contains the current item.
 	PreProcessorGridTypeDataItem* gtItem = getGridTypeItem(item);
-	if (gtItem != nullptr){
+	if (gtItem != nullptr) {
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
-		if (conds.count() > 0){
+		if (conds.count() > 0) {
 			// select the first one.
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* gagcItem = conds[0];
-			return dynamic_cast<PreProcessorGridDataItem*> (gagcItem->gridDataItem());
+			return dynamic_cast<PreProcessorGridDataItem*>(gagcItem->gridDataItem());
 		}
 	}
 	// try to find some grid dataitem in one of the gridtypes.
 	PreProcessorRootDataItem* rItem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (auto gtIt = gtItems.begin(); gtIt != gtItems.end(); ++gtIt){
+	for (auto gtIt = gtItems.begin(); gtIt != gtItems.end(); ++gtIt) {
 		PreProcessorGridTypeDataItem* gtItem = *gtIt;
 		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
-		if (conds.count() > 0){
+		if (conds.count() > 0) {
 			// select the first one.
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* gagcItem = conds[0];
-			return dynamic_cast<PreProcessorGridDataItem*> (gagcItem->gridDataItem());
+			return dynamic_cast<PreProcessorGridDataItem*>(gagcItem->gridDataItem());
 		}
 	}
 	return nullptr;
@@ -583,17 +584,17 @@ PreProcessorGridDataItem* PreProcessorDataModel::getGridItem(GraphicsWindowDataI
 
 PreProcessorGridDataItem* PreProcessorDataModel::getGridItemRecursively(GraphicsWindowDataItem* item)
 {
-	if (item == nullptr){return nullptr;}
+	if (item == nullptr) {return nullptr;}
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(item);
-	if (r != nullptr){
+	if (r != nullptr) {
 		// reached root data item.
 		return nullptr;
 	}
 	PreProcessorGridDataItem* g = dynamic_cast<PreProcessorGridDataItem*>(item);
-	if (g != nullptr){return g;}
+	if (g != nullptr) {return g;}
 	PreProcessorGridAndGridCreatingConditionDataItem* a = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(item);
-	if (a != nullptr){
-		return dynamic_cast<PreProcessorGridDataItem*> (a->gridDataItem());
+	if (a != nullptr) {
+		return dynamic_cast<PreProcessorGridDataItem*>(a->gridDataItem());
 	}
 	return getGridItemRecursively(dynamic_cast<GraphicsWindowDataItem*>(item->parent()));
 }
@@ -601,11 +602,11 @@ PreProcessorGridDataItem* PreProcessorDataModel::getGridItemRecursively(Graphics
 MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItem(GraphicsWindowDataItem* item)
 {
 	MeasuredDataFileDataItem* fItem = getMeasuredDataItemRecursively(item);
-	if (fItem != nullptr){return fItem;}
+	if (fItem != nullptr) {return fItem;}
 	// if there is only one Measured data, use that.
 	PreProcessorRootDataItem* rItem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorMeasuredDataTopDataItem* mtItem = rItem->measuredDataTopDataItem();
-	if (mtItem->childItems().count() == 1){
+	if (mtItem->childItems().count() == 1) {
 		MeasuredDataFileDataItem* ret = dynamic_cast<MeasuredDataFileDataItem*>(mtItem->childItems().at(0));
 		return ret;
 	}
@@ -614,20 +615,20 @@ MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItem(GraphicsWin
 
 MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItemRecursively(GraphicsWindowDataItem* item)
 {
-	if (item == nullptr){return nullptr;}
+	if (item == nullptr) {return nullptr;}
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(item);
-	if (r != nullptr){
+	if (r != nullptr) {
 		// reached root data item.
 		return nullptr;
 	}
 	MeasuredDataFileDataItem* f = dynamic_cast<MeasuredDataFileDataItem*>(item);
-	if (f != nullptr){return f;}
+	if (f != nullptr) {return f;}
 	return getMeasuredDataItemRecursively(dynamic_cast<GraphicsWindowDataItem*>(item->parent()));
 }
 
 PreProcessorBackgroundImageDataItem* PreProcessorDataModel::getBackgroundImageItem(GraphicsWindowDataItem* item)
 {
-	if (item == nullptr){return nullptr;}
+	if (item == nullptr) {return nullptr;}
 	PreProcessorBackgroundImageDataItem* b = dynamic_cast<PreProcessorBackgroundImageDataItem*>(item);
 	return b;
 }
@@ -645,23 +646,23 @@ void PreProcessorDataModel::addGridImportMenu(QMenu* menu)
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool importAvailable = false;
-	if (gridTypes.count() == 0){
+	if (gridTypes.count() == 0) {
 		// no menu available.
-	}else if (gridTypes.count() == 1){
+	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
 		importAvailable = addGridImportMenuForGridType(menu, gt, true);
-	}else{
-		for (int i = 0; i < gridTypes.count(); ++i){
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (addGridImportMenuForGridType(gtMenu, gt, false)){
+			if (addGridImportMenuForGridType(gtMenu, gt, false)) {
 				importAvailable = true;
-			}else{
+			} else {
 				delete gtMenu;
 			}
 		}
 	}
-	if (! importAvailable){
+	if (! importAvailable) {
 		QAction* no = menu->addAction(tr("&Grid..."));
 		no->setDisabled(true);
 	}
@@ -670,36 +671,36 @@ void PreProcessorDataModel::addGridImportMenu(QMenu* menu)
 bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
-	if (conds.count() == 0){
+	if (conds.count() == 0) {
 		// no menu available.
 		return false;
-	}else if (conds.count() == 1){
+	} else if (conds.count() == 1) {
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
-		if (alone){
+		if (alone) {
 			// this is the only existing grid.
-			if (! addGridImportMenuForGrid(menu, di, tr("&Grid"))){
+			if (! addGridImportMenuForGrid(menu, di, tr("&Grid"))) {
 				return false;
 			}
-		}else{
-			if (! addGridImportMenuForGrid(menu, di, di->caption())){
+		} else {
+			if (! addGridImportMenuForGrid(menu, di, di->caption())) {
 				return false;
 			}
 		}
 		return true;
-	}else{
+	} else {
 		// there are multiple grids.
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("&Grid"));
-		for (int i = 0; i < conds.count(); ++i){
+		for (int i = 0; i < conds.count(); ++i) {
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
-			if (addGridImportMenuForGrid(gMenu, di, di->caption())){
+			if (addGridImportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
-			}else{
+			} else {
 				delete gMenu;
 			}
 		}
-		if (! okExists){
+		if (! okExists) {
 			delete tMenu;
 		}
 		return okExists;
@@ -709,8 +710,8 @@ bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcess
 bool PreProcessorDataModel::addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
-	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*> (di->gridDataItem());
-	if (! gdi->isImportAvailable()){return false;}
+	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
+	if (! gdi->isImportAvailable()) {return false;}
 	QAction* action = new QAction(cap, menu);
 	connect(action, SIGNAL(triggered()), gdi, SLOT(importGrid()));
 	menu->addAction(action);
@@ -724,23 +725,23 @@ void PreProcessorDataModel::addGridExportMenu(QMenu* menu)
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool exportAvailable = false;
-	if (gridTypes.count() == 0){
+	if (gridTypes.count() == 0) {
 		// no menu available.
-	}else if (gridTypes.count() == 1){
+	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
 		exportAvailable = addGridExportMenuForGridType(menu, gt, true);
-	}else{
-		for (int i = 0; i < gridTypes.count(); ++i){
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (addGridExportMenuForGridType(gtMenu, gt, false)){
+			if (addGridExportMenuForGridType(gtMenu, gt, false)) {
 				exportAvailable = true;
-			}else{
+			} else {
 				delete gtMenu;
 			}
 		}
 	}
-	if (! exportAvailable){
+	if (! exportAvailable) {
 		QAction* no = menu->addAction(tr("&Grid..."));
 		no->setDisabled(true);
 	}
@@ -749,36 +750,36 @@ void PreProcessorDataModel::addGridExportMenu(QMenu* menu)
 bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
-	if (conds.count() == 0){
+	if (conds.count() == 0) {
 		// no menu available.
 		return false;
-	}else if (conds.count() == 1){
+	} else if (conds.count() == 1) {
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
-		if (alone){
+		if (alone) {
 			// this is the only existing grid.
-			if (! addGridExportMenuForGrid(menu, di, tr("&Grid"))){
+			if (! addGridExportMenuForGrid(menu, di, tr("&Grid"))) {
 				return false;
 			}
-		}else{
-			if (! addGridExportMenuForGrid(menu, di, di->caption())){
+		} else {
+			if (! addGridExportMenuForGrid(menu, di, di->caption())) {
 				return false;
 			}
 		}
 		return true;
-	}else{
+	} else {
 		// there are multiple grids.
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("&Grid"));
-		for (int i = 0; i < conds.count(); ++i){
+		for (int i = 0; i < conds.count(); ++i) {
 			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
-			if (addGridExportMenuForGrid(gMenu, di, di->caption())){
+			if (addGridExportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
-			}else{
+			} else {
 				delete gMenu;
 			}
 		}
-		if (! okExists){
+		if (! okExists) {
 			delete tMenu;
 		}
 		return okExists;
@@ -788,15 +789,15 @@ bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcess
 bool PreProcessorDataModel::addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
-	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*> (di->gridDataItem());
-	if (! gdi->isExportAvailable()){return false;}
+	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
+	if (! gdi->isExportAvailable()) {return false;}
 	QAction* action = new QAction(cap, menu);
 	menu->addAction(action);
 	connect(action, SIGNAL(triggered()), gdi, SLOT(exportGrid()));
 	return true;
 }
 
-void PreProcessorDataModel::setupRawDataImportMenu(QMenu *menu)
+void PreProcessorDataModel::setupRawDataImportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
@@ -804,53 +805,53 @@ void PreProcessorDataModel::setupRawDataImportMenu(QMenu *menu)
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool importAvailable = false;
-	if (gridTypes.count() == 0){
+	if (gridTypes.count() == 0) {
 		// no menu available.
-	}else if (gridTypes.count() == 1){
+	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
 		importAvailable = setupRawDataImportMenuForGridType(menu, gt);
-	}else{
-		for (int i = 0; i < gridTypes.count(); ++i){
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (setupRawDataImportMenuForGridType(gtMenu, gt)){
+			if (setupRawDataImportMenuForGridType(gtMenu, gt)) {
 				importAvailable = true;
-			}else{
+			} else {
 				delete gtMenu;
 			}
 		}
 	}
-	if (! importAvailable){
+	if (! importAvailable) {
 		QAction* no = menu->addAction(tr("(No data to import)"));
 		no->setDisabled(true);
 	}
 }
 
 
-void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu *menu)
+void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
 
 	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
-	for (auto it = importers.begin(); it != importers.end(); ++it){
+	for (auto it = importers.begin(); it != importers.end(); ++it) {
 		HydraulicDataImporter* imp = *it;
 		QAction* action = menu->addAction(imp->caption());
 		connect(action, SIGNAL(triggered()), this, SLOT(importHydraulicData()));
 	}
 }
 
-bool PreProcessorDataModel::setupRawDataImportMenuForGridType(QMenu *menu, PreProcessorGridTypeDataItem *gt)
+bool PreProcessorDataModel::setupRawDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
 	PreProcessorRawDataTopDataItemInterface* topItem = gt->rawdataTop();
 	QList<PreProcessorRawDataGroupDataItemInterface*> groups = topItem->groupDataItems();
-	if (groups.count() == 0){
+	if (groups.count() == 0) {
 		// no menu available.
 		return false;
-	}else{
+	} else {
 		// there are multiple grids.
 		bool okExists = false;
-		for (int i = 0; i < groups.count(); ++i){
+		for (int i = 0; i < groups.count(); ++i) {
 			PreProcessorRawDataGroupDataItemInterface* gi = groups.at(i);
 			setupRawDataImportMenuForGroup(menu, gi);
 			okExists = true;
@@ -859,14 +860,14 @@ bool PreProcessorDataModel::setupRawDataImportMenuForGridType(QMenu *menu, PrePr
 	}
 }
 
-bool PreProcessorDataModel::setupRawDataImportMenuForGroup(QMenu *menu, PreProcessorRawDataGroupDataItemInterface *gt)
+bool PreProcessorDataModel::setupRawDataImportMenuForGroup(QMenu* menu, PreProcessorRawDataGroupDataItemInterface* gt)
 {
-	PreProcessorRawDataGroupDataItem* item = dynamic_cast<PreProcessorRawDataGroupDataItem*> (gt);
+	PreProcessorRawDataGroupDataItem* item = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gt);
 	item->addImportAction(menu);
 	return true;
 }
 
-void PreProcessorDataModel::setupRawDataExportMenu(QMenu *menu)
+void PreProcessorDataModel::setupRawDataExportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
@@ -874,23 +875,23 @@ void PreProcessorDataModel::setupRawDataExportMenu(QMenu *menu)
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gridTypes = root->gridTypeDataItems();
 	bool importAvailable = false;
-	if (gridTypes.count() == 0){
+	if (gridTypes.count() == 0) {
 		// no menu available.
-	}else if (gridTypes.count() == 1){
+	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
 		importAvailable = setupRawDataExportMenuForGridType(menu, gt);
-	}else{
-		for (int i = 0; i < gridTypes.count(); ++i){
+	} else {
+		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (setupRawDataExportMenuForGridType(gtMenu, gt)){
+			if (setupRawDataExportMenuForGridType(gtMenu, gt)) {
 				importAvailable = true;
-			}else{
+			} else {
 				delete gtMenu;
 			}
 		}
 	}
-	if (! importAvailable){
+	if (! importAvailable) {
 		QAction* no = menu->addAction(tr("(No data to export)"));
 		no->setDisabled(true);
 	}
@@ -900,11 +901,11 @@ bool PreProcessorDataModel::setupRawDataExportMenuForGridType(QMenu* menu, PrePr
 {
 	PreProcessorRawDataTopDataItemInterface* topItem = gt->rawdataTop();
 	QList<PreProcessorRawDataGroupDataItemInterface*> groups = topItem->groupDataItems();
-	if (groups.count() == 0){
+	if (groups.count() == 0) {
 		// no menu available.
 		return false;
-	}else{
-		for (int i = 0; i < groups.count(); ++i){
+	} else {
+		for (int i = 0; i < groups.count(); ++i) {
 			PreProcessorRawDataGroupDataItemInterface* gi = groups.at(i);
 			QString cap = gi->condition()->caption();
 			cap.append("...");
@@ -920,12 +921,12 @@ bool PreProcessorDataModel::setupRawDataExportMenuForGroup(QMenu* menu, PreProce
 {
 	bool ok = false;
 	QList<PreProcessorRawdataDataItemInterface*> datas = gt->rawDatas();
-	for (int i = 0; i < datas.count(); ++i){
+	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorRawdataDataItemInterface* item = datas.at(i);
 		QMenu* tmpmenu = menu->addMenu(item->standardItem()->text());
-		if (setupRawDataExportMenuForItem(tmpmenu, item)){
+		if (setupRawDataExportMenuForItem(tmpmenu, item)) {
 			ok = true;
-		}else{
+		} else {
 			delete tmpmenu;
 		}
 	}
@@ -935,9 +936,9 @@ bool PreProcessorDataModel::setupRawDataExportMenuForGroup(QMenu* menu, PreProce
 bool PreProcessorDataModel::rawDataExportAvailable(PreProcessorRawDataGroupDataItemInterface* gt)
 {
 	QList<PreProcessorRawdataDataItemInterface*> datas = gt->rawDatas();
-	for (int i = 0; i < datas.count(); ++i){
+	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorRawdataDataItemInterface* item = datas.at(i);
-		if (item->rawData()->exporters().count() > 0){
+		if (item->rawData()->exporters().count() > 0) {
 			return true;
 		}
 	}
@@ -955,14 +956,14 @@ void PreProcessorDataModel::setupGridCreationMenuContent()
 	gridCreationMenu->clear();
 	// Add Grid Creation menu.
 	PreProcessorGridDataItem* gItem = getGridItem(m_selectedItem);
-	if (gItem == nullptr){return;}
+	if (gItem == nullptr) {return;}
 	PreProcessorGridCreatingConditionDataItemInterface* gcItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(gItem->parent())->creatingConditionDataItem();
-	if (gcItem == nullptr){return;}
-	QMenu* dummy = dynamic_cast<PreProcessorGridCreatingConditionDataItem*> (gcItem)->menu();
-	if (dummy == nullptr){
+	if (gcItem == nullptr) {return;}
+	QMenu* dummy = dynamic_cast<PreProcessorGridCreatingConditionDataItem*>(gcItem)->menu();
+	if (dummy == nullptr) {
 		QAction* dummyAction = gridCreationMenu->addAction(tr("(No algorithm is selected yet)"));
 		dummyAction->setDisabled(true);
-	}else{
+	} else {
 		gridCreationMenu->addActions(dummy->actions());
 
 		gridCreationMenu->addSeparator();
@@ -975,22 +976,22 @@ void PreProcessorDataModel::setupBoundaryConditionSettingMenuContent()
 	QMenu* bcsMenu = dynamic_cast<QMenu*>(sender());
 	bcsMenu->clear();
 	PreProcessorGridDataItem* gItem = getGridItem(m_selectedItem);
-	if (gItem == nullptr){return;}
+	if (gItem == nullptr) {return;}
 	PreProcessorBCSettingGroupDataItem* bcsgItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(gItem->parent())
 			->bcSettingGroupDataItem();
 	PreProcessorBCSettingDataItem* bcItem = getBCSettingDataItem(m_selectedItem);
-	if (bcItem != nullptr){
+	if (bcItem != nullptr) {
 		bcsMenu->addAction(bcItem->editAction());
 	} else {
 		bcsMenu->addAction(bcsgItem->dummyEditAction());
 	}
 	bcsMenu->addSeparator();
 	const QList<QAction*>& addActions = bcsgItem->addActions();
-	for (auto it = addActions.begin(); it != addActions.end(); ++it){
+	for (auto it = addActions.begin(); it != addActions.end(); ++it) {
 		bcsMenu->addAction(*it);
 	}
 	bcsMenu->addSeparator();
-	if (bcItem != nullptr){
+	if (bcItem != nullptr) {
 		bcsMenu->addAction(bcItem->deleteAction());
 	} else {
 		bcsMenu->addAction(bcsgItem->dummyDeleteAction());
@@ -1004,14 +1005,14 @@ void PreProcessorDataModel::disableGridMenu()
 
 void PreProcessorDataModel::setupRawDataAddActions(PreProcessorRawDataGroupDataItem* item)
 {
-	if (m_rawDataAddSignalMapper != nullptr){delete m_rawDataAddSignalMapper;}
+	if (m_rawDataAddSignalMapper != nullptr) {delete m_rawDataAddSignalMapper;}
 	m_rawDataAddSignalMapper = new QSignalMapper(this);
-	for (auto it = m_rawDataAddActions.begin(); it != m_rawDataAddActions.end(); ++it){
+	for (auto it = m_rawDataAddActions.begin(); it != m_rawDataAddActions.end(); ++it) {
 		delete *it;
 	}
 	m_rawDataAddActions.clear();
 	QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(item->condition());
-	for (auto cit = creators.begin(); cit != creators.end(); ++cit){
+	for (auto cit = creators.begin(); cit != creators.end(); ++cit) {
 		QAction* action = new QAction(tr("Add New %1").arg((*cit)->caption()), this);
 		m_rawDataAddActions.insert(*cit, action);
 		m_rawDataAddSignalMapper->setMapping(action, *cit);
@@ -1036,16 +1037,16 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 {
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
-	for (auto it = gtItems.begin(); it != gtItems.end(); ++it){
+	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
 		PreProcessorGridTypeDataItem* gtItem = *it;
 		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
-		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2){
+		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
 			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
 			QList<PreProcessorRawdataDataItemInterface*> rawdatas = gItem->rawDatas();
-			for (auto it3 = rawdatas.begin(); it3 != rawdatas.end(); ++it3){
+			for (auto it3 = rawdatas.begin(); it3 != rawdatas.end(); ++it3) {
 				PreProcessorRawdataDataItemInterface* dItem = *it3;
 				RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(dItem->rawData());
-				if (rs != nullptr){
+				if (rs != nullptr) {
 					rs->setColoredPoints(0, 0, 0);
 				}
 			}
@@ -1064,52 +1065,52 @@ bool PreProcessorDataModel::checkMappingStatus()
 	PreProcessorRootDataItem* r = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
 	bool mapExexuted = false;
-	for (auto it = gtItems.begin(); it != gtItems.end(); ++it){
+	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
 		QStringList notMapped;
 		PreProcessorGridTypeDataItem* gtItem = *it;
 		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
 		QList<PreProcessorRawDataGroupDataItemInterface*> groupsToMap;
-		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2){
+		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
 			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
-			QStringList rawdatasNotMapped = dynamic_cast<PreProcessorRawDataGroupDataItem*> (gItem)->getRawDatasNotMapped();
-			if (rawdatasNotMapped.count() > 0){
+			QStringList rawdatasNotMapped = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->getRawDatasNotMapped();
+			if (rawdatasNotMapped.count() > 0) {
 				groupsToMap.append(gItem);
 				notMapped.append(rawdatasNotMapped);
 			}
 		}
-		if (notMapped.count() > 0){
+		if (notMapped.count() > 0) {
 			// rawdata in this grid type is not mapped.
 			int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("%1 are not mapped after they are edited last time. Do you want to execute mapping now?").arg(notMapped.join(", ")), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
-			if (ret == QMessageBox::Yes){
+			if (ret == QMessageBox::Yes) {
 				// execute mapping for each grids.
 				const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
-				for (auto cit = conditions.begin(); cit != conditions.end(); ++cit){
+				for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
 					PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *cit;
-					PreProcessorGridAndGridCreatingConditionDataItem* cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (cond);
+					PreProcessorGridAndGridCreatingConditionDataItem* cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(cond);
 					PreProcessorGridAttributeMappingSettingTopDataItem* tItem = cond2->mappingSettingDataItem();
-					for (int i = 0; i < groupsToMap.count(); ++i){
+					for (int i = 0; i < groupsToMap.count(); ++i) {
 						PreProcessorRawDataGroupDataItemInterface* gItem = groupsToMap[i];
 						tItem->customMapping(gItem->condition()->name(), true);
 					}
 				}
 				mapExexuted = true;
-			} else if (ret == QMessageBox::Cancel){
+			} else if (ret == QMessageBox::Cancel) {
 				return false;
 			}
 		}
 
 		const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
-		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit){
-			PreProcessorGridAndGridCreatingConditionDataItem* cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (*cit);
+		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
+			PreProcessorGridAndGridCreatingConditionDataItem* cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*cit);
 			const QList <GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
-			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit){
+			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit) {
 				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
-				if (! bcsdi->isMapped()){
+				if (! bcsdi->isMapped()) {
 					int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
-					if (ret == QMessageBox::Yes){
+					if (ret == QMessageBox::Yes) {
 						bcsdi->executeMapping(true, 0);
 						mapExexuted = true;
-					} else if (ret == QMessageBox::Cancel){
+					} else if (ret == QMessageBox::Cancel) {
 						return false;
 					}
 				}
@@ -1118,7 +1119,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 	}
 
 
-	if (mapExexuted){
+	if (mapExexuted) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Mapping geographic data, boundary condition finished successfully."));
 	}
 	return ! mapExexuted;
@@ -1126,22 +1127,22 @@ bool PreProcessorDataModel::checkMappingStatus()
 
 void PreProcessorDataModel::importHydraulicData()
 {
-	QAction* action = dynamic_cast<QAction*> (sender());
+	QAction* action = dynamic_cast<QAction*>(sender());
 
 	QList<HydraulicDataImporter*> importers = HydraulicDataImporterFactory::instance().importers();
 	HydraulicDataImporter* importer = nullptr;
-	for (auto it = importers.begin(); it != importers.end(); ++it){
+	for (auto it = importers.begin(); it != importers.end(); ++it) {
 		HydraulicDataImporter* imp = *it;
-		if (imp->caption() == action->text()){
+		if (imp->caption() == action->text()) {
 			importer = imp;
 			break;
 		}
 	}
-	if (importer == nullptr){return;}
+	if (importer == nullptr) {return;}
 	// scan all rawdata.
 	QList<RawData*> rawdatas;
 
-	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
+	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> titems = ritem->gridTypeDataItems();
 	for (auto tit = titems.begin(); tit != titems.end(); ++tit) {
 		PreProcessorGridTypeDataItem* titem = *tit;
@@ -1173,7 +1174,7 @@ void PreProcessorDataModel::importHydraulicData()
 		dialog.setWindowTitle(tr("Select geographic data"));
 		dialog.setMessage(tr("Please select the geographic data to import hydraulic data."));
 		int ret = dialog.exec();
-		if (ret == QDialog::Rejected){return;}
+		if (ret == QDialog::Rejected) {return;}
 		targetRawdata = rawdatas.at(dialog.selectIndex());
 	} else {
 		// there was only one rawdata.
@@ -1185,7 +1186,7 @@ void PreProcessorDataModel::importHydraulicData()
 	// Select the file to import.
 	QStringList filters = importer->fileDialogFilters();
 	QString filename = QFileDialog::getOpenFileName(mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()){return;}
+	if (filename.isNull()) {return;}
 	bool result = importer->import(targetRawdata, filename, selectedFilter, mainWindow());
 	if (result) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Importing %1 succeeded.").arg(QDir::toNativeSeparators(filename)));
@@ -1198,15 +1199,15 @@ void PreProcessorDataModel::importHydraulicData()
 
 PreProcessorRawDataTopDataItemInterface* PreProcessorDataModel::rawDataTopDataItem(const QString& type) const
 {
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
-	if (tItem == nullptr){return nullptr;}
+	if (tItem == nullptr) {return nullptr;}
 	return tItem->rawdataTop();
 }
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const
 {
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
+	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	return root->gridTypeDataItem(typeName)->condition(zoneName);
 }
 

@@ -8,7 +8,7 @@ class PreProcessorGraphicsView : public PreProcessorGraphicsViewInterface
 {
 public:
 	PreProcessorGraphicsView(QWidget* parent);
-	~PreProcessorGraphicsView(){}
+	~PreProcessorGraphicsView() {}
 };
 
 #endif // PREPROCESSORGRAPHICSVIEW_H

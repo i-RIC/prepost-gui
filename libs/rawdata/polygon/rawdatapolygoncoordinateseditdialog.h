@@ -5,7 +5,8 @@
 #include <QVector>
 #include <QVector2D>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataPolygonCoordinatesEditDialog;
 }
 
@@ -19,7 +20,7 @@ class RawDataPolygonCoordinatesEditDialog : public QDialog
 private:
 	static const int defaultRowHeight = 20;
 public:
-	explicit RawDataPolygonCoordinatesEditDialog(RawDataPolygon* polygon, QWidget *parent = nullptr);
+	explicit RawDataPolygonCoordinatesEditDialog(RawDataPolygon* polygon, QWidget* parent = nullptr);
 	~RawDataPolygonCoordinatesEditDialog();
 
 public slots:
@@ -34,7 +35,7 @@ private:
 	void setupData();
 	void apply();
 
-	Ui::RawDataPolygonCoordinatesEditDialog *ui;
+	Ui::RawDataPolygonCoordinatesEditDialog* ui;
 	RawDataPolygon* m_polygon;
 	QStandardItemModel* m_model;
 	bool m_applyed;

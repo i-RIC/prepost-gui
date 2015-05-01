@@ -4,24 +4,26 @@
 #include <QDialog>
 class QDomNode;
 
-namespace Ui {
+namespace Ui
+{
 	class iRICMainWindowAboutDialog;
 }
 
 /// This class handles the about dialog of iRIC.
-class iRICMainWindowAboutDialog : public QDialog {
+class iRICMainWindowAboutDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
 	/// Constructor
-	iRICMainWindowAboutDialog(QWidget *parent = nullptr);
+	iRICMainWindowAboutDialog(QWidget* parent = nullptr);
 	/// Destructor
 	~iRICMainWindowAboutDialog();
 	/// Initialization of dialog
 	void init(const QDomNode& data);
 
 private:
-	Ui::iRICMainWindowAboutDialog *ui;
+	Ui::iRICMainWindowAboutDialog* ui;
 };
 
 #endif // IRICMAINWINDOWABOUTDIALOG_H

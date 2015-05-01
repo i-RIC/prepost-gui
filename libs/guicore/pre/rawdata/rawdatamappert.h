@@ -13,12 +13,12 @@ public:
 		: RawDataMapper(parent)
 	{}
 protected:
-	GridRelatedConditionContainerT<V>* container(){
+	GridRelatedConditionContainerT<V>* container() {
 		return dynamic_cast<GridRelatedConditionContainerT<V>* >(m_container);
 	}
-	V fromVariant(const QVariant& val){
+	V fromVariant(const QVariant& val) {
 		SolverDefinitionGridRelatedCondition* c = m_rawdata->gridRelatedCondition();
-		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* > (c);
+		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(c);
 		return cond->fromVariant(val);
 	}
 };

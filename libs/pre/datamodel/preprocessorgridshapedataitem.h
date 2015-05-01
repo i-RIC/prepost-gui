@@ -32,12 +32,12 @@ public:
 	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void keyPressEvent(QKeyEvent *, VTKGraphicsView *);
-	void keyReleaseEvent(QKeyEvent *, VTKGraphicsView *);
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void addCustomMenuItems(QMenu* menu);
-	QAction* editAction(){return m_editAction;}
-	QAction* openXsectionWindowAction(){return m_openXsectionWindowAction;}
-	QAction* openVXsectionWindowAction(){return m_openVXsectionWindowAction;}
+	QAction* editAction() {return m_editAction;}
+	QAction* openXsectionWindowAction() {return m_openXsectionWindowAction;}
+	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}
 	virtual void updateActionStatus();
 //	void updateAxesRegion();
 private slots:
@@ -46,7 +46,7 @@ private slots:
 	void openVerticalCrossSectionWindow();
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter & writer);
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void setColor(const QColor& color);
 	void setIndexColor(const QColor& color);
 //	void setAxesColor(const QColor& color);

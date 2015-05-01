@@ -10,7 +10,7 @@
 #include <QSettings>
 #include <QMessageBox>
 
-PreferencePageGeneral::PreferencePageGeneral(QWidget *parent) :
+PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	PreferencePage(parent),
 	ui(new Ui::PreferencePageGeneral)
 {
@@ -21,7 +21,7 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget *parent) :
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
 	QLocale currentLocale(locale);
 	int locIndex = m_locales.indexOf(currentLocale);
-	if (locIndex != -1){
+	if (locIndex != -1) {
 		ui->languageComboBox->setCurrentIndex(locIndex);
 	}
 	QString workspace = settings.value("general/workspace", defaultWorkspace()).value<QString>();
@@ -38,7 +38,7 @@ PreferencePageGeneral::~PreferencePageGeneral()
 bool PreferencePageGeneral::checkSetting()
 {
 	QString workDir = ui->workDirWidget->dirname();
-	if (! iRIC::isAscii(workDir)){
+	if (! iRIC::isAscii(workDir)) {
 		QMessageBox::critical(this, tr("Error"), tr("Working directory contains non-ASCII characters."));
 		return false;
 	}
@@ -50,7 +50,7 @@ void PreferencePageGeneral::update()
 	QSettings settings;
 	QString oldWorkspace = settings.value("general/workspace", defaultWorkspace()).value<QString>();
 	QString newWorkspace = ui->workDirWidget->dirname();
-	if (oldWorkspace != newWorkspace){
+	if (oldWorkspace != newWorkspace) {
 		QMessageBox::warning(this, tr("Warning"), tr(
 													 "Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!"));
 	}
@@ -75,7 +75,7 @@ void PreferencePageGeneral::setupLanguageComboBox()
 	m_locales.append(QLocale(QLocale::Spanish));
 	m_locales.append(QLocale(QLocale::Russian));
 
-	for (QLocale loc : m_locales){
+	for (QLocale loc : m_locales) {
 		combo->addItem(QLocale::languageToString(loc.language()), QVariant(loc.name()));
 	}
 }

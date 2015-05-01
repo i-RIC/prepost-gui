@@ -8,7 +8,7 @@ class RawDataPolygonImporter : public RawDataImporter
 {
 	Q_OBJECT
 public:
-	RawDataPolygonImporter(RawDataCreator* creator) : RawDataImporter(creator){}
+	RawDataPolygonImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	const QStringList fileDialogFilters();
 	const QStringList acceptableExtensions();
 	bool importData(RawData* data, int index, QWidget* w);

@@ -3,20 +3,21 @@
 
 #include <QDialog>
 
-namespace Ui {
-    class ProjectTypeSelectDialog;
+namespace Ui
+{
+	class ProjectTypeSelectDialog;
 }
 
 class ProjectTypeSelectDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit ProjectTypeSelectDialog(QWidget *parent = nullptr);
-    ~ProjectTypeSelectDialog();
+	explicit ProjectTypeSelectDialog(QWidget* parent = nullptr);
+	~ProjectTypeSelectDialog();
 	bool folderProject();
 private:
-    Ui::ProjectTypeSelectDialog *ui;
+	Ui::ProjectTypeSelectDialog* ui;
 };
 
 #endif // PROJECTTYPESELECTDIALOG_H

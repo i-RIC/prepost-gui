@@ -11,7 +11,7 @@ class GUICOREDLL_EXPORT SolverDefinitionTranslator
 {
 public:
 	/// Constructor
-	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale){
+	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale) {
 		load(solverfolder, locale);
 	}
 	/// Returns translated string corresponsing to the source string

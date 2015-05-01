@@ -36,8 +36,8 @@ public:
 	Grid(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	/// Destructor
 	virtual ~Grid();
-	const QString& zoneName(){return m_zoneName;}
-	void setZoneName(const QString& name){m_zoneName = name;}
+	const QString& zoneName() {return m_zoneName;}
+	void setZoneName(const QString& name) {m_zoneName = name;}
 //	GridImporterFactory* importerFactory() const {return m_importerFactory;}
 //	GridExporterFactory* exporterFactory() const {return m_exporterFactory;}
 	void loadFromCgnsFile(const int fn);
@@ -53,11 +53,11 @@ public:
 	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return 0;}
 
 	/// The list of grid related conditions
-	QList<GridRelatedConditionContainer*>& gridRelatedConditions(){
+	QList<GridRelatedConditionContainer*>& gridRelatedConditions() {
 		return m_gridRelatedConditions;
 	}
 	/// Get grid related condition by name.
-	GridRelatedConditionContainer* gridRelatedCondition(const QString& name){
+	GridRelatedConditionContainer* gridRelatedCondition(const QString& name) {
 		return m_gridRelatedConditionNameMap.value(name);
 	}
 	void addGridRelatedCondition(GridRelatedConditionContainer* cond);
@@ -67,26 +67,26 @@ public:
 	}
 	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
-	virtual void setModified(){
+	virtual void setModified() {
 		m_isModified = true;
 		m_vtkGrid->Modified();
 	}
-	bool isModified(){return m_isModified;}
+	bool isModified() {return m_isModified;}
 	virtual const QStringList checkShape(QTextStream& stream);
-	virtual bool isValid(QTextStream& /*stream*/){return true;}
+	virtual bool isValid(QTextStream& /*stream*/) {return true;}
 	bool isCustomModified();
 	void setCustomModified(bool modified);
 	virtual void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
 	bool isMasked() const {return m_isMasked;}
 	SolverDefinitionGridType::GridType gridType() const {return m_gridType;}
-	void setParent(QObject *parent);
+	void setParent(QObject* parent);
 
 protected:
-	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
+	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 	bool loadGridRelatedConditions(int fn, int B, int Z);
 	bool saveGridRelatedConditions(int fn, int B, int Z);
-	static int zoneId(const QString &zonename, int fn, int B, cgsize_t sizes[9]);
+	static int zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9]);
 	vtkPointSet* m_vtkGrid;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredShapeAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;

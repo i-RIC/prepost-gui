@@ -7,7 +7,8 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorparticlegroupunstructureddataitem.h"
 
-namespace Ui {
+namespace Ui
+{
 	class Post2dWindowParticleUnstructuredSettingDialog;
 }
 
@@ -17,22 +18,22 @@ class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem;
 
 class Post2dWindowParticleUnstructuredSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
-	explicit Post2dWindowParticleUnstructuredSettingDialog(QWidget *parent = nullptr);
+	explicit Post2dWindowParticleUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowParticleUnstructuredSettingDialog();
-	void setDataItem(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item){
+	void setDataItem(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item) {
 		m_dataItem = item;
 	}
 	void setZoneData(PostZoneDataContainer* data);
-	void setActiveAvailable(bool available){m_activeAvailable = available;}
+	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
 	void setSolution(const QString& sol);
 	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
 	void setTimeSamplingRate(int sr);
 	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode){m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowUnstructuredParticleSetSetting>& settings){
+	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const QList<Post2dWindowUnstructuredParticleSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
@@ -40,8 +41,8 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode();
 	int timeSamplingRate();
 	int timeDivision();
-	StructuredGridRegion::RegionMode regionMode(){return m_regionMode;}
-	const QList<Post2dWindowUnstructuredParticleSetSetting>& settings(){return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
+	const QList<Post2dWindowUnstructuredParticleSetSetting>& settings() {return m_settings;}
 
 	void informButtonDown(const QVector2D& p);
 	void informButtonUp(const QVector2D& p);
@@ -72,7 +73,7 @@ private:
 	void applySettings();
 	void updateRemoveButtonStatus();
 
-	Ui::Post2dWindowParticleUnstructuredSettingDialog *ui;
+	Ui::Post2dWindowParticleUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* m_dataItem;
 	QList<QString> m_solutions;
 

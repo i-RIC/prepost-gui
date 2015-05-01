@@ -7,11 +7,11 @@
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
 
-Post3dWindowParticleStructuredSettingDialog::Post3dWindowParticleStructuredSettingDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::Post3dWindowParticleStructuredSettingDialog)
+Post3dWindowParticleStructuredSettingDialog::Post3dWindowParticleStructuredSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post3dWindowParticleStructuredSettingDialog)
 {
-		ui->setupUi(this);
+	ui->setupUi(this);
 
 	m_timeMode = Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
 	m_applying = false;
@@ -38,7 +38,7 @@ Post3dWindowParticleStructuredSettingDialog::Post3dWindowParticleStructuredSetti
 
 Post3dWindowParticleStructuredSettingDialog::~Post3dWindowParticleStructuredSettingDialog()
 {
-		delete ui;
+	delete ui;
 }
 
 void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -58,7 +58,7 @@ void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContai
 void Post3dWindowParticleStructuredSettingDialog::setSolution(const QString& sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
@@ -71,27 +71,27 @@ const QString Post3dWindowParticleStructuredSettingDialog::solution()
 void Post3dWindowParticleStructuredSettingDialog::setTimeMode(Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm)
 {
 	m_timeMode = tm;
-	if (m_timeMode == Post3dWindowNodeVectorParticleGroupDataItem::tmNormal){
+	if (m_timeMode == Post3dWindowNodeVectorParticleGroupDataItem::tmNormal) {
 		ui->timeSlider->setValue(m_skipNominations.count());
 	}
 }
 
 Post3dWindowNodeVectorParticleGroupDataItem::TimeMode Post3dWindowParticleStructuredSettingDialog::timeMode()
 {
-	if (ui->timeSlider->value() == m_skipNominations.count()){
+	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	} else if (ui->timeSlider->value() < m_skipNominations.count()){
+	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
 		return Post3dWindowNodeVectorParticleGroupDataItem::tmSkip;
-	} else{
+	} else {
 		return Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 {
-	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSkip){return;}
-	for (int i = 0; i < m_skipNominations.count(); ++i){
-		if (m_skipNominations.at(i) == sr){
+	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSkip) {return;}
+	for (int i = 0; i < m_skipNominations.count(); ++i) {
+		if (m_skipNominations.at(i) == sr) {
 			ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
 			return;
 		}
@@ -100,15 +100,15 @@ void Post3dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 
 int Post3dWindowParticleStructuredSettingDialog::timeSamplingRate()
 {
-	if (ui->timeSlider->value() >= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
 }
 
 void Post3dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 {
-	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide){return;}
-	for (int i = 0; i < m_subDivNominations.count(); ++i){
-		if (m_subDivNominations.at(i) == sd){
+	if (m_timeMode != Post3dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {return;}
+	for (int i = 0; i < m_subDivNominations.count(); ++i) {
+		if (m_subDivNominations.at(i) == sd) {
 			ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
 			return;
 		}
@@ -117,14 +117,14 @@ void Post3dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 
 int Post3dWindowParticleStructuredSettingDialog::timeDivision()
 {
-	if (ui->timeSlider->value() <= m_skipNominations.count()){return 1;}
+	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
 }
 
 void Post3dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
 {
 
-	if (index == -1 || index >= m_settings.count()){
+	if (index == -1 || index >= m_settings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
@@ -134,75 +134,75 @@ void Post3dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
 
 void Post3dWindowParticleStructuredSettingDialog::iMinChanged(int min)
 {
-	if (m_applying){return;}
-	if (ui->imaxSlider->value() < min){
+	if (m_applying) {return;}
+	if (ui->imaxSlider->value() < min) {
 		ui->imaxSlider->setValue(min);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.iMin = min - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::iMaxChanged(int max)
 {
-	if (m_applying){return;}
-	if (ui->iminSlider->value() > max){
+	if (m_applying) {return;}
+	if (ui->iminSlider->value() > max) {
 		ui->iminSlider->setValue(max);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.iMax = max - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::jMinChanged(int min)
 {
-	if (m_applying){return;}
-	if (ui->jmaxSlider->value() < min){
+	if (m_applying) {return;}
+	if (ui->jmaxSlider->value() < min) {
 		ui->jmaxSlider->setValue(min);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.jMin = min - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::jMaxChanged(int max)
 {
-	if (m_applying){return;}
-	if (ui->jminSlider->value() > max){
+	if (m_applying) {return;}
+	if (ui->jminSlider->value() > max) {
 		ui->jminSlider->setValue(max);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.jMax = max - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::kMinChanged(int min)
 {
-	if (m_applying){return;}
-	if (ui->kmaxSlider->value() < min){
+	if (m_applying) {return;}
+	if (ui->kmaxSlider->value() < min) {
 		ui->kmaxSlider->setValue(min);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.kMin = min - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::kMaxChanged(int max)
 {
-	if (m_applying){return;}
-	if (ui->kminSlider->value() > max){
+	if (m_applying) {return;}
+	if (ui->kminSlider->value() > max) {
 		ui->kminSlider->setValue(max);
 	}
-	if (m_activeSetting != nullptr){
+	if (m_activeSetting != nullptr) {
 		m_activeSetting->range.kMax = max - 1;
 	}
 }
 
 void Post3dWindowParticleStructuredSettingDialog::handleTimeSliderChange(int val)
 {
-	if (val < m_skipNominations.count()){
+	if (val < m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-	} else if (val > m_skipNominations.count()){
+	} else if (val > m_skipNominations.count()) {
 		ui->timeValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
 	} else {
 		ui->timeValueLabel->setText("1");
@@ -211,35 +211,35 @@ void Post3dWindowParticleStructuredSettingDialog::handleTimeSliderChange(int val
 
 void Post3dWindowParticleStructuredSettingDialog::handleSpaceSliderChange(int val)
 {
-	if (val < m_skipNominations.count()){
+	if (val < m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post3dWindowStructuredParticleSetSetting::smSkip;
 			m_activeSetting->spaceSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->spaceSlider->value() - 1);
 		}
-	} else if (val > m_skipNominations.count()){
+	} else if (val > m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post3dWindowStructuredParticleSetSetting::smSubdivide;
 			m_activeSetting->spaceDivision = m_subDivNominations.at(ui->spaceSlider->value() - m_skipNominations.count() - 1);
 		}
-	} else{
+	} else {
 		ui->spaceValueLabel->setText("1");
-		if (m_activeSetting != nullptr){
+		if (m_activeSetting != nullptr) {
 			m_activeSetting->spaceMode = Post3dWindowStructuredParticleSetSetting::smNormal;
 		}
 	}
 }
 
-void Post3dWindowParticleStructuredSettingDialog::colorChanged(const QColor &color)
+void Post3dWindowParticleStructuredSettingDialog::colorChanged(const QColor& color)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->color = color;
 }
 
 void Post3dWindowParticleStructuredSettingDialog::sizeChanged(int size)
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_activeSetting->size = size;
 }
 
@@ -247,7 +247,7 @@ void Post3dWindowParticleStructuredSettingDialog::setupNominations()
 {
 	int noms[] = {2, 3, 4, 5, 0};
 	int idx = 0;
-	while (noms[idx] != 0){
+	while (noms[idx] != 0) {
 		m_subDivNominations.append(noms[idx]);
 		m_skipNominations.append(noms[idx]);
 		++ idx;
@@ -268,11 +268,11 @@ void Post3dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 	SolverDefinitionGridType* gt = zoneData->gridType();
 	int num = pd->GetNumberOfArrays();
 	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr){continue;}
+		if (tmparray == nullptr) {continue;}
 		QString name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() <= 1){
+		if (tmparray->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;
 		}
@@ -280,7 +280,7 @@ void Post3dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 		m_solutions.append(name);
 	}
 	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() < 2){
+	if (m_solutions.count() < 2) {
 		// solution selection is needless.
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
@@ -289,7 +289,7 @@ void Post3dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 
 void Post3dWindowParticleStructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i){
+	for (int i = 0; i < m_settings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -299,7 +299,7 @@ void Post3dWindowParticleStructuredSettingDialog::setupSettingList()
 
 void Post3dWindowParticleStructuredSettingDialog::applySettings()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	m_applying = true;
 	ui->iminSlider->setValue(m_activeSetting->range.iMin + 1);
 	ui->imaxSlider->setValue(m_activeSetting->range.iMax + 1);
@@ -307,19 +307,19 @@ void Post3dWindowParticleStructuredSettingDialog::applySettings()
 	ui->jmaxSlider->setValue(m_activeSetting->range.jMax + 1);
 	ui->kminSlider->setValue(m_activeSetting->range.kMin + 1);
 	ui->kmaxSlider->setValue(m_activeSetting->range.kMax + 1);
-	if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smNormal){
+	if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smNormal) {
 		ui->spaceSlider->setValue(m_skipNominations.count());
 		handleSpaceSliderChange(m_skipNominations.count());
-	} else if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smSkip){
-		for (int i = 0; i < m_skipNominations.count(); ++i){
-			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate){
+	} else if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smSkip) {
+		for (int i = 0; i < m_skipNominations.count(); ++i) {
+			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate) {
 				ui->spaceSlider->setValue(m_skipNominations.count() - i - 1);
 				handleSpaceSliderChange(m_skipNominations.count() - i - 1);
 			}
 		}
-	} else if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smSubdivide){
-		for (int i = 0; i < m_subDivNominations.count(); ++i){
-			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision){
+	} else if (m_activeSetting->spaceMode == Post3dWindowStructuredParticleSetSetting::smSubdivide) {
+		for (int i = 0; i < m_subDivNominations.count(); ++i) {
+			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision) {
 				ui->spaceSlider->setValue(m_skipNominations.count() + i + 1);
 				handleSpaceSliderChange(m_skipNominations.count() + i + 1);
 			}
@@ -332,7 +332,7 @@ void Post3dWindowParticleStructuredSettingDialog::applySettings()
 
 void Post3dWindowParticleStructuredSettingDialog::addData()
 {
-	if (m_activeSetting == nullptr){return;}
+	if (m_activeSetting == nullptr) {return;}
 	Post3dWindowStructuredParticleSetSetting setting = *m_activeSetting;
 	m_settings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
@@ -348,10 +348,10 @@ void Post3dWindowParticleStructuredSettingDialog::removeData()
 	int current = ui->startPositionListWidget->currentRow();
 	ui->startPositionListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
-	if (item != nullptr){delete item;}
+	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_settings.removeAt(current);
-	if (current >= m_settings.count()){current = m_settings.count() - 1;}
+	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_settings[current]);
 	applySettings();

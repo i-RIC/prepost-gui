@@ -9,20 +9,21 @@ class SolverDefinitionGridType;
 class QTableWidgetItem;
 class QItemSelection;
 
-namespace Ui {
-    class Post2dWindowCellFlagSettingDialog;
+namespace Ui
+{
+	class Post2dWindowCellFlagSettingDialog;
 }
 
 class Post2dWindowCellFlagSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit Post2dWindowCellFlagSettingDialog(QWidget *parent = nullptr);
-    ~Post2dWindowCellFlagSettingDialog();
-	void setGridType(SolverDefinitionGridType* gt){m_gridType = gt;}
-	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings){
+	explicit Post2dWindowCellFlagSettingDialog(QWidget* parent = nullptr);
+	~Post2dWindowCellFlagSettingDialog();
+	void setGridType(SolverDefinitionGridType* gt) {m_gridType = gt;}
+	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings) {
 		m_settings = settings;
 		setupDialog();
 	}
@@ -37,7 +38,7 @@ private slots:
 	void handleItemEdit(QTableWidgetItem*);
 	void handleShownSelectionChange(const QItemSelection& selected, const QItemSelection& deselected);
 private:
-    Ui::Post2dWindowCellFlagSettingDialog *ui;
+	Ui::Post2dWindowCellFlagSettingDialog* ui;
 	SolverDefinitionGridType* m_gridType;
 	QList<Post2dWindowCellFlagSetting> m_settings;
 };

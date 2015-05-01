@@ -7,30 +7,32 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class PreProcessorGridAttributeMappingSettingTopEditDialog;
 }
 
-class PreProcessorGridAttributeMappingSettingTopEditDialog : public QDialog {
+class PreProcessorGridAttributeMappingSettingTopEditDialog : public QDialog
+{
 	Q_OBJECT
 public:
-	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget *parent = nullptr);
+	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget* parent = nullptr);
 	~PreProcessorGridAttributeMappingSettingTopEditDialog();
 	PreProcessorGridAttributeMappingMode::Mode mappingMode();
 	void setMappingMode(PreProcessorGridAttributeMappingMode::Mode mm);
 	RawDataPointmapMappingMode::Mode pointmapMappingMode();
 	void setPointmapMappingMode(RawDataPointmapMappingMode::Mode mm);
 
-	bool autoMode(){return m_autoMode;}
-	void setAutoMode(bool a){m_autoMode = a;}
-	double streamWiseLength(){return m_streamWiseLength;}
-	void setStreamWiseLength(double len){m_streamWiseLength = len;}
-	double crossStreamLength(){return m_crossStreamLength;}
-	void setCrossStreamLength(double len){m_crossStreamLength = len;}
-	int numExpansion(){return m_numExpansion;}
-	void setNumExpansion(int num){m_numExpansion = num;}
-	double weightExponent(){return m_weightExponent;}
-	void setWeightExponent(double exp){m_weightExponent = exp;}
+	bool autoMode() {return m_autoMode;}
+	void setAutoMode(bool a) {m_autoMode = a;}
+	double streamWiseLength() {return m_streamWiseLength;}
+	void setStreamWiseLength(double len) {m_streamWiseLength = len;}
+	double crossStreamLength() {return m_crossStreamLength;}
+	void setCrossStreamLength(double len) {m_crossStreamLength = len;}
+	int numExpansion() {return m_numExpansion;}
+	void setNumExpansion(int num) {m_numExpansion = num;}
+	double weightExponent() {return m_weightExponent;}
+	void setWeightExponent(double exp) {m_weightExponent = exp;}
 private slots:
 	void showDetailDialog();
 private:
@@ -39,7 +41,7 @@ private:
 	double m_crossStreamLength;
 	int m_numExpansion;
 	double m_weightExponent;
-	Ui::PreProcessorGridAttributeMappingSettingTopEditDialog *ui;
+	Ui::PreProcessorGridAttributeMappingSettingTopEditDialog* ui;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTEMAPPINGSETTINGTOPEDITDIALOG_H

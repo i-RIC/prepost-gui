@@ -14,13 +14,13 @@ class GCC_EXTERNALPROGRAM_EXPORT GridCreatingConditionCreatorExternalProgram : p
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorExternalProgram(const QString& folderName, const QLocale& locale);
-	~GridCreatingConditionCreatorExternalProgram(){}
+	~GridCreatingConditionCreatorExternalProgram() {}
 	/// Returns Grid Type.
 	SolverDefinitionGridType::GridType gridType() const {return m_gridType;}
 	/// Create grid creating condition instance.
-	GridCreatingCondition* create(ProjectDataItem *parent);
+	GridCreatingCondition* create(ProjectDataItem* parent);
 	/// Folder Name
-	const QString& folderName(){return m_folderName;}
+	const QString& folderName() {return m_folderName;}
 	// get the list of creators.
 	static QList<GridCreatingConditionCreator*> getList(const QLocale& locale, QWidget* mainWindow);
 

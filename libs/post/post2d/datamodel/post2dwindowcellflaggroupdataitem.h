@@ -11,10 +11,10 @@ struct Post2dWindowCellFlagSetting {
 	QColor color;
 	bool enabled;
 	bool operator <(const Post2dWindowCellFlagSetting& s) const {
-		if (attributeName != s.attributeName){
+		if (attributeName != s.attributeName) {
 			return attributeName < s.attributeName;
 		}
-		if (value != s.value){
+		if (value != s.value) {
 			return value < s.value;
 		}
 		return false;
@@ -31,14 +31,14 @@ public:
 	Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* parent);
 	void update();
 	bool hasTransparentPart();
-	void informSelection(VTKGraphicsView * v);
+	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode & node);
-	void doSaveToProjectMainFile(QXmlStreamWriter & writer);
+	void doLoadFromProjectMainFile(const QDomNode& node);
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	QDialog* propertyDialog(QWidget* /*parent*/);
 	void handlePropertyDialogAccepted(QDialog*);
 

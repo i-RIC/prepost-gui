@@ -2,7 +2,7 @@
 #include "ui_gridrelatednodeconditionpropertydialog.h"
 #include "../../scalarstocolors/lookuptableeditwidget.h"
 
-GridRelatedNodeConditionPropertyDialog::GridRelatedNodeConditionPropertyDialog(QWidget *parent) :
+GridRelatedNodeConditionPropertyDialog::GridRelatedNodeConditionPropertyDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridRelatedNodeConditionPropertyDialog)
 {
@@ -29,7 +29,7 @@ int GridRelatedNodeConditionPropertyDialog::numberOfDivision()
 {
 	ScalarsToColorsEditWidget* w = ui->scalarsToColorsWidget->widget();
 	LookupTableEditWidget* widget = dynamic_cast<LookupTableEditWidget*>(w);
-	if (widget != nullptr){
+	if (widget != nullptr) {
 		return widget->divisionNumber();
 	} else {
 		return 10;
@@ -40,7 +40,7 @@ void GridRelatedNodeConditionPropertyDialog::setNumberOfDivision(int n)
 {
 	ScalarsToColorsEditWidget* w = ui->scalarsToColorsWidget->widget();
 	LookupTableEditWidget* widget = dynamic_cast<LookupTableEditWidget*>(w);
-	if (widget != nullptr){
+	if (widget != nullptr) {
 		return widget->setDivisionNumber(n);
 	}
 }
@@ -49,7 +49,7 @@ void GridRelatedNodeConditionPropertyDialog::setScalarsToColorsEditWidget(Scalar
 {
 	ui->scalarsToColorsWidget->setWidget(widget);
 	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(widget);
-	if (ltWidget != nullptr){
+	if (ltWidget != nullptr) {
 		connect(ui->contourSettingWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ltWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
 	}
 
@@ -68,9 +68,9 @@ int GridRelatedNodeConditionPropertyDialog::opacityPercent()
 
 void GridRelatedNodeConditionPropertyDialog::handleContourChange()
 {
-	if (ui->contourSettingWidget->contour() == ContourSettingWidget::Isolines){
+	if (ui->contourSettingWidget->contour() == ContourSettingWidget::Isolines) {
 		ui->transparencyWidget->setDisabled(true);
-	}else{
+	} else {
 		ui->transparencyWidget->setEnabled(true);
 	}
 }

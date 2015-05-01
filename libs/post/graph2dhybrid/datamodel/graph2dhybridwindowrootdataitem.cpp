@@ -57,19 +57,19 @@ void Graph2dHybridWindowRootDataItem::setupStandardModel(QStandardItemModel* mod
 void Graph2dHybridWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode resultNode = iRIC::getChildNode(node, "CalculationResult");
-	if (! resultNode.isNull()){
+	if (! resultNode.isNull()) {
 		m_resultGroupItem->loadFromProjectMainFile(resultNode);
 	}
 	QDomNode resultCopyNode = iRIC::getChildNode(node, "CalculationResultCopy");
-	if (! resultCopyNode.isNull()){
+	if (! resultCopyNode.isNull()) {
 		m_resultCopyGroupItem->loadFromProjectMainFile(resultCopyNode);
 	}
 	QDomNode exteralNode = iRIC::getChildNode(node, "ExternalData");
-	if (! exteralNode.isNull()){
+	if (! exteralNode.isNull()) {
 		m_importDataGroupItem->loadFromProjectMainFile(exteralNode);
 	}
 	QDomNode markerNode = iRIC::getChildNode(node, "Markers");
-	if (! markerNode.isNull()){
+	if (! markerNode.isNull()) {
 		m_markerGroupItem->loadFromProjectMainFile(markerNode);
 	}
 	updateItemMap();

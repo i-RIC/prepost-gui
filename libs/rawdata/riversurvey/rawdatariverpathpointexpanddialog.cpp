@@ -9,7 +9,7 @@
 #include <QPushButton>
 #include <QUndoCommand>
 
-RawDataRiverPathPointExpandDialog::RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget *parent) :
+RawDataRiverPathPointExpandDialog::RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataRiverPathPointExpandDialog)
 {
@@ -19,18 +19,18 @@ RawDataRiverPathPointExpandDialog::RawDataRiverPathPointExpandDialog(RawDataRive
 	m_applyed = false;
 	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	bool minDistSet = false;
-	while (p != 0){
-		if (p->IsSelected){
+	while (p != 0) {
+		if (p->IsSelected) {
 			m_points.append(p);
 			double dist = p->crosssection().rightBank(true).position() - p->crosssection().leftBank(true).position();
-			if (! minDistSet || dist < m_minDistance){
+			if (! minDistSet || dist < m_minDistance) {
 				m_minDistance = dist;
 				minDistSet = true;
 			}
 		}
 		p = p->nextPoint();
 	}
-	if (m_points.count() == 1){
+	if (m_points.count() == 1) {
 		p = *(m_points.begin());
 		m_originalDistance = - p->crosssection().leftBank(true).position();
 	}
@@ -61,9 +61,9 @@ void RawDataRiverPathPointExpandDialog::initializeWidgets()
 
 void RawDataRiverPathPointExpandDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
-	}else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole){
+	} else if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ResetRole) {
 		doReset();
 	}
 }
@@ -72,24 +72,22 @@ class RawDataRiverPathPointExpandCommand : public QUndoCommand
 {
 public:
 	RawDataRiverPathPointExpandCommand(bool apply, QList<RawDataRiverPathPoint*>& points, QList<double> ratios, RawDataRiverSurvey* rs)
-		: QUndoCommand(RawDataRiverSurvey::tr("Expand Traversal Lines"))
-	{
+		: QUndoCommand(RawDataRiverSurvey::tr("Expand Traversal Lines")) {
 		m_apply = apply;
 		m_points = points;
-		for (int i = 0; i < points.count(); ++i){
+		for (int i = 0; i < points.count(); ++i) {
 			m_oldCrosssections.append(points[i]->crosssection().AltitudeInfo());
 			m_points[i]->crosssection().expand(ratios[i]);
 			m_newCrosssections.append(points[i]->crosssection().AltitudeInfo());
 		}
 		m_rs = rs;
 	}
-	void undo()
-	{
+	void undo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->crosssection().AltitudeInfo() = m_oldCrosssections[i];
 		}
-		if (! m_apply){
+		if (! m_apply) {
 			m_rs->headPoint()->updateAllXSecInterpolators();
 			m_rs->headPoint()->updateRiverShapeInterpolators();
 			m_rs->updateShapeData();
@@ -97,10 +95,9 @@ public:
 			m_rs->updateCrossectionWindows();
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_rs->m_gridThread->cancel();
-		for (int i = 0; i < m_points.count(); ++i){
+		for (int i = 0; i < m_points.count(); ++i) {
 			m_points[i]->crosssection().AltitudeInfo() = m_newCrosssections[i];
 		}
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -121,7 +118,7 @@ private:
 
 void RawDataRiverPathPointExpandDialog::accept()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -133,7 +130,7 @@ void RawDataRiverPathPointExpandDialog::accept()
 
 void RawDataRiverPathPointExpandDialog::reject()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->headPoint()->updateAllXSecInterpolators();
@@ -146,13 +143,13 @@ void RawDataRiverPathPointExpandDialog::reject()
 
 void RawDataRiverPathPointExpandDialog::distanceChanged()
 {
-	if (! ui->distanceRadioButton->isChecked()){return;}
-	if (m_points.count() == 1){
+	if (! ui->distanceRadioButton->isChecked()) {return;}
+	if (m_points.count() == 1) {
 		RawDataRiverPathPoint* p = m_points.at(0);
 		double ratio = getRatio(p);
 		ui->ratioEdit->setValue(ratio);
 		ui->incrementEdit->setValue((ratio - 1) * (p->crosssection().rightBank(true).position() - p->crosssection().leftBank(true).position()));
-	}else{
+	} else {
 		ui->incrementEdit->setText("");
 		ui->ratioEdit->setText("");
 	}
@@ -161,13 +158,13 @@ void RawDataRiverPathPointExpandDialog::distanceChanged()
 }
 void RawDataRiverPathPointExpandDialog::incrementChanged()
 {
-	if (! ui->incrementRadioButton->isChecked()){return;}
-	if (m_points.count() == 1){
+	if (! ui->incrementRadioButton->isChecked()) {return;}
+	if (m_points.count() == 1) {
 		RawDataRiverPathPoint* p = m_points.at(0);
 		double ratio = getRatio(p);
 		ui->ratioEdit->setValue(ratio);
 		ui->distanceEdit->setValue(m_originalDistance * ratio);
-	}else{
+	} else {
 		ui->ratioEdit->setText("");
 		ui->distanceEdit->setText("");
 	}
@@ -177,13 +174,13 @@ void RawDataRiverPathPointExpandDialog::incrementChanged()
 
 void RawDataRiverPathPointExpandDialog::ratioChanged()
 {
-	if (! ui->ratioRadioButton->isChecked()){return;}
+	if (! ui->ratioRadioButton->isChecked()) {return;}
 	RawDataRiverPathPoint* p = m_points.at(0);
 	double ratio = getRatio(p);
-	if (m_points.count() == 1){
+	if (m_points.count() == 1) {
 		ui->incrementEdit->setValue((ratio - 1) * (p->crosssection().rightBank(true).position() - p->crosssection().leftBank(true).position()));
 		ui->distanceEdit->setValue(m_originalDistance * ratio);
-	}else{
+	} else {
 		ui->incrementEdit->setText("");
 		ui->distanceEdit->setText("");
 	}
@@ -191,7 +188,7 @@ void RawDataRiverPathPointExpandDialog::ratioChanged()
 
 void RawDataRiverPathPointExpandDialog::apply()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -203,7 +200,7 @@ void RawDataRiverPathPointExpandDialog::apply()
 
 void RawDataRiverPathPointExpandDialog::doReset()
 {
-	if (m_applyed){
+	if (m_applyed) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_rs->headPoint()->updateRiverShapeInterpolators();
@@ -214,16 +211,17 @@ void RawDataRiverPathPointExpandDialog::doReset()
 	ui->ratioEdit->setValue(1);
 }
 
-double RawDataRiverPathPointExpandDialog::getRatio(RawDataRiverPathPoint* p){
+double RawDataRiverPathPointExpandDialog::getRatio(RawDataRiverPathPoint* p)
+{
 	double ratio = 0;
-	if (ui->incrementRadioButton->isChecked()){
+	if (ui->incrementRadioButton->isChecked()) {
 		double increment = ui->incrementEdit->value();
 		double width = p->crosssection().rightBank(true).position() - p->crosssection().leftBank(true).position();
 		ratio = (width + increment) / width;
-	}else if (ui->distanceRadioButton->isChecked()){
+	} else if (ui->distanceRadioButton->isChecked()) {
 		double dist = ui->distanceEdit->value();
 		ratio = - dist / p->crosssection().leftBank(true).position();
-	}else{
+	} else {
 		// ratio
 		ratio = ui->ratioEdit->value();
 	}
@@ -234,13 +232,14 @@ double RawDataRiverPathPointExpandDialog::getRatio(RawDataRiverPathPoint* p){
 void RawDataRiverPathPointExpandDialog::getRatios(QList<double>& ratios)
 {
 	ratios.clear();
-	for (auto it = m_points.begin(); it != m_points.end(); ++it){
+	for (auto it = m_points.begin(); it != m_points.end(); ++it) {
 		double r = getRatio(*it);
 		ratios.append(r);
 	}
 }
 
-void RawDataRiverPathPointExpandDialog::updateButtonStatus(bool enable){
+void RawDataRiverPathPointExpandDialog::updateButtonStatus(bool enable)
+{
 	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(enable);
 	ui->buttonBox->button(QDialogButtonBox::Apply)->setEnabled(enable);
 }

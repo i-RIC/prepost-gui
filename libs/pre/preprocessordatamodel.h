@@ -52,7 +52,7 @@ public:
 	bool gridEdited();
 	void toggleGridEditFlag();
 	bool isInputConditionSet();
-	MouseBoundingBox* mouseBoundingBox(){return m_mouseBoundingBox;}
+	MouseBoundingBox* mouseBoundingBox() {return m_mouseBoundingBox;}
 	const QList<QMenu*>& additionalMenus() const {
 		return m_additionalMenus;
 	}
@@ -65,8 +65,8 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
-	PreProcessorRawDataTopDataItemInterface* rawDataTopDataItem(const QString &type) const;
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString &typeName, const QString& zoneName) const;
+	PreProcessorRawDataTopDataItemInterface* rawDataTopDataItem(const QString& type) const;
+	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const;
 	void applyOffset(double x, double y);
 
 public slots:
@@ -76,7 +76,7 @@ public slots:
 	void setupAdditinalMenus();
 
 protected slots:
-	virtual void handleObjectBrowserSelectionChange(){
+	virtual void handleObjectBrowserSelectionChange() {
 		setupAdditinalMenus();
 	}
 	void setupGridCreationMenuContent();
@@ -92,7 +92,7 @@ private:
 	void importCalcConditionFromOtherProject(const QString& fname);
 	void importCalcConditionFromCGNS(const QString& fname);
 
-	GraphicsWindowRootDataItem* rootDataItem(){return m_rootDataItem;}
+	GraphicsWindowRootDataItem* rootDataItem() {return m_rootDataItem;}
 	void setupRawDataAddActions(PreProcessorRawDataGroupDataItem* item);
 	void setupRawDataMenus();
 	QMenu* setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* gcItem);

@@ -8,7 +8,7 @@
 
 #include <vtkRenderer.h>
 
-PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo *image, PreProcessorDataItem *parent)
+PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent)
 	: PreProcessorDataItem("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	m_standardItem->setText(image->caption());
@@ -18,7 +18,7 @@ PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(Backgro
 	image->setPreProcessorActor(m_actor);
 	renderer()->AddActor(m_actor);
 	m_actorCollection->AddItem(m_actor);
-	if (image->visible()){
+	if (image->visible()) {
 		m_standardItem->setCheckState(Qt::Checked);
 	} else {
 		m_standardItem->setCheckState(Qt::Unchecked);
@@ -54,7 +54,7 @@ void PreProcessorBackgroundImageDataItem::mouseReleaseEvent(QMouseEvent* event, 
 	m_imageInfo->mouseReleaseEvent(m_actor, event, v);
 }
 
-void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserView *view)
+void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
 {
 	QStandardItem* parentItem = dynamic_cast<PreProcessorDataItem*>(parent())->standardItem();
 	bool isFirst = (m_standardItem->index().row() == 0);
@@ -63,7 +63,7 @@ void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserV
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void PreProcessorBackgroundImageDataItem::assignActionZValues(const ZDepthRange &range)
+void PreProcessorBackgroundImageDataItem::assignActionZValues(const ZDepthRange& range)
 {
 	double position[3];
 	m_actor->GetPosition(position);

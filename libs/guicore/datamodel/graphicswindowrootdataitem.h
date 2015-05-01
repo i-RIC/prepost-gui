@@ -27,10 +27,10 @@ public:
 	void closeCgnsFile();
 
 protected:
-	bool isAncientChecked(){return true;}
-	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
-	GraphicsWindowDataModel* dataModel(){return m_dataModel;}
+	bool isAncientChecked() {return true;}
+	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	GraphicsWindowDataModel* dataModel() {return m_dataModel;}
 
 protected:
 	QMainWindow* m_mainWindow;

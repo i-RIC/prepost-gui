@@ -13,7 +13,7 @@ public:
 	/// constructor
 	PreProcessorWindowInterface(QWidget* widget);
 	/// destructor
-	~PreProcessorWindowInterface(){}
+	~PreProcessorWindowInterface() {}
 
 	virtual const PreProcessorDataModelInterface* dataModel() const = 0;
 	virtual PreProcessorDataModelInterface* dataModel() = 0;

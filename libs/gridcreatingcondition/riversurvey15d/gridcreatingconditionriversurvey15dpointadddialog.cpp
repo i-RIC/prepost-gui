@@ -7,7 +7,7 @@
 
 #include <QUndoCommand>
 
-GridCreatingConditionRiverSurvey15DPointAddDialog::GridCreatingConditionRiverSurvey15DPointAddDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget *parent) :
+GridCreatingConditionRiverSurvey15DPointAddDialog::GridCreatingConditionRiverSurvey15DPointAddDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionRiverSurvey15DPointAddDialog)
 {
@@ -28,7 +28,7 @@ GridCreatingConditionRiverSurvey15DPointAddDialog::~GridCreatingConditionRiverSu
 
 void GridCreatingConditionRiverSurvey15DPointAddDialog::handleButtonClick(QAbstractButton* button)
 {
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole){
+	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
 		apply();
 	}
 }
@@ -37,33 +37,30 @@ class GridCreatingConditionRiverSurvey15DPointAddCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionRiverSurvey15DPointAddCommand(bool apply, RawDataRiverPathPoint::CtrlPointsAddMethod method, GridCreatingConditionRiverSurvey15D* cond)
-		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Add Division Points"))
-	{
+		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Add Division Points")) {
 		m_apply = apply;
 		m_condition = cond;
 		m_selectedZone = cond->m_selectedZone;
 		buildPoints(method);
 	}
-	void undo()
-	{
+	void undo() {
 		m_before.restore();
-		if (! m_apply){
+		if (! m_apply) {
 			m_condition->updateShapeData();
 			m_condition->renderGraphicsView();
 		} else {
 			m_condition->m_selectedZone = m_selectedZone;
 		}
 	}
-	void redo()
-	{
+	void redo() {
 		m_after.restore();
 		m_condition->m_selectedZone.point = nullptr;
 		m_condition->updateShapeData();
 		m_condition->renderGraphicsView();
 	}
 private:
-	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method){
-		switch (m_condition->m_selectedZone.position){
+	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method) {
+		switch (m_condition->m_selectedZone.position) {
 		case RawDataRiverPathPoint::zposCenterToLeft:
 		case RawDataRiverPathPoint::zposCenterToRight:
 		case RawDataRiverPathPoint::zposLeftBank:
@@ -88,7 +85,7 @@ private:
 
 void GridCreatingConditionRiverSurvey15DPointAddDialog::accept()
 {
-	if (m_applied){
+	if (m_applied) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -101,7 +98,7 @@ void GridCreatingConditionRiverSurvey15DPointAddDialog::accept()
 
 void GridCreatingConditionRiverSurvey15DPointAddDialog::reject()
 {
-	if (m_applied){
+	if (m_applied) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 		m_condition->updateShapeData();
@@ -113,7 +110,7 @@ void GridCreatingConditionRiverSurvey15DPointAddDialog::reject()
 
 void GridCreatingConditionRiverSurvey15DPointAddDialog::apply()
 {
-	if (m_applied){
+	if (m_applied) {
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
@@ -126,9 +123,9 @@ RawDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurvey15DPo
 {
 	RawDataRiverPathPoint::CtrlPointsAddMethod method;
 	method.number = ui->divNumSpinBox->value() - 1;
-	if (ui->uniformRadioButton->isChecked()){
+	if (ui->uniformRadioButton->isChecked()) {
 		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
-	} else if (ui->equalRatioRadioButton->isChecked()){
+	} else if (ui->equalRatioRadioButton->isChecked()) {
 		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
 		method.param = ui->ratioSpinBox->value();
 	}

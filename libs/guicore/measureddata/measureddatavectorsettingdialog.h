@@ -5,23 +5,25 @@
 
 #include "../project/measureddata.h"
 
-namespace Ui {
+namespace Ui
+{
 	class MeasuredDataVectorSettingDialog;
 }
 
-class MeasuredDataVectorSettingDialog : public QDialog {
+class MeasuredDataVectorSettingDialog : public QDialog
+{
 	Q_OBJECT
 
 public:
-	explicit MeasuredDataVectorSettingDialog(QWidget *parent = nullptr);
+	explicit MeasuredDataVectorSettingDialog(QWidget* parent = nullptr);
 	~MeasuredDataVectorSettingDialog();
-	void setData(MeasuredData *data);
+	void setData(MeasuredData* data);
 	bool isEnabled() const;
 	void setSolution(const QString& sol);
 	const QString solution();
 	void setScalarValue(const QString& scalar);
 	const QString scalarValue();
-	void setColor(const QColor &color);
+	void setColor(const QColor& color);
 	const QColor color() const;
 
 	void setLengthMode(MeasuredData::ArrowLengthMode lm);
@@ -40,7 +42,7 @@ private:
 	void setupSolutionComboBox(MeasuredData* data);
 	QList<QString> m_solutions;
 	QList<QString> m_scalars;
-	Ui::MeasuredDataVectorSettingDialog *ui;
+	Ui::MeasuredDataVectorSettingDialog* ui;
 };
 
 #endif // MEASUREDDATAVECTORSETTINGDIALOG_H

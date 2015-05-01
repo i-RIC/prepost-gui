@@ -15,11 +15,11 @@ class PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGrid
 	Q_OBJECT
 public:
 	/// Constructor
-	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem * parent);
+	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* parent);
 	/// The caption of the dataitem.
-	const QString& caption(){return m_caption;}
+	const QString& caption() {return m_caption;}
 	/// The name of the zone that stores the grid information.
-	const QString& zoneName(){return m_zoneName;}
+	const QString& zoneName() {return m_zoneName;}
 	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const {
 		return m_creatingConditionDataItem;
 	}
@@ -41,7 +41,7 @@ public slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void saveExternalData(const QString &);
+	void saveExternalData(const QString&);
 private:
 	QAction* m_deleteAction;
 	QString m_caption;

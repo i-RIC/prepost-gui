@@ -22,28 +22,28 @@ Graph2dHybridWindowDataModel* Graph2dHybridWindowDataItem::dataModel()
 
 
 void Graph2dHybridWindowDataItem::buildData(
-		const QVector<double>& xvals, const QVector<double>& yvals,
-		const Graph2dHybridWindowResultSetting &s1,
-		const Graph2dHybridWindowResultSetting::Setting& s2,
-		QVector<double>& modxvals, QVector<double>& modyvals)
+	const QVector<double>& xvals, const QVector<double>& yvals,
+	const Graph2dHybridWindowResultSetting& s1,
+	const Graph2dHybridWindowResultSetting::Setting& s2,
+	QVector<double>& modxvals, QVector<double>& modyvals)
 {
 	QVector<double> indexvals;
 	QVector<double> srcxvals;
 	bool xIsIndex = false;
-	for (int i = 0; i < xvals.count(); ++i){
+	for (int i = 0; i < xvals.count(); ++i) {
 		indexvals.append(i + 1);
 	}
-	if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime){
+	if (s1.xAxisMode() == Graph2dHybridWindowResultSetting::xaTime) {
 		xIsIndex = s1.timeValueType() == Graph2dHybridWindowResultSetting::tvtTimeStep;
 	} else {
 		xIsIndex = s1.positionValueType() == Graph2dHybridWindowResultSetting::pvtIndex;
 	}
-	if (xIsIndex){
+	if (xIsIndex) {
 		srcxvals = indexvals;
 	} else {
 		srcxvals = xvals;
 	}
-	if (s2.isBarChart()){
+	if (s2.isBarChart()) {
 		buildBarXYValues(srcxvals, yvals, modxvals, modyvals);
 	} else {
 		modxvals = srcxvals;
@@ -55,22 +55,22 @@ void Graph2dHybridWindowDataItem::buildXY(const QVector<double>& xvals, const QV
 {
 	*x = new double[xvals.size()];
 	*y = new double[yvals.size()];
-	for (int i = 0; i < xvals.size(); ++i){
+	for (int i = 0; i < xvals.size(); ++i) {
 		*(*x + i) = xvals.at(i);
 		*(*y + i) = yvals.at(i);
 	}
 }
 
 void Graph2dHybridWindowDataItem::buildBarXYValues(
-		const QVector<double>& xvals, const QVector<double>& yvals,
-		QVector<double>& modxvals, QVector<double>& modyvals)
+	const QVector<double>& xvals, const QVector<double>& yvals,
+	QVector<double>& modxvals, QVector<double>& modyvals)
 {
 	modxvals.reserve(xvals.size() * 3 + 1);
 	modyvals.reserve(yvals.size() * 3 + 1);
 	double firstx = 0;
-	if (xvals.count() == 1){
+	if (xvals.count() == 1) {
 		firstx = xvals.at(0) - 1;
-	} else if (xvals.count() > 1){
+	} else if (xvals.count() > 1) {
 		double firstwidth = xvals.at(1) - xvals.at(0);
 		firstx = xvals.at(0) - firstwidth;
 	}
@@ -78,7 +78,7 @@ void Graph2dHybridWindowDataItem::buildBarXYValues(
 	modxvals.append(xstart);
 	modyvals.append(0);
 
-	for (int i = 0; i < xvals.size(); ++i){
+	for (int i = 0; i < xvals.size(); ++i) {
 		double xend = xvals.at(i);
 		double yval = yvals.at(i);
 		double xdelta = 0;

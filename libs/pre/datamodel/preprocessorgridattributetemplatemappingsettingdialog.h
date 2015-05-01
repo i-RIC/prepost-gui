@@ -3,17 +3,18 @@
 
 #include <QDialog>
 
-namespace Ui {
-    class PreProcessorGridAttributeTemplateMappingSettingDialog;
+namespace Ui
+{
+	class PreProcessorGridAttributeTemplateMappingSettingDialog;
 }
 
 class PreProcessorGridAttributeTemplateMappingSettingDialog : public QDialog
 {
-    Q_OBJECT
+	Q_OBJECT
 
 public:
-    explicit PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget *parent = nullptr);
-    ~PreProcessorGridAttributeTemplateMappingSettingDialog();
+	explicit PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget* parent = nullptr);
+	~PreProcessorGridAttributeTemplateMappingSettingDialog();
 
 	bool autoMode();
 	void setAutoMode(bool a);
@@ -26,7 +27,7 @@ public:
 	double weightExponent();
 	void setWeightExponent(double exp);
 private:
-    Ui::PreProcessorGridAttributeTemplateMappingSettingDialog *ui;
+	Ui::PreProcessorGridAttributeTemplateMappingSettingDialog* ui;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTETEMPLATEMAPPINGSETTINGDIALOG_H

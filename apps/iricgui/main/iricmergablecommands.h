@@ -1,7 +1,8 @@
 #ifndef IRICMERGABLECOMMANDS_H
 #define IRICMERGABLECOMMANDS_H
 
-namespace iRIC {
+namespace iRIC
+{
 	enum MergableCommand {
 		RawDataRiverPathPointTranslate,
 		RawDataRiverPathPointMouseRotate,

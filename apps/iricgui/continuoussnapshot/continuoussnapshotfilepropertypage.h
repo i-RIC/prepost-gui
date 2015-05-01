@@ -5,14 +5,17 @@
 
 class ContinuousSnapshotWizard;
 
-namespace Ui {
+namespace Ui
+{
 	class ContinuousSnapshotFilePropertyPage;
 }
 
-class ContinuousSnapshotFilePropertyPage : public QWizardPage {
+class ContinuousSnapshotFilePropertyPage : public QWizardPage
+{
 	Q_OBJECT
+
 public:
-	ContinuousSnapshotFilePropertyPage(QWidget *parent = nullptr);
+	ContinuousSnapshotFilePropertyPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotFilePropertyPage();
 
 	void initializePage();
@@ -22,7 +25,7 @@ private:
 	ContinuousSnapshotWizard* m_wizard;
 	QStringList m_extensionList;
 
-	Ui::ContinuousSnapshotFilePropertyPage *ui;
+	Ui::ContinuousSnapshotFilePropertyPage* ui;
 };
 
 #endif // CONTINUOUSSNAPSHOTFILEPROPERTYPAGE_H

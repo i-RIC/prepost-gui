@@ -9,7 +9,7 @@ class GCC_TRIANGLE_EXPORT GridCreatingConditionCreatorTriangle : public GridCrea
 	Q_OBJECT
 public:
 	GridCreatingConditionCreatorTriangle();
-	~GridCreatingConditionCreatorTriangle(){}
+	~GridCreatingConditionCreatorTriangle() {}
 	// temporary
 	SolverDefinitionGridType::GridType gridType() const {return SolverDefinitionGridType::gtUnstructured2DGrid;}
 	GridCreatingCondition* create(ProjectDataItem* parent);

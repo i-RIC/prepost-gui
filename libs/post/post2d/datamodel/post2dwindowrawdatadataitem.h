@@ -9,10 +9,10 @@ class Post2dWindowRawDataDataItem : public RawDataProxyDataItem
 {
 	Q_OBJECT
 public:
-	Post2dWindowRawDataDataItem(GraphicsWindowDataItem * parent);
+	Post2dWindowRawDataDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowRawDataDataItem();
 	void setRawDataProxy(RawDataProxy* proxy);
-	RawDataProxy* rawDataProxy(){return m_rawDataProxy;}
+	RawDataProxy* rawDataProxy() {return m_rawDataProxy;}
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void updateZDepthRangeItemCount();

@@ -25,7 +25,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, Graphic
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr){
+	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr) {
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -34,7 +34,7 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const Q
 	: ProjectDataItem(parent)
 {
 	m_standardItem = new QStandardItem(icon, itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr){
+	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr) {
 		parent->standardItem()->appendRow(m_standardItem);
 	}
 	init();
@@ -47,34 +47,35 @@ GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent)
 	init();
 }
 
-GraphicsWindowDataItem::~GraphicsWindowDataItem(){
+GraphicsWindowDataItem::~GraphicsWindowDataItem()
+{
 	// delete all child items.
 	m_isDestructing = true;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		delete *it;
 	}
 	ProjectDataItem* tmp_parent = parent();
-	if (tmp_parent != nullptr){
+	if (tmp_parent != nullptr) {
 		GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(tmp_parent);
-		if (p != nullptr){p->unregisterChild(this);}
+		if (p != nullptr) {p->unregisterChild(this);}
 	}
 	m_isDestructing = false;
 
 	// remove the item from QStandardItemModel.
 	QStandardItem* item = m_standardItem;
-	if (item != nullptr){
-		if (item->parent() == nullptr || item->parent()->row() == -1){
+	if (item != nullptr) {
+		if (item->parent() == nullptr || item->parent()->row() == -1) {
 			// maybe this is the top level item of the model
 			QStandardItemModel* model = dataModel()->itemModel();
 			QStandardItem* i = model->item(item->row());
-			if (i == item){
+			if (i == item) {
 				// yes, it is!
 				dataModel()->itemModel()->removeRow(item->row());
 			}
-		}else{
-			if (item->parent() != nullptr){
+		} else {
+			if (item->parent() != nullptr) {
 				QStandardItem* i = item->parent()->child(item->row());
-				if (i == item){
+				if (i == item) {
 					item->parent()->removeRow(item->row());
 				}
 			}
@@ -86,24 +87,24 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem(){
 
 bool GraphicsWindowDataItem::isEnabled()
 {
-	if (m_standardItem == nullptr){return false;}
+	if (m_standardItem == nullptr) {return false;}
 	return (m_standardItem->checkState() == Qt::Checked);
 }
 
 void GraphicsWindowDataItem::setEnabled(bool enabled)
 {
-	if (m_standardItem == nullptr){return;}
-	if (enabled){
+	if (m_standardItem == nullptr) {return;}
+	if (enabled) {
 		m_standardItem->setCheckState(Qt::Checked);
-	}else{
+	} else {
 		m_standardItem->setCheckState(Qt::Unchecked);
 	}
 }
 
 void GraphicsWindowDataItem::unregisterChild(GraphicsWindowDataItem* child)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
-		if (*it == child){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		if (*it == child) {
 			m_childItems.erase(it);
 			return;
 		}
@@ -112,7 +113,7 @@ void GraphicsWindowDataItem::unregisterChild(GraphicsWindowDataItem* child)
 
 void GraphicsWindowDataItem::init()
 {
-	if (m_standardItem){
+	if (m_standardItem) {
 		m_standardItem->setEditable(false);
 	}
 	m_standardItemCopy = nullptr;
@@ -129,53 +130,53 @@ void GraphicsWindowDataItem::init()
 
 void GraphicsWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, GraphicsWindowDataItem*>& map)
 {
-	if (m_standardItem != nullptr){
+	if (m_standardItem != nullptr) {
 		map.insert(m_standardItem, this);
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->innerUpdateItemMap(map);
 	}
 }
 
 void GraphicsWindowDataItem::handleStandardItemChange()
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack::instance().push(new GraphicsWindowDataItemStandardItemChangeCommand(this));
 }
 
 void GraphicsWindowDataItem::loadFromCgnsFile(const int fn)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->loadFromCgnsFile(fn);
 	}
 }
 
 void GraphicsWindowDataItem::saveToCgnsFile(const int fn)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->saveToCgnsFile(fn);
 	}
 }
 
 void GraphicsWindowDataItem::closeCgnsFile()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->closeCgnsFile();
 	}
 }
 
 void GraphicsWindowDataItem::loadCheckState(const QDomNode& node)
 {
-	if (m_standardItem == nullptr){return;}
-	if (m_standardItem->isCheckable()){
+	if (m_standardItem == nullptr) {return;}
+	if (m_standardItem->isCheckable()) {
 		m_standardItem->setCheckState(static_cast<Qt::CheckState>(node.toElement().attribute("checkState", "0").toInt()));
 	}
 }
 
 void GraphicsWindowDataItem::saveCheckState(QXmlStreamWriter& writer)
 {
-	if (m_standardItem == nullptr){return;}
-	if (m_standardItem->isCheckable()){
+	if (m_standardItem == nullptr) {return;}
+	if (m_standardItem->isCheckable()) {
 		QString checkState;
 		checkState.setNum(m_standardItem->checkState());
 		writer.writeAttribute("checkState", checkState);
@@ -190,29 +191,29 @@ void GraphicsWindowDataItem::loadExpandState(const QDomNode& node)
 void GraphicsWindowDataItem::saveExpandState(QXmlStreamWriter& writer)
 {
 	QString strExpanded;
-	if (m_isExpanded){
+	if (m_isExpanded) {
 		strExpanded = "true";
-	}else{
+	} else {
 		strExpanded = "false";
 	}
 	writer.writeAttribute("isExpanded", strExpanded);
 }
 void GraphicsWindowDataItem::updateExpandState(QTreeView* view)
 {
-	if (m_standardItem != nullptr){
+	if (m_standardItem != nullptr) {
 		m_isExpanded = view->isExpanded(m_standardItem->index());
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->updateExpandState(view);
 	}
 }
 
 void GraphicsWindowDataItem::reflectExpandState(QTreeView* view)
 {
-	if (m_standardItem != nullptr){
+	if (m_standardItem != nullptr) {
 		view->setExpanded(m_standardItem->index(), m_isExpanded);
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->reflectExpandState(view);
 	}
 }
@@ -249,10 +250,10 @@ void GraphicsWindowDataItem::updateVisibilityWithoutRendering()
 void GraphicsWindowDataItem::updateVisibility(bool visible)
 {
 	bool my_visible = true;
-	if (m_standardItem == nullptr){
+	if (m_standardItem == nullptr) {
 		my_visible = true;
-	}else if (m_standardItem->isCheckable()){
-		switch (m_standardItem->checkState()){
+	} else if (m_standardItem->isCheckable()) {
+		switch (m_standardItem->checkState()) {
 		case Qt::Checked:
 		case Qt::PartiallyChecked:
 			my_visible = true;
@@ -267,7 +268,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 	it->GoToFirstItem();
 	// update the visibility of actors those are handled
 	// by this instance.
-	while (!it->IsDoneWithTraversal()){
+	while (!it->IsDoneWithTraversal()) {
 		vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
 		actor->SetVisibility(visible);
 		it->GoToNextItem();
@@ -278,7 +279,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 	it->GoToFirstItem();
 	// update the visibility of actors those are handled
 	// by this instance.
-	while (!it->IsDoneWithTraversal()){
+	while (!it->IsDoneWithTraversal()) {
 		vtkActor2D* actor = vtkActor2D::SafeDownCast(it->GetCurrentObject());
 		actor->SetVisibility(visible);
 		it->GoToNextItem();
@@ -287,7 +288,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 
 	// cascade to update the visibility of actors those are
 	// handled by the child instances.
-	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it){
+	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
 		(*c_it)->updateVisibility(visible);
 	}
 }
@@ -310,8 +311,8 @@ QMainWindow* GraphicsWindowDataItem::mainWindow()
 bool GraphicsWindowDataItem::isAncientChecked()
 {
 	QStandardItem* i = dynamic_cast<GraphicsWindowDataItem*>(parent())->m_standardItem;
-	if (i == nullptr){return true;}
-	if (i->isCheckable() && i->checkState() == Qt::Unchecked){
+	if (i == nullptr) {return true;}
+	if (i->isCheckable() && i->checkState() == Qt::Unchecked) {
 		return false;
 	}
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->isAncientChecked();
@@ -327,8 +328,8 @@ void GraphicsWindowDataItem::moveUp()
 
 	// reorder the m_childList of parent.
 	GraphicsWindowDataItem* tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
-	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
-		if ((*it) == this){
+	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it) {
+		if ((*it) == this) {
 			auto it2 = it;
 			-- it2;
 			tmpparent->m_childItems.erase(it);
@@ -351,8 +352,8 @@ void GraphicsWindowDataItem::moveDown()
 
 	// reorder the m_childList of parent.
 	GraphicsWindowDataItem* tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
-	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it){
-		if ((*it) == this){
+	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it) {
+		if ((*it) == this) {
 			auto it2 = it;
 			++ it2;
 			++ it2;
@@ -369,9 +370,9 @@ void GraphicsWindowDataItem::moveDown()
 void GraphicsWindowDataItem::showPropertyDialog()
 {
 	QDialog* propDialog = propertyDialog(mainWindow());
-	if (propDialog == nullptr){return;}
+	if (propDialog == nullptr) {return;}
 	int result = propDialog->exec();
-	if (result == QDialog::Accepted){
+	if (result == QDialog::Accepted) {
 		handlePropertyDialogAccepted(propDialog);
 	}
 	delete propDialog;
@@ -391,29 +392,29 @@ void GraphicsWindowDataItem::updateZDepthRange()
 
 void GraphicsWindowDataItem::assignActionZValues(const ZDepthRange& range)
 {
-	if (m_childItems.count() == 0){return;}
+	if (m_childItems.count() == 0) {return;}
 
 	/// the default behavior is to set ZDepthRanges to child items.
 	double rangeWidth = range.width();
 	double divNum = 0;
 	divNum += m_childItems.count() - 1;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
-		if (itemCount > 0){
+		if (itemCount > 0) {
 			divNum += itemCount;
 		}
 	}
-	if (divNum == 0){divNum = 1;}
+	if (divNum == 0) {divNum = 1;}
 	double divWidth = rangeWidth / divNum;
 	double max = range.max();
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
 		int itemCount2 = 0;
-		if (itemCount > 0){
+		if (itemCount > 0) {
 			itemCount2 = itemCount;
 		}
 		double min = max - itemCount2 * divWidth;
-		if (min < range.min()){min = range.min();}
+		if (min < range.min()) {min = range.min();}
 		ZDepthRange r = (*it)->zDepthRange();
 		r.setMin(min);
 		r.setMax(max);
@@ -426,7 +427,7 @@ QStringList GraphicsWindowDataItem::containedFiles()
 {
 	QStringList ret;
 	ret << ProjectDataItem::containedFiles();
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		ret << (*it)->containedFiles();
 	}
 	return ret;
@@ -436,7 +437,7 @@ void GraphicsWindowDataItem::updateZDepthRangeItemCount()
 {
 	// update the ZDepthRange itemcount of child items first.
 	int sum = 0;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->updateZDepthRangeItemCount();
 		sum += (*it)->zDepthRange().itemCount();
 	}
@@ -451,7 +452,8 @@ void GraphicsWindowDataItem::update2Ds()
 	}
 }
 
-void GraphicsWindowDataItem::updateZScale(double scale){
+void GraphicsWindowDataItem::updateZScale(double scale)
+{
 	innerUpdateZScale(scale);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		(*it)->updateZScale(scale);
@@ -483,15 +485,15 @@ void GraphicsWindowDataItem::viewOperationEndedGlobal(VTKGraphicsView* v)
 
 void GraphicsWindowDataItem::applyOffset(double x, double y)
 {
-    doApplyOffset(x, y);
-    for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-        GraphicsWindowDataItem* item = *it;
-        item->applyOffset(x, y);
-    }
+	doApplyOffset(x, y);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		GraphicsWindowDataItem* item = *it;
+		item->applyOffset(x, y);
+	}
 }
 
 QVector2D GraphicsWindowDataItem::getOffset()
 {
-    GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(parent());
-    return p->getOffset();
+	GraphicsWindowDataItem* p = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	return p->getOffset();
 }

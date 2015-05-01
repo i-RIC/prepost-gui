@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverPathPointInsertDialog;
 }
 
@@ -18,7 +19,7 @@ class RawDataRiverPathPointInsertDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget *parent = nullptr);
+	explicit RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointInsertDialog();
 public slots:
 	void accept();
@@ -34,7 +35,7 @@ private:
 	void setupComboBox();
 	void updatePoint();
 	void apply();
-	Ui::RawDataRiverPathPointInsertDialog *ui;
+	Ui::RawDataRiverPathPointInsertDialog* ui;
 	RawDataRiverPathPoint* m_insertTarget;
 
 	RawDataRiverPathPoint* m_newPoint;

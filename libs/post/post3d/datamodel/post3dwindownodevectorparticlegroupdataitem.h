@@ -29,7 +29,7 @@ class Post3dWindowNodeVectorParticleGroupDataItem : public Post3dWindowDataItem
 private:
 	const static int DEFAULT_SIZE = 3;
 public:
-	enum TimeMode{tmNormal, tmSubdivide, tmSkip};
+	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 	/// Constructor
 	Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorParticleGroupDataItem();
@@ -39,7 +39,7 @@ public:
 	virtual void assignActionZValues(const ZDepthRange& range);
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	const QString& currentSolution(){return m_currentSolution;}
+	const QString& currentSolution() {return m_currentSolution;}
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*);
 protected:

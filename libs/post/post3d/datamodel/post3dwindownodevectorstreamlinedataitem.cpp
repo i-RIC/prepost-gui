@@ -21,7 +21,7 @@ Post3dWindowNodeVectorStreamlineDataItem::Post3dWindowNodeVectorStreamlineDataIt
 	m_standardItemCopy = m_standardItem->clone();
 
 	connect(this, SIGNAL(changed(Post3dWindowNodeVectorStreamlineDataItem*)),
-			parent, SLOT(exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem*)));
+					parent, SLOT(exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem*)));
 
 }
 

@@ -1,7 +1,7 @@
 #include "postdatacontainer.h"
 #include "postsolutioninfo.h"
 
-PostDataContainer::PostDataContainer(ProjectDataItem *parent)
+PostDataContainer::PostDataContainer(ProjectDataItem* parent)
 	: ProjectDataItem(parent)
 {
 

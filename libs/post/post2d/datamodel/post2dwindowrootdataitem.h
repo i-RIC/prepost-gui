@@ -29,19 +29,19 @@ public:
 	~Post2dWindowRootDataItem();
 
 	/// Background image data item
-	Post2dWindowBackgroundImagesDataItem* backgroundImagesDataItem(){
+	Post2dWindowBackgroundImagesDataItem* backgroundImagesDataItem() {
 		return m_backgroundImagesDataItem;
 	}
 	/// Measured values data item;
-	Post2dWindowMeasuredDataTopDataItem* measuredDataTopDataItem(){
+	Post2dWindowMeasuredDataTopDataItem* measuredDataTopDataItem() {
 		return m_measuredDataTopDataItem;
 	}
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems(){return m_gridTypeDataItems;}
+	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
 	Post2dWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
 	Post2dWindowZoneDataItem* zoneDataItem(const QString& name);
-	PostTitleDataItem* titleDataItem(){return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem(){return m_timeDataItem;}
+	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
+	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
 private slots:
 	void updateZoneList();

@@ -14,10 +14,10 @@ public:
 	~PreProcessorGridCrosssectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();
-	PreProcessorGridCrosssectionWindow* window(){
+	PreProcessorGridCrosssectionWindow* window() {
 		return m_window;
 	}
-	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem(){return m_item;}
+	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem() {return m_item;}
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

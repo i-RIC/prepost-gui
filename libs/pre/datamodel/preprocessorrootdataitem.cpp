@@ -54,9 +54,9 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	// build grid type data items.
 	int i = 0;
 	QList<PreProcessorGridTypeDataItem*> gtitems;
-	for (auto it = types.begin(); it != types.end(); ++it){
+	for (auto it = types.begin(); it != types.end(); ++it) {
 		SolverDefinitionGridType* gt = *it;
-		if (gt->defaultGridType() == SolverDefinitionGridType::gtUnknownGrid){
+		if (gt->defaultGridType() == SolverDefinitionGridType::gtUnknownGrid) {
 			// dummy grid type.
 			continue;
 		}
@@ -69,7 +69,7 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	m_measuredDataTopDataItem = new PreProcessorMeasuredDataTopDataItem(this);
 	m_childItems.append(m_measuredDataTopDataItem);
 
-	for (int j = 0; j < gtitems.count(); ++j){
+	for (int j = 0; j < gtitems.count(); ++j) {
 		m_childItems.append(gtitems.at(j));
 	}
 	// Background images data item node.
@@ -104,7 +104,7 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		delete *it;
 	}
 }
@@ -114,9 +114,9 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->clear();
 	// add gridtypes.
 	SolverDefinition* def = projectData()->solverDefinition();
-	if (def->gridTypes().count() == 1){
+	if (def->gridTypes().count() == 1) {
 		// If there is no gridtypeDataitem, do nothing.
-		if (m_gridTypeDataItems.begin() != m_gridTypeDataItems.end()){
+		if (m_gridTypeDataItems.begin() != m_gridTypeDataItems.end()) {
 			// Current solver support only one grid type, and it does not allow multiple grids to input.
 			// So, construct a simplified object tree, in the object browser.
 			PreProcessorGridTypeDataItem* item = *(m_gridTypeDataItems.begin());
@@ -125,13 +125,13 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 			item->standardItem()->takeChild(rtitem->standardItem()->row());
 			model->appendRow(rtitem->standardItem());
 			// GridCreatingCondition, Grid are added as top item.
-			PreProcessorGridAndGridCreatingConditionDataItem* citem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (*(item->conditions().begin()));
+			PreProcessorGridAndGridCreatingConditionDataItem* citem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*(item->conditions().begin()));
 			PreProcessorGridCreatingConditionDataItemInterface* gccitem = citem->creatingConditionDataItem();
 			citem->standardItem()->takeChild(gccitem->standardItem()->row());
 			model->appendRow(gccitem->standardItem());
 			// Boundary condition setting node here if needed.
-			PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*> (citem->gridDataItem());
-			if (gitem->bcGroupDataItem() != nullptr){
+			PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(citem->gridDataItem());
+			if (gitem->bcGroupDataItem() != nullptr) {
 				PreProcessorBCSettingGroupDataItem* bcsgitem = citem->bcSettingGroupDataItem();
 				citem->standardItem()->takeChild(bcsgitem->standardItem()->row());
 				model->appendRow(bcsgitem->standardItem());
@@ -140,10 +140,10 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 			citem->standardItem()->takeChild(gitem->standardItem()->row());
 			model->appendRow(gitem->standardItem());
 		}
-	}else{
+	} else {
 		// current solver support more than two grid types, or the only
 		// grid type allows multiple grids.
-		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 			model->appendRow((*it)->standardItem());
 		}
 	}
@@ -167,19 +167,19 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	RawDataPointmapTemplateMappingSetting& setting = RawDataPointmapTemplateMappingSetting::setting;
 	setting.tempAutoMode = static_cast<bool>(elem.attribute("tempAutoRegion", "1").toInt());
 	double tmpdbl = elem.attribute("tempStreamWiseLength", "0").toDouble();
-	if (tmpdbl != 0){setting.tempStreamWiseLength = tmpdbl;}
+	if (tmpdbl != 0) {setting.tempStreamWiseLength = tmpdbl;}
 	tmpdbl = elem.attribute("tempCrossStreamLength", "0").toDouble();
-	if (tmpdbl != 0){setting.tempCrossStreamLength = tmpdbl;}
+	if (tmpdbl != 0) {setting.tempCrossStreamLength = tmpdbl;}
 	setting.tempNumExpansion = elem.attribute("numExpansion", "3").toInt();
 	setting.tempWeightExponent = elem.attribute("weightExponent", "1").toDouble();
 
 	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
-	if (! bgNode.isNull()){m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
+	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
 
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		QDomNode c = node.firstChild();
-		while (! c.isNull()){
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()){
+		while (! c.isNull()) {
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()) {
 				(*it)->loadFromProjectMainFile(c);
 			}
 			c = c.nextSibling();
@@ -187,20 +187,20 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	}
 	SolverDefinition* def = projectData()->solverDefinition();
 	const SolverDefinitionGridType* firstType = *(def->gridTypes().begin());
-	if (def->gridTypes().count() == 1 && ! (firstType->multiple())){
+	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
 		// Current solver support only one grid type, and it does not allow multiple grids to input.
 		// The only, and hidden gridtype node should be checked always.
 		PreProcessorGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
 		gtItem->standardItem()->setCheckState(Qt::Checked);
 	}
 	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
-	if (! mdNode.isNull()){m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
+	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
 	QDomNode icNode = iRIC::getChildNode(node, "InputCondition");
-	if (! icNode.isNull()){m_inputConditionDataItem->loadFromProjectMainFile(icNode);}
+	if (! icNode.isNull()) {m_inputConditionDataItem->loadFromProjectMainFile(icNode);}
 	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
-	if (! axesNode.isNull()){m_axesDataItem->loadFromProjectMainFile(axesNode);}
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
 	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
-	if (! dmNode.isNull()){m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
+	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
 	updateItemMap();
 	updateZDepthRange();
 //	dataModel()->graphicsView()->ResetCameraClippingRange();
@@ -230,7 +230,7 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -253,8 +253,8 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const QString& name)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
-		if ((*it)->name() == name){return *it;}
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		if ((*it)->name() == name) {return *it;}
 	}
 	return nullptr;
 }
@@ -263,8 +263,7 @@ class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
 {
 public:
 	PreProcessorRootDataItemSetMappingSettingCommand(PreProcessorGridAttributeMappingMode::Mode mm, RawDataPointmapMappingMode::Mode gmm, bool a, double streamWise, double crossStream, int numExp, double exp, PreProcessorRootDataItem* i)
-		: QUndoCommand(PreProcessorRootDataItem::tr("Change Attribute Mapping Setting"))
-	{
+		: QUndoCommand(PreProcessorRootDataItem::tr("Change Attribute Mapping Setting")) {
 		m_newMappingMode = mm;
 		m_newGeodataMappingMode = gmm;
 		m_newTempAutoMode = a;
@@ -285,9 +284,8 @@ public:
 		m_item = i;
 	}
 
-	~PreProcessorRootDataItemSetMappingSettingCommand(){}
-	void redo()
-	{
+	~PreProcessorRootDataItemSetMappingSettingCommand() {}
+	void redo() {
 		PreProcessorGridAttributeMappingMode::mode = m_newMappingMode;
 		RawDataPointmapMappingMode::mode = m_newGeodataMappingMode;
 		RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
@@ -297,8 +295,7 @@ public:
 		s.tempNumExpansion = m_newTempNumExpansion;
 		s.tempWeightExponent = m_newTempWeightExponent;
 	}
-	void undo()
-	{
+	void undo() {
 		PreProcessorGridAttributeMappingMode::mode = m_oldMappingMode;
 		RawDataPointmapMappingMode::mode = m_oldGeodataMappingMode;
 		RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
@@ -341,23 +338,23 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 	dialog.setNumExpansion(s.tempNumExpansion);
 	dialog.setWeightExponent(s.tempWeightExponent);
 
-	if (QDialog::Accepted != dialog.exec()){return;}
+	if (QDialog::Accepted != dialog.exec()) {return;}
 
 	iRICUndoStack::instance().push(new PreProcessorRootDataItemSetMappingSettingCommand(dialog.mappingMode(), dialog.pointmapMappingMode(), dialog.autoMode(), dialog.streamWiseLength(), dialog.crossStreamLength(), dialog.numExpansion(), dialog.weightExponent(), this));
 }
 
 bool PreProcessorRootDataItem::gridEdited()
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		bool edited = (*it)->gridEdited();
-		if (edited){return true;}
+		if (edited) {return true;}
 	}
 	return false;
 }
 
 void PreProcessorRootDataItem::toggleGridEditFlag()
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it){
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		(*it)->toggleGridEditFlag();
 	}
 }
@@ -368,17 +365,17 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 	PreProcessorRawdataDataItem* dItem = dynamic_cast<PreProcessorRawdataDataItem*>(dataItem);
 	PreProcessorRawDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
-	if (dItem != nullptr){
+	if (dItem != nullptr) {
 		gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(dItem->parent());
 	}
 
-	if (bcsitem != nullptr){
+	if (bcsitem != nullptr) {
 		GraphicsWindowRootDataItem::deleteItem(bcsitem->bcDataItem()->standardItem());
 	} else {
 		GraphicsWindowRootDataItem::deleteItem(item);
 	}
 
-	if (gItem != nullptr){
+	if (gItem != nullptr) {
 		gItem->informDataChange();
 	}
 }

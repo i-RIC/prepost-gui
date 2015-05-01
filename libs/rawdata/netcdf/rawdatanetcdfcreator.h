@@ -12,7 +12,7 @@ public:
 	RawDataNetcdfCreator();
 	QString name(unsigned int index);
 	QString defaultCaption(unsigned int index);
-	virtual bool isCreatable(){return false;}
+	virtual bool isCreatable() {return false;}
 };
 
 #endif // RAWDATANETCDFCREATOR_H

@@ -12,8 +12,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridRelatedConditionDimension : public S
 {
 public:
 	SolverDefinitionGridRelatedConditionDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridRelatedCondition* parent)
-		: SolverDefinitionNode(node, translator)
-	{
+		: SolverDefinitionNode(node, translator) {
 		m_condition = parent;
 		load(node, translator);
 	}

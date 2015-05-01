@@ -48,14 +48,14 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneNam
 
 	m_shapeDataItem = new Post2dBirdEyeWindowGridShapeDataItem(this);
 
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		m_scalarGroupDataItem = new Post2dBirdEyeWindowNodeScalarGroupDataItem(this);
-	}else{
+	} else {
 		m_scalarGroupDataItem = nullptr;
 	}
 
 	m_childItems.append(m_shapeDataItem);
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		m_childItems.append(m_scalarGroupDataItem);
 	}
 }
@@ -63,11 +63,11 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneNam
 void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode shapeNode = iRIC::getChildNode(node, "Shape");
-	if (! shapeNode.isNull()){
+	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
-	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr){
+	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
 		m_scalarGroupDataItem->loadFromProjectMainFile(scalarGroupNode);
 	}
 }
@@ -79,7 +79,7 @@ void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
-	if (m_scalarGroupDataItem != nullptr){
+	if (m_scalarGroupDataItem != nullptr) {
 		writer.writeStartElement("ScalarGroup");
 		m_scalarGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -91,12 +91,12 @@ void Post2dBirdEyeWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
 
 }
 
-void Post2dBirdEyeWindowZoneDataItem::informSelection(VTKGraphicsView *v)
+void Post2dBirdEyeWindowZoneDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informSelection(v);
 }
 
-void Post2dBirdEyeWindowZoneDataItem::informDeselection(VTKGraphicsView *v)
+void Post2dBirdEyeWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 {
 	m_shapeDataItem->informDeselection(v);
 }
@@ -113,7 +113,7 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 	m_shapeDataItem->update();
 	qDebug("Grid shape: %d", time.elapsed());
 
-	if (m_scalarGroupDataItem != nullptr){
+	if (m_scalarGroupDataItem != nullptr) {
 		time.restart();
 		m_scalarGroupDataItem->update();
 		qDebug("Contour shape: %d", time.elapsed());
@@ -145,7 +145,7 @@ void Post2dBirdEyeWindowZoneDataItem::assignActionZValues(const ZDepthRange& ran
 	m_shapeDataItem->setZDepthRange(r);
 
 	// Contour
-	if (cont->scalarValueExists()){
+	if (cont->scalarValueExists()) {
 		max = min - divWidth * gapRate;
 		min = max - divWidth;
 		r = m_scalarGroupDataItem->zDepthRange();

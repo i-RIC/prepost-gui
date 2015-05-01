@@ -16,7 +16,7 @@ public:
 	void updateChildren();
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter &writer);
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 private:
 	QMap<QString, Post2dWindowRawDataDataItem*> m_itemNameMap;
 	SolverDefinitionGridRelatedCondition* m_condition;

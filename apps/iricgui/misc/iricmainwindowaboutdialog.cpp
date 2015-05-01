@@ -8,7 +8,7 @@
 #include <QPixmap>
 #include <QUrl>
 
-iRICMainWindowAboutDialog::iRICMainWindowAboutDialog(QWidget *parent) :
+iRICMainWindowAboutDialog::iRICMainWindowAboutDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::iRICMainWindowAboutDialog)
 {
@@ -29,7 +29,7 @@ void iRICMainWindowAboutDialog::init(const QDomNode& data)
 	VersionNumber vn;
 	vn.fromString(version);
 	version = vn.toAboutString();
-	if (elem.hasAttribute("displayVersion")){
+	if (elem.hasAttribute("displayVersion")) {
 		version = elem.attribute("displayVersion");
 	}
 	ui->labelTitle->setText(tr("iRIC %1").arg(version));
@@ -37,14 +37,14 @@ void iRICMainWindowAboutDialog::init(const QDomNode& data)
 	ui->labelCopyright->setText(tr("Copyright %1").arg(elem.attribute("copyright")));
 	QString url = elem.attribute("url");
 	QString link;
-	if (url != ""){
+	if (url != "") {
 		QUrl u(url);
 		link.append("<a href=\"").append(u.toString()).append("\">").append(url).append("</a>");
 	}
 	ui->labelUrl->setText(link);
 	url = elem.attribute("tou"); // Terms of use
 	link = "";
-	if (url != ""){
+	if (url != "") {
 		QUrl u(url);
 		link = tr("Terms of use: ");
 		link.append("<a href=\"").append(u.toString()).append("\">").append(url).append("</a>");

@@ -11,12 +11,12 @@ class GUICOREDLL_EXPORT PropertyBrowser : public QDockWidget
 {
 	Q_OBJECT
 public:
-	PropertyBrowser(QWidget *parent = nullptr);
+	PropertyBrowser(QWidget* parent = nullptr);
 	virtual ~PropertyBrowser();
 	PropertyBrowserView* view() const {return m_view;}
 
 protected:
-	void hideEvent(QHideEvent *);
+	void hideEvent(QHideEvent*);
 
 private:
 	PropertyBrowserView* m_view;

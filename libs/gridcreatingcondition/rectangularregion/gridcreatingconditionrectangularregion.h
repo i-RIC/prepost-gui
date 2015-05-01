@@ -25,7 +25,7 @@ public:
 	};
 	GridCreatingConditionRectangularRegion(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionRectangularRegion();
-	bool create(QWidget *parent);
+	bool create(QWidget* parent);
 	bool ready() const;
 	void setupMenu();
 	void setupActors();

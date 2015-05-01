@@ -13,11 +13,11 @@ Post2dWindowRawDataDataItem::Post2dWindowRawDataDataItem(GraphicsWindowDataItem*
 
 Post2dWindowRawDataDataItem::~Post2dWindowRawDataDataItem()
 {
-	if (m_rawDataProxy){delete m_rawDataProxy;}
+	if (m_rawDataProxy) {delete m_rawDataProxy;}
 	m_rawDataProxy = nullptr;
 }
 
-void Post2dWindowRawDataDataItem::setRawDataProxy(RawDataProxy *proxy)
+void Post2dWindowRawDataDataItem::setRawDataProxy(RawDataProxy* proxy)
 {
 	// set rawdata
 	m_rawDataProxy = proxy;
@@ -60,7 +60,7 @@ void Post2dWindowRawDataDataItem::updateZDepthRangeItemCount()
 	m_rawDataProxy->updateZDepthRangeItemCount(m_zDepthRange);
 }
 
-void Post2dWindowRawDataDataItem::assignActionZValues(const ZDepthRange &range)
+void Post2dWindowRawDataDataItem::assignActionZValues(const ZDepthRange& range)
 {
 	m_rawDataProxy->assignActionZValues(range);
 }

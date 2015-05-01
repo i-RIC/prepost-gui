@@ -86,7 +86,7 @@ public:
 	void assignActionZValues(const ZDepthRange& range);
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
-	QColor color(){return m_color;}
+	QColor color() {return m_color;}
 	QColor doubleToColor(double d);
 	void setupScalarArray();
 	void clear();
@@ -103,7 +103,7 @@ private slots:
 	void addDivisionLine();
 	void deletePolygon(bool force = false);
 	void deleteLine(bool force = false);
-	void cancel(){m_canceled = true;}
+	void cancel() {m_canceled = true;}
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node);
@@ -112,7 +112,7 @@ protected:
 	void saveExternalData(const QString& filename);
 	void setColor(const QColor& color);
 	void setColor(double r, double g, double b);
-	void updateFilename(){
+	void updateFilename() {
 		m_filename = "gridcreatingcondition.dat";
 	}
 	void doApplyOffset(double x, double y);

@@ -7,11 +7,12 @@
 #include <QHBoxLayout>
 #include <QFileDialog>
 
-CgnsFileInputConditionWidgetFunctional::CgnsFileInputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerFunctional* cont) : CgnsFileInputConditionWidget(defnode){
+CgnsFileInputConditionWidgetFunctional::CgnsFileInputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerFunctional* cont) : CgnsFileInputConditionWidget(defnode)
+{
 	m_container = cont;
 	QPushButton* button = new QPushButton(QString(tr("Edit")), this);
 	button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-	QHBoxLayout * l = new QHBoxLayout(0);
+	QHBoxLayout* l = new QHBoxLayout(0);
 	l->addStretch(1);
 	l->addWidget(button, 0);
 	l->setMargin(CgnsFileInputConditionWidget::margin);
@@ -22,14 +23,16 @@ CgnsFileInputConditionWidgetFunctional::CgnsFileInputConditionWidgetFunctional(Q
 	connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
 }
 
-CgnsFileInputConditionWidgetFunctional::~CgnsFileInputConditionWidgetFunctional(){}
+CgnsFileInputConditionWidgetFunctional::~CgnsFileInputConditionWidgetFunctional() {}
 
-void CgnsFileInputConditionWidgetFunctional::openDialog(){
+void CgnsFileInputConditionWidgetFunctional::openDialog()
+{
 	m_dialog->setData(*m_container);
 	m_dialog->setModal(true);
 	m_dialog->show();
 }
 
-void CgnsFileInputConditionWidgetFunctional::dialogAccepted(){
+void CgnsFileInputConditionWidgetFunctional::dialogAccepted()
+{
 	*m_container = m_dialog->container();
 }

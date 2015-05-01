@@ -5,7 +5,8 @@
 #include "scalarstocolorseditwidget.h"
 #include <guibase/contoursettingwidget.h>
 
-namespace Ui {
+namespace Ui
+{
 	class LookupTableEditWidget;
 }
 
@@ -38,7 +39,7 @@ protected:
 	void setupWidget();
 
 private:
-	Ui::LookupTableEditWidget *ui;
+	Ui::LookupTableEditWidget* ui;
 };
 
 #endif // LOOKUPTABLEEDITWIDGET_H

@@ -9,8 +9,8 @@ class RD_NETCDF_EXPORT RawDataNetcdfImporter : public RawDataImporter
 {
 	Q_OBJECT
 public:
-	RawDataNetcdfImporter(RawDataCreator* creator) : RawDataImporter(creator){}
-	virtual ~RawDataNetcdfImporter(){}
+	RawDataNetcdfImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
+	virtual ~RawDataNetcdfImporter() {}
 	const QStringList fileDialogFilters();
 	const QStringList acceptableExtensions();
 	bool importData(RawData* data, int index, QWidget* w);
@@ -19,7 +19,7 @@ protected:
 	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w);
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
 	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, QList<QVariant>& list);
-	static QList<QVariant> convertTimeValues(QString units, QList<QVariant>& values, QWidget *parent, bool* canceled);
+	static QList<QVariant> convertTimeValues(QString units, QList<QVariant>& values, QWidget* parent, bool* canceled);
 
 	virtual int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, RawDataNetcdf* dat) = 0;
 

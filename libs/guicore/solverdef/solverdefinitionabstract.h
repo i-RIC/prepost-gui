@@ -33,13 +33,12 @@ public:
 	 * the strings in "definition.xml" is used.
 	 */
 	SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent)
-		: QObject(parent)
-	{
+		: QObject(parent) {
 		load(solverfolder, locale);
 	}
 	/// The name of the folder which contains files related to the solver
 	/// (ex. definition.xml, translation_ja_JP.xml, solver.exe)
-	const QString& folderName(){return m_folderName;}
+	const QString& folderName() {return m_folderName;}
 	/// Solver name
 	const QString& name() const {return m_name;}
 	/// Solver caption in adequate locale

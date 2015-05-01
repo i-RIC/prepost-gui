@@ -12,8 +12,9 @@ class PostZoneDataContainer;
 class QwtPlotCurve;
 class QwtPlotMarker;
 
-namespace Ui {
-class VerificationGraphDialog;
+namespace Ui
+{
+	class VerificationGraphDialog;
 }
 
 class VerificationGraphDialog : public QDialog
@@ -23,12 +24,12 @@ public:
 	enum GraphType {gtSWDvsValues, gtSWDvsError, gtMVvsCR, gtMVvsError};
 	explicit VerificationGraphDialog(iRICMainWindow* mainWindow);
 	~VerificationGraphDialog();
-	void setPostSolutionInfo(PostSolutionInfo* info){
+	void setPostSolutionInfo(PostSolutionInfo* info) {
 		m_postSolutionInfo = info;
 		m_activePostData = nullptr;
 		m_activeResult = "";
 	}
-	void setMeasuredValues(const QList<MeasuredData*> measuredData){
+	void setMeasuredValues(const QList<MeasuredData*> measuredData) {
 		m_measuredData = measuredData;
 		m_activeMeasuredData = nullptr;
 		m_activeValue = "";
@@ -68,7 +69,7 @@ private:
 
 	iRICMainWindow* m_mainWindow;
 
-	Ui::VerificationGraphDialog *ui;
+	Ui::VerificationGraphDialog* ui;
 };
 
 #endif // VERIFICATIONGRAPHDIALOG_H

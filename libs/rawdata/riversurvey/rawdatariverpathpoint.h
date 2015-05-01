@@ -19,7 +19,8 @@ class Structured2DGrid;
 class RawDataRiverSurveyBackgroundGridCreateThread;
 //class RiverGridInterpolator;
 //class BStream;
-namespace iRICLib {
+namespace iRICLib
+{
 	class RiverPathPoint;
 }
 
@@ -62,18 +63,18 @@ public:
 		double param; ///< parameter
 	};
 	/// Constructor
-	RawDataRiverPathPoint(){
+	RawDataRiverPathPoint() {
 		initializeInnerValues();
 		initializeInterpolators();
 	}
 	/// Constructor
-	RawDataRiverPathPoint(double x, double y){
+	RawDataRiverPathPoint(double x, double y) {
 		initializeInnerValues();
 		initializeInterpolators();
 		m_position = QVector2D(x, y);
 	}
 	/// Constructor
-	RawDataRiverPathPoint(const QString& name, double x, double y){
+	RawDataRiverPathPoint(const QString& name, double x, double y) {
 		initializeInnerValues();
 		initializeInterpolators();
 		m_name = name;
@@ -107,14 +108,14 @@ public:
 	void remove();
 	void setCrosssectionDirection(const QVector2D& v);
 	/// The pointer to the previous river path point.
-	RawDataRiverPathPoint* previousPoint(){return m_previousPoint;}
+	RawDataRiverPathPoint* previousPoint() {return m_previousPoint;}
 	/// The pointer to the next river path point.
-	RawDataRiverPathPoint* nextPoint(){return m_nextPoint;}
+	RawDataRiverPathPoint* nextPoint() {return m_nextPoint;}
 	/// Name
 	const QString& name() const {return m_name;}
 	/// Set new name
 	void setName(const QString& newname);
-	RawDataRiverCrosssection& crosssection(){return m_crosssection;}
+	RawDataRiverCrosssection& crosssection() {return m_crosssection;}
 	/**
 	 * @brief 断面の、左岸から右岸に向かう向き
 	 */
@@ -153,13 +154,13 @@ public:
 	void updateRiverShapeInterpolators();
 	void UpdateGridInterpolators();
 
-	unsigned int gridCounts(RawDataRiverPathPoint* end){
-		if (this == end){
+	unsigned int gridCounts(RawDataRiverPathPoint* end) {
+		if (this == end) {
 			return 1;
-		}else{
-			if (! m_gridSkip){
+		} else {
+			if (! m_gridSkip) {
 				return 1 + static_cast<unsigned int>(CenterLineCtrlPoints.size()) + m_nextPoint->gridCounts(end);
-			}else {
+			} else {
 				return m_nextPoint->gridCounts(end);
 			}
 		}
@@ -175,16 +176,16 @@ public:
 	 * @brief この点を含み、この点より下流側の断面のうち、選択されている
 	 * 点の数を返す。
 	 */
-	int selectedPoints(){
+	int selectedPoints() {
 		int selectedpoints;
-		if (IsSelected){
+		if (IsSelected) {
 			selectedpoints = 1;
-		}else{
+		} else {
 			selectedpoints = 0;
 		}
-		if (m_nextPoint != 0){
+		if (m_nextPoint != 0) {
 			return selectedpoints + m_nextPoint->selectedPoints();
-		}else{
+		} else {
 			return selectedpoints;
 		}
 	}
@@ -199,9 +200,9 @@ public:
 	void SelectCtrlPointsRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1, std::list<CtrlPointSelectionInfo>& info);
 
 	/// Clear selection.
-	void clearSelection(){
+	void clearSelection() {
 		IsSelected = false;
-		if (m_nextPoint != 0){
+		if (m_nextPoint != 0) {
 			m_nextPoint->clearSelection();
 		}
 	}
@@ -218,37 +219,37 @@ public:
 
 	QList<QVector2D> CtrlZonePoints(CtrlZonePosition position, unsigned int index, int num);
 	bool gridSkip() const {return m_gridSkip;}
-	void setGridSkip(bool skip){
-		if (m_nextPoint == 0){return;}
-		if (firstPoint()){return;}
-		if (m_previousPoint->firstPoint()){return;}
+	void setGridSkip(bool skip) {
+		if (m_nextPoint == 0) {return;}
+		if (firstPoint()) {return;}
+		if (m_previousPoint->firstPoint()) {return;}
 		m_gridSkip = skip;
 	}
 	/**
 	 * @brief 河川中心線を描画するための、補間オブジェクト
 	 */
-	Interpolator2D1* riverCenter(){return m_riverCenter;}
-	void setRiverCenter(Interpolator2D1* interpolator){m_riverCenter = interpolator;}
+	Interpolator2D1* riverCenter() {return m_riverCenter;}
+	void setRiverCenter(Interpolator2D1* interpolator) {m_riverCenter = interpolator;}
 	/**
 	 * @brief 河川左岸を描画するための、補間オブジェクト
 	 */
-	Interpolator2D1* leftBank(){return m_leftBank;}
-	void setLeftBank(Interpolator2D1* interpolator){m_leftBank = interpolator;}
+	Interpolator2D1* leftBank() {return m_leftBank;}
+	void setLeftBank(Interpolator2D1* interpolator) {m_leftBank = interpolator;}
 	/**
 	 * @brief 河川右岸を描画するための、補間オブジェクト
 	 */
-	Interpolator2D1* rightBank(){return m_rightBank;}
-	void setRightBank(Interpolator2D1* interpolator){m_rightBank = interpolator;}
-	LinearLXSecInterpolator* lXSec(){return m_lXSec;}
-	LinearRXSecInterpolator* rXSec(){return m_rXSec;}
-	QVector<Interpolator2D1*>& LGridLines(){return m_LGridLines;}
-	QVector<Interpolator2D1*>& RGridLines(){return m_RGridLines;}
-	QVector<Interpolator2D1*>& backgroundLGridLines(){return m_backgroundLGridLines;}
-	QVector<Interpolator2D1*>& backgroundRGridLines(){return m_backgroundRGridLines;}
-	Interpolator2D1* LGridLine(unsigned int index){return m_LGridLines[index];}
-	Interpolator2D1* RGridLine(unsigned int index){return m_RGridLines[index];}
-	Interpolator2D1* backgroundLGridLine(unsigned int index){return m_backgroundLGridLines[index];}
-	Interpolator2D1* backgroundRGridLine(unsigned int index){return m_backgroundRGridLines[index];}
+	Interpolator2D1* rightBank() {return m_rightBank;}
+	void setRightBank(Interpolator2D1* interpolator) {m_rightBank = interpolator;}
+	LinearLXSecInterpolator* lXSec() {return m_lXSec;}
+	LinearRXSecInterpolator* rXSec() {return m_rXSec;}
+	QVector<Interpolator2D1*>& LGridLines() {return m_LGridLines;}
+	QVector<Interpolator2D1*>& RGridLines() {return m_RGridLines;}
+	QVector<Interpolator2D1*>& backgroundLGridLines() {return m_backgroundLGridLines;}
+	QVector<Interpolator2D1*>& backgroundRGridLines() {return m_backgroundRGridLines;}
+	Interpolator2D1* LGridLine(unsigned int index) {return m_LGridLines[index];}
+	Interpolator2D1* RGridLine(unsigned int index) {return m_RGridLines[index];}
+	Interpolator2D1* backgroundLGridLine(unsigned int index) {return m_backgroundLGridLines[index];}
+	Interpolator2D1* backgroundRGridLine(unsigned int index) {return m_backgroundRGridLines[index];}
 	//	void UpdateInterpolators();
 	/// Division points between river center and left bank
 	QVector<double> CenterToLeftCtrlPoints;
@@ -260,8 +261,8 @@ public:
 	QVector<double> LeftBankCtrlPoints;
 	/// Division points on right bank
 	QVector<double> RightBankCtrlPoints;
-	QVector<double>& CtrlPoints(CtrlZonePosition position){
-		switch (position){
+	QVector<double>& CtrlPoints(CtrlZonePosition position) {
+		switch (position) {
 		case zposCenterToLeft:
 			return CenterToLeftCtrlPoints;
 			break;
@@ -277,13 +278,13 @@ public:
 		case zposRightBank:
 			return RightBankCtrlPoints;
 			break;
-		// Never used. this is written to avoid warning in compiling.
+			// Never used. this is written to avoid warning in compiling.
 		default:
 			return RightBankCtrlPoints;
 		}
 	}
-	QVector<double>& CtrlPoints(CtrlPointPosition position){
-		switch (position){
+	QVector<double>& CtrlPoints(CtrlPointPosition position) {
+		switch (position) {
 		case pposCenterToLeft:
 			return CenterToLeftCtrlPoints;
 			break;
@@ -299,7 +300,7 @@ public:
 		case pposRightBank:
 			return RightBankCtrlPoints;
 			break;
-		// Never used. this is written to avoid warning in compiling.
+			// Never used. this is written to avoid warning in compiling.
 		default:
 			return RightBankCtrlPoints;
 		}
@@ -307,7 +308,7 @@ public:
 	void centerToBanksRegion(QVector2D& mins, QVector2D& maxs);
 	void thisToNextRegion(QVector2D& mins, QVector2D& maxs);
 	void UpdateCtrlSections();
-	vtkStructuredGrid* areaGrid(){return m_areaGrid;}
+	vtkStructuredGrid* areaGrid() {return m_areaGrid;}
 	QList<int> getPointsToInactivateUsingWaterElevation();
 	void loadFromiRICLibObject(const iRICLib::RiverPathPoint* p);
 	void saveToiRICLibObject(iRICLib::RiverPathPoint* p);
@@ -317,9 +318,9 @@ protected:
 	virtual void initializeInterpolators();
 private:
 	double GridCtrlParameter(Bank bank, int index1, int index2);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f) (), double d);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f) (unsigned int), unsigned int index, double d);
-	QVector2D myBgCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f) (unsigned int), unsigned int index, double d);
+	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(), double d);
+	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d);
+	QVector2D myBgCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d);
 	double myHeight(RawDataRiverPathPoint::Bank bank, double t0, double t1, double d);
 
 	QString m_name;
@@ -375,10 +376,10 @@ struct CtrlPointSelectionInfo {
 	unsigned int Index;
 	bool operator==(CtrlPointSelectionInfo& info) const {
 		return (
-							 Point == info.Point &&
-							 Position == info.Position &&
-							 Index == info.Index
-							 );
+						 Point == info.Point &&
+						 Position == info.Position &&
+						 Index == info.Index
+					 );
 	}
 };
 

@@ -7,9 +7,9 @@ class PreProcessorGridCrosssectionWindowTableView : public QTableView
 {
 	Q_OBJECT
 public:
-	explicit PreProcessorGridCrosssectionWindowTableView(QWidget *parent = 0);
+	explicit PreProcessorGridCrosssectionWindowTableView(QWidget* parent = 0);
 protected:
-	void resizeEvent(QResizeEvent *event);
+	void resizeEvent(QResizeEvent* event);
 private:
 	QModelIndex m_editIndex;
 	const static int indexWidth = 50;

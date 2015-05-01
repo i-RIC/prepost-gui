@@ -3,7 +3,7 @@
 
 #include <QPixmap>
 
-StartPageDialog::StartPageDialog(QWidget *parent) :
+StartPageDialog::StartPageDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::StartPageDialog)
 {
@@ -51,12 +51,12 @@ void StartPageDialog::handleSolverSelection(SolverDefinitionAbstract* solverDef)
 }
 
 
-void StartPageDialog::setSolverList(SolverDefinitionList *solverList)
+void StartPageDialog::setSolverList(SolverDefinitionList* solverList)
 {
 	ui->startTab->setSolverList(solverList);
 }
 
-void StartPageDialog::setLocale(const QString &locale)
+void StartPageDialog::setLocale(const QString& locale)
 {
 	ui->helpTab->setLocale(locale);
 }

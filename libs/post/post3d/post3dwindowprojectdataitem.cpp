@@ -45,13 +45,13 @@ void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
-	if (! cameraNode.isNull()){
+	if (! cameraNode.isNull()) {
 		vtkCamera* camera = w->m_dataModel->graphicsView()->mainRenderer()->GetActiveCamera();
 		ProjectDataItem::loadCamera(camera, cameraNode);
 	}
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
-	if (! modelNode.isNull()){
+	if (! modelNode.isNull()) {
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}

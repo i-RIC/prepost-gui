@@ -92,18 +92,18 @@ PostSolutionInfo* Post2dBirdEyeWindowDataModel::postSolutionInfo()
 void Post2dBirdEyeWindowDataModel::gridShapeSetting()
 {
 	Post2dBirdEyeWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == nullptr){return;}
-	Post2dBirdEyeWindowGridShapeDataItem * item = zItem->gridShapeDataItem();
-	if (item == nullptr){return;}
+	if (zItem == nullptr) {return;}
+	Post2dBirdEyeWindowGridShapeDataItem* item = zItem->gridShapeDataItem();
+	if (item == nullptr) {return;}
 	item->showPropertyDialog();
 }
 
 void Post2dBirdEyeWindowDataModel::contourSetting()
 {
 	Post2dBirdEyeWindowZoneDataItem* zItem = getZoneDataItem();
-	if (zItem == nullptr){return;}
+	if (zItem == nullptr) {return;}
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* item = zItem->scalarGroupDataItem();
-	if (item == nullptr){
+	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
 	}
@@ -113,13 +113,13 @@ void Post2dBirdEyeWindowDataModel::contourSetting()
 Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()
 {
 	GraphicsWindowDataItem* item = m_selectedItem;
-	while (item != nullptr){
+	while (item != nullptr) {
 		Post2dBirdEyeWindowZoneDataItem* zitem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(item);
 		// zone item found!
-		if (zitem != nullptr){return zitem;}
+		if (zitem != nullptr) {return zitem;}
 		// try parent item.
 		item = dynamic_cast<GraphicsWindowDataItem*>(item->parent());
-		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr){
+		if (dynamic_cast<GraphicsWindowRootDataItem*>(item) != nullptr) {
 			// reached to root node.
 			break;
 		}
@@ -128,22 +128,22 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers2D();
 	Post2dBirdEyeWindowZoneDataItem* zitem;
-	if (containers.count() == 0){
+	if (containers.count() == 0) {
 		// No zone container exists.
 		return nullptr;
-	}else if (containers.count() > 1){
+	} else if (containers.count() > 1) {
 		// Multiple zone containers found.
 		PostZoneSelectingDialog dialog(mainWindow());
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
-		if (ret != QDialog::Accepted){return nullptr;}
+		if (ret != QDialog::Accepted) {return nullptr;}
 		QString gridType = dialog.gridTypeName();
 		QString zone = dialog.zoneName();
 		Post2dBirdEyeWindowRootDataItem* root = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
 		Post2dBirdEyeWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		zitem = gt->zoneData(zone);
 		return zitem;
-	}else{
+	} else {
 		Post2dBirdEyeWindowRootDataItem* root = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
 		QList<Post2dBirdEyeWindowGridTypeDataItem*> list = root->gridTypeDataItems();
 		Post2dBirdEyeWindowGridTypeDataItem* gt = list.at(0);
@@ -174,7 +174,7 @@ void Post2dBirdEyeWindowDataModel::editZScale()
 {
 	bool ok;
 	double newZscale = QInputDialog::getDouble(mainWindow(), tr("Z-direction Scale"), tr("Input new Z-direction scale."), m_zScale, 1E-6, 1E6, 3, &ok);
-	if (! ok){return;}
+	if (! ok) {return;}
 	m_zScale = newZscale;
 	m_rootDataItem->updateZScale(newZscale);
 	fit();

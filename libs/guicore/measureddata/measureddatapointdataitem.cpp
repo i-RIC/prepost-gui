@@ -1,6 +1,6 @@
 #include "measureddatapointdataitem.h"
 
-MeasuredDataPointDataItem::MeasuredDataPointDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem *parent)
+MeasuredDataPointDataItem::MeasuredDataPointDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	m_isDeletable = false;
@@ -12,8 +12,7 @@ MeasuredDataPointDataItem::MeasuredDataPointDataItem(const QString& name, const 
 
 	m_name = name;
 
-	connect(this, SIGNAL(changed(MeasuredDataPointDataItem*)),
-			parent, SLOT(exclusivelyCheck(MeasuredDataPointDataItem*)));
+	connect(this, SIGNAL(changed(MeasuredDataPointDataItem*)), parent, SLOT(exclusivelyCheck(MeasuredDataPointDataItem*)));
 }
 
 void MeasuredDataPointDataItem::handleStandardItemChange()

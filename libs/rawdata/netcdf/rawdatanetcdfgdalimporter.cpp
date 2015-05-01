@@ -37,7 +37,7 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 {
 	// investigate the condition.
 	const QList<SolverDefinitionGridRelatedConditionDimension*>& dims = condition->dimensions();
-	if (dims.size() != 0){
+	if (dims.size() != 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("GDAL data files can be imported for grid conditions without dimensions."));
 		return false;
 	}
@@ -45,7 +45,7 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	GDALAllRegister();
 
 	m_dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
-	if (m_dataset == NULL){
+	if (m_dataset == NULL) {
 		// failed opening.
 		return false;
 	}
@@ -57,19 +57,19 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	char* geoRef;
 	geoRef = const_cast<char*>(m_dataset->GetProjectionRef());
 	OGRErr err = m_sr->importFromWkt(&geoRef);
-	if (err != OGRERR_NONE){return false;}
+	if (err != OGRERR_NONE) {return false;}
 
 	char* projDef;
 
 	m_sr->exportToProj4(&projDef);
 	m_coordinateSystem = item->iricMainWindow()->coordinateSystemBuilder()->buildFromProj4String(projDef);
 	m_coordinateSystem->setName(projDef);
-	if (m_coordinateSystem == nullptr){return false;}
+	if (m_coordinateSystem == nullptr) {return false;}
 
 	CPLFree(projDef);
 
 	err = m_dataset->GetGeoTransform(m_transform);
-	if (err != CE_None){
+	if (err != CE_None) {
 		return false;
 	}
 
@@ -78,7 +78,7 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 
 bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* w)
 {
-	RawDataNetcdf* netcdf = dynamic_cast<RawDataNetcdf*> (data);
+	RawDataNetcdf* netcdf = dynamic_cast<RawDataNetcdf*>(data);
 
 	GDALRasterBand* band = m_dataset->GetRasterBand(index + 1);
 	int xsize, ysize;
@@ -89,18 +89,18 @@ bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* w)
 	netcdf->m_coordinateSystemType = RawDataNetcdf::XY;
 	netcdf->m_coordinateSystemName = m_coordinateSystem->name();
 	netcdf->m_xValues.clear();
-	for (int i = 0; i < xsize; ++i){
+	for (int i = 0; i < xsize; ++i) {
 		netcdf->m_xValues.append(m_transform[0] + m_transform[1] * i);
 	}
 	netcdf->m_yValues.clear();
-	for (int i = 0; i < ysize; ++i){
+	for (int i = 0; i < ysize; ++i) {
 		netcdf->m_yValues.append(m_transform[3] + m_transform[5] * (ysize - 1 - i));
 	}
 
 	netcdf->m_lonValues.clear();
-	for (int j = 0; j < netcdf->m_yValues.size(); ++j){
+	for (int j = 0; j < netcdf->m_yValues.size(); ++j) {
 		double y = netcdf->m_yValues.at(j);
-		for (int i = 0; i < netcdf->m_xValues.size(); ++i){
+		for (int i = 0; i < netcdf->m_xValues.size(); ++i) {
 			double x = netcdf->m_xValues.at(i);
 			double lon, lat;
 			m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
@@ -139,7 +139,7 @@ bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* w)
 
 	nc_close(ncid_out);
 
-	if (index == m_count - 1){
+	if (index == m_count - 1) {
 		GDALClose(m_dataset);
 	}
 	netcdf->updateShapeData();

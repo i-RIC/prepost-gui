@@ -53,9 +53,9 @@ class SolverDefinitionTranslationUpdateWizard : public QWizard
 public:
 	SolverDefinitionTranslationUpdateWizard(QWidget* parent);
 	void init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist);
-	SettingPage* settingPage(){return dynamic_cast<SettingPage*>(page(m_settingPageId));}
-	SolverDefinitionList* solverList(){return m_solverList;}
-	const QList<GridCreatingConditionCreator*>& gridCreatorList(){return m_gridCreatorList;}
+	SettingPage* settingPage() {return dynamic_cast<SettingPage*>(page(m_settingPageId));}
+	SolverDefinitionList* solverList() {return m_solverList;}
+	const QList<GridCreatingConditionCreator*>& gridCreatorList() {return m_gridCreatorList;}
 	void accept();
 	static QList<QLocale> supportedLanguages();
 private:

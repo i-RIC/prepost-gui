@@ -9,7 +9,7 @@
 class GUICOREDLL_EXPORT ColorSource : public ProjectDataItem
 {
 public:
-	ColorSource(ProjectDataItem *d);
+	ColorSource(ProjectDataItem* d);
 	void load(const QString& filename);
 	void loadDefault();
 	QColor getColor(int index) const ;

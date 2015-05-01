@@ -6,9 +6,9 @@
 
 #include <vtkPointData.h>
 
-Post3dWindowArrowGroupSettingDialog::Post3dWindowArrowGroupSettingDialog(QWidget *parent) :
-		QDialog(parent),
-		ui(new Ui::Post3dWindowArrowGroupSettingDialog)
+Post3dWindowArrowGroupSettingDialog::Post3dWindowArrowGroupSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::Post3dWindowArrowGroupSettingDialog)
 {
 	ui->setupUi(this);
 	ui->faceListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -29,10 +29,10 @@ Post3dWindowArrowGroupSettingDialog::Post3dWindowArrowGroupSettingDialog(QWidget
 
 Post3dWindowArrowGroupSettingDialog::~Post3dWindowArrowGroupSettingDialog()
 {
-		delete ui;
+	delete ui;
 }
 
-void Post3dWindowArrowGroupSettingDialog::setColor(const QColor &color)
+void Post3dWindowArrowGroupSettingDialog::setColor(const QColor& color)
 {
 	ui->colorEditWidget->setColor(color);
 }
@@ -44,8 +44,7 @@ QColor Post3dWindowArrowGroupSettingDialog::color()
 
 void Post3dWindowArrowGroupSettingDialog::setMapping(Post3dWindowArrowGroupDataItem::Mapping m)
 {
-	switch(m)
-	{
+	switch (m) {
 	case Post3dWindowArrowGroupDataItem::Specific:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -57,13 +56,13 @@ void Post3dWindowArrowGroupSettingDialog::setMapping(Post3dWindowArrowGroupDataI
 
 Post3dWindowArrowGroupDataItem::Mapping Post3dWindowArrowGroupSettingDialog::mapping()
 {
-	if(ui->specificRadioButton->isChecked()) return Post3dWindowArrowGroupDataItem::Specific;
-	if(ui->scalarRadioButton->isChecked()) return Post3dWindowArrowGroupDataItem::Scalar;
+	if (ui->specificRadioButton->isChecked()) { return Post3dWindowArrowGroupDataItem::Specific; }
+	if (ui->scalarRadioButton->isChecked()) { return Post3dWindowArrowGroupDataItem::Scalar; }
 	// default
 	return Post3dWindowArrowGroupDataItem::Specific;
 }
 
-void Post3dWindowArrowGroupSettingDialog::setScalarValueName(const QString &name)
+void Post3dWindowArrowGroupSettingDialog::setScalarValueName(const QString& name)
 {
 	int index = ui->scalarComboBox->findText(name);
 	ui->scalarComboBox->setCurrentIndex(index);
@@ -76,7 +75,7 @@ QString Post3dWindowArrowGroupSettingDialog::scalarValueName()
 
 void Post3dWindowArrowGroupSettingDialog::setSampleRate(int rate)
 {
-	if (rate == 1){
+	if (rate == 1) {
 		ui->samplingAllRadioButton->setChecked(true);
 	} else {
 		ui->samplingSkipRadioButton->setChecked(true);
@@ -92,7 +91,7 @@ int Post3dWindowArrowGroupSettingDialog::sampleRate()
 void Post3dWindowArrowGroupSettingDialog::setCurrentSolution(QString sol)
 {
 	int index = m_solutions.indexOf(sol);
-	if (index == -1){index = 0;}
+	if (index == -1) {index = 0;}
 	ui->physicalValueComboBox->setCurrentIndex(index);
 }
 
@@ -104,10 +103,10 @@ QString Post3dWindowArrowGroupSettingDialog::currentSolution()
 void Post3dWindowArrowGroupSettingDialog::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map)
 {
 	m_faceMap = map;
-	if (m_faceMap.size() < 1) return;
+	if (m_faceMap.size() < 1) { return; }
 
 	ui->faceSettingWidget->setEnabled(true);
-	for (auto it = m_faceMap.begin(); it != m_faceMap.end(); ++it){
+	for (auto it = m_faceMap.begin(); it != m_faceMap.end(); ++it) {
 		ui->faceListWidget->addItem(it.key());
 	}
 	ui->faceListWidget->setCurrentRow(0, QItemSelectionModel::SelectCurrent);
@@ -130,11 +129,11 @@ void Post3dWindowArrowGroupSettingDialog::setZoneData(PostZoneDataContainer* zon
 	m_scalars.clear();
 	ui->physicalValueComboBox->blockSignals(true);
 	ui->scalarComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i){
+	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0){continue;}
+		if (tmparray == 0) {continue;}
 		QString name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() == 1){
+		if (tmparray->GetNumberOfComponents() == 1) {
 			ui->scalarComboBox->addItem(name);
 			m_scalars.append(name);
 		} else {
@@ -144,7 +143,7 @@ void Post3dWindowArrowGroupSettingDialog::setZoneData(PostZoneDataContainer* zon
 	}
 	ui->physicalValueComboBox->blockSignals(false);
 	ui->scalarComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1){
+	if (m_solutions.count() <= 1) {
 		ui->physicalValueLabel->hide();
 		ui->physicalValueComboBox->hide();
 	}
@@ -158,9 +157,9 @@ void Post3dWindowArrowGroupSettingDialog::addFaceSetting()
 	int idx = 0;
 	bool ok = false;
 	QString label;
-	while (! ok){
+	while (! ok) {
 		label = QString(tr("Face%1")).arg(++idx, 3, 10, QChar('0'));
-		if (ui->faceListWidget->findItems(label, 0).size() == 0){
+		if (ui->faceListWidget->findItems(label, 0).size() == 0) {
 			ok = true;
 		}
 	}
@@ -189,22 +188,22 @@ void Post3dWindowArrowGroupSettingDialog::removeFaceSetting()
 	m_isRemoving = true;
 
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
-	for (auto it = items.begin(); it != items.end(); ++it){
+	for (auto it = items.begin(); it != items.end(); ++it) {
 		QListWidgetItem* widgetItem = *it;
 		m_faceMap.remove(widgetItem->text());
 	}
 	qDeleteAll(items);
 
-	if (ui->faceListWidget->count() < 1){
+	if (ui->faceListWidget->count() < 1) {
 		ui->faceSettingWidget->setEnabled(false);
 	}
 
 	m_isRemoving = false;
 }
 
-void Post3dWindowArrowGroupSettingDialog::switchFaceSetting(QListWidgetItem *current, QListWidgetItem * /*previous*/)
+void Post3dWindowArrowGroupSettingDialog::switchFaceSetting(QListWidgetItem* current, QListWidgetItem* /*previous*/)
 {
-	if (current == 0) return;
+	if (current == 0) { return; }
 
 	QString currentLabel = current->text();
 	ui->faceSettingWidget->setSetting(m_faceMap.value(currentLabel));
@@ -217,7 +216,7 @@ void Post3dWindowArrowGroupSettingDialog::solutionChanged(int /*index*/)
 
 void Post3dWindowArrowGroupSettingDialog::allSamplingToggled(bool toggled)
 {
-	if (toggled){
+	if (toggled) {
 		ui->sampleRateSpinBox->setValue(1);
 	}
 }
@@ -227,7 +226,7 @@ void Post3dWindowArrowGroupSettingDialog::checkSelectedNumber()
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
 	int num = items.size();
 
-	if (num < 2){
+	if (num < 2) {
 		ui->faceSettingWidget->setMultiSelected(false);
 		// temporary?
 		ui->faceSettingWidget->setEnabled(true);
@@ -245,7 +244,7 @@ void Post3dWindowArrowGroupSettingDialog::updateFaceMap()
 
 void Post3dWindowArrowGroupSettingDialog::setLengthMode(Post3dWindowArrowGroupDataItem::LengthMode lm)
 {
-	if (lm == Post3dWindowArrowGroupDataItem::lenAuto){
+	if (lm == Post3dWindowArrowGroupDataItem::lenAuto) {
 		ui->lengthAutoCheckBox->setChecked(true);
 	} else {
 		ui->lengthAutoCheckBox->setChecked(false);
@@ -254,7 +253,7 @@ void Post3dWindowArrowGroupSettingDialog::setLengthMode(Post3dWindowArrowGroupDa
 
 Post3dWindowArrowGroupDataItem::LengthMode Post3dWindowArrowGroupSettingDialog::lengthMode()
 {
-	if (ui->lengthAutoCheckBox->isChecked()){
+	if (ui->lengthAutoCheckBox->isChecked()) {
 		return Post3dWindowArrowGroupDataItem::lenAuto;
 	} else {
 		return Post3dWindowArrowGroupDataItem::lenCustom;

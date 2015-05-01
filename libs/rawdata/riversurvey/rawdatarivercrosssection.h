@@ -10,7 +10,8 @@ class RawDataRiverPathPoint;
  * @ingroup RiverShape
  * @brief 河川の断面の情報を保持するクラス
  */
-class RD_RIVERSURVEY_EXPORT RawDataRiverCrosssection {
+class RD_RIVERSURVEY_EXPORT RawDataRiverCrosssection
+{
 public:
 	/**
 	 * @brief 例外処理で返す値
@@ -26,36 +27,37 @@ public:
 	/**
 	 * @brief 標高データ
 	 */
-	class Altitude {
-public:
+	class Altitude
+	{
+	public:
 		/// Constructor
-		Altitude(){
+		Altitude() {
 			init();
 		}
 		/// Constructor
-		Altitude(double pos, double height){
+		Altitude(double pos, double height) {
 			init();
 			m_position = pos;
 			m_height = height;
 		}
 		/// Constructor
-		Altitude(double pos, double height, bool active){
+		Altitude(double pos, double height, bool active) {
 			init();
 			m_position = pos;
 			m_height = height;
 			m_active = active;
 		}
 		double position() const {return m_position;}
-		void setPosition(double p){m_position = p;}
+		void setPosition(double p) {m_position = p;}
 		double height() const {return m_height;}
-		void setHeight(double h){m_height = h;}
+		void setHeight(double h) {m_height = h;}
 		bool active() const {return m_active;}
-		void setActive(bool a){m_active = a;}
-		bool operator <(const Altitude& alt) const{
+		void setActive(bool a) {m_active = a;}
+		bool operator <(const Altitude& alt) const {
 			return m_position < alt.m_position;
 		}
-private:
-		void init(){
+	private:
+		void init() {
 			m_active = true;
 			m_tmpSelected = false;
 		}
@@ -66,21 +68,21 @@ private:
 	};
 	typedef QList<Altitude> AltitudeList;
 	/// Constructor
-	RawDataRiverCrosssection(){
+	RawDataRiverCrosssection() {
 		m_fixedPointLSet = false;
 		m_fixedPointRSet = false;
 		m_leftShift = 0;
 	}
 	/// Destructor
-	~RawDataRiverCrosssection(){}
+	~RawDataRiverCrosssection() {}
 	/**
 	 * @brief 親河川横断線を設定する
 	 */
-	void setParent(RawDataRiverPathPoint* point){
+	void setParent(RawDataRiverPathPoint* point) {
 		m_parent = point;
 	}
 	double leftShift() const {return m_leftShift;}
-	void setLeftShift(double shift){m_leftShift = shift;}
+	void setLeftShift(double shift) {m_leftShift = shift;}
 	void moveCenter(double offset);
 	void expand(double ratio);
 	void addPoint(int index, double position, double height);
@@ -112,24 +114,24 @@ private:
 	 * @brief 断面の上に存在する点の数を数える。
 	 */
 	unsigned int numOfAltitudes(bool OnlyActive = false);
-	AltitudeList& AltitudeInfo(){return m_altitudeInfo;}
-	RawDataRiverPathPoint* parent(){return m_parent;}
-	bool fixedPointLSet(){return m_fixedPointLSet;}
-	const Altitude& fixedPointL(){
+	AltitudeList& AltitudeInfo() {return m_altitudeInfo;}
+	RawDataRiverPathPoint* parent() {return m_parent;}
+	bool fixedPointLSet() {return m_fixedPointLSet;}
+	const Altitude& fixedPointL() {
 		return m_altitudeInfo.at(m_fixedPointL);
 	}
-	int fixedPointLIndex(){return m_fixedPointL;}
-	bool fixedPointRSet(){return m_fixedPointRSet;}
-	const Altitude& fixedPointR(){
+	int fixedPointLIndex() {return m_fixedPointL;}
+	bool fixedPointRSet() {return m_fixedPointRSet;}
+	const Altitude& fixedPointR() {
 		return m_altitudeInfo.at(m_fixedPointR);
 	}
-	int fixedPointRIndex(){return m_fixedPointR;}
+	int fixedPointRIndex() {return m_fixedPointR;}
 	void setFixedPointL(int index);
 	void unsetFixedPointL();
 	void setFixedPointR(int index);
 	void unsetFixedPointR();
-	double fixedPointLDiv(){return m_fixedPointLDiv;}
-	double fixedPointRDiv(){return m_fixedPointRDiv;}
+	double fixedPointLDiv() {return m_fixedPointLDiv;}
+	double fixedPointRDiv() {return m_fixedPointRDiv;}
 	void updateFixedPointDivs();
 
 private:

@@ -50,7 +50,7 @@ void Axis3dDataItem::updateVisibility(bool visible)
 	m_widget->SetEnabled(v);
 }
 
-void Axis3dDataItem::informSelection(VTKGraphicsView * /*v*/)
+void Axis3dDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	m_widget->SetInteractive(1);
 }

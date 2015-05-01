@@ -14,6 +14,7 @@ class QRubberBand;
 class RawDataRiverSurveyCrosssectionWindowGraphicsView : public QAbstractItemView
 {
 	Q_OBJECT
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -24,36 +25,36 @@ public:
 		meMovePrepare
 	};
 	RawDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w);
-	void setParentWindow(RawDataRiverSurveyCrosssectionWindow* w){
+	void setParentWindow(RawDataRiverSurveyCrosssectionWindow* w) {
 		m_parentWindow = w;
 	}
 	void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 	void paintEvent(QPaintEvent* event);
 	QRect visualRect(const QModelIndex&) const {return QRect();}
-	void scrollTo(const QModelIndex & /*index*/, ScrollHint /*hint*/){}
+	void scrollTo(const QModelIndex& /*index*/, ScrollHint /*hint*/) {}
 	QModelIndex indexAt(const QPoint&) const {
 		viewport()->update();
 		return QModelIndex();
 	}
-	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers){
+	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers) {
 		viewport()->update();
 		return QModelIndex();
 	}
 	int horizontalOffset() const {return 0;}
 	int verticalOffset() const {return 0;}
 	bool isIndexHidden(const QModelIndex&) const {return false;}
-	void setSelection(const QRect & /*rect*/, QItemSelectionModel::SelectionFlags /*command*/){
+	void setSelection(const QRect& /*rect*/, QItemSelectionModel::SelectionFlags /*command*/) {
 		viewport()->update();
 	}
-	void selectionChanged ( const QItemSelection & /*selected*/, const QItemSelection & /*deselected*/ ){
+	void selectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/) {
 		updateActionStatus();
 		viewport()->update();
 	}
-	QRegion visualRegionForSelection(const QItemSelection & /*selection*/) const {return QRegion();}
+	QRegion visualRegionForSelection(const QItemSelection& /*selection*/) const {return QRegion();}
 
-	QAction* activateAction(){return m_activateAction;}
-	QAction* inactivateAction(){return m_inactivateAction;}
-	QAction* moveAction(){return m_moveAction;}
+	QAction* activateAction() {return m_activateAction;}
+	QAction* inactivateAction() {return m_inactivateAction;}
+	QAction* moveAction() {return m_moveAction;}
 
 	void cameraFit();
 	void cameraMoveLeft();
@@ -67,16 +68,19 @@ public:
 	void cameraZoomInY();
 	void cameraZoomOutY();
 	void toggleGridCreatingMode(bool gridMode);
+
 private slots:
 	void activateSelectedRows();
 	void inactivateSelectedRows();
 	void moveSelectedRows();
+
 protected:
 	int moveWidth();
-	void mouseMoveEvent(QMouseEvent *event);
-	void mousePressEvent(QMouseEvent *event);
-	void mouseReleaseEvent(QMouseEvent *event);
-	void wheelEvent(QWheelEvent *event);
+	void mouseMoveEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event);
+	void mouseReleaseEvent(QMouseEvent* event);
+	void wheelEvent(QWheelEvent* event);
+
 private:
 	void setupActions();
 	void updateAltitudeList(RawDataRiverCrosssection::AltitudeList& alist, const QPoint& start, const QPoint& end);
@@ -87,7 +91,7 @@ private:
 	void drawSelectionCircle(QPainter& painter);
 	void drawSquare(QPainter& painter);
 	void drawSelectionSquare(QPainter& painter);
-	void drawLine(RawDataRiverPathPoint* point, const QColor &color, QPainter& painter);
+	void drawLine(RawDataRiverPathPoint* point, const QColor& color, QPainter& painter);
 	void drawWaterSurfaceElevation(RawDataRiverPathPoint* point, QPainter& painter, const QMatrix& matrix);
 	void zoom(double scaleX, double scaleY);
 	void selectPoints(const QPoint& from, const QPoint& to);

@@ -16,7 +16,7 @@
 VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent)
 	: VTKGraphicsView(parent)
 {
-	vtkRenderWindow *renderWindow = GetRenderWindow();
+	vtkRenderWindow* renderWindow = GetRenderWindow();
 
 	vtkRenderWindowInteractor* iren = vtkRenderWindowInteractor::New();
 	renderWindow->SetInteractor(iren);
@@ -48,7 +48,7 @@ void VTK2DGraphicsView::fitInView()
 	double radius = w1 + w2;
 	// compute the radius of the enclosing sphere
 	radius = sqrt(radius)*0.5;
-	if (radius == 0){radius = 1;}
+	if (radius == 0) {radius = 1;}
 	m_mainRenderer->GetActiveCamera()->SetParallelScale(radius);
 	QUndoCommand* com = new VTKGraphicsViewArbitraryMove(mainRenderer()->GetActiveCamera(), this);
 	com->redo();
@@ -129,7 +129,7 @@ void VTK2DGraphicsView::viewportToWorld(double& x, double& y)
 	m_mainRenderer->ViewToWorld(x, y, z);
 }
 
-void VTK2DGraphicsView::worldToViewport(double &x, double &y)
+void VTK2DGraphicsView::worldToViewport(double& x, double& y)
 {
 	double z = 0.0;
 	m_mainRenderer->WorldToView(x, y, z);
@@ -141,7 +141,7 @@ void VTK2DGraphicsView::worldToViewport(double &x, double &y)
 void VTK2DGraphicsView::ResetCameraClippingRange()
 {
 	double bounds[6];
-	m_mainRenderer->ComputeVisiblePropBounds( bounds );
+	m_mainRenderer->ComputeVisiblePropBounds(bounds);
 
 	// move camera forward or backword.
 	double center[3];
@@ -161,10 +161,8 @@ void VTK2DGraphicsView::ResetCameraClippingRange()
 
 	// update the camera
 	camera->SetFocalPoint(center[0],center[1],center[2]);
-	camera->SetPosition(center[0]+depth*vn[0],
-									center[1]+depth*vn[1],
-									center[2]+depth*vn[2]);
-	m_mainRenderer->ResetCameraClippingRange( bounds );
+	camera->SetPosition(center[0] + depth * vn[0], center[1] + depth * vn[1], center[2] + depth * vn[2]);
+	m_mainRenderer->ResetCameraClippingRange(bounds);
 }
 
 double VTK2DGraphicsView::stdRadius(int pixels)
@@ -198,7 +196,7 @@ void VTK2DGraphicsView::emitWorldPosition(int x, int y)
 	emit worldPositionChanged(QVector2D(dx, dy));
 }
 
-void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent *event)
+void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
 	double dx, dy;
 	dx = event->x();
@@ -217,8 +215,8 @@ void VTK2DGraphicsView::translate(int x, int y)
 	double theta = m_mainRenderer->GetActiveCamera()->GetRoll() * M_PI /180;
 	m_mainRenderer->GetActiveCamera()->GetPosition(position);
 	m_mainRenderer->GetActiveCamera()->GetFocalPoint(focalpoint);
-	double _x = ( x*cos(theta)+y*sin(theta) ) * s / 1.5;
-	double _y = ( -x*sin(theta)+y*cos(theta) ) * s / 1.5;
+	double _x = (x * cos(theta) + y * sin(theta)) * s / 1.5;
+	double _y = (-x * sin(theta)+ y * cos(theta)) * s / 1.5;
 	position[0] += _x;
 	position[1] += _y;
 	focalpoint[0] += _x;

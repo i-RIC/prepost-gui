@@ -47,8 +47,8 @@ public slots:
 	void toYZPlane();
 	void toZXPlane();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&){}
-	void doSaveToProjectMainFile(QXmlStreamWriter&){}
+	void doLoadFromProjectMainFile(const QDomNode&) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
 private:
 	void init();
 	void setDefaultColor();

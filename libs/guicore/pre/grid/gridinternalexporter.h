@@ -15,7 +15,7 @@ class GUICOREDLL_EXPORT GridInternalExporter : public QObject, public GridExport
 
 public:
 	GridInternalExporter();
-	virtual ~GridInternalExporter(){}
+	virtual ~GridInternalExporter() {}
 
 protected:
 	ProjectData* getProjectData(Grid* g);

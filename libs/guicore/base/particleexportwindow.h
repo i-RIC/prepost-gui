@@ -6,9 +6,10 @@
 
 class QString;
 
-class ParticleExportWindow {
+class ParticleExportWindow
+{
 public:
-	ParticleExportWindow(){}
+	ParticleExportWindow() {}
 	virtual bool exportParticles(const QString& filename, int index, double time, const QString& zonename) = 0;
 	virtual QList<QString> particleDrawingZones() = 0;
 };

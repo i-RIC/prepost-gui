@@ -27,7 +27,7 @@ bool RawDataPointmapSTLExporter::doEmport(RawData* data, const QString& filename
 	numpoints = polydata->GetNumberOfPoints();
 	vtkDoubleArray* val = vtkDoubleArray::SafeDownCast(polydata->GetPointData()->GetArray("values"));
 	QVector2D offset = pd->mainfile()->offset();
-	for (i = 0; i < numpoints; ++i){
+	for (i = 0; i < numpoints; ++i) {
 		polydata->GetPoints()->GetPoint(i, tmpvec);
 		tmpvec[0] += offset.x();
 		tmpvec[1] += offset.y();
@@ -35,9 +35,9 @@ bool RawDataPointmapSTLExporter::doEmport(RawData* data, const QString& filename
 		polydata->GetPoints()->SetPoint(i, tmpvec);
 	}
 	vtkSTLWriter* writer = vtkSTLWriter::New();
-	if (selectedFilter == tr("Binary STL (*.stl)")){
+	if (selectedFilter == tr("Binary STL (*.stl)")) {
 		writer->SetFileTypeToBinary();
-	}else{
+	} else {
 		writer->SetFileTypeToASCII();
 	}
 	writer->SetFileName(iRIC::toStr(filename).c_str());

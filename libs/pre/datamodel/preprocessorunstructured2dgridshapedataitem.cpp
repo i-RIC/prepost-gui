@@ -64,13 +64,13 @@ void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 void PreProcessorUnstructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != nullptr){
+	if (g != nullptr) {
 		Unstructured2DGrid* grid = dynamic_cast<Unstructured2DGrid*>(g);
 
 		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != nullptr){m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
+		if (shapeAlgo != nullptr) {m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
 		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != nullptr){m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
+		if (indexGridAlgo != nullptr) {m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
 	}
 	updateActorSettings();
 }
@@ -85,26 +85,17 @@ void PreProcessorUnstructured2dGridShapeDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == nullptr){
+	if (g == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
 	m_wireframeActor->GetProperty()->SetColor(m_color);
 	m_actorCollection->AddItem(m_wireframeActor);
 
-	if (m_indexVisible){
+	if (m_indexVisible) {
 		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
-/*
-	if (m_axesVisible){
-		m_axesActor->GetProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
-		m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
-		m_actor2DCollection->AddItem(m_axesActor);
-		updateAxesRegion();
-	}
-*/
 	updateVisibilityWithoutRendering();
 }
 

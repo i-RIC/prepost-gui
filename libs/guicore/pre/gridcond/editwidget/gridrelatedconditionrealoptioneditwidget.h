@@ -12,7 +12,7 @@ class GridRelatedConditionRealOptionEditWidget : public GridRelatedConditionEdit
 public:
 	GridRelatedConditionRealOptionEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<double>* cond);
 	~GridRelatedConditionRealOptionEditWidget();
-	void setEnumerations(const QMap<double, QString>& enums){
+	void setEnumerations(const QMap<double, QString>& enums) {
 		m_enumerations = enums;
 	}
 	const QMap<double, QString>& enumerations() const {return m_enumerations;}

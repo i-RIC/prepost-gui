@@ -3,7 +3,8 @@
 
 #include <QDialog>
 
-namespace Ui {
+namespace Ui
+{
 	class GridCreatingConditionTriangleRemeshDialog;
 }
 
@@ -12,7 +13,7 @@ class GridCreatingConditionTriangleRemeshDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GridCreatingConditionTriangleRemeshDialog(QWidget *parent = nullptr);
+	explicit GridCreatingConditionTriangleRemeshDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionTriangleRemeshDialog();
 	void setArea(double area);
 	double area();
@@ -20,7 +21,7 @@ public:
 	void accept();
 	void reject();
 private:
-	Ui::GridCreatingConditionTriangleRemeshDialog *ui;
+	Ui::GridCreatingConditionTriangleRemeshDialog* ui;
 	bool m_required;
 };
 

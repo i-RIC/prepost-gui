@@ -17,7 +17,7 @@ class GUICOREDLL_EXPORT GridCreatingConditionCreator : public QObject
 {
 public:
 	GridCreatingConditionCreator();
-	virtual ~GridCreatingConditionCreator(){}
+	virtual ~GridCreatingConditionCreator() {}
 	/// The type of grid that this condition can create.
 	virtual SolverDefinitionGridType::GridType gridType() const = 0;
 	virtual GridCreatingCondition* create(ProjectDataItem* parent) = 0;

@@ -1,16 +1,16 @@
 #include "preprocessorgridattributetemplatemappingsettingdialog.h"
 #include "ui_preprocessorgridattributetemplatemappingsettingdialog.h"
 
-PreProcessorGridAttributeTemplateMappingSettingDialog::PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::PreProcessorGridAttributeTemplateMappingSettingDialog)
+PreProcessorGridAttributeTemplateMappingSettingDialog::PreProcessorGridAttributeTemplateMappingSettingDialog(QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::PreProcessorGridAttributeTemplateMappingSettingDialog)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 PreProcessorGridAttributeTemplateMappingSettingDialog::~PreProcessorGridAttributeTemplateMappingSettingDialog()
 {
-    delete ui;
+	delete ui;
 }
 
 bool PreProcessorGridAttributeTemplateMappingSettingDialog::autoMode()
@@ -20,7 +20,7 @@ bool PreProcessorGridAttributeTemplateMappingSettingDialog::autoMode()
 
 void PreProcessorGridAttributeTemplateMappingSettingDialog::setAutoMode(bool a)
 {
-	if (a){
+	if (a) {
 		ui->autoRadioButton->setChecked(true);
 	} else {
 		ui->manualRadioButton->setChecked(true);

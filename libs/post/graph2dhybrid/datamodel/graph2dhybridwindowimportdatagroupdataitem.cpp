@@ -26,7 +26,7 @@ Graph2dHybridWindowImportDataGroupDataItem::~Graph2dHybridWindowImportDataGroupD
 
 void Graph2dHybridWindowImportDataGroupDataItem::updateData()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Graph2dHybridWindowImportDataDataItem* item = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(*it);
 		item->update();
 	}
@@ -35,7 +35,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::updateData()
 void Graph2dHybridWindowImportDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList list = node.childNodes();
-	for (int i = 0; i < list.count(); ++i){
+	for (int i = 0; i < list.count(); ++i) {
 		QDomNode child = list.at(i);
 		Graph2dHybridWindowImportDataDataItem* ditem = new Graph2dHybridWindowImportDataDataItem(this);
 		ditem->loadFromProjectMainFile(child);
@@ -46,8 +46,8 @@ void Graph2dHybridWindowImportDataGroupDataItem::doLoadFromProjectMainFile(const
 
 void Graph2dHybridWindowImportDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowImportDataDataItem* ditem = dynamic_cast<Graph2dHybridWindowImportDataDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowImportDataDataItem* ditem = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("Data");
 		ditem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -66,7 +66,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::handlePropertyDialogAccepted(QD
 
 void Graph2dHybridWindowImportDataGroupDataItem::clear()
 {
-	for (int i = m_childItems.count() - 1; i >= 0; --i){
+	for (int i = m_childItems.count() - 1; i >= 0; --i) {
 		delete m_childItems.at(i);
 	}
 }
@@ -85,15 +85,15 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 	QList<QString> titles = iRIC::parseCSVLine(csvStream.readLine());
 	QList<QVector<double> > values;
 	QVector<double> emptyVec;
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		values.append(emptyVec);
 	}
-	while (! csvStream.atEnd()){
+	while (! csvStream.atEnd()) {
 		QString line = csvStream.readLine();
 		QList<QString> frags = iRIC::parseCSVLine(line);
-		for (int i = 0; i < frags.count(); ++i){
+		for (int i = 0; i < frags.count(); ++i) {
 			QString f = frags[i].trimmed();
-			if (! f.isEmpty()){
+			if (! f.isEmpty()) {
 				double val = f.toDouble();
 				values[i].append(val);
 			}
@@ -101,7 +101,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 	}
 	csvFile.close();
 
-	if (titles.at(0) != "X"){
+	if (titles.at(0) != "X") {
 		QMessageBox::critical(mainWindow(), tr("Error"), tr("The title of the first column has to be \"X\""));
 		return;
 	}
@@ -111,14 +111,14 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 	QFileInfo finfo(filename);
 	QString fname = finfo.fileName();
 	Graph2dHybridWindowResultSetting::Setting setting;
-	for (int i = 0; i < titles.count(); ++i){
+	for (int i = 0; i < titles.count(); ++i) {
 		QString title = titles.at(i);
-		if (title == "X"){
+		if (title == "X") {
 			xVals = values.at(i);
 			continue;
 		}
 		yVals = values.at(i);
-		if (xVals.count() != yVals.count()){
+		if (xVals.count() != yVals.count()) {
 			// skip this data.
 			QMessageBox::warning(mainWindow(), tr("Warning"), tr("The number of data of %1 and %2 mismatch. Data %1 is skipped."));
 			continue;
@@ -136,7 +136,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::importCsv(const QString& filena
 void Graph2dHybridWindowImportDataGroupDataItem::setData(QList<Graph2dHybridWindowImportDataDataItem*> data)
 {
 	m_childItems.clear();
-	for (int i = 0; i < data.count(); ++i){
+	for (int i = 0; i < data.count(); ++i) {
 		m_childItems.append(data.at(i));
 	}
 	updateData();
@@ -145,7 +145,7 @@ void Graph2dHybridWindowImportDataGroupDataItem::setData(QList<Graph2dHybridWind
 QList<Graph2dHybridWindowImportDataDataItem*> Graph2dHybridWindowImportDataGroupDataItem::data()
 {
 	QList<Graph2dHybridWindowImportDataDataItem*> ret;
-	for (int i = 0; i < m_childItems.count(); ++i){
+	for (int i = 0; i < m_childItems.count(); ++i) {
 		Graph2dHybridWindowImportDataDataItem* item = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(m_childItems.at(i));
 		ret.append(item);
 	}
@@ -155,8 +155,8 @@ QList<Graph2dHybridWindowImportDataDataItem*> Graph2dHybridWindowImportDataGroup
 bool Graph2dHybridWindowImportDataGroupDataItem::axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const
 {
 	bool needed = false;
-	for (int i = 0; i < m_childItems.count(); ++i){
-		Graph2dHybridWindowImportDataDataItem* rItem = dynamic_cast<Graph2dHybridWindowImportDataDataItem*> (m_childItems.at(i));
+	for (int i = 0; i < m_childItems.count(); ++i) {
+		Graph2dHybridWindowImportDataDataItem* rItem = dynamic_cast<Graph2dHybridWindowImportDataDataItem*>(m_childItems.at(i));
 		needed = needed || rItem->axisNeeded(as);
 	}
 	return needed;

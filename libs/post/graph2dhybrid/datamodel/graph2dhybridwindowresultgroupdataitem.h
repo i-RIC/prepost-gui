@@ -26,7 +26,7 @@ public:
 	void applyHorizontalAxisSettings();
 	void getAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max);
 	void showHorizontalAxisSettingDialog();
-	Graph2dHybridWindowHorizontalAxisSetting* horizontalAxisSetting(){
+	Graph2dHybridWindowHorizontalAxisSetting* horizontalAxisSetting() {
 		return m_hAxisSetting;
 	}
 	void updateChildren(const Graph2dHybridWindowResultSetting& setting);

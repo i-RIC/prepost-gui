@@ -11,7 +11,7 @@ StartPageRecentProject::StartPageRecentProject(const QString& filename, QWidget*
 	QString title = finfo.baseName();
 	setTitle(title);
 	QString subtitle = filename;
-	if (subtitle.length() >= MAXFILENAMELEN){
+	if (subtitle.length() >= MAXFILENAMELEN) {
 		QString filename = finfo.fileName();
 		QString path = finfo.path();
 		QString foldernameBase = path.right(FOLDERNAMELEN);

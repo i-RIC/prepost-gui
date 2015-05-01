@@ -33,24 +33,24 @@ void GraphicsWindowRootDataItem::updateItemMap()
 	innerUpdateItemMap(m_itemMap);
 }
 
-void GraphicsWindowRootDataItem::handleItemChange(QStandardItem *changedItem)
+void GraphicsWindowRootDataItem::handleItemChange(QStandardItem* changedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(changedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemChange();
 }
 
 void GraphicsWindowRootDataItem::handleItemClick(QStandardItem* clickedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemClicked();
 }
 
 void GraphicsWindowRootDataItem::handleItemDoubleClick(QStandardItem* clickedItem)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(clickedItem);
-	if (dataItem == nullptr){return;}
+	if (dataItem == nullptr) {return;}
 	dataItem->handleStandardItemDoubleClicked();
 }
 
@@ -58,7 +58,7 @@ void GraphicsWindowRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	// delete the item.
-	if (dataItem){delete dataItem;}
+	if (dataItem) {delete dataItem;}
 	// rebuild m_itemMap.
 	updateItemMap();
 	// render graphics view.
@@ -68,21 +68,18 @@ void GraphicsWindowRootDataItem::deleteItem(QStandardItem* item)
 class GraphicsWindowRootDataItemMoveUpCommand : public QUndoCommand
 {
 public:
-	GraphicsWindowRootDataItemMoveUpCommand(GraphicsWindowDataItem * item, ObjectBrowserView* view)
-		: QUndoCommand(QObject::tr("Move up item"))
-	{
+	GraphicsWindowRootDataItemMoveUpCommand(GraphicsWindowDataItem* item, ObjectBrowserView* view)
+		: QUndoCommand(QObject::tr("Move up item")) {
 		m_item = item;
 		m_view = view;
 	}
-	void redo()
-	{
+	void redo() {
 		m_view->setCommandExecution(true);
 		m_item->moveUp();
 		m_view->select(m_item->standardItem()->index());
 		m_view->setCommandExecution(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_view->setCommandExecution(true);
 		m_item->moveDown();
 		m_view->select(m_item->standardItem()->index());
@@ -93,11 +90,11 @@ private:
 	ObjectBrowserView* m_view;
 };
 
-void GraphicsWindowRootDataItem::moveUpItem(QStandardItem *item)
+void GraphicsWindowRootDataItem::moveUpItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	// move up the item.
-	if (dataItem){
+	if (dataItem) {
 		iRICUndoStack::instance().push(new GraphicsWindowRootDataItemMoveUpCommand(dataItem, m_dataModel->objectBrowserView()));
 	}
 }
@@ -106,20 +103,17 @@ class GraphicsWindowRootDataItemMoveDownCommand : public QUndoCommand
 {
 public:
 	GraphicsWindowRootDataItemMoveDownCommand(GraphicsWindowDataItem* item, ObjectBrowserView* view)
-		: QUndoCommand(QObject::tr("Move down item"))
-	{
+		: QUndoCommand(QObject::tr("Move down item")) {
 		m_item = item;
 		m_view = view;
 	}
-	void redo()
-	{
+	void redo() {
 		m_view->setCommandExecution(true);
 		m_item->moveDown();
 		m_view->select(m_item->standardItem()->index());
 		m_view->setCommandExecution(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_view->setCommandExecution(true);
 		m_item->moveUp();
 		m_view->select(m_item->standardItem()->index());
@@ -130,11 +124,11 @@ private:
 	ObjectBrowserView* m_view;
 };
 
-void GraphicsWindowRootDataItem::moveDownItem(QStandardItem *item)
+void GraphicsWindowRootDataItem::moveDownItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	// move down the item.
-	if (dataItem){
+	if (dataItem) {
 		iRICUndoStack::instance().push(new GraphicsWindowRootDataItemMoveDownCommand(dataItem, m_dataModel->objectBrowserView()));
 	}
 }

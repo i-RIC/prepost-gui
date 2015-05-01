@@ -17,7 +17,7 @@ RawDataRiverSurveyExporter::RawDataRiverSurveyExporter(RawDataCreator* creator)
 bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	QFile file(filename);
-	if (! file.open(QIODevice::WriteOnly)){
+	if (! file.open(QIODevice::WriteOnly)) {
 		std::cerr << "Cannot open file for writing: "
 							<< qPrintable(file.errorString()) << std::endl;
 		return false;
@@ -29,45 +29,45 @@ bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
 	RawDataRiverPathPoint* lastp = rs->headPoint()->nextPoint();
 	QVector2D offset = pd->mainfile()->offset();
-	while (1){
-		if (lastp->nextPoint() == nullptr){break;}
+	while (1) {
+		if (lastp->nextPoint() == nullptr) {break;}
 		lastp = lastp->nextPoint();
 	}
 	// now, export from the last one.
 	RawDataRiverPathPoint* tmpp = lastp;
 	outstream << "#survey" << endl;
-	while (1){
+	while (1) {
 		QVector2D leftBank  = tmpp->crosssectionPosition(tmpp->crosssection().leftBank(true).position());
 		QVector2D rightBank = tmpp->crosssectionPosition(tmpp->crosssection().rightBank(true).position());
 		outstream
-		<< tmpp->name()
-		<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()
-		<< "\t" << rightBank.x() + offset.x() << "\t" << rightBank.y()  + offset.y() << endl;
+				<< tmpp->name()
+				<< "\t" << leftBank.x() + offset.x() << "\t" << leftBank.y() + offset.y()
+				<< "\t" << rightBank.x() + offset.x() << "\t" << rightBank.y()  + offset.y() << endl;
 		tmpp = tmpp->previousPoint();
-		if (tmpp->firstPoint()){break;}
+		if (tmpp->firstPoint()) {break;}
 	}
 	// now export crosssection point.
 
 	tmpp = lastp;
 	outstream << endl << endl << "#x-section" << endl;
-	while (1){
+	while (1) {
 		outstream
-		<< tmpp->name() << "\t" << tmpp->crosssection().numOfAltitudes(true) << endl;
+				<< tmpp->name() << "\t" << tmpp->crosssection().numOfAltitudes(true) << endl;
 		int i = 0;
 		double left = tmpp->crosssection().leftBank(true).position();
-		for (RawDataRiverCrosssection::Altitude& alt : tmpp->crosssection().AltitudeInfo()){
-			if (alt.active()){
+		for (RawDataRiverCrosssection::Altitude& alt : tmpp->crosssection().AltitudeInfo()) {
+			if (alt.active()) {
 				outstream << alt.position() - left << "\t" << alt.height() << "\t";
 			}
 			++i;
-			if (i == 5){
+			if (i == 5) {
 				outstream << endl;
 				i = 0;
 			}
 		}
 		outstream << endl;
 		tmpp = tmpp->previousPoint();
-		if (tmpp->firstPoint()){break;}
+		if (tmpp->firstPoint()) {break;}
 	}
 	file.close();
 	return true;

@@ -3,7 +3,8 @@
 
 #include <QWidget>
 
-namespace Ui {
+namespace Ui
+{
 	class ProjectPropertyBasicInfoWidget;
 }
 
@@ -14,7 +15,7 @@ class ProjectPropertyBasicInfoWidget : public QWidget
 	Q_OBJECT
 
 public:
-	explicit ProjectPropertyBasicInfoWidget(QWidget *parent = nullptr);
+	explicit ProjectPropertyBasicInfoWidget(QWidget* parent = nullptr);
 	~ProjectPropertyBasicInfoWidget();
 	void setProjectData(ProjectData* data);
 
@@ -26,7 +27,7 @@ private:
 	void updateCoordinateSystem();
 	void updateCoordinateOffset();
 	ProjectData* m_projectData;
-	Ui::ProjectPropertyBasicInfoWidget *ui;
+	Ui::ProjectPropertyBasicInfoWidget* ui;
 };
 
 #endif // PROJECTPROPERTYBASICINFOWIDGET_H

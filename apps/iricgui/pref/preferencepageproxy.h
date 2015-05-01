@@ -5,21 +5,22 @@
 #include "preferencepage.h"
 #include "../misc/networksetting.h"
 
-namespace Ui {
-class PreferencePageProxy;
+namespace Ui
+{
+	class PreferencePageProxy;
 }
 
 class PreferencePageProxy : public PreferencePage
 {
 	Q_OBJECT
 public:
-	explicit PreferencePageProxy(QWidget *parent = nullptr);
+	explicit PreferencePageProxy(QWidget* parent = nullptr);
 	~PreferencePageProxy();
 	void update();
 
 private:
 	NetworkSetting m_setting;
-	Ui::PreferencePageProxy *ui;
+	Ui::PreferencePageProxy* ui;
 };
 
 #endif // PREFERENCEPAGEPROXY_H

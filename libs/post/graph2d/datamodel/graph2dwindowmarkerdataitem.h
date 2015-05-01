@@ -12,9 +12,9 @@ class Graph2dWindowMarkerDataItem : public Graph2dWindowDataItem
 public:
 	Graph2dWindowMarkerDataItem(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dWindowMarkerDataItem();
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/){}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/){}
-	QwtPlotCustomMarker* marker(){return m_marker;}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	QwtPlotCustomMarker* marker() {return m_marker;}
 	const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& setting() const {return m_setting;}
 	void update();
 protected:

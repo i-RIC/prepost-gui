@@ -34,7 +34,7 @@
 
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
-MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem *p)
+MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p)
 	: GraphicsWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
 	m_isDeletable = false;
@@ -58,13 +58,13 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 
-	for (int i = 0; i < md->vectorNames().count(); ++i){
+	for (int i = 0; i < md->vectorNames().count(); ++i) {
 		QString name = md->vectorNames().at(i);
 		MeasuredDataVectorDataItem* item = new MeasuredDataVectorDataItem(name, name, this);
 		m_childItems.append(item);
 	}
 	setupActors();
-	if (md->vectorNames().count() > 0){
+	if (md->vectorNames().count() > 0) {
 		QString name = md->vectorNames().at(0);
 		setCurrentSolution(name);
 		updateActorSettings();
@@ -90,12 +90,12 @@ void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	m_scalarValueName = elem.attribute("scalarValue");
 
 	QString lengthMode = elem.attribute("lengthMode");
-	if (lengthMode == "custom"){
+	if (lengthMode == "custom") {
 		m_lengthMode = MeasuredData::almCustom;
 	} else {
 		m_lengthMode = MeasuredData::almAuto;
 	}
-	if (m_lengthMode == MeasuredData::almCustom){
+	if (m_lengthMode == MeasuredData::almCustom) {
 		m_standardValue = elem.attribute("standardValue").toDouble();
 		m_legendLength = elem.attribute("legendLength").toDouble();
 		m_minimumValue = elem.attribute("minimumValue").toDouble();
@@ -106,7 +106,7 @@ void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& 
 void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("solution", m_currentSolution);
-	if (m_colorMode == MeasuredData::acmScalar){
+	if (m_colorMode == MeasuredData::acmScalar) {
 		writer.writeAttribute("colorMode", "scalar");
 	} else {
 		writer.writeAttribute("colorMode", "specific");
@@ -114,7 +114,7 @@ void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	writeColorAttribute("color", m_color, writer);
 	writer.writeAttribute("scalarValue", m_scalarValueName);
 
-	if (m_lengthMode == MeasuredData::almCustom){
+	if (m_lengthMode == MeasuredData::almCustom) {
 		writer.writeAttribute("lengthMode", "custom");
 
 		writer.writeAttribute("standardValue", QString::number(m_standardValue));
@@ -129,22 +129,19 @@ class MeasuredDataVectorSelectValue : public QUndoCommand
 {
 public:
 	MeasuredDataVectorSelectValue(const QString& newsol, MeasuredDataVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Arrow Physical Value Change"))
-	{
+		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
@@ -160,16 +157,17 @@ private:
 
 void MeasuredDataVectorGroupDataItem::exclusivelyCheck(MeasuredDataVectorDataItem* item)
 {
-	if (m_isCommandExecuting){return;}
+	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked){
+	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new MeasuredDataVectorSelectValue("", this));
-	}else{
+	} else {
 		stack.push(new MeasuredDataVectorSelectValue(item->name(), this));
 	}
 }
 
-void MeasuredDataVectorGroupDataItem::setupActors(){
+void MeasuredDataVectorGroupDataItem::setupActors()
+{
 	m_arrowActor = vtkSmartPointer<vtkActor>::New();
 	renderer()->AddActor(m_arrowActor);
 	m_arrowActor->GetProperty()->LightingOff();
@@ -233,15 +231,15 @@ void MeasuredDataVectorGroupDataItem::setupActors(){
 
 void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 {
-	if (m_lengthMode == MeasuredData::almCustom){return;}
+	if (m_lengthMode == MeasuredData::almCustom) {return;}
 	QVector<double> lenVec;
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == 0 || md->vectorNames().count() == 0){return;}
+	if (md == 0 || md->vectorNames().count() == 0) {return;}
 	vtkPointSet* ps = md->pointData();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_currentSolution).c_str());
-	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i){
+	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
 		lenVec.append(vec.length());
@@ -249,27 +247,27 @@ void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 	qSort(lenVec);
 	double sum = 0;
 	int count = AUTO_AVERAGECOUNT;
-	if (count > lenVec.count()){count = lenVec.count();}
-	for (int i = 0; i < count; ++i){
+	if (count > lenVec.count()) {count = lenVec.count();}
+	for (int i = 0; i < count; ++i) {
 		sum += lenVec.at(lenVec.count() - i - 1);
 	}
 	double average = sum / count;
-	if (average == 0){average = 1;}
+	if (average == 0) {average = 1;}
 
 	int p = 0;
 	double p2 = 1;
-	while (average > 10){
+	while (average > 10) {
 		average /= 10.;
 		++ p;
 		p2 = 10;
 	}
-	while (average < 1){
+	while (average < 1) {
 		average *= 10;
 		++ p;
 		p2 = 0.1;
 	}
 	average = static_cast<int>(average);
-	for (int i = 0; i < p; ++i){
+	for (int i = 0; i < p; ++i) {
 		average *= p2;
 	}
 	// now average is calculated.
@@ -293,12 +291,12 @@ void MeasuredDataVectorGroupDataItem::updateActorSettings()
 	m_actor2DCollection->RemoveAllItems();
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == 0 || md->pointData() == 0){return;}
-	if (m_currentSolution == ""){return;}
+	if (md == 0 || md->pointData() == 0) {return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointSet* ps = getPointSet();
-	if (m_currentSolution == ""){return;}
+	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0){return;}
+	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	pd->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
 	m_hedgeHog->SetInputData(ps);
@@ -317,21 +315,21 @@ void MeasuredDataVectorGroupDataItem::updateActorSettings()
 
 void MeasuredDataVectorGroupDataItem::updateColorSetting()
 {
-		MeasuredDataFileDataItem* fdi = dynamic_cast<MeasuredDataFileDataItem*> (parent());
-		MeasuredDataPointGroupDataItem* pgdi = fdi->pointGroupDataItem();
-	switch (m_colorMode){
+	MeasuredDataFileDataItem* fdi = dynamic_cast<MeasuredDataFileDataItem*>(parent());
+	MeasuredDataPointGroupDataItem* pgdi = fdi->pointGroupDataItem();
+	switch (m_colorMode) {
 	case MeasuredData::acmSpecific:
 		m_arrowMapper->ScalarVisibilityOff();
 		m_arrowActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
 		break;
 	case MeasuredData::acmScalar:
 		// not implemented yet.
-				m_arrowMapper->ScalarVisibilityOn();
-				LookupTableContainer* stc = pgdi->lookupTable(m_scalarValueName);
-				m_arrowMapper->SetScalarModeToUsePointFieldData();
-				m_arrowMapper->SelectColorArray(iRIC::toStr(m_scalarValueName).c_str());
-				m_arrowMapper->SetLookupTable(stc->vtkObj());
-				m_arrowMapper->UseLookupTableScalarRangeOn();
+		m_arrowMapper->ScalarVisibilityOn();
+		LookupTableContainer* stc = pgdi->lookupTable(m_scalarValueName);
+		m_arrowMapper->SetScalarModeToUsePointFieldData();
+		m_arrowMapper->SelectColorArray(iRIC::toStr(m_scalarValueName).c_str());
+		m_arrowMapper->SetLookupTable(stc->vtkObj());
+		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
 	}
 }
@@ -354,14 +352,14 @@ void MeasuredDataVectorGroupDataItem::update()
 void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentSol)
 {
 	MeasuredDataVectorDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		MeasuredDataVectorDataItem* tmpItem = dynamic_cast<MeasuredDataVectorDataItem*>(*it);
-		if (tmpItem->name() == currentSol){
+		if (tmpItem->name() == currentSol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (current != 0){
+	if (current != 0) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
 	m_currentSolution = currentSol;
@@ -371,7 +369,7 @@ void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
 	double scale = cam->GetParallelScale();
-	if (scale != m_oldCameraScale){
+	if (scale != m_oldCameraScale) {
 		updatePolyData();
 		updateLegendData();
 	}
@@ -381,8 +379,8 @@ void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 void MeasuredDataVectorGroupDataItem::updatePolyData()
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr){return;}
-	if (m_currentSolution == ""){return;}
+	if (md == nullptr || md->pointData() == nullptr) {return;}
+	if (m_currentSolution == "") {return;}
 	updateScaleFactor();
 	VTKGraphicsView* view = dataModel()->graphicsView();
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
@@ -436,10 +434,10 @@ void MeasuredDataVectorGroupDataItem::updateLegendData()
 	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution).arg(m_standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
-	if (m_colorMode == MeasuredData::acmSpecific){
+	if (m_colorMode == MeasuredData::acmSpecific) {
 		// specified color.
 		m_baseArrowActor->GetProperty()->SetColor(m_color.red() / 255., m_color.green() / 255., m_color.blue() / 255.);
-	} else if (m_colorMode == MeasuredData::acmScalar){
+	} else if (m_colorMode == MeasuredData::acmScalar) {
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
@@ -448,10 +446,10 @@ void MeasuredDataVectorGroupDataItem::updateLegendData()
 QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr){
+	if (md == nullptr || md->pointData() == nullptr) {
 		return 0;
 	}
-	if (md->vectorNames().size() == 0){
+	if (md->vectorNames().size() == 0) {
 		return 0;
 	}
 	MeasuredDataVectorSettingDialog* dialog = new MeasuredDataVectorSettingDialog(p);
@@ -472,8 +470,7 @@ class MeasuredDataVectorSetProperty : public QUndoCommand
 {
 public:
 	MeasuredDataVectorSetProperty(const QString& solutionName, MeasuredData::ArrowColorMode colorMode, const QColor& color, const QString& scalarName, MeasuredData::ArrowLengthMode lm, double stdLen, int legendLen, double minVal, MeasuredDataVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Arrow Setting"))
-	{
+		: QUndoCommand(QObject::tr("Update Arrow Setting")) {
 		m_newSolutionName = solutionName;
 		m_newColorMode = colorMode;
 		m_newColor = color;
@@ -494,8 +491,7 @@ public:
 
 		m_item = item;
 	}
-	void redo()
-	{
+	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newSolutionName);
 		m_item->m_colorMode = m_newColorMode;
@@ -510,8 +506,7 @@ public:
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
-	void undo()
-	{
+	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldSolutionName);
 		m_item->m_colorMode = m_oldColorMode;
@@ -556,51 +551,51 @@ void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* prop
 
 vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 {
-		MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-		vtkPointSet* ps = md->polyData();
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	vtkPointSet* ps = md->polyData();
 
-		vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
-		QSet<vtkIdType> points;
-		double minlimitsqr = m_minimumValue * m_minimumValue;
-		for (vtkIdType i = 0; i < ps->GetNumberOfPoints(); ++i){
-				bool active = true;
-				double val = 0;
-				for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j){
-						double tmpval = vectorArray->GetComponent(i, j);
-						val += tmpval * tmpval;
-				}
-				if (val < minlimitsqr){
-						active = false;
-				}
-				if (active){
-						points.insert(i);
-				}
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
+	QSet<vtkIdType> points;
+	double minlimitsqr = m_minimumValue * m_minimumValue;
+	for (vtkIdType i = 0; i < ps->GetNumberOfPoints(); ++i) {
+		bool active = true;
+		double val = 0;
+		for (int j = 0; j < vectorArray->GetNumberOfComponents(); ++j) {
+			double tmpval = vectorArray->GetComponent(i, j);
+			val += tmpval * tmpval;
 		}
-
-		m_activePoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
-		vtkPointData* inPD = ps->GetPointData();
-		vtkPointData* outPD = m_activePoints->GetPointData();
-		vtkPoints* inPoints = ps->GetPoints();
-		vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
-
-		outPoints->SetDataTypeToDouble();
-		outPD->CopyAllocate(inPD, points.size());
-		int newId = 0;
-		for (auto it = points.begin(); it != points.end(); ++it){
-				vtkIdType pointid = *it;
-				outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
-				outPD->CopyData(inPD, pointid, newId);
-				vtkVertex* vertex = vtkVertex::New();
-				vertex->GetPointIds()->SetId(0, newId);
-				m_activePoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-				vertex->Delete();
-				++ newId;
+		if (val < minlimitsqr) {
+			active = false;
 		}
+		if (active) {
+			points.insert(i);
+		}
+	}
 
-		m_activePoints->SetPoints(outPoints);
-		m_activePoints->BuildLinks();
-		m_activePoints->Modified();
-		return m_activePoints;
+	m_activePoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
+	vtkPointData* inPD = ps->GetPointData();
+	vtkPointData* outPD = m_activePoints->GetPointData();
+	vtkPoints* inPoints = ps->GetPoints();
+	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
+
+	outPoints->SetDataTypeToDouble();
+	outPD->CopyAllocate(inPD, points.size());
+	int newId = 0;
+	for (auto it = points.begin(); it != points.end(); ++it) {
+		vtkIdType pointid = *it;
+		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
+		outPD->CopyData(inPD, pointid, newId);
+		vtkVertex* vertex = vtkVertex::New();
+		vertex->GetPointIds()->SetId(0, newId);
+		m_activePoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
+		vertex->Delete();
+		++ newId;
+	}
+
+	m_activePoints->SetPoints(outPoints);
+	m_activePoints->BuildLinks();
+	m_activePoints->Modified();
+	return m_activePoints;
 }
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)

@@ -7,8 +7,8 @@
 class RD_NETCDF_EXPORT RawDataNetcdfGdalRealImporter : public RawDataNetcdfGdalImporter
 {
 public:
-	RawDataNetcdfGdalRealImporter(RawDataCreator* creator) : RawDataNetcdfGdalImporter(creator){}
-	virtual ~RawDataNetcdfGdalRealImporter(){}
+	RawDataNetcdfGdalRealImporter(RawDataCreator* creator) : RawDataNetcdfGdalImporter(creator) {}
+	virtual ~RawDataNetcdfGdalRealImporter() {}
 
 protected:
 	int outputValues(int ncid, int varId, GDALRasterBand* band, RawDataNetcdf* data);

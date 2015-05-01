@@ -26,26 +26,26 @@ protected:
 
 public:
 	/// Constructor
-	explicit ProjectDataItem(ProjectDataItem *d) : QObject(d){
+	explicit ProjectDataItem(ProjectDataItem* d) : QObject(d) {
 		m_subFolder = "";
 		m_filename = "";
 	}
 	/// Constructor
-	ProjectDataItem(const QString& filename, ProjectDataItem* d) : QObject(d){
+	ProjectDataItem(const QString& filename, ProjectDataItem* d) : QObject(d) {
 		m_filename = filename;
 	}
 	/// Destructor
-	virtual ~ProjectDataItem(){}
+	virtual ~ProjectDataItem() {}
 	/// Load data from project main file
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int /*fn*/){}
+	virtual void loadFromCgnsFile(const int /*fn*/) {}
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int /*fn*/){}
+	virtual void saveToCgnsFile(const int /*fn*/) {}
 	/// Discard data loaded from CGNS file.
-	virtual void closeCgnsFile(){}
+	virtual void closeCgnsFile() {}
 	virtual QStringList containedFiles();
 	ProjectDataItem* parent() const {return dynamic_cast<ProjectDataItem*>(QObject::parent());}
 	iRICMainWindowInterface* iricMainWindow();
@@ -58,17 +58,17 @@ protected:
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) = 0;
 	/// Write into projectmainfile.
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) = 0;
-	virtual void setModified(){parent()->setModified();}
+	virtual void setModified() {parent()->setModified();}
 	/// Load additinal information from external data file.
 	/**
 	 * Load external data from the file specified by m_filename.
 	 */
-	virtual void loadExternalData(const QString& /*filename*/){}
+	virtual void loadExternalData(const QString& /*filename*/) {}
 	/// Save additinal information into external data file.
 	/**
 	 * Save external data into the file specified by m_filename.
 	 */
-	virtual void saveExternalData(const QString& /*filename*/){}
+	virtual void saveExternalData(const QString& /*filename*/) {}
 	virtual ProjectData* projectData() const {return parent()->projectData();}
 	virtual QString relativeSubPath() const;
 	QString subPath() const;
@@ -76,7 +76,7 @@ protected:
 	void loadFilename(const QDomNode& node);
 	/// Save file name to project.xml
 	void saveFilename(QXmlStreamWriter& writer) const;
-	virtual void doApplyOffset(double /*x*/, double /*y*/){}
+	virtual void doApplyOffset(double /*x*/, double /*y*/) {}
 	QVector2D offset();
 	/// Load Window geometry from project.xml.
 	static void loadWindowGeometry(QWidget* w, const QDomNode& node);
@@ -102,7 +102,7 @@ protected:
 	const QString filename();
 	/// Returns the filename in relative path against workDirectory.
 	const QString relativeFilename();
-	void setFilename(const QString& fname){m_filename = fname;}
+	void setFilename(const QString& fname) {m_filename = fname;}
 protected:
 	/// The name of file to store additional information about this class.
 	/**

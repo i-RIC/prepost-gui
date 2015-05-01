@@ -21,19 +21,19 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent *, VTKGraphicsView *);
-	void keyReleaseEvent(QKeyEvent *, VTKGraphicsView *);
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void addCustomMenuItems(QMenu* menu);
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
-	SolverDefinitionGridRelatedCondition* condition(){return m_condition;}
+	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	void informDataChange();
-	bool addToolBarButtons(QToolBar *toolbar);
+	bool addToolBarButtons(QToolBar* toolbar);
 
 private slots:
 	void editValue();
 	void editVariation();
-	void showDisplaySettingDialog(){showPropertyDialog();}
+	void showDisplaySettingDialog() {showPropertyDialog();}
 
 signals:
 	void changed(PreProcessorGridRelatedConditionCellDataItem*);

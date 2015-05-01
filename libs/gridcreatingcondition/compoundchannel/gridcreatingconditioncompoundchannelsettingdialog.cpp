@@ -3,7 +3,7 @@
 
 #include <QPushButton>
 
-GridCreatingConditionCompoundChannelSettingDialog::GridCreatingConditionCompoundChannelSettingDialog(QWidget *parent) :
+GridCreatingConditionCompoundChannelSettingDialog::GridCreatingConditionCompoundChannelSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionCompoundChannelSettingDialog)
 {

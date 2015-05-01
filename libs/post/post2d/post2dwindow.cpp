@@ -62,7 +62,7 @@ void Post2dWindow::init()
 void Post2dWindow::setupDefaultGeometry(int index)
 {
 	QWidget* parent = parentWidget();
-	if (parent->isMaximized()){return;}
+	if (parent->isMaximized()) {return;}
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 	m_propertyBrowser->hide();
@@ -74,7 +74,7 @@ QPixmap Post2dWindow::snapshot()
 	Post2dWindowGraphicsView* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) makeBackgroundTransparent(view, pixmap);
+	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
 
 	return pixmap;
 }
@@ -146,20 +146,17 @@ class Post2dWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:
 	Post2dWindowEditBackgroundColorCommand(double oldc[3], double newc[3], Post2dWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color"))
-	{
-		for (int i = 0; i < 3; ++i){
+		: QUndoCommand(QObject::tr("Edit Background Color")) {
+		for (int i = 0; i < 3; ++i) {
 			m_oldColor[i] = oldc[i];
 			m_newColor[i] = newc[i];
 		}
 		m_window = w;
 	}
-	void undo()
-	{
+	void undo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_oldColor);
 	}
-	void redo()
-	{
+	void redo() {
 		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_newColor);
 	}
 private:
@@ -176,13 +173,13 @@ void Post2dWindow::editBackgroundColor()
 	QColor oldcolor;
 	iRIC::VTKColorToQColor(vtkOldColor, oldcolor);
 	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()){return;}
+	if (! newcolor.isValid()) {return;}
 	double vtkNewColor[3];
 	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
 	iRICUndoStack::instance().push(new Post2dWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
 }
 
-bool Post2dWindow::exportParticles(const QString &filePrefix, int fileIndex, double time, const QString& zonename)
+bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
@@ -195,13 +192,13 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	QList<QString> ret;
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i){
+	for (int i = 0; i < gtItems.count(); ++i) {
 		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
 		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j){
+		for (int j = 0; j < zItems.count(); ++j) {
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
 			Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
-			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != ""){
+			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != "") {
 				ret.append(zItem->zoneName());
 			}
 		}
@@ -238,13 +235,13 @@ QList<QString> Post2dWindow::contourDrawingZones()
 	QList<QString> ret;
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i){
+	for (int i = 0; i < gtItems.count(); ++i) {
 		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
 		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j){
+		for (int j = 0; j < zItems.count(); ++j) {
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
 			Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->currentSolution() != ""){
+			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->currentSolution() != "") {
 				ret.append(zItem->zoneName());
 			}
 		}

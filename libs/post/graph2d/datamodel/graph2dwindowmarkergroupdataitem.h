@@ -23,8 +23,8 @@ public:
 	~Graph2dWindowMarkerGroupDataItem();
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
-	const Graph2dWindowMarkerSetting& setting(){return m_setting;}
-	void setXLabel(const QString& l){m_xLabel = l;}
+	const Graph2dWindowMarkerSetting& setting() {return m_setting;}
+	void setXLabel(const QString& l) {m_xLabel = l;}
 	void addMarkers(const QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem>& settings);
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

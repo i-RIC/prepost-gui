@@ -17,32 +17,32 @@ public:
 		meTranslating
 	};
 	Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView(QWidget* w);
-	void setParentWindow(Structured15DGridWithCrossSectionCrossSectionWindow* w){
+	void setParentWindow(Structured15DGridWithCrossSectionCrossSectionWindow* w) {
 		m_parentWindow = w;
 	}
 	void dataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 	void paintEvent(QPaintEvent* event);
 	QRect visualRect(const QModelIndex&) const {return QRect();}
-	void scrollTo(const QModelIndex & /*index*/, ScrollHint /*hint*/){}
+	void scrollTo(const QModelIndex& /*index*/, ScrollHint /*hint*/) {}
 	QModelIndex indexAt(const QPoint&) const {
 		viewport()->update();
 		return QModelIndex();
 	}
-	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers){
+	QModelIndex moveCursor(QAbstractItemView::CursorAction, Qt::KeyboardModifiers) {
 		viewport()->update();
 		return QModelIndex();
 	}
 	int horizontalOffset() const {return 0;}
 	int verticalOffset() const {return 0;}
 	bool isIndexHidden(const QModelIndex&) const {return false;}
-	void setSelection(const QRect & /*rect*/, QItemSelectionModel::SelectionFlags /*command*/){
+	void setSelection(const QRect& /*rect*/, QItemSelectionModel::SelectionFlags /*command*/) {
 		viewport()->update();
 	}
-	void selectionChanged ( const QItemSelection & /*selected*/, const QItemSelection & /*deselected*/ ){
+	void selectionChanged(const QItemSelection& /*selected*/, const QItemSelection& /*deselected*/) {
 		updateActionStatus();
 		viewport()->update();
 	}
-	QRegion visualRegionForSelection(const QItemSelection & /*selection*/) const {return QRegion();}
+	QRegion visualRegionForSelection(const QItemSelection& /*selection*/) const {return QRegion();}
 	void cameraFit();
 	void cameraMoveLeft();
 	void cameraMoveRight();
@@ -58,10 +58,10 @@ private slots:
 	void moveSelectedRows();
 protected:
 	int moveWidth();
-	void mouseMoveEvent(QMouseEvent *event);
-	void mousePressEvent(QMouseEvent *event);
-	void mouseReleaseEvent(QMouseEvent *event);
-	void wheelEvent(QWheelEvent *event);
+	void mouseMoveEvent(QMouseEvent* event);
+	void mousePressEvent(QMouseEvent* event);
+	void mouseReleaseEvent(QMouseEvent* event);
+	void wheelEvent(QWheelEvent* event);
 private:
 	void setupActions();
 	void setupMenu();

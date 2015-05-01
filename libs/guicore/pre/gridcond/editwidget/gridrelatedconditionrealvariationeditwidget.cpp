@@ -23,9 +23,9 @@ void GridRelatedConditionRealVariationEditWidget::setupWidget()
 
 void GridRelatedConditionRealVariationEditWidget::getValueFromInnerWidget()
 {
-	if (m_widget->text() == ""){
+	if (m_widget->text() == "") {
 		m_value = 0;
-	}else{
+	} else {
 		m_value = m_widget->value();
 	}
 }

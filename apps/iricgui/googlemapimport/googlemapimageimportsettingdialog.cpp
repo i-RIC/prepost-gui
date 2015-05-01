@@ -1,7 +1,7 @@
 #include "googlemapimageimportsettingdialog.h"
 #include "ui_googlemapimageimportsettingdialog.h"
 
-GoogleMapImageImportSettingDialog::GoogleMapImageImportSettingDialog(QWidget *parent) :
+GoogleMapImageImportSettingDialog::GoogleMapImageImportSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GoogleMapImageImportSettingDialog)
 {
@@ -30,7 +30,7 @@ int GoogleMapImageImportSettingDialog::zoom() const
 
 QString GoogleMapImageImportSettingDialog::maptype() const
 {
-	switch (ui->mapTypeComboBox->currentIndex()){
+	switch (ui->mapTypeComboBox->currentIndex()) {
 	case 0:
 		return "satellite";
 		break;

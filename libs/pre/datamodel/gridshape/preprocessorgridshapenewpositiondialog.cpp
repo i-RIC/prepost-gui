@@ -1,7 +1,7 @@
 #include "preprocessorgridshapenewpositiondialog.h"
 #include "ui_preprocessorgridshapenewpositiondialog.h"
 
-PreProcessorGridShapeNewPositionDialog::PreProcessorGridShapeNewPositionDialog(QWidget *parent) :
+PreProcessorGridShapeNewPositionDialog::PreProcessorGridShapeNewPositionDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::PreProcessorGridShapeNewPositionDialog)
 {

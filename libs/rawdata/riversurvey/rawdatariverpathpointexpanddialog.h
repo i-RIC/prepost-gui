@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <QList>
 
-namespace Ui {
+namespace Ui
+{
 	class RawDataRiverPathPointExpandDialog;
 }
 
@@ -17,7 +18,7 @@ class RawDataRiverPathPointExpandDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget *parent = 0);
+	explicit RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget* parent = 0);
 	~RawDataRiverPathPointExpandDialog();
 public slots:
 	void accept();
@@ -34,7 +35,7 @@ private:
 	void updateButtonStatus(bool enable);
 	double getRatio(RawDataRiverPathPoint* p);
 	void getRatios(QList<double>& ratios);
-	Ui::RawDataRiverPathPointExpandDialog *ui;
+	Ui::RawDataRiverPathPointExpandDialog* ui;
 	QList<RawDataRiverPathPoint*> m_points;
 	RawDataRiverSurvey* m_rs;
 	double m_originalDistance;

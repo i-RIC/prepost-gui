@@ -12,7 +12,7 @@ RawDataNetcdfRealCreator::RawDataNetcdfRealCreator()
 	m_importers.append(new RawDataNetcdfGdalRealImporter(this));
 }
 
-RawData* RawDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition *condition)
+RawData* RawDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
 {
 	RawDataNetcdf* data = new RawDataNetcdfReal(parent, this, condition);
 	data->setPosition(condition->position());

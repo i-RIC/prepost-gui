@@ -5,16 +5,18 @@
 
 class SolverDefinitionList;
 
-namespace Ui {
+namespace Ui
+{
 	class SolverDefinitionListDialog;
 }
 
 /// Dialog to show the list of solvers currently installed.
-class SolverDefinitionListDialog : public QDialog {
+class SolverDefinitionListDialog : public QDialog
+{
 	Q_OBJECT
 public:
 	/// Constructor
-	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget *parent = nullptr);
+	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
 	/// Destructor
 	~SolverDefinitionListDialog();
 	/// Setup dialog items
@@ -27,9 +29,9 @@ public slots:
 	/// Show detail dialog about the solver currently selected
 	void showDetailOfCurrent();
 protected:
-	void changeEvent(QEvent *e);
+	void changeEvent(QEvent* e);
 private:
-	Ui::SolverDefinitionListDialog *ui;
+	Ui::SolverDefinitionListDialog* ui;
 	SolverDefinitionList* m_solverList;
 };
 

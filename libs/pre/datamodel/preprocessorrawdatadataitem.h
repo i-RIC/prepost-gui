@@ -17,9 +17,9 @@ public:
 	PreProcessorRawdataDataItem(PreProcessorDataItem* parent);
 	~PreProcessorRawdataDataItem();
 	void setRawData(RawData* rawdata);
-	RawData* rawData(){return m_rawData;}
+	RawData* rawData() {return m_rawData;}
 	int index() const {return m_index;}
-	void setIndex(int index){m_index = index;}
+	void setIndex(int index) {m_index = index;}
 	void addCustomMenuItems(QMenu* menu);
 	bool addToolBarButtons(QToolBar* /*parent*/);
 	void updateMoveUpDownActions(ObjectBrowserView* view);
@@ -42,11 +42,11 @@ public:
 	bool getValueRange(double* min, double* max);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void moveUp(){
+	void moveUp() {
 		PreProcessorDataItem::moveUp();
 		informDataChange();
 	}
-	void moveDown(){
+	void moveDown() {
 		PreProcessorDataItem::moveDown();
 		informDataChange();
 	}
@@ -69,7 +69,7 @@ protected:
 
 	RawData* m_rawData;
 
-	private:
+private:
 	/// Action to export current data
 	QAction* m_exportAction;
 	int m_index;
