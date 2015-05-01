@@ -2,27 +2,28 @@
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
 #include "../factory/postprocessorwindowfactory.h"
 #include "../factory/postprocessorwindowfactory.h"
+#include "../googlemapimport/googlemapimageimporter.h"
 #include "../misc/animationcontroller.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
 #include "../pref/preferencedialog.h"
+#include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
 #include "../startpage/startpagedialog.h"
 #include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
-#include "../googlemapimport/googlemapimageimporter.h"
 
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
 #include <guibase/coordinatesystembuilder.h>
 #include <guibase/irictoolbar.h>
 #include <guibase/itemselectingdialog.h>
-#include <guicore/misc/mousepositionwidget.h>
 #include <guicore/base/clipboardoperatablewindow.h>
 #include <guicore/base/particleexportwindow.h>
 #include <guicore/base/svkmlexportwindow.h>
 #include <guicore/base/windowwithzindex.h>
+#include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -36,11 +37,11 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/errormessage.h>
 #include <misc/filesystemfunction.h>
+#include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-#include <misc/informationdialog.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/post2d/post2dwindow.h>
@@ -52,7 +53,6 @@
 #include <rawdata/riversurvey/rawdatariversurveycrosssectionwindow.h>
 #include <solverconsole/solverconsolewindow.h>
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
-#include "../projectproperty/projectpropertydialog.h"
 
 #include <QApplication>
 #include <QCryptographicHash>

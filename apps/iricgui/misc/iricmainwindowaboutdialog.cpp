@@ -1,5 +1,6 @@
-#include "iricmainwindowaboutdialog.h"
 #include "ui_iricmainwindowaboutdialog.h"
+
+#include "iricmainwindowaboutdialog.h"
 
 #include <misc/versionnumber.h>
 

@@ -1,5 +1,6 @@
-#include "preferencepagegraphicsdefault.h"
 #include "ui_preferencepagegraphicsdefault.h"
+
+#include "preferencepagegraphicsdefault.h"
 
 #include <guicore/project/backgroundimageinfo.h>
 

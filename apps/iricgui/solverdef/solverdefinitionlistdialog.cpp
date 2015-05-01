@@ -1,7 +1,8 @@
+#include "ui_solverdefinitionlistdialog.h"
+
 #include "solverdefinitionabstractdialog.h"
 #include "solverdefinitionlist.h"
 #include "solverdefinitionlistdialog.h"
-#include "ui_solverdefinitionlistdialog.h"
 
 #include <guicore/solverdef/solverdefinitionabstract.h>
 

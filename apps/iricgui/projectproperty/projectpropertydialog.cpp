@@ -1,5 +1,6 @@
-#include "projectpropertydialog.h"
 #include "ui_projectpropertydialog.h"
+
+#include "projectpropertydialog.h"
 
 ProjectPropertyDialog::ProjectPropertyDialog(QWidget* parent) :
 	QDialog(parent),

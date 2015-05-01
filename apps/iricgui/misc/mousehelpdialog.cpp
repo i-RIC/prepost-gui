@@ -1,5 +1,6 @@
-#include "mousehelpdialog.h"
 #include "ui_mousehelpdialog.h"
+
+#include "mousehelpdialog.h"
 
 #include <QCloseEvent>
 #include <QFile>

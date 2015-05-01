@@ -1,7 +1,8 @@
+#include "ui_continuoussnapshotgoogleearthsettingpage.h"
+
 #include "../main/iricmainwindow.h"
 #include "continuoussnapshotgoogleearthsettingpage.h"
 #include "continuoussnapshotwizard.h"
-#include "ui_continuoussnapshotgoogleearthsettingpage.h"
 
 #define _USE_MATH_DEFINES
 #include <cmath>

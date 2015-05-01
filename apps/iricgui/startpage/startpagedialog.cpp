@@ -1,5 +1,6 @@
-#include "startpagedialog.h"
 #include "ui_startpagedialog.h"
+
+#include "startpagedialog.h"
 
 #include <QPixmap>
 

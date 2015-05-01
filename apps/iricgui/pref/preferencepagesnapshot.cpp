@@ -1,5 +1,6 @@
-#include "preferencepagesnapshot.h"
 #include "ui_preferencepagesnapshot.h"
+
+#include "preferencepagesnapshot.h"
 
 #include <QSettings>
 

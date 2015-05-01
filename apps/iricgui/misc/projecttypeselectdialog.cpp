@@ -1,5 +1,6 @@
-#include "projecttypeselectdialog.h"
 #include "ui_projecttypeselectdialog.h"
+
+#include "projecttypeselectdialog.h"
 
 ProjectTypeSelectDialog::ProjectTypeSelectDialog(QWidget* parent) :
 	QDialog(parent),

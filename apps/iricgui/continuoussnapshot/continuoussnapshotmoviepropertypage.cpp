@@ -1,6 +1,7 @@
+#include "ui_continuoussnapshotmoviepropertypage.h"
+
 #include "continuoussnapshotmoviepropertypage.h"
 #include "continuoussnapshotwizard.h"
-#include "ui_continuoussnapshotmoviepropertypage.h"
 
 #include <QDir>
 #include <QMdiSubWindow>

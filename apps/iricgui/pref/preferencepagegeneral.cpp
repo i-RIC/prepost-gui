@@ -1,5 +1,6 @@
-#include "preferencepagegeneral.h"
 #include "ui_preferencepagegeneral.h"
+
+#include "preferencepagegeneral.h"
 
 #include <guicore/project/projectworkspace.h>
 #include <misc/stringtool.h>
@@ -7,8 +8,8 @@
 #include <QDir>
 #include <QList>
 #include <QLocale>
-#include <QSettings>
 #include <QMessageBox>
+#include <QSettings>
 
 PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	PreferencePage(parent),

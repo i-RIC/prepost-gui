@@ -1,5 +1,6 @@
-#include "preferencepagepost2d.h"
 #include "ui_preferencepagepost2d.h"
+
+#include "preferencepagepost2d.h"
 
 PreferencePagePost2d::PreferencePagePost2d(QWidget* parent) :
 	PreferencePage(parent),

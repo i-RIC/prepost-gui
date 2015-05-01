@@ -1,7 +1,8 @@
 #include "installertool.h"
+
+#include <QApplication>
 #include <QDir>
 #include <QProcess>
-#include <QApplication>
 
 InstallerTool::InstallerTool()
 {

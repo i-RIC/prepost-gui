@@ -1,4 +1,5 @@
 #include "ui_verificationsettingdialog.h"
+
 #include "verificationsettingdialog.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>

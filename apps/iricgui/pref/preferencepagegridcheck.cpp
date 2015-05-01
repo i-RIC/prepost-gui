@@ -1,5 +1,6 @@
-#include "preferencepagegridcheck.h"
 #include "ui_preferencepagegridcheck.h"
+
+#include "preferencepagegridcheck.h"
 
 PreferencePageGridCheck::PreferencePageGridCheck(QWidget* parent) :
 	PreferencePage(parent),

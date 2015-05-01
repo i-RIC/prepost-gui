@@ -1,5 +1,6 @@
-#include "preferencepageproxy.h"
 #include "ui_preferencepageproxy.h"
+
+#include "preferencepageproxy.h"
 
 PreferencePageProxy::PreferencePageProxy(QWidget* parent) :
 	PreferencePage(parent),

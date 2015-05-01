@@ -1,6 +1,7 @@
+#include "ui_projectpropertybasicinfowidget.h"
+
 #include "../main/iricmainwindow.h"
 #include "projectpropertybasicinfowidget.h"
-#include "ui_projectpropertybasicinfowidget.h"
 
 #include <guibase/coordinatesystem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>

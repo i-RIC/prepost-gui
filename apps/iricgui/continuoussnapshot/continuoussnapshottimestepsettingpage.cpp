@@ -1,6 +1,7 @@
+#include "ui_continuoussnapshottimestepsettingpage.h"
+
 #include "continuoussnapshottimestepsettingpage.h"
 #include "continuoussnapshotwizard.h"
-#include "ui_continuoussnapshottimestepsettingpage.h"
 
 ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget* parent) :
 	QWizardPage(parent),

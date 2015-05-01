@@ -3,10 +3,10 @@
 #include "../solverdef/solverdefinitionlist.h"
 #include "../solverdef/solverdefinitionlistdialog.h"
 #include "../solverdef/solverdefinitiontranslationupdatewizard.h"
+#include "installertool.h"
 #include "iricmainwindowaboutdialog.h"
 #include "iricmainwindowmiscdialogmanager.h"
 #include "mousehelpdialog.h"
-#include "installertool.h"
 
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>

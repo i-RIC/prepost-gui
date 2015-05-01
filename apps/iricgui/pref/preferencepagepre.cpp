@@ -1,5 +1,6 @@
-#include "preferencepagepre.h"
 #include "ui_preferencepagepre.h"
+
+#include "preferencepagepre.h"
 
 #include <QColor>
 

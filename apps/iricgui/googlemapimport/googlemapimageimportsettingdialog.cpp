@@ -1,5 +1,6 @@
-#include "googlemapimageimportsettingdialog.h"
 #include "ui_googlemapimageimportsettingdialog.h"
+
+#include "googlemapimageimportsettingdialog.h"
 
 GoogleMapImageImportSettingDialog::GoogleMapImageImportSettingDialog(QWidget* parent) :
 	QDialog(parent),

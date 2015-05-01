@@ -1,6 +1,7 @@
+#include "ui_preferencedialog.h"
+
 #include "preferencedialog.h"
 #include "preferencepage.h"
-#include "ui_preferencedialog.h"
 
 PreferenceDialog::PreferenceDialog(QWidget* parent) :
 	QDialog(parent),

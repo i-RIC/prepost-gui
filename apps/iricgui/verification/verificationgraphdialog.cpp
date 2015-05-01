@@ -1,11 +1,8 @@
-#include "../main/iricmainwindow.h"
 #include "ui_verificationgraphdialog.h"
+
+#include "../main/iricmainwindow.h"
 #include "verificationgraphdialog.h"
 #include "verificationsettingdialog.h"
-
-#include <qwt_plot_curve.h>
-#include <qwt_plot_marker.h>
-#include <qwt_symbol.h>
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/measureddata.h>
@@ -18,13 +15,17 @@
 #include <QPen>
 #include <QSize>
 #include <QTextStream>
-#include <QVector>
 #include <QVector2D>
+#include <QVector>
 
 #include <vtkCell.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
+
+#include <qwt_plot_curve.h>
+#include <qwt_plot_marker.h>
+#include <qwt_symbol.h>
 
 VerificationGraphDialog::VerificationGraphDialog(iRICMainWindow* parent) :
 	QDialog(parent),

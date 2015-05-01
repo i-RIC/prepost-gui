@@ -1,7 +1,7 @@
 #include "animationcontroller.h"
-#include <misc/slowmotionspeededitdialog.h>
 
 #include <guibase/irictoolbar.h>
+#include <misc/slowmotionspeededitdialog.h>
 
 #include <QAction>
 #include <QIcon>

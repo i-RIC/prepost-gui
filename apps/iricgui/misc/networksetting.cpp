@@ -1,4 +1,5 @@
 #include "networksetting.h"
+
 #include <QSettings>
 
 NetworkSetting::NetworkSetting()

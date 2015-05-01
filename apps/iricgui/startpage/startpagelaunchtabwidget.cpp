@@ -1,5 +1,6 @@
-#include "startpagelaunchtabwidget.h"
 #include "ui_startpagelaunchtabwidget.h"
+
+#include "startpagelaunchtabwidget.h"
 
 #include <QFileDialog>
 

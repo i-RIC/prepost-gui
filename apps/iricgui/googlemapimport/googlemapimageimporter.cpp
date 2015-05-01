@@ -1,27 +1,27 @@
+#include "../misc/networksetting.h"
 #include "googlemapimageimporter.h"
 #include "googlemapimageimportsettingdialog.h"
-#include "../misc/networksetting.h"
 
-#include <guicore/project/projectdata.h>
-#include <guicore/project/projectmainfile.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/project/backgroundimageinfo.h>
 #include <guibase/coordinatesystem.h>
 #include <guibase/waitdialog.h>
+#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/project/backgroundimageinfo.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
 
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
-#include <QNetworkProxy>
-#include <QDir>
-#include <QThread>
-#include <QSettings>
-#include <QMessageBox>
 #include <QApplication>
+#include <QDir>
 #include <QFile>
+#include <QMessageBox>
+#include <QNetworkAccessManager>
+#include <QNetworkProxy>
+#include <QNetworkReply>
+#include <QSettings>
+#include <QThread>
 
 #include <cmath>
 

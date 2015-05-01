@@ -1,7 +1,8 @@
+#include "ui_newprojectsolverselectingdialog.h"
+
 #include "../solverdef/solverdefinitionabstractwidget.h"
 #include "../solverdef/solverdefinitionlist.h"
 #include "newprojectsolverselectingdialog.h"
-#include "ui_newprojectsolverselectingdialog.h"
 
 #include <guicore/solverdef/solverdefinitionabstract.h>
 

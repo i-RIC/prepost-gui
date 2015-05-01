@@ -1,6 +1,7 @@
+#include "ui_continuoussnapshotfilepropertypage.h"
+
 #include "continuoussnapshotfilepropertypage.h"
 #include "continuoussnapshotwizard.h"
-#include "ui_continuoussnapshotfilepropertypage.h"
 
 #include <QDir>
 #include <QMdiSubWindow>

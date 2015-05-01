@@ -1,7 +1,8 @@
+#include "ui_continuoussnapshotwindowselectionpage.h"
+
 #include "../main/iricmainwindow.h"
 #include "continuoussnapshotwindowselectionpage.h"
 #include "continuoussnapshotwizard.h"
-#include "ui_continuoussnapshotwindowselectionpage.h"
 
 #include <guicore/post/postprocessorwindow.h>
 
