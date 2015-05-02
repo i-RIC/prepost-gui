@@ -26,29 +26,34 @@ public:
 	~Post2dBirdEyeWindowRootDataItem();
 
 	/// Background image data item
-	Post2dBirdEyeWindowBackgroundImagesDataItem* backgroundImagesDataItem() {
+	Post2dBirdEyeWindowBackgroundImagesDataItem* backgroundImagesDataItem() const {
 		return m_backgroundImagesDataItem;
 	}
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post2dBirdEyeWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
-	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
-	Post2dBirdEyeWindowZoneDataItem* zoneDataItem(const QString& name);
-	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
+	const QList<Post2dBirdEyeWindowGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
+	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem(const QString& name) const;
+	Post2dBirdEyeWindowZoneDataItem* zoneDataItem(const QString& name) const;
+	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
+	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
+
 private slots:
 	void updateZoneList();
 	void update();
+
 signals:
 	void standardModelSetuped();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+
 private:
 	Post2dBirdEyeWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	QList<Post2dBirdEyeWindowGridTypeDataItem*> m_gridTypeDataItems;
 	PostTitleDataItem* m_titleDataItem;
 	PostTimeDataItem* m_timeDataItem;
 	Post2dBirdEyeWindowAxesDataItem* m_axesDataItem;
+
 public:
 	friend class Post2dBirdEyeWindowProjectDataItem;
 	friend class Post2dBirdEyeWindowDataModel;

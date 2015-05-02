@@ -24,35 +24,35 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	bool isEnabled() const;
 	void setSolution(const QString& sol);
-	const QString solution();
+	const QString solution() const;
 	void setScalarValue(const QString& scalar);
-	const QString scalarValue();
+	const QString scalarValue() const;
 	void setColor(const QColor& color);
 	const QColor color() const;
 	void setSamplingMode(Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm);
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode samplingMode();
+	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode samplingMode() const;
 	void setSamplingRate(int rate);
-	int samplingRate();
+	int samplingRate() const;
 	void setSamplingNumber(int num);
-	int samplingNumber();
+	int samplingNumber() const;
 
 	void disableActive();
 
 	void setRegionMode(StructuredGridRegion::RegionMode rm);
 	StructuredGridRegion::RegionMode regionMode() const;
 	void setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm);
-	Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lengthMode();
+	Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lengthMode() const;
 	void setStandardValue(double stdVal);
-	double standardValue();
+	double standardValue() const;
 	void setLegendLength(int len);
-	int legendLength();
+	int legendLength() const;
 	void setMinimumValue(double minVal);
-	double minimumValue();
+	double minimumValue() const;
 
 	void setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping);
-	Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping();
+	Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping() const;
 	void setArrowSetting(const ArrowSettingContainer& arrowSetting);
-	ArrowSettingContainer arrowSetting();
+	ArrowSettingContainer arrowSetting() const;
 
 private slots:
 	void showRegionDialog();

@@ -17,38 +17,39 @@ namespace Ui
 class Post2dWindowArrowStructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post2dWindowArrowStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
 	void setSolution(const QString& sol);
-	const QString solution();
+	const QString solution() const;
 	void setScalarValue(const QString& scalar);
-	const QString scalarValue();
+	const QString scalarValue() const;
 	void setColor(const QColor& color);
 	const QColor color() const;
 	void setRegionMode(StructuredGridRegion::RegionMode regionMode);
 	StructuredGridRegion::RegionMode regionMode() const;
 	void setRange(const StructuredGridRegion::Range2d& range);
-	StructuredGridRegion::Range2d range();
+	StructuredGridRegion::Range2d range() const;
 	void setSamplingRates(int irate, int jrate);
-	int iSamplingRate();
-	int jSamplingRate();
+	int iSamplingRate() const;
+	int jSamplingRate() const;
 	void disableActive();
 
 	void setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm);
-	Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lengthMode();
+	Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lengthMode() const;
 	void setStandardValue(double stdVal);
-	double standardValue();
+	double standardValue() const;
 	void setLegendLength(int len);
-	int legendLength();
+	int legendLength() const;
 	void setMinimumValue(double minVal);
-	double minimumValue();
+	double minimumValue() const;
 
 	void setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping);
-	Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping();
+	Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping() const;
 	void setArrowSetting(const ArrowSettingContainer& acon);
-	ArrowSettingContainer arrowSetting();
+	ArrowSettingContainer arrowSetting() const;
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);

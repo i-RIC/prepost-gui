@@ -23,8 +23,8 @@ public:
 
 	void updateMoveUpDownActions(ObjectBrowserView* view);
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
-	BackgroundImageInfo* imageInfo() {return m_imageInfo;}
-	QAction* fixAction();
+	BackgroundImageInfo* imageInfo() const {return m_imageInfo;}
+
 private slots:
 	void applyImageChange();
 

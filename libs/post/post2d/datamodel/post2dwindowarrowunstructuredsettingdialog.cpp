@@ -42,7 +42,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSolution(const QString& sol)
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowUnstructuredSettingDialog::solution()
+const QString Post2dWindowArrowUnstructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -55,7 +55,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setScalarValue(const QString& s
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowUnstructuredSettingDialog::scalarValue()
+const QString Post2dWindowArrowUnstructuredSettingDialog::scalarValue() const
 {
 	int index = ui->scalarComboBox->currentIndex();
 	return m_scalars.at(index);
@@ -82,7 +82,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSamplingMode(Post2dWindowNod
 	}
 }
 
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode Post2dWindowArrowUnstructuredSettingDialog::samplingMode()
+Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode Post2dWindowArrowUnstructuredSettingDialog::samplingMode() const
 {
 	if (ui->samplingAllRadioButton->isChecked()) {
 		return Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smAll;
@@ -98,7 +98,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSamplingRate(int rate)
 	ui->samplingRateSpinBox->setValue(rate);
 }
 
-int Post2dWindowArrowUnstructuredSettingDialog::samplingRate()
+int Post2dWindowArrowUnstructuredSettingDialog::samplingRate() const
 {
 	return ui->samplingRateSpinBox->value();
 }
@@ -108,7 +108,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSamplingNumber(int num)
 	ui->samplingNumberSpinBox->setValue(num);
 }
 
-int Post2dWindowArrowUnstructuredSettingDialog::samplingNumber()
+int Post2dWindowArrowUnstructuredSettingDialog::samplingNumber() const
 {
 	return ui->samplingNumberSpinBox->value();
 }
@@ -125,7 +125,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setMapping(Post2dWindowNodeVect
 	}
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem::Mapping Post2dWindowArrowUnstructuredSettingDialog::mapping()
+Post2dWindowNodeVectorArrowGroupDataItem::Mapping Post2dWindowArrowUnstructuredSettingDialog::mapping() const
 {
 	if (ui->specificRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Specific; }
 	if (ui->scalarRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Scalar; }
@@ -139,7 +139,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setArrowSetting(const ArrowSett
 	ui->lineWidthSpinBox->setValue(arrowSetting.lineWidth());
 }
 
-ArrowSettingContainer Post2dWindowArrowUnstructuredSettingDialog::arrowSetting()
+ArrowSettingContainer Post2dWindowArrowUnstructuredSettingDialog::arrowSetting() const
 {
 	ArrowSettingContainer c;
 	c.setArrowSize(ui->arrowSizeSpinBox->value());
@@ -212,7 +212,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setLengthMode(Post2dWindowNodeV
 	}
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem::LengthMode Post2dWindowArrowUnstructuredSettingDialog::lengthMode()
+Post2dWindowNodeVectorArrowGroupDataItem::LengthMode Post2dWindowArrowUnstructuredSettingDialog::lengthMode() const
 {
 	if (ui->lengthAutoCheckBox->isChecked()) {
 		return Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
@@ -226,7 +226,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setStandardValue(double stdVal)
 	ui->stdValueSpinBox->setValue(stdVal);
 }
 
-double Post2dWindowArrowUnstructuredSettingDialog::standardValue()
+double Post2dWindowArrowUnstructuredSettingDialog::standardValue() const
 {
 	return ui->stdValueSpinBox->value();
 }
@@ -236,7 +236,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setLegendLength(int len)
 	ui->legendLengthSpinBox->setValue(len);
 }
 
-int Post2dWindowArrowUnstructuredSettingDialog::legendLength()
+int Post2dWindowArrowUnstructuredSettingDialog::legendLength() const
 {
 	return ui->legendLengthSpinBox->value();
 }
@@ -246,7 +246,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setMinimumValue(double minVal)
 	return ui->minValueSpinBox->setValue(minVal);
 }
 
-double Post2dWindowArrowUnstructuredSettingDialog::minimumValue()
+double Post2dWindowArrowUnstructuredSettingDialog::minimumValue() const
 {
 	return ui->minValueSpinBox->value();
 }

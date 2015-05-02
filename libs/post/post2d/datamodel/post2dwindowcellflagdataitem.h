@@ -34,6 +34,7 @@ protected:
 
 private:
 	void setupActors();
+
 	QString m_attributeName;
 	int m_value;
 	QColor m_color;

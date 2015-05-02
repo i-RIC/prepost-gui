@@ -31,16 +31,14 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 
 	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
 	// build grid type data items.
-	for (auto it = types.begin(); it != types.end(); ++it) {
-		Post2dBirdEyeWindowGridTypeDataItem* item = new Post2dBirdEyeWindowGridTypeDataItem(*it, this);
+	for (SolverDefinitionGridType* type : types) {
+		Post2dBirdEyeWindowGridTypeDataItem* item = new Post2dBirdEyeWindowGridTypeDataItem(type, this);
 		m_gridTypeDataItems.append(item);
 		m_childItems.append(item);
 	}
 	// create grid type data item for dummy grid type if needed.
-	const QList<PostZoneDataContainer*>& conts = post->zoneContainers2D();
 	bool needDummy = false;
-	for (int i = 0; i < conts.count(); ++i) {
-		PostZoneDataContainer* c = conts.at(i);
+	for (PostZoneDataContainer* c : post->zoneContainers2D()) {
 		needDummy = needDummy || (c->gridType() == def->dummyGridType());
 	}
 	if (needDummy) {
@@ -68,8 +66,8 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 
 Post2dBirdEyeWindowRootDataItem::~Post2dBirdEyeWindowRootDataItem()
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		delete *it;
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+		delete item;
 	}
 	delete m_titleDataItem;
 	delete m_timeDataItem;
@@ -81,8 +79,8 @@ void Post2dBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* mod
 	model->clear();
 
 	// add gridtypes.
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		model->appendRow((*it)->standardItem());
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+		model->appendRow(item->standardItem());
 	}
 	// add title item row.
 	model->appendRow(m_titleDataItem->standardItem());
@@ -96,11 +94,11 @@ void Post2dBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* mod
 
 void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()) {
-				(*it)->loadFromProjectMainFile(c);
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == item->name()) {
+				item->loadFromProjectMainFile(c);
 			}
 			c = c.nextSibling();
 		}
@@ -121,9 +119,9 @@ void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& 
 }
 void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
 		writer.writeStartElement("GridType");
-		(*it)->saveToProjectMainFile(writer);
+		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	writer.writeStartElement("Title");
@@ -135,10 +133,10 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	writer.writeEndElement();
 }
 
-Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDataItem(const QString& name)
+Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDataItem(const QString& name) const
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		if ((*it)->name() == name) {return *it;}
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+		if (item->name() == name) {return item;}
 	}
 	return 0;
 }
@@ -146,15 +144,12 @@ Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDa
 void Post2dBirdEyeWindowRootDataItem::updateZoneList()
 {
 	dataModel()->itemModel()->blockSignals(true);
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		(*it)->setupZoneDataItems();
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+		item->setupZoneDataItems();
 	}
 	dataModel()->itemModel()->blockSignals(false);
 	dataModel()->graphicsView()->setActiveDataItem(this);
 	updateItemMap();
-//	updateZDepthRangeItemCount();
-//	assignActionZValues(m_zDepthRange);
-//	dynamic_cast<VTK3DGraphicsView*>(dataModel()->graphicsView())->ResetCameraClippingRange();
 	dataModel()->objectBrowserView()->expandAll();
 	dataModel()->fit();
 }
@@ -163,8 +158,8 @@ void Post2dBirdEyeWindowRootDataItem::update()
 {
 	QTime time;
 	time.start();
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		(*it)->update();
+	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+		item->update();
 	}
 	qDebug("Whole update elapsed time:%d", time.elapsed());
 	time.restart();
@@ -175,10 +170,9 @@ void Post2dBirdEyeWindowRootDataItem::update()
 	qDebug("Rendering:%d", time.elapsed());
 }
 
-Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowRootDataItem::zoneDataItem(const QString& name)
+Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowRootDataItem::zoneDataItem(const QString& name) const
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = *it;
+	for (Post2dBirdEyeWindowGridTypeDataItem* gtItem : m_gridTypeDataItems) {
 		Post2dBirdEyeWindowZoneDataItem* i = gtItem->zoneData(name);
 		if (i != 0) {return i;}
 	}

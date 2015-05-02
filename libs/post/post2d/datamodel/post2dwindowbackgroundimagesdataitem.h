@@ -15,6 +15,7 @@ public:
 	void addCustomMenuItems(QMenu* menu);
 	void visiblePropBounds(double bounds[6]);
 	void handleStandardItemChange();
+
 public slots:
 	void addChildItem();
 	void deleteChildItem(int i);
@@ -23,9 +24,11 @@ public slots:
 	void setupChildItem();
 	void deleteAll();
 	void updateChildCheckState(int idx, bool vis);
+
 signals:
 	void selectBackgroundImage(const QModelIndex& current);
 	void requestRemoveRenderer(vtkRenderer* ren);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}

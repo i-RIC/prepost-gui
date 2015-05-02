@@ -22,6 +22,7 @@ class AttributeBrowserTargetDataItem;
 class Post2dWindowRootDataItem : public GraphicsWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowRootDataItem(Post2dWindow* window, ProjectDataItem* parent);
@@ -43,14 +44,18 @@ public:
 	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
 	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
+
 private slots:
 	void updateZoneList();
 	void update();
+
 signals:
 	void standardModelSetuped();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+
 private:
 	Post2dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	Post2dWindowMeasuredDataTopDataItem* m_measuredDataTopDataItem;
@@ -60,6 +65,7 @@ private:
 	Axis2dDataItem* m_axesDataItem;
 	DistanceMeasureGroupDataItem* m_distanceMeasureGroupDataItem;
 	AttributeBrowserTargetDataItem* m_attributeBrowserTargetDataItem;
+
 public:
 	friend class Post2dWindowProjectDataItem;
 	friend class Post2dWindowDataModel;
