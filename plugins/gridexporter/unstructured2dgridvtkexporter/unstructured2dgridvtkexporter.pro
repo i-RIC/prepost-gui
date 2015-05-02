@@ -44,8 +44,8 @@ LIBS += -liricMisc
 LIBS += \
 	-lvtkCommonCore-6.1 \
 	-lvtkCommonDataModel-6.1 \
-	-lvtkIoCore-6.1 \
-	-lvtkIoLegacy-6.1
+	-lvtkIOCore-6.1 \
+	-lvtkIOLegacy-6.1
 
 # Input
 HEADERS += unstructured2dgridvtkexporter.h

@@ -1,6 +1,7 @@
 #include "structured2dgridnaysgridimporter.h"
 
 #include <float.h>
+#include <cmath>
 
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/container/gridrelatedconditionintegercellcontainer.h>
@@ -12,7 +13,7 @@
 #include <QObject>
 
 Structured2DGridNaysGridImporter::Structured2DGridNaysGridImporter()
-	: GridImporterInterface(), QObject()
+	: QObject(), GridImporterInterface()
 {
 
 }
@@ -75,11 +76,13 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	double *z = new double[imax * jmax];
 
 	char dummybuffer[8];
+	int offset = 0;
+
 	for (int i = 0; i < imax * jmax; ++i){
 		st.readRawData(dummybuffer, 8);
 		memcpy((x + i), dummybuffer, 8);
 		// check for NaN, inf
-		if (_finite(*(x + i)) == 0){
+		if (std::isfinite(*(x + i)) == 0){
 			goto ERROR;
 		}
 	}
@@ -92,7 +95,7 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 		st.readRawData(dummybuffer, 8);
 		memcpy((y + i), dummybuffer, 8);
 		// check for NaN, inf
-		if (_finite(*(y + i)) == 0){
+		if (std::isfinite(*(y + i)) == 0){
 			goto ERROR;
 		}
 	}
@@ -104,7 +107,7 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 		st.readRawData(dummybuffer, 8);
 		memcpy((z + i), dummybuffer, 8);
 		// check for NaN, inf
-		if (_finite(*(z + i)) == 0){
+		if (std::isfinite(*(z + i)) == 0){
 			goto ERROR;
 		}
 	}
@@ -113,7 +116,6 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 		st.readRawData(dummybuffer, 8);
 	}
 
-	int offset = 0;
 	for (int j = 0; j < jmax; ++j){
 		for (int i = 0; i < imax; ++i){
 			unsigned int id = grid2d->vertexIndex(i, j);
