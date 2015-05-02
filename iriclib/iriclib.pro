@@ -5,7 +5,12 @@
 TEMPLATE = lib
 TARGET = iriclib
 DEPENDPATH += .
-INCLUDEPATH += "E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/include"
+win32 {
+	INCLUDEPATH += "E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/include"
+}
+unix {
+	INCLUDEPATH += /usr/include
+}
 CONFIG += dll
 
 DEFINES += IRICLIBDLL_LIBRARY
@@ -27,12 +32,29 @@ SOURCES += iriclib.c \
 
 QT =
 
-CONFIG(debug, debug|release) { 
-	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/lib"
+win32 {
+	CONFIG(debug, debug|release) { 
+		# cgnslib
+		LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/lib"
+	} else { 
+		# cgnslib
+		LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/release/lib"
+	}
+	LIBS += -lcgnsdll
 }
-else { 
-	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/release/lib"
+unix {
+	LIBS += -lcgns
+	LIBS += -lhdf5
 }
-LIBS += -lcgnsdll
+
+#installation settings
+
+unix {
+  inst_headers.path = /usr/local/iRIC/include
+  inst_headers.files = iriclib.h iriclib_f.h
+	INSTALLS += inst_headers
+
+	target.path = /usr/local/iRIC/lib
+	INSTALLS += target
+}
+
