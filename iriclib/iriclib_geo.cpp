@@ -22,7 +22,7 @@ int iRIC_Geo_Polygon_Open(char* filename, int *id){
 
 static iRICLib::Polygon* iRIC_local_Geo_Polygon_GetPolygon(int id)
 {
-	if (id > polygons.size()){return 0;}
+	if ((unsigned int)(id) > polygons.size()){return 0;}
 	if (id < 1){return 0;}
 	return polygons[id - 1];
 }
@@ -76,7 +76,7 @@ int iRIC_Geo_Polygon_Read_HolePointCount(int id, int holeid, int* count)
 {
 	iRICLib::Polygon* pol = iRIC_local_Geo_Polygon_GetPolygon(id);
 	if (pol == 0){return -1;}
-	if (holeid > pol->holes.size()){return -1;}
+	if ((unsigned int)(holeid) > pol->holes.size()){return -1;}
 	iRICLib::InternalPolygon* ipol = pol->holes[holeid - 1];
 	*count = ipol->pointCount;
 	return 0;
@@ -86,7 +86,7 @@ int iRIC_Geo_Polygon_Read_HolePoints(int id, int holeid, double* x, double* y)
 {
 	iRICLib::Polygon* pol = iRIC_local_Geo_Polygon_GetPolygon(id);
 	if (pol == 0) {return -1;}
-	if (holeid > pol->holes.size()){return -1;}
+	if ((unsigned int)(holeid) > pol->holes.size()){return -1;}
 	iRICLib::InternalPolygon* ipol = pol->holes[holeid - 1];
 	for (int i = 0; i < ipol->pointCount; ++i){
 		*(x + i) = *(ipol->x + i);
@@ -118,7 +118,7 @@ int iRIC_Geo_RiverSurvey_Open(char* filename, int* id)
 
 static iRICLib::RiverSurvey* iRIC_local_Geo_RiverSurvey_GetRiverSurvey(int id)
 {
-	if (id > riversurveys.size()){return 0;}
+	if ((unsigned int)(id) > riversurveys.size()){return 0;}
 	if (id < 1){return 0;}
 	return riversurveys[id - 1];
 }
@@ -127,7 +127,7 @@ static iRICLib::RiverPathPoint* iRIC_local_Geo_RiverSurvey_GetRiverPathPoint(int
 {
 	iRICLib::RiverSurvey* rs = iRIC_local_Geo_RiverSurvey_GetRiverSurvey(id);
 	if (rs == 0){return 0;}
-	if (pointid > rs->points.size()){return 0;}
+	if ((unsigned int)(pointid) > rs->points.size()){return 0;}
 	if (pointid < 1){return 0;}
 	return rs->points[pointid - 1];
 }

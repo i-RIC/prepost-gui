@@ -85,7 +85,7 @@ int Polygon::load(const char* filename, bool noDimensions)
 	str >> size;
 
 	holes.clear();
-	for (unsigned int i = 0; i < size; ++i){
+	for (int i = 0; i < size; ++i){
 		InternalPolygon* hole = new InternalPolygon();
 		str >> *hole;
 		holes.push_back(hole);

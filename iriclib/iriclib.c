@@ -3,6 +3,7 @@
 #define FILEID_MAX 100
 #define ARRAYINCREMENTSTEP 3
 #include <stdio.h>
+#include <stdint.h>
 #include <string.h>
 #include <stdlib.h>
 #include <cgnslib.h>
@@ -235,7 +236,7 @@ static int local_read_string(char* arrayname, size_t bufferlen, char* buffer)
 	// check datatype
 	if (datatype != Character){return -1;}
 	if (bufferlen != -1){
-		if (dim != 1 || dimVec[0] >= bufferlen){return -2;}
+		if (dim != 1 || (size_t)(dimVec[0]) >= bufferlen){return -2;}
 	}
 	// found. load data.
 	ier = cg_array_read(index, buffer);
@@ -538,7 +539,7 @@ static int local_init_ziter_Mul(int fid){
 	return 0;
 }
 
-static int local_load_sol_Mul(fid){
+static int local_load_sol_Mul(int fid){
 	char arrayname[NAME_MAXLENGTH];
 	DataType_t datatype;
 	int arrays;
@@ -825,8 +826,7 @@ static void local_get_particlesol_name(int num, char* name){
 }
 
 static int local_cg_iRIC_Add_Sol_ParticleNode_Mul(int fid){
-	int G, ier;
-	cgsize_t dimVec[2];
+	int ier;
 	char particlename[32];
 	size_t particlenamelen;
 	if (*(particlememsize + fileindex[fid]) == 0){
@@ -1198,7 +1198,6 @@ int cg_iRIC_Read_FunctionalSize_Mul(int fid, char* name, cgsize_t* size)
 	cgsize_t dimvec;
 	int ier;
 	int i;
-	int paramfound;
 	char arrayname[NAME_MAXLENGTH];
 
 	ier = local_gotoccchild_Mul(fid, name);
@@ -1206,7 +1205,6 @@ int cg_iRIC_Read_FunctionalSize_Mul(int fid, char* name, cgsize_t* size)
 	// under this UserDefinedData_t, array with name "Param", "Value" will exists.
 	ier = cg_narrays(&arrays);
 	if (ier != 0){return ier;}
-	paramfound = 0;
 	for (i = 1; i <= arrays; ++i){
 		ier = cg_array_info(i, arrayname, &datatype, &dim, &dimvec);
 		*size = dimvec;
@@ -1358,7 +1356,6 @@ int cg_iRIC_Read_Complex_FunctionalSize_Mul(int fid, char* groupname, int num, c
 	cgsize_t dimvec;
 	int ier;
 	int i;
-	int paramfound;
 	char arrayname[NAME_MAXLENGTH];
 
 	ier = local_gotocomplexchild_Mul(fid, groupname, num, name);
@@ -1366,7 +1363,6 @@ int cg_iRIC_Read_Complex_FunctionalSize_Mul(int fid, char* groupname, int num, c
 	// under this UserDefinedData_t, array with name "Param", "Value" will exists.
 	ier = cg_narrays(&arrays);
 	if (ier != 0){return ier;}
-	paramfound = 0;
 	for (i = 1; i <= arrays; ++i){
 		ier = cg_array_info(i, arrayname, &datatype, &dim, &dimvec);
 		*size = dimvec;
@@ -2482,7 +2478,6 @@ int cg_iRIC_Read_BC_FunctionalSize_Mul(int fid, char* type, int num, char* name,
 	cgsize_t dimvec;
 	int ier;
 	int i;
-	int paramfound;
 	char arrayname[NAME_MAXLENGTH];
 
 	ier = local_gotobcchild_Mul(fid, type, num, name);
@@ -2490,7 +2485,6 @@ int cg_iRIC_Read_BC_FunctionalSize_Mul(int fid, char* type, int num, char* name,
 	// under this UserDefinedData_t, array with name "Param", "Value" will exists.
 	ier = cg_narrays(&arrays);
 	if (ier != 0){return ier;}
-	paramfound = 0;
 	for (i = 1; i <= arrays; ++i){
 		ier = cg_array_info(i, arrayname, &datatype, &dim, &dimvec);
 		*size = dimvec;
@@ -2533,11 +2527,10 @@ int cg_iRIC_Read_BC_Functional_RealSingle_Mul(int fid, char* type, int num, char
 }
 
 int cg_iRIC_Clear_BC_Mul(int fid){
-	int ier;
 	// delete ZoneBC_t node.
 	local_gotozone_Mul(fid);
 	// it succeeds only when ZoneBC node exists.
-	ier = cg_delete_node("ZoneBC");
+	cg_delete_node("ZoneBC");
 	// clear bcnames
 	free(*(bcnames + fileindex[fid]));
 	*(bccount + fileindex[fid]) = 0;

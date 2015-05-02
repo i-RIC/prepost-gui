@@ -42,7 +42,7 @@ InputBStream& operator >> (InputBStream& stream, RiverPathPoint& p)
 	stream >> p.leftShift;
 	stream >> size;
 	p.altitudes.clear();
-	for (unsigned int i = 0; i < size; ++i){
+	for (int i = 0; i < size; ++i){
 		Altitude alt;
 		stream >> alt.position >> alt.height >> alt.active;
 		p.altitudes.push_back(alt);

@@ -49,7 +49,7 @@ InputBStream& operator >> (InputBStream& stream, PointMapBreakline& bl)
 OutputBStream& operator << (OutputBStream& stream, const PointMapBreakline& bl)
 {
 	stream << static_cast<int>(bl.indices.size());
-	for (int i = 0; i < bl.indices.size(); ++i){
+	for (unsigned int i = 0; i < bl.indices.size(); ++i){
 		stream << bl.indices.at(i);
 	}
 
