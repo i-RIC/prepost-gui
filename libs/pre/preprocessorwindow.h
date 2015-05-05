@@ -23,6 +23,7 @@ class ProjectData;
 class ProjectDataItem;
 class PreProcessorWindowProjectDataItem;
 class PreProcessorDataModelInterface;
+class PreProcessorDataModel;
 class PreProcessorWindowActionManager;
 class PreProcessorGraphicsView;
 class PreProcessorWindowEditBackgroundColorCommand;
@@ -105,6 +106,7 @@ signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
 private:
 	void init();
+	PreProcessorDataModel* model() const;
 	/// Background color
 	const QColor backgroundColor() const;
 	/// Set background color;
