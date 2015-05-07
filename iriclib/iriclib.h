@@ -11,6 +11,8 @@
 
 #define IRIC_LOCKED 1
 
+#define IRIC_CANCELED 1
+
 #ifdef __cplusplus
 extern "C" {
 #endif

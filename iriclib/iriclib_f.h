@@ -13,3 +13,6 @@
 
       integer IRIC_LOCKED
       parameter(IRIC_LOCKED          = 1)
+
+      integer IRIC_CANCELED
+      parameter(IRIC_CANCELED        = 1)

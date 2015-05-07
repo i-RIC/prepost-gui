@@ -1233,19 +1233,18 @@ int iRIC_Check_Lock(char* filename)
 int iRIC_Check_Cancel()
 {
 	char* cancelfilename = ".cancel";
-	int ret, result;
+	int result;
 	struct _stat buf;
 
-	ret = 0;
 	result = _stat(cancelfilename, &buf);
 
 	if (result == 0){
 		// Getting information. succeeded. Cancel file exist.
-		return 0;
+		return IRIC_CANCELED;
 	}
 
 	// not canceled.
-	return 1;
+	return 0;
 }
 
 int cg_iRIC_Read_Integer_Mul(int fid, char* name, int* intvalue){
