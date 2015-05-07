@@ -60,9 +60,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
 
 PostSolutionInfo::~PostSolutionInfo()
 {
-	if (m_fileId != 0) {
-		cg_close(m_fileId);
-	}
+	close();
 }
 
 void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
@@ -101,31 +99,11 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 	QTime time, wholetime;
 	wholetime.start();
 
-	int tmpfn;
+	int tmpfn = 0;
 	if (fn == 0) {
-		QString fname = currentCgnsFileName();
-		if (m_fileId != 0) {
+		bool ok = open();
+		if (ok) {
 			tmpfn = m_fileId;
-		} else {
-			time.start();
-			int ier = 1;
-			int loop = 0;
-			int loopmax = 10;
-			// loop until cg_open() succeed.
-			while (ier != 0 && loop < loopmax) {
-				ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &tmpfn);
-				if (ier != 0) {
-					// error.
-					cg_close(tmpfn);
-					++ loop;
-				}
-			}
-			qDebug("cg_open(): %d", time.elapsed());
-			if (ier == 0) {
-				m_fileId = tmpfn;
-			} else {
-				tmpfn = 0;
-			}
 		}
 	} else {
 		tmpfn = fn;
@@ -167,29 +145,26 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		dialogShowing = false;
 	}
+	if (fn == 0){
+		close();
+	}
 	return true;
 }
 
 void PostSolutionInfo::informStepsUpdated()
 {
-	QString fname = currentCgnsFileName();
-	int fn, ier;
-	if (m_fileId != 0) {
-		cg_close(m_fileId);
-		m_fileId = 0;
-	}
-	ier = cg_open(fname.toUtf8(), CG_MODE_READ, &fn);
-	if (ier != 0) {
-		// failed.
-//		const char* msg = cg_get_error();
-		cg_close(fn);
+	close();
+
+	bool ok = open();
+	if (! ok){
 		return;
 	}
-	m_fileId = fn;
+
 	setupZoneDataContainers(m_fileId);
 	checkBaseIterativeDataExist(m_fileId);
 	emit updated();
 	emit allPostProcessorsUpdated();
+	close();
 }
 
 bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap)
@@ -437,17 +412,13 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 	}
 	checking = true;
 	close();
-	QString fname = currentCgnsFileName();
-	int fn, ier;
-	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
-	if (ier != 0) {
+	bool ok = open();
+	if (! ok) {
 		// error occured while opening.
-		cg_close(fn);
 		checking = false;
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		return;
 	}
-	m_fileId = fn;
 	if (m_timeSteps != nullptr) {
 		m_timeSteps->checkStepsUpdate(m_fileId);
 	}
@@ -455,6 +426,7 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		m_iterationSteps->checkStepsUpdate(m_fileId);
 	}
 	checking = false;
+	close();
 }
 
 void PostSolutionInfo::handleIterationStepsUpdate(const QList<int>& steps)
@@ -659,6 +631,11 @@ PostSolutionInfo::Dimension PostSolutionInfo::fromIntDimension(int dim)
 
 void PostSolutionInfo::close()
 {
+	QString lockfname = currentCgnsFileName();
+	lockfname.append(".lock");
+	QFile lockedFile(lockfname);
+	lockedFile.remove();
+
 	if (m_fileId != 0) {
 		cg_close(m_fileId);
 		m_fileId = 0;
@@ -848,4 +825,47 @@ void PostSolutionInfo::exportCalculationResult()
 	}
 	iricMainWindow()->setContinuousSnapshotInProgress(false);
 	setCurrentStep(stepBackup);
+}
+
+bool PostSolutionInfo::open()
+{
+	int retryMax = 50;
+	int retry = 0;
+	int fn, ier;
+
+	if (m_fileId != 0) {
+		// already open!
+		return true;
+	}
+
+	QString fname = currentCgnsFileName();
+	QString lockfname = fname;
+	lockfname.append(".lock");
+	QFile lockedFile(lockfname);
+	qApp->processEvents();
+
+	while (lockedFile.exists() && retry < retryMax) {
+		++ retry;
+		thread()->sleep(100);
+		qApp->processEvents();
+	}
+
+	if (lockedFile.exists()) {
+		// The solver keeps locking the file too long.
+		return false;
+	}
+
+	ier = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_READ, &fn);
+	if (ier != 0) {
+		// error.
+		cg_close(fn);
+		return false;
+	}
+	m_fileId = fn;
+
+	// create lock file.
+	lockedFile.open(QFile::WriteOnly);
+	lockedFile.close();
+
+	return true;
 }

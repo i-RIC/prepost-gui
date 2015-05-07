@@ -55,6 +55,7 @@ public:
 	bool isDataAvailableBase();
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
+	bool open();
 	void close();
 
 	void setExportAllSteps(bool all) {m_exportAllSteps = all;}
