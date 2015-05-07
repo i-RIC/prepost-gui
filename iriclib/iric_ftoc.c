@@ -81,6 +81,10 @@ void IRICLIBDLL FMNAME(cg_iric_initread_f, CG_IRIC_INITREAD_F) (int *fid, int *i
 	*ier = cg_iRIC_InitRead(*fid);
 }
 
+void IRICLIBDLL FMNAME(iric_initoption_f, IRIC_INITOPTION_F) (int *option, int *ier) {
+	*ier = iRIC_InitOption(*option);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_flush_f, CG_IRIC_FLUSH_F) (STR_PSTR(name), int *fid, int *ier STR_PLEN(name)) {
 	char c_name[CGIO_MAX_NAME_LENGTH+1];
 	string_2_C_string(STR_PTR(name), STR_LEN(name),
@@ -92,6 +96,37 @@ void IRICLIBDLL FMNAME(cg_iric_flush_f, CG_IRIC_FLUSH_F) (STR_PSTR(name), int *f
 
 void IRICLIBDLL FMNAME(cg_iric_gotocc_f, CG_IRIC_GOTOCC_F) (int *fid, int *ier) {
 	*ier = cg_iRIC_GotoCC(*fid);
+}
+
+void IRICLIBDLL FMNAME(iric_write_sol_start_f, IRIC_WRITE_SOL_START_F) (STR_PSTR(fname), int *ier STR_PLEN(fname)) {
+	char c_fname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(fname), STR_LEN(fname),
+		c_fname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = iRIC_Write_Sol_Start(c_fname);
+}
+
+void IRICLIBDLL FMNAME(iric_write_sol_end_f, IRIC_WRITE_SOL_END_F) (STR_PSTR(fname), int *ier STR_PLEN(fname)) {
+	char c_fname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(fname), STR_LEN(fname),
+		c_fname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = iRIC_Write_Sol_End(c_fname);
+}
+
+void IRICLIBDLL FMNAME(iric_check_lock_f, IRIC_CHECK_LOCK_F) (STR_PSTR(fname), int *ier STR_PLEN(fname)) {
+	char c_fname[CGIO_MAX_NAME_LENGTH+1];
+	string_2_C_string(STR_PTR(fname), STR_LEN(fname),
+		c_fname, CGIO_MAX_NAME_LENGTH, ier);
+	if (*ier) return;
+
+	*ier = iRIC_Check_Lock(c_fname);
+}
+
+void IRICLIBDLL FMNAME(iric_check_cancel_f, IRIC_CHECK_CANCEL_F) (int *canceled) {
+	*canceled = iRIC_Check_Cancel();
 }
 
 void IRICLIBDLL FMNAME(cg_iric_read_integer_mul_f, CG_IRIC_READ_INTEGER_MUL_F) (int *fid, STR_PSTR(name), int *intvalue, int *ier STR_PLEN(name)) {

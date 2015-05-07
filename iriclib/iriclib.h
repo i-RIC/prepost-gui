@@ -6,6 +6,11 @@
 #define IRIC_GEO_RIVERSURVEY    2
 #define IRIC_GEO_POINTMAP       3
 
+#define IRIC_OPTION_UNKNOWN     0
+#define IRIC_OPTION_CANCEL      1
+
+#define IRIC_LOCKED 1
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -20,6 +25,8 @@ int IRICLIBDLL cg_iRIC_InitRead_Base(int fid, char* basename);
 
 int IRICLIBDLL cg_iRIC_InitRead(int fid);
 
+int IRICLIBDLL iRIC_InitOption(int option);
+
 int IRICLIBDLL cg_iRIC_Flush(char* name, int* fid);
 
 int IRICLIBDLL cg_iRIC_GotoBase(int fid, int* B);
@@ -29,6 +36,18 @@ int IRICLIBDLL cg_iRIC_GotoCC(int fid);
 int IRICLIBDLL cg_iRIC_GotoRawDataTop(int fid);
 
 int IRICLIBDLL cg_iRIC_Set_ZoneId_Mul(int fid, int zoneid);
+
+/**********************************************/
+/* iRIC GUI coorporation                      */
+/**********************************************/
+
+int IRICLIBDLL iRIC_Write_Sol_Start(char* fname);
+
+int IRICLIBDLL iRIC_Write_Sol_End(char* fname);
+
+int IRICLIBDLL iRIC_Check_Lock(char* fname);
+
+int IRICLIBDLL iRIC_Check_Cancel();
 
 /**********************************************/
 /* Reading Calculation Conditions             */

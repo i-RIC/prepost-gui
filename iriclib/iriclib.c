@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <cgnslib.h>
+#include <sys/stat.h>
 #include "iriclib.h"
 #define IRICBASE "iRIC"
 #define IRICZONE "iRICZone"
@@ -1022,6 +1023,22 @@ int cg_iRIC_InitRead(int fid)
 	return cg_iRIC_InitRead_Base(fid, NULL);
 }
 
+int iRIC_InitOption(int option)
+{
+	FILE* fp;
+	if (option == IRIC_OPTION_CANCEL){
+		// create ".cancel_ok"
+		fp = fopen(".cancel_ok", "w");
+		if (fp == NULL){
+			// failed opening.
+			return 1;
+		}
+		// close file.
+		fclose(fp);
+		return 0;
+	}
+}
+
 int cg_iRIC_Flush(char* filename, int* fid){
 	int ier;
 	// close the CGNS fie first.
@@ -1148,6 +1165,87 @@ int cg_iRIC_Set_ZoneId_Mul(int fid, int zid)
 {
 	*(zoneid + fileindex[fid]) = zid;
 	return 0;
+}
+
+static char* local_iRIC_lock_filename(char* filename)
+{
+	char* lockfilename;
+	size_t len;
+	len	= strlen(filename);
+	lockfilename = malloc(sizeof(char) * (len + 6));
+	strcpy(lockfilename, filename);
+	strcpy(lockfilename + len, ".lock");
+	return lockfilename;
+}
+
+int iRIC_Write_Sol_Start(char* filename)
+{
+	char* lockfilename;
+	FILE* fp;
+	int ret;
+
+	ret = 0;
+	lockfilename = local_iRIC_lock_filename(filename);
+	fp = fopen(lockfilename, "w");
+	// error handling.
+	if (fp == NULL){
+		ret = 1;
+		goto FREENAME;
+	}
+	fclose(fp);
+
+FREENAME:
+	free(lockfilename);
+
+	return ret;
+}
+ int iRIC_Write_Sol_End(char* filename)
+{
+	char* lockfilename;
+	int ret;
+
+	lockfilename = local_iRIC_lock_filename(filename);
+	ret = remove(lockfilename);
+
+	free(lockfilename);
+	return ret;
+}
+
+int iRIC_Check_Lock(char* filename)
+{
+	char* lockfilename;
+	int ret, result;
+	struct _stat buf;
+
+	ret = 0;
+	lockfilename = local_iRIC_lock_filename(filename);
+	result = _stat(lockfilename, &buf);
+
+	if (result == 0){
+		// Getting information. succeeded. Lock file exist.
+		ret = IRIC_LOCKED;
+	}
+
+	free(lockfilename);
+	return ret;
+}
+
+int iRIC_Check_Cancel()
+{
+	char* cancelfilename = ".cancel";
+	int ret, result;
+	struct _stat buf;
+
+	ret = 0;
+	result = _stat(cancelfilename, &buf);
+
+	if (result == 0){
+		// Getting information. succeeded. Cancel file exist.
+		return 0;
+	}
+
+	// not canceled.
+	return 1;
 }
 
 int cg_iRIC_Read_Integer_Mul(int fid, char* name, int* intvalue){
