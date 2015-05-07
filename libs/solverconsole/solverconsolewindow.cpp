@@ -167,8 +167,21 @@ void SolverConsoleWindow::terminateSolver()
 																					tr("Do you really want to kill the solver?"),
 																					QMessageBox::Yes | QMessageBox::No,
 																					QMessageBox::No);
-	if (QMessageBox::Yes == button) {
-		m_solverKilled = true;
+	if (QMessageBox::No == button) {
+		return;
+	}
+	m_solverKilled = true;
+	QString wd = m_projectData->workDirectory();
+	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
+	if (cancelOkFile.exists()) {
+		// this solver supports canceling through ".cancel". Create ".cancel".
+		QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
+		cancelFile.open(QFile::WriteOnly);
+		cancelFile.close();
+		// wait for 30 secs.
+		m_process->waitForFinished();
+	} else {
+		// this solver does not supports canceling through ".cancel". Kill the solver.
 		m_process->kill();
 	}
 }
@@ -196,6 +209,10 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	delete m_process;
 	m_process = nullptr;
 	m_projectDataItem->close();
+
+	QString wd = m_projectData->workDirectory();
+	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
+	cancelFile.remove();
 
 	if (m_destructing) {return;}
 	updateWindowTitle();
