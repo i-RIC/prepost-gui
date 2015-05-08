@@ -1201,7 +1201,7 @@ bool PostZoneDataContainer::IBCExists()
 	return false;
 }
 
-bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
+bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, const PostExportSetting& s)
 {
 	QString dir = projectData()->workDirectory();
 	// export to a temporary file first.
@@ -1211,7 +1211,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 	if (sgrid != nullptr) {
 		vtkStructuredGridWriter* writer = vtkStructuredGridWriter::New();
 		vtkExtractGrid* extract = vtkExtractGrid::New();
-		extract->SetVOI(imin, imax, jmin, jmax, kmin, kmax);
+		extract->SetVOI(s.iMin, s.iMax, s.jMin, s.jMax, s.kMin, s.kMax);
 		extract->SetInputData(sgrid);
 		QString header("iRIC output t = %1");
 		writer->SetHeader(iRIC::toStr(header.arg(time)).c_str());
@@ -1247,7 +1247,7 @@ bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, 
 	return true;
 }
 
-bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
+bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, const PostExportSetting& s)
 {
 	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);
@@ -1298,9 +1298,9 @@ bool PostZoneDataContainer::saveToCSVFile(const QString& filename, double time, 
 
 		stream.setRealNumberNotation(QTextStream::ScientificNotation);
 		// data
-		for (int k = kmin; k <= kmax; ++k) {
-			for (int j = jmin; j <= jmax; ++j) {
-				for (int i = imin; i <= imax; ++i) {
+		for (int k = s.kMin; k <= s.kMax; ++k) {
+			for (int j = s.jMin; j <= s.jMax; ++j) {
+				for (int i = s.iMin; i <= s.iMax; ++i) {
 					stream << (i + 1);
 					if (dim[1] != 1) {stream << "," << (j + 1);}
 					if (dim[2] != 1) {stream << "," << (k + 1);}

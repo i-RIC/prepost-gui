@@ -2,6 +2,8 @@
 #define POSTDATAEXPORTDIALOG_H
 
 #include "../guicore_global.h"
+#include "postexportsetting.h"
+
 #include <QDialog>
 #include <QPushButton>
 
@@ -26,38 +28,13 @@ public:
 	void setFileMode();
 
 	void setFormat(Format f);
-	void setOutputFolder(const QString& folder);
-	void setOutputFileName(const QString& filename);
-	void setAllTimeSteps(bool all);
-	void setStartTimeStep(int start);
-	void setEndTimeStep(int end);
+	void setExportSetting(const PostExportSetting& setting);
 	void setPrefix(const QString& prefix);
-	void setSkipRate(int rate);
 
-	void setFullRange(bool full);
-	void setIMin(int imin);
-	void setIMax(int imax);
-	void setJMin(int jmin);
-	void setJMax(int jmax);
-	void setKMin(int kmin);
-	void setKMax(int kmax);
+	Format format() const;
+	PostExportSetting exportSetting() const;
+	const QString prefix() const;
 
-	Format format();
-	const QString outputFolder() const;
-	const QString outputFileName() const;
-	bool allTimeSteps();
-	int startTimeStep();
-	int endTimeStep();
-	bool fullRange();
-	int iMin();
-	int iMax();
-	int jMin();
-	int jMax();
-	int kMin();
-	int kMax();
-
-	const QString prefix();
-	int skipRate();
 	void accept();
 	void updateSkipRateMaximum();
 
@@ -77,6 +54,7 @@ private slots:
 
 private:
 	Ui::PostDataExportDialog* ui;
+	PostExportSetting m_setting;
 };
 
 #endif // POSTDATAEXPORTDIALOG_H

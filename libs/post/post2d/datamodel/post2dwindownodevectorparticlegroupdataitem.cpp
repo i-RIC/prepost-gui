@@ -26,11 +26,11 @@
 #include <vtkLookupTable.h>
 #include <vtkPointData.h>
 #include <vtkPolyData.h>
+#include <vtkPolyDataWriter.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkRungeKutta4.h>
 #include <vtkStructuredGridGeometryFilter.h>
-#include <vtkUnstructuredGridWriter.h>
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p)
@@ -406,10 +406,9 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString& filePrefix, int fileIndex, double time)
 {
 	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		QString tempPath = QDir::tempPath();
-		QString tmpFile = iRIC::getTempFileName(tempPath);
+		QString tmpFile = projectData()->tmpFileName();
 
-		vtkUnstructuredGridWriter* writer = vtkUnstructuredGridWriter::New();
+		vtkSmartPointer<vtkPolyDataWriter> writer = vtkSmartPointer<vtkPolyDataWriter>::New();
 		QString header("iRIC particle output t = %1");
 		writer->SetHeader(iRIC::toStr(header.arg(time)).c_str());
 		writer->SetInputData(m_particleGrids[i]);
@@ -418,7 +417,6 @@ bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 
 		// export data.
 		writer->Update();
-		writer->Delete();
 
 		QString filename = filePrefix;
 		if (m_particleGrids.count() == 1) {

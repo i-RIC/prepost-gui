@@ -168,6 +168,7 @@ HEADERS += guicore_global.h \
            postcontainer/postdatacontainer.h \
            postcontainer/postdataexportdialog.h \
            postcontainer/postdummy3dzonedatacontainer.h \
+           postcontainer/postexportsetting.h \
            postcontainer/postiterationsteps.h \
            postcontainer/postseriesdatacontainer.h \
            postcontainer/postsolutioninfo.h \
@@ -390,6 +391,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            postcontainer/postdatacontainer.cpp \
            postcontainer/postdataexportdialog.cpp \
            postcontainer/postdummy3dzonedatacontainer.cpp \
+           postcontainer/postexportsetting.cpp \
            postcontainer/postiterationsteps.cpp \
            postcontainer/postseriesdatacontainer.cpp \
            postcontainer/postsolutioninfo.cpp \

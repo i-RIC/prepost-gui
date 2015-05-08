@@ -40,22 +40,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
 	m_iterationType = SolverDefinition::NoIteration;
 
 	m_exportFormat = efVTK;
-
-	m_exportAllSteps = true;
-	m_exportStartStep = 0;
-	m_exportEndStep = 0;
-
-	m_exportFullRange = true;
-	m_exportIMin = 0;
-	m_exportIMax = 0;
-	m_exportJMin = 0;
-	m_exportJMax = 0;
-	m_exportKMin = 0;
-	m_exportKMax = 0;
-	m_exportFolder = "";
-	m_exportPrefix = "Result_";
 	m_particleExportPrefix = "Particle_";
-	m_exportSkipRate = 1;
 }
 
 PostSolutionInfo::~PostSolutionInfo()
@@ -727,58 +712,36 @@ void PostSolutionInfo::exportCalculationResult()
 	}
 
 	expDialog.setTimeValues(m_timeSteps->timesteps());
-	expDialog.setAllTimeSteps(m_exportAllSteps);
-	expDialog.setStartTimeStep(m_exportStartStep);
-	expDialog.setEndTimeStep(m_exportEndStep);
+
 	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data());
 	if (sGrid != nullptr) {
 		// structured grid
 		int dim[3];
 		sGrid->GetDimensions(dim);
 		expDialog.setIJKRange(dim[0], dim[1], dim[2]);
-		expDialog.setFullRange(m_exportFullRange);
-		expDialog.setIMin(m_exportIMin);
-		expDialog.setIMax(m_exportIMax);
-		expDialog.setJMin(m_exportJMin);
-		expDialog.setJMax(m_exportJMax);
-		expDialog.setKMin(m_exportKMin);
-		expDialog.setKMax(m_exportKMax);
-	} else {
+	}
+	if (m_exportSetting.folder == "") {
+		m_exportSetting.folder = LastIODirectory::get();
+	}
+	expDialog.setExportSetting(m_exportSetting);
+
+	if (sGrid == nullptr) {
 		// unstructured grid
 		expDialog.hideDataRange();
 	}
-	if (m_exportFolder == "") {
-		m_exportFolder = LastIODirectory::get();
-	}
-	expDialog.setOutputFolder(m_exportFolder);
-	expDialog.setPrefix(m_exportPrefix);
-	expDialog.setSkipRate(m_exportSkipRate);
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
+
 	if (expDialog.format() == PostDataExportDialog::fmVTK) {
 		m_exportFormat = efVTK;
 	} else if (expDialog.format() == PostDataExportDialog::fmCSV) {
 		m_exportFormat = efCSV;
 	}
-	m_exportAllSteps = expDialog.allTimeSteps();
-	m_exportStartStep = expDialog.startTimeStep();
-	m_exportEndStep = expDialog.endTimeStep();
-	if (zoneC->gridType()->defaultGridType() == SolverDefinitionGridType::gtStructured2DGrid) {
-		m_exportFullRange = expDialog.fullRange();
-		m_exportIMin = expDialog.iMin();
-		m_exportIMax = expDialog.iMax();
-		m_exportJMin = expDialog.jMin();
-		m_exportJMax = expDialog.jMax();
-		m_exportKMin = expDialog.kMin();
-		m_exportKMax = expDialog.kMax();
-	}
-	m_exportFolder = expDialog.outputFolder();
-	m_exportPrefix = expDialog.prefix();
-	m_exportSkipRate = expDialog.skipRate();
+	m_exportSetting = expDialog.exportSetting();
 
 	// start exporting.
 	QProgressDialog dialog(iricMainWindow());
-	dialog.setRange(m_exportStartStep, m_exportEndStep);
+	dialog.setRange(m_exportSetting.startStep , m_exportSetting.endStep);
 	dialog.setWindowTitle(tr("Export Calculation Result"));
 	if (m_exportFormat == efVTK) {
 		dialog.setLabelText(tr("Saving calculation result as VTK files..."));
@@ -792,10 +755,10 @@ void PostSolutionInfo::exportCalculationResult()
 	iricMainWindow()->setContinuousSnapshotInProgress(true);
 	int stepBackup = currentStep();
 
-	int step = m_exportStartStep;
+	int step = m_exportSetting.startStep;
 	int fileIndex = 1;
-	QDir outputFolder(m_exportFolder);
-	while (step <= m_exportEndStep) {
+	QDir outputFolder(m_exportSetting.folder);
+	while (step <= m_exportSetting.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
 		if (dialog.wasCanceled()) {
@@ -804,15 +767,15 @@ void PostSolutionInfo::exportCalculationResult()
 			return;
 		}
 		setCurrentStep(step);
-		QString fileName = m_exportPrefix;
+		QString fileName = m_exportSetting.prefix;
 		bool ok;
 		double time = currentTimeStep();
 		if (m_exportFormat == efVTK) {
 			fileName.append(QString("%1.vtk").arg(fileIndex));
-			ok = zoneC->saveToVTKFile(outputFolder.absoluteFilePath(fileName), time, m_exportIMin, m_exportIMax, m_exportJMin, m_exportJMax, m_exportKMin, m_exportKMax);
+			ok = zoneC->saveToVTKFile(outputFolder.absoluteFilePath(fileName), time, m_exportSetting);
 		} else {
 			fileName.append(QString("%1.csv").arg(fileIndex));
-			ok = zoneC->saveToCSVFile(outputFolder.absoluteFilePath(fileName), time, m_exportIMin, m_exportIMax, m_exportJMin, m_exportJMax, m_exportKMin, m_exportKMax);
+			ok = zoneC->saveToCSVFile(outputFolder.absoluteFilePath(fileName), time, m_exportSetting);
 		}
 		if (! ok) {
 			setCurrentStep(stepBackup);
@@ -820,7 +783,7 @@ void PostSolutionInfo::exportCalculationResult()
 			iricMainWindow()->setContinuousSnapshotInProgress(false);
 			return;
 		}
-		step += m_exportSkipRate;
+		step += m_exportSetting.skipRate;
 		++ fileIndex;
 	}
 	iricMainWindow()->setContinuousSnapshotInProgress(false);

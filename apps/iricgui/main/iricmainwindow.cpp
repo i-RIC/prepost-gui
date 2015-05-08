@@ -1804,31 +1804,29 @@ void iRICMainWindow::exportParticles()
 
 	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
 	expDialog.hideFormat();
-	expDialog.hideDataRange();
 	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
-	expDialog.setAllTimeSteps(pInfo->exportAllSteps());
-	expDialog.setStartTimeStep(pInfo->exportStartStep());
-	expDialog.setEndTimeStep(pInfo->exportEndStep());
-	if (pInfo->exportFolder() == "") {
-		pInfo->setExportFolder(LastIODirectory::get());
+
+	PostExportSetting s = pInfo->exportSetting();
+	if (s.folder == "") {
+		s.folder = LastIODirectory::get();
 	}
-	expDialog.setOutputFolder(pInfo->exportFolder());
+
+	expDialog.setExportSetting(s);
 	expDialog.setPrefix(pInfo->particleExportPrefix());
-	expDialog.setSkipRate(pInfo->exportSkipRate());
+	expDialog.hideDataRange();
 
 	expDialog.setWindowTitle(tr("Export Particles"));
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
-	pInfo->setExportAllSteps(expDialog.allTimeSteps());
-	pInfo->setExportStartStep(expDialog.startTimeStep());
-	pInfo->setExportEndStep(expDialog.endTimeStep());
-	pInfo->setExportFolder(expDialog.outputFolder());
+
+	s = expDialog.exportSetting();
+	pInfo->setExportSetting(s);
+
 	pInfo->setParticleExportPrefix(expDialog.prefix());
-	pInfo->setExportSkipRate(expDialog.skipRate());
 
 	// start exporting.
 	QProgressDialog dialog(this);
-	dialog.setRange(pInfo->exportStartStep(), pInfo->exportEndStep());
+	dialog.setRange(s.startStep, s.endStep);
 	dialog.setWindowTitle(tr("Export Particles"));
 	dialog.setLabelText(tr("Saving particles as VTK files..."));
 	dialog.setFixedSize(300, 100);
@@ -1837,10 +1835,10 @@ void iRICMainWindow::exportParticles()
 
 	m_continuousSnapshotInProgress = true;
 
-	int step = pInfo->exportStartStep();
+	int step = s.startStep;
 	int fileIndex = 1;
-	QDir outputFolder(pInfo->exportFolder());
-	while (step <= pInfo->exportEndStep()) {
+	QDir outputFolder(s.folder);
+	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
 		if (dialog.wasCanceled()) {
@@ -1856,7 +1854,7 @@ void iRICMainWindow::exportParticles()
 			m_continuousSnapshotInProgress = false;
 			return;
 		}
-		step += pInfo->exportSkipRate();
+		step += s.skipRate;
 		++ fileIndex;
 	}
 	m_continuousSnapshotInProgress = false;
@@ -1910,22 +1908,16 @@ void iRICMainWindow::exportStKML()
 	expDialog.hideFormat();
 	expDialog.hideDataRange();
 	expDialog.setFileMode();
-	expDialog.setOutputFileName(outputFileName);
 	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
-	expDialog.setAllTimeSteps(pInfo->exportAllSteps());
-	expDialog.setStartTimeStep(pInfo->exportStartStep());
-	expDialog.setEndTimeStep(pInfo->exportEndStep());
-	expDialog.setSkipRate(pInfo->exportSkipRate());
+	expDialog.setExportSetting(pInfo->exportSetting());
 	expDialog.setWindowTitle(tr("Export Google Earth KML for street view"));
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
-	pInfo->setExportAllSteps(expDialog.allTimeSteps());
-	pInfo->setExportStartStep(expDialog.startTimeStep());
-	pInfo->setExportEndStep(expDialog.endTimeStep());
-	pInfo->setExportFolder(expDialog.outputFolder());
-	pInfo->setExportSkipRate(expDialog.skipRate());
 
-	outputFileName = expDialog.outputFileName();
+	PostExportSetting s = expDialog.exportSetting();
+	pInfo->setExportSetting(s);
+
+	outputFileName = s.filename;
 	QFile mainKML(outputFileName);
 	bool ok = mainKML.open(QFile::WriteOnly);
 	QXmlStreamWriter w(&mainKML);
@@ -1939,7 +1931,7 @@ void iRICMainWindow::exportStKML()
 
 	// start exporting.
 	QProgressDialog dialog(this);
-	dialog.setRange(pInfo->exportStartStep(), pInfo->exportEndStep());
+	dialog.setRange(s.startStep, s.endStep);
 	dialog.setWindowTitle(tr("Export Google Earth KML for street view"));
 	dialog.setLabelText(tr("Saving KML files..."));
 	dialog.setFixedSize(300, 100);
@@ -1948,9 +1940,9 @@ void iRICMainWindow::exportStKML()
 
 	m_continuousSnapshotInProgress = true;
 
-	int step = pInfo->exportStartStep();
+	int step = s.startStep;
 	int fileIndex = 1;
-	while (step <= pInfo->exportEndStep()) {
+	while (step <= s.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
 		if (dialog.wasCanceled()) {
@@ -1965,7 +1957,7 @@ void iRICMainWindow::exportStKML()
 			m_continuousSnapshotInProgress = false;
 			return;
 		}
-		step += pInfo->exportSkipRate();
+		step += s.skipRate;
 		++ fileIndex;
 	}
 

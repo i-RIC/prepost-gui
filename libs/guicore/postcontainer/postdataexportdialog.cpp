@@ -106,41 +106,23 @@ void PostDataExportDialog::setFormat(Format f)
 	}
 }
 
-void PostDataExportDialog::setOutputFolder(const QString& folder)
+void PostDataExportDialog::setExportSetting(const PostExportSetting &setting)
 {
-	ui->folderEdit->setText(QDir::toNativeSeparators(folder));
-}
-
-void PostDataExportDialog::setOutputFileName(const QString& filename)
-{
-	ui->fileEdit->setFilename(filename);
-}
-
-void PostDataExportDialog::setAllTimeSteps(bool all)
-{
-	ui->dataAllCheckBox->setChecked(all);
-	if (all) {
+	m_setting = setting;
+	ui->folderEdit->setText(QDir::toNativeSeparators(setting.folder));
+	ui->fileEdit->setFilename(setting.filename);
+	ui->dataAllCheckBox->setChecked(setting.allSteps);
+	if (setting.allSteps) {
 		ui->dataStartSlider->setValue(ui->dataStartSlider->minimum());
 		ui->dataEndSlider->setValue(ui->dataEndSlider->maximum());
+	} else {
+		ui->dataStartSlider->setValue(setting.startStep);
+		ui->dataEndSlider->setValue(setting.endStep);
 	}
-}
+	ui->samplingSpinBox->setValue(setting.skipRate);
 
-void PostDataExportDialog::setStartTimeStep(int start)
-{
-	if (ui->dataAllCheckBox->isChecked()) {return;}
-	ui->dataStartSlider->setValue(start);
-}
-
-void PostDataExportDialog::setEndTimeStep(int end)
-{
-	if (ui->dataAllCheckBox->isChecked()) {return;}
-	ui->dataEndSlider->setValue(end);
-}
-
-void PostDataExportDialog::setFullRange(bool full)
-{
-	ui->fullRegionCheckBox->setChecked(full);
-	if (full) {
+	ui->fullRegionCheckBox->setChecked(setting.fullRange);
+	if (setting.fullRange){
 		ui->iminSlider->setValue(ui->iminSlider->minimum());
 		ui->imaxSlider->setValue(ui->imaxSlider->maximum());
 		ui->jminSlider->setValue(ui->jminSlider->minimum());
@@ -148,45 +130,17 @@ void PostDataExportDialog::setFullRange(bool full)
 		ui->kminSlider->setValue(ui->kminSlider->minimum());
 		ui->kmaxSlider->setValue(ui->kmaxSlider->maximum());
 	} else {
+		ui->iminSlider->setValue(setting.iMin + 1);
+		ui->imaxSlider->setValue(setting.iMax + 1);
+		ui->jminSlider->setValue(setting.jMin + 1);
+		ui->jmaxSlider->setValue(setting.jMax + 1);
+		ui->kminSlider->setValue(setting.kMin + 1);
+		ui->kmaxSlider->setValue(setting.kMax + 1);
+
 		ui->dataRangeGroupBox->show();
 		adjustSize();
 	}
-}
-
-void PostDataExportDialog::setIMin(int imin)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->iminSlider->setValue(imin + 1);
-}
-
-void PostDataExportDialog::setIMax(int imax)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->imaxSlider->setValue(imax + 1);
-}
-
-void PostDataExportDialog::setJMin(int jmin)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->jminSlider->setValue(jmin + 1);
-}
-
-void PostDataExportDialog::setJMax(int jmax)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->jmaxSlider->setValue(jmax + 1);
-}
-
-void PostDataExportDialog::setKMin(int kmin)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->kminSlider->setValue(kmin + 1);
-}
-
-void PostDataExportDialog::setKMax(int kmax)
-{
-	if (ui->fullRegionCheckBox->isChecked()) {return;}
-	ui->kmaxSlider->setValue(kmax + 1);
+	ui->prefixEdit->setText(setting.prefix);
 }
 
 void PostDataExportDialog::setPrefix(const QString& prefix)
@@ -194,12 +148,7 @@ void PostDataExportDialog::setPrefix(const QString& prefix)
 	ui->prefixEdit->setText(prefix);
 }
 
-void PostDataExportDialog::setSkipRate(int rate)
-{
-	ui->samplingSpinBox->setValue(rate);
-}
-
-PostDataExportDialog::Format PostDataExportDialog::format()
+PostDataExportDialog::Format PostDataExportDialog::format() const
 {
 	if (ui->formatComboBox->currentIndex() == 0) {
 		return fmVTK;
@@ -208,75 +157,33 @@ PostDataExportDialog::Format PostDataExportDialog::format()
 	}
 }
 
-const QString PostDataExportDialog::outputFolder() const
+PostExportSetting PostDataExportDialog::exportSetting() const
 {
-	return ui->folderEdit->text();
+	PostExportSetting ret = m_setting;
+	ret.folder = ui->folderEdit->text();
+	ret.filename = ui->fileEdit->filename();
+
+	ret.allSteps = ui->dataAllCheckBox->isChecked();
+	ret.startStep = ui->dataStartSlider->value();
+	ret.endStep = ui->dataEndSlider->value();
+	ret.skipRate = ui->samplingSpinBox->value();
+
+	ret.fullRange = ui->fullRegionCheckBox->isChecked();
+	ret.iMin = ui->iminSlider->value() - 1;
+	ret.iMax = ui->imaxSlider->value() - 1;
+	ret.jMin = ui->jminSlider->value() - 1;
+	ret.jMax = ui->jmaxSlider->value() - 1;
+	ret.kMin = ui->kminSlider->value() - 1;
+	ret.kMax = ui->kmaxSlider->value() - 1;
+
+	ret.prefix = ui->prefixEdit->text();
+
+	return ret;
 }
 
-const QString PostDataExportDialog::outputFileName() const
-{
-	return ui->fileEdit->filename();
-}
-
-bool PostDataExportDialog::allTimeSteps()
-{
-	return ui->dataAllCheckBox->isChecked();
-}
-
-
-int PostDataExportDialog::startTimeStep()
-{
-	return ui->dataStartSlider->value();
-}
-
-int PostDataExportDialog::endTimeStep()
-{
-	return ui->dataEndSlider->value();
-}
-
-bool PostDataExportDialog::fullRange()
-{
-	return ui->fullRegionCheckBox->isChecked();
-}
-
-int PostDataExportDialog::iMin()
-{
-	return ui->iminSlider->value() - 1;
-}
-
-int PostDataExportDialog::iMax()
-{
-	return ui->imaxSlider->value() - 1;
-}
-
-int PostDataExportDialog::jMin()
-{
-	return ui->jminSlider->value() - 1;
-}
-
-int PostDataExportDialog::jMax()
-{
-	return ui->jmaxSlider->value() - 1;
-}
-
-int PostDataExportDialog::kMin()
-{
-	return ui->kminSlider->value() - 1;
-}
-
-int PostDataExportDialog::kMax()
-{
-	return ui->kmaxSlider->value() - 1;
-}
-
-const QString PostDataExportDialog::prefix()
+const QString PostDataExportDialog::prefix() const
 {
 	return ui->prefixEdit->text();
-}
-
-int PostDataExportDialog::skipRate()
-{
-	return ui->samplingSpinBox->value();
 }
 
 void PostDataExportDialog::allCheckChange(bool checked)

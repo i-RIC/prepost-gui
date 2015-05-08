@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 #include "../project/projectdataitem.h"
 #include "../solverdef/solverdefinition.h"
+#include "postexportsetting.h"
 
 #include <QList>
 #include <QMap>
@@ -58,21 +59,11 @@ public:
 	bool open();
 	void close();
 
-	void setExportAllSteps(bool all) {m_exportAllSteps = all;}
-	void setExportStartStep(int s) {m_exportStartStep = s;}
-	void setExportEndStep(int e) {m_exportEndStep = e;}
-	void setExportFolder(const QString& f) {m_exportFolder = f;}
-	void setExportPrefix(QString prefix) {m_exportPrefix = prefix;}
-	void setParticleExportPrefix(QString prefix) {m_particleExportPrefix = prefix;}
-	void setExportSkipRate(int rate) {m_exportSkipRate = rate;}
+	const PostExportSetting& exportSetting() const {return m_exportSetting;}
+	const QString& particleExportPrefix() const {return m_particleExportPrefix;}
+	void setExportSetting(const PostExportSetting& setting) {m_exportSetting = setting;}
+	void setParticleExportPrefix(const QString& prefix) {m_particleExportPrefix = prefix;}
 
-	bool exportAllSteps() {return m_exportAllSteps;}
-	int exportStartStep() {return m_exportStartStep;}
-	int exportEndStep() {return m_exportEndStep;}
-	QString exportFolder() {return m_exportFolder;}
-	QString exportPrefix() {return m_exportPrefix;}
-	QString particleExportPrefix() {return m_particleExportPrefix;}
-	int exportSkipRate() {return m_exportSkipRate;}
 	/// File ID that can be used with cgnslib functions.
 	int fileId() {return m_fileId;}
 protected:
@@ -125,22 +116,9 @@ private:
 	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
 	ExportFormat m_exportFormat;
-	bool m_exportAllSteps;
-	int m_exportStartStep;
-	int m_exportEndStep;
 
-	bool m_exportFullRange;
-	int m_exportIMin;
-	int m_exportIMax;
-	int m_exportJMin;
-	int m_exportJMax;
-	int m_exportKMin;
-	int m_exportKMax;
-
-	QString m_exportFolder;
-	QString m_exportPrefix;
+	PostExportSetting m_exportSetting;
 	QString m_particleExportPrefix;
-	int m_exportSkipRate;
 };
 
 #endif // POSTSOLUTIONINFO_H
