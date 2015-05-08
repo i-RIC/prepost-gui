@@ -5,7 +5,7 @@
 TEMPLATE = lib
 TARGET = iriclib
 DEPENDPATH += .
-INCLUDEPATH += "E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/include"
+INCLUDEPATH += "D:\01_iRIC\dev\lib\install\cgnslib_3.2.1\release\include"
 CONFIG += dll
 
 DEFINES += IRICLIBDLL_LIBRARY
@@ -32,10 +32,10 @@ DEFINES += CG_BUILD_64BIT
 
 CONFIG(debug, debug|release) { 
 	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/lib"
+	LIBS += -L"D:\01_iRIC\dev\lib\install\cgnslib_3.2.1\debug\lib"
 }
 else { 
 	# cgnslib
-	LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/release/lib"
+	LIBS += -L"D:\01_iRIC\dev\lib\install\cgnslib_3.2.1\release\lib"
 }
 LIBS += -lcgnsdll
