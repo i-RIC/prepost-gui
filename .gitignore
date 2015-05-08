@@ -22,3 +22,5 @@ src.pro.user
 *.pyc
 paths.pri
 *.rc
+apps/solvers
+apps/gridcreators
