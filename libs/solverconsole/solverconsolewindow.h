@@ -81,6 +81,8 @@ signals:
 private:
 	/// Initialization
 	void init();
+	void createCancelFile();
+	void removeCancelFile();
 	void appendLogLine(const QString& line);
 	/// Background color
 	const QColor backgroundColor() const;
