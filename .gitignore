@@ -24,3 +24,5 @@ paths.pri
 *.rc
 apps/solvers
 apps/gridcreators
+iriclib/Makefile
+iriclib/Makefile.*
