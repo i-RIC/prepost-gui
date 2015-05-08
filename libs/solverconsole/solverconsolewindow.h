@@ -81,8 +81,12 @@ signals:
 private:
 	/// Initialization
 	void init();
+	/// create ".cancel" file to ask solver to stop.
 	void createCancelFile();
+	/// remove ".cancel" file.
 	void removeCancelFile();
+	/// remove ".cancel_ok" file.
+	void removeCancelOkFile();
 	void appendLogLine(const QString& line);
 	/// Background color
 	const QColor backgroundColor() const;

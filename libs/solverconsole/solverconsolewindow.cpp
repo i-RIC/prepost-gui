@@ -150,6 +150,8 @@ void SolverConsoleWindow::startSolver()
 
 	// remove cancel file.
 	removeCancelFile();
+	// remove cancel_ok file.
+	removeCancelOkFile();
 
 	m_solverKilled = false;
 	m_process->start(solver, args);
@@ -213,6 +215,8 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 	// remove cancel file.
 	removeCancelFile();
+	// remove cancel_ok file.
+	removeCancelOkFile();
 
 	if (m_destructing) {return;}
 	updateWindowTitle();
@@ -342,4 +346,11 @@ void SolverConsoleWindow::removeCancelFile()
 	QString wd = m_projectData->workDirectory();
 	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
 	cancelFile.remove();
+}
+
+void SolverConsoleWindow::removeCancelOkFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
+	cancelOkFile.remove();
 }
