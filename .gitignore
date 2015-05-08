@@ -26,3 +26,4 @@ apps/solvers
 apps/gridcreators
 iriclib/Makefile
 iriclib/Makefile.*
+*.vcxproj.user
