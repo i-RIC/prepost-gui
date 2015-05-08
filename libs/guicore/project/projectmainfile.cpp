@@ -85,6 +85,9 @@ ProjectMainFile::~ProjectMainFile()
 	/// can access mainwindow.
 	delete m_postProcessors;
 
+	/// delete post solution info manually.
+	delete m_postSolutionInfo;
+
 	// free coordinate system convert object
 	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->free();
