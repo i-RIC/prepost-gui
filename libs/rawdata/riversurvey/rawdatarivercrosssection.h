@@ -8,25 +8,21 @@
 class RawDataRiverPathPoint;
 /**
  * @ingroup RiverShape
- * @brief 河川の断面の情報を保持するクラス
+ * @brief Container for river crosssection
  */
 class RD_RIVERSURVEY_EXPORT RawDataRiverCrosssection
 {
 public:
-	/**
-	 * @brief 例外処理で返す値
-	 */
+	/// Values to be returned as exception
 	enum ErrorCodes {
-		ec_NoAltitudeExists,        ///< @brief この断面には、標高データがまったく存在しない
-		ec_AltitudesMustExistTwo,   ///< @brief 最低2つ以上の有効なAltitude が存在しないといけないので、この操作はできません。
-		ec_OutOfIndex,              ///< @brief 指定されたインデックスが存在しない
-		ec_FixDelete,               ///< @brief 固定点が設定されているときに固定点を削除もしくは端点を削除しようとした　→できない
-		ec_FixInactivate,           ///< Tried to inactivate fixed points.
-		ec_AltitudesBiased          ///< @brief 断面が左岸側もしくは右岸側にのみ存在
+		ec_NoAltitudeExists,        ///< There is no altitude on this crosssection
+		ec_AltitudesMustExistTwo,   ///< There must be at least two active altitude. The operation is now allowed.
+		ec_OutOfIndex,              ///< The specified index does not exist
+		ec_FixDelete,               ///< Tried to delete fixed point
+		ec_FixInactivate,           ///< Tried to inactivate fixed points
+		ec_AltitudesBiased          ///< Crosssection exist only at left bank side or only at right bank side
 	};
-	/**
-	 * @brief 標高データ
-	 */
+	/// Altitude data
 	class Altitude
 	{
 	public:
@@ -47,11 +43,17 @@ public:
 			m_height = height;
 			m_active = active;
 		}
+		/// The position of the altitude. Distance from the center. if negative, left side and if positive, right side.
 		double position() const {return m_position;}
+		/// Set the position of the altitude. Distance from the center. if negative, left side and if positive, right side.
 		void setPosition(double p) {m_position = p;}
+		/// The elevation value
 		double height() const {return m_height;}
+		/// Set the elevation value
 		void setHeight(double h) {m_height = h;}
+		/// If active true
 		bool active() const {return m_active;}
+		/// Set whether it is active or not
 		void setActive(bool a) {m_active = a;}
 		bool operator <(const Altitude& alt) const {
 			return m_position < alt.m_position;
@@ -75,9 +77,7 @@ public:
 	}
 	/// Destructor
 	~RawDataRiverCrosssection() {}
-	/**
-	 * @brief 親河川横断線を設定する
-	 */
+	/// Set the parent river path point
 	void setParent(RawDataRiverPathPoint* point) {
 		m_parent = point;
 	}
@@ -100,18 +100,19 @@ public:
 	QList<int> selectRegion(double position1, double position2, double height1, double height2);
 	int leftBankIndex(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	/**
-	 * @brief 左岸の情報を取得する
-	 * @param OnlyActive true に設定すると、active なものの中でもっとも左岸よりのものを返す。
+	 * @brief Get the left bank
+	 * @param OnlyActive If true, the altitude that is at the most left side and active is returned.
 	 */
 	Altitude& leftBank(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	int rightBankIndex(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	/**
-	 * @brief 右岸の情報を取得する
-	 * @param OnlyActive true に設定すると、active なものの中でもっとも右岸よりのものを返す。
+	 * @brief Get the right bank
+	 * @param OnlyActive If true, the altitude that is at the most right side and active is returned.
 	 */
 	Altitude& rightBank(bool OnlyActive = false) /*throw (ErrorCodes)*/;
 	/**
-	 * @brief 断面の上に存在する点の数を数える。
+	 * @brief Returns the number of altitudes on the crosssection.
+	 * @param OnlyActive If true, count only the active ones.
 	 */
 	unsigned int numOfAltitudes(bool OnlyActive = false);
 	AltitudeList& AltitudeInfo() {return m_altitudeInfo;}

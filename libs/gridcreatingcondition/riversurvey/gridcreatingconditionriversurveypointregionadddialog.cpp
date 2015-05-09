@@ -66,7 +66,7 @@ private:
 			tmpp = tmpp->nextPoint();
 		}
 
-		// 制御点データを設定
+		// Set ctrl points data
 		tmpp = start;
 		while (tmpp != end) {
 			int tmppoints = 0;

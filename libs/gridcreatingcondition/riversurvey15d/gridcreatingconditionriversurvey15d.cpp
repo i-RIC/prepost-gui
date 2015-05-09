@@ -109,7 +109,7 @@ private:
 
 		RawDataRiverPathPoint* headPoint = m_condition->m_riverSurvey->headPoint();
 
-		// バックアップを取る。
+		// Save backup
 		if (RemoveCenterToLeft) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToLeft);
@@ -126,7 +126,7 @@ private:
 			m_before.push_back(backup);
 		}
 
-		// 次に削除を実行する。
+		// Delete the points
 		if (RemoveCenterToLeft) {
 			RawDataRiverPathPoint* tmpp = m_condition->m_riverSurvey->headPoint();
 			if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
@@ -147,7 +147,7 @@ private:
 			(psetit->first)->removeCtrlPoints(RawDataRiverPathPoint::zposCenterLine, psetit->second);
 		}
 
-		// バックアップを取る。
+		// Save backup.
 		if (RemoveCenterToLeft) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
 			backup->backup(headPoint, RawDataRiverPathPoint::zposCenterToLeft);
@@ -1193,9 +1193,6 @@ void GridCreatingConditionRiverSurvey15D::restoreMouseEventMode()
 	m_mouseEventMode = meNormal;
 }
 
-//+++++
-// NaysPre の bool CpredelugeDoc::GCPContinuousSelection()から移植
-//+++++
 bool GridCreatingConditionRiverSurvey15D::isCtrlPointsContinuousSelection()
 {
 	if (m_selectedCtrlPointInfoList.size() == 0) {
@@ -1213,12 +1210,7 @@ bool GridCreatingConditionRiverSurvey15D::isCtrlPointsContinuousSelection()
 		return ok;
 	}
 }
-//+++++
 
-
-//+++++
-// NaysPre の CpredelugeDoc::InvalidateSelectedCtrlPoints() を移植
-//+++++
 void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 {
 	std::list<CtrlPointSelectionInfo> tmplist;
@@ -1226,7 +1218,7 @@ void GridCreatingConditionRiverSurvey15D::invalidateSelectedCtrlPoints()
 	     it != m_selectedCtrlPointInfoList.end();
 	     ++it) {
 		if (it->Index < it->Point->CtrlPoints(it->Position).size()) {
-			// 正しい
+			// Valid
 			tmplist.push_back(*it);
 		}
 	}
@@ -1282,7 +1274,7 @@ bool GridCreatingConditionRiverSurvey15D::checkCtrlPointsRegion(RawDataRiverPath
 
 	RawDataRiverPathPoint* tmpp;
 
-	// 領域に既にデータがないかをチェック
+	// Check whether data already exist in the region
 	tmpp = start;
 	while (tmpp != end) {
 		if (tmpp->CenterLineCtrlPoints.size() > 0) {

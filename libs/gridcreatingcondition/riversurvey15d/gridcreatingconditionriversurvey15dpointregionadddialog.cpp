@@ -46,7 +46,7 @@ private:
 		RawDataRiverPathPoint* tmpp;
 		RawDataRiverSurveyCtrlPointBackup* backup;
 
-		// バックアップを取る。
+		// Save backup.
 		tmpp = start;
 		while (tmpp != end) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();
@@ -55,7 +55,7 @@ private:
 			tmpp = tmpp->nextPoint();
 		}
 
-		// 等分割点を作成
+		// Create division points
 		QVector<double> tmpv;
 		tmpv.reserve(points);
 		double delta = 1. / static_cast<double>(points + 1);
@@ -63,14 +63,14 @@ private:
 			tmpv.push_back(delta * (i + 1));
 		}
 
-		// 制御点データを設定
+		// Set ctrl points data
 		tmpp = start;
 		while (tmpp != end) {
 			tmpp->CenterLineCtrlPoints = tmpv;
 			tmpp = tmpp->nextPoint();
 		}
 
-		// バックアップを取る。
+		// Save backup.
 		tmpp = start;
 		while (tmpp != end) {
 			backup = new RawDataRiverSurveyCtrlPointBackup();

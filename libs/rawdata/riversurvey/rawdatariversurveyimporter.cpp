@@ -88,7 +88,7 @@ void RawDataRiverSurveyImporter::RivFreeAll()
 	m_RivRoot = NULL;
 }
 
-// 河川測量データ・KPノードへの左岸・右岸座標の設定
+// Set left bank position and right bank position
 bool RawDataRiverSurveyImporter::RivSetBank(PRivPath node, PPoint2D left, PPoint2D right)
 {
 	if (! node) {
@@ -105,7 +105,7 @@ bool RawDataRiverSurveyImporter::RivSetBank(PRivPath node, PPoint2D left, PPoint
 	return true;
 }
 
-// 河川測量データ・KPノードへの断面座標の設定
+// Set the center position
 bool RawDataRiverSurveyImporter::RivSetPath(PRivPath node, int np, PPoint2D pt)
 {
 	if (! node) {
@@ -123,7 +123,7 @@ bool RawDataRiverSurveyImporter::RivSort(void)
 	PRivPath p, pn, *pa;
 	int i, j, k, n;
 
-	// 横断，断面いずれかが欠落しているデータを削除する。
+	// Delete the data that does not have both position info and crosssection info
 	p = m_RivRoot;
 	n = 0;
 	while (p) {
@@ -146,7 +146,7 @@ bool RawDataRiverSurveyImporter::RivSort(void)
 		n++;
 	}
 
-	//断面がないもしくはファイルが壊れているため正しく読み込めない エラー処理を行う
+	// There is no crosssection, or maybe the file is corrupted. Error.
 	if (n < 1) {
 		return false;
 	}
@@ -175,7 +175,7 @@ bool RawDataRiverSurveyImporter::RivSort(void)
 	return true;
 }
 
-// 河川測量データの読み込み
+// Read river survey data
 bool RawDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 {
 	QFile file(name);
@@ -188,7 +188,7 @@ bool RawDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 	int divIndices[4];
 	Point2D right, left;
 	PPoint2D pt;
-	PRivPath node;      //RivPath変数へのポインタ
+	PRivPath node;
 
 	*with4points = true;
 	m_RivRoot = nullptr;
@@ -229,7 +229,7 @@ bool RawDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 				tok = strtok(NULL, SEPARATOR);
 				if (tok == NULL) {break;}
 				np = atoi(tok);
-				// 整数 INDEX を4つ読み込もうとする
+				// Tries to read four indices values.
 				for (int k = 0; k < 4; ++k) {
 					if (NULL != (tok = strtok(NULL, SEPARATOR))) {
 						divIndices[k] = atoi(tok);
@@ -305,7 +305,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
 	tail = rs->m_headPoint;
 
-	// 河川測量データの読み込み
+	// Read river survey data
 	ret = RivRead(m_filename, &with4points);
 	if (! ret) {return false;}
 
@@ -315,23 +315,9 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 	int i;
 	bool ok = true;
 
-	/*
-		// sort p->pt.
-		for (p = m_RivRoot; p != NULL; p = p->next){
-			QMultiMap<double, double> tmppt;
-			for (int i = 0; i < p->np; ++i){
-				tmppt.insert(p->pt[i].x, p->pt[i].y);
-			}
-			int i = 0;
-			for (auto it = tmppt.begin(); it != tmppt.end(); ++it, ++i){
-				p->pt[i].x = it.key();
-				p->pt[i].y = it.value();
-			}
-		}
-	*/
 	for (p = m_RivRoot; p != NULL; p = p->next) {
 		if (with4points) {
-			// まずは、 河川横断線の情報をもとに、その中点として河川中心線を定義
+			// Define river center position as the mid-point of the left bank and right bank.
 			newpoint = new RawDataRiverPathPoint((p->bank[0].x + p->bank[1].x) * 0.5, (p->bank[0].y + p->bank[1].y) * 0.5);
 			double offset = std::sqrt((p->bank[1].x - p->bank[0].x) * (p->bank[1].x - p->bank[0].x) + (p->bank[1].y - p->bank[0].y) * (p->bank[1].y - p->bank[0].y)) / 2.;
 
@@ -398,9 +384,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			}
 			tail = newpoint;
 		} else {
-			//河川中心点
-			//インデックス[0]は左岸
-			//インデックス[1]は右岸
+			// River center point
 			newpoint = new RawDataRiverPathPoint((p->bank[0].x + p->bank[1].x) * 0.5, (p->bank[0].y + p->bank[1].y) * 0.5);
 			double offset = std::sqrt((p->bank[1].x - p->bank[0].x) * (p->bank[1].x - p->bank[0].x) + (p->bank[1].y - p->bank[0].y) * (p->bank[1].y - p->bank[0].y)) / 2.;
 
@@ -458,7 +442,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 		}
 	}
 
-	// 河川測量データの全開放
+	// Free all data
 	RivFreeAll();
 
 	// update interpolators

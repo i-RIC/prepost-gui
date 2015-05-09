@@ -1172,15 +1172,8 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 	vtkVertex* vtx;
 	vtkLine* line;
 
-	// m_crossSectionPoints … 断面の点情報データ
-	// m_fixedPoints        … 断面を表す固定点データ
-	// m_crossSections      … 断面を表す線データ
 	m_fixedPoints->Reset();
 	m_crossSections->Reset();
-
-	//+++++
-	//m_ctrlPoints->Reset();
-	//+++++
 
 	int index = 0;
 	p = m_riverSurvey->headPoint()->nextPoint();
@@ -1190,13 +1183,14 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		// left bank
 		//********************
 
-		// 点情報データの追加
+		// Add point information
 		QVector2D leftBank = p->crosssectionPosition(p->crosssection().leftBank(true).position());
 		point[0] = leftBank.x();
 		point[1] = leftBank.y();
 		m_crossSectionPoints->InsertNextPoint(point);
 
-		// 断面を表す固定点データの追加
+
+		// Add fixed data that represents crosssection
 		vtx = vtkVertex::New();
 		vtx->GetPointIds()->SetId(0, index);
 		m_fixedPoints->InsertNextCell(vtx->GetCellType(), vtx->GetPointIds());
@@ -1208,7 +1202,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		// left fixed point
 		//********************
 
-		// 点情報データの追加
+		// Add point information
 		QVector2D leftFixed;
 		if (p->crosssection().fixedPointLSet()) {
 			leftFixed = p->crosssectionPosition(p->crosssection().fixedPointL().position());
@@ -1219,7 +1213,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		point[1] = leftFixed.y();
 		m_crossSectionPoints->InsertNextPoint(point);
 
-		// 断面を表す線データの追加
+		// Add fixed data that represents crosssection
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
@@ -1232,18 +1226,18 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		// river center
 		//********************
 
-		// 点情報データの追加
+		// Add point information
 		point[0] = p->position().x();
 		point[1] = p->position().y();
 		m_crossSectionPoints->InsertNextPoint(point);
 
-		// 断面を表す固定点データの追加
+		// Add fixed data that represents crosssection
 		vtx = vtkVertex::New();
 		vtx->GetPointIds()->SetId(0, index);
 		m_fixedPoints->InsertNextCell(vtx->GetCellType(), vtx->GetPointIds());
 		vtx->Delete();
 
-		// 断面を表す線データの追加
+		// Add line that represents crosssection
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
@@ -1256,7 +1250,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		// right fixed point
 		//********************
 
-		// 点情報データの追加
+		// Add point information
 		QVector2D rightFixed;
 		if (p->crosssection().fixedPointRSet()) {
 			rightFixed = p->crosssectionPosition(p->crosssection().fixedPointR().position());
@@ -1267,7 +1261,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		point[1] = rightFixed.y();
 		m_crossSectionPoints->InsertNextPoint(point);
 
-		// 断面を表す線データの追加
+		// Add fixed data that represents crosssection
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
@@ -1280,19 +1274,19 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		// right bank
 		//********************
 
-		// 点情報データの追加
+		// Add point information
 		QVector2D rightBank = p->crosssectionPosition(p->crosssection().rightBank(true).position());
 		point[0] = rightBank.x();
 		point[1] = rightBank.y();
 		m_crossSectionPoints->InsertNextPoint(point);
 
-		// 断面を表す固定点データの追加
+		// Add fixed data that represents crosssection
 		vtx = vtkVertex::New();
 		vtx->GetPointIds()->SetId(0, index);
 		m_fixedPoints->InsertNextCell(vtx->GetCellType(), vtx->GetPointIds());
 		vtx->Delete();
 
-		// 断面を表す線データの追加
+		// Add line that represents crosssection
 		line = vtkLine::New();
 		line->GetPointIds()->SetId(0, index - 1);
 		line->GetPointIds()->SetId(1, index);
@@ -1304,7 +1298,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		p = p->nextPoint();
 	}
 
-	// コントロールポイントの描画設定
+	// Draw control points
 	m_ctrlPoints->Reset();
 	int ctrlPointIndex = 0;
 
@@ -1450,7 +1444,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		m_selectedCtrlZone->Modified();
 	}
 
-	// 選択された制御点の表示用
+	// Show selected ctrl points
 	m_selectedCtrlPointPoints->Reset();
 	m_selectedCtrlPoints->Reset();
 
@@ -1468,7 +1462,7 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 		++selectedCtrlPointIndex;
 	}
 
-	// 選択された制御点に関係する制御点の表示用
+	// Show ctrl points related to selected ctrl points
 	m_analogyCtrlPointPoints->Reset();
 	m_analogyCtrlPoints->Reset();
 

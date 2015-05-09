@@ -14,14 +14,14 @@ void CgnsFileInputConditionWidgetFunctionalGraphview::paintEvent(QPaintEvent* /*
 	QMatrix matrix = getMatrix(vp);
 	painter.setRenderHint(QPainter::Antialiasing);
 	QRectF region = getRegion();
-	// ˜g‚ğ•`‰æ
+	// Draw the region box
 	drawRegion(painter, region, matrix);
-	// ’†‚Ìƒf[ƒ^‚ğ•`‰æ
+	// Draw the data
 	QAbstractItemModel* m = model();
 	double oldx, oldy;
 	QBrush oldbrush = painter.brush();
 	painter.setBrush(solidBrush);
-	// ü•ª‚ğ•`‰æ
+	// Draw lines
 	for (int i = 0; i < m->rowCount(); ++i) {
 		double x = m->data(m->index(i, 0)).toDouble();
 		double y = m->data(m->index(i, 1)).toDouble();
@@ -33,7 +33,7 @@ void CgnsFileInputConditionWidgetFunctionalGraphview::paintEvent(QPaintEvent* /*
 		oldx = x;
 		oldy = y;
 	}
-	// ‰~‚ğ•`‰æ
+	// Draw the circles
 	for (int i = 0; i < m->rowCount(); ++i) {
 		double x = m->data(m->index(i, 0)).toDouble();
 		double y = m->data(m->index(i, 1)).toDouble();
@@ -52,7 +52,7 @@ void CgnsFileInputConditionWidgetFunctionalGraphview::drawRegion(QPainter& paint
 	double top = region.top() - ylength * fTopMargin;
 	double bottom = region.bottom() + ylength * fBottomMargin;
 
-	// ˜g‚ğ•`‰æ
+	// Draw the region box
 	QPointF from, to;
 	from = matrix.map(QPointF(left, top));
 	to = matrix.map(QPointF(right, top));
@@ -69,13 +69,6 @@ void CgnsFileInputConditionWidgetFunctionalGraphview::drawRegion(QPainter& paint
 	from = matrix.map(QPointF(right, bottom));
 	to = matrix.map(QPointF(right, top));
 	painter.drawLine(from, to);
-
-	// X²‚ğ•`‰æ
-
-
-	// Y²‚ğ•`‰æ
-
-
 }
 QRectF CgnsFileInputConditionWidgetFunctionalGraphview::getRegion()
 {

@@ -16,7 +16,6 @@ void RawDataRiverCrosssection::expand(double ratio)
 
 void RawDataRiverCrosssection::moveCenter(double offset)
 {
-	// 河川中心の位置が動いたとき、あわせて断面の情報を更新する。
 	for (Altitude& alt : m_altitudeInfo) {
 		alt.setPosition(alt.position() - offset);
 	}

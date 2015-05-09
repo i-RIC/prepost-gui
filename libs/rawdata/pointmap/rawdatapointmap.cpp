@@ -2885,11 +2885,11 @@ void RawDataPointmap::updateBreakLinesOnDelete(QVector<vtkIdType>& deletedPoints
 	for (int i = 0; i < deletedPoints.size(); ++i) {
 		vtkIdType deletedId = deletedPoints[i];
 		if (deletedId != prevDeletedId + 1) {
-			// 連続でない。
+			// Continuous
 			keyIds.append(keyIdToAddCandidate);
 			offsets.append(offsetToAddCandidate);
 		} else {
-			// 連続だった。入れない。
+			// Not continuous, so not used.
 		}
 		keyIdToAddCandidate = deletedId + 1;
 		++ offsetToAddCandidate;
@@ -2937,11 +2937,11 @@ void RawDataPointmap::updateBreakLinesOnInsert(QVector<vtkIdType>& deletedPoints
 	for (int i = 0; i < deletedPoints.size(); ++i) {
 		vtkIdType deletedId = deletedPoints[i];
 		if (deletedId != prevDeletedId + 1) {
-			// 連続でない。
+			// Continuous
 			keyIds.append(keyIdToAddCandidate);
 			offsets.append(offsetToAddCandidate);
 		} else {
-			// 連続だった。入れない。
+			// Not continuous, so not used.
 		}
 		keyIdToAddCandidate = deletedId - offsetToAddCandidate;
 		++ offsetToAddCandidate;

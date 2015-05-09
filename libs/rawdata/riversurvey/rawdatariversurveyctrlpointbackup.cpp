@@ -7,7 +7,6 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	m_ctrlPoints.clear();
 	switch (position) {
 	case RawDataRiverPathPoint::zposCenterToLeft:
-		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
 		if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
 		while (tmpp != nullptr) {
@@ -19,7 +18,6 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 		}
 		break;
 	case RawDataRiverPathPoint::zposCenterToRight:
-		// point には、 HeadPoint() が入っているはず。
 		tmpp = point;
 		if (tmpp != nullptr) {tmpp = tmpp->nextPoint();}
 		while (tmpp != nullptr) {
@@ -33,18 +31,17 @@ void RawDataRiverSurveyCtrlPointBackup::backup(RawDataRiverPathPoint* point, Raw
 	case RawDataRiverPathPoint::zposCenterLine:
 	case RawDataRiverPathPoint::zposLeftBank:
 	case RawDataRiverPathPoint::zposRightBank:
-		// point の指す左岸、右岸、河川中心を退避すればよい。
-		// 左岸
+		// Left bank
 		points.point = point;
 		points.position = RawDataRiverPathPoint::zposLeftBank;
 		points.ctrlPointVector = point->LeftBankCtrlPoints;
 		m_ctrlPoints.push_back(points);
-		// 右岸
+		// Right bank
 		points.point = point;
 		points.position = RawDataRiverPathPoint::zposRightBank;
 		points.ctrlPointVector = point->RightBankCtrlPoints;
 		m_ctrlPoints.push_back(points);
-		// 河川中心線
+		// River center line
 		points.point = point;
 		points.position = RawDataRiverPathPoint::zposCenterLine;
 		points.ctrlPointVector = point->CenterLineCtrlPoints;

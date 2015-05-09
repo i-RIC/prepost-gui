@@ -33,7 +33,7 @@ void RawDataRiverPathPoint::initializeInnerValues()
 
 void RawDataRiverPathPoint::initializeInterpolators()
 {
-	// 現在は、線形補間を行うことにしている。
+	// linear interpolation is applied now
 	m_riverCenter = nullptr;
 	m_leftBank = nullptr;
 	m_rightBank = nullptr;
@@ -43,38 +43,35 @@ void RawDataRiverPathPoint::initializeInterpolators()
 
 void RawDataRiverPathPoint::addPathPoint(RawDataRiverPathPoint* p)
 {
-	// ポインタのつなぎ変え処理を行う。
-	// まず、この一つ先の点に、前の点が入れ替わったことを通知
+	// Inform to the next point that the previous point is changed
 	if (m_nextPoint != nullptr) {
 		m_nextPoint->m_previousPoint = p;
 	}
-	// 新しい点のポインタを設定
+	// Set the pointers of the added point.
 	p->m_previousPoint = this;
 	p->m_nextPoint = m_nextPoint;
 	p->m_firstPoint = false;
-	// この点の一つ前の点が、この新しい点であると設定
+	// Put the new point as the next point of me.
 	m_nextPoint = p;
 }
 
 void RawDataRiverPathPoint::insertPathPoint(RawDataRiverPathPoint* p)
 {
-	// ポインタのつなぎ変え処理を行う。
-	// まず、この点の一つ前の点に、次の点が入れ替わったことを通知
+	// Inform to the previous point that the next point is changed
 	if (m_previousPoint != nullptr) {
 		m_previousPoint->m_nextPoint = p;
 	}
-	// 新しい点のポインタを設定
+	// Set the pointers of the added point.
 	p->m_previousPoint = m_previousPoint;
 	p->m_nextPoint = this;
 	p->m_firstPoint = m_firstPoint;
-	// この点の一つ前の点が、この新しい点であると設定
+	// Put the new point as the previous point of me.
 	m_previousPoint = p;
 	m_firstPoint = false;
 }
 
 void RawDataRiverPathPoint::remove()
 {
-	// 先頭のもの(= dummy)は削除されないと仮定している。
 	m_previousPoint->m_nextPoint = m_nextPoint;
 	if (m_nextPoint == nullptr) {m_previousPoint->setGridSkip(false);}
 	if (m_nextPoint != nullptr) {
@@ -85,7 +82,7 @@ void RawDataRiverPathPoint::remove()
 
 void RawDataRiverPathPoint::movePosition(double offset)
 {
-	// 新しい河川中心座標を調べる。
+	// Calculate the new position.
 	QVector2D newPosition = crosssectionPosition(offset);
 	m_crosssection.moveCenter(offset);
 	m_position = newPosition;
@@ -119,8 +116,8 @@ void RawDataRiverPathPoint::updateRiverShapeInterpolators()
 void RawDataRiverPathPoint::UpdateGridInterpolators()
 {
 	if (! InhibitInterpolatorUpdate) {
-		// 今は、全ての補間曲線を更新する。
-	for (Interpolator2D1* interpolator : m_LGridLines) {
+		// All interpolators are updated.
+		for (Interpolator2D1* interpolator : m_LGridLines) {
 			if (interpolator != nullptr) {
 				interpolator->updateParameters();
 			}
@@ -158,8 +155,8 @@ QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsi
 		if (index >= RightBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, RightBankCtrlPoints[index]);
 		break;
-		// ここに来ることはない。 ビルド時の warning 対策のために追加
 	default:
+		// Never used. Just to avoid compiler warning.
 		return QVector2D(0, 0);
 	}
 }
@@ -224,8 +221,6 @@ void RawDataRiverPathPoint::XORSelectRegion(const QVector2D& point0, const QVect
 	if (0 < d0 && d0 < v0.length() &&
 			0 < d1 && d1 < v1.length()) {
 		IsSelected = ! IsSelected;
-	} else {
-		// 何もしない
 	}
 	if (m_nextPoint != nullptr) {
 		m_nextPoint->XORSelectRegion(point0, v0, v1);
@@ -244,9 +239,9 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 		tmpv1.normalize();
 		double l0 = v0.length();
 		double l1 = v1.length();
-		// まず、引っかかる可能性があるかをチェック
+		// Rough checking first
 
-		// 左岸を検索
+		// Investigate left bank
 		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToLeft, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
@@ -260,7 +255,7 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 				info.push_back(sinfo);
 			}
 		}
-		// 右岸を検索
+		// Investigate right bank
 		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
 			QVector2D dv = CtrlPointPosition2D(pposCenterToRight, i) - point0;
 			double ip0 = QVector2D::dotProduct(dv, tmpv0);
@@ -275,11 +270,9 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 			}
 		}
 
-		//+++++
 		if (m_nextPoint != 0) {
-			//+++++
 
-			// 河川中心線を検索
+			// Check river center line
 			for (i = 0; i < CenterLineCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposCenterLine, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
@@ -293,7 +286,7 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 					info.push_back(sinfo);
 				}
 			}
-			// 左岸線を検索
+			// Check left bank line
 			for (i = 0; i < LeftBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposLeftBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
@@ -307,7 +300,7 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 					info.push_back(sinfo);
 				}
 			}
-			// 右岸線を検索
+			// Check right bank line
 			for (i = 0; i < RightBankCtrlPoints.size(); ++i) {
 				QVector2D dv = CtrlPointPosition2D(pposRightBank, i) - point0;
 				double ip0 = QVector2D::dotProduct(dv, tmpv0);
@@ -321,10 +314,7 @@ void RawDataRiverPathPoint::SelectCtrlPointsRegion(
 					info.push_back(sinfo);
 				}
 			}
-
-			//+++++
 		}
-		//+++++
 	}
 	if (m_nextPoint != nullptr) {
 		m_nextPoint->SelectCtrlPointsRegion(point0, v0, v1, info);
@@ -415,7 +405,7 @@ QList<QVector2D> RawDataRiverPathPoint::CtrlZonePoints(CtrlZonePosition position
 		}
 		break;
 	case zposCenterToRight:
-		// 必ず直線 ==> num に関わらず、始点と終点の2点のみ返す
+		// It is always a straight line. Returns only start point and end point
 		tmpdbls.reserve(3);
 		if (index == 0) {
 			tmpdbls.push_back(0);
@@ -667,7 +657,7 @@ void RawDataRiverPathPoint::UpdateCtrlSections()
 	}
 }
 
-QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(), double d)
+QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f )() const, double d)
 {
 	int i = 0;
 	double d0 = 0;
@@ -684,7 +674,7 @@ QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d)
+QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
 {
 	int i = 0;
 	double d0 = 0;
@@ -701,7 +691,7 @@ QVector2D RawDataRiverPathPoint::myCtrlPointPosition2D(Interpolator2D1* (RawData
 	return interpolator->interpolate(subd);
 }
 
-QVector2D RawDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d)
+QVector2D RawDataRiverPathPoint::myBgCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d)
 {
 	Interpolator2D1* interpolator = (this->*f)(index);
 	return interpolator->interpolate(d);
@@ -785,9 +775,9 @@ void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 				elev->setValue(index, m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).height());
 			}
 		}
-		// points between river center and right bank
+		// Points between river center and right bank
 		for (unsigned int i = 0; i < rightctrlpoints; ++i) {
-			// まず断面上の点
+			// Check the points on the crosssection
 			vec2d = crosssectionPosition(m_rXSec->interpolate(CenterToRightCtrlPoints[i]).position());
 			index = grid->vertexIndex(initcount, rightctrlpoints - i);
 			grid->setVertex(index, vec2d);
@@ -929,13 +919,13 @@ double RawDataRiverPathPoint::myHeight(RawDataRiverPathPoint::Bank bank, double 
 	double subt1 = t0 + (t1 - t0) * d1;
 
 	if (bank == RawDataRiverPathPoint::bk_LeftBank) {
-		// 左岸
+		// Left bank
 		double valuethis = tmpp->lXSec()->interpolate(subt0).height();
 		double valuenext = tmpp->nextPoint()->lXSec()->interpolate(subt1).height();
 		inter.setValues(valuethis, valuenext);
 		return inter.interpolate(subd);
 	} else {
-		// 右岸
+		// Right bank
 		double valuethis = tmpp->rXSec()->interpolate(subt0).height();
 		double valuenext = tmpp->nextPoint()->rXSec()->interpolate(subt1).height();
 		inter.setValues(valuethis, valuenext);
@@ -1145,7 +1135,6 @@ void addCtrlPointsToVector(QVector<double>& values, unsigned int index, RawDataR
 	}
 	tmpvalues.reserve(values.size() + method.number);
 	unsigned int i;
-	// 手前の点を追加する
 	for (i = 0; i < index; ++i) {
 		tmpvalues.push_back(values[i]);
 	}
@@ -1161,11 +1150,10 @@ void addCtrlPointsToVector(QVector<double>& values, unsigned int index, RawDataR
 			tmpvalues.push_back(t);
 		}
 	}
-	// 後の点を追加
 	for (i = index; i < values.size(); ++i) {
 		tmpvalues.push_back(values[i]);
 	}
-	// 置き換える
+	// Replace with the old one
 	values = tmpvalues;
 }
 
@@ -1189,7 +1177,6 @@ void RawDataRiverPathPoint::addCtrlPoints(CtrlZonePosition position, unsigned in
 	}
 }
 
-//+++++
 void RawDataRiverPathPoint::reposCtrlPoints(CtrlPointPosition position, int minindex, int maxindex, CtrlPointsAddMethod method)
 {
 	int numbers = maxindex - minindex + 1;
@@ -1226,9 +1213,7 @@ void RawDataRiverPathPoint::reposCtrlPoints(CtrlPointPosition position, int mini
 		}
 	}
 }
-//+++++
 
-//+++++
 void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set<int> indices)
 {
 	QVector<double> tmpvector, tmpvector2, tmpvector3;
@@ -1239,7 +1224,7 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 		for (i = 0; i < CenterToLeftCtrlPoints.size(); ++i) {
 			//			if (i == *(indices.begin())){
 			if (indices.begin() != indices.end() && i == *(indices.begin())) {
-				// 飛ばす
+				// Skipped
 				indices.erase(i);
 			} else {
 				tmpvector.push_back(CenterToLeftCtrlPoints[i]);
@@ -1252,7 +1237,7 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 		tmpvector.reserve(CenterToRightCtrlPoints.size() - indices.size());
 		for (i = 0; i < CenterToRightCtrlPoints.size(); ++i) {
 			if (indices.begin() != indices.end() && i == *(indices.begin())) {
-				// 飛ばす
+				// Skipped
 				indices.erase(i);
 			} else {
 				tmpvector.push_back(CenterToRightCtrlPoints[i]);
@@ -1281,7 +1266,6 @@ void RawDataRiverPathPoint::removeCtrlPoints(CtrlZonePosition position, std::set
 
 	}
 }
-//+++++
 
 void RawDataRiverPathPoint::clearWaterSurfaceElevation()
 {

@@ -34,11 +34,11 @@ public:
 		bk_RightBank
 	};
 	enum ErrorCodes {
-		ec_PreviousPointDontExist,  ///< @brief 前の点が存在しないために操作が失敗した
-		ec_OutOfCrosssectionRange,  ///< @brief 断面の存在する範囲外が引数として指定された
-		ec_OutOfCtrlPointRange,     ///< @brief 格子生成制御点の存在する範囲外のindexが引数として指定された
-		ec_OutOfCtrlZoneRange,      ///< @brief 格子生成制御点の存在する範囲外のindexが引数として指定された
-		ec_InvalidGridSize          ///< @brief 格子のサイズが不適切
+		ec_PreviousPointDontExist,  ///< Failed because previous point does not exist
+		ec_OutOfCrosssectionRange,  ///< In the specified value is out of crosssection range
+		ec_OutOfCtrlPointRange,     ///< Specified index is out of the control point range
+		ec_OutOfCtrlZoneRange,      ///< Specified index is outof the control zone range
+		ec_InvalidGridSize          ///< The size of grid specified is invalid
 	};
 	enum CtrlPointPosition {
 		pposCenterToLeft,
@@ -62,24 +62,22 @@ public:
 		unsigned int number; ///< Number of points to add
 		double param; ///< parameter
 	};
-	/// Constructor
 	RawDataRiverPathPoint() {
 		initializeInnerValues();
 		initializeInterpolators();
 	}
-	/// Constructor
 	RawDataRiverPathPoint(double x, double y) {
 		initializeInnerValues();
 		initializeInterpolators();
 		m_position = QVector2D(x, y);
 	}
-	/// Constructor
 	RawDataRiverPathPoint(const QString& name, double x, double y) {
 		initializeInnerValues();
 		initializeInterpolators();
 		m_name = name;
 		m_position = QVector2D(x, y);
 	}
+	virtual ~RawDataRiverPathPoint(){}
 	/// River center position
 	const QVector2D& position() const {return m_position;}
 	void load(QDataStream& s, const VersionNumber& number);
@@ -88,15 +86,14 @@ public:
 	void shiftCenter(double shiftWidth);
 	/// Set new river center position
 	void setPosition(const QVector2D& v);
+	/// move the position of the river center position along the crosssection direction
 	/**
-	 * @brief 河川中心点の座標を変更する。ただし、断面上の別の点に、座標を変更する。
-	 * @param offset 断面方向の移動量。正だと右岸方向
+	 * @param offset offset along the crosssection direction. positive value = right-bank side
 	 */
 	void movePosition(double offset);
+	/// Returns true if this point is the first point.
 	/**
-	 * @brief 最初の点かどうかを返す。
-	 *
-	 * 最初の点だと、断面の情報を保持することができない。
+	 * @note The first point is the dummy point. It does not have crosssection information.
 	 */
 	bool firstPoint() const {return m_firstPoint;}
 	QVector2D crosssectionPosition(double x);
@@ -116,44 +113,45 @@ public:
 	/// Set new name
 	void setName(const QString& newname);
 	RawDataRiverCrosssection& crosssection() {return m_crosssection;}
-	/**
-	 * @brief 断面の、左岸から右岸に向かう向き
-	 */
+	/// The direction of crosssection along left bank to right bank
 	const QVector2D& crosssectionDirection() const {return m_crosssectionDirection;}
+	/// The direction of left-bank side "wing".
 	const QVector2D& crosssectionDirectionL() const {return m_crosssectionDirectionL;}
+	/// The direction of right-bank side "wing".
 	const QVector2D& crosssectionDirectionR() const {return m_crosssectionDirectionR;}
+	/// Set the direction of crosssection
 	/**
-	 * @brief 断面の、左岸から右岸に向かう向きを設定する。
+	 * @angle The angle of crosssection and the line between the center point of this crosssection and the previous crosssection
 	 */
 	void setCrosssectionAngle(double angle) /* throw (ErrorCodes)*/;
-	/**
-	 * @brief 断面の、左岸から右岸に向かう向きを設定する。
-	 */
+	/// Set the direction of crosssection along left bank to right bank
 	void setCrosssectiondirection(const QVector2D& v);
-	/**
-	 * @brief 断面左岸の延長ベクトルの向きを変更
-	 */
+	/// Set the direction of left-bank side "wing".
 	void setCrosssectionDirectionL(const QVector2D& direction);
-	/**
-	 * @brief 断面左岸の延長ベクトルの向きを変更
-	 */
+	/// Set the direction of right-bank side "wing".
 	void setCrosssectionDirectionR(const QVector2D& direction);
 	QVector2D GridCtrlPosition(Bank bank, unsigned int index1, double param);
 	QVector2D backgroundGridCtrlPosition(Bank bank, unsigned int index1, double param);
+	/// Add the extention point on the left bank (that is the start point of the "wing")
 	void addExtentionPointLeft(const QVector2D& pos);
+	/// Add the extention point on the right bank (that is the start point of the "wing")
 	void addExtentionPointRight(const QVector2D& pos);
+	/// Move the extention point on the left bank (that is the start point of the "wing")
 	void moveExtentionPointLeft(const QVector2D& pos);
+	/// Move the extention point on the right bank (that is the start point of the "wing")
 	void moveExtentionPointRight(const QVector2D& pos);
+	/// Remove the extention point on the left bank (that is the start point of the "wing")
 	void removeExtentionPointLeft();
+	/// Remove the extention point on the right bank (that is the start point of the "wing")
 	void removeExtentionPointRight();
 	void updateAllXSecInterpolators();
-	/**
-	 * @brief この点に更新があったことを上流、下流側の点に通知する。
-	 */
+	/// Inform that this crosssection is updated, to the upper and lower side crosssections
 	void updateXSecInterpolators();
+	/// Update the interpolators to calculate river shape
 	void updateRiverShapeInterpolators();
+	/// Update the interpolators to calculate the grid node positions
 	void UpdateGridInterpolators();
-
+	/// Returns the number of grid nodes along I-direction.
 	unsigned int gridCounts(RawDataRiverPathPoint* end) {
 		if (this == end) {
 			return 1;
@@ -167,21 +165,15 @@ public:
 	}
 	void createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last = false);
 
+	/// True when this point is selected
 	bool IsSelected;
-	/**
-	 * @brief UpdareRiverShapeInterpolators() を無効にする
-	 */
+	/// Disable calling updareRiverShapeInterpolators() if true
 	bool InhibitInterpolatorUpdate;
-	/**
-	 * @brief この点を含み、この点より下流側の断面のうち、選択されている
-	 * 点の数を返す。
-	 */
+	/// Return s the number of selected points including me, and the lower-side river path points
 	int selectedPoints() {
-		int selectedpoints;
+		int selectedpoints = 0;
 		if (IsSelected) {
-			selectedpoints = 1;
-		} else {
-			selectedpoints = 0;
+			++ selectedpoints;
 		}
 		if (m_nextPoint != 0) {
 			return selectedpoints + m_nextPoint->selectedPoints();
@@ -190,10 +182,10 @@ public:
 		}
 	}
 	/**
-	 * @brief 領域選択(直方体)
-	 * @param point0 基点ポイント
-	 * @param v0 ベクトル1
-	 * @param v1 ベクトル2
+	 * @brief Set IsSelected flag true if this point is inside the specified box
+	 * @param point0 base point
+	 * @param v0 vector1
+	 * @param v1 vector2
 	 */
 	void selectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1);
 	void XORSelectRegion(const QVector2D& point0, const QVector2D& v0, const QVector2D& v1);
@@ -225,31 +217,32 @@ public:
 		if (m_previousPoint->firstPoint()) {return;}
 		m_gridSkip = skip;
 	}
-	/**
-	 * @brief 河川中心線を描画するための、補間オブジェクト
-	 */
-	Interpolator2D1* riverCenter() {return m_riverCenter;}
+	/// The interpolator to draw river center line (as spline curve)
+	Interpolator2D1* riverCenter() const {return m_riverCenter;}
+	/// Set the interpolator to draw river center line (as spline curve)
 	void setRiverCenter(Interpolator2D1* interpolator) {m_riverCenter = interpolator;}
-	/**
-	 * @brief 河川左岸を描画するための、補間オブジェクト
-	 */
-	Interpolator2D1* leftBank() {return m_leftBank;}
+	/// The interpolator to draw river left bank line (as spline curve)
+	Interpolator2D1* leftBank() const {return m_leftBank;}
+	/// Set the interpolator to draw river left bank line (as spline curve)
 	void setLeftBank(Interpolator2D1* interpolator) {m_leftBank = interpolator;}
-	/**
-	 * @brief 河川右岸を描画するための、補間オブジェクト
-	 */
-	Interpolator2D1* rightBank() {return m_rightBank;}
+	/// The interpolator to draw river right bank line (as spline curve)
+	Interpolator2D1* rightBank() const {return m_rightBank;}
+	/// Set the interpolator to draw river right bank line (as spline curve)
 	void setRightBank(Interpolator2D1* interpolator) {m_rightBank = interpolator;}
-	LinearLXSecInterpolator* lXSec() {return m_lXSec;}
-	LinearRXSecInterpolator* rXSec() {return m_rXSec;}
+	LinearLXSecInterpolator* lXSec() const {return m_lXSec;}
+	LinearRXSecInterpolator* rXSec() const {return m_rXSec;}
 	QVector<Interpolator2D1*>& LGridLines() {return m_LGridLines;}
+	const QVector<Interpolator2D1*>& LGridLines() const {return m_LGridLines;}
 	QVector<Interpolator2D1*>& RGridLines() {return m_RGridLines;}
+	const QVector<Interpolator2D1*>& RGridLines() const {return m_RGridLines;}
 	QVector<Interpolator2D1*>& backgroundLGridLines() {return m_backgroundLGridLines;}
+	const QVector<Interpolator2D1*>& backgroundLGridLines() const {return m_backgroundLGridLines;}
 	QVector<Interpolator2D1*>& backgroundRGridLines() {return m_backgroundRGridLines;}
-	Interpolator2D1* LGridLine(unsigned int index) {return m_LGridLines[index];}
-	Interpolator2D1* RGridLine(unsigned int index) {return m_RGridLines[index];}
-	Interpolator2D1* backgroundLGridLine(unsigned int index) {return m_backgroundLGridLines[index];}
-	Interpolator2D1* backgroundRGridLine(unsigned int index) {return m_backgroundRGridLines[index];}
+	const QVector<Interpolator2D1*>& backgroundRGridLines() const {return m_backgroundRGridLines;}
+	Interpolator2D1* LGridLine(unsigned int index) const {return m_LGridLines[index];}
+	Interpolator2D1* RGridLine(unsigned int index) const {return m_RGridLines[index];}
+	Interpolator2D1* backgroundLGridLine(unsigned int index) const {return m_backgroundLGridLines[index];}
+	Interpolator2D1* backgroundRGridLine(unsigned int index) const {return m_backgroundRGridLines[index];}
 	//	void UpdateInterpolators();
 	/// Division points between river center and left bank
 	QVector<double> CenterToLeftCtrlPoints;
@@ -312,15 +305,17 @@ public:
 	QList<int> getPointsToInactivateUsingWaterElevation();
 	void loadFromiRICLibObject(const iRICLib::RiverPathPoint* p);
 	void saveToiRICLibObject(iRICLib::RiverPathPoint* p);
+
 protected:
 	void initializeInnerValues();
-	// 補間を行うオブジェクトを初期化する。
+	/// Initialize the interpolator objects
 	virtual void initializeInterpolators();
+
 private:
 	double GridCtrlParameter(Bank bank, int index1, int index2);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(), double d);
-	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d);
-	QVector2D myBgCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int), unsigned int index, double d);
+	QVector2D myCtrlPointPosition2D(Interpolator2D1* (RawDataRiverPathPoint::*f)() const, double d);
+	QVector2D myCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
+	QVector2D myBgCtrlPointPosition2D(Interpolator2D1 * (RawDataRiverPathPoint::* f)(unsigned int) const, unsigned int index, double d);
 	double myHeight(RawDataRiverPathPoint::Bank bank, double t0, double t1, double d);
 
 	QString m_name;
@@ -364,15 +359,13 @@ public:
 	friend class RawDataRiverSurveyBackgroundGridCreateThread;
 };
 
-/**
- * @brief 格子生成制御点の選択状態の情報を保持
- */
+/// Selection information of grid ctrl points
 struct CtrlPointSelectionInfo {
-	/// @brief 格子生成制御点の親 河川横断線
+	/// The river path point that is the "parent" of the grid ctrl points
 	RawDataRiverPathPoint* Point;
-	/// @brief 格子生成制御点ののっている線の位置
+	/// The position of the line on which the grid ctrl points are on
 	RawDataRiverPathPoint::CtrlPointPosition Position;
-	/// @brief 制御点の Index
+	/// Grid ctrl points index
 	unsigned int Index;
 	bool operator==(CtrlPointSelectionInfo& info) const {
 		return (
@@ -387,11 +380,10 @@ struct CtrlPointSelectionInfo {
 struct CtrlZoneSelectionInfo {
 	/// River path point
 	RawDataRiverPathPoint* Point;
-	/// @brief 格子生成制御点追加位置ののっている線の位置
+	/// The position of the line selected
 	RawDataRiverPathPoint::CtrlZonePosition Position;
 	/// Index
 	int Index;
 };
-
 
 #endif // RAWDATARIVERPATHPOINT_H
