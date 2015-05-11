@@ -1203,9 +1203,8 @@ bool PostZoneDataContainer::IBCExists()
 
 bool PostZoneDataContainer::saveToVTKFile(const QString& filename, double time, const PostExportSetting& s)
 {
-	QString dir = projectData()->workDirectory();
 	// export to a temporary file first.
-	QString tmpFile = iRIC::getTempFileName(dir);
+	QString tmpFile = projectData()->tmpFileName();
 
 	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(m_data);
 	if (sgrid != nullptr) {
