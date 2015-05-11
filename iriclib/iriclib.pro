@@ -28,18 +28,16 @@ SOURCES += iriclib.c \
 	iriclib_geo.cpp \
 	iriclib_polygon.cpp \
 	iriclib_riversurvey.cpp \
-	iriclib_pointmap.cpp
+	iriclib_pointmap.cpp \
+	iric_ftoc.c
 
 QT =
+DEFINES += UPPERCASE
+DEFINES += CG_BUILD_64BIT
+
+include( ../paths.pri )
 
 win32 {
-	CONFIG(debug, debug|release) { 
-		# cgnslib
-		LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/debug/lib"
-	} else { 
-		# cgnslib
-		LIBS += -L"E:/iricdev_2013/lib/install/cgnslib-3.2.1/release/lib"
-	}
 	LIBS += -lcgnsdll
 }
 unix {
