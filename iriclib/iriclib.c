@@ -2772,6 +2772,7 @@ int cg_iRIC_Write_Sol_Particle_Pos3d_Mul(int fid, cgsize_t count, double* x, dou
 	// goto the UserDefined_t node created.
 	local_get_particlesol_name(*(solid + fileindex[fid]), particlenodename);
 	ier = cg_goto(fid, *(baseid + fileindex[fid]), "Zone_t", *(zoneid + fileindex[fid]), particlenodename, 0, "end");
+	if (ier != 0){return ier;} // error handling
 
 	dimVec = count;
 	// write x coordinates.
@@ -2799,9 +2800,11 @@ int cg_iRIC_Write_Sol_Particle_Real_Mul(int fid, char* name, double* value)
 	// goto the UserDefined_t node created.
 	local_get_particlesol_name(*(solid + fileindex[fid]), particlenodename);
 	ier = cg_goto(fid, *(baseid + fileindex[fid]), "Zone_t", *(zoneid + fileindex[fid]), particlenodename, 0, "end");
+	if (ier != 0){return ier;} // error handling
 
 	// get array info for the first array. that will be CoordinateX.
 	ier = cg_array_info(1, arrayname, &datatype, &dim, &dimVec);
+	if (ier != 0){return ier;} // error handling
 
 	// write values coordinates.
 	ier = cg_array_write(name, RealDouble, 1, &dimVec, value);
@@ -2822,9 +2825,11 @@ int cg_iRIC_Write_Sol_Particle_Integer_Mul(int fid, char* name, int* value)
 	// goto the UserDefined_t node created.
 	local_get_particlesol_name(*(solid + fileindex[fid]), particlenodename);
 	ier = cg_goto(fid, *(baseid + fileindex[fid]), "Zone_t", *(zoneid + fileindex[fid]), particlenodename, 0, "end");
+	if (ier != 0){return ier;} // error handling
 
 	// get array info for the first array. that will be CoordinateX.
 	ier = cg_array_info(1, arrayname, &datatype, &dim, &dimVec);
+	if (ier != 0){return ier;} // error handling
 
 	// write values coordinates.
 	ier = cg_array_write(name, Integer, 1, &dimVec, value);
