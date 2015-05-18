@@ -672,6 +672,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent
 			case Qt::RightButton:
 				// do nothing.
 				break;
+			default:
+				break;
 			}
 			m_oldPosition = event->pos();
 			updateMouseCursor();
@@ -699,6 +701,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mousePressEvent(QMouseEvent
 		} else if (event->button() == Qt::RightButton) {
 			m_dragStartPoint = event->pos();
 		}
+		break;
+	default:
 		break;
 	}
 }

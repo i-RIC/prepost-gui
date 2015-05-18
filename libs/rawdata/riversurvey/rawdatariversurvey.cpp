@@ -1215,6 +1215,8 @@ void RawDataRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 	case meExpansionPrepareLeft:
 		v->setCursor(m_cursorExpand);
 		break;
+	default:
+		break;
 	}
 }
 
@@ -1266,7 +1268,7 @@ void RawDataRiverSurvey::loadExternalData(const QString& filename)
 		rs->load(iRIC::toStr(filename).c_str());
 		RawDataRiverPathPoint* before = m_headPoint;
 		RawDataRiverPathPoint* newPoint;
-		for (int i = 0; i < rs->points.size(); ++i) {
+		for (unsigned int i = 0; i < rs->points.size(); ++i) {
 			iRICLib::RiverPathPoint* libp = rs->points.at(i);
 			newPoint = new RawDataRiverPathPoint();
 			newPoint->loadFromiRICLibObject(libp);
@@ -1555,7 +1557,7 @@ void RawDataRiverSurvey::updateShapeData()
 	p = m_headPoint->nextPoint();
 	vtkIdType pointNum = 0;
 	while (p != nullptr) {
-		double maxHeight;
+		double maxHeight = 0;
 		RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
 		for (int i = 0; i < alist.count(); ++i) {

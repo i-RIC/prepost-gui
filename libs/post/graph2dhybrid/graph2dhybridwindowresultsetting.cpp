@@ -473,6 +473,8 @@ const QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHy
 		case Graph2dHybridWindowResultSetting::xaK:
 			return Graph2dHybridWindow::tr("K");
 			break;
+		default:
+			break;
 		}
 	}
 	return "";

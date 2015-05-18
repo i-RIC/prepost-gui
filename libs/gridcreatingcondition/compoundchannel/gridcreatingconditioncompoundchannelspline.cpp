@@ -109,7 +109,7 @@ QVector<QPointF> GridCreatingConditionCompoundChannelSpline::getEquallySpacedPoi
 QPointF GridCreatingConditionCompoundChannelSpline::getNearestPoint(const QPointF& p) const
 {
 	QVector<double> distances;
-	int minIndex;
+	int minIndex = 0;
 	double minDistance;
 	for (int i = 0; i < m_splinePoints.count(); ++i) {
 		QVector2D tmpV = m_splinePoints.at(i);

@@ -77,14 +77,12 @@ bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /
 	return true;
 }
 
-bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* w)
+bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* /*w*/)
 {
 	RawDataNetcdf* netcdf = dynamic_cast<RawDataNetcdf*>(data);
 
 	GDALRasterBand* band = m_dataset->GetRasterBand(index + 1);
 	int xsize, ysize;
-	int gotMin, gotMax;
-	double minmax[2];
 	xsize = band->GetXSize();
 	ysize = band->GetYSize();
 	netcdf->m_coordinateSystemType = RawDataNetcdf::XY;
@@ -112,6 +110,8 @@ bool RawDataNetcdfGdalImporter::importData(RawData* data, int index, QWidget* w)
 
 	int ncid_out;
 	int ret;
+
+	Q_UNUSED(ret)
 
 	QFileInfo finfo(netcdf->filename());
 	iRIC::mkdirRecursively(finfo.absolutePath());

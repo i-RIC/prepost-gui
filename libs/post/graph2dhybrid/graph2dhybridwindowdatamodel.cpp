@@ -1066,6 +1066,8 @@ void Graph2dHybridWindowDataModel::updateTitle()
 			case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 				suffix = tr("Time = %1 sec, J = %2, K = %3").arg(time).arg(c->jValue() + 1).arg(c->kValue() + 1);
 				break;
+			default:
+				break;
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::xaJ:
@@ -1076,12 +1078,16 @@ void Graph2dHybridWindowDataModel::updateTitle()
 			case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 				suffix = tr("Time = %1 sec, I = %2, K = %3").arg(time).arg(c->iValue() + 1).arg(c->kValue() + 1);
 				break;
+			default:
+				break;
 			}
 			break;
 		case Graph2dHybridWindowResultSetting::xaK:
 			switch (tinfo->dataType) {
 			case Graph2dHybridWindowResultSetting::dtDim3DStructured:
 				suffix = tr("Time = %1 sec, I = %2, J = %3").arg(time).arg(c->iValue() + 1).arg(c->jValue() + 1);
+				break;
+			default:
 				break;
 			}
 			break;
@@ -1322,7 +1328,7 @@ void Graph2dHybridWindowDataModel::sliderChanged()
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(mainWindow());
 	Graph2dHybridWindowControlWidget* c = w->controlWidget();
-	int index;
+	int index = 0;
 	PostSolutionInfo* sol = postSolutionInfo();
 	PostZoneDataContainer* cont = sol->zoneContainer(tinfo->dimension, tinfo->zoneName);
 	if (cont == nullptr) {return;}

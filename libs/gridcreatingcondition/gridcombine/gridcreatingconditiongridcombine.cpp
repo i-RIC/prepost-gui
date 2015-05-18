@@ -105,7 +105,6 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 
 void GridCreatingConditionGridCombine::setupParameters()
 {
-	int ix[7];
 	int jx[4];
 	int ni4_1, nj4_1;
 	int ni4_2, nj4_2;
@@ -197,12 +196,6 @@ void GridCreatingConditionGridCombine::setupParameters()
 	jx[1] = j_m2;
 	jx[2] = j_t1;
 	jx[3] = j_t2;
-	for (int s = 0; s < 7; s++) {
-		ix[s] = 0;
-	}
-	ix[3] = i_t1;
-	ix[4] = i_t2;
-	ix[6] = ni4_1 - 1;
 	int ni = ni4_1;
 	int nj = nj4_1 + nj4_2;
 	int jxd = 1;
@@ -264,12 +257,12 @@ void GridCreatingConditionGridCombine::setupParameters()
 	} else if (j_conf >= GridCreatingConditionGridCombineSettingDialog::Left) {
 		int js1 = (1 + jxd) / 2;
 		int js2 = (1 - jxd) / 2;
-		int j_nj;
-		double sl1_x;
-		double sl1_y;
-		double sl2_x;
-		double sl2_y;
-		int j_p;
+		int j_nj = 0;
+		double sl1_x = 0;
+		double sl1_y = 0;
+		double sl2_x = 0;
+		double sl2_y = 0;
+		int j_p = 0;
 		if (j_conf == GridCreatingConditionGridCombineSettingDialog::Left) {
 			j_nj = 1;
 			sl1_x = x8_1[1][nj4_1] - p1_x;

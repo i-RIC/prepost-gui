@@ -478,7 +478,7 @@ void Graph2dHybridWindowDataSourceDialog::setTargetDataTypeInfo()
 	const QMap<Graph2dHybridWindowResultSetting::XAxisMode, QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> > >& map = m_setting.dataTypeInfoMap();
 	const QMap<Graph2dHybridWindowResultSetting::DimType, QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> >& m = map[axis];
 
-	QWidget* target;
+	QWidget* target = nullptr;
 	if (ui->pointDataListWidget->selectedItems().count() != 0) {
 		// point data selected
 		QList<Graph2dHybridWindowResultSetting::DataTypeInfo*> list = m[Graph2dHybridWindowResultSetting::dimBase];

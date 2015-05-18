@@ -58,7 +58,7 @@ public:
 		// Goto "GridConditions" node.
 		int ier;
 		bool found = false;
-		unsigned int count = dataCount();
+		cgsize_t count = dataCount();
 		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, iRIC::toStr(name()).c_str(), 0, "end");
 		QString aName = arrayNameForIndex(index);
 		if (ier == 0) {
@@ -78,7 +78,7 @@ public:
 					// load data.
 					V* data = new V[count];
 					ier = cg_array_read(i, data);
-					for (unsigned int j = 0; j < count; ++j) {
+					for (cgsize_t j = 0; j < count; ++j) {
 						setValue(j, *(data + j));
 					}
 					delete[] data;
@@ -87,7 +87,7 @@ public:
 					// We've found the array.
 					float* data = new float[count];
 					ier = cg_array_read(i, data);
-					for (unsigned int j = 0; j < count; ++j) {
+					for (cgsize_t j = 0; j < count; ++j) {
 						setValue(j, *(data + j));
 					}
 					delete[] data;
@@ -101,7 +101,7 @@ public:
 			SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>*>(condition());
 
 			V defaultVal = cond->defaultValue();
-			for (unsigned int j = 0; j < count; ++j) {
+			for (cgsize_t j = 0; j < count; ++j) {
 				setValue(j, defaultVal);
 			}
 		}

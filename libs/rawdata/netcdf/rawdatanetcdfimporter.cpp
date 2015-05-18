@@ -194,11 +194,11 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys);
 
 		netcdf->m_xValues.clear();
-		for (int i = 0; i < xlen; ++i) {
+		for (size_t i = 0; i < xlen; ++i) {
 			netcdf->m_xValues.append(*(xs + i));
 		}
 		netcdf->m_yValues.clear();
-		for (int i = 0; i < ylen; ++i) {
+		for (size_t i = 0; i < ylen; ++i) {
 			netcdf->m_yValues.append(*(ys + i));
 		}
 
@@ -223,11 +223,11 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats);
 
 		netcdf->m_lonValues.clear();
-		for (int i = 0; i < lonLen; ++i) {
+		for (size_t i = 0; i < lonLen; ++i) {
 			netcdf->m_lonValues.append(*(lons + i));
 		}
 		netcdf->m_latValues.clear();
-		for (int i = 0; i < latLen; ++i) {
+		for (size_t i = 0; i < latLen; ++i) {
 			netcdf->m_latValues.append(*(lats + i));
 		}
 
@@ -253,11 +253,11 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats);
 
 		netcdf->m_lonValues.clear();
-		for (int i = 0; i < lonLen; ++i) {
+		for (size_t i = 0; i < lonLen; ++i) {
 			netcdf->m_lonValues.append(*(lons + i));
 		}
 		netcdf->m_latValues.clear();
-		for (int i = 0; i < latLen; ++i) {
+		for (size_t i = 0; i < latLen; ++i) {
 			netcdf->m_latValues.append(*(lats + i));
 		}
 
@@ -339,6 +339,8 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 
 int RawDataNetcdfImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer)
 {
+	Q_UNUSED(len)
+
 	int ret;
 	ret = nc_get_var_double(ncid, varid, buffer);
 	if (ret != NC_NOERR) { return ret; }
@@ -356,7 +358,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		int* tmpbuffer = new int[len];
 		ret = nc_get_var_int(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;
@@ -364,7 +366,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		unsigned int* tmpbuffer = new unsigned int[len];
 		ret = nc_get_var_uint(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;
@@ -372,7 +374,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		long long* tmpbuffer = new long long[len];
 		ret = nc_get_var_longlong(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;
@@ -380,7 +382,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		unsigned long long* tmpbuffer = new unsigned long long[len];
 		ret = nc_get_var_ulonglong(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;
@@ -388,7 +390,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		float* tmpbuffer = new float[len];
 		ret = nc_get_var_float(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;
@@ -396,7 +398,7 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		double* tmpbuffer = new double[len];
 		ret = nc_get_var_double(ncid, varid, tmpbuffer);
 		if (ret != NC_NOERR) { return ret; }
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			list.append(QVariant(*(tmpbuffer + i)));
 		}
 		delete tmpbuffer;

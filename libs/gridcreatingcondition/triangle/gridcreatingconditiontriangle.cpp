@@ -1233,9 +1233,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 			// do nothing no mode change.
 			updateMouseCursor(v);
 			break;
-		case meTranslateDialog:
-			break;
-		case meEditVerticesDialog:
+		default:
 			break;
 		}
 		m_inhibitSelect = false;

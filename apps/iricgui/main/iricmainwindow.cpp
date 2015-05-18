@@ -523,6 +523,8 @@ bool iRICMainWindow::closeProject()
 			case QMessageBox::Cancel:
 				result = false;
 				break;
+			default:
+				break;
 			}
 		}
 	}

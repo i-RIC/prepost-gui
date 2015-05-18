@@ -49,5 +49,7 @@ void PreProcessorGridCrosssectionWindowDelegate::setModelData(QWidget* editor, Q
 
 void PreProcessorGridCrosssectionWindowDelegate::updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
+	Q_UNUSED(index)
+
 	editor->setGeometry(option.rect);
 }

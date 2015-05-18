@@ -186,8 +186,6 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 	QList<GridComplexConditionWidget*> oldWidgets = m_widgets;
 	m_widgets = widgets;
 
-	bool deletedItemExist = false;
-
 	QList<int> valueMap;
 	int newindex = 1;
 	int newDefault = 0;
@@ -201,7 +199,6 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 
 	for (int i = 0; i < oldWidgets.count(); ++i) {
 		if (! m_widgets.contains(oldWidgets[i])) {
-			deletedItemExist = true;
 			delete oldWidgets[i];
 			valueMap.append(newDefault);
 			-- newindex;

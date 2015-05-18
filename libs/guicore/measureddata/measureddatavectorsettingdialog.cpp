@@ -19,7 +19,6 @@ MeasuredDataVectorSettingDialog::~MeasuredDataVectorSettingDialog()
 
 void MeasuredDataVectorSettingDialog::setData(MeasuredData* data)
 {
-	vtkPointSet* p = data->pointData();
 	setupSolutionComboBox(data);
 }
 

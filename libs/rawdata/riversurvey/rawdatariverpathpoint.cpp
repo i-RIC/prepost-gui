@@ -132,27 +132,26 @@ void RawDataRiverPathPoint::UpdateGridInterpolators()
 
 QVector2D RawDataRiverPathPoint::CtrlPointPosition2D(CtrlPointPosition pos, unsigned int index) /* throw (ErrorCodes)*/
 {
-	if (index < 0) {throw ec_OutOfCtrlPointRange;}
-	RawDataRiverCrosssection::Altitude altitude;
+	int idx = static_cast<int>(index);
 	switch (pos) {
 	case pposCenterToLeft:
-		if (index >= CenterToLeftCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
+		if (idx >= CenterToLeftCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterToLeftCtrlPoints[index]);
 		break;
 	case pposCenterToRight:
-		if (index >= CenterToRightCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
+		if (idx >= CenterToRightCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterToRightCtrlPoints[index]);
 		break;
 	case pposCenterLine:
-		if (index >= CenterLineCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
+		if (idx >= CenterLineCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, CenterLineCtrlPoints[index]);
 		break;
 	case pposLeftBank:
-		if (index >= LeftBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
+		if (idx >= LeftBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, LeftBankCtrlPoints[index]);
 		break;
 	case pposRightBank:
-		if (index >= RightBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
+		if (idx >= RightBankCtrlPoints.size()) {throw ec_OutOfCtrlPointRange;}
 		return CtrlPointPosition2D(pos, RightBankCtrlPoints[index]);
 		break;
 	default:
@@ -1341,7 +1340,7 @@ void moveData(const QVector<double>& from, std::vector<double>& to)
 void moveData(const std::vector<double>& from, QVector<double>& to)
 {
 	to.clear();
-	for (int i = 0; i < from.size(); ++i) {
+	for (unsigned int i = 0; i < from.size(); ++i) {
 		to.push_back(from[i]);
 	}
 }
@@ -1359,7 +1358,7 @@ void RawDataRiverPathPoint::loadFromiRICLibObject(const iRICLib::RiverPathPoint*
 	m_crosssection.setLeftShift(p->leftShift);
 	m_crosssection.AltitudeInfo().clear();
 
-	for (int i = 0; i < p->altitudes.size(); ++i) {
+	for (unsigned int i = 0; i < p->altitudes.size(); ++i) {
 		iRICLib::Altitude libalt = p->altitudes.at(i);
 		RawDataRiverCrosssection::Altitude alt;
 		alt.setPosition(libalt.position);

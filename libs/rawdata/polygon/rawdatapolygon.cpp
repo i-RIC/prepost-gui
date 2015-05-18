@@ -893,9 +893,7 @@ void RawDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsV
 			// do nothing no mode change.
 			updateMouseCursor(v);
 			break;
-		case meTranslateDialog:
-			break;
-		case meEditVerticesDialog:
+		default:
 			break;
 		}
 		m_inhibitSelect = false;
@@ -1040,7 +1038,7 @@ void RawDataPolygon::loadExternalData(const QString& filename)
 
 		pol->load(iRIC::toStr(filename).c_str(), noDim);
 		m_variantValues.clear();
-		for (int i = 0; i < pol->values.size(); ++i) {
+		for (unsigned int i = 0; i < pol->values.size(); ++i) {
 			m_variantValues.append(pol->values[i]);
 		}
 		QPolygonF qpol;
@@ -1050,7 +1048,7 @@ void RawDataPolygon::loadExternalData(const QString& filename)
 		}
 		m_gridRegionPolygon->setPolygon(qpol);
 
-		for (int i = 0; i < pol->holes.size(); ++i) {
+		for (unsigned int i = 0; i < pol->holes.size(); ++i) {
 			qpol.clear();
 			iRICLib::InternalPolygon* holePolygon = pol->holes.at(i);
 			for (int j = 0; j < holePolygon->pointCount; ++j) {
@@ -1913,12 +1911,12 @@ void RawDataPolygon::applyOffsetToAbstractPolygon(RawDataPolygonAbstractPolygon*
 	polygon->setPolygon(pol);
 }
 
-void RawDataPolygon::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
+void RawDataPolygon::handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*newIndex*/)
 {
-// @todo implement this!
+	// @todo implement this!
 }
 
-void RawDataPolygon::handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after)
+void RawDataPolygon::handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/)
 {
 	// @todo implement this!
 }

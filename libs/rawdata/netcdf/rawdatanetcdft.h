@@ -117,7 +117,7 @@ protected:
 		DA* vtkVals = vtkValues();
 		vtkVals->Reset();
 		vtkVals->Allocate(bufferSize);
-		for (int i = 0; i < bufferSize; ++i) {
+		for (size_t i = 0; i < bufferSize; ++i) {
 			V val = *(vals + i);
 			vtkVals->InsertNextValue(val);
 		}
@@ -130,6 +130,8 @@ protected:
 
 		nc_close(ncid);
 		dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
+
+		Q_UNUSED(ret)
 	}
 
 	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) {

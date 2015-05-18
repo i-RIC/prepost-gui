@@ -137,7 +137,6 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 			double adfGeoTransform[6];
 			if (poDataset->GetGeoTransform(adfGeoTransform) == CE_None) {
 				QString* txt();
-				char str[250];
 
 				//sprintf_s(str, "Driver: %s/%s\n",
 				//		poDataset->GetDriver()->GetDescription(),
@@ -163,8 +162,6 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				//	p_MainWindow->textEdit->appendPlainText(QString(str));
 				//}
 
-				int numRaster = poDataset->GetRasterCount();
-
 				int nBlockXSize, nBlockYSize;
 				int bGotMin, bGotMax;
 				double adfMinMax[2];
@@ -188,11 +185,11 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				//sprintf_s(str, "Min=%.3fd, Max=%.3f\n", adfMinMax[0], adfMinMax[1] );
 				//p_MainWindow->textEdit->appendPlainText(QString(str));
 
-				GDALDataType dataType = poBand->GetRasterDataType();
-				const char* projRef = poDataset->GetProjectionRef();
-				const char* projgcp = poDataset->GetGCPProjection();
+				// GDALDataType dataType = poBand->GetRasterDataType();
+				// const char* projRef = poDataset->GetProjectionRef();
+				// const char* projgcp = poDataset->GetGCPProjection();
 
-				double* pafScanline;
+				// double* pafScanline;
 				int   nXSize = poBand->GetXSize();
 				int	  nYSize = poBand->GetYSize();
 				double InPixel;
@@ -205,8 +202,8 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				// Maybe useful in the future. At this time we use some other code to do transformations from
 				// Lat/Lon to UTM.
 
-				const char* pszProjection = this->poDataset->GetProjectionRef();
-				char* pszPrettyWkt, *pszPrettyWkt2;
+				// const char* pszProjection = this->poDataset->GetProjectionRef();
+				// char* pszPrettyWkt, *pszPrettyWkt2;
 				//	int err = this->oSourceSRS.SetFromUserInput(pszProjection);
 				//	err = this->oSourceSRS.exportToPrettyWkt(&pszPrettyWkt);
 				//	p_MainWindow->textEdit->appendPlainText(QString(pszPrettyWkt));
@@ -231,12 +228,14 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 				//}
 				//QTextStream out2(&file2);
 
-				int utmXZone;
-				char utmYZone;
-				double easting, northing;
+				double easting = 0, northing = 0;
 				// Not currently using GDAL Coordinate Transformation routines
 				//this->poCT = OGRCreateCoordinateTransformation(&this->oSourceSRS, &this->oTargetSRS);
 				double tXp, tYp;
+
+				Q_UNUSED(tXp)
+				Q_UNUSED(tYp)
+
 				//debug output
 				//out << nXSize*nYSize << "\n";
 				int counter = 0;
@@ -247,15 +246,9 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 						tYp = adfGeoTransform[3] + i*adfGeoTransform[4] + j*adfGeoTransform[5];
 						//LatLonToUtmWGS84 (utmXZone, utmYZone, easting, northing, tYp, tXp);
 						xt[0]=easting; xt[1]=northing; xt[2]=0;
-						vtkIdType id = points->InsertNextPoint(xt);
+						points->InsertNextPoint(xt);
 						values->InsertNextValue(InPixel);
-						//scalar->InsertValue(counter, xt[2]);
 						counter++;
-						//this->poCT->Transform(1, &tXp, &tYp);
-
-						//Debug output
-						//out2 << tXp << " " << tYp << " " << InPixel << "\n";
-						//out << easting << " " << northing << " " << InPixel << "\n";
 					}
 				}
 			} else if (this->poDataset->GetGCPCount() > 0) {

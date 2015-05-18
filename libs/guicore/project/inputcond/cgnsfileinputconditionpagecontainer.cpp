@@ -4,9 +4,8 @@
 #include <QDomElement>
 #include <QHBoxLayout>
 
-CgnsFileInputConditionPageContainer::CgnsFileInputConditionPageContainer(QWidget* w)
+CgnsFileInputConditionPageContainer::CgnsFileInputConditionPageContainer(QWidget* /*w*/)
 {
-
 	m_currentPage = new CgnsFileInputConditionPage(this);
 	QHBoxLayout* layout = new QHBoxLayout();
 	layout->addWidget(m_currentPage);

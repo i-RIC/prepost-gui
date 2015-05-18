@@ -112,7 +112,7 @@ protected:
 				*(start_out + dims->containers().size() - 1 - loopid) = i;
 				ret = ncGetVarConvert(ncid_in, varIdIn, start_in, len_in, buffer);
 				if (ret != NC_NOERR) {return ret;}
-				for (int j = 0; j < bufferSize; ++j) {
+				for (size_t j = 0; j < bufferSize; ++j) {
 					if (*(buffer + j) == missingValue) {
 						*(buffer + j) = netcdf->missingValue();
 					}

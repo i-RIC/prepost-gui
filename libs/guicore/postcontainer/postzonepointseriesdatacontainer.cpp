@@ -65,7 +65,6 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 		ier = cg_narrays(&numArrays);
 		if (ier != 0) {return false;}
 		double value = 0;
-		int valCount = 0;
 		for (int j = 1; j <= numArrays; ++j) {
 			DataType_t datatype;
 			int dimension;

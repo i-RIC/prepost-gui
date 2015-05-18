@@ -1034,10 +1034,7 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 			updateMouseCursor(v);
 			updateActionStatus();
 			break;
-		case meDefining:
-			// do nothing no mode change.
-			break;
-		case meEditVerticesDialog:
+		default:
 			break;
 		}
 		updateMouseCursor(v);

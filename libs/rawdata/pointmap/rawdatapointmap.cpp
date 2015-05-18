@@ -336,7 +336,7 @@ public:
 		}
 
 		// don't use first point it's already a known
-		for (int i = 1; i < numInterpPts; i++) {
+		for (size_t i = 1; i < numInterpPts; i++) {
 			double p[3];
 			double value;
 			p[0] = m_iPoints->xpoint[i];
@@ -394,7 +394,7 @@ public:
 		}
 
 		// don't use first and last points
-		for (int i = 1; i < numInterpPts-1; i++) {
+		for (size_t i = 1; i < numInterpPts-1; i++) {
 			double p[3];
 			double value;
 			p[0] = m_iPoints->xinterp[i];
@@ -946,7 +946,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		m_vtkDelaunayedPolyData->GetPointData()->Modified();
 
 		ca = vtkCellArray::New();
-		for (int i = 0; i < pm->triangles.size(); ++i) {
+		for (unsigned int i = 0; i < pm->triangles.size(); ++i) {
 			iRICLib::PointMapTriangle tri = pm->triangles.at(i);
 			pts[0] = tri.index1 - 1;
 			pts[1] = tri.index2 - 1;
@@ -962,11 +962,11 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		points->Delete();
 		da->Delete();
 
-		for (int i = 0; i < pm->breaklines.size(); ++i) {
+		for (unsigned int i = 0; i < pm->breaklines.size(); ++i) {
 			iRICLib::PointMapBreakline bl = pm->breaklines.at(i);
 			RawDataPointmapBreakLine* breakline = new RawDataPointmapBreakLine(this);
 			QVector<vtkIdType> indices;
-			for (int j = 0; j < bl.indices.size(); ++j) {
+			for (unsigned int j = 0; j < bl.indices.size(); ++j) {
 				indices.append(bl.indices.at(j));
 			}
 			breakline->setVertexIndices(indices);
@@ -1914,6 +1914,8 @@ void RawDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			iRICUndoStack::instance().clear();
 			updateActionStatus();
 			break;
+		default:
+			break;
 		}
 		updateMouseCursor(v);
 	} else if (event->button() == Qt::RightButton) {
@@ -1948,6 +1950,8 @@ void RawDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 			box->disable();
 			v->restoreUpdateRate();
 			renderGraphicsView();
+			break;
+		default:
 			break;
 		}
 	} else if (event->button() == Qt::RightButton) {
@@ -1985,6 +1989,8 @@ void RawDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 	case meBreakLineRemoveNotPossible:
 		updateMouseEventMode();
 		updateMouseCursor(v);
+		break;
+	default:
 		break;
 	}
 }
@@ -2025,6 +2031,8 @@ void RawDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		break;
 	case meSMAddCtrlPoint:
 		//this->finishAddPoint();
+		break;
+	default:
 		break;
 	}
 
@@ -2069,6 +2077,8 @@ void RawDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsView
 		} else if (event->key() == Qt::Key_Alt) {
 			m_mouseEventMode = meSMInterpPoint;
 		}
+		break;
+	default:
 		break;
 	}
 	updateMouseCursor(v);
@@ -2372,6 +2382,8 @@ void RawDataPointmap::updateActionStatus()
 		this->m_removeBreakLineAction->setEnabled(true);
 		this->m_removeBreakLineAction->setChecked(true);
 		break;
+	default:
+		break;
 	}
 }
 
@@ -2444,6 +2456,8 @@ void RawDataPointmap::updateMouseEventMode()
 			}
 		}
 		break;
+	default:
+		break;
 	}
 }
 
@@ -2508,6 +2522,8 @@ void RawDataPointmap::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
 		break;
 	case meBreakLineRemove:
 		v->setCursor(this->m_removeCursor);
+		break;
+	default:
 		break;
 	}
 }

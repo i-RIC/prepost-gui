@@ -82,7 +82,7 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridPointResultDataIte
 
 	int currentStep = postInfo->currentStep();
 	const QList<double>& timesteps = postInfo->timeSteps()->timesteps();
-	double time;
+	double time = 0;
 	if (timesteps.count() == 0) {
 		time = 0;
 	} else {

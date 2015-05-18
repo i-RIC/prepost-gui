@@ -139,12 +139,12 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 
 		m_xValues.clear();
 		m_xValues.reserve(static_cast<int>(xSize));
-		for (int i = 0; i < xSize; ++i) {
+		for (size_t i = 0; i < xSize; ++i) {
 			m_xValues.append(*(xs + i));
 		}
 		m_yValues.clear();
 		m_yValues.reserve(static_cast<int>(ySize));
-		for (int i = 0; i < ySize; ++i) {
+		for (size_t i = 0; i < ySize; ++i) {
 			m_yValues.append(*(ys + i));
 		}
 		delete xs;
@@ -171,12 +171,12 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
-		for (int i = 0; i < lonSize; ++i) {
+		for (size_t i = 0; i < lonSize; ++i) {
 			m_lonValues.append(*(lons + i));
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
-		for (int i = 0; i < latSize; ++i) {
+		for (size_t i = 0; i < latSize; ++i) {
 			m_latValues.append(*(lats + i));
 		}
 
@@ -206,12 +206,12 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
-		for (int i = 0; i < lonSize; ++i) {
+		for (size_t i = 0; i < lonSize; ++i) {
 			m_lonValues.append(*(lons + i));
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
-		for (int i = 0; i < latSize; ++i) {
+		for (size_t i = 0; i < latSize; ++i) {
 			m_latValues.append(*(lats + i));
 		}
 
@@ -242,7 +242,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 			int* vals = new int[dimSize];
 			ret = nc_get_var_int(ncid, dVarId, vals);
 			QList<QVariant> vals1;
-			for (int j = 0; j < dimSize; ++j) {
+			for (size_t j = 0; j < dimSize; ++j) {
 				QVariant v(*(vals + j));
 				vals1.append(v);
 			}
@@ -257,7 +257,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 			double* vals = new double[dimSize];
 			ret = nc_get_var_double(ncid, dVarId, vals);
 			QList<QVariant> vals1;
-			for (int j = 0; j < dimSize; ++j) {
+			for (size_t j = 0; j < dimSize; ++j) {
 				QVariant v(*(vals + j));
 				vals1.append(v);
 			}
@@ -274,7 +274,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 	updateShapeData();
 }
 
-void RawDataNetcdf::saveExternalData(const QString& filename)
+void RawDataNetcdf::saveExternalData(const QString& /*filename*/)
 {
 
 }
@@ -299,6 +299,7 @@ void RawDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 void RawDataNetcdf::doApplyOffset(double x, double y)
 {
+	// @todo implement this
 
 }
 
@@ -789,7 +790,7 @@ void RawDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 		m_threshold->Modified();
 		return;
 	}
-	int dimI, dimJ;
+	int dimI = 1, dimJ = 1;
 
 	if (m_coordinateSystemType == RawDataNetcdf::XY) {
 		dimI = m_xValues.size();
@@ -898,7 +899,7 @@ void RawDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 
 void RawDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const
 {
-	int dimI;
+	int dimI = 1;
 	if (m_coordinateSystemType == XY) {
 		dimI = m_xValues.size() + 1;
 	} else if (m_coordinateSystemType == LonLat) {
@@ -911,7 +912,7 @@ void RawDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) c
 
 unsigned int RawDataNetcdf::vertexIndex(unsigned int i, unsigned int j) const
 {
-	int dimI;
+	int dimI = 1;
 	if (m_coordinateSystemType == XY) {
 		dimI = m_xValues.size() + 1;
 	} else if (m_coordinateSystemType == LonLat) {
@@ -976,7 +977,7 @@ int RawDataNetcdf::lineLimitJ2(int jIn, int jOut, int dimI, int dimJ, const Rect
 	}
 }
 
-bool RawDataNetcdf::lineAtIIntersect(int i, int dimI, int dimJ, const RectRegion& region) const
+bool RawDataNetcdf::lineAtIIntersect(int i, int /*dimI*/, int dimJ, const RectRegion& region) const
 {
 	QPointF p1, p2;
 	double tmpv[3];
@@ -991,7 +992,7 @@ bool RawDataNetcdf::lineAtIIntersect(int i, int dimI, int dimJ, const RectRegion
 	return false;
 }
 
-bool RawDataNetcdf::lineAtJIntersect(int j, int dimI, int dimJ, const RectRegion& region) const
+bool RawDataNetcdf::lineAtJIntersect(int j, int dimI, int /*dimJ*/, const RectRegion& region) const
 {
 	QPointF p1, p2;
 	double tmpv[3];

@@ -230,7 +230,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	if (m_currentSolution == "") {return;}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneContainer == nullptr) {return;}
-	unsigned int currentStep = 0;
+	int currentStep = 0;
 	if (zoneContainer != nullptr) {
 		currentStep = zoneContainer->solutionInfo()->currentStep();
 	}
@@ -341,7 +341,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 	vtkPointSet* ps = zoneContainer->data();
 	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
 
-	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
+	int currentStep = zoneContainer->solutionInfo()->currentStep();
 
 	PostTimeSteps* tSteps = zoneContainer->solutionInfo()->timeSteps();
 	QList<double> timeSteps = tSteps->timesteps();

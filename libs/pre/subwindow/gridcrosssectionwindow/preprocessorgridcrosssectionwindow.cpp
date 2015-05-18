@@ -246,7 +246,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 		dynamic_cast<GridRelatedConditionRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
 	int row = 0;
 	if (m_direction == dirI) {
-		for (int i = 0; i < m_grid->dimensionI(); ++i) {
+		for (unsigned int i = 0; i < m_grid->dimensionI(); ++i) {
 			double val = cont->value(m_grid->vertexIndex(i, targetIndex()));
 			m_model->insertRow(row);
 			m_model->setData(m_model->index(row, 0), val);
@@ -256,7 +256,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 			++row;
 		}
 	} else {
-		for (int j = 0; j < m_grid->dimensionJ(); ++j) {
+		for (unsigned int j = 0; j < m_grid->dimensionJ(); ++j) {
 			double val = cont->value(m_grid->vertexIndex(targetIndex(), j));
 			m_model->insertRow(row);
 			m_model->setData(m_model->index(row, 0), val);

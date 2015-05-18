@@ -31,7 +31,7 @@ void CgnsFileInputConditionPageList::setup(const QDomElement& elem, const Solver
 	QTreeWidgetItem* item;
 
 	QDomNodeList children = elem.childNodes();
-	for (unsigned int i = 0; i < children.length(); ++i) {
+	for (int i = 0; i < children.length(); ++i) {
 		QDomNode c = children.item(i);
 		if (c.nodeName() == "Tab" || c.nodeName() == "Page") {
 			// add item

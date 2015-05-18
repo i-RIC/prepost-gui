@@ -36,7 +36,7 @@ LinearLXSecInterpolator::LinearLXSecInterpolator(RawDataRiverPathPoint* parent) 
 void LinearLXSecInterpolator::updateParameters()
 {
 	// Get the left bank position
-	RawDataRiverCrosssection::Altitude leftbank;
+	RawDataRiverCrosssection::Altitude leftbank(0, 0);
 	try {
 		leftbank = m_parent->crosssection().leftBank(true);
 	} catch (RawDataRiverCrosssection::ErrorCodes /* codes */) {}
@@ -88,7 +88,7 @@ LinearRXSecInterpolator::LinearRXSecInterpolator(RawDataRiverPathPoint* parent) 
 void LinearRXSecInterpolator::updateParameters()
 {
 	// Get the right bank position
-	RawDataRiverCrosssection::Altitude rightbank;
+	RawDataRiverCrosssection::Altitude rightbank(0, 0);
 	try {
 		rightbank = m_parent->crosssection().rightBank(true);
 	} catch (RawDataRiverCrosssection::ErrorCodes /* codes */) {}

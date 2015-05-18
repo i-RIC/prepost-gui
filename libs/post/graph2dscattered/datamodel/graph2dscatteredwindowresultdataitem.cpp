@@ -21,6 +21,8 @@
 Graph2dScatteredWindowResultDataItem::Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent)
 	: Graph2dScatteredWindowDataItem(title, QIcon(":/images/iconPaper.png"), parent)
 {
+	Q_UNUSED(index)
+
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
 

@@ -427,8 +427,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mousePress
 				// zoom.
 				m_mouseEventMode = meZooming;
 				break;
-			case Qt::RightButton:
-				// do nothing.
+			default:
 				break;
 			}
 			m_oldPosition = event->pos();
@@ -544,6 +543,8 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::updateMous
 		break;
 	case meTranslating:
 		setCursor(m_moveCursor);
+		break;
+	default:
 		break;
 	}
 }

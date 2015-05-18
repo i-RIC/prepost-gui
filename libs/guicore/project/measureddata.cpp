@@ -77,7 +77,7 @@ void MeasuredData::importFromFile(const QString& filename)
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
 	QSet<unsigned int> columnsDone;
 	QRegExp xname("(.*)X$");
-	for (unsigned int j = 2; j < pieces.size(); ++j) {
+	for (int j = 2; j < pieces.size(); ++j) {
 		if (columnsDone.contains(j)) {continue;}
 		bool isVector = false;
 		if (xname.indexIn(pieces[j]) != -1) {
@@ -85,7 +85,7 @@ void MeasuredData::importFromFile(const QString& filename)
 			QString vdataName = xname.cap(1);
 			QString yname = vdataName;
 			yname.append("Y");
-			for (unsigned int k = 2; k < pieces.size(); ++k) {
+			for (int k = 2; k < pieces.size(); ++k) {
 				if (columnsDone.contains(k)) {continue;}
 				if (pieces[k] == yname) {
 					// X component, Y compoment both are found.

@@ -22,7 +22,7 @@ CgnsFileInputConditionWidgetIntegerOption::CgnsFileInputConditionWidgetIntegerOp
 	layout->setMargin(CgnsFileInputConditionWidget::margin);
 	setLayout(layout);
 
-	for (unsigned int i = 0; i < noms.length(); ++i) {
+	for (int i = 0; i < noms.length(); ++i) {
 		QDomNode nomNode = noms.at(i);
 		QDomElement nomElem = nomNode.toElement();
 		int nomValue = nomElem.attribute("value").toInt();

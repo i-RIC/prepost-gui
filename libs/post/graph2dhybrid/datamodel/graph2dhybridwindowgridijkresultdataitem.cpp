@@ -73,6 +73,8 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 	case Graph2dHybridWindowResultSetting::xaK:
 		extract->SetVOI(s.gridI(), s.gridI(), s.gridJ(), s.gridJ(), 0, dimension[2]);
 		break;
+	default:
+		break;
 	}
 	extract->Update();
 
@@ -103,7 +105,7 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues(int /*fn*/)
 		// x value
 		m_xValues[i] = distance;
 		// y value
-		double value;
+		double value = 0;
 		if (da->GetNumberOfComponents() == 1) {
 			value = da->GetTuple1(i);
 		} else if (da->GetNumberOfComponents() == 3) {

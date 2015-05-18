@@ -777,7 +777,7 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 				// zoom.
 				m_mouseEventMode = meZooming;
 				break;
-			case Qt::RightButton:
+			default:
 				// do nothing.
 				break;
 			}
@@ -815,6 +815,8 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::mousePressEvent(QMouseEve
 		} else if (event->button() == Qt::RightButton) {
 			m_dragStartPoint = event->pos();
 		}
+		break;
+	default:
 		break;
 	}
 }
@@ -943,6 +945,8 @@ void RawDataRiverSurveyCrosssectionWindowGraphicsView::updateMouseCursor()
 		break;
 	case meMovePrepare:
 		setCursor(Qt::OpenHandCursor);
+		break;
+	default:
 		break;
 	}
 }

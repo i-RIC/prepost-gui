@@ -113,7 +113,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	}
 	vtkPointSet* p1 = m_data;
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(p1);
-	int NVertexI, NVertexJ, NVertexK;
+	int NVertexI = 0, NVertexJ = 0, NVertexK = 0;
 	if (m_cellDim == 1) {
 		NVertexI = m_sizes[0];
 		NVertexJ = 1;
@@ -475,7 +475,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	cg_array_info(1, aName, &dType, &d, dVector);
 
 	double* dataX, *dataY, *dataZ;
-	size_t numParticles = dVector[0];
+	cgsize_t numParticles = dVector[0];
 	dataX = new double[numParticles];
 	dataY = new double[numParticles];
 	dataZ = new double[numParticles];
@@ -502,7 +502,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	ier = cg_array_info(3, aName, &dType, &d, dVector);
 	if (ier != 0 || QString(aName) != "CoordinateZ") {
 		// Z data does not exist;
-		for (size_t i = 0; i < numParticles; ++i) {
+		for (cgsize_t i = 0; i < numParticles; ++i) {
 			*(dataZ + i) = 0;
 		}
 		firstAttId = 3;
@@ -516,7 +516,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 
 	// X, Y, Z are setup.
 
-	for (int i = 0; i < numParticles; ++i) {
+	for (cgsize_t i = 0; i < numParticles; ++i) {
 		points->InsertNextPoint(
 			*(dataX + i),
 			*(dataY + i),
@@ -549,7 +549,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 			vtkSmartPointer<vtkIntArray> attArray = vtkSmartPointer<vtkIntArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (int j = 0; j < numParticles; ++j) {
+			for (cgsize_t j = 0; j < numParticles; ++j) {
 				attArray->InsertNextValue(*(att + j));
 			}
 			m_particleData->GetPointData()->AddArray(attArray);
@@ -564,7 +564,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 			vtkSmartPointer<vtkDoubleArray> attArray = vtkSmartPointer<vtkDoubleArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (int j = 0; j < numParticles; ++j) {
+			for (cgsize_t j = 0; j < numParticles; ++j) {
 				attArray->InsertNextValue(*(att + j));
 			}
 			m_particleData->GetPointData()->AddArray(attArray);

@@ -518,6 +518,9 @@ void DistanceMeasureDataItem::updateActorSettings()
 	case DistanceMeasureCopyPropertyDialog::lpMiddleRight:
 		label = QString("   ").append(label);
 		break;
+	default:
+		// do nothing
+		break;
 	}
 	m_labelArray->SetValue(0, iRIC::toStr(label).c_str());
 

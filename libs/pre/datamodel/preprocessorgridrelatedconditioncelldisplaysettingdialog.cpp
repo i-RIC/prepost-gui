@@ -135,12 +135,12 @@ void PreProcessorGridRelatedConditionCellDisplaySettingDialog::handleItemClick(Q
 void PreProcessorGridRelatedConditionCellDisplaySettingDialog::handleShownSelectionChange(const QItemSelection& selected, const QItemSelection& /*deselected*/)
 {
 	QSet<int> rows;
-	int lastrow = 0;
+//	int lastrow = 0;
 	for (auto it = selected.begin(); it != selected.end(); ++it) {
 		QItemSelectionRange range = *it;
 		for (int row = range.top(); row <= range.bottom(); ++row) {
 			rows.insert(row);
-			lastrow = row;
+//			lastrow = row;
 		}
 	}
 }

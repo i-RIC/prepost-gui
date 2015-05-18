@@ -21,6 +21,8 @@ void TSplineSTL(std::vector<double>& x, std::vector<double>& y, int n,
 	double tmp;
 	int nm1, np1, i, ibak, nj;
 
+	Q_UNUSED(tmp)
+
 	nm1 = n-2; //may need to make adjustments here because of c arrays 0-n vs 1-n for fortran
 	np1 = n;
 	delx1 = x[1]-x[0];
@@ -174,10 +176,6 @@ void RawDataPointmapInterpolatePoints::accept()
 	}
 	int nump = xpoint.size();
 	if (nump < 3) {
-		double s0, s1, s2, x1, x2, x3, y1, y2, y3;
-		s0 = si[0]; s1 = si[1]/2.; s2 = si[1];
-		x1 = xpoint[0]; x2 = xpoint[0] + (xpoint[1]-xpoint[0])/2.; x3 = xpoint[1];
-		y1 = ypoint[0]; y2 = ypoint[0] + (ypoint[1]-ypoint[0])/2.; y3 = xpoint[1];
 		std::vector<double> sitmp;
 		sitmp.push_back(si[0]);
 		sitmp.push_back(si[1]/2.);
@@ -205,9 +203,6 @@ void RawDataPointmapInterpolatePoints::accept()
 	yp.resize(numInterpPts);
 
 	if (numZPts < 3) {
-		double  sz1, sz2, sz3, z1, z2, z3;
-		sz1 = szi[0]; sz2= szi[1]/2.; sz3= szi[1];
-		z1 = zpoint[0]; z2 = zpoint[0] + (zpoint[1]-zpoint[0])/2.; z3 = zpoint[1];
 		std::vector<double> szitmp;
 		szitmp.push_back(szi[0]);
 		szitmp.push_back(szi[1]/2.);
@@ -222,14 +217,6 @@ void RawDataPointmapInterpolatePoints::accept()
 	} else {
 
 		TSplineSTL(szi,zpoint,numZPts,sout,zinterp,numInterpPts,10.,yp,temp);
-	}
-	//Add the points
-
-	int nPts = numInterpPts; //take front and end point away....
-	for (int i = 1; i < nPts-1; i++) {
-		float tmpx, tmpy, tmpz;
-		tmpx = xinterp[i]; tmpy = yinterp[i]; tmpz = zinterp[i];
-		//this->addPoint(xinterp[i], yinterp[i], zinterp[i]);
 	}
 
 	QDialog::accept();

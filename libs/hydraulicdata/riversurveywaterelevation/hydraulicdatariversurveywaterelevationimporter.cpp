@@ -31,9 +31,6 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 		p = p->nextPoint();
 	}
 	QTextStream in(&file);
-	double kp;
-	double height;
-
 	QStringList skipped;
 
 	// skip the first line (header).

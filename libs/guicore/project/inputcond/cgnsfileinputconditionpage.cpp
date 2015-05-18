@@ -49,7 +49,7 @@ QLayout* CgnsFileInputConditionPage::loadAuto(const QDomNode& node, CgnsFileInpu
 {
 	bool simple = true;
 	QDomNodeList items = node.childNodes();
-	for (unsigned int i = 0; i < items.length(); ++i) {
+	for (int i = 0; i < items.length(); ++i) {
 		QDomNode child = items.item(i);
 		simple = simple && (child.nodeName() == "Item" || child.nodeName() == "GroupBox");
 	}
@@ -65,7 +65,7 @@ QLayout* CgnsFileInputConditionPage::loadSimple(const QDomNode& node, CgnsFileIn
 	QDomNodeList items = node.childNodes();
 	QFormLayout* layout = new QFormLayout();
 	QDomElement elem;
-	for (unsigned int i = 0; i < items.length(); ++i) {
+	for (int i = 0; i < items.length(); ++i) {
 		elem = items.item(i).toElement();
 		if (elem.nodeName() == "Item") {
 			QString itemname = elem.attribute("name");
@@ -133,7 +133,7 @@ QObject* CgnsFileInputConditionPage::loadRec(const QDomNode& node, CgnsFileInput
 
 void CgnsFileInputConditionPage::loadBL(QBoxLayout* layout, const QDomNodeList& list, CgnsFileInputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)
 {
-	for (unsigned int i = 0; i < list.length(); ++i) {
+	for (int i = 0; i < list.length(); ++i) {
 		QDomNode c = list.item(i);
 		QObject* obj = loadRec(c, ws, t);
 		if (obj == nullptr) {continue;}
@@ -147,7 +147,7 @@ void CgnsFileInputConditionPage::loadBL(QBoxLayout* layout, const QDomNodeList& 
 
 void CgnsFileInputConditionPage::loadGL(QGridLayout* layout, const QDomNodeList& list, CgnsFileInputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)
 {
-	for (unsigned int i = 0; i < list.length(); ++i) {
+	for (int i = 0; i < list.length(); ++i) {
 		QDomNode c = list.item(i);
 		QDomElement e = c.toElement();
 		int row = e.attribute("row").toInt();

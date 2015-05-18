@@ -86,7 +86,7 @@ PreProcessorGridRelatedConditionNodeGroupDataItem::PreProcessorGridRelatedCondit
 	}
 
 	m_opacityPercent = 50;
-	m_attributeBrowserFixed;
+	m_attributeBrowserFixed = false;
 
 	m_showAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
@@ -260,6 +260,8 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::updateActorSettings()
 		m_fringeMapper->UseLookupTableScalarRangeOn();
 		m_fringeActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 		m_actorCollection->AddItem(m_fringeActor);
+		break;
+	default:
 		break;
 	}
 	updateVisibilityWithoutRendering();

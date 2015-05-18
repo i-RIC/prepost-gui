@@ -122,7 +122,7 @@ public:
 					V* data = new V[dataCount];
 					ier = cg_array_read(i, data);
 					m_values.clear();
-					for (unsigned int j = 0; j < dataCount; ++j) {
+					for (cgsize_t j = 0; j < dataCount; ++j) {
 						m_values.append(*(data + j));
 					}
 					delete[] data;

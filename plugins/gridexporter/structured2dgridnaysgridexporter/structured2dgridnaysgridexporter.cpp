@@ -7,7 +7,7 @@
 #include <QTextStream>
 
 Structured2DGridNaysGridExporter::Structured2DGridNaysGridExporter()
-	: GridExporterInterface(), QObject()
+	: QObject(), GridExporterInterface()
 {
 
 }

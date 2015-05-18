@@ -130,7 +130,7 @@ void RawDataRiverSurveyProxy::updateGraphics()
 	RawDataRiverPathPoint* p = rs->m_headPoint->nextPoint();
 	vtkIdType pointNum = 0;
 	while (p != 0) {
-		double maxHeight;
+		double maxHeight = 0;
 		RawDataRiverCrosssection::AltitudeList& alist = p->crosssection().AltitudeInfo();
 		// calculate maxHeight.
 		for (int i = 0; i < alist.count(); ++i) {

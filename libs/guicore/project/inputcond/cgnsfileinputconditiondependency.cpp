@@ -17,13 +17,11 @@ CgnsFileInputConditionDependency::Condition::Condition(CgnsFileInputConditionDep
 
 // Definitions of classes those inherit CgnsFileInputConditionDependency::Action
 
-
-
 CgnsFileInputConditionDependency::Action* CgnsFileInputConditionDependency::buildAction(
-	const QDomNode& node,
-	CgnsFileInputConditionContainerSet* cs,
-	CgnsFileInputConditionWidgetSet* ws,
-	CgnsFileInputConditionWidget* w
+	const QDomNode& /*node*/,
+	CgnsFileInputConditionContainerSet* /*cs*/,
+	CgnsFileInputConditionWidgetSet* /*ws*/,
+	CgnsFileInputConditionWidget* /*w*/
 )
 {
 	// @todo not implemented yet.

@@ -220,6 +220,7 @@ vtkPointSet* Post3dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
 		return m_regionClippedPolyData;
 	}
+	return 0;
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamTracer* tracer)

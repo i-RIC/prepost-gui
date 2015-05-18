@@ -18,7 +18,7 @@ void CgnsFileInputConditionWidgetFunctionalGraphview::paintEvent(QPaintEvent* /*
 	drawRegion(painter, region, matrix);
 	// Draw the data
 	QAbstractItemModel* m = model();
-	double oldx, oldy;
+	double oldx = 0, oldy = 0;
 	QBrush oldbrush = painter.brush();
 	painter.setBrush(solidBrush);
 	// Draw lines

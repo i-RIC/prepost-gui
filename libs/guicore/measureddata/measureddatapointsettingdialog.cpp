@@ -27,7 +27,6 @@ MeasuredDataPointSettingDialog::~MeasuredDataPointSettingDialog()
 
 void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
 {
-	vtkPointData* pd = md->pointData()->GetPointData();
 	ui->measuredValueComboBox->clear();
 	m_measuredValues.clear();
 	ui->measuredValueComboBox->blockSignals(true);

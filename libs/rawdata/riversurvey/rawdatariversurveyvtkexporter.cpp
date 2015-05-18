@@ -16,7 +16,7 @@ RawDataRiverSurveyVTKExporter::RawDataRiverSurveyVTKExporter(RawDataCreator* cre
 	m_caption = tr("RiverSurvey data");
 }
 
-bool RawDataRiverSurveyVTKExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool RawDataRiverSurveyVTKExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* /*pd*/)
 {
 	QString tempPath = QDir::tempPath();
 	QString tmpFile = iRIC::getTempFileName(tempPath);

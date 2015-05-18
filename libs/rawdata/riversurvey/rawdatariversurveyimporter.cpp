@@ -310,8 +310,8 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 	if (! ret) {return false;}
 
 	PRivPath p;
-	double max, left, right;
-	double minpos, minval;
+	double max = 0, left = 0, right = 0;
+	double minpos = 0, minval = 0;
 	int i;
 	bool ok = true;
 
@@ -335,7 +335,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			newpoint->InhibitInterpolatorUpdate = true;
 			newpoint->setCrosssectionDirection(dir);
 			max = p->pt[0].y;
-			RawDataRiverCrosssection::Altitude oldalt;
+			RawDataRiverCrosssection::Altitude oldalt(0, 0);
 			for (i = 0; i < p->np; i++) {
 				if (p->pt[i].y > max) {
 					max = p->pt[i].y;
@@ -361,7 +361,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 				}
 				oldalt = alt;
 			}
-			double shiftValue;
+			double shiftValue = 0;
 			if (m_cpSetting == RawDataRiverSurveyImporterSettingDialog::cpMiddle) {
 				shiftValue = (left + right) * 0.5;
 			} else if (m_cpSetting == RawDataRiverSurveyImporterSettingDialog::cpElevation) {
@@ -400,7 +400,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			newpoint->InhibitInterpolatorUpdate = true;
 			newpoint->setCrosssectionDirection(dir);
 			max = p->pt[0].y;
-			RawDataRiverCrosssection::Altitude oldalt;
+			RawDataRiverCrosssection::Altitude oldalt(0, 0);
 			minpos = p->pt[0].x - offset;
 			minval = p->pt[0].y;
 			for (i = 0; i < p->np; i++) {
@@ -422,7 +422,7 @@ bool RawDataRiverSurveyImporter::importData(RawData* data, int /*index*/, QWidge
 			left  = newpoint->crosssection().leftBank().position();
 			right = newpoint->crosssection().rightBank().position();
 
-			double shiftValue;
+			double shiftValue = 0;
 			if (m_cpSetting == RawDataRiverSurveyImporterSettingDialog::cpMiddle) {
 				shiftValue = (left + right) * 0.5;
 			} else if (m_cpSetting == RawDataRiverSurveyImporterSettingDialog::cpElevation) {

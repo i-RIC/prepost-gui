@@ -69,4 +69,5 @@ int PreProcessorGridAttributeMappingSettingDataItem::mappingCount() const
 	} else {
 		// @todo not implemented yet.
 	}
+	return 0;
 }

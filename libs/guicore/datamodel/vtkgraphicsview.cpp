@@ -144,6 +144,9 @@ void VTKGraphicsView::mousePressEvent(QMouseEvent* event)
 			setCursor(m_rotateCursor);
 			iren->InvokeEvent(vtkCommand::LeftButtonPressEvent, event);
 			break;
+		default:
+			// do nothing
+			break;
 		}
 	} else {
 		// the mouse press event is informed to the active data item.

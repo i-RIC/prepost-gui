@@ -73,7 +73,7 @@ protected:
 
 	int m_timeSamplingRate;
 	int m_timeDivision;
-	unsigned int m_previousStep;
+	int m_previousStep;
 	double m_previousTime;
 	int m_nextStepToAddParticles;
 	StructuredGridRegion::RegionMode m_regionMode;

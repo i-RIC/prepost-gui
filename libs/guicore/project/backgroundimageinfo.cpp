@@ -234,7 +234,7 @@ void BackgroundImageInfo::fitImageToData()
 {
 	// fit to the data in the preprocessor window.
 	double bounds[6];
-	int vis;
+	int vis = 0;
 	if (m_preProcessorActor != nullptr) {
 		vis = m_preProcessorActor->GetVisibility();
 		m_preProcessorActor->SetVisibility(0);
@@ -329,6 +329,9 @@ void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, V
 	case Qt::RightButton:
 		m_isRotating = true;
 		v->setCursor(m_rotateCursor);
+		break;
+	default:
+		// do nothing
 		break;
 	}
 	m_isMoving = true;

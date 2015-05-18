@@ -7,6 +7,7 @@
 #include "../scalarstocolors/scalarstocolorseditdialog.h"
 #include "solverdefinitiongridrelatedcondition.h"
 #include "solverdefinitiongridrelatedconditiondimensioncreator.h"
+#include "solverdefinitiongridrelatedconditiondimension.h"
 #include "solverdefinitiontranslator.h"
 
 #include <misc/xmlsupport.h>
@@ -15,8 +16,8 @@
 
 SolverDefinitionGridRelatedCondition::~SolverDefinitionGridRelatedCondition()
 {
-	for (int i = 0; i < m_dimensions.size(); ++i) {
-		delete m_dimensions.at(i);
+	for (SolverDefinitionGridRelatedConditionDimension* dim : m_dimensions) {
+		delete dim;
 	}
 }
 

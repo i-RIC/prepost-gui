@@ -480,6 +480,8 @@ void RawDataRiverSurveyCrosssectionWindow::deleteSelectedRows()
 		case RawDataRiverCrosssection::ec_AltitudesBiased:
 			QMessageBox::warning(this, tr("Warning"), tr("There should be more than one point in the right bank side and the left bank side."));
 			break;
+		default:
+			break;
 		}
 		return;
 	}
@@ -602,6 +604,8 @@ bool RawDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(RawDataRive
 			break;
 		case RawDataRiverCrosssection::ec_AltitudesBiased:
 			QMessageBox::warning(this, tr("Warning"), tr("There should be more than one point in the right bank side and the left bank side."));
+			break;
+		default:
 			break;
 		}
 		return false;

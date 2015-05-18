@@ -202,6 +202,8 @@ public:
 			m_condition->m_selectedLine = m_condition->m_centerLine;
 			m_condition->m_centerLine->setActive(true);
 			break;
+		default:
+			break;
 		}
 		m_condition->m_mouseEventMode = GridCreatingConditionCompoundChannel::meDefining;
 
@@ -232,6 +234,8 @@ public:
 			m_condition->m_selectedLine = m_condition->m_centerLine;
 			m_condition->m_centerLine->setActive(true);
 			m_condition->create(m_condition->preProcessorWindow());
+			break;
+		default:
 			break;
 		}
 		m_condition->updateMouseCursor(m_condition->graphicsView());
@@ -1115,6 +1119,8 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 			case meDefining:
 				iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolygonDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 				break;
+			default:
+				break;
 			}
 			updateMouseCursor(v);
 			updateActionStatus();
@@ -1127,6 +1133,8 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 				iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			case meDefining:
 				iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				break;
+			default:
 				break;
 			}
 			updateMouseCursor(v);

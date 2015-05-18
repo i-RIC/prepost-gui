@@ -466,7 +466,7 @@ void PreProcessorBCDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsVi
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
-			bool selected;
+			bool selected = false;
 			if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 				tmpparent->nodeSelectingMouseReleaseEvent(event, v);
 				selected = (tmpparent->selectedVertices().count() > 0);

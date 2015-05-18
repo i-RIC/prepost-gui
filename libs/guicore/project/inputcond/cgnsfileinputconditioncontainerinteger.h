@@ -19,7 +19,7 @@ public:
 		setup(defNode);
 	}
 	/// Constructor (with copying)
-	CgnsFileInputConditionContainerInteger(const CgnsFileInputConditionContainerInteger& i) {
+	CgnsFileInputConditionContainerInteger(const CgnsFileInputConditionContainerInteger& i) : CgnsFileInputConditionContainer(i) {
 		copyValues(i);
 	}
 	/// Copyer

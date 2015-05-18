@@ -378,7 +378,7 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 				if (iAllOk) {
 					stream << "  " << tr("I, J, Variation") << endl;
 				}
-				int tmpj = j;
+				unsigned int tmpj = j;
 				if (tmpj == m_dimensionJ - 1) {tmpj = m_dimensionJ - 2;}
 				stream << "  " << i + 2 << ", " << tmpj + 1 << ", " << variation << endl;
 				iAllOk = false;
@@ -407,7 +407,7 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 				if (jAllOk) {
 					stream << "  " << tr("I, J, Variation") << endl;
 				}
-				int tmpi = i;
+				unsigned int tmpi = i;
 				if (tmpi == m_dimensionI - 1) {tmpi = m_dimensionI - 2;}
 				stream << "  " << tmpi + 1 << ", " << j + 2 << ", " << variation << endl;
 				jAllOk = false;
@@ -457,7 +457,7 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 
 	unsigned int centerI, centerJ;
 	getIJIndex(vid, &centerI, &centerJ);
-	int lineLimitIMin, lineLimitIMax, lineLimitJMin, lineLimitJMax;
+	unsigned int lineLimitIMin, lineLimitIMax, lineLimitJMin, lineLimitJMax;
 	double tmpv[3];
 
 	// test I = 0
@@ -658,7 +658,7 @@ bool Structured2DGrid::lineAtIIntersect(int i, const RectRegion& region)
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < m_dimensionJ; ++j) {
+	for (unsigned int j = 1; j < m_dimensionJ; ++j) {
 		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
@@ -673,7 +673,7 @@ bool Structured2DGrid::lineAtJIntersect(int j, const RectRegion& region)
 	double tmpv[3];
 	m_vtkGrid->GetPoint(vertexIndex(0, j), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < m_dimensionI; ++i) {
+	for (unsigned int i = 1; i < m_dimensionI; ++i) {
 		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);

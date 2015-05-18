@@ -171,6 +171,9 @@ void GridCreatingConditionExternalProgram::deleteGrid(const QString& fname)
 	int ret;
 	int fn;
 	int B;
+
+	Q_UNUSED(ret)
+
 	ret = cg_open(iRIC::toStr(fname).c_str(), CG_MODE_MODIFY, &fn);
 	cg_iRIC_GotoBase(fn, &B);
 	QStringList zoneNames;

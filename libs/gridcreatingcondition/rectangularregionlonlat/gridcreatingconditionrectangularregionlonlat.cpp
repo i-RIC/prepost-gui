@@ -281,7 +281,7 @@ Structured2DGrid* GridCreatingConditionRectangularRegionLonLat::createGridInner(
 	imax += 1;
 	jmax += 1;
 
-	if (imax * jmax > MAXGRIDSIZE || imax * jmax < 0) {
+	if (imax * jmax > MAXGRIDSIZE) {
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return nullptr;
 	}

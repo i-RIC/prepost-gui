@@ -165,7 +165,7 @@ void RawDataRiverPathPointInsertDialog::updatePoint()
 	m_newPoint->InhibitInterpolatorUpdate = true;
 	// direction.
 	QVector2D dir;
-	double ratio;
+	double ratio = 0;
 	// name
 	std::ostringstream oss;
 	oss << ui->nameSpinBox->value();

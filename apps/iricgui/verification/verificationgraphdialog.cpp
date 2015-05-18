@@ -166,19 +166,19 @@ void VerificationGraphDialog::exportData()
 		break;
 	case gtSWDvsError:
 		stream << "Stream-wise Distance,Residual Error" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
+		for (size_t i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->data()->sample(i).x() << "," << m_pointsCurve->data()->sample(i).y() << "," << endl;
 		}
 		break;
 	case gtMVvsCR:
 		stream << "Measured Values,Calculatioin Result" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
+		for (size_t i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->sample(i).x() << "," << m_pointsCurve->sample(i).y() << "," << endl;
 		}
 		break;
 	case gtMVvsError:
 		stream << "Measured Values,Residual Error" << endl;
-		for (int i = 0; i < m_pointsCurve->dataSize(); ++i) {
+		for (size_t i = 0; i < m_pointsCurve->dataSize(); ++i) {
 			stream << m_pointsCurve->sample(i).x() << "," << m_pointsCurve->sample(i).y() << "," << endl;
 		}
 		break;
@@ -334,8 +334,8 @@ void VerificationGraphDialog::updateGraph()
 
 	QVector<double> linex;
 	QVector<double> liney;
-	double xmin;
-	double xmax;
+	double xmin = 0;
+	double xmax = 0;
 	for (int i = 0; i < measuredVals.count(); ++i) {
 		if (i == 0 || xmin > measuredVals.at(i)) {xmin = measuredVals.at(i);}
 		if (i == 0 || xmax < measuredVals.at(i)) {xmax = measuredVals.at(i);}

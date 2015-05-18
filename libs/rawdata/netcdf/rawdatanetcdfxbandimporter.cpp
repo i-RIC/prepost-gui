@@ -117,11 +117,11 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	nc_get_var_double(ncid_in,timeVarId, times);
 
 	netcdf->m_lonValues.clear();
-	for (int i = 0; i < lonLen; ++i) {
+	for (size_t i = 0; i < lonLen; ++i) {
 		netcdf->m_lonValues.append(*(lons + i));
 	}
 	netcdf->m_latValues.clear();
-	for (int i = 0; i < latLen; ++i) {
+	for (size_t i = 0; i < latLen; ++i) {
 		netcdf->m_latValues.append(*(lats + i));
 	}
 
@@ -129,7 +129,7 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	GridRelatedConditionDimensionsContainer* dims = m_groupDataItem->dimensions();
 	GridRelatedConditionDimensionContainer* c = dims->containers().at(0);
 	QList<QVariant> timeVals;
-	for (int i = 0; i < timeLen; ++i) {
+	for (size_t i = 0; i < timeLen; ++i) {
 		timeVals.append(*(times + i));
 	}
 
@@ -189,11 +189,11 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 
 	ret = nc_get_att_float(ncid_in, rrVarId, "missing_value", &missingValue);
 
-	for (int i = 0; i < timeLen; ++i) {
+	for (size_t i = 0; i < timeLen; ++i) {
 		*(start_in) = i;
 		*(start_out) = i;
 		nc_get_vara_float(ncid_in, rrVarId, start_in, len_in, floatbuffer);
-		for (int j = 0; j < bufferSize; ++j) {
+		for (size_t j = 0; j < bufferSize; ++j) {
 			float val = *(floatbuffer + j);
 			*(doublebuffer + j) = val;
 			if (*(floatbuffer + j) == missingValue) {

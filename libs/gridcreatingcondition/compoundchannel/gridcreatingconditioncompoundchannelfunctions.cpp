@@ -335,30 +335,6 @@ Label235:
 	double Ymax = - BIGDOUBLE;
 	for (int I = 3; I <= Nx - 3; ++I) {
 		for (int J = 2; J <= Ny - 1; ++J) {
-			double Xfl = (X(I, J) + X(I + 1, J) + X(I, J + 1) + X(I + 1, J + 1)) / 4;
-			double Xfr = (X(I, J) + X(I + 1, J) + X(I, J - 1) + X(I + 1, J - 1)) / 4;
-			double Xbl = (X(I, J) + X(I - 1, J) + X(I, J + 1) + X(I - 1, J + 1)) / 4;
-			double Xbr = (X(I, J) + X(I - 1, J) + X(I, J - 1) + X(I - 1, J - 1)) / 4;
-
-			double Yfl = (Y(I, J) + Y(I + 1, J) + Y(I, J + 1) + Y(I + 1, J + 1)) / 4;
-			double Yfr = (Y(I, J) + Y(I + 1, J) + Y(I, J - 1) + Y(I + 1, J - 1)) / 4;
-			double Ybl = (Y(I, J) + Y(I - 1, J) + Y(I, J + 1) + Y(I - 1, J + 1)) / 4;
-			double Ybr = (Y(I, J) + Y(I - 1, J) + Y(I, J - 1) + Y(I - 1, J - 1)) / 4;
-
-			double G1f = (QVector2D(X(I + 1, J), Y(I + 1, J)) - QVector2D(X(I, J), Y(I, J))).length();
-			double G1b = (QVector2D(X(I - 1, J), Y(I - 1, J)) - QVector2D(X(I, J), Y(I, J))).length();
-			double G1l = (QVector2D(Xfl, Yfl) - QVector2D(Xbl, Ybl)).length();
-			double G1r = (QVector2D(Xfr, Yfr) - QVector2D(Xbr, Ybr)).length();
-			double G2f = (QVector2D(Xfl, Yfl) - QVector2D(Xfr, Yfr)).length();
-			double G2b = (QVector2D(Xbl, Ybl) - QVector2D(Xbr, Ybr)).length();
-			double G2l = (QVector2D(X(I, J + 1), Y(I, J + 1)) - QVector2D(X(I, J), Y(I, J))).length();
-			double G2r = (QVector2D(X(I, J - 1), Y(I, J - 1)) - QVector2D(X(I, J), Y(I, J))).length();
-
-			double Af = G2f / G1f;
-			double Ab = G2b / G1b;
-			double Al = G1l / G2l;
-			double Ar = G1r / G2r;
-
 			double Xf = (X(I, J) + X(I + 1, J)) / 2;
 			double Xb = (X(I, J) + X(I - 1, J)) / 2;
 			double Xl = (X(I, J) + X(I, J + 1)) / 2;
@@ -375,24 +351,6 @@ Label235:
 			double Aly = G1 / G2;
 			double Ary = G1 / G2;
 
-			double Aa = 0.0000001;
-			double Cc = 0.8;
-			int sgnp;
-			int sgnq;
-			if (I > 0) {
-				sgnp = 1;
-			} else if (I == 0) {
-				sgnp = 0;
-			} else {
-				sgnp = - 1;
-			}
-			if (J - 5 > 0) {
-				sgnq = 1;
-			} else if (J - 5 == 0) {
-				sgnq = 0;
-			} else {
-				sgnq = - 1;
-			}
 			double Pp = 0;
 			double Qq = 0;
 
