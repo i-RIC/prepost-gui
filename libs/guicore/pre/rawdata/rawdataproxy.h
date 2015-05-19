@@ -19,6 +19,7 @@ public:
 	RawDataProxy(RawData* rawdata) : ProjectDataItem(0) {
 		m_rawData = rawdata;
 	}
+	virtual ~RawDataProxy() {}
 	virtual void setupActors() {}
 	virtual void setupMenu() {}
 	virtual void setupDataItem();
@@ -27,6 +28,7 @@ public:
 	RawData* rawData() const {return m_rawData;}
 	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
+
 public slots:
 	virtual void updateGraphics() {}
 
