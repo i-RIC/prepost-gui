@@ -74,7 +74,7 @@ void ScalarBarWidget::setLabelTextSetting(const vtkTextPropertySettingContainer&
 
 void ScalarBarWidget::editTitleTextSetting()
 {
-	vtkTextPropertySettingDialog dialog;
+	vtkTextPropertySettingDialog dialog(this);
 	dialog.setSetting(m_titleTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
@@ -84,7 +84,7 @@ void ScalarBarWidget::editTitleTextSetting()
 
 void ScalarBarWidget::editLabelTextSetting()
 {
-	vtkTextPropertySettingDialog dialog;
+	vtkTextPropertySettingDialog dialog(this);
 	dialog.setSetting(m_labelTextSetting);
 	dialog.disableSize();
 	int ret = dialog.exec();
