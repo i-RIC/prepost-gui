@@ -18,6 +18,7 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <vector>
 
 #define ELEMNODENAME "Element"
 
@@ -81,39 +82,18 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 	cgsize_t dimV[3];
 	cg_narrays(&narrays);
 	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
-	double* dataX = new double[size[0]];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[size[0]];
-		ier = cg_array_read(1, tmpFloat);
-		for (int i = 0; i < size[0]; ++i) {
-			*(dataX + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(1, dataX);
-	}
-	// the second one must be Y.
-	ier = cg_array_info(2, buffer, &dType, &dim, dimV);
-	double* dataY = new double[size[0]];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[size[0]];
-		ier = cg_array_read(2, tmpFloat);
-		for (int i = 0; i < size[0]; ++i) {
-			*(dataY + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(2, dataY);
-	}
+	std::vector<double> dataX(size[0], 0);
+	std::vector<double> dataY(size[0], 0);
+	ier = cg_array_read_as(1, RealDouble, dataX.data());
+	ier = cg_array_read_as(2, RealDouble, dataY.data());
+
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 	for (int i = 0; i < size[0]; ++i) {
-		points->InsertNextPoint(*(dataX + i), *(dataY + i), 0);
+		points->InsertNextPoint(dataX[i], dataY[i], 0);
 	}
 	grid->SetPoints(points);
 	points->Delete();
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are loaded.
 	// load grid node connectivity data.
@@ -132,21 +112,19 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 			cgsize_t numCells;
 			cg_ElementDataSize(fn, B, Z, S, &numCells);
 			numCells = numCells / 3;
-			cgsize_t* elements;
-			elements = new cgsize_t[3 * numCells];
-			cg_elements_read(fn, B, Z, S, elements, NULL);
+			std::vector<cgsize_t> elements(3 * numCells, 0);
+			cg_elements_read(fn, B, Z, S, elements.data(), NULL);
 			grid->Allocate(numCells);
 			for (int i = 0; i < numCells; ++i) {
 				vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
-				int id0 = *(elements + i * 3) - 1;
-				int id1 = *(elements + i * 3 + 1) - 1;
-				int id2 = *(elements + i * 3 + 2) - 1;
+				int id0 = elements[i * 3] - 1;
+				int id1 = elements[i * 3 + 1] - 1;
+				int id2 = elements[i * 3 + 2] - 1;
 				triangle->GetPointIds()->SetId(0, id0);
 				triangle->GetPointIds()->SetId(1, id1);
 				triangle->GetPointIds()->SetId(2, id2);
 				grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
 			}
-			delete elements;
 		}
 	}
 	loadGridRelatedConditions(fn, B, Z);
@@ -182,39 +160,35 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
 	if (ier != 0) {return false;}
 	int C;
 	// save coordinates.
-	double* dataX = new double[m_vtkGrid->GetNumberOfPoints()];
-	double* dataY = new double[m_vtkGrid->GetNumberOfPoints()];
+	std::vector<double> dataX(m_vtkGrid->GetNumberOfPoints(), 0);
+	std::vector<double> dataY(m_vtkGrid->GetNumberOfPoints(), 0);
 	double points[3];
 
 	for (int i = 0; i < m_vtkGrid->GetNumberOfPoints(); ++i) {
 		m_vtkGrid->GetPoints()->GetPoint(i, points);
-		*(dataX + i) = points[0];
-		*(dataY + i) = points[1];
+		dataX[i] = points[0];
+		dataY[i] = points[1];
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
 	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
 	if (ier != 0) {return false;}
-
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are saved.
 	// Save grid node connectivity data.
 	// Unstructured grid that consists of triangles is supported.
 
-	cgsize_t* elements;
-	elements = new cgsize_t[3 * m_vtkGrid->GetNumberOfCells()];
+	std::vector<cgsize_t> elements(3 * m_vtkGrid->GetNumberOfCells());
 	for (int i = 0; i < m_vtkGrid->GetNumberOfCells(); ++i) {
 		vtkTriangle* tri = dynamic_cast<vtkTriangle*>(m_vtkGrid->GetCell(i));
-		*(elements + i * 3)     = tri->GetPointId(0) + 1;
-		*(elements + i * 3 + 1) = tri->GetPointId(1) + 1;
-		*(elements + i * 3 + 2) = tri->GetPointId(2) + 1;
+		elements[i * 3]     = tri->GetPointId(0) + 1;
+		elements[i * 3 + 1] = tri->GetPointId(1) + 1;
+		elements[i * 3 + 2] = tri->GetPointId(2) + 1;
 	}
 	int startIndex = 1;
 	int endIndex = startIndex + m_vtkGrid->GetNumberOfCells() - 1;
 	int S;
-	ier = cg_section_write(fn, B, zoneid, ELEMNODENAME, TRI_3, startIndex, endIndex, 0, elements, &S);
+	ier = cg_section_write(fn, B, zoneid, ELEMNODENAME, TRI_3, startIndex, endIndex, 0, elements.data(), &S);
 	if (ier != 0) {return false;}
 
 	// Next grid related condition data is saved.

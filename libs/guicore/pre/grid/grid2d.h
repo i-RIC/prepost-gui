@@ -22,7 +22,6 @@ public:
 	 * @param v The coordinates of the vertex.
 	 */
 	virtual void setVertex(unsigned int index, const QVector2D& v) = 0;
-//	virtual QGraphicsItem* buildGraphicsItem(QGraphicsItem* parent, QGraphicsScene* scene){return 0;}
 };
 
 #endif // GRID2D_H

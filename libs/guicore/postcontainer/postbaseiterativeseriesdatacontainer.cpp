@@ -5,6 +5,7 @@
 #include <misc/stringtool.h>
 
 #include <cgnslib.h>
+#include <vector>
 
 #if CGNS_VERSION < 3100
 #define cgsize_t int
@@ -37,13 +38,12 @@ bool PostBaseIterativeSeriesDataContainer::loadData(const int fn)
 		if (m_baseIterativeName == arrayname) {
 			// load data.
 			// it must be an array with dimension 1.
-			double* buffer = new double[dimVector[0]];
-			ier = cg_array_read_as(i, RealDouble, buffer);
-			for (int j = 0; j < dimVector[0]; ++j) {
-				m_data.append(*(buffer + j));
-			}
-			delete buffer;
+			std::vector<double> buffer(dimVector[0], 0);
+			ier = cg_array_read_as(i, RealDouble, buffer.data());
 			if (ier != 0) {return false;}
+			for (double d : buffer) {
+				m_data.append(d);
+			}
 			return true;
 		}
 	}

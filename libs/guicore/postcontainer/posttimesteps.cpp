@@ -9,6 +9,8 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <vector>
+
 #if CGNS_VERSION < 3100
 #define cgsize_t int
 #endif
@@ -52,18 +54,15 @@ void PostTimeSteps::loadFromCgnsFile(const int fn)
 		// search for "TimeValues" node.
 		if (QString(buffer) == "TimeValues") {
 			// we've found the node! let's read.
-			double* timesteps;
 			// in case of "TimeValues" node, dataDimension = 1, and dimensionVector[0]
 			// containes the number of timesteps.
 			// anyway, the number of timesteps is already read, by cg_biter_read()
 			// and stored in nsteps.
-			timesteps = new double[nsteps];
-			ier = cg_array_read(i, timesteps);
+			std::vector<double> timesteps(nsteps);
+			ier = cg_array_read(i, timesteps.data());
 			for (int j = 0; j < nsteps; ++j) {
 				tmplist.push_back(timesteps[j]);
 			}
-			// temporary buffer timesteps is not needed anymore.
-			delete timesteps;
 
 			if (ier != 0) {goto ERRORMSG;}
 			// we do not need to do the rest of i loop.

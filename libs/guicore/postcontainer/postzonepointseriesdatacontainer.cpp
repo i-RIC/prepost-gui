@@ -50,7 +50,6 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 	ier = cg_nsols(fn, m_baseId, m_zoneId, &numSols);
 	if (ier != 0) {return false;}
 	m_data.clear();
-	double* buffer = nullptr;
 	QRegExp rx("^(.+) \\(magnitude\\)$");
 	bool magnitude = (rx.indexIn(m_physName) != -1);
 	QString tmpPhysName = m_physName;
@@ -77,22 +76,20 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 			for (int dim = 1; dim <= dimension; ++dim) {
 				dataLen = dataLen * dimVector[dim - 1];
 			}
-			if (buffer == nullptr) {
-				buffer = new double[dataLen];
-			}
-			ier = cg_array_read_as(j, RealDouble, buffer);
+			std::vector<double> buffer(dataLen);
+			ier = cg_array_read_as(j, RealDouble, buffer.data());
 			if (magnitude) {
 				if (
 					name == QString(tmpPhysName).append("X") ||
 					name == QString(tmpPhysName).append("Y") ||
 					name == QString(tmpPhysName).append("Z")
 				) {
-					double currVal = *(buffer + m_pointIndex);
+					double currVal = buffer[m_pointIndex];
 					value += currVal * currVal;
 				}
 			} else {
 				if (tmpPhysName == name) {
-					value = *(buffer + m_pointIndex);
+					value = buffer[m_pointIndex];
 				}
 			}
 		}
@@ -101,6 +98,5 @@ bool PostZonePointSeriesDataContainer::loadData(const int fn)
 		}
 		m_data.append(value);
 	}
-	delete buffer;
 	return true;
 }

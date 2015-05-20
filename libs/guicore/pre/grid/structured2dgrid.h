@@ -69,7 +69,6 @@ public:
 	void setVertex(unsigned int index, const QVector2D& v);
 	bool loadFromCgnsFile(const int fn, int base, int zoneid);
 	bool saveToCgnsFile(const int fn, int base, char* zonename);
-//	QGraphicsItem* buildGraphicsItem(QGraphicsItem* parent, QGraphicsScene* scene);
 	/// getDimension of this grid.
 	void dimensions(unsigned int* i, unsigned int* j);
 	unsigned int dimensionI() {return m_dimensionI;}

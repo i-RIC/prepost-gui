@@ -32,6 +32,7 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <vector>
 
 #define ELEMNODENAME "Element"
 
@@ -153,16 +154,13 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
 			if (QString(arrayname) == "GridCoordinatesPointers") {
 				// GridCoordinatesPointers found.
-				char* pointers;
-				// dimension = 2, dimVector = [32, NumberOfSteps].
-				pointers = new char[dimVector[0] * dimVector[1]];
-				cg_array_read(i, pointers);
+				std::vector<char> pointers(dimVector[0] * dimVector[1]);
+				cg_array_read(i, pointers.data());
 				char currentCoordinates[32];
 				memcpy(currentCoordinates, &(pointers[32 * currentStep]), 32);
 				// currentCoordinates is not null terminated.
 				currentCoordinates[31] = '\0';
 				QString curCoord = QString(currentCoordinates).trimmed();
-				delete pointers;
 				// now, goto the specified coordinates node.
 				ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, iRIC::toStr(curCoord).c_str(), 0, "end");
 				iterativeCoordinates = true;
@@ -185,80 +183,30 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
 	vtkPoints* points = 0;
-	double* dataX, *dataY, *dataZ;
+
 	size_t numPoints = NVertexI * NVertexJ * NVertexK;
-	dataX = new double[numPoints];
-	dataY = new double[numPoints];
-	dataZ = new double[numPoints];
+	std::vector<double> dataX(numPoints, 0);
+	std::vector<double> dataY(numPoints, 0);
+	std::vector<double> dataZ(numPoints, 0);
 
-	// RealSingle or RealDouble
-	if (dType == RealSingle) {
-		float* tmpX, *tmpY, *tmpZ;
-		tmpX = new float[numPoints];
-		tmpY = new float[numPoints];
-		tmpZ = new float[numPoints];
+	ier = cg_array_read_as(1, RealDouble, dataX.data());
+	if (ier != 0) {return ier;}
 
-		// the first one must be X.
-		ier = cg_array_read(1, tmpX);
-		if (ier != 0) {goto FREETMP;}
-		if (m_cellDim >= 2) {
-			// the second one must be Y.
-			ier = cg_array_read(2, tmpY);
-			if (ier != 0) {goto FREETMP;}
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpY + i) = 0;}
-		}
-		if (m_cellDim == 3) {
-			// the third one must be Z.
-			ier = cg_array_read(3, tmpZ);
-			if (ier != 0) {goto FREETMP;}
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpZ + i) = 0;}
-		}
-		for (unsigned int i = 0; i < numPoints; i++) {
-			*(dataX + i) = *(tmpX + i);
-			*(dataY + i) = *(tmpY + i);
-			*(dataZ + i) = *(tmpZ + i);
-		}
-
-FREETMP:
-
-		delete[] tmpX;
-		delete[] tmpY;
-		delete[] tmpZ;
-
-		if (ier != 0) {
-			goto FREEDATA;
-		}
-	} else {
-		// the first one must be X.
-		ier = cg_array_read(1, dataX);
-		if (ier != 0) {goto FREEDATA;}
-
-		if (m_cellDim >= 2) {
-			// the second one must be Y.
-			ier = cg_array_read(2, dataY);
-			if (ier != 0) {goto FREEDATA;}
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(dataY + i) = 0;}
-		}
-		if (m_cellDim == 3) {
-			// the third one must be Z.
-			ier = cg_array_read(3, dataZ);
-			if (ier != 0) {goto FREEDATA;}
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(dataZ + i) = 0;}
-		}
+	if (m_cellDim >= 2) {
+		ier = cg_array_read_as(2, RealDouble, dataY.data());
+		if (ier != 0) {return ier;}
+	}
+	if (m_cellDim == 3) {
+		ier = cg_array_read_as(3, RealDouble, dataZ.data());
+		if (ier != 0) {return ier;}
 	}
 
 	points = vtkPoints::New();
 	for (int k = 0; k < NVertexK; ++k) {
 		for (int j = 0; j < NVertexJ; ++j) {
 			for (int i = 0; i < NVertexI; ++i) {
-				points->InsertNextPoint(
-					*(dataX + i + NVertexI * (j + NVertexJ * k)),
-					*(dataY + i + NVertexI * (j + NVertexJ * k)),
-					*(dataZ + i + NVertexI * (j + NVertexJ * k)));
+				int idx = i + NVertexI * (j + NVertexJ * k);
+				points->InsertNextPoint(dataX[idx], dataY[idx], dataZ[idx]);
 			}
 		}
 	}
@@ -266,12 +214,7 @@ FREETMP:
 	grid->Modified();
 	points->Delete();
 
-FREEDATA:
-
-	delete[] dataX;
-	delete[] dataY;
-	delete[] dataZ;
-	return (ier == 0);
+	return 0;
 }
 
 bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int currentStep)
@@ -306,16 +249,13 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 			cg_array_info(i, arrayname, &dataType, &dimension, dimVector);
 			if (QString(arrayname) == "GridCoordinatesPointers") {
 				// GridCoordinatesPointers found.
-				char* pointers;
-				// dimension = 2, dimVector = [32, NumberOfSteps].
-				pointers = new char[dimVector[0] * dimVector[1]];
-				cg_array_read(i, pointers);
+				std::vector<char> pointers(dimVector[0] * dimVector[1]);
+				cg_array_read(i, pointers.data());
 				char currentCoordinates[32];
 				memcpy(currentCoordinates, &(pointers[32 * currentStep]), 32);
 				// currentCoordinates is not null terminated.
 				currentCoordinates[31] = '\0';
 				QString curCoord = QString(currentCoordinates).trimmed();
-				delete pointers;
 				// now, goto the specified coordinates node.
 				ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, iRIC::toStr(curCoord).c_str(), 0, "end");
 				iterativeCoordinates = true;
@@ -338,73 +278,31 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	cgsize_t dVector[3];
 	cg_array_info(1, aName, &dType, &d, dVector);
 
-	double* dataX, *dataY, *dataZ;
 	size_t numPoints = NVertex;
-	dataX = new double[numPoints];
-	dataY = new double[numPoints];
-	dataZ = new double[numPoints];
+	std::vector<double> dataX(numPoints, 0);
+	std::vector<double> dataY(numPoints, 0);
+	std::vector<double> dataZ(numPoints, 0);
 
-	// RealSingle or RealDouble
-	if (dType == RealSingle) {
-		float* tmpX, *tmpY, *tmpZ;
-		tmpX = new float[numPoints];
-		tmpY = new float[numPoints];
-		tmpZ = new float[numPoints];
+	ier = cg_array_read_as(1, RealDouble, dataX.data());
+	if (ier != 0) {return ier;}
 
-		// the first one must be X.
-		ier = cg_array_read(1, tmpX);
-		if (m_cellDim >= 2) {
-			// the second one must be Y.
-			ier = cg_array_read(2, tmpY);
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpY + i) = 0;}
-		}
-		if (m_cellDim == 3) {
-			// the third one must be Z.
-			ier = cg_array_read(3, tmpZ);
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(tmpZ + i) = 0;}
-		}
-		for (unsigned int i = 0; i < numPoints; i++) {
-			*(dataX + i) = *(tmpX + i);
-			*(dataY + i) = *(tmpY + i);
-			*(dataZ + i) = *(tmpZ + i);
-		}
-		delete[] tmpX;
-		delete[] tmpY;
-		delete[] tmpZ;
-	} else {
-		// the first one must be X.
-		ier = cg_array_read(1, dataX);
-
-		if (m_cellDim >= 2) {
-			// the second one must be Y.
-			ier = cg_array_read(2, dataY);
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(dataY + i) = 0;}
-		}
-		if (m_cellDim == 3) {
-			// the third one must be Z.
-			ier = cg_array_read(3, dataZ);
-		} else {
-			for (unsigned int i = 0; i < numPoints; ++i) {*(dataZ + i) = 0;}
-		}
+	if (m_cellDim >= 2) {
+		ier = cg_array_read_as(2, RealDouble, dataY.data());
+		if (ier != 0) {return ier;}
+	}
+	if (m_cellDim == 3) {
+		ier = cg_array_read_as(3, RealDouble, dataZ.data());
+		if (ier != 0) {return ier;}
 	}
 
-	vtkPoints* points = vtkPoints::New();
+	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	for (int i = 0; i < NVertex; ++i) {
-		points->InsertNextPoint(
-			*(dataX + i),
-			*(dataY + i),
-			*(dataZ + i));
+		points->InsertNextPoint(dataX[i], dataY[i], dataZ[i]);
 	}
 	grid->SetPoints(points);
 
 	grid->Modified();
 	points->Delete();
-	delete[] dataX;
-	delete[] dataY;
-	delete[] dataZ;
 
 	// Grid coordinates are loaded.
 	// load grid node connectivity data.
@@ -424,21 +322,19 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 			cgsize_t numCells;
 			cg_ElementDataSize(fn, m_baseId, m_zoneId, S, &numCells);
 			numCells = numCells / 3;
-			cgsize_t* elements;
-			elements = new cgsize_t[3 * numCells];
-			cg_elements_read(fn, m_baseId, m_zoneId, S, elements, NULL);
+			std::vector<cgsize_t> elements(3 * numCells, 0);
+			cg_elements_read(fn, m_baseId, m_zoneId, S, elements.data(), NULL);
 			grid->Allocate(numCells);
+			vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
 			for (int i = 0; i < numCells; ++i) {
-				vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
-				int id0 = *(elements + i * 3) - 1;
-				int id1 = *(elements + i * 3 + 1) - 1;
-				int id2 = *(elements + i * 3 + 2) - 1;
+				int id0 = elements[i * 3] - 1;
+				int id1 = elements[i * 3 + 1] - 1;
+				int id2 = elements[i * 3 + 2] - 1;
 				triangle->GetPointIds()->SetId(0, id0);
 				triangle->GetPointIds()->SetId(1, id1);
 				triangle->GetPointIds()->SetId(2, id2);
 				grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
 			}
-			delete elements;
 		}
 	}
 	return true;
@@ -447,8 +343,6 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 {
 	int ier;
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> verts = vtkSmartPointer<vtkCellArray>::New();
 
 	if (m_particleData != 0) {
 		m_particleData->Initialize();
@@ -474,53 +368,47 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	// get the number of particles.
 	cg_array_info(1, aName, &dType, &d, dVector);
 
-	double* dataX, *dataY, *dataZ;
-	cgsize_t numParticles = dVector[0];
-	dataX = new double[numParticles];
-	dataY = new double[numParticles];
-	dataZ = new double[numParticles];
+	size_t numParticles = dVector[0];
+	std::vector<double> dataX(numParticles, 0);
+	std::vector<double> dataY(numParticles, 0);
+	std::vector<double> dataZ(numParticles, 0);
 
 	int firstAttId = 4;
 
 	// Read X
 	ier = cg_array_info(1, aName, &dType, &d, dVector);
 	if (ier != 0 || QString(aName) != "CoordinateX" || dVector[0] != numParticles) {
-		goto ERROR;
+		return false;
 	}
-	ier = cg_array_read(1, dataX);
-	if (ier != 0) {goto ERROR;}
+	ier = cg_array_read_as(1, RealDouble, dataX.data());
+	if (ier != 0) {return false;}
 
 	// Read Y
 	ier = cg_array_info(2, aName, &dType, &d, dVector);
 	if (ier != 0 || QString(aName) != "CoordinateY" || dVector[0] != numParticles) {
-		goto ERROR;
+		return false;
 	}
-	ier = cg_array_read(2, dataY);
-	if (ier != 0) {goto ERROR;}
+	ier = cg_array_read_as(2, RealDouble, dataY.data());
+	if (ier != 0) {return false;}
 
 	// Read Z (optional)
 	ier = cg_array_info(3, aName, &dType, &d, dVector);
 	if (ier != 0 || QString(aName) != "CoordinateZ") {
 		// Z data does not exist;
-		for (cgsize_t i = 0; i < numParticles; ++i) {
-			*(dataZ + i) = 0;
-		}
 		firstAttId = 3;
 	} else {
 		if (dVector[0] != numParticles) {
-			goto ERROR;
+			return false;
 		}
-		ier = cg_array_read(3, dataZ);
-		if (ier != 0) {goto ERROR;}
+		ier = cg_array_read_as(3, RealDouble, dataZ.data());
+		if (ier != 0) {return false;}
 	}
 
 	// X, Y, Z are setup.
-
-	for (cgsize_t i = 0; i < numParticles; ++i) {
-		points->InsertNextPoint(
-			*(dataX + i),
-			*(dataY + i),
-			*(dataZ + i));
+	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	vtkSmartPointer<vtkCellArray> verts = vtkSmartPointer<vtkCellArray>::New();
+	for (size_t i = 0; i < numParticles; ++i) {
+		points->InsertNextPoint(dataX[i], dataY[i], dataZ[i]);
 		vtkIdType pId = i;
 		verts->InsertNextCell(1, &pId);
 	}
@@ -531,57 +419,43 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	// load attributes
 	int numArrays;
 	ier = cg_narrays(&numArrays);
-	if (ier != 0) {goto ERROR;}
+	if (ier != 0) {return false;}
 
 	for (int i = firstAttId; i <= numArrays; ++i) {
 		ier = cg_array_info(i, aName, &dType, &d, dVector);
-		if (ier != 0) {goto ERROR;}
-		if (dVector[0] != numParticles) {
-			goto ERROR;
-		}
+		if (ier != 0) {return false;}
+		if (dVector[0] != numParticles) {return false;}
 		if (dType == Integer) {
-			int* att = new int[numParticles];
-			ier = cg_array_read(i, att);
+			std::vector<int> att(numParticles, 0);
+			ier = cg_array_read(i, att.data());
 			if (ier != 0) {
-				delete[] att;
-				goto ERROR;
+				return false;
 			}
 			vtkSmartPointer<vtkIntArray> attArray = vtkSmartPointer<vtkIntArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (cgsize_t j = 0; j < numParticles; ++j) {
-				attArray->InsertNextValue(*(att + j));
+			for (int val : att) {
+				attArray->InsertNextValue(val);
 			}
 			m_particleData->GetPointData()->AddArray(attArray);
-			delete[] att;
 		} else if (dType == RealDouble) {
-			double* att = new double[numParticles];
-			ier = cg_array_read(i, att);
+			std::vector<double> att(numParticles, 0);
+			ier = cg_array_read(i, att.data());
 			if (ier != 0) {
-				delete[] att;
-				goto ERROR;
+				return false;
 			}
 			vtkSmartPointer<vtkDoubleArray> attArray = vtkSmartPointer<vtkDoubleArray>::New();
 			attArray->SetName(aName);
 			attArray->Allocate(numParticles);
-			for (cgsize_t j = 0; j < numParticles; ++j) {
-				attArray->InsertNextValue(*(att + j));
+			for (double val : att) {
+				attArray->InsertNextValue(val);
 			}
 			m_particleData->GetPointData()->AddArray(attArray);
-			delete[] att;
 		}
 	}
 	m_particleData->Modified();
 
 	return true;
-
-ERROR:
-	delete[] dataX;
-	delete[] dataY;
-	delete[] dataZ;
-	m_particleData->Initialize();
-
-	return false;
 }
 
 
@@ -983,12 +857,11 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 				// load data.
 				vtkSmartPointer<vtkIntArray> iarray = vtkSmartPointer<vtkIntArray>::New();
 				unsigned int count = m_data->GetNumberOfCells();
-				int* data = new int[count];
-				ier = cg_array_read(i, data);
-				for (unsigned int j = 0; j < count; ++j) {
-					iarray->InsertNextValue(*(data + j));
+				std::vector<int> data(count);
+				ier = cg_array_read(i, data.data());
+				for (int val : data) {
+					iarray->InsertNextValue(val);
 				}
-				delete[] data;
 				iarray->SetName(iRIC::toStr(cond->name()).c_str());
 
 				m_data->GetCellData()->AddArray(iarray);

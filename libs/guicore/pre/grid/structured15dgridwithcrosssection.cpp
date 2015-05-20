@@ -11,6 +11,8 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <vector>
+
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent)
 	: Grid2D(SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent)
 {
@@ -54,20 +56,22 @@ void Structured15DGridWithCrossSection::setPoints(vtkPoints* points)
 	vertices->SetPoints(points);
 
 	// for edges
+	vtkLine* line = vtkLine::New();
 	for (vtkIdType i = 0; i < num - 1; i++) {
-		vtkLine* line = vtkLine::New();
 		line->GetPointIds()->InsertId(0, i);
 		line->GetPointIds()->InsertId(1, i + 1);
 		edges->InsertNextCell(line->GetCellType(), line->GetPointIds());
 	}
+	line->Delete();
 	edges->BuildLinks();
 
 	// for vertices
+	vtkVertex* vertex = vtkVertex::New();
 	for (vtkIdType i = 0; i < num; i++) {
-		vtkVertex* vertex = vtkVertex::New();
 		vertex->GetPointIds()->InsertId(0, i);
 		vertices->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 	}
+	vertex->Delete();
 	vertices->BuildLinks();
 }
 
@@ -92,39 +96,20 @@ bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, in
 	cgsize_t dimV[3];
 	cg_narrays(&narrays);
 	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
-	double* dataX = new double[riversize];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[riversize];
-		ier = cg_array_read(1, tmpFloat);
-		for (int i = 0; i < riversize; i++) {
-			*(dataX + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(1, dataX);
-	}
-	// the second one must be Y;
-	ier = cg_array_info(2, buffer, &dType, &dim, dimV);
-	double* dataY = new double[riversize];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[riversize];
-		ier = cg_array_read(2, tmpFloat);
-		for (int i = 0; i < riversize; i++) {
-			*(dataY + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(2, dataY);
-	}
+
+	std::vector<double> dataX(riversize, 0);
+	std::vector<double> dataY(riversize, 0);
+
+	ier = cg_array_read_as(1, RealDouble, dataX.data());
+	ier = cg_array_read_as(2, RealDouble, dataY.data());
+
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 	for (int i = 0; i < riversize; i++) {
-		points->InsertNextPoint(*(dataX + i), *(dataY + i), 0);
+		points->InsertNextPoint(dataX[i], dataY[i], 0);
 	}
 	setPoints(points);
 	points->Delete();
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
@@ -169,22 +154,19 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, char
 	if (ier != 0) {return false;}
 	int C;
 	// save coordinates.
-	double* dataX = new double[num];
-	double* dataY = new double[num];
+	std::vector<double> dataX(num, 0);
+	std::vector<double> dataY(num, 0);
 	double points[3];
 
 	for (int i = 0; i < num; i++) {
 		m_vtkGrid->GetPoints()->GetPoint(i, points);
-		*(dataX + i) = points[0];
-		*(dataY + i) = points[1];
+		dataX[i] = points[0];
+		dataY[i] = points[1];
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
 	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
 	if (ier != 0) {return false;}
-
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are saved.
 	// Next grid related condition data is saved.
@@ -196,8 +178,8 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, char
 	cg_goto(fn, B, "Zone_t", zoneid, "end");
 	cg_user_data_write("GridCrosssections");
 	int index = 1;
-	for (auto it2 = m_crossSections.begin(); it2 != m_crossSections.end(); it2++) {
-		(*it2)->saveToCgnsFile(fn, B, zoneid, index);
+	for (Structured15DGridWithCrossSectionCrossSection* xsec : m_crossSections) {
+		xsec->saveToCgnsFile(fn, B, zoneid, index);
 		index++;
 	}
 	return true;

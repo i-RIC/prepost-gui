@@ -8,6 +8,7 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <vector>
 
 #if CGNS_VERSION < 3100
 #define cgsize_t int
@@ -52,18 +53,15 @@ void PostIterationSteps::loadFromCgnsFile(const int fn)
 		// search for "IterationValues" node.
 		if (QString(buffer) == "IterationValues") {
 			// we've found the node! let's read.
-			int* iterationsteps;
 			// in case of "IterationValues" node, dataDimension = 1, and dimensionVector[0]
 			// containes the number of iterationsteps.
 			// anyway, the number of iterationsteps is already read, by cg_biter_read()
 			// and stored in nsteps.
-			iterationsteps = new int[nsteps];
-			ier = cg_array_read(i, iterationsteps);
+			std::vector<int> iterationsteps(nsteps);
+			ier = cg_array_read(i, iterationsteps.data());
 			for (int j = 0; j < nsteps; ++j) {
 				tmplist.push_back(iterationsteps[j]);
 			}
-			// temporary buffer iterationsteps is not needed anymore.
-			delete iterationsteps;
 
 			if (ier != 0) {goto ERRORMSG;}
 			// we do not need to do the rest of i loop.

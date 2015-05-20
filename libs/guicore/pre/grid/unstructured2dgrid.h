@@ -28,6 +28,7 @@ public:
 	}
 	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return m_vtkFilteredIndexGridAlgorithm;}
 	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
+
 private:
 	void init();
 	void setupIndexArray();

@@ -27,6 +27,8 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+#include <vector>
+
 Structured2DGrid::Structured2DGrid(ProjectDataItem* parent)
 	: Grid2D(SolverDefinitionGridType::gtStructured2DGrid, parent)
 {
@@ -99,41 +101,21 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	cgsize_t dimV[3];
 	cg_narrays(&narrays);
 	ier = cg_array_info(1, buffer, &dType, &dim, dimV);
-	double* dataX = new double[m_dimensionI * m_dimensionJ];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[m_dimensionI * m_dimensionJ];
-		ier = cg_array_read(1, tmpFloat);
-		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i) {
-			*(dataX + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(1, dataX);
-	}
-	// the second one must be Y.
-	ier = cg_array_info(2, buffer, &dType, &dim, dimV);
-	double* dataY = new double[m_dimensionI * m_dimensionJ];
-	if (dType == RealSingle) {
-		float* tmpFloat = new float[m_dimensionI * m_dimensionJ];
-		ier = cg_array_read(2, tmpFloat);
-		for (unsigned int i = 0; i < m_dimensionI * m_dimensionJ; ++i) {
-			*(dataY + i) = *(tmpFloat + i);
-		}
-		delete[] tmpFloat;
-	} else {
-		ier = cg_array_read(2, dataY);
-	}
+	std::vector<double> dataX(m_dimensionI * m_dimensionJ, 0);
+	std::vector<double> dataY(m_dimensionI * m_dimensionJ, 0);
+
+	cg_array_read_as(1, RealDouble, dataX.data());
+	cg_array_read_as(2, RealDouble, dataY.data());
+
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();
 	for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 		for (unsigned int i = 0; i < m_dimensionI; ++i) {
-			points->InsertNextPoint(*(dataX + m_dimensionI * j + i), *(dataY + m_dimensionI * j + i), 0);
+			points->InsertNextPoint(dataX[m_dimensionI * j + i], dataY[m_dimensionI * j + i], 0);
 		}
 	}
 	grid->SetPoints(points);
 	points->Delete();
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
@@ -168,24 +150,21 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
 	if (ier != 0) {return false;}
 	int C;
 	// save coordinates.
-	double* dataX = new double[m_dimensionI * m_dimensionJ];
-	double* dataY = new double[m_dimensionI * m_dimensionJ];
+	std::vector<double> dataX(m_dimensionI * m_dimensionJ, 0);
+	std::vector<double> dataY(m_dimensionI * m_dimensionJ, 0);
 	double points[3];
 
 	for (unsigned int i = 0; i < m_dimensionI; ++i) {
 		for (unsigned int j = 0; j < m_dimensionJ; ++j) {
 			m_vtkGrid->GetPoints()->GetPoint(i + m_dimensionI * j, points);
-			*(dataX + i + m_dimensionI * j) = points[0];
-			*(dataY + i + m_dimensionI * j) = points[1];
+			dataX[i + m_dimensionI * j] = points[0];
+			dataY[i + m_dimensionI * j] = points[1];
 		}
 	}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateX", dataX.data(), &C);
 	if (ier != 0) {return false;}
-	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY, &C);
+	ier = cg_coord_write(fn, B, zoneid, RealDouble, "CoordinateY", dataY.data(), &C);
 	if (ier != 0) {return false;}
-
-	delete[] dataX;
-	delete[] dataY;
 
 	// Grid coordinates are saved.
 	// Next grid related condition data is saved.
