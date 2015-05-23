@@ -153,12 +153,9 @@ protected:
 	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
 };
 
-<<<<<<< HEAD
-=======
 /**
  * @brief Spline curve solver for grid control points on river crosssection lines
  */
->>>>>>> doxygen-doc
 class RD_RIVERSURVEY_EXPORT RiverGridCtrlSolver : public RiverSplineSolver
 {
 public:
@@ -173,10 +170,7 @@ public:
 	~RiverGridCtrlSolver() {}
 	void SetIndex(int index) {m_Index = index;}
 	int Index() const {return m_Index;}
-<<<<<<< HEAD
-=======
 	/// Set the bank side: left or right
->>>>>>> doxygen-doc
 	void SetBankSide(Bank side) {
 		m_BankSide = side;
 	}
@@ -231,17 +225,10 @@ public:
 	void updateParameters() {
 		m_parent->update();
 	}
-<<<<<<< HEAD
-	QVector2D interpolate(double t) {
-		return m_parent->interpolate(m_Index, t);
-	}
-	Interpolator2D1* copy();
-=======
 	QVector2D interpolate(double t) const {
 		return m_parent->interpolate(m_Index, t);
 	}
 	Interpolator2D1* copy() const;
->>>>>>> doxygen-doc
 protected:
 	RiverSplineSolver* m_parent;
 	int m_Index;
@@ -263,11 +250,7 @@ public:
 	}
 	virtual ~RiverSplineInterpolatorCopy() {}
 	void updateParameters() {}
-<<<<<<< HEAD
-	QVector2D interpolate(double t) {
-=======
 	QVector2D interpolate(double t) const {
->>>>>>> doxygen-doc
 		t *= m_D;
 		double x =
 			m_XA +
@@ -281,11 +264,7 @@ public:
 			m_YD * t * t * t;
 		return QVector2D(x, y);
 	}
-<<<<<<< HEAD
-	virtual Interpolator2D1* copy() {
-=======
 	virtual Interpolator2D1* copy() const {
->>>>>>> doxygen-doc
 		Interpolator2D1* copy = new RiverSplineInterpolatorCopy(m_D, m_XA, m_XB, m_XC, m_XD, m_YA, m_YB, m_YC, m_YD);
 		return copy;
 	}
