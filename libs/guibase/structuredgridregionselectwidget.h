@@ -10,7 +10,7 @@ namespace Ui
 {
 	class StructuredGridRegionSelectWidget;
 }
-
+/// Widget to select two-dimensional structured grid region
 class GUIBASEDLL_EXPORT StructuredGridRegionSelectWidget : public QWidget
 {
 	Q_OBJECT
@@ -18,19 +18,31 @@ class GUIBASEDLL_EXPORT StructuredGridRegionSelectWidget : public QWidget
 public:
 	explicit StructuredGridRegionSelectWidget(QWidget* parent = nullptr);
 	~StructuredGridRegionSelectWidget();
+	/// Set the grid dimensions
 	void setGridDimensions(int idim, int jdim);
+	/// Set the iMin of the selected area
 	void setiMin(int imin);
+	/// Set the iMax of the selected area
 	void setiMax(int imax);
+	/// Set the jMin of the selected area
 	void setjMin(int jmin);
+	/// Set the jMax of the selected area
 	void setjMax(int jmax);
+	/// Set the selected region
 	void setRegion(const StructuredGridRegion::Range2d& region);
+	/// Apply setting to select whole grid region
 	void selectAll();
 
-	int iMin();
-	int iMax();
-	int jMin();
-	int jMax();
-	StructuredGridRegion::Range2d region();
+	/// iMin of the selected area
+	int iMin() const;
+	/// iMax of the selected area
+	int iMax() const;
+	/// jMin of the selected area
+	int jMin() const;
+	/// jMax of the selected area
+	int jMax() const;
+	/// Selected area region
+	StructuredGridRegion::Range2d region() const;
 
 private slots:
 	void handleIMinChange(int imin);

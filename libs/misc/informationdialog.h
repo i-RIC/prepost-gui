@@ -9,13 +9,17 @@ namespace Ui
 	class InformationDialog;
 }
 
+/// Misc class to show message dialog with "Do not show this message again" checkbox
 class MISCDLL_EXPORT InformationDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
+	/// Show information dialog
 	static void information(QWidget* parent, const QString& title, const QString& message, const QString& name);
+	/// Show warning dialog
 	static void warning(QWidget* parent, const QString& title, const QString& message, const QString& name);
+	/// Show critical error dialog
 	static void critical(QWidget* parent, const QString& title, const QString& message, const QString& name);
 
 private:

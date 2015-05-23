@@ -19,7 +19,7 @@ void LinearAltitudeInterpolator::setValues(double t0, RawDataRiverCrosssection::
 	m_value1.setHeight(((1 - t0) * v1.height() + (t1 - 1) * v0.height()) / (t1 - t0));
 }
 
-RawDataRiverCrosssection::Altitude LinearAltitudeInterpolator::interpolate(double t)
+RawDataRiverCrosssection::Altitude LinearAltitudeInterpolator::interpolate(double t) const
 {
 	RawDataRiverCrosssection::Altitude alt;
 	alt.setPosition(m_value1.position() * t + m_value0.position() * (1. - t));
@@ -70,7 +70,7 @@ void LinearLXSecInterpolator::updateParameters()
 	}
 }
 
-RawDataRiverCrosssection::Altitude LinearLXSecInterpolator::interpolate(double t) /*throw (ErrorCodes)*/
+RawDataRiverCrosssection::Altitude LinearLXSecInterpolator::interpolate(double t) const /*throw (ErrorCodes)*/
 {
 	if (t < 0 || t > 1) {
 		throw ec_OutOfInterpolationRange;
@@ -123,7 +123,7 @@ void LinearRXSecInterpolator::updateParameters()
 	}
 }
 
-RawDataRiverCrosssection::Altitude LinearRXSecInterpolator::interpolate(double t) /*throw (ErrorCodes)*/
+RawDataRiverCrosssection::Altitude LinearRXSecInterpolator::interpolate(double t) const /*throw (ErrorCodes)*/
 {
 	if (t < 0 || t > 1) {
 		throw ec_OutOfInterpolationRange;
@@ -254,7 +254,7 @@ void RiverSplineSolver::update()
 	}
 }
 
-QVector2D RiverSplineSolver::interpolate(int index, double d)
+QVector2D RiverSplineSolver::interpolate(int index, double d) const
 {
 	d *= m_Dist[index];
 	double x;
@@ -371,7 +371,7 @@ void RiverBackgroundGridCtrlSolver::setInterpolator(Interpolator2D1* interpolato
 	}
 }
 
-Interpolator2D1* RiverSplineInterpolator::copy()
+Interpolator2D1* RiverSplineInterpolator::copy() const
 {
 	Interpolator2D1* copy = new RiverSplineInterpolatorCopy(
 		m_parent->m_Dist[m_Index],

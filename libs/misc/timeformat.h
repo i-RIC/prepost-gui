@@ -5,6 +5,7 @@
 
 class QString;
 
+/// Support class for handling time format
 class MISCDLL_EXPORT TimeFormat
 {
 public:
@@ -14,6 +15,7 @@ public:
 		fmHourMinuteSecond, ///< hh:mm:ss
 		fmDayHourMinuteSecond ///< dd:hh:mm:ss
 	};
+	/// Returns formatted time string from seconds value
 	static const QString formattedString(double seconds, Format format);
 
 private:

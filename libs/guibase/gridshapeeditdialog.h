@@ -13,23 +13,38 @@ namespace Ui
 	class GridShapeEditDialog;
 }
 
+/// Dialog to edit grid shape
 class GUIBASEDLL_EXPORT GridShapeEditDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
-	enum Shape {Outline, Wireframe};
+	/// Grid shape display type
+	enum Shape {
+		Outline,    ///< Outline only
+		Wireframe   ///< Show all grid cell lines
+	};
 	GridShapeEditDialog(QWidget* parent = nullptr);
 	~GridShapeEditDialog();
+	/// Hide the widget to select grid shape
 	void hideShape();
+	/// Hide the widget to toggle indices display on/off
 	void hideIndex();
+	/// Set the grid color
 	void setGridColor(const QColor& color);
+	/// The grid color
 	QColor gridColor();
+	/// Set the grid shape display type
 	void setShape(Shape shape);
+	/// The grid shape display type
 	Shape shape();
+	/// Set whether the grid indices are visible
 	void setIndexVisible(bool visible);
+	/// Whether the grid indices are visible
 	bool indexVisible();
+	/// Set the grid indices color
 	void setIndexColor(const QColor& color);
+	/// The grid indices color
 	QColor indexColor();
 
 private slots:

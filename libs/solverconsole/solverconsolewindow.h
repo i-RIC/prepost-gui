@@ -19,9 +19,12 @@ class SolverConsoleWindowProjectDataItem;
 class SolverConsoleWindowBackgroundColorCommand;
 class QAction;
 
-/// SolverConsoleWindow class represents the console window
-/// that monitor the progress of solver calculation by showing
-/// the STDOUT of solver.
+/**
+	* @brief The solver console window.
+	*
+	* The console window monitor the progress of solver calculation by showing
+	* the STDOUT of solver.
+	*/
 class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	public QMainWindow,
 	public ClipboardOperatableWindow,
@@ -48,11 +51,14 @@ public:
 	void setupDefaultGeometry();
 	/// Update Window title depending on Solver name and status
 	void updateWindowTitle();
-	bool acceptCopy() {return true;}
+	/// Returns true to inform this window supports copy().
+	bool acceptCopy() override {return true;}
+	/// Copy the selected string in solver console window.
 	void copy();
 	/// Clear the console log.
 	void clear();
 
+	/// Save smapshot to pixmap
 	QPixmap snapshot();
 
 	QAction* exportLogAction;
@@ -62,6 +68,7 @@ public slots:
 	void startSolver();
 	/// Terminate the solver execution
 	void terminateSolver();
+	/// Show dialog to edit background color
 	void editBackgroundColor();
 
 private slots:
@@ -87,13 +94,16 @@ private:
 	void removeCancelFile();
 	/// remove ".cancel_ok" file.
 	void removeCancelOkFile();
+	/// Append a log line
 	void appendLogLine(const QString& line);
 	/// Background color
 	const QColor backgroundColor() const;
 	/// Set background color;
 	void setBackgroundColor(const QColor& c);
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
+	/// ProjectData instance
 	ProjectData* m_projectData;
+	/// Plain text edit widget to display solver STDOUT output
 	QPlainTextEdit* m_console;
 	QProcess* m_process;
 	bool m_solverKilled;

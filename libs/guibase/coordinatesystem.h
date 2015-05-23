@@ -6,12 +6,13 @@
 #include <QString>
 #include <proj_api.h>
 
+/// Coordinate system container
 class GUIBASEDLL_EXPORT CoordinateSystem
 {
 public:
 	CoordinateSystem(const QString& name, const QString& caption, const QString& lonlat, const QString& plane);
 	virtual ~CoordinateSystem();
-
+	/// The name of the coordinate system it will be like this: "EPSG:2222"
 	const QString& name() const {return m_name;}
 	const QString& caption() const {return m_caption;}
 	const QString& searchTarget() const {return m_searchTarget;}

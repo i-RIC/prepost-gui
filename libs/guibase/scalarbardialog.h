@@ -13,6 +13,7 @@ namespace Ui
 	class ScalarBarDialog;
 }
 
+/// Dialog to edit scalar bar setting
 class GUIBASEDLL_EXPORT ScalarBarDialog : public QDialog
 {
 	Q_OBJECT
@@ -21,15 +22,22 @@ public:
 	explicit ScalarBarDialog(QWidget* parent = nullptr);
 	~ScalarBarDialog();
 
-	void setSetting(const ScalarBarSetting& setting);
-	void setTitle(const QString& title);
-	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
-	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
-
+	/// The setting
 	const ScalarBarSetting setting();
-	QString title();
+	/// Set the setting
+	void setSetting(const ScalarBarSetting& setting);
+	/// The title of the scalar bar
+	QString title() const;
+	/// Set the title of the scalar bar
+	void setTitle(const QString& title);
+	/// The text setting of the title string
 	const vtkTextPropertySettingContainer& titleTextSetting() const;
+	/// Set the text setting of the title string
+	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
+	/// The text setting of the labels of scalar bar
 	const vtkTextPropertySettingContainer& labelTextSetting() const;
+	/// Set the text setting of the labels of scalar bar
+	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 
 private:
 	Ui::ScalarBarDialog* ui;

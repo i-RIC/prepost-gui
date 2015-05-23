@@ -14,10 +14,21 @@ DoubleSpinBoxWithHelp::~DoubleSpinBoxWithHelp()
 	delete ui;
 }
 
+
+double DoubleSpinBoxWithHelp::minimum() const
+{
+	return ui->doubleSpinBox->minimum();
+}
+
 void DoubleSpinBoxWithHelp::setMinimum(double min)
 {
 	ui->doubleSpinBox->setMinimum(min);
 	updateHelp();
+}
+
+double DoubleSpinBoxWithHelp::maximum() const
+{
+	return ui->doubleSpinBox->maximum();
 }
 
 void DoubleSpinBoxWithHelp::setMaximum(double max)
@@ -26,14 +37,14 @@ void DoubleSpinBoxWithHelp::setMaximum(double max)
 	updateHelp();
 }
 
-void DoubleSpinBoxWithHelp::setValue(double value)
-{
-	ui->doubleSpinBox->setValue(value);
-}
-
 double DoubleSpinBoxWithHelp::value() const
 {
 	return ui->doubleSpinBox->value();
+}
+
+void DoubleSpinBoxWithHelp::setValue(double value)
+{
+	ui->doubleSpinBox->setValue(value);
 }
 
 void DoubleSpinBoxWithHelp::setAlignment(Qt::Alignment a)

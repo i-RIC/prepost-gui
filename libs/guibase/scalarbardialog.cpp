@@ -39,7 +39,7 @@ const ScalarBarSetting ScalarBarDialog::setting()
 	return ui->widget->setting();
 }
 
-QString ScalarBarDialog::title()
+QString ScalarBarDialog::title() const
 {
 	return ui->widget->title();
 }

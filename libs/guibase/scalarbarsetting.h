@@ -11,6 +11,7 @@ class QXmlStreamWriter;
 
 #include <QString>
 
+/// Container for scalar bar display setting
 class GUIBASEDLL_EXPORT ScalarBarSetting : public XmlAttributeContainer
 {
 public:
@@ -21,12 +22,18 @@ public:
 	/// Constructor
 	ScalarBarSetting();
 	void initForLegendBox();
+	/// Load setting from vtkScalarBarRepresentation
 	void loadFromRepresentation(vtkScalarBarRepresentation* rep);
+	/// Load setting from vtkLegendBoxRepresentation
 	void loadFromRepresentation(vtkLegendBoxRepresentation* rep);
+	/// Apply setting to vtkScalarBarRepresentation
 	void saveToRepresentation(vtkScalarBarRepresentation* rep);
+	/// Apply setting to vtkLegendBoxRepresentation
 	void saveToRepresentation(vtkLegendBoxRepresentation* rep);
 
+	/// Load data from XML attributes
 	void load(const QDomNode& node);
+	/// Save data to XML attributes
 	void save(QXmlStreamWriter& writer) const;
 
 	bool visible;

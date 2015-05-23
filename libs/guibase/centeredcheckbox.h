@@ -8,6 +8,10 @@
 
 class QCheckBox;
 
+/// Checkbox that is aligned to center.
+/**
+ * The interface is basically the same to QCheckbox.
+ */
 class GUIBASEDLL_EXPORT CenteredCheckBox : public QWidget
 {
 	Q_OBJECT

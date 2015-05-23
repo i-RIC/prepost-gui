@@ -5,6 +5,12 @@
 
 #include <qwt_plot_curve.h>
 
+/*!
+ @brief QwtPlotCurve class slightly customized
+
+ Slightly customized version of QwtPlotCurve. The legend attribute is
+ changed from the default value of QwtPlotCurve.
+*/
 class GUIBASEDLL_EXPORT QwtPlotCustomCurve : public QwtPlotCurve
 {
 public:

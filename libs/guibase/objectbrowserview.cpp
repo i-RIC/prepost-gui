@@ -93,6 +93,7 @@ void ObjectBrowserView::handlePress(const QModelIndex& index)
 	emit pressed(index, m_pressGlobalPos);
 }
 
+/// Command to change selection in object browser
 class ObjectBrowserViewCurrentChangeCommand : public QUndoCommand
 {
 public:
@@ -122,7 +123,6 @@ private:
 
 void ObjectBrowserView::currentChanged(const QModelIndex& current, const QModelIndex& previous)
 {
-//	if (m_isPushing){return;}
 	/*
 		if (! m_commandExecution){
 			m_isPushing = true;

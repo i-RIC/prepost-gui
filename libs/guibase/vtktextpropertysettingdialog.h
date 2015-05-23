@@ -12,6 +12,7 @@ namespace Ui
 	class vtkTextPropertySettingDialog;
 }
 
+/// Dialog to select vtkTextPropertySettingContainer values
 class GUIBASEDLL_EXPORT vtkTextPropertySettingDialog : public QDialog
 {
 	Q_OBJECT
@@ -19,11 +20,14 @@ class GUIBASEDLL_EXPORT vtkTextPropertySettingDialog : public QDialog
 public:
 	explicit vtkTextPropertySettingDialog(QWidget* parent = nullptr);
 	~vtkTextPropertySettingDialog();
-
-	vtkTextPropertySettingContainer setting();
+	/// The setting
+	vtkTextPropertySettingContainer setting() const;
+	/// Set the setting
 	void setSetting(const vtkTextPropertySettingContainer& setting);
 
+	/// Disable the widget to edit font size
 	void disableSize();
+	/// Disable the widget to edit font color
 	void disableColor();
 
 private:

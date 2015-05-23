@@ -5,6 +5,7 @@
 
 #include <QDockWidget>
 
+/// Abstract class for object browser in sub-windows of iRIC
 class GUIBASEDLL_EXPORT ObjectBrowser : public QDockWidget
 {
 	Q_OBJECT

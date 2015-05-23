@@ -16,9 +16,11 @@ namespace Ui
 class QTableWidgetItem;
 class iRICMainWindow;
 
+/// Dialog to edit custom setting of color map
 class GUIBASEDLL_EXPORT ColorMapCustomSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 private:
 	const static int VALUEWIDTH = 120;
 	const static int COLORWIDTH = 40;
@@ -27,7 +29,9 @@ private:
 public:
 	explicit ColorMapCustomSettingDialog(QWidget* parent = nullptr);
 	~ColorMapCustomSettingDialog();
+	/// Set custom setting of color map
 	void setCustomSetting(const ColorMapSettingWidget::CustomSetting& setting);
+	/// Returns the edited custom setting of color map
 	ColorMapSettingWidget::CustomSetting customSetting();
 
 private slots:

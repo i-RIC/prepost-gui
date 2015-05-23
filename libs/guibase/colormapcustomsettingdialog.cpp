@@ -14,10 +14,12 @@
 #include <QPainter>
 #include <QTextStream>
 
+/// Delegate class to handle creating color edit widget in ColorMapCustomSettingDialog.
 class ColorMapCustomSettingDialogColorEditDelegate : public QItemDelegate
 {
 public:
 	ColorMapCustomSettingDialogColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
+	/// Paint event handler
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 		if (index.column() == 1) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
@@ -28,6 +30,7 @@ public:
 			QItemDelegate::paint(painter, option, index);
 		}
 	}
+	/// Create editor
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/, const QModelIndex& index) const {
 		if (index.column() == 1) {
 			return new ColorEditWidget(parent);
@@ -35,6 +38,7 @@ public:
 			return new RealNumberEditWidget(parent);
 		}
 	}
+	/// Get data from the specified editor
 	void setEditorData(QWidget* editor, const QModelIndex& index) const {
 		if (index.column() == 1) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
@@ -62,7 +66,6 @@ public:
 		editor->setGeometry(option.rect);
 	}
 };
-
 
 ColorMapCustomSettingDialog::ColorMapCustomSettingDialog(QWidget* parent) :
 	QDialog(parent),

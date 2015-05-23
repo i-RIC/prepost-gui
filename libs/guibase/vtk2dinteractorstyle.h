@@ -5,6 +5,7 @@
 
 #include <vtkInteractorStyleTrackballCamera.h>
 
+/// vtkInteractorStyle for two-dimensional windows
 class GUIBASEDLL_EXPORT vtk2DInteractorStyle :
 	public vtkInteractorStyleTrackballCamera
 {

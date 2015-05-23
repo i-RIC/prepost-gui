@@ -62,27 +62,27 @@ void StructuredGridRegionSelectWidget::setRegion(const StructuredGridRegion::Ran
 	setjMax(region.jMax);
 }
 
-int StructuredGridRegionSelectWidget::iMin()
+int StructuredGridRegionSelectWidget::iMin() const
 {
 	return ui->iMinSlider->value() - 1;
 }
 
-int StructuredGridRegionSelectWidget::iMax()
+int StructuredGridRegionSelectWidget::iMax() const
 {
 	return ui->iMaxSlider->value()- 1;
 }
 
-int StructuredGridRegionSelectWidget::jMin()
+int StructuredGridRegionSelectWidget::jMin() const
 {
 	return ui->jMinSlider->value() - 1;
 }
 
-int StructuredGridRegionSelectWidget::jMax()
+int StructuredGridRegionSelectWidget::jMax() const
 {
 	return ui->jMaxSlider->value() - 1;
 }
 
-StructuredGridRegion::Range2d StructuredGridRegionSelectWidget::region()
+StructuredGridRegion::Range2d StructuredGridRegionSelectWidget::region() const
 {
 	StructuredGridRegion::Range2d r;
 	r.iMin = iMin();

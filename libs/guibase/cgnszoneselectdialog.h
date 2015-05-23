@@ -11,6 +11,7 @@ namespace Ui
 	class CgnsZoneSelectDialog;
 }
 
+/// Dialog to select a zone in a CGNS file.
 class GUIBASEDLL_EXPORT CgnsZoneSelectDialog : public QDialog
 {
 	Q_OBJECT
@@ -18,8 +19,15 @@ class GUIBASEDLL_EXPORT CgnsZoneSelectDialog : public QDialog
 public:
 	explicit CgnsZoneSelectDialog(QWidget* parent = nullptr);
 	~CgnsZoneSelectDialog();
+	/**
+	 * @brief Set the list of zones from which user should select one.
+	 * @param zoneids the list of zone ids
+	 * @param zonenames the list of zone names
+	 */
 	void setZones(const QList<int>& zoneids, const QList<QString>& zonenames);
+	/// The selected zone ID. the value is one of the values in zoneids specified in setZones().
 	int zoneId();
+
 private:
 	Ui::CgnsZoneSelectDialog* ui;
 	QList<int> m_zoneIds;

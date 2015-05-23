@@ -17,7 +17,9 @@ public:
 	int arrowSize() const {return m_arrowSize;}
 	/// The width of arrow axis (in pixels)
 	int lineWidth() const {return m_lineWidth;}
+	/// Set the size of cone of arrow (in pixels)
 	void setArrowSize(int size) {m_arrowSize = size;}
+	/// Set the width of arrow axis (in pixels)
 	void setLineWidth(int width) {m_lineWidth = width;}
 
 	void load(const QDomNode&);

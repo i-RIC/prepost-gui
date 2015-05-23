@@ -14,6 +14,7 @@ namespace Ui
 	class ScalarBarWidget;
 }
 
+/// Widget to edit scalar bar setting
 class GUIBASEDLL_EXPORT ScalarBarWidget : public QWidget
 {
 	Q_OBJECT
@@ -27,8 +28,8 @@ public:
 	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
 	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 
-	const ScalarBarSetting setting();
-	QString title();
+	const ScalarBarSetting setting() const;
+	QString title() const;
 	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
 	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
 

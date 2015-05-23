@@ -29,6 +29,7 @@
 #include "vtkFiltersFlowPathsModule.h" // For export macro
 #include "vtkStreamer.h"
 
+/// Points used for particle tracking for vector (velocity~ fields
 class GUIBASEDLL_EXPORT vtkCustomStreamPoints : public vtkStreamer
 {
 public:

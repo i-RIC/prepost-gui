@@ -60,7 +60,7 @@ int WaitDialog::progress() const
 
 void WaitDialog::setFinished()
 {
-	ui->progressBar->setValue(100);
+	ui->progressBar->setValue(ui->progressBar->maximum());
 }
 
 void WaitDialog::reject()

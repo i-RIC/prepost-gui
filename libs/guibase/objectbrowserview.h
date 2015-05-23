@@ -8,25 +8,38 @@
 
 class QAction;
 
+/// Base class of the view inside object browsers in iRIC subwindows
 class GUIBASEDLL_EXPORT ObjectBrowserView : public QTreeView
 {
 	Q_OBJECT
 
 public:
 	ObjectBrowserView(QWidget* parent);
+	/// Action to delete the selected item
 	QAction* deleteAction() const {return m_deleteAction;}
+	/// Action to move up the selected item
 	QAction* moveUpAction() const {return m_moveUpAction;}
+	/// Action to move down the selected item
 	QAction* moveDownAction() const {return m_moveDownAction;}
+	/// Action to show property dialog about the selected item
 	QAction* propertyAction() const {return m_propertyAction;}
+	/// Size hint about the widget
 	QSize sizeHint() const {return QSize(250, 200);}
+	/// Set command execution mode true
 	void setCommandExecution(bool exec) {m_commandExecution = exec;}
+	/// Select the item with the specified index
 	void select(const QModelIndex& index);
 
 protected slots:
+	/// Emit signal pressed()
 	void handlePress(const QModelIndex& index);
+	/// Delete the selected item
 	void deleteCurrentItem();
+	/// Move up the selected item
 	void moveUpCurrentItem();
+	/// Move down the selected item
 	void moveDownCurrentItem();
+	/// Open property dialog for the selected item
 	void showPropertyForCurrentItem();
 
 signals:

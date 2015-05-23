@@ -10,15 +10,18 @@
 
 class RawDataRiverPathPoint;
 
+/// Interpolator for altitude with one parameter
 class AltitudeInterpolator : public InterpolatorBase
 {
 public:
 	AltitudeInterpolator() {}
 	virtual ~AltitudeInterpolator() {}
 	virtual void updateParameters() {}
-	virtual RawDataRiverCrosssection::Altitude interpolate(double t) = 0;
+	/// Get value by interpolation
+	virtual RawDataRiverCrosssection::Altitude interpolate(double t) const = 0;
 };
 
+/// Linear interpolator for altitude with one parameter
 class LinearAltitudeInterpolator : public AltitudeInterpolator
 {
 public:
@@ -33,12 +36,13 @@ public:
 		m_value1 = v1;
 	}
 	void setValues(double t0, RawDataRiverCrosssection::Altitude& v0, double t1, RawDataRiverCrosssection::Altitude& v1);
-	RawDataRiverCrosssection::Altitude interpolate(double t);
+	RawDataRiverCrosssection::Altitude interpolate(double t) const;
 private:
 	RawDataRiverCrosssection::Altitude m_value0;
 	RawDataRiverCrosssection::Altitude m_value1;
 };
 
+/// Linear interpolator for left side crosssection
 class LinearLXSecInterpolator : public AltitudeInterpolator
 {
 public:
@@ -48,12 +52,13 @@ public:
 	LinearLXSecInterpolator(RawDataRiverPathPoint* parent);
 	virtual ~LinearLXSecInterpolator() {}
 	void updateParameters();
-	RawDataRiverCrosssection::Altitude interpolate(double t) /* throw (ErrorCodes)*/;
+	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/;
 protected:
 	std::map<double, LinearAltitudeInterpolator*> m_interpolators;
 	RawDataRiverPathPoint* m_parent;
 };
 
+/// Linear interpolator for right side crosssection
 class LinearRXSecInterpolator : public AltitudeInterpolator
 {
 public:
@@ -63,7 +68,7 @@ public:
 	LinearRXSecInterpolator(RawDataRiverPathPoint* parent);
 	virtual ~LinearRXSecInterpolator() {}
 	void updateParameters();
-	RawDataRiverCrosssection::Altitude interpolate(double t) /* throw (ErrorCodes)*/;
+	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/;
 protected:
 	std::map<double, LinearAltitudeInterpolator*> m_interpolators;
 	RawDataRiverPathPoint* m_parent;
@@ -77,8 +82,8 @@ public:
 	}
 	virtual ~RiverInterpolator2D1() {}
 	virtual void updateParameters() = 0;
-	virtual QVector2D interpolate(double t) = 0;
-	virtual RiverInterpolator2D1* copy() = 0;
+	virtual QVector2D interpolate(double t) const = 0;
+	virtual RiverInterpolator2D1* copy() const = 0;
 protected:
 	RawDataRiverPathPoint* m_parent;
 };
@@ -110,7 +115,7 @@ private:
 	QVector<double> m_YC;
 	QVector<double> m_YD;
 	QVector<double> m_Dist;
-	QVector2D interpolate(int index, double d);
+	QVector2D interpolate(int index, double d) const;
 	RawDataRiverPathPoint* m_headPoint;
 	/// If true, linear interpolation is used.
 	static bool m_linearMode;
@@ -148,6 +153,12 @@ protected:
 	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
 };
 
+<<<<<<< HEAD
+=======
+/**
+ * @brief Spline curve solver for grid control points on river crosssection lines
+ */
+>>>>>>> doxygen-doc
 class RD_RIVERSURVEY_EXPORT RiverGridCtrlSolver : public RiverSplineSolver
 {
 public:
@@ -162,9 +173,14 @@ public:
 	~RiverGridCtrlSolver() {}
 	void SetIndex(int index) {m_Index = index;}
 	int Index() const {return m_Index;}
+<<<<<<< HEAD
+=======
+	/// Set the bank side: left or right
+>>>>>>> doxygen-doc
 	void SetBankSide(Bank side) {
 		m_BankSide = side;
 	}
+	/// The bank side: left or right
 	Bank BankSide() const {return m_BankSide;}
 protected:
 	QVector2D getVector(RawDataRiverPathPoint* p);
@@ -215,10 +231,17 @@ public:
 	void updateParameters() {
 		m_parent->update();
 	}
+<<<<<<< HEAD
 	QVector2D interpolate(double t) {
 		return m_parent->interpolate(m_Index, t);
 	}
 	Interpolator2D1* copy();
+=======
+	QVector2D interpolate(double t) const {
+		return m_parent->interpolate(m_Index, t);
+	}
+	Interpolator2D1* copy() const;
+>>>>>>> doxygen-doc
 protected:
 	RiverSplineSolver* m_parent;
 	int m_Index;
@@ -240,7 +263,11 @@ public:
 	}
 	virtual ~RiverSplineInterpolatorCopy() {}
 	void updateParameters() {}
+<<<<<<< HEAD
 	QVector2D interpolate(double t) {
+=======
+	QVector2D interpolate(double t) const {
+>>>>>>> doxygen-doc
 		t *= m_D;
 		double x =
 			m_XA +
@@ -254,7 +281,11 @@ public:
 			m_YD * t * t * t;
 		return QVector2D(x, y);
 	}
+<<<<<<< HEAD
 	virtual Interpolator2D1* copy() {
+=======
+	virtual Interpolator2D1* copy() const {
+>>>>>>> doxygen-doc
 		Interpolator2D1* copy = new RiverSplineInterpolatorCopy(m_D, m_XA, m_XB, m_XC, m_XD, m_YA, m_YB, m_YC, m_YD);
 		return copy;
 	}
@@ -281,10 +312,10 @@ public:
 	virtual void updateParameters() {
 		m_Parent->update();
 	}
-	virtual QVector2D interpolate(double t) {
+	virtual QVector2D interpolate(double t) const {
 		return m_Interpolator.interpolate(t);
 	}
-	virtual Interpolator2D1* copy() {
+	virtual Interpolator2D1* copy() const {
 		return new RiverLinearInterpolator(m_Parent, m_Interpolator.interpolate(0), m_Interpolator.interpolate(1));
 	}
 private:

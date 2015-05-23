@@ -13,6 +13,7 @@ namespace Ui
 	class CoordinateSystemSelectDialog;
 }
 
+/// Dialog to select coordinate system from well-known systems
 class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
 {
 	Q_OBJECT
@@ -20,8 +21,11 @@ class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
 public:
 	explicit CoordinateSystemSelectDialog(QWidget* parent = nullptr);
 	~CoordinateSystemSelectDialog();
+	/// Set the builder to build the list of well-known coordinate systems
 	void setBuilder(CoordinateSystemBuilder* builder) {m_builder = builder;}
+	/// Set the coordinate system
 	void setCoordinateSystem(CoordinateSystem* cs);
+	/// The coordinate system
 	CoordinateSystem* coordinateSystem() {return m_currentSystem;}
 
 private slots:

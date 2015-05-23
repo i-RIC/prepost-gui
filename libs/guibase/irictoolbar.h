@@ -5,6 +5,11 @@
 
 #include <QToolBar>
 
+/**
+ * @brief Toolbar class used in iRIC
+ *
+ * The default icon size is changed to (16, 16), and signal visibilityChanged() is added.
+ */
 class GUIBASEDLL_EXPORT iRICToolBar : public QToolBar
 {
 	Q_OBJECT

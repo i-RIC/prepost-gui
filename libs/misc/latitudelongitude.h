@@ -6,8 +6,7 @@
 #include <QString>
 #include <QVector2D>
 
-/// This class contains the data of angle in Latitude-Longitude
-/// coordinate system
+/// This class contains the data of angle in Latitude-Longitude coordinate system
 class MISCDLL_EXPORT LatitudeLongitudeAngle
 {
 public:
@@ -73,8 +72,7 @@ protected:
 	double m_second;
 };
 
-/// This class contains a position in Latitude-Longitude coordinate
-/// system.
+/// This class contains a position in Latitude-Longitude coordinate system
 class MISCDLL_EXPORT LatitudeLongitude
 {
 public:

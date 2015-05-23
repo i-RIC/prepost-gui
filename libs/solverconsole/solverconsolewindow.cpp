@@ -281,10 +281,10 @@ void SolverConsoleWindow::clear()
 
 void SolverConsoleWindow::appendLogLine(const QString& line)
 {
-//	m_console->append(line);
 	m_projectDataItem->append(line);
 }
 
+/// Command to edit background color of solver console window
 class SolverConsoleWindowBackgroundColorCommand : public QUndoCommand
 {
 public:

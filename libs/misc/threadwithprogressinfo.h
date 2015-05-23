@@ -5,8 +5,7 @@
 
 #include <QThread>
 
-/// Subclass of QThread that has only one additinal signal progress(), that
-/// gives progress information.
+/// Subclass of QThread that has only one additinal signal progress() that gives progress information
 class MISCDLL_EXPORT ThreadWithProgressInfo : public QThread
 {
 	Q_OBJECT

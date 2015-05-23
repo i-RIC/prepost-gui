@@ -15,7 +15,7 @@ vtkTextPropertySettingDialog::~vtkTextPropertySettingDialog()
 	delete ui;
 }
 
-vtkTextPropertySettingContainer vtkTextPropertySettingDialog::setting()
+vtkTextPropertySettingContainer vtkTextPropertySettingDialog::setting() const
 {
 	vtkTextPropertySettingContainer c;
 	c.setPrefix(m_prefix);

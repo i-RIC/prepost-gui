@@ -39,7 +39,7 @@ void ScalarBarWidget::setTitle(const QString& title)
 	ui->titleEdit->setText(title.trimmed());
 }
 
-const ScalarBarSetting ScalarBarWidget::setting()
+const ScalarBarSetting ScalarBarWidget::setting() const
 {
 	ScalarBarSetting ret;
 	ret.visible = ui->displayCheckBox->isChecked();
@@ -57,7 +57,7 @@ const ScalarBarSetting ScalarBarWidget::setting()
 	return ret;
 }
 
-QString ScalarBarWidget::title()
+QString ScalarBarWidget::title() const
 {
 	return ui->titleEdit->text().trimmed();
 }

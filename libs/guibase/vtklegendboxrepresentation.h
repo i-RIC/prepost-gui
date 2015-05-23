@@ -7,6 +7,7 @@
 
 class vtkLegendBoxActor;
 
+/// Container class for Legendbox representation
 class GUIBASEDLL_EXPORT vtkLegendBoxRepresentation : public vtkBorderRepresentation
 {
 public:
