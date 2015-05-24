@@ -60,7 +60,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSolution(const QString& s
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowParticleUnstructuredSettingDialog::solution()
+const QString Post2dWindowParticleUnstructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -96,7 +96,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setTimeDivision(int sd)
 	}
 }
 
-Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleUnstructuredSettingDialog::timeMode()
+Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleUnstructuredSettingDialog::timeMode() const
 {
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
@@ -107,13 +107,13 @@ Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleUnstru
 	}
 }
 
-int Post2dWindowParticleUnstructuredSettingDialog::timeSamplingRate()
+int Post2dWindowParticleUnstructuredSettingDialog::timeSamplingRate() const
 {
 	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
 }
 
-int Post2dWindowParticleUnstructuredSettingDialog::timeDivision()
+int Post2dWindowParticleUnstructuredSettingDialog::timeDivision() const
 {
 	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);

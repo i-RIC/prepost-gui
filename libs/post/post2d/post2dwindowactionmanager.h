@@ -27,9 +27,10 @@ public:
 	QAction* measuredDataVectorAction;
 	QAction* measuredDataImportAction;
 
-	QMenu* drawMenu() {return m_drawMenu;}
-	QMenu* measuredDataMenu() {return m_measuredDataMenu;}
+	QMenu* drawMenu() const {return m_drawMenu;}
+	QMenu* measuredDataMenu() const {return m_measuredDataMenu;}
 	void connectWithDataModel();
+
 private:
 	void init();
 	void setupDrawMenu();

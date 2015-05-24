@@ -11,8 +11,8 @@ class POST2D_EXPORT Post2dWindowGridTypeDataItemInterface
 {
 public:
 	virtual ~Post2dWindowGridTypeDataItemInterface() {}
-	virtual SolverDefinitionGridType* gridType() = 0;
-	virtual LookupTableContainer* lookupTable(const QString& attName) = 0;
+	virtual SolverDefinitionGridType* gridType() const = 0;
+	virtual LookupTableContainer* lookupTable(const QString& attName) const = 0;
 
 };
 

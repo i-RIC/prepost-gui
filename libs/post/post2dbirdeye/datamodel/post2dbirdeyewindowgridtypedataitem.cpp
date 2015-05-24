@@ -59,7 +59,7 @@ Post2dBirdEyeWindowGridTypeDataItem::~Post2dBirdEyeWindowGridTypeDataItem()
 	}
 }
 
-const QString& Post2dBirdEyeWindowGridTypeDataItem::name()
+const QString& Post2dBirdEyeWindowGridTypeDataItem::name() const
 {
 	return m_gridType->name();
 }

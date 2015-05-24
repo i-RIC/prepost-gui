@@ -22,7 +22,7 @@ public:
 	QAction* backgroundColorAction;
 	QAction* editZScaleAction;
 
-	QMenu* drawMenu() {return m_drawMenu;}
+	QMenu* drawMenu() const {return m_drawMenu;}
 	void connectWithDataModel();
 private:
 	void init();

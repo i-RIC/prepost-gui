@@ -30,14 +30,16 @@ public:
 //		return m_backgroundImagesDataItem;
 //	}
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post3dWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
-	Post3dWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
+	const QList<Post3dWindowGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
+	Post3dWindowGridTypeDataItem* gridTypeDataItem(const QString& name) const;
 	Post3dWindowZoneDataItem* zoneDataItem(const QString& name);
-	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
+	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
+	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
+
 private slots:
 	void updateZoneList();
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

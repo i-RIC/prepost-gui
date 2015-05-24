@@ -16,7 +16,7 @@ class Graph2dScatteredWindowResultDataItem : public Graph2dScatteredWindowDataIt
 public:
 	Graph2dScatteredWindowResultDataItem(const QString& title, int index, const Graph2dScatteredWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dScatteredWindowResultDataItem();
-	QwtPlotCustomCurve* curve() {return m_curve;}
+	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update(int fn);
 	const QString title() const;
 	const Graph2dScatteredWindowResultSetting::Setting& setting() const {return m_setting;}

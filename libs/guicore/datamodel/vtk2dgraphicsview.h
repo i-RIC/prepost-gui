@@ -12,18 +12,18 @@ class GUICOREDLL_EXPORT VTK2DGraphicsView : public VTKGraphicsView
 public:
 	VTK2DGraphicsView(QWidget* parent);
 	virtual ~VTK2DGraphicsView() {}
-	virtual void fitInView();
+	virtual void fitInView() override;
 	void rotate(double r);
 	void resetCamera();
 	void resetRoll();
-	void viewportToWorld(double& x, double& y);
-	void worldToViewport(double& x, double& y);
+	void viewportToWorld(double& x, double& y) const;
+	void worldToViewport(double& x, double& y) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void mouseMoveEvent(QMouseEvent* event);
 	void ResetCameraClippingRange();
-	double stdRadius(int pixels);
-	void translate(int x, int y);
+	double stdRadius(int pixels) const;
+	void translate(int x, int y) override;
 	void emitPosition(int x, int y);
 	void emitWorldPosition(int x, int y);
 

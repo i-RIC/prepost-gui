@@ -12,7 +12,7 @@ public:
 	Post2dWindowRawDataDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowRawDataDataItem();
 	void setRawDataProxy(RawDataProxy* proxy);
-	RawDataProxy* rawDataProxy() {return m_rawDataProxy;}
+	RawDataProxy* rawDataProxy() const {return m_rawDataProxy;}
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void updateZDepthRangeItemCount();

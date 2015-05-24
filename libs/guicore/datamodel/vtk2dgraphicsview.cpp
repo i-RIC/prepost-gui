@@ -120,22 +120,24 @@ void VTK2DGraphicsView::resetRoll()
 	m_mainRenderer->GetActiveCamera()->Roll(-angle);
 }
 
-void VTK2DGraphicsView::viewportToWorld(double& x, double& y)
+void VTK2DGraphicsView::viewportToWorld(double& x, double& y) const
 {
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_mainRenderer);
 	double z = 0.0;
-	m_mainRenderer->ViewportToNormalizedViewport(x, y);
-	m_mainRenderer->NormalizedViewportToView(x, y, z);
+	r->ViewportToNormalizedViewport(x, y);
+	r->NormalizedViewportToView(x, y, z);
 	y = -y;
-	m_mainRenderer->ViewToWorld(x, y, z);
+	r->ViewToWorld(x, y, z);
 }
 
-void VTK2DGraphicsView::worldToViewport(double& x, double& y)
+void VTK2DGraphicsView::worldToViewport(double& x, double& y) const
 {
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_mainRenderer);
 	double z = 0.0;
-	m_mainRenderer->WorldToView(x, y, z);
+	r->WorldToView(x, y, z);
 	y = -y;
-	m_mainRenderer->ViewToNormalizedViewport(x, y, z);
-	m_mainRenderer->NormalizedViewportToViewport(x, y);
+	r->ViewToNormalizedViewport(x, y, z);
+	r->NormalizedViewportToViewport(x, y);
 }
 
 void VTK2DGraphicsView::ResetCameraClippingRange()
@@ -165,7 +167,7 @@ void VTK2DGraphicsView::ResetCameraClippingRange()
 	m_mainRenderer->ResetCameraClippingRange(bounds);
 }
 
-double VTK2DGraphicsView::stdRadius(int pixels)
+double VTK2DGraphicsView::stdRadius(int pixels) const
 {
 	double x1, x2, y1, y2;
 	x1 = 0;

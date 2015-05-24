@@ -86,7 +86,7 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem()
 	m_actor2DCollection->Delete();
 }
 
-bool GraphicsWindowDataItem::isEnabled()
+bool GraphicsWindowDataItem::isEnabled() const
 {
 	if (m_standardItem == nullptr) {return false;}
 	return (m_standardItem->checkState() == Qt::Checked);
@@ -294,7 +294,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 	}
 }
 
-vtkRenderer* GraphicsWindowDataItem::renderer()
+vtkRenderer* GraphicsWindowDataItem::renderer() const
 {
 	return dataModel()->graphicsView()->mainRenderer();
 }
@@ -304,12 +304,12 @@ void GraphicsWindowDataItem::renderGraphicsView()
 	dataModel()->graphicsView()->GetRenderWindow()->Render();
 }
 
-QMainWindow* GraphicsWindowDataItem::mainWindow()
+QMainWindow* GraphicsWindowDataItem::mainWindow() const
 {
 	return dataModel()->mainWindow();
 }
 
-bool GraphicsWindowDataItem::isAncientChecked()
+bool GraphicsWindowDataItem::isAncientChecked() const
 {
 	QStandardItem* i = dynamic_cast<GraphicsWindowDataItem*>(parent())->m_standardItem;
 	if (i == nullptr) {return true;}

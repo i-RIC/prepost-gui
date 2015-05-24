@@ -1,10 +1,9 @@
 import iricdevtool as idev
-import os
 
-def listnonascii(path):
-  """ List files that contains non_ascii characters.
+def addconst(path):
+  """ Add const keywords to function that should be made constant
   """
-#  print("Checking: " + path)
+  print("Checking: " + path)
   try:
     with open(path, 'r', encoding = 'utf-8') as f:
       lines = f.readlines()
@@ -16,5 +15,6 @@ print('listing files with non-ascii characters...')
 
 #listnonascii("japanese.txt")
 
-idev.recursiveExec("../libs", "\.(cpp|h)$", listnonascii)
-idev.recursiveExec("../apps", "\.(cpp|h)$", listnonascii)
+idev.recursiveExec("../libs", "\.h$", addconst)
+idev.recursiveExec("../apps", "\.h$", addconst)
+

@@ -42,8 +42,8 @@ public:
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	ObjectBrowser* objectBrowser() override;
-	int index() {return m_index;}
+	ObjectBrowser* objectBrowser() const override;
+	int index() const {return m_index;}
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename);

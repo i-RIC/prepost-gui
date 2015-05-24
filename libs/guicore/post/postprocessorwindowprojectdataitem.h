@@ -16,7 +16,7 @@ public:
 	}
 	~PostProcessorWindowProjectDataItem();
 	void informWindowClose();
-	PostProcessorWindow* window() {
+	PostProcessorWindow* window() const {
 		return m_window;
 	}
 

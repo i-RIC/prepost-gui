@@ -34,9 +34,9 @@ public:
 		m_settings = settings;
 		setupSettingList();
 	}
-	const QString solution();
-	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
-	const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings() {return m_settings;}
+	const QString solution() const;
+	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
+	const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings() const {return m_settings;}
 
 	void informButtonDown(const QVector2D& p);
 	void informButtonUp(const QVector2D& p);

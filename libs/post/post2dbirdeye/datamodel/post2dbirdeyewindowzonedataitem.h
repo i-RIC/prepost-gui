@@ -35,15 +35,15 @@ public:
 	void updateZDepthRangeItemCount();
 
 	PostZoneDataContainer* dataContainer();
-	int zoneNumber() {return m_zoneNumber;}
-	QString zoneName() {return m_zoneName;}
+	int zoneNumber() const {return m_zoneNumber;}
+	QString zoneName() const {return m_zoneName;}
 	void update();
-	Post2dBirdEyeWindowGridShapeDataItem* gridShapeDataItem() {return m_shapeDataItem;}
-	Post2dBirdEyeWindowNodeScalarGroupDataItem* scalarGroupDataItem() {return m_scalarGroupDataItem;}
-	Post2dBirdEyeWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() {return m_arrowGroupDataItem;}
-	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() {return m_streamlineGroupDataItem;}
-	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* particleDataItem() {return m_particleGroupDataItem;}
-	Post2dBirdEyeWindowCellFlagGroupDataItem* cellFlagGroupDataItem() {return m_cellFlagGroupDataItem;}
+	Post2dBirdEyeWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
+	Post2dBirdEyeWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post2dBirdEyeWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
+	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
+	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
+	Post2dBirdEyeWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
 protected:
 	void assignActionZValues(const ZDepthRange& range);
 	void doLoadFromProjectMainFile(const QDomNode& node);

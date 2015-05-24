@@ -19,12 +19,13 @@ class Graph2dScatteredWindow :
 public:
 	explicit Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi);
 	~Graph2dScatteredWindow();
-	QPixmap snapshot();
-	QList<QMenu*> getAdditionalMenus() const;
-	ObjectBrowser* objectBrowser();
-	Graph2dScatteredWindowControlWidget* controlWidget() {return m_controlWidget;}
+	QPixmap snapshot() override;
+	QList<QMenu*> getAdditionalMenus() const override;
+	Graph2dScatteredWindowControlWidget* controlWidget() const {return m_controlWidget;}
+
 signals:
 	void closeButtonClicked();
+
 private:
 	void init();
 	void setupDefaultGeometry(int index);

@@ -15,12 +15,8 @@ public:
 		m_vtkDarkObj = nullptr;
 	}
 	virtual ~ScalarsToColorsContainer();
-	vtkScalarsToColors* vtkObj() {
-		return m_vtkObj;
-	}
-	vtkScalarsToColors* vtkDarkObj() {
-		return m_vtkDarkObj;
-	}
+	vtkScalarsToColors* vtkObj() const {return m_vtkObj;}
+	vtkScalarsToColors* vtkDarkObj() const {return m_vtkDarkObj;}
 	virtual void update() = 0;
 	virtual void setValueRange(double /*min*/, double /*max*/) {}
 	virtual void getValueRange(double* /*min*/, double* /*max*/) {}

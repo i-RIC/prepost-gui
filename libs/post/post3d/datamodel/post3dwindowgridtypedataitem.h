@@ -17,19 +17,19 @@ public:
 	Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~Post3dWindowGridTypeDataItem();
 	const QList<Post3dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
-	const QString& name();
-	Post3dWindowZoneDataItem* zoneData(const QString& name) {
-		return m_zoneDataNameMap.value(name);
-	}
-	SolverDefinitionGridType* gridType() {return m_gridType;}
+	const QString& name() const;
+	Post3dWindowZoneDataItem* zoneData(const QString& name) const {return m_zoneDataNameMap.value(name);}
+	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const QString& attName) const {return m_lookupTables.value(attName, 0);}
 	void setValueRange(const QString& name);
 	void setupZoneDataItems();
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+
 private:
 	void updateLookupTableRanges();
 	void setupScalarsToColors(const QString& name);

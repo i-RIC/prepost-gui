@@ -42,14 +42,14 @@ public:
 	/// The view to display pre-processor main region
 	Graph2dWindowView* view() const {return m_view;}
 	/// The model to store the model of object browser.
-	QStandardItemModel* itemModel() {return m_itemModel;}
+	QStandardItemModel* itemModel() const {return m_itemModel;}
 	void updateExpandState(ObjectBrowserView* view);
 	void reflectExpandState(ObjectBrowserView* view);
 	QMainWindow* mainWindow() {return m_mainWindow;}
 	void setObjectBrowserView(ObjectBrowserView* v);
-	ObjectBrowserView* objectBrowserView() {return m_objectBrowserView;}
-	Graph2dWindowVerticalAxisSetting* leftAxisSetting() {return m_leftAxisSetting;}
-	Graph2dWindowVerticalAxisSetting* rightAxisSetting() {return m_rightAxisSetting;}
+	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
+	Graph2dWindowVerticalAxisSetting* leftAxisSetting() const {return m_leftAxisSetting;}
+	Graph2dWindowVerticalAxisSetting* rightAxisSetting() const {return m_rightAxisSetting;}
 protected:
 	virtual void getYAxisValueRange(AxisSide, double* min, double* max) = 0;
 	virtual void applyAxisSetting() = 0;
@@ -72,7 +72,7 @@ public slots:
 	void showPropertyDialog(const QModelIndex& index);
 	/// Update the operation toolbar.
 	void updateOperationToolBar(const QModelIndex& index, QWidget* parent);
-	QToolBar* operationToolBar() {return m_operationToolBar;}
+	QToolBar* operationToolBar() const {return m_operationToolBar;}
 	void verticalAxisLeftSetting();
 	void verticalAxisRightSetting();
 	void titleSetting();

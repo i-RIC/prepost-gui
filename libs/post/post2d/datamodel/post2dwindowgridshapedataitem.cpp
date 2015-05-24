@@ -350,7 +350,7 @@ void Post2dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDi
 }
 
 
-QColor Post2dWindowGridShapeDataItem::color()
+QColor Post2dWindowGridShapeDataItem::color() const
 {
 	return QColor(
 					 (int)(m_color[0] * 255),
@@ -365,7 +365,7 @@ void Post2dWindowGridShapeDataItem::setColor(const QColor& color)
 	m_color[2] = color.blueF();
 }
 
-QColor Post2dWindowGridShapeDataItem::indexColor()
+QColor Post2dWindowGridShapeDataItem::indexColor() const
 {
 	return QColor(
 					 (int)(m_indexColor[0] * 255),

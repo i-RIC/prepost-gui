@@ -85,11 +85,6 @@ QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 	return menus;
 }
 
-ObjectBrowser* Post3dWindow::objectBrowser()
-{
-	return m_objectBrowser;
-}
-
 void Post3dWindow::cameraFit()
 {
 	m_dataModel->fit();
@@ -239,4 +234,9 @@ void Post3dWindow::setBackgroundColor(QColor& c)
 	double vtkColor[3];
 	iRIC::QColorToVTKColor(c, vtkColor);
 	m_dataModel->graphicsView()->mainRenderer()->SetBackground(vtkColor);
+}
+
+ObjectBrowser* Post3dWindow::objectBrowser() const
+{
+	return m_objectBrowser;
 }

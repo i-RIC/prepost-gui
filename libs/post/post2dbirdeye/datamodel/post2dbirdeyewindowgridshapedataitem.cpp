@@ -357,7 +357,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog*
 }
 
 
-QColor Post2dBirdEyeWindowGridShapeDataItem::color()
+QColor Post2dBirdEyeWindowGridShapeDataItem::color() const
 {
 	return QColor(
 					 (int)(m_color[0] * 255),
@@ -372,7 +372,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::setColor(const QColor& color)
 	m_color[2] = color.blueF();
 }
 
-QColor Post2dBirdEyeWindowGridShapeDataItem::indexColor()
+QColor Post2dBirdEyeWindowGridShapeDataItem::indexColor() const
 {
 	return QColor(
 					 (int)(m_indexColor[0] * 255),

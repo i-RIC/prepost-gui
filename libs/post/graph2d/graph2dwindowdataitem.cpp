@@ -320,7 +320,7 @@ QMainWindow* Graph2dWindowDataItem::mainWindow()
 	return dataModel()->mainWindow();
 }
 
-bool Graph2dWindowDataItem::isAncientChecked()
+bool Graph2dWindowDataItem::isAncientChecked() const
 {
 	QStandardItem* i = dynamic_cast<Graph2dWindowDataItem*>(parent())->m_standardItem;
 	if (i == nullptr) {return true;}

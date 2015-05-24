@@ -11,7 +11,7 @@ public:
 	VTK3DGraphicsView(QWidget* parent);
 	virtual ~VTK3DGraphicsView() {}
 	/// Fit camera.
-	virtual void fitInView();
+	virtual void fitInView() override;
 	/// Rotate camera.
 	void rotate(double r);
 	/// Reset rotating the camera.
@@ -25,7 +25,7 @@ public:
 	/// Get distance in world corrdinate
 	double stdDistance(int pixels);
 	/// Translate the camera
-	void translate(int x, int y);
+	void translate(int x, int y) override;
 
 private:
 	void getFocalPointAndDistance(double focal[3], double* distance);

@@ -28,8 +28,8 @@ public:
 		setupSettingList();
 	}
 	const QString solution();
-	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
-	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings() {return m_settings;}
+	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
+	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings() const {return m_settings;}
 
 private slots:
 	void activeDataChanged(int index);

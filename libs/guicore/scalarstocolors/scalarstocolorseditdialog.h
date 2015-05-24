@@ -17,9 +17,10 @@ class GUICOREDLL_EXPORT ScalarsToColorsEditDialog : public QDialog
 public:
 	ScalarsToColorsEditDialog(QWidget* parent = nullptr);
 	void setWidget(ScalarsToColorsEditWidget* w);
-	ScalarsToColorsEditWidget* widget() {return m_widget;}
+	ScalarsToColorsEditWidget* widget() const {return m_widget;}
 	void setContainer(ScalarsToColorsContainer* container);
 	void accept();
+
 protected:
 	ScalarsToColorsEditWidget* m_widget;
 	Ui::ScalarsToColorsEditDialog* ui;

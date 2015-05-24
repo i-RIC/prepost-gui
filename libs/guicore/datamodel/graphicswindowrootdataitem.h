@@ -27,7 +27,7 @@ public:
 	void closeCgnsFile();
 
 protected:
-	bool isAncientChecked() {return true;}
+	bool isAncientChecked() const override {return true;}
 	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
 	GraphicsWindowDataModel* dataModel() {return m_dataModel;}

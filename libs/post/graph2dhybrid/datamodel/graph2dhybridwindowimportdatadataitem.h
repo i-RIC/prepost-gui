@@ -19,7 +19,7 @@ public:
 	void setData(const QVector<double>& xvals, const QVector<double>& yvals);
 	void setSetting(const Graph2dHybridWindowResultSetting::Setting& setting);
 	const Graph2dHybridWindowResultSetting::Setting& setting() const {return m_setting;}
-	QwtPlotCustomCurve* curve() {return m_curve;}
+	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update();
 	void setId(const QString filename, const QString name);
 	const QString id();

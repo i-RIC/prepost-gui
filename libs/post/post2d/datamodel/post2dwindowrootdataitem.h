@@ -41,8 +41,8 @@ public:
 	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
 	Post2dWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
 	Post2dWindowZoneDataItem* zoneDataItem(const QString& name);
-	PostTitleDataItem* titleDataItem() {return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem() {return m_timeDataItem;}
+	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
+	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
 
 private slots:

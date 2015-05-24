@@ -74,7 +74,7 @@ QPixmap Post2dBirdEyeWindow::snapshot()
 vtkRenderWindow* Post2dBirdEyeWindow::getVtkRenderWindow() const
 {
 	vtkRenderer* r = const_cast<vtkRenderer*> (m_dataModel->graphicsView()->mainRenderer());
-	r->GetRenderWindow();
+	return r->GetRenderWindow();
 }
 
 QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus() const
@@ -132,11 +132,6 @@ void Post2dBirdEyeWindow::cameraYZPlane()
 void Post2dBirdEyeWindow::cameraZXPlane()
 {
 	m_dataModel->toZXPlane();
-}
-
-ObjectBrowser* Post2dBirdEyeWindow::objectBrowser()
-{
-	return m_objectBrowser;
 }
 
 class Post2dBirdEyeWindowEditBackgroundColorCommand : public QUndoCommand
@@ -226,4 +221,9 @@ void Post2dBirdEyeWindow::setBackgroundColor(QColor& c)
 	double vtkColor[3];
 	iRIC::QColorToVTKColor(c, vtkColor);
 	m_dataModel->graphicsView()->mainRenderer()->SetBackground(vtkColor);
+}
+
+ObjectBrowser* Post2dBirdEyeWindow::objectBrowser() const
+{
+	return m_objectBrowser;
 }

@@ -30,12 +30,13 @@ public:
 		m_settings = settings;
 		setupSettingList();
 	}
-	const QString solution();
-	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode();
-	int timeSamplingRate();
-	int timeDivision();
-	StructuredGridRegion::RegionMode regionMode() {return m_regionMode;}
-	const QList<Post2dWindowStructuredParticleSetSetting>& settings() {return m_settings;}
+	const QString solution() const;
+	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
+	int timeSamplingRate() const;
+	int timeDivision() const;
+	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
+	const QList<Post2dWindowStructuredParticleSetSetting>& settings() const {return m_settings;}
+
 private slots:
 	void activeDataChanged(int index);
 

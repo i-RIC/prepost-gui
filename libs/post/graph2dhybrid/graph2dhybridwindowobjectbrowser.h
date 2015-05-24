@@ -18,7 +18,7 @@ public:
 	/// Destructor
 	~Graph2dHybridWindowObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Graph2dHybridWindowObjectBrowserView* view() {return m_view;}
+	Graph2dHybridWindowObjectBrowserView* view() const {return m_view;}
 public slots:
 	void expandAll();
 private:

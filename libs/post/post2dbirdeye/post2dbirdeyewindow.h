@@ -36,8 +36,9 @@ public:
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	ObjectBrowser* objectBrowser() override;
-	int index() {return m_index;}
+	ObjectBrowser* objectBrowser() const override;
+	int index() const {return m_index;}
+
 public slots:
 	void cameraFit();
 	void cameraZoomIn();

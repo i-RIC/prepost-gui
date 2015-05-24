@@ -18,18 +18,17 @@ public:
 	Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dBirdEyeWindowGridTypeDataItem();
 	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
-	const QString& name();
-	Post2dBirdEyeWindowZoneDataItem* zoneData(const QString& name) {
-		return m_zoneDataNameMap.value(name);
-	}
-	SolverDefinitionGridType* gridType() {return m_gridType;}
-	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
+	const QString& name() const;
+	Post2dBirdEyeWindowZoneDataItem* zoneData(const QString& name) const {return m_zoneDataNameMap.value(name);}
+	SolverDefinitionGridType* gridType() const override {return m_gridType;}
+	LookupTableContainer* lookupTable(const QString& attName) const override {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-//	void assignActionZValues(const ZDepthRange& range);
+
 private:
 	void updateLookupTableRanges();
 	void setupScalarsToColors(const QString& name);

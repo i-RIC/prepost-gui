@@ -76,8 +76,3 @@ QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus() const
 	menus.append(m_actionManager->drawMenu());
 	return menus;
 }
-
-ObjectBrowser* Graph2dHybridWindow::objectBrowser()
-{
-	return m_objectBrowser;
-}

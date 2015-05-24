@@ -59,7 +59,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::setSolution(const QString& s
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post3dWindowStreamlineStructuredSettingDialog::solution()
+const QString Post3dWindowStreamlineStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);

@@ -17,7 +17,7 @@ class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
 {
 public:
 	VTKGraphicsView(QWidget* parent);
-	~VTKGraphicsView();
+	virtual ~VTKGraphicsView();
 	void setModel(GraphicsWindowSimpleDataModel* m) {m_model = m;}
 	GraphicsWindowDataItem* activeDataItem() {return m_activeDataItem;}
 	void setActiveDataItem(GraphicsWindowDataItem* i) {
@@ -27,13 +27,13 @@ public:
 	virtual void fitInView() {}
 	virtual void translate(int x, int y) = 0;
 
-	void keyPressEvent(QKeyEvent* event);
-	void keyReleaseEvent(QKeyEvent* event);
-	void mouseDoubleClickEvent(QMouseEvent* event);
-	void mousePressEvent(QMouseEvent* event);
-	void mouseReleaseEvent(QMouseEvent* event);
-	virtual void mouseMoveEvent(QMouseEvent* event);
-	void wheelEvent(QWheelEvent* event);
+	void keyPressEvent(QKeyEvent* event) override;
+	void keyReleaseEvent(QKeyEvent* event) override;
+	void mouseDoubleClickEvent(QMouseEvent* event) override;
+	void mousePressEvent(QMouseEvent* event) override;
+	void mouseReleaseEvent(QMouseEvent* event) override;
+	virtual void mouseMoveEvent(QMouseEvent* event) override;
+	void wheelEvent(QWheelEvent* event) override;
 
 	void standardKeyPressEvent(QKeyEvent* event);
 	void standardKeyReleaseEvent(QKeyEvent* event);

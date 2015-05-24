@@ -43,16 +43,16 @@ public:
 	/// Constructor for root node.
 	GraphicsWindowDataItem(ProjectDataItem* parent);
 	virtual ~GraphicsWindowDataItem();
-	bool isEnabled();
+	bool isEnabled() const;
 	void setEnabled(bool enabled);
 
-	QMainWindow* mainWindow();
+	QMainWindow* mainWindow() const;
 	/// Load data from project main file
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 	/// The QStandardItem that corresponds to this item.
-	QStandardItem* standardItem() {return m_standardItem;}
+	QStandardItem* standardItem() const {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
 	virtual void updateItemMap() {dynamic_cast<GraphicsWindowDataItem*>(parent())->updateItemMap();}
 	virtual void updateExpandState(QTreeView* view);
@@ -127,11 +127,11 @@ public:
 protected:
 	PostSolutionInfo* postSolutionInfo();
 	virtual void assignActionZValues(const ZDepthRange& range);
-	virtual GraphicsWindowDataModel* dataModel() {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
-	vtkRenderer* renderer();
+	virtual GraphicsWindowDataModel* dataModel() const {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
+	vtkRenderer* renderer() const;
 	virtual void unregisterChild(GraphicsWindowDataItem* child);
 	/// Returns true when alal ancient nodes are checked.
-	virtual bool isAncientChecked();
+	virtual bool isAncientChecked() const;
 	/// Initialize itself
 	virtual void init();
 	virtual void updateVisibility();

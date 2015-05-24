@@ -21,10 +21,11 @@ public:
 	~Graph2dHybridWindow();
 	QPixmap snapshot();
 	QList<QMenu*> getAdditionalMenus() const;
-	ObjectBrowser* objectBrowser();
-	Graph2dHybridWindowControlWidget* controlWidget() {return m_controlWidget;}
+	Graph2dHybridWindowControlWidget* controlWidget() const {return m_controlWidget;}
+
 signals:
 	void closeButtonClicked();
+
 private:
 	void init();
 	void setupDefaultGeometry(int index);

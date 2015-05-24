@@ -33,16 +33,16 @@ public:
 	void informgridRelatedConditionChange(const QString& name);
 
 	PostZoneDataContainer* dataContainer();
-	int zoneNumber() {return m_zoneNumber;}
-	QString zoneName() {return m_zoneName;}
+	int zoneNumber() const {return m_zoneNumber;}
+	QString zoneName() const {return m_zoneName;}
 	void update();
-	Post3dWindowGridShapeDataItem* gridShapeDataItem() {return m_shapeDataItem;}
-	Post3dWindowContourGroupDataItem* contourGroupItem() {return m_contourGroupItem;}
-	Post3dWindowNodeScalarGroupDataItem* scalarGroupDataItem() {return m_scalarGroupDataItem;}
-	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() {return m_arrowGroupDataItem;}
-	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() {return m_streamlineGroupDataItem;}
-	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() {return m_particleGroupDataItem;}
-	Post3dWindowParticlesTopDataItem* particlesDataItem() {return m_particlesDataItem;}
+	Post3dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
+	Post3dWindowContourGroupDataItem* contourGroupItem() const {return m_contourGroupItem;}
+	Post3dWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post3dWindowArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
+	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const {return m_streamlineGroupDataItem;}
+	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const {return m_particleGroupDataItem;}
+	Post3dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

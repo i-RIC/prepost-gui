@@ -36,7 +36,7 @@ public:
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	ObjectBrowser* objectBrowser() override;
+	ObjectBrowser* objectBrowser() const override;
 	int index() {return m_index;}
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();

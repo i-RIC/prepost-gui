@@ -39,9 +39,9 @@ public:
 	/// Inform that the grid is updated.
 	void update();
 	void handleStandardItemDoubleClicked();
-	QColor color();
-	QColor indexColor();
-	GridShapeEditDialog::Shape shape() {return m_shape;}
+	QColor color() const;
+	QColor indexColor() const;
+	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}

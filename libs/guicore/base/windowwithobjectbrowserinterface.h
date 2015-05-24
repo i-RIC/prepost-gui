@@ -6,7 +6,7 @@ class ObjectBrowser;
 class WindowWithObjectBrowserInterface
 {
 public:
-	virtual ObjectBrowser* objectBrowser() = 0;
+	virtual ObjectBrowser* objectBrowser() const = 0;
 };
 
 #endif // WINDOWWITHOBJECTBROWSERINTERFACE_H

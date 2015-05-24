@@ -61,7 +61,7 @@ void Post2dWindowParticleStructuredSettingDialog::setSolution(const QString& sol
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowParticleStructuredSettingDialog::solution()
+const QString Post2dWindowParticleStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -75,7 +75,7 @@ void Post2dWindowParticleStructuredSettingDialog::setTimeMode(Post2dWindowNodeVe
 	}
 }
 
-Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleStructuredSettingDialog::timeMode()
+Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleStructuredSettingDialog::timeMode() const
 {
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
@@ -97,7 +97,7 @@ void Post2dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 	}
 }
 
-int Post2dWindowParticleStructuredSettingDialog::timeSamplingRate()
+int Post2dWindowParticleStructuredSettingDialog::timeSamplingRate() const
 {
 	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
@@ -114,7 +114,7 @@ void Post2dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 	}
 }
 
-int Post2dWindowParticleStructuredSettingDialog::timeDivision()
+int Post2dWindowParticleStructuredSettingDialog::timeDivision() const
 {
 	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);

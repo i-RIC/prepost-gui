@@ -76,8 +76,3 @@ QList<QMenu*> Graph2dScatteredWindow::getAdditionalMenus() const
 	menus.append(m_actionManager->drawMenu());
 	return menus;
 }
-
-ObjectBrowser* Graph2dScatteredWindow::objectBrowser()
-{
-	return m_objectBrowser;
-}

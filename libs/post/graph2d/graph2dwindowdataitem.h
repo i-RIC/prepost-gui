@@ -42,7 +42,7 @@ public:
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 	/// The QStandardItem that corresponds to this item.
-	QStandardItem* standardItem() {return m_standardItem;}
+	QStandardItem* standardItem() const {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
 	virtual void updateItemMap() {dynamic_cast<Graph2dWindowDataItem*>(parent())->updateItemMap();}
 	virtual void updateExpandState(QTreeView* view);
@@ -95,8 +95,8 @@ protected:
 	virtual Graph2dWindowDataModel* dataModel() {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
 	void renderView();
 	virtual void unregisterChild(Graph2dWindowDataItem* child);
-	/// Returns true when alal ancient nodes are checked.
-	virtual bool isAncientChecked();
+	/// Returns true when all ancient nodes are checked.
+	virtual bool isAncientChecked() const;
 	/// Initialize itself
 	virtual void init();
 	virtual void updateVisibility();

@@ -135,9 +135,9 @@ public:
 	QString yAxisRightTitle() const {return m_yAxisRightTitle;}
 	void setYAxisRightTitle(const QString title) {m_yAxisRightTitle = title;}
 
-	const QString& title() {return m_title;}
+	const QString& title() const {return m_title;}
 	void setTitle(const QString& t) {m_title = t;}
-	bool addTimeToTitle() {return m_addTimeToTitle;}
+	bool addTimeToTitle() const {return m_addTimeToTitle;}
 	void setAddTimeToTitle(bool add) {m_addTimeToTitle = add;}
 
 	void loadFromProjectMainFile(const QDomNode& node);

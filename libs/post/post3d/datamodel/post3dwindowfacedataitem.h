@@ -31,16 +31,16 @@ public:
 	~Post3dWindowFaceDataItem();
 	Setting setting();
 	void setSetting(Setting setting, bool draw);
-	bool enabled() {return m_enabled;}
+	bool enabled() const {return m_enabled;}
 	void setEnabled(bool e) {m_enabled = e;}
-	Direction direction() {return m_direction;}
+	Direction direction() const {return m_direction;}
 	void setDirection(Direction dir) {m_direction = dir;}
-	unsigned int iMin() {return m_iMin;}
-	unsigned int iMax() {return m_iMax;}
-	unsigned int jMin() {return m_jMin;}
-	unsigned int jMax() {return m_jMax;}
-	unsigned int kMin() {return m_kMin;}
-	unsigned int kMax() {return m_kMax;}
+	unsigned int iMin() const {return m_iMin;}
+	unsigned int iMax() const {return m_iMax;}
+	unsigned int jMin() const {return m_jMin;}
+	unsigned int jMax() const {return m_jMax;}
+	unsigned int kMin() const {return m_kMin;}
+	unsigned int kMax() const {return m_kMax;}
 	void setIMin(unsigned int val) {m_iMin = val;}
 	void setIMax(unsigned int val) {m_iMax = val;}
 	void setJMin(unsigned int val) {m_jMin = val;}
@@ -51,8 +51,9 @@ public:
 	vtkAlgorithmOutput* getOutputPort();
 	void handleStandardItemChange();
 	void innerUpdateZScale(double scale);
-	vtkExtractGrid* filter() {return m_filter;}
+	vtkExtractGrid* filter() const {return m_filter;}
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

@@ -11,24 +11,20 @@ public:
 	LookupTableContainer();
 	LookupTableContainer(ProjectDataItem* d);
 	LookupTableContainer(const LookupTableContainer& c);
-	void update();
+	void update() override;
 	virtual void setValueRange(double min, double max);
 	void getValueRange(double* min, double* max);
-	ColorMapSettingWidget::ColorMap colorMap() {return m_colorMap;}
-	void setColorMap(ColorMapSettingWidget::ColorMap cm) {
-		m_colorMap = cm;
-	}
-	const ColorMapSettingWidget::CustomSetting& customSetting() {return m_customSetting;}
-	void setCustomSetting(ColorMapSettingWidget::CustomSetting cs) {
-		m_customSetting = cs;
-	}
-	bool autoRange() {return m_autoRange;}
+	ColorMapSettingWidget::ColorMap colorMap() const {return m_colorMap;}
+	void setColorMap(ColorMapSettingWidget::ColorMap cm) {m_colorMap = cm;}
+	const ColorMapSettingWidget::CustomSetting& customSetting() const {return m_customSetting;}
+	void setCustomSetting(ColorMapSettingWidget::CustomSetting cs) {m_customSetting = cs;}
+	bool autoRange() const {return m_autoRange;}
 	void setAutoRange(bool ar) {m_autoRange = ar;}
-	double autoMin() {return m_autoMin;}
-	double autoMax() {return m_autoMax;}
-	double manualMin() {return m_manualMin;}
+	double autoMin() const {return m_autoMin;}
+	double autoMax() const {return m_autoMax;}
+	double manualMin() const {return m_manualMin;}
 	void setManualMin(double min) {m_manualMin = min;}
-	double manualMax() {return m_manualMax;}
+	double manualMax() const {return m_manualMax;}
 	void setManualMax(double max) {m_manualMax = max;}
 	LookupTableContainer& operator=(const LookupTableContainer& c);
 

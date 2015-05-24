@@ -224,7 +224,7 @@ public:
 
 	const QString& title() {return m_title;}
 	void setTitle(const QString& t) {m_title = t;}
-	bool addIndicesToTitle() {return m_addIndicesToTitle;}
+	bool addIndicesToTitle() const {return m_addIndicesToTitle;}
 	void setAddIndicesToTitle(bool add) {m_addIndicesToTitle = add;}
 	Graph2dHybridWindowResultSetting& operator=(const Graph2dHybridWindowResultSetting& s);
 	bool dataAvailable();

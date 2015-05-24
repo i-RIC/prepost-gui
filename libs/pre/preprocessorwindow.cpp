@@ -278,11 +278,6 @@ void PreProcessorWindow::cameraMoveDown()
 	m_dataModel->moveDown();
 }
 
-ObjectBrowser* PreProcessorWindow::objectBrowser()
-{
-	return m_objectBrowser;
-}
-
 class PreProcessorWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:
@@ -441,4 +436,9 @@ PreProcessorDataModel* PreProcessorWindow::model() const
 {
 	if (m_dataModel == nullptr){return nullptr;}
 	return dynamic_cast<PreProcessorDataModel*>(m_dataModel);
+}
+
+ObjectBrowser* PreProcessorWindow::objectBrowser() const
+{
+	return m_objectBrowser;
 }

@@ -138,7 +138,7 @@ void Post2dWindow::cameraMoveDown()
 	m_dataModel->moveDown();
 }
 
-ObjectBrowser* Post2dWindow::objectBrowser()
+ObjectBrowser* Post2dWindow::objectBrowser() const
 {
 	return m_objectBrowser;
 }

@@ -75,7 +75,7 @@ public:
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	QToolBar* getAdditionalToolBar() const override;
-	ObjectBrowser* objectBrowser() override;
+	ObjectBrowser* objectBrowser() const override;
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
 	void informUnfocusRiverCrosssectionWindows();

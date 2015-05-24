@@ -28,10 +28,10 @@ public:
 	void loadFromCgnsFile(const int fn);
 	void closeCgnsFile();
 protected:
-	bool isAncientChecked() {return true;}
+	bool isAncientChecked() const override {return true;}
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
-	Graph2dWindowDataModel* dataModel() {return m_dataModel;}
+	Graph2dWindowDataModel* dataModel() const {return m_dataModel;}
 protected:
 	QMainWindow* m_mainWindow;
 	Graph2dWindowDataModel* m_dataModel;

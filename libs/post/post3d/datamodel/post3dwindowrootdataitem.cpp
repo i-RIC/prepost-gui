@@ -136,7 +136,7 @@ void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
-Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const QString& name)
+Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const QString& name) const
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		if ((*it)->name() == name) {return *it;}

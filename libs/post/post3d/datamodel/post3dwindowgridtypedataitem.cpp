@@ -62,7 +62,7 @@ Post3dWindowGridTypeDataItem::~Post3dWindowGridTypeDataItem()
 	}
 }
 
-const QString& Post3dWindowGridTypeDataItem::name()
+const QString& Post3dWindowGridTypeDataItem::name() const
 {
 	return m_gridType->name();
 }

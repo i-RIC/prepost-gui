@@ -23,19 +23,17 @@ public:
 	void setRangeMode(RangeMode rm) {
 		m_rangeMode = rm;
 	}
-	double customRangeMax() {return m_customRangeMax;}
-	double customRangeMin() {return m_customRangeMin;}
+	double customRangeMax() const {return m_customRangeMax;}
+	double customRangeMin() const {return m_customRangeMin;}
 	void setCustomRange(double min, double max) {
 		m_customRangeMin = min;
 		m_customRangeMax = max;
 	}
-	LabelMode labelMode() {
-		return m_labelMode;
-	}
+	LabelMode labelMode() const {return m_labelMode;}
 	void setLabelMode(LabelMode lm) {
 		m_labelMode = lm;
 	}
-	const QString& customLabel() {return m_customLabel;}
+	const QString& customLabel() const {return m_customLabel;}
 	void setCustomLabel(const QString& label) {
 		m_customLabel = label;
 	}
@@ -44,6 +42,7 @@ public:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+
 private:
 	void init();
 	RangeMode m_rangeMode;

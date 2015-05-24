@@ -40,16 +40,16 @@ public:
 	PostZoneDataContainer* dataContainer();
 	vtkPolyData* filteredData() const {return m_filteredData;}
 	bool isMasked() const {return m_isMasked;}
-	int zoneNumber() {return m_zoneNumber;}
-	QString zoneName() {return m_zoneName;}
+	int zoneNumber() const {return m_zoneNumber;}
+	QString zoneName() const {return m_zoneName;}
 	void update(bool noparticle = false);
-	Post2dWindowGridShapeDataItem* gridShapeDataItem() {return m_shapeDataItem;}
-	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem() {return m_scalarGroupDataItem;}
-	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() {return m_arrowGroupDataItem;}
-	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() {return m_streamlineGroupDataItem;}
-	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() {return m_particleGroupDataItem;}
-	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() {return m_cellFlagGroupDataItem;}
-	Post2dWindowParticlesTopDataItem* particlesDataItem() {return m_particlesDataItem;}
+	Post2dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
+	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
+	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const {return m_arrowGroupDataItem;}
+	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
+	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
+	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
+	Post2dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
 
 	void initNodeAttributeBrowser();
 	void clearNodeAttributeBrowser();

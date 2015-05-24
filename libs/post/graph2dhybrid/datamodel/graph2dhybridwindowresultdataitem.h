@@ -16,7 +16,7 @@ class Graph2dHybridWindowResultDataItem : public Graph2dHybridWindowDataItem
 public:
 	Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dHybridWindowResultDataItem();
-	QwtPlotCustomCurve* curve() {return m_curve;}
+	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update(int fn);
 	const QString title() const;
 	virtual Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent);

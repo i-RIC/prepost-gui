@@ -27,18 +27,20 @@ public:
 	Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowGridShapeDataItem();
 	void handleStandardItemDoubleClicked();
-	QColor color();
-	QColor indexColor();
-	GridShapeEditDialog::Shape shape() {return m_shape;}
+	QColor color() const;
+	QColor indexColor() const;
+	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void innerUpdateZScale(double scale);
+
 private:
 	void setupActors();
 	void setColor(const QColor& color);
@@ -56,19 +58,17 @@ private:
 	vtkSmartPointer<vtkTransform> m_indexTransform;
 	vtkSmartPointer<vtkActor2D> m_indexActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
-//	vtkSmartPointer<vtkCubeAxesActor2D> m_axesActor;
 
 	double m_color[3];
 	bool m_indexVisible;
 	double m_indexColor[3];
-//	bool m_axesVisible;
-//	double m_axesColor[3];
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;
 	bool m_nearSelectedPoint;
 
 	GridShapeEditDialog::Shape m_shape;
+
 public:
 	friend class Post3dWindowGridShapeDataSetSetting;
 };

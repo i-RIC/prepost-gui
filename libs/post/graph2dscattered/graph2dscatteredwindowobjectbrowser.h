@@ -18,9 +18,11 @@ public:
 	/// Destructor
 	~Graph2dScatteredWindowObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Graph2dScatteredWindowObjectBrowserView* view() {return m_view;}
+	Graph2dScatteredWindowObjectBrowserView* view() const {return m_view;}
+
 public slots:
 	void expandAll();
+
 private:
 	void init();
 	/// The widget to show in the dockarea

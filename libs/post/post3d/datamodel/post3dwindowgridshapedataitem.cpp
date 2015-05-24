@@ -319,7 +319,7 @@ void Post3dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDi
 	iRICUndoStack::instance().push(new Post3dWindowGridShapeDataSetSetting(dialog->isEnabled(), dialog->shape(), dialog->gridColor(), dialog->indexVisible(), dialog->indexColor(), this));
 }
 
-QColor Post3dWindowGridShapeDataItem::color()
+QColor Post3dWindowGridShapeDataItem::color() const
 {
 	return QColor(
 					 (int)(m_color[0] * 255),
@@ -334,7 +334,7 @@ void Post3dWindowGridShapeDataItem::setColor(const QColor& color)
 	m_color[2] = color.blue()  / 255.;
 }
 
-QColor Post3dWindowGridShapeDataItem::indexColor()
+QColor Post3dWindowGridShapeDataItem::indexColor() const
 {
 	return QColor(
 					 (int)(m_indexColor[0] * 255),
