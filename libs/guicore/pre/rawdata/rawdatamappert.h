@@ -13,7 +13,7 @@ public:
 		: RawDataMapper(parent)
 	{}
 protected:
-	GridRelatedConditionContainerT<V>* container() {
+	GridRelatedConditionContainerT<V>* container() const {
 		return dynamic_cast<GridRelatedConditionContainerT<V>* >(m_container);
 	}
 	V fromVariant(const QVariant& val) {

@@ -18,7 +18,7 @@ public:
 	/// Destructor
 	~Post2dBirdEyeObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Post2dBirdEyeObjectBrowserView* view() {return m_view;}
+	Post2dBirdEyeObjectBrowserView* view() const {return m_view;}
 public slots:
 	void expandAll();
 private:

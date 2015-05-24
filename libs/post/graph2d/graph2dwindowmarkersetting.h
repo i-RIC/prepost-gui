@@ -63,8 +63,10 @@ public:
 	};
 	Graph2dWindowMarkerSetting();
 	QList<Graph2dWindowMarkerSettingItem>& items() {return m_items;}
+	const QList<Graph2dWindowMarkerSettingItem>& items() const {return m_items;}
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dWindowDataItem* parent);
 	static QList<Graph2dWindowDataItem*> setupItems(const QList<Graph2dWindowMarkerSettingItem>& settings, Graph2dWindowDataItem* parent);
+
 private:
 	QList<Graph2dWindowMarkerSettingItem> m_items;
 };

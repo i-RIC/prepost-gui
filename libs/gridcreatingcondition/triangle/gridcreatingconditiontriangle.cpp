@@ -175,7 +175,7 @@ bool GridCreatingConditionTriangle::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-QColor GridCreatingConditionTriangle::doubleToColor(double /*d*/)
+QColor GridCreatingConditionTriangle::doubleToColor(double /*d*/) const
 {
 	return Qt::red;
 }

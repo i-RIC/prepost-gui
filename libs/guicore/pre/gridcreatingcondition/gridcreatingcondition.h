@@ -38,7 +38,7 @@ public:
 	GridCreatingConditionCreator* creator() const {return m_creator;}
 	const QString& name() const;
 
-	QMenu* menu() {return m_menu;}
+	QMenu* menu() const {return m_menu;}
 	/// setup VTK actors.
 	virtual bool init() {return true;}
 	virtual void showInitialDialog() {}

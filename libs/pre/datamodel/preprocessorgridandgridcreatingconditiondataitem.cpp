@@ -159,7 +159,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QS
 
 }
 
-bool PreProcessorGridAndGridCreatingConditionDataItem::isDeletable()
+bool PreProcessorGridAndGridCreatingConditionDataItem::isDeletable() const
 {
 	// Ask parent whether I am deletable.
 	return dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->isChildDeletable(this);

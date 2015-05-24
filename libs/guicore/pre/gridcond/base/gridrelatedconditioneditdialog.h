@@ -22,13 +22,11 @@ public:
 	GridRelatedConditionEditDialog(QWidget* parent);
 	~GridRelatedConditionEditDialog();
 	void setWidget(GridRelatedConditionEditWidget* w);
-	GridRelatedConditionEditWidget* widget() {return m_widget;}
-	void clearValue() {
-		m_widget->clearValue();
-	}
+	GridRelatedConditionEditWidget* widget() const {return m_widget;}
+	void clearValue() {m_widget->clearValue();}
 	/// Hide cancel button.
 	void inhibitCancel(bool inhibited = true);
-	bool valueSelected() {return m_widget->valueSelected();}
+	bool valueSelected() const {return m_widget->valueSelected();}
 	void setLabel(const QString& label);
 	void setVariantValue(const QVariant& v) {m_widget->setVariantValue(v);}
 	void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices) {
@@ -37,9 +35,10 @@ public:
 	void applyValue(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) {
 		m_widget->applyValue(container, indices, atts, dItem);
 	}
-	QVariant variantValue() {return m_widget->variantValue();}
+	QVariant variantValue() const {return m_widget->variantValue();}
 	void accept();
 	void reject();
+
 private:
 	bool m_cancelInhibited;
 	GridRelatedConditionEditWidget* m_widget;

@@ -32,7 +32,6 @@ public:
 	const QString& name() const {return m_name;}
 	void setName(const QString& name) {
 		m_name = name;
-//		updateFilename();
 	}
 	const QString& caption() const {return m_caption;}
 	void setCaption(const QString& cap) {m_caption = cap;}
@@ -42,22 +41,22 @@ public:
 	void mouseMoveEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v);
-	int imageWidth() {return m_imageWidth;}
-	int imageHeight() {return m_imageHeight;}
+	int imageWidth() const {return m_imageWidth;}
+	int imageHeight() const {return m_imageHeight;}
 
 	vtkActor* refActor();
-	QAction* fixAction() {return m_fixAction;}
-	QAction* fixActionWithIcon() {return m_fixActionWithIcon;}
-	double aspectRatio() {return m_aspectRatio;}
+	QAction* fixAction() const {return m_fixAction;}
+	QAction* fixActionWithIcon() const {return m_fixActionWithIcon;}
+	double aspectRatio() const {return m_aspectRatio;}
 	void setupActor(vtkActor* actor);
-	bool visible() {return m_visible;}
+	bool visible() const {return m_visible;}
 	void setVisible(bool visible) {m_visible = visible;}
 	void applySettingToActor(vtkActor* actor);
 
-	double translateX() {return m_translateX;}
-	double translateY() {return m_translateY;}
-	double scale() {return m_scale;}
-	double angle() {return m_angle;}
+	double translateX() const {return m_translateX;}
+	double translateY() const {return m_translateY;}
+	double scale() const {return m_scale;}
+	double angle() const {return m_angle;}
 	void setPreProcessorActor(vtkActor* actor) {
 		m_preProcessorActor = actor;
 	}
@@ -71,6 +70,7 @@ public:
 protected slots:
 	void editName() {}
 	void toggleFixState();
+
 signals:
 	void isChanged();
 

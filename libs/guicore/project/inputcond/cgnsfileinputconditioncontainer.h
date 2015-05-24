@@ -49,7 +49,7 @@ public:
 	virtual void clear() = 0;
 	virtual int load() = 0;
 	virtual int save() = 0;
-	virtual QVariant variantValue() = 0;
+	virtual QVariant variantValue() const = 0;
 protected:
 	QString m_name;
 	QString m_bcName;

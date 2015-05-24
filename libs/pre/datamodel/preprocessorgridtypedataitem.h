@@ -23,7 +23,7 @@ public:
 	PreProcessorRawDataTopDataItemInterface* rawdataTop() const {return m_rawdataTop;}
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const QString& name) const;
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
-	bool isChildDeletable(PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
+	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
 	void addCustomMenuItems(QMenu* menu);
 	bool isChildCaptionAvailable(const QString& caption);
 	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const {return m_scalarsToColors.value(attName, 0);}

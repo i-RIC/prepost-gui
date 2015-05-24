@@ -86,8 +86,8 @@ public:
 	void assignActionZValues(const ZDepthRange& range);
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
-	QColor color() {return m_color;}
-	QColor doubleToColor(double d);
+	const QColor& color() const {return m_color;}
+	QColor doubleToColor(double d) const;
 	void setupScalarArray();
 	void clear();
 	bool ready() const {return true;}

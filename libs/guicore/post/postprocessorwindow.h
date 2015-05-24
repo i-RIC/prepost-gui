@@ -23,7 +23,7 @@ public:
 	virtual ~PostProcessorWindow();
 	/// Set newly created project data.
 	const QIcon& icon() const {return m_icon;}
-	int index() {return m_index;}
+	int index() const {return m_index;}
 	virtual void setupDefaultGeometry(int index) = 0;
 
 public slots:

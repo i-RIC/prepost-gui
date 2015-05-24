@@ -90,10 +90,10 @@ public:
 	void setIMax(int i);
 	void setJMax(int j);
 	void setWidth(double w);
-	int iMax() {return m_iMax;}
-	int jMax() {return m_jMax;}
-	double width() {return m_width;}
-	double length() {return m_length;}
+	int iMax() const {return m_iMax;}
+	int jMax() const {return m_jMax;}
+	double width() const {return m_width;}
+	double length() const {return m_length;}
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
 	void clear() override;
 	void showInitialDialog() override;

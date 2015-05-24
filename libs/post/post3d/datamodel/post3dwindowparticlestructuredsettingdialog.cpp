@@ -63,7 +63,7 @@ void Post3dWindowParticleStructuredSettingDialog::setSolution(const QString& sol
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post3dWindowParticleStructuredSettingDialog::solution()
+const QString Post3dWindowParticleStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -77,7 +77,7 @@ void Post3dWindowParticleStructuredSettingDialog::setTimeMode(Post3dWindowNodeVe
 	}
 }
 
-Post3dWindowNodeVectorParticleGroupDataItem::TimeMode Post3dWindowParticleStructuredSettingDialog::timeMode()
+Post3dWindowNodeVectorParticleGroupDataItem::TimeMode Post3dWindowParticleStructuredSettingDialog::timeMode() const
 {
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
 		return Post3dWindowNodeVectorParticleGroupDataItem::tmNormal;
@@ -99,7 +99,7 @@ void Post3dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
 	}
 }
 
-int Post3dWindowParticleStructuredSettingDialog::timeSamplingRate()
+int Post3dWindowParticleStructuredSettingDialog::timeSamplingRate() const
 {
 	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
 	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
@@ -116,7 +116,7 @@ void Post3dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
 	}
 }
 
-int Post3dWindowParticleStructuredSettingDialog::timeDivision()
+int Post3dWindowParticleStructuredSettingDialog::timeDivision() const
 {
 	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
 	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);

@@ -49,7 +49,7 @@ const QString& RawData::typeName() const
 	return m_creator->typeName();
 }
 
-QList<RawDataMapper*> RawData::nodeMappers()
+QList<RawDataMapper*> RawData::nodeMappers() const
 {
 	if (m_creator == nullptr) {
 		QList<RawDataMapper*> l;
@@ -58,7 +58,7 @@ QList<RawDataMapper*> RawData::nodeMappers()
 	return m_creator->nodeMappers();
 }
 
-QList<RawDataMapper*> RawData::cellMappers()
+QList<RawDataMapper*> RawData::cellMappers() const
 {
 	if (m_creator == nullptr) {
 		QList<RawDataMapper*> l;

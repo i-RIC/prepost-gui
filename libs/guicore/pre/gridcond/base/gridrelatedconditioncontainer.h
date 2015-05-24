@@ -20,9 +20,9 @@ public:
 	};
 	/// Constructor
 	GridRelatedConditionContainer(Grid* grid, SolverDefinitionGridRelatedCondition* cond);
-	Grid* grid() {return m_grid;}
+	Grid* grid() const {return m_grid;}
 	const QString& name() const;
-	bool mapped() {return m_mapped;}
+	bool mapped() const {return m_mapped;}
 	virtual void setMapped(bool mapped) {
 		m_mapped = mapped;
 		setModified();
@@ -33,7 +33,7 @@ public:
 	virtual void allocate() = 0;
 	virtual unsigned int dataCount() const = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
-	bool isCustomModified() {return m_isCustomModified;}
+	bool isCustomModified() const {return m_isCustomModified;}
 	void setCustomModified(bool c) {m_isCustomModified = c;}
 	void updateConnections();
 	GridRelatedConditionDimensionsContainer* dimensions() const;

@@ -27,8 +27,8 @@ public:
 	vtkPointSet* labelData() const {return m_labelData;}
 	vtkPolyData* particleData() const {return m_particleData;}
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	int baseId() {return m_baseId;}
-	int zoneId() {return m_zoneId;}
+	int baseId() const {return m_baseId;}
+	int zoneId() const {return m_zoneId;}
 	bool handleCurrentStepUpdate(const int fn) {
 		loadFromCgnsFile(fn);
 		return m_loadOK;

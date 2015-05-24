@@ -21,9 +21,8 @@ public:
 	const QString& caption() const {return m_caption;}
 	const QString& englishCaption() const {return m_englishCaption;}
 	void setCaption(const QString& caption) {m_caption = caption;}
-	const QDomElement& element() {return m_element;}
-	Position position() {return m_position;}
-//	PreProcessorBCDataItem* createConditionDataItem(SolverDefinition* def, PreProcessorDataItem* parent);
+	const QDomElement& element() const {return m_element;}
+	Position position() const {return m_position;}
 
 private:
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);

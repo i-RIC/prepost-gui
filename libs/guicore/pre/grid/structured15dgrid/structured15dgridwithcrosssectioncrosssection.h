@@ -28,20 +28,18 @@ public:
 		m_grid = grid;
 		m_name = name;
 	}
-	Grid* grid() {return m_grid;}
+	Grid* grid() const {return m_grid;}
 	void loadFromCgnsFile(int fn, int B, int Z, int index);
 	void saveToCgnsFile(int fn, int B, int Z, int index);
-	const QString& name() {return m_name;}
+	const QString& name() const {return m_name;}
+	const QVector<Altitude>& altitudeInfo() const {return m_altitudeInfo;}
 	QVector<Altitude>& altitudeInfo() {return m_altitudeInfo;}
 	void setAltitudeInfo(const QVector<Altitude>& alt) {m_altitudeInfo = alt;}
-//	QVector<double>& altitude(){return m_altitude;}
-//	QVector<double>& distance(){return m_distnace;}
+
 protected:
 	Grid* m_grid;
 	QString m_name;
 	QVector<Altitude> m_altitudeInfo;
-//	QVector<double> m_altitude;
-//	QVector<double> m_distance;
 };
 
 #endif // STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTION_H

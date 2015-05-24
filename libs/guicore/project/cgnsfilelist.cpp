@@ -45,7 +45,7 @@ void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		writer.writeEndElement();
 	}
 }
-QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles()
+QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles() const
 {
 	QList<CgnsFileList::CgnsFileEntry*> ret;
 	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
@@ -54,7 +54,7 @@ QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles()
 	return ret;
 }
 
-bool CgnsFileList::exists(const QString& name)
+bool CgnsFileList::exists(const QString& name) const
 {
 	return m_cgnsFiles.contains(name);
 }

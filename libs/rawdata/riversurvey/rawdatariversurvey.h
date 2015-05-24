@@ -119,8 +119,8 @@ public:
 	void updateInterpolators();
 	void updateShapeData();
 	void updateSelectionShapeData();
-	RawDataRiverPathPoint* headPoint() {return m_headPoint;}
-	vtkStructuredGrid* backgroundGrid() {return m_backgroundGrid;}
+	RawDataRiverPathPoint* headPoint() const {return m_headPoint;}
+	vtkStructuredGrid* backgroundGrid() const {return m_backgroundGrid;}
 	void updateCrossectionWindows();
 	void setColoredPoints(RawDataRiverPathPoint* black, RawDataRiverPathPoint* red, RawDataRiverPathPoint* blue);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond) {m_gridCreatingCondition = cond;}

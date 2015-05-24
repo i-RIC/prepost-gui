@@ -76,7 +76,7 @@ Graph2dWindowDataItem::~Graph2dWindowDataItem()
 	}
 }
 
-bool Graph2dWindowDataItem::isEnabled()
+bool Graph2dWindowDataItem::isEnabled() const
 {
 	if (m_standardItem == nullptr) {return false;}
 	return (m_standardItem->checkState() == Qt::Checked);
@@ -315,7 +315,7 @@ void Graph2dWindowDataItem::renderView()
 	dataModel()->view()->replot();
 }
 
-QMainWindow* Graph2dWindowDataItem::mainWindow()
+QMainWindow* Graph2dWindowDataItem::mainWindow() const
 {
 	return dataModel()->mainWindow();
 }

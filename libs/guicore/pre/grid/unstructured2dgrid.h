@@ -17,7 +17,7 @@ public:
 	Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent);
 	virtual ~Unstructured2DGrid() {}
 	/// Return VTK container object to store the grid.
-	vtkUnstructuredGrid* vtkGrid() {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
+	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
 	unsigned int vertexCount() const;
 	const QVector2D vertex(unsigned int index) const;
 	void setVertex(unsigned int index, const QVector2D& v);

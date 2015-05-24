@@ -18,9 +18,11 @@ public:
 	/// Destructor
 	~Post3dObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
-	Post3dObjectBrowserView* view() {return m_view;}
+	Post3dObjectBrowserView* view() const {return m_view;}
+
 public slots:
 	void expandAll();
+
 private:
 	void init();
 	/// The widget to show in the dockarea

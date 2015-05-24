@@ -85,8 +85,10 @@ public:
 		double upperLimit;
 	};
 	GridCtrlOffsetInfo& GCPOffsetInfo() {return m_GCPOffsetInfo;}
+	const GridCtrlOffsetInfo& GCPOffsetInfo() const {return m_GCPOffsetInfo;}
 	void invalidateSelectedCtrlPoints();
 	void clear();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);

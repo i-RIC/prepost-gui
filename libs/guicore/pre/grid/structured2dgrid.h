@@ -53,7 +53,7 @@ public:
 	/// Constructor
 	Structured2DGrid(const QString& zonename, ProjectDataItem* parent);
 	/// Return VTK container object to store the grid.
-	vtkStructuredGrid* vtkGrid() {return dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);}
+	vtkStructuredGrid* vtkGrid() const {return dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);}
 	unsigned int vertexCount() const {return m_dimensionI * m_dimensionJ;}
 	unsigned int vertexIndex(unsigned int i, unsigned int j) const {
 		return m_dimensionI * j + i;
@@ -71,14 +71,14 @@ public:
 	bool saveToCgnsFile(const int fn, int base, char* zonename);
 	/// getDimension of this grid.
 	void dimensions(unsigned int* i, unsigned int* j);
-	unsigned int dimensionI() {return m_dimensionI;}
-	unsigned int dimensionJ() {return m_dimensionJ;}
+	unsigned int dimensionI() const {return m_dimensionI;}
+	unsigned int dimensionJ() const {return m_dimensionJ;}
 	void setDimensions(unsigned int i, unsigned int j);
 	unsigned int cellCount() const {
 		return m_vtkGrid->GetNumberOfCells();
 	}
 	const QStringList checkShape(QTextStream& stream);
-	bool isValid(QTextStream& stream);
+	bool isValid(QTextStream& stream) const override;
 	bool isAspectRatioOk(double limit, QTextStream& stream);
 	bool isAngleOk(double limitAngle, QTextStream& stream);
 	bool isVariationOk(double ilimit, double jlimit, QTextStream& stream);

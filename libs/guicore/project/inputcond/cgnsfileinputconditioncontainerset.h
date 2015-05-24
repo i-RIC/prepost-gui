@@ -40,28 +40,20 @@ public:
 	int load();
 	int save();
 	void reset();
-	/**
-	 * constant integer values
-	 */
 	QMap<QString, CgnsFileInputConditionContainerInteger>& integers() {return m_integers;}
+	const QMap<QString, CgnsFileInputConditionContainerInteger>& integers() const {return m_integers;}
 	CgnsFileInputConditionContainerInteger& integer(const QString& name) {return m_integers[name];}
-	/**
-	 * constant real values
-	 */
 	QMap<QString, CgnsFileInputConditionContainerReal>& reals() {return m_reals;}
+	const QMap<QString, CgnsFileInputConditionContainerReal>& reals() const {return m_reals;}
 	CgnsFileInputConditionContainerReal& real(const QString& name) {return m_reals[name];}
-	/**
-	 * constant string values (including filenames)
-	 */
 	QMap<QString, CgnsFileInputConditionContainerString>& strings() {return m_strings;}
+	const QMap<QString, CgnsFileInputConditionContainerString>& strings() const {return m_strings;}
 	CgnsFileInputConditionContainerString& string(const QString& name) {return m_strings[name];}
-	/**
-	 *
-	 */
 	QMap<QString, CgnsFileInputConditionContainerFunctional>& functionals() {return m_functionals;}
+	const QMap<QString, CgnsFileInputConditionContainerFunctional>& functionals() const {return m_functionals;}
 	CgnsFileInputConditionContainerFunctional& functional(const QString& name) {return m_functionals[name];}
 	CgnsFileInputConditionContainer* container(const QString& name) {return m_containers[name];}
-	QWidget* parentWidget() {return m_parentWidget;}
+	QWidget* parentWidget() const {return m_parentWidget;}
 
 signals:
 	void modified();

@@ -19,10 +19,9 @@ public:
 		l->addWidget(w);
 		setLayout(l);
 	}
-	GridRelatedConditionVariationEditWidget* widget() {return m_widget;}
-	QSize sizeHint() const {
-		return m_widget->sizeHint();
-	}
+	GridRelatedConditionVariationEditWidget* widget() const {return m_widget;}
+	QSize sizeHint() const {return m_widget->sizeHint();}
+
 private:
 	GridRelatedConditionVariationEditWidget* m_widget;
 };

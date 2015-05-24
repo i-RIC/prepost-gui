@@ -13,14 +13,17 @@ public:
 	PostIterationSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}
 	void loadFromCgnsFile(const int fn);
 	const QList<int>& iterationsteps() const {return m_iterationsteps;}
-	bool dataExists() {return m_iterationsteps.count() > 0;}
+	bool dataExists() const override {return m_iterationsteps.count() > 0;}
 	void checkStepsUpdate(int fn);
 	void informSteps();
+
 protected:
 	void clearArray() {m_iterationsteps.clear();}
+
 signals:
 	void stepsUpdated(QList<int> steps);
 	void stepsUpdated(int fn);
+
 private:
 	QList<int> m_iterationsteps;
 };

@@ -117,7 +117,7 @@ public:
 	void assignActionZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
-	QColor color() {return m_color;}
+	const QColor& color() const {return m_color;}
 	void setupScalarArray();
 	void clear() override;
 	bool ready() const override {return true;}

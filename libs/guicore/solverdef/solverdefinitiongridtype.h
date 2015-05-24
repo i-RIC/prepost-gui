@@ -55,10 +55,11 @@ public:
 	bool isOptional() const {return m_isOptional;}
 	void buildGridRelatedConditions(Grid* grid) const;
 	/// Returns a pointer to a grid that has no data.
-	Grid* emptyGrid() {return m_emptyGrid;}
+	Grid* emptyGrid() const {return m_emptyGrid;}
 //	PreProcessorGridDataItem* createGridDataItem(PreProcessorDataItem* parent);
 	Grid* createEmptyGrid();
 	const QString solutionCaption(const QString& name);
+
 protected:
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
 	QString m_name;

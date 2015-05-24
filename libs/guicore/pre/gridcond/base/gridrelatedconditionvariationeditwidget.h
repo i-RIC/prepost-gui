@@ -23,6 +23,7 @@ public:
 	}
 	virtual void applyVariation(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
 	virtual QVariant variantValue() = 0;
+
 protected:
 	virtual void setupWidget() = 0;
 	virtual void getValueFromInnerWidget() = 0;

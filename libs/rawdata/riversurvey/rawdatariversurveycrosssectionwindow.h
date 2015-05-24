@@ -50,10 +50,10 @@ public:
 	~RawDataRiverSurveyCrosssectionWindow();
 	void setRiverSurvey(RawDataRiverSurvey* rs);
 	void setCrosssection(double name);
-	RawDataRiverPathPoint* target() {return m_editTargetPoint;}
-	QAction* deleteAction() {return m_deleteAction;}
-	QAction* inactivateByWEOnlyThisAction() {return m_inactivateByWEOnlyThisAction;}
-	QAction* inactivateByWEAllAction() {return m_inactivateByWEAllAction;}
+	RawDataRiverPathPoint* target() const {return m_editTargetPoint;}
+	QAction* deleteAction() const {return m_deleteAction;}
+	QAction* inactivateByWEOnlyThisAction() const {return m_inactivateByWEOnlyThisAction;}
+	QAction* inactivateByWEAllAction() const {return m_inactivateByWEAllAction;}
 	void setupData();
 	void updateSurveysTable();
 	void updateComboBoxes();

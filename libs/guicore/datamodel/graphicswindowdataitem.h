@@ -71,9 +71,9 @@ public:
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	/// Returns true if this item is deletable.
-	virtual bool isDeletable() {return m_isDeletable;}
+	virtual bool isDeletable() const {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
-	virtual bool isReorderable() {return m_isReorderable;}
+	virtual bool isReorderable() const {return m_isReorderable;}
 	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	/// This function is called when the corresponding node in object browser is selected.
 	virtual void informSelection(VTKGraphicsView* /*v*/) {}
@@ -107,12 +107,12 @@ public:
 	virtual void moveDown();
 	/// Z depth value range assigned for this item.
 	virtual void updateZDepthRangeItemCount();
-	ZDepthRange zDepthRange() {return m_zDepthRange;}
+	const ZDepthRange& zDepthRange() const {return m_zDepthRange;}
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
-	vtkActorCollection* actorCollection() {return m_actorCollection;}
-	vtkActor2DCollection* actor2DCollection() {return m_actor2DCollection;}
+	vtkActorCollection* actorCollection() const {return m_actorCollection;}
+	vtkActor2DCollection* actor2DCollection() const {return m_actor2DCollection;}
 	virtual QStringList containedFiles();
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
@@ -138,7 +138,7 @@ protected:
 	virtual void updateVisibility(bool visible);
 	virtual void innerUpdate2Ds() {}
 	virtual void innerUpdateZScale(double /*scale*/) {}
-	virtual bool myHasTransparentPart() {return false;}
+	virtual bool myHasTransparentPart() const {return false;}
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* /*v*/) {}
 
 	/// Build an instance of some class that inherits QGraphicsItem.

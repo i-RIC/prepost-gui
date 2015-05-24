@@ -224,7 +224,7 @@ const QStringList Structured2DGrid::checkShape(QTextStream& stream)
 	return messages;
 }
 
-bool Structured2DGrid::isValid(QTextStream& stream)
+bool Structured2DGrid::isValid(QTextStream& stream) const
 {
 	bool allOk = true;
 	stream << tr("* Cells where edges intersect") << endl;

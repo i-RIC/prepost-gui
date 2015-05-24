@@ -38,9 +38,9 @@ public:
 		m_current = nullptr;
 	}
 	~CgnsFileList();
-	QList<CgnsFileEntry*> cgnsFiles();
-	CgnsFileEntry* current() {return m_current;}
-	bool exists(const QString& name);
+	QList<CgnsFileEntry*> cgnsFiles() const;
+	CgnsFileEntry* current() const {return m_current;}
+	bool exists(const QString& name) const;
 	CgnsFileEntry* setCurrent(const QString& name);
 	/// Add new cgns file.
 	void add(const QString& name);

@@ -45,7 +45,7 @@ public:
 	QStandardItemModel* itemModel() const {return m_itemModel;}
 	void updateExpandState(ObjectBrowserView* view);
 	void reflectExpandState(ObjectBrowserView* view);
-	QMainWindow* mainWindow() {return m_mainWindow;}
+	QMainWindow* mainWindow() const {return m_mainWindow;}
 	void setObjectBrowserView(ObjectBrowserView* v);
 	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
 	Graph2dWindowVerticalAxisSetting* leftAxisSetting() const {return m_leftAxisSetting;}

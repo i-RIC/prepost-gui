@@ -36,13 +36,13 @@ public:
 	void closeCgnsFile();
 
 	/// The model to store the model of object browser.
-	QStandardItemModel* itemModel() {return m_itemModel;}
+	QStandardItemModel* itemModel() const {return m_itemModel;}
 	void updateExpandState(ObjectBrowserView* view);
 	void reflectExpandState(ObjectBrowserView* view);
 	void setObjectBrowserView(ObjectBrowserView* v);
 	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
 	void fitOnDataLoad();
-	QToolBar* operationToolBar() {return m_operationToolBar;}
+	QToolBar* operationToolBar() const {return m_operationToolBar;}
 	void viewOperationEndedGlobal();
 
 protected:

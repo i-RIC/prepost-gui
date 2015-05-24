@@ -261,7 +261,7 @@ void SolverConsoleWindow::setupDefaultGeometry()
 	parent->resize(700, 500);
 }
 
-void SolverConsoleWindow::copy()
+void SolverConsoleWindow::copy() const
 {
 	m_console->copy();
 }

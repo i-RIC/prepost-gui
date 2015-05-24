@@ -89,7 +89,7 @@ public:
 	int defineValue(int ncid, int xId, int yId, const QList<int>& dimIds, int* varId);
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
 	int outputDimensions(int ncid, const QList<int>& varIds);
-	bool requestCoordinateSystem() {return true;}
+	bool requestCoordinateSystem() const override {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v);
 	virtual double thresholdValue() = 0;

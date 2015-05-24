@@ -30,7 +30,7 @@ protected:
 	bool isAncientChecked() const override {return true;}
 	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
-	GraphicsWindowDataModel* dataModel() {return m_dataModel;}
+	GraphicsWindowDataModel* dataModel() const {return m_dataModel;}
 
 protected:
 	QMainWindow* m_mainWindow;

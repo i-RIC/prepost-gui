@@ -34,7 +34,8 @@ public:
 	}
 	int load();
 	int save();
-	QVariant variantValue() {return QVariant(0);}
+	QVariant variantValue() const override {return QVariant(0);}
+
 public:
 	void setValue(const QVector<double>& x, const QVector<double>& y) {
 		m_param.name = "Param";
@@ -52,15 +53,15 @@ public:
 	QVector<double>& y() {
 		return value(0);
 	}
-	int valueCount() {return m_values.count();}
-	QVector<double>& param() {
-		return m_param.values;
-	}
-	QVector<double>& value(int index) {
-		return m_values[index].values;
-	}
+	int valueCount() const {return m_values.count();}
+	QVector<double>& param() {return m_param.values;}
+	const QVector<double>& param() const {return m_param.values;}
+	QVector<double>& value(int index) {return m_values[index].values;}
+	const QVector<double>& value(int index) const {return m_values[index].values;}
+
 signals:
 	void valueChanged();
+
 private:
 	void copyValues(const CgnsFileInputConditionContainerFunctional& f) {
 		m_name = f.m_name;

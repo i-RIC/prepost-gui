@@ -30,9 +30,7 @@ public:
 	void clear();
 	int load();
 	int save();
-	QVariant variantValue() {
-		return QVariant(m_value);
-	}
+	QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(int v) {
 		if (m_value != v) {
 			m_value = v;
@@ -40,11 +38,9 @@ public:
 			emit valueChanged();
 		}
 	}
-	int value() {return m_value;}
-	void setDefaultValue(int d) {
-		m_default = d;
-	}
-	int defaultValue() {return m_default;}
+	int value() const {return m_value;}
+	void setDefaultValue(int d) {m_default = d;}
+	int defaultValue() const {return m_default;}
 
 protected:
 	void setup(const QDomNode& defNode);

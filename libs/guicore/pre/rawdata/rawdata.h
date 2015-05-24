@@ -56,18 +56,18 @@ public:
 	}
 	const QString& caption() const {return m_caption;}
 	void setCaption(const QString& cap) {m_caption = cap;}
-	SolverDefinitionGridRelatedCondition* gridRelatedCondition() {return m_gridRelatedCondition;}
+	SolverDefinitionGridRelatedCondition* gridRelatedCondition() const {return m_gridRelatedCondition;}
 	const QIcon icon() const;
 	/// Returns the pointer to the creator that created this instance.
-	RawDataCreator* creator() {return m_creator;}
-	virtual RawDataMapper* mapper() {return m_mapper;}
+	RawDataCreator* creator() const {return m_creator;}
+	virtual RawDataMapper* mapper() const {return m_mapper;}
 	void setMapper(RawDataMapper* m) {m_mapper = m;}
-	QList<RawDataMapper*> mappers() {
+	QList<RawDataMapper*> mappers() const {
 		return (this->*mapperFunc)();
 	}
 	void setDefaultMapper();
-	QList<RawDataMapper*> nodeMappers();
-	QList<RawDataMapper*> cellMappers();
+	QList<RawDataMapper*> nodeMappers() const;
+	QList<RawDataMapper*> cellMappers() const;
 	QList<RawDataImporter*> importers();
 	QList<RawDataExporter*> exporters();
 	virtual void setupDataItem();
@@ -104,7 +104,7 @@ public:
 	void saveToCgnsFile(const int fn);
 	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* /*v*/) {}
 	void applyOffset(double x, double y) {doApplyOffset(x, y);}
-	virtual bool requestCoordinateSystem() {return false;}
+	virtual bool requestCoordinateSystem() const {return false;}
 
 signals:
 	void graphicsUpdated();
@@ -120,7 +120,7 @@ protected:
 	void updateVisibility();
 	void updateVisibilityWithoutRendering();
 	QAction* deleteAction();
-	QList<RawDataMapper*> (RawData::*mapperFunc)();
+	QList<RawDataMapper*> (RawData::*mapperFunc)() const;
 	vtkRenderer* renderer();
 	void renderGraphicsView();
 	vtkActorCollection* actorCollection();

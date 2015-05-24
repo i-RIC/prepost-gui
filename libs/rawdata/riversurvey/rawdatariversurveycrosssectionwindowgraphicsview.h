@@ -52,9 +52,9 @@ public:
 	}
 	QRegion visualRegionForSelection(const QItemSelection& /*selection*/) const {return QRegion();}
 
-	QAction* activateAction() {return m_activateAction;}
-	QAction* inactivateAction() {return m_inactivateAction;}
-	QAction* moveAction() {return m_moveAction;}
+	QAction* activateAction() const {return m_activateAction;}
+	QAction* inactivateAction() const {return m_inactivateAction;}
+	QAction* moveAction() const {return m_moveAction;}
 
 	void cameraFit();
 	void cameraMoveLeft();

@@ -71,9 +71,9 @@ public:
 		m_isModified = true;
 		m_vtkGrid->Modified();
 	}
-	bool isModified() {return m_isModified;}
+	bool isModified() const {return m_isModified;}
 	virtual const QStringList checkShape(QTextStream& stream);
-	virtual bool isValid(QTextStream& /*stream*/) {return true;}
+	virtual bool isValid(QTextStream& /*stream*/) const {return true;}
 	bool isCustomModified();
 	void setCustomModified(bool modified);
 	virtual void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);

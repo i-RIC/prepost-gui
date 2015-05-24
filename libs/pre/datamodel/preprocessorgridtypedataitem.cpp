@@ -85,7 +85,7 @@ PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeD
 	return 0;
 }
 
-bool PreProcessorGridTypeDataItem::isChildDeletable(PreProcessorGridAndGridCreatingConditionDataItemInterface* /*child*/) const
+bool PreProcessorGridTypeDataItem::isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface * /*child*/) const
 {
 	// if this gridtype is not optional and there is only one
 	// condition, this item is not deletable.

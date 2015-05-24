@@ -52,9 +52,9 @@ public:
 	/// Update Window title depending on Solver name and status
 	void updateWindowTitle();
 	/// Returns true to inform this window supports copy().
-	bool acceptCopy() override {return true;}
+	bool acceptCopy() const override {return true;}
 	/// Copy the selected string in solver console window.
-	void copy() override;
+	void copy() const override;
 	/// Clear the console log.
 	void clear();
 

@@ -25,8 +25,8 @@ public:
 
 	void update();
 	void cancel();
-	vtkStructuredGrid* grid() {return m_grid;}
-	vtkPointSet* partialGrid(RawDataRiverPathPoint* p) {
+	vtkStructuredGrid* grid() const {return m_grid;}
+	vtkPointSet* partialGrid(RawDataRiverPathPoint* p) const {
 		return m_partialGrids.value(p, 0);
 	}
 	void setUseDivisionPoints(bool use) {
@@ -37,8 +37,10 @@ public:
 
 signals:
 	void gridUpdated();
+
 protected:
 	void run();
+
 private:
 	bool runStandard();
 	bool runUsingDivisionPoints();

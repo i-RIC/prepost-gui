@@ -116,23 +116,24 @@ public:
 	 */
 	unsigned int numOfAltitudes(bool OnlyActive = false);
 	AltitudeList& AltitudeInfo() {return m_altitudeInfo;}
-	RawDataRiverPathPoint* parent() {return m_parent;}
-	bool fixedPointLSet() {return m_fixedPointLSet;}
-	const Altitude& fixedPointL() {
+	const AltitudeList& AltitudeInfo() const {return m_altitudeInfo;}
+	RawDataRiverPathPoint* parent() const {return m_parent;}
+	bool fixedPointLSet() const {return m_fixedPointLSet;}
+	const Altitude& fixedPointL() const {
 		return m_altitudeInfo.at(m_fixedPointL);
 	}
-	int fixedPointLIndex() {return m_fixedPointL;}
-	bool fixedPointRSet() {return m_fixedPointRSet;}
-	const Altitude& fixedPointR() {
+	int fixedPointLIndex() const {return m_fixedPointL;}
+	bool fixedPointRSet() const {return m_fixedPointRSet;}
+	const Altitude& fixedPointR() const {
 		return m_altitudeInfo.at(m_fixedPointR);
 	}
-	int fixedPointRIndex() {return m_fixedPointR;}
+	int fixedPointRIndex() const {return m_fixedPointR;}
 	void setFixedPointL(int index);
 	void unsetFixedPointL();
 	void setFixedPointR(int index);
 	void unsetFixedPointR();
-	double fixedPointLDiv() {return m_fixedPointLDiv;}
-	double fixedPointRDiv() {return m_fixedPointRDiv;}
+	double fixedPointLDiv() const {return m_fixedPointLDiv;}
+	double fixedPointRDiv() const {return m_fixedPointRDiv;}
 	void updateFixedPointDivs();
 
 private:

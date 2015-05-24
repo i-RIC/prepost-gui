@@ -105,14 +105,15 @@ public:
 	void remove();
 	void setCrosssectionDirection(const QVector2D& v);
 	/// The pointer to the previous river path point.
-	RawDataRiverPathPoint* previousPoint() {return m_previousPoint;}
+	RawDataRiverPathPoint* previousPoint() const {return m_previousPoint;}
 	/// The pointer to the next river path point.
-	RawDataRiverPathPoint* nextPoint() {return m_nextPoint;}
+	RawDataRiverPathPoint* nextPoint() const {return m_nextPoint;}
 	/// Name
 	const QString& name() const {return m_name;}
 	/// Set new name
 	void setName(const QString& newname);
 	RawDataRiverCrosssection& crosssection() {return m_crosssection;}
+	const RawDataRiverCrosssection& crosssection() const {return m_crosssection;}
 	/// The direction of crosssection along left bank to right bank
 	const QVector2D& crosssectionDirection() const {return m_crosssectionDirection;}
 	/// The direction of left-bank side "wing".

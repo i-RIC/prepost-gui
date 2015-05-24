@@ -23,11 +23,11 @@ public:
 	/// Constructor
 	PostSolutionInfo(ProjectDataItem* parent);
 	~PostSolutionInfo();
-	SolverDefinition::IterationType iterationType() {return m_iterationType;}
+	SolverDefinition::IterationType iterationType() const {return m_iterationType;}
 	void setIterationType(SolverDefinition::IterationType type);
-	PostIterationSteps* iterationSteps() {return m_iterationSteps;}
-	PostTimeSteps* timeSteps() {return m_timeSteps;}
-	int currentStep() {return m_currentStep;}
+	PostIterationSteps* iterationSteps() const {return m_iterationSteps;}
+	PostTimeSteps* timeSteps() const {return m_timeSteps;}
+	int currentStep() const {return m_currentStep;}
 	double currentTimeStep();
 	/// Returns true if the current CGNS file has results.
 	bool hasResults();
@@ -65,7 +65,8 @@ public:
 	void setParticleExportPrefix(const QString& prefix) {m_particleExportPrefix = prefix;}
 
 	/// File ID that can be used with cgnslib functions.
-	int fileId() {return m_fileId;}
+	int fileId() const {return m_fileId;}
+
 protected:
 	void timerEvent(QTimerEvent*);
 	bool innerSetupZoneDataContainers(int fn, int dimiension, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
@@ -73,15 +74,18 @@ protected:
 	virtual void doLoadFromProjectMainFile(const QDomNode& node);
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void informStepsUpdated();
+
 public slots:
 	void informSolverStart();
 	void informSolverFinish();
 	bool setCurrentStep(unsigned int step, int fn = 0);
 	void checkCgnsStepsUpdate();
 	void exportCalculationResult();
+
 protected slots:
 	void handleIterationStepsUpdate(const QList<int>& steps);
 	void handleTimeStepsUpdate(const QList<double>& steps);
+
 signals:
 	void currentStepUpdated();
 	void updated();
@@ -91,8 +95,9 @@ signals:
 	void zoneList1DUpdated();
 	void zoneList2DUpdated();
 	void zoneList3DUpdated();
+
 private:
-	bool stepsExist();
+	bool stepsExist() const;
 	void setupZoneDataContainers(int fn);
 	void checkBaseIterativeDataExist(int fn);
 	static const int TIMERINTERVAL = 500;

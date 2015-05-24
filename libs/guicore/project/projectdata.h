@@ -60,9 +60,9 @@ public:
 	/// Save project data into the work folder.
 	bool save();
 	/// Main file (project.xml)
-	ProjectMainFile* mainfile() {return m_mainfile;}
+	ProjectMainFile* mainfile() const {return m_mainfile;}
 	/// Solver definition
-	SolverDefinition* solverDefinition() {return m_solverDefinition;}
+	SolverDefinition* solverDefinition() const {return m_solverDefinition;}
 	/// Setter function for solver definition
 	void setSolverDefinition(SolverDefinition* def);
 	/// Switch to the default cgns file.
@@ -73,23 +73,23 @@ public:
 	const VersionNumber version();
 	/// Get new workfolder name to create
 	static const QString newWorkfolderName(const QDir& workspace);
-	const QString workCgnsFileName(const QString& name);
-	const QString currentCgnsFileName();
+	const QString workCgnsFileName(const QString& name) const;
+	const QString currentCgnsFileName() const;
 	/// iRIC Main Window.
-	iRICMainWindowInterface* mainWindow() {return m_mainWindow;}
-	const QString tmpFileName();
+	iRICMainWindowInterface* mainWindow() const {return m_mainWindow;}
+	const QString tmpFileName() const;
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
 	/// Copy the work folder to the specified folder. Old folder also is kept.
 	bool copyTo(const QString& newWorkFolder, bool switchToNewFolder);
 	/// Whether it is a folder project.
-	bool folderProject() {return m_folderProject;}
+	bool folderProject() const {return m_folderProject;}
 	/// Returns true when CGNS file size exceeds 2 GB.
-	bool hasHugeCgns();
+	bool hasHugeCgns() const;
 	/// Open the post-processors using the settings in project file.
 	void openPostProcessors();
 	/// Project data work directory is inside workspace.
-	bool isInWorkspace();
+	bool isInWorkspace() const;
 
 public slots:
 	/// Open work directory with Explorer.

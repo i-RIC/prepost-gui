@@ -85,7 +85,7 @@ public:
 	}
 
 protected:
-	DataType_t dataType() {return Integer;}
+	DataType_t dataType() const override {return Integer;}
 
 private:
 	SolverDefinitionGridRelatedComplexCondition* condition() const {

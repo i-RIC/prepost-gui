@@ -22,7 +22,7 @@ public:
 	GridRelatedConditionVariationEditDialog(QWidget* parent);
 	~GridRelatedConditionVariationEditDialog();
 	void setWidget(GridRelatedConditionVariationEditWidget* w);
-	GridRelatedConditionVariationEditWidget* widget() {return m_widget;}
+	GridRelatedConditionVariationEditWidget* widget() const {return m_widget;}
 	void clearValue() {
 		m_widget->clearValue();
 	}
@@ -30,7 +30,7 @@ public:
 	void applyVariation(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) {
 		m_widget->applyVariation(container, indices, atts, dItem);
 	}
-	QVariant variantValue() {return m_widget->variantValue();}
+	QVariant variantValue() const {return m_widget->variantValue();}
 	void accept();
 	void reject();
 

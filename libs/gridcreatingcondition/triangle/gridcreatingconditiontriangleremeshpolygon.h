@@ -11,13 +11,16 @@ class GridCreatingConditionTriangleRemeshPolygon : public GridCreatingConditionT
 public:
 	GridCreatingConditionTriangleRemeshPolygon(GridCreatingConditionTriangle* parent);
 	void setCellSize(double s) {m_cellSize = s;}
-	double cellSize() {return m_cellSize;}
+	double cellSize() const {return m_cellSize;}
 	void finishDefinition();
+
 public slots:
 	void editGridSize(bool required = false);
+
 private:
 	bool m_isCellSizeSet;
 	double m_cellSize;
+
 public:
 	friend class GridCreatingConditionTriangleRemeshPolygonEditGridSizeCommand;
 };

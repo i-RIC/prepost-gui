@@ -208,7 +208,7 @@ protected:
 		return name.arg(index);
 	}
 
-	virtual DataType_t dataType() = 0;
+	virtual DataType_t dataType() const = 0;
 };
 
 #endif // GRIDRELATEDCONDITIONCONTAINERT_H

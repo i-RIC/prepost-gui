@@ -15,8 +15,8 @@ public:
 	/// Constructor
 	Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent);
 	/// Return VTK container object to store the grid.
-	vtkUnstructuredGrid* vtkGrid() {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
-	vtkUnstructuredGrid* vertexGrid() {return m_vertexGrid;}
+	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
+	vtkUnstructuredGrid* vertexGrid() const {return m_vertexGrid;}
 	const QVector2D vertex(unsigned int index) const;
 	void setVertex(unsigned int index, const QVector2D& v);
 	bool loadFromCgnsFile(const int fn, int B, int Z);
@@ -24,9 +24,8 @@ public:
 	unsigned int vertexCount() const {return m_vertexGrid->GetNumberOfPoints();}
 	unsigned int cellCount() const {return nodeCount() - 1;}
 	void setPoints(vtkPoints* points);
-	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections() {
-		return m_crossSections;
-	}
+	QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections() {return m_crossSections;}
+	const QList<Structured15DGridWithCrossSectionCrossSection*>& crossSections() const {return m_crossSections;}
 	Structured15DGridWithCrossSectionCrossSection* crossSections(int i) {
 		return m_crossSections.at(i);
 	}

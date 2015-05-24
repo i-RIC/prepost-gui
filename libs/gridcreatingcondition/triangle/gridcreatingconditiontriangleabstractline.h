@@ -29,12 +29,12 @@ public:
 	bool isEdgeSelectable(const QVector2D& pos, double distlimit);
 
 	const QVector<QPointF> polyLine(QPointF offset = QPointF(0, 0)) const;
-	vtkPolyLine* getVtkLine() {return m_vtkPolyLine;}
+	vtkPolyLine* getVtkLine() const {return m_vtkPolyLine;}
 	void setPolyLine(const QVector<QPointF>& polyline);
 	void setZDepthRange(double min, double max);
 	void updateShapeData();
-	int selectedVertexId() {return m_selectedVertexId;}
-	int selectedEdgeId() {return m_selectedEdgeId;}
+	int selectedVertexId() const {return m_selectedVertexId;}
+	int selectedEdgeId() const {return m_selectedEdgeId;}
 
 	void setActive(bool active);
 	virtual void finishDefinition() {}

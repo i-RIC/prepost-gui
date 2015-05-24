@@ -40,9 +40,7 @@ public:
 	static V fromVariant(const QVariant& val) {
 		return val.value<V>();
 	}
-	QVariant toVariant(V val) {
-		return QVariant(val);
-	}
+	QVariant toVariant(V val) const {return QVariant(val);}
 
 	QVariant variantValue(int index) const {return QVariant(value(index));}
 	QList<QVariant> variantValues() const {

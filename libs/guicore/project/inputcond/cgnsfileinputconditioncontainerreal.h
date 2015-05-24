@@ -27,7 +27,7 @@ public:
 	void clear();
 	int load();
 	int save();
-	virtual QVariant variantValue() {return QVariant(m_value);}
+	virtual QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(double v) {
 		if (m_value != v) {
 			m_value = v;
@@ -35,11 +35,9 @@ public:
 			emit valueChanged();
 		}
 	}
-	double value() {return m_value;}
-	void setDefaultValue(double d) {
-		m_default = d;
-	}
-	double defaultValue() {return m_default;}
+	double value() const {return m_value;}
+	void setDefaultValue(double d) {m_default = d;}
+	double defaultValue() const {return m_default;}
 
 protected:
 	void setup(const QDomNode& defNode);

@@ -14,7 +14,7 @@ public:
 	PostTimeSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}
 	void loadFromCgnsFile(const int fn);
 	const QList<double>& timesteps() const {return m_timesteps;}
-	bool dataExists() {return m_timesteps.count() > 0;}
+	bool dataExists() const override {return m_timesteps.count() > 0;}
 	void checkStepsUpdate(int fn);
 	void informSteps();
 protected:

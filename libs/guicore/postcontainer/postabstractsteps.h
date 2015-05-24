@@ -14,7 +14,7 @@ public:
 	/// Load data from CGNS file.
 	virtual void loadFromCgnsFile(const int fn) = 0;
 	/// Returns true if the current CGNS file containes more than one result step.
-	virtual bool dataExists() = 0;
+	virtual bool dataExists() const = 0;
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}

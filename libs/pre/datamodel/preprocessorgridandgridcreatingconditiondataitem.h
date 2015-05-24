@@ -31,7 +31,7 @@ public:
 	}
 	void addCustomMenuItems(QMenu* menu);
 	PreProcessorGridDataItemInterface* gridDataItem() const {return m_gridDataItem;}
-	bool isDeletable();
+	bool isDeletable() const override;
 	void handleStandardItemChange();
 	bool gridEdited() const ;
 	void toggleGridEditFlag();

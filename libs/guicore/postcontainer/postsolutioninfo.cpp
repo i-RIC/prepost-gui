@@ -548,7 +548,7 @@ bool PostSolutionInfo::isDataAvailable3D()
 	return stepsExist() && (m_zoneContainers3D.count() > 0);
 }
 
-bool PostSolutionInfo::stepsExist()
+bool PostSolutionInfo::stepsExist() const
 {
 	bool ret = false;
 	if (m_timeSteps != nullptr) {

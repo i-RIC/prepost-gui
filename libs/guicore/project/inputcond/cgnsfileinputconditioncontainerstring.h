@@ -28,7 +28,7 @@ public:
 	}
 	int load();
 	int save();
-	virtual QVariant variantValue() {return QVariant(m_value);}
+	virtual QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(const QString& v) {
 		if (m_value != v) {
 			m_value = v;
@@ -36,7 +36,7 @@ public:
 			emit valueChanged();
 		}
 	}
-	QString value() {return m_value;}
+	const QString& value() const {return m_value;}
 
 protected:
 	void setup(const QDomNode& defNode);

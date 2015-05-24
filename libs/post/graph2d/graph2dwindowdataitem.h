@@ -33,10 +33,10 @@ public:
 	/// Constructor for root node.
 	Graph2dWindowDataItem(ProjectDataItem* parent);
 	virtual ~Graph2dWindowDataItem();
-	bool isEnabled();
+	bool isEnabled() const;
 	void setEnabled(bool enabled);
 
-	QMainWindow* mainWindow();
+	QMainWindow* mainWindow() const;
 	/// Load data from project main file
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	/// Save data into project main file
@@ -61,9 +61,9 @@ public:
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	/// Returns true if this item is deletable.
-	virtual bool isDeletable() {return m_isDeletable;}
+	virtual bool isDeletable() const {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
-	virtual bool isReorderable() {return m_isReorderable;}
+	virtual bool isReorderable() const {return m_isReorderable;}
 	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 
 	void showPropertyDialog();
@@ -82,7 +82,7 @@ public:
 	virtual void moveDown();
 	/// Z depth value range assigned for this item.
 	virtual void updateZDepthRangeItemCount();
-	ZDepthRange zDepthRange() {return m_zDepthRange;}
+	ZDepthRange zDepthRange() const {return m_zDepthRange;}
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
@@ -92,7 +92,7 @@ public:
 	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
 protected:
 	virtual void assignActionZValues(const ZDepthRange& range);
-	virtual Graph2dWindowDataModel* dataModel() {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
+	virtual Graph2dWindowDataModel* dataModel() const {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
 	void renderView();
 	virtual void unregisterChild(Graph2dWindowDataItem* child);
 	/// Returns true when all ancient nodes are checked.

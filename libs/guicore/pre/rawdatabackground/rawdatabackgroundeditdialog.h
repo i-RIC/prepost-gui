@@ -19,19 +19,19 @@ class RawDataBackgroundEditDialog : public QDialog
 public:
 	explicit RawDataBackgroundEditDialog(QWidget* parent = nullptr);
 	~RawDataBackgroundEditDialog();
-	RawDataBackground::Type type() {return m_type;}
+	RawDataBackground::Type type() const {return m_type;}
 	void setType(RawDataBackground::Type t) {m_type = t;}
-	const QVariant& customValue() {
-		return m_customValue;
-	}
+	const QVariant& customValue() const {return m_customValue;}
 	void setCustomValue(const QVariant& v) {
 		m_customValue = v;
 	}
 	void setWidget(GridRelatedConditionEditWidget* w);
 	void setupDialog();
 	void accept();
+
 private slots:
 	void updateCustomWidgetStatus();
+
 private:
 	Ui::RawDataBackgroundEditDialog* ui;
 	RawDataBackground::Type m_type;
