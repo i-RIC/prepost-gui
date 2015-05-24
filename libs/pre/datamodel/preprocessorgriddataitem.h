@@ -134,7 +134,7 @@ public:
 	void informGridChange();
 	void informBirdEyeWindowClose();
 	void doViewOperationEndedGlobal(VTKGraphicsView*);
-	void updateSimplefiedGrid(VTKGraphicsView* v = nullptr);
+	void updateSimplifiedGrid(VTKGraphicsView* v = nullptr);
 	void updateRegionPolyData();
 
 	void updateObjectBrowserTree();

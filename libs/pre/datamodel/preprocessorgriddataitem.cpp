@@ -1448,7 +1448,7 @@ void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 	updateSimplefiedGrid(v);
 }
 
-void PreProcessorGridDataItem::updateSimplefiedGrid(VTKGraphicsView* v)
+void PreProcessorGridDataItem::updateSimplifiedGrid(VTKGraphicsView* v)
 {
 	if (m_grid == nullptr) {return;}
 	if (v == nullptr) {
