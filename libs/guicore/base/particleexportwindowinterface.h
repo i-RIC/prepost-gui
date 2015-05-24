@@ -1,17 +1,16 @@
-#ifndef PARTICLEEXPORTWINDOW_H
-#define PARTICLEEXPORTWINDOW_H
+#ifndef PARTICLEEXPORTWINDOWINTERFACE_H
+#define PARTICLEEXPORTWINDOWINTERFACE_H
 
 #include <QList>
 #include <QString>
 
 class QString;
 
-class ParticleExportWindow
+class ParticleExportWindowInterface
 {
 public:
-	ParticleExportWindow() {}
 	virtual bool exportParticles(const QString& filename, int index, double time, const QString& zonename) = 0;
 	virtual QList<QString> particleDrawingZones() = 0;
 };
 
-#endif // PARTICLEEXPORTWINDOW_H
+#endif // PARTICLEEXPORTWINDOWINTERFACE_H

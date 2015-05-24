@@ -1,17 +1,17 @@
 #include "../datamodel/vtkgraphicsview.h"
-#include "snapshotenabledwindow.h"
+#include "snapshotenabledwindowinterface.h"
 
 #include <QBitmap>
 
 #include <vtkFloatArray.h>
 #include <vtkRenderWindow.h>
 
-SnapshotEnabledWindow::SnapshotEnabledWindow()
+SnapshotEnabledWindowInterface::SnapshotEnabledWindowInterface()
 {
 	m_isTransparent = false;
 }
 
-void SnapshotEnabledWindow::makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap)
+void SnapshotEnabledWindowInterface::makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap)
 {
 	int w = pixmap.size().width();
 	int h = pixmap.size().height();

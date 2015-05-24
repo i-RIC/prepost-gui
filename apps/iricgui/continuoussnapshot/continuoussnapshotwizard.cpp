@@ -6,7 +6,7 @@
 #include "continuoussnapshotwindowselectionpage.h"
 #include "continuoussnapshotwizard.h"
 
-#include <guicore/base/snapshotenabledwindow.h>
+#include <guicore/base/snapshotenabledwindowinterface.h>
 
 #include <QDir>
 #include <QLabel>

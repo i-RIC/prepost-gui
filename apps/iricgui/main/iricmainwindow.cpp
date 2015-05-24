@@ -19,10 +19,10 @@
 #include <guibase/coordinatesystembuilder.h>
 #include <guibase/irictoolbar.h>
 #include <guibase/itemselectingdialog.h>
-#include <guicore/base/clipboardoperatablewindow.h>
-#include <guicore/base/particleexportwindow.h>
-#include <guicore/base/svkmlexportwindow.h>
-#include <guicore/base/windowwithzindex.h>
+#include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/particleexportwindowinterface.h>
+#include <guicore/base/svkmlexportwindowinterface.h>
+#include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -795,7 +795,7 @@ void iRICMainWindow::paste()
 void iRICMainWindow::snapshot()
 {
 	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
-	SnapshotEnabledWindow* enabledWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
+	SnapshotEnabledWindowInterface* enabledWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
 	if (enabledWindow != nullptr) {
 		enabledWindow->setTransparent(false);
 		QPixmap pixmap = enabledWindow->snapshot();
@@ -862,7 +862,7 @@ void iRICMainWindow::continuousSnapshot()
 		return;
 	}
 	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
-	SnapshotEnabledWindow* enableWindow = dynamic_cast<SnapshotEnabledWindow*>(widget);
+	SnapshotEnabledWindowInterface* enableWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
 	if (enableWindow != nullptr) {
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
@@ -1006,7 +1006,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 				}
 				QPoint begin(0, 0);
 				for (QMdiSubWindow* sub : wizard->windowList()) {
-					SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
+					SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
 					QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
 					window->setTransparent(m_transparent);
 
@@ -1034,7 +1034,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		case ContinuousSnapshotWizard::Respectively:
 			int i = 0;
 			for (QMdiSubWindow* sub : wizard->windowList()) {
-				SnapshotEnabledWindow* window = dynamic_cast<SnapshotEnabledWindow*>(sub->widget());
+				SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
 				window->setTransparent(m_transparent);
 				QPixmap pixmap = window->snapshot();
 				pixmap.save(*fit);
@@ -1198,12 +1198,13 @@ void iRICMainWindow::updateWindowTitle()
 	setWindowTitle(title.arg(QDir::toNativeSeparators(fname)).arg(m_versionNumber.toString()).arg(solverName));
 }
 
-void iRICMainWindow::warnSolverRunning()
+void iRICMainWindow::warnSolverRunning() const
 {
-	QMessageBox::warning(this, tr("Warning"), tr("The solver is running now. Please stop solver, to do this action."), QMessageBox::Ok);
+	iRICMainWindow* t = const_cast<iRICMainWindow*> (this);
+	QMessageBox::warning(t, tr("Warning"), tr("The solver is running now. Please stop solver, to do this action."), QMessageBox::Ok);
 }
 
-bool iRICMainWindow::isSolverRunning()
+bool iRICMainWindow::isSolverRunning() const
 {
 	return m_solverConsoleWindow->isSolverRunning();
 }
@@ -1532,7 +1533,7 @@ void iRICMainWindow::updateWindowZIndices()
 	// @todo this fails! investigate the reason.
 	int index = 1;
 for (QMdiSubWindow* w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
-		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
+		WindowWithZIndexInterface* w2 = dynamic_cast<WindowWithZIndexInterface*>(w->widget());
 		w2->setZindex(index++);
 	}
 }
@@ -1543,7 +1544,7 @@ void iRICMainWindow::reflectWindowZIndices()
 	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList();
 	for (auto it = wlist.begin(); it != wlist.end(); ++it) {
 		QMdiSubWindow* w = (*it);
-		WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w->widget());
+		WindowWithZIndexInterface* w2 = dynamic_cast<WindowWithZIndexInterface*>(w->widget());
 		if (w->isVisible()) {
 			windowsToShow.insert(w2->zindex(), w);
 		}
@@ -1772,7 +1773,7 @@ void iRICMainWindow::exportParticles()
 		warnSolverRunning();
 		return;
 	}
-	ParticleExportWindow* ew = dynamic_cast<ParticleExportWindow*>(m_centralWidget->activeSubWindow()->widget());
+	ParticleExportWindowInterface* ew = dynamic_cast<ParticleExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
@@ -1874,7 +1875,7 @@ void iRICMainWindow::exportStKML()
 		warnSolverRunning();
 		return;
 	}
-	SVKmlExportWindow* ew = dynamic_cast<SVKmlExportWindow*>(m_centralWidget->activeSubWindow()->widget());
+	SVKmlExportWindowInterface* ew = dynamic_cast<SVKmlExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;

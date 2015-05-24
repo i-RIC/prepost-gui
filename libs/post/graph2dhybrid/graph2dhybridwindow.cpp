@@ -70,7 +70,7 @@ QPixmap Graph2dHybridWindow::snapshot()
 	return pixmap;
 }
 
-QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus()
+QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

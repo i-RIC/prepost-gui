@@ -210,12 +210,13 @@ QPixmap PreProcessorWindow::snapshot()
 	return pixmap;
 }
 
-vtkRenderWindow* PreProcessorWindow::getVtkRenderWindow()
+vtkRenderWindow* PreProcessorWindow::getVtkRenderWindow() const
 {
-	return m_graphicsView->mainRenderer()->GetRenderWindow();
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_graphicsView->mainRenderer());
+	return r->GetRenderWindow();
 }
 
-QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
+QList<QMenu*> PreProcessorWindow::getAdditionalMenus() const
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_dataModel);
 	QList<QMenu*> menus;
@@ -226,7 +227,7 @@ QList<QMenu*> PreProcessorWindow::getAdditionalMenus()
 	return menus;
 }
 
-QToolBar* PreProcessorWindow::getAdditionalToolBar()
+QToolBar* PreProcessorWindow::getAdditionalToolBar() const
 {
 	if (m_dataModel == nullptr) {return nullptr;}
 	return m_dataModel->operationToolBar();

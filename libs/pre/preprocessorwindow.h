@@ -3,11 +3,11 @@
 
 #include "pre_global.h"
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/base/snapshotenabledwindow.h>
-#include <guicore/base/additionalmenuwindow.h>
-#include <guicore/base/windowwithobjectbrowser.h>
+#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
-#include <guicore/base/windowwithzindex.h>
+#include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 
 #include <QCloseEvent>
@@ -31,11 +31,11 @@ class PreProcessorWindowEditBackgroundColorCommand;
 /// PreProcessorWindow class implements the main window of pre-processor.
 class PREDLL_EXPORT PreProcessorWindow :
 	public PreProcessorWindowInterface,
-	public SnapshotEnabledWindow,
-	public AdditionalMenuWindow,
-	public WindowWithObjectBrowser,
+	public SnapshotEnabledWindowInterface,
+	public AdditionalMenuWindowInterface,
+	public WindowWithObjectBrowserInterface,
 	public WindowWithPropertyBrowser,
-	public WindowWithZIndex
+	public WindowWithZIndexInterface
 {
 	Q_OBJECT
 public:
@@ -71,11 +71,11 @@ public:
 	void hideEvent(QHideEvent* e);
 	//public slots:
 //	void switchGridMode(SolverDefinition::GridType /*gt*/){}
-	QPixmap snapshot();
-	vtkRenderWindow* getVtkRenderWindow();
-	QList<QMenu*> getAdditionalMenus();
-	QToolBar* getAdditionalToolBar();
-	ObjectBrowser* objectBrowser();
+	QPixmap snapshot() override;
+	vtkRenderWindow* getVtkRenderWindow() const override;
+	QList<QMenu*> getAdditionalMenus() const override;
+	QToolBar* getAdditionalToolBar() const override;
+	ObjectBrowser* objectBrowser() override;
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
 	void informUnfocusRiverCrosssectionWindows();

@@ -6,7 +6,7 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/objectbrowser.h>
 #include <guicore/base/propertybrowser.h>
-#include <guicore/base/windowwithobjectbrowser.h>
+#include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
@@ -855,7 +855,7 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 		return;
 	}
 	// handle additional menus.
-	AdditionalMenuWindow* menuWindow = dynamic_cast<AdditionalMenuWindow*>(subwindow);
+	AdditionalMenuWindowInterface* menuWindow = dynamic_cast<AdditionalMenuWindowInterface*>(subwindow);
 	QList<QMenu*> additionalMenus;
 	QToolBar* toolBar = nullptr;
 	if (menuWindow != nullptr) {
@@ -927,7 +927,7 @@ void iRICMainWindowActionManager::updateCameraConnections(QWidget* w)
 
 void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
-	WindowWithObjectBrowser* window = dynamic_cast<WindowWithObjectBrowser*>(w);
+	WindowWithObjectBrowserInterface* window = dynamic_cast<WindowWithObjectBrowserInterface*>(w);
 	viewObjectBrowserAction->disconnect();
 	if (window == nullptr) {
 		viewObjectBrowserAction->setDisabled(true);

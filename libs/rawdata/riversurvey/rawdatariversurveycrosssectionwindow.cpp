@@ -649,7 +649,7 @@ QPixmap RawDataRiverSurveyCrosssectionWindow::snapshot()
 	return pixmap;
 }
 
-QList<QMenu*> RawDataRiverSurveyCrosssectionWindow::getAdditionalMenus()
+QList<QMenu*> RawDataRiverSurveyCrosssectionWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_elevationPointMenu);

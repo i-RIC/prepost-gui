@@ -47,25 +47,25 @@ public:
 	/// Destructor
 	~iRICMainWindow();
 	/// THe PreProcessorWindow
-	PreProcessorWindowInterface* preProcessorWindow() {
+	PreProcessorWindowInterface* preProcessorWindow() const override {
 		return m_preProcessorWindow;
 	}
 	/// The SolverConsoleWindow
 	SolverConsoleWindow* solverConsoleWindow() {
 		return m_solverConsoleWindow;
 	}
-	const QLocale locale() {return m_locale;}
-	bool isSolverRunning();
-	void warnSolverRunning();
+	const QLocale locale() const override {return m_locale;}
+	bool isSolverRunning() const override;
+	void warnSolverRunning() const override;
 	void switchCgnsFile(const QString& newcgns);
 	ProjectWorkspace* workspace() {return m_workspace;}
 	const VersionNumber versionNumber() const {return m_versionNumber;}
 	void setDebugMode(bool debug);
 	bool isDebugMode() {return m_debugMode;}
-	bool continuousSnapshotInProgress() {return m_continuousSnapshotInProgress;}
-	void setContinuousSnapshotInProgress(bool prog) {m_continuousSnapshotInProgress = prog;}
+	bool continuousSnapshotInProgress() const override {return m_continuousSnapshotInProgress;}
+	void setContinuousSnapshotInProgress(bool prog) override {m_continuousSnapshotInProgress = prog;}
 	const QString tmpFileName(int len = 0) const;
-	AnimationControllerInterface* animationController() {return m_animationController;}
+	AnimationControllerInterface* animationController() const override {return m_animationController;}
 	CoordinateSystemBuilder* coordinateSystemBuilder() const {return m_coordinateSystemBuilder;}
 	void initForSolverDefinition();
 	void loadSubWindowsFromProjectMainFile(const QDomNode& node);

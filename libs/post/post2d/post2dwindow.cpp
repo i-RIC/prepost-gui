@@ -79,12 +79,13 @@ QPixmap Post2dWindow::snapshot()
 	return pixmap;
 }
 
-vtkRenderWindow* Post2dWindow::getVtkRenderWindow()
+vtkRenderWindow* Post2dWindow::getVtkRenderWindow() const
 {
-	return m_dataModel->graphicsView()->mainRenderer()->GetRenderWindow();
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_dataModel->graphicsView()->mainRenderer());
+	return r->GetRenderWindow();
 }
 
-QList<QMenu*> Post2dWindow::getAdditionalMenus()
+QList<QMenu*> Post2dWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

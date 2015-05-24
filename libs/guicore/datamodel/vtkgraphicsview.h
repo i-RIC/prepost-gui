@@ -43,7 +43,7 @@ public:
 	void standardMouseMoveEvent(QMouseEvent* event);
 	void standardWheelEvent(QWheelEvent* event);
 
-	vtkRenderer* mainRenderer() {return m_mainRenderer;}
+	vtkRenderer* mainRenderer() const {return m_mainRenderer;}
 	void render();
 	void restoreUpdateRate();
 	void setInteractive(bool interactive) {

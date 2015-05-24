@@ -1,9 +1,9 @@
-#ifndef CLIPBOARDOPERATABLEWINDOW_H
-#define CLIPBOARDOPERATABLEWINDOW_H
+#ifndef CLIPBOARDOPERATABLEWINDOWINTERFACE_H
+#define CLIPBOARDOPERATABLEWINDOWINTERFACE_H
 
 /// This class is the abstract class of windows those support
 /// clipboard related operations, i.e. cut, copy, and paste.
-class ClipboardOperatableWindow
+class ClipboardOperatableWindowInterface
 {
 public:
 	/// Returns true if this window support cut();
@@ -20,4 +20,4 @@ public:
 	virtual void paste() {}
 };
 
-#endif // CLIPBOARDOPERATABLEWINDOW_H
+#endif // CLIPBOARDOPERATABLEWINDOWINTERFACE_H

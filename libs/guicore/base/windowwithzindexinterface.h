@@ -1,5 +1,5 @@
-#ifndef WINDOWWITHZINDEX_H
-#define WINDOWWITHZINDEX_H
+#ifndef WINDOWWITHZINDEXINTERFACE_H
+#define WINDOWWITHZINDEXINTERFACE_H
 
 #include "../guicore_global.h"
 
@@ -8,11 +8,11 @@
  * Z Index is the show order in QMdiArea.
  * Window with larger Z Index is shown front.
  */
-class GUICOREDLL_EXPORT WindowWithZIndex
+class GUICOREDLL_EXPORT WindowWithZIndexInterface
 {
 public:
 	/// constructor
-	WindowWithZIndex();
+	WindowWithZIndexInterface();
 	unsigned int zindex() const {return m_zindex;}
 	void setZindex(unsigned int i) {m_zindex = i;}
 
@@ -20,4 +20,4 @@ protected:
 	unsigned int m_zindex;
 };
 
-#endif // WINDOWWITHZINDEX_H
+#endif // WINDOWWITHZINDEXINTERFACE_H

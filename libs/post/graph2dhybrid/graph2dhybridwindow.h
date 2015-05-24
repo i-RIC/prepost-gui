@@ -2,7 +2,7 @@
 #define GRAPH2DHYBRIDWINDOW_H
 
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindow.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
 
 class ObjectBrowser;
 class Graph2dHybridWindowObjectBrowser;
@@ -13,14 +13,14 @@ class Graph2dHybridWindowControlWidget;
 
 class Graph2dHybridWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindow
+	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
 public:
 	explicit Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
 	~Graph2dHybridWindow();
 	QPixmap snapshot();
-	QList<QMenu*> getAdditionalMenus();
+	QList<QMenu*> getAdditionalMenus() const;
 	ObjectBrowser* objectBrowser();
 	Graph2dHybridWindowControlWidget* controlWidget() {return m_controlWidget;}
 signals:

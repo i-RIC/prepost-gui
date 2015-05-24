@@ -3,8 +3,8 @@
 
 #include "rd_riversurvey_global.h"
 #include "rawdatarivercrosssection.h"
-#include <guicore/base/snapshotenabledwindow.h>
-#include <guicore/base/additionalmenuwindow.h>
+#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
 #include <guicore/project/colorsource.h>
 
 #include <QMainWindow>
@@ -36,8 +36,8 @@ class RawDataRiverSurveyCrosssectionEditCommand;
 
 class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCrosssectionWindow :
 	public QMainWindow,
-	public SnapshotEnabledWindow,
-	public AdditionalMenuWindow
+	public SnapshotEnabledWindowInterface,
+	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
 public:
@@ -63,8 +63,8 @@ public:
 	void informFocusIn();
 	void toggleGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs);
 	const QIcon& icon() const {return m_icon;}
-	QPixmap snapshot();
-	QList<QMenu*> getAdditionalMenus();
+	QPixmap snapshot() override;
+	QList<QMenu*> getAdditionalMenus() const override;
 	PreProcessorRawDataGroupDataItemInterface* groupDataItem() const {return m_groupDataItem;}
 
 public slots:

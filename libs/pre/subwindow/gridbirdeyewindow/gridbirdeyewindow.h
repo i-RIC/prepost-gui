@@ -3,8 +3,8 @@
 
 #include <QMainWindow>
 #include <QIcon>
-#include <guicore/base/additionalmenuwindow.h>
-#include <guicore/base/snapshotenabledwindow.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/snapshotenabledwindowinterface.h>
 #include "../../datamodel/preprocessorgriddataitem.h"
 
 class QAction;
@@ -16,8 +16,8 @@ class GridBirdEyeWindowEditBackgroundColorCommand;
 /// This class represents the two-dimensional post-processing window.
 class GridBirdEyeWindow :
 	public QMainWindow,
-	public SnapshotEnabledWindow,
-	public AdditionalMenuWindow
+	public SnapshotEnabledWindowInterface,
+	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
 public:
@@ -25,9 +25,9 @@ public:
 	GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item);
 	/// Destructor
 	~GridBirdEyeWindow();
-	QPixmap snapshot();
-	vtkRenderWindow* getVtkRenderWindow();
-	QList<QMenu*> getAdditionalMenus();
+	QPixmap snapshot() override;
+	vtkRenderWindow* getVtkRenderWindow() const override;
+	QList<QMenu*> getAdditionalMenus() const override;
 	void updateGrid();
 	const QIcon& icon() const {return m_icon;}
 public slots:

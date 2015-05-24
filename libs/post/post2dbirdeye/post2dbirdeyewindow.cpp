@@ -71,12 +71,13 @@ QPixmap Post2dBirdEyeWindow::snapshot()
 	return pixmap;
 }
 
-vtkRenderWindow* Post2dBirdEyeWindow::getVtkRenderWindow()
+vtkRenderWindow* Post2dBirdEyeWindow::getVtkRenderWindow() const
 {
-	return m_dataModel->graphicsView()->mainRenderer()->GetRenderWindow();
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_dataModel->graphicsView()->mainRenderer());
+	r->GetRenderWindow();
 }
 
-QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus()
+QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

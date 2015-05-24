@@ -1,5 +1,5 @@
 #include "../base/iricmainwindowinterface.h"
-#include "../base/windowwithzindex.h"
+#include "../base/windowwithzindexinterface.h"
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"

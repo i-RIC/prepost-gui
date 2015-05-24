@@ -5,11 +5,11 @@
 #include <QByteArray>
 #include <QVector2D>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindow.h>
-#include <guicore/base/windowwithobjectbrowser.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
-#include <guicore/base/particleexportwindow.h>
-#include <guicore/base/svkmlexportwindow.h>
+#include <guicore/base/particleexportwindowinterface.h>
+#include <guicore/base/svkmlexportwindowinterface.h>
 
 class QAction;
 class QToolBar;
@@ -23,11 +23,11 @@ class Post2dWindowEditBackgroundColorCommand;
 /// This class represents the two-dimensional post-processing window.
 class Post2dWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindow,
-	public WindowWithObjectBrowser,
+	public AdditionalMenuWindowInterface,
+	public WindowWithObjectBrowserInterface,
 	public WindowWithPropertyBrowser,
-	public ParticleExportWindow,
-	public SVKmlExportWindow
+	public ParticleExportWindowInterface,
+	public SVKmlExportWindowInterface
 {
 	Q_OBJECT
 public:
@@ -39,10 +39,10 @@ public:
 	void handleCgnsSwitch() {}
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
-	QPixmap snapshot();
-	vtkRenderWindow* getVtkRenderWindow();
-	QList<QMenu*> getAdditionalMenus();
-	ObjectBrowser* objectBrowser();
+	QPixmap snapshot() override;
+	vtkRenderWindow* getVtkRenderWindow() const override;
+	QList<QMenu*> getAdditionalMenus() const override;
+	ObjectBrowser* objectBrowser() override;
 	int index() {return m_index;}
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();

@@ -2,9 +2,9 @@
 #define SOLVERCONSOLEWINDOW_H
 
 #include "solverconsole_global.h"
-#include <guicore/base/clipboardoperatablewindow.h>
-#include <guicore/base/snapshotenabledwindow.h>
-#include <guicore/base/windowwithzindex.h>
+#include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/windowwithzindexinterface.h>
 
 #include <QMainWindow>
 #include <QCloseEvent>
@@ -27,9 +27,9 @@ class QAction;
 	*/
 class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	public QMainWindow,
-	public ClipboardOperatableWindow,
-	public SnapshotEnabledWindow,
-	public WindowWithZIndex
+	public ClipboardOperatableWindowInterface,
+	public SnapshotEnabledWindowInterface,
+	public WindowWithZIndexInterface
 {
 	Q_OBJECT
 
@@ -54,12 +54,12 @@ public:
 	/// Returns true to inform this window supports copy().
 	bool acceptCopy() override {return true;}
 	/// Copy the selected string in solver console window.
-	void copy();
+	void copy() override;
 	/// Clear the console log.
 	void clear();
 
 	/// Save smapshot to pixmap
-	QPixmap snapshot();
+	QPixmap snapshot() override;
 
 	QAction* exportLogAction;
 

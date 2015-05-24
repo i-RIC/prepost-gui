@@ -2,7 +2,7 @@
 #define POSTPROCESSORWINDOW_H
 
 #include "../guicore_global.h"
-#include "../base/snapshotenabledwindow.h"
+#include "../base/snapshotenabledwindowinterface.h"
 #include <QMainWindow>
 #include <QIcon>
 
@@ -11,7 +11,7 @@ class PostSolutionInfo;
 class PostProcessorWindowProjectDataItem;
 
 /// Abstract Post processor window
-class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public SnapshotEnabledWindow
+class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public SnapshotEnabledWindowInterface
 {
 	Q_OBJECT
 public:

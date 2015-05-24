@@ -72,12 +72,13 @@ QPixmap Post3dWindow::snapshot()
 	return pixmap;
 }
 
-vtkRenderWindow* Post3dWindow::getVtkRenderWindow()
+vtkRenderWindow* Post3dWindow::getVtkRenderWindow() const
 {
-	return m_dataModel->graphicsView()->mainRenderer()->GetRenderWindow();
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_dataModel->graphicsView()->mainRenderer());
+	return r->GetRenderWindow();
 }
 
-QList<QMenu*> Post3dWindow::getAdditionalMenus()
+QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

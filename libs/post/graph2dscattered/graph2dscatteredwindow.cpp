@@ -70,7 +70,7 @@ QPixmap Graph2dScatteredWindow::snapshot()
 	return pixmap;
 }
 
-QList<QMenu*> Graph2dScatteredWindow::getAdditionalMenus()
+QList<QMenu*> Graph2dScatteredWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

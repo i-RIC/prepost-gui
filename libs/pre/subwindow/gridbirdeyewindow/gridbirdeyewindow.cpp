@@ -55,9 +55,10 @@ QPixmap GridBirdEyeWindow::snapshot()
 	return pixmap;
 }
 
-vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow()
+vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow() const
 {
-	return m_graphicsView->mainRenderer()->GetRenderWindow();
+	vtkRenderer* r = const_cast<vtkRenderer*> (m_graphicsView->mainRenderer());
+	return r->GetRenderWindow();
 }
 
 void GridBirdEyeWindow::updateGrid()
@@ -66,7 +67,7 @@ void GridBirdEyeWindow::updateGrid()
 	m_dataModel->fit();
 }
 
-QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus()
+QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;
 	menus.append(m_actionManager->drawMenu());

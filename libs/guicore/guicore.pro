@@ -119,18 +119,18 @@ LIBS += -liriclib
 HEADERS += guicore_global.h \
            axis2d/axis2ddataitem.h \
            axis3d/axis3ddataitem.h \
-           base/additionalmenuwindow.h \
+           base/additionalmenuwindowinterface.h \
            base/animationcontrollerinterface.h \
-           base/clipboardoperatablewindow.h \
+           base/clipboardoperatablewindowinterface.h \
            base/iricmainwindowinterface.h \
-           base/particleexportwindow.h \
+           base/particleexportwindowinterface.h \
            base/propertybrowser.h \
-           base/snapshotenabledwindow.h \
-           base/svgsnapshotenabledwindow.h \
-           base/svkmlexportwindow.h \
-           base/windowwithobjectbrowser.h \
+           base/snapshotenabledwindowinterface.h \
+           base/svgsnapshotenabledwindowinterface.h \
+           base/svkmlexportwindowinterface.h \
+           base/windowwithobjectbrowserinterface.h \
            base/windowwithpropertybrowser.h \
-           base/windowwithzindex.h \
+           base/windowwithzindexinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
            datamodel/graphics2dwindowdatamodel.h \
            datamodel/graphics3dwindowdatamodel.h \
@@ -352,8 +352,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            axis3d/axis3ddataitem.cpp \
            base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
-           base/snapshotenabledwindow.cpp \
-           base/windowwithzindex.cpp \
+           base/snapshotenabledwindowinterface.cpp \
+           base/windowwithzindexinterface.cpp \
            datamodel/attributebrowsertargetdataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
            datamodel/graphics3dwindowdatamodel.cpp \

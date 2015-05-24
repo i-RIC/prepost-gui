@@ -24,12 +24,12 @@ public:
 	/// destructor
 	virtual ~iRICMainWindowInterface() {}
 
-	virtual PreProcessorWindowInterface* preProcessorWindow() = 0;
+	virtual PreProcessorWindowInterface* preProcessorWindow() const = 0;
 	virtual void setContinuousSnapshotInProgress(bool prog) = 0;
-	virtual bool continuousSnapshotInProgress() = 0;
-	virtual bool isSolverRunning() = 0;
-	virtual void warnSolverRunning() = 0;
-	virtual AnimationControllerInterface* animationController() = 0;
+	virtual bool continuousSnapshotInProgress() const = 0;
+	virtual bool isSolverRunning() const = 0;
+	virtual void warnSolverRunning() const = 0;
+	virtual AnimationControllerInterface* animationController() const = 0;
 	virtual void initForSolverDefinition() = 0;
 	virtual CoordinateSystemBuilder* coordinateSystemBuilder() const = 0;
 	virtual void loadSubWindowsFromProjectMainFile(const QDomNode& node) = 0;
@@ -44,7 +44,7 @@ public:
 	virtual const VersionNumber versionNumber() const = 0;
 	virtual bool clearResultsIfGridIsEdited() = 0;
 	virtual void setProjectData(ProjectData* projectData) = 0;
-	virtual const QLocale locale() = 0;
+	virtual const QLocale locale() const = 0;
 	virtual const QProcessEnvironment& processEnvironment() const = 0;
 
 public slots:

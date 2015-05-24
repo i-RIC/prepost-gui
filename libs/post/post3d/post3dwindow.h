@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QByteArray>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindow.h>
-#include <guicore/base/windowwithobjectbrowser.h>
-#include <guicore/base/particleexportwindow.h>
+#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/particleexportwindowinterface.h>
 
 class QAction;
 class QToolBar;
@@ -19,9 +19,9 @@ class Post3dWindowEditBackgroundColorCommand;
 /// This class represents the two-dimensional post-processing window.
 class Post3dWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindow,
-	public WindowWithObjectBrowser,
-	public ParticleExportWindow
+	public AdditionalMenuWindowInterface,
+	public WindowWithObjectBrowserInterface,
+	public ParticleExportWindowInterface
 {
 	Q_OBJECT
 public:
@@ -33,14 +33,15 @@ public:
 	void handleCgnsSwitch() {}
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
-	QPixmap snapshot();
-	vtkRenderWindow* getVtkRenderWindow();
-	QList<QMenu*> getAdditionalMenus();
-	ObjectBrowser* objectBrowser();
+	QPixmap snapshot() override;
+	vtkRenderWindow* getVtkRenderWindow() const override;
+	QList<QMenu*> getAdditionalMenus() const override;
+	ObjectBrowser* objectBrowser() override;
 	int index() {return m_index;}
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename);
 	QList<QString> particleDrawingZones();
 	bool hasTransparentPart();
+
 public slots:
 	void cameraFit();
 	void cameraResetRotation();
