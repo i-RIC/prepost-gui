@@ -50,7 +50,7 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void applyAxisSetting();
+	void applyAxisSetting() override;
 
 private:
 	void updateData();

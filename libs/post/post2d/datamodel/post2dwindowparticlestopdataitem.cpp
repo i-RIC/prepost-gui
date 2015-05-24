@@ -56,7 +56,7 @@ void Post2dWindowParticlesTopDataItem::updateZDepthRangeItemCount(ZDepthRange& r
 	range.setItemCount(1);
 }
 
-void Post2dWindowParticlesTopDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowParticlesTopDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 }

@@ -33,7 +33,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	const QPolygonF rectangle();
 	void setRectangle(const QPolygonF& rec);
 	bool createGrid(double xmin, double xmax, double ymin, double ymax, double step);

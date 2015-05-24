@@ -26,7 +26,7 @@ public:
 	/// Constructor
 	PreProcessorRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorRawDataGroupDataItem();
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void closeCgnsFile() {}
 	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	bool isChildCaptionAvailable(const QString& cap);
@@ -45,7 +45,7 @@ public:
 	QAction* importAction() {return m_importAction;}
 	void addImportAction(QMenu* menu);
 	QStringList getRawDatasNotMapped();
-	void addCopyPolygon(RawDataPolygon* polygon);
+	void addCopyPolygon(RawDataPolygon* polygon) override;
 	GridRelatedConditionDimensionsContainer* dimensions() const {return m_dimensions;}
 
 	void informSelection(VTKGraphicsView* v);
@@ -65,8 +65,8 @@ public:
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs);
 	void informCtrlPointUpdateToCrosssectionWindows();
 	void requestCrosssectionWindowDelete(RawDataRiverSurveyCrosssectionWindowProjectDataItem* item);
-	bool addToolBarButtons(QToolBar* /*parent*/);
-	QStringList containedFiles();
+	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	QStringList containedFiles() override;
 	void setDimensionsToFirst();
 
 public slots:

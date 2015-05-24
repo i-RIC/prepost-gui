@@ -19,7 +19,7 @@ public:
 	void loadFromCgnsFile(const int fn);
 	void saveToCgnsFile(const int fn);
 	void closeCgnsFile();
-	QStringList containedFiles();
+	QStringList containedFiles() override;
 	bool gridEdited();
 	void toggleGridEditFlag();
 protected:

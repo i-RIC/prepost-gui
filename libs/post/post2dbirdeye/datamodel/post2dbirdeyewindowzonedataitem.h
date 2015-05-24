@@ -25,7 +25,7 @@ class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
 public:
 	/// Constructor
 	Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
 	void informSelection(VTKGraphicsView* v);
@@ -45,7 +45,7 @@ public:
 	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
 	Post2dBirdEyeWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 

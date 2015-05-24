@@ -126,7 +126,7 @@ void Post2dBirdEyeWindowZoneDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(m_childItems.count() + 1);
 }
 
-void Post2dBirdEyeWindowZoneDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dBirdEyeWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	int itemCount = m_childItems.count();
 	int gapCount = itemCount - 1;

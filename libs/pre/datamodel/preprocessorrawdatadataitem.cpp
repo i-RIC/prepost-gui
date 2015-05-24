@@ -221,9 +221,9 @@ QStringList PreProcessorRawdataDataItem::containedFiles()
 	return m_rawData->containedFiles();
 }
 
-void PreProcessorRawdataDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorRawdataDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_rawData->assignActionZValues(range);
+	m_rawData->assignActorZValues(range);
 }
 
 void PreProcessorRawdataDataItem::updateZDepthRangeItemCount()

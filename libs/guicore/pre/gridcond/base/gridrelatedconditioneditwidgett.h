@@ -31,13 +31,13 @@ public:
 	}
 	void undo() {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_oldValues);
-		m_dataItem->updateSimplefiedGrid();
+		m_dataItem->updateSimplifiedGrid();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
 	}
 	void redo() {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_newValues);
-		m_dataItem->updateSimplefiedGrid();
+		m_dataItem->updateSimplifiedGrid();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
 		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(true);

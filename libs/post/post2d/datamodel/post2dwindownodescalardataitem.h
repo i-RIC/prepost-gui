@@ -23,7 +23,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 signals:
 	void changed(Post2dWindowNodeScalarDataItem*);

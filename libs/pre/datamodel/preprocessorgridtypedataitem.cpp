@@ -303,7 +303,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	renderGraphicsView();
 }
 
-void PreProcessorGridTypeDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_childItems.count() == 0) {return;}
 

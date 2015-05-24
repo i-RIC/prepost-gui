@@ -21,7 +21,7 @@ public:
 	void setColor(const QColor& col);
 	void setOpacity(int o);
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);

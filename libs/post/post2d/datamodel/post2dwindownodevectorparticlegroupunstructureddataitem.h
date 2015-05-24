@@ -30,7 +30,7 @@ public:
 	}
 	~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem();
 	void showPropertyDialog();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 protected:
 	void setupActors();
 	vtkPointSet* newParticles(int i);

@@ -60,7 +60,7 @@ void Post2dWindowRawDataDataItem::updateZDepthRangeItemCount()
 	m_rawDataProxy->updateZDepthRangeItemCount(m_zDepthRange);
 }
 
-void Post2dWindowRawDataDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowRawDataDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_rawDataProxy->assignActionZValues(range);
+	m_rawDataProxy->assignActorZValues(range);
 }

@@ -89,7 +89,7 @@ void Post2dWindowCellFlagDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post2dWindowCellFlagDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowCellFlagDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 }

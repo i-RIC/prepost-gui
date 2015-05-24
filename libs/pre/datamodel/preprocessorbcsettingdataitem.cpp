@@ -172,9 +172,9 @@ void PreProcessorBCSettingDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editAction);
 }
 
-void PreProcessorBCSettingDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorBCSettingDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_polygon->assignActionZValues(range);
+	m_polygon->assignActorZValues(range);
 }
 void PreProcessorBCSettingDataItem::updateItem()
 {

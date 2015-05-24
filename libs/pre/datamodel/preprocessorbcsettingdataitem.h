@@ -50,7 +50,7 @@ public:
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
 	void loadData();
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
 	bool isMapped() const {return m_polygon->isMapped();}
 	RawData* rawData() {return m_polygon;}
@@ -70,7 +70,7 @@ private slots:
 	void updateItem();
 
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void loadExternalData(const QString& filename);
 	void saveExternalData(const QString& filename);
 	void doApplyOffset(double x, double y);

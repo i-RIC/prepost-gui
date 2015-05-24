@@ -16,9 +16,8 @@ public:
 	}
 	/// The grid related condition that is the ancestor
 	/// of this instance.
-	SolverDefinitionGridRelatedCondition* condition() const {
-		return m_condition;
-	}
+	SolverDefinitionGridRelatedCondition* condition() const {return m_condition;}
+
 protected:
 	SolverDefinitionGridRelatedCondition* m_condition;
 };

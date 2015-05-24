@@ -69,7 +69,7 @@ void RawDataProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(0);
 }
 
-void RawDataProxy::assignActionZValues(const ZDepthRange& /*range*/)
+void RawDataProxy::assignActorZValues(const ZDepthRange& /*range*/)
 {
 
 }

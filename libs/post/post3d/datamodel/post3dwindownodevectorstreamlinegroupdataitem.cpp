@@ -156,7 +156,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post3dWindowNodeVectorStreamlineGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_streamlineActors.count() == 0) {return;}
 	if (m_streamlineActors.count() == 1) {

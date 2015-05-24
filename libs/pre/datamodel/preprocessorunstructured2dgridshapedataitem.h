@@ -22,7 +22,7 @@ public:
 	void informDeselection(VTKGraphicsView* v);
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(1);}
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 	void setupActors();

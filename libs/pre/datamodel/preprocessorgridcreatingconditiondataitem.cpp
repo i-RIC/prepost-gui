@@ -94,10 +94,10 @@ bool PreProcessorGridCreatingConditionDataItem::addToolBarButtons(QToolBar* tb)
 	return m_condition->addToolBarButtons(tb);
 }
 
-void PreProcessorGridCreatingConditionDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorGridCreatingConditionDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_condition == nullptr) {return;}
-	m_condition->assignActionZValues(range);
+	m_condition->assignActorZValues(range);
 }
 
 void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -110,7 +110,7 @@ void PreProcessorGridCreatingConditionDataItem::doLoadFromProjectMainFile(const 
 	if (m_condition != nullptr) {
 		m_condition->setupActors();
 		m_condition->informDeselection(dataModel()->graphicsView());
-		m_condition->assignActionZValues(m_zDepthRange);
+		m_condition->assignActorZValues(m_zDepthRange);
 		m_condition->setupMenu();
 		connect(m_condition, SIGNAL(gridCreated(Grid*)), this, SLOT(handleNewGrid(Grid*)));
 		connect(m_condition, SIGNAL(tmpGridCreated(Grid*)), this, SLOT(handleTmpGrid(Grid*)));
@@ -351,7 +351,7 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 	}
 	GridCreatingCondition* newcond = dialog.selectedCreator()->create(this);
 	newcond->setupActors();
-	newcond->assignActionZValues(m_zDepthRange);
+	newcond->assignActorZValues(m_zDepthRange);
 	newcond->setupMenu();
 	connect(newcond, SIGNAL(gridCreated(Grid*)), this, SLOT(handleNewGrid(Grid*)));
 	connect(newcond, SIGNAL(tmpGridCreated(Grid*)), this, SLOT(handleTmpGrid(Grid*)));

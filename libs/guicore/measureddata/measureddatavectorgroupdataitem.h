@@ -36,7 +36,7 @@ public:
 	~MeasuredDataVectorGroupDataItem();
 	void updateActorSettings();
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 public slots:
 	void exclusivelyCheck(MeasuredDataVectorDataItem*);

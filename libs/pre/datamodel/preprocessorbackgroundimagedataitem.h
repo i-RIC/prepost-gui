@@ -21,7 +21,7 @@ public:
 
 	void updateMoveUpDownActions(ObjectBrowserView* view);
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
-	bool addToolBarButtons(QToolBar* toolbar);
+	bool addToolBarButtons(QToolBar* toolbar) override;
 	BackgroundImageInfo* imageInfo() {return m_imageInfo;}
 	QAction* fixAction();
 	void handleStandardItemChange();
@@ -31,7 +31,7 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) {}
 	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* dialog);
 	void doApplyOffset(double x, double y);

@@ -10,8 +10,8 @@ public:
 	SolverDefinitionRealOptionCellGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator);
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
 	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);
-	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
+	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;
+	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 };
 
 #endif // SOLVERDEFINITIONREALOPTIONCELLGRIDRELATEDCONDITION_H

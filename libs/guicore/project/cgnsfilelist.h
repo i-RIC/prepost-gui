@@ -46,7 +46,7 @@ public:
 	void add(const QString& name);
 	/// Remove existing cgns file.
 	void remove(const QString& name);
-	QStringList containedFiles();
+	QStringList containedFiles() override;
 	/// Propose a file name for next cgns to create.
 	QString proposeFilename();
 protected:

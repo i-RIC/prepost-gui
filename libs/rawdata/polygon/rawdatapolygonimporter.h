@@ -10,7 +10,7 @@ class RawDataPolygonImporter : public RawDataImporter
 public:
 	RawDataPolygonImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	const QStringList fileDialogFilters();
-	const QStringList acceptableExtensions();
+	const QStringList acceptableExtensions() override;
 	bool importData(RawData* data, int index, QWidget* w);
 
 protected:

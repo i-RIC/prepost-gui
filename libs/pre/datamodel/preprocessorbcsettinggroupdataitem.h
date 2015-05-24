@@ -20,8 +20,8 @@ public:
 	void saveToCgnsFile(const int fn);
 	void informGridUpdate();
 	const QList<PreProcessorBCSettingDataItem*> conditions() const;
-	PreProcessorBCSettingDataItem* condition(const QString& type, int num);
-	void addCustomMenuItems(QMenu* menu);
+	PreProcessorBCSettingDataItem* condition(const QString& type, int num) const;
+	void addCustomMenuItems(QMenu* menu) override;
 	void updateZDepthRangeItemCount();
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
 	void setupAddActions();

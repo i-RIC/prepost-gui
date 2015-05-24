@@ -382,7 +382,7 @@ void GraphicsWindowDataItem::showPropertyDialog()
 void GraphicsWindowDataItem::setZDepthRange(const ZDepthRange& newrange)
 {
 	m_zDepthRange = newrange;
-	assignActionZValues(newrange);
+	assignActorZValues(newrange);
 }
 
 void GraphicsWindowDataItem::updateZDepthRange()
@@ -391,7 +391,7 @@ void GraphicsWindowDataItem::updateZDepthRange()
 	setZDepthRange(m_zDepthRange);
 }
 
-void GraphicsWindowDataItem::assignActionZValues(const ZDepthRange& range)
+void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_childItems.count() == 0) {return;}
 

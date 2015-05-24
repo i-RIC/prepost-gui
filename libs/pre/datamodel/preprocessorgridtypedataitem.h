@@ -24,7 +24,7 @@ public:
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const QString& name) const;
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
 	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const {return m_scalarsToColors.value(attName, 0);}
 	QAction* addNewGridAction() {return m_addNewGridAction;}
@@ -39,7 +39,7 @@ protected:
 	void unregisterChild(GraphicsWindowDataItem* child);
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 
 private:
 	void updateNewGridActionStatus();

@@ -29,7 +29,7 @@ public:
 	void updateActorSettings();
 	void setupClipper();
 	void updateZDepthRangeItemCount();
-	virtual void assignActionZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	void update();
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem*);

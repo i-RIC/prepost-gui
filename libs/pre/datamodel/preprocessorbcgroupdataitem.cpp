@@ -82,7 +82,7 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 				m_childItems.append(bcItem);
 			}
 		}
-		assignActionZValues(m_zDepthRange);
+		assignActorZValues(m_zDepthRange);
 		updateItemMap();
 		emit itemsUpdated();
 		emit itemsLoaded();
@@ -168,7 +168,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		bcItem->loadFromProjectMainFile(childElem);
 		m_childItems.append(bcItem);
 	}
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	updateItemMap();
 
 	emit itemsUpdated();
@@ -256,7 +256,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 		m_standardItem->appendRow(item->standardItem());
 	}
 	updateItemMap();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	emit itemsUpdated();
 
 	return item;

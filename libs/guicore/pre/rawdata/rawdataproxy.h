@@ -24,7 +24,7 @@ public:
 	virtual void setupMenu() {}
 	virtual void setupDataItem();
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
-	virtual void assignActionZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	RawData* rawData() const {return m_rawData;}
 	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}

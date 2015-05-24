@@ -28,7 +28,7 @@ public:
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem();
 	void showPropertyDialog();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 protected:
 	vtkPointSet* getSource(int i);
 	void setupActors();

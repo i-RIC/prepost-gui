@@ -32,7 +32,7 @@ public:
 	~Post2dWindowNodeScalarGroupDataItem();
 	const QString& currentSolution() const {return m_currentSolution;}
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
@@ -43,7 +43,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	bool exportKMLHeader(QXmlStreamWriter& writer);
 	bool exportKMLFooter(QXmlStreamWriter& writer);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time);

@@ -410,7 +410,7 @@ void Post2dWindowGridShapeDataItem::informDeselection(VTKGraphicsView* /*v*/)
 	m_outlineActor->GetProperty()->SetLineWidth(normalOutlineWidth);
 }
 
-void Post2dWindowGridShapeDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowGridShapeDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_outlineActor->SetPosition(0, 0, range.max());
 	m_wireframeActor->SetPosition(0, 0, range.min());

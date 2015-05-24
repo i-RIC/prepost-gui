@@ -201,7 +201,7 @@ void Post2dWindowRootDataItem::updateZoneList()
 		dataModel()->graphicsView()->setActiveDataItem(this);
 		updateItemMap();
 		updateZDepthRangeItemCount();
-		assignActionZValues(m_zDepthRange);
+		assignActorZValues(m_zDepthRange);
 		dynamic_cast<VTK2DGraphicsView*>(dataModel()->graphicsView())->ResetCameraClippingRange();
 		dataModel()->objectBrowserView()->expandAll();
 		dataModel()->fit();

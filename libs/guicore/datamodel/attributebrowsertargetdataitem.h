@@ -22,7 +22,7 @@ public:
 	AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent);
 	~AttributeBrowserTargetDataItem();
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 
 	void setPoint(const QVector2D& v);
 	void setPolygon(const QPolygonF& p);

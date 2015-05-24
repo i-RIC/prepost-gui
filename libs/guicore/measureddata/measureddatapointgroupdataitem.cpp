@@ -145,7 +145,7 @@ void MeasuredDataPointGroupDataItem::updateActorSettings()
 		setupScalarBarSetting();
 	}
 
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	updateVisibilityWithoutRendering();
 }
 
@@ -258,7 +258,7 @@ void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void MeasuredDataPointGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void MeasuredDataPointGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_pointsActor->SetPosition(0, 0, range.max());
 	m_blackPointsActor->SetPosition(0, 0, range.min());

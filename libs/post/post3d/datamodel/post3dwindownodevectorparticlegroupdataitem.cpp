@@ -189,7 +189,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(3);
 }
 
-void Post3dWindowNodeVectorParticleGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post3dWindowNodeVectorParticleGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_particleActors.count() == 0) {return;}
 	if (m_particleActors.count() == 1) {

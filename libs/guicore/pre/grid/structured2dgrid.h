@@ -77,7 +77,7 @@ public:
 	unsigned int cellCount() const {
 		return m_vtkGrid->GetNumberOfCells();
 	}
-	const QStringList checkShape(QTextStream& stream);
+	const QStringList checkShape(QTextStream& stream) override;
 	bool isValid(QTextStream& stream) const override;
 	bool isAspectRatioOk(double limit, QTextStream& stream);
 	bool isAngleOk(double limitAngle, QTextStream& stream);

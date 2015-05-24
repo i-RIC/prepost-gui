@@ -29,7 +29,7 @@ public:
 	PreProcessorGridAttributeMappingSettingTopDataItem* mappingSettingDataItem() const {
 		return m_mappingSettingDataItem;
 	}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorGridDataItemInterface* gridDataItem() const {return m_gridDataItem;}
 	bool isDeletable() const override;
 	void handleStandardItemChange();

@@ -32,7 +32,7 @@ void RawDataPolygonProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(1);
 }
 
-void RawDataPolygonProxy::assignActionZValues(const ZDepthRange& range)
+void RawDataPolygonProxy::assignActorZValues(const ZDepthRange& range)
 {
 	m_paintActor->SetPosition(0, 0, range.min());
 }

@@ -45,8 +45,8 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void updateActorSettings();
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
-	void addCustomMenuItems(QMenu* menu);
+	void assignActorZValues(const ZDepthRange& range) override;
+	void addCustomMenuItems(QMenu* menu) override;
 	void update();
 
 public slots:

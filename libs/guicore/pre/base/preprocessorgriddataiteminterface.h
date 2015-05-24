@@ -14,7 +14,7 @@ public:
 	PreProcessorGridDataItemInterface(PreProcessorDataItem* parent)
 		: PreProcessorDataItem(PreProcessorDataItem::tr("Grid"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 	{}
-	virtual void updateSimplefiedGrid(VTKGraphicsView* v = 0) = 0;
+	virtual void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) = 0;
 	virtual void informgridRelatedConditionChange(const QString& name) = 0;
 	virtual void updateAttributeActorSettings() = 0;
 	virtual Grid* grid() const = 0;

@@ -78,11 +78,11 @@ public:
 	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& /*range*/);
+	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);
 	void handleDialogAccepted(QDialog* d);
 	void handleDialogRejected(QDialog* d);
-	bool addToolBarButtons(QToolBar* /*tb*/);
+	bool addToolBarButtons(QToolBar* /*tb*/) override;
 	void createGrid(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
 	void selectCreateRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
 	bool checkCtrlPointsRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
@@ -113,7 +113,7 @@ private:
 	void setupVtkContainers();
 	void updateGridInterpolators();
 	void allActorsOff();
-	void cancelBackgroundGridUpdate();
+	void cancelBackgroundGridUpdate() override;
 
 	bool ctrlPointSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
 	bool ctrlPointXORSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);

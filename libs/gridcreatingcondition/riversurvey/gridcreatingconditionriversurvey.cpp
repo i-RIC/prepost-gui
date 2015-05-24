@@ -828,7 +828,7 @@ void GridCreatingConditionRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& r
 	range.setItemCount(3);
 }
 
-void GridCreatingConditionRiverSurvey::assignActionZValues(const ZDepthRange& range)
+void GridCreatingConditionRiverSurvey::assignActorZValues(const ZDepthRange& range)
 {
 	double paintDepth = range.min();
 	double lineDepth = range.min() * 0.9 + range.max() * 0.1;

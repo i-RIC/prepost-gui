@@ -114,7 +114,7 @@ public:
 	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
-	void assignActionZValues(const ZDepthRange& range) override;
+	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
 	const QColor& color() const {return m_color;}

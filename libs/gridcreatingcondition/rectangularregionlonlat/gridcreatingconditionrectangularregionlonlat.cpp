@@ -206,7 +206,7 @@ void GridCreatingConditionRectangularRegionLonLat::updateZDepthRangeItemCount(ZD
 	range.setItemCount(2);
 }
 
-void GridCreatingConditionRectangularRegionLonLat::assignActionZValues(const ZDepthRange& range)
+void GridCreatingConditionRectangularRegionLonLat::assignActorZValues(const ZDepthRange& range)
 {
 	m_rectangularActor->SetPosition(0, 0, range.min());
 	m_rectangularFrameActor->SetPosition(0, 0, range.max());

@@ -271,8 +271,8 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseMoveEvent(Q
 	}
 }
 
-void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_previewActor->SetPosition(0, 0, range.max());
-	Post2dWindowNodeVectorStreamlineGroupDataItem::assignActionZValues(range);
+	Post2dWindowNodeVectorStreamlineGroupDataItem::assignActorZValues(range);
 }

@@ -113,7 +113,7 @@ public:
 		m_item->updateActorSettings();
 		PreProcessorGridDataItem* gItem =
 			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplefiedGrid();
+		gItem->updateSimplifiedGrid();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
@@ -123,7 +123,7 @@ public:
 		m_item->updateActorSettings();
 		PreProcessorGridDataItem* gItem =
 			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplefiedGrid();
+		gItem->updateSimplifiedGrid();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
@@ -364,7 +364,7 @@ void PreProcessorGridRelatedConditionNodeGroupDataItem::mouseReleaseEvent(QMouse
 	fixAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void PreProcessorGridRelatedConditionNodeGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorGridRelatedConditionNodeGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_contourActor->SetPosition(0, 0, range.min());
 	m_isolineActor->SetPosition(0, 0, range.max());

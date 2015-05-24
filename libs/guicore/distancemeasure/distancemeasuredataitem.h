@@ -51,7 +51,7 @@ public:
 	virtual ~DistanceMeasureDataItem();
 
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -63,7 +63,7 @@ public:
 	void setPoints(const QVector2D& v1, const QVector2D& v2);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:
 	void showPropDialog();

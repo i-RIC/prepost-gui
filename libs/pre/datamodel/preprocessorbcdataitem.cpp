@@ -358,7 +358,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 }
 
 
-void PreProcessorBCDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorBCDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 		m_verticesActor->SetPosition(0, 0, range.max());

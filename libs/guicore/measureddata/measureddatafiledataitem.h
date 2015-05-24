@@ -20,7 +20,7 @@ public:
 	MeasuredData* measuredData() const {return m_measuredData;}
 	MeasuredDataPointGroupDataItem* pointGroupDataItem() const {return m_pointGroupDataItem;}
 	MeasuredDataVectorGroupDataItem* vectorGroupDataItem() const {return m_vectorGroupDataItem;}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);

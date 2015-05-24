@@ -14,7 +14,7 @@ public:
 	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition);
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
 	QString name(unsigned int index);
-	QString defaultCaption(unsigned int index);
+	QString defaultCaption(unsigned int index) override;
 };
 
 #endif // RAWDATAPOINTMAPREALCREATOR_H

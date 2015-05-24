@@ -11,7 +11,7 @@ public:
 	RawDataNetcdfXbandImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfXbandImporter() {}
 	const QStringList fileDialogFilters();
-	const QStringList acceptableExtensions();
+	const QStringList acceptableExtensions() override;
 	bool importData(RawData* data, int index, QWidget* w);
 
 protected:

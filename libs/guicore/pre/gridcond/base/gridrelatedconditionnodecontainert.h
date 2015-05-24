@@ -21,7 +21,7 @@ public:
 	}
 	/// Destructor
 	virtual ~GridRelatedConditionNodeContainerT() {}
-	void allocate() {
+	void allocate() override {
 		vtkDataArray* a = GridRelatedConditionContainerT<V>::m_grid->vtkGrid()->GetPointData()->GetArray(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());
 		DA* da = DA::SafeDownCast(a);
 		if (da == 0) {

@@ -69,11 +69,11 @@ public:
 	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& /*range*/);
+	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);
 	void handleDialogAccepted(QDialog* d);
 	void handleDialogRejected(QDialog* d);
-	bool addToolBarButtons(QToolBar* /*tb*/);
+	bool addToolBarButtons(QToolBar* /*tb*/) override;
 	void createGrid(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end, int dataNum);
 	void selectCreateRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
 	bool checkCtrlPointsRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);

@@ -32,8 +32,8 @@ public:
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void addCustomMenuItems(QMenu* menu);
-	virtual void assignActionZValues(const ZDepthRange& range);
+	void addCustomMenuItems(QMenu* menu) override;
+	virtual void assignActorZValues(const ZDepthRange& range);
 	void update();
 
 public slots:

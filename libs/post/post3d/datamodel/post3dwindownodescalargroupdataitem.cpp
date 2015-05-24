@@ -161,7 +161,7 @@ void Post3dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post3dWindowNodeScalarGroupDataItem::assignActionZValues(const ZDepthRange& /*range*/)
+void Post3dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& /*range*/)
 {
 
 }

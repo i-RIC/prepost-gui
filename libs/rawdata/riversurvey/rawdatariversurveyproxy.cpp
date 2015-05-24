@@ -242,7 +242,7 @@ void RawDataRiverSurveyProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(2);
 }
 
-void RawDataRiverSurveyProxy::assignActionZValues(const ZDepthRange& range)
+void RawDataRiverSurveyProxy::assignActorZValues(const ZDepthRange& range)
 {
 	double background = range.min();
 	double backlines = range.min() * 0.5 + range.max() * 0.5;

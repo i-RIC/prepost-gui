@@ -20,8 +20,8 @@ public:
 	RawData* rawData() {return m_rawData;}
 	int index() const {return m_index;}
 	void setIndex(int index) {m_index = index;}
-	void addCustomMenuItems(QMenu* menu);
-	bool addToolBarButtons(QToolBar* /*parent*/);
+	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void updateMoveUpDownActions(ObjectBrowserView* view);
 	void handleStandardItemChange();
 	void handleStandardItemClicked();
@@ -60,7 +60,7 @@ signals:
 public slots:
 	void exportRawdata();
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void innerUpdate2Ds();

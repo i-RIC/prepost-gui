@@ -109,7 +109,7 @@ public:
 		m_item->updateActorSettings();
 		PreProcessorGridDataItem* gItem =
 			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplefiedGrid();
+		gItem->updateSimplifiedGrid();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
@@ -119,7 +119,7 @@ public:
 		m_item->updateActorSettings();
 		PreProcessorGridDataItem* gItem =
 			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplefiedGrid();
+		gItem->updateSimplifiedGrid();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
@@ -260,7 +260,7 @@ void PreProcessorGridRelatedConditionCellGroupDataItem::mouseReleaseEvent(QMouse
 	fixAttributeBrowser(QPoint(event->x(), event->y()), v);
 }
 
-void PreProcessorGridRelatedConditionCellGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorGridRelatedConditionCellGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_actor->SetPosition(0, 0, range.min());
 }

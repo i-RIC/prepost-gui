@@ -14,7 +14,7 @@ public:
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
 	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* parent);
 protected:
-	GridRelatedConditionContainer* buildContainer(Grid* grid);
+	GridRelatedConditionContainer* buildContainer(Grid* grid) override;
 };
 
 #endif // SOLVERDEFINITIONREALCELLGRIDRELATEDCONDITION_H

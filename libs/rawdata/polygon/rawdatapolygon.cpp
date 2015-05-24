@@ -1153,7 +1153,7 @@ void RawDataPolygon::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(2);
 }
 
-void RawDataPolygon::assignActionZValues(const ZDepthRange& range)
+void RawDataPolygon::assignActorZValues(const ZDepthRange& range)
 {
 	m_depthRange = range;
 	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());

@@ -34,7 +34,7 @@ public:
 	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	QAction* editAction() {return m_editAction;}
 	QAction* openXsectionWindowAction() {return m_openXsectionWindowAction;}
 	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}

@@ -160,7 +160,7 @@ void Post3dWindowRootDataItem::updateZoneList()
 		updateItemMap();
 		updateZDepthRangeItemCount();
 		//+++++
-		//assignActionZValues(m_zDepthRange);
+		//assignActorZValues(m_zDepthRange);
 		//+++++
 		dataModel()->objectBrowserView()->expandAll();
 		dataModel()->fit();

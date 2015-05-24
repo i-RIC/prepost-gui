@@ -37,7 +37,7 @@ void Post2dWindowRawDataTopDataItem::updateChildren()
 		Post2dWindowRawDataGroupDataItem* gItem = dynamic_cast<Post2dWindowRawDataGroupDataItem*>(m_childItems.at(i));
 		gItem->updateChildren();
 	}
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 }
 
 void Post2dWindowRawDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)

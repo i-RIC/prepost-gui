@@ -18,7 +18,7 @@ public:
 	~Post2dWindowParticlesTopDataItem();
 	void updateActorSettings();
 	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);

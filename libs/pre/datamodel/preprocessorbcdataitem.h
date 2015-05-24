@@ -55,7 +55,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void setGrid(Grid* grid);
 	void clearPoints();
 	void assignIndices(const QSet<vtkIdType>& vertices);
@@ -90,7 +90,7 @@ signals:
 	void itemUpdated();
 
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 private:
 	void setupActors();
 	void updateActorSettings();

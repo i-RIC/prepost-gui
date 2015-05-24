@@ -70,13 +70,13 @@ public:
 	void initForSolverDefinition();
 	void loadSubWindowsFromProjectMainFile(const QDomNode& node);
 	void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer);
-	QStringList containedFiles() const;
+	QStringList containedFiles() const override;
 	void loadFromCgnsFile(const int fn);
 	void saveToCgnsFile(const int fn);
 	void closeCgnsFile();
 	void toggleGridEditFlag();
-	void clearResults();
-	bool clearResultsIfGridIsEdited();
+	void clearResults() override;
+	bool clearResultsIfGridIsEdited() override;
 	void setProjectData(ProjectData* projectData);
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();

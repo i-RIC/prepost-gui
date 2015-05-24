@@ -104,7 +104,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 		}
 		updateLookupTableRanges();
 	}
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	m_isZoneDataItemsSetup = (zoneNum != 0);
 }
 

@@ -339,7 +339,7 @@ void MeasuredDataVectorGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void MeasuredDataVectorGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void MeasuredDataVectorGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_arrowActor->SetPosition(0, 0, range.max());
 }

@@ -36,7 +36,7 @@ public:
 	void updateActorSettings();
 	void setupClipper();
 	void updateZDepthRangeItemCount();
-	virtual void assignActionZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 	const QString& currentSolution() {return m_currentSolution;}

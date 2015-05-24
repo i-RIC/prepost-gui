@@ -29,7 +29,7 @@ public:
 	Post3dWindow* postProcessorWindow();
 	void updateZDepthRangeItemCount() {}
 protected:
-	void assignActionZValues(const ZDepthRange& /*range*/) {}
+	void assignActorZValues(const ZDepthRange& /*range*/) {}
 	Post3dWindowDataModel* dataModel();
 };
 

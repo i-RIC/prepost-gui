@@ -22,11 +22,11 @@ public:
 	~PreProcessorRawDataComplexGroupDataItem();
 	void loadFromCgnsFile(const int fn);
 	void saveComplexGroupsToCgnsFile(const int fn);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
 	void setupEditWidget(GridRelatedConditionEditWidget* widget);
 	void applyScalarsToColorsSetting();
-	SolverDefinitionGridRelatedCondition* condition();
+	SolverDefinitionGridRelatedCondition* condition() override;
 
 public slots:
 	void showEditGroupDialog();

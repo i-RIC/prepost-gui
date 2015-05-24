@@ -25,15 +25,15 @@ public:
 
 	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
 	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
-	RawData* buildBackgroundRawData(ProjectDataItem* parent);
-	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);
+	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;
+	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
+	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;
 	QString undefinedString();
 	QString undefinedEnglishString();
 
 private:
 	void load(const QDomElement node);
-	GridRelatedConditionContainer* buildContainer(Grid* grid);
+	GridRelatedConditionContainer* buildContainer(Grid* grid) override;
 	QDomElement m_element;
 	SolverDefinition* m_definition;
 };

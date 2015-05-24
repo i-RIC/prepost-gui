@@ -19,7 +19,7 @@ public:
 	};
 	/// Constructor
 	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void handleStandardItemDoubleClicked() {editValue();}
 	void setupDataItem();
 	const QVariant& customValue() const {return m_customValue;}

@@ -28,7 +28,7 @@ public:
 	const QList<MeasuredDataFileDataItem*> fileDataItems() const;
 	void setupActors();
 	void updateActorSettings();
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 public slots:
 	void addChildItem();
 	void setupChildItem();

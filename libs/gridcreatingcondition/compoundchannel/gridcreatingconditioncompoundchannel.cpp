@@ -1520,7 +1520,7 @@ void GridCreatingConditionCompoundChannel::updateZDepthRangeItemCount(ZDepthRang
 	range.setItemCount(2);
 }
 
-void GridCreatingConditionCompoundChannel::assignActionZValues(const ZDepthRange& range)
+void GridCreatingConditionCompoundChannel::assignActorZValues(const ZDepthRange& range)
 {
 	m_depthRange = range;
 	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());

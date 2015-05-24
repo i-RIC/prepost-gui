@@ -91,7 +91,7 @@ public:
 	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
 	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
-	virtual void assignActionZValues(const ZDepthRange& /*range*/) {}
+	virtual void assignActorZValues(const ZDepthRange& /*range*/) {}
 	virtual bool getValueRange(double* /*min*/, double* /*max*/) {return false;}
 	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}

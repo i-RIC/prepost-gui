@@ -49,7 +49,7 @@ public:
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename);
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename);
-	QList<QString> contourDrawingZones();
+	QList<QString> contourDrawingZones() override;
 
 	bool hasTransparentPart();
 public slots:

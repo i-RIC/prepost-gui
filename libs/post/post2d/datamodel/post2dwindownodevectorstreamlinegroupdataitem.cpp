@@ -143,7 +143,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 
 	setupActors();
 	updateVisibilityWithoutRendering();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setupClipper()
@@ -158,7 +158,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_streamlineActors.count() == 0) {return;}
 	if (m_streamlineActors.count() == 1) {

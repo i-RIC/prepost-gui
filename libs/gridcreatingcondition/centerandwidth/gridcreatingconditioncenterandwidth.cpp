@@ -1060,7 +1060,7 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 
 	m_polyLine.clear();
 	ZDepthRange range = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent())->zDepthRange();
-	assignActionZValues(range);
+	assignActorZValues(range);
 	m_mouseEventMode = meBeforeDefining;
 	updateMouseCursor(graphicsView());
 	m_iMax = 11;
@@ -1238,7 +1238,7 @@ void GridCreatingConditionCenterAndWidth::updateZDepthRangeItemCount(ZDepthRange
 	range.setItemCount(1);
 }
 
-void GridCreatingConditionCenterAndWidth::assignActionZValues(const ZDepthRange& range)
+void GridCreatingConditionCenterAndWidth::assignActorZValues(const ZDepthRange& range)
 {
 	m_vertexActor->SetPosition(0, 0, range.max());
 	m_edgeActor->SetPosition(0, 0, range.max());

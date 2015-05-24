@@ -438,7 +438,7 @@ public:
 		m_breakLine->setActive(true);
 		m_pointMap->m_activeBreakLine = m_breakLine;
 		m_pointMap->m_breakLines.append(m_breakLine);
-		m_pointMap->assignActionZValues(m_pointMap->m_zDepthRange);
+		m_pointMap->assignActorZValues(m_pointMap->m_zDepthRange);
 		m_pointMap->updateActionStatus();
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->m_needRemeshing = true;
@@ -1645,7 +1645,7 @@ void RawDataPointmap::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(3);
 }
 
-void RawDataPointmap::assignActionZValues(const ZDepthRange& range)
+void RawDataPointmap::assignActorZValues(const ZDepthRange& range)
 {
 	m_zDepthRange = range;
 	m_polyVertexActor->SetPosition(0, 0, range.max());
@@ -1698,7 +1698,7 @@ void RawDataPointmap::handlePropertyDialogAccepted(QDialog* propDialog)
 		}
 	}
 	updateActorSettings();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	renderGraphicsView();
 }
 
@@ -1729,7 +1729,7 @@ void RawDataPointmap::updateRepresentation()
 		break;
 	}
 	updateVisibilityWithoutRendering();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	m_actor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 }
 

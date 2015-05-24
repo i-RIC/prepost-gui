@@ -11,7 +11,7 @@ public:
 	RawDataPointmapSTLImporter(RawDataCreator* creator);
 	bool importData(RawData* data, int index, QWidget* w);
 	const QStringList fileDialogFilters();
-	const QStringList acceptableExtensions();
+	const QStringList acceptableExtensions() override;
 protected:
 	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
 private:

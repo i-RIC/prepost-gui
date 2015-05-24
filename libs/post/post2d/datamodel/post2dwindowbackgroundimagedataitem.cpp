@@ -60,7 +60,7 @@ void Post2dWindowBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserV
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void Post2dWindowBackgroundImageDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowBackgroundImageDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	double position[3];
 	m_actor->GetPosition(position);

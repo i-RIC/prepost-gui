@@ -27,9 +27,7 @@ public:
 		getValueFromInnerWidget();
 		return m_valueSelected;
 	}
-	SolverDefinitionGridRelatedCondition* condition() {
-		return m_gridRelatedCondition;
-	}
+	SolverDefinitionGridRelatedCondition* condition() {return m_gridRelatedCondition;}
 	virtual void setVariantValue(const QVariant& v) = 0;
 	virtual void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices) = 0;
 	virtual void applyValue(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;

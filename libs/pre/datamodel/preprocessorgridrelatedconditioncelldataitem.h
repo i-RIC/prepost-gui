@@ -23,12 +23,12 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	void informDataChange();
-	bool addToolBarButtons(QToolBar* toolbar);
+	bool addToolBarButtons(QToolBar* toolbar) override;
 
 private slots:
 	void editValue();

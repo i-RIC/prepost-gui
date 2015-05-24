@@ -66,7 +66,7 @@ public:
 	bool isInputConditionSet();
 	GridState checkGridState();
 	/// Check grid shape and if problems found, returns warning message.
-	const QString checkGrid(bool detail);
+	const QString checkGrid(bool detail) override;
 	void showEvent(QShowEvent* e);
 	void hideEvent(QHideEvent* e);
 	//public slots:
@@ -80,7 +80,7 @@ public:
 	void addGridExportMenu(QMenu* menu);
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
-	bool checkMappingStatus();
+	bool checkMappingStatus() override;
 	const PreProcessorDataModelInterface* dataModel() const {return m_dataModel;}
 	PreProcessorDataModelInterface* dataModel() { return m_dataModel; }
 

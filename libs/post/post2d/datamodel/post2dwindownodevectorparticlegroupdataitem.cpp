@@ -157,7 +157,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 	setupParticleSources();
 	resetParticles();
 	updateVisibilityWithoutRendering();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -195,7 +195,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(3);
 }
 
-void Post2dWindowNodeVectorParticleGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeVectorParticleGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_particleActors.count() == 0) {return;}
 	if (m_particleActors.count() == 1) {
@@ -255,7 +255,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 		resetParticles();
 	}
 	updateVisibilityWithoutRendering();
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 
 TIMEHANDLING:
 

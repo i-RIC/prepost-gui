@@ -31,7 +31,7 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) {}
 	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* dialog);
 

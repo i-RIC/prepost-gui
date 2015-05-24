@@ -24,7 +24,7 @@ public:
 	void informDataChange(const QString& name);
 	void setupActors();
 	void updateZDepthRangeItemCount();
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
@@ -37,12 +37,12 @@ public:
 	void setOpacityPercent(int o) {m_opacityPercent = o;}
 	int opacityPercent() {return m_opacityPercent;}
 	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
 	void clearAttributeBrowser();
 	void fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	bool addToolBarButtons(QToolBar* toolbar);
+	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:
 	void exclusivelyCheck(PreProcessorGridRelatedConditionCellDataItem*);

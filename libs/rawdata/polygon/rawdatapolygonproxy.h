@@ -20,7 +20,7 @@ public slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 private:
 	vtkSmartPointer<vtkActor> m_paintActor;
 	vtkSmartPointer<vtkActor> m_linesActor;

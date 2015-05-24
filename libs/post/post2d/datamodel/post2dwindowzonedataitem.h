@@ -28,7 +28,7 @@ public:
 	/// Constructor
 	Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent);
 	~Post2dWindowZoneDataItem();
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
 	void informSelection(VTKGraphicsView* v);
@@ -69,7 +69,7 @@ public slots:
 	void showCellAttributeBrowser();
 
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);

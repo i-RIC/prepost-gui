@@ -126,7 +126,7 @@ public:
 
 protected:
 	PostSolutionInfo* postSolutionInfo();
-	virtual void assignActionZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	virtual GraphicsWindowDataModel* dataModel() const {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
 	vtkRenderer* renderer() const;
 	virtual void unregisterChild(GraphicsWindowDataItem* child);

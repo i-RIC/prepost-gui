@@ -180,7 +180,7 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 	}
 	// loading data finished.
 	// now call vtk related functions, and render new grid.
-	updateSimplefiedGrid();
+	updateSimplifiedGrid();
 	finishGridLoading();
 	updateActionStatus();
 	updateObjectBrowserTree();
@@ -1260,7 +1260,7 @@ void PreProcessorGridDataItem::informBirdEyeWindowClose()
 }
 
 
-void PreProcessorGridDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorGridDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	// selected.
 	m_regionActor->SetPosition(0, 0, range.min());
@@ -1445,7 +1445,7 @@ QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdTyp
 
 void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 {
-	updateSimplefiedGrid(v);
+	updateSimplifiedGrid(v);
 }
 
 void PreProcessorGridDataItem::updateSimplifiedGrid(VTKGraphicsView* v)

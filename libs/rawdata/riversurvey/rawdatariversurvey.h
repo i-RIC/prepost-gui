@@ -98,10 +98,10 @@ public:
 	virtual ~RawDataRiverSurvey();
 	void setupActors();
 	void setupMenu();
-	bool addToolBarButtons(QToolBar* /*parent*/);
+	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v);
 	void informDeselection(PreProcessorGraphicsViewInterface* v);
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
 	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
@@ -110,7 +110,7 @@ public:
 	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void updateZDepthRangeItemCount(ZDepthRange& range);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	bool getValueRange(double* min, double* max);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* d);

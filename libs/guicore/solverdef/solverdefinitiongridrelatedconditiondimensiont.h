@@ -25,7 +25,7 @@ public:
 	int fromVariant(const QVariant& v) const {
 		return v.toInt();
 	}
-	GridRelatedConditionDimensionContainer* buildContainer() {
+	GridRelatedConditionDimensionContainer* buildContainer() override {
 		return new GridRelatedConditionDimensionIntegerContainer(this);
 	}
 };
@@ -40,7 +40,7 @@ public:
 	double fromVariant(const QVariant& v) const {
 		return v.toDouble();
 	}
-	GridRelatedConditionDimensionContainer* buildContainer() {
+	GridRelatedConditionDimensionContainer* buildContainer() override {
 		return new GridRelatedConditionDimensionRealContainer(this);
 	}
 };

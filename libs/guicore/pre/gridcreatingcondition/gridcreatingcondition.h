@@ -58,7 +58,7 @@ public:
 	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
 	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
-	virtual void assignActionZValues(const ZDepthRange& /*range*/) {}
+	virtual void assignActorZValues(const ZDepthRange& /*range*/) {}
 	virtual bool addToolBarButtons(QToolBar* /*tb*/) {return false;}
 	virtual void update2Ds() {}
 	/// Clear the condition, to make it the default status.

@@ -91,7 +91,7 @@ public:
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
 	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
 protected:
-	virtual void assignActionZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	virtual Graph2dWindowDataModel* dataModel() const {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
 	void renderView();
 	virtual void unregisterChild(Graph2dWindowDataItem* child);

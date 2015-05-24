@@ -167,7 +167,7 @@ void DistanceMeasureDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void DistanceMeasureDataItem::assignActionZValues(const ZDepthRange& range)
+void DistanceMeasureDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_pointsActor->SetPosition(0, 0, range.max());
 	m_lineActor->SetPosition(0, 0, range.max());

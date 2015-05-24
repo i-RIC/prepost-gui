@@ -58,7 +58,7 @@ void GridRelatedConditionContainer::handleDimensionCurrentIndexChange(int oldInd
 	setModified();
 	PreProcessorGridDataItemInterface* gItem =
 		dynamic_cast<PreProcessorGridDataItemInterface*>(m_grid->parent());
-	gItem->updateSimplefiedGrid();
+	gItem->updateSimplifiedGrid();
 }
 
 void GridRelatedConditionContainer::handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/)

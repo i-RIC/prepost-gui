@@ -393,7 +393,7 @@ void Graph2dWindowDataItem::showPropertyDialog()
 void Graph2dWindowDataItem::setZDepthRange(const ZDepthRange& newrange)
 {
 	m_zDepthRange = newrange;
-	assignActionZValues(newrange);
+	assignActorZValues(newrange);
 }
 
 void Graph2dWindowDataItem::updateZDepthRange()
@@ -402,7 +402,7 @@ void Graph2dWindowDataItem::updateZDepthRange()
 	setZDepthRange(m_zDepthRange);
 }
 
-void Graph2dWindowDataItem::assignActionZValues(const ZDepthRange& range)
+void Graph2dWindowDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	if (m_childItems.count() == 0) {return;}
 

@@ -1432,7 +1432,7 @@ void GridCreatingConditionTriangle::updateZDepthRangeItemCount(ZDepthRange& rang
 	range.setItemCount(2);
 }
 
-void GridCreatingConditionTriangle::assignActionZValues(const ZDepthRange& range)
+void GridCreatingConditionTriangle::assignActorZValues(const ZDepthRange& range)
 {
 	m_depthRange = range;
 	m_gridRegionPolygon->setZDepthRange(range.min(), range.max());

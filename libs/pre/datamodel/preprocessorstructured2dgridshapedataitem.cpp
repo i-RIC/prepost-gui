@@ -200,7 +200,7 @@ void PreProcessorStructured2dGridShapeDataItem::informDeselection(VTKGraphicsVie
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(false);
 }
 
-void PreProcessorStructured2dGridShapeDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorStructured2dGridShapeDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_outlineActor->SetPosition(0, 0, range.max());
 	m_wireframeActor->SetPosition(0, 0, range.min());

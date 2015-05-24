@@ -146,7 +146,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 		setupScalarBarSetting();
 	}
 
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	updateVisibilityWithoutRendering();
 }
 
@@ -275,7 +275,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_contourActor->SetPosition(0, 0, range.min());
 	m_fringeActor->SetPosition(0, 0, range.min());

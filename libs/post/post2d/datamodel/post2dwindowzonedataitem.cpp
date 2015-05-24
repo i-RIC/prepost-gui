@@ -288,7 +288,7 @@ void Post2dWindowZoneDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(m_childItems.count() + 1);
 }
 
-void Post2dWindowZoneDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_regionActor->SetPosition(0, 0, range.min());
 

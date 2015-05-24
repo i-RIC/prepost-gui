@@ -47,7 +47,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	QDialog* propertyDialog(QWidget* parent);
 	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 private:
 	void setupActors();
 	void setColor(const QColor& color);

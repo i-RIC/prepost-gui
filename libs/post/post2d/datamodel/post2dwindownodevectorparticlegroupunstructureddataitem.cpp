@@ -206,10 +206,10 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMo
 	}
 }
 
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_previewActor->SetPosition(0, 0, range.max());
-	Post2dWindowNodeVectorParticleGroupDataItem::assignActionZValues(range);
+	Post2dWindowNodeVectorParticleGroupDataItem::assignActorZValues(range);
 }
 
 

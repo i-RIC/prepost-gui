@@ -22,7 +22,7 @@ public:
 	RawDataPointmapRealImporter(RawDataCreator* creator);
 	bool importData(RawData* data, int index, QWidget* w);
 	const QStringList fileDialogFilters();
-	const QStringList acceptableExtensions();
+	const QStringList acceptableExtensions() override;
 	GDALDataset* poDataset;
 	GDALRasterBand* poBand;
 

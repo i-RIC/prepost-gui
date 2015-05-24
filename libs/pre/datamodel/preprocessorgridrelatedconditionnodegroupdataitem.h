@@ -29,7 +29,7 @@ public:
 	void informDeselection(VTKGraphicsView* v);
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
 	void setCurrentCondition(const QString& currentCond);
 	const QList<PreProcessorGridRelatedConditionNodeDataItem*> conditions() const;
@@ -39,12 +39,12 @@ public:
 	int opacityPercent() {return m_opacityPercent;}
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
 	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
 	void clearAttributeBrowser();
 	void fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
-	bool addToolBarButtons(QToolBar* toolbar);
+	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:
 	void exclusivelyCheck(PreProcessorGridRelatedConditionNodeDataItem*);

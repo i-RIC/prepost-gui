@@ -11,7 +11,7 @@ public:
 	/// Constructor
 	RawDataNetcdfCreator();
 	QString name(unsigned int index);
-	QString defaultCaption(unsigned int index);
+	QString defaultCaption(unsigned int index) override;
 };
 
 #endif // RAWDATANETCDFCREATOR_H

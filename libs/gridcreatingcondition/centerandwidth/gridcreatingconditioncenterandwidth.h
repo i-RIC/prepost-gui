@@ -75,7 +75,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* v) override;
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
-	void assignActionZValues(const ZDepthRange& /*range*/) override;
+	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	const QVector<QPointF> polyLine();
 	void setPolyLine(const QVector<QPointF>& polyline);
 	bool isVertexSelectable(const QVector2D& pos);

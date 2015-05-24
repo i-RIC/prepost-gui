@@ -64,7 +64,7 @@ void PreProcessorBackgroundImageDataItem::updateMoveUpDownActions(ObjectBrowserV
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void PreProcessorBackgroundImageDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorBackgroundImageDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	double position[3];
 	m_actor->GetPosition(position);

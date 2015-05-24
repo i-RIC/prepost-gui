@@ -179,7 +179,7 @@ void AttributeBrowserTargetDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void AttributeBrowserTargetDataItem::assignActionZValues(const ZDepthRange& range)
+void AttributeBrowserTargetDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_paintActor->SetPosition(0, 0, range.min());
 	m_edgeActor->SetPosition(0, 0, range.max());

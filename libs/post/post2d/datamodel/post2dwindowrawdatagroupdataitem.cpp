@@ -65,7 +65,7 @@ void Post2dWindowRawDataGroupDataItem::updateChildren()
 	for (int i = 0; i < oldChildren.count(); ++i) {
 		delete oldChildren.at(i);
 	}
-	assignActionZValues(m_zDepthRange);
+	assignActorZValues(m_zDepthRange);
 	updateItemMap();
 }
 

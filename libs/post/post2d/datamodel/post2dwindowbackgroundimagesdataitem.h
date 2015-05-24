@@ -12,7 +12,7 @@ public:
 	Post2dWindowBackgroundImagesDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowBackgroundImagesDataItem();
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(10);}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void visiblePropBounds(double bounds[6]);
 	void handleStandardItemChange();
 

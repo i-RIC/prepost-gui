@@ -113,7 +113,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informDeselection(V
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(false);
 }
 
-void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::assignActionZValues(const ZDepthRange& range)
+void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_edgeActor->SetPosition(0, 0, range.min());
 	m_vertexActor->SetPosition(0, 0, range.max());

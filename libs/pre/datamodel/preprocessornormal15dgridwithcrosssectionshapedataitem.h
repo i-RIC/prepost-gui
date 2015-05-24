@@ -25,13 +25,13 @@ public:
 	void informSelection(VTKGraphicsView* v);
 	void informDeselection(VTKGraphicsView* v);
 	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 	void updateActionStatus();
 	void updateCrossSectionWindows();
 	void requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item);
 	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
 protected:
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 	void setupActors();

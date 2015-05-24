@@ -302,7 +302,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::assignActionZValues(const ZDepthRange& range)
+void Post2dWindowNodeVectorArrowGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_arrowActor->SetPosition(0, 0, range.max());
 }

@@ -18,7 +18,7 @@ public:
 	RawDataNetcdfGdalImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfGdalImporter() {}
 	const QStringList fileDialogFilters();
-	const QStringList acceptableExtensions();
+	const QStringList acceptableExtensions() override;
 	bool importData(RawData* data, int index, QWidget* w);
 
 protected:

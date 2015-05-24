@@ -30,7 +30,7 @@ public:
 	void setValue(unsigned int index, int value) {
 		dataArray()->SetValue(index, value);
 	}
-	void allocate() {
+	void allocate() override {
 		vtkIntArray* da = dataArray();
 		if (da == nullptr) {
 			// not found maybe reset?

@@ -42,7 +42,7 @@ public:
 	void loadFromCgnsFile(const int fn);
 	void saveToCgnsFile(const int fn);
 	void closeCgnsFile();
-	void addCustomMenuItems(QMenu* menu);
+	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
 	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
@@ -134,7 +134,7 @@ public:
 	void informGridChange();
 	void informBirdEyeWindowClose();
 	void doViewOperationEndedGlobal(VTKGraphicsView*);
-	void updateSimplifiedGrid(VTKGraphicsView* v = nullptr);
+	void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) override;
 	void updateRegionPolyData();
 
 	void updateObjectBrowserTree();
@@ -170,7 +170,7 @@ protected:
 	virtual void updateActionStatus();
 	void doLoadFromProjectMainFile(const QDomNode& node);
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void assignActionZValues(const ZDepthRange& range);
+	void assignActorZValues(const ZDepthRange& range) override;
 
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;

@@ -13,7 +13,7 @@ public:
 	/// Import hydraulicdata from the specified file.
 	bool import(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w);
 	/// Returns true if the hydraulic data can be imported to the specified rawdata.
-	bool canImportTo(RawData* data);
+	bool canImportTo(RawData* data) override;
 	const QStringList fileDialogFilters();
 };
 
