@@ -15,7 +15,7 @@ public:
 		m_item = item;
 	}
 
-	QVariant variantValue();
+	QVariant variantValue() override;
 
 private:
 	PreProcessorRawDataComplexGroupDataItemInterface* m_item;

@@ -18,12 +18,12 @@ public:
 	/// Constructor
 	PostTimeDataItem(GraphicsWindowDataItem* parent);
 	virtual ~PostTimeDataItem();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void update();
 protected:
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 private:
 	const static int FONTSIZE = 13;
 	void setupActors();

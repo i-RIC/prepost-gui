@@ -23,7 +23,7 @@ class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesData
 public:
 	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}
-	bool handleCurrentStepUpdate(const int /*fn*/) {
+	bool handleCurrentStepUpdate(const int /*fn*/) override {
 		// do nothing.
 		return true;
 	}
@@ -37,9 +37,9 @@ public:
 	void setPointIndex(int index) {m_pointIndex = index;}
 	int pointIndex() const {return m_pointIndex;}
 protected:
-	bool loadData(const int fn);
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	bool loadData(const int fn) override;
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 private:
 	bool setZoneId(const int fn);
 protected:

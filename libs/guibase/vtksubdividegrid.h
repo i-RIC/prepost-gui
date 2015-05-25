@@ -11,7 +11,7 @@ class GUIBASEDLL_EXPORT vtkSubdivideGrid : public vtkStructuredGridAlgorithm
 public:
 	static vtkSubdivideGrid* New();
 	vtkTypeRevisionMacro(vtkSubdivideGrid,vtkStructuredGridAlgorithm);
-	void PrintSelf(ostream& os, vtkIndent indent);
+	void PrintSelf(ostream& os, vtkIndent indent) override;
 
 	// Description:
 	// Specify i-j-k (min,max) pairs to extract. The resulting structured grid
@@ -32,9 +32,9 @@ protected:
 	vtkSubdivideGrid();
 	~vtkSubdivideGrid() {}
 
-	virtual int RequestData(vtkInformation*, vtkInformationVector**, vtkInformationVector*);
-	virtual int RequestInformation(vtkInformation*, vtkInformationVector**, vtkInformationVector*);
-	virtual int RequestUpdateExtent(vtkInformation*, vtkInformationVector**, vtkInformationVector*);
+	virtual int RequestData(vtkInformation*, vtkInformationVector**, vtkInformationVector*) override;
+	virtual int RequestInformation(vtkInformation*, vtkInformationVector**, vtkInformationVector*) override;
+	virtual int RequestUpdateExtent(vtkInformation*, vtkInformationVector**, vtkInformationVector*) override;
 
 	int VOI[6];
 	int DivideRate[3];

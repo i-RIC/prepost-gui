@@ -18,8 +18,8 @@ public:
 	ContinuousSnapshotFilePropertyPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotFilePropertyPage();
 
-	void initializePage();
-	bool validatePage();
+	void initializePage() override;
+	bool validatePage() override;
 
 private:
 	ContinuousSnapshotWizard* m_wizard;

@@ -14,18 +14,18 @@ public:
 	/// Constructor
 	PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorInputConditionDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
-	void handleStandardItemDoubleClicked() {showDialog();}
+	void handleStandardItemDoubleClicked() override {showDialog();}
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
 	bool isSet() {return m_isSet;}
 	bool isSetupCorrectly() {return m_dialog != nullptr;}
 public slots:
-	void setModified() {
+	void setModified() override {
 		PreProcessorDataItem::setModified();
 	}
 	void showDialog(bool readonly = false);

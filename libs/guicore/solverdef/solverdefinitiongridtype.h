@@ -56,7 +56,7 @@ public:
 	void buildGridRelatedConditions(Grid* grid) const;
 	/// Returns a pointer to a grid that has no data.
 	Grid* emptyGrid() const {return m_emptyGrid;}
-//	PreProcessorGridDataItem* createGridDataItem(PreProcessorDataItem* parent);
+//	PreProcessorGridDataItem* createGridDataItem(PreProcessorDataItem* parent) override;
 	Grid* createEmptyGrid();
 	const QString solutionCaption(const QString& name);
 

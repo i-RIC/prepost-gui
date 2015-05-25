@@ -11,9 +11,9 @@ class RD_POINTMAP_EXPORT RawDataPointmapRealCreator : public RawDataCreator
 public:
 	/// Constructor
 	RawDataPointmapRealCreator();
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition);
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
-	QString name(unsigned int index);
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) override;
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
+	QString name(unsigned int index) override;
 	QString defaultCaption(unsigned int index) override;
 };
 

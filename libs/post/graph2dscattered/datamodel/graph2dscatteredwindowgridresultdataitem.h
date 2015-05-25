@@ -15,9 +15,9 @@ public:
 	virtual ~Graph2dScatteredWindowGridResultDataItem();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void updateValues(int fn);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void updateValues(int fn) override;
 
 private:
 	static void setupData(QVector<double>& vals, const QString& name, vtkPointSet* ps);

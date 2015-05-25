@@ -34,7 +34,7 @@ class GUIBASEDLL_EXPORT vtkCustomStreamPoints : public vtkStreamer
 {
 public:
 	vtkTypeMacro(vtkCustomStreamPoints,vtkStreamer);
-	void PrintSelf(ostream& os, vtkIndent indent);
+	void PrintSelf(ostream& os, vtkIndent indent) override;
 
 	// Description:
 	// Construct object with time increment set to 1.0.
@@ -50,7 +50,7 @@ protected:
 	~vtkCustomStreamPoints() {}
 
 	// Convert streamer array into vtkPolyData
-	virtual int RequestData(vtkInformation*, vtkInformationVector**, vtkInformationVector*);
+	virtual int RequestData(vtkInformation*, vtkInformationVector**, vtkInformationVector*) override;
 
 	// the separation of points
 	double TimeIncrement;

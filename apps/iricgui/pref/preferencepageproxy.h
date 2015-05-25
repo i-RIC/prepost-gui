@@ -16,7 +16,7 @@ class PreferencePageProxy : public PreferencePage
 public:
 	explicit PreferencePageProxy(QWidget* parent = nullptr);
 	~PreferencePageProxy();
-	void update();
+	void update() override;
 
 private:
 	NetworkSetting m_setting;

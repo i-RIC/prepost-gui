@@ -23,11 +23,11 @@ public:
 	/// Destructor
 	virtual ~GridRelatedComplexConditionContainer() {}
 	/// Returns the value at the specified index.
-	int value(unsigned int index) {
+	int value(unsigned int index) override {
 		return dataArray()->GetValue(index);
 	}
 	/// Update the value at the specified index.
-	void setValue(unsigned int index, int value) {
+	void setValue(unsigned int index, int value) override {
 		dataArray()->SetValue(index, value);
 	}
 	void allocate() override {
@@ -50,33 +50,32 @@ public:
 		}
 	}
 
-	vtkIntArray* dataArray() {
-		vtkDataArray* da;
+	vtkIntArray* dataArray() const override {
+		vtkPointSet* ps = const_cast<vtkPointSet*> (GridRelatedConditionContainer::m_grid->vtkGrid());
+		vtkDataArray* da = nullptr;
 		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node) {
-			da = GridRelatedConditionContainer::m_grid->vtkGrid()->GetPointData()
-					 ->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
+			da = ps->GetPointData()->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
 		} else {
-			da = GridRelatedConditionContainer::m_grid->vtkGrid()->GetCellData()
-					 ->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
+			da = ps->GetCellData()->GetArray(iRIC::toStr(GridRelatedComplexConditionContainer::name()).c_str());
 		}
 		return vtkIntArray::SafeDownCast(da);
 	}
-	vtkIntArray* dataArrayCopy() {
+	vtkIntArray* dataArrayCopy() const override {
 		vtkIntArray* copy = vtkIntArray::New();
 		copy->DeepCopy(dataArray());
 		return copy;
 	}
-	unsigned int dataCount() const {
+	unsigned int dataCount() const override {
 		if (condition()->position() == SolverDefinitionGridRelatedCondition::Node) {
 			return m_grid->nodeCount();
 		} else {
 			return m_grid->cellCount();
 		}
 	}
-	void setModified() {
+	void setModified() override {
 		dataArray()->Modified();
 	}
-	bool getValueRange(double* min, double* max) {
+	bool getValueRange(double* min, double* max) override {
 		double range[2];
 		dataArray()->GetRange(range);
 		*min = range[0];

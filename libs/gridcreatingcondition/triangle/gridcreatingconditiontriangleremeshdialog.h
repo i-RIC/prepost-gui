@@ -18,8 +18,8 @@ public:
 	void setArea(double area);
 	double area();
 	void setRequired();
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private:
 	Ui::GridCreatingConditionTriangleRemeshDialog* ui;
 	bool m_required;

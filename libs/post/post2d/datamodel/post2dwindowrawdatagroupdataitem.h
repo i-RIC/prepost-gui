@@ -15,8 +15,8 @@ public:
 	Post2dWindowRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, Post2dWindowDataItem* parent);
 	void updateChildren();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	QMap<QString, Post2dWindowRawDataDataItem*> m_itemNameMap;
 	SolverDefinitionGridRelatedCondition* m_condition;

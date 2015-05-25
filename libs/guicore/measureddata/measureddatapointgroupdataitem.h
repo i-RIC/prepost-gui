@@ -31,28 +31,28 @@ public:
 	MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataPointGroupDataItem();
 	const QString& currentMeasuredValue() const {return m_currentMeasuredValue;}
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setCurrentMeasuredValue(const QString& value);
-	bool hasTransparentPart();
+	bool hasTransparentPart() override;
 	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void doApplyOffset(double x, double y);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void doApplyOffset(double x, double y) override;
 
 public slots:
 	void exclusivelyCheck(MeasuredDataPointDataItem* item);
 	void showSettingDialog() {showPropertyDialog();}
 protected:
-	void updateVisibility(bool visible);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void updateVisibility(bool visible) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	void setupActors();
 	void updateActorSettings();

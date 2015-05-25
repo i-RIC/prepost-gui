@@ -140,7 +140,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
-	void updateFilename() {
+	void updateFilename() override {
 		m_filename = "gridcreatingcondition.dat";
 	}
 private:

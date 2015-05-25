@@ -26,7 +26,7 @@ public:
 	void setStepSize(double size);
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void updateResultDisplays();
@@ -38,7 +38,7 @@ private slots:
 
 	void handleButtonClick(QAbstractButton* button);
 protected:
-	void showEvent(QShowEvent*);
+	void showEvent(QShowEvent*) override;
 private:
 	Ui::GridCreatingConditionRectangularRegionLonLatSettingDialog* ui;
 	GridCreatingConditionRectangularRegionLonLat* m_condition;

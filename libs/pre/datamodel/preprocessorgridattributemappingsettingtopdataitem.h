@@ -24,8 +24,8 @@ public slots:
 	QAction* customMappingAction() {return m_customMappingAction;}
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	bool checkDimensions();
 
 	PreProcessorCustomMappingSetting m_mappingSetting;

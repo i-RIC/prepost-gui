@@ -24,7 +24,7 @@ public:
 		: RawDataNodeMapperT<V, DA>(parent) {
 		RawDataNodeMapperT<V, DA>::m_caption = "Pointmap node mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataPointmapNodeMapperSetting* s = new RawDataPointmapNodeMapperSetting();
 		unsigned int count = RawDataNodeMapperT<V, DA>::container()->dataCount();
 		RawDataPointMapT<V, DA>* pointmap = dynamic_cast<RawDataPointMapT<V, DA>* >(RawDataNodeMapperT<V, DA>::m_rawdata);
@@ -149,7 +149,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataPointmapNodeMapperSetting* s2 = dynamic_cast<RawDataPointmapNodeMapperSetting*>(s);
 		DA* da = RawDataNodeMapperT<V, DA>::container()->dataArray();
 		RawDataPointMapT<V, DA>* pointmap = dynamic_cast<RawDataPointMapT<V, DA>* >(RawDataNodeMapperT<V, DA>::m_rawdata);
@@ -168,7 +168,7 @@ public:
 		da->Modified();
 	}
 
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 };

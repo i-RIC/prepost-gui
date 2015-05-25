@@ -16,7 +16,7 @@ public:
 	PropertyBrowserView* view() const {return m_view;}
 
 protected:
-	void hideEvent(QHideEvent*);
+	void hideEvent(QHideEvent*) override;
 
 private:
 	PropertyBrowserView* m_view;

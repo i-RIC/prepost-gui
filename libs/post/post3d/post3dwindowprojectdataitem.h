@@ -11,8 +11,8 @@ class POST3D_EXPORT Post3dWindowProjectDataItem : public PostProcessorWindowProj
 public:
 	Post3dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // POST3DWINDOWPROJECTDATAITEM_H

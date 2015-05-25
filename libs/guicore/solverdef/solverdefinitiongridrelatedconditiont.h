@@ -24,7 +24,7 @@ public:
 	SolverDefinitionGridRelatedIntegerCondition(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridRelatedConditionT<int>(node, translator)
 	{}
-	int fromVariant(const QVariant& v) const {
+	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
 	}
 	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;
@@ -36,7 +36,7 @@ public:
 	SolverDefinitionGridRelatedRealCondition(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridRelatedConditionT<double>(node, translator)
 	{}
-	double fromVariant(const QVariant& v) const {
+	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();
 	}
 	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;

@@ -36,22 +36,22 @@ public:
 	const QString& currentCondition() const {return m_currentSolution;}
 	void informDataChange(const QString& name);
 	void setupActors();
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setCurrentSolution(const QString& currentSol);
 
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeScalarDataItem* item);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void updateVisibility();
-	void updateVisibility(bool visible);
-	void innerUpdateZScale(double scale);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void updateVisibility() override;
+	void updateVisibility(bool visible) override;
+	void innerUpdateZScale(double scale) override;
 	void updateColorSetting();
 
 private:

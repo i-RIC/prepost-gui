@@ -27,18 +27,18 @@ class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem  : public Post2d
 public:
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem();
-	void showPropertyDialog();
+	void showPropertyDialog() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 protected:
 	vtkPointSet* getSource(int i);
-	void setupActors();
+	void setupActors() override;
 
-	QDialog* propertyDialog(QWidget* parent);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
 	void setSetting(const QVector2D& v1, const QVector2D& v2, int num);
 	void clearSetting();
 private slots:

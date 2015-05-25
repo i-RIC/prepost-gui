@@ -32,8 +32,8 @@ public:
 			m_values[i].values.clear();
 		}
 	}
-	int load();
-	int save();
+	int load() override;
+	int save() override;
 	QVariant variantValue() const override {return QVariant(0);}
 
 public:

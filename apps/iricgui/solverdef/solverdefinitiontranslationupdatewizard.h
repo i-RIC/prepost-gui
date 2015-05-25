@@ -28,7 +28,7 @@ public:
 	SettingPage(QWidget* parent = nullptr);
 	void init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist);
 	QList<QLocale> selectedLanguages();
-	void initializePage();
+	void initializePage() override;
 private:
 	QRadioButton* m_solverRadioButton;
 	QRadioButton* m_gridGenRadioButton;
@@ -42,7 +42,7 @@ class ConfirmPage : public QWizardPage
 	Q_OBJECT
 public:
 	ConfirmPage(QWidget* parent = nullptr);
-	void initializePage();
+	void initializePage() override;
 private:
 	QTextEdit* m_textEdit;
 };
@@ -56,7 +56,7 @@ public:
 	SettingPage* settingPage() {return dynamic_cast<SettingPage*>(page(m_settingPageId));}
 	SolverDefinitionList* solverList() {return m_solverList;}
 	const QList<GridCreatingConditionCreator*>& gridCreatorList() {return m_gridCreatorList;}
-	void accept();
+	void accept() override;
 	static QList<QLocale> supportedLanguages();
 private:
 	SolverDefinitionList* m_solverList;

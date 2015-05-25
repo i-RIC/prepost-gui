@@ -15,7 +15,7 @@ public:
 	/// Constructor
 	RawDataExporter(RawDataCreator* creator);
 	/// Export the rawdata into the specified file.
-	virtual bool doEmport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) = 0;
+	virtual bool doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) = 0;
 	virtual const QStringList fileDialogFilters() = 0;
 	RawDataCreator* creator();
 	const QString& caption() const {return m_caption;}

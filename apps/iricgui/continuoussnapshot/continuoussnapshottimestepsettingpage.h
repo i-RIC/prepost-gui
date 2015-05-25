@@ -17,8 +17,8 @@ public:
 	ContinuousSnapshotTimestepSettingPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotTimestepSettingPage();
 
-	void initializePage();
-	bool validatePage();
+	void initializePage() override;
+	bool validatePage() override;
 
 private slots:
 	void modifyStart(int time);

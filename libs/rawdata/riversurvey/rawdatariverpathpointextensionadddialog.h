@@ -23,8 +23,8 @@ public:
 		m_lineMode = lm;
 	}
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 	void setPoint(const QVector2D& position);
 private slots:
 	void handleButtonClick(QAbstractButton* button);

@@ -31,25 +31,25 @@ public:
 	PostSolutionInfo* postSolutionInfo();
 	bool setupInitialSetting();
 	void getXAxisValueRange(double* min, double* max);
-	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max);
+	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
 	const Graph2dScatteredWindowResultSetting& setting() const {return m_setting;}
 public slots:
-//	void sliderChanged();
+//	void sliderChanged() override;
 	void dataSourceSetting();
 	void axisSetting();
 	void drawSetting();
-//	void markerSettiing();
-//	void addKPMarkers();
-//	void specialSnapshot();
-//	void specialCsvExport();
-//	void copyCalculationResult();
-//	void exportCsv();
+//	void markerSettiing() override;
+//	void addKPMarkers() override;
+//	void specialSnapshot() override;
+//	void specialCsvExport() override;
+//	void copyCalculationResult() override;
+//	void exportCsv() override;
 private slots:
 	void updateTime();
 	void updateData(int fn);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void applyAxisSetting() override;
 
 private:

@@ -53,8 +53,8 @@ signals:
 	void standardModelSetuped();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	Post2dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;

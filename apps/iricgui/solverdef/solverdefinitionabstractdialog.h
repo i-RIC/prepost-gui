@@ -22,7 +22,7 @@ public:
 	~SolverDefinitionAbstractDialog();
 
 protected:
-	void changeEvent(QEvent* e);
+	void changeEvent(QEvent* e) override;
 
 private:
 	/// Setup dialog widgets to show the information about the solver

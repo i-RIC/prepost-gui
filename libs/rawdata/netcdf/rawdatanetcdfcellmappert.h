@@ -24,7 +24,7 @@ public:
 		: RawDataCellMapperT<V, DA>(parent) {
 		RawDataCellMapperT<V, DA>::m_caption = "Raster data cell mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataNetcdfCellMapperSetting* s = new RawDataNetcdfCellMapperSetting();
 		unsigned int count = RawDataCellMapperT<V, DA>::container()->dataCount();
 		RawDataNetcdfT<V, DA>* netcdf = dynamic_cast<RawDataNetcdfT<V, DA>* >(RawDataMapper::m_rawdata);
@@ -62,7 +62,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataNetcdfCellMapperSetting* s2 =
 			dynamic_cast<RawDataNetcdfCellMapperSetting*>(s);
 		DA* da = RawDataCellMapperT<V, DA>::container()->dataArray();
@@ -82,7 +82,7 @@ public:
 		da->Modified();
 	}
 
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 };

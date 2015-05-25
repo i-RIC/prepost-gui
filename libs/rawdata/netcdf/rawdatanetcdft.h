@@ -30,7 +30,7 @@ public:
 	}
 	V value(vtkIdType index) {return vtkValues()->GetValue(index);}
 	void setValue(vtkIdType index, V val) {return vtkValues()->SetValue(index, val);}
-	bool getValueRange(double* min, double* max) {
+	bool getValueRange(double* min, double* max) override {
 		if (vtkValues()->GetNumberOfTuples() == 0) {return false;}
 		DA* vtkVals = vtkValues();
 		bool first = true;
@@ -77,7 +77,7 @@ public:
 	virtual V missingValue() = 0;
 
 protected:
-	void doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex) {
+	void doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex) override {
 		std::string fname = iRIC::toStr(filename());
 		int ncid, ret, varId;
 
@@ -134,7 +134,7 @@ protected:
 		Q_UNUSED(ret)
 	}
 
-	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) {
+	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override {
 
 	}
 };
@@ -145,10 +145,10 @@ public:
 	RawDataNetcdfInteger(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
 		: RawDataNetcdfT(d, creator, condition) {
 	}
-	int missingValue() {
+	int missingValue() override {
 		return NC_FILL_INT;
 	}
-	double thresholdValue() {
+	double thresholdValue() override {
 		int mval = missingValue();
 		if (mval > 0) {return mval - 1;}
 		return mval + 1;
@@ -161,10 +161,10 @@ public:
 	RawDataNetcdfReal(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
 		: RawDataNetcdfT(d, creator, condition) {
 	}
-	double missingValue() {
+	double missingValue() override {
 		return NC_FILL_DOUBLE;
 	}
-	double thresholdValue() {
+	double thresholdValue() override {
 		double mval = missingValue();
 		return mval * 0.999;
 	}

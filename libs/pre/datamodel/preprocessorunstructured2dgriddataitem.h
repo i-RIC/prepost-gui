@@ -13,8 +13,8 @@ public:
 	PreProcessorUnstructured2dGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorUnstructured2dGridDataItem();
 protected:
-	void updateActionStatus();
-	void setupMenu();
+	void updateActionStatus() override;
+	void setupMenu() override;
 private:
 	QMenu* m_selectMenu;
 	QMenu* m_editMenu;

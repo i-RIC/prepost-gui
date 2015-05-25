@@ -12,13 +12,13 @@ class Post3dWindowNodeVectorStreamlineDataItem : public Post3dWindowDataItem
 public:
 	/// Constructor
 	Post3dWindowNodeVectorStreamlineDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent);
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 	const QString& name() const {return m_name;}
 signals:
 	void changed(Post3dWindowNodeVectorStreamlineDataItem*);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
+	void doLoadFromProjectMainFile(const QDomNode&) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
 private:
 	QString m_name;
 };

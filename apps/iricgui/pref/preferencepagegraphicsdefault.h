@@ -16,7 +16,7 @@ class PreferencePageGraphicsDefault : public PreferencePage
 public:
 	explicit PreferencePageGraphicsDefault(QWidget* parent = nullptr);
 	~PreferencePageGraphicsDefault();
-	void update();
+	void update() override;
 private:
 	QSettings m_settings;
 	Ui::PreferencePageGraphicsDefault* ui;

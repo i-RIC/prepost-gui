@@ -40,21 +40,21 @@ public:
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 	void update();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&);
-	void doSaveToProjectMainFile(QXmlStreamWriter&);
-	QDialog* propertyDialog(QWidget* p);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void updateVisibility(bool visible);
-	void innerUpdateZScale(double scale);
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void updateVisibility(bool visible) override;
+	void innerUpdateZScale(double scale) override;
 private:
 	QString m_currentSolution;
 	int m_numberOfDivision;

@@ -28,13 +28,13 @@ public:
 		setDefaultValues();
 	}
 protected:
-	vtkPointSet* newParticles(int i);
-	void setupParticleSources();
-	void setupActors();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	vtkPointSet* newParticles(int i) override;
+	void setupParticleSources() override;
+	void setupActors() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	void setDefaultValues();
 

@@ -96,24 +96,24 @@ public:
 	/// Constructor
 	RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 	virtual ~RawDataRiverSurvey();
-	void setupActors();
-	void setupMenu();
+	void setupActors() override;
+	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
-	void informSelection(PreProcessorGraphicsViewInterface* v);
-	void informDeselection(PreProcessorGraphicsViewInterface* v);
+	void informSelection(PreProcessorGraphicsViewInterface* v) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
-	bool getValueRange(double* min, double* max);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* d);
+	bool getValueRange(double* min, double* max) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* d) override;
 	QColor doubleToColor(double d);
 	void setupScalarArray();
 	void updateInterpolators();
@@ -150,23 +150,23 @@ private slots:
 	void displaySetting();
 	void switchInterpolateModeToLinear();
 	void switchInterpolateModeToSpline();
-	RawDataProxy* getProxy();
+	RawDataProxy* getProxy() override;
 
 signals:
 	void dataUpdated();
 protected:
 	const static int LINEDIVS = 36;
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& /*filename*/);
-	void saveExternalData(const QString& /*filename*/);
-	void updateFilename() {
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& /*filename*/) override;
+	void saveExternalData(const QString& /*filename*/) override;
+	void updateFilename() override {
 		m_filename = m_name;
 		m_filename.append(".dat");
 	}
-	int iRICLibType() const {return IRIC_GEO_RIVERSURVEY;}
-	void doApplyOffset(double x, double y);
+	int iRICLibType() const override {return IRIC_GEO_RIVERSURVEY;}
+	void doApplyOffset(double x, double y) override;
 	/// The pointdata, that has the positions of
 	/// River center, left bank, and right bank
 	vtkSmartPointer<vtkPoints> m_points;

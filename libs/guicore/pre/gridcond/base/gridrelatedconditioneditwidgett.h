@@ -29,13 +29,13 @@ public:
 		m_newValues->SetName(iRIC::toStr(m_name).c_str());
 		m_dataItem = dItem;
 	}
-	void undo() {
+	void undo() override {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_oldValues);
 		m_dataItem->updateSimplifiedGrid();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
 	}
-	void redo() {
+	void redo() override {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_newValues);
 		m_dataItem->updateSimplifiedGrid();
 		m_dataItem->informgridRelatedConditionChange(m_name);
@@ -68,16 +68,16 @@ public:
 		getValueFromInnerWidget();
 		return m_value;
 	}
-	void setVariantValue(const QVariant& v) {
+	void setVariantValue(const QVariant& v) override {
 		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(m_gridRelatedCondition);
 		V tmpval = cond->fromVariant(v);
 		setValue(tmpval);
 	}
 
-	QVariant variantValue() {
+	QVariant variantValue() override {
 		return QVariant(value());
 	}
-	void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices) {
+	void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices) override {
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* >(container);
 		bool same = true;
 		V val;
@@ -100,7 +100,7 @@ public:
 		}
 	}
 
-	void applyValue(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) {
+	void applyValue(GridRelatedConditionContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override {
 		if (! m_valueSelected) {return;}
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* >(container);
 		vtkDataArray* oldValues = c->dataArrayCopy();

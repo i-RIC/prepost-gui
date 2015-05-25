@@ -10,11 +10,11 @@ class GridRelatedConditionRealVariationEditWidget : public GridRelatedConditionV
 public:
 	GridRelatedConditionRealVariationEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<double>* cond);
 	~GridRelatedConditionRealVariationEditWidget();
-	QSize sizeHint() const;
-	QSize minimumSizeHint() const;
+	QSize sizeHint() const override;
+	QSize minimumSizeHint() const override;
 protected:
-	void setupWidget();
-	void getValueFromInnerWidget();
+	void setupWidget() override;
+	void getValueFromInnerWidget() override;
 	RealNumberEditWidget* m_widget;
 };
 

@@ -24,8 +24,8 @@ public:
 	explicit GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractLine* l, GridCreatingConditionCompoundChannel* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 private:

@@ -9,7 +9,7 @@ class RD_NETCDF_EXPORT RawDataNetcdfIntegerCreator : public RawDataNetcdfCreator
 {
 public:
 	RawDataNetcdfIntegerCreator();
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
 };
 
 #endif // RAWDATANETCDFINTEGERCREATOR_H

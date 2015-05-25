@@ -29,11 +29,11 @@ public:
 	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	int baseId() const {return m_baseId;}
 	int zoneId() const {return m_zoneId;}
-	bool handleCurrentStepUpdate(const int fn) {
+	bool handleCurrentStepUpdate(const int fn) override {
 		loadFromCgnsFile(fn);
 		return m_loadOK;
 	}
-	void loadFromCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
 	const QString zoneName() const {return m_zoneName;}
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
@@ -61,8 +61,8 @@ protected:
 	virtual bool loadVectorData(const int fn, const int solid);
 	bool loadCellFlagData(const int fn);
 	bool setupIndexData();
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
 	vtkPolyData* filteredDataStructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
 	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;

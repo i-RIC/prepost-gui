@@ -22,7 +22,7 @@ public:
 	ScalarsToColorsEditWidget* scalarsToColorsEditWidget() const;
 	void setOpacityPercent(int opacity);
 	int opacityPercent();
-	void accept();
+	void accept() override;
 
 private:
 	Ui::GridRelatedCellConditionPropertyDialog* ui;

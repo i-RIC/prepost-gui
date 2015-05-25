@@ -76,7 +76,7 @@ public slots:
 	void editSlowmotionSpeed();
 	/// Update the list of step
 	void updateStepList(const QList<QString>& steps);
-	void setCurrentStepIndex(unsigned int i);
+	void setCurrentStepIndex(unsigned int i) override;
 	void handleRenderingEnded();
 
 private slots:

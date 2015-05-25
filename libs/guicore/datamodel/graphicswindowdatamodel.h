@@ -31,9 +31,9 @@ public:
 	GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem* parent);
 	/// Destructor
 	~GraphicsWindowDataModel();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 
 	/// The model to store the model of object browser.
 	QStandardItemModel* itemModel() const {return m_itemModel;}
@@ -43,11 +43,11 @@ public:
 	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
 	void fitOnDataLoad();
 	QToolBar* operationToolBar() const {return m_operationToolBar;}
-	void viewOperationEndedGlobal();
+	void viewOperationEndedGlobal() override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 public slots:
 	/// Handle mouse press event on object browser.

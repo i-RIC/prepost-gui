@@ -27,14 +27,14 @@ public:
 	RawDataRiverPathPoint* endPoint();
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void handleStartUpdate();
 	void handleEndUpdate();
 
 protected:
-	void changeEvent(QEvent* e);
+	void changeEvent(QEvent* e) override;
 
 private:
 	Ui::GridCreatingConditionRiverSurveyPointRegionAddDialog* ui;

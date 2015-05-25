@@ -70,29 +70,29 @@ public:
 	/// Constructor
 	GridCreatingConditionTriangle(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionTriangle();
-	void setupMenu();
+	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
-	void informSelection(PreProcessorGraphicsViewInterface* v);
-	void informDeselection(PreProcessorGraphicsViewInterface* v);
+	void informSelection(PreProcessorGraphicsViewInterface* v) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
 	void defineLine(bool doubleClick);
 	const QColor& color() const {return m_color;}
 	QColor doubleToColor(double d) const;
 	void setupScalarArray();
-	void clear();
-	bool ready() const {return true;}
-	bool create(QWidget* parent);
-	void showInitialDialog();
+	void clear() override;
+	bool ready() const override {return true;}
+	bool create(QWidget* parent) override;
+	void showInitialDialog() override;
 private slots:
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
@@ -106,16 +106,16 @@ private slots:
 	void cancel() {m_canceled = true;}
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 	void setColor(const QColor& color);
 	void setColor(double r, double g, double b);
-	void updateFilename() {
+	void updateFilename() override {
 		m_filename = "gridcreatingcondition.dat";
 	}
-	void doApplyOffset(double x, double y);
+	void doApplyOffset(double x, double y) override;
 private:
 	bool checkCondition();
 	bool selectObject(QPoint point);

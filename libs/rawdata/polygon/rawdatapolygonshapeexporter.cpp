@@ -70,7 +70,7 @@ void RawDataPolygonShapeExporter::outputAttributes(RawDataPolygon* polygon, DBFH
 	}
 }
 
-bool RawDataPolygonShapeExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool RawDataPolygonShapeExporter::doExport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	RawDataPolygon* pol = dynamic_cast<RawDataPolygon*>(data);
 

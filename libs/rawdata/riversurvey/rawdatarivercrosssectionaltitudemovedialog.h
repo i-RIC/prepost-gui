@@ -20,8 +20,8 @@ public:
 	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget* parent = nullptr);
 	~RawDataRiverCrosssectionAltitudeMoveDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void hOffsetChange();
 	void handleButtonClick(QAbstractButton* button);

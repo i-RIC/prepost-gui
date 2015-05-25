@@ -48,13 +48,13 @@ public:
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	void update();
 protected:
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
-	void innerUpdateZScale(double scale);
-	void innerUpdate2Ds();
-	void updateVisibility() {GraphicsWindowDataItem::updateVisibility();}
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+	void innerUpdateZScale(double scale) override;
+	void innerUpdate2Ds() override;
+	void updateVisibility() override {GraphicsWindowDataItem::updateVisibility();}
 private:
 	void setupActors();
 	void setupAppendFilter();

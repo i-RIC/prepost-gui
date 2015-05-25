@@ -58,30 +58,30 @@ public:
 	bool isSolverRunning() const override;
 	void warnSolverRunning() const override;
 	void switchCgnsFile(const QString& newcgns);
-	ProjectWorkspace* workspace() {return m_workspace;}
-	const VersionNumber versionNumber() const {return m_versionNumber;}
+	ProjectWorkspace* workspace() override {return m_workspace;}
+	const VersionNumber versionNumber() const override {return m_versionNumber;}
 	void setDebugMode(bool debug);
 	bool isDebugMode() {return m_debugMode;}
 	bool continuousSnapshotInProgress() const override {return m_continuousSnapshotInProgress;}
 	void setContinuousSnapshotInProgress(bool prog) override {m_continuousSnapshotInProgress = prog;}
 	const QString tmpFileName(int len = 0) const;
 	AnimationControllerInterface* animationController() const override {return m_animationController;}
-	CoordinateSystemBuilder* coordinateSystemBuilder() const {return m_coordinateSystemBuilder;}
-	void initForSolverDefinition();
-	void loadSubWindowsFromProjectMainFile(const QDomNode& node);
-	void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer);
+	CoordinateSystemBuilder* coordinateSystemBuilder() const override {return m_coordinateSystemBuilder;}
+	void initForSolverDefinition() override;
+	void loadSubWindowsFromProjectMainFile(const QDomNode& node) override;
+	void saveSubWindowsToProjectMainFile(QXmlStreamWriter& writer) override;
 	QStringList containedFiles() const override;
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void closeCgnsFile();
-	void toggleGridEditFlag();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
+	void toggleGridEditFlag() override;
 	void clearResults() override;
 	bool clearResultsIfGridIsEdited() override;
-	void setProjectData(ProjectData* projectData);
+	void setProjectData(ProjectData* projectData) override;
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
 	void importCalculationResult(const QString& filename);
-	const QProcessEnvironment& processEnvironment() const {return m_processEnvironment;}
+	const QProcessEnvironment& processEnvironment() const override {return m_processEnvironment;}
 
 private:
 	void parseArgs();
@@ -100,7 +100,7 @@ private:
 	SolverConsoleWindow* m_solverConsoleWindow;
 
 protected:
-	void closeEvent(QCloseEvent*);
+	void closeEvent(QCloseEvent*) override;
 
 public slots:
 	/// open start dialog.
@@ -127,7 +127,7 @@ public slots:
 	/// Close the current project.
 	bool closeProject();
 	/// Save current project
-	bool saveProject();
+	bool saveProject() override;
 	/// Save current project
 	bool saveProject(const QString& name, bool asFolder);
 	/// Save current project. Show a dialog to select filename.
@@ -165,9 +165,9 @@ public slots:
 
 	void setCurrentStep(unsigned int newstep);
 	/// Enter modeless dialog mode. menus, toolbars are disabled.
-	void enterModelessDialogMode();
+	void enterModelessDialogMode() override;
 	/// Exit modeless dialog mode. Menus, toolbars becomes usable.
-	void exitModelessDialogMode();
+	void exitModelessDialogMode() override;
 	void setupRecentProjectsMenu();
 	/// Clear calculation result in the current CGNS file.
 	void clearCalculationResult();

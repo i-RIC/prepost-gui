@@ -6,15 +6,15 @@
 class ClipboardOperatableWindowInterface
 {
 public:
-	/// Returns true if this window support cut();
+	/// Returns true if this window support cut() override;
 	virtual bool acceptCut() const {return false;}
 	/// Cut operation
 	virtual void cut() {}
-	/// Returns true if this window support copy();
+	/// Returns true if this window support copy() override;
 	virtual bool acceptCopy() const {return false;}
 	/// Copy operation
 	virtual void copy() const {}
-	/// Returns true if this window support paste();
+	/// Returns true if this window support paste() override;
 	virtual bool acceptPaste() const {return false;}
 	/// Paste operation
 	virtual void paste() {}

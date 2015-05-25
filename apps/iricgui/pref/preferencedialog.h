@@ -18,7 +18,7 @@ public:
 	bool save();
 
 public slots:
-	void accept();
+	void accept() override;
 
 private:
 	Ui::PreferenceDialog* ui;

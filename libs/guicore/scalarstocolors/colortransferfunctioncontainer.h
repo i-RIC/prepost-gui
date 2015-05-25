@@ -23,8 +23,8 @@ public:
 	const QMap<double, QString>& englishEnumerations() const {return m_englishEnumerations;}
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QMap<double, QString> m_enumerations;
 	QMap<double, QString> m_englishEnumerations;

@@ -23,8 +23,8 @@ public:
 	explicit GridCreatingConditionTrianglePolyLineCoordinatesEditDialog(GridCreatingConditionTriangle* polygon, QWidget* parent = nullptr);
 	~GridCreatingConditionTrianglePolyLineCoordinatesEditDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 private:

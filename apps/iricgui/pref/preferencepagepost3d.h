@@ -15,7 +15,7 @@ class PreferencePagePost3d : public PreferencePage
 public:
 	explicit PreferencePagePost3d(QWidget* parent = nullptr);
 	~PreferencePagePost3d();
-	void update();
+	void update() override;
 
 private:
 	Ui::PreferencePagePost3d* ui;

@@ -24,7 +24,7 @@ public:
 		: RawDataCellMapperT<V, DA>(parent) {
 		RawDataCellMapperT<V, DA>::m_caption = "Polygon cell mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataPolygonCellMapperSetting* s = new RawDataPolygonCellMapperSetting();
 		unsigned int count = RawDataMapperT<V>::container()->dataCount();
 		RawDataPolygon* polygon = dynamic_cast<RawDataPolygon* >(RawDataMapper::m_rawdata);
@@ -82,7 +82,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataPolygonCellMapperSetting* setting = dynamic_cast<RawDataPolygonCellMapperSetting*>(s);
 		DA* da = dynamic_cast<DA*>(RawDataMapperT<V>::container()->dataArray());
 		RawDataPolygon* polygon = dynamic_cast<RawDataPolygon* >(RawDataMapperT<V>::m_rawdata);
@@ -99,7 +99,7 @@ public:
 		}
 		da->Modified();
 	}
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 };

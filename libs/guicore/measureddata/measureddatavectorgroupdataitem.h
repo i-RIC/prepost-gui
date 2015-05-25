@@ -35,26 +35,26 @@ public:
 	MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataVectorGroupDataItem();
 	void updateActorSettings();
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 public slots:
 	void exclusivelyCheck(MeasuredDataVectorDataItem*);
 	void showSettingDialog() {showPropertyDialog();}
 protected:
-	QDialog* propertyDialog(QWidget* p);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	vtkPointSet* getPointSet();
-	void innerUpdate2Ds();
+	void innerUpdate2Ds() override;
 	void updateColorSetting();
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
 	void setCurrentSolution(const QString& currentSol);
 	const QString& currentSolution() {return m_currentSolution;}
-	void doApplyOffset(double x, double y);
+	void doApplyOffset(double x, double y) override;
 private:
 	void setupActors();
 	void calculateStandardValue();

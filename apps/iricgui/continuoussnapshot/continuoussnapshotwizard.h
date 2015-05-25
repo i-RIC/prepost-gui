@@ -26,7 +26,7 @@ class ContinuousSnapshotConfirmPage : public QWizardPage
 	Q_OBJECT
 public:
 	ContinuousSnapshotConfirmPage(QWidget* parent = nullptr);
-	void initializePage();
+	void initializePage() override;
 private:
 	ContinuousSnapshotWizard* m_wizard;
 	QListWidget* m_fileList;
@@ -40,7 +40,7 @@ public:
 	enum Layout {Asis, Horizontally, Vertically};
 
 	ContinuousSnapshotWizard(QWidget* parent);
-	void accept();
+	void accept() override;
 
 	void setOutput(Output o) {m_output = o;}
 	void setLayout(Layout l) {m_layout = l;}

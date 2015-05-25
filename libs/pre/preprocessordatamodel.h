@@ -45,14 +45,14 @@ public:
 	~PreProcessorDataModel();
 
 	/// The view to display pre-processor main region
-	PreProcessorGraphicsViewInterface* graphicsView() const;
+	PreProcessorGraphicsViewInterface* graphicsView() const override;
 	/// Import input condition from the specified CGNS file.
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
 	bool gridEdited();
 	void toggleGridEditFlag();
 	bool isInputConditionSet();
-	MouseBoundingBox* mouseBoundingBox() {return m_mouseBoundingBox;}
+	MouseBoundingBox* mouseBoundingBox() override {return m_mouseBoundingBox;}
 	const QList<QMenu*>& additionalMenus() const {
 		return m_additionalMenus;
 	}
@@ -65,9 +65,9 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
-	PreProcessorRawDataTopDataItemInterface* rawDataTopDataItem(const QString& type) const;
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const;
-	void applyOffset(double x, double y);
+	PreProcessorRawDataTopDataItemInterface* rawDataTopDataItem(const QString& type) const override;
+	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const override;
+	void applyOffset(double x, double y) override;
 
 public slots:
 	void showCalcConditionDialog();
@@ -76,7 +76,7 @@ public slots:
 	void setupAdditinalMenus();
 
 protected slots:
-	virtual void handleObjectBrowserSelectionChange() {
+	virtual void handleObjectBrowserSelectionChange() override {
 		setupAdditinalMenus();
 	}
 	void setupGridCreationMenuContent();

@@ -36,8 +36,8 @@ public slots:
 	void titleSetting();
 	void timeSetting();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void init();
 	Post3dWindowZoneDataItem* getZoneDataItem();
 private:

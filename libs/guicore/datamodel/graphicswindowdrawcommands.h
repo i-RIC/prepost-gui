@@ -12,7 +12,7 @@ public:
 	GraphicsWindowDrawOnRedo(GraphicsWindowDataItem* item);
 	void undo()
 	{}
-	void redo();
+	void redo() override;
 
 private:
 	GraphicsWindowDataItem* m_item;
@@ -22,7 +22,7 @@ class GUICOREDLL_EXPORT GraphicsWindowDrawOnUndo : public QUndoCommand
 {
 public:
 	GraphicsWindowDrawOnUndo(GraphicsWindowDataItem* item);
-	void undo();
+	void undo() override;
 	void redo()
 	{}
 

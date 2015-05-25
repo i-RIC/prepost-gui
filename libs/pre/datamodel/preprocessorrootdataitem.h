@@ -48,8 +48,8 @@ public:
 	QAction* editGridAttributeMappingSettingAction() {return m_editGridAttributeMappingSettingAction;}
 	bool gridEdited();
 	void toggleGridEditFlag();
-	void deleteItem(QStandardItem* item);
-	void saveToCgnsFile(const int fn);
+	void deleteItem(QStandardItem* item) override;
+	void saveToCgnsFile(const int fn) override;
 
 //	bool tempAutoMode;
 //	double tempStreamWiseLength;
@@ -59,10 +59,12 @@ public:
 
 private slots:
 	void editGridAttributeMappingSetting();
+
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	PreProcessorDataModel* dataModel() {return dynamic_cast<PreProcessorDataModel*>(m_dataModel);}
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	PreProcessorDataModel* dataModel() const override {return dynamic_cast<PreProcessorDataModel*>(m_dataModel);}
+
 private:
 	PreProcessorBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	PreProcessorMeasuredDataTopDataItem* m_measuredDataTopDataItem;
@@ -71,10 +73,9 @@ private:
 	DistanceMeasureGroupDataItem* m_distanceMeasureGroupDataItem;
 	AttributeBrowserTargetDataItem* m_attributeBrowserTargetDataItem;
 	QList<PreProcessorGridTypeDataItem*> m_gridTypeDataItems;
-//	GridAttributeMappingMode m_mappingMode;
-//	GeoGraphicDataMappingMode m_geodataMappingMode;
 
 	QAction* m_editGridAttributeMappingSettingAction;
+
 public:
 	friend class PreProcessorWindowProjectDataItem;
 	friend class PreProcessorDataModel;

@@ -14,12 +14,12 @@ public:
 	/// Constructor
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCGroupDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
 	void informGridUpdate();
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	QMenu* bcMenu() {return m_bcMenu;}
 	void updateBCMenu(PreProcessorBCDataItem* item);
 	void clear();
@@ -37,8 +37,8 @@ signals:
 	void itemsLoaded();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void renumberItemsForCgns();

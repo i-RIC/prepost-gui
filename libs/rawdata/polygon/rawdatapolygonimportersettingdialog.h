@@ -29,7 +29,7 @@ public:
 	QVariant specifiedValue() const;
 
 public slots:
-	void accept();
+	void accept() override;
 private slots:
 	void updateTable();
 private:

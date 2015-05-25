@@ -41,8 +41,8 @@ private slots:
 	void update();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 //	Post3dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	QList<Post3dWindowGridTypeDataItem*> m_gridTypeDataItems;

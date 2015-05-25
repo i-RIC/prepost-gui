@@ -9,11 +9,11 @@ class GridRelatedConditionIntegerEditWidget : public GridRelatedConditionEditWid
 public:
 	GridRelatedConditionIntegerEditWidget(QWidget* parent, SolverDefinitionGridRelatedConditionT<int>* cond);
 	~GridRelatedConditionIntegerEditWidget();
-	QSize sizeHint() const;
-	QSize minimumSizeHint() const;
+	QSize sizeHint() const override;
+	QSize minimumSizeHint() const override;
 protected:
-	void setupWidget();
-	void getValueFromInnerWidget();
+	void setupWidget() override;
+	void getValueFromInnerWidget() override;
 	IntegerNumberEditWidget* m_widget;
 };
 

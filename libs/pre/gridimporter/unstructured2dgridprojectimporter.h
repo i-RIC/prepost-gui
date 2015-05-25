@@ -15,7 +15,7 @@ public:
 	}
 
 protected:
-	CgnsGridImporter* getCgnsImporter();
+	CgnsGridImporter* getCgnsImporter() override;
 };
 
 #endif // UNSTRUCTURED2DGRIDPROJECTIMPORTER_H

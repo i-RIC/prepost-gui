@@ -11,8 +11,8 @@ class POST2DBIRDEYE_EXPORT Post2dBirdEyeWindowProjectDataItem : public PostProce
 public:
 	Post2dBirdEyeWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // POST2DBIRDEYEWINDOWPROJECTDATAITEM_H

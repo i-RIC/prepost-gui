@@ -29,20 +29,20 @@ public:
 		setupTmpSource();
 	}
 	~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem();
-	void showPropertyDialog();
+	void showPropertyDialog() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 protected:
-	void setupActors();
-	vtkPointSet* newParticles(int i);
-	void setupParticleSources();
-	QDialog* propertyDialog(QWidget* parent);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*);
+	void setupActors() override;
+	vtkPointSet* newParticles(int i) override;
+	void setupParticleSources() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
 	void setSetting(const QVector2D& v1, const QVector2D& v2, int num, int pointSize);
 	void clearSetting();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private slots:
 	void exitDialogMode();
 private:

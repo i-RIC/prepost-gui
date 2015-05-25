@@ -11,7 +11,7 @@ public:
 	virtual ~RawDataNetcdfGdalRealImporter() {}
 
 protected:
-	int outputValues(int ncid, int varId, GDALRasterBand* band, RawDataNetcdf* data);
+	int outputValues(int ncid, int varId, GDALRasterBand* band, RawDataNetcdf* data) override;
 
 };
 

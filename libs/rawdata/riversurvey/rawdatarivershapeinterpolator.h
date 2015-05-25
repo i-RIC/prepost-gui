@@ -16,7 +16,7 @@ class AltitudeInterpolator : public InterpolatorBase
 public:
 	AltitudeInterpolator() {}
 	virtual ~AltitudeInterpolator() {}
-	virtual void updateParameters() {}
+	virtual void updateParameters() override {}
 	/// Get value by interpolation
 	virtual RawDataRiverCrosssection::Altitude interpolate(double t) const = 0;
 };
@@ -36,7 +36,7 @@ public:
 		m_value1 = v1;
 	}
 	void setValues(double t0, RawDataRiverCrosssection::Altitude& v0, double t1, RawDataRiverCrosssection::Altitude& v1);
-	RawDataRiverCrosssection::Altitude interpolate(double t) const;
+	RawDataRiverCrosssection::Altitude interpolate(double t) const override;
 private:
 	RawDataRiverCrosssection::Altitude m_value0;
 	RawDataRiverCrosssection::Altitude m_value1;
@@ -51,8 +51,8 @@ public:
 	};
 	LinearLXSecInterpolator(RawDataRiverPathPoint* parent);
 	virtual ~LinearLXSecInterpolator() {}
-	void updateParameters();
-	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/;
+	void updateParameters() override;
+	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/ override;
 protected:
 	std::map<double, LinearAltitudeInterpolator*> m_interpolators;
 	RawDataRiverPathPoint* m_parent;
@@ -67,8 +67,8 @@ public:
 	};
 	LinearRXSecInterpolator(RawDataRiverPathPoint* parent);
 	virtual ~LinearRXSecInterpolator() {}
-	void updateParameters();
-	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/;
+	void updateParameters() override;
+	RawDataRiverCrosssection::Altitude interpolate(double t) const /* throw (ErrorCodes)*/ override;
 protected:
 	std::map<double, LinearAltitudeInterpolator*> m_interpolators;
 	RawDataRiverPathPoint* m_parent;
@@ -102,9 +102,11 @@ public:
 	void update();
 	static bool linearMode() {return m_linearMode;}
 	static void setLinearMode(bool linearmode, RawDataRiverPathPoint* head, bool noundo = false);
+
 protected:
 	virtual QVector2D getVector(RawDataRiverPathPoint* p) = 0;
 	virtual void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) = 0;
+
 private:
 	QVector<double> m_XA;
 	QVector<double> m_XB;
@@ -129,8 +131,8 @@ public:
 	~RiverCenterLineSolver() {}
 
 protected:
-	QVector2D getVector(RawDataRiverPathPoint* p);
-	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
+	QVector2D getVector(RawDataRiverPathPoint* p) override;
+	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) override;
 };
 
 class RiverLeftBankSolver : public RiverSplineSolver
@@ -139,8 +141,8 @@ public:
 	RiverLeftBankSolver() : RiverSplineSolver() {}
 	~RiverLeftBankSolver() {}
 protected:
-	QVector2D getVector(RawDataRiverPathPoint* p);
-	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
+	QVector2D getVector(RawDataRiverPathPoint* p) override;
+	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) override;
 };
 
 class RiverRightBankSolver : public RiverSplineSolver
@@ -149,8 +151,8 @@ public:
 	RiverRightBankSolver() : RiverSplineSolver() {}
 	~RiverRightBankSolver() {}
 protected:
-	QVector2D getVector(RawDataRiverPathPoint* p);
-	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
+	QVector2D getVector(RawDataRiverPathPoint* p) override;
+	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) override;
 };
 
 /**
@@ -177,8 +179,8 @@ public:
 	/// The bank side: left or right
 	Bank BankSide() const {return m_BankSide;}
 protected:
-	QVector2D getVector(RawDataRiverPathPoint* p);
-	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
+	QVector2D getVector(RawDataRiverPathPoint* p) override;
+	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) override;
 private:
 	int m_Index;
 	Bank m_BankSide;
@@ -206,8 +208,8 @@ public:
 	}
 	Bank BankSide() const {return m_BankSide;}
 protected:
-	QVector2D getVector(RawDataRiverPathPoint* p);
-	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p);
+	QVector2D getVector(RawDataRiverPathPoint* p) override;
+	void setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p) override;
 private:
 	double m_Parameter;
 	int m_Index;
@@ -222,13 +224,13 @@ public:
 		m_Index = index;
 	}
 	virtual ~RiverSplineInterpolator() {}
-	void updateParameters() {
+	void updateParameters() override {
 		m_parent->update();
 	}
-	QVector2D interpolate(double t) const {
+	QVector2D interpolate(double t) const override {
 		return m_parent->interpolate(m_Index, t);
 	}
-	Interpolator2D1* copy() const;
+	Interpolator2D1* copy() const override;
 protected:
 	RiverSplineSolver* m_parent;
 	int m_Index;
@@ -249,8 +251,8 @@ public:
 		m_YD = yd;
 	}
 	virtual ~RiverSplineInterpolatorCopy() {}
-	void updateParameters() {}
-	QVector2D interpolate(double t) const {
+	void updateParameters() override {}
+	QVector2D interpolate(double t) const override {
 		t *= m_D;
 		double x =
 			m_XA +
@@ -264,7 +266,7 @@ public:
 			m_YD * t * t * t;
 		return QVector2D(x, y);
 	}
-	virtual Interpolator2D1* copy() const {
+	virtual Interpolator2D1* copy() const override {
 		Interpolator2D1* copy = new RiverSplineInterpolatorCopy(m_D, m_XA, m_XB, m_XC, m_XD, m_YA, m_YB, m_YC, m_YD);
 		return copy;
 	}
@@ -288,13 +290,13 @@ public:
 		m_Interpolator.setValues(v0, v1);
 	}
 	virtual ~RiverLinearInterpolator() {}
-	virtual void updateParameters() {
+	virtual void updateParameters() override {
 		m_Parent->update();
 	}
-	virtual QVector2D interpolate(double t) const {
+	virtual QVector2D interpolate(double t) const override {
 		return m_Interpolator.interpolate(t);
 	}
-	virtual Interpolator2D1* copy() const {
+	virtual Interpolator2D1* copy() const override {
 		return new RiverLinearInterpolator(m_Parent, m_Interpolator.interpolate(0), m_Interpolator.interpolate(1));
 	}
 private:

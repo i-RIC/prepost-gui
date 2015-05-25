@@ -31,11 +31,11 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 
 	void informgridRelatedConditionChange(const QString& name);
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 
 	PostZoneDataContainer* dataContainer();
 	vtkPolyData* filteredData() const {return m_filteredData;}
@@ -70,9 +70,9 @@ public slots:
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
 
 	Post2dWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dWindowNodeScalarGroupDataItem* m_scalarGroupDataItem;

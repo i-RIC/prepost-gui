@@ -16,7 +16,7 @@ class PreferencePagePre : public PreferencePage
 public:
 	explicit PreferencePagePre(QWidget* parent = nullptr);
 	~PreferencePagePre();
-	void update();
+	void update() override;
 private:
 	QSettings m_settings;
 	Ui::PreferencePagePre* ui;

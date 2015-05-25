@@ -15,10 +15,10 @@ class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetInteger : public CgnsFileInp
 	Q_OBJECT
 public:
 	CgnsFileInputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& t, CgnsFileInputConditionContainerInteger* cont, const CgnsFileInputConditionContainerSet& cs);
-	void setMaximum(const QVariant& value);
-	void setMinimum(const QVariant& value);
+	void setMaximum(const QVariant& value) override;
+	void setMinimum(const QVariant& value) override;
 public slots:
-//	void setValue(int);
+//	void setValue(int) override;
 private:
 	CgnsFileInputConditionContainerInteger* m_container;
 	QSpinBox* m_spinBox;

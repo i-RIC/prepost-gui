@@ -29,8 +29,8 @@ public:
 	const Graph2dHybridWindowResultSetting& setting();
 	void setMainWindow(iRICMainWindowInterface* mainw) {m_mainWindow = mainw;}
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void changeAxis(int index);
 	void changePointComboBox(int index);

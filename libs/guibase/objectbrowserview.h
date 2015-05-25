@@ -24,7 +24,7 @@ public:
 	/// Action to show property dialog about the selected item
 	QAction* propertyAction() const {return m_propertyAction;}
 	/// Size hint about the widget
-	QSize sizeHint() const {return QSize(250, 200);}
+	QSize sizeHint() const override {return QSize(250, 200);}
 	/// Set command execution mode true
 	void setCommandExecution(bool exec) {m_commandExecution = exec;}
 	/// Select the item with the specified index
@@ -59,8 +59,8 @@ signals:
 	void requestMoveDownMeasuredData(const QModelIndex& index);
 
 protected:
-	void mousePressEvent(QMouseEvent* event);
-	void currentChanged(const QModelIndex& current, const QModelIndex& previous);
+	void mousePressEvent(QMouseEvent* event) override;
+	void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
 	QPoint m_pressGlobalPos;
 	QAction* m_moveUpAction;
 	QAction* m_moveDownAction;

@@ -25,31 +25,31 @@ public:
 	virtual ~PreProcessorGridShapeDataItem();
 	/// Inform that the grid is updated.
 	virtual void informGridUpdate() = 0;
-	void handleStandardItemDoubleClicked();
+	void handleStandardItemDoubleClicked() override;
 	QColor color();
 	QColor indexColor();
-//	QColor axesColor();
-	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
+//	QColor axesColor() override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	QAction* editAction() {return m_editAction;}
 	QAction* openXsectionWindowAction() {return m_openXsectionWindowAction;}
 	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}
 	virtual void updateActionStatus();
-//	void updateAxesRegion();
+//	void updateAxesRegion() override;
 private slots:
 	void editShape();
 	void openCrossSectionWindow();
 	void openVerticalCrossSectionWindow();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setColor(const QColor& color);
 	void setIndexColor(const QColor& color);
-//	void setAxesColor(const QColor& color);
+//	void setAxesColor(const QColor& color) override;
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
 //	vtkSmartPointer<vtkCubeAxesActor2D> m_axesActor;
 

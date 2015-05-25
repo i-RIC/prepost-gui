@@ -28,8 +28,8 @@ public:
 		return *this;
 	}
 	void clear();
-	int load();
-	int save();
+	int load() override;
+	int save() override;
 	QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(int v) {
 		if (m_value != v) {

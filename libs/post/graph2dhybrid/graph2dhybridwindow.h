@@ -19,8 +19,8 @@ class Graph2dHybridWindow :
 public:
 	explicit Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
 	~Graph2dHybridWindow();
-	QPixmap snapshot();
-	QList<QMenu*> getAdditionalMenus() const;
+	QPixmap snapshot() override;
+	QList<QMenu*> getAdditionalMenus() const override;
 	Graph2dHybridWindowControlWidget* controlWidget() const {return m_controlWidget;}
 
 signals:
@@ -28,7 +28,7 @@ signals:
 
 private:
 	void init();
-	void setupDefaultGeometry(int index);
+	void setupDefaultGeometry(int index) override;
 
 	Graph2dHybridWindowObjectBrowser* m_objectBrowser;
 	Graph2dHybridWindowControlWidget* m_controlWidget;

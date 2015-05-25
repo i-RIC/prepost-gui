@@ -147,8 +147,8 @@ class RawDataRiverSurveyCrosssectionEditCommand : public QUndoCommand
 {
 public:
 	RawDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, RawDataRiverPathPoint* p, const RawDataRiverCrosssection::AltitudeList& after, const RawDataRiverCrosssection::AltitudeList& before, RawDataRiverSurveyCrosssectionWindow* w, RawDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
-	void redo();
-	void undo();
+	void redo() override;
+	void undo() override;
 private:
 	bool m_apply;
 	bool m_first;

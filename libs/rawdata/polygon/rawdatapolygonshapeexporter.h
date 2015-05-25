@@ -13,8 +13,8 @@ class RD_POLYGON_EXPORT RawDataPolygonShapeExporter : public RawDataExporter
 	Q_OBJECT
 public:
 	RawDataPolygonShapeExporter(RawDataCreator* creator);
-	bool doEmport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd);
-	const QStringList fileDialogFilters();
+	bool doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) override;
+	const QStringList fileDialogFilters() override;
 	SHPHandle getSHPHandle(QString filename);
 	DBFHandle getDBFHandle(QString filename, SolverDefinitionGridRelatedCondition* cond, bool* isDouble);
 	SHPObject* getSHPObject(RawDataPolygon* polygon, SHPHandle shp, int index, double xoffset = 0, double yoffset = 0);

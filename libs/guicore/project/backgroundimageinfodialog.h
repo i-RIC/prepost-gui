@@ -33,8 +33,8 @@ public:
 
 	void updateScaleAndAngle();
 	void updateRightBottom();
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 	void reset();
 	void apply();
 

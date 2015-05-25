@@ -20,8 +20,8 @@ public:
 	bool axisNeeded(Graph2dScatteredWindowResultSetting::AxisSide as) const;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWRESULTGROUPDATAITEM_H

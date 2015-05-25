@@ -11,8 +11,8 @@ public:
 		: SolverDefinitionGridRelatedIntegerCondition(node, translator) {
 		m_position = Node;
 	}
-	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
-	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* parent);
+	GridRelatedConditionEditWidget* editWidget(QWidget* parent) override;
+	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* parent) override;
 protected:
 	GridRelatedConditionContainer* buildContainer(Grid* grid) override;
 };

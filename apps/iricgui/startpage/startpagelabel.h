@@ -13,10 +13,10 @@ public:
 	~StartPageLabel();
 	void setTitle(const QString& title) {m_title = title;}
 	void setSubtitle(const QString& title) {m_subtitle = title;}
-	QSize sizeHint() const;
+	QSize sizeHint() const override;
 protected:
-	void mousePressEvent(QMouseEvent*);
-	void paintEvent(QPaintEvent*);
+	void mousePressEvent(QMouseEvent*) override;
+	void paintEvent(QPaintEvent*) override;
 signals:
 	void clicked();
 private:

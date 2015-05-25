@@ -54,7 +54,7 @@ public:
 	Structured2DGrid(const QString& zonename, ProjectDataItem* parent);
 	/// Return VTK container object to store the grid.
 	vtkStructuredGrid* vtkGrid() const {return dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);}
-	unsigned int vertexCount() const {return m_dimensionI * m_dimensionJ;}
+	unsigned int vertexCount() const override {return m_dimensionI * m_dimensionJ;}
 	unsigned int vertexIndex(unsigned int i, unsigned int j) const {
 		return m_dimensionI * j + i;
 	}
@@ -63,18 +63,18 @@ public:
 		return (m_dimensionI - 1) * j + i;
 	}
 	void getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j);
-	const QVector2D vertex(unsigned int index) const;
+	const QVector2D vertex(unsigned int index) const override;
 	const QVector2D vertex(unsigned int i, unsigned int j) const {return vertex(vertexIndex(i, j));}
 	void setVertex(unsigned int i, unsigned int j, const QVector2D& v) {setVertex(vertexIndex(i, j), v);}
-	void setVertex(unsigned int index, const QVector2D& v);
-	bool loadFromCgnsFile(const int fn, int base, int zoneid);
-	bool saveToCgnsFile(const int fn, int base, char* zonename);
+	void setVertex(unsigned int index, const QVector2D& v) override;
+	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;
+	bool saveToCgnsFile(const int fn, int base, char* zonename) override;
 	/// getDimension of this grid.
 	void dimensions(unsigned int* i, unsigned int* j);
 	unsigned int dimensionI() const {return m_dimensionI;}
 	unsigned int dimensionJ() const {return m_dimensionJ;}
 	void setDimensions(unsigned int i, unsigned int j);
-	unsigned int cellCount() const {
+	unsigned int cellCount() const override {
 		return m_vtkGrid->GetNumberOfCells();
 	}
 	const QStringList checkShape(QTextStream& stream) override;
@@ -82,12 +82,12 @@ public:
 	bool isAspectRatioOk(double limit, QTextStream& stream);
 	bool isAngleOk(double limitAngle, QTextStream& stream);
 	bool isVariationOk(double ilimit, double jlimit, QTextStream& stream);
-	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
+	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax) override;
 	int drawnIMin() const {return m_drawnIMin;}
 	int drawnIMax() const {return m_drawnIMax;}
 	int drawnJMin() const {return m_drawnJMin;}
 	int drawnJMax() const {return m_drawnJMax;}
-	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return m_vtkFilteredIndexGridAlgorithm;}
+	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const override {return m_vtkFilteredIndexGridAlgorithm;}
 
 private:
 	void init();

@@ -26,7 +26,7 @@ public:
 	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
 	void setOpacityPercent(int opacity);
 	int opacityPercent();
-	void accept();
+	void accept() override;
 
 private slots:
 	void handleContourChange();

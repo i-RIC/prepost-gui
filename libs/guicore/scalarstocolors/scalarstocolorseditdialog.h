@@ -19,7 +19,7 @@ public:
 	void setWidget(ScalarsToColorsEditWidget* w);
 	ScalarsToColorsEditWidget* widget() const {return m_widget;}
 	void setContainer(ScalarsToColorsContainer* container);
-	void accept();
+	void accept() override;
 
 protected:
 	ScalarsToColorsEditWidget* m_widget;

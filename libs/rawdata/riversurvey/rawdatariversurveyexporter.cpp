@@ -15,7 +15,7 @@ RawDataRiverSurveyExporter::RawDataRiverSurveyExporter(RawDataCreator* creator)
 	m_caption = tr("River Survey data (*.riv)");
 }
 
-bool RawDataRiverSurveyExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool RawDataRiverSurveyExporter::doExport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {

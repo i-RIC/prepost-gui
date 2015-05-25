@@ -54,7 +54,7 @@ public:
 	int endTimeStep();
 	int timeSkip();
 public slots:
-	void accept();
+	void accept() override;
 private slots:
 	void regionCurrentToggled(bool toggled);
 	void fullRegionToggled(bool toggled);

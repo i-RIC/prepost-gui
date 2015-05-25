@@ -61,7 +61,7 @@ public:
 	const vtkTextPropertySettingContainer labelTextSetting() const {return m_labelTextSetting;}
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void solutionChanged(int index);

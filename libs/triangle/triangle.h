@@ -286,6 +286,6 @@ void TRIANGLEDLL_EXPORT triangulate(char*, struct triangulateio*, struct triangu
 																		struct triangulateio*);
 void TRIANGLEDLL_EXPORT trifree(void* memptr);
 #else /* not ANSI_DECLARATORS */
-void TRIANGLEDLL_EXPORT triangulate();
-void TRIANGLEDLL_EXPORT trifree();
+void TRIANGLEDLL_EXPORT triangulate() override;
+void TRIANGLEDLL_EXPORT trifree() override;
 #endif /* not ANSI_DECLARATORS */

@@ -32,21 +32,21 @@ public:
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 	const QString& currentCondition() const {return m_currentSolution;}
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setCurrentSolution(const QString& currentSol);
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 public slots:
 	void exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item);
 protected:
-	void updateVisibility(bool visible);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void innerUpdateZScale(double scale);
+	void updateVisibility(bool visible) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void innerUpdateZScale(double scale) override;
 private:
 	void setupActors();
 	void updateActorSettings();

@@ -68,7 +68,7 @@ private:
 	bool m_isViewChanging;
 
 protected:
-	virtual void resizeEvent(QResizeEvent* event);
+	virtual void resizeEvent(QResizeEvent* event) override;
 	void update2Ds();
 
 	bool m_interactive;
@@ -87,8 +87,8 @@ class VTKGraphicsViewArbitraryMove : public QUndoCommand
 public:
 	VTKGraphicsViewArbitraryMove(vtkCamera* camera, VTKGraphicsView* view);
 	~VTKGraphicsViewArbitraryMove();
-	void undo();
-	void redo();
+	void undo() override;
+	void redo() override;
 private:
 	vtkCamera* m_newCamera;
 	vtkCamera* m_oldCamera;

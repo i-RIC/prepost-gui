@@ -11,7 +11,7 @@ class GUIBASEDLL_EXPORT vtk2DInteractorStyle :
 {
 public:
 	static vtk2DInteractorStyle* New();
-	void OnLeftButtonDown();
+	void OnLeftButtonDown() override;
 	virtual ~vtk2DInteractorStyle(void);
 
 private:

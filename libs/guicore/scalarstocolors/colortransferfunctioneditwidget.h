@@ -24,10 +24,10 @@ public:
 	static const int COLORWIDTH = 50;
 	explicit ColorTransferFunctionEditWidget(QWidget* parent = nullptr);
 	virtual ~ColorTransferFunctionEditWidget();
-	void save();
+	void save() override;
 
 protected:
-	void setupWidget();
+	void setupWidget() override;
 
 private slots:
 	void handleItemEdit(QTableWidgetItem* item);

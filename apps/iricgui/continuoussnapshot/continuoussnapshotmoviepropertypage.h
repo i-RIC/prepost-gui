@@ -17,8 +17,8 @@ class ContinuousSnapshotMoviePropertyPage : public QWizardPage
 public:
 	ContinuousSnapshotMoviePropertyPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotMoviePropertyPage();
-	void initializePage();
-	bool validatePage();
+	void initializePage() override;
+	bool validatePage() override;
 	static QStringList getProfile(int profileid);
 
 private:

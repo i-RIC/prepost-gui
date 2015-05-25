@@ -14,7 +14,7 @@ public:
 	};
 
 	NetworkSetting();
-	QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery& query = QNetworkProxyQuery());
+	QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery& query = QNetworkProxyQuery()) override;
 
 	void save();
 

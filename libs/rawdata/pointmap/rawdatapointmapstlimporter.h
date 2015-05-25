@@ -9,11 +9,13 @@ class RawDataPointmapSTLImporter : public RawDataImporter
 public:
 	/// Constructor
 	RawDataPointmapSTLImporter(RawDataCreator* creator);
-	bool importData(RawData* data, int index, QWidget* w);
-	const QStringList fileDialogFilters();
+	bool importData(RawData* data, int index, QWidget* w) override;
+	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
+
 protected:
 	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
+
 private:
 	bool checkHeader(const QString& filename, QWidget* w);
 };

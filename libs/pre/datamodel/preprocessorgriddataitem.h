@@ -37,18 +37,18 @@ public:
 	/// Constructor
 	PreProcessorGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridDataItem();
-	Grid* grid() const {return m_grid;}
-	bool setGrid(Grid* newGrid);
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void closeCgnsFile();
+	Grid* grid() const override {return m_grid;}
+	bool setGrid(Grid* newGrid) override;
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 
 	// Mouse event handlers for grid nodes selecting
 
@@ -87,17 +87,17 @@ public:
 		nodeSelectingKeyReleaseEvent(event, v);
 	}
 
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 
 	void setSelectedPointsVisibility(bool visible);
 	void setSelectedCellsVisibility(bool visible);
 	void setSelectedEdgesVisibility(bool visible);
 
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void informgridRelatedConditionChangeAll();
-	void informgridRelatedConditionChange(const QString& name);
-	void silentDeleteGrid();
+	void informgridRelatedConditionChange(const QString& name) override;
+	void silentDeleteGrid() override;
 	PreProcessorGridShapeDataItem* shapeDataItem() {return m_shapeDataItem;}
 	PreProcessorGridRelatedConditionNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
 	PreProcessorGridRelatedConditionCellGroupDataItem* cellGroupDataItem() {return m_cellGroupDataItem;}
@@ -126,14 +126,14 @@ public:
 	const QVector<vtkIdType>& selectedVertices() const {return m_selectedVertices;}
 	const QVector<vtkIdType>& selectedCells() const {return m_selectedCells;}
 	const QVector<Edge>& selectedEdges() const {return m_selectedEdges;}
-	void updateAttributeActorSettings();
+	void updateAttributeActorSettings() override;
 
 	void setNodeDataItem(PreProcessorGridRelatedConditionNodeDataItem* nodeItem) {m_nodeDataItem = nodeItem;}
 	void setCellDataItem(PreProcessorGridRelatedConditionCellDataItem* cellItem) {m_cellDataItem = cellItem;}
 	QCursor normalCursor();
 	void informGridChange();
 	void informBirdEyeWindowClose();
-	void doViewOperationEndedGlobal(VTKGraphicsView*);
+	void doViewOperationEndedGlobal(VTKGraphicsView*) override;
 	void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) override;
 	void updateRegionPolyData();
 
@@ -165,11 +165,11 @@ private:
 	void informSelectedVerticesChanged();
 protected:
 	void renderGraphicsView() {GraphicsWindowDataItem::renderGraphicsView();}
-	void doApplyOffset(double x, double y);
+	void doApplyOffset(double x, double y) override;
 	virtual void setupMenu() = 0;
 	virtual void updateActionStatus();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
 

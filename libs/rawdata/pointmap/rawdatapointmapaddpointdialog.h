@@ -24,7 +24,7 @@ private:
 	RawDataPointmap* m_pmap;
 
 private slots:
-	void accept();
+	void accept() override;
 
 };
 

@@ -27,8 +27,8 @@ public:
 	Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent);
 
 	// Standard mouse event handlers
-	void informSelection(VTKGraphicsView*);
-	void informDeselection(VTKGraphicsView*);
+	void informSelection(VTKGraphicsView*) override;
+	void informDeselection(VTKGraphicsView*) override;
 
 	void informgridRelatedConditionChange(const QString& name);
 
@@ -45,8 +45,8 @@ public:
 	Post3dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	Post3dWindowGridShapeDataItem* m_shapeDataItem;

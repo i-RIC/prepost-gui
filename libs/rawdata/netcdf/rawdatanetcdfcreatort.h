@@ -19,7 +19,7 @@ public:
 		m_nodeMappers.append(new RawDataNetcdfNodeMapperT<V, DA>(this));
 		m_cellMappers.append(new RawDataNetcdfCellMapperT<V, DA>(this));
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) {
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) override {
 		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(condition);
 		if (cond == 0) {return false;}
 		return true;

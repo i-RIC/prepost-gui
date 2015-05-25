@@ -24,6 +24,7 @@ public:
 	virtual const QStringList acceptableExtensions() = 0;
 	RawDataCreator* creator();
 	const QString& caption() const {return m_caption;}
+
 protected:
 	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w);
 	QString m_caption;

@@ -18,7 +18,7 @@ public:
 	void update();
 	void cancel();
 protected:
-	void run();
+	void run() override;
 signals:
 	void shapeUpdated();
 private:

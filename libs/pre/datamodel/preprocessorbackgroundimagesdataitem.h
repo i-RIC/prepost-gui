@@ -8,10 +8,10 @@ class PreProcessorBackgroundImagesDataItem : public PreProcessorDataItem
 	Q_OBJECT
 public:
 	PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(10);}
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
 	void addCustomMenuItems(QMenu* menu) override;
 	void visiblePropBounds(double bounds[6]);
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 public slots:
 	void addChildItem();
 	void deleteChildItem(int i);
@@ -22,8 +22,8 @@ public slots:
 signals:
 	void selectBackgroundImage(const QModelIndex& current);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
 	QAction* m_addAction;
 	QAction* m_deleteAllAction;

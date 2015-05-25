@@ -145,7 +145,7 @@ void PreProcessorRawdataDataItem::exportRawdata()
 	Q_ASSERT(exporter != nullptr);
 
 	// execute export.
-	exporter->doEmport(m_rawData, filename, selectedFilter, mainW, projectData());
+	exporter->doExport(m_rawData, filename, selectedFilter, mainW, projectData());
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
 }

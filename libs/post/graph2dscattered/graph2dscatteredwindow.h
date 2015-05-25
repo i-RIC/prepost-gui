@@ -28,7 +28,7 @@ signals:
 
 private:
 	void init();
-	void setupDefaultGeometry(int index);
+	void setupDefaultGeometry(int index) override;
 
 	Graph2dScatteredWindowObjectBrowser* m_objectBrowser;
 	Graph2dScatteredWindowControlWidget* m_controlWidget;

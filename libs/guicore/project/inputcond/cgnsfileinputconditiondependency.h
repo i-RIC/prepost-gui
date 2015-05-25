@@ -48,10 +48,10 @@ public:
 		/// Constructor
 		ActionEnable(CgnsFileInputConditionWidget* w) : Action(w) {}
 		~ActionEnable() {}
-		void positiveAction() {
+		void positiveAction() override {
 			m_target->setDisabled(false);
 		}
-		void negativeAction() {
+		void negativeAction() override {
 			m_target->setDisabled(true);
 		}
 	};

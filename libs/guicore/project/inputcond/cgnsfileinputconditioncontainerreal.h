@@ -25,8 +25,8 @@ public:
 		return *this;
 	}
 	void clear();
-	int load();
-	int save();
+	int load() override;
+	int save() override;
 	virtual QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(double v) {
 		if (m_value != v) {

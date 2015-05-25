@@ -33,29 +33,29 @@ public:
 	/// Constructor
 	PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorBCSettingDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void handleStandardItemDoubleClicked();
-	void handleStandardItemChange();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void handleStandardItemDoubleClicked() override;
+	void handleStandardItemChange() override;
 
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void viewOperationEnded(VTKGraphicsView* v);
-	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void viewOperationEnded(VTKGraphicsView* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void loadData();
 	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
 	bool isMapped() const {return m_polygon->isMapped();}
-	RawData* rawData() {return m_polygon;}
-	void informValueRangeChange() {}
-	void informDataChange() {}
+	RawData* rawData() override {return m_polygon;}
+	void informValueRangeChange() override {}
+	void informDataChange() override {}
 
 	QAction* editAction() const {return m_editAction;}
 	QAction* deleteAction() {return PreProcessorDataItem::deleteAction();}
@@ -64,16 +64,16 @@ public slots:
 	void executeMapping(bool noDraw, WaitDialog* dialog);
 
 private slots:
-	void setModified() {
+	void setModified() override {
 		PreProcessorDataItem::setModified();
 	}
 	void updateItem();
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
-	void doApplyOffset(double x, double y);
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+	void doApplyOffset(double x, double y) override;
 private:
 	void setupActors();
 	void updateFilename();

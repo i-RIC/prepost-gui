@@ -26,8 +26,8 @@ private:
 public:
 	/// Constructor
 	RawDataRiverSurveyImporter(RawDataCreator* creator);
-	bool importData(RawData* data, int index, QWidget* w);
-	const QStringList fileDialogFilters();
+	bool importData(RawData* data, int index, QWidget* w) override;
+	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 private:
 	PRivPath RivAlloc(double KP, char* str);

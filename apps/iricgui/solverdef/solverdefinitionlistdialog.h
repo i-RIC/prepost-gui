@@ -29,7 +29,7 @@ public slots:
 	/// Show detail dialog about the solver currently selected
 	void showDetailOfCurrent();
 protected:
-	void changeEvent(QEvent* e);
+	void changeEvent(QEvent* e) override;
 private:
 	Ui::SolverDefinitionListDialog* ui;
 	SolverDefinitionList* m_solverList;

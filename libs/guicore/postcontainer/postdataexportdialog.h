@@ -35,7 +35,7 @@ public:
 	PostExportSetting exportSetting() const;
 	const QString prefix() const;
 
-	void accept();
+	void accept() override;
 	void updateSkipRateMaximum();
 
 private slots:

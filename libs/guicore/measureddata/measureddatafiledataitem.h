@@ -23,9 +23,9 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void doApplyOffset(double x, double y);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
 
 private slots:
 	void exportToFile();

@@ -12,8 +12,8 @@ public:
 	Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWPROJECTDATAITEM_H

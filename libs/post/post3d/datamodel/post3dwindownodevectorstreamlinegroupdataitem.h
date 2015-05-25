@@ -28,8 +28,8 @@ public:
 	virtual ~Post3dWindowNodeVectorStreamlineGroupDataItem();
 	void updateActorSettings();
 	void setupClipper();
-	void updateZDepthRangeItemCount();
-	virtual void assignActorZValues(const ZDepthRange& range);
+	void updateZDepthRangeItemCount() override;
+	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem*);
@@ -39,11 +39,11 @@ protected:
 	vtkPointSet* getRegion();
 	void setCurrentSolution(const QString& currentSol);
 	const QString& currentSolution() {return m_currentSolution;}
-	void innerUpdateZScale(double zscale);
+	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setupStreamTracer(vtkStreamTracer* tracer);
 
 	QString m_currentSolution;

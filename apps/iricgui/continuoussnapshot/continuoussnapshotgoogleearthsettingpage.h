@@ -18,8 +18,8 @@ public:
 	ContinuousSnapshotGoogleEarthSettingPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotGoogleEarthSettingPage();
 
-	void initializePage();
-	bool validatePage();
+	void initializePage() override;
+	bool validatePage() override;
 	void setupWindowComboBox();
 	void setupBackgroundComboBox();
 	void calculateKMLInformation();

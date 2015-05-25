@@ -20,7 +20,7 @@ public:
 		setLayout(l);
 	}
 	GridRelatedConditionEditWidget* widget() {return m_widget;}
-	QSize sizeHint() const {
+	QSize sizeHint() const override {
 		return m_widget->sizeHint();
 	}
 private:

@@ -20,17 +20,17 @@ public:
 	const QColor& color() const {return m_color;}
 	void setColor(const QColor& col);
 	void setOpacity(int o);
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void setupActors();

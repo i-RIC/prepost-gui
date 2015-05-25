@@ -23,17 +23,17 @@ public:
 	const QString& currentCondition() {return m_currentCondition;}
 	void informDataChange(const QString& name);
 	void setupActors();
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void informGridUpdate();
 	void setCurrentCondition(const QString& currentCond);
 	const QList<PreProcessorGridRelatedConditionCellDataItem*> conditions() const;
 	PreProcessorGridRelatedConditionCellDataItem* cellDataItem(const QString& name) {return m_nameMap.value(name, 0);}
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 	void setOpacityPercent(int o) {m_opacityPercent = o;}
 	int opacityPercent() {return m_opacityPercent;}
 	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
@@ -50,8 +50,8 @@ public slots:
 
 protected:
 	PreProcessorGridRelatedConditionCellDataItem* activeChildItem();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);

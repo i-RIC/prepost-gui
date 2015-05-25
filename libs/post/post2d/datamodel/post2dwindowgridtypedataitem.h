@@ -26,8 +26,8 @@ public:
 	void setupZoneDataItems();
 	void update();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	void updateLookupTableRanges();
 	void setupScalarsToColors(const QString& name);

@@ -17,42 +17,42 @@ public:
 	PreProcessorRawdataDataItem(PreProcessorDataItem* parent);
 	~PreProcessorRawdataDataItem();
 	void setRawData(RawData* rawdata);
-	RawData* rawData() {return m_rawData;}
+	RawData* rawData() override {return m_rawData;}
 	int index() const {return m_index;}
 	void setIndex(int index) {m_index = index;}
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
-	void updateMoveUpDownActions(ObjectBrowserView* view);
-	void handleStandardItemChange();
-	void handleStandardItemClicked();
-	void handleStandardItemDoubleClicked();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void viewOperationEnded(VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	virtual QStringList containedFiles();
-	void updateZDepthRangeItemCount();
-	void informValueRangeChange();
-	void informDataChange();
+	void updateMoveUpDownActions(ObjectBrowserView* view) override;
+	void handleStandardItemChange() override;
+	void handleStandardItemClicked() override;
+	void handleStandardItemDoubleClicked() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void viewOperationEnded(VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	virtual QStringList containedFiles() override;
+	void updateZDepthRangeItemCount() override;
+	void informValueRangeChange() override;
+	void informDataChange() override;
 	bool getValueRange(double* min, double* max);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void moveUp() {
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void moveUp() override {
 		PreProcessorDataItem::moveUp();
 		informDataChange();
 	}
-	void moveDown() {
+	void moveDown() override {
 		PreProcessorDataItem::moveDown();
 		informDataChange();
 	}
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
-	void saveToCgnsFile(const int fn);
+	void saveToCgnsFile(const int fn) override;
 
 signals:
 	void captionChanged(const QString& newcaption);
@@ -61,11 +61,11 @@ public slots:
 	void exportRawdata();
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void innerUpdate2Ds();
-	void doViewOperationEndedGlobal(VTKGraphicsView* v);
-	void doApplyOffset(double x, double y);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void innerUpdate2Ds() override;
+	void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
+	void doApplyOffset(double x, double y) override;
 
 	RawData* m_rawData;
 

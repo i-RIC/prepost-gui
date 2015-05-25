@@ -27,7 +27,7 @@ public:
 	QList<GridComplexConditionWidget*> widgets() const {return m_widgets;}
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void defaultChecked(bool checked);

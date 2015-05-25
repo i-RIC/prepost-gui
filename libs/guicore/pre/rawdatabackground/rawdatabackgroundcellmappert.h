@@ -21,7 +21,7 @@ public:
 		: RawDataCellMapperT<V, DA>(parent) {
 		RawDataCellMapperT<V, DA>::m_caption = "Background cell mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataBackgroundCellMapperSetting* s = new RawDataBackgroundCellMapperSetting();
 		unsigned int count = RawDataMapperT<V>::container()->dataCount();
 		for (unsigned int i = 0; i < count; ++i) {
@@ -35,7 +35,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataBackgroundCellMapperSetting* s2 =
 			dynamic_cast<RawDataBackgroundCellMapperSetting*>(s);
 		DA* da = dynamic_cast<DA*>(RawDataMapperT<V>::container()->dataArray());
@@ -54,7 +54,7 @@ public:
 		}
 		da->Modified();
 	}
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 };

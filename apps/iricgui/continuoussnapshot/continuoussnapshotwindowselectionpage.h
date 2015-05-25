@@ -19,8 +19,8 @@ public:
 	ContinuousSnapshotWindowSelectionPage(QWidget* parent = nullptr);
 	~ContinuousSnapshotWindowSelectionPage();
 	void setupWindowList();
-	void initializePage();
-	bool validatePage();
+	void initializePage() override;
+	bool validatePage() override;
 	void measurePixmapSize(QPoint& p, QSize& s);
 
 private:

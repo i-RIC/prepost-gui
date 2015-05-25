@@ -25,8 +25,8 @@ public:
 	int mappingCount() const;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	MappingMode m_mappingMode;
 
 	PreProcessorRawDataGroupDataItem* m_rawdataGroupDataItem;

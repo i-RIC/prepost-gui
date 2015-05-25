@@ -18,16 +18,16 @@ public:
 	virtual ~Unstructured2DGrid() {}
 	/// Return VTK container object to store the grid.
 	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
-	unsigned int vertexCount() const;
-	const QVector2D vertex(unsigned int index) const;
-	void setVertex(unsigned int index, const QVector2D& v);
-	bool loadFromCgnsFile(const int fn, int B, int Z);
-	bool saveToCgnsFile(const int fn, int B, char* zonename);
-	unsigned int cellCount() const {
+	unsigned int vertexCount() const override;
+	const QVector2D vertex(unsigned int index) const override;
+	void setVertex(unsigned int index, const QVector2D& v) override;
+	bool loadFromCgnsFile(const int fn, int B, int Z) override;
+	bool saveToCgnsFile(const int fn, int B, char* zonename) override;
+	unsigned int cellCount() const override {
 		return m_vtkGrid->GetNumberOfCells();
 	}
-	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return m_vtkFilteredIndexGridAlgorithm;}
-	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
+	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const override {return m_vtkFilteredIndexGridAlgorithm;}
+	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax) override;
 
 private:
 	void init();

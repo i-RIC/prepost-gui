@@ -19,8 +19,8 @@ public:
 	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointShiftDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 	void checkShiftValue(double shiftVal);

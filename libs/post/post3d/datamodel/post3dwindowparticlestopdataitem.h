@@ -20,13 +20,13 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void innerUpdateZScale(double scale);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void innerUpdateZScale(double scale) override;
 
 private:
 	void setupActors();

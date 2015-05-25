@@ -12,13 +12,13 @@ class GUICOREDLL_EXPORT PostTimeSteps : public PostAbstractSteps
 public:
 	/// Constructor
 	PostTimeSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}
-	void loadFromCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
 	const QList<double>& timesteps() const {return m_timesteps;}
 	bool dataExists() const override {return m_timesteps.count() > 0;}
 	void checkStepsUpdate(int fn);
 	void informSteps();
 protected:
-	void clearArray() {m_timesteps.clear();}
+	void clearArray() override {m_timesteps.clear();}
 signals:
 	void stepsUpdated(QList<double> steps);
 	void stepsUpdated(int fn);

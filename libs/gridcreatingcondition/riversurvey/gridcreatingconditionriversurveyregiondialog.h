@@ -27,7 +27,7 @@ public:
 	RawDataRiverPathPoint* startPoint();
 	RawDataRiverPathPoint* endPoint();
 public slots:
-	void accept();
+	void accept() override;
 private slots:
 	void handleStartUpdate();
 	void handleEndUpdate();

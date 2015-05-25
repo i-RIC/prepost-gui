@@ -38,11 +38,11 @@ public:
 	virtual ~Grid();
 	const QString& zoneName() {return m_zoneName;}
 	void setZoneName(const QString& name) {m_zoneName = name;}
-//	GridImporterFactory* importerFactory() const {return m_importerFactory;}
-//	GridExporterFactory* exporterFactory() const {return m_exporterFactory;}
-	void loadFromCgnsFile(const int fn);
+//	GridImporterFactory* importerFactory() const override {return m_importerFactory;}
+//	GridExporterFactory* exporterFactory() const override {return m_exporterFactory;}
+	void loadFromCgnsFile(const int fn) override;
 	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
-	virtual void saveToCgnsFile(const int fn);
+	virtual void saveToCgnsFile(const int fn) override;
 	virtual bool saveToCgnsFile(const int fn, int base, char* zonename) = 0;
 	/// The pointer to VTK container that holds the data in deed.
 	vtkPointSet* vtkGrid() const {return m_vtkGrid;}
@@ -67,7 +67,7 @@ public:
 	}
 	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
-	virtual void setModified() {
+	virtual void setModified() override {
 		m_isModified = true;
 		m_vtkGrid->Modified();
 	}
@@ -82,8 +82,8 @@ public:
 	void setParent(QObject* parent);
 
 protected:
-	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 	bool loadGridRelatedConditions(int fn, int B, int Z);
 	bool saveGridRelatedConditions(int fn, int B, int Z);
 	static int zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9]);

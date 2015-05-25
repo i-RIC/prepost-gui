@@ -38,11 +38,11 @@ public:
 	void setReadOnly(bool readonly);
 
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 protected:
-	void changeEvent(QEvent* e);
+	void changeEvent(QEvent* e) override;
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);

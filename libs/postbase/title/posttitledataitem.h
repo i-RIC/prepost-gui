@@ -17,11 +17,11 @@ public:
 	/// Constructor
 	PostTitleDataItem(GraphicsWindowDataItem* parent);
 	virtual ~PostTitleDataItem();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 protected:
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 private:
 	void setupActors();
 	void updateActorSettings();

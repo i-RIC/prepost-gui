@@ -49,8 +49,8 @@ public:
 
 public slots:
 	void updateMousePosition(const QVector2D& p);
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private slots:
 	void activeDataChanged(int index);

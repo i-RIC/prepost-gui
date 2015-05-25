@@ -13,15 +13,15 @@ public:
 	~Post2dWindowRawDataDataItem();
 	void setRawDataProxy(RawDataProxy* proxy);
 	RawDataProxy* rawDataProxy() const {return m_rawDataProxy;}
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void updateZDepthRangeItemCount();
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void updateZDepthRangeItemCount() override;
 
 private slots:
 	void updateCaption(const QString& newcaption);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
 private:

@@ -26,20 +26,20 @@ public:
 	/// Constructor
 	Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowGridShapeDataItem();
-	void handleStandardItemDoubleClicked();
+	void handleStandardItemDoubleClicked() override;
 	QColor color() const;
 	QColor indexColor() const;
 	GridShapeEditDialog::Shape shape() const {return m_shape;}
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 	void update();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void innerUpdateZScale(double scale);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void innerUpdateZScale(double scale) override;
 
 private:
 	void setupActors();

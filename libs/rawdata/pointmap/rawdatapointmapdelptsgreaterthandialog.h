@@ -22,7 +22,7 @@ public:
 	const QVector<vtkIdType>& selectedPoints() {return m_selectedPoints;}
 
 public slots:
-	void accept();
+	void accept() override;
 private:
 	Ui::RawDataPointmapDelPtsGreaterThanDialog* ui;
 	QVector<vtkIdType> m_selectedPoints;

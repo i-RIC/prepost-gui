@@ -20,7 +20,7 @@ public:
 	void worldToViewport(double& x, double& y) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax);
-	void mouseMoveEvent(QMouseEvent* event);
+	void mouseMoveEvent(QMouseEvent* event) override;
 	void ResetCameraClippingRange();
 	double stdRadius(int pixels) const;
 	void translate(int x, int y) override;

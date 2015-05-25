@@ -16,7 +16,7 @@ RawDataPointmapSTLExporter::RawDataPointmapSTLExporter(RawDataCreator* creator)
 	m_caption = tr("Stereolithography (STL)");
 }
 
-bool RawDataPointmapSTLExporter::doEmport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* /*w*/, ProjectData* pd)
+bool RawDataPointmapSTLExporter::doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* /*w*/, ProjectData* pd)
 {
 	RawDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<RawDataPointMapT<double, vtkDoubleArray>*>(data);
 	vtkPolyData* polydata = vtkPolyData::New();

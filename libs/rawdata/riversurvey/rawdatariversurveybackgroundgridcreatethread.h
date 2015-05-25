@@ -39,7 +39,7 @@ signals:
 	void gridUpdated();
 
 protected:
-	void run();
+	void run() override;
 
 private:
 	bool runStandard();

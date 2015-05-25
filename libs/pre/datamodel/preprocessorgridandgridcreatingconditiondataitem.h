@@ -17,10 +17,10 @@ public:
 	/// Constructor
 	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* parent);
 	/// The caption of the dataitem.
-	const QString& caption() {return m_caption;}
+	const QString& caption() override {return m_caption;}
 	/// The name of the zone that stores the grid information.
-	const QString& zoneName() {return m_zoneName;}
-	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const {
+	const QString& zoneName() override {return m_zoneName;}
+	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override {
 		return m_creatingConditionDataItem;
 	}
 	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const {
@@ -30,18 +30,18 @@ public:
 		return m_mappingSettingDataItem;
 	}
 	void addCustomMenuItems(QMenu* menu) override;
-	PreProcessorGridDataItemInterface* gridDataItem() const {return m_gridDataItem;}
+	PreProcessorGridDataItemInterface* gridDataItem() const override {return m_gridDataItem;}
 	bool isDeletable() const override;
-	void handleStandardItemChange();
-	bool gridEdited() const ;
-	void toggleGridEditFlag();
+	void handleStandardItemChange() override;
+	bool gridEdited() const  override;
+	void toggleGridEditFlag() override;
 public slots:
 	void informGridCreation();
 	void deleteGridAndCondition();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void saveExternalData(const QString&);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void saveExternalData(const QString&) override;
 private:
 	QAction* m_deleteAction;
 	QString m_caption;

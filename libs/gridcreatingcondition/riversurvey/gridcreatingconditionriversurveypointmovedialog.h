@@ -25,8 +25,8 @@ public:
 	~GridCreatingConditionRiverSurveyPointMoveDialog();
 
 	void apply();
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private:
 	void setSValue();

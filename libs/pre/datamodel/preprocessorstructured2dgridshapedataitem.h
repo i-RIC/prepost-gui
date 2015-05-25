@@ -22,16 +22,16 @@ public:
 	~PreProcessorStructured2dGridShapeDataItem();
 	GridShapeEditDialog::Shape shape() {return m_shape;}
 	/// Inform that the grid is updated.
-	void informGridUpdate();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
+	void informGridUpdate() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setupActors();
 	void updateActorSettings();
 private:

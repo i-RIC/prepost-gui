@@ -31,8 +31,8 @@ public:
 		m_widget->applyVariation(container, indices, atts, dItem);
 	}
 	QVariant variantValue() const {return m_widget->variantValue();}
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private:
 	GridRelatedConditionVariationEditWidget* m_widget;

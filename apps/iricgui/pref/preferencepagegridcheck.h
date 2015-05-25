@@ -16,7 +16,7 @@ class PreferencePageGridCheck : public PreferencePage
 public:
 	explicit PreferencePageGridCheck(QWidget* parent = nullptr);
 	~PreferencePageGridCheck();
-	void update();
+	void update() override;
 
 private:
 	QSettings m_settings;

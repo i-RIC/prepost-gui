@@ -11,15 +11,15 @@ public:
 	GridCreatingConditionGridGenerator(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionGridGenerator();
 
-	bool create(QWidget* parent);
-	bool ready() const;
-	void setupMenu();
+	bool create(QWidget* parent) override;
+	bool ready() const override;
+	void setupMenu() override;
 	bool setupParameters();
-	void showInitialDialog();
-	void clear();
+	void showInitialDialog() override;
+	void clear() override;
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadGridGeneratorFromProjectMainFile(const QDomNode& node);
 	void saveGridGeneratorToProjectMainFile(QXmlStreamWriter& writer);
 
@@ -60,8 +60,8 @@ protected:
 	GridCreatingConditionGridGeneratorSettingDialog::WidthChangeType j_width_type;
 	double delta_b;
 
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 
 	QPoint m_dragStartPoint;
 	QMenu* m_rightClickingMenu;

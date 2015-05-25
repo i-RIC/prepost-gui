@@ -49,14 +49,14 @@ public:
 	void setKMax(unsigned int val) {m_kMax = val;}
 	void setActor(vtkActor* actor);
 	vtkAlgorithmOutput* getOutputPort();
-	void handleStandardItemChange();
-	void innerUpdateZScale(double scale);
+	void handleStandardItemChange() override;
+	void innerUpdateZScale(double scale) override;
 	vtkExtractGrid* filter() const {return m_filter;}
 	void update();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateFilter();
 	bool m_enabled;
 	bool m_dataOK;

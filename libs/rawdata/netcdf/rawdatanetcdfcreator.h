@@ -10,7 +10,7 @@ class RD_NETCDF_EXPORT RawDataNetcdfCreator : public RawDataCreator
 public:
 	/// Constructor
 	RawDataNetcdfCreator();
-	QString name(unsigned int index);
+	QString name(unsigned int index) override;
 	QString defaultCaption(unsigned int index) override;
 };
 

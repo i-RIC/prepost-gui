@@ -21,18 +21,18 @@ class PreProcessorGridRelatedConditionNodeDataItem : public PreProcessorDataItem
 public:
 	/// Constructor
 	PreProcessorGridRelatedConditionNodeDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
-	void handleStandardItemChange();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	void handleStandardItemChange() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	ContourSettingWidget::Contour contour() {return m_contour;}
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	void informDataChange();
 	int numberOfDivision() {return m_numberOfDivision;}
@@ -54,10 +54,10 @@ private slots:
 signals:
 	void changed(PreProcessorGridRelatedConditionNodeDataItem*);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadFromCgnsFile(const int fn);
-	void doApplyOffset(double x, double y);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadFromCgnsFile(const int fn) override;
+	void doApplyOffset(double x, double y) override;
 private:
 	SolverDefinitionGridRelatedCondition* m_condition;
 

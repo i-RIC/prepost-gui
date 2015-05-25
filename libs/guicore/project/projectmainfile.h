@@ -72,7 +72,7 @@ public:
 	PostSolutionInfo* postSolutionInfo() const {return m_postSolutionInfo;}
 	bool hasResults();
 	QStringList containedFiles() override;
-	const QString currentCgnsFileName() const;
+	const QString currentCgnsFileName() const override;
 	/// Clear the results stored in the current CGNS file.
 	void clearResults();
 	/// Save current cgns file.
@@ -81,10 +81,10 @@ public:
 	bool isModified() const {return m_isModified;}
 	/// PostProcessors.
 	ProjectPostProcessors* postProcessors() const {return m_postProcessors;}
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
 	void toggleGridEditFlag();
-	void closeCgnsFile();
+	void closeCgnsFile() override;
 	/// Background images
 	const QList<BackgroundImageInfo*> backgroundImages() const {return m_backgroundImages;}
 	const QList<MeasuredData*>& measuredDatas() const {return m_measuredDatas;}
@@ -96,7 +96,7 @@ public:
 	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
-	virtual void setModified();
+	virtual void setModified() override;
 
 	bool importVisGraphSetting(const QString filename);
 	bool exportVisGraphSetting(const QString filename);
@@ -140,11 +140,11 @@ public slots:
 
 protected:
 	/// Load information to restore data from ProjectMainFile.
-	void doLoadFromProjectMainFile(const QDomNode& node);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	/// Write into projectmainfile.
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	ProjectData* projectData() const {return m_projectData;}
-	QString relativeSubPath() const {return "";}
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	ProjectData* projectData() const override {return m_projectData;}
+	QString relativeSubPath() const override {return "";}
 
 private:
 	bool clearResultsIfGridIsEdited();

@@ -20,11 +20,11 @@ public:
 		m_defaultIndex = idx;
 	}
 	const QMap<int, QString>& enumerations() const {return m_enumerations;}
-	QSize sizeHint() const;
-	QSize minimumSizeHint() const;
+	QSize sizeHint() const override;
+	QSize minimumSizeHint() const override;
 protected:
-	void setupWidget();
-	void getValueFromInnerWidget();
+	void setupWidget() override;
+	void getValueFromInnerWidget() override;
 private:
 	QMap<int, QString> m_enumerations;
 	int m_defaultIndex;

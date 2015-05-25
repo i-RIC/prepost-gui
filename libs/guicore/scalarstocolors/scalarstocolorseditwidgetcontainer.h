@@ -12,7 +12,7 @@ public:
 	ScalarsToColorsEditWidgetContainer(QWidget* parent);
 	void setWidget(ScalarsToColorsEditWidget* w);
 	ScalarsToColorsEditWidget* widget() const {return m_widget;}
-	QSize sizeHint() const;
+	QSize sizeHint() const override;
 	void save();
 
 private:

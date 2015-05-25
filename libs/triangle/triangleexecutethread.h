@@ -28,7 +28,7 @@ public:
 		m_workFolder = workFolder;
 	}
 protected:
-	void run();
+	void run() override;
 
 private:
 	triangulateio* m_in;

@@ -60,24 +60,24 @@ public:
 
 	GridCreatingConditionRiverSurvey(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionRiverSurvey();
-	bool create(QWidget* parent);
+	bool create(QWidget* parent) override;
 
-	bool ready() const;
-	bool init();
-	void setupActors();
-	void setupMenu();
-	void informSelection(PreProcessorGraphicsViewInterface* /*v*/);
-	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/);
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
+	bool ready() const override;
+	bool init() override;
+	void setupActors() override;
+	void setupMenu() override;
+	void informSelection(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);
 	void handleDialogAccepted(QDialog* d);
@@ -86,23 +86,23 @@ public:
 	void createGrid(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
 	void selectCreateRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
 	bool checkCtrlPointsRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
-	void updateShapeData();
+	void updateShapeData() override;
 	void updateShapeData(bool omitBackgroundUpdate);
 
 	GridCtrlOffsetInfo& GCPOffsetInfo() override {return m_GCPOffsetInfo;}
-	void invalidateSelectedCtrlPoints();
-	void clear();
-	std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() {return m_selectedCtrlPointInfoList;}
+	void invalidateSelectedCtrlPoints() override;
+	void clear() override;
+	std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() override {return m_selectedCtrlPointInfoList;}
 	const std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() const {return m_selectedCtrlPointInfoList;}
 
 	RawDataRiverPathPoint* lastStartPoint() const {return m_lastStartPoint;}
 	RawDataRiverPathPoint* lastEndPoint() const {return m_lastEndPoint;}
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 private:
 	const static int LINEDIVS = 16;
@@ -117,7 +117,7 @@ private:
 
 	bool ctrlPointSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
 	bool ctrlPointXORSelectRegion(const QVector2D& p0, const QVector2D& v0, const QVector2D& v1);
-	void informCtrlPointUpdateToCrosssectionWindows();
+	void informCtrlPointUpdateToCrosssectionWindows() override;
 
 	void setAnalogyCtrlPoints();
 

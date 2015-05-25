@@ -11,12 +11,12 @@ class RD_NETCDF_EXPORT RawDataNetcdfImporter : public RawDataImporter
 public:
 	RawDataNetcdfImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfImporter() {}
-	const QStringList fileDialogFilters();
+	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
-	bool importData(RawData* data, int index, QWidget* w);
+	bool importData(RawData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w);
+	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
 	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, QList<QVariant>& list);
 	static QList<QVariant> convertTimeValues(QString units, QList<QVariant>& values, QWidget* parent, bool* canceled);

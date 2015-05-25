@@ -22,8 +22,8 @@ public:
 	void apply();
 
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);

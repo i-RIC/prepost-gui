@@ -27,9 +27,9 @@ public:
 		: GraphicsWindowDataItem(itemlabel, icon, parent)
 	{}
 	Post3dWindow* postProcessorWindow();
-	void updateZDepthRangeItemCount() {}
+	void updateZDepthRangeItemCount() override {}
 protected:
-	void assignActorZValues(const ZDepthRange& /*range*/) {}
+	void assignActorZValues(const ZDepthRange& /*range*/) override {}
 	Post3dWindowDataModel* dataModel();
 };
 

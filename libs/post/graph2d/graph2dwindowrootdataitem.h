@@ -23,15 +23,15 @@ public:
 	void deleteItem(QStandardItem* item);
 	void moveUpItem(QStandardItem* item);
 	void moveDownItem(QStandardItem* item);
-	void updateItemMap();
+	void updateItemMap() override;
 	Graph2dWindowDataItem* modelItemFromItem(QStandardItem* item);
-	void loadFromCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 protected:
 	bool isAncientChecked() const override {return true;}
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
-	Graph2dWindowDataModel* dataModel() const {return m_dataModel;}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+	Graph2dWindowDataModel* dataModel() const override {return m_dataModel;}
 protected:
 	QMainWindow* m_mainWindow;
 	Graph2dWindowDataModel* m_dataModel;

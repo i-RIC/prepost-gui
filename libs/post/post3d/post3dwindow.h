@@ -38,8 +38,8 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	ObjectBrowser* objectBrowser() const override;
 	int index() {return m_index;}
-	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename);
-	QList<QString> particleDrawingZones();
+	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename) override;
+	QList<QString> particleDrawingZones() override;
 	bool hasTransparentPart();
 
 public slots:
@@ -63,7 +63,7 @@ private:
 	const QColor backgroundColor() const;
 	/// Set background color;
 	void setBackgroundColor(QColor& c);
-	void setupDefaultGeometry(int index);
+	void setupDefaultGeometry(int index) override;
 	Post3dObjectBrowser* m_objectBrowser;
 	Post3dWindowDataModel* m_dataModel;
 	Post3dWindowActionManager* m_actionManager;

@@ -22,7 +22,7 @@ public:
 	SolverDefinitionGridRelatedConditionIntegerDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridRelatedCondition* cond)
 		: SolverDefinitionGridRelatedConditionDimensionT<int>(node, translator, cond)
 	{}
-	int fromVariant(const QVariant& v) const {
+	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
 	}
 	GridRelatedConditionDimensionContainer* buildContainer() override {
@@ -37,7 +37,7 @@ public:
 	SolverDefinitionGridRelatedConditionRealDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridRelatedCondition* cond)
 		: SolverDefinitionGridRelatedConditionDimensionT<double>(node, translator, cond)
 	{}
-	double fromVariant(const QVariant& v) const {
+	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();
 	}
 	GridRelatedConditionDimensionContainer* buildContainer() override {

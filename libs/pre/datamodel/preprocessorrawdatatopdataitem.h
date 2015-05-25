@@ -25,28 +25,28 @@ public:
 	PreProcessorRawDataTopDataItem(PreProcessorDataItem* parent);
 	/// Destructor
 	~PreProcessorRawDataTopDataItem();
-	SolverDefinitionGridType* gridType() {
+	SolverDefinitionGridType* gridType() override {
 		return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
 	}
-	const QList<PreProcessorRawDataGroupDataItemInterface*> groupDataItems() const;
-	PreProcessorRawDataGroupDataItemInterface* groupDataItem(const QString& name);
+	const QList<PreProcessorRawDataGroupDataItemInterface*> groupDataItems() const override;
+	PreProcessorRawDataGroupDataItemInterface* groupDataItem(const QString& name) override;
 	void informValueRangeChange(const QString& name);
 	void informDataChange();
 	void setupActors();
 	void updateActorSettings();
 	void updateLegendBoxItems();
 	QStringList getRawDatasNotMapped();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void saveToCgnsFile(const int fn);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void saveToCgnsFile(const int fn) override;
 	/// Set all dimensions to the first.
-	void setDimensionsToFirst();
+	void setDimensionsToFirst() override;
 
 public slots:
 	void setupScalarBar();
@@ -56,8 +56,8 @@ signals:
 	void dataChanged();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QMap<QString, PreProcessorRawDataGroupDataItemInterface*> m_itemNameMap;
 

@@ -45,7 +45,7 @@ private:
 	QItemSelectionModel* m_selectionModel;
 	Ui::CgnsFileInputConditionWidgetFunctionalDialog ui;
 public slots:
-	void accept() {
+	void accept() override {
 		saveModel();
 		emit accepted();
 		hide();

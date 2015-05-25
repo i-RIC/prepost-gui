@@ -20,17 +20,17 @@ class GridCreatingConditionExternalProgram : public GridCreatingCondition
 public:
 	GridCreatingConditionExternalProgram(const QString& folderName, const QLocale& locale, ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionExternalProgram();
-	bool create(QWidget* parent);
-	bool ready() const;
-	void clear();
-	void showInitialDialog();
+	bool create(QWidget* parent) override;
+	bool ready() const override;
+	void clear() override;
+	void showInitialDialog() override;
 private slots:
 	void cancel() {m_canceled = true;}
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 private:
 	static int readErrorCode(int fn);
 	void deleteGrid(const QString& fname);

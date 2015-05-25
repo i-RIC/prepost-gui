@@ -12,14 +12,14 @@ class RawDataPolygonProxy : public RawDataProxy
 	Q_OBJECT
 public:
 	RawDataPolygonProxy(RawDataPolygon* rawdata) : RawDataProxy(rawdata) {}
-	void setupActors();
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void setupActors() override;
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 //	virtual void setupMenu(){}
 public slots:
-	void updateGraphics();
+	void updateGraphics() override;
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 private:
 	vtkSmartPointer<vtkActor> m_paintActor;

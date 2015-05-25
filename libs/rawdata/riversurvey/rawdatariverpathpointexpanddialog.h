@@ -21,8 +21,8 @@ public:
 	explicit RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget* parent = 0);
 	~RawDataRiverPathPointExpandDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void distanceChanged();
 	void incrementChanged();

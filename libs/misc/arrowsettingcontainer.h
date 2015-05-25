@@ -22,8 +22,8 @@ public:
 	/// Set the width of arrow axis (in pixels)
 	void setLineWidth(int width) {m_lineWidth = width;}
 
-	void load(const QDomNode&);
-	void save(QXmlStreamWriter&) const;
+	void load(const QDomNode&) override;
+	void save(QXmlStreamWriter&) const override;
 
 private:
 	int m_arrowSize;

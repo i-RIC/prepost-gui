@@ -24,7 +24,7 @@ public:
 		: RawDataNodeMapperT<V, DA>(parent) {
 		RawDataNodeMapperT<V, DA>::m_caption = "Polygon node mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataPolygonNodeMapperSetting* s = new RawDataPolygonNodeMapperSetting();
 		unsigned int count = RawDataMapperT<V>::container()->dataCount();
 		RawDataPolygon* polygon = dynamic_cast<RawDataPolygon* >(RawDataMapper::m_rawdata);
@@ -74,7 +74,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataPolygonNodeMapperSetting* setting = dynamic_cast<RawDataPolygonNodeMapperSetting*>(s);
 		DA* da = dynamic_cast<DA*>(RawDataMapperT<V>::container()->dataArray());
 		RawDataPolygon* polygon = dynamic_cast<RawDataPolygon* >(RawDataMapperT<V>::m_rawdata);
@@ -90,7 +90,7 @@ public:
 		}
 		da->Modified();
 	}
-	void terminate(RawDataMapperSetting* setting) {
+	void terminate(RawDataMapperSetting* setting) override {
 		delete setting;
 	}
 };

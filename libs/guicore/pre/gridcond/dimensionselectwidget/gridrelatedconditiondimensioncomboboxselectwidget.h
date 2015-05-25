@@ -17,8 +17,8 @@ public:
 	~GridRelatedConditionDimensionComboboxSelectWidget();
 
 protected:
-	void doApplyValues();
-	void doSetCurrentIndex(int newIndex);
+	void doApplyValues() override;
+	void doSetCurrentIndex(int newIndex) override;
 
 private:
 	Ui::GridRelatedConditionDimensionComboboxSelectWidget* ui;

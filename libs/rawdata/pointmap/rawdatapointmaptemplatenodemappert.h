@@ -33,11 +33,11 @@ public:
 		init();
 	}
 
-	RawDataMapperSetting* initialize(bool* boolMap);
+	RawDataMapperSetting* initialize(bool* boolMap) override;
 
-	void map(bool* boolMap, RawDataMapperSetting* s);
+	void map(bool* boolMap, RawDataMapperSetting* s) override;
 
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 

@@ -32,10 +32,10 @@ public:
 	/// Constructor
 	PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting = false);
 	virtual ~PreProcessorBCDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void handleStandardItemDoubleClicked() {showDialog();}
-	void handleStandardItemChange();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void handleStandardItemDoubleClicked() override {showDialog();}
+	void handleStandardItemChange() override;
 	void setName(const QString& name);
 	void setProjectNumber(int num);
 	void setCgnsNumber(int num);
@@ -48,13 +48,13 @@ public:
 	bool isValid() const;
 	QString uniqueName() const;
 
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	void setGrid(Grid* grid);
 	void clearPoints();
@@ -71,16 +71,16 @@ public:
 	bool hideSetting() const {return m_hideSetting;}
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void doApplyOffset(double x, double y);
-	virtual void loadExternalData(const QString& filename);
-	virtual void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
+	virtual void loadExternalData(const QString& filename) override;
+	virtual void saveExternalData(const QString& filename) override;
 public slots:
 	bool showDialog();
 
 private slots:
-	void setModified() {
+	void setModified() override {
 		PreProcessorDataItem::setModified();
 	}
 	void assignSelectedElements();

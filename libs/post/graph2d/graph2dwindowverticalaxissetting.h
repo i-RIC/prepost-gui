@@ -40,8 +40,8 @@ public:
 	Graph2dWindowVerticalAxisSetting& operator=(const Graph2dWindowVerticalAxisSetting& setting);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void init();

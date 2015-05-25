@@ -24,17 +24,17 @@ public:
 	const QString& currentCondition() {return m_currentCondition;}
 	void informDataChange(const QString& name);
 	void setupActors();
-	void updateZDepthRangeItemCount();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void updateZDepthRangeItemCount() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
 	void setCurrentCondition(const QString& currentCond);
 	const QList<PreProcessorGridRelatedConditionNodeDataItem*> conditions() const;
 	PreProcessorGridRelatedConditionNodeDataItem* nodeDataItem(const QString& name) {return m_nameMap.value(name, 0);}
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 	void setOpacityPercent(int o) {m_opacityPercent = o;}
 	int opacityPercent() {return m_opacityPercent;}
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
@@ -52,8 +52,8 @@ public slots:
 
 protected:
 	PreProcessorGridRelatedConditionNodeDataItem* activeChildItem();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
 
 private:

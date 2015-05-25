@@ -16,13 +16,13 @@ public:
 	/// Constructor
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorBCSettingGroupDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
 	void informGridUpdate();
 	const QList<PreProcessorBCSettingDataItem*> conditions() const;
 	PreProcessorBCSettingDataItem* condition(const QString& type, int num) const;
 	void addCustomMenuItems(QMenu* menu) override;
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void updateBCMenu(PreProcessorBCSettingDataItem* item);
 	void setupAddActions();
 	const QList<QAction*>& addActions() const {return m_addActions;}
@@ -36,8 +36,8 @@ public slots:
 	void addCondition();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> m_itemMap;

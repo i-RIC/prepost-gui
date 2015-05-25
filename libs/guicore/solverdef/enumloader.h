@@ -45,13 +45,13 @@ protected:
 class IntegerEnumLoader : public EnumLoader<int>
 {
 protected:
-	int fromStr(const QString& str) {return str.toInt();}
+	int fromStr(const QString& str) override {return str.toInt();}
 };
 
 class RealEnumLoader : public EnumLoader<double>
 {
 protected:
-	double fromStr(const QString& str) {return str.toDouble();}
+	double fromStr(const QString& str) override {return str.toDouble();}
 };
 
 #endif // ENUMLOADER_H

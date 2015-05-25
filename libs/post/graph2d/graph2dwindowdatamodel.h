@@ -35,9 +35,9 @@ public:
 	Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* parent);
 	/// Destructor
 	~Graph2dWindowDataModel();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 
 	/// The view to display pre-processor main region
 	Graph2dWindowView* view() const {return m_view;}
@@ -53,8 +53,8 @@ public:
 protected:
 	virtual void getYAxisValueRange(AxisSide, double* min, double* max) = 0;
 	virtual void applyAxisSetting() = 0;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 public slots:
 	/// Handle mouse press event on object browser.
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);

@@ -21,8 +21,8 @@ public:
 	void setSingleSelection(bool single);
 	void setCurrentCenter(const QVector2D& current);
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void offsetChange();
 	void centerChange();

@@ -16,15 +16,17 @@ public:
 	~PreProcessorWindowProjectDataItem();
 	/// Initializes pre-processor window for the specified solver definition.
 	void initForSolverDefinition();
-	void loadFromCgnsFile(const int fn);
-	void saveToCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 	QStringList containedFiles() override;
 	bool gridEdited();
 	void toggleGridEditFlag();
+
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void createConnections();
 	PreProcessorWindow* m_preProcessorWindow;

@@ -17,17 +17,17 @@ protected:
 		m_cellMappers.append(new RawDataBackgroundCellMapperT<V, DA>(this));
 	}
 public:
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) {
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override {
 		SolverDefinitionGridRelatedConditionT<V>* tmpcond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V> * >(condition);
 		RawData* rawdata = new RawDataBackground(parent, this, tmpcond);
 		rawdata->setPosition(tmpcond->position());
 		rawdata->setDefaultMapper();
 		return rawdata;
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* /* condition*/) {
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* /* condition*/) override {
 		return true;
 	}
-	QString defaultCaption(unsigned int /*index*/) {return "";}
+	QString defaultCaption(unsigned int /*index*/) override {return "";}
 };
 
 #endif // RAWDATABACKGROUNDCREATORT_H

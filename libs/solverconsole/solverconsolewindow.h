@@ -44,7 +44,7 @@ public:
 	void setProjectData(ProjectData* d);
 	SolverConsoleWindowProjectDataItem* projectDataItem();
 	/// Implementation of close event.
-	void closeEvent(QCloseEvent* e);
+	void closeEvent(QCloseEvent* e) override;
 	/// Returns true when the solver is running.
 	bool isSolverRunning();
 	/// Setup window position and size to the default.

@@ -19,17 +19,17 @@ protected:
 		m_typeName = "complexBackground";
 	}
 public:
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) {
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override {
 		SolverDefinitionGridRelatedComplexCondition* tmpcond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition* >(condition);
 		RawData* rawdata = new RawDataBackgroundComplex(parent, this, tmpcond);
 		rawdata->setPosition(tmpcond->position());
 		rawdata->setDefaultMapper();
 		return rawdata;
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* /* condition*/) {
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* /* condition*/) override {
 		return true;
 	}
-	QString defaultCaption(unsigned int /*index*/) {return "";}
+	QString defaultCaption(unsigned int /*index*/) override {return "";}
 
 	static RawDataBackgroundComplexCreator* instance() {
 		if (! m_instance) {

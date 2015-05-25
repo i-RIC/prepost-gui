@@ -12,7 +12,7 @@ public:
 	GridCreatingConditionTriangleRemeshPolygon(GridCreatingConditionTriangle* parent);
 	void setCellSize(double s) {m_cellSize = s;}
 	double cellSize() const {return m_cellSize;}
-	void finishDefinition();
+	void finishDefinition() override;
 
 public slots:
 	void editGridSize(bool required = false);

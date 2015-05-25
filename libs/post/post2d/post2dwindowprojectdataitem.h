@@ -12,8 +12,8 @@ public:
 	Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // POST2DWINDOWPROJECTDATAITEM_H

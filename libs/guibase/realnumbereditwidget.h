@@ -41,8 +41,8 @@ private slots:
 	void handleTextChange();
 
 protected:
-	void closeEvent(QCloseEvent* e);
-	void focusOutEvent(QFocusEvent* e);
+	void closeEvent(QCloseEvent* e) override;
+	void focusOutEvent(QFocusEvent* e) override;
 	bool updateValue();
 
 	double m_doubleValue;

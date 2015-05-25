@@ -58,7 +58,7 @@ public:
 	const vtkTextPropertySettingContainer titleTextSetting() const {return m_titleTextSetting;}
 	const vtkTextPropertySettingContainer labelTextSetting() const {return m_labelTextSetting;}
 public slots:
-	void accept();
+	void accept() override;
 	void addFaceSetting();
 	void removeFaceSetting();
 	void switchFaceSetting(QListWidgetItem* current, QListWidgetItem* previous);

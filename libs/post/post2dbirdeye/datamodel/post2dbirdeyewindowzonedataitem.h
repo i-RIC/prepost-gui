@@ -28,11 +28,11 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 
 	void informgridRelatedConditionChange(const QString& name);
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 
 	PostZoneDataContainer* dataContainer();
 	int zoneNumber() const {return m_zoneNumber;}
@@ -46,8 +46,8 @@ public:
 	Post2dBirdEyeWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dBirdEyeWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_scalarGroupDataItem;

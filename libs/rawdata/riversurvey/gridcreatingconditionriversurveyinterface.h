@@ -62,7 +62,7 @@ public:
 		updateAfter();
 	}
 
-	void undo() {
+	void undo() override {
 		m_condition->cancelBackgroundGridUpdate();
 		m_point->CtrlPoints(m_position) = m_before;
 		m_condition->invalidateSelectedCtrlPoints();
@@ -73,7 +73,7 @@ public:
 		}
 	}
 
-	void redo() {
+	void redo() override {
 		m_condition->cancelBackgroundGridUpdate();
 		m_point->CtrlPoints(m_position) = m_after;
 		if (! m_apply) {
@@ -87,10 +87,10 @@ public:
 		}
 	}
 
-	int id() const {
+	int id() const override {
 		return iRIC::generateCommandId("GridCreatingConditionCtrlPointMove");
 	}
-	bool mergeWith(const QUndoCommand* other) {
+	bool mergeWith(const QUndoCommand* other) override {
 		const GridCreatingConditionCtrlPointMoveCommand* other2 = dynamic_cast<const GridCreatingConditionCtrlPointMoveCommand*>(other);
 		if (other2 == 0) {return false;}
 		if (m_condition != other2->m_condition) {return false;}

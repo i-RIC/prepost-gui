@@ -32,9 +32,9 @@ public:
 	void saveToRepresentation(vtkLegendBoxRepresentation* rep);
 
 	/// Load data from XML attributes
-	void load(const QDomNode& node);
+	void load(const QDomNode& node) override;
 	/// Save data to XML attributes
-	void save(QXmlStreamWriter& writer) const;
+	void save(QXmlStreamWriter& writer) const override;
 
 	bool visible;
 	Orientation orientation;

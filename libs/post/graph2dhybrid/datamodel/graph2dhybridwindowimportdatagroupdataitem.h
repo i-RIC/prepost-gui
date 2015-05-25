@@ -19,11 +19,12 @@ public:
 	void updateData();
 	void clear();
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
+
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 };
 
 #endif // GRAPH2DHYBRIDWINDOWIMPORTDATAGROUPDATAITEM_H

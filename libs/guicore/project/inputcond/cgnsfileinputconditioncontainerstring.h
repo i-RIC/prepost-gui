@@ -26,8 +26,8 @@ public:
 		m_value = m_default;
 		emit valueChanged(m_value);
 	}
-	int load();
-	int save();
+	int load() override;
+	int save() override;
 	virtual QVariant variantValue() const override {return QVariant(m_value);}
 	void setValue(const QString& v) {
 		if (m_value != v) {

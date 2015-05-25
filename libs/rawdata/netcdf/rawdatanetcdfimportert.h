@@ -21,7 +21,7 @@ public:
 	RawDataNetcdfImporterT(RawDataCreator* creator) : RawDataNetcdfImporter(creator) {}
 
 protected:
-	int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, RawDataNetcdf* dat) {
+	int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, RawDataNetcdf* dat) override {
 		size_t* start_in = new size_t[dimIds.size() + 2];
 		size_t* start_out = new size_t[dimIds.size() + 2];
 		size_t* len_in = new size_t[dimIds.size() + 2];
@@ -139,10 +139,10 @@ public:
 	int ncGetVarConvert(int ncid_in, int varId, size_t* start_in, size_t* len_in, int* buffer) {
 		return nc_get_vara_int(ncid_in, varId, start_in, len_in, buffer);
 	}
-	int ncPutVarConvert(int ncid_out, int varId, size_t* start_out, size_t* len_out, int* buffer) {
+	int ncPutVarConvert(int ncid_out, int varId, size_t* start_out, size_t* len_out, int* buffer) override {
 		return nc_put_vara_int(ncid_out, varId, start_out, len_out, buffer);
 	}
-	int ncGetMissingValue(int ncid, int varid, int* value) {
+	int ncGetMissingValue(int ncid, int varid, int* value) override {
 		int ret;
 		ret = nc_get_att_int(ncid, varid, "missing_value", value);
 		if (ret == NC_NOERR) {return NC_NOERR;}
@@ -160,10 +160,10 @@ public:
 	int ncGetVarConvert(int ncid_in, int varId, size_t* start_in, size_t* len_in, double* buffer) {
 		return nc_get_vara_double(ncid_in, varId, start_in, len_in, buffer);
 	}
-	int ncPutVarConvert(int ncid_out, int varId, size_t* start_out, size_t* len_out, double* buffer) {
+	int ncPutVarConvert(int ncid_out, int varId, size_t* start_out, size_t* len_out, double* buffer) override {
 		return nc_put_vara_double(ncid_out, varId, start_out, len_out, buffer);
 	}
-	int ncGetMissingValue(int ncid, int varid, double* value) {
+	int ncGetMissingValue(int ncid, int varid, double* value) override {
 		int ret;
 		ret = nc_get_att_double(ncid, varid, "missing_value", value);
 		if (ret == NC_NOERR) {return NC_NOERR;}

@@ -36,7 +36,7 @@ public:
 			m_settings = settings;
 			setupDialog();
 		}
-		const QList<Post2dWindowCellFlagSetting>& settings();
+		const QList<Post2dWindowCellFlagSetting>& settings() override;
 	*/
 private:
 //	QList<Post2dWindowCellFlagSetting> m_settings;

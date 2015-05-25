@@ -21,16 +21,16 @@ public:
 	virtual void deleteItem(QStandardItem* item);
 	void moveUpItem(QStandardItem* item);
 	void moveDownItem(QStandardItem* item);
-	void updateItemMap();
+	void updateItemMap() override;
 	GraphicsWindowDataItem* modelItemFromItem(QStandardItem* item);
-	void loadFromCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 
 protected:
 	bool isAncientChecked() const override {return true;}
-	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
-	GraphicsWindowDataModel* dataModel() const {return m_dataModel;}
+	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+	GraphicsWindowDataModel* dataModel() const override {return m_dataModel;}
 
 protected:
 	QMainWindow* m_mainWindow;

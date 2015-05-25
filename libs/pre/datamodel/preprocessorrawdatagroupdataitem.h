@@ -27,18 +27,18 @@ public:
 	PreProcessorRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorRawDataGroupDataItem();
 	void addCustomMenuItems(QMenu* menu) override;
-	void closeCgnsFile() {}
-	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
+	void closeCgnsFile() override {}
+	SolverDefinitionGridRelatedCondition* condition() override {return m_condition;}
 	bool isChildCaptionAvailable(const QString& cap);
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
 	void setDefaultValue(Grid* grid);
 	void informValueRangeChange();
 	void informDataChange();
-	bool getValueRange(double* min, double* max);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(10);}
+	bool getValueRange(double* min, double* max) override;
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
 	bool importAvailable();
-	const QList<PreProcessorRawdataDataItemInterface*> rawDatas() const;
+	const QList<PreProcessorRawdataDataItemInterface*> rawDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
 	QString title() {return m_title;}
@@ -46,25 +46,25 @@ public:
 	void addImportAction(QMenu* menu);
 	QStringList getRawDatasNotMapped();
 	void addCopyPolygon(RawDataPolygon* polygon) override;
-	GridRelatedConditionDimensionsContainer* dimensions() const {return m_dimensions;}
+	GridRelatedConditionDimensionsContainer* dimensions() const override {return m_dimensions;}
 
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool polygonExists() const;
-	virtual void saveToCgnsFile(const int fn);
+	virtual void saveToCgnsFile(const int fn) override;
 	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/) {}
-	virtual void setupEditWidget(GridRelatedConditionEditWidget* /*widget*/) {}
-	void updateCrossectionWindows();
-	void openCrossSectionWindow(RawDataRiverSurvey* rs, double crosssection);
-	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs);
-	void informCtrlPointUpdateToCrosssectionWindows();
-	void requestCrosssectionWindowDelete(RawDataRiverSurveyCrosssectionWindowProjectDataItem* item);
+	virtual void setupEditWidget(GridRelatedConditionEditWidget* /*widget*/) override {}
+	void updateCrossectionWindows() override;
+	void openCrossSectionWindow(RawDataRiverSurvey* rs, double crosssection) override;
+	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs) override;
+	void informCtrlPointUpdateToCrosssectionWindows() override;
+	void requestCrosssectionWindowDelete(RawDataRiverSurveyCrosssectionWindowProjectDataItem* item) override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	QStringList containedFiles() override;
 	void setDimensionsToFirst();
@@ -84,10 +84,10 @@ signals:
 	void selectRawData(const QModelIndex& current);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 	void setupConnectionToRawData(RawData* rawdata);
 
 	void addBackground();

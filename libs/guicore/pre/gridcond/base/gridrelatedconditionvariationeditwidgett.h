@@ -30,13 +30,13 @@ public:
 		m_newValues->SetName(iRIC::toStr(m_name).c_str());
 		m_dataItem = dItem;
 	}
-	void undo() {
+	void undo() override {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_oldValues);
 		m_dataItem->updateAttributeActorSettings();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
 	}
-	void redo() {
+	void redo() override {
 		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_newValues);
 		m_dataItem->updateAttributeActorSettings();
 		m_dataItem->informgridRelatedConditionChange(m_name);
@@ -73,7 +73,7 @@ public:
 		setValue(tmpval);
 	}
 
-	QVariant variantValue() {
+	QVariant variantValue() override {
 		return QVariant(value());
 	}
 

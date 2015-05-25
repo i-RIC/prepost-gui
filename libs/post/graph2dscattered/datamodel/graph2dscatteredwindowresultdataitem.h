@@ -27,7 +27,7 @@ public:
 
 protected:
 	virtual void updateValues(int fn) = 0;
-	void setVisible(bool visible);
+	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
 
 	Graph2dScatteredWindowResultSetting::Setting m_setting;

@@ -41,24 +41,25 @@ public:
 	/**
 	 * @param index The index of grid cell.
 	 */
-	V value(unsigned int index) {
+	V value(unsigned int index) override {
 		return dataArray()->GetValue(static_cast<vtkIdType>(index));
 	}
 	/// The setter function of values.
-	void setValue(unsigned int index, V val) {
+	void setValue(unsigned int index, V val) override {
 		dataArray()->SetValue(static_cast<vtkIdType>(index), val);
 	}
-	DA* dataArray() {
-		vtkDataArray* da = GridRelatedConditionContainerT<V>::m_grid->vtkGrid()->GetPointData()->GetArray(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());
+	DA* dataArray() const override {
+		vtkPointSet* ps = const_cast<vtkPointSet*> (GridRelatedConditionContainerT<V>::m_grid->vtkGrid());
+		vtkDataArray* da = ps->GetPointData()->GetArray(iRIC::toStr(GridRelatedConditionContainerT<V>::name()).c_str());
 		DA* da2 = DA::SafeDownCast(da);
 		return da2;
 	}
-	DA* dataArrayCopy() {
+	DA* dataArrayCopy() const override {
 		DA* copy = DA::New();
 		copy->DeepCopy(dataArray());
 		return copy;
 	}
-	unsigned int dataCount() const {
+	unsigned int dataCount() const override {
 		return GridRelatedConditionContainerT<V>::m_grid->nodeCount();
 	}
 };

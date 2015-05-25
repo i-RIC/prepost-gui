@@ -19,13 +19,13 @@ public:
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem();
 protected:
-	void updateActivePoints();
+	void updateActivePoints() override;
 	void informGridUpdate();
 	void updateFilterSettings();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	QDialog* propertyDialog(QWidget* p);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 private:
 	SamplingMode m_samplingMode;
 	int m_samplingRate;

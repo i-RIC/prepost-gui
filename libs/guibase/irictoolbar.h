@@ -22,8 +22,8 @@ signals:
 	void visibilityChanged(bool visible);
 
 protected:
-	void hideEvent(QHideEvent* e);
-	void showEvent(QShowEvent* e);
+	void hideEvent(QHideEvent* e) override;
+	void showEvent(QShowEvent* e) override;
 
 private:
 	void init();

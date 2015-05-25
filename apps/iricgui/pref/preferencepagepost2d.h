@@ -16,7 +16,7 @@ class PreferencePagePost2d : public PreferencePage
 public:
 	explicit PreferencePagePost2d(QWidget* parent = nullptr);
 	~PreferencePagePost2d();
-	void update();
+	void update() override;
 
 private:
 	QSettings m_settings;

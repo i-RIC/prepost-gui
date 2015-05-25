@@ -39,12 +39,12 @@ public:
 	/// Constructor
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void updateActorSettings();
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	void update();
@@ -53,17 +53,16 @@ public slots:
 	void exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem*);
 
 protected:
-	void innerUpdate2Ds();
+	void innerUpdate2Ds() override;
 	void updateColorSetting();
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
 	virtual void updateActivePoints() = 0;
-//	virtual vtkPointSet* getPointSet() = 0;
 	void setCurrentSolution(const QString& currentSol);
 	const QString& currentSolution() {return m_currentSolution;}
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void setupActors();

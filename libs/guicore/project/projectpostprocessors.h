@@ -22,9 +22,9 @@ public:
 
 protected:
 	// Never used.
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doLoadFromProjectMainFile(const QDomNode& node, bool import = false);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	QList<PostProcessorWindowProjectDataItem*> m_postProcessorWindows;

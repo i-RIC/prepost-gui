@@ -33,8 +33,8 @@ public:
 	bool hasResults();
 	/// Emit signal cgnsStepsUpdated().
 	void informCgnsSteps();
-	void loadFromCgnsFile(const int fn);
-	void closeCgnsFile();
+	void loadFromCgnsFile(const int fn) override;
+	void closeCgnsFile() override;
 	const QList<PostZoneDataContainer*>& zoneContainers1D() {return m_zoneContainers1D;}
 	const QList<PostZoneDataContainer*>& zoneContainers2D() {return m_zoneContainers2D;}
 	const QList<PostZoneDataContainer*>& zoneContainers3D() {return m_zoneContainers3D;}
@@ -68,11 +68,11 @@ public:
 	int fileId() const {return m_fileId;}
 
 protected:
-	void timerEvent(QTimerEvent*);
+	void timerEvent(QTimerEvent*) override;
 	bool innerSetupZoneDataContainers(int fn, int dimiension, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
 	bool innerSetupDummy3DZoneDataContainers(int fn, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
-	virtual void doLoadFromProjectMainFile(const QDomNode& node);
-	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
+	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void informStepsUpdated();
 
 public slots:

@@ -82,8 +82,8 @@ class Structured15DGridCrossSectionEditCommand : public QUndoCommand
 {
 public:
 	Structured15DGridCrossSectionEditCommand(bool apply, const QString& title, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& after, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& before, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, bool tableaction = false);
-	void redo();
-	void undo();
+	void redo() override;
+	void undo() override;
 private:
 	bool m_apply;
 	bool m_first;

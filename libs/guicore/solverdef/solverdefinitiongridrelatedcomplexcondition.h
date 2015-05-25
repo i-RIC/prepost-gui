@@ -23,8 +23,8 @@ public:
 	const QDomElement& element() {return m_element;}
 	GridRelatedConditionContainer* container(Grid* grid);
 
-	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
-	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
+	GridRelatedConditionEditWidget* editWidget(QWidget* parent) override;
+	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
 	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;

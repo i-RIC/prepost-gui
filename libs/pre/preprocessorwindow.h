@@ -56,7 +56,7 @@ public:
 	 * When close event occures, Preprocessor window is not close,
 	 * but only hidden.
 	 */
-	void closeEvent(QCloseEvent* e);
+	void closeEvent(QCloseEvent* e) override;
 	/// Setup window position and size to the default.
 	void setupDefaultGeometry();
 	/// Import Calculation Condition from specified file.
@@ -67,8 +67,8 @@ public:
 	GridState checkGridState();
 	/// Check grid shape and if problems found, returns warning message.
 	const QString checkGrid(bool detail) override;
-	void showEvent(QShowEvent* e);
-	void hideEvent(QHideEvent* e);
+	void showEvent(QShowEvent* e) override;
+	void hideEvent(QHideEvent* e) override;
 	//public slots:
 //	void switchGridMode(SolverDefinition::GridType /*gt*/){}
 	QPixmap snapshot() override;
@@ -81,8 +81,8 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
-	const PreProcessorDataModelInterface* dataModel() const {return m_dataModel;}
-	PreProcessorDataModelInterface* dataModel() { return m_dataModel; }
+	const PreProcessorDataModelInterface* dataModel() const override {return m_dataModel;}
+	PreProcessorDataModelInterface* dataModel() override { return m_dataModel; }
 
 public slots:
 	void cameraFit();

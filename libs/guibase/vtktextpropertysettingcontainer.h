@@ -47,9 +47,9 @@ public:
 	void setShadow(bool shadow) {m_isShadow = shadow;}
 
 	/// Load setting from XML attributes
-	void load(const QDomNode&);
+	void load(const QDomNode&) override;
 	/// Save setting to XML attributes
-	void save(QXmlStreamWriter&) const;
+	void save(QXmlStreamWriter&) const override;
 
 	/// Get setting from vtkTextProperty instance
 	void getSetting(vtkTextProperty* prop);

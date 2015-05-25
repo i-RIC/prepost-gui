@@ -52,7 +52,7 @@ public:
 	QString scalarBarTitle();
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void measuredValueChanged(int index);

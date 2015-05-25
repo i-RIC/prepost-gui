@@ -29,14 +29,14 @@ public:
 	void hideFillSettings();
 	void hideDivisionNumber();
 	void showDivisionNumber();
-	void save();
+	void save() override;
 
 public slots:
 	void autoRangeUpdate(bool a);
 	void setContourSetting(ContourSettingWidget::Contour contour);
 
 protected:
-	void setupWidget();
+	void setupWidget() override;
 
 private:
 	Ui::LookupTableEditWidget* ui;

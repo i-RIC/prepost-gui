@@ -17,14 +17,14 @@ public:
 	PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorUnstructured2dGridShapeDataItem();
 	/// Inform that the grid is updated.
-	void informGridUpdate();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(1);}
+	void informGridUpdate() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(1);}
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setupActors();
 	void updateActorSettings();
 private:

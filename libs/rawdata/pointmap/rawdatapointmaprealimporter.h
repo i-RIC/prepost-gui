@@ -20,14 +20,14 @@ private:
 public:
 	/// Constructor
 	RawDataPointmapRealImporter(RawDataCreator* creator);
-	bool importData(RawData* data, int index, QWidget* w);
-	const QStringList fileDialogFilters();
+	bool importData(RawData* data, int index, QWidget* w) override;
+	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	GDALDataset* poDataset;
 	GDALRasterBand* poBand;
 
 protected:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w);
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
 
 private:
 	int m_filterValue;

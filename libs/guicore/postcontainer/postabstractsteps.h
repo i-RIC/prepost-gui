@@ -16,8 +16,8 @@ public:
 	/// Returns true if the current CGNS file containes more than one result step.
 	virtual bool dataExists() const = 0;
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 	/// Clear the iteration array data copied to this instance.
 	virtual void clearArray() = 0;
 };

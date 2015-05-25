@@ -11,28 +11,28 @@ class GridRelatedConditionEditDialogT : public GridRelatedConditionEditDialog
 {
 public:
 	GridRelatedConditionEditDialogT(QWidget* parent, SolverDefinitionGridRelatedConditionT<V>* cond)
-		: GridRelatedConditionEditDialog(parent, cond) {
+		: GridRelatedConditionEditDialog(parent, cond) override {
 		m_value = 0;
 	}
-	void setValue(V value) {
+	void setValue(V value) override {
 		m_value = value;
 		m_valueCleared = false;
 		m_valueSelected = true;
 		setupDialog();
 	}
-	V value() {
+	V value() override {
 		return m_value;
 	}
-	void setVariantValue(const QVariant& v) {
+	void setVariantValue(const QVariant& v) override {
 		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(m_gridRelatedCondition);
 		V tmpval = cond->fromVariant(v);
 		setValue(tmpval);
 	}
 
-	QVariant variantValue() {
-		return QVariant(m_value);
+	QVariant variantValue() override {
+		return QVariant(m_value) override;
 	}
-	void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<unsigned int>& indices) {
+	void scanAndSetDefault(GridRelatedConditionContainer* container, QVector<unsigned int>& indices) override {
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* >(container);
 		bool same = true;
 		V val;
@@ -50,9 +50,9 @@ public:
 		}
 	}
 
-	void applyValue(GridRelatedConditionContainer* container, QVector<unsigned int>& indices) {
+	void applyValue(GridRelatedConditionContainer* container, QVector<unsigned int>& indices) override {
 		if (! m_valueSelected) {return;}
-		V val = value();
+		V val = value() override;
 		GridRelatedConditionContainerT<V>* c = dynamic_cast<GridRelatedConditionContainerT<V>* >(container);
 		for (auto it = indices.begin(); it != indices.end(); ++it) {
 			c->setValue(*it, val);

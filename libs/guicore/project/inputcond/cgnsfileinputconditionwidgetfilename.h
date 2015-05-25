@@ -17,7 +17,7 @@ public:
 	bool checkContent();
 
 protected:
-	void focusOutEvent(QFocusEvent* e);
+	void focusOutEvent(QFocusEvent* e) override;
 signals:
 	void valueChanged(QString txt);
 };

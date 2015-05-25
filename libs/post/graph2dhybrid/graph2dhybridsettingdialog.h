@@ -21,7 +21,7 @@ public:
 public slots:
 	void xAxisRadioButtonToggled();
 	void yAxisComboBoxChange(int index);
-	void accept();
+	void accept() override;
 private:
 	bool axisRangesCheck();
 	void applyXAxisSetting();

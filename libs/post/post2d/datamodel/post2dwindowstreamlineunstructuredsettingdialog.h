@@ -42,8 +42,8 @@ public:
 	void informButtonUp(const QVector2D& p);
 public slots:
 	void updateMousePosition(const QVector2D& p);
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void activeDataChanged(int index);
 	void pointsEdited();

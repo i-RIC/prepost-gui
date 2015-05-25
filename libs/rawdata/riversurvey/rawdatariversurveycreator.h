@@ -11,11 +11,11 @@ class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCreator : public RawDataCreator
 public:
 	/// Constructor
 	RawDataRiverSurveyCreator();
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition);
-	QString name(unsigned int index);
+	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) override;
+	QString name(unsigned int index) override;
 	QString defaultCaption(unsigned int index) override;
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
-	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
+	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
 };
 
 #endif // RAWDATARIVERSURVEYCREATOR_H

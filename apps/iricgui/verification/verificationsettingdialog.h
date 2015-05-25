@@ -36,7 +36,7 @@ public:
 	MeasuredData* measuredData();
 	QString activeValue();
 public slots:
-	void accept();
+	void accept() override;
 private slots:
 	void selectZone(int zoneid);
 	void selectFile(int fileid);

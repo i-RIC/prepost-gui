@@ -30,17 +30,17 @@ class Post2dWindowCellFlagGroupDataItem : public Post2dWindowDataItem
 public:
 	Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* parent);
 	void update();
-	bool hasTransparentPart();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	bool hasTransparentPart() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	QDialog* propertyDialog(QWidget* /*parent*/);
-	void handlePropertyDialogAccepted(QDialog*);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	QDialog* propertyDialog(QWidget* /*parent*/) override;
+	void handlePropertyDialogAccepted(QDialog*) override;
 
 private:
 	QList<Post2dWindowCellFlagSetting> settings();

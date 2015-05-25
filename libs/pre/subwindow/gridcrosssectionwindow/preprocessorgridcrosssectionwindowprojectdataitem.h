@@ -19,8 +19,8 @@ public:
 	}
 	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem() {return m_item;}
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	PreProcessorGridRelatedConditionNodeDataItem* m_item;
 	PreProcessorGridCrosssectionWindow* m_window;

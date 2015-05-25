@@ -13,11 +13,11 @@ class Graph2dHybridWindowBaseIterativeResultDataItem : public Graph2dHybridWindo
 public:
 	Graph2dHybridWindowBaseIterativeResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dHybridWindowBaseIterativeResultDataItem();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent) override;
 protected:
-	void updateValues(int fn);
+	void updateValues(int fn) override;
 private:
 	PostBaseIterativeSeriesDataContainer* m_dataContainer;
 };

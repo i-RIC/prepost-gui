@@ -45,13 +45,13 @@ public:
 	void setupPolyData();
 	bool noPolyData() const {return m_noPolyData;}
 	void applyOffset(double x, double y) {doApplyOffset(x, y);}
-	void doApplyOffset(double x, double y);
+	void doApplyOffset(double x, double y) override;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 private:
 	bool m_noPolyData;

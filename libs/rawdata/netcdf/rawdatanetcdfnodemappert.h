@@ -25,7 +25,7 @@ public:
 		: RawDataNodeMapperT<V, DA>(parent) {
 		RawDataNodeMapperT<V, DA>::m_caption = "Raster data node mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap) {
+	RawDataMapperSetting* initialize(bool* boolMap) override {
 		RawDataNetcdfNodeMapperSetting* s = new RawDataNetcdfNodeMapperSetting();
 		unsigned int count = RawDataNodeMapperT<V, DA>::container()->dataCount();
 		RawDataNetcdfT<V, DA>* netcdf = dynamic_cast<RawDataNetcdfT<V, DA>* >(RawDataMapper::m_rawdata);
@@ -52,7 +52,7 @@ public:
 		return s;
 	}
 
-	void map(bool* boolMap, RawDataMapperSetting* s) {
+	void map(bool* boolMap, RawDataMapperSetting* s) override {
 		RawDataNetcdfNodeMapperSetting* s2 =
 			dynamic_cast<RawDataNetcdfNodeMapperSetting*>(s);
 		DA* da = RawDataNodeMapperT<V, DA>::container()->dataArray();
@@ -72,7 +72,7 @@ public:
 		da->Modified();
 	}
 
-	void terminate(RawDataMapperSetting* s) {
+	void terminate(RawDataMapperSetting* s) override {
 		delete s;
 	}
 };

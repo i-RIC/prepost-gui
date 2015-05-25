@@ -19,8 +19,8 @@ public:
 	GridCreatingConditionRiverSurveyPointAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointAddDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 private:

@@ -34,7 +34,7 @@ public:
 	/// Update the value at the specified index.
 	virtual void setValue(unsigned int index, V value) = 0;
 
-	bool loadFromCgnsFile(int fn, int B, int Z) {
+	bool loadFromCgnsFile(int fn, int B, int Z) override {
 		GridRelatedConditionDimensionsContainer* dims = dimensions();
 		bool allok = true;
 		if (dims == 0 || dims->containers().size() == 0) {
@@ -108,7 +108,7 @@ public:
 		return true;
 	}
 
-	bool saveToCgnsFile(int fn, int B, int Z) {
+	bool saveToCgnsFile(int fn, int B, int Z) override {
 		int ier;
 		// Goto "GridConditions" node.
 		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, "end");
@@ -156,13 +156,13 @@ public:
 		return true;
 	}
 
-	virtual vtkDataArray* dataArray() = 0;
-	virtual vtkDataArray* dataArrayCopy() = 0;
-	virtual void setModified() {
+	virtual vtkDataArray* dataArray() const = 0;
+	virtual vtkDataArray* dataArrayCopy() const = 0;
+	virtual void setModified() override {
 		dataArray()->Modified();
 	}
 
-	bool loadFromExternalFile(const QString& filename) {
+	bool loadFromExternalFile(const QString& filename) override {
 		QFile f(filename);
 		bool ok = f.open(QIODevice::ReadOnly);
 		if (!ok) {return false;}
@@ -178,7 +178,7 @@ public:
 		return true;
 	}
 
-	bool saveToExternalFile(const QString& filename) {
+	bool saveToExternalFile(const QString& filename) override {
 		QFile f(filename);
 		bool ok = f.open(QIODevice::WriteOnly);
 		if (!ok) { return false;}
@@ -193,7 +193,7 @@ public:
 		return true;
 	}
 
-	bool getValueRange(double* min, double* max) {
+	bool getValueRange(double* min, double* max) override {
 		double range[2];
 		dataArray()->GetRange(range);
 		*min = range[0];

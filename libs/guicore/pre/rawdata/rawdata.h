@@ -100,8 +100,8 @@ public:
 	bool isVisible();
 	void setMapped() {m_mapped = true;}
 	bool isMapped() const {return m_mapped;}
-	virtual RawDataProxy* getProxy() {return 0;}
-	void saveToCgnsFile(const int fn);
+	virtual RawDataProxy* getProxy() {return nullptr;}
+	void saveToCgnsFile(const int fn) override;
 	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* /*v*/) {}
 	void applyOffset(double x, double y) {doApplyOffset(x, y);}
 	virtual bool requestCoordinateSystem() const {return false;}
@@ -132,8 +132,8 @@ protected:
 	PreProcessorGraphicsViewInterface* graphicsView();
 	MouseBoundingBox* mouseBoundingBox();
 	PreProcessorDataModelInterface* dataModel();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	virtual int iRICLibType() const {return IRIC_GEO_UNKNOWN;}
 	GridRelatedConditionDimensionsContainer* dimensions() const;
 

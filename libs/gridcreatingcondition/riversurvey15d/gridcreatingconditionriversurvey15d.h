@@ -51,24 +51,24 @@ public:
 	};
 	GridCreatingConditionRiverSurvey15D(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionRiverSurvey15D();
-	bool create(QWidget* parent);
+	bool create(QWidget* parent) override;
 
-	bool ready() const;
-	bool init();
-	void setupActors();
-	void setupMenu();
-	void informSelection(PreProcessorGraphicsViewInterface* /*v*/);
-	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/);
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/);
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
+	bool ready() const override;
+	bool init() override;
+	void setupActors() override;
+	void setupMenu() override;
+	void informSelection(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);
 	void handleDialogAccepted(QDialog* d);
@@ -87,13 +87,13 @@ public:
 	GridCtrlOffsetInfo& GCPOffsetInfo() {return m_GCPOffsetInfo;}
 	const GridCtrlOffsetInfo& GCPOffsetInfo() const {return m_GCPOffsetInfo;}
 	void invalidateSelectedCtrlPoints();
-	void clear();
+	void clear() override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 private:
 	const static int LINEDIVS = 36;

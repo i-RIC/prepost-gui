@@ -29,8 +29,8 @@ private:
 	int numZPts, numInterpPts;
 
 private slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 };
 

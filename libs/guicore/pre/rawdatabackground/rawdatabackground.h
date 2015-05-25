@@ -20,18 +20,18 @@ public:
 	/// Constructor
 	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
 	void addCustomMenuItems(QMenu* menu) override;
-	void handleStandardItemDoubleClicked() {editValue();}
-	void setupDataItem();
+	void handleStandardItemDoubleClicked() override {editValue();}
+	void setupDataItem() override;
 	const QVariant& customValue() const {return m_customValue;}
 	virtual QVariant variantValue();
 	Type type() const {return m_type;}
 	void setType(Type t) {m_type = t;}
-	bool getValueRange(double* min, double* max);
+	bool getValueRange(double* min, double* max) override;
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 
 private slots:
 	void editValue();

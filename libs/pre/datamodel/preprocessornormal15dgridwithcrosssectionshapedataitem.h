@@ -21,19 +21,19 @@ private:
 public:
 	PreProcessorNormal15DGridWithCrossSectionShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorNormal15DGridWithCrossSectionShapeDataItem();
-	void informGridUpdate();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
+	void informGridUpdate() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
 	void addCustomMenuItems(QMenu* menu) override;
-	void updateActionStatus();
+	void updateActionStatus() override;
 	void updateCrossSectionWindows();
 	void requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setupActors();
 	void updateActorSettings();
 private slots:

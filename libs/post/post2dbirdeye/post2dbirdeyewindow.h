@@ -60,7 +60,7 @@ private:
 	const QColor backgroundColor() const;
 	/// Set background color;
 	void setBackgroundColor(QColor& c);
-	void setupDefaultGeometry(int index);
+	void setupDefaultGeometry(int index) override;
 	Post2dBirdEyeObjectBrowser* m_objectBrowser;
 	Post2dBirdEyeWindowDataModel* m_dataModel;
 	Post2dBirdEyeWindowActionManager* m_actionManager;

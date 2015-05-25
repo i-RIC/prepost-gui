@@ -32,8 +32,8 @@ signals:
 	void standardModelSetuped();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	Graph2dScatteredWindowResultGroupDataItem* m_resultGroupItem;

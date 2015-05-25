@@ -21,14 +21,14 @@ class GRAPH2D_EXPORT Graph2dWindowMarkerGroupDataItem : public Graph2dWindowData
 public:
 	Graph2dWindowMarkerGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dWindowMarkerGroupDataItem();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	const Graph2dWindowMarkerSetting& setting() {return m_setting;}
 	void setXLabel(const QString& l) {m_xLabel = l;}
 	void addMarkers(const QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem>& settings);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	Graph2dWindowMarkerSetting m_setting;
 	QString m_xLabel;

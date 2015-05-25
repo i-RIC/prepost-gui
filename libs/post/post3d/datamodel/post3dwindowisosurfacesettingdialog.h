@@ -45,7 +45,7 @@ public:
 	double isoValue();
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void setEnableCheckBox(bool);

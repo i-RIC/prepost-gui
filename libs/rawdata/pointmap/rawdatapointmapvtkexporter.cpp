@@ -21,7 +21,7 @@ RawDataPointmapVTKExporter::RawDataPointmapVTKExporter(RawDataCreator* creator)
 	m_caption = tr("Pointset (DEM etc.)");
 }
 
-bool RawDataPointmapVTKExporter::doEmport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
+bool RawDataPointmapVTKExporter::doExport(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	QString tempPath = QDir::tempPath();
 	QString tmpFile = iRIC::getTempFileName(tempPath);

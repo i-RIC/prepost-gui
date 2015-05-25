@@ -44,11 +44,11 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	ObjectBrowser* objectBrowser() const override;
 	int index() const {return m_index;}
-	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename);
-	QList<QString> particleDrawingZones();
-	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename);
-	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename);
-	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename);
+	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
+	QList<QString> particleDrawingZones() override;
+	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
+	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
+	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
 	QList<QString> contourDrawingZones() override;
 
 	bool hasTransparentPart();
@@ -71,7 +71,7 @@ private:
 	const QColor backgroundColor() const;
 	/// Set background color;
 	void setBackgroundColor(QColor& c);
-	void setupDefaultGeometry(int index);
+	void setupDefaultGeometry(int index) override;
 	Post2dObjectBrowser* m_objectBrowser;
 	Post2dWindowDataModel* m_dataModel;
 	Post2dWindowActionManager* m_actionManager;

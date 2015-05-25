@@ -43,7 +43,7 @@ public:
 	/// Set the dialog to "unlimit mode".
 	void setUnknownLimitMode(int param);
 	/// Handler for cancel button
-	void reject();
+	void reject() override;
 
 signals:
 	void canceled();

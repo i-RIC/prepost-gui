@@ -11,9 +11,9 @@ public:
 		: PostZoneDataContainer(baseName, zoneName, gridtype, parent)
 	{}
 protected:
-	bool loadStructuredGrid(const int fn, const int currentStep);
-	bool loadScalarData(const int fn, const int solid);
-	bool loadVectorData(const int fn, const int solid);
+	bool loadStructuredGrid(const int fn, const int currentStep) override;
+	bool loadScalarData(const int fn, const int solid) override;
+	bool loadVectorData(const int fn, const int solid) override;
 private:
 	static const int KMAX = 11;
 	static const int ZWIDTH = 1;

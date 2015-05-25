@@ -27,13 +27,13 @@ public:
 	virtual ~Post2dWindowNodeVectorStreamlineGroupDataItem();
 	void updateActorSettings();
 	void setupClipper();
-	void updateZDepthRangeItemCount();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void updateZDepthRangeItemCount() override;
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	virtual void assignActorZValues(const ZDepthRange& range);
+	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 
 public slots:
@@ -43,8 +43,8 @@ protected:
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setCurrentSolution(const QString& currentSol);
 	const QString& currentSolution() {return m_currentSolution;}
 

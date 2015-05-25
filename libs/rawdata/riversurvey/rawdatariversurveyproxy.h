@@ -17,17 +17,17 @@ class RawDataRiverSurveyProxy : public RawDataProxy
 public:
 	RawDataRiverSurveyProxy(RawDataRiverSurvey* rawdata) : RawDataProxy(rawdata) {}
 	~RawDataRiverSurveyProxy();
-	void setupActors();
+	void setupActors() override;
 
-	void updateZDepthRangeItemCount(ZDepthRange& range);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 public slots:
-	void updateGraphics();
+	void updateGraphics() override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 private:
 	bool m_showBackground;

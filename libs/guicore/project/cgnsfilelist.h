@@ -27,8 +27,8 @@ public:
 		/// Comment for this calculation
 		const QString& comment() {return m_comment;}
 	protected:
-		void doLoadFromProjectMainFile(const QDomNode& node);
-		void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+		void doLoadFromProjectMainFile(const QDomNode& node) override;
+		void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	private:
 		QString m_filename;
 		QString m_comment;
@@ -50,8 +50,8 @@ public:
 	/// Propose a file name for next cgns to create.
 	QString proposeFilename();
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 signals:
 	void cgnsFilesUpdated(QList<CgnsFileList::CgnsFileEntry*>);

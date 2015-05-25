@@ -18,7 +18,7 @@ public:
 	explicit SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent);
 	~SolverConsoleWindowProjectDataItem();
 	void initForSolverDefinition();
-	void loadExternalData(const QString& filename);
+	void loadExternalData(const QString& filename) override;
 	void open();
 	void close();
 	void clear();
@@ -28,8 +28,8 @@ public slots:
 	void exportConsoleLog();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& element);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& element) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void appendToLines(const QString& line);

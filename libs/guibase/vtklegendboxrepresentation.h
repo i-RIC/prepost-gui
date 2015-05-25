@@ -12,7 +12,7 @@ class GUIBASEDLL_EXPORT vtkLegendBoxRepresentation : public vtkBorderRepresentat
 {
 public:
 	vtkTypeRevisionMacro(vtkLegendBoxRepresentation, vtkBorderRepresentation);
-	virtual void PrintSelf(ostream& os, vtkIndent indent);
+	virtual void PrintSelf(ostream& os, vtkIndent indent) override;
 	static vtkLegendBoxRepresentation* New();
 
 	// Description:
@@ -22,20 +22,20 @@ public:
 
 	// Description:
 	// Satisfy the superclass' API.
-	virtual void BuildRepresentation();
-	virtual void WidgetInteraction(double eventPos[2]);
+	virtual void BuildRepresentation() override;
+	virtual void WidgetInteraction(double eventPos[2]) override;
 	virtual void GetSize(double size[2])
 	{size[0]=2.0; size[1]=2.0;}
 
 	// Description:
 	// These methods are necessary to make this representation behave as
 	// a vtkProp.
-	virtual void GetActors2D(vtkPropCollection* collection);
-	virtual void ReleaseGraphicsResources(vtkWindow* window);
-	virtual int RenderOverlay(vtkViewport*);
-	virtual int RenderOpaqueGeometry(vtkViewport*);
-	virtual int RenderTranslucentPolygonalGeometry(vtkViewport*);
-	virtual int HasTranslucentPolygonalGeometry();
+	virtual void GetActors2D(vtkPropCollection* collection) override;
+	virtual void ReleaseGraphicsResources(vtkWindow* window) override;
+	virtual int RenderOverlay(vtkViewport*) override;
+	virtual int RenderOpaqueGeometry(vtkViewport*) override;
+	virtual int RenderTranslucentPolygonalGeometry(vtkViewport*) override;
+	virtual int HasTranslucentPolygonalGeometry() override;
 
 	// Description:
 	// Get/Set the orientation.

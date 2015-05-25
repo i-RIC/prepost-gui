@@ -34,8 +34,8 @@ public:
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const ;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
 	void applySettings();
 	Graph2dHybridWindowHorizontalAxisSetting* m_hAxisSetting;

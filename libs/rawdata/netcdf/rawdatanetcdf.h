@@ -91,15 +91,15 @@ public:
 	int outputDimensions(int ncid, const QList<int>& varIds);
 	bool requestCoordinateSystem() const override {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
-	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v);
+	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
 	virtual double thresholdValue() = 0;
 
 public slots:
-	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
-	void handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/);
+	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
+	void handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override;
 
 private:
-	void setupActors();
+	void setupActors() override;
 	void updateShapeData();
 	void updateActorSettings();
 	void updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax);
@@ -109,12 +109,12 @@ private:
 	static nc_type getNcType(SolverDefinitionGridRelatedCondition* cond);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void updateFilename();
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
-	void doApplyOffset(double x, double y);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void updateFilename() override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
+	void doApplyOffset(double x, double y) override;
 	int getValueVarId(int ncid, int* varId);
 
 	void getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) const;

@@ -20,8 +20,8 @@ public:
 	~RawDataRiverPathPointRotateDialog();
 	void setCurrentRelativeAngle(double current);
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void relativeChange();
 	void incrementChange();

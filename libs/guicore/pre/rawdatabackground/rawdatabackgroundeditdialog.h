@@ -27,7 +27,7 @@ public:
 	}
 	void setWidget(GridRelatedConditionEditWidget* w);
 	void setupDialog();
-	void accept();
+	void accept() override;
 
 private slots:
 	void updateCustomWidgetStatus();

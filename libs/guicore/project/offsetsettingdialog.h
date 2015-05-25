@@ -20,7 +20,7 @@ public:
 	double offsetY() const;
 
 public slots:
-	void accept();
+	void accept() override;
 
 private:
 	bool isPrecisionGood(double v);

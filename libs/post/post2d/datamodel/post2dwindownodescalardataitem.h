@@ -16,21 +16,21 @@ class Post2dWindowNodeScalarDataItem : public Post2dWindowDataItem
 public:
 	/// Constructor
 	Post2dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 	const QString& name() const {return m_name;}
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 signals:
 	void changed(Post2dWindowNodeScalarDataItem*);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
+	void doLoadFromProjectMainFile(const QDomNode&) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
 
 private:
 	QString m_name;

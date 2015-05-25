@@ -38,9 +38,9 @@ public:
 
 	QMainWindow* mainWindow() const;
 	/// Load data from project main file
-	virtual void loadFromProjectMainFile(const QDomNode& node);
+	virtual void loadFromProjectMainFile(const QDomNode& node) override;
 	/// Save data into project main file
-	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
+	virtual void saveToProjectMainFile(QXmlStreamWriter& writer) override;
 	/// The QStandardItem that corresponds to this item.
 	QStandardItem* standardItem() const {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
@@ -55,11 +55,11 @@ public:
 	/// Handle the event that the corresponding standardItem is double-clicked.
 	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int fn);
+	virtual void loadFromCgnsFile(const int fn) override;
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int fn);
+	virtual void saveToCgnsFile(const int fn) override;
 	/// Discard data loaded from CGNS file.
-	virtual void closeCgnsFile();
+	virtual void closeCgnsFile() override;
 	/// Returns true if this item is deletable.
 	virtual bool isDeletable() const {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
@@ -86,10 +86,11 @@ public:
 	void setZDepthRange(const ZDepthRange& newrange);
 	void updateZDepthRange();
 	void startClosingProject();
-	virtual QStringList containedFiles();
+	virtual QStringList containedFiles() override;
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
 	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
+
 protected:
 	virtual void assignActorZValues(const ZDepthRange& range);
 	virtual Graph2dWindowDataModel* dataModel() const {return dynamic_cast<Graph2dWindowDataItem*>(parent())->dataModel();}
@@ -115,6 +116,7 @@ protected:
 	bool m_isExpanded;
 	ZDepthRange m_zDepthRange;
 	bool m_isCommandExecuting;
+
 protected:
 	/// If true, the PreProcessorDataItem tree is under destruction.
 	bool m_isDestructing;

@@ -48,9 +48,9 @@ public:
 
 	QMainWindow* mainWindow() const;
 	/// Load data from project main file
-	virtual void loadFromProjectMainFile(const QDomNode& node);
+	virtual void loadFromProjectMainFile(const QDomNode& node) override;
 	/// Save data into project main file
-	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
+	virtual void saveToProjectMainFile(QXmlStreamWriter& writer) override;
 	/// The QStandardItem that corresponds to this item.
 	QStandardItem* standardItem() const {return m_standardItem;}
 	/// The QStandardItem that corresponds to this item.
@@ -65,11 +65,11 @@ public:
 	/// Handle the event that the corresponding standardItem is double-clicked.
 	virtual void handleStandardItemDoubleClicked() {}
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int fn);
+	virtual void loadFromCgnsFile(const int fn) override;
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int fn);
+	virtual void saveToCgnsFile(const int fn) override;
 	/// Discard data loaded from CGNS file.
-	virtual void closeCgnsFile();
+	virtual void closeCgnsFile() override;
 	/// Returns true if this item is deletable.
 	virtual bool isDeletable() const {return m_isDeletable;}
 	/// Returns true if this item can be moved up or down.
@@ -113,7 +113,7 @@ public:
 	void startClosingProject();
 	vtkActorCollection* actorCollection() const {return m_actorCollection;}
 	vtkActor2DCollection* actor2DCollection() const {return m_actor2DCollection;}
-	virtual QStringList containedFiles();
+	virtual QStringList containedFiles() override;
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
 	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
@@ -197,7 +197,7 @@ public:
 		m_item->setModified();
 	}
 
-	void redo() {
+	void redo() override {
 		m_item->setIsCommandExecuting(true);
 
 		redoStandardItem();
@@ -215,7 +215,7 @@ public:
 
 		m_item->setModified();
 	}
-	void undo() {
+	void undo() override {
 		m_item->setIsCommandExecuting(true);
 
 		undoStandardItem();

@@ -26,7 +26,7 @@ signals:
 	void colorChanged(const QColor& c);
 
 protected:
-	void mousePressEvent(QMouseEvent* ev);
+	void mousePressEvent(QMouseEvent* ev) override;
 	QColor m_color;
 };
 

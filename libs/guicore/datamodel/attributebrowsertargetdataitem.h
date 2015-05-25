@@ -21,7 +21,7 @@ class GUICOREDLL_EXPORT AttributeBrowserTargetDataItem : public GraphicsWindowDa
 public:
 	AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent);
 	~AttributeBrowserTargetDataItem();
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
 	void setPoint(const QVector2D& v);
@@ -29,8 +29,8 @@ public:
 	void clear();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) {}
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
 private:
 	void setupContainers();

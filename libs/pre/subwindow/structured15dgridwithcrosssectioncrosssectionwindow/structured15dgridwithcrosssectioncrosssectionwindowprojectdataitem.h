@@ -17,8 +17,8 @@ public:
 		return m_window;
 	}
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 protected:
 	Structured15DGridWithCrossSectionCrossSectionWindow* m_window;
 	/*

@@ -12,7 +12,7 @@ public:
 	PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent);
 	~PreProcessorNormal15DGridWithCrossSectionDataItem();
 protected:
-	void setupMenu();
+	void setupMenu() override;
 private:
 	QMenu* m_editMenu;
 	QMenu* m_displayMenu;

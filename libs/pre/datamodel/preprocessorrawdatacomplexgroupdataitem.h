@@ -20,17 +20,17 @@ public:
 	/// Constructor
 	PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
 	~PreProcessorRawDataComplexGroupDataItem();
-	void loadFromCgnsFile(const int fn);
-	void saveComplexGroupsToCgnsFile(const int fn);
+	void loadFromCgnsFile(const int fn) override;
+	void saveComplexGroupsToCgnsFile(const int fn) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
-	void setupEditWidget(GridRelatedConditionEditWidget* widget);
+	ProjectData* projectData() override {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
+	void setupEditWidget(GridRelatedConditionEditWidget* widget) override;
 	void applyScalarsToColorsSetting();
 	SolverDefinitionGridRelatedCondition* condition() override;
 
 public slots:
 	void showEditGroupDialog();
-	void editScalarsToColors();
+	void editScalarsToColors() override;
 
 protected:
 	void addBackground();

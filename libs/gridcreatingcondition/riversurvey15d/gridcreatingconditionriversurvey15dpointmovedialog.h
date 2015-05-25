@@ -25,8 +25,8 @@ public:
 	~GridCreatingConditionRiverSurvey15DPointMoveDialog();
 
 	void apply();
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private:
 	void setSValue();
@@ -43,7 +43,7 @@ private:
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);
-//	void on_buttonBox_clicked(QAbstractButton* button);
+//	void on_buttonBox_clicked(QAbstractButton* button) override;
 };
 
 #endif // GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTMOVEDIALOG_H

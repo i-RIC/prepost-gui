@@ -74,7 +74,7 @@ public:
 
 	virtual ~QwtPlotCustomMarker();
 
-	virtual int rtti() const;
+	virtual int rtti() const override;
 
 	double xValue() const;
 	double yValue() const;
@@ -114,9 +114,9 @@ public:
 										const QwtScaleMap& xMap, const QwtScaleMap& yMap,
 										const QRectF&) const;
 
-	virtual QRectF boundingRect() const;
+	virtual QRectF boundingRect() const override;
 
-	virtual QwtGraphic legendIcon(int index, const QSizeF&) const;
+	virtual QwtGraphic legendIcon(int index, const QSizeF&) const override;
 
 protected:
 	virtual void drawLines(QPainter*,

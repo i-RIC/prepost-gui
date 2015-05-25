@@ -10,7 +10,7 @@ public:
 	Structured15DGridWithCrossSectionCrossSectionWindowDelegate();
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option,
 												const QModelIndex& index) const;
-	void setEditorData(QWidget* editor, const QModelIndex& index) const;
+	void setEditorData(QWidget* editor, const QModelIndex& index) const override;
 	void setModelData(QWidget* editor, QAbstractItemModel* model,
 										const QModelIndex& index) const;
 	void updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option,

@@ -7,6 +7,6 @@ class QTransform;
 
 namespace iRIC
 {
-	qreal getScale(const QTransform& t);
+	qreal getScale(const QTransform& t) override;
 }
 #endif // GRAPHICSSUPPORT_H

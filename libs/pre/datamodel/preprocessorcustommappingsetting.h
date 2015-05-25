@@ -13,8 +13,8 @@ public:
 	QMap<QString, bool> attSettings;
 	QMap<QString, bool> bcSettings;
 
-	void load(const QDomNode& node);
-	void save(QXmlStreamWriter& writer) const;
+	void load(const QDomNode& node) override;
+	void save(QXmlStreamWriter& writer) const override;
 };
 
 #endif // PREPROCESSORCUSTOMMAPPINGSETTING_H

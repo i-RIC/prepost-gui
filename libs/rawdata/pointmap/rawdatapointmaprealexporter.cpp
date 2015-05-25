@@ -17,7 +17,7 @@ RawDataPointmapRealExporter::RawDataPointmapRealExporter(RawDataCreator* creator
 	m_caption = tr("Pointset (DEM etc.)");
 }
 
-bool RawDataPointmapRealExporter::doEmport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
+bool RawDataPointmapRealExporter::doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
 {
 	// Allocate objects to hold points and vertex cells.
 	RawDataPointMapT<double, vtkDoubleArray>* pmap = dynamic_cast<RawDataPointMapT<double, vtkDoubleArray>*>(data);

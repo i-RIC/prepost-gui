@@ -36,8 +36,8 @@ public:
 		m_widget->applyValue(container, indices, atts, dItem);
 	}
 	QVariant variantValue() const {return m_widget->variantValue();}
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 
 private:
 	bool m_cancelInhibited;

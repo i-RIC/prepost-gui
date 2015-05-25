@@ -88,25 +88,25 @@ public:
 
 	/// Execute the delaunay division.
 	bool doDelaunay(bool allowCancel = false);
-	void setupActors();
+	void setupActors() override;
 	void setupActions();
-	void setupMenu();
+	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	void setPoints(vtkPoints* points, vtkDataArray* values);
 	void setSTLData(vtkPolyData* data, vtkDataArray* values);
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void updateRepresentation();
 	void updateActorSettings();
 	void addCustomMenuItems(QMenu* menu) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
 	vtkPolygon* getVtkInterpPolygon() {return m_vtkInterpPolygon;}
 	vtkDoubleArray* getVtkInterpValue() {return m_vtkInterpValue;}
@@ -179,13 +179,13 @@ private slots:
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void updateFilename();
-	void loadExternalData(const QString& filename);
-	void saveExternalData(const QString& filename);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void updateFilename() override;
+	void loadExternalData(const QString& filename) override;
+	void saveExternalData(const QString& filename) override;
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void doApplyOffset(double x, double y);
+	void doApplyOffset(double x, double y) override;
 
 protected:
 	/// The polygon data container.

@@ -18,15 +18,15 @@ class PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterfac
 public:
 	PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~PreProcessorGridTypeDataItem();
-	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const {return m_conditions;}
+	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override {return m_conditions;}
 	const QString& name() const;
-	PreProcessorRawDataTopDataItemInterface* rawdataTop() const {return m_rawdataTop;}
+	PreProcessorRawDataTopDataItemInterface* rawdataTop() const override {return m_rawdataTop;}
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const QString& name) const;
-	SolverDefinitionGridType* gridType() const {return m_gridType;}
+	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
-	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const {return m_scalarsToColors.value(attName, 0);}
+	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const override {return m_scalarsToColors.value(attName, 0);}
 	QAction* addNewGridAction() {return m_addNewGridAction;}
 	bool gridEdited() const;
 	void toggleGridEditFlag();
@@ -36,9 +36,9 @@ public slots:
 	void changeValueRange(const QString& name);
 
 protected:
-	void unregisterChild(GraphicsWindowDataItem* child);
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void unregisterChild(GraphicsWindowDataItem* child) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
 private:

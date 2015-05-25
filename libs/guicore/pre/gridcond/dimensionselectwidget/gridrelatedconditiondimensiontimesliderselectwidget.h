@@ -52,11 +52,11 @@ private slots:
 	void handleTimerTimeout();
 
 signals:
-//	void indexChanged(unsigned int index);
+//	void indexChanged(unsigned int index) override;
 
 protected:
-	void doApplyValues();
-	void doSetCurrentIndex(int newIndex);
+	void doApplyValues() override;
+	void doSetCurrentIndex(int newIndex) override;
 
 private:
 	void disableSteppingActions(bool disable = true);

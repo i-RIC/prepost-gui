@@ -18,7 +18,7 @@ public:
 	double value0() const {return m_value0;}
 	/// Value for parameter with value 1
 	double value1() const {return m_value1;}
-	double interpolate(double t) const;
+	double interpolate(double t) const override;
 
 private:
 	double m_value0;
@@ -36,8 +36,8 @@ public:
 	void setValues(const QVector2D& v0, const QVector2D& v1);
 	const QVector2D& vector0() const {return m_value0;}
 	const QVector2D& vector1() const {return m_value1;}
-	QVector2D interpolate(double t) const;
-	virtual Interpolator2D1* copy() const;
+	QVector2D interpolate(double t) const override;
+	virtual Interpolator2D1* copy() const override;
 
 private:
 	QVector2D m_value0;

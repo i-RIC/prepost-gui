@@ -16,9 +16,9 @@ public:
 		: RawDataNodeMapperT<double, vtkDoubleArray>(parent) {
 		RawDataNodeMapperT<double, vtkDoubleArray>::m_caption = "River survey node mapper";
 	}
-	RawDataMapperSetting* initialize(bool* boolMap);
-	void map(bool* boolMap, RawDataMapperSetting* s);
-	void terminate(RawDataMapperSetting* s);
+	RawDataMapperSetting* initialize(bool* boolMap) override;
+	void map(bool* boolMap, RawDataMapperSetting* s) override;
+	void terminate(RawDataMapperSetting* s) override;
 };
 
 #endif // RAWDATARIVERSURVEYNODEMAPPER_H

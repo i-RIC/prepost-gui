@@ -22,7 +22,7 @@ public:
 		return m_setting;
 	}
 public slots:
-	void accept();
+	void accept() override;
 private:
 	Ui::Graph2dWindowVerticalAxisSettingDialog* ui;
 	double m_autoRangeMin;

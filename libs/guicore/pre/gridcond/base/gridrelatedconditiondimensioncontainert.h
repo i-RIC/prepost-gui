@@ -42,8 +42,8 @@ public:
 	}
 	QVariant toVariant(V val) const {return QVariant(val);}
 
-	QVariant variantValue(int index) const {return QVariant(value(index));}
-	QList<QVariant> variantValues() const {
+	QVariant variantValue(int index) const override {return QVariant(value(index));}
+	QList<QVariant> variantValues() const override {
 		QList<QVariant> ret;
 		for (int i = 0; i < count(); ++i) {
 			QVariant v = variantValue(i);
@@ -51,7 +51,7 @@ public:
 		}
 		return ret;
 	}
-	void setVariantValues(const QList<QVariant>& vals) {
+	void setVariantValues(const QList<QVariant>& vals) override {
 		QList<QVariant> currentVals = variantValues();
 		if (currentVals == vals) {return;}
 		QList<V> nativeVals;
@@ -61,8 +61,8 @@ public:
 		setValues(nativeVals);
 	}
 
-	int count() const {return m_values.count();}
-	bool loadFromExternalFile(const QString& filename) {
+	int count() const override {return m_values.count();}
+	bool loadFromExternalFile(const QString& filename) override {
 		QFile f(filename);
 		bool ok = f.open(QIODevice::ReadOnly);
 		if (!ok) { return false; }
@@ -80,7 +80,7 @@ public:
 		return true;
 	}
 
-	bool saveToExternalFile(const QString& filename) {
+	bool saveToExternalFile(const QString& filename) override {
 		QFile f(filename);
 		bool ok = f.open(QIODevice::WriteOnly);
 		if (!ok) { return false;}
@@ -94,7 +94,7 @@ public:
 		return true;
 	}
 
-	bool loadFromCgnsFile(int fn, int B, int Z) {
+	bool loadFromCgnsFile(int fn, int B, int Z) override {
 		// Goto "GridConditions" node.
 		int ier;
 		bool found = false;
@@ -131,7 +131,7 @@ public:
 		return found;
 	}
 
-	bool saveFromCgnsFile(int fn, int B, int Z) {
+	bool saveFromCgnsFile(int fn, int B, int Z) override {
 		QString arrayName = QString("Dimension_%1").arg(name());
 
 		int ier;
@@ -168,7 +168,7 @@ public:
 		: GridRelatedConditionDimensionContainerT<int>(def)
 	{}
 protected:
-	DataType_t dataType() const {return Integer;}
+	DataType_t dataType() const override {return Integer;}
 };
 
 class GridRelatedConditionDimensionRealContainer : public GridRelatedConditionDimensionContainerT<double>
@@ -178,7 +178,7 @@ public:
 		: GridRelatedConditionDimensionContainerT<double>(def)
 	{}
 protected:
-	DataType_t dataType() const {return RealDouble;}
+	DataType_t dataType() const override {return RealDouble;}
 };
 
 #endif // GRIDRELATEDCONDITIONDIMENSIONCONTAINERT_H

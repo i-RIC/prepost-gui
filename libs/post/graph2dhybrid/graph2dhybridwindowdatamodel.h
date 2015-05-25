@@ -31,7 +31,7 @@ public:
 	bool setupInitialSetting();
 	void showSettingDialog();
 	void getXAxisValueRange(double* min, double* max);
-	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max);
+	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
 	const Graph2dHybridWindowResultSetting& setting() const {return m_setting;}
 public slots:
 	void sliderChanged();
@@ -48,8 +48,8 @@ private slots:
 	void updateTime();
 	void updateData(int fn);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void applyAxisSetting() override;
 
 private:

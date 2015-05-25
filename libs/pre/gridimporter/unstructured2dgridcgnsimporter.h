@@ -12,7 +12,7 @@ public:
 	}
 
 protected:
-	bool isZoneCompatible(int fn, int B, int Z);
+	bool isZoneCompatible(int fn, int B, int Z) override;
 };
 
 #endif // UNSTRUCTURED2DGRIDCGNSIMPORTER_H

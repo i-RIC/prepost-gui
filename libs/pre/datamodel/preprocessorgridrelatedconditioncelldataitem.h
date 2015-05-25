@@ -15,17 +15,17 @@ class PreProcessorGridRelatedConditionCellDataItem : public PreProcessorDataItem
 public:
 	/// Constructor
 	PreProcessorGridRelatedConditionCellDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
-	void handleStandardItemChange();
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*);
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*);
+	void handleStandardItemChange() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
+	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
 	SolverDefinitionGridRelatedCondition* condition() {return m_condition;}
 	void informDataChange();
 	bool addToolBarButtons(QToolBar* toolbar) override;
@@ -39,9 +39,9 @@ signals:
 	void changed(PreProcessorGridRelatedConditionCellDataItem*);
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
-	void loadFromCgnsFile(const int fn);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void loadFromCgnsFile(const int fn) override;
 
 private:
 	SolverDefinitionGridRelatedCondition* m_condition;

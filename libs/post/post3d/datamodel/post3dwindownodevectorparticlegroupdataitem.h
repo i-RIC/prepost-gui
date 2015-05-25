@@ -35,8 +35,8 @@ public:
 	~Post3dWindowNodeVectorParticleGroupDataItem();
 	void updateActorSettings();
 	void setupClipper();
-	void updateZDepthRangeItemCount();
-	virtual void assignActorZValues(const ZDepthRange& range);
+	void updateZDepthRangeItemCount() override;
+	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 	const QString& currentSolution() {return m_currentSolution;}
@@ -45,10 +45,10 @@ public slots:
 protected:
 	void informGridUpdate();
 	vtkPointSet* getRegion();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setCurrentSolution(const QString& currentSol);
-	void innerUpdateZScale(double zscale);
+	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 
 	virtual vtkPointSet* newParticles(int i) = 0;

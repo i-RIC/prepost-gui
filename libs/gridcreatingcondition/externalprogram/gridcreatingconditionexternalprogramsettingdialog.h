@@ -34,7 +34,7 @@ public:
 	void setFilename(const QString& filename) {m_filename = filename;}
 	const QString errorMessage(int errorcode) const;
 public slots:
-	void accept();
+	void accept() override;
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 private:

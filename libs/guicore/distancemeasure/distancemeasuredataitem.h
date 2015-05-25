@@ -50,19 +50,19 @@ public:
 	/// Destructor
 	virtual ~DistanceMeasureDataItem();
 
-	void updateZDepthRangeItemCount();
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-	virtual void informSelection(VTKGraphicsView* v);
-	virtual void informDeselection(VTKGraphicsView* v);
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
+	virtual void informSelection(VTKGraphicsView* v) override;
+	virtual void informDeselection(VTKGraphicsView* v) override;
 	void setPoints(const QVector2D& v1, const QVector2D& v2);
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:
@@ -70,8 +70,8 @@ public slots:
 	void redefine();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
 
 private:
 	QVector2D updatePoint2ByShift(const QVector2D& v1, const QVector2D& v2);

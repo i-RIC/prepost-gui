@@ -15,26 +15,26 @@ public:
 	PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent);
 	~PreProcessorBackgroundImageDataItem();
 
-	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
-	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/);
+	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 
-	void updateMoveUpDownActions(ObjectBrowserView* view);
-	void updateZDepthRangeItemCount() {m_zDepthRange.setItemCount(2);}
+	void updateMoveUpDownActions(ObjectBrowserView* view) override;
+	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	BackgroundImageInfo* imageInfo() {return m_imageInfo;}
 	QAction* fixAction();
-	void handleStandardItemChange();
+	void handleStandardItemChange() override;
 private slots:
 	void applyImageChange();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
+	void doLoadFromProjectMainFile(const QDomNode&) override {}
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
 	void assignActorZValues(const ZDepthRange& range) override;
-	QDialog* propertyDialog(QWidget* parent);
-	void handlePropertyDialogAccepted(QDialog* dialog);
-	void doApplyOffset(double x, double y);
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* dialog) override;
+	void doApplyOffset(double x, double y) override;
 
 	QString m_filename;
 	BackgroundImageInfo* m_imageInfo;

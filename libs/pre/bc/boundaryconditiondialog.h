@@ -53,7 +53,7 @@ public:
 	void setPropertyMode();
 
 public slots:
-	void accept();
+	void accept() override;
 
 private slots:
 	void setModified();

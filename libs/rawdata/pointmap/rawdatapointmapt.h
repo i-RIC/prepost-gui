@@ -21,7 +21,7 @@ public:
 	DA* vtkValues() {return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));}
 	V value(vtkIdType index) {return vtkValues()->GetValue(index);}
 	void setValue(vtkIdType index, V val) {return vtkValues()->SetValue(index, val);}
-	bool getValueRange(double* min, double* max) {
+	bool getValueRange(double* min, double* max) override {
 		if (vtkValues()->GetNumberOfTuples() == 0) {return false;}
 		double range[2];
 		vtkValues()->GetRange(range);

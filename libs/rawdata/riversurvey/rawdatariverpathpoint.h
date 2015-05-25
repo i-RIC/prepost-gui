@@ -244,7 +244,7 @@ public:
 	Interpolator2D1* RGridLine(unsigned int index) const {return m_RGridLines[index];}
 	Interpolator2D1* backgroundLGridLine(unsigned int index) const {return m_backgroundLGridLines[index];}
 	Interpolator2D1* backgroundRGridLine(unsigned int index) const {return m_backgroundRGridLines[index];}
-	//	void UpdateInterpolators();
+	//	void UpdateInterpolators() override;
 	/// Division points between river center and left bank
 	QVector<double> CenterToLeftCtrlPoints;
 	/// Division points between river center and right bank

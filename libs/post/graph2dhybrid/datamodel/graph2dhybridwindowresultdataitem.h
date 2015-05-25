@@ -27,7 +27,7 @@ public:
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 protected:
 	virtual void updateValues(int fn) = 0;
-	void setVisible(bool visible);
+	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
 	QwtArrayData* m_data;
 

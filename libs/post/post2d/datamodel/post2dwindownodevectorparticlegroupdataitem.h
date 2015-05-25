@@ -33,13 +33,13 @@ public:
 	~Post2dWindowNodeVectorParticleGroupDataItem();
 	void updateActorSettings();
 	void setupClipper();
-	void informSelection(VTKGraphicsView* v);
-	void informDeselection(VTKGraphicsView* v);
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void updateZDepthRangeItemCount();
-	virtual void assignActorZValues(const ZDepthRange& range);
+	void updateZDepthRangeItemCount() override;
+	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 	const QString& currentSolution() {return m_currentSolution;}
@@ -50,8 +50,8 @@ public slots:
 protected:
 	void informGridUpdate();
 	vtkPointSet* getRegion();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setCurrentSolution(const QString& currentSol);
 
 	virtual vtkPointSet* newParticles(int i) = 0;

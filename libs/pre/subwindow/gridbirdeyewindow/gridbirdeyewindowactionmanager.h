@@ -17,7 +17,7 @@ public:
 	QAction* editZScaleAction;
 
 	QMenu* drawMenu() {return m_drawMenu;}
-//	void connectWithDataModel();
+//	void connectWithDataModel() override;
 private:
 	void init();
 	void setupDrawMenu();

@@ -15,11 +15,11 @@ public:
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupStructuredDataItem();
 protected:
-	virtual void updateActivePoints();
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/);
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/);
-	QDialog* propertyDialog(QWidget* p);
-	void handlePropertyDialogAccepted(QDialog* propDialog);
+	virtual void updateActivePoints() override;
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 private:
 	int m_iSampleRate;
 	int m_jSampleRate;

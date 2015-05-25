@@ -20,8 +20,8 @@ public:
 	explicit Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog(Structured15DGridWithCrossSectionCrossSection* cross, int from, int to, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parent);
 	~Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog();
 public slots:
-	void accept();
-	void reject();
+	void accept() override;
+	void reject() override;
 private slots:
 	void hOffsetChange();
 	void handleButtonClick(QAbstractButton* button);

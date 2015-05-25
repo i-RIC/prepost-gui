@@ -27,8 +27,8 @@ public slots:
 signals:
 	void selectMeasuredData(const QModelIndex& current);
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	bool m_visible;
 

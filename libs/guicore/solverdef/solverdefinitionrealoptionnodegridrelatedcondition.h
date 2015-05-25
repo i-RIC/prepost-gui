@@ -8,8 +8,8 @@ class SolverDefinitionRealOptionNodeGridRelatedCondition : public SolverDefiniti
 {
 public:
 	SolverDefinitionRealOptionNodeGridRelatedCondition(QDomElement node, const SolverDefinitionTranslator& translator);
-	GridRelatedConditionEditWidget* editWidget(QWidget* parent);
-	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) {return 0;}
+	GridRelatedConditionEditWidget* editWidget(QWidget* parent) override;
+	GridRelatedConditionVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 };
