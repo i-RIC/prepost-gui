@@ -134,7 +134,6 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	int ier;
 
 	/// only for test!
-//	if (currentStep == 1){return false;}
 
 	ier = cg_ziter_read(fn, m_baseId, m_zoneId, zoneItername);
 	bool iterativeCoordinates = false;
@@ -190,15 +189,15 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	std::vector<double> dataZ(numPoints, 0);
 
 	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	if (ier != 0) {return ier;}
+	if (ier != 0) {return false;}
 
 	if (m_cellDim >= 2) {
 		ier = cg_array_read_as(2, RealDouble, dataY.data());
-		if (ier != 0) {return ier;}
+		if (ier != 0) {return false;}
 	}
 	if (m_cellDim == 3) {
 		ier = cg_array_read_as(3, RealDouble, dataZ.data());
-		if (ier != 0) {return ier;}
+		if (ier != 0) {return false;}
 	}
 
 	points = vtkPoints::New();
@@ -214,7 +213,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 	grid->Modified();
 	points->Delete();
 
-	return 0;
+	return true;
 }
 
 bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int currentStep)
@@ -284,15 +283,15 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	std::vector<double> dataZ(numPoints, 0);
 
 	ier = cg_array_read_as(1, RealDouble, dataX.data());
-	if (ier != 0) {return ier;}
+	if (ier != 0) {return false;}
 
 	if (m_cellDim >= 2) {
 		ier = cg_array_read_as(2, RealDouble, dataY.data());
-		if (ier != 0) {return ier;}
+		if (ier != 0) {return false;}
 	}
 	if (m_cellDim == 3) {
 		ier = cg_array_read_as(3, RealDouble, dataZ.data());
-		if (ier != 0) {return ier;}
+		if (ier != 0) {return false;}
 	}
 
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
