@@ -460,7 +460,9 @@ void ProjectMainFile::exportCurrentCgnsFile()
 
 const QString ProjectMainFile::currentCgnsFileName() const
 {
-	return m_projectData->workCgnsFileName(m_cgnsFileList->current()->filename());
+	auto c = m_cgnsFileList->current();
+	if (c == nullptr) {return "";}
+	return m_projectData->workCgnsFileName(c->filename());
 }
 
 bool ProjectMainFile::loadCgnsFile(const QString& name)
