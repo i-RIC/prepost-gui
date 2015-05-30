@@ -15,8 +15,8 @@ const QString SolverDefinition::LICENSE = QString("LICENSE");
 
 SolverDefinition::~SolverDefinition()
 {
-	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it) {
-		delete *it;
+	for (auto t : m_gridTypes) {
+		delete t;
 	}
 	delete m_dummyGridType;
 }

@@ -162,6 +162,7 @@ private:
 	void updateActionStatus();
 	void setupHolePolygon(RawDataPolygonHolePolygon* p);
 	void applyOffsetToAbstractPolygon(RawDataPolygonAbstractPolygon* polygon, double x, double y);
+	void clearHolePolygons();
 	ZDepthRange m_depthRange;
 
 	QPoint m_dragStartPoint;

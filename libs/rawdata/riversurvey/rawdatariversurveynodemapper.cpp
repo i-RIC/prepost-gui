@@ -15,7 +15,7 @@ RawDataMapperSetting* RawDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 	unsigned int count = RawDataNodeMapperT<double, vtkDoubleArray>::container()->dataCount();
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(RawDataMapper::m_rawdata);
 	vtkStructuredGrid* grid = rs->backgroundGrid();
-	double* weights = new double[4];
+	double weights[4];
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
@@ -34,14 +34,13 @@ RawDataMapperSetting* RawDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 				for (vtkIdType j = 0; j < cell->GetNumberOfPoints(); ++j) {
 					vtkIdType vid = cell->GetPointId(j);
 					setting.indices.append(vid);
-					setting.weights.append(*(weights + j));
+					setting.weights.append(weights[j]);
 				}
 				s->settings.append(setting);
 				*(boolMap + i) = true;
 			}
 		}
 	}
-	delete weights;
 	return s;
 }
 

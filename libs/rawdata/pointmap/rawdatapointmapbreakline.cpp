@@ -10,6 +10,7 @@
 #include <vtkLine.h>
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
+#include <vtkSmartPointer.h>
 #include <vtkVertex.h>
 
 #include <fstream>
@@ -162,7 +163,7 @@ void RawDataPointmapBreakLine::updateShapeData()
 	m_edges->SetPoints(m_vtkPolyLine->GetPoints());
 
 	int edgeCount = idlist->GetNumberOfIds() - 1;
-	vtkCellArray* edges = vtkCellArray::New();
+	vtkSmartPointer<vtkCellArray> edges = vtkSmartPointer<vtkCellArray>::New();
 	edges->Allocate(edgeCount);
 	vtkIdType points[2];
 	for (int i = 0; i < edgeCount; ++i) {
@@ -171,17 +172,6 @@ void RawDataPointmapBreakLine::updateShapeData()
 		edges->InsertNextCell(2, points);
 	}
 	m_edges->SetLines(edges);
-	edges->Delete();
-	/*
-		vtkLine* tmpEdge = vtkLine::New();
-		for (int i = 0; i < edgeCount; ++i){
-			tmpEdge->GetPointIds()->SetId(0, idlist->GetId(i));
-			tmpEdge->GetPointIds()->SetId(1, idlist->GetId(i + 1));
-			m_edges->InsertNextCell(tmpEdge->GetCellType(), tmpEdge->GetPointIds());
-		}
-		tmpEdge->Delete();
-	*/
-// m_edges->BuildLinks();
 	m_edges->Modified();
 
 	// points are constructed.
@@ -189,7 +179,7 @@ void RawDataPointmapBreakLine::updateShapeData()
 	m_vertices->SetPoints(m_vtkPolyLine->GetPoints());
 
 	int vertexCount = idlist->GetNumberOfIds();
-	vtkCellArray* vertices = vtkCellArray::New();
+	vtkSmartPointer<vtkCellArray> vertices = vtkSmartPointer<vtkCellArray>::New();
 	vertices->Allocate(vertexCount);
 	vtkIdType pointId;
 	for (int i = 0; i < vertexCount; ++i) {
@@ -197,16 +187,6 @@ void RawDataPointmapBreakLine::updateShapeData()
 		vertices->InsertNextCell(1, &pointId);
 	}
 	m_vertices->SetVerts(vertices);
-	vertices->Delete();
-	/*
-		vtkVertex* tmpVertex = vtkVertex::New();
-		for (int i = 0; i < vertexCount; ++i){
-			tmpVertex->GetPointIds()->SetId(0, idlist->GetId(i));
-			m_vertices->InsertNextCell(tmpVertex->GetCellType(), tmpVertex->GetPointIds());
-		}
-		tmpVertex->Delete();
-	*/
-//    m_vertices->BuildLinks();
 	m_vertices->Modified();
 }
 

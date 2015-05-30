@@ -23,11 +23,11 @@ GridRelatedConditionDimensionsContainer::GridRelatedConditionDimensionsContainer
 
 GridRelatedConditionDimensionsContainer::~GridRelatedConditionDimensionsContainer()
 {
-	for (int i = 0; i < m_containers.count(); ++i) {
-		delete m_containers.at(i);
+	for (auto c : m_containers) {
+		delete c;
 	}
-	for (int i = 0; i < m_selectWidgets.count(); ++i) {
-		delete m_selectWidgets.at(i);
+	for (auto w : m_selectWidgets) {
+		delete w;
 	}
 }
 

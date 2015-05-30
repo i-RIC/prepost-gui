@@ -18,9 +18,7 @@ RawDataCreator::RawDataCreator()
 
 RawDataCreator::~RawDataCreator()
 {
-	if (m_emptyData) {
-		delete m_emptyData;
-	}
+	delete m_emptyData;
 }
 
 RawData* RawDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)

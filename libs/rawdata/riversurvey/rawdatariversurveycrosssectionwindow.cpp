@@ -33,13 +33,12 @@ public:
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 		if (index.column() == 0) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
-			CenteredCheckBox* checkbox = new CenteredCheckBox(nullptr);
-			checkbox->setChecked(dat.toBool());
-			checkbox->resize(option.rect.size());
+			CenteredCheckBox checkbox(nullptr);
+			checkbox.setChecked(dat.toBool());
+			checkbox.resize(option.rect.size());
 			QPixmap pixmap(option.rect.size());
-			checkbox->render(&pixmap);
+			checkbox.render(&pixmap);
 			painter->drawPixmap(option.rect, pixmap);
-			delete checkbox;
 		} else if (index.column() == 2) {
 			QVariant dat = index.model()->data(index, Qt::DisplayRole);
 			QColor col = dat.value<QColor>();

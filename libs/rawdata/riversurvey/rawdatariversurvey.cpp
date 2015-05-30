@@ -135,9 +135,7 @@ RawDataRiverSurvey::~RawDataRiverSurvey()
 	r->RemoveActor(m_crosssectionLinesActor);
 
 	delete m_gridThread;
-	if (m_rightClickingMenu) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 }
 
 void RawDataRiverSurvey::setupActors()
@@ -1128,9 +1126,8 @@ void RawDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 				v->restoreUpdateRate();
 
 				// selection change is made not undo-able
-				QUndoCommand* com = new RawDataRiverSurveySelectionChangeCommand(this, box);
-				com->redo();
-				delete com;
+				RawDataRiverSurveySelectionChangeCommand com(this, box);
+				com.redo();
 			}
 			m_definingBoundingBox = false;
 			m_currentPoint = QPoint(event->x(), event->y());
@@ -1841,8 +1838,8 @@ public:
 	~RawDataRiverPathPointDeleteCommand() {
 		if (m_redoed) {
 			// remove the points.
-			for (auto it = m_deletedPoints.begin(); it != m_deletedPoints.end(); ++it) {
-				delete(*it);
+			for (auto point : m_deletedPoints) {
+				delete point;
 			}
 		}
 	}

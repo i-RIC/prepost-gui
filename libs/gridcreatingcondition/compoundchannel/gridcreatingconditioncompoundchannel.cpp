@@ -1738,16 +1738,16 @@ void GridCreatingConditionCompoundChannel::clear()
 {
 	initParams();
 
-	if (m_gridRegionPolygon != nullptr) {delete m_gridRegionPolygon;}
+	delete m_gridRegionPolygon;
 	m_gridRegionPolygon = new GridCreatingConditionCompoundChannelGridRegionPolygon(this);
 	m_gridRegionPolygon->setActive(true);
 	m_selectedPolygon = m_gridRegionPolygon;
 
-	if (m_lowWaterChannelPolygon != nullptr) {delete m_lowWaterChannelPolygon;}
+	delete m_lowWaterChannelPolygon;
 	m_lowWaterChannelPolygon = new GridCreatingConditionCompoundChannelLowWaterChannelPolygon(this);
 	m_lowWaterChannelPolygon->setActive(false);
 
-	if (m_centerLine != nullptr) {delete m_centerLine;}
+	delete m_centerLine;
 	m_centerLine = new GridCreatingConditionCompoundChannelCenterLine(this);
 	m_centerLine->setActive(false);
 	m_selectedLine = nullptr;

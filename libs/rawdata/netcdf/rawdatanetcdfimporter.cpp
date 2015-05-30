@@ -53,15 +53,15 @@ bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	if (ret != 0) {return false;}
 
 	// investigate dimensions
-	int* dimids = new int[ndims];
-	ret = nc_inq_dimids(ncid, &ndims, dimids, 0);
+	std::vector<int> dimids(ndims);
+	ret = nc_inq_dimids(ncid, &ndims, dimids.data(), 0);
 	if (ret != 0) {return false;}
 
 	QList<QString> dims;
 	QList<int> dimIds;
 
 	for (int i = 0; i < ndims; ++i) {
-		int dimid = *(dimids + i);
+		int dimid = dimids[i];
 		ret = nc_inq_dimname(ncid, dimid, &(nameBuffer[0]));
 		if (ret != 0) {return false;}
 		QString name = QString(nameBuffer);
@@ -82,7 +82,6 @@ bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			dimIds.append(dimid);
 		}
 	}
-	delete dimids;
 
 	if (m_lonDimId == -1 || m_latDimId == -1) {
 		QMessageBox::critical(w, tr("Error"), tr("%1 does not have longitude and latitude data.").arg(QDir::toNativeSeparators(filename)));
@@ -95,16 +94,17 @@ bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 		m_csType = RawDataNetcdf::LonLat;
 	}
 
-	int* varids = new int[nvars];
-	ret = nc_inq_varids(ncid, &nvars, varids);
+	std::vector<int> varids(nvars);
+	ret = nc_inq_varids(ncid, &nvars, varids.data());
 	nc_type ncType;
 	int nDims;
-	dimids = new int[10];
+	dimids.clear();
+	dimids.assign(10, 0);
 	int nAtts;
 
 	QList<RawDataNetcdfImporterSettingDialog::NcVariable> variables;
 	for (int i = 0; i < nvars; ++i) {
-		ret = nc_inq_var(ncid, *(varids + i), &(nameBuffer[0]), &ncType, &nDims, &(dimids[0]), &nAtts);
+		ret = nc_inq_var(ncid, varids[i], &(nameBuffer[0]), &ncType, &nDims, dimids.data(), &nAtts);
 		if (nDims != 2 + condition->dimensions().size()) {
 			// this is not a variable for value.
 			continue;
@@ -128,8 +128,6 @@ bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			variables.append(v);
 		}
 	}
-	delete dimids;
-	delete varids;
 
 	if (variables.size() == 0) {
 		QMessageBox::critical(w, tr("Error"), tr("%1 does not have variable that can be imported.").arg(QDir::toNativeSeparators(filename)));
@@ -181,29 +179,26 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_dimlen(ncid_in, m_xDimId, &xlen);
 		ret = nc_inq_dimlen(ncid_in, m_yDimId, &ylen);
 
-		double* xs = new double[xlen];
-		double* ys = new double[ylen];
+		std::vector<double> xs(xlen);
+		std::vector<double> ys(ylen);
 
 		int varid;
 		ret = nc_inq_dimname(ncid_in, m_xDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, xlen, xs);
+		ret = ncGetVariableAsDouble(ncid_in, varid, xlen, xs.data());
 
 		ret = nc_inq_dimname(ncid_in, m_yDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys);
+		ret = ncGetVariableAsDouble(ncid_in, varid, ylen, ys.data());
 
 		netcdf->m_xValues.clear();
 		for (size_t i = 0; i < xlen; ++i) {
-			netcdf->m_xValues.append(*(xs + i));
+			netcdf->m_xValues.append(xs[i]);
 		}
 		netcdf->m_yValues.clear();
 		for (size_t i = 0; i < ylen; ++i) {
-			netcdf->m_yValues.append(*(ys + i));
+			netcdf->m_yValues.append(ys[i]);
 		}
-
-		delete xs;
-		delete ys;
 
 		// load Lon and Lat
 		size_t lonLen, latLen;
@@ -211,28 +206,25 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_dimlen(ncid_in, m_lonDimId, &lonLen);
 		ret = nc_inq_dimlen(ncid_in, m_latDimId, &latLen);
 
-		double* lons = new double[lonLen];
-		double* lats = new double[latLen];
+		std::vector<double> lons(lonLen);
+		std::vector<double> lats(latLen);
 
 		ret = nc_inq_dimname(ncid_in, m_lonDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, lonLen, lons);
+		ret = ncGetVariableAsDouble(ncid_in, varid, lonLen, lons.data());
 
 		ret = nc_inq_dimname(ncid_in, m_latDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats);
+		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats.data());
 
 		netcdf->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.append(*(lons + i));
+			netcdf->m_lonValues.append(lons[i]);
 		}
 		netcdf->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.append(*(lats + i));
+			netcdf->m_latValues.append(lats[i]);
 		}
-
-		delete lons;
-		delete lats;
 	} else if (m_csType == RawDataNetcdf::LonLat) {
 		// load Lon and Lat
 		size_t lonLen, latLen;
@@ -240,29 +232,26 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_dimlen(ncid_in, m_lonDimId, &lonLen);
 		ret = nc_inq_dimlen(ncid_in, m_latDimId, &latLen);
 
-		double* lons = new double[lonLen];
-		double* lats = new double[latLen];
+		std::vector<double> lons(lonLen);
+		std::vector<double> lats(latLen);
 
 		int varid;
 		ret = nc_inq_dimname(ncid_in, m_lonDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, lonLen, lons);
+		ret = ncGetVariableAsDouble(ncid_in, varid, lonLen, lons.data());
 
 		ret = nc_inq_dimname(ncid_in, m_latDimId, nameBuffer);
 		ret = nc_inq_varid(ncid_in, nameBuffer, &varid);
-		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats);
+		ret = ncGetVariableAsDouble(ncid_in, varid, latLen, lats.data());
 
 		netcdf->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.append(*(lons + i));
+			netcdf->m_lonValues.append(lons[i]);
 		}
 		netcdf->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.append(*(lats + i));
+			netcdf->m_latValues.append(lats[i]);
 		}
-
-		delete lons;
-		delete lats;
 	}
 
 	// load dimension values
@@ -355,53 +344,47 @@ int RawDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 	list.clear();
 	ret = nc_inq_vartype(ncid, varid, &ncType);
 	if (ncType == NC_INT) {
-		int* tmpbuffer = new int[len];
-		ret = nc_get_var_int(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<int> tmpbuffer(len);
+		ret = nc_get_var_int(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	} else if (ncType == NC_UINT) {
-		unsigned int* tmpbuffer = new unsigned int[len];
-		ret = nc_get_var_uint(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<unsigned int> tmpbuffer(len);
+		ret = nc_get_var_uint(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	} else if (ncType == NC_INT64) {
-		long long* tmpbuffer = new long long[len];
-		ret = nc_get_var_longlong(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<long long> tmpbuffer(len);
+		ret = nc_get_var_longlong(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	} else if (ncType == NC_UINT64) {
-		unsigned long long* tmpbuffer = new unsigned long long[len];
-		ret = nc_get_var_ulonglong(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<unsigned long long> tmpbuffer(len);
+		ret = nc_get_var_ulonglong(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	}	else if (ncType == NC_FLOAT) {
-		float* tmpbuffer = new float[len];
-		ret = nc_get_var_float(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<float> tmpbuffer(len);
+		ret = nc_get_var_float(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	} else if (ncType == NC_DOUBLE) {
-		double* tmpbuffer = new double[len];
-		ret = nc_get_var_double(ncid, varid, tmpbuffer);
-		if (ret != NC_NOERR) { return ret; }
+		std::vector<double> tmpbuffer(len);
+		ret = nc_get_var_double(ncid, varid, tmpbuffer.data());
+		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(*(tmpbuffer + i)));
+			list.append(QVariant(tmpbuffer[i]));
 		}
-		delete tmpbuffer;
 	}
 	return NC_NOERR;
 }

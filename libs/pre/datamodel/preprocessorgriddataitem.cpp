@@ -99,12 +99,8 @@ PreProcessorGridDataItem::~PreProcessorGridDataItem()
 	renderer()->RemoveActor(m_selectedCellsLinesActor);
 	renderer()->RemoveActor(m_selectedEdgesActor);
 	closeBirdEyeWindow();
-	if (m_bcGroupDataItem != nullptr) {
-		delete m_bcGroupDataItem;
-	}
-	if (m_grid != nullptr) {
-		delete m_grid;
-	}
+	delete m_bcGroupDataItem;
+	delete m_grid;
 	delete m_menu;
 }
 
@@ -462,7 +458,7 @@ void PreProcessorGridDataItem::deleteGrid()
 
 bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 {
-	if (m_grid != nullptr) {delete m_grid;}
+	delete m_grid;
 	m_grid = newGrid;
 	// set parent.
 	m_grid->setParent(this);

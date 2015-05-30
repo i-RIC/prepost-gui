@@ -50,7 +50,7 @@ public:
 	/// Constructor
 	CgnsFileInputConditionDependencyConditionNot(const QDomNode& node, CgnsFileInputConditionContainerSet* cs, CgnsFileInputConditionDependency* dep)
 		: CgnsFileInputConditionDependency::Condition(dep) {
-		m_child = 0;
+		m_child = nullptr;
 		const QDomNodeList& list = node.childNodes();
 		for (int i = 0; i < list.count(); ++i) {
 			m_child = CgnsFileInputConditionDependency::buildCondition(list.item(i), cs, dep);
@@ -60,9 +60,7 @@ public:
 	}
 	/// Destructor
 	~CgnsFileInputConditionDependencyConditionNot() {
-		if (m_child) {
-			delete m_child;
-		}
+		delete m_child;
 	}
 
 	bool match() {
@@ -86,12 +84,14 @@ public:
 	}
 	/// Destructor
 	~CgnsFileInputConditionDependencyConditionAnd() {
-		for (auto it = m_children.begin(); it != m_children.end(); ++it) {delete *it;}
+		for (auto c : m_children) {
+			delete c;
+		}
 	}
 	bool match() {
 		bool ret = true;
-		for (auto it = m_children.begin(); it != m_children.end(); ++it) {
-			ret = ret && (*it)->match();
+		for (auto c : m_children) {
+			ret = ret && c->match();
 		}
 		return ret;
 	}
@@ -113,12 +113,14 @@ public:
 	}
 	/// Destructor
 	~CgnsFileInputConditionDependencyConditionOr() {
-		for (auto it = m_children.begin(); it != m_children.end(); ++it) {delete *it;}
+		for (auto c : m_children) {
+			delete c;
+		}
 	}
 	bool match() {
 		bool ret = false;
-		for (auto it = m_children.begin(); it != m_children.end(); ++it) {
-			ret = ret || (*it)->match();
+		for (auto c : m_children) {
+			ret = ret || c->match();
 		}
 		return ret;
 	}

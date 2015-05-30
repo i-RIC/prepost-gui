@@ -32,7 +32,7 @@ Graph2dHybridWindowResultCopyDataItem::Graph2dHybridWindowResultCopyDataItem(Gra
 Graph2dHybridWindowResultCopyDataItem::~Graph2dHybridWindowResultCopyDataItem()
 {
 	delete m_curve;
-	if (m_data != 0) {delete m_data;}
+	delete m_data;
 }
 
 void Graph2dHybridWindowResultCopyDataItem::doLoadFromProjectMainFile(const QDomNode& node)

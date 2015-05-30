@@ -58,7 +58,7 @@ void GraphicsWindowRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	// delete the item.
-	if (dataItem) {delete dataItem;}
+	delete dataItem;
 	// rebuild m_itemMap.
 	updateItemMap();
 	// render graphics view.

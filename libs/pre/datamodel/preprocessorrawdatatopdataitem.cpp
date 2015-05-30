@@ -150,7 +150,7 @@ void PreProcessorRawDataTopDataItem::informDataChange()
 
 void PreProcessorRawDataTopDataItem::setupScalarBar()
 {
-	PreProcessorScalarBarLegendBoxSettingDialog* dialog = new PreProcessorScalarBarLegendBoxSettingDialog(preProcessorWindow());
+	PreProcessorScalarBarLegendBoxSettingDialog dialog(preProcessorWindow());
 	if (m_condition != nullptr) {
 		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr || m_condition->isOption()) {
 			PreProcessorRawDataGroupDataItem* gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(groupDataItem(m_condition->name()));
@@ -162,19 +162,18 @@ void PreProcessorRawDataTopDataItem::setupScalarBar()
 			setting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 		}
 	}
-	dialog->setupComboBox(this);
-	dialog->setActor2DVisibility(m_visible);
-	dialog->setCondition(m_condition);
-	dialog->setTitleTextSetting(m_titleTextSetting);
-	dialog->setLabelTextSetting(m_labelTextSetting);
-	if (dialog->exec() == QDialog::Accepted) {
-		m_visible = dialog->actor2DVisibility();
-		m_condition = dialog->condition();
-		m_titleTextSetting = dialog->titleTextSetting();
-		m_labelTextSetting = dialog->labelTextSetting();
+	dialog.setupComboBox(this);
+	dialog.setActor2DVisibility(m_visible);
+	dialog.setCondition(m_condition);
+	dialog.setTitleTextSetting(m_titleTextSetting);
+	dialog.setLabelTextSetting(m_labelTextSetting);
+	if (dialog.exec() == QDialog::Accepted) {
+		m_visible = dialog.actor2DVisibility();
+		m_condition = dialog.condition();
+		m_titleTextSetting = dialog.titleTextSetting();
+		m_labelTextSetting = dialog.labelTextSetting();
 		updateActorSettings();
 	}
-	delete dialog;
 }
 
 void PreProcessorRawDataTopDataItem::setupActors()

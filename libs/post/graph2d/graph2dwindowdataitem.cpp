@@ -44,9 +44,7 @@ Graph2dWindowDataItem::~Graph2dWindowDataItem()
 {
 	// delete all child items.
 	m_isDestructing = true;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		delete *it;
-	}
+	clearChildItems();
 	ProjectDataItem* tmp_parent = parent();
 	if (tmp_parent != nullptr) {
 		Graph2dWindowDataItem* p = dynamic_cast<Graph2dWindowDataItem*>(tmp_parent);
@@ -453,4 +451,12 @@ void Graph2dWindowDataItem::updateZDepthRangeItemCount()
 		sum += (*it)->zDepthRange().itemCount();
 	}
 	m_zDepthRange.setItemCount(sum);
+}
+
+void Graph2dWindowDataItem::clearChildItems()
+{
+	for (auto child : m_childItems) {
+		delete child;
+	}
+	m_childItems.clear();
 }

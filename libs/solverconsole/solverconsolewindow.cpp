@@ -27,14 +27,7 @@
 
 SolverConsoleWindow::~SolverConsoleWindow()
 {
-	/*
-		m_destructing = true;
 
-		if (m_process != nullptr){
-			m_process->kill();
-			delete m_process;
-		}
-	 */
 }
 
 void SolverConsoleWindow::init()

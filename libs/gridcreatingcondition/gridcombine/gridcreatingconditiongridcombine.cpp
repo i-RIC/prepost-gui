@@ -30,9 +30,7 @@ GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataIt
 
 GridCreatingConditionGridCombine::~GridCreatingConditionGridCombine()
 {
-	if (m_rightClickingMenu != nullptr) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 }
 
 bool GridCreatingConditionGridCombine::create(QWidget* parent)

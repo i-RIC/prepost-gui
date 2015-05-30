@@ -277,9 +277,7 @@ QVector2D RiverCenterLineSolver::getVector(RawDataRiverPathPoint* p)
 
 void RiverCenterLineSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p)
 {
-	if (p->riverCenter() != nullptr) {
-		delete p->riverCenter();
-	}
+	delete p->riverCenter();
 	p->setRiverCenter(interpolator);
 }
 
@@ -294,9 +292,7 @@ QVector2D RiverLeftBankSolver::getVector(RawDataRiverPathPoint* p)
 
 void RiverLeftBankSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p)
 {
-	if (p->leftBank() != nullptr) {
-		delete p->leftBank();
-	}
+	delete p->leftBank();
 	p->setLeftBank(interpolator);
 }
 
@@ -311,9 +307,7 @@ QVector2D RiverRightBankSolver::getVector(RawDataRiverPathPoint* p)
 
 void RiverRightBankSolver::setInterpolator(Interpolator2D1* interpolator, RawDataRiverPathPoint* p)
 {
-	if (p->rightBank() != nullptr) {
-		delete p->rightBank();
-	}
+	delete p->rightBank();
 	p->setRightBank(interpolator);
 }
 

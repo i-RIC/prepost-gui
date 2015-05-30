@@ -54,12 +54,10 @@ void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinit
 
 SolverDefinitionGridType::~SolverDefinitionGridType()
 {
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
-		delete *it;
+	for (auto c : m_gridRelatedConditions) {
+		delete c;
 	}
-	if (m_emptyGrid != nullptr) {
-		delete m_emptyGrid;
-	}
+	delete m_emptyGrid;
 }
 
 void SolverDefinitionGridType::setGridType(const QDomElement& elem)

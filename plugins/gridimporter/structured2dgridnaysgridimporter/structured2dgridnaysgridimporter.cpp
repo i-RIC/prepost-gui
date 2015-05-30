@@ -12,6 +12,8 @@
 #include <QMessageBox>
 #include <QObject>
 
+#include <vector>
+
 Structured2DGridNaysGridImporter::Structured2DGridNaysGridImporter()
 	: QObject(), GridImporterInterface()
 {
@@ -68,70 +70,57 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 
 	// allocate memory for all grid related conditions.
 	QList<GridRelatedConditionContainer*>& clist = grid2d->gridRelatedConditions();
-	for (auto it = clist.begin(); it != clist.end(); ++it){
-		(*it)->allocate();
+	for (GridRelatedConditionContainer* c : clist){
+		c->allocate();
 	}
-	double *x = new double[imax * jmax];
-	double *y = new double[imax * jmax];
-	double *z = new double[imax * jmax];
+	int gridsize = imax * jmax;
+
+	std::vector<double> x(gridsize);
+	std::vector<double> y(gridsize);
+	std::vector<double> z(gridsize);
 
 	char dummybuffer[8];
-	int offset = 0;
 
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
-		memcpy((x + i), dummybuffer, 8);
+		memcpy(&(x[i]), dummybuffer, 8);
 		// check for NaN, inf
-		if (std::isfinite(*(x + i)) == 0){
-			goto ERROR;
-		}
+		if (std::isfinite(x[i]) == 0) {return false;}
 	}
 	// x data for k = 1 are trashed.
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
 	}
 
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
-		memcpy((y + i), dummybuffer, 8);
+		memcpy(&(y[i]), dummybuffer, 8);
 		// check for NaN, inf
-		if (std::isfinite(*(y + i)) == 0){
-			goto ERROR;
-		}
+		if (std::isfinite(y[i]) == 0) {return false;}
 	}
 	// y data for k = 1 are trashed.
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
 	}
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
-		memcpy((z + i), dummybuffer, 8);
+		memcpy(&(z[i]), dummybuffer, 8);
 		// check for NaN, inf
-		if (std::isfinite(*(z + i)) == 0){
-			goto ERROR;
-		}
+		if (std::isfinite(z[i]) == 0) {return false;}
 	}
 	// z data for k = 1 are trashed.
-	for (int i = 0; i < imax * jmax; ++i){
+	for (int i = 0; i < gridsize; ++i){
 		st.readRawData(dummybuffer, 8);
 	}
 
+	int offset = 0;
 	for (int j = 0; j < jmax; ++j){
 		for (int i = 0; i < imax; ++i){
 			unsigned int id = grid2d->vertexIndex(i, j);
-			points->InsertPoint(id, *(x + offset), *(y + offset), 0);
-			container->setValue(id, *(z + offset));
+			points->InsertPoint(id, x[offset], y[offset], 0);
+			container->setValue(id, z[offset]);
 			++offset;
 		}
 	}
-	delete x;
-	delete y;
-	delete z;
 	return true;
-
-ERROR:
-	delete x;
-	delete y;
-	delete z;
-	return false;
 }

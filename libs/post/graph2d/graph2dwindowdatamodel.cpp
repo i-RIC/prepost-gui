@@ -51,9 +51,7 @@ Graph2dWindowDataModel::Graph2dWindowDataModel(QMainWindow* w, ProjectDataItem* 
 
 Graph2dWindowDataModel::~Graph2dWindowDataModel()
 {
-	if (m_operationToolBar) {
-		delete m_operationToolBar;
-	}
+	delete m_operationToolBar;
 }
 
 void Graph2dWindowDataModel::loadFromCgnsFile(const int fn)
@@ -74,7 +72,7 @@ void Graph2dWindowDataModel::closeCgnsFile()
 void Graph2dWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
 {
 	if (QApplication::mouseButtons() == Qt::RightButton) {
-		if (m_rightClickMenu != nullptr) {delete m_rightClickMenu;}
+		delete m_rightClickMenu;
 		m_rightClickMenu = new QMenu(projectData()->mainWindow());
 		QStandardItem* pressedItem = m_itemModel->itemFromIndex(index);
 		Graph2dWindowDataItem* dataItem = m_rootDataItem->modelItemFromItem(pressedItem);

@@ -228,7 +228,7 @@ void Graph2dWindowMarkerSettingDialog::removeItem()
 	m_setting.items().removeAt(index);
 	ui->markerListWidget->blockSignals(true);
 	QListWidgetItem* item = ui->markerListWidget->takeItem(index);
-	if (item != nullptr) {delete item;}
+	delete item;
 	ui->markerListWidget->blockSignals(false);
 	int newindex = index;
 	if (newindex > ui->markerListWidget->count() - 1) {

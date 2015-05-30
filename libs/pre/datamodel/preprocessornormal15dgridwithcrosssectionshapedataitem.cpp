@@ -192,7 +192,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(Q
 	} else if (event->button() == Qt::RightButton) {
 		QPoint releasePoint(event->x(), event->y());
 		if (isNear(m_pressPoint, releasePoint)) {
-			if (menu != nullptr) {delete menu;}
+			delete menu;
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);
 			menu->addAction(m_openCrossSectionWindowAction);

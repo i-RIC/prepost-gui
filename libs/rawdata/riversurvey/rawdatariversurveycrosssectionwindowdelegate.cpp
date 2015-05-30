@@ -19,22 +19,21 @@ void RawDataRiverSurveyCrosssectionWindowDelegate::paint(QPainter* painter, cons
 	if (m_crosssection == nullptr) {return;}
 	QVariant dat = index.model()->data(index, Qt::EditRole);
 	if (index.column() == 0) {
-		CenteredCheckBox* checkbox = new CenteredCheckBox(nullptr);
-		checkbox->setChecked(dat.toBool());
+		CenteredCheckBox checkbox(nullptr);
+		checkbox.setChecked(dat.toBool());
 		if (m_crosssection->fixedPointLSet() &&
 				(index.row() == m_crosssection->fixedPointLIndex() || index.row() == 0)) {
-			checkbox->setDisabled(true);
+			checkbox.setDisabled(true);
 		}
 		if (m_crosssection->fixedPointRSet() &&
 				(index.row() == m_crosssection->fixedPointRIndex() || index.row() == m_crosssection->numOfAltitudes() - 1)) {
-			checkbox->setDisabled(true);
+			checkbox.setDisabled(true);
 		}
-		checkbox->resize(option.rect.size());
+		checkbox.resize(option.rect.size());
 
 		QPixmap pixmap(option.rect.size());
-		checkbox->render(&pixmap);
+		checkbox.render(&pixmap);
 		painter->drawPixmap(option.rect, pixmap);
-		delete checkbox;
 	} else {
 		QStyledItemDelegate::paint(painter, option, index);
 	}

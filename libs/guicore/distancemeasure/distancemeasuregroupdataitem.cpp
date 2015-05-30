@@ -47,10 +47,8 @@ void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 
 void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	for (int i = 0; i < m_childItems.count(); ++i) {
-		GraphicsWindowDataItem* item = m_childItems.at(i);
-		delete item;
-	}
+	clearChildItems();
+
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomNode childNode = children.at(i);
@@ -62,8 +60,7 @@ void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 
 void DistanceMeasureGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i) {
-		GraphicsWindowDataItem* item = m_childItems.at(i);
+	for (GraphicsWindowDataItem* item : m_childItems) {
 		writer.writeStartElement("DistanceMeasure");
 		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();

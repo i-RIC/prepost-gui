@@ -33,9 +33,8 @@ CoordinateSystemBuilder::CoordinateSystemBuilder(QObject* parent)
 				system->setName(name);
 				system->setCaption(caption);
 				m_systems.append(system);
-			} else if (system != nullptr) {
-				delete system;
 			}
+			delete system;
 		}
 	}
 	/*
@@ -133,8 +132,8 @@ CoordinateSystem* CoordinateSystemBuilder::buildFromProj4String(const QString& l
 
 CoordinateSystemBuilder::~CoordinateSystemBuilder()
 {
-	for (int i = 0; i < m_systems.count(); ++i) {
-		delete m_systems.at(i);
+	for (auto s : m_systems) {
+		delete s;
 	}
 }
 

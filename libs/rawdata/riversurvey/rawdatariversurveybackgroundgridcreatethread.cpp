@@ -165,15 +165,15 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		if (m_canceled) {break;}
 		if (! m_useDivisionPoints) {
 			if (p->backgroundLGridLines().size() != JDIVNUM - 1) {
-				for (auto it = p->backgroundLGridLines().begin(); it != p->backgroundLGridLines().end(); ++it) {
-					delete *it;
+				for (auto line : p->backgroundLGridLines()) {
+					delete line;
 				}
 				p->backgroundLGridLines().clear();
 				p->backgroundLGridLines().insert(0, JDIVNUM - 1, 0);
 			}
 			if (p->backgroundRGridLines().size() != JDIVNUM - 1) {
-				for (auto it = p->backgroundRGridLines().begin(); it != p->backgroundRGridLines().end(); ++it) {
-					delete *it;
+				for (auto line : p->backgroundRGridLines()) {
+					delete line;
 				}
 				p->backgroundRGridLines().clear();
 				p->backgroundRGridLines().insert(0, JDIVNUM - 1, 0);
@@ -182,7 +182,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		p = p->nextPoint();
 	}
 	// build background interpolators.
-	for (auto s_it = solvers.begin(); s_it != solvers.end(); ++s_it) {
+	for (RiverBackgroundGridCtrlSolver* solver : solvers) {
 		// check condition to exit.
 		if (m_abort) {return false;}
 
@@ -190,7 +190,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runStandard()
 		if (m_restart) {break;}
 		if (m_canceled) {break;}
 
-		(*s_it)->update();
+		solver->update();
 	}
 	// initializes grid.
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
@@ -423,8 +423,8 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 {
 	// clear first.
-	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it) {
-		delete(*it);
+	for (auto solver : m_gridSolvers) {
+		delete solver;
 	}
 	m_gridSolvers.clear();
 	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(parent());
@@ -454,15 +454,11 @@ void RawDataRiverSurveyBackgroundGridCreateThread::updateGridInterpolators()
 	unsigned int rindices = static_cast<unsigned int>(p->CenterToRightCtrlPoints.size());
 	p = rs->headPoint();
 	while (p != nullptr) {
-		for (auto rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit) {
-			if (*rit != nullptr) {
-				delete(*rit);
-			}
+		for (auto line : p->LGridLines()) {
+			delete line;
 		}
-		for (auto rit = p->RGridLines().begin(); rit != p->RGridLines().end(); ++rit) {
-			if (*rit != nullptr) {
-				delete(*rit);
-			}
+		for (auto line : p->RGridLines()) {
+			delete line;
 		}
 		p->LGridLines().clear();
 		p->LGridLines().insert(0, lindices, 0);

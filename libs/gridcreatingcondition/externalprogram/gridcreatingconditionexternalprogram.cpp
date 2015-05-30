@@ -49,9 +49,7 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 GridCreatingConditionExternalProgram::~GridCreatingConditionExternalProgram()
 {
 	delete m_definition;
-	if (m_rightClickingMenu != nullptr) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 }
 
 bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)

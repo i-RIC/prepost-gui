@@ -685,48 +685,46 @@ void PreProcessorRawDataGroupDataItem::editScalarBarLegendBox(PreProcessorScalar
 {
 	if (m_condition->isOption()) {
 		// discrete
-		PreProcessorLegendBoxEditDialog* legendboxDialog = new PreProcessorLegendBoxEditDialog(dialog);
-		legendboxDialog->setWidth(m_scalarBarSetting.width);
-		legendboxDialog->setHeight(m_scalarBarSetting.height);
-		legendboxDialog->setPositionX(m_scalarBarSetting.positionX);
-		legendboxDialog->setPositionY(m_scalarBarSetting.positionY);
-		legendboxDialog->setEntryTextSetting(dialog->labelTextSetting());
-		if (legendboxDialog->exec() == QDialog::Accepted) {
-			m_scalarBarSetting.width = legendboxDialog->width();
-			m_scalarBarSetting.height = legendboxDialog->height();
-			m_scalarBarSetting.positionX = legendboxDialog->positionX();
-			m_scalarBarSetting.positionY = legendboxDialog->positionY();
-			dialog->setLabelTextSetting(legendboxDialog->entryTextSetting());
+		PreProcessorLegendBoxEditDialog legendboxDialog(dialog);
+		legendboxDialog.setWidth(m_scalarBarSetting.width);
+		legendboxDialog.setHeight(m_scalarBarSetting.height);
+		legendboxDialog.setPositionX(m_scalarBarSetting.positionX);
+		legendboxDialog.setPositionY(m_scalarBarSetting.positionY);
+		legendboxDialog.setEntryTextSetting(dialog->labelTextSetting());
+		if (legendboxDialog.exec() == QDialog::Accepted) {
+			m_scalarBarSetting.width = legendboxDialog.width();
+			m_scalarBarSetting.height = legendboxDialog.height();
+			m_scalarBarSetting.positionX = legendboxDialog.positionX();
+			m_scalarBarSetting.positionY = legendboxDialog.positionY();
+			dialog->setLabelTextSetting(legendboxDialog.entryTextSetting());
 		}
-		delete legendboxDialog;
 	} else {
 		// continuous
-		PreProcessorScalarBarEditDialog* scalarbarDialog = new PreProcessorScalarBarEditDialog(dialog);
-		scalarbarDialog->hideDisplayCheckBox();
-		scalarbarDialog->setOrientation(m_scalarBarSetting.orientation);
-		scalarbarDialog->setScalarBarTitle(m_title);
-		scalarbarDialog->setNumberOfLabels(m_scalarBarSetting.numberOfLabels);
-		scalarbarDialog->setWidth(m_scalarBarSetting.width);
-		scalarbarDialog->setHeight(m_scalarBarSetting.height);
-		scalarbarDialog->setPositionX(m_scalarBarSetting.positionX);
-		scalarbarDialog->setPositionY(m_scalarBarSetting.positionY);
-		scalarbarDialog->setTitleTextSetting(dialog->titleTextSetting());
-		scalarbarDialog->setLabelTextSetting(dialog->labelTextSetting());
-		scalarbarDialog->setLabelFormat(m_scalarBarSetting.labelFormat);
+		PreProcessorScalarBarEditDialog scalarbarDialog(dialog);
+		scalarbarDialog.hideDisplayCheckBox();
+		scalarbarDialog.setOrientation(m_scalarBarSetting.orientation);
+		scalarbarDialog.setScalarBarTitle(m_title);
+		scalarbarDialog.setNumberOfLabels(m_scalarBarSetting.numberOfLabels);
+		scalarbarDialog.setWidth(m_scalarBarSetting.width);
+		scalarbarDialog.setHeight(m_scalarBarSetting.height);
+		scalarbarDialog.setPositionX(m_scalarBarSetting.positionX);
+		scalarbarDialog.setPositionY(m_scalarBarSetting.positionY);
+		scalarbarDialog.setTitleTextSetting(dialog->titleTextSetting());
+		scalarbarDialog.setLabelTextSetting(dialog->labelTextSetting());
+		scalarbarDialog.setLabelFormat(m_scalarBarSetting.labelFormat);
 
-		if (scalarbarDialog->exec() == QDialog::Accepted) {
-			m_scalarBarSetting.orientation = scalarbarDialog->orientation();
-			m_title = scalarbarDialog->scalarBarTitle();
-			m_scalarBarSetting.numberOfLabels = scalarbarDialog->numberOfLabels();
-			m_scalarBarSetting.width = scalarbarDialog->width();
-			m_scalarBarSetting.height = scalarbarDialog->height();
-			m_scalarBarSetting.positionX = scalarbarDialog->positionX();
-			m_scalarBarSetting.positionY = scalarbarDialog->positionY();
-			dialog->setTitleTextSetting(scalarbarDialog->titleTextSetting());
-			dialog->setLabelTextSetting(scalarbarDialog->labelTextSetting());
-			m_scalarBarSetting.labelFormat = scalarbarDialog->labelFormat();
+		if (scalarbarDialog.exec() == QDialog::Accepted) {
+			m_scalarBarSetting.orientation = scalarbarDialog.orientation();
+			m_title = scalarbarDialog.scalarBarTitle();
+			m_scalarBarSetting.numberOfLabels = scalarbarDialog.numberOfLabels();
+			m_scalarBarSetting.width = scalarbarDialog.width();
+			m_scalarBarSetting.height = scalarbarDialog.height();
+			m_scalarBarSetting.positionX = scalarbarDialog.positionX();
+			m_scalarBarSetting.positionY = scalarbarDialog.positionY();
+			dialog->setTitleTextSetting(scalarbarDialog.titleTextSetting());
+			dialog->setLabelTextSetting(scalarbarDialog.labelTextSetting());
+			m_scalarBarSetting.labelFormat = scalarbarDialog.labelFormat();
 		}
-		delete scalarbarDialog;
 	}
 	renderGraphicsView();
 }

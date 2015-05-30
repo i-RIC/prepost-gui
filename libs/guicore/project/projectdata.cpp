@@ -97,10 +97,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent
 
 ProjectData::~ProjectData()
 {
-	if (m_solverDefinition != nullptr) {
-		delete m_solverDefinition;
-	}
-	// delete mainfile
+	delete m_solverDefinition;
 	delete m_mainfile;
 	// close lock file
 	unlock();

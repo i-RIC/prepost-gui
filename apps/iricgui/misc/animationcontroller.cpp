@@ -159,14 +159,12 @@ void AnimationController::toggleFollowLastStep(bool follow)
 
 void AnimationController::setup(SolverDefinition::IterationType iType)
 {
-	if (m_animationMenu != nullptr) {
-		delete m_animationMenu;
-		m_animationMenu = nullptr;
-	}
-	if (m_animationToolBar != nullptr) {
-		delete m_animationToolBar;
-		m_animationToolBar = nullptr;
-	}
+	delete m_animationMenu;
+	m_animationMenu = nullptr;
+
+	delete m_animationToolBar;
+	m_animationToolBar = nullptr;
+
 	if (iType == SolverDefinition::NoIteration) {
 		// no menu, toolbar for animations.
 		return;

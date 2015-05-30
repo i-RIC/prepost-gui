@@ -144,9 +144,8 @@ RawDataPolygon::RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, Solv
 RawDataPolygon::~RawDataPolygon()
 {
 	delete m_gridRegionPolygon;
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		delete m_holePolygons[i];
-	}
+	clearHolePolygons();
+
 	delete m_rightClickingMenu;
 
 	vtkRenderer* r = renderer();
@@ -1112,10 +1111,10 @@ void RawDataPolygon::loadExternalData(const QString& filename)
 
 void RawDataPolygon::saveExternalData(const QString& filename)
 {
-	iRICLib::Polygon* pol = new iRICLib::Polygon();
-	pol->values.clear();
+	iRICLib::Polygon pol;
+	pol.values.clear();
 	for (int i = 0; i < m_variantValues.size(); ++i) {
-		pol->values.push_back(m_variantValues.at(i).toDouble());
+		pol.values.push_back(m_variantValues.at(i).toDouble());
 	}
 	iRICLib::InternalPolygon* regionPolygon = new iRICLib::InternalPolygon();
 	QPolygonF qpol = polygon();
@@ -1126,7 +1125,7 @@ void RawDataPolygon::saveExternalData(const QString& filename)
 		*(regionPolygon->x + i) = qpol.at(i).x();
 		*(regionPolygon->y + i) = qpol.at(i).y();
 	}
-	pol->polygon = regionPolygon;
+	pol.polygon = regionPolygon;
 	for (int i = 0; i < m_holePolygons.count(); ++i) {
 		iRICLib::InternalPolygon* holePolygon = new iRICLib::InternalPolygon();
 		QPolygonF hqpol = m_holePolygons[i]->polygon();
@@ -1137,15 +1136,14 @@ void RawDataPolygon::saveExternalData(const QString& filename)
 			*(holePolygon->x + j) = hqpol.at(j).x();
 			*(holePolygon->y + j) = hqpol.at(j).y();
 		}
-		pol->holes.push_back(holePolygon);
+		pol.holes.push_back(holePolygon);
 	}
 	GridRelatedConditionDimensionsContainer* dims = dimensions();
 	bool noDim = true;
 	if (dims != nullptr) {
 		noDim = dims->containers().size() == 0;
 	}
-	pol->save(iRIC::toStr(filename).c_str(), noDim);
-	delete pol;
+	pol.save(iRIC::toStr(filename).c_str(), noDim);
 }
 
 void RawDataPolygon::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -1356,11 +1354,9 @@ void RawDataPolygon::restoreMouseEventMode()
 void RawDataPolygon::clear()
 {
 	initParams();
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		delete m_holePolygons[i];
-	}
-	m_holePolygons.clear();
+	clearHolePolygons();
 	delete m_gridRegionPolygon;
+
 	m_gridRegionPolygon = new RawDataPolygonRegionPolygon(this);
 	m_gridRegionPolygon->setSelected(true);
 	m_gridRegionPolygon->setZDepthRange(m_depthRange.min(), m_depthRange.max());
@@ -1921,3 +1917,10 @@ void RawDataPolygon::handleDimensionValuesChange(const QList<QVariant>& /*before
 	// @todo implement this!
 }
 
+void RawDataPolygon::clearHolePolygons()
+{
+	for (auto p : m_holePolygons) {
+		delete p;
+	}
+	m_holePolygons.clear();
+}

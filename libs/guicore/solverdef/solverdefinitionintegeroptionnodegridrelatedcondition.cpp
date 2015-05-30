@@ -28,18 +28,17 @@ ScalarsToColorsContainer* SolverDefinitionIntegerOptionNodeGridRelatedCondition:
 	QMap<double, QString> engEnums;
 	QMap<double, QString> enums;
 	QMap<double, QColor> cols;
-	ColorSource* src = new ColorSource(d);
-	src->load(":/libs/guicore/data/colorsource_cell.xml");
+	ColorSource src(d);
+	src.load(":/libs/guicore/data/colorsource_cell.xml");
 	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it) {
 		int num = it.key();
 		engEnums.insert(num, it.value());
 		enums.insert(num, m_enumerations.value(num));
-		cols.insert(num, src->getColor(num));
+		cols.insert(num, src.getColor(num));
 	}
 	cont->setEnglishEnumerations(engEnums);
 	cont->setEnumerations(enums);
 	cont->setColors(cols);
 	cont->setColors(cols);
-	delete src;
 	return cont;
 }

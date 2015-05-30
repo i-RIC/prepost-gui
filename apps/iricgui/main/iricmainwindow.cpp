@@ -1458,8 +1458,8 @@ void iRICMainWindow::setupRecentProjectsMenu()
 {
 	QMenu* menu = m_actionManager->recentProjectsMenu();
 	QList<QAction*> actions = menu->actions();
-	for (int i = 0; i < actions.size(); ++i) {
-		delete actions.at(i);
+	for (auto a : menu->actions()) {
+		delete a;
 	}
 	menu->clear();
 	QSettings setting;

@@ -891,30 +891,30 @@ private:
 void RawDataPointmap::loadExternalData(const QString& filename)
 {
 	if (projectData()->version().build() >= 3607) {
-		iRICLib::PointMap* pm = new iRICLib::PointMap();
-		pm->load(iRIC::toStr(filename).c_str());
+		iRICLib::PointMap pm;
+		pm.load(iRIC::toStr(filename).c_str());
 		vtkPoints* points = vtkPoints::New();
 		points->SetDataTypeToDouble();
-		points->Allocate(pm->pointCount);
+		points->Allocate(pm.pointCount);
 
-		for (int i = 0; i < pm->pointCount; ++i) {
-			points->InsertNextPoint(pm->x.at(i), pm->y.at(i), 0);
+		for (int i = 0; i < pm.pointCount; ++i) {
+			points->InsertNextPoint(pm.x.at(i), pm.y.at(i), 0);
 		}
 		points->Modified();
 
 		vtkDataArray* da = nullptr;
-		if (pm->valueType == iRICLib::PointMap::vtInt) {
+		if (pm.valueType == iRICLib::PointMap::vtInt) {
 			vtkIntArray* intDa = vtkIntArray::New();
 			intDa->SetName(VALUES);
-			for (int i = 0; i < pm->pointCount; ++i) {
-				intDa->InsertNextValue(pm->intValue.at(i));
+			for (int i = 0; i < pm.pointCount; ++i) {
+				intDa->InsertNextValue(pm.intValue.at(i));
 			}
 			da = intDa;
-		} else if (pm->valueType == iRICLib::PointMap::vtReal) {
+		} else if (pm.valueType == iRICLib::PointMap::vtReal) {
 			vtkDoubleArray* realDa = vtkDoubleArray::New();
 			realDa->SetName(VALUES);
-			for (int i = 0; i < pm->pointCount; ++i) {
-				realDa->InsertNextValue(pm->realValue.at(i));
+			for (int i = 0; i < pm.pointCount; ++i) {
+				realDa->InsertNextValue(pm.realValue.at(i));
 			}
 			da = realDa;
 		}
@@ -928,7 +928,7 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		vtkIdType pts[3];
 		vtkCellArray* ca = vtkCellArray::New();
 
-		for (vtkIdType i = 0; i < pm->pointCount; ++i) {
+		for (vtkIdType i = 0; i < pm.pointCount; ++i) {
 			pts[0] = i;
 			ca->InsertNextCell(1, pts);
 		}
@@ -946,8 +946,8 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		m_vtkDelaunayedPolyData->GetPointData()->Modified();
 
 		ca = vtkCellArray::New();
-		for (unsigned int i = 0; i < pm->triangles.size(); ++i) {
-			iRICLib::PointMapTriangle tri = pm->triangles.at(i);
+		for (unsigned int i = 0; i < pm.triangles.size(); ++i) {
+			const iRICLib::PointMapTriangle& tri = pm.triangles.at(i);
 			pts[0] = tri.index1 - 1;
 			pts[1] = tri.index2 - 1;
 			pts[2] = tri.index3 - 1;
@@ -962,8 +962,8 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 		points->Delete();
 		da->Delete();
 
-		for (unsigned int i = 0; i < pm->breaklines.size(); ++i) {
-			iRICLib::PointMapBreakline bl = pm->breaklines.at(i);
+		for (unsigned int i = 0; i < pm.breaklines.size(); ++i) {
+			const iRICLib::PointMapBreakline& bl = pm.breaklines.at(i);
 			RawDataPointmapBreakLine* breakline = new RawDataPointmapBreakLine(this);
 			QVector<vtkIdType> indices;
 			for (unsigned int j = 0; j < bl.indices.size(); ++j) {
@@ -973,7 +973,6 @@ void RawDataPointmap::loadExternalData(const QString& filename)
 			m_breakLines.append(breakline);
 		}
 
-		delete pm;
 	} else {
 		// load data from the external file.
 		QFileInfo finfo(filename);
@@ -1299,13 +1298,13 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 
 	QString argstr;
 	argstr.append("pcj");
-	char* arg = new char[argstr.length() + 1];
-	strcpy(arg, iRIC::toStr(argstr).c_str());
+	std::vector<char> arg(argstr.length() + 1);
+	strcpy(arg.data(), iRIC::toStr(argstr).c_str());
 
 	qDebug("Time for prepareing data for triangle():%d", time.elapsed());
 	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
 
-	thread->setArgs(arg);
+	thread->setArgs(arg.data());
 	thread->setIOs(&in, &out);
 
 	time.restart();
@@ -1319,25 +1318,24 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 	if (! finished) {
 		int prog = 10;
 		// Not finished yet. Show wait dialog.
-		WaitDialog* waitDialog = new WaitDialog(preProcessorWindow());
-		waitDialog->showProgressBar();
-		waitDialog->setRange(0, 100);
-		waitDialog->setUnknownLimitMode(300);
-		waitDialog->setProgress(prog);
+		WaitDialog waitDialog(preProcessorWindow());
+		waitDialog.showProgressBar();
+		waitDialog.setRange(0, 100);
+		waitDialog.setUnknownLimitMode(300);
+		waitDialog.setProgress(prog);
 		if (! allowCancel) {
-			waitDialog->disableCancelButton();
+			waitDialog.disableCancelButton();
 		}
-		waitDialog->setMessage(tr("Remeshing TINs..."));
-		connect(waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		waitDialog->show();
+		waitDialog.setMessage(tr("Remeshing TINs..."));
+		connect(&waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
+		waitDialog.show();
 		while (! finished && ! m_canceled) {
 			qApp->processEvents();
 			finished = thread->wait(200);
-			waitDialog->setProgress(prog);
+			waitDialog.setProgress(prog);
 			++prog;
 		}
-		waitDialog->hide();
-		delete waitDialog;
+		waitDialog.hide();
 		if (m_canceled) {
 			// not finished, but canceled;
 			thread->terminate();
@@ -1348,7 +1346,6 @@ bool RawDataPointmap::doDelaunay(bool allowCancel)
 	if (segmentCount != 0) {
 		delete in.segmentlist;
 	}
-	delete arg;
 	qDebug("Time for executing triangle():%d", time.elapsed());
 	if (! m_canceled) {
 		time.restart();

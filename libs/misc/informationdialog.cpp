@@ -19,29 +19,26 @@ InformationDialog::~InformationDialog()
 
 void InformationDialog::information(QWidget* parent, const QString& title, const QString& message, const QString& name)
 {
-	QMessageBox* mbox = new QMessageBox(parent);
-	mbox->setIcon(QMessageBox::Information);
-	QPixmap pixmap = mbox->iconPixmap();
+	QMessageBox mbox(parent);
+	mbox.setIcon(QMessageBox::Information);
+	QPixmap pixmap = mbox.iconPixmap();
 	showDialog(parent, title, message, name, pixmap);
-	delete mbox;
 }
 
 void InformationDialog::warning(QWidget* parent, const QString& title, const QString& message, const QString& name)
 {
-	QMessageBox* mbox = new QMessageBox(parent);
-	mbox->setIcon(QMessageBox::Warning);
-	QPixmap pixmap = mbox->iconPixmap();
+	QMessageBox mbox(parent);
+	mbox.setIcon(QMessageBox::Warning);
+	QPixmap pixmap = mbox.iconPixmap();
 	showDialog(parent, title, message, name, pixmap);
-	delete mbox;
 }
 
 void InformationDialog::critical(QWidget* parent, const QString& title, const QString& message, const QString& name)
 {
-	QMessageBox* mbox = new QMessageBox(parent);
-	mbox->setIcon(QMessageBox::Critical);
-	QPixmap pixmap = mbox->iconPixmap();
+	QMessageBox mbox(parent);
+	mbox.setIcon(QMessageBox::Critical);
+	QPixmap pixmap = mbox.iconPixmap();
 	showDialog(parent, title, message, name, pixmap);
-	delete mbox;
 }
 
 void InformationDialog::showDialog(QWidget* parent, const QString& title, const QString& message, const QString& name, const QPixmap& pixmap)

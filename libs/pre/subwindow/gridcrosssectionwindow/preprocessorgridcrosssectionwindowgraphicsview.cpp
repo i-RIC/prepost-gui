@@ -934,8 +934,6 @@ void PreProcessorGridCrosssectionWindowGraphicsView::informSelectedVerticesChang
 void PreProcessorGridCrosssectionWindowGraphicsView::updateActionStatus()
 {
 	QModelIndexList rows = selectionModel()->selectedRows();
-//	m_activateAction->setEnabled(rows.count() > 0);
-//	m_inactivateAction->setEnabled(rows.count() > 0);
 	if (rows.count() == 0) {
 		m_editAction->setDisabled(true);
 	} else {
@@ -965,8 +963,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->condition()->caption()));
 	QVector<vtkIdType> targets;
 	QModelIndexList selIndices = selectionModel()->selectedIndexes();
-	for (auto it = selIndices.begin(); it != selIndices.end(); ++it) {
-		QModelIndex index = *it;
+	for (QModelIndex index : selIndices) {
 		vtkIdType targetindex;
 		if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 			targetindex = grid->vertexIndex(index.row(), m_parentWindow->targetIndex());

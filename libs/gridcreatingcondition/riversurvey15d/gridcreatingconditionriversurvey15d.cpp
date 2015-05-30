@@ -207,9 +207,7 @@ GridCreatingConditionRiverSurvey15D::~GridCreatingConditionRiverSurvey15D()
 	r->RemoveActor(m_selectedCtrlPointsActor);
 	r->RemoveActor(m_blackSelectedCtrlPointsActor);
 
-	if (m_rightClickingMenu != nullptr) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 }
 
 bool GridCreatingConditionRiverSurvey15D::create(QWidget* /*parent*/)

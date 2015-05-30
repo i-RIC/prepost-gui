@@ -39,8 +39,8 @@ CgnsFileInputConditionWidgetFunctionalDialog::~CgnsFileInputConditionWidgetFunct
 
 void CgnsFileInputConditionWidgetFunctionalDialog::clearGraphData()
 {
-	for (int i = 0; i < m_graphCurves.count(); ++i) {
-		delete m_graphCurves[i];
+	for (auto c : m_graphCurves) {
+		delete c;
 	}
 	m_graphCurves.clear();
 }

@@ -39,9 +39,7 @@ GraphicsWindowDataModel::GraphicsWindowDataModel(QMainWindow* w, ProjectDataItem
 
 GraphicsWindowDataModel::~GraphicsWindowDataModel()
 {
-	if (m_operationToolBar) {
-		delete m_operationToolBar;
-	}
+	delete m_operationToolBar;
 }
 
 void GraphicsWindowDataModel::loadFromCgnsFile(const int fn)
@@ -63,7 +61,7 @@ void GraphicsWindowDataModel::closeCgnsFile()
 void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
 {
 	if (QApplication::mouseButtons() == Qt::RightButton) {
-		if (m_rightClickMenu != nullptr) {delete m_rightClickMenu;}
+		delete m_rightClickMenu;
 		m_rightClickMenu = new QMenu(projectData()->mainWindow());
 		QStandardItem* pressedItem = m_itemModel->itemFromIndex(index);
 		GraphicsWindowDataItem* dataItem = m_rootDataItem->modelItemFromItem(pressedItem);

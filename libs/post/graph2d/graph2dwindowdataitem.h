@@ -108,6 +108,8 @@ protected:
 	void saveCheckState(QXmlStreamWriter& writer);
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
+	/// Clear child items
+	void clearChildItems();
 	QList <Graph2dWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy;

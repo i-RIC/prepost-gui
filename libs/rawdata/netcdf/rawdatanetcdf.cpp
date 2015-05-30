@@ -22,6 +22,7 @@
 #include <vtkStructuredGrid.h>
 
 #include <netcdf.h>
+#include <vector>
 
 #define VALUE "value"
 #define X "x"
@@ -131,24 +132,22 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		ret = nc_inq_dimlen(ncid, xDimId, &xSize);
 		ret = nc_inq_dimlen(ncid, yDimId, &ySize);
 
-		double* xs = new double[xSize];
-		double* ys = new double[ySize];
+		std::vector<double> xs(xSize);
+		std::vector<double> ys(xSize);
 
-		ret = nc_get_var_double(ncid, xVarId, xs);
-		ret = nc_get_var_double(ncid, yVarId, ys);
+		ret = nc_get_var_double(ncid, xVarId, xs.data());
+		ret = nc_get_var_double(ncid, yVarId, ys.data());
 
 		m_xValues.clear();
 		m_xValues.reserve(static_cast<int>(xSize));
 		for (size_t i = 0; i < xSize; ++i) {
-			m_xValues.append(*(xs + i));
+			m_xValues.append(xs[i]);
 		}
 		m_yValues.clear();
 		m_yValues.reserve(static_cast<int>(ySize));
 		for (size_t i = 0; i < ySize; ++i) {
-			m_yValues.append(*(ys + i));
+			m_yValues.append(ys[i]);
 		}
-		delete xs;
-		delete ys;
 
 		// load Lon Lat Values
 		ret = nc_inq_varid(ncid, LAT, &latVarId);
@@ -163,26 +162,22 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		ret = nc_inq_dimlen(ncid, latDimId, &latSize);
 		ret = nc_inq_dimlen(ncid, lonDimId, &lonSize);
 
-		double* lons = new double[lonSize];
-		double* lats = new double[latSize];
+		std::vector<double> lons(lonSize);
+		std::vector<double> lats(latSize);
 
-		ret = nc_get_var_double(ncid, lonVarId, lons);
-		ret = nc_get_var_double(ncid, latVarId, lats);
+		ret = nc_get_var_double(ncid, lonVarId, lons.data());
+		ret = nc_get_var_double(ncid, latVarId, lats.data());
 
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
 		for (size_t i = 0; i < lonSize; ++i) {
-			m_lonValues.append(*(lons + i));
+			m_lonValues.append(lons[i]);
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
 		for (size_t i = 0; i < latSize; ++i) {
-			m_latValues.append(*(lats + i));
+			m_latValues.append(lats[i]);
 		}
-
-		delete lons;
-		delete lats;
-
 	} else {
 		// the coordinate system type is LonLat.
 		m_coordinateSystemType = LonLat;
@@ -198,25 +193,22 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		ret = nc_inq_dimlen(ncid, latDimId, &latSize);
 		ret = nc_inq_dimlen(ncid, lonDimId, &lonSize);
 
-		double* lons = new double[lonSize];
-		double* lats = new double[latSize];
+		std::vector<double> lons(lonSize);
+		std::vector<double> lats(latSize);
 
-		ret = nc_get_var_double(ncid, lonVarId, lons);
-		ret = nc_get_var_double(ncid, latVarId, lats);
+		ret = nc_get_var_double(ncid, lonVarId, lons.data());
+		ret = nc_get_var_double(ncid, latVarId, lats.data());
 
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
 		for (size_t i = 0; i < lonSize; ++i) {
-			m_lonValues.append(*(lons + i));
+			m_lonValues.append(lons[i]);
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
 		for (size_t i = 0; i < latSize; ++i) {
-			m_latValues.append(*(lats + i));
+			m_latValues.append(lats[i]);
 		}
-
-		delete lons;
-		delete lats;
 	}
 
 	// ------------------------
@@ -239,14 +231,13 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 		}
 
 		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr) {
-			int* vals = new int[dimSize];
-			ret = nc_get_var_int(ncid, dVarId, vals);
+			std::vector<int> vals(dimSize);
+			ret = nc_get_var_int(ncid, dVarId, vals.data());
 			QList<QVariant> vals1;
 			for (size_t j = 0; j < dimSize; ++j) {
-				QVariant v(*(vals + j));
+				QVariant v(vals[j]);
 				vals1.append(v);
 			}
-			delete vals;
 
 			QList<QVariant> vals2 = c->variantValues();
 			if (vals1 != vals2) {
@@ -254,14 +245,13 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 				// @todo add error handling!
 			}
 		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != nullptr) {
-			double* vals = new double[dimSize];
-			ret = nc_get_var_double(ncid, dVarId, vals);
+			std::vector<double> vals(dimSize);
+			ret = nc_get_var_double(ncid, dVarId, vals.data());
 			QList<QVariant> vals1;
 			for (size_t j = 0; j < dimSize; ++j) {
-				QVariant v(*(vals + j));
+				QVariant v(vals[j]);
 				vals1.append(v);
 			}
-			delete vals;
 
 			QList<QVariant> vals2 = c->variantValues();
 			if (vals1 != vals2) {
@@ -633,29 +623,27 @@ int RawDataNetcdf::defineValue(int ncid, int xId, int yId, const QList<int>& dim
 {
 	int ret;
 	int ndims = dimensions()->containers().size() + 2;
-	int* dimids = new int[ndims];
-	size_t* chunksizes = new size_t[ndims];
+	std::vector<int> dimids(ndims);
+	std::vector<size_t> chunksizes(ndims);
 
 	// reverse order!
 	for (int i = 0; i < ndims - 2; ++i) {
-		*(dimids + ndims - 3 - i) = dimIds.at(i);
-		*(chunksizes + ndims - 3 - i) = 1;
+		dimids[ndims - 3 - i] = dimIds.at(i);
+		chunksizes[ndims - 3 - i] = 1;
 	}
-	*(dimids + ndims - 2) = yId;
-	*(dimids + ndims - 1) = xId;
+	dimids[ndims - 2] = yId;
+	dimids[ndims - 1] = xId;
 	if (m_coordinateSystemType == XY) {
-		*(chunksizes + ndims - 2) = m_yValues.size();
-		*(chunksizes + ndims - 1) = m_xValues.size();
+		chunksizes[ndims - 2] = m_yValues.size();
+		chunksizes[ndims - 1] = m_xValues.size();
 	} else if (m_coordinateSystemType == LonLat) {
-		*(chunksizes + ndims - 2) = m_latValues.size();
-		*(chunksizes + ndims - 1) = m_lonValues.size();
+		chunksizes[ndims - 2] = m_latValues.size();
+		chunksizes[ndims - 1] = m_lonValues.size();
 	}
-	ret = nc_def_var(ncid, VALUE, getNcType(gridRelatedCondition()), ndims, dimids, varId);
+	ret = nc_def_var(ncid, VALUE, getNcType(gridRelatedCondition()), ndims, dimids.data(), varId);
 	ret = nc_def_var_deflate(ncid, *varId, 0, 1, 2);
-	ret = nc_def_var_chunking(ncid, *varId, NC_CHUNKED, chunksizes);
+	ret = nc_def_var_chunking(ncid, *varId, NC_CHUNKED, chunksizes.data());
 
-	delete chunksizes;
-	delete dimids;
 	if (ret != NC_NOERR) {return ret;}
 
 	return NC_NOERR;
@@ -664,43 +652,39 @@ int RawDataNetcdf::defineValue(int ncid, int xId, int yId, const QList<int>& dim
 int RawDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId)
 {
 	if (m_coordinateSystemType == XY) {
-		double* xs = new double[m_xValues.size()];
-		double* ys = new double[m_yValues.size()];
-		int ret;
+		std::vector<double> xs(m_xValues.size());
+		std::vector<double> ys(m_yValues.size());
+		int ret = NC_NOERR;
 
 		for (int i = 0; i < m_xValues.size(); ++i) {
-			*(xs + i) = m_xValues.at(i);
+			xs[i] = m_xValues.at(i);
 		}
 		for (int i = 0; i < m_yValues.size(); ++i) {
-			*(ys + i) = m_yValues.at(i);
+			ys[i] = m_yValues.at(i);
 		}
-		ret = nc_put_var_double(ncid, xId, xs);
+		ret = nc_put_var_double(ncid, xId, xs.data());
 		if (ret != NC_NOERR) {return ret;}
-		ret = nc_put_var_double(ncid, yId, ys);
-		if (ret != NC_NOERR) { return ret; }
+		ret = nc_put_var_double(ncid, yId, ys.data());
+		if (ret != NC_NOERR) {return ret;}
 
-		delete xs;
-		delete ys;
+		return NC_NOERR;
 	}
 
 	if (m_coordinateSystemType == XY || m_coordinateSystemType == LonLat) {
-		double* lons = new double[m_lonValues.size()];
-		double* lats = new double[m_latValues.size()];
+		std::vector<double> lons(m_lonValues.size());
+		std::vector<double> lats(m_latValues.size());
 		int ret;
 
 		for (int i = 0; i < m_lonValues.size(); ++i) {
-			*(lons + i) = m_lonValues.at(i);
+			lons[i] = m_lonValues.at(i);
 		}
 		for (int i = 0; i < m_latValues.size(); ++i) {
-			*(lats + i) = m_latValues.at(i);
+			lats[i] = m_latValues.at(i);
 		}
-		ret = nc_put_var_double(ncid, lonId, lons);
+		ret = nc_put_var_double(ncid, lonId, lons.data());
 		if (ret != NC_NOERR) {return ret;}
-		ret = nc_put_var_double(ncid, latId, lats);
-		if (ret != NC_NOERR) { return ret; }
-
-		delete lons;
-		delete lats;
+		ret = nc_put_var_double(ncid, latId, lats.data());
+		if (ret != NC_NOERR) {return ret;}
 	}
 	return NC_NOERR;
 }
@@ -715,27 +699,25 @@ int RawDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr) {
 			GridRelatedConditionDimensionIntegerContainer* c2 =
 				dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c);
-			int* vals = new int[c->count()];
-			const QList<int> listVals = c2->values();
+			std::vector<int> vals(c->count());
+			const QList<int>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
-				*(vals + j) = listVals.at(j);
+				vals[j] = listVals.at(j);
 			}
 			size_t start = 0;
 			size_t len = listVals.size();
-			ret = nc_put_vara_int(ncid, varId, &start, &len, vals);
-			delete vals;
+			ret = nc_put_vara_int(ncid, varId, &start, &len, vals.data());
 		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != 0) {
 			GridRelatedConditionDimensionRealContainer* c2 =
 				dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c);
-			double* vals = new double[c->count()];
-			const QList<double> listVals = c2->values();
+			std::vector<double> vals(c->count());
+			const QList<double>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
-				*(vals + j) = listVals.at(j);
+				vals[j] = listVals.at(j);
 			}
 			size_t start = 0;
 			size_t len = listVals.size();
-			ret = nc_put_vara_double(ncid, varId, &start, &len, vals);
-			delete vals;
+			ret = nc_put_vara_double(ncid, varId, &start, &len, vals.data());
 		}
 		if (ret != NC_NOERR) {return ret;}
 	}

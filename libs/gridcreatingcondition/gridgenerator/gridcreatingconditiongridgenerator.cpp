@@ -29,9 +29,7 @@ GridCreatingConditionGridGenerator::GridCreatingConditionGridGenerator(ProjectDa
 
 GridCreatingConditionGridGenerator::~GridCreatingConditionGridGenerator()
 {
-	if (m_rightClickingMenu != 0) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 }
 
 bool GridCreatingConditionGridGenerator::create(QWidget* parent)

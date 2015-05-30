@@ -19,9 +19,7 @@ GridImporterFactory* GridImporterFactory::m_instance = 0;
 
 void GridImporterFactory::init()
 {
-	if (m_instance != nullptr) {
-		delete m_instance;
-	}
+	delete m_instance;
 	m_instance = new GridImporterFactory();
 }
 
@@ -75,17 +73,15 @@ GridImporterFactory::GridImporterFactory()
 			continue;
 
 LOADERROR:
-			if (translator != nullptr) {
-				delete translator;
-			}
+			delete translator;
 		}
 	}
 }
 
 GridImporterFactory::~GridImporterFactory()
 {
-	for (GridImporterInterface* iface : m_importerList) {
-		delete iface;
+	for (auto i : m_importerList) {
+		delete i;
 	}
 	m_importerList.clear();
 }

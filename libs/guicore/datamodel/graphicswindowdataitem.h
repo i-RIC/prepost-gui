@@ -146,6 +146,9 @@ protected:
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
 	virtual QVector2D getOffset();
+	/// Delete child items
+	void clearChildItems();
+
 	QList <GraphicsWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy;

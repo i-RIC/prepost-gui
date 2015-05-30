@@ -105,8 +105,8 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		delete *it;
+	for (auto gt : m_gridTypeDataItems) {
+		delete gt;
 	}
 }
 

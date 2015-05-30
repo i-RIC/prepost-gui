@@ -153,7 +153,7 @@ void PreProcessorGridRelatedConditionCellDataItem::mouseReleaseEvent(QMouseEvent
 		v->setCursor(tmpparent->normalCursor());
 	} else if (event->button() == Qt::RightButton) {
 		PreProcessorGridRelatedConditionCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(parent());
-		if (menu != nullptr) {delete menu;}
+		delete menu;
 		menu = new QMenu(projectData()->mainWindow());
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(tmpparent->selectedCells().count() > 0);

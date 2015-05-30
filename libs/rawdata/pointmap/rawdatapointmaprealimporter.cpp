@@ -62,7 +62,7 @@ bool RawDataPointmapRealImporter::importData(RawData* data, int /*index*/, QWidg
 		QMultiMap<double, double>* map = new QMultiMap<double, double>;
 		do {
 			in >> x[0] >> x[1] >> x[2];
-			if (map->contains(x[0], x[1])) { continue; }
+			if (map->contains(x[0], x[1])) {continue;}
 			if (in.status() == QTextStream::Ok && filterCounter == 0) {
 				xt[0] = x[0]; xt[1] = x[1]; xt[2] = 0;
 				points->InsertNextPoint(xt);

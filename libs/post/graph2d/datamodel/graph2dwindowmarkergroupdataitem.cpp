@@ -73,9 +73,7 @@ void Graph2dWindowMarkerGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 	// delete all current children.
 	dataModel()->objectBrowserView()->blockSignals(true);
 	dataModel()->itemModel()->blockSignals(true);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		delete *it;
-	}
+	clearChildItems();
 	// setup new items.
 	m_childItems.append(m_setting.setupItems(this));
 	updateItemMap();

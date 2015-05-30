@@ -74,6 +74,7 @@ protected:
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void informStepsUpdated();
+	static void clearContainers(QList<PostZoneDataContainer*>& conts);
 
 public slots:
 	void informSolverStart();

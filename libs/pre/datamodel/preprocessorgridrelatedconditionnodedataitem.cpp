@@ -208,7 +208,7 @@ void PreProcessorGridRelatedConditionNodeDataItem::mouseReleaseEvent(QMouseEvent
 		m_definingBoundingBox = false;
 		dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(parent())->fixAttributeBrowser(QPoint(event->x(), event->y()), v);
 	} else if (event->button() == Qt::RightButton) {
-		if (menu != nullptr) {delete menu;}
+		delete menu;
 		menu = new QMenu(projectData()->mainWindow());
 		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 		bool vertexSelected = (tmpparent->selectedVertices().count() > 0);

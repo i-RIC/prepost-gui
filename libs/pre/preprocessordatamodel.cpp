@@ -159,16 +159,16 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	// load the project data.
 	ProjectWorkspace* w = projectData()->mainWindow()->workspace();
 	QString tmpWorkfolder = ProjectData::newWorkfolderName(w->workspace());
-	ProjectData* tmpProj = new ProjectData(tmpWorkfolder, nullptr);
-	tmpProj->unzipFrom(fname);
-	tmpProj->loadCgnsList();
+	ProjectData tmpProj(tmpWorkfolder, nullptr);
+	tmpProj.unzipFrom(fname);
+	tmpProj.loadCgnsList();
 
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	// now it's loaded. find how many cgns files are included.
-	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj->mainfile()->cgnsFileList()->cgnsFiles();
+	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj.mainfile()->cgnsFileList()->cgnsFiles();
 	if (list.count() == 1) {
 		// automatically use the only cgns file.
-		QString fullname = tmpProj->workCgnsFileName(list.first()->filename());
+		QString fullname = tmpProj.workCgnsFileName(list.first()->filename());
 		bool ret = pre->importInputCondition(fullname);
 		if (! ret) {
 			// not imported.
@@ -184,14 +184,13 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 		bool ok;
 		QString solname = QInputDialog::getItem(projectData()->mainWindow(), tr("Select case"), tr("Please select from which case in %1 to import calculation conditions.").arg(projname), items, 0, false, &ok);
 		if (! ok) {goto ERROR;}
-		QString fullname = tmpProj->workCgnsFileName(solname);
+		QString fullname = tmpProj.workCgnsFileName(solname);
 		bool ret = pre->importInputCondition(fullname);
 		if (! ret) {
 			// not imported.
 			goto ERROR;
 		}
 	}
-	delete tmpProj;
 	iRIC::rmdirRecursively(tmpWorkfolder);
 	QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
 	LastIODirectory::set(finfo.absolutePath());
@@ -199,7 +198,6 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 	return;
 
 ERROR:
-	delete tmpProj;
 	iRIC::rmdirRecursively(tmpWorkfolder);
 }
 

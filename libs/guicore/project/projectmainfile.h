@@ -86,7 +86,8 @@ public:
 	void toggleGridEditFlag();
 	void closeCgnsFile() override;
 	/// Background images
-	const QList<BackgroundImageInfo*> backgroundImages() const {return m_backgroundImages;}
+	const QList<BackgroundImageInfo*>& backgroundImages() const {return m_backgroundImages;}
+	/// Measured data
 	const QList<MeasuredData*>& measuredDatas() const {return m_measuredDatas;}
 	/// Renderers for background images
 	const QList<vtkRenderer*>& renderers() const {return m_renderers;}
@@ -147,6 +148,10 @@ protected:
 	QString relativeSubPath() const override {return "";}
 
 private:
+	/// Clear background images
+	void clearBackgroundImages();
+	/// Clear measured datas
+	void clearMeasuredDatas();
 	bool clearResultsIfGridIsEdited();
 
 	/// Solver name

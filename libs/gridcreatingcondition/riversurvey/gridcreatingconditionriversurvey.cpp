@@ -221,9 +221,7 @@ GridCreatingConditionRiverSurvey::~GridCreatingConditionRiverSurvey()
 	r->RemoveActor(m_analogyCtrlPointsActor);
 	r->RemoveActor(m_blackAnalogyCtrlPointsActor);
 
-	if (m_rightClickingMenu != nullptr) {
-		delete m_rightClickingMenu;
-	}
+	delete m_rightClickingMenu;
 	if (m_riverSurvey != nullptr) {
 		m_riverSurvey->useDivisionPointsForBackgroundGrid(false);
 	}
@@ -1513,8 +1511,8 @@ void GridCreatingConditionRiverSurvey::updateShapeData(bool omitBackgroundUpdate
 void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 {
 	// clear first.
-	for (auto it = m_gridSolvers.begin(); it != m_gridSolvers.end(); ++it) {
-		delete(*it);
+	for (auto s : m_gridSolvers) {
+		delete s;
 	}
 	m_gridSolvers.clear();
 	RawDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
@@ -1539,15 +1537,11 @@ void GridCreatingConditionRiverSurvey::updateGridInterpolators()
 	unsigned int rindices = static_cast<unsigned int>(p->CenterToRightCtrlPoints.size());
 	p = m_riverSurvey->headPoint();
 	while (p != nullptr) {
-		for (auto rit = p->LGridLines().begin(); rit != p->LGridLines().end(); ++rit) {
-			if (*rit != nullptr) {
-				delete(*rit);
-			}
+		for (auto i : p->LGridLines()) {
+			delete i;
 		}
-		for (Interpolator2D1* interpolator : p->RGridLines()) {
-			if (interpolator != nullptr) {
-				delete interpolator;
-			}
+		for (auto i : p->RGridLines()) {
+			delete i;
 		}
 		p->LGridLines().clear();
 		p->LGridLines().insert(0, lindices, 0);

@@ -118,7 +118,7 @@ void Graph2dHybridWindowDrawSettingDialog::updateImportDataLabel(const QString& 
 void Graph2dHybridWindowDrawSettingDialog::deleteCopyItem()
 {
 	int current = ui->copyListWidget->currentRow();
-	QListWidgetItem* i =  ui->copyListWidget->takeItem(ui->copyListWidget->currentRow());
+	QListWidgetItem* i = ui->copyListWidget->takeItem(ui->copyListWidget->currentRow());
 	delete i;
 
 	int index = copyIndex(current);
@@ -136,7 +136,7 @@ void Graph2dHybridWindowDrawSettingDialog::deleteCopyItem()
 void Graph2dHybridWindowDrawSettingDialog::deleteImportDataItem()
 {
 	int current = ui->extListWidget->currentRow();
-	QListWidgetItem* i =  ui->extListWidget->takeItem(ui->extListWidget->currentRow());
+	QListWidgetItem* i = ui->extListWidget->takeItem(ui->extListWidget->currentRow());
 	delete i;
 
 	int index = importDataIndex(current);

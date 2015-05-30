@@ -63,8 +63,8 @@ void SolverDefinitionList::updateSolverList()
 
 void SolverDefinitionList::clean()
 {
-	for (auto it = m_solverList.begin(); it != m_solverList.end(); ++it) {
-		delete *it;
+	for (auto def : m_solverList) {
+		delete def;
 	}
 	m_solverList.clear();
 }
@@ -72,8 +72,8 @@ void SolverDefinitionList::clean()
 QList<QAction*> SolverDefinitionList::actionList()
 {
 	QList<QAction*> ret;
-	for (int i = 0; i < m_solverList.size(); ++i) {
-		QAction* act = new QAction(m_solverList.at(i)->caption(), this);
+	for (SolverDefinitionAbstract* def : m_solverList) {
+		QAction* act = new QAction(def->caption(), this);
 		ret.append(act);
 	}
 	return ret;

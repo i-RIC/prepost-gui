@@ -64,7 +64,7 @@ void Graph2dWindowRootDataItem::deleteItem(QStandardItem* item)
 {
 	Graph2dWindowDataItem* dataItem = modelItemFromItem(item);
 	// delete the item.
-	if (dataItem) {delete dataItem;}
+	delete dataItem;
 	// rebuild m_itemMap.
 	updateItemMap();
 	// render graphics view.

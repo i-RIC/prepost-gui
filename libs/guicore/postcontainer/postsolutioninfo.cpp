@@ -51,14 +51,12 @@ PostSolutionInfo::~PostSolutionInfo()
 void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 {
 	m_iterationType = type;
-	if (m_iterationSteps != nullptr) {
-		delete m_iterationSteps;
-		m_iterationSteps = nullptr;
-	}
-	if (m_timeSteps != nullptr) {
-		delete m_timeSteps;
-		m_timeSteps = nullptr;
-	}
+
+	delete m_iterationSteps;
+	m_iterationSteps = nullptr;
+
+	delete m_timeSteps;
+	m_timeSteps = nullptr;
 
 	switch (m_iterationType) {
 	case SolverDefinition::ConvergenceIteration:
@@ -175,10 +173,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 		// no base for dimension dim.
 		if (zonenames.count() == 0) {return false;}
 		zonenames.clear();
-		for (auto it = containers.begin(); it != containers.end(); ++it) {
-			delete *it;
-		}
-		containers.clear();
+		clearContainers(containers);
 		containerNameMap.clear();
 		return true;
 	}
@@ -208,10 +203,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 	}
 	zonenames = tmpzonenames;
 	// clear the current zone containers first.
-	for (auto it = containers.begin(); it != containers.end(); ++it) {
-		delete *it;
-	}
-	containers.clear();
+	clearContainers(containers);
 	containerNameMap.clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
 	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit) {
@@ -273,10 +265,7 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 		// no base for dimension dim.
 		if (zonenames.count() == 0) {return false;}
 		zonenames.clear();
-		for (auto it = containers.begin(); it != containers.end(); ++it) {
-			delete *it;
-		}
-		containers.clear();
+		clearContainers(containers);
 		return true;
 	}
 	int nzones;
@@ -295,10 +284,7 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 	}
 	zonenames = tmpzonenames;
 	// clear the current zone containers first.
-	for (auto it = containers.begin(); it != containers.end(); ++it) {
-		delete *it;
-	}
-	containers.clear();
+	clearContainers(containers);
 	containerNameMap.clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
 	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit) {
@@ -480,20 +466,11 @@ void PostSolutionInfo::loadFromCgnsFile(const int fn)
 void PostSolutionInfo::closeCgnsFile()
 {
 	// clear the current zone containers first.
-	for (auto it = m_zoneContainers1D.begin(); it != m_zoneContainers1D.end(); ++it) {
-		delete *it;
-	}
-	for (auto it = m_zoneContainers2D.begin(); it != m_zoneContainers2D.end(); ++it) {
-		delete *it;
-	}
-	for (auto it = m_zoneContainers3D.begin(); it != m_zoneContainers3D.end(); ++it) {
-		delete *it;
-	}
-	m_zoneContainers1D.clear();
-	m_zoneContainers2D.clear();
-	m_zoneContainers3D.clear();
+	clearContainers(m_zoneContainers1D);
 	m_zoneContainerNameMap1D.clear();
+	clearContainers(m_zoneContainers2D);
 	m_zoneContainerNameMap2D.clear();
+	clearContainers(m_zoneContainers3D);
 	m_zoneContainerNameMap3D.clear();
 	m_zoneNames1D.clear();
 	m_zoneNames2D.clear();
@@ -831,4 +808,12 @@ bool PostSolutionInfo::open()
 	lockedFile.close();
 
 	return true;
+}
+
+void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>& conts)
+{
+	for (auto c : conts) {
+		delete c;
+	}
+	conts.clear();
 }

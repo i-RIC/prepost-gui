@@ -75,11 +75,8 @@ ProjectMainFile::ProjectMainFile(ProjectData* parent)
 
 ProjectMainFile::~ProjectMainFile()
 {
-	/// delete m_backgroundImages manually, so that background images destructor
-	/// can access m_renderers.
-	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it) {
-		delete *it;
-	}
+	clearBackgroundImages();
+	clearMeasuredDatas();
 
 	/// delete m_postProcessors manually, so that post processors destructor
 	/// can access mainwindow.
@@ -815,10 +812,8 @@ void ProjectMainFile::checkVersionCompatibility()
 
 void ProjectMainFile::loadBackgrounds(const QDomNode& node)
 {
-	for (int i = 0; i < m_backgroundImages.size(); ++i) {
-		delete m_backgroundImages.at(i);
-	}
-	m_backgroundImages.clear();
+	clearBackgroundImages();
+
 	QDomNodeList children = node.childNodes();
 	int len = children.count();
 	for (int i = 0; i < len; ++i) {
@@ -847,21 +842,17 @@ void ProjectMainFile::loadBackgrounds(const QDomNode& node)
 
 void ProjectMainFile::saveBackgrounds(QXmlStreamWriter& writer)
 {
-	for (auto it = m_backgroundImages.begin(); it != m_backgroundImages.end(); ++it) {
-		BackgroundImageInfo* bg = *it;
+	for (BackgroundImageInfo* i : m_backgroundImages) {
 		writer.writeStartElement("BackgroundImageInfo");
-		bg->saveToProjectMainFile(writer);
+		i->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
-
 void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 {
-	for (int i = 0; i < m_measuredDatas.size(); ++i) {
-		delete m_measuredDatas.at(i);
-	}
-	m_measuredDatas.clear();
+	clearMeasuredDatas();
+
 	QDomNodeList children = node.childNodes();
 	int len = children.count();
 	for (int i = 0; i < len; ++i) {
@@ -875,8 +866,7 @@ void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 void ProjectMainFile::saveMeasuredDatas(QXmlStreamWriter& writer)
 {
 	int index = 1;
-	for (auto it = m_measuredDatas.begin(); it != m_measuredDatas.end(); ++it) {
-		MeasuredData* md = *it;
+	for (MeasuredData* md : m_measuredDatas) {
 		md->setIndex(index);
 		writer.writeStartElement("MeasuredData");
 		md->saveToProjectMainFile(writer);
@@ -900,7 +890,7 @@ QStringList ProjectMainFile::backgroundImageFiles()
 	QStringList ret;
 
 	QDir dir(projectData()->workDirectory());
-	if (! dir.cd(BGDIR)) { return ret; }
+	if (! dir.cd(BGDIR)) {return ret;}
 
 	QStringList list = dir.entryList(QDir::Files);
 	for (auto it = list.begin(); it != list.end(); ++it) {
@@ -923,7 +913,7 @@ void ProjectMainFile::addMeasuredData()
 	QString dir = LastIODirectory::get();
 	QString filter(tr("Text Files (*.csv *.txt);;All Files (*.*)"));
 	QString fname = QFileDialog::getOpenFileName(iricMainWindow(), tr("Open Measured Data File"), dir, filter);
-	if (fname == "") { return; }
+	if (fname == "") {return;}
 
 	QFileInfo finfo(fname);
 	try {
@@ -1085,4 +1075,20 @@ int ProjectMainFile::showCoordinateSystemDialog()
 	if (ret == QDialog::Rejected) {return ret;}
 	setCoordinateSystem(dialog.coordinateSystem());
 	return ret;
+}
+
+void ProjectMainFile::clearBackgroundImages()
+{
+	for (auto i : m_backgroundImages) {
+		delete i;
+	}
+	m_backgroundImages.clear();
+}
+
+void ProjectMainFile::clearMeasuredDatas()
+{
+	for (auto d : m_measuredDatas) {
+		delete d;
+	}
+	m_measuredDatas.clear();
 }
