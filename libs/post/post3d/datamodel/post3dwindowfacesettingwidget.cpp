@@ -79,11 +79,10 @@ void Post3dWindowFaceSettingWidget::sliderRange(int range[6])
 void Post3dWindowFaceSettingWidget::iMinChanged(int imin)
 {
 	m_setting.iMin = imin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirI) {
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirI || ui->iMaxSlider->value() < imin) {
+		ui->iMaxSlider->blockSignals(true);
 		ui->iMaxSlider->setValue(imin);
-		m_setting.iMax = imin - 1;
-	} else if (ui->iMaxSlider->value() < imin) {
-		ui->iMaxSlider->setValue(imin);
+		ui->iMaxSlider->blockSignals(false);
 		m_setting.iMax = imin - 1;
 	}
 	emit settingChanged();
@@ -93,7 +92,9 @@ void Post3dWindowFaceSettingWidget::iMaxChanged(int imax)
 {
 	m_setting.iMax = imax - 1;
 	if (ui->iMinSlider->value() > imax) {
+		ui->iMinSlider->blockSignals(true);
 		ui->iMinSlider->setValue(imax);
+		ui->iMinSlider->blockSignals(false);
 		m_setting.iMin = imax - 1;
 	}
 	emit settingChanged();
@@ -102,11 +103,10 @@ void Post3dWindowFaceSettingWidget::iMaxChanged(int imax)
 void Post3dWindowFaceSettingWidget::jMinChanged(int jmin)
 {
 	m_setting.jMin = jmin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirJ) {
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirJ || ui->jMaxSlider->value() < jmin) {
+		ui->jMaxSlider->blockSignals(true);
 		ui->jMaxSlider->setValue(jmin);
-		m_setting.jMax = jmin - 1;
-	} else if (ui->jMaxSlider->value() < jmin) {
-		ui->jMaxSlider->setValue(jmin);
+		ui->jMaxSlider->blockSignals(false);
 		m_setting.jMax = jmin - 1;
 	}
 	emit settingChanged();
@@ -116,7 +116,9 @@ void Post3dWindowFaceSettingWidget::jMaxChanged(int jmax)
 {
 	m_setting.jMax = jmax - 1;
 	if (ui->jMinSlider->value() > jmax) {
+		ui->jMinSlider->blockSignals(true);
 		ui->jMinSlider->setValue(jmax);
+		ui->jMinSlider->blockSignals(false);
 		m_setting.jMin = jmax - 1;
 	}
 	emit settingChanged();
@@ -125,11 +127,10 @@ void Post3dWindowFaceSettingWidget::jMaxChanged(int jmax)
 void Post3dWindowFaceSettingWidget::kMinChanged(int kmin)
 {
 	m_setting.kMin = kmin - 1;
-	if (m_setting.direction == Post3dWindowFaceDataItem::dirK) {
+	if (m_setting.direction == Post3dWindowFaceDataItem::dirK || ui->kMaxSlider->value() < kmin) {
+		ui->kMaxSlider->blockSignals(true);
 		ui->kMaxSlider->setValue(kmin);
-		m_setting.kMax = kmin - 1;
-	} else if (ui->kMaxSlider->value() < kmin) {
-		ui->kMaxSlider->setValue(kmin);
+		ui->kMaxSlider->blockSignals(false);
 		m_setting.kMax = kmin - 1;
 	}
 	emit settingChanged();
@@ -139,7 +140,9 @@ void Post3dWindowFaceSettingWidget::kMaxChanged(int kmax)
 {
 	m_setting.kMax = kmax - 1;
 	if (ui->kMinSlider->value() > kmax) {
+		ui->kMinSlider->blockSignals(true);
 		ui->kMinSlider->setValue(kmax);
+		ui->kMinSlider->blockSignals(false);
 		m_setting.kMin = kmax - 1;
 	}
 	emit settingChanged();
