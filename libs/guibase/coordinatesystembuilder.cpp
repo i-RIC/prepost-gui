@@ -33,8 +33,9 @@ CoordinateSystemBuilder::CoordinateSystemBuilder(QObject* parent)
 				system->setName(name);
 				system->setCaption(caption);
 				m_systems.append(system);
+			} else {
+				delete system;
 			}
-			delete system;
 		}
 	}
 	/*
@@ -144,9 +145,7 @@ CoordinateSystem* CoordinateSystemBuilder::system(const QString& name) const
 
 void CoordinateSystemBuilder::setupMap()
 {
-	QList<CoordinateSystem*>::Iterator it;
-	for (it = m_systems.begin(); it != m_systems.end(); ++it) {
-		CoordinateSystem* cs = *it;
-		m_systemsMap.insert(cs->name(), cs);
+	for (auto s : m_systems) {
+		m_systemsMap.insert(s->name(), s);
 	}
 }
