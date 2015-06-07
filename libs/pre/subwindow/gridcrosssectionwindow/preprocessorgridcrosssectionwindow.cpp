@@ -5,7 +5,7 @@
 #include "preprocessorgridcrosssectionwindowprojectdataitem.h"
 
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <misc/iricundostack.h>
 
 #include <QAction>
@@ -118,7 +118,7 @@ void PreProcessorGridCrosssectionWindow::setupToolBar()
 
 void PreProcessorGridCrosssectionWindow::setupModel()
 {
-	GridRelatedConditionContainer* cont = m_grid->gridRelatedCondition(m_condition);
+	GridAttributeContainer* cont = m_grid->gridRelatedCondition(m_condition);
 	m_model = new QStandardItemModel(0, 1, this);
 	m_model->setHeaderData(0, Qt::Horizontal, cont->condition()->caption());
 
@@ -242,8 +242,8 @@ void PreProcessorGridCrosssectionWindow::setupData()
 		sel.append(r);
 	}
 	clear();
-	GridRelatedConditionRealNodeContainer* cont =
-		dynamic_cast<GridRelatedConditionRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
+	GridAttributeRealNodeContainer* cont =
+		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
 	int row = 0;
 	if (m_direction == dirI) {
 		for (unsigned int i = 0; i < m_grid->dimensionI(); ++i) {
@@ -373,8 +373,8 @@ void PreProcessorGridCrosssectionWindow::handleDataChange()
 
 bool PreProcessorGridCrosssectionWindow::syncData()
 {
-	GridRelatedConditionRealNodeContainer* cont =
-		dynamic_cast<GridRelatedConditionRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
+	GridAttributeRealNodeContainer* cont =
+		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
 	if (m_direction == dirI) {
 		for (int i = 0; i < m_model->rowCount(); ++i) {
 			double data = m_model->data(m_model->index(i, 0)).toDouble();
@@ -513,7 +513,7 @@ void PreProcessorGridCrosssectionWindow::update()
 	QWidget::update();
 }
 
-PreProcessorGridRelatedConditionNodeDataItem* PreProcessorGridCrosssectionWindow::conditionNodeDataItem()
+PreProcessorGridAttributeNodeDataItem* PreProcessorGridCrosssectionWindow::conditionNodeDataItem()
 {
 	return m_projectDataItem->conditionNodeDataItem();
 }

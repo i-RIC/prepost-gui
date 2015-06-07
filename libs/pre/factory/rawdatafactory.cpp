@@ -24,7 +24,7 @@ RawDataFactory::RawDataFactory()
 	m_creators.append(new RawDataNetcdfRealCreator());
 }
 
-const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinitionGridRelatedCondition* condition) const
+const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinitionGridAttribute* condition) const
 {
 	QList<RawDataCreator*> ret;
 	for (RawDataCreator* c : m_creators) {
@@ -35,7 +35,7 @@ const QList<RawDataCreator*> RawDataFactory::compatibleCreators(SolverDefinition
 	return ret;
 }
 
-RawData* RawDataFactory::restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridRelatedCondition* cond) const
+RawData* RawDataFactory::restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridAttribute* cond) const
 {
 	for (RawDataCreator* c : m_creators) {
 		RawData* ret = c->restore(node, item, cond);

@@ -10,9 +10,9 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgridattributemappingsettingtopdataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodedataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgridshapedataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -25,10 +25,10 @@
 #include <guicore/pre/grid/gridimporterinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
@@ -1106,7 +1106,7 @@ void PreProcessorGridDataItem::updateZDepthRangeItemCount()
 void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 {
 	if (m_grid == nullptr) {return;}
-	QList<GridRelatedConditionContainer*> conds = m_grid->gridRelatedConditions();
+	QList<GridAttributeContainer*> conds = m_grid->gridRelatedConditions();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		informgridRelatedConditionChange((*it)->name());
 	}
@@ -1115,7 +1115,7 @@ void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 void PreProcessorGridDataItem::informgridRelatedConditionChange(const QString& name)
 {
 	emit gridRelatedConditionChanged(name);
-	PreProcessorGridRelatedConditionNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);
+	PreProcessorGridAttributeNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);
 	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
 }
 

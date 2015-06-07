@@ -21,7 +21,7 @@ class QPolygonF;
 class RawDataNetcdfImporter;
 class RawDataNetcdfXbandImporter;
 class RawDataNetcdfGdalImporter;
-class GridRelatedConditionDimensionContainer;
+class GridAttributeDimensionContainer;
 
 class RawDataNetcdf : public RawData
 {
@@ -65,7 +65,7 @@ public:
 	};
 
 	/// Constructor
-	RawDataNetcdf(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataNetcdf(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~RawDataNetcdf();
 
 	const QList<double> lonValues() const {return m_lonValues;}
@@ -105,8 +105,8 @@ private:
 	void updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax);
 	void updateRegionPolyData();
 
-	static nc_type getNcType(SolverDefinitionGridRelatedConditionDimension* dim);
-	static nc_type getNcType(SolverDefinitionGridRelatedCondition* cond);
+	static nc_type getNcType(SolverDefinitionGridAttributeDimension* dim);
+	static nc_type getNcType(SolverDefinitionGridAttribute* cond);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -128,7 +128,7 @@ protected:
 	bool lineAtJIntersect(int j, int dimI, int dimJ, const RectRegion& region) const;
 
 	virtual void doHandleDimensionCurrentIndexChange(int oldIndex, int newIndex) = 0;
-	virtual void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* cont, const QList<QVariant>& before, const QList<QVariant>& after) = 0;
+	virtual void doHandleDimensionValuesChange(GridAttributeDimensionContainer* cont, const QList<QVariant>& before, const QList<QVariant>& after) = 0;
 
 	vtkSmartPointer<vtkStructuredGrid> m_grid;
 	vtkSmartPointer<vtkStructuredGrid> m_simplifiedGrid;

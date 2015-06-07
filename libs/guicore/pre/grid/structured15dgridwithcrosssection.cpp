@@ -1,5 +1,5 @@
 #include "../../project/projectcgnsfile.h"
-#include "../gridcond/base/gridrelatedconditioncontainer.h"
+#include "../gridcond/base/gridattributecontainer.h"
 #include "structured15dgrid/structured15dgridwithcrosssectioncrosssection.h"
 #include "structured15dgridwithcrosssection.h"
 

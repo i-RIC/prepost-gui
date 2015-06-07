@@ -11,9 +11,9 @@
 //#include "pre/datamodel/preprocessorgridcreatingconditiondataitem.h"
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionintegercellcontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 
 #include <QMenu>
 #include <QXmlStreamReader>
@@ -118,12 +118,12 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
-	GridRelatedConditionContainer* c;
+	GridAttributeContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
-	GridRelatedConditionRealNodeContainer* rnContainer = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
+	GridAttributeRealNodeContainer* rnContainer = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 	if (rnContainer != 0) {
 		for (int j = 0; j < m_jMax; j++) {
 			for (int i = 0; i < m_iMax; i++) {
@@ -134,7 +134,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 		rnContainer->setMapped(true);
 	}
 	c = grid->gridRelatedCondition("CellCondition");
-	GridRelatedConditionIntegerCellContainer* icContainer = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
+	GridAttributeIntegerCellContainer* icContainer = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	if (icContainer != 0) {
 		for (int j = 0; j < m_jMax - 1; j++) {
 			for (int i = 0; i < m_iMax - 1; i++) {

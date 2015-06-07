@@ -17,9 +17,9 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionselectwidget.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionselectwidget.h>
 #include <guicore/pre/rawdata/rawdata.h>
 #include <guicore/pre/rawdata/rawdatacreator.h>
 #include <guicore/pre/rawdata/rawdataimporter.h>
@@ -30,8 +30,8 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorseditdialog.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -58,7 +58,7 @@
 
 #include <cgnslib.h>
 
-PreProcessorRawDataGroupDataItem::PreProcessorRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)
+PreProcessorRawDataGroupDataItem::PreProcessorRawDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
 	: PreProcessorRawDataGroupDataItemInterface(cond, parent)
 {
 	m_condition = cond;
@@ -101,7 +101,7 @@ PreProcessorRawDataGroupDataItem::PreProcessorRawDataGroupDataItem(SolverDefinit
 	m_title = m_condition->englishCaption();
 
 	// add dimensions container
-	m_dimensions = new GridRelatedConditionDimensionsContainer(cond, this);
+	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
 
 	// add background data item.
 	addBackground();
@@ -477,7 +477,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		return;
 	}
 	*/
-	GridRelatedConditionContainer* container = grid->gridRelatedCondition(m_condition->name());
+	GridAttributeContainer* container = grid->gridRelatedCondition(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
@@ -577,7 +577,7 @@ void PreProcessorRawDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 
 void PreProcessorRawDataGroupDataItem::setDefaultValue(Grid* grid)
 {
-	GridRelatedConditionContainer* container = grid->gridRelatedCondition(m_condition->name());
+	GridAttributeContainer* container = grid->gridRelatedCondition(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
@@ -1000,7 +1000,7 @@ bool PreProcessorRawDataGroupDataItem::addToolBarButtons(QToolBar* parent)
 {
 	if (m_dimensions->selectWidgets().size() == 0) {return false;}
 	for (int i = 0; i < m_dimensions->selectWidgets().size(); ++i) {
-		GridRelatedConditionDimensionSelectWidget* w = m_dimensions->selectWidgets().at(i);
+		GridAttributeDimensionSelectWidget* w = m_dimensions->selectWidgets().at(i);
 		QAction* action = parent->addWidget(w);
 		action->setVisible(true);
 	}
@@ -1009,10 +1009,10 @@ bool PreProcessorRawDataGroupDataItem::addToolBarButtons(QToolBar* parent)
 
 void PreProcessorRawDataGroupDataItem::loadExternalData(const QString& /*filename*/)
 {
-	const QList<GridRelatedConditionDimensionContainer*>& conts = m_dimensions->containers();
+	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
-		GridRelatedConditionDimensionContainer* cont = conts.at(i);
+		GridAttributeDimensionContainer* cont = conts.at(i);
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
 		cont->loadFromExternalFile(subDir.absoluteFilePath(fileName));
 	}
@@ -1020,10 +1020,10 @@ void PreProcessorRawDataGroupDataItem::loadExternalData(const QString& /*filenam
 
 void PreProcessorRawDataGroupDataItem::saveExternalData(const QString& /*filename*/)
 {
-	const QList<GridRelatedConditionDimensionContainer*>& conts = m_dimensions->containers();
+	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
-		GridRelatedConditionDimensionContainer* cont = conts.at(i);
+		GridAttributeDimensionContainer* cont = conts.at(i);
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
 		cont->saveToExternalFile(subDir.absoluteFilePath(fileName));
 	}
@@ -1032,9 +1032,9 @@ void PreProcessorRawDataGroupDataItem::saveExternalData(const QString& /*filenam
 QStringList PreProcessorRawDataGroupDataItem::containedFiles()
 {
 	QStringList ret = PreProcessorDataItem::containedFiles();
-	const QList<GridRelatedConditionDimensionContainer*>& conts = m_dimensions->containers();
+	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
 	for (int i = 0; i < conts.size(); ++i) {
-		GridRelatedConditionDimensionContainer* cont = conts.at(i);
+		GridAttributeDimensionContainer* cont = conts.at(i);
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
 		ret.append(fileName);
 	}
@@ -1043,10 +1043,10 @@ QStringList PreProcessorRawDataGroupDataItem::containedFiles()
 
 void PreProcessorRawDataGroupDataItem::setupConnectionToRawData(RawData* rawdata)
 {
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	connect(dims, SIGNAL(currentIndexChanged(int,int)), rawdata, SLOT(handleDimensionCurrentIndexChange(int,int)));
 	for (int i = 0; i < dims->containers().size(); ++i) {
-		GridRelatedConditionDimensionContainer* cont = dims->containers().at(i);
+		GridAttributeDimensionContainer* cont = dims->containers().at(i);
 		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), rawdata, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
 	}
 }

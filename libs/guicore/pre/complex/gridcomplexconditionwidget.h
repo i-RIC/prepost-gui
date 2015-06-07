@@ -3,9 +3,9 @@
 
 #include "../../guicore_global.h"
 #include <QWidget>
-#include "../../project/inputcond/cgnsfileinputconditioncontainerset.h"
-#include "../../project/inputcond/cgnsfileinputconditioncontainerstring.h"
-#include "../../project/inputcond/cgnsfileinputconditioncontainerinteger.h"
+#include "../../project/inputcond/inputconditioncontainerset.h"
+#include "../../project/inputcond/inputconditioncontainerstring.h"
+#include "../../project/inputcond/inputconditioncontainerinteger.h"
 
 class QAbstractButton;
 class SolverDefinition;
@@ -17,7 +17,7 @@ namespace Ui
 	class GridComplexConditionWidget;
 }
 
-class CgnsFileInputConditionWidgetSet;
+class InputConditionWidgetSet;
 class iRICMainWindowInterface;
 class PreProcessorGridRelatedComplexConditionDataItem;
 
@@ -32,10 +32,10 @@ public:
 			containerSet = nullptr;
 		}
 		~Setting() {}
-		CgnsFileInputConditionContainerSet* containerSet;
-		CgnsFileInputConditionContainerString captionContainer;
-		CgnsFileInputConditionContainerString colorContainer;
-		CgnsFileInputConditionContainerInteger isDefaultContainer;
+		InputConditionContainerSet* containerSet;
+		InputConditionContainerString captionContainer;
+		InputConditionContainerString colorContainer;
+		InputConditionContainerInteger isDefaultContainer;
 	};
 
 	/// Constructor
@@ -70,15 +70,15 @@ private slots:
 private:
 
 	Ui::GridComplexConditionWidget* ui;
-	CgnsFileInputConditionContainerSet* m_containerSet;
-	CgnsFileInputConditionWidgetSet* m_widgetSet;
+	InputConditionContainerSet* m_containerSet;
+	InputConditionWidgetSet* m_widgetSet;
 	bool m_modified;
 
 	QString m_caption;
 
-	CgnsFileInputConditionContainerString m_captionContainer;
-	CgnsFileInputConditionContainerString m_colorContainer;
-	CgnsFileInputConditionContainerInteger m_isDefaultContainer;
+	InputConditionContainerString m_captionContainer;
+	InputConditionContainerString m_colorContainer;
+	InputConditionContainerInteger m_isDefaultContainer;
 };
 
 #endif // GRIDCOMPLEXCONDITIONWIDGET_H

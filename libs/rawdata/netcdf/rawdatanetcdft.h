@@ -4,7 +4,7 @@
 #include "rawdatanetcdf.h"
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <misc/stringtool.h>
 #include <vtkSmartPointer.h>
@@ -17,7 +17,7 @@ template <class V, class DA>
 class RawDataNetcdfT : public RawDataNetcdf
 {
 public:
-	RawDataNetcdfT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+	RawDataNetcdfT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdf(d, creator, condition) {
 		vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
 		values->SetName("values");
@@ -84,7 +84,7 @@ protected:
 		ret = nc_open(fname.c_str(), NC_NOWRITE, &ncid);
 		ret = getValueVarId(ncid, &varId);
 
-		GridRelatedConditionDimensionsContainer* dims = dimensions();
+		GridAttributeDimensionsContainer* dims = dimensions();
 
 		// @todo currently, netcdf does not support edit, so no save done.
 
@@ -134,7 +134,7 @@ protected:
 		Q_UNUSED(ret)
 	}
 
-	void doHandleDimensionValuesChange(GridRelatedConditionDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override {
+	void doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override {
 
 	}
 };
@@ -142,7 +142,7 @@ protected:
 class RawDataNetcdfInteger : public RawDataNetcdfT<int, vtkIntArray>
 {
 public:
-	RawDataNetcdfInteger(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+	RawDataNetcdfInteger(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdfT(d, creator, condition) {
 	}
 	int missingValue() override {
@@ -158,7 +158,7 @@ public:
 class RawDataNetcdfReal : public RawDataNetcdfT<double, vtkDoubleArray>
 {
 public:
-	RawDataNetcdfReal(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+	RawDataNetcdfReal(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdfT(d, creator, condition) {
 	}
 	double missingValue() override {

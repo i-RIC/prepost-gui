@@ -11,7 +11,7 @@ namespace Ui
 }
 
 class SolverDefinitionGridType;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 class GridBirdEyeWindowColorSettingDialog : public QDialog
 {
@@ -33,8 +33,8 @@ public:
 	const QString attributeName() const;
 	const QColor customColor() const;
 private:
-	QList<SolverDefinitionGridRelatedCondition*> m_nodeConds;
-	QList<SolverDefinitionGridRelatedCondition*> m_cellConds;
+	QList<SolverDefinitionGridAttribute*> m_nodeConds;
+	QList<SolverDefinitionGridAttribute*> m_cellConds;
 	Ui::GridBirdEyeWindowColorSettingDialog* ui;
 };
 

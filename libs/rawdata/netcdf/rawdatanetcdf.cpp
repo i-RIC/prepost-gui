@@ -2,14 +2,14 @@
 
 #include <guibase/coordinatesystem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainert.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainert.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimensiont.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiont.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
+#include <guicore/solverdef/solverdefinitiongridattributet.h>
 #include <misc/stringtool.h>
 
 #include <vtkCellArray.h>
@@ -33,8 +33,8 @@
 
 const int RawDataNetcdf::MAX_DRAWCELLCOUNT = 200000;
 
-RawDataNetcdf::RawDataNetcdf(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
-	: RawData(d, creator, condition)
+RawDataNetcdf::RawDataNetcdf(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att)
+	: RawData(d, creator, att)
 {
 	m_opacityPercent = 50;
 
@@ -216,9 +216,9 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 	// Only for checking.
 	// ------------------------
 
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	for (int i = 0; i < dims->containers().size(); ++i) {
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
+		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		int dDimId, dVarId;
 		ret = nc_inq_varid(ncid, iRIC::toStr(c->name()).c_str(), &dVarId);
 		ret = nc_inq_dimid(ncid, iRIC::toStr(c->name()).c_str(), &dDimId);
@@ -230,7 +230,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 			break;
 		}
 
-		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr) {
+		if (dynamic_cast<GridAttributeDimensionIntegerContainer*>(c) != nullptr) {
 			std::vector<int> vals(dimSize);
 			ret = nc_get_var_int(ncid, dVarId, vals.data());
 			QList<QVariant> vals1;
@@ -244,7 +244,7 @@ void RawDataNetcdf::loadExternalData(const QString& filename)
 				// invalid!
 				// @todo add error handling!
 			}
-		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != nullptr) {
+		} else if (dynamic_cast<GridAttributeDimensionRealContainer*>(c) != nullptr) {
 			std::vector<double> vals(dimSize);
 			ret = nc_get_var_double(ncid, dVarId, vals.data());
 			QList<QVariant> vals1;
@@ -468,21 +468,21 @@ void RawDataNetcdf::updateActorSettings()
 	m_actor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 }
 
-nc_type RawDataNetcdf::getNcType(SolverDefinitionGridRelatedCondition* cond)
+nc_type RawDataNetcdf::getNcType(SolverDefinitionGridAttribute* cond)
 {
-	if (dynamic_cast<SolverDefinitionGridRelatedIntegerCondition*>(cond) != 0) {
+	if (dynamic_cast<SolverDefinitionGridAttributeInteger*>(cond) != 0) {
 		return NC_INT;
-	} else if (dynamic_cast<SolverDefinitionGridRelatedRealCondition*>(cond) != 0) {
+	} else if (dynamic_cast<SolverDefinitionGridAttributeReal*>(cond) != 0) {
 		return NC_DOUBLE;
 	}
 	return NC_NAT;
 }
 
-nc_type RawDataNetcdf::getNcType(SolverDefinitionGridRelatedConditionDimension* dim)
+nc_type RawDataNetcdf::getNcType(SolverDefinitionGridAttributeDimension* dim)
 {
-	if (dynamic_cast<SolverDefinitionGridRelatedConditionIntegerDimension*>(dim) != 0) {
+	if (dynamic_cast<SolverDefinitionGridAttributeIntegerDimension*>(dim) != 0) {
 		return NC_INT;
-	} else if (dynamic_cast<SolverDefinitionGridRelatedConditionRealDimension*>(dim) != 0) {
+	} else if (dynamic_cast<SolverDefinitionGridAttributeRealDimension*>(dim) != 0) {
 		return NC_DOUBLE;
 	}
 	return NC_NAT;
@@ -583,11 +583,11 @@ int RawDataNetcdf::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimI
 
 int RawDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& varIds)
 {
-	const GridRelatedConditionDimensionsContainer* dims = dimensions();
+	const GridAttributeDimensionsContainer* dims = dimensions();
 	int ret;
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		int dimId;
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
+		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		size_t len = c->count();
 		// time is the special dimension: it is defined as unlimited.
 		if (c->definition()->name() == "time") {len = NC_UNLIMITED;}
@@ -597,7 +597,7 @@ int RawDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& va
 	}
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		int varId;
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
+		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		nc_type ncType = getNcType(c->definition());
 		int dimId = dimIds.at(i);
 		ret = nc_def_var(ncid, iRIC::toStr(c->definition()->name()).c_str(), ncType, 1, &dimId, &varId);
@@ -691,14 +691,14 @@ int RawDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId
 
 int RawDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 {
-	const GridRelatedConditionDimensionsContainer* dims = dimensions();
+	const GridAttributeDimensionsContainer* dims = dimensions();
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		int ret;
 		int varId = varIds.at(i);
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
-		if (dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c) != nullptr) {
-			GridRelatedConditionDimensionIntegerContainer* c2 =
-				dynamic_cast<GridRelatedConditionDimensionIntegerContainer*>(c);
+		GridAttributeDimensionContainer* c = dims->containers().at(i);
+		if (dynamic_cast<GridAttributeDimensionIntegerContainer*>(c) != nullptr) {
+			GridAttributeDimensionIntegerContainer* c2 =
+				dynamic_cast<GridAttributeDimensionIntegerContainer*>(c);
 			std::vector<int> vals(c->count());
 			const QList<int>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
@@ -707,9 +707,9 @@ int RawDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 			size_t start = 0;
 			size_t len = listVals.size();
 			ret = nc_put_vara_int(ncid, varId, &start, &len, vals.data());
-		} else if (dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c) != 0) {
-			GridRelatedConditionDimensionRealContainer* c2 =
-				dynamic_cast<GridRelatedConditionDimensionRealContainer*>(c);
+		} else if (dynamic_cast<GridAttributeDimensionRealContainer*>(c) != 0) {
+			GridAttributeDimensionRealContainer* c2 =
+				dynamic_cast<GridAttributeDimensionRealContainer*>(c);
 			std::vector<double> vals(c->count());
 			const QList<double>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
@@ -732,8 +732,8 @@ void RawDataNetcdf::handleDimensionCurrentIndexChange(int oldIndex, int newIndex
 
 void RawDataNetcdf::handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after)
 {
-	GridRelatedConditionDimensionContainer* dim =
-		dynamic_cast<GridRelatedConditionDimensionContainer*>(sender());
+	GridAttributeDimensionContainer* dim =
+		dynamic_cast<GridAttributeDimensionContainer*>(sender());
 	doHandleDimensionValuesChange(dim, before, after);
 }
 

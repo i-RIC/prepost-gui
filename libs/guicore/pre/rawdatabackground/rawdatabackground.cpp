@@ -1,6 +1,6 @@
 #include "../base/preprocessorrawdatadataiteminterface.h"
 #include "../base/preprocessorrawdatagroupdataiteminterface.h"
-#include "../gridcond/base/gridrelatedconditioneditdialog.h"
+#include "../gridcond/base/gridattributeeditdialog.h"
 #include "rawdatabackground.h"
 #include "rawdatabackgroundeditdialog.h"
 //#include "pre/preprocessorwindow.h"
@@ -13,7 +13,7 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 
-RawDataBackground::RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+RawDataBackground::RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 	: RawData(d, creator, condition)
 {
 	m_name = "background";
@@ -118,7 +118,7 @@ private:
 void RawDataBackground::editValue()
 {
 	if (m_gridRelatedCondition->isOption()) {
-		GridRelatedConditionEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
+		GridAttributeEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
 		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 		dialog->setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		dialog->setLabel(tr("Please input new default value."));
@@ -132,7 +132,7 @@ void RawDataBackground::editValue()
 		RawDataBackgroundEditDialog dialog(preProcessorWindow());
 		PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 		dialog.setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
-		GridRelatedConditionEditWidget* widget = m_gridRelatedCondition->editWidget(0);
+		GridAttributeEditWidget* widget = m_gridRelatedCondition->editWidget(0);
 		dialog.setWidget(widget);
 		dialog.setType(m_type);
 		dialog.setCustomValue(m_customValue);

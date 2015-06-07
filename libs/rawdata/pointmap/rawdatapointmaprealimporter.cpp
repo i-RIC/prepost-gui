@@ -27,7 +27,7 @@ RawDataPointmapRealImporter::RawDataPointmapRealImporter(RawDataCreator* creator
 	m_caption = tr("DEM etc. (*.tpo, *.anc, *.dat, *.stl)");
 }
 
-bool RawDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridRelatedCondition* /*condition*/, PreProcessorRawDataGroupDataItemInterface* /*item*/, QWidget* w)
+bool RawDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorRawDataGroupDataItemInterface* /*item*/, QWidget* w)
 {
 	RawDataPointmapRealImporterFilterDialog filterDialog(w);
 	if (filterDialog.exec() != QDialog::Accepted) {

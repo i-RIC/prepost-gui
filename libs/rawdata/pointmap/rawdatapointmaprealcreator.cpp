@@ -27,7 +27,7 @@ RawDataPointmapRealCreator::RawDataPointmapRealCreator()
 	m_cellMappers.append(new RawDataPointmapCellMapperT<double, vtkDoubleArray>(this));
 }
 
-RawData* RawDataPointmapRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
+RawData* RawDataPointmapRealCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	RawDataPointmap* data = new RawDataPointMapT<double, vtkDoubleArray>(parent, this, condition);
 	data->setDefaultMapper();
@@ -44,9 +44,9 @@ QString RawDataPointmapRealCreator::defaultCaption(unsigned int index)
 	return QString(tr("Points%1")).arg(index);
 }
 
-bool RawDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridRelatedCondition* condition)
+bool RawDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition)
 {
-	if (dynamic_cast<SolverDefinitionGridRelatedConditionT<double>* >(condition) == nullptr) {return false;}
+	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
 	return true;
 }

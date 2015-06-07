@@ -7,10 +7,10 @@
 
 #include <QSignalMapper>
 
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 class PreProcessorRawdataDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
-class GridRelatedConditionEditWidget;
+class GridAttributeEditWidget;
 class Grid;
 class QMenu;
 class QModelIndex;
@@ -24,11 +24,11 @@ class PreProcessorRawDataGroupDataItem : public PreProcessorRawDataGroupDataItem
 	Q_OBJECT
 public:
 	/// Constructor
-	PreProcessorRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
+	PreProcessorRawDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	virtual ~PreProcessorRawDataGroupDataItem();
 	void addCustomMenuItems(QMenu* menu) override;
 	void closeCgnsFile() override {}
-	SolverDefinitionGridRelatedCondition* condition() override {return m_condition;}
+	SolverDefinitionGridAttribute* condition() override {return m_condition;}
 	bool isChildCaptionAvailable(const QString& cap);
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
@@ -46,7 +46,7 @@ public:
 	void addImportAction(QMenu* menu);
 	QStringList getRawDatasNotMapped();
 	void addCopyPolygon(RawDataPolygon* polygon) override;
-	GridRelatedConditionDimensionsContainer* dimensions() const override {return m_dimensions;}
+	GridAttributeDimensionsContainer* dimensions() const override {return m_dimensions;}
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -59,7 +59,7 @@ public:
 	bool polygonExists() const;
 	virtual void saveToCgnsFile(const int fn) override;
 	virtual void saveComplexGroupsToCgnsFile(const int /*fn*/) {}
-	virtual void setupEditWidget(GridRelatedConditionEditWidget* /*widget*/) override {}
+	virtual void setupEditWidget(GridAttributeEditWidget* /*widget*/) override {}
 	void updateCrossectionWindows() override;
 	void openCrossSectionWindow(RawDataRiverSurvey* rs, double crosssection) override;
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs) override;
@@ -99,8 +99,8 @@ protected:
 	QAction* m_exportAllPolygonsAction;
 	QAction* m_deleteAllAction;
 	QSignalMapper* m_addSignalMapper;
-	SolverDefinitionGridRelatedCondition* m_condition;
-	GridRelatedConditionDimensionsContainer* m_dimensions;
+	SolverDefinitionGridAttribute* m_condition;
+	GridAttributeDimensionsContainer* m_dimensions;
 
 	ScalarBarSetting m_scalarBarSetting;
 

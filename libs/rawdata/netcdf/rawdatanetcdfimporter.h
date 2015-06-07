@@ -16,7 +16,7 @@ public:
 	bool importData(RawData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
 	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, QList<QVariant>& list);
 	static QList<QVariant> convertTimeValues(QString units, QList<QVariant>& values, QWidget* parent, bool* canceled);

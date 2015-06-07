@@ -4,9 +4,9 @@
 #include "rawdatanetcdfimportersettingdialog.h"
 
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimensiont.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -32,7 +32,7 @@ const QStringList RawDataNetcdfImporter::acceptableExtensions()
 	return ret;
 }
 
-bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
+bool RawDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
 {
 	m_groupDataItem = item;
 
@@ -255,7 +255,7 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 	}
 
 	// load dimension values
-	GridRelatedConditionDimensionsContainer* dims = m_groupDataItem->dimensions();
+	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		QString dim = m_dims.at(i);
 		int dimid;
@@ -271,7 +271,7 @@ bool RawDataNetcdfImporter::importData(RawData* data, int /*index*/, QWidget* w)
 		QList<QVariant> convertedVals;
 		ret = ncGetVariableAsQVariant(ncid_in, varid, dimlen, vals);
 		convertedVals = vals;
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(i);
+		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		if (c->definition()->name() == "Time") {
 			// if the dimension is time, convert the value using units information.
 			char unitBuffer[200];

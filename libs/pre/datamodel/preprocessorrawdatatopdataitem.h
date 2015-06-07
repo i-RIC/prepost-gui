@@ -15,7 +15,7 @@
 #include <QMap>
 
 class PreProcessorRawDataGroupDataItem;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 class PreProcessorRawDataTopDataItem : public PreProcessorRawDataTopDataItemInterface
 {
@@ -64,7 +64,7 @@ protected:
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	vtkSmartPointer<vtkLegendBoxWidget> m_legendBoxWidget;
 	bool m_visible;
-	SolverDefinitionGridRelatedCondition* m_condition;
+	SolverDefinitionGridAttribute* m_condition;
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 };

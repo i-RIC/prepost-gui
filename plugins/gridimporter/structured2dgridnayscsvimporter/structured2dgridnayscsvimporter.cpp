@@ -1,6 +1,6 @@
 #include "structured2dgridnayscsvimporter.h"
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 
 #include <QObject>
@@ -37,13 +37,13 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 
 	QFile f(filename);
 	if (f.open(QFile::ReadOnly | QFile::Truncate | QIODevice::Text)){
-		GridRelatedConditionContainer* c = grid2d->gridRelatedCondition("Elevation");
+		GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
 		if (c == 0){
 			// this grid does not have elevation. Impossible to import.
 			f.close();
 			return false;
 		}
-		GridRelatedConditionRealNodeContainer* container = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
+		GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
 		QTextStream in(&f);
 		QString qstr;
@@ -77,7 +77,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 		grid2d->vtkGrid()->SetPoints(points);
 
 		// allocate memory for all grid related conditions.
-		QList<GridRelatedConditionContainer*>& clist = grid2d->gridRelatedConditions();
+		QList<GridAttributeContainer*>& clist = grid2d->gridRelatedConditions();
 		for (auto it = clist.begin(); it != clist.end(); ++it){
 			(*it)->allocate();
 		}

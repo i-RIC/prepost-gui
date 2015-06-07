@@ -2,7 +2,7 @@
 
 #include "gridbirdeyewindowcolorsettingdialog.h"
 
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 GridBirdEyeWindowColorSettingDialog::GridBirdEyeWindowColorSettingDialog(QWidget* parent) :
@@ -20,13 +20,13 @@ GridBirdEyeWindowColorSettingDialog::~GridBirdEyeWindowColorSettingDialog()
 void GridBirdEyeWindowColorSettingDialog::setGridType(SolverDefinitionGridType* type)
 {
 	ui->nodeAttComboBox->clear();
-	QList<SolverDefinitionGridRelatedCondition*> conds = type->gridRelatedConditions();
+	QList<SolverDefinitionGridAttribute*> conds = type->gridRelatedConditions();
 	for (int i = 0; i < conds.count(); ++i) {
-		SolverDefinitionGridRelatedCondition* c = conds.at(i);
-		if (c->position() == SolverDefinitionGridRelatedCondition::Node) {
+		SolverDefinitionGridAttribute* c = conds.at(i);
+		if (c->position() == SolverDefinitionGridAttribute::Node) {
 			m_nodeConds.append(c);
 			ui->nodeAttComboBox->addItem(c->caption(), c->name());
-		} else if (c->position() == SolverDefinitionGridRelatedCondition::CellCenter) {
+		} else if (c->position() == SolverDefinitionGridAttribute::CellCenter) {
 			m_cellConds.append(c);
 			ui->cellAttComboBox->addItem(c->caption(), c->name());
 		}

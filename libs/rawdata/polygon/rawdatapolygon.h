@@ -78,7 +78,7 @@ public:
 		meEditVerticesDialog
 	};
 	/// Constructor
-	RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~RawDataPolygon();
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;

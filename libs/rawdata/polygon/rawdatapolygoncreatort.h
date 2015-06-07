@@ -15,8 +15,8 @@ public:
 		m_nodeMappers.append(new RawDataPolygonNodeMapperT<V, DA>(this));
 		m_cellMappers.append(new RawDataPolygonCellMapperT<V, DA>(this));
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) override {
-		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(condition);
+	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) override {
+		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
 		if (cond == nullptr) {return false;}
 		if (condition->dimensions().size() > 0) {return false;}
 		return true;

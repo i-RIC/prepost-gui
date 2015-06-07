@@ -18,10 +18,10 @@
 #include <guicore/datamodel/propertybrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionintegercellgridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitionintegeroptioncellgridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattributeintegercell.h>
+#include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -573,11 +573,11 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	QList<PropertyBrowserAttribute> atts;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent())->gridType();
-	const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
-		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
+		const SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
 		if (icond == nullptr) {continue;}
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);

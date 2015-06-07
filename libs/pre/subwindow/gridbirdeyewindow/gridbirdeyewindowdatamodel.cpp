@@ -9,7 +9,7 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -299,7 +299,7 @@ void GridBirdEyeWindowDataModel::updateScalarBar()
 	}
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(gItem->parent()->parent());
-	SolverDefinitionGridRelatedCondition* cond = gtItem->gridType()->gridRelatedCondition(m_attributeName);
+	SolverDefinitionGridAttribute* cond = gtItem->gridType()->gridRelatedCondition(m_attributeName);
 	if (cond->isOption()) {
 		// scalar bar is needless.
 		return;

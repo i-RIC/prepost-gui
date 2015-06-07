@@ -19,15 +19,15 @@ class QSignalMapper;
 
 class QAction;
 class PreProcessorGridShapeDataItem;
-class PreProcessorGridRelatedConditionNodeGroupDataItem;
-class PreProcessorGridRelatedConditionNodeDataItem;
-class PreProcessorGridRelatedConditionCellGroupDataItem;
-class PreProcessorGridRelatedConditionCellDataItem;
+class PreProcessorGridAttributeNodeGroupDataItem;
+class PreProcessorGridAttributeNodeDataItem;
+class PreProcessorGridAttributeCellGroupDataItem;
+class PreProcessorGridAttributeCellDataItem;
 class PreProcessorBCGroupDataItem;
 class PreProcessorBCDataItem;
 
 class GridPointMouseMoveCommand;
-class GridRelatedConditionEditCommand;
+class GridAttributeEditCommand;
 class GridBirdEyeWindow;
 
 class PreProcessorGridDataItem : public PreProcessorGridDataItemInterface
@@ -99,8 +99,8 @@ public:
 	void informgridRelatedConditionChange(const QString& name) override;
 	void silentDeleteGrid() override;
 	PreProcessorGridShapeDataItem* shapeDataItem() {return m_shapeDataItem;}
-	PreProcessorGridRelatedConditionNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
-	PreProcessorGridRelatedConditionCellGroupDataItem* cellGroupDataItem() {return m_cellGroupDataItem;}
+	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
+	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() {return m_cellGroupDataItem;}
 	PreProcessorBCGroupDataItem* bcGroupDataItem() {return m_bcGroupDataItem;}
 	void setSelectedVertices(const QVector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
@@ -128,8 +128,8 @@ public:
 	const QVector<Edge>& selectedEdges() const {return m_selectedEdges;}
 	void updateAttributeActorSettings() override;
 
-	void setNodeDataItem(PreProcessorGridRelatedConditionNodeDataItem* nodeItem) {m_nodeDataItem = nodeItem;}
-	void setCellDataItem(PreProcessorGridRelatedConditionCellDataItem* cellItem) {m_cellDataItem = cellItem;}
+	void setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem) {m_nodeDataItem = nodeItem;}
+	void setCellDataItem(PreProcessorGridAttributeCellDataItem* cellItem) {m_cellDataItem = cellItem;}
 	QCursor normalCursor();
 	void informGridChange();
 	void informBirdEyeWindowClose();
@@ -195,8 +195,8 @@ protected:
 	QMenu* m_menu;
 	Grid* m_grid;
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
-	PreProcessorGridRelatedConditionNodeGroupDataItem* m_nodeGroupDataItem;
-	PreProcessorGridRelatedConditionCellGroupDataItem* m_cellGroupDataItem;
+	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
+	PreProcessorGridAttributeCellGroupDataItem* m_cellGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 	QAction* m_importAction;
 	QAction* m_exportAction;
@@ -217,8 +217,8 @@ protected:
 	QVector<vtkIdType> m_selectedCells;
 	QVector<Edge> m_selectedEdges;
 
-	PreProcessorGridRelatedConditionNodeDataItem* m_nodeDataItem;
-	PreProcessorGridRelatedConditionCellDataItem* m_cellDataItem;
+	PreProcessorGridAttributeNodeDataItem* m_nodeDataItem;
+	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
 private:
 	GridBirdEyeWindow* m_birdEyeWindow;
 
@@ -228,7 +228,7 @@ private:
 	bool m_shiftPressed;
 public:
 	friend class GridPointMouseMoveCommand;
-	friend class GridRelatedConditionEditCommand;
+	friend class GridAttributeEditCommand;
 };
 
 #endif // PREPROCESSORGRIDDATAITEM_H

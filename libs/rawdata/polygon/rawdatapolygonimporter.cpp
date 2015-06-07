@@ -4,7 +4,7 @@
 #include "rawdatapolygonimportersettingdialog.h"
 
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditwidget.h>
+#include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/rawdata/rawdatacreator.h>
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
@@ -29,7 +29,7 @@ const QStringList RawDataPolygonImporter::acceptableExtensions()
 	return ret;
 }
 
-bool RawDataPolygonImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
+bool RawDataPolygonImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
 {
 	std::string fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
@@ -59,7 +59,7 @@ bool RawDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 		return false;
 	}
 	DBFClose(dbfh);
-	GridRelatedConditionEditWidget* widget = condition->editWidget(0);
+	GridAttributeEditWidget* widget = condition->editWidget(0);
 	item->setupEditWidget(widget);
 	widget->setVariantValue(condition->variantDefaultValue());
 	RawDataPolygonImporterSettingDialog dialog(filename, widget, w);

@@ -13,7 +13,7 @@
 #include <guicore/pre/rawdata/rawdataimporter.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 

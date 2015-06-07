@@ -4,28 +4,28 @@
 #include "../../guicore_global.h"
 #include "preprocessordataitem.h"
 #include "preprocessorrawdatadataiteminterface.h"
-#include "../../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "../../solverdef/solverdefinitiongridattribute.h"
 
 class Grid;
 class QStandardItem;
 class RawDataPolygon;
 class RawDataRiverSurvey;
-class GridRelatedConditionDimensionsContainer;
-class GridRelatedConditionEditWidget;
+class GridAttributeDimensionsContainer;
+class GridAttributeEditWidget;
 class RawDataRiverSurveyCrosssectionWindowProjectDataItem;
 
 class GUICOREDLL_EXPORT PreProcessorRawDataGroupDataItemInterface : public PreProcessorDataItem
 {
 public:
-	PreProcessorRawDataGroupDataItemInterface(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)
+	PreProcessorRawDataGroupDataItemInterface(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
 		: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 	{}
-	virtual SolverDefinitionGridRelatedCondition* condition() = 0;
+	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
-	virtual void setupEditWidget(GridRelatedConditionEditWidget* widget = nullptr) = 0;
+	virtual void setupEditWidget(GridAttributeEditWidget* widget = nullptr) = 0;
 	virtual void addCopyPolygon(RawDataPolygon* polygon) = 0;
 	virtual const QList<PreProcessorRawdataDataItemInterface*> rawDatas() const = 0;
-	virtual GridRelatedConditionDimensionsContainer* dimensions() const = 0;
+	virtual GridAttributeDimensionsContainer* dimensions() const = 0;
 
 	// @todo ugly interface!
 	virtual void openCrossSectionWindow(RawDataRiverSurvey* rs, double crosssection) = 0;

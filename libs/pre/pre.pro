@@ -336,19 +336,19 @@ HEADERS += griddisplaysetting.h \
            datamodel/preprocessorbcsettinggroupdataitem.h \
            datamodel/preprocessorcustommappingsetting.h \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.h \
+           datamodel/preprocessorgridattributecelldataitem.h \
+           datamodel/preprocessorgridattributecelldisplaysettingdialog.h \
+           datamodel/preprocessorgridattributecellgroupdataitem.h \
            datamodel/preprocessorgridattributecustommappingdialog.h \
            datamodel/preprocessorgridattributemappingsettingdataitem.h \
            datamodel/preprocessorgridattributemappingsettingtopdataitem.h \
            datamodel/preprocessorgridattributemappingsettingtopeditdialog.h \
+           datamodel/preprocessorgridattributenodedataitem.h \
+           datamodel/preprocessorgridattributenodegroupdataitem.h \
            datamodel/preprocessorgridattributetemplatemappingsettingdialog.h \
            datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.h \
            datamodel/preprocessorgridcreatingconditiondataitem.h \
            datamodel/preprocessorgriddataitem.h \
-           datamodel/preprocessorgridrelatedconditioncelldataitem.h \
-           datamodel/preprocessorgridrelatedconditioncelldisplaysettingdialog.h \
-           datamodel/preprocessorgridrelatedconditioncellgroupdataitem.h \
-           datamodel/preprocessorgridrelatedconditionnodedataitem.h \
-           datamodel/preprocessorgridrelatedconditionnodegroupdataitem.h \
            datamodel/preprocessorgridshapedataitem.h \
            datamodel/preprocessorgridtypedataitem.h \
            datamodel/preprocessorinputconditiondataitem.h \
@@ -403,11 +403,11 @@ HEADERS += griddisplaysetting.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.h
 FORMS += bc/boundaryconditiondialog.ui \
+         datamodel/preprocessorgridattributecelldisplaysettingdialog.ui \
          datamodel/preprocessorgridattributecustommappingdialog.ui \
          datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
-         datamodel/preprocessorgridrelatedconditioncelldisplaysettingdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
          misc/preprocessorscalarbareditdialog.ui \
          misc/preprocessorscalarbarlegendboxsettingdialog.ui \
@@ -439,19 +439,19 @@ SOURCES += griddisplaysetting.cpp \
            datamodel/preprocessorbcsettinggroupdataitem.cpp \
            datamodel/preprocessorcustommappingsetting.cpp \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp \
+           datamodel/preprocessorgridattributecelldataitem.cpp \
+           datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp \
+           datamodel/preprocessorgridattributecellgroupdataitem.cpp \
            datamodel/preprocessorgridattributecustommappingdialog.cpp \
            datamodel/preprocessorgridattributemappingsettingdataitem.cpp \
            datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp \
            datamodel/preprocessorgridattributemappingsettingtopeditdialog.cpp \
+           datamodel/preprocessorgridattributenodedataitem.cpp \
+           datamodel/preprocessorgridattributenodegroupdataitem.cpp \
            datamodel/preprocessorgridattributetemplatemappingsettingdialog.cpp \
            datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.cpp \
            datamodel/preprocessorgridcreatingconditiondataitem.cpp \
            datamodel/preprocessorgriddataitem.cpp \
-           datamodel/preprocessorgridrelatedconditioncelldataitem.cpp \
-           datamodel/preprocessorgridrelatedconditioncelldisplaysettingdialog.cpp \
-           datamodel/preprocessorgridrelatedconditioncellgroupdataitem.cpp \
-           datamodel/preprocessorgridrelatedconditionnodedataitem.cpp \
-           datamodel/preprocessorgridrelatedconditionnodegroupdataitem.cpp \
            datamodel/preprocessorgridshapedataitem.cpp \
            datamodel/preprocessorgridtypedataitem.cpp \
            datamodel/preprocessorinputconditiondataitem.cpp \

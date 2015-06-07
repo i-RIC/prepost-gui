@@ -1,7 +1,7 @@
 #include "unstructured2dgridtriangleimporter.h"
 
 #include <guicore/pre/grid/unstructured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 
 #include <QDir>
 #include <QFile>
@@ -108,7 +108,7 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	ugrid->BuildLinks();
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid2d->gridRelatedConditions()){
+	for (GridAttributeContainer* c : grid2d->gridRelatedConditions()){
 		c->allocate();
 	}
 

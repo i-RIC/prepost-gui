@@ -16,7 +16,7 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -1582,7 +1582,7 @@ void GridCreatingConditionRiverSurvey::createGrid(RawDataRiverPathPoint* start, 
 	points->InsertPoint(dimI * dimJ - 1, 0, 0, 0);
 	grid->vtkGrid()->SetPoints(points);
 
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	// update grid interpolator.

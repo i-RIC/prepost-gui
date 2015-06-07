@@ -9,7 +9,7 @@ namespace Ui
 	class RawDataNetcdfImporterSettingDialog;
 }
 
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 class RawDataNetcdfImporterSettingDialog : public QDialog
 {
@@ -26,7 +26,7 @@ public:
 	explicit RawDataNetcdfImporterSettingDialog(QWidget* parent = 0);
 	~RawDataNetcdfImporterSettingDialog();
 
-	void setCondition(SolverDefinitionGridRelatedCondition*	condition);
+	void setCondition(SolverDefinitionGridAttribute*	condition);
 	void setVariables(const QList<NcVariable>& vars);
 	bool needToShow() const;
 	QString variableName() const;

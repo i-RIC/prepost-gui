@@ -2,19 +2,19 @@
 #include "../pre/grid/structured15dgridwithcrosssection.h"
 #include "../pre/grid/structured2dgrid.h"
 #include "../pre/grid/unstructured2dgrid.h"
-#include "../project/inputcond/cgnsfileinputconditionwidget.h"
+#include "../project/inputcond/inputconditionwidget.h"
 #include "solverdefinitionboundarycondition.h"
-#include "solverdefinitiongridrelatedcomplexcondition.h"
-#include "solverdefinitiongridrelatedcondition.h"
+#include "solverdefinitiongridcomplexattribute.h"
+#include "solverdefinitiongridattribute.h"
 #include "solverdefinitiongridtype.h"
-#include "solverdefinitionintegercellgridrelatedcondition.h"
-#include "solverdefinitionintegernodegridrelatedcondition.h"
-#include "solverdefinitionintegeroptioncellgridrelatedcondition.h"
-#include "solverdefinitionintegeroptionnodegridrelatedcondition.h"
-#include "solverdefinitionrealcellgridrelatedcondition.h"
-#include "solverdefinitionrealnodegridrelatedcondition.h"
-#include "solverdefinitionrealoptioncellgridrelatedcondition.h"
-#include "solverdefinitionrealoptionnodegridrelatedcondition.h"
+#include "solverdefinitiongridattributeintegercell.h"
+#include "solverdefinitiongridattributeintegernode.h"
+#include "solverdefinitiongridattributeintegeroptioncell.h"
+#include "solverdefinitiongridattributeintegeroptionnode.h"
+#include "solverdefinitiongridattributerealcell.h"
+#include "solverdefinitiongridattributerealnode.h"
+#include "solverdefinitiongridattributerealoptioncell.h"
+#include "solverdefinitiongridattributerealoptionnode.h"
 //#include "pre/datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h"
 //#include "pre/datamodel/preprocessorstructured2dgriddataitem.h"
 //#include "pre/datamodel/preprocessorunstructured2dgriddataitem.h"
@@ -92,38 +92,38 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 
 		if (defElem.attribute("valueType") == "complex") {
 			// Complex condition
-			SolverDefinitionGridRelatedComplexCondition* c = new SolverDefinitionGridRelatedComplexCondition(itemElem, translator);
+			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, translator);
 			m_gridRelatedComplexConditions.append(c);
 			m_gridRelatedComplexConditionNameMap.insert(c->name(), c);
 		} else {
-			SolverDefinitionGridRelatedCondition* c = nullptr;
+			SolverDefinitionGridAttribute* c = nullptr;
 			QString pos = defElem.attribute("position");
 			if (defElem.attribute("position") == "cell") {
 				if (defElem.attribute("valueType") == "integer") {
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionIntegerOptionCellGridRelatedCondition(itemElem, translator);
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, translator);
 					} else {
-						c = new SolverDefinitionIntegerCellGridRelatedCondition(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, translator);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionRealOptionCellGridRelatedCondition(itemElem, translator);
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, translator);
 					} else {
-						c = new SolverDefinitionRealCellGridRelatedCondition(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealCell(itemElem, translator);
 					}
 				}
 			} else if (defElem.attribute("position") == "node") {
 				if (defElem.attribute("valueType") == "integer") {
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionIntegerOptionNodeGridRelatedCondition(itemElem, translator);
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, translator);
 					} else {
-						c = new SolverDefinitionIntegerNodeGridRelatedCondition(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, translator);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
-					if (CgnsFileInputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionRealOptionNodeGridRelatedCondition(itemElem, translator);
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, translator);
 					} else {
-						c = new SolverDefinitionRealNodeGridRelatedCondition(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealNode(itemElem, translator);
 					}
 				}
 			}
@@ -155,11 +155,11 @@ void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, con
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 {
 	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
-		SolverDefinitionGridRelatedCondition* cond = *it;
+		SolverDefinitionGridAttribute* cond = *it;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
 	for (auto cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit) {
-		SolverDefinitionGridRelatedComplexCondition* cond = *cit;
+		SolverDefinitionGridComplexAttribute* cond = *cit;
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
 }

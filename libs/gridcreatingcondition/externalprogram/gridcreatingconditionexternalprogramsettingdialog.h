@@ -13,8 +13,8 @@ namespace Ui
 	class GridCreatingConditionExternalProgramSettingDialog;
 }
 
-class CgnsFileInputConditionContainerSet;
-class CgnsFileInputConditionWidgetSet;
+class InputConditionContainerSet;
+class InputConditionWidgetSet;
 
 class GridCreatingConditionExternalProgramSettingDialog : public QDialog
 {
@@ -42,12 +42,12 @@ private:
 	void setup(const SolverDefinition& def, const QLocale& locale);
 
 	Ui::GridCreatingConditionExternalProgramSettingDialog* ui;
-	CgnsFileInputConditionContainerSet* m_containerSet;
-	CgnsFileInputConditionWidgetSet* m_widgetSet;
+	InputConditionContainerSet* m_containerSet;
+	InputConditionWidgetSet* m_widgetSet;
 	QMap<int, QString> m_errorMessages;
 	QString m_filename;
 public:
-	friend class CgnsFileInputConditionContainerSet;
+	friend class InputConditionContainerSet;
 };
 
 #endif // GRIDCREATINGCONDITIONEXTERNALPROGRAMSETTINGDIALOG_H

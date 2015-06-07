@@ -6,8 +6,8 @@
 #include <QList>
 #include <QMap>
 
-class SolverDefinitionGridRelatedCondition;
-class SolverDefinitionGridRelatedComplexCondition;
+class SolverDefinitionGridAttribute;
+class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
 class Grid;
 class PreProcessorDataItem;
@@ -33,12 +33,12 @@ public:
 		m_isPrimary = isPrimary;
 	}
 	~SolverDefinitionGridType();
-	const QList<SolverDefinitionGridRelatedCondition*>& gridRelatedConditions() const {return m_gridRelatedConditions;}
-	SolverDefinitionGridRelatedCondition* gridRelatedCondition(const QString& name) const {
+	const QList<SolverDefinitionGridAttribute*>& gridRelatedConditions() const {return m_gridRelatedConditions;}
+	SolverDefinitionGridAttribute* gridRelatedCondition(const QString& name) const {
 		return m_gridRelatedConditionNameMap.value(name);
 	}
-	const QList<SolverDefinitionGridRelatedComplexCondition*>& gridRelatedComplexConditions() const {return m_gridRelatedComplexConditions;}
-	SolverDefinitionGridRelatedComplexCondition* gridRelatedComplexCondition(const QString& name) const {
+	const QList<SolverDefinitionGridComplexAttribute*>& gridRelatedComplexConditions() const {return m_gridRelatedComplexConditions;}
+	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const QString& name) const {
 		return m_gridRelatedComplexConditionNameMap.value(name);
 	}
 	const QList<SolverDefinitionBoundaryCondition*>& boundaryConditions() const {return m_boundaryConditions;}
@@ -69,10 +69,10 @@ protected:
 	bool m_isOptional;
 	QList<GridType> m_availableGridTypes;
 	GridType m_defaultGridType;
-	QList<SolverDefinitionGridRelatedCondition*> m_gridRelatedConditions;
-	QMap<QString, SolverDefinitionGridRelatedCondition*> m_gridRelatedConditionNameMap;
-	QList<SolverDefinitionGridRelatedComplexCondition*> m_gridRelatedComplexConditions;
-	QMap<QString, SolverDefinitionGridRelatedComplexCondition*> m_gridRelatedComplexConditionNameMap;
+	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
+	QMap<QString, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
+	QList<SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditions;
+	QMap<QString, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
 	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
 	QMap<QString, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
 	QMap<QString, QString> m_solutionCaptions;

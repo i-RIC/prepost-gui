@@ -80,7 +80,7 @@ public:
 		meBreakLineRemove
 	};
 	/// Constructor
-	RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~RawDataPointmap();
 	vtkPolyData* vtkGrid() {return m_vtkGrid;}
 	vtkPolyData* delaunayedPolyData() {return m_vtkDelaunayedPolyData;}

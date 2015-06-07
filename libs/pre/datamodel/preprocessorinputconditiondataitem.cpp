@@ -2,8 +2,8 @@
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/project/inputcond/cgnsfileinputconditiondialog.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
+#include <guicore/project/inputcond/inputconditiondialog.h>
+#include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/errormessage.h>
@@ -22,7 +22,7 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 {
 	try {
 		iRICMainWindowInterface* mainW = projectData()->mainWindow();
-		m_dialog = new CgnsFileInputConditionDialog(projectData()->solverDefinition(), mainW->locale() , mainW);
+		m_dialog = new InputConditionDialog(projectData()->solverDefinition(), mainW->locale() , mainW);
 		m_dialog->setWorkFolder(projectData()->workDirectory());
 		connect(m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));
 		m_isDeletable = false;

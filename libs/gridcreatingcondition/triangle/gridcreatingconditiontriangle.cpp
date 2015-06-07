@@ -16,8 +16,8 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -2038,7 +2038,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	}
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = grid->gridRelatedConditions();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}

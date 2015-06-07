@@ -2,7 +2,7 @@
 #define RAWDATANODEMAPPERT_H
 
 #include "rawdatamappert.h"
-#include "../gridcond/base/gridrelatedconditionnodecontainert.h"
+#include "../gridcond/base/gridattributenodecontainert.h"
 
 template <class V, class DA>
 class RawDataNodeMapperT : public RawDataMapperT<V>
@@ -12,8 +12,8 @@ public:
 		: RawDataMapperT<V>(parent)
 	{}
 protected:
-	GridRelatedConditionNodeContainerT<V, DA>* container() {
-		return dynamic_cast<GridRelatedConditionNodeContainerT<V, DA>* >(RawDataMapperT<V>::container());
+	GridAttributeNodeContainerT<V, DA>* container() {
+		return dynamic_cast<GridAttributeNodeContainerT<V, DA>* >(RawDataMapperT<V>::container());
 	}
 };
 

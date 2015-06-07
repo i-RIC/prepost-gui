@@ -17,7 +17,7 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
 #include <guicore/pre/grid/structured15dgridwithcrosssection.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -993,7 +993,7 @@ void GridCreatingConditionRiverSurvey15D::createGrid(RawDataRiverPathPoint* star
 	grid->setModified();
 
 	// grid related conditions
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = grid->gridRelatedConditions();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}

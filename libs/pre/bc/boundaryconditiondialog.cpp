@@ -4,10 +4,10 @@
 #include "boundaryconditiondialog.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/project/inputcond/cgnsfileinputconditioncontainerset.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionpage.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
+#include <guicore/project/inputcond/inputconditioncontainerset.h>
+#include <guicore/project/inputcond/inputconditionpage.h>
+#include <guicore/project/inputcond/inputconditionwidgetset.h>
+#include <guicore/project/inputcond/inputconditionwidgetset.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
@@ -32,9 +32,9 @@ BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataite
 
 	m_dataItem = dataitem;
 	ui->setupUi(this);
-	m_containerSet = new CgnsFileInputConditionContainerSet(mw);
+	m_containerSet = new InputConditionContainerSet(mw);
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	m_widgetSet = new CgnsFileInputConditionWidgetSet();
+	m_widgetSet = new InputConditionWidgetSet();
 
 	m_captionContainer.setName("_caption");
 	m_colorContainer.setName("_color");
@@ -71,7 +71,7 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	// setup WidgetSet.
 	m_widgetSet->setup(elem, *m_containerSet, t, true);
 
-	CgnsFileInputConditionPage* page = new CgnsFileInputConditionPage(elem, m_widgetSet, t, this);
+	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(0);
 	layout->addWidget(page);

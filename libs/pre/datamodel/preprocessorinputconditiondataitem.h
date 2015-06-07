@@ -4,7 +4,7 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/project/projectdata.h>
 
-class CgnsFileInputConditionDialog;
+class InputConditionDialog;
 class QAction;
 
 class PreProcessorInputConditionDataItem : public PreProcessorDataItem
@@ -31,7 +31,7 @@ public slots:
 	void showDialog(bool readonly = false);
 private:
 	bool m_isSet;
-	CgnsFileInputConditionDialog* m_dialog;
+	InputConditionDialog* m_dialog;
 };
 
 #endif // PREPROCESSORINPUTCONDITIONDATAITEM_H

@@ -3,8 +3,8 @@
 
 #include "gridcreatingconditiongridcombine.h"
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionintegercellcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
@@ -54,13 +54,13 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = grid->gridRelatedConditions();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}
-	GridRelatedConditionContainer* c;
+	GridAttributeContainer* c;
 	c = grid->gridRelatedCondition("Elevation");
-	GridRelatedConditionRealNodeContainer* rnContainer = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
+	GridAttributeRealNodeContainer* rnContainer = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 	if (rnContainer != nullptr) {
 		for (int j = 0; j < m_jMax; j++) {
 			for (int i = 0; i < m_iMax; i++) {
@@ -71,7 +71,7 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 		rnContainer->setMapped(true);
 	}
 	c = grid->gridRelatedCondition("CellCondition");
-	GridRelatedConditionIntegerCellContainer* icContainer = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
+	GridAttributeIntegerCellContainer* icContainer = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	if (icContainer != nullptr) {
 		for (int j = 0; j < m_jMax - 1; j++) {
 			for (int i = 0; i < m_iMax - 1; i++) {
@@ -107,8 +107,8 @@ void GridCreatingConditionGridCombine::setupParameters()
 	int ni4_1, nj4_1;
 	int ni4_2, nj4_2;
 
-	GridRelatedConditionRealNodeContainer* rncont;
-	GridRelatedConditionIntegerCellContainer* iccont;
+	GridAttributeRealNodeContainer* rncont;
+	GridAttributeIntegerCellContainer* iccont;
 	// read mainstream grid
 	Structured2DGrid* g1 = dynamic_cast<Structured2DGrid*>(mainstreamGrid);
 	ni4_1 = g1->dimensionI();
@@ -122,7 +122,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 		y8_1[i] = new double[nj4_1 + 1];
 		z8_1[i] = new double[nj4_1 + 1];
 	}
-	rncont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(g1->gridRelatedCondition("Elevation"));
+	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g1->gridRelatedCondition("Elevation"));
 	for (int i = 0; i < ni4_1 * nj4_1; i++) {
 		double point[3];
 		g1->vtkGrid()->GetPoint(i, point);
@@ -142,7 +142,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	for (int i = 0; i < ni4_1; i++) {
 		obst4_1[i] = new int[nj4_1];
 	}
-	iccont = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(g1->gridRelatedCondition("CellCondition"));
+	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g1->gridRelatedCondition("CellCondition"));
 	for (int i = 0; i < (ni4_1 - 1) * (nj4_1 - 1); i++) {
 		int ii = i % (ni4_1 - 1) + 1;
 		int jj = i / (ni4_1 - 1) + 1;
@@ -166,7 +166,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 		y8_2[i] = new double[nj4_2 + 1];
 		z8_2[i] = new double[nj4_2 + 1];
 	}
-	rncont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(g2->gridRelatedCondition("Elevation"));
+	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g2->gridRelatedCondition("Elevation"));
 	for (int i = 0; i < ni4_2 * nj4_2; i++) {
 		double point[3];
 		g2->vtkGrid()->GetPoint(i, point);
@@ -182,7 +182,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	for (int i = 0; i < ni4_2; i++) {
 		obst4_2[i] = new int[nj4_2];
 	}
-	iccont = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(g2->gridRelatedCondition("CellCondition"));
+	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g2->gridRelatedCondition("CellCondition"));
 	for (int i = 0; i < (ni4_2 - 1) * (nj4_2 - 1); i++) {
 		int ii = i % (ni4_2 - 1) + 1;
 		int jj = i / (ni4_2 - 1) + 1;

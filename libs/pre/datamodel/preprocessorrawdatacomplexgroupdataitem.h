@@ -18,15 +18,15 @@ class PreProcessorRawDataComplexGroupDataItem : public PreProcessorRawDataGroupD
 	Q_OBJECT
 public:
 	/// Constructor
-	PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent);
+	PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 	~PreProcessorRawDataComplexGroupDataItem();
 	void loadFromCgnsFile(const int fn) override;
 	void saveComplexGroupsToCgnsFile(const int fn) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	ProjectData* projectData() override {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
-	void setupEditWidget(GridRelatedConditionEditWidget* widget) override;
+	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void applyScalarsToColorsSetting();
-	SolverDefinitionGridRelatedCondition* condition() override;
+	SolverDefinitionGridAttribute* condition() override;
 
 public slots:
 	void showEditGroupDialog();

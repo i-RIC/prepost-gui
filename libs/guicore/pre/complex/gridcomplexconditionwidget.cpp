@@ -1,10 +1,10 @@
 #include "ui_gridcomplexconditionwidget.h"
 
 #include "../../base/iricmainwindowinterface.h"
-#include "../../project/inputcond/cgnsfileinputconditioncontainerset.h"
-#include "../../project/inputcond/cgnsfileinputconditionpage.h"
-#include "../../project/inputcond/cgnsfileinputconditionwidgetset.h"
-#include "../../project/inputcond/cgnsfileinputconditionwidgetset.h"
+#include "../../project/inputcond/inputconditioncontainerset.h"
+#include "../../project/inputcond/inputconditionpage.h"
+#include "../../project/inputcond/inputconditionwidgetset.h"
+#include "../../project/inputcond/inputconditionwidgetset.h"
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "gridcomplexconditionwidget.h"
@@ -28,9 +28,9 @@ GridComplexConditionWidget::GridComplexConditionWidget(iRICMainWindowInterface* 
 	m_modified = false;
 
 	ui->setupUi(this);
-	m_containerSet = new CgnsFileInputConditionContainerSet(mw);
+	m_containerSet = new InputConditionContainerSet(mw);
 	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	m_widgetSet = new CgnsFileInputConditionWidgetSet();
+	m_widgetSet = new InputConditionWidgetSet();
 
 	m_captionContainer.setName("_caption");
 	m_colorContainer.setName("_color");
@@ -61,7 +61,7 @@ void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement&
 	// setup WidgetSet.
 	m_widgetSet->setup(elem, *m_containerSet, t, true);
 
-	CgnsFileInputConditionPage* page = new CgnsFileInputConditionPage(elem, m_widgetSet, t, this);
+	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(0);
 	layout->addWidget(page);

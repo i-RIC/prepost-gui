@@ -5,8 +5,8 @@
 #include <guibase/coloreditwidget.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/solverdef/enumloader.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiont.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributet.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QBrush>
@@ -94,7 +94,7 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 		int rownum = ui->tableWidget->rowCount() - 1;
 
 		Post2dWindowCellFlagSetting s = *it2;
-		const SolverDefinitionGridRelatedCondition* cond = m_gridType->gridRelatedCondition(s.attributeName);
+		const SolverDefinitionGridAttribute* cond = m_gridType->gridRelatedCondition(s.attributeName);
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 		QMap<int, QString> enums = el->enumerations();
 		QTableWidgetItem* witem = new QTableWidgetItem();

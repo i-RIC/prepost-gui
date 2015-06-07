@@ -38,7 +38,7 @@
       </widget>
      </item>
      <item>
-      <widget class="GridRelatedConditionEditWidgetContainer" name="customWidget" native="true"/>
+      <widget class="GridAttributeEditWidgetContainer" name="customWidget" native="true"/>
      </item>
     </layout>
    </item>
@@ -56,9 +56,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GridRelatedConditionEditWidgetContainer</class>
+   <class>GridAttributeEditWidgetContainer</class>
    <extends>QWidget</extends>
-   <header>pre/gridcond/base/gridrelatedconditioneditwidgetcontainer.h</header>
+   <header>pre/gridcond/base/gridattributeeditwidgetcontainer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

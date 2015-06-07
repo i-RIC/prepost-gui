@@ -4,8 +4,8 @@
 #include <cmath>
 
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionintegercellcontainer.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 
 #include <QDataStream>
 #include <QFile>
@@ -44,12 +44,12 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	QDataStream st(&f);
 	st.setByteOrder(QDataStream::LittleEndian);
 
-	GridRelatedConditionContainer* c = grid2d->gridRelatedCondition("Elevation");
+	GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
 	if (c == 0){
 		// this grid does not have Elevation. Impossible to import.
 		return false;
 	}
-	GridRelatedConditionRealNodeContainer* container = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
+	GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
 	int len, imax, jmax, kmax, obst;
 	// Load imax, jmax, kmax, and obst flag.
@@ -69,8 +69,8 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	grid2d->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridRelatedConditionContainer*>& clist = grid2d->gridRelatedConditions();
-	for (GridRelatedConditionContainer* c : clist){
+	QList<GridAttributeContainer*>& clist = grid2d->gridRelatedConditions();
+	for (GridAttributeContainer* c : clist){
 		c->allocate();
 	}
 	int gridsize = imax * jmax;

@@ -3,7 +3,7 @@
 
 #include "rd_pointmap_global.h"
 #include <guicore/pre/rawdata/rawdatacreator.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiont.h>
+#include <guicore/solverdef/solverdefinitiongridattributet.h>
 
 class RD_POINTMAP_EXPORT RawDataPointmapRealCreator : public RawDataCreator
 {
@@ -11,8 +11,8 @@ class RD_POINTMAP_EXPORT RawDataPointmapRealCreator : public RawDataCreator
 public:
 	/// Constructor
 	RawDataPointmapRealCreator();
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) override;
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
+	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) override;
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 	QString name(unsigned int index) override;
 	QString defaultCaption(unsigned int index) override;
 };

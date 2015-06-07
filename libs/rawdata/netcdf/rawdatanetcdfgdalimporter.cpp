@@ -5,9 +5,9 @@
 #include <guibase/coordinatesystembuilder.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -34,10 +34,10 @@ const QStringList RawDataNetcdfGdalImporter::acceptableExtensions()
 	return ret;
 }
 
-bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
+bool RawDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
 {
 	// investigate the condition.
-	const QList<SolverDefinitionGridRelatedConditionDimension*>& dims = condition->dimensions();
+	const QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
 	if (dims.size() != 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("GDAL data files can be imported for grid conditions without dimensions."));
 		return false;

@@ -5,24 +5,24 @@
 
 class Structured2DGrid;
 class PreProcessorGridCrosssectionWindow;
-class PreProcessorGridRelatedConditionNodeDataItem;
+class PreProcessorGridAttributeNodeDataItem;
 
 class PreProcessorGridCrosssectionWindowProjectDataItem : public ProjectDataItem
 {
 public:
-	PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridRelatedConditionNodeDataItem* item, const QString& cond, QWidget* parentWindow);
+	PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const QString& cond, QWidget* parentWindow);
 	~PreProcessorGridCrosssectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();
 	PreProcessorGridCrosssectionWindow* window() {
 		return m_window;
 	}
-	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem() {return m_item;}
+	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem() {return m_item;}
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 private:
-	PreProcessorGridRelatedConditionNodeDataItem* m_item;
+	PreProcessorGridAttributeNodeDataItem* m_item;
 	PreProcessorGridCrosssectionWindow* m_window;
 };
 

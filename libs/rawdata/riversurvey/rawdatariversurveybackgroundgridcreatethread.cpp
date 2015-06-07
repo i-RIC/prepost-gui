@@ -6,7 +6,7 @@
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QList>
@@ -356,7 +356,7 @@ bool RawDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	points->InsertPoint(gridISize * gridJSize - 1, 0, 0, 0);
 	tmpgrid->vtkGrid()->SetPoints(points);
 
-	QList<GridRelatedConditionContainer*>& clist = tmpgrid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = tmpgrid->gridRelatedConditions();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}

@@ -12,7 +12,7 @@ class QToolBar;
 class RawData;
 class RawDataFactory;
 class GraphicsWindowDataItem;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 class PreProcessorRawDataGroupDataItem;
 class ProjectDataItem;
 class RawDataMapper;
@@ -27,9 +27,9 @@ public:
 	virtual ~RawDataCreator();
 	/// Return true if the corresponding raw data can be used
 	/// for this grid related condition.
-	virtual bool isCompatibleWith(SolverDefinitionGridRelatedCondition* condition) = 0;
-	virtual RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) = 0;
-	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition);
+	virtual bool isCompatibleWith(SolverDefinitionGridAttribute* condition) = 0;
+	virtual RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) = 0;
+	virtual RawData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition);
 	const QList<RawDataMapper*>& nodeMappers() const {return m_nodeMappers;}
 	const QList<RawDataMapper*>& cellMappers() const {return m_cellMappers;}
 	const QList<RawDataImporter*>& importers() const {return m_importers;}

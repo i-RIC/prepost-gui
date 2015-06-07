@@ -68,7 +68,12 @@ LIBS += -liricGuibase
 # Qwt
 
 CONFIG(debug, debug|release) {
-	LIBS += -lqwtd
+	win32 {
+		LIBS += -lqwtd
+	}
+	unix {
+		LIBS += -lqwt
+	}
 }
 else {
 	LIBS += -lqwt
@@ -201,22 +206,22 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinition.h \
            solverdef/solverdefinitionabstract.h \
            solverdef/solverdefinitionboundarycondition.h \
-           solverdef/solverdefinitiongridrelatedcomplexcondition.h \
-           solverdef/solverdefinitiongridrelatedcondition.h \
-           solverdef/solverdefinitiongridrelatedconditiondimension.h \
-           solverdef/solverdefinitiongridrelatedconditiondimensioncreator.h \
-           solverdef/solverdefinitiongridrelatedconditiondimensiont.h \
-           solverdef/solverdefinitiongridrelatedconditiont.h \
+           solverdef/solverdefinitiongridattribute.h \
+           solverdef/solverdefinitiongridattributedimension.h \
+           solverdef/solverdefinitiongridattributedimensioncreator.h \
+           solverdef/solverdefinitiongridattributedimensiont.h \
+           solverdef/solverdefinitiongridattributeintegercell.h \
+           solverdef/solverdefinitiongridattributeintegernode.h \
+           solverdef/solverdefinitiongridattributeintegeroptioncell.h \
+           solverdef/solverdefinitiongridattributeintegeroptionnode.h \
+           solverdef/solverdefinitiongridattributerealcell.h \
+           solverdef/solverdefinitiongridattributerealnode.h \
+           solverdef/solverdefinitiongridattributerealoptioncell.h \
+           solverdef/solverdefinitiongridattributerealoptionnode.h \
+           solverdef/solverdefinitiongridattributet.h \
+           solverdef/solverdefinitiongridcomplexattribute.h \
            solverdef/solverdefinitiongridtype.h \
-           solverdef/solverdefinitionintegercellgridrelatedcondition.h \
-           solverdef/solverdefinitionintegernodegridrelatedcondition.h \
-           solverdef/solverdefinitionintegeroptioncellgridrelatedcondition.h \
-           solverdef/solverdefinitionintegeroptionnodegridrelatedcondition.h \
            solverdef/solverdefinitionnode.h \
-           solverdef/solverdefinitionrealcellgridrelatedcondition.h \
-           solverdef/solverdefinitionrealnodegridrelatedcondition.h \
-           solverdef/solverdefinitionrealoptioncellgridrelatedcondition.h \
-           solverdef/solverdefinitionrealoptionnodegridrelatedcondition.h \
            solverdef/solverdefinitiontranslator.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
@@ -243,20 +248,18 @@ HEADERS += guicore_global.h \
            pre/grid/structured15dgridwithcrosssection.h \
            pre/grid/structured2dgrid.h \
            pre/grid/unstructured2dgrid.h \
-           pre/gridcond/gridrelatedcellconditionpropertydialog.h \
-           pre/gridcond/gridrelatednodeconditionpropertydialog.h \
+           pre/gridcond/gridcellattributepropertydialog.h \
+           pre/gridcond/gridnodeattributepropertydialog.h \
            pre/gridcreatingcondition/gridcreatingcondition.h \
            pre/gridcreatingcondition/gridcreatingconditioncreator.h \
            pre/hydraulicdata/hydraulicdataimporter.h \
            pre/rawdata/rawdata.h \
-           pre/rawdata/rawdatacellmapper.h \
            pre/rawdata/rawdatacellmappert.h \
            pre/rawdata/rawdatacreator.h \
            pre/rawdata/rawdataexporter.h \
            pre/rawdata/rawdataimporter.h \
            pre/rawdata/rawdatamapper.h \
            pre/rawdata/rawdatamappert.h \
-           pre/rawdata/rawdatanodemapper.h \
            pre/rawdata/rawdatanodemappert.h \
            pre/rawdata/rawdataproxy.h \
            pre/rawdatabackground/rawdatabackground.h \
@@ -268,63 +271,62 @@ HEADERS += guicore_global.h \
            pre/rawdatabackground/rawdatabackgroundintegercreator.h \
            pre/rawdatabackground/rawdatabackgroundnodemappert.h \
            pre/rawdatabackground/rawdatabackgroundrealcreator.h \
-           project/inputcond/cgnsfileinputconditioncontainer.h \
-           project/inputcond/cgnsfileinputconditioncontainerfunctional.h \
-           project/inputcond/cgnsfileinputconditioncontainerinteger.h \
-           project/inputcond/cgnsfileinputconditioncontainerreal.h \
-           project/inputcond/cgnsfileinputconditioncontainerset.h \
-           project/inputcond/cgnsfileinputconditioncontainerstring.h \
-           project/inputcond/cgnsfileinputconditiondependency.h \
-           project/inputcond/cgnsfileinputconditiondialog.h \
-           project/inputcond/cgnsfileinputconditionpage.h \
-           project/inputcond/cgnsfileinputconditionpagecontainer.h \
-           project/inputcond/cgnsfileinputconditionpagelist.h \
-           project/inputcond/cgnsfileinputconditionwidget.h \
-           project/inputcond/cgnsfileinputconditionwidgetfilename.h \
-           project/inputcond/cgnsfileinputconditionwidgetfoldername.h \
-           project/inputcond/cgnsfileinputconditionwidgetfunctional.h \
-           project/inputcond/cgnsfileinputconditionwidgetinteger.h \
-           project/inputcond/cgnsfileinputconditionwidgetintegeroption.h \
-           project/inputcond/cgnsfileinputconditionwidgetreal.h \
-           project/inputcond/cgnsfileinputconditionwidgetrealoption.h \
-           project/inputcond/cgnsfileinputconditionwidgetset.h \
-           project/inputcond/cgnsfileinputconditionwidgetstring.h \
+           project/inputcond/inputconditioncontainer.h \
+           project/inputcond/inputconditioncontainerfunctional.h \
+           project/inputcond/inputconditioncontainerinteger.h \
+           project/inputcond/inputconditioncontainerreal.h \
+           project/inputcond/inputconditioncontainerset.h \
+           project/inputcond/inputconditioncontainerstring.h \
+           project/inputcond/inputconditiondependency.h \
+           project/inputcond/inputconditiondialog.h \
+           project/inputcond/inputconditionpage.h \
+           project/inputcond/inputconditionpagecontainer.h \
+           project/inputcond/inputconditionpagelist.h \
+           project/inputcond/inputconditionwidget.h \
+           project/inputcond/inputconditionwidgetfilename.h \
+           project/inputcond/inputconditionwidgetfoldername.h \
+           project/inputcond/inputconditionwidgetfunctional.h \
+           project/inputcond/inputconditionwidgetinteger.h \
+           project/inputcond/inputconditionwidgetintegeroption.h \
+           project/inputcond/inputconditionwidgetreal.h \
+           project/inputcond/inputconditionwidgetrealoption.h \
+           project/inputcond/inputconditionwidgetset.h \
+           project/inputcond/inputconditionwidgetstring.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \
-           pre/gridcond/base/gridrelatedconditionbaseobject.h \
-           pre/gridcond/base/gridrelatedconditioncellcontainert.h \
-           pre/gridcond/base/gridrelatedconditioncontainer.h \
-           pre/gridcond/base/gridrelatedconditioncontainert.h \
-           pre/gridcond/base/gridrelatedconditiondimensioncontainer.h \
-           pre/gridcond/base/gridrelatedconditiondimensioncontainert.h \
-           pre/gridcond/base/gridrelatedconditiondimensionscontainer.h \
-           pre/gridcond/base/gridrelatedconditiondimensionselectwidget.h \
-           pre/gridcond/base/gridrelatedconditioneditdialog.h \
-           pre/gridcond/base/gridrelatedconditioneditdialogt.h \
-           pre/gridcond/base/gridrelatedconditioneditwidget.h \
-           pre/gridcond/base/gridrelatedconditioneditwidgetcontainer.h \
-           pre/gridcond/base/gridrelatedconditioneditwidgett.h \
-           pre/gridcond/base/gridrelatedconditionnodecontainert.h \
-           pre/gridcond/base/gridrelatedconditionvariationeditdialog.h \
-           pre/gridcond/base/gridrelatedconditionvariationeditwidget.h \
-           pre/gridcond/base/gridrelatedconditionvariationeditwidgetcontainer.h \
-           pre/gridcond/base/gridrelatedconditionvariationeditwidgett.h \
-           pre/gridcond/complex/gridrelatedcomplexconditioncontainer.h \
-           pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.h \
-           pre/gridcond/container/gridrelatedconditionintegercellcontainer.h \
-           pre/gridcond/container/gridrelatedconditionintegernodecontainer.h \
-           pre/gridcond/container/gridrelatedconditionrealcellcontainer.h \
-           pre/gridcond/container/gridrelatedconditionrealnodecontainer.h \
-           pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensioncomboboxselectwidget.h \
-           pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionintegereditwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionintegeroptioneditwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionintegervariationeditwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionrealeditwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionrealoptioneditwidget.h \
-           pre/gridcond/editwidget/gridrelatedconditionrealvariationeditwidget.h \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldelegate.h \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.h \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.h
+           pre/gridcond/base/gridattributebaseobject.h \
+           pre/gridcond/base/gridattributecellcontainert.h \
+           pre/gridcond/base/gridattributecontainer.h \
+           pre/gridcond/base/gridattributecontainert.h \
+           pre/gridcond/base/gridattributedimensioncontainer.h \
+           pre/gridcond/base/gridattributedimensioncontainert.h \
+           pre/gridcond/base/gridattributedimensionscontainer.h \
+           pre/gridcond/base/gridattributedimensionselectwidget.h \
+           pre/gridcond/base/gridattributeeditdialog.h \
+           pre/gridcond/base/gridattributeeditwidget.h \
+           pre/gridcond/base/gridattributeeditwidgetcontainer.h \
+           pre/gridcond/base/gridattributeeditwidgett.h \
+           pre/gridcond/base/gridattributenodecontainert.h \
+           pre/gridcond/base/gridattributevariationeditdialog.h \
+           pre/gridcond/base/gridattributevariationeditwidget.h \
+           pre/gridcond/base/gridattributevariationeditwidgetcontainer.h \
+           pre/gridcond/base/gridattributevariationeditwidgett.h \
+           pre/gridcond/complex/gridcomplexattributecontainer.h \
+           pre/gridcond/complex/gridcomplexattributeeditwidget.h \
+           pre/gridcond/container/gridattributeintegercellcontainer.h \
+           pre/gridcond/container/gridattributeintegernodecontainer.h \
+           pre/gridcond/container/gridattributerealcellcontainer.h \
+           pre/gridcond/container/gridattributerealnodecontainer.h \
+           pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.h \
+           pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.h \
+           pre/gridcond/editwidget/gridattributeintegereditwidget.h \
+           pre/gridcond/editwidget/gridattributeintegeroptioneditwidget.h \
+           pre/gridcond/editwidget/gridattributeintegervariationeditwidget.h \
+           pre/gridcond/editwidget/gridattributerealeditwidget.h \
+           pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
+           pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
+           project/inputcond/functional/inputconditionwidgetfunctionaldelegate.h \
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
+           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
@@ -340,14 +342,14 @@ FORMS += datamodel/propertybrowserview.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditionwidget.ui \
-         pre/gridcond/gridrelatedcellconditionpropertydialog.ui \
-         pre/gridcond/gridrelatednodeconditionpropertydialog.ui \
+         pre/gridcond/gridcellattributepropertydialog.ui \
+         pre/gridcond/gridnodeattributepropertydialog.ui \
          pre/rawdatabackground/rawdatabackgroundeditdialog.ui \
-         project/inputcond/cgnsfileinputconditiondialog.ui \
-         pre/gridcond/base/gridrelatedconditioneditdialog.ui \
-         pre/gridcond/base/gridrelatedconditionvariationeditdialog.ui \
-         pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensioncomboboxselectwidget.ui \
-         project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.ui
+         project/inputcond/inputconditiondialog.ui \
+         pre/gridcond/base/gridattributeeditdialog.ui \
+         pre/gridcond/base/gridattributevariationeditdialog.ui \
+         pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
+         project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui
 SOURCES += axis2d/axis2ddataitem.cpp \
            axis3d/axis3ddataitem.cpp \
            base/iricmainwindowinterface.cpp \
@@ -423,20 +425,20 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinition.cpp \
            solverdef/solverdefinitionabstract.cpp \
            solverdef/solverdefinitionboundarycondition.cpp \
-           solverdef/solverdefinitiongridrelatedcomplexcondition.cpp \
-           solverdef/solverdefinitiongridrelatedcondition.cpp \
-           solverdef/solverdefinitiongridrelatedconditiondimension.cpp \
-           solverdef/solverdefinitiongridrelatedconditiondimensioncreator.cpp \
-           solverdef/solverdefinitiongridrelatedconditiont.cpp \
+           solverdef/solverdefinitiongridattribute.cpp \
+           solverdef/solverdefinitiongridattributedimension.cpp \
+           solverdef/solverdefinitiongridattributedimensioncreator.cpp \
+           solverdef/solverdefinitiongridattributeintegercell.cpp \
+           solverdef/solverdefinitiongridattributeintegernode.cpp \
+           solverdef/solverdefinitiongridattributeintegeroptioncell.cpp \
+           solverdef/solverdefinitiongridattributeintegeroptionnode.cpp \
+           solverdef/solverdefinitiongridattributerealcell.cpp \
+           solverdef/solverdefinitiongridattributerealnode.cpp \
+           solverdef/solverdefinitiongridattributerealoptioncell.cpp \
+           solverdef/solverdefinitiongridattributerealoptionnode.cpp \
+           solverdef/solverdefinitiongridattributet.cpp \
+           solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
-           solverdef/solverdefinitionintegercellgridrelatedcondition.cpp \
-           solverdef/solverdefinitionintegernodegridrelatedcondition.cpp \
-           solverdef/solverdefinitionintegeroptioncellgridrelatedcondition.cpp \
-           solverdef/solverdefinitionintegeroptionnodegridrelatedcondition.cpp \
-           solverdef/solverdefinitionrealcellgridrelatedcondition.cpp \
-           solverdef/solverdefinitionrealnodegridrelatedcondition.cpp \
-           solverdef/solverdefinitionrealoptioncellgridrelatedcondition.cpp \
-           solverdef/solverdefinitionrealoptionnodegridrelatedcondition.cpp \
            solverdef/solverdefinitiontranslator.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \
@@ -456,8 +458,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/grid/structured15dgridwithcrosssection.cpp \
            pre/grid/structured2dgrid.cpp \
            pre/grid/unstructured2dgrid.cpp \
-           pre/gridcond/gridrelatedcellconditionpropertydialog.cpp \
-           pre/gridcond/gridrelatednodeconditionpropertydialog.cpp \
+           pre/gridcond/gridcellattributepropertydialog.cpp \
+           pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
            pre/rawdata/rawdata.cpp \
@@ -471,45 +473,45 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/rawdatabackground/rawdatabackgroundeditdialog.cpp \
            pre/rawdatabackground/rawdatabackgroundintegercreator.cpp \
            pre/rawdatabackground/rawdatabackgroundrealcreator.cpp \
-           project/inputcond/cgnsfileinputconditioncontainerfunctional.cpp \
-           project/inputcond/cgnsfileinputconditioncontainerinteger.cpp \
-           project/inputcond/cgnsfileinputconditioncontainerreal.cpp \
-           project/inputcond/cgnsfileinputconditioncontainerset.cpp \
-           project/inputcond/cgnsfileinputconditioncontainerstring.cpp \
-           project/inputcond/cgnsfileinputconditiondependency.cpp \
-           project/inputcond/cgnsfileinputconditiondialog.cpp \
-           project/inputcond/cgnsfileinputconditionpage.cpp \
-           project/inputcond/cgnsfileinputconditionpagecontainer.cpp \
-           project/inputcond/cgnsfileinputconditionpagelist.cpp \
-           project/inputcond/cgnsfileinputconditionwidget.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetfilename.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetfoldername.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetfunctional.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetinteger.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetintegeroption.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetreal.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetrealoption.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetset.cpp \
-           project/inputcond/cgnsfileinputconditionwidgetstring.cpp \
+           project/inputcond/inputconditioncontainerfunctional.cpp \
+           project/inputcond/inputconditioncontainerinteger.cpp \
+           project/inputcond/inputconditioncontainerreal.cpp \
+           project/inputcond/inputconditioncontainerset.cpp \
+           project/inputcond/inputconditioncontainerstring.cpp \
+           project/inputcond/inputconditiondependency.cpp \
+           project/inputcond/inputconditiondialog.cpp \
+           project/inputcond/inputconditionpage.cpp \
+           project/inputcond/inputconditionpagecontainer.cpp \
+           project/inputcond/inputconditionpagelist.cpp \
+           project/inputcond/inputconditionwidget.cpp \
+           project/inputcond/inputconditionwidgetfilename.cpp \
+           project/inputcond/inputconditionwidgetfoldername.cpp \
+           project/inputcond/inputconditionwidgetfunctional.cpp \
+           project/inputcond/inputconditionwidgetinteger.cpp \
+           project/inputcond/inputconditionwidgetintegeroption.cpp \
+           project/inputcond/inputconditionwidgetreal.cpp \
+           project/inputcond/inputconditionwidgetrealoption.cpp \
+           project/inputcond/inputconditionwidgetset.cpp \
+           project/inputcond/inputconditionwidgetstring.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
-           pre/gridcond/base/gridrelatedconditioncontainer.cpp \
-           pre/gridcond/base/gridrelatedconditiondimensioncontainer.cpp \
-           pre/gridcond/base/gridrelatedconditiondimensionscontainer.cpp \
-           pre/gridcond/base/gridrelatedconditiondimensionselectwidget.cpp \
-           pre/gridcond/base/gridrelatedconditioneditdialog.cpp \
-           pre/gridcond/base/gridrelatedconditionvariationeditdialog.cpp \
-           pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.cpp \
-           pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensioncomboboxselectwidget.cpp \
-           pre/gridcond/dimensionselectwidget/gridrelatedconditiondimensiontimesliderselectwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionintegereditwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionintegeroptioneditwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionintegervariationeditwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionrealeditwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionrealoptioneditwidget.cpp \
-           pre/gridcond/editwidget/gridrelatedconditionrealvariationeditwidget.cpp \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldelegate.cpp \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionaldialog.cpp \
-           project/inputcond/functional/cgnsfileinputconditionwidgetfunctionalgraphview.cpp
+           pre/gridcond/base/gridattributecontainer.cpp \
+           pre/gridcond/base/gridattributedimensioncontainer.cpp \
+           pre/gridcond/base/gridattributedimensionscontainer.cpp \
+           pre/gridcond/base/gridattributedimensionselectwidget.cpp \
+           pre/gridcond/base/gridattributeeditdialog.cpp \
+           pre/gridcond/base/gridattributevariationeditdialog.cpp \
+           pre/gridcond/complex/gridcomplexattributeeditwidget.cpp \
+           pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.cpp \
+           pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp \
+           pre/gridcond/editwidget/gridattributeintegereditwidget.cpp \
+           pre/gridcond/editwidget/gridattributeintegeroptioneditwidget.cpp \
+           pre/gridcond/editwidget/gridattributeintegervariationeditwidget.cpp \
+           pre/gridcond/editwidget/gridattributerealeditwidget.cpp \
+           pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
+           pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
+           project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
+           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

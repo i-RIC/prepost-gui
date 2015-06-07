@@ -576,7 +576,6 @@ public:
 	}
 	void redo() {
 		m_pointMap->m_mouseEventMode = RawDataPointmap::meNormal;
-//		m_breakLine->finishDefinition();
 		m_breakLine->setActive(false);
 		m_breakLine->setHidden(true);
 		m_pointMap->m_activeBreakLine = 0;
@@ -604,8 +603,8 @@ private:
 	RawDataPointmap* m_pointMap;
 };
 
-RawDataPointmap::RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
-	: RawData(d, creator, condition)
+RawDataPointmap::RawDataPointmap(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att)
+	: RawData(d, creator, att)
 {
 	doubleclick = false;
 	m_vtkPolygon = vtkSmartPointer<vtkPolygon>::New();

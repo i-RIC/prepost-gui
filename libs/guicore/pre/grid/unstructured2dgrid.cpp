@@ -1,5 +1,5 @@
 #include "../../project/projectcgnsfile.h"
-#include "../gridcond/base/gridrelatedconditioncontainer.h"
+#include "../gridcond/base/gridattributecontainer.h"
 #include "unstructured2dgrid.h"
 
 #include <misc/stringtool.h>

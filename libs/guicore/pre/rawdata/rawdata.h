@@ -3,7 +3,7 @@
 
 #include "../../guicore_global.h"
 #include "../../project/projectdataitem.h"
-#include "../../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "../../solverdef/solverdefinitiongridattribute.h"
 #include <QString>
 #include <QIcon>
 #include <QAction>
@@ -32,14 +32,14 @@ class QMenu;
 class QToolBar;
 class QMouseEvent;
 class QWidget;
-class GridRelatedConditionDimensionsContainer;
+class GridAttributeDimensionsContainer;
 
 class GUICOREDLL_EXPORT RawData : public ProjectDataItem
 {
 	Q_OBJECT
 public:
 	/// Constructor
-	RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~RawData();
 	const QString& name() const {return m_name;}
 	const QString& typeName() const;
@@ -47,8 +47,8 @@ public:
 		m_name = name;
 		updateFilename();
 	}
-	void setPosition(SolverDefinitionGridRelatedCondition::Position pos) {
-		if (pos == SolverDefinitionGridRelatedCondition::Node) {
+	void setPosition(SolverDefinitionGridAttribute::Position pos) {
+		if (pos == SolverDefinitionGridAttribute::Node) {
 			mapperFunc = &RawData::nodeMappers;
 		} else {
 			mapperFunc = &RawData::cellMappers;
@@ -56,7 +56,7 @@ public:
 	}
 	const QString& caption() const {return m_caption;}
 	void setCaption(const QString& cap) {m_caption = cap;}
-	SolverDefinitionGridRelatedCondition* gridRelatedCondition() const {return m_gridRelatedCondition;}
+	SolverDefinitionGridAttribute* gridRelatedCondition() const {return m_gridRelatedCondition;}
 	const QIcon icon() const;
 	/// Returns the pointer to the creator that created this instance.
 	RawDataCreator* creator() const {return m_creator;}
@@ -135,13 +135,13 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	virtual int iRICLibType() const {return IRIC_GEO_UNKNOWN;}
-	GridRelatedConditionDimensionsContainer* dimensions() const;
+	GridAttributeDimensionsContainer* dimensions() const;
 
 	QAction* m_editNameAction;
 	QString m_name;
 	QString m_caption;
 	RawDataCreator* m_creator;
-	SolverDefinitionGridRelatedCondition* m_gridRelatedCondition;
+	SolverDefinitionGridAttribute* m_gridRelatedCondition;
 	RawDataMapper* m_mapper;
 	QMenu* m_menu;
 	bool m_mapped;

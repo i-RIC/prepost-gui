@@ -21,7 +21,7 @@ RawDataCreator::~RawDataCreator()
 	delete m_emptyData;
 }
 
-RawData* RawDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
+RawData* RawDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	QDomElement elem = node.toElement();
 	if (elem.attribute("type") == m_typeName) {

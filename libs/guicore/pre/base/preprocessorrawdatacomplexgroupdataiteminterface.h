@@ -6,13 +6,13 @@
 class Grid;
 class ProjectData;
 class RawDataBackgroundComplex;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 class GridComplexConditionWidget;
 
 class PreProcessorRawDataComplexGroupDataItemInterface
 {
 public:
-	virtual SolverDefinitionGridRelatedCondition* condition() = 0;
+	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual ProjectData* projectData() = 0;
 
 protected:

@@ -22,7 +22,7 @@ public:
 	bool importData(RawData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
 	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, RawDataNetcdf* data) = 0;
 	GDALDataset* m_dataset;
 	OGRSpatialReference* m_sr;

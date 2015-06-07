@@ -2,9 +2,9 @@
 #include "rawdatanetcdfxbandimporter.h"
 
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -29,12 +29,12 @@ const QStringList RawDataNetcdfXbandImporter::acceptableExtensions()
 	return ret;
 }
 
-bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
+bool RawDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w)
 {
 	m_groupDataItem = item;
 
 	// investigate the condition.
-	const QList<SolverDefinitionGridRelatedConditionDimension*>& dims = condition->dimensions();
+	const QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
 	if (!(dims.size() == 1 && dims.at(0)->name() == "Time")) {
 		QMessageBox::warning(w, tr("Warning"), tr("X band MP rader data can be imported for grid conditions with dimension \"Time\"."));
 		return false;
@@ -126,8 +126,8 @@ bool RawDataNetcdfXbandImporter::importData(RawData* data, int /*index*/, QWidge
 	}
 
 	// Xband x rader time valuesa are already unix time stamp. No conversion.
-	GridRelatedConditionDimensionsContainer* dims = m_groupDataItem->dimensions();
-	GridRelatedConditionDimensionContainer* c = dims->containers().at(0);
+	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
+	GridAttributeDimensionContainer* c = dims->containers().at(0);
 	QList<QVariant> timeVals;
 	for (size_t i = 0; i < timeLen; ++i) {
 		timeVals.append(times[i]);

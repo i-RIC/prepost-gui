@@ -5,7 +5,7 @@
 #include "preprocessorscalarbarlegendboxsettingdialog.h"
 
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 
 PreProcessorScalarBarLegendBoxSettingDialog::PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent) :
 	QDialog(parent),
@@ -46,7 +46,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::editScalarBar()
 	group2->editScalarBarLegendBox(this);
 }
 
-void PreProcessorScalarBarLegendBoxSettingDialog::setCondition(SolverDefinitionGridRelatedCondition* condition)
+void PreProcessorScalarBarLegendBoxSettingDialog::setCondition(SolverDefinitionGridAttribute* condition)
 {
 	if (condition == nullptr) {return;}
 	int idx = ui->scalarComboBox->findText(condition->caption());
@@ -63,7 +63,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setLabelTextSetting(const vtkT
 	m_labelTextSetting = cont;
 }
 
-SolverDefinitionGridRelatedCondition* PreProcessorScalarBarLegendBoxSettingDialog::condition()
+SolverDefinitionGridAttribute* PreProcessorScalarBarLegendBoxSettingDialog::condition()
 {
 	PreProcessorRawDataGroupDataItem* group = dynamic_cast<PreProcessorRawDataGroupDataItem*>(m_itemMap.value(ui->scalarComboBox->currentText()));
 	return group->condition();

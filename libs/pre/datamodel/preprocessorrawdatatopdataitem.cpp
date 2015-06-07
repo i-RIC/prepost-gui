@@ -1,10 +1,10 @@
 #include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridrelatedconditioncelldataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributecelldataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodedataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorrawdatacomplexgroupdataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -17,8 +17,8 @@
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
@@ -46,37 +46,37 @@ PreProcessorRawDataTopDataItem::PreProcessorRawDataTopDataItem(PreProcessorDataI
 	m_standardItemCopy = m_standardItem->clone();
 
 	// add child nodes.
-	QList<SolverDefinitionGridRelatedCondition*> list = gridType()->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedComplexCondition*> list2 = gridType()->gridRelatedComplexConditions();
+	QList<SolverDefinitionGridAttribute*> list = gridType()->gridRelatedConditions();
+	QList<SolverDefinitionGridComplexAttribute*> list2 = gridType()->gridRelatedComplexConditions();
 
 	// node simple items
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::Node) {continue;}
+		SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
 		PreProcessorRawDataGroupDataItem* i = new PreProcessorRawDataGroupDataItem(cond, this);
 		m_childItems.append(i);
 		m_itemNameMap.insert((*it)->name(), i);
 	}
 	// node complex items
 	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
-		SolverDefinitionGridRelatedComplexCondition* cond = *it2;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::Node) {continue;}
+		SolverDefinitionGridComplexAttribute* cond = *it2;
+		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
 		PreProcessorRawDataComplexGroupDataItem* i = new PreProcessorRawDataComplexGroupDataItem(cond, this);
 		m_childItems.append(i);
 		m_itemNameMap.insert((*it2)->name(), i);
 	}
 	// cell simple items
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		PreProcessorRawDataGroupDataItem* i = new PreProcessorRawDataGroupDataItem(cond, this);
 		m_childItems.append(i);
 		m_itemNameMap.insert((*it)->name(), i);
 	}
 	// cell complex items
 	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
-		SolverDefinitionGridRelatedComplexCondition* cond = *it2;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		SolverDefinitionGridComplexAttribute* cond = *it2;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		PreProcessorRawDataComplexGroupDataItem* i = new PreProcessorRawDataComplexGroupDataItem(cond, this);
 		m_childItems.append(i);
 		m_itemNameMap.insert((*it2)->name(), i);
@@ -152,7 +152,7 @@ void PreProcessorRawDataTopDataItem::setupScalarBar()
 {
 	PreProcessorScalarBarLegendBoxSettingDialog dialog(preProcessorWindow());
 	if (m_condition != nullptr) {
-		if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr || m_condition->isOption()) {
+		if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr || m_condition->isOption()) {
 			PreProcessorRawDataGroupDataItem* gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(groupDataItem(m_condition->name()));
 			ScalarBarSetting& setting = gItem->scalarBarSetting();
 			setting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
@@ -210,7 +210,7 @@ void PreProcessorRawDataTopDataItem::updateActorSettings()
 	PreProcessorRawDataGroupDataItem* rdgItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(groupDataItem(m_condition->name()));
 	if (rdgItem == nullptr) { return; }
 
-	if (dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_condition) != nullptr  || m_condition->isOption()) {
+	if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
 		// discrete
 		if (! m_visible) { return; }
 		m_legendBoxWidget->SetEnabled(1);

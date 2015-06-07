@@ -2,7 +2,7 @@
 #include "post2dwindowrawdatatopdataitem.h"
 
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <pre/datamodel/preprocessorrawdatatopdataitem.h>
 
@@ -17,9 +17,9 @@ Post2dWindowRawDataTopDataItem::Post2dWindowRawDataTopDataItem(PreProcessorRawDa
 	m_preRawDataTopDataItem = ditem;
 
 	// add child nodes.
-	QList<SolverDefinitionGridRelatedCondition*> list = ditem->gridType()->gridRelatedConditions();
+	QList<SolverDefinitionGridAttribute*> list = ditem->gridType()->gridRelatedConditions();
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridRelatedCondition* cond = *it;
+		SolverDefinitionGridAttribute* cond = *it;
 		QString tmpname = cond->name();
 		if (tmpname.toLower().left(9) != "elevation") {continue;}
 		Post2dWindowRawDataGroupDataItem* i = new Post2dWindowRawDataGroupDataItem(cond, this);

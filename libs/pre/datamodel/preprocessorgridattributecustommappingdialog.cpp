@@ -5,7 +5,7 @@
 #include "preprocessorgridattributecustommappingdialog.h"
 #include "preprocessorgridattributemappingsettingdataitem.h"
 
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 
 #include <QCheckBox>
 #include <QGroupBox>

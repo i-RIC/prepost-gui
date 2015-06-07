@@ -1,12 +1,12 @@
 #include "../../datamodel/preprocessorgriddataitem.h"
-#include "../../datamodel/preprocessorgridrelatedconditionnodedataitem.h"
+#include "../../datamodel/preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridcrosssectionwindow.h"
 #include "preprocessorgridcrosssectionwindowprojectdataitem.h"
 
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 
-PreProcessorGridCrosssectionWindowProjectDataItem::PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridRelatedConditionNodeDataItem* item, const QString& cond, QWidget* parentWindow)
+PreProcessorGridCrosssectionWindowProjectDataItem::PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const QString& cond, QWidget* parentWindow)
 	: ProjectDataItem(0)
 {
 	m_item = item;

@@ -5,7 +5,7 @@
 #include "preprocessordataitem.h"
 
 class Grid;
-class GridRelatedConditionContainer;
+class GridAttributeContainer;
 
 class GUICOREDLL_EXPORT PreProcessorGridDataItemInterface : public PreProcessorDataItem
 {
@@ -22,7 +22,7 @@ public:
 	virtual void silentDeleteGrid() = 0;
 
 	friend class Grid;
-	friend class GridRelatedConditionContainer;
+	friend class GridAttributeContainer;
 };
 
 #endif // PREPROCESSORGRIDDATAITEM_H

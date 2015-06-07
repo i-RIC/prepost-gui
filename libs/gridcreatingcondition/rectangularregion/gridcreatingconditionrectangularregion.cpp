@@ -6,7 +6,7 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
@@ -297,7 +297,7 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	grid->setModified();

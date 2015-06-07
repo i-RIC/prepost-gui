@@ -2,8 +2,8 @@
 
 #include "rawdatanetcdfimportersettingdialog.h"
 
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 
 #include <QLabel>
 
@@ -20,11 +20,11 @@ RawDataNetcdfImporterSettingDialog::~RawDataNetcdfImporterSettingDialog()
 	delete ui;
 }
 
-void RawDataNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridRelatedCondition*	condition)
+void RawDataNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridAttribute*	condition)
 {
-	QList<SolverDefinitionGridRelatedConditionDimension*>& dims = condition->dimensions();
+	QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
 	for (int i = 0; i < dims.size(); ++i) {
-		SolverDefinitionGridRelatedConditionDimension* dim = dims.at(i);
+		SolverDefinitionGridAttributeDimension* dim = dims.at(i);
 		QLabel* label = new QLabel(this);
 		label->setText(QString("%1: ").arg(dim->caption()));
 		ui->dimGridLayout->addWidget(label, i, 0);

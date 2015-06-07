@@ -3,8 +3,8 @@
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/project/inputcond/cgnsfileinputconditioncontainerset.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetset.h>
+#include <guicore/project/inputcond/inputconditioncontainerset.h>
+#include <guicore/project/inputcond/inputconditionwidgetset.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
 #include <misc/stringtool.h>
@@ -23,8 +23,8 @@ GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternal
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
 {
 	ui->setupUi(this);
-	m_containerSet = new CgnsFileInputConditionContainerSet(mainW);
-	m_widgetSet = new CgnsFileInputConditionWidgetSet();
+	m_containerSet = new InputConditionContainerSet(mainW);
+	m_widgetSet = new InputConditionWidgetSet();
 	// create connections.
 	connect(ui->m_pageList, SIGNAL(selectChanged(QString)),
 		ui->m_pageContainer, SLOT(pageSelected(QString)));

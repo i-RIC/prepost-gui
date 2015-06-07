@@ -9,7 +9,7 @@
 
 #include <shapefil.h>
 
-RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget* parent) :
+RawDataPolygonImporterSettingDialog::RawDataPolygonImporterSettingDialog(const QString& filename, GridAttributeEditWidget* widget, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::RawDataPolygonImporterSettingDialog)
 {

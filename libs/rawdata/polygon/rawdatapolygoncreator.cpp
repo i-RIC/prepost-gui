@@ -17,7 +17,7 @@ RawDataPolygonCreator::RawDataPolygonCreator()
 	m_exporters.append(new RawDataPolygonShapeExporter(this));
 }
 
-RawData* RawDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition)
+RawData* RawDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
 {
 	RawDataPolygon* polygon = new RawDataPolygon(parent, this, condition);
 	polygon->setPosition(condition->position());

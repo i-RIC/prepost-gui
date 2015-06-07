@@ -7,7 +7,7 @@
 
 class PreProcessorRawDataTopDataItemInterface;
 class PreProcessorRawDataGroupDataItemInterface;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 namespace Ui
 {
@@ -24,11 +24,11 @@ public:
 	void setupComboBox(PreProcessorRawDataTopDataItemInterface* item);
 
 	void setActor2DVisibility(bool vis);
-	void setCondition(SolverDefinitionGridRelatedCondition* condition);
+	void setCondition(SolverDefinitionGridAttribute* condition);
 	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
 	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 	bool actor2DVisibility();
-	SolverDefinitionGridRelatedCondition* condition();
+	SolverDefinitionGridAttribute* condition();
 	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
 	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
 

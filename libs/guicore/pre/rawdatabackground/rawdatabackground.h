@@ -18,7 +18,7 @@ public:
 		Custom
 	};
 	/// Constructor
-	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataBackground(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	void addCustomMenuItems(QMenu* menu) override;
 	void handleStandardItemDoubleClicked() override {editValue();}
 	void setupDataItem() override;

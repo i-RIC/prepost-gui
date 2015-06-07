@@ -1,5 +1,5 @@
 #include "../../datamodel/preprocessorgriddataitem.h"
-#include "../../datamodel/preprocessorgridrelatedconditionnodedataitem.h"
+#include "../../datamodel/preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridcrosssectionwindow.h"
 #include "preprocessorgridcrosssectionwindowgraphicsview.h"
 #include "preprocessorgridcrosssectionwindowprojectdataitem.h"
@@ -7,8 +7,8 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/project/projectdataitem.h>
 #include <misc/iricundostack.h>
 
@@ -29,7 +29,7 @@
 class Structured2DGridCrosssectionEditCommand : public QUndoCommand
 {
 public:
-	Structured2DGridCrosssectionEditCommand(bool apply, const QVector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridRelatedConditionRealNodeContainer* cont, PreProcessorGridRelatedConditionNodeDataItem* dItem) {
+	Structured2DGridCrosssectionEditCommand(bool apply, const QVector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridAttributeRealNodeContainer* cont, PreProcessorGridAttributeNodeDataItem* dItem) {
 		m_apply = apply;
 		m_indices = indices;
 		m_before = before;
@@ -88,8 +88,8 @@ private:
 	QVector<double> m_before;
 	QVector<double> m_after;
 	PreProcessorGridCrosssectionWindow* m_window;
-	GridRelatedConditionRealNodeContainer* m_container;
-	PreProcessorGridRelatedConditionNodeDataItem* m_dataItem;
+	GridAttributeRealNodeContainer* m_container;
+	PreProcessorGridAttributeNodeDataItem* m_dataItem;
 };
 
 PreProcessorGridCrosssectionWindowGraphicsView::PreProcessorGridCrosssectionWindowGraphicsView(QWidget* w)
@@ -169,8 +169,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::paintEvent(QPaintEvent* /*e
 void PreProcessorGridCrosssectionWindowGraphicsView::drawLine(int index, QPainter& painter)
 {
 	Structured2DGrid* grid = m_parentWindow->grid();
-	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
-	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
+	GridAttributeContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
+	GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 	double distance = 0;
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		double v = cond2->value(grid->vertexIndex(0, index));
@@ -199,8 +199,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawLine(int index, QPainte
 void PreProcessorGridCrosssectionWindowGraphicsView::drawCircle(QPainter& painter)
 {
 	Structured2DGrid* grid = m_parentWindow->grid();
-	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
-	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
+	GridAttributeContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
+	GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 	double distance = 0;
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
@@ -238,8 +238,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::drawCircle(QPainter& painte
 void PreProcessorGridCrosssectionWindowGraphicsView::drawSelectionCircle(QPainter& painter)
 {
 	Structured2DGrid* grid = m_parentWindow->grid();
-	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
-	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
+	GridAttributeContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
+	GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 	QPen pen(Qt::black, 1, Qt::SolidLine);
 	QBrush activeBrush(Qt::red, Qt::SolidPattern);
 	painter.setPen(pen);
@@ -439,8 +439,8 @@ QRectF PreProcessorGridCrosssectionWindowGraphicsView::getRegion()
 	double distance;
 	double valmin, valmax;
 	Structured2DGrid* grid = m_parentWindow->grid();
-	GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
-	GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
+	GridAttributeContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
+	GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		distance = getDistance(m_parentWindow->targetIndex(), 0, grid->dimensionI() - 1);
 		double v = cond2->value(grid->vertexIndex(0, m_parentWindow->targetIndex()));
@@ -578,8 +578,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 		QModelIndexList selectedPoints = m_parentWindow->m_selectionModel->selectedRows();
 
 		Structured2DGrid* grid = m_parentWindow->grid();
-		GridRelatedConditionContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
-		GridRelatedConditionRealNodeContainer* cond2 = dynamic_cast<GridRelatedConditionRealNodeContainer*>(cond);
+		GridAttributeContainer* cond = grid->gridRelatedCondition(m_parentWindow->condition());
+		GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
 		const QVector<vtkIdType>& selVertices = gItem->selectedVertices();
 
@@ -640,7 +640,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 
 		const QVector<vtkIdType>& selectedVertices = gItem->selectedVertices();
 		Structured2DGrid* grid = m_parentWindow->grid();
-		GridRelatedConditionRealNodeContainer* cont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
+		GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
 		double offset = getOffset(m_dragStartPoint, event->pos());
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
@@ -757,7 +757,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
 		const QVector<vtkIdType>& selectedVertices = gItem->selectedVertices();
 		Structured2DGrid* grid = m_parentWindow->grid();
-		GridRelatedConditionRealNodeContainer* cont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
+		GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
 		double offset = getOffset(m_dragStartPoint, event->pos());
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
@@ -858,9 +858,9 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 	int index = m_parentWindow->targetIndex();
 
 	Structured2DGrid* grid = m_parentWindow->grid();
-	PreProcessorGridRelatedConditionNodeDataItem* item = m_parentWindow->conditionNodeDataItem();
+	PreProcessorGridAttributeNodeDataItem* item = m_parentWindow->conditionNodeDataItem();
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->parent()->parent());
-	GridRelatedConditionRealNodeContainer* cont = dynamic_cast<GridRelatedConditionRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
+	GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridRelatedCondition(m_parentWindow->condition()));
 	QVector<vtkIdType> selectedVertices;
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		double distance = 0;
@@ -957,8 +957,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 		return;
 	}
 	Structured2DGrid* grid = m_parentWindow->grid();
-	GridRelatedConditionContainer* cont = grid->gridRelatedCondition(m_parentWindow->condition());
-	GridRelatedConditionEditDialog* dialog = cont->condition()->editDialog(this);
+	GridAttributeContainer* cont = grid->gridRelatedCondition(m_parentWindow->condition());
+	GridAttributeEditDialog* dialog = cont->condition()->editDialog(this);
 	dialog->setWindowTitle(tr("Edit %1").arg(cont->condition()->caption()));
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->condition()->caption()));
 	QVector<vtkIdType> targets;

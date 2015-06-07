@@ -1,8 +1,8 @@
 #include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
-#include "../solverdef/solverdefinitiongridrelatedcondition.h"
-#include "../solverdef/solverdefinitiongridrelatedconditiont.h"
+#include "../solverdef/solverdefinitiongridattribute.h"
+#include "../solverdef/solverdefinitiongridattributet.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
@@ -827,12 +827,12 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 		return true;
 	}
 
-	const QList<SolverDefinitionGridRelatedCondition*>& conds = m_gridType->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = m_gridType->gridRelatedConditions();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		const SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		if (! cond->isOption()) {continue;}
-		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
+		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
 		if (icond == 0) {continue;}
 
 		// this is a cell flag to load.

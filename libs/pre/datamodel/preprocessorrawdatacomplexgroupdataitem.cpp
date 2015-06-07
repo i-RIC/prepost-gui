@@ -9,15 +9,15 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/complex/gridcomplexconditiondialog.h>
 #include <guicore/pre/complex/gridcomplexconditionwidget.h>
-#include <guicore/pre/gridcond/complex/gridrelatedcomplexconditioncontainer.h>
-#include <guicore/pre/gridcond/complex/gridrelatedcomplexconditioneditwidget.h>
+#include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
+#include <guicore/pre/gridcond/complex/gridcomplexattributeeditwidget.h>
 #include <guicore/pre/rawdata/rawdatacreator.h>
 #include <guicore/pre/rawdatabackground/rawdatabackgroundcomplex.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
+#include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -28,7 +28,7 @@
 
 #include <iriclib.h>
 
-PreProcessorRawDataComplexGroupDataItem::PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridRelatedCondition* cond, PreProcessorDataItem* parent)
+PreProcessorRawDataComplexGroupDataItem::PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
 	: PreProcessorRawDataGroupDataItem(cond, parent)
 {
 	m_dialog = new GridComplexConditionDialog(this, iricMainWindow(), mainWindow());
@@ -52,7 +52,7 @@ PreProcessorRawDataComplexGroupDataItem::~PreProcessorRawDataComplexGroupDataIte
 void PreProcessorRawDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 {
 	int count = 0;
-	SolverDefinitionGridRelatedComplexCondition* compCond = 0;
+	SolverDefinitionGridComplexAttribute* compCond = 0;
 	int defId = -1;
 
 	clear();
@@ -60,7 +60,7 @@ void PreProcessorRawDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	if (ret != 0) {
 		goto INITGROUPS;
 	}
-	compCond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(condition());
+	compCond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 	for (int i = 0; i < count; ++i) {
 		GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
 		w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
@@ -234,8 +234,8 @@ void PreProcessorRawDataComplexGroupDataItem::showEditGroupDialog()
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
 		Grid* g = ccItem->gridDataItem()->grid();
 		if (g == nullptr) {continue;}
-		GridRelatedConditionContainer* cont = g->gridRelatedCondition(m_condition->name());
-		GridRelatedComplexConditionContainer* cont2 = dynamic_cast<GridRelatedComplexConditionContainer*>(cont);
+		GridAttributeContainer* cont = g->gridRelatedCondition(m_condition->name());
+		GridComplexAttributeContainer* cont2 = dynamic_cast<GridComplexAttributeContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i) {
 			int currval = cont2->value(i);
 			int newval = valueMap.value(currval, newDefault);
@@ -267,9 +267,9 @@ void PreProcessorRawDataComplexGroupDataItem::clear()
 	m_widgets.clear();
 }
 
-void PreProcessorRawDataComplexGroupDataItem::setupEditWidget(GridRelatedConditionEditWidget* widget)
+void PreProcessorRawDataComplexGroupDataItem::setupEditWidget(GridAttributeEditWidget* widget)
 {
-	GridRelatedComplexConditionEditWidget* w = dynamic_cast<GridRelatedComplexConditionEditWidget*>(widget);
+	GridComplexAttributeEditWidget* w = dynamic_cast<GridComplexAttributeEditWidget*>(widget);
 	QMap<int, QString> enums;
 	int defIndex = 0;
 	for (int i = 0; i < m_widgets.count(); ++i) {
@@ -310,8 +310,8 @@ void PreProcessorRawDataComplexGroupDataItem::applySettingsToScalarBar()
 
 void PreProcessorRawDataComplexGroupDataItem::createDefaultGroup()
 {
-	SolverDefinitionGridRelatedComplexCondition* compCond =
-		dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(condition());
+	SolverDefinitionGridComplexAttribute* compCond =
+		dynamic_cast<SolverDefinitionGridComplexAttribute*>(condition());
 	GridComplexConditionWidget* w = new GridComplexConditionWidget(iricMainWindow(), mainWindow());
 	w->setup(projectData()->solverDefinition(), compCond->element(), iricMainWindow()->locale());
 	w->setCaption("Default");
@@ -336,7 +336,7 @@ void PreProcessorRawDataComplexGroupDataItem::addBackground()
 	rawdata->setupDataItem();
 }
 
-SolverDefinitionGridRelatedCondition* PreProcessorRawDataComplexGroupDataItem::condition()
+SolverDefinitionGridAttribute* PreProcessorRawDataComplexGroupDataItem::condition()
 {
 	return PreProcessorRawDataGroupDataItem::condition();
 }

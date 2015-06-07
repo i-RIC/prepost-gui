@@ -2,8 +2,8 @@
 #define BOUNDARYCONDITIONDIALOG_H
 
 #include <QDialog>
-#include <guicore/project/inputcond/cgnsfileinputconditioncontainerstring.h>
-#include <guicore/project/inputcond/cgnsfileinputconditioncontainerinteger.h>
+#include <guicore/project/inputcond/inputconditioncontainerstring.h>
+#include <guicore/project/inputcond/inputconditioncontainerinteger.h>
 
 class QAbstractButton;
 class SolverDefinition;
@@ -17,8 +17,8 @@ namespace Ui
 }
 
 class PreProcessorBCDataItem;
-class CgnsFileInputConditionContainerSet;
-class CgnsFileInputConditionWidgetSet;
+class InputConditionContainerSet;
+class InputConditionWidgetSet;
 class iRICMainWindow;
 
 class BoundaryConditionDialog : public QDialog
@@ -62,20 +62,20 @@ private:
 	void reset();
 
 	Ui::BoundaryConditionDialog* ui;
-	CgnsFileInputConditionContainerSet* m_containerSet;
-	CgnsFileInputConditionWidgetSet* m_widgetSet;
+	InputConditionContainerSet* m_containerSet;
+	InputConditionWidgetSet* m_widgetSet;
 	PreProcessorBCDataItem* m_dataItem;
 	bool m_modified;
 
 	QString m_caption;
 
-	CgnsFileInputConditionContainerString m_captionContainer;
-	CgnsFileInputConditionContainerString m_colorContainer;
-	CgnsFileInputConditionContainerInteger m_opacityContainer;
-	CgnsFileInputConditionContainerInteger m_showNameContainer;
-	CgnsFileInputConditionContainerInteger m_pointSizeContainer;
+	InputConditionContainerString m_captionContainer;
+	InputConditionContainerString m_colorContainer;
+	InputConditionContainerInteger m_opacityContainer;
+	InputConditionContainerInteger m_showNameContainer;
+	InputConditionContainerInteger m_pointSizeContainer;
 public:
-	friend class CgnsFileInputConditionContainerSet;
+	friend class InputConditionContainerSet;
 };
 
 #endif // BOUNDARYCONDITIONDIALOG_H

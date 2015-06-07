@@ -16,8 +16,8 @@
 #include "datamodel/preprocessorrawdatacomplexgroupdataitem.h"
 #include "datamodel/preprocessorrawdatadataitem.h"
 #include "datamodel/preprocessorgridcreatingconditiondataitem.h"
-#include "datamodel/preprocessorgridrelatedconditionnodedataitem.h"
-#include "datamodel/preprocessorgridrelatedconditioncelldataitem.h"
+#include "datamodel/preprocessorgridattributenodedataitem.h"
+#include "datamodel/preprocessorgridattributecelldataitem.h"
 #include "datamodel/preprocessorbackgroundimagedataitem.h"
 #include "datamodel/preprocessorgridattributemappingsettingtopdataitem.h"
 #include "datamodel/preprocessorbcgroupdataitem.h"
@@ -458,8 +458,8 @@ void PreProcessorDataModel::setupGridMenu()
 		m_gridMenu->addActions(gItem->menu()->actions());
 
 		// disable node related menus when node dataitem is not selected currently.
-		PreProcessorGridRelatedConditionNodeDataItem* nItem =
-			dynamic_cast<PreProcessorGridRelatedConditionNodeDataItem*>(m_selectedItem);
+		PreProcessorGridAttributeNodeDataItem* nItem =
+			dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(m_selectedItem);
 		gItem->setNodeDataItem(nItem);
 		if (nItem != nullptr) {
 			gItem->nodeEditAction()->setEnabled(gItem->selectedVertices().count() > 0);
@@ -474,8 +474,8 @@ void PreProcessorDataModel::setupGridMenu()
 			gItem->nodeDisplaySettingAction()->setEnabled(false);
 		}
 		// disable cell related menus when cell dataitem is not selected currently.
-		PreProcessorGridRelatedConditionCellDataItem* cItem =
-			dynamic_cast<PreProcessorGridRelatedConditionCellDataItem*>(m_selectedItem);
+		PreProcessorGridAttributeCellDataItem* cItem =
+			dynamic_cast<PreProcessorGridAttributeCellDataItem*>(m_selectedItem);
 		gItem->setCellDataItem(cItem);
 		if (cItem != nullptr) {
 			gItem->cellEditAction()->setEnabled(gItem->selectedCells().count() > 0);

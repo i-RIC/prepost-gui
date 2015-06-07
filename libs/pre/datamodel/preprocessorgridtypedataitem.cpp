@@ -11,10 +11,10 @@
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <guicore/pre/grid/grid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
@@ -250,8 +250,8 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType* type)
 {
-	QList<SolverDefinitionGridRelatedCondition*> conditions = type->gridRelatedConditions();
-	QList<SolverDefinitionGridRelatedComplexCondition*> conditions2 = type->gridRelatedComplexConditions();
+	QList<SolverDefinitionGridAttribute*> conditions = type->gridRelatedConditions();
+	QList<SolverDefinitionGridComplexAttribute*> conditions2 = type->gridRelatedComplexConditions();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
 		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it)->name(), c);
@@ -278,7 +278,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		Grid* g = (*it)->gridDataItem()->grid();
 		if (g != nullptr) {
-			GridRelatedConditionContainer* c = g->gridRelatedCondition(name);
+			GridAttributeContainer* c = g->gridRelatedCondition(name);
 			double tmpmin, tmpmax;
 			if (c->getValueRange(&tmpmin, &tmpmax)) {
 				if (tmpmin < min || (! valueExist)) {min = tmpmin;}

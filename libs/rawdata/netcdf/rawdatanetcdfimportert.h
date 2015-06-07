@@ -5,8 +5,8 @@
 #include "rawdatanetcdfimporter.h"
 
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <misc/stringtool.h>
 
 #include <vtkIntArray.h>
@@ -103,8 +103,8 @@ protected:
 	}
 	int importSingleLayerValues(int ncid_in, int ncid_out, int loopid, int* dimMap, int varIdIn, int varIdOut, size_t* start_in, size_t* start_out, size_t* len_in, size_t* len_out, size_t bufferSize, V* buffer, V missingValue, RawDataNetcdf* ncdf) {
 		RawDataNetcdfT<V, DA>* netcdf = dynamic_cast<RawDataNetcdfT<V, DA>* >(ncdf);
-		GridRelatedConditionDimensionsContainer* dims = m_groupDataItem->dimensions();
-		GridRelatedConditionDimensionContainer* c = dims->containers().at(loopid);
+		GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
+		GridAttributeDimensionContainer* c = dims->containers().at(loopid);
 		int ret;
 		for (int i = 0; i < c->count(); ++i) {
 			if (loopid == dims->containers().size() - 1) {

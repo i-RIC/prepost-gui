@@ -1,7 +1,7 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../postcontainer/postsolutioninfo.h"
 #include "../pre/base/preprocessorwindowinterface.h"
-#include "../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "cgnsfilelist.h"
 #include "projectdata.h"
@@ -359,9 +359,9 @@ void ProjectData::checkGridConditions()
 		const SolverDefinitionGridType* gt = *it;
 		bool ok = false;
 		ok = (gt->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid);
-		const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
+		const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
 		for (auto cit = conds.begin(); cit != conds.end(); ++cit) {
-			const SolverDefinitionGridRelatedCondition* cond = *cit;
+			const SolverDefinitionGridAttribute* cond = *cit;
 			ok = ok || (cond->name() == "Elevation");
 		}
 		if (! ok) {

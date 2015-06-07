@@ -5,7 +5,7 @@
 #include "rawdatabackgroundcomplex.h"
 #include "rawdatabackgroundnodemappert.h"
 #include "rawdatabackgroundcellmappert.h"
-#include "../../solverdef/solverdefinitiongridrelatedcomplexcondition.h"
+#include "../../solverdef/solverdefinitiongridcomplexattribute.h"
 #include <vtkIntArray.h>
 
 class RawDataBackgroundComplexCreator : public RawDataCreator
@@ -19,14 +19,14 @@ protected:
 		m_typeName = "complexBackground";
 	}
 public:
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override {
-		SolverDefinitionGridRelatedComplexCondition* tmpcond = dynamic_cast<SolverDefinitionGridRelatedComplexCondition* >(condition);
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override {
+		SolverDefinitionGridComplexAttribute* tmpcond = dynamic_cast<SolverDefinitionGridComplexAttribute* >(condition);
 		RawData* rawdata = new RawDataBackgroundComplex(parent, this, tmpcond);
 		rawdata->setPosition(tmpcond->position());
 		rawdata->setDefaultMapper();
 		return rawdata;
 	}
-	bool isCompatibleWith(SolverDefinitionGridRelatedCondition* /* condition*/) override {
+	bool isCompatibleWith(SolverDefinitionGridAttribute* /* condition*/) override {
 		return true;
 	}
 	QString defaultCaption(unsigned int /*index*/) override {return "";}

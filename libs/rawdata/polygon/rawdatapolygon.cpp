@@ -20,8 +20,8 @@
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -33,7 +33,7 @@
 #include <misc/versionnumber.h>
 #include <misc/zdepthrange.h>
 #include <triangle/triangle.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 
 #include <QAction>
 #include <QCoreApplication>
@@ -63,7 +63,7 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-RawDataPolygon::RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+RawDataPolygon::RawDataPolygon(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 	: RawData(d, creator, condition)
 {
 	initParams();
@@ -1029,7 +1029,7 @@ void RawDataPolygon::loadExternalData(const QString& filename)
 
 	if (projectData()->version().build() >= 3607) {
 		iRICLib::Polygon* pol = new iRICLib::Polygon();
-		GridRelatedConditionDimensionsContainer* dims = dimensions();
+		GridAttributeDimensionsContainer* dims = dimensions();
 		bool noDim = true;
 		if (dims != nullptr) {
 			noDim = dims->containers().size() == 0;
@@ -1138,7 +1138,7 @@ void RawDataPolygon::saveExternalData(const QString& filename)
 		}
 		pol.holes.push_back(holePolygon);
 	}
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	bool noDim = true;
 	if (dims != nullptr) {
 		noDim = dims->containers().size() == 0;
@@ -1372,7 +1372,7 @@ void RawDataPolygon::initParams()
 	m_variantValues.clear();
 
 	int maxIndex = 1;
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	if (dims != nullptr) {
 		maxIndex = dimensions()->maxIndex();
 	}
@@ -1652,7 +1652,7 @@ private:
 const QVariant& RawDataPolygon::variantValue() const
 {
 	int index = 0;
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	if (dims != nullptr) {
 		index = dims->currentIndex();
 	}
@@ -1662,7 +1662,7 @@ const QVariant& RawDataPolygon::variantValue() const
 void RawDataPolygon::setVariantValue(const QVariant& v)
 {
 	int index = 0;
-	GridRelatedConditionDimensionsContainer* dims = dimensions();
+	GridAttributeDimensionsContainer* dims = dimensions();
 	if (dims != nullptr) {
 		index = dims->currentIndex();
 	}
@@ -1674,7 +1674,7 @@ void RawDataPolygon::setVariantValue(const QVariant& v)
 
 void RawDataPolygon::editValue()
 {
-	GridRelatedConditionEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
+	GridAttributeEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
 	PreProcessorRawDataGroupDataItemInterface* i = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setLabel(tr("Please input new value in this polygon.").arg(i->condition()->caption()));

@@ -14,7 +14,7 @@ public:
 	bool importData(RawData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridRelatedCondition* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorRawDataGroupDataItemInterface* item, QWidget* w) override;
 
 private:
 	RawDataPolygonImporterSettingDialog::NameSetting m_nameSetting;

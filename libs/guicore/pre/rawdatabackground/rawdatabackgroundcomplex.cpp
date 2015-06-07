@@ -2,8 +2,8 @@
 #include "../complex/gridcomplexconditionwidget.h"
 #include "rawdatabackgroundcomplex.h"
 
-RawDataBackgroundComplex::RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
-	: RawDataBackground(d, creator, condition)
+RawDataBackgroundComplex::RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att)
+	: RawDataBackground(d, creator, att)
 {
 
 }

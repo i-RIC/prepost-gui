@@ -7,8 +7,8 @@
 #include "preprocessorgridattributemappingsettingdataitem.h"
 #include "preprocessorgridattributemappingsettingtopdataitem.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -16,12 +16,12 @@
 #include <guibase/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/grid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditiondimensionscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcomplexcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiondimension.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QAction>
@@ -50,14 +50,14 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 	PreProcessorGridTypeDataItem* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	SolverDefinitionGridType* gType = gtItem->gridType();
-	QList<SolverDefinitionGridRelatedCondition*> conditions = gType->gridRelatedConditions();
+	QList<SolverDefinitionGridAttribute*> conditions = gType->gridRelatedConditions();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
 		PreProcessorRawDataGroupDataItem* rawdataGroup = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gtItem->rawdataTop()->groupDataItem((*it)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, rawdataGroup, this);
 		m_itemNameMap.insert((*it)->name(), item);
 		m_childItems.append(item);
 	}
-	QList<SolverDefinitionGridRelatedComplexCondition*> cconditions = gType->gridRelatedComplexConditions();
+	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridRelatedComplexConditions();
 	for (auto cit = cconditions.begin(); cit != cconditions.end(); ++cit) {
 		PreProcessorRawDataGroupDataItem* rawdataGroup = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gtItem->rawdataTop()->groupDataItem((*cit)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, rawdataGroup, this);
@@ -93,8 +93,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	int count = 0;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		SolverDefinitionGridRelatedCondition* cond = item->condition();
-		GridRelatedConditionContainer* container = grid->gridRelatedCondition(cond->name());
+		SolverDefinitionGridAttribute* cond = item->condition();
+		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
 		if (!container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			count += item->mappingCount();
@@ -111,8 +111,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		SolverDefinitionGridRelatedCondition* cond = item->condition();
-		GridRelatedConditionContainer* container = grid->gridRelatedCondition(cond->name());
+		SolverDefinitionGridAttribute* cond = item->condition();
+		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
 		if (! container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			item->executeMapping(grid, &dialog);
@@ -122,8 +122,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 
 	grid->setModified();
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
-	dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
-	dynamic_cast<PreProcessorGridRelatedConditionCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSettings();
+	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
+	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSettings();
 	renderGraphicsView();
 }
 
@@ -135,8 +135,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::setDefaultValues()
 	if (grid == nullptr) {return;}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		SolverDefinitionGridRelatedCondition* cond = item->condition();
-		GridRelatedConditionContainer* container = grid->gridRelatedCondition(cond->name());
+		SolverDefinitionGridAttribute* cond = item->condition();
+		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
 		if (! container->mapped()) {
 			item->setDefaultValue(grid);
 		}
@@ -148,9 +148,9 @@ bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*c_it);
 		PreProcessorRawDataGroupDataItem* gItem = item->rawdataGroupDataItem();
-		const QList<GridRelatedConditionDimensionContainer*>& conts = gItem->dimensions()->containers();
+		const QList<GridAttributeDimensionContainer*>& conts = gItem->dimensions()->containers();
 		for (int i = 0; i < conts.size(); ++i) {
-			GridRelatedConditionDimensionContainer* c = conts.at(i);
+			GridAttributeDimensionContainer* c = conts.at(i);
 			if (c->count() == 0) {
 				QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Dimension %1 of geographic data %2 has no value. Can not start mapping.").arg(c->definition()->caption()).arg(gItem->condition()->caption()));
 				return false;
@@ -201,7 +201,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		if (!m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridRelatedConditionContainer* cont = grid->gridRelatedCondition(item->condition()->name());
+		GridAttributeContainer* cont = grid->gridRelatedCondition(item->condition()->name());
 		if (cont->isCustomModified()) {
 			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(item->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
@@ -246,7 +246,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		if (! m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridRelatedConditionContainer* cont = grid->gridRelatedCondition(item->condition()->name());
+		GridAttributeContainer* cont = grid->gridRelatedCondition(item->condition()->name());
 		item->executeMapping(grid, &dialog);
 		cont->setCustomModified(false);
 	}
@@ -262,7 +262,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 
 	grid->setModified();
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
-	dynamic_cast<PreProcessorGridRelatedConditionNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
+	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSettings();
 	renderGraphicsView();
 	if (! nomessage) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Mapping geographic data finished successfully."));

@@ -4,7 +4,7 @@
 #include "../post2dbirdeyewindowdataitem.h"
 #include <guibase/contoursettingwidget.h>
 
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 class PostZoneDataContainer;
 class QAction;
 class vtkMapper;

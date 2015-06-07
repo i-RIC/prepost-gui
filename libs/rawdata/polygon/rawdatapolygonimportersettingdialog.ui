@@ -169,7 +169,7 @@
              </widget>
             </item>
             <item>
-             <widget class="GridRelatedConditionEditWidgetContainer" name="valueWidget" native="true">
+             <widget class="GridAttributeEditWidgetContainer" name="valueWidget" native="true">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -218,9 +218,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>GridRelatedConditionEditWidgetContainer</class>
+   <class>GridAttributeEditWidgetContainer</class>
    <extends>QWidget</extends>
-   <header>guicore/pre/gridcond/base/gridrelatedconditioneditwidgetcontainer.h</header>
+   <header>guicore/pre/gridcond/base/gridattributeeditwidgetcontainer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

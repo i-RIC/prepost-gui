@@ -3,7 +3,7 @@
 #include "rawdatarivershapeinterpolator.h"
 
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainert.h>
+#include <guicore/pre/gridcond/base/gridattributecontainert.h>
 #include <misc/mathsupport.h>
 
 #include <QList>
@@ -729,7 +729,7 @@ void RawDataRiverPathPoint::setName(const QString& newname)
 
 void RawDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
 {
-	GridRelatedConditionContainerT<double>* elev = dynamic_cast<GridRelatedConditionContainerT<double>*>(grid->gridRelatedCondition("Elevation"));
+	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridRelatedCondition("Elevation"));
 	QVector2D vec2d;
 	int index;
 	if (last) {

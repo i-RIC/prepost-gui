@@ -21,7 +21,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/errormessage.h>
@@ -63,8 +63,8 @@
 
 #include <iriclib_riversurvey.h>
 
-RawDataRiverSurvey::RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
-	: RawData(d, creator, condition)
+RawDataRiverSurvey::RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att)
+	: RawData(d, creator, att)
 {
 	m_headPoint = new RawDataRiverPathPoint("Dummy", 0, 0);
 

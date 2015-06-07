@@ -3,8 +3,8 @@
 #include "gridshape/preprocessorgridshapedeltadialog.h"
 #include "gridshape/preprocessorgridshapenewpositiondialog.h"
 #include "preprocessorgriddataitem.h"
-#include "preprocessorgridrelatedconditionnodedataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributenodedataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgridshapedataitem.h"
 
 #include <guibase/coloreditwidget.h>
@@ -403,7 +403,7 @@ void PreProcessorGridShapeDataItem::editShape()
 void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
+	PreProcessorGridAttributeNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
 	if (nItem != nullptr) {
 		nItem->openCrossSectionWindow();
 	}
@@ -412,7 +412,7 @@ void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
 {
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	PreProcessorGridRelatedConditionNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
+	PreProcessorGridAttributeNodeDataItem* nItem = gItem->nodeGroupDataItem()->nodeDataItem("Elevation");
 	if (nItem != nullptr) {
 		nItem->openVerticalCrossSectionWindow();
 	}

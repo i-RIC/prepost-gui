@@ -18,8 +18,8 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioncontainer.h>
-#include <guicore/pre/gridcond/base/gridrelatedconditioneditdialog.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
@@ -1893,7 +1893,7 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	for (GridRelatedConditionContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
 		c->allocate();
 	}
 	grid->setModified();

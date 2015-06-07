@@ -11,7 +11,7 @@ namespace Ui
 	class RawDataPolygonImporterSettingDialog;
 }
 
-class GridRelatedConditionEditWidget;
+class GridAttributeEditWidget;
 
 class RawDataPolygonImporterSettingDialog : public QDialog
 {
@@ -20,7 +20,7 @@ class RawDataPolygonImporterSettingDialog : public QDialog
 public:
 	enum NameSetting {nsLoadFromDBF, nsAuto};
 	enum ValueSetting {vsLoadFromDBF, vsSpecify};
-	explicit RawDataPolygonImporterSettingDialog(const QString& filename, GridRelatedConditionEditWidget* widget, QWidget* parent = 0);
+	explicit RawDataPolygonImporterSettingDialog(const QString& filename, GridAttributeEditWidget* widget, QWidget* parent = 0);
 	~RawDataPolygonImporterSettingDialog();
 	NameSetting nameSetting() const;
 	int nameIndex() const;

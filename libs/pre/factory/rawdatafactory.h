@@ -8,7 +8,7 @@ class QDomNode;
 class RawData;
 class RawDataCreator;
 class ProjectDataItem;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 class RawDataFactory : public QObject
 {
@@ -26,8 +26,8 @@ public:
 		return *m_instance;
 	}
 	const QList<RawDataCreator*> creators() const {return m_creators;}
-	const QList<RawDataCreator*> compatibleCreators(SolverDefinitionGridRelatedCondition* condition) const;
-	RawData* restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridRelatedCondition* cond) const;
+	const QList<RawDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition) const;
+	RawData* restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridAttribute* cond) const;
 private:
 	QList<RawDataCreator*> m_creators;
 	static RawDataFactory* m_instance;

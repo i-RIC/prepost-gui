@@ -94,7 +94,7 @@ public:
 		meExpansionDialog
 	};
 	/// Constructor
-	RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataRiverSurvey(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~RawDataRiverSurvey();
 	void setupActors() override;
 	void setupMenu() override;

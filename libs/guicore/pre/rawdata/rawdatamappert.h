@@ -3,7 +3,7 @@
 
 #include "rawdatamapper.h"
 #include "rawdata.h"
-#include "../gridcond/base/gridrelatedconditioncontainert.h"
+#include "../gridcond/base/gridattributecontainert.h"
 
 template <class V>
 class RawDataMapperT : public RawDataMapper
@@ -13,12 +13,12 @@ public:
 		: RawDataMapper(parent)
 	{}
 protected:
-	GridRelatedConditionContainerT<V>* container() const {
-		return dynamic_cast<GridRelatedConditionContainerT<V>* >(m_container);
+	GridAttributeContainerT<V>* container() const {
+		return dynamic_cast<GridAttributeContainerT<V>* >(m_container);
 	}
 	V fromVariant(const QVariant& val) {
-		SolverDefinitionGridRelatedCondition* c = m_rawdata->gridRelatedCondition();
-		SolverDefinitionGridRelatedConditionT<V>* cond = dynamic_cast<SolverDefinitionGridRelatedConditionT<V>* >(c);
+		SolverDefinitionGridAttribute* c = m_rawdata->gridRelatedCondition();
+		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(c);
 		return cond->fromVariant(val);
 	}
 };

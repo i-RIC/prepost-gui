@@ -1,6 +1,6 @@
 #include "preprocessorbcgroupdataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgridshapedataitem.h"
@@ -15,9 +15,9 @@ PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(P
 {
 	m_shapeDataItem = new PreProcessorUnstructured2dGridShapeDataItem(this);
 	m_childItems.append(m_shapeDataItem);
-	m_nodeGroupDataItem = new PreProcessorGridRelatedConditionNodeGroupDataItem(this);
+	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
 	m_childItems.append(m_nodeGroupDataItem);
-	m_cellGroupDataItem = new PreProcessorGridRelatedConditionCellGroupDataItem(this);
+	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
 	m_childItems.append(m_cellGroupDataItem);
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());

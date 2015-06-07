@@ -21,7 +21,7 @@ class QTextStream;
 class QStringList;
 class GridInternalImporter;
 class GridInternalExporter;
-class GridRelatedConditionContainer;
+class GridAttributeContainer;
 
 /// Abstract class to store Grid
 class GUICOREDLL_EXPORT Grid : public ProjectDataItem
@@ -53,14 +53,14 @@ public:
 	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return 0;}
 
 	/// The list of grid related conditions
-	QList<GridRelatedConditionContainer*>& gridRelatedConditions() {
+	QList<GridAttributeContainer*>& gridRelatedConditions() {
 		return m_gridRelatedConditions;
 	}
 	/// Get grid related condition by name.
-	GridRelatedConditionContainer* gridRelatedCondition(const QString& name) {
+	GridAttributeContainer* gridRelatedCondition(const QString& name) {
 		return m_gridRelatedConditionNameMap.value(name);
 	}
-	void addGridRelatedCondition(GridRelatedConditionContainer* cond);
+	void addGridRelatedCondition(GridAttributeContainer* cond);
 	/// Returns the number of nodes
 	unsigned int nodeCount() const {
 		return m_vtkGrid->GetNumberOfPoints();
@@ -91,8 +91,8 @@ protected:
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredShapeAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
-	QList<GridRelatedConditionContainer*> m_gridRelatedConditions;
-	QMap<QString, GridRelatedConditionContainer*> m_gridRelatedConditionNameMap;
+	QList<GridAttributeContainer*> m_gridRelatedConditions;
+	QMap<QString, GridAttributeContainer*> m_gridRelatedConditionNameMap;
 //	GridImporterFactory* m_importerFactory;
 //	GridExporterFactory* m_exporterFactory;
 	QString m_zoneName;

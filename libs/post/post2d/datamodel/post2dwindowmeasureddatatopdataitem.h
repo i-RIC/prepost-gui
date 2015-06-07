@@ -15,7 +15,7 @@
 class QMenu;
 class QAction;
 class MeasuredDataFileDataItem;
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 
 class Post2dWindowMeasuredDataTopDataItem : public Post2dWindowDataItem
 {

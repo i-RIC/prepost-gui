@@ -1,6 +1,6 @@
 #include "ui_rawdatabackgroundeditdialog.h"
 
-#include "../gridcond/base/gridrelatedconditioneditwidget.h"
+#include "../gridcond/base/gridattributeeditwidget.h"
 #include "rawdatabackgroundeditdialog.h"
 
 RawDataBackgroundEditDialog::RawDataBackgroundEditDialog(QWidget* parent) :
@@ -18,7 +18,7 @@ RawDataBackgroundEditDialog::~RawDataBackgroundEditDialog()
 	delete ui;
 }
 
-void RawDataBackgroundEditDialog::setWidget(GridRelatedConditionEditWidget* w)
+void RawDataBackgroundEditDialog::setWidget(GridAttributeEditWidget* w)
 {
 	ui->customWidget->setWidget(w);
 	adjustSize();

@@ -22,7 +22,7 @@
 
 #include <cgnslib.h>
 
-RawData::RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+RawData::RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 	: ProjectDataItem(d)
 {
 	m_creator = creator;
@@ -34,7 +34,7 @@ RawData::RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGr
 	m_editNameAction = new QAction(tr("Edit &Name..."), this);
 	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
 	mapperFunc = &RawData::nodeMappers;
-	if (condition != nullptr && condition->position() == SolverDefinitionGridRelatedCondition::CellCenter) {
+	if (condition != nullptr && condition->position() == SolverDefinitionGridAttribute::CellCenter) {
 		mapperFunc = &RawData::cellMappers;
 	}
 	m_mapped = false;
@@ -240,7 +240,7 @@ void RawData::saveToCgnsFile(const int /*fn*/)
 	cg_array_write("type", Integer, 1, &valuelen, &type);
 }
 
-GridRelatedConditionDimensionsContainer* RawData::dimensions() const
+GridAttributeDimensionsContainer* RawData::dimensions() const
 {
 	PreProcessorRawDataGroupDataItemInterface* item = dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent()->parent());
 	if (item == nullptr) {return nullptr;}

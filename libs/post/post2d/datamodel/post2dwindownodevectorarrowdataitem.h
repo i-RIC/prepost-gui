@@ -3,7 +3,7 @@
 
 #include "../post2dwindowdataitem.h"
 
-class SolverDefinitionGridRelatedCondition;
+class SolverDefinitionGridAttribute;
 class QAction;
 
 class Post2dWindowNodeVectorArrowDataItem : public Post2dWindowDataItem

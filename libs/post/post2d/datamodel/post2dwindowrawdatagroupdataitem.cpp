@@ -7,11 +7,11 @@
 #include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
 #include <guicore/pre/rawdata/rawdata.h>
 #include <guicore/pre/rawdata/rawdataproxy.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 
 #include <QMap>
 
-Post2dWindowRawDataGroupDataItem::Post2dWindowRawDataGroupDataItem(SolverDefinitionGridRelatedCondition* cond, Post2dWindowDataItem* parent)
+Post2dWindowRawDataGroupDataItem::Post2dWindowRawDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent)
 	: Post2dWindowDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
 	m_condition = cond;

@@ -1,7 +1,7 @@
 #include "../../project/projectcgnsfile.h"
-#include "../../solverdef/solverdefinitiongridrelatedcondition.h"
+#include "../../solverdef/solverdefinitiongridattribute.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
-#include "../gridcond/base/gridrelatedconditioncontainer.h"
+#include "../gridcond/base/gridattributecontainer.h"
 #include "grid.h"
 
 #include <misc/stringtool.h>
@@ -54,7 +54,7 @@ Grid::~Grid()
 	}
 }
 
-void Grid::addGridRelatedCondition(GridRelatedConditionContainer* cond)
+void Grid::addGridRelatedCondition(GridAttributeContainer* cond)
 {
 	m_gridRelatedConditions.append(cond);
 	m_gridRelatedConditionNameMap.insert(cond->name(), cond);
@@ -141,7 +141,7 @@ bool Grid::isCustomModified()
 {
 	bool modified = false;
 	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
-		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
+		GridAttributeContainer* c = m_gridRelatedConditions[i];
 		modified = modified || c->isCustomModified();
 	}
 	return modified;
@@ -149,7 +149,7 @@ bool Grid::isCustomModified()
 void Grid::setCustomModified(bool modified)
 {
 	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
-		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
+		GridAttributeContainer* c = m_gridRelatedConditions[i];
 		c->setCustomModified(modified);
 	}
 }
@@ -195,7 +195,7 @@ void Grid::setParent(QObject* parent)
 {
 	QObject::setParent(parent);
 	for (int i = 0; i < m_gridRelatedConditions.count(); ++i) {
-		GridRelatedConditionContainer* c = m_gridRelatedConditions[i];
+		GridAttributeContainer* c = m_gridRelatedConditions[i];
 		c->updateConnections();
 	}
 }

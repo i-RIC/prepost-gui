@@ -3,7 +3,7 @@
 #include "../../base/iricmainwindowinterface.h"
 #include "../../project/colorsource.h"
 #include "../../project/projectdata.h"
-#include "../../solverdef/solverdefinitiongridrelatedcomplexcondition.h"
+#include "../../solverdef/solverdefinitiongridcomplexattribute.h"
 #include "../base/preprocessorrawdatacomplexgroupdataiteminterface.h"
 #include "gridcomplexconditiondialog.h"
 #include "gridcomplexconditionwidget.h"
@@ -63,8 +63,8 @@ void GridComplexConditionDialog::selectItem(int item)
 
 void GridComplexConditionDialog::addItem()
 {
-	SolverDefinitionGridRelatedComplexCondition* compCond =
-		dynamic_cast<SolverDefinitionGridRelatedComplexCondition*>(m_dataItem->condition());
+	SolverDefinitionGridComplexAttribute* compCond =
+		dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_dataItem->condition());
 	GridComplexConditionWidget* newWidget = new GridComplexConditionWidget(m_mainWindow, this);
 	newWidget->setup(m_dataItem->projectData()->solverDefinition(), compCond->element(), m_mainWindow->locale());
 	newWidget->setCaption(QString("Item%1").arg(m_widgets.count() + 1));

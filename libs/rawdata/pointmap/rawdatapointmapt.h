@@ -16,7 +16,7 @@ template <class V, class DA>
 class RawDataPointMapT : public RawDataPointmap
 {
 public:
-	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition);
+	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);
 
 	DA* vtkValues() {return DA::SafeDownCast(m_vtkGrid->GetPointData()->GetArray("values"));}
 	V value(vtkIdType index) {return vtkValues()->GetValue(index);}
@@ -38,7 +38,7 @@ private:
 #include "rawdatapointmaptemplatenodemappert.h"
 
 template <class V, class DA>
-RawDataPointMapT<V, DA>::RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridRelatedCondition* condition)
+RawDataPointMapT<V, DA>::RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 	: RawDataPointmap(d, creator, condition)
 {
 	vtkSmartPointer<DA> values = vtkSmartPointer<DA>::New();
@@ -51,7 +51,7 @@ RawDataPointMapT<V, DA>::RawDataPointMapT(ProjectDataItem* d, RawDataCreator* cr
 template <class V, class DA>
 RawDataMapper* RawDataPointMapT<V, DA>::mapper()
 {
-	if (m_gridRelatedCondition->position() == SolverDefinitionGridRelatedCondition::CellCenter) {
+	if (m_gridRelatedCondition->position() == SolverDefinitionGridAttribute::CellCenter) {
 		return RawData::mapper();
 	}
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());

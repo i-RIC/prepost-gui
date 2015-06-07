@@ -13,7 +13,7 @@ public:
 	QString name(unsigned int index) override;
 	QString defaultCaption(unsigned int index) override;
 	virtual bool isCreatable() const override {return true;}
-	RawData* create(ProjectDataItem* parent, SolverDefinitionGridRelatedCondition* condition) override;
+	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 
 #endif // RAWDATAPOLYGONCREATOR_H

@@ -5,9 +5,9 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/project/colorsource.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionintegeroptioncellgridrelatedcondition.h>
+#include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
 #include <misc/iricundostack.h>
 
 #include <QMouseEvent>
@@ -127,13 +127,13 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 	m_opacityPercent = 50;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent())->gridType();
-	const QList<SolverDefinitionGridRelatedCondition*>& conds = gt->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
 	int index = 0;
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		const SolverDefinitionGridRelatedCondition* cond = *it;
-		if (cond->position() != SolverDefinitionGridRelatedCondition::CellCenter) {continue;}
+		const SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		if (! cond->isOption()) {continue;}
-		const SolverDefinitionGridRelatedIntegerCondition* icond = dynamic_cast<const SolverDefinitionGridRelatedIntegerCondition*>(cond);
+		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
 		if (icond == 0) {continue;}
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);

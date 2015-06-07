@@ -3,7 +3,7 @@
 
 #include "structured2dgrid.h"
 #include "../../project/projectcgnsfile.h"
-#include "../gridcond/base/gridrelatedconditioncontainer.h"
+#include "../gridcond/base/gridattributecontainer.h"
 #include <misc/stringtool.h>
 #include <misc/mathsupport.h>
 #include <guibase/graphicsmisc.h>

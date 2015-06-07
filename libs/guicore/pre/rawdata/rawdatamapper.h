@@ -5,7 +5,7 @@
 #include "rawdatacreator.h"
 
 class Grid;
-class GridRelatedConditionContainer;
+class GridAttributeContainer;
 
 class RawDataMapperSetting
 {
@@ -24,7 +24,7 @@ public:
 		m_rawdata = nullptr;
 	}
 	virtual ~RawDataMapper(){}
-	void setTarget(Grid* grid, GridRelatedConditionContainer* container, RawData* rawdata) {
+	void setTarget(Grid* grid, GridAttributeContainer* container, RawData* rawdata) {
 		m_grid = grid;
 		m_container = container;
 		m_rawdata = rawdata;
@@ -44,7 +44,7 @@ protected:
 
 	QString m_caption;
 	Grid* m_grid;
-	GridRelatedConditionContainer* m_container;
+	GridAttributeContainer* m_container;
 	RawData* m_rawdata;
 };
 

@@ -5,7 +5,7 @@
 #include <QVariant>
 #include "rawdatabackground.h"
 
-class GridRelatedConditionEditWidget;
+class GridAttributeEditWidget;
 
 namespace Ui
 {
@@ -25,7 +25,7 @@ public:
 	void setCustomValue(const QVariant& v) {
 		m_customValue = v;
 	}
-	void setWidget(GridRelatedConditionEditWidget* w);
+	void setWidget(GridAttributeEditWidget* w);
 	void setupDialog();
 	void accept() override;
 

@@ -20,7 +20,7 @@ class QAction;
 class Structured2DGrid;
 class PreProcessorGridCrosssectionWindowGraphicsView;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
-class PreProcessorGridRelatedConditionNodeDataItem;
+class PreProcessorGridAttributeNodeDataItem;
 
 namespace Ui
 {
@@ -46,7 +46,7 @@ public:
 	QTableView* tableView();
 	void informFocusIn();
 	Structured2DGrid* grid() {return m_grid;}
-	PreProcessorGridRelatedConditionNodeDataItem* conditionNodeDataItem();
+	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem();
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
 	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem() {return m_projectDataItem;}
 	const QIcon& icon() const {return m_icon;}

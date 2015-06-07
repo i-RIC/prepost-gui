@@ -7,7 +7,7 @@
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/project/inputcond/cgnsfileinputconditionwidgetfilename.h>
+#include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>

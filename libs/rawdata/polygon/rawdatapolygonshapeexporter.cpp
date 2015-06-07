@@ -5,7 +5,7 @@
 
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/solverdef/solverdefinitiongridrelatedconditiont.h>
+#include <guicore/solverdef/solverdefinitiongridattributet.h>
 #include <misc/stringtool.h>
 
 #include <QTextCodec>
@@ -91,8 +91,8 @@ bool RawDataPolygonShapeExporter::doExport(RawData* data, const QString& filenam
 
 	// Add name and value attributes.
 	DBFAddField(dbfh, "Name", FTString, 1000, 0);
-	SolverDefinitionGridRelatedCondition* cond = data->gridRelatedCondition();
-	bool valueIsDouble = (dynamic_cast<SolverDefinitionGridRelatedRealCondition*>(cond) != 0);
+	SolverDefinitionGridAttribute* cond = data->gridRelatedCondition();
+	bool valueIsDouble = (dynamic_cast<SolverDefinitionGridAttributeReal*>(cond) != nullptr);
 	if (valueIsDouble) {
 		// Real
 		DBFAddField(dbfh, "Value", FTDouble, 40, 6);
@@ -117,12 +117,12 @@ SHPHandle RawDataPolygonShapeExporter::getSHPHandle(QString filename)
 	return shph;
 }
 
-DBFHandle RawDataPolygonShapeExporter::getDBFHandle(QString filename, SolverDefinitionGridRelatedCondition* cond, bool* isDouble)
+DBFHandle RawDataPolygonShapeExporter::getDBFHandle(QString filename, SolverDefinitionGridAttribute* cond, bool* isDouble)
 {
 	DBFHandle dbfh = DBFCreate(iRIC::toStr(filename).c_str());
 	// Add name and value attributes.
 	DBFAddField(dbfh, "Name", FTString, 1000, 0);
-	*isDouble = (dynamic_cast<SolverDefinitionGridRelatedRealCondition*>(cond) != 0);
+	*isDouble = (dynamic_cast<SolverDefinitionGridAttributeReal*>(cond) != nullptr);
 	if (*isDouble) {
 		// Real
 		DBFAddField(dbfh, "Value", FTDouble, 40, 6);

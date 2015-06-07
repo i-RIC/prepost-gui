@@ -1,7 +1,7 @@
 #include "structured2dgridnayscsvexporter.h"
 #include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionrealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridrelatedconditionintegercellcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 
 #include <QObject>
 #include <QFile>
@@ -34,15 +34,15 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 
 	QFile f(filename);
 	if (f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text)){
-		GridRelatedConditionContainer* c = grid2d->gridRelatedCondition("Elevation");
+		GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
 		if (c == nullptr){
 			// this grid does not have Elevation node. Impossible to export data.
 			return false;
 		}
-		GridRelatedConditionRealNodeContainer* container = dynamic_cast<GridRelatedConditionRealNodeContainer*>(c);
+		GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
 		c = grid2d->gridRelatedCondition("CellCondition");
-		GridRelatedConditionIntegerCellContainer* cellcond = dynamic_cast<GridRelatedConditionIntegerCellContainer*>(c);
+		GridAttributeIntegerCellContainer* cellcond = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 		QTextStream o(&f);
 		o.setRealNumberPrecision(8);
 		o << "IMAX,JMAX,KMAX " << endl;

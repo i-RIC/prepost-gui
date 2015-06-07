@@ -1,6 +1,6 @@
 #include "preprocessorbcgroupdataitem.h"
-#include "preprocessorgridrelatedconditioncellgroupdataitem.h"
-#include "preprocessorgridrelatedconditionnodegroupdataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessornormal15dgridwithcrosssectiondataitem.h"
 #include "preprocessornormal15dgridwithcrosssectionshapedataitem.h"
@@ -17,10 +17,10 @@ PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWith
 	m_shapeDataItem = new PreProcessorNormal15DGridWithCrossSectionShapeDataItem(this);
 	m_childItems.append(m_shapeDataItem);
 	m_standardItem->takeRow(m_shapeDataItem->standardItem()->row());
-	m_nodeGroupDataItem = new PreProcessorGridRelatedConditionNodeGroupDataItem(this);
+	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
 	m_childItems.append(m_nodeGroupDataItem);
 	m_standardItem->takeRow(m_nodeGroupDataItem->standardItem()->row());
-	m_cellGroupDataItem = new PreProcessorGridRelatedConditionCellGroupDataItem(this);
+	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
 	m_childItems.append(m_cellGroupDataItem);
 	m_standardItem->takeRow(m_cellGroupDataItem->standardItem()->row());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
