@@ -27,6 +27,7 @@ class vtkRenderer;
 class GUICOREDLL_EXPORT ProjectMainFile : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	const static QString FILENAME;
 	const static QString BGDIR;
@@ -197,6 +198,7 @@ private:
 	QVector2D m_offset;
 
 	bool m_isModified;
+
 signals:
 	void cgnsFileSwitched();
 	void backgroundImageAdded();

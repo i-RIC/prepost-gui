@@ -18,6 +18,7 @@
 template <class V>
 class GridAttributeDimensionContainerT : public GridAttributeDimensionContainer
 {
+
 public:
 	GridAttributeDimensionContainerT(SolverDefinitionGridAttributeDimension* def)
 		: GridAttributeDimensionContainer(def)
@@ -163,20 +164,24 @@ private:
 
 class GridAttributeDimensionIntegerContainer : public GridAttributeDimensionContainerT<int>
 {
+
 public:
 	GridAttributeDimensionIntegerContainer(SolverDefinitionGridAttributeDimension* def)
 		: GridAttributeDimensionContainerT<int>(def)
 	{}
+
 protected:
 	DataType_t dataType() const override {return Integer;}
 };
 
 class GridAttributeDimensionRealContainer : public GridAttributeDimensionContainerT<double>
 {
+
 public:
 	GridAttributeDimensionRealContainer(SolverDefinitionGridAttributeDimension* def)
 		: GridAttributeDimensionContainerT<double>(def)
 	{}
+
 protected:
 	DataType_t dataType() const override {return RealDouble;}
 };

@@ -13,6 +13,7 @@ class QAction;
 class PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* parent);
@@ -35,13 +36,16 @@ public:
 	void handleStandardItemChange() override;
 	bool gridEdited() const  override;
 	void toggleGridEditFlag() override;
+
 public slots:
 	void informGridCreation();
 	void deleteGridAndCondition();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void saveExternalData(const QString&) override;
+
 private:
 	QAction* m_deleteAction;
 	QString m_caption;

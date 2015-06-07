@@ -13,6 +13,7 @@ class PostSolutionInfo;
 class Graph2dHybridWindowDataItem : public Graph2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dHybridWindowDataItem(Graph2dWindowDataItem* parent)
@@ -27,6 +28,7 @@ public:
 		: Graph2dWindowDataItem(itemlabel, icon, parent)
 	{}
 	Graph2dHybridWindow* graphWindow();
+
 protected:
 	PostSolutionInfo* postSolutionInfo();
 	Graph2dHybridWindowDataModel* dataModel();

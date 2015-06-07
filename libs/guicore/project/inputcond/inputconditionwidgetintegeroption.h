@@ -11,6 +11,7 @@ class SolverDefinitionTranslator;
 class GUICOREDLL_EXPORT InputConditionWidgetIntegerOption : public InputConditionWidget
 {
 	Q_OBJECT
+
 public:
 	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
 	void setDisabled(bool disable) {

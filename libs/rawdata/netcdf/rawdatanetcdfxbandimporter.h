@@ -7,6 +7,7 @@
 class RD_NETCDF_EXPORT RawDataNetcdfXbandImporter : public RawDataImporter
 {
 	Q_OBJECT
+
 public:
 	RawDataNetcdfXbandImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfXbandImporter() {}

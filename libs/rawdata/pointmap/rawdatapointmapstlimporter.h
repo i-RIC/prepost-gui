@@ -6,6 +6,7 @@
 class RawDataPointmapSTLImporter : public RawDataImporter
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataPointmapSTLImporter(RawDataCreator* creator);

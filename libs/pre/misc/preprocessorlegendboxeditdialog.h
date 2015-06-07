@@ -12,6 +12,7 @@ namespace Ui
 class PreProcessorLegendBoxEditDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorLegendBoxEditDialog(QWidget* parent = nullptr);
 	~PreProcessorLegendBoxEditDialog();

@@ -14,6 +14,7 @@ class PostZoneDataContainer;
 class Post3dWindowFaceSettingWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	explicit Post3dWindowFaceSettingWidget(QWidget* parent = nullptr);
 	~Post3dWindowFaceSettingWidget();
@@ -25,8 +26,10 @@ public:
 	void sliderRange(int range[6]);
 	void setEnabledCheck(bool check);
 	void setMultiSelected(bool selected);
+
 signals:
 	void settingChanged();
+
 private slots:
 	void setMyEnabled(bool enabled);
 	void iMinChanged(int imin);
@@ -38,6 +41,7 @@ private slots:
 	void iDirClicked();
 	void jDirClicked();
 	void kDirClicked();
+
 private:
 	void applyDirectionSetting();
 	void maximizeRange();

@@ -16,15 +16,19 @@ namespace Ui
 class RawDataRiverCrosssectionAltitudeMoveDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit RawDataRiverCrosssectionAltitudeMoveDialog(RawDataRiverPathPoint* point, int from, int to, RawDataRiverSurvey* rs, RawDataRiverSurveyCrosssectionWindow* w, QWidget* parent = nullptr);
 	~RawDataRiverCrosssectionAltitudeMoveDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void hOffsetChange();
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	void setLimits();
 	void doReset();

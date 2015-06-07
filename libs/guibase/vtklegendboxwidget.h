@@ -10,6 +10,7 @@ class vtkLegendBoxRepresentation;
 /// Widget for Legend box
 class GUIBASEDLL_EXPORT vtkLegendBoxWidget : public vtkBorderWidget
 {
+
 public:
 	static vtkLegendBoxWidget* New();
 	vtkTypeRevisionMacro(vtkLegendBoxWidget, vtkBorderWidget);

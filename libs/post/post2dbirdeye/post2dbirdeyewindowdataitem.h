@@ -13,6 +13,7 @@ class PostSolutionInfo;
 class Post2dBirdEyeWindowDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowDataItem(GraphicsWindowDataItem* parent)

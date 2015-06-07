@@ -7,6 +7,7 @@
 
 class RawDataBackgroundNodeMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataBackgroundNodeMapperSetting() : RawDataMapperSetting() {}
 	virtual ~RawDataBackgroundNodeMapperSetting() {}
@@ -16,6 +17,7 @@ public:
 template <class V, class DA>
 class RawDataBackgroundNodeMapperT : public RawDataNodeMapperT<V, DA>
 {
+
 public:
 	RawDataBackgroundNodeMapperT(RawDataCreator* parent)
 		: RawDataNodeMapperT<V, DA>(parent) {

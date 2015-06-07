@@ -7,6 +7,7 @@
 
 class GUICOREDLL_EXPORT VTK3DGraphicsView : public VTKGraphicsView
 {
+
 public:
 	VTK3DGraphicsView(QWidget* parent);
 	virtual ~VTK3DGraphicsView() {}

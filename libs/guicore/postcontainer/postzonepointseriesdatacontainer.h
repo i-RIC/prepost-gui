@@ -20,6 +20,7 @@ class ScalarsToColorsEditDialog;
 
 class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesDataContainer
 {
+
 public:
 	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}
@@ -36,12 +37,15 @@ public:
 	const QString caption() const {return zoneName();}
 	void setPointIndex(int index) {m_pointIndex = index;}
 	int pointIndex() const {return m_pointIndex;}
+
 protected:
 	bool loadData(const int fn) override;
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+
 private:
 	bool setZoneId(const int fn);
+
 protected:
 	QList<double> m_data;
 	QString m_zoneName;

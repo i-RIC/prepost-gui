@@ -10,6 +10,7 @@ class PropertyBrowserView;
 class GUICOREDLL_EXPORT PropertyBrowser : public QDockWidget
 {
 	Q_OBJECT
+
 public:
 	PropertyBrowser(QWidget* parent = nullptr);
 	virtual ~PropertyBrowser();

@@ -19,9 +19,11 @@
 class Post3dWindowGridShapeDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int normalOutlineWidth = 1;
 	static const int selectedOutlineWidth = 2;
+
 public:
 	/// Constructor
 	Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent);

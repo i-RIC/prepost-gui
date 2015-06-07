@@ -35,10 +35,12 @@ class GridCreatingConditionCtrlPointMoveCommand;
 class GridCreatingConditionRiverSurvey : public GridCreatingConditionRiverSurveyInterface
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
 	const static int initialDivision = 100;
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -190,17 +192,20 @@ private:
 
 	ZoneSelectionInfo m_selectedZone;
 	MouseEventMode m_mouseEventMode;
+
 public slots:
 	void addRegionPoints();
 	void movePoints();
 	void repositionPoints();
 	void deletePoints();
 	void hideCreateRegion();
+
 private slots:
 	void addPoints();
 	void restoreMouseEventMode();
 	void handleDataChange();
 	void handleDataDestroy();
+
 public:
 	friend class GridCreatingConditionRiverSurveyPointAddDialog;
 	friend class GridCreatingConditionRiverSurveyPointRepositionDialog;

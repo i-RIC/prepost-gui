@@ -17,6 +17,7 @@ class PostZoneDataContainer;
 class GUICOREDLL_EXPORT PostSolutionInfo : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	enum Dimension {dim1D, dim2D, dim3D};
 	enum ExportFormat {efVTK, efCSV};

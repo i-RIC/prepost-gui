@@ -21,6 +21,7 @@ class QVector2D;
 class GUICOREDLL_EXPORT ProjectDataItem : public QObject
 {
 	Q_OBJECT
+
 protected:
 	static const QDataStream::Version dataStreamVersion = QDataStream::Qt_4_6;
 
@@ -103,6 +104,7 @@ protected:
 	/// Returns the filename in relative path against workDirectory.
 	const QString relativeFilename();
 	void setFilename(const QString& fname) {m_filename = fname;}
+
 protected:
 	/// The name of file to store additional information about this class.
 	/**

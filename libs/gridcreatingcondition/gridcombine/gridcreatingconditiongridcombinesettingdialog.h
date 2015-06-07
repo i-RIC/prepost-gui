@@ -15,6 +15,7 @@ namespace Ui
 class GridCreatingConditionGridCombineSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	enum Type {Bind, Left, Right};
 	GridCreatingConditionGridCombineSettingDialog(QWidget* parent = nullptr);
@@ -57,14 +58,18 @@ public:
 	void setupComboBox(PreProcessorGridCreatingConditionDataItemInterface* item);
 	void setupConnections();
 	void setupDisability();
+
 public slots:
 	void informConfluenceTypeChange(bool b);
 	void informGridChange(int i);
 	void setupGridIndex();
+
 signals:
 	void gridInformationChanged();
+
 private slots:
 	void changeFlowEndingIndex(int index);
+
 private:
 	Ui::GridCreatingConditionGridCombineSettingDialog* ui;
 	QMap<QString, Grid*> m_gridMap;

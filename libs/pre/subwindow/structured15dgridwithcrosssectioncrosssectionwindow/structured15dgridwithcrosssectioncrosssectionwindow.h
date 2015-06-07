@@ -23,6 +23,7 @@ namespace Ui
 class Structured15DGridWithCrossSectionCrossSectionWindow : public QMainWindow
 {
 	Q_OBJECT
+
 public:
 	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~Structured15DGridWithCrossSectionCrossSectionWindow();
@@ -80,10 +81,12 @@ public:
 
 class Structured15DGridCrossSectionEditCommand : public QUndoCommand
 {
+
 public:
 	Structured15DGridCrossSectionEditCommand(bool apply, const QString& title, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& after, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& before, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, bool tableaction = false);
 	void redo() override;
 	void undo() override;
+
 private:
 	bool m_apply;
 	bool m_first;

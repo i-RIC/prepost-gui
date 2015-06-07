@@ -19,6 +19,7 @@ class InputConditionWidgetSet;
 class GUICOREDLL_EXPORT InputConditionDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent = nullptr);

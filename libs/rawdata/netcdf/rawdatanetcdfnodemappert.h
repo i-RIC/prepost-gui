@@ -11,6 +11,7 @@
 
 class RawDataNetcdfNodeMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataNetcdfNodeMapperSetting() : RawDataMapperSetting() {}
 	~RawDataNetcdfNodeMapperSetting() {}
@@ -20,6 +21,7 @@ public:
 template <class V, class DA>
 class RawDataNetcdfNodeMapperT : public RawDataNodeMapperT<V, DA>
 {
+
 public:
 	RawDataNetcdfNodeMapperT(RawDataCreator* parent)
 		: RawDataNodeMapperT<V, DA>(parent) {

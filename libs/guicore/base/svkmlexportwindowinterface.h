@@ -10,6 +10,7 @@ class QString;
 /// Window that support KML for street view.
 class SVKmlExportWindowInterface
 {
+
 public:
 	virtual bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) = 0;
 	virtual bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) = 0;

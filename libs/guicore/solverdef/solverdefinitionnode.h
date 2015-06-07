@@ -10,6 +10,7 @@
 /// like calculation condition node grid condition node etc.
 class GUICOREDLL_EXPORT SolverDefinitionNode
 {
+
 public:
 	/// constructor
 	SolverDefinitionNode() {}

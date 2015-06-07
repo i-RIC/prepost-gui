@@ -11,6 +11,7 @@
 class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	InputConditionContainer() {
@@ -50,6 +51,7 @@ public:
 	virtual int load() = 0;
 	virtual int save() = 0;
 	virtual QVariant variantValue() const = 0;
+
 protected:
 	QString m_name;
 	QString m_bcName;
@@ -58,6 +60,7 @@ protected:
 	int m_complexIndex;
 	bool m_isBoundaryCondition;
 	bool m_isComplexCondition;
+
 signals:
 	void valueChanged();
 };

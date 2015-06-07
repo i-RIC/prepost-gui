@@ -5,6 +5,7 @@
 
 class Graph2dScatteredWindowView : public Graph2dWindowView
 {
+
 public:
 	Graph2dScatteredWindowView(QWidget* parent);
 };

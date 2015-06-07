@@ -11,6 +11,7 @@
 class GUICOREDLL_EXPORT WorkfolderInfo : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	WorkfolderInfo(const QString& workfolder, QObject* parent);

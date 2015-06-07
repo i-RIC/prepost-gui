@@ -8,6 +8,7 @@
 /// Container to handle line style information
 class GUIBASEDLL_EXPORT LineStyleInformation
 {
+
 public:
 	/// Constructor
 	LineStyleInformation();

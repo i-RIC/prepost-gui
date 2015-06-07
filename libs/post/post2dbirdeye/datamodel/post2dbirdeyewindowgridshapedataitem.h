@@ -29,9 +29,11 @@ class Post2dBirdEyeWindowGridShapeDataSetSetting;
 class Post2dBirdEyeWindowGridShapeDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int normalOutlineWidth = 1;
 	static const int selectedOutlineWidth = 2;
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent);
@@ -45,12 +47,14 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void innerUpdateZScale(double scale) override;
+
 private:
 	void setupActors();
 	void setColor(const QColor& color);
@@ -85,6 +89,7 @@ private:
 	QAction* m_editDeltaAction;
 	QVector2D m_dragStartPoint;
 	GridShapeEditDialog::Shape m_shape;
+
 public:
 	friend class Post2dBirdEyeWindowGridShapeDataSetSetting;
 };

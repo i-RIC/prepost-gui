@@ -12,12 +12,14 @@ class SolverDefinitionTranslator;
 class GUICOREDLL_EXPORT InputConditionWidgetFilenameEdit : public QLineEdit
 {
 	Q_OBJECT
+
 public:
 	InputConditionWidgetFilenameEdit(QWidget* parent = nullptr) : QLineEdit(parent) {}
 	bool checkContent();
 
 protected:
 	void focusOutEvent(QFocusEvent* e) override;
+
 signals:
 	void valueChanged(QString txt);
 };
@@ -25,6 +27,7 @@ signals:
 class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilename : public InputConditionWidget
 {
 	Q_OBJECT
+
 public:
 	CgnsFileInputConditionWidgetFilename(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 	void setDisabled(bool disable) {m_edit->setDisabled(disable);}

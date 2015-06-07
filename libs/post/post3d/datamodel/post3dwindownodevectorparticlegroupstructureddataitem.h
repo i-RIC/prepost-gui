@@ -22,11 +22,13 @@ struct Post3dWindowStructuredParticleSetSetting {
 class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post3dWindowNodeVectorParticleGroupStructuredDataItem(Post3dWindowDataItem* parent)
 		: Post3dWindowNodeVectorParticleGroupDataItem(parent) {
 		setDefaultValues();
 	}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -35,6 +37,7 @@ protected:
 	void setupActors() override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 private:
 	void setDefaultValues();
 
@@ -42,6 +45,7 @@ private:
 	QList<vtkSubdivideGrid*> m_subdivideGrids;
 
 	QList<Post3dWindowStructuredParticleSetSetting> m_settings;
+
 public:
 	friend class Post3dWindowParticleStructuredSetProperty;
 };

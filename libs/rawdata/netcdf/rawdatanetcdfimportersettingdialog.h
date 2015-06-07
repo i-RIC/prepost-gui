@@ -18,6 +18,7 @@ class RawDataNetcdfImporterSettingDialog : public QDialog
 public:
 	class NcVariable
 	{
+
 	public:
 		QString name;
 		QList<QString> dimensions;

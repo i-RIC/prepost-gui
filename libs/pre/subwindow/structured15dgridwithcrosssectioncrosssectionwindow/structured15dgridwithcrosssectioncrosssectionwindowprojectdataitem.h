@@ -8,6 +8,7 @@ class Structured15DGridWithCrossSectionCrossSectionWindow;
 
 class Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem : public ProjectDataItem
 {
+
 public:
 	Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parentWindow);
 	~Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem();
@@ -16,12 +17,15 @@ public:
 	Structured15DGridWithCrossSectionCrossSectionWindow* window() {
 		return m_window;
 	}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 protected:
 	Structured15DGridWithCrossSectionCrossSectionWindow* m_window;
 	/*
+
 	   public:
 	   friend class PostProcessorWindow;
 	 */

@@ -101,6 +101,7 @@ public:
 	/// Menu that has actions related to animation control
 	class AnimationActions : public QObject
 	{
+
 	public:
 		/// Constructor
 		AnimationActions(QObject* parent);

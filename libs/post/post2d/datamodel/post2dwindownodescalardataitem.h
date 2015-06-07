@@ -13,6 +13,7 @@ class vtkStructuredGrid;
 class Post2dWindowNodeScalarDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);

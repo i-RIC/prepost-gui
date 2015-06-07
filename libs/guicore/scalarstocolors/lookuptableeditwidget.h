@@ -14,6 +14,7 @@ class LookupTableContainer;
 class GUICOREDLL_EXPORT LookupTableEditWidget : public ScalarsToColorsEditWidget
 {
 	Q_OBJECT
+
 public:
 	LookupTableEditWidget(QWidget* parent);
 	~LookupTableEditWidget();

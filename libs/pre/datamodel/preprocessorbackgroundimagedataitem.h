@@ -11,6 +11,7 @@ class QAction;
 class PreProcessorBackgroundImageDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent);
 	~PreProcessorBackgroundImageDataItem();
@@ -25,6 +26,7 @@ public:
 	BackgroundImageInfo* imageInfo() {return m_imageInfo;}
 	QAction* fixAction();
 	void handleStandardItemChange() override;
+
 private slots:
 	void applyImageChange();
 
@@ -38,6 +40,7 @@ protected:
 
 	QString m_filename;
 	BackgroundImageInfo* m_imageInfo;
+
 private:
 	vtkSmartPointer<vtkActor> m_actor;
 

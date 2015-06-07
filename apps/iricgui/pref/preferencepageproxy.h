@@ -13,6 +13,7 @@ namespace Ui
 class PreferencePageProxy : public PreferencePage
 {
 	Q_OBJECT
+
 public:
 	explicit PreferencePageProxy(QWidget* parent = nullptr);
 	~PreferencePageProxy();

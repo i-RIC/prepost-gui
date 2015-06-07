@@ -7,6 +7,7 @@
 class InputConditionWidgetFunctionalGraphview : public QAbstractItemView
 {
 	Q_OBJECT
+
 public:
 	InputConditionWidgetFunctionalGraphview(QWidget* w) : QAbstractItemView(w) {
 		fLeftMargin = 0.1f;
@@ -36,6 +37,7 @@ public:
 		viewport()->update();
 	}
 	QRegion visualRegionForSelection(const QItemSelection& /*selection*/) const override {return QRegion();}
+
 private:
 	const static int iLeftMargin = 20;
 	const static int iRightMargin = 20;

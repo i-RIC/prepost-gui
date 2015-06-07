@@ -7,6 +7,7 @@ class RealNumberEditWidget;
 
 class GridAttributeRealEditWidget : public GridAttributeEditWidgetT<double>
 {
+
 public:
 	GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);
 	~GridAttributeRealEditWidget();

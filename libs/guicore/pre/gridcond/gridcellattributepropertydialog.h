@@ -15,6 +15,7 @@ namespace Ui
 class GUICOREDLL_EXPORT GridCellAttributePropertyDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCellAttributePropertyDialog(QWidget* parent = nullptr);
 	~GridCellAttributePropertyDialog();

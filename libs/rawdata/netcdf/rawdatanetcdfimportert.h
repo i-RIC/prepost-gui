@@ -17,6 +17,7 @@
 template <class V, class DA>
 class RawDataNetcdfImporterT : public RawDataNetcdfImporter
 {
+
 public:
 	RawDataNetcdfImporterT(RawDataCreator* creator) : RawDataNetcdfImporter(creator) {}
 
@@ -134,6 +135,7 @@ protected:
 
 class RawDataNetcdfIntegerImporter : public RawDataNetcdfImporterT<int, vtkIntArray>
 {
+
 public:
 	RawDataNetcdfIntegerImporter(RawDataCreator* creator) : RawDataNetcdfImporterT<int, vtkIntArray>(creator) {}
 	int ncGetVarConvert(int ncid_in, int varId, size_t* start_in, size_t* len_in, int* buffer) {
@@ -155,6 +157,7 @@ public:
 
 class RawDataNetcdfRealImporter : public RawDataNetcdfImporterT<double, vtkDoubleArray>
 {
+
 public:
 	RawDataNetcdfRealImporter(RawDataCreator* creator) : RawDataNetcdfImporterT<double, vtkDoubleArray>(creator) {}
 	int ncGetVarConvert(int ncid_in, int varId, size_t* start_in, size_t* len_in, double* buffer) {

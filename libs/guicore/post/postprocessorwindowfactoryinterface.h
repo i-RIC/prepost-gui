@@ -14,6 +14,7 @@ class PostProcessorWindowProjectDataItem;
 
 class GUICOREDLL_EXPORT PostProcessorWindowFactoryInterface
 {
+
 public:
 	PostProcessorWindowFactoryInterface();
 

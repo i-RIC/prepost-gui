@@ -7,6 +7,7 @@
 
 class POSTBASEDLL_EXPORT PostTimeSetting
 {
+
 public:
 	/// Constructor
 	PostTimeSetting() {

@@ -6,6 +6,7 @@
 class Graph2dHybridWindowObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	Graph2dHybridWindowObjectBrowserView(QWidget* parent);
 };

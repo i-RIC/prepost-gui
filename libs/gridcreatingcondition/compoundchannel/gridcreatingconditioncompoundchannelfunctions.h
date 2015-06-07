@@ -3,6 +3,7 @@
 
 class GridCreatingConditionCompoundChannelFunctions
 {
+
 public:
 	GridCreatingConditionCompoundChannelFunctions() {}
 	~GridCreatingConditionCompoundChannelFunctions() {}

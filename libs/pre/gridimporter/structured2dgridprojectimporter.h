@@ -5,6 +5,7 @@
 
 class Structured2DGridProjectImporter : public ProjectGridImporter
 {
+
 public:
 	Structured2DGridProjectImporter() : ProjectGridImporter() {}
 	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override {

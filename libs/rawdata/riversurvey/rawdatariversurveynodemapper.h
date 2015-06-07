@@ -11,6 +11,7 @@
 
 class RawDataRiverSurveyNodeMapper : public RawDataNodeMapperT<double, vtkDoubleArray>
 {
+
 public:
 	RawDataRiverSurveyNodeMapper(RawDataCreator* parent)
 		: RawDataNodeMapperT<double, vtkDoubleArray>(parent) {

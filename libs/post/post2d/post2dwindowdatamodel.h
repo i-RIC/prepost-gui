@@ -18,6 +18,7 @@ class MeasuredDataFileDataItem;
 class POST2D_EXPORT Post2dWindowDataModel : public Graphics2DWindowDataModel
 {
 	Q_OBJECT
+
 public:
 	static const int MOVEWIDTH = 1;
 	/// Constructor
@@ -26,6 +27,7 @@ public:
 	/// The view to display 2d post-processor main region
 	Post2dWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
+
 public slots:
 	void gridShapeSetting();
 	void contourSetting();
@@ -38,11 +40,13 @@ public slots:
 
 	void measuredDataPointSetting();
 	void measuredDataVectorSetting();
+
 private:
 	void createCameraConnections();
 	void init();
 	Post2dWindowZoneDataItem* getZoneDataItem();
 	MeasuredDataFileDataItem* getMeasuredDataFileDataItem();
+
 public:
 	friend class Post2dWindowDataModelProjectDataItem;
 	friend class Post2dWindowProjectDataItem;

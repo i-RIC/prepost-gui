@@ -22,6 +22,7 @@ class WaitDialog;
 class PreProcessorRawDataGroupDataItem : public PreProcessorRawDataGroupDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorRawDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);

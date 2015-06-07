@@ -7,6 +7,7 @@
 class RD_POLYGON_EXPORT RawDataPolygonCreator : public RawDataCreator
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataPolygonCreator();

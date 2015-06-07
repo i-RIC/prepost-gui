@@ -38,9 +38,11 @@ class PostProcessorWindowFactory;
 class iRICMainWindow : public iRICMainWindowInterface
 {
 	Q_OBJECT
+
 private:
 	static const int MAX_RECENT_PROJECTS;
 	static const int MAX_RECENT_SOLVERS;
+
 public:
 	/// Constructor
 	iRICMainWindow(QWidget* parent = nullptr);

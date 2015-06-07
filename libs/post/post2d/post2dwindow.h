@@ -30,6 +30,7 @@ class Post2dWindow :
 	public SVKmlExportWindowInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi);
@@ -52,6 +53,7 @@ public:
 	QList<QString> contourDrawingZones() override;
 
 	bool hasTransparentPart();
+
 public slots:
 	void cameraFit();
 	void cameraResetRotation();
@@ -63,8 +65,10 @@ public slots:
 	void cameraMoveUp();
 	void cameraMoveDown();
 	void editBackgroundColor();
+
 signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
+
 private:
 	void init();
 	/// Background color
@@ -76,6 +80,7 @@ private:
 	Post2dWindowDataModel* m_dataModel;
 	Post2dWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+
 public:
 	friend class Post2dWindowProjectDataItem;
 	friend class Post2dWindowActionManager;

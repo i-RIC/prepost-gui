@@ -27,6 +27,7 @@ class Post2dWindowCellFlagDataItem;
 class Post2dWindowCellFlagGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* parent);
 	void update();

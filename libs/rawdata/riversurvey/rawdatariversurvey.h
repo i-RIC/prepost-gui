@@ -66,6 +66,7 @@ class RawDataRiverSurveyProxy;
 class RD_RIVERSURVEY_EXPORT RawDataRiverSurvey : public RawData
 {
 	Q_OBJECT
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -154,6 +155,7 @@ private slots:
 
 signals:
 	void dataUpdated();
+
 protected:
 	const static int LINEDIVS = 36;
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
@@ -216,6 +218,7 @@ protected:
 	vtkSmartPointer<vtkStringArray> m_labelArray;
 	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
 	vtkSmartPointer<vtkActor2D> m_labelActor;
+
 private:
 	RawDataRiverPathPoint* selectedPoint();
 	void setupLine(vtkUnstructuredGrid* grid, RawDataRiverPathPoint* p);
@@ -279,6 +282,7 @@ private:
 	MouseEventMode m_mouseEventMode;
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
+
 public:
 	friend class RawDataRiverSurveyCreator;
 	friend class RawDataRiverSurveyImporter;

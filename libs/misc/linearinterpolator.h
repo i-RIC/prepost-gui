@@ -8,6 +8,7 @@
 /// Linear interpolator for one-dimensional data with one parameter
 class MISCDLL_EXPORT LinearInterpolator1D1 : public Interpolator1D1
 {
+
 public:
 	LinearInterpolator1D1();
 	LinearInterpolator1D1(double v0, double v1);
@@ -28,6 +29,7 @@ private:
 /// Linear interpolator for two-dimensional data with one parameter
 class MISCDLL_EXPORT LinearInterpolator2D1 : public Interpolator2D1
 {
+
 public:
 	LinearInterpolator2D1();
 	LinearInterpolator2D1(const QVector2D& v0, const QVector2D& v1);

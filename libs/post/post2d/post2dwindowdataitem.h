@@ -14,6 +14,7 @@ class PostSolutionInfo;
 class POST2D_EXPORT Post2dWindowDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowDataItem(GraphicsWindowDataItem* parent)

@@ -10,6 +10,7 @@ class Post2dBirdEyeWindow;
 class Post2dBirdEyeWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowActionManager(Post2dBirdEyeWindow* parent);
@@ -24,6 +25,7 @@ public:
 
 	QMenu* drawMenu() const {return m_drawMenu;}
 	void connectWithDataModel();
+
 private:
 	void init();
 	void setupDrawMenu();

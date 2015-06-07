@@ -11,6 +11,7 @@ class QWidget;
 
 class GridImporterInterface
 {
+
 public:
 	virtual ~GridImporterInterface() {}
 	virtual QString caption() const = 0;

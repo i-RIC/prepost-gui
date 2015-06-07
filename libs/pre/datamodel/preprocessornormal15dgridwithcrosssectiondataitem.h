@@ -8,11 +8,14 @@ class QMenu;
 class PreProcessorNormal15DGridWithCrossSectionDataItem : public PreProcessorGridDataItem
 {
 	Q_OBJECT
+
 public:
 	PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent);
 	~PreProcessorNormal15DGridWithCrossSectionDataItem();
+
 protected:
 	void setupMenu() override;
+
 private:
 	QMenu* m_editMenu;
 	QMenu* m_displayMenu;

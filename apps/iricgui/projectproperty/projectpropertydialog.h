@@ -18,6 +18,7 @@ public:
 	explicit ProjectPropertyDialog(QWidget* parent = nullptr);
 	~ProjectPropertyDialog();
 	void setProjectData(ProjectData* data);
+
 private:
 	Ui::ProjectPropertyDialog* ui;
 };

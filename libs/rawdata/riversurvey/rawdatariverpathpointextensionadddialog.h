@@ -15,6 +15,7 @@ namespace Ui
 class RawDataRiverPathPointExtensionAddDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	enum LineMode {Left, Right};
 	explicit RawDataRiverPathPointExtensionAddDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent = nullptr);
@@ -22,18 +23,22 @@ public:
 	void setLineMode(LineMode lm) {
 		m_lineMode = lm;
 	}
+
 public slots:
 	void accept() override;
 	void reject() override;
 	void setPoint(const QVector2D& position);
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	void apply();
 	RawDataRiverPathPoint* m_point;
 	RawDataRiverSurvey* m_rs;
 	bool m_applyed;
 	QVector2D m_position;
+
 private:
 	Ui::RawDataRiverPathPointExtensionAddDialog* ui;
 	LineMode m_lineMode;

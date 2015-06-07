@@ -19,13 +19,16 @@ public:
 	explicit StartPageLaunchTabWidget(QWidget* parent = nullptr);
 	~StartPageLaunchTabWidget();
 	void setSolverList(SolverDefinitionList* solverList);
+
 signals:
 	void newProjectButtonClicked();
 	void openProjectButtonClicked();
 	void projectFileSelected(const QString& filename);
 	void solverSelected(SolverDefinitionAbstract* solverDef);
+
 private slots:
 	void openProject();
+
 private:
 	Ui::StartPageLaunchTabWidget* ui;
 };

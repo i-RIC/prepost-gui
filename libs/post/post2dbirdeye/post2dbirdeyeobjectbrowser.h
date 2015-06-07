@@ -12,6 +12,7 @@ class QModelIndex;
 class Post2dBirdEyeObjectBrowser : public ObjectBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
@@ -19,8 +20,10 @@ public:
 	~Post2dBirdEyeObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
 	Post2dBirdEyeObjectBrowserView* view() const {return m_view;}
+
 public slots:
 	void expandAll();
+
 private:
 	void init();
 	/// The widget to show in the dockarea

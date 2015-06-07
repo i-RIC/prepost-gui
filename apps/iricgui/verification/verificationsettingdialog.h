@@ -35,11 +35,14 @@ public:
 
 	MeasuredData* measuredData();
 	QString activeValue();
+
 public slots:
 	void accept() override;
+
 private slots:
 	void selectZone(int zoneid);
 	void selectFile(int fileid);
+
 private:
 	PostSolutionInfo* m_postSolutionInfo;
 	QList<MeasuredData*> m_measuredData;

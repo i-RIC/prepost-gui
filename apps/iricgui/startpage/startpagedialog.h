@@ -14,6 +14,7 @@ class SolverDefinitionAbstract;
 class StartPageDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	enum CommandMode {
 		cmNewProject,
@@ -29,11 +30,13 @@ public:
 	const QString& projectFileName() {return m_projectFileName;}
 	void setSolverList(SolverDefinitionList* solverList);
 	void setLocale(const QString& locale);
+
 private slots:
 	void handleNewProjectButtonClick();
 	void handleOpenProjectButtonClick();
 	void handleProjectFileSelection(const QString& filename);
 	void handleSolverSelection(SolverDefinitionAbstract* solverDef);
+
 private:
 	Ui::StartPageDialog* ui;
 	CommandMode m_commandMode;

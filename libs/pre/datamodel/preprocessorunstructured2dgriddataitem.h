@@ -9,12 +9,15 @@ class QAction;
 class PreProcessorUnstructured2dGridDataItem : public PreProcessorGridDataItem
 {
 	Q_OBJECT
+
 public:
 	PreProcessorUnstructured2dGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorUnstructured2dGridDataItem();
+
 protected:
 	void updateActionStatus() override;
 	void setupMenu() override;
+
 private:
 	QMenu* m_selectMenu;
 	QMenu* m_editMenu;

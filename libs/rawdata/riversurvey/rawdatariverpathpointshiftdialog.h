@@ -18,16 +18,20 @@ class RawDataRiverPathPointShiftDialog : public QDialog
 public:
 	explicit RawDataRiverPathPointShiftDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointShiftDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 	void checkShiftValue(double shiftVal);
+
 private:
 	void doReset();
 	void apply();
 	void customGraphicsUpdate();
+
 private:
 
 	Ui::RawDataRiverPathPointShiftDialog* ui;

@@ -18,6 +18,7 @@ namespace Ui
 class GUICOREDLL_EXPORT GridAttributeVariationEditDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridAttributeVariationEditDialog(QWidget* parent);
 	~GridAttributeVariationEditDialog();

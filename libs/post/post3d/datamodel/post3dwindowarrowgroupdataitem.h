@@ -32,6 +32,7 @@ class Post3dWindowArrowGroupDataItemUpdateOnUndo;
 class Post3dWindowArrowGroupDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
@@ -47,6 +48,7 @@ public:
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap();
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	void update();
+
 protected:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
@@ -55,6 +57,7 @@ protected:
 	void innerUpdateZScale(double scale) override;
 	void innerUpdate2Ds() override;
 	void updateVisibility() override {GraphicsWindowDataItem::updateVisibility();}
+
 private:
 	void setupActors();
 	void setupAppendFilter();

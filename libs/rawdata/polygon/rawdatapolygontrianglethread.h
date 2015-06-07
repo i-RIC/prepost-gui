@@ -10,6 +10,7 @@ class RawDataPolygon;
 class RawDataPolygonTriangleThread : public QThread
 {
 	Q_OBJECT
+
 public:
 	explicit RawDataPolygonTriangleThread(RawDataPolygon* parent);
 	~RawDataPolygonTriangleThread();
@@ -17,10 +18,13 @@ public:
 	void setNoDraw(bool nodraw) {m_noDraw = nodraw;}
 	void update();
 	void cancel();
+
 protected:
 	void run() override;
+
 signals:
 	void shapeUpdated();
+
 private:
 	void runTriangle();
 

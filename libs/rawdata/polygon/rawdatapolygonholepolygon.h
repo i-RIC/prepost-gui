@@ -6,6 +6,7 @@
 class RawDataPolygonHolePolygon : public RawDataPolygonAbstractPolygon
 {
 	Q_OBJECT
+
 public:
 	RawDataPolygonHolePolygon(RawDataPolygon* parent);
 };

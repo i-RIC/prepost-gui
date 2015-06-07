@@ -22,6 +22,7 @@ class iRICMainWindow;
 class iRICMainWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	iRICMainWindowActionManager(iRICMainWindow* parent);

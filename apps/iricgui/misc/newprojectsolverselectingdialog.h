@@ -20,8 +20,10 @@ public:
 	~NewProjectSolverSelectingDialog();
 	SolverDefinitionAbstract* selectedSolver();
 	void setSolver(const QString& folderName);
+
 private slots:
 	void listDoubleClicked();
+
 private:
 	SolverDefinitionList* m_solverList;
 	Ui::NewProjectSolverSelectingDialog* ui;

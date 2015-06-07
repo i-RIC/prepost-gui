@@ -14,9 +14,11 @@
 
 class PreProcessorStructured2dGridShapeDataItem : public PreProcessorGridShapeDataItem
 {
+
 private:
 	static const int normalOutlineWidth = 1;
 	static const int selectedOutlineWidth = 2;
+
 public:
 	PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorStructured2dGridShapeDataItem();
@@ -26,6 +28,7 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -34,6 +37,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setupActors();
 	void updateActorSettings();
+
 private:
 	vtkSmartPointer<vtkActor> m_outlineActor;
 	vtkSmartPointer<vtkActor> m_wireframeActor;

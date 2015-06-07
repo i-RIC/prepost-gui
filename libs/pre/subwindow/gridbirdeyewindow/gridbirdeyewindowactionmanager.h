@@ -9,6 +9,7 @@ class GridBirdEyeWindow;
 class GridBirdEyeWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	GridBirdEyeWindowActionManager(GridBirdEyeWindow* parent);
@@ -18,6 +19,7 @@ public:
 
 	QMenu* drawMenu() {return m_drawMenu;}
 //	void connectWithDataModel() override;
+
 private:
 	void init();
 	void setupDrawMenu();

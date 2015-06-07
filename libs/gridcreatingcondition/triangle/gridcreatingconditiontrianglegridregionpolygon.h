@@ -6,6 +6,7 @@
 class GridCreatingConditionTriangleGridRegionPolygon : public GridCreatingConditionTriangleAbstractPolygon
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionTriangleGridRegionPolygon(GridCreatingConditionTriangle* parent);
 };

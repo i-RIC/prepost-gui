@@ -10,6 +10,7 @@ class Grid;
 class PreProcessorBCGroupDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorBCGroupDataItem(PreProcessorDataItem* parent);

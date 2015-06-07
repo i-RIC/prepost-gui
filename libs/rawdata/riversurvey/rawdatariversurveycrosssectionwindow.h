@@ -40,6 +40,7 @@ class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCrosssectionWindow :
 	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
+
 public:
 	const static int TABLE_CHECK_WIDTH = 20;
 	const static int TABLE_DATA_WIDTH = 160;
@@ -139,16 +140,19 @@ private:
 	QList<RawDataRiverPathPoint*> m_points;
 	QIcon m_icon;
 	ColorSource* m_colorSource;
+
 public:
 	friend class RawDataRiverSurveyCrosssectionWindowGraphicsView;
 };
 
 class RawDataRiverSurveyCrosssectionEditCommand : public QUndoCommand
 {
+
 public:
 	RawDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, RawDataRiverPathPoint* p, const RawDataRiverCrosssection::AltitudeList& after, const RawDataRiverCrosssection::AltitudeList& before, RawDataRiverSurveyCrosssectionWindow* w, RawDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
 	void redo() override;
 	void undo() override;
+
 private:
 	bool m_apply;
 	bool m_first;

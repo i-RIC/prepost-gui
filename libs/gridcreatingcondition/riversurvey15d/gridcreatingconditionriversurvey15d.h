@@ -29,6 +29,7 @@ class RiverGridCtrlSolver;
 class GridCreatingConditionRiverSurvey15D : public GridCreatingCondition
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
@@ -177,11 +178,13 @@ public slots:
 	void repositionPoints();
 	void deletePoints();
 	void hideCreateRegion();
+
 private slots:
 	void addPoints();
 	void restoreMouseEventMode();
 	void handleDataChange();
 	void handleDataDestroy();
+
 public:
 	friend class GridCreatingConditionRiverSurvey15DPointAddDialog;
 	friend class GridCreatingConditionRiverSurvey15DPointRepositionDialog;

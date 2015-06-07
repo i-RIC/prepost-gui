@@ -4,6 +4,7 @@
 /// Misc class to define some structs and enum to define structured grid regions
 class StructuredGridRegion
 {
+
 public:
 	/// Two-dimensional structured grid range
 	struct Range2d {

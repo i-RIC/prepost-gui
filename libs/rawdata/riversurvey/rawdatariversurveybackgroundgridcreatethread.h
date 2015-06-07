@@ -16,9 +16,11 @@ class RiverGridCtrlSolver;
 class RawDataRiverSurveyBackgroundGridCreateThread : public QThread
 {
 	Q_OBJECT
+
 private:
 	static const int IDIVNUM = 4;
 	static const int JDIVNUM = 20;
+
 public:
 	RawDataRiverSurveyBackgroundGridCreateThread(RawDataRiverSurvey* parent);
 	~RawDataRiverSurveyBackgroundGridCreateThread();

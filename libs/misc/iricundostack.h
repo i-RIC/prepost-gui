@@ -8,6 +8,7 @@
 /// QUndoStack instance to be used in iRIC GUI. It implements singleton design pattern.
 class MISCDLL_EXPORT iRICUndoStack : public QUndoStack
 {
+
 private:
 	iRICUndoStack(QObject* parent = 0);
 	static const int UNDOLIMIT;

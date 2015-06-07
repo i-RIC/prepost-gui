@@ -9,6 +9,7 @@ class QDomNode;
 class GUICOREDLL_EXPORT InputConditionContainerInteger : public InputConditionContainer
 {
 	Q_OBJECT
+
 public:
 	InputConditionContainerInteger() : InputConditionContainer() {
 		m_default = 0;

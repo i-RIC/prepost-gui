@@ -33,10 +33,12 @@ class GridCreatingConditionCenterAndWidthCoordinatesEditCommand;
 class GridCreatingConditionCenterAndWidth : public GridCreatingCondition
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
 	const static int initialDivision = 100;
+
 public:
 	static const int FONTSIZE = 17;
 	enum MouseEventMode {

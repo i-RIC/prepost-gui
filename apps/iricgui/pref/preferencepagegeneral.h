@@ -14,6 +14,7 @@ namespace Ui
 class PreferencePageGeneral : public PreferencePage
 {
 	Q_OBJECT
+
 public:
 	explicit PreferencePageGeneral(QWidget* parent = nullptr);
 	~PreferencePageGeneral();

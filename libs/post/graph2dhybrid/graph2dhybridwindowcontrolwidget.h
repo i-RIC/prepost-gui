@@ -31,6 +31,7 @@ public:
 	void fitSize();
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer) const;
+
 signals:
 	void dataSourceButtonClicked();
 	void axisButtonClicked();
@@ -43,6 +44,7 @@ signals:
 	void jValueChanged(int j);
 	void kValueChanged(int k);
 	void indexValueChanged(int index);
+
 private:
 	Ui::Graph2dHybridWindowControlWidget* ui;
 };

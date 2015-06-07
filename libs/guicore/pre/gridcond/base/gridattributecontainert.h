@@ -22,6 +22,7 @@
 template <class V>
 class GridAttributeContainerT : public GridAttributeContainer
 {
+
 public:
 	/// Constructor
 	GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond)

@@ -35,6 +35,7 @@ class QSignalMapper;
 class PreProcessorDataModel : public PreProcessorDataModelInterface
 {
 	Q_OBJECT
+
 private:
 	static const int OLDMENULIST_MAX = 5;
 
@@ -82,6 +83,7 @@ protected slots:
 	void setupGridCreationMenuContent();
 	void setupBoundaryConditionSettingMenuContent();
 	void importHydraulicData();
+
 signals:
 	void additionalMenusUpdated(const QList<QMenu*>& menus);
 

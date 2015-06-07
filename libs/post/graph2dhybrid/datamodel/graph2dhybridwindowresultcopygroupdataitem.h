@@ -8,6 +8,7 @@ class Graph2dHybridWindowResultCopyDataItem;
 class Graph2dHybridWindowResultCopyGroupDataItem : public Graph2dHybridWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Graph2dHybridWindowResultCopyGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowResultCopyGroupDataItem();

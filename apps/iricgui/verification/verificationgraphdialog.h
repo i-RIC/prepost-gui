@@ -20,6 +20,7 @@ namespace Ui
 class VerificationGraphDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	enum GraphType {gtSWDvsValues, gtSWDvsError, gtMVvsCR, gtMVvsError};
 	explicit VerificationGraphDialog(iRICMainWindow* mainWindow);
@@ -34,6 +35,7 @@ public:
 		m_activeMeasuredData = nullptr;
 		m_activeValue = "";
 	}
+
 public slots:
 	/// Open setting dialog.
 	bool setting();
@@ -41,6 +43,7 @@ public slots:
 	void exportData();
 
 	void setType(int type);
+
 private:
 	void updateGraph();
 	void clearData();

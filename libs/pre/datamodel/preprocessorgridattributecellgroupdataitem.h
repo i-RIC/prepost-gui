@@ -15,6 +15,7 @@ class PreProcessorGridAttributeCellDataItem;
 class PreProcessorGridAttributeCellGroupDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* parent);

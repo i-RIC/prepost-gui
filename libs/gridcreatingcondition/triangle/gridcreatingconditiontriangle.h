@@ -41,9 +41,11 @@ class GridCreatingConditionTriangleAddDivisionLineCommand;
 class GridCreatingConditionTriangle : public GridCreatingCondition
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
+
 public:
 	enum SelectMode {
 		smNone,
@@ -93,6 +95,7 @@ public:
 	bool ready() const override {return true;}
 	bool create(QWidget* parent) override;
 	void showInitialDialog() override;
+
 private slots:
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
@@ -104,6 +107,7 @@ private slots:
 	void deletePolygon(bool force = false);
 	void deleteLine(bool force = false);
 	void cancel() {m_canceled = true;}
+
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -116,6 +120,7 @@ protected:
 		m_filename = "gridcreatingcondition.dat";
 	}
 	void doApplyOffset(double x, double y) override;
+
 private:
 	bool checkCondition();
 	bool selectObject(QPoint point);
@@ -170,6 +175,7 @@ private:
 	double lastX;
 	double lastY;
 	bool m_canceled;
+
 public:
 	friend class GridCreatingConditionTriangleCreator;
 	friend class GridCreatingConditionTrianglePropertyEditCommand;

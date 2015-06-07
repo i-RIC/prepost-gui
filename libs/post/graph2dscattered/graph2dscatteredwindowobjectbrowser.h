@@ -12,6 +12,7 @@ class QModelIndex;
 class Graph2dScatteredWindowObjectBrowser : public ObjectBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dScatteredWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}

@@ -9,6 +9,7 @@ class QAction;
 class GUICOREDLL_EXPORT PreProcessorGridCreatingConditionDataItemInterface : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridCreatingConditionDataItemInterface(GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorGridCreatingConditionDataItemInterface();

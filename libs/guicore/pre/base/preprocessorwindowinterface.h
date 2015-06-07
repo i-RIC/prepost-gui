@@ -9,6 +9,7 @@ class PropertyBrowser;
 
 class GUICOREDLL_EXPORT PreProcessorWindowInterface : public QMainWindow
 {
+
 public:
 	/// constructor
 	PreProcessorWindowInterface(QWidget* widget);

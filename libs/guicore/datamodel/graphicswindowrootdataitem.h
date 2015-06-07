@@ -10,6 +10,7 @@ class QMainWindow;
 
 class GUICOREDLL_EXPORT GraphicsWindowRootDataItem : public GraphicsWindowDataItem
 {
+
 public:
 	/// Constructor
 	GraphicsWindowRootDataItem(QMainWindow* window, ProjectDataItem* parent);

@@ -9,6 +9,7 @@ class Structured15DGridWithCrossSectionCrossSectionWindow;
 class Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView : public QAbstractItemView
 {
 	Q_OBJECT
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -54,14 +55,17 @@ public:
 	void cameraZoomOutX();
 	void cameraZoomInY();
 	void cameraZoomOutY();
+
 private slots:
 	void moveSelectedRows();
+
 protected:
 	int moveWidth();
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
 	void wheelEvent(QWheelEvent* event) override;
+
 private:
 	void setupActions();
 	void setupMenu();

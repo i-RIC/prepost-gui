@@ -6,6 +6,7 @@
 class GridCreatingConditionCompoundChannelGridRegionPolygon : public GridCreatingConditionCompoundChannelAbstractPolygon
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCompoundChannelGridRegionPolygon(GridCreatingConditionCompoundChannel* parent);
 };

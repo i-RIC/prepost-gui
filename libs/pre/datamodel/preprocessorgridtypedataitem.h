@@ -15,6 +15,7 @@ class ScalarsToColorsContainer;
 class PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~PreProcessorGridTypeDataItem();

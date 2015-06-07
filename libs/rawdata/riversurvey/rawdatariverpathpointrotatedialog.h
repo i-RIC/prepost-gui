@@ -19,13 +19,16 @@ public:
 	explicit RawDataRiverPathPointRotateDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointRotateDialog();
 	void setCurrentRelativeAngle(double current);
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void relativeChange();
 	void incrementChange();
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	void doReset();
 	void apply();

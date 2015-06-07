@@ -20,6 +20,7 @@ class SolverDefinitionGridAttribute;
 class PreProcessorRawDataTopDataItem : public PreProcessorRawDataTopDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorRawDataTopDataItem(PreProcessorDataItem* parent);

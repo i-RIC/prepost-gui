@@ -8,6 +8,7 @@
 /// Algorithm to sumdivide structured grid cells
 class GUIBASEDLL_EXPORT vtkSubdivideGrid : public vtkStructuredGridAlgorithm
 {
+
 public:
 	static vtkSubdivideGrid* New();
 	vtkTypeRevisionMacro(vtkSubdivideGrid,vtkStructuredGridAlgorithm);

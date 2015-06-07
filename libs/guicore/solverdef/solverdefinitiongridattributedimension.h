@@ -10,6 +10,7 @@ class GridAttributeDimensionSelectWidget;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimension : public SolverDefinitionNode
 {
+
 public:
 	SolverDefinitionGridAttributeDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* parent)
 		: SolverDefinitionNode(node, translator) {

@@ -13,6 +13,7 @@ class QXmlStreamWriter;
 
 class GRAPH2D_EXPORT Graph2dWindowMarkerSetting
 {
+
 public:
 	enum Orientation {
 		oHorizontal,
@@ -24,6 +25,7 @@ public:
 	};
 	class GRAPH2D_EXPORT Graph2dWindowMarkerSettingItem
 	{
+
 	public:
 		Graph2dWindowMarkerSettingItem();
 		Orientation orientation() const {return m_orientation;}

@@ -15,6 +15,7 @@ class PreProcessorGridDataItem;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridType : public SolverDefinitionNode
 {
+
 public:
 	enum GridType {
 		gtUnknownGrid,
@@ -76,6 +77,7 @@ protected:
 	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
 	QMap<QString, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
 	QMap<QString, QString> m_solutionCaptions;
+
 private:
 	void setGridType(const QDomElement& elem);
 	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);

@@ -22,11 +22,13 @@ struct Post2dWindowStructuredParticleSetSetting {
 class Post2dWindowNodeVectorParticleGroupStructuredDataItem : public Post2dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowNodeVectorParticleGroupStructuredDataItem(Post2dWindowDataItem* parent)
 		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
 		setDefaultValues();
 	}
+
 protected:
 	vtkPointSet* newParticles(int i) override;
 	void setupParticleSources() override;
@@ -35,6 +37,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void setDefaultValues();
 
@@ -42,6 +45,7 @@ private:
 	QList<vtkSubdivideGrid*> m_subdivideGrids;
 
 	QList<Post2dWindowStructuredParticleSetSetting> m_settings;
+
 public:
 	friend class Post2dWindowParticleStructuredSetProperty;
 };

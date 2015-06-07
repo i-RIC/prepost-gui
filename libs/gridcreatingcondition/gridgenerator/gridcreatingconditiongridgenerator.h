@@ -7,6 +7,7 @@
 class GridCreatingConditionGridGenerator : public GridCreatingCondition
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionGridGenerator(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionGridGenerator();
@@ -17,6 +18,7 @@ public:
 	bool setupParameters();
 	void showInitialDialog() override;
 	void clear() override;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

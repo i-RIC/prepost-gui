@@ -26,11 +26,14 @@ public:
 	void setEndPoint(RawDataRiverPathPoint* p);
 	RawDataRiverPathPoint* startPoint();
 	RawDataRiverPathPoint* endPoint();
+
 public slots:
 	void accept() override;
+
 private slots:
 	void handleStartUpdate();
 	void handleEndUpdate();
+
 private:
 	QList<RawDataRiverPathPoint*> m_points;
 	GridCreatingConditionRiverSurvey* m_condition;

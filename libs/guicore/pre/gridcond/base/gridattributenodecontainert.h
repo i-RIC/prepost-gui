@@ -10,6 +10,7 @@
 template <class V, class DA>
 class GridAttributeNodeContainerT : public GridAttributeContainerT<V>
 {
+
 public:
 	/// Constructor
 	GridAttributeNodeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond)

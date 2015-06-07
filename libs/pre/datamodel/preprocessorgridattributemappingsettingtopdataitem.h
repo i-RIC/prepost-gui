@@ -11,6 +11,7 @@ class QAction;
 class PreProcessorGridAttributeMappingSettingTopDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAttributeMappingSettingTopDataItem(PreProcessorDataItem* parent);

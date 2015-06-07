@@ -9,6 +9,7 @@ class PreProcessorGridAttributeNodeDataItem;
 
 class PreProcessorGridCrosssectionWindowProjectDataItem : public ProjectDataItem
 {
+
 public:
 	PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const QString& cond, QWidget* parentWindow);
 	~PreProcessorGridCrosssectionWindowProjectDataItem();
@@ -18,9 +19,11 @@ public:
 		return m_window;
 	}
 	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem() {return m_item;}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	PreProcessorGridAttributeNodeDataItem* m_item;
 	PreProcessorGridCrosssectionWindow* m_window;

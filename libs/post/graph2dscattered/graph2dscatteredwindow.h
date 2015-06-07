@@ -16,6 +16,7 @@ class Graph2dScatteredWindow :
 	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
+
 public:
 	explicit Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi);
 	~Graph2dScatteredWindow();

@@ -14,6 +14,7 @@ class QAbstractButton;
 class GridCreatingConditionCenterAndWidthDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCenterAndWidthDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthDialog();
@@ -25,17 +26,22 @@ public:
 	void setJMax(int j);
 	void setWidth(double w);
 	void setLength(double l);
+
 public slots:
 	void setStreamWiseLabel();
 	void setCrossStreamLabel();
+
 private slots:
 	void setStreamWiseNumber();
 	void setCrossStreamNumber();
 	void handleButtonClick(QAbstractButton* button);
+
 signals:
 	void applied(QDialog* d);
+
 protected:
 	double m_length;
+
 private:
 	void apply();
 	Ui::GridCreatingConditionCenterAndWidthDialog* ui;

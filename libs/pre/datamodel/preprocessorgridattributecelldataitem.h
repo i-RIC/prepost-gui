@@ -12,6 +12,7 @@ class vtkStructuredGrid;
 class PreProcessorGridAttributeCellDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);

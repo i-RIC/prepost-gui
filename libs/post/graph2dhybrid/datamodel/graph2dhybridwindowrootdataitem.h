@@ -18,6 +18,7 @@ class Graph2dWindowMarkerGroupDataItem;
 class Graph2dHybridWindowRootDataItem : public Graph2dWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dHybridWindowRootDataItem(Graph2dHybridWindow* window, ProjectDataItem* parent);
@@ -39,16 +40,20 @@ public:
 	}
 	void updateData(int fn);
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
+
 signals:
 	void standardModelSetuped();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	Graph2dHybridWindowResultGroupDataItem* m_resultGroupItem;
 	Graph2dHybridWindowResultCopyGroupDataItem* m_resultCopyGroupItem;
 	Graph2dHybridWindowImportDataGroupDataItem* m_importDataGroupItem;
 	Graph2dWindowMarkerGroupDataItem* m_markerGroupItem;
+
 public:
 	friend class Graph2dHybridWindowProjectDataItem;
 	friend class Graph2dHybridWindowDataModel;

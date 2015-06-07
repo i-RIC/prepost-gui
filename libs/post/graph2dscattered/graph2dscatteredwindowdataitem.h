@@ -13,6 +13,7 @@ class PostSolutionInfo;
 class Graph2dScatteredWindowDataItem : public Graph2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dScatteredWindowDataItem(Graph2dWindowDataItem* parent)

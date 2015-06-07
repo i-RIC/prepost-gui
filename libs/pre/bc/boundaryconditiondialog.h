@@ -24,6 +24,7 @@ class iRICMainWindow;
 class BoundaryConditionDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
@@ -74,6 +75,7 @@ private:
 	InputConditionContainerInteger m_opacityContainer;
 	InputConditionContainerInteger m_showNameContainer;
 	InputConditionContainerInteger m_pointSizeContainer;
+
 public:
 	friend class InputConditionContainerSet;
 };

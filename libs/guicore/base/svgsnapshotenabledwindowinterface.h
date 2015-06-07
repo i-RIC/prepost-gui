@@ -9,6 +9,7 @@ class QSvgGenerator;
 /// saving snapshot of the window as SVG.
 class SvgSnapshotEnabledWindowInterface
 {
+
 public:
 	/// Render itself into the QSvgGenerator instance handled.
 	virtual renderSvg(QSvgGenerator* generator) = 0;

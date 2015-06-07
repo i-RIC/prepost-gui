@@ -21,14 +21,17 @@ class RawDataRiverPathPointInsertDialog : public QDialog
 public:
 	explicit RawDataRiverPathPointInsertDialog(RawDataRiverPathPoint* target, bool insert, RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointInsertDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
 	void setPoint(const QVector2D& position);
 	void setDefaultName();
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
 	void handleRatioToggle(bool toggled);
+
 private:
 	void initializeItems();
 	void setDefaultPosition();

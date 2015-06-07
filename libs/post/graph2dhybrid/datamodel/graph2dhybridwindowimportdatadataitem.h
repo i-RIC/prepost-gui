@@ -11,6 +11,7 @@ class QwtPlotCustomCurve;
 class Graph2dHybridWindowImportDataDataItem : public Graph2dHybridWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Graph2dHybridWindowImportDataDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowImportDataDataItem();
@@ -33,6 +34,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
+
 private:
 	QVector<double> m_xValues;
 	QVector<double> m_yValues;

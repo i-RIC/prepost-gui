@@ -24,8 +24,10 @@ class Post2dWindowContourSelectSolution;
 class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int DEFAULT_NUMOFDIV = 15;
+
 public:
 	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
@@ -50,10 +52,12 @@ public:
 
 public slots:
 	void exclusivelyCheck(Post2dWindowNodeScalarDataItem* item);
+
 protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void setupActors();
 	void updateActorSettings();

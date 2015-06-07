@@ -20,14 +20,17 @@ class RawDataRiverPathPointExpandDialog : public QDialog
 public:
 	explicit RawDataRiverPathPointExpandDialog(RawDataRiverSurvey* rs, QWidget* parent = 0);
 	~RawDataRiverPathPointExpandDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void distanceChanged();
 	void incrementChanged();
 	void ratioChanged();
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	void apply();
 	void doReset();

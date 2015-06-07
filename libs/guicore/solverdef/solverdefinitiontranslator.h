@@ -9,6 +9,7 @@
 /// This class represents translator for Solver Definition files
 class GUICOREDLL_EXPORT SolverDefinitionTranslator
 {
+
 public:
 	/// Constructor
 	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale) {

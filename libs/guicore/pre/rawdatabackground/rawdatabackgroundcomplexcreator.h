@@ -10,6 +10,7 @@
 
 class RawDataBackgroundComplexCreator : public RawDataCreator
 {
+
 protected:
 	/// Constructor
 	RawDataBackgroundComplexCreator() : RawDataCreator() {
@@ -18,6 +19,7 @@ protected:
 		m_cellMappers.append(new RawDataBackgroundCellMapperT<int, vtkIntArray>(this));
 		m_typeName = "complexBackground";
 	}
+
 public:
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override {
 		SolverDefinitionGridComplexAttribute* tmpcond = dynamic_cast<SolverDefinitionGridComplexAttribute* >(condition);
@@ -37,6 +39,7 @@ public:
 		}
 		return m_instance;
 	}
+
 protected:
 	static RawDataBackgroundComplexCreator* m_instance;
 

@@ -6,6 +6,7 @@
 class InputConditionWidgetFunctionalDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
+
 public:
 	InputConditionWidgetFunctionalDelegate(QObject* = 0) {}
 

@@ -14,6 +14,7 @@ class RawDataRiverSurveyProxyDisplaySettingCommand;
 class RawDataRiverSurveyProxy : public RawDataProxy
 {
 	Q_OBJECT
+
 public:
 	RawDataRiverSurveyProxy(RawDataRiverSurvey* rawdata) : RawDataProxy(rawdata) {}
 	~RawDataRiverSurveyProxy();
@@ -22,6 +23,7 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 public slots:
 	void updateGraphics() override;
 
@@ -29,6 +31,7 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 private:
 	bool m_showBackground;
 	bool m_showLines;
@@ -49,6 +52,7 @@ private:
 	vtkSmartPointer<vtkActor2D> m_labelActor;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
+
 public:
 	friend class RawDataRiverSurveyProxyDisplaySettingCommand;
 };

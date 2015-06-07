@@ -10,6 +10,7 @@
 
 class RawDataPolygonCellMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataPolygonCellMapperSetting() : RawDataMapperSetting() {}
 	virtual ~RawDataPolygonCellMapperSetting() {}
@@ -19,6 +20,7 @@ public:
 template <class V, class DA>
 class RawDataPolygonCellMapperT : public RawDataCellMapperT<V, DA>
 {
+
 public:
 	RawDataPolygonCellMapperT(RawDataCreator* parent)
 		: RawDataCellMapperT<V, DA>(parent) {

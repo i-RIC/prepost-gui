@@ -16,6 +16,7 @@ class PreProcessorGridAttributeNodeDataItem;
 class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* parent);
@@ -73,6 +74,7 @@ private:
 	int m_opacityPercent;
 	bool m_attributeBrowserFixed;
 	QMap<QString, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
+
 public:
 	friend class PreProcessorSelectCondition;
 };

@@ -26,8 +26,10 @@ class GridBirdEyeWindowEditColorCommand;
 class GridBirdEyeWindowDataModel : public GraphicsWindowSimpleDataModel
 {
 	Q_OBJECT
+
 private:
 	const static int DEFAULT_SCALE = 3;
+
 public:
 	enum ColorType {ctNode, ctCell, ctCustom};
 	/// Constructor
@@ -42,13 +44,16 @@ public:
 	void updateAxes();
 	void setAxesColor(const QColor& col);
 	QColor axesColor();
+
 public slots:
 	void toXYPlane();
 	void toYZPlane();
 	void toZXPlane();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
+
 private:
 	void init();
 	void setDefaultColor();
@@ -68,6 +73,7 @@ private:
 	vtkSmartPointer<vtkOrientationMarkerWidget> m_widget;
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
+
 public:
 	friend class GridBirdEyeWindowEditZScaleCommand;
 	friend class GridBirdEyeWindowEditColorCommand;

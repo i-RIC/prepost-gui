@@ -10,6 +10,7 @@
 class Graph2dScatteredWindowResultGroupDataItem : public Graph2dScatteredWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Graph2dScatteredWindowResultGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dScatteredWindowResultGroupDataItem();

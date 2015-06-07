@@ -6,6 +6,7 @@
 
 class NetworkSetting : public QNetworkProxyFactory
 {
+
 public:
 	enum ProxyMode {
 		pmNoProxy,

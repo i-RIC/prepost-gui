@@ -10,6 +10,7 @@ class vtkTextProperty;
 /// Container class for vtkTextProperty setting
 class GUIBASEDLL_EXPORT vtkTextPropertySettingContainer : public XmlAttributeContainer
 {
+
 public:
 	/// Font family
 	enum FontFamily {

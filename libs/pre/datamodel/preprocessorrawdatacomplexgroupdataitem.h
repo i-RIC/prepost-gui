@@ -16,6 +16,7 @@ class RawDataBackgroundComplex;
 class PreProcessorRawDataComplexGroupDataItem : public PreProcessorRawDataGroupDataItem, public PreProcessorRawDataComplexGroupDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorRawDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);

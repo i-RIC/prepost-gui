@@ -6,6 +6,7 @@
 
 class GridDisplaySetting
 {
+
 public:
 	enum ShapeMode {
 		ShapeOutline,

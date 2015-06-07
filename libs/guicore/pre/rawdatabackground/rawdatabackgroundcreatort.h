@@ -9,6 +9,7 @@
 template <class V, class DA>
 class RawDataBackgroundCreatorT : public RawDataCreator
 {
+
 protected:
 	/// Constructor
 	RawDataBackgroundCreatorT() : RawDataCreator() {
@@ -16,6 +17,7 @@ protected:
 		m_nodeMappers.append(new RawDataBackgroundNodeMapperT<V, DA>(this));
 		m_cellMappers.append(new RawDataBackgroundCellMapperT<V, DA>(this));
 	}
+
 public:
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override {
 		SolverDefinitionGridAttributeT<V>* tmpcond = dynamic_cast<SolverDefinitionGridAttributeT<V> * >(condition);

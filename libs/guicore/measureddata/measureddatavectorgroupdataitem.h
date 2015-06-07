@@ -27,6 +27,7 @@ class MeasuredDataVectorSetProperty;
 class MeasuredDataVectorGroupDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
@@ -38,9 +39,11 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+
 public slots:
 	void exclusivelyCheck(MeasuredDataVectorDataItem*);
 	void showSettingDialog() {showPropertyDialog();}
+
 protected:
 	QDialog* propertyDialog(QWidget* p) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
@@ -55,6 +58,7 @@ protected:
 	void setCurrentSolution(const QString& currentSol);
 	const QString& currentSolution() {return m_currentSolution;}
 	void doApplyOffset(double x, double y) override;
+
 private:
 	void setupActors();
 	void calculateStandardValue();
@@ -88,6 +92,7 @@ protected:
 	double m_standardValue;
 	double m_legendLength;
 	double m_minimumValue;
+
 public:
 	friend class MeasuredDataVectorSelectValue;
 	friend class MeasuredDataVectorSetProperty;

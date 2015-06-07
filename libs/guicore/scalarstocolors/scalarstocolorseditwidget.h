@@ -8,6 +8,7 @@ class ScalarsToColorsContainer;
 
 class GUICOREDLL_EXPORT ScalarsToColorsEditWidget : public QWidget
 {
+
 public:
 	ScalarsToColorsEditWidget(QWidget* parent = nullptr);
 	ScalarsToColorsContainer* container() const {

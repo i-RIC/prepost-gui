@@ -9,6 +9,7 @@ class GridAttributeContainer;
 
 class RawDataMapperSetting
 {
+
 public:
 	RawDataMapperSetting() {}
 	virtual ~RawDataMapperSetting() {}
@@ -16,6 +17,7 @@ public:
 
 class RawDataMapper : public QObject
 {
+
 public:
 	/// Constructor
 	RawDataMapper(RawDataCreator* parent) : QObject(parent) {

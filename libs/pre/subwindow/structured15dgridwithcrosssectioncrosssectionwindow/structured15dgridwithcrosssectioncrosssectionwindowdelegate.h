@@ -6,6 +6,7 @@
 class Structured15DGridWithCrossSectionCrossSectionWindowDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
+
 public:
 	Structured15DGridWithCrossSectionCrossSectionWindowDelegate();
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option,

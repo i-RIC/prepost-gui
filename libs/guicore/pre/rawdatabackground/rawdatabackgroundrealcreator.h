@@ -6,11 +6,13 @@
 
 class RawDataBackgroundRealCreator : public RawDataBackgroundCreatorT<double, vtkDoubleArray>
 {
+
 private:
 	RawDataBackgroundRealCreator()
 		: RawDataBackgroundCreatorT<double, vtkDoubleArray>() {
 		m_typeName = "realBackground";
 	}
+
 public:
 	static RawDataBackgroundRealCreator* instance() {
 		if (! m_instance) {
@@ -18,6 +20,7 @@ public:
 		}
 		return m_instance;
 	}
+
 protected:
 	static RawDataBackgroundRealCreator* m_instance;
 };

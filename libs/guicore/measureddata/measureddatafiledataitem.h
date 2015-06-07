@@ -12,6 +12,7 @@ class QAction;
 class GUICOREDLL_EXPORT MeasuredDataFileDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent);

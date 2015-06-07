@@ -15,6 +15,7 @@ class GridCreatingConditionRectangularRegion;
 class GridCreatingConditionRectangularRegionSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRectangularRegionSettingDialog();
@@ -37,8 +38,10 @@ private slots:
 	void checkYMax();
 
 	void handleButtonClick(QAbstractButton* button);
+
 protected:
 	void showEvent(QShowEvent*) override;
+
 private:
 	Ui::GridCreatingConditionRectangularRegionSettingDialog* ui;
 	GridCreatingConditionRectangularRegion* m_condition;

@@ -8,6 +8,7 @@
 /// results are included in the current CGNS file.
 class GUICOREDLL_EXPORT PostAbstractSteps : public ProjectDataItem
 {
+
 public:
 	/// Constructor
 	PostAbstractSteps(ProjectDataItem* parent) : ProjectDataItem(parent) {}
@@ -15,6 +16,7 @@ public:
 	virtual void loadFromCgnsFile(const int fn) = 0;
 	/// Returns true if the current CGNS file containes more than one result step.
 	virtual bool dataExists() const = 0;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}

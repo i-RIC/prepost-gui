@@ -6,6 +6,7 @@
 
 class RawDataPolygonIntegerCreator : public RawDataPolygonCreatorT<int, vtkIntArray>
 {
+
 public:
 	RawDataPolygonIntegerCreator()
 		: RawDataPolygonCreatorT<int, vtkIntArray>() {

@@ -12,6 +12,7 @@ namespace Ui
 class PreProcessorGridShapeNewPositionDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridShapeNewPositionDialog(QWidget* parent = nullptr);
 	~PreProcessorGridShapeNewPositionDialog();
@@ -21,6 +22,7 @@ public:
 	void setPosition(double x, double y);
 	void setIndex(int index);
 	void setIJ(int i, int j);
+
 private:
 	Ui::PreProcessorGridShapeNewPositionDialog* ui;
 };

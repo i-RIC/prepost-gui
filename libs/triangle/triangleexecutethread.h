@@ -12,6 +12,7 @@ struct triangulateio;
 class TRIANGLEDLL_EXPORT TriangleExecuteThread : public QThread
 {
 	Q_OBJECT
+
 public:
 	explicit TriangleExecuteThread(QObject* parent = nullptr);
 	void setIOs(triangulateio* in, triangulateio* out) {
@@ -27,6 +28,7 @@ public:
 		m_fileName = filename;
 		m_workFolder = workFolder;
 	}
+
 protected:
 	void run() override;
 

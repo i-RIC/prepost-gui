@@ -7,6 +7,7 @@
 
 class PreProcessorCustomMappingSetting : XmlAttributeContainer
 {
+
 public:
 	PreProcessorCustomMappingSetting();
 

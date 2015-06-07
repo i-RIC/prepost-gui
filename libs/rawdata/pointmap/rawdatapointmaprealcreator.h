@@ -8,6 +8,7 @@
 class RD_POINTMAP_EXPORT RawDataPointmapRealCreator : public RawDataCreator
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataPointmapRealCreator();

@@ -11,6 +11,7 @@ class GridComplexConditionWidget;
 
 class PreProcessorRawDataComplexGroupDataItemInterface
 {
+
 public:
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual ProjectData* projectData() = 0;

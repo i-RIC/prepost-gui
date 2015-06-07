@@ -15,6 +15,7 @@ class RawDataMapper;
 template <class V, class DA>
 class RawDataPointMapT : public RawDataPointmap
 {
+
 public:
 	RawDataPointMapT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);
 

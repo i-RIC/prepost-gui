@@ -12,6 +12,7 @@ class vtkRenderWindow;
 /// taking snapshot as raster image.
 class GUICOREDLL_EXPORT SnapshotEnabledWindowInterface
 {
+
 public:
 	/// Constructor
 	SnapshotEnabledWindowInterface();

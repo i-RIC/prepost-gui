@@ -24,6 +24,7 @@ class Post3dWindow :
 	public ParticleExportWindowInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi);
@@ -57,6 +58,7 @@ public slots:
 	void cameraZXPlane();
 	void editBackgroundColor();
 	void editZScale();
+
 private:
 	void init();
 	/// Background color
@@ -68,6 +70,7 @@ private:
 	Post3dWindowDataModel* m_dataModel;
 	Post3dWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+
 public:
 	friend class Post3dWindowProjectDataItem;
 	friend class Post3dWindowActionManager;

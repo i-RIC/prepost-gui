@@ -11,6 +11,7 @@ class SolverDefinitionGridAttribute;
 class RD_POLYGON_EXPORT RawDataPolygonShapeExporter : public RawDataExporter
 {
 	Q_OBJECT
+
 public:
 	RawDataPolygonShapeExporter(RawDataCreator* creator);
 	bool doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) override;

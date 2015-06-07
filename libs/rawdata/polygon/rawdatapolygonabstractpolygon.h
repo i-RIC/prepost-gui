@@ -22,6 +22,7 @@ class QPolygonF;
 class RawDataPolygonAbstractPolygon : public QObject
 {
 	Q_OBJECT
+
 public:
 	RawDataPolygonAbstractPolygon(RawDataPolygon* parent);
 	~RawDataPolygonAbstractPolygon();
@@ -49,6 +50,7 @@ public:
 	void setLookupTable(vtkScalarsToColors* t);
 	void setColor(const QColor& color);
 	void setMapping(RawDataPolygonColorSettingDialog::Mapping m);
+
 private:
 	void setupContainers();
 	void setupActors();
@@ -64,6 +66,7 @@ private:
 	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
 	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
 	vtkSmartPointer<vtkDoubleArray> m_scalarValues;
+
 protected:
 	RawDataPolygon* m_parent;
 

@@ -10,6 +10,7 @@ class Grid;
 class PreProcessorGridCreatingConditionDataItem : public PreProcessorGridCreatingConditionDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* parent);
@@ -38,14 +39,17 @@ public:
 	QAction* clearAction() override {return m_clearAction;}
 	QMenu* menu();
 	virtual void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(3);}
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdate2Ds() override;
 	void doApplyOffset(double x, double y) override;
+
 public slots:
 	void silentDeleteCondition();
+
 private slots:
 	void resetCondition();
 	void deleteCondition();
@@ -53,8 +57,10 @@ private slots:
 	void handleNewGrid(Grid* newgrid);
 	void handleTmpGrid(Grid* tmpgrid);
 	void switchAlgorithm();
+
 signals:
 	void gridCreated();
+
 private:
 	GridCreatingCondition* m_condition;
 	/// Action to create grid.
@@ -65,6 +71,7 @@ private:
 	QAction* m_deleteAction;
 	/// Action to clear grid creating condition.
 	QAction* m_clearAction;
+
 public:
 	friend class GridCreatingCondition;
 };

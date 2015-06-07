@@ -24,9 +24,11 @@ class PreProcessorGridRelatedComplexConditionDataItem;
 class GUICOREDLL_EXPORT GridComplexConditionWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	class Setting
 	{
+
 	public:
 		Setting() {
 			containerSet = nullptr;

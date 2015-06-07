@@ -19,6 +19,7 @@ class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem;
 class Post2dWindowParticleUnstructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post2dWindowParticleUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowParticleUnstructuredSettingDialog();

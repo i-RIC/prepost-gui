@@ -19,6 +19,7 @@ class Post2dBirdEyeWindowAxesDataItem;
 class Post2dBirdEyeWindowRootDataItem : public GraphicsWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWindow* window, ProjectDataItem* parent);

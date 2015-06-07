@@ -16,15 +16,19 @@ namespace Ui
 class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog(Structured15DGridWithCrossSectionCrossSection* cross, int from, int to, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parent);
 	~Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void hOffsetChange();
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	Ui::Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog* ui;
 

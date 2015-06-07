@@ -21,6 +21,7 @@ class RawDataExporter;
 
 class GUICOREDLL_EXPORT RawDataCreator : public QObject
 {
+
 public:
 	/// Constructor
 	RawDataCreator();

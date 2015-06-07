@@ -11,12 +11,15 @@ class Post2dWindowRawDataDataItem;
 class Post2dWindowRawDataGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowRawDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent);
 	void updateChildren();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	QMap<QString, Post2dWindowRawDataDataItem*> m_itemNameMap;
 	SolverDefinitionGridAttribute* m_condition;

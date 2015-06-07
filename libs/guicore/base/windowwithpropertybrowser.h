@@ -5,6 +5,7 @@ class PropertyBrowser;
 
 class WindowWithPropertyBrowser
 {
+
 public:
 	PropertyBrowser* propertyBrowser() const {
 		return m_propertyBrowser;

@@ -10,6 +10,7 @@ class vtkLegendBoxActor;
 /// Container class for Legendbox representation
 class GUIBASEDLL_EXPORT vtkLegendBoxRepresentation : public vtkBorderRepresentation
 {
+
 public:
 	vtkTypeRevisionMacro(vtkLegendBoxRepresentation, vtkBorderRepresentation);
 	virtual void PrintSelf(ostream& os, vtkIndent indent) override;
@@ -47,6 +48,7 @@ protected:
 	~vtkLegendBoxRepresentation();
 
 	vtkLegendBoxActor* LegendBoxActor;
+
 private:
 	vtkLegendBoxRepresentation(const vtkLegendBoxRepresentation&);  // Not implemented
 	void operator=(const vtkLegendBoxRepresentation&);    // Not implemented

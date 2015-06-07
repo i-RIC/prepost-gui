@@ -16,6 +16,7 @@ class QLabel;
 
 class GUICOREDLL_EXPORT InputConditionPage : public QWidget
 {
+
 public:
 	/// Constructor
 	InputConditionPage(QWidget* parent) : QWidget(parent) {}

@@ -9,6 +9,7 @@
 class MISCDLL_EXPORT ThreadWithProgressInfo : public QThread
 {
 	Q_OBJECT
+
 public:
 	/// constructor
 	ThreadWithProgressInfo(QObject* parent);

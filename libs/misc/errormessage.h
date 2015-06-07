@@ -7,6 +7,7 @@
 /// The class that contains error messages.
 class MISCDLL_EXPORT ErrorMessage : public QString
 {
+
 public:
 	ErrorMessage(const QString& msg);
 };

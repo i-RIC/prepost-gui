@@ -21,6 +21,7 @@ class Post2dWindowStreamlineStructuredSetProperty;
 class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* parent);

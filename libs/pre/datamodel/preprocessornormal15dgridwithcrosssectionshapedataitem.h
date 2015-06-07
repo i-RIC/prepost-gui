@@ -13,11 +13,13 @@ class Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem;
 class PreProcessorNormal15DGridWithCrossSectionShapeDataItem : public PreProcessorGridShapeDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int normalLineWidth = 1;
 	static const int selectedLineWidth = 2;
 	static const int normalPointSize = 1;
 	static const int selectedPointSize = 3.5;
+
 public:
 	PreProcessorNormal15DGridWithCrossSectionShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorNormal15DGridWithCrossSectionShapeDataItem();
@@ -30,14 +32,17 @@ public:
 	void updateCrossSectionWindows();
 	void requestCrossSectionWindowDelete(Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* item);
 	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setupActors();
 	void updateActorSettings();
+
 private slots:
 	void openCrossSectionWindow();
+
 private:
 	Structured15DGridWithCrossSectionCrossSection* selectedCrossSection();
 
@@ -47,6 +52,7 @@ private:
 	vtkSmartPointer<vtkDataSetMapper> m_vertexMapper;
 	QAction* m_openCrossSectionWindowAction;
 	QList<Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem*> m_crosssectionWindows;
+
 public:
 	friend class Structured15DGridCrossSectionEditCommand;
 	friend class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog;

@@ -7,6 +7,7 @@
 
 class GUICOREDLL_EXPORT PostSeriesDataContainer : public PostDataContainer
 {
+
 public:
 	PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}

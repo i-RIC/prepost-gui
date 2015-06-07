@@ -22,6 +22,7 @@ class QLineF;
 class RawDataPointmapBreakLine : public QObject
 {
 	Q_OBJECT
+
 public:
 	RawDataPointmapBreakLine(RawDataPointmap* parent);
 	~RawDataPointmapBreakLine();
@@ -39,6 +40,7 @@ public:
 
 	void setActive(bool active);
 	void setHidden(bool hidden);
+
 private:
 	void setupContainers();
 	void setupActors();
@@ -51,6 +53,7 @@ private:
 	/// The grid that has cells, those consists of the edge of m_vtkPolyLine.
 	vtkSmartPointer<vtkPolyData> m_edges;
 	vtkSmartPointer<vtkPolyData> m_vertices;
+
 protected:
 	RawDataPointmap* m_parent;
 

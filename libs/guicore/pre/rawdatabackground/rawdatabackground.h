@@ -27,6 +27,7 @@ public:
 	Type type() const {return m_type;}
 	void setType(Type t) {m_type = t;}
 	bool getValueRange(double* min, double* max) override;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
@@ -39,8 +40,10 @@ private slots:
 protected:
 	QVariant m_customValue;
 	Type m_type;
+
 private:
 	QAction* m_editValueAction;
+
 public:
 	friend class RawDataBackgroundEditValueCommand;
 };

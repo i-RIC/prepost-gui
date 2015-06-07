@@ -15,6 +15,7 @@
 
 class GridComplexAttributeContainer : public GridAttributeContainerT<int>
 {
+
 public:
 	/// Constructor
 	GridComplexAttributeContainer(Grid* grid, SolverDefinitionGridComplexAttribute* cond)

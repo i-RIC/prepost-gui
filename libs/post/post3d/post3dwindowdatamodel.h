@@ -16,6 +16,7 @@ class Post3dObjectBrowserView;
 class Post3dWindowDataModel : public Graphics3DWindowDataModel
 {
 	Q_OBJECT
+
 public:
 	static const int MOVEWIDTH = 1;
 	/// Constructor
@@ -25,6 +26,7 @@ public:
 	Post3dWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
 	void editZScale();
+
 public slots:
 	void gridShapeSetting();
 	void surfaceSetting();
@@ -35,13 +37,16 @@ public slots:
 	void isosurfaceSetting();
 	void titleSetting();
 	void timeSetting();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void init();
 	Post3dWindowZoneDataItem* getZoneDataItem();
+
 private:
 	double m_zScale;
+
 public:
 	friend class Post3dWindow;
 	friend class Post3dWindowDataModelProjectDataItem;

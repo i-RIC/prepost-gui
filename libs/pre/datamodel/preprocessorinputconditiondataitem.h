@@ -10,6 +10,7 @@ class QAction;
 class PreProcessorInputConditionDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent);
@@ -24,11 +25,13 @@ public:
 	bool exportInputCondition(const QString& filename);
 	bool isSet() {return m_isSet;}
 	bool isSetupCorrectly() {return m_dialog != nullptr;}
+
 public slots:
 	void setModified() override {
 		PreProcessorDataItem::setModified();
 	}
 	void showDialog(bool readonly = false);
+
 private:
 	bool m_isSet;
 	InputConditionDialog* m_dialog;

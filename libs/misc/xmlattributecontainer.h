@@ -10,6 +10,7 @@
 /// Container class that has I/O function to store data as XML attributes.
 class MISCDLL_EXPORT XmlAttributeContainer
 {
+
 public:
 	XmlAttributeContainer();
 	virtual ~XmlAttributeContainer();

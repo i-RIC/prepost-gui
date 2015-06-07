@@ -7,6 +7,7 @@
 class RD_NETCDF_EXPORT RawDataNetcdfCreator : public RawDataCreator
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataNetcdfCreator();

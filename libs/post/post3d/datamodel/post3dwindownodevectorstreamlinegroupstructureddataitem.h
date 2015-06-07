@@ -24,9 +24,11 @@ class Post3dWindowStreamlineStructuredSetProperty;
 class Post3dWindowNodeVectorStreamlineGroupStructuredDataItem : public Post3dWindowNodeVectorStreamlineGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorStreamlineGroupStructuredDataItem();
+
 protected:
 	vtkPointSet* getSource(int i);
 	void setupActors() override;
@@ -34,6 +36,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void setupDefaultValues();
 
@@ -41,6 +44,7 @@ private:
 	QList<vtkSubdivideGrid*> m_subdivideGrids;
 
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_settings;
+
 public:
 	friend class Post3dWindowStreamlineStructuredSetProperty;
 };

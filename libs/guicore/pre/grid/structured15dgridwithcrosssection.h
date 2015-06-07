@@ -9,6 +9,7 @@ class Structured15DGridWithCrossSectionCrossSection;
 
 class GUICOREDLL_EXPORT Structured15DGridWithCrossSection : public Grid2D
 {
+
 public:
 	/// Constructor
 	Structured15DGridWithCrossSection(ProjectDataItem* parent);
@@ -33,6 +34,7 @@ public:
 		Grid::setModified();
 		m_vertexGrid->Modified();
 	}
+
 private:
 	void init();
 	vtkUnstructuredGrid* m_vertexGrid;

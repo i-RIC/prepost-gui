@@ -28,6 +28,7 @@ class Grid;
 class PreProcessorBCDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting = false);
@@ -76,6 +77,7 @@ protected:
 	void doApplyOffset(double x, double y) override;
 	virtual void loadExternalData(const QString& filename) override;
 	virtual void saveExternalData(const QString& filename) override;
+
 public slots:
 	bool showDialog();
 
@@ -91,6 +93,7 @@ signals:
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
+
 private:
 	void setupActors();
 	void updateActorSettings();

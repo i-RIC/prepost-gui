@@ -12,10 +12,12 @@ class Post3dWindowFaceDataSetSetting;
 class Post3dWindowFaceDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	enum Direction {dirI, dirJ, dirK};
 	class Setting
 	{
+
 	public:
 		bool enabled;
 		Post3dWindowFaceDataItem::Direction direction;

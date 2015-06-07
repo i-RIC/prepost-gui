@@ -10,6 +10,7 @@ class Graph2dHybridWindow;
 class Graph2dHybridWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dHybridWindowActionManager(Graph2dHybridWindow* parent);
@@ -23,6 +24,7 @@ public:
 
 	QMenu* drawMenu() const {return m_drawMenu;}
 	void connectWithDataModel();
+
 private:
 	void init();
 	void setupDrawMenu();

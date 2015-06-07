@@ -12,6 +12,7 @@ class SolverConsoleWindow;
 class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindowProjectDataItem : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	const static int MAXLINES = 200;
 	/// Constructor

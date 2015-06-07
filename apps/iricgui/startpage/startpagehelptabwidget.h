@@ -7,9 +7,11 @@ class StartPageLinks;
 class StartPageHelpTabWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	explicit StartPageHelpTabWidget(QWidget* parent = nullptr);
 	void setLocale(const QString& locale);
+
 private:
 	StartPageLinks* m_links;
 };

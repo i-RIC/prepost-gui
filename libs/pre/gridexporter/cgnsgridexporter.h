@@ -7,6 +7,7 @@
 class CgnsGridExporter : public GridInternalExporter
 {
 	Q_OBJECT
+
 public:
 	CgnsGridExporter();
 	virtual ~CgnsGridExporter() {}

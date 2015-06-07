@@ -26,6 +26,7 @@ public:
 	void setNumExpansion(int num);
 	double weightExponent();
 	void setWeightExponent(double exp);
+
 private:
 	Ui::PreProcessorGridAttributeTemplateMappingSettingDialog* ui;
 };

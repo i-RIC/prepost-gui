@@ -16,6 +16,7 @@ namespace Ui
 class GridCreatingConditionRiverSurvey15DPointMoveDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit GridCreatingConditionRiverSurvey15DPointMoveDialog(
 		GridCreatingConditionRiverSurvey15D* gc,

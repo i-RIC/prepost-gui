@@ -10,6 +10,7 @@ class PreProcessorRawDataGroupDataItemInterface;
 
 class GUICOREDLL_EXPORT PreProcessorRawDataTopDataItemInterface : public PreProcessorDataItem
 {
+
 public:
 	PreProcessorRawDataTopDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorRawDataTopDataItemInterface();

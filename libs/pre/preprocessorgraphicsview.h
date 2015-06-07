@@ -6,6 +6,7 @@
 
 class PreProcessorGraphicsView : public PreProcessorGraphicsViewInterface
 {
+
 public:
 	PreProcessorGraphicsView(QWidget* parent);
 	~PreProcessorGraphicsView() {}

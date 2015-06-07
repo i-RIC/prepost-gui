@@ -12,6 +12,7 @@
 template <class V, class DA>
 class RawDataNetcdfCreatorT : public RawDataNetcdfCreator
 {
+
 public:
 	/// Constructor
 	RawDataNetcdfCreatorT()

@@ -24,6 +24,7 @@ class Post2dBirdEyeWindow :
 	public WindowWithObjectBrowserInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi);
@@ -52,8 +53,10 @@ public slots:
 	void cameraZXPlane();
 	void editBackgroundColor();
 	void editZScale();
+
 signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
+
 private:
 	void init();
 	/// Background color
@@ -65,6 +68,7 @@ private:
 	Post2dBirdEyeWindowDataModel* m_dataModel;
 	Post2dBirdEyeWindowActionManager* m_actionManager;
 	QByteArray m_initialState;
+
 public:
 	friend class Post2dBirdEyeWindowProjectDataItem;
 	friend class Post2dBirdEyeWindowActionManager;

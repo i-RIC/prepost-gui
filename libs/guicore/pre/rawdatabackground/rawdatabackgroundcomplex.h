@@ -8,6 +8,7 @@ class PreProcessorRawDataComplexGroupDataItemInterface;
 class RawDataBackgroundComplex : public RawDataBackground
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataBackgroundComplex(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* att);

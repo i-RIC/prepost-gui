@@ -34,6 +34,7 @@ class PostSolutionInfo;
 
 class GUICOREDLL_EXPORT GraphicsWindowDataItem : public ProjectDataItem
 {
+
 public:
 	static const int dragUpdateRate = 10;
 	/// Constructor
@@ -178,6 +179,7 @@ public:
 	*/
 class GraphicsWindowDataItemStandardItemChangeCommand : public QUndoCommand
 {
+
 public:
 	GraphicsWindowDataItemStandardItemChangeCommand(GraphicsWindowDataItem* item)
 		: QUndoCommand(QObject::tr("Object Browser Item Change")) {
@@ -226,6 +228,7 @@ public:
 		m_item->updateVisibility();
 		m_item->setIsCommandExecuting(false);
 	}
+
 private:
 	QVariant m_oldDisplayText;
 	QVariant m_oldCheckState;

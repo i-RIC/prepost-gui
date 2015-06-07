@@ -22,6 +22,7 @@ struct Post2dWindowUnstructuredParticleSetSetting {
 class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem : public Post2dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
 		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
@@ -31,6 +32,7 @@ public:
 	~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem();
 	void showPropertyDialog() override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 protected:
 	void setupActors() override;
 	vtkPointSet* newParticles(int i) override;
@@ -43,8 +45,10 @@ protected:
 	void clearSetting();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private slots:
 	void exitDialogMode();
+
 private:
 	void setDefaultValues();
 	void setupTmpSource();

@@ -18,16 +18,21 @@ class QStandardItemModel;
 class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog : public QDialog
 {
 	Q_OBJECT
+
 private:
 	static const int defaultRowHeight = 20;
+
 public:
 	explicit GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog(GridCreatingConditionCompoundChannelAbstractLine* l, GridCreatingConditionCompoundChannel* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	QVector<QVector2D> getCoords();
 	void setupData();

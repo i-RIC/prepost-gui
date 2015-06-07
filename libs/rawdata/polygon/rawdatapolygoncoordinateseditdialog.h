@@ -17,8 +17,10 @@ class QStandardItemModel;
 class RawDataPolygonCoordinatesEditDialog : public QDialog
 {
 	Q_OBJECT
+
 private:
 	static const int defaultRowHeight = 20;
+
 public:
 	explicit RawDataPolygonCoordinatesEditDialog(RawDataPolygon* polygon, QWidget* parent = nullptr);
 	~RawDataPolygonCoordinatesEditDialog();

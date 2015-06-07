@@ -8,6 +8,7 @@
 class GUICOREDLL_EXPORT PostIterationSteps : public PostAbstractSteps
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PostIterationSteps(ProjectDataItem* parent) : PostAbstractSteps(parent) {}

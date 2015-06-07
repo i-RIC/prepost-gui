@@ -9,6 +9,7 @@ class QDomNode;
 class GUICOREDLL_EXPORT InputConditionContainerReal : public InputConditionContainer
 {
 	Q_OBJECT
+
 public:
 	InputConditionContainerReal() : InputConditionContainer() {
 		m_value = 0;
@@ -48,6 +49,7 @@ protected:
 	}
 	double m_default;
 	double m_value;
+
 signals:
 	void valueChanged(double newvalue);
 	void valueChanged();

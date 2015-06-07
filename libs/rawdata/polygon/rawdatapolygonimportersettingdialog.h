@@ -30,8 +30,10 @@ public:
 
 public slots:
 	void accept() override;
+
 private slots:
 	void updateTable();
+
 private:
 	void setLabels(const QStringList& labels);
 	void setData(const QList<QList<QVariant> >& data);

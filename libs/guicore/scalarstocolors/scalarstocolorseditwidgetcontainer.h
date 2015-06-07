@@ -8,6 +8,7 @@
 
 class GUICOREDLL_EXPORT ScalarsToColorsEditWidgetContainer : public QWidget
 {
+
 public:
 	ScalarsToColorsEditWidgetContainer(QWidget* parent);
 	void setWidget(ScalarsToColorsEditWidget* w);

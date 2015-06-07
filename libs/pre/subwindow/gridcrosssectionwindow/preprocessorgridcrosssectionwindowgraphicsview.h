@@ -15,6 +15,7 @@ class QRubberBand;
 class PreProcessorGridCrosssectionWindowGraphicsView : public QAbstractItemView
 {
 	Q_OBJECT
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -63,14 +64,17 @@ public:
 	void cameraZoomInY();
 	void cameraZoomOutY();
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+
 private slots:
 	void moveSelectedRows();
+
 protected:
 	int moveWidth();
 	void mouseMoveEvent(QMouseEvent* event) override;
 	void mousePressEvent(QMouseEvent* event) override;
 	void mouseReleaseEvent(QMouseEvent* event) override;
 	void wheelEvent(QWheelEvent* event) override;
+
 private:
 	double getDistance(int index, int startIndex, int endIndex);
 	void setupActions();

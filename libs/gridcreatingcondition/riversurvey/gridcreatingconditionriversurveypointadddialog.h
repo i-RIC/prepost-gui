@@ -15,14 +15,18 @@ class QAbstractButton;
 class GridCreatingConditionRiverSurveyPointAddDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionRiverSurveyPointAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointAddDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	bool m_applied;
 	void apply();

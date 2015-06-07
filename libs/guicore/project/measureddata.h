@@ -14,6 +14,7 @@
 class MeasuredData : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	enum ArrowLengthMode {
 		almAuto,

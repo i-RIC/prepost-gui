@@ -10,6 +10,7 @@ class QCursor;
 
 class Post3dWindowGraphicsView : public VTK3DGraphicsView
 {
+
 public:
 	Post3dWindowGraphicsView(QWidget* parent)
 		: VTK3DGraphicsView(parent)

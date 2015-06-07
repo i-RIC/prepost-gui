@@ -20,6 +20,7 @@ public:
 	void setRequired();
 	void accept() override;
 	void reject() override;
+
 private:
 	Ui::GridCreatingConditionTriangleRemeshDialog* ui;
 	bool m_required;

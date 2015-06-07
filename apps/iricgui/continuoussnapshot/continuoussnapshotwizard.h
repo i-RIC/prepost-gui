@@ -15,8 +15,10 @@ class BackgroundImageInfo;
 class ContinuousSnapshotIntroductionPage : public QWizardPage
 {
 	Q_OBJECT
+
 public:
 	ContinuousSnapshotIntroductionPage(QWidget* parent = nullptr);
+
 private:
 	QLabel* m_label;
 };
@@ -24,9 +26,11 @@ private:
 class ContinuousSnapshotConfirmPage : public QWizardPage
 {
 	Q_OBJECT
+
 public:
 	ContinuousSnapshotConfirmPage(QWidget* parent = nullptr);
 	void initializePage() override;
+
 private:
 	ContinuousSnapshotWizard* m_wizard;
 	QListWidget* m_fileList;
@@ -35,6 +39,7 @@ private:
 class ContinuousSnapshotWizard : public QWizard
 {
 	Q_OBJECT
+
 public:
 	enum Output {Onefile, Respectively};
 	enum Layout {Asis, Horizontally, Vertically};

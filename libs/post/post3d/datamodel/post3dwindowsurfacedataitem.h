@@ -5,6 +5,7 @@
 
 class Post3dWindowSurfaceDataItem : public Post3dWindowDataItem
 {
+
 public:
 	Post3dWindowSurfaceDataItem();
 };

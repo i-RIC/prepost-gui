@@ -24,6 +24,7 @@ class Graph2dWindowDataItemStandardItemChangeCommand;
 
 class GRAPH2D_EXPORT Graph2dWindowDataItem : public ProjectDataItem
 {
+
 public:
 	static const int dragUpdateRate = 10;
 	/// Constructor

@@ -15,6 +15,7 @@ class PreProcessorWindow;
 class PreProcessorWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorWindowActionManager(PreProcessorWindow* parent);
@@ -24,8 +25,10 @@ public:
 	QAction* calcCondExportAction;
 	QMenu* calcCondMenu() {return m_calcCondMenu;}
 	void connectWithDataModel();
+
 private slots:
 	void informCgnsListUpdate(const QList<CgnsFileList::CgnsFileEntry*>& list);
+
 private:
 	/// Initialization
 	void init();

@@ -8,6 +8,7 @@ class CenteredCheckBox;
 class PreProcessorGridCrosssectionWindowDelegate : public QStyledItemDelegate
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridCrosssectionWindowDelegate()
 		: QStyledItemDelegate()

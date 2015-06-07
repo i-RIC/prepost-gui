@@ -13,6 +13,7 @@ class QVector2D;
 class GridCreatingConditionCompoundChannelSpline
 {
 	const static int ERROR_COORD = -1E8;
+
 public:
 	GridCreatingConditionCompoundChannelSpline();
 	~GridCreatingConditionCompoundChannelSpline();
@@ -23,6 +24,7 @@ public:
 	QPointF getNearestPoint(const QPointF& p) const;
 	QPointF getIntersectPoint(const QLineF& f) const;
 	const static QPointF errorPoint;
+
 private:
 	QPointF twoDiv(double leftP, double centerP, double rightP, double leftV, double centerV, double rightV, const QPointF& p, int depthLeft) const;
 	vtkSmartPointer<vtkParametricSpline> m_spline;

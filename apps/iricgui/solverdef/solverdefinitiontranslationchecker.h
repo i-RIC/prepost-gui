@@ -23,6 +23,7 @@ class QXmlStreamWriter;
  */
 class SolverDefinitionTranslationChecker
 {
+
 public:
 	/// This class is a container class that contains the translation messages.
 	/**
@@ -32,6 +33,7 @@ public:
 	 */
 	class TranslationMessage
 	{
+
 	public:
 		/// An enumeration that defines the types of messages
 		enum MessageType {
@@ -65,6 +67,7 @@ public:
 		const QString& translation() const {return m_translation;}
 		/// The type of message.
 		MessageType messageType() const {return m_messageType;}
+
 	private:
 		MessageType m_messageType;
 		QString m_source;
@@ -76,6 +79,7 @@ public:
 		save(solverfolder, locale);
 	}
 	/// Overwrites the translation file with modifications to reflect the check result.
+
 private:
 	/// Load a solver definition file and a translation file.
 	void load(const QString& solverfolder, const QLocale& locale);

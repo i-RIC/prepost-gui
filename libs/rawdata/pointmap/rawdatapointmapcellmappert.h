@@ -12,6 +12,7 @@
 
 class RawDataPointmapCellMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataPointmapCellMapperSetting() : RawDataMapperSetting() {}
 	~RawDataPointmapCellMapperSetting() {}
@@ -21,6 +22,7 @@ public:
 template <class V, class DA>
 class RawDataPointmapCellMapperT : public RawDataCellMapperT<V, DA>
 {
+
 public:
 	RawDataPointmapCellMapperT(RawDataCreator* parent)
 		: RawDataCellMapperT<V, DA>(parent) {

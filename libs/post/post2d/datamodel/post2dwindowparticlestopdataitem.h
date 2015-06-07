@@ -12,6 +12,7 @@ class Post2dWindowParticlesTopSetProperty;
 class Post2dWindowParticlesTopDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* parent);

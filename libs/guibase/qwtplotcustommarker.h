@@ -49,6 +49,7 @@ class QwtSymbol;
 
 class GUIBASEDLL_EXPORT QwtPlotCustomMarker: public QwtPlotItem
 {
+
 public:
 
 	/*!

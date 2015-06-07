@@ -28,6 +28,7 @@ struct CtrlPointSelectionInfo;
 
 class RD_RIVERSURVEY_EXPORT RawDataRiverPathPoint
 {
+
 public:
 	enum Bank {
 		bk_LeftBank,
@@ -356,6 +357,7 @@ private:
 	QVector<Interpolator2D1*> m_backgroundLGridLines;
 
 	QVector<Interpolator2D1*> m_backgroundRGridLines;
+
 public:
 	friend class RawDataRiverSurveyBackgroundGridCreateThread;
 };

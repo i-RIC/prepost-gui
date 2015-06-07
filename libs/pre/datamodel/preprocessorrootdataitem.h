@@ -24,6 +24,7 @@ class AttributeBrowserTargetDataItem;
 class PreProcessorRootDataItem : public GraphicsWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorRootDataItem(PreProcessorWindow* window, ProjectDataItem* parent);

@@ -8,6 +8,7 @@ class RawDataProxy;
 class Post2dWindowRawDataDataItem : public RawDataProxyDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowRawDataDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowRawDataDataItem();
@@ -19,6 +20,7 @@ public:
 
 private slots:
 	void updateCaption(const QString& newcaption);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

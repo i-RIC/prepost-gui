@@ -14,6 +14,7 @@ namespace Ui
 class SolverDefinitionListDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	SolverDefinitionListDialog(SolverDefinitionList* list, QWidget* parent = nullptr);
@@ -23,13 +24,16 @@ public:
 	void setup();
 	/// Show detail dialog on the specified index (row)
 	void showDetail(int index);
+
 public slots:
 	/// Handler for double clicking on solver definition table;
 	void handleCellDoubleClick(int row, int column);
 	/// Show detail dialog about the solver currently selected
 	void showDetailOfCurrent();
+
 protected:
 	void changeEvent(QEvent* e) override;
+
 private:
 	Ui::SolverDefinitionListDialog* ui;
 	SolverDefinitionList* m_solverList;

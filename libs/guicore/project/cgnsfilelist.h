@@ -11,10 +11,12 @@
 class GUICOREDLL_EXPORT CgnsFileList : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	/// This class handles the information about a CGNS file in the project.
 	class CgnsFileEntry : public ProjectDataItem
 	{
+
 	public:
 		/// Constructor
 		CgnsFileEntry(ProjectDataItem* parent) : ProjectDataItem(parent) {}
@@ -26,9 +28,11 @@ public:
 		const QString& filename() {return m_filename;}
 		/// Comment for this calculation
 		const QString& comment() {return m_comment;}
+
 	protected:
 		void doLoadFromProjectMainFile(const QDomNode& node) override;
 		void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	private:
 		QString m_filename;
 		QString m_comment;
@@ -49,6 +53,7 @@ public:
 	QStringList containedFiles() override;
 	/// Propose a file name for next cgns to create.
 	QString proposeFilename();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -56,6 +61,7 @@ protected:
 signals:
 	void cgnsFilesUpdated(QList<CgnsFileList::CgnsFileEntry*>);
 	void cgnsFileSwitched(QString newname);
+
 private:
 	QMap<QString, CgnsFileEntry*> m_cgnsFiles;
 	CgnsFileEntry* m_current;

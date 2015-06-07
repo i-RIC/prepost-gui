@@ -28,9 +28,11 @@ public:
 	void setImportData(Graph2dHybridWindowImportDataGroupDataItem* group);
 	const Graph2dHybridWindowResultSetting& setting();
 	void setMainWindow(iRICMainWindowInterface* mainw) {m_mainWindow = mainw;}
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void changeAxis(int index);
 	void changePointComboBox(int index);
@@ -48,6 +50,7 @@ private slots:
 	void editSetting();
 	void importCsv();
 	void deleteImportItem();
+
 private:
 	void setTargetDataTypeInfo();
 	void clearTargetDataTypeInfo();

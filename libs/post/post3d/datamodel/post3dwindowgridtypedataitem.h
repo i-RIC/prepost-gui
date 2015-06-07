@@ -13,6 +13,7 @@ class LookupTableContainer;
 class Post3dWindowGridTypeDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~Post3dWindowGridTypeDataItem();

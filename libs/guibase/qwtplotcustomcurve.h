@@ -13,6 +13,7 @@
 */
 class GUIBASEDLL_EXPORT QwtPlotCustomCurve : public QwtPlotCurve
 {
+
 public:
 	explicit QwtPlotCustomCurve();
 	QwtPlotCustomCurve(const QString& title);

@@ -17,6 +17,7 @@ namespace Ui
 class PreProcessorScalarBarLegendBoxSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent = nullptr);
 	~PreProcessorScalarBarLegendBoxSettingDialog();

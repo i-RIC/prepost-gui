@@ -7,6 +7,7 @@
 
 class GridAttributeEditWidgetContainer : public QWidget
 {
+
 public:
 	GridAttributeEditWidgetContainer(QWidget* parent)
 		: QWidget(parent) {
@@ -23,6 +24,7 @@ public:
 	QSize sizeHint() const override {
 		return m_widget->sizeHint();
 	}
+
 private:
 	GridAttributeEditWidget* m_widget;
 };

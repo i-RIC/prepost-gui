@@ -26,8 +26,10 @@ class Post3dWindowParticleStructuredSetProperty;
 class Post3dWindowNodeVectorParticleGroupDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	const static int DEFAULT_SIZE = 3;
+
 public:
 	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 	/// Constructor
@@ -40,8 +42,10 @@ public:
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 	const QString& currentSolution() {return m_currentSolution;}
+
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*);
+
 protected:
 	void informGridUpdate();
 	vtkPointSet* getRegion();
@@ -79,6 +83,7 @@ protected:
 	StructuredGridRegion::RegionMode m_regionMode;
 
 	double m_zScale;
+
 public:
 	friend class Post3dWindowParticleStructuredSetProperty;
 	friend class Post3dWindowGridParticleSelectSolution;

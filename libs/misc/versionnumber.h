@@ -25,6 +25,7 @@
  */
 class MISCDLL_EXPORT VersionNumber
 {
+
 public:
 	/// Constructor
 	VersionNumber() {
@@ -77,6 +78,7 @@ public:
 	bool operator !=(const VersionNumber& v) const {
 		return !(operator==(v));
 	}
+
 private:
 	void init();
 	unsigned int m_major;

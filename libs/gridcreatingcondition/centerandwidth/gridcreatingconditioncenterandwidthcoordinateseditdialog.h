@@ -17,16 +17,21 @@ class QStandardItemModel;
 class GridCreatingConditionCenterAndWidthCoordinatesEditDialog : public QDialog
 {
 	Q_OBJECT
+
 private:
 	static const int defaultRowHeight = 20;
+
 public:
 	explicit GridCreatingConditionCenterAndWidthCoordinatesEditDialog(GridCreatingConditionCenterAndWidth* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthCoordinatesEditDialog();
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	QVector<QVector2D> getCoords();
 	void setupData();

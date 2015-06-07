@@ -21,6 +21,7 @@ class QwtPlotCurve;
 class InputConditionWidgetFunctionalDialog : public QDialog
 {
 	Q_OBJECT
+
 private:
 	enum AxisSetting {asLeft, asRight, asNone};
 
@@ -51,6 +52,7 @@ public slots:
 		emit accepted();
 		hide();
 	}
+
 private slots:
 	void clear();
 	void import();
@@ -59,6 +61,7 @@ private slots:
 	void add();
 	void sort();
 	void updateGraph();
+
 private:
 	static const int defaultRowHeight = 26;
 	static void setInt(const QVariant& v, QVariant& target);

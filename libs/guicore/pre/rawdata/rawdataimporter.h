@@ -13,6 +13,7 @@ class PreProcessorRawDataGroupDataItemInterface;
 
 class GUICOREDLL_EXPORT RawDataImporter : public QObject
 {
+
 public:
 	/// Constructor
 	RawDataImporter(RawDataCreator* creator);

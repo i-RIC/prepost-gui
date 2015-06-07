@@ -27,6 +27,7 @@ class GridAttributeContainer;
 class GUICOREDLL_EXPORT Grid : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	static const int MAX_DRAWCELLCOUNT;
 	static const int MAX_DRAWINDEXCOUNT;
@@ -99,8 +100,10 @@ protected:
 	SolverDefinitionGridType::GridType m_gridType;
 	bool m_isModified;
 	bool m_isMasked;
+
 private:
 	void initPointers();
+
 public:
 	friend class GridInternalImporter;
 	friend class GridInternalExporter;

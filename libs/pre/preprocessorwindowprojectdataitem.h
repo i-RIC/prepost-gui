@@ -10,6 +10,7 @@ class ProjectMainFile;
 class PREDLL_EXPORT PreProcessorWindowProjectDataItem : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	/// constructor
 	explicit PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent);

@@ -8,6 +8,7 @@
 /// river survey data.
 class PreAbstractRawData : public ProjectDataItem
 {
+
 public:
 	/// Constructor
 	PreAbstractRawData(ProjectDataItem* parent);

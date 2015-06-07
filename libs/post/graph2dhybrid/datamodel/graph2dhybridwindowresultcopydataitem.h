@@ -12,6 +12,7 @@ template <typename T> class QwtSeriesData;
 class Graph2dHybridWindowResultCopyDataItem : public Graph2dHybridWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	enum IDType {
 		idtTimeBaseIterative,
@@ -42,12 +43,14 @@ public:
 	const QVector<double>& yValues() const {return m_yValues;}
 	const QString title() const;
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setVisible(bool visible) override;
 	QwtPlotCustomCurve* m_curve;
 	QwtSeriesData<double>* m_data;
+
 private:
 	QVector<double> m_xValues;
 	QVector<double> m_yValues;

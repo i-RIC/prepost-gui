@@ -7,6 +7,7 @@
 class HD_RIVERSURVEYWATERELEVATION_EXPORT HydraulicDataRiverSurveyWaterElevationImporter : public HydraulicDataImporter
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	HydraulicDataRiverSurveyWaterElevationImporter();

@@ -38,6 +38,7 @@ class PREDLL_EXPORT PreProcessorWindow :
 	public WindowWithZIndexInterface
 {
 	Q_OBJECT
+
 public:
 	enum GridState {
 		grFinished,
@@ -104,6 +105,7 @@ public slots:
 signals:
 	void additionalMenusUpdated(const QList<QMenu*>& menus);
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
+
 private:
 	void init();
 	PreProcessorDataModel* model() const;
@@ -120,6 +122,7 @@ private:
 	QByteArray m_initialState;
 	bool m_isFirstHiding;
 	bool m_isLastHiding;
+
 public:
 	friend class PreProcessorWindowProjectDataItem;
 	friend class PreProcessorWindowActionManager;

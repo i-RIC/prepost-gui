@@ -6,6 +6,7 @@
 class GridCreatingConditionCompoundChannelLowWaterChannelPolygon : public GridCreatingConditionCompoundChannelAbstractPolygon
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCompoundChannelLowWaterChannelPolygon(GridCreatingConditionCompoundChannel* parent);
 };

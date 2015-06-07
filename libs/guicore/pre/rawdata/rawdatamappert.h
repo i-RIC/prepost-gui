@@ -8,10 +8,12 @@
 template <class V>
 class RawDataMapperT : public RawDataMapper
 {
+
 public:
 	RawDataMapperT(RawDataCreator* parent)
 		: RawDataMapper(parent)
 	{}
+
 protected:
 	GridAttributeContainerT<V>* container() const {
 		return dynamic_cast<GridAttributeContainerT<V>* >(m_container);

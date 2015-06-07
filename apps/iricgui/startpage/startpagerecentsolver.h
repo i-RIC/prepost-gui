@@ -7,9 +7,11 @@
 
 class StartPageRecentSolver : public StartPageLabel
 {
+
 public:
 	StartPageRecentSolver(SolverDefinitionAbstract* solverDef, QWidget* parent);
 	SolverDefinitionAbstract* solverDefinition() {return m_solverDefinition;}
+
 private:
 	SolverDefinitionAbstract* m_solverDefinition;
 };

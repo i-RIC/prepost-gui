@@ -24,6 +24,7 @@ namespace Ui
 class GUIBASEDLL_EXPORT WaitDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit WaitDialog(QWidget* parent = nullptr);
 	~WaitDialog();

@@ -14,6 +14,7 @@ class LookupTableContainer;
 class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public Post2dWindowGridTypeDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dWindowGridTypeDataItem();
@@ -25,9 +26,11 @@ public:
 	LookupTableContainer* lookupTable(const QString& attName) const override {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void updateLookupTableRanges();
 	void setupScalarsToColors(const QString& name);

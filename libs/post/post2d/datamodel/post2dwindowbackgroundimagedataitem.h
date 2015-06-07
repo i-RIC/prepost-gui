@@ -12,6 +12,7 @@ class BackgroundImageInfo;
 class Post2dWindowBackgroundImageDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent);
 	~Post2dWindowBackgroundImageDataItem();

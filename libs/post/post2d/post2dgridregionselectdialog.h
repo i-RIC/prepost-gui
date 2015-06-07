@@ -25,6 +25,7 @@ public:
 	StructuredGridRegion::Range2d region();
 	void setRegion(const StructuredGridRegion::Range2d& region);
 	void setGridSize(int isize, int jsize);
+
 private:
 	Ui::Post2dGridRegionSelectDialog* ui;
 };

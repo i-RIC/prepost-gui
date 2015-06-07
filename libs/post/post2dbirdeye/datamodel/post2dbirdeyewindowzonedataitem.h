@@ -22,6 +22,7 @@ class PostZoneDataContainer;
 class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent);
@@ -44,6 +45,7 @@ public:
 	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const {return m_streamlineGroupDataItem;}
 	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
 	Post2dBirdEyeWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -55,6 +57,7 @@ protected:
 	Post2dBirdEyeWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post2dBirdEyeWindowCellFlagGroupDataItem* m_cellFlagGroupDataItem;
+
 private:
 	QString m_zoneName;
 	int m_zoneNumber;

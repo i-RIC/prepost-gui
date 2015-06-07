@@ -14,6 +14,7 @@ class GridCreatingConditionCtrlPointMoveCommand;
 class RD_RIVERSURVEY_EXPORT GridCreatingConditionRiverSurveyInterface : public GridCreatingCondition
 {
 	Q_OBJECT
+
 public:
 	struct GridCtrlOffsetInfo {
 		QVector2D direction;
@@ -43,6 +44,7 @@ public:
 
 class GridCreatingConditionCtrlPointMoveCommand : public QUndoCommand
 {
+
 public:
 	GridCreatingConditionCtrlPointMoveCommand(
 		bool apply,
@@ -104,6 +106,7 @@ public:
 		updateAfter();
 		return true;
 	}
+
 private:
 	void updateAfter() {
 		std::list<CtrlPointSelectionInfo> infoList = m_condition->m_selectedCtrlPointInfoList;
@@ -116,6 +119,7 @@ private:
 			m_after[i] += m_offset;
 		}
 	}
+
 private:
 	bool m_apply;
 	double m_offset;

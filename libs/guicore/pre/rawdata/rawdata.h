@@ -37,6 +37,7 @@ class GridAttributeDimensionsContainer;
 class GUICOREDLL_EXPORT RawData : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawData(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition);

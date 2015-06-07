@@ -7,6 +7,7 @@ class QVBoxLayout;
 class StartPageLinks : public QWidget
 {
 	Q_OBJECT
+
 public:
 	explicit StartPageLinks(QWidget* parent = nullptr);
 	void setupLinks(const QString& locale);

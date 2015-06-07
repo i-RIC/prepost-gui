@@ -6,6 +6,7 @@
 
 class Graph2dWindowVerticalAxisSetting : public ProjectDataItem
 {
+
 public:
 	enum RangeMode {
 		rmAuto,

@@ -20,6 +20,7 @@ class QLineF;
 class GridCreatingConditionTriangleAbstractLine : public QObject
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionTriangleAbstractLine(GridCreatingConditionTriangle* parent);
 	~GridCreatingConditionTriangleAbstractLine();
@@ -38,6 +39,7 @@ public:
 
 	void setActive(bool active);
 	virtual void finishDefinition() {}
+
 private:
 	void setupContainers();
 	void setupActors();
@@ -51,6 +53,7 @@ private:
 	/// The grid that has cells, those consists of the edge of m_vtkPolyLine.
 	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
 	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
+
 protected:
 	GridCreatingConditionTriangle* m_parent;
 

@@ -6,6 +6,7 @@
 
 class GUICOREDLL_EXPORT PostExportSetting
 {
+
 public:
 	/// Constructor
 	PostExportSetting();

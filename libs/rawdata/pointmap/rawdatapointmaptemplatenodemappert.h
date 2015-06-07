@@ -17,6 +17,7 @@
 
 class RawDataPointmapTemplateNodeMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataPointmapTemplateNodeMapperSetting() : RawDataMapperSetting() {}
 	~RawDataPointmapTemplateNodeMapperSetting() {}
@@ -26,6 +27,7 @@ public:
 template <class V, class DA>
 class RawDataPointmapTemplateNodeMapperT : public RawDataNodeMapperT<V, DA>
 {
+
 public:
 	RawDataPointmapTemplateNodeMapperT(RawDataCreator* parent)
 		: RawDataNodeMapperT<V, DA>(parent) {

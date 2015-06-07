@@ -17,8 +17,10 @@ class RawDataRiverPathPointRenameDialog : public QDialog
 public:
 	explicit RawDataRiverPathPointRenameDialog(RawDataRiverPathPoint* p, RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointRenameDialog();
+
 public slots:
 	void accept() override;
+
 private:
 	Ui::RawDataRiverPathPointRenameDialog* ui;
 	RawDataRiverPathPoint* m_point;

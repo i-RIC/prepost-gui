@@ -9,6 +9,7 @@ class QAction;
 class Post2dBirdEyeObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	Post2dBirdEyeObjectBrowserView(QWidget* parent);
 };

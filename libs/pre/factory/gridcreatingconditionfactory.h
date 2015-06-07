@@ -14,12 +14,14 @@ class QDomNode;
 
 class GridCreatingConditionFactory : public QObject
 {
+
 private:
 	/// Constructor
 	/**
 	 * this function is made to be private (Singleton pattern)
 	 */
 	GridCreatingConditionFactory(QWidget* mainWindow);
+
 public:
 	static GridCreatingConditionFactory& instance(QWidget* mainWindow) {
 		if (m_instance == nullptr) {
@@ -31,6 +33,7 @@ public:
 	GridCreatingConditionCreator* getCreator(const QString& name) const;
 	GridCreatingCondition* restore(const QDomNode& node, ProjectDataItem* item) const;
 	void setMainWindow(QWidget* mw) {m_mainWindow = mw;}
+
 private:
 	void setupNameMap();
 

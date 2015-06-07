@@ -9,6 +9,7 @@ class QAction;
 class Post2dObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	Post2dObjectBrowserView(QWidget* parent);
 };

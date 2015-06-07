@@ -16,18 +16,23 @@ class QTreeWidgetItem;
 class GUICOREDLL_EXPORT InputConditionPageList : public QTreeWidget
 {
 	Q_OBJECT
+
 private:
 	const static int WIDTH_MIN = 150;
 	const static int WIDTH_MAX = 300;
+
 public:
 	/// Constructor
 	InputConditionPageList(QWidget* w = nullptr);
 	void setup(const QDomElement& elem, const SolverDefinitionTranslator& translator);
 	void selectFirstItem();
+
 signals:
 	void selectChanged(const QString& pagename);
+
 private slots:
 	void handleSelectionChange();
+
 private:
 	QMap<QTreeWidgetItem*, QString> m_nameMap;
 };

@@ -8,6 +8,7 @@
 class RD_NETCDF_EXPORT RawDataNetcdfImporter : public RawDataImporter
 {
 	Q_OBJECT
+
 public:
 	RawDataNetcdfImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfImporter() {}

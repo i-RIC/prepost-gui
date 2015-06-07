@@ -7,6 +7,7 @@
 
 class GUICOREDLL_EXPORT Grid3D : public Grid
 {
+
 public:
 	/// Constructor
 	Grid3D(const QString& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);

@@ -22,6 +22,7 @@ class QXmlStreamWriter;
 
 class Graph2dHybridWindowResultSetting
 {
+
 public:
 	enum TimeValueType {
 		tvtTime,
@@ -93,6 +94,7 @@ public:
 	struct DataTypeInfo;
 	class Setting
 	{
+
 	public:
 		Setting() {
 			m_name = "";
@@ -133,6 +135,7 @@ public:
 		bool isBarChart() const {return m_barChart;}
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
+
 	private:
 		QString m_name;
 		AxisSide m_axisSide;
@@ -247,6 +250,7 @@ public:
 
 	void loadFromProjectMainFile(const QDomNode& node);
 	void saveToProjectMainFile(QXmlStreamWriter& writer);
+
 private:
 	static DimType dimTypeFromDataType(DataType dt);
 	void setupMap();

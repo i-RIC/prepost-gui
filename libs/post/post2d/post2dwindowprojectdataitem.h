@@ -8,6 +8,7 @@ class Post2dWindow;
 
 class POST2D_EXPORT Post2dWindowProjectDataItem : public PostProcessorWindowProjectDataItem
 {
+
 public:
 	Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 

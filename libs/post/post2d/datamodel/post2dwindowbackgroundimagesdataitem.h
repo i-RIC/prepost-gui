@@ -8,6 +8,7 @@ class QAction;
 class Post2dWindowBackgroundImagesDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowBackgroundImagesDataItem(GraphicsWindowDataItem* parent);
 	~Post2dWindowBackgroundImagesDataItem();

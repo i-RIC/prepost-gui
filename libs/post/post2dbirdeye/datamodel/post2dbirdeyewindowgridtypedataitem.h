@@ -14,6 +14,7 @@ class LookupTableContainer;
 class Post2dBirdEyeWindowGridTypeDataItem : public Post2dBirdEyeWindowDataItem, public Post2dWindowGridTypeDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dBirdEyeWindowGridTypeDataItem();

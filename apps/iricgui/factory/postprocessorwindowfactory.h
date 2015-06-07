@@ -23,6 +23,7 @@ public:
 	void loadWindowCounts(const QDomNode& node);
 	void saveWindowCounts(QXmlStreamWriter& writer);
 	void resetWindowCounts();
+
 private:
 	QMap<QString, int> m_windowCount;
 };

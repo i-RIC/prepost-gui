@@ -10,6 +10,7 @@ class PreProcessorGridCreatingConditionDataItemInterface;
 
 class GUICOREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItemInterface : public PreProcessorDataItem
 {
+
 public:
 	PreProcessorGridAndGridCreatingConditionDataItemInterface(const QString& caption, PreProcessorDataItem* parent);
 	virtual ~PreProcessorGridAndGridCreatingConditionDataItemInterface();

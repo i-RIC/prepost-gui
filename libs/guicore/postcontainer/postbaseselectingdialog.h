@@ -13,6 +13,7 @@ namespace Ui
 class GUICOREDLL_EXPORT PostBaseSelectingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	enum BaseDimension {
 		Dimension1 = 1,

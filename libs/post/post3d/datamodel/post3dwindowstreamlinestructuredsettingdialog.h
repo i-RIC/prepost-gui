@@ -15,6 +15,7 @@ class PostZoneDataContainer;
 class Post3dWindowStreamlineStructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post3dWindowStreamlineStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowStreamlineStructuredSettingDialog();
@@ -45,6 +46,7 @@ private slots:
 
 	void addData();
 	void removeData();
+
 private:
 	void setupNominations();
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);

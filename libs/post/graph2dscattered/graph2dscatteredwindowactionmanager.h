@@ -10,6 +10,7 @@ class Graph2dScatteredWindow;
 class Graph2dScatteredWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dScatteredWindowActionManager(Graph2dScatteredWindow* parent);
@@ -20,6 +21,7 @@ public:
 
 	QMenu* drawMenu() const {return m_drawMenu;}
 	void connectWithDataModel();
+
 private:
 	void init();
 	void setupDrawMenu();

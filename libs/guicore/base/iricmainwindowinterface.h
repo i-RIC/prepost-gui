@@ -17,6 +17,7 @@ class QProcessEnvironment;
 
 class GUICOREDLL_EXPORT iRICMainWindowInterface : public QMainWindow
 {
+
 public:
 	static const int STATUSBAR_DISPLAYTIME = 5000;
 	/// constructor

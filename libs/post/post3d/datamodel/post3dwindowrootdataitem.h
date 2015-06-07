@@ -19,6 +19,7 @@ class Post3dWindow;
 class Post3dWindowRootDataItem : public GraphicsWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowRootDataItem(Post3dWindow* window, ProjectDataItem* parent);
@@ -43,12 +44,14 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 //	Post3dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	QList<Post3dWindowGridTypeDataItem*> m_gridTypeDataItems;
 	PostTitleDataItem* m_titleDataItem;
 	PostTimeDataItem* m_timeDataItem;
 	Axis3dDataItem* m_axesDataItem;
+
 public:
 	friend class Post3dWindowProjectDataItem;
 	friend class Post3dWindowDataModel;

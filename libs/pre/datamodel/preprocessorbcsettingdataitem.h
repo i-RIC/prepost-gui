@@ -29,6 +29,7 @@ class WaitDialog;
 class PreProcessorBCSettingDataItem : public PreProcessorRawdataDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent);
@@ -74,6 +75,7 @@ protected:
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void doApplyOffset(double x, double y) override;
+
 private:
 	void setupActors();
 	void updateFilename();

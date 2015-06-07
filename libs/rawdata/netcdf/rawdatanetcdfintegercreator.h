@@ -7,6 +7,7 @@
 
 class RD_NETCDF_EXPORT RawDataNetcdfIntegerCreator : public RawDataNetcdfCreatorT<int, vtkIntArray>
 {
+
 public:
 	RawDataNetcdfIntegerCreator();
 	RawData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;

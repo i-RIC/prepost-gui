@@ -17,6 +17,7 @@ class QPolygonF;
 class GridCreatingConditionCompoundChannelAbstractPolygon : public QObject
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCompoundChannelAbstractPolygon(GridCreatingConditionCompoundChannel* parent);
 	~GridCreatingConditionCompoundChannelAbstractPolygon();
@@ -53,6 +54,7 @@ private:
 	/// The grid that has cells, those consists of the edge of m_vtkPolygon.
 	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
 	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
+
 protected:
 	GridCreatingConditionCompoundChannel* m_parent;
 

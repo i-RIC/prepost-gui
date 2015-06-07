@@ -11,6 +11,7 @@ class RawDataCreator;
 
 class GUICOREDLL_EXPORT RawDataExporter : public QObject
 {
+
 public:
 	/// Constructor
 	RawDataExporter(RawDataCreator* creator);
@@ -19,6 +20,7 @@ public:
 	virtual const QStringList fileDialogFilters() = 0;
 	RawDataCreator* creator();
 	const QString& caption() const {return m_caption;}
+
 protected:
 	QString m_caption;
 };

@@ -9,6 +9,7 @@ class QColor;
 class Post2dWindowNodeVectorStreamlineDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowNodeVectorStreamlineDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);

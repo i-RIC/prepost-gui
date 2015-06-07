@@ -10,6 +10,7 @@ class GDALRasterBand;
 class RawDataPointmapRealImporter : public RawDataImporter
 {
 	Q_OBJECT
+
 private:
 	enum filterString {
 		dotTopo,      ///< Topography
@@ -17,6 +18,7 @@ private:
 		dotAdf,       ///< USGS NED(*.adf)
 		dotStl        ///< STL (*.stl)
 	};
+
 public:
 	/// Constructor
 	RawDataPointmapRealImporter(RawDataCreator* creator);

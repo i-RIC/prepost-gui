@@ -8,6 +8,7 @@
 template <class V, class DA>
 class RawDataPolygonCreatorT : public RawDataPolygonCreator
 {
+
 public:
 	/// Constructor
 	RawDataPolygonCreatorT()

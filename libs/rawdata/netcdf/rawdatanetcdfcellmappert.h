@@ -10,6 +10,7 @@
 
 class RawDataNetcdfCellMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataNetcdfCellMapperSetting() : RawDataMapperSetting() {}
 	~RawDataNetcdfCellMapperSetting() {}
@@ -19,6 +20,7 @@ public:
 template <class V, class DA>
 class RawDataNetcdfCellMapperT : public RawDataCellMapperT<V, DA>
 {
+
 public:
 	RawDataNetcdfCellMapperT(RawDataCreator* parent)
 		: RawDataCellMapperT<V, DA>(parent) {

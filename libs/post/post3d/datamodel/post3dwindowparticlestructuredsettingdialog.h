@@ -15,6 +15,7 @@ class PostZoneDataContainer;
 class Post3dWindowParticleStructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post3dWindowParticleStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowParticleStructuredSettingDialog();
@@ -53,6 +54,7 @@ private slots:
 
 	void addData();
 	void removeData();
+
 private:
 	void setupNominations();
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);

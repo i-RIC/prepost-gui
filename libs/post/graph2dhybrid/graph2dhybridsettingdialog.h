@@ -18,10 +18,12 @@ public:
 	~Graph2dHybridSettingDialog();
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
 	const Graph2dHybridWindowResultSetting& setting() {return m_setting;}
+
 public slots:
 	void xAxisRadioButtonToggled();
 	void yAxisComboBoxChange(int index);
 	void accept() override;
+
 private:
 	bool axisRangesCheck();
 	void applyXAxisSetting();

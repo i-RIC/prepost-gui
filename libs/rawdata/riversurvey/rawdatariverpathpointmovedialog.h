@@ -15,18 +15,22 @@ namespace Ui
 class RawDataRiverPathPointMoveDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit RawDataRiverPathPointMoveDialog(RawDataRiverSurvey* rs, QWidget* parent = nullptr);
 	~RawDataRiverPathPointMoveDialog();
 	void setSingleSelection(bool single);
 	void setCurrentCenter(const QVector2D& current);
+
 public slots:
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void offsetChange();
 	void centerChange();
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	void doReset();
 	void apply();

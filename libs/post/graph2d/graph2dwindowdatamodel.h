@@ -25,6 +25,7 @@ class Graph2dWindowVerticalAxisSetting;
 class GRAPH2D_EXPORT Graph2dWindowDataModel : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	enum AxisSide {
 		asLeft,
@@ -50,11 +51,13 @@ public:
 	ObjectBrowserView* objectBrowserView() const {return m_objectBrowserView;}
 	Graph2dWindowVerticalAxisSetting* leftAxisSetting() const {return m_leftAxisSetting;}
 	Graph2dWindowVerticalAxisSetting* rightAxisSetting() const {return m_rightAxisSetting;}
+
 protected:
 	virtual void getYAxisValueRange(AxisSide, double* min, double* max) = 0;
 	virtual void applyAxisSetting() = 0;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 public slots:
 	/// Handle mouse press event on object browser.
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);
@@ -77,11 +80,13 @@ public slots:
 	void verticalAxisRightSetting();
 	void titleSetting();
 	void setLegendVisible(bool visible);
+
 protected slots:
 	void handleObjectBrowserChange(QStandardItem* changeditem);
 	virtual void handleObjectBrowserSelectionChange() {}
 	void handleObjectBrowserDeselection(const QModelIndex& previous);
 	void handleObjectBrowserSelection(const QModelIndex& current);
+
 protected:
 	QMainWindow* m_mainWindow;
 	Graph2dWindowView* m_view;
@@ -95,6 +100,7 @@ protected:
 	Graph2dWindowVerticalAxisSetting* m_leftAxisSetting;
 	Graph2dWindowVerticalAxisSetting* m_rightAxisSetting;
 	QString m_title;
+
 private:
 	qreal moveWidth();
 	void moveCenter(int x, int y);

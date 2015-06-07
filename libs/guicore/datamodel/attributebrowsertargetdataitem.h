@@ -18,6 +18,7 @@ class QPolygonF;
 class GUICOREDLL_EXPORT AttributeBrowserTargetDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent);
 	~AttributeBrowserTargetDataItem();

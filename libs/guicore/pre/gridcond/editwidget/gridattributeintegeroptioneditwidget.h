@@ -9,6 +9,7 @@ class QComboBox;
 
 class GridAttributeIntegerOptionEditWidget : public GridAttributeEditWidgetT<int>
 {
+
 public:
 	GridAttributeIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond);
 	~GridAttributeIntegerOptionEditWidget();
@@ -18,9 +19,11 @@ public:
 	const QMap<int, QString>& enumerations() const {return m_enumerations;}
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
+
 protected:
 	void setupWidget() override;
 	void getValueFromInnerWidget() override;
+
 private:
 	QMap<int, QString> m_enumerations;
 	QList<int> m_values;

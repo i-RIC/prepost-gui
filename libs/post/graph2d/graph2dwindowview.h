@@ -6,6 +6,7 @@
 
 class GRAPH2D_EXPORT Graph2dWindowView : public QwtPlot
 {
+
 public:
 	/// Constructor
 	Graph2dWindowView(QWidget* parent);

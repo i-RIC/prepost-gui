@@ -69,6 +69,7 @@ public:
 	/// Menu that has actions related to animation control
 	class AnimationActions : public QObject
 	{
+
 	public:
 		/// Constructor
 		AnimationActions(QObject* parent);
@@ -80,6 +81,7 @@ public:
 		QAction* actionStopAnimation;
 		QAction* actionEditSpeed;
 	};
+
 private:
 	AnimationActions* m_animationActions;
 	QLabel* m_titleLabel;

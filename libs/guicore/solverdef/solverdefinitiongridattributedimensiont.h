@@ -8,6 +8,7 @@
 template <class V>
 class SolverDefinitionGridAttributeDimensionT : public SolverDefinitionGridAttributeDimension
 {
+
 public:
 	SolverDefinitionGridAttributeDimensionT(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
 		: SolverDefinitionGridAttributeDimension(node, translator, cond)
@@ -18,6 +19,7 @@ public:
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeIntegerDimension
 	: public SolverDefinitionGridAttributeDimensionT<int>
 {
+
 public:
 	SolverDefinitionGridAttributeIntegerDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
 		: SolverDefinitionGridAttributeDimensionT<int>(node, translator, cond)
@@ -33,6 +35,7 @@ public:
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeRealDimension
 	: public SolverDefinitionGridAttributeDimensionT<double>
 {
+
 public:
 	SolverDefinitionGridAttributeRealDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
 		: SolverDefinitionGridAttributeDimensionT<double>(node, translator, cond)

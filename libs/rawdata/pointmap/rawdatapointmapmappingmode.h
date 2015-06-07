@@ -5,6 +5,7 @@
 
 class RD_POINTMAP_EXPORT RawDataPointmapMappingMode
 {
+
 public:
 	enum Mode {
 		mTIN = 0,      ///< Mapping is done with TIN.

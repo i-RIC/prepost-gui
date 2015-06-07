@@ -8,6 +8,7 @@
 /// Container to handle point style information
 class GUIBASEDLL_EXPORT PointStyleInformation
 {
+
 public:
 	/// Point shape
 	enum PointShape {

@@ -32,6 +32,7 @@
 /// Points used for particle tracking for vector (velocity~ fields
 class GUIBASEDLL_EXPORT vtkCustomStreamPoints : public vtkStreamer
 {
+
 public:
 	vtkTypeMacro(vtkCustomStreamPoints,vtkStreamer);
 	void PrintSelf(ostream& os, vtkIndent indent) override;

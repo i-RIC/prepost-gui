@@ -8,6 +8,7 @@
 template <class V>
 class SolverDefinitionGridAttributeT : public SolverDefinitionGridAttribute
 {
+
 public:
 	SolverDefinitionGridAttributeT(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridAttribute(node, translator)
@@ -20,6 +21,7 @@ public:
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefinitionGridAttributeT<int>
 {
+
 public:
 	SolverDefinitionGridAttributeInteger(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridAttributeT<int>(node, translator)
@@ -32,6 +34,7 @@ public:
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinitionGridAttributeT<double>
 {
+
 public:
 	SolverDefinitionGridAttributeReal(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridAttributeT<double>(node, translator)

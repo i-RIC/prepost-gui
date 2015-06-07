@@ -12,6 +12,7 @@ class QAction;
 class PreProcessorBCSettingGroupDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent);

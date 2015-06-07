@@ -6,6 +6,7 @@
 
 class RawDataPolygonRealCreator : public RawDataPolygonCreatorT<double, vtkDoubleArray>
 {
+
 public:
 	RawDataPolygonRealCreator()
 		: RawDataPolygonCreatorT<double, vtkDoubleArray>() {

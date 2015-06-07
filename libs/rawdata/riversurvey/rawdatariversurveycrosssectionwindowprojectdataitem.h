@@ -10,6 +10,7 @@ class PreProcessorRawDataGroupDataItemInterface;
 
 class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCrosssectionWindowProjectDataItem : public ProjectDataItem
 {
+
 public:
 	RawDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorRawDataGroupDataItemInterface* gitem, QWidget* parentWindow);
 	~RawDataRiverSurveyCrosssectionWindowProjectDataItem();
@@ -18,11 +19,14 @@ public:
 	RawDataRiverSurveyCrosssectionWindow* window() {
 		return m_window;
 	}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 protected:
 	RawDataRiverSurveyCrosssectionWindow* m_window;
+
 public:
 	friend class PostProcessorWindow;
 };

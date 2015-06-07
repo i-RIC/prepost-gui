@@ -6,6 +6,7 @@
 class Graph2dScatteredWindowObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	Graph2dScatteredWindowObjectBrowserView(QWidget* parent);
 };

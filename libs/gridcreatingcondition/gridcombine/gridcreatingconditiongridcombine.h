@@ -9,6 +9,7 @@ class QMenu;
 class GridCreatingConditionGridCombine : public GridCreatingCondition
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionGridCombine();
@@ -19,6 +20,7 @@ public:
 	void handleDialogAccepted(QDialog* d);
 	void setupParameters();
 	void clear() override;
+
 protected:
 	// @todo not implemented yet.
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

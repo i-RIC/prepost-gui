@@ -34,6 +34,7 @@ class GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand;
 
 class GridCreatingConditionCompoundChannelTemporaryGrid
 {
+
 public:
 	GridCreatingConditionCompoundChannelTemporaryGrid(int isize, int jsize) {
 		m_isize = isize;
@@ -49,6 +50,7 @@ public:
 	QPointF& point(int i, int j) {return m_point[index(i, j)];}
 	int isize() const {return m_isize;}
 	int jsize() const {return m_jsize;}
+
 private:
 	int index(int i, int j) {return m_isize * j + i;}
 	QVector<QPointF> m_point;
@@ -143,6 +145,7 @@ protected:
 	void updateFilename() override {
 		m_filename = "gridcreatingcondition.dat";
 	}
+
 private:
 
 	bool checkCondition();

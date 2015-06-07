@@ -12,6 +12,7 @@ class QModelIndex;
 class Graph2dHybridWindowObjectBrowser : public ObjectBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dHybridWindowObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
@@ -19,8 +20,10 @@ public:
 	~Graph2dHybridWindowObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
 	Graph2dHybridWindowObjectBrowserView* view() const {return m_view;}
+
 public slots:
 	void expandAll();
+
 private:
 	void init();
 	/// The widget to show in the dockarea

@@ -12,6 +12,7 @@ class PreProcessorGraphicsViewInterface;
 
 class GUICOREDLL_EXPORT PreProcessorDataModelInterface : public Graphics2DWindowDataModel
 {
+
 public:
 	PreProcessorDataModelInterface(PreProcessorWindowInterface* w, ProjectDataItem* parent);
 	virtual MouseBoundingBox* mouseBoundingBox() = 0;

@@ -16,6 +16,7 @@ public:
 	explicit ProjectTypeSelectDialog(QWidget* parent = nullptr);
 	~ProjectTypeSelectDialog();
 	bool folderProject();
+
 private:
 	Ui::ProjectTypeSelectDialog* ui;
 };

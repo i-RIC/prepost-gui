@@ -19,6 +19,7 @@ public:
 	~PostTimeEditDialog();
 	void setSetting(const PostTimeSetting& setting);
 	const PostTimeSetting setting() const;
+
 private:
 	Ui::PostTimeEditDialog* ui;
 };

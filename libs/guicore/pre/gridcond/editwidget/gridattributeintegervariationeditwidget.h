@@ -6,6 +6,7 @@ class IntegerNumberEditWidget;
 
 class GridAttributeIntegerVariationEditWidget : public GridAttributeVariationEditWidgetT<int>
 {
+
 public:
 	GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond);
 	~GridAttributeIntegerVariationEditWidget();

@@ -32,6 +32,7 @@ namespace Ui
 class PreProcessorGridCrosssectionWindow : public QMainWindow
 {
 	Q_OBJECT
+
 public:
 	const static int DEFAULT_TABLE_WIDTH;
 	enum Direction {dirI, dirJ};
@@ -50,6 +51,7 @@ public:
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
 	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem() {return m_projectDataItem;}
 	const QIcon& icon() const {return m_icon;}
+
 public slots:
 	void updateView();
 	void cameraFit();
@@ -64,6 +66,7 @@ public slots:
 	void cameraZoomInY();
 	void cameraZoomOutY();
 	void update();
+
 private slots:
 	void updateActionStatus();
 	void blackComboBoxChange(int newindex);
@@ -72,6 +75,7 @@ private slots:
 	void toggleI(bool toggled);
 	void toggleJ(bool toggled);
 	void handleDataChange();
+
 private:
 	bool syncData();
 	static const int defaultRowHeight = 20;
@@ -102,6 +106,7 @@ private:
 	bool m_settingUp;
 	PreProcessorGridCrosssectionWindowProjectDataItem* m_projectDataItem;
 //	QList<RawDataRiverPathPoint*> m_points;
+
 public:
 	friend class PreProcessorGridCrosssectionWindowGraphicsView;
 };

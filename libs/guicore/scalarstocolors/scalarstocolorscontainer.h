@@ -9,6 +9,7 @@ class vtkScalarsToColors;
 class GUICOREDLL_EXPORT ScalarsToColorsContainer : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	ScalarsToColorsContainer(ProjectDataItem* d) : ProjectDataItem(d) {
 		m_vtkObj = nullptr;

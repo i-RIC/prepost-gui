@@ -10,6 +10,7 @@ class PreProcessorGridDataItemInterface;
 
 class GridAttributeVariationEditWidget : public QWidget
 {
+
 public:
 	GridAttributeVariationEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition)
 		: QWidget(parent) {

@@ -9,6 +9,7 @@
 /// Coordinate system container
 class GUIBASEDLL_EXPORT CoordinateSystem
 {
+
 public:
 	CoordinateSystem(const QString& name, const QString& caption, const QString& lonlat, const QString& plane);
 	virtual ~CoordinateSystem();

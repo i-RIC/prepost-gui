@@ -33,6 +33,7 @@ class GridBirdEyeWindow;
 class PreProcessorGridDataItem : public PreProcessorGridDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridDataItem(PreProcessorDataItem* parent);
@@ -138,15 +139,19 @@ public:
 	void updateRegionPolyData();
 
 	void updateObjectBrowserTree();
+
 signals:
 	void gridRelatedConditionChanged(const QString& name);
+
 public slots:
 	void importGrid();
 	void exportGrid();
+
 private slots:
 	void showDisplaySettingDialog();
 	void deleteGrid();
 	void openBirdEyeWindow();
+
 private:
 	vtkPolyData* buildEdges() const;
 	void setupActors();
@@ -163,6 +168,7 @@ private:
 	void finishGridLoading();
 	void closeBirdEyeWindow();
 	void informSelectedVerticesChanged();
+
 protected:
 	void renderGraphicsView() {GraphicsWindowDataItem::renderGraphicsView();}
 	void doApplyOffset(double x, double y) override;
@@ -219,6 +225,7 @@ protected:
 
 	PreProcessorGridAttributeNodeDataItem* m_nodeDataItem;
 	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
+
 private:
 	GridBirdEyeWindow* m_birdEyeWindow;
 
@@ -226,6 +233,7 @@ private:
 	QCursor m_addCursor;
 
 	bool m_shiftPressed;
+
 public:
 	friend class GridPointMouseMoveCommand;
 	friend class GridAttributeEditCommand;

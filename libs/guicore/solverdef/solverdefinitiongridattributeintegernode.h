@@ -5,6 +5,7 @@
 
 class SolverDefinitionGridAttributeIntegerNode : public SolverDefinitionGridAttributeInteger
 {
+
 public:
 	/// Constructor
 	SolverDefinitionGridAttributeIntegerNode(QDomElement node, const SolverDefinitionTranslator& translator)
@@ -13,6 +14,7 @@ public:
 	}
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+
 protected:
 	GridAttributeContainer* buildContainer(Grid* grid) override;
 };

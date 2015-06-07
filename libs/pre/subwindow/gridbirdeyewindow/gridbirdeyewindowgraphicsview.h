@@ -5,6 +5,7 @@
 
 class GridBirdEyeWindowGraphicsView : public VTK3DGraphicsView
 {
+
 public:
 	GridBirdEyeWindowGraphicsView(QWidget* parent)
 		: VTK3DGraphicsView(parent)

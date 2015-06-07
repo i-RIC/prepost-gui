@@ -23,9 +23,11 @@ public:
 	void setupForResultCopy();
 	void setupForExternalData();
 	void clear();
+
 signals:
 	void labelChanged(const QString& label);
 	void deleteButtonClicked();
+
 private slots:
 	void updateLabel(const QString& label);
 	void updateAxis();

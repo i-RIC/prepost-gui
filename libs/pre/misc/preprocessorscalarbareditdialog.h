@@ -13,6 +13,7 @@ namespace Ui
 class PreProcessorScalarBarEditDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorScalarBarEditDialog(QWidget* parent = nullptr);
 	~PreProcessorScalarBarEditDialog();
@@ -42,6 +43,7 @@ public:
 	const QString labelFormat() const;
 
 	void hideDisplayCheckBox();
+
 private:
 	Ui::PreProcessorScalarBarEditDialog* ui;
 };

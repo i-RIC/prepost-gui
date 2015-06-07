@@ -15,6 +15,7 @@ class Graph2dScatteredWindowResultGroupDataItem;
 class Graph2dScatteredWindowRootDataItem : public Graph2dWindowRootDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Graph2dScatteredWindowRootDataItem(Graph2dScatteredWindow* window, ProjectDataItem* parent);

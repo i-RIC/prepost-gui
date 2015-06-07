@@ -38,6 +38,7 @@ public:
 	const QList<bool>& importDataDeleted() const {
 		return m_importDataDeleted;
 	}
+
 private slots:
 	void updateResultLabel(const QString& label);
 	void updateCopyLabel(const QString& label);
@@ -47,6 +48,7 @@ private slots:
 	void setImportDataItem(int index);
 	void deleteCopyItem();
 	void deleteImportDataItem();
+
 private:
 	int copyIndex(int index);
 	int importDataIndex(int index);

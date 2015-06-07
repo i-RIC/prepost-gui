@@ -6,6 +6,7 @@
 
 class GRAPH2DHYBRID_EXPORT Graph2dHybridWindowView : public Graph2dWindowView
 {
+
 public:
 	Graph2dHybridWindowView(QWidget* parent);
 	virtual ~Graph2dHybridWindowView();

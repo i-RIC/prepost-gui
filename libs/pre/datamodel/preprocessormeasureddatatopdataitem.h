@@ -12,6 +12,7 @@ class MeasuredDataFileDataItem;
 class PreProcessorMeasuredDataTopDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent);
@@ -21,11 +22,14 @@ public:
 	void setupActors();
 	void updateActorSettings();
 	void addCustomMenuItems(QMenu* menu) override;
+
 public slots:
 	void addChildItem();
 	void deleteChildItem(int index);
+
 signals:
 	void selectMeasuredData(const QModelIndex& current);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

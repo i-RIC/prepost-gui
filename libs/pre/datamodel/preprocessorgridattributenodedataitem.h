@@ -18,6 +18,7 @@ class Structured2DGridCrosssectionEditCommand;
 class PreProcessorGridAttributeNodeDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
@@ -46,18 +47,22 @@ public:
 public slots:
 	void openCrossSectionWindow();
 	void openVerticalCrossSectionWindow();
+
 private slots:
 	void editValue();
 	void editVariation();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 	void exportToFile();
+
 signals:
 	void changed(PreProcessorGridAttributeNodeDataItem*);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadFromCgnsFile(const int fn) override;
 	void doApplyOffset(double x, double y) override;
+
 private:
 	SolverDefinitionGridAttribute* m_condition;
 
@@ -77,6 +82,7 @@ private:
 	void loadContourFromProjectMainFile(const QDomNode& node);
 
 	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
+
 public:
 	friend class Structured2DGridCrosssectionEditCommand;
 };

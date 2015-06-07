@@ -15,6 +15,7 @@ namespace Ui
 class SolverDefinitionAbstractDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	SolverDefinitionAbstractDialog(const SolverDefinitionAbstract* solver, QWidget* parent = nullptr);

@@ -13,6 +13,7 @@ class PostSolutionInfo;
 class Post3dWindowDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowDataItem(GraphicsWindowDataItem* parent)
@@ -28,6 +29,7 @@ public:
 	{}
 	Post3dWindow* postProcessorWindow();
 	void updateZDepthRangeItemCount() override {}
+
 protected:
 	void assignActorZValues(const ZDepthRange& /*range*/) override {}
 	Post3dWindowDataModel* dataModel();

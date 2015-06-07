@@ -23,6 +23,7 @@ class VTKGraphicsView;
 class GUICOREDLL_EXPORT BackgroundImageInfo : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	const static int MAXWIDTH;
 	/// Constructor
@@ -137,6 +138,7 @@ private:
 	QCursor m_moveCursor;
 	QCursor m_rotateCursor;
 	QCursor m_zoomCursor;
+
 public:
 	friend class BackgroundImageInfoActorPropertySetting;
 	friend class BackgroundImageInfoDialog;

@@ -6,6 +6,7 @@
 class RawDataPointmapVTKExporter : public RawDataExporter
 {
 	Q_OBJECT
+
 public:
 	RawDataPointmapVTKExporter(RawDataCreator* creator);
 	bool doExport(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) override;

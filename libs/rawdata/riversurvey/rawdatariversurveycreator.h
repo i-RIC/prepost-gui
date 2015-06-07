@@ -8,6 +8,7 @@
 class RD_RIVERSURVEY_EXPORT RawDataRiverSurveyCreator : public RawDataCreator
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	RawDataRiverSurveyCreator();

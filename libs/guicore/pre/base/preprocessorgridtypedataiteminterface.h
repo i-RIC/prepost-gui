@@ -12,6 +12,7 @@ class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 
 class PreProcessorGridTypeDataItemInterface : public PreProcessorDataItem
 {
+
 public:
 	/// Constructor
 	PreProcessorGridTypeDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)

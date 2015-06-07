@@ -15,6 +15,7 @@ namespace Ui
 class PreProcessorWindowScalarBarSettingWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	struct Setting {
 		static const int DEFAULT_NUMOFLABELS = 8;

@@ -20,6 +20,7 @@ class GridBirdEyeWindow :
 	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item);
@@ -30,6 +31,7 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	void updateGrid();
 	const QIcon& icon() const {return m_icon;}
+
 public slots:
 	void cameraFit();
 	void cameraZoomIn();
@@ -44,12 +46,14 @@ public slots:
 	void editBackgroundColor();
 	void displaySetting();
 	void editZScale();
+
 private:
 	void init(PreProcessorGridDataItem* item);
 	GridBirdEyeWindowGraphicsView* m_graphicsView;
 	GridBirdEyeWindowActionManager* m_actionManager;
 	GridBirdEyeWindowDataModel* m_dataModel;
 	QIcon m_icon;
+
 public:
 	friend class GridBirdEyeWindowActionManager;
 //	friend class GridBirdEyeWindowDataModel;

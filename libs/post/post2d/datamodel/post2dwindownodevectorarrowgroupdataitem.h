@@ -29,6 +29,7 @@ class Post2dWindowNodeVectorArrowDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;

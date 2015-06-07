@@ -8,9 +8,11 @@ class Graph2dScatteredWindow;
 
 class GRAPH2DSCATTERED_EXPORT Graph2dScatteredWindowProjectDataItem : public PostProcessorWindowProjectDataItem
 {
+
 public:
 	Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

@@ -19,6 +19,7 @@ class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem;
 class Post2dWindowStreamlineUnstructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post2dWindowStreamlineUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowStreamlineUnstructuredSettingDialog();
@@ -40,10 +41,12 @@ public:
 
 	void informButtonDown(const QVector2D& p);
 	void informButtonUp(const QVector2D& p);
+
 public slots:
 	void updateMousePosition(const QVector2D& p);
 	void accept() override;
 	void reject() override;
+
 private slots:
 	void activeDataChanged(int index);
 	void pointsEdited();
@@ -55,6 +58,7 @@ private slots:
 	void addData();
 	void removeData();
 	void showRegionDialog();
+
 private:
 	void apply();
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);

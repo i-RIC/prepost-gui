@@ -24,8 +24,10 @@ class Post2dBirdEyeWindowContourSelectSolution;
 class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int DEFAULT_NUMOFDIV = 15;
+
 public:
 	/// Constructor
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
@@ -40,13 +42,16 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+
 public slots:
 	void exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item);
+
 protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdateZScale(double scale) override;
+
 private:
 	void setupActors();
 	void updateActorSettings();

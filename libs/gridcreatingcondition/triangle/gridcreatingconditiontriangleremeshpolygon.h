@@ -8,6 +8,7 @@ class GridCreatingConditionTriangleRemeshPolygonEditGridSizeCommand;
 class GridCreatingConditionTriangleRemeshPolygon : public GridCreatingConditionTriangleAbstractPolygon
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionTriangleRemeshPolygon(GridCreatingConditionTriangle* parent);
 	void setCellSize(double s) {m_cellSize = s;}

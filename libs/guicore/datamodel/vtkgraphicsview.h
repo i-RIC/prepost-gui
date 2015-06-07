@@ -15,6 +15,7 @@ class QCursor;
 
 class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
 {
+
 public:
 	VTKGraphicsView(QWidget* parent);
 	virtual ~VTKGraphicsView();
@@ -84,11 +85,13 @@ public:
 
 class VTKGraphicsViewArbitraryMove : public QUndoCommand
 {
+
 public:
 	VTKGraphicsViewArbitraryMove(vtkCamera* camera, VTKGraphicsView* view);
 	~VTKGraphicsViewArbitraryMove();
 	void undo() override;
 	void redo() override;
+
 private:
 	vtkCamera* m_newCamera;
 	vtkCamera* m_oldCamera;

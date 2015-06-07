@@ -6,6 +6,7 @@
 class GridCreatingConditionCompoundChannelCenterLine : public GridCreatingConditionCompoundChannelAbstractLine
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCompoundChannelCenterLine(GridCreatingConditionCompoundChannel* parent);
 };

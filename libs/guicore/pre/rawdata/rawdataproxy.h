@@ -15,6 +15,7 @@ class ZDepthRange;
 class GUICOREDLL_EXPORT RawDataProxy : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	RawDataProxy(RawData* rawdata) : ProjectDataItem(0) {
 		m_rawData = rawdata;

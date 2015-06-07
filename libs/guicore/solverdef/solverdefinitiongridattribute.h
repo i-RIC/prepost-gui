@@ -27,6 +27,7 @@ class SolverDefinitionGridAttributeDimension;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttribute : public SolverDefinitionNode
 {
+
 public:
 	enum Position {
 		Node,           ///< Node (vertex)

@@ -23,6 +23,7 @@ class QLineF;
 class GridCreatingConditionCompoundChannelAbstractLine : public QObject
 {
 	Q_OBJECT
+
 public:
 	const static int FONTSIZE = 17; ///< Font size used for "Upstream", "DownStream" label
 	GridCreatingConditionCompoundChannelAbstractLine(GridCreatingConditionCompoundChannel* parent);

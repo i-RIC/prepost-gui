@@ -18,6 +18,7 @@ class ProjectData;
 class SolverDefinitionList : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// constructor
 	/**
@@ -35,12 +36,15 @@ public:
 	/// The dialog to show solver definition list
 	SolverDefinitionListDialog* dialog(QWidget* parent);
 	const QString supportingSolverFolder(ProjectData* p);
+
 protected slots:
 	/// Update solver list
 	void updateSolverList();
+
 private:
 	/// free the memory.
 	void clean();
+
 signals:
 	/// This signal is emitted when the list of solver is updated (for example
 	/// when you added or removed a solver).
@@ -48,6 +52,7 @@ signals:
 	/// This signal is emitted when the list of solver is updated (for example
 	/// when you added or removed a solver).
 	void updated(SolverDefinitionList*);
+
 private:
 	/// A vector that stores the list of SolverDefinition Abstract.
 	QList<SolverDefinitionAbstract*> m_solverList;

@@ -6,6 +6,7 @@
 /// ZDepthRange stores the range of Z (depth) value.
 class MISCDLL_EXPORT ZDepthRange
 {
+
 public:
 	ZDepthRange();
 	ZDepthRange(double min, double max);

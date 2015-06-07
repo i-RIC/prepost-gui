@@ -19,6 +19,7 @@ public:
 	/// Setting information container
 	class Setting
 	{
+
 	public:
 		bool isAuto;
 		double min;

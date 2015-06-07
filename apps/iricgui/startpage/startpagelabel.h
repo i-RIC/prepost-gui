@@ -7,6 +7,7 @@
 class StartPageLabel : public QWidget
 {
 	Q_OBJECT
+
 public:
 	static const int IMAGEMARGIN = 20;
 	explicit StartPageLabel(QWidget* parent = nullptr);
@@ -14,11 +15,14 @@ public:
 	void setTitle(const QString& title) {m_title = title;}
 	void setSubtitle(const QString& title) {m_subtitle = title;}
 	QSize sizeHint() const override;
+
 protected:
 	void mousePressEvent(QMouseEvent*) override;
 	void paintEvent(QPaintEvent*) override;
+
 signals:
 	void clicked();
+
 private:
 	QString m_title;
 	QString m_subtitle;

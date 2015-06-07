@@ -15,6 +15,7 @@ namespace Ui
 class SolverDefinitionAbstractWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	SolverDefinitionAbstractWidget(const SolverDefinitionAbstract* solver, QWidget* parent = nullptr);

@@ -17,6 +17,7 @@ class PostExportSetting;
 
 class GUICOREDLL_EXPORT PostZoneDataContainer : public PostDataContainer
 {
+
 public:
 	const static QString labelName;
 	const static QString IBC;
@@ -49,6 +50,7 @@ public:
 	void loadIfEmpty(const int fn);
 	bool IBCExists();
 	const QString elevationName();
+
 protected:
 	bool setBaseId(const int fn);
 	bool setZoneId(const int fn);

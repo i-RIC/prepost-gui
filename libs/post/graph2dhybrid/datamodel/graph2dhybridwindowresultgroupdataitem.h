@@ -18,6 +18,7 @@ class Graph2dHybridWindowResultCopyGroupDataItem;
 class Graph2dHybridWindowResultGroupDataItem : public Graph2dHybridWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Graph2dHybridWindowResultGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowResultGroupDataItem();
@@ -36,6 +37,7 @@ public:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void applySettings();
 	Graph2dHybridWindowHorizontalAxisSetting* m_hAxisSetting;

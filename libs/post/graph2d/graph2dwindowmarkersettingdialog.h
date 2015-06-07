@@ -21,6 +21,7 @@ public:
 	void setSetting(const Graph2dWindowMarkerSetting& setting);
 	const Graph2dWindowMarkerSetting& setting() {return m_setting;}
 	void setXAxisLabel(const QString& l) {m_xAxisLabel = l;}
+
 private slots:
 	void itemChanged(int index);
 	void oriantationChanged();
@@ -33,6 +34,7 @@ private slots:
 	void alignCenterChanged(bool center);
 	void addItem();
 	void removeItem();
+
 private:
 	void setupList();
 	void updateLabel();

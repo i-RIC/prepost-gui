@@ -10,6 +10,7 @@ class HydraulicDataCreator;
 
 class HydraulicDataImporter : public QObject
 {
+
 public:
 	/// Constructor
 	HydraulicDataImporter() {}

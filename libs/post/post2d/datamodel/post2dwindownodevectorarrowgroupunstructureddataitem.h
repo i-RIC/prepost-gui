@@ -10,6 +10,7 @@
 class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem : public Post2dWindowNodeVectorArrowGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	enum SamplingMode {
 		smAll,
@@ -18,6 +19,7 @@ public:
 	};
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem();
+
 protected:
 	void updateActivePoints() override;
 	void informGridUpdate();
@@ -26,11 +28,13 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	QDialog* propertyDialog(QWidget* p) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 private:
 	SamplingMode m_samplingMode;
 	int m_samplingRate;
 	int m_samplingNumber;
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
+
 public:
 	friend class Post2dWindowArrowUnstructuredSetProperty;
 };

@@ -29,6 +29,7 @@ class WaitDialog;
 class GUICOREDLL_EXPORT ProjectData : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// File name of lock file (that is put just under the workfolder)
 	const static QString LOCKFILENAME;

@@ -36,6 +36,7 @@ public:
 	/// Container for custom colormap setting
 	class CustomSetting
 	{
+
 	public:
 		/// Struct to store value-color pair in custom colormap setting.
 		struct CustomColor {

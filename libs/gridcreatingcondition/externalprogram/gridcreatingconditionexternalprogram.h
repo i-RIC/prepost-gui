@@ -17,6 +17,7 @@ class QMenu;
 class GridCreatingConditionExternalProgram : public GridCreatingCondition
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionExternalProgram(const QString& folderName, const QLocale& locale, ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionExternalProgram();
@@ -24,13 +25,16 @@ public:
 	bool ready() const override;
 	void clear() override;
 	void showInitialDialog() override;
+
 private slots:
 	void cancel() {m_canceled = true;}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
 	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+
 private:
 	static int readErrorCode(int fn);
 	void deleteGrid(const QString& fname);

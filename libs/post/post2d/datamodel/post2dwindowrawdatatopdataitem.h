@@ -12,6 +12,7 @@ class Post2dWindowRawDataGroupDataItem;
 class Post2dWindowRawDataTopDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowRawDataTopDataItem(PreProcessorRawDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent);
 	PreProcessorRawDataTopDataItemInterface* preRawDataTopDataItem() const {return m_preRawDataTopDataItem;}

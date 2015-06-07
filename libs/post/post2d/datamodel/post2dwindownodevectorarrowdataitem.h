@@ -9,6 +9,7 @@ class QAction;
 class Post2dWindowNodeVectorArrowDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowNodeVectorArrowDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);
@@ -22,9 +23,11 @@ public:
 
 signals:
 	void changed(Post2dWindowNodeVectorArrowDataItem*);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
+
 private:
 	QString m_name;
 };

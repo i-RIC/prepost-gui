@@ -6,6 +6,7 @@
 class GridComplexConditionWidgetContainer : public QWidget
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	GridComplexConditionWidgetContainer(QWidget* w);

@@ -8,6 +8,7 @@
 
 class GUICOREDLL_EXPORT PropertyBrowserAttribute
 {
+
 public:
 	PropertyBrowserAttribute(const QString& n, double val);
 	PropertyBrowserAttribute(const QString& n, int val);

@@ -21,6 +21,7 @@ class QDomDocument;
 class GUICOREDLL_EXPORT SolverDefinitionAbstract : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	/**

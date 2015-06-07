@@ -11,6 +11,7 @@ namespace Ui
 class GridCreatingConditionGridGeneratorSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionGridGeneratorSettingDialog(QWidget* parent = 0);
 	~GridCreatingConditionGridGeneratorSettingDialog();
@@ -77,6 +78,7 @@ public:
 
 	void setupConnections();
 	void setupDisability();
+
 private:
 	Ui::GridCreatingConditionGridGeneratorSettingDialog* ui;
 };

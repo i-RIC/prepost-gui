@@ -6,6 +6,7 @@
 /// Mapping setting container for double-precision attributes
 class DoubleMappingSetting
 {
+
 public:
 	/// Target node (or cell) index
 	unsigned int target;

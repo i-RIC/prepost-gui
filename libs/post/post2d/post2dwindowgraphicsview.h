@@ -11,6 +11,7 @@ class QCursor;
 class Post2dWindowGraphicsView : public VTK2DGraphicsView
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowGraphicsView(QWidget* parent);
 };

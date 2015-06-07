@@ -11,6 +11,7 @@ class PreProcessorGridDataItemInterface;
 
 class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 {
+
 public:
 	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition)
 		: QWidget(parent) {
@@ -32,6 +33,7 @@ public:
 	virtual void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) = 0;
 	virtual void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
 	virtual QVariant variantValue() = 0;
+
 protected:
 	virtual void setupWidget() = 0;
 	virtual void getValueFromInnerWidget() = 0;

@@ -10,6 +10,7 @@ class Post2dWindow;
 class Post2dWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowActionManager(Post2dWindow* parent);

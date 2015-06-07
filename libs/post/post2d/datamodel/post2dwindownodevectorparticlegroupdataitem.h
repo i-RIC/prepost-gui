@@ -24,8 +24,10 @@ class Post2dWindowParticleStructuredSetProperty;
 class Post2dWindowNodeVectorParticleGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	const static int DEFAULT_SIZE = 3;
+
 public:
 	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
 	/// Constructor
@@ -81,6 +83,7 @@ protected:
 	int m_nextStepToAddParticles;
 	int m_particleSize;
 	StructuredGridRegion::RegionMode m_regionMode;
+
 public:
 	friend class Post2dWindowParticleStructuredSetProperty;
 	friend class Post2dWindowGridParticleSelectSolution;

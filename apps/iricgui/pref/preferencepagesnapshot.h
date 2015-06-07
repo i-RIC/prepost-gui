@@ -18,6 +18,7 @@ public:
 	explicit PreferencePageSnapshot(QWidget* parent = nullptr);
 	~PreferencePageSnapshot();
 	void update() override;
+
 private:
 	void setupTypeComboBox();
 	QSettings m_settings;

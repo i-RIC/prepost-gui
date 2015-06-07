@@ -19,6 +19,7 @@ class InputConditionWidgetSet;
 class GridCreatingConditionExternalProgramSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget* parent);
@@ -33,10 +34,13 @@ public:
 	/// Set the file name to use for CGNS.
 	void setFilename(const QString& filename) {m_filename = filename;}
 	const QString errorMessage(int errorcode) const;
+
 public slots:
 	void accept() override;
+
 private slots:
 	void handleButtonClick(QAbstractButton* button);
+
 private:
 	/// Setup the dialog.
 	void setup(const SolverDefinition& def, const QLocale& locale);
@@ -46,6 +50,7 @@ private:
 	InputConditionWidgetSet* m_widgetSet;
 	QMap<int, QString> m_errorMessages;
 	QString m_filename;
+
 public:
 	friend class InputConditionContainerSet;
 };

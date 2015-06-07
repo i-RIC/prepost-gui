@@ -14,6 +14,7 @@ class Graph2dScatteredWindowResultGroupDataItem;
 
 class Graph2dScatteredWindowResultSetting
 {
+
 public:
 	enum AxisSide {
 		asLeft,
@@ -39,6 +40,7 @@ public:
 
 	class Setting
 	{
+
 	public:
 		Setting() {
 			m_name = "";
@@ -67,6 +69,7 @@ public:
 		void setSymbolSize(int size) {m_symbolSize = size;}
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
+
 	private:
 		QString m_name;
 		AxisSide m_axisSide;

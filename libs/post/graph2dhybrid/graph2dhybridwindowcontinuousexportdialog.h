@@ -53,8 +53,10 @@ public:
 	int startTimeStep();
 	int endTimeStep();
 	int timeSkip();
+
 public slots:
 	void accept() override;
+
 private slots:
 	void regionCurrentToggled(bool toggled);
 	void fullRegionToggled(bool toggled);
@@ -73,6 +75,7 @@ private slots:
 
 	void timeStartChanged(int start);
 	void timeEndChanged(int end);
+
 private:
 	Ui::Graph2dHybridWindowContinuousExportDialog* ui;
 

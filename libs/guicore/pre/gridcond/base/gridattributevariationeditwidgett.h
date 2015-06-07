@@ -19,6 +19,7 @@
 class GridAttributeEditVariationCommand : public QObject, public QUndoCommand
 {
 	Q_OBJECT
+
 public:
 	GridAttributeEditVariationCommand(const QString& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 		: QUndoCommand(tr("Edit grid attribute value(s)")) {
@@ -43,6 +44,7 @@ public:
 		m_dataItem->grid()->setModified();
 		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(true);
 	}
+
 private:
 	vtkSmartPointer<vtkDataArray> m_newValues;
 	vtkSmartPointer<vtkDataArray> m_oldValues;
@@ -54,6 +56,7 @@ private:
 template <class V>
 class GridAttributeVariationEditWidgetT : public GridAttributeVariationEditWidget
 {
+
 public:
 	GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond)
 		: GridAttributeVariationEditWidget(parent, cond) {
@@ -89,6 +92,7 @@ public:
 		oldValues->Delete();
 		newValues->Delete();
 	}
+
 protected:
 	V m_value;
 };

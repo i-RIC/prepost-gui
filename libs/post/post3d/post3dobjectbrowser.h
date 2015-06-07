@@ -12,6 +12,7 @@ class QModelIndex;
 class Post3dObjectBrowser : public ObjectBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}

@@ -13,6 +13,7 @@ class SolverDefinitionTranslator;
 
 class GUICOREDLL_EXPORT InputConditionWidgetSet
 {
+
 public:
 	/// Constructor
 	InputConditionWidgetSet() {}

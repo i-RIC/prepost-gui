@@ -3,6 +3,7 @@
 
 class PreProcessorGridAttributeMappingMode
 {
+
 public:
 	enum Mode {
 		mAuto,

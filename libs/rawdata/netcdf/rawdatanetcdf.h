@@ -30,6 +30,7 @@ class RawDataNetcdf : public RawData
 private:
 	class RectRegion
 	{
+
 	public:
 		double xMin;
 		double xMax;

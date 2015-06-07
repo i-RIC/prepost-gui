@@ -11,6 +11,7 @@ class WaitDialog;
 class PreProcessorGridAttributeMappingSettingDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Mapping mode
 	enum MappingMode {

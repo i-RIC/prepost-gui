@@ -14,6 +14,7 @@ class VTK2DGraphicsView;
 
 class GUICOREDLL_EXPORT MouseBoundingBox : public QObject
 {
+
 public:
 	MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent);
 	void setStartPoint(int x, int y);

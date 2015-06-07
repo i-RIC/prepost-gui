@@ -16,6 +16,7 @@
 template <class V, class DA>
 class RawDataNetcdfT : public RawDataNetcdf
 {
+
 public:
 	RawDataNetcdfT(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdf(d, creator, condition) {
@@ -141,6 +142,7 @@ protected:
 
 class RawDataNetcdfInteger : public RawDataNetcdfT<int, vtkIntArray>
 {
+
 public:
 	RawDataNetcdfInteger(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdfT(d, creator, condition) {
@@ -157,6 +159,7 @@ public:
 
 class RawDataNetcdfReal : public RawDataNetcdfT<double, vtkDoubleArray>
 {
+
 public:
 	RawDataNetcdfReal(ProjectDataItem* d, RawDataCreator* creator, SolverDefinitionGridAttribute* condition)
 		: RawDataNetcdfT(d, creator, condition) {

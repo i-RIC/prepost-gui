@@ -8,6 +8,7 @@ class QAction;
 class Post3dObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	Post3dObjectBrowserView(QWidget* parent);
 };

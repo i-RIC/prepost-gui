@@ -6,11 +6,13 @@
 
 class RawDataBackgroundIntegerCreator : public RawDataBackgroundCreatorT<int, vtkIntArray>
 {
+
 private:
 	RawDataBackgroundIntegerCreator()
 		: RawDataBackgroundCreatorT<int, vtkIntArray>() {
 		m_typeName = "integerBackground";
 	}
+
 public:
 	static RawDataBackgroundIntegerCreator* instance() {
 		if (! m_instance) {
@@ -18,6 +20,7 @@ public:
 		}
 		return m_instance;
 	}
+
 protected:
 	static RawDataBackgroundIntegerCreator* m_instance;
 };

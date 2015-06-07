@@ -12,6 +12,7 @@ class Post3dWindowParticlesTopSetProperty;
 class Post3dWindowParticlesTopDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowParticlesTopDataItem(Post3dWindowDataItem* parent);

@@ -24,6 +24,7 @@ class PostZoneDataContainer;
 class Post2dWindowZoneDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent);

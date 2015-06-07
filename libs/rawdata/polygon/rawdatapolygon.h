@@ -52,9 +52,11 @@ class RawDataPolygonTriangleThread;
 class RD_POLYGON_EXPORT RawDataPolygon : public RawData
 {
 	Q_OBJECT
+
 private:
 	const static int normalEdgeWidth = 1;
 	const static int selectedEdgeWidth = 2;
+
 public:
 	enum SelectMode {
 		smNone,
@@ -211,6 +213,7 @@ private:
 	double lastY;
 
 	bool m_bcSettingMode;
+
 public:
 	friend class RawDataPolygonCreator;
 	friend class RawDataPolygonPropertyEditCommand;

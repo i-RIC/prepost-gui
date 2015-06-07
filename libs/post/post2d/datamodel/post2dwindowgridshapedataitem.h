@@ -24,9 +24,11 @@ class Post2dWindowGridShapeDataSetSetting;
 class Post2dWindowGridShapeDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int normalOutlineWidth = 1;
 	static const int selectedOutlineWidth = 2;
+
 public:
 	/// Constructor
 	Post2dWindowGridShapeDataItem(Post2dWindowDataItem* parent);
@@ -48,6 +50,7 @@ protected:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 private:
 	void setupActors();
 	void setColor(const QColor& color);
@@ -78,6 +81,7 @@ private:
 	QAction* m_editNewPositionAction;
 	QAction* m_editDeltaAction;
 	QVector2D m_dragStartPoint;
+
 public:
 	friend class Post2dWindowGridShapeDataSetSetting;
 };

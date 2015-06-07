@@ -14,6 +14,7 @@ class PreProcessorGridRelatedComplexConditionDataItem;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridComplexAttribute : public SolverDefinitionGridAttributeInteger
 {
+
 public:
 	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator)
 		: SolverDefinitionGridAttributeInteger(node, translator) {

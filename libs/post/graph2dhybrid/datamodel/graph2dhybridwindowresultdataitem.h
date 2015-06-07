@@ -13,6 +13,7 @@ class Graph2dHybridWindowResultCopyGroupDataItem;
 
 class Graph2dHybridWindowResultDataItem : public Graph2dHybridWindowDataItem
 {
+
 public:
 	Graph2dHybridWindowResultDataItem(const QString& title, int index, const Graph2dHybridWindowResultSetting::Setting& setting, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dHybridWindowResultDataItem();
@@ -25,6 +26,7 @@ public:
 	const QVector<double>& xValues() const {return m_xValues;}
 	const QVector<double>& yValues() const {return m_yValues;}
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
+
 protected:
 	virtual void updateValues(int fn) = 0;
 	void setVisible(bool visible) override;
@@ -34,6 +36,7 @@ protected:
 	Graph2dHybridWindowResultSetting::Setting m_setting;
 	QVector<double> m_xValues;
 	QVector<double> m_yValues;
+
 private:
 	bool m_attached;
 };

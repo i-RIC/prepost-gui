@@ -9,6 +9,7 @@ class LookupTableContainer;
 
 class POST2D_EXPORT Post2dWindowGridTypeDataItemInterface
 {
+
 public:
 	virtual ~Post2dWindowGridTypeDataItemInterface() {}
 	virtual SolverDefinitionGridType* gridType() const = 0;

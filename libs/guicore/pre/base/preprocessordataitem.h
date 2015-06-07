@@ -14,6 +14,7 @@ class MouseBoundingBox;
 class GUICOREDLL_EXPORT PreProcessorDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	PreProcessorDataItem(GraphicsWindowDataItem* parent)
 		: GraphicsWindowDataItem(parent)

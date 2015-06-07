@@ -9,6 +9,7 @@ class RawDataProxy;
 
 class GUICOREDLL_EXPORT RawDataProxyDataItem : public GraphicsWindowDataItem
 {
+
 public:
 	RawDataProxyDataItem(GraphicsWindowDataItem* parent);
 

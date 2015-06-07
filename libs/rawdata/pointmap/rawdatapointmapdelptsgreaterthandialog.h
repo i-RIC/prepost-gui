@@ -23,6 +23,7 @@ public:
 
 public slots:
 	void accept() override;
+
 private:
 	Ui::RawDataPointmapDelPtsGreaterThanDialog* ui;
 	QVector<vtkIdType> m_selectedPoints;

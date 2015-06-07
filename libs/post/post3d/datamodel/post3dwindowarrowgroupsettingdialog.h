@@ -20,6 +20,7 @@ namespace Ui
 class Post3dWindowArrowGroupSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	Post3dWindowArrowGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowArrowGroupSettingDialog();
@@ -52,11 +53,13 @@ public slots:
 	void addFaceSetting();
 	void removeFaceSetting();
 	void switchFaceSetting(QListWidgetItem* current, QListWidgetItem* previous);
+
 private slots:
 	void solutionChanged(int index);
 	void checkSelectedNumber();
 	void allSamplingToggled(bool toggled);
 	void updateFaceMap();
+
 private:
 	QList<QString> m_solutions;
 	QList<QString> m_scalars;

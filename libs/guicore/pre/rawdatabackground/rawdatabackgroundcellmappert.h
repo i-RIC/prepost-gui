@@ -7,6 +7,7 @@
 
 class RawDataBackgroundCellMapperSetting : public RawDataMapperSetting
 {
+
 public:
 	RawDataBackgroundCellMapperSetting() : RawDataMapperSetting() {}
 	~RawDataBackgroundCellMapperSetting() {}
@@ -16,6 +17,7 @@ public:
 template <class V, class DA>
 class RawDataBackgroundCellMapperT : public RawDataCellMapperT<V, DA>
 {
+
 public:
 	RawDataBackgroundCellMapperT(RawDataCreator* parent)
 		: RawDataCellMapperT<V, DA>(parent) {

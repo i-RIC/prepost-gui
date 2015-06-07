@@ -22,6 +22,7 @@ class PostZoneDataContainer;
 class Post3dWindowZoneDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent);

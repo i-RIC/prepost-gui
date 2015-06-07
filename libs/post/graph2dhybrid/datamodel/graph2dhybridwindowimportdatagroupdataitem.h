@@ -9,6 +9,7 @@ class Graph2dHybridWindowImportDataDataItem;
 class Graph2dHybridWindowImportDataGroupDataItem : public Graph2dHybridWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Graph2dHybridWindowImportDataGroupDataItem(Graph2dWindowDataItem* parent);
 	~Graph2dHybridWindowImportDataGroupDataItem();

@@ -5,6 +5,7 @@
 
 class RD_POINTMAP_EXPORT RawDataPointmapTemplateMappingSetting
 {
+
 public:
 	bool tempAutoMode;
 	double tempStreamWiseLength;

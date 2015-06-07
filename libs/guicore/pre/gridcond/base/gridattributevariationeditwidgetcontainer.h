@@ -7,6 +7,7 @@
 
 class GridAttributeVariationEditWidgetContainer : public QWidget
 {
+
 public:
 	GridAttributeVariationEditWidgetContainer(QWidget* parent)
 		: QWidget(parent) {

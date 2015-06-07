@@ -6,6 +6,7 @@
 
 class RD_NETCDF_EXPORT RawDataNetcdfGdalRealImporter : public RawDataNetcdfGdalImporter
 {
+
 public:
 	RawDataNetcdfGdalRealImporter(RawDataCreator* creator) : RawDataNetcdfGdalImporter(creator) {}
 	virtual ~RawDataNetcdfGdalRealImporter() {}

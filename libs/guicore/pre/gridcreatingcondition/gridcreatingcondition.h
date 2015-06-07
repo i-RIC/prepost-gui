@@ -27,6 +27,7 @@ class vtkPoints;
 class GUICOREDLL_EXPORT GridCreatingCondition : public ProjectDataItem
 {
 	Q_OBJECT
+
 public:
 	static const int MAXGRIDSIZE = 100000000;
 	GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator);

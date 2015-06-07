@@ -17,6 +17,7 @@ class QPolygonF;
 class GridCreatingConditionTriangleAbstractPolygon : public QObject
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionTriangleAbstractPolygon(GridCreatingConditionTriangle* parent);
 	~GridCreatingConditionTriangleAbstractPolygon();
@@ -37,6 +38,7 @@ public:
 	void setActive(bool active);
 	QPointF innerPoint(QPointF offset = QPointF(0, 0)) const;
 	virtual void finishDefinition() {}
+
 private:
 	void setupContainers();
 	void setupActors();
@@ -51,6 +53,7 @@ private:
 	/// The grid that has cells, those consists of the edge of m_vtkPolygon.
 	vtkSmartPointer<vtkUnstructuredGrid> m_edgeGrid;
 	vtkSmartPointer<vtkUnstructuredGrid> m_vertexGrid;
+
 protected:
 	GridCreatingConditionTriangle* m_parent;
 

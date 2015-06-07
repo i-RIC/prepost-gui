@@ -10,6 +10,7 @@
  */
 class GUICOREDLL_EXPORT WindowWithZIndexInterface
 {
+
 public:
 	/// constructor
 	WindowWithZIndexInterface();

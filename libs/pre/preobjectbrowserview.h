@@ -11,6 +11,7 @@ class QAction;
 class PreObjectBrowserView : public ObjectBrowserView
 {
 	Q_OBJECT
+
 public:
 	PreObjectBrowserView(QWidget* parent);
 };

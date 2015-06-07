@@ -18,6 +18,7 @@ namespace Ui
 class Post2dWindowArrowUnstructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowUnstructuredSettingDialog();

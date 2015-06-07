@@ -5,6 +5,7 @@
 
 class Structured2DGridCgnsImporter : public CgnsGridImporter
 {
+
 public:
 	Structured2DGridCgnsImporter() : CgnsGridImporter() {}
 	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override {

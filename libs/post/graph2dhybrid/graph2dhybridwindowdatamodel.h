@@ -20,6 +20,7 @@ class Graph2dHybridWindowZoneDataItem;
 class Graph2dHybridWindowDataModel : public Graph2dWindowDataModel
 {
 	Q_OBJECT
+
 public:
 	static const int MOVEWIDTH = 1;
 	/// Constructor
@@ -33,6 +34,7 @@ public:
 	void getXAxisValueRange(double* min, double* max);
 	void getYAxisValueRange(Graph2dWindowDataModel::AxisSide as, double* min, double* max) override;
 	const Graph2dHybridWindowResultSetting& setting() const {return m_setting;}
+
 public slots:
 	void sliderChanged();
 	void dataSourceSetting();
@@ -44,9 +46,11 @@ public slots:
 	void specialCsvExport();
 	void copyCalculationResult();
 	void exportCsv();
+
 private slots:
 	void updateTime();
 	void updateData(int fn);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

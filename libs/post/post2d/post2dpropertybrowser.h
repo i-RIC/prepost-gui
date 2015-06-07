@@ -6,6 +6,7 @@
 class Post2dPropertyBrowser : public PropertyBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dPropertyBrowser(QWidget* parent) : PropertyBrowser(parent) {

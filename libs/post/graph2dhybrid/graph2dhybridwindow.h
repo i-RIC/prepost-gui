@@ -16,6 +16,7 @@ class Graph2dHybridWindow :
 	public AdditionalMenuWindowInterface
 {
 	Q_OBJECT
+
 public:
 	explicit Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
 	~Graph2dHybridWindow();

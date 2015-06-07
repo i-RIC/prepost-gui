@@ -18,6 +18,7 @@ class InputConditionContainerReal;
 class GUICOREDLL_EXPORT InputConditionWidgetReal : public InputConditionWidget
 {
 	Q_OBJECT
+
 public:
 	InputConditionWidgetReal(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont);
 	void setDisabled(bool disable);

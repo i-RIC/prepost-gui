@@ -12,6 +12,7 @@ class RawDataRiverPathPoint;
  */
 class RD_RIVERSURVEY_EXPORT RawDataRiverCrosssection
 {
+
 public:
 	/// Values to be returned as exception
 	enum ErrorCodes {
@@ -25,6 +26,7 @@ public:
 	/// Altitude data
 	class Altitude
 	{
+
 	public:
 		/// Constructor
 		Altitude() {
@@ -58,6 +60,7 @@ public:
 		bool operator <(const Altitude& alt) const {
 			return m_position < alt.m_position;
 		}
+
 	private:
 		void init() {
 			m_active = true;

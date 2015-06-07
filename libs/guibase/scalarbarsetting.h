@@ -14,6 +14,7 @@ class QXmlStreamWriter;
 /// Container for scalar bar display setting
 class GUIBASEDLL_EXPORT ScalarBarSetting : public XmlAttributeContainer
 {
+
 public:
 	static const int DEFAULT_NUMOFLABELS = 8;
 	static const QString DEFAULT_LABELFORMAT;

@@ -7,10 +7,12 @@
 /// Container class to store integer value ranges
 class MISCDLL_EXPORT IntegerRangeContainer
 {
+
 public:
 	/// Container to store integer range
 	class Range
 	{
+
 	public:
 		/// Range minimum value
 		unsigned int from;

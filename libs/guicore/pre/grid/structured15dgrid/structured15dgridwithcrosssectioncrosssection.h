@@ -8,13 +8,16 @@
 
 class Structured15DGridWithCrossSectionCrossSection : public QObject
 {
+
 public:
 	struct Altitude {
+
 	public:
 		double m_position;
 		double m_height;
 	};
 	struct CtrlPointsAddMethod {
+
 	public:
 		enum {
 			am_Uniform,          ///< Uniform

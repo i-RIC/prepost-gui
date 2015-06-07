@@ -57,16 +57,19 @@ public:
 	const ScalarBarSetting& scalarBarSetting() const {return m_scalarBarSetting;}
 	const vtkTextPropertySettingContainer titleTextSetting() const {return m_titleTextSetting;}
 	const vtkTextPropertySettingContainer labelTextSetting() const {return m_labelTextSetting;}
+
 public slots:
 	void accept() override;
 	void addFaceSetting();
 	void removeFaceSetting();
 	void switchFaceSetting(QListWidgetItem* current, QListWidgetItem* previous);
+
 private slots:
 	void solutionChanged(int index);
 	void checkSelectedNumber();
 	void updateFaceMap();
 	void showColorBarDialog();
+
 private:
 	QList<QString> m_solutions;
 	Ui::Post3dWindowContourGroupSettingDialog* ui;

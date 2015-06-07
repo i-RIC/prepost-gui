@@ -13,6 +13,7 @@ class InputConditionDependency;
 class GUICOREDLL_EXPORT InputConditionWidget : public QWidget
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	InputConditionWidget(QDomNode /*n*/) {

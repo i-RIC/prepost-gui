@@ -17,6 +17,7 @@ namespace Ui
 class Post2dWindowCellFlagSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
@@ -31,12 +32,14 @@ public:
 	const QList<Post2dWindowCellFlagSetting>& settings();
 	int opacityPercent();
 	void setupDialog();
+
 private slots:
 	void moveUp();
 	void moveDown();
 	void handleItemClick(QTableWidgetItem*);
 	void handleItemEdit(QTableWidgetItem*);
 	void handleShownSelectionChange(const QItemSelection& selected, const QItemSelection& deselected);
+
 private:
 	Ui::Post2dWindowCellFlagSettingDialog* ui;
 	SolverDefinitionGridType* m_gridType;

@@ -9,6 +9,7 @@ class QWidget;
 
 class GUICOREDLL_EXPORT PostProcessorWindowProjectDataItem : public ProjectDataItem
 {
+
 public:
 	PostProcessorWindowProjectDataItem(ProjectDataItem* parent, QWidget* /*parentWindow*/)
 		: ProjectDataItem(parent) {

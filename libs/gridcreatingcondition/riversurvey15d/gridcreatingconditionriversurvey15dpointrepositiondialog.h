@@ -16,6 +16,7 @@ namespace Ui
 class GridCreatingConditionRiverSurvey15DPointRepositionDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit GridCreatingConditionRiverSurvey15DPointRepositionDialog(GridCreatingConditionRiverSurvey15D* gc, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurvey15DPointRepositionDialog();

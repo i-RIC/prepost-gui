@@ -12,12 +12,14 @@ class SolverDefinitionGridAttribute;
 
 class RawDataFactory : public QObject
 {
+
 private:
 	/// Constructor
 	/**
 	 * this function is made to be private (Singleton pattern)
 	 */
 	RawDataFactory();
+
 public:
 	static RawDataFactory& instance() {
 		if (m_instance == nullptr) {
@@ -28,6 +30,7 @@ public:
 	const QList<RawDataCreator*> creators() const {return m_creators;}
 	const QList<RawDataCreator*> compatibleCreators(SolverDefinitionGridAttribute* condition) const;
 	RawData* restore(const QDomNode& node, ProjectDataItem* item, SolverDefinitionGridAttribute* cond) const;
+
 private:
 	QList<RawDataCreator*> m_creators;
 	static RawDataFactory* m_instance;

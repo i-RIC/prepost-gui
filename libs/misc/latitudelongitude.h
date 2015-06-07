@@ -9,6 +9,7 @@
 /// This class contains the data of angle in Latitude-Longitude coordinate system
 class MISCDLL_EXPORT LatitudeLongitudeAngle
 {
+
 public:
 	/// Constructor (without initializing)
 	LatitudeLongitudeAngle() {
@@ -61,6 +62,7 @@ public:
 		m_minute = m.toUInt(&ok, 10);
 		m_second = s.toDouble(&ok);
 	}
+
 protected:
 	/// true for North / East, false for South / West
 	bool m_flag;
@@ -75,6 +77,7 @@ protected:
 /// This class contains a position in Latitude-Longitude coordinate system
 class MISCDLL_EXPORT LatitudeLongitude
 {
+
 public:
 	/// Constructor without initializing()
 	LatitudeLongitude() : m_latitude(), m_longitude()

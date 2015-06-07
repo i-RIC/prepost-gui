@@ -12,6 +12,7 @@ class QModelIndex;
 class PreObjectBrowser : public ObjectBrowser
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
@@ -19,8 +20,10 @@ public:
 	~PreObjectBrowser() {}
 	void setModel(QStandardItemModel* model);
 	PreObjectBrowserView* view() {return m_view;}
+
 public slots:
 	void expandAll();
+
 private:
 	void init();
 	/// The widget to show in the dockarea

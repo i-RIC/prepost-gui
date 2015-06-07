@@ -18,6 +18,7 @@ class PostZoneDataContainer;
 class GUICOREDLL_EXPORT PostZoneSelectingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	explicit PostZoneSelectingDialog(QWidget* parent = nullptr);
 	~PostZoneSelectingDialog();

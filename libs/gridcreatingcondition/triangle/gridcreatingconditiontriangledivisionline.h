@@ -6,6 +6,7 @@
 class GridCreatingConditionTriangleDivisionLine : public GridCreatingConditionTriangleAbstractLine
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionTriangleDivisionLine(GridCreatingConditionTriangle* parent);
 };

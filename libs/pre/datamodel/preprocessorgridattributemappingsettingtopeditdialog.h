@@ -15,6 +15,7 @@ namespace Ui
 class PreProcessorGridAttributeMappingSettingTopEditDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget* parent = nullptr);
 	~PreProcessorGridAttributeMappingSettingTopEditDialog();
@@ -33,8 +34,10 @@ public:
 	void setNumExpansion(int num) {m_numExpansion = num;}
 	double weightExponent() {return m_weightExponent;}
 	void setWeightExponent(double exp) {m_weightExponent = exp;}
+
 private slots:
 	void showDetailDialog();
+
 private:
 	bool m_autoMode;
 	double m_streamWiseLength;

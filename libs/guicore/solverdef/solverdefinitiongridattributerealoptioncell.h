@@ -6,6 +6,7 @@
 
 class SolverDefinitionGridAttributeRealOptionCell : public SolverDefinitionGridAttributeRealCell, public RealEnumLoader
 {
+
 public:
 	SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator);
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;

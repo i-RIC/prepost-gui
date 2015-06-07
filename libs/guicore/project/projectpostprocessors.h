@@ -11,6 +11,7 @@ class PostProcessorWindowFactoryInterface;
 
 class GUICOREDLL_EXPORT ProjectPostProcessors : public ProjectDataItem
 {
+
 public:
 	ProjectPostProcessors(ProjectDataItem* parent);
 	~ProjectPostProcessors();

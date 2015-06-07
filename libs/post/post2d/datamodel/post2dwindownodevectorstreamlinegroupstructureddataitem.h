@@ -23,9 +23,11 @@ class Post2dWindowStreamlineStructuredSetProperty;
 class Post2dWindowNodeVectorStreamlineGroupStructuredDataItem : public Post2dWindowNodeVectorStreamlineGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupStructuredDataItem();
+
 protected:
 	vtkPointSet* getSource(int i);
 	void setupActors() override;
@@ -33,6 +35,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void setupDefaultValues();
 
@@ -40,6 +43,7 @@ private:
 	QList<vtkSubdivideGrid*> m_subdivideGrids;
 
 	QList<Post2dWindowStructuredStreamlineSetSetting> m_settings;
+
 public:
 	friend class Post2dWindowStreamlineStructuredSetProperty;
 };

@@ -21,8 +21,10 @@ public:
 	void setCreators(const QList<GridCreatingConditionCreator*>& creators);
 	void setCurrent(GridCreatingConditionCreator* creator);
 	GridCreatingConditionCreator* selectedCreator();
+
 private slots:
 	void handleCurrentChange(int index);
+
 private:
 	Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog* ui;
 	QList<GridCreatingConditionCreator*> m_creators;

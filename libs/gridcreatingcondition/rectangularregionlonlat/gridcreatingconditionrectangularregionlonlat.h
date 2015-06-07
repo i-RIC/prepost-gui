@@ -17,6 +17,7 @@ class Structured2DGrid;
 class GridCreatingConditionRectangularRegionLonLat : public GridCreatingCondition
 {
 	Q_OBJECT
+
 public:
 	enum MouseEventMode {
 		meNormal,
@@ -42,6 +43,7 @@ public:
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void clear() override;
 	void showInitialDialog() override;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
@@ -60,8 +62,10 @@ protected:
 
 //	bool m_isDialogOpening;
 //	bool m_isCreatingBoundingBox;
+
 private slots:
 	void hideTmpGrid();
+
 private:
 	void createRectangularRegionFromMouse();
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);

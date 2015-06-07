@@ -8,6 +8,7 @@ class QString;
 /// Support class for handling time format
 class MISCDLL_EXPORT TimeFormat
 {
+
 public:
 	enum Format {
 		fmSecond, ///< ss sec

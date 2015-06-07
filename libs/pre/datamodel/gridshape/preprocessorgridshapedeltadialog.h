@@ -12,11 +12,13 @@ namespace Ui
 class PreProcessorGridShapeDeltaDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	PreProcessorGridShapeDeltaDialog(QWidget* parent = nullptr);
 	~PreProcessorGridShapeDeltaDialog();
 
 	QVector2D delta();
+
 private:
 	Ui::PreProcessorGridShapeDeltaDialog* ui;
 };

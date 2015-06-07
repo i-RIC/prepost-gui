@@ -12,6 +12,7 @@ class QWidget;
 /// Base class for Grid Exporter
 class GridExporterInterface
 {
+
 public:
 	virtual ~GridExporterInterface() {}
 	virtual QString caption() const = 0;

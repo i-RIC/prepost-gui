@@ -18,6 +18,7 @@ public:
 
 protected:
 	void focusOutEvent(QFocusEvent* e) override;
+
 signals:
 	void valueChanged(QString txt);
 };
@@ -25,6 +26,7 @@ signals:
 class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFoldername : public InputConditionWidget
 {
 	Q_OBJECT
+
 public:
 	CgnsFileInputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 	void setDisabled(bool disable) {m_edit->setDisabled(disable);}

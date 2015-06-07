@@ -16,6 +16,7 @@ class Post2dBirdEyeWindowZoneDataItem;
 class Post2dBirdEyeWindowDataModel : public Graphics3DWindowDataModel
 {
 	Q_OBJECT
+
 public:
 	static const int MOVEWIDTH = 1;
 	/// Constructor
@@ -25,19 +26,23 @@ public:
 	Post2dBirdEyeWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
 	void editZScale();
+
 public slots:
 	void gridShapeSetting();
 	void contourSetting();
 	void titleSetting();
 	void timeSetting();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void createCameraConnections();
 	void init();
 	Post2dBirdEyeWindowZoneDataItem* getZoneDataItem();
 	double m_zScale;
+
 public:
 	friend class Post2dBirdEyeWindowDataModelProjectDataItem;
 	friend class Post2dBirdEyeWindowProjectDataItem;

@@ -11,9 +11,11 @@ class QDomElement;
 template <class V>
 class EnumLoader
 {
+
 public:
 	const QMap<V, QString>& enumerations() const {return m_enumerations;}
 	const QMap<V, QString>& englishEnumerations() const {return m_englishEnumerations;}
+
 protected:
 	virtual void loadEnumeration(const QDomElement& node, const SolverDefinitionTranslator& translator) {
 		QDomNode def = iRIC::getChildNode(node, "Definition");
@@ -44,12 +46,14 @@ protected:
 
 class IntegerEnumLoader : public EnumLoader<int>
 {
+
 protected:
 	int fromStr(const QString& str) override {return str.toInt();}
 };
 
 class RealEnumLoader : public EnumLoader<double>
 {
+
 protected:
 	double fromStr(const QString& str) override {return str.toDouble();}
 };

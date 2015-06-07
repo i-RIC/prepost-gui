@@ -5,6 +5,7 @@
 
 class PreferencePage : public QWidget
 {
+
 public:
 	PreferencePage(QWidget* parent = nullptr, Qt::WindowFlags f = 0)
 		: QWidget(parent, f)

@@ -14,6 +14,7 @@ class PostProcessorWindowProjectDataItem;
 class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public SnapshotEnabledWindowInterface
 {
 	Q_OBJECT
+
 public:
 	const static int MINWIDTH;
 	const static int MINHEIGHT;

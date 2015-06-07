@@ -9,6 +9,7 @@
 
 class GUICOREDLL_EXPORT ColorTransferFunctionContainer : public ScalarsToColorsContainer
 {
+
 public:
 	ColorTransferFunctionContainer(ProjectDataItem* d);
 	void update() override;

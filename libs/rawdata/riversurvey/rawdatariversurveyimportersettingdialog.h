@@ -22,6 +22,7 @@ public:
 	~RawDataRiverSurveyImporterSettingDialog();
 
 	CenterPointSetting centerPointSetting() const;
+
 private:
 	Ui::RawDataRiverSurveyImporterSettingDialog* ui;
 };

@@ -19,6 +19,7 @@ class WorkfolderInfo;
 class GUICOREDLL_EXPORT ProjectWorkspace : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Foldeer name of workspace.
 	const static QString FOLDERNAME;

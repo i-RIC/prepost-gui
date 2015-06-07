@@ -15,6 +15,7 @@ class PreProcessorGridCreatingConditionDataItemInterface;
 
 class GUICOREDLL_EXPORT GridCreatingConditionCreator : public QObject
 {
+
 public:
 	GridCreatingConditionCreator();
 	virtual ~GridCreatingConditionCreator() {}

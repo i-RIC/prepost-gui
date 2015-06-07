@@ -7,6 +7,7 @@
 
 class POSTBASEDLL_EXPORT PostTitleSetting
 {
+
 public:
 	/// Constructor
 	PostTitleSetting() {

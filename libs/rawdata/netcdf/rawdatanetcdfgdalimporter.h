@@ -12,8 +12,10 @@ class RawDataNetcdf;
 
 class RD_NETCDF_EXPORT RawDataNetcdfGdalImporter : public RawDataImporter
 {
+
 public:
 	Q_OBJECT
+
 public:
 	RawDataNetcdfGdalImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	virtual ~RawDataNetcdfGdalImporter() {}

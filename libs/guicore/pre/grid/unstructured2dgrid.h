@@ -10,6 +10,7 @@
 class GUICOREDLL_EXPORT Unstructured2DGrid : public Grid2D
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Unstructured2DGrid(ProjectDataItem* parent);

@@ -5,6 +5,7 @@
 /// clipboard related operations, i.e. cut, copy, and paste.
 class ClipboardOperatableWindowInterface
 {
+
 public:
 	/// Returns true if this window support cut()
 	virtual bool acceptCut() const {return false;}

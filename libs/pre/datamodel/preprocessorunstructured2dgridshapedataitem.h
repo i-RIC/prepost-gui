@@ -11,8 +11,10 @@
 
 class PreProcessorUnstructured2dGridShapeDataItem : public PreProcessorGridShapeDataItem
 {
+
 private:
 	static const int normalLineWidth = 1;
+
 public:
 	PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorUnstructured2dGridShapeDataItem();
@@ -21,12 +23,14 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(1);}
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void setupActors();
 	void updateActorSettings();
+
 private:
 	void setupIndexArray();
 	vtkSmartPointer<vtkActor> m_wireframeActor;

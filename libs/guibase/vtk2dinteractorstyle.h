@@ -9,6 +9,7 @@
 class GUIBASEDLL_EXPORT vtk2DInteractorStyle :
 	public vtkInteractorStyleTrackballCamera
 {
+
 public:
 	static vtk2DInteractorStyle* New();
 	void OnLeftButtonDown() override;

@@ -12,6 +12,7 @@
 
 class Post2dWindowCellFlagDataItem : public Post2dWindowDataItem
 {
+
 public:
 	Post2dWindowCellFlagDataItem(const QString& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent);
 	~Post2dWindowCellFlagDataItem();

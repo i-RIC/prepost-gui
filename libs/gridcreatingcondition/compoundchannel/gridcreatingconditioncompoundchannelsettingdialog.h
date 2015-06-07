@@ -14,6 +14,7 @@ namespace Ui
 class GridCreatingConditionCompoundChannelSettingDialog : public QDialog
 {
 	Q_OBJECT
+
 public:
 	GridCreatingConditionCompoundChannelSettingDialog(QWidget* parent = 0);
 	~GridCreatingConditionCompoundChannelSettingDialog();
@@ -33,8 +34,10 @@ public:
 
 	double relaxation();
 	int iterations();
+
 public slots:
 	void toggleDetailCondition();
+
 private:
 	Ui::GridCreatingConditionCompoundChannelSettingDialog* ui;
 };

@@ -7,6 +7,7 @@ class QToolBar;
 
 class AdditionalMenuWindowInterface
 {
+
 public:
 	virtual QList<QMenu*> getAdditionalMenus() const = 0;
 	virtual QToolBar* getAdditionalToolBar() const {return 0;}

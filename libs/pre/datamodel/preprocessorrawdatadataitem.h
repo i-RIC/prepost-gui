@@ -12,6 +12,7 @@ class QAction;
 class PreProcessorRawdataDataItem : public PreProcessorRawdataDataItemInterface
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorRawdataDataItem(PreProcessorDataItem* parent);
@@ -59,6 +60,7 @@ signals:
 
 public slots:
 	void exportRawdata();
+
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

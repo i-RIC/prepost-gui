@@ -7,6 +7,7 @@
 
 class GUICOREDLL_EXPORT LookupTableContainer : public ScalarsToColorsContainer
 {
+
 public:
 	LookupTableContainer();
 	LookupTableContainer(ProjectDataItem* d);

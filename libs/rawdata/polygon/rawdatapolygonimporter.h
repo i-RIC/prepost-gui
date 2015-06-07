@@ -7,6 +7,7 @@
 class RawDataPolygonImporter : public RawDataImporter
 {
 	Q_OBJECT
+
 public:
 	RawDataPolygonImporter(RawDataCreator* creator) : RawDataImporter(creator) {}
 	const QStringList fileDialogFilters() override;

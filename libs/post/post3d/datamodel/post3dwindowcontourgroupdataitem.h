@@ -22,8 +22,10 @@ class LookupTableContainer;
 class Post3dWindowContourGroupDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int DEFAULT_NUMOFDIV = 15;
+
 public:
 	/// Constructor
 	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
@@ -55,6 +57,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
+
 private:
 	QString m_currentSolution;
 	int m_numberOfDivision;
@@ -77,6 +80,7 @@ private:
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	double m_zScale;
+
 public:
 	friend class Post3dWindowContourGroupSetSetting;
 	friend class Post3dWindowContourGroupSetFaceMap;

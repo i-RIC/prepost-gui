@@ -48,6 +48,7 @@ class RawDataPointMapAddPointSetReferenceCommand;
 class RawDataPointmap : public RawData
 {
 	Q_OBJECT
+
 public:
 	enum MappingMode {
 		mmTIN,
@@ -178,6 +179,7 @@ private slots:
 	void editPointsLessThan();
 	void editPointsGreaterThan();
 	void cancel() {m_canceled = true;}
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

@@ -11,10 +11,12 @@ class iRICMainWindowAboutDialog;
 class iRICMainWindowMiscDialogManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor;
 	iRICMainWindowMiscDialogManager(iRICMainWindow* parent);
 	void setupAboutDialog(const QDomNode& domNode);
+
 public slots:
 	/// Show solver definition file translation update wizard
 	void solverDefinitionTranslationWizard();
@@ -29,6 +31,7 @@ public slots:
 	void mouseHelp();
 	/// Show about Dialog of iRIC
 	void about();
+
 private:
 	iRICMainWindow* m_mainWindow;
 	iRICMainWindowAboutDialog* m_aboutDialog;

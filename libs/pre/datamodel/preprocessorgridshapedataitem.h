@@ -19,6 +19,7 @@ class QString;
 class PreProcessorGridShapeDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	PreProcessorGridShapeDataItem(PreProcessorDataItem* parent);
@@ -40,10 +41,12 @@ public:
 	QAction* openVXsectionWindowAction() {return m_openVXsectionWindowAction;}
 	virtual void updateActionStatus();
 //	void updateAxesRegion() override;
+
 private slots:
 	void editShape();
 	void openCrossSectionWindow();
 	void openVerticalCrossSectionWindow();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

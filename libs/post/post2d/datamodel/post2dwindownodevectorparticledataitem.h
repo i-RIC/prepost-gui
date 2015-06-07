@@ -9,6 +9,7 @@ class QColor;
 class Post2dWindowNodeVectorParticleDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowNodeVectorParticleDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);

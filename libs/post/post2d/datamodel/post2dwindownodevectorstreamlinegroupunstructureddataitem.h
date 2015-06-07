@@ -24,11 +24,13 @@ struct Post2dWindowUnstructuredStreamlineSetSetting {
 class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem  : public Post2dWindowNodeVectorStreamlineGroupDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem();
 	void showPropertyDialog() override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
 protected:
 	vtkPointSet* getSource(int i);
 	void setupActors() override;
@@ -41,8 +43,10 @@ protected:
 	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
 	void setSetting(const QVector2D& v1, const QVector2D& v2, int num);
 	void clearSetting();
+
 private slots:
 	void exitDialogMode();
+
 private:
 	void setupDefaultValues();
 	void setupTmpSource();

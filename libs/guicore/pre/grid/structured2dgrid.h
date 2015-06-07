@@ -11,6 +11,7 @@ class QTextStream;
 
 class RectRegion
 {
+
 public:
 	double xMin;
 	double xMax;
@@ -47,6 +48,7 @@ public:
 class GUICOREDLL_EXPORT Structured2DGrid : public Grid2D
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Structured2DGrid(ProjectDataItem* parent);

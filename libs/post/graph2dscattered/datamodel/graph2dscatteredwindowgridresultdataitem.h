@@ -10,6 +10,7 @@ class vtkPointSet;
 
 class Graph2dScatteredWindowGridResultDataItem : public Graph2dScatteredWindowResultDataItem
 {
+
 public:
 	Graph2dScatteredWindowGridResultDataItem(const Graph2dScatteredWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent);
 	virtual ~Graph2dScatteredWindowGridResultDataItem();

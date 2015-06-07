@@ -7,6 +7,7 @@
 /// Base class for interpolator
 class InterpolatorBase
 {
+
 public:
 	InterpolatorBase() {}
 	virtual ~InterpolatorBase() {}
@@ -17,6 +18,7 @@ public:
 /// Interpolator for one-dimensional data with one parameter
 class Interpolator1D1 : public InterpolatorBase
 {
+
 public:
 	Interpolator1D1() : InterpolatorBase() {}
 	virtual ~Interpolator1D1() {}
@@ -27,6 +29,7 @@ public:
 /// Interpolator for one-dimensional data with two parameters
 class Interpolator1D2 : public InterpolatorBase
 {
+
 public:
 	Interpolator1D2() : InterpolatorBase() {}
 	virtual ~Interpolator1D2() {}
@@ -37,6 +40,7 @@ public:
 /// Interpolator for two-dimensional data with one parameter
 class Interpolator2D1 : public InterpolatorBase
 {
+
 public:
 	Interpolator2D1() : InterpolatorBase() {}
 	virtual ~Interpolator2D1() {}
@@ -48,6 +52,7 @@ public:
 /// Interpolator for two-dimensional data with two parameters
 class Interpolator2D2 : public InterpolatorBase
 {
+
 public:
 	Interpolator2D2() : InterpolatorBase() {}
 	virtual ~Interpolator2D2() {}
@@ -58,6 +63,7 @@ public:
 /// Interpolator for three-dimensional data with one parameter
 class Interpolator3D1 : public InterpolatorBase
 {
+
 public:
 	Interpolator3D1() : InterpolatorBase() {}
 	virtual ~Interpolator3D1() {}
@@ -68,6 +74,7 @@ public:
 /// Interpolator for three-dimensional data with two parameters
 class Interpolator3D2 : public InterpolatorBase
 {
+
 public:
 	Interpolator3D2() {}
 	virtual ~Interpolator3D2() {}

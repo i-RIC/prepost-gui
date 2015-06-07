@@ -10,6 +10,7 @@ class Post3dWindow;
 class Post3dWindowActionManager : public QObject
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowActionManager(Post3dWindow* parent);

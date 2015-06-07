@@ -23,6 +23,7 @@ public:
 	void setAreaConstraint(bool c);
 	double area();
 	void setArea(double a);
+
 private:
 	Ui::GridCreatingConditionTriangleSettingDialog* ui;
 };

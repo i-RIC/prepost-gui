@@ -11,6 +11,7 @@ class GridExporterInterface;
 
 class PREDLL_EXPORT GridExporterFactory : public QObject
 {
+
 public:
 	~GridExporterFactory();
 	const QList<GridExporterInterface*> list(SolverDefinitionGridType::GridType gt) const;

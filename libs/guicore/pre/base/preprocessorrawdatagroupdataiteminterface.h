@@ -16,6 +16,7 @@ class RawDataRiverSurveyCrosssectionWindowProjectDataItem;
 
 class GUICOREDLL_EXPORT PreProcessorRawDataGroupDataItemInterface : public PreProcessorDataItem
 {
+
 public:
 	PreProcessorRawDataGroupDataItemInterface(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
 		: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

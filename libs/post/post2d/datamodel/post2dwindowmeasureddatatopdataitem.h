@@ -20,6 +20,7 @@ class SolverDefinitionGridAttribute;
 class Post2dWindowMeasuredDataTopDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent);
@@ -29,12 +30,15 @@ public:
 	void setupActors();
 	void updateActorSettings();
 	void addCustomMenuItems(QMenu* menu) override;
+
 public slots:
 	void addChildItem();
 	void setupChildItem();
 	void deleteChildItem(int index);
+
 signals:
 	void selectMeasuredData(const QModelIndex& current);
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

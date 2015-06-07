@@ -24,8 +24,10 @@ class LookupTableContainer;
 class GUICOREDLL_EXPORT MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 private:
 	static const int DEFAULT_NUMOFDIV = 15;
+
 public:
 	/// Constructor
 	MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* parent);
@@ -49,10 +51,12 @@ public:
 public slots:
 	void exclusivelyCheck(MeasuredDataPointDataItem* item);
 	void showSettingDialog() {showPropertyDialog();}
+
 protected:
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 private:
 	void setupActors();
 	void updateActorSettings();

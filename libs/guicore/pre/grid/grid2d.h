@@ -8,6 +8,7 @@
 /// Absract class to store two-dimensional grids.
 class GUICOREDLL_EXPORT Grid2D : public Grid
 {
+
 public:
 	Grid2D(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	/// Constructor

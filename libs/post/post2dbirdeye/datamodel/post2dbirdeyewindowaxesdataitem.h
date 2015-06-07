@@ -10,6 +10,7 @@
 class Post2dBirdEyeWindowAxesDataItem : public Post2dBirdEyeWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent);
 	~Post2dBirdEyeWindowAxesDataItem();
@@ -18,11 +19,13 @@ public:
 	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 	void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 
 	void updateVisibility(bool visible) override;
+
 private:
 	void setupActors();
 	vtkSmartPointer<vtkAxesActor> m_actor;

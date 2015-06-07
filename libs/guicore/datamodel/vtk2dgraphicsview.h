@@ -9,6 +9,7 @@ class QVector2D;
 class GUICOREDLL_EXPORT VTK2DGraphicsView : public VTKGraphicsView
 {
 	Q_OBJECT
+
 public:
 	VTK2DGraphicsView(QWidget* parent);
 	virtual ~VTK2DGraphicsView() {}

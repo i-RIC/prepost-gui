@@ -11,6 +11,7 @@
 class GUICOREDLL_EXPORT Axis2dDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Axis2dDataItem(GraphicsWindowDataItem* parent);
 	virtual ~Axis2dDataItem();

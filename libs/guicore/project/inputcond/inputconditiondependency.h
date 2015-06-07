@@ -16,27 +16,33 @@ class CgnsFileInputConditionDependencyBuilder;
 class GUICOREDLL_EXPORT InputConditionDependency : public QObject
 {
 	Q_OBJECT
+
 public:
 
 	class Action
 	{
+
 	protected:
 		/// Constructor
 		Action(InputConditionWidget* w) {
 			m_target = w;
 		}
+
 	public:
 		virtual ~Action() {}
 		virtual void positiveAction() = 0;
 		virtual void negativeAction() = 0;
+
 	protected:
 		InputConditionWidget* m_target;
 	};
 
 	class Condition
 	{
+
 	protected:
 		Condition(InputConditionDependency* d);
+
 	public:
 		virtual ~Condition() {}
 		virtual bool match() = 0;
@@ -44,6 +50,7 @@ public:
 	};
 	class ActionEnable : public Action
 	{
+
 	public:
 		/// Constructor
 		ActionEnable(InputConditionWidget* w) : Action(w) {}
@@ -55,6 +62,7 @@ public:
 			m_target->setDisabled(true);
 		}
 	};
+
 public:
 	/// Constructor
 	InputConditionDependency();

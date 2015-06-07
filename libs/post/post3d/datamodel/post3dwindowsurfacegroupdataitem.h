@@ -13,14 +13,17 @@
 class Post3dWindowSurfaceGroupDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	/// Constructor
 	Post3dWindowSurfaceGroupDataItem(Post3dWindowDataItem* parent);
 	void updateActorSettings();
 	void setupActors();
+
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+
 private:
 	vtkSmartPointer<vtkExtractGrid> m_extractGrid;
 	vtkSmartPointer<vtkActor> m_actor;
