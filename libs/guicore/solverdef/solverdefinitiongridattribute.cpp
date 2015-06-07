@@ -6,8 +6,8 @@
 #include "../scalarstocolors/lookuptableeditwidget.h"
 #include "../scalarstocolors/scalarstocolorseditdialog.h"
 #include "solverdefinitiongridattribute.h"
-#include "solverdefinitiongridattributedimensioncreator.h"
 #include "solverdefinitiongridattributedimension.h"
+#include "solverdefinitiongridattributedimensioncreator.h"
 #include "solverdefinitiontranslator.h"
 
 #include <misc/xmlsupport.h>

@@ -1,7 +1,7 @@
 #include "../../solverdef/solverdefinitiontranslator.h"
+#include "functional/inputconditionwidgetfunctionaldialog.h"
 #include "inputconditioncontainerfunctional.h"
 #include "inputconditionwidgetfunctional.h"
-#include "functional/inputconditionwidgetfunctionaldialog.h"
 
 #include <QFileDialog>
 #include <QHBoxLayout>

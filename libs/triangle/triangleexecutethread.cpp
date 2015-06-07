@@ -1,10 +1,10 @@
-#include "triangleexecutethread.h"
-#include "triangle.h"
-
-#include <QProcess>
-
 #define REAL double
 #define VOID void
+
+#include "triangle.h"
+#include "triangleexecutethread.h"
+
+#include <QProcess>
 
 TriangleExecuteThread::TriangleExecuteThread(QObject* parent) :
 	QThread(parent)

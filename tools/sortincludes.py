@@ -20,7 +20,7 @@ def sortincludes(path):
     line = line.strip()
     if not line: continue
     if not "#include" in line:
-      line = line + '\n'
+      line = line + '\r\n'
       lines.insert(0, line)
       break
 
@@ -48,33 +48,33 @@ def sortincludes(path):
   with open(path, 'w', encoding = 'shift_jis') as f:
     if len(ui_incs) > 0:
       for line in ui_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     if len(local_incs) > 0:
       for line in local_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     if len(iric_incs) > 0:
       for line in iric_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     if len(qt_incs) > 0:
       for line in qt_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     if len(vtk_incs) > 0:
       for line in vtk_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     if len(std_incs) > 0:
       for line in std_incs:
-        f.write(line + '\n')
-      f.write('\n')
+        f.write(line + '\r\n')
+      f.write('\r\n')
 
     for line in lines:
       f.write(line)

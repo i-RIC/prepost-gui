@@ -2,9 +2,9 @@
 #include "../preprocessorwindow.h"
 #include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
 #include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h"
-#include "preprocessorgriddataitem.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -20,9 +20,9 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/scalarstocolors/lookuptableeditwidget.h>
 #include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>

@@ -10,7 +10,6 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
-
 #include <vector>
 
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent)

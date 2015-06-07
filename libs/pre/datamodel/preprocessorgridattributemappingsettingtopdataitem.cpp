@@ -3,12 +3,12 @@
 #include "preprocessorbcsettingdataitem.h"
 #include "preprocessorbcsettinggroupdataitem.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributecustommappingdialog.h"
 #include "preprocessorgridattributemappingsettingdataitem.h"
 #include "preprocessorgridattributemappingsettingtopdataitem.h"
-#include "preprocessorgriddataitem.h"
-#include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -19,9 +19,9 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QAction>

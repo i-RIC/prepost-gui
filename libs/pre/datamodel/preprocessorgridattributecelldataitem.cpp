@@ -1,8 +1,8 @@
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
-#include "preprocessorgriddataitem.h"
 #include "preprocessorgridattributecelldataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -16,8 +16,8 @@
 #include <guicore/pre/gridcond/gridcellattributepropertydialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorseditwidget.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 

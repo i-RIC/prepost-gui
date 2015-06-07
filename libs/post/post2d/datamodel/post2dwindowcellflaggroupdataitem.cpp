@@ -6,8 +6,8 @@
 
 #include <guicore/project/colorsource.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 
 #include <QMouseEvent>

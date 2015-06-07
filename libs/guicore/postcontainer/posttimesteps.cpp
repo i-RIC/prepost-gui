@@ -8,7 +8,6 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
-
 #include <vector>
 
 #if CGNS_VERSION < 3100

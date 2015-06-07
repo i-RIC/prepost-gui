@@ -16,8 +16,8 @@
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>

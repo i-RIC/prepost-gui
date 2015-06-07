@@ -13,8 +13,8 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>

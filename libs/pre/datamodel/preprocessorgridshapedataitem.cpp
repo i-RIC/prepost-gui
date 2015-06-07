@@ -2,9 +2,9 @@
 #include "../preprocessorwindow.h"
 #include "gridshape/preprocessorgridshapedeltadialog.h"
 #include "gridshape/preprocessorgridshapenewpositiondialog.h"
-#include "preprocessorgriddataitem.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridshapedataitem.h"
 
 #include <guibase/coloreditwidget.h>

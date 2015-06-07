@@ -1,10 +1,10 @@
 #include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
-#include "preprocessorgriddataitem.h"
 #include "preprocessorgridattributecelldataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorrawdatacomplexgroupdataitem.h"
 #include "preprocessorrawdatagroupdataitem.h"
 #include "preprocessorrawdatatopdataitem.h"
@@ -17,8 +17,8 @@
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 

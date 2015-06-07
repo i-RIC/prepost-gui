@@ -1,10 +1,10 @@
 #include "../preprocessordatamodel.h"
 #include "../preprocessorgraphicsview.h"
 #include "../preprocessorwindow.h"
-#include "preprocessorgriddataitem.h"
 #include "preprocessorgridattributecellgroupdataitem.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
 
 #include <guicore/base/propertybrowser.h>
@@ -18,10 +18,10 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptionnode.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
