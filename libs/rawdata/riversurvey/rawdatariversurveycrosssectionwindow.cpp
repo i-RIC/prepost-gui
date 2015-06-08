@@ -614,7 +614,7 @@ bool RawDataRiverSurveyCrosssectionWindow::canInactivateSelectedRows(RawDataRive
 
 void RawDataRiverSurveyCrosssectionWindow::informFocusIn()
 {
-//	m_riverSurvey->setColoredPoints(m_editTargetPoint, m_redLinePoint, m_blueLinePoint);
+	m_targetRiverSurvey->setColoredPoints(m_editTargetPoint, nullptr, nullptr);
 }
 
 void RawDataRiverSurveyCrosssectionWindow::toggleGridCreatingMode(bool gridMode, RawDataRiverSurvey* rs)
@@ -812,6 +812,7 @@ void RawDataRiverSurveyCrosssectionWindow::updateEditTargetPoint()
 	}
 	setupData();
 	updateView();
+	informFocusIn();
 
 	// set watersurface elevation
 	ui->weCheckBox->blockSignals(true);
