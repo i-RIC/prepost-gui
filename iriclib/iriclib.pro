@@ -33,7 +33,6 @@ SOURCES += iriclib.c \
 
 QT =
 DEFINES += UPPERCASE
-DEFINES += CG_BUILD_64BIT
 
 include( ../paths.pri )
 
