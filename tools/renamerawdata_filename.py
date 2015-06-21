@@ -14,5 +14,5 @@ def renamerawdata(path):
   os.rename(oldpath, newpath)
  
 print('adding empty lines before visibility identifier...')
-idev.recursiveExec("../libs", "\.(h|cpp|pro|ts|qm|qrc|png|jpg)$", renamerawdata)
+idev.recursiveExec("../libs", "\.(h|cpp|ui|pro|ts|qm|qrc|png|jpg)$", renamerawdata)
 
