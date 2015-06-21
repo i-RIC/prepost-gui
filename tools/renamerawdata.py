@@ -23,6 +23,7 @@ def renamerawdata(path):
       newline = newline.replace("cg_coogd_", "cg_coord_")
       newline = newline.replace(".readGeoData(", ".readRawData(")
       newline = newline.replace("cg_iRIC_GotoGeoDataTop", "cg_iRIC_GotoRawDataTop")
+      newline = newline.replace("dgeo", "draw")
       newlines.append(newline)
 
   if lines == newlines:
