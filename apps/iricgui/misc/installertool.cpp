@@ -18,6 +18,8 @@ InstallerTool::~InstallerTool()
 void InstallerTool::openMaintainanceDialog()
 {
 	QProcess process;
+	QStringList args;
+	args << "--skip-gui";
 	process.start(installerFileName());
 	bool finished = false;
 	while (! finished) {
