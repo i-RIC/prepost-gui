@@ -5,10 +5,10 @@
 #include <QAbstractButton>
 
 
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 class GridCreatingConditionRiverSurvey;
-//class RawDataRiverPathPoint;
+//class GeoDataRiverPathPoint;
 
 namespace Ui
 {
@@ -33,11 +33,11 @@ private slots:
 	void handleButtonClick(QAbstractButton* button);
 
 private:
-	RawDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
 	Ui::GridCreatingConditionRiverSurveyPointRepositionDialog* ui;
 
 	GridCreatingConditionRiverSurvey* m_condition;
-	RawDataRiverPathPoint::CtrlPointsAddMethod m_method;
+	GeoDataRiverPathPoint::CtrlPointsAddMethod m_method;
 	bool m_applied;
 };
 

@@ -3,7 +3,7 @@
 #include "gridcreatingconditionriversurvey.h"
 #include "gridcreatingconditionriversurveyregiondialog.h"
 
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
 
 GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent) :
 	QDialog(parent),
@@ -21,9 +21,9 @@ GridCreatingConditionRiverSurveyRegionDialog::~GridCreatingConditionRiverSurveyR
 	delete ui;
 }
 
-void GridCreatingConditionRiverSurveyRegionDialog::setData(RawDataRiverSurvey* rs)
+void GridCreatingConditionRiverSurveyRegionDialog::setData(GeoDataRiverSurvey* rs)
 {
-	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
+	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	while (p != 0) {
 		m_points.push_back(p);
 		p = p->nextPoint();
@@ -41,28 +41,28 @@ void GridCreatingConditionRiverSurveyRegionDialog::setData(RawDataRiverSurvey* r
 	ui->endComboBox->setCurrentIndex(m_points.count() - 2);
 }
 
-void GridCreatingConditionRiverSurveyRegionDialog::setStartPoint(RawDataRiverPathPoint* p)
+void GridCreatingConditionRiverSurveyRegionDialog::setStartPoint(GeoDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
 	if (index == - 1) {index = 0;}
 	ui->startComboBox->setCurrentIndex(index);
 }
 
-void GridCreatingConditionRiverSurveyRegionDialog::setEndPoint(RawDataRiverPathPoint* p)
+void GridCreatingConditionRiverSurveyRegionDialog::setEndPoint(GeoDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
 	if (index == - 1) {index = m_points.count() - 1;}
 	ui->endComboBox->setCurrentIndex(index - 1);
 }
 
-RawDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::startPoint()
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::startPoint()
 {
 	int index = ui->startComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 1) {return 0;}
 	return m_points.at(index);
 }
 
-RawDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::endPoint()
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurveyRegionDialog::endPoint()
 {
 	int index = ui->endComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 2) {return 0;}

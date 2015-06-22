@@ -29,7 +29,7 @@ public:
 	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
 	}
-	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;
+	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 };
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinitionGridAttributeT<double>
@@ -42,7 +42,7 @@ public:
 	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();
 	}
-	RawData* buildBackgroundRawData(ProjectDataItem* parent) override;
+	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 };
 
 #endif // SOLVERDEFINITIONGRIDRELATEDCONDITIONT_H

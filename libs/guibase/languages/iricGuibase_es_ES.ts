@@ -94,36 +94,36 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="227"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
         <source>Import Colormap Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="227"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="296"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="233"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="240"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="302"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="233"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
         <source>File %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="240"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="302"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
         <source>File %1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="296"/>
+        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
         <source>Export Colormap Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,7 +187,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="34"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="36"/>
         <source>(Not Specified)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -205,7 +205,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dirnameeditwidget.cpp" line="32"/>
+        <location filename="../dirnameeditwidget.cpp" line="34"/>
         <source>Select Directory</source>
         <translation type="unfinished"></translation>
     </message>
@@ -218,7 +218,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../doublespinboxwithhelp.cpp" line="51"/>
+        <location filename="../doublespinboxwithhelp.cpp" line="63"/>
         <source>Min: %1, Max: %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -236,12 +236,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="13"/>
+        <location filename="../filenameeditwidget.cpp" line="15"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="53"/>
+        <location filename="../filenameeditwidget.cpp" line="54"/>
         <source>Select File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -309,32 +309,32 @@
 <context>
     <name>ObjectBrowserView</name>
     <message>
-        <location filename="../objectbrowserview.cpp" line="18"/>
+        <location filename="../objectbrowserview.cpp" line="19"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="20"/>
+        <location filename="../objectbrowserview.cpp" line="21"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="22"/>
+        <location filename="../objectbrowserview.cpp" line="23"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="25"/>
+        <location filename="../objectbrowserview.cpp" line="26"/>
         <source>&amp;Property...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="35"/>
+        <location filename="../objectbrowserview.cpp" line="36"/>
         <source>Delete item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="35"/>
+        <location filename="../objectbrowserview.cpp" line="36"/>
         <source>Are you sure you want to delete this item?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -342,7 +342,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../objectbrowserview.cpp" line="99"/>
+        <location filename="../objectbrowserview.cpp" line="101"/>
         <source>Selection Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -358,12 +358,12 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="34"/>
+        <location filename="../realnumbereditwidget.cpp" line="37"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="34"/>
+        <location filename="../realnumbereditwidget.cpp" line="37"/>
         <source>It is not a real value</source>
         <translation type="unfinished"></translation>
     </message>

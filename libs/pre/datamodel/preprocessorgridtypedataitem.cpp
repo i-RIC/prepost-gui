@@ -2,14 +2,14 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -40,9 +40,9 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	setupScalarsToColors(type);
 
 	// add raw data node and grid data node.
-	m_rawdataTop = new PreProcessorRawDataTopDataItem(this);
-	connect(m_rawdataTop, SIGNAL(valueRangeChanged(QString)), this, SLOT(changeValueRange(QString)));
-	m_childItems.append(m_rawdataTop);
+	m_geoDataTop = new PreProcessorGeoDataTopDataItem(this);
+	connect(m_geoDataTop, SIGNAL(valueRangeChanged(QString)), this, SLOT(changeValueRange(QString)));
+	m_childItems.append(m_geoDataTop);
 
 	// add default grid, if this gridtype is not optional
 	if (! type->isOptional()) {
@@ -195,8 +195,13 @@ bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& captio
 void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	// load raw data.
+	QDomNode gdNode = iRIC::getChildNode(node, "GeoData");
 	QDomNode rdNode = iRIC::getChildNode(node, "RawData");
-	if (! rdNode.isNull()) {m_rawdataTop->loadFromProjectMainFile(rdNode);}
+	if (! gdNode.isNull()) {
+		m_geoDataTop->loadFromProjectMainFile(gdNode);
+	} else if (! rdNode.isNull()) {
+		m_geoDataTop->loadFromProjectMainFile(rdNode);
+	}
 	// load region datas.
 	QDomNode c = node.firstChild();
 	while (! c.isNull()) {
@@ -228,8 +233,8 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		}
 		c = c.nextSibling();
 	}
-	// Reset RawData dimensions
-	m_rawdataTop->setDimensionsToFirst();
+	// Reset GeoData dimensions
+	m_geoDataTop->setDimensionsToFirst();
 }
 
 void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -237,8 +242,8 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	// write name.
 	writer.writeAttribute("name", name());
 	// write raw data.
-	writer.writeStartElement("RawData");
-	m_rawdataTop->saveToProjectMainFile(writer);
+	writer.writeStartElement("GeoData");
+	m_geoDataTop->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 	// write region datas.
 	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
@@ -270,7 +275,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
 	double min = 0;
 	double max = 0;
 	// check raw data
-	PreProcessorRawDataGroupDataItemInterface* i = m_rawdataTop->groupDataItem(name);
+	PreProcessorGeoDataGroupDataItemInterface* i = m_geoDataTop->groupDataItem(name);
 	if (i == nullptr) {return;}
 	valueExist = i->getValueRange(&min, &max);
 
@@ -334,11 +339,11 @@ void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
 		(*cit)->setZDepthRange(r);
 		max = min - divWidth;
 	}
-	// rawdata gets the lowest region.
-	ZDepthRange r = m_rawdataTop->zDepthRange();
+	// geodata gets the lowest region.
+	ZDepthRange r = m_geoDataTop->zDepthRange();
 	r.setMin(range.min());
 	r.setMax(max);
-	m_rawdataTop->setZDepthRange(r);
+	m_geoDataTop->setZDepthRange(r);
 }
 
 void PreProcessorGridTypeDataItem::updateNewGridActionStatus()

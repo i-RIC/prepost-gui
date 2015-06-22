@@ -35,18 +35,18 @@ void PreProcessorGridAttributeMappingSettingTopEditDialog::setMappingMode(PrePro
 	}
 }
 
-RawDataPointmapMappingMode::Mode PreProcessorGridAttributeMappingSettingTopEditDialog::pointmapMappingMode()
+GeoDataPointmapMappingMode::Mode PreProcessorGridAttributeMappingSettingTopEditDialog::pointmapMappingMode()
 {
 	if (ui->TINRadioButton->isChecked()) {
-		return RawDataPointmapMappingMode::mTIN;
+		return GeoDataPointmapMappingMode::mTIN;
 	} else {
-		return RawDataPointmapMappingMode::mTemplate;
+		return GeoDataPointmapMappingMode::mTemplate;
 	}
 }
 
-void PreProcessorGridAttributeMappingSettingTopEditDialog::setPointmapMappingMode(RawDataPointmapMappingMode::Mode mm)
+void PreProcessorGridAttributeMappingSettingTopEditDialog::setPointmapMappingMode(GeoDataPointmapMappingMode::Mode mm)
 {
-	if (mm == RawDataPointmapMappingMode::mTIN) {
+	if (mm == GeoDataPointmapMappingMode::mTIN) {
 		ui->TINRadioButton->setChecked(true);
 	} else {
 		ui->templateRadioButton->setChecked(true);

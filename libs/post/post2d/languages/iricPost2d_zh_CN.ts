@@ -40,7 +40,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="178"/>
+        <location filename="../post2dwindow.cpp" line="176"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -356,12 +356,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="188"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="187"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="188"/>
+        <location filename="../datamodel/post2dwindowbackgroundimagesdataitem.cpp" line="187"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -477,6 +477,14 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGeoDataTopDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowgeodatatopdataitem.cpp" line="10"/>
+        <source>Geographic Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
         <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="58"/>
@@ -510,24 +518,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="779"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="785"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="790"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="787"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="779"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="793"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="785"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="798"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="790"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -860,16 +868,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="16"/>
+        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="17"/>
         <source>Particles</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowRawDataTopDataItem</name>
-    <message>
-        <location filename="../datamodel/post2dwindowrawdatatopdataitem.cpp" line="10"/>
-        <source>Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1106,12 +1106,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="456"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="455"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="592"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="588"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1121,8 +1121,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp" line="147"/>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp" line="151"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp" line="146"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp" line="150"/>
         <source>Update Arrow Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1133,7 +1133,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp" line="40"/>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="156"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="157"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1144,12 +1144,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="156"/>
-        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp" line="98"/>
+        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp" line="99"/>
         <source>Update Streamline Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="149"/>
+        <location filename="../post2dwindow.cpp" line="150"/>
         <source>Edit Background Color</source>
         <translation type="unfinished"></translation>
     </message>

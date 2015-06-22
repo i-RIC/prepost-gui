@@ -174,19 +174,19 @@ unix {
 }
 LIBS += -liricGraph2dscattered
 
-#iricRdRiversurvey library
+#iricGdRiversurvey library
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../../libs/rawdata/riversurvey/debug"
+		LIBS += -L"../../libs/geodata/riversurvey/debug"
 	} else {
-		LIBS += -L"../../libs/rawdata/riversurvey/release"
+		LIBS += -L"../../libs/geodata/riversurvey/release"
 	}
 }
 unix {
-	LIBS += -L"../../libs/rawdata/riversurvey"
+	LIBS += -L"../../libs/geodata/riversurvey"
 }
-LIBS += -liricRdRiversurvey
+LIBS += -liricGdRiversurvey
 
 #iricGccexternalprogram library
 

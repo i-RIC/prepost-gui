@@ -4,8 +4,8 @@
 #include <QDialog>
 #include <QList>
 
-class RawDataRiverSurvey;
-class RawDataRiverPathPoint;
+class GeoDataRiverSurvey;
+class GeoDataRiverPathPoint;
 class GridCreatingConditionRiverSurvey;
 
 namespace Ui
@@ -20,11 +20,11 @@ class GridCreatingConditionRiverSurveyPointRegionAddDialog : public QDialog
 public:
 	explicit GridCreatingConditionRiverSurveyPointRegionAddDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyPointRegionAddDialog();
-	void setData(RawDataRiverSurvey* rs);
-	void setStartPoint(RawDataRiverPathPoint* p);
-	void setEndPoint(RawDataRiverPathPoint* p);
-	RawDataRiverPathPoint* startPoint();
-	RawDataRiverPathPoint* endPoint();
+	void setData(GeoDataRiverSurvey* rs);
+	void setStartPoint(GeoDataRiverPathPoint* p);
+	void setEndPoint(GeoDataRiverPathPoint* p);
+	GeoDataRiverPathPoint* startPoint();
+	GeoDataRiverPathPoint* endPoint();
 
 public slots:
 	void accept() override;
@@ -39,7 +39,7 @@ protected:
 private:
 	Ui::GridCreatingConditionRiverSurveyPointRegionAddDialog* ui;
 
-	QList<RawDataRiverPathPoint*> m_points;
+	QList<GeoDataRiverPathPoint*> m_points;
 	GridCreatingConditionRiverSurvey* m_condition;
 };
 

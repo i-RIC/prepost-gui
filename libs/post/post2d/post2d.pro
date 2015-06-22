@@ -143,9 +143,9 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowparticlestructuredsettingdialog.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
-           datamodel/post2dwindowrawdatadataitem.h \
-           datamodel/post2dwindowrawdatagroupdataitem.h \
-           datamodel/post2dwindowrawdatatopdataitem.h \
+           datamodel/post2dwindowgeodatadataitem.h \
+           datamodel/post2dwindowgeodatagroupdataitem.h \
+           datamodel/post2dwindowgeodatatopdataitem.h \
            datamodel/post2dwindowrootdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
@@ -197,9 +197,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowparticlestopdataitem.cpp \
            datamodel/post2dwindowparticlestructuredsettingdialog.cpp \
            datamodel/post2dwindowparticleunstructuredsettingdialog.cpp \
-           datamodel/post2dwindowrawdatadataitem.cpp \
-           datamodel/post2dwindowrawdatagroupdataitem.cpp \
-           datamodel/post2dwindowrawdatatopdataitem.cpp \
+           datamodel/post2dwindowgeodatadataitem.cpp \
+           datamodel/post2dwindowgeodatagroupdataitem.cpp \
+           datamodel/post2dwindowgeodatatopdataitem.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \

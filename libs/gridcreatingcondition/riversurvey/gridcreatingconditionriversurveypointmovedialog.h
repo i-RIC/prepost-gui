@@ -5,7 +5,7 @@
 #include <QAbstractButton>
 
 
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 class GridCreatingConditionRiverSurvey;
 

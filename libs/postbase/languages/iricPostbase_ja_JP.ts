@@ -24,17 +24,17 @@
         <translation>領域:</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="34"/>
+        <location filename="../postallzoneselectingdialog.cpp" line="35"/>
         <source>One dimensional data</source>
         <translation>一次元データ</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="45"/>
+        <location filename="../postallzoneselectingdialog.cpp" line="46"/>
         <source>Two dimensional data</source>
         <translation>二次元データ</translation>
     </message>
     <message>
-        <location filename="../postallzoneselectingdialog.cpp" line="56"/>
+        <location filename="../postallzoneselectingdialog.cpp" line="57"/>
         <source>Three dimensional data</source>
         <translation>三次元データ</translation>
     </message>
@@ -60,12 +60,12 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="17"/>
+        <location filename="../time/posttimedataitem.cpp" line="20"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="68"/>
+        <location filename="../time/posttimedataitem.cpp" line="71"/>
         <source>Edit time setting</source>
         <translation>時刻表示の設定変更</translation>
     </message>
@@ -111,12 +111,12 @@
 <context>
     <name>PostTitleDataItem</name>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="15"/>
+        <location filename="../title/posttitledataitem.cpp" line="18"/>
         <source>Title</source>
         <translation>タイトル</translation>
     </message>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="67"/>
+        <location filename="../title/posttitledataitem.cpp" line="70"/>
         <source>Edit title setting</source>
         <translation>時刻表示の設定変更</translation>
     </message>

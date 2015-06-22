@@ -1,0 +1,69 @@
+#ifndef GEODATARIVERSURVEYBACKGROUNDGRIDCREATETHREAD_H
+#define GEODATARIVERSURVEYBACKGROUNDGRIDCREATETHREAD_H
+
+#include "geodatariversurvey.h"
+#include <QThread>
+#include <QMutex>
+#include <QMap>
+#include <QWaitCondition>
+#include <vtkSmartPointer.h>
+#include <vtkStructuredGrid.h>
+#include <vtkUnstructuredGrid.h>
+
+class GeoDataRiverPathPoint;
+class RiverGridCtrlSolver;
+
+class GeoDataRiverSurveyBackgroundGridCreateThread : public QThread
+{
+	Q_OBJECT
+
+private:
+	static const int IDIVNUM = 4;
+	static const int JDIVNUM = 20;
+
+public:
+	GeoDataRiverSurveyBackgroundGridCreateThread(GeoDataRiverSurvey* parent);
+	~GeoDataRiverSurveyBackgroundGridCreateThread();
+
+	void update();
+	void cancel();
+	vtkStructuredGrid* grid() const {return m_grid;}
+	vtkPointSet* partialGrid(GeoDataRiverPathPoint* p) const {
+		return m_partialGrids.value(p, 0);
+	}
+	void setUseDivisionPoints(bool use) {
+		m_useDivisionPoints = use;
+	}
+	void startBGGridCopy();
+	void finishBGGridCopy();
+
+signals:
+	void gridUpdated();
+
+protected:
+	void run() override;
+
+private:
+	bool runStandard();
+	bool runUsingDivisionPoints();
+	void updateGridInterpolators();
+	vtkIdType gridIndex(int i, int j, int ISize);
+	vtkSmartPointer<vtkStructuredGrid> m_grid;
+	QMap<GeoDataRiverPathPoint*, vtkPointSet*> m_partialGrids;
+	QMutex m_mutex;
+	QWaitCondition m_runCondition;
+	QWaitCondition m_cancelCondition;
+	QWaitCondition m_bgGridCopyFinishCondition;
+
+	QList<RiverGridCtrlSolver*> m_gridSolvers;
+
+	bool m_useDivisionPoints;
+
+	bool m_restart;
+	bool m_canceled;
+	bool m_abort;
+
+	bool m_copyingBGGrid;
+};
+
+#endif // GEODATARIVERSURVEYBACKGROUNDGRIDCREATETHREAD_H

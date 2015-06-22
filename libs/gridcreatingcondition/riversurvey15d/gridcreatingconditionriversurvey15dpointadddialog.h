@@ -1,7 +1,7 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTADDDIALOG_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTADDDIALOG_H
 
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 #include <QDialog>
 
@@ -32,7 +32,7 @@ private slots:
 private:
 	bool m_applied;
 	void apply();
-	RawDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
 	GridCreatingConditionRiverSurvey15D* m_condition;
 
 	Ui::GridCreatingConditionRiverSurvey15DPointAddDialog* ui;

@@ -1465,9 +1465,9 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 	Graph2dHybridWindowResultDataItem* ditem = dynamic_cast<Graph2dHybridWindowResultDataItem*>(root->resultGroupItem()->childItems().at(0));
 	QVector<double> xvalues = ditem->xValues();
 	int iValue = 0;
-	RawDataRiverPathPoint* start = 0;
-	RawDataRiverPathPoint* end = 0;
-	RawDataRiverPathPoint* pp = 0;
+	GeoDataRiverPathPoint* start = 0;
+	GeoDataRiverPathPoint* end = 0;
+	GeoDataRiverPathPoint* pp = 0;
 
 	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaI) {goto CONDITIONERROR;}
 	info = m_setting.targetDataTypeInfo();

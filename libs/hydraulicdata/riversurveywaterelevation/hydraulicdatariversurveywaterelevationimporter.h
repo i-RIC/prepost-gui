@@ -12,9 +12,9 @@ public:
 	/// Constructor
 	HydraulicDataRiverSurveyWaterElevationImporter();
 	/// Import hydraulicdata from the specified file.
-	bool import(RawData* data, const QString& filename, const QString& selectedFilter, QWidget* w) override;
-	/// Returns true if the hydraulic data can be imported to the specified rawdata.
-	bool canImportTo(RawData* data) override;
+	bool import(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w) override;
+	/// Returns true if the hydraulic data can be imported to the specified geodata.
+	bool canImportTo(GeoData* data) override;
 	const QStringList fileDialogFilters() override;
 };
 

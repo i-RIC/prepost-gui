@@ -6,7 +6,7 @@
 #include "../../grid/grid.h"
 #include <QObject>
 
-class PreProcessorRawDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemInterface;
 class GridAttributeDimensionsContainer;
 
 class GUICOREDLL_EXPORT GridAttributeContainer : public GridAttributeBaseObject

@@ -18,7 +18,7 @@ public:
 	void setDefaultValues();
 
 public slots:
-	void informRawDataChange();
+	void informGeoDataChange();
 	void executeMapping();
 	void customMapping(bool nomessage = false);
 	void customMapping(const QString& attName, bool nomessage = false);

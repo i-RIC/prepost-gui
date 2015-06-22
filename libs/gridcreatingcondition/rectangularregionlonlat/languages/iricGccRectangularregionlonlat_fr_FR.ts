@@ -27,12 +27,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="352"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="352"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
         <source>Please define grid region by mouse-dragging.</source>
         <translation type="unfinished"></translation>
     </message>

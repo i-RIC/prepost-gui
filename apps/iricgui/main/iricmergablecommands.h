@@ -4,21 +4,21 @@
 namespace iRIC
 {
 	enum MergableCommand {
-		RawDataRiverPathPointTranslate,
-		RawDataRiverPathPointMouseRotate,
-		RawDataRiverPathPointMouseShift,
-		RawDataRiverPathPointMouseMoveExtension,
-		RawDataRiverPathPointInsert,
+		GeoDataRiverPathPointTranslate,
+		GeoDataRiverPathPointMouseRotate,
+		GeoDataRiverPathPointMouseShift,
+		GeoDataRiverPathPointMouseMoveExtension,
+		GeoDataRiverPathPointInsert,
 
-		RawDataRiverCrosssectionDragMove,
+		GeoDataRiverCrosssectionDragMove,
 
-		RawDataPolygonDefineNewPoint,
-		RawDataPolygonMove,
-		RawDataPolygonVertexMove,
-		RawDataPolygonAddVertex,
+		GeoDataPolygonDefineNewPoint,
+		GeoDataPolygonMove,
+		GeoDataPolygonVertexMove,
+		GeoDataPolygonAddVertex,
 
-		RawDataPMPolygonAddPointCommand,
-		RawDataPointMapBreakLineAddPoint,
+		GeoDataPMPolygonAddPointCommand,
+		GeoDataPointMapBreakLineAddPoint,
 
 		GridCreatingConditionRiverSurveyMovePoint,
 

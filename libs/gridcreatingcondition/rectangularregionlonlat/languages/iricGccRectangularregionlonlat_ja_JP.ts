@@ -27,12 +27,12 @@
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="352"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="352"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
         <source>Please define grid region by mouse-dragging.</source>
         <translation>格子領域を、マウスドラッグによって定義してください。</translation>
     </message>

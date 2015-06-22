@@ -7,7 +7,7 @@
 class QPainter;
 class QMenu;
 class QAction;
-//class RawDataRiverPathPoint;
+//class GeoDataRiverPathPoint;
 //class PreProcessorGridCrosssectionWindow;
 class Structured2DGrid;
 class QRubberBand;

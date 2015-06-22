@@ -17,7 +17,7 @@
 <context>
     <name>GridCreatingConditionGridCombine</name>
     <message>
-        <location filename="../gridcreatingconditiongridcombine.cpp" line="378"/>
+        <location filename="../gridcreatingconditiongridcombine.cpp" line="368"/>
         <source>(No additional operation available)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,5 +1,5 @@
 #include "preprocessorgridattributemappingsettingdataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
 
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -9,14 +9,14 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorRawDataGroupDataItem* rawdataGroup, PreProcessorDataItem* parent)
+PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent)
 	: PreProcessorDataItem(parent)
 {
-	m_mappingMode = mmFromRawData;
+	m_mappingMode = mmFromGeoData;
 	m_isDeletable = false;
 
 	m_condition = cond;
-	m_rawdataGroupDataItem = rawdataGroup;
+	m_geodataGroupDataItem = geodataGroup;
 
 	// this node does not have corresponding standard item.
 //	m_standardItem->parent()->removeRow(m_standardItem->row());
@@ -29,15 +29,15 @@ void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(
 	if (elem.attribute("mode") == "fromOtherAttribute") {
 		m_mappingMode = mmFromOtherAttribute;
 	} else {
-		m_mappingMode = mmFromRawData;
+		m_mappingMode = mmFromGeoData;
 	}
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	QString modestr;
-	if (m_mappingMode == mmFromRawData) {
-		modestr = "fromRawData";
+	if (m_mappingMode == mmFromGeoData) {
+		modestr = "fromGeoData";
 	} else {
 		modestr = "fromOtherAttribute";
 	}
@@ -47,15 +47,15 @@ void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QX
 
 void PreProcessorGridAttributeMappingSettingDataItem::setDefaultValue(Grid* grid)
 {
-	// delegate to rawdatagroupdataitem.
-	m_rawdataGroupDataItem->setDefaultValue(grid);
+	// delegate to geodatagroupdataitem.
+	m_geodataGroupDataItem->setDefaultValue(grid);
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid, WaitDialog* dialog)
 {
-	if (m_mappingMode == mmFromRawData) {
-		// delegate to rawdatagroupdataitem.
-		m_rawdataGroupDataItem->executeMapping(grid, dialog);
+	if (m_mappingMode == mmFromGeoData) {
+		// delegate to geodatagroupdataitem.
+		m_geodataGroupDataItem->executeMapping(grid, dialog);
 	} else {
 		// @todo not implemented yet.
 		// maybe we will implement this AFTER 2.0.
@@ -64,8 +64,8 @@ void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid,
 
 int PreProcessorGridAttributeMappingSettingDataItem::mappingCount() const
 {
-	if (m_mappingMode == mmFromRawData) {
-		return m_rawdataGroupDataItem->mappingCount();
+	if (m_mappingMode == mmFromGeoData) {
+		return m_geodataGroupDataItem->mappingCount();
 	} else {
 		// @todo not implemented yet.
 	}

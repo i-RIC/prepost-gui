@@ -338,8 +338,8 @@ private:
 	QMenu* m_gridImportMenu;
 	QMenu* m_gridExportMenu;
 
-	QMenu* m_rawDataImportMenu;
-	QMenu* m_rawDataExportMenu;
+	QMenu* m_geoDataImportMenu;
+	QMenu* m_geoDataExportMenu;
 
 	QMenu* m_hydraulicDataImportMenu;
 

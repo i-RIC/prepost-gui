@@ -100,8 +100,8 @@ public slots:
 	void exportCalcCondition();
 	void showCalcConditionDialog();
 	void handleAdditionalMenusUpdate(const QList<QMenu*>& menus);
-	void setupRawDataImportMenu();
-	void setupRawDataExportMenu();
+	void setupGeoDataImportMenu();
+	void setupGeoDataExportMenu();
 	void setupHydraulicDataImportMenu();
 
 signals:

@@ -9,7 +9,7 @@
 
 #include <guicore/pre/grid/structured15dgridwithcrosssection.h>
 #include <misc/iricundostack.h>
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 #include <QComboBox>
 #include <QLabel>

@@ -1,8 +1,8 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY_H
 
-#include <rawdata/riversurvey/gridcreatingconditionriversurveyinterface.h>
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/gridcreatingconditionriversurveyinterface.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -22,8 +22,8 @@
 
 class QAction;
 class QToolBar;
-class RawDataRiverSurvey;
-class RawDataRiverPathPoint;
+class GeoDataRiverSurvey;
+class GeoDataRiverPathPoint;
 class RiverGridCtrlSolver;
 class GridCreatingConditionRiverSurveyPointAddDialog;
 class GridCreatingConditionRiverSurveyPointAddCommand;
@@ -55,8 +55,8 @@ public:
 		meCreationDialog
 	};
 	struct ZoneSelectionInfo {
-		RawDataRiverPathPoint* point;
-		RawDataRiverPathPoint::CtrlZonePosition position;
+		GeoDataRiverPathPoint* point;
+		GeoDataRiverPathPoint::CtrlZonePosition position;
 		int index;
 	};
 
@@ -85,9 +85,9 @@ public:
 	void handleDialogAccepted(QDialog* d);
 	void handleDialogRejected(QDialog* d);
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
-	void createGrid(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
-	void selectCreateRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
-	bool checkCtrlPointsRegion(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end);
+	void createGrid(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
+	void selectCreateRegion(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
+	bool checkCtrlPointsRegion(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end);
 	void updateShapeData() override;
 	void updateShapeData(bool omitBackgroundUpdate);
 
@@ -97,8 +97,8 @@ public:
 	std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() override {return m_selectedCtrlPointInfoList;}
 	const std::list<CtrlPointSelectionInfo>& selectedCtrlPointInfoList() const {return m_selectedCtrlPointInfoList;}
 
-	RawDataRiverPathPoint* lastStartPoint() const {return m_lastStartPoint;}
-	RawDataRiverPathPoint* lastEndPoint() const {return m_lastEndPoint;}
+	GeoDataRiverPathPoint* lastStartPoint() const {return m_lastStartPoint;}
+	GeoDataRiverPathPoint* lastEndPoint() const {return m_lastEndPoint;}
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -110,7 +110,7 @@ private:
 	const static int LINEDIVS = 16;
 	static const int ZONEDIV = 10;
 	void selectCtrlZone(const QVector2D& point, double width);
-	bool selectCtrlZone(RawDataRiverPathPoint* p, RawDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width);
+	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QVector2D& point, double width);
 
 	void setupVtkContainers();
 	void updateGridInterpolators();
@@ -166,16 +166,16 @@ private:
 	void setActionStatus();
 	bool isCtrlPointsContinuousSelection();
 
-	RawDataRiverSurvey* m_riverSurvey;
+	GeoDataRiverSurvey* m_riverSurvey;
 
-	RawDataRiverPathPoint* m_lastStartPoint;
-	RawDataRiverPathPoint* m_lastEndPoint;
+	GeoDataRiverPathPoint* m_lastStartPoint;
+	GeoDataRiverPathPoint* m_lastEndPoint;
 
 	QString m_lastStartPointName;
 	QString m_lastEndPointName;
 
-	RawDataRiverPathPoint* m_lastRegionAddStartPoint;
-	RawDataRiverPathPoint* m_lastRegionAddEndPoint;
+	GeoDataRiverPathPoint* m_lastRegionAddStartPoint;
+	GeoDataRiverPathPoint* m_lastRegionAddEndPoint;
 
 	QAction* m_createAction;
 	QAction* m_addAction;

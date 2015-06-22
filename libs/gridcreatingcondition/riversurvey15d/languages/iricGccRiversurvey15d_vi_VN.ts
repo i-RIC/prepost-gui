@@ -4,24 +4,24 @@
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="16"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="17"/>
         <source>Create 1.5D grid from river survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="17"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="18"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="46"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="50"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="46"/>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -29,77 +29,77 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 <context>
     <name>GridCreatingConditionRiverSurvey15D</name>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="52"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="54"/>
         <source>Delete Selected Control Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="277"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="265"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="277"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="265"/>
         <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="672"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="660"/>
         <source>&amp;Add Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="673"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="661"/>
         <source>Add Division Points &amp;Regionally...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="674"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="662"/>
         <source>&amp;Move Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="675"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="663"/>
         <source>Re&amp;position Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="676"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="664"/>
         <source>&amp;Delete Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="786"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="774"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="787"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="775"/>
         <source>Are you sure you want to delete these control points?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="1078"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="1059"/>
         <source>point%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointadddialog.cpp" line="40"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointadddialog.cpp" line="42"/>
         <source>Add Division Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointmovedialog.cpp" line="18"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointmovedialog.cpp" line="20"/>
         <source>Move Control Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="23"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="25"/>
         <source>Add Control Points regionally</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointrepositiondialog.cpp" line="20"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointrepositiondialog.cpp" line="22"/>
         <source>Reposition Control Points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -183,12 +183,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="181"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="177"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="182"/>
+        <location filename="../gridcreatingconditionriversurvey15dpointregionadddialog.cpp" line="178"/>
         <source>The control points which already exist in this region are overwritten.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -244,12 +244,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dregiondialog.cpp" line="97"/>
+        <location filename="../gridcreatingconditionriversurvey15dregiondialog.cpp" line="99"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15dregiondialog.cpp" line="98"/>
+        <location filename="../gridcreatingconditionriversurvey15dregiondialog.cpp" line="100"/>
         <source>Number of points in interpolated cross sections should be odd. incrementing by one.</source>
         <translation type="unfinished"></translation>
     </message>

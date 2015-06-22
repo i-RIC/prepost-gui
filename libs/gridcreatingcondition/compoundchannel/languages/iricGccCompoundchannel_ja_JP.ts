@@ -29,145 +29,145 @@
         <translation>領域もしくは中心線の定義の完了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="223"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="230"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1789"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="229"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1764"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="223"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="222"/>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>次に、低水域領域を定義してください。低水域領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="230"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="229"/>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>次に、格子の中心線を定義してください。中心線は、折れ線としてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="284"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="285"/>
         <source>Add New Polygon Point</source>
         <translation>頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="349"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="347"/>
         <source>Move Polygon</source>
         <translation>領域の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="419"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="414"/>
         <source>Move Polygon Vertex</source>
         <translation>領域の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="490"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="482"/>
         <source>Insert Polygon Vertex</source>
         <translation>領域の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="589"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="577"/>
         <source>Add New Center Line Point</source>
         <translation>中心線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="660"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="645"/>
         <source>Move Polygonal Line</source>
         <translation>中心線の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="730"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="712"/>
         <source>Move Polygonal Line Vertex</source>
         <translation>中心線の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="801"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="780"/>
         <source>Insert Polygonal Line Vertex</source>
         <translation>中心線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="995"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="970"/>
         <source>Remove Polygon Vertex</source>
         <translation>領域の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1066"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1038"/>
         <source>Remove Polygonal Line Vertex</source>
         <translation>中心線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1415"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1438"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2217"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2226"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2232"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2239"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1388"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1411"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2189"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2194"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2198"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2204"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2211"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1415"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1388"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1420"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1393"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1438"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1411"/>
         <source>Polygonal line must have two vertices at least.</source>
         <translation>中心線は、最低2つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1443"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1416"/>
         <source>Finish Defining Polygonal line</source>
         <translation>中心線の定義の完了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1789"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1764"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子生成領域を定義してください。格子生成領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1892"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1866"/>
         <source>Generating grid...</source>
         <translation>格子を生成しています...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2217"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2189"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation>格子生成条件の定義が完了していません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2194"/>
         <source>Grid creating region polygon shape is invalid.</source>
         <translation>格子生成領域の形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2226"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2198"/>
         <source>Low water channel region polygon shape is invalid.</source>
         <translation>低水域領域の形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2232"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2204"/>
         <source>Low water channel region have to be inside grid region.</source>
         <translation>低水域領域は、格子生成領域の内側にある必要があります。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2239"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2211"/>
         <source>Center line have to be inside low water channel region.</source>
         <translation>中心線は、低水域領域の内側にある必要があります。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="49"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="51"/>
         <source>Edit Polygon Coordinates</source>
         <translation>ポリゴンの座標の編集</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="48"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="50"/>
         <source>Edit Center Line Coordinates</source>
         <translation>中心線の座標の編集</translation>
     </message>
@@ -175,7 +175,7 @@
 <context>
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelabstractpolygon.cpp" line="119"/>
+        <location filename="../gridcreatingconditioncompoundchannelabstractpolygon.cpp" line="120"/>
         <source>Please specify a closed polygon!</source>
         <translation>閉じたポリゴンを指定してください!</translation>
     </message>
@@ -188,12 +188,12 @@
         <translation>折れ線の頂点座標</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="155"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="154"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="156"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="155"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
@@ -206,12 +206,12 @@
         <translation>ポリゴンの頂点座標</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="156"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="155"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="157"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="156"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
@@ -257,12 +257,12 @@
 <context>
     <name>GridCreatingConditionCreatorCompoundChannel</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="10"/>
+        <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="11"/>
         <source>Create compound channel grid</source>
         <translation>複断面格子を生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="11"/>
+        <location filename="../gridcreatingconditioncreatorcompoundchannel.cpp" line="12"/>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
         <translation>格子生成領域のポリゴンと、低水域のポリゴンを指定し、最後に中心線を指定してください。

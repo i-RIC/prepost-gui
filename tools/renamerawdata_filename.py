@@ -6,6 +6,9 @@ def renamerawdata(path):
   """rename files with "rawdata" to "geodata"
   """
 
+  if 'moc_' in path: return
+  if 'qrc_' in path: return
+
   oldpath = path
   newpath = oldpath.replace('iricRd', 'iricGd')
   newpath = newpath.replace('rawdata', 'geodata')

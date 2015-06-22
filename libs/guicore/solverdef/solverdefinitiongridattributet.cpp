@@ -1,13 +1,13 @@
-#include "../pre/rawdatabackground/rawdatabackgroundintegercreator.h"
-#include "../pre/rawdatabackground/rawdatabackgroundrealcreator.h"
+#include "../pre/geodatabackground/geodatabackgroundintegercreator.h"
+#include "../pre/geodatabackground/geodatabackgroundrealcreator.h"
 #include "solverdefinitiongridattributet.h"
 
-RawData* SolverDefinitionGridAttributeInteger::buildBackgroundRawData(ProjectDataItem* parent)
+GeoData* SolverDefinitionGridAttributeInteger::buildBackgroundGeoData(ProjectDataItem* parent)
 {
-	return RawDataBackgroundIntegerCreator::instance()->create(parent, this);
+	return GeoDataBackgroundIntegerCreator::instance()->create(parent, this);
 }
 
-RawData* SolverDefinitionGridAttributeReal::buildBackgroundRawData(ProjectDataItem* parent)
+GeoData* SolverDefinitionGridAttributeReal::buildBackgroundGeoData(ProjectDataItem* parent)
 {
-	return RawDataBackgroundRealCreator::instance()->create(parent, this);
+	return GeoDataBackgroundRealCreator::instance()->create(parent, this);
 }

@@ -50,7 +50,7 @@
 #include <pre/factory/gridimporterfactory.h>
 #include <pre/preprocessorwindow.h>
 #include <pre/preprocessorwindowprojectdataitem.h>
-#include <rawdata/riversurvey/rawdatariversurveycrosssectionwindow.h>
+#include <geodata/riversurvey/geodatariversurveycrosssectionwindow.h>
 #include <solverconsole/solverconsolewindow.h>
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
 
@@ -597,7 +597,7 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		return;
 	}
 	QWidget* innerWindow = newActiveWindow->widget();
-	RawDataRiverSurveyCrosssectionWindow* cw = dynamic_cast<RawDataRiverSurveyCrosssectionWindow*>(innerWindow);
+	GeoDataRiverSurveyCrosssectionWindow* cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
 	if (cw != nullptr) {
 		cw->informFocusIn();
 	} else {

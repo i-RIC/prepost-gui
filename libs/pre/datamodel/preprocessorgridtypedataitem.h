@@ -8,7 +8,7 @@
 
 class QAction;
 class SolverDefinitionGridType;
-class PreProcessorRawDataTopDataItemInterface;
+class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 class ScalarsToColorsContainer;
 
@@ -21,7 +21,7 @@ public:
 	~PreProcessorGridTypeDataItem();
 	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override {return m_conditions;}
 	const QString& name() const;
-	PreProcessorRawDataTopDataItemInterface* rawdataTop() const override {return m_rawdataTop;}
+	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override {return m_geoDataTop;}
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const QString& name) const;
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
@@ -48,7 +48,7 @@ private:
 	const QString nextChildCaption();
 	const QString nextChildZonename();
 	SolverDefinitionGridType* m_gridType;
-	PreProcessorRawDataTopDataItemInterface* m_rawdataTop;
+	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
 	QMap<QString, ScalarsToColorsContainer*> m_scalarsToColors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.

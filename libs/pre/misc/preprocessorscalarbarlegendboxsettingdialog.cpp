@@ -1,10 +1,10 @@
 #include "ui_preprocessorscalarbarlegendboxsettingdialog.h"
 
-#include "../datamodel/preprocessorrawdatagroupdataitem.h"
-#include "../datamodel/preprocessorrawdatatopdataitem.h"
+#include "../datamodel/preprocessorgeodatagroupdataitem.h"
+#include "../datamodel/preprocessorgeodatatopdataitem.h"
 #include "preprocessorscalarbarlegendboxsettingdialog.h"
 
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 
 PreProcessorScalarBarLegendBoxSettingDialog::PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent) :
@@ -27,11 +27,11 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setDisplay(bool disp)
 	ui->scalarGroupBox->setEnabled(disp);
 }
 
-void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorRawDataTopDataItemInterface* item)
+void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorGeoDataTopDataItemInterface* item)
 {
-	QList<PreProcessorRawDataGroupDataItemInterface*> groups = item->groupDataItems();
+	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = item->groupDataItems();
 	for (auto it = groups.begin(); it != groups.end(); ++it) {
-		PreProcessorRawDataGroupDataItemInterface* group = *it;
+		PreProcessorGeoDataGroupDataItemInterface* group = *it;
 		QString text = group->condition()->caption();
 		int position = static_cast<int>(group->condition()->position());
 		ui->scalarComboBox->addItem(text, QVariant(position));
@@ -41,8 +41,8 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setupComboBox(PreProcessorRawD
 
 void PreProcessorScalarBarLegendBoxSettingDialog::editScalarBar()
 {
-	PreProcessorRawDataGroupDataItemInterface* group = m_itemMap.value(ui->scalarComboBox->currentText());
-	PreProcessorRawDataGroupDataItem* group2 = dynamic_cast<PreProcessorRawDataGroupDataItem*>(group);
+	PreProcessorGeoDataGroupDataItemInterface* group = m_itemMap.value(ui->scalarComboBox->currentText());
+	PreProcessorGeoDataGroupDataItem* group2 = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(group);
 	group2->editScalarBarLegendBox(this);
 }
 
@@ -65,7 +65,7 @@ void PreProcessorScalarBarLegendBoxSettingDialog::setLabelTextSetting(const vtkT
 
 SolverDefinitionGridAttribute* PreProcessorScalarBarLegendBoxSettingDialog::condition()
 {
-	PreProcessorRawDataGroupDataItem* group = dynamic_cast<PreProcessorRawDataGroupDataItem*>(m_itemMap.value(ui->scalarComboBox->currentText()));
+	PreProcessorGeoDataGroupDataItem* group = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(m_itemMap.value(ui->scalarComboBox->currentText()));
 	return group->condition();
 }
 

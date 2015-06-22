@@ -30,4 +30,4 @@ private:
 	static HydraulicDataImporterFactory* m_instance;
 };
 
-#endif // RAWDATAFACTORY_H
+#endif // GEODATAFACTORY_H

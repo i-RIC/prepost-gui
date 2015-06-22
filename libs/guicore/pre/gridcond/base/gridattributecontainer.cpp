@@ -1,7 +1,7 @@
 #include "../../../pre/base/preprocessorgriddataiteminterface.h"
 #include "../../../pre/base/preprocessorgridtypedataiteminterface.h"
-#include "../../../pre/base/preprocessorrawdatagroupdataiteminterface.h"
-#include "../../../pre/base/preprocessorrawdatatopdataiteminterface.h"
+#include "../../../pre/base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../../../pre/base/preprocessorgeodatatopdataiteminterface.h"
 #include "../../../solverdef/solverdefinitiongridattribute.h"
 #include "gridattributecontainer.h"
 #include "gridattributedimensioncontainer.h"
@@ -34,7 +34,7 @@ GridAttributeDimensionsContainer* GridAttributeContainer::dimensions() const
 	if (item == 0) {return 0;}
 	PreProcessorGridTypeDataItemInterface* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
-	return gtItem->rawdataTop()->groupDataItem(name())->dimensions();
+	return gtItem->geoDataTop()->groupDataItem(name())->dimensions();
 }
 
 const QString GridAttributeContainer::temporaryExternalFilename(int index) const

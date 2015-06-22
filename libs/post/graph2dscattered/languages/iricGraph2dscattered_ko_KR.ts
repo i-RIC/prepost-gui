@@ -86,30 +86,30 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="130"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="133"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="136"/>
         <location filename="../graph2dscatteredaxissettingdialog.cpp" line="139"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="142"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="145"/>
         <location filename="../graph2dscatteredaxissettingdialog.cpp" line="148"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="151"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="154"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="157"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="130"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="133"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="136"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="139"/>
         <source>X-axes range is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="139"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="142"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="145"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="148"/>
         <source>Left Y-axes range is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="148"/>
-        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="151"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="154"/>
+        <location filename="../graph2dscatteredaxissettingdialog.cpp" line="157"/>
         <source>Right Y-axes range is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -152,12 +152,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindow.cpp" line="26"/>
+        <location filename="../graph2dscatteredwindow.cpp" line="27"/>
         <source>Scattered Chart Window: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindow.cpp" line="38"/>
+        <location filename="../graph2dscatteredwindow.cpp" line="39"/>
         <source>Controller</source>
         <translation type="unfinished"></translation>
     </message>
@@ -165,27 +165,27 @@
 <context>
     <name>Graph2dScatteredWindowActionManager</name>
     <message>
-        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="24"/>
+        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="25"/>
         <source>&amp;Draw</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="26"/>
+        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="27"/>
         <source>&amp;Data Source Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="31"/>
+        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="32"/>
         <source>&amp;Axis Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="34"/>
+        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="35"/>
         <source>D&amp;raw Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="39"/>
+        <location filename="../graph2dscatteredwindowactionmanager.cpp" line="40"/>
         <source>&amp;Legend</source>
         <translation type="unfinished"></translation>
     </message>
@@ -216,33 +216,33 @@
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="112"/>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="113"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="194"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="112"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="113"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="177"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="178"/>
         <source>Time = %1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="187"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="188"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="187"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="188"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="193"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="194"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -265,17 +265,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="120"/>
+        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="122"/>
         <source>Position X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="123"/>
+        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="125"/>
         <source>Position Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="127"/>
+        <location filename="../graph2dscatteredwindowdatasourcedialog.cpp" line="129"/>
         <source>Position Z</source>
         <translation type="unfinished"></translation>
     </message>
@@ -291,7 +291,7 @@
 <context>
     <name>Graph2dScatteredWindowObjectBrowser</name>
     <message>
-        <location filename="../graph2dscatteredwindowobjectbrowser.cpp" line="13"/>
+        <location filename="../graph2dscatteredwindowobjectbrowser.cpp" line="14"/>
         <source>Object Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -299,22 +299,22 @@
 <context>
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="249"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="251"/>
         <source>Position X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="251"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="253"/>
         <source>Position Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="253"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="255"/>
         <source>Position Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="255"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="257"/>
         <source>Stream-wise Distance</source>
         <translation type="unfinished"></translation>
     </message>

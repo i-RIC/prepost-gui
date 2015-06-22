@@ -11,22 +11,22 @@
 <context>
     <name>Structured2DGridNaysGridImporter</name>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="22"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="25"/>
         <source>RIC-Nays Grid file</source>
         <translation>RIC-Nays 格子ファイル</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="28"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="31"/>
         <source>RIC-Nays grid file (*.grid)</source>
         <translation>RIC-Nays 格子ファイル (*.grid)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
         <source>Cell flag values will not be loaded.</source>
         <translation>セルフラグの値は読み込まれません。</translation>
     </message>

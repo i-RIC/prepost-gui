@@ -1,9 +1,8 @@
 #include "../../../solverdef/solverdefinitiongridattribute.h"
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
+#include "../../base/preprocessorgeodatagroupdataiteminterface.h"
 #include "gridattributecontainer.h"
 #include "gridattributedimensionscontainer.h"
-
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
 
 GridAttributeDimensionsContainer::GridAttributeDimensionsContainer(SolverDefinitionGridAttribute* conddef, QObject* parent)
 	: QObject(parent)
@@ -110,8 +109,8 @@ void GridAttributeDimensionsContainer::handleIndexChange(bool noDraw)
 	emit currentIndexChanged(m_currentIndex, newIndex);
 	m_currentIndex = newIndex;
 
-	PreProcessorRawDataGroupDataItemInterface* gItem =
-		dynamic_cast<PreProcessorRawDataGroupDataItemInterface*>(parent());
+	PreProcessorGeoDataGroupDataItemInterface* gItem =
+		dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent());
 	if (gItem != nullptr && ! noDraw) {
 		gItem->renderGraphicsView();
 	}

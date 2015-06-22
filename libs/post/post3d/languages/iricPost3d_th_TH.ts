@@ -17,7 +17,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="185"/>
+        <location filename="../post3dwindow.cpp" line="178"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -78,7 +78,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="261"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="257"/>
         <source>Arrow Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -192,7 +192,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="163"/>
+        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="162"/>
         <source>Face%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -205,7 +205,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="531"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="526"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -620,7 +620,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="16"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="17"/>
         <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
@@ -766,12 +766,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="253"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="332"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="328"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -796,7 +796,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="156"/>
+        <location filename="../post3dwindow.cpp" line="152"/>
         <source>Edit Background Color</source>
         <translation type="unfinished"></translation>
     </message>

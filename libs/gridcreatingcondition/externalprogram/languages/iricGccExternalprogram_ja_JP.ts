@@ -19,14 +19,14 @@
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="80"/>
         <location filename="../gridcreatingconditionexternalprogram.cpp" line="134"/>
         <location filename="../gridcreatingconditionexternalprogram.cpp" line="141"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="80"/>
         <source>Grid generation program %1 does not exists.</source>
         <translation>格子生成プログラム %1 が存在しません。</translation>
     </message>
@@ -49,32 +49,32 @@
         <translation>格子生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="34"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="36"/>
         <source>&amp;Create Grid</source>
         <translation>格子生成(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="127"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="129"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="127"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="129"/>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
         <translation>本当に格子生成条件を初期状態に戻していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="137"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="139"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="137"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="139"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="147"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="149"/>
         <source>Unknown error (Error code: %1)</source>
         <translation>不明なエラー (エラーコード %1)</translation>
     </message>

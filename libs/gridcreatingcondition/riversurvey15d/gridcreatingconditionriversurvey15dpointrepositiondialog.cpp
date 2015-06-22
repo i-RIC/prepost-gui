@@ -4,8 +4,8 @@
 #include "gridcreatingconditionriversurvey15dpointrepositiondialog.h"
 
 #include <misc/iricundostack.h>
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariversurveyctrlpointbackup.h>
 
 #include <QUndoCommand>
 
@@ -17,7 +17,7 @@ class GridCreatingConditionCtrlPointRepositionCommand15D : public QUndoCommand
 public:
 	GridCreatingConditionCtrlPointRepositionCommand15D(
 		bool apply,
-		RawDataRiverPathPoint::CtrlPointsAddMethod method,
+		GeoDataRiverPathPoint::CtrlPointsAddMethod method,
 		GridCreatingConditionRiverSurvey15D* cond)
 		: QUndoCommand(GridCreatingConditionRiverSurvey15D::tr("Reposition Control Points")) {
 		m_apply = apply;
@@ -38,7 +38,7 @@ public:
 	}
 
 private:
-	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method) {
+	void buildPoints(GeoDataRiverPathPoint::CtrlPointsAddMethod method) {
 		std::list<CtrlPointSelectionInfo>& infoList = m_condition->m_selectedCtrlPointInfoList;
 		CtrlPointSelectionInfo Info = infoList.front();
 		m_point = Info.Point;
@@ -53,8 +53,8 @@ private:
 
 	bool m_apply;
 	GridCreatingConditionRiverSurvey15D* m_condition;
-	RawDataRiverPathPoint* m_point;
-	RawDataRiverPathPoint::CtrlPointPosition m_position;
+	GeoDataRiverPathPoint* m_point;
+	GeoDataRiverPathPoint::CtrlPointPosition m_position;
 	QVector<double> m_before;
 	QVector<double> m_after;
 };
@@ -93,7 +93,7 @@ void GridCreatingConditionRiverSurvey15DPointRepositionDialog::apply()
 	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
-	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
 	iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointRepositionCommand15D(true, method, m_condition));
 	m_applied = true;
 }
@@ -103,7 +103,7 @@ void GridCreatingConditionRiverSurvey15DPointRepositionDialog::accept()
 	if (m_applied) {
 		iRICUndoStack::instance().undo();
 	}
-	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
 	iRICUndoStack::instance().push(new GridCreatingConditionCtrlPointRepositionCommand15D(false, method, m_condition));
 	QDialog::accept();
 }
@@ -118,14 +118,14 @@ void GridCreatingConditionRiverSurvey15DPointRepositionDialog::reject()
 	QDialog::reject();
 }
 
-RawDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurvey15DPointRepositionDialog::buildMethod()
+GeoDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurvey15DPointRepositionDialog::buildMethod()
 {
-	RawDataRiverPathPoint::CtrlPointsAddMethod method;
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method;
 	method.number = 1;
 	if (ui->uniformRadioButton->isChecked()) {
-		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
+		method.method = GeoDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
 	} else if (ui->equalRatioRadioButton->isChecked()) {
-		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
+		method.method = GeoDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
 		method.param = ui->ratioSpinBox->value();
 	}
 	return method;

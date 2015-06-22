@@ -4,7 +4,7 @@
 #include "../../project/colorsource.h"
 #include "../../project/projectdata.h"
 #include "../../solverdef/solverdefinitiongridcomplexattribute.h"
-#include "../base/preprocessorrawdatacomplexgroupdataiteminterface.h"
+#include "../base/preprocessorgeodatacomplexgroupdataiteminterface.h"
 #include "gridcomplexconditiondialog.h"
 #include "gridcomplexconditionwidget.h"
 
@@ -12,7 +12,7 @@
 #include <QTextCodec>
 #include <QWidget>
 
-GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorRawDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent)
+GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent)
 	: QDialog(parent),
 		ui(new Ui::GridComplexConditionDialog)
 {

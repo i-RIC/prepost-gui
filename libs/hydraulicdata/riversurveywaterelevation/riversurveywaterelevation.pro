@@ -30,19 +30,19 @@ unix {
 }
 LIBS += -liricGuicore
 
-# iricRdRiversurvey
+# iricGdRiversurvey
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../../rawdata/riversurvey/debug"
+		LIBS += -L"../../geodata/riversurvey/debug"
 	} else {
-		LIBS += -L"../../rawdata/riversurvey/release"
+		LIBS += -L"../../geodata/riversurvey/release"
 	}
 }
 unix {
-	LIBS += -L"../../rawdata/riversurvey"
+	LIBS += -L"../../geodata/riversurvey"
 }
-LIBS += -liricRdRiversurvey
+LIBS += -liricGdRiversurvey
 
 # Input
 HEADERS += hd_riversurveywaterelevation_global.h \

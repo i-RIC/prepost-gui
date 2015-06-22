@@ -2,8 +2,8 @@
 #define PREPROCESSORBCSETTINGDATAITEM_H
 
 #include <guicore/pre/base/preprocessordataitem.h>
-#include <rawdata/polygon/rawdatapolygon.h>
-#include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
+#include <geodata/polygon/geodatapolygon.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 
 #include <QString>
 #include <QColor>
@@ -54,7 +54,7 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
 	bool isMapped() const {return m_polygon->isMapped();}
-	RawData* rawData() override {return m_polygon;}
+	GeoData* geoData() override {return m_polygon;}
 	void informValueRangeChange() override {}
 	void informDataChange() override {}
 
@@ -82,7 +82,7 @@ private:
 
 	PreProcessorBCDataItem* m_bcDataItem;
 	QAction* m_editAction;
-	RawDataPolygon* m_polygon;
+	GeoDataPolygon* m_polygon;
 	QPoint m_dragStartPoint;
 	QMenu* m_rightClickingMenu;
 

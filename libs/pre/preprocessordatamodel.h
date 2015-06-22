@@ -14,19 +14,19 @@ class PreProcessorGraphicsView;
 class MouseBoundingBox;
 class PreProcessorGridTypeDataItem;
 class PreProcessorGridCreatingConditionDataItemInterface;
-class PreProcessorRawDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemInterface;
 class PreProcessorRawdataDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 class PreProcessorGridDataItem;
-class PreProcessorRawDataGroupDataItem;
+class PreProcessorGeoDataGroupDataItem;
 class PreProcessorRawdataDataItem;
 class PreProcessorBackgroundImageDataItem;
 class PreProcessorGridCreatingConditionDataItem;
-class PreProcessorRawDataTopDataItemInterface;
+class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorBCSettingDataItem;
 class PreProcessorBCDataItem;
 class MeasuredDataFileDataItem;
-class RawDataCreator;
+class GeoDataCreator;
 class QAction;
 class QSignalMapper;
 
@@ -59,14 +59,14 @@ public:
 	}
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
-	void setupRawDataImportMenu(QMenu* menu);
-	void setupRawDataExportMenu(QMenu* menu);
+	void setupGeoDataImportMenu(QMenu* menu);
+	void setupGeoDataExportMenu(QMenu* menu);
 	void setupHydraulicDataImportMenu(QMenu* menu);
 	void disableGridMenu();
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
-	PreProcessorRawDataTopDataItemInterface* rawDataTopDataItem(const QString& type) const override;
+	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const QString& type) const override;
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const override;
 	void applyOffset(double x, double y) override;
 
@@ -95,8 +95,8 @@ private:
 	void importCalcConditionFromCGNS(const QString& fname);
 
 	GraphicsWindowRootDataItem* rootDataItem() {return m_rootDataItem;}
-	void setupRawDataAddActions(PreProcessorRawDataGroupDataItem* item);
-	void setupRawDataMenus();
+	void setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item);
+	void setupGeoDataMenus();
 	QMenu* setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* gcItem);
 	QMenu* setupBoundaryConditionSettingMenu(QMenu* parentMenu);
 	void setupGridMenu();
@@ -112,19 +112,19 @@ private:
 	bool addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
 	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool setname);
 	bool addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
-	bool setupRawDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
-	bool setupRawDataImportMenuForGroup(QMenu* menu, PreProcessorRawDataGroupDataItemInterface* gt);
-	bool setupRawDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
-	bool setupRawDataExportMenuForGroup(QMenu* menu, PreProcessorRawDataGroupDataItem* gt);
-	bool setupRawDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt);
-	bool rawDataExportAvailable(PreProcessorRawDataGroupDataItemInterface* gt);
+	bool setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
+	bool setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
+	bool setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
+	bool setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt);
+	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt);
+	bool geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt);
 
 	MouseBoundingBox* m_mouseBoundingBox;
 	QList<QMenu*> m_additionalMenus;
 	QList<QMenu*> m_dummyMenus;
 	QList<QList<QMenu*> > m_oldDummyMenusList;
-	QMap<RawDataCreator*, QAction*> m_rawDataAddActions;
-	QSignalMapper* m_rawDataAddSignalMapper;
+	QMap<GeoDataCreator*, QAction*> m_geoDataAddActions;
+	QSignalMapper* m_geoDataAddSignalMapper;
 	QMenu* m_geographicDataMenu;
 	QMenu* m_gridMenu;
 	QMenu* m_measuredValuesMenu;

@@ -4,7 +4,7 @@
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
-        <location filename="../post2dbirdeyeobjectbrowser.cpp" line="13"/>
+        <location filename="../post2dbirdeyeobjectbrowser.cpp" line="14"/>
         <source>Object Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17,7 +17,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="174"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="167"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -63,7 +63,7 @@
 <context>
     <name>Post2dBirdEyeWindowAxesDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowaxesdataitem.cpp" line="14"/>
+        <location filename="../datamodel/post2dbirdeyewindowaxesdataitem.cpp" line="15"/>
         <source>Axes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -102,7 +102,7 @@
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="49"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="50"/>
         <source>Contour</source>
         <translation type="unfinished"></translation>
     </message>
@@ -120,12 +120,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="575"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="572"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="145"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="141"/>
         <source>Edit Background Color</source>
         <translation type="unfinished"></translation>
     </message>

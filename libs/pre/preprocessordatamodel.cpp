@@ -13,14 +13,14 @@
 #include "datamodel/preprocessorgridtypedataitem.h"
 #include "datamodel/preprocessorinputconditiondataitem.h"
 #include "datamodel/preprocessormeasureddatatopdataitem.h"
-#include "datamodel/preprocessorrawdatacomplexgroupdataitem.h"
-#include "datamodel/preprocessorrawdatadataitem.h"
-#include "datamodel/preprocessorrawdatadataitem.h"
-#include "datamodel/preprocessorrawdatagroupdataitem.h"
-#include "datamodel/preprocessorrawdatatopdataitem.h"
+#include "datamodel/preprocessorgeodatacomplexgroupdataitem.h"
+#include "datamodel/preprocessorgeodatadataitem.h"
+#include "datamodel/preprocessorgeodatadataitem.h"
+#include "datamodel/preprocessorgeodatagroupdataitem.h"
+#include "datamodel/preprocessorgeodatatopdataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
 #include "factory/hydraulicdataimporterfactory.h"
-#include "factory/rawdatafactory.h"
+#include "factory/geodatafactory.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
 #include "preprocessorgraphicsview.h"
@@ -44,10 +44,10 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
-#include <rawdata/pointmap/rawdatapointmap.h>
-#include <rawdata/polygon/rawdatapolygon.h>
-#include <rawdata/polygon/rawdatapolygoncreator.h>
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <geodata/pointmap/geodatapointmap.h>
+#include <geodata/polygon/geodatapolygon.h>
+#include <geodata/polygon/geodatapolygoncreator.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QApplication>
 #include <QDialog>
@@ -91,7 +91,7 @@ void PreProcessorDataModel::init()
 	// setup the basic itemModel structure.
 	PreProcessorRootDataItem* root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(m_mainWindow), this);
 	m_rootDataItem = root;
-	m_rawDataAddSignalMapper = nullptr;
+	m_geoDataAddSignalMapper = nullptr;
 	root->setZDepthRange(m_dataRange);
 	root->setupStandardModel(m_itemModel);
 	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
@@ -240,7 +240,7 @@ void PreProcessorDataModel::setupAdditinalMenus()
 	m_dummyMenus.clear();
 	m_additionalMenus.clear();
 	// dummy menus!
-	setupRawDataMenus();
+	setupGeoDataMenus();
 	setupGridMenu();
 	setupMeasuredValuesMenu();
 
@@ -255,13 +255,13 @@ void PreProcessorDataModel::setupAdditinalMenus()
 	emit additionalMenusUpdated(m_additionalMenus);
 }
 
-void PreProcessorDataModel::setupRawDataMenus()
+void PreProcessorDataModel::setupGeoDataMenus()
 {
 	m_geographicDataMenu = new QMenu(tr("G&eographic Data"), mainWindow());
 	m_additionalMenus.append(m_geographicDataMenu);
 	m_dummyMenus.append(m_geographicDataMenu);
 
-	RawDataCreator* polygonCreator = nullptr;
+	GeoDataCreator* polygonCreator = nullptr;
 	PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_selectedItem);
 
 	QAction* editGroupAction = new QAction(tr("Edit &Groups..."), m_geographicDataMenu);
@@ -274,17 +274,17 @@ void PreProcessorDataModel::setupRawDataMenus()
 
 	if (item != nullptr) {
 		// Rawdata dataitem is selected.
-		QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorRawDataGroupDataItem*>(item->parent())->condition());
+		QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
 		for (auto it = creators.begin(); it != creators.end(); ++it) {
-			if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr) {
+			if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
 				polygonCreator = *it;
 			}
 		}
-		setupRawDataAddActions(dynamic_cast<PreProcessorRawDataGroupDataItem*>(item->parent()));
+		setupGeoDataAddActions(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent()));
 		QMenu* dummy;
 
-		RawData* raw = item->rawData();
-		RawDataRiverSurvey* s = dynamic_cast<RawDataRiverSurvey*>(raw);
+		GeoData* raw = item->geoData();
+		GeoDataRiverSurvey* s = dynamic_cast<GeoDataRiverSurvey*>(raw);
 		dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
 		if (s == nullptr) {
 			dummy->setDisabled(true);
@@ -293,7 +293,7 @@ void PreProcessorDataModel::setupRawDataMenus()
 		}
 		m_geographicDataMenu->addMenu(dummy);
 
-		RawDataPointmap* pm = dynamic_cast<RawDataPointmap*>(raw);
+		GeoDataPointmap* pm = dynamic_cast<GeoDataPointmap*>(raw);
 		dummy = new QMenu(tr("P&ointset Data"), m_geographicDataMenu);
 		if (pm == nullptr) {
 			dummy->setDisabled(true);
@@ -302,9 +302,9 @@ void PreProcessorDataModel::setupRawDataMenus()
 		}
 		m_geographicDataMenu->addMenu(dummy);
 
-		RawDataPolygon* pol = dynamic_cast<RawDataPolygon*>(raw);
+		GeoDataPolygon* pol = dynamic_cast<GeoDataPolygon*>(raw);
 		dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
-		dummy->addAction(m_rawDataAddActions.value(polygonCreator));
+		dummy->addAction(m_geoDataAddActions.value(polygonCreator));
 		if (pol != nullptr) {
 			dummy->addSeparator();
 			dummy->addActions(pol->menu()->actions());
@@ -313,16 +313,16 @@ void PreProcessorDataModel::setupRawDataMenus()
 		deleteAllAction->setDisabled(true);
 		exportAllPolygonsAction->setDisabled(true);
 	} else {
-		PreProcessorRawDataGroupDataItem* gitem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(m_selectedItem);
+		PreProcessorGeoDataGroupDataItem* gitem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(m_selectedItem);
 		if (gitem != nullptr) {
 			// Rawdatagroup dataitem is selected.
-			QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(gitem->condition());
+			QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
 			for (auto it = creators.begin(); it != creators.end(); ++it) {
-				if (dynamic_cast<RawDataPolygonCreator*>(*it) != nullptr) {
+				if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
 					polygonCreator = *it;
 				}
 			}
-			setupRawDataAddActions(gitem);
+			setupGeoDataAddActions(gitem);
 			QMenu* dummy;
 			dummy = new QMenu(tr("&River Survey"), m_geographicDataMenu);
 			dummy->setDisabled(true);
@@ -331,10 +331,10 @@ void PreProcessorDataModel::setupRawDataMenus()
 			dummy->setDisabled(true);
 			m_geographicDataMenu->addMenu(dummy);
 			dummy = new QMenu(tr("&Polygon"), m_geographicDataMenu);
-			dummy->addAction(m_rawDataAddActions.value(polygonCreator));
+			dummy->addAction(m_geoDataAddActions.value(polygonCreator));
 			m_geographicDataMenu->addMenu(dummy);
 
-			PreProcessorRawDataComplexGroupDataItem* cgitem = dynamic_cast<PreProcessorRawDataComplexGroupDataItem*>(gitem);
+			PreProcessorGeoDataComplexGroupDataItem* cgitem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItem*>(gitem);
 			if (cgitem != nullptr) {
 				editGroupAction->setEnabled(true);
 				connect(editGroupAction, SIGNAL(triggered()), cgitem, SLOT(showEditGroupDialog()));
@@ -372,16 +372,16 @@ void PreProcessorDataModel::setupRawDataMenus()
 	// add colormap edit menu for each raw data type.
 	PreProcessorGridTypeDataItem* gti = getGridTypeItem(m_selectedItem);
 	if (gti != nullptr) {
-		QList<PreProcessorRawDataGroupDataItemInterface*> groups = gti->rawdataTop()->groupDataItems();
+		QList<PreProcessorGeoDataGroupDataItemInterface*> groups = gti->geoDataTop()->groupDataItems();
 		for (auto it = groups.begin(); it != groups.end(); ++it) {
-			PreProcessorRawDataGroupDataItemInterface* groupDataitem = *it;
+			PreProcessorGeoDataGroupDataItemInterface* groupDataitem = *it;
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
 			QAction* action = new QAction(condCaption, colorMapMenu);
 			connect(action, SIGNAL(triggered()), groupDataitem, SLOT(editScalarsToColors()));
 			colorMapMenu->addAction(action);
 		}
-		connect(setupScalarBarAction, SIGNAL(triggered()), gti->rawdataTop(), SLOT(setupScalarBar()));
+		connect(setupScalarBarAction, SIGNAL(triggered()), gti->geoDataTop(), SLOT(setupScalarBar()));
 	} else {
 		colorMapMenu->setDisabled(true);
 		setupScalarBarAction->setDisabled(true);
@@ -392,11 +392,11 @@ void PreProcessorDataModel::setupRawDataMenus()
 	QMenu* importMenu = new QMenu(tr("Import"), m_geographicDataMenu);
 	importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_geographicDataMenu->addMenu(importMenu);
-	connect(importMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupRawDataImportMenu()));
+	connect(importMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataImportMenu()));
 	QMenu* exportMenu = new QMenu(tr("Export"), m_geographicDataMenu);
 	exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 	m_geographicDataMenu->addMenu(exportMenu);
-	connect(exportMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupRawDataExportMenu()));
+	connect(exportMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataExportMenu()));
 
 	m_geographicDataMenu->addAction(exportAllPolygonsAction);
 }
@@ -795,7 +795,7 @@ bool PreProcessorDataModel::addGridExportMenuForGrid(QMenu* menu, PreProcessorGr
 	return true;
 }
 
-void PreProcessorDataModel::setupRawDataImportMenu(QMenu* menu)
+void PreProcessorDataModel::setupGeoDataImportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
@@ -807,12 +807,12 @@ void PreProcessorDataModel::setupRawDataImportMenu(QMenu* menu)
 		// no menu available.
 	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
-		importAvailable = setupRawDataImportMenuForGridType(menu, gt);
+		importAvailable = setupGeoDataImportMenuForGridType(menu, gt);
 	} else {
 		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (setupRawDataImportMenuForGridType(gtMenu, gt)) {
+			if (setupGeoDataImportMenuForGridType(gtMenu, gt)) {
 				importAvailable = true;
 			} else {
 				delete gtMenu;
@@ -839,10 +839,10 @@ void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu* menu)
 	}
 }
 
-bool PreProcessorDataModel::setupRawDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
+bool PreProcessorDataModel::setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
-	PreProcessorRawDataTopDataItemInterface* topItem = gt->rawdataTop();
-	QList<PreProcessorRawDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
 	if (groups.count() == 0) {
 		// no menu available.
 		return false;
@@ -850,22 +850,22 @@ bool PreProcessorDataModel::setupRawDataImportMenuForGridType(QMenu* menu, PrePr
 		// there are multiple grids.
 		bool okExists = false;
 		for (int i = 0; i < groups.count(); ++i) {
-			PreProcessorRawDataGroupDataItemInterface* gi = groups.at(i);
-			setupRawDataImportMenuForGroup(menu, gi);
+			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
+			setupGeoDataImportMenuForGroup(menu, gi);
 			okExists = true;
 		}
 		return okExists;
 	}
 }
 
-bool PreProcessorDataModel::setupRawDataImportMenuForGroup(QMenu* menu, PreProcessorRawDataGroupDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt)
 {
-	PreProcessorRawDataGroupDataItem* item = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gt);
+	PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gt);
 	item->addImportAction(menu);
 	return true;
 }
 
-void PreProcessorDataModel::setupRawDataExportMenu(QMenu* menu)
+void PreProcessorDataModel::setupGeoDataExportMenu(QMenu* menu)
 {
 	// clear menu first.
 	menu->clear();
@@ -877,12 +877,12 @@ void PreProcessorDataModel::setupRawDataExportMenu(QMenu* menu)
 		// no menu available.
 	} else if (gridTypes.count() == 1) {
 		PreProcessorGridTypeDataItem* gt = gridTypes.at(0);
-		importAvailable = setupRawDataExportMenuForGridType(menu, gt);
+		importAvailable = setupGeoDataExportMenuForGridType(menu, gt);
 	} else {
 		for (int i = 0; i < gridTypes.count(); ++i) {
 			PreProcessorGridTypeDataItem* gt = gridTypes.at(i);
 			QMenu* gtMenu = menu->addMenu(gt->gridType()->caption());
-			if (setupRawDataExportMenuForGridType(gtMenu, gt)) {
+			if (setupGeoDataExportMenuForGridType(gtMenu, gt)) {
 				importAvailable = true;
 			} else {
 				delete gtMenu;
@@ -895,34 +895,34 @@ void PreProcessorDataModel::setupRawDataExportMenu(QMenu* menu)
 	}
 }
 
-bool PreProcessorDataModel::setupRawDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
+bool PreProcessorDataModel::setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
-	PreProcessorRawDataTopDataItemInterface* topItem = gt->rawdataTop();
-	QList<PreProcessorRawDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
 	if (groups.count() == 0) {
 		// no menu available.
 		return false;
 	} else {
 		for (int i = 0; i < groups.count(); ++i) {
-			PreProcessorRawDataGroupDataItemInterface* gi = groups.at(i);
+			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
 			QString cap = gi->condition()->caption();
 			cap.append("...");
 			QAction* exportAction = menu->addAction(cap);
-			exportAction->setEnabled(rawDataExportAvailable(gi));
+			exportAction->setEnabled(geoDataExportAvailable(gi));
 			connect(exportAction, SIGNAL(triggered()), gi, SLOT(doExport()));
 		}
 	}
 	return true;
 }
 
-bool PreProcessorDataModel::setupRawDataExportMenuForGroup(QMenu* menu, PreProcessorRawDataGroupDataItem* gt)
+bool PreProcessorDataModel::setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt)
 {
 	bool ok = false;
-	QList<PreProcessorRawdataDataItemInterface*> datas = gt->rawDatas();
+	QList<PreProcessorRawdataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorRawdataDataItemInterface* item = datas.at(i);
 		QMenu* tmpmenu = menu->addMenu(item->standardItem()->text());
-		if (setupRawDataExportMenuForItem(tmpmenu, item)) {
+		if (setupGeoDataExportMenuForItem(tmpmenu, item)) {
 			ok = true;
 		} else {
 			delete tmpmenu;
@@ -931,19 +931,19 @@ bool PreProcessorDataModel::setupRawDataExportMenuForGroup(QMenu* menu, PreProce
 	return ok;
 }
 
-bool PreProcessorDataModel::rawDataExportAvailable(PreProcessorRawDataGroupDataItemInterface* gt)
+bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt)
 {
-	QList<PreProcessorRawdataDataItemInterface*> datas = gt->rawDatas();
+	QList<PreProcessorRawdataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
 		PreProcessorRawdataDataItemInterface* item = datas.at(i);
-		if (item->rawData()->exporters().count() > 0) {
+		if (item->geoData()->exporters().count() > 0) {
 			return true;
 		}
 	}
 	return false;
 }
 
-bool PreProcessorDataModel::setupRawDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt)
 {
 	return dynamic_cast<PreProcessorRawdataDataItem*>(gt)->setupExportMenu(menu);
 }
@@ -1001,22 +1001,22 @@ void PreProcessorDataModel::disableGridMenu()
 	m_gridMenu->setDisabled(true);
 }
 
-void PreProcessorDataModel::setupRawDataAddActions(PreProcessorRawDataGroupDataItem* item)
+void PreProcessorDataModel::setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item)
 {
-	if (m_rawDataAddSignalMapper != nullptr) {delete m_rawDataAddSignalMapper;}
-	m_rawDataAddSignalMapper = new QSignalMapper(this);
-	for (auto it = m_rawDataAddActions.begin(); it != m_rawDataAddActions.end(); ++it) {
+	if (m_geoDataAddSignalMapper != nullptr) {delete m_geoDataAddSignalMapper;}
+	m_geoDataAddSignalMapper = new QSignalMapper(this);
+	for (auto it = m_geoDataAddActions.begin(); it != m_geoDataAddActions.end(); ++it) {
 		delete *it;
 	}
-	m_rawDataAddActions.clear();
-	QList<RawDataCreator*> creators = RawDataFactory::instance().compatibleCreators(item->condition());
+	m_geoDataAddActions.clear();
+	QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(item->condition());
 	for (auto cit = creators.begin(); cit != creators.end(); ++cit) {
 		QAction* action = new QAction(tr("Add New %1").arg((*cit)->caption()), this);
-		m_rawDataAddActions.insert(*cit, action);
-		m_rawDataAddSignalMapper->setMapping(action, *cit);
-		connect(action, SIGNAL(triggered()), m_rawDataAddSignalMapper, SLOT(map()));
+		m_geoDataAddActions.insert(*cit, action);
+		m_geoDataAddSignalMapper->setMapping(action, *cit);
+		connect(action, SIGNAL(triggered()), m_geoDataAddSignalMapper, SLOT(map()));
 	}
-	connect(m_rawDataAddSignalMapper, SIGNAL(mapped(QObject*)), item, SLOT(addRawData(QObject*)));
+	connect(m_geoDataAddSignalMapper, SIGNAL(mapped(QObject*)), item, SLOT(addGeoData(QObject*)));
 }
 
 bool PreProcessorDataModel::gridEdited()
@@ -1037,13 +1037,13 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
 	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
 		PreProcessorGridTypeDataItem* gtItem = *it;
-		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
+		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = gtItem->geoDataTop()->groupDataItems();
 		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
-			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
-			QList<PreProcessorRawdataDataItemInterface*> rawdatas = gItem->rawDatas();
-			for (auto it3 = rawdatas.begin(); it3 != rawdatas.end(); ++it3) {
+			PreProcessorGeoDataGroupDataItemInterface* gItem = *it2;
+			QList<PreProcessorRawdataDataItemInterface*> geodatas = gItem->geoDatas();
+			for (auto it3 = geodatas.begin(); it3 != geodatas.end(); ++it3) {
 				PreProcessorRawdataDataItemInterface* dItem = *it3;
-				RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(dItem->rawData());
+				GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(dItem->geoData());
 				if (rs != nullptr) {
 					rs->setColoredPoints(0, 0, 0);
 				}
@@ -1066,18 +1066,18 @@ bool PreProcessorDataModel::checkMappingStatus()
 	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
 		QStringList notMapped;
 		PreProcessorGridTypeDataItem* gtItem = *it;
-		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = gtItem->rawdataTop()->groupDataItems();
-		QList<PreProcessorRawDataGroupDataItemInterface*> groupsToMap;
+		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = gtItem->geoDataTop()->groupDataItems();
+		QList<PreProcessorGeoDataGroupDataItemInterface*> groupsToMap;
 		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
-			PreProcessorRawDataGroupDataItemInterface* gItem = *it2;
-			QStringList rawdatasNotMapped = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gItem)->getRawDatasNotMapped();
-			if (rawdatasNotMapped.count() > 0) {
+			PreProcessorGeoDataGroupDataItemInterface* gItem = *it2;
+			QStringList geodatasNotMapped = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->getGeoDatasNotMapped();
+			if (geodatasNotMapped.count() > 0) {
 				groupsToMap.append(gItem);
-				notMapped.append(rawdatasNotMapped);
+				notMapped.append(geodatasNotMapped);
 			}
 		}
 		if (notMapped.count() > 0) {
-			// rawdata in this grid type is not mapped.
+			// geodata in this grid type is not mapped.
 			int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("%1 are not mapped after they are edited last time. Do you want to execute mapping now?").arg(notMapped.join(", ")), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				// execute mapping for each grids.
@@ -1087,7 +1087,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 					PreProcessorGridAndGridCreatingConditionDataItem* cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(cond);
 					PreProcessorGridAttributeMappingSettingTopDataItem* tItem = cond2->mappingSettingDataItem();
 					for (int i = 0; i < groupsToMap.count(); ++i) {
-						PreProcessorRawDataGroupDataItemInterface* gItem = groupsToMap[i];
+						PreProcessorGeoDataGroupDataItemInterface* gItem = groupsToMap[i];
 						tItem->customMapping(gItem->condition()->name(), true);
 					}
 				}
@@ -1137,46 +1137,46 @@ void PreProcessorDataModel::importHydraulicData()
 		}
 	}
 	if (importer == nullptr) {return;}
-	// scan all rawdata.
-	QList<RawData*> rawdatas;
+	// scan all geodata.
+	QList<GeoData*> geodatas;
 
 	PreProcessorRootDataItem* ritem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	QList<PreProcessorGridTypeDataItem*> titems = ritem->gridTypeDataItems();
 	for (auto tit = titems.begin(); tit != titems.end(); ++tit) {
 		PreProcessorGridTypeDataItem* titem = *tit;
-		QList<PreProcessorRawDataGroupDataItemInterface*> gitems = titem->rawdataTop()->groupDataItems();
+		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = titem->geoDataTop()->groupDataItems();
 		for (auto git = gitems.begin(); git != gitems.end(); ++git) {
-			PreProcessorRawDataGroupDataItemInterface* gitem = *git;
-			QList<PreProcessorRawdataDataItemInterface*> ditems = gitem->rawDatas();
+			PreProcessorGeoDataGroupDataItemInterface* gitem = *git;
+			QList<PreProcessorRawdataDataItemInterface*> ditems = gitem->geoDatas();
 			for (auto dit = ditems.begin(); dit != ditems.end(); ++dit) {
 				PreProcessorRawdataDataItemInterface* ditem = *dit;
-				RawData* rdata = ditem->rawData();
+				GeoData* rdata = ditem->geoData();
 				if (importer->canImportTo(rdata)) {
 					// this importer can used for this raw data.
-					rawdatas.append(rdata);
+					geodatas.append(rdata);
 				}
 			}
 		}
 	}
-	RawData* targetRawdata = nullptr;
-	if (rawdatas.count() == 0) {
+	GeoData* targetRawdata = nullptr;
+	if (geodatas.count() == 0) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("There is no geographic data to import this hydraulic data."));
 		return;
-	} else if (rawdatas.count() > 1) {
+	} else if (geodatas.count() > 1) {
 		ItemSelectingDialog dialog(mainWindow());
 		QList<QString> items;
-		for (int i = 0; i < rawdatas.count(); ++i) {
-			items.append(rawdatas.at(i)->caption());
+		for (int i = 0; i < geodatas.count(); ++i) {
+			items.append(geodatas.at(i)->caption());
 		}
 		dialog.setItems(items);
 		dialog.setWindowTitle(tr("Select geographic data"));
 		dialog.setMessage(tr("Please select the geographic data to import hydraulic data."));
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {return;}
-		targetRawdata = rawdatas.at(dialog.selectIndex());
+		targetRawdata = geodatas.at(dialog.selectIndex());
 	} else {
-		// there was only one rawdata.
-		targetRawdata = rawdatas.at(0);
+		// there was only one geodata.
+		targetRawdata = geodatas.at(0);
 	}
 	// get filename.
 	QString dir = LastIODirectory::get();
@@ -1195,12 +1195,12 @@ void PreProcessorDataModel::importHydraulicData()
 	}
 }
 
-PreProcessorRawDataTopDataItemInterface* PreProcessorDataModel::rawDataTopDataItem(const QString& type) const
+PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem(const QString& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
 	if (tItem == nullptr) {return nullptr;}
-	return tItem->rawdataTop();
+	return tItem->geoDataTop();
 }
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const

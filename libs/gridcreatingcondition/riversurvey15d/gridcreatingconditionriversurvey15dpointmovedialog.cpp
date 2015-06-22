@@ -55,8 +55,8 @@ private:
 
 	bool m_apply;
 	GridCreatingConditionRiverSurvey15D* m_condition;
-	RawDataRiverPathPoint* m_point;
-	RawDataRiverPathPoint::CtrlPointPosition m_position;
+	GeoDataRiverPathPoint* m_point;
+	GeoDataRiverPathPoint::CtrlPointPosition m_position;
 	QVector<double> m_before;
 	QVector<double> m_after;
 

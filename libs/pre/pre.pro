@@ -59,60 +59,60 @@ unix {
 
 LIBS += -liricGuicore
 
-# iricRdRiversurvey
+# iricGdRiversurvey
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../rawdata/riversurvey/debug"
+		LIBS += -L"../geodata/riversurvey/debug"
 	} else {
-		LIBS += -L"../rawdata/riversurvey/release"
+		LIBS += -L"../geodata/riversurvey/release"
 	}
 }
 unix {
-	LIBS += -L"../rawdata/riversurvey"
+	LIBS += -L"../geodata/riversurvey"
 }
-LIBS += -liricRdRiversurvey
+LIBS += -liricGdRiversurvey
 
-# iricRdPointmap
+# iricGdPointmap
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../rawdata/pointmap/debug"
+		LIBS += -L"../geodata/pointmap/debug"
 	} else {
-		LIBS += -L"../rawdata/pointmap/release"
+		LIBS += -L"../geodata/pointmap/release"
 	}
 }
 unix {
-	LIBS += -L"../rawdata/pointmap"
+	LIBS += -L"../geodata/pointmap"
 }
-LIBS += -liricRdPointmap
+LIBS += -liricGdPointmap
 
-# iricRdPolygon
+# iricGdPolygon
 
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../rawdata/polygon/debug"
+		LIBS += -L"../geodata/polygon/debug"
 	} else {
-		LIBS += -L"../rawdata/polygon/release"
+		LIBS += -L"../geodata/polygon/release"
 	}
 }
 unix {
-	LIBS += -L"../rawdata/polygon"
+	LIBS += -L"../geodata/polygon"
 }
-LIBS += -liricRdPolygon
+LIBS += -liricGdPolygon
 
-# iricRdNetcdf
+# iricGdNetcdf
 win32 {
 	CONFIG(debug, debug|release) {
-		LIBS += -L"../rawdata/netcdf/debug"
+		LIBS += -L"../geodata/netcdf/debug"
 	} else {
-		LIBS += -L"../rawdata/netcdf/release"
+		LIBS += -L"../geodata/netcdf/release"
 	}
 }
 unix {
-	LIBS += -L"../rawdata/netcdf"
+	LIBS += -L"../geodata/netcdf"
 }
-LIBS += -liricRdNetcdf
+LIBS += -liricGdNetcdf
 
 # iricGccCenterandwidth
 
@@ -317,7 +317,7 @@ win32 {
 # Input
 HEADERS += griddisplaysetting.h \
            pre_global.h \
-           preabstractrawdata.h \
+           preabstractgeodata.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -355,10 +355,10 @@ HEADERS += griddisplaysetting.h \
            datamodel/preprocessormeasureddatatopdataitem.h \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h \
            datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.h \
-           datamodel/preprocessorrawdatacomplexgroupdataitem.h \
-           datamodel/preprocessorrawdatadataitem.h \
-           datamodel/preprocessorrawdatagroupdataitem.h \
-           datamodel/preprocessorrawdatatopdataitem.h \
+           datamodel/preprocessorgeodatacomplexgroupdataitem.h \
+           datamodel/preprocessorgeodatadataitem.h \
+           datamodel/preprocessorgeodatagroupdataitem.h \
+           datamodel/preprocessorgeodatatopdataitem.h \
            datamodel/preprocessorrootdataitem.h \
            datamodel/preprocessorstructured2dgriddataitem.h \
            datamodel/preprocessorstructured2dgridshapedataitem.h \
@@ -368,7 +368,7 @@ HEADERS += griddisplaysetting.h \
            factory/gridexporterfactory.h \
            factory/gridimporterfactory.h \
            factory/hydraulicdataimporterfactory.h \
-           factory/rawdatafactory.h \
+           factory/geodatafactory.h \
            gridexporter/cgnsgridexporter.h \
            gridimporter/cgnsgridimporter.h \
            gridimporter/projectgridimporter.h \
@@ -420,7 +420,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui
 SOURCES += griddisplaysetting.cpp \
-           preabstractrawdata.cpp \
+           preabstractgeodata.cpp \
            preobjectbrowser.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
@@ -458,10 +458,10 @@ SOURCES += griddisplaysetting.cpp \
            datamodel/preprocessormeasureddatatopdataitem.cpp \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.cpp \
            datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp \
-           datamodel/preprocessorrawdatacomplexgroupdataitem.cpp \
-           datamodel/preprocessorrawdatadataitem.cpp \
-           datamodel/preprocessorrawdatagroupdataitem.cpp \
-           datamodel/preprocessorrawdatatopdataitem.cpp \
+           datamodel/preprocessorgeodatacomplexgroupdataitem.cpp \
+           datamodel/preprocessorgeodatadataitem.cpp \
+           datamodel/preprocessorgeodatagroupdataitem.cpp \
+           datamodel/preprocessorgeodatatopdataitem.cpp \
            datamodel/preprocessorrootdataitem.cpp \
            datamodel/preprocessorstructured2dgriddataitem.cpp \
            datamodel/preprocessorstructured2dgridshapedataitem.cpp \
@@ -471,7 +471,7 @@ SOURCES += griddisplaysetting.cpp \
            factory/gridexporterfactory.cpp \
            factory/gridimporterfactory.cpp \
            factory/hydraulicdataimporterfactory.cpp \
-           factory/rawdatafactory.cpp \
+           factory/geodatafactory.cpp \
            gridexporter/cgnsgridexporter.cpp \
            gridimporter/cgnsgridimporter.cpp \
            gridimporter/projectgridimporter.cpp \

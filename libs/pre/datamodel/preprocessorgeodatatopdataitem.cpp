@@ -1,0 +1,340 @@
+#include "../misc/preprocessorscalarbarlegendboxsettingdialog.h"
+#include "preprocessorgridandgridcreatingconditiondataitem.h"
+#include "preprocessorgridattributecelldataitem.h"
+#include "preprocessorgridattributecellgroupdataitem.h"
+#include "preprocessorgridattributenodedataitem.h"
+#include "preprocessorgridattributenodegroupdataitem.h"
+#include "preprocessorgriddataitem.h"
+#include "preprocessorgeodatacomplexgroupdataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
+
+#include <guibase/graphicsmisc.h>
+#include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
+#include <guicore/scalarstocolors/colortransferfunctioncontainer.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guicore/solverdef/solverdefinition.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
+
+#include <QIcon>
+#include <QStandardItem>
+#include <QXmlStreamWriter>
+
+#include <vtkColorTransferFunction.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderer.h>
+#include <vtkScalarBarActor.h>
+#include <vtkSphereSource.h>
+#include <vtkTextProperty.h>
+
+#include <iriclib.h>
+
+PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent)
+	: PreProcessorGeoDataTopDataItemInterface(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+{
+	m_subFolder = "geographicdata";
+
+	m_isDeletable = false;
+	m_standardItem->setCheckable(true);
+	m_standardItem->setCheckState(Qt::Checked);
+	m_standardItemCopy = m_standardItem->clone();
+
+	// add child nodes.
+	QList<SolverDefinitionGridAttribute*> list = gridType()->gridRelatedConditions();
+	QList<SolverDefinitionGridComplexAttribute*> list2 = gridType()->gridRelatedComplexConditions();
+
+	// node simple items
+	for (auto it = list.begin(); it != list.end(); ++it) {
+		SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		PreProcessorGeoDataGroupDataItem* i = new PreProcessorGeoDataGroupDataItem(cond, this);
+		m_childItems.append(i);
+		m_itemNameMap.insert((*it)->name(), i);
+	}
+	// node complex items
+	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
+		SolverDefinitionGridComplexAttribute* cond = *it2;
+		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		PreProcessorGeoDataComplexGroupDataItem* i = new PreProcessorGeoDataComplexGroupDataItem(cond, this);
+		m_childItems.append(i);
+		m_itemNameMap.insert((*it2)->name(), i);
+	}
+	// cell simple items
+	for (auto it = list.begin(); it != list.end(); ++it) {
+		SolverDefinitionGridAttribute* cond = *it;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		PreProcessorGeoDataGroupDataItem* i = new PreProcessorGeoDataGroupDataItem(cond, this);
+		m_childItems.append(i);
+		m_itemNameMap.insert((*it)->name(), i);
+	}
+	// cell complex items
+	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
+		SolverDefinitionGridComplexAttribute* cond = *it2;
+		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		PreProcessorGeoDataComplexGroupDataItem* i = new PreProcessorGeoDataComplexGroupDataItem(cond, this);
+		m_childItems.append(i);
+		m_itemNameMap.insert((*it2)->name(), i);
+	}
+	m_titleTextSetting.setPrefix("title");
+	m_labelTextSetting.setPrefix("label");
+
+	// for scalar bar / legend box
+	m_visible = true;
+	// first, no scalar bar / legend box shown.
+	m_condition = nullptr;
+	setupActors();
+}
+
+PreProcessorGeoDataTopDataItem::~PreProcessorGeoDataTopDataItem()
+{
+	m_scalarBarWidget->SetInteractor(nullptr);
+	m_legendBoxWidget->SetInteractor(nullptr);
+}
+
+void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_titleTextSetting.load(node);
+	m_labelTextSetting.load(node);
+	QDomNodeList children = node.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		QDomElement child = children.at(i).toElement();
+		QString name = child.attribute("name");
+		PreProcessorGeoDataGroupDataItemInterface* item = m_itemNameMap.value(name);
+		if (item != nullptr) {
+			item->loadFromProjectMainFile(child);
+		}
+	}
+}
+
+void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	m_titleTextSetting.save(writer);
+	m_labelTextSetting.save(writer);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		writer.writeStartElement("GeoDataGroup");
+		(*it)->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+}
+
+const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDataItem::groupDataItems() const
+{
+	QList<PreProcessorGeoDataGroupDataItemInterface*> ret;
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorGeoDataGroupDataItemInterface* item = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(*it);
+		ret.append(item);
+	}
+	return ret;
+}
+
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const QString& name)
+{
+	return m_itemNameMap.value(name, nullptr);
+}
+
+void PreProcessorGeoDataTopDataItem::informValueRangeChange(const QString& name)
+{
+	emit valueRangeChanged(name);
+}
+
+void PreProcessorGeoDataTopDataItem::informDataChange()
+{
+	emit dataChanged();
+}
+
+void PreProcessorGeoDataTopDataItem::setupScalarBar()
+{
+	PreProcessorScalarBarLegendBoxSettingDialog dialog(preProcessorWindow());
+	if (m_condition != nullptr) {
+		if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr || m_condition->isOption()) {
+			PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
+			ScalarBarSetting& setting = gItem->scalarBarSetting();
+			setting.loadFromRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
+		} else {
+			PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
+			ScalarBarSetting& setting = gItem->scalarBarSetting();
+			setting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+		}
+	}
+	dialog.setupComboBox(this);
+	dialog.setActor2DVisibility(m_visible);
+	dialog.setCondition(m_condition);
+	dialog.setTitleTextSetting(m_titleTextSetting);
+	dialog.setLabelTextSetting(m_labelTextSetting);
+	if (dialog.exec() == QDialog::Accepted) {
+		m_visible = dialog.actor2DVisibility();
+		m_condition = dialog.condition();
+		m_titleTextSetting = dialog.titleTextSetting();
+		m_labelTextSetting = dialog.labelTextSetting();
+		updateActorSettings();
+	}
+}
+
+void PreProcessorGeoDataTopDataItem::setupActors()
+{
+	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
+	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
+	m_scalarBarWidget->SetEnabled(0);
+	m_scalarBarWidget->SetInteractor(iren);
+
+	m_legendBoxWidget = vtkSmartPointer<vtkLegendBoxWidget>::New();
+	m_legendBoxWidget->SetEnabled(0);
+	m_legendBoxWidget->SetInteractor(iren);
+
+	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = groupDataItems();
+	QString attName;
+
+	// for legend box
+	for (auto it = groups.begin(); it != groups.end(); ++it) {
+		if (!(*it)->condition()->isOption()) { continue; }
+		attName = (*it)->condition()->name();
+		break;
+	}
+	updateActorSettings();
+}
+
+void PreProcessorGeoDataTopDataItem::updateActorSettings()
+{
+	if (m_scalarBarWidget == nullptr) {return;}
+	if (m_legendBoxWidget == nullptr) {return;}
+	m_scalarBarWidget->SetEnabled(0);
+	m_legendBoxWidget->SetEnabled(0);
+
+	if (m_condition == nullptr) {return;}
+	PreProcessorGeoDataGroupDataItem* rdgItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(groupDataItem(m_condition->name()));
+	if (rdgItem == nullptr) { return; }
+
+	if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
+		// discrete
+		if (! m_visible) { return; }
+		m_legendBoxWidget->SetEnabled(1);
+
+		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
+		if (gItem == nullptr) { return; }
+		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->scalarBarSetting();
+		sbSetting.saveToRepresentation(m_legendBoxWidget->GetLegendBoxRepresentation());
+		m_labelTextSetting.applySetting(m_legendBoxWidget->GetLegendBoxActor()->GetEntryTextProperty());
+
+		updateLegendBoxItems();
+	} else {
+		// continuous
+		if (! m_visible) { return; }
+		m_scalarBarWidget->SetEnabled(1);
+		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
+		if (gItem == nullptr) { return; }
+		ScalarBarSetting& sbSetting = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->scalarBarSetting();
+		sbSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+		PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+		LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(gtItem->scalarsToColors(m_condition->name()));
+		if (cont == nullptr) { return; }
+		vtkScalarBarActor* scalarBarActor = m_scalarBarWidget->GetScalarBarActor();
+		scalarBarActor->SetLookupTable(cont->vtkObj());
+		scalarBarActor->SetNumberOfLabels(sbSetting.numberOfLabels);
+		scalarBarActor->SetTitle(iRIC::toStr(rdgItem->title()).c_str());
+		scalarBarActor->SetLabelFormat(iRIC::toStr(sbSetting.labelFormat).c_str());
+		m_titleTextSetting.applySetting(scalarBarActor->GetTitleTextProperty());
+		m_labelTextSetting.applySetting(scalarBarActor->GetLabelTextProperty());
+	}
+}
+
+void PreProcessorGeoDataTopDataItem::updateLegendBoxItems()
+{
+	if (m_condition == nullptr) {return;}
+	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	ColorTransferFunctionContainer* ctfCont = dynamic_cast<ColorTransferFunctionContainer*>(gtItem->scalarsToColors(m_condition->name()));
+	vtkLegendBoxActor* lActor = m_legendBoxWidget->GetLegendBoxActor();
+	lActor->SetNumberOfEntries(ctfCont->englishEnumerations().size());
+	vtkColorTransferFunction* ctf = dynamic_cast<vtkColorTransferFunction*>(ctfCont->vtkObj());
+	int index = 0;
+	double color[3] = {0, 0, 0};
+	// set entries
+	for (auto mapIt = ctfCont->englishEnumerations().begin(); mapIt != ctfCont->englishEnumerations().end(); mapIt++) {
+		vtkSphereSource* sphere = vtkSphereSource::New();
+		double num = mapIt.key();
+		QString label = mapIt.value();
+		ctf->GetColor(num, color);
+		sphere->Update();
+		lActor->SetEntry(index++, sphere->GetOutput(), iRIC::toStr(label).c_str(), color);
+		sphere->Delete();
+	}
+}
+
+QStringList PreProcessorGeoDataTopDataItem::getGeoDatasNotMapped()
+{
+	QStringList ret;
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(*it);
+		ret.append(item->getGeoDatasNotMapped());
+	}
+	return ret;
+}
+
+void PreProcessorGeoDataTopDataItem::informSelection(VTKGraphicsView* /*v*/)
+{
+	m_scalarBarWidget->SetRepositionable(1);
+	m_legendBoxWidget->SetRepositionable(1);
+}
+
+void PreProcessorGeoDataTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
+{
+	m_scalarBarWidget->SetRepositionable(0);
+	m_legendBoxWidget->SetRepositionable(0);
+}
+
+void PreProcessorGeoDataTopDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	v->standardKeyPressEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
+{
+	v->standardKeyReleaseEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMouseDoubleClickEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMouseMoveEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMousePressEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	v->standardMouseReleaseEvent(event);
+}
+
+void PreProcessorGeoDataTopDataItem::saveToCgnsFile(const int fn)
+{
+	cg_iRIC_GotoRawDataTop(fn);
+	GraphicsWindowDataItem::saveToCgnsFile(fn);
+
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorGeoDataGroupDataItem* gItem =
+			dynamic_cast<PreProcessorGeoDataGroupDataItem*>(*it);
+		gItem->saveComplexGroupsToCgnsFile(fn);
+	}
+}
+
+void PreProcessorGeoDataTopDataItem::setDimensionsToFirst()
+{
+	QList<GraphicsWindowDataItem*>::iterator it;
+	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorGeoDataGroupDataItem* gItem =
+			dynamic_cast<PreProcessorGeoDataGroupDataItem*>(*it);
+		gItem->setDimensionsToFirst();
+	}
+}

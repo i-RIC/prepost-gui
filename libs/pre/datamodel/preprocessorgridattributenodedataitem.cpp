@@ -6,8 +6,8 @@
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 
 #include <guibase/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -267,7 +267,7 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
 	PreProcessorGridTypeDataItem* tItem =
 		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	PreProcessorRawDataGroupDataItemInterface* i = tItem->rawdataTop()->groupDataItem(m_condition->name());
+	PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
 	i->setupEditWidget(dialog->widget());
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	QVector<vtkIdType> targets = tmpparent->selectedVertices();

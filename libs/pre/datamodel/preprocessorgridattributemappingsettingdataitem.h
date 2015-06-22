@@ -4,7 +4,7 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 
 class SolverDefinitionGridAttribute;
-class PreProcessorRawDataGroupDataItem;
+class PreProcessorGeoDataGroupDataItem;
 class Grid;
 class WaitDialog;
 
@@ -15,11 +15,11 @@ class PreProcessorGridAttributeMappingSettingDataItem : public PreProcessorDataI
 public:
 	/// Mapping mode
 	enum MappingMode {
-		mmFromRawData,         ///< Map attribute value from raw data.
+		mmFromGeoData,         ///< Map attribute value from raw data.
 		mmFromOtherAttribute   ///< Map attribute value from other attribute data.
 	};
-	PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorRawDataGroupDataItem* rawdataGroup, PreProcessorDataItem* parent);
-	PreProcessorRawDataGroupDataItem* rawdataGroupDataItem() const {return m_rawdataGroupDataItem;}
+	PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent);
+	PreProcessorGeoDataGroupDataItem* geodataGroupDataItem() const {return m_geodataGroupDataItem;}
 	SolverDefinitionGridAttribute* condition() const {return m_condition;}
 	void setDefaultValue(Grid* grid);
 	void executeMapping(Grid* grid, WaitDialog* dialog);
@@ -30,7 +30,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	MappingMode m_mappingMode;
 
-	PreProcessorRawDataGroupDataItem* m_rawdataGroupDataItem;
+	PreProcessorGeoDataGroupDataItem* m_geodataGroupDataItem;
 	SolverDefinitionGridAttribute* m_condition;
 };
 

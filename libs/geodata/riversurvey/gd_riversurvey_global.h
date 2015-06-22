@@ -1,0 +1,12 @@
+#ifndef GD_RIVERSURVEY_GLOBAL_H
+#define GD_RIVERSURVEY_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(GD_RIVERSURVEY_LIBRARY)
+#  define GD_RIVERSURVEY_EXPORT Q_DECL_EXPORT
+#else
+#  define GD_RIVERSURVEY_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // GD_RIVERSURVEY_GLOBAL_H

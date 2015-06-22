@@ -7,7 +7,7 @@
 #include <QMap>
 
 class QAction;
-class RawData;
+class GeoData;
 
 class PreProcessorBackgroundImagesDataItem;
 class PreProcessorGridTypeDataItem;
@@ -81,7 +81,7 @@ public:
 	friend class PreProcessorWindowProjectDataItem;
 	friend class PreProcessorDataModel;
 	friend class PreProcessorRootDataItemSetMappingSettingCommand;
-	friend class RawData;
+	friend class GeoData;
 };
 
 #endif // PREPROCESSORROOTDATAITEM_H

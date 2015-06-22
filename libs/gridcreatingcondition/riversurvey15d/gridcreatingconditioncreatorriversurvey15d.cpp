@@ -3,10 +3,10 @@
 
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QMessageBox>
 
@@ -33,11 +33,11 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 {
 	bool riverSurveyFound = false;
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(condDataItem->parent()->parent());
-	PreProcessorRawDataTopDataItemInterface* rtItem = gtItem->rawdataTop();
-	for (PreProcessorRawDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
-		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->rawDatas();
+	PreProcessorGeoDataTopDataItemInterface* rtItem = gtItem->geoDataTop();
+	for (PreProcessorGeoDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
+		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->geoDatas();
 		for (PreProcessorRawdataDataItemInterface* rItem : rItems) {
-			riverSurveyFound = riverSurveyFound || (dynamic_cast<RawDataRiverSurvey*>(rItem->rawData()) != nullptr);
+			riverSurveyFound = riverSurveyFound || (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr);
 		}
 	}
 	if (! riverSurveyFound) {

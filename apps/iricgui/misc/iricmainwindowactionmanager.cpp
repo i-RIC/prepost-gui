@@ -128,7 +128,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_importMenuInFileMenu->setDisabled(true);
 	connect(m_importMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
 	connect(m_importMenuInFileMenu, SIGNAL(aboutToShow()), this, SLOT(setupImportMenu()));
-	m_rawDataImportMenu = nullptr;
+	m_geoDataImportMenu = nullptr;
 
 	importCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
 	connect(importCalcCondAction, SIGNAL(triggered()), m_parent, SLOT(importCalcCondition()));
@@ -195,8 +195,8 @@ void iRICMainWindowActionManager::setupFileMenu()
 void iRICMainWindowActionManager::setupImportMenu()
 {
 	m_importMenu->clear();
-	m_rawDataImportMenu = m_importMenu->addMenu(tr("G&eographic Data"));
-	connect(m_rawDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupRawDataImportMenu()));
+	m_geoDataImportMenu = m_importMenu->addMenu(tr("G&eographic Data"));
+	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
 
 	m_hydraulicDataImportMenu = m_importMenu->addMenu(tr("&Hydraulic Data"));
 	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
@@ -210,8 +210,8 @@ void iRICMainWindowActionManager::setupImportMenu()
 	m_importMenu->addAction(importVisGraphAction);
 
 	m_importMenuInFileMenu->clear();
-	m_rawDataImportMenu = m_importMenuInFileMenu->addMenu(tr("G&eographic Data"));
-	connect(m_rawDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupRawDataImportMenu()));
+	m_geoDataImportMenu = m_importMenuInFileMenu->addMenu(tr("G&eographic Data"));
+	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
 
 	m_hydraulicDataImportMenu = m_importMenuInFileMenu->addMenu(tr("&Hydraulic Data"));
 	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
@@ -228,8 +228,8 @@ void iRICMainWindowActionManager::setupImportMenu()
 void iRICMainWindowActionManager::setupExportMenu()
 {
 	m_exportMenu->clear();
-	m_rawDataExportMenu = m_exportMenu->addMenu(tr("G&eographic Data"));
-	connect(m_rawDataExportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupRawDataExportMenu()));
+	m_geoDataExportMenu = m_exportMenu->addMenu(tr("G&eographic Data"));
+	connect(m_geoDataExportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataExportMenu()));
 	addGridExportMenu(m_exportMenu);
 //	exportCgnsAction = new QAction(tr("&Case (CGNS file)..."), m_exportMenu);
 //	m_exportMenu->addAction(exportCgnsAction);
@@ -624,8 +624,8 @@ void iRICMainWindowActionManager::projectFileOpen()
 	// all import actions are enabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != nullptr) {
-		m_rawDataImportMenu->setEnabled(true);
+	if (m_geoDataImportMenu != nullptr) {
+		m_geoDataImportMenu->setEnabled(true);
 	}
 	importCalcCondAction->setEnabled(true);
 	importCgnsAction->setEnabled(true);
@@ -673,8 +673,8 @@ void iRICMainWindowActionManager::projectFileClose()
 	// all import actions are excepts CGNS import action are disabled.
 	m_importMenu->setEnabled(true);
 	m_importMenuInFileMenu->setEnabled(true);
-	if (m_rawDataImportMenu != nullptr) {
-		m_rawDataImportMenu->setEnabled(false);
+	if (m_geoDataImportMenu != nullptr) {
+		m_geoDataImportMenu->setEnabled(false);
 	}
 	importCalcCondAction->setEnabled(false);
 	importCgnsAction->setEnabled(true);

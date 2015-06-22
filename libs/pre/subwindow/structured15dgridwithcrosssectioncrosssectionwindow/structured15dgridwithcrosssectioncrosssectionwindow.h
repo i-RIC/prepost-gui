@@ -91,12 +91,12 @@ private:
 	bool m_apply;
 	bool m_first;
 	bool m_tableaction;
-//	RawDataRiverPathPoint* m_point;
+//	GeoDataRiverPathPoint* m_point;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> m_before;
 	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> m_after;
 	Structured15DGridWithCrossSectionCrossSectionWindow* m_window;
 	PreProcessorNormal15DGridWithCrossSectionShapeDataItem* m_item;
-//	RawDataRiverSurvey* m_rs;
+//	GeoDataRiverSurvey* m_rs;
 };
 
 #endif // STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTIONWINDOW_H

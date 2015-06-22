@@ -5,9 +5,9 @@
 #include "gridcreatingconditionriversurveypointregionadddialog.h"
 
 #include <misc/iricundostack.h>
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
-#include <rawdata/riversurvey/rawdatariversurvey.h>
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
+#include <geodata/riversurvey/geodatariversurveyctrlpointbackup.h>
 
 #include <QMessageBox>
 #include <QUndoCommand>
@@ -19,8 +19,8 @@ class GridCreatingConditionCtrlPointRegionAddCommand : public QUndoCommand
 {
 public:
 	GridCreatingConditionCtrlPointRegionAddCommand(
-		RawDataRiverPathPoint* start,
-		RawDataRiverPathPoint* end,
+		GeoDataRiverPathPoint* start,
+		GeoDataRiverPathPoint* end,
 		bool specifydistance,
 		int points,
 		double distance,
@@ -32,7 +32,7 @@ public:
 
 	void undo() {
 		m_condition->cancelBackgroundGridUpdate();
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_before) {
+		for (GeoDataRiverSurveyCtrlPointBackup* backup : m_before) {
 			backup->restore();
 		}
 
@@ -43,7 +43,7 @@ public:
 
 	void redo() {
 		m_condition->cancelBackgroundGridUpdate();
-		for (RawDataRiverSurveyCtrlPointBackup* backup : m_after) {
+		for (GeoDataRiverSurveyCtrlPointBackup* backup : m_after) {
 			backup->restore();
 		}
 
@@ -53,15 +53,15 @@ public:
 	}
 
 private:
-	void ctrlPointsRegionAdd(RawDataRiverPathPoint* start, RawDataRiverPathPoint* end, bool specifydistance, int points, double distance) {
-		RawDataRiverPathPoint* tmpp;
-		RawDataRiverSurveyCtrlPointBackup* backup;
+	void ctrlPointsRegionAdd(GeoDataRiverPathPoint* start, GeoDataRiverPathPoint* end, bool specifydistance, int points, double distance) {
+		GeoDataRiverPathPoint* tmpp;
+		GeoDataRiverSurveyCtrlPointBackup* backup;
 
 		// Make backup.
 		tmpp = start;
 		while (tmpp != end) {
-			backup = new RawDataRiverSurveyCtrlPointBackup();
-			backup->backup(tmpp, RawDataRiverPathPoint::zposCenterLine);
+			backup = new GeoDataRiverSurveyCtrlPointBackup();
+			backup->backup(tmpp, GeoDataRiverPathPoint::zposCenterLine);
 			m_before.push_back(backup);
 			tmpp = tmpp->nextPoint();
 		}
@@ -92,8 +92,8 @@ private:
 		// Make backup.
 		tmpp = start;
 		while (tmpp != end) {
-			backup = new RawDataRiverSurveyCtrlPointBackup();
-			backup->backup(tmpp, RawDataRiverPathPoint::zposCenterLine);
+			backup = new GeoDataRiverSurveyCtrlPointBackup();
+			backup->backup(tmpp, GeoDataRiverPathPoint::zposCenterLine);
 			m_after.push_back(backup);
 			tmpp = tmpp->nextPoint();
 		}
@@ -101,8 +101,8 @@ private:
 
 private:
 	GridCreatingConditionRiverSurvey* m_condition;
-	std::list<RawDataRiverSurveyCtrlPointBackup*> m_before;
-	std::list<RawDataRiverSurveyCtrlPointBackup*> m_after;
+	std::list<GeoDataRiverSurveyCtrlPointBackup*> m_before;
+	std::list<GeoDataRiverSurveyCtrlPointBackup*> m_after;
 };
 
 
@@ -134,9 +134,9 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::changeEvent(QEvent* e
 	}
 }
 
-void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverSurvey* rs)
+void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(GeoDataRiverSurvey* rs)
 {
-	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
+	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	double lengthSum = 0;
 	int numSections = 0;
 	while (p != nullptr) {
@@ -165,28 +165,28 @@ void GridCreatingConditionRiverSurveyPointRegionAddDialog::setData(RawDataRiverS
 	}
 }
 
-void GridCreatingConditionRiverSurveyPointRegionAddDialog::setStartPoint(RawDataRiverPathPoint* p)
+void GridCreatingConditionRiverSurveyPointRegionAddDialog::setStartPoint(GeoDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
 	if (index == - 1) {index = 0;}
 	ui->startComboBox->setCurrentIndex(index);
 }
 
-void GridCreatingConditionRiverSurveyPointRegionAddDialog::setEndPoint(RawDataRiverPathPoint* p)
+void GridCreatingConditionRiverSurveyPointRegionAddDialog::setEndPoint(GeoDataRiverPathPoint* p)
 {
 	int index = m_points.indexOf(p);
 	if (index == - 1) {index = m_points.count() - 2;}
 	ui->endComboBox->setCurrentIndex(index);
 }
 
-RawDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::startPoint()
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::startPoint()
 {
 	int index = ui->startComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 1) {return 0;}
 	return m_points.at(index);
 }
 
-RawDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::endPoint()
+GeoDataRiverPathPoint* GridCreatingConditionRiverSurveyPointRegionAddDialog::endPoint()
 {
 	int index = ui->endComboBox->currentIndex();
 	if (index < 0 || index > m_points.count() - 2) {return 0;}

@@ -11,7 +11,7 @@
 #include "preprocessorgridshapedataitem.h"
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessornormal15dgridwithcrosssectiondataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 #include "preprocessorstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
@@ -106,7 +106,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 
 	// create connections.
 	connect(m_creatingConditionDataItem, SIGNAL(gridCreated()), this, SLOT(informGridCreation()));
-	connect(dynamic_cast<PreProcessorGridTypeDataItem*>(p)->rawdataTop(), SIGNAL(dataChanged()), m_mappingSettingDataItem, SLOT(informRawDataChange()));
+	connect(dynamic_cast<PreProcessorGridTypeDataItem*>(p)->geoDataTop(), SIGNAL(dataChanged()), m_mappingSettingDataItem, SLOT(informGeoDataChange()));
 	if (gItem->bcGroupDataItem() != nullptr) {
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
 		connect(gItem->bcGroupDataItem(), SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));

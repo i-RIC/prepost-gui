@@ -9,8 +9,8 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/xmlsupport.h>
-#include <rawdata/polygon/rawdatapolygonabstractpolygon.h>
-#include <rawdata/polygon/rawdatapolygonregionpolygon.h>
+#include <geodata/polygon/geodatapolygonabstractpolygon.h>
+#include <geodata/polygon/geodatapolygonregionpolygon.h>
 
 #include <QAction>
 #include <QFile>
@@ -37,9 +37,9 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 
 	m_editAction = new QAction(tr("&Edit Condition..."), this);
 
-	m_polygon = new RawDataPolygon(this, 0, 0);
+	m_polygon = new GeoDataPolygon(this, 0, 0);
 	m_polygon->setupMenu();
-	m_polygon->setMapping(RawDataPolygonColorSettingDialog::Arbitrary);
+	m_polygon->setMapping(GeoDataPolygonColorSettingDialog::Arbitrary);
 
 	m_rightClickingMenu = new QMenu(nullptr);
 	m_rightClickingMenu->setTitle(tr("Polygon"));
@@ -99,7 +99,7 @@ void PreProcessorBCSettingDataItem::handleStandardItemChange()
 void PreProcessorBCSettingDataItem::informSelection(VTKGraphicsView* v)
 {
 	if (m_polygon->m_selectedPolygon == nullptr) {
-		m_polygon->m_selectMode = RawDataPolygon::smPolygon;
+		m_polygon->m_selectMode = GeoDataPolygon::smPolygon;
 		m_polygon->m_selectedPolygon = m_polygon->m_gridRegionPolygon;
 	}
 	m_polygon->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
@@ -117,8 +117,8 @@ void PreProcessorBCSettingDataItem::viewOperationEnded(VTKGraphicsView* v)
 
 void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
 {
-	if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining) {
-		if (m_polygon->selectMode() == RawDataPolygon::smPolygon) {
+	if (m_polygon->mouseEventMode() == GeoDataPolygon::meDefining) {
+		if (m_polygon->selectMode() == GeoDataPolygon::smPolygon) {
 			m_polygon->definePolygon(true, true);
 			if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
 				m_bcDataItem->showDialog();
@@ -151,8 +151,8 @@ void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /*v*/)
 {
 	if (event->key() == Qt::Key_Return) {
-		if (m_polygon->mouseEventMode() == RawDataPolygon::meDefining) {
-			if (m_polygon->selectMode() == RawDataPolygon::smPolygon) {
+		if (m_polygon->mouseEventMode() == GeoDataPolygon::meDefining) {
+			if (m_polygon->selectMode() == GeoDataPolygon::smPolygon) {
 				m_polygon->definePolygon(false, true);
 				if (m_polygon->m_selectedPolygon == m_polygon->m_gridRegionPolygon) {
 					m_bcDataItem->showDialog();

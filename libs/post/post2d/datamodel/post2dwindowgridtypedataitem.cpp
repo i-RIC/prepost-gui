@@ -1,12 +1,12 @@
 #include "../post2dwindow.h"
 #include "post2dwindowgridtypedataitem.h"
-#include "post2dwindowrawdatatopdataitem.h"
+#include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
@@ -37,10 +37,10 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_subFolder = type->name();
 	m_isZoneDataItemsSetup = false;
 
-	PreProcessorRawDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->rawDataTopDataItem(type->name());
+	PreProcessorGeoDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->geoDataTopDataItem(type->name());
 	if (tItem != nullptr) {
-		m_rawDataItem = new Post2dWindowRawDataTopDataItem(tItem, this);
-		m_childItems.append(m_rawDataItem);
+		m_geoDataItem = new Post2dWindowGeoDataTopDataItem(tItem, this);
+		m_childItems.append(m_geoDataItem);
 	}
 
 	setupZoneDataItems();
@@ -169,9 +169,9 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 			}
 		}
 	}
-	QDomNode rNode = iRIC::getChildNode(node, "RawData");
+	QDomNode rNode = iRIC::getChildNode(node, "GeoData");
 	if (! rNode.isNull()) {
-		m_rawDataItem->loadFromProjectMainFile(rNode);
+		m_geoDataItem->loadFromProjectMainFile(rNode);
 	}
 	QDomNode zonesNode = iRIC::getChildNode(node, "Zones");
 	if (! zonesNode.isNull()) {
@@ -199,8 +199,8 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
-	writer.writeStartElement("RawData");
-	m_rawDataItem->saveToProjectMainFile(writer);
+	writer.writeStartElement("GeoData");
+	m_geoDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 	writer.writeStartElement("Zones");
 	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {

@@ -8,12 +8,12 @@
         <translation type="vanished">河川測量データから生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="20"/>
         <source>Create grid from river survey data</source>
         <translation>河川測量データから生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
@@ -21,12 +21,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 注意: このアルゴリズムは、河川測量データが読み込まれている時のみ利用できます! このアルゴリズムに切り替えるより先に、河川測量データを読み込んでください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="55"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="55"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation>地理情報に河川測量データが読み込まれていないため、このアルゴリズムは利用できません。</translation>
     </message>
@@ -39,62 +39,62 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation>格子制御点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="299"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="282"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="299"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="282"/>
         <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation>河川測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="892"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="876"/>
         <source>&amp;Add Division Points...</source>
         <translation>分割点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="893"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="877"/>
         <source>Add Division Points &amp;Regionally...</source>
         <translation>分割点の一括追加(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="894"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="878"/>
         <source>&amp;Move Division Points...</source>
         <translation>分割点の移動(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="895"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="879"/>
         <source>Re&amp;position Division Points...</source>
         <translation>分割点の再配置(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="896"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="880"/>
         <source>R&amp;emove Division Points...</source>
         <translation>分割点の削除(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1004"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="988"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1005"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="989"/>
         <source>Are you sure you want to delete these control points?</source>
         <translation>本当にこれらの制御点を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1623"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1576"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1623"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1576"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointadddialog.cpp" line="42"/>
+        <location filename="../gridcreatingconditionriversurveypointadddialog.cpp" line="43"/>
         <source>Add Division Points</source>
         <translation>分割点の追加</translation>
     </message>
@@ -104,7 +104,7 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation>格子制御点の領域追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointrepositiondialog.cpp" line="18"/>
+        <location filename="../gridcreatingconditionriversurveypointrepositiondialog.cpp" line="20"/>
         <source>Reposition Control Points</source>
         <translation>格子生成制御点の再配置</translation>
     </message>
@@ -193,12 +193,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
         <translation>m</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="226"/>
+        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="220"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="227"/>
+        <location filename="../gridcreatingconditionriversurveypointregionadddialog.cpp" line="221"/>
         <source>The control points which already exist in this region are overwritten.</source>
         <translation>この領域にある格子制御点は、上書きされます。</translation>
     </message>

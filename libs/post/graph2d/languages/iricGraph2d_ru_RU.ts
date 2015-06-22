@@ -4,12 +4,12 @@
 <context>
     <name>Graph2dWindowDataModel</name>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="293"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
         <source>Title Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowdatamodel.cpp" line="293"/>
+        <location filename="../graph2dwindowdatamodel.cpp" line="291"/>
         <source>Please input the title.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -17,7 +17,7 @@
 <context>
     <name>Graph2dWindowMarkerGroupDataItem</name>
     <message>
-        <location filename="../datamodel/graph2dwindowmarkergroupdataitem.cpp" line="21"/>
+        <location filename="../datamodel/graph2dwindowmarkergroupdataitem.cpp" line="22"/>
         <source>Markers</source>
         <translation type="unfinished"></translation>
     </message>
@@ -145,7 +145,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowmarkersettingdialog.cpp" line="101"/>
+        <location filename="../graph2dwindowmarkersettingdialog.cpp" line="103"/>
         <source>y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -192,17 +192,17 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../graph2dwindowdataitem.cpp" line="136"/>
+        <location filename="../graph2dwindowdataitem.cpp" line="133"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="80"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="81"/>
         <source>Move up item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dwindowrootdataitem.cpp" line="117"/>
+        <location filename="../graph2dwindowrootdataitem.cpp" line="115"/>
         <source>Move down item</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,7 +1,7 @@
 #ifndef PREPROCESSORGRIDCROSSSECTIONWINDOW_H
 #define PREPROCESSORGRIDCROSSSECTIONWINDOW_H
 
-//#include "rawdatarivercrosssection.h"
+//#include "geodatarivercrosssection.h"
 
 #include <QMainWindow>
 #include <QList>
@@ -27,7 +27,7 @@ namespace Ui
 	class PreProcessorGridCrosssectionWindow;
 }
 
-//class RawDataRiverSurveyCrosssectionEditCommand;
+//class GeoDataRiverSurveyCrosssectionEditCommand;
 
 class PreProcessorGridCrosssectionWindow : public QMainWindow
 {
@@ -105,7 +105,7 @@ private:
 	QComboBox* m_blueLineComboBox;
 	bool m_settingUp;
 	PreProcessorGridCrosssectionWindowProjectDataItem* m_projectDataItem;
-//	QList<RawDataRiverPathPoint*> m_points;
+//	QList<GeoDataRiverPathPoint*> m_points;
 
 public:
 	friend class PreProcessorGridCrosssectionWindowGraphicsView;

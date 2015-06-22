@@ -2,7 +2,7 @@
 #define PREPROCESSORGRIDCROSSSECTIONWINDOWDELEGATE_H
 
 #include <QStyledItemDelegate>
-class RawDataRiverCrosssection;
+class GeoDataRiverCrosssection;
 class CenteredCheckBox;
 
 class PreProcessorGridCrosssectionWindowDelegate : public QStyledItemDelegate

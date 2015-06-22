@@ -2,7 +2,7 @@
 #define PREPROCESSORGRIDATTRIBUTEMAPPINGSETTINGTOPEDITDIALOG_H
 
 #include "preprocessorrootdataitem.h"
-#include <rawdata/pointmap/rawdatapointmapmappingmode.h>
+#include <geodata/pointmap/geodatapointmapmappingmode.h>
 #include "../misc/preprocessorgridattributemappingmode.h"
 
 #include <QDialog>
@@ -21,8 +21,8 @@ public:
 	~PreProcessorGridAttributeMappingSettingTopEditDialog();
 	PreProcessorGridAttributeMappingMode::Mode mappingMode();
 	void setMappingMode(PreProcessorGridAttributeMappingMode::Mode mm);
-	RawDataPointmapMappingMode::Mode pointmapMappingMode();
-	void setPointmapMappingMode(RawDataPointmapMappingMode::Mode mm);
+	GeoDataPointmapMappingMode::Mode pointmapMappingMode();
+	void setPointmapMappingMode(GeoDataPointmapMappingMode::Mode mm);
 
 	bool autoMode() {return m_autoMode;}
 	void setAutoMode(bool a) {m_autoMode = a;}

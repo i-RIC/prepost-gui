@@ -10,8 +10,8 @@
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 
 #include <guibase/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -52,15 +52,15 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 	SolverDefinitionGridType* gType = gtItem->gridType();
 	QList<SolverDefinitionGridAttribute*> conditions = gType->gridRelatedConditions();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
-		PreProcessorRawDataGroupDataItem* rawdataGroup = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gtItem->rawdataTop()->groupDataItem((*it)->name()));
-		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, rawdataGroup, this);
+		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*it)->name()));
+		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, geodataGroup, this);
 		m_itemNameMap.insert((*it)->name(), item);
 		m_childItems.append(item);
 	}
 	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridRelatedComplexConditions();
 	for (auto cit = cconditions.begin(); cit != cconditions.end(); ++cit) {
-		PreProcessorRawDataGroupDataItem* rawdataGroup = dynamic_cast<PreProcessorRawDataGroupDataItem*>(gtItem->rawdataTop()->groupDataItem((*cit)->name()));
-		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, rawdataGroup, this);
+		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*cit)->name()));
+		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, geodataGroup, this);
 		m_itemNameMap.insert((*cit)->name(), item);
 		m_childItems.append(item);
 	}
@@ -73,7 +73,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::doLoadFromProjectMainFi
 void PreProcessorGridAttributeMappingSettingTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}
 
-void PreProcessorGridAttributeMappingSettingTopDataItem::informRawDataChange()
+void PreProcessorGridAttributeMappingSettingTopDataItem::informGeoDataChange()
 {
 	/*
 		PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(parent()->parent()->parent());
@@ -147,7 +147,7 @@ bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 {
 	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*c_it);
-		PreProcessorRawDataGroupDataItem* gItem = item->rawdataGroupDataItem();
+		PreProcessorGeoDataGroupDataItem* gItem = item->geodataGroupDataItem();
 		const QList<GridAttributeDimensionContainer*>& conts = gItem->dimensions()->containers();
 		for (int i = 0; i < conts.size(); ++i) {
 			GridAttributeDimensionContainer* c = conts.at(i);

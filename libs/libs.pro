@@ -11,7 +11,7 @@ SUBDIRS = \
 	triangle \
 	guibase \
 	guicore \
-	rawdata \
+	geodata \
 	gridcreatingcondition \
 	hydraulicdata \
 	solverconsole \

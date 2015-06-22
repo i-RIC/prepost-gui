@@ -1,6 +1,6 @@
 #include "hydraulicdatariversurveywaterelevationimporter.h"
 
-#include <rawdata/riversurvey/rawdatariversurvey.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QFile>
 #include <QMap>
@@ -13,9 +13,9 @@ HydraulicDataRiverSurveyWaterElevationImporter::HydraulicDataRiverSurveyWaterEle
 	m_caption = tr("Water Elevation");
 }
 
-bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
+bool HydraulicDataRiverSurveyWaterElevationImporter::import(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* w)
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
+	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 
 	QFile file(filename);
 	if (! file.open(QIODevice::ReadOnly)) {
@@ -23,8 +23,8 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 		return false;
 	}
 
-	QMap<double, RawDataRiverPathPoint*> pmap;
-	RawDataRiverPathPoint* p = rs->headPoint()->nextPoint();
+	QMap<double, GeoDataRiverPathPoint*> pmap;
+	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	while (p != nullptr) {
 		double name = p->name().toDouble();
 		pmap.insert(name, p);
@@ -43,7 +43,7 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 			QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
 			double kp = pieces.value(0).toDouble();
 			double height = pieces.value(1).toDouble();
-			RawDataRiverPathPoint* point = pmap.value(kp, 0);
+			GeoDataRiverPathPoint* point = pmap.value(kp, 0);
 			if (point == nullptr) {
 				skipped.append(QString::number(kp));
 			} else {
@@ -59,9 +59,9 @@ bool HydraulicDataRiverSurveyWaterElevationImporter::import(RawData* data, const
 	return true;
 }
 
-bool HydraulicDataRiverSurveyWaterElevationImporter::canImportTo(RawData* data)
+bool HydraulicDataRiverSurveyWaterElevationImporter::canImportTo(GeoData* data)
 {
-	RawDataRiverSurvey* rs = dynamic_cast<RawDataRiverSurvey*>(data);
+	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(data);
 	return (rs != nullptr);
 }
 

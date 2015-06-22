@@ -386,18 +386,18 @@ void PreProcessorWindow::addGridExportMenu(QMenu* menu)
 	model()->addGridExportMenu(menu);
 }
 
-void PreProcessorWindow::setupRawDataImportMenu()
+void PreProcessorWindow::setupGeoDataImportMenu()
 {
 	PreProcessorDataModel* m = model();
 	if (m == nullptr) {return;}
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
-	m->setupRawDataImportMenu(menu);
+	m->setupGeoDataImportMenu(menu);
 }
 
-void PreProcessorWindow::setupRawDataExportMenu()
+void PreProcessorWindow::setupGeoDataExportMenu()
 {
 	QMenu* menu = dynamic_cast<QMenu*>(sender());
-	model()->setupRawDataExportMenu(menu);
+	model()->setupGeoDataExportMenu(menu);
 }
 
 void PreProcessorWindow::setupHydraulicDataImportMenu()

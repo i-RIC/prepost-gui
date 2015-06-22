@@ -37,7 +37,7 @@ PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structure
 
 	ui->setupUi(this);
 
-	m_icon = QIcon(":/libs/rawdata/riversurvey/images/iconRiverCrosssection.png");
+	m_icon = QIcon(":/libs/geodata/riversurvey/images/iconRiverCrosssection.png");
 
 	QList<int> sizes;
 	int width = size().width();
@@ -456,7 +456,7 @@ void PreProcessorGridCrosssectionWindow::updateActionStatus()
 
 
 /*
-RawDataRiverSurveyCrosssectionEditCommand::RawDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, RawDataRiverPathPoint* p, const RawDataRiverCrosssection::AltitudeList& after, const RawDataRiverCrosssection::AltitudeList& before, PreProcessorGridCrosssectionWindow* w, RawDataRiverSurvey* rs, bool tableaction)
+GeoDataRiverSurveyCrosssectionEditCommand::GeoDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, PreProcessorGridCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction)
 	: QUndoCommand(title)
 {
 	m_apply = apply;
@@ -469,7 +469,7 @@ RawDataRiverSurveyCrosssectionEditCommand::RawDataRiverSurveyCrosssectionEditCom
 	m_first = true;
 }
 
-void RawDataRiverSurveyCrosssectionEditCommand::redo()
+void GeoDataRiverSurveyCrosssectionEditCommand::redo()
 {
 	m_point->crosssection().AltitudeInfo() = m_after;
 	m_point->updateXSecInterpolators();
@@ -484,7 +484,7 @@ void RawDataRiverSurveyCrosssectionEditCommand::redo()
 	m_first = false;
 }
 
-void RawDataRiverSurveyCrosssectionEditCommand::undo()
+void GeoDataRiverSurveyCrosssectionEditCommand::undo()
 {
 	m_point->crosssection().AltitudeInfo() = m_before;
 	m_point->updateXSecInterpolators();

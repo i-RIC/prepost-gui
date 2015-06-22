@@ -1,7 +1,7 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTMOVEDIALOG_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTMOVEDIALOG_H
 
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 #include <QDialog>
 #include <QAbstractButton>

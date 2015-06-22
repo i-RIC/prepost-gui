@@ -4,8 +4,8 @@
 #include "gridcreatingconditionriversurveypointadddialog.h"
 
 #include <misc/iricundostack.h>
-#include <rawdata/riversurvey/rawdatariversurvey.h>
-#include <rawdata/riversurvey/rawdatariversurveyctrlpointbackup.h>
+#include <geodata/riversurvey/geodatariversurvey.h>
+#include <geodata/riversurvey/geodatariversurveyctrlpointbackup.h>
 
 #include <QMap>
 #include <QUndoCommand>
@@ -39,7 +39,7 @@ void GridCreatingConditionRiverSurveyPointAddDialog::handleButtonClick(QAbstract
 class GridCreatingConditionRiverSurveyPointAddCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionRiverSurveyPointAddCommand(bool apply, RawDataRiverPathPoint::CtrlPointsAddMethod method, GridCreatingConditionRiverSurvey* cond)
+	GridCreatingConditionRiverSurveyPointAddCommand(bool apply, GeoDataRiverPathPoint::CtrlPointsAddMethod method, GridCreatingConditionRiverSurvey* cond)
 		: QUndoCommand(GridCreatingConditionRiverSurvey::tr("Add Division Points"))
 
 	{
@@ -68,11 +68,11 @@ public:
 		m_condition->informCtrlPointUpdateToCrosssectionWindows();
 	}
 private:
-	void buildPoints(RawDataRiverPathPoint::CtrlPointsAddMethod method) {
-		RawDataRiverPathPoint* tmpp;
+	void buildPoints(GeoDataRiverPathPoint::CtrlPointsAddMethod method) {
+		GeoDataRiverPathPoint* tmpp;
 		switch (m_condition->m_selectedZone.position) {
-		case RawDataRiverPathPoint::zposCenterToLeft:
-		case RawDataRiverPathPoint::zposCenterToRight:
+		case GeoDataRiverPathPoint::zposCenterToLeft:
+		case GeoDataRiverPathPoint::zposCenterToRight:
 			// save the backup
 			m_before.backup(m_condition->m_riverSurvey->headPoint(), m_condition->m_selectedZone.position);
 			tmpp = NULL;
@@ -84,17 +84,17 @@ private:
 			// save the result.
 			m_after.backup(m_condition->m_riverSurvey->headPoint(), m_condition->m_selectedZone.position);
 			break;
-		case RawDataRiverPathPoint::zposCenterLine:
-		case RawDataRiverPathPoint::zposLeftBank:
-		case RawDataRiverPathPoint::zposRightBank:
+		case GeoDataRiverPathPoint::zposCenterLine:
+		case GeoDataRiverPathPoint::zposLeftBank:
+		case GeoDataRiverPathPoint::zposRightBank:
 			m_before.backup(m_condition->m_selectedZone.point, m_condition->m_selectedZone.position);
 			m_condition->m_selectedZone.point->addCtrlPoints(m_condition->m_selectedZone.position, m_condition->m_selectedZone.index, method);
 			m_after.backup(m_condition->m_selectedZone.point, m_condition->m_selectedZone.position);
 			break;
 		}
 	}
-	RawDataRiverSurveyCtrlPointBackup m_before;
-	RawDataRiverSurveyCtrlPointBackup m_after;
+	GeoDataRiverSurveyCtrlPointBackup m_before;
+	GeoDataRiverSurveyCtrlPointBackup m_after;
 	GridCreatingConditionRiverSurvey* m_condition;
 	GridCreatingConditionRiverSurvey::ZoneSelectionInfo m_selectedZone;
 	bool m_apply;
@@ -106,7 +106,7 @@ void GridCreatingConditionRiverSurveyPointAddDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
 	iRICUndoStack::instance().push(new GridCreatingConditionRiverSurveyPointAddCommand(false, method, m_condition));
 
 	m_condition->setActionStatus();
@@ -132,19 +132,19 @@ void GridCreatingConditionRiverSurveyPointAddDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	RawDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method = buildMethod();
 	iRICUndoStack::instance().push(new GridCreatingConditionRiverSurveyPointAddCommand(true, method, m_condition));
 	m_applied = true;
 }
 
-RawDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurveyPointAddDialog::buildMethod()
+GeoDataRiverPathPoint::CtrlPointsAddMethod GridCreatingConditionRiverSurveyPointAddDialog::buildMethod()
 {
-	RawDataRiverPathPoint::CtrlPointsAddMethod method;
+	GeoDataRiverPathPoint::CtrlPointsAddMethod method;
 	method.number = ui->divNumSpinBox->value() - 1;
 	if (ui->uniformRadioButton->isChecked()) {
-		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
+		method.method = GeoDataRiverPathPoint::CtrlPointsAddMethod::am_Uniform;
 	} else if (ui->equalRatioRadioButton->isChecked()) {
-		method.method = RawDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
+		method.method = GeoDataRiverPathPoint::CtrlPointsAddMethod::am_EqRatio_Ratio;
 		method.param = ui->ratioSpinBox->value();
 	}
 	return method;

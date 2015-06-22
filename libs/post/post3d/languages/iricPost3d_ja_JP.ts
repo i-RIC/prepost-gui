@@ -17,7 +17,7 @@
         <translation>可視化ウィンドウ (3D): %1</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="185"/>
+        <location filename="../post3dwindow.cpp" line="178"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -78,7 +78,7 @@
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="261"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="257"/>
         <source>Arrow Setting</source>
         <translation>ベクトル設定</translation>
     </message>
@@ -192,7 +192,7 @@
         <translation>削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="163"/>
+        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="162"/>
         <source>Face%1</source>
         <translation>面%1</translation>
     </message>
@@ -205,7 +205,7 @@
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="531"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="526"/>
         <source>Contour Setting</source>
         <translation>コンター設定</translation>
     </message>
@@ -648,7 +648,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="16"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="17"/>
         <source>Particles</source>
         <translation>粒子</translation>
     </message>
@@ -810,12 +810,12 @@ p, li { white-space: pre-wrap; }
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="254"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="253"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="332"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="328"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
         <translation>流線の設定変更</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="156"/>
+        <location filename="../post3dwindow.cpp" line="152"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
     </message>

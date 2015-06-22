@@ -5,8 +5,8 @@
 #include <QDialog>
 #include <QMap>
 
-class PreProcessorRawDataTopDataItemInterface;
-class PreProcessorRawDataGroupDataItemInterface;
+class PreProcessorGeoDataTopDataItemInterface;
+class PreProcessorGeoDataGroupDataItemInterface;
 class SolverDefinitionGridAttribute;
 
 namespace Ui
@@ -22,7 +22,7 @@ public:
 	PreProcessorScalarBarLegendBoxSettingDialog(QWidget* parent = nullptr);
 	~PreProcessorScalarBarLegendBoxSettingDialog();
 
-	void setupComboBox(PreProcessorRawDataTopDataItemInterface* item);
+	void setupComboBox(PreProcessorGeoDataTopDataItemInterface* item);
 
 	void setActor2DVisibility(bool vis);
 	void setCondition(SolverDefinitionGridAttribute* condition);
@@ -38,7 +38,7 @@ public slots:
 	void editScalarBar();
 
 private:
-	QMap<QString, PreProcessorRawDataGroupDataItemInterface*> m_itemMap;
+	QMap<QString, PreProcessorGeoDataGroupDataItemInterface*> m_itemMap;
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 

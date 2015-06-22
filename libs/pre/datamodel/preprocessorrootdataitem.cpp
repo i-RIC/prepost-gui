@@ -14,9 +14,9 @@
 #include "preprocessorgridtypedataitem.h"
 #include "preprocessorinputconditiondataitem.h"
 #include "preprocessormeasureddatatopdataitem.h"
-#include "preprocessorrawdatadataitem.h"
-#include "preprocessorrawdatagroupdataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatadataitem.h"
+#include "preprocessorgeodatagroupdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 
 #include <guicore/axis2d/axis2ddataitem.h>
@@ -25,14 +25,14 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>
-#include <guicore/pre/base/preprocessorrawdatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
-#include <rawdata/pointmap/rawdatapointmapmappingmode.h>
-#include <rawdata/pointmap/rawdatapointmaptemplatemappingsetting.h>
+#include <geodata/pointmap/geodatapointmapmappingmode.h>
+#include <geodata/pointmap/geodatapointmaptemplatemappingsetting.h>
 
 #include <QAction>
 #include <QSettings>
@@ -122,7 +122,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 			// So, construct a simplified object tree, in the object browser.
 			PreProcessorGridTypeDataItem* item = *(m_gridTypeDataItems.begin());
 			// take Raw Data item. and put them to the model.
-			PreProcessorRawDataTopDataItemInterface* rtitem = item->rawdataTop();
+			PreProcessorGeoDataTopDataItemInterface* rtitem = item->geoDataTop();
 			item->standardItem()->takeChild(rtitem->standardItem()->row());
 			model->appendRow(rtitem->standardItem());
 			// GridCreatingCondition, Grid are added as top item.
@@ -164,8 +164,8 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
 	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(elem.attribute("mappingMode", "0").toInt());
-	RawDataPointmapMappingMode::mode = static_cast<RawDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
-	RawDataPointmapTemplateMappingSetting& setting = RawDataPointmapTemplateMappingSetting::setting;
+	GeoDataPointmapMappingMode::mode = static_cast<GeoDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
+	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
 	setting.tempAutoMode = static_cast<bool>(elem.attribute("tempAutoRegion", "1").toInt());
 	double tmpdbl = elem.attribute("tempStreamWiseLength", "0").toDouble();
 	if (tmpdbl != 0) {setting.tempStreamWiseLength = tmpdbl;}
@@ -212,10 +212,10 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	QString tmpstr;
 	tmpstr.setNum(PreProcessorGridAttributeMappingMode::mode);
 	writer.writeAttribute("mappingMode", tmpstr);
-	tmpstr.setNum(RawDataPointmapMappingMode::mode);
+	tmpstr.setNum(GeoDataPointmapMappingMode::mode);
 	writer.writeAttribute("geoMappingMode", tmpstr);
 
-	RawDataPointmapTemplateMappingSetting& setting = RawDataPointmapTemplateMappingSetting::setting;
+	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
 	tmpstr.setNum(setting.tempAutoMode);
 	writer.writeAttribute("tempAutoRegion", tmpstr);
 	tmpstr.setNum(setting.tempStreamWiseLength);
@@ -263,7 +263,7 @@ PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const Q
 class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
 {
 public:
-	PreProcessorRootDataItemSetMappingSettingCommand(PreProcessorGridAttributeMappingMode::Mode mm, RawDataPointmapMappingMode::Mode gmm, bool a, double streamWise, double crossStream, int numExp, double exp, PreProcessorRootDataItem* i)
+	PreProcessorRootDataItemSetMappingSettingCommand(PreProcessorGridAttributeMappingMode::Mode mm, GeoDataPointmapMappingMode::Mode gmm, bool a, double streamWise, double crossStream, int numExp, double exp, PreProcessorRootDataItem* i)
 		: QUndoCommand(PreProcessorRootDataItem::tr("Change Attribute Mapping Setting")) {
 		m_newMappingMode = mm;
 		m_newGeodataMappingMode = gmm;
@@ -274,8 +274,8 @@ public:
 		m_newTempWeightExponent = exp;
 
 		m_oldMappingMode = PreProcessorGridAttributeMappingMode::mode;
-		m_oldGeodataMappingMode = RawDataPointmapMappingMode::mode;
-		RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
+		m_oldGeodataMappingMode = GeoDataPointmapMappingMode::mode;
+		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
 		m_oldTempAutoMode = s.tempAutoMode;
 		m_oldTempStreamWiseLength = s.tempStreamWiseLength;
 		m_oldTempCrossStreamLength = s.tempCrossStreamLength;
@@ -288,8 +288,8 @@ public:
 	~PreProcessorRootDataItemSetMappingSettingCommand() {}
 	void redo() {
 		PreProcessorGridAttributeMappingMode::mode = m_newMappingMode;
-		RawDataPointmapMappingMode::mode = m_newGeodataMappingMode;
-		RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
+		GeoDataPointmapMappingMode::mode = m_newGeodataMappingMode;
+		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
 		s.tempAutoMode = m_newTempAutoMode;
 		s.tempStreamWiseLength = m_newTempStreamWiseLength;
 		s.tempCrossStreamLength = m_newTempCrossStreamLength;
@@ -298,8 +298,8 @@ public:
 	}
 	void undo() {
 		PreProcessorGridAttributeMappingMode::mode = m_oldMappingMode;
-		RawDataPointmapMappingMode::mode = m_oldGeodataMappingMode;
-		RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
+		GeoDataPointmapMappingMode::mode = m_oldGeodataMappingMode;
+		GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
 		s.tempAutoMode = m_oldTempAutoMode;
 		s.tempStreamWiseLength = m_oldTempStreamWiseLength;
 		s.tempCrossStreamLength = m_oldTempCrossStreamLength;
@@ -308,7 +308,7 @@ public:
 	}
 private:
 	PreProcessorGridAttributeMappingMode::Mode m_newMappingMode;
-	RawDataPointmapMappingMode::Mode m_newGeodataMappingMode;
+	GeoDataPointmapMappingMode::Mode m_newGeodataMappingMode;
 	bool m_newTempAutoMode;
 	double m_newTempStreamWiseLength;
 	double m_newTempCrossStreamLength;
@@ -316,7 +316,7 @@ private:
 	double m_newTempWeightExponent;
 
 	PreProcessorGridAttributeMappingMode::Mode m_oldMappingMode;
-	RawDataPointmapMappingMode::Mode m_oldGeodataMappingMode;
+	GeoDataPointmapMappingMode::Mode m_oldGeodataMappingMode;
 	bool m_oldTempAutoMode;
 	double m_oldTempStreamWiseLength;
 	double m_oldTempCrossStreamLength;
@@ -331,8 +331,8 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 {
 	PreProcessorGridAttributeMappingSettingTopEditDialog dialog(mainWindow());
 	dialog.setMappingMode(PreProcessorGridAttributeMappingMode::mode);
-	dialog.setPointmapMappingMode(RawDataPointmapMappingMode::mode);
-	RawDataPointmapTemplateMappingSetting& s = RawDataPointmapTemplateMappingSetting::setting;
+	dialog.setPointmapMappingMode(GeoDataPointmapMappingMode::mode);
+	GeoDataPointmapTemplateMappingSetting& s = GeoDataPointmapTemplateMappingSetting::setting;
 	dialog.setAutoMode(s.tempAutoMode);
 	dialog.setStreamWiseLength(s.tempStreamWiseLength);
 	dialog.setCrossStreamLength(s.tempCrossStreamLength);
@@ -364,10 +364,10 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	PreProcessorRawdataDataItem* dItem = dynamic_cast<PreProcessorRawdataDataItem*>(dataItem);
-	PreProcessorRawDataGroupDataItem* gItem = nullptr;
+	PreProcessorGeoDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
 	if (dItem != nullptr) {
-		gItem = dynamic_cast<PreProcessorRawDataGroupDataItem*>(dItem->parent());
+		gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(dItem->parent());
 	}
 
 	if (bcsitem != nullptr) {

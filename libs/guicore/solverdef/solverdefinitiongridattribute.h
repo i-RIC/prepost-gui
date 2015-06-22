@@ -16,7 +16,7 @@ class GridAttributeEditWidget;
 class GridAttributeEditDialog;
 class GridAttributeVariationEditWidget;
 class GridAttributeVariationEditDialog;
-class RawData;
+class GeoData;
 class ProjectDataItem;
 class ScalarsToColorsContainer;
 class ColorTransferFunctionContainer;
@@ -57,7 +57,7 @@ public:
 	GridAttributeVariationEditDialog* variationEditDialog(QWidget* parent);
 	virtual GridAttributeEditWidget* editWidget(QWidget* parent) = 0;
 	virtual GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) = 0;
-	virtual RawData* buildBackgroundRawData(ProjectDataItem* parent) = 0;
+	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
 	virtual ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
 	virtual ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);
 	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent);

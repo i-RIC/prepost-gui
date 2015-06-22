@@ -15,7 +15,7 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridshapedataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorrawdatatopdataitem.h"
+#include "preprocessorgeodatatopdataitem.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
@@ -1090,7 +1090,7 @@ void PreProcessorGridDataItem::setupActions()
 
 	m_setupScalarBarAction = new QAction(tr("Set &Up Scalarbar..."), this);
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	connect(m_setupScalarBarAction, SIGNAL(triggered()), gtItem->rawdataTop(), SLOT(setupScalarBar()));
+	connect(m_setupScalarBarAction, SIGNAL(triggered()), gtItem->geoDataTop(), SLOT(setupScalarBar()));
 
 	m_birdEyeWindowAction = new QAction(tr("Open &Bird's-Eye View Window"), this);
 	m_birdEyeWindowAction->setIcon(QIcon(":/libs/pre/images/iconBirdEyeWindow.png"));

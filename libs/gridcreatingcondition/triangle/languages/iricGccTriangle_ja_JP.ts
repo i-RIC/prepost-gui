@@ -4,12 +4,12 @@
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
-        <location filename="../gridcreatingconditioncreatortriangle.cpp" line="11"/>
+        <location filename="../gridcreatingconditioncreatortriangle.cpp" line="13"/>
         <source>Create grid from polygon shape</source>
         <translation>ポリゴン形状から生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatortriangle.cpp" line="12"/>
+        <location filename="../gridcreatingconditioncreatortriangle.cpp" line="14"/>
         <source>Please define a polygon as the region to create grid.You can additionally define holes and refinement areas as restrictions.</source>
         <translation>格子を生成する領域を、ポリゴンで指定してください。領域内に、穴や、他の領域より細かく格子を切る領域を指定することもできます。</translation>
     </message>
@@ -17,278 +17,278 @@
 <context>
     <name>GridCreatingConditionTriangle</name>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="73"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="71"/>
         <source>Define Grid Region</source>
         <translation>格子領域の定義</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="76"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="74"/>
         <source>Add &amp;Refinement Region</source>
         <translation>再分割領域の追加(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="80"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="78"/>
         <source>Add &amp;Hole Region</source>
         <translation>障害物領域の追加(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="84"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="82"/>
         <source>Add &amp;Break Line</source>
         <translation>分割線の追加(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="89"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="87"/>
         <source>&amp;Add Vertex</source>
         <translation>頂点の追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="92"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="90"/>
         <source>&amp;Remove Vertex</source>
         <translation>頂点の削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="95"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="93"/>
         <source>Edit &amp;Coordinates...</source>
         <translation>座標の編集(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="98"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="96"/>
         <source>&amp;Delete Region or Break Line...</source>
         <translation>領域または分割線の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="103"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="101"/>
         <source>Edit &amp;Maximum Area for Cells...</source>
         <translation>セルの最大面積の編集(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="135"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="133"/>
         <source>&amp;Polygon</source>
         <translation>ポリゴン(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="235"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1339"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="234"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1298"/>
         <source>Finish Defining Polygon</source>
         <translation>ポリゴンの定義の完了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="264"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1358"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="260"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1317"/>
         <source>Finish Defining Break Line</source>
         <translation>分割線の定義の完了</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="321"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="314"/>
         <source>Add New Polygon Point</source>
         <translation>ポリゴンの頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="386"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="376"/>
         <source>Move Polygon</source>
         <translation>ポリゴンの移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="456"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="443"/>
         <source>Move Polygon Vertex</source>
         <translation>ポリゴンの頂点の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="527"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="511"/>
         <source>Insert Polygon Vertex</source>
         <translation>ポリゴンの頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="627"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="607"/>
         <source>Add New Break Line Point</source>
         <translation>分割線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="698"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="675"/>
         <source>Move Break Line</source>
         <translation>分割線の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="768"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="742"/>
         <source>Move Break Line Vertex</source>
         <translation>分割線の頂点の移動</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="839"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="810"/>
         <source>Insert Break Line Vertex</source>
         <translation>分割線の頂点の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="995"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="962"/>
         <source>Remove Polygon Vertex</source>
         <translation>ポリゴンの頂点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1066"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1030"/>
         <source>Remove Break Line Vertex</source>
         <translation>分割線の頂点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1334"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1353"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2293"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2330"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2487"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1293"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1312"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2241"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2278"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2435"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2439"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2447"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2451"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2455"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2463"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2467"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2471"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2482"/>
         <location filename="../gridcreatingconditiontriangle.cpp" line="2491"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2499"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2503"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2496"/>
         <location filename="../gridcreatingconditiontriangle.cpp" line="2507"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2515"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2519"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2523"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2534"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2543"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2548"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2559"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2569"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2517"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1334"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1293"/>
         <source>Polygon must have three vertices at least.</source>
         <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="1353"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1312"/>
         <source>Break line must have two vertices at least.</source>
         <translation>分割線は、2つ以上の点で構成されなくてはなりません</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2021"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="1979"/>
         <source>Generating grid...</source>
         <translation>格子を生成しています...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2104"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2061"/>
         <source>Add New Remesh Polygon</source>
         <translation>再分割領域の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2158"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2222"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2286"/>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2595"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2112"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2173"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2234"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2543"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2158"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2112"/>
         <source>Please define refinement region. Refinement region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>再分割領域を定義してください。再分割領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2165"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2119"/>
         <source>Add New Hole Polygon</source>
         <translation>障害物領域の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2222"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2173"/>
         <source>Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>障害物領域を定義してください。障害物領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2229"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2180"/>
         <source>Add New Break Line</source>
         <translation>分割線の追加</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2286"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2234"/>
         <source>Please define break line. Break line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>分割線を定義してください。分割線は、マウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2293"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2241"/>
         <source>Are you sure you want to remove this polygon?</source>
         <translation>本当にこのポリゴンを削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2330"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2278"/>
         <source>Are you sure you want to remove this line?</source>
         <translation>本当にこの分割線を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2487"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2435"/>
         <source>Grid region polygon have to consists of more than three vertices.</source>
         <translation>格子領域のポリゴンは、3つ以上の点で構成されなくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2491"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2439"/>
         <source>Grid region polygon shape is invalid.</source>
         <translation>格子領域のポリゴンの形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2499"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2447"/>
         <source>Remesh polygon have to consists of more than three vertices</source>
         <translation>再分割領域ポリゴンは、3つ以上の点で構成されなくてはなりません</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2503"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2451"/>
         <source>Remesh polygon shape is invalid.</source>
         <translation>再分割領域ポリゴンの形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2507"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2455"/>
         <source>Remesh polygon have to be inside grid region.</source>
         <translation>再分割領域ポリゴンは、格子領域の内側になくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2515"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2463"/>
         <source>Hole polygon have to consists of more than three vertices</source>
         <translation>障害物領域のポリゴンは、3つ以上の点で構成されなくてはなりません</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2519"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2467"/>
         <source>Hole polygon shape is invalid.</source>
         <translation>障害物領域のポリゴンの形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2523"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2471"/>
         <source>Hole polygon have to be inside grid region.</source>
         <translation>障害物領域のポリゴンは、格子領域の内側になくてはなりません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2534"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2482"/>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
         <translation>再分割領域のポリゴン、穴のポリゴンは互いに交差していてはいけません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2543"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2491"/>
         <source>Break line have to consists of more more than two vertices</source>
         <translation>分割線は、2つ以上の点で構成されなくてはなりません</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2548"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2496"/>
         <source>Break line have to be inside grid region.</source>
         <translation>分割線は、格子領域の内側になくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2559"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2507"/>
         <source>Break line have to have no intersection with any region edges.</source>
         <translation>分割線は、どの領域の境界線とも交差していてはいけません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2569"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2517"/>
         <source>Break line have to have no intersection with other break lines.</source>
         <translation>分割線は、他の分割線と交差していてはいけません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangle.cpp" line="2595"/>
+        <location filename="../gridcreatingconditiontriangle.cpp" line="2543"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation>格子生成領域を定義してください。格子生成領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="49"/>
+        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="48"/>
         <source>Edit Polygon Coordinates</source>
         <translation>ポリゴンの座標の編集</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="49"/>
+        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="48"/>
         <source>Edit Break Line Coordinates</source>
         <translation>分割線の座標の編集</translation>
     </message>
@@ -296,7 +296,7 @@
 <context>
     <name>GridCreatingConditionTriangleAbstractPolygon</name>
     <message>
-        <location filename="../gridcreatingconditiontriangleabstractpolygon.cpp" line="110"/>
+        <location filename="../gridcreatingconditiontriangleabstractpolygon.cpp" line="111"/>
         <source>Please specify a closed polygon!</source>
         <translation>閉じたポリゴンを指定してください!</translation>
     </message>
@@ -309,12 +309,12 @@
         <translation>分割線の頂点座標</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="155"/>
+        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="151"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="156"/>
+        <location filename="../gridcreatingconditiontrianglepolylinecoordinateseditdialog.cpp" line="152"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
@@ -327,12 +327,12 @@
         <translation>ポリゴンの頂点座標</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="155"/>
+        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="151"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="156"/>
+        <location filename="../gridcreatingconditiontrianglepolygoncoordinateseditdialog.cpp" line="152"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
@@ -363,12 +363,12 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="40"/>
+        <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="43"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="40"/>
+        <location filename="../gridcreatingconditiontriangleremeshdialog.cpp" line="43"/>
         <source>Please specify positive value.</source>
         <translation>正の値を指定してください。</translation>
     </message>
@@ -376,7 +376,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>GridCreatingConditionTriangleRemeshPolygon</name>
     <message>
-        <location filename="../gridcreatingconditiontriangleremeshpolygon.cpp" line="36"/>
+        <location filename="../gridcreatingconditiontriangleremeshpolygon.cpp" line="39"/>
         <source>Edit refinement maximum area</source>
         <translation>セルの最大面積の編集</translation>
     </message>

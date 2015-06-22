@@ -49,7 +49,7 @@ protected:
 	}
 
 public:
-	friend class RawData;
+	friend class GeoData;
 };
 
 #endif // PREPROCESSORDATAITEM_H

@@ -1,7 +1,7 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTREPOSITIONDIALOG_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY15DPOINTREPOSITIONDIALOG_H
 
-#include <rawdata/riversurvey/rawdatariverpathpoint.h>
+#include <geodata/riversurvey/geodatariverpathpoint.h>
 
 #include <QDialog>
 #include <QAbstractButton>
@@ -30,10 +30,10 @@ private slots:
 	void handleButtonClick(QAbstractButton* button);
 
 private:
-	RawDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
+	GeoDataRiverPathPoint::CtrlPointsAddMethod buildMethod();
 
 	GridCreatingConditionRiverSurvey15D* m_condition;
-	RawDataRiverPathPoint::CtrlPointsAddMethod m_method;
+	GeoDataRiverPathPoint::CtrlPointsAddMethod m_method;
 	bool m_applied;
 
 	Ui::GridCreatingConditionRiverSurvey15DPointRepositionDialog* ui;

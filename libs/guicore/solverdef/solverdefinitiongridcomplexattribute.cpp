@@ -1,6 +1,6 @@
 #include "../pre/gridcond/complex/gridcomplexattributecontainer.h"
 #include "../pre/gridcond/complex/gridcomplexattributeeditwidget.h"
-#include "../pre/rawdatabackground/rawdatabackgroundcomplexcreator.h"
+#include "../pre/geodatabackground/geodatabackgroundcomplexcreator.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridcomplexattribute.h"
 
@@ -45,9 +45,9 @@ QString SolverDefinitionGridComplexAttribute::undefinedEnglishString()
 	return "(Undefined)";
 }
 
-RawData* SolverDefinitionGridComplexAttribute::buildBackgroundRawData(ProjectDataItem* parent)
+GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDataItem* parent)
 {
-	return RawDataBackgroundComplexCreator::instance()->create(parent, this);
+	return GeoDataBackgroundComplexCreator::instance()->create(parent, this);
 }
 
 ScalarsToColorsContainer* SolverDefinitionGridComplexAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
