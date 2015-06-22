@@ -1916,6 +1916,8 @@ void iRICMainWindow::exportStKML()
 		}
 		zoneName = zones.at(dialog.selectIndex());
 	}
+	if (! ew->checkKmlExportCondition(zoneName)) {return;}
+
 	// show setting dialog
 	PostDataExportDialog expDialog(this);
 
@@ -1924,12 +1926,14 @@ void iRICMainWindow::exportStKML()
 	expDialog.hideDataRange();
 	expDialog.setFileMode();
 	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
-	expDialog.setExportSetting(pInfo->exportSetting());
+	PostExportSetting s = pInfo->exportSetting();
+	s.filename = outputFileName;
+	expDialog.setExportSetting(s);
 	expDialog.setWindowTitle(tr("Export Google Earth KML for street view"));
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
 
-	PostExportSetting s = expDialog.exportSetting();
+	s = expDialog.exportSetting();
 	pInfo->setExportSetting(s);
 
 	outputFileName = s.filename;

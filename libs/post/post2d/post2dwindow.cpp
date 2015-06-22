@@ -207,6 +207,14 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	return ret;
 }
 
+bool Post2dWindow::checkKmlExportCondition(const QString& zonename) const
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	return sItem->checkKmlExportCondition();
+}
+
 bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);

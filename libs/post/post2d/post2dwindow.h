@@ -47,6 +47,7 @@ public:
 	int index() const {return m_index;}
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
 	QList<QString> particleDrawingZones() override;
+	bool checkKmlExportCondition(const QString &zonename) const override;
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;

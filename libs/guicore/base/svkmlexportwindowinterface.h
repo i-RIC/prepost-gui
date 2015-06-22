@@ -12,6 +12,7 @@ class SVKmlExportWindowInterface
 {
 
 public:
+	virtual bool checkKmlExportCondition(const QString &zonename) const = 0;
 	virtual bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) = 0;
 	virtual bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) = 0;
 	virtual bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) = 0;

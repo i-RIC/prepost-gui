@@ -772,7 +772,7 @@ void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(abAction);
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
+bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 {
 	// check the condition.
 	if (m_contour != ContourSettingWidget::ContourFigure) {
@@ -791,6 +791,13 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 		return false;
 	}
 
+	return true;
+}
+
+bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writer)
+{
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	LookupTableContainer* stc = typedi->lookupTable(m_currentSolution);
 
 	writer.writeStartElement("Document");
 	writer.writeTextElement("name", "iRIC Calculation Result");
