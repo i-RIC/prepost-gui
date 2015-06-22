@@ -96,6 +96,8 @@ public slots:
 	void cameraMoveUp();
 	void cameraMoveDown();
 	void editBackgroundColor();
+	void importCalcCondition();
+	void exportCalcCondition();
 	void showCalcConditionDialog();
 	void handleAdditionalMenusUpdate(const QList<QMenu*>& menus);
 	void setupRawDataImportMenu();

@@ -413,6 +413,18 @@ void iRICMainWindow::openProject(const QString& filename)
 	setCursor(Qt::ArrowCursor);
 }
 
+void iRICMainWindow::importCalcCondition()
+{
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
+	pre->importCalcCondition();
+}
+
+void iRICMainWindow::exportCalcCondition()
+{
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
+	pre->exportCalcCondition();
+}
+
 void iRICMainWindow::importCalculationResult()
 {
 	QString fname = QFileDialog::getOpenFileName(

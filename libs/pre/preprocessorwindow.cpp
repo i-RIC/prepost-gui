@@ -82,6 +82,16 @@ void PreProcessorWindow::setupDefaultGeometry()
 	restoreState(m_initialState);
 }
 
+void PreProcessorWindow::importCalcCondition()
+{
+	model()->importCalcCondition();
+}
+
+void PreProcessorWindow::exportCalcCondition()
+{
+	model()->exportCalcCondition();
+}
+
 void PreProcessorWindow::showCalcConditionDialog()
 {
 	model()->showCalcConditionDialog();

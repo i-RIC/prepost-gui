@@ -131,6 +131,8 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_rawDataImportMenu = nullptr;
 
 	importCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
+	connect(importCalcCondAction, SIGNAL(triggered()), m_parent, SLOT(importCalcCondition()));
+
 	importCgnsAction = new QAction(tr("Calculation &Result..."), this);
 	connect(importCgnsAction, SIGNAL(triggered()), m_parent, SLOT(importCalculationResult()));
 
@@ -155,6 +157,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	connect(m_exportMenu, SIGNAL(aboutToShow()), this, SLOT(setupExportMenu()));
 
 	exportCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
+	connect(exportCalcCondAction, SIGNAL(triggered()), m_parent, SLOT(exportCalcCondition()));
 	calcResultExportActionInFileMenu = new QAction(tr("Calculation &Result..."), this);
 	connect(calcResultExportActionInFileMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
 	particleExportAction = new QAction(tr("&Particles..."), this);
@@ -773,14 +776,8 @@ void iRICMainWindowActionManager::setupMainToolBar()
 
 void iRICMainWindowActionManager::setProjectData(ProjectData* d)
 {
-	importCalcCondAction->disconnect();
-	connect(importCalcCondAction, SIGNAL(triggered()), d->mainfile(), SLOT(importCalcCondition()));
-
 	importImageAction->disconnect();
 	connect(importImageAction, SIGNAL(triggered()), d->mainfile(), SLOT(addBackgroundImage()));
-
-	exportCalcCondAction->disconnect();
-	connect(exportCalcCondAction, SIGNAL(triggered()), d->mainfile(), SLOT(exportCalcCondition()));
 
 	d->mainfile()->cgnsFileList()->disconnect();
 	connect(d->mainfile()->cgnsFileList(), SIGNAL(cgnsFilesUpdated(QList<CgnsFileList::CgnsFileEntry*>)), this, SLOT(updateCgnsList(QList<CgnsFileList::CgnsFileEntry*>)));

@@ -192,6 +192,10 @@ private slots:
 	void snapshotSvg();
 	/// Take continuous snapshot and save to Raster image.
 	void continuousSnapshot();
+	/// Import Calculation condition
+	void importCalcCondition();
+	/// Export Calculation condition
+	void exportCalcCondition();
 	/// Import Calculation result from CGNS file.
 	void importCalculationResult();
 	/// Import Measured data from CSV file.
