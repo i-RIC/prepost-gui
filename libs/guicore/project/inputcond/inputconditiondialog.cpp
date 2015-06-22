@@ -1,4 +1,4 @@
-#include "ui_cgnsfileinputconditiondialog.h"
+#include "ui_inputconditiondialog.h"
 
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"

@@ -19,8 +19,8 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="CgnsFileInputConditionPageList" name="m_pageList" native="true"/>
-     <widget class="CgnsFileInputConditionPageContainer" name="m_pageContainer" native="true"/>
+     <widget class="InputConditionPageList" name="m_pageList" native="true"/>
+     <widget class="InputConditionPageContainer" name="m_pageContainer" native="true"/>
     </widget>
    </item>
    <item>
@@ -44,15 +44,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>CgnsFileInputConditionPageList</class>
+   <class>InputConditionPageList</class>
    <extends>QWidget</extends>
-   <header>guicore/project/inputcond/cgnsfileinputconditionpagelist.h</header>
+   <header>guicore/project/inputcond/inputconditionpagelist.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>CgnsFileInputConditionPageContainer</class>
+   <class>InputConditionPageContainer</class>
    <extends>QWidget</extends>
-   <header>guicore/project/inputcond/cgnsfileinputconditionpagecontainer.h</header>
+   <header>guicore/project/inputcond/inputconditionpagecontainer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,4 +1,4 @@
-#include "ui_preprocessorgridrelatedconditioncelldisplaysettingdialog.h"
+#include "ui_preprocessorgridattributecelldisplaysettingdialog.h"
 
 #include "preprocessorgridattributecelldisplaysettingdialog.h"
 

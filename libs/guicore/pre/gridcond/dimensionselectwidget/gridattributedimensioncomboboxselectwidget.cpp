@@ -1,4 +1,4 @@
-#include "ui_gridrelatedconditiondimensioncomboboxselectwidget.h"
+#include "ui_gridattributedimensioncomboboxselectwidget.h"
 
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
 #include "../base/gridattributedimensioncontainer.h"
