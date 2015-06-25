@@ -38,7 +38,7 @@ GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator
 void GeoDataBackground::setupDataItem()
 {
 	// hide from object browser.
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	QStandardItem* pItem = item->standardItem()->parent();
 	pItem->takeRow(item->standardItem()->row());
 }
@@ -97,15 +97,15 @@ public:
 	void redo() {
 		m_background->m_type = m_newType;
 		m_background->m_customValue = m_newValue;
-		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informValueRangeChange();
-		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informDataChange();
+		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informValueRangeChange();
+		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informDataChange();
 		m_background->m_mapped = false;
 	}
 	void undo() {
 		m_background->m_type = m_oldType;
 		m_background->m_customValue = m_oldValue;
-		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informValueRangeChange();
-		dynamic_cast<PreProcessorRawdataDataItemInterface*>(m_background->parent())->informDataChange();
+		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informValueRangeChange();
+		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informDataChange();
 	}
 private:
 	QVariant m_oldValue;

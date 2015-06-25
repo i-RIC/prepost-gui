@@ -686,7 +686,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	m_riverSurveyColors.clear();
 	QList<GraphicsWindowDataItem*> items = m_groupDataItem->childItems();
 	for (int i = 0; i < items.count(); ++i) {
-		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(items.at(i));
+		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(items.at(i));
 		GeoDataRiverSurvey* geodata = dynamic_cast<GeoDataRiverSurvey*>(item->geoData());
 		if (geodata != nullptr) {
 			m_riverSurveys.append(geodata);

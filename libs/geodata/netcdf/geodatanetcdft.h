@@ -130,7 +130,7 @@ protected:
 		delete start;
 
 		nc_close(ncid);
-		dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
+		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
 
 		Q_UNUSED(ret)
 	}

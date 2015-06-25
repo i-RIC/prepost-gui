@@ -25,7 +25,7 @@ public:
 	virtual bool getValueRange(double* min, double* max) = 0;
 	virtual void setupEditWidget(GridAttributeEditWidget* widget = nullptr) = 0;
 	virtual void addCopyPolygon(GeoDataPolygon* polygon) = 0;
-	virtual const QList<PreProcessorRawdataDataItemInterface*> geoDatas() const = 0;
+	virtual const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const = 0;
 	virtual GridAttributeDimensionsContainer* dimensions() const = 0;
 
 	// @todo ugly interface!

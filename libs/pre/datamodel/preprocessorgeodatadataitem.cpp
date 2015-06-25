@@ -31,17 +31,17 @@
 
 #include <cgnslib.h>
 
-PreProcessorRawdataDataItem::PreProcessorRawdataDataItem(PreProcessorDataItem* parent)
-	: PreProcessorRawdataDataItemInterface("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent)
+	: PreProcessorGeoDataDataItemInterface("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	m_geoData = nullptr;
 	m_isReorderable = true;
 	m_exportAction = new QAction(tr("&Export..."), this);
 	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportRawdata()));
+	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
 }
 
-PreProcessorRawdataDataItem::~PreProcessorRawdataDataItem()
+PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
 {
 	if (m_geoData) {delete m_geoData;}
 	m_geoData = nullptr;
@@ -51,7 +51,7 @@ PreProcessorRawdataDataItem::~PreProcessorRawdataDataItem()
 	}
 }
 
-void PreProcessorRawdataDataItem::addCustomMenuItems(QMenu* menu)
+void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 {
 	// Add custom menu first.
 	m_geoData->addCustomMenuItems(menu);
@@ -59,7 +59,7 @@ void PreProcessorRawdataDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_exportAction);
 }
 
-void PreProcessorRawdataDataItem::setGeoData(GeoData* geodata)
+void PreProcessorGeoDataDataItem::setGeoData(GeoData* geodata)
 {
 	// set geodata
 	m_geoData = geodata;
@@ -72,7 +72,7 @@ void PreProcessorRawdataDataItem::setGeoData(GeoData* geodata)
 	updateZDepthRangeItemCount();
 }
 
-void PreProcessorRawdataDataItem::handleStandardItemChange()
+void PreProcessorGeoDataDataItem::handleStandardItemChange()
 {
 	PreProcessorDataItem::handleStandardItemChange();
 	QString newcaption = m_standardItem->data(Qt::EditRole).toString();
@@ -87,18 +87,18 @@ void PreProcessorRawdataDataItem::handleStandardItemChange()
 	}
 }
 
-void PreProcessorRawdataDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_geoData->loadFromProjectMainFile(node);
 }
 
-void PreProcessorRawdataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void PreProcessorGeoDataDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("type", m_geoData->typeName());
 	m_geoData->saveToProjectMainFile(writer);
 }
 
-bool PreProcessorRawdataDataItem::addToolBarButtons(QToolBar* tb)
+bool PreProcessorGeoDataDataItem::addToolBarButtons(QToolBar* tb)
 {
 	PreProcessorGeoDataGroupDataItem* gItem =
 		dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
@@ -115,7 +115,7 @@ bool PreProcessorRawdataDataItem::addToolBarButtons(QToolBar* tb)
 	return added || added2;
 }
 
-void PreProcessorRawdataDataItem::exportRawdata()
+void PreProcessorGeoDataDataItem::exportGeoData()
 {
 	QMainWindow* mainW = projectData()->mainWindow();
 
@@ -150,7 +150,7 @@ void PreProcessorRawdataDataItem::exportRawdata()
 	LastIODirectory::set(finfo.absolutePath());
 }
 
-void PreProcessorRawdataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
+void PreProcessorGeoDataDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
 {
 	QStandardItem* parentItem = dynamic_cast<PreProcessorDataItem*>(parent())->standardItem();
 	bool isFirst = (m_standardItem->index().row() == 0);
@@ -159,106 +159,106 @@ void PreProcessorRawdataDataItem::updateMoveUpDownActions(ObjectBrowserView* vie
 	view->moveDownAction()->setDisabled(isLast);
 }
 
-void PreProcessorRawdataDataItem::handleStandardItemClicked()
+void PreProcessorGeoDataDataItem::handleStandardItemClicked()
 {
 	m_geoData->handleStandardItemClicked();
 }
 
-void PreProcessorRawdataDataItem::handleStandardItemDoubleClicked()
+void PreProcessorGeoDataDataItem::handleStandardItemDoubleClicked()
 {
 	m_geoData->handleStandardItemDoubleClicked();
 }
 
-void PreProcessorRawdataDataItem::informSelection(VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::informSelection(VTKGraphicsView* v)
 {
 	// delegate to raw data.
 	m_geoData->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::informDeselection(VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::informDeselection(VTKGraphicsView* v)
 {
 	// delegate to raw data.
 	m_geoData->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::viewOperationEnded(VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::viewOperationEnded(VTKGraphicsView* v)
 {
 	m_geoData->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_geoData->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-QStringList PreProcessorRawdataDataItem::containedFiles()
+QStringList PreProcessorGeoDataDataItem::containedFiles()
 {
 	return m_geoData->containedFiles();
 }
 
-void PreProcessorRawdataDataItem::assignActorZValues(const ZDepthRange& range)
+void PreProcessorGeoDataDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_geoData->assignActorZValues(range);
 }
 
-void PreProcessorRawdataDataItem::updateZDepthRangeItemCount()
+void PreProcessorGeoDataDataItem::updateZDepthRangeItemCount()
 {
 	m_geoData->updateZDepthRangeItemCount(m_zDepthRange);
 }
 
-void PreProcessorRawdataDataItem::informValueRangeChange()
+void PreProcessorGeoDataDataItem::informValueRangeChange()
 {
 	dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent())->informValueRangeChange();
 }
 
-void PreProcessorRawdataDataItem::informDataChange()
+void PreProcessorGeoDataDataItem::informDataChange()
 {
 	dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent())->informDataChange();
 }
 
-bool PreProcessorRawdataDataItem::getValueRange(double* min, double* max)
+bool PreProcessorGeoDataDataItem::getValueRange(double* min, double* max)
 {
 	if (m_geoData == nullptr) {return false;}
 	return m_geoData->getValueRange(min, max);
 }
 
-QDialog* PreProcessorRawdataDataItem::propertyDialog(QWidget* parent)
+QDialog* PreProcessorGeoDataDataItem::propertyDialog(QWidget* parent)
 {
 	return m_geoData->propertyDialog(parent);
 }
 
-void PreProcessorRawdataDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void PreProcessorGeoDataDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	m_geoData->handlePropertyDialogAccepted(propDialog);
 	renderGraphicsView();
 }
 
-bool PreProcessorRawdataDataItem::setupExportMenu(QMenu* /*menu*/)
+bool PreProcessorGeoDataDataItem::setupExportMenu(QMenu* /*menu*/)
 {
 	bool ok = false;
 	/*
@@ -272,23 +272,23 @@ bool PreProcessorRawdataDataItem::setupExportMenu(QMenu* /*menu*/)
 					connect(exportAction, SIGNAL(triggered()), m_exportSignalMapper, SLOT(map()));
 					ok = true;
 			}
-			connect(m_exportSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(exportRawdata(QObject*)));
+			connect(m_exportSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(exportGeoData(QObject*)));
 	 */
 	return ok;
 }
 
-bool PreProcessorRawdataDataItem::isExportAvailable()
+bool PreProcessorGeoDataDataItem::isExportAvailable()
 {
 	const QList<GeoDataExporter*>& exporters = m_geoData->exporters();
 	return exporters.count() > 0;
 }
 
-void PreProcessorRawdataDataItem::innerUpdate2Ds()
+void PreProcessorGeoDataDataItem::innerUpdate2Ds()
 {
 	m_geoData->update2Ds();
 }
 
-void PreProcessorRawdataDataItem::saveToCgnsFile(const int fn)
+void PreProcessorGeoDataDataItem::saveToCgnsFile(const int fn)
 {
 	std::string idxstr =  iRIC::toStr(QString::number(m_index));
 	cg_user_data_write(idxstr.c_str());
@@ -297,12 +297,12 @@ void PreProcessorRawdataDataItem::saveToCgnsFile(const int fn)
 	cg_gorel(fn, "..", 0, NULL);
 }
 
-void PreProcessorRawdataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
+void PreProcessorGeoDataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 {
 	m_geoData->viewOperationEndedGlobal(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
 }
 
-void PreProcessorRawdataDataItem::doApplyOffset(double x, double y)
+void PreProcessorGeoDataDataItem::doApplyOffset(double x, double y)
 {
 	m_geoData->applyOffset(x, y);
 }

@@ -16,7 +16,7 @@ class GeoDataExporter;
 class GeoDataMapper;
 class PreProcessorWindowInterface;
 class PreProcessorDataModelInterface;
-class PreProcessorRawdataDataItemInterface;
+class PreProcessorGeoDataDataItemInterface;
 class PreProcessorGraphicsViewInterface;
 class ZDepthRange;
 class ScalarsToColorsContainer;

@@ -26,7 +26,7 @@ class VTKGraphicsView;
 class Grid;
 class WaitDialog;
 
-class PreProcessorBCSettingDataItem : public PreProcessorRawdataDataItemInterface
+class PreProcessorBCSettingDataItem : public PreProcessorGeoDataDataItemInterface
 {
 	Q_OBJECT
 

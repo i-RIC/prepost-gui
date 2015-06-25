@@ -363,7 +363,7 @@ void PreProcessorRootDataItem::toggleGridEditFlag()
 void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
-	PreProcessorRawdataDataItem* dItem = dynamic_cast<PreProcessorRawdataDataItem*>(dataItem);
+	PreProcessorGeoDataDataItem* dItem = dynamic_cast<PreProcessorGeoDataDataItem*>(dataItem);
 	PreProcessorGeoDataGroupDataItem* gItem = nullptr;
 	PreProcessorBCSettingDataItem* bcsitem = dynamic_cast<PreProcessorBCSettingDataItem*>(dataItem);
 	if (dItem != nullptr) {

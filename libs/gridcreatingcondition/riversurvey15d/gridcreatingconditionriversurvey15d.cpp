@@ -243,9 +243,9 @@ bool GridCreatingConditionRiverSurvey15D::init()
 
 	for (auto git = gItems.begin(); ! found && git != gItems.end(); ++git) {
 		PreProcessorGeoDataGroupDataItemInterface* gItem = *git;
-		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->geoDatas();
+		QList<PreProcessorGeoDataDataItemInterface*> rItems = gItem->geoDatas();
 		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit) {
-			PreProcessorRawdataDataItemInterface* rItem = *rit;
+			PreProcessorGeoDataDataItemInterface* rItem = *rit;
 			if (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr) {
 				// this is a river survey data!
 

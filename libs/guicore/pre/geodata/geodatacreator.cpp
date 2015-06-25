@@ -37,7 +37,7 @@ void GeoDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem
 
 	// first, setup nameSet and captionSet.
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		GeoData* geodata = dynamic_cast<PreProcessorRawdataDataItemInterface*>(*it)->geoData();
+		GeoData* geodata = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(*it)->geoData();
 		if (geodata->name() != "") {nameSet.insert(geodata->name());}
 		if (geodata->caption() != "") {captionSet.insert(geodata->caption());}
 	}

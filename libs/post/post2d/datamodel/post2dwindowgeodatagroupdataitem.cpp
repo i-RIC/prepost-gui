@@ -41,7 +41,7 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 
 	QList <GraphicsWindowDataItem*> origChildren = gItem->childItems();
 	for (int i = 0; i < origChildren.count(); ++i) {
-		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(origChildren.at(i));
+		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(origChildren.at(i));
 		GeoData* geoData = item->geoData();
 		if (map.contains(geoData)) {
 			m_childItems.append(map.value(geoData));

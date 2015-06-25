@@ -15,11 +15,11 @@ class MouseBoundingBox;
 class PreProcessorGridTypeDataItem;
 class PreProcessorGridCreatingConditionDataItemInterface;
 class PreProcessorGeoDataGroupDataItemInterface;
-class PreProcessorRawdataDataItemInterface;
+class PreProcessorGeoDataDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 class PreProcessorGridDataItem;
 class PreProcessorGeoDataGroupDataItem;
-class PreProcessorRawdataDataItem;
+class PreProcessorGeoDataDataItem;
 class PreProcessorBackgroundImageDataItem;
 class PreProcessorGridCreatingConditionDataItem;
 class PreProcessorGeoDataTopDataItemInterface;
@@ -116,7 +116,7 @@ private:
 	bool setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
 	bool setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt);
-	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt);
+	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemInterface* gt);
 	bool geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt);
 
 	MouseBoundingBox* m_mouseBoundingBox;

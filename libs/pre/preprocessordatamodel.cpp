@@ -262,7 +262,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_dummyMenus.append(m_geographicDataMenu);
 
 	GeoDataCreator* polygonCreator = nullptr;
-	PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_selectedItem);
+	PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_selectedItem);
 
 	QAction* editGroupAction = new QAction(tr("Edit &Groups..."), m_geographicDataMenu);
 	editGroupAction->setDisabled(true);
@@ -273,7 +273,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addSeparator();
 
 	if (item != nullptr) {
-		// Rawdata dataitem is selected.
+		// GeoData dataitem is selected.
 		QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
 		for (auto it = creators.begin(); it != creators.end(); ++it) {
 			if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
@@ -315,7 +315,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	} else {
 		PreProcessorGeoDataGroupDataItem* gitem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(m_selectedItem);
 		if (gitem != nullptr) {
-			// Rawdatagroup dataitem is selected.
+			// GeoDatagroup dataitem is selected.
 			QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
 			for (auto it = creators.begin(); it != creators.end(); ++it) {
 				if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
@@ -918,9 +918,9 @@ bool PreProcessorDataModel::setupGeoDataExportMenuForGridType(QMenu* menu, PrePr
 bool PreProcessorDataModel::setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt)
 {
 	bool ok = false;
-	QList<PreProcessorRawdataDataItemInterface*> datas = gt->geoDatas();
+	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
-		PreProcessorRawdataDataItemInterface* item = datas.at(i);
+		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
 		QMenu* tmpmenu = menu->addMenu(item->standardItem()->text());
 		if (setupGeoDataExportMenuForItem(tmpmenu, item)) {
 			ok = true;
@@ -933,9 +933,9 @@ bool PreProcessorDataModel::setupGeoDataExportMenuForGroup(QMenu* menu, PreProce
 
 bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt)
 {
-	QList<PreProcessorRawdataDataItemInterface*> datas = gt->geoDatas();
+	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
-		PreProcessorRawdataDataItemInterface* item = datas.at(i);
+		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
 		if (item->geoData()->exporters().count() > 0) {
 			return true;
 		}
@@ -943,9 +943,9 @@ bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataI
 	return false;
 }
 
-bool PreProcessorDataModel::setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorRawdataDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemInterface* gt)
 {
-	return dynamic_cast<PreProcessorRawdataDataItem*>(gt)->setupExportMenu(menu);
+	return dynamic_cast<PreProcessorGeoDataDataItem*>(gt)->setupExportMenu(menu);
 }
 
 void PreProcessorDataModel::setupGridCreationMenuContent()
@@ -1040,9 +1040,9 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = gtItem->geoDataTop()->groupDataItems();
 		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
 			PreProcessorGeoDataGroupDataItemInterface* gItem = *it2;
-			QList<PreProcessorRawdataDataItemInterface*> geodatas = gItem->geoDatas();
+			QList<PreProcessorGeoDataDataItemInterface*> geodatas = gItem->geoDatas();
 			for (auto it3 = geodatas.begin(); it3 != geodatas.end(); ++it3) {
-				PreProcessorRawdataDataItemInterface* dItem = *it3;
+				PreProcessorGeoDataDataItemInterface* dItem = *it3;
 				GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(dItem->geoData());
 				if (rs != nullptr) {
 					rs->setColoredPoints(0, 0, 0);
@@ -1147,9 +1147,9 @@ void PreProcessorDataModel::importHydraulicData()
 		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = titem->geoDataTop()->groupDataItems();
 		for (auto git = gitems.begin(); git != gitems.end(); ++git) {
 			PreProcessorGeoDataGroupDataItemInterface* gitem = *git;
-			QList<PreProcessorRawdataDataItemInterface*> ditems = gitem->geoDatas();
+			QList<PreProcessorGeoDataDataItemInterface*> ditems = gitem->geoDatas();
 			for (auto dit = ditems.begin(); dit != ditems.end(); ++dit) {
-				PreProcessorRawdataDataItemInterface* ditem = *dit;
+				PreProcessorGeoDataDataItemInterface* ditem = *dit;
 				GeoData* rdata = ditem->geoData();
 				if (importer->canImportTo(rdata)) {
 					// this importer can used for this raw data.
@@ -1158,7 +1158,7 @@ void PreProcessorDataModel::importHydraulicData()
 			}
 		}
 	}
-	GeoData* targetRawdata = nullptr;
+	GeoData* targetGeoData = nullptr;
 	if (geodatas.count() == 0) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("There is no geographic data to import this hydraulic data."));
 		return;
@@ -1173,10 +1173,10 @@ void PreProcessorDataModel::importHydraulicData()
 		dialog.setMessage(tr("Please select the geographic data to import hydraulic data."));
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {return;}
-		targetRawdata = geodatas.at(dialog.selectIndex());
+		targetGeoData = geodatas.at(dialog.selectIndex());
 	} else {
 		// there was only one geodata.
-		targetRawdata = geodatas.at(0);
+		targetGeoData = geodatas.at(0);
 	}
 	// get filename.
 	QString dir = LastIODirectory::get();
@@ -1185,7 +1185,7 @@ void PreProcessorDataModel::importHydraulicData()
 	QStringList filters = importer->fileDialogFilters();
 	QString filename = QFileDialog::getOpenFileName(mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
 	if (filename.isNull()) {return;}
-	bool result = importer->import(targetRawdata, filename, selectedFilter, mainWindow());
+	bool result = importer->import(targetGeoData, filename, selectedFilter, mainWindow());
 	if (result) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Importing %1 succeeded.").arg(QDir::toNativeSeparators(filename)));
 		QFileInfo finfo(filename);

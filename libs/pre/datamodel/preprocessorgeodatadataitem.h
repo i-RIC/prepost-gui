@@ -9,14 +9,14 @@ class GeoData;
 class QSignalMapper;
 class QAction;
 
-class PreProcessorRawdataDataItem : public PreProcessorRawdataDataItemInterface
+class PreProcessorGeoDataDataItem : public PreProcessorGeoDataDataItemInterface
 {
 	Q_OBJECT
 
 public:
 	/// Constructor
-	PreProcessorRawdataDataItem(PreProcessorDataItem* parent);
-	~PreProcessorRawdataDataItem();
+	PreProcessorGeoDataDataItem(PreProcessorDataItem* parent);
+	~PreProcessorGeoDataDataItem();
 	void setGeoData(GeoData* geodata);
 	GeoData* geoData() override {return m_geoData;}
 	int index() const {return m_index;}
@@ -59,7 +59,7 @@ signals:
 	void captionChanged(const QString& newcaption);
 
 public slots:
-	void exportRawdata();
+	void exportGeoData();
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;

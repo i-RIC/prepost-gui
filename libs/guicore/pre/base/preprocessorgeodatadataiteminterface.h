@@ -5,11 +5,11 @@
 class GeoData;
 class QStandardItem;
 
-class PreProcessorRawdataDataItemInterface : public PreProcessorDataItem
+class PreProcessorGeoDataDataItemInterface : public PreProcessorDataItem
 {
 
 public:
-	PreProcessorRawdataDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
+	PreProcessorGeoDataDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
 		: PreProcessorDataItem(itemlabel, icon, parent)
 	{}
 	virtual GeoData* geoData() = 0;

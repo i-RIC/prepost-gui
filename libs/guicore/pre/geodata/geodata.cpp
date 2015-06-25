@@ -93,7 +93,7 @@ const QIcon GeoData::icon() const
 
 void GeoData::setupDataItem()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	QString fname = name();
 	fname.append(".dat");
 	item->setFilename(fname);
@@ -107,7 +107,7 @@ void GeoData::setupDataItem()
 
 PreProcessorWindowInterface* GeoData::preProcessorWindow()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return dynamic_cast<PreProcessorWindowInterface*>(item->mainWindow());
 }
 
@@ -118,25 +118,25 @@ PreProcessorGraphicsViewInterface* GeoData::graphicsView()
 
 vtkRenderer* GeoData::renderer()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->renderer();
 }
 
 void GeoData::renderGraphicsView()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	item->renderGraphicsView();
 }
 
 vtkActorCollection* GeoData::actorCollection()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->m_actorCollection;
 }
 
 vtkActor2DCollection* GeoData::actor2DCollection()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->m_actor2DCollection;
 }
 
@@ -149,7 +149,7 @@ void GeoData::setDefaultMapper()
 
 void GeoData::editName()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
 	view->edit(item->m_standardItem->index());
 }
@@ -181,37 +181,37 @@ ScalarsToColorsContainer* GeoData::scalarsToColorsContainer()
 
 QAction* GeoData::deleteAction()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->dataModel()->objectBrowserView()->deleteAction();
 }
 
 MouseBoundingBox* GeoData::mouseBoundingBox()
 {
-	PreProcessorRawdataDataItemInterface* r = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* r = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return r->mouseBoundingBox();
 }
 
 PreProcessorDataModelInterface* GeoData::dataModel()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->dataModel();
 }
 
 void GeoData::updateVisibility()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	item->updateVisibility();
 }
 
 void GeoData::updateVisibilityWithoutRendering()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	item->updateVisibilityWithoutRendering();
 }
 
 bool GeoData::isVisible()
 {
-	PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
 }
 

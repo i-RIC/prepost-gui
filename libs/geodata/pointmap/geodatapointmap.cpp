@@ -1744,7 +1744,7 @@ void GeoDataPointmap::addCustomMenuItems(QMenu* menu)
 
 void GeoDataPointmap::showDisplaySetting()
 {
-	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->showPropertyDialog();
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
 }
 
 void GeoDataPointmap::setupActions()

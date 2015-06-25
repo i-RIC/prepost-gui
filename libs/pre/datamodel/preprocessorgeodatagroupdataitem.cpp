@@ -211,7 +211,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return;
 	}
-	PreProcessorRawdataDataItem* item = nullptr;
+	PreProcessorGeoDataDataItem* item = nullptr;
 
 	WaitDialog* wDialog = nullptr;
 	m_cancelImport = false;
@@ -227,7 +227,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	// All imports succeeded.
 	QFileInfo finfo(filename);
 	for (int i = 0; i < dataCount; ++i) {
-		item = new PreProcessorRawdataDataItem(this);
+		item = new PreProcessorGeoDataDataItem(this);
 		// first, create an empty geodata.
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
@@ -313,10 +313,10 @@ ERROR:
 void PreProcessorGeoDataGroupDataItem::doExport()
 {
 	QStringList dataNames;
-	QList<PreProcessorRawdataDataItem*> datas;
+	QList<PreProcessorGeoDataDataItem*> datas;
 
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		if (item->isExportAvailable()) {
 			datas.append(item);
 			dataNames.append(item->geoData()->caption());
@@ -327,8 +327,8 @@ void PreProcessorGeoDataGroupDataItem::doExport()
 		return;
 	} else if (datas.count() == 1) {
 		// there is only one data to export.
-		PreProcessorRawdataDataItem* item = datas.at(0);
-		item->exportRawdata();
+		PreProcessorGeoDataDataItem* item = datas.at(0);
+		item->exportGeoData();
 	} else {
 		// there are multiple data to export.
 		// ask user to select which data to export.
@@ -340,16 +340,16 @@ void PreProcessorGeoDataGroupDataItem::doExport()
 		}
 		int index = dataNames.indexOf(selectedName);
 		Q_ASSERT(index >= 0 && index < dataNames.count());
-		PreProcessorRawdataDataItem* item = datas.at(index);
-		item->exportRawdata();
+		PreProcessorGeoDataDataItem* item = datas.at(index);
+		item->exportGeoData();
 	}
 }
 
 void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 {
 	GeoDataCreator* creator = dynamic_cast<GeoDataCreator*>(c);
-	// create a new Rawdata item.
-	PreProcessorRawdataDataItem* item = new PreProcessorRawdataDataItem(this);
+	// create a new GeoData item.
+	PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
 	// the standarditem is set at the last position, so make it the first.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
@@ -380,7 +380,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 void PreProcessorGeoDataGroupDataItem::addBackground()
 {
 	// create an instance or GeoDataBackground, and add it.
-	m_backgroundItem = new PreProcessorRawdataDataItem(this);
+	m_backgroundItem = new PreProcessorGeoDataDataItem(this);
 	m_childItems.append(m_backgroundItem);
 	GeoData* geodata = m_condition->buildBackgroundGeoData(m_backgroundItem);
 	setupConnectionToGeoData(geodata);
@@ -410,7 +410,7 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count() - 1; ++i) {
-		PreProcessorRawdataDataItem* item = new PreProcessorRawdataDataItem(this);
+		PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
 		QDomNode child = children.at(i);
 		// restore
 		GeoData* geodata = factory.restore(child, item, m_condition);
@@ -451,7 +451,7 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 bool PreProcessorGeoDataGroupDataItem::isChildCaptionAvailable(const QString& caption)
 {
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		if (dynamic_cast<PreProcessorRawdataDataItem*>(*it)->geoData()->caption() == caption) {
+		if (dynamic_cast<PreProcessorGeoDataDataItem*>(*it)->geoData()->caption() == caption) {
 			return false;
 		}
 	}
@@ -490,7 +490,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			*(boolMap + i) = false;
 		}
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -504,7 +504,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		}
 		int idx = 0;
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -518,7 +518,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		// terminate
 		idx = 0;
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
@@ -533,7 +533,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			*(boolMap + i) = false;
 		}
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -547,7 +547,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			}
 			int idx = 0;
 			for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-				PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+				PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 				GeoData* geodata = item->geoData();
 				GeoDataMapper* mapper = geodata->mapper();
 				mapper->setTarget(grid, container, geodata);
@@ -562,7 +562,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		// terminate
 		int idx = 0;
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
@@ -618,7 +618,7 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 	bool first = true;
 	bool result = false;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		// background item is not used for this.
 		if (m_backgroundItem == item) {continue;}
 		double tmpmin;
@@ -652,16 +652,16 @@ bool PreProcessorGeoDataGroupDataItem::getValueRange(double* min, double* max)
 						ok = true;
 				}
 		}
-		connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importRawdata(QObject*)));
+		connect(m_importSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(importGeoData(QObject*)));
 		return ok;
 	 }
  */
 
-const QList<PreProcessorRawdataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
+const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
 {
-	QList<PreProcessorRawdataDataItemInterface*> ret;
+	QList<PreProcessorGeoDataDataItemInterface*> ret;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorRawdataDataItemInterface* item = dynamic_cast<PreProcessorRawdataDataItemInterface*>(*it);
+		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(*it);
 		ret.append(item);
 	}
 	return ret;
@@ -755,7 +755,7 @@ QStringList PreProcessorGeoDataGroupDataItem::getGeoDatasNotMapped()
 {
 	QStringList ret;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		GeoData* geoData = item->geoData();
 		if (! geoData->isMapped()) {
 			ret.append(geoData->caption());
@@ -776,8 +776,8 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 	}
 	if (c == nullptr) {return;}
 
-	// create a new Rawdata item.
-	PreProcessorRawdataDataItem* item = new PreProcessorRawdataDataItem(this);
+	// create a new GeoData item.
+	PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
 	// the standarditem is set at the last position, so make it the first.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
@@ -878,7 +878,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 	dbfHandle = exporter->getDBFHandle(dbfFilename, condition(), &isDouble);
 
 	for (int i = 0; i < m_childItems.count(); ++i) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_childItems.at(i));
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataPolygon*>(rd) == nullptr) {continue;}
 		codecOK = codecOK && codec->canEncode(rd->caption());
@@ -888,7 +888,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 	}
 
 	for (int i = m_childItems.count() - 1; i >= 0; --i) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_childItems.at(i));
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		GeoDataPolygon* rdp = dynamic_cast<GeoDataPolygon*>(rd);
 		if ((rdp) == nullptr) {continue;}
@@ -913,7 +913,7 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 		return;
 	}
 	for (int i = m_childItems.count() - 1; i >= 0; --i) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_childItems.at(i));
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataBackground*>(rd) != nullptr) {continue;}
 
@@ -926,7 +926,7 @@ bool PreProcessorGeoDataGroupDataItem::polygonExists() const
 {
 	bool ret = false;
 	for (int i = 0; i < m_childItems.count(); ++i) {
-		PreProcessorRawdataDataItem* item = dynamic_cast<PreProcessorRawdataDataItem*>(m_childItems.at(i));
+		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		ret = ret || (dynamic_cast<GeoDataPolygon*>(rd) != nullptr);
 	}
@@ -939,7 +939,7 @@ void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 	cg_user_data_write(iRIC::toStr(m_condition->name()).c_str());
 	cg_gorel(fn, iRIC::toStr(m_condition->name()).c_str(), 0, NULL);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorRawdataDataItem* ritem = dynamic_cast<PreProcessorRawdataDataItem*>(*it);
+		PreProcessorGeoDataDataItem* ritem = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		ritem->setIndex(index);
 		ritem->saveToCgnsFile(fn);
 		++ index;

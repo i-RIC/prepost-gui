@@ -20,7 +20,7 @@
 #include <QMouseEvent>
 
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent)
-	: PreProcessorRawdataDataItemInterface(item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+	: PreProcessorGeoDataDataItemInterface(item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
 	if (item->hideSetting()) {
 		QStandardItem* p = m_standardItem->parent();

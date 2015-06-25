@@ -13,6 +13,7 @@ def renamerawdata(path):
       newline = line
       newline = newline.replace("rawData", "geoData")
       newline = newline.replace("rawdata", "geodata")
+      newline = newline.replace("Rawdata", "GeoData")
       newline = newline.replace("RAWDATA", "GEODATA")
       newline = newline.replace("RawData", "GeoData")
       newline = newline.replace("rd_", "gd_")

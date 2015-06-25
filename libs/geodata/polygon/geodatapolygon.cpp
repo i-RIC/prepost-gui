@@ -1668,8 +1668,8 @@ void GeoDataPolygon::setVariantValue(const QVariant& v)
 	}
 	m_variantValues[index] = v;
 	updateScalarValues();
-	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
-	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informDataChange();
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informDataChange();
 }
 
 void GeoDataPolygon::editValue()
@@ -1749,7 +1749,7 @@ void GeoDataPolygon::updateGrid(bool noDraw)
 
 void GeoDataPolygon::editColorSetting()
 {
-	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->showPropertyDialog();
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
 }
 
 void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)

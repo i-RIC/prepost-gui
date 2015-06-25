@@ -35,8 +35,8 @@ bool GridCreatingConditionCreatorRiverSurvey15D::checkAvailability(PreProcessorG
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(condDataItem->parent()->parent());
 	PreProcessorGeoDataTopDataItemInterface* rtItem = gtItem->geoDataTop();
 	for (PreProcessorGeoDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
-		QList<PreProcessorRawdataDataItemInterface*> rItems = gItem->geoDatas();
-		for (PreProcessorRawdataDataItemInterface* rItem : rItems) {
+		QList<PreProcessorGeoDataDataItemInterface*> rItems = gItem->geoDatas();
+		for (PreProcessorGeoDataDataItemInterface* rItem : rItems) {
 			riverSurveyFound = riverSurveyFound || (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr);
 		}
 	}

@@ -8,7 +8,7 @@
 #include <QSignalMapper>
 
 class SolverDefinitionGridAttribute;
-class PreProcessorRawdataDataItem;
+class PreProcessorGeoDataDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
 class GridAttributeEditWidget;
 class Grid;
@@ -39,7 +39,7 @@ public:
 	bool getValueRange(double* min, double* max) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(10);}
 	bool importAvailable();
-	const QList<PreProcessorRawdataDataItemInterface*> geoDatas() const override;
+	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
 	QString title() {return m_title;}
@@ -106,7 +106,7 @@ protected:
 	ScalarBarSetting m_scalarBarSetting;
 
 	QString m_title;
-	PreProcessorRawdataDataItem* m_backgroundItem;
+	PreProcessorGeoDataDataItem* m_backgroundItem;
 
 private:
 	void moveBackgroundToLast();

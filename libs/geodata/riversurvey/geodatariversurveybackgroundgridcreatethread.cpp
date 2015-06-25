@@ -346,7 +346,7 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	// initializes grid.
 	Structured2DGrid* tmpgrid = new Structured2DGrid(nullptr);
 	tmpgrid->setDimensions(gridISize, gridJSize);
-	PreProcessorRawdataDataItemInterface* rawItem = dynamic_cast<PreProcessorRawdataDataItemInterface*>(rs->parent());
+	PreProcessorGeoDataDataItemInterface* rawItem = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(rs->parent());
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(rawItem->parent()->parent()->parent());
 	SolverDefinitionGridType* gt = gtItem->gridType();
 	gt->buildGridRelatedConditions(tmpgrid);

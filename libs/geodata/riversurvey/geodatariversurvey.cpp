@@ -2237,7 +2237,7 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 	if (isVisible() && m_showBackground) {
 		m_backgroundActor->VisibilityOn();
 	}
-	dynamic_cast<PreProcessorRawdataDataItemInterface*>(parent())->informValueRangeChange();
+	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
 }
 
 void GeoDataRiverSurvey::updateInterpolators()
