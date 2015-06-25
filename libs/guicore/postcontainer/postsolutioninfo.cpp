@@ -786,7 +786,7 @@ bool PostSolutionInfo::open()
 
 	while (lockedFile.exists() && retry < retryMax) {
 		++ retry;
-		thread()->sleep(100);
+		thread()->msleep(100);
 		qApp->processEvents();
 	}
 
