@@ -301,7 +301,6 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 	grid->SetPoints(points);
 
 	grid->Modified();
-	points->Delete();
 
 	// Grid coordinates are loaded.
 	// load grid node connectivity data.
