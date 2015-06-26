@@ -253,6 +253,7 @@ HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
            misc/iricmainwindowaboutdialog.h \
            misc/iricmainwindowactionmanager.h \
            misc/iricmainwindowmiscdialogmanager.h \
+           misc/iricmetadata.h \
            misc/mousehelpdialog.h \
            misc/networksetting.h \
            misc/newprojectsolverselectingdialog.h \
@@ -331,6 +332,7 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            misc/iricmainwindowaboutdialog.cpp \
            misc/iricmainwindowactionmanager.cpp \
            misc/iricmainwindowmiscdialogmanager.cpp \
+           misc/iricmetadata.cpp \
            misc/mousehelpdialog.cpp \
            misc/networksetting.cpp \
            misc/newprojectsolverselectingdialog.cpp \

@@ -9,6 +9,7 @@
 #include <misc/versionnumber.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
+#include "misc/iricmetadata.h"
 
 class QMenu;
 class QToolbar;
@@ -221,7 +222,7 @@ private:
 	void removeFromRecentProjects(const QString& foldername);
 	void updateRecentSolvers(const QString& filename);
 	void removeFromRecentSolvers(const QString& foldername);
-	void loadMetaData();
+	void setupAboutDialog();
 	void handleWizardAccepted(ContinuousSnapshotWizard* wizard);
 	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);
@@ -257,9 +258,10 @@ private:
 	AnimationControllerInterface* m_animationController;
 
 	// This value is true only when opening a project file.
-	bool m_isOpening;
+	bool m_isOpening {false};
 	// This value is true only when saving a project file.
-	bool m_isSaving;
+	bool m_isSaving {false};
+
 	VersionNumber m_versionNumber;
 
 	// for continuous snapshot
@@ -296,6 +298,8 @@ private:
 	double m_south;
 	double m_east;
 	double m_west;
+
+	iRICMetaData m_metaData;
 
 	PostProcessorWindowFactory* m_postWindowFactory;
 

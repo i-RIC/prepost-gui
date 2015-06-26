@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GuiDefinition 
+  xmlns="www.iric.net/GuiDefinition/1.0"
+  name="gui_3.0" caption="iRIC GUI 3.0" version="3.0.1" release="2015.7.2"
+  copyright="iRIC Organization" essential="true"
+>
+</GuiDefinition >
+

@@ -1,6 +1,7 @@
 #include "ui_iricmainwindowaboutdialog.h"
 
 #include "iricmainwindowaboutdialog.h"
+#include "misc/iricmetadata.h"
 
 #include <misc/versionnumber.h>
 
@@ -23,27 +24,19 @@ iRICMainWindowAboutDialog::~iRICMainWindowAboutDialog()
 	delete ui;
 }
 
-void iRICMainWindowAboutDialog::init(const QDomNode& data)
+void iRICMainWindowAboutDialog::init(const iRICMetaData &data)
 {
-	QDomElement elem = data.toElement();
-	QString version = elem.attribute("version");
-	VersionNumber vn;
-	vn.fromString(version);
-	version = vn.toAboutString();
-	if (elem.hasAttribute("displayVersion")) {
-		version = elem.attribute("displayVersion");
-	}
-	ui->labelTitle->setText(tr("iRIC %1").arg(version));
-	ui->labelRelease->setText(tr("Released on %1").arg(elem.attribute("release")));
-	ui->labelCopyright->setText(tr("Copyright %1").arg(elem.attribute("copyright")));
-	QString url = elem.attribute("url");
+	ui->labelTitle->setText(tr("iRIC %1").arg(data.displayVersionNumber()));
+	ui->labelRelease->setText(tr("Released on %1").arg(data.releaseDate().toString("yyyy/MM/dd")));
+	ui->labelCopyright->setText(tr("Copyright %1").arg(data.copyright()));
+	QString url = data.homeUrl();
 	QString link;
 	if (url != "") {
 		QUrl u(url);
 		link.append("<a href=\"").append(u.toString()).append("\">").append(url).append("</a>");
 	}
 	ui->labelUrl->setText(link);
-	url = elem.attribute("tou"); // Terms of use
+	url = data.termsOfUseUrl();
 	link = "";
 	if (url != "") {
 		QUrl u(url);

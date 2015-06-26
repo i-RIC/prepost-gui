@@ -3,6 +3,7 @@
 
 #include <QObject>
 class QDomNode;
+class iRICMetaData;
 class iRICMainWindow;
 class SolverDefinitionListDialog;
 class iRICMainWindowAboutDialog;
@@ -15,7 +16,7 @@ class iRICMainWindowMiscDialogManager : public QObject
 public:
 	/// Constructor;
 	iRICMainWindowMiscDialogManager(iRICMainWindow* parent);
-	void setupAboutDialog(const QDomNode& domNode);
+	void setupAboutDialog(const iRICMetaData& metaData);
 
 public slots:
 	/// Show solver definition file translation update wizard

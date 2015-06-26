@@ -2,7 +2,8 @@
 #define IRICMAINWINDOWABOUTDIALOG_H
 
 #include <QDialog>
-class QDomNode;
+
+class iRICMetaData;
 
 namespace Ui
 {
@@ -20,7 +21,7 @@ public:
 	/// Destructor
 	~iRICMainWindowAboutDialog();
 	/// Initialization of dialog
-	void init(const QDomNode& data);
+	void init(const iRICMetaData& data);
 
 private:
 	Ui::iRICMainWindowAboutDialog* ui;

@@ -85,31 +85,24 @@ class SolverDefinitionAbstract;
 const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
 
-iRICMainWindow::iRICMainWindow(QWidget* parent)
-	: iRICMainWindowInterface(parent)
+iRICMainWindow::iRICMainWindow(QWidget* parent) :
+	iRICMainWindowInterface(parent),
+	m_workspace {new ProjectWorkspace {this}},
+	m_metaData {this},
+	m_projectData {nullptr},
+	m_postWindowFactory {new PostProcessorWindowFactory {this}},
+	m_coordinateSystemBuilder {new CoordinateSystemBuilder {this}},
+	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
+	m_animationController {new AnimationController {this}}
 {
-	// setup workspace
-	m_workspace = new ProjectWorkspace(this);
-
 	// setup undo stack
 	iRICUndoStack::initialize(this);
 
-	// @todo It should scan trash workspace, and if it exists, it should
-	// ask whether the user wants to resume the trash workspaces.
-
-	// initially, projectdata is not loaded.
-	m_projectData = nullptr;
-	m_postWindowFactory = new PostProcessorWindowFactory(this);
 
 	// load plugins.
 	loadPlugins();
 
-	m_coordinateSystemBuilder = new CoordinateSystemBuilder(this);
-
 	setWindowIcon(QIcon(":/images/iconiRIC.png"));
-
-	m_isOpening = false;
-	m_isSaving = false;
 
 	setupCentralWidget();
 	setupStatusBar();
@@ -119,13 +112,9 @@ iRICMainWindow::iRICMainWindow(QWidget* parent)
 
 	setupBasicSubWindows();
 
-	// setup misc dialog manager
-	m_miscDialogManager = new iRICMainWindowMiscDialogManager(this);
-
 	// setup action manager
 	m_actionManager = new iRICMainWindowActionManager(this);
 	m_actionManager->projectFileClose();
-	m_animationController = new AnimationController(this);
 	connect(m_animationController, SIGNAL(indexChanged(uint)), this, SLOT(setCurrentStep(uint)));
 	connect(this, SIGNAL(allPostProcessorsUpdated()), m_animationController, SLOT(handleRenderingEnded()));
 
@@ -144,7 +133,7 @@ iRICMainWindow::iRICMainWindow(QWidget* parent)
 	m_gridCreatingConditionCreators = GridCreatingConditionCreatorExternalProgram::getList(m_locale, this);
 
 	updatePostActionStatus();
-	loadMetaData();
+	setupAboutDialog();
 	updateWindowTitle();
 	connect(m_centralWidget, SIGNAL(subWindowActivated(QMdiSubWindow*)), this, SLOT(ActiveSubwindowChanged(QMdiSubWindow*)));
 
@@ -1598,20 +1587,10 @@ void iRICMainWindow::updatePostActionStatus()
 	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().count() > 0);
 }
 
-void iRICMainWindow::loadMetaData()
+void iRICMainWindow::setupAboutDialog()
 {
-	QFile f(":/data/iricinfo.xml");
-	QDomDocument doc;
-	QString errorStr;
-	int errorLine;
-	int errorColumn;
-	QString errorHeader = "Error occured while loading %1\n";
-	bool ok = doc.setContent(&f, &errorStr, &errorLine, &errorColumn);
-	if (! ok) {
-		return;
-	}
-	m_miscDialogManager->setupAboutDialog(doc.documentElement());
-	m_versionNumber.fromString(doc.documentElement().toElement().attribute("version"));
+	m_miscDialogManager->setupAboutDialog(m_metaData);
+	m_versionNumber = m_metaData.versionNumber();
 }
 
 void iRICMainWindow::openStartDialog()

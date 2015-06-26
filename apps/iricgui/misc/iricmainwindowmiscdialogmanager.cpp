@@ -21,9 +21,9 @@ iRICMainWindowMiscDialogManager::iRICMainWindowMiscDialogManager(iRICMainWindow*
 	m_aboutDialog = new iRICMainWindowAboutDialog(m_mainWindow);
 }
 
-void iRICMainWindowMiscDialogManager::setupAboutDialog(const QDomNode& domNode)
+void iRICMainWindowMiscDialogManager::setupAboutDialog(const iRICMetaData& metaData)
 {
-	m_aboutDialog->init(domNode);
+	m_aboutDialog->init(metaData);
 }
 
 void iRICMainWindowMiscDialogManager::solverDefinitionTranslationWizard()
