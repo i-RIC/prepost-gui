@@ -618,10 +618,12 @@ void ProjectMainFile::addBackgroundImage()
 		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 		return;
 	}
-	QDir wkDir = QDir(projectData()->workDirectory());
 
-	QString to = wkDir.absoluteFilePath(QFileInfo(fname).fileName());
-	if (! wkDir.exists(QFileInfo(fname).fileName())) {
+	QDir bgDir = QDir(projectData()->workDirectory());
+	bgDir.cd(BGDIR);
+
+	QString to = bgDir.absoluteFilePath(QFileInfo(fname).fileName());
+	if (!bgDir.exists(QFileInfo(fname).fileName())){
 		if (! QFile::copy(fname, to)) {
 			QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("The background image was not added. Please try again."));
 			return;
