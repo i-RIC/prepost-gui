@@ -15,7 +15,6 @@ public:
 	QList<unsigned int> indices;
 	/// Weights
 	QList<double> weights;
-
 };
 
 #endif // DOUBLEMAPPINGSETTING_H
