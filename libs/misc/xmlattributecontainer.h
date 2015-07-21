@@ -28,8 +28,7 @@ public:
 	const QString attName(const QString& name) const;
 
 protected:
-	QString m_prefix;
-
+	QString m_prefix {};
 };
 
 #endif // XMLATTRIBUTECONTAINER_H

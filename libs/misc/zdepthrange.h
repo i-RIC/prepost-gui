@@ -8,7 +8,9 @@ class MISCDLL_EXPORT ZDepthRange
 {
 
 public:
+	/// Constructor
 	ZDepthRange();
+	/// Constructor
 	ZDepthRange(double min, double max);
 
 	/// The minimum of the range
@@ -29,9 +31,9 @@ public:
 	void setItemCount(unsigned int count) {m_itemCount = count;}
 
 private:
-	double m_min;
-	double m_max;
-	unsigned int m_itemCount;
+	double m_min {0};
+	double m_max {1};
+	unsigned int m_itemCount {0};
 };
 
 #endif // ZDEPTHRANGE_H

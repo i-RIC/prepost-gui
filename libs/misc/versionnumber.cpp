@@ -80,11 +80,3 @@ bool VersionNumber::operator ==(const VersionNumber& v) const
 		(m_fix == v.m_fix) &&
 		(m_build == v.m_build);
 }
-
-void VersionNumber::init()
-{
-	m_major = 0;
-	m_minor = 0;
-	m_fix = 0;
-	m_build = 0;
-}
