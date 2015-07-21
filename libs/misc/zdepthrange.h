@@ -12,28 +12,40 @@ public:
 	ZDepthRange();
 	/// Constructor
 	ZDepthRange(double min, double max);
+	/// Constructor (copy)
+	ZDepthRange(const ZDepthRange& range);
+	/// Constructor (move)
+	ZDepthRange(ZDepthRange&& range);
+
+	/// Destructor
+	~ZDepthRange();
+
+	/// Copy operator
+	ZDepthRange& operator=(const ZDepthRange& range);
+	/// Move operator
+	ZDepthRange& operator=(ZDepthRange&& range);
 
 	/// The minimum of the range
-	double min() const {return m_min;}
+	double min() const;
 	/// The maximum of the range
-	double max() const {return m_max;}
+	double max() const;
 	/// Set minimum of the range
-	void setMin(double min) {m_min = min;}
+	void setMin(double min);
 	/// Set maximum of the range
-	void setMax(double max) {m_max = max;}
+	void setMax(double max);
 	/// Set the range
-	void setRange(double min, double max) {m_min = min; m_max = max;}
+	void setRange(double min, double max);
 	/// The width of the range
-	double width() const {return m_max - m_min;}
+	double width() const;
 	/// The count of items in the range
-	unsigned int itemCount() const {return m_itemCount;}
+	unsigned int itemCount() const;
 	/// Set the count of items in the range
-	void setItemCount(unsigned int count) {m_itemCount = count;}
+	void setItemCount(unsigned int count);
 
 private:
-	double m_min {0};
-	double m_max {1};
-	unsigned int m_itemCount {0};
+	class Impl;
+
+	Impl* m_impl;
 };
 
 #endif // ZDEPTHRANGE_H
