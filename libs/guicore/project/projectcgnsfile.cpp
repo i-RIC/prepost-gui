@@ -8,6 +8,7 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <vector>
 
 #if CGNS_VERSION < 3100
 #define cgsize_t int
@@ -96,10 +97,9 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 	cgsize_t dimVec[3];
 	DataType_t dataType;
 	char arrayName[BUFFERLEN];
+	std::vector<char> buffer;
 	QString solverName = solverDef->name();
 	VersionNumber version = solverDef->version();
-	VersionNumber v;
-	char* buffer = 0;
 
 	// goto "iRIC/SolverInformation" base".
 	ret = cg_gopath(fn, "/iRIC/SolverInformation");
@@ -108,31 +108,25 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 	ret = cg_array_info(1, arrayName, &dataType, &dim, dimVec);
 	if (ret != 0) {return false;}
 	if (QString(arrayName) != "Name") {return false;}
-	buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(1, buffer);
-	if (ret != 0) {goto ERROR_AFTER_BUFFER_ALLOC;}
-	if (solverName != buffer) {
-		goto ERROR_AFTER_BUFFER_ALLOC;
+	buffer.assign(dimVec[0] + 1, 0);
+	ret = cg_array_read(1, buffer.data());
+	if (ret != 0) {return false;}
+	if (solverName != buffer.data()) {
+		return false;
 	}
-	delete buffer;
 
 	// the second one is "Version" array.
 	ret = cg_array_info(2, arrayName, &dataType, &dim, dimVec);
 	if (ret != 0) {return false;}
 	if (QString(arrayName) != "Version") {return false;}
-	buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(2, buffer);
-	if (ret != 0) {goto ERROR_AFTER_BUFFER_ALLOC;}
-	v.fromString(buffer);
-	delete buffer;
+	buffer.assign(dimVec[0] + 1, 0);
+	ret = cg_array_read(2, buffer.data());
+	if (ret != 0) {return false;}
+	VersionNumber v = buffer.data();
 	if (version != v) {
 		return false;
 	}
 	return true;
-
-ERROR_AFTER_BUFFER_ALLOC:
-	delete buffer;
-	return false;
 }
 
 
@@ -185,7 +179,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	buffer = new char[dimVec[0] + 1];
 	ret = cg_array_read(2, buffer);
 	if (ret != 0) {return false;}
-	version.fromString(buffer);
+	version = VersionNumber {buffer};
 	delete buffer;
 
 	return true;

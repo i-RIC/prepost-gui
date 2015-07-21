@@ -37,7 +37,7 @@ void iRICMetaData::loadIricInfoXml()
 	}
 	QDomElement docElem = doc.documentElement();
 
-	m_versionNumber.fromString(docElem.attribute("version"));
+	m_versionNumber = docElem.attribute("version");
 	m_displayVersionNumber = m_versionNumber.toAboutString();
 
 	if (docElem.hasAttribute("displayVersion")) {

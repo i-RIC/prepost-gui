@@ -27,7 +27,7 @@ void SolverDefinitionAbstract::load(const QString& solverfolder, const QLocale& 
 	m_name = SDNode.attributes().namedItem("name").nodeValue();
 	m_caption = translator.translate(SDNode.attributes().namedItem("caption").nodeValue());
 	QString version = SDNode.attributes().namedItem("version").nodeValue();
-	m_version.fromString(version);
+	m_version = version;
 	m_copyright = SDNode.attributes().namedItem("copyright").nodeValue();
 	m_url = SDNode.attributes().namedItem("homepage").nodeValue();
 	m_release = QDate::fromString(SDNode.attributes().namedItem("release").nodeValue(), "yyyy.MM.dd");

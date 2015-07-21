@@ -152,7 +152,7 @@ void ProjectMainFile::loadSolverInformation()
 	QDomElement element = doc.documentElement().toElement();
 	m_iRICVersion = element.attribute("version", "1.0");
 	m_solverName = element.attribute("solverName");
-	m_solverVersion.fromString(element.attribute("solverVersion"));
+	m_solverVersion = element.attribute("solverVersion");
 }
 
 void ProjectMainFile::initForSolverDefinition()
@@ -244,7 +244,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	checkVersionCompatibility();
 
 	m_solverName = element.attribute("solverName");
-	m_solverVersion.fromString(element.attribute("solverVersion"));
+	m_solverVersion = element.attribute("solverVersion");
 
 	// coordinate system
 	QString coordName = element.attribute("coordinateSystem");
