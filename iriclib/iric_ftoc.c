@@ -713,14 +713,11 @@ void IRICLIBDLL FMNAME(cg_iric_read_bc_indicessize_mul_f, CG_IRIC_READ_BC_INDICE
 
 void IRICLIBDLL FMNAME(cg_iric_read_bc_indices_mul_f, CG_IRIC_READ_BC_INDICES_MUL_F) (int *fid, STR_PSTR(type), int *num, int *indices, int *ier STR_PLEN(type)) {
 	char c_type[CGIO_MAX_NAME_LENGTH+1];
-	cgsize_t c_indices;
 	string_2_C_string(STR_PTR(type), STR_LEN(type),
 		c_type, CGIO_MAX_NAME_LENGTH, ier);
 	if (*ier) return;
 
-	*ier = cg_iRIC_Read_BC_Indices_Mul(*fid, c_type, *num, &c_indices);
-
-	*indices = (int)(c_indices);
+	*ier = cg_iRIC_Read_BC_Indices_Mul(*fid, c_type, *num, (cgsize_t*)(indices));
 }
 
 void IRICLIBDLL FMNAME(cg_iric_read_bc_integer_mul_f, CG_IRIC_READ_BC_INTEGER_MUL_F) (int *fid, STR_PSTR(type), int *num, STR_PSTR(name), int *intvalue, int *ier STR_PLEN(type) STR_PLEN(name)) {
