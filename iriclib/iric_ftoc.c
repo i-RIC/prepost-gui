@@ -905,10 +905,7 @@ void IRICLIBDLL FMNAME(iric_geo_polygon_read_realvalue_f, IRIC_GEO_POLYGON_READ_
 }
 
 void IRICLIBDLL FMNAME(iric_geo_polygon_read_pointcount_f, IRIC_GEO_POLYGON_READ_POINTCOUNT_F) (int *id, int *size, int *ier) {
-	cgsize_t c_size;
-	*ier = iRIC_Geo_Polygon_Read_PointCount(*id, &c_size);
-
-	*size = (int)(c_size);
+	*ier = iRIC_Geo_Polygon_Read_PointCount(*id, size);
 }
 
 void IRICLIBDLL FMNAME(iric_geo_polygon_read_points_f, IRIC_GEO_POLYGON_READ_POINTS_F) (int *id, double *x, double *y, int *ier) {

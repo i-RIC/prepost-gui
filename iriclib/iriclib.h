@@ -304,7 +304,7 @@ int IRICLIBDLL iRIC_Geo_Polygon_Read_IntegerValue(int id, int* value);
 
 int IRICLIBDLL iRIC_Geo_Polygon_Read_RealValue(int id, double* value);
 
-int IRICLIBDLL iRIC_Geo_Polygon_Read_PointCount(int id, cgsize_t* size);
+int IRICLIBDLL iRIC_Geo_Polygon_Read_PointCount(int id, int* size);
 
 int IRICLIBDLL iRIC_Geo_Polygon_Read_Points(int id, double* x, double* y);
 
