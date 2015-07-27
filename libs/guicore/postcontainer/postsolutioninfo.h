@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 #include "../project/projectdataitem.h"
 #include "../solverdef/solverdefinition.h"
+#include "postdataexportdialog.h"
 #include "postexportsetting.h"
 
 #include <QList>
@@ -20,7 +21,6 @@ class GUICOREDLL_EXPORT PostSolutionInfo : public ProjectDataItem
 
 public:
 	enum Dimension {dim1D, dim2D, dim3D};
-	enum ExportFormat {efVTK, efCSV};
 	/// Constructor
 	PostSolutionInfo(ProjectDataItem* parent);
 	~PostSolutionInfo();
@@ -122,7 +122,7 @@ private:
 	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap2D;
 	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
-	ExportFormat m_exportFormat;
+	PostDataExportDialog::Format m_exportFormat;
 
 	PostExportSetting m_exportSetting;
 	QString m_particleExportPrefix;

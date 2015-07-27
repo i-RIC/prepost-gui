@@ -99,10 +99,12 @@ void PostDataExportDialog::hideDataRange()
 
 void PostDataExportDialog::setFormat(Format f)
 {
-	if (f == fmVTK) {
+	if (f == Format::VTKASCII) {
 		ui->formatComboBox->setCurrentIndex(0);
-	} else if (f == fmCSV) {
+	} else if (f == Format::VTKBinary) {
 		ui->formatComboBox->setCurrentIndex(1);
+	} else if (f == Format::CSV) {
+		ui->formatComboBox->setCurrentIndex(2);
 	}
 }
 
@@ -150,10 +152,16 @@ void PostDataExportDialog::setPrefix(const QString& prefix)
 
 PostDataExportDialog::Format PostDataExportDialog::format() const
 {
-	if (ui->formatComboBox->currentIndex() == 0) {
-		return fmVTK;
-	} else {
-		return fmCSV;
+	switch (ui->formatComboBox->currentIndex()) {
+	case 0:
+		return Format::VTKASCII;
+		break;
+	case 1:
+		return Format::VTKBinary;
+		break;
+	case 2:
+		return Format::CSV;
+		break;
 	}
 }
 

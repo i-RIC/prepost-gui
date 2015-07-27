@@ -45,8 +45,6 @@ public:
 	void getNodeIJKIndex(int index, int* i, int* j, int* k) const;
 	int cellIndex(int i, int j, int k) const;
 	void getCellIJKIndex(int index, int* i, int* j, int* k) const;
-	bool saveToVTKFile(const QString& filename, double time, const PostExportSetting &s);
-	bool saveToCSVFile(const QString& filename, double time, const PostExportSetting &s);
 	void loadIfEmpty(const int fn);
 	bool IBCExists();
 	const QString elevationName();

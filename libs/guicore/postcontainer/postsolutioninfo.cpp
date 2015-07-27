@@ -3,6 +3,8 @@
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "exporter/postzonedatacsvexporter.h"
+#include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
 #include "postdataexportdialog.h"
 #include "postdummy3dzonedatacontainer.h"
@@ -25,6 +27,7 @@
 #include <QXmlStreamWriter>
 
 #include <vtkStructuredGrid.h>
+#include <memory>
 
 #include <cgnslib.h>
 #include <iriclib.h>
@@ -39,7 +42,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
 	m_fileId = 0;
 	m_iterationType = SolverDefinition::NoIteration;
 
-	m_exportFormat = efVTK;
+	m_exportFormat = PostDataExportDialog::Format::VTKASCII;
 	m_particleExportPrefix = "Particle_";
 }
 
@@ -682,12 +685,7 @@ void PostSolutionInfo::exportCalculationResult()
 	// show setting dialog
 	PostDataExportDialog expDialog(iricMainWindow());
 
-	if (m_exportFormat == efVTK) {
-		expDialog.setFormat(PostDataExportDialog::fmVTK);
-	} else if (m_exportFormat == efCSV) {
-		expDialog.setFormat(PostDataExportDialog::fmCSV);
-	}
-
+	expDialog.setFormat(m_exportFormat);
 	expDialog.setTimeValues(m_timeSteps->timesteps());
 
 	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(zoneC->data());
@@ -709,21 +707,21 @@ void PostSolutionInfo::exportCalculationResult()
 
 	if (expDialog.exec() != QDialog::Accepted) {return;}
 
-	if (expDialog.format() == PostDataExportDialog::fmVTK) {
-		m_exportFormat = efVTK;
-	} else if (expDialog.format() == PostDataExportDialog::fmCSV) {
-		m_exportFormat = efCSV;
-	}
+	m_exportFormat = expDialog.format();
 	m_exportSetting = expDialog.exportSetting();
 
 	// start exporting.
 	QProgressDialog dialog(iricMainWindow());
 	dialog.setRange(m_exportSetting.startStep , m_exportSetting.endStep);
 	dialog.setWindowTitle(tr("Export Calculation Result"));
-	if (m_exportFormat == efVTK) {
+	switch (m_exportFormat) {
+	case PostDataExportDialog::Format::VTKASCII:
+	case PostDataExportDialog::Format::VTKBinary:
 		dialog.setLabelText(tr("Saving calculation result as VTK files..."));
-	} else {
+		break;
+	case PostDataExportDialog::Format::CSV:
 		dialog.setLabelText(tr("Saving calculation result as CSV files..."));
+		break;
 	}
 	dialog.setFixedSize(300, 100);
 	dialog.setModal(true);
@@ -731,10 +729,18 @@ void PostSolutionInfo::exportCalculationResult()
 
 	iricMainWindow()->setContinuousSnapshotInProgress(true);
 	int stepBackup = currentStep();
-
 	int step = m_exportSetting.startStep;
 	int fileIndex = 1;
 	QDir outputFolder(m_exportSetting.folder);
+
+	std::unique_ptr<PostZoneDataExporter> exporter;
+	if (m_exportFormat == PostDataExportDialog::Format::VTKASCII) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter {projectData()->workDirectory(), PostZoneDataVtkExporter::ASCII}};
+	} else if (m_exportFormat == PostDataExportDialog::Format::VTKBinary) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter {projectData()->workDirectory(), PostZoneDataVtkExporter::BINARY}};
+	} else if (m_exportFormat == PostDataExportDialog::Format::CSV) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataCsvExporter {}};
+	}
 	while (step <= m_exportSetting.endStep) {
 		dialog.setValue(step);
 		qApp->processEvents();
@@ -744,16 +750,10 @@ void PostSolutionInfo::exportCalculationResult()
 			return;
 		}
 		setCurrentStep(step);
-		QString fileName = m_exportSetting.prefix;
-		bool ok;
 		double time = currentTimeStep();
-		if (m_exportFormat == efVTK) {
-			fileName.append(QString("%1.vtk").arg(fileIndex));
-			ok = zoneC->saveToVTKFile(outputFolder.absoluteFilePath(fileName), time, m_exportSetting);
-		} else {
-			fileName.append(QString("%1.csv").arg(fileIndex));
-			ok = zoneC->saveToCSVFile(outputFolder.absoluteFilePath(fileName), time, m_exportSetting);
-		}
+		auto& s = m_exportSetting;
+		QString fileName = outputFolder.absoluteFilePath(exporter->filename(s.prefix, fileIndex));
+		bool ok = exporter->exportToFile(zoneC, fileName, time, s.iMin, s.iMax, s.jMin, s.jMax, s.kMin, s.kMax);
 		if (! ok) {
 			setCurrentStep(stepBackup);
 			QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Error occured while saving %1").arg(fileName));

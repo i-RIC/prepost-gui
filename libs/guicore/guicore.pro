@@ -137,6 +137,7 @@ HEADERS += guicore_global.h \
            base/windowwithpropertybrowser.h \
            base/windowwithzindexinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
+           datamodel/geodataproxydataitem.h \
            datamodel/graphics2dwindowdatamodel.h \
            datamodel/graphics3dwindowdatamodel.h \
            datamodel/graphicswindowdataitem.h \
@@ -146,7 +147,6 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowsimpledatamodel.h \
            datamodel/propertybrowserattribute.h \
            datamodel/propertybrowserview.h \
-           datamodel/geodataproxydataitem.h \
            datamodel/vtk2dgraphicsview.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
@@ -223,36 +223,24 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitiontranslator.h \
+           postcontainer/exporter/postzonedatacsvexporter.h \
+           postcontainer/exporter/postzonedataexporter.h \
+           postcontainer/exporter/postzonedatavtkexporter.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
+           pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h \
+           pre/base/preprocessorgeodatadataiteminterface.h \
+           pre/base/preprocessorgeodatagroupdataiteminterface.h \
+           pre/base/preprocessorgeodatatopdataiteminterface.h \
            pre/base/preprocessorgraphicsviewinterface.h \
            pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.h \
            pre/base/preprocessorgriddataiteminterface.h \
            pre/base/preprocessorgridtypedataiteminterface.h \
-           pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h \
-           pre/base/preprocessorgeodatadataiteminterface.h \
-           pre/base/preprocessorgeodatagroupdataiteminterface.h \
-           pre/base/preprocessorgeodatatopdataiteminterface.h \
            pre/base/preprocessorwindowinterface.h \
            pre/complex/gridcomplexconditiondialog.h \
            pre/complex/gridcomplexconditionwidget.h \
            pre/complex/gridcomplexconditionwidgetcontainer.h \
-           pre/grid/grid.h \
-           pre/grid/grid2d.h \
-           pre/grid/grid3d.h \
-           pre/grid/gridexporterinterface.h \
-           pre/grid/gridimporterinterface.h \
-           pre/grid/gridinternalexporter.h \
-           pre/grid/gridinternalimporter.h \
-           pre/grid/structured15dgridwithcrosssection.h \
-           pre/grid/structured2dgrid.h \
-           pre/grid/unstructured2dgrid.h \
-           pre/gridcond/gridcellattributepropertydialog.h \
-           pre/gridcond/gridnodeattributepropertydialog.h \
-           pre/gridcreatingcondition/gridcreatingcondition.h \
-           pre/gridcreatingcondition/gridcreatingconditioncreator.h \
-           pre/hydraulicdata/hydraulicdataimporter.h \
            pre/geodata/geodata.h \
            pre/geodata/geodatacellmappert.h \
            pre/geodata/geodatacreator.h \
@@ -271,6 +259,21 @@ HEADERS += guicore_global.h \
            pre/geodatabackground/geodatabackgroundintegercreator.h \
            pre/geodatabackground/geodatabackgroundnodemappert.h \
            pre/geodatabackground/geodatabackgroundrealcreator.h \
+           pre/grid/grid.h \
+           pre/grid/grid2d.h \
+           pre/grid/grid3d.h \
+           pre/grid/gridexporterinterface.h \
+           pre/grid/gridimporterinterface.h \
+           pre/grid/gridinternalexporter.h \
+           pre/grid/gridinternalimporter.h \
+           pre/grid/structured15dgridwithcrosssection.h \
+           pre/grid/structured2dgrid.h \
+           pre/grid/unstructured2dgrid.h \
+           pre/gridcond/gridcellattributepropertydialog.h \
+           pre/gridcond/gridnodeattributepropertydialog.h \
+           pre/gridcreatingcondition/gridcreatingcondition.h \
+           pre/gridcreatingcondition/gridcreatingconditioncreator.h \
+           pre/hydraulicdata/hydraulicdataimporter.h \
            project/inputcond/inputconditioncontainer.h \
            project/inputcond/inputconditioncontainerfunctional.h \
            project/inputcond/inputconditioncontainerinteger.h \
@@ -342,9 +345,9 @@ FORMS += datamodel/propertybrowserview.ui \
          scalarstocolors/scalarstocolorseditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditionwidget.ui \
+         pre/geodatabackground/geodatabackgroundeditdialog.ui \
          pre/gridcond/gridcellattributepropertydialog.ui \
          pre/gridcond/gridnodeattributepropertydialog.ui \
-         pre/geodatabackground/geodatabackgroundeditdialog.ui \
          project/inputcond/inputconditiondialog.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
@@ -357,6 +360,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            base/snapshotenabledwindowinterface.cpp \
            base/windowwithzindexinterface.cpp \
            datamodel/attributebrowsertargetdataitem.cpp \
+           datamodel/geodataproxydataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
            datamodel/graphics3dwindowdatamodel.cpp \
            datamodel/graphicswindowdataitem.cpp \
@@ -366,7 +370,6 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
            datamodel/propertybrowserattribute.cpp \
            datamodel/propertybrowserview.cpp \
-           datamodel/geodataproxydataitem.cpp \
            datamodel/vtk2dgraphicsview.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
@@ -440,16 +443,29 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitiontranslator.cpp \
+           postcontainer/exporter/postzonedatacsvexporter.cpp \
+           postcontainer/exporter/postzonedatavtkexporter.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \
+           pre/base/preprocessorgeodatatopdataiteminterface.cpp \
            pre/base/preprocessorgraphicsviewinterface.cpp \
            pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.cpp \
            pre/base/preprocessorgridcreatingconditiondataiteminterface.cpp \
-           pre/base/preprocessorgeodatatopdataiteminterface.cpp \
            pre/base/preprocessorwindowinterface.cpp \
            pre/complex/gridcomplexconditiondialog.cpp \
            pre/complex/gridcomplexconditionwidget.cpp \
            pre/complex/gridcomplexconditionwidgetcontainer.cpp \
+           pre/geodata/geodata.cpp \
+           pre/geodata/geodatacreator.cpp \
+           pre/geodata/geodataexporter.cpp \
+           pre/geodata/geodataimporter.cpp \
+           pre/geodata/geodataproxy.cpp \
+           pre/geodatabackground/geodatabackground.cpp \
+           pre/geodatabackground/geodatabackgroundcomplex.cpp \
+           pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \
+           pre/geodatabackground/geodatabackgroundeditdialog.cpp \
+           pre/geodatabackground/geodatabackgroundintegercreator.cpp \
+           pre/geodatabackground/geodatabackgroundrealcreator.cpp \
            pre/grid/grid.cpp \
            pre/grid/grid2d.cpp \
            pre/grid/grid3d.cpp \
@@ -462,17 +478,6 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
-           pre/geodata/geodata.cpp \
-           pre/geodata/geodatacreator.cpp \
-           pre/geodata/geodataexporter.cpp \
-           pre/geodata/geodataimporter.cpp \
-           pre/geodata/geodataproxy.cpp \
-           pre/geodatabackground/geodatabackground.cpp \
-           pre/geodatabackground/geodatabackgroundcomplex.cpp \
-           pre/geodatabackground/geodatabackgroundcomplexcreator.cpp \
-           pre/geodatabackground/geodatabackgroundeditdialog.cpp \
-           pre/geodatabackground/geodatabackgroundintegercreator.cpp \
-           pre/geodatabackground/geodatabackgroundrealcreator.cpp \
            project/inputcond/inputconditioncontainerfunctional.cpp \
            project/inputcond/inputconditioncontainerinteger.cpp \
            project/inputcond/inputconditioncontainerreal.cpp \

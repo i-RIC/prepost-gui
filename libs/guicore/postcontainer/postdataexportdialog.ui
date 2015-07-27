@@ -27,7 +27,12 @@
       <widget class="QComboBox" name="formatComboBox">
        <item>
         <property name="text">
-         <string>VTK files</string>
+         <string>VTK files (ASCII)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>VTK files (Binary)</string>
         </property>
        </item>
        <item>
