@@ -17,6 +17,7 @@ VerificationSettingDialog::VerificationSettingDialog(QWidget* parent) :
 	ui(new Ui::VerificationSettingDialog)
 {
 	ui->setupUi(this);
+	connect(ui->fileComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(selectFile(int)));
 }
 
 VerificationSettingDialog::~VerificationSettingDialog()
