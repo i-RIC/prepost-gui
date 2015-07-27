@@ -915,6 +915,25 @@ void Graph2dHybridWindowDataModel::exportCsv()
 	LastIODirectory::set(finfo.absolutePath());
 }
 
+template <typename DataItem>
+void Graph2dHybridWindowDataModel::getXY(DataItem* dataItem, QVector<double>* x, QVector<double>* y) const
+{
+	*x = dataItem->xValues();
+	*y = dataItem->yValues();
+	if (m_setting.xAxisMode() != Graph2dHybridWindowResultSetting::xaTime) {return;}
+	int timeStepCount = projectData()->mainfile()->postSolutionInfo()->timeSteps()->timesteps().count();
+
+	if (m_timeStart == 0 && m_timeEnd == timeStepCount - 1 && m_timeSkip == 1) {return;}
+	QVector<double> clippedX, clippedY;
+
+	for (int i = m_timeStart; i <= m_timeEnd; i += m_timeSkip) {
+		clippedX.push_back(x->at(i));
+		clippedY.push_back(y->at(i));
+	}
+	*x = clippedX;
+	*y = clippedY;
+}
+
 bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 {
 	int maxCount = 0;
@@ -927,8 +946,8 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 	QList <Graph2dWindowDataItem*> resultList = rgroup->childItems();
 	for (int i = 0; i < resultList.count(); ++i) {
 		Graph2dHybridWindowResultDataItem* item = dynamic_cast<Graph2dHybridWindowResultDataItem*>(resultList.at(i));
-		QVector<double> tmpX = item->xValues();
-		QVector<double> tmpY = item->yValues();
+		QVector<double> tmpX, tmpY;
+		getXY(item, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
 			values.append(tmpX);
@@ -942,8 +961,8 @@ bool Graph2dHybridWindowDataModel::exportCsv(const QString& filename) const
 	QList <Graph2dWindowDataItem*> resultCopyList = cgroup->childItems();
 	for (int i = 0; i < resultCopyList.count(); ++i) {
 		Graph2dHybridWindowResultCopyDataItem* cdi = dynamic_cast<Graph2dHybridWindowResultCopyDataItem*>(resultCopyList.at(i));
-		QVector<double> tmpX = cdi->xValues();
-		QVector<double> tmpY = cdi->yValues();
+		QVector<double> tmpX, tmpY;
+		getXY(cdi, &tmpX, &tmpY);
 		if (prevX != tmpX) {
 			titles.append("X");
 			values.append(tmpX);

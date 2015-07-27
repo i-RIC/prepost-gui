@@ -24,7 +24,7 @@ public:
 	void loadFromCgnsFile(const int fn) override;
 	void saveComplexGroupsToCgnsFile(const int fn) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	ProjectData* projectData() override {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
+	ProjectData* projectData() const override {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void applyScalarsToColorsSetting();
 	SolverDefinitionGridAttribute* condition() override;

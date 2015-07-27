@@ -19,7 +19,7 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	ProjectData* projectData() {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
+	ProjectData* projectData() const {return dynamic_cast<ProjectData*>(ProjectDataItem::projectData());}
 	void handleStandardItemDoubleClicked() override {showDialog();}
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
