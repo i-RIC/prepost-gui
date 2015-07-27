@@ -17,7 +17,7 @@
    <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1">
-      <widget class="RealNumberEditWidget" name="coordX"/>
+      <widget class="CoordinateEditWidget" name="coordX"/>
      </item>
      <item row="0" column="2">
       <widget class="QLabel" name="centerCommaLabel">
@@ -27,7 +27,7 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="RealNumberEditWidget" name="coordY"/>
+      <widget class="CoordinateEditWidget" name="coordY"/>
      </item>
      <item row="1" column="0">
       <widget class="QRadioButton" name="offsetModeRadioButton">
@@ -75,6 +75,11 @@
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
    <header>guibase/realnumbereditwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CoordinateEditWidget</class>
+   <extends>QLineEdit</extends>
+   <header>guibase/coordinateeditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
