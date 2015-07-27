@@ -9,6 +9,7 @@
 
 #include <QMessageBox>
 
+#include <vtkDoubleArray.h>
 #include <vtkPointData.h>
 
 VerificationSettingDialog::VerificationSettingDialog(QWidget* parent) :
@@ -148,6 +149,10 @@ void VerificationSettingDialog::selectZone(int zoneid)
 		}
 		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attribute.
+			continue;
+		}
+		if (vtkDoubleArray::SafeDownCast(tmparray) == 0) {
+			// not double
 			continue;
 		}
 		QString name = pd->GetArray(i)->GetName();
