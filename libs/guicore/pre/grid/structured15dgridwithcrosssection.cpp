@@ -12,14 +12,14 @@
 #include <iriclib.h>
 #include <vector>
 
-Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent)
-	: Grid2D(SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent)
+Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent) :
+	Grid2D {SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
 {
 	init();
 }
 
-Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent)
-	: Grid2D(zonename, SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent)
+Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent) :
+	Grid2D {zonename, SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
 {
 	init();
 }
@@ -28,8 +28,6 @@ void Structured15DGridWithCrossSection::init()
 {
 	m_vtkGrid = vtkUnstructuredGrid::New();
 	m_vertexGrid = vtkUnstructuredGrid::New();
-//	m_importerFactory = new Structured15DGridWithCrossSectionImporterFactory(this);
-//	m_exporterFactory = new Structured15DGridWithCrossSectionExporterFactory(this);
 }
 
 const QVector2D Structured15DGridWithCrossSection::vertex(unsigned int index) const

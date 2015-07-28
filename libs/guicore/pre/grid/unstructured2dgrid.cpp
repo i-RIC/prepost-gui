@@ -22,14 +22,14 @@
 
 #define ELEMNODENAME "Element"
 
-Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent)
-	: Grid2D(SolverDefinitionGridType::gtUnstructured2DGrid, parent)
+Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
+	Grid2D {SolverDefinitionGridType::gtUnstructured2DGrid, parent}
 {
 	init();
 }
 
-Unstructured2DGrid::Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent)
-	: Grid2D(zonename, SolverDefinitionGridType::gtUnstructured2DGrid, parent)
+Unstructured2DGrid::Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent) :
+	Grid2D {zonename, SolverDefinitionGridType::gtUnstructured2DGrid, parent}
 {
 	init();
 }
@@ -37,8 +37,6 @@ Unstructured2DGrid::Unstructured2DGrid(const QString& zonename, ProjectDataItem*
 void Unstructured2DGrid::init()
 {
 	m_vtkGrid = vtkUnstructuredGrid::New();
-//	m_importerFactory = new Unstructured2DGridImporterFactory(this);
-//	m_exporterFactory = new Unstructured2DGridExporterFactory(this);
 }
 
 unsigned int Unstructured2DGrid::vertexCount() const

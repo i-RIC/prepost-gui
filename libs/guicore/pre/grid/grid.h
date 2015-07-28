@@ -39,8 +39,6 @@ public:
 	virtual ~Grid();
 	const QString& zoneName() {return m_zoneName;}
 	void setZoneName(const QString& name) {m_zoneName = name;}
-//	GridImporterFactory* importerFactory() const override {return m_importerFactory;}
-//	GridExporterFactory* exporterFactory() const override {return m_exporterFactory;}
 	void loadFromCgnsFile(const int fn) override;
 	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
 	virtual void saveToCgnsFile(const int fn) override;
@@ -95,8 +93,6 @@ protected:
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
 	QList<GridAttributeContainer*> m_gridRelatedConditions;
 	QMap<QString, GridAttributeContainer*> m_gridRelatedConditionNameMap;
-//	GridImporterFactory* m_importerFactory;
-//	GridExporterFactory* m_exporterFactory;
 	QString m_zoneName;
 	SolverDefinitionGridType::GridType m_gridType;
 	bool m_isModified;

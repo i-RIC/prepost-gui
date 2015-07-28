@@ -29,14 +29,14 @@
 
 #include <vector>
 
-Structured2DGrid::Structured2DGrid(ProjectDataItem* parent)
-	: Grid2D(SolverDefinitionGridType::gtStructured2DGrid, parent)
+Structured2DGrid::Structured2DGrid(ProjectDataItem* parent) :
+	Grid2D {SolverDefinitionGridType::gtStructured2DGrid, parent}
 {
 	init();
 }
 
-Structured2DGrid::Structured2DGrid(const QString& zonename, ProjectDataItem* parent)
-	: Grid2D(zonename, SolverDefinitionGridType::gtStructured2DGrid, parent)
+Structured2DGrid::Structured2DGrid(const QString& zonename, ProjectDataItem* parent) :
+	Grid2D {zonename, SolverDefinitionGridType::gtStructured2DGrid, parent}
 {
 	init();
 }
@@ -44,8 +44,6 @@ Structured2DGrid::Structured2DGrid(const QString& zonename, ProjectDataItem* par
 void Structured2DGrid::init()
 {
 	m_vtkGrid = vtkStructuredGrid::New();
-//	m_importerFactory = new Structured2DGridImporterFactory(this);
-//	m_exporterFactory = new Structured2DGridExporterFactory(this);
 	m_dimensionI = 0;
 	m_dimensionJ = 0;
 }
