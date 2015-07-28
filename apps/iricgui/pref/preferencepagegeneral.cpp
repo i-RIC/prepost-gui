@@ -4,6 +4,7 @@
 
 #include <guicore/project/projectworkspace.h>
 #include <misc/stringtool.h>
+#include <misc/iricundostack.h>
 
 #include <QDir>
 #include <QList>
@@ -29,6 +30,9 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	ui->workDirWidget->setDirname(workspace);
 	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
 	ui->folderCopyCheckBox->setChecked(copyFolderProject);
+
+	int undoLimit = settings.value("general/undolimit", iRICUndoStack::DEFAULT_UNDOLIMIT).toInt();
+	ui->undoLimitSpinBox->setValue(undoLimit);
 }
 
 PreferencePageGeneral::~PreferencePageGeneral()
@@ -60,6 +64,9 @@ void PreferencePageGeneral::update()
 	settings.setValue("general/locale", loc.name());
 	settings.setValue("general/workspace", ui->workDirWidget->dirname());
 	settings.setValue("general/copyfolderproject", ui->folderCopyCheckBox->isChecked());
+	int undoLimit = ui->undoLimitSpinBox->value();
+	settings.setValue("general/undolimit", undoLimit);
+	iRICUndoStack::instance().setUndoLimit(undoLimit);
 }
 
 void PreferencePageGeneral::setupLanguageComboBox()

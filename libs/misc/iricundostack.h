@@ -9,15 +9,13 @@
 class MISCDLL_EXPORT iRICUndoStack : public QUndoStack
 {
 
+public:
+	static const int DEFAULT_UNDOLIMIT;
+	static void initialize(QObject* w);
+	static iRICUndoStack& instance() {return *m_instance;}
+
 private:
 	iRICUndoStack(QObject* parent = 0);
-	static const int UNDOLIMIT;
-
-public:
-	static void initialize(QObject* w);
-	static iRICUndoStack& instance() {
-		return *m_instance;
-	}
 	static iRICUndoStack* m_instance;
 };
 

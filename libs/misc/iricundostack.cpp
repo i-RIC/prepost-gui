@@ -1,13 +1,17 @@
 #include "iricundostack.h"
 
-const int iRICUndoStack::UNDOLIMIT = 5;
+#include <QSettings>
+
+const int iRICUndoStack::DEFAULT_UNDOLIMIT = 5;
 
 iRICUndoStack* iRICUndoStack::m_instance = nullptr;
 
 iRICUndoStack::iRICUndoStack(QObject* parent) :
-	QUndoStack(parent)
+	QUndoStack {parent}
 {
-	setUndoLimit(UNDOLIMIT);
+	QSettings settings;
+	int undoLimit = settings.value("general/undolimit", DEFAULT_UNDOLIMIT).toInt();
+	setUndoLimit(undoLimit);
 }
 
 void iRICUndoStack::initialize(QObject* w)
