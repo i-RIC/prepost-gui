@@ -81,6 +81,7 @@ public:
 	bool isMasked() const {return m_isMasked;}
 	SolverDefinitionGridType::GridType gridType() const {return m_gridType;}
 	void setParent(QObject* parent);
+	static void getCullSetting(bool* enable, int* cellLimit, int* indexLimit);
 
 protected:
 	virtual void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}

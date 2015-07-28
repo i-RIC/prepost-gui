@@ -518,7 +518,10 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
-	while (extractedGrid->GetNumberOfCells() > MAX_DRAWCELLCOUNT) {
+	bool cullEnable;
+	int cullCellLimit, cullIndexLimit;
+	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
+	while (cullEnable && extractedGrid->GetNumberOfCells() > cullCellLimit){
 		exRate *= 2;
 		exGrid->SetSampleRate(exRate, exRate, 1);
 		exGrid->Update();

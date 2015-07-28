@@ -213,9 +213,12 @@ void Unstructured2DGrid::setupIndexArray()
 	vtkSmartPointer<vtkPolyData> filteredCells = algo->GetOutput();
 	int ccounts2 = filteredCells->GetNumberOfCells();
 	vtkSmartPointer<vtkPolyData> tmpIndexPolyData;
-	if (ccounts2 > MAX_DRAWINDEXCOUNT) {
+	bool cullEnable;
+	int cullCellLimit, cullIndexLimit;
+	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
+	if (cullEnable && ccounts2 > cullIndexLimit){
 		vtkSmartPointer<vtkMaskPolyData> maskPoly2 = vtkSmartPointer<vtkMaskPolyData>::New();
-		int ratio = static_cast<int>(ccounts2 / MAX_DRAWINDEXCOUNT);
+		int ratio = static_cast<int>(ccounts2 / cullIndexLimit);
 		if (ratio == 1) {ratio = 2;}
 		maskPoly2->SetOnRatio(ratio);
 		maskPoly2->SetInputData(filteredCells);
@@ -224,7 +227,6 @@ void Unstructured2DGrid::setupIndexArray()
 	} else {
 		tmpIndexPolyData = filteredCells;
 	}
-
 
 	vtkSmartPointer<vtkPolyData> filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
 	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();

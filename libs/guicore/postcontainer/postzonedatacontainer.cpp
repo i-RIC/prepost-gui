@@ -1206,7 +1206,10 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
-	while (extractedGrid->GetNumberOfCells() > Grid::MAX_DRAWCELLCOUNT) {
+	bool cullEnable;
+	int cullCellLimit, cullIndexLimit;
+	Grid::getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
+	while (cullEnable && extractedGrid->GetNumberOfCells() > cullCellLimit){
 		exRate *= 2;
 		exGrid->SetSampleRate(exRate, exRate, 1);
 		exGrid->Update();
@@ -1221,49 +1224,6 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(double xmin, double x
 	vtkPolyData* data = geo->GetOutput();
 	data->Register(0);
 	return data;
-//	vtkSmartPointer<vtkPolyData> clippedGrid = geo->GetOutput();
-
-	/*
-	m_drawnIMin = lineLimitIMin2;
-	m_drawnIMax = lineLimitIMax2;
-	m_drawnJMin = lineLimitJMin2;
-	m_drawnJMax = lineLimitJMax2;
-
-	m_vtkFilteredShape = clippedGrid;
-	m_vtkFilteredPoints = clippedGrid;
-	m_vtkFilteredCells = clippedGrid;
-
-	int tmpIMin = (m_drawnIMin / exRate) * exRate;
-	int tmpIMax = qMin((m_drawnIMax / exRate + 1) * exRate, m_dimensionI - 1);
-	int tmpJMin = (m_drawnJMin / exRate) * exRate;
-	int tmpJMax = qMin((m_drawnJMax / exRate + 1) * exRate, m_dimensionJ - 1);
-
-	m_vtkFilteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
-	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkStringArray> sa = vtkSmartPointer<vtkStringArray>::New();
-	sa->SetName(Grid::LABEL_NAME);
-	vtkIdType cellid = 0;
-	double tmpp[3];
-	QString label("(%1,%2)");
-	for (int i = tmpIMin; i <= tmpIMax; i += exRate){
-		m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpp);
-		igPoints->InsertNextPoint(tmpp);
-		ca->InsertNextCell(1, &cellid);
-		sa->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1)));
-		++ cellid;
-	}
-	for (int j = tmpJMin; j <= tmpJMax; j += exRate){
-		m_vtkGrid->GetPoint(vertexIndex(0, j), tmpp);
-		igPoints->InsertNextPoint(tmpp);
-		ca->InsertNextCell(1, &cellid);
-		sa->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1)));
-		++ cellid;
-	}
-	m_vtkFilteredIndexGrid->SetPoints(igPoints);
-	m_vtkFilteredIndexGrid->SetVerts(ca);
-	m_vtkFilteredIndexGrid->GetPointData()->AddArray(sa);
-	*/
 }
 
 vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const

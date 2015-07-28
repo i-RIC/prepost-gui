@@ -8,6 +8,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
+#include <QSettings>
 
 #include <vtkGeometryFilter.h>
 #include <vtkMaskPoints.h>
@@ -73,6 +74,14 @@ int Grid::zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9])
 		}
 	}
 	return 0;
+}
+
+void Grid::getCullSetting(bool* enable, int* cellLimit, int* indexLimit)
+{
+	QSettings settings;
+	*enable = settings.value("general/cullcellenable", true).toBool();
+	*cellLimit = settings.value("general/cullcelllimit", Grid::MAX_DRAWCELLCOUNT).toInt();
+	*indexLimit = settings.value("general/cullindexlimit", Grid::MAX_DRAWINDEXCOUNT).toInt();
 }
 
 void Grid::loadFromCgnsFile(const int fn)
@@ -173,9 +182,13 @@ void Grid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ym
 	vtkSmartPointer<vtkPolyData> clippedGrid = gfilter->GetOutput();
 
 	int ccounts = clippedGrid->GetNumberOfCells();
-	if (ccounts > MAX_DRAWCELLCOUNT) {
+	bool cullEnable;
+	int cullCellLimit, cullIndexLimit;
+	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
+
+	if (cullEnable && ccounts > cullCellLimit){
 		vtkSmartPointer<vtkMaskPolyData> maskPoly = vtkSmartPointer<vtkMaskPolyData>::New();
-		int ratio = static_cast<int>(ccounts / MAX_DRAWCELLCOUNT);
+		int ratio = static_cast<int>(ccounts / cullCellLimit);
 		if (ratio == 1) {ratio = 2;}
 		maskPoly->SetOnRatio(ratio);
 		maskPoly->SetInputConnection(gfilter->GetOutputPort());

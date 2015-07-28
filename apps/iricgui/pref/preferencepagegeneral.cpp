@@ -3,6 +3,7 @@
 #include "preferencepagegeneral.h"
 
 #include <guicore/project/projectworkspace.h>
+#include <guicore/pre/grid/grid.h>
 #include <misc/stringtool.h>
 #include <misc/iricundostack.h>
 
@@ -30,6 +31,13 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	ui->workDirWidget->setDirname(workspace);
 	bool copyFolderProject = settings.value("general/copyfolderproject", true).toBool();
 	ui->folderCopyCheckBox->setChecked(copyFolderProject);
+
+	bool cullEnable = settings.value("general/cullcellenable", true).toBool();
+	int cullCellLimit = settings.value("general/cullcelllimit", Grid::MAX_DRAWCELLCOUNT).toInt();
+	int cullIndexLimit = settings.value("general/cullindexlimit", Grid::MAX_DRAWINDEXCOUNT).toInt();
+	ui->cullEnableCheckBox->setChecked(cullEnable);
+	ui->cullMaxNumberSpinBox->setValue(cullCellLimit);
+	ui->cullMaxIndexSpinBox->setValue(cullIndexLimit);
 
 	int undoLimit = settings.value("general/undolimit", iRICUndoStack::DEFAULT_UNDOLIMIT).toInt();
 	ui->undoLimitSpinBox->setValue(undoLimit);
@@ -64,6 +72,9 @@ void PreferencePageGeneral::update()
 	settings.setValue("general/locale", loc.name());
 	settings.setValue("general/workspace", ui->workDirWidget->dirname());
 	settings.setValue("general/copyfolderproject", ui->folderCopyCheckBox->isChecked());
+	settings.setValue("general/cullcellenable", ui->cullEnableCheckBox->isChecked());
+	settings.setValue("general/cullcelllimit", ui->cullMaxNumberSpinBox->value());
+	settings.setValue("general/cullindexlimit", ui->cullMaxIndexSpinBox->value());
 	int undoLimit = ui->undoLimitSpinBox->value();
 	settings.setValue("general/undolimit", undoLimit);
 	iRICUndoStack::instance().setUndoLimit(undoLimit);
