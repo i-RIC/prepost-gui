@@ -194,7 +194,7 @@ void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
 	writer.writeAttribute("regionIMin", QString::number(m_range.iMin));
 	writer.writeAttribute("regionIMax", QString::number(m_range.iMax));
-	writer.writeAttribute("regionJMin", QString::number(m_range.iMin));
+	writer.writeAttribute("regionJMin", QString::number(m_range.jMin));
 	writer.writeAttribute("regionJMax", QString::number(m_range.jMax));
 
 	m_scalarbarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
