@@ -11,7 +11,7 @@ class vtkDataWriter;
 class PostZoneDataVtkExporter : public PostZoneDataExporter
 {
 public:
-	enum Mode {ASCII, BINARY};
+	enum class Mode {ASCII, BINARY};
 	PostZoneDataVtkExporter(const QString& workDir);
 	PostZoneDataVtkExporter(const QString& workDir, Mode mode);
 	~PostZoneDataVtkExporter() {}

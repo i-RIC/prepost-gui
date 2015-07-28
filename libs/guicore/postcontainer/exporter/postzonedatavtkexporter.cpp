@@ -12,7 +12,7 @@
 #include <vtkUnstructuredGridWriter.h>
 
 PostZoneDataVtkExporter::PostZoneDataVtkExporter(const QString& workDir) :
-	PostZoneDataVtkExporter {workDir, ASCII}
+	PostZoneDataVtkExporter {workDir, Mode::ASCII}
 {}
 
 PostZoneDataVtkExporter::PostZoneDataVtkExporter(const QString &workDir, Mode mode) :
@@ -82,9 +82,9 @@ void PostZoneDataVtkExporter::setupWriter(vtkDataWriter *writer, const char* fil
 	QString header("iRIC output t = %1");
 	writer->SetHeader(iRIC::toStr(header.arg(time)).c_str());
 	writer->SetFileName(filename);
-	if (m_mode == ASCII) {
+	if (m_mode == Mode::ASCII) {
 		writer->SetFileTypeToASCII();
-	} else if (m_mode == BINARY) {
+	} else if (m_mode == Mode::BINARY) {
 		writer->SetFileTypeToBinary();
 	}
 }

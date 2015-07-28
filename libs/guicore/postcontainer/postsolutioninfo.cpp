@@ -735,9 +735,9 @@ void PostSolutionInfo::exportCalculationResult()
 
 	std::unique_ptr<PostZoneDataExporter> exporter;
 	if (m_exportFormat == PostDataExportDialog::Format::VTKASCII) {
-		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter {projectData()->workDirectory(), PostZoneDataVtkExporter::ASCII}};
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter{ projectData()->workDirectory(), PostZoneDataVtkExporter::Mode::ASCII }};
 	} else if (m_exportFormat == PostDataExportDialog::Format::VTKBinary) {
-		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter {projectData()->workDirectory(), PostZoneDataVtkExporter::BINARY}};
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter{ projectData()->workDirectory(), PostZoneDataVtkExporter::Mode::BINARY }};
 	} else if (m_exportFormat == PostDataExportDialog::Format::CSV) {
 		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataCsvExporter {}};
 	}
