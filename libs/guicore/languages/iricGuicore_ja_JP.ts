@@ -1328,123 +1328,132 @@ Do you really want to import this file?</source>
         <translation>形式:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="30"/>
         <source>VTK files</source>
-        <translation>VTKファイル</translation>
+        <translation type="vanished">VTKファイル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="35"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="40"/>
         <source>CSV files</source>
         <translation>CSVファイル</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="58"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="63"/>
         <source>Output folder:</source>
         <translation>出力フォルダ:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="94"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="99"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="113"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="118"/>
         <source>Output file:</source>
         <translation>出力ファイル:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="123"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="128"/>
         <source>Time</source>
         <translation>時刻</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="129"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="134"/>
         <source>All timesteps</source>
         <translation>全タイムステップ</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="138"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="143"/>
         <source>Start:</source>
         <translation>開始:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="155"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="160"/>
         <source>End:</source>
         <translation>終了:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="172"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="177"/>
         <source>Skip rate :</source>
         <translation>間引き:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="103"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="108"/>
         <source>Prefix:</source>
         <translation>プレフィックス:</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="211"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="30"/>
+        <source>VTK files (ASCII)</source>
+        <translation>VTK ファイル (ASCII)</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="35"/>
+        <source>VTK files (Binary)</source>
+        <translation>VTK ファイル (バイナリ)</translation>
+    </message>
+    <message>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="216"/>
         <source>Region</source>
         <translation>領域</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="217"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="222"/>
         <source>Full region</source>
         <translation>全領域</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="224"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="229"/>
         <source>I Min</source>
         <translation>I 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="247"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="252"/>
         <source>I Max</source>
         <translation>I 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="270"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="275"/>
         <source>J Min</source>
         <translation>J 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="293"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="298"/>
         <source>J Max</source>
         <translation>J 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="316"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="321"/>
         <source>K Min</source>
         <translation>K 最小</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="339"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="344"/>
         <source>K Max</source>
         <translation>K 最大</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.ui" line="380"/>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="306"/>
+        <location filename="../postcontainer/postdataexportdialog.ui" line="385"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="314"/>
         <source>Show &amp;Detail</source>
         <translation>詳細を表示(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="282"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="290"/>
         <source>Select Folder</source>
         <translation>フォルダの選択</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="292"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="300"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="292"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="300"/>
         <source>Folder %1 does not exists.</source>
         <translation>フォルダ %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postdataexportdialog.cpp" line="304"/>
+        <location filename="../postcontainer/postdataexportdialog.cpp" line="312"/>
         <source>&amp;Hide Detail</source>
         <translation>詳細を隠す(&amp;H)</translation>
     </message>
@@ -1465,46 +1474,46 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="128"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="390"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="664"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="131"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="393"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="667"/>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="759"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="128"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="390"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="131"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="393"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="630"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="633"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="630"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="633"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="664"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="667"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="722"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="716"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="724"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="720"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="726"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="723"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
@@ -1629,10 +1638,10 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="416"/>
         <location filename="../project/projectmainfile.cpp" line="445"/>
         <location filename="../project/projectmainfile.cpp" line="476"/>
-        <location filename="../project/projectmainfile.cpp" line="927"/>
-        <location filename="../project/projectmainfile.cpp" line="974"/>
-        <location filename="../project/projectmainfile.cpp" line="994"/>
-        <location filename="../project/projectmainfile.cpp" line="1001"/>
+        <location filename="../project/projectmainfile.cpp" line="929"/>
+        <location filename="../project/projectmainfile.cpp" line="976"/>
+        <location filename="../project/projectmainfile.cpp" line="996"/>
+        <location filename="../project/projectmainfile.cpp" line="1003"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1661,12 +1670,12 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="524"/>
         <location filename="../project/projectmainfile.cpp" line="611"/>
         <location filename="../project/projectmainfile.cpp" line="618"/>
-        <location filename="../project/projectmainfile.cpp" line="626"/>
-        <location filename="../project/projectmainfile.cpp" line="637"/>
-        <location filename="../project/projectmainfile.cpp" line="640"/>
-        <location filename="../project/projectmainfile.cpp" line="833"/>
-        <location filename="../project/projectmainfile.cpp" line="838"/>
-        <location filename="../project/projectmainfile.cpp" line="983"/>
+        <location filename="../project/projectmainfile.cpp" line="628"/>
+        <location filename="../project/projectmainfile.cpp" line="639"/>
+        <location filename="../project/projectmainfile.cpp" line="642"/>
+        <location filename="../project/projectmainfile.cpp" line="835"/>
+        <location filename="../project/projectmainfile.cpp" line="840"/>
+        <location filename="../project/projectmainfile.cpp" line="985"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -1716,57 +1725,57 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="618"/>
-        <location filename="../project/projectmainfile.cpp" line="626"/>
+        <location filename="../project/projectmainfile.cpp" line="628"/>
         <source>The background image was not added. Please try again.</source>
         <translation>背景画像は追加されませんでした。もう一度試してみてください。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="640"/>
+        <location filename="../project/projectmainfile.cpp" line="642"/>
         <source>Invalid image file is specified.</source>
         <translation>不正な画像ファイルが指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="807"/>
+        <location filename="../project/projectmainfile.cpp" line="809"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="809"/>
+        <location filename="../project/projectmainfile.cpp" line="811"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="837"/>
+        <location filename="../project/projectmainfile.cpp" line="839"/>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="914"/>
+        <location filename="../project/projectmainfile.cpp" line="916"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="915"/>
+        <location filename="../project/projectmainfile.cpp" line="917"/>
         <source>Open Measured Data File</source>
         <translation>実測値データファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="974"/>
+        <location filename="../project/projectmainfile.cpp" line="976"/>
         <source>Error occured while loading %1.</source>
         <translation>%1 の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="983"/>
+        <location filename="../project/projectmainfile.cpp" line="985"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation>このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="994"/>
+        <location filename="../project/projectmainfile.cpp" line="996"/>
         <source>There is no visualization/graph windows.</source>
         <translation>可視化・グラフウィンドウがありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="1001"/>
+        <location filename="../project/projectmainfile.cpp" line="1003"/>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>

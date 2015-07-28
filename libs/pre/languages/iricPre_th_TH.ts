@@ -675,6 +675,29 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGeoDataDataItem</name>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="39"/>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <source>Failure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="136"/>
+        <source>Select File to Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="76"/>
@@ -1669,29 +1692,6 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <location filename="../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp" line="24"/>
         <source>Display &amp;Cross Section</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PreProcessorRawdataDataItem</name>
-    <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="39"/>
-        <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
-        <source>Failure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
-        <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="136"/>
-        <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

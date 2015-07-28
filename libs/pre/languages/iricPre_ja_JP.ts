@@ -677,6 +677,29 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGeoDataDataItem</name>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="39"/>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <source>Failure</source>
+        <translation>失敗</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
+        <translation>この名前を使うことはできません。同じ名前の地理情報が既に存在します。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="136"/>
+        <source>Select File to Export</source>
+        <translation>エクスポートするファイルの選択</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="76"/>
@@ -1938,24 +1961,20 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorRawdataDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="39"/>
         <source>&amp;Export...</source>
-        <translation>エクスポート(&amp;E)...</translation>
+        <translation type="vanished">エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
         <source>Failure</source>
-        <translation>失敗</translation>
+        <translation type="vanished">失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
-        <translation>この名前を使うことはできません。同じ名前の地理情報が既に存在します。</translation>
+        <translation type="vanished">この名前を使うことはできません。同じ名前の地理情報が既に存在します。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="136"/>
         <source>Select File to Export</source>
-        <translation>エクスポートするファイル名の選択</translation>
+        <translation type="vanished">エクスポートするファイル名の選択</translation>
     </message>
 </context>
 <context>

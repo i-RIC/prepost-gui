@@ -175,6 +175,19 @@
     </message>
 </context>
 <context>
+    <name>CoordinateEditWidget</name>
+    <message>
+        <location filename="../coordinateeditwidget.cpp" line="47"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../coordinateeditwidget.cpp" line="47"/>
+        <source>It is not a real value</source>
+        <translation>これは実数値ではありません</translation>
+    </message>
+</context>
+<context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <location filename="../coordinatesystemselectdialog.ui" line="14"/>
