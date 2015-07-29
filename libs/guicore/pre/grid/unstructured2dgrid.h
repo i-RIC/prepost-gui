@@ -23,7 +23,7 @@ public:
 	const QVector2D vertex(unsigned int index) const override;
 	void setVertex(unsigned int index, const QVector2D& v) override;
 	bool loadFromCgnsFile(const int fn, int B, int Z) override;
-	bool saveToCgnsFile(const int fn, int B, char* zonename) override;
+	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;
 	unsigned int cellCount() const override {
 		return m_vtkGrid->GetNumberOfCells();
 	}

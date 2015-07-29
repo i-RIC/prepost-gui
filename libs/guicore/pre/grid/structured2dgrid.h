@@ -70,7 +70,7 @@ public:
 	void setVertex(unsigned int i, unsigned int j, const QVector2D& v) {setVertex(vertexIndex(i, j), v);}
 	void setVertex(unsigned int index, const QVector2D& v) override;
 	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;
-	bool saveToCgnsFile(const int fn, int base, char* zonename) override;
+	bool saveToCgnsFile(const int fn, int base, const char* zonename) override;
 	/// getDimension of this grid.
 	void dimensions(unsigned int* i, unsigned int* j);
 	unsigned int dimensionI() const {return m_dimensionI;}

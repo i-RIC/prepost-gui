@@ -121,7 +121,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	return true;
 }
 
-bool Structured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
+bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
 {
 	int ier;
 	cgsize_t sizes[9];

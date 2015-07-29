@@ -6,6 +6,8 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/stringtool.h>
 
+#include <string>
+
 #include <cgnslib.h>
 #include <iriclib.h>
 
@@ -35,7 +37,9 @@ bool CgnsGridExporter::doExport(Grid* grid, const QString& filename, const QStri
 	if (! ret) {return false;}
 
 	// write to the iRICZone.
-	ret = grid->saveToCgnsFile(fn, B, "iRICZone");
+	std::string zoneName{"iRICZone"};
+
+	ret = grid->saveToCgnsFile(fn, B, zoneName.c_str());
 
 	ret = closeAndMoveCgns(tmpname, fn, filename);
 	return ret;

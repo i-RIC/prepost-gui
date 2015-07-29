@@ -131,7 +131,7 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 	return true;
 }
 
-bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, char* zonename)
+bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
 {
 	int ier;
 	cgsize_t sizes[9];

@@ -123,7 +123,7 @@ bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, in
 	return true;
 }
 
-bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, char* zonename)
+bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, const char* zonename)
 {
 	int ier;
 	cgsize_t sizes[9];

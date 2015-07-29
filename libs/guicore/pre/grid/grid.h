@@ -42,7 +42,7 @@ public:
 	void loadFromCgnsFile(const int fn) override;
 	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
 	virtual void saveToCgnsFile(const int fn) override;
-	virtual bool saveToCgnsFile(const int fn, int base, char* zonename) = 0;
+	virtual bool saveToCgnsFile(const int fn, int base, const char* zonename) = 0;
 	/// The pointer to VTK container that holds the data in deed.
 	vtkPointSet* vtkGrid() const {return m_vtkGrid;}
 
