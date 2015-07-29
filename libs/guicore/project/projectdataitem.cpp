@@ -181,21 +181,20 @@ void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 	double position[3];
 	double focalpoint[3];
 
-	QDomElement elem = node.toElement();
-	position[0] = elem.attribute("positionX").toDouble();
-	position[1] = elem.attribute("positionY").toDouble();
-	position[2] = elem.attribute("positionZ").toDouble();
+	position[0] = iRIC::getDoubleAttribute(node, "positionX");
+	position[1] = iRIC::getDoubleAttribute(node, "positionY");
+	position[2] = iRIC::getDoubleAttribute(node, "positionZ", 200);
 
 	camera->SetPosition(position);
 
-	focalpoint[0] = elem.attribute("focalpointX").toDouble();
-	focalpoint[1] = elem.attribute("focalpointY").toDouble();
-	focalpoint[2] = elem.attribute("focalpointZ").toDouble();
+	focalpoint[0] = iRIC::getDoubleAttribute(node, "focalpointX");
+	focalpoint[1] = iRIC::getDoubleAttribute(node, "focalpointY");
+	focalpoint[2] = iRIC::getDoubleAttribute(node, "focalpointZ");
 
 	camera->SetFocalPoint(focalpoint);
 
-	camera->SetRoll(elem.attribute("roll").toDouble());
-	camera->SetParallelScale(elem.attribute("parallelscale").toDouble());
+	camera->SetRoll(iRIC::getDoubleAttribute(node, "roll"));
+	camera->SetParallelScale(iRIC::getDoubleAttribute(node, "parallelscale", 1));
 }
 
 void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
@@ -206,16 +205,16 @@ void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
 	camera->GetPosition(position);
 	camera->GetFocalPoint(focalpoint);
 
-	writer.writeAttribute("positionX", QString::number(position[0]));
-	writer.writeAttribute("positionY", QString::number(position[1]));
-	writer.writeAttribute("positionZ", QString::number(position[2]));
+	iRIC::setDoubleAttribute(writer, "positionX", position[0]);
+	iRIC::setDoubleAttribute(writer, "positionY", position[1]);
+	iRIC::setDoubleAttribute(writer, "positionZ", position[2]);
 
-	writer.writeAttribute("focalpointX", QString::number(focalpoint[0]));
-	writer.writeAttribute("focalpointY", QString::number(focalpoint[1]));
-	writer.writeAttribute("focalpointZ", QString::number(focalpoint[2]));
+	iRIC::setDoubleAttribute(writer, "focalpointX", focalpoint[0]);
+	iRIC::setDoubleAttribute(writer, "focalpointY", focalpoint[1]);
+	iRIC::setDoubleAttribute(writer, "focalpointZ", focalpoint[2]);
 
-	writer.writeAttribute("roll", QString::number(camera->GetRoll()));
-	writer.writeAttribute("parallelscale", QString::number(camera->GetParallelScale()));
+	iRIC::setDoubleAttribute(writer, "roll", camera->GetRoll());
+	iRIC::setDoubleAttribute(writer, "parallelscale", camera->GetParallelScale());
 }
 
 void ProjectDataItem::loadExternalData()

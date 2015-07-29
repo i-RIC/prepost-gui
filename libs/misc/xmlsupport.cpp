@@ -6,6 +6,8 @@
 #include <QString>
 #include <QXmlStreamWriter>
 
+#include <cmath>
+
 /// Get the first child node that has the name nodeName.
 QDomNode iRIC::getChildNode(const QDomNode& parent, const QString& nodeName)
 {
@@ -78,7 +80,10 @@ int iRIC::getIntAttribute(const QDomNode& node, const QString& name, int default
 {
 	QString val = node.toElement().attribute(name);
 	if (val == "") {return defaultVal;}
-	return val.toInt();
+	bool ok;
+	double intVal = val.toInt(&ok);
+	if (! ok || std::isnan(intVal)) {intVal = defaultVal;}
+	return intVal;
 }
 
 void iRIC::setIntAttribute(QXmlStreamWriter& writer, const QString& name, int value)
@@ -90,7 +95,10 @@ double iRIC::getDoubleAttribute(const QDomNode& node, const QString& name, doubl
 {
 	QString val = node.toElement().attribute(name);
 	if (val == "") {return defaultVal;}
-	return val.toDouble();
+	bool ok;
+	double doubleVal = val.toDouble(&ok);
+	if (! ok || std::isnan(doubleVal)) {doubleVal = defaultVal;}
+	return doubleVal;
 }
 
 void iRIC::setDoubleAttribute(QXmlStreamWriter& writer, const QString& name, double value)
