@@ -122,7 +122,7 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 	buffer.assign(dimVec[0] + 1, 0);
 	ret = cg_array_read(2, buffer.data());
 	if (ret != 0) {return false;}
-	VersionNumber v = buffer.data();
+	VersionNumber v = VersionNumber {buffer.data()};
 	if (version != v) {
 		return false;
 	}
