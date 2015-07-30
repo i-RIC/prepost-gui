@@ -1,5 +1,4 @@
 #include "ui_preprocessorgridattributecelldisplaysettingdialog.h"
-
 #include "preprocessorgridattributecelldisplaysettingdialog.h"
 
 #include <guibase/coloreditwidget.h>
