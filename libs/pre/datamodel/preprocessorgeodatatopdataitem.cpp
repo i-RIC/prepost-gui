@@ -38,7 +38,7 @@
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent)
 	: PreProcessorGeoDataTopDataItemInterface(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
-	m_subFolder = "geographicdata";
+	setSubPath("geographicdata");
 
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);

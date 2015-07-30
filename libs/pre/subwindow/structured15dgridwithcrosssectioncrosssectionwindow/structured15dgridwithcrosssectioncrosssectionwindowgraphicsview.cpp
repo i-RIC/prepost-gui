@@ -7,6 +7,8 @@
 #include <QMouseEvent>
 #include <QPainter>
 
+#include <misc/mathsupport.h>
+
 #include <cmath>
 
 Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView(QWidget* w)
@@ -455,7 +457,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView::mouseRelea
 	switch (m_mouseEventMode) {
 	case meNormal:
 		if (event->button() == Qt::RightButton) {
-			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())) {
+			if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
 				m_rightClickingMenu->move(event->globalPos());

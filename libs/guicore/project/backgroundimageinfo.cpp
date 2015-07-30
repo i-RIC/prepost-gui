@@ -39,6 +39,7 @@
 #include <QSettings>
 #include <QMouseEvent>
 #include <QDomElement>
+#include <QXmlStreamWriter>
 
 const int BackgroundImageInfo::MAXWIDTH = 2048;
 

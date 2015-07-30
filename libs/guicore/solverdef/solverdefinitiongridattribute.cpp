@@ -14,14 +14,43 @@
 
 #include <QSettings>
 
-SolverDefinitionGridAttribute::~SolverDefinitionGridAttribute()
+class SolverDefinitionGridAttribute::Impl
+{
+public:
+	/// Constructor
+	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* parent);
+	/// Destructor
+	~Impl();
+
+	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
+
+	QString m_name;
+	QString m_caption;
+	QString m_englishCaption;
+	bool m_isOption {false};
+	QVariant m_variantDefaultValue;
+	QVariant m_variantMaximumValue;
+	QVariant m_variantMinimumValue;
+	Position m_position {Node};
+	QList<SolverDefinitionGridAttributeDimension*> m_dimensions;
+
+	SolverDefinitionGridAttribute* m_parent;
+};
+
+SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute *parent) :
+	m_parent {parent}
+{
+	load(node, translator);
+}
+
+SolverDefinitionGridAttribute::Impl::~Impl()
 {
 	for (SolverDefinitionGridAttributeDimension* dim : m_dimensions) {
 		delete dim;
 	}
 }
 
-void SolverDefinitionGridAttribute::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridAttribute::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
 {
 	m_name = node.attribute("name");
 	m_englishCaption = node.attribute("caption");
@@ -37,11 +66,76 @@ void SolverDefinitionGridAttribute::load(const QDomElement& node, const SolverDe
 			QDomNode childNode = children.at(i);
 			if (childNode.nodeName() == "Dimension") {
 				// add dimension
-				SolverDefinitionGridAttributeDimension* dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), translator, this);
+				SolverDefinitionGridAttributeDimension* dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), translator, m_parent);
 				m_dimensions.append(dim);
 			}
 		}
 	}
+}
+
+// Public interfaces
+
+SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
+	SolverDefinitionNode {node, translator},
+	m_impl {new Impl {node, translator, this}}
+{
+	m_impl->m_position = pos;
+	m_impl->m_isOption = isOption;
+}
+
+SolverDefinitionGridAttribute::~SolverDefinitionGridAttribute()
+{
+	delete m_impl;
+}
+
+const QString& SolverDefinitionGridAttribute::name() const
+{
+	return m_impl->m_name;
+}
+
+const QString& SolverDefinitionGridAttribute::englishCaption() const
+{
+	return m_impl->m_englishCaption;
+}
+
+const QString& SolverDefinitionGridAttribute::caption() const
+{
+	return m_impl->m_caption;
+}
+
+const QVariant& SolverDefinitionGridAttribute::variantDefaultValue() const
+{
+	return m_impl->m_variantDefaultValue;
+}
+
+const QVariant& SolverDefinitionGridAttribute::variantMaximumValue() const
+{
+	return m_impl->m_variantMaximumValue;
+}
+
+const QVariant& SolverDefinitionGridAttribute::variantMinimumValue() const
+{
+	return m_impl->m_variantMinimumValue;
+}
+
+SolverDefinitionGridAttribute::Position SolverDefinitionGridAttribute::position() const
+{
+	return m_impl->m_position;
+}
+
+bool SolverDefinitionGridAttribute::isOption() const
+{
+	return m_impl->m_isOption;
+}
+
+const QList<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const
+{
+	return m_impl->m_dimensions;
+}
+
+QList<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions()
+{
+	return m_impl->m_dimensions;
 }
 
 GridAttributeContainer* SolverDefinitionGridAttribute::container(Grid* grid)
@@ -52,7 +146,7 @@ GridAttributeContainer* SolverDefinitionGridAttribute::container(Grid* grid)
 GridAttributeEditDialog* SolverDefinitionGridAttribute::editDialog(QWidget* parent)
 {
 	GridAttributeEditDialog* dialog = new GridAttributeEditDialog(parent);
-	GridAttributeEditWidget* widget = editWidget(0);
+	GridAttributeEditWidget* widget = editWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
 }
@@ -60,22 +154,12 @@ GridAttributeEditDialog* SolverDefinitionGridAttribute::editDialog(QWidget* pare
 GridAttributeVariationEditDialog* SolverDefinitionGridAttribute::variationEditDialog(QWidget* parent)
 {
 	GridAttributeVariationEditDialog* dialog = new GridAttributeVariationEditDialog(parent);
-	GridAttributeVariationEditWidget* widget = variationEditWidget(0);
+	GridAttributeVariationEditWidget* widget = variationEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
 }
 
 ScalarsToColorsContainer* SolverDefinitionGridAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
-{
-	return createLookupTableContainer(d);
-}
-
-ColorTransferFunctionContainer* SolverDefinitionGridAttribute::createColorTransferFunctionContainer(ProjectDataItem* d)
-{
-	return new ColorTransferFunctionContainer(d);
-}
-
-LookupTableContainer* SolverDefinitionGridAttribute::createLookupTableContainer(ProjectDataItem* d)
 {
 	LookupTableContainer* container = new LookupTableContainer(d);
 	QSettings setting;
@@ -85,7 +169,12 @@ LookupTableContainer* SolverDefinitionGridAttribute::createLookupTableContainer(
 	return container;
 }
 
-ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsEditDialog(QWidget* parent)
+ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createScalarsToColorsEditWidget(QWidget* parent) const
+{
+	return createLookupTableEditWidget(parent);
+}
+
+ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsEditDialog(QWidget* parent) const
 {
 	ScalarsToColorsEditDialog* dialog = new ScalarsToColorsEditDialog(parent);
 	ScalarsToColorsEditWidget* widget = createScalarsToColorsEditWidget(dialog);
@@ -93,17 +182,32 @@ ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsE
 	return dialog;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createScalarsToColorsEditWidget(QWidget* parent)
+void SolverDefinitionGridAttribute::setPosition(Position pos)
 {
-	return createLookupTableEditWidget(parent);
+	m_impl->m_position = pos;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createColorTransferFunctionEditWidget(QWidget* parent)
+ColorTransferFunctionContainer* SolverDefinitionGridAttribute::createColorTransferFunctionContainer(ProjectDataItem* d)
+{
+	return new ColorTransferFunctionContainer(d);
+}
+
+LookupTableContainer* SolverDefinitionGridAttribute::createLookupTableContainer(ProjectDataItem* d) const
+{
+	LookupTableContainer* container = new LookupTableContainer(d);
+	QSettings setting;
+	int cm = setting.value("graphics/colormap", static_cast<int>(ColorMapSettingWidget::Rainbow)).value<int>();
+	ColorMapSettingWidget::ColorMap cmVal = static_cast<ColorMapSettingWidget::ColorMap>(cm);
+	container->setColorMap(cmVal);
+	return container;
+}
+
+ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createColorTransferFunctionEditWidget(QWidget* parent) const
 {
 	return new ColorTransferFunctionEditWidget(parent);
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createLookupTableEditWidget(QWidget* parent)
+ScalarsToColorsEditWidget* SolverDefinitionGridAttribute::createLookupTableEditWidget(QWidget* parent) const
 {
 	LookupTableEditWidget* widget = new LookupTableEditWidget(parent);
 	widget->hideFillSettings();

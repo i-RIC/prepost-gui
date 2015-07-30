@@ -12,6 +12,7 @@
 #include <misc/versionnumber.h>
 
 #include <QMenu>
+#include <QXmlStreamWriter>
 
 #include <iriclib.h>
 
@@ -23,7 +24,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 	m_standardItem->setCheckState(Qt::Checked);
 
 	m_standardItemCopy = m_standardItem->clone();
-	m_subFolder = "bc";
+	setSubPath("bc");
 
 	m_colorSource = new ColorSource(this);
 

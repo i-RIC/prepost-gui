@@ -117,7 +117,7 @@ protected:
 	void setColor(const QColor& color);
 	void setColor(double r, double g, double b);
 	void updateFilename() override {
-		m_filename = "gridcreatingcondition.dat";
+		setFilename("gridcreatingcondition.dat");
 	}
 	void doApplyOffset(double x, double y) override;
 

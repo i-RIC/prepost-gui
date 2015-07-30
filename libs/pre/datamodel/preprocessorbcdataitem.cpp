@@ -103,7 +103,7 @@ void PreProcessorBCDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	m_isCustomModified = iRIC::getBooleanAttribute(node, "isCustomModified");
 	m_mapped = iRIC::getBooleanAttribute(node, "isMapped", true);
 	m_hideSetting = iRIC::getBooleanAttribute(node, "settingHidden", false);
-	m_filename = QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber);
+	setFilename(QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber));
 }
 
 void PreProcessorBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -114,7 +114,7 @@ void PreProcessorBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	iRIC::setBooleanAttribute(writer, "isCustomModified", m_isCustomModified);
 	iRIC::setBooleanAttribute(writer, "isMapped", m_mapped);
 	iRIC::setBooleanAttribute(writer, "settingHidden", m_hideSetting);
-	m_filename = QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber);
+	setFilename(QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber));
 }
 
 void PreProcessorBCDataItem::loadExternalData(const QString& filename)

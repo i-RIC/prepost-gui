@@ -10,18 +10,23 @@ class GUICOREDLL_EXPORT DistanceMeasureGroupDataItem : public GraphicsWindowData
 	Q_OBJECT
 
 public:
+	/// Constructor
 	DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent);
-	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
+	/// Destructor
+	~DistanceMeasureGroupDataItem();
+
+	void updateZDepthRangeItemCount() override;
 	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:
 	void addMeasure();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+private:
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 
-	QAction* m_addAction;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // DISTANCEMEASUREGROUPDATAITEM_H

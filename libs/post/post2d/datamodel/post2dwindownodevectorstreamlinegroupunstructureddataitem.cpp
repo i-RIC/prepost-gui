@@ -15,6 +15,7 @@
 #include <QMouseEvent>
 #include <QSettings>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 #include <vtkProperty.h>
 #include <vtkRenderer.h>

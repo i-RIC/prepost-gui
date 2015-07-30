@@ -9,6 +9,7 @@
 #include <QIcon>
 #include <QStandardItem>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
 #include <vtkRenderer.h>

@@ -4,6 +4,7 @@
 #include "solverconsole_global.h"
 #include <guicore/project/projectdataitem.h>
 #include <QFile>
+#include <QStringList>
 
 class ProjectData;
 class SolverConsoleWindow;

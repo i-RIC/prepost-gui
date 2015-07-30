@@ -47,10 +47,10 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_caption = caption;
 	QDir workdir(projectData()->workDirectory());
 
-	m_subFolder = "gridandgridcreatingconditiondataitem";
+	setSubPath("gridandgridcreatingconditiondataitem");
 	QDir subdir1(workdir.absoluteFilePath(relativeSubPath()));
 
-	m_subFolder = m_zoneName;
+	setSubPath(m_zoneName);
 	QDir subdir2(workdir.absoluteFilePath(relativeSubPath()));
 
 	if (subdir1.exists()) {

@@ -19,6 +19,8 @@
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
+#include <QDir>
+#include <QFile>
 #include <QMessageBox>
 #include <QProgressDialog>
 #include <QThread>

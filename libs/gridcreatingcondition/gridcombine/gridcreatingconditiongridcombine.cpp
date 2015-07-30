@@ -9,6 +9,7 @@
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <misc/stringtool.h>
+#include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
@@ -513,7 +514,7 @@ void GridCreatingConditionGridCombine::mousePressEvent(QMouseEvent* event, PrePr
 void GridCreatingConditionGridCombine::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

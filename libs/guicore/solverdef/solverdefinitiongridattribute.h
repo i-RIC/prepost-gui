@@ -8,8 +8,8 @@
 #include <QList>
 
 class QString;
-class QDialog;
 class QWidget;
+class ColorTransferFunctionContainer;
 class Grid;
 class GridAttributeContainer;
 class GridAttributeEditWidget;
@@ -17,10 +17,9 @@ class GridAttributeEditDialog;
 class GridAttributeVariationEditWidget;
 class GridAttributeVariationEditDialog;
 class GeoData;
+class LookupTableContainer;
 class ProjectDataItem;
 class ScalarsToColorsContainer;
-class ColorTransferFunctionContainer;
-class LookupTableContainer;
 class ScalarsToColorsEditDialog;
 class ScalarsToColorsEditWidget;
 class SolverDefinitionGridAttributeDimension;
@@ -34,51 +33,49 @@ public:
 		CellCenter      ///< Cell center
 	};
 	/// Constructor
-	SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionNode(node, translator) {
-		m_position = Node;
-		m_isOption = false;
-		load(node, translator);
-	}
+	SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption);
 	virtual ~SolverDefinitionGridAttribute();
-	const QString& name() const {return m_name;}
-	const QString& englishCaption() const {return m_englishCaption;}
-	const QString& caption() const {return m_caption;}
-	const QVariant& variantDefaultValue() const {return m_variantDefaultValue;}
-	const QVariant& variantMaximumValue() const {return m_variantMaximumValue;}
-	const QVariant& variantMinimumValue() const {return m_variantMinimumValue;}
-	Position position() const {return m_position;}
-	bool isOption() const {return m_isOption;}
-	const QList<SolverDefinitionGridAttributeDimension*>& dimensions() const {return m_dimensions;}
-	QList<SolverDefinitionGridAttributeDimension*>& dimensions() {return m_dimensions;}
 
+	/// @name Properties
+	//@{
+	const QString& name() const;
+	const QString& englishCaption() const;
+	const QString& caption() const;
+	const QVariant& variantDefaultValue() const;
+	const QVariant& variantMaximumValue() const;
+	const QVariant& variantMinimumValue() const;
+	Position position() const;
+	bool isOption() const;
+
+	const QList<SolverDefinitionGridAttributeDimension*>& dimensions() const;
+	QList<SolverDefinitionGridAttributeDimension*>& dimensions();
+	//@}
+
+	/// @name Interface building functions
+	//@{
 	GridAttributeContainer* container(Grid* grid);
 	GridAttributeEditDialog* editDialog(QWidget* parent);
-	GridAttributeVariationEditDialog* variationEditDialog(QWidget* parent);
 	virtual GridAttributeEditWidget* editWidget(QWidget* parent) = 0;
+	GridAttributeVariationEditDialog* variationEditDialog(QWidget* parent);
 	virtual GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) = 0;
 	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
 	virtual ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d);
-	virtual ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent);
-	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent);
-
+	virtual ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const;
+	ScalarsToColorsEditDialog* createScalarsToColorsEditDialog(QWidget* parent) const;
+	//@}
 protected:
+	void setPosition(Position pos);
+
 	ColorTransferFunctionContainer* createColorTransferFunctionContainer(ProjectDataItem* d);
-	LookupTableContainer* createLookupTableContainer(ProjectDataItem* d);
-	ScalarsToColorsEditWidget* createColorTransferFunctionEditWidget(QWidget* parent);
-	ScalarsToColorsEditWidget* createLookupTableEditWidget(QWidget* parent);
+	LookupTableContainer* createLookupTableContainer(ProjectDataItem* d) const;
+	ScalarsToColorsEditWidget* createColorTransferFunctionEditWidget(QWidget* parent) const;
+	ScalarsToColorsEditWidget* createLookupTableEditWidget(QWidget* parent) const;
+
+private:
 	virtual GridAttributeContainer* buildContainer(Grid* grid) = 0;
-	/// Load settings from solver definition file.
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
-	QString m_name;
-	QString m_caption;
-	QString m_englishCaption;
-	bool m_isOption;
-	QVariant m_variantDefaultValue;
-	QVariant m_variantMaximumValue;
-	QVariant m_variantMinimumValue;
-	Position m_position;
-	QList<SolverDefinitionGridAttributeDimension*> m_dimensions;
+
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONGRIDRELATEDCONDITION_H

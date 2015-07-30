@@ -11,6 +11,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <QFile>
+#include <QStringList>
+
 CgnsGridExporter::CgnsGridExporter()
 	: GridInternalExporter()
 {

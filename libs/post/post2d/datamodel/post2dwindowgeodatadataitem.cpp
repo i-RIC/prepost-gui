@@ -3,6 +3,8 @@
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
 
+#include <QXmlStreamWriter>
+
 Post2dWindowGeoDataDataItem::Post2dWindowGeoDataDataItem(GraphicsWindowDataItem* parent)
 	: GeoDataProxyDataItem(parent)
 {

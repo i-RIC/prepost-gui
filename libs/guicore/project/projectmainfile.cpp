@@ -455,7 +455,7 @@ void ProjectMainFile::exportCurrentCgnsFile()
 	LastIODirectory::set(finfo.absolutePath());
 }
 
-const QString ProjectMainFile::currentCgnsFileName() const
+QString ProjectMainFile::currentCgnsFileName() const
 {
 	auto c = m_cgnsFileList->current();
 	if (c == nullptr) {return "";}

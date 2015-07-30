@@ -31,7 +31,7 @@
 PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
 	: PreProcessorDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
-	m_subFolder = "measureddata";
+	setSubPath("measureddata");
 
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);

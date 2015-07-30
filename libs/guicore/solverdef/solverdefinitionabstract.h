@@ -2,16 +2,13 @@
 #define SOLVERDEFINITIONABSTRACT_H
 
 #include "../guicore_global.h"
-
 #include <QObject>
-#include <QDir>
-#include <QString>
-#include <QLocale>
-#include <QDate>
-
-#include <misc/versionnumber.h>
 
 class QDomDocument;
+class QDate;
+class QDir;
+class QString;
+class VersionNumber;
 
 /// SolverDefinitionAbstract class stores abstract information of a solver
 /**
@@ -33,47 +30,35 @@ public:
 	 * if the corresponding translation file is not found, ignored and
 	 * the strings in "definition.xml" is used.
 	 */
-	SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent)
-		: QObject(parent) {
-		load(solverfolder, locale);
-	}
+	SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent);
 	/// The name of the folder which contains files related to the solver
 	/// (ex. definition.xml, translation_ja_JP.xml, solver.exe)
-	const QString& folderName() {return m_folderName;}
+	const QString& folderName() const;
 	/// Solver name
-	const QString& name() const {return m_name;}
+	const QString& name() const;
 	/// Solver caption in adequate locale
-	const QString& caption() const {return m_caption;}
+	const QString& caption() const;
 	/// Solver version
-	const VersionNumber& version() const {return m_version;}
+	const VersionNumber& version() const;
 	/// Description of solver
 	const QString description() const;
 	/// Url of the homepage of the solver
-	const QString& url() const {return m_url;}
+	const QString& url() const;
 	/// Copyright
-	const QString& copyright() const {return m_copyright;}
+	const QString& copyright() const;
 	/// Release date
-	const QDate& release() const {return m_release;}
+	const QDate& release() const;
 	/// License information
 	const QString license() const;
 	/// Folder object
-	const QDir& folder() const {return m_folder;}
+	const QDir& folder() const;
+
+	/// Setup dom document
 	void setupDomDocument(QDomDocument* doc) const;
 
-protected:
-	/// Load information from solver defintion file and translation files.
-	void load(const QString& solverfolder, const QLocale& locale);
-
 private:
-	QString m_folderName;
-	QString m_name;
-	QString m_caption;
-	VersionNumber m_version;
-	QString m_copyright;
-	QString m_url;
-	QDate m_release;
-	QDir m_folder;
-	QLocale m_locale;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONABSTRACT_H

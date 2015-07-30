@@ -7,9 +7,17 @@
 
 #include <QDomNode>
 #include <QMenu>
+#include <QXmlStreamWriter>
 
-DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+class DistanceMeasureGroupDataItem::Impl
+{
+public:
+	QAction* m_addAction;
+};
+
+DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_impl {new Impl {}}
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
@@ -17,18 +25,23 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
 
-	m_addAction = new QAction(tr("&Add Measure..."), this);
+	m_impl->m_addAction = new QAction(tr("&Add Measure..."), this);
+	connect(m_impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
 
-	connect(m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
-
+	// set up the first item.
 	addMeasure();
+}
+
+DistanceMeasureGroupDataItem::~DistanceMeasureGroupDataItem()
+{
+	delete m_impl;
 }
 
 void DistanceMeasureGroupDataItem::addMeasure()
 {
 	int count = m_childItems.count();
 	QString defaultName = tr("Measure%1").arg(count + 1);
-	DistanceMeasureDataItem* child = new DistanceMeasureDataItem(defaultName, this);
+	auto child = new DistanceMeasureDataItem(defaultName, this);
 	m_childItems.push_back(child);
 	updateItemMap();
 	updateZDepthRange();
@@ -37,12 +50,13 @@ void DistanceMeasureGroupDataItem::addMeasure()
 		view->select(child->standardItem()->index());
 	}
 
+	// This operation is not undo-able.
 	iRICUndoStack::instance().clear();
 }
 
 void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_addAction);
+	menu->addAction(m_impl->m_addAction);
 }
 
 void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -52,7 +66,7 @@ void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomNode childNode = children.at(i);
-		DistanceMeasureDataItem* item = new DistanceMeasureDataItem("", this);
+		auto item = new DistanceMeasureDataItem("", this);
 		item->loadFromProjectMainFile(childNode);
 		m_childItems.append(item);
 	}

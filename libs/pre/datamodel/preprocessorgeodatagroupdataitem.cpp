@@ -62,8 +62,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	: PreProcessorGeoDataGroupDataItemInterface(cond, parent)
 {
 	m_condition = cond;
-	m_subFolder = cond->name();
-	m_standardItemCopy = m_standardItem->clone();
+	setSubPath(cond->name());
 
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
@@ -107,7 +106,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	addBackground();
 
 	// dummy filename
-	m_filename = "dummy.dat";
+	setFilename("dummy.dat");
 }
 
 PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()

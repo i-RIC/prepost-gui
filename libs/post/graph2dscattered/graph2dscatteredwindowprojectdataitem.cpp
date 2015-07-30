@@ -13,6 +13,9 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
+#include <QXmlStreamWriter>
+
 Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
 	: PostProcessorWindowProjectDataItem(parent, parentWindow)
 {

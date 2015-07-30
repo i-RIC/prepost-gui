@@ -15,25 +15,66 @@
 #include "solverdefinitiongridattributerealoptionnode.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridtype.h"
-//#include "pre/datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h"
-//#include "pre/datamodel/preprocessorstructured2dgriddataitem.h"
-//#include "pre/datamodel/preprocessorunstructured2dgriddataitem.h"
 
 #include <misc/xmlsupport.h>
 
-SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QString& caption)
-	: SolverDefinitionNode()
+class SolverDefinitionGridType::Impl
 {
-	m_name = name;
-	m_caption = caption;
-	m_multiple = false;
-	m_isOptional = false;
-	m_isPrimary = true;
-	m_defaultGridType = gtUnknownGrid;
-	m_emptyGrid = nullptr;
+public:
+	/// Constructor
+	Impl(const QString& name, const QString& caption, SolverDefinitionGridType* parent);
+	/// Constructor
+	Impl(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent);
+
+	/// Destructor
+	~Impl();
+
+	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
+	void setGridType(const QDomElement& elem);
+	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
+	void setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
+
+	QString m_name;
+	QString m_caption;
+	bool m_isPrimary {true};
+	bool m_multiple {false};
+	bool m_isOptional {false};
+	QList<GridType> m_availableGridTypes;
+	GridType m_defaultGridType {gtUnknownGrid};
+	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
+	QMap<QString, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
+	QList<SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditions;
+	QMap<QString, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
+	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
+	QMap<QString, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
+	QMap<QString, QString> m_solutionCaptions;
+
+	Grid* m_emptyGrid {nullptr};
+	SolverDefinitionGridType* m_parent;
+};
+
+SolverDefinitionGridType::Impl::Impl(const QString& name, const QString& caption, SolverDefinitionGridType* parent) :
+	m_name {name},
+	m_caption {caption},
+	m_parent {parent}
+{}
+
+SolverDefinitionGridType::Impl::Impl(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent) :
+	m_isPrimary {isPrimary},
+	m_parent {parent}
+{
+	load(node, translator);
 }
 
-void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
+SolverDefinitionGridType::Impl::~Impl()
+{
+	for (auto c : m_gridRelatedConditions) {
+		delete c;
+	}
+	delete m_emptyGrid;
+}
+
+void SolverDefinitionGridType::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
 {
 	// set basic informations.
 	m_name = node.attribute("name", "default");
@@ -49,18 +90,10 @@ void SolverDefinitionGridType::load(const QDomElement& node, const SolverDefinit
 	setupGridRelatedConditions(grcNode, translator);
 	// setup boundary conditions;
 	setupBoundaryConditions(node, translator);
-	m_emptyGrid = createEmptyGrid();
+	m_emptyGrid = m_parent->createEmptyGrid();
 }
 
-SolverDefinitionGridType::~SolverDefinitionGridType()
-{
-	for (auto c : m_gridRelatedConditions) {
-		delete c;
-	}
-	delete m_emptyGrid;
-}
-
-void SolverDefinitionGridType::setGridType(const QDomElement& elem)
+void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
 {
 	QString gtype = elem.attribute("gridtype", "structured2d");
 	m_availableGridTypes.clear();
@@ -82,7 +115,7 @@ void SolverDefinitionGridType::setGridType(const QDomElement& elem)
 	}
 }
 
-void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridType::Impl::setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
 {
 	QDomNode itemNode = node.firstChild();
 	while (! itemNode.isNull()) {
@@ -136,7 +169,7 @@ void SolverDefinitionGridType::setupGridRelatedConditions(const QDomNode& node, 
 	}
 }
 
-void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
 {
 	QDomNode itemNode = node.firstChild();
 	while (! itemNode.isNull()) {
@@ -151,23 +184,113 @@ void SolverDefinitionGridType::setupBoundaryConditions(const QDomNode& node, con
 	}
 }
 
+// Public interfaces
+
+SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QString& caption) :
+	SolverDefinitionNode {},
+	m_impl {new Impl{name, caption, this}}
+{}
+
+SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary) :
+	SolverDefinitionNode {node,translator},
+	m_impl {new Impl {node, translator, isPrimary, this}}
+{}
+
+SolverDefinitionGridType::~SolverDefinitionGridType()
+{
+	delete m_impl;
+}
+
+const QList<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridRelatedConditions() const
+{
+	return m_impl->m_gridRelatedConditions;
+}
+
+SolverDefinitionGridAttribute* SolverDefinitionGridType::gridRelatedCondition(const QString& name) const
+{
+	return m_impl->m_gridRelatedConditionNameMap.value(name);
+}
+
+const QList<SolverDefinitionGridComplexAttribute*>& SolverDefinitionGridType::gridRelatedComplexConditions() const
+{
+	return m_impl->m_gridRelatedComplexConditions;
+}
+
+SolverDefinitionGridComplexAttribute* SolverDefinitionGridType::gridRelatedComplexCondition(const QString& name) const
+{
+	return m_impl->m_gridRelatedComplexConditionNameMap.value(name);
+}
+
+const QList<SolverDefinitionBoundaryCondition*>& SolverDefinitionGridType::boundaryConditions() const
+{
+	return m_impl->m_boundaryConditions;
+}
+
+SolverDefinitionBoundaryCondition* SolverDefinitionGridType::boundaryCondition(const QString& name) const
+{
+	return m_impl->m_boundaryConditionNameMap.value(name);
+}
+
+const QList<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::availableGridTypes() const
+{
+	return m_impl->m_availableGridTypes;
+}
+
+SolverDefinitionGridType::GridType SolverDefinitionGridType::defaultGridType() const
+{
+	return m_impl->m_defaultGridType;
+}
+
+const QString& SolverDefinitionGridType::name() const
+{
+	return m_impl->m_name;
+}
+
+const QString& SolverDefinitionGridType::caption() const
+{
+	return m_impl->m_caption;
+}
+
+void SolverDefinitionGridType::setCaption(const QString& caption)
+{
+	m_impl->m_caption = caption;
+}
+
+bool SolverDefinitionGridType::isPrimary() const
+{
+	return m_impl->m_isPrimary;
+}
+
+bool SolverDefinitionGridType::multiple() const
+{
+	return m_impl->m_multiple;
+}
+
+bool SolverDefinitionGridType::isOptional() const
+{
+	return m_impl->m_isOptional;
+}
 
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 {
-	for (auto it = m_gridRelatedConditions.begin(); it != m_gridRelatedConditions.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
+	for (SolverDefinitionGridAttribute* cond : m_impl->m_gridRelatedConditions) {
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
-	for (auto cit = m_gridRelatedComplexConditions.begin(); cit != m_gridRelatedComplexConditions.end(); ++cit) {
-		SolverDefinitionGridComplexAttribute* cond = *cit;
+	for (SolverDefinitionGridComplexAttribute* cond : m_impl->m_gridRelatedComplexConditions) {
 		grid->addGridRelatedCondition(cond->container(grid));
 	}
+}
+
+
+Grid* SolverDefinitionGridType::emptyGrid() const
+{
+	return m_impl->m_emptyGrid;
 }
 
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
 	Grid* ret = nullptr;
-	switch (m_defaultGridType) {
+	switch (m_impl->m_defaultGridType) {
 	case gtNormal1DGrid:
 		// @todo not implemented yet.
 		break;
@@ -192,41 +315,7 @@ Grid* SolverDefinitionGridType::createEmptyGrid()
 	return ret;
 }
 
-const QString SolverDefinitionGridType::solutionCaption(const QString& name)
+QString SolverDefinitionGridType::solutionCaption(const QString& name) const
 {
-	if (m_solutionCaptions.contains(name)) {
-		return m_solutionCaptions.value(name);
-	} else {
-		return name;
-	}
+	return name;
 }
-
-/*
-PreProcessorGridDataItem* SolverDefinitionGridType::createGridDataItem(PreProcessorDataItem* parent)
-{
-	switch (m_defaultGridType)
-	{
-	case gtNormal1DGrid:
-		// @todo not implemented yet.
-		return nullptr;
-		break;
-	case gtNormal1_5DGrid:
-		// @todo not implemented yet.
-		return nullptr;
-		break;
-	case gtNormal1_5DGridWithCrosssection:
-		return new PreProcessorNormal15DGridWithCrossSectionDataItem(parent);
-		break;
-	case gtStructured2DGrid:
-		return new PreProcessorStructured2dGridDataItem(parent);
-		break;
-	case gtUnstructured2DGrid:
-		return new PreProcessorUnstructured2dGridDataItem(parent);
-		break;
-	case gtUnknownGrid:
-	default:
-		return nullptr;
-		break;
-	}
-}
-*/

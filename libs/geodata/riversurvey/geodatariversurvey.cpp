@@ -1116,7 +1116,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 				MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 				box->setEndPoint(event->x(), event->y());
 				box->disable();
-				if (isNear(box->startPoint(), box->endPoint())) {
+				if (iRIC::isNear(box->startPoint(), box->endPoint())) {
 					int x = (box->startPoint().x() + box->endPoint().x()) / 2;
 					int y = (box->startPoint().y() + box->endPoint().y()) / 2;
 					box->setStartPoint(x - 8, y - 8);
@@ -1171,7 +1171,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 
 
 	} else if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

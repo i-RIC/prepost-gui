@@ -82,16 +82,6 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridPointResultDataIte
 
 	int currentStep = postInfo->currentStep();
 	const QList<double>& timesteps = postInfo->timeSteps()->timesteps();
-	double time = 0;
-	if (timesteps.count() == 0) {
-		time = 0;
-	} else {
-		if (currentStep < timesteps.count()) {
-			time = timesteps.at(currentStep);
-		} else {
-			time = 0;
-		}
-	}
 
 	QStringList args;
 	args.append(m_standardItem->text());

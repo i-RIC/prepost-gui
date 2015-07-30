@@ -114,8 +114,8 @@ public:
 	vtkUnstructuredGrid* grid() const {return m_grid;}
 	bool getValueRange(double* min, double* max) override;
 	void updateFilename() override {
-		m_filename = m_name;
-		m_filename.append(".dat");
+		QString name = m_name;
+		setFilename(name.append(".dat"));
 	}
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);

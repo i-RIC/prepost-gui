@@ -11,9 +11,12 @@
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
+#include <misc/versionnumber.h>
 
+#include <QDir>
 #include <QDomDocument>
 #include <QDomNode>
+#include <QFile>
 #include <QMessageBox>
 #include <QPushButton>
 

@@ -14,6 +14,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
@@ -1040,7 +1041,7 @@ void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, 
 		updateMouseCursor(v);
 	} else if (event->button() == Qt::RightButton) {
 		if (m_mouseEventMode == meEditVerticesDialog) {return;}
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

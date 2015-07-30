@@ -41,7 +41,7 @@ public:
 	int index() const {return m_index;}
 	void setIndex(int index) {
 		m_index = index;
-		m_filename = QString("MeasuredData_%1.vtk").arg(m_index);
+		setFilename(QString("MeasuredData_%1.vtk").arg(m_index));
 	}
 	void setupPolyData();
 	bool noPolyData() const {return m_noPolyData;}

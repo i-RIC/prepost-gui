@@ -1,6 +1,7 @@
 #include "cgnsfilelist.h"
 
 #include <QDomElement>
+#include <QXmlStreamWriter>
 
 CgnsFileList::~CgnsFileList()
 {}

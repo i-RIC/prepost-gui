@@ -143,7 +143,7 @@ protected:
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void updateFilename() override {
-		m_filename = "gridcreatingcondition.dat";
+		setFilename("gridcreatingcondition.dat");
 	}
 
 private:

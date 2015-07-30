@@ -15,6 +15,7 @@
 #include <QMouseEvent>
 #include <QUndoCommand>
 #include <QVector2D>
+#include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
 #include <vtkDataSetMapper.h>
@@ -426,8 +427,7 @@ void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsV
 		iRICUndoStack::instance().push(new DistanceMeasureTranslateCommand(globalPos - startGlobalPos, true, this));
 	}
 	if (event->button() == Qt::RightButton) {
-		QPoint endp(event->x(), event->y());
-		if (isNear(m_dragStartPoint, endp)) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			m_redefineAction->setEnabled(m_defined);
 
 			m_rightClickingMenu->move(event->globalPos());

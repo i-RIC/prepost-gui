@@ -1239,7 +1239,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 		m_inhibitSelect = false;
 	} else if (event->button() == Qt::RightButton) {
 		if (m_mouseEventMode == meEditVerticesDialog) {return;}
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

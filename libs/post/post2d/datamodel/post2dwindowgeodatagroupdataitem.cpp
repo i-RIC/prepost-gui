@@ -10,6 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 
 #include <QMap>
+#include <QXmlStreamWriter>
 
 Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent)
 	: Post2dWindowDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)

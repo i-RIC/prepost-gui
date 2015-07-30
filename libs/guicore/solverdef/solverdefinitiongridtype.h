@@ -4,14 +4,11 @@
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
 #include <QList>
-#include <QMap>
 
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
 class Grid;
-class PreProcessorDataItem;
-class PreProcessorGridDataItem;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridType : public SolverDefinitionNode
 {
@@ -25,64 +22,53 @@ public:
 		gtStructured2DGrid,
 		gtUnstructured2DGrid
 	};
-	/// constructor for dummy grid
+	/// Constructor for dummy grid
 	SolverDefinitionGridType(const QString& name, const QString& caption);
-	/// constructor
-	SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary)
-		: SolverDefinitionNode(node, translator) {
-		load(node, translator);
-		m_isPrimary = isPrimary;
-	}
+	/// Constructor
+	SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary);
+	/// Destructor
 	~SolverDefinitionGridType();
-	const QList<SolverDefinitionGridAttribute*>& gridRelatedConditions() const {return m_gridRelatedConditions;}
-	SolverDefinitionGridAttribute* gridRelatedCondition(const QString& name) const {
-		return m_gridRelatedConditionNameMap.value(name);
-	}
-	const QList<SolverDefinitionGridComplexAttribute*>& gridRelatedComplexConditions() const {return m_gridRelatedComplexConditions;}
-	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const QString& name) const {
-		return m_gridRelatedComplexConditionNameMap.value(name);
-	}
-	const QList<SolverDefinitionBoundaryCondition*>& boundaryConditions() const {return m_boundaryConditions;}
-	SolverDefinitionBoundaryCondition* boundaryCondition(const QString& name) const {
-		return m_boundaryConditionNameMap.value(name);
-	}
-	const QList<GridType>& availableGridTypes() const {return m_availableGridTypes;}
-	GridType defaultGridType() const {return m_defaultGridType;}
-	const QString& name() const {return m_name;}
-	const QString& caption() const {return m_caption;}
-	void setCaption(const QString& caption) {m_caption = caption;}
-	bool isPrimary() const {return m_isPrimary;}
-	bool multiple() const {return m_multiple;}
-	bool isOptional() const {return m_isOptional;}
+
+	/// @name Grid attributes
+	//@{
+	const QList<SolverDefinitionGridAttribute*>& gridRelatedConditions() const;
+	SolverDefinitionGridAttribute* gridRelatedCondition(const QString& name) const;
+	const QList<SolverDefinitionGridComplexAttribute*>& gridRelatedComplexConditions() const;
+	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const QString& name) const;
+	//@{
+
+	/// @name Boundary conditions
+	//@{
+	const QList<SolverDefinitionBoundaryCondition*>& boundaryConditions() const;
+	SolverDefinitionBoundaryCondition* boundaryCondition(const QString& name) const;
+	//@}
+
+	/// @name Properties
+	//@{
+	const QList<GridType>& availableGridTypes() const;
+	GridType defaultGridType() const;
+	const QString& name() const;
+	const QString& caption() const;
+	bool isPrimary() const;
+	bool multiple() const;
+	bool isOptional() const;
+	void setCaption(const QString& caption);
+	//@}
+
+	/// @name Functions to build objects
+	//@{
 	void buildGridRelatedConditions(Grid* grid) const;
 	/// Returns a pointer to a grid that has no data.
-	Grid* emptyGrid() const {return m_emptyGrid;}
-//	PreProcessorGridDataItem* createGridDataItem(PreProcessorDataItem* parent) override;
+	Grid* emptyGrid() const;
 	Grid* createEmptyGrid();
-	const QString solutionCaption(const QString& name);
+	//@}
 
-protected:
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
-	QString m_name;
-	QString m_caption;
-	bool m_isPrimary;
-	bool m_multiple;
-	bool m_isOptional;
-	QList<GridType> m_availableGridTypes;
-	GridType m_defaultGridType;
-	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
-	QMap<QString, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
-	QList<SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditions;
-	QMap<QString, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
-	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
-	QMap<QString, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
-	QMap<QString, QString> m_solutionCaptions;
+	/// Returns the caption for the solution (calculation result)
+	QString solutionCaption(const QString& name) const;
 
 private:
-	void setGridType(const QDomElement& elem);
-	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	void setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	Grid* m_emptyGrid;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONGRIDTYPE_H

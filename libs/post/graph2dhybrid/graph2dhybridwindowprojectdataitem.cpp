@@ -11,6 +11,9 @@
 #include <guibase/marginwidget.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
+#include <QXmlStreamWriter>
+
 Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
 	: PostProcessorWindowProjectDataItem(parent, parentWindow)
 {

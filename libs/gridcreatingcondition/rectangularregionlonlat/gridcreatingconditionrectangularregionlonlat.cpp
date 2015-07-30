@@ -10,10 +10,12 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
+#include <QXmlStreamWriter>
 
 #include <vtkCollectionIterator.h>
 #include <vtkProperty.h>
@@ -147,7 +149,7 @@ void GridCreatingConditionRectangularRegionLonLat::mouseReleaseEvent(QMouseEvent
 		}
 	}
 	if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

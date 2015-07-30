@@ -3,36 +3,28 @@
 
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
-#include <QString>
-#include <QDomElement>
 
-class SolverDefinition;
+class QDomElement;
+class QString;
 
 class GUICOREDLL_EXPORT SolverDefinitionBoundaryCondition : public SolverDefinitionNode
 {
-
 public:
 	enum Position {pNode, pCell, pEdge};
-	SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionNode(node, translator) {
-		load(node, translator);
-	}
-	~SolverDefinitionBoundaryCondition() {}
-	const QString& name() const {return m_name;}
-	const QString& caption() const {return m_caption;}
-	const QString& englishCaption() const {return m_englishCaption;}
-	void setCaption(const QString& caption) {m_caption = caption;}
-	const QDomElement& element() const {return m_element;}
-	Position position() const {return m_position;}
+	/// Constructor
+	SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator);
+	/// Destructor
+	~SolverDefinitionBoundaryCondition();
+	const QString& name() const;
+	const QString& caption() const;
+	const QString& englishCaption() const;
+	void setCaption(const QString& caption);
+	const QDomElement& element() const;
+	Position position() const;
 
 private:
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
-	QString m_name;
-	QString m_caption;
-	QString m_englishCaption;
-	Position m_position;
-	QDomElement m_element;
-	SolverDefinition* m_definition;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONBOUNDARYCONDITION_H

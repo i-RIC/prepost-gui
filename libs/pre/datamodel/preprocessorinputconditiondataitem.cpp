@@ -14,6 +14,7 @@
 #include <QLocale>
 #include <QMenu>
 #include <QStandardItem>
+#include <QXmlStreamWriter>
 
 #include <cgnslib.h>
 

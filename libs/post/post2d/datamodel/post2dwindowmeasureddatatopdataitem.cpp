@@ -28,7 +28,7 @@
 Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
 	: Post2dWindowDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
-	m_subFolder = "measureddata";
+	setSubPath("measureddata");
 
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);

@@ -34,7 +34,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isDeletable = false;
 
 	m_gridType = type;
-	m_subFolder = type->name();
+	setSubPath(type->name());
 	m_isZoneDataItemsSetup = false;
 
 	PreProcessorGeoDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->geoDataTopDataItem(type->name());

@@ -16,6 +16,7 @@
 #include <QSettings>
 #include <QStandardItem>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 #include <vtkLookupTable.h>
 #include <vtkPointData.h>

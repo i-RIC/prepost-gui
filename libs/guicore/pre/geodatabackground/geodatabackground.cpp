@@ -18,7 +18,7 @@ GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator
 {
 	m_name = "background";
 	m_caption = tr("Default");
-	m_filename = "background.dat";
+	setFilename("background.dat");
 	m_editValueAction = new QAction(tr("Edit value..."), this);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
 

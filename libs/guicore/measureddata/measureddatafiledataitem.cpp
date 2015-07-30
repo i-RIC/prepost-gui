@@ -24,7 +24,7 @@
 MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent)
 	: GraphicsWindowDataItem(tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {
-	m_subFolder = "file";
+	setSubPath("file");
 
 	m_isDeletable = true;
 	m_standardItem->setText(md->name());

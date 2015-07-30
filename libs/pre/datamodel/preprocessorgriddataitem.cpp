@@ -655,7 +655,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 //	if (m_grid->isMasked()){return;}
 
 	bool click = false;
-	if (isNear(box->startPoint(), box->endPoint())) {
+	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
 		QPoint newStart = box->endPoint() - QPoint(2, 2);
 		QPoint newEnd = box->endPoint() + QPoint(2, 2);
 		box->setStartPoint(newStart.x(), newStart.y());
@@ -728,7 +728,7 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 //	if (m_grid->isMasked()){return;}
 
 	bool click = false;
-	if (isNear(box->startPoint(), box->endPoint())) {
+	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
 		QPoint center;
 		center.setX((box->startPoint().x() + box->endPoint().x()) / 2);
 		center.setY((box->startPoint().y() + box->endPoint().y()) / 2);
@@ -866,7 +866,7 @@ void PreProcessorGridDataItem::nodeSelectingMouseReleaseEvent(QMouseEvent* event
 	MouseBoundingBox* box = dataModel()->mouseBoundingBox();
 	box->setEndPoint(event->x(), event->y());
 
-	if (isNear(box->startPoint(), box->endPoint())) {
+	if (iRIC::isNear(box->startPoint(), box->endPoint())) {
 		QPoint newStart = box->endPoint() - QPoint(2, 2);
 		QPoint newEnd = box->endPoint() + QPoint(2, 2);
 		box->setStartPoint(newStart.x(), newStart.y());

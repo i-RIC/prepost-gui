@@ -4,18 +4,17 @@
 #include "../guicore_global.h"
 
 #include <QObject>
-#include <QStringList>
 #include <QDataStream>
-#include <QXmlStreamWriter>
 
-class ProjectData;
-class QDomNode;
-class QXmlStreamWriter;
-class QPoint;
-class QColor;
 class iRICMainWindowInterface;
-class vtkCamera;
+class ProjectData;
+
+class QColor;
+class QDomNode;
 class QVector2D;
+class QXmlStreamWriter;
+
+class vtkCamera;
 
 /// Abstract class that store data in project.xml.
 class GUICOREDLL_EXPORT ProjectDataItem : public QObject
@@ -23,62 +22,104 @@ class GUICOREDLL_EXPORT ProjectDataItem : public QObject
 	Q_OBJECT
 
 protected:
-	static const QDataStream::Version dataStreamVersion = QDataStream::Qt_4_6;
+	static const QDataStream::Version dataStreamVersion;
 
 public:
+	/// @name Constructors and destructors
+	//@{
 	/// Constructor
-	explicit ProjectDataItem(ProjectDataItem* d) : QObject(d) {
-		m_subFolder = "";
-		m_filename = "";
-	}
+	explicit ProjectDataItem(ProjectDataItem* d);
 	/// Constructor
-	ProjectDataItem(const QString& filename, ProjectDataItem* d) : QObject(d) {
-		m_filename = filename;
-	}
+	ProjectDataItem(const QString& filename, ProjectDataItem* d);
 	/// Destructor
-	virtual ~ProjectDataItem() {}
+	virtual ~ProjectDataItem();
+	//@}
+
+	/// @name I/O interface against project.xml
+	//@{
 	/// Load data from project main file
 	virtual void loadFromProjectMainFile(const QDomNode& node);
 	/// Save data into project main file
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
+	//@}
+
+	/// @name I/O interface against CGNS file
+	//@{
+	/// Currently opened CGNS file name
+	virtual QString currentCgnsFileName() const;
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(const int /*fn*/) {}
+	virtual void loadFromCgnsFile(int fn);
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(const int /*fn*/) {}
+	virtual void saveToCgnsFile(int fn);
 	/// Discard data loaded from CGNS file.
-	virtual void closeCgnsFile() {}
+	virtual void closeCgnsFile();
+	//@}
+
+	/// @name I/O interface against external files
+	//@{
+	/// Returns the filename in an absolute path.
+	QString filename() const;
+	/// Returns the filename in relative path against workDirectory.
+	QString relativeFilename() const;
+	/// Set the filename. It does not include path information.
+	void setFilename(const QString& fname);
+	/// External file names that are used to store data below this node
 	virtual QStringList containedFiles();
-	ProjectDataItem* parent() const {return dynamic_cast<ProjectDataItem*>(QObject::parent());}
-	iRICMainWindowInterface* iricMainWindow();
-	static bool isNear(const QPoint& p1, const QPoint& p2);
-	virtual const QString currentCgnsFileName() const {return parent()->currentCgnsFileName();}
-	void loadExternalData();
+	//@}
+
+	/// @name Utility functions
+	//@{
+	/// Parent item
+	ProjectDataItem* parent() const;
+	/// iRIC main window
+	iRICMainWindowInterface* iricMainWindow() const;
+	//@}
 
 protected:
+	/// @name Internal Utility functions
+	//@{
+	/// Set this project modified
+	virtual void setModified();
+	/// Project data
+	virtual ProjectData* projectData() const;
+	/// Load filename from project.xml
+	void loadFilename(const QDomNode& node);
+	/// Save filename into project.xml
+	void saveFilename(QXmlStreamWriter& writer) const;
+	/// Load external data.
+	inline void loadExternalData();
+	/// Relative subpath
+	virtual QString relativeSubPath() const;
+	/// Sub path of the external file
+	QString subPath() const;
+	/// Set sub path
+	void setSubPath(const QString& subPath);
+	/// Offset applied to the data
+	QVector2D offset() const;
+	/// Apply offset the current data.
+	virtual void doApplyOffset(double x, double y);
+	//@}
+
+private:
+	/// @name Virtual functions to implement project.xml I/O function
+	//@{
 	/// Load information to restore data from ProjectMainFile.
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) = 0;
 	/// Write into projectmainfile.
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) = 0;
-	virtual void setModified() {parent()->setModified();}
-	/// Load additinal information from external data file.
-	/**
-	 * Load external data from the file specified by m_filename.
-	 */
-	virtual void loadExternalData(const QString& /*filename*/) {}
-	/// Save additinal information into external data file.
-	/**
-	 * Save external data into the file specified by m_filename.
-	 */
-	virtual void saveExternalData(const QString& /*filename*/) {}
-	virtual ProjectData* projectData() const {return parent()->projectData();}
-	virtual QString relativeSubPath() const;
-	QString subPath() const;
-	/// Load file name from project.xml.
-	void loadFilename(const QDomNode& node);
-	/// Save file name to project.xml
-	void saveFilename(QXmlStreamWriter& writer) const;
-	virtual void doApplyOffset(double /*x*/, double /*y*/) {}
-	QVector2D offset();
+	//@}
+
+	/// @name Vertual functions to implement I/O functions against external files
+	//@{
+	/// Load external data from the file specified by m_filename.
+	virtual void loadExternalData(const QString& filename);
+	/// Save external data into the file specified by m_filename.
+	virtual void saveExternalData(const QString& filename);
+	//@}
+
+public:
+	/// @name Utility functions for project.xml I/O. Caution! These functions are deprecated and will be removed!
+	//@{
 	/// Load Window geometry from project.xml.
 	static void loadWindowGeometry(QWidget* w, const QDomNode& node);
 	/// Save window geometry to project.xml.
@@ -99,21 +140,16 @@ protected:
 	static void loadCamera(vtkCamera* camera, const QDomNode& node);
 	/// Save camera setting to project.xml.
 	static void saveCamera(vtkCamera* camera, QXmlStreamWriter& writer);
-	/// Returns the filename in an absolute path.
-	const QString filename();
-	/// Returns the filename in relative path against workDirectory.
-	const QString relativeFilename();
-	void setFilename(const QString& fname) {m_filename = fname;}
+	//@}
 
-protected:
-	/// The name of file to store additional information about this class.
-	/**
-	 * m_filename = "" when it does not any file to store information beside project main file.
-	 * The file name is stored as a relative path against the project workdirectory, that
-	 * is available from ProjectData::workDirectory().
-	 */
-	QString m_filename;
-	QString m_subFolder;
+private:
+	class Impl;
+	Impl* m_impl;
 };
+
+inline void ProjectDataItem::loadExternalData()
+{
+	loadExternalData(filename());
+}
 
 #endif // PROJECTDATAITEM_H

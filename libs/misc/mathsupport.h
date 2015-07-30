@@ -6,11 +6,13 @@
 #include <Qt>
 
 class QVector2D;
+class QPoint;
 class QPointF;
 class QPolygonF;
 
 namespace iRIC
 {
+	bool MISCDLL_EXPORT isNear(const QPoint& p1, const QPoint& p2);
 	/// The outer product of two-dimensional vectors
 	qreal MISCDLL_EXPORT outerProduct(const QVector2D& v1, const QVector2D& v2);
 	/// The angle between two vectors (in radians)

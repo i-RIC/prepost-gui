@@ -22,7 +22,7 @@ SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverCon
 	ProjectDataItem(parent)
 {
 	m_solverConsoleWindow = w;
-	m_filename = "consoleLog.txt";
+	setFilename("consoleLog.txt");
 	m_file.setFileName(filename());
 
 	clear();

@@ -12,6 +12,13 @@
 
 namespace iRIC
 {
+	bool isNear(const QPoint& p1, const QPoint& p2)
+	{
+		int xDiff = qAbs(p2.x() - p1.x());
+		int yDiff = qAbs(p2.y() - p1.y());
+		return (xDiff < 3 && yDiff < 3);
+	}
+
 	qreal outerProduct(const QVector2D& v1, const QVector2D& v2)
 	{
 		return v1.x() * v2.y() - v1.y() * v2.x();

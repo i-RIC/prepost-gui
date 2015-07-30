@@ -7,6 +7,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/structured15dgridwithcrosssection.h>
 #include <guicore/project/projectdata.h>
+#include <misc/mathsupport.h>
 
 #include <QMdiArea>
 #include <QMdiSubWindow>
@@ -191,7 +192,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(Q
 		m_draggingSelectedPoints = false;
 	} else if (event->button() == Qt::RightButton) {
 		QPoint releasePoint(event->x(), event->y());
-		if (isNear(m_pressPoint, releasePoint)) {
+		if (iRIC::isNear(m_pressPoint, releasePoint)) {
 			delete menu;
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);

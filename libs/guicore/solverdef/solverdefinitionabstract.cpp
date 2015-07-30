@@ -4,13 +4,76 @@
 
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
+#include <misc/versionnumber.h>
 
 #include <QDir>
+#include <QDate>
 #include <QDomDocument>
 #include <QDomNode>
+#include <QFile>
+#include <QString>
 #include <QTextStream>
 
-void SolverDefinitionAbstract::load(const QString& solverfolder, const QLocale& locale)
+class SolverDefinitionAbstract::Impl
+{
+public:
+	/// Constructor
+	Impl(const QString& solverfolder, const QLocale& locale, SolverDefinitionAbstract* parent);
+	/// Destructor
+	~Impl() {}
+
+	QString m_folderName;
+	QString m_name;
+	QString m_caption;
+	VersionNumber m_version;
+	QString m_copyright;
+	QString m_url;
+	QDate m_release;
+	QDir m_folder;
+	QLocale m_locale;
+
+	QString loadFile(const QString& filename);
+
+private:
+	void load(const QString& solverfolder, const QLocale& locale);
+	SolverDefinitionAbstract* m_parent;
+};
+
+SolverDefinitionAbstract::Impl::Impl(const QString &solverfolder, const QLocale &locale, SolverDefinitionAbstract* parent) :
+	m_parent {parent}
+{
+	load(solverfolder, locale);
+}
+
+QString SolverDefinitionAbstract::Impl::loadFile(const QString& filename)
+{
+	QString fname = filename;
+	fname.append("_%1");
+	// get the local language version first.
+	fname = m_folder.absoluteFilePath(fname.arg(m_locale.name()));
+	if (! QFile::exists(fname)) {
+		// local language version does not exists;
+		fname = m_folder.absoluteFilePath(filename);
+		if (! QFile::exists(fname)) {
+			// global file does not exists.
+			return "";
+		}
+	}
+
+	QFile file(fname);
+	QString ret, buffer;
+	file.open(QIODevice::ReadOnly | QIODevice::Text);
+	QTextStream in(&file);
+	in.setCodec("UTF-8");
+	while (! in.atEnd()) {
+		buffer = in.readLine();
+		ret.append(buffer);
+		ret.append("\n");
+	}
+	return ret;
+}
+
+void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLocale& locale)
 {
 	// holds the copy of the locale.
 	m_locale = locale;
@@ -22,74 +85,75 @@ void SolverDefinitionAbstract::load(const QString& solverfolder, const QLocale& 
 	SolverDefinitionTranslator translator(solverfolder, locale);
 	// get translation file name
 	QDomDocument doc;
-	setupDomDocument(&doc);
+	m_parent->setupDomDocument(&doc);
 	QDomNode SDNode = doc.documentElement();
-	m_name = SDNode.attributes().namedItem("name").nodeValue();
-	m_caption = translator.translate(SDNode.attributes().namedItem("caption").nodeValue());
-	QString version = SDNode.attributes().namedItem("version").nodeValue();
-	m_version = version;
-	m_copyright = SDNode.attributes().namedItem("copyright").nodeValue();
-	m_url = SDNode.attributes().namedItem("homepage").nodeValue();
-	m_release = QDate::fromString(SDNode.attributes().namedItem("release").nodeValue(), "yyyy.MM.dd");
+	QDomElement SDElem = SDNode.toElement();
+
+	m_name = SDElem.attribute("name");
+	m_caption = translator.translate(SDElem.attribute("caption"));
+	QString version = SDElem.attribute("version");
+	m_version.fromString(version);
+	m_copyright = SDElem.attribute("copyright");
+	m_url = SDElem.attribute("homepage");
+	m_release = QDate::fromString(SDElem.attribute("release"), "yyyy.MM.dd");
 	if (! m_release.isValid()) {
-		m_release = QDate::fromString(SDNode.attributes().namedItem("release").nodeValue(), "yyyy.M.d");
+		m_release = QDate::fromString(SDElem.attribute("release"), "yyyy.M.d");
 	}
+}
+
+SolverDefinitionAbstract::SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent) :
+	QObject {parent},
+	m_impl {new Impl {solverfolder, locale, this}}
+{}
+
+const QString& SolverDefinitionAbstract::folderName() const
+{
+	return m_impl->m_folderName;
+}
+
+const QString& SolverDefinitionAbstract::name() const
+{
+	return m_impl->m_name;
+}
+
+const QString& SolverDefinitionAbstract::caption() const
+{
+	return m_impl->m_caption;
+}
+
+const VersionNumber& SolverDefinitionAbstract::version() const
+{
+	return m_impl->m_version;
 }
 
 const QString SolverDefinitionAbstract::description() const
 {
-	// get readme filename
-	QString filename = SolverDefinition::README;
-	filename.append("_").append(m_locale.name());
-	// get the local language version README first.
-	filename = m_folder.absoluteFilePath(filename);
-	if (! QFile::exists(filename)) {
-		// local language version does not exists;
-		filename = m_folder.absoluteFilePath(SolverDefinition::README);
-		if (! QFile::exists(filename)) {
-			// README does not exists.
-			return "";
-		}
-	}
-	QFile file(filename);
-	QString ret, buffer;
-	file.open(QIODevice::ReadOnly | QIODevice::Text);
-	QTextStream in(&file);
-	in.setCodec("UTF-8");
-	while (! in.atEnd()) {
-		buffer = in.readLine();
-		ret.append(buffer);
-		ret.append("\n");
-	}
-	return ret;
+	return m_impl->loadFile("README");
+}
+
+const QString& SolverDefinitionAbstract::url() const
+{
+	return m_impl->m_url;
+}
+
+const QString& SolverDefinitionAbstract::copyright() const
+{
+	return m_impl->m_copyright;
+}
+
+const QDate& SolverDefinitionAbstract::release() const
+{
+	return m_impl->m_release;
 }
 
 const QString SolverDefinitionAbstract::license() const
 {
-	// get license filename
-	QString filename = SolverDefinition::LICENSE;
-	filename.append("_").append(m_locale.name());
-	// get the local language version LICENSE first.
-	filename = m_folder.absoluteFilePath(filename);
-	if (! QFile::exists(filename)) {
-		// local language version does not exists;
-		filename = m_folder.absoluteFilePath(SolverDefinition::LICENSE);
-		if (! QFile::exists(filename)) {
-			// LICENSE does not exists.
-			return "";
-		}
-	}
-	QFile file(filename);
-	QString ret, buffer;
-	file.open(QIODevice::ReadOnly | QIODevice::Text);
-	QTextStream in(&file);
-	in.setCodec("UTF-8");
-	while (! in.atEnd()) {
-		buffer = in.readLine();
-		ret.append(buffer);
-		ret.append("\n");
-	}
-	return ret;
+	return m_impl->loadFile("LICENSE");
+}
+
+const QDir& SolverDefinitionAbstract::folder() const
+{
+	return m_impl->m_folder;
 }
 
 void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const
@@ -97,7 +161,7 @@ void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
-	QString filename = m_folder.absoluteFilePath(SolverDefinition::FILENAME);
+	QString filename = m_impl->m_folder.absoluteFilePath(SolverDefinition::FILENAME);
 	QFile file(filename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc->setContent(&file, &errorStr, &errorLine, &errorColumn);

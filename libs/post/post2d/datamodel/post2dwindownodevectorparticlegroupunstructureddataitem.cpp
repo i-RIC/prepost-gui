@@ -12,6 +12,7 @@
 #include <QDomElement>
 #include <QMouseEvent>
 #include <QSettings>
+#include <QXmlStreamWriter>
 
 #include <vtkProperty.h>
 #include <vtkRenderer.h>

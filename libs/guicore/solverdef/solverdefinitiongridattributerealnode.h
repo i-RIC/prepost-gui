@@ -8,14 +8,19 @@ class SolverDefinitionGridAttributeRealNode : public SolverDefinitionGridAttribu
 
 public:
 	/// Constructor
-	SolverDefinitionGridAttributeRealNode(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionGridAttributeReal(node, translator) {
-		m_position = Node;
-	}
+	SolverDefinitionGridAttributeRealNode(QDomElement node, const SolverDefinitionTranslator& translator) :
+		SolverDefinitionGridAttributeReal {node, translator, Node, false}
+	{}
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
+	/// Constructor
+	SolverDefinitionGridAttributeRealNode(QDomElement node, const SolverDefinitionTranslator& translator, bool isOption) :
+		SolverDefinitionGridAttributeReal {node, translator, Node, isOption}
+	{}
+
+private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;
 };
 

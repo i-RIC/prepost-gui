@@ -2,13 +2,11 @@
 #include <cmath>
 
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include "gridcreatingconditiongridgenerator.h"
-//#include "pre/preprocessorgraphicsview.h"
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-//#include "pre/datamodel/preprocessorgridtypedataitem.h"
-//#include "pre/datamodel/preprocessorgridcreatingconditiondataitem.h"
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -490,7 +488,7 @@ void GridCreatingConditionGridGenerator::mousePressEvent(QMouseEvent* event, Pre
 void GridCreatingConditionGridGenerator::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

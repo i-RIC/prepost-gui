@@ -9,6 +9,7 @@
 #include <QDomElement>
 #include <QDomNode>
 #include <QSettings>
+#include <QXmlStreamWriter>
 
 #include <vtkProperty.h>
 #include <vtkRenderer.h>

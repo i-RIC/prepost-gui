@@ -9,6 +9,7 @@
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/project/projectdataitem.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <QAction>
 #include <QItemSelection>
@@ -827,7 +828,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 	case meNormal:
 	case meMovePrepare:
 		if (event->button() == Qt::RightButton) {
-			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())) {
+			if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
 				m_rightClickingMenu->move(event->globalPos());
@@ -844,7 +845,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 	case meSelecting:
 		// finish selecting.
 		m_rubberBand->hide();
-		if (ProjectDataItem::isNear(m_rubberOrigin, event->pos())) {
+		if (iRIC::isNear(m_rubberOrigin, event->pos())) {
 			// press point and release point are too near.
 			QPoint p1(event->pos().x() - 3, event->pos().y() - 3);
 			QPoint p2(event->pos().x() + 3, event->pos().y() + 3);

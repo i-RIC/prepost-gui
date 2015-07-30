@@ -2,9 +2,10 @@
 #define SOLVERDEFINITIONTRANSLATOR_H
 
 #include "../guicore_global.h"
-#include <QString>
-#include <QLocale>
-#include <QHash>
+
+
+class QLocale;
+class QString;
 
 /// This class represents translator for Solver Definition files
 class GUICOREDLL_EXPORT SolverDefinitionTranslator
@@ -12,9 +13,9 @@ class GUICOREDLL_EXPORT SolverDefinitionTranslator
 
 public:
 	/// Constructor
-	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale) {
-		load(solverfolder, locale);
-	}
+	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale);
+	/// Destructor
+	~SolverDefinitionTranslator();
 	/// Returns translated string corresponsing to the source string
 	/**
 	 * @param src Source string to translate
@@ -30,15 +31,8 @@ public:
 	static QString filenameFromLocale(const QLocale& locale);
 
 private:
-	/**
-	 * @todo Implement this function!
-	 *
-	 * The file format of Solver definition translation files should be equal to
-	 * that of Qt translation files, to make it possible to edit translation files
-	 * with Qt Linguist.
-	 */
-	void load(const QString& solverfolder, const QLocale& locale);
-	QHash<QString, QString> m_dictionary;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONTRANSLATOR_H

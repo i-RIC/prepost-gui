@@ -34,7 +34,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	m_isDeletable = false;
 
 	m_gridType = type;
-	m_subFolder = type->name();
+	setSubPath(type->name());
 
 	// setup ScalarsToColors instances
 	setupScalarsToColors(type);

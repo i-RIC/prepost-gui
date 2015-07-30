@@ -73,7 +73,7 @@ public:
 	PostSolutionInfo* postSolutionInfo() const {return m_postSolutionInfo;}
 	bool hasResults();
 	QStringList containedFiles() override;
-	const QString currentCgnsFileName() const override;
+	QString currentCgnsFileName() const override;
 	/// Clear the results stored in the current CGNS file.
 	void clearResults();
 	/// Save current cgns file.

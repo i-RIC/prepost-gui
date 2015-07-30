@@ -9,6 +9,7 @@
 
 #include <QList>
 #include <QMap>
+#include <QStringList>
 
 class PostIterationSteps;
 class PostTimeSteps;

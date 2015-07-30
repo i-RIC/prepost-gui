@@ -11,6 +11,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
+#include <QXmlStreamWriter>
 
 #include <vtkRenderer.h>
 

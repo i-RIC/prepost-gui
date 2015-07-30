@@ -17,6 +17,7 @@
 #include <QSettings>
 #include <QStandardItem>
 #include <QUndoCommand>
+#include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
 #include <vtkCellData.h>

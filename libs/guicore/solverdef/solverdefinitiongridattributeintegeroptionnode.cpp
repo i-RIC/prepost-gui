@@ -3,10 +3,9 @@
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridattributeintegeroptionnode.h"
 
-SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(QDomElement node, const SolverDefinitionTranslator& translator)
-	: SolverDefinitionGridAttributeIntegerNode(node, translator)
+SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(QDomElement node, const SolverDefinitionTranslator& translator) :
+	SolverDefinitionGridAttributeIntegerNode {node, translator, true}
 {
-	m_isOption = true;
 	loadEnumeration(node, translator);
 }
 
@@ -17,7 +16,7 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::editWid
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::createScalarsToColorsEditWidget(QWidget* parent)
+ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::createScalarsToColorsEditWidget(QWidget* parent) const
 {
 	return createColorTransferFunctionEditWidget(parent);
 }

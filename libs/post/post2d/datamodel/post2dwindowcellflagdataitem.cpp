@@ -6,6 +6,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QMouseEvent>
+#include <QXmlStreamWriter>
 
 #include <vtkActorCollection.h>
 #include <vtkCellData.h>

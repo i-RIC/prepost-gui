@@ -31,7 +31,7 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	m_isDeletable = false;
 
 	m_gridType = type;
-	m_subFolder = type->name();
+	setSubPath(type->name());
 	m_isZoneDataItemsSetup = false;
 
 	setupZoneDataItems();

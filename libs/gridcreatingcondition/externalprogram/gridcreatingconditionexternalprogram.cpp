@@ -1,7 +1,5 @@
 #include "gridcreatingconditionexternalprogram.h"
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
-//#include "pre/preprocessorwindow.h"
-//#include "project/projectdata.h"
 
 #include <guibase/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -13,6 +11,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
@@ -37,7 +36,7 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 	m_definition = new SolverDefinition(folderName, locale);
 	m_locale = locale;
 	m_name = m_definition->name();
-	m_filename = "gridcreate.cgn";
+	setFilename("gridcreate.cgn");
 
 	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
 	m_rightClickingMenu = new QMenu();
@@ -226,7 +225,7 @@ void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, P
 void GridCreatingConditionExternalProgram::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
 	if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

@@ -3,28 +3,27 @@
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
 
+#include <QLocale>
 #include <QDir>
 #include <QDomDocument>
 #include <QDomNode>
 #include <QString>
-#include <QXmlInputSource>
 
-const QString SolverDefinitionTranslator::translate(const QString& src) const
+class SolverDefinitionTranslator::Impl
 {
-	if (m_dictionary.contains(src)) {
-		return m_dictionary.value(src);
-	} else {
-		return src;
-	}
-}
-QString SolverDefinitionTranslator::filenameFromLocale(const QLocale& locale)
+public:
+	Impl(const QString& solverfolder, const QLocale& locale);
+	void load(const QString& solverfolder, const QLocale& locale);
+
+	QHash<QString, QString> m_dictionary;
+};
+
+SolverDefinitionTranslator::Impl::Impl(const QString &solverfolder, const QLocale &locale)
 {
-	QString tmp("translation_");
-	tmp.append(locale.name());
-	tmp.append(".ts");
-	return tmp;
+	load(solverfolder, locale);
 }
-void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale& locale)
+
+void SolverDefinitionTranslator::Impl::load(const QString &solverfolder, const QLocale &locale)
 {
 	// get translation file name
 	QDir solFolder(solverfolder);
@@ -94,4 +93,30 @@ void SolverDefinitionTranslator::load(const QString& solverfolder, const QLocale
 		}
 		contextNode = contextNode.nextSibling();
 	}
+}
+
+SolverDefinitionTranslator::SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale) :
+	m_impl {new Impl {solverfolder, locale}}
+{}
+
+SolverDefinitionTranslator::~SolverDefinitionTranslator()
+{
+	delete m_impl;
+}
+
+const QString SolverDefinitionTranslator::translate(const QString& src) const
+{
+	if (m_impl->m_dictionary.contains(src)) {
+		return m_impl->m_dictionary.value(src);
+	} else {
+		return src;
+	}
+}
+
+QString SolverDefinitionTranslator::filenameFromLocale(const QLocale& locale)
+{
+	QString tmp("translation_");
+	tmp.append(locale.name());
+	tmp.append(".ts");
+	return tmp;
 }

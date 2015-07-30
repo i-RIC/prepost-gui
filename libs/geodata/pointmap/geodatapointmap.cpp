@@ -23,10 +23,10 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <misc/informationdialog.h>
-#include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/mathsupport.h>
 #include <misc/versionnumber.h>
 #include <misc/zdepthrange.h>
 #include <triangle/triangle.h>
@@ -1122,8 +1122,8 @@ void GeoDataPointmap::saveExternalData(const QString& filename)
 
 void GeoDataPointmap::updateFilename()
 {
-	m_filename = m_name;
-	m_filename.append(".dat");
+	QString name = m_name;
+	setFilename(name.append(".dat"));
 }
 
 void GeoDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)
@@ -1938,7 +1938,7 @@ void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 		case meNormal:
 		case meNormalWithShift:
 			box->setEndPoint(event->x(), event->y());
-			if (isNear(box->startPoint(), box->endPoint())) {
+			if (iRIC::isNear(box->startPoint(), box->endPoint())) {
 				selectPointsNearPoint(QVector2D(worldX, worldY), xOr);
 			} else {
 				selectPointsInsideBox(box, xOr);
@@ -1951,7 +1951,7 @@ void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 			break;
 		}
 	} else if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, QPoint(event->x(), event->y()))) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			// show right-clicking menu.
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();

@@ -8,6 +8,7 @@
 #include <guibase/waitdialog.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
+#include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 #include <geodata/polygon/geodatapolygonabstractpolygon.h>
 #include <geodata/polygon/geodatapolygonregionpolygon.h>
@@ -140,7 +141,7 @@ void PreProcessorBCSettingDataItem::mousePressEvent(QMouseEvent* event, VTKGraph
 
 void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	if (isNear(m_dragStartPoint, QPoint(event->x(), event->y())) && event->button() == Qt::RightButton) {
+	if (iRIC::isNear(m_dragStartPoint, event->pos()) && event->button() == Qt::RightButton) {
 		m_rightClickingMenu->move(event->globalPos());
 		m_rightClickingMenu->show();
 	} else {
@@ -199,7 +200,7 @@ void PreProcessorBCSettingDataItem::saveExternalData(const QString& filename)
 
 void PreProcessorBCSettingDataItem::updateFilename()
 {
-	m_filename = QString("%1%2.dat").arg(m_bcDataItem->condition()->name()).arg(m_bcDataItem->projectNumber());
+	setFilename(QString("%1%2.dat").arg(m_bcDataItem->condition()->name()).arg(m_bcDataItem->projectNumber()));
 }
 
 void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dialog)

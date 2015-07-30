@@ -2,10 +2,9 @@
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridattributerealoptioncell.h"
 
-SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator)
-	: SolverDefinitionGridAttributeRealCell(node, translator)
+SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator) :
+	SolverDefinitionGridAttributeRealCell {node, translator, true}
 {
-	m_isOption = true;
 	loadEnumeration(node, translator);
 }
 
@@ -16,7 +15,7 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeRealOptionCell::editWidget
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttributeRealOptionCell::createScalarsToColorsEditWidget(QWidget* parent)
+ScalarsToColorsEditWidget* SolverDefinitionGridAttributeRealOptionCell::createScalarsToColorsEditWidget(QWidget* parent) const
 {
 	return createColorTransferFunctionEditWidget(parent);
 }

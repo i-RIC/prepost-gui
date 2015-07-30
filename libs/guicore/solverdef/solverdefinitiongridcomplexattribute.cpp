@@ -6,23 +6,42 @@
 
 #include <misc/xmlsupport.h>
 
-void SolverDefinitionGridComplexAttribute::load(const QDomElement node)
+class SolverDefinitionGridComplexAttribute::Impl
 {
-	QDomElement defNode = iRIC::getChildNode(node, "Definition").toElement();
+public:
+	Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
+	void load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
+
+	QDomElement m_element;
+};
+
+SolverDefinitionGridComplexAttribute::Impl::Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent)
+{
+	load(elem, parent);
+}
+
+void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent)
+{
+	QDomElement defNode = iRIC::getChildNode(elem, "Definition").toElement();
 	if (defNode.attribute("position") == "cell") {
-		m_position = CellCenter;
+		parent->setPosition(CellCenter);
 	}
 	m_element = defNode;
 }
 
-GridAttributeContainer* SolverDefinitionGridComplexAttribute::container(Grid* grid)
+SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator) :
+	SolverDefinitionGridAttributeInteger {node, translator, Node, false},
+	m_impl {new Impl {node, this}}
+{}
+
+SolverDefinitionGridComplexAttribute::~SolverDefinitionGridComplexAttribute()
 {
-	return buildContainer(grid);
+	delete m_impl;
 }
 
-GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(Grid* grid)
+const QDomElement& SolverDefinitionGridComplexAttribute::element() const
 {
-	return new GridComplexAttributeContainer(grid, this);
+	return m_impl->m_element;
 }
 
 GridAttributeEditWidget* SolverDefinitionGridComplexAttribute::editWidget(QWidget* parent)
@@ -30,19 +49,9 @@ GridAttributeEditWidget* SolverDefinitionGridComplexAttribute::editWidget(QWidge
 	return new GridComplexAttributeEditWidget(parent, this);
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridComplexAttribute::createScalarsToColorsEditWidget(QWidget* parent)
+GridAttributeVariationEditWidget* SolverDefinitionGridComplexAttribute::variationEditWidget(QWidget*)
 {
-	return createColorTransferFunctionEditWidget(parent);
-}
-
-QString SolverDefinitionGridComplexAttribute::undefinedString()
-{
-	return QObject::tr("(Undefined)");
-}
-
-QString SolverDefinitionGridComplexAttribute::undefinedEnglishString()
-{
-	return "(Undefined)";
+	return nullptr;
 }
 
 GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDataItem* parent)
@@ -52,6 +61,25 @@ GeoData* SolverDefinitionGridComplexAttribute::buildBackgroundGeoData(ProjectDat
 
 ScalarsToColorsContainer* SolverDefinitionGridComplexAttribute::createScalarsToColorsContainer(ProjectDataItem* d)
 {
-	ColorTransferFunctionContainer* cont = createColorTransferFunctionContainer(d);
-	return cont;
+	return createColorTransferFunctionContainer(d);
+}
+
+ScalarsToColorsEditWidget* SolverDefinitionGridComplexAttribute::createScalarsToColorsEditWidget(QWidget* parent) const
+{
+	return createColorTransferFunctionEditWidget(parent);
+}
+
+QString SolverDefinitionGridComplexAttribute::undefinedString() const
+{
+	return QObject::tr("(Undefined)");
+}
+
+QString SolverDefinitionGridComplexAttribute::undefinedEnglishString() const
+{
+	return "(Undefined)";
+}
+
+GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(Grid* grid)
+{
+	return new GridComplexAttributeContainer(grid, this);
 }

@@ -11,6 +11,7 @@
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/project/projectdataitem.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <QAction>
 #include <QItemSelection>
@@ -723,7 +724,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 	case meNormal:
 	case meMovePrepare:
 		if (event->button() == Qt::RightButton) {
-			if (ProjectDataItem::isNear(m_dragStartPoint, event->pos())) {
+			if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 				// show right-clicking menu.
 				setupMenu();
 				m_rightClickingMenu->move(event->globalPos());
@@ -740,7 +741,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 	case meSelecting:
 		// finish selecting.
 		m_rubberBand->hide();
-		if (ProjectDataItem::isNear(m_rubberOrigin, event->pos())) {
+		if (iRIC::isNear(m_rubberOrigin, event->pos())) {
 			// press point and release point are too near.
 			QPoint p1(event->pos().x() - 3, event->pos().y() - 3);
 			QPoint p2(event->pos().x() + 3, event->pos().y() + 3);

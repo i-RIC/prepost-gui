@@ -11,7 +11,7 @@ public:
 	SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator);
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;
+	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 };
 

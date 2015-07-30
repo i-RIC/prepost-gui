@@ -8,31 +8,38 @@
 
 #include <QDir>
 #include <QDomElement>
-#include <QPoint>
 #include <QRect>
+#include <QString>
 #include <QWidget>
 #include <QXmlStreamWriter>
 
 #include <vtkCamera.h>
 
-const QString ProjectDataItem::filename()
+class ProjectDataItem::Impl
 {
-	if (m_filename == "") {return "";}
-	QDir workdir(projectData()->workDirectory());
-	return workdir.absoluteFilePath(relativeFilename());
+public:
+	QString m_filename {};
+	QString m_subPath {};
+};
+
+// Public interfaces
+
+const QDataStream::Version ProjectDataItem::dataStreamVersion = QDataStream::Qt_4_6;
+
+ProjectDataItem::ProjectDataItem(ProjectDataItem* d) :
+	ProjectDataItem {"", d}
+{}
+
+ProjectDataItem::ProjectDataItem(const QString& filename, ProjectDataItem* d) :
+	QObject {d},
+	m_impl {new Impl {}}
+{
+	m_impl->m_filename = filename;
 }
 
-const QString ProjectDataItem::relativeFilename()
+ProjectDataItem::~ProjectDataItem()
 {
-	QDir subdir(relativeSubPath());
-	return subdir.filePath(m_filename);
-}
-
-QStringList ProjectDataItem::containedFiles()
-{
-	QStringList ret;
-	if (m_filename != "") {ret.append(relativeFilename());}
-	return ret;
+	delete m_impl;
 }
 
 void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
@@ -40,7 +47,7 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 	// load data from project main file.
 	doLoadFromProjectMainFile(node);
 	// when this item stores data in external file, load it.
-	if (m_filename != "") {
+	if (m_impl->m_filename != "") {
 		loadExternalData(filename());
 	}
 }
@@ -48,28 +55,127 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 void ProjectDataItem::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// when this item defines a sub folder, create the subfolder.
-	if (m_subFolder != "") {
-		QDir(QDir(projectData()->workDirectory()).absoluteFilePath(parent()->relativeSubPath())).mkdir(m_subFolder);
+	if (m_impl->m_subPath != "") {
+		QString parentFolder = QDir(projectData()->workDirectory()).absoluteFilePath(parent()->relativeSubPath());
+		QDir(parentFolder).mkdir(m_impl->m_subPath);
 	}
 	// save data to project main file.
 	doSaveToProjectMainFile(writer);
 	// when this item stores data in external file, save it.
-	if (m_filename != "") {
+	if (m_impl->m_filename != "") {
 		saveExternalData(filename());
 	}
 }
 
+QString ProjectDataItem::currentCgnsFileName() const
+{
+	return parent()->currentCgnsFileName();
+}
+
+void ProjectDataItem::loadFromCgnsFile(int)
+{}
+
+void ProjectDataItem::saveToCgnsFile(int)
+{}
+
+void ProjectDataItem::closeCgnsFile()
+{}
+
+QString ProjectDataItem::filename() const
+{
+	if (m_impl->m_filename == "") {return "";}
+
+	QDir workdir(projectData()->workDirectory());
+	return workdir.absoluteFilePath(relativeFilename());
+}
+
+QString ProjectDataItem::relativeFilename() const
+{
+	QDir subdir(relativeSubPath());
+	return subdir.filePath(m_impl->m_filename);
+}
+
+void ProjectDataItem::setFilename(const QString& fname)
+{
+	m_impl->m_filename = fname;
+}
+
+QStringList ProjectDataItem::containedFiles()
+{
+	QStringList ret;
+	if (m_impl->m_filename != "") {
+		ret.append(relativeFilename());
+	}
+	return ret;
+}
+
+ProjectDataItem* ProjectDataItem::parent() const
+{
+	return dynamic_cast<ProjectDataItem*> (QObject::parent());
+}
+
+iRICMainWindowInterface* ProjectDataItem::iricMainWindow() const
+{
+	return projectData()->mainWindow();
+}
+
+void ProjectDataItem::setModified()
+{
+	parent()->setModified();
+}
+
+ProjectData* ProjectDataItem::projectData() const
+{
+	return parent()->projectData();
+}
+
 void ProjectDataItem::loadFilename(const QDomNode& node)
 {
-	m_filename = node.toElement().attribute("filename");
+	m_impl->m_filename = node.toElement().attribute("filename");
 }
 
 void ProjectDataItem::saveFilename(QXmlStreamWriter& writer) const
 {
-	if (! m_filename.isNull()) {
-		writer.writeAttribute("filename", m_filename);
-	}
+	if (m_impl->m_filename.isNull()) {return;}
+
+	writer.writeAttribute("filename", m_impl->m_filename);
 }
+
+QString ProjectDataItem::relativeSubPath() const
+{
+	if (m_impl->m_subPath == "") {
+		return parent()->relativeSubPath();
+	}
+
+	QString parentPath = parent()->relativeSubPath();
+	if (parentPath != "") {parentPath.append("/");}
+	return parentPath.append(m_impl->m_subPath);
+}
+
+QString ProjectDataItem::subPath() const
+{
+	QDir workdir(projectData()->workDirectory());
+	return workdir.absoluteFilePath(relativeSubPath());
+}
+
+void ProjectDataItem::setSubPath(const QString& subPath)
+{
+	m_impl->m_subPath = subPath;
+}
+
+QVector2D ProjectDataItem::offset() const
+{
+	return projectData()->mainfile()->offset();
+}
+
+void ProjectDataItem::doApplyOffset(double, double)
+{}
+
+void ProjectDataItem::loadExternalData(const QString&)
+{}
+
+void ProjectDataItem::saveExternalData(const QString&)
+{}
 
 void ProjectDataItem::loadWindowGeometry(QWidget* w, const QDomNode& node)
 {
@@ -89,8 +195,6 @@ void ProjectDataItem::loadWindowGeometry(QWidget* w, const QDomNode& node)
 	if (max) {
 		w->showMaximized();
 	}
-//	WindowWithZIndex* w2 = dynamic_cast<WindowWithZIndex*>(w);
-//	w2->setZindex(elem.attribute("zindex").toInt());
 }
 
 void ProjectDataItem::writeWindowGeometry(QWidget* w, QXmlStreamWriter& writer)
@@ -145,37 +249,6 @@ void ProjectDataItem::writeOpacityPercent(int opacity, QXmlStreamWriter& writer)
 	iRIC::setIntAttribute(writer, "opacityPercent", opacity);
 }
 
-QString ProjectDataItem::relativeSubPath() const
-{
-	if (m_subFolder != "") {
-		QString parentPath = parent()->relativeSubPath();
-		if (parentPath != "") {parentPath.append("/");}
-		return parentPath.append(m_subFolder);
-	} else {
-		return parent()->relativeSubPath();
-	}
-}
-
-QString ProjectDataItem::subPath() const
-{
-	QDir workdir(projectData()->workDirectory());
-	return workdir.absoluteFilePath(relativeSubPath());
-}
-
-bool ProjectDataItem::isNear(const QPoint& p1, const QPoint& p2)
-{
-	int xdiff = p2.x() - p1.x();
-	int ydiff = p2.y() - p2.y();
-	if (xdiff < - 2 || xdiff > 2) {return false;}
-	if (ydiff < - 2 || ydiff > 2) {return false;}
-	return true;
-}
-
-iRICMainWindowInterface* ProjectDataItem::iricMainWindow()
-{
-	return projectData()->mainWindow();
-}
-
 void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 {
 	double position[3];
@@ -220,9 +293,4 @@ void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
 void ProjectDataItem::loadExternalData()
 {
 	loadExternalData(filename());
-}
-
-QVector2D ProjectDataItem::offset()
-{
-	return projectData()->mainfile()->offset();
 }

@@ -10,6 +10,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
+#include <QFile>
 #include <QRegExp>
 #include <QTextStream>
 

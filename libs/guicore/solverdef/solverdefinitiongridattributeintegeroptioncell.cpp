@@ -5,10 +5,9 @@
 
 #include <vtkColorTransferFunction.h>
 
-SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator)
-	: SolverDefinitionGridAttributeIntegerCell(node, translator)
+SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator) :
+	SolverDefinitionGridAttributeIntegerCell(node, translator, true)
 {
-	m_isOption = true;
 	loadEnumeration(node, translator);
 }
 
@@ -19,7 +18,7 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::editWid
 	return w;
 }
 
-ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::createScalarsToColorsEditWidget(QWidget* parent)
+ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::createScalarsToColorsEditWidget(QWidget* parent) const
 {
 	return createColorTransferFunctionEditWidget(parent);
 }

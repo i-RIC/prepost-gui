@@ -781,7 +781,7 @@ void GridCreatingConditionRiverSurvey::mouseReleaseEvent(QMouseEvent* event, Pre
 			return;
 		}
 	} else if (event->button() == Qt::RightButton) {
-		if (isNear(m_dragStartPoint, event->pos())) {
+		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
 		}

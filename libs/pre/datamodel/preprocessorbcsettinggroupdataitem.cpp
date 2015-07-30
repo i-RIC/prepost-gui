@@ -15,6 +15,7 @@
 #include <QMap>
 #include <QMenu>
 #include <QMessageBox>
+#include <QXmlStreamWriter>
 
 #include <iriclib.h>
 
@@ -27,7 +28,7 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_subFolder = "bcsetting";
+	setSubPath("bcsetting");
 
 	m_dummyEditAction = new QAction("&Edit Condition...", this);
 	m_dummyEditAction->setDisabled(true);

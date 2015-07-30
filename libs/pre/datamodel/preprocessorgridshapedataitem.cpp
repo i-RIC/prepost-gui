@@ -18,6 +18,7 @@
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/project/projectdata.h>
 #include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -305,7 +306,7 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 		m_draggingSelectedPoints = false;
 	} else if (event->button() == Qt::RightButton) {
 		QPoint releasePoint(event->x(), event->y());
-		if (isNear(m_pressPoint, releasePoint)) {
+		if (iRIC::isNear(m_pressPoint, releasePoint)) {
 			delete menu;
 			menu = new QMenu(projectData()->mainWindow());
 			menu->addAction(m_editAction);

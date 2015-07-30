@@ -2,41 +2,32 @@
 #define SOLVERDEFINITIONGRIDRELATEDCOMPLEXCONDITION_H
 
 #include "../guicore_global.h"
-#include "solverdefinitionnode.h"
 #include "solverdefinitiongridattributet.h"
-#include <QString>
-#include <QDomElement>
-
-class GridAttributeContainer;
-class SolverDefinition;
-class PreProcessorDataItem;
-class PreProcessorGridRelatedComplexConditionDataItem;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridComplexAttribute : public SolverDefinitionGridAttributeInteger
 {
 
 public:
-	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator)
-		: SolverDefinitionGridAttributeInteger(node, translator) {
-		load(node);
-	}
-	~SolverDefinitionGridComplexAttribute() {}
-	const QDomElement& element() {return m_element;}
-	GridAttributeContainer* container(Grid* grid);
+	/// Constructor
+	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator);
+	/// Destructor
+	~SolverDefinitionGridComplexAttribute();
+
+	const QDomElement& element() const;
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
-	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
+	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
-	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) override;
-	QString undefinedString();
-	QString undefinedEnglishString();
+	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
+	QString undefinedString() const;
+	QString undefinedEnglishString() const;
 
 private:
-	void load(const QDomElement node);
 	GridAttributeContainer* buildContainer(Grid* grid) override;
-	QDomElement m_element;
-	SolverDefinition* m_definition;
+
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONGRIDRELATEDCOMPLEXCONDITION_H
