@@ -126,10 +126,10 @@ void Graph2dWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, Graph2dWindo
 /**
 	* This class stores only displayRole data and checkState data.
 	*/
-class Graph2dWindowDataItemStandardItemChangeCommand : public QUndoCommand
+class Graph2dWindowDataItem::StandardItemChangeCommand : public QUndoCommand
 {
 public:
-	Graph2dWindowDataItemStandardItemChangeCommand(Graph2dWindowDataItem* item)
+	StandardItemChangeCommand(Graph2dWindowDataItem* item)
 		: QUndoCommand(QObject::tr("Object Browser Item Change")) {
 		m_oldDisplayText = item->m_standardItemCopy->data(Qt::DisplayRole);
 		m_oldCheckState = item->m_standardItemCopy->data(Qt::CheckStateRole);
@@ -141,8 +141,6 @@ public:
 	}
 	void redo() {
 		m_item->setIsCommandExecuting(true);
-//		m_item->m_standardItemCopy->setData(m_item->m_standardItem->data(Qt::DisplayRole), Qt::DisplayRole);
-//		m_item->m_standardItemCopy->setData(m_item->m_standardItem->data(Qt::CheckStateRole), Qt::CheckStateRole);
 
 		m_item->m_standardItemCopy->setData(m_newDisplayText, Qt::DisplayRole);
 		m_item->m_standardItemCopy->setData(m_newCheckState, Qt::CheckStateRole);
@@ -156,8 +154,6 @@ public:
 	}
 	void undo() {
 		m_item->setIsCommandExecuting(true);
-//		m_item->m_standardItemCopy->setData(m_item->m_standardItem->data(Qt::DisplayRole), Qt::DisplayRole);
-//		m_item->m_standardItemCopy->setData(m_item->m_standardItem->data(Qt::CheckStateRole), Qt::CheckStateRole);
 
 		m_item->m_standardItemCopy->setData(m_oldDisplayText, Qt::DisplayRole);
 		m_item->m_standardItemCopy->setData(m_oldCheckState, Qt::CheckStateRole);
@@ -182,7 +178,7 @@ private:
 void Graph2dWindowDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack::instance().push(new Graph2dWindowDataItemStandardItemChangeCommand(this));
+	iRICUndoStack::instance().push(new StandardItemChangeCommand(this));
 }
 
 void Graph2dWindowDataItem::loadFromCgnsFile(const int fn)

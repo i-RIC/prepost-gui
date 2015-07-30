@@ -20,7 +20,6 @@ class QMouseEvent;
 class QWheelEvent;
 class Graph2dWindowDataModel;
 class ObjectBrowserView;
-class Graph2dWindowDataItemStandardItemChangeCommand;
 
 class GRAPH2D_EXPORT Graph2dWindowDataItem : public ProjectDataItem
 {
@@ -72,15 +71,15 @@ public:
 	/**
 	 * If no property dialog is available, this function returns 0.
 	 */
-	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
+	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return nullptr;}
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 	/// Returns the pointer to a toolbar specific to currently selected item.
 	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
 	const QList <Graph2dWindowDataItem*>& childItems() const {return m_childItems;}
 	/// Move up the order in object browser.
-	virtual void moveUp();
+	void moveUp();
 	/// Move down the order in object browser.
-	virtual void moveDown();
+	void moveDown();
 	/// Z depth value range assigned for this item.
 	virtual void updateZDepthRangeItemCount();
 	ZDepthRange zDepthRange() const {return m_zDepthRange;}
@@ -114,22 +113,20 @@ protected:
 	QList <Graph2dWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy;
-	bool m_isDeletable;
-	bool m_isReorderable;
 	bool m_isExpanded;
 	ZDepthRange m_zDepthRange;
-	bool m_isCommandExecuting;
 
 protected:
+	bool m_isPushing;
+	bool m_isDeletable;
+
+private:
+	bool m_isReorderable;
+	bool m_isCommandExecuting;
 	/// If true, the PreProcessorDataItem tree is under destruction.
 	bool m_isDestructing;
-	bool m_isPushing;
 
-public:
-	friend class BackgroundImageInfo;
-	friend class Graph2dWindowDrawOnRedo;
-	friend class Graph2dWindowDrawOnUndo;
-	friend class Graph2dWindowDataItemStandardItemChangeCommand;
+	class StandardItemChangeCommand;
 };
 
 #endif // GRAPH2DWINDOWDATAITEM_H
