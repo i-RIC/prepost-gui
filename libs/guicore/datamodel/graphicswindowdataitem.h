@@ -92,7 +92,6 @@ public:
 
 	virtual bool hasTransparentPart();
 
-	virtual void showPropertyDialog();
 	/// Returns the pointer to a dialog which shows the property edit dialog of this item.
 	/**
 	 * If no property dialog is available, this function returns 0.
@@ -124,6 +123,9 @@ public:
 	void renderGraphicsView();
 	virtual void updateVisibilityWithoutRendering();
 	void applyOffset(double x, double y);
+
+public slots:
+	virtual void showPropertyDialog();
 
 protected:
 	PostSolutionInfo* postSolutionInfo();
