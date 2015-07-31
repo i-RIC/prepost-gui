@@ -7,34 +7,20 @@
 
 #include <vtkTextProperty.h>
 
-vtkTextPropertySettingContainer::vtkTextPropertySettingContainer()
-{
-	m_fontFamily = ffArial;
-	m_fontColor = QColor(Qt::black);
-	m_fontSize = 10;
-	m_isBold = false;
-	m_isItalic = false;
-	m_isShadow = false;
-}
+vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
+	CompositeContainer {&m_fontFamily, &m_fontColor, &m_fontSize, &m_isBold, &m_isItalic, &m_isShadow},
+	m_fontFamily {"fontFamily", ffArial},
+	m_fontColor {"fontColor", Qt::black},
+	m_fontSize {"fontSize", 10},
+	m_isBold {"fontIsBold", false},
+	m_isItalic {"fontIsItalic", false},
+	m_isShadow {"fontIsShadow", false}
+{}
 
-void vtkTextPropertySettingContainer::load(const QDomNode& node)
+vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer &c) :
+	vtkTextPropertySettingContainer {}
 {
-	m_fontFamily = static_cast<FontFamily>(iRIC::getIntAttribute(node, attName("fontFamily"), 0));
-	m_fontColor = iRIC::getColorAttribute(node, attName("fontColor"));
-	m_fontSize = iRIC::getIntAttribute(node, "fontSize", 10);
-	m_isBold = iRIC::getBooleanAttribute(node, attName("fontIsBold"));
-	m_isItalic = iRIC::getBooleanAttribute(node, attName("fontIsItalic"));
-	m_isShadow = iRIC::getBooleanAttribute(node, attName("fontIsShadow"));
-}
-
-void vtkTextPropertySettingContainer::save(QXmlStreamWriter& writer) const
-{
-	iRIC::setIntAttribute(writer, attName("fontFamily"), static_cast<int>(m_fontFamily));
-	iRIC::setColorAttribute(writer, attName("fontColor"), m_fontColor);
-	iRIC::setIntAttribute(writer, attName("fontSize"), m_fontSize);
-	iRIC::setBooleanAttribute(writer, attName("fontIsBold"), m_isBold);
-	iRIC::setBooleanAttribute(writer, attName("fontIsItalic"), m_isItalic);
-	iRIC::setBooleanAttribute(writer, attName("fontIsShadow"), m_isShadow);
+	CompositeContainer::operator =(c);
 }
 
 void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
@@ -48,9 +34,11 @@ void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 	}
 	double r, g, b;
 	prop->GetColor(r, g, b);
-	m_fontColor.setRedF(r);
-	m_fontColor.setGreenF(g);
-	m_fontColor.setBlueF(b);
+	QColor c;
+	c.setRedF(r);
+	c.setGreenF(g);
+	c.setBlueF(b);
+	m_fontColor = c;
 	m_isBold = (prop->GetBold() == 1);
 	m_isItalic = (prop->GetItalic() == 1);
 	m_isShadow = (prop->GetShadow() == 1);
@@ -65,10 +53,9 @@ void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 	} else if (m_fontFamily == ffTimes) {
 		prop->SetFontFamilyToTimes();
 	}
-	prop->SetColor(m_fontColor.redF(), m_fontColor.greenF(), m_fontColor.blueF());
+	prop->SetColor(m_fontColor);
 	prop->SetFontSize(m_fontSize);
 	prop->SetBold(m_isBold);
 	prop->SetItalic(m_isItalic);
 	prop->SetShadow(m_isShadow);
 }
-

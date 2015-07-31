@@ -2,13 +2,17 @@
 #define VTKTEXTPROPERTYSETTINGCONTAINER_H
 
 #include "guibase_global.h"
-#include <misc/xmlattributecontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/colorcontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/intcontainer.h>
+#include <misc/compositecontainer.h>
 #include <QColor>
 
 class vtkTextProperty;
 
 /// Container class for vtkTextProperty setting
-class GUIBASEDLL_EXPORT vtkTextPropertySettingContainer : public XmlAttributeContainer
+class GUIBASEDLL_EXPORT vtkTextPropertySettingContainer : public CompositeContainer
 {
 
 public:
@@ -20,6 +24,9 @@ public:
 	};
 	/// Constructor
 	vtkTextPropertySettingContainer();
+	/// Constructor (copy)
+	vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer& c);
+	/// Destructor
 	virtual ~vtkTextPropertySettingContainer() {}
 
 	/// The font family
@@ -27,7 +34,7 @@ public:
 	/// Set the font family
 	void setFontFamily(FontFamily ff) {m_fontFamily = ff;}
 	/// The font color
-	const QColor& fontColor() const {return m_fontColor;}
+	QColor fontColor() const {return m_fontColor;}
 	/// Set the font color
 	void setFontColor(const QColor& c) {m_fontColor = c;}
 	/// The font size (in pixels)
@@ -47,23 +54,18 @@ public:
 	/// Set the font shadow flag
 	void setShadow(bool shadow) {m_isShadow = shadow;}
 
-	/// Load setting from XML attributes
-	void load(const QDomNode&) override;
-	/// Save setting to XML attributes
-	void save(QXmlStreamWriter&) const override;
-
 	/// Get setting from vtkTextProperty instance
 	void getSetting(vtkTextProperty* prop);
 	/// Apply setting to vtkTextProperty instance
 	void applySetting(vtkTextProperty* prop);
 
 private:
-	FontFamily m_fontFamily;
-	QColor m_fontColor;
-	int m_fontSize;
-	bool m_isBold;
-	bool m_isItalic;
-	bool m_isShadow;
+	EnumContainerT<FontFamily> m_fontFamily;
+	ColorContainer m_fontColor;
+	IntContainer m_fontSize;
+	BoolContainer m_isBold;
+	BoolContainer m_isItalic;
+	BoolContainer m_isShadow;
 };
 
 #endif // VTKTEXTPROPERTYSETTINGCONTAINER_H

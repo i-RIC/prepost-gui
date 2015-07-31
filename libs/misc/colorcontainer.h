@@ -8,6 +8,8 @@
 
 class MISCDLL_EXPORT ColorContainer : public XmlAttributeContainer
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
