@@ -15,19 +15,25 @@ class QCursor;
 
 class GUICOREDLL_EXPORT VTKGraphicsView : public QVTKWidget
 {
+	Q_OBJECT
 
 public:
+	/// Constructor
 	VTKGraphicsView(QWidget* parent);
+	/// Destructor
 	virtual ~VTKGraphicsView();
+
+	/// @name Model related functions
+	//@{
 	void setModel(GraphicsWindowSimpleDataModel* m) {m_model = m;}
 	GraphicsWindowDataItem* activeDataItem() {return m_activeDataItem;}
 	void setActiveDataItem(GraphicsWindowDataItem* i) {
 		m_activeDataItem = i;
 	}
-	void scale(double s);
-	virtual void fitInView() {}
-	virtual void translate(int x, int y) = 0;
+	//@}
 
+	/// @name Mouse event handling functions
+	//@{
 	void keyPressEvent(QKeyEvent* event) override;
 	void keyReleaseEvent(QKeyEvent* event) override;
 	void mouseDoubleClickEvent(QMouseEvent* event) override;
@@ -43,6 +49,7 @@ public:
 	void standardMouseReleaseEvent(QMouseEvent* event);
 	void standardMouseMoveEvent(QMouseEvent* event);
 	void standardWheelEvent(QWheelEvent* event);
+	//@}
 
 	vtkRenderer* mainRenderer() const {return m_mainRenderer;}
 	void render();
@@ -53,7 +60,36 @@ public:
 
 	QImage getImage();
 
+public slots:
+	/// Move the camera so that data fit to the view.
+	void cameraFit();
+	/// Zoom-in
+	void cameraZoomIn();
+	/// Zoom-out
+	void cameraZoomOut();
+	/// Move left
+	void cameraMoveLeft();
+	/// Move right
+	void cameraMoveRight();
+	/// Move up
+	void cameraMoveUp();
+	/// Move down
+	void cameraMoveDown();
+
+protected:
+	GraphicsWindowSimpleDataModel* model() const {return m_model;}
+
 private:
+	/// @name Viewport related functions
+	//@{
+	void scale(double s);
+	virtual void fitInView() {}
+	virtual void translate(int x, int y) = 0;
+
+	void moveCenter(int x, int y);
+	int moveWidth();
+	//@}
+
 	QPixmap m_zoomPixmap;
 	QPixmap m_rotatePixmap;
 	QPixmap m_movePixmap;

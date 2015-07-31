@@ -425,3 +425,54 @@ void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 	m_logoActor->Modified();
 	QVTKWidget::resizeEvent(event);
 }
+
+void VTKGraphicsView::cameraFit()
+{
+	fitInView();
+	m_model->viewOperationEndedGlobal();
+	render();
+}
+
+void VTKGraphicsView::cameraZoomIn()
+{
+	scale(1.2);
+	m_model->viewOperationEndedGlobal();
+	render();
+}
+
+void VTKGraphicsView::cameraZoomOut()
+{
+	scale (1 / 1.2);
+	m_model->viewOperationEndedGlobal();
+	render();
+}
+
+void VTKGraphicsView::cameraMoveLeft()
+{
+	moveCenter(moveWidth(), 0);
+}
+
+void VTKGraphicsView::cameraMoveRight()
+{
+	moveCenter(- moveWidth(), 0);
+}
+
+void VTKGraphicsView::cameraMoveUp()
+{
+	moveCenter(0, - moveWidth());
+}
+
+void VTKGraphicsView::cameraMoveDown()
+{
+	moveCenter(0, moveWidth());
+}
+
+void VTKGraphicsView::moveCenter(int x, int y)
+{
+	translate(x, y);
+}
+
+int VTKGraphicsView::moveWidth()
+{
+	return 1;
+}

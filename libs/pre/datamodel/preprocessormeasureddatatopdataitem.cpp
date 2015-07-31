@@ -119,8 +119,7 @@ void PreProcessorMeasuredDataTopDataItem::addChildItem()
 	oview->expand(fItem->standardItem()->index());
 	oview->expand(fItem->pointGroupDataItem()->standardItem()->index());
 	oview->expand(fItem->vectorGroupDataItem()->standardItem()->index());
-	dataModel()->graphicsView()->ResetCameraClippingRange();
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 	emit selectMeasuredData(fItem->standardItem()->index());
 }
 

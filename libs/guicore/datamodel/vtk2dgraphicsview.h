@@ -13,10 +13,7 @@ class GUICOREDLL_EXPORT VTK2DGraphicsView : public VTKGraphicsView
 public:
 	VTK2DGraphicsView(QWidget* parent);
 	virtual ~VTK2DGraphicsView() {}
-	virtual void fitInView() override;
-	void rotate(double r);
 	void resetCamera();
-	void resetRoll();
 	void viewportToWorld(double& x, double& y) const;
 	void worldToViewport(double& x, double& y) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
@@ -28,10 +25,20 @@ public:
 	void emitPosition(int x, int y);
 	void emitWorldPosition(int x, int y);
 
+public slots:
+	void cameraResetRotation();
+	void cameraRotate90();
+
 signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);
 	void positionChanged(int x, int y);
 	void worldPositionChanged(const QVector2D& v);
+
+private:
+	virtual void fitInView() override;
+	void rotate(double r);
+	void resetRoll();
+
 };
 
 #endif // VTK2DGRAPHICSVIEW_H

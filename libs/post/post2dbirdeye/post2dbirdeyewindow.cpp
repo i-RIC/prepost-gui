@@ -86,52 +86,52 @@ QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus() const
 
 void Post2dBirdEyeWindow::cameraFit()
 {
-	m_dataModel->fit();
+	m_dataModel->graphicsView()->cameraFit();
 }
 
 void Post2dBirdEyeWindow::cameraZoomIn()
 {
-	m_dataModel->zoomIn();
+	m_dataModel->graphicsView()->cameraZoomIn();
 }
 
 void Post2dBirdEyeWindow::cameraZoomOut()
 {
-	m_dataModel->zoomOut();
+	m_dataModel->graphicsView()->cameraZoomOut();
 }
 
 void Post2dBirdEyeWindow::cameraMoveLeft()
 {
-	m_dataModel->moveLeft();
+	m_dataModel->graphicsView()->cameraMoveLeft();
 }
 
 void Post2dBirdEyeWindow::cameraMoveRight()
 {
-	m_dataModel->moveRight();
+	m_dataModel->graphicsView()->cameraMoveRight();
 }
 
 void Post2dBirdEyeWindow::cameraMoveUp()
 {
-	m_dataModel->moveUp();
+	m_dataModel->graphicsView()->cameraMoveUp();
 }
 
 void Post2dBirdEyeWindow::cameraMoveDown()
 {
-	m_dataModel->moveDown();
+	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
 void Post2dBirdEyeWindow::cameraXYPlane()
 {
-	m_dataModel->toXYPlane();
+	m_dataModel->graphicsView()->cameraToXYPlane();
 }
 
 void Post2dBirdEyeWindow::cameraYZPlane()
 {
-	m_dataModel->toYZPlane();
+	m_dataModel->graphicsView()->cameraToYZPlane();
 }
 
 void Post2dBirdEyeWindow::cameraZXPlane()
 {
-	m_dataModel->toZXPlane();
+	m_dataModel->graphicsView()->cameraToZXPlane();
 }
 
 class Post2dBirdEyeWindowEditBackgroundColorCommand : public QUndoCommand
@@ -170,37 +170,6 @@ void Post2dBirdEyeWindow::editBackgroundColor()
 	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
 	iRICUndoStack::instance().push(new Post2dBirdEyeWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
 }
-
-/*
-bool Post2dBirdEyeWindow::exportParticles(const QString &filename, double time, const QString& zonename)
-{
-	Post2dBirdEyeWindowRootDataItem* rItem = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dBirdEyeWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
-	Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
-	return pItem->exportParticles(filename, time);
-}
-*/
-
-/*
-QList<QString> Post2dBirdEyeWindow::particleDrawingZones()
-{
-	QList<QString> ret;
-	Post2dBirdEyeWindowRootDataItem* rItem = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	QList<Post2dBirdEyeWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
-	for (int i = 0; i < gtItems.count(); ++i){
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = gtItems.at(i);
-		QList<Post2dBirdEyeWindowZoneDataItem*> zItems = gtItem->zoneDatas();
-		for (int j = 0; j < zItems.count(); ++j){
-			Post2dBirdEyeWindowZoneDataItem* zItem = zItems.at(j);
-			Post2dBirdEyeWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
-			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != ""){
-				ret.append(zItem->zoneName());
-			}
-		}
-	}
-	return ret;
-}
-*/
 
 void Post2dBirdEyeWindow::editZScale()
 {

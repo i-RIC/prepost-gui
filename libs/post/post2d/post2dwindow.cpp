@@ -95,47 +95,47 @@ QList<QMenu*> Post2dWindow::getAdditionalMenus() const
 
 void Post2dWindow::cameraFit()
 {
-	m_dataModel->fit();
+	m_dataModel->graphicsView()->cameraFit();
 }
 
 void Post2dWindow::cameraResetRotation()
 {
-	m_dataModel->resetRotation();
+	m_dataModel->graphicsView()->cameraResetRotation();
 }
 
 void Post2dWindow::cameraRotate90()
 {
-	m_dataModel->rotate90();
+	m_dataModel->graphicsView()->cameraRotate90();
 }
 
 void Post2dWindow::cameraZoomIn()
 {
-	m_dataModel->zoomIn();
+	m_dataModel->graphicsView()->cameraZoomIn();
 }
 
 void Post2dWindow::cameraZoomOut()
 {
-	m_dataModel->zoomOut();
+	m_dataModel->graphicsView()->cameraZoomOut();
 }
 
 void Post2dWindow::cameraMoveLeft()
 {
-	m_dataModel->moveLeft();
+	m_dataModel->graphicsView()->cameraMoveLeft();
 }
 
 void Post2dWindow::cameraMoveRight()
 {
-	m_dataModel->moveRight();
+	m_dataModel->graphicsView()->cameraMoveRight();
 }
 
 void Post2dWindow::cameraMoveUp()
 {
-	m_dataModel->moveUp();
+	m_dataModel->graphicsView()->cameraMoveUp();
 }
 
 void Post2dWindow::cameraMoveDown()
 {
-	m_dataModel->moveDown();
+	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
 ObjectBrowser* Post2dWindow::objectBrowser() const

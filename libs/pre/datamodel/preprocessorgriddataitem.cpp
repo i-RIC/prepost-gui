@@ -320,7 +320,7 @@ IMPORT_SUCCEED:
 
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 
 	m_shapeDataItem->updateActionStatus();
 	updateObjectBrowserTree();

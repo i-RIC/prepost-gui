@@ -7,6 +7,7 @@
 #include "gridcreatingconditiongridgenerator.h"
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -158,7 +159,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	delete[] obst;
 
 	emit gridCreated(grid);
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 	return true;
 }
 

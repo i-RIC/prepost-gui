@@ -64,7 +64,7 @@ vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow() const
 void GridBirdEyeWindow::updateGrid()
 {
 	m_dataModel->updateGrid();
-	m_dataModel->fit();
+	cameraFit();
 }
 
 QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
@@ -76,52 +76,52 @@ QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
 
 void GridBirdEyeWindow::cameraFit()
 {
-	m_graphicsView->fitInView();
+	m_graphicsView->cameraFit();
 }
 
 void GridBirdEyeWindow::cameraZoomIn()
 {
-	m_dataModel->zoomIn();
+	m_graphicsView->cameraZoomIn();
 }
 
 void GridBirdEyeWindow::cameraZoomOut()
 {
-	m_dataModel->zoomOut();
+	m_graphicsView->cameraZoomOut();
 }
 
 void GridBirdEyeWindow::cameraMoveLeft()
 {
-	m_dataModel->moveLeft();
+	m_graphicsView->cameraMoveLeft();
 }
 
 void GridBirdEyeWindow::cameraMoveRight()
 {
-	m_dataModel->moveRight();
+	m_graphicsView->cameraMoveRight();
 }
 
 void GridBirdEyeWindow::cameraMoveUp()
 {
-	m_dataModel->moveUp();
+	m_graphicsView->cameraMoveUp();
 }
 
 void GridBirdEyeWindow::cameraMoveDown()
 {
-	m_dataModel->moveDown();
+	m_graphicsView->cameraMoveDown();
 }
 
 void GridBirdEyeWindow::cameraXYPlane()
 {
-	m_dataModel->toXYPlane();
+	m_graphicsView->cameraToXYPlane();
 }
 
 void GridBirdEyeWindow::cameraYZPlane()
 {
-	m_dataModel->toYZPlane();
+	m_graphicsView->cameraToYZPlane();
 }
 
 void GridBirdEyeWindow::cameraZXPlane()
 {
-	m_dataModel->toZXPlane();
+	m_graphicsView->cameraToZXPlane();
 }
 
 class GridBirdEyeWindowEditBackgroundColorCommand : public QUndoCommand

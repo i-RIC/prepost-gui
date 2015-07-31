@@ -10,6 +10,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <misc/filesystemfunction.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
@@ -142,7 +143,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 	}
 
 	emit gridCreated(grid);
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 	return true;
 }
 

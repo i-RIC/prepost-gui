@@ -13,7 +13,6 @@ class GUICOREDLL_EXPORT GraphicsWindowSimpleDataModel : public ProjectDataItem
 	Q_OBJECT
 
 public:
-	static const int MOVEWIDTH = 1;
 	/// Constructor
 	GraphicsWindowSimpleDataModel(QMainWindow* w, ProjectDataItem* parent);
 	/// Destructor
@@ -23,28 +22,9 @@ public:
 	QMainWindow* mainWindow() const {return m_mainWindow;}
 	virtual void viewOperationEndedGlobal();
 
-public slots:
-	void fit();
-	/// Zoom-in the pre-processor main view.
-	void zoomIn();
-	/// Zoom-out the pre-processor main view.
-	void zoomOut();
-	/// Move left
-	void moveLeft();
-	/// Move right
-	void moveRight();
-	/// Move up
-	void moveUp();
-	/// Move down
-	void moveDown();
-
 protected:
 	QMainWindow* m_mainWindow;
 	VTKGraphicsView* m_graphicsView;
-
-private:
-	qreal moveWidth();
-	void moveCenter(int x, int y);
 };
 
 #endif // GRAPHICSWINDOWDATAMODEL_H

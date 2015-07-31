@@ -3,6 +3,8 @@
 
 #include "vtk3dgraphicsview.h"
 
+#include "graphicswindowsimpledatamodel.h"
+
 #include <vtkCamera.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
@@ -10,28 +12,23 @@
 
 VTK3DGraphicsView::VTK3DGraphicsView(QWidget* parent)
 	: VTKGraphicsView(parent)
-{
-
-}
+{}
 
 void VTK3DGraphicsView::fitInView()
 {
 	m_mainRenderer->ResetCamera();
 	update2Ds();
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::rotate(double r)
 {
 	m_mainRenderer->GetActiveCamera()->Roll(r);
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::resetRoll()
 {
 	double angle = m_mainRenderer->GetActiveCamera()->GetRoll();
 	m_mainRenderer->GetActiveCamera()->Roll(-angle);
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::toXYPlane()
@@ -48,7 +45,6 @@ void VTK3DGraphicsView::toXYPlane()
 	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 1, 0);
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::toYZPlane()
@@ -65,7 +61,6 @@ void VTK3DGraphicsView::toYZPlane()
 	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 0, 1);
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::toZXPlane()
@@ -82,7 +77,6 @@ void VTK3DGraphicsView::toZXPlane()
 	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
 	camera->SetPosition(newpos);
 	camera->SetViewUp(0, 0, 1);
-	m_mainRenderer->GetRenderWindow()->Render();
 }
 
 void VTK3DGraphicsView::getFocalPointAndDistance(double focal[3], double* distance)
@@ -147,5 +141,39 @@ void VTK3DGraphicsView::translate(int x, int y)
 
 	camera->SetPosition(position);
 	camera->SetFocalPoint(focalpoint);
+}
+
+void VTK3DGraphicsView::cameraResetRotation()
+{
+	resetRoll();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::cameraRotate90()
+{
+	rotate(90);
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::cameraToXYPlane()
+{
+	toXYPlane();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::cameraToYZPlane()
+{
+	toYZPlane();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::cameraToZXPlane()
+{
+	toZXPlane();
+	model()->viewOperationEndedGlobal();
 	render();
 }

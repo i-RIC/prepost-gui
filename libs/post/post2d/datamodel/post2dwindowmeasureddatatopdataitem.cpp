@@ -119,7 +119,7 @@ void Post2dWindowMeasuredDataTopDataItem::addChildItem()
 	oview->expand(fItem->vectorGroupDataItem()->standardItem()->index());
 
 	dataModel()->graphicsView()->ResetCameraClippingRange();
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 	emit selectMeasuredData(fItem->standardItem()->index());
 }
 

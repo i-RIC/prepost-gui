@@ -279,9 +279,8 @@ void PreProcessorGeoDataGroupDataItem::import()
 	informValueRangeChange();
 	informDataChange();
 
-	dataModel()->fit();
 	dataModel()->objectBrowserView()->select(item->standardItem()->index());
-	dataModel()->graphicsView()->ResetCameraClippingRange();
+	dataModel()->graphicsView()->cameraFit();
 	emit selectGeoData(item->standardItem()->index());
 	setModified();
 
@@ -300,8 +299,7 @@ ERROR:
 	informValueRangeChange();
 	informDataChange();
 
-	dataModel()->fit();
-	dataModel()->graphicsView()->ResetCameraClippingRange();
+	dataModel()->graphicsView()->cameraFit();
 	setModified();
 
 	// import is not undo-able.

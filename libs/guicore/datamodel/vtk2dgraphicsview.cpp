@@ -3,6 +3,7 @@
 
 #include "vtk2dgraphicsview.h"
 #include <guibase/vtk2dinteractorstyle.h>
+#include <guicore/datamodel/graphicswindowsimpledatamodel.h>
 
 #include <misc/iricundostack.h>
 
@@ -55,6 +56,7 @@ void VTK2DGraphicsView::fitInView()
 	delete com;
 
 	ResetCameraClippingRange();
+	update2Ds();
 }
 
 
@@ -227,3 +229,16 @@ void VTK2DGraphicsView::translate(int x, int y)
 	m_mainRenderer->GetActiveCamera()->SetFocalPoint(focalpoint);
 }
 
+void VTK2DGraphicsView::cameraResetRotation()
+{
+	resetRoll();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK2DGraphicsView::cameraRotate90()
+{
+	rotate(90);
+	model()->viewOperationEndedGlobal();
+	render();
+}

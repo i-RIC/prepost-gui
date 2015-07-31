@@ -68,7 +68,7 @@ void Post2dWindowDataModel::init()
 
 	m_graphicsView->setActiveDataItem(root);
 	m_graphicsView->setModel(this);
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 Post2dWindowGraphicsView* Post2dWindowDataModel::graphicsView() const

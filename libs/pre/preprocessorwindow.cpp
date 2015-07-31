@@ -245,47 +245,47 @@ QToolBar* PreProcessorWindow::getAdditionalToolBar() const
 
 void PreProcessorWindow::cameraFit()
 {
-	m_dataModel->fit();
+	m_dataModel->graphicsView()->cameraFit();
 }
 
 void PreProcessorWindow::cameraResetRotation()
 {
-	m_dataModel->resetRotation();
+	m_dataModel->graphicsView()->cameraResetRotation();
 }
 
 void PreProcessorWindow::cameraRotate90()
 {
-	m_dataModel->rotate90();
+	m_dataModel->graphicsView()->cameraRotate90();
 }
 
 void PreProcessorWindow::cameraZoomIn()
 {
-	m_dataModel->zoomIn();
+	m_dataModel->graphicsView()->cameraZoomIn();
 }
 
 void PreProcessorWindow::cameraZoomOut()
 {
-	m_dataModel->zoomOut();
+	m_dataModel->graphicsView()->cameraZoomOut();
 }
 
 void PreProcessorWindow::cameraMoveLeft()
 {
-	m_dataModel->moveLeft();
+	m_dataModel->graphicsView()->cameraMoveLeft();
 }
 
 void PreProcessorWindow::cameraMoveRight()
 {
-	m_dataModel->moveRight();
+	m_dataModel->graphicsView()->cameraMoveRight();
 }
 
 void PreProcessorWindow::cameraMoveUp()
 {
-	m_dataModel->moveUp();
+	m_dataModel->graphicsView()->cameraMoveUp();
 }
 
 void PreProcessorWindow::cameraMoveDown()
 {
-	m_dataModel->moveDown();
+	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
 class PreProcessorWindowEditBackgroundColorCommand : public QUndoCommand

@@ -69,7 +69,7 @@ void Post3dWindowDataModel::init()
 
 	m_graphicsView->setActiveDataItem(root);
 	m_graphicsView->setModel(this);
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 Post3dWindowGraphicsView* Post3dWindowDataModel::graphicsView() const
@@ -198,7 +198,7 @@ void Post3dWindowDataModel::editZScale()
 	if (! ok) {return;}
 	m_zScale = newZscale;
 	m_rootDataItem->updateZScale(newZscale);
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 void Post3dWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)

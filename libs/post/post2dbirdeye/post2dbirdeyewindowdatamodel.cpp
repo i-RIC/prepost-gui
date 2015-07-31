@@ -76,7 +76,7 @@ void Post2dBirdEyeWindowDataModel::init()
 	m_graphicsView->mainRenderer()->AddLight(light);
 
 	m_zScale = 1;
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 Post2dBirdEyeWindowGraphicsView* Post2dBirdEyeWindowDataModel::graphicsView() const
@@ -177,7 +177,7 @@ void Post2dBirdEyeWindowDataModel::editZScale()
 	if (! ok) {return;}
 	m_zScale = newZscale;
 	m_rootDataItem->updateZScale(newZscale);
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 void Post2dBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)

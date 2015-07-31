@@ -87,62 +87,62 @@ QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 
 void Post3dWindow::cameraFit()
 {
-	m_dataModel->fit();
+	m_dataModel->graphicsView()->cameraFit();
 }
 
 void Post3dWindow::cameraResetRotation()
 {
-	m_dataModel->resetRotation();
+	m_dataModel->graphicsView()->cameraResetRotation();
 }
 
 void Post3dWindow::cameraRotate90()
 {
-	m_dataModel->rotate90();
+	m_dataModel->graphicsView()->cameraRotate90();
 }
 
 void Post3dWindow::cameraZoomIn()
 {
-	m_dataModel->zoomIn();
+	m_dataModel->graphicsView()->cameraZoomIn();
 }
 
 void Post3dWindow::cameraZoomOut()
 {
-	m_dataModel->zoomOut();
+	m_dataModel->graphicsView()->cameraZoomOut();
 }
 
 void Post3dWindow::cameraMoveLeft()
 {
-	m_dataModel->moveLeft();
+	m_dataModel->graphicsView()->cameraMoveLeft();
 }
 
 void Post3dWindow::cameraMoveRight()
 {
-	m_dataModel->moveRight();
+	m_dataModel->graphicsView()->cameraMoveRight();
 }
 
 void Post3dWindow::cameraMoveUp()
 {
-	m_dataModel->moveUp();
+	m_dataModel->graphicsView()->cameraMoveUp();
 }
 
 void Post3dWindow::cameraMoveDown()
 {
-	m_dataModel->moveDown();
+	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
 void Post3dWindow::cameraXYPlane()
 {
-	m_dataModel->toXYPlane();
+	m_dataModel->graphicsView()->cameraToXYPlane();
 }
 
 void Post3dWindow::cameraYZPlane()
 {
-	m_dataModel->toYZPlane();
+	m_dataModel->graphicsView()->cameraToYZPlane();
 }
 
 void Post3dWindow::cameraZXPlane()
 {
-	m_dataModel->toZXPlane();
+	m_dataModel->graphicsView()->cameraToZXPlane();
 }
 
 class Post3dWindowEditBackgroundColorCommand : public QUndoCommand

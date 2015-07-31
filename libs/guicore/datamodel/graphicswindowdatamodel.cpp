@@ -45,7 +45,7 @@ GraphicsWindowDataModel::~GraphicsWindowDataModel()
 void GraphicsWindowDataModel::loadFromCgnsFile(const int fn)
 {
 	m_rootDataItem->loadFromCgnsFile(fn);
-	fit();
+	m_graphicsView->cameraFit();
 }
 
 void GraphicsWindowDataModel::saveToCgnsFile(const int fn)
@@ -251,7 +251,7 @@ void GraphicsWindowDataModel::setObjectBrowserView(ObjectBrowserView* v)
 void GraphicsWindowDataModel::fitOnDataLoad()
 {
 	if (! m_dataLoaded) {
-		fit();
+		m_graphicsView->cameraFit();
 	}
 	m_dataLoaded = true;
 }

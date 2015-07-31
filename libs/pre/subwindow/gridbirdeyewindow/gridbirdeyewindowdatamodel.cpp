@@ -119,21 +119,6 @@ void GridBirdEyeWindowDataModel::setDefaultColor()
 	}
 }
 
-void GridBirdEyeWindowDataModel::toXYPlane()
-{
-	dynamic_cast<VTK3DGraphicsView*>(m_graphicsView)->toXYPlane();
-}
-
-void GridBirdEyeWindowDataModel::toYZPlane()
-{
-	dynamic_cast<VTK3DGraphicsView*>(m_graphicsView)->toYZPlane();
-}
-
-void GridBirdEyeWindowDataModel::toZXPlane()
-{
-	dynamic_cast<VTK3DGraphicsView*>(m_graphicsView)->toZXPlane();
-}
-
 class GridBirdEyeWindowEditZScaleCommand : public QUndoCommand
 {
 public:
@@ -146,12 +131,12 @@ public:
 	void undo() {
 		m_model->m_warp->SetScaleFactor(m_oldScale);
 		m_model->updateAxes();
-		m_model->fit();
+		m_model->graphicsView()->cameraFit();
 	}
 	void redo() {
 		m_model->m_warp->SetScaleFactor(m_newScale);
 		m_model->updateAxes();
-		m_model->fit();
+		m_model->graphicsView()->cameraFit();
 	}
 private:
 	double m_oldScale;

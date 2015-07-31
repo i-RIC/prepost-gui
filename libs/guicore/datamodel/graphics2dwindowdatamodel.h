@@ -13,12 +13,6 @@ class GUICOREDLL_EXPORT Graphics2DWindowDataModel : public GraphicsWindowDataMod
 public:
 	Graphics2DWindowDataModel(QMainWindow* w, ProjectDataItem* parent);
 
-public slots:
-	/// Reset the rotation of pre-processor main view.
-	void resetRotation();
-	/// Rotate 90 degree in pre-processor main view.
-	void rotate90();
-
 protected:
 	/// Z depth range used for labels, colormap legends etc.
 	ZDepthRange m_labelRange;

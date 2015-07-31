@@ -151,7 +151,7 @@ void Post2dBirdEyeWindowRootDataItem::updateZoneList()
 	dataModel()->graphicsView()->setActiveDataItem(this);
 	updateItemMap();
 	dataModel()->objectBrowserView()->expandAll();
-	dataModel()->fit();
+	dataModel()->graphicsView()->cameraFit();
 }
 
 void Post2dBirdEyeWindowRootDataItem::update()

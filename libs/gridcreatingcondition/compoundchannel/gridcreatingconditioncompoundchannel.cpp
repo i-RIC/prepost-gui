@@ -2627,6 +2627,4 @@ GridCreatingConditionCompoundChannelSpline GridCreatingConditionCompoundChannel:
 }
 
 void GridCreatingConditionCompoundChannel::update2Ds()
-{
-	// PreProcessorGraphicsViewInterface* g = graphicsView();
-}
+{}

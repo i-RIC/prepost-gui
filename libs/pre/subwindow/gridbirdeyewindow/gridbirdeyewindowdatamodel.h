@@ -45,11 +45,6 @@ public:
 	void setAxesColor(const QColor& col);
 	QColor axesColor();
 
-public slots:
-	void toXYPlane();
-	void toYZPlane();
-	void toZXPlane();
-
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
