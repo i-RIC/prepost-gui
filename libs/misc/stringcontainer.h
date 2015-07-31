@@ -30,7 +30,10 @@ public:
 	//@}
 
 	/// @name Operators
+	//@{
 	StringContainer& operator=(const QString& val);
+	bool operator!=(const QString& val);
+	//@}
 };
 
 #endif // STRINGCONTAINER_H

@@ -36,3 +36,9 @@ StringContainer& StringContainer::operator=(const QString& val)
 	SimpleValueContainerT<QString>::operator =(val);
 	return *this;
 }
+
+bool StringContainer::operator!=(const QString& val)
+{
+	SimpleValueContainerT<QString>::operator !=(val);
+	return *this;
+}

@@ -6,11 +6,19 @@
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>
-#include <QMap>
+#include <misc/compositecontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/stringcontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/opacitycontainer.h>
+
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkLODActor.h>
 #include <vtkScalarBarWidget.h>
+
+#include <QMap>
 
 class Post2dWindowNodeScalarDataItem;
 class vtkLODActor;
@@ -29,10 +37,32 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		IntContainer numberOfDivisions;
+		StringContainer currentSolution;
+		EnumContainerT<ContourSettingWidget::Contour> contour;
+		BoolContainer fillUpper;
+		BoolContainer fillLower;
+		OpacityContainer opacity;
+
+		// Region setting
+		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
+		StructuredGridRegion::Range2d range;
+
+		// for scalar bar
+		ScalarBarSetting scalarBarSetting;
+		vtkTextPropertySettingContainer titleTextSetting;
+		vtkTextPropertySettingContainer labelTextSetting;
+	};
+
 	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
-	const QString& currentSolution() const {return m_currentSolution;}
+	QString currentSolution() const {return m_setting.currentSolution;}
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
@@ -64,28 +94,16 @@ private:
 	void updateActorSettings();
 	void createRangeClippedPolyData();
 	void createValueClippedPolyData();
-	void setDefaultValues();
 	void setupIsolineSetting();
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
 	void setupScalarBarSetting();
 
-	int m_numberOfDivisions;
-	QString m_currentSolution;
-	ContourSettingWidget::Contour m_contour;
-	bool m_fillUpper;
-	bool m_fillLower;
-	int m_opacityPercent;
-
-	// Region setting
-	StructuredGridRegion::RegionMode m_regionMode;
-	StructuredGridRegion::Range2d m_range;
+	// Settings
+	Setting m_setting;
 
 	// for scalar bar
 	QMap<QString, QString> m_colorbarTitleMap;
-	ScalarBarSetting m_scalarbarSetting;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 
 	vtkSmartPointer<vtkLODActor> m_contourActor;
 	vtkDataSetMapper* m_contourMapper;

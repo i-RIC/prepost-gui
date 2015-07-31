@@ -66,45 +66,88 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 	}
 }
 
-void Post2dWindowContourSettingDialog::setCurrentSolution(QString sol)
+void Post2dWindowContourSettingDialog::setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface* item)
 {
-	int index = m_solutions.indexOf(sol);
+	m_gridTypeDataItem = item;
+}
+
+void Post2dWindowContourSettingDialog::disableActive()
+{
+	m_activeAvailable = false;
+}
+
+void Post2dWindowContourSettingDialog::hideOpacity()
+{
+	ui->transparencyWidget->hide();
+	QSize size = minimumSize();
+	resize(size);
+}
+
+void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowNodeScalarGroupDataItem::Setting& s)
+{
+	// currentSolution
+	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {
 		// not set yet. select the first one.
 		index = 0;
 	}
 	ui->physicalValueComboBox->setCurrentIndex(index);
 	solutionChanged(index);
+
+	// contour
+	ui->contourWidget->setContour(s.contour);
+
+	// numberOfDivision
+	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
+
+	// fillUpper
+	ui->colormapWidget->setFillUpper(s.fillUpper);
+
+	// fillLower
+	ui->colormapWidget->setFillLower(s.fillLower);
+
+	// opacity
+	ui->transparencyWidget->setOpacity(s.opacity);
+
 }
 
-void Post2dWindowContourSettingDialog::setContour(ContourSettingWidget::Contour c)
+void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titlemap)
 {
-	ui->contourWidget->setContour(c);
+	m_colorBarTitleMap = titlemap;
 }
 
-void Post2dWindowContourSettingDialog::setNumberOfDivision(int div)
+Post2dWindowNodeScalarGroupDataItem::Setting Post2dWindowContourSettingDialog::setting() const
 {
-	ui->colormapWidget->setDivisionNumber(div);
+	Post2dWindowNodeScalarGroupDataItem::Setting ret = m_setting;
+	// solution
+	ret.currentSolution = currentSolution();
+
+	// contour
+	ret.contour = ui->contourWidget->contour();
+
+	// numberOfDivision
+	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
+
+	// fillUpper
+	ret.fillUpper = ui->colormapWidget->fillUpper();
+
+	// fillLower
+	ret.fillLower = ui->colormapWidget->fillLower();
+
+	// opacity
+	ret.opacity = ui->transparencyWidget->opacity();
+
+	return ret;
 }
 
-void Post2dWindowContourSettingDialog::setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface* item)
+QString Post2dWindowContourSettingDialog::scalarBarTitle()
 {
-	m_gridTypeDataItem = item;
+	return m_colorBarTitleMap[currentSolution()];
 }
 
-QString Post2dWindowContourSettingDialog::currentSolution()
+QString Post2dWindowContourSettingDialog::currentSolution() const
 {
 	return m_solutions.at(ui->physicalValueComboBox->currentIndex());
-}
-
-ContourSettingWidget::Contour Post2dWindowContourSettingDialog::contour()
-{
-	return ui->contourWidget->contour();
-}
-
-int Post2dWindowContourSettingDialog::numberOfDivision()
-{
-	return ui->colormapWidget->divisionNumber();
 }
 
 const LookupTableContainer& Post2dWindowContourSettingDialog::lookupTable()
@@ -132,86 +175,6 @@ void Post2dWindowContourSettingDialog::accept()
 	QDialog::accept();
 }
 
-void Post2dWindowContourSettingDialog::setRegionMode(StructuredGridRegion::RegionMode mode)
-{
-	m_regionMode = mode;
-}
-
-StructuredGridRegion::RegionMode Post2dWindowContourSettingDialog::regionMode()
-{
-	return m_regionMode;
-}
-
-void Post2dWindowContourSettingDialog::setRange(StructuredGridRegion::Range2d range)
-{
-	m_region = range;
-}
-
-StructuredGridRegion::Range2d Post2dWindowContourSettingDialog::range()
-{
-	return m_region;
-}
-
-void Post2dWindowContourSettingDialog::setFillUpper(bool fill)
-{
-	ui->colormapWidget->setFillUpper(fill);
-}
-
-void Post2dWindowContourSettingDialog::setFillLower(bool fill)
-{
-	ui->colormapWidget->setFillLower(fill);
-}
-
-bool Post2dWindowContourSettingDialog::fillUpper()
-{
-	return ui->colormapWidget->fillUpper();
-}
-
-bool Post2dWindowContourSettingDialog::fillLower()
-{
-	return ui->colormapWidget->fillLower();
-}
-
-void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titlemap)
-{
-	m_colorBarTitleMap = titlemap;
-}
-
-void Post2dWindowContourSettingDialog::setScalarBarSetting(const ScalarBarSetting& setting)
-{
-	m_scalarBarSetting = setting;
-}
-
-void Post2dWindowContourSettingDialog::setTitleTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	m_titleTextSetting = cont;
-}
-
-void Post2dWindowContourSettingDialog::setLabelTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	m_labelTextSetting = cont;
-}
-
-QString Post2dWindowContourSettingDialog::scalarBarTitle()
-{
-	return m_colorBarTitleMap[currentSolution()];
-}
-
-void Post2dWindowContourSettingDialog::setOpacityPercent(int o)
-{
-	ui->transparencyWidget->setOpacity(o);
-}
-
-int Post2dWindowContourSettingDialog::opacityPercent()
-{
-	return ui->transparencyWidget->opacity();
-}
-
-void Post2dWindowContourSettingDialog::disableActive()
-{
-	m_activeAvailable = false;
-}
-
 void Post2dWindowContourSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
@@ -222,34 +185,27 @@ void Post2dWindowContourSettingDialog::showRegionDialog()
 		dialog.hideCustom();
 	}
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
-	dialog.setRegionMode(m_regionMode);
-	dialog.setRegion(m_region);
+	dialog.setRegionMode(m_setting.regionMode);
+	dialog.setRegion(m_setting.range);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_regionMode = dialog.regionMode();
-	m_region = dialog.region();
+	m_setting.regionMode = dialog.regionMode();
+	m_setting.range = dialog.region();
 }
 
 void Post2dWindowContourSettingDialog::showScalarBarDialog()
 {
 	ScalarBarDialog dialog(this);
 	dialog.setTitle(m_colorBarTitleMap[currentSolution()]);
-	dialog.setSetting(m_scalarBarSetting);
-	dialog.setTitleTextSetting(m_titleTextSetting);
-	dialog.setLabelTextSetting(m_labelTextSetting);
+	dialog.setSetting(m_setting.scalarBarSetting);
+	dialog.setTitleTextSetting(m_setting.titleTextSetting);
+	dialog.setLabelTextSetting(m_setting.labelTextSetting);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
 	m_colorBarTitleMap[currentSolution()] = dialog.title();
-	m_scalarBarSetting = dialog.setting();
-	m_titleTextSetting = dialog.titleTextSetting();
-	m_labelTextSetting = dialog.labelTextSetting();
-}
-
-void Post2dWindowContourSettingDialog::hideOpacity()
-{
-	ui->transparencyWidget->hide();
-	QSize size = minimumSize();
-	resize(size);
+	m_setting.scalarBarSetting = dialog.setting();
+	m_setting.titleTextSetting = dialog.titleTextSetting();
+	m_setting.labelTextSetting = dialog.labelTextSetting();
 }
