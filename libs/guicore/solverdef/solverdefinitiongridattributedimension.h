@@ -4,6 +4,7 @@
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
 
+class QDomElement;
 class SolverDefinitionGridAttribute;
 class GridAttributeDimensionContainer;
 class GridAttributeDimensionSelectWidget;
@@ -12,28 +13,18 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimension : public SolverDe
 {
 
 public:
-	SolverDefinitionGridAttributeDimension(QDomElement node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* parent)
-		: SolverDefinitionNode(node, translator) {
-		m_condition = parent;
-		load(node, translator);
-	}
+	SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att);
 	virtual ~SolverDefinitionGridAttributeDimension();
-	const QString& name() const {return m_name;}
-	const QString& caption() const {return m_caption;}
-	const QString& englishCaption() const {return m_englishCaption;}
-	SolverDefinitionGridAttribute* condition() const {return m_condition;}
+	const QString& name() const;
+	const QString& caption() const;
+	const QString& englishCaption() const;
+	SolverDefinitionGridAttribute* condition() const;
 	virtual GridAttributeDimensionContainer* buildContainer() = 0;
 	GridAttributeDimensionSelectWidget* buildSelectWidget(GridAttributeDimensionContainer* container);
 
-protected:
-	/// Load settings from solver definition file.
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
-
-	QString m_name;
-	QString m_caption;
-	QString m_englishCaption;
-
-	SolverDefinitionGridAttribute* m_condition;
+private:
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // SOLVERDEFINITIONGRIDRELATEDCONDITIONDIMENSION_H

@@ -15,7 +15,7 @@ public:
 	/// constructor
 	SolverDefinitionNode() {}
 	/// constructor
-	SolverDefinitionNode(QDomElement /*node*/, const SolverDefinitionTranslator& /*translator*/) {}
+	SolverDefinitionNode(const QDomElement& /*node*/, const SolverDefinitionTranslator& /*translator*/) {}
 };
 
 #endif // SOLVERDEFINITIONABSTRACTNODE_H
