@@ -522,11 +522,12 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 }
 
 
-class GridCreatingConditionCenterAndWidthDefineNewPointCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::DefineNewPointCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthDefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Add New Center Line Point")) {
+	DefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Add New Center Line Point")}
+	{
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -575,7 +576,7 @@ public:
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthDefineNewPoint");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GridCreatingConditionCenterAndWidthDefineNewPointCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthDefineNewPointCommand*>(other);
+		const DefineNewPointCommand* comm = dynamic_cast<const DefineNewPointCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_condition != m_condition) {return false;}
@@ -588,11 +589,12 @@ private:
 	QVector2D m_newPoint;
 };
 
-class GridCreatingConditionCenterAndWidthMoveCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::MoveCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line")) {
+	MoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Move Center Line")}
+	{
 		m_keyDown = keyDown;
 		double dx = from.x();
 		double dy = from.y();
@@ -648,7 +650,7 @@ public:
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMove");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GridCreatingConditionCenterAndWidthMoveCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveCommand*>(other);
+		const MoveCommand* comm = dynamic_cast<const MoveCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_condition != m_condition) {return false;}
@@ -661,11 +663,12 @@ private:
 	QVector2D m_offset;
 };
 
-class GridCreatingConditionCenterAndWidthMoveVertexCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::MoveVertexCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex")) {
+	MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Move Center Line Vertex")}
+	{
 		m_keyDown = keyDown;
 		m_vertexId = vertexId;
 		double dx = from.x();
@@ -720,7 +723,7 @@ public:
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMoveVertex");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GridCreatingConditionCenterAndWidthMoveVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthMoveVertexCommand*>(other);
+		const MoveVertexCommand* comm = dynamic_cast<const MoveVertexCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_condition != m_condition) {return false;}
@@ -735,11 +738,12 @@ private:
 	QVector2D m_offset;
 };
 
-class GridCreatingConditionCenterAndWidthAddVertexCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::AddVertexCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthAddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex")) {
+	AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Insert Center Line Vertex")}
+	{
 		m_keyDown = keyDown;
 		m_vertexId = (edgeId + 1) % cond->m_vtkPolyLine->GetNumberOfPoints();
 		double dx = point.x();
@@ -822,7 +826,7 @@ public:
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthAddVertex");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GridCreatingConditionCenterAndWidthAddVertexCommand* comm = dynamic_cast<const GridCreatingConditionCenterAndWidthAddVertexCommand*>(other);
+		const AddVertexCommand* comm = dynamic_cast<const AddVertexCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (m_condition != comm->m_condition) {return false;}
@@ -856,19 +860,19 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 		break;
 	case meDefining:
 		// update the position of the last point.
-		iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthDefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+		iRICUndoStack::instance().push(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		break;
 	case meTranslate:
 		// execute translation.
-		iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthMoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+		iRICUndoStack::instance().push(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
-		iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthMoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
+		iRICUndoStack::instance().push(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
-		iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthAddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+		iRICUndoStack::instance().push(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
 		break;
 	case meEditVerticesDialog:
 		break;
@@ -876,11 +880,12 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 }
 
 
-class GridCreatingConditionCenterAndWidthRemoveVertexCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::RemoveVertexCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthRemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Remove Center Line Vertex")) {
+	RemoveVertexCommand(vtkIdType vertexId, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Remove Center Line Vertex")}
+	{
 		m_vertexId = vertexId;
 		double p[3];
 		cond->m_vtkPolyLine->GetPoints()->GetPoint(m_vertexId, p);
@@ -966,31 +971,31 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		case meBeforeDefining:
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 		case meDefining:
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			break;
 		case meTranslatePrepare:
 			m_mouseEventMode = meTranslate;
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first translation command.
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthMoveCommand(true, m_currentPoint, m_currentPoint, this));
+			iRICUndoStack::instance().push(new MoveCommand(true, m_currentPoint, m_currentPoint, this));
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first move command.
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthMoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedVertexId, this));
+			iRICUndoStack::instance().push(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedVertexId, this));
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthAddVertexCommand(true, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddVertexCommand(true, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
 			break;
 		case meAddVertexNotPossible:
 			// do nothing.
 			break;
 		case meRemoveVertexPrepare:
-			iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthRemoveVertexCommand(m_selectedVertexId, this));
+			iRICUndoStack::instance().push(new RemoveVertexCommand(m_selectedVertexId, this));
 			break;
 		case meRemoveVertexNotPossible:
 			// do nothing.
@@ -1102,11 +1107,12 @@ bool GridCreatingConditionCenterAndWidth::isEdgeSelectable(const QVector2D& pos)
 	return false;
 }
 
-class GridCreatingConditionCenterAndWidthFinishDefiningCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::FinishDefiningCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthFinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")) {
+	FinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")}
+	{
 		m_condition = condition;
 	}
 	void undo() {
@@ -1133,7 +1139,7 @@ void GridCreatingConditionCenterAndWidth::definePolyLine()
 	}
 	iRICUndoStack::instance().undo();
 	// finish defining the Polyline.
-	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthFinishDefiningCommand(this));
+	iRICUndoStack::instance().push(new FinishDefiningCommand(this));
 }
 
 void GridCreatingConditionCenterAndWidth::updateMouseCursor(PreProcessorGraphicsViewInterface* v)

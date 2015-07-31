@@ -42,11 +42,12 @@ public:
 	}
 };
 
-class GridCreatingConditionCenterAndWidthCoordinatesEditCommand : public QUndoCommand
+class GridCreatingConditionCenterAndWidth::EditCoordinatesCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCenterAndWidthCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCenterAndWidth* cond)
-		: QUndoCommand(GridCreatingConditionCenterAndWidth::tr("Edit Center Line Coordinates")) {
+	EditCoordinatesCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCenterAndWidth* cond) :
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Edit Center Line Coordinates")}
+	{
 		m_apply = apply;
 		m_newCoords = coords;
 		m_condition = cond;
@@ -110,7 +111,7 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthCoordinatesEditCommand(false, coords, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidth::EditCoordinatesCommand(false, coords, m_condition));
 	QDialog::accept();
 }
 
@@ -132,7 +133,7 @@ void GridCreatingConditionCenterAndWidthCoordinatesEditDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidthCoordinatesEditCommand(true, coords, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCenterAndWidth::EditCoordinatesCommand(true, coords, m_condition));
 	m_applyed = true;
 }
 

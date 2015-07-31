@@ -21,14 +21,7 @@
 class QMenu;
 class QAction;
 class QToolBar;
-class GridCreatingConditionCenterAndWidthFinishDefiningCommand;
-class GridCreatingConditionCenterAndWidthDefineNewPointCommand;
-class GridCreatingConditionCenterAndWidthMoveCommand;
-class GridCreatingConditionCenterAndWidthMoveVertexCommand;
-class GridCreatingConditionCenterAndWidthAddVertexCommand;
-class GridCreatingConditionCenterAndWidthRemoveVertexCommand;
 class GridCreatingConditionCenterAndWidthCoordinatesEditDialog;
-class GridCreatingConditionCenterAndWidthCoordinatesEditCommand;
 
 class GridCreatingConditionCenterAndWidth : public GridCreatingCondition
 {
@@ -177,16 +170,18 @@ private:
 	bool m_isAccepted;
 	bool m_isGridCreated;
 
+private:
+	class AddVertexCommand;
+	class DefineNewPointCommand;
+	class EditCoordinatesCommand;
+	class FinishDefiningCommand;
+	class MoveCommand;
+	class MoveVertexCommand;
+	class RemoveVertexCommand;
+
 public:
 	friend class GridCreatingConditionCreatorCenterAndWidth;
-	friend class GridCreatingConditionCenterAndWidthFinishDefiningCommand;
-	friend class GridCreatingConditionCenterAndWidthDefineNewPointCommand;
-	friend class GridCreatingConditionCenterAndWidthMoveCommand;
-	friend class GridCreatingConditionCenterAndWidthMoveVertexCommand;
-	friend class GridCreatingConditionCenterAndWidthAddVertexCommand;
-	friend class GridCreatingConditionCenterAndWidthRemoveVertexCommand;
 	friend class GridCreatingConditionCenterAndWidthCoordinatesEditDialog;
-	friend class GridCreatingConditionCenterAndWidthCoordinatesEditCommand;
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_H
