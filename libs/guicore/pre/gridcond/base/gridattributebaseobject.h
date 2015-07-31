@@ -10,10 +10,10 @@ class GridAttributeBaseObject : public QObject
 
 public:
 	/// Constructor
-	GridAttributeBaseObject(SolverDefinitionGridAttribute* cond, QObject* parent = nullptr)
-		: QObject(parent) {
-		m_condition = cond;
-	}
+	GridAttributeBaseObject(SolverDefinitionGridAttribute* cond, QObject* parent = nullptr) :
+		QObject {parent},
+		m_condition {cond}
+	{}
 	/// The grid related condition that is the ancestor
 	/// of this instance.
 	SolverDefinitionGridAttribute* condition() const {return m_condition;}

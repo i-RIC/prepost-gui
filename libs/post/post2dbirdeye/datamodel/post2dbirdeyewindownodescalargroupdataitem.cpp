@@ -450,17 +450,17 @@ public:
 		m_oldCurrentSolution = m_item->currentSolution();
 		m_item = item;
 	}
-	void undo() {
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-	}
 	void redo() {
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
 	}
+	void undo() {
+		m_item->setCurrentSolution(m_oldCurrentSolution);
+		m_item->updateActorSettings();
+	}
 private:
-	QString m_oldCurrentSolution;
 	QString m_newCurrentSolution;
+	QString m_oldCurrentSolution;
 
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
 };

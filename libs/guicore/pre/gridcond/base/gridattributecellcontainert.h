@@ -12,8 +12,9 @@ class GridAttributeCellContainerT : public GridAttributeContainerT<V>
 
 public:
 	/// Constructor
-	GridAttributeCellContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond)
-		: GridAttributeContainerT<V>(grid, cond) {
+	GridAttributeCellContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond) :
+		GridAttributeContainerT<V> {grid, cond}
+	{
 		DA* da = DA::New();
 		da->SetName(iRIC::toStr(GridAttributeContainerT<V>::name()).c_str());
 		grid->vtkGrid()->GetCellData()->AddArray(da);

@@ -15,8 +15,8 @@
 
 #include <vtkRenderer.h>
 
-Post2dBirdEyeWindowProjectDataItem::Post2dBirdEyeWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
-	: PostProcessorWindowProjectDataItem(parent, parentWindow)
+Post2dBirdEyeWindowProjectDataItem::Post2dBirdEyeWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
+	PostProcessorWindowProjectDataItem {parent, parentWindow}
 {
 	Post2dBirdEyeWindow* w = new Post2dBirdEyeWindow(parentWindow, index, this);
 	m_window = w;

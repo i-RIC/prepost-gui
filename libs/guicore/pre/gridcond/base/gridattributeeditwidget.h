@@ -11,14 +11,13 @@ class PreProcessorGridDataItemInterface;
 
 class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 {
+	Q_OBJECT
 
 public:
-	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition)
-		: QWidget(parent) {
-		m_valueCleared = false;
-		m_valueSelected = true;
-		m_gridRelatedCondition = condition;
-	}
+	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition) :
+		QWidget(parent),
+		m_gridRelatedCondition {condition}
+	{}
 	void clearValue() {
 		m_valueCleared = true;
 		m_valueSelected = false;
@@ -37,8 +36,8 @@ public:
 protected:
 	virtual void setupWidget() = 0;
 	virtual void getValueFromInnerWidget() = 0;
-	bool m_valueCleared;
-	bool m_valueSelected;
+	bool m_valueCleared {false};
+	bool m_valueSelected {false};
 
 	SolverDefinitionGridAttribute* m_gridRelatedCondition;
 };

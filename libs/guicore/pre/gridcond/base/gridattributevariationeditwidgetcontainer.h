@@ -9,10 +9,10 @@ class GridAttributeVariationEditWidgetContainer : public QWidget
 {
 
 public:
-	GridAttributeVariationEditWidgetContainer(QWidget* parent)
-		: QWidget(parent) {
-		m_widget = nullptr;
-	}
+	GridAttributeVariationEditWidgetContainer(QWidget* parent) :
+		QWidget {parent},
+		m_widget {nullptr}
+	{}
 	void setWidget(GridAttributeVariationEditWidget* w) {
 		m_widget = w;
 		QVBoxLayout* l = new QVBoxLayout();

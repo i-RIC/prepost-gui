@@ -16,38 +16,42 @@
 
 /// Widget to Edit Grid related condition value
 
-class GridAttributeEditVariationCommand : public QObject, public QUndoCommand
+class GridAttributeEditVariationCommand : public QUndoCommand
 {
-	Q_OBJECT
 
 public:
-	GridAttributeEditVariationCommand(const QString& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
-		: QUndoCommand(tr("Edit grid attribute value(s)")) {
-		m_newValues = newValues;
-		m_oldValues = oldValues;
-		m_attributes = atts;
-		m_name = name;
+	GridAttributeEditVariationCommand(const QString& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) :
+		QUndoCommand {GridAttributeVariationEditWidget::tr("Edit grid attribute value(s)")},
+		m_newValues {newValues},
+		m_oldValues {oldValues},
+		m_oldCustomModified {false},
+		m_attributes {atts},
+		m_name {name},
+		m_dataItem {dItem}
+	{
+		m_oldCustomModified = m_dataItem->grid()->gridRelatedCondition(m_name)->isCustomModified();
 		m_oldValues->SetName(iRIC::toStr(m_name).c_str());
 		m_newValues->SetName(iRIC::toStr(m_name).c_str());
-		m_dataItem = dItem;
-	}
-	void undo() override {
-		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_oldValues);
-		m_dataItem->updateAttributeActorSettings();
-		m_dataItem->informgridRelatedConditionChange(m_name);
-		m_dataItem->grid()->setModified();
 	}
 	void redo() override {
-		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(m_newValues);
-		m_dataItem->updateAttributeActorSettings();
-		m_dataItem->informgridRelatedConditionChange(m_name);
-		m_dataItem->grid()->setModified();
-		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(true);
+		copyData(m_oldValues, true);
+	}
+	void undo() override {
+		copyData(m_oldValues, m_oldCustomModified);
 	}
 
 private:
+	void copyData(vtkDataArray* data, bool modified) {
+		m_attributes->GetArray(iRIC::toStr(m_name).c_str())->DeepCopy(data);
+		m_dataItem->updateAttributeActorSettings();
+		m_dataItem->informgridRelatedConditionChange(m_name);
+		m_dataItem->grid()->setModified();
+		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(modified);
+	}
+
 	vtkSmartPointer<vtkDataArray> m_newValues;
 	vtkSmartPointer<vtkDataArray> m_oldValues;
+	bool m_oldCustomModified;
 	vtkSmartPointer<vtkDataSetAttributes> m_attributes;
 	QString m_name;
 	PreProcessorGridDataItemInterface* m_dataItem;
@@ -58,10 +62,10 @@ class GridAttributeVariationEditWidgetT : public GridAttributeVariationEditWidge
 {
 
 public:
-	GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond)
-		: GridAttributeVariationEditWidget(parent, cond) {
-		m_value = 0;
-	}
+	GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
+		GridAttributeVariationEditWidget {parent, cond},
+		m_value {0}
+	{}
 	void setValue(V value) {
 		m_value = value;
 		setupWidget();
@@ -84,8 +88,8 @@ public:
 		GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
 		vtkDataArray* oldValues = c->dataArrayCopy();
 		V val = value();
-		for (auto it = indices.begin(); it != indices.end(); ++it) {
-			c->setValue(*it, c->value(*it) + val);
+		for (vtkIdType id : indices) {
+			c->setValue(id, c->value(id) + val);
 		}
 		vtkDataArray* newValues = c->dataArrayCopy();
 		iRICUndoStack::instance().push(new GridAttributeEditVariationCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));
@@ -94,7 +98,7 @@ public:
 	}
 
 protected:
-	V m_value;
+	V m_value {0};
 };
 
 #endif // GRIDRELATEDCONDITIONEDITWIDGETT_H
