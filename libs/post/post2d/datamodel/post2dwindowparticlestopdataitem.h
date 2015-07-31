@@ -2,12 +2,11 @@
 #define POST2DWINDOWPARTICLESTOPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
+#include <postbase/postparticlebasicpropertydialog.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
-
-class Post2dWindowParticlesTopSetProperty;
 
 class Post2dWindowParticlesTopDataItem : public Post2dWindowDataItem
 {
@@ -24,22 +23,19 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-protected:
+
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	void setupActors();
 
-protected:
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 
-	QColor m_color;
-	int m_size;
+	PostParticleBasicPropertyDialog::Setting m_setting;
 
-public:
-	friend class Post2dWindowParticlesTopSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWPARTICLESTOPDATAITEM_H

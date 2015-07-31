@@ -23,8 +23,6 @@ Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowD
 	m_standardItem->setCheckState(Qt::Checked);
 
 	m_standardItemCopy = m_standardItem->clone();
-	m_color = setting.value("graphics/particlecolor", QColor(Qt::black)).value<QColor>();
-	m_size = setting.value("graphics/particlesize", 3).toInt();
 
 	setupActors();
 	updateActorSettings();
@@ -43,8 +41,8 @@ void Post2dWindowParticlesTopDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == 0 || cont->particleData() == 0) {return;}
 
-	m_actor->GetProperty()->SetPointSize(m_size);
-	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+	m_actor->GetProperty()->SetPointSize(m_setting.size);
+	m_actor->GetProperty()->SetColor(m_setting.color);
 	m_mapper->SetInputData(cont->particleData());
 
 	m_actorCollection->AddItem(m_actor);
@@ -68,14 +66,12 @@ void Post2dWindowParticlesTopDataItem::update()
 
 void Post2dWindowParticlesTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_color = iRIC::getColorAttribute(node, "color");
-	m_size = iRIC::getIntAttribute(node, "size", 3);
+	m_setting.load(node);
 }
 
 void Post2dWindowParticlesTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	iRIC::setColorAttribute(writer, "color", m_color);
-	iRIC::setIntAttribute(writer, "size", m_size);
+	m_setting.save(writer);
 }
 
 void Post2dWindowParticlesTopDataItem::setupActors()
@@ -91,48 +87,33 @@ void Post2dWindowParticlesTopDataItem::setupActors()
 QDialog* Post2dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 {
 	PostParticleBasicPropertyDialog* dialog = new PostParticleBasicPropertyDialog(parent);
-	dialog->setColor(m_color);
-	dialog->setSize(m_size);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
 
-class Post2dWindowParticlesTopSetProperty : public QUndoCommand
+class Post2dWindowParticlesTopDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowParticlesTopSetProperty(const QColor& color, int size, Post2dWindowParticlesTopDataItem* item) {
-		m_newColor = color;
-		m_newSize = size;
+	SetSettingCommand(const PostParticleBasicPropertyDialog::Setting s, Post2dWindowParticlesTopDataItem* item) :
+		QUndoCommand {Post2dWindowParticlesTopDataItem::tr("Edit Particle Display Setting")},
+		m_newSetting {s},
+		m_oldSetting {item->m_setting},
+		m_item {item}
+	{}
 
-		m_oldColor = item->m_color;
-		m_oldSize = item->m_size;
-
-		m_item = item;
-	}
-
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_color = m_oldColor;
-		m_item->m_size = m_oldSize;
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_color = m_newColor;
-		m_item->m_size = m_newSize;
+		m_item->m_setting = m_newSetting;
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	}
+	void undo() {
+		m_item->m_setting = m_oldSetting;
+		m_item->updateActorSettings();
 	}
 
 private:
-	QColor m_oldColor;
-	int m_oldSize;
-
-	QColor m_newColor;
-	int m_newSize;
+	PostParticleBasicPropertyDialog::Setting m_newSetting;
+	PostParticleBasicPropertyDialog::Setting m_oldSetting;
 
 	Post2dWindowParticlesTopDataItem* m_item;
 };
@@ -140,5 +121,5 @@ private:
 void Post2dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	PostParticleBasicPropertyDialog* dialog = dynamic_cast<PostParticleBasicPropertyDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowParticlesTopSetProperty(dialog->color(), dialog->size(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, false);
 }

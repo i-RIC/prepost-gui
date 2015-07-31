@@ -2,12 +2,10 @@
 #define POST3DWINDOWPARTICLESTOPDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
-
+#include <postbase/postparticlebasicpropertydialog.h>
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
-
-class Post3dWindowParticlesTopSetProperty;
 
 class Post3dWindowParticlesTopDataItem : public Post3dWindowDataItem
 {
@@ -24,23 +22,17 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdateZScale(double scale) override;
-
-private:
 	void setupActors();
 
-protected:
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
+	PostParticleBasicPropertyDialog::Setting m_setting;
 
-	QColor m_color;
-	int m_size;
-
-public:
-	friend class Post3dWindowParticlesTopSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST3DWINDOWPARTICLESTOPDATAITEM_H

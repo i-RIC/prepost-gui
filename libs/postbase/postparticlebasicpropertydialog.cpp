@@ -2,9 +2,19 @@
 
 #include "postparticlebasicpropertydialog.h"
 
+PostParticleBasicPropertyDialog::Setting::Setting() :
+	CompositeContainer {&color, &size},
+	color {"color"},
+	size {"size"}
+{
+	QSettings settings;
+	color = settings.value("graphics/particlecolor", QColor(Qt::black)).value<QColor>();
+	size = settings.value("graphics/particlesize", 3).toInt();
+}
+
 PostParticleBasicPropertyDialog::PostParticleBasicPropertyDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PostParticleBasicPropertyDialog)
+	QDialog {parent},
+	ui {new Ui::PostParticleBasicPropertyDialog}
 {
 	ui->setupUi(this);
 }
@@ -14,22 +24,18 @@ PostParticleBasicPropertyDialog::~PostParticleBasicPropertyDialog()
 	delete ui;
 }
 
-const QColor PostParticleBasicPropertyDialog::color() const
+Setting PostParticleBasicPropertyDialog::setting() const
 {
-	return ui->colorWidget->color();
+	Setting ret;
+
+	ret.color = ui->colorWidget->color();
+	ret.size = ui->sizeSpinBox->value();
+
+	return ret;
 }
 
-int PostParticleBasicPropertyDialog::size() const
+void PostParticleBasicPropertyDialog::setSetting(const Setting& s)
 {
-	return ui->sizeSpinBox->value();
-}
-
-void PostParticleBasicPropertyDialog::setColor(const QColor color)
-{
-	ui->colorWidget->setColor(color);
-}
-
-void PostParticleBasicPropertyDialog::setSize(int size)
-{
-	ui->sizeSpinBox->setValue(size);
+	ui->colorWidget->setColor(s.color);
+	ui->sizeSpinBox->setValue(s.size);
 }

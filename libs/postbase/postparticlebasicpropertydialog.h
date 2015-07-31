@@ -2,6 +2,10 @@
 #define POSTPARTICLEBASICPROPERTYDIALOG_H
 
 #include "postbase_global.h"
+#include <misc/compositecontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/colorcontainer.h>
+
 #include <QDialog>
 
 class QColor;
@@ -16,12 +20,19 @@ class POSTBASEDLL_EXPORT PostParticleBasicPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		ColorContainer color;
+		IntContainer size;
+	};
+
 	explicit PostParticleBasicPropertyDialog(QWidget* parent = 0);
 	~PostParticleBasicPropertyDialog();
-	const QColor color() const;
-	int size() const;
-	void setColor(const QColor color);
-	void setSize(int size);
+	Setting setting() const;
+	void setSetting(const Setting& s);
 
 private:
 	Ui::PostParticleBasicPropertyDialog* ui;
