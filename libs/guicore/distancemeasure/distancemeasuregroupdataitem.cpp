@@ -12,12 +12,18 @@
 class DistanceMeasureGroupDataItem::Impl
 {
 public:
+	Impl(DistanceMeasureGroupDataItem* parent);
+
 	QAction* m_addAction;
 };
 
+DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :
+	m_addAction {new QAction {DistanceMeasureGroupDataItem::tr("&Add Measure..."), parent}}
+{}
+
 DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem {tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_impl {new Impl {}}
+	m_impl {new Impl {this}}
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
@@ -25,7 +31,6 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
 
-	m_impl->m_addAction = new QAction(tr("&Add Measure..."), this);
 	connect(m_impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
 
 	// set up the first item.
