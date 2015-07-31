@@ -17,16 +17,16 @@ PostTimeEditDialog::~PostTimeEditDialog()
 void PostTimeEditDialog::setSetting(const PostTimeSetting& setting)
 {
 	switch (setting.timeFormat) {
-	case TimeFormat::fmSecond:
+	case TimeFormat::Format::Second:
 		ui->secondRadioButton->setChecked(true);
 		break;
-	case TimeFormat::fmMinuteSecond:
+	case TimeFormat::Format::MinuteSecond:
 		ui->minuteSecondRadioButton->setChecked(true);
 		break;
-	case TimeFormat::fmHourMinuteSecond:
+	case TimeFormat::Format::HourMinuteSecond:
 		ui->hourMinuteSecondRadioButton->setChecked(true);
 		break;
-	case TimeFormat::fmDayHourMinuteSecond:
+	case TimeFormat::Format::DayHourMinuteSecond:
 		ui->dayHourMinuteSecondRadioButton->setChecked(true);
 		break;
 	}
@@ -37,13 +37,13 @@ const PostTimeSetting PostTimeEditDialog::setting() const
 {
 	PostTimeSetting ret;
 	if (ui->secondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::fmSecond;
+		ret.timeFormat = TimeFormat::Format::Second;
 	} else if (ui->minuteSecondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::fmMinuteSecond;
+		ret.timeFormat = TimeFormat::Format::MinuteSecond;
 	} else if (ui->hourMinuteSecondRadioButton->isChecked()) {
-		ret.timeFormat = TimeFormat::fmHourMinuteSecond;
+		ret.timeFormat = TimeFormat::Format::HourMinuteSecond;
 	} else {
-		ret.timeFormat = TimeFormat::fmDayHourMinuteSecond;
+		ret.timeFormat = TimeFormat::Format::DayHourMinuteSecond;
 	}
 	ret.color = ui->colorWidget->color();
 	return ret;

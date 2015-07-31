@@ -10,10 +10,10 @@ class POSTBASEDLL_EXPORT PostTimeSetting
 
 public:
 	/// Constructor
-	PostTimeSetting() {
-		timeFormat = TimeFormat::fmSecond;
-		color = Qt::black;
-	}
+	PostTimeSetting() :
+		timeFormat {TimeFormat::Format::Second},
+		color {Qt::black}
+	{}
 	/// Time format
 	TimeFormat::Format timeFormat;
 	/// Color
