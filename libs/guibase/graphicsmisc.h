@@ -6,10 +6,11 @@
 class QPixmap;
 class QSize;
 
-class vtkImageData;
-class vtkCubeAxesActor2D;
 class vtkAxesActor;
+class vtkCubeAxesActor2D;
+class vtkImageData;
 class vtkScalarBarActor;
+class vtkTextProperty;
 
 namespace iRIC
 {
@@ -27,6 +28,8 @@ namespace iRIC
 	void GUIBASEDLL_EXPORT setupAxesActor(vtkAxesActor* actor);
 	/// Setup the vtkScalarBarActor instance properties into the standard one used in iRIC
 	void GUIBASEDLL_EXPORT setupScalarBarProperty(vtkScalarBarActor* actor);
+	/// Setup the vtkTextProperty into the standard one used in iRIC
+	void GUIBASEDLL_EXPORT setupGridIndexTextProperty(vtkTextProperty* property);
 }
 
 #endif // GRAPHICSMISC_H

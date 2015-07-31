@@ -124,4 +124,15 @@ namespace iRIC
 		prop->ShadowOff();
 		prop->SetColor(0, 0, 0);
 	}
+
+	void setupGridIndexTextProperty(vtkTextProperty* prop)
+	{
+		prop->SetColor(0, 0, 0);
+		prop->SetFontSize(12);
+		prop->BoldOff();
+		prop->ItalicOff();
+		prop->ShadowOff();
+		prop->SetJustificationToLeft();
+		prop->SetVerticalJustificationToCentered();
+	}
 }

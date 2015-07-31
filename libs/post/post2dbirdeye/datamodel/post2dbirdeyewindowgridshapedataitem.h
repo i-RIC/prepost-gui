@@ -22,9 +22,6 @@
 
 class QDialog;
 class QAction;
-class QColor;
-class QString;
-class Post2dBirdEyeWindowGridShapeDataSetSetting;
 
 class Post2dBirdEyeWindowGridShapeDataItem : public Post2dBirdEyeWindowDataItem
 {
@@ -41,7 +38,6 @@ public:
 	/// Inform that the grid is updated.
 	void update();
 	void handleStandardItemDoubleClicked() override;
-	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
@@ -79,7 +75,8 @@ private:
 	QAction* m_editNewPositionAction;
 	QAction* m_editDeltaAction;
 	QVector2D m_dragStartPoint;
-	GridShapeEditDialog::Shape m_shape;
+
+	class SetSettingCommand;
 
 public:
 	friend class Post2dBirdEyeWindowGridShapeDataSetSetting;

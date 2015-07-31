@@ -13,31 +13,13 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QAction>
-#include <QColor>
-#include <QColorDialog>
-#include <QComboBox>
-#include <QDialog>
-#include <QGraphicsItemGroup>
-#include <QGraphicsLineItem>
-#include <QLabel>
-#include <QMenu>
-#include <QPen>
-#include <QPushButton>
-#include <QSettings>
-#include <QStandardItem>
-#include <QString>
-#include <QUndoCommand>
 #include <QXmlStreamWriter>
 
 #include <vtkActor.h>
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
-#include <vtkCellArray.h>
-#include <vtkCollectionIterator.h>
 #include <vtkDataSet.h>
 #include <vtkDataSetMapper.h>
-#include <vtkDataSetTriangleFilter.h>
 #include <vtkExtractGrid.h>
 #include <vtkMapperCollection.h>
 #include <vtkPointData.h>
@@ -49,8 +31,6 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGridOutlineFilter.h>
 #include <vtkTextProperty.h>
-#include <vtkTriangle.h>
-#include <vtkVertex.h>
 
 #define LABEL "label2d"
 
@@ -107,14 +87,7 @@ void Post2dWindowGridShapeDataItem::setupActors()
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
-	vtkTextProperty* prop = m_indexMapper->GetLabelTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontSize(12);
-	prop->BoldOff();
-	prop->ItalicOff();
-	prop->ShadowOff();
-	prop->SetJustificationToLeft();
-	prop->SetVerticalJustificationToCentered();
+	iRIC::setupGridIndexTextProperty(m_indexMapper->GetLabelTextProperty());
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -234,22 +207,14 @@ public:
 		m_item {item}
 	{}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
 		m_item->setEnabled(true);
-
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
 		m_item->setEnabled(m_oldEnabled);
-
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	GridShapeEditDialog::Setting m_newSetting;
@@ -262,7 +227,7 @@ private:
 void Post2dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowGridShapeDataSetSetting(dialog->setting(), this));
+	pushRenderCommand(new Post2dWindowGridShapeDataSetSetting(dialog->setting(), this), this, true);
 }
 
 void Post2dWindowGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)

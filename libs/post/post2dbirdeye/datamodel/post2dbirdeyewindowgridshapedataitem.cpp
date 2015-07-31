@@ -1,58 +1,20 @@
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
-#include "post2dbirdeyewindowzonedataitem.h"
 
-#include <guibase/coloreditwidget.h>
-#include <guibase/graphicsmisc.h>
 #include <guibase/gridshapeeditdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/xmlsupport.h>
 
-#include <QAction>
-#include <QColor>
-#include <QColorDialog>
-#include <QComboBox>
-#include <QDialog>
-#include <QGraphicsItemGroup>
-#include <QGraphicsLineItem>
-#include <QLabel>
-#include <QMenu>
-#include <QPen>
-#include <QPushButton>
-#include <QSettings>
-#include <QStandardItem>
-#include <QString>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
-
-#include <vtkActor.h>
 #include <vtkActor2DCollection.h>
 #include <vtkActorCollection.h>
-#include <vtkCellArray.h>
-#include <vtkCollectionIterator.h>
-#include <vtkDataSet.h>
-#include <vtkDataSetMapper.h>
-#include <vtkDataSetTriangleFilter.h>
-#include <vtkExtractGrid.h>
-#include <vtkLODActor.h>
 #include <vtkMapperCollection.h>
 #include <vtkPointData.h>
-#include <vtkPointLocator.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
-#include <vtkStructuredGridOutlineFilter.h>
 #include <vtkTextProperty.h>
-#include <vtkTriangle.h>
-#include <vtkUnstructuredGridWriter.h>
-#include <vtkVertex.h>
+#include <vtkStructuredGrid.h>
 
 #define LABEL "label2d"
 
@@ -245,10 +207,10 @@ QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-class Post2dBirdEyeWindowGridShapeDataSetSetting : public QUndoCommand
+class Post2dBirdEyeWindowGridShapeDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dBirdEyeWindowGridShapeDataSetSetting(const GridShapeEditDialog::Setting& setting, Post2dBirdEyeWindowGridShapeDataItem* item) :
+	SetSettingCommand(const GridShapeEditDialog::Setting& setting, Post2dBirdEyeWindowGridShapeDataItem* item) :
 		QUndoCommand {QObject::tr("Update Grid Shape Setting")},
 		m_newSetting {setting},
 		m_oldSetting {item->m_setting},
@@ -256,22 +218,14 @@ public:
 		m_item {item}
 	{}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(true);
 		m_item->m_setting = m_newSetting;
-
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_setting = m_oldSetting;
-
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	GridShapeEditDialog::Setting m_newSetting;
@@ -285,7 +239,7 @@ private:
 void Post2dBirdEyeWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dBirdEyeWindowGridShapeDataSetSetting(dialog->setting(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)
