@@ -55,22 +55,6 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-Post2dWindowNodeScalarGroupDataItem::Setting::Setting() :
-	CompositeContainer
-		{&numberOfDivisions, &currentSolution, &contour, &fillUpper, &fillLower,
-		 &opacity, &regionMode, &range, &scalarBarSetting, &titleTextSetting, &labelTextSetting},
-	numberOfDivisions {"numberOfDivisions", DEFAULT_NUMOFDIV},
-	currentSolution {"solution"},
-	contour {"contour", ContourSettingWidget::ColorFringe},
-	fillUpper {"fillUpper", true},
-	fillLower {"fillLower", true},
-	regionMode {"regionMode", StructuredGridRegion::rmFull}
-{
-	opacity = 50;
-	titleTextSetting.setPrefix("titleText");
-	labelTextSetting.setPrefix("labelText");
-}
-
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
@@ -406,7 +390,7 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 class Post2dWindowContourSetProperty : public QUndoCommand
 {
 public:
-	Post2dWindowContourSetProperty(const Post2dWindowNodeScalarGroupDataItem::Setting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item) :
+	Post2dWindowContourSetProperty(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item) :
 		QUndoCommand {QObject::tr("Update Contour Setting")},
 		m_newSetting {s},
 		m_newLookupTable {ltc},
@@ -449,18 +433,17 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	void applySettings()
-	{
+	void applySettings() {
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
 		m_item->m_setting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
 		m_item->m_setting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
 	}
 
-	Post2dWindowNodeScalarGroupDataItem::Setting m_newSetting;
+	Post2dWindowContourSetting m_newSetting;
 	LookupTableContainer m_newLookupTable;
 	QString m_newScalarBarTitle;
 
-	Post2dWindowNodeScalarGroupDataItem::Setting m_oldSetting;
+	Post2dWindowContourSetting m_oldSetting;
 	LookupTableContainer m_oldLookupTable;
 	QString m_oldScalarBarTitle;
 

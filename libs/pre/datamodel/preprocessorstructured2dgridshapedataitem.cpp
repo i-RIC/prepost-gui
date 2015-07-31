@@ -22,8 +22,6 @@
 PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent)
 	: PreProcessorGridShapeDataItem(parent)
 {
-	m_shape = GridShapeEditDialog::Wireframe;
-	m_indexVisible = false;
 	setupActors();
 	updateActorSettings();
 }
@@ -115,74 +113,48 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 		return;
 	}
 
-	switch (m_shape) {
+	switch (GridShapeEditDialog::Shape(m_setting.shape)) {
 	case GridShapeEditDialog::Outline:
-		m_outlineActor->GetProperty()->SetColor(m_color);
+		m_outlineActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_outlineActor);
 		break;
 
 	case GridShapeEditDialog::Wireframe:
-		m_outlineActor->GetProperty()->SetColor(m_color);
+		m_outlineActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_outlineActor);
-		m_wireframeActor->GetProperty()->SetColor(m_color);
+		m_wireframeActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_wireframeActor);
 		break;
 	}
 
-	if (m_indexVisible) {
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
+	if (m_setting.indexVisible) {
+		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
-	/*
-		if (m_axesVisible){
-			m_axesActor->GetProperty()->SetColor(m_axesColor);
-			m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
-			m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
-
-			m_actor2DCollection->AddItem(m_axesActor);
-			updateAxesRegion();
-		}
-	*/
 	updateVisibilityWithoutRendering();
 }
 
 void PreProcessorStructured2dGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-
-	QDomElement elem = node.toElement();
-	m_shape = (GridShapeEditDialog::Shape) elem.attribute("shape", "0").toInt();
 	PreProcessorGridShapeDataItem::doLoadFromProjectMainFile(node);
 }
 
 void PreProcessorStructured2dGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	// save the color and the shape of the grid
-	writer.writeAttribute("shape", QString("%1").arg(m_shape));
 	PreProcessorGridShapeDataItem::doSaveToProjectMainFile(writer);
 }
 
 QDialog* PreProcessorStructured2dGridShapeDataItem::propertyDialog(QWidget* parent)
 {
 	GridShapeEditDialog* dialog = new GridShapeEditDialog(parent);
-	dialog->setGridColor(color());
-	dialog->setShape(shape());
-	dialog->setIndexVisible(m_indexVisible);
-	dialog->setIndexColor(indexColor());
-//	dialog->setAxesVisible(m_axesVisible);
-//	dialog->setAxesColor(axesColor());
-
+	dialog->setSetting(m_setting);
 	return dialog;
 }
 
 void PreProcessorStructured2dGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	m_shape = dialog->shape();
-	setColor(dialog->gridColor());
-	m_indexVisible = dialog->indexVisible();
-	setIndexColor(dialog->indexColor());
-//	m_axesVisible = dialog->axesVisible();
-//	setAxesColor(dialog->axesColor());
+	m_setting = dialog->setting();
 	updateActorSettings();
 	renderGraphicsView();
 }
@@ -204,5 +176,4 @@ void PreProcessorStructured2dGridShapeDataItem::assignActorZValues(const ZDepthR
 {
 	m_outlineActor->SetPosition(0, 0, range.max());
 	m_wireframeActor->SetPosition(0, 0, range.min());
-//	m_axesActor->SetPosition(0, 0, range.max());
 }

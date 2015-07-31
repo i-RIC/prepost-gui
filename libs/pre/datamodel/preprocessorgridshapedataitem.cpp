@@ -9,7 +9,6 @@
 
 #include <guibase/coloreditwidget.h>
 #include <guibase/graphicsmisc.h>
-#include <guibase/gridshapeeditdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/misc/qundocommandhelper.h>
@@ -66,26 +65,7 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	QSettings setting;
-	QColor gridColor = setting.value("graphics/gridcolor", QColor(Qt::black)).value<QColor>();
-	setColor(gridColor); // default is black.
-
-	m_indexVisible = false;
-	QColor indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
-	setIndexColor(indexColor);
-
-//	m_axesVisible = false;
-//	QColor axesColor = setting.value("graphics/gridaxescolor", Qt::black).value<QColor>();
-//	setAxesColor(axesColor);
-
 	QList<QStandardItem*> rows = parent->standardItem()->takeRow(m_standardItem->row());
-
-//	m_axesActor = vtkSmartPointer<vtkCubeAxesActor2D>::New();
-//	iRIC::setupCubeActor2D(m_axesActor);
-//	m_axesActor->SetZAxisVisibility(0);
-//	m_axesActor->SetCamera(renderer()->GetActiveCamera());
-//	m_axesActor->VisibilityOff();
-//	renderer()->AddActor2D(m_axesActor);
 
 	m_editAction = new QAction(tr("&Edit Coordinates..."), this);
 	connect(m_editAction, SIGNAL(triggered()), this, SLOT(editShape()));
@@ -100,60 +80,13 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 }
 
 PreProcessorGridShapeDataItem::~PreProcessorGridShapeDataItem()
-{
-//	renderer()->RemoveActor(m_axesActor);
-}
+{}
 
 void PreProcessorGridShapeDataItem::handleStandardItemDoubleClicked()
 {
 	showPropertyDialog();
 }
 
-QColor PreProcessorGridShapeDataItem::color()
-{
-	return QColor(
-					 (int)(m_color[0] * 255),
-					 (int)(m_color[1] * 255),
-					 (int)(m_color[2] * 255));
-}
-
-void PreProcessorGridShapeDataItem::setColor(const QColor& color)
-{
-	m_color[0] = color.red()   / 255.;
-	m_color[1] = color.green() / 255.;
-	m_color[2] = color.blue()  / 255.;
-}
-
-QColor PreProcessorGridShapeDataItem::indexColor()
-{
-	return QColor(
-					 (int)(m_indexColor[0] * 255),
-					 (int)(m_indexColor[1] * 255),
-					 (int)(m_indexColor[2] * 255));
-}
-
-void PreProcessorGridShapeDataItem::setIndexColor(const QColor& color)
-{
-	m_indexColor[0] = color.red()   / 255.;
-	m_indexColor[1] = color.green() / 255.;
-	m_indexColor[2] = color.blue()  / 255.;
-}
-/*
-QColor PreProcessorGridShapeDataItem::axesColor()
-{
-	return QColor(
-		(int) (m_axesColor[0] * 255),
-		(int) (m_axesColor[1] * 255),
-		(int) (m_axesColor[2] * 255));
-}
-
-void PreProcessorGridShapeDataItem::setAxesColor(const QColor& color)
-{
-	m_axesColor[0] = color.red()   / 255.;
-	m_axesColor[1] = color.green() / 255.;
-	m_axesColor[2] = color.blue()  / 255.;
-}
-*/
 class GridPointMouseMoveCommand : public QUndoCommand
 {
 public:
@@ -430,47 +363,15 @@ void PreProcessorGridShapeDataItem::updateActionStatus()
 	m_openXsectionWindowAction->setEnabled(gItem->selectedVertices().count() > 0);
 	m_openVXsectionWindowAction->setEnabled(gItem->selectedVertices().count() > 0);
 }
-/*
-void PreProcessorGridShapeDataItem::updateAxesRegion()
-{
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == nullptr){return;}
-	double bounds[6];
-	g->vtkGrid()->GetBounds(bounds);
-	if (! m_xAxisSetting.isAuto){
-		bounds[0] = m_xAxisSetting.min;
-		bounds[1] = m_xAxisSetting.max;
-	}
-	if (! m_yAxisSetting.isAuto){
-		bounds[2] = m_yAxisSetting.min;
-		bounds[3] = m_yAxisSetting.max;
-	}
-	m_axesActor->SetBounds(bounds);
-}
-*/
+
 void PreProcessorGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-
-	setColor(iRIC::QColorFromString(elem.attribute("color", "#000000")));
-	m_indexVisible = static_cast<bool>(elem.attribute("indexvisible", "0").toInt());
-	setIndexColor(iRIC::QColorFromString(elem.attribute("indexcolor", "#000000")));
-//	m_axesVisible = static_cast<bool>(elem.attribute("axesvisible", "0").toInt());
-//	setAxesColor(iRIC::QColorFromString(elem.attribute("axescolor", "#000000")));
+	m_setting.load(node);
 }
 
 void PreProcessorGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString boolStr;
-	writer.writeAttribute("color", iRIC::QColorToString(color()));
-
-	boolStr.setNum(m_indexVisible);
-	writer.writeAttribute("indexvisible", boolStr);
-	writer.writeAttribute("indexcolor", iRIC::QColorToString(indexColor()));
-
-//	boolStr.setNum(m_axesVisible);
-//	writer.writeAttribute("axesvisible", boolStr);
-//	writer.writeAttribute("axescolor", iRIC::QColorToString(axesColor()));
+	m_setting.save(writer);
 }
 
 

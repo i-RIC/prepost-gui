@@ -30,16 +30,14 @@ private:
 	static const int selectedOutlineWidth = 2;
 
 public:
+
 	/// Constructor
 	Post2dWindowGridShapeDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowGridShapeDataItem();
 	/// Inform that the grid is updated.
 	void update();
 	void handleStandardItemDoubleClicked() override;
-	QColor color() const;
-	QColor indexColor() const;
-//	QColor axesColor() override;
-	GridShapeEditDialog::Shape shape() const {return m_shape;}
+	GridShapeEditDialog::Shape shape() const {return m_setting.shape;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
@@ -53,12 +51,11 @@ protected:
 
 private:
 	void setupActors();
-	void setColor(const QColor& color);
-	void setIndexColor(const QColor& color);
 	void updateActorSettings();
 	void loadShapeFromProjectMainFile(const QDomNode& shapeNode);
 	void saveShapeToProjectMainFile(QXmlStreamWriter& writer);
 	void updateAxesRegion();
+
 	vtkSmartPointer<vtkActor> m_outlineActor;
 	vtkSmartPointer<vtkActor> m_wireframeActor;
 	vtkSmartPointer<vtkMapper> m_outlineMapper;
@@ -69,10 +66,7 @@ private:
 
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
 
-	double m_color[3];
-	GridShapeEditDialog::Shape m_shape;
-	bool m_indexVisible;
-	double m_indexColor[3];
+	GridShapeEditDialog::Setting m_setting;
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;

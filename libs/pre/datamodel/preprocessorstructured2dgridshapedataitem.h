@@ -22,7 +22,6 @@ private:
 public:
 	PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorStructured2dGridShapeDataItem();
-	GridShapeEditDialog::Shape shape() {return m_shape;}
 	/// Inform that the grid is updated.
 	void informGridUpdate() override;
 	void informSelection(VTKGraphicsView* v) override;
@@ -46,7 +45,6 @@ private:
 	vtkSmartPointer<vtkStructuredGridOutlineFilter> m_outlineFilter;
 	vtkSmartPointer<vtkActor2D> m_indexActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
-	GridShapeEditDialog::Shape m_shape;
 };
 
 #endif // PREPROCESSORSTRUCTURED2DGRIDSHAPEDATAITEM_H

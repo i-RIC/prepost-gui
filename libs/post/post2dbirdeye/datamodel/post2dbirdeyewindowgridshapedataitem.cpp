@@ -56,8 +56,8 @@
 
 #define LABEL "label2d"
 
-Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent)
-	: Post2dBirdEyeWindowDataItem(tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent) :
+	Post2dBirdEyeWindowDataItem{tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
@@ -65,18 +65,11 @@ Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_shape = GridShapeEditDialog::Outline;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent)->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
-		m_shape = GridShapeEditDialog::Wireframe;
+		m_setting.shape = GridShapeEditDialog::Wireframe;
 	}
-	QSettings setting;
-	QColor gridColor = setting.value("graphics/gridcolor", QColor(Qt::black)).value<QColor>();
-	setColor(gridColor);
-	m_indexVisible = false;
-	QColor indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
-	setIndexColor(indexColor);
 
 	setupActors();
 }
@@ -152,17 +145,10 @@ void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
 	prop->SetJustificationToLeft();
 	prop->SetVerticalJustificationToCentered();
 
-//	m_axesActor = vtkSmartPointer<vtkCubeAxesActor2D>::New();
-//	iRIC::setupCubeActor2D(m_axesActor);
-//	m_axesActor->SetZAxisVisibility(0);
-//	m_axesActor->SetCamera(renderer()->GetActiveCamera());
-//	renderer()->AddActor2D(m_axesActor);
-
 	m_indexActor->SetMapper(m_indexMapper);
 	m_outlineActor->VisibilityOff();
 	m_wireframeActor->VisibilityOff();
 	m_indexActor->VisibilityOff();
-//	m_axesActor->VisibilityOff();
 
 	updateActorSettings();
 }
@@ -177,7 +163,6 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 	m_outlineActor->VisibilityOff();
 	m_wireframeActor->VisibilityOff();
 	m_indexActor->VisibilityOff();
-//	m_axesActor->VisibilityOff();
 
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
@@ -196,10 +181,10 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 	m_labelWarp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(cont->elevationName()).c_str());
 
 	vtkSmartPointer<vtkStructuredGrid> tmpgrid;
-	switch (m_shape) {
+	switch (GridShapeEditDialog::Shape(m_setting.shape)) {
 	case GridShapeEditDialog::Outline:
 		m_outlineFilter->SetInputConnection(m_warp->GetOutputPort());
-		m_outlineActor->GetProperty()->SetColor(m_color);
+		m_outlineActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_outlineActor);
 		break;
 	case GridShapeEditDialog::Wireframe:
@@ -207,13 +192,13 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 		m_wireframeMapper->SetInputConnection(m_warp->GetOutputPort());
 		m_wireframeActor->GetLODMappers()->RemoveAllItems();
 		tmpgrid = grid;
-		m_outlineActor->GetProperty()->SetColor(m_color);
+		m_outlineActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_outlineActor);
-		m_wireframeActor->GetProperty()->SetColor(m_color);
+		m_wireframeActor->GetProperty()->SetColor(m_setting.color);
 		m_actorCollection->AddItem(m_wireframeActor);
 		break;
 	}
-	if (m_indexVisible) {
+	if (m_setting.indexVisible) {
 		m_labelWarp->Update();
 		vtkPointSet* ps = m_labelWarp->GetOutput();
 		vtkSmartPointer<vtkUnstructuredGrid> tmpGrid = vtkSmartPointer<vtkUnstructuredGrid>::New();
@@ -224,48 +209,22 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSettings()
 
 		m_indexTransformFilter->SetInputData(tmpGrid);
 		m_indexTransformFilter->Update();
-		/*
-				vtkSmartPointer<vtkUnstructuredGridWriter> writer = vtkSmartPointer<vtkUnstructuredGridWriter>::New();
-				writer->SetFileName("tmpgrid.txt");
-				writer->SetInput(m_indexTransformFilter->GetOutput());
-				writer->Update();
-		*/
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
+		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
-	/*
-		if (m_axesVisible){
-			m_axesActor->GetProperty()->SetColor(m_axesColor);
-			m_axesActor->GetAxisLabelTextProperty()->SetColor(m_axesColor);
-			m_axesActor->GetAxisTitleTextProperty()->SetColor(m_axesColor);
-			m_actor2DCollection->AddItem(m_axesActor);
-			updateAxesRegion();
-		}
-	*/
 	updateVisibilityWithoutRendering();
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& shapeNode)
 {
-	QDomElement elem = shapeNode.toElement();
-	QColor tmpcol;
-	m_shape = (GridShapeEditDialog::Shape)elem.attribute("shape", "0").toInt();
-	tmpcol = loadColorAttribute("color", shapeNode, Qt::black);
-	setColor(tmpcol);
-	m_indexVisible = static_cast<bool>(elem.attribute("indexVisible").toInt());
-	tmpcol = loadColorAttribute("indexColor", shapeNode, Qt::black);
-	setIndexColor(tmpcol);
+	m_setting.load(shapeNode);
 
 	updateActorSettings();
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString qstr;
-	writer.writeAttribute("shape", qstr.setNum((int)m_shape));
-	writeColorAttribute("color", color(), writer);
-	writer.writeAttribute("indexVisible", QString::number(static_cast<int>(m_indexVisible)));
-	writeColorAttribute("indexColor", indexColor(), writer);
+	m_setting.save(writer);
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::handleStandardItemDoubleClicked()
@@ -276,12 +235,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::handleStandardItemDoubleClicked()
 QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
 	GridShapeEditDialog* dialog = new GridShapeEditDialog(p);
-	// It's enabled ALWAYS.
-	dialog->setEnabled(true);
-	dialog->setGridColor(color());
-	dialog->setShape(shape());
-	dialog->setIndexVisible(m_indexVisible);
-	dialog->setIndexColor(indexColor());
+	dialog->setSetting(m_setting);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
@@ -294,29 +248,17 @@ QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 class Post2dBirdEyeWindowGridShapeDataSetSetting : public QUndoCommand
 {
 public:
-	Post2dBirdEyeWindowGridShapeDataSetSetting(bool enabled, GridShapeEditDialog::Shape shape, QColor color, bool indexVisible, QColor indexColor, Post2dBirdEyeWindowGridShapeDataItem* item)
-		: QUndoCommand(QObject::tr("Update Grid Shape Setting")) {
-		m_newEnabled = enabled;
-		m_newShape = shape;
-		m_newColor = color;
-		m_newIndexVisible = indexVisible;
-		m_newIndexColor = indexColor;
-
-		m_oldEnabled = item->isEnabled();
-		m_oldShape = item->m_shape;
-		m_oldColor = item->color();
-		m_oldIndexVisible = item->m_indexVisible;
-		m_oldIndexColor = item->indexColor();
-
-		m_item = item;
-	}
+	Post2dBirdEyeWindowGridShapeDataSetSetting(const GridShapeEditDialog::Setting& setting, Post2dBirdEyeWindowGridShapeDataItem* item) :
+		QUndoCommand {QObject::tr("Update Grid Shape Setting")},
+		m_newSetting {setting},
+		m_oldSetting {item->m_setting},
+		m_oldEnabled {item->isEnabled()},
+		m_item {item}
+	{}
 	void redo() {
 		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_newEnabled);
-		m_item->m_shape = m_newShape;
-		m_item->setColor(m_newColor);
-		m_item->m_indexVisible = m_newIndexVisible;
-		m_item->setIndexColor(m_newIndexColor);
+		m_item->setEnabled(true);
+		m_item->m_setting = m_newSetting;
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
@@ -325,27 +267,17 @@ public:
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
-		m_item->m_shape = m_oldShape;
-		m_item->setColor(m_oldColor);
-		m_item->m_indexVisible = m_oldIndexVisible;
-		m_item->setIndexColor(m_oldIndexColor);
+		m_item->m_setting = m_oldSetting;
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	bool m_oldEnabled;
-	GridShapeEditDialog::Shape m_oldShape;
-	QColor m_oldColor;
-	bool m_oldIndexVisible;
-	QColor m_oldIndexColor;
+	GridShapeEditDialog::Setting m_newSetting;
 
-	bool m_newEnabled;
-	GridShapeEditDialog::Shape m_newShape;
-	QColor m_newColor;
-	bool m_newIndexVisible;
-	QColor m_newIndexColor;
+	GridShapeEditDialog::Setting m_oldSetting;
+	bool m_oldEnabled;
 
 	Post2dBirdEyeWindowGridShapeDataItem* m_item;
 };
@@ -353,38 +285,7 @@ private:
 void Post2dBirdEyeWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dBirdEyeWindowGridShapeDataSetSetting(true, dialog->shape(), dialog->gridColor(), dialog->indexVisible(), dialog->indexColor(), this));
-}
-
-
-QColor Post2dBirdEyeWindowGridShapeDataItem::color() const
-{
-	return QColor(
-					 (int)(m_color[0] * 255),
-					 (int)(m_color[1] * 255),
-					 (int)(m_color[2] * 255));
-}
-
-void Post2dBirdEyeWindowGridShapeDataItem::setColor(const QColor& color)
-{
-	m_color[0] = color.redF();
-	m_color[1] = color.greenF();
-	m_color[2] = color.blueF();
-}
-
-QColor Post2dBirdEyeWindowGridShapeDataItem::indexColor() const
-{
-	return QColor(
-					 (int)(m_indexColor[0] * 255),
-					 (int)(m_indexColor[1] * 255),
-					 (int)(m_indexColor[2] * 255));
-}
-
-void Post2dBirdEyeWindowGridShapeDataItem::setIndexColor(const QColor& color)
-{
-	m_indexColor[0] = color.redF();
-	m_indexColor[1] = color.greenF();
-	m_indexColor[2] = color.blueF();
+	iRICUndoStack::instance().push(new Post2dBirdEyeWindowGridShapeDataSetSetting(dialog->setting(), this));
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)

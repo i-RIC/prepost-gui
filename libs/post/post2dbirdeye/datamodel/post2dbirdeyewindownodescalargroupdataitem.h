@@ -6,6 +6,7 @@
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>
+#include <postbase/post2dwindowcontoursetting.h>
 #include <QMap>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -32,7 +33,7 @@ public:
 	/// Constructor
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
-	const QString& currentCondition() const {return m_currentSolution;}
+	QString currentSolution() const {return m_setting.currentSolution;}
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
@@ -57,28 +58,14 @@ private:
 	void updateActorSettings();
 	void createRangeClippedPolyData();
 	void createValueClippedPolyData();
-	void setDefaultValues();
 	void setupIsolineSetting();
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
 	void setupScalarBarSetting();
 
-	int m_numberOfDivisions;
-	QString m_currentSolution;
-	ContourSettingWidget::Contour m_contour;
-	bool m_fillUpper;
-	bool m_fillLower;
-	int m_opacityPercent;
-
-	// Region setting
-	StructuredGridRegion::RegionMode m_regionMode;
-	StructuredGridRegion::Range2d m_range;
-
+	Post2dWindowContourSetting m_setting;
 	// for scalar bar
 	QMap<QString, QString> m_colorbarTitleMap;
-	ScalarBarSetting m_scalarBarSetting;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkLODActor* m_contourActor;

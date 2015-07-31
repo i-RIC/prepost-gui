@@ -9,6 +9,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QXmlStreamWriter>
 #include <QDomElement>
 #include <QDomNode>
 #include <QStandardItem>

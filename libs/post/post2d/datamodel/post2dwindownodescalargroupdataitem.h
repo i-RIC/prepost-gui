@@ -2,17 +2,7 @@
 #define POST2DWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
-#include <guibase/contoursettingwidget.h>
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
-#include <guibase/structuredgridregion.h>
-#include <misc/compositecontainer.h>
-#include <misc/intcontainer.h>
-#include <misc/stringcontainer.h>
-#include <misc/boolcontainer.h>
-#include <misc/enumcontainert.h>
-#include <misc/opacitycontainer.h>
-
+#include <postbase/post2dwindowcontoursetting.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkLODActor.h>
@@ -37,28 +27,6 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	struct Setting : public CompositeContainer
-	{
-		/// Constructor
-		Setting();
-
-		IntContainer numberOfDivisions;
-		StringContainer currentSolution;
-		EnumContainerT<ContourSettingWidget::Contour> contour;
-		BoolContainer fillUpper;
-		BoolContainer fillLower;
-		OpacityContainer opacity;
-
-		// Region setting
-		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
-		StructuredGridRegion::Range2d range;
-
-		// for scalar bar
-		ScalarBarSetting scalarBarSetting;
-		vtkTextPropertySettingContainer titleTextSetting;
-		vtkTextPropertySettingContainer labelTextSetting;
-	};
-
 	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
@@ -100,7 +68,7 @@ private:
 	void setupScalarBarSetting();
 
 	// Settings
-	Setting m_setting;
+	Post2dWindowContourSetting m_setting;
 
 	// for scalar bar
 	QMap<QString, QString> m_colorbarTitleMap;

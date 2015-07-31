@@ -66,6 +66,10 @@ public:
 	{
 		return m_value == v;
 	}
+	bool operator!=(const V& v) const
+	{
+		return m_value != v;
+	}
 	operator V() const {return m_value;}
 	//@}
 

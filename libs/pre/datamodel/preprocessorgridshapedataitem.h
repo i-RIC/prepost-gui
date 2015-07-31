@@ -2,8 +2,8 @@
 #define PREPROCESSORGRIDSHAPEDATAITEM_H
 
 #include <guicore/pre/base/preprocessordataitem.h>
-#include <guibase/gridshapeeditdialog.h>
 #include <guibase/xyaxisdisplaysettingdialog.h>
+#include <guibase/gridshapeeditdialog.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkPoints.h>
@@ -27,9 +27,6 @@ public:
 	/// Inform that the grid is updated.
 	virtual void informGridUpdate() = 0;
 	void handleStandardItemDoubleClicked() override;
-	QColor color();
-	QColor indexColor();
-//	QColor axesColor() override;
 	void mouseMoveEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 	void mousePressEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
 	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
@@ -50,25 +47,13 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setColor(const QColor& color);
-	void setIndexColor(const QColor& color);
-//	void setAxesColor(const QColor& color) override;
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
-//	vtkSmartPointer<vtkCubeAxesActor2D> m_axesActor;
 
-	double m_color[3];
-	bool m_indexVisible;
-	double m_indexColor[3];
-
-//	bool m_axesVisible;
-//	double m_axesColor[3];
+	GridShapeEditDialog::Setting m_setting;
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;
 	bool m_nearSelectedPoint;
-
-//	XYAxisDisplaySettingDialog::Setting m_xAxisSetting;
-//	XYAxisDisplaySettingDialog::Setting m_yAxisSetting;
 
 	QAction* m_editAction;
 	QAction* m_openXsectionWindowAction;

@@ -213,7 +213,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 
 	if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
 		// discrete
-		if (! m_visible) { eturn;}
+		if (! m_visible) {return;}
 		m_legendBoxWidget->SetEnabled(1);
 
 		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());

@@ -8,6 +8,7 @@
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
+#include <postbase/post2dwindowcontoursetting.h>
 
 #include <QDialog>
 #include <QList>
@@ -33,10 +34,10 @@ public:
 	void disableActive();
 	void hideOpacity();
 
-	void setSetting(const Post2dWindowNodeScalarGroupDataItem::Setting& setting);
+	void setSetting(const Post2dWindowContourSetting& setting);
 	void setColorBarTitleMap(const QMap<QString, QString>& titlemap);
 
-	Post2dWindowNodeScalarGroupDataItem::Setting setting() const;
+	Post2dWindowContourSetting setting() const;
 	const LookupTableContainer& lookupTable();
 	QString scalarBarTitle();
 
@@ -58,7 +59,7 @@ private:
 	bool m_activeAvailable;
 	bool m_unstructured;
 
-	Post2dWindowNodeScalarGroupDataItem::Setting m_setting;
+	Post2dWindowContourSetting m_setting;
 	QMap<QString, QString> m_colorBarTitleMap;
 	Ui::Post2dWindowContourSettingDialog* ui;
 };

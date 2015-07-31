@@ -2,6 +2,20 @@
 
 #include "gridshapeeditdialog.h"
 
+#include <QSettings>
+
+GridShapeEditDialog::Setting::Setting() :
+	CompositeContainer {&color, &shape, &indexVisible, &indexColor},
+	color {"color"},
+	shape {"shape", GridShapeEditDialog::Outline},
+	indexVisible {"indexVisible", false},
+	indexColor {"indexColor"}
+{
+	QSettings setting;
+	color = setting.value("graphics/gridcolor", QColor(Qt::black)).value<QColor>();
+	indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
+}
+
 GridShapeEditDialog::GridShapeEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridShapeEditDialog)
@@ -33,53 +47,34 @@ void GridShapeEditDialog::hideIndex()
 	setMaximumSize(sizeHint());
 }
 
-void GridShapeEditDialog::setGridColor(const QColor& color)
+void GridShapeEditDialog::setSetting(const Setting& s)
 {
-	ui->gridColorEditWidget->setColor(color);
-}
-
-QColor GridShapeEditDialog::gridColor()
-{
-	return 	ui->gridColorEditWidget->color();
-}
-
-void GridShapeEditDialog::setIndexVisible(bool visible)
-{
-	ui->indexVisibleCheckBox->setChecked(visible);
-}
-
-bool GridShapeEditDialog::indexVisible()
-{
-	return ui->indexVisibleCheckBox->isChecked();
-}
-
-void GridShapeEditDialog::setIndexColor(const QColor& color)
-{
-	ui->indexColorEditWidget->setColor(color);
-}
-
-QColor GridShapeEditDialog::indexColor()
-{
-	return ui->indexColorEditWidget->color();
-}
-
-void GridShapeEditDialog::setShape(Shape shape)
-{
-	if (shape == Outline) {
+	ui->gridColorEditWidget->setColor(s.color);
+	ui->indexVisibleCheckBox->setChecked(s.indexVisible);
+	ui->indexColorEditWidget->setColor(s.indexColor);
+	if (s.shape == Outline) {
 		ui->outlineRadioButton->setChecked(true);
 	} else {
 		ui->allRadioButton->setChecked(true);
 	}
 }
 
-GridShapeEditDialog::Shape GridShapeEditDialog::shape()
+GridShapeEditDialog::Setting GridShapeEditDialog::setting() const
 {
+	GridShapeEditDialog::Setting ret;
+
+	ret.color = ui->gridColorEditWidget->color();
+	ret.indexVisible = ui->indexVisibleCheckBox->isChecked();
+	ret.indexColor = ui->indexColorEditWidget->color();
 	if (ui->outlineRadioButton->isChecked()) {
-		return Outline;
+		ret.shape = Outline;
 	} else {
-		return Wireframe;
+		ret.shape = Wireframe;
 	}
+
+	return ret;
 }
+
 
 void GridShapeEditDialog::outlineToggled(bool toggled)
 {

@@ -79,7 +79,8 @@ HEADERS += postallzoneselectingdialog.h \
            time/posttimesetting.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
-           title/posttitlesetting.h
+           title/posttitlesetting.h \
+    post2dwindowcontoursetting.h
 FORMS += postallzoneselectingdialog.ui \
          postparticlebasicpropertydialog.ui \
          time/posttimeeditdialog.ui \
@@ -89,7 +90,8 @@ SOURCES += postallzoneselectingdialog.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \
-           title/posttitleeditdialog.cpp
+           title/posttitleeditdialog.cpp \
+    post2dwindowcontoursetting.cpp
 TRANSLATIONS += languages/iricPostbase_es_ES.ts \
                 languages/iricPostbase_fr_FR.ts \
                 languages/iricPostbase_id_ID.ts \

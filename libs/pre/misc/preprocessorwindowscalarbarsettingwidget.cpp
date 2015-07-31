@@ -7,7 +7,7 @@
 PreProcessorWindowScalarBarSettingWidget::Setting::Setting()
 {
 	visible = true;
-	orientation = ScalarBarSetting::oVertical;
+	orientation = ScalarBarSetting::Orientation::Vertical;
 	numberOfLabels = DEFAULT_NUMOFLABELS;
 	width = 0.1;
 	height = 0.3;
@@ -49,10 +49,10 @@ void PreProcessorWindowScalarBarSettingWidget::setVisibility(bool visible)
 void PreProcessorWindowScalarBarSettingWidget::setOrientation(ScalarBarSetting::Orientation o)
 {
 	switch (o) {
-	case ScalarBarSetting::oVertical:
+	case ScalarBarSetting::Orientation::Vertical:
 		ui->verticalRadioButton->click();
 		break;
-	case ScalarBarSetting::oHorizontal:
+	case ScalarBarSetting::Orientation::Horizontal:
 		ui->horizontalRadioButton->click();
 		break;
 	}
@@ -121,10 +121,10 @@ bool PreProcessorWindowScalarBarSettingWidget::visibility() const
 
 ScalarBarSetting::Orientation PreProcessorWindowScalarBarSettingWidget::orientation() const
 {
-	if (ui->verticalRadioButton->isChecked()) { return ScalarBarSetting::oVertical; }
-	if (ui->horizontalRadioButton->isChecked()) { return ScalarBarSetting::oHorizontal; }
+	if (ui->verticalRadioButton->isChecked()) {return ScalarBarSetting::Orientation::Vertical;}
+	if (ui->horizontalRadioButton->isChecked()) {return ScalarBarSetting::Orientation::Horizontal;}
 	// default
-	return ScalarBarSetting::oVertical;
+	return ScalarBarSetting::Orientation::Vertical;
 }
 
 QString PreProcessorWindowScalarBarSettingWidget::title() const

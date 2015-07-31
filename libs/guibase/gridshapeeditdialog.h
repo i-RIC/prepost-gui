@@ -3,6 +3,11 @@
 
 #include "guibase_global.h"
 
+#include <misc/colorcontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/compositecontainer.h>
+
 #include <QDialog>
 #include <QMap>
 
@@ -24,12 +29,29 @@ public:
 		Outline,    ///< Outline only
 		Wireframe   ///< Show all grid cell lines
 	};
+
+	struct Setting : public CompositeContainer
+	{
+		Setting();
+
+		ColorContainer color;
+		EnumContainerT<GridShapeEditDialog::Shape> shape;
+		BoolContainer indexVisible;
+		ColorContainer indexColor;
+	};
+
 	GridShapeEditDialog(QWidget* parent = nullptr);
 	~GridShapeEditDialog();
 	/// Hide the widget to select grid shape
 	void hideShape();
 	/// Hide the widget to toggle indices display on/off
 	void hideIndex();
+	/// Set the setting
+	void setSetting(const Setting& setting);
+	/// Get the setting
+	Setting setting() const;
+
+/*
 	/// Set the grid color
 	void setGridColor(const QColor& color);
 	/// The grid color
@@ -46,7 +68,7 @@ public:
 	void setIndexColor(const QColor& color);
 	/// The grid indices color
 	QColor indexColor();
-
+*/
 private slots:
 	void outlineToggled(bool toggled);
 

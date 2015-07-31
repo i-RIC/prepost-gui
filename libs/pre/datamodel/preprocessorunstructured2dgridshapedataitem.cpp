@@ -17,8 +17,8 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-PreProcessorUnstructured2dGridShapeDataItem::PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridShapeDataItem(parent)
+PreProcessorUnstructured2dGridShapeDataItem::PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridShapeDataItem {parent}
 {
 	setupActors();
 	updateActorSettings();
@@ -48,13 +48,14 @@ void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(Grid::LABEL_NAME);
-	m_indexMapper->GetLabelTextProperty()->SetColor(0, 0, 0);
-	m_indexMapper->GetLabelTextProperty()->SetFontSize(12);
-	m_indexMapper->GetLabelTextProperty()->BoldOff();
-	m_indexMapper->GetLabelTextProperty()->ItalicOff();
-	m_indexMapper->GetLabelTextProperty()->ShadowOff();
-	m_indexMapper->GetLabelTextProperty()->SetJustificationToLeft();
-	m_indexMapper->GetLabelTextProperty()->SetVerticalJustificationToCentered();
+	vtkTextProperty* prop = m_indexMapper->GetLabelTextProperty();
+	prop->SetColor(0, 0, 0);
+	prop->SetFontSize(12);
+	prop->BoldOff();
+	prop->ItalicOff();
+	prop->ShadowOff();
+	prop->SetJustificationToLeft();
+	prop->SetVerticalJustificationToCentered();
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -82,7 +83,6 @@ void PreProcessorUnstructured2dGridShapeDataItem::updateActorSettings()
 	// make all the items invisible
 	m_wireframeActor->VisibilityOff();
 	m_indexActor->VisibilityOff();
-//	m_axesActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 
@@ -91,11 +91,11 @@ void PreProcessorUnstructured2dGridShapeDataItem::updateActorSettings()
 		// grid is not setup yet.
 		return;
 	}
-	m_wireframeActor->GetProperty()->SetColor(m_color);
+	m_wireframeActor->GetProperty()->SetColor(m_setting.color);
 	m_actorCollection->AddItem(m_wireframeActor);
 
-	if (m_indexVisible) {
-		m_indexMapper->GetLabelTextProperty()->SetColor(m_indexColor);
+	if (m_setting.indexVisible) {
+		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -105,23 +105,15 @@ QDialog* PreProcessorUnstructured2dGridShapeDataItem::propertyDialog(QWidget* pa
 {
 	GridShapeEditDialog* dialog = new GridShapeEditDialog(parent);
 	dialog->hideShape();
-	dialog->setGridColor(color());
-	dialog->setShape(GridShapeEditDialog::Wireframe);
-	dialog->setIndexVisible(m_indexVisible);
-	dialog->setIndexColor(indexColor());
-//	dialog->setAxesVisible(m_axesVisible);
-//	dialog->setAxesColor(axesColor());
+	dialog->setSetting(m_setting);
 	return dialog;
 }
 
 void PreProcessorUnstructured2dGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	setColor(dialog->gridColor());
-	m_indexVisible = dialog->indexVisible();
-	setIndexColor(dialog->indexColor());
-//	m_axesVisible = dialog->axesVisible();
-//	setAxesColor(dialog->axesColor());
+	m_setting = dialog->setting();
+
 	updateActorSettings();
 	renderGraphicsView();
 }
@@ -140,5 +132,4 @@ void PreProcessorUnstructured2dGridShapeDataItem::informDeselection(VTKGraphicsV
 void PreProcessorUnstructured2dGridShapeDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_wireframeActor->SetPosition(0, 0, range.min());
-//	m_axesActor->SetPosition(0, 0, range.max());
 }

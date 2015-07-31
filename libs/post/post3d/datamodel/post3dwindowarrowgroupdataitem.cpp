@@ -13,6 +13,8 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
+#include <QDomNode>
+#include <QXmlStreamWriter>
 #include <QMainWindow>
 #include <QSet>
 #include <QSettings>

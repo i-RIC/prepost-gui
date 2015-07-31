@@ -83,8 +83,10 @@ void Post2dWindowContourSettingDialog::hideOpacity()
 	resize(size);
 }
 
-void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowNodeScalarGroupDataItem::Setting& s)
+void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetting& s)
 {
+	m_setting = s;
+
 	// currentSolution
 	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {
@@ -108,7 +110,6 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowNodeScalarGr
 
 	// opacity
 	ui->transparencyWidget->setOpacity(s.opacity);
-
 }
 
 void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titlemap)
@@ -116,9 +117,9 @@ void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, Q
 	m_colorBarTitleMap = titlemap;
 }
 
-Post2dWindowNodeScalarGroupDataItem::Setting Post2dWindowContourSettingDialog::setting() const
+Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 {
-	Post2dWindowNodeScalarGroupDataItem::Setting ret = m_setting;
+	Post2dWindowContourSetting ret = m_setting;
 	// solution
 	ret.currentSolution = currentSolution();
 

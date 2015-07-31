@@ -29,9 +29,7 @@ public:
 	Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowGridShapeDataItem();
 	void handleStandardItemDoubleClicked() override;
-	QColor color() const;
-	QColor indexColor() const;
-	GridShapeEditDialog::Shape shape() const {return m_shape;}
+//	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void update();
@@ -45,8 +43,6 @@ protected:
 
 private:
 	void setupActors();
-	void setColor(const QColor& color);
-	void setIndexColor(const QColor& color);
 	void updateActorSettings();
 	void loadShapeFromProjectMainFile(const QDomNode& shapeNode);
 	void saveShapeToProjectMainFile(QXmlStreamWriter& writer);
@@ -61,15 +57,11 @@ private:
 	vtkSmartPointer<vtkActor2D> m_indexActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
 
-	double m_color[3];
-	bool m_indexVisible;
-	double m_indexColor[3];
+	GridShapeEditDialog::Setting m_setting;
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;
 	bool m_nearSelectedPoint;
-
-	GridShapeEditDialog::Shape m_shape;
 
 public:
 	friend class Post3dWindowGridShapeDataSetSetting;

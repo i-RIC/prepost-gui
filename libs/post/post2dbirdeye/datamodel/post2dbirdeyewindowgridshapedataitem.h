@@ -41,8 +41,6 @@ public:
 	/// Inform that the grid is updated.
 	void update();
 	void handleStandardItemDoubleClicked() override;
-	QColor color() const;
-	QColor indexColor() const;
 	GridShapeEditDialog::Shape shape() const {return m_shape;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -57,8 +55,6 @@ protected:
 
 private:
 	void setupActors();
-	void setColor(const QColor& color);
-	void setIndexColor(const QColor& color);
 	void updateActorSettings();
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkSmartPointer<vtkWarpScalar> m_labelWarp;
@@ -71,15 +67,10 @@ private:
 	vtkSmartPointer<vtkTransform> m_indexTransform;
 	vtkSmartPointer<vtkActor2D> m_indexActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
-//	vtkSmartPointer<vtkCubeAxesActor2D> m_axesActor;
 
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
 
-	double m_color[3];
-	bool m_indexVisible;
-	double m_indexColor[3];
-//	bool m_axesVisible;
-//	double m_axesColor[3];
+	GridShapeEditDialog::Setting m_setting;
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;

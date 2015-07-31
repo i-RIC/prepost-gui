@@ -85,9 +85,9 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 		return;
 	}
 
-	m_edgeActor->GetProperty()->SetColor(m_color);
+	m_edgeActor->GetProperty()->SetColor(m_setting.color);
 	m_actorCollection->AddItem(m_edgeActor);
-	m_vertexActor->GetProperty()->SetColor(m_color);
+	m_vertexActor->GetProperty()->SetColor(m_setting.color);
 	m_actorCollection->AddItem(m_vertexActor);
 
 	updateVisibility();

@@ -12,7 +12,9 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
+#include <QDomNode>
 #include <QDomElement>
+#include <QXmlStreamWriter>
 #include <QMainWindow>
 #include <QStandardItem>
 #include <QUndoCommand>
