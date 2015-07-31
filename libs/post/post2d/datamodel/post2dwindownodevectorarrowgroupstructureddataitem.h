@@ -2,7 +2,11 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorarrowgroupdataitem.h"
+
 #include <guibase/structuredgridregion.h>
+#include <misc/compositecontainer.h>
+#include <misc/intcontainer.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkExtractGrid.h>
 #include <vtkMaskPoints.h>
@@ -16,6 +20,15 @@ public:
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupStructuredDataItem();
 
+	struct Setting : public CompositeContainer
+	{
+		Setting();
+
+		IntContainer iSampleRate;
+		IntContainer jSampleRate;
+		StructuredGridRegion::Range2d range;
+	};
+
 protected:
 	virtual void updateActivePoints() override;
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
@@ -24,9 +37,10 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 private:
-	int m_iSampleRate;
-	int m_jSampleRate;
-	StructuredGridRegion::Range2d m_range;
+	Setting m_stSetting;
+//	int m_iSampleRate;
+//	int m_jSampleRate;
+//	StructuredGridRegion::Range2d m_range;
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 	vtkSmartPointer<vtkExtractGrid> m_arrowExtract;
 

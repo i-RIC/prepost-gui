@@ -35,87 +35,28 @@ void Post2dWindowArrowUnstructuredSettingDialog::setZoneData(PostZoneDataContain
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowArrowUnstructuredSettingDialog::setSolution(const QString& sol)
+void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
 {
-	int index = m_solutions.indexOf(sol);
+	m_activeAvailable = false;
+}
+
+void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss)
+{
+	// solution
+	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
-}
 
-QString Post2dWindowArrowUnstructuredSettingDialog::solution() const
-{
-	int index = ui->solutionComboBox->currentIndex();
-	return m_solutions.at(index);
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setScalarValue(const QString& scalar)
-{
-	int index = m_scalars.indexOf(scalar);
+	// scalarValue
+	index = m_scalars.indexOf(s.scalarValueName);
 	if (index == -1) { index = 0; }
 	ui->scalarComboBox->setCurrentIndex(index);
-}
 
-QString Post2dWindowArrowUnstructuredSettingDialog::scalarValue() const
-{
-	int index = ui->scalarComboBox->currentIndex();
-	return m_scalars.at(index);
-}
+	// color
+	ui->colorEditWidget->setColor(s.color);
 
-void Post2dWindowArrowUnstructuredSettingDialog::setColor(const QColor& color)
-{
-	ui->colorEditWidget->setColor(color);
-}
-
-QColor Post2dWindowArrowUnstructuredSettingDialog::color() const
-{
-	return ui->colorEditWidget->color();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setSamplingMode(Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm)
-{
-	if (sm == Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smAll) {
-		ui->samplingAllRadioButton->setChecked(true);
-	} else if (sm == Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smRate) {
-		ui->samplingRateRadioButton->setChecked(true);
-	} else {
-		ui->samplingNumberRadioButton->setChecked(true);
-	}
-}
-
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode Post2dWindowArrowUnstructuredSettingDialog::samplingMode() const
-{
-	if (ui->samplingAllRadioButton->isChecked()) {
-		return Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smAll;
-	} else if (ui->samplingRateRadioButton->isChecked()) {
-		return Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smRate;
-	} else {
-		return Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smNumber;
-	}
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setSamplingRate(int rate)
-{
-	ui->samplingRateSpinBox->setValue(rate);
-}
-
-int Post2dWindowArrowUnstructuredSettingDialog::samplingRate() const
-{
-	return ui->samplingRateSpinBox->value();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setSamplingNumber(int num)
-{
-	ui->samplingNumberSpinBox->setValue(num);
-}
-
-int Post2dWindowArrowUnstructuredSettingDialog::samplingNumber() const
-{
-	return ui->samplingNumberSpinBox->value();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping)
-{
-	switch (mapping) {
+	// mappingMode
+	switch (Post2dWindowNodeVectorArrowGroupDataItem::Mapping(s.mapping)) {
 	case Post2dWindowNodeVectorArrowGroupDataItem::Specific:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -123,40 +64,106 @@ void Post2dWindowArrowUnstructuredSettingDialog::setMapping(Post2dWindowNodeVect
 		ui->scalarRadioButton->setChecked(true);
 		break;
 	}
+
+	// lengthMode
+	if (s.lengthMode == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
+		ui->lengthAutoCheckBox->setChecked(true);
+	} else {
+		ui->lengthAutoCheckBox->setChecked(false);
+	}
+
+	// standardValue
+	ui->stdValueSpinBox->setValue(s.standardValue);
+
+	// legendLength
+	ui->legendLengthSpinBox->setValue(s.legendLength);
+
+	// minimumValue
+	ui->minValueSpinBox->setValue(s.minimumValue);
+
+	// arrowSetting
+	ui->arrowSizeSpinBox->setValue(s.arrowSetting.arrowSize());
+	ui->lineWidthSpinBox->setValue(s.arrowSetting.lineWidth());
+
+	// samplingMode
+	if (unss.samplingMode == Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smAll) {
+		ui->samplingAllRadioButton->setChecked(true);
+	} else if (unss.samplingMode == Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smRate) {
+		ui->samplingRateRadioButton->setChecked(true);
+	} else {
+		ui->samplingNumberRadioButton->setChecked(true);
+	}
+
+	// samplingRate
+	ui->samplingRateSpinBox->setValue(unss.samplingRate);
+
+	// samplingNumber
+	ui->samplingNumberSpinBox->setValue(unss.samplingNumber);
+
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem::Mapping Post2dWindowArrowUnstructuredSettingDialog::mapping() const
+Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowUnstructuredSettingDialog::setting() const
 {
-	if (ui->specificRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Specific; }
-	if (ui->scalarRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Scalar; }
-	// default
-	return Post2dWindowNodeVectorArrowGroupDataItem::Specific;
+	Post2dWindowNodeVectorArrowGroupDataItem::Setting ret = m_setting;
+
+	// solution
+	int index = ui->solutionComboBox->currentIndex();
+	ret.currentSolution = m_solutions.at(index);
+
+	// scalarValue
+	index = ui->scalarComboBox->currentIndex();
+	ret.scalarValueName = m_scalars.at(index);
+
+	// color
+	ret.color = ui->colorEditWidget->color();
+
+	// mapping
+	if (ui->specificRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Specific;}
+	if (ui->scalarRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Scalar;}
+
+	// lengthMode
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
+	} else {
+		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;
+	}
+
+	// standardValue
+	ret.standardValue = ui->stdValueSpinBox->value();
+
+	// legendLength
+	ret.legendLength = ui->legendLengthSpinBox->value();
+
+	// minimumValue
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	// arrowSetting
+	ret.arrowSetting.setArrowSize(ui->arrowSizeSpinBox->value());
+	ret.arrowSetting.setLineWidth(ui->lineWidthSpinBox->value());
+
+	return ret;
 }
 
-void Post2dWindowArrowUnstructuredSettingDialog::setArrowSetting(const ArrowSettingContainer& arrowSetting)
+Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting Post2dWindowArrowUnstructuredSettingDialog::unsSetting() const
 {
-	ui->arrowSizeSpinBox->setValue(arrowSetting.arrowSize());
-	ui->lineWidthSpinBox->setValue(arrowSetting.lineWidth());
-}
+	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting ret = m_unsSetting;
 
-ArrowSettingContainer Post2dWindowArrowUnstructuredSettingDialog::arrowSetting() const
-{
-	ArrowSettingContainer c;
-	c.setArrowSize(ui->arrowSizeSpinBox->value());
-	c.setLineWidth(ui->lineWidthSpinBox->value());
-	return c;
-}
+	// samplingMode
+	if (ui->samplingAllRadioButton->isChecked()) {
+		ret.samplingMode = Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smAll;
+	} else if (ui->samplingRateRadioButton->isChecked()) {
+		ret.samplingMode = Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smRate;
+	} else {
+		ret.samplingMode = Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::smNumber;
+	}
 
-void Post2dWindowArrowUnstructuredSettingDialog::setRegionMode(StructuredGridRegion::RegionMode regionMode)
-{
-	m_regionMode = regionMode;
-}
+	// samplingRate
+	ret.samplingRate = ui->samplingRateSpinBox->value();
 
-StructuredGridRegion::RegionMode Post2dWindowArrowUnstructuredSettingDialog::regionMode() const
-{
-	return m_regionMode;
+	// samplingNumber
+	ret.samplingNumber = ui->samplingNumberSpinBox->value();
+	return ret;
 }
-
 
 void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
@@ -192,61 +199,8 @@ void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
-	dialog.setRegionMode(m_regionMode);
+	dialog.setRegionMode(m_setting.regionMode);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_regionMode = dialog.regionMode();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
-{
-	m_activeAvailable = false;
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm)
-{
-	if (lm == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
-		ui->lengthAutoCheckBox->setChecked(true);
-	} else {
-		ui->lengthAutoCheckBox->setChecked(false);
-	}
-}
-
-Post2dWindowNodeVectorArrowGroupDataItem::LengthMode Post2dWindowArrowUnstructuredSettingDialog::lengthMode() const
-{
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		return Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
-	} else {
-		return Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;
-	}
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setStandardValue(double stdVal)
-{
-	ui->stdValueSpinBox->setValue(stdVal);
-}
-
-double Post2dWindowArrowUnstructuredSettingDialog::standardValue() const
-{
-	return ui->stdValueSpinBox->value();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setLegendLength(int len)
-{
-	ui->legendLengthSpinBox->setValue(len);
-}
-
-int Post2dWindowArrowUnstructuredSettingDialog::legendLength() const
-{
-	return ui->legendLengthSpinBox->value();
-}
-
-void Post2dWindowArrowUnstructuredSettingDialog::setMinimumValue(double minVal)
-{
-	return ui->minValueSpinBox->setValue(minVal);
-}
-
-double Post2dWindowArrowUnstructuredSettingDialog::minimumValue() const
-{
-	return ui->minValueSpinBox->value();
+	m_setting.regionMode = dialog.regionMode();
 }

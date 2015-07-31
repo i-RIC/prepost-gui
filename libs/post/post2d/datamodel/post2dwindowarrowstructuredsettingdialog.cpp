@@ -35,45 +35,24 @@ void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowArrowStructuredSettingDialog::setSolution(const QString& sol)
+
+void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts)
 {
-	int index = m_solutions.indexOf(sol);
+	// currentSolution
+	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
-}
 
-QString Post2dWindowArrowStructuredSettingDialog::solution() const
-{
-	int index = ui->solutionComboBox->currentIndex();
-	return m_solutions.at(index);
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setScalarValue(const QString& scalar)
-{
-	int index = m_scalars.indexOf(scalar);
+	// scalarValue
+	index = m_scalars.indexOf(s.scalarValueName);
 	if (index == -1) { index = 0; }
 	ui->scalarComboBox->setCurrentIndex(index);
-}
 
-QString Post2dWindowArrowStructuredSettingDialog::scalarValue() const
-{
-	int index = ui->scalarComboBox->currentIndex();
-	return m_scalars.at(index);
-}
+	// color
+	ui->colorEditWidget->setColor(s.color);
 
-void Post2dWindowArrowStructuredSettingDialog::setColor(const QColor& color)
-{
-	ui->colorEditWidget->setColor(color);
-}
-
-const QColor Post2dWindowArrowStructuredSettingDialog::color() const
-{
-	return ui->colorEditWidget->color();
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping)
-{
-	switch (mapping) {
+	// mapping
+	switch (Post2dWindowNodeVectorArrowGroupDataItem::Mapping(s.mapping)) {
 	case Post2dWindowNodeVectorArrowGroupDataItem::Specific:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -81,69 +60,87 @@ void Post2dWindowArrowStructuredSettingDialog::setMapping(Post2dWindowNodeVector
 		ui->scalarRadioButton->setChecked(true);
 		break;
 	}
-}
 
-Post2dWindowNodeVectorArrowGroupDataItem::Mapping Post2dWindowArrowStructuredSettingDialog::mapping() const
-{
-	if (ui->specificRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Specific; }
-	if (ui->scalarRadioButton->isChecked()) { return Post2dWindowNodeVectorArrowGroupDataItem::Scalar; }
-	// default
-	return Post2dWindowNodeVectorArrowGroupDataItem::Specific;
-}
+	// arrowSetting
+	ui->arrowSizeSpinBox->setValue(s.arrowSetting.arrowSize());
+	ui->lineWidthSpinBox->setValue(s.arrowSetting.lineWidth());
 
-void Post2dWindowArrowStructuredSettingDialog::setArrowSetting(const ArrowSettingContainer& acon)
-{
-	ui->arrowSizeSpinBox->setValue(acon.arrowSize());
-	ui->lineWidthSpinBox->setValue(acon.lineWidth());
-}
-
-ArrowSettingContainer Post2dWindowArrowStructuredSettingDialog::arrowSetting() const
-{
-	ArrowSettingContainer c;
-	c.setArrowSize(ui->arrowSizeSpinBox->value());
-	c.setLineWidth(ui->lineWidthSpinBox->value());
-	return c;
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setSamplingRates(int irate, int jrate)
-{
-	ui->iSamplingRateSpinBox->setValue(irate);
-	ui->jSamplingRateSpinBox->setValue(jrate);
-	if (irate == 1 && jrate == 1) {
-		ui->samplingAllRadioButton->setChecked(true);
+	// lengthMode
+	if (s.lengthMode == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
+		ui->lengthAutoCheckBox->setChecked(true);
 	} else {
-		ui->samplingSkipRadioButton->setChecked(true);
+		ui->lengthAutoCheckBox->setChecked(false);
+	}
+
+	// standardValue
+	ui->stdValueSpinBox->setValue(s.standardValue);
+
+	// legendLength
+	ui->legendLengthSpinBox->setValue(s.legendLength);
+
+	// minimumValue
+	return ui->minValueSpinBox->setValue(s.minimumValue);
+
+	// samplingRates
+	ui->iSamplingRateSpinBox->setValue(sts.iSampleRate);
+	ui->jSamplingRateSpinBox->setValue(sts.jSampleRate);
+	ui->samplingSkipRadioButton->setChecked(true);
+	if (sts.iSampleRate == 1 && sts.jSampleRate == 1) {
+		ui->samplingAllRadioButton->setChecked(true);
 	}
 }
 
-int Post2dWindowArrowStructuredSettingDialog::iSamplingRate() const
+Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowStructuredSettingDialog::setting() const
 {
-	return ui->iSamplingRateSpinBox->value();
+	Post2dWindowNodeVectorArrowGroupDataItem::Setting ret = m_setting;
+
+	// currentSolution
+	int index = ui->solutionComboBox->currentIndex();
+	ret.currentSolution = m_solutions.at(index);
+
+	// scalarValue
+	index = ui->scalarComboBox->currentIndex();
+	ret.scalarValueName = m_scalars.at(index);
+
+	// color
+	ret.color = ui->colorEditWidget->color();
+
+	// mapping
+	if (ui->specificRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Specific;}
+	if (ui->scalarRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Scalar;}
+
+	// arrowSetting
+	ret.arrowSetting.setArrowSize(ui->arrowSizeSpinBox->value());
+	ret.arrowSetting.setLineWidth(ui->lineWidthSpinBox->value());
+
+	// lengthMode
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
+	} else {
+		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;
+	}
+
+	// standardValue
+	ret.standardValue = ui->stdValueSpinBox->value();
+
+	// legendLength;
+	ret.legendLength = ui->legendLengthSpinBox->value();
+
+	// minimumValue
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	return ret;
 }
 
-int Post2dWindowArrowStructuredSettingDialog::jSamplingRate() const
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting Post2dWindowArrowStructuredSettingDialog::stSetting() const
 {
-	return ui->jSamplingRateSpinBox->value();
-}
+	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting ret = m_stSetting;
 
-void Post2dWindowArrowStructuredSettingDialog::setRegionMode(StructuredGridRegion::RegionMode regionMode)
-{
-	m_regionMode = regionMode;
-}
+	// samplingRates
+	ret.iSampleRate = ui->iSamplingRateSpinBox->value();
+	ret.jSampleRate = ui->jSamplingRateSpinBox->value();
 
-StructuredGridRegion::RegionMode Post2dWindowArrowStructuredSettingDialog::regionMode() const
-{
-	return m_regionMode;
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setRange(const StructuredGridRegion::Range2d& range)
-{
-	m_range = range;
-}
-
-StructuredGridRegion::Range2d Post2dWindowArrowStructuredSettingDialog::range() const
-{
-	return m_range;
+	return ret;
 }
 
 void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
@@ -187,63 +184,15 @@ void Post2dWindowArrowStructuredSettingDialog::showRegionDialog()
 		dialog.disableActive();
 	}
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
-	dialog.setRegionMode(m_regionMode);
-	dialog.setRegion(m_range);
+	dialog.setRegionMode(m_setting.regionMode);
+	dialog.setRegion(m_stSetting.range);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_regionMode = dialog.regionMode();
-	m_range = dialog.region();
+	m_setting.regionMode = dialog.regionMode();
+	m_stSetting.range = dialog.region();
 }
 
 void Post2dWindowArrowStructuredSettingDialog::disableActive()
 {
 	m_activeAvailable = false;
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm)
-{
-	if (lm == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
-		ui->lengthAutoCheckBox->setChecked(true);
-	} else {
-		ui->lengthAutoCheckBox->setChecked(false);
-	}
-}
-
-Post2dWindowNodeVectorArrowGroupDataItem::LengthMode Post2dWindowArrowStructuredSettingDialog::lengthMode() const
-{
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		return Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
-	} else {
-		return Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;
-	}
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setStandardValue(double stdVal)
-{
-	ui->stdValueSpinBox->setValue(stdVal);
-}
-
-double Post2dWindowArrowStructuredSettingDialog::standardValue() const
-{
-	return ui->stdValueSpinBox->value();
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setLegendLength(int len)
-{
-	ui->legendLengthSpinBox->setValue(len);
-}
-
-int Post2dWindowArrowStructuredSettingDialog::legendLength() const
-{
-	return ui->legendLengthSpinBox->value();
-}
-
-void Post2dWindowArrowStructuredSettingDialog::setMinimumValue(double minVal)
-{
-	return ui->minValueSpinBox->setValue(minVal);
-}
-
-double Post2dWindowArrowStructuredSettingDialog::minimumValue() const
-{
-	return ui->minValueSpinBox->value();
 }

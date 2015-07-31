@@ -4,6 +4,11 @@
 #include "../post2dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
 #include <misc/arrowsettingcontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/colorcontainer.h>
+#include <misc/stringcontainer.h>
+#include <misc/doublecontainer.h>
+#include <misc/enumcontainert.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -37,6 +42,28 @@ public:
 	enum Mapping {Specific, Scalar};
 	enum LegendMode {lmAuto, lmCustom};
 	enum LengthMode {lenAuto, lenCustom};
+
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		StringContainer scalarValueName;
+		StringContainer currentSolution;
+		ColorContainer color;
+		DoubleContainer oldCameraScale;
+		DoubleContainer scaleFactor;
+		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
+		EnumContainerT<Mapping> mapping;
+		EnumContainerT<LegendMode> legendMode;
+		EnumContainerT<LengthMode> lengthMode;
+		DoubleContainer standardValue;
+		DoubleContainer legendLength;
+		DoubleContainer minimumValue;
+		ArrowSettingContainer arrowSetting;
+	};
+
+
 	/// Constructor
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
@@ -61,7 +88,7 @@ protected:
 	void informGridUpdate();
 	virtual void updateActivePoints() = 0;
 	void setCurrentSolution(const QString& currentSol);
-	const QString& currentSolution() {return m_currentSolution;}
+	QString currentSolution() const {return m_setting.currentSolution;}
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -87,6 +114,8 @@ protected:
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 
+	Setting m_setting;
+/*
 	QString m_scalarValueName;
 	QString m_currentSolution;
 	QColor m_color;
@@ -100,6 +129,7 @@ protected:
 	double m_legendLength;
 	double m_minimumValue;
 	ArrowSettingContainer m_arrowSetting;
+*/
 
 public:
 	friend class Post2dWindowGridArrowSelectSolution;

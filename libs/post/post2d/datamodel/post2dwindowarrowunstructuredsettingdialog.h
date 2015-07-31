@@ -23,37 +23,11 @@ public:
 	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowUnstructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
-	bool isEnabled() const;
-	void setSolution(const QString& sol);
-	QString solution() const;
-	void setScalarValue(const QString& scalar);
-	QString scalarValue() const;
-	void setColor(const QColor& color);
-	QColor color() const;
-	void setSamplingMode(Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm);
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode samplingMode() const;
-	void setSamplingRate(int rate);
-	int samplingRate() const;
-	void setSamplingNumber(int num);
-	int samplingNumber() const;
-
 	void disableActive();
 
-	void setRegionMode(StructuredGridRegion::RegionMode rm);
-	StructuredGridRegion::RegionMode regionMode() const;
-	void setLengthMode(Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lm);
-	Post2dWindowNodeVectorArrowGroupDataItem::LengthMode lengthMode() const;
-	void setStandardValue(double stdVal);
-	double standardValue() const;
-	void setLegendLength(int len);
-	int legendLength() const;
-	void setMinimumValue(double minVal);
-	double minimumValue() const;
-
-	void setMapping(Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping);
-	Post2dWindowNodeVectorArrowGroupDataItem::Mapping mapping() const;
-	void setArrowSetting(const ArrowSettingContainer& arrowSetting);
-	ArrowSettingContainer arrowSetting() const;
+	void setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss);
+	Post2dWindowNodeVectorArrowGroupDataItem::Setting setting() const;
+	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting unsSetting() const;
 
 private slots:
 	void showRegionDialog();
@@ -63,7 +37,9 @@ private:
 	QList<QString> m_solutions;
 	QList<QString> m_scalars;
 	bool m_activeAvailable;
-	StructuredGridRegion::RegionMode m_regionMode;
+	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_setting;
+	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_unsSetting;
+
 	Ui::Post2dWindowArrowUnstructuredSettingDialog* ui;
 };
 

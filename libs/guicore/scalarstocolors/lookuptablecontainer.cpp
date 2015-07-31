@@ -84,7 +84,7 @@ void LookupTableContainer::update()
 		darkFunc->RemoveAllPoints();
 		darkFunc->SetColorSpaceToRGB();
 
-		switch (m_customSetting.type) {
+		switch (ColorMapSettingWidget::CustomSetting::Type(m_customSetting.type)) {
 		case ColorMapSettingWidget::CustomSetting::tTwoColors:
 			iRIC::QColorToVTKColor(m_customSetting.minColor, c);
 			func->AddRGBPoint(min, c[0], c[1], c[2]);

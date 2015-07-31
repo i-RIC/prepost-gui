@@ -2,6 +2,11 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPUNSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorarrowgroupdataitem.h"
+
+#include <misc/intcontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/compositecontainer.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkExtractGrid.h>
 #include <vtkMaskPoints.h>
@@ -17,6 +22,16 @@ public:
 		smRate,
 		smNumber,
 	};
+
+	struct Setting : public CompositeContainer
+	{
+		Setting();
+
+		EnumContainerT<SamplingMode> samplingMode;
+		IntContainer samplingRate;
+		IntContainer samplingNumber;
+	};
+
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem();
 
@@ -30,9 +45,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 private:
-	SamplingMode m_samplingMode;
-	int m_samplingRate;
-	int m_samplingNumber;
+	Setting m_unsSetting;
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 
 public:

@@ -39,6 +39,29 @@
 
 const double Post2dWindowNodeVectorArrowGroupDataItem::MINLIMIT = 1.0E-6;
 
+Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
+	CompositeContainer
+		{&scalarValueName, &currentSolution, &color,&oldCameraScale, &scaleFactor, &regionMode,
+		 &mapping, &legendMode, &lengthMode, &standardValue, &legendLength, &minimumValue, &arrowSetting},
+	scalarValueName {"scalarValueName"},
+	currentSolution {"solution"},
+	color {"color"},
+	oldCameraScale {"oldCameraScale", 1},
+	scaleFactor {"scaleFactor", 1},
+	regionMode {"regionMode", StructuredGridRegion::rmFull},
+	mapping {"mapping", Specific},
+	legendMode {"legendMode", lmAuto},
+	lengthMode {"lengthMode", lenAuto},
+	standardValue {"standardValue", 1},
+	legendLength {"legendLength", STANDARD_LENGTH},
+	minimumValue {"minimumValue", 0.001},
+	arrowSetting {}
+{
+	QSettings setting;
+	color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
+	scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
+}
+
 Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
@@ -47,21 +70,6 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	m_standardItem->setCheckState(Qt::Checked);
 
 	m_standardItemCopy = m_standardItem->clone();
-
-	m_oldCameraScale = 1;
-	m_mapping = Specific;
-	m_regionMode = StructuredGridRegion::rmFull;
-	m_legendMode = lmAuto;
-	m_lengthMode = lenAuto;
-	m_standardValue = 1;
-	m_legendLength = STANDARD_LENGTH;
-	m_minimumValue = 0.001;
-
-	m_scalarValueName = "";
-	m_currentSolution = "";
-	QSettings setting;
-	m_color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
-	m_scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
@@ -94,7 +102,7 @@ public:
 	Post2dWindowGridArrowSelectSolution(const QString& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item)
 		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
 		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
+		m_oldCurrentSolution = item->m_setting.currentSolution;
 		m_item = item;
 	}
 	void undo() {
@@ -140,7 +148,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 
 	m_hedgeHog = vtkSmartPointer<vtkHedgeHog>::New();
 	m_hedgeHog->SetVectorModeToUseVector();
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
+	m_hedgeHog->SetScaleFactor(m_setting.scaleFactor);
 
 	m_warpVector = vtkSmartPointer<vtkWarpVector>::New();
 
@@ -198,14 +206,14 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 {
-	if (m_lengthMode == lenCustom) {return;}
+	if (m_setting.lengthMode == lenCustom) {return;}
 	QVector<double> lenVec;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_currentSolution).c_str());
+	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.currentSolution).c_str());
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -238,9 +246,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 		average *= p2;
 	}
 	// now average is calculated.
-	m_standardValue = average;
+	m_setting.standardValue = average;
 	// minimum value is always 0.001 * standard value when auto mode.
-	m_minimumValue = 0.001 * m_standardValue;
+	m_setting.minimumValue = 0.001 * m_setting.standardValue;
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informGridUpdate()
@@ -260,10 +268,10 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
+	pd->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
 
 	updateActivePoints();
 
@@ -281,16 +289,16 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 void Post2dWindowNodeVectorArrowGroupDataItem::updateColorSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-	switch (m_mapping) {
+	switch (Mapping(m_setting.mapping)) {
 	case Specific:
 		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+		m_arrowActor->GetProperty()->SetColor(m_setting.color);
 		break;
 	case Scalar:
 		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = typedi->lookupTable(iRIC::toStr(m_scalarValueName).c_str());
+		LookupTableContainer* stc = typedi->lookupTable(iRIC::toStr(m_setting.scalarValueName).c_str());
 		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_scalarValueName).c_str());
+		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.scalarValueName).c_str());
 		m_arrowMapper->SetLookupTable(stc->vtkObj());
 		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
@@ -325,49 +333,49 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString&
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_currentSolution = currentSol;
+	m_setting.currentSolution = currentSol;
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
 	double scale = cam->GetParallelScale();
-	if (scale != m_oldCameraScale) {
+	if (scale != m_setting.oldCameraScale) {
 		updatePolyData();
 		updateLegendData();
 	}
-	m_oldCameraScale = scale;
+	m_setting.oldCameraScale = scale;
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	updateScaleFactor();
-	double height = dataModel()->graphicsView()->stdRadius(m_arrowSetting.arrowSize());
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
-	m_warpVector->SetScaleFactor(m_scaleFactor);
+	double height = dataModel()->graphicsView()->stdRadius(m_setting.arrowSetting.arrowSize());
+	m_hedgeHog->SetScaleFactor(m_setting.scaleFactor);
+	m_warpVector->SetScaleFactor(m_setting.scaleFactor);
 	m_arrowSource->SetHeight(height);
 	m_arrowSource->SetAngle(15);
 	m_arrowSource->Modified();
 
 	m_appendPolyData->Update();
 	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
-	m_arrowActor->GetProperty()->SetLineWidth(m_arrowSetting.lineWidth());
-	m_baseArrowActor->GetProperty()->SetLineWidth(m_arrowSetting.lineWidth());
+	m_arrowActor->GetProperty()->SetLineWidth(m_setting.arrowSetting.lineWidth());
+	m_baseArrowActor->GetProperty()->SetLineWidth(m_setting.arrowSetting.lineWidth());
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateScaleFactor()
 {
 	double a = 1.0 / dataModel()->graphicsView()->stdRadius(1.0);
-	m_scaleFactor = m_legendLength / (a * m_standardValue);
+	m_setting.scaleFactor = m_setting.legendLength / (a * m_setting.standardValue);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 {
 	double vectorOffset = 18;
-	double arrowLen = m_legendLength;
+	double arrowLen = m_setting.legendLength;
 	m_baseArrowPolyData->Initialize();
 	m_baseArrowPolyData->Allocate(3);
 
@@ -391,13 +399,13 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution).arg(m_standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_setting.currentSolution).arg(m_setting.standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
-	if (m_mapping == Specific) {
+	if (m_setting.mapping == Specific) {
 		// specified color.
-		m_baseArrowActor->GetProperty()->SetColor(m_color.red() / 255., m_color.green() / 255., m_color.blue() / 255.);
-	} else if (m_mapping == Scalar) {
+		m_baseArrowActor->GetProperty()->SetColor(m_setting.color);
+	} else if (m_setting.mapping == Scalar) {
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
@@ -405,40 +413,14 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	m_setting.load(node);
 
-	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
-	m_scalarValueName = elem.attribute("scalarValueName");
-	m_color = loadColorAttribute("color", node, m_color);
-	m_oldCameraScale = elem.attribute("oldCameraScale").toDouble();
-	m_scaleFactor = elem.attribute("scaleFactor").toDouble();
-	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
-	m_mapping = static_cast<Mapping>(elem.attribute("mapping").toInt());
-	m_legendMode = static_cast<LegendMode>(elem.attribute("legendMode").toInt());
-	m_lengthMode = static_cast<LengthMode>(elem.attribute("lengthMode").toInt());
-	m_standardValue = elem.attribute("standardValue").toDouble();
-	m_legendLength = elem.attribute("legendLength").toDouble();
-	m_minimumValue = elem.attribute("minimumValue").toDouble();
-	m_arrowSetting.load(node);
 	updateActorSettings();
 }
 
-
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
-	writer.writeAttribute("scalarValueName", m_scalarValueName);
-	writeColorAttribute("color", m_color, writer);
-	writer.writeAttribute("oldCameraScale", QString::number(m_oldCameraScale));
-	writer.writeAttribute("scaleFactor", QString::number(m_scaleFactor));
-	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
-	writer.writeAttribute("mapping", QString::number(static_cast<int>(m_mapping)));
-	writer.writeAttribute("legendMode", QString::number(static_cast<int>(m_legendMode)));
-	writer.writeAttribute("lengthMode", QString::number(static_cast<int>(m_lengthMode)));
-	writer.writeAttribute("standardValue", QString::number(m_standardValue));
-	writer.writeAttribute("legendLength", QString::number(m_legendLength));
-	writer.writeAttribute("minimumValue", QString::number(m_minimumValue));
-	m_arrowSetting.save(writer);
+	m_setting.save(writer);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
