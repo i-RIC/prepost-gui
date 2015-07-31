@@ -25,3 +25,9 @@ void BoolContainer::save(QXmlStreamWriter& writer) const
 {
 	iRIC::setBooleanAttribute(writer, attName(m_name), m_value);
 }
+
+BoolContainer& BoolContainer::operator=(bool val)
+{
+	SimpleValueContainerT<bool>::operator =(val);
+	return *this;
+}

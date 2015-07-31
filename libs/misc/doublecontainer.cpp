@@ -25,3 +25,9 @@ void DoubleContainer::save(QXmlStreamWriter& writer) const
 {
 	iRIC::setDoubleAttribute(writer, attName(m_name), m_value);
 }
+
+DoubleContainer& DoubleContainer::operator=(double val)
+{
+	SimpleValueContainerT<double>::operator =(val);
+	return *this;
+}

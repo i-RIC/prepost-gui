@@ -6,6 +6,8 @@
 template <typename V>
 class EnumContainerT : public IntContainer
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
@@ -25,13 +27,14 @@ class EnumContainerT : public IntContainer
 
 	/// @name Operators
 	//@{
-	EnumContainerT<V>& operator=(T val)
+	EnumContainerT<V>& operator=(V val)
 	{
-		return operator=(static_cast<int>(val));
+		IntContainer::operator=(static_cast<int>(val));
+		return *this;
 	}
-	operator T() const
+	operator V() const
 	{
-		return static_cast<T>(int());
+		return static_cast<V>(IntContainer::operator int());
 	}
 	//@}
 };

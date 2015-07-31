@@ -8,6 +8,8 @@
 
 class MISCDLL_EXPORT StringContainer : public SimpleValueContainerT<QString>
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
@@ -26,6 +28,9 @@ class MISCDLL_EXPORT StringContainer : public SimpleValueContainerT<QString>
 	/// Save data into XML node as attributes
 	void save(QXmlStreamWriter&) const override;
 	//@}
+
+	/// @name Operators
+	StringContainer& operator=(const QString& val);
 };
 
 #endif // STRINGCONTAINER_H

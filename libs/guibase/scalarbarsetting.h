@@ -2,26 +2,33 @@
 #define SCALARBARSETTING_H
 
 #include "guibase_global.h"
-#include <misc/xmlattributecontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/doublecontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
 
 class vtkScalarBarRepresentation;
 class vtkLegendBoxRepresentation;
-class QDomNode;
-class QXmlStreamWriter;
 
 #include <QString>
 
 /// Container for scalar bar display setting
-class GUIBASEDLL_EXPORT ScalarBarSetting : public XmlAttributeContainer
+class GUIBASEDLL_EXPORT ScalarBarSetting : public CompositeContainer
 {
 
 public:
-	static const int DEFAULT_NUMOFLABELS = 8;
+	static const int DEFAULT_NUMOFLABELS;
 	static const QString DEFAULT_LABELFORMAT;
-	enum Orientation {oVertical, oHorizontal};
+	enum class Orientation {Vertical, Horizontal};
 
 	/// Constructor
 	ScalarBarSetting();
+	/// Constructor (copy)
+	ScalarBarSetting(const ScalarBarSetting& setting);
+	/// Destructor
+	~ScalarBarSetting() {}
 	void initForLegendBox();
 	/// Load setting from vtkScalarBarRepresentation
 	void loadFromRepresentation(vtkScalarBarRepresentation* rep);
@@ -32,24 +39,19 @@ public:
 	/// Apply setting to vtkLegendBoxRepresentation
 	void saveToRepresentation(vtkLegendBoxRepresentation* rep);
 
-	/// Load data from XML attributes
-	void load(const QDomNode& node) override;
-	/// Save data to XML attributes
-	void save(QXmlStreamWriter& writer) const override;
-
-	bool visible;
-	Orientation orientation;
-	int numberOfLabels;
+	BoolContainer visible;
+	EnumContainerT<Orientation> orientation;
+	IntContainer numberOfLabels;
 	/// relative width (0 < width < 1)
-	double width;
+	DoubleContainer width;
 	/// relative width (0 < height < 1)
-	double height;
+	DoubleContainer height;
 	/// relative position (0 < positionX < 1)
-	double positionX;
+	DoubleContainer positionX;
 	/// relative position (0 < positionY < 1)
-	double positionY;
+	DoubleContainer positionY;
 	/// labelFormat
-	QString labelFormat;
+	StringContainer labelFormat;
 };
 
 #endif // SCALARBARSETTING_H

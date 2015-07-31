@@ -7,20 +7,14 @@
 const int ArrowSettingContainer::DEFAULT_ARROWSIZE = 8;
 const int ArrowSettingContainer::DEFAULT_LINEWIDTH = 1;
 
-ArrowSettingContainer::ArrowSettingContainer()
-{
-	m_arrowSize = DEFAULT_ARROWSIZE;
-	m_lineWidth = DEFAULT_LINEWIDTH;
-}
+ArrowSettingContainer::ArrowSettingContainer() :
+	CompositeContainer {&m_arrowSize, &m_lineWidth},
+	m_arrowSize {"arrowSize", DEFAULT_ARROWSIZE},
+	m_lineWidth {"arrowLineWidth", DEFAULT_LINEWIDTH}
+{}
 
-void ArrowSettingContainer::load(const QDomNode& node)
+ArrowSettingContainer::ArrowSettingContainer(const ArrowSettingContainer& c) :
+	ArrowSettingContainer {}
 {
-	m_arrowSize = iRIC::getIntAttribute(node, attName("arrowSize"), DEFAULT_ARROWSIZE);
-	m_lineWidth = iRIC::getIntAttribute(node, attName("arrowLineWidth"), DEFAULT_LINEWIDTH);
-}
-
-void ArrowSettingContainer::save(QXmlStreamWriter& writer) const
-{
-	iRIC::setIntAttribute(writer, attName("arrowSize"), m_arrowSize);
-	iRIC::setIntAttribute(writer, attName("arrowLineWidth"), m_lineWidth);
+	CompositeContainer::operator=(c);
 }

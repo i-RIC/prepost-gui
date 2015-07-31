@@ -6,6 +6,8 @@
 
 class MISCDLL_EXPORT IntContainer : public SimpleValueContainerT<int>
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
@@ -24,6 +26,9 @@ class MISCDLL_EXPORT IntContainer : public SimpleValueContainerT<int>
 	/// Save data into XML node as attributes
 	void save(QXmlStreamWriter&) const override;
 	//@}
+
+	/// @name Operators
+	IntContainer& operator=(int val);
 };
 
 #endif // INTCONTAINER_H

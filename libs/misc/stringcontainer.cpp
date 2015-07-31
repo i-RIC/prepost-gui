@@ -30,3 +30,9 @@ void StringContainer::save(QXmlStreamWriter& writer) const
 {
 	writer.writeAttribute(attName(m_name), m_value);
 }
+
+StringContainer& StringContainer::operator=(const QString& val)
+{
+	SimpleValueContainerT<QString>::operator =(val);
+	return *this;
+}

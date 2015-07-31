@@ -25,3 +25,9 @@ void IntContainer::save(QXmlStreamWriter& writer) const
 {
 	iRIC::setIntAttribute(writer, attName(m_name), m_value);
 }
+
+IntContainer& IntContainer::operator=(int val)
+{
+	SimpleValueContainerT<int>::operator =(val);
+	return *this;
+}

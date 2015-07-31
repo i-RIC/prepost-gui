@@ -8,47 +8,35 @@
 
 #include <vtkColorTransferFunction.h>
 
-LookupTableContainer::LookupTableContainer()
-	: ScalarsToColorsContainer(0)
+LookupTableContainer::LookupTableContainer() :
+	LookupTableContainer {}
+{}
+
+LookupTableContainer::LookupTableContainer(ProjectDataItem* d) :
+	ScalarsToColorsContainer {d},
+	m_vtkObj {vtkColorTransferFunction::New()},
+	m_vtkDarkObj {vtkColorTransferFunction::New()},
+	m_colorMap {"colorMap", ColorMapSettingWidget::Rainbow},
+	m_autoRange {"autoRange", true},
+	m_autoMin {"autoMin", 0},
+	m_autoMax {"autoMax", 0},
+	m_manualMin	{"manualMin", 0},
+	m_manualMax {"manualMax", 0}
 {
-	m_vtkObj = vtkColorTransferFunction::New();
-	m_vtkDarkObj = vtkColorTransferFunction::New();
-	m_colorMap = ColorMapSettingWidget::Rainbow;
-	m_autoRange = true;
-	m_autoMin = 0;
-	m_autoMax = 0;
-	m_manualMin = 0;
-	m_manualMax = 0;
 	update();
 }
 
-LookupTableContainer::LookupTableContainer(ProjectDataItem* d)
-	: ScalarsToColorsContainer(d)
+LookupTableContainer::LookupTableContainer(const LookupTableContainer& c) :
+	LookupTableContainer {}
 {
-	m_vtkObj = vtkColorTransferFunction::New();
-	m_vtkDarkObj = vtkColorTransferFunction::New();
-	m_colorMap = ColorMapSettingWidget::Rainbow;
-	m_autoRange = true;
-	m_autoMin = 0;
-	m_autoMax = 0;
-	m_manualMin = 0;
-	m_manualMax = 0;
-	update();
-}
+	m_colorMap = c.m_colorMap.value();
+	m_customSetting = c.m_customSetting.value();
+	m_autoRange = c.m_autoRange.value();
+	m_autoMin = c.m_autoMin.value();
+	m_autoMax = c.m_autoMax.value();
+	m_manualMin = c.m_manualMin.value();
+	m_manualMax = c.m_manualMax.value();
 
-LookupTableContainer::LookupTableContainer(const LookupTableContainer& c)
-	: ScalarsToColorsContainer(0)
-{
-	m_vtkObj = vtkColorTransferFunction::New();
-	m_vtkDarkObj = vtkColorTransferFunction::New();
-
-	m_colorMap = c.m_colorMap;
-	m_customSetting = c.m_customSetting;
-	m_autoRange = c.m_autoRange;
-	m_autoMin = c.m_autoMin;
-	m_autoMax = c.m_autoMax;
-	m_manualMin = c.m_manualMin;
-	m_manualMax = c.m_manualMax;
 	update();
 }
 
@@ -61,13 +49,9 @@ void LookupTableContainer::update()
 	if (m_autoRange) {
 		min = m_autoMin;
 		max = m_autoMax;
-//		table->SetRange(m_autoMin, m_autoMax);
-//		darkTable->SetRange(m_autoMin, m_autoMax);
 	} else {
 		min = m_manualMin;
 		max = m_manualMax;
-//		table->SetRange(m_manualMin, m_manualMax);
-//		darkTable->SetRange(m_manualMin, m_manualMax);
 	}
 	if (m_colorMap == ColorMapSettingWidget::Rainbow) {
 		func->RemoveAllPoints();
@@ -81,14 +65,6 @@ void LookupTableContainer::update()
 		darkFunc->HSVWrapOff();
 		darkFunc->AddHSVPoint(min, 0.66667, 1, 0.8);
 		darkFunc->AddHSVPoint(max, 0,       1, 0.8);
-		/*
-				table->SetHueRange(0.67, 0.0);
-				table->SetSaturationRange(1.0, 1.0);
-				table->SetValueRange(1.0, 1.0);
-				darkTable->SetHueRange(0.67, 0.0);
-				darkTable->SetSaturationRange(1.0, 1.0);
-				darkTable->SetValueRange(0.8, 0.8);
-		*/
 	} else if (m_colorMap == ColorMapSettingWidget::Grayscale) {
 		func->RemoveAllPoints();
 		func->SetColorSpaceToHSV();
@@ -99,12 +75,6 @@ void LookupTableContainer::update()
 		darkFunc->SetColorSpaceToHSV();
 		darkFunc->AddHSVPoint(min, 0, 1, 0);
 		darkFunc->AddHSVPoint(max, 0, 1, 0.8);
-		/*
-				table->SetSaturationRange(0.0, 0.0);
-				table->SetValueRange(0.0, 1.0);
-				darkTable->SetSaturationRange(0.0, 0.0);
-				darkTable->SetValueRange(0.0, 0.8);
-		*/
 	} else if (m_colorMap == ColorMapSettingWidget::Custom) {
 		double c[3];
 
@@ -152,18 +122,13 @@ void LookupTableContainer::update()
 
 void LookupTableContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_autoRange = iRIC::getBooleanAttribute(node, "autoRange");
-	m_autoMin = iRIC::getDoubleAttribute(node, "autoMin");
-	m_autoMax = iRIC::getDoubleAttribute(node, "autoMax");
-	m_manualMin = iRIC::getDoubleAttribute(node, "manualMin");
-	m_manualMax = iRIC::getDoubleAttribute(node, "manualMax");
-	QString colormap = node.toElement().attribute("colorMap");
-	if (colormap == "Rainbow") {
-		m_colorMap = ColorMapSettingWidget::Rainbow;
-	} else if (colormap == "Grayscale") {
-		m_colorMap = ColorMapSettingWidget::Grayscale;
-	} else if (colormap == "Custom") {
-		m_colorMap = ColorMapSettingWidget::Custom;
+	m_autoRange.load(node);
+	m_autoMin.load(node);
+	m_autoMax.load(node);
+	m_manualMin.load(node);
+	m_manualMax.load(node);
+	m_colorMap.load(node);
+	if (m_colorMap == ColorMapSettingWidget::Custom) {
 		QString type = node.toElement().attribute("CustomType");
 		if (type == "TwoColors") {
 			m_customSetting.type = ColorMapSettingWidget::CustomSetting::tTwoColors;
@@ -197,20 +162,12 @@ void LookupTableContainer::doLoadFromProjectMainFile(const QDomNode& node)
 
 void LookupTableContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	iRIC::setBooleanAttribute(writer, "autoRange", m_autoRange);
-	iRIC::setDoubleAttribute(writer, "autoMin", m_autoMin);
-	iRIC::setDoubleAttribute(writer, "autoMax", m_autoMax);
-	iRIC::setDoubleAttribute(writer, "manualMin", m_manualMin);
-	iRIC::setDoubleAttribute(writer, "manualMax", m_manualMax);
-	QString colormap;
-	if (m_colorMap == ColorMapSettingWidget::Rainbow) {
-		colormap = "Rainbow";
-	} else if (m_colorMap == ColorMapSettingWidget::Grayscale) {
-		colormap = "Grayscale";
-	} else if (m_colorMap == ColorMapSettingWidget::Custom) {
-		colormap = "Custom";
-	}
-	writer.writeAttribute("colorMap", colormap);
+	m_autoRange.save(writer);
+	m_autoMin.save(writer);
+	m_autoMax.save(writer);
+	m_manualMin.save(writer);
+	m_manualMax.save(writer);
+	m_colorMap.save(writer);
 	if (m_colorMap == ColorMapSettingWidget::Custom) {
 		if (m_customSetting.type == ColorMapSettingWidget::CustomSetting::tTwoColors) {
 			writer.writeAttribute("CustomType", "TwoColors");
@@ -264,13 +221,13 @@ void LookupTableContainer::setValueRange(double min, double max)
 
 LookupTableContainer& LookupTableContainer::operator=(const LookupTableContainer& c)
 {
-	m_colorMap = c.m_colorMap;
-	m_customSetting = c.m_customSetting;
-	m_autoRange = c.m_autoRange;
-	m_autoMin = c.m_autoMin;
-	m_autoMax = c.m_autoMax;
-	m_manualMin = c.m_manualMin;
-	m_manualMax = c.m_manualMax;
+	m_colorMap = c.m_colorMap.value();
+	m_customSetting = c.m_customSetting.value();
+	m_autoRange = c.m_autoRange.value();
+	m_autoMin = c.m_autoMin.value();
+	m_autoMax = c.m_autoMax.value();
+	m_manualMin = c.m_manualMin.value();
+	m_manualMax = c.m_manualMax.value();
 	update();
 	return *this;
 }

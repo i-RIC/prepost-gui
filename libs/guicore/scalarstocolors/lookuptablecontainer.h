@@ -4,6 +4,9 @@
 #include "../guicore_global.h"
 #include "scalarstocolorscontainer.h"
 #include <guibase/colormapsettingwidget.h>
+#include <misc/doublecontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/enumcontainert.h>
 
 class GUICOREDLL_EXPORT LookupTableContainer : public ScalarsToColorsContainer
 {
@@ -29,16 +32,16 @@ public:
 	void setManualMax(double max) {m_manualMax = max;}
 	LookupTableContainer& operator=(const LookupTableContainer& c);
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	bool m_autoRange;
-	double m_autoMin;
-	double m_autoMax;
-	double m_manualMin;
-	double m_manualMax;
-	ColorMapSettingWidget::ColorMap m_colorMap;
+	BoolContainer m_autoRange;
+	DoubleContainer m_autoMin;
+	DoubleContainer m_autoMax;
+	DoubleContainer m_manualMin;
+	DoubleContainer m_manualMax;
+	EnumContainerT<ColorMapSettingWidget::ColorMap> m_colorMap;
 	ColorMapSettingWidget::CustomSetting m_customSetting;
 };
 

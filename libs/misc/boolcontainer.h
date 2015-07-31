@@ -6,6 +6,8 @@
 
 class MISCDLL_EXPORT BoolContainer : public SimpleValueContainerT<bool>
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
@@ -24,6 +26,9 @@ class MISCDLL_EXPORT BoolContainer : public SimpleValueContainerT<bool>
 	/// Save data into XML node as attributes
 	void save(QXmlStreamWriter&) const override;
 	//@}
+
+	/// @name Operators
+	BoolContainer& operator=(bool val);
 };
 
 #endif // BOOLCONTAINER_H

@@ -2,16 +2,20 @@
 #define ARROWSETTINGCONTAINER_H
 
 #include "misc_global.h"
-#include "xmlattributecontainer.h"
+#include "compositecontainer.h"
+#include "intcontainer.h"
 
 /// Container for arrow shape settings
-class MISCDLL_EXPORT ArrowSettingContainer : public XmlAttributeContainer
+class MISCDLL_EXPORT ArrowSettingContainer : public CompositeContainer
 {
 	static const int DEFAULT_ARROWSIZE;
 	static const int DEFAULT_LINEWIDTH;
 
 public:
+	/// Constructor
 	ArrowSettingContainer();
+	/// Constructor (copy)
+	ArrowSettingContainer(const ArrowSettingContainer& c);
 	virtual ~ArrowSettingContainer() {}
 	/// The size of cone of arrow (in pixels)
 	int arrowSize() const {return m_arrowSize;}
@@ -22,12 +26,9 @@ public:
 	/// Set the width of arrow axis (in pixels)
 	void setLineWidth(int width) {m_lineWidth = width;}
 
-	void load(const QDomNode&) override;
-	void save(QXmlStreamWriter&) const override;
-
 private:
-	int m_arrowSize;
-	int m_lineWidth;
+	IntContainer m_arrowSize;
+	IntContainer m_lineWidth;
 };
 
 #endif // ARROWSETTINGCONTAINER_H

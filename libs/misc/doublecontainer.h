@@ -6,6 +6,8 @@
 
 class MISCDLL_EXPORT DoubleContainer : public SimpleValueContainerT<double>
 {
+
+public:
 	/// @name Constructors and Destructor
 	//@{
 	/// Constructor
@@ -24,6 +26,9 @@ class MISCDLL_EXPORT DoubleContainer : public SimpleValueContainerT<double>
 	/// Save data into XML node as attributes
 	void save(QXmlStreamWriter&) const;
 	//@}
+
+	/// @name Operators
+	DoubleContainer& operator=(double val);
 };
 
 #endif // DOUBLECONTAINER_H
