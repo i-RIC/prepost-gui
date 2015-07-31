@@ -48,9 +48,9 @@ public:
 	/// Currently opened CGNS file name
 	virtual QString currentCgnsFileName() const;
 	/// Load data from CGNS file
-	virtual void loadFromCgnsFile(int fn);
+	virtual void loadFromCgnsFile(const int fn);
 	/// Save data into CGNS file
-	virtual void saveToCgnsFile(int fn);
+	virtual void saveToCgnsFile(const int fn);
 	/// Discard data loaded from CGNS file.
 	virtual void closeCgnsFile();
 	//@}
