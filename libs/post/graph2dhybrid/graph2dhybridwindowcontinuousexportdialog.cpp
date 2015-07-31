@@ -2,6 +2,8 @@
 
 #include "graph2dhybridwindowcontinuousexportdialog.h"
 
+#include <QDir>
+#include <QFile>
 #include <QMessageBox>
 
 Graph2dHybridWindowContinuousExportDialog::Graph2dHybridWindowContinuousExportDialog(QWidget* parent) :

@@ -3,7 +3,9 @@
 
 #include <misc/stringtool.h>
 
+#include <QDomNode>
 #include <QFile>
+#include <QFileInfo>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QStandardItem>

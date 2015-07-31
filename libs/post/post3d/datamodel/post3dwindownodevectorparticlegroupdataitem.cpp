@@ -14,6 +14,8 @@
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
+#include <QDir>
+#include <QFile>
 #include <QSettings>
 #include <QStandardItem>
 #include <QUndoCommand>

@@ -2,6 +2,7 @@
 #include "graph2dhybridwindowresultcopygroupdataitem.h"
 #include "graph2dhybridwindowresultdataitem.h"
 
+#include <QDomNode>
 #include <QStandardItem>
 
 Graph2dHybridWindowResultCopyGroupDataItem::Graph2dHybridWindowResultCopyGroupDataItem(Graph2dWindowDataItem* parent)

@@ -7,6 +7,8 @@
 #include <guibase/qwtplotcustomcurve.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
+#include <QFileInfo>
 #include <QStandardItem>
 
 #include <qwt_plot.h>
