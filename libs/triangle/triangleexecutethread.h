@@ -15,32 +15,21 @@ class TRIANGLEDLL_EXPORT TriangleExecuteThread : public QThread
 
 public:
 	explicit TriangleExecuteThread(QObject* parent = nullptr);
-	void setIOs(triangulateio* in, triangulateio* out) {
-		m_in = in;
-		m_out = out;
-	}
-	void setArgs(char* args) {
-		m_args = args;
-	}
-	void setFileOutputSetting(QString exeFile, QString args, QString filename, QString workFolder) {
-		m_exeFile = exeFile;
-		m_fileArgs = args;
-		m_fileName = filename;
-		m_workFolder = workFolder;
-	}
+	~TriangleExecuteThread();
+
+	/// @name Functions to setup triangle running conditions
+	//@{
+	void setIOs(triangulateio* in, triangulateio* out);
+	void setArgs(char* args);
+	void setFileOutputSetting(const QString& exeFile, const QString& args, const QString& filename, const QString& workFolder);
+	//@}
 
 protected:
 	void run() override;
 
 private:
-	triangulateio* m_in;
-	triangulateio* m_out;
-	char* m_args;
-
-	QString m_exeFile;
-	QString m_fileArgs;
-	QString m_fileName;
-	QString m_workFolder;
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // TRIANGLEEXECUTETHREAD_H
