@@ -25,6 +25,12 @@
 #include <vtkRungeKutta4.h>
 #include <vtkStructuredGridGeometryFilter.h>
 
+Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
+	CompositeContainer {&currentSolution, &regionMode},
+	currentSolution {"solution"},
+	regionMode {"regionMode", StructuredGridRegion::rmFull}
+{}
+
 Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
@@ -34,7 +40,6 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	setDefaultValues();
 	setupClipper();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
@@ -68,29 +73,25 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamline
 	}
 }
 
-class Post2dWindowStructuredGridStreamlineSelectSolution : public QUndoCommand
+class Post2dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post2dWindowStructuredGridStreamlineSelectSolution(const QString& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Streamline Physical Value Change")) {
+	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item) :
+		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")}
+	{
 		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
+		m_oldCurrentSolution = item->m_setting.currentSolution;
 		m_item = item;
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
+
 private:
 	QString m_oldCurrentSolution;
 	QString m_newCurrentSolution;
@@ -102,18 +103,11 @@ private:
 void Post2dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post2dWindowStructuredGridStreamlineSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post2dWindowStructuredGridStreamlineSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
-}
-
-void Post2dWindowNodeVectorStreamlineGroupDataItem::setDefaultValues()
-{
-	m_currentSolution= "";
-	m_regionMode = StructuredGridRegion::rmFull;
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
@@ -138,7 +132,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
@@ -190,15 +184,15 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QSt
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_currentSolution = currentSol;
+	m_setting.currentSolution = currentSol;
 }
 
 vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (m_regionMode == StructuredGridRegion::rmFull) {
+	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		return ps;
-	} else if (m_regionMode == StructuredGridRegion::rmActive) {
+	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();
@@ -228,16 +222,13 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamT
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
-	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
+	m_setting.load(node);
 	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
-	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
+	m_setting.save(writer);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informSelection(VTKGraphicsView* /*v*/)

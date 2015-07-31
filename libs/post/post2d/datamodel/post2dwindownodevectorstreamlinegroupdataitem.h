@@ -3,6 +3,10 @@
 
 #include "../post2dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
+#include <misc/enumcontainert.h>
+
 #include <QMap>
 #include <QColor>
 #include <QList>
@@ -15,14 +19,21 @@
 #include <vtkPolyData.h>
 
 class Post2dWindowNodeVectorStreamlineDataItem;
-class Post2dWindowStructuredGridStreamlineSelectSolution;
-class Post2dWindowStreamlineStructuredSetProperty;
 
 class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		StringContainer currentSolution;
+		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
+	};
+
 	/// Constructor
 	Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorStreamlineGroupDataItem();
@@ -47,13 +58,13 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setCurrentSolution(const QString& currentSol);
-	const QString& currentSolution() {return m_currentSolution;}
+	QString currentSolution() const {return m_setting.currentSolution;}
 
 protected:
 	void setupStreamTracer(vtkStreamTracer* tracer);
 
-	QString m_currentSolution;
-	StructuredGridRegion::RegionMode m_regionMode;
+	Setting m_setting;
+
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 
 	QList<vtkActor*> m_streamlineActors;
@@ -62,11 +73,7 @@ protected:
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
 
 private:
-	void setDefaultValues();
-
-public:
-	friend class Post2dWindowStructuredGridStreamlineSelectSolution;
-	friend class Post2dWindowStreamlineStructuredSetProperty;
+	class SelectSolutionCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H

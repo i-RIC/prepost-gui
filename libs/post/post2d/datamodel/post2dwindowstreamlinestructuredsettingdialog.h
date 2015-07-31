@@ -22,15 +22,9 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
-	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowStructuredStreamlineSetSetting>& settings) {
-		m_settings = settings;
-		setupSettingList();
-	}
-	QString solution() const;
-	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
-	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings() const {return m_settings;}
+	void setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting>& stSettings);
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting setting() const;
+	const QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting>& stSettings() const {return m_stSettings;}
 
 private slots:
 	void activeDataChanged(int index);
@@ -56,14 +50,15 @@ private:
 	Ui::Post2dWindowStreamlineStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
-	QList<Post2dWindowStructuredStreamlineSetSetting> m_settings;
-	Post2dWindowStructuredStreamlineSetSetting* m_activeSetting;
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_setting;
+	QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting> m_stSettings;
+
+	Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting* m_activeSetting;
 	bool m_activeAvailable;
 
 	QList<int> m_subDivNominations;
 	QList<int> m_skipNominations;
 
-	StructuredGridRegion::RegionMode m_regionMode;
 	bool m_applying;
 };
 

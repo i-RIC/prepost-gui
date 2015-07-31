@@ -43,7 +43,8 @@ HEADERS += arrowsettingcontainer.h \
     colorcontainer.h \
     enumcontainert.h \
     compositecontainer.h \
-    opacitycontainer.h
+    opacitycontainer.h \
+    qpointfcontainer.h
 FORMS += informationdialog.ui slowmotionspeededitdialog.ui
 SOURCES += arrowsettingcontainer.cpp \
            errormessage.cpp \
@@ -70,7 +71,8 @@ SOURCES += arrowsettingcontainer.cpp \
     doublecontainer.cpp \
     colorcontainer.cpp \
     compositecontainer.cpp \
-    opacitycontainer.cpp
+    opacitycontainer.cpp \
+    qpointfcontainer.cpp
 TRANSLATIONS += languages/iricMisc_es_ES.ts \
                 languages/iricMisc_fr_FR.ts \
                 languages/iricMisc_id_ID.ts \

@@ -22,6 +22,16 @@
 #include <vtkStructuredGrid.h>
 #include <vtkVertex.h>
 
+Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::Setting() :
+	CompositeContainer {&point1, &point2, &pointsSet, &numberOfPoints, &color, &width},
+	point1 {"point1"},
+	point2 {"point2"},
+	pointsSet {"pointsSet", false},
+	numberOfPoints {"numberOfPoints"},
+	color {"color"},
+	width {"width", 1}
+{}
+
 Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
 	: Post2dWindowNodeVectorStreamlineGroupDataItem(parent)
 {
@@ -47,25 +57,23 @@ QDialog* Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::propertyDial
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
-	dialog->setSolution(m_currentSolution);
-	dialog->setSettings(m_settings);
-	dialog->setRegionMode(m_regionMode);
+	dialog->setSettings(m_setting, m_unstSettings);
 
 	return dialog;
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupDefaultValues()
 {
-	m_settings.clear();
+	m_unstSettings.clear();
 
-	Post2dWindowUnstructuredStreamlineSetSetting s;
+	Setting s;
 
 	QSettings setting;
 	s.color = setting.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
 	s.width = 1;
 	s.pointsSet = false;
 	s.numberOfPoints = 10;
-	m_settings.append(s);
+	m_unstSettings.append(s);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
@@ -92,13 +100,13 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 	}
 	m_sourcePoints.clear();
 
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowUnstructuredStreamlineSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_unstSettings.count(); ++i) {
+		Setting& setting = m_unstSettings[i];
 
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		QVector2D diffVec = setting.point2 - setting.point1;
-		QVector2D v;
+		QPointF diffVec = setting.point2 - setting.point1;
+		QPointF v;
 		for (int j = 0; j < setting.numberOfPoints; ++j) {
 			double param = j / (double)(setting.numberOfPoints - 1);
 			v = setting.point1 + param * diffVec;
@@ -116,7 +124,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
-		prop->SetColor(setting.color.redF(), setting.color.greenF(), setting.color.blueF());
+		prop->SetColor(setting.color);
 		prop->SetLineWidth(setting.width);
 
 		renderer()->AddActor(actor);
@@ -129,7 +137,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_currentSolution).c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.currentSolution).c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
@@ -150,22 +158,14 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 {
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(node);
 
-	m_settings.clear();
+	m_unstSettings.clear();
 	QDomNode streamlinesNode = iRIC::getChildNode(node, "Streamlines");
 	if (! streamlinesNode.isNull()) {
 		QDomNodeList streamlines = streamlinesNode.childNodes();
 		for (int i = 0; i < streamlines.length(); ++i) {
-			Post2dWindowUnstructuredStreamlineSetSetting s;
+			Setting s;
 			s.load(streamlines.at(i));
-//			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
-//			s.point1.setY(static_cast<qreal>(elem.attribute("point1Y").toDouble()));
-//			s.point2.setX(static_cast<qreal>(elem.attribute("point2X").toDouble()));
-//			s.point2.setY(static_cast<qreal>(elem.attribute("point2Y").toDouble()));
-//			s.pointsSet = static_cast<bool>(elem.attribute("pointsSet").toInt());
-//			s.numberOfPoints = elem.attribute("numberOfPoints").toInt();
-//			s.color = loadColorAttribute("color",elem, s.color);
-//			s.width = elem.attribute("width").toInt();
-			m_settings.append(s);
+			m_unstSettings.append(s);
 		}
 	}
 	updateActorSettings();
@@ -177,18 +177,10 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectM
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Streamlines");
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowUnstructuredStreamlineSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_unstSettings.count(); ++i) {
+		Setting& setting = m_unstSettings[i];
 		writer.writeStartElement("Streamline");
 		setting.save(writer);
-//		writer.writeAttribute("point1X", QString::number(setting.point1.x()));
-//		writer.writeAttribute("point1Y", QString::number(setting.point1.y()));
-//		writer.writeAttribute("point2X", QString::number(setting.point2.x()));
-//		writer.writeAttribute("point2Y", QString::number(setting.point2.y()));
-//		writer.writeAttribute("pointsSet", QString::number(static_cast<int>(setting.pointsSet)));
-//		writer.writeAttribute("numberOfPoints", QString::number(setting.numberOfPoints));
-//		writeColorAttribute("color", setting.color, writer);
-//		writer.writeAttribute("width", QString::number(setting.width));
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
@@ -207,7 +199,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::showPropertyDial
 	propDialog->show();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const QVector2D& v1, const QVector2D& v2, int num)
+void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const QPointF &v1, const QPointF &v2, int num)
 {
 	m_point1 = v1;
 	m_point2 = v2;
@@ -217,8 +209,8 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const
 	m_previewPoints->Reset();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	QVector2D diffVec = m_point2 - m_point1;
-	QVector2D v;
+	QPointF diffVec = m_point2 - m_point1;
+	QPointF v;
 	for (int i = 0; i < m_numberOfPoints; ++i) {
 		double param = i / (double)(m_numberOfPoints - 1);
 		v = m_point1 + param * diffVec;
@@ -234,7 +226,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setSetting(const
 	renderGraphicsView();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::clearSetting()
+void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::hidePreviewSetting()
 {
 	m_previewActor->VisibilityOff();
 }
@@ -249,7 +241,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mousePressEvent(
 	double x = event->x();
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QVector2D p(x, y);
+	QPointF p(x, y);
 	if (m_dialog != nullptr) {
 		m_dialog->informButtonDown(p);
 	}
@@ -260,7 +252,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::mouseReleaseEven
 	double x = event->x();
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QVector2D p(x, y);
+	QPointF p(x, y);
 	if (m_dialog != nullptr) {
 		m_dialog->informButtonUp(p);
 	}

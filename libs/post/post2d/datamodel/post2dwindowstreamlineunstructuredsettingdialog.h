@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QList>
-#include <QVector2D>
+#include <QPointF>
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 
@@ -29,21 +29,15 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
-	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings) {
-		m_settings = settings;
-		setupSettingList();
-	}
-	QString solution() const;
-	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
-	const QList<Post2dWindowUnstructuredStreamlineSetSetting>& settings() const {return m_settings;}
+	void setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& unsts);
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting setting() const;
+	const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings() const {return m_unstSettings;}
 
-	void informButtonDown(const QVector2D& p);
-	void informButtonUp(const QVector2D& p);
+	void informButtonDown(const QPointF &p);
+	void informButtonUp(const QPointF &p);
 
 public slots:
-	void updateMousePosition(const QVector2D& p);
+	void updateMousePosition(const QPointF &p);
 	void accept() override;
 	void reject() override;
 
@@ -71,14 +65,15 @@ private:
 	QList<QString> m_solutions;
 	bool m_isPointsSet;
 
-	QVector2D m_oldPoint1;
-	QVector2D m_oldPoint2;
+	QPointF m_oldPoint1;
+	QPointF m_oldPoint2;
 	int m_oldPoints;
 	bool m_pressed;
 	bool m_applying;
 
-	QList<Post2dWindowUnstructuredStreamlineSetSetting> m_settings;
-	Post2dWindowUnstructuredStreamlineSetSetting* m_activeSetting;
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_setting;
+	QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_unstSettings;
+	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting* m_activeSetting;
 	bool m_activeAvailable;
 
 	QList<int> m_subDivNominations;

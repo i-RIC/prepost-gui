@@ -2,23 +2,21 @@
 #define POST2DWINDOWNODEVECTORSTREAMLINEGROUPUNSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorstreamlinegroupdataitem.h"
+
+#include <misc/compositecontainer.h>
+#include <misc/qpointfcontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/colorcontainer.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkDataSetMapper.h>
-#include <QVector2D>
+#include <QPointF>
 
-class Post2dWindowStreamlineUnstructuredSetProperty;
 class Post2dWindowStreamlineUnstructuredSettingDialog;
 
 struct Post2dWindowUnstructuredStreamlineSetSetting {
-	QVector2D point1;
-	QVector2D point2;
-	bool pointsSet;
-	int numberOfPoints;
-	/// Particle color.
-	QColor color;
-	/// Streamline width on screen. Specify by pixels on screen.
-	int width;
 };
 
 class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem  : public Post2dWindowNodeVectorStreamlineGroupDataItem
@@ -26,6 +24,19 @@ class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem  : public Post2d
 	Q_OBJECT
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		QPointFContainer point1;
+		QPointFContainer point2;
+		BoolContainer pointsSet;
+		IntContainer numberOfPoints;
+		ColorContainer color;
+		IntContainer width;
+	};
+
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem();
 	void showPropertyDialog() override;
@@ -41,8 +52,8 @@ protected:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
-	void setSetting(const QVector2D& v1, const QVector2D& v2, int num);
-	void clearSetting();
+	void setSetting(const QPointF& v1, const QPointF& v2, int num);
+	void hidePreviewSetting();
 
 private slots:
 	void exitDialogMode();
@@ -55,19 +66,20 @@ private:
 	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
 	vtkSmartPointer<vtkActor> m_previewActor;
 
-	QList<Post2dWindowUnstructuredStreamlineSetSetting> m_settings;
+	QList<Setting> m_unstSettings;
 
 	Post2dWindowStreamlineUnstructuredSettingDialog* m_dialog;
 
 	/// @name Members used for preview
 	//@{
-	QVector2D m_point1;
-	QVector2D m_point2;
+	QPointF m_point1;
+	QPointF m_point2;
 	int m_numberOfPoints;
 	//@}
 
+	class SetSettingCommand;
+
 public:
-	friend class Post2dWindowStreamlineUnstructuredSetProperty;
 	friend class Post2dWindowStreamlineUnstructuredSettingDialog;
 };
 

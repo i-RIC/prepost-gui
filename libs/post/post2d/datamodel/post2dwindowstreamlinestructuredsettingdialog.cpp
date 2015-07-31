@@ -50,26 +50,36 @@ void Post2dWindowStreamlineStructuredSettingDialog::setZoneData(PostZoneDataCont
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowStreamlineStructuredSettingDialog::setSolution(const QString& sol)
+void Post2dWindowStreamlineStructuredSettingDialog::setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting>& settings)
 {
-	int index = m_solutions.indexOf(sol);
+	m_setting = s;
+	m_stSettings = settings;
+
+	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
+
+	setupSettingList();
 }
 
-QString Post2dWindowStreamlineStructuredSettingDialog::solution() const
+Post2dWindowNodeVectorStreamlineGroupDataItem::Setting Post2dWindowStreamlineStructuredSettingDialog::setting() const
 {
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting ret = m_setting;
+
+	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	return m_solutions.at(index);
+	ret.currentSolution = m_solutions.at(index);
+
+	return ret;
 }
 
 void Post2dWindowStreamlineStructuredSettingDialog::activeDataChanged(int index)
 {
-	if (index == -1 || index >= m_settings.count()) {
+	if (index == -1 || index >= m_stSettings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
-	m_activeSetting = &(m_settings[index]);
+	m_activeSetting = &(m_stSettings[index]);
 	applySettings();
 }
 
@@ -122,19 +132,19 @@ void Post2dWindowStreamlineStructuredSettingDialog::handleSpaceSliderChange(int 
 	if (val < m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredStreamlineSetSetting::smSkip;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smSkip;
 			m_activeSetting->spaceSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->spaceSlider->value() - 1);
 		}
 	} else if (val > m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredStreamlineSetSetting::smSubdivide;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smSubdivide;
 			m_activeSetting->spaceDivision = m_subDivNominations.at(ui->spaceSlider->value() - m_skipNominations.count() - 1);
 		}
 	} else {
 		ui->spaceValueLabel->setText("1");
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredStreamlineSetSetting::smNormal;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smNormal;
 		}
 	}
 }
@@ -165,8 +175,6 @@ void Post2dWindowStreamlineStructuredSettingDialog::setupNominations()
 	ui->spaceMaxLabel->setText(QString("%1").arg(m_subDivNominations.last()));
 }
 
-
-
 void Post2dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
@@ -193,7 +201,7 @@ void Post2dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZo
 
 void Post2dWindowStreamlineStructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i) {
+	for (int i = 0; i < m_stSettings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -209,17 +217,17 @@ void Post2dWindowStreamlineStructuredSettingDialog::applySettings()
 	ui->imaxSlider->setValue(m_activeSetting->range.iMax + 1);
 	ui->jminSlider->setValue(m_activeSetting->range.jMin + 1);
 	ui->jmaxSlider->setValue(m_activeSetting->range.jMax + 1);
-	if (m_activeSetting->spaceMode == Post2dWindowStructuredStreamlineSetSetting::smNormal) {
+	if (m_activeSetting->spaceMode == Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smNormal) {
 		ui->spaceSlider->setValue(m_skipNominations.count());
 		handleSpaceSliderChange(m_skipNominations.count());
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredStreamlineSetSetting::smSkip) {
+	} else if (m_activeSetting->spaceMode == Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smSkip) {
 		for (int i = 0; i < m_skipNominations.count(); ++i) {
 			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate) {
 				ui->spaceSlider->setValue(m_skipNominations.count() - i - 1);
 				handleSpaceSliderChange(m_skipNominations.count() - i - 1);
 			}
 		}
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredStreamlineSetSetting::smSubdivide) {
+	} else if (m_activeSetting->spaceMode == Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::smSubdivide) {
 		for (int i = 0; i < m_subDivNominations.count(); ++i) {
 			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision) {
 				ui->spaceSlider->setValue(m_skipNominations.count() + i + 1);
@@ -235,8 +243,8 @@ void Post2dWindowStreamlineStructuredSettingDialog::applySettings()
 void Post2dWindowStreamlineStructuredSettingDialog::addData()
 {
 	if (m_activeSetting == nullptr) {return;}
-	Post2dWindowStructuredStreamlineSetSetting setting = *m_activeSetting;
-	m_settings.append(setting);
+	Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting setting = *m_activeSetting;
+	m_stSettings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
 	int tmpint = tmpitem->text().toInt();
 	++ tmpint;
@@ -252,10 +260,10 @@ void Post2dWindowStreamlineStructuredSettingDialog::removeData()
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
 	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
-	m_settings.removeAt(current);
-	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
+	m_stSettings.removeAt(current);
+	if (current >= m_stSettings.count()) {current = m_stSettings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
-	m_activeSetting = &(m_settings[current]);
+	m_activeSetting = &(m_stSettings[current]);
 	applySettings();
 	updateRemoveButtonStatus();
 }
@@ -267,14 +275,14 @@ void Post2dWindowStreamlineStructuredSettingDialog::showRegionDialog()
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
-	dialog.setRegionMode(m_regionMode);
+	dialog.setRegionMode(m_setting.regionMode);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_regionMode = dialog.regionMode();
+	m_setting.regionMode = dialog.regionMode();
 }
 
 void Post2dWindowStreamlineStructuredSettingDialog::updateRemoveButtonStatus()
 {
-	ui->removePushButton->setEnabled(m_settings.count() > 1);
+	ui->removePushButton->setEnabled(m_stSettings.count() > 1);
 }

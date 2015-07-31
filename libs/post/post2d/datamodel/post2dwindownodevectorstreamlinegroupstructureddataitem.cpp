@@ -7,7 +7,6 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QDomElement>
 #include <QDomNode>
 #include <QSettings>
 #include <QUndoCommand>
@@ -17,40 +16,44 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
 
-Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(Post2dWindowDataItem* parent)
-	: Post2dWindowNodeVectorStreamlineGroupDataItem(parent)
+Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting() :
+	CompositeContainer {&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &width},
+	range {},
+	spaceMode {"spaceMode", smNormal},
+	spaceSamplingRate {"spaceSamplingRate", 2},
+	spaceDivision {"spaceDivision", 2},
+	color {"color"},
+	width {"width", 1}
+{
+	QSettings settings;
+	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
+}
+
+Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(Post2dWindowDataItem* parent) :
+	Post2dWindowNodeVectorStreamlineGroupDataItem {parent}
 {
 	setupDefaultValues();
 }
 
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::~Post2dWindowNodeVectorStreamlineGroupStructuredDataItem()
-{
-
-}
+{}
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues()
 {
-	m_settings.clear();
+	m_stSettings.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
 	int dim[3];
 	grid->GetDimensions(dim);
 
-	Post2dWindowStructuredStreamlineSetSetting s;
+	Setting s;
 	s.range.iMin = 0;
 	s.range.iMax = 0;
 	s.range.jMin = 0;
 	s.range.jMax = dim[1] - 1;
-	s.spaceMode = Post2dWindowStructuredStreamlineSetSetting::smNormal;
-	s.spaceSamplingRate = 2;
-	s.spaceDivision = 2;
 
-	QSettings setting;
-	s.color = setting.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
-
-	s.width = 1;
-	m_settings.append(s);
+	m_stSettings.append(s);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
@@ -65,44 +68,45 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 	}
 	m_subdivideGrids.clear();
 
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_stSettings.count(); ++i) {
+		Setting& s = m_stSettings[i];
 
 		vtkExtractGrid* ext = vtkExtractGrid::New();
 		ext->SetInputData(zoneContainer->data());
 		vtkSubdivideGrid* div = vtkSubdivideGrid::New();
 		div->SetInputData(zoneContainer->data());
 
-		ext->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
-		div->SetVOI(setting.range.iMin, setting.range.iMax, setting.range.jMin, setting.range.jMax, 0, 0);
+		auto& r = s.range;
+		ext->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
+		div->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
 		ext->SetSampleRate(1, 1, 1);
-		if (setting.spaceMode == Post2dWindowStructuredStreamlineSetSetting::smSkip) {
-			ext->SetSampleRate(setting.spaceSamplingRate, setting.spaceSamplingRate, 1);
+		if (s.spaceMode == Setting::smSkip) {
+			ext->SetSampleRate(s.spaceSamplingRate, s.spaceSamplingRate, 1);
 		}
-		div->SetDivideRate(setting.spaceDivision, setting.spaceDivision, 1);
+		div->SetDivideRate(s.spaceDivision, s.spaceDivision, 1);
 		ext->Modified();
 		div->Modified();
 
 		m_extractGrids.append(ext);
 		m_subdivideGrids.append(div);
 
-		vtkActor* actor = vtkActor::New();
+		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
-		prop->SetColor(setting.color.redF(), setting.color.greenF(), setting.color.blueF());
-		prop->SetLineWidth(setting.width);
+		prop->SetColor(s.color);
+		prop->SetLineWidth(s.width);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);
 
-		vtkDataSetMapper* mapper = vtkDataSetMapper::New();
+		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 		actor->SetMapper(mapper);
 
-		vtkStreamTracer* tracer = vtkStreamTracer::New();
+		vtkSmartPointer<vtkStreamTracer> tracer = vtkSmartPointer<vtkStreamTracer>::New();
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_currentSolution).c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.currentSolution).c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
@@ -117,14 +121,14 @@ vtkPointSet* Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::getSource(
 	vtkStructuredGrid* exGrid = nullptr;
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return nullptr;}
-	Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
-	switch (setting.spaceMode) {
-	case Post2dWindowStructuredStreamlineSetSetting::smNormal:
-	case Post2dWindowStructuredStreamlineSetSetting::smSkip:
+	const Setting& s = m_stSettings[i];
+	switch (Setting::SpaceMode(s.spaceMode)) {
+	case Setting::smNormal:
+	case Setting::smSkip:
 		m_extractGrids[i]->Update();
 		exGrid = m_extractGrids[i]->GetOutput();
 		break;
-	case Post2dWindowStructuredStreamlineSetSetting::smSubdivide:
+	case Setting::smSubdivide:
 		m_subdivideGrids[i]->Update();
 		exGrid = m_subdivideGrids[i]->GetOutput();
 		break;
@@ -142,63 +146,47 @@ QDialog* Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 	}
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
-
-	dialog->setSolution(m_currentSolution);
-	dialog->setSettings(m_settings);
-	dialog->setRegionMode(m_regionMode);
+	dialog->setSettings(m_setting, m_stSettings);
 
 	return dialog;
 }
 
-class Post2dWindowStreamlineStructuredSetProperty : public QUndoCommand
+class Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowStreamlineStructuredSetProperty(const QString& sol, const QList<Post2dWindowStructuredStreamlineSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Streamline Setting")) {
-		m_newEnabled = true;
-		m_newSolution = sol;
-		m_newSettings = settings;
-		m_newRegionMode = rm;
+	SetSettingCommand(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting>& settings, Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* item) :
+		QUndoCommand {QObject::tr("Update Streamline Setting")},
+		m_newSetting {s},
+		m_newStSettings {settings},
+		m_oldEnabled {item->isEnabled()},
+		m_oldSetting {item->m_setting},
+		m_oldStSettings {item->m_stSettings},
+		m_item {item}
+	{}
+	void redo() {
+		m_item->setEnabled(true);
+		m_item->m_setting = m_newSetting;
+		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->m_stSettings = m_newStSettings;
 
-		m_oldEnabled = item->isEnabled();
-		m_oldSolution = item->m_currentSolution;
-		m_oldSettings = item->m_settings;
-		m_oldRegionMode = item->m_regionMode;
-
-		m_item = item;
+		m_item->updateActorSettings();
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
-		m_item->setCurrentSolution(m_oldSolution);
-		m_item->m_settings = m_oldSettings;
-		m_item->m_regionMode = m_oldRegionMode;
+		m_item->m_setting = m_oldSetting;
+		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+		m_item->m_stSettings = m_oldStSettings;
 
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setEnabled(m_newEnabled);
-		m_item->setCurrentSolution(m_newSolution);
-		m_item->m_settings = m_newSettings;
-		m_item->m_regionMode = m_newRegionMode;
 
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
 private:
-	bool m_oldEnabled;
-	QString m_oldSolution;
-	QList<Post2dWindowStructuredStreamlineSetSetting> m_oldSettings;
-	StructuredGridRegion::RegionMode m_oldRegionMode;
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_newSetting;
+	QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting> m_newStSettings;
 
-	bool m_newEnabled;
-	QString m_newSolution;
-	QList<Post2dWindowStructuredStreamlineSetSetting> m_newSettings;
-	StructuredGridRegion::RegionMode m_newRegionMode;
+	bool m_oldEnabled;
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_oldSetting;
+	QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting> m_oldStSettings;
 
 	Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* m_item;
 };
@@ -206,31 +194,21 @@ private:
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowStreamlineStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowStreamlineStructuredSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowStreamlineStructuredSetProperty(dialog->solution(), dialog->settings(), dialog->regionMode(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->stSettings(), this), this, true);
 }
-
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(node);
 
-	m_settings.clear();
+	m_stSettings.clear();
 	QDomNode streamlinesNode = iRIC::getChildNode(node, "Streamlines");
 	if (! streamlinesNode.isNull()) {
 		QDomNodeList streamlines = streamlinesNode.childNodes();
 		for (int i = 0; i < streamlines.length(); ++i) {
-			QDomElement elem = streamlines.at(i).toElement();
-			Post2dWindowStructuredStreamlineSetSetting s;
-			s.range.iMin = elem.attribute("regionIMin").toInt();
-			s.range.iMax = elem.attribute("regionIMax").toInt();
-			s.range.jMin = elem.attribute("regionJMin").toInt();
-			s.range.jMax = elem.attribute("regionJMax").toInt();
-			s.spaceMode = static_cast<Post2dWindowStructuredStreamlineSetSetting::SpaceMode>(elem.attribute("spaceMode").toInt());
-			s.spaceSamplingRate = elem.attribute("spaceSamplingRate").toInt();
-			s.spaceDivision = elem.attribute("spaceDivision").toInt();
-			s.color = loadColorAttribute("color",elem, s.color);
-			s.width = elem.attribute("width").toInt();
-			m_settings.append(s);
+			Setting s;
+			s.load(streamlines.at(i));
+			m_stSettings.append(s);
 		}
 	}
 	updateActorSettings();
@@ -241,18 +219,10 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::doSaveToProjectMai
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Streamlines");
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowStructuredStreamlineSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_stSettings.count(); ++i) {
+		const Setting& s = m_stSettings[i];
 		writer.writeStartElement("Streamline");
-		writer.writeAttribute("regionIMin", QString::number(setting.range.iMin));
-		writer.writeAttribute("regionIMax", QString::number(setting.range.iMax));
-		writer.writeAttribute("regionJMin", QString::number(setting.range.jMin));
-		writer.writeAttribute("regionJMax", QString::number(setting.range.jMax));
-		writer.writeAttribute("spaceMode", QString::number(static_cast<int>(setting.spaceMode)));
-		writer.writeAttribute("spaceSamplingRate", QString::number(setting.spaceSamplingRate));
-		writer.writeAttribute("spaceDivision", QString::number(setting.spaceDivision));
-		writeColorAttribute("color",setting.color, writer);
-		writer.writeAttribute("width", QString::number(setting.width));
+		s.save(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
