@@ -3,32 +3,50 @@
 
 #include "misc_global.h"
 
-#include <QString>
-#include <QDomNode>
-#include <QXmlStreamWriter>
+class QDomNode;
+class QXmlStreamWriter;
 
 /// Container class that has I/O function to store data as XML attributes.
 class MISCDLL_EXPORT XmlAttributeContainer
 {
 
 public:
+	/// @name Constructor and Destructor
+	//@{
+	/// Constructor
 	XmlAttributeContainer();
+	/// Copy constructor
+	XmlAttributeContainer(const XmlAttributeContainer& c);
+	/// Destructor
 	virtual ~XmlAttributeContainer();
+	//@}
+
+	/// @name Operators
+	//@{
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& c);
+	//@}
+
+	/// @name XML file I/O functions
+	//@{
 	/// Load data from XML attributes
 	virtual void load(const QDomNode&) = 0;
 	/// Save data into XML node as attributes
 	virtual void save(QXmlStreamWriter&) const = 0;
+	//@}
+
+	/// @name Property setting functions
+	//@{
 	/// Prefix for XML attributes
-	const QString& prefix() const {return m_prefix;}
+	const QString& prefix() const;
 	/// Set prefix for XML attributes
-	void setPrefix(const QString& prefix) {
-		m_prefix = prefix;
-	}
+	void setPrefix(const QString& prefix);
 	/// Attributes name (Prefix added if set)
 	QString attName(const QString& name) const;
+	//@}
 
-protected:
-	QString m_prefix {};
+private:
+	class Impl;
+	Impl* m_impl;
 };
 
 #endif // XMLATTRIBUTECONTAINER_H

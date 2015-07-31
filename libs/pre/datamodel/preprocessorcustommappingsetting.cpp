@@ -2,6 +2,7 @@
 
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QRegExp>
 
 PreProcessorCustomMappingSetting::PreProcessorCustomMappingSetting()
