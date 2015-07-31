@@ -121,7 +121,6 @@ void GraphicsWindowDataItem::init()
 	m_isReorderable = false;
 	m_isDestructing = false;
 
-	m_isPushing = false;
 	m_isCommandExecuting = false;
 
 	m_actorCollection = vtkActorCollection::New();

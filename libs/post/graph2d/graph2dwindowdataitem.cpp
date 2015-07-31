@@ -110,7 +110,6 @@ void Graph2dWindowDataItem::init()
 	m_isReorderable = false;
 	m_isDestructing = false;
 
-	m_isPushing = false;
 	m_isCommandExecuting = false;
 }
 

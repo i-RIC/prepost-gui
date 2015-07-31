@@ -166,7 +166,6 @@ protected:
 protected:
 	/// If true, the PreProcessorDataItem tree is under destruction.
 	bool m_isDestructing;
-	bool m_isPushing;
 
 public:
 	friend class BackgroundImageInfo;

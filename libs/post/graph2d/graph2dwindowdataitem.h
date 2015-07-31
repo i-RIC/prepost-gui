@@ -117,7 +117,6 @@ protected:
 	ZDepthRange m_zDepthRange;
 
 protected:
-	bool m_isPushing;
 	bool m_isDeletable;
 
 private:
