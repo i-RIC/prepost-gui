@@ -41,11 +41,12 @@ public:
 	}
 };
 
-class GridCreatingConditionTrianglePolyLineCoordinatesEditCommand : public QUndoCommand
+class GridCreatingConditionTriangle::EditPolyLineCoordinatesCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionTrianglePolyLineCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionTriangle* pol)
-		: QUndoCommand(GridCreatingConditionTriangle::tr("Edit Break Line Coordinates")) {
+	EditPolyLineCoordinatesCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionTriangle* pol) :
+		QUndoCommand {GridCreatingConditionTriangle::tr("Edit Break Line Coordinates")}
+	{
 		m_apply = apply;
 		m_newCoords = coords;
 		m_polygon = pol;
@@ -111,7 +112,7 @@ void GridCreatingConditionTrianglePolyLineCoordinatesEditDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineCoordinatesEditCommand(false, coords, m_polygon));
+	iRICUndoStack::instance().push(new GridCreatingConditionTriangle::EditPolyLineCoordinatesCommand(false, coords, m_polygon));
 	QDialog::accept();
 }
 
@@ -133,7 +134,7 @@ void GridCreatingConditionTrianglePolyLineCoordinatesEditDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionTrianglePolyLineCoordinatesEditCommand(true, coords, m_polygon));
+	iRICUndoStack::instance().push(new GridCreatingConditionTriangle::EditPolyLineCoordinatesCommand(true, coords, m_polygon));
 	m_applyed = true;
 }
 

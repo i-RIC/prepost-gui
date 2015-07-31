@@ -18,25 +18,6 @@ class GridCreatingConditionTriangleRemeshPolygon;
 class GridCreatingConditionTriangleHolePolygon;
 class GridCreatingConditionTriangleAbstractLine;
 class GridCreatingConditionTriangleDivisionLine;
-class GridCreatingConditionTrianglePolygonFinishDefiningCommand;
-class GridCreatingConditionTrianglePolygonDefineNewPointCommand;
-class GridCreatingConditionTrianglePolygonMoveCommand;
-class GridCreatingConditionTrianglePolygonMoveVertexCommand;
-class GridCreatingConditionTrianglePolygonRemoveVertexCommand;
-class GridCreatingConditionTrianglePolygonAddVertexCommand;
-class GridCreatingConditionTrianglePolygonCoordinatesEditCommand;
-
-class GridCreatingConditionTrianglePolyLineFinishDefiningCommand;
-class GridCreatingConditionTrianglePolyLineDefineNewPointCommand;
-class GridCreatingConditionTrianglePolyLineMoveCommand;
-class GridCreatingConditionTrianglePolyLineMoveVertexCommand;
-class GridCreatingConditionTrianglePolyLineRemoveVertexCommand;
-class GridCreatingConditionTrianglePolyLineAddVertexCommand;
-class GridCreatingConditionTrianglePolyLineCoordinatesEditCommand;
-
-class GridCreatingConditionTriangleAddRemeshPolygonCommand;
-class GridCreatingConditionTriangleAddHolePolygonCommand;
-class GridCreatingConditionTriangleAddDivisionLineCommand;
 
 class GridCreatingConditionTriangle : public GridCreatingCondition
 {
@@ -176,33 +157,34 @@ private:
 	double lastY;
 	bool m_canceled;
 
+private:
+	class AddDivisionLineCommand;
+	class AddHolePolygonCommand;
+	class AddPolygonVertexCommand;
+	class AddPolyLineVertexCommand;
+	class AddRemeshPolygonCommand;
+	class DefinePolygonNewPointCommand;
+	class EditPolygonCoordinatesCommand;
+	class EditPolyLineCoordinatesCommand;
+	class FinishPolygonDefiningCommand;
+	class FinishPolyLineDefiningCommand;
+	class DefinePolyLineNewPointCommand;
+	class MovePolygonCommand;
+	class MovePolygonVertexCommand;
+	class MovePolyLineCommand;
+	class MovePolyLineVertexCommand;
+	class RemovePolygonVertexCommand;
+	class RemovePolyLineVertexCommand;
+
 public:
+	friend class GridCreatingConditionTriangleAbstractLine;
+	friend class GridCreatingConditionTriangleAbstractPolygon;
 	friend class GridCreatingConditionTriangleCreator;
-	friend class GridCreatingConditionTrianglePropertyEditCommand;
-
-	friend class GridCreatingConditionTrianglePolygonFinishDefiningCommand;
-	friend class GridCreatingConditionTrianglePolygonDefineNewPointCommand;
-	friend class GridCreatingConditionTrianglePolygonMoveCommand;
-	friend class GridCreatingConditionTrianglePolygonMoveVertexCommand;
-	friend class GridCreatingConditionTrianglePolygonRemoveVertexCommand;
-	friend class GridCreatingConditionTrianglePolygonAddVertexCommand;
-	friend class GridCreatingConditionTrianglePolygonCoordinatesEditCommand;
-
-	friend class GridCreatingConditionTrianglePolylineFinishDefiningCommand;
-	friend class GridCreatingConditionTrianglePolyLineDefineNewPointCommand;
-	friend class GridCreatingConditionTrianglePolyLineMoveCommand;
-	friend class GridCreatingConditionTrianglePolyLineMoveVertexCommand;
-	friend class GridCreatingConditionTrianglePolyLineRemoveVertexCommand;
-	friend class GridCreatingConditionTrianglePolyLineAddVertexCommand;
-	friend class GridCreatingConditionTrianglePolyLineCoordinatesEditCommand;
-
 	friend class GridCreatingConditionTrianglePolygonCoordinatesEditDialog;
 	friend class GridCreatingConditionTrianglePolyLineCoordinatesEditDialog;
-	friend class GridCreatingConditionTriangleAbstractPolygon;
-	friend class GridCreatingConditionTriangleAbstractLine;
-	friend class GridCreatingConditionTriangleAddRemeshPolygonCommand;
-	friend class GridCreatingConditionTriangleAddHolePolygonCommand;
-	friend class GridCreatingConditionTriangleAddDivisionLineCommand;
+
+	friend class GridCreatingConditionTrianglePolylineFinishDefiningCommand;
+
 };
 
 #endif // GRIDCREATINGCONDITIONCENTERANDWIDTH_H
