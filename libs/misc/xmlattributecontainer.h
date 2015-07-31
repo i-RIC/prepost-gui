@@ -37,11 +37,11 @@ public:
 	/// @name Property setting functions
 	//@{
 	/// Prefix for XML attributes
-	const QString& prefix() const;
+	virtual const QString& prefix() const;
 	/// Set prefix for XML attributes
-	void setPrefix(const QString& prefix);
+	virtual void setPrefix(const QString& prefix);
 	/// Attributes name (Prefix added if set)
-	QString attName(const QString& name) const;
+	virtual QString attName(const QString& name) const;
 	//@}
 
 private:
