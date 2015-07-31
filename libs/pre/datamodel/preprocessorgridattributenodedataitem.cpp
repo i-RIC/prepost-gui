@@ -107,7 +107,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	dialog->setScalarsToColorsEditWidget(stcWidget);
 	dialog->setContour(contour());
 	dialog->setNumberOfDivision(m_numberOfDivision);
-	dialog->setOpacityPercent(gitem->opacityPercent());
+	dialog->setOpacityPercent(gitem->opacity());
 	dialog->setWindowTitle(tr("Grid Node Attribute Display Setting"));
 	return dialog;
 }
@@ -119,7 +119,7 @@ void PreProcessorGridAttributeNodeDataItem::handlePropertyDialogAccepted(QDialog
 	m_contour = dialog->contour();
 	m_numberOfDivision = dialog->numberOfDivision();
 	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	gitem->setOpacityPercent(dialog->opacityPercent());
+	gitem->setOpacity(dialog->opacityPercent());
 	gitem->updateActorSettings();
 }
 

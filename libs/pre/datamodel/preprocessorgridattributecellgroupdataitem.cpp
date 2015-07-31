@@ -51,8 +51,8 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGridGeometryFilter.h>
 
-PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p)
-	: PreProcessorDataItem(tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p) :
+	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
@@ -83,7 +83,7 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}
-	m_opacityPercent = 50;
+	m_opacity = 50;
 	m_attributeBrowserFixed = false;
 
 	m_showAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
@@ -170,7 +170,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 		updateVisibilityWithoutRendering();
 		return;
 	}
-	m_actor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
+	m_actor->GetProperty()->SetOpacity(m_opacity);
 	// update current active scalar
 
 	vtkCellData* data = g->vtkGrid()->GetCellData();
@@ -190,7 +190,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 
 void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_opacityPercent = loadOpacityPercent(node);
+	m_opacity.load(node);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		QString name = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "CellAttribute", "name", name);
@@ -207,7 +207,7 @@ void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const
 
 void PreProcessorGridAttributeCellGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writeOpacityPercent(m_opacityPercent, writer);
+	m_opacity.save(writer);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("CellAttribute");
 		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name());
@@ -271,7 +271,6 @@ void PreProcessorGridAttributeCellGroupDataItem::informGridUpdate()
 	if (g != nullptr) {
 		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
 		if (cellsAlgo != nullptr) {m_mapper->SetInputConnection(cellsAlgo->GetOutputPort());}
-//		m_mapper->SetInputData(g->vtkGrid());
 	}
 	updateActorSettings();
 }

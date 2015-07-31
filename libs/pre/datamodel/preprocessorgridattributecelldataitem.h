@@ -3,6 +3,7 @@
 
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guibase/contoursettingwidget.h>
+#include <misc/boolcontainer.h>
 
 class SolverDefinitionGridAttribute;
 class QAction;
@@ -47,8 +48,9 @@ protected:
 private:
 	SolverDefinitionGridAttribute* m_condition;
 
+	BoolContainer m_isCustomModified;
+
 	bool m_definingBoundingBox;
-	bool m_isCustomModified;
 	QAction* m_editValueAction;
 	QAction* m_editVariationAction;
 };

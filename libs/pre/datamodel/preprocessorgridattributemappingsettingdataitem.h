@@ -2,6 +2,7 @@
 #define PREPROCESSORGRIDATTRIBUTEMAPPINGSETTINGDATAITEM_H
 
 #include <guicore/pre/base/preprocessordataitem.h>
+#include <misc/enumcontainert.h>
 
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataGroupDataItem;
@@ -28,7 +29,8 @@ public:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	MappingMode m_mappingMode;
+
+	EnumContainerT<MappingMode> m_mappingMode;
 
 	PreProcessorGeoDataGroupDataItem* m_geodataGroupDataItem;
 	SolverDefinitionGridAttribute* m_condition;

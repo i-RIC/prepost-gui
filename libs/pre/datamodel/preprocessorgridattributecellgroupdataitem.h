@@ -2,6 +2,7 @@
 #define PREPROCESSORGRIDRELATEDCONDITIONCELLGROUPDATAITEM_H
 
 #include <guicore/pre/base/preprocessordataitem.h>
+#include <misc/opacitycontainer.h>
 #include <QMap>
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
@@ -35,8 +36,8 @@ public:
 	const QList<PreProcessorGridAttributeCellDataItem*> conditions() const;
 	PreProcessorGridAttributeCellDataItem* cellDataItem(const QString& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange() override;
-	void setOpacityPercent(int o) {m_opacityPercent = o;}
-	int opacityPercent() {return m_opacityPercent;}
+	void setOpacityPercent(int o) {m_opacity = o;}
+	int opacityPercent() {return m_opacity;}
 	QAction* showAttributeBrowserAction() const {return m_showAttributeBrowserAction;}
 	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
@@ -63,8 +64,8 @@ private:
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 	QMap<QString, PreProcessorGridAttributeCellDataItem*> m_nameMap;
 
+	OpacityContainer m_opacity;
 	QAction* m_showAttributeBrowserAction;
-	int m_opacityPercent;
 	bool m_attributeBrowserFixed;
 
 public:

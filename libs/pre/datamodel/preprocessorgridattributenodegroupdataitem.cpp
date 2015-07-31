@@ -51,8 +51,8 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGridGeometryFilter.h>
 
-PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p)
-	: PreProcessorDataItem(tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p) :
+	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
@@ -85,7 +85,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 		}
 	}
 
-	m_opacityPercent = 50;
+	m_opacity = 50;
 	m_attributeBrowserFixed = false;
 
 	m_showAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
@@ -245,7 +245,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 			m_contourMapper->SetScalarRange(range[0], range[1]);
 			m_contourMapper->SetScalarModeToUseCellData();
 			m_contourActor->GetProperty()->SetInterpolationToFlat();
-			m_contourActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
+			m_contourActor->GetProperty()->SetOpacity(m_opacity);
 			m_contourMapper->SetLookupTable(stc->vtkObj());
 			m_contourMapper->UseLookupTableScalarRangeOn();
 			if (m_nameMap.value(m_currentCondition)->condition()->isOption()) {} else {
@@ -258,7 +258,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 		m_fringeMapper->SetScalarModeToUsePointData();
 		m_fringeMapper->SetLookupTable(stc->vtkObj());
 		m_fringeMapper->UseLookupTableScalarRangeOn();
-		m_fringeActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
+		m_fringeActor->GetProperty()->SetOpacity(m_opacity);
 		m_actorCollection->AddItem(m_fringeActor);
 		break;
 	default:
@@ -269,7 +269,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 
 void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_opacityPercent = loadOpacityPercent(node);
+	m_opacity.load(node);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		QString name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name);
@@ -286,7 +286,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 
 void PreProcessorGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writeOpacityPercent(m_opacityPercent, writer);
+	m_opacity.save(writer);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("NodeAttribute");
 		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name());

@@ -9,40 +9,25 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent)
-	: PreProcessorDataItem(parent)
+PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent) :
+	PreProcessorDataItem {parent},
+	m_mappingMode {"mode", mmFromGeoData}
 {
-	m_mappingMode = mmFromGeoData;
 	m_isDeletable = false;
 
 	m_condition = cond;
 	m_geodataGroupDataItem = geodataGroup;
-
-	// this node does not have corresponding standard item.
-//	m_standardItem->parent()->removeRow(m_standardItem->row());
-//	m_standardItem = nullptr;
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	if (elem.attribute("mode") == "fromOtherAttribute") {
-		m_mappingMode = mmFromOtherAttribute;
-	} else {
-		m_mappingMode = mmFromGeoData;
-	}
+	m_mappingMode.load(node);
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString modestr;
-	if (m_mappingMode == mmFromGeoData) {
-		modestr = "fromGeoData";
-	} else {
-		modestr = "fromOtherAttribute";
-	}
 	writer.writeAttribute("name", m_condition->name());
-	writer.writeAttribute("mode", modestr);
+	m_mappingMode.save(writer);
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::setDefaultValue(Grid* grid)

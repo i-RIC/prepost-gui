@@ -35,8 +35,9 @@
 
 #include <string>
 
-PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
-	: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
+	PreProcessorDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_isCustomModified {"isCustomModified", false}
 {
 	m_isDeletable = false;
 	m_definingBoundingBox = false;
@@ -89,18 +90,17 @@ void PreProcessorGridAttributeCellDataItem::handlePropertyDialogAccepted(QDialog
 
 void PreProcessorGridAttributeCellDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_isCustomModified = static_cast<bool>(node.toElement().attribute("isCustomModified", "0").toInt());
+	m_isCustomModified.load(node);
 }
 
 void PreProcessorGridAttributeCellDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString mod;
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
 	if (g != nullptr) {
 		GridAttributeContainer* cont = g->gridRelatedCondition(m_condition->name());
-		mod.setNum(static_cast<int>(cont->isCustomModified()));
-		writer.writeAttribute("isCustomModified", mod);
+		m_isCustomModified = cont->isCustomModified();
+		m_isCustomModified.save(writer);
 	}
 }
 

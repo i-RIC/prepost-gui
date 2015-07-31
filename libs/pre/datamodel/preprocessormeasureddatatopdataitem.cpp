@@ -40,9 +40,6 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	// for scalar bar / legend box
-	m_visible = true;
-
 	setupActors();
 
 	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import..."), this);

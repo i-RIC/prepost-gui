@@ -34,8 +34,6 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	bool m_visible;
-
 	QAction* m_importAction;
 };
 
