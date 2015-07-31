@@ -26,34 +26,18 @@
 class vtkProperty;
 class QAction;
 class QPolygonF;
+
 class GeoDataRiverSurveyCrosssectionWindow;
 class GeoDataRiverPathPointMoveDialog;
 class GeoDataRiverPathPointShiftDialog;
+class GeoDataRiverPathPointRenameDialog;
 class GeoDataRiverPathPointRotateDialog;
 class GeoDataRiverPathPointExtensionAddDialog;
-class GeoDataRiverSurveySelectionChangeCommand;
-class GeoDataRiverPathPointMoveCommand;
-class GeoDataRiverPathPointShiftCenterCommand;
-class GeoDataRiverPathPointRotateCommand;
-class GeoDataRiverPathPointRenameCommand;
-class GeoDataRiverPathPointDeleteCommand;
-class GeoDataRiverPathPointAddExtensionCommand;
-class GeoDataRiverPathPointRemoveExtensionCommand;
-class GeoDataRiverSurveyTranslateCommand;
-class GeoDataRiverSurveyMouseRotateCommand;
-class GeoDataRiverSurveyMouseShiftCommand;
-class GeoDataRiverSurveyMouseMoveExtensionCommand;
-class GeoDataRiverPathPointInsertDialog;
-class GeoDataRiverPathPointInsertCommand;
-class GeoDataRiverPathPointExpandCommand;
 class GeoDataRiverPathPointExpandDialog;
-class GeoDataRiverSurveyCrosssectionEditCommand;
+class GeoDataRiverPathPointInsertDialog;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
 class GeoDataRiverCrosssectionAltitudeMoveDialog;
-class GeoDataRiverSurveyCrosssectionDragEditCommand;
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
-class GeoDataRiverSurveyDisplaySettingCommand;
-
 class GridCreatingConditionRiverSurveyInterface;
 class GeoDataRiverSurveyProxy;
 
@@ -283,34 +267,38 @@ private:
 	Qt::KeyboardModifiers m_keyboardModifiers;
 	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
 
+private:
+	class AddExtensionCommand;
+	class ChangeSelectionCommand;
+	class DeleteRiverPathPointCommand;
+	class EditCrosssectionCommand;
+	class EditDisplaySettingCommand;
+	class ExpandCrosssectionCommand;
+	class InsertRiverPathPointCommand;
+	class MouseEditCrosssectionCommand;
+	class MouseMoveExtensionCommand;
+	class MouseRotateRiverCrosssectionCommand;
+	class MouseShiftRiverPathCenterCommand;
+	class MoveRiverPathPointCommand;
+	class RemoveExtensionCommand;
+	class RenameRiverPathPointCommand;
+	class RotateRiverCrosssectionCommand;
+	class ShiftRiverPathCenterCommand;
+	class TranslateRiverPathPointCommand;
+
 public:
 	friend class GeoDataRiverSurveyCreator;
 	friend class GeoDataRiverSurveyImporter;
 	friend class GeoDataRiverPathPointMoveDialog;
 	friend class GeoDataRiverPathPointShiftDialog;
+	friend class GeoDataRiverPathPointRenameDialog;
 	friend class GeoDataRiverPathPointRotateDialog;
 	friend class GeoDataRiverPathPointExtensionAddDialog;
 	friend class GeoDataRiverPathPointInsertDialog;
-	friend class GeoDataRiverSurveySelectionChangeCommand;
-	friend class GeoDataRiverPathPointMoveCommand;
-	friend class GeoDataRiverPathPointShiftCenterCommand;
-	friend class GeoDataRiverPathPointRotateCommand;
-	friend class GeoDataRiverPathPointRenameCommand;
-	friend class GeoDataRiverPathPointDeleteCommand;
-	friend class GeoDataRiverPathPointAddExtensionCommand;
-	friend class GeoDataRiverPathPointRemoveExtensionCommand;
-	friend class GeoDataRiverSurveyTranslateCommand;
-	friend class GeoDataRiverSurveyMouseRotateCommand;
-	friend class GeoDataRiverSurveyMouseShiftCommand;
-	friend class GeoDataRiverSurveyMouseMoveExtensionCommand;
-	friend class GeoDataRiverPathPointInsertCommand;
-	friend class GeoDataRiverPathPointExpandCommand;
 	friend class GeoDataRiverPathPointExpandDialog;
-	friend class GeoDataRiverSurveyCrosssectionEditCommand;
-	friend class GeoDataRiverSurveyCrosssectionDragEditCommand;
 	friend class GeoDataRiverCrosssectionAltitudeMoveDialog;
+	friend class GeoDataRiverSurveyCrosssectionWindow;
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
-	friend class GeoDataRiverSurveyDisplaySettingCommand;
 
 	friend class GeoDataRiverSurveyProxy;
 };

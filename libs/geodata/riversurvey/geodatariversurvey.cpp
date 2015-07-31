@@ -626,11 +626,12 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProces
 	openCrossSectionWindow();
 }
 
-class GeoDataRiverSurveyTranslateCommand : public QUndoCommand
+class GeoDataRiverSurvey::TranslateRiverPathPointCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyTranslateCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Move Traversal Line")) {
+	TranslateRiverPathPointCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Move Traversal Line")}
+	{
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
 		double fromX, fromY, toX, toY;
@@ -677,7 +678,7 @@ public:
 		return iRIC::generateCommandId("GeoDataRiverSurveyTranslateCommand");
 	}
 	virtual bool mergeWith(const QUndoCommand* other) {
-		const GeoDataRiverSurveyTranslateCommand* other2 = dynamic_cast<const GeoDataRiverSurveyTranslateCommand*>(other);
+		const TranslateRiverPathPointCommand* other2 = dynamic_cast<const TranslateRiverPathPointCommand*>(other);
 		if (other2 == nullptr) { return false; }
 		if (other2->m_points == m_points) {
 			m_newPositions = other2->m_newPositions;
@@ -693,11 +694,12 @@ private:
 	GeoDataRiverSurvey* m_rs;
 };
 
-class GeoDataRiverSurveyMouseRotateCommand : public QUndoCommand
+class GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyMouseRotateCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Rotate Traversal Line")) {
+	MouseRotateRiverCrosssectionCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")}
+	{
 		GeoDataRiverPathPoint* p = data->m_headPoint->nextPoint();
 		while (p != nullptr) {
 			if (p->IsSelected) {
@@ -741,7 +743,7 @@ public:
 		return iRIC::generateCommandId("GeoDataRiverSurveyMouseRotate");
 	}
 	virtual bool mergeWith(const QUndoCommand* other) {
-		const GeoDataRiverSurveyMouseRotateCommand* other2 = dynamic_cast<const GeoDataRiverSurveyMouseRotateCommand*>(other);
+		const MouseRotateRiverCrosssectionCommand* other2 = dynamic_cast<const MouseRotateRiverCrosssectionCommand*>(other);
 		if (other2 == nullptr) { return false; }
 		if (other2->m_point == m_point) {
 			m_newDirection = other2->m_newDirection;
@@ -757,11 +759,12 @@ private:
 	GeoDataRiverSurvey* m_rs;
 };
 
-class GeoDataRiverSurveyMouseShiftCommand : public QUndoCommand
+class GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyMouseShiftCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Shift Center Point")) {
+	MouseShiftRiverPathCenterCommand(QPoint from, QPoint to, GeoDataRiverSurvey* data) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Shift Center Point")}
+	{
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
 		double fromX, fromY, toX, toY;
@@ -811,7 +814,7 @@ public:
 		return iRIC::generateCommandId("GeoDataRiverSurveyMouseShift");
 	}
 	virtual bool mergeWith(const QUndoCommand* other) {
-		const GeoDataRiverSurveyMouseShiftCommand* other2 = dynamic_cast<const GeoDataRiverSurveyMouseShiftCommand*>(other);
+		const MouseShiftRiverPathCenterCommand* other2 = dynamic_cast<const MouseShiftRiverPathCenterCommand*>(other);
 		if (other2 == nullptr) { return false; }
 		if (other2->m_points == m_points) {
 			m_shiftValue += other2->m_shiftValue;
@@ -826,11 +829,12 @@ private:
 	GeoDataRiverSurvey* m_rs;
 };
 
-class GeoDataRiverSurveyMouseMoveExtensionCommand : public QUndoCommand
+class GeoDataRiverSurvey::MouseMoveExtensionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyMouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Move Extension Line End")) {
+	MouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Move Extension Line End")}
+	{
 		m_left = left;
 		PreProcessorGraphicsViewInterface* gview = data->graphicsView();
 		m_rs = data;
@@ -882,10 +886,10 @@ public:
 		m_rs->updateCrossectionWindows();
 	}
 	int id() const {
-		return iRIC::generateCommandId(" GeoDataRiverPathPointMouseMoveExtension");
+		return iRIC::generateCommandId("GeoDataRiverPathPointMouseMoveExtension");
 	}
 	virtual bool mergeWith(const QUndoCommand* other) {
-		const GeoDataRiverSurveyMouseMoveExtensionCommand* other2 = dynamic_cast<const GeoDataRiverSurveyMouseMoveExtensionCommand*>(other);
+		const MouseMoveExtensionCommand* other2 = dynamic_cast<const MouseMoveExtensionCommand*>(other);
 		if (other2 == nullptr) { return false; }
 		if (other2->m_point == m_point && other2->m_left == m_left) {
 			m_newPosition = other2->m_newPosition;
@@ -929,27 +933,27 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 				break;
 			case meTranslate:
 				// execute translation.
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyTranslateCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meRotateRight:
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyMouseRotateCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meRotateLeft:
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyMouseRotateCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meShift:
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyMouseShiftCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(m_currentPoint, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meMoveExtentionEndPointLeft:
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyMouseMoveExtensionCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meMoveExtentionEndPointRight:
-				iRICUndoStack::instance().push(new GeoDataRiverSurveyMouseMoveExtensionCommand(false, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, QPoint(event->x(), event->y()), this));
 				m_currentPoint = QPoint(event->x(), event->y());
 				break;
 			case meExpansionRight:
@@ -1037,11 +1041,12 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 	}
 }
 
-class GeoDataRiverSurveySelectionChangeCommand : public QUndoCommand
+class GeoDataRiverSurvey::ChangeSelectionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveySelectionChangeCommand(GeoDataRiverSurvey* rs, MouseBoundingBox* box)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Selection Change")) {
+	ChangeSelectionCommand(GeoDataRiverSurvey* rs, MouseBoundingBox* box) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Selection Change")}
+	{
 		m_rs = rs;
 		// store old selection info.
 		buildSelectedPointsSet(m_oldSelectedPoints);
@@ -1105,7 +1110,6 @@ private:
 	GeoDataRiverSurvey* m_rs;
 };
 
-
 void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
 	if (event->button() == Qt::LeftButton) {
@@ -1126,7 +1130,7 @@ void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraph
 				v->restoreUpdateRate();
 
 				// selection change is made not undo-able
-				GeoDataRiverSurveySelectionChangeCommand com(this, box);
+				ChangeSelectionCommand com(this, box);
 				com.redo();
 			}
 			m_definingBoundingBox = false;
@@ -1813,11 +1817,12 @@ void GeoDataRiverSurvey::moveSelectedPoints()
 	dialog->show();
 }
 
-class GeoDataRiverPathPointDeleteCommand : public QUndoCommand
+class GeoDataRiverSurvey::DeleteRiverPathPointCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointDeleteCommand(GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Delete Traversal Lines")) {
+	DeleteRiverPathPointCommand(GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Delete Traversal Lines")}
+	{
 		m_redoed = false;
 		m_rs = rs;
 		GeoDataRiverPathPoint* p = m_rs->headPoint();
@@ -1835,7 +1840,7 @@ public:
 			p = p->nextPoint();
 		}
 	}
-	~GeoDataRiverPathPointDeleteCommand() {
+	~DeleteRiverPathPointCommand() {
 		if (m_redoed) {
 			// remove the points.
 			for (auto point : m_deletedPoints) {
@@ -1903,7 +1908,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 	if (num - selectedNum < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("River survey data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
 	} else {
-		iRICUndoStack::instance().push(new GeoDataRiverPathPointDeleteCommand(this));
+		iRICUndoStack::instance().push(new DeleteRiverPathPointCommand(this));
 	}
 }
 
@@ -1926,7 +1931,6 @@ void GeoDataRiverSurvey::expandSelectedPoints()
 	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 	dialog->show();
 }
-
 
 void GeoDataRiverSurvey::rotateSelectedPoint()
 {
@@ -1978,11 +1982,12 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 	dialog->show();
 }
 
-class GeoDataRiverPathPointRemoveExtensionCommand : public QUndoCommand
+class GeoDataRiverSurvey::RemoveExtensionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointRemoveExtensionCommand(bool left, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Remove Extension Line")) {
+	RemoveExtensionCommand(bool left, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Remove Extension Line")}
+	{
 		m_left = left;
 		m_position = pos;
 		m_point = p;
@@ -2027,13 +2032,13 @@ private:
 void GeoDataRiverSurvey::removeLeftExtensionPoint()
 {
 	GeoDataRiverPathPoint* selected = selectedPoint();
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointRemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
+	iRICUndoStack::instance().push(new RemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::removeRightExtensionPoint()
 {
 	GeoDataRiverPathPoint* selected = selectedPoint();
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointRemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
+	iRICUndoStack::instance().push(new RemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::restoreMouseEventMode()
@@ -2284,10 +2289,12 @@ void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 	gItem->informCtrlPointUpdateToCrosssectionWindows();
 }
 
-class GeoDataRiverSurveyDisplaySettingCommand : public QUndoCommand
+class GeoDataRiverSurvey::EditDisplaySettingCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, GeoDataRiverSurvey* s) {
+	EditDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, GeoDataRiverSurvey* s) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Edit Display Setting")}
+	{
 		m_survey = s;
 		m_newBgVisible = bgvisible;
 		m_newOpacityPercent = opacityP;
@@ -2378,7 +2385,7 @@ void GeoDataRiverSurvey::displaySetting()
 
 	int ret = dialog.exec();
 	if (ret != dialog.Accepted) {return;}
-	iRICUndoStack::instance().push(new GeoDataRiverSurveyDisplaySettingCommand(dialog.colormapVisible(), dialog.opacityPercent(), dialog.linesVisible(), dialog.lineColor(), dialog.zScale(), this));
+	iRICUndoStack::instance().push(new EditDisplaySettingCommand(dialog.colormapVisible(), dialog.opacityPercent(), dialog.linesVisible(), dialog.lineColor(), dialog.zScale(), this));
 }
 
 void GeoDataRiverSurvey::switchInterpolateModeToLinear()
@@ -2396,20 +2403,6 @@ void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 	m_interpolateSplineAction->setChecked(true);
 	updateInterpolators();
 }
-
-/*
-void GeoDataRiverSurvey::updateBackgroundVisibility(bool visible)
-{
-	m_showBackground = visible;
-	m_backgroundActor->SetVisibility(visible);
-	if (m_showBackground){
-		actorCollection()->AddItem(m_backgroundActor);
-	}else{
-		actorCollection()->RemoveItem(m_backgroundActor);
-	}
-	updateVisibility();
-}
-*/
 
 void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black, GeoDataRiverPathPoint* red, GeoDataRiverPathPoint* blue)
 {

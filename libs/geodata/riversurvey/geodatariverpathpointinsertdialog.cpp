@@ -69,18 +69,19 @@ void GeoDataRiverPathPointInsertDialog::handleButtonClick(QAbstractButton* butto
 	}
 }
 
-class GeoDataRiverPathPointInsertCommand : public QUndoCommand
+class GeoDataRiverSurvey::InsertRiverPathPointCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointInsertCommand(bool apply, GeoDataRiverPathPoint* prev, GeoDataRiverPathPoint* newpoint, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Insert Traversal Line")) {
+	InsertRiverPathPointCommand(bool apply, GeoDataRiverPathPoint* prev, GeoDataRiverPathPoint* newpoint, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Insert Traversal Line")}
+	{
 		m_apply = apply;
 		m_previousPoint = prev;
 		m_newPoint = newpoint;
 		m_rs = rs;
 		m_redoed = false;
 	}
-	~GeoDataRiverPathPointInsertCommand() {
+	~InsertRiverPathPointCommand() {
 		if ((! m_redoed) && (! m_apply)) {
 			delete m_newPoint;
 		}
@@ -124,7 +125,7 @@ void GeoDataRiverPathPointInsertDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	updatePoint();
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointInsertCommand(false, m_insertTarget, m_newPoint, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::InsertRiverPathPointCommand(false, m_insertTarget, m_newPoint, m_rs));
 	QDialog::accept();
 }
 
@@ -147,7 +148,7 @@ void GeoDataRiverPathPointInsertDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	updatePoint();
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointInsertCommand(true, m_insertTarget, m_newPoint, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::InsertRiverPathPointCommand(true, m_insertTarget, m_newPoint, m_rs));
 	m_applyed = true;
 }
 

@@ -42,11 +42,12 @@ GeoDataRiverPathPointRenameDialog::~GeoDataRiverPathPointRenameDialog()
 	delete ui;
 }
 
-class GeoDataRiverPathPointRenameCommand : public QUndoCommand
+class GeoDataRiverSurvey::RenameRiverPathPointCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointRenameCommand(const QString& newname, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Rename Traversal Line")) {
+	RenameRiverPathPointCommand(const QString& newname, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
+		QUndoCommand{GeoDataRiverSurvey::tr("Rename Traversal Line")}
+	{
 		m_point = p;
 		m_rs = rs;
 		m_newName = newname;
@@ -79,7 +80,7 @@ void GeoDataRiverPathPointRenameDialog::accept()
 	QString newname = oss.str().c_str();
 
 	if (newname != m_point->name()) {
-		iRICUndoStack::instance().push(new GeoDataRiverPathPointRenameCommand(newname, m_point, m_rs));
+		iRICUndoStack::instance().push(new GeoDataRiverSurvey::RenameRiverPathPointCommand(newname, m_point, m_rs));
 	}
 	QDialog::accept();
 }

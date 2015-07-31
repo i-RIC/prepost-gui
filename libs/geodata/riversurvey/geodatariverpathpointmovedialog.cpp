@@ -52,11 +52,12 @@ void GeoDataRiverPathPointMoveDialog::setSingleSelection(bool single)
 	}
 }
 
-class GeoDataRiverPathPointMoveCommand : public QUndoCommand
+class GeoDataRiverSurvey::MoveRiverPathPointCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointMoveCommand(bool apply, QVector2D offset, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Move Traversal Lines")) {
+	MoveRiverPathPointCommand(bool apply, QVector2D offset, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Move Traversal Lines")}
+	{
 		m_apply = apply;
 		GeoDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
@@ -112,7 +113,7 @@ void GeoDataRiverPathPointMoveDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector2D offset(ui->offsetX->value(), ui->offsetY->value());
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointMoveCommand(false, offset, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::MoveRiverPathPointCommand(false, offset, m_rs));
 	QDialog::accept();
 }
 
@@ -154,7 +155,7 @@ void GeoDataRiverPathPointMoveDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector2D offset(ui->offsetX->value(), ui->offsetY->value());
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointMoveCommand(true, offset, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::MoveRiverPathPointCommand(true, offset, m_rs));
 	m_applyed = true;
 }
 

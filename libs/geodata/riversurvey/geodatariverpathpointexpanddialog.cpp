@@ -69,11 +69,12 @@ void GeoDataRiverPathPointExpandDialog::handleButtonClick(QAbstractButton* butto
 	}
 }
 
-class GeoDataRiverPathPointExpandCommand : public QUndoCommand
+class GeoDataRiverSurvey::ExpandCrosssectionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointExpandCommand(bool apply, QList<GeoDataRiverPathPoint*>& points, QList<double> ratios, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Expand Traversal Lines")) {
+	ExpandCrosssectionCommand(bool apply, QList<GeoDataRiverPathPoint*>& points, QList<double> ratios, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Expand Traversal Lines")}
+	{
 		m_apply = apply;
 		m_points = points;
 		for (int i = 0; i < points.count(); ++i) {
@@ -125,7 +126,7 @@ void GeoDataRiverPathPointExpandDialog::accept()
 	}
 	QList<double> ratios;
 	getRatios(ratios);
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointExpandCommand(false, m_points, ratios, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::ExpandCrosssectionCommand(false, m_points, ratios, m_rs));
 	QDialog::accept();
 }
 
@@ -195,7 +196,7 @@ void GeoDataRiverPathPointExpandDialog::apply()
 	}
 	QList<double> ratios;
 	getRatios(ratios);
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointExpandCommand(true, m_points, ratios, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::ExpandCrosssectionCommand(true, m_points, ratios, m_rs));
 	m_applyed = true;
 }
 

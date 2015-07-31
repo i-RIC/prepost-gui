@@ -38,11 +38,12 @@ void GeoDataRiverPathPointRotateDialog::setCurrentRelativeAngle(double current)
 	ui->relativeEdit->setValue(current);
 }
 
-class GeoDataRiverPathPointRotateCommand : public QUndoCommand
+class GeoDataRiverSurvey::RotateRiverCrosssectionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointRotateCommand(bool apply, double angle, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Rotate Traversal Line")) {
+	RotateRiverCrosssectionCommand(bool apply, double angle, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Rotate Traversal Line")}
+	{
 		m_apply = apply;
 		GeoDataRiverPathPoint* p = rs->headPoint();
 		p = p->nextPoint();
@@ -90,7 +91,7 @@ void GeoDataRiverPathPointRotateDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointRotateCommand(false, ui->incrementEdit->value(), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::RotateRiverCrosssectionCommand(false, ui->incrementEdit->value(), m_rs));
 	QDialog::accept();
 }
 
@@ -125,7 +126,7 @@ void GeoDataRiverPathPointRotateDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointRotateCommand(true, ui->incrementEdit->value(), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::RotateRiverCrosssectionCommand(true, ui->incrementEdit->value(), m_rs));
 	m_applyed = true;
 }
 

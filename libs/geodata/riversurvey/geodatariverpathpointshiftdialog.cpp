@@ -46,11 +46,12 @@ GeoDataRiverPathPointShiftDialog::~GeoDataRiverPathPointShiftDialog()
 }
 
 
-class GeoDataRiverPathPointShiftCenterCommand : public QUndoCommand
+class GeoDataRiverSurvey::ShiftRiverPathCenterCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointShiftCenterCommand(bool apply, double offset, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Shift River Center Points")) {
+	ShiftRiverPathCenterCommand(bool apply, double offset, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Shift River Center Points")}
+	{
 		m_apply = apply;
 
 		GeoDataRiverPathPoint* p = rs->headPoint();
@@ -111,7 +112,7 @@ void GeoDataRiverPathPointShiftDialog::accept()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointShiftCenterCommand(false, ui->shiftEdit->value(), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::ShiftRiverPathCenterCommand(false, ui->shiftEdit->value(), m_rs));
 	QDialog::accept();
 }
 
@@ -142,7 +143,7 @@ void GeoDataRiverPathPointShiftDialog::apply()
 		// undo the apply action.
 		iRICUndoStack::instance().undo();
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointShiftCenterCommand(true, ui->shiftEdit->value(), m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::ShiftRiverPathCenterCommand(true, ui->shiftEdit->value(), m_rs));
 	m_applyed = true;
 }
 

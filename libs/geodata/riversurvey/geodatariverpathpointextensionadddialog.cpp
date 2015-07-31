@@ -31,11 +31,12 @@ GeoDataRiverPathPointExtensionAddDialog::~GeoDataRiverPathPointExtensionAddDialo
 	delete ui;
 }
 
-class GeoDataRiverPathPointAddExtensionCommand : public QUndoCommand
+class GeoDataRiverSurvey::AddExtensionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverPathPointAddExtensionCommand(bool apply, GeoDataRiverPathPointExtensionAddDialog::LineMode lm, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs)
-		: QUndoCommand(GeoDataRiverSurvey::tr("Add Extension Line")) {
+	AddExtensionCommand(bool apply, GeoDataRiverPathPointExtensionAddDialog::LineMode lm, const QVector2D& pos, GeoDataRiverPathPoint* p, GeoDataRiverSurvey* rs) :
+		QUndoCommand {GeoDataRiverSurvey::tr("Add Extension Line")}
+	{
 		m_apply = apply;
 		m_lineMode = lm;
 		m_position = pos;
@@ -95,7 +96,7 @@ void GeoDataRiverPathPointExtensionAddDialog::accept()
 		// set by text boxes.
 		pos = QVector2D(ui->positionXEdit->value(), ui->positionYEdit->value());
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointAddExtensionCommand(false, m_lineMode, pos, m_point, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::AddExtensionCommand(false, m_lineMode, pos, m_point, m_rs));
 	QDialog::accept();
 }
 
@@ -128,7 +129,7 @@ void GeoDataRiverPathPointExtensionAddDialog::apply()
 		// set by text boxes.
 		pos = QVector2D(ui->positionXEdit->value(), ui->positionYEdit->value());
 	}
-	iRICUndoStack::instance().push(new GeoDataRiverPathPointAddExtensionCommand(true, m_lineMode, pos, m_point, m_rs));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::AddExtensionCommand(true, m_lineMode, pos, m_point, m_rs));
 	m_applyed = true;
 }
 

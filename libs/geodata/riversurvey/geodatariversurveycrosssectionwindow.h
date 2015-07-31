@@ -2,6 +2,7 @@
 #define GEODATARIVERSURVEYCROSSSECTIONWINDOW_H
 
 #include "gd_riversurvey_global.h"
+#include "geodatariversurvey.h"
 #include "geodatarivercrosssection.h"
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/base/additionalmenuwindowinterface.h>
@@ -31,8 +32,6 @@ namespace Ui
 {
 	class GeoDataRiverSurveyCrosssectionWindow;
 }
-
-class GeoDataRiverSurveyCrosssectionEditCommand;
 
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCrosssectionWindow :
 	public QMainWindow,
@@ -145,11 +144,11 @@ public:
 	friend class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 };
 
-class GeoDataRiverSurveyCrosssectionEditCommand : public QUndoCommand
+class GeoDataRiverSurvey::EditCrosssectionCommand : public QUndoCommand
 {
 
 public:
-	GeoDataRiverSurveyCrosssectionEditCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
+	EditCrosssectionCommand(bool apply, const QString& title, GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool tableaction = false, QUndoCommand* parentcommand = nullptr);
 	void redo() override;
 	void undo() override;
 

@@ -598,11 +598,12 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::cameraZoomOutY()
 }
 
 
-class GeoDataRiverSurveyCrosssectionDragEditCommand : public QUndoCommand
+class GeoDataRiverSurvey::MouseEditCrosssectionCommand : public QUndoCommand
 {
 public:
-	GeoDataRiverSurveyCrosssectionDragEditCommand(GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool dragging = false)
-		: QUndoCommand(GeoDataRiverSurveyCrosssectionWindowGraphicsView::tr("Altitude Points Move")) {
+	MouseEditCrosssectionCommand(GeoDataRiverPathPoint* p, const GeoDataRiverCrosssection::AltitudeList& after, const GeoDataRiverCrosssection::AltitudeList& before, GeoDataRiverSurveyCrosssectionWindow* w, GeoDataRiverSurvey* rs, bool dragging = false) :
+		QUndoCommand {GeoDataRiverSurveyCrosssectionWindowGraphicsView::tr("Altitude Points Move")}
+	{
 		m_point = p;
 		m_before = before;
 		m_after = after;
@@ -634,7 +635,7 @@ public:
 		return iRIC::generateCommandId("GeoDataRiverSurveyCrosssectionDragEdit");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataRiverSurveyCrosssectionDragEditCommand* comm = dynamic_cast<const GeoDataRiverSurveyCrosssectionDragEditCommand*>(other);
+		const MouseEditCrosssectionCommand* comm = dynamic_cast<const MouseEditCrosssectionCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (m_point != comm->m_point) {return false;}
 		if (! m_dragging) {return false;}
@@ -758,7 +759,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEven
 		} else {
 			GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionDragEditCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, true));
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, true));
 		}
 	}
 	m_oldPosition = event->pos();
@@ -868,7 +869,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseE
 		} else {
 			GeoDataRiverCrosssection::AltitudeList newAltitudeList = m_oldAltitudeList;
 			updateAltitudeList(newAltitudeList, m_dragStartPoint, event->pos());
-			iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionDragEditCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, false));
+			iRICUndoStack::instance().push(new GeoDataRiverSurvey::MouseEditCrosssectionCommand(m_parentWindow->m_editTargetPoint, newAltitudeList, m_oldAltitudeList, m_parentWindow, m_parentWindow->m_targetRiverSurvey, false));
 			m_mouseEventMode = meNormal;
 		}
 		updateMouseCursor();
@@ -1061,7 +1062,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::activateSelectedRows()
 		alist[index.row()].setActive(true);
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionEditCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
@@ -1082,7 +1083,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::inactivateSelectedRows()
 		return;
 	}
 	after = alist;
-	iRICUndoStack::instance().push(new GeoDataRiverSurveyCrosssectionEditCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
+	iRICUndoStack::instance().push(new GeoDataRiverSurvey::EditCrosssectionCommand(false, tr("Inactivate Elevation Points"), m_parentWindow->m_editTargetPoint, after, before, m_parentWindow, m_parentWindow->m_targetRiverSurvey));
 }
 
 void GeoDataRiverSurveyCrosssectionWindowGraphicsView::moveSelectedRows()
