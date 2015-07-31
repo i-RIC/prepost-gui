@@ -2,7 +2,7 @@
 #include "gridattributedimensioncontainer.h"
 
 GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def)
-	: GridAttributeBaseObject(def->condition())
+	: GridAttributeBaseObject(def->attribute())
 {
 	m_definition = def;
 	m_currentIndex = 0;

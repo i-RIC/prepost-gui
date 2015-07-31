@@ -54,7 +54,7 @@ const QString& SolverDefinitionGridAttributeDimension::englishCaption() const
 	return m_impl->m_englishCaption;
 }
 
-SolverDefinitionGridAttribute* SolverDefinitionGridAttributeDimension::condition() const
+SolverDefinitionGridAttribute* SolverDefinitionGridAttributeDimension::attribute() const
 {
 	return m_impl->m_attribute;
 }

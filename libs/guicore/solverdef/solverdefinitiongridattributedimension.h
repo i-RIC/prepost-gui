@@ -18,7 +18,7 @@ public:
 	const QString& name() const;
 	const QString& caption() const;
 	const QString& englishCaption() const;
-	SolverDefinitionGridAttribute* condition() const;
+	SolverDefinitionGridAttribute* attribute() const;
 	virtual GridAttributeDimensionContainer* buildContainer() = 0;
 	GridAttributeDimensionSelectWidget* buildSelectWidget(GridAttributeDimensionContainer* container);
 
