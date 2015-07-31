@@ -138,29 +138,23 @@ class Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand : pu
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item) :
-		QUndoCommand {QObject::tr("Update Arrow Setting")}
-	{
-		m_newSetting = s;
-		m_newStSetting = sts;
-
-		m_oldSetting = item->m_setting;
-		m_oldStSetting = item->m_stSetting;
-
-		m_item = item;
-	}
+		QUndoCommand {QObject::tr("Update Arrow Setting")},
+		m_newSetting {s},
+		m_newStSetting {sts},
+		m_oldSetting {item->m_setting},
+		m_oldStSetting {item->m_stSetting},
+		m_item {item}
+	{}
 	void redo() {
 		m_item->m_setting = m_newSetting;
 		m_item->m_stSetting = m_newStSetting;
 		m_item->setCurrentSolution(m_newSetting.currentSolution);
-
 		m_item->updateActorSettings();
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
 		m_item->m_stSetting = m_oldStSetting;
 		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-
 		m_item->updateActorSettings();
 	}
 private:

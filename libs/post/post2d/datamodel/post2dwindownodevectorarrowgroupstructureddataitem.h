@@ -42,9 +42,6 @@ private:
 	vtkSmartPointer<vtkExtractGrid> m_arrowExtract;
 
 	class SetSettingCommand;
-
-public:
-	friend class Post2dWindowArrowStructuredSetProperty;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H

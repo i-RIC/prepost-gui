@@ -115,26 +115,9 @@ protected:
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 
 	Setting m_setting;
-/*
-	QString m_scalarValueName;
-	QString m_currentSolution;
-	QColor m_color;
-	double m_oldCameraScale;
-	double m_scaleFactor;
-	StructuredGridRegion::RegionMode m_regionMode;
-	Mapping m_mapping;
-	LegendMode m_legendMode;
-	LengthMode m_lengthMode;
-	double m_standardValue;
-	double m_legendLength;
-	double m_minimumValue;
-	ArrowSettingContainer m_arrowSetting;
-*/
 
-public:
-	friend class Post2dWindowGridArrowSelectSolution;
-	friend class Post2dWindowArrowStructuredSetProperty;
-	friend class Post2dWindowArrowUnstructuredSetProperty;
+private:
+	class SelectSolutionCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPDATAITEM_H

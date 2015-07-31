@@ -49,9 +49,6 @@ private:
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 
 	class SetSettingCommand;
-
-public:
-	friend class Post2dWindowArrowUnstructuredSetProperty;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPUNSTRUCTUREDDATAITEM_H

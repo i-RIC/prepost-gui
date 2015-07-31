@@ -148,30 +148,26 @@ class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SetSettingCommand : 
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* item) :
-		QUndoCommand {QObject::tr("Update Arrow Setting")}
-	{
-		m_newSetting = s;
-		m_newUnsSetting = unss;
-
-		m_oldSetting = item->m_setting;
-		m_oldUnsSetting = item->m_unsSetting;
-
-		m_item = item;
-	}
+		QUndoCommand {QObject::tr("Update Arrow Setting")},
+		m_newSetting {s},
+		m_newUnsSetting {unss},
+		m_oldSetting {item->m_setting},
+		m_oldUnsSetting {item->m_unsSetting},
+		m_item {item}
+	{}
 	void redo() {
 		m_item->m_setting = m_newSetting;
 		m_item->m_unsSetting = m_newUnsSetting;
 		m_item->setCurrentSolution(m_newSetting.currentSolution);
-
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
 		m_item->m_unsSetting = m_oldUnsSetting;
 		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-
 		m_item->updateActorSettings();
 	}
+
 private:
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_newUnsSetting;

@@ -96,32 +96,26 @@ Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataI
 	renderer()->RemoveActor(m_arrowActor);
 }
 
-class Post2dWindowGridArrowSelectSolution : public QUndoCommand
+class Post2dWindowNodeVectorArrowGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post2dWindowGridArrowSelectSolution(const QString& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_setting.currentSolution;
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
+	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item) :
+		QUndoCommand {Post2dWindowNodeVectorArrowGroupDataItem::tr("Arrow Physical Value Change")},
+		m_newCurrentSolution {newsol},
+		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_item {item}
+	{}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	}
+	void undo() {
+		m_item->setCurrentSolution(m_oldCurrentSolution);
+		m_item->updateActorSettings();
 	}
 private:
-	QString m_oldCurrentSolution;
 	QString m_newCurrentSolution;
+	QString m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorArrowGroupDataItem* m_item;
 };
@@ -129,11 +123,10 @@ private:
 void Post2dWindowNodeVectorArrowGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post2dWindowGridArrowSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post2dWindowGridArrowSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
 }
 
