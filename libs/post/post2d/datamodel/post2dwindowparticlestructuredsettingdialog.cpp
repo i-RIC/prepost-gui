@@ -11,12 +11,10 @@
 
 Post2dWindowParticleStructuredSettingDialog::Post2dWindowParticleStructuredSettingDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::Post2dWindowParticleStructuredSettingDialog)
+	ui {new Ui::Post2dWindowParticleStructuredSettingDialog},
+	m_applying {false}
 {
 	ui->setupUi(this);
-
-	m_timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
-	m_applying = false;
 
 	setupNominations();
 	ui->timeSlider->setTracking(true);
@@ -54,80 +52,65 @@ void Post2dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContai
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowParticleStructuredSettingDialog::setSolution(const QString& sol)
+void Post2dWindowParticleStructuredSettingDialog::setSettings(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting>& sts)
 {
-	int index = m_solutions.indexOf(sol);
+	m_setting = s;
+	m_stSettings = sts;
+
+	// solution
+	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
-}
 
-QString Post2dWindowParticleStructuredSettingDialog::solution() const
-{
-	int index = ui->solutionComboBox->currentIndex();
-	return m_solutions.at(index);
-}
-
-void Post2dWindowParticleStructuredSettingDialog::setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm)
-{
-	m_timeMode = tm;
-	if (m_timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
+	// timemode
+	if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
 		ui->timeSlider->setValue(m_skipNominations.count());
+	} else if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmSkip) {
+		for (int i = 0; i < m_skipNominations.count(); ++i) {
+			if (m_skipNominations.at(i) == s.timeSamplingRate) {
+				ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
+			}
+		}
+	} else if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {
+		for (int i = 0; i < m_subDivNominations.count(); ++i) {
+			if (m_subDivNominations.at(i) == s.timeDivision) {
+				ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
+			}
+		}
 	}
+
+	setupSettingList();
 }
 
-Post2dWindowNodeVectorParticleGroupDataItem::TimeMode Post2dWindowParticleStructuredSettingDialog::timeMode() const
+Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleStructuredSettingDialog::setting() const
 {
+	Post2dWindowNodeVectorParticleGroupDataItem::Setting ret = m_setting;
+
+	// solution
+	int index = ui->solutionComboBox->currentIndex();
+	ret.currentSolution = m_solutions.at(index);
+
+	// timemode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
-		return Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
+		ret.timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmNormal;
 	} else if (ui->timeSlider->value() < m_skipNominations.count()) {
-		return Post2dWindowNodeVectorParticleGroupDataItem::tmSkip;
+		ret.timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmSkip;
+		ret.timeSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
 	} else {
-		return Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
+		ret.timeMode = Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide;
+		ret.timeDivision = m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
 	}
-}
-
-void Post2dWindowParticleStructuredSettingDialog::setTimeSamplingRate(int sr)
-{
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSkip) {return;}
-	for (int i = 0; i < m_skipNominations.count(); ++i) {
-		if (m_skipNominations.at(i) == sr) {
-			ui->timeSlider->setValue(m_skipNominations.count() - i - 1);
-			return;
-		}
-	}
-}
-
-int Post2dWindowParticleStructuredSettingDialog::timeSamplingRate() const
-{
-	if (ui->timeSlider->value() >= m_skipNominations.count()) {return 1;}
-	return m_skipNominations.at(m_skipNominations.count() - ui->timeSlider->value() - 1);
-}
-
-void Post2dWindowParticleStructuredSettingDialog::setTimeDivision(int sd)
-{
-	if (m_timeMode != Post2dWindowNodeVectorParticleGroupDataItem::tmSubdivide) {return;}
-	for (int i = 0; i < m_subDivNominations.count(); ++i) {
-		if (m_subDivNominations.at(i) == sd) {
-			ui->timeSlider->setValue(m_skipNominations.count() + i + 1);
-			return;
-		}
-	}
-}
-
-int Post2dWindowParticleStructuredSettingDialog::timeDivision() const
-{
-	if (ui->timeSlider->value() <= m_skipNominations.count()) {return 1;}
-	return m_subDivNominations.at(ui->timeSlider->value() - m_skipNominations.count() - 1);
+	return ret;
 }
 
 void Post2dWindowParticleStructuredSettingDialog::activeDataChanged(int index)
 {
 
-	if (index == -1 || index >= m_settings.count()) {
+	if (index == -1 || index >= m_stSettings.count()) {
 		m_activeSetting = nullptr;
 		return;
 	}
-	m_activeSetting = &(m_settings[index]);
+	m_activeSetting = &(m_stSettings[index]);
 	applySettings();
 }
 
@@ -191,19 +174,19 @@ void Post2dWindowParticleStructuredSettingDialog::handleSpaceSliderChange(int va
 	if (val < m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("1/%1").arg(m_skipNominations.at(m_skipNominations.count() - val - 1)));
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smSkip;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smSkip;
 			m_activeSetting->spaceSamplingRate = m_skipNominations.at(m_skipNominations.count() - ui->spaceSlider->value() - 1);
 		}
 	} else if (val > m_skipNominations.count()) {
 		ui->spaceValueLabel->setText(QString("%1").arg(m_subDivNominations.at(val - m_skipNominations.count() - 1)));
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smSubdivide;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smSubdivide;
 			m_activeSetting->spaceDivision = m_subDivNominations.at(ui->spaceSlider->value() - m_skipNominations.count() - 1);
 		}
 	} else {
 		ui->spaceValueLabel->setText("1");
 		if (m_activeSetting != nullptr) {
-			m_activeSetting->spaceMode = Post2dWindowStructuredParticleSetSetting::smNormal;
+			m_activeSetting->spaceMode = Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smNormal;
 		}
 	}
 }
@@ -266,7 +249,7 @@ void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 
 void Post2dWindowParticleStructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_settings.count(); ++i) {
+	for (int i = 0; i < m_stSettings.count(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -282,17 +265,17 @@ void Post2dWindowParticleStructuredSettingDialog::applySettings()
 	ui->imaxSlider->setValue(m_activeSetting->range.iMax + 1);
 	ui->jminSlider->setValue(m_activeSetting->range.jMin + 1);
 	ui->jmaxSlider->setValue(m_activeSetting->range.jMax + 1);
-	if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smNormal) {
+	if (m_activeSetting->spaceMode == Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smNormal) {
 		ui->spaceSlider->setValue(m_skipNominations.count());
 		handleSpaceSliderChange(m_skipNominations.count());
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSkip) {
+	} else if (m_activeSetting->spaceMode == Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smSkip) {
 		for (int i = 0; i < m_skipNominations.count(); ++i) {
 			if (m_skipNominations.at(i) == m_activeSetting->spaceSamplingRate) {
 				ui->spaceSlider->setValue(m_skipNominations.count() - i - 1);
 				handleSpaceSliderChange(m_skipNominations.count() - i - 1);
 			}
 		}
-	} else if (m_activeSetting->spaceMode == Post2dWindowStructuredParticleSetSetting::smSubdivide) {
+	} else if (m_activeSetting->spaceMode == Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::smSubdivide) {
 		for (int i = 0; i < m_subDivNominations.count(); ++i) {
 			if (m_subDivNominations.at(i) == m_activeSetting->spaceDivision) {
 				ui->spaceSlider->setValue(m_skipNominations.count() + i + 1);
@@ -308,8 +291,8 @@ void Post2dWindowParticleStructuredSettingDialog::applySettings()
 void Post2dWindowParticleStructuredSettingDialog::addData()
 {
 	if (m_activeSetting == nullptr) {return;}
-	Post2dWindowStructuredParticleSetSetting setting = *m_activeSetting;
-	m_settings.append(setting);
+	Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting setting = *m_activeSetting;
+	m_stSettings.append(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
 	int tmpint = tmpitem->text().toInt();
 	++ tmpint;
@@ -325,10 +308,10 @@ void Post2dWindowParticleStructuredSettingDialog::removeData()
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
 	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
-	m_settings.removeAt(current);
-	if (current >= m_settings.count()) {current = m_settings.count() - 1;}
+	m_stSettings.removeAt(current);
+	if (current >= m_stSettings.count()) {current = m_stSettings.count() - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
-	m_activeSetting = &(m_settings[current]);
+	m_activeSetting = &(m_stSettings[current]);
 	applySettings();
 	updateRemoveButtonStatus();
 }
@@ -340,14 +323,14 @@ void Post2dWindowParticleStructuredSettingDialog::showRegionDialog()
 		dialog.disableActive();
 	}
 	dialog.hideCustom();
-	dialog.setRegionMode(m_regionMode);
+	dialog.setRegionMode(m_setting.regionMode);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_regionMode = dialog.regionMode();
+	m_setting.regionMode = dialog.regionMode();
 }
 
 void Post2dWindowParticleStructuredSettingDialog::updateRemoveButtonStatus()
 {
-	ui->removePushButton->setEnabled(m_settings.count() > 1);
+	ui->removePushButton->setEnabled(m_stSettings.count() > 1);
 }

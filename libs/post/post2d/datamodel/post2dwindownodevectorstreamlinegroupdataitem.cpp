@@ -77,24 +77,23 @@ class Post2dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : pub
 {
 public:
 	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")}
-	{
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_setting.currentSolution;
-		m_item = item;
+		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
+		m_newCurrentSolution {newsol},
+		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_item {item}
+	{}
+	void redo() {
+		m_item->setCurrentSolution(m_newCurrentSolution);
+		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 	}
-	void redo() {
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-	}
 
 private:
-	QString m_oldCurrentSolution;
 	QString m_newCurrentSolution;
+	QString m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };

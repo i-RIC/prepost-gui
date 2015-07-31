@@ -2,30 +2,35 @@
 #define POST2DWINDOWNODEVECTORPARTICLEGROUPSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorparticlegroupdataitem.h"
+#include <misc/compositecontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/colorcontainer.h>
+#include <misc/intcontainer.h>
 #include <QList>
-
-class Post2dWindowParticleStructuredSetProperty;
-
-struct Post2dWindowStructuredParticleSetSetting {
-	enum SpaceMode {smNormal, smSubdivide, smSkip};
-	/// Range to generate grid
-	StructuredGridRegion::Range2d range;
-	SpaceMode spaceMode;
-	int spaceSamplingRate;
-	int spaceDivision;
-	/// Particle color.
-	QColor color;
-	/// Particle size on screen. Specify by pixels on screen.
-	int size;
-};
 
 class Post2dWindowNodeVectorParticleGroupStructuredDataItem : public Post2dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeVectorParticleGroupStructuredDataItem(Post2dWindowDataItem* parent)
-		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
+	struct Setting : public CompositeContainer
+	{
+		enum SpaceMode {smNormal, smSubdivide, smSkip};
+
+		/// Constructor
+		Setting();
+
+		StructuredGridRegion::Range2d range;
+		EnumContainerT<SpaceMode> spaceMode;
+		IntContainer spaceSamplingRate;
+		IntContainer spaceDivision;
+		ColorContainer color;
+		IntContainer size;
+	};
+
+	Post2dWindowNodeVectorParticleGroupStructuredDataItem(Post2dWindowDataItem* parent) :
+		Post2dWindowNodeVectorParticleGroupDataItem {parent}
+	{
 		setDefaultValues();
 	}
 
@@ -44,10 +49,9 @@ private:
 	QList<vtkExtractGrid*> m_extractGrids;
 	QList<vtkSubdivideGrid*> m_subdivideGrids;
 
-	QList<Post2dWindowStructuredParticleSetSetting> m_settings;
+	QList<Setting> m_stSettings;
 
-public:
-	friend class Post2dWindowParticleStructuredSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEGROUPSTRUCTUREDDATAITEM_H

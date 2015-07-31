@@ -22,21 +22,9 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
-	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
-	void setTimeSamplingRate(int sr);
-	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowStructuredParticleSetSetting>& settings) {
-		m_settings = settings;
-		setupSettingList();
-	}
-	QString solution() const;
-	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
-	int timeSamplingRate() const;
-	int timeDivision() const;
-	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
-	const QList<Post2dWindowStructuredParticleSetSetting>& settings() const {return m_settings;}
+	void setSettings(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting>& sts);
+	Post2dWindowNodeVectorParticleGroupDataItem::Setting setting() const;
+	const QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting>& stSettings() const {return m_stSettings;}
 
 private slots:
 	void activeDataChanged(int index);
@@ -64,9 +52,9 @@ private:
 	Ui::Post2dWindowParticleStructuredSettingDialog* ui;
 	QList<QString> m_solutions;
 
-	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;
-	QList<Post2dWindowStructuredParticleSetSetting> m_settings;
-	Post2dWindowStructuredParticleSetSetting* m_activeSetting;
+	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_setting;
+	QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting> m_stSettings;
+	Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting* m_activeSetting;
 	bool m_activeAvailable;
 	bool m_applying;
 

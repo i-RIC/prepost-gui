@@ -9,6 +9,7 @@
 #include <misc/iricundostack.h>
 
 #include <QPushButton>
+#include <QVector2D>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
@@ -93,7 +94,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::informButtonUp(const QPoin
 	apply();
 }
 
-void Post2dWindowStreamlineUnstructuredSettingDialog::updateMousePosition(const QPointF& p)
+void Post2dWindowStreamlineUnstructuredSettingDialog::updateMousePosition(const QVector2D &p)
 {
 	if (ui->pointsMouseRadioButton->isChecked() && m_pressed) {
 		ui->point2XEdit->setValue(p.x());

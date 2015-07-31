@@ -2,30 +2,37 @@
 #define POST2DWINDOWNODEVECTORPARTICLEGROUPUNSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorparticlegroupdataitem.h"
-#include <QVector2D>
+#include <misc/compositecontainer.h>
+#include <misc/qpointfcontainer.h>
+#include <misc/boolcontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/colorcontainer.h>
+
 #include <QList>
 
-class Post2dWindowParticleUnstructuredSetProperty;
 class Post2dWindowParticleUnstructuredSettingDialog;
-
-struct Post2dWindowUnstructuredParticleSetSetting {
-	QVector2D point1;
-	QVector2D point2;
-	bool pointsSet;
-	int numberOfPoints;
-	/// Particle color.
-	QColor color;
-	/// Particle size on screen. Specify by pixels on screen.
-	int size;
-};
 
 class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem : public Post2dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
-		: Post2dWindowNodeVectorParticleGroupDataItem(parent) {
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		QPointFContainer point1;
+		QPointFContainer point2;
+		BoolContainer pointsSet;
+		IntContainer numberOfPoints;
+		ColorContainer color;
+		IntContainer size;
+	};
+
+	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent) :
+		Post2dWindowNodeVectorParticleGroupDataItem {parent}
+	{
 		setDefaultValues();
 		setupTmpSource();
 	}
@@ -41,8 +48,8 @@ protected:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent*, VTKGraphicsView*) override;
-	void setSetting(const QVector2D& v1, const QVector2D& v2, int num, int pointSize);
-	void clearSetting();
+	void setSetting(const QPointF& v1, const QPointF& v2, int num, int pointSize);
+	void hidePreviewSetting();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -57,16 +64,17 @@ private:
 	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
 	vtkSmartPointer<vtkActor> m_previewActor;
 
-	QList<Post2dWindowUnstructuredParticleSetSetting> m_settings;
+	QList<Setting> m_unstSettings;
 
 	Post2dWindowParticleUnstructuredSettingDialog* m_dialog;
 
-	QVector2D m_point1;
-	QVector2D m_point2;
+	QPointF m_point1;
+	QPointF m_point2;
 	int m_numberOfPoints;
 
+	class SetSettingCommand;
+
 public:
-	friend class Post2dWindowParticleUnstructuredSetProperty;
 	friend class Post2dWindowParticleUnstructuredSettingDialog;
 };
 

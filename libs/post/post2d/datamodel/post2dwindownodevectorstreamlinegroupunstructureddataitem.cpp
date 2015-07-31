@@ -147,12 +147,10 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 	}
 }
 
-
 vtkPointSet* Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::getSource(int i)
 {
 	return m_sourcePoints[i];
 }
-
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
@@ -169,7 +167,6 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 		}
 	}
 	updateActorSettings();
-
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -184,7 +181,6 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectM
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
-
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::showPropertyDialog()

@@ -3,7 +3,7 @@
 
 #include <QDialog>
 #include <QList>
-#include <QVector2D>
+#include <QPointF>
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorparticlegroupunstructureddataitem.h"
 
@@ -14,7 +14,6 @@ namespace Ui
 
 class QAbstractButton;
 class PostZoneDataContainer;
-class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem;
 
 class Post2dWindowParticleUnstructuredSettingDialog : public QDialog
 {
@@ -29,27 +28,29 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
-	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
-	void setTimeSamplingRate(int sr);
-	void setTimeDivision(int sd);
-	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
-	void setSettings(const QList<Post2dWindowUnstructuredParticleSetSetting>& settings) {
-		m_settings = settings;
-		setupSettingList();
-	}
-	QString solution() const;
-	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
-	int timeSamplingRate() const;
-	int timeDivision() const;
-	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
-	const QList<Post2dWindowUnstructuredParticleSetSetting>& settings() const {return m_settings;}
+//	void setSolution(const QString& sol);
+//	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
+//	void setTimeSamplingRate(int sr);
+//	void setTimeDivision(int sd);
+//	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
+	void setSettings(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting> & unsts);
+//	void setSettings(const QList<Post2dWindowUnstructuredParticleSetSetting>& settings) {
+//		m_settings = settings;
+//		setupSettingList();
+//	}
+//	QString solution() const;
+//	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
+//	int timeSamplingRate() const;
+//	int timeDivision() const;
+//	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
+	Post2dWindowNodeVectorParticleGroupDataItem::Setting setting() const;
+	const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting>& unstSettings() const {return m_unstSettings;}
 
-	void informButtonDown(const QVector2D& p);
-	void informButtonUp(const QVector2D& p);
+	void informButtonDown(const QPointF& p);
+	void informButtonUp(const QPointF& p);
 
 public slots:
-	void updateMousePosition(const QVector2D& p);
+	void updateMousePosition(const QVector2D &p);
 	void accept() override;
 	void reject() override;
 
@@ -78,22 +79,20 @@ private:
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* m_dataItem;
 	QList<QString> m_solutions;
 
-	QVector2D m_oldPoint1;
-	QVector2D m_oldPoint2;
+	QPointF m_oldPoint1;
+	QPointF m_oldPoint2;
 	int m_oldPoints;
 	int m_oldPointSize;
 	bool m_pressed;
 	bool m_applying;
 
-	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;
-	QList<Post2dWindowUnstructuredParticleSetSetting> m_settings;
-	Post2dWindowUnstructuredParticleSetSetting* m_activeSetting;
+	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_setting;
+	QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting> m_unstSettings;
+	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting* m_activeSetting;
 	bool m_activeAvailable;
 
 	QList<int> m_subDivNominations;
 	QList<int> m_skipNominations;
-
-	StructuredGridRegion::RegionMode m_regionMode;
 };
 
 #endif // POST2DWINDOWPARTICLEUNSTRUCTUREDSETTINGDIALOG_H

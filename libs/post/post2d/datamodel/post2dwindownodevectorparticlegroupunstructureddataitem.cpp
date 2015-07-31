@@ -9,7 +9,6 @@
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 
-#include <QDomElement>
 #include <QMouseEvent>
 #include <QSettings>
 #include <QXmlStreamWriter>
@@ -17,6 +16,19 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkVertex.h>
+
+Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting() :
+	CompositeContainer {&point1, &point2, &pointsSet, &numberOfPoints, &color, &size},
+	point1 {"point1"},
+	point2 {"point2"},
+	pointsSet {"pointsSet", false},
+	numberOfPoints {"numberOfPoints", 10},
+	color {"color"},
+	size {"size", DEFAULT_SIZE}
+{
+	QSettings settings;
+	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
+}
 
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem()
 {
@@ -35,27 +47,16 @@ QDialog* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::propertyDialog
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
-	dialog->setSolution(m_currentSolution);
-	dialog->setTimeMode(m_timeMode);
-	dialog->setTimeSamplingRate(m_timeSamplingRate);
-	dialog->setTimeDivision(m_timeDivision);
-	dialog->setSettings(m_settings);
-	dialog->setRegionMode(m_regionMode);
+	dialog->setSettings(m_setting, m_unstSettings);
 	return dialog;
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setDefaultValues()
 {
-	m_settings.clear();
+	m_unstSettings.clear();
 
-	Post2dWindowUnstructuredParticleSetSetting s;
-
-	QSettings setting;
-	s.color = setting.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
-	s.size = 2;
-	s.pointsSet = false;
-	s.numberOfPoints = 10;
-	m_settings.append(s);
+	Setting s;
+	m_unstSettings.append(s);
 }
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
@@ -77,18 +78,18 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
 {
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
-		vtkActor* actor = vtkActor::New();
+	for (int i = 0; i < m_unstSettings.count(); ++i) {
+		const Setting& s = m_unstSettings[i];
+		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
-		prop->SetColor(setting.color.redF(), setting.color.greenF(), setting.color.blueF());
-		prop->SetPointSize(setting.size);
+		prop->SetColor(s.color);
+		prop->SetPointSize(s.size);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);
 
-		vtkDataSetMapper* mapper = vtkDataSetMapper::New();
+		vtkSmartPointer<vtkDataSetMapper> mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 		actor->SetMapper(mapper);
 
 		m_particleActors.append(actor);
@@ -102,20 +103,20 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupParticleSourc
 		m_sourcePoints[i]->Delete();
 	}
 	m_sourcePoints.clear();
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_unstSettings.count(); ++i) {
+		const Setting& s = m_unstSettings[i];
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 		points->SetDataTypeToDouble();
-		QVector2D diffVec = setting.point2 - setting.point1;
-		QVector2D v;
-		for (int j = 0; j < setting.numberOfPoints; ++j) {
-			double param = j / (double)(setting.numberOfPoints - 1);
-			v = setting.point1 + param * diffVec;
+		QPointF diffVec = s.point2 - s.point1;
+		QPointF v;
+		for (int j = 0; j < s.numberOfPoints; ++j) {
+			double param = j / (double)(s.numberOfPoints - 1);
+			v = s.point1 + param * diffVec;
 			points->InsertNextPoint(v.x(), v.y(), 0);
 		}
 		vtkUnstructuredGrid* grid = vtkUnstructuredGrid::New();
 		grid->SetPoints(points);
-		for (int j = 0; j <setting.numberOfPoints; ++j) {
+		for (int j = 0; j < s.numberOfPoints; ++j) {
 			vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 			vertex->GetPointIds()->SetId(0, j);
 			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
@@ -141,7 +142,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::showPropertyDialog
 	propDialog->show();
 }
 
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const QVector2D& v1, const QVector2D& v2, int num, int pointSize)
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const QPointF &v1, const QPointF &v2, int num, int pointSize)
 {
 	m_point1 = v1;
 	m_point2 = v2;
@@ -151,8 +152,8 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const Q
 	m_previewPoints->Reset();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
-	QVector2D diffVec = m_point2 - m_point1;
-	QVector2D v;
+	QPointF diffVec = m_point2 - m_point1;
+	QPointF v;
 	for (int i = 0; i < m_numberOfPoints; ++i) {
 		double param = i / (double)(m_numberOfPoints - 1);
 		v = m_point1 + param * diffVec;
@@ -168,7 +169,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setSetting(const Q
 	renderGraphicsView();
 }
 
-void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::clearSetting()
+void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::hidePreviewSetting()
 {
 	m_previewActor->VisibilityOff();
 }
@@ -183,7 +184,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QM
 	double x = event->x();
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QVector2D p(x, y);
+	QPointF p(x, y);
 	if (m_dialog != nullptr) {
 		m_dialog->informButtonDown(p);
 	}
@@ -194,7 +195,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(
 	double x = event->x();
 	double y = event->y();
 	dataModel()->graphicsView()->viewportToWorld(x, y);
-	QVector2D p(x, y);
+	QPointF p(x, y);
 	if (m_dialog != nullptr) {
 		m_dialog->informButtonUp(p);
 	}
@@ -213,28 +214,18 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::assignActorZValues
 	Post2dWindowNodeVectorParticleGroupDataItem::assignActorZValues(range);
 }
 
-
-
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(node);
 
-	m_settings.clear();
+	m_unstSettings.clear();
 	QDomNode particlesNode = iRIC::getChildNode(node, "Particles");
 	if (! particlesNode.isNull()) {
 		QDomNodeList particles = particlesNode.childNodes();
 		for (int i = 0; i < particles.length(); ++i) {
-			QDomElement elem = particles.at(i).toElement();
-			Post2dWindowUnstructuredParticleSetSetting s;
-			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
-			s.point1.setY(static_cast<qreal>(elem.attribute("point1Y").toDouble()));
-			s.point2.setX(static_cast<qreal>(elem.attribute("point2X").toDouble()));
-			s.point2.setY(static_cast<qreal>(elem.attribute("point2Y").toDouble()));
-			s.pointsSet = static_cast<bool>(elem.attribute("pointsSet").toInt());
-			s.numberOfPoints = elem.attribute("numberOfPoints").toInt();
-			s.color = loadColorAttribute("color",elem, s.color);
-			s.size = elem.attribute("size").toInt();
-			m_settings.append(s);
+			Setting s;
+			s.load(particles.at(i));
+			m_unstSettings.append(s);
 		}
 	}
 	updateActorSettings();
@@ -246,17 +237,10 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::doSaveToProjectMai
 	Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Particles");
-	for (int i = 0; i < m_settings.count(); ++i) {
-		Post2dWindowUnstructuredParticleSetSetting& setting = m_settings[i];
+	for (int i = 0; i < m_unstSettings.count(); ++i) {
+		const Setting& s = m_unstSettings[i];
 		writer.writeStartElement("Particle");
-		writer.writeAttribute("point1X", QString::number(setting.point1.x()));
-		writer.writeAttribute("point1Y", QString::number(setting.point1.y()));
-		writer.writeAttribute("point2X", QString::number(setting.point2.x()));
-		writer.writeAttribute("point2Y", QString::number(setting.point2.y()));
-		writer.writeAttribute("pointsSet", QString::number(static_cast<int>(setting.pointsSet)));
-		writer.writeAttribute("numberOfPoints", QString::number(setting.numberOfPoints));
-		writeColorAttribute("color", setting.color, writer);
-		writer.writeAttribute("size", QString::number(setting.size));
+		s.save(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();

@@ -34,6 +34,16 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkVertex.h>
 
+Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
+	CompositeContainer {&currentSolution, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode},
+	currentSolution {"solution"},
+	timeMode {"timeMode", tmNormal},
+	timeSamplingRate {"timeSamplingRate", 2},
+	timeDivision {"timeDivision", 2},
+	particleSize {"particleSize", DEFAULT_SIZE},
+	regionMode {"regionMode", StructuredGridRegion::rmFull}
+{}
+
 Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowDataItem(tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
@@ -46,7 +56,6 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	m_previousTime = 0;
 	m_nextStepToAddParticles = 0;
 
-	setDefaultValues();
 	setupClipper();
 	informGridUpdate();
 
@@ -81,32 +90,27 @@ Post2dWindowNodeVectorParticleGroupDataItem::~Post2dWindowNodeVectorParticleGrou
 	}
 }
 
-class Post2dWindowGridParticleSelectSolution : public QUndoCommand
+class Post2dWindowNodeVectorParticleGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post2dWindowGridParticleSelectSolution(const QString& newsol, Post2dWindowNodeVectorParticleGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Particle Physical Value Change")) {
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
+	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorParticleGroupDataItem* item) :
+		QUndoCommand {Post2dWindowNodeVectorParticleGroupDataItem::tr("Particle Physical Value Change")},
+		m_newCurrentSolution {newsol},
+		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_item {item}
+	{}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
+	void undo() {
+		m_item->setCurrentSolution(m_oldCurrentSolution);
+		m_item->updateActorSettings();
+	}
+
 private:
-	QString m_oldCurrentSolution;
 	QString m_newCurrentSolution;
+	QString m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorParticleGroupDataItem* m_item;
 };
@@ -115,22 +119,11 @@ private:
 void Post2dWindowNodeVectorParticleGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post2dWindowGridParticleSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post2dWindowGridParticleSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
-}
-
-void Post2dWindowNodeVectorParticleGroupDataItem::setDefaultValues()
-{
-	m_currentSolution= "";
-
-	m_timeMode = tmNormal;
-	m_timeSamplingRate = 2;
-	m_timeDivision = 2;
-	m_regionMode = StructuredGridRegion::rmFull;
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
@@ -147,7 +140,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointSet* ps = cont->data();
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
@@ -163,24 +156,14 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
-	m_timeMode = static_cast<TimeMode>(elem.attribute("timeMode").toInt());
-	m_timeSamplingRate = elem.attribute("timeSamplingRate").toInt();
-	m_timeDivision = elem.attribute("timeDivision").toInt();
-	m_particleSize = elem.attribute("particleSize").toInt();
-	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
+	m_setting.load(node);
+	setCurrentSolution(m_setting.currentSolution);
 	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
-	writer.writeAttribute("timeMode", QString::number(static_cast<int>(m_timeMode)));
-	writer.writeAttribute("timeSamplingRate", QString::number(m_timeSamplingRate));
-	writer.writeAttribute("timeDivision", QString::number(m_timeDivision));
-	writer.writeAttribute("particleSize", QString::number(m_particleSize));
-	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
+	m_setting.save(writer);
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::setupClipper()
@@ -234,7 +217,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneContainer == nullptr) {return;}
 	unsigned int currentStep = 0;
@@ -287,7 +270,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QStri
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_currentSolution = currentSol;
+	m_setting.currentSolution = currentSol;
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
@@ -322,8 +305,8 @@ void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 	}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
-	if (m_timeMode == tmSkip) {
-		m_nextStepToAddParticles = currentStep + m_timeSamplingRate;
+	if (m_setting.timeMode == tmSkip) {
+		m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
 	} else {
 		m_nextStepToAddParticles = currentStep + 1;
 	}
@@ -333,7 +316,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointSet* ps = zoneContainer->data();
-	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
+	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
 
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
 
@@ -359,11 +342,11 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		// add new particles.
 		if (currentStep == m_nextStepToAddParticles) {
 			vtkPointSet* pointsGrid = newParticles(i);
-			if (m_timeMode == tmSubdivide) {
-				for (int j = 0; j < m_timeDivision - 1; ++j) {
+			if (m_setting.timeMode == tmSubdivide) {
+				for (int j = 0; j < m_setting.timeDivision - 1; ++j) {
 					m_streamTracer->SetSourceData(pointsGrid);
-					m_streamTracer->SetMaximumPropagationTime(timeDiv * (1 - 0.5 / m_timeDivision));
-					m_streamTracer->SetTimeIncrement(timeDiv / m_timeDivision);
+					m_streamTracer->SetMaximumPropagationTime(timeDiv * (1 - 0.5 / m_setting.timeDivision));
+					m_streamTracer->SetTimeIncrement(timeDiv / m_setting.timeDivision);
 					m_streamTracer->Update();
 					vtkPolyData* p = m_streamTracer->GetOutput();
 					for (vtkIdType k = 0; k < p->GetNumberOfPoints(); ++k) {
@@ -395,9 +378,9 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
 	}
-	if (m_timeMode == tmSkip) {
+	if (m_setting.timeMode == tmSkip) {
 		if (currentStep == m_nextStepToAddParticles) {
-			m_nextStepToAddParticles = currentStep + m_timeSamplingRate;
+			m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
 		}
 	} else {
 		m_nextStepToAddParticles = currentStep + 1;
@@ -447,9 +430,9 @@ bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 vtkPointSet* Post2dWindowNodeVectorParticleGroupDataItem::getRegion()
 {
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
-	if (m_regionMode == StructuredGridRegion::rmFull) {
+	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 		return ps;
-	} else if (m_regionMode == StructuredGridRegion::rmActive) {
+	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
 		geoFilter->SetInputData(ps);
 		geoFilter->Update();

@@ -37,7 +37,7 @@ public:
 	void informButtonUp(const QPointF &p);
 
 public slots:
-	void updateMousePosition(const QPointF &p);
+	void updateMousePosition(const QVector2D &p);
 	void accept() override;
 	void reject() override;
 
