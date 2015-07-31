@@ -5,6 +5,7 @@
 #include "preprocessorgridtypedataitem.h"
 #include <guibase/vtklegendboxwidget.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
+#include <misc/boolcontainer.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkScalarBarWidget.h>
@@ -64,8 +65,9 @@ protected:
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	vtkSmartPointer<vtkLegendBoxWidget> m_legendBoxWidget;
-	bool m_visible;
 	SolverDefinitionGridAttribute* m_condition;
+
+	BoolContainer m_visible;
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 };

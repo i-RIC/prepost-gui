@@ -6,6 +6,9 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <pre/datamodel/preprocessorgeodatatopdataitem.h>
 
+#include <QDomNode>
+#include <QXmlStreamWriter>
+
 Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent)
 	: Post2dWindowDataItem(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
 {

@@ -35,8 +35,9 @@
 
 #include <iriclib.h>
 
-PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGeoDataTopDataItemInterface(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_visible {"visible", true}
 {
 	setSubPath("geographicdata");
 
@@ -84,8 +85,6 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	m_titleTextSetting.setPrefix("title");
 	m_labelTextSetting.setPrefix("label");
 
-	// for scalar bar / legend box
-	m_visible = true;
 	// first, no scalar bar / legend box shown.
 	m_condition = nullptr;
 	setupActors();
@@ -99,6 +98,7 @@ PreProcessorGeoDataTopDataItem::~PreProcessorGeoDataTopDataItem()
 
 void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	m_visible.load(node);
 	m_titleTextSetting.load(node);
 	m_labelTextSetting.load(node);
 	QDomNodeList children = node.childNodes();
@@ -114,6 +114,7 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	m_visible.save(writer);
 	m_titleTextSetting.save(writer);
 	m_labelTextSetting.save(writer);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -192,7 +193,7 @@ void PreProcessorGeoDataTopDataItem::setupActors()
 
 	// for legend box
 	for (auto it = groups.begin(); it != groups.end(); ++it) {
-		if (!(*it)->condition()->isOption()) { continue; }
+		if (!(*it)->condition()->isOption()) {continue;}
 		attName = (*it)->condition()->name();
 		break;
 	}
@@ -212,7 +213,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 
 	if (dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition) != nullptr  || m_condition->isOption()) {
 		// discrete
-		if (! m_visible) { return; }
+		if (! m_visible) { eturn;}
 		m_legendBoxWidget->SetEnabled(1);
 
 		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
@@ -224,7 +225,7 @@ void PreProcessorGeoDataTopDataItem::updateActorSettings()
 		updateLegendBoxItems();
 	} else {
 		// continuous
-		if (! m_visible) { return; }
+		if (! m_visible) {return;}
 		m_scalarBarWidget->SetEnabled(1);
 		PreProcessorGeoDataGroupDataItemInterface* gItem = groupDataItem(m_condition->name());
 		if (gItem == nullptr) { return; }

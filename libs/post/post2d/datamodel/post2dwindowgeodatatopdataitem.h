@@ -27,7 +27,6 @@ protected:
 private:
 	QMap<QString, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
 	PreProcessorGeoDataTopDataItemInterface* m_preGeoDataTopDataItem;
-
 };
 
 #endif // POST2DWINDOWGEODATATOPDATAITEM_H
