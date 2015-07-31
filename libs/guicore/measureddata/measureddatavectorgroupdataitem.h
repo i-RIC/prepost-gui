@@ -4,6 +4,12 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../project/measureddata.h"
 
+#include <misc/enumcontainert.h>
+#include <misc/colorcontainer.h>
+#include <misc/doublecontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
@@ -32,6 +38,27 @@ public:
 	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
 	const static double MINLIMIT;
+
+	class Setting : public CompositeContainer
+	{
+	public:
+		Setting();
+		Setting(const Setting& s);
+		MeasuredDataVectorGroupDataItem::Setting& operator=(const Setting& s);
+
+		StringContainer scalarValueName;
+		StringContainer currentSolution;
+		ColorContainer color;
+		DoubleContainer oldCameraScale;
+		DoubleContainer scaleFactor;
+
+		EnumContainerT<MeasuredData::ArrowColorMode> colorMode;
+		EnumContainerT<MeasuredData::ArrowLengthMode> lengthMode;
+		DoubleContainer standardValue;
+		DoubleContainer legendLength;
+		DoubleContainer minimumValue;
+	};
+
 	/// Constructor
 	MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataVectorGroupDataItem();
@@ -56,7 +83,7 @@ protected:
 	void updateLegendData();
 	void informGridUpdate();
 	void setCurrentSolution(const QString& currentSol);
-	const QString& currentSolution() {return m_currentSolution;}
+	QString currentSolution() {return m_setting.currentSolution;}
 	void doApplyOffset(double x, double y) override;
 
 private:
@@ -81,17 +108,18 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 
-	QString m_scalarValueName;
-	QString m_currentSolution;
-	QColor m_color;
-	double m_oldCameraScale;
-	double m_scaleFactor;
+//	QString m_scalarValueName;
+//	QString m_currentSolution;
+//	QColor m_color;
+//	double m_oldCameraScale;
+//	double m_scaleFactor;
 
-	MeasuredData::ArrowColorMode m_colorMode;
-	MeasuredData::ArrowLengthMode m_lengthMode;
-	double m_standardValue;
-	double m_legendLength;
-	double m_minimumValue;
+//	MeasuredData::ArrowColorMode m_colorMode;
+//	MeasuredData::ArrowLengthMode m_lengthMode;
+//	double m_standardValue;
+//	double m_legendLength;
+//	double m_minimumValue;
+	Setting m_setting;
 
 public:
 	friend class MeasuredDataVectorSelectValue;

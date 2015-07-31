@@ -32,6 +32,10 @@ public:
 		IntContainer::operator=(static_cast<int>(val));
 		return *this;
 	}
+	bool operator==(V val) {
+		return IntContainer::operator ==(static_cast<int> (val));
+	}
+
 	operator V() const
 	{
 		return static_cast<V>(IntContainer::operator int());

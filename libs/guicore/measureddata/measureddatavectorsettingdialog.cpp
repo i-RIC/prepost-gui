@@ -22,47 +22,65 @@ void MeasuredDataVectorSettingDialog::setData(MeasuredData* data)
 	setupSolutionComboBox(data);
 }
 
-void MeasuredDataVectorSettingDialog::setSolution(const QString& sol)
+MeasuredDataVectorGroupDataItem::Setting MeasuredDataVectorSettingDialog::setting() const
 {
-	int index = m_solutions.indexOf(sol);
+	MeasuredDataVectorGroupDataItem::Setting ret = m_setting;
+
+	// solution
+	int index = ui->solutionComboBox->currentIndex();
+	if (index < 0 || index > m_solutions.count() - 1) {ret.currentSolution = "";}
+	else {ret.currentSolution = m_solutions.at(index);}
+
+	// scalar
+	index = ui->scalarComboBox->currentIndex();
+	if (index < 0 || index > m_scalars.count() - 1) {ret.scalarValueName = "";}
+	else {ret.scalarValueName = m_scalars.at(index);}
+
+	// color
+	ret.color = ui->colorEditWidget->color();
+
+	// arrowcolormode
+	if (ui->specificRadioButton->isChecked()) {ret.colorMode = MeasuredData::acmSpecific;}
+	else if (ui->scalarRadioButton->isChecked()) {ret.colorMode = MeasuredData::acmScalar;}
+	else {ret.colorMode = MeasuredData::acmSpecific;}
+
+	// lengthmode
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = MeasuredData::almAuto;
+	} else {
+		ret.lengthMode = MeasuredData::almCustom;
+	}
+
+	// standardValue
+	ret.standardValue = ui->stdValueSpinBox->value();
+
+	// legendLength
+	ret.legendLength = ui->legendLengthSpinBox->value();
+
+	// minimumValue
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	return ret;
+}
+
+void MeasuredDataVectorSettingDialog::setSetting(const MeasuredDataVectorGroupDataItem::Setting& setting)
+{
+	m_setting = setting;
+	// solution
+	int index = m_solutions.indexOf(setting.currentSolution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
-}
 
-QString MeasuredDataVectorSettingDialog::solution() const
-{
-	int index = ui->solutionComboBox->currentIndex();
-	if (index < 0 || index > m_solutions.count() - 1) {return "";}
-	return m_solutions.at(index);
-}
-
-void MeasuredDataVectorSettingDialog::setScalarValue(const QString& scalar)
-{
-	int index = m_scalars.indexOf(scalar);
+	// scalar
+	index = m_scalars.indexOf(setting.scalarValueName);
 	if (index == -1) { index = 0; }
 	ui->scalarComboBox->setCurrentIndex(index);
-}
 
-QString MeasuredDataVectorSettingDialog::scalarValue() const
-{
-	int index = ui->scalarComboBox->currentIndex();
-	if (index < 0 || index > m_scalars.count() - 1) {return "";}
-	return m_scalars.at(index);
-}
+	// color
+	ui->colorEditWidget->setColor(setting.color);
 
-void MeasuredDataVectorSettingDialog::setColor(const QColor& color)
-{
-	ui->colorEditWidget->setColor(color);
-}
-
-QColor MeasuredDataVectorSettingDialog::color() const
-{
-	return ui->colorEditWidget->color();
-}
-
-void MeasuredDataVectorSettingDialog::setColorMode(MeasuredData::ArrowColorMode cm)
-{
-	switch (cm) {
+	// arrowcolormode
+	switch (MeasuredData::ArrowColorMode(setting.colorMode)){
 	case MeasuredData::acmSpecific:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -70,14 +88,22 @@ void MeasuredDataVectorSettingDialog::setColorMode(MeasuredData::ArrowColorMode 
 		ui->scalarRadioButton->setChecked(true);
 		break;
 	}
-}
 
-MeasuredData::ArrowColorMode MeasuredDataVectorSettingDialog::colorMode() const
-{
-	if (ui->specificRadioButton->isChecked()) {return MeasuredData::acmSpecific;}
-	if (ui->scalarRadioButton->isChecked()) {return MeasuredData::acmScalar;}
-	// default
-	return MeasuredData::acmSpecific;
+	// lengthmode
+	if (setting.lengthMode == MeasuredData::almAuto) {
+		ui->lengthAutoCheckBox->setChecked(true);
+	} else {
+		ui->lengthAutoCheckBox->setChecked(false);
+	}
+
+	// standardValue
+	ui->stdValueSpinBox->setValue(setting.standardValue);
+
+	// legendLength
+	ui->legendLengthSpinBox->setValue(setting.legendLength);
+
+	// minimumValue
+	ui->minValueSpinBox->setValue(setting.minimumValue);
 }
 
 void MeasuredDataVectorSettingDialog::setupSolutionComboBox(MeasuredData* data)
@@ -100,52 +126,4 @@ void MeasuredDataVectorSettingDialog::setupSolutionComboBox(MeasuredData* data)
 		ui->specificRadioButton->isChecked();
 		ui->scalarRadioButton->setDisabled(true);
 	}
-}
-
-void MeasuredDataVectorSettingDialog::setLengthMode(MeasuredData::ArrowLengthMode lm)
-{
-	if (lm == MeasuredData::almAuto) {
-		ui->lengthAutoCheckBox->setChecked(true);
-	} else {
-		ui->lengthAutoCheckBox->setChecked(false);
-	}
-}
-
-MeasuredData::ArrowLengthMode MeasuredDataVectorSettingDialog::lengthMode() const
-{
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		return MeasuredData::almAuto;
-	} else {
-		return MeasuredData::almCustom;
-	}
-}
-
-void MeasuredDataVectorSettingDialog::setStandardValue(double stdVal)
-{
-	ui->stdValueSpinBox->setValue(stdVal);
-}
-
-double MeasuredDataVectorSettingDialog::standardValue() const
-{
-	return ui->stdValueSpinBox->value();
-}
-
-void MeasuredDataVectorSettingDialog::setLegendLength(int len)
-{
-	ui->legendLengthSpinBox->setValue(len);
-}
-
-int MeasuredDataVectorSettingDialog::legendLength() const
-{
-	return ui->legendLengthSpinBox->value();
-}
-
-void MeasuredDataVectorSettingDialog::setMinimumValue(double minVal)
-{
-	return ui->minValueSpinBox->setValue(minVal);
-}
-
-double MeasuredDataVectorSettingDialog::minimumValue() const
-{
-	return ui->minValueSpinBox->value();
 }

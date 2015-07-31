@@ -34,6 +34,32 @@
 
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
+MeasuredDataVectorGroupDataItem::Setting::Setting() :
+	CompositeContainer {&scalarValueName, &currentSolution, &color, &colorMode, &lengthMode, &standardValue, &legendLength, &minimumValue},
+	scalarValueName {"scalarValue", ""},
+	currentSolution {"solution", ""},
+	color {"color", Qt::black},
+	oldCameraScale {"oldCameraScale", 1},
+	scaleFactor {"scaleFactor", 1},
+	colorMode {"colorMode", MeasuredData::acmSpecific},
+	lengthMode {"lengthMode", MeasuredData::almAuto},
+	standardValue {"standardValue", 1},
+	legendLength {"legendLength", STANDARD_LENGTH},
+	minimumValue {"minimumValue", 0.01}
+{}
+
+MeasuredDataVectorGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting {}
+{
+	CompositeContainer::operator =(s);
+}
+
+MeasuredDataVectorGroupDataItem::Setting& MeasuredDataVectorGroupDataItem::Setting::operator=(const MeasuredDataVectorGroupDataItem::Setting& s)
+{
+	CompositeContainer::operator =(s);
+	return *this;
+}
+
 MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p)
 	: GraphicsWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
 {
@@ -43,18 +69,18 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_oldCameraScale = 1;
-	m_colorMode = MeasuredData::acmSpecific;
-	m_lengthMode = MeasuredData::almAuto;
-	m_standardValue = 1;
-	m_legendLength = STANDARD_LENGTH;
-	m_minimumValue = 0.001;
+//	m_oldCameraScale = 1;
+//	m_colorMode = MeasuredData::acmSpecific;
+//	m_lengthMode = MeasuredData::almAuto;
+//	m_standardValue = 1;
+//	m_legendLength = STANDARD_LENGTH;
+//	m_minimumValue = 0.001;
 
-	m_scalarValueName = "";
-	m_currentSolution = "";
+//	m_scalarValueName = "";
+//	m_currentSolution = "";
 	QSettings setting;
-	m_color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
-	m_scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
+	m_setting.color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
+	m_setting.scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 
@@ -78,51 +104,14 @@ MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
 
 void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
-	QString colorMode = elem.attribute("colorMode");
-	if (colorMode == "scalar") {
-		m_colorMode = MeasuredData::acmScalar;
-	} else {
-		m_colorMode = MeasuredData::acmSpecific;
-	}
-	m_color = loadColorAttribute("color", node, Qt::black);
-	m_scalarValueName = elem.attribute("scalarValue");
-
-	QString lengthMode = elem.attribute("lengthMode");
-	if (lengthMode == "custom") {
-		m_lengthMode = MeasuredData::almCustom;
-	} else {
-		m_lengthMode = MeasuredData::almAuto;
-	}
-	if (m_lengthMode == MeasuredData::almCustom) {
-		m_standardValue = elem.attribute("standardValue").toDouble();
-		m_legendLength = elem.attribute("legendLength").toDouble();
-		m_minimumValue = elem.attribute("minimumValue").toDouble();
-	}
+	m_setting.load(node);
+	setCurrentSolution(m_setting.currentSolution);
 	updateActorSettings();
 }
 
 void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
-	if (m_colorMode == MeasuredData::acmScalar) {
-		writer.writeAttribute("colorMode", "scalar");
-	} else {
-		writer.writeAttribute("colorMode", "specific");
-	}
-	writeColorAttribute("color", m_color, writer);
-	writer.writeAttribute("scalarValue", m_scalarValueName);
-
-	if (m_lengthMode == MeasuredData::almCustom) {
-		writer.writeAttribute("lengthMode", "custom");
-
-		writer.writeAttribute("standardValue", QString::number(m_standardValue));
-		writer.writeAttribute("legendLength", QString::number(m_legendLength));
-		writer.writeAttribute("minimumValue", QString::number(m_minimumValue));
-	} else {
-		writer.writeAttribute("lengthMode", "auto");
-	}
+	m_setting.save(writer);
 }
 
 class MeasuredDataVectorSelectValue : public QUndoCommand
@@ -131,7 +120,7 @@ public:
 	MeasuredDataVectorSelectValue(const QString& newsol, MeasuredDataVectorGroupDataItem* item)
 		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
 		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
+		m_oldCurrentSolution = item->m_setting.currentSolution;
 		m_item = item;
 	}
 	void undo() {
@@ -177,7 +166,7 @@ void MeasuredDataVectorGroupDataItem::setupActors()
 
 	m_hedgeHog = vtkSmartPointer<vtkHedgeHog>::New();
 	m_hedgeHog->SetVectorModeToUseVector();
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
+	m_hedgeHog->SetScaleFactor(m_setting.scaleFactor);
 
 	m_warpVector = vtkSmartPointer<vtkWarpVector>::New();
 
@@ -231,14 +220,14 @@ void MeasuredDataVectorGroupDataItem::setupActors()
 
 void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 {
-	if (m_lengthMode == MeasuredData::almCustom) {return;}
+	if (m_setting.lengthMode == MeasuredData::almCustom) {return;}
 	QVector<double> lenVec;
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == 0 || md->vectorNames().count() == 0) {return;}
 	vtkPointSet* ps = md->pointData();
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_currentSolution).c_str());
+	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.currentSolution).c_str());
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -271,9 +260,9 @@ void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 		average *= p2;
 	}
 	// now average is calculated.
-	m_standardValue = average;
+	m_setting.standardValue = average;
 	// minimum value is always 0.001 * standard value when auto mode.
-	m_minimumValue = 0.001 * m_standardValue;
+	m_setting.minimumValue = 0.001 * m_setting.standardValue;
 }
 
 void MeasuredDataVectorGroupDataItem::informGridUpdate()
@@ -292,13 +281,13 @@ void MeasuredDataVectorGroupDataItem::updateActorSettings()
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == 0 || md->pointData() == 0) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointSet* ps = getPointSet();
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
-	pd->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
+	pd->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
 	m_hedgeHog->SetInputData(ps);
 	m_warpVector->SetInputData(ps);
 
@@ -317,17 +306,17 @@ void MeasuredDataVectorGroupDataItem::updateColorSetting()
 {
 	MeasuredDataFileDataItem* fdi = dynamic_cast<MeasuredDataFileDataItem*>(parent());
 	MeasuredDataPointGroupDataItem* pgdi = fdi->pointGroupDataItem();
-	switch (m_colorMode) {
+	switch (MeasuredData::ArrowColorMode(m_setting.colorMode)) {
 	case MeasuredData::acmSpecific:
 		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+		m_arrowActor->GetProperty()->SetColor(m_setting.color);
 		break;
 	case MeasuredData::acmScalar:
 		// not implemented yet.
 		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = pgdi->lookupTable(m_scalarValueName);
+		LookupTableContainer* stc = pgdi->lookupTable(m_setting.scalarValueName);
 		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_scalarValueName).c_str());
+		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.scalarValueName).c_str());
 		m_arrowMapper->SetLookupTable(stc->vtkObj());
 		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
@@ -362,32 +351,32 @@ void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentS
 	if (current != 0) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_currentSolution = currentSol;
+	m_setting.currentSolution = currentSol;
 }
 
 void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
 	double scale = cam->GetParallelScale();
-	if (scale != m_oldCameraScale) {
+	if (scale != m_setting.oldCameraScale) {
 		updatePolyData();
 		updateLegendData();
 	}
-	m_oldCameraScale = scale;
+	m_setting.oldCameraScale = scale;
 }
 
 void MeasuredDataVectorGroupDataItem::updatePolyData()
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == nullptr || md->pointData() == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_setting.currentSolution == "") {return;}
 	updateScaleFactor();
 	VTKGraphicsView* view = dataModel()->graphicsView();
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
 
 	double height = view2->stdRadius(8);
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
-	m_warpVector->SetScaleFactor(m_scaleFactor);
+	m_hedgeHog->SetScaleFactor(m_setting.scaleFactor);
+	m_warpVector->SetScaleFactor(m_setting.scaleFactor);
 	m_arrowSource->SetHeight(height);
 	m_arrowSource->SetAngle(15);
 	m_arrowSource->Modified();
@@ -401,13 +390,13 @@ void MeasuredDataVectorGroupDataItem::updateScaleFactor()
 	VTKGraphicsView* view = dataModel()->graphicsView();
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
 	double a = 1.0 / view2->stdRadius(1.0);
-	m_scaleFactor = m_legendLength / (a * m_standardValue);
+	m_setting.scaleFactor = m_setting.legendLength / (a * m_setting.standardValue);
 }
 
 void MeasuredDataVectorGroupDataItem::updateLegendData()
 {
 	double vectorOffset = 18;
-	double arrowLen = m_legendLength;
+	double arrowLen = m_setting.legendLength;
 	m_baseArrowPolyData->Initialize();
 	m_baseArrowPolyData->Allocate(3);
 
@@ -431,13 +420,13 @@ void MeasuredDataVectorGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution).arg(m_standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_setting.currentSolution).arg(m_setting.standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
-	if (m_colorMode == MeasuredData::acmSpecific) {
+	if (m_setting.colorMode == MeasuredData::acmSpecific) {
 		// specified color.
-		m_baseArrowActor->GetProperty()->SetColor(m_color.red() / 255., m_color.green() / 255., m_color.blue() / 255.);
-	} else if (m_colorMode == MeasuredData::acmScalar) {
+		m_baseArrowActor->GetProperty()->SetColor(m_setting.color);
+	} else if (m_setting.colorMode == MeasuredData::acmScalar) {
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
@@ -454,14 +443,7 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 	}
 	MeasuredDataVectorSettingDialog* dialog = new MeasuredDataVectorSettingDialog(p);
 	dialog->setData(md);
-	dialog->setSolution(m_currentSolution);
-	dialog->setColorMode(m_colorMode);
-	dialog->setColor(m_color);
-	dialog->setScalarValue(m_scalarValueName);
-	dialog->setLengthMode(m_lengthMode);
-	dialog->setStandardValue(m_standardValue);
-	dialog->setLegendLength(m_legendLength);
-	dialog->setMinimumValue(m_minimumValue);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
@@ -469,38 +451,18 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 class MeasuredDataVectorSetProperty : public QUndoCommand
 {
 public:
-	MeasuredDataVectorSetProperty(const QString& solutionName, MeasuredData::ArrowColorMode colorMode, const QColor& color, const QString& scalarName, MeasuredData::ArrowLengthMode lm, double stdLen, int legendLen, double minVal, MeasuredDataVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Arrow Setting")) {
-		m_newSolutionName = solutionName;
-		m_newColorMode = colorMode;
-		m_newColor = color;
-		m_newScalarName = scalarName;
-		m_newLengthMode = lm;
-		m_newStandardValue = stdLen;
-		m_newLegendLength = legendLen;
-		m_newMinimumValue = minVal;
-
-		m_oldSolutionName = item->m_currentSolution;
-		m_oldColorMode = item->m_colorMode;
-		m_oldColor = item->m_color;
-		m_oldScalarName = item->m_scalarValueName;
-		m_oldLengthMode = item->m_lengthMode;
-		m_oldStandardValue = item->m_standardValue;
-		m_oldLegendLength = item->m_legendLength;
-		m_oldMinimumValue = item->m_minimumValue;
+	MeasuredDataVectorSetProperty(const MeasuredDataVectorGroupDataItem::Setting& setting, MeasuredDataVectorGroupDataItem* item) :
+		QUndoCommand(QObject::tr("Update Arrow Setting"))
+	{
+		m_newSetting = setting;
+		m_oldSetting = item->m_setting;
 
 		m_item = item;
 	}
 	void redo() {
 		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_newSolutionName);
-		m_item->m_colorMode = m_newColorMode;
-		m_item->m_color = m_newColor;
-		m_item->m_scalarValueName = m_newScalarName;
-		m_item->m_lengthMode = m_newLengthMode;
-		m_item->m_standardValue = m_newStandardValue;
-		m_item->m_legendLength = m_newLegendLength;
-		m_item->m_minimumValue = m_newMinimumValue;
+		m_item->m_setting = m_oldSetting;
+		m_item->setCurrentSolution(m_oldSetting.currentSolution);
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
@@ -508,37 +470,16 @@ public:
 	}
 	void undo() {
 		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldSolutionName);
-		m_item->m_colorMode = m_oldColorMode;
-		m_item->m_color = m_oldColor;
-		m_item->m_scalarValueName = m_oldScalarName;
-		m_item->m_lengthMode = m_oldLengthMode;
-		m_item->m_standardValue = m_oldStandardValue;
-		m_item->m_legendLength = m_oldLegendLength;
-		m_item->m_minimumValue = m_oldMinimumValue;
+		m_item->m_setting = m_oldSetting;
+		m_item->setCurrentSolution(m_oldSetting.currentSolution);
 
 		m_item->updateActorSettings();
 		m_item->renderGraphicsView();
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	QString m_newSolutionName;
-	MeasuredData::ArrowColorMode m_newColorMode;
-	QColor m_newColor;
-	QString m_newScalarName;
-	MeasuredData::ArrowLengthMode m_newLengthMode;
-	double m_newStandardValue;
-	int m_newLegendLength;
-	double m_newMinimumValue;
-
-	QString m_oldSolutionName;
-	MeasuredData::ArrowColorMode m_oldColorMode;
-	QColor m_oldColor;
-	QString m_oldScalarName;
-	MeasuredData::ArrowLengthMode m_oldLengthMode;
-	double m_oldStandardValue;
-	int m_oldLegendLength;
-	double m_oldMinimumValue;
+	MeasuredDataVectorGroupDataItem::Setting m_newSetting;
+	MeasuredDataVectorGroupDataItem::Setting m_oldSetting;
 
 	MeasuredDataVectorGroupDataItem* m_item;
 };
@@ -546,7 +487,7 @@ private:
 void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	MeasuredDataVectorSettingDialog* dialog = dynamic_cast<MeasuredDataVectorSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new MeasuredDataVectorSetProperty(dialog->solution(), dialog->colorMode(), dialog->color(), dialog->scalarValue(), dialog->lengthMode(), dialog->standardValue(), dialog->legendLength(), dialog->minimumValue(), this));
+	iRICUndoStack::instance().push(new MeasuredDataVectorSetProperty(dialog->setting(), this));
 }
 
 vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
@@ -554,9 +495,10 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	vtkPointSet* ps = md->polyData();
 
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str()));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.currentSolution).c_str()));
 	QSet<vtkIdType> points;
-	double minlimitsqr = m_minimumValue * m_minimumValue;
+	double min = m_setting.minimumValue;
+	double minlimitsqr = min * min;
 	for (vtkIdType i = 0; i < ps->GetNumberOfPoints(); ++i) {
 		bool active = true;
 		double val = 0;

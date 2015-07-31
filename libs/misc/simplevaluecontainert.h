@@ -52,6 +52,10 @@ public:
 		m_value = v;
 		return *this;
 	}
+	bool operator==(const V& v) const
+	{
+		return m_value == v;
+	}
 	operator V() const {return m_value;}
 	//@}
 
