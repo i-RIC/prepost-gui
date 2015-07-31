@@ -27,11 +27,6 @@ class GridCreatingConditionCompoundChannelAbstractLine;
 class GridCreatingConditionCompoundChannelCenterLine;
 class GridCreatingConditionCompoundChannelSpline;
 
-class GridCreatingConditionCompoundChannelAddRemeshPolygonCommand;
-class GridCreatingConditionCompoundChannelAddHolePolygonCommand;
-
-class GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand;
-
 class GridCreatingConditionCompoundChannelTemporaryGrid
 {
 
@@ -211,25 +206,25 @@ private:
 	double m_relaxation;
 	int m_iterations;
 
+private:
+	class AddPolygonVertexCommand;
+	class AddPolyLineVertexCommand;
+	class DefinePolygonNewPointCommand;
+	class DefinePolyLineNewPointCommand;
+	class EditPolygonCoordinatesCommand;
+	class EditPolyLineCoordinatesCommand;
+	class MovePolygonCommand;
+	class MovePolygonVertexCommand;
+	class MovePolyLineCommand;
+	class MovePolyLineVertexCommand;
+	class RemovePolygonVertexCommand;
+	class RemovePolyLineVertexCommand;
+	class SwitchStatusCommand;
+
 public:
 	friend class GridCreatingConditionCompoundChannelCreator;
-	friend class GridCreatingConditionCompoundChannelSwitchStatusCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonDefineNewPointCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonMoveCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonMoveVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonRemoveVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonAddVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolygonCoordinatesEditCommand;
 	friend class GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog;
-
-	friend class GridCreatingConditionCompoundChannelPolyLineDefineNewPointCommand;
-	friend class GridCreatingConditionCompoundChannelPolyLineMoveCommand;
-	friend class GridCreatingConditionCompoundChannelPolyLineMoveVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolyLineRemoveVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolyLineAddVertexCommand;
-	friend class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand;
 	friend class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog;
-
 	friend class GridCreatingConditionCompoundChannelAbstractPolygon;
 	friend class GridCreatingConditionCompoundChannelAbstractLine;
 };

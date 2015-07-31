@@ -43,11 +43,12 @@ public:
 	}
 };
 
-class GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand : public QUndoCommand
+class GridCreatingConditionCompoundChannel::EditPolyLineCoordinatesCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCompoundChannelAbstractLine* l, GridCreatingConditionCompoundChannel* cond)
-		: QUndoCommand(GridCreatingConditionCompoundChannel::tr("Edit Center Line Coordinates")) {
+	EditPolyLineCoordinatesCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCompoundChannelAbstractLine* l, GridCreatingConditionCompoundChannel* cond) :
+		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Edit Center Line Coordinates")}
+	{
 		m_apply = apply;
 		m_newCoords = coords;
 		m_line = l;
@@ -114,7 +115,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand(false, coords, m_line, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannel::EditPolyLineCoordinatesCommand(false, coords, m_line, m_condition));
 	QDialog::accept();
 }
 
@@ -136,7 +137,7 @@ void GridCreatingConditionCompoundChannelPolyLineCoordinatesEditDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolyLineCoordinatesEditCommand(true, coords, m_line, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannel::EditPolyLineCoordinatesCommand(true, coords, m_line, m_condition));
 	m_applyed = true;
 }
 

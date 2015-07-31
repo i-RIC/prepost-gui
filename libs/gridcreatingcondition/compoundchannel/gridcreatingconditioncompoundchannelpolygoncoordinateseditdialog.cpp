@@ -44,11 +44,12 @@ public:
 	}
 };
 
-class GridCreatingConditionCompoundChannelPolygonCoordinatesEditCommand : public QUndoCommand
+class GridCreatingConditionCompoundChannel::EditPolygonCoordinatesCommand : public QUndoCommand
 {
 public:
-	GridCreatingConditionCompoundChannelPolygonCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCompoundChannelAbstractPolygon* pol, GridCreatingConditionCompoundChannel* cond)
-		: QUndoCommand(GridCreatingConditionCompoundChannel::tr("Edit Polygon Coordinates")) {
+	EditPolygonCoordinatesCommand(bool apply, QVector<QVector2D> coords, GridCreatingConditionCompoundChannelAbstractPolygon* pol, GridCreatingConditionCompoundChannel* cond) :
+		QUndoCommand {GridCreatingConditionCompoundChannel::tr("Edit Polygon Coordinates")}
+	{
 		m_apply = apply;
 		m_newCoords = coords;
 		m_polygon = pol;
@@ -115,7 +116,7 @@ void GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolygonCoordinatesEditCommand(false, coords, m_polygon, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannel::EditPolygonCoordinatesCommand(false, coords, m_polygon, m_condition));
 	QDialog::accept();
 }
 
@@ -137,7 +138,7 @@ void GridCreatingConditionCompoundChannelPolygonCoordinatesEditDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannelPolygonCoordinatesEditCommand(true, coords, m_polygon, m_condition));
+	iRICUndoStack::instance().push(new GridCreatingConditionCompoundChannel::EditPolygonCoordinatesCommand(true, coords, m_polygon, m_condition));
 	m_applyed = true;
 }
 
