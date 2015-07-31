@@ -91,9 +91,9 @@ ProjectMainFile::~ProjectMainFile()
 	}
 }
 
-void ProjectMainFile::setModified()
+void ProjectMainFile::setModified(bool modified)
 {
-	m_isModified = true;
+	m_isModified = modified;
 }
 
 void ProjectMainFile::createDefaultCgnsFile()

@@ -143,6 +143,8 @@ protected:
 	virtual void innerUpdateZScale(double /*scale*/) {}
 	virtual bool myHasTransparentPart() const {return false;}
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* /*v*/) {}
+	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
+	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);

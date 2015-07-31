@@ -98,7 +98,7 @@ public:
 	bool importCgnsFile(const QString& filename, const QString& newname);
 	/// Import Measured data from CSV files.
 	void addMeasuredData();
-	virtual void setModified() override;
+	virtual void setModified(bool modified = true) override;
 
 	bool importVisGraphSetting(const QString filename);
 	bool exportVisGraphSetting(const QString filename);

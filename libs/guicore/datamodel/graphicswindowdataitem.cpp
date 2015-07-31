@@ -6,6 +6,7 @@
 #include "vtkgraphicsview.h"
 
 #include <misc/iricundostack.h>
+#include <memory>
 
 #include <QAction>
 #include <QDomNode>
@@ -501,4 +502,143 @@ void GraphicsWindowDataItem::clearChildItems()
 		delete child;
 	}
 	m_childItems.clear();
+}
+
+namespace {
+
+class ModificationCommand : public QUndoCommand
+{
+public:
+	explicit ModificationCommand(QUndoCommand *child, ProjectMainFile* main) :
+		m_command {child},
+		m_mainFile {main},
+		m_wasModified {main->isModified()}
+	{}
+	~ModificationCommand()
+	{}
+	void undo() override
+	{
+		m_command.get()->undo();
+		m_mainFile->setModified(m_wasModified);
+	}
+	void redo() override
+	{
+		m_command.get()->redo();
+		m_mainFile->setModified();
+	}
+
+	int id() const
+	{
+		return m_command->id();
+	}
+	bool mergeWith(const QUndoCommand *other)
+	{
+		const ModificationCommand* modc = dynamic_cast<const ModificationCommand*> (other);
+		if (modc == nullptr) {return false;}
+
+		return m_command.get()->mergeWith(modc->m_command.get());
+	}
+
+private:
+	std::unique_ptr<QUndoCommand> m_command;
+	ProjectMainFile* m_mainFile;
+	bool m_wasModified;
+};
+
+
+class StandardItemModifyCommand : public QUndoCommand
+{
+public:
+	explicit StandardItemModifyCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
+		m_command {child},
+		m_item {item}
+	{}
+	~StandardItemModifyCommand()
+	{}
+	void undo() override
+	{
+		m_item->setIsCommandExecuting(true);
+		m_command.get()->undo();
+		m_item->setIsCommandExecuting(false);
+	}
+	void redo() override
+	{
+		m_item->setIsCommandExecuting(true);
+		m_command.get()->redo();
+		m_item->setIsCommandExecuting(false);
+	}
+
+	int id() const
+	{
+		return m_command->id();
+	}
+	bool mergeWith(const QUndoCommand *other)
+	{
+		const StandardItemModifyCommand* modc = dynamic_cast<const StandardItemModifyCommand*> (other);
+		if (modc == nullptr) {return false;}
+
+		return m_command.get()->mergeWith(modc->m_command.get());
+	}
+
+private:
+	std::unique_ptr<QUndoCommand> m_command;
+	GraphicsWindowDataItem* m_item;
+};
+
+class RenderCommand : public QUndoCommand
+{
+public:
+	explicit RenderCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
+		m_command {child},
+		m_item {item}
+	{}
+	~RenderCommand()
+	{}
+	void undo() override
+	{
+		m_command.get()->undo();
+		m_item->renderGraphicsView();
+	}
+	void redo() override
+	{
+		m_command.get()->redo();
+		m_item->renderGraphicsView();
+	}
+
+	int id() const
+	{
+		return m_command->id();
+	}
+	bool mergeWith(const QUndoCommand *other)
+	{
+		const RenderCommand* modc = dynamic_cast<const RenderCommand*> (other);
+		if (modc == nullptr) {return false;}
+
+		return m_command.get()->mergeWith(modc->m_command.get());
+	}
+
+private:
+	std::unique_ptr<QUndoCommand> m_command;
+	GraphicsWindowDataItem* m_item;
+};
+
+}
+
+void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)
+{
+	QUndoCommand* com2 = new ModificationCommand(com, projectData()->mainfile());
+	if (item != nullptr) {
+		com2 = new StandardItemModifyCommand(com2, item);
+	}
+	iRICUndoStack::instance().push(com2);
+}
+
+void GraphicsWindowDataItem::pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem)
+{
+	QUndoCommand* com2 = new RenderCommand(com, item);
+	if (editItem) {
+		pushCommand(com2, item);
+	} else {
+		pushCommand(com2);
+	}
 }

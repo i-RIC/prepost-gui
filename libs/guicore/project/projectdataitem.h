@@ -79,7 +79,7 @@ protected:
 	/// @name Internal Utility functions
 	//@{
 	/// Set this project modified
-	virtual void setModified();
+	virtual void setModified(bool modified = true);
 	/// Project data
 	virtual ProjectData* projectData() const;
 	/// Load filename from project.xml

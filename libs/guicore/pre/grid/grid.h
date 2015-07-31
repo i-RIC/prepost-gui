@@ -66,9 +66,11 @@ public:
 	}
 	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
-	virtual void setModified() override {
-		m_isModified = true;
-		m_vtkGrid->Modified();
+	virtual void setModified(bool modified = true) override {
+		m_isModified = modified;
+		if (modified) {
+			m_vtkGrid->Modified();
+		}
 	}
 	bool isModified() const {return m_isModified;}
 	virtual const QStringList checkShape(QTextStream& stream);

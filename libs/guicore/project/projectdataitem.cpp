@@ -119,9 +119,9 @@ iRICMainWindowInterface* ProjectDataItem::iricMainWindow() const
 	return projectData()->mainWindow();
 }
 
-void ProjectDataItem::setModified()
+void ProjectDataItem::setModified(bool modified)
 {
-	parent()->setModified();
+	parent()->setModified(modified);
 }
 
 ProjectData* ProjectDataItem::projectData() const
