@@ -1,6 +1,7 @@
 #include "ui_postparticlebasicpropertydialog.h"
 
 #include "postparticlebasicpropertydialog.h"
+#include <QSettings>
 
 PostParticleBasicPropertyDialog::Setting::Setting() :
 	CompositeContainer {&color, &size},
@@ -24,7 +25,7 @@ PostParticleBasicPropertyDialog::~PostParticleBasicPropertyDialog()
 	delete ui;
 }
 
-Setting PostParticleBasicPropertyDialog::setting() const
+PostParticleBasicPropertyDialog::Setting PostParticleBasicPropertyDialog::setting() const
 {
 	Setting ret;
 
