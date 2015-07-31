@@ -17,7 +17,6 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -387,11 +386,11 @@ QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-class Post2dWindowContourSetProperty : public QUndoCommand
+class Post2dWindowNodeScalarGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowContourSetProperty(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item) :
-		QUndoCommand {QObject::tr("Update Contour Setting")},
+	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dWindowNodeScalarGroupDataItem* item) :
+		QUndoCommand {Post2dWindowNodeScalarGroupDataItem::tr("Update Contour Setting")},
 		m_newSetting {s},
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
@@ -405,35 +404,24 @@ public:
 		m_item = item;
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(m_newSetting.currentSolution);
-		*lut = m_oldLookupTable;
-		lut->update();
 		m_item->m_colorbarTitleMap[m_newSetting.currentSolution] = m_oldScalarBarTitle;
-		applySettings();
+		applySettings(m_oldSetting.currentSolution, m_oldLookupTable);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
-		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(m_newSetting.currentSolution);
-		*lut = m_newLookupTable;
-		lut->update();
 		m_item->m_colorbarTitleMap[m_newSetting.currentSolution] = m_newScalarBarTitle;
-		applySettings();
+		applySettings(m_newSetting.currentSolution, m_newLookupTable);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
-	void applySettings() {
+	void applySettings(const QString& sol, const LookupTableContainer& c) {
+		m_item->setCurrentSolution(sol);
+		Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_item->parent()->parent());
+		LookupTableContainer* lut = gtItem->lookupTable(sol);
+		*lut = c;
+		lut->update();
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
 		m_item->m_setting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
 		m_item->m_setting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
@@ -453,31 +441,26 @@ private:
 void Post2dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowContourSetProperty(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-class Post2dWindowContourSelectSolution : public QUndoCommand
+class Post2dWindowNodeScalarGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post2dWindowContourSelectSolution(const QString& newsol, Post2dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
+	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeScalarGroupDataItem* item) :
+		QUndoCommand {Post2dWindowNodeScalarGroupDataItem::tr("Contour Physical Value Change")}
+	{
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_setting.currentSolution;
 		m_item = item;
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	QString m_oldCurrentSolution;
@@ -489,11 +472,11 @@ private:
 void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScalarDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
+
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post2dWindowContourSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post2dWindowContourSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
 }
 

@@ -155,16 +155,16 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 	if (! streamlinesNode.isNull()) {
 		QDomNodeList streamlines = streamlinesNode.childNodes();
 		for (int i = 0; i < streamlines.length(); ++i) {
-			QDomElement elem = streamlines.at(i).toElement();
 			Post2dWindowUnstructuredStreamlineSetSetting s;
-			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
-			s.point1.setY(static_cast<qreal>(elem.attribute("point1Y").toDouble()));
-			s.point2.setX(static_cast<qreal>(elem.attribute("point2X").toDouble()));
-			s.point2.setY(static_cast<qreal>(elem.attribute("point2Y").toDouble()));
-			s.pointsSet = static_cast<bool>(elem.attribute("pointsSet").toInt());
-			s.numberOfPoints = elem.attribute("numberOfPoints").toInt();
-			s.color = loadColorAttribute("color",elem, s.color);
-			s.width = elem.attribute("width").toInt();
+			s.load(streamlines.at(i));
+//			s.point1.setX(static_cast<qreal>(elem.attribute("point1X").toDouble()));
+//			s.point1.setY(static_cast<qreal>(elem.attribute("point1Y").toDouble()));
+//			s.point2.setX(static_cast<qreal>(elem.attribute("point2X").toDouble()));
+//			s.point2.setY(static_cast<qreal>(elem.attribute("point2Y").toDouble()));
+//			s.pointsSet = static_cast<bool>(elem.attribute("pointsSet").toInt());
+//			s.numberOfPoints = elem.attribute("numberOfPoints").toInt();
+//			s.color = loadColorAttribute("color",elem, s.color);
+//			s.width = elem.attribute("width").toInt();
 			m_settings.append(s);
 		}
 	}
@@ -180,14 +180,15 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectM
 	for (int i = 0; i < m_settings.count(); ++i) {
 		Post2dWindowUnstructuredStreamlineSetSetting& setting = m_settings[i];
 		writer.writeStartElement("Streamline");
-		writer.writeAttribute("point1X", QString::number(setting.point1.x()));
-		writer.writeAttribute("point1Y", QString::number(setting.point1.y()));
-		writer.writeAttribute("point2X", QString::number(setting.point2.x()));
-		writer.writeAttribute("point2Y", QString::number(setting.point2.y()));
-		writer.writeAttribute("pointsSet", QString::number(static_cast<int>(setting.pointsSet)));
-		writer.writeAttribute("numberOfPoints", QString::number(setting.numberOfPoints));
-		writeColorAttribute("color", setting.color, writer);
-		writer.writeAttribute("width", QString::number(setting.width));
+		setting.save(writer);
+//		writer.writeAttribute("point1X", QString::number(setting.point1.x()));
+//		writer.writeAttribute("point1Y", QString::number(setting.point1.y()));
+//		writer.writeAttribute("point2X", QString::number(setting.point2.x()));
+//		writer.writeAttribute("point2Y", QString::number(setting.point2.y()));
+//		writer.writeAttribute("pointsSet", QString::number(static_cast<int>(setting.pointsSet)));
+//		writer.writeAttribute("numberOfPoints", QString::number(setting.numberOfPoints));
+//		writeColorAttribute("color", setting.color, writer);
+//		writer.writeAttribute("width", QString::number(setting.width));
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();

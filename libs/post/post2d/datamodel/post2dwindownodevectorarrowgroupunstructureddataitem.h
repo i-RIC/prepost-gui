@@ -48,6 +48,8 @@ private:
 	Setting m_unsSetting;
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 
+	class SetSettingCommand;
+
 public:
 	friend class Post2dWindowArrowUnstructuredSetProperty;
 };

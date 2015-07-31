@@ -27,8 +27,8 @@ public:
 	bool isSetupCorrectly() {return m_dialog != nullptr;}
 
 public slots:
-	void setModified() override {
-		PreProcessorDataItem::setModified();
+	void setModified(bool modified = true) override {
+		PreProcessorDataItem::setModified(modified);
 	}
 	void showDialog(bool readonly = false);
 

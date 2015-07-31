@@ -4,7 +4,6 @@
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/arrowsettingcontainer.h>
-#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 #include <QDomElement>
@@ -44,9 +43,7 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowG
 }
 
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::~Post2dWindowNodeVectorArrowGroupStructuredDataItem()
-{
-
-}
+{}
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 {
@@ -129,30 +126,18 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 	}
 	Post2dWindowArrowStructuredSettingDialog* dialog = new Post2dWindowArrowStructuredSettingDialog(p);
 	dialog->setZoneData(cont);
-
-//	dialog->setMapping(m_mapping);
-//	dialog->setColor(m_color);
-//	dialog->setScalarValue(m_scalarValueName);
 	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
-//	dialog->setRegionMode(m_regionMode);
-//	dialog->setRange(m_range);
-//	dialog->setSamplingRates(m_iSampleRate, m_jSampleRate);
-//	dialog->setLengthMode(m_lengthMode);
-//	dialog->setStandardValue(m_standardValue);
-//	dialog->setLegendLength(m_legendLength);
-//	dialog->setMinimumValue(m_minimumValue);
-//	dialog->setArrowSetting(m_arrowSetting);
 	dialog->setSettings(m_setting, m_stSetting);
 
 	return dialog;
 }
 
-class Post2dWindowArrowStructuredSetProperty : public QUndoCommand
+class Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowArrowStructuredSetProperty(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item) :
+	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item) :
 		QUndoCommand {QObject::tr("Update Arrow Setting")}
 	{
 		m_newSetting = s;
@@ -164,24 +149,19 @@ public:
 		m_item = item;
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_newSetting;
 		m_item->m_stSetting = m_newStSetting;
-
 		m_item->setCurrentSolution(m_newSetting.currentSolution);
+
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
 		m_item->m_stSetting = m_oldStSetting;
-
 		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;
@@ -196,7 +176,7 @@ private:
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowArrowStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowStructuredSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowArrowStructuredSetProperty(dialog->setting(), dialog->stSetting(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->stSetting(), this), this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -67,6 +67,7 @@ public:
 	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
 	virtual void setModified(bool modified = true) override {
+		ProjectDataItem::setModified(modified);
 		m_isModified = modified;
 		if (modified) {
 			m_vtkGrid->Modified();

@@ -86,6 +86,9 @@ private:
 	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
+	class SetSettingCommand;
+	class SelectSolutionCommand;
+
 public:
 	friend class Post2dWindowContourSetProperty;
 	friend class Post2dWindowContourSelectSolution;

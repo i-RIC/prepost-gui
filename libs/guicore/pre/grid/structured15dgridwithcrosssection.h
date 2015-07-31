@@ -30,9 +30,11 @@ public:
 	Structured15DGridWithCrossSectionCrossSection* crossSections(int i) {
 		return m_crossSections.at(i);
 	}
-	void setModified() override {
-		Grid::setModified();
-		m_vertexGrid->Modified();
+	void setModified(bool modified = true) override {
+		Grid::setModified(modified);
+		if (modified) {
+			m_vertexGrid->Modified();
+		}
 	}
 
 private:

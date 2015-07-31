@@ -59,9 +59,12 @@ private:
 
 	Post2dWindowStreamlineUnstructuredSettingDialog* m_dialog;
 
+	/// @name Members used for preview
+	//@{
 	QVector2D m_point1;
 	QVector2D m_point2;
 	int m_numberOfPoints;
+	//@}
 
 public:
 	friend class Post2dWindowStreamlineUnstructuredSetProperty;

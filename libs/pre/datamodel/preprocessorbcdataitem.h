@@ -82,8 +82,8 @@ public slots:
 	bool showDialog();
 
 private slots:
-	void setModified() override {
-		PreProcessorDataItem::setModified();
+	void setModified(bool modified = true) override {
+		PreProcessorDataItem::setModified(modified);
 	}
 	void assignSelectedElements();
 	void releaseSelectedElements();

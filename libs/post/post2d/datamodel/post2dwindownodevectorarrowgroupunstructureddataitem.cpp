@@ -3,7 +3,6 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 #include <QDomElement>
@@ -145,10 +144,10 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 	return dialog;
 }
 
-class Post2dWindowArrowUnstructuredSetProperty : public QUndoCommand
+class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowArrowUnstructuredSetProperty(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* item) :
+	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* item) :
 		QUndoCommand {QObject::tr("Update Arrow Setting")}
 	{
 		m_newSetting = s;
@@ -160,24 +159,18 @@ public:
 		m_item = item;
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_newSetting;
 		m_item->m_unsSetting = m_newUnsSetting;
 		m_item->setCurrentSolution(m_newSetting.currentSolution);
 
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_oldSetting;
 		m_item->m_unsSetting = m_oldUnsSetting;
 		m_item->setCurrentSolution(m_oldSetting.currentSolution);
 
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;
@@ -192,7 +185,7 @@ private:
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowArrowUnstructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowUnstructuredSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dWindowArrowUnstructuredSetProperty(dialog->setting(), dialog->unsSetting(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->unsSetting(), this), this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -65,8 +65,8 @@ public slots:
 	void executeMapping(bool noDraw, WaitDialog* dialog);
 
 private slots:
-	void setModified() override {
-		PreProcessorDataItem::setModified();
+	void setModified(bool modified = true) override {
+		PreProcessorDataItem::setModified(modified);
 	}
 	void updateItem();
 

@@ -38,11 +38,10 @@ protected:
 
 private:
 	Setting m_stSetting;
-//	int m_iSampleRate;
-//	int m_jSampleRate;
-//	StructuredGridRegion::Range2d m_range;
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 	vtkSmartPointer<vtkExtractGrid> m_arrowExtract;
+
+	class SetSettingCommand;
 
 public:
 	friend class Post2dWindowArrowStructuredSetProperty;
