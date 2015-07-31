@@ -44,11 +44,12 @@ public:
 	}
 };
 
-class GeoDataPolygonCoordinatesEditCommand : public QUndoCommand
+class GeoDataPolygon::EditCoordinatesCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonCoordinatesEditCommand(bool apply, QVector<QVector2D> coords, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Edit Polygon Coordinates")) {
+	EditCoordinatesCommand(bool apply, QVector<QVector2D> coords, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Edit Polygon Coordinates")}
+	{
 		m_apply = apply;
 		m_newCoords = coords;
 		m_polygon = pol;
@@ -114,7 +115,7 @@ void GeoDataPolygonCoordinatesEditDialog::accept()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GeoDataPolygonCoordinatesEditCommand(false, coords, m_polygon));
+	iRICUndoStack::instance().push(new GeoDataPolygon::EditCoordinatesCommand(false, coords, m_polygon));
 	QDialog::accept();
 }
 
@@ -136,7 +137,7 @@ void GeoDataPolygonCoordinatesEditDialog::apply()
 		iRICUndoStack::instance().undo();
 	}
 	QVector<QVector2D> coords = getCoords();
-	iRICUndoStack::instance().push(new GeoDataPolygonCoordinatesEditCommand(true, coords, m_polygon));
+	iRICUndoStack::instance().push(new GeoDataPolygon::EditCoordinatesCommand(true, coords, m_polygon));
 	m_applyed = true;
 }
 

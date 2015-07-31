@@ -28,26 +28,14 @@ class QAction;
 class QToolBar;
 
 class GridCreatingConditionCreatorTriangle;
-class GeoDataPolygonTriangleThread;
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
 class GeoDataPolygonHolePolygon;
-class GeoDataPolygonPolygonFinishDefiningCommand;
-class GeoDataPolygonPolygonDefineNewPointCommand;
-class GeoDataPolygonPolygonMoveCommand;
-class GeoDataPolygonPolygonMoveVertexCommand;
-class GeoDataPolygonPolygonRemoveVertexCommand;
-class GeoDataPolygonPolygonAddVertexCommand;
-class GeoDataPolygonPolygonCoordinatesEditCommand;
 class GeoDataPolygonImporter;
 class GeoDataPolygonShapeExporter;
+class GeoDataPolygonTriangleThread;
 class GeoDataPolygonProxy;
 class PreProcessorBCSettingDataItem;
-
-class GeoDataPolygonAddHolePolygonCommand;
-class GeoDataPolygonEditValueCommand;
-
-class GeoDataPolygonTriangleThread;
 
 class GD_POLYGON_EXPORT GeoDataPolygon : public GeoData
 {
@@ -214,27 +202,25 @@ private:
 
 	bool m_bcSettingMode;
 
+private:
+	class AddHolePolygonCommand;
+	class AddVertexCommand;
+	class DefineNewPointCommand;
+	class EditCoordinatesCommand;
+	class EditPropertyCommand;
+	class EditValueCommand;
+	class FinishPolygonDefiningCommand;
+	class MovePolygonCommand;
+	class MoveVertexCommand;
+	class RemoveVertexCommand;
+
 public:
 	friend class GeoDataPolygonCreator;
-	friend class GeoDataPolygonPropertyEditCommand;
-
-	friend class GeoDataPolygonPolygonFinishDefiningCommand;
-	friend class GeoDataPolygonPolygonDefineNewPointCommand;
-	friend class GeoDataPolygonPolygonMoveCommand;
-	friend class GeoDataPolygonPolygonMoveVertexCommand;
-	friend class GeoDataPolygonPolygonRemoveVertexCommand;
-	friend class GeoDataPolygonPolygonAddVertexCommand;
-	friend class GeoDataPolygonCoordinatesEditCommand;
-	friend class GeoDataPolygonAddHolePolygonCommand;
-	friend class GeoDataPolygonEditValueCommand;
-
 	friend class GeoDataPolygonCoordinatesEditDialog;
 	friend class GeoDataPolygonAbstractPolygon;
-
 	friend class GeoDataPolygonTriangleThread;
 	friend class GeoDataPolygonImporter;
 	friend class GeoDataPolygonShapeExporter;
-
 	friend class GeoDataPolygonProxy;
 	friend class PreProcessorBCSettingDataItem;
 };

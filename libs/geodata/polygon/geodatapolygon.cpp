@@ -263,11 +263,12 @@ void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 	updateMouseCursor(v);
 }
 
-class GeoDataPolygonPolygonFinishDefiningCommand : public QUndoCommand
+class GeoDataPolygon::FinishPolygonDefiningCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonFinishDefiningCommand(GeoDataPolygon* polygon)
-		: QUndoCommand(GeoDataPolygon::tr("Finish Defining Polygon")) {
+	FinishPolygonDefiningCommand(GeoDataPolygon* polygon) :
+		QUndoCommand {GeoDataPolygon::tr("Finish Defining Polygon")}
+	{
 		m_polygon = polygon;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
@@ -312,11 +313,12 @@ void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorG
 	}
 }
 
-class GeoDataPolygonPolygonDefineNewPointCommand : public QUndoCommand
+class GeoDataPolygon::DefineNewPointCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonDefineNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Add New Polygon Point")) {
+	DefineNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Add New Polygon Point")}
+	{
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -368,7 +370,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPolygonPolygonDefineNewPoint");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPolygonPolygonDefineNewPointCommand* comm = dynamic_cast<const GeoDataPolygonPolygonDefineNewPointCommand*>(other);
+		const DefineNewPointCommand* comm = dynamic_cast<const DefineNewPointCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_polygon != m_polygon) {return false;}
@@ -384,11 +386,12 @@ private:
 	bool m_oldMapped;
 };
 
-class GeoDataPolygonPolygonMoveCommand : public QUndoCommand
+class GeoDataPolygon::MovePolygonCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonMoveCommand(bool keyDown, const QPoint& from, const QPoint& to, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Move Polygon")) {
+	MovePolygonCommand(bool keyDown, const QPoint& from, const QPoint& to, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Move Polygon")}
+	{
 		m_keyDown = keyDown;
 		double dx = from.x();
 		double dy = from.y();
@@ -444,7 +447,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPolygonPolygonMove");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPolygonPolygonMoveCommand* comm = dynamic_cast<const GeoDataPolygonPolygonMoveCommand*>(other);
+		const MovePolygonCommand* comm = dynamic_cast<const MovePolygonCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_polygon != m_polygon) {return false;}
@@ -458,11 +461,12 @@ private:
 	bool m_oldMapped;
 };
 
-class GeoDataPolygonPolygonMoveVertexCommand : public QUndoCommand
+class GeoDataPolygon::MoveVertexCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonMoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Move Polygon Vertex")) {
+	MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Move Polygon Vertex")}
+	{
 		m_keyDown = keyDown;
 		m_vertexId = vertexId;
 		double dx = from.x();
@@ -518,7 +522,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPolygonPolygonMoveVertex");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPolygonPolygonMoveVertexCommand* comm = dynamic_cast<const GeoDataPolygonPolygonMoveVertexCommand*>(other);
+		const MoveVertexCommand* comm = dynamic_cast<const MoveVertexCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_polygon != m_polygon) {return false;}
@@ -536,11 +540,12 @@ private:
 	bool m_oldMapped;
 };
 
-class GeoDataPolygonPolygonAddVertexCommand : public QUndoCommand
+class GeoDataPolygon::AddVertexCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonAddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Insert Polygon Vertex")) {
+	AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Insert Polygon Vertex")}
+	{
 		m_keyDown = keyDown;
 		m_vertexId = (edgeId + 1) % (pol->m_selectedPolygon->getVtkPolygon()->GetNumberOfPoints() + 1);
 		double dx = point.x();
@@ -624,7 +629,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPolygonPolygonAddVertex");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPolygonPolygonAddVertexCommand* comm = dynamic_cast<const GeoDataPolygonPolygonAddVertexCommand*>(other);
+		const AddVertexCommand* comm = dynamic_cast<const AddVertexCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (m_polygon != comm->m_polygon) {return false;}
@@ -661,25 +666,25 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	case meDefining:
 		// update the position of the last point.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new GeoDataPolygonPolygonDefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new GeoDataPolygonPolygonMoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new GeoDataPolygonPolygonMoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
+			iRICUndoStack::instance().push(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new GeoDataPolygonPolygonAddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslateDialog:
@@ -689,11 +694,12 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	}
 }
 
-class GeoDataPolygonPolygonRemoveVertexCommand : public QUndoCommand
+class GeoDataPolygon::RemoveVertexCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPolygonRemoveVertexCommand(vtkIdType vertexId, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Remove Polygon Vertex")) {
+	RemoveVertexCommand(vtkIdType vertexId, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Remove Polygon Vertex")}
+	{
 		m_vertexId = vertexId;
 		double p[3];
 		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
@@ -791,11 +797,11 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new GeoDataPolygonPolygonDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 		case meDefining:
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new GeoDataPolygonPolygonDefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meTranslatePrepare:
@@ -812,7 +818,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 				updateMouseCursor(v);
 				// push the first translation command.
 				if (m_selectMode == smPolygon) {
-					iRICUndoStack::instance().push(new GeoDataPolygonPolygonMoveCommand(true, m_currentPoint, m_currentPoint, this));
+					iRICUndoStack::instance().push(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
 				}
 			}
 			break;
@@ -821,13 +827,13 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first move command.
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new GeoDataPolygonPolygonMoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
+				iRICUndoStack::instance().push(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
 			}
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new GeoDataPolygonPolygonAddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new AddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meAddVertexNotPossible:
@@ -839,7 +845,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 					// you are going to remove the last point.
 					deletePolygon(true);
 				} else {
-					iRICUndoStack::instance().push(new GeoDataPolygonPolygonRemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
+					iRICUndoStack::instance().push(new RemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
 				}
 			}
 			m_inhibitSelect = true;
@@ -963,7 +969,7 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	stack.undo();
 	stack.beginMacro(tr("Finish Defining Polygon"));
 	// finish defining the polygon.
-	stack.push(new GeoDataPolygonPolygonFinishDefiningCommand(this));
+	stack.push(new FinishPolygonDefiningCommand(this));
 	stack.endMacro();
 	if (m_selectedPolygon == m_gridRegionPolygon && (! noEditVal)) {
 		editValue();
@@ -1383,17 +1389,18 @@ void GeoDataPolygon::initParams()
 	m_mapping = GeoDataPolygonColorSettingDialog::Value;
 }
 
-class GeoDataPolygonAddHolePolygonCommand : public QUndoCommand
+class GeoDataPolygon::AddHolePolygonCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonAddHolePolygonCommand(GeoDataPolygonHolePolygon* newPoly, GeoDataPolygon* pol)
-		: QUndoCommand(GeoDataPolygon::tr("Add New Hole Polygon")) {
+	AddHolePolygonCommand(GeoDataPolygonHolePolygon* newPoly, GeoDataPolygon* pol) :
+		QUndoCommand {GeoDataPolygon::tr("Add New Hole Polygon")}
+	{
 		m_polygon = pol;
 		m_targetPolygon = newPoly;
 		m_undoed = false;
 		m_oldMapped = pol->m_mapped;
 	}
-	virtual ~GeoDataPolygonAddHolePolygonCommand() {
+	virtual ~AddHolePolygonCommand() {
 		if (m_undoed) {
 //			delete m_targetPolygon;
 		}
@@ -1439,7 +1446,7 @@ void GeoDataPolygon::addHolePolygon()
 	}
 	m_selectMode = smPolygon;
 	m_selectedPolygon = pol;
-	iRICUndoStack::instance().push(new GeoDataPolygonAddHolePolygonCommand(pol, this));
+	iRICUndoStack::instance().push(new AddHolePolygonCommand(pol, this));
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
 
@@ -1623,11 +1630,12 @@ void GeoDataPolygon::showInitialDialog()
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "geodatapolygoninit");
 }
 
-class GeoDataPolygonEditValueCommand : public QUndoCommand
+class GeoDataPolygon::EditValueCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonEditValueCommand(GeoDataPolygon* polygon, const QVariant& oldvalue, const QVariant& newvalue)
-		: QUndoCommand(QObject::tr("Polygon value change")) {
+	EditValueCommand(GeoDataPolygon* polygon, const QVariant& oldvalue, const QVariant& newvalue) :
+		QUndoCommand {QObject::tr("Polygon value change")}
+	{
 		m_polygon = polygon;
 		m_oldValue = oldvalue;
 		m_newValue = newvalue;
@@ -1685,7 +1693,7 @@ void GeoDataPolygon::editValue()
 	}
 	int ret = dialog->exec();
 	if (ret == QDialog::Accepted) {
-		iRICUndoStack::instance().push(new GeoDataPolygonEditValueCommand(this, variantValue(), dialog->variantValue()));
+		iRICUndoStack::instance().push(new EditValueCommand(this, variantValue(), dialog->variantValue()));
 	}
 }
 
@@ -1783,11 +1791,12 @@ QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-class GeoDataPolygonPropertyEditCommand : public QUndoCommand
+class GeoDataPolygon::EditPropertyCommand : public QUndoCommand
 {
 public:
-	GeoDataPolygonPropertyEditCommand(GeoDataPolygon* p, GeoDataPolygonColorSettingDialog::Mapping oldm, const QColor& oldc, int oldp, GeoDataPolygonColorSettingDialog::Mapping newm, const QColor& newc, int newp)
-		: QUndoCommand(QObject::tr("Polygon property edit")) {
+	EditPropertyCommand(GeoDataPolygon* p, GeoDataPolygonColorSettingDialog::Mapping oldm, const QColor& oldc, int oldp, GeoDataPolygonColorSettingDialog::Mapping newm, const QColor& newc, int newp) :
+		QUndoCommand {QObject::tr("Polygon property edit")}
+	{
 		m_polygon = p;
 		m_oldMapping = oldm;
 		m_oldColor = oldc;
@@ -1819,7 +1828,7 @@ private:
 void GeoDataPolygon::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GeoDataPolygonColorSettingDialog* dialog = dynamic_cast<GeoDataPolygonColorSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new GeoDataPolygonPropertyEditCommand(this, m_mapping, m_color, m_opacityPercent, dialog->mapping(), dialog->color(), dialog->opacityPercent()));
+	iRICUndoStack::instance().push(new EditPropertyCommand(this, m_mapping, m_color, m_opacityPercent, dialog->mapping(), dialog->color(), dialog->opacityPercent()));
 }
 
 bool GeoDataPolygon::getValueRange(double* min, double* max)
