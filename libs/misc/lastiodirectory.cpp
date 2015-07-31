@@ -2,7 +2,7 @@
 
 QString LastIODirectory::m_value;
 
-const QString LastIODirectory::get()
+QString LastIODirectory::get()
 {
 	return m_value;
 }

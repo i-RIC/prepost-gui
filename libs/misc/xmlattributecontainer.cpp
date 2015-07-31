@@ -10,7 +10,7 @@ XmlAttributeContainer::~XmlAttributeContainer()
 
 }
 
-const QString XmlAttributeContainer::attName(const QString& name) const
+QString XmlAttributeContainer::attName(const QString& name) const
 {
 	if (m_prefix.isEmpty()) {return name;}
 

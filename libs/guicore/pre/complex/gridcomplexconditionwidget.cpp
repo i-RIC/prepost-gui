@@ -116,7 +116,7 @@ void GridComplexConditionWidget::setCaption(const QString& caption)
 	ui->nameEdit->setText(caption);
 }
 
-const QString GridComplexConditionWidget::caption() const
+QString GridComplexConditionWidget::caption() const
 {
 	return ui->nameEdit->text();
 }

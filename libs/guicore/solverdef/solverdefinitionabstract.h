@@ -41,7 +41,7 @@ public:
 	/// Solver version
 	const VersionNumber& version() const;
 	/// Description of solver
-	const QString description() const;
+	QString description() const;
 	/// Url of the homepage of the solver
 	const QString& url() const;
 	/// Copyright
@@ -49,7 +49,7 @@ public:
 	/// Release date
 	const QDate& release() const;
 	/// License information
-	const QString license() const;
+	QString license() const;
 	/// Folder object
 	const QDir& folder() const;
 

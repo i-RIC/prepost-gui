@@ -142,7 +142,7 @@ void GridCreatingConditionExternalProgramSettingDialog::accept()
 	QDialog::accept();
 }
 
-const QString GridCreatingConditionExternalProgramSettingDialog::errorMessage(int errorcode) const
+QString GridCreatingConditionExternalProgramSettingDialog::errorMessage(int errorcode) const
 {
 	if (m_errorMessages.contains(errorcode)) {
 		return m_errorMessages.value(errorcode);

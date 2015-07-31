@@ -67,7 +67,7 @@ public:
 	bool isInputConditionSet();
 	GridState checkGridState();
 	/// Check grid shape and if problems found, returns warning message.
-	const QString checkGrid(bool detail) override;
+	QString checkGrid(bool detail) override;
 	void showEvent(QShowEvent* e) override;
 	void hideEvent(QHideEvent* e) override;
 	//public slots:

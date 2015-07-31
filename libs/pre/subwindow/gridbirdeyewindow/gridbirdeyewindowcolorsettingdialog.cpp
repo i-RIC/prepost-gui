@@ -106,7 +106,7 @@ GridBirdEyeWindowDataModel::ColorType GridBirdEyeWindowColorSettingDialog::color
 	}
 }
 
-const QString GridBirdEyeWindowColorSettingDialog::attributeName() const
+QString GridBirdEyeWindowColorSettingDialog::attributeName() const
 {
 	if (ui->nodeAttRadioButton->isChecked()) {
 		return m_nodeConds.at(ui->nodeAttComboBox->currentIndex())->name();
@@ -116,7 +116,7 @@ const QString GridBirdEyeWindowColorSettingDialog::attributeName() const
 	return "";
 }
 
-const QColor GridBirdEyeWindowColorSettingDialog::customColor() const
+QColor GridBirdEyeWindowColorSettingDialog::customColor() const
 {
 	return ui->customColorLabel->color();
 }

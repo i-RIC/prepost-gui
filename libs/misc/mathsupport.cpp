@@ -156,7 +156,7 @@ namespace iRIC
 		return pointRoundedValue(val, TIME_PRECISION);
 	}
 
-	const QString timeSecondValueStr(double val, int /*length*/)
+	QString timeSecondValueStr(double val, int /*length*/)
 	{
 		return QString::number(timeSecondValue(val));
 	}

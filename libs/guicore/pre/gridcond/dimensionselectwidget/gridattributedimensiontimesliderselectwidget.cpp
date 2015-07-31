@@ -88,7 +88,7 @@ void GridAttributeDimensionTimeSliderSelectWidget::doApplyValues()
 	setCurrentIndex(m_container->currentIndex());
 }
 
-const QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
+QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
 {
 	QVariant value = m_container->variantValue(index);
 	if (m_isTime) {
@@ -111,7 +111,7 @@ const QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index)
 	}
 }
 
-const QString GridAttributeDimensionTimeSliderSelectWidget::currentStepLabel() const
+QString GridAttributeDimensionTimeSliderSelectWidget::currentStepLabel() const
 {
 	if (m_container->count() == 0) {return "";}
 	return stepLabel(currentStepIndex());

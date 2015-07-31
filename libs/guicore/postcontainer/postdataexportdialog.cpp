@@ -189,7 +189,7 @@ PostExportSetting PostDataExportDialog::exportSetting() const
 	return ret;
 }
 
-const QString PostDataExportDialog::prefix() const
+QString PostDataExportDialog::prefix() const
 {
 	return ui->prefixEdit->text();
 }

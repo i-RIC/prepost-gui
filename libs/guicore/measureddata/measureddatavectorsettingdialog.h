@@ -20,23 +20,23 @@ public:
 	void setData(MeasuredData* data);
 	bool isEnabled() const;
 	void setSolution(const QString& sol);
-	const QString solution();
+	QString solution() const;
 	void setScalarValue(const QString& scalar);
-	const QString scalarValue();
+	QString scalarValue() const;
 	void setColor(const QColor& color);
-	const QColor color() const;
+	QColor color() const;
 
 	void setLengthMode(MeasuredData::ArrowLengthMode lm);
-	MeasuredData::ArrowLengthMode lengthMode();
+	MeasuredData::ArrowLengthMode lengthMode() const;
 	void setStandardValue(double stdVal);
-	double standardValue();
+	double standardValue() const;
 	void setLegendLength(int len);
-	int legendLength();
+	int legendLength() const;
 	void setMinimumValue(double minVal);
-	double minimumValue();
+	double minimumValue() const;
 
 	void setColorMode(MeasuredData::ArrowColorMode cm);
-	MeasuredData::ArrowColorMode colorMode();
+	MeasuredData::ArrowColorMode colorMode() const;
 
 private:
 	void setupSolutionComboBox(MeasuredData* data);

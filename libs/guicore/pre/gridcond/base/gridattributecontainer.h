@@ -43,7 +43,7 @@ public slots:
 	void handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after);
 
 protected:
-	const QString temporaryExternalFilename(int index) const;
+	QString temporaryExternalFilename(int index) const;
 	virtual bool loadFromExternalFile(const QString& filename) = 0;
 	virtual bool saveToExternalFile(const QString& filename) = 0;
 

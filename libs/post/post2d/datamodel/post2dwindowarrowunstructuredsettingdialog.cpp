@@ -42,7 +42,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSolution(const QString& sol)
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowUnstructuredSettingDialog::solution() const
+QString Post2dWindowArrowUnstructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -55,7 +55,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setScalarValue(const QString& s
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowUnstructuredSettingDialog::scalarValue() const
+QString Post2dWindowArrowUnstructuredSettingDialog::scalarValue() const
 {
 	int index = ui->scalarComboBox->currentIndex();
 	return m_scalars.at(index);
@@ -66,7 +66,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setColor(const QColor& color)
 	ui->colorEditWidget->setColor(color);
 }
 
-const QColor Post2dWindowArrowUnstructuredSettingDialog::color() const
+QColor Post2dWindowArrowUnstructuredSettingDialog::color() const
 {
 	return ui->colorEditWidget->color();
 }

@@ -39,7 +39,7 @@ public:
 	bool trashWorkfolder(const QString& foldername);
 	/// QDir object that points the workspace folder.
 	const QDir& workspace() const {return m_workspace;}
-	const QString tmpFileName() const;
+	QString tmpFileName() const;
 	/// Remove files created by zip.exe as temporary files.
 	void removeZipTrashes();
 

@@ -126,7 +126,7 @@ const vtkTextPropertySettingContainer& PreProcessorScalarBarEditDialog::labelTex
 	return ui->scalarBarWidget->labelTextSetting();
 }
 
-const QString PreProcessorScalarBarEditDialog::labelFormat() const
+QString PreProcessorScalarBarEditDialog::labelFormat() const
 {
 	return ui->scalarBarWidget->labelFormat();
 }

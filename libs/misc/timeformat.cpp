@@ -9,7 +9,7 @@
 
 #define INTDISPLAY_LIMIT 10000000
 
-const QString TimeFormat::formattedString(double seconds, Format format)
+QString TimeFormat::formattedString(double seconds, Format format)
 {
 	QString ret;
 	seconds = iRIC::timeSecondValue(seconds);
@@ -31,7 +31,7 @@ const QString TimeFormat::formattedString(double seconds, Format format)
 	return ret;
 }
 
-const QString TimeFormat::secondString(double seconds, int secondLength)
+QString TimeFormat::secondString(double seconds, int secondLength)
 {
 	if (seconds > INTDISPLAY_LIMIT) {
 		return QString::number(seconds);
@@ -81,7 +81,7 @@ const QString TimeFormat::secondString(double seconds, int secondLength)
 	}
 }
 
-const QString TimeFormat::minuteSecondString(double seconds, int minuteLength)
+QString TimeFormat::minuteSecondString(double seconds, int minuteLength)
 {
 	QString fmt("%1:%2");
 	double minutes = std::floor(seconds / 60);
@@ -93,7 +93,7 @@ const QString TimeFormat::minuteSecondString(double seconds, int minuteLength)
 	}
 }
 
-const QString TimeFormat::hourMinuteSecondString(double seconds, int hourLength)
+QString TimeFormat::hourMinuteSecondString(double seconds, int hourLength)
 {
 	double hours = std::floor(seconds / 3600);
 	if (hours == 0) {return minuteSecondString(seconds);}
@@ -106,7 +106,7 @@ const QString TimeFormat::hourMinuteSecondString(double seconds, int hourLength)
 	}
 }
 
-const QString TimeFormat::dayHourMinuteSecondString(double seconds)
+QString TimeFormat::dayHourMinuteSecondString(double seconds)
 {
 	double days = std::floor(seconds / 86400);
 	if (days == 0) {return hourMinuteSecondString(seconds);}

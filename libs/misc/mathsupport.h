@@ -38,7 +38,7 @@ namespace iRIC
 	/// Returns rounded value appropriate for time seconds (until miliseconds)
 	double MISCDLL_EXPORT timeSecondValue(double val);
 	/// Returns timeSecondValue() as a string
-	const QString MISCDLL_EXPORT timeSecondValueStr(double val, int length = 0);
+	QString MISCDLL_EXPORT timeSecondValueStr(double val, int length = 0);
 	/// Returns true if polygon edges cross with other edge of the polygon
 	bool MISCDLL_EXPORT hasIntersection(const QPolygonF& polygon);
 }

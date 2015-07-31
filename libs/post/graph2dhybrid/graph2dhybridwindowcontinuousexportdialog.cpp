@@ -274,17 +274,17 @@ void Graph2dHybridWindowContinuousExportDialog::setTimeSkip(int skip)
 	ui->samplingSpinBox->setValue(skip);
 }
 
-const QString Graph2dHybridWindowContinuousExportDialog::folder()
+QString Graph2dHybridWindowContinuousExportDialog::folder() const
 {
 	return ui->directoryEditWidget->dirname();
 }
 
-const QString Graph2dHybridWindowContinuousExportDialog::prefix()
+QString Graph2dHybridWindowContinuousExportDialog::prefix() const
 {
 	return ui->prefixEdit->text();
 }
 
-Graph2dHybridWindowContinuousExportDialog::RegionMode Graph2dHybridWindowContinuousExportDialog::regionMode()
+Graph2dHybridWindowContinuousExportDialog::RegionMode Graph2dHybridWindowContinuousExportDialog::regionMode() const
 {
 	if (ui->currentRegionCheckBox->isChecked()) {
 		return rmCurrentOnly;
@@ -295,46 +295,46 @@ Graph2dHybridWindowContinuousExportDialog::RegionMode Graph2dHybridWindowContinu
 	}
 }
 
-int Graph2dHybridWindowContinuousExportDialog::iMin()
+int Graph2dHybridWindowContinuousExportDialog::iMin() const
 {
 	return ui->iMinSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::iMax()
+int Graph2dHybridWindowContinuousExportDialog::iMax() const
 {
 	return ui->iMaxSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::jMin()
+int Graph2dHybridWindowContinuousExportDialog::jMin() const
 {
 	return ui->jMinSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::jMax()
+int Graph2dHybridWindowContinuousExportDialog::jMax() const
 {
 	return ui->jMaxSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::kMin()
+int Graph2dHybridWindowContinuousExportDialog::kMin() const
 {
 	return ui->kMinSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::kMax()
+int Graph2dHybridWindowContinuousExportDialog::kMax() const
 {
 	return ui->kMaxSlider->value() - 1;
 }
-int Graph2dHybridWindowContinuousExportDialog::indexMin()
+int Graph2dHybridWindowContinuousExportDialog::indexMin() const
 {
 	return ui->indexMinSlider->value() - 1;
 }
 
-int Graph2dHybridWindowContinuousExportDialog::indexMax()
+int Graph2dHybridWindowContinuousExportDialog::indexMax() const
 {
 	return ui->indexMaxSlider->value() - 1;
 }
 
-Graph2dHybridWindowContinuousExportDialog::TimeMode Graph2dHybridWindowContinuousExportDialog::timeMode()
+Graph2dHybridWindowContinuousExportDialog::TimeMode Graph2dHybridWindowContinuousExportDialog::timeMode() const
 {
 	if (ui->timeCurrentOnlyCheckBox->isChecked()) {
 		return tmCurrentOnly;
@@ -345,17 +345,17 @@ Graph2dHybridWindowContinuousExportDialog::TimeMode Graph2dHybridWindowContinuou
 	}
 }
 
-int Graph2dHybridWindowContinuousExportDialog::startTimeStep()
+int Graph2dHybridWindowContinuousExportDialog::startTimeStep() const
 {
 	return ui->timeStartSlider->value();
 }
 
-int Graph2dHybridWindowContinuousExportDialog::endTimeStep()
+int Graph2dHybridWindowContinuousExportDialog::endTimeStep() const
 {
 	return ui->timeEndSlider->value();
 }
 
-int Graph2dHybridWindowContinuousExportDialog::timeSkip()
+int Graph2dHybridWindowContinuousExportDialog::timeSkip() const
 {
 	return ui->samplingSpinBox->value();
 }

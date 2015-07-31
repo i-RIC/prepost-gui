@@ -19,7 +19,7 @@ public:
 	virtual ~Graph2dHybridWindowResultDataItem();
 	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update(int fn);
-	const QString title() const;
+	QString title() const;
 	virtual Graph2dHybridWindowResultCopyDataItem* copy(Graph2dHybridWindowResultCopyGroupDataItem* parent);
 	const Graph2dHybridWindowResultSetting::Setting& setting() const {return m_setting;}
 	void setSetting(const Graph2dHybridWindowResultSetting::Setting& s);

@@ -38,9 +38,10 @@ private slots:
 private:
 	void setupList();
 	void updateLabel();
-	const QString label(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item);
-	const QString autoLabel(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item);
-	const QString autoLabel();
+	QString label(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item) const;
+	QString autoLabel(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item) const;
+	QString autoLabel() const;
+
 	Graph2dWindowMarkerSetting m_setting;
 	Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem* m_item;
 	Ui::Graph2dWindowMarkerSettingDialog* ui;

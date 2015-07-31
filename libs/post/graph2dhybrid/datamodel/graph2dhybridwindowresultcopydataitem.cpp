@@ -176,7 +176,7 @@ void Graph2dHybridWindowResultCopyDataItem::setId(IDType idtype, const QStringLi
 	setTitle(id());
 }
 
-const QString Graph2dHybridWindowResultCopyDataItem::id()
+QString Graph2dHybridWindowResultCopyDataItem::id() const
 {
 	QString temp;
 
@@ -222,7 +222,7 @@ const QString Graph2dHybridWindowResultCopyDataItem::id()
 	return temp;
 }
 
-const QString Graph2dHybridWindowResultCopyDataItem::title() const
+QString Graph2dHybridWindowResultCopyDataItem::title() const
 {
 	return m_standardItem->text();
 }

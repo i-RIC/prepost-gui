@@ -26,8 +26,8 @@ public:
 	/// Returns the index of current step
 	int currentStepIndex() const;
 	/// Returns the label of current index
-	const QString currentStepLabel() const;
-	const QString stepLabel(int index) const;
+	QString currentStepLabel() const;
+	QString stepLabel(int index) const;
 
 public slots:
 	/// Step to next step

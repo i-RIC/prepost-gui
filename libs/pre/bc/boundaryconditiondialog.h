@@ -40,7 +40,7 @@ public:
 
 	void setType(const QString& type);
 	void setCaption(const QString& caption);
-	const QString caption() const;
+	QString caption() const;
 	void setOpacityPercent(int opacity);
 	int opacityPercent() const;
 	QColor color();

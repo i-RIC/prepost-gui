@@ -37,7 +37,7 @@ GridAttributeDimensionsContainer* GridAttributeContainer::dimensions() const
 	return gtItem->geoDataTop()->groupDataItem(name())->dimensions();
 }
 
-const QString GridAttributeContainer::temporaryExternalFilename(int index) const
+QString GridAttributeContainer::temporaryExternalFilename(int index) const
 {
 	ProjectDataItem* item = m_grid->parent();
 	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);

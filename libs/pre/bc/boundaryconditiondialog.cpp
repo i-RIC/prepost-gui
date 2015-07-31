@@ -155,7 +155,7 @@ void BoundaryConditionDialog::setCaption(const QString& caption)
 	ui->nameEdit->setText(caption);
 }
 
-const QString BoundaryConditionDialog::caption() const
+QString BoundaryConditionDialog::caption() const
 {
 	return ui->nameEdit->text();
 }

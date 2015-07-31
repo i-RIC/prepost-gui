@@ -74,7 +74,7 @@ void Graph2dScatteredWindowResultDataItem::setSetting(const Graph2dScatteredWind
 	m_setting.setupCurve(m_curve);
 }
 
-const QString Graph2dScatteredWindowResultDataItem::title() const
+QString Graph2dScatteredWindowResultDataItem::title() const
 {
 	return m_standardItem->text();
 }

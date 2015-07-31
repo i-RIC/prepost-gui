@@ -25,7 +25,7 @@ public:
 		m_prefix = prefix;
 	}
 	/// Attributes name (Prefix added if set)
-	const QString attName(const QString& name) const;
+	QString attName(const QString& name) const;
 
 protected:
 	QString m_prefix {};

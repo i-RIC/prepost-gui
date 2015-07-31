@@ -42,7 +42,7 @@ void Post2dWindowArrowStructuredSettingDialog::setSolution(const QString& sol)
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowStructuredSettingDialog::solution() const
+QString Post2dWindowArrowStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -55,7 +55,7 @@ void Post2dWindowArrowStructuredSettingDialog::setScalarValue(const QString& sca
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowArrowStructuredSettingDialog::scalarValue() const
+QString Post2dWindowArrowStructuredSettingDialog::scalarValue() const
 {
 	int index = ui->scalarComboBox->currentIndex();
 	return m_scalars.at(index);

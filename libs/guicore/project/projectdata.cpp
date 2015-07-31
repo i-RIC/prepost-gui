@@ -108,7 +108,7 @@ ProjectData::~ProjectData()
 	}
 }
 
-const QString ProjectData::absoluteFileName(const QString& relativeFileName) const
+QString ProjectData::absoluteFileName(const QString& relativeFileName) const
 {
 	QDir workdir(m_workDirectory);
 	return workdir.absoluteFilePath(relativeFileName);
@@ -278,7 +278,7 @@ bool ProjectData::zipTo(const QString& filename)
 	return true;
 }
 
-const QString ProjectData::newWorkfolderName(const QDir& workspace)
+QString ProjectData::newWorkfolderName(const QDir& workspace)
 {
 	QCryptographicHash hash(QCryptographicHash::Md5);
 	QTime current = QTime::currentTime();
@@ -298,13 +298,13 @@ bool ProjectData::switchToDefaultCgnsFile()
 	return m_mainfile->switchCgnsFile(current);
 }
 
-const QString ProjectData::workCgnsFileName(const QString& name) const
+QString ProjectData::workCgnsFileName(const QString& name) const
 {
 	QString tmpstr = name;
 	return QDir(m_workDirectory).absoluteFilePath(tmpstr.append(".cgn"));
 }
 
-const QString ProjectData::currentCgnsFileName() const
+QString ProjectData::currentCgnsFileName() const
 {
 	QString filename = m_mainfile->cgnsFileList()->current()->filename();
 	return workCgnsFileName(filename);
@@ -326,7 +326,7 @@ const VersionNumber ProjectData::version()
 	return m_mainfile->iRICVersion();
 }
 
-const QString ProjectData::tmpFileName() const
+QString ProjectData::tmpFileName() const
 {
 	QCryptographicHash hash(QCryptographicHash::Md5);
 	QTime current = QTime::currentTime();

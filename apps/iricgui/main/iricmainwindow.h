@@ -67,7 +67,7 @@ public:
 	bool isDebugMode() {return m_debugMode;}
 	bool continuousSnapshotInProgress() const override {return m_continuousSnapshotInProgress;}
 	void setContinuousSnapshotInProgress(bool prog) override {m_continuousSnapshotInProgress = prog;}
-	const QString tmpFileName(int len = 0) const;
+	QString tmpFileName(int len = 0) const;
 	AnimationControllerInterface* animationController() const override {return m_animationController;}
 	CoordinateSystemBuilder* coordinateSystemBuilder() const override {return m_coordinateSystemBuilder;}
 	void initForSolverDefinition() override;

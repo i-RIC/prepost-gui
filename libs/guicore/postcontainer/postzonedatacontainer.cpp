@@ -1059,7 +1059,7 @@ bool PostZoneDataContainer::vectorValueExists() const
 	return false;
 }
 
-bool PostZoneDataContainer::IBCExists()
+bool PostZoneDataContainer::IBCExists() const
 {
 	vtkPointData* data = m_data->GetPointData();
 	int n = data->GetNumberOfArrays();
@@ -1071,7 +1071,7 @@ bool PostZoneDataContainer::IBCExists()
 	return false;
 }
 
-const QString PostZoneDataContainer::elevationName()
+QString PostZoneDataContainer::elevationName() const
 {
 	int num = m_data->GetPointData()->GetNumberOfArrays();
 	for (int i = 0; i < num; ++i) {

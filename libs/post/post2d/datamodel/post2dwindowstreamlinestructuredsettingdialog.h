@@ -28,7 +28,7 @@ public:
 		m_settings = settings;
 		setupSettingList();
 	}
-	const QString solution();
+	QString solution() const;
 	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
 	const QList<Post2dWindowStructuredStreamlineSetSetting>& settings() const {return m_settings;}
 

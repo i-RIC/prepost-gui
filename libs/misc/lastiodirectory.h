@@ -9,7 +9,7 @@ class MISCDLL_EXPORT LastIODirectory
 {
 
 public:
-	static const QString get();
+	static QString get();
 	static void set(const QString& val);
 
 private:

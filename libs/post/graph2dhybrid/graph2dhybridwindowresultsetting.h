@@ -174,7 +174,7 @@ public:
 
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dHybridWindowResultGroupDataItem* gItem) const ;
 
-	const QString autoYAxisLabel(AxisSide as);
+	QString autoYAxisLabel(AxisSide as) const;
 	bool axisNeeded(AxisSide as);
 
 	TimeValueType timeValueType() const {return m_timeValueType;}
@@ -184,11 +184,11 @@ public:
 	bool xAxisReverse() const {return m_xAxisReverse;}
 	void setXAxisReverse(bool rev) {m_xAxisReverse = rev;}
 	const QString& xAxisLabel() const {return m_xAxisLabel;}
-	static const QString autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm);
+	static QString autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm);
 	void setAutoXAxisLabel();
 	void setXAxisLabel(const QString& l) {m_xAxisLabel = l;}
-	static const QString autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::TimeValueType t);
-	static const QString autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t);
+	static QString autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::TimeValueType t);
+	static QString autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t);
 
 	bool yAxisLeftAutoRange() const {return m_yAxisLeftAutoRange;}
 	void setYAxisLeftAutoRange(bool a) {m_yAxisLeftAutoRange = a;}

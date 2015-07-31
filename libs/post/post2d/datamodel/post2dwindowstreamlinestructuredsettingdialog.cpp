@@ -57,7 +57,7 @@ void Post2dWindowStreamlineStructuredSettingDialog::setSolution(const QString& s
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowStreamlineStructuredSettingDialog::solution()
+QString Post2dWindowStreamlineStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);

@@ -92,7 +92,7 @@ void Graph2dHybridWindowResultDataItem::setSetting(const Graph2dHybridWindowResu
 	m_setting.setupCurve(m_curve);
 }
 
-const QString Graph2dHybridWindowResultDataItem::title() const
+QString Graph2dHybridWindowResultDataItem::title() const
 {
 	return m_standardItem->text();
 }

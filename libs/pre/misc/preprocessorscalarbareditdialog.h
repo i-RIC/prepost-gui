@@ -40,7 +40,7 @@ public:
 	PreProcessorWindowScalarBarSettingWidget::Setting colorBarSetting() const;
 	const vtkTextPropertySettingContainer& titleTextSetting() const;
 	const vtkTextPropertySettingContainer& labelTextSetting() const;
-	const QString labelFormat() const;
+	QString labelFormat() const;
 
 	void hideDisplayCheckBox();
 

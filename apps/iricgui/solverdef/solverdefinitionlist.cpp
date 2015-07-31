@@ -94,7 +94,7 @@ SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)
 	return m_dialog;
 }
 
-const QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
+QString SolverDefinitionList::supportingSolverFolder(ProjectData* p)
 {
 	for (SolverDefinitionAbstract* solver : m_solverList) {
 		if (solver->name() == p->mainfile()->solverName() &&

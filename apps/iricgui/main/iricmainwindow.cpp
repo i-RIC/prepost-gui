@@ -1969,7 +1969,7 @@ void iRICMainWindow::exportStKML()
 	m_continuousSnapshotInProgress = false;
 }
 
-const QString iRICMainWindow::tmpFileName(int len) const
+QString iRICMainWindow::tmpFileName(int len) const
 {
 	QCryptographicHash hash(QCryptographicHash::Md5);
 	QTime current = QTime::currentTime();

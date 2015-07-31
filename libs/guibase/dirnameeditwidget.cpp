@@ -23,7 +23,7 @@ void DirnameEditWidget::setDirname(const QString& dirname)
 	ui->lineEdit->setText(QDir::toNativeSeparators(dirname));
 }
 
-const QString DirnameEditWidget::dirname() const
+QString DirnameEditWidget::dirname() const
 {
 	return QDir::fromNativeSeparators(ui->lineEdit->text());
 }

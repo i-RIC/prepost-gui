@@ -156,14 +156,14 @@ void Graph2dHybridWindowImportDataDataItem::setId(const QString filename, const 
 	setTitle(id());
 }
 
-const QString Graph2dHybridWindowImportDataDataItem::id()
+QString Graph2dHybridWindowImportDataDataItem::id() const
 {
 	QString temp = tr("%1 - %2");
 
 	return temp.arg(m_filename).arg(m_name);
 }
 
-const QString Graph2dHybridWindowImportDataDataItem::title() const
+QString Graph2dHybridWindowImportDataDataItem::title() const
 {
 	return m_standardItem->text();
 }

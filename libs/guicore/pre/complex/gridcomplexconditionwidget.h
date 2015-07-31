@@ -53,7 +53,7 @@ public:
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
 
 	void setCaption(const QString& caption);
-	const QString caption() const;
+	QString caption() const;
 	void setColor(const QColor& color);
 	QColor color() const;
 	void setIsDefault(bool def);

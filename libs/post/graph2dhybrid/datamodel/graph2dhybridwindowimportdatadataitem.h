@@ -23,10 +23,10 @@ public:
 	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update();
 	void setId(const QString filename, const QString name);
-	const QString id();
+	QString id() const;
 	const QVector<double>& xValues() const {return m_xValues;}
 	const QVector<double>& yValues() const {return m_yValues;}
-	const QString title() const;
+	QString title() const;
 	bool axisNeeded(Graph2dHybridWindowResultSetting::AxisSide as) const;
 
 protected:

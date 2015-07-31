@@ -33,7 +33,7 @@ public:
 	void reset(bool nodialog = false);
 	/// Set the file name to use for CGNS.
 	void setFilename(const QString& filename) {m_filename = filename;}
-	const QString errorMessage(int errorcode) const;
+	QString errorMessage(int errorcode) const;
 
 public slots:
 	void accept() override;

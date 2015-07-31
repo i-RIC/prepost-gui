@@ -17,13 +17,13 @@ public:
 		fmDayHourMinuteSecond ///< dd:hh:mm:ss
 	};
 	/// Returns formatted time string from seconds value
-	static const QString formattedString(double seconds, Format format);
+	static QString formattedString(double seconds, Format format);
 
 private:
-	static const QString secondString(double seconds, int secondLength = 0);
-	static const QString minuteSecondString(double seconds, int minuteLength = 0);
-	static const QString hourMinuteSecondString(double seconds, int hourLength = 0);
-	static const QString dayHourMinuteSecondString(double seconds);
+	static QString secondString(double seconds, int secondLength = 0);
+	static QString minuteSecondString(double seconds, int minuteLength = 0);
+	static QString hourMinuteSecondString(double seconds, int hourLength = 0);
+	static QString dayHourMinuteSecondString(double seconds);
 };
 
 #endif // TIMEFORMAT_H

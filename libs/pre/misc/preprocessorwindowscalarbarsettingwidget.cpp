@@ -220,7 +220,7 @@ void PreProcessorWindowScalarBarSettingWidget::setLabelFormat(const QString& for
 	ui->labelFormatEdit->setText(format);
 }
 
-const QString PreProcessorWindowScalarBarSettingWidget::labelFormat()
+QString PreProcessorWindowScalarBarSettingWidget::labelFormat() const
 {
 	return ui->labelFormatEdit->text();
 }

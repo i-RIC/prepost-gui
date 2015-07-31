@@ -338,7 +338,7 @@ QList<Graph2dWindowDataItem*> Graph2dHybridWindowResultSetting::setupItems(Graph
 	return ret;
 }
 
-const QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as)
+QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as) const
 {
 	QStringList labels;
 	for (int i = 0; i < m_targetDatas.count(); ++i) {
@@ -419,7 +419,7 @@ QColor Graph2dHybridWindowResultSetting::autoColor(int index) const
 	return m_colorSource->getColor(index);
 }
 
-const QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm)
+QString Graph2dHybridWindowResultSetting::autoXAxisLabel(Graph2dHybridWindowResultSetting::XAxisMode xm)
 {
 	switch (xm) {
 	case Graph2dHybridWindowResultSetting::xaTime:
@@ -449,7 +449,7 @@ void Graph2dHybridWindowResultSetting::setAutoXAxisLabel()
 	m_xAxisLabel = xAxisLabel;
 }
 
-const QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode /*mode*/, Graph2dHybridWindowResultSetting::TimeValueType t)
+QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybridWindowResultSetting::XAxisMode /*mode*/, Graph2dHybridWindowResultSetting::TimeValueType t)
 {
 	if (t == Graph2dHybridWindowResultSetting::tvtTime) {
 		return Graph2dHybridWindow::tr("Time");
@@ -458,7 +458,7 @@ const QString Graph2dHybridWindowResultSetting::autoXAxisTimeLabel(Graph2dHybrid
 	}
 }
 
-const QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t)
+QString Graph2dHybridWindowResultSetting::autoXAxisPositionLabel(Graph2dHybridWindowResultSetting::XAxisMode mode, Graph2dHybridWindowResultSetting::PositionValueType t)
 {
 	if (t == Graph2dHybridWindowResultSetting::pvtDistance) {
 		return Graph2dHybridWindow::tr("Distance");

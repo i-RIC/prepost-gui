@@ -213,7 +213,7 @@ QwtSymbol::Style Graph2dScatteredWindowResultSetting::getSymbolStyle(SymbolType 
 	}
 }
 
-const QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as)
+QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as)
 {
 	QStringList labels;
 	for (int i = 0; i < m_targetDatas.count(); ++i) {

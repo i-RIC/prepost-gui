@@ -63,7 +63,7 @@ void Post3dWindowParticleStructuredSettingDialog::setSolution(const QString& sol
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post3dWindowParticleStructuredSettingDialog::solution() const
+QString Post3dWindowParticleStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);

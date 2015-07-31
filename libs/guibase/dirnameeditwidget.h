@@ -27,7 +27,7 @@ public:
 	/// Set the directory name (in full path)
 	void setDirname(const QString& dirname);
 	/// The directory name (in full path)
-	const QString dirname() const;
+	QString dirname() const;
 
 private slots:
 	/// Open folder select dialog (The dialog shown is operating system dependent)

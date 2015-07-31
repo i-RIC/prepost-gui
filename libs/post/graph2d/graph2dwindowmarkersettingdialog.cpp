@@ -86,7 +86,7 @@ void Graph2dWindowMarkerSettingDialog::updateLabel()
 	updating = false;
 }
 
-const QString Graph2dWindowMarkerSettingDialog::label(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item)
+QString Graph2dWindowMarkerSettingDialog::label(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item) const
 {
 	if (item.labelMode() == Graph2dWindowMarkerSetting::lmAuto) {
 		return autoLabel(item);
@@ -95,7 +95,7 @@ const QString Graph2dWindowMarkerSettingDialog::label(const Graph2dWindowMarkerS
 	}
 }
 
-const QString Graph2dWindowMarkerSettingDialog::autoLabel(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item)
+QString Graph2dWindowMarkerSettingDialog::autoLabel(const Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem& item) const
 {
 	QString label("%1 = %2");
 	QString var;
@@ -107,7 +107,7 @@ const QString Graph2dWindowMarkerSettingDialog::autoLabel(const Graph2dWindowMar
 	return label.arg(var).arg(item.value());
 }
 
-const QString Graph2dWindowMarkerSettingDialog::autoLabel()
+QString Graph2dWindowMarkerSettingDialog::autoLabel() const
 {
 	return autoLabel(* m_item);
 }

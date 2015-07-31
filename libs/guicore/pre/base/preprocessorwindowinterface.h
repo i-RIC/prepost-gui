@@ -19,7 +19,7 @@ public:
 	virtual const PreProcessorDataModelInterface* dataModel() const = 0;
 	virtual PreProcessorDataModelInterface* dataModel() = 0;
 	virtual bool checkMappingStatus() = 0;
-	virtual const QString checkGrid(bool detail) = 0;
+	virtual QString checkGrid(bool detail) = 0;
 };
 
 #endif // PREPROCESSORWINDOWINTERFACE_H

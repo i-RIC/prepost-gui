@@ -29,7 +29,7 @@ void MeasuredDataVectorSettingDialog::setSolution(const QString& sol)
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString MeasuredDataVectorSettingDialog::solution()
+QString MeasuredDataVectorSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	if (index < 0 || index > m_solutions.count() - 1) {return "";}
@@ -43,7 +43,7 @@ void MeasuredDataVectorSettingDialog::setScalarValue(const QString& scalar)
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
-const QString MeasuredDataVectorSettingDialog::scalarValue()
+QString MeasuredDataVectorSettingDialog::scalarValue() const
 {
 	int index = ui->scalarComboBox->currentIndex();
 	if (index < 0 || index > m_scalars.count() - 1) {return "";}
@@ -55,7 +55,7 @@ void MeasuredDataVectorSettingDialog::setColor(const QColor& color)
 	ui->colorEditWidget->setColor(color);
 }
 
-const QColor MeasuredDataVectorSettingDialog::color() const
+QColor MeasuredDataVectorSettingDialog::color() const
 {
 	return ui->colorEditWidget->color();
 }
@@ -72,7 +72,7 @@ void MeasuredDataVectorSettingDialog::setColorMode(MeasuredData::ArrowColorMode 
 	}
 }
 
-MeasuredData::ArrowColorMode MeasuredDataVectorSettingDialog::colorMode()
+MeasuredData::ArrowColorMode MeasuredDataVectorSettingDialog::colorMode() const
 {
 	if (ui->specificRadioButton->isChecked()) {return MeasuredData::acmSpecific;}
 	if (ui->scalarRadioButton->isChecked()) {return MeasuredData::acmScalar;}
@@ -111,7 +111,7 @@ void MeasuredDataVectorSettingDialog::setLengthMode(MeasuredData::ArrowLengthMod
 	}
 }
 
-MeasuredData::ArrowLengthMode MeasuredDataVectorSettingDialog::lengthMode()
+MeasuredData::ArrowLengthMode MeasuredDataVectorSettingDialog::lengthMode() const
 {
 	if (ui->lengthAutoCheckBox->isChecked()) {
 		return MeasuredData::almAuto;
@@ -125,7 +125,7 @@ void MeasuredDataVectorSettingDialog::setStandardValue(double stdVal)
 	ui->stdValueSpinBox->setValue(stdVal);
 }
 
-double MeasuredDataVectorSettingDialog::standardValue()
+double MeasuredDataVectorSettingDialog::standardValue() const
 {
 	return ui->stdValueSpinBox->value();
 }
@@ -135,7 +135,7 @@ void MeasuredDataVectorSettingDialog::setLegendLength(int len)
 	ui->legendLengthSpinBox->setValue(len);
 }
 
-int MeasuredDataVectorSettingDialog::legendLength()
+int MeasuredDataVectorSettingDialog::legendLength() const
 {
 	return ui->legendLengthSpinBox->value();
 }
@@ -145,7 +145,7 @@ void MeasuredDataVectorSettingDialog::setMinimumValue(double minVal)
 	return ui->minValueSpinBox->setValue(minVal);
 }
 
-double MeasuredDataVectorSettingDialog::minimumValue()
+double MeasuredDataVectorSettingDialog::minimumValue() const
 {
 	return ui->minValueSpinBox->value();
 }

@@ -22,7 +22,7 @@ public:
 	 * @return Translated string or source string (if the corresponsing translation
 	 * was not found)
 	 */
-	const QString translate(const QString& src) const;
+	QString translate(const QString& src) const;
 	/// Returns translation file name (like "translation_ja_JP.xml") from locale
 	/**
 	 * @param locale Locale object

@@ -32,7 +32,7 @@ public:
 	 */
 	void setFilter(const QString& filter);
 	/// The file name
-	const QString filename() const;
+	QString filename() const;
 	/// Set the base directory, that is used when file selecting dialog is open by calling openDialog()
 	void setBaseDir(const QString& basedir) {
 		m_baseDir = basedir;

@@ -65,7 +65,7 @@ bool ProjectWorkspace::trashWorkfolder(const QString& foldername)
 	return iRIC::rmdirRecursively(m_workspace.absoluteFilePath(foldername));
 }
 
-const QString ProjectWorkspace::tmpFileName() const
+QString ProjectWorkspace::tmpFileName() const
 {
 	QCryptographicHash hash(QCryptographicHash::Md5);
 	QTime current = QTime::currentTime();

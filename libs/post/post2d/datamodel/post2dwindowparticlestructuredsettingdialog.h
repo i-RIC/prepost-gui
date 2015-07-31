@@ -31,7 +31,7 @@ public:
 		m_settings = settings;
 		setupSettingList();
 	}
-	const QString solution() const;
+	QString solution() const;
 	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
 	int timeSamplingRate() const;
 	int timeDivision() const;

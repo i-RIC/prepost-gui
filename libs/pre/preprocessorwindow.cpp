@@ -148,7 +148,7 @@ PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 	}
 }
 
-const QString PreProcessorWindow::checkGrid(bool detail)
+QString PreProcessorWindow::checkGrid(bool detail)
 {
 	QString ret;
 	PreProcessorDataModel* m = model();

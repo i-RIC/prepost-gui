@@ -92,7 +92,7 @@ public:
 	QString xAxis() const {return m_xAxis;}
 	void setXAxis(const QString& axis) {m_xAxis = axis;}
 
-	const QString autoYAxisLabel(AxisSide as);
+	QString autoYAxisLabel(AxisSide as);
 	bool axisNeeded(AxisSide as);
 
 	QList<Setting>& targetDatas() {return m_targetDatas;}

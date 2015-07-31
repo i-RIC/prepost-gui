@@ -60,7 +60,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSolution(const QString& s
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-const QString Post2dWindowParticleUnstructuredSettingDialog::solution() const
+QString Post2dWindowParticleUnstructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);

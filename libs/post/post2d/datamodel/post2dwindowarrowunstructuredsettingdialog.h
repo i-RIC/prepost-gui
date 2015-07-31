@@ -25,11 +25,11 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	bool isEnabled() const;
 	void setSolution(const QString& sol);
-	const QString solution() const;
+	QString solution() const;
 	void setScalarValue(const QString& scalar);
-	const QString scalarValue() const;
+	QString scalarValue() const;
 	void setColor(const QColor& color);
-	const QColor color() const;
+	QColor color() const;
 	void setSamplingMode(Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode sm);
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SamplingMode samplingMode() const;
 	void setSamplingRate(int rate);

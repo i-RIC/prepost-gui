@@ -18,7 +18,7 @@ public:
 	virtual ~Graph2dScatteredWindowResultDataItem();
 	QwtPlotCustomCurve* curve() const {return m_curve;}
 	void update(int fn);
-	const QString title() const;
+	QString title() const;
 	const Graph2dScatteredWindowResultSetting::Setting& setting() const {return m_setting;}
 	void setSetting(const Graph2dScatteredWindowResultSetting::Setting& s);
 	const QVector<double>& xValues() const {return m_xValues;}

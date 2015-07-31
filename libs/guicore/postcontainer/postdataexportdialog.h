@@ -33,7 +33,7 @@ public:
 
 	Format format() const;
 	PostExportSetting exportSetting() const;
-	const QString prefix() const;
+	QString prefix() const;
 
 	void accept() override;
 	void updateSkipRateMaximum();

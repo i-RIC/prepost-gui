@@ -23,9 +23,9 @@ public:
 	~Post2dWindowArrowStructuredSettingDialog();
 	void setZoneData(PostZoneDataContainer* data);
 	void setSolution(const QString& sol);
-	const QString solution() const;
+	QString solution() const;
 	void setScalarValue(const QString& scalar);
-	const QString scalarValue() const;
+	QString scalarValue() const;
 	void setColor(const QColor& color);
 	const QColor color() const;
 	void setRegionMode(StructuredGridRegion::RegionMode regionMode);

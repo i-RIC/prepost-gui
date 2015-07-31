@@ -57,7 +57,7 @@ public:
 	Setting setting() const;
 	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
 	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
-	const QString labelFormat();
+	QString labelFormat() const;
 	void hideDisplayCheckBox();
 
 public slots:

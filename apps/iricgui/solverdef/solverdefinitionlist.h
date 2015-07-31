@@ -35,7 +35,7 @@ public:
 	QList<QAction*> actionList();
 	/// The dialog to show solver definition list
 	SolverDefinitionListDialog* dialog(QWidget* parent);
-	const QString supportingSolverFolder(ProjectData* p);
+	QString supportingSolverFolder(ProjectData* p);
 
 protected slots:
 	/// Update solver list

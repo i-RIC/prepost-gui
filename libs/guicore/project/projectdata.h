@@ -38,7 +38,7 @@ public:
 	/// Destructor
 	virtual ~ProjectData();
 	/// Returns the absolute file path of a file included in the project data.
-	const QString absoluteFileName(const QString& relativeFileName) const;
+	QString absoluteFileName(const QString& relativeFileName) const;
 	/// Work directory
 	const QString& workDirectory() {return m_workDirectory;}
 	/// File name to save (or loaded from)
@@ -73,12 +73,12 @@ public:
 	/// Get iRIC version number that created this project.
 	const VersionNumber version();
 	/// Get new workfolder name to create
-	static const QString newWorkfolderName(const QDir& workspace);
-	const QString workCgnsFileName(const QString& name) const;
-	const QString currentCgnsFileName() const;
+	static QString newWorkfolderName(const QDir& workspace);
+	QString workCgnsFileName(const QString& name) const;
+	QString currentCgnsFileName() const;
 	/// iRIC Main Window.
 	iRICMainWindowInterface* mainWindow() const {return m_mainWindow;}
-	const QString tmpFileName() const;
+	QString tmpFileName() const;
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
 	/// Copy the work folder to the specified folder. Old folder also is kept.

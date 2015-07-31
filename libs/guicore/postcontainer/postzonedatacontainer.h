@@ -35,10 +35,10 @@ public:
 		return m_loadOK;
 	}
 	void loadFromCgnsFile(const int fn) override;
-	const QString zoneName() const {return m_zoneName;}
+	const QString& zoneName() const {return m_zoneName;}
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
-	const QString caption() const {return zoneName();}
+	QString caption() const {return zoneName();}
 	bool scalarValueExists() const;
 	bool vectorValueExists() const;
 	int nodeIndex(int i, int j, int k) const;
@@ -46,8 +46,8 @@ public:
 	int cellIndex(int i, int j, int k) const;
 	void getCellIJKIndex(int index, int* i, int* j, int* k) const;
 	void loadIfEmpty(const int fn);
-	bool IBCExists();
-	const QString elevationName();
+	bool IBCExists() const;
+	QString elevationName() const;
 
 protected:
 	bool setBaseId(const int fn);

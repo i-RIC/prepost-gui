@@ -31,10 +31,10 @@ public:
 	void update(const int fn) {
 		loadFromCgnsFile(fn);
 	}
-	const QString zoneName() const {return m_zoneName;}
+	const QString& zoneName() const {return m_zoneName;}
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
-	const QString caption() const {return zoneName();}
+	QString caption() const {return zoneName();}
 	void setPointIndex(int index) {m_pointIndex = index;}
 	int pointIndex() const {return m_pointIndex;}
 

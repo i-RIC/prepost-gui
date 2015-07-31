@@ -185,7 +185,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	return true;
 }
 
-const QString ProjectCgnsFile::acceptablePattern()
+QString ProjectCgnsFile::acceptablePattern()
 {
 	return "^[a-zA-Z0-9_\\-]+$";
 }

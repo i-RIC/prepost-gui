@@ -104,7 +104,7 @@ SolverDefinitionTranslator::~SolverDefinitionTranslator()
 	delete m_impl;
 }
 
-const QString SolverDefinitionTranslator::translate(const QString& src) const
+QString SolverDefinitionTranslator::translate(const QString& src) const
 {
 	if (m_impl->m_dictionary.contains(src)) {
 		return m_impl->m_dictionary.value(src);

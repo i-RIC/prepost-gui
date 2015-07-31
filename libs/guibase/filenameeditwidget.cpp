@@ -38,7 +38,7 @@ void FilenameEditWidget::setFilter(const QString& filter)
 	m_filter = filter;
 }
 
-const QString FilenameEditWidget::filename() const
+QString FilenameEditWidget::filename() const
 {
 	return QDir::fromNativeSeparators(ui->lineEdit->text().trimmed());
 }

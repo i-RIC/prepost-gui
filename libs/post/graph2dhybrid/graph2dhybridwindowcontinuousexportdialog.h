@@ -38,21 +38,21 @@ public:
 	void setEndTimeStep(int endstep);
 	void setTimeSkip(int skip);
 
-	const QString folder();
-	const QString prefix();
-	RegionMode regionMode();
-	int iMin();
-	int iMax();
-	int jMin();
-	int jMax();
-	int kMin();
-	int kMax();
-	int indexMin();
-	int indexMax();
-	TimeMode timeMode();
-	int startTimeStep();
-	int endTimeStep();
-	int timeSkip();
+	QString folder() const;
+	QString prefix() const;
+	RegionMode regionMode() const;
+	int iMin() const;
+	int iMax() const;
+	int jMin() const;
+	int jMax() const;
+	int kMin() const;
+	int kMax() const;
+	int indexMin() const;
+	int indexMax() const;
+	TimeMode timeMode() const;
+	int startTimeStep() const;
+	int endTimeStep() const;
+	int timeSkip() const;
 
 public slots:
 	void accept() override;

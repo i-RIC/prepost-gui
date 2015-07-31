@@ -30,8 +30,8 @@ public:
 	QColor axesColor();
 
 	GridBirdEyeWindowDataModel::ColorType colorType();
-	const QString attributeName() const;
-	const QColor customColor() const;
+	QString attributeName() const;
+	QColor customColor() const;
 
 private:
 	QList<SolverDefinitionGridAttribute*> m_nodeConds;
