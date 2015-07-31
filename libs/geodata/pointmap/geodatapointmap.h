@@ -18,21 +18,7 @@
 class QAction;
 class QPolygonF;
 
-class GeoDataPointMapEditCommand;
-class GeoDataPMPolygonAddPointCommand;
-class GeoDataPMFinishDefiningCommand;
-class GeoDataPointMapEditPtsLessThanCommand;
-class GeoDataPointMapEditPtsGreaterThanCommand;
-class GeoDataPointMapEditPtsValueCommand;
-class GeoDataPMInterpLineAddPointCommand;
-class GeoDataPMAddPointsCommand;
-class GeoDataPMAddInterpPtsCommand;
 class GeoDataPointmapBreakLine;
-class GeoDataPointmapBreakLineAddCommand;
-class GeoDataPointmapBreakLineAddPointCommand;
-class GeoDataPointmapBreakLineFinishDefinitionCommand;
-class GeoDataPointmapBreakLineCancelDefinitionCommand;
-class GeoDataPointMapAddPointSetReferenceCommand;
 
 /// This class handles the coordinates of points (X, Y), and attribute values
 /// defined in at the position of the points.
@@ -271,27 +257,29 @@ protected:
 	bool m_needRemeshing;
 	ZDepthRange m_zDepthRange;
 
+private:
+	class EditCommand;
+	class AddPointCommand;
+	class FinishDefiningCommand;
+	class EditPointsLessThanCommand;
+	class EditPointsGreaterThanCommand;
+	class EditPointsValueCommand;
+	class InterpolateLineAddPointCommand;
+	class AddPointsCommand;
+	class AddInterpolatePointsCommand;
+	class DeletePointsCommand;
+	class DeletePointsCommand;
+	class InsertNewPointsCommand;
+	class EditPointsCommand;
+	class EditSinglePointCommand;
+	class BreakLineAddCommand;
+	class BreakLineAddPointCommand;
+	class BreakLineFinishDefinitionCommand;
+	class BreakLineCancelDefinitionCommand;
+	class AddPointSetReferenceCommand;
+
 public:
 	friend class GeoDataPointmapBreakLine;
-	friend class GeoDataPointMapEditCommand;
-	friend class GeoDataPMPolygonAddPointCommand;
-	friend class GeoDataPMFinishDefiningCommand;
-	friend class GeoDataPointMapEditPtsLessThanCommand;
-	friend class GeoDataPointMapEditPtsGreaterThanCommand;
-	friend class GeoDataPointMapEditPtsValueCommand;
-	friend class GeoDataPMInterpLineAddPointCommand;
-	friend class GeoDataPMAddPointsCommand;
-	friend class GeoDataPMAddInterpPtsCommand;
-	friend class GeoDataPointMapDeletePtsCommand;
-	friend class GeoDataPointMapDeletePointsCommand;
-	friend class GeoDataPointMapInsertNewPoints;
-	friend class GeoDataPointMapEditPoints;
-	friend class GeoDataPointMapEditSinglePoint;
-	friend class GeoDataPointmapBreakLineAddCommand;
-	friend class GeoDataPointmapBreakLineAddPointCommand;
-	friend class GeoDataPointmapBreakLineFinishDefinitionCommand;
-	friend class GeoDataPointmapBreakLineCancelDefinitionCommand;
-	friend class GeoDataPointMapAddPointSetReferenceCommand;
 };
 
 #endif // GEODATAPOINTMAP_H

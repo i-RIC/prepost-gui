@@ -66,11 +66,12 @@
 
 #include <iriclib_pointmap.h>
 
-class GeoDataPointMapDeletePointsCommand : public QUndoCommand
+class GeoDataPointmap::DeletePointsCommand : public QUndoCommand
 {
 public:
-	GeoDataPointMapDeletePointsCommand(const QString& title, QVector<vtkIdType> deletedPoints, GeoDataPointmap* p)
-		: QUndoCommand(title) {
+	DeletePointsCommand(const QString& title, QVector<vtkIdType> deletedPoints, GeoDataPointmap* p) :
+		QUndoCommand {title}
+	{
 		m_pointMap = p;
 		m_oldPoints = p->vtkGrid()->GetPoints();
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
@@ -132,11 +133,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointMapInsertNewPoints : public QUndoCommand
+class GeoDataPointmap::InsertNewPointsCommand : public QUndoCommand
 {
 public:
-	GeoDataPointMapInsertNewPoints(const QString& title, vtkPoints* newPoints, vtkDataArray* newVals,  GeoDataPointmap* p)
-		: QUndoCommand(title) {
+	InsertNewPointsCommand(const QString& title, vtkPoints* newPoints, vtkDataArray* newVals,  GeoDataPointmap* p) :
+		QUndoCommand {title}
+	{
 		m_pointMap = p;
 		m_oldPoints = p->vtkGrid()->GetPoints();
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
@@ -181,11 +183,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointMapEditPoints : public QUndoCommand
+class GeoDataPointmap::EditPointsCommand : public QUndoCommand
 {
 public:
-	GeoDataPointMapEditPoints(double value, QVector<vtkIdType> editedPoints, GeoDataPointmap* p)
-		: QUndoCommand(GeoDataPointmap::tr("Edit Points")) {
+	EditPointsCommand(double value, QVector<vtkIdType> editedPoints, GeoDataPointmap* p) :
+		QUndoCommand {GeoDataPointmap::tr("Edit Points")}
+	{
 		m_pointMap = p;
 		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
 
@@ -228,11 +231,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointMapEditSinglePoint : public QUndoCommand
+class GeoDataPointmap::EditSinglePointCommand : public QUndoCommand
 {
 public:
-	GeoDataPointMapEditSinglePoint(double x, double y, double value, vtkIdType editedPoint, GeoDataPointmap* p)
-		: QUndoCommand(GeoDataPointmap::tr("Edit Points")) {
+	EditSinglePointCommand(double x, double y, double value, vtkIdType editedPoint, GeoDataPointmap* p) :
+		QUndoCommand {GeoDataPointmap::tr("Edit Points")}
+	{
 		m_pointMap = p;
 		m_newX = x;
 		m_newY = y;
@@ -279,11 +283,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointMapAddPointSetReferenceCommand : public QUndoCommand
+class GeoDataPointmap::AddPointSetReferenceCommand : public QUndoCommand
 {
 public:
-	GeoDataPointMapAddPointSetReferenceCommand(double value, GeoDataPointmap* p)
-		: QUndoCommand(GeoDataPointmap::tr("Select Refecence Point")) {
+	AddPointSetReferenceCommand(double value, GeoDataPointmap* p) :
+		QUndoCommand {GeoDataPointmap::tr("Select Refecence Point")}
+	{
 		m_value = value;
 		m_pointMap = p;
 	}
@@ -305,17 +310,12 @@ private:
 	double m_value;
 };
 
-class GeoDataPointMapAddPointCommand : public QUndoCommand
-{
-
-};
-
-class GeoDataPMAddPointsCommand : public QUndoCommand
+class GeoDataPointmap::AddPointsCommand : public QUndoCommand
 {
 public:
-	GeoDataPMAddPointsCommand(GeoDataPointmap* p, GeoDataPointmapAddPointDialog* ip)
-		: QUndoCommand(QObject::tr("Add Points")) {
-
+	AddPointsCommand(GeoDataPointmap* p, GeoDataPointmapAddPointDialog* ip) :
+		QUndoCommand {QObject::tr("Add Points")}
+	{
 		this->m_pmap = p;
 		this->m_iPoints = ip;
 		newpoints = vtkSmartPointer<vtkPoints>::New();
@@ -368,12 +368,12 @@ private:
 	vtkSmartPointer<vtkDoubleArray> oldvalues;
 };
 
-class GeoDataPMAddInterpPtsCommand : public QUndoCommand
+class GeoDataPointmap::AddInterpolatePointsCommand : public QUndoCommand
 {
 public:
-	GeoDataPMAddInterpPtsCommand(GeoDataPointmap* p, GeoDataPointmapInterpolatePoints* ip)
-		: QUndoCommand(QObject::tr("Add Interpolation Pts")) {
-
+	AddInterpolatePointsCommand(GeoDataPointmap* p, GeoDataPointmapInterpolatePoints* ip) :
+		QUndoCommand {QObject::tr("Add Interpolation Pts")}
+	{
 		this->m_pmap = p;
 		this->m_iPoints = ip;
 		newpoints = vtkSmartPointer<vtkPoints>::New();
@@ -426,10 +426,10 @@ private:
 	vtkSmartPointer<vtkDoubleArray> oldvalues;
 };
 
-class GeoDataPointmapBreakLineAddCommand : public QUndoCommand
+class GeoDataPointmap::BreakLineAddCommand : public QUndoCommand
 {
 public:
-	GeoDataPointmapBreakLineAddCommand(GeoDataPointmap* parent) {
+	BreakLineAddCommand(GeoDataPointmap* parent) {
 		m_breakLine = new GeoDataPointmapBreakLine(parent);
 		m_pointMap = parent;
 	}
@@ -461,11 +461,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointmapBreakLineAddPointCommand : public QUndoCommand
+class GeoDataPointmap::BreakLineAddPointCommand : public QUndoCommand
 {
 public:
-	GeoDataPointmapBreakLineAddPointCommand(bool preview, vtkIdType addedPoint, GeoDataPointmap* parent)
-		: QUndoCommand(GeoDataPointmap::tr("Add Break Line Point")) {
+	BreakLineAddPointCommand(bool preview, vtkIdType addedPoint, GeoDataPointmap* parent) :
+		QUndoCommand {GeoDataPointmap::tr("Add Break Line Point")}
+	{
 		m_preview = preview;
 		m_addedPoint = addedPoint,
 		m_breakLine = parent->m_activeBreakLine;
@@ -515,7 +516,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPointmapBreakLineAddPoint");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPointmapBreakLineAddPointCommand* comm = dynamic_cast<const GeoDataPointmapBreakLineAddPointCommand*>(other);
+		const BreakLineAddPointCommand* comm = dynamic_cast<const BreakLineAddPointCommand*>(other);
 		if (! m_preview) {return false;}
 		if (comm == 0) {return false;}
 		if (m_pointMap != comm->m_pointMap) {return false;}
@@ -533,11 +534,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointmapBreakLineFinishDefinitionCommand : public QUndoCommand
+class GeoDataPointmap::BreakLineFinishDefinitionCommand : public QUndoCommand
 {
 public:
-	GeoDataPointmapBreakLineFinishDefinitionCommand(GeoDataPointmap* parent)
-		: QUndoCommand(GeoDataPointmap::tr("Finish Defining Break Line")) {
+	BreakLineFinishDefinitionCommand(GeoDataPointmap* parent) :
+		QUndoCommand {GeoDataPointmap::tr("Finish Defining Break Line")}
+	{
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
@@ -566,11 +568,12 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-class GeoDataPointmapBreakLineCancelDefinitionCommand : public QUndoCommand
+class GeoDataPointmap::BreakLineCancelDefinitionCommand : public QUndoCommand
 {
 public:
-	GeoDataPointmapBreakLineCancelDefinitionCommand(GeoDataPointmap* parent)
-		: QUndoCommand(GeoDataPointmap::tr("Cancel Defining Break Line")) {
+	BreakLineCancelDefinitionCommand(GeoDataPointmap* parent) :
+		QUndoCommand {GeoDataPointmap::tr("Cancel Defining Break Line")}
+	{
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
@@ -603,8 +606,8 @@ private:
 	GeoDataPointmap* m_pointMap;
 };
 
-GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att)
-	: GeoData(d, creator, att)
+GeoDataPointmap::GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
+	GeoData {d, creator, att}
 {
 	doubleclick = false;
 	m_vtkPolygon = vtkSmartPointer<vtkPolygon>::New();
@@ -763,15 +766,13 @@ void GeoDataPointmap::updateShapeData()
 	m_polyVertexGrid->Modified();
 
 }
-class GeoDataPMInterpLineAddPointCommand : public QUndoCommand
+class GeoDataPointmap::InterpolateLineAddPointCommand : public QUndoCommand
 {
 public:
-	GeoDataPMInterpLineAddPointCommand(bool keyDown, const double x, const double y, double zpos, GeoDataPointmap* ptmap)
-		: QUndoCommand(GeoDataPointmap::tr("Add New Interp Line Point")) {
+	InterpolateLineAddPointCommand(bool keyDown, const double x, const double y, double zpos, GeoDataPointmap* ptmap) :
+		QUndoCommand {GeoDataPointmap::tr("Add New Interp Line Point")}
+	{
 		m_keyDown = keyDown;
-		//double dx = point.x();
-		//double dy = point.y();
-		//ptmap->graphicsView()->viewportToWorld(dx, dy);
 		m_newPoint = QVector2D(x, y);
 		zposition = zpos;
 		m_pointMap = ptmap;
@@ -813,7 +814,7 @@ public:
 		m_pointMap->renderGraphicsView();
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPMInterpLineAddPointCommand* comm = dynamic_cast<const GeoDataPMInterpLineAddPointCommand*>(other);
+		const InterpolateLineAddPointCommand* comm = dynamic_cast<const InterpolateLineAddPointCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_pointMap != m_pointMap) {return false;}
@@ -828,11 +829,12 @@ private:
 	vtkSmartPointer<vtkVertex> vertex;
 };
 
-class GeoDataPMPolygonAddPointCommand : public QUndoCommand
+class GeoDataPointmap::AddPointCommand : public QUndoCommand
 {
 public:
-	GeoDataPMPolygonAddPointCommand(bool keyDown, const QPoint& point, GeoDataPointmap* ptmap)
-		: QUndoCommand(GeoDataPointmap::tr("Add New Selection Polygon Point")) {
+	AddPointCommand(bool keyDown, const QPoint& point, GeoDataPointmap* ptmap) :
+		QUndoCommand {GeoDataPointmap::tr("Add New Selection Polygon Point")}
+	{
 		m_keyDown = keyDown;
 		double dx = point.x();
 		double dy = point.y();
@@ -874,7 +876,7 @@ public:
 		return iRIC::generateCommandId("GeoDataPMPolygonAddPoint");
 	}
 	bool mergeWith(const QUndoCommand* other) {
-		const GeoDataPMPolygonAddPointCommand* comm = dynamic_cast<const GeoDataPMPolygonAddPointCommand*>(other);
+		const AddPointCommand* comm = dynamic_cast<const AddPointCommand*>(other);
 		if (comm == nullptr) {return false;}
 		if (comm->m_keyDown) {return false;}
 		if (comm->m_pointMap != m_pointMap) {return false;}
@@ -1828,10 +1830,10 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMPolygonPrepare:
 			//adds first point.  point added in meSMPolygon below is then modified on mouse move
-			iRICUndoStack::instance().push(new GeoDataPMPolygonAddPointCommand(true, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
 		case meSMPolygon:
 			m_mouseEventMode = meSMPolygon;
-			iRICUndoStack::instance().push(new GeoDataPMPolygonAddPointCommand(true, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
 			break;
 		case meSMInterpPointPrepare: {
 				bool ptduplicate = false;
@@ -1849,7 +1851,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 					}
 				}
 				if (!ptduplicate) {
-					iRICUndoStack::instance().push(new GeoDataPMInterpLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
+					iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
 					lastInterpPointKnown = true;
 
 					this->m_InterpLineGrid->Modified();
@@ -1863,7 +1865,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		case meSMInterpPoint:
 			break;
 		case meSMInterpCtrlPoint:
-			iRICUndoStack::instance().push(new GeoDataPMInterpLineAddPointCommand(true, worldX, worldY, -9999., this));
+			iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
 			lastInterpPointKnown = false;
 			this->m_InterpLineGrid->BuildLinks();
 			this->m_InterpLineGrid->Modified();
@@ -1873,7 +1875,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMAddCtrlPoint:
 			if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 0) {
-				iRICUndoStack::instance().push(new GeoDataPMInterpLineAddPointCommand(
+				iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(
 																				 true, worldX, worldY, -9999., this));
 			}
 			break;
@@ -1881,7 +1883,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			if (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0) {
 				double p[3];
 				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
-				iRICUndoStack::instance().push(new GeoDataPMInterpLineAddPointCommand(
+				iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(
 																				 true, p[0], p[1], this->m_selectedZPos, this));
 				this->m_mouseEventMode = meSMAddCtrlPoint;
 			}
@@ -1891,7 +1893,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meBreakLineAdd:
 			// add point.
-			iRICUndoStack::instance().push(new GeoDataPointmapBreakLineAddPointCommand(false, m_selectedVertexId2, this));
+			iRICUndoStack::instance().push(new BreakLineAddPointCommand(false, m_selectedVertexId2, this));
 			break;
 		case meBreakLineRemoveNotPossible:
 			// do nothing.
@@ -1971,7 +1973,7 @@ void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 		renderGraphicsView();
 		break;
 	case meSMPolygon:
-		iRICUndoStack::instance().push(new GeoDataPMPolygonAddPointCommand(false, QPoint(event->x(), event->y()), this));
+		iRICUndoStack::instance().push(new AddPointCommand(false, QPoint(event->x(), event->y()), this));
 		break;
 	case meSMInterpPoint:
 	case meSMInterpPointPrepare:
@@ -2003,7 +2005,7 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 	} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 		this->finishInterpPoint();
 	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
-		iRICUndoStack::instance().push(new GeoDataPointmapBreakLineFinishDefinitionCommand(this));
+		iRICUndoStack::instance().push(new BreakLineFinishDefinitionCommand(this));
 	}
 	this->updateMouseCursor(v);
 }
@@ -2040,7 +2042,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 			this->finishInterpPoint();
 		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
-			iRICUndoStack::instance().push(new GeoDataPointmapBreakLineFinishDefinitionCommand(this));
+			iRICUndoStack::instance().push(new BreakLineFinishDefinitionCommand(this));
 		}
 	} else if (event->key() == Qt::Key_Alt) {
 		if (m_mouseEventMode == meSMInterpPointPrepare) {
@@ -2079,6 +2081,7 @@ void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsView
 	}
 	updateMouseCursor(v);
 }
+
 void GeoDataPointmap::definePolygon(bool doubleClick, bool xOr)
 {
 	int minCount = 4;
@@ -2094,12 +2097,6 @@ void GeoDataPointmap::definePolygon(bool doubleClick, bool xOr)
 	this->m_mouseEventMode = GeoDataPointmap::meNormal;
 	//this->updateMouseCursor(m_pointMap->graphicsView());
 	this->updateActionStatus();
-
-	//stack.beginMacro(tr("Finish Defining Polygon"));
-	//// finish defining the polygon.
-	//iRICUndoStack::instance().push(new GeoDataPMFinishDefiningCommand(this));
-	//iRICUndoStack::instance().undo()
-	//stack.endMacro();
 }
 
 void GeoDataPointmap::selectPointsInsideBox(MouseBoundingBox* box, bool xOr)
@@ -2436,7 +2433,7 @@ void GeoDataPointmap::updateMouseEventMode()
 		m_mouseEventMode = meBreakLineAddNotPossible;
 		m_selectedVertexId2 = this->m_vtkPointLocator->FindClosestPoint(tmppos);
 		m_mouseEventMode = meBreakLineAdd;
-		iRICUndoStack::instance().push(new GeoDataPointmapBreakLineAddPointCommand(true, m_selectedVertexId2, this));
+		iRICUndoStack::instance().push(new BreakLineAddPointCommand(true, m_selectedVertexId2, this));
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
@@ -2547,7 +2544,7 @@ void GeoDataPointmap::addBreakLine()
 {
 	if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		// cancel defining break line.
-		iRICUndoStack::instance().push(new GeoDataPointmapBreakLineCancelDefinitionCommand(this));
+		iRICUndoStack::instance().push(new BreakLineCancelDefinitionCommand(this));
 	} else {
 		if (m_representation == GeoDataPointmapRepresentationDialog::Surface) {
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -2562,7 +2559,7 @@ void GeoDataPointmap::addBreakLine()
 		clearPointsSelection();
 		// add new break line.
 		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key."), "geodatapointmapaddbreakline");
-		iRICUndoStack::instance().push(new GeoDataPointmapBreakLineAddCommand(this));
+		iRICUndoStack::instance().push(new BreakLineAddCommand(this));
 	}
 }
 
@@ -2622,9 +2619,9 @@ void GeoDataPointmap::editPoints()
 	if (dialog.exec() != QDialog::Accepted) {return;}
 	QVector<vtkIdType> selectedV = selectedVertices();
 	if (selectedV.count() == 1) {
-		iRICUndoStack::instance().push(new GeoDataPointMapEditSinglePoint(dialog.pointX(), dialog.pointY(), dialog.value(), selectedV[0], this));
+		iRICUndoStack::instance().push(new EditSinglePointCommand(dialog.pointX(), dialog.pointY(), dialog.value(), selectedV[0], this));
 	} else {
-		iRICUndoStack::instance().push(new GeoDataPointMapEditPoints(dialog.value(), selectedV, this));
+		iRICUndoStack::instance().push(new EditPointsCommand(dialog.value(), selectedV, this));
 	}
 }
 
@@ -2645,7 +2642,7 @@ void GeoDataPointmap::editPointsDelete()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new GeoDataPointMapDeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
+	iRICUndoStack::instance().push(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
 	this->clearPointsSelection();
 }
 
@@ -2705,7 +2702,7 @@ void GeoDataPointmap::editPointsLessThan()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new GeoDataPointMapDeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
+	iRICUndoStack::instance().push(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
 }
 
@@ -2730,7 +2727,7 @@ void GeoDataPointmap::editPointsGreaterThan()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new GeoDataPointMapDeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
+	iRICUndoStack::instance().push(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
 }
 
@@ -3012,7 +3009,7 @@ void GeoDataPointmap::finishAddPoint()
 		GeoDataPointmapAddPointDialog* dialog = new GeoDataPointmapAddPointDialog(this, preProcessorWindow());
 		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new GeoDataPMAddPointsCommand(this,dialog));
+			iRICUndoStack::instance().push(new AddPointsCommand(this,dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();
@@ -3039,7 +3036,7 @@ void GeoDataPointmap::finishInterpPoint()
 		GeoDataPointmapInterpolatePoints* dialog = new GeoDataPointmapInterpolatePoints(this, preProcessorWindow());
 		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new GeoDataPMAddInterpPtsCommand(this,dialog));
+			iRICUndoStack::instance().push(new AddInterpolatePointsCommand(this,dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();
