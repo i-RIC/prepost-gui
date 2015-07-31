@@ -15,6 +15,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDir>
 #include <QDomDocument>
 #include <QDomNode>
 #include <QMessageBox>

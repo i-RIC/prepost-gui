@@ -17,6 +17,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QLocale>
 #include <QMenu>
 #include <QMouseEvent>
 #include <QXmlStreamWriter>

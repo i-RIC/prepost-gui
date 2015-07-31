@@ -8,6 +8,7 @@
 #include <post/post3d/post3dwindowprojectdataitem.h>
 
 #include <QDomElement>
+#include <QXmlStreamWriter>
 
 PostProcessorWindowFactory::PostProcessorWindowFactory(QObject* parent)
 	: QObject(parent)

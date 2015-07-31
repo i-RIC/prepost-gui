@@ -92,7 +92,7 @@ void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLo
 	m_name = SDElem.attribute("name");
 	m_caption = translator.translate(SDElem.attribute("caption"));
 	QString version = SDElem.attribute("version");
-	m_version.fromString(version);
+	m_version = VersionNumber {version};
 	m_copyright = SDElem.attribute("copyright");
 	m_url = SDElem.attribute("homepage");
 	m_release = QDate::fromString(SDElem.attribute("release"), "yyyy.MM.dd");

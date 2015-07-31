@@ -20,6 +20,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guibase/objectbrowserview.h>
 
+#include <QFile>
 #include <QStandardItemModel>
 #include <QMessageBox>
 #include <QTextStream>

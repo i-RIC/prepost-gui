@@ -14,6 +14,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QString>
 #include <QXmlStreamWriter>
 

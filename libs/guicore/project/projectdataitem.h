@@ -87,7 +87,7 @@ protected:
 	/// Save filename into project.xml
 	void saveFilename(QXmlStreamWriter& writer) const;
 	/// Load external data.
-	inline void loadExternalData();
+	void loadExternalData();
 	/// Relative subpath
 	virtual QString relativeSubPath() const;
 	/// Sub path of the external file
@@ -146,10 +146,5 @@ private:
 	class Impl;
 	Impl* m_impl;
 };
-
-inline void ProjectDataItem::loadExternalData()
-{
-	loadExternalData(filename());
-}
 
 #endif // PROJECTDATAITEM_H

@@ -24,6 +24,7 @@
 #include <geodata/polygon/geodatapolygon.h>
 
 #include <QAction>
+#include <QLocale>
 #include <QMenu>
 
 #include <iriclib.h>
