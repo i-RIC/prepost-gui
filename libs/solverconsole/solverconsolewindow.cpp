@@ -17,6 +17,7 @@
 #include <QFileDialog>
 #include <QFont>
 #include <QIODevice>
+#include <QLocale>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QProcess>

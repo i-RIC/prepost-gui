@@ -9,11 +9,10 @@
 
 #include <vtkUnstructuredGridWriter.h>
 
-Unstructured2DGridVTKExporter::Unstructured2DGridVTKExporter()
-	: GridExporterInterface(), QObject()
-{
-
-}
+Unstructured2DGridVTKExporter::Unstructured2DGridVTKExporter() :
+	QObject{nullptr},
+	GridExporterInterface {}
+{}
 
 QString Unstructured2DGridVTKExporter::caption() const
 {

@@ -128,7 +128,7 @@ const VersionNumber& SolverDefinitionAbstract::version() const
 
 const QString SolverDefinitionAbstract::description() const
 {
-	return m_impl->loadFile("README");
+	return m_impl->loadFile(SolverDefinition::README);
 }
 
 const QString& SolverDefinitionAbstract::url() const
@@ -148,7 +148,7 @@ const QDate& SolverDefinitionAbstract::release() const
 
 const QString SolverDefinitionAbstract::license() const
 {
-	return m_impl->loadFile("LICENSE");
+	return m_impl->loadFile(SolverDefinition::LICENSE);
 }
 
 const QDir& SolverDefinitionAbstract::folder() const

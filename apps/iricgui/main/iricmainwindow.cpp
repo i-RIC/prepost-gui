@@ -35,6 +35,7 @@
 #include <guicore/project/projectpostprocessors.h>
 #include <guicore/project/projectworkspace.h>
 #include <guicore/solverdef/solverdefinition.h>
+#include <guicore/solverdef/solverdefinitionabstract.h>
 #include <misc/errormessage.h>
 #include <misc/filesystemfunction.h>
 #include <misc/informationdialog.h>

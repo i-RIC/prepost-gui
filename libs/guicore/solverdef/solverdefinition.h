@@ -22,6 +22,8 @@ class GUICOREDLL_EXPORT SolverDefinition : public QObject
 
 public:
 	static const QString FILENAME;
+	static const QString README;
+	static const QString LICENSE;
 	enum IterationType {
 		NoIteration,
 		ConvergenceIteration,

@@ -13,7 +13,7 @@ public:
 	QString caption() const override;
 	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
 	{
-		return gt = SolverDefinitionGridType::gtUnstructured2DGrid;
+		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
 	}
 	QStringList fileDialogFilters() const override;
 	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;

@@ -59,6 +59,11 @@ void DistanceMeasureGroupDataItem::addMeasure()
 	iRICUndoStack::instance().clear();
 }
 
+void DistanceMeasureGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
 void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_impl->m_addAction);

@@ -13,6 +13,8 @@
 #include <QMap>
 
 const QString SolverDefinition::FILENAME {"definition.xml"};
+const QString SolverDefinition::README {"README"};
+const QString SolverDefinition::LICENSE {"LICENSE"};
 
 class SolverDefinition::Impl
 {

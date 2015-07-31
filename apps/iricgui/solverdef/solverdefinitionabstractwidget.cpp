@@ -3,7 +3,9 @@
 #include "solverdefinitionabstractwidget.h"
 
 #include <guicore/solverdef/solverdefinitionabstract.h>
+#include <misc/versionnumber.h>
 
+#include <QDate>
 #include <QUrl>
 
 SolverDefinitionAbstractWidget::SolverDefinitionAbstractWidget(const SolverDefinitionAbstract* solver, QWidget* parent) :

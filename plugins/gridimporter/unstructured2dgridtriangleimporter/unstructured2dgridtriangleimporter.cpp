@@ -14,11 +14,10 @@
 #include <vtkTriangle.h>
 #include <vtkUnstructuredGrid.h>
 
-Unstructured2dGridTriangleImporter::Unstructured2dGridTriangleImporter()
-	: GridImporterInterface(), QObject(0)
-{
-
-}
+Unstructured2dGridTriangleImporter::Unstructured2dGridTriangleImporter() :
+	QObject {nullptr},
+	GridImporterInterface{}
+{}
 
 QStringList Unstructured2dGridTriangleImporter::fileDialogFilters() const
 {

@@ -5,6 +5,7 @@
 #include "solverdefinitionlistdialog.h"
 
 #include <guicore/solverdef/solverdefinitionabstract.h>
+#include <misc/versionnumber.h>
 
 #include <QList>
 #include <QMessageBox>
