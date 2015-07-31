@@ -52,6 +52,16 @@ public:
 		m_value = v;
 		return *this;
 	}
+	SimpleValueContainerT<V>& operator+=(const V& v)
+	{
+		m_value += v;
+		return *this;
+	}
+	SimpleValueContainerT<V>& operator-=(const V& v)
+	{
+		m_value -= v;
+		return *this;
+	}
 	bool operator==(const V& v) const
 	{
 		return m_value == v;

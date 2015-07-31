@@ -92,7 +92,7 @@ ColorMapCustomSettingDialog::~ColorMapCustomSettingDialog()
 
 void ColorMapCustomSettingDialog::setCustomSetting(const ColorMapSettingWidget::CustomSetting& setting)
 {
-	switch (setting.type) {
+	switch (ColorMapSettingWidget::CustomSetting::Type(setting.type)) {
 	case ColorMapSettingWidget::CustomSetting::tTwoColors:
 		ui->typeComboBox->setCurrentIndex(0);
 		ui->minColorWidget->setColor(setting.minColor);

@@ -3,9 +3,17 @@
 
 #include "guibase_global.h"
 
+#include <misc/compositecontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/colorcontainer.h>
+#include <misc/doublecontainer.h>
+
 #include <QWidget>
 #include <QColor>
 #include <QList>
+
+class QDomNode;
+class QXmlStreamWriter;
 
 namespace Ui
 {
@@ -39,11 +47,15 @@ public:
 
 	public:
 		/// Struct to store value-color pair in custom colormap setting.
-		struct CustomColor {
+		struct CustomColor : public CompositeContainer
+		{
+			/// Constructor
+			CustomColor();
+
 			/// The value that corresponds to the color
-			double value;
+			DoubleContainer value;
 			/// The color
-			QColor color;
+			ColorContainer color;
 		};
 		/// Custom colormap type
 		enum Type {
@@ -52,25 +64,21 @@ public:
 			tArbitrary     ///< Color map with arbitrary number colors
 		};
 		/// Color map type
-		Type type;
+		EnumContainerT<Type> type;
 		/// The color that corresponds to the maximum value
-		QColor maxColor;
+		ColorContainer maxColor;
 		/// The color that corresponds to the mid value
-		QColor midColor;
+		ColorContainer midColor;
 		/// The color that corresponds to the minimum value
-		QColor minColor;
+		ColorContainer minColor;
 		/// The mid value
-		double midValue;
+		DoubleContainer midValue;
 
 		QList<CustomColor> arbitrarySettings;
 
-		CustomSetting() {
-			type = tTwoColors;
-			maxColor = Qt::red;
-			minColor = Qt::blue;
-			midColor = Qt::white;
-			midValue = 0;
-		}
+		CustomSetting();
+		void load(const QDomNode&);
+		void save(QXmlStreamWriter&) const;
 	};
 	ColorMapSettingWidget(QWidget* parent = nullptr);
 	~ColorMapSettingWidget();

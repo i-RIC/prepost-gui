@@ -41,6 +41,18 @@ public:
 		return static_cast<V>(IntContainer::operator int());
 	}
 	//@}
+
+	/// @name Getter and Setter
+	/// Value getter
+	V value() const
+	{
+		return static_cast<V> (IntContainer::value());
+	}
+	/// Value setter
+	void setValue(const V& val)
+	{
+		IntContainer::setValue(static_cast<int> (val));
+	}
 };
 
 
