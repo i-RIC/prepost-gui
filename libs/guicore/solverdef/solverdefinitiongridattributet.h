@@ -24,7 +24,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefi
 
 public:
 	SolverDefinitionGridAttributeInteger(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
-		SolverDefinitionGridAttributeT<int> {node, translator, pos, isOption}
+		SolverDefinitionGridAttributeT<int> (node, translator, pos, isOption)
 	{}
 	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
@@ -37,7 +37,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinit
 
 public:
 	SolverDefinitionGridAttributeReal(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
-		SolverDefinitionGridAttributeT<double> {node, translator, pos, isOption}
+		SolverDefinitionGridAttributeT<double> (node, translator, pos, isOption)
 	{}
 	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();
