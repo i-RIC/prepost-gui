@@ -19,8 +19,6 @@ class vtkActor;
 class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
-class Post2dBirdEyeWindowContourSetProperty;
-class Post2dBirdEyeWindowContourSelectSolution;
 
 class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem
 {
@@ -80,9 +78,8 @@ private:
 	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
-public:
-	friend class Post2dBirdEyeWindowContourSetProperty;
-	friend class Post2dBirdEyeWindowContourSelectSolution;
+	class SetSettingCommand;
+	class SelectSolutionCommand;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H

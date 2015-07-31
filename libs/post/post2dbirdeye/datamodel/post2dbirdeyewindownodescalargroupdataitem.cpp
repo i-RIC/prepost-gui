@@ -384,53 +384,40 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-class Post2dBirdEyeWindowContourSetProperty : public QUndoCommand
+class Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand: public QUndoCommand
 {
 public:
-	Post2dBirdEyeWindowContourSetProperty(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
+	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
 		QUndoCommand {QObject::tr("Update Contour Setting")},
 		m_newSetting {s},
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
 		m_oldSetting {item->m_setting},
-		m_oldScalarBarTitle {item->m_colorbarTitleMap[s.currentSolution]}
+		m_oldScalarBarTitle {item->m_colorbarTitleMap[s.currentSolution]},
+		m_item {item}
 	{
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(item->parent()->parent());
 		LookupTableContainer* lut = gtItem->lookupTable(s.currentSolution);
 		m_oldLookupTable = *lut;
-
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(m_newSetting.currentSolution);
-		*lut = m_oldLookupTable;
-		lut->update();
-		m_item->m_colorbarTitleMap[m_newSetting.currentSolution] = m_oldScalarBarTitle;
-		applySettings();
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(m_newSetting.currentSolution);
-		*lut = m_newLookupTable;
-		lut->update();
-		m_item->m_colorbarTitleMap[m_newSetting.currentSolution] = m_newScalarBarTitle;
-		applySettings();
+		applySettings(m_newSetting.currentSolution, m_newLookupTable, m_newScalarBarTitle);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	}
+	void undo() {
+		m_item->m_setting = m_oldSetting;
+		applySettings(m_oldSetting.currentSolution, m_oldLookupTable, m_oldScalarBarTitle);
+		m_item->updateActorSettings();
 	}
 private:
-	void applySettings() {
+	void applySettings(const QString& sol, const LookupTableContainer& c, QString& title) {
+		m_item->setCurrentSolution(sol);
+		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
+		LookupTableContainer* lut = gtItem->lookupTable(sol);
+		*lut = c;
+		lut->update();
+		m_item->m_colorbarTitleMap[sol] = title;
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
 		m_item->m_setting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
 		m_item->m_setting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
@@ -450,31 +437,26 @@ private:
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowContourSettingDialog* dialog = dynamic_cast<Post2dWindowContourSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new Post2dBirdEyeWindowContourSetProperty(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-class Post2dBirdEyeWindowContourSelectSolution : public QUndoCommand
+class Post2dBirdEyeWindowNodeScalarGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post2dBirdEyeWindowContourSelectSolution(const QString& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
+	SelectSolutionCommand(const QString& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
+		QUndoCommand {QObject::tr("Contour Physical Value Change")}
+	{
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = m_item->currentSolution();
 		m_item = item;
 	}
 	void undo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 	void redo() {
-		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
 	}
 private:
 	QString m_oldCurrentSolution;
@@ -486,11 +468,10 @@ private:
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post2dBirdEyeWindowContourSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post2dBirdEyeWindowContourSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
 }
 
