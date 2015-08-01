@@ -13,8 +13,8 @@
 #include <vtkTextActor.h>
 #include <vtkTextProperty.h>
 
-Axis2dDataItem::Axis2dDataItem(GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Axis2dDataItem::Axis2dDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
 	m_isDeletable = false;
 

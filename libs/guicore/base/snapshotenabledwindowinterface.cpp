@@ -6,10 +6,9 @@
 #include <vtkFloatArray.h>
 #include <vtkRenderWindow.h>
 
-SnapshotEnabledWindowInterface::SnapshotEnabledWindowInterface()
-{
-	m_isTransparent = false;
-}
+SnapshotEnabledWindowInterface::SnapshotEnabledWindowInterface() :
+	m_isTransparent {false}
+{}
 
 void SnapshotEnabledWindowInterface::makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap)
 {

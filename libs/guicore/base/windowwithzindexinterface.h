@@ -14,10 +14,10 @@ class GUICOREDLL_EXPORT WindowWithZIndexInterface
 public:
 	/// constructor
 	WindowWithZIndexInterface();
-	unsigned int zindex() const {return m_zindex;}
-	void setZindex(unsigned int i) {m_zindex = i;}
+	unsigned int zindex() const;
+	void setZindex(unsigned int i);
 
-protected:
+private:
 	unsigned int m_zindex;
 };
 

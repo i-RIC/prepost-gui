@@ -30,9 +30,8 @@
 
 #define LABEL "Label"
 
-DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(name, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
-
+DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {name, QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
 	m_isDeletable = true;
 

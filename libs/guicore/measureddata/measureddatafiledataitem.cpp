@@ -21,8 +21,11 @@
 #include <QStatusBar>
 #include <QXmlStreamWriter>
 
-MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_measuredData {md},
+	m_pointGroupDataItem {new MeasuredDataPointGroupDataItem {this}},
+	m_vectorGroupDataItem {new MeasuredDataVectorGroupDataItem {this}}
 {
 	setSubPath("file");
 
@@ -31,13 +34,9 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
 
-	m_measuredData = md;
-
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
 	m_childItems.append(m_pointGroupDataItem);
-	m_vectorGroupDataItem = new MeasuredDataVectorGroupDataItem(this);
 	m_childItems.append(m_vectorGroupDataItem);
 
 	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("&Export..."), this);
@@ -45,8 +44,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 }
 
 MeasuredDataFileDataItem::~MeasuredDataFileDataItem()
-{
-}
+{}
 
 void MeasuredDataFileDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {

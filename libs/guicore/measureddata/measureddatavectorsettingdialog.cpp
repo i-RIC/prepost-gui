@@ -6,8 +6,8 @@
 #include <QtGlobal>
 
 MeasuredDataVectorSettingDialog::MeasuredDataVectorSettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::MeasuredDataVectorSettingDialog)
+	QDialog {parent},
+	ui {new Ui::MeasuredDataVectorSettingDialog}
 {
 	ui->setupUi(this);
 }

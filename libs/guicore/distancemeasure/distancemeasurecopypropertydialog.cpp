@@ -5,8 +5,8 @@
 #include <QVector2D>
 
 DistanceMeasureCopyPropertyDialog::DistanceMeasureCopyPropertyDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::DistanceMeasureCopyPropertyDialog)
+	QDialog {parent},
+	ui {new Ui::DistanceMeasureCopyPropertyDialog}
 {
 	ui->setupUi(this);
 	connect(ui->startPointXEdit, SIGNAL(valueChanged(double)), this, SLOT(updateAutoLabel()));

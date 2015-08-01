@@ -1,8 +1,8 @@
 #include "../datamodel/propertybrowserview.h"
 #include "propertybrowser.h"
 
-PropertyBrowser::PropertyBrowser(QWidget* parent)
-	: QDockWidget(parent)
+PropertyBrowser::PropertyBrowser(QWidget* parent) :
+	QDockWidget {parent}
 {
 	// window properties
 	setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
@@ -15,9 +15,7 @@ PropertyBrowser::PropertyBrowser(QWidget* parent)
 }
 
 PropertyBrowser::~PropertyBrowser()
-{
-
-}
+{}
 
 void PropertyBrowser::hideEvent(QHideEvent*)
 {

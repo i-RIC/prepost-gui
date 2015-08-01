@@ -1,7 +1,5 @@
 #include "iricmainwindowinterface.h"
 
-iRICMainWindowInterface::iRICMainWindowInterface(QWidget* widget)
-	: QMainWindow(widget)
-{
-
-}
+iRICMainWindowInterface::iRICMainWindowInterface(QWidget* widget) :
+	QMainWindow {widget}
+{}

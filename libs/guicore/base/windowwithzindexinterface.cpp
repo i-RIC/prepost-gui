@@ -1,7 +1,15 @@
 #include "windowwithzindexinterface.h"
 
-WindowWithZIndexInterface::WindowWithZIndexInterface()
+WindowWithZIndexInterface::WindowWithZIndexInterface() :
+	m_zindex {0}
+{}
+
+unsigned int WindowWithZIndexInterface::zindex() const
 {
-	m_zindex = 0;
+	return m_zindex;
 }
 
+void WindowWithZIndexInterface::setZindex(unsigned int i)
+{
+	m_zindex = i;
+}
