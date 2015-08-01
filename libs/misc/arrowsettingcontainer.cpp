@@ -16,5 +16,5 @@ ArrowSettingContainer::ArrowSettingContainer() :
 ArrowSettingContainer::ArrowSettingContainer(const ArrowSettingContainer& c) :
 	ArrowSettingContainer {}
 {
-	CompositeContainer::operator=(c);
+	*this = c;
 }

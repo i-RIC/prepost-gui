@@ -108,6 +108,12 @@ QString ColorContainer::attName(const QString& name) const
 	return m_impl->attName(name);
 }
 
+void ColorContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const ColorContainer& c2 = dynamic_cast<const ColorContainer&> (c);
+	m_impl->setValue(c2.m_impl->value());
+}
+
 void ColorContainer::setupVtkValue() const
 {
 	if (m_double == nullptr) {

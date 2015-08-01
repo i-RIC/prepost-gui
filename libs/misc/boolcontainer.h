@@ -29,6 +29,9 @@ public:
 
 	/// @name Operators
 	BoolContainer& operator=(bool val);
+
+private:
+	void copyValue(const XmlAttributeContainer& c) override;
 };
 
 #endif // BOOLCONTAINER_H

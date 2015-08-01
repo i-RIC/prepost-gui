@@ -31,3 +31,9 @@ IntContainer& IntContainer::operator=(int val)
 	SimpleValueContainerT<int>::operator =(val);
 	return *this;
 }
+
+void IntContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const IntContainer& c2 = dynamic_cast<const IntContainer&> (c);
+	m_value = c2.m_value;
+}

@@ -31,3 +31,9 @@ BoolContainer& BoolContainer::operator=(bool val)
 	SimpleValueContainerT<bool>::operator =(val);
 	return *this;
 }
+
+void BoolContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const BoolContainer& c2 = dynamic_cast<const BoolContainer&> (c);
+	m_value = c2.m_value;
+}

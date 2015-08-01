@@ -34,11 +34,9 @@ protected:
 	CompositeContainer(std::initializer_list<XmlAttributeContainer*> list);
 	//@}
 
-	/// @name Operators
-	//@{
-	CompositeContainer& operator=(const CompositeContainer& c);
-
 private:
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	class Impl;
 	Impl* m_impl;
 };

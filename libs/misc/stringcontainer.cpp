@@ -41,3 +41,9 @@ bool StringContainer::operator!=(const QString& val)
 {
 	return SimpleValueContainerT<QString>::operator !=(val);
 }
+
+void StringContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const StringContainer& c2 = dynamic_cast<const StringContainer&> (c);
+	m_value = c2.m_value;
+}

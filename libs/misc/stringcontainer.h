@@ -34,6 +34,9 @@ public:
 	StringContainer& operator=(const QString& val);
 	bool operator!=(const QString& val);
 	//@}
+
+private:
+	void copyValue(const XmlAttributeContainer& c) override;
 };
 
 #endif // STRINGCONTAINER_H

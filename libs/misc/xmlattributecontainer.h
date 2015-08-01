@@ -45,6 +45,8 @@ public:
 	//@}
 
 private:
+	virtual void copyValue(const XmlAttributeContainer& c);
+
 	class Impl;
 	Impl* m_impl;
 };

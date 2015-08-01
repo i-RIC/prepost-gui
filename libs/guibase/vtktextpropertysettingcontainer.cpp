@@ -20,7 +20,7 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer &c) :
 	vtkTextPropertySettingContainer {}
 {
-	CompositeContainer::operator =(c);
+	*this = c;
 }
 
 void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)

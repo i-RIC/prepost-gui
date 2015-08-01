@@ -43,12 +43,12 @@ CompositeContainer::CompositeContainer(std::initializer_list<XmlAttributeContain
 	}
 }
 
-CompositeContainer& CompositeContainer::operator=(const CompositeContainer& c)
+void CompositeContainer::copyValue(const XmlAttributeContainer& c)
 {
+	const CompositeContainer& c2 = dynamic_cast<const CompositeContainer&> (c);
 	for (size_t i = 0; i < m_impl->m_containers.size(); ++i){
-		XmlAttributeContainer* c1 = m_impl->m_containers.at(i);
-		XmlAttributeContainer* c2 = c.m_impl->m_containers.at(i);
-		*(c1) = *(c2);
+		XmlAttributeContainer* v1 = m_impl->m_containers.at(i);
+		XmlAttributeContainer* v2 = c2.m_impl->m_containers.at(i);
+		*(v1) = *(v2);
 	}
-	return *this;
 }

@@ -58,6 +58,8 @@ public:
 	//@}
 
 private:
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	void setupVtkValue() const;
 	void updateVtkValue() const;
 

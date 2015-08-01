@@ -29,6 +29,9 @@ public:
 
 	/// @name Operators
 	IntContainer& operator=(int val);
+
+private:
+	void copyValue(const XmlAttributeContainer& c) override;
 };
 
 #endif // INTCONTAINER_H

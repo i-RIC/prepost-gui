@@ -25,6 +25,7 @@ XmlAttributeContainer::~XmlAttributeContainer()
 XmlAttributeContainer& XmlAttributeContainer::operator=(const XmlAttributeContainer& c)
 {
 	*(m_impl) = *(c.m_impl);
+	copyValue(c);
 	return *this;
 }
 
@@ -47,3 +48,6 @@ QString XmlAttributeContainer::attName(const QString& name) const
 	fullName.append(name.mid(1));
 	return fullName;
 }
+
+void XmlAttributeContainer::copyValue(const XmlAttributeContainer& c)
+{}
