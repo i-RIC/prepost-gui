@@ -231,7 +231,7 @@ void GeoDataPolygonTriangleThread::runTriangle()
 		m_polygon->m_grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 	}
 	m_polygon->m_grid->BuildLinks();
-	m_polygon->m_paintActor->GetProperty()->SetOpacity(m_polygon->m_opacityPercent / 100.);
+	m_polygon->m_paintActor->GetProperty()->SetOpacity(m_polygon->m_setting.opacity);
 
 	if (out.pointlist != NULL) {
 		trifree(out.pointlist);

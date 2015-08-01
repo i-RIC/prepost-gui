@@ -2,9 +2,18 @@
 
 #include "geodatapolygoncolorsettingdialog.h"
 
+GeoDataPolygonColorSettingDialog::Setting::Setting() :
+	CompositeContainer {&color, &opacity, &mapping},
+	color {"color"},
+	opacity {},
+	mapping {"mapping", Value}
+{
+	opacity = 50;
+}
+
 GeoDataPolygonColorSettingDialog::GeoDataPolygonColorSettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataPolygonColorSettingDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataPolygonColorSettingDialog}
 {
 	ui->setupUi(this);
 }
@@ -14,43 +23,34 @@ GeoDataPolygonColorSettingDialog::~GeoDataPolygonColorSettingDialog()
 	delete ui;
 }
 
-void GeoDataPolygonColorSettingDialog::setMapping(Mapping m)
+void GeoDataPolygonColorSettingDialog::setSetting(const Setting& setting)
 {
-	switch (m) {
-	case Value:
-		ui->byValueRadioButton->click();
-		break;
-	case Arbitrary:
-		ui->arbitraryRadioButton->click();
-		break;
+	// mapping
+	if (setting.mapping == Value) {
+		ui->byValueRadioButton->setChecked(true);
+	} else if (setting.mapping == Arbitrary) {
+		ui->arbitraryRadioButton->setChecked(true);
 	}
+
+	// opacity
+	ui->transparencyWidget->setOpacity(setting.opacity);
+
+	// color
+	ui->colorEditWidget->setColor(setting.color);
 }
 
-void GeoDataPolygonColorSettingDialog::setOpacityPercent(int o)
+GeoDataPolygonColorSettingDialog::Setting GeoDataPolygonColorSettingDialog::setting() const
 {
-	ui->transparencyWidget->setOpacity(o);
-}
+	Setting ret;
+	// mapping
+	if (ui->byValueRadioButton->isChecked()) {ret.mapping = Value;}
+	if (ui->arbitraryRadioButton->isChecked()) {ret.mapping = Arbitrary;}
 
-GeoDataPolygonColorSettingDialog::Mapping GeoDataPolygonColorSettingDialog::mapping()
-{
-	if (ui->byValueRadioButton->isChecked()) { return Value; }
-	if (ui->arbitraryRadioButton->isChecked()) { return Arbitrary; }
-	//default
-	return Value;
-}
+	// opacity
+	ret.opacity = ui->transparencyWidget->opacity();
 
-void GeoDataPolygonColorSettingDialog::setColor(const QColor& color)
-{
-	ui->colorEditWidget->setColor(color);
-}
+	// color
+	ret.color = ui->colorEditWidget->color();
 
-QColor GeoDataPolygonColorSettingDialog::color()
-{
-	return ui->colorEditWidget->color();
+	return ret;
 }
-
-int GeoDataPolygonColorSettingDialog::opacityPercent()
-{
-	return ui->transparencyWidget->opacity();
-}
-

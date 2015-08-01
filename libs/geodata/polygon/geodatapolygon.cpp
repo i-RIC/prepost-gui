@@ -77,8 +77,8 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	if (stcc != nullptr) {
 		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
-	m_gridRegionPolygon->setMapping(m_mapping);
-	m_gridRegionPolygon->setColor(m_color);
+	updateActorSettings();
+
 	m_selectMode = smPolygon;
 	m_selectedPolygon = m_gridRegionPolygon;
 
@@ -136,8 +136,6 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	actorCollection()->AddItem(m_paintActor);
 	renderer()->AddActor(m_paintActor);
 
-	m_inhibitSelect = false;
-	m_bcSettingMode = false;
 	updateActionStatus();
 }
 
@@ -204,22 +202,10 @@ QColor GeoDataPolygon::doubleToColor(double /*d*/)
 	return Qt::red;
 }
 
-void GeoDataPolygon::setColor(double r, double g, double b)
-{
-	m_color = QColor((int)(r * 255), (int)(g * 255), (int)(b * 255));
-
-	m_gridRegionPolygon->setColor(m_color);
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hp = m_holePolygons.at(i);
-		hp->setColor(m_color);
-	}
-	m_paintActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
-	m_paintActor->GetProperty()->SetColor(r, g, b);
-}
-
 void GeoDataPolygon::setColor(const QColor& color)
 {
-	setColor(color.red() / 255.0, color.green() / 255.0, color.blue() / 255.0);
+	m_setting.color = color;
+	updateActorSettings();
 }
 
 void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
@@ -999,29 +985,13 @@ void GeoDataPolygon::removeVertexMode(bool on)
 void GeoDataPolygon::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
-	m_opacityPercent = loadOpacityPercent(node);
-	m_paintActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
-	QString mapping = node.toElement().attribute("mapping", "arbitrary");
-	if (mapping == "arbitrary") {
-		m_mapping = GeoDataPolygonColorSettingDialog::Arbitrary;
-	} else {
-		m_mapping = GeoDataPolygonColorSettingDialog::Value;
-	}
-	m_color = loadColorAttribute("color", node, Qt::red);
+	m_setting.load(node);
 }
 
 void GeoDataPolygon::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	writeOpacityPercent(m_opacityPercent, writer);
-	QString mapping;
-	if (m_mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
-		mapping = "arbitrary";
-	} else {
-		mapping = "value";
-	}
-	writer.writeAttribute("mapping", mapping);
-	writeColorAttribute("color", m_color, writer);
+	m_setting.save(writer);
 }
 
 void GeoDataPolygon::loadExternalData(const QString& filename)
@@ -1030,9 +1000,6 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 	if (stcc != nullptr) {
 		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
-	m_gridRegionPolygon->setMapping(m_mapping);
-	m_gridRegionPolygon->setColor(m_color);
-
 	if (projectData()->version().build() >= 3607) {
 		iRICLib::Polygon* pol = new iRICLib::Polygon();
 		GridAttributeDimensionsContainer* dims = dimensions();
@@ -1112,6 +1079,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 	}
 	deselectAll();
 	updateGrid(true);
+	updateActorSettings();
 	updateActionStatus();
 }
 
@@ -1385,8 +1353,6 @@ void GeoDataPolygon::initParams()
 	for (int i = 0; i <= maxIndex; ++i) {
 		m_variantValues.append(0);
 	}
-	m_opacityPercent = 50;
-	m_mapping = GeoDataPolygonColorSettingDialog::Value;
 }
 
 class GeoDataPolygon::AddHolePolygonCommand : public QUndoCommand
@@ -1458,8 +1424,8 @@ void GeoDataPolygon::setupHolePolygon(GeoDataPolygonHolePolygon* pol)
 		pol->setLookupTable(scalarsToColorsContainer()->vtkDarkObj());
 	}
 	pol->setActive(true);
-	pol->setMapping(m_mapping);
-	pol->setColor(m_color);
+	pol->setMapping(m_setting.mapping);
+	pol->setColor(m_setting.color);
 }
 
 void GeoDataPolygon::deletePolygon(bool force)
@@ -1725,9 +1691,8 @@ void GeoDataPolygon::updateScalarValues()
 	}
 	m_scalarValues->Modified();
 	m_gridRegionPolygon->updateScalarValues();
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
-		p->updateScalarValues();
+	for (auto hole : m_holePolygons) {
+		hole->updateScalarValues();
 	}
 }
 
@@ -1758,33 +1723,34 @@ void GeoDataPolygon::editColorSetting()
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
 }
 
-void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
+void GeoDataPolygon::updateActorSettings()
 {
-	m_mapping = m;
-	if (m_mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
+	// color
+	m_gridRegionPolygon->setColor(m_setting.color);
+	for (auto hole : m_holePolygons) {
+		hole->setColor(m_setting.color);
+	}
+	m_paintActor->GetProperty()->SetColor(m_setting.color);
+
+	// opacity
+	m_paintActor->GetProperty()->SetOpacity(m_setting.opacity);
+
+	// mapping
+	if (m_setting.mapping == GeoDataPolygonColorSettingDialog::Arbitrary) {
 		m_paintMapper->SetScalarVisibility(false);
-		setColor(m_color);
 	} else {
 		m_paintMapper->SetScalarVisibility(true);
 	}
-	m_gridRegionPolygon->setMapping(m);
-	for (int i = 0; i < m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
-		p->setMapping(m);
+	m_gridRegionPolygon->setMapping(m_setting.mapping);
+	for (auto hole : m_holePolygons) {
+		hole->setMapping(m_setting.mapping);
 	}
-	updateGrid();
-	renderGraphicsView();
 }
 
 QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 {
 	GeoDataPolygonColorSettingDialog* dialog = new GeoDataPolygonColorSettingDialog(parent);
-	dialog->setMapping(m_mapping);
-	dialog->setOpacityPercent(m_opacityPercent);
-	if (m_mapping == GeoDataPolygonColorSettingDialog::Value) {
-		m_color = doubleToColor(variantValue().toDouble());
-	}
-	dialog->setColor(m_color);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
@@ -1792,41 +1758,30 @@ QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 class GeoDataPolygon::EditPropertyCommand : public QUndoCommand
 {
 public:
-	EditPropertyCommand(GeoDataPolygon* p, GeoDataPolygonColorSettingDialog::Mapping oldm, const QColor& oldc, int oldp, GeoDataPolygonColorSettingDialog::Mapping newm, const QColor& newc, int newp) :
-		QUndoCommand {QObject::tr("Polygon property edit")}
-	{
-		m_polygon = p;
-		m_oldMapping = oldm;
-		m_oldColor = oldc;
-		m_oldOpacityPercent = oldp;
-		m_newMapping = newm;
-		m_newColor = newc;
-		m_newOpacityPercent = newp;
+	EditPropertyCommand(const GeoDataPolygonColorSettingDialog::Setting& s, GeoDataPolygon* p) :
+		QUndoCommand {GeoDataPolygon::tr("Polygon property edit")},
+		m_newSetting {s},
+		m_oldSetting {p->m_setting},
+		m_polygon {p}
+	{}
+	void redo() {
+		m_polygon->m_setting = m_newSetting;
+		m_polygon->updateActorSettings();
 	}
 	void undo() {
-		m_polygon->m_color = m_oldColor;
-		m_polygon->m_opacityPercent = m_oldOpacityPercent;
-		m_polygon->setMapping(m_oldMapping);
-	}
-	void redo() {
-		m_polygon->m_color = m_newColor;
-		m_polygon->m_opacityPercent = m_newOpacityPercent;
-		m_polygon->setMapping(m_newMapping);
+		m_polygon->m_setting = m_oldSetting;
+		m_polygon->updateActorSettings();
 	}
 private:
+	GeoDataPolygonColorSettingDialog::Setting m_newSetting;
+	GeoDataPolygonColorSettingDialog::Setting m_oldSetting;
 	GeoDataPolygon* m_polygon;
-	GeoDataPolygonColorSettingDialog::Mapping m_oldMapping;
-	QColor m_oldColor;
-	int m_oldOpacityPercent;
-	GeoDataPolygonColorSettingDialog::Mapping m_newMapping;
-	QColor m_newColor;
-	int m_newOpacityPercent;
 };
 
 void GeoDataPolygon::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GeoDataPolygonColorSettingDialog* dialog = dynamic_cast<GeoDataPolygonColorSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new EditPropertyCommand(this, m_mapping, m_color, m_opacityPercent, dialog->mapping(), dialog->color(), dialog->opacityPercent()));
+	auto dialog = dynamic_cast<GeoDataPolygonColorSettingDialog*>(propDialog);
+	pushRenderCommand(new EditPropertyCommand(dialog->setting(), this));
 }
 
 bool GeoDataPolygon::getValueRange(double* min, double* max)

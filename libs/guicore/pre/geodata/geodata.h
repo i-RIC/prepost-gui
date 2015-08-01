@@ -29,6 +29,7 @@ class vtkActor2DCollection;
 
 class QKeyEvent;
 class QMenu;
+class QUndoCommand;
 class QToolBar;
 class QMouseEvent;
 class QWidget;
@@ -127,10 +128,16 @@ protected:
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
+
 	void loadName(const QDomNode& node);
 	void saveName(QXmlStreamWriter& writer);
+
 	PreProcessorWindowInterface* preProcessorWindow();
 	PreProcessorGraphicsViewInterface* graphicsView();
+	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
+	void pushCommand(QUndoCommand* com);
+	void pushRenderCommand(QUndoCommand* com);
+
 	MouseBoundingBox* mouseBoundingBox();
 	PreProcessorDataModelInterface* dataModel();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -7,6 +7,7 @@
 
 #include <guicore/pre/grid/unstructured2dgrid.h>
 #include <misc/zdepthrange.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkPolygon.h>
 #include <vtkUnstructuredGrid.h>
@@ -67,6 +68,7 @@ public:
 		meTranslateDialog,
 		meEditVerticesDialog
 	};
+
 	/// Constructor
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoDataPolygon();
@@ -85,20 +87,17 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick, bool noEditVal = false);
-	QColor color() {return m_color;}
+	QColor color() {return m_setting.color;}
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
-	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
-	GeoDataPolygonColorSettingDialog::Mapping mapping() {return m_mapping;}
+//	GeoDataPolygonColorSettingDialog::Mapping mapping() {return m_setting.mapping;}
 	QColor doubleToColor(double d);
 	void clear();
 	bool ready() const {return true;}
 	void showInitialDialog() override;
 	const QVariant& variantValue() const;
 	void setVariantValue(const QVariant& v);
-	void setPolygon(const QPolygonF& p);
 	void addHolePolygon(const QPolygonF& p);
-	const QPolygonF polygon() const;
 	vtkUnstructuredGrid* grid() const {return m_grid;}
 	bool getValueRange(double* min, double* max) override;
 	void updateFilename() override {
@@ -137,13 +136,16 @@ protected:
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void setColor(const QColor& color);
-	void setColor(double r, double g, double b);
 	int iRICLibType() const override {return IRIC_GEO_POLYGON;}
 	void doApplyOffset(double x, double y) override;
 
 private:
+	const QPolygonF polygon() const;
+	void setPolygon(const QPolygonF& p);
+
 	bool checkCondition();
 	void updateScalarValues();
+	void updateActorSettings();
 	bool selectObject(QPoint point);
 	void deselectAll();
 	bool activePolygonHasFourVertices();
@@ -176,9 +178,9 @@ private:
 	QAction* m_coordEditAction;
 	QAction* m_editColorSettingAction;
 	QMenu* m_rightClickingMenu;
-	QColor m_color;
-	int m_opacityPercent;
-	GeoDataPolygonColorSettingDialog::Mapping m_mapping;
+
+	GeoDataPolygonColorSettingDialog::Setting m_setting;
+
 	QList<QVariant> m_variantValues;
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_grid;
@@ -186,8 +188,8 @@ private:
 	vtkSmartPointer<vtkDataSetMapper> m_paintMapper;
 	vtkSmartPointer<vtkDoubleArray> m_scalarValues;
 
-	bool m_inhibitSelect;
-	bool m_shapeUpdating;
+	bool m_inhibitSelect {false};
+	bool m_shapeUpdating {false};
 	QPixmap m_addPixmap;
 	QPixmap m_removePixmap;
 	QPixmap m_movePointPixmap;
@@ -197,10 +199,7 @@ private:
 
 	GeoDataPolygonTriangleThread* m_triangleThread;
 
-	double lastX;
-	double lastY;
-
-	bool m_bcSettingMode;
+	bool m_bcSettingMode {false};
 
 private:
 	class AddHolePolygonCommand;

@@ -550,24 +550,24 @@ class StandardItemModifyCommand : public QUndoCommand
 {
 public:
 	explicit StandardItemModifyCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
+		QUndoCommand {child->text()},
 		m_command {child},
 		m_item {item}
 	{}
 	~StandardItemModifyCommand()
 	{}
-	void undo() override
-	{
-		m_item->setIsCommandExecuting(true);
-		m_command.get()->undo();
-		m_item->setIsCommandExecuting(false);
-	}
 	void redo() override
 	{
 		m_item->setIsCommandExecuting(true);
 		m_command.get()->redo();
 		m_item->setIsCommandExecuting(false);
 	}
-
+	void undo() override
+	{
+		m_item->setIsCommandExecuting(true);
+		m_command.get()->undo();
+		m_item->setIsCommandExecuting(false);
+	}
 	int id() const
 	{
 		return m_command->id();
@@ -589,6 +589,7 @@ class RenderCommand : public QUndoCommand
 {
 public:
 	explicit RenderCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
+		QUndoCommand {child->text()},
 		m_command {child},
 		m_item {item}
 	{}

@@ -111,6 +111,21 @@ PreProcessorWindowInterface* GeoData::preProcessorWindow()
 	return dynamic_cast<PreProcessorWindowInterface*>(item->mainWindow());
 }
 
+PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const
+{
+	return dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+}
+
+void GeoData::pushCommand(QUndoCommand* com)
+{
+	geoDataDataItem()->pushCommand(com);
+}
+
+void GeoData::pushRenderCommand(QUndoCommand* com)
+{
+	geoDataDataItem()->pushRenderCommand(com, this);
+}
+
 PreProcessorGraphicsViewInterface* GeoData::graphicsView()
 {
 	return dynamic_cast<PreProcessorGraphicsViewInterface*>(preProcessorWindow()->centralWidget());
@@ -118,26 +133,22 @@ PreProcessorGraphicsViewInterface* GeoData::graphicsView()
 
 vtkRenderer* GeoData::renderer()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->renderer();
+	return geoDataDataItem()->renderer();
 }
 
 void GeoData::renderGraphicsView()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	item->renderGraphicsView();
+	geoDataDataItem()->renderGraphicsView();
 }
 
 vtkActorCollection* GeoData::actorCollection()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->m_actorCollection;
+	return geoDataDataItem()->actorCollection();
 }
 
 vtkActor2DCollection* GeoData::actor2DCollection()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->m_actor2DCollection;
+	return geoDataDataItem()->actor2DCollection();
 }
 
 void GeoData::setDefaultMapper()
@@ -149,9 +160,8 @@ void GeoData::setDefaultMapper()
 
 void GeoData::editName()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
-	view->edit(item->m_standardItem->index());
+	view->edit(geoDataDataItem()->standardItem()->index());
 }
 
 void GeoData::loadName(const QDomNode& node)
