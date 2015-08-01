@@ -33,12 +33,8 @@
 
 #define _USE_MATH_DEFINES
 
-
-
-
-
-Post3dWindowDataModel::Post3dWindowDataModel(Post3dWindow* w, ProjectDataItem* parent)
-	: Graphics3DWindowDataModel(w, parent)
+Post3dWindowDataModel::Post3dWindowDataModel(Post3dWindow* w, ProjectDataItem* parent) :
+	Graphics3DWindowDataModel {w, parent}
 {
 	init();
 }

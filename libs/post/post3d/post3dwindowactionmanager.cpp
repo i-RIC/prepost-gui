@@ -8,10 +8,10 @@
 #include <QIcon>
 #include <QMenu>
 
-Post3dWindowActionManager::Post3dWindowActionManager(Post3dWindow* parent)
-	: QObject(parent)
+Post3dWindowActionManager::Post3dWindowActionManager(Post3dWindow* parent) :
+	QObject {parent},
+	m_post3dWindow {parent}
 {
-	m_post3dWindow = parent;
 	init();
 }
 

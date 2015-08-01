@@ -18,8 +18,8 @@
 
 #include <vtkRenderer.h>
 
-Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
-	: PostProcessorWindowProjectDataItem(parent, parentWindow)
+Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
+	PostProcessorWindowProjectDataItem {parent, parentWindow}
 {
 	Post2dWindow* w = new Post2dWindow(parentWindow, index, this);
 	m_window = w;

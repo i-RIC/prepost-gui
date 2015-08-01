@@ -13,8 +13,8 @@
 
 #include <vtkRenderer.h>
 
-Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
-	: PostProcessorWindowProjectDataItem(parent, parentWindow)
+Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
+	PostProcessorWindowProjectDataItem {parent, parentWindow}
 {
 	Post3dWindow* w = new Post3dWindow(parentWindow, index, this);
 	m_window = w;
@@ -32,7 +32,6 @@ Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowPropertyDialog(QModelIndex)), w->m_dataModel, SLOT(showPropertyDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(pressed(QModelIndex,QPoint)), w->m_dataModel, SLOT(handleObjectBrowserPress(QModelIndex,QPoint)));
 	delete oldCenter;
-
 }
 
 void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
