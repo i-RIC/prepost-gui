@@ -20,12 +20,12 @@
 
 #include <qwt_scale_engine.h>
 
-InputConditionWidgetFunctionalDialog::InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent)
-	: QDialog(parent)
+InputConditionWidgetFunctionalDialog::InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent) :
+	QDialog {parent},
+	m_preventGraph {false},
+	m_preventSort {false}
 {
 	ui.setupUi(this);
-	m_preventSort = false;
-	m_preventGraph = false;
 	setupModel(node, t);
 	setupViews();
 	setupConnections();

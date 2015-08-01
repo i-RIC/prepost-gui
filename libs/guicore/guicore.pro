@@ -328,8 +328,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.h \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
-           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.h
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
@@ -516,7 +515,6 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.cpp \
     pre/gridcond/complex/gridcomplexattributecontainer.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \

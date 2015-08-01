@@ -4,8 +4,8 @@
 
 #include <vtkColorTransferFunction.h>
 
-ColorTransferFunctionContainer::ColorTransferFunctionContainer(ProjectDataItem* d)
-	: ScalarsToColorsContainer(d)
+ColorTransferFunctionContainer::ColorTransferFunctionContainer(ProjectDataItem* d) :
+	ScalarsToColorsContainer {d}
 {
 	m_vtkObj = vtkColorTransferFunction::New();
 	m_vtkDarkObj = vtkColorTransferFunction::New();

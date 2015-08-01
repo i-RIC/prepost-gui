@@ -13,7 +13,7 @@
 class ColorTransferFunctionEditWidgetColorEditDelegate : public QItemDelegate
 {
 public:
-	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr): QItemDelegate(parent) {}
+	ColorTransferFunctionEditWidgetColorEditDelegate(QObject* parent = nullptr) : QItemDelegate {parent} {}
 	void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
 		QColor col = dat.value<QColor>();
@@ -41,8 +41,8 @@ public:
 };
 
 ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget* parent) :
-	ScalarsToColorsEditWidget(parent),
-	ui(new Ui::ColorTransferFunctionEditWidget)
+	ScalarsToColorsEditWidget {parent},
+	ui {new Ui::ColorTransferFunctionEditWidget}
 {
 	ui->setupUi(this);
 
