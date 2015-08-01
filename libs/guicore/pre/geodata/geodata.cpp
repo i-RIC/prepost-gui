@@ -123,7 +123,7 @@ void GeoData::pushCommand(QUndoCommand* com)
 
 void GeoData::pushRenderCommand(QUndoCommand* com)
 {
-	geoDataDataItem()->pushRenderCommand(com, this);
+	geoDataDataItem()->pushRenderCommand(com, geoDataDataItem());
 }
 
 PreProcessorGraphicsViewInterface* GeoData::graphicsView()
