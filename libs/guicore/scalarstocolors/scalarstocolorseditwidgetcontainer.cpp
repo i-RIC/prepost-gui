@@ -4,11 +4,10 @@
 #include <QVBoxLayout>
 #include <QWidget>
 
-ScalarsToColorsEditWidgetContainer::ScalarsToColorsEditWidgetContainer(QWidget* parent)
-	: QWidget(parent)
-{
-	m_widget = 0;
-}
+ScalarsToColorsEditWidgetContainer::ScalarsToColorsEditWidgetContainer(QWidget* parent) :
+	QWidget {parent},
+	m_widget {nullptr}
+{}
 
 void ScalarsToColorsEditWidgetContainer::setWidget(ScalarsToColorsEditWidget* w)
 {
@@ -17,6 +16,11 @@ void ScalarsToColorsEditWidgetContainer::setWidget(ScalarsToColorsEditWidget* w)
 	l->setMargin(0);
 	l->addWidget(w);
 	setLayout(l);
+}
+
+ScalarsToColorsEditWidget* ScalarsToColorsEditWidgetContainer::widget() const
+{
+	return m_widget;
 }
 
 QSize ScalarsToColorsEditWidgetContainer::sizeHint() const

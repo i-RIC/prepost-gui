@@ -5,18 +5,17 @@
 
 #include <QXmlStreamWriter>
 
-Post2dWindowGeoDataDataItem::Post2dWindowGeoDataDataItem(GraphicsWindowDataItem* parent)
-	: GeoDataProxyDataItem(parent)
+Post2dWindowGeoDataDataItem::Post2dWindowGeoDataDataItem(GraphicsWindowDataItem* parent) :
+	GeoDataProxyDataItem {parent},
+	m_geoDataProxy {nullptr}
 {
-	m_geoDataProxy = nullptr;
 	m_isReorderable = false;
 	m_isDeletable = false;
 }
 
 Post2dWindowGeoDataDataItem::~Post2dWindowGeoDataDataItem()
 {
-	if (m_geoDataProxy) {delete m_geoDataProxy;}
-	m_geoDataProxy = nullptr;
+	delete m_geoDataProxy;
 }
 
 void Post2dWindowGeoDataDataItem::setGeoDataProxy(GeoDataProxy* proxy)

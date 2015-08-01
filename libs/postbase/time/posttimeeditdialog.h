@@ -2,7 +2,7 @@
 #define POSTTIMEEDITDIALOG_H
 
 #include "../postbase_global.h"
-#include "posttimesetting.h"
+#include "posttimedataitem.h"
 #include <QDialog>
 
 namespace Ui
@@ -17,8 +17,8 @@ class POSTBASEDLL_EXPORT PostTimeEditDialog : public QDialog
 public:
 	explicit PostTimeEditDialog(QWidget* parent = nullptr);
 	~PostTimeEditDialog();
-	void setSetting(const PostTimeSetting& setting);
-	const PostTimeSetting setting() const;
+	void setSetting(const PostTimeDataItem::Setting& setting);
+	PostTimeDataItem::Setting setting() const;
 
 private:
 	Ui::PostTimeEditDialog* ui;

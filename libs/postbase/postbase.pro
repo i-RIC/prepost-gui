@@ -76,7 +76,6 @@ HEADERS += postallzoneselectingdialog.h \
            postparticlebasicpropertydialog.h \
            time/posttimedataitem.h \
            time/posttimeeditdialog.h \
-           time/posttimesetting.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
            title/posttitlesetting.h \

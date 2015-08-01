@@ -11,13 +11,8 @@ class GUICOREDLL_EXPORT ScalarsToColorsEditWidget : public QWidget
 
 public:
 	ScalarsToColorsEditWidget(QWidget* parent = nullptr);
-	ScalarsToColorsContainer* container() const {
-		return m_container;
-	}
-	void setContainer(ScalarsToColorsContainer* c) {
-		m_container = c;
-		setupWidget();
-	}
+	ScalarsToColorsContainer* container() const;
+	void setContainer(ScalarsToColorsContainer* c);
 	virtual void save() = 0;
 
 protected:

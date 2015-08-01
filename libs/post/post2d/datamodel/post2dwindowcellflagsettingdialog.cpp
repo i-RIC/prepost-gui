@@ -6,12 +6,11 @@
 #include <guicore/project/colorsource.h>
 #include <guicore/solverdef/enumloader.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridattributet.h>
+//#include <guicore/solverdef/solverdefinitiongridattributet.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QBrush>
 #include <QColorDialog>
-#include <QItemDelegate>
 #include <QItemDelegate>
 #include <QItemSelection>
 #include <QMap>

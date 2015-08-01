@@ -9,27 +9,23 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
-Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem(tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_preGeoDataTopDataItem {ditem}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_preGeoDataTopDataItem = ditem;
-
 	// add child nodes.
-	QList<SolverDefinitionGridAttribute*> list = ditem->gridType()->gridRelatedConditions();
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
-		QString tmpname = cond->name();
-		if (tmpname.toLower().left(9) != "elevation") {continue;}
-		Post2dWindowGeoDataGroupDataItem* i = new Post2dWindowGeoDataGroupDataItem(cond, this);
-		m_childItems.append(i);
-		m_itemNameMap.insert(cond->name(), i);
-	}
+	for (SolverDefinitionGridAttribute* att : ditem->gridType()->gridRelatedConditions()) {
+		if (att->name().toLower().left(9) != "elevation") {continue;}
 
+		auto item = new Post2dWindowGeoDataGroupDataItem(att, this);
+		m_childItems.append(item);
+		m_itemNameMap.insert(att->name(), item);
+	}
 	updateChildren();
 	connect(ditem, SIGNAL(dataChanged()), this, SLOT(updateChildren()));
 }
@@ -37,7 +33,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 void Post2dWindowGeoDataTopDataItem::updateChildren()
 {
 	for (int i = 0; i < m_childItems.count(); ++i) {
-		Post2dWindowGeoDataGroupDataItem* gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(m_childItems.at(i));
+		auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(m_childItems.at(i));
 		gItem->updateChildren();
 	}
 	assignActorZValues(m_zDepthRange);

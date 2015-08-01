@@ -3,8 +3,8 @@
 #include "posttimeeditdialog.h"
 
 PostTimeEditDialog::PostTimeEditDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PostTimeEditDialog)
+	QDialog {parent},
+	ui {new Ui::PostTimeEditDialog}
 {
 	ui->setupUi(this);
 }
@@ -14,9 +14,9 @@ PostTimeEditDialog::~PostTimeEditDialog()
 	delete ui;
 }
 
-void PostTimeEditDialog::setSetting(const PostTimeSetting& setting)
+void PostTimeEditDialog::setSetting(const PostTimeDataItem::Setting& setting)
 {
-	switch (setting.timeFormat) {
+	switch (TimeFormat::Format(setting.timeFormat)) {
 	case TimeFormat::Format::Second:
 		ui->secondRadioButton->setChecked(true);
 		break;
@@ -33,9 +33,9 @@ void PostTimeEditDialog::setSetting(const PostTimeSetting& setting)
 	ui->colorWidget->setColor(setting.color);
 }
 
-const PostTimeSetting PostTimeEditDialog::setting() const
+PostTimeDataItem::Setting PostTimeEditDialog::setting() const
 {
-	PostTimeSetting ret;
+	PostTimeDataItem::Setting ret;
 	if (ui->secondRadioButton->isChecked()) {
 		ret.timeFormat = TimeFormat::Format::Second;
 	} else if (ui->minuteSecondRadioButton->isChecked()) {

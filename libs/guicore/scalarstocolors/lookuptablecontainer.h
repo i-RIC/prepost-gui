@@ -17,7 +17,7 @@ public:
 	LookupTableContainer(const LookupTableContainer& c);
 	void update() override;
 	virtual void setValueRange(double min, double max) override;
-	void getValueRange(double* min, double* max) override;
+	void getValueRange(double* min, double* max) const override;
 	ColorMapSettingWidget::ColorMap colorMap() const {return m_colorMap;}
 	void setColorMap(ColorMapSettingWidget::ColorMap cm) {m_colorMap = cm;}
 	const ColorMapSettingWidget::CustomSetting& customSetting() const {return m_customSetting;}

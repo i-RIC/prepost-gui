@@ -150,7 +150,7 @@ void LookupTableContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	}
 }
 
-void LookupTableContainer::getValueRange(double* min, double* max)
+void LookupTableContainer::getValueRange(double* min, double* max) const
 {
 	if (m_autoRange) {
 		*min = m_autoMin;

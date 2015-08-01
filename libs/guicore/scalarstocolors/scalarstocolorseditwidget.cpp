@@ -1,7 +1,17 @@
 #include "scalarstocolorseditwidget.h"
 
 ScalarsToColorsEditWidget::ScalarsToColorsEditWidget(QWidget* parent) :
-	QWidget(parent)
+	QWidget {parent},
+	m_container {nullptr}
+{}
+
+ScalarsToColorsContainer* ScalarsToColorsEditWidget::container() const
 {
-	m_container = 0;
+	return m_container;
+}
+
+void ScalarsToColorsEditWidget::setContainer(ScalarsToColorsContainer* c)
+{
+	m_container = c;
+	setupWidget();
 }
