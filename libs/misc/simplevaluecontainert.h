@@ -33,7 +33,8 @@ public:
 		m_defaultValue {c.m_defaultValue}
 	{}
 	/// Destructor
-	virtual ~SimpleValueContainerT();
+	virtual ~SimpleValueContainerT()
+	{}
 	//@}
 
 	/// @name Operators

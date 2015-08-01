@@ -28,6 +28,12 @@ ScalarBarSetting::ScalarBarSetting() :
 	setPrefix("scalarBar");
 }
 
+ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
+	ScalarBarSetting {}
+{
+	operator=(setting);
+}
+
 void ScalarBarSetting::initForLegendBox()
 {
 	width = 0.3;

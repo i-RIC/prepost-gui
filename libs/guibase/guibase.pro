@@ -80,6 +80,7 @@ HEADERS += centeredcheckbox.h \
            colormapsettingwidget.h \
            colortool.h \
            contoursettingwidget.h \
+           coordinateeditwidget.h \
            coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
@@ -143,6 +144,7 @@ SOURCES += centeredcheckbox.cpp \
            colormapsettingwidget.cpp \
            colortool.cpp \
            contoursettingwidget.cpp \
+           coordinateeditwidget.cpp \
            coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
