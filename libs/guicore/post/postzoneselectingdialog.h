@@ -24,14 +24,16 @@ public:
 	explicit PostZoneSelectingDialog(QWidget* parent = nullptr);
 	~PostZoneSelectingDialog();
 	void setContainers(const QList<PostZoneDataContainer*>& containers);
-	QString gridTypeName();
-	QString zoneName();
+	QString gridTypeName() const;
+	QString zoneName() const;
 
 private slots:
 	void setupZoneList(int index);
 
 private:
 	void setupGridTypeComboBox();
+	SolverDefinitionGridType* currentGridType() const;
+
 	Ui::PostZoneSelectingDialog* ui;
 	QList<SolverDefinitionGridType*> m_gridTypes;
 	QMap<SolverDefinitionGridType*, QList<PostZoneDataContainer*> > m_zoneLists;

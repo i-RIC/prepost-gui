@@ -19,8 +19,7 @@ PostZoneSelectingDialog::~PostZoneSelectingDialog()
 
 void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>& containers)
 {
-	for (auto it = containers.begin(); it != containers.end(); ++it) {
-		PostZoneDataContainer* cont = *it;
+	for (PostZoneDataContainer* cont : containers) {
 		if (! m_gridTypes.contains(cont->gridType())) {
 			m_gridTypes.append(cont->gridType());
 			QList<PostZoneDataContainer*> list;
@@ -33,8 +32,7 @@ void PostZoneSelectingDialog::setContainers(const QList<PostZoneDataContainer*>&
 
 void PostZoneSelectingDialog::setupGridTypeComboBox()
 {
-	for (auto it = m_gridTypes.begin(); it != m_gridTypes.end(); ++it) {
-		SolverDefinitionGridType* gtype = *it;
+	for (SolverDefinitionGridType* gtype : m_gridTypes) {
 		ui->gridTypeComboBox->addItem(gtype->caption());
 	}
 	if (ui->gridTypeComboBox->count() <= 1) {
@@ -45,28 +43,27 @@ void PostZoneSelectingDialog::setupGridTypeComboBox()
 
 void PostZoneSelectingDialog::setupZoneList(int index)
 {
-	SolverDefinitionGridType* gt = m_gridTypes.at(index);
-	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(gt);
 	ui->zoneList->clear();
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		PostZoneDataContainer* c = *it;
+
+	SolverDefinitionGridType* gt = m_gridTypes.at(index);
+	for (PostZoneDataContainer* c : m_zoneLists.value(gt)) {
 		ui->zoneList->addItem(c->caption());
 	}
 }
 
-QString PostZoneSelectingDialog::gridTypeName()
+SolverDefinitionGridType* PostZoneSelectingDialog::currentGridType() const
 {
 	int index = ui->gridTypeComboBox->currentIndex();
-	SolverDefinitionGridType* gt = m_gridTypes.at(index);
-	return gt->name();
+	return m_gridTypes.at(index);
 }
 
-QString PostZoneSelectingDialog::zoneName()
+QString PostZoneSelectingDialog::gridTypeName() const
 {
-	int index = ui->gridTypeComboBox->currentIndex();
-	SolverDefinitionGridType* gt = m_gridTypes.at(index);
-	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(gt);
-	int index2 = ui->zoneList->currentRow();
-	PostZoneDataContainer* cont = list.at(index2);
-	return cont->zoneName();
+	return currentGridType()->name();
+}
+
+QString PostZoneSelectingDialog::zoneName() const
+{
+	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(currentGridType());
+	list.at(ui->zoneList->currentRow())->zoneName();
 }

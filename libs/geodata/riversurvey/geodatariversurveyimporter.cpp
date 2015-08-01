@@ -189,7 +189,6 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 	Point2D right, left;
 	PPoint2D pt;
 	PRivPath node;
-	char nullStr[] = "";
 
 	*with4points = true;
 	m_RivRoot = nullptr;
@@ -226,7 +225,6 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 				break;
 
 			case 2:
-				strKP = &(nullStr[0]);
 				KP = (double) atof(tok);
 				tok = strtok(NULL, SEPARATOR);
 				if (tok == NULL) {break;}
@@ -260,7 +258,7 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 						tok = strtok(NULL, SEPARATOR);
 					}
 				}
-				node = RivAlloc(KP, strKP);
+				node = RivAlloc(KP, "");
 				if (*with4points) {
 					for (int i = 0; i < 4; ++i) {
 						node->divIndices[i] = divIndices[i];

@@ -4,7 +4,7 @@
 #include "geodatapolygonabstractpolygon.h"
 #include "geodatapolygoncoordinateseditdialog.h"
 
-#include <guibase/coordinateeditwidget.h>
+#include <guibase/realnumbereditwidget.h>
 #include <misc/iricundostack.h>
 
 #include <QPolygonF>
@@ -23,19 +23,19 @@ public:
 	GeoDataPolygonCoordinatesEditDialogDelegate(QObject* = nullptr) {}
 	QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& /*option*/,
 												const QModelIndex& /*index*/) const {
-		CoordinateEditWidget* coordEdit = new CoordinateEditWidget(parent);
-		return coordEdit;
+		RealNumberEditWidget* realEdit = new RealNumberEditWidget(parent);
+		return realEdit;
 	}
 	void setEditorData(QWidget* editor, const QModelIndex& index) const {
 		QVariant dat = index.model()->data(index, Qt::DisplayRole);
-		CoordinateEditWidget* coordEdit = dynamic_cast<CoordinateEditWidget*>(editor);
-		coordEdit->setValue(dat.toDouble());
+		RealNumberEditWidget* realEdit = dynamic_cast<RealNumberEditWidget*>(editor);
+		realEdit->setValue(dat.toDouble());
 	}
 	void setModelData(QWidget* editor, QAbstractItemModel* model,
 										const QModelIndex& index) const {
-		// Float. Edit with coordEdit
-		CoordinateEditWidget* coordEdit = dynamic_cast<CoordinateEditWidget*>(editor);
-		model->setData(index, coordEdit->value(), Qt::EditRole);
+		// Float. Edit with RealEdit
+		RealNumberEditWidget* realEdit = dynamic_cast<RealNumberEditWidget*>(editor);
+		model->setData(index, realEdit->value(), Qt::EditRole);
 	}
 
 	void updateEditorGeometry(QWidget* editor,
