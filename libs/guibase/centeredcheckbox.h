@@ -3,10 +3,8 @@
 
 #include "guibase_global.h"
 
-#include <QWidget>
 #include <QCheckBox>
-
-class QCheckBox;
+#include <QWidget>
 
 /// Checkbox that is aligned to center.
 /**

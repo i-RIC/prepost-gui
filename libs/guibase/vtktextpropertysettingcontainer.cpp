@@ -2,6 +2,7 @@
 
 #include <misc/xmlsupport.h>
 
+#include <QColor>
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
@@ -21,6 +22,16 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPr
 	vtkTextPropertySettingContainer {}
 {
 	*this = c;
+}
+
+QColor vtkTextPropertySettingContainer::fontColor() const
+{
+	return m_fontColor;
+}
+
+void vtkTextPropertySettingContainer::setFontColor(const QColor& c)
+{
+	m_fontColor = c;
 }
 
 void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
@@ -59,3 +70,4 @@ void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 	prop->SetItalic(m_isItalic);
 	prop->SetShadow(m_isShadow);
 }
+

@@ -3,8 +3,8 @@
 
 #include "guibase_global.h"
 
-#include <QWidget>
 #include <QSlider>
+#include <QWidget>
 
 class QLabel;
 class QSpinBox;

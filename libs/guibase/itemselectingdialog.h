@@ -6,6 +6,8 @@
 #include <QDialog>
 #include <QList>
 
+class QString;
+
 namespace Ui
 {
 	class ItemSelectingDialog;

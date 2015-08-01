@@ -1,4 +1,5 @@
 #include "mousepositionlabel.h"
+#include <QVector2D>
 
 MousePositionLabel::MousePositionLabel(QWidget* parent) :
 	QLabel(parent)

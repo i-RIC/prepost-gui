@@ -7,8 +7,8 @@
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
 #include <misc/compositecontainer.h>
-#include <QColor>
 
+class QColor;
 class vtkTextProperty;
 
 /// Container class for vtkTextProperty setting
@@ -34,9 +34,9 @@ public:
 	/// Set the font family
 	void setFontFamily(FontFamily ff) {m_fontFamily = ff;}
 	/// The font color
-	QColor fontColor() const {return m_fontColor;}
+	QColor fontColor() const;
 	/// Set the font color
-	void setFontColor(const QColor& c) {m_fontColor = c;}
+	void setFontColor(const QColor& c);
 	/// The font size (in pixels)
 	int fontSize() const {return m_fontSize;}
 	/// Set the font size (in pixels)

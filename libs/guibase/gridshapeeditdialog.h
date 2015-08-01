@@ -9,7 +9,6 @@
 #include <misc/compositecontainer.h>
 
 #include <QDialog>
-#include <QMap>
 
 class QComboBox;
 

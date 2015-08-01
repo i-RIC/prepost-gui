@@ -9,7 +9,6 @@
 #include <misc/doublecontainer.h>
 
 #include <QWidget>
-#include <QColor>
 #include <QList>
 
 class QDomNode;

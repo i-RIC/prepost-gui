@@ -4,7 +4,8 @@
 #include "guibase_global.h"
 
 #include <QLabel>
-#include <QVector2D>
+
+class QVector2D;
 
 /// Widget to show mouse position (x, y) in a label
 class GUIBASEDLL_EXPORT MousePositionLabel : public QLabel

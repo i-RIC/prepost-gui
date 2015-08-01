@@ -5,6 +5,8 @@
 
 #include <QWidget>
 
+class QString;
+
 namespace Ui
 {
 	class DirnameEditWidget;

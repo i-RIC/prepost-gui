@@ -3,7 +3,9 @@
 
 #include "guibase_global.h"
 
+#include <QColor>
 #include <QLabel>
+
 /**
  * @brief Widget to edit color
  *
@@ -25,7 +27,7 @@ public:
 signals:
 	void colorChanged(const QColor& c);
 
-protected:
+private:
 	void mousePressEvent(QMouseEvent* ev) override;
 	QColor m_color;
 };
