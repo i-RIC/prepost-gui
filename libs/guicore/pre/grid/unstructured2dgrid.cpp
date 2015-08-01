@@ -6,6 +6,7 @@
 
 #include <QSet>
 #include <QString>
+#include <QVector2D>
 
 #include <vtkCellArray.h>
 #include <vtkMaskPolyData.h>
@@ -44,7 +45,7 @@ unsigned int Unstructured2DGrid::vertexCount() const
 	return m_vtkGrid->GetPoints()->GetNumberOfPoints();
 }
 
-const QVector2D Unstructured2DGrid::vertex(unsigned int index) const
+QVector2D Unstructured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
 	m_vtkGrid->GetPoints()->GetPoint(index, v);

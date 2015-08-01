@@ -18,7 +18,7 @@ public:
 	/// Return VTK container object to store the grid.
 	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
 	vtkUnstructuredGrid* vertexGrid() const {return m_vertexGrid;}
-	const QVector2D vertex(unsigned int index) const override;
+	QVector2D vertex(unsigned int index) const override;
 	void setVertex(unsigned int index, const QVector2D& v) override;
 	bool loadFromCgnsFile(const int fn, int B, int Z) override;
 	bool saveToCgnsFile(const int fn, int B, const char* zonename) override;

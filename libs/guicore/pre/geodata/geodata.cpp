@@ -7,6 +7,7 @@
 #include "../base/preprocessorgridtypedataiteminterface.h"
 #include "../base/preprocessorgeodatadataiteminterface.h"
 #include "../base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../base/preprocessorwindowinterface.h"
 #include "geodata.h"
 #include "geodatacreator.h"
 

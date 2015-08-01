@@ -11,6 +11,8 @@
 #include <misc/stringtool.h>
 
 #include <QFile>
+#include <QLineF>
+#include <QPointF>
 #include <QRegExp>
 #include <QTextStream>
 

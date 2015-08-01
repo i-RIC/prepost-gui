@@ -8,6 +8,8 @@
 #include <vtkLine.h>
 #include <vtkVertex.h>
 
+#include <QVector2D>
+
 #include <cgnslib.h>
 #include <iriclib.h>
 #include <vector>
@@ -30,7 +32,7 @@ void Structured15DGridWithCrossSection::init()
 	m_vertexGrid = vtkUnstructuredGrid::New();
 }
 
-const QVector2D Structured15DGridWithCrossSection::vertex(unsigned int index) const
+QVector2D Structured15DGridWithCrossSection::vertex(unsigned int index) const
 {
 	double points[3];
 	m_vtkGrid->GetPoints()->GetPoint(index, points);

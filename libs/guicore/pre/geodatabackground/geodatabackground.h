@@ -2,9 +2,9 @@
 #define GEODATABACKGROUND_H
 
 #include "../geodata/geodata.h"
-#include <QAction>
 #include <QVariant>
 
+class QAction;
 class GeoDataBackgroundEditValueCommand;
 
 class GeoDataBackground : public GeoData

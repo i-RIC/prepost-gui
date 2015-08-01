@@ -516,7 +516,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.cpp
+           project/inputcond/functional/inputconditionwidgetfunctionalgraphview.cpp \
+    pre/gridcond/complex/gridcomplexattributecontainer.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

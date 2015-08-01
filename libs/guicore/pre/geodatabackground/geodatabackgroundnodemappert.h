@@ -19,8 +19,9 @@ class GeoDataBackgroundNodeMapperT : public GeoDataNodeMapperT<V, DA>
 {
 
 public:
-	GeoDataBackgroundNodeMapperT(GeoDataCreator* parent)
-		: GeoDataNodeMapperT<V, DA>(parent) {
+	GeoDataBackgroundNodeMapperT(GeoDataCreator* parent) :
+	GeoDataNodeMapperT<V, DA> {parent}
+	{
 		GeoDataNodeMapperT<V, DA>::m_caption = "Background node mapper";
 	}
 	GeoDataMapperSetting* initialize(bool* boolMap) override {

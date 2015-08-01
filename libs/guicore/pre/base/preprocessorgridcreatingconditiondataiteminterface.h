@@ -3,6 +3,7 @@
 
 #include "../../guicore_global.h"
 #include "preprocessordataitem.h"
+
 class GridCreatingCondition;
 class QAction;
 

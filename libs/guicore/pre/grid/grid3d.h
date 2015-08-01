@@ -3,7 +3,8 @@
 
 #include "../../guicore_global.h"
 #include "grid.h"
-#include <QVector3D>
+
+class QVector3D;
 
 class GUICOREDLL_EXPORT Grid3D : public Grid
 {

@@ -2,8 +2,8 @@
 #define PREPROCESSORGEODATADATAITEMINTERFACE_H
 
 #include "preprocessordataitem.h"
+
 class GeoData;
-class QStandardItem;
 
 class PreProcessorGeoDataDataItemInterface : public PreProcessorDataItem
 {

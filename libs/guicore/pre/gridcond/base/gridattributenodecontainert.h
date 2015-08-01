@@ -6,6 +6,7 @@
 #include "../../grid/grid.h"
 #include <misc/stringtool.h>
 #include <vtkPointData.h>
+#include <vtkPointSet.h>
 
 template <class V, class DA>
 class GridAttributeNodeContainerT : public GridAttributeContainerT<V>

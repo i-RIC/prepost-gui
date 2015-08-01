@@ -3,7 +3,8 @@
 
 #include "../../guicore_global.h"
 #include "grid.h"
-#include <QVector2D>
+
+class QVector2D;
 
 /// Absract class to store two-dimensional grids.
 class GUICOREDLL_EXPORT Grid2D : public Grid
@@ -16,7 +17,7 @@ public:
 	/// Returns the number of vertices in this grid.
 	virtual unsigned int vertexCount() const = 0;
 	/// Returns the coordinates of the vertex specified by the index.
-	virtual const QVector2D vertex(unsigned int index) const = 0;
+	virtual QVector2D vertex(unsigned int index) const = 0;
 	/// Set the coordinates of the vertex specified by the index.
 	/**
 	 * @param index The index of vertex. It starts from 0, not 1.

@@ -32,6 +32,7 @@
 #include <vtkGeometryFilter.h>
 #include <vtkLODActor.h>
 #include <vtkPointData.h>
+#include <vtkPointSet.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
 #include <vtkRenderWindow.h>

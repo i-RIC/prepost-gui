@@ -212,3 +212,17 @@ void Grid::setParent(QObject* parent)
 		c->updateConnections();
 	}
 }
+
+void Grid::setModified(bool modified)
+{
+	ProjectDataItem::setModified(modified);
+	m_isModified = modified;
+	if (modified) {
+		m_vtkGrid->Modified();
+	}
+}
+
+unsigned int Grid::nodeCount() const
+{
+	return m_vtkGrid->GetNumberOfPoints();
+}

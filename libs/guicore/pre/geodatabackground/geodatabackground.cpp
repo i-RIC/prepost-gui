@@ -3,7 +3,7 @@
 #include "../gridcond/base/gridattributeeditdialog.h"
 #include "geodatabackground.h"
 #include "geodatabackgroundeditdialog.h"
-//#include "pre/preprocessorwindow.h"
+#include "../base/preprocessorwindowinterface.h"
 
 #include <misc/iricundostack.h>
 
@@ -13,8 +13,8 @@
 #include <QStandardItem>
 #include <QUndoCommand>
 
-GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition)
-	: GeoData(d, creator, condition)
+GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	GeoData {d, creator, condition}
 {
 	setName("background");
 	setCaption(tr("Default"));

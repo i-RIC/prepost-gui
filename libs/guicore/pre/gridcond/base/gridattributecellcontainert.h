@@ -3,8 +3,10 @@
 
 #include "gridattributecontainert.h"
 #include "../../grid/grid.h"
+#include "../../../datamodel/graphicswindowdatamodel.h"
 #include <misc/stringtool.h>
 #include <vtkCellData.h>
+#include <vtkPointSet.h>
 
 template <class V, class DA>
 class GridAttributeCellContainerT : public GridAttributeContainerT<V>

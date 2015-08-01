@@ -2,12 +2,13 @@
 #define STRUCTURED2DGRID_H
 
 #include "../../guicore_global.h"
-#include <vtkStructuredGrid.h>
 #include "grid2d.h"
-#include <QVector2D>
-#include <QLineF>
 
+#include <vtkStructuredGrid.h>
+
+class QLineF;
 class QTextStream;
+class QVector2D;
 
 class RectRegion
 {
@@ -31,11 +32,7 @@ public:
 		if (y > yMax) {return false;}
 		return true;
 	}
-	bool intersect(const QLineF& line) const {
-		bool isInside1 = pointIsInside(line.x1(), line.y1());
-		bool isInside2 = pointIsInside(line.x2(), line.y2());
-		return (isInside1 != isInside2);
-	}
+	bool intersect(const QLineF& line) const;
 };
 
 /// Structured two-dimensional grid
@@ -65,8 +62,8 @@ public:
 		return (m_dimensionI - 1) * j + i;
 	}
 	void getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j);
-	const QVector2D vertex(unsigned int index) const override;
-	const QVector2D vertex(unsigned int i, unsigned int j) const {return vertex(vertexIndex(i, j));}
+	QVector2D vertex(unsigned int index) const override;
+	QVector2D vertex(unsigned int i, unsigned int j) const;
 	void setVertex(unsigned int i, unsigned int j, const QVector2D& v) {setVertex(vertexIndex(i, j), v);}
 	void setVertex(unsigned int index, const QVector2D& v) override;
 	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;

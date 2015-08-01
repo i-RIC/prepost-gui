@@ -2,8 +2,8 @@
 #define GEODATAMAPPER_H
 
 #include <QObject>
-#include "geodatacreator.h"
 
+class GeoDataCreator;
 class Grid;
 class GridAttributeContainer;
 
@@ -20,11 +20,9 @@ class GeoDataMapper : public QObject
 
 public:
 	/// Constructor
-	GeoDataMapper(GeoDataCreator* parent) : QObject(parent) {
-		m_grid = nullptr;
-		m_container = nullptr;
-		m_geodata = nullptr;
-	}
+	GeoDataMapper(GeoDataCreator* parent) :
+		QObject {parent}
+	{}
 	virtual ~GeoDataMapper(){}
 	void setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata) {
 		m_grid = grid;
@@ -45,9 +43,9 @@ protected:
 	}
 
 	QString m_caption;
-	Grid* m_grid;
-	GridAttributeContainer* m_container;
-	GeoData* m_geodata;
+	Grid* m_grid {nullptr};
+	GridAttributeContainer* m_container {nullptr};
+	GeoData* m_geodata {nullptr};
 };
 
 #endif // GEODATAMAPPER_H

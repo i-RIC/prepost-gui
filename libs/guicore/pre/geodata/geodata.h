@@ -9,10 +9,6 @@
 #include <misc/stringcontainer.h>
 #include <misc/boolcontainer.h>
 
-#include <QString>
-#include <QIcon>
-#include <QAction>
-
 #include <iriclib.h>
 
 class GeoDataCreator;
@@ -32,6 +28,9 @@ class vtkRenderer;
 class vtkActorCollection;
 class vtkActor2DCollection;
 
+class QAction;
+class QDialog;
+class QIcon;
 class QKeyEvent;
 class QMenu;
 class QUndoCommand;

@@ -8,18 +8,10 @@ class GeoDataBackgroundIntegerCreator : public GeoDataBackgroundCreatorT<int, vt
 {
 
 private:
-	GeoDataBackgroundIntegerCreator()
-		: GeoDataBackgroundCreatorT<int, vtkIntArray>() {
-		m_typeName = "integerBackground";
-	}
+	GeoDataBackgroundIntegerCreator();
 
 public:
-	static GeoDataBackgroundIntegerCreator* instance() {
-		if (! m_instance) {
-			m_instance = new GeoDataBackgroundIntegerCreator();
-		}
-		return m_instance;
-	}
+	static GeoDataBackgroundIntegerCreator* instance();
 
 protected:
 	static GeoDataBackgroundIntegerCreator* m_instance;

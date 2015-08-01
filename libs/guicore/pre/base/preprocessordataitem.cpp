@@ -1,4 +1,5 @@
 #include "preprocessordataitem.h"
+#include "preprocessorwindowinterface.h"
 
 #include <guibase/objectbrowserview.h>
 
@@ -24,4 +25,14 @@ QAction* PreProcessorDataItem::deleteAction()
 void PreProcessorDataItem::copyStandardItem()
 {
 	m_standardItemCopy = m_standardItem->clone();
+}
+
+PreProcessorWindowInterface* PreProcessorDataItem::preProcessorWindow() const
+{
+	return dynamic_cast<PreProcessorWindowInterface*>(mainWindow());
+}
+
+PreProcessorDataModelInterface* PreProcessorDataItem::dataModel() const
+{
+	return dynamic_cast<PreProcessorDataModelInterface*>(GraphicsWindowDataItem::dataModel());
 }

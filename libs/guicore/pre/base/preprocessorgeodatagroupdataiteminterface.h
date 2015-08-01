@@ -3,13 +3,12 @@
 
 #include "../../guicore_global.h"
 #include "preprocessordataitem.h"
-#include "preprocessorgeodatadataiteminterface.h"
 #include "../../solverdef/solverdefinitiongridattribute.h"
 
 class Grid;
-class QStandardItem;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
+class PreProcessorGeoDataDataItemInterface;
 class GridAttributeDimensionsContainer;
 class GridAttributeEditWidget;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;

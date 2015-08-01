@@ -4,7 +4,7 @@
 #include "../../guicore_global.h"
 #include "../../project/projectdataitem.h"
 #include "../../solverdef/solverdefinitiongridtype.h"
-#include <vtkPointSet.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkAlgorithm.h>
 #include <QList>
@@ -22,6 +22,7 @@ class QStringList;
 class GridInternalImporter;
 class GridInternalExporter;
 class GridAttributeContainer;
+class vtkPointSet;
 
 /// Abstract class to store Grid
 class GUICOREDLL_EXPORT Grid : public ProjectDataItem
@@ -61,18 +62,10 @@ public:
 	}
 	void addGridRelatedCondition(GridAttributeContainer* cond);
 	/// Returns the number of nodes
-	unsigned int nodeCount() const {
-		return m_vtkGrid->GetNumberOfPoints();
-	}
+	unsigned int nodeCount() const;
 	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
-	virtual void setModified(bool modified = true) override {
-		ProjectDataItem::setModified(modified);
-		m_isModified = modified;
-		if (modified) {
-			m_vtkGrid->Modified();
-		}
-	}
+	virtual void setModified(bool modified = true) override;
 	bool isModified() const {return m_isModified;}
 	virtual const QStringList checkShape(QTextStream& stream);
 	virtual bool isValid(QTextStream& /*stream*/) const {return true;}

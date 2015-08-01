@@ -26,8 +26,17 @@
 #include <QSettings>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QLineF>
+#include <QVector2D>
 
 #include <vector>
+
+bool RectRegion::intersect(const QLineF& line) const
+{
+	bool isInside1 = pointIsInside(line.x1(), line.y1());
+	bool isInside2 = pointIsInside(line.x2(), line.y2());
+	return (isInside1 != isInside2);
+}
 
 Structured2DGrid::Structured2DGrid(ProjectDataItem* parent) :
 	Grid2D {SolverDefinitionGridType::gtStructured2DGrid, parent}
@@ -58,7 +67,7 @@ void Structured2DGrid::setDimensions(unsigned int i, unsigned int j)
 	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
 }
 
-const QVector2D Structured2DGrid::vertex(unsigned int index) const
+QVector2D Structured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
 	m_vtkGrid->GetPoints()->GetPoint(index, v);
@@ -660,4 +669,9 @@ bool Structured2DGrid::lineAtJIntersect(int j, const RectRegion& region)
 		if (region.intersect(line)) {return true;}
 	}
 	return false;
+}
+
+QVector2D Structured2DGrid::vertex(unsigned int i, unsigned int j) const
+{
+	return vertex(vertexIndex(i, j));
 }

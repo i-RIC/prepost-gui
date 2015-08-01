@@ -10,8 +10,8 @@ class GeoDataMapperT : public GeoDataMapper
 {
 
 public:
-	GeoDataMapperT(GeoDataCreator* parent)
-		: GeoDataMapper(parent)
+	GeoDataMapperT(GeoDataCreator* parent) :
+		GeoDataMapper {parent}
 	{}
 
 protected:

@@ -1,44 +1,24 @@
 #ifndef GEODATABACKGROUNDCOMPLEXCREATOR_H
 #define GEODATABACKGROUNDCOMPLEXCREATOR_H
 
-#include "geodatabackgroundcreatort.h"
-#include "geodatabackgroundcomplex.h"
-#include "geodatabackgroundnodemappert.h"
-#include "geodatabackgroundcellmappert.h"
+#include "../geodata/geodatacreator.h"
 #include "../../solverdef/solverdefinitiongridcomplexattribute.h"
+
 #include <vtkIntArray.h>
 
 class GeoDataBackgroundComplexCreator : public GeoDataCreator
 {
 
-protected:
+private:
 	/// Constructor
-	GeoDataBackgroundComplexCreator() : GeoDataCreator() {
-		m_caption = "Background";
-		m_nodeMappers.append(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
-		m_cellMappers.append(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
-		m_typeName = "complexBackground";
-	}
+	GeoDataBackgroundComplexCreator();
 
 public:
-	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override {
-		SolverDefinitionGridComplexAttribute* tmpcond = dynamic_cast<SolverDefinitionGridComplexAttribute* >(condition);
-		GeoData* geodata = new GeoDataBackgroundComplex(parent, this, tmpcond);
-		geodata->setPosition(tmpcond->position());
-		geodata->setDefaultMapper();
-		return geodata;
-	}
-	bool isCompatibleWith(SolverDefinitionGridAttribute* /* condition*/) override {
-		return true;
-	}
+	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
+	bool isCompatibleWith(SolverDefinitionGridAttribute* /* condition*/) override;
 	QString defaultCaption(unsigned int /*index*/) override {return "";}
 
-	static GeoDataBackgroundComplexCreator* instance() {
-		if (! m_instance) {
-			m_instance = new GeoDataBackgroundComplexCreator();
-		}
-		return m_instance;
-	}
+	static GeoDataBackgroundComplexCreator* instance();
 
 protected:
 	static GeoDataBackgroundComplexCreator* m_instance;

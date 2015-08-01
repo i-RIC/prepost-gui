@@ -8,18 +8,10 @@ class GeoDataBackgroundRealCreator : public GeoDataBackgroundCreatorT<double, vt
 {
 
 private:
-	GeoDataBackgroundRealCreator()
-		: GeoDataBackgroundCreatorT<double, vtkDoubleArray>() {
-		m_typeName = "realBackground";
-	}
+	GeoDataBackgroundRealCreator();
 
 public:
-	static GeoDataBackgroundRealCreator* instance() {
-		if (! m_instance) {
-			m_instance = new GeoDataBackgroundRealCreator();
-		}
-		return m_instance;
-	}
+	static GeoDataBackgroundRealCreator* instance();
 
 protected:
 	static GeoDataBackgroundRealCreator* m_instance;

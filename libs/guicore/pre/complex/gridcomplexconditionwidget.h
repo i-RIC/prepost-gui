@@ -3,12 +3,12 @@
 
 #include "../../guicore_global.h"
 #include <QWidget>
-#include "../../project/inputcond/inputconditioncontainerset.h"
 #include "../../project/inputcond/inputconditioncontainerstring.h"
 #include "../../project/inputcond/inputconditioncontainerinteger.h"
 
 class QAbstractButton;
 class SolverDefinition;
+class InputConditionContainerSet;
 class QDomElement;
 class QLocale;
 
