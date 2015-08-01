@@ -11,13 +11,14 @@
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
+#include <QMainWindow>
 #include <QMenu>
 #include <QXmlStreamWriter>
 
 #include <iriclib.h>
 
-PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent)
-	: PreProcessorDataItem(tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
+	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);

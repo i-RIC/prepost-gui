@@ -6,6 +6,7 @@
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <misc/mathsupport.h>
 

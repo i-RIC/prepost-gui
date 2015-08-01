@@ -22,6 +22,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <geodata/polygon/geodatapolygon.h>
+#include <guicore/project/inputcond/inputconditioncontainerset.h>
 
 #include <QAction>
 #include <QLocale>

@@ -7,6 +7,8 @@
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <misc/doublemappingsetting.h>
 
+#include <QVector2D>
+
 #include <vtkCell.h>
 #include <vtkSmartPointer.h>
 #include <vtkPointLocator.h>

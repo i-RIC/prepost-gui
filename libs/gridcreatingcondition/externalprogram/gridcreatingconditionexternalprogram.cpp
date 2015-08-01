@@ -11,6 +11,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <misc/filesystemfunction.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>

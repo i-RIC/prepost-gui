@@ -35,6 +35,7 @@
 #include <QToolBar>
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
+#include <QMainWindow>
 
 #include <vtkExtractGrid.h>
 #include <vtkGeometryFilter.h>

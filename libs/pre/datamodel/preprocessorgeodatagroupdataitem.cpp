@@ -20,6 +20,7 @@
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionselectwidget.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataimporter.h>

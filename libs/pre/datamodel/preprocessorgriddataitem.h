@@ -12,6 +12,7 @@
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
 
+#include <QCursor>
 #include <QVector>
 
 class Grid;

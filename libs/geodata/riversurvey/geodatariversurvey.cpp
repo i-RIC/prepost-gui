@@ -13,6 +13,7 @@
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
 
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/misc/qundocommandhelper.h>

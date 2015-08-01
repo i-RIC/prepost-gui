@@ -12,6 +12,7 @@
 #include <QAction>
 #include <QIcon>
 #include <QMessageBox>
+#include <QMainWindow>
 
 GridCreatingConditionCreatorRiverSurvey::GridCreatingConditionCreatorRiverSurvey()
 	: GridCreatingConditionCreator()

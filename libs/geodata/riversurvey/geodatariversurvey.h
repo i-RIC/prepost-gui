@@ -19,6 +19,8 @@
 #include <vtkStringArray.h>
 
 #include <QPoint>
+#include <QCursor>
+#include <QPixmap>
 #include <QList>
 
 #include <iriclib.h>

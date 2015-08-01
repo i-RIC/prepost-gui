@@ -5,6 +5,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

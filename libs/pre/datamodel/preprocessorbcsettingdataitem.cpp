@@ -16,6 +16,7 @@
 #include <QAction>
 #include <QFile>
 #include <QKeyEvent>
+#include <QMainWindow>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>

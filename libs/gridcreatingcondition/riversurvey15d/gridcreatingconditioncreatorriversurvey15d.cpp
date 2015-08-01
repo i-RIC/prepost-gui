@@ -9,6 +9,7 @@
 #include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QMessageBox>
+#include <QMainWindow>
 
 GridCreatingConditionCreatorRiverSurvey15D::GridCreatingConditionCreatorRiverSurvey15D()
 	: GridCreatingConditionCreator()

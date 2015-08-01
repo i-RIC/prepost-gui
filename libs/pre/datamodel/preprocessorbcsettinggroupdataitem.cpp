@@ -12,6 +12,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QMainWindow>
 #include <QMap>
 #include <QMenu>
 #include <QMessageBox>

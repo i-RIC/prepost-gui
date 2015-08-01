@@ -21,6 +21,8 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
 
+#include <QLineF>
+
 #include <netcdf.h>
 #include <vector>
 
@@ -32,6 +34,22 @@
 #define LAT "lat"
 
 const int GeoDataNetcdf::MAX_DRAWCELLCOUNT = 200000;
+
+bool GeoDataNetcdf::RectRegion::pointIsInside(double x, double y) const
+{
+	if (x < xMin) {return false;}
+	if (x > xMax) {return false;}
+	if (y < yMin) {return false;}
+	if (y > yMax) {return false;}
+	return true;
+}
+
+bool GeoDataNetcdf::RectRegion::intersect(const QLineF& line) const
+{
+	bool isInside1 = pointIsInside(line.x1(), line.y1());
+	bool isInside2 = pointIsInside(line.x2(), line.y2());
+	return (isInside1 != isInside2);
+}
 
 GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att)
 	: GeoData(d, creator, att)

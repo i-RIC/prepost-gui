@@ -7,6 +7,7 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>

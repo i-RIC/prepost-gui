@@ -1,9 +1,11 @@
 #ifndef GEODATAMAPPER_H
 #define GEODATAMAPPER_H
 
+#include "geodatacreator.h"
+
 #include <QObject>
 
-class GeoDataCreator;
+class GeoData;
 class Grid;
 class GridAttributeContainer;
 

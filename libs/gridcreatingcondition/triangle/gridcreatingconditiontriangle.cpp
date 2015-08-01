@@ -15,6 +15,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/pre/grid/unstructured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>

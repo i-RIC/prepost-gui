@@ -6,6 +6,7 @@
 #include <misc/versionnumber.h>
 #include <QVector2D>
 #include <QVector>
+#include <QString>
 #include <set>
 
 #include <vtkStructuredGrid.h>
