@@ -7,7 +7,7 @@
 #include <QWidget>
 #include <QList>
 
-#include <vtkIdList.h>
+#include <vtkIdTypeArray.h>
 
 namespace Ui
 {

@@ -3,12 +3,8 @@
 
 #include "../guicore_global.h"
 
-#include <QObject>
-#include <QMap>
-
 class QDomNode;
 class QWidget;
-class QXmlStreamWriter;
 class ProjectDataItem;
 class PostProcessorWindowProjectDataItem;
 

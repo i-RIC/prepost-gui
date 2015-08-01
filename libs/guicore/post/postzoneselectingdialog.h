@@ -3,7 +3,6 @@
 
 #include "../guicore_global.h"
 #include <QDialog>
-#include <QString>
 #include <QList>
 #include <QMap>
 
@@ -14,6 +13,8 @@ namespace Ui
 
 class SolverDefinitionGridType;
 class PostZoneDataContainer;
+
+class QString;
 
 class GUICOREDLL_EXPORT PostZoneSelectingDialog : public QDialog
 {

@@ -6,8 +6,6 @@
 #include "postseriesdatacontainer.h"
 #include <QString>
 #include <QList>
-#include <vtkPointSet.h>
-#include <vtkSmartPointer.h>
 #include <cgnslib.h>
 
 #if CGNS_VERSION < 3100

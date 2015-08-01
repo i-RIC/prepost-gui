@@ -24,7 +24,6 @@ class QMenu;
 class QAction;
 class DistanceMeasureDialog;
 class PreProcessorGraphicsView;
-class QVector2D;
 class DistanceMeasureDefineCommand;
 class DistanceMeasureRedefineCommand;
 class DistanceMeasureMoveVertexCommand;

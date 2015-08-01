@@ -6,8 +6,6 @@
 #include "../project/projectdataitem.h"
 #include "graphicswindowsimpledatamodel.h"
 
-#include <QObject>
-
 class QPoint;
 class QMenu;
 class QMainWindow;

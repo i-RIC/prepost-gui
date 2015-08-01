@@ -1,9 +1,9 @@
 #ifndef ANIMATIONCONTROLLERINTERFACE_H
 #define ANIMATIONCONTROLLERINTERFACE_H
 
-#include <QObject>
-
 #include "../guicore_global.h"
+
+#include <QObject>
 
 class GUICOREDLL_EXPORT AnimationControllerInterface : public QObject
 {

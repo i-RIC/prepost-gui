@@ -2,7 +2,6 @@
 #define PARTICLEEXPORTWINDOWINTERFACE_H
 
 #include <QList>
-#include <QString>
 
 class QString;
 

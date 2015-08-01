@@ -3,7 +3,6 @@
 
 #include "../guicore_global.h"
 #include "../project/projectdataitem.h"
-#include <QObject>
 
 class PostSolutionInfo;
 

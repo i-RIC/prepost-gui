@@ -2,10 +2,9 @@
 #define SVKMLEXPORTWINDOWINTERFACE_H
 
 #include <QList>
-#include <QString>
-#include <QXmlStreamWriter>
 
 class QString;
+class QXmlStreamWriter;
 
 /// Window that support KML for street view.
 class SVKmlExportWindowInterface

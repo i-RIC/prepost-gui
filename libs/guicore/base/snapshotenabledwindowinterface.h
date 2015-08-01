@@ -3,8 +3,7 @@
 
 #include "../guicore_global.h"
 
-#include <QPixmap>
-
+class QPixmap;
 class VTKGraphicsView;
 class vtkRenderWindow;
 

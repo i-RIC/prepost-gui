@@ -9,6 +9,8 @@
 
 #include <QUndoCommand>
 #include <QStandardItem>
+#include <QList>
+#include <QVariant>
 
 class QStandardItem;
 class VTKGraphicsView;

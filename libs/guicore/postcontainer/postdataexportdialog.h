@@ -5,7 +5,6 @@
 #include "postexportsetting.h"
 
 #include <QDialog>
-#include <QPushButton>
 
 namespace Ui
 {
