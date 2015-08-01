@@ -2,7 +2,6 @@
 #define XMLSUPPORT_H
 
 #include "misc_global.h"
-#include <Qt>
 #include <QColor>
 
 class QColor;

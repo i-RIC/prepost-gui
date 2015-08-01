@@ -1,10 +1,9 @@
 #ifndef COLORCONTAINER_H
 #define COLORCONTAINER_H
 
-#include "misc_global.h"
 #include "xmlattributecontainer.h"
 
-#include <QColor>
+class QColor;
 
 class MISCDLL_EXPORT ColorContainer : public XmlAttributeContainer
 {

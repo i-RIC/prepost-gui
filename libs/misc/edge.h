@@ -1,8 +1,9 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include <QDataStream>
 #include <vtkObject.h>
+
+class QDataStream;
 
 /// VTK cell edge. It has two vertex as vtkIdType, i.e. indices.
 class Edge

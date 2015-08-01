@@ -2,7 +2,8 @@
 #define LASTIODIRECTORY_H
 
 #include "misc_global.h"
-#include <QString>
+
+class QString;
 
 /// Container class thas store the directory that was used for I/O last time in the iRIC GUI.
 class MISCDLL_EXPORT LastIODirectory

@@ -1,6 +1,7 @@
 #include "versionnumber.h"
 
 #include <QObject>
+#include <QString>
 #include <QStringList>
 
 class VersionNumber::Impl

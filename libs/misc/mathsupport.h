@@ -3,8 +3,6 @@
 
 #include "misc_global.h"
 
-#include <Qt>
-
 class QVector2D;
 class QPoint;
 class QPointF;

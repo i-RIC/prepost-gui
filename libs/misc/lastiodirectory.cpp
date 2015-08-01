@@ -1,4 +1,5 @@
 #include "lastiodirectory.h"
+#include <QString>
 
 QString LastIODirectory::m_value;
 

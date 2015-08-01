@@ -2,7 +2,8 @@
 #define VERSIONNUMBER_H
 
 #include "misc_global.h"
-#include <QString>
+
+class QString;
 
 /// This class contains version numbers of solvers
 /**

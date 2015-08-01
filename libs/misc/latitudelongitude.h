@@ -3,8 +3,8 @@
 
 #include "misc_global.h"
 
-#include <QString>
-#include <QVector2D>
+class QString;
+class QVector2D;
 
 /// This class contains the data of angle in Latitude-Longitude coordinate system
 class MISCDLL_EXPORT LatitudeLongitudeAngle
@@ -55,13 +55,7 @@ public:
 		m_second = s;
 	}
 	/// Set value with values separeted as flag, angle, minute and second (as strings)
-	void setValue(bool f, const QString& a, const QString& m, const QString& s) {
-		m_flag = f;
-		bool ok = true;
-		m_angle = a.toUInt(&ok, 10);
-		m_minute = m.toUInt(&ok, 10);
-		m_second = s.toDouble(&ok);
-	}
+	void setValue(bool f, const QString& a, const QString& m, const QString& s);
 
 protected:
 	/// true for North / East, false for South / West
@@ -103,9 +97,7 @@ public:
 	void setLongitude(double longitude) {
 		m_longitude.setValue(longitude);
 	}
-	QVector2D toQVector2D() {
-		return QVector2D(m_latitude.value(), m_longitude.value());
-	}
+	QVector2D toQVector2D() const;
 
 protected:
 	LatitudeLongitudeAngle m_latitude;
