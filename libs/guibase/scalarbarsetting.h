@@ -35,7 +35,7 @@ public:
 	/// Load setting from vtkLegendBoxRepresentation
 	void loadFromRepresentation(vtkLegendBoxRepresentation* rep);
 	/// Apply setting to vtkScalarBarRepresentation
-	void saveToRepresentation(vtkScalarBarRepresentation* rep);
+	void saveToRepresentation(vtkScalarBarRepresentation* rep) const;
 	/// Apply setting to vtkLegendBoxRepresentation
 	void saveToRepresentation(vtkLegendBoxRepresentation* rep);
 

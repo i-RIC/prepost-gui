@@ -28,8 +28,8 @@ MeasuredDataVectorGroupDataItem::Setting MeasuredDataVectorSettingDialog::settin
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	if (index < 0 || index > m_solutions.count() - 1) {ret.currentSolution = "";}
-	else {ret.currentSolution = m_solutions.at(index);}
+	if (index < 0 || index > m_solutions.count() - 1) {ret.solution = "";}
+	else {ret.solution = m_solutions.at(index);}
 
 	// scalar
 	index = ui->scalarComboBox->currentIndex();
@@ -67,7 +67,7 @@ void MeasuredDataVectorSettingDialog::setSetting(const MeasuredDataVectorGroupDa
 {
 	m_setting = setting;
 	// solution
-	int index = m_solutions.indexOf(setting.currentSolution);
+	int index = m_solutions.indexOf(setting.solution);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 

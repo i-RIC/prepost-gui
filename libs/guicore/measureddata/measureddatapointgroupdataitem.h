@@ -4,6 +4,14 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include <guibase/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
+
+#include <misc/compositecontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/stringcontainer.h>
+#include <misc/enumcontainert.h>
+#include <misc/boolcontainer.h>
+#include <misc/opacitycontainer.h>
+
 #include <QMap>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -16,9 +24,6 @@ class vtkActor;
 class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
-class Post2dWindowContourSetProperty;
-class MeasuredDataPointSetProperty;
-class MeasuredDataPointSelectValue;
 class LookupTableContainer;
 
 class GUICOREDLL_EXPORT MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem
@@ -29,18 +34,34 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		IntContainer numberOfDivisions;
+		StringContainer currentMeasuredValue;
+		EnumContainerT<ContourSettingWidget::Contour> contour;
+		BoolContainer fillUpper;
+		BoolContainer fillLower;
+		IntContainer pointSize;
+		OpacityContainer opacity;
+
+		ScalarBarSetting scalarBarSetting;
+	};
+
 	/// Constructor
 	MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataPointGroupDataItem();
-	const QString& currentMeasuredValue() const {return m_currentMeasuredValue;}
+//	const QString& currentMeasuredValue() const {return m_setting.currentMeasuredValue;}
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentMeasuredValue(const QString& value);
+	void setSolution(const QString& value);
 	bool hasTransparentPart() override;
-	LookupTableContainer* lookupTable(const QString& attName) {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const QString& attName) const {return m_lookupTables.value(attName, 0);}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -62,25 +83,17 @@ private:
 	void updateActorSettings();
 	void createRangeClippedPolyData();
 	void createValueClippedPolyData();
-	void setDefaultValues();
 	void setupPointSetting();
 	void setupIsolineSetting();
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
 	void setupScalarBarSetting();
 
-	int m_numberOfDivisions;
-	QString m_currentMeasuredValue;
-	ContourSettingWidget::Contour m_contour;
-	bool m_fillUpper;
-	bool m_fillLower;
-	int m_pointSize;
-	int m_opacityPercent;
+	Setting m_setting;
 
 	// for scalar bar
 	QMap<QString, LookupTableContainer*> m_lookupTables;
 	QMap<QString, QString> m_colorbarTitleMap;
-	ScalarBarSetting m_scalarBarSetting;
 
 	vtkLODActor* m_contourActor;
 	vtkPolyDataMapper* m_contourMapper;
@@ -98,9 +111,8 @@ private:
 	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
-public:
-	friend class MeasuredDataPointSetProperty;
-	friend class MeasuredDataPointSelectValue;
+	class SetSettingCommand;
+	class SelectSolutionCommand;
 };
 
 #endif // MEASUREDDATAPOINTGROUPDATAITEM_H

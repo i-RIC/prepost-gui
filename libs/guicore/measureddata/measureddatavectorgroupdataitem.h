@@ -27,8 +27,6 @@
 
 class vtkPointSet;
 class MeasuredDataVectorDataItem;
-class MeasuredDataVectorSelectValue;
-class MeasuredDataVectorSetProperty;
 
 class MeasuredDataVectorGroupDataItem : public GraphicsWindowDataItem
 {
@@ -47,7 +45,7 @@ public:
 		MeasuredDataVectorGroupDataItem::Setting& operator=(const Setting& s);
 
 		StringContainer scalarValueName;
-		StringContainer currentSolution;
+		StringContainer solution;
 		ColorContainer color;
 		DoubleContainer oldCameraScale;
 		DoubleContainer scaleFactor;
@@ -71,7 +69,7 @@ public slots:
 	void exclusivelyCheck(MeasuredDataVectorDataItem*);
 	void showSettingDialog() {showPropertyDialog();}
 
-protected:
+private:
 	QDialog* propertyDialog(QWidget* p) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -82,16 +80,13 @@ protected:
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	void setCurrentSolution(const QString& currentSol);
-	QString currentSolution() {return m_setting.currentSolution;}
+	void setSolution(const QString& sol);
 	void doApplyOffset(double x, double y) override;
 
-private:
 	void setupActors();
 	void calculateStandardValue();
 	void updateScaleFactor();
 
-protected:
 	vtkSmartPointer<vtkActor> m_arrowActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
 	vtkSmartPointer<vtkAppendPolyData> m_appendPolyData;
@@ -108,22 +103,10 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 
-//	QString m_scalarValueName;
-//	QString m_currentSolution;
-//	QColor m_color;
-//	double m_oldCameraScale;
-//	double m_scaleFactor;
-
-//	MeasuredData::ArrowColorMode m_colorMode;
-//	MeasuredData::ArrowLengthMode m_lengthMode;
-//	double m_standardValue;
-//	double m_legendLength;
-//	double m_minimumValue;
 	Setting m_setting;
 
-public:
-	friend class MeasuredDataVectorSelectValue;
-	friend class MeasuredDataVectorSetProperty;
+	class SetSettingCommand;
+	class SelectSolutionCommand;
 };
 
 #endif // MEASUREDDATAVECTORGROUPDATAITEM_H

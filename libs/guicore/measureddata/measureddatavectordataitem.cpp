@@ -2,10 +2,10 @@
 
 #include <QStandardItem>
 
-MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_name {name}
 {
-	m_name = name;
 	m_isDeletable = false;
 
 	m_standardItem->setCheckable(true);

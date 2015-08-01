@@ -35,9 +35,9 @@
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
 MeasuredDataVectorGroupDataItem::Setting::Setting() :
-	CompositeContainer {&scalarValueName, &currentSolution, &color, &colorMode, &lengthMode, &standardValue, &legendLength, &minimumValue},
+	CompositeContainer {&scalarValueName, &solution, &color, &colorMode, &lengthMode, &standardValue, &legendLength, &minimumValue},
 	scalarValueName {"scalarValue", ""},
-	currentSolution {"solution", ""},
+	solution {"solution", ""},
 	color {"color", Qt::black},
 	oldCameraScale {"oldCameraScale", 1},
 	scaleFactor {"scaleFactor", 1},
@@ -60,8 +60,8 @@ MeasuredDataVectorGroupDataItem::Setting& MeasuredDataVectorGroupDataItem::Setti
 	return *this;
 }
 
-MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p)
-	: GraphicsWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p) :
+	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
 	m_isDeletable = false;
 	m_standardItem->setCheckable(true);
@@ -69,15 +69,6 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 
 	m_standardItemCopy = m_standardItem->clone();
 
-//	m_oldCameraScale = 1;
-//	m_colorMode = MeasuredData::acmSpecific;
-//	m_lengthMode = MeasuredData::almAuto;
-//	m_standardValue = 1;
-//	m_legendLength = STANDARD_LENGTH;
-//	m_minimumValue = 0.001;
-
-//	m_scalarValueName = "";
-//	m_currentSolution = "";
 	QSettings setting;
 	m_setting.color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
 	m_setting.scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
@@ -92,7 +83,7 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 	setupActors();
 	if (md->vectorNames().count() > 0) {
 		QString name = md->vectorNames().at(0);
-		setCurrentSolution(name);
+		setSolution(name);
 		updateActorSettings();
 	}
 }
@@ -105,7 +96,7 @@ MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
 void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	setCurrentSolution(m_setting.currentSolution);
+	setSolution(m_setting.solution);
 	updateActorSettings();
 }
 
@@ -114,32 +105,30 @@ void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	m_setting.save(writer);
 }
 
-class MeasuredDataVectorSelectValue : public QUndoCommand
+class MeasuredDataVectorGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	MeasuredDataVectorSelectValue(const QString& newsol, MeasuredDataVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Arrow Physical Value Change")) {
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_setting.currentSolution;
-		m_item = item;
+	SelectSolutionCommand(const QString& newsol, MeasuredDataVectorGroupDataItem* item) :
+		QUndoCommand {MeasuredDataVectorGroupDataItem::tr("Arrow Physical Value Change")},
+		m_newSolution {newsol},
+		m_oldSolution {item->m_setting.solution},
+		m_item {item}
+	{}
+	void redo() override {
+		applySetting(m_newSolution);
 	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	void undo() override {
+		applySetting(m_oldSolution);
 	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
+
 private:
-	QString m_oldCurrentSolution;
-	QString m_newCurrentSolution;
+	void applySetting(QString& sol) {
+		m_item->setSolution(sol);
+		m_item->updateActorSettings();
+	}
+
+	QString m_newSolution;
+	QString m_oldSolution;
 
 	MeasuredDataVectorGroupDataItem* m_item;
 };
@@ -147,11 +136,10 @@ private:
 void MeasuredDataVectorGroupDataItem::exclusivelyCheck(MeasuredDataVectorDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new MeasuredDataVectorSelectValue("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new MeasuredDataVectorSelectValue(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
 }
 
@@ -225,9 +213,9 @@ void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == 0 || md->vectorNames().count() == 0) {return;}
 	vtkPointSet* ps = md->pointData();
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.solution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.currentSolution).c_str());
+	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.solution).c_str());
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -281,13 +269,13 @@ void MeasuredDataVectorGroupDataItem::updateActorSettings()
 
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == 0 || md->pointData() == 0) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.solution == "") {return;}
 	vtkPointSet* ps = getPointSet();
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.solution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
-	pd->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
+	pd->SetActiveVectors(iRIC::toStr(m_setting.solution).c_str());
 	m_hedgeHog->SetInputData(ps);
 	m_warpVector->SetInputData(ps);
 
@@ -338,12 +326,12 @@ void MeasuredDataVectorGroupDataItem::update()
 	informGridUpdate();
 }
 
-void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentSol)
+void MeasuredDataVectorGroupDataItem::setSolution(const QString& sol)
 {
 	MeasuredDataVectorDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		MeasuredDataVectorDataItem* tmpItem = dynamic_cast<MeasuredDataVectorDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
+		if (tmpItem->name() == sol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
@@ -351,7 +339,7 @@ void MeasuredDataVectorGroupDataItem::setCurrentSolution(const QString& currentS
 	if (current != 0) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_setting.currentSolution = currentSol;
+	m_setting.solution = sol;
 }
 
 void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
@@ -369,7 +357,7 @@ void MeasuredDataVectorGroupDataItem::updatePolyData()
 {
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	if (md == nullptr || md->pointData() == nullptr) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.solution == "") {return;}
 	updateScaleFactor();
 	VTKGraphicsView* view = dataModel()->graphicsView();
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
@@ -420,7 +408,7 @@ void MeasuredDataVectorGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_setting.currentSolution).arg(m_setting.standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_setting.solution).arg(m_setting.standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
 	if (m_setting.colorMode == MeasuredData::acmSpecific) {
@@ -448,36 +436,28 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-class MeasuredDataVectorSetProperty : public QUndoCommand
+class MeasuredDataVectorGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	MeasuredDataVectorSetProperty(const MeasuredDataVectorGroupDataItem::Setting& setting, MeasuredDataVectorGroupDataItem* item) :
-		QUndoCommand(QObject::tr("Update Arrow Setting"))
-	{
-		m_newSetting = setting;
-		m_oldSetting = item->m_setting;
-
-		m_item = item;
+	SetSettingCommand(const MeasuredDataVectorGroupDataItem::Setting& setting, MeasuredDataVectorGroupDataItem* item) :
+		QUndoCommand {QObject::tr("Update Arrow Setting")},
+		m_newSetting {setting},
+		m_oldSetting {item->m_setting},
+		m_item {item}
+	{}
+	void redo() override {
+		applySetting(m_newSetting);
 	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
-
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	void undo() override {
+		applySetting(m_oldSetting);
 	}
 private:
+	void applySetting(const MeasuredDataVectorGroupDataItem::Setting& s)
+	{
+		m_item->m_setting = s;
+		m_item->setSolution(s.solution);
+		m_item->updateActorSettings();
+	}
 	MeasuredDataVectorGroupDataItem::Setting m_newSetting;
 	MeasuredDataVectorGroupDataItem::Setting m_oldSetting;
 
@@ -487,7 +467,7 @@ private:
 void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	MeasuredDataVectorSettingDialog* dialog = dynamic_cast<MeasuredDataVectorSettingDialog*>(propDialog);
-	iRICUndoStack::instance().push(new MeasuredDataVectorSetProperty(dialog->setting(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
@@ -495,7 +475,7 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
 	vtkPointSet* ps = md->polyData();
 
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.currentSolution).c_str()));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.solution).c_str()));
 	QSet<vtkIdType> points;
 	double min = m_setting.minimumValue;
 	double minlimitsqr = min * min;

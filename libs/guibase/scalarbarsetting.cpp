@@ -67,7 +67,7 @@ void ScalarBarSetting::loadFromRepresentation(vtkLegendBoxRepresentation* rep)
 	height = *(pos2 + 1);
 }
 
-void ScalarBarSetting::saveToRepresentation(vtkScalarBarRepresentation* rep)
+void ScalarBarSetting::saveToRepresentation(vtkScalarBarRepresentation* rep) const
 {
 	if (orientation == Orientation::Vertical) {
 		rep->SetOrientation(1);
