@@ -9,7 +9,9 @@ class GeoDataPolygonImporter : public GeoDataImporter
 	Q_OBJECT
 
 public:
-	GeoDataPolygonImporter(GeoDataCreator* creator) : GeoDataImporter(creator) {}
+	GeoDataPolygonImporter(GeoDataCreator* creator) :
+		GeoDataImporter {creator}
+	{}
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;

@@ -1633,14 +1633,13 @@ void GeoDataPolygon::showInitialDialog()
 class GeoDataPolygon::EditValueCommand : public QUndoCommand
 {
 public:
-	EditValueCommand(GeoDataPolygon* polygon, const QVariant& oldvalue, const QVariant& newvalue) :
-		QUndoCommand {QObject::tr("Polygon value change")}
-	{
-		m_polygon = polygon;
-		m_oldValue = oldvalue;
-		m_newValue = newvalue;
-		m_oldMapped = polygon->m_mapped;
-	}
+	EditValueCommand(const QVariant& newvalue, GeoDataPolygon* polygon) :
+		QUndoCommand {GeoDataPolygon::tr("Polygon value change")},
+		m_newValue {newvalue},
+		m_oldValue {polygon->variantValue()},
+		m_oldMapped {polygon->m_mapped},
+		m_polygon {polygon}
+	{}
 	void redo() {
 		m_polygon->setVariantValue(m_newValue);
 		m_polygon->m_mapped = false;
@@ -1650,12 +1649,11 @@ public:
 		m_polygon->m_mapped = m_oldMapped;
 	}
 private:
-	GeoDataPolygon* m_polygon;
-	QVariant m_oldValue;
 	QVariant m_newValue;
+	QVariant m_oldValue;
 	bool m_oldMapped;
+	GeoDataPolygon* m_polygon;
 };
-
 
 const QVariant& GeoDataPolygon::variantValue() const
 {
@@ -1676,8 +1674,9 @@ void GeoDataPolygon::setVariantValue(const QVariant& v)
 	}
 	m_variantValues[index] = v;
 	updateScalarValues();
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informDataChange();
+	auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	p->informValueRangeChange();
+	p->informDataChange();
 }
 
 void GeoDataPolygon::editValue()
@@ -1692,9 +1691,8 @@ void GeoDataPolygon::editValue()
 		dialog->inhibitCancel();
 	}
 	int ret = dialog->exec();
-	if (ret == QDialog::Accepted) {
-		iRICUndoStack::instance().push(new EditValueCommand(this, variantValue(), dialog->variantValue()));
-	}
+	if (ret == QDialog::Rejected) {return;}
+	iRICUndoStack::instance().push(new EditValueCommand(dialog->variantValue(), this));
 }
 
 void GeoDataPolygon::setPolygon(const QPolygonF& p)

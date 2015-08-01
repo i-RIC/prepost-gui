@@ -22,8 +22,9 @@ class GeoDataPolygonCellMapperT : public GeoDataCellMapperT<V, DA>
 {
 
 public:
-	GeoDataPolygonCellMapperT(GeoDataCreator* parent)
-		: GeoDataCellMapperT<V, DA>(parent) {
+	GeoDataPolygonCellMapperT(GeoDataCreator* parent) :
+		GeoDataCellMapperT<V, DA> {parent}
+	{
 		GeoDataCellMapperT<V, DA>::m_caption = "Polygon cell mapper";
 	}
 	GeoDataMapperSetting* initialize(bool* boolMap) override {

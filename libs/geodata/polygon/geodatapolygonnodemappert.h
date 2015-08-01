@@ -22,8 +22,9 @@ class GeoDataPolygonNodeMapperT : public GeoDataNodeMapperT<V, DA>
 {
 
 public:
-	GeoDataPolygonNodeMapperT(GeoDataCreator* parent)
-		: GeoDataNodeMapperT<V, DA>(parent) {
+	GeoDataPolygonNodeMapperT(GeoDataCreator* parent) :
+		GeoDataNodeMapperT<V, DA> {parent}
+	{
 		GeoDataNodeMapperT<V, DA>::m_caption = "Polygon node mapper";
 	}
 	GeoDataMapperSetting* initialize(bool* boolMap) override {
