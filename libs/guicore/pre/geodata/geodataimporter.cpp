@@ -1,11 +1,11 @@
 #include "geodatacreator.h"
 #include "geodataimporter.h"
 
-GeoDataImporter::GeoDataImporter(GeoDataCreator* creator)
-	: QObject(creator)
+GeoDataImporter::GeoDataImporter(GeoDataCreator* creator) :
+	QObject {creator}
 {}
 
-GeoDataCreator* GeoDataImporter::creator()
+GeoDataCreator* GeoDataImporter::creator() const
 {
 	return dynamic_cast<GeoDataCreator*>(parent());
 }

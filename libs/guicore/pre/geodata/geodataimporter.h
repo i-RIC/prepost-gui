@@ -23,7 +23,7 @@ public:
 	virtual bool importData(GeoData* data, int index, QWidget* w) = 0;
 	virtual const QStringList fileDialogFilters() = 0;
 	virtual const QStringList acceptableExtensions() = 0;
-	GeoDataCreator* creator();
+	GeoDataCreator* creator() const;
 	const QString& caption() const {return m_caption;}
 
 protected:

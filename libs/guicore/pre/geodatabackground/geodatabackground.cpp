@@ -16,9 +16,8 @@
 GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition)
 	: GeoData(d, creator, condition)
 {
-	m_name = "background";
-	m_caption = tr("Default");
-	setFilename("background.dat");
+	setName("background");
+	setCaption(tr("Default"));
 	m_editValueAction = new QAction(tr("Edit value..."), this);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
 
@@ -32,7 +31,7 @@ GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator
 		m_type = Custom;
 		m_customValue = def;
 	}
-	m_mapped = true;
+	setMapped(true);
 }
 
 void GeoDataBackground::setupDataItem()
@@ -86,32 +85,40 @@ void GeoDataBackground::addCustomMenuItems(QMenu* menu)
 class GeoDataBackgroundEditValueCommand : public QUndoCommand
 {
 public:
-	GeoDataBackgroundEditValueCommand(GeoDataBackground* b, GeoDataBackground::Type oldt, const QVariant& oldv, GeoDataBackground::Type newt, const QVariant& newv)
-		: QUndoCommand(QObject::tr("Background edit value")) {
-		m_background = b;
-		m_oldType = oldt;
-		m_oldValue = oldv;
-		m_newType = newt;
-		m_newValue = newv;
+	GeoDataBackgroundEditValueCommand(GeoDataBackground::Type type, const QVariant& val, GeoDataBackground* b) :
+		QUndoCommand(GeoDataBackground::tr("Background edit value")),
+		m_newType {type},
+		m_newValue {val},
+		m_oldType {b->m_type},
+		m_oldValue {b->variantValue()},
+		m_oldMapped {b->isMapped()},
+		m_background {b}
+	{}
+	void redo() override {
+		applyValues(m_newType, m_newValue, false);
 	}
-	void redo() {
-		m_background->m_type = m_newType;
-		m_background->m_customValue = m_newValue;
-		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informValueRangeChange();
-		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informDataChange();
-		m_background->m_mapped = false;
+	void undo() override {
+		applyValues(m_oldType, m_oldValue, m_oldMapped);
 	}
-	void undo() {
-		m_background->m_type = m_oldType;
-		m_background->m_customValue = m_oldValue;
-		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informValueRangeChange();
-		dynamic_cast<PreProcessorGeoDataDataItemInterface*>(m_background->parent())->informDataChange();
-	}
+
 private:
-	QVariant m_oldValue;
+	void applyValues(GeoDataBackground::Type t, const QVariant& val, bool mapped)
+	{
+		m_background->m_type = t;
+		m_background->m_customValue = val;
+		m_background->setMapped(mapped);
+
+		auto geoData = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (m_background->parent());
+		geoData->informValueRangeChange();
+		geoData->informDataChange();
+	}
+
+	GeoDataBackground::Type m_newType;
 	QVariant m_newValue;
 	GeoDataBackground::Type m_oldType;
-	GeoDataBackground::Type m_newType;
+	QVariant m_oldValue;
+	bool m_oldMapped;
+
 	GeoDataBackground* m_background;
 };
 
@@ -125,7 +132,7 @@ void GeoDataBackground::editValue()
 		dialog->setVariantValue(m_customValue);
 		int ret = dialog->exec();
 		if (ret == QDialog::Accepted) {
-			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(this, m_type, m_customValue, m_type, dialog->variantValue()));
+			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(m_type, dialog->variantValue(), this));
 		}
 		delete dialog;
 	} else {
@@ -139,7 +146,7 @@ void GeoDataBackground::editValue()
 		dialog.setupDialog();;
 		int ret = dialog.exec();
 		if (ret == QDialog::Accepted) {
-			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(this, m_type, m_customValue, dialog.type(), dialog.customValue()));
+			iRICUndoStack::instance().push(new GeoDataBackgroundEditValueCommand(dialog.type(), dialog.customValue(), this));
 		}
 	}
 }

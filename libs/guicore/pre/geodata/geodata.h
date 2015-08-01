@@ -4,6 +4,11 @@
 #include "../../guicore_global.h"
 #include "../../project/projectdataitem.h"
 #include "../../solverdef/solverdefinitiongridattribute.h"
+
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
+#include <misc/boolcontainer.h>
+
 #include <QString>
 #include <QIcon>
 #include <QAction>
@@ -40,15 +45,22 @@ class GUICOREDLL_EXPORT GeoData : public ProjectDataItem
 	Q_OBJECT
 
 public:
+	struct Setting : public CompositeContainer
+	{
+		/// Constructor
+		Setting();
+
+		StringContainer name;
+		StringContainer caption;
+		BoolContainer mapped;
+	};
+
 	/// Constructor
 	GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoData();
-	const QString& name() const {return m_name;}
+	QString name() const {return m_setting.name;}
+	void setName(const QString& name);
 	const QString& typeName() const;
-	void setName(const QString& name) {
-		m_name = name;
-		updateFilename();
-	}
 	void setPosition(SolverDefinitionGridAttribute::Position pos) {
 		if (pos == SolverDefinitionGridAttribute::Node) {
 			mapperFunc = &GeoData::nodeMappers;
@@ -56,8 +68,8 @@ public:
 			mapperFunc = &GeoData::cellMappers;
 		}
 	}
-	const QString& caption() const {return m_caption;}
-	void setCaption(const QString& cap) {m_caption = cap;}
+	QString caption() const {return m_setting.caption;}
+	void setCaption(const QString& cap) {m_setting.caption = cap;}
 	SolverDefinitionGridAttribute* gridRelatedCondition() const {return m_gridRelatedCondition;}
 	const QIcon icon() const;
 	/// Returns the pointer to the creator that created this instance.
@@ -100,8 +112,8 @@ public:
 	ScalarsToColorsContainer* scalarsToColorsContainer();
 	virtual void update2Ds() {}
 	bool isVisible();
-	void setMapped() {m_mapped = true;}
-	bool isMapped() const {return m_mapped;}
+	void setMapped(bool mapped = true) {m_setting.mapped = mapped;}
+	bool isMapped() const {return m_setting.mapped;}
 	virtual GeoDataProxy* getProxy() {return nullptr;}
 	void saveToCgnsFile(const int fn) override;
 	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* /*v*/) {}
@@ -129,9 +141,6 @@ protected:
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
 
-	void loadName(const QDomNode& node);
-	void saveName(QXmlStreamWriter& writer);
-
 	PreProcessorWindowInterface* preProcessorWindow();
 	PreProcessorGraphicsViewInterface* graphicsView();
 	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
@@ -145,14 +154,14 @@ protected:
 	virtual int iRICLibType() const {return IRIC_GEO_UNKNOWN;}
 	GridAttributeDimensionsContainer* dimensions() const;
 
-	QAction* m_editNameAction;
-	QString m_name;
-	QString m_caption;
+	Setting m_setting;
+
 	GeoDataCreator* m_creator;
 	SolverDefinitionGridAttribute* m_gridRelatedCondition;
 	GeoDataMapper* m_mapper;
+
 	QMenu* m_menu;
-	bool m_mapped;
+	QAction* m_editNameAction;
 };
 
 #endif // GEODATA_H

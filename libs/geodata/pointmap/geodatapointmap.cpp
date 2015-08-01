@@ -104,7 +104,7 @@ public:
 		qDebug("Time for setPoints():%d", m_time.elapsed());
 		m_pointMap->updateBreakLinesOnInsert(m_deletedPoints);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_time.restart();
 		m_pointMap->renderGraphicsView();
 		qDebug("Time for renderGraphicsView():%d", m_time.elapsed());
@@ -115,7 +115,7 @@ public:
 		qDebug("Time for setPoints():%d", m_time.elapsed());
 		m_pointMap->updateBreakLinesOnDelete(m_deletedPoints);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_time.restart();
 		m_pointMap->renderGraphicsView();
 		qDebug("Time for renderGraphicsView():%d", m_time.elapsed());
@@ -164,13 +164,13 @@ public:
 	void undo() {
 		m_pointMap->setPoints(m_oldPoints, m_oldValues);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void redo() {
 		m_pointMap->setPoints(m_newPoints, m_newValues);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -212,7 +212,7 @@ public:
 		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_oldValues);
 		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void redo() {
@@ -220,7 +220,7 @@ public:
 		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_newValues);
 		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -257,7 +257,7 @@ public:
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_oldValue);
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void redo() {
@@ -266,7 +266,7 @@ public:
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_newValue);
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -296,13 +296,13 @@ public:
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meAddPoint;
 		m_pointMap->m_newPointValue = m_value;
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 	}
 	void undo() {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meAddPointSelectReferenceNotPossible;
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 	}
 private:
@@ -350,12 +350,12 @@ public:
 	void undo() {
 		m_pmap->setPoints(oldpoints, oldvalues);
 		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->m_mapped = false;
+		this->m_pmap->setMapped(false);
 		this->m_pmap->renderGraphicsView();
 	}
 	void redo() {
 		m_pmap->setPoints(newpoints, newvalues);
-		this->m_pmap->m_mapped = false;
+		this->m_pmap->setMapped(false);
 		this->m_pmap->m_needRemeshing = true;
 		this->m_pmap->renderGraphicsView();
 	}
@@ -408,13 +408,13 @@ public:
 	void undo() {
 		m_pmap->setPoints(oldpoints, oldvalues);
 		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->m_mapped = false;
+		this->m_pmap->setMapped(false);
 		this->m_pmap->renderGraphicsView();
 	}
 	void redo() {
 		m_pmap->setPoints(newpoints, newvalues);
 		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->m_mapped = false;
+		this->m_pmap->setMapped(false);
 		this->m_pmap->renderGraphicsView();
 	}
 private:
@@ -442,7 +442,7 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void undo() {
@@ -453,7 +453,7 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -488,7 +488,7 @@ public:
 		}
 		m_breakLine->setVertexIndices(indices);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void undo() {
@@ -509,7 +509,7 @@ public:
 		}
 		m_breakLine->setVertexIndices(indices);
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	int id() const {
@@ -550,7 +550,7 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void undo() {
@@ -560,7 +560,7 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -586,7 +586,7 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 	void undo() {
@@ -598,7 +598,7 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->renderGraphicsView();
 	}
 private:
@@ -792,7 +792,7 @@ public:
 		}
 		pol->Modified();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->updateInterpShapeData();
 		m_pointMap->renderGraphicsView();
 	}
@@ -809,7 +809,7 @@ public:
 		}
 		pol->Modified();
 		m_pointMap->m_needRemeshing = true;
-		m_pointMap->m_mapped = false;
+		m_pointMap->setMapped(false);
 		m_pointMap->updateInterpShapeData();
 		m_pointMap->renderGraphicsView();
 	}
@@ -1124,8 +1124,7 @@ void GeoDataPointmap::saveExternalData(const QString& filename)
 
 void GeoDataPointmap::updateFilename()
 {
-	QString name = m_name;
-	setFilename(name.append(".dat"));
+	setFilename(name().append(".dat"));
 }
 
 void GeoDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)

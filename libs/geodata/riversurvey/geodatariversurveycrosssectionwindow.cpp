@@ -565,7 +565,7 @@ void GeoDataRiverSurvey::EditCrosssectionCommand::redo()
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_window->groupDataItem()->updateCrossectionWindows();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 	m_first = false;
 }

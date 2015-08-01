@@ -202,6 +202,18 @@ QColor GeoDataPolygon::doubleToColor(double /*d*/)
 	return Qt::red;
 }
 
+void GeoDataPolygon::setMapping(GeoDataPolygonColorSettingDialog::Mapping m)
+{
+	m_setting.mapping = m;
+	updateActorSettings();
+}
+
+void GeoDataPolygon::setOpacity(int opacity)
+{
+	m_setting.opacity = opacity;
+	updateActorSettings();
+}
+
 void GeoDataPolygon::setColor(const QColor& color)
 {
 	m_setting.color = color;
@@ -311,7 +323,7 @@ public:
 		pol->graphicsView()->viewportToWorld(dx, dy);
 		m_newPoint = QVector2D(dx, dy);
 		m_polygon = pol;
-		m_oldMapped = m_polygon->m_mapped;
+		m_oldMapped = m_polygon->isMapped();
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
 	void redo() {
@@ -327,7 +339,7 @@ public:
 			pol->GetPoints()->Modified();
 		}
 		pol->Modified();
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->m_shapeUpdating = true;
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
@@ -345,7 +357,7 @@ public:
 			// this does not happen. no implementation needed.
 		}
 		pol->Modified();
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		m_polygon->m_shapeUpdating = true;
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
@@ -388,11 +400,11 @@ public:
 		pol->graphicsView()->viewportToWorld(dx, dy);
 		QVector2D toVec(dx, dy);
 		m_offset = toVec - fromVec;
-		m_oldMapped = pol->m_mapped;
+		m_oldMapped = pol->isMapped();
 		m_polygon = pol;
 	}
 	void redo() {
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->m_shapeUpdating = true;
 		movePolygon(m_polygon->m_gridRegionPolygon, m_offset);
 		for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
@@ -404,7 +416,7 @@ public:
 		m_polygon->updateGrid();
 	}
 	void undo() {
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		m_polygon->m_shapeUpdating = true;
 		movePolygon(m_polygon->m_gridRegionPolygon, - m_offset);
 		for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
@@ -464,12 +476,12 @@ public:
 		pol->graphicsView()->viewportToWorld(dx, dy);
 		QVector2D toVec(dx, dy);
 		m_offset = toVec - fromVec;
-		m_oldMapped = pol->m_mapped;
+		m_oldMapped = pol->isMapped();
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
 	void redo() {
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->m_shapeUpdating = true;
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
@@ -487,7 +499,7 @@ public:
 		m_polygon->updateGrid();
 	}
 	void undo() {
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		m_polygon->m_shapeUpdating = true;
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
 		vtkPoints* points = pol->GetPoints();
@@ -538,12 +550,12 @@ public:
 		double dy = point.y();
 		pol->graphicsView()->viewportToWorld(dx, dy);
 		m_vertexPosition = QVector2D(dx, dy);
-		m_oldMapped = pol->m_mapped;
+		m_oldMapped = pol->isMapped();
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
 	void redo() {
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->m_shapeUpdating = true;
 		if (m_keyDown) {
 			// add vertex.
@@ -579,7 +591,7 @@ public:
 		m_polygon->updateGrid();
 	}
 	void undo() {
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		if (m_keyDown) {
 			m_polygon->m_shapeUpdating = true;
 			// remove vertex.
@@ -690,12 +702,12 @@ public:
 		double p[3];
 		pol->m_selectedPolygon->getVtkPolygon()->GetPoints()->GetPoint(m_vertexId, p);
 		m_vertexPosition = QVector2D(p[0], p[1]);
-		m_oldMapped = pol->m_mapped;
+		m_oldMapped = pol->isMapped();
 		m_polygon = pol;
 		m_targetPolygon = m_polygon->m_selectedPolygon;
 	}
 	void redo() {
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->m_shapeUpdating = true;
 		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 		QVector<QVector2D> positions;
@@ -724,7 +736,7 @@ public:
 		m_polygon->updateGrid();
 	}
 	void undo() {
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		m_polygon->m_shapeUpdating = false;
 		vtkPoints* points = m_targetPolygon->getVtkPolygon()->GetPoints();
 		QVector<QVector2D> positions;
@@ -1364,7 +1376,7 @@ public:
 		m_polygon = pol;
 		m_targetPolygon = newPoly;
 		m_undoed = false;
-		m_oldMapped = pol->m_mapped;
+		m_oldMapped = pol->isMapped();
 	}
 	virtual ~AddHolePolygonCommand() {
 		if (m_undoed) {
@@ -1372,7 +1384,7 @@ public:
 		}
 	}
 	void redo() {
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 		m_polygon->deselectAll();
 
 		m_polygon->m_mouseEventMode = GeoDataPolygon::meBeforeDefining;
@@ -1386,7 +1398,7 @@ public:
 		m_undoed = false;
 	}
 	void undo() {
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 		m_polygon->deselectAll();
 		m_polygon->m_mouseEventMode = GeoDataPolygon::meNormal;
 		m_polygon->m_holePolygons.removeOne(m_targetPolygon);
@@ -1453,7 +1465,7 @@ void GeoDataPolygon::deletePolygon(bool force)
 	}
 	// This operation is not undoable.
 	iRICUndoStack::instance().clear();
-	m_mapped = false;
+	setMapped(false);
 
 	updateMouseCursor(graphicsView());
 	updateGrid();
@@ -1603,16 +1615,16 @@ public:
 		QUndoCommand {GeoDataPolygon::tr("Polygon value change")},
 		m_newValue {newvalue},
 		m_oldValue {polygon->variantValue()},
-		m_oldMapped {polygon->m_mapped},
+		m_oldMapped {polygon->isMapped()},
 		m_polygon {polygon}
 	{}
 	void redo() {
 		m_polygon->setVariantValue(m_newValue);
-		m_polygon->m_mapped = false;
+		m_polygon->setMapped(false);
 	}
 	void undo() {
 		m_polygon->setVariantValue(m_oldValue);
-		m_polygon->m_mapped = m_oldMapped;
+		m_polygon->setMapped(m_oldMapped);
 	}
 private:
 	QVariant m_newValue;

@@ -6,7 +6,6 @@
 #include "../base/preprocessorgraphicsviewinterface.h"
 #include "../base/preprocessorgridtypedataiteminterface.h"
 #include "../base/preprocessorgeodatadataiteminterface.h"
-#include "../base/preprocessorgeodatadataiteminterface.h"
 #include "../base/preprocessorgeodatagroupdataiteminterface.h"
 #include "geodata.h"
 #include "geodatacreator.h"
@@ -22,14 +21,18 @@
 
 #include <cgnslib.h>
 
-GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition)
-	: ProjectDataItem(d)
-{
-	m_creator = creator;
-	m_gridRelatedCondition = condition;
-	m_name = "";
-	m_caption = "";
+GeoData::Setting::Setting() :
+	CompositeContainer {&name, &caption, &mapped},
+	name {"name"},
+	caption {"caption"},
+	mapped {"mapped", false}
+{}
 
+GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	ProjectDataItem {d},
+	m_creator {creator},
+	m_gridRelatedCondition {condition}
+{
 	m_menu = new QMenu(projectData()->mainWindow());
 	m_editNameAction = new QAction(tr("Edit &Name..."), this);
 	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
@@ -37,7 +40,6 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 	if (condition != nullptr && condition->position() == SolverDefinitionGridAttribute::CellCenter) {
 		mapperFunc = &GeoData::cellMappers;
 	}
-	m_mapped = false;
 }
 GeoData::~GeoData()
 {
@@ -47,6 +49,12 @@ GeoData::~GeoData()
 const QString& GeoData::typeName() const
 {
 	return m_creator->typeName();
+}
+
+void GeoData::setName(const QString& name)
+{
+	m_setting.name = name;
+	updateFilename();
 }
 
 QList<GeoDataMapper*> GeoData::nodeMappers() const
@@ -107,8 +115,7 @@ void GeoData::setupDataItem()
 
 PreProcessorWindowInterface* GeoData::preProcessorWindow()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return dynamic_cast<PreProcessorWindowInterface*>(item->mainWindow());
+	return dynamic_cast<PreProcessorWindowInterface*>(geoDataDataItem()->mainWindow());
 }
 
 PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const
@@ -164,15 +171,15 @@ void GeoData::editName()
 	view->edit(geoDataDataItem()->standardItem()->index());
 }
 
-void GeoData::loadName(const QDomNode& node)
-{
-	setName(node.toElement().attribute("name"));
-}
+//void GeoData::loadName(const QDomNode& node)
+//{
+//	setName(node.toElement().attribute("name"));
+//}
 
-void GeoData::saveName(QXmlStreamWriter& writer)
-{
-	writer.writeAttribute("name", m_name);
-}
+//void GeoData::saveName(QXmlStreamWriter& writer)
+//{
+//	writer.writeAttribute("name", m_name);
+//}
 
 void GeoData::updateZDepthRangeItemCount(ZDepthRange& range)
 {
@@ -227,17 +234,13 @@ bool GeoData::isVisible()
 
 void GeoData::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	int mapped = node.toElement().attribute("mapped", "1").toInt();
-	m_mapped = static_cast<bool>(mapped);
-	loadName(node);
-	m_caption = node.toElement().attribute("caption");
+	m_setting.load(node);
+	updateFilename();
 }
 
 void GeoData::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("mapped", QString::number(static_cast<int>(m_mapped)));
-	saveName(writer);
-	writer.writeAttribute("caption", m_caption);
+	m_setting.save(writer);
 }
 
 void GeoData::saveToCgnsFile(const int /*fn*/)

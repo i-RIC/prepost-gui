@@ -148,8 +148,7 @@ protected:
 	void loadExternalData(const QString& /*filename*/) override;
 	void saveExternalData(const QString& /*filename*/) override;
 	void updateFilename() override {
-		QString name = m_name;
-		setFilename(name.append(".dat"));
+		setFilename(name().append(".dat"));
 	}
 	int iRICLibType() const override {return IRIC_GEO_RIVERSURVEY;}
 	void doApplyOffset(double x, double y) override;

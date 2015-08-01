@@ -101,8 +101,7 @@ public:
 	vtkUnstructuredGrid* grid() const {return m_grid;}
 	bool getValueRange(double* min, double* max) override;
 	void updateFilename() override {
-		QString name = m_name;
-		setFilename(name.append(".dat"));
+		setFilename(name().append(".dat"));
 	}
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
@@ -135,6 +134,8 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
+	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
+	void setOpacity(int opacity);
 	void setColor(const QColor& color);
 	int iRICLibType() const override {return IRIC_GEO_POLYGON;}
 	void doApplyOffset(double x, double y) override;

@@ -271,8 +271,7 @@ void GeoDataNetcdf::saveExternalData(const QString& /*filename*/)
 
 void GeoDataNetcdf::updateFilename()
 {
-	QString name = m_name;
-	setFilename(name.append(".dat"));
+	setFilename(name().append(".dat"));
 }
 
 void GeoDataNetcdf::doLoadFromProjectMainFile(const QDomNode& node)

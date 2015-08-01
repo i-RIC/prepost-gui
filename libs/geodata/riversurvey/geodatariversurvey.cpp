@@ -662,7 +662,7 @@ public:
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 	void undo() {
 		m_rs->m_gridThread->cancel();
@@ -731,7 +731,7 @@ public:
 		m_point->setCrosssectionDirection(m_newDirection);
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 	void undo() {
 		m_rs->m_gridThread->cancel();
@@ -797,7 +797,7 @@ public:
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 	void undo() {
 		m_rs->m_gridThread->cancel();
@@ -870,7 +870,7 @@ public:
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 	void undo() {
 		m_rs->m_gridThread->cancel();
@@ -1880,7 +1880,7 @@ public:
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
 		m_redoed = true;
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 
 private:
@@ -2020,7 +2020,7 @@ public:
 		m_rs->updateShapeData();
 		m_rs->renderGraphicsView();
 		m_rs->updateCrossectionWindows();
-		m_rs->m_mapped = false;
+		m_rs->setMapped(false);
 	}
 private:
 	GeoDataRiverPathPoint* m_point;

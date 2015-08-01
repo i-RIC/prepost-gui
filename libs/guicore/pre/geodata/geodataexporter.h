@@ -18,7 +18,7 @@ public:
 	/// Export the geodata into the specified file.
 	virtual bool doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd) = 0;
 	virtual const QStringList fileDialogFilters() = 0;
-	GeoDataCreator* creator();
+	GeoDataCreator* creator() const;
 	const QString& caption() const {return m_caption;}
 
 protected:
