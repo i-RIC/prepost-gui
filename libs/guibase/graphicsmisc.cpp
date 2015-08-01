@@ -14,6 +14,8 @@
 #include <vtkTextProperty.h>
 #include <vtkUnsignedCharArray.h>
 
+#include <vector>
+
 namespace iRIC
 {
 
@@ -23,20 +25,19 @@ namespace iRIC
 
 		int pixelcount = (size.width() + 1) * size.height();
 		int rgbsize = pixelcount * 3;
-		unsigned char* buffer = new unsigned char[rgbsize];
+		std::vector<unsigned char> buffer (rgbsize);
 		int linebits = (size.width() * 3 + 3) / 4 * 4;
 		for (int j = 0; j < size.height(); ++j) {
 			for (int i = 0; i < size.width(); ++i) {
 				int myOffset  = i * 3 + (size.height() - j - 1) * linebits;
 				int vtkOffset = (i + j * size.width()) * 3;
-				*(buffer + myOffset) = arr->GetValue(vtkOffset);             // R
-				*(buffer + myOffset + 1) = arr->GetValue(vtkOffset + 1); // G
-				*(buffer + myOffset + 2) = arr->GetValue(vtkOffset + 2); // B
+				buffer[myOffset    ] = arr->GetValue(vtkOffset);     // R
+				buffer[myOffset + 1] = arr->GetValue(vtkOffset + 1); // G
+				buffer[myOffset + 2] = arr->GetValue(vtkOffset + 2); // B
 			}
 		}
-		QImage img(buffer, size.width(), size.height(), QImage::Format_RGB888);
+		QImage img(buffer.data(), size.width(), size.height(), QImage::Format_RGB888);
 		QPixmap pixmap = QPixmap::fromImage(img);
-		delete[] buffer;
 		return pixmap;
 	}
 	void fattenBounds(double bounds[6], double rate)

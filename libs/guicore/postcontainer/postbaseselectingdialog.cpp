@@ -3,8 +3,8 @@
 #include "postbaseselectingdialog.h"
 
 PostBaseSelectingDialog::PostBaseSelectingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PostBaseSelectingDialog)
+	QDialog {parent},
+	ui {new Ui::PostBaseSelectingDialog}
 {
 	ui->setupUi(this);
 }

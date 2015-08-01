@@ -10,6 +10,8 @@
 
 #include <QTextCodec>
 
+#include <vector>
+
 GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator)
 	: GeoDataExporter(creator)
 {
@@ -19,14 +21,13 @@ GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator
 SHPObject* GeoDataPolygonShapeExporter::getSHPObject(GeoDataPolygon* polygon, SHPHandle shp, int index, double xoffset, double yoffset)
 {
 	int nParts = polygon->m_holePolygons.count() + 1;
-	int* partStart = new int[nParts];
+	std::vector<int> partStart (nParts);
 	int nVertices = 0;
-	double* padfX, *padfY;
 	QList<double> xlist, ylist;
 
 	// output region first.
 	QPolygonF region = polygon->m_gridRegionPolygon->polygon();
-	*partStart = 0;
+	partStart[0] = 0;
 	nVertices += region.count();
 	for (QPointF p : region) {
 		xlist.append(p.x() + xoffset);
@@ -35,27 +36,22 @@ SHPObject* GeoDataPolygonShapeExporter::getSHPObject(GeoDataPolygon* polygon, SH
 	for (int i = 0; i < polygon->m_holePolygons.count(); ++i) {
 		GeoDataPolygonHolePolygon* holepol = polygon->m_holePolygons.at(i);
 		QPolygonF hole = holepol->polygon();
-		*(partStart + i + 1) = nVertices;
+		partStart[i + 1] = nVertices;
 		nVertices += hole.count();
 		for (QPointF p : hole) {
 			xlist.append(p.x() + xoffset);
 			ylist.append(p.y() + yoffset);
 		}
 	}
-	padfX = new double[nVertices];
-	padfY = new double[nVertices];
+	std::vector<double> padfX(nVertices), padfY(nVertices);
 	for (int i = 0; i < xlist.count(); ++i) {
-		*(padfX + i) = xlist.at(i);
-		*(padfY + i) = ylist.at(i);
+		padfX[i] = xlist.at(i);
+		padfY[i] = ylist.at(i);
 	}
 
-	SHPObject* ret = SHPCreateObject(SHPT_POLYGON, index, nParts, partStart, NULL, nVertices, padfX, padfY, NULL, NULL);
+	SHPObject* ret = SHPCreateObject(SHPT_POLYGON, index, nParts, partStart.data(), NULL, nVertices, padfX.data(), padfY.data(), NULL, NULL);
 	SHPComputeExtents(ret);
 	SHPRewindObject(shp, ret);
-
-	delete partStart;
-	delete padfX;
-	delete padfY;
 
 	return ret;
 }

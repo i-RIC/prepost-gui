@@ -6,8 +6,8 @@
 #include <QMessageBox>
 
 PostDataExportDialog::PostDataExportDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PostDataExportDialog)
+	QDialog {parent},
+	ui {new Ui::PostDataExportDialog}
 {
 	ui->setupUi(this);
 

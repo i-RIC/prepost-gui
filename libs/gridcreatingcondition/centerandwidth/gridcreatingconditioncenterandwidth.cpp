@@ -39,6 +39,8 @@
 #include <vtkTextProperty.h>
 #include <vtkVertex.h>
 
+#include <vector>
+
 #define LABEL "label"
 
 GridCreatingConditionCenterAndWidth::GridCreatingConditionCenterAndWidth(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
@@ -132,7 +134,6 @@ void GridCreatingConditionCenterAndWidth::setPolyLine(const QVector<QPointF>& po
 	points->Modified();
 	updateShapeData();
 }
-
 
 void GridCreatingConditionCenterAndWidth::updateShapeData()
 {
@@ -477,8 +478,8 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	int d = division * 5;
 	// It might not work well on a too large grid
 	double pre[3], dx, dy;
-	double* length = new double[d + 1];
-	length[0] = 0.0;
+	std::vector<double> length(d + 1);
+	length[0] = 0;
 
 	double u[3], Pt[3], Du[9];
 	u[0] = 0.0;
@@ -518,7 +519,6 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 			cumulativeLength = c * m_length / division;
 		}
 	}
-	delete length;
 }
 
 
@@ -552,8 +552,6 @@ public:
 			line->GetPoints()->Modified();
 		}
 		line->Modified();
-		m_condition->updateShapeData();
-		m_condition->renderGraphicsView();
 	}
 	void undo() {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
@@ -570,7 +568,6 @@ public:
 		}
 		line->Modified();
 		m_condition->updateShapeData();
-		m_condition->renderGraphicsView();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthDefineNewPoint");
@@ -625,7 +622,6 @@ public:
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
 		m_condition->setModified();
-		m_condition->renderGraphicsView();
 	}
 	void undo() {
 		vtkPolyLine* line =  m_condition->m_vtkPolyLine;
@@ -644,7 +640,6 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
-		m_condition->renderGraphicsView();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMove");
@@ -682,7 +677,7 @@ public:
 		m_offset = toVec - fromVec;
 		m_condition = cond;
 	}
-	void redo() {
+	void redo() override {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
 		double p[3];
@@ -698,10 +693,8 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
-		m_condition->setModified();
-		m_condition->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		vtkPolyLine* line = m_condition->m_vtkPolyLine;
 		vtkPoints* points = line->GetPoints();
 		double p[3];
@@ -717,7 +710,6 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
-		m_condition->renderGraphicsView();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GridCreatingConditionCenterAndWidthMoveVertex");
@@ -752,7 +744,7 @@ public:
 		m_vertexPosition = QVector2D(dx, dy);
 		m_condition = cond;
 	}
-	void redo() {
+	void redo() override {
 		if (m_keyDown) {
 			// add vertex.
 			vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
@@ -786,10 +778,8 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->tmpGridCreated(m_condition->createGrid());
 		}
-		m_condition->setModified();
-		m_condition->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		if (m_keyDown) {
 			// remove vertex.
 			vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
@@ -817,7 +807,6 @@ public:
 				m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 				emit m_condition->tmpGridCreated(m_condition->createGrid());
 			}
-			m_condition->renderGraphicsView();
 		} else {
 			// this never happens.
 		}
@@ -860,19 +849,19 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 		break;
 	case meDefining:
 		// update the position of the last point.
-		iRICUndoStack::instance().push(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+		pushRenderCommand(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		break;
 	case meTranslate:
 		// execute translation.
-		iRICUndoStack::instance().push(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+		pushRenderCommand(new MoveCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
-		iRICUndoStack::instance().push(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
+		pushRenderCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedVertexId, this));
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
-		iRICUndoStack::instance().push(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+		pushRenderCommand(new AddVertexCommand(false, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
 		break;
 	case meEditVerticesDialog:
 		break;
@@ -919,8 +908,6 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->gridCreated(m_condition->createGrid());
 		}
-		m_condition->setModified();
-		m_condition->renderGraphicsView();
 	}
 	void undo() {
 		vtkPoints* points = m_condition->m_vtkPolyLine->GetPoints();
@@ -948,7 +935,6 @@ public:
 			m_condition->createSpline(m_condition->m_vtkPolyLine->GetPoints(), m_condition->m_iMax - 1);
 			emit m_condition->gridCreated(m_condition->createGrid());
 		}
-		m_condition->renderGraphicsView();
 	}
 private:
 	vtkIdType m_vertexId;
@@ -971,31 +957,31 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 		case meBeforeDefining:
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
-			iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 		case meDefining:
-			iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			break;
 		case meTranslatePrepare:
 			m_mouseEventMode = meTranslate;
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first translation command.
-			iRICUndoStack::instance().push(new MoveCommand(true, m_currentPoint, m_currentPoint, this));
+			pushRenderCommand(new MoveCommand(true, m_currentPoint, m_currentPoint, this));
 			break;
 		case meMoveVertexPrepare:
 			m_mouseEventMode = meMoveVertex;
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first move command.
-			iRICUndoStack::instance().push(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedVertexId, this));
+			pushRenderCommand(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedVertexId, this));
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
-			iRICUndoStack::instance().push(new AddVertexCommand(true, m_selectedEdgeId, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new AddVertexCommand(true, m_selectedEdgeId, event->post(), this));
 			break;
 		case meAddVertexNotPossible:
 			// do nothing.
 			break;
 		case meRemoveVertexPrepare:
-			iRICUndoStack::instance().push(new RemoveVertexCommand(m_selectedVertexId, this));
+			pushRenderCommand(new RemoveVertexCommand(m_selectedVertexId, this));
 			break;
 		case meRemoveVertexNotPossible:
 			// do nothing.
@@ -1111,22 +1097,21 @@ class GridCreatingConditionCenterAndWidth::FinishDefiningCommand : public QUndoC
 {
 public:
 	FinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition) :
-		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")}
-	{
-		m_condition = condition;
-	}
-	void undo() {
-		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meDefining;
-		m_condition->updateMouseCursor(m_condition->graphicsView());
-		m_condition->updateActionStatus();
-	}
-	void redo() {
+		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")},
+		m_condition {cond}
+	{}
+	void redo() override {
 		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meNormal;
 		m_condition->updateMouseCursor(m_condition->graphicsView());
 		m_condition->updateActionStatus();
 		m_condition->create(m_condition->preProcessorWindow());
-		m_condition->setModified();
 	}
+	void undo() override {
+		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meDefining;
+		m_condition->updateMouseCursor(m_condition->graphicsView());
+		m_condition->updateActionStatus();
+	}
+
 private:
 	GridCreatingConditionCenterAndWidth* m_condition;
 };
@@ -1139,7 +1124,7 @@ void GridCreatingConditionCenterAndWidth::definePolyLine()
 	}
 	iRICUndoStack::instance().undo();
 	// finish defining the Polyline.
-	iRICUndoStack::instance().push(new FinishDefiningCommand(this));
+	pushCommand(new FinishDefiningCommand(this));
 }
 
 void GridCreatingConditionCenterAndWidth::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
@@ -1408,7 +1393,7 @@ void GridCreatingConditionCenterAndWidth::clear()
 
 void GridCreatingConditionCenterAndWidth::showInitialDialog()
 {
-	InformationDialog::information(preProcessorWindow(), GridCreatingConditionCenterAndWidth::tr("Information"), GridCreatingConditionCenterAndWidth::tr("Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gccenterandwidth_centerline");
+	InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gccenterandwidth_centerline");
 }
 
 void GridCreatingConditionCenterAndWidth::reverseCenterLineDirection()

@@ -326,13 +326,13 @@ void MeasuredData::setupPolyData()
 
 	QString argstr;
 	argstr.append("pcj");
-	char* arg = new char[argstr.length() + 1];
-	strcpy(arg, iRIC::toStr(argstr).c_str());
+	std::vector<char> arg (argstr.length() + 1);
+	strcpy(arg.data(), iRIC::toStr(argstr).c_str());
 	bool finished = false;
 
 	TriangleExecuteThread* thread = new TriangleExecuteThread(this);
 
-	thread->setArgs(arg);
+	thread->setArgs(arg.data());
 	thread->setIOs(&in, &out);
 
 	if (m_pointData->GetPoints()->GetNumberOfPoints() < 3) {
@@ -367,7 +367,6 @@ void MeasuredData::setupPolyData()
 	}
 finalization:
 	delete in.pointlist;
-	delete arg;
 
 	m_polyData->Reset();
 	m_polyData->Allocate(out.numberoftriangles);

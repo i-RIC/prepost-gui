@@ -361,13 +361,13 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 
 	clearGraphData();
 	int dataCount = m_model->rowCount();
-	double* x, *y;
+	std::vector<double> x, y;
 
 	for (int j = 0; j < m_axisSettings.count(); ++j) {
 		QwtPlotCurve* pc = new QwtPlotCustomCurve();
 		if (m_valueIsSteps.at(j)) {
-			x = new double[dataCount * 3 + 1];
-			y = new double[dataCount * 3 + 1];
+			x.assign(dataCount * 3 + 1, 0);
+			y.assign(dataCount * 3 + 1, 0);
 			double firstx = 0;
 			double x0 = m_model->data(m_model->index(0, 0)).toDouble();
 			if (dataCount == 1) {
@@ -378,33 +378,33 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 				firstx = x0 - firstwidth;
 			}
 			double xstart = firstx;
-			* (x) = xstart;
-			* (y) = 0;
+			x[0] = xstart;
+			y[0] = 0;
 			for (int i = 0; i < dataCount; ++i) {
 				double xend = m_model->data(m_model->index(i, 0)).toDouble();
 				double yval =  m_model->data(m_model->index(i, j + 1)).toDouble();
 				double xdelta = 0;
 
-				* (x + i * 3 + 1) = xstart + xdelta;
-				* (y + i * 3 + 1) = yval;
-				* (x + i * 3 + 2) = xend - xdelta;
-				* (y + i * 3 + 2) = yval;
-				* (x + i * 3 + 3) = xend - xdelta;
-				* (y + i * 3 + 3) = 0;
+				x[i * 3 + 1] = xstart + xdelta;
+				y[i * 3 + 1] = yval;
+				x[i * 3 + 2] = xend - xdelta;
+				y[i * 3 + 2] = yval;
+				x[i * 3 + 3] = xend - xdelta;
+				y[i * 3 + 3] = 0;
 				xstart = xend;
 			}
-			pc->setSamples(x, y, dataCount * 3 + 1);
+			pc->setSamples(x.data(), y.data(), dataCount * 3 + 1);
 		} else {
-			x = new double[dataCount];
-			y = new double[dataCount];
+			x.assign(dataCount, 0);
+			y.assign(dataCount, 0);
 
 			for (int i = 0; i < dataCount; ++i) {
-				*(x + i) = m_model->data(m_model->index(i, 0)).toDouble();
+				x[i] = m_model->data(m_model->index(i, 0)).toDouble();
 			}
 			for (int i = 0; i < dataCount; ++i) {
-				*(y + i) = m_model->data(m_model->index(i, j + 1)).toDouble();
+				y[i] = m_model->data(m_model->index(i, j + 1)).toDouble();
 			}
-			pc->setSamples(x, y, dataCount);
+			pc->setSamples(x.data(), y.data(), dataCount);
 		}
 
 		if (m_axisSettings[j] == asLeft) {
@@ -416,9 +416,6 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 		} else {
 			// do not shown on graphs.
 		}
-
-		delete x;
-		delete y;
 		m_graphCurves.append(pc);
 	}
 	ui.graphView->replot();

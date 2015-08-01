@@ -559,8 +559,6 @@ void PreProcessorBCDataItem::loadFromCgnsFile(const int fn)
 		// There is no need to load from CGNS file.
 		return;
 	}
-	cgsize_t* indices;
-
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
 	cgsize_t size;
@@ -568,45 +566,45 @@ void PreProcessorBCDataItem::loadFromCgnsFile(const int fn)
 	if (err != 0) {return;}
 	if (sgrid == nullptr) {
 		// this is an unstructured grid.
-		indices = new cgsize_t[size];
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices);
+		std::vector<cgsize_t> indices (size, 0);
+		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices.data());
 
 		if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 				m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 			m_indices.clear();
 			for (int i = 0; i < size; ++i) {
-				m_indices.insert(*(indices + i) - 1);
+				m_indices.insert(indices[i] - 1);
 			}
 		} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 			for (int i = 0; i < size / 2; ++i) {
-				Edge e(*(indices + i * 2) - 1, *(indices + i * 2 + 1) - 1);
+				Edge e(indices[i * 2] - 1, indices[i * 2 + 1] - 1);
 				m_edges.insert(e);
 			}
 		}
 	} else {
 		// this is a structured grid.
-		indices = new cgsize_t[size * 2];
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices);
+		std::vector<cgsize_t> indices(size * 2, 0);
+		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices.data());
 		m_indices.clear();
 		if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 			for (int idx = 0; idx < size; ++idx) {
-				int i = *(indices + idx * 2);
-				int j = *(indices + idx * 2 + 1);
+				int i = indices[idx * 2];
+				int j = indices[idx * 2 + 1];
 				m_indices.insert(sgrid->vertexIndex(i - 1, j - 1));
 			}
 
 		} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 			for (int idx = 0; idx < size; ++idx) {
-				int i = *(indices + idx * 2);
-				int j = *(indices + idx * 2 + 1);
+				int i = indices[idx * 2];
+				int j = indices[idx * 2 + 1];
 				m_indices.insert(sgrid->cellIndex(i - 1, j - 1));
 			}
 		} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 			for (int idx = 0; idx < size / 2; ++idx) {
-				int i1 = *(indices + idx * 4);
-				int j1 = *(indices + idx * 4 + 1);
-				int i2 = *(indices + idx * 4 + 2);
-				int j2 = *(indices + idx * 4 + 3);
+				int i1 = indices[idx * 4];
+				int j1 = indices[idx * 4 + 1];
+				int i2 = indices[idx * 4 + 2];
+				int j2 = indices[idx * 4 + 3];
 				Edge e(sgrid->vertexIndex(i1 - 1, j1 - 1), sgrid->vertexIndex(i2 - 1, j2 - 1));
 				m_edges.insert(e);
 			}
@@ -629,41 +627,37 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 		return;
 	}
 	// first, save indices at which BC is defined.
-	cgsize_t* indices;
-
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
 	QList<unsigned int> tmplist;
 	if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 			m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		for (auto it = m_indices.begin(); it != m_indices.end(); ++it) {
-			int index = *it;
+		for (int index : m_indices) {
 			tmplist.append(index);
 		}
 		qSort(tmplist);
 	} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 		QVector<Edge> tmpedges;
-		for (auto it = m_edges.begin(); it != m_edges.end(); ++it) {
-			Edge e = *it;
+		for (Edge e : m_edges) {
 			tmpedges.append(e);
 		}
 		qSort(tmpedges);
-		for (int i = 0; i < tmpedges.count(); ++i) {
-			Edge e = tmpedges.at(i);
+		for (Edge e : tmpedges) {
 			tmplist.append(e.vertex1());
 			tmplist.append(e.vertex2());
 		}
 	}
+	std::vector<int> indices;
 	if (sgrid == nullptr) {
 		// this is an unstructured grid.
-		indices = new cgsize_t[tmplist.count()];
+		indices.assign(tmplist.count(), 0);
 		for (int idx = 0; idx < tmplist.count(); ++idx) {
 			int index = tmplist[idx];
-			*(indices + idx) = index + 1;
+			indices[idx] = index + 1;
 		}
 	} else {
 		// this is a structured grid.
-		indices = new cgsize_t[tmplist.count() * 2];
+		indices.assign(tmplist.count() * 2, 0);
 		for (int idx = 0; idx < tmplist.count(); ++idx) {
 			int index = tmplist[idx];
 			unsigned int i, j;
@@ -673,13 +667,12 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 			} else if (m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 				sgrid->getCellIJIndex(index, &i, &j);
 			}
-			*(indices + idx * 2) = i + 1;
-			*(indices + idx * 2 + 1) = j + 1;
+			indices[idx * 2] = i + 1;
+			indices[idx * 2 + 1] = j + 1;
 		}
 	}
 	gitem->grid();
-	cg_iRIC_Write_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, tmplist.count(), indices);
-	delete indices;
+	cg_iRIC_Write_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, tmplist.count(), indices.data());
 
 	m_dialog->setNameAndNumber(m_condition->name(), m_cgnsNumber);
 	m_dialog->save(fn);

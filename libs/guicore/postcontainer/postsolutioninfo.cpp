@@ -34,19 +34,17 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent)
-	: ProjectDataItem(parent)
-{
-	m_currentStep = 0;
-	m_iterationSteps = nullptr;
-	m_timeSteps = nullptr;
-	m_timerId = 0;
-	m_fileId = 0;
-	m_iterationType = SolverDefinition::NoIteration;
-
-	m_exportFormat = PostDataExportDialog::Format::VTKASCII;
-	m_particleExportPrefix = "Particle_";
-}
+PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
+	ProjectDataItem {parent},
+	m_currentStep {0},
+	m_iterationSteps {nullptr},
+	m_timeSteps {nullptr},
+	m_timerId {0},
+	m_fileId {0},
+	m_iterationType {SolverDefinition::NoIteration},
+	m_exportFormat {efVTK},
+	m_particleExportPrefix {"Particle_"}
+{}
 
 PostSolutionInfo::~PostSolutionInfo()
 {

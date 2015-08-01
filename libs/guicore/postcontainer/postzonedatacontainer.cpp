@@ -37,21 +37,20 @@
 
 #define ELEMNODENAME "Element"
 
-const QString PostZoneDataContainer::labelName("_LABEL");
-const QString PostZoneDataContainer::IBC("IBC");
-const double PostZoneDataContainer::IBCLimit(0.99);
+const QString PostZoneDataContainer::labelName {"_LABEL"};
+const QString PostZoneDataContainer::IBC {"IBC"};
+const double PostZoneDataContainer::IBCLimit {0.99};
 
-PostZoneDataContainer::PostZoneDataContainer(const QString& baseName, const QString& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent)
-	: PostDataContainer(parent)
-{
-	m_baseName = baseName;
-	m_zoneName = zoneName;
-	m_gridType = gridtype;
-	m_baseId = 0;
-	m_zoneId = 0;
-	m_cellDim = 0;
-	m_loadedOnce = false;
-}
+PostZoneDataContainer::PostZoneDataContainer(const QString& baseName, const QString& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
+	PostDataContainer {parent},
+	m_gridType {gridtype},
+	m_baseName {baseName},
+	m_zoneName {zoneName},
+	m_baseId {0},
+	m_zoneId {0},
+	m_cellDim {0},
+	m_loadedOnce {false}
+{}
 
 bool PostZoneDataContainer::setBaseId(const int fn)
 {

@@ -158,6 +158,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	cgsize_t dimVec[3];
 	char arrayName[BUFFERLEN];
 	DataType_t dataType;
+	std::vector<char> buffer;
 
 	// goto "iRIC/SolverInformation"
 	ret = cg_gopath(fn, "/iRIC/SolverInformation");
@@ -166,21 +167,19 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	ret = cg_array_info(1, arrayName, &dataType, &dim, dimVec);
 	if (ret != 0) {return false;}
 	if (QString(arrayName) != "Name") {return false;}
-	char* buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(1, buffer);
+	buffer.assign(dimVec[0] + 1, 0);
+	ret = cg_array_read(1, buffer.data());
 	if (ret != 0) {return false;}
-	solverName = buffer;
-	delete buffer;
+	solverName = buffer.data();
 
 	// the second one is "Version" array.
 	ret = cg_array_info(2, arrayName, &dataType, &dim, dimVec);
 	if (ret != 0) {return false;}
 	if (QString(arrayName) != "Version") {return false;}
-	buffer = new char[dimVec[0] + 1];
-	ret = cg_array_read(2, buffer);
+	buffer.assign(dimVec[0] + 1, 0);
+	ret = cg_array_read(2, buffer.data());
 	if (ret != 0) {return false;}
 	version = VersionNumber {buffer};
-	delete buffer;
 
 	return true;
 }

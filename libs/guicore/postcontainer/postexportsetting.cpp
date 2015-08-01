@@ -20,7 +20,5 @@ PostExportSetting::PostExportSetting()
 }
 
 PostExportSetting::~PostExportSetting()
-{
-
-}
+{}
 

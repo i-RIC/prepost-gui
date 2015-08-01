@@ -11,6 +11,7 @@ class QMouseEvent;
 class QMenu;
 class QDialog;
 class QToolBar;
+class QUndoCommand;
 class Grid;
 class GridCreatingConditionCreator;
 class PreProcessorGridCreatingConditionDataItemInterface;
@@ -79,9 +80,12 @@ protected:
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
-	PreProcessorGraphicsViewInterface* graphicsView();
-	PreProcessorDataModelInterface* dataModel();
+	PreProcessorGridCreatingConditionDataItemInterface* gccDataItem() const;
+	PreProcessorGraphicsViewInterface* graphicsView() const;
+	PreProcessorDataModelInterface* dataModel() const;
 	void renderGraphicsView();
+	void pushCommand(QUndoCommand* com);
+	void pushRenderCommand(QUndoCommand* com);
 	PreProcessorGridCreatingConditionDataItemInterface* m_conditionDataItem;
 	GridCreatingConditionCreator* m_creator;
 	QMenu* m_menu;

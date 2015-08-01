@@ -9,13 +9,12 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent)
-	: PostDataContainer(parent)
-{
-	m_dimension = dim;
-	m_baseId = 0;
-	m_cellDim = 0;
-}
+PostSeriesDataContainer::PostSeriesDataContainer(PostSolutionInfo::Dimension dim, ProjectDataItem* parent) :
+	PostDataContainer {parent},
+	m_dimension {dim},
+	m_baseId {0},
+	m_cellDim {0}
+{}
 
 bool PostSeriesDataContainer::setBaseId(const int fn)
 {

@@ -4,8 +4,6 @@
 #include "../base/preprocessorwindowinterface.h"
 #include "gridcreatingcondition.h"
 #include "gridcreatingconditioncreator.h"
-//#include "pre/preprocessorgraphicsview.h"
-//#include "pre/preprocessorwindow.h"
 
 #include <QMenu>
 
@@ -32,27 +30,24 @@ PreProcessorWindowInterface* GridCreatingCondition::preProcessorWindow() const
 	return dynamic_cast<PreProcessorDataItem*>(parent())->preProcessorWindow();
 }
 
-PreProcessorGraphicsViewInterface* GridCreatingCondition::graphicsView()
+PreProcessorGraphicsViewInterface* GridCreatingCondition::graphicsView() const
 {
 	return dynamic_cast<PreProcessorGraphicsViewInterface*>(preProcessorWindow()->centralWidget());
 }
 
 vtkRenderer* GridCreatingCondition::renderer()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	return item->renderer();
+	return gccDataItem()->renderer();
 }
 
 vtkActorCollection* GridCreatingCondition::actorCollection()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	return item->m_actorCollection;
+	return gccDataItem()->actorCollection();
 }
 
 vtkActor2DCollection* GridCreatingCondition::actor2DCollection()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	return item->m_actor2DCollection;
+	return gccDataItem()->actor2DCollection();
 }
 
 void GridCreatingCondition::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -60,28 +55,39 @@ void GridCreatingCondition::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(0);
 }
 
-PreProcessorDataModelInterface* GridCreatingCondition::dataModel()
+PreProcessorGridCreatingConditionDataItemInterface* GridCreatingCondition::gccDataItem() const
 {
-	PreProcessorGridCreatingConditionDataItemInterface* r = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	return r->dataModel();
+	return dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+}
+
+PreProcessorDataModelInterface* GridCreatingCondition::dataModel() const
+{
+	return gccDataItem()->dataModel();
 }
 
 void GridCreatingCondition::renderGraphicsView()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	item->renderGraphicsView();
+	gccDataItem()->renderGraphicsView();
+}
+
+void GridCreatingCondition::pushCommand(QUndoCommand* com)
+{
+	gccDataItem()->pushCommand(com);
+}
+
+void GridCreatingCondition::pushRenderCommand(QUndoCommand* com)
+{
+	gccDataItem()->pushRenderCommand(com, gccDataItem());
 }
 
 void GridCreatingCondition::updateVisibility()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	item->updateVisibility();
+	gccDataItem()->updateVisibility();
 }
 
 void GridCreatingCondition::updateVisibilityWithoutRendering()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
-	item->updateVisibilityWithoutRendering();
+	gccDataItem()->updateVisibilityWithoutRendering();
 }
 
 
