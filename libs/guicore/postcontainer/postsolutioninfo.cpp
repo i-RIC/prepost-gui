@@ -42,7 +42,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_timerId {0},
 	m_fileId {0},
 	m_iterationType {SolverDefinition::NoIteration},
-	m_exportFormat {efVTK},
+	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_particleExportPrefix {"Particle_"}
 {}
 

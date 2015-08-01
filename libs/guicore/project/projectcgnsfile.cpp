@@ -179,7 +179,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	buffer.assign(dimVec[0] + 1, 0);
 	ret = cg_array_read(2, buffer.data());
 	if (ret != 0) {return false;}
-	version = VersionNumber {buffer};
+	version = VersionNumber {buffer.data()};
 
 	return true;
 }

@@ -76,6 +76,7 @@
 #include <QThread>
 #include <QTime>
 #include <QVector2D>
+#include <QXmlStreamWriter>
 
 #include <vtkGL2PSExporter.h>
 #include <vtkObject.h>
