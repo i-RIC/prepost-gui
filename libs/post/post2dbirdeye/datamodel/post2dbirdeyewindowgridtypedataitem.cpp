@@ -20,19 +20,13 @@
 
 #include <vtkPointData.h>
 
-Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent)
-	: Post2dBirdEyeWindowDataItem(type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
+	Post2dBirdEyeWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_gridType {type},
+	m_isZoneDataItemsSetup {false}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_gridType = type;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(type->name());
-	m_isZoneDataItemsSetup = false;
 
 	setupZoneDataItems();
 

@@ -19,11 +19,9 @@
 #include <cgnslib.h>
 #include <sstream>
 
-ProjectGridImporter::ProjectGridImporter()
-	: GridInternalImporter()
-{
-
-}
+ProjectGridImporter::ProjectGridImporter() :
+	GridInternalImporter {}
+{}
 
 QString ProjectGridImporter::caption() const
 {
@@ -33,7 +31,7 @@ QString ProjectGridImporter::caption() const
 QStringList ProjectGridImporter::fileDialogFilters() const
 {
 	QStringList ret;
-	ret << QObject::tr("iRIC Project files (*.ipro)");
+	ret << tr("iRIC Project files (*.ipro)");
 	return ret;
 }
 

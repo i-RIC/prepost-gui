@@ -11,8 +11,8 @@
 #include <QAction>
 #include <QMenu>
 
-PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridDataItem(parent)
+PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorStructured2dGridShapeDataItem(this);
 	m_childItems.append(m_shapeDataItem);

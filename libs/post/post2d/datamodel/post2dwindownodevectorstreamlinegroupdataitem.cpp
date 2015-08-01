@@ -31,14 +31,10 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
 
-Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupClipper();
 
@@ -97,7 +93,6 @@ private:
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };
-
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem* item)
 {

@@ -21,22 +21,20 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 
-PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent)
-	: PreProcessorGeoDataDataItemInterface(item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent) :
+	PreProcessorGeoDataDataItemInterface {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_bcDataItem {item}
 {
 	if (item->hideSetting()) {
 		QStandardItem* p = m_standardItem->parent();
 		p->removeRow(m_standardItem->row());
 		m_standardItem = nullptr;
 	} else {
-		m_standardItem->setCheckable(true);
-		m_standardItem->setCheckState(Qt::Checked);
+		setupStandardItem(Checked, NotReorderable, Deletable);
+		setIsCommandExecuting(true);
 		m_standardItem->setEditable(true);
-		m_standardItemCopy = m_standardItem->clone();
+		setIsCommandExecuting(false);
 	}
-
-	m_bcDataItem = item;
-
 	m_editAction = new QAction(tr("&Edit Condition..."), this);
 
 	m_polygon = new GeoDataPolygon(this, 0, 0);

@@ -38,6 +38,10 @@ class GUICOREDLL_EXPORT GraphicsWindowDataItem : public ProjectDataItem
 {
 
 public:
+	enum CheckFlag {Checked, NotChecked};
+	enum DeleteFlag {Deletable, NotDeletable};
+	enum ReorderFlag {Reorderable, NotReorderable};
+
 	static const int dragUpdateRate = 10;
 	/// Constructor
 	GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent);
@@ -130,6 +134,8 @@ public slots:
 	virtual void showPropertyDialog();
 
 protected:
+	void setupStandardItem(CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, const QString& text = "");
+
 	PostSolutionInfo* postSolutionInfo();
 	virtual void assignActorZValues(const ZDepthRange& range);
 	virtual GraphicsWindowDataModel* dataModel() const {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
@@ -158,18 +164,18 @@ protected:
 
 	QList <GraphicsWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
-	QStandardItem* m_standardItemCopy;
-	bool m_isDeletable;
-	bool m_isReorderable;
-	bool m_isExpanded;
+	QStandardItem* m_standardItemCopy {nullptr};
+	bool m_isDeletable {true};
+	bool m_isReorderable {false};
+	bool m_isExpanded {false};
 	vtkActorCollection* m_actorCollection;
 	vtkActor2DCollection* m_actor2DCollection;
 	ZDepthRange m_zDepthRange;
-	bool m_isCommandExecuting;
+	bool m_isCommandExecuting {false};
 
 protected:
 	/// If true, the PreProcessorDataItem tree is under destruction.
-	bool m_isDestructing;
+	bool m_isDestructing {false};
 
 public:
 	friend class BackgroundImageInfo;

@@ -54,11 +54,7 @@
 PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* p) :
 	PreProcessorDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	setupActors();
 	p->standardItem()->takeRow(m_standardItem->row());

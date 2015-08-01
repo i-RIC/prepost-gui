@@ -18,8 +18,8 @@
 
 #include <cgnslib.h>
 
-PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent)
-	: PreProcessorDataItem(parent)
+PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsWindowDataItem* parent) :
+	PreProcessorDataItem {parent}
 {
 	try {
 		iRICMainWindowInterface* mainW = projectData()->mainWindow();
@@ -35,9 +35,7 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 
 PreProcessorInputConditionDataItem::~PreProcessorInputConditionDataItem()
 {
-	if (m_dialog) {
-		delete m_dialog;
-	}
+	delete m_dialog;
 }
 
 void PreProcessorInputConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -9,20 +9,14 @@
 
 #include <vtkStructuredGrid.h>
 
-Post3dWindowNodeVectorParticleDataItem::Post3dWindowNodeVectorParticleDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent)
-	: Post3dWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post3dWindowNodeVectorParticleDataItem::Post3dWindowNodeVectorParticleDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent) :
+	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_name {name}
 {
-	m_name = name;
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	connect(this, SIGNAL(changed(Post3dWindowNodeVectorParticleDataItem*)),
 					parent, SLOT(exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*)));
-
 }
 
 void Post3dWindowNodeVectorParticleDataItem::handleStandardItemChange()
@@ -30,4 +24,3 @@ void Post3dWindowNodeVectorParticleDataItem::handleStandardItemChange()
 	emit changed(this);
 	setModified();
 }
-

@@ -46,15 +46,10 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p)
-	: Post2dBirdEyeWindowDataItem(tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* p) :
+	Post2dBirdEyeWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupActors();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();

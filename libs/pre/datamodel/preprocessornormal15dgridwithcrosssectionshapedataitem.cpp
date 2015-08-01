@@ -20,8 +20,8 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
-PreProcessorNormal15DGridWithCrossSectionShapeDataItem::PreProcessorNormal15DGridWithCrossSectionShapeDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridShapeDataItem(parent)
+PreProcessorNormal15DGridWithCrossSectionShapeDataItem::PreProcessorNormal15DGridWithCrossSectionShapeDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridShapeDataItem {parent}
 {
 	m_openCrossSectionWindowAction = new QAction(tr("Display &Cross Section"), this);
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));

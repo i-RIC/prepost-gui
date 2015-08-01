@@ -12,17 +12,12 @@
 #include <QMap>
 #include <QXmlStreamWriter>
 
-Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_condition {cond}
 {
-	m_condition = cond;
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 }
-
 
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
 {

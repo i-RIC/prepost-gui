@@ -11,8 +11,8 @@
 #define MARGINS 30
 
 PreProcessorGridCreatingConditionAlgorithmSelectDialog::PreProcessorGridCreatingConditionAlgorithmSelectDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog)
+	QDialog {parent},
+	ui {new Ui::PreProcessorGridCreatingConditionAlgorithmSelectDialog}
 {
 	ui->setupUi(this);
 	ui->splitter->setStretchFactor(0, 2);

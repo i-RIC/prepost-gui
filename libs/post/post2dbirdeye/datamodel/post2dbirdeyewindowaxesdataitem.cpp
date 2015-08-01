@@ -11,15 +11,10 @@
 #include <vtkTextActor.h>
 #include <vtkTextProperty.h>
 
-Post2dBirdEyeWindowAxesDataItem::Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent)
-	: Post2dBirdEyeWindowDataItem(tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post2dBirdEyeWindowAxesDataItem::Post2dBirdEyeWindowAxesDataItem(GraphicsWindowDataItem* parent) :
+	Post2dBirdEyeWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupActors();
 }

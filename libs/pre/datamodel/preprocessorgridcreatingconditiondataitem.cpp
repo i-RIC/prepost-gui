@@ -25,14 +25,11 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* dataitem)
-	: PreProcessorGridCreatingConditionDataItemInterface(dataitem)
+PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionDataItem(PreProcessorDataItem* dataitem) :
+	PreProcessorGridCreatingConditionDataItemInterface {dataitem}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_standardItemCopy = m_standardItem->clone();
 	// create default condition.
 	// @todo Currently, the default condition is the algorithm
 	// that is found first, that is compatible with the type of grid.

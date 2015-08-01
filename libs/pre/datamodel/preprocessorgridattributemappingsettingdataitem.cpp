@@ -11,12 +11,11 @@
 
 PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent) :
 	PreProcessorDataItem {parent},
-	m_mappingMode {"mode", mmFromGeoData}
+	m_mappingMode {"mode", mmFromGeoData},
+	m_condition {cond},
+	m_geodataGroupDataItem {geodataGroup}
 {
-	m_isDeletable = false;
-
-	m_condition = cond;
-	m_geodataGroupDataItem = geodataGroup;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 }
 
 void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(const QDomNode& node)

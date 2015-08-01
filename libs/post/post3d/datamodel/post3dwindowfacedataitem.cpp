@@ -21,8 +21,9 @@
 class Post3dWindowFaceDataItemChangeCommand : public QUndoCommand
 {
 public:
-	Post3dWindowFaceDataItemChangeCommand(Post3dWindowFaceDataItem* item)
-		: QUndoCommand(Post3dWindowFaceDataItem::tr("Object Browser Item Change")) {
+	Post3dWindowFaceDataItemChangeCommand(Post3dWindowFaceDataItem* item) :
+		QUndoCommand {Post3dWindowFaceDataItem::tr("Object Browser Item Change")}
+	{
 		m_command = new GraphicsWindowDataItemStandardItemChangeCommand(item);
 		m_item = item;
 	}
@@ -58,14 +59,14 @@ private:
 	Post3dWindowFaceDataItem* m_item;
 };
 
-Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, GraphicsWindowDataItem* p)
-	: Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.png"), p)
+Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, GraphicsWindowDataItem* p) :
+	Post3dWindowDataItem {label, QIcon(":/libs/guibase/images/iconPaper.png"), p},
+	m_actor {nullptr},
+	m_dataOK {false}
 {
-	m_standardItem->setCheckable(true);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	m_filter = vtkSmartPointer<vtkExtractGrid>::New();
-	m_actor = nullptr;
-	m_dataOK = false;
 }
 
 void Post3dWindowFaceDataItem::update()

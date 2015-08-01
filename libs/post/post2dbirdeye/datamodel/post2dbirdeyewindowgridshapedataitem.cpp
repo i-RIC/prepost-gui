@@ -19,13 +19,9 @@
 #define LABEL "label2d"
 
 Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent) :
-	Post2dBirdEyeWindowDataItem{tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+	Post2dBirdEyeWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent)->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();

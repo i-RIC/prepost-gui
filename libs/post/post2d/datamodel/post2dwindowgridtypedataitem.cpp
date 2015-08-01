@@ -24,19 +24,14 @@
 
 #include <vtkPointData.h>
 
-Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent)
-	: Post2dWindowDataItem(type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
+	Post2dWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_gridType {type},
+	m_isZoneDataItemsSetup {false}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_gridType = type;
 	setSubPath(type->name());
-	m_isZoneDataItemsSetup = false;
 
 	PreProcessorGeoDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->geoDataTopDataItem(type->name());
 	if (tItem != nullptr) {

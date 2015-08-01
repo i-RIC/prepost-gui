@@ -14,10 +14,9 @@
 #include <QFile>
 #include <QStringList>
 
-CgnsGridExporter::CgnsGridExporter()
-	: GridInternalExporter()
-{
-}
+CgnsGridExporter::CgnsGridExporter() :
+	GridInternalExporter {}
+{}
 
 QString CgnsGridExporter::caption() const
 {

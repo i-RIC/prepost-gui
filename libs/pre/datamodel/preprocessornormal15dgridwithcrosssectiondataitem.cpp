@@ -11,8 +11,8 @@
 #include <QAction>
 #include <QMenu>
 
-PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridDataItem(parent)
+PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWithCrossSectionDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorNormal15DGridWithCrossSectionShapeDataItem(this);
 	m_childItems.append(m_shapeDataItem);

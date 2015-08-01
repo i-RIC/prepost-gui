@@ -66,26 +66,19 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridDataItemInterface(parent)
+PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridDataItemInterface(parent),
+	m_grid {nullptr},
+	m_nodeDataItem {nullptr},
+	m_cellDataItem {nullptr},
+	m_shiftPressed {false},
+	m_birdEyeWindow {nullptr}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_grid = nullptr;
-
-	m_nodeDataItem = nullptr;
-	m_cellDataItem = nullptr;
-	m_shiftPressed = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	// Set cursors for mouse view change events.
 	m_addPixmap = QPixmap(":/libs/guibase/images/cursorAdd.png");
 	m_addCursor = QCursor(m_addPixmap, 0, 0);
-
-	m_birdEyeWindow = nullptr;
 
 	setupActors();
 	setupActions();

@@ -50,22 +50,15 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem(zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_zoneName {zoneName},
+	m_zoneNumber {zoneNumber},
+	m_attributeBrowserFixed {false}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_zoneName = zoneName;
-	m_zoneNumber = zoneNumber;
-	m_attributeBrowserFixed = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dataContainer();
-
 	m_shapeDataItem = new Post2dWindowGridShapeDataItem(this);
 
 	if (cont->scalarValueExists()) {

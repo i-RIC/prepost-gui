@@ -25,10 +25,6 @@
 Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, ProjectDataItem* parent)
 	: GraphicsWindowRootDataItem(window, parent)
 {
-	// Background images data item node.
-//	m_backgroundImagesDataItem = new Post3dWindowBackgroundImagesDataItem(this);
-//	m_childItems.append(m_backgroundImagesDataItem);
-
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post3dWindowDataModel*>(dataModel())->postSolutionInfo();
 

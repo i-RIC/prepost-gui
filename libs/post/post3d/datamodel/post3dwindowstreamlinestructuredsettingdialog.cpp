@@ -9,14 +9,14 @@
 #include <vtkStructuredGrid.h>
 
 Post3dWindowStreamlineStructuredSettingDialog::Post3dWindowStreamlineStructuredSettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::Post3dWindowStreamlineStructuredSettingDialog)
+	QDialog {parent},
+	ui {new Ui::Post3dWindowStreamlineStructuredSettingDialog},
+	m_applying {false}
 {
 	ui->setupUi(this);
 
 	setupNominations();
 	ui->spaceSlider->setTracking(true);
-	m_applying = false;
 
 	connect(ui->startPositionListWidget, SIGNAL(currentRowChanged(int)), this, SLOT(activeDataChanged(int)));
 	connect(ui->iminSlider, SIGNAL(valueChanged(int)), this, SLOT(iMinChanged(int)));
@@ -188,8 +188,6 @@ void Post3dWindowStreamlineStructuredSettingDialog::setupNominations()
 	ui->spaceMinLabel->setText(QString("1/%1").arg(m_skipNominations.last()));
 	ui->spaceMaxLabel->setText(QString("%1").arg(m_subDivNominations.last()));
 }
-
-
 
 void Post3dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
 {

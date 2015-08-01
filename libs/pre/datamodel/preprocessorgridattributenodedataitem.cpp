@@ -49,17 +49,12 @@
 
 #include <string>
 
-PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
-	: PreProcessorDataItem(cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
+	PreProcessorDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
-	m_isDeletable = false;
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 	m_definingBoundingBox = false;
 	m_condition = cond;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
 	m_contour = ContourSettingWidget::ColorFringe;
 	m_numberOfDivision = 10;
 

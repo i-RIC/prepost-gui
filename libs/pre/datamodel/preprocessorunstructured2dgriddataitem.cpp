@@ -10,8 +10,8 @@
 #include <QAction>
 #include <QMenu>
 
-PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridDataItem(parent)
+PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorUnstructured2dGridShapeDataItem(this);
 	m_childItems.append(m_shapeDataItem);

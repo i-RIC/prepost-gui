@@ -59,17 +59,12 @@
 
 #include <cgnslib.h>
 
-PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
-	: PreProcessorGeoDataGroupDataItemInterface(cond, parent)
+PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
+	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
+	m_condition {cond}
 {
-	m_condition = cond;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(cond->name());
-
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
 
 	m_addSignalMapper = nullptr;
 

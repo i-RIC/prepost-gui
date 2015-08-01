@@ -15,20 +15,13 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
-Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const QString& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const QString& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_attributeName {attname},
+	m_value {val},
+	m_color {col}
 {
-	m_attributeName = attname;
-	m_value = val;
-	m_color = col;
-
-	dataModel()->itemModel()->blockSignals(true);
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-	dataModel()->itemModel()->blockSignals(false);
-	m_isDeletable = false;
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	setupActors();
 }

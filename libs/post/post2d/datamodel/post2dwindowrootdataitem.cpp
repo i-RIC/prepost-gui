@@ -27,8 +27,8 @@
 
 #include <vtkRenderWindow.h>
 
-Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, ProjectDataItem* parent)
-	: GraphicsWindowRootDataItem(window, parent)
+Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, ProjectDataItem* parent) :
+	GraphicsWindowRootDataItem {window, parent}
 {
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post2dWindowDataModel*>(dataModel())->postSolutionInfo();

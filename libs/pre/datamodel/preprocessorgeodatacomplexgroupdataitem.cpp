@@ -30,13 +30,12 @@
 
 #include <iriclib.h>
 
-PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent)
-	: PreProcessorGeoDataGroupDataItem(cond, parent)
+PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
+	PreProcessorGeoDataGroupDataItem {cond, parent},
+	m_undefinedColor {Qt::gray}
 {
 	m_dialog = new GridComplexConditionDialog(this, iricMainWindow(), mainWindow());
 	m_dialog->setWindowTitle(tr("%1 Group Setting").arg(m_condition->caption()));
-
-	m_undefinedColor = Qt::gray;
 
 	m_editGroupAction = new QAction(tr("Edit &Groups..."), this);
 	connect(m_editGroupAction, SIGNAL(triggered()), this, SLOT(showEditGroupDialog()));
@@ -46,9 +45,7 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 
 PreProcessorGeoDataComplexGroupDataItem::~PreProcessorGeoDataComplexGroupDataItem()
 {
-	if (m_dialog) {
-		delete m_dialog;
-	}
+	delete m_dialog;
 }
 
 void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)

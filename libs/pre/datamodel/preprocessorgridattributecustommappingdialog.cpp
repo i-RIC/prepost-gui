@@ -12,8 +12,8 @@
 #include <QVBoxLayout>
 
 PreProcessorGridAttributeCustomMappingDialog::PreProcessorGridAttributeCustomMappingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PreProcessorGridAttributeCustomMappingDialog)
+	QDialog {parent},
+	ui {new Ui::PreProcessorGridAttributeCustomMappingDialog}
 {
 	ui->setupUi(this);
 	connect(ui->selectAllButton, SIGNAL(clicked()), this, SLOT(checkAll()));

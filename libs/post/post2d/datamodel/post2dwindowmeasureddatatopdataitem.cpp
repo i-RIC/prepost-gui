@@ -25,17 +25,12 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
-	: Post2dWindowDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(GraphicsWindowDataItem* parent) :
+	Post2dWindowDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
-	setSubPath("measureddata");
-
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant(tr("MEASUREDDATAS")), Qt::UserRole + 10);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setSubPath("measureddata");
 
 	setupActors();
 

@@ -4,8 +4,8 @@
 #include "preprocessorgridattributetemplatemappingsettingdialog.h"
 
 PreProcessorGridAttributeMappingSettingTopEditDialog::PreProcessorGridAttributeMappingSettingTopEditDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PreProcessorGridAttributeMappingSettingTopEditDialog)
+	QDialog {parent},
+	ui {new Ui::PreProcessorGridAttributeMappingSettingTopEditDialog}
 {
 	ui->setupUi(this);
 	connect(ui->templateDetailButton, SIGNAL(clicked()), this, SLOT(showDetailDialog()));

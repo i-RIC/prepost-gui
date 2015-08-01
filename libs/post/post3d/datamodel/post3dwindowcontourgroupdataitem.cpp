@@ -38,14 +38,11 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {tr("Contour"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_zScale {1}
 {
-	m_zScale = 1;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-	m_standardItemCopy = m_standardItem->clone();
-	m_isDeletable = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	m_contour = ContourSettingWidget::ColorFringe;
 	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());

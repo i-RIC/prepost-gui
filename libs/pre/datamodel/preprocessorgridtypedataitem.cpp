@@ -24,16 +24,11 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent)
-	: PreProcessorGridTypeDataItemInterface(type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
+	PreProcessorGridTypeDataItemInterface {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_gridType {type}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_gridType = type;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(type->name());
 
 	// setup ScalarsToColors instances
@@ -79,10 +74,10 @@ const QString& PreProcessorGridTypeDataItem::name() const
 
 PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const QString& zonename) const
 {
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-		if ((*it)->zoneName() == zonename) {return *it;}
+	for (auto cond : m_conditions) {
+		if (cond->zoneName() == zonename) {return cond;}
 	}
-	return 0;
+	return nullptr;
 }
 
 bool PreProcessorGridTypeDataItem::isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface * /*child*/) const
@@ -132,8 +127,8 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	bool ok = true;
 	// first, try "Region".
 	QString nomination(tr("Region"));
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-		ok = ok && ((*it)->caption() != nomination);
+	for (auto cond : m_conditions) {
+		ok = ok && (cond->caption() != nomination);
 	}
 	if (ok) {return nomination;}
 	nomination = tr("Region%1");
@@ -143,8 +138,8 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	while (! ok) {
 		nom = nomination.arg(i);
 		ok = true;
-		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-			ok = ok && ((*it)->caption() != nom);
+		for (auto cond : m_conditions) {
+			ok = ok && (cond->caption() != nom);
 		}
 		++i;
 	}
@@ -161,8 +156,8 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 	while (! ok) {
 		nom = nametemplate.arg(i);
 		ok = true;
-		for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-			ok = ok && ((*it)->zoneName() != nom);
+		for (auto cond : m_conditions) {
+			ok = ok && (cond->zoneName() != nom);
 		}
 		++i;
 	}
@@ -184,8 +179,8 @@ void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child
 
 bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& caption)
 {
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-		if ((*it)->caption() == caption) {
+	for (auto cond : m_conditions) {
+		if (cond->caption() == caption) {
 			return false;
 		}
 	}
@@ -208,11 +203,11 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		if (c.nodeName() == "Region") {
 			// find whether a corresponding condition already exists.
 			bool found = false;
-			for (auto it = m_conditions.begin(); ! found && it != m_conditions.end(); ++it) {
-				if ((*it)->zoneName() == c.toElement().attribute("zoneName")) {
+			for (auto cond : m_conditions) {
+				if (cond->zoneName() == c.toElement().attribute("zoneName")) {
 					// found!
 					found = true;
-					(*it)->loadFromProjectMainFile(c);
+					cond->loadFromProjectMainFile(c);
 				}
 			}
 			if (! found) {

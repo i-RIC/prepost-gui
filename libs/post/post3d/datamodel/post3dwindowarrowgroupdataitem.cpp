@@ -43,14 +43,11 @@
 
 #include <cmath>
 
-Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_oldCameraScale {1}
 {
-	m_oldCameraScale = 1;
-
-	m_standardItem->setCheckable(true);
-	m_standardItemCopy = m_standardItem->clone();
-	m_isDeletable = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	m_lengthMode = lenAuto;
 	m_standardValue = 1;

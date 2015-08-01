@@ -13,16 +13,10 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
-Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Particles"), QIcon(":/libs/guibase/images/iconPaper.png"), p)
+Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Particles"), QIcon(":/libs/guibase/images/iconPaper.png"), p}
 {
-	QSettings setting;
-
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupActors();
 	updateActorSettings();

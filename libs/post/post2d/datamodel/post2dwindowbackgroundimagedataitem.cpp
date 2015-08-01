@@ -11,22 +11,17 @@
 
 #include <vtkRenderer.h>
 
-Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post2dWindowBackgroundImageDataItem::Post2dWindowBackgroundImageDataItem(BackgroundImageInfo* image, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_imageInfo {image}
 {
-	m_imageInfo = image;
-	m_standardItem->setText(image->caption());
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
+	setupStandardItem(NotChecked, Reorderable, NotDeletable, image->caption());
 	m_actor = vtkSmartPointer<vtkActor>::New();
+
 	image->setupActor(m_actor);
 	renderer()->AddActor(m_actor);
-
 	m_actor->VisibilityOff();
 	actorCollection()->AddItem(m_actor);
-
-	m_isReorderable = true;
-	m_standardItemCopy = m_standardItem->clone();
 
 	connect(image, SIGNAL(isChanged()), this, SLOT(applyImageChange()));
 }

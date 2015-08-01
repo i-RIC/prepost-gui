@@ -20,11 +20,7 @@
 PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("bc");
 
 	m_colorSource = new ColorSource(this);
@@ -54,7 +50,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 
 PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()
 {
-
+	delete m_colorSource;
 }
 
 void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)

@@ -21,16 +21,14 @@
 #include <iriclib.h>
 #include <sstream>
 
-CgnsGridImporter::CgnsGridImporter()
-	: GridInternalImporter()
-{
-
-}
+CgnsGridImporter::CgnsGridImporter() :
+	GridInternalImporter {}
+{}
 
 QStringList CgnsGridImporter::fileDialogFilters() const
 {
 	QStringList ret;
-	ret << QObject::tr("CGNS files (*.cgn)");
+	ret << tr("CGNS files (*.cgn)");
 	return ret;
 }
 

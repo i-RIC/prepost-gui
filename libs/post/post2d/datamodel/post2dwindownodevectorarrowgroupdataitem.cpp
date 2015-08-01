@@ -62,14 +62,10 @@ Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
 	scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
@@ -77,13 +73,9 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	int number = pd->GetNumberOfArrays();
 	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() == 1) {
-			// scalar attribute.
-			continue;
-		}
+		if (tmparray == nullptr) {continue;}
+		// Check if it is a scalar attribute
+		if (tmparray->GetNumberOfComponents() == 1) {continue;}
 		QString name = pd->GetArray(i)->GetName();
 		Post2dWindowNodeVectorArrowDataItem* item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);

@@ -20,14 +20,10 @@
 
 #include <iriclib.h>
 
-PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent)
-	: PreProcessorDataItem(tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
+	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setSubPath("bcsetting");
 
@@ -40,22 +36,16 @@ PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProces
 }
 
 PreProcessorBCSettingGroupDataItem::~PreProcessorBCSettingGroupDataItem()
-{
-
-}
+{}
 
 void PreProcessorBCSettingGroupDataItem::loadFromCgnsFile(const int /*fn*/)
-{
-}
+{}
 
 void PreProcessorBCSettingGroupDataItem::saveToCgnsFile(const int /*fn*/)
-{
-}
+{}
 
 void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-
-}
+{}
 
 void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {

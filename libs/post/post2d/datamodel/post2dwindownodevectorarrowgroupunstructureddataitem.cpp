@@ -30,9 +30,7 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArro
 }
 
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem()
-{
-
-}
+{}
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::informGridUpdate()
 {

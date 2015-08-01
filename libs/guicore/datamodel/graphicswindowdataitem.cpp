@@ -23,29 +23,23 @@
 #include <vtkCollectionIterator.h>
 #include <vtkRenderWindow.h>
 
-GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent)
-	: ProjectDataItem(parent)
+GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
+	ProjectDataItem {parent},
+	m_standardItem {new QStandardItem(itemlabel)}
 {
-	m_standardItem = new QStandardItem(itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr) {
-		parent->standardItem()->appendRow(m_standardItem);
-	}
 	init();
 }
-GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
-	: ProjectDataItem(parent)
+GraphicsWindowDataItem::GraphicsWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
+	ProjectDataItem {parent},
+	m_standardItem {new QStandardItem(icon, itemlabel)}
 {
-	m_standardItem = new QStandardItem(icon, itemlabel);
-	if (dynamic_cast<GraphicsWindowRootDataItem*>(parent) == nullptr) {
-		parent->standardItem()->appendRow(m_standardItem);
-	}
 	init();
 }
 
-GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent)
-	: ProjectDataItem(parent)
+GraphicsWindowDataItem::GraphicsWindowDataItem(ProjectDataItem* parent) :
+	ProjectDataItem {parent},
+	m_standardItem {nullptr}
 {
-	m_standardItem = nullptr;
 	init();
 }
 
@@ -86,6 +80,27 @@ GraphicsWindowDataItem::~GraphicsWindowDataItem()
 	m_actor2DCollection->Delete();
 }
 
+void GraphicsWindowDataItem::setupStandardItem(CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, const QString &text)
+{
+	if (m_standardItem == nullptr) {return;}
+	setIsCommandExecuting(true);
+	m_standardItem->setCheckable(true);
+	if (cflag == Checked) {
+		m_standardItem->setCheckState(Qt::Checked);
+	} else {
+		m_standardItem->setCheckState(Qt::Unchecked);
+	}
+	m_isReorderable = (rflag == Reorderable);
+	m_isDeletable = (dflag == Deletable);
+
+	if (text != ""){
+		m_standardItem->setText(text);
+	}
+
+	m_standardItemCopy = m_standardItem->clone();
+	setIsCommandExecuting(false);
+}
+
 bool GraphicsWindowDataItem::isEnabled() const
 {
 	if (m_standardItem == nullptr) {return false;}
@@ -115,15 +130,12 @@ void GraphicsWindowDataItem::unregisterChild(GraphicsWindowDataItem* child)
 void GraphicsWindowDataItem::init()
 {
 	if (m_standardItem) {
+		auto p = dynamic_cast<GraphicsWindowRootDataItem*>(parent());
+		if (p == nullptr) {
+			p->standardItem()->appendRow(m_standardItem);
+		}
 		m_standardItem->setEditable(false);
 	}
-	m_standardItemCopy = nullptr;
-	m_isDeletable = true;
-	m_isReorderable = false;
-	m_isDestructing = false;
-
-	m_isCommandExecuting = false;
-
 	m_actorCollection = vtkActorCollection::New();
 	m_actor2DCollection = vtkActor2DCollection::New();
 }

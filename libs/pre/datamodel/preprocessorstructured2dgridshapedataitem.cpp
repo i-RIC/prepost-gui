@@ -19,8 +19,8 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGridShapeDataItem(parent)
+PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGridShapeDataItem {parent}
 {
 	setupActors();
 	updateActorSettings();

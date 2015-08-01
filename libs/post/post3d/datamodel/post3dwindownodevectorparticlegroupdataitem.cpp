@@ -32,18 +32,14 @@
 #include <vtkUnstructuredGridWriter.h>
 #include <vtkVertex.h>
 
-Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_previousStep {-2},
+	m_previousTime {0},
+	m_nextStepToAddParticles {0},
+	m_zScale {1}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_previousStep = -2;
-	m_previousTime = 0;
-	m_nextStepToAddParticles = 0;
-	m_zScale = 1;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setDefaultValues();
 	setupClipper();
@@ -109,7 +105,6 @@ private:
 
 	Post3dWindowNodeVectorParticleGroupDataItem* m_item;
 };
-
 
 void Post3dWindowNodeVectorParticleGroupDataItem::exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem* item)
 {

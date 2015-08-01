@@ -32,21 +32,14 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent)
-	: Post2dBirdEyeWindowDataItem(zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
+	Post2dBirdEyeWindowDataItem {zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_zoneName{zoneName},
+	m_zoneNumber {zoneNumber}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_zoneName = zoneName;
-	m_zoneNumber = zoneNumber;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dataContainer();
-
 	m_shapeDataItem = new Post2dBirdEyeWindowGridShapeDataItem(this);
 
 	if (cont->scalarValueExists()) {

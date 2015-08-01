@@ -36,27 +36,29 @@
 
 #define TMPBCNAME "bc"
 
-PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting)
-	: PreProcessorDataItem(tr("New Item"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefinitionBoundaryCondition* cond, GraphicsWindowDataItem* parent, bool hideSetting) :
+	PreProcessorDataItem {tr("New Item"), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_condition {cond},
+	m_projectNumber {1},
+	m_cgnsNumber {1},
+	m_opacityPercent {50},
+	m_definingBoundingBox {false},
+	m_isCustomModified {false},
+	m_hideSetting {hideSetting}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setIsCommandExecuting(true);
 	m_standardItem->setEditable(true);
+	setIsCommandExecuting(false);
 
-	m_standardItemCopy = m_standardItem->clone();
-	m_condition = cond;
 	try {
 		m_dialog = new BoundaryConditionDialog(this, iricMainWindow(), mainWindow());
 		QLocale locale = iricMainWindow()->locale();
 		m_dialog->setup(def, cond->element(), locale);
 		connect(m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));
 	} catch (ErrorMessage&) {
-		m_dialog = 0;
+		m_dialog = nullptr;
 	}
-	m_projectNumber = 1;
-	m_cgnsNumber = 1;
-	m_opacityPercent = 50;
-
 	m_dialog->setType(m_condition->caption());
 
 	m_editAction = new QAction(tr("&Edit Condition..."), this);
@@ -68,19 +70,14 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	m_releaseAction->setEnabled(false);
 	connect(m_releaseAction, SIGNAL(triggered()), this, SLOT(releaseSelectedElements()));
 
-	m_definingBoundingBox = false;
-	m_isCustomModified = false;
-	m_hideSetting = hideSetting;
-
 	setupActors();
 	updateActorSettings();
 }
 
 PreProcessorBCDataItem::~PreProcessorBCDataItem()
 {
-	if (m_dialog) {
-		delete m_dialog;
-	}
+	delete m_dialog;
+
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->grid();
 	if (g != 0) {g->setModified();}
 

@@ -28,17 +28,15 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent)
-	: PreProcessorDataItem(tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent) :
+	PreProcessorDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("measureddata");
 
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setIsCommandExecuting(true);
 	m_standardItem->setData(QVariant(tr("MEASUREDDATAS")), Qt::UserRole + 10);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setIsCommandExecuting(false);
 
 	setupActors();
 

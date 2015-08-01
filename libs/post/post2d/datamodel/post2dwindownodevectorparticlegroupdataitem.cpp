@@ -44,17 +44,13 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
 
-Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_previousStep {-2},
+	m_previousTime {0},
+	m_nextStepToAddParticles {0}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_previousStep = -2;
-	m_previousTime = 0;
-	m_nextStepToAddParticles = 0;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupClipper();
 	informGridUpdate();
@@ -66,10 +62,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	for (int i = 0; i < number; i++) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		if (tmparray->GetNumberOfComponents() == 1) {
-			// vector attribute.
-			continue;
-		}
+		// check if it is a vector attribute
+		if (tmparray->GetNumberOfComponents() == 1) {continue;}
 		QString name = pd->GetArray(i)->GetName();
 		Post2dWindowNodeVectorParticleDataItem* item = new Post2dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);

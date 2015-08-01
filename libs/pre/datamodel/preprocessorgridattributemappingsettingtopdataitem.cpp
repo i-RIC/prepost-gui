@@ -34,11 +34,10 @@
 #include <QStandardItem>
 #include <QXmlStreamWriter>
 
-PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMappingSettingTopDataItem(PreProcessorDataItem* p)
-	: PreProcessorDataItem(p)
+PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMappingSettingTopDataItem(PreProcessorDataItem* p) :
+	PreProcessorDataItem {p}
 {
-	m_isDeletable = false;
-	m_isExpanded = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	// setup actions;
 	m_executeMappingAction = new QAction(tr("Execute mapping"), this);
 	connect(m_executeMappingAction, SIGNAL(triggered()), this, SLOT(executeMapping()));
@@ -64,13 +63,12 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 		m_itemNameMap.insert((*cit)->name(), item);
 		m_childItems.append(item);
 	}
-
 }
 
-void PreProcessorGridAttributeMappingSettingTopDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+void PreProcessorGridAttributeMappingSettingTopDataItem::doLoadFromProjectMainFile(const QDomNode&)
 {}
 
-void PreProcessorGridAttributeMappingSettingTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+void PreProcessorGridAttributeMappingSettingTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
 {}
 
 void PreProcessorGridAttributeMappingSettingTopDataItem::informGeoDataChange()
@@ -292,4 +290,3 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const QSt
 		QMessageBox::information(mainWindow(), tr("Mapping geographic data finished"), tr("Mapping geographic data finished successfully."));
 	}
 }
-

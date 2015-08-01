@@ -15,24 +15,18 @@
 #include <QAction>
 #include <QList>
 #include <QMenu>
-#include <QStandardItem>
 #include <QXmlStreamWriter>
 
 #include <vtkPointData.h>
 
-Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent)
-	: Post3dWindowDataItem(type->caption(), parent)
+Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
+	Post3dWindowDataItem {type->caption(), parent},
+	m_gridType {type},
+	m_isZoneDataItemsSetup {false}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_isDeletable = false;
-
-	m_gridType = type;
 	setSubPath(type->name());
-	m_isZoneDataItemsSetup = false;
 
 	setupZoneDataItems();
 

@@ -44,15 +44,10 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Isosurface"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	setDefaultValues();
 	setupActors();

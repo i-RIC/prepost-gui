@@ -40,8 +40,8 @@ public:
 
 
 PreProcessorGridAttributeCellDisplaySettingDialog::PreProcessorGridAttributeCellDisplaySettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::PreProcessorGridAttributeCellDisplaySettingDialog)
+	QDialog {parent},
+	ui {new Ui::PreProcessorGridAttributeCellDisplaySettingDialog}
 {
 	ui->setupUi(this);
 

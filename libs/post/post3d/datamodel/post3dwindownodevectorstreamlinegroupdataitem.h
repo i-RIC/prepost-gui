@@ -16,7 +16,6 @@
 #include <vtkPolyData.h>
 
 class Post3dWindowNodeVectorStreamlineDataItem;
-class Post3dWindowStructuredGridStreamlineSelectSolution;
 class Post3dWindowStreamlineStructuredSetProperty;
 
 class Post3dWindowNodeVectorStreamlineGroupDataItem : public Post3dWindowDataItem
@@ -64,8 +63,9 @@ private:
 
 	double m_zScale;
 
+	class SelectSolutionCommand;
+
 public:
-	friend class Post3dWindowStructuredGridStreamlineSelectSolution;
 	friend class Post3dWindowStreamlineStructuredSetProperty;
 };
 

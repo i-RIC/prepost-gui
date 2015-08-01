@@ -38,56 +38,47 @@
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_visible {"visible", true}
+	m_visible {"visible", true},
+	m_condition {nullptr}
 {
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("geographicdata");
-
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-	m_standardItemCopy = m_standardItem->clone();
 
 	// add child nodes.
 	QList<SolverDefinitionGridAttribute*> list = gridType()->gridRelatedConditions();
 	QList<SolverDefinitionGridComplexAttribute*> list2 = gridType()->gridRelatedComplexConditions();
 
 	// node simple items
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
-		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
-		PreProcessorGeoDataGroupDataItem* i = new PreProcessorGeoDataGroupDataItem(cond, this);
-		m_childItems.append(i);
-		m_itemNameMap.insert((*it)->name(), i);
+	for (auto att : list) {
+		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		auto item = new PreProcessorGeoDataGroupDataItem(att, this);
+		m_childItems.append(item);
+		m_itemNameMap.insert(att->name(), item);
 	}
 	// node complex items
-	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
-		SolverDefinitionGridComplexAttribute* cond = *it2;
-		if (cond->position() != SolverDefinitionGridAttribute::Node) {continue;}
-		PreProcessorGeoDataComplexGroupDataItem* i = new PreProcessorGeoDataComplexGroupDataItem(cond, this);
-		m_childItems.append(i);
-		m_itemNameMap.insert((*it2)->name(), i);
+	for (auto att : list2) {
+		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		auto item = new PreProcessorGeoDataComplexGroupDataItem(att, this);
+		m_childItems.append(item);
+		m_itemNameMap.insert(att->name(), item);
 	}
 	// cell simple items
-	for (auto it = list.begin(); it != list.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
-		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
-		PreProcessorGeoDataGroupDataItem* i = new PreProcessorGeoDataGroupDataItem(cond, this);
-		m_childItems.append(i);
-		m_itemNameMap.insert((*it)->name(), i);
+	for (auto att : list) {
+		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		auto item = new PreProcessorGeoDataGroupDataItem(att, this);
+		m_childItems.append(item);
+		m_itemNameMap.insert(att->name(), item);
 	}
 	// cell complex items
-	for (auto it2 = list2.begin(); it2 != list2.end(); ++it2) {
-		SolverDefinitionGridComplexAttribute* cond = *it2;
-		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
-		PreProcessorGeoDataComplexGroupDataItem* i = new PreProcessorGeoDataComplexGroupDataItem(cond, this);
-		m_childItems.append(i);
-		m_itemNameMap.insert((*it2)->name(), i);
+	for (auto att : list2) {
+		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		auto item = new PreProcessorGeoDataComplexGroupDataItem(att, this);
+		m_childItems.append(item);
+		m_itemNameMap.insert(att->name(), item);
 	}
 	m_titleTextSetting.setPrefix("title");
 	m_labelTextSetting.setPrefix("label");
 
-	// first, no scalar bar / legend box shown.
-	m_condition = nullptr;
 	setupActors();
 }
 

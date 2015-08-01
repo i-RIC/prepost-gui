@@ -43,18 +43,12 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent)
-	: Post3dWindowDataItem(zoneName, QIcon(":/images/iconGrid.png"), parent)
+Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
+	Post3dWindowDataItem {zoneName, QIcon(":/images/iconGrid.png"), parent},
+	m_zoneName {zoneName},
+	m_zoneNumber {zoneNumber}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_zoneName = zoneName;
-	m_zoneNumber = zoneNumber;
-
-	m_isDeletable = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	m_shapeDataItem = new Post3dWindowGridShapeDataItem(this);
 	m_contourGroupItem = new Post3dWindowContourGroupDataItem(this);

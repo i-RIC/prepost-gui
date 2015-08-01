@@ -37,15 +37,11 @@
 
 PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_isCustomModified {"isCustomModified", false}
+	m_isCustomModified {"isCustomModified", false},
+	m_definingBoundingBox {false},
+	m_condition {cond}
 {
-	m_isDeletable = false;
-	m_definingBoundingBox = false;
-	m_condition = cond;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	connect(this, SIGNAL(changed(PreProcessorGridAttributeCellDataItem*)),
 					parent, SLOT(exclusivelyCheck(PreProcessorGridAttributeCellDataItem*)));
@@ -121,14 +117,6 @@ void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, V
 	} else {
 		dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
 	}
-	/*
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		if (tmpparent->grid()->isMasked()){
-			v->setCursor(Qt::ForbiddenCursor);
-		} else {
-			v->setCursor(Qt::ArrowCursor);
-		}
-	*/
 }
 
 void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)

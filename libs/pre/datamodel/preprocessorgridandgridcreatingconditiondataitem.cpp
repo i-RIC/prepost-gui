@@ -34,19 +34,14 @@
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
 
-PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* p)
-	: PreProcessorGridAndGridCreatingConditionDataItemInterface(caption, p)
+PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* p) :
+	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
+	m_zoneName {zonename},
+	m_caption {caption}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-	m_standardItem->setEditable(false);
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_zoneName = zonename;
-	m_caption = caption;
 	QDir workdir(projectData()->workDirectory());
-
 	setSubPath("gridandgridcreatingconditiondataitem");
 	QDir subdir1(workdir.absoluteFilePath(relativeSubPath()));
 

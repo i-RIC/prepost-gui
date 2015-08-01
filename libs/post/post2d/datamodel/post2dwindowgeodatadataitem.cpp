@@ -9,8 +9,7 @@ Post2dWindowGeoDataDataItem::Post2dWindowGeoDataDataItem(GraphicsWindowDataItem*
 	GeoDataProxyDataItem {parent},
 	m_geoDataProxy {nullptr}
 {
-	m_isReorderable = false;
-	m_isDeletable = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 }
 
 Post2dWindowGeoDataDataItem::~Post2dWindowGeoDataDataItem()

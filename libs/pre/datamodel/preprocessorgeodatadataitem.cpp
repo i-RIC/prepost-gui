@@ -31,11 +31,12 @@
 
 #include <cgnslib.h>
 
-PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent)
-	: PreProcessorGeoDataDataItemInterface("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
+	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_geoData {nullptr}
 {
-	m_geoData = nullptr;
-	m_isReorderable = true;
+	setupStandardItem(Checked, Reorderable, Deletable);
+
 	m_exportAction = new QAction(tr("&Export..."), this);
 	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
@@ -43,8 +44,7 @@ PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* p
 
 PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
 {
-	if (m_geoData) {delete m_geoData;}
-	m_geoData = nullptr;
+	delete m_geoData;
 	PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
 	if (gItem != nullptr) {
 		gItem->informValueRangeChange();

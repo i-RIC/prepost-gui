@@ -9,30 +9,26 @@
 
 #include <vtkRenderer.h>
 
-PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent)
-	: PreProcessorDataItem("", QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent) :
+	PreProcessorDataItem {image->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_imageInfo {image}
 {
-	m_standardItem->setText(image->caption());
-	m_standardItem->setCheckable(true);
+	setupStandardItem(Checked, Reorderable, Deletable);
+
 	m_actor = vtkSmartPointer<vtkActor>::New();
 	image->setupActor(m_actor);
 	image->setPreProcessorActor(m_actor);
 	renderer()->AddActor(m_actor);
 	m_actorCollection->AddItem(m_actor);
-	if (image->visible()) {
-		m_standardItem->setCheckState(Qt::Checked);
-	} else {
+
+	if (! image->visible()) {
+		setIsCommandExecuting(true);
 		m_standardItem->setCheckState(Qt::Unchecked);
+		setIsCommandExecuting(false);
 	}
 	updateVisibilityWithoutRendering();
 
 	connect(image, SIGNAL(isChanged()), this, SLOT(applyImageChange()));
-
-	m_isReorderable = true;
-	m_isCommandExecuting = false;
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_imageInfo = image;
 }
 
 PreProcessorBackgroundImageDataItem::~PreProcessorBackgroundImageDataItem()

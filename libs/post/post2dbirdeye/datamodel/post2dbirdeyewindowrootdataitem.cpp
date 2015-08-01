@@ -23,8 +23,8 @@
 
 #include <vtkRenderWindow.h>
 
-Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWindow* window, ProjectDataItem* parent)
-	: GraphicsWindowRootDataItem(window, parent)
+Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWindow* window, ProjectDataItem* parent) :
+	GraphicsWindowRootDataItem {window, parent}
 {
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post2dBirdEyeWindowDataModel*>(dataModel())->postSolutionInfo();

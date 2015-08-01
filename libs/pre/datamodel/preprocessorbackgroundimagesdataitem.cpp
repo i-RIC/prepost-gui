@@ -15,16 +15,11 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent)
-	: PreProcessorDataItem(tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent)
+PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
+	PreProcessorDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-	m_standardItem->setStatusTip(tr("Background Images"));
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	m_standardItem->setData(QVariant(tr("BACKGROUNDIMAGES")), Qt::UserRole + 10);
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_isDeletable = false;
 
 	m_addAction = new QAction(tr("&Add Image..."), this);
 	m_deleteAllAction = new QAction(tr("&Delete All"), this);

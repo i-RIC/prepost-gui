@@ -22,15 +22,11 @@
 #include <vtkRungeKutta4.h>
 #include <vtkStructuredGridGeometryFilter.h>
 
-Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_zScale {1}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_zScale = 1;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setDefaultValues();
 	setupClipper();
@@ -66,32 +62,29 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::~Post3dWindowNodeVectorStreamline
 	}
 }
 
-class Post3dWindowStructuredGridStreamlineSelectSolution : public QUndoCommand
+class Post3dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	Post3dWindowStructuredGridStreamlineSelectSolution(const QString& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Streamline Physical Value Change")) {
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
-		m_item = item;
+	SelectSolutionCommand(const QString& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item) :
+		QUndoCommand {Post3dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
+		m_newSolution {newsol},
+		m_oldSolution {item->m_currentSolution},
+		m_item {item}
+	{}
+	void redo() override {
+		applySetting(m_newSolution);
 	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
+	void undo() override {
+		applySetting(m_oldSolution);
 	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
+
 private:
-	QString m_oldCurrentSolution;
-	QString m_newCurrentSolution;
+	void applySetting (const QString &sol) {
+		m_item->setCurrentSolution(sol);
+		m_item->updateActorSettings();
+	}
+	QString m_newSolution;
+	QString m_oldSolution;
 
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };
@@ -100,11 +93,10 @@ private:
 void Post3dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post3dWindowStructuredGridStreamlineSelectSolution("", this));
+		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
-		stack.push(new Post3dWindowStructuredGridStreamlineSelectSolution(item->name(), this));
+		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
 	}
 }
 

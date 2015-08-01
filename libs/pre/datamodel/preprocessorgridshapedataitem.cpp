@@ -52,20 +52,15 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataItem* parent)
-	: PreProcessorDataItem(tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataItem* parent) :
+	PreProcessorDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_definingBoundingBox {false},
+	m_draggingSelectedPoints {false},
+	m_nearSelectedPoint {false}
 {
-	m_isDeletable = false;
-	m_definingBoundingBox = false;
-	m_draggingSelectedPoints = false;
-	m_nearSelectedPoint = false;
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	QList<QStandardItem*> rows = parent->standardItem()->takeRow(m_standardItem->row());
+	parent->standardItem()->takeRow(m_standardItem->row());
 
 	m_editAction = new QAction(tr("&Edit Coordinates..."), this);
 	connect(m_editAction, SIGNAL(triggered()), this, SLOT(editShape()));

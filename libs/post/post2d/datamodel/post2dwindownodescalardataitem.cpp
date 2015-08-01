@@ -6,17 +6,11 @@
 #include <QMenu>
 #include <QMouseEvent>
 
-Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent)
-	: Post2dWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
+Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_name {name}
 {
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_name = name;
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	connect(this, SIGNAL(changed(Post2dWindowNodeScalarDataItem*)),
 					parent, SLOT(exclusivelyCheck(Post2dWindowNodeScalarDataItem*)));

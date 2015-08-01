@@ -14,14 +14,10 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
-Post2dWindowCellFlagGroupDataItem::Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowDataItem(tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post2dWindowCellFlagGroupDataItem::Post2dWindowCellFlagGroupDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowDataItem {tr("Cell attributes"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	initSetting();
 }
