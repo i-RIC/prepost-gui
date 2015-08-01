@@ -3,8 +3,8 @@
 #include "geodatariversurveydisplaysettingdialog.h"
 
 GeoDataRiverSurveyDisplaySettingDialog::GeoDataRiverSurveyDisplaySettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataRiverSurveyDisplaySettingDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataRiverSurveyDisplaySettingDialog}
 {
 	ui->setupUi(this);
 }

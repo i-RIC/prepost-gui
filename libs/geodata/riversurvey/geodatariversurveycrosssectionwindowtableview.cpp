@@ -3,9 +3,9 @@
 #include <QResizeEvent>
 
 GeoDataRiverSurveyCrosssectionWindowTableView::GeoDataRiverSurveyCrosssectionWindowTableView(QWidget* parent) :
-	QTableView(parent)
+	QTableView {parent},
+	m_editor {nullptr}
 {
-	m_editor = nullptr;
 	m_editIndex = QModelIndex();
 	setMouseTracking(true);
 	// Set "Active" column width.

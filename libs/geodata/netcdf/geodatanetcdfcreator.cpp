@@ -9,8 +9,8 @@
 #include <QAction>
 #include <QIcon>
 
-GeoDataNetcdfCreator::GeoDataNetcdfCreator()
-	: GeoDataCreator()
+GeoDataNetcdfCreator::GeoDataNetcdfCreator() :
+	GeoDataCreator {}
 {
 	m_caption = tr("Raster data");
 }

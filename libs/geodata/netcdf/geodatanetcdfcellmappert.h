@@ -22,8 +22,9 @@ class GeoDataNetcdfCellMapperT : public GeoDataCellMapperT<V, DA>
 {
 
 public:
-	GeoDataNetcdfCellMapperT(GeoDataCreator* parent)
-		: GeoDataCellMapperT<V, DA>(parent) {
+	GeoDataNetcdfCellMapperT(GeoDataCreator* parent) :
+		GeoDataCellMapperT<V, DA> {parent}
+	{
 		GeoDataCellMapperT<V, DA>::m_caption = "Raster data cell mapper";
 	}
 	GeoDataMapperSetting* initialize(bool* boolMap) override {
@@ -90,4 +91,3 @@ public:
 };
 
 #endif // GEODATANETCDFCELLMAPPERT_H
-

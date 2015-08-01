@@ -10,8 +10,8 @@
 
 #include <vtkStructuredGridWriter.h>
 
-GeoDataRiverSurveyVTKExporter::GeoDataRiverSurveyVTKExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
+GeoDataRiverSurveyVTKExporter::GeoDataRiverSurveyVTKExporter(GeoDataCreator* creator) :
+	GeoDataExporter {creator}
 {
 	m_caption = tr("RiverSurvey data");
 }

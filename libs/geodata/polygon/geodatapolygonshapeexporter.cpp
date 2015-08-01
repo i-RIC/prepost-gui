@@ -12,8 +12,8 @@
 
 #include <vector>
 
-GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator)
-	: GeoDataExporter(creator)
+GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator) :
+	GeoDataExporter {creator}
 {
 	m_caption = tr("ESRI Shape file");
 }

@@ -16,16 +16,13 @@ void GeoDataPolygonProxy::setupActors()
 }
 
 void GeoDataPolygonProxy::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-}
+{}
 
 void GeoDataPolygonProxy::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{
-}
+{}
 
 void GeoDataPolygonProxy::updateGraphics()
-{
-}
+{}
 
 void GeoDataPolygonProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 {
@@ -36,4 +33,3 @@ void GeoDataPolygonProxy::assignActorZValues(const ZDepthRange& range)
 {
 	m_paintActor->SetPosition(0, 0, range.min());
 }
-

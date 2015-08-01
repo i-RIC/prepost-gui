@@ -51,8 +51,9 @@ bool GeoDataNetcdf::RectRegion::intersect(const QLineF& line) const
 	return (isInside1 != isInside2);
 }
 
-GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att)
-	: GeoData(d, creator, att)
+GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
+	GeoData {d, creator, att},
+	m_isMasked {false}
 {
 	m_opacityPercent = 50;
 
@@ -60,10 +61,6 @@ GeoDataNetcdf::GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, Solver
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
 	m_grid->SetPoints(points);
-
-	m_isMasked = false;
-
-	//	setupActions();
 }
 
 GeoDataNetcdf::~GeoDataNetcdf()

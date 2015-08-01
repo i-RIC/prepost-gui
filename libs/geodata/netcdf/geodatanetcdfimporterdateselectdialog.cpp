@@ -3,8 +3,8 @@
 #include "geodatanetcdfimporterdateselectdialog.h"
 
 GeoDataNetcdfImporterDateSelectDialog::GeoDataNetcdfImporterDateSelectDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataNetcdfImporterDateSelectDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataNetcdfImporterDateSelectDialog}
 {
 	ui->setupUi(this);
 }

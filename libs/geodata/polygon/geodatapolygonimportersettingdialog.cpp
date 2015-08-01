@@ -10,8 +10,8 @@
 #include <shapefil.h>
 
 GeoDataPolygonImporterSettingDialog::GeoDataPolygonImporterSettingDialog(const QString& filename, GridAttributeEditWidget* widget, QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataPolygonImporterSettingDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataPolygonImporterSettingDialog}
 {
 	ui->setupUi(this);
 	m_filename = filename;

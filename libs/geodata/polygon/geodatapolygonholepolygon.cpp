@@ -2,8 +2,8 @@
 
 #include <vtkProperty.h>
 
-GeoDataPolygonHolePolygon::GeoDataPolygonHolePolygon(GeoDataPolygon* parent)
-	: GeoDataPolygonAbstractPolygon(parent)
+GeoDataPolygonHolePolygon::GeoDataPolygonHolePolygon(GeoDataPolygon* parent) :
+	GeoDataPolygonAbstractPolygon {parent}
 {
 	m_paintActor->GetProperty()->SetColor(0, 0, 0);
 	m_paintActor->GetProperty()->SetOpacity(0.1);

@@ -3,8 +3,8 @@
 #include "geodatanetcdfrealcreator.h"
 #include "geodatanetcdfxbandimporter.h"
 
-GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator()
-	: GeoDataNetcdfCreatorT<double, vtkDoubleArray>()
+GeoDataNetcdfRealCreator::GeoDataNetcdfRealCreator() :
+	GeoDataNetcdfCreatorT<double, vtkDoubleArray> {}
 {
 	m_typeName = "realNetcdf";
 	m_importers.append(new GeoDataNetcdfRealImporter(this));

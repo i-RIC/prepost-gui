@@ -8,8 +8,8 @@
 #include <QAction>
 #include <QIcon>
 
-GeoDataPolygonCreator::GeoDataPolygonCreator()
-	: GeoDataCreator()
+GeoDataPolygonCreator::GeoDataPolygonCreator() :
+	GeoDataCreator {}
 {
 	m_caption = tr("Polygon");
 

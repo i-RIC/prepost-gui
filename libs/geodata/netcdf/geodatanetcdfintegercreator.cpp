@@ -1,8 +1,8 @@
 #include "geodatanetcdfintegercreator.h"
 #include "geodatanetcdft.h"
 
-GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator()
-	: GeoDataNetcdfCreatorT<int, vtkIntArray>()
+GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
+	GeoDataNetcdfCreatorT<int, vtkIntArray> {}
 {
 	m_typeName = "integerNetcdf";
 	m_importers.append(new GeoDataNetcdfIntegerImporter(this));

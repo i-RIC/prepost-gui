@@ -14,6 +14,8 @@
 
 #include <QList>
 
+#include <vector>
+
 template <class V, class DA>
 class GeoDataNetcdfImporterT : public GeoDataNetcdfImporter
 {
@@ -23,11 +25,12 @@ public:
 
 protected:
 	int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, GeoDataNetcdf* dat) override {
-		size_t* start_in = new size_t[dimIds.size() + 2];
-		size_t* start_out = new size_t[dimIds.size() + 2];
-		size_t* len_in = new size_t[dimIds.size() + 2];
-		size_t* len_out = new size_t[dimIds.size() + 2];
-		int* dimMap = new int [dimIds.size()];
+		std::vector<size_t> start_in(dimIds.size() + 2);
+		std::vector<size_t> start_out(dimIds.size() + 2);
+		std::vector<size_t> len_in(dimIds.size() + 2);
+		std::vector<size_t> len_out(dimIds.size() + 2);
+		std::vector<int> dimMap(dimIds.size());
+
 		int xIdx = -1;
 		int yIdx = -1;
 		int ret;
@@ -39,13 +42,12 @@ protected:
 
 		int dimnum;
 		ret = nc_inq_varndims(ncid_in, varIdIn, &dimnum);
-		int* dimids = new int[dimnum];
-		ret = nc_inq_vardimid(ncid_in, varIdIn, dimids);
+		std::vector<int> dimids(dimnum);
+		ret = nc_inq_vardimid(ncid_in, varIdIn, dimids.data());
 		QList<int> origDimIdList;
 		for (int i = 0; i < dimnum; ++i) {
-			origDimIdList.append(*(dimids + i));
+			origDimIdList.append(dimids[i]);
 		}
-		delete dimids;
 
 		// setup xIdx, yIdx, dimMap
 		for (int i = 0; i < m_dims.size(); ++i) {
@@ -53,7 +55,7 @@ protected:
 			int dimid;
 			ret = nc_inq_dimid(ncid_in, iRIC::toStr(dim).c_str(), &dimid);
 			int idx = origDimIdList.indexOf(dimid);
-			*(dimMap + i) = idx;
+			dimMap[i] = idx;
 		}
 		if (m_csType == GeoDataNetcdf::XY) {
 			xIdx = origDimIdList.indexOf(xDimId);
@@ -65,40 +67,33 @@ protected:
 
 		// setup len_in, len_out
 		for (int i = 0; i < dimIds.size(); ++i) {
-			*(len_in + *(dimMap + i)) = 1;
-			*(len_out + dimIds.size() - 1 - i) = 1;
+			len_in[dimMap[i]] = 1;
+			len_out[dimIds.size() - 1 - i] = 1;
 		}
 		size_t bufferSize = 0;
 		if (m_csType == GeoDataNetcdf::XY) {
-			*(len_in + yIdx) = dat->yValues().size();
-			*(len_in + xIdx) = dat->xValues().size();
-			*(len_out + dimIds.size()) = dat->yValues().size();
-			*(len_out + dimIds.size() + 1) = dat->xValues().size();
+			len_in[yIdx] = dat->yValues().size();
+			len_in[xIdx] = dat->xValues().size();
+			len_out[dimIds.size()] = dat->yValues().size();
+			len_out[dimIds.size() + 1] = dat->xValues().size();
 			bufferSize = dat->xValues().size() * dat->yValues().size();
 		} else if (m_csType == GeoDataNetcdf::LonLat) {
-			*(len_in + yIdx) = dat->latValues().size();
-			*(len_in + xIdx) = dat->lonValues().size();
-			*(len_out + dimIds.size()) = dat->latValues().size();
-			*(len_out + dimIds.size() + 1) = dat->lonValues().size();
+			len_in[yIdx] = dat->latValues().size();
+			len_in[xIdx] = dat->lonValues().size();
+			len_out[dimIds.size()] = dat->latValues().size();
+			len_out[dimIds.size() + 1] = dat->lonValues().size();
 			bufferSize = dat->lonValues().size() * dat->latValues().size();
 		}
 
 		// setup start_in, start_out partially
-		*(start_in + yIdx) = 0;
-		*(start_in + xIdx) = 0;
-		*(start_out + dimIds.size()) = 0;
-		*(start_out + dimIds.size() + 1) = 0;
+		start_in[yIdx] = 0;
+		start_in[xIdx] = 0;
+		start_out[dimIds.size()] = 0;
+		start_out[dimIds.size() + 1] = 0;
 
-		V* buffer = new V[bufferSize];
+		std::vector<V> buffer(bufferSize);
 
-		ret = importSingleLayerValues(ncid_in, icid_out, 0, dimMap, varIdIn, varIdOut, start_in, start_out, len_in, len_out, bufferSize, buffer, missingValue, dat);
-
-		delete buffer;
-		delete start_in;
-		delete start_out;
-		delete len_in;
-		delete len_out;
-		delete dimMap;
+		ret = importSingleLayerValues(ncid_in, icid_out, 0, dimMap.data(), varIdIn, varIdOut, start_in.data(), start_out.data(), len_in.data(), len_out.data(), bufferSize, buffer.data(), missingValue, dat);
 
 		return ret;
 	}

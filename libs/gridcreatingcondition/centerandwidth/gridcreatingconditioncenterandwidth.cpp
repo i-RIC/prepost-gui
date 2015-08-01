@@ -975,7 +975,7 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
-			pushRenderCommand(new AddVertexCommand(true, m_selectedEdgeId, event->post(), this));
+			pushRenderCommand(new AddVertexCommand(true, m_selectedEdgeId, event->pos(), this));
 			break;
 		case meAddVertexNotPossible:
 			// do nothing.
@@ -1098,7 +1098,7 @@ class GridCreatingConditionCenterAndWidth::FinishDefiningCommand : public QUndoC
 public:
 	FinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition) :
 		QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")},
-		m_condition {cond}
+		m_condition {condition}
 	{}
 	void redo() override {
 		m_condition->m_mouseEventMode = GridCreatingConditionCenterAndWidth::meNormal;

@@ -11,13 +11,13 @@
 #include <QUndoCommand>
 
 GeoDataRiverPathPointExpandDialog::GeoDataRiverPathPointExpandDialog(GeoDataRiverSurvey* rs, QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataRiverPathPointExpandDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataRiverPathPointExpandDialog},
+	m_rs {rs},
+	m_applyed {false}
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
-	m_rs = rs;
-	m_applyed = false;
 	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
 	bool minDistSet = false;
 	while (p != 0) {
@@ -234,8 +234,8 @@ double GeoDataRiverPathPointExpandDialog::getRatio(GeoDataRiverPathPoint* p)
 void GeoDataRiverPathPointExpandDialog::getRatios(QList<double>& ratios)
 {
 	ratios.clear();
-	for (auto it = m_points.begin(); it != m_points.end(); ++it) {
-		double r = getRatio(*it);
+	for (GeoDataRiverPathPoint* point : m_points) {
+		double r = getRatio(point);
 		ratios.append(r);
 	}
 }

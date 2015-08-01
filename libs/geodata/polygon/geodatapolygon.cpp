@@ -1670,7 +1670,7 @@ void GeoDataPolygon::editValue()
 	}
 	int ret = dialog->exec();
 	if (ret == QDialog::Rejected) {return;}
-	iRICUndoStack::instance().push(new EditValueCommand(dialog->variantValue(), this));
+	pushCommand(new EditValueCommand(dialog->variantValue(), this));
 }
 
 void GeoDataPolygon::setPolygon(const QPolygonF& p)

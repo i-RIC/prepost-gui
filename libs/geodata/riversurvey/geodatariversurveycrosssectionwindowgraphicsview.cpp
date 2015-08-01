@@ -26,18 +26,17 @@
 
 #include <cmath>
 
-GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w)
-	: QAbstractItemView(w)
+GeoDataRiverSurveyCrosssectionWindowGraphicsView::GeoDataRiverSurveyCrosssectionWindowGraphicsView(QWidget* w) :
+	QAbstractItemView {w},
+	fLeftMargin {0.2},
+	fRightMargin {0.2},
+	fTopMargin {0.2},
+	fBottomMargin {0.2},
+	m_mouseEventMode {meNormal},
+	m_rubberBand {nullptr},
+	m_rightClickingMenu {nullptr},
+	m_gridMode {false}
 {
-	fLeftMargin = 0.2f;
-	fRightMargin = 0.2f;
-	fTopMargin = 0.2f;
-	fBottomMargin = 0.2f;
-	m_mouseEventMode = meNormal;
-	m_rubberBand = nullptr;
-	m_rightClickingMenu = nullptr;
-	m_gridMode = false;
-
 	// Set cursors for mouse view change events.
 	m_zoomPixmap = QPixmap(":/libs/guibase/images/cursorZoom.png");
 	m_movePixmap = QPixmap(":/libs/guibase/images/cursorMove.png");

@@ -8,8 +8,8 @@
 #include <QLabel>
 
 GeoDataNetcdfImporterSettingDialog::GeoDataNetcdfImporterSettingDialog(QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataNetcdfImporterSettingDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataNetcdfImporterSettingDialog}
 {
 	ui->setupUi(this);
 	connect(ui->valueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleVarChange(int)));

@@ -52,8 +52,8 @@ public:
 
 
 GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
-	QMainWindow(parent),
-	ui(new Ui::GeoDataRiverSurveyCrosssectionWindow)
+	QMainWindow {parent},
+	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow}
 {
 	m_groupDataItem = gitem;
 	m_settingUp = false;

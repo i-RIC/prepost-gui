@@ -98,30 +98,19 @@ public:
 			}
 		}
 	}
-	void undo() {
-		m_time.start();
-		m_pointMap->setPoints(m_oldPoints, m_oldValues);
-		qDebug("Time for setPoints():%d", m_time.elapsed());
-		m_pointMap->updateBreakLinesOnInsert(m_deletedPoints);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_time.restart();
-		m_pointMap->renderGraphicsView();
-		qDebug("Time for renderGraphicsView():%d", m_time.elapsed());
-	}
-	void redo() {
-		m_time.start();
+	void redo() override {
 		m_pointMap->setPoints(m_newPoints, m_newValues);
-		qDebug("Time for setPoints():%d", m_time.elapsed());
 		m_pointMap->updateBreakLinesOnDelete(m_deletedPoints);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_time.restart();
-		m_pointMap->renderGraphicsView();
-		qDebug("Time for renderGraphicsView():%d", m_time.elapsed());
+	}
+	void undo() override {
+		m_pointMap->setPoints(m_oldPoints, m_oldValues);
+		m_pointMap->updateBreakLinesOnInsert(m_deletedPoints);
+		m_pointMap->m_needRemeshing = true;
+		m_pointMap->setMapped(false);
 	}
 private:
-	QTime m_time;
 	vtkSmartPointer<vtkPoints> m_newPoints;
 	vtkSmartPointer<vtkDataArray> m_newValues;
 
@@ -129,56 +118,6 @@ private:
 	vtkSmartPointer<vtkDataArray> m_oldValues;
 
 	QVector<vtkIdType> m_deletedPoints;
-
-	GeoDataPointmap* m_pointMap;
-};
-
-class GeoDataPointmap::InsertNewPointsCommand : public QUndoCommand
-{
-public:
-	InsertNewPointsCommand(const QString& title, vtkPoints* newPoints, vtkDataArray* newVals,  GeoDataPointmap* p) :
-		QUndoCommand {title}
-	{
-		m_pointMap = p;
-		m_oldPoints = p->vtkGrid()->GetPoints();
-		m_oldValues = p->vtkGrid()->GetPointData()->GetArray(VALUES);
-
-		m_newPoints = vtkSmartPointer<vtkPoints>::New();
-		m_newPoints->SetDataTypeToDouble();
-
-		QString name = m_oldValues->GetClassName();
-		if (name == "vtkIntArray") {
-			m_newValues = vtkSmartPointer<vtkIntArray>::New();
-		} else if (name == "vtkDoubleArray") {
-			m_newValues = vtkSmartPointer<vtkDoubleArray>::New();
-		}
-		m_newPoints->DeepCopy(m_oldPoints);
-		m_newValues->DeepCopy(m_oldValues);
-
-		// build m_newPoints, m_newValues
-		for (vtkIdType i = 0; i < newPoints->GetNumberOfPoints(); ++i) {
-			m_newPoints->InsertNextPoint(newPoints->GetPoint(i));
-			m_newValues->InsertNextTuple1(newVals->GetTuple1(i));
-		}
-	}
-	void undo() {
-		m_pointMap->setPoints(m_oldPoints, m_oldValues);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
-	}
-	void redo() {
-		m_pointMap->setPoints(m_newPoints, m_newValues);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
-	}
-private:
-	vtkSmartPointer<vtkPoints> m_newPoints;
-	vtkSmartPointer<vtkDataArray> m_newValues;
-
-	vtkSmartPointer<vtkPoints> m_oldPoints;
-	vtkSmartPointer<vtkDataArray> m_oldValues;
 
 	GeoDataPointmap* m_pointMap;
 };
@@ -207,21 +146,19 @@ public:
 		}
 		m_newValues->Modified();
 	}
-	void undo() {
-		m_pointMap->vtkGrid()->GetPointData()->Initialize();
-		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_oldValues);
-		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
-	}
-	void redo() {
+	void redo() override {
 		m_pointMap->vtkGrid()->GetPointData()->Initialize();
 		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_newValues);
 		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
+	}
+	void undo() override {
+		m_pointMap->vtkGrid()->GetPointData()->Initialize();
+		m_pointMap->vtkGrid()->GetPointData()->AddArray(m_oldValues);
+		m_pointMap->vtkGrid()->GetPointData()->SetActiveScalars(VALUES);
+		m_pointMap->m_needRemeshing = true;
+		m_pointMap->setMapped(false);
 	}
 private:
 	vtkSmartPointer<vtkDataArray> m_newValues;
@@ -251,23 +188,21 @@ public:
 
 		m_editedPoint = editedPoint;
 	}
-	void undo() {
-		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_oldX, m_oldY, 0);
-		m_pointMap->vtkGrid()->GetPoints()->Modified();
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_oldValue);
-		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
-		m_pointMap->m_needRemeshing = true;
-		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
-	}
-	void redo() {
+	void redo() override {
 		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_newX, m_newY, 0);
 		m_pointMap->vtkGrid()->GetPoints()->Modified();
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_newValue);
 		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
+	}
+	void undo() override {
+		m_pointMap->vtkGrid()->GetPoints()->SetPoint(m_editedPoint, m_oldX, m_oldY, 0);
+		m_pointMap->vtkGrid()->GetPoints()->Modified();
+		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->SetTuple1(m_editedPoint, m_oldValue);
+		m_pointMap->vtkGrid()->GetPointData()->GetArray(VALUES)->Modified();
+		m_pointMap->m_needRemeshing = true;
+		m_pointMap->setMapped(false);
 	}
 private:
 	double m_newX;
@@ -347,25 +282,23 @@ public:
 			newvalues->InsertNextValue(value);
 		}
 	}
-	void undo() {
-		m_pmap->setPoints(oldpoints, oldvalues);
-		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->setMapped(false);
-		this->m_pmap->renderGraphicsView();
-	}
-	void redo() {
+	void redo() override {
 		m_pmap->setPoints(newpoints, newvalues);
 		this->m_pmap->setMapped(false);
 		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->renderGraphicsView();
+	}
+	void undo() override {
+		m_pmap->setPoints(oldpoints, oldvalues);
+		this->m_pmap->m_needRemeshing = true;
+		this->m_pmap->setMapped(false);
 	}
 private:
-	GeoDataPointmap* m_pmap;
-	GeoDataPointmapAddPointDialog* m_iPoints;
 	vtkSmartPointer<vtkPoints> newpoints;
 	vtkSmartPointer<vtkDoubleArray> newvalues;
 	vtkSmartPointer<vtkPoints> oldpoints;
 	vtkSmartPointer<vtkDoubleArray> oldvalues;
+	GeoDataPointmapAddPointDialog* m_iPoints;
+	GeoDataPointmap* m_pmap;
 };
 
 class GeoDataPointmap::AddInterpolatePointsCommand : public QUndoCommand
@@ -405,17 +338,15 @@ public:
 			newvalues->InsertNextValue(value);
 		}
 	}
-	void undo() {
-		m_pmap->setPoints(oldpoints, oldvalues);
-		this->m_pmap->m_needRemeshing = true;
-		this->m_pmap->setMapped(false);
-		this->m_pmap->renderGraphicsView();
-	}
-	void redo() {
+	void redo() override {
 		m_pmap->setPoints(newpoints, newvalues);
 		this->m_pmap->m_needRemeshing = true;
 		this->m_pmap->setMapped(false);
-		this->m_pmap->renderGraphicsView();
+	}
+	void undo() override {
+		m_pmap->setPoints(oldpoints, oldvalues);
+		this->m_pmap->m_needRemeshing = true;
+		this->m_pmap->setMapped(false);
 	}
 private:
 	GeoDataPointmap* m_pmap;
@@ -433,7 +364,7 @@ public:
 		m_breakLine = new GeoDataPointmapBreakLine(parent);
 		m_pointMap = parent;
 	}
-	void redo() {
+	void redo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meBreakLineAddNotPossible;
 		m_breakLine->setActive(true);
 		m_pointMap->m_activeBreakLine = m_breakLine;
@@ -443,9 +374,8 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meNormal;
 		m_breakLine->setActive(false);
 		m_pointMap->m_activeBreakLine = 0;
@@ -454,7 +384,6 @@ public:
 		m_pointMap->updateMouseCursor(m_pointMap->graphicsView());
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
 private:
 	GeoDataPointmapBreakLine* m_breakLine;
@@ -472,7 +401,7 @@ public:
 		m_breakLine = parent->m_activeBreakLine;
 		m_pointMap = parent;
 	}
-	void redo() {
+	void redo() override {
 		QVector<vtkIdType> indices = m_breakLine->vertexIndices();
 		if (indices.count() > 0) {
 			m_oldPoint = indices.last();
@@ -489,9 +418,8 @@ public:
 		m_breakLine->setVertexIndices(indices);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		QVector<vtkIdType> indices = m_breakLine->vertexIndices();
 		if (m_preview) {
 			indices.pop_back();
@@ -510,7 +438,6 @@ public:
 		m_breakLine->setVertexIndices(indices);
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GeoDataPointmapBreakLineAddPoint");
@@ -543,7 +470,7 @@ public:
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
-	void redo() {
+	void redo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meNormal;
 		m_breakLine->setActive(false);
 		m_pointMap->m_activeBreakLine = 0;
@@ -551,9 +478,8 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meBreakLineAddNotPossible;
 		m_pointMap->m_activeBreakLine = m_breakLine;
 		m_breakLine->setActive(true);
@@ -561,7 +487,6 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
 private:
 	GeoDataPointmapBreakLine* m_breakLine;
@@ -577,7 +502,7 @@ public:
 		m_pointMap = parent;
 		m_breakLine = m_pointMap->m_activeBreakLine;
 	}
-	void redo() {
+	void redo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meNormal;
 		m_breakLine->setActive(false);
 		m_breakLine->setHidden(true);
@@ -587,9 +512,8 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		m_pointMap->m_mouseEventMode = GeoDataPointmap::meBreakLineAddNotPossible;
 		m_pointMap->m_activeBreakLine = m_breakLine;
 		m_breakLine->setActive(true);
@@ -599,7 +523,6 @@ public:
 		m_pointMap->updateActionStatus();
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
-		m_pointMap->renderGraphicsView();
 	}
 private:
 	GeoDataPointmapBreakLine* m_breakLine;
@@ -745,8 +668,6 @@ void GeoDataPointmap::updateShapeData()
 	}
 	m_polyEdgeGrid->SetPoints(m_vtkPolygon->GetPoints());
 	m_polyEdgeGrid->BuildLinks();
-	//m_polyEdgeGrid->GetPointData()->AddArray(m_scalarValues);
-	//m_polyEdgeGrid->GetPointData()->SetActiveScalars("polygonvalue");
 	m_polyEdgeGrid->Modified();
 
 	// Points representation.
@@ -761,8 +682,6 @@ void GeoDataPointmap::updateShapeData()
 		vertexId += 1;
 	}
 	m_polyVertexGrid->SetPoints(m_vtkPolygon->GetPoints());
-	//m_polyVertexGrid->GetPointData()->AddArray(m_scalarValues);
-	//m_polyVertexGrid->GetPointData()->SetActiveScalars("polygonvalue");
 	m_polyVertexGrid->Modified();
 
 }
@@ -777,7 +696,7 @@ public:
 		zposition = zpos;
 		m_pointMap = ptmap;
 	}
-	void redo() {
+	void redo() override {
 		vtkPolygon* pol = m_pointMap->m_vtkInterpPolygon;
 		m_pointMap->m_vtkInterpValue->InsertNextValue(zposition);
 		if (m_keyDown) {
@@ -794,9 +713,8 @@ public:
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
 		m_pointMap->updateInterpShapeData();
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		vtkPolygon* pol = m_pointMap->m_vtkInterpPolygon;
 		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
@@ -811,7 +729,6 @@ public:
 		m_pointMap->m_needRemeshing = true;
 		m_pointMap->setMapped(false);
 		m_pointMap->updateInterpShapeData();
-		m_pointMap->renderGraphicsView();
 	}
 	bool mergeWith(const QUndoCommand* other) {
 		const InterpolateLineAddPointCommand* comm = dynamic_cast<const InterpolateLineAddPointCommand*>(other);
@@ -842,7 +759,7 @@ public:
 		m_newPoint = QVector2D(dx, dy);
 		m_pointMap = ptmap;
 	}
-	void redo() {
+	void redo() override {
 		vtkPolygon* pol = m_pointMap->m_vtkPolygon;
 		if (m_keyDown) {
 			// add new point.
@@ -856,9 +773,8 @@ public:
 		}
 		pol->Modified();
 		m_pointMap->updateShapeData();
-		m_pointMap->renderGraphicsView();
 	}
-	void undo() {
+	void undo() override {
 		vtkPolygon* pol = m_pointMap->m_vtkPolygon;
 		if (m_keyDown) {
 			// decrease the number of points. i. e. remove the last point.
@@ -870,7 +786,6 @@ public:
 		}
 		pol->Modified();
 		m_pointMap->updateShapeData();
-		m_pointMap->renderGraphicsView();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GeoDataPMPolygonAddPoint");
@@ -1829,10 +1744,10 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMPolygonPrepare:
 			//adds first point.  point added in meSMPolygon below is then modified on mouse move
-			iRICUndoStack::instance().push(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
 		case meSMPolygon:
 			m_mouseEventMode = meSMPolygon;
-			iRICUndoStack::instance().push(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new AddPointCommand(true, QPoint(event->x(), event->y()), this));
 			break;
 		case meSMInterpPointPrepare: {
 				bool ptduplicate = false;
@@ -1850,7 +1765,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 					}
 				}
 				if (!ptduplicate) {
-					iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
+					pushRenderCommand(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
 					lastInterpPointKnown = true;
 
 					this->m_InterpLineGrid->Modified();
@@ -1864,7 +1779,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		case meSMInterpPoint:
 			break;
 		case meSMInterpCtrlPoint:
-			iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
+			pushRenderCommand(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
 			lastInterpPointKnown = false;
 			this->m_InterpLineGrid->BuildLinks();
 			this->m_InterpLineGrid->Modified();
@@ -1874,16 +1789,14 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meSMAddCtrlPoint:
 			if (this->m_vtkInterpPolygon->GetNumberOfPoints() > 0) {
-				iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(
-																				 true, worldX, worldY, -9999., this));
+				pushRenderCommand(new InterpolateLineAddPointCommand(true, worldX, worldY, -9999., this));
 			}
 			break;
 		case meSMAddPointPrepare:
 			if (this->m_vtkInterpPolygon->GetNumberOfPoints() == 0) {
 				double p[3];
 				this->m_vtkGrid->GetPoint(m_selectedVertexId2, p);
-				iRICUndoStack::instance().push(new InterpolateLineAddPointCommand(
-																				 true, p[0], p[1], this->m_selectedZPos, this));
+				pushRenderCommand(new InterpolateLineAddPointCommand(true, p[0], p[1], this->m_selectedZPos, this));
 				this->m_mouseEventMode = meSMAddCtrlPoint;
 			}
 			break;
@@ -1892,7 +1805,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 			break;
 		case meBreakLineAdd:
 			// add point.
-			iRICUndoStack::instance().push(new BreakLineAddPointCommand(false, m_selectedVertexId2, this));
+			pushRenderCommand(new BreakLineAddPointCommand(false, m_selectedVertexId2, this));
 			break;
 		case meBreakLineRemoveNotPossible:
 			// do nothing.
@@ -1972,7 +1885,7 @@ void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 		renderGraphicsView();
 		break;
 	case meSMPolygon:
-		iRICUndoStack::instance().push(new AddPointCommand(false, QPoint(event->x(), event->y()), this));
+		pushRenderCommand(new AddPointCommand(false, QPoint(event->x(), event->y()), this));
 		break;
 	case meSMInterpPoint:
 	case meSMInterpPointPrepare:
@@ -2004,7 +1917,7 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 	} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 		this->finishInterpPoint();
 	} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
-		iRICUndoStack::instance().push(new BreakLineFinishDefinitionCommand(this));
+		pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
 	}
 	this->updateMouseCursor(v);
 }
@@ -2041,7 +1954,7 @@ void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 		} else if (this->m_mouseEventMode == this->meSMInterpPointPrepare || m_mouseEventMode == meSMInterpPoint) {
 			this->finishInterpPoint();
 		} else if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
-			iRICUndoStack::instance().push(new BreakLineFinishDefinitionCommand(this));
+			pushRenderCommand(new BreakLineFinishDefinitionCommand(this));
 		}
 	} else if (event->key() == Qt::Key_Alt) {
 		if (m_mouseEventMode == meSMInterpPointPrepare) {
@@ -2432,7 +2345,7 @@ void GeoDataPointmap::updateMouseEventMode()
 		m_mouseEventMode = meBreakLineAddNotPossible;
 		m_selectedVertexId2 = this->m_vtkPointLocator->FindClosestPoint(tmppos);
 		m_mouseEventMode = meBreakLineAdd;
-		iRICUndoStack::instance().push(new BreakLineAddPointCommand(true, m_selectedVertexId2, this));
+		pushRenderCommand(new BreakLineAddPointCommand(true, m_selectedVertexId2, this));
 		break;
 	case meBreakLineRemove:
 	case meBreakLineRemoveNotPossible:
@@ -2543,7 +2456,7 @@ void GeoDataPointmap::addBreakLine()
 {
 	if (m_mouseEventMode == meBreakLineAdd || m_mouseEventMode == meBreakLineAddNotPossible) {
 		// cancel defining break line.
-		iRICUndoStack::instance().push(new BreakLineCancelDefinitionCommand(this));
+		pushRenderCommand(new BreakLineCancelDefinitionCommand(this));
 	} else {
 		if (m_representation == GeoDataPointmapRepresentationDialog::Surface) {
 			int result = QMessageBox::information(preProcessorWindow(), tr("Information"), tr("When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -2558,7 +2471,7 @@ void GeoDataPointmap::addBreakLine()
 		clearPointsSelection();
 		// add new break line.
 		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key."), "geodatapointmapaddbreakline");
-		iRICUndoStack::instance().push(new BreakLineAddCommand(this));
+		pushRenderCommand(new BreakLineAddCommand(this));
 	}
 }
 
@@ -2618,9 +2531,9 @@ void GeoDataPointmap::editPoints()
 	if (dialog.exec() != QDialog::Accepted) {return;}
 	QVector<vtkIdType> selectedV = selectedVertices();
 	if (selectedV.count() == 1) {
-		iRICUndoStack::instance().push(new EditSinglePointCommand(dialog.pointX(), dialog.pointY(), dialog.value(), selectedV[0], this));
+		pushRenderCommand(new EditSinglePointCommand(dialog.pointX(), dialog.pointY(), dialog.value(), selectedV[0], this));
 	} else {
-		iRICUndoStack::instance().push(new EditPointsCommand(dialog.value(), selectedV, this));
+		pushRenderCommand(new EditPointsCommand(dialog.value(), selectedV, this));
 	}
 }
 
@@ -2641,7 +2554,7 @@ void GeoDataPointmap::editPointsDelete()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
+	pushRenderCommand(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
 	this->clearPointsSelection();
 }
 
@@ -2701,7 +2614,7 @@ void GeoDataPointmap::editPointsLessThan()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
+	pushRenderCommand(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
 }
 
@@ -2726,7 +2639,7 @@ void GeoDataPointmap::editPointsGreaterThan()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
-	iRICUndoStack::instance().push(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
+	pushRenderCommand(new DeletePointsCommand(title.arg(dialog.limitValue()), deletedPoints, this));
 	clearPointsSelection();
 }
 
@@ -3008,7 +2921,7 @@ void GeoDataPointmap::finishAddPoint()
 		GeoDataPointmapAddPointDialog* dialog = new GeoDataPointmapAddPointDialog(this, preProcessorWindow());
 		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new AddPointsCommand(this,dialog));
+			pushRenderCommand(new AddPointsCommand(this, dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();
@@ -3035,7 +2948,7 @@ void GeoDataPointmap::finishInterpPoint()
 		GeoDataPointmapInterpolatePoints* dialog = new GeoDataPointmapInterpolatePoints(this, preProcessorWindow());
 		if (dialog->exec() == QDialog::Accepted) {
 			this->unwindSelectedInterp();
-			iRICUndoStack::instance().push(new AddInterpolatePointsCommand(this,dialog));
+			pushRenderCommand(new AddInterpolatePointsCommand(this,dialog));
 			this->resetSelectedInterp();
 		} else {
 			this->unwindSelectedInterp();

@@ -10,8 +10,8 @@
 #include <QAction>
 #include <QIcon>
 
-GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator()
-	: GeoDataCreator()
+GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
+	GeoDataCreator {}
 {
 	m_caption = tr("River Survey data");
 	m_typeName = "riversurvey";

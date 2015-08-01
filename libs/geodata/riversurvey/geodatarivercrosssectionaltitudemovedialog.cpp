@@ -11,16 +11,16 @@
 #include <QPushButton>
 
 GeoDataRiverCrosssectionAltitudeMoveDialog::GeoDataRiverCrosssectionAltitudeMoveDialog(GeoDataRiverPathPoint* point, int from, int to, GeoDataRiverSurvey* rs, GeoDataRiverSurveyCrosssectionWindow* w, QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataRiverCrosssectionAltitudeMoveDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataRiverCrosssectionAltitudeMoveDialog},
+	m_applyed {false},
+	m_point {point},
+	m_from {from},
+	m_to {to},
+	m_rs {rs},
+	m_window {w}
 {
-	m_applyed = false;
 	ui->setupUi(this);
-	m_point = point;
-	m_from = from;
-	m_to = to;
-	m_rs = rs;
-	m_window = w;
 	setLimits();
 	ui->horizontalEdit->setValue(0);
 	ui->verticalEdit->setValue(0);

@@ -4,8 +4,8 @@
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 
-GeoDataRiverSurveyCrosssectionWindowProjectDataItem::GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemInterface* gitem, QWidget* parentWindow)
-	: ProjectDataItem(gitem)
+GeoDataRiverSurveyCrosssectionWindowProjectDataItem::GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemInterface* gitem, QWidget* parentWindow) :
+	ProjectDataItem {gitem}
 {
 	GeoDataRiverSurveyCrosssectionWindow* w = new GeoDataRiverSurveyCrosssectionWindow(gitem, this, parentWindow);
 	m_window = w;
@@ -34,7 +34,6 @@ void GeoDataRiverSurveyCrosssectionWindowProjectDataItem::requestWindowClose()
 {
 	m_window->groupDataItem()->requestCrosssectionWindowDelete(this);
 }
-
 
 void GeoDataRiverSurveyCrosssectionWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}

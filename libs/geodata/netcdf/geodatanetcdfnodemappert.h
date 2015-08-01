@@ -23,8 +23,9 @@ class GeoDataNetcdfNodeMapperT : public GeoDataNodeMapperT<V, DA>
 {
 
 public:
-	GeoDataNetcdfNodeMapperT(GeoDataCreator* parent)
-		: GeoDataNodeMapperT<V, DA>(parent) {
+	GeoDataNetcdfNodeMapperT(GeoDataCreator* parent) :
+		GeoDataNodeMapperT<V, DA> {parent}
+	{
 		GeoDataNodeMapperT<V, DA>::m_caption = "Raster data node mapper";
 	}
 	GeoDataMapperSetting* initialize(bool* boolMap) override {

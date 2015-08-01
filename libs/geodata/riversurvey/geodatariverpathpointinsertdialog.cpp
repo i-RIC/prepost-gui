@@ -14,8 +14,8 @@
 #include <sstream>
 
 GeoDataRiverPathPointInsertDialog::GeoDataRiverPathPointInsertDialog(GeoDataRiverPathPoint* target, bool insert, GeoDataRiverSurvey* rs, QWidget* parent) :
-	QDialog(parent),
-	ui(new Ui::GeoDataRiverPathPointInsertDialog)
+	QDialog {parent},
+	ui {new Ui::GeoDataRiverPathPointInsertDialog}
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
