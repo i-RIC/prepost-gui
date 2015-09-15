@@ -263,6 +263,9 @@ void PreProcessorGeoDataGroupDataItem::import()
 			m_standardItem->insertRows(0, takenItems);
 			// add the item, in the front.
 			m_childItems.push_front(item);
+			if (i != dataCount - 1) {
+				geodata->informDeselection(dataModel()->graphicsView());
+			}
 			setupConnectionToGeoData(geodata);
 		}
 		if (wDialog != nullptr) {

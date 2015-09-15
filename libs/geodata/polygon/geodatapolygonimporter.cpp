@@ -106,8 +106,6 @@ QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec)
 
 bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 {
-	if (index == 26) { return false; }
-
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	GeoDataPolygon* poly = dynamic_cast<GeoDataPolygon*>(data);
 
