@@ -18,7 +18,7 @@ IntContainer::~IntContainer()
 
 void IntContainer::load(const QDomNode& node)
 {
-	iRIC::getIntAttribute(node, attName(m_name), m_defaultValue);
+	m_value = iRIC::getIntAttribute(node, attName(m_name), m_defaultValue);
 }
 
 void IntContainer::save(QXmlStreamWriter& writer) const

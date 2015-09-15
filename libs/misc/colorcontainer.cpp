@@ -18,7 +18,7 @@ public:
 	{}
 	void load(const QDomNode& node)
 	{
-		iRIC::getColorAttribute(node, attName(m_name), m_defaultValue);
+		m_value = iRIC::getColorAttribute(node, attName(m_name), m_defaultValue);
 	}
 	void save(QXmlStreamWriter& writer) const
 	{

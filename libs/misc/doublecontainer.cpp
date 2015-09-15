@@ -18,7 +18,7 @@ DoubleContainer::~DoubleContainer()
 
 void DoubleContainer::load(const QDomNode& node)
 {
-	iRIC::getDoubleAttribute(node, attName(m_name), m_defaultValue);
+	m_value = iRIC::getDoubleAttribute(node, attName(m_name), m_defaultValue);
 }
 
 void DoubleContainer::save(QXmlStreamWriter& writer) const

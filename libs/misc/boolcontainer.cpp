@@ -18,7 +18,7 @@ BoolContainer::~BoolContainer()
 
 void BoolContainer::load(const QDomNode& node)
 {
-	iRIC::getBooleanAttribute(node, attName(m_name), m_defaultValue);
+	m_value = iRIC::getBooleanAttribute(node, attName(m_name), m_defaultValue);
 }
 
 void BoolContainer::save(QXmlStreamWriter& writer) const
