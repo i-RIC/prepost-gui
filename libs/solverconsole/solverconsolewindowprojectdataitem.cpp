@@ -19,9 +19,10 @@
 #include <QXmlStreamWriter>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
-	ProjectDataItem(parent)
+	ProjectDataItem(parent),
+	m_solverConsoleWindow {w},
+	m_geometry {w->parentWidget(), true}
 {
-	m_solverConsoleWindow = w;
 	setFilename("consoleLog.txt");
 	m_file.setFileName(filename());
 
@@ -43,7 +44,7 @@ void SolverConsoleWindowProjectDataItem::initForSolverDefinition()
 void SolverConsoleWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	// load window geometry
-	ProjectDataItem::loadWindowGeometry(m_solverConsoleWindow->parentWidget(), node);
+	m_geometry.load(node);
 	// load the log of the last run.
 	QDomNode consoleLog = iRIC::getChildNode(node, "Consolelog");
 	QString logText = iRIC::getText(consoleLog);
@@ -65,7 +66,7 @@ void SolverConsoleWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 void SolverConsoleWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// save window geometry
-	ProjectDataItem::writeWindowGeometry(m_solverConsoleWindow->parentWidget(), writer);
+	m_geometry.save(writer);
 	// save background color
 	ProjectDataItem::writeBackgroundColor(m_solverConsoleWindow->backgroundColor(), writer);
 }

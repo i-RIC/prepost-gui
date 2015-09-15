@@ -3,6 +3,7 @@
 
 #include "post2dbirdeye_global.h"
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
+#include <misc/windowgeometrycontainer.h>
 
 class Post2dBirdEyeWindow;
 
@@ -12,9 +13,10 @@ class POST2DBIRDEYE_EXPORT Post2dBirdEyeWindowProjectDataItem : public PostProce
 public:
 	Post2dBirdEyeWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	WindowGeometryContainer m_geometry;
 };
 
 #endif // POST2DBIRDEYEWINDOWPROJECTDATAITEM_H

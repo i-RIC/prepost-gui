@@ -120,10 +120,6 @@ private:
 public:
 	/// @name Utility functions for project.xml I/O. Caution! These functions are deprecated and will be removed!
 	//@{
-	/// Load Window geometry from project.xml.
-	static void loadWindowGeometry(QWidget* w, const QDomNode& node);
-	/// Save window geometry to project.xml.
-	static void writeWindowGeometry(QWidget* w, QXmlStreamWriter& writer);
 	/// Load color attribute from project.xml.
 	static QColor loadColorAttribute(const QString& name, const QDomNode&, const QColor& defaultColor);
 	/// Save color attribute to project.xml.

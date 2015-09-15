@@ -16,8 +16,9 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
-Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
-	: PostProcessorWindowProjectDataItem(parent, parentWindow)
+Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
+	PostProcessorWindowProjectDataItem(parent, parentWindow),
+	m_geometry {parentWindow}
 {
 	Graph2dScatteredWindow* w = new Graph2dScatteredWindow(parentWindow, index, this);
 	m_window = w;
@@ -63,7 +64,7 @@ void Graph2dScatteredWindowProjectDataItem::doLoadFromProjectMainFile(const QDom
 		w->m_dataModel->loadFromProjectMainFile(modelNode);
 		w->m_dataModel->reflectExpandState(w->m_objectBrowser->view());
 	}
-	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
+	m_geometry.load(node);
 }
 
 void Graph2dScatteredWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -72,7 +73,7 @@ void Graph2dScatteredWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	Graph2dScatteredWindow* w = dynamic_cast<Graph2dScatteredWindow*>(m_window);
 	iRIC::setIntAttribute(writer, "index", w->index());
 
-	ProjectDataItem::writeWindowGeometry(w->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	writer.writeStartElement("DataModel");
 	w->m_dataModel->updateExpandState(w->m_objectBrowser->view());

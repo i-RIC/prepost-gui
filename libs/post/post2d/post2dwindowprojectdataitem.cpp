@@ -19,7 +19,8 @@
 #include <vtkRenderer.h>
 
 Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
-	PostProcessorWindowProjectDataItem {parent, parentWindow}
+	PostProcessorWindowProjectDataItem {parent, parentWindow},
+	m_geometry {parentWindow}
 {
 	Post2dWindow* w = new Post2dWindow(parentWindow, index, this);
 	m_window = w;
@@ -56,7 +57,7 @@ void Post2dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
 	/// load Window settings
-	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
+	m_geometry.load(node);
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
 	if (! modelNode.isNull()) {
@@ -82,7 +83,7 @@ void Post2dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);
 
 	/// save Window geometry
-	ProjectDataItem::writeWindowGeometry(w->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	/// save Camera settings
 	writer.writeStartElement("Camera");

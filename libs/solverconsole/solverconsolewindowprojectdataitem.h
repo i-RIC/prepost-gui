@@ -3,6 +3,7 @@
 
 #include "solverconsole_global.h"
 #include <guicore/project/projectdataitem.h>
+#include <misc/windowgeometrycontainer.h>
 #include <QFile>
 #include <QStringList>
 
@@ -36,6 +37,7 @@ protected:
 private:
 	void appendToLines(const QString& line);
 	SolverConsoleWindow* m_solverConsoleWindow;
+	WindowGeometryContainer m_geometry;
 	QStringList m_lines;
 	QFile m_file;
 };

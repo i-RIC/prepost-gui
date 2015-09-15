@@ -3,6 +3,7 @@
 
 #include "pre_global.h"
 #include <guicore/project/projectdataitem.h>
+#include <misc/windowgeometrycontainer.h>
 class PreProcessorWindow;
 class ProjectMainFile;
 
@@ -24,13 +25,13 @@ public:
 	bool gridEdited();
 	void toggleGridEditFlag();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
-private:
 	void createConnections();
+
 	PreProcessorWindow* m_preProcessorWindow;
+	WindowGeometryContainer m_geometry;
 };
 
 #endif // PREPROCESSORWINDOWPROJECTDATAITEM_H

@@ -22,9 +22,10 @@
 #include <vtkRenderer.h>
 
 PreProcessorWindowProjectDataItem::PreProcessorWindowProjectDataItem(PreProcessorWindow* w, ProjectMainFile* parent) :
-	ProjectDataItem(parent)
+	ProjectDataItem(parent),
+	m_preProcessorWindow {w},
+	m_geometry {w->parentWidget()}
 {
-	m_preProcessorWindow = w;
 	m_preProcessorWindow->setBackgroundColor(QColor(Qt::white));
 }
 
@@ -93,7 +94,7 @@ void PreProcessorWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	m_preProcessorWindow->setBackgroundColor(col);
 	/// load Window settings
-	ProjectDataItem::loadWindowGeometry(m_preProcessorWindow->parentWidget(), node);
+	m_geometry.load(node);
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
 	if (! cameraNode.isNull()) {
@@ -114,7 +115,7 @@ void PreProcessorWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 	ProjectDataItem::writeBackgroundColor(m_preProcessorWindow->backgroundColor(), writer);
 
 	/// save Window geometry
-	ProjectDataItem::writeWindowGeometry(m_preProcessorWindow->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	/// save Camera settings
 	writer.writeStartElement("Camera");

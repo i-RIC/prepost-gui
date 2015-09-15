@@ -13,11 +13,17 @@ include( ../../paths.pri )
 
 # Input
 HEADERS += arrowsettingcontainer.h \
+           boolcontainer.h \
+           colorcontainer.h \
+           compositecontainer.h \
+           doublecontainer.h \
            doublemappingsetting.h \
            edge.h \
+           enumcontainert.h \
            errormessage.h \
            filesystemfunction.h \
            informationdialog.h \
+           intcontainer.h \
            integerrangecontainer.h \
            interpolator.h \
            iricundostack.h \
@@ -26,53 +32,49 @@ HEADERS += arrowsettingcontainer.h \
            linearinterpolator.h \
            mathsupport.h \
            misc_global.h \
+           opacitycontainer.h \
+           qpointfcontainer.h \
+           simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
+           stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
            timeformat.h \
            versionnumber.h \
+           windowgeometrycontainer.h \
            xmlattributecontainer.h \
            xmlsupport.h \
            zdepthrange.h \
-           ziparchive.h \
-    simplevaluecontainert.h \
-    intcontainer.h \
-    boolcontainer.h \
-    stringcontainer.h \
-    doublecontainer.h \
-    colorcontainer.h \
-    enumcontainert.h \
-    compositecontainer.h \
-    opacitycontainer.h \
-    qpointfcontainer.h
+           ziparchive.h
 FORMS += informationdialog.ui slowmotionspeededitdialog.ui
 SOURCES += arrowsettingcontainer.cpp \
+           boolcontainer.cpp \
+           colorcontainer.cpp \
+           compositecontainer.cpp \
+           doublecontainer.cpp \
            errormessage.cpp \
            filesystemfunction.cpp \
            informationdialog.cpp \
+           intcontainer.cpp \
            integerrangecontainer.cpp \
            iricundostack.cpp \
            lastiodirectory.cpp \
            latitudelongitude.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
+           opacitycontainer.cpp \
+           qpointfcontainer.cpp \
            slowmotionspeededitdialog.cpp \
+           stringcontainer.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
            timeformat.cpp \
            versionnumber.cpp \
+           windowgeometrycontainer.cpp \
            xmlattributecontainer.cpp \
            xmlsupport.cpp \
            zdepthrange.cpp \
-           ziparchive.cpp \
-    intcontainer.cpp \
-    boolcontainer.cpp \
-    stringcontainer.cpp \
-    doublecontainer.cpp \
-    colorcontainer.cpp \
-    compositecontainer.cpp \
-    opacitycontainer.cpp \
-    qpointfcontainer.cpp
+           ziparchive.cpp
 TRANSLATIONS += languages/iricMisc_es_ES.ts \
                 languages/iricMisc_fr_FR.ts \
                 languages/iricMisc_id_ID.ts \

@@ -14,7 +14,8 @@
 #include <vtkRenderer.h>
 
 Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
-	PostProcessorWindowProjectDataItem {parent, parentWindow}
+	PostProcessorWindowProjectDataItem {parent, parentWindow},
+	m_geometry {parentWindow}
 {
 	Post3dWindow* w = new Post3dWindow(parentWindow, index, this);
 	m_window = w;
@@ -42,7 +43,7 @@ void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
 	/// load Window settings
-	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
+	m_geometry.load(node);
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
 	if (! cameraNode.isNull()) {
@@ -67,7 +68,7 @@ void Post3dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);
 
 	/// save Window geometry
-	ProjectDataItem::writeWindowGeometry(w->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	/// save Camera settings
 	writer.writeStartElement("Camera");

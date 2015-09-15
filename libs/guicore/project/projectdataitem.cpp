@@ -179,47 +179,6 @@ void ProjectDataItem::loadExternalData(const QString&)
 void ProjectDataItem::saveExternalData(const QString&)
 {}
 
-void ProjectDataItem::loadWindowGeometry(QWidget* w, const QDomNode& node)
-{
-	QDomElement elem = node.toElement();
-	QPoint pos;
-	pos.setX(elem.attribute("left").toInt());
-	pos.setY(elem.attribute("top").toInt());
-	w->move(pos);
-	QSize size;
-	size.setWidth(elem.attribute("width").toInt());
-	size.setHeight(elem.attribute("height").toInt());
-	w->resize(size);
-	bool visible = elem.attribute("visible").toInt();
-	w->setVisible(visible);
-
-	bool max = elem.attribute("maximized").toInt();
-	if (max) {
-		w->showMaximized();
-	}
-}
-
-void ProjectDataItem::writeWindowGeometry(QWidget* w, QXmlStreamWriter& writer)
-{
-	QString tmp;
-	// visibility
-	tmp.setNum(w->isVisible());
-	writer.writeAttribute("visible", tmp);
-	// maximized
-	tmp.setNum(w->isMaximized());
-	writer.writeAttribute("maximized", tmp);
-	// rect
-	QRect rect = w->frameGeometry();
-	tmp.setNum(rect.left());
-	writer.writeAttribute("left", tmp);
-	tmp.setNum(rect.top());
-	writer.writeAttribute("top", tmp);
-	tmp.setNum(rect.width());
-	writer.writeAttribute("width", tmp);
-	tmp.setNum(rect.height());
-	writer.writeAttribute("height", tmp);
-}
-
 QColor ProjectDataItem::loadColorAttribute(const QString& name, const QDomNode& node, const QColor& defaultColor)
 {
 	QString colval = node.toElement().attribute(name, defaultColor.name());

@@ -16,7 +16,8 @@
 #include <vtkRenderer.h>
 
 Post2dBirdEyeWindowProjectDataItem::Post2dBirdEyeWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
-	PostProcessorWindowProjectDataItem {parent, parentWindow}
+	PostProcessorWindowProjectDataItem {parent, parentWindow},
+	m_geometry {parentWindow}
 {
 	Post2dBirdEyeWindow* w = new Post2dBirdEyeWindow(parentWindow, index, this);
 	m_window = w;
@@ -46,7 +47,7 @@ void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
 	/// load Window settings
-	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
+	m_geometry.load(node);
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
 	if (! cameraNode.isNull()) {
@@ -71,7 +72,7 @@ void Post2dBirdEyeWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);
 
 	/// save Window geometry
-	ProjectDataItem::writeWindowGeometry(w->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	/// save Camera settings
 	writer.writeStartElement("Camera");

@@ -14,8 +14,9 @@
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
-Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow)
-	: PostProcessorWindowProjectDataItem(parent, parentWindow)
+Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
+	PostProcessorWindowProjectDataItem(parent, parentWindow),
+	m_geometry {parentWindow}
 {
 	Graph2dHybridWindow* w = new Graph2dHybridWindow(parentWindow, index, this);
 	m_window = w;
@@ -66,7 +67,7 @@ void Graph2dHybridWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 		w->controlWidget()->loadFromProjectMainFile(widgetNode);
 	}
 
-	ProjectDataItem::loadWindowGeometry(w->parentWidget(), node);
+	m_geometry.load(node);
 }
 
 void Graph2dHybridWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -75,7 +76,7 @@ void Graph2dHybridWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(m_window);
 	iRIC::setIntAttribute(writer, "index", w->index());
 
-	ProjectDataItem::writeWindowGeometry(w->parentWidget(), writer);
+	m_geometry.save(writer);
 
 	writer.writeStartElement("DataModel");
 	w->m_dataModel->updateExpandState(w->m_objectBrowser->view());

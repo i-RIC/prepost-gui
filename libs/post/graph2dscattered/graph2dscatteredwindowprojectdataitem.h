@@ -3,6 +3,7 @@
 
 #include "graph2dscattered_global.h"
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
+#include <misc/windowgeometrycontainer.h>
 
 class Graph2dScatteredWindow;
 
@@ -13,9 +14,10 @@ public:
 	Graph2dScatteredWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow);
 	bool setupInitialSetting();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	WindowGeometryContainer m_geometry;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWPROJECTDATAITEM_H
