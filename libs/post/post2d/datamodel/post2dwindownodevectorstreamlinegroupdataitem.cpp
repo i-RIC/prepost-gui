@@ -26,7 +26,7 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
-	CompositeContainer {&currentSolution, &regionMode},
+	CompositeContainer ({&currentSolution, &regionMode}),
 	currentSolution {"solution"},
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}

@@ -5,7 +5,7 @@
 #include <QSettings>
 
 GridShapeEditDialog::Setting::Setting() :
-	CompositeContainer {&color, &shape, &indexVisible, &indexColor},
+	CompositeContainer ({&color, &shape, &indexVisible, &indexColor}),
 	color {"color"},
 	shape {"shape", GridShapeEditDialog::Outline},
 	indexVisible {"indexVisible", false},

@@ -15,7 +15,7 @@ const int ScalarBarSetting::DEFAULT_NUMOFLABELS = 8;
 const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%-#6.3g";
 
 ScalarBarSetting::ScalarBarSetting() :
-	CompositeContainer{&visible, &orientation, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat},
+	CompositeContainer({&visible, &orientation, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat}),
 	visible {"visible", true},
 	orientation {"orientation", Orientation::Vertical},
 	numberOfLabels {"numberOfLabels", DEFAULT_NUMOFLABELS},

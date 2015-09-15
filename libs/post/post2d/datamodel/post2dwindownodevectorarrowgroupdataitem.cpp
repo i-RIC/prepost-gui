@@ -41,8 +41,8 @@ const double Post2dWindowNodeVectorArrowGroupDataItem::MINLIMIT = 1.0E-6;
 
 Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
 	CompositeContainer
-		{&scalarValueName, &currentSolution, &color,&oldCameraScale, &scaleFactor, &regionMode,
-		 &mapping, &legendMode, &lengthMode, &standardValue, &legendLength, &minimumValue, &arrowSetting},
+		({&scalarValueName, &currentSolution, &color,&oldCameraScale, &scaleFactor, &regionMode,
+		 &mapping, &legendMode, &lengthMode, &standardValue, &legendLength, &minimumValue, &arrowSetting}),
 	scalarValueName {"scalarValueName"},
 	currentSolution {"solution"},
 	color {"color"},

@@ -23,7 +23,7 @@ class GeoDataPolygonCellMapperT : public GeoDataCellMapperT<V, DA>
 
 public:
 	GeoDataPolygonCellMapperT(GeoDataCreator* parent) :
-		GeoDataCellMapperT<V, DA> {parent}
+		GeoDataCellMapperT<V, DA> (parent)
 	{
 		GeoDataCellMapperT<V, DA>::m_caption = "Polygon cell mapper";
 	}

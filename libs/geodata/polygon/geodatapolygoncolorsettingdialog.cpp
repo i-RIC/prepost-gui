@@ -3,7 +3,7 @@
 #include "geodatapolygoncolorsettingdialog.h"
 
 GeoDataPolygonColorSettingDialog::Setting::Setting() :
-	CompositeContainer {&color, &opacity, &mapping},
+	CompositeContainer ({&color, &opacity, &mapping}),
 	color {"color"},
 	opacity {},
 	mapping {"mapping", Value}

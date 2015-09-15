@@ -24,7 +24,7 @@ class GeoDataNetcdfNodeMapperT : public GeoDataNodeMapperT<V, DA>
 
 public:
 	GeoDataNetcdfNodeMapperT(GeoDataCreator* parent) :
-		GeoDataNodeMapperT<V, DA> {parent}
+		GeoDataNodeMapperT<V, DA> (parent)
 	{
 		GeoDataNodeMapperT<V, DA>::m_caption = "Raster data node mapper";
 	}

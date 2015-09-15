@@ -20,7 +20,7 @@ class POSTBASEDLL_EXPORT PostParticleBasicPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	struct Setting : public CompositeContainer
+	struct POSTBASEDLL_EXPORT Setting : public CompositeContainer
 	{
 		/// Constructor
 		Setting();

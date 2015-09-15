@@ -14,7 +14,7 @@
 #include <vtkTextProperty.h>
 
 PostTimeDataItem::Setting::Setting() :
-	CompositeContainer {&timeFormat, &color},
+	CompositeContainer ({&timeFormat, &color}),
 	timeFormat {"format", TimeFormat::Format::Second},
 	color {"color", Qt::black}
 {}

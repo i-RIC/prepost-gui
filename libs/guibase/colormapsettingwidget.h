@@ -41,7 +41,7 @@ public:
 		Custom       ///< Custom setting
 	};
 	/// Container for custom colormap setting
-	class CustomSetting
+	class GUIBASEDLL_EXPORT CustomSetting
 	{
 
 	public:

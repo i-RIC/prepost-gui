@@ -29,6 +29,7 @@ public:
 
 	/// @name Operators
 	DoubleContainer& operator=(double val);
+	DoubleContainer& operator-=(double val);
 
 private:
 	void copyValue(const XmlAttributeContainer& c) override;

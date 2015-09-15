@@ -31,6 +31,7 @@ public:
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
 	QString currentSolution() const {return m_setting.currentSolution;}
+	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();

@@ -1,6 +1,8 @@
 #ifndef STRUCTUREDGRIDREGION_H
 #define STRUCTUREDGRIDREGION_H
 
+#include "guibase_global.h"
+
 #include <misc/intcontainer.h>
 #include <misc/compositecontainer.h>
 
@@ -10,7 +12,7 @@ class StructuredGridRegion
 
 public:
 	/// Two-dimensional structured grid range
-	struct Range2d : public CompositeContainer
+	struct GUIBASEDLL_EXPORT Range2d : public CompositeContainer
 	{
 		Range2d();
 
@@ -21,7 +23,7 @@ public:
 	};
 
 	/// Three-dimensional structured grid range
-	struct Range3d : public CompositeContainer
+	struct GUIBASEDLL_EXPORT Range3d : public CompositeContainer
 	{
 		Range3d();
 

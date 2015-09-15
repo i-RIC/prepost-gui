@@ -35,7 +35,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
-	CompositeContainer {&currentSolution, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode},
+	CompositeContainer ({&currentSolution, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode}),
 	currentSolution {"solution"},
 	timeMode {"timeMode", tmNormal},
 	timeSamplingRate {"timeSamplingRate", 2},

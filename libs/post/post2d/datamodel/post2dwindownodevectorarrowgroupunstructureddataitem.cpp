@@ -17,7 +17,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::Setting() :
-	CompositeContainer {&samplingMode, &samplingRate, &samplingNumber},
+	CompositeContainer ({&samplingMode, &samplingRate, &samplingNumber}),
 	samplingMode {"samplingMode", smAll},
 	samplingRate {"samplingRate", 2},
 	samplingNumber {"samplingNumber", 100}

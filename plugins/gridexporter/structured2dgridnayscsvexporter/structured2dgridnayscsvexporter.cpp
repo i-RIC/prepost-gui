@@ -6,12 +6,11 @@
 #include <QObject>
 #include <QFile>
 #include <QTextStream>
+#include <QVector2D>
 
 Structured2DGridNaysCSVExporter::Structured2DGridNaysCSVExporter()
 	: QObject(), GridExporterInterface()
-{
-
-}
+{}
 
 QString Structured2DGridNaysCSVExporter::caption() const
 {

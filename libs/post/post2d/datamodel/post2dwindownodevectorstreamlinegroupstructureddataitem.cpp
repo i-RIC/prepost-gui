@@ -17,7 +17,7 @@
 #include <vtkStructuredGrid.h>
 
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting() :
-	CompositeContainer {&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &width},
+	CompositeContainer ({&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &width}),
 	range {},
 	spaceMode {"spaceMode", smNormal},
 	spaceSamplingRate {"spaceSamplingRate", 2},
@@ -155,12 +155,12 @@ class Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SetSettingCommand
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting>& settings, Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* item) :
-		QUndoCommand {QObject::tr("Update Streamline Setting")},
+		QUndoCommand(QObject::tr("Update Streamline Setting")),
 		m_newSetting {s},
-		m_newStSettings {settings},
+		m_newStSettings (settings),
 		m_oldEnabled {item->isEnabled()},
 		m_oldSetting {item->m_setting},
-		m_oldStSettings {item->m_stSettings},
+		m_oldStSettings (item->m_stSettings),
 		m_item {item}
 	{}
 	void redo() {

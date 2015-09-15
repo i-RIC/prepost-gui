@@ -29,7 +29,7 @@ public:
 		Wireframe   ///< Show all grid cell lines
 	};
 
-	struct Setting : public CompositeContainer
+	struct GUIBASEDLL_EXPORT Setting : public CompositeContainer
 	{
 		Setting();
 

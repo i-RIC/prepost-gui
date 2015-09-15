@@ -43,7 +43,7 @@
 #include <vtkTextProperty.h>
 
 MeasuredDataPointGroupDataItem::Setting::Setting() :
-	CompositeContainer {&numberOfDivisions, &currentMeasuredValue, &contour, &fillUpper, &fillLower, &pointSize, &opacity},
+	CompositeContainer ({&numberOfDivisions, &currentMeasuredValue, &contour, &fillUpper, &fillLower, &pointSize, &opacity}),
 	numberOfDivisions {"numberOfDivisions", DEFAULT_NUMOFDIV},
 	currentMeasuredValue {"solution"},
 	contour {"contour", ContourSettingWidget::Points},

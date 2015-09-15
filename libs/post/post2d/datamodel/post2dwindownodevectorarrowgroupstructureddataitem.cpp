@@ -20,7 +20,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::Setting() :
-	CompositeContainer {&iSampleRate, &jSampleRate, &range},
+	CompositeContainer ({&iSampleRate, &jSampleRate, &range}),
 	iSampleRate {"iSampleRate", 1},
 	jSampleRate {"jSampleRate", 1},
 	range {}

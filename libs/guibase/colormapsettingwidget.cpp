@@ -7,7 +7,7 @@
 #include <QXmlStreamWriter>
 
 ColorMapSettingWidget::CustomSetting::CustomColor::CustomColor() :
-	CompositeContainer {&value, &color},
+	CompositeContainer ({&value, &color}),
 	value {"value", 0},
 	color {"color", Qt::black}
 {}

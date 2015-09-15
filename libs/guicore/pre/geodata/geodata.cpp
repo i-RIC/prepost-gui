@@ -23,7 +23,7 @@
 #include <cgnslib.h>
 
 GeoData::Setting::Setting() :
-	CompositeContainer {&name, &caption, &mapped},
+	CompositeContainer ({&name, &caption, &mapped}),
 	name {"name"},
 	caption {"caption"},
 	mapped {"mapped", false}

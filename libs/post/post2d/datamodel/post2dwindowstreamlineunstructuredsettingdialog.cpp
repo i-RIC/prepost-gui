@@ -107,12 +107,12 @@ class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SetSettingComma
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings, Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::tr("Update Streamline Setting")},
+		QUndoCommand(Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::tr("Update Streamline Setting")),
 		m_newSetting {s},
-		m_newUnstSettings {settings},
+		m_newUnstSettings (settings),
 		m_oldEnabled {item->isEnabled()},
 		m_oldSetting {item->m_setting},
-		m_oldUnstSettings {item->m_unstSettings},
+		m_oldUnstSettings (item->m_unstSettings),
 		m_item {item}
 	{}
 	void redo() {

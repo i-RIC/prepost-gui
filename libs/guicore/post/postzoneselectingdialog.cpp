@@ -65,5 +65,5 @@ QString PostZoneSelectingDialog::gridTypeName() const
 QString PostZoneSelectingDialog::zoneName() const
 {
 	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(currentGridType());
-	list.at(ui->zoneList->currentRow())->zoneName();
+	return list.at(ui->zoneList->currentRow())->zoneName();
 }

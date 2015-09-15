@@ -18,7 +18,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting() :
-	CompositeContainer {&point1, &point2, &pointsSet, &numberOfPoints, &color, &size},
+	CompositeContainer ({&point1, &point2, &pointsSet, &numberOfPoints, &color, &size}),
 	point1 {"point1"},
 	point2 {"point2"},
 	pointsSet {"pointsSet", false},

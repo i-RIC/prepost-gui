@@ -6,13 +6,13 @@ class ColorContainer::Impl : public SimpleValueContainerT<QColor>
 {
 public:
 	Impl(const QString& name) :
-		SimpleValueContainerT<QColor> {name, Qt::black}
+		SimpleValueContainerT<QColor> (name, Qt::black)
 	{}
 	Impl(const QString& name, const QColor& defaultVal) :
-		SimpleValueContainerT<QColor> {name, defaultVal}
+		SimpleValueContainerT<QColor> (name, defaultVal)
 	{}
 	Impl(const Impl& i) :
-		SimpleValueContainerT<QColor> {i}
+		SimpleValueContainerT<QColor> (i)
 	{}
 	~Impl()
 	{}
@@ -37,7 +37,7 @@ ColorContainer::ColorContainer(const QString& name, const QColor& defaultVal) :
 {}
 
 ColorContainer::ColorContainer(const ColorContainer& c) :
-	XmlAttributeContainer {c},
+	XmlAttributeContainer (c),
 	m_impl {new Impl {*(c.m_impl)}}
 {}
 

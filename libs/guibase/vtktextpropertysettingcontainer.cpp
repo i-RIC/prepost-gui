@@ -9,7 +9,7 @@
 #include <vtkTextProperty.h>
 
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
-	CompositeContainer {&m_fontFamily, &m_fontColor, &m_fontSize, &m_isBold, &m_isItalic, &m_isShadow},
+	CompositeContainer({&m_fontFamily, &m_fontColor, &m_fontSize, &m_isBold, &m_isItalic, &m_isShadow}),
 	m_fontFamily {"fontFamily", ffArial},
 	m_fontColor {"fontColor", Qt::black},
 	m_fontSize {"fontSize", 10},

@@ -14,7 +14,7 @@
 #include <vtkRenderer.h>
 
 Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::Setting() :
-	CompositeContainer {&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &size},
+	CompositeContainer ({&range, &spaceMode, &spaceSamplingRate, &spaceDivision, &color, &size}),
 	range {},
 	spaceMode {"spaceMode", smNormal},
 	spaceSamplingRate {"spaceSamplingRate", 2},
@@ -46,12 +46,12 @@ class Post2dWindowNodeVectorParticleGroupStructuredDataItem::SetSettingCommand  
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting>& settings, Post2dWindowNodeVectorParticleGroupStructuredDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorParticleGroupStructuredDataItem::tr("Update Particle Setting")},
+		QUndoCommand (Post2dWindowNodeVectorParticleGroupStructuredDataItem::tr("Update Particle Setting")),
 		m_newSetting {s},
-		m_newStSettings {settings},
+		m_newStSettings (settings),
 		m_oldEnabled {item->isEnabled()},
 		m_oldSetting {item->m_setting},
-		m_oldStSettings {item->m_stSettings},
+		m_oldStSettings (item->m_stSettings),
 		m_item {item}
 	{}
 	void redo() {

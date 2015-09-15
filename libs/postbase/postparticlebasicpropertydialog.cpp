@@ -4,7 +4,7 @@
 #include <QSettings>
 
 PostParticleBasicPropertyDialog::Setting::Setting() :
-	CompositeContainer {&color, &size},
+	CompositeContainer ({&color, &size}),
 	color {"color"},
 	size {"size"}
 {

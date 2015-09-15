@@ -35,7 +35,7 @@
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
 MeasuredDataVectorGroupDataItem::Setting::Setting() :
-	CompositeContainer {&scalarValueName, &solution, &color, &colorMode, &lengthMode, &standardValue, &legendLength, &minimumValue},
+	CompositeContainer ({&scalarValueName, &solution, &color, &colorMode, &lengthMode, &standardValue, &legendLength, &minimumValue}),
 	scalarValueName {"scalarValue", ""},
 	solution {"solution", ""},
 	color {"color", Qt::black},

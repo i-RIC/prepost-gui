@@ -1,6 +1,8 @@
 #ifndef POST2DWINDOWCONTOURSETTING_H
 #define POST2DWINDOWCONTOURSETTING_H
 
+#include "postbase_global.h"
+
 #include <guibase/structuredgridregion.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
@@ -12,7 +14,7 @@
 #include <misc/enumcontainert.h>
 #include <guibase/contoursettingwidget.h>
 
-class Post2dWindowContourSetting : public CompositeContainer
+class POSTBASEDLL_EXPORT Post2dWindowContourSetting : public CompositeContainer
 {
 
 public:

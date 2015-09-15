@@ -23,7 +23,7 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::Setting() :
-	CompositeContainer {&point1, &point2, &pointsSet, &numberOfPoints, &color, &width},
+	CompositeContainer ({&point1, &point2, &pointsSet, &numberOfPoints, &color, &width}),
 	point1 {"point1"},
 	point2 {"point2"},
 	pointsSet {"pointsSet", false},

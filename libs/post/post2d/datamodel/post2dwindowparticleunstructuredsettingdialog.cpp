@@ -140,12 +140,12 @@ class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::SetSettingCommand
 {
 public:
 	SetSettingCommand(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting>& unsts, Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::tr("Update Particle Setting")},
+		QUndoCommand(Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::tr("Update Particle Setting")),
 		m_newSetting {s},
-		m_newUnstSettings {unsts},
+		m_newUnstSettings (unsts),
 		m_oldEnabled {item->isEnabled()},
 		m_oldSetting {item->m_setting},
-		m_oldUnstSettings {item->m_unstSettings},
+		m_oldUnstSettings (item->m_unstSettings),
 		m_item {item}
 	{}
 	void redo() {

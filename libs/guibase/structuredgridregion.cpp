@@ -1,8 +1,7 @@
 #include "structuredgridregion.h"
 
-
 StructuredGridRegion::Range2d::Range2d() :
-	CompositeContainer {&iMin, &iMax, &jMin, &jMax},
+	CompositeContainer ({&iMin, &iMax, &jMin, &jMax}),
 	iMin {"iMin"},
 	iMax {"iMax"},
 	jMin {"jMin"},
@@ -10,7 +9,7 @@ StructuredGridRegion::Range2d::Range2d() :
 {}
 
 StructuredGridRegion::Range3d::Range3d() :
-	CompositeContainer {&iMin, &iMax, &jMin, &jMax, &kMin, &kMax},
+	CompositeContainer ({&iMin, &iMax, &jMin, &jMax, &kMin, &kMax}),
 	iMin {"iMin"},
 	iMax {"iMax"},
 	jMin {"jMin"},
