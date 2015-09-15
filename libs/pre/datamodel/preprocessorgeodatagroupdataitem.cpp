@@ -218,10 +218,15 @@ void PreProcessorGeoDataGroupDataItem::import()
 		wDialog->showProgressBar();
 		connect(wDialog, SIGNAL(canceled()), this, SLOT(cancelImport()));
 		wDialog->show();
+		qApp->processEvents();
 	}
 	// All imports succeeded.
 	QFileInfo finfo(filename);
 	for (int i = 0; i < dataCount; ++i) {
+		if (m_cancelImport) {
+			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
+			goto ERROR;
+		}
 		item = new PreProcessorGeoDataDataItem(this);
 		// first, create an empty geodata.
 		GeoData* geodata = importer->creator()->create(item, m_condition);
@@ -258,11 +263,12 @@ void PreProcessorGeoDataGroupDataItem::import()
 			m_standardItem->insertRows(0, takenItems);
 			// add the item, in the front.
 			m_childItems.push_front(item);
+			setupConnectionToGeoData(geodata);
 		}
 		if (wDialog != nullptr) {
 			wDialog->setProgress(i + 1);
+			qApp->processEvents();
 		}
-		setupConnectionToGeoData(geodata);
 	}
 	if (wDialog != nullptr) {
 		wDialog->hide();

@@ -106,6 +106,11 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 
 	SHPObject* shpo = SHPReadObject(shph, index);
 
+	if (shpo == 0){
+		QMessageBox::warning(w, tr("Warning"), tr("Importing Polygon failed. Could not read data"));
+		return false;
+	}
+
 	// Currently, polygon without holes are supported.
 	QList<QPolygonF> holes;
 	QPolygonF region;

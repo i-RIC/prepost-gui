@@ -47,6 +47,7 @@ GeoDataPolygonAbstractPolygon::~GeoDataPolygonAbstractPolygon()
 bool GeoDataPolygonAbstractPolygon::isVertexSelectable(const QVector2D& pos, double limitdist)
 {
 	m_selectedVertexId = m_edgeGrid->FindPoint(pos.x(), pos.y(), 0.0);
+	if (m_selectedVertexId == 0) {return false;}
 	double point[3];
 	m_vtkPolygon->GetPoints()->GetPoint(m_selectedVertexId, point);
 	QVector2D vertexPos(point[0], point[1]);

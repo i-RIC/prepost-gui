@@ -126,6 +126,7 @@ private slots:
 	void deletePolygon(bool force = false);
 	void editColorSetting();
 	void renderGraphics();
+	void renderGraphics(GeoDataPolygon* polygon);
 	void copy();
 
 protected:

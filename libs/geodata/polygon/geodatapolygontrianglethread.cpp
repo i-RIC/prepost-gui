@@ -9,20 +9,191 @@
 #include <misc/stringtool.h>
 #include <triangle/triangle.h>
 
+#include <QMutexLocker>
+#include <QPointF>
+
 #include <vtkProperty.h>
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
 
-GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread(GeoDataPolygon* parent) :
-	QThread(parent)
-{
-	m_polygon = parent;
-	m_isOutputting = false;
-	m_noDraw = false;
+// namespace for local functions
+namespace {
 
-	m_restart = false;
+void freeTriangleInput(triangulateio* in)
+{
+	delete in->pointlist;
+	delete in->segmentlist;
+	delete in->regionlist;
+	delete in->holelist;
+}
+
+template <typename T>
+void freeMemory(T* memory)
+{
+	if (memory == NULL) {return;}
+	trifree(memory);
+}
+
+void freeTriangleOutput(triangulateio* out)
+{
+	freeMemory(out->pointlist);
+	freeMemory(out->trianglelist);
+}
+
+void clearTrianglateio(triangulateio* io)
+{
+	io->pointlist = NULL;
+	io->pointattributelist = NULL;
+	io->pointmarkerlist = NULL;
+	io->numberofpoints = 0;
+	io->numberofpointattributes = 0;
+	io->trianglelist = NULL;
+	io->triangleattributelist = NULL;
+	io->trianglearealist = NULL;
+	io->neighborlist = NULL;
+	io->numberoftriangles = 0;
+	io->numberofcorners = 0;
+	io->numberoftriangleattributes = 0;
+	io->segmentlist = NULL;
+	io->segmentmarkerlist = NULL;
+	io->numberofsegments = 0;
+	io->holelist = NULL;
+	io->numberofholes = 0;
+	io->regionlist = NULL;
+	io->numberofregions = 0;
+	io->edgelist = NULL;
+	io->edgemarkerlist = NULL;
+	io->normlist = NULL;
+	io->numberofedges = 0;
+}
+
+} // namespace
+
+GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::m_thread = 0;
+
+void GeoDataPolygonTriangleThread::addJob(GeoDataPolygon *polygon, bool noDraw)
+{
+	QMutexLocker locker(&m_mutex);
+	std::list<Job>::iterator it;
+	for (it = m_jobQueue.begin(); it != m_jobQueue.end(); ++it) {
+		if (it->targetPolygon == polygon && it->noDraw == noDraw) {return;}
+	}
+	m_jobQueue.push_back(Job(polygon, noDraw));
+}
+
+void GeoDataPolygonTriangleThread::cancel(GeoDataPolygon* polygon)
+{
+	QMutexLocker locker(&m_mutex);
+	if (m_currentJob == 0) {return;}
+	if (m_currentJob->targetPolygon == polygon) {
+		m_canceled = true;
+	}
+}
+
+bool GeoDataPolygonTriangleThread::isOutputting(GeoDataPolygon *polygon)
+{
+	if (m_currentJob == 0) {return false;}
+	return m_currentJob->targetPolygon == polygon && m_isOutputting;
+}
+
+GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::instance()
+{
+	if (m_thread != 0) {return m_thread;}
+
+	m_thread = new GeoDataPolygonTriangleThread();
+	return m_thread;
+}
+
+void GeoDataPolygonTriangleThread::run()
+{
+	forever {
+		if (m_abort) {return;}
+
+		m_mutex.lock();
+		Job job;
+		if (m_jobQueue.size() > 0) {
+			job = m_jobQueue.front();
+			m_currentJob = &job;
+			m_jobQueue.pop_front();
+		} else {
+			m_currentJob = 0;
+		}
+		m_mutex.unlock();
+
+		if (m_currentJob == 0) {
+			msleep(10);
+			continue;
+		}
+		runTriangle();
+	}
+}
+
+void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset)
+{
+	int pointCount = 0;
+	int segmentCount = 0;
+	int regionCount = 1;
+
+	QPolygonF pol = p->m_gridRegionPolygon->polygon();
+	pointCount += (pol.count() - 1);
+	segmentCount += (pol.count() - 1);
+	*offset = pol.boundingRect().topLeft();
+	for (int i = 0; i < p->m_holePolygons.count(); ++i){
+		pol = p->m_holePolygons[i]->polygon();
+		pointCount += (pol.count() - 1);
+		segmentCount += (pol.count() - 1);
+	}
+	clearTrianglateio(in);
+
+	in->pointlist = new double[pointCount * 2];
+	in->numberofpoints = pointCount;
+	in->segmentlist = new int[segmentCount * 2];
+	in->numberofsegments = segmentCount;
+	in->holelist = new double[p->m_holePolygons.count() * 2];
+	in->numberofholes = p->m_holePolygons.count();
+	in->regionlist = new double[regionCount * 4];
+	in->numberofregions = regionCount;
+
+	pol = p->m_gridRegionPolygon->polygon(*offset);
+	for (int i = 0; i < pol.count() - 1; ++i){
+		*(in->pointlist + i * 2)	 = pol.at(i).x();
+		*(in->pointlist + i * 2 + 1) = pol.at(i).y();
+		*(in->segmentlist + i * 2) = i + 1;
+		*(in->segmentlist + i * 2 + 1) = (i + 1) % (pol.count() - 1) + 1;
+	}
+	QPointF innerP = p->m_gridRegionPolygon->innerPoint(*offset);
+	*(in->regionlist)	 = innerP.x();
+	*(in->regionlist + 1) = innerP.y();
+	*(in->regionlist + 2) = 0;
+	QRectF rect = pol.boundingRect();
+	*(in->regionlist + 3) = rect.width() * rect.height();
+	int pOffset = 2 * (pol.count() - 1);
+	int sOffset = (pol.count() - 1);
+	for (int i = 0; i < p->m_holePolygons.count(); ++i){
+		GeoDataPolygonHolePolygon* hpol = p->m_holePolygons[i];
+		pol = hpol->polygon(*offset);
+		for (int j = 0; j < pol.count() - 1; ++j){
+			*(in->pointlist + j * 2 + pOffset)	 = pol.at(j).x();
+			*(in->pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
+			*(in->segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
+			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
+		}
+		innerP = hpol->innerPoint(*offset);
+		*(in->holelist + i * 2	) = innerP.x();
+		*(in->holelist + i * 2 + 1) = innerP.y();
+		pOffset += 2 * (pol.count() - 1);
+		sOffset += (pol.count() - 1);
+	}
+}
+
+GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread()
+{
+	m_currentJob = 0;
 	m_abort = false;
 	m_canceled = false;
+	m_isOutputting = false;
+
+	start(LowestPriority);
 }
 
 GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
@@ -34,192 +205,42 @@ GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
 	wait();
 }
 
-void GeoDataPolygonTriangleThread::update()
-{
-	QMutexLocker locker(&m_mutex);
-	if (! isRunning()) {
-		start(LowestPriority);
-	} else {
-		m_restart = true;
-		m_runCondition.wait(&m_mutex);
-	}
-}
-
-void GeoDataPolygonTriangleThread::cancel()
-{
-	QMutexLocker locker(&m_mutex);
-	m_canceled = true;
-	m_cancelCondition.wait(&m_mutex);
-}
-
-void GeoDataPolygonTriangleThread::run()
-{
-	forever {
-		runTriangle();
-
-		m_mutex.lock();
-		if (m_canceled) {
-			m_canceled = false;
-			m_cancelCondition.wakeOne();
-		}
-		m_mutex.unlock();
-		while (1) {
-			QMutexLocker locker(&m_mutex);
-			if (m_abort) {
-				return;
-			}
-			if (m_canceled) {
-				m_canceled = false;
-				m_cancelCondition.wakeOne();
-			}
-			if (m_restart) {
-				// restart requested!
-				m_restart = false;
-				break;
-			}
-			locker.unlock();
-			// check every 10 ms.
-			msleep(10);
-		}
-		// running started.
-		m_runCondition.wakeOne();
-
-		// when restart is requested, comes here.
-		// wait for 500 ms before starting the process.
-		for (int i = 0; i < 50 && ! m_canceled; ++i) {
-			msleep(10);
-		}
-	}
-}
-
-
 void GeoDataPolygonTriangleThread::runTriangle()
 {
-	m_polygon->m_grid->Reset();
-	m_polygon->m_grid->Modified();
-	if (! m_polygon->checkCondition()) {
+	GeoDataPolygon* p = m_currentJob->targetPolygon;
+	p->m_grid->Reset();
+	p->m_grid->Modified();
+	if (! p->checkCondition()){
 		return;
 	}
-	QPolygonF pol = m_polygon->m_gridRegionPolygon->polygon();
-	int pointCount = 0;
-	int segmentCount = 0;
-	int regionCount = 1;
-	pointCount += (pol.count() - 1);
-	segmentCount += (pol.count() - 1);
-	QPointF offset = pol.boundingRect().topLeft();
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		pol = m_polygon->m_holePolygons[i]->polygon();
-		pointCount += (pol.count() - 1);
-		segmentCount += (pol.count() - 1);
-	}
+
+	QPointF offset;
 	triangulateio in, out;
 
-	in.pointlist = new double[pointCount * 2];
-	in.pointattributelist = NULL;
-	in.pointmarkerlist = NULL;
-	in.numberofpoints = pointCount;
-	in.numberofpointattributes = 0;
+	setupTriangleInput(&in, p, &offset);
+	clearTrianglateio(&out);
 
-	in.trianglelist = NULL;
-	in.triangleattributelist = NULL;
-	in.trianglearealist = NULL;
-	in.neighborlist = NULL;
-	in.numberoftriangles = 0;
-	in.numberofcorners = 0;
-	in.numberoftriangleattributes = 0;
-
-	in.segmentlist = new int[segmentCount * 2];
-	in.segmentmarkerlist = NULL;
-	in.numberofsegments = segmentCount;
-
-	in.holelist = new double[m_polygon->m_holePolygons.count() * 2];
-	in.numberofholes = m_polygon->m_holePolygons.count();
-
-	in.regionlist = new double[regionCount * 4];
-	in.numberofregions = regionCount;
-
-	in.edgelist = NULL;
-	in.edgemarkerlist = NULL;
-	in.normlist = NULL;
-	in.numberofedges = 0;
-
-	pol = m_polygon->m_gridRegionPolygon->polygon(offset);
-	for (int i = 0; i < pol.count() - 1; ++i) {
-		*(in.pointlist + i * 2)	 = pol.at(i).x();
-		*(in.pointlist + i * 2 + 1) = pol.at(i).y();
-		*(in.segmentlist + i * 2) = i + 1;
-		*(in.segmentlist + i * 2 + 1) = (i + 1) % (pol.count() - 1) + 1;
-	}
-	QPointF innerP = m_polygon->m_gridRegionPolygon->innerPoint(offset);
-	*(in.regionlist)	 = innerP.x();
-	*(in.regionlist + 1) = innerP.y();
-	*(in.regionlist + 2) = 0;
-	QRectF rect = pol.boundingRect();
-	*(in.regionlist + 3) = rect.width() * rect.height();
-	int pOffset = 2 * (pol.count() - 1);
-	int sOffset = (pol.count() - 1);
-	for (int i = 0; i < m_polygon->m_holePolygons.count(); ++i) {
-		GeoDataPolygonHolePolygon* hpol = m_polygon->m_holePolygons[i];
-		pol = hpol->polygon(offset);
-		for (int j = 0; j < pol.count() - 1; ++j) {
-			*(in.pointlist + j * 2 + pOffset)	 = pol.at(j).x();
-			*(in.pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
-			*(in.segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
-			*(in.segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
-		}
-		innerP = hpol->innerPoint(offset);
-		*(in.holelist + i * 2) = innerP.x();
-		*(in.holelist + i * 2 + 1) = innerP.y();
-		pOffset += 2 * (pol.count() - 1);
-		sOffset += (pol.count() - 1);
-	}
-
-	out.pointlist = NULL;
-	out.pointattributelist = NULL;
-	out.pointmarkerlist = NULL;
-	out.trianglelist = NULL;
-	out.triangleattributelist = NULL;
-	out.trianglearealist = NULL;
-	out.neighborlist = NULL;
-	out.segmentlist = NULL;
-	out.segmentmarkerlist = NULL;
-	out.holelist = NULL;
-	out.regionlist = NULL;
-	out.edgelist = NULL;
-	out.edgemarkerlist = NULL;
-	out.normlist = NULL;
-
-	QString argstr;
-	argstr.append("p");
-	argstr.append("D");
-	char* arg = new char[argstr.length() + 1];
-	strcpy(arg, iRIC::toStr(argstr).c_str());
-
-	triangulate(arg, &in, &out, 0);
+	char arg[] = "pD";
+	triangulate(&(arg[0]), &in, &out, 0);
 
 	// free memory
-	delete arg;
-	delete in.pointlist;
-	delete in.segmentlist;
-	delete in.regionlist;
-	delete in.holelist;
-
+	freeTriangleInput(&in);
 	// copy the result to VTK containers.
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
 	points->Allocate(out.numberofpoints);
 	points->SetDataTypeToDouble();
-	for (int i = 0; i < out.numberofpoints; ++i) {
+	for (int i = 0; i < out.numberofpoints; ++i){
 		double v[3];
-		v[0] = *(out.pointlist + i * 2) + offset.x();
+		v[0] = *(out.pointlist + i * 2	) + offset.x();
 		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
 		v[2] = 0;
 		points->InsertNextPoint(v);
 	}
 	m_isOutputting = true;
 
-	m_polygon->m_grid->SetPoints(points);
-	m_polygon->m_grid->Allocate(out.numberoftriangles);
-	for (int i = 0; i < out.numberoftriangles; ++i) {
+	p->m_grid->SetPoints(points);
+	p->m_grid->Allocate(out.numberoftriangles);
+	for (int i = 0; i < out.numberoftriangles; ++i){
 		vtkIdType id1, id2, id3;
 		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
 		id1 = *(out.trianglelist + i * 3) - 1;
@@ -228,20 +249,17 @@ void GeoDataPolygonTriangleThread::runTriangle()
 		tri->GetPointIds()->SetId(0, id1);
 		tri->GetPointIds()->SetId(1, id2);
 		tri->GetPointIds()->SetId(2, id3);
-		m_polygon->m_grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+		p->m_grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 	}
-	m_polygon->m_grid->BuildLinks();
-	m_polygon->m_paintActor->GetProperty()->SetOpacity(m_polygon->m_setting.opacity);
+	p->m_grid->BuildLinks();
+	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
 
-	if (out.pointlist != NULL) {
-		trifree(out.pointlist);
-	}
-	if (out.trianglelist != NULL) {
-		trifree(out.trianglelist);
-	}
-	m_polygon->updateScalarValues();
+	freeTriangleOutput(&out);
+
+	p->updateScalarValues();
 	m_isOutputting = false;
-	if (!(m_abort || m_restart || m_canceled) && (! m_noDraw)) {
-		emit shapeUpdated();
+	if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
+		emit shapeUpdated(m_currentJob->targetPolygon);
 	}
+	m_currentJob = 0;
 }

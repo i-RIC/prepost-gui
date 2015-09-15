@@ -1156,7 +1156,7 @@ void GeoDataPolygon::updateMouseEventMode()
 	graphicsView()->viewportToWorld(dx, dy);
 	QVector2D worldPos(dx, dy);
 	bool shapeUpdating = m_shapeUpdating;
-	shapeUpdating = shapeUpdating || (m_triangleThread != nullptr && m_triangleThread->isOutputting());
+	shapeUpdating = shapeUpdating || (m_triangleThread != nullptr && m_triangleThread->isOutputting(this));
 	switch (m_mouseEventMode) {
 	case meAddVertexNotPossible:
 	case meAddVertexPrepare:
@@ -1710,24 +1710,20 @@ void GeoDataPolygon::updateScalarValues()
 
 void GeoDataPolygon::updateGrid(bool noDraw)
 {
-	if (m_triangleThread != nullptr && m_triangleThread->isOutputting()) {
+	if (m_triangleThread != nullptr && m_triangleThread->isOutputting(this)){
 		// it has already started outputting. Wait until it ends.
-		while (m_triangleThread->isOutputting()) {
+		while (m_triangleThread->isOutputting(this)){
 			m_triangleThread->wait(100);
 		}
 	}
-	if (m_triangleThread == nullptr) {
-		m_triangleThread = new GeoDataPolygonTriangleThread(this);
-		connect(m_triangleThread, SIGNAL(shapeUpdated()), this, SLOT(renderGraphics()));
+	if (m_triangleThread == 0){
+		m_triangleThread = GeoDataPolygonTriangleThread::instance();
+		connect(m_triangleThread, SIGNAL(shapeUpdated(RawDataPolygon*)), this, SLOT(renderGraphics(RawDataPolygon*)));
 	}
-	m_triangleThread->setNoDraw(noDraw);
-	if (! noDraw) {
+	m_triangleThread->addJob(this, noDraw);
+	if (! noDraw){
 		m_paintActor->SetVisibility(0);
 	}
-	if (m_triangleThread->isRunning()) {
-		m_triangleThread->cancel();
-	}
-	m_triangleThread->update();
 }
 
 void GeoDataPolygon::editColorSetting()
@@ -1815,6 +1811,12 @@ void GeoDataPolygon::renderGraphics()
 {
 	m_paintActor->SetVisibility(1);
 	renderGraphicsView();
+}
+
+void GeoDataPolygon::renderGraphics(GeoDataPolygon* polygon)
+{
+	if (polygon != this) {return;}
+	renderGraphics();
 }
 
 GeoDataProxy* GeoDataPolygon::getProxy()
