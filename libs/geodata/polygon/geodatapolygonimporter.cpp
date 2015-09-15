@@ -15,6 +15,14 @@
 
 #include <shapefil.h>
 
+#include <cmath>
+
+namespace {
+
+const double LOCATION_DELTA = 1.0E-6;
+
+} // namespace
+
 const QStringList GeoDataPolygonImporter::fileDialogFilters()
 {
 	QStringList ret;
@@ -98,6 +106,8 @@ QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec)
 
 bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 {
+	if (index == 26) { return false; }
+
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	GeoDataPolygon* poly = dynamic_cast<GeoDataPolygon*>(data);
 
@@ -112,6 +122,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	}
 
 	// Currently, polygon without holes are supported.
+	QList<QPolygonF> polygons;
 	QList<QPolygonF> holes;
 	QPolygonF region;
 	GeoDataPolygonHolePolygon* tmpp = new GeoDataPolygonHolePolygon(poly);
@@ -122,19 +133,38 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 			end = *(shpo->panPartStart + i + 1);
 		}
 		QPolygonF tmppoly;
+		QPointF lastPoint;
 		for (int j = start; j < end; ++j) {
-			tmppoly.append(QPointF(*(shpo->padfX + j), *(shpo->padfY + j)));
+			QPointF point(*(shpo->padfX + j), *(shpo->padfY + j));
+			QPointF diff = lastPoint - point;
+			bool veryNear = (std::fabs(diff.x()) < LOCATION_DELTA && std::fabs(diff.y()) < LOCATION_DELTA);
+			if (j != start && veryNear) {continue;}
+			tmppoly.append(point);
+			lastPoint = point;
 		}
 		if (tmppoly.at(0) != tmppoly.at(tmppoly.count() - 1)) {
 			tmppoly.append(tmppoly.at(0));
 		}
 		tmpp->setPolygon(tmppoly);
-		if (shpo->nParts == 1 || tmpp->isClockwise()) {
-			region = tmppoly;
-		} else {
-			holes.append(tmppoly);
+		polygons.append(tmppoly);
+	}
+	QRectF tmprect;
+	int regionIndex = -1;
+	for (int i = 0; i < polygons.size(); ++i) {
+		QPolygonF pol = polygons.at(i);
+		QRectF rect = pol.boundingRect();
+		bool bigger = (rect.left() <= tmprect.left() && rect.right() >= tmprect.right() && rect.top() <= tmprect.top() && rect.bottom() >= tmprect.bottom());
+		if (i == 0 || bigger) {
+			regionIndex = i;
+			tmprect = rect;
 		}
 	}
+	region = polygons.at(regionIndex);
+	for (int i = 0; i < polygons.size(); ++i) {
+		if (i == regionIndex) {continue;}
+		holes.append(polygons.at(i));
+	}
+
 	delete tmpp;
 	try {
 		poly->setPolygon(region);
