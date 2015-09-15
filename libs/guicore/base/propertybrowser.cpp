@@ -7,7 +7,7 @@ PropertyBrowser::PropertyBrowser(QWidget* parent) :
 	// window properties
 	setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable | QDockWidget::DockWidgetFloatable);
 	setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-	setWindowTitle(tr("Attribute Browser"));
+	setWindowTitle(PropertyBrowser::tr("Attribute Browser"));
 
 	m_view = new PropertyBrowserView(this);
 	setWidget(m_view);

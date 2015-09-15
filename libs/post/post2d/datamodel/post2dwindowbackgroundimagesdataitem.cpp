@@ -21,10 +21,10 @@ Post2dWindowBackgroundImagesDataItem::Post2dWindowBackgroundImagesDataItem(Graph
 	Post2dWindowDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setData(QVariant(tr("BACKGROUNDIMAGES")), Qt::UserRole + 10);
+	m_standardItem->setData(QVariant("BACKGROUNDIMAGES"), Qt::UserRole + 10);
 
-	m_addAction = new QAction(tr("&Add Image"), this);
-	m_deleteAllAction = new QAction(tr("&Delete All"), this);
+	m_addAction = new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Add Image"), this);
+	m_deleteAllAction = new QAction(Post2dWindowBackgroundImagesDataItem::tr("&Delete All"), this);
 
 	connect(m_addAction, SIGNAL(triggered()), projectData()->mainfile(), SLOT(addBackgroundImage()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));

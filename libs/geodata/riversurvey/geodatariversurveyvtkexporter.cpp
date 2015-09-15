@@ -13,7 +13,7 @@
 GeoDataRiverSurveyVTKExporter::GeoDataRiverSurveyVTKExporter(GeoDataCreator* creator) :
 	GeoDataExporter {creator}
 {
-	m_caption = tr("RiverSurvey data");
+	m_caption = GeoDataRiverSurveyVTKExporter::tr("RiverSurvey data");
 }
 
 bool GeoDataRiverSurveyVTKExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* /*pd*/)

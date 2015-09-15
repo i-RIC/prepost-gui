@@ -61,12 +61,12 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 	}
 	m_dialog->setType(m_condition->caption());
 
-	m_editAction = new QAction(tr("&Edit Condition..."), this);
+	m_editAction = new QAction(PreProcessorBCDataItem::tr("&Edit Condition..."), this);
 	connect(m_editAction, SIGNAL(triggered()), this, SLOT(showDialog()));
-	m_assignAction = new QAction(tr("&Assign Condition"), this);
+	m_assignAction = new QAction(PreProcessorBCDataItem::tr("&Assign Condition"), this);
 	m_assignAction->setEnabled(false);
 	connect(m_assignAction, SIGNAL(triggered()), this, SLOT(assignSelectedElements()));
-	m_releaseAction = new QAction(tr("&Release Condition"), this);
+	m_releaseAction = new QAction(PreProcessorBCDataItem::tr("&Release Condition"), this);
 	m_releaseAction->setEnabled(false);
 	connect(m_releaseAction, SIGNAL(triggered()), this, SLOT(releaseSelectedElements()));
 

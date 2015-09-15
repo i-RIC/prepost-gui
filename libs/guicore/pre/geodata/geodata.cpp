@@ -35,7 +35,7 @@ GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGr
 	m_gridRelatedCondition {condition}
 {
 	m_menu = new QMenu(projectData()->mainWindow());
-	m_editNameAction = new QAction(tr("Edit &Name..."), this);
+	m_editNameAction = new QAction(GeoData::tr("Edit &Name..."), this);
 	connect(m_editNameAction, SIGNAL(triggered()), this, SLOT(editName()));
 	mapperFunc = &GeoData::nodeMappers;
 	if (condition != nullptr && condition->position() == SolverDefinitionGridAttribute::CellCenter) {

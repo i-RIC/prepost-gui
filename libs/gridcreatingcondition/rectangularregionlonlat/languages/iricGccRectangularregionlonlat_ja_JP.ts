@@ -17,22 +17,22 @@
 <context>
     <name>GridCreatingConditionRectangularRegionLonLat</name>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="285"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="288"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="285"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="288"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation>格子点数の最大値は %1 です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="353"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="350"/>
+        <location filename="../gridcreatingconditionrectangularregionlonlat.cpp" line="353"/>
         <source>Please define grid region by mouse-dragging.</source>
         <translation>格子領域を、マウスドラッグによって定義してください。</translation>
     </message>

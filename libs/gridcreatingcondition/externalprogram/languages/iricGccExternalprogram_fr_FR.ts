@@ -18,24 +18,24 @@
 <context>
     <name>GridCreatingConditionExternalProgram</name>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="80"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="134"/>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="141"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="135"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="80"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="81"/>
         <source>Grid generation program %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="92"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="93"/>
         <source>Generating grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogram.cpp" line="141"/>
+        <location filename="../gridcreatingconditionexternalprogram.cpp" line="142"/>
         <source>Grid Creation failed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -48,32 +48,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="36"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="37"/>
         <source>&amp;Create Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="129"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="129"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="139"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="139"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="149"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="150"/>
         <source>Unknown error (Error code: %1)</source>
         <translation type="unfinished"></translation>
     </message>

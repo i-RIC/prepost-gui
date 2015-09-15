@@ -39,10 +39,10 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	// setup actions;
-	m_executeMappingAction = new QAction(tr("Execute mapping"), this);
+	m_executeMappingAction = new QAction(PreProcessorGridAttributeMappingSettingTopDataItem::tr("Execute mapping"), this);
 	connect(m_executeMappingAction, SIGNAL(triggered()), this, SLOT(executeMapping()));
 
-	m_customMappingAction = new QAction(tr("&Execute..."), this);
+	m_customMappingAction = new QAction(PreProcessorGridAttributeMappingSettingTopDataItem::tr("&Execute..."), this);
 	connect(m_customMappingAction, SIGNAL(triggered()), this, SLOT(customMapping()));
 
 	// setup child items;

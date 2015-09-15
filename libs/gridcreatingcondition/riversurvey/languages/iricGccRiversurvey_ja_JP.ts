@@ -8,12 +8,12 @@
         <translation type="vanished">河川測量データから生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="20"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
         <source>Create grid from river survey data</source>
         <translation>河川測量データから生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
@@ -21,12 +21,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 注意: このアルゴリズムは、河川測量データが読み込まれている時のみ利用できます! このアルゴリズムに切り替えるより先に、河川測量データを読み込んでください。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation>地理情報に河川測量データが読み込まれていないため、このアルゴリズムは利用できません。</translation>
     </message>

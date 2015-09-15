@@ -29,12 +29,12 @@ Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(Graphic
 	Post2dWindowDataItem {tr("Measured Values"), QIcon(":/libs/guibase/images/iconFolder.png"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	m_standardItem->setData(QVariant(tr("MEASUREDDATAS")), Qt::UserRole + 10);
+	m_standardItem->setData(QVariant("MEASUREDDATAS"), Qt::UserRole + 10);
 	setSubPath("measureddata");
 
 	setupActors();
 
-	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import..."), this);
+	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), Post2dWindowMeasuredDataTopDataItem::tr("&Import..."), this);
 
 	connect(m_importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
 	connect(projectData()->mainfile(), SIGNAL(measuredDataAdded()), this, SLOT(addChildItem()));

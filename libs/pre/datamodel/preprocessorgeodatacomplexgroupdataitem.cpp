@@ -35,9 +35,9 @@ PreProcessorGeoDataComplexGroupDataItem::PreProcessorGeoDataComplexGroupDataItem
 	m_undefinedColor {Qt::gray}
 {
 	m_dialog = new GridComplexConditionDialog(this, iricMainWindow(), mainWindow());
-	m_dialog->setWindowTitle(tr("%1 Group Setting").arg(m_condition->caption()));
+	m_dialog->setWindowTitle(PreProcessorGeoDataComplexGroupDataItem::tr("%1 Group Setting").arg(m_condition->caption()));
 
-	m_editGroupAction = new QAction(tr("Edit &Groups..."), this);
+	m_editGroupAction = new QAction(PreProcessorGeoDataComplexGroupDataItem::tr("Edit &Groups..."), this);
 	connect(m_editGroupAction, SIGNAL(triggered()), this, SLOT(showEditGroupDialog()));
 	createDefaultGroup();
 	addBackground();

@@ -68,19 +68,19 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 
 	m_addSignalMapper = nullptr;
 
-	m_importAction = new QAction(tr("&Import..."), this);
+	m_importAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Import..."), this);
 	m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
 	m_importAction->setEnabled(importAvailable());
 
-	m_deleteAllAction = new QAction(tr("Delete &All..."), this);
+	m_deleteAllAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Delete &All..."), this);
 	m_deleteAllAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 
-	m_exportAllPolygonsAction = new QAction(tr("Export All Polygons..."), this);
+	m_exportAllPolygonsAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this);
 	m_exportAllPolygonsAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 
-	m_editColorMapAction = new QAction(tr("&Color Setting..."), this);
+	m_editColorMapAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this);
 	m_editColorMapAction->setIcon(QIcon(":/libs/guibase/images/iconColor.png"));
-	m_setupScalarBarAction = new QAction(tr("Set Up Scalarbar..."), this);
+	m_setupScalarBarAction = new QAction(PreProcessorGeoDataGroupDataItem::tr("Set Up Scalarbar..."), this);
 
 	connect(m_importAction, SIGNAL(triggered()), this, SLOT(import()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));

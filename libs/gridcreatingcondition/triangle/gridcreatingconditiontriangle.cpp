@@ -69,37 +69,37 @@ GridCreatingConditionTriangle::GridCreatingConditionTriangle(ProjectDataItem* pa
 	m_selectedPolygon = m_gridRegionPolygon;
 	m_selectedLine = nullptr;
 
-	m_defineModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonRegion.png"), tr("Define Grid Region"), this);
+	m_defineModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonRegion.png"), GridCreatingConditionTriangle::tr("Define Grid Region"), this);
 	m_defineModeAction->setCheckable(true);
 	m_defineModeAction->setDisabled(true);
-	m_refineModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonRefine.png"), tr("Add &Refinement Region"), this);
+	m_refineModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonRefine.png"), GridCreatingConditionTriangle::tr("Add &Refinement Region"), this);
 	m_refineModeAction->setCheckable(true);
 	m_refineModeAction->setDisabled(true);
 	connect(m_refineModeAction, SIGNAL(triggered()), this, SLOT(addRefinementPolygon()));
-	m_holeModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.png"), tr("Add &Hole Region"), this);
+	m_holeModeAction = new QAction(QIcon(":/libs/guibase/images/iconPolygonHole.png"), GridCreatingConditionTriangle::tr("Add &Hole Region"), this);
 	m_holeModeAction->setCheckable(true);
 	m_holeModeAction->setDisabled(true);
 	connect(m_holeModeAction, SIGNAL(triggered()), this, SLOT(addHolePolygon()));
-	m_divlineModeAction = new QAction(QIcon(":/libs/guibase/images/iconAddDivLine.png"), tr("Add &Break Line"), this);
+	m_divlineModeAction = new QAction(QIcon(":/libs/guibase/images/iconAddDivLine.png"), GridCreatingConditionTriangle::tr("Add &Break Line"), this);
 	m_divlineModeAction->setCheckable(true);
 	m_divlineModeAction->setDisabled(true);
 	connect(m_divlineModeAction, SIGNAL(triggered()), this, SLOT(addDivisionLine()));
 
-	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), tr("&Add Vertex"), this);
+	m_addVertexAction = new QAction(QIcon(":/libs/guibase/images/iconAddPolygonVertex.png"), GridCreatingConditionTriangle::tr("&Add Vertex"), this);
 	m_addVertexAction->setCheckable(true);
 	connect(m_addVertexAction, SIGNAL(triggered(bool)), this, SLOT(addVertexMode(bool)));
-	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), tr("&Remove Vertex"), this);
+	m_removeVertexAction = new QAction(QIcon(":/libs/guibase/images/iconRemovePolygonVertex.png"), GridCreatingConditionTriangle::tr("&Remove Vertex"), this);
 	m_removeVertexAction->setCheckable(true);
 	connect(m_removeVertexAction, SIGNAL(triggered(bool)), this, SLOT(removeVertexMode(bool)));
-	m_coordEditAction = new QAction(tr("Edit &Coordinates..."), this);
+	m_coordEditAction = new QAction(GridCreatingConditionTriangle::tr("Edit &Coordinates..."), this);
 	connect(m_coordEditAction, SIGNAL(triggered()), this, SLOT(editCoordinates()));
 
-	m_deleteAction = new QAction(tr("&Delete Region or Break Line..."), this);
+	m_deleteAction = new QAction(GridCreatingConditionTriangle::tr("&Delete Region or Break Line..."), this);
 	m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deletePolygon()));
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteLine()));
 
-	m_editMaxAreaAction = new QAction(tr("Edit &Maximum Area for Cells..."), this);
+	m_editMaxAreaAction = new QAction(GridCreatingConditionTriangle::tr("Edit &Maximum Area for Cells..."), this);
 	m_editMaxAreaAction->setDisabled(true);
 
 	// Set cursors for mouse view change events.

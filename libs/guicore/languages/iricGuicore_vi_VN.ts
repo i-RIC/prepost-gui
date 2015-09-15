@@ -12,7 +12,7 @@
 <context>
     <name>Axis2dDataItem</name>
     <message>
-        <location filename="../axis2d/axis2ddataitem.cpp" line="15"/>
+        <location filename="../axis2d/axis2ddataitem.cpp" line="17"/>
         <source>Axes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -28,23 +28,23 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="78"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="79"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="81"/>
         <source>Fix Image position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="128"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="129"/>
         <source>Unable to read image %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="228"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="228"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -274,17 +274,17 @@
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="12"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="25"/>
         <source>Distance Measures</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="20"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="21"/>
         <source>&amp;Add Measure...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="30"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="48"/>
         <source>Measure%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -292,7 +292,7 @@
 <context>
     <name>GeoData</name>
     <message>
-        <location filename="../pre/geodata/geodata.cpp" line="34"/>
+        <location filename="../pre/geodata/geodata.cpp" line="38"/>
         <source>Edit &amp;Name...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -305,18 +305,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="22"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="21"/>
         <source>Edit value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="123"/>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="134"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="89"/>
+        <source>Background edit value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="130"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="141"/>
         <source>Edit %1 default value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="124"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="131"/>
         <source>Please input new default value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -404,14 +409,6 @@
     </message>
 </context>
 <context>
-    <name>GridAttributeEditCommand</name>
-    <message>
-        <location filename="../pre/gridcond/base/gridattributeeditwidgett.h" line="24"/>
-        <source>Edit grid attribute value(s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>GridAttributeEditDialog</name>
     <message>
         <location filename="../pre/gridcond/base/gridattributeeditdialog.ui" line="14"/>
@@ -426,9 +423,9 @@
     </message>
 </context>
 <context>
-    <name>GridAttributeEditVariationCommand</name>
+    <name>GridAttributeEditWidget</name>
     <message>
-        <location filename="../pre/gridcond/base/gridattributevariationeditwidgett.h" line="25"/>
+        <location filename="../pre/gridcond/base/gridattributeeditwidgett.h" line="23"/>
         <source>Edit grid attribute value(s)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -444,6 +441,14 @@
         <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="20"/>
         <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="42"/>
         <source>TextLabel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeVariationEditWidget</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributevariationeditwidgett.h" line="24"/>
+        <source>Edit grid attribute value(s)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -520,7 +525,7 @@
 <context>
     <name>GridCreatingCondition</name>
     <message>
-        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="17"/>
+        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="15"/>
         <source>&amp;Grid Creating Condition</source>
         <translation type="unfinished"></translation>
     </message>
@@ -575,58 +580,58 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="43"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="46"/>
         <source>&amp;Save and Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="122"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="146"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="232"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="239"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="123"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="128"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="224"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="249"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="129"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="147"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="224"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="232"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="239"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="249"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
         <source>Modifications you made will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -819,27 +824,27 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="43"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="42"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="75"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="73"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="76"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="74"/>
         <source>Export Measured Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="81"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="79"/>
         <source>Measured Data successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="83"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="81"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -847,8 +852,18 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="46"/>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="70"/>
         <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="433"/>
+        <source>Update Contour Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="488"/>
+        <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -880,12 +895,12 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="94"/>
+        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="138"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="94"/>
+        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="138"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -893,8 +908,13 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="38"/>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="64"/>
         <source>Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="112"/>
+        <source>Arrow Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1588,7 +1608,7 @@ Do you really want to import this file?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/graphicswindowdataitem.h" line="185"/>
+        <location filename="../datamodel/graphicswindowdataitem.h" line="196"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1629,53 +1649,33 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="589"/>
+        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="588"/>
         <source>Edit Distance Measure Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="772"/>
+        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="771"/>
         <source>Redefine Distance Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="440"/>
-        <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="544"/>
-        <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="132"/>
-        <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="473"/>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="443"/>
         <source>Update Arrow Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="90"/>
-        <source>Background edit value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="274"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="275"/>
         <source>Reallocate Background Image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="14"/>
-        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="40"/>
+        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="28"/>
+        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="83"/>
         <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="40"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="74"/>
         <source>(Undefined)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1691,7 +1691,7 @@ Do you really want to import this file?</source>
 <context>
     <name>SolverDefinition</name>
     <message>
-        <location filename="../solverdef/solverdefinition.cpp" line="62"/>
+        <location filename="../solverdef/solverdefinition.cpp" line="97"/>
         <source>%1 Grids</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1699,78 +1699,78 @@ Do you really want to import this file?</source>
 <context>
     <name>Structured2DGrid</name>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="202"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="209"/>
         <source>An edge line intersects with that of another cell in this grid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="208"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="215"/>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="215"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="222"/>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="221"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="228"/>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="230"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="237"/>
         <source>* Cells where edges intersect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="251"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="297"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="333"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="368"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="397"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="258"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="304"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="340"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="375"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="404"/>
         <source>Not exist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="262"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="269"/>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="277"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="287"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="284"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="294"/>
         <source>I, J, Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="279"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="286"/>
         <source>Edge length too small</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="306"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="313"/>
         <source>* Cells where angle of cell vertex is below %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="324"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="331"/>
         <source>I, J, Angle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="342"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="349"/>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="358"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="387"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="365"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="394"/>
         <source>I, J, Variation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="373"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="380"/>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation type="unfinished"></translation>
     </message>

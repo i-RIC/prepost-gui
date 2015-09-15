@@ -61,22 +61,22 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	connect(this, SIGNAL(changed(PreProcessorGridAttributeNodeDataItem*)),
 					parent, SLOT(exclusivelyCheck(PreProcessorGridAttributeNodeDataItem*)));
 
-	m_editValueAction = new QAction(tr("Edit value..."), this);
+	m_editValueAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
 
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"),tr("Export..."), this);
+	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 
-	m_editVariationAction = new QAction(tr("Edit value by specifying variation..."), this);
+	m_editVariationAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying variation..."), this);
 	m_editVariationAction->setDisabled(true);
 	connect(m_editVariationAction, SIGNAL(triggered()), this, SLOT(editVariation()));
 
-	m_openXsectionWindowAction = new QAction(tr("Open &Crosssection Window"), this);
+	m_openXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Crosssection Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
 	connect(m_openXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
-	m_openVXsectionWindowAction = new QAction(tr("Open &Vertical Crosssection Window"), this);
+	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Vertical Crosssection Window"), this);
 	m_openVXsectionWindowAction ->setDisabled(true);
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
 }

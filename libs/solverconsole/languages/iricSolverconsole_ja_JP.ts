@@ -4,7 +4,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="285"/>
+        <location filename="../solverconsolewindow.cpp" line="289"/>
         <source>Background Color Setting</source>
         <translation>背景色設定</translation>
     </message>
@@ -12,109 +12,109 @@
 <context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="39"/>
+        <location filename="../solverconsolewindow.cpp" line="40"/>
         <source>&amp;Export solver console log...</source>
         <translation>ソルバーログのエクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="86"/>
+        <location filename="../solverconsolewindow.cpp" line="87"/>
         <source>Show Detail</source>
         <translation>詳細を表示</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="87"/>
-        <location filename="../solverconsolewindow.cpp" line="98"/>
+        <location filename="../solverconsolewindow.cpp" line="88"/>
+        <location filename="../solverconsolewindow.cpp" line="99"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="87"/>
+        <location filename="../solverconsolewindow.cpp" line="88"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation>以下の問題が格子に見つかりました。本当にこの格子を使ってソルバーを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="91"/>
+        <location filename="../solverconsolewindow.cpp" line="92"/>
         <source>The simulation has result</source>
         <translation>シミュレーションに結果があります</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="91"/>
+        <location filename="../solverconsolewindow.cpp" line="92"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation>このシミュレーションには既に結果データがあります。ソルバーを実行すると、現在の結果データは破棄されます。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="98"/>
+        <location filename="../solverconsolewindow.cpp" line="99"/>
         <source>Error occured. %1</source>
         <translation>エラーが発生しました。 %1</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="102"/>
+        <location filename="../solverconsolewindow.cpp" line="103"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="102"/>
+        <location filename="../solverconsolewindow.cpp" line="103"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation>計算実行を開始する前に、プロジェクトを保存することをお勧めします。保存しますか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="116"/>
+        <location filename="../solverconsolewindow.cpp" line="117"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="116"/>
+        <location filename="../solverconsolewindow.cpp" line="117"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation>ソルバーの実行ファイル %1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="164"/>
+        <location filename="../solverconsolewindow.cpp" line="165"/>
         <source>Confirm Solver Termination</source>
         <translation>ソルバーの中止の確認</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="165"/>
+        <location filename="../solverconsolewindow.cpp" line="166"/>
         <source>Do you really want to kill the solver?</source>
         <translation>本当にソルバーの実行を中止していいですか?</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="224"/>
-        <location filename="../solverconsolewindow.cpp" line="227"/>
+        <location filename="../solverconsolewindow.cpp" line="228"/>
+        <location filename="../solverconsolewindow.cpp" line="231"/>
         <source>Solver Finished</source>
         <translation>ソルバー終了</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="224"/>
+        <location filename="../solverconsolewindow.cpp" line="228"/>
         <source>The solver finished calculation.</source>
         <translation>ソルバーの計算が終了しました.</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="227"/>
+        <location filename="../solverconsolewindow.cpp" line="231"/>
         <source>The solver finished abnormally.</source>
         <translation>ソルバーが異常終了しました。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="237"/>
+        <location filename="../solverconsolewindow.cpp" line="241"/>
         <source>Solver Console</source>
         <translation>ソルバーコンソール</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="243"/>
+        <location filename="../solverconsolewindow.cpp" line="247"/>
         <source>running</source>
         <translation>実行中</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="245"/>
+        <location filename="../solverconsolewindow.cpp" line="249"/>
         <source>stopped</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="247"/>
+        <location filename="../solverconsolewindow.cpp" line="251"/>
         <source>Solver Console [%1] (%2)</source>
         <translation>ソルバーコンソール [%1] (%2)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="305"/>
+        <location filename="../solverconsolewindow.cpp" line="309"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -122,32 +122,32 @@
 <context>
     <name>SolverConsoleWindowProjectDataItem</name>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="136"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイル名の選択</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="136"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="137"/>
         <source>Text file (*.txt)</source>
         <translation>テキストファイル (*.txt)</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="139"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="140"/>
         <source>Exporting solver console log...</source>
         <translation>ソルバーログをエクスポートしています...</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="147"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="148"/>
         <source>Solver console log is successfully exported to %1.</source>
         <translation>ソルバーログは %1. にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="152"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="153"/>
         <source>Fail</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../solverconsolewindowprojectdataitem.cpp" line="152"/>
+        <location filename="../solverconsolewindowprojectdataitem.cpp" line="153"/>
         <source>Exporting solver console log failed.</source>
         <translation>ソルバーログのエクスポートが失敗しました。</translation>
     </message>

@@ -47,8 +47,8 @@ ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget* parent
 	ui->setupUi(this);
 
 	QStringList hlabels;
-	hlabels << tr("Attribute");
-	hlabels << tr("Color");
+	hlabels << ColorTransferFunctionEditWidget::tr("Attribute");
+	hlabels << ColorTransferFunctionEditWidget::tr("Color");
 
 	ui->tableWidget->setColumnCount(2);
 	ui->tableWidget->setColumnWidth(0, ATTRWIDTH);

@@ -37,16 +37,16 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	SolverDefinitionGridType::GridType gType = gTypeItem->gridType()->defaultGridType();
 
 	// setup actions.
-	m_createAction = new QAction(tr("&Create Grid..."), this);
+	m_createAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Create Grid..."), this);
 	m_createAction->setDisabled(true);
 	connect(m_createAction, SIGNAL(triggered()), this, SLOT(createGrid()));
 
-	m_switchAlgorithmAction = new QAction(tr("&Select Algorithm to Create Grid..."), this);
+	m_switchAlgorithmAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Select Algorithm to Create Grid..."), this);
 	connect(m_switchAlgorithmAction, SIGNAL(triggered()), this, SLOT(switchAlgorithm()));
 
-	m_clearAction = new QAction(tr("Reset to &Default..."), this);
+	m_clearAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("Reset to &Default..."), this);
 	connect(m_clearAction, SIGNAL(triggered()), this, SLOT(resetCondition()));
-	m_deleteAction = new QAction(tr("&Delete Grid Creating Condition..."), this);
+	m_deleteAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition..."), this);
 	m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
 

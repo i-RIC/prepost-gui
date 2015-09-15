@@ -23,7 +23,7 @@
 PreProcessorNormal15DGridWithCrossSectionShapeDataItem::PreProcessorNormal15DGridWithCrossSectionShapeDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridShapeDataItem {parent}
 {
-	m_openCrossSectionWindowAction = new QAction(tr("Display &Cross Section"), this);
+	m_openCrossSectionWindowAction = new QAction(PreProcessorNormal15DGridWithCrossSectionShapeDataItem::tr("Display &Cross Section"), this);
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
 	setupActors();

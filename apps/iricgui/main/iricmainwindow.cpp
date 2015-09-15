@@ -143,7 +143,7 @@ iRICMainWindow::iRICMainWindow(QWidget* parent) :
 	restoreWindowState();
 	setupProcessEnvironment();
 
-	statusBar()->showMessage(tr("Ready"));
+	statusBar()->showMessage(iRICMainWindow::tr("Ready"));
 }
 
 iRICMainWindow::~iRICMainWindow()

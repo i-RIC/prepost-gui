@@ -37,271 +37,271 @@
 <context>
     <name>GeoDataPointmap</name>
     <message>
-        <location filename="../geodatapointmap.cpp" line="188"/>
-        <location filename="../geodatapointmap.cpp" line="235"/>
+        <location filename="../geodatapointmap.cpp" line="129"/>
+        <location filename="../geodatapointmap.cpp" line="175"/>
         <source>Edit Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="286"/>
+        <location filename="../geodatapointmap.cpp" line="225"/>
         <source>Select Refecence Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="468"/>
+        <location filename="../geodatapointmap.cpp" line="397"/>
         <source>Add Break Line Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="540"/>
+        <location filename="../geodatapointmap.cpp" line="468"/>
         <source>Finish Defining Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="573"/>
+        <location filename="../geodatapointmap.cpp" line="500"/>
         <source>Cancel Defining Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="770"/>
+        <location filename="../geodatapointmap.cpp" line="692"/>
         <source>Add New Interp Line Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="835"/>
+        <location filename="../geodatapointmap.cpp" line="753"/>
         <source>Add New Selection Polygon Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1174"/>
-        <location filename="../geodatapointmap.cpp" line="1902"/>
-        <location filename="../geodatapointmap.cpp" line="2087"/>
-        <location filename="../geodatapointmap.cpp" line="2595"/>
-        <location filename="../geodatapointmap.cpp" line="2645"/>
-        <location filename="../geodatapointmap.cpp" line="2705"/>
-        <location filename="../geodatapointmap.cpp" line="2730"/>
+        <location filename="../geodatapointmap.cpp" line="1090"/>
+        <location filename="../geodatapointmap.cpp" line="1816"/>
+        <location filename="../geodatapointmap.cpp" line="2002"/>
+        <location filename="../geodatapointmap.cpp" line="2504"/>
+        <location filename="../geodatapointmap.cpp" line="2554"/>
+        <location filename="../geodatapointmap.cpp" line="2614"/>
+        <location filename="../geodatapointmap.cpp" line="2639"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1174"/>
+        <location filename="../geodatapointmap.cpp" line="1090"/>
         <source>Break line have to have no intersection with other break lines.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1328"/>
+        <location filename="../geodatapointmap.cpp" line="1244"/>
         <source>Remeshing TINs...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1548"/>
+        <location filename="../geodatapointmap.cpp" line="1464"/>
         <source>P&amp;ointset Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1685"/>
-        <location filename="../geodatapointmap.cpp" line="2542"/>
-        <location filename="../geodatapointmap.cpp" line="2553"/>
-        <location filename="../geodatapointmap.cpp" line="2564"/>
-        <location filename="../geodatapointmap.cpp" line="2575"/>
-        <location filename="../geodatapointmap.cpp" line="2585"/>
-        <location filename="../geodatapointmap.cpp" line="2612"/>
-        <location filename="../geodatapointmap.cpp" line="2635"/>
-        <location filename="../geodatapointmap.cpp" line="2691"/>
-        <location filename="../geodatapointmap.cpp" line="2716"/>
-        <location filename="../geodatapointmap.cpp" line="2809"/>
-        <location filename="../geodatapointmap.cpp" line="2817"/>
-        <location filename="../geodatapointmap.cpp" line="2835"/>
-        <location filename="../geodatapointmap.cpp" line="2844"/>
+        <location filename="../geodatapointmap.cpp" line="1601"/>
+        <location filename="../geodatapointmap.cpp" line="2451"/>
+        <location filename="../geodatapointmap.cpp" line="2462"/>
+        <location filename="../geodatapointmap.cpp" line="2473"/>
+        <location filename="../geodatapointmap.cpp" line="2484"/>
+        <location filename="../geodatapointmap.cpp" line="2494"/>
+        <location filename="../geodatapointmap.cpp" line="2521"/>
+        <location filename="../geodatapointmap.cpp" line="2544"/>
+        <location filename="../geodatapointmap.cpp" line="2600"/>
+        <location filename="../geodatapointmap.cpp" line="2625"/>
+        <location filename="../geodatapointmap.cpp" line="2718"/>
+        <location filename="../geodatapointmap.cpp" line="2726"/>
+        <location filename="../geodatapointmap.cpp" line="2744"/>
+        <location filename="../geodatapointmap.cpp" line="2753"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1685"/>
+        <location filename="../geodatapointmap.cpp" line="1601"/>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1752"/>
+        <location filename="../geodatapointmap.cpp" line="1668"/>
         <source>&amp;Add New Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1757"/>
+        <location filename="../geodatapointmap.cpp" line="1673"/>
         <source>&amp;Interpolate Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1762"/>
+        <location filename="../geodatapointmap.cpp" line="1678"/>
         <source>Display &amp;Setting...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1765"/>
+        <location filename="../geodatapointmap.cpp" line="1681"/>
         <source>Select point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1769"/>
+        <location filename="../geodatapointmap.cpp" line="1685"/>
         <source>Select Points With &amp;Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1774"/>
+        <location filename="../geodatapointmap.cpp" line="1690"/>
         <source>&amp;Edit Selected Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1778"/>
+        <location filename="../geodatapointmap.cpp" line="1694"/>
         <source>Delete Selected P&amp;oints</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1782"/>
+        <location filename="../geodatapointmap.cpp" line="1698"/>
         <source>E&amp;xport Selected Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1786"/>
+        <location filename="../geodatapointmap.cpp" line="1702"/>
         <source>Delete Selected Points &amp;Less Than Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1790"/>
+        <location filename="../geodatapointmap.cpp" line="1706"/>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1796"/>
+        <location filename="../geodatapointmap.cpp" line="1712"/>
         <source>Remesh &amp;TINs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1799"/>
+        <location filename="../geodatapointmap.cpp" line="1715"/>
         <source>Add &amp;Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1804"/>
+        <location filename="../geodatapointmap.cpp" line="1720"/>
         <source>&amp;Remove Break Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1809"/>
+        <location filename="../geodatapointmap.cpp" line="1725"/>
         <source>Rem&amp;ove All Break Lines...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="1902"/>
+        <location filename="../geodatapointmap.cpp" line="1816"/>
         <source>Are you sure you want to remove this break line?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2087"/>
+        <location filename="../geodatapointmap.cpp" line="2002"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2542"/>
+        <location filename="../geodatapointmap.cpp" line="2451"/>
         <source>Remeshing TINs finished.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2553"/>
+        <location filename="../geodatapointmap.cpp" line="2462"/>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2564"/>
+        <location filename="../geodatapointmap.cpp" line="2473"/>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2575"/>
+        <location filename="../geodatapointmap.cpp" line="2484"/>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2585"/>
+        <location filename="../geodatapointmap.cpp" line="2494"/>
         <source>Click on the break line you want to remove.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2595"/>
+        <location filename="../geodatapointmap.cpp" line="2504"/>
         <source>Are you sure you want to remove ALL break lines?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2612"/>
+        <location filename="../geodatapointmap.cpp" line="2521"/>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2635"/>
-        <location filename="../geodatapointmap.cpp" line="2691"/>
-        <location filename="../geodatapointmap.cpp" line="2716"/>
+        <location filename="../geodatapointmap.cpp" line="2544"/>
+        <location filename="../geodatapointmap.cpp" line="2600"/>
+        <location filename="../geodatapointmap.cpp" line="2625"/>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2645"/>
-        <location filename="../geodatapointmap.cpp" line="2705"/>
-        <location filename="../geodatapointmap.cpp" line="2730"/>
+        <location filename="../geodatapointmap.cpp" line="2554"/>
+        <location filename="../geodatapointmap.cpp" line="2614"/>
+        <location filename="../geodatapointmap.cpp" line="2639"/>
         <source>You can not delete points used for break lines.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2648"/>
+        <location filename="../geodatapointmap.cpp" line="2557"/>
         <source>Delete Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2656"/>
+        <location filename="../geodatapointmap.cpp" line="2565"/>
         <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2656"/>
+        <location filename="../geodatapointmap.cpp" line="2565"/>
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2662"/>
+        <location filename="../geodatapointmap.cpp" line="2571"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2662"/>
+        <location filename="../geodatapointmap.cpp" line="2571"/>
         <source>Error occured while exporting to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2702"/>
+        <location filename="../geodatapointmap.cpp" line="2611"/>
         <source>Delete points less than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2727"/>
+        <location filename="../geodatapointmap.cpp" line="2636"/>
         <source>Delete points greater than %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2809"/>
+        <location filename="../geodatapointmap.cpp" line="2718"/>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2817"/>
+        <location filename="../geodatapointmap.cpp" line="2726"/>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2835"/>
+        <location filename="../geodatapointmap.cpp" line="2744"/>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="2844"/>
+        <location filename="../geodatapointmap.cpp" line="2753"/>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -622,12 +622,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../geodatapointmap.cpp" line="317"/>
+        <location filename="../geodatapointmap.cpp" line="252"/>
         <source>Add Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapointmap.cpp" line="375"/>
+        <location filename="../geodatapointmap.cpp" line="308"/>
         <source>Add Interpolation Pts</source>
         <translation type="unfinished"></translation>
     </message>

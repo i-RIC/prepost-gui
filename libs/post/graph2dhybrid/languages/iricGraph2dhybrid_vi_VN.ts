@@ -369,18 +369,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="367"/>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="371"/>
+        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="369"/>
+        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="373"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="367"/>
+        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="369"/>
         <source>Folder %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="371"/>
+        <location filename="../graph2dhybridwindowcontinuousexportdialog.cpp" line="373"/>
         <source>Please input prefix.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -722,7 +722,7 @@
 <context>
     <name>Graph2dHybridWindowImportDataDataItem</name>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatadataitem.cpp" line="161"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatadataitem.cpp" line="163"/>
         <source>%1 - %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -730,27 +730,27 @@
 <context>
     <name>Graph2dHybridWindowImportDataGroupDataItem</name>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="13"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="15"/>
         <source>External Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="105"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="107"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="105"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="107"/>
         <source>The title of the first column has to be &quot;X&quot;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="123"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="125"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="123"/>
+        <location filename="../datamodel/graph2dhybridwindowimportdatagroupdataitem.cpp" line="125"/>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -799,57 +799,57 @@
 <context>
     <name>Graph2dHybridWindowResultCopyDataItem</name>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="185"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="186"/>
         <source>%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="188"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="189"/>
         <source>%1 (I = %2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="191"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="192"/>
         <source>%1 (I = %2, J = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="194"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="195"/>
         <source>%1 (I = %2, J = %3, K = %4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="197"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="198"/>
         <source>%1 (Index = %2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="200"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="201"/>
         <source>%1 (t = %2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="203"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="204"/>
         <source>%1 (t = %2, J = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="206"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="207"/>
         <source>%1 (t = %2, J = %3, K = %4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="209"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="210"/>
         <source>%1 (t = %2, I = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="212"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="213"/>
         <source>%1 (t = %2, I = %3, K = %4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="215"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopydataitem.cpp" line="216"/>
         <source>%1 (t = %2, I = %3, J = %4)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -857,7 +857,7 @@
 <context>
     <name>Graph2dHybridWindowResultCopyGroupDataItem</name>
     <message>
-        <location filename="../datamodel/graph2dhybridwindowresultcopygroupdataitem.cpp" line="8"/>
+        <location filename="../datamodel/graph2dhybridwindowresultcopygroupdataitem.cpp" line="9"/>
         <source>Calcuation Results Copys</source>
         <translation type="unfinished"></translation>
     </message>

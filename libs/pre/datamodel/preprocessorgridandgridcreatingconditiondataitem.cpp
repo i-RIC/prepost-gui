@@ -95,7 +95,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 		m_standardItem->takeChild(m_bcSettingGroupDataItem->standardItem()->row());
 	}
 
-	m_deleteAction = new QAction(tr("&Delete Grid Creating Condition and Grid Shape..."), this);
+	m_deleteAction = new QAction(PreProcessorGridAndGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition and Grid Shape..."), this);
 	m_deleteAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.png"));
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteGridAndCondition()));
 

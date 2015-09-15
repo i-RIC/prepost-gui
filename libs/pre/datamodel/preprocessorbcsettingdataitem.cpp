@@ -35,14 +35,14 @@ PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataI
 		m_standardItem->setEditable(true);
 		setIsCommandExecuting(false);
 	}
-	m_editAction = new QAction(tr("&Edit Condition..."), this);
+	m_editAction = new QAction(PreProcessorBCSettingDataItem::tr("&Edit Condition..."), this);
 
 	m_polygon = new GeoDataPolygon(this, 0, 0);
 	m_polygon->setupMenu();
 	m_polygon->setMapping(GeoDataPolygonColorSettingDialog::Arbitrary);
 
 	m_rightClickingMenu = new QMenu(nullptr);
-	m_rightClickingMenu->setTitle(tr("Polygon"));
+	m_rightClickingMenu->setTitle(PreProcessorBCSettingDataItem::tr("Polygon"));
 	m_rightClickingMenu->addAction(m_editAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_polygon->m_addVertexAction);

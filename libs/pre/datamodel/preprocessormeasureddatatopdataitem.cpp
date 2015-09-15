@@ -35,12 +35,12 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 	setSubPath("measureddata");
 
 	setIsCommandExecuting(true);
-	m_standardItem->setData(QVariant(tr("MEASUREDDATAS")), Qt::UserRole + 10);
+	m_standardItem->setData(QVariant("MEASUREDDATAS"), Qt::UserRole + 10);
 	setIsCommandExecuting(false);
 
 	setupActors();
 
-	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), tr("&Import..."), this);
+	m_importAction = new QAction(QIcon(":/libs/guibase/images/iconImport.png"), PreProcessorMeasuredDataTopDataItem::tr("&Import..."), this);
 
 	connect(m_importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
 	connect(projectData()->mainfile(), SIGNAL(measuredDataAdded()), this, SLOT(addChildItem()));

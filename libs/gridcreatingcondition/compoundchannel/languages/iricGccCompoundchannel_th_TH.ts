@@ -4,160 +4,160 @@
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="82"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="83"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="85"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="86"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="88"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="89"/>
         <source>Edit C&amp;oordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="90"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="91"/>
         <source>R&amp;everse Center Line Direction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="182"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="183"/>
         <source>Finish Defining Polygon or Polygonal line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="222"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="229"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1764"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="224"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="231"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1775"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="224"/>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="229"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="231"/>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="285"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="287"/>
         <source>Add New Polygon Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="347"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="350"/>
         <source>Move Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="414"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="418"/>
         <source>Move Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="482"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="487"/>
         <source>Insert Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="577"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="583"/>
         <source>Add New Center Line Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="645"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="652"/>
         <source>Move Polygonal Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="712"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="721"/>
         <source>Move Polygonal Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="780"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="790"/>
         <source>Insert Polygonal Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="970"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="981"/>
         <source>Remove Polygon Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1038"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1050"/>
         <source>Remove Polygonal Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1388"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1411"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2189"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2194"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2198"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2204"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2211"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1399"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1422"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1388"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1399"/>
         <source>Polygon must have three vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1393"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1404"/>
         <source>Finish Defining Polygon</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1411"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1422"/>
         <source>Polygonal line must have two vertices at least.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1416"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1427"/>
         <source>Finish Defining Polygonal line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1764"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1775"/>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1866"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1877"/>
         <source>Generating grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2189"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2194"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
         <source>Grid creating region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2198"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
         <source>Low water channel region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2204"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
         <source>Low water channel region have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2211"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
         <source>Center line have to be inside low water channel region.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -188,12 +188,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="154"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="155"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="155"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolylinecoordinateseditdialog.cpp" line="156"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>
@@ -206,12 +206,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="155"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="156"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="156"/>
+        <location filename="../gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.cpp" line="157"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>

@@ -73,12 +73,12 @@
 <context>
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="45"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="47"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="257"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="256"/>
         <source>Arrow Setting</source>
         <translation>ベクトル設定</translation>
     </message>
@@ -200,12 +200,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="42"/>
         <source>Contour</source>
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="526"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="525"/>
         <source>Contour Setting</source>
         <translation>コンター設定</translation>
     </message>
@@ -252,12 +252,12 @@
 <context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
@@ -265,7 +265,7 @@
 <context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="24"/>
+        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="25"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
@@ -448,7 +448,7 @@
         <translation type="vanished">パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="33"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="36"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
     </message>
@@ -456,9 +456,14 @@
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="26"/>
         <source>Streamlines</source>
         <translation>流線</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="69"/>
+        <source>Streamline Physical Value Change</source>
+        <translation>流線 物理量の変更</translation>
     </message>
 </context>
 <context>
@@ -653,6 +658,11 @@ p, li { white-space: pre-wrap; }
         <translation>粒子</translation>
     </message>
     <message>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="93"/>
+        <source>Edit Particle Setting</source>
+        <translation>パーティクル設定の編集</translation>
+    </message>
+    <message>
         <source>Particles (auto)</source>
         <translation type="vanished">パーティクル (自動)</translation>
     </message>
@@ -805,37 +815,36 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="249"/>
+        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="202"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="253"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="328"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="323"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="84"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="83"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="41"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
         <source>Update Particle Setting</source>
         <translation>パーティクル設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="72"/>
         <source>Streamline Physical Value Change</source>
-        <translation>流線 物理量の変更</translation>
+        <translation type="vanished">流線 物理量の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="157"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
         <source>Update Streamline Setting</source>
         <translation>流線の設定変更</translation>
     </message>

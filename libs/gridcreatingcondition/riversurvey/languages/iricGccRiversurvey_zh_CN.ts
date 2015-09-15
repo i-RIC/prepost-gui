@@ -4,24 +4,24 @@
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="20"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
         <source>Create grid from river survey data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="21"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="22"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="49"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey.cpp" line="50"/>
         <source>No river survey data exists in geographic data now. This algorithmn is not available.</source>
         <translation type="unfinished"></translation>
     </message>

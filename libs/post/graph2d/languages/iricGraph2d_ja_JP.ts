@@ -192,7 +192,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../graph2dwindowdataitem.cpp" line="133"/>
+        <location filename="../graph2dwindowdataitem.cpp" line="132"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>

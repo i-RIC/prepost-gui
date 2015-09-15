@@ -13,7 +13,7 @@
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 	GeoDataCreator {}
 {
-	m_caption = tr("River Survey data");
+	m_caption = GeoDataRiverSurveyCreator::tr("River Survey data");
 	m_typeName = "riversurvey";
 
 	m_importers.append(new GeoDataRiverSurveyImporter(this));

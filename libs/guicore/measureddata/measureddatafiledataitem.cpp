@@ -39,7 +39,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	m_childItems.append(m_pointGroupDataItem);
 	m_childItems.append(m_vectorGroupDataItem);
 
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), tr("&Export..."), this);
+	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), MeasuredDataFileDataItem::tr("&Export..."), this);
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 }
 

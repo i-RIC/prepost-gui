@@ -60,12 +60,12 @@
 <context>
     <name>PostTimeDataItem</name>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="20"/>
+        <location filename="../time/posttimedataitem.cpp" line="35"/>
         <source>Time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../time/posttimedataitem.cpp" line="71"/>
+        <location filename="../time/posttimedataitem.cpp" line="83"/>
         <source>Edit time setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -111,12 +111,12 @@
 <context>
     <name>PostTitleDataItem</name>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="18"/>
+        <location filename="../title/posttitledataitem.cpp" line="19"/>
         <source>Title</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="70"/>
+        <location filename="../title/posttitledataitem.cpp" line="71"/>
         <source>Edit title setting</source>
         <translation type="unfinished"></translation>
     </message>

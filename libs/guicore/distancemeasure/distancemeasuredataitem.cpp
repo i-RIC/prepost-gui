@@ -58,10 +58,10 @@ DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWi
 	m_movePointCursor = QCursor(m_movePointPixmap);
 
 	m_rightClickingMenu = new QMenu(mainWindow());
-	m_propertyAction = new QAction(tr("Property"), m_rightClickingMenu);
+	m_propertyAction = new QAction(DistanceMeasureDataItem::tr("Property"), m_rightClickingMenu);
 	m_propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.png"));
 	connect(m_propertyAction, SIGNAL(triggered()), this, SLOT(showPropDialog()));
-	m_redefineAction = new QAction(tr("Redefine"), m_rightClickingMenu);
+	m_redefineAction = new QAction(DistanceMeasureDataItem::tr("Redefine"), m_rightClickingMenu);
 	connect(m_redefineAction, SIGNAL(triggered()), this, SLOT(redefine()));
 
 	m_rightClickingMenu->addAction(m_redefineAction);

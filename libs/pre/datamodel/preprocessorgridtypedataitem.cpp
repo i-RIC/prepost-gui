@@ -55,7 +55,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	}
 
 	// setup action items.
-	m_addNewGridAction = new QAction(tr("Add New Grid"), this);
+	m_addNewGridAction = new QAction(PreProcessorGridTypeDataItem::tr("Add New Grid"), this);
 	connect(m_addNewGridAction, SIGNAL(triggered()), this, SLOT(addNewCondition()));
 	updateNewGridActionStatus();
 }

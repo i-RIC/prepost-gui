@@ -15,7 +15,7 @@
 GeoDataPolygonShapeExporter::GeoDataPolygonShapeExporter(GeoDataCreator* creator) :
 	GeoDataExporter {creator}
 {
-	m_caption = tr("ESRI Shape file");
+	m_caption = GeoDataPolygonShapeExporter::tr("ESRI Shape file");
 }
 
 SHPObject* GeoDataPolygonShapeExporter::getSHPObject(GeoDataPolygon* polygon, SHPHandle shp, int index, double xoffset, double yoffset)

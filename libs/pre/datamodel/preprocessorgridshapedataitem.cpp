@@ -62,14 +62,14 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 
 	parent->standardItem()->takeRow(m_standardItem->row());
 
-	m_editAction = new QAction(tr("&Edit Coordinates..."), this);
+	m_editAction = new QAction(PreProcessorGridShapeDataItem::tr("&Edit Coordinates..."), this);
 	connect(m_editAction, SIGNAL(triggered()), this, SLOT(editShape()));
 
-	m_openXsectionWindowAction = new QAction(tr("Open &Crosssection Window"), this);
+	m_openXsectionWindowAction = new QAction(PreProcessorGridShapeDataItem::tr("Open &Crosssection Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
 	connect(m_openXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
 
-	m_openVXsectionWindowAction = new QAction(tr("Open &Vertical Crosssection Window"), this);
+	m_openVXsectionWindowAction = new QAction(PreProcessorGridShapeDataItem::tr("Open &Vertical Crosssection Window"), this);
 	m_openVXsectionWindowAction->setDisabled(true);
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
 }

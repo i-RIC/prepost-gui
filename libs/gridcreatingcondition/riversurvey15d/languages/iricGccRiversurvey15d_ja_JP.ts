@@ -4,12 +4,12 @@
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="17"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="18"/>
         <source>Create 1.5D grid from river survey data</source>
         <translation>河川測量データから 1.5次元格子を生成</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="18"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="19"/>
         <source>The grid shape is automatically defined using river survey data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when river survey data is loaded!Please switch algorithm to this, after importing river survey data.
 </source>
@@ -18,12 +18,12 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 </translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="46"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="47"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="46"/>
+        <location filename="../gridcreatingconditioncreatorriversurvey15d.cpp" line="47"/>
         <source>No river survey data exists in geographic data now. This algorithm is not available.</source>
         <translation>河川測量データが、地理情報に読み込まれていません。このアルゴリズムは利用できません。</translation>
     </message>
@@ -31,57 +31,57 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 <context>
     <name>GridCreatingConditionRiverSurvey15D</name>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="54"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="55"/>
         <source>Delete Selected Control Points</source>
         <translation>格子制御点の削除</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="265"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="266"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="265"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="266"/>
         <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation>河川測量データがありません。この格子生成条件は利用できません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="660"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="661"/>
         <source>&amp;Add Division Points...</source>
         <translation>分割点の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="661"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="662"/>
         <source>Add Division Points &amp;Regionally...</source>
         <translation>分割点の一括追加(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="662"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="663"/>
         <source>&amp;Move Division Points...</source>
         <translation>分割点の移動(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="663"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="664"/>
         <source>Re&amp;position Division Points...</source>
         <translation>分割点の再配置(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="664"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="665"/>
         <source>&amp;Delete Division Points...</source>
         <translation>分割点の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="774"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="775"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="775"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="776"/>
         <source>Are you sure you want to delete these control points?</source>
         <translation>本当にこれらの制御点を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="1059"/>
+        <location filename="../gridcreatingconditionriversurvey15d.cpp" line="1060"/>
         <source>point%1</source>
         <translation>点%1</translation>
     </message>

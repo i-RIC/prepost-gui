@@ -102,9 +102,9 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNum
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 	m_childItems.append(m_cellFlagGroupDataItem);
 
-	m_showNodeAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
+	m_showNodeAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showNodeAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
-	m_showCellAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
+	m_showCellAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showCellAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
 
 	setupActors();

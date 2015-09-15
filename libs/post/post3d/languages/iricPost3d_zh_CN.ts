@@ -73,12 +73,12 @@
 <context>
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="45"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="47"/>
         <source>Arrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="257"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="256"/>
         <source>Arrow Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,12 +200,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="42"/>
         <source>Contour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="526"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="525"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -252,12 +252,12 @@
 <context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="197"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -265,7 +265,7 @@
 <context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="24"/>
+        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="25"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -440,7 +440,7 @@
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="33"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="36"/>
         <source>Particles (auto)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -448,8 +448,13 @@
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="25"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="26"/>
         <source>Streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="69"/>
+        <source>Streamline Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -624,6 +629,11 @@ p, li { white-space: pre-wrap; }
         <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="93"/>
+        <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
@@ -761,37 +771,32 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="249"/>
+        <location filename="../datamodel/post3dwindowgridshapedataitem.cpp" line="202"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="253"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="328"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="323"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="84"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="83"/>
         <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="41"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
         <source>Update Particle Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="72"/>
-        <source>Streamline Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="157"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
         <source>Update Streamline Setting</source>
         <translation type="unfinished"></translation>
     </message>

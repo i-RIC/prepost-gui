@@ -4,84 +4,84 @@
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="53"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="56"/>
         <source>&amp;Add Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="56"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="59"/>
         <source>&amp;Remove Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="60"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="63"/>
         <source>Edit C&amp;oordinates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="63"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="66"/>
         <source>R&amp;everse Center Line Direction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="198"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="202"/>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="221"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="200"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="204"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="223"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="198"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="200"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="202"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="204"/>
         <source>Grid center line is not defined yet. Please click in the main region to define the grid center line.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="221"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="223"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="528"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="529"/>
         <source>Add New Center Line Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="594"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="593"/>
         <source>Move Center Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="667"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="665"/>
         <source>Move Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="741"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="737"/>
         <source>Insert Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="882"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="876"/>
         <source>Remove Center Line Vertex</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1108"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1100"/>
         <source>Finish Defining Polyline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1404"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1396"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1404"/>
+        <location filename="../gridcreatingconditioncenterandwidth.cpp" line="1396"/>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -99,12 +99,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="150"/>
+        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="151"/>
         <source>X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="151"/>
+        <location filename="../gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp" line="152"/>
         <source>Y</source>
         <translation type="unfinished"></translation>
     </message>

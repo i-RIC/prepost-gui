@@ -29,23 +29,23 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 	SolverDefinitionGridType* gtype = gtItem->gridType();
 	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
 		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);
-		QString str(tr("Add %1"));
+		QString str(PreProcessorBCGroupDataItem::tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
 		connect(addAction, SIGNAL(triggered()), this, SLOT(addCondition()));
 		m_addActions.append(addAction);
 	}
 
-	m_dummyEditAction = new QAction(tr("&Edit Condition..."), this);
+	m_dummyEditAction = new QAction(PreProcessorBCGroupDataItem::tr("&Edit Condition..."), this);
 	m_dummyEditAction->setDisabled(true);
-	m_dummyDeleteAction = new QAction(tr("&Delete..."), this);
+	m_dummyDeleteAction = new QAction(PreProcessorBCGroupDataItem::tr("&Delete..."), this);
 	m_dummyDeleteAction->setDisabled(true);
 
-	m_dummyAssignAction = new QAction(tr("&Assign Condition"), this);
+	m_dummyAssignAction = new QAction(PreProcessorBCGroupDataItem::tr("&Assign Condition"), this);
 	m_dummyAssignAction->setDisabled(true);
-	m_dummyReleaseAction = new QAction(tr("&Release Condition"), this);
+	m_dummyReleaseAction = new QAction(PreProcessorBCGroupDataItem::tr("&Release Condition"), this);
 	m_dummyReleaseAction->setDisabled(true);
 
-	m_bcMenu = new QMenu(tr("&Boundary Condition"), mainWindow());
+	m_bcMenu = new QMenu(PreProcessorBCGroupDataItem::tr("&Boundary Condition"), mainWindow());
 }
 
 PreProcessorBCGroupDataItem::~PreProcessorBCGroupDataItem()

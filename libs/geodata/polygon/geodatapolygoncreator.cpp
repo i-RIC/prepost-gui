@@ -11,7 +11,7 @@
 GeoDataPolygonCreator::GeoDataPolygonCreator() :
 	GeoDataCreator {}
 {
-	m_caption = tr("Polygon");
+	m_caption = GeoDataPolygonCreator::tr("Polygon");
 
 	m_importers.append(new GeoDataPolygonImporter(this));
 	m_exporters.append(new GeoDataPolygonShapeExporter(this));

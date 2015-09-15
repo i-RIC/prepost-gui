@@ -46,11 +46,11 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 	connect(this, SIGNAL(changed(PreProcessorGridAttributeCellDataItem*)),
 					parent, SLOT(exclusivelyCheck(PreProcessorGridAttributeCellDataItem*)));
 
-	m_editValueAction = new QAction(tr("Edit value..."), this);
+	m_editValueAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
 
-	m_editVariationAction = new QAction(tr("Edit value by specifying variation..."), this);
+	m_editVariationAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value by specifying variation..."), this);
 	m_editVariationAction->setDisabled(true);
 	connect(m_editVariationAction, SIGNAL(triggered()), this, SLOT(editVariation()));
 }

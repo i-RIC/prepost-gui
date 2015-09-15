@@ -94,7 +94,7 @@
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="60"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="22"/>
         <source>Grid shape</source>
         <translation type="unfinished"></translation>
     </message>
@@ -110,17 +110,17 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="298"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="210"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="445"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="386"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="572"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="442"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>

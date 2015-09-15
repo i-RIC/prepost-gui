@@ -82,7 +82,7 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 	m_opacity = 50;
 	m_attributeBrowserFixed = false;
 
-	m_showAttributeBrowserAction = new QAction(tr("Show Attribute Browser"), this);
+	m_showAttributeBrowserAction = new QAction(PreProcessorGridAttributeCellGroupDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
 }
 PreProcessorGridAttributeCellGroupDataItem::~PreProcessorGridAttributeCellGroupDataItem()

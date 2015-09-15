@@ -5,7 +5,7 @@
     <name>BoundaryConditionDialog</name>
     <message>
         <location filename="../bc/boundaryconditiondialog.ui" line="14"/>
-        <location filename="../bc/boundaryconditiondialog.cpp" line="205"/>
+        <location filename="../bc/boundaryconditiondialog.cpp" line="206"/>
         <source>Boundary Condition</source>
         <translation>境界条件</translation>
     </message>
@@ -40,22 +40,22 @@
         <translation>名前を表示</translation>
     </message>
     <message>
-        <location filename="../bc/boundaryconditiondialog.cpp" line="52"/>
+        <location filename="../bc/boundaryconditiondialog.cpp" line="53"/>
         <source>Line Width:</source>
         <translation>線幅:</translation>
     </message>
     <message>
-        <location filename="../bc/boundaryconditiondialog.cpp" line="137"/>
+        <location filename="../bc/boundaryconditiondialog.cpp" line="138"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../bc/boundaryconditiondialog.cpp" line="137"/>
+        <location filename="../bc/boundaryconditiondialog.cpp" line="138"/>
         <source>Name has to consist of only English characters.</source>
         <translation>名前には、英数字と記号しか使用できません。</translation>
     </message>
     <message>
-        <location filename="../bc/boundaryconditiondialog.cpp" line="212"/>
+        <location filename="../bc/boundaryconditiondialog.cpp" line="213"/>
         <source>Boundary Condition Property</source>
         <translation>境界条件 プロパティ</translation>
     </message>
@@ -63,7 +63,7 @@
 <context>
     <name>CgnsGridExporter</name>
     <message>
-        <location filename="../gridexporter/cgnsgridexporter.cpp" line="19"/>
+        <location filename="../gridexporter/cgnsgridexporter.cpp" line="23"/>
         <source>CGNS file</source>
         <translation>CGNS ファイル</translation>
     </message>
@@ -71,41 +71,46 @@
 <context>
     <name>CgnsGridImporter</name>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="39"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="31"/>
+        <source>CGNS files (*.cgn)</source>
+        <translation>CGNS ファイル (*.cgn)</translation>
+    </message>
+    <message>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="37"/>
         <source>CGNS file</source>
         <translation>CGNS ファイル</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="54"/>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="100"/>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="121"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="52"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="98"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="55"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="53"/>
         <source>Error occured while importing grid.</source>
         <translation>格子のインポート中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="100"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="98"/>
         <source>There is no grid that can be imported.</source>
         <translation>インポートできる格子がありません。</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="122"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="120"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
         <translation>この CGNSファイルは、 %1 %2 用のもので、現在のソルバーと互換性がありません。続行すると、格子の属性は一部のみインポートされる可能性があります。
 このファイルから格子をインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="127"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="128"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="126"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
@@ -212,22 +217,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="141"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="126"/>
         <source>Edit Z-direction Scale</source>
         <translation>Z方向の倍率の編集</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="167"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="167"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="152"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="176"/>
+        <location filename="../subwindow/gridbirdeyewindow/gridbirdeyewindowdatamodel.cpp" line="161"/>
         <source>Edit Color Setting</source>
         <translation>表示色設定</translation>
     </message>
@@ -243,22 +248,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBCDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="39"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="40"/>
         <source>New Item</source>
         <translation>新しい項目</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="61"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="64"/>
         <source>&amp;Edit Condition...</source>
         <translation>条件の編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="63"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="66"/>
         <source>&amp;Assign Condition</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="66"/>
+        <location filename="../datamodel/preprocessorbcdataitem.cpp" line="69"/>
         <source>&amp;Release Condition</source>
         <translation>削除(&amp;R)</translation>
     </message>
@@ -266,37 +271,37 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBCGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="19"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="21"/>
         <source>Boundary Condition</source>
         <translation>境界条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="34"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="32"/>
         <source>Add %1</source>
         <translation>%1 の追加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="38"/>
         <source>&amp;Edit Condition...</source>
         <translation>条件の編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="40"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="45"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="43"/>
         <source>&amp;Assign Condition</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="47"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="45"/>
         <source>&amp;Release Condition</source>
         <translation>削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="50"/>
+        <location filename="../datamodel/preprocessorbcgroupdataitem.cpp" line="48"/>
         <source>&amp;Boundary Condition</source>
         <translation>境界条件(&amp;B)</translation>
     </message>
@@ -314,12 +319,12 @@ Do you really want to import grid from this file?</source>
         <translation>ポリゴン</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="211"/>
+        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="212"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="211"/>
+        <location filename="../datamodel/preprocessorbcsettingdataitem.cpp" line="212"/>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>マッピングは、格子がない時は実行できません。</translation>
     </message>
@@ -327,22 +332,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBCSettingGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="22"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="24"/>
         <source>Boundary Condition Setting</source>
         <translation>境界条件設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="136"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="128"/>
         <source>Add %1</source>
         <translation>%1 の追加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="168"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="160"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="168"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="160"/>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation>マッピングは、格子がない時は実行できません。</translation>
     </message>
@@ -350,33 +355,27 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorBackgroundImagesDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="18"/>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="22"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="19"/>
         <source>Background Images</source>
         <translation>背景画像</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="23"/>
-        <source>BACKGROUNDIMAGES</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="28"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="24"/>
         <source>&amp;Add Image...</source>
         <translation>画像の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="29"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="25"/>
         <source>&amp;Delete All</source>
         <translation>全て削除(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="158"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="154"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="158"/>
+        <location filename="../datamodel/preprocessorbackgroundimagesdataitem.cpp" line="154"/>
         <source>Are you sure you want to delete all background images?</source>
         <translation>本当に全ての背景画像を削除していいですか?</translation>
     </message>
@@ -661,17 +660,17 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataComplexGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="35"/>
+        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="38"/>
         <source>%1 Group Setting</source>
         <translation>%1 グループ設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="39"/>
+        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="40"/>
         <source>Edit &amp;Groups...</source>
         <translation>グループの編集(&amp;G)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="99"/>
+        <location filename="../datamodel/preprocessorgeodatacomplexgroupdataitem.cpp" line="98"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
@@ -679,22 +678,22 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="39"/>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="40"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="85"/>
         <source>Failure</source>
         <translation>失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="84"/>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="85"/>
         <source>You cannot use this name for this data. A geographic data with the same name already exists.</source>
         <translation>この名前を使うことはできません。同じ名前の地理情報が既に存在します。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="136"/>
+        <location filename="../datamodel/preprocessorgeodatadataitem.cpp" line="137"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
@@ -702,110 +701,110 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="76"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="71"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="80"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="75"/>
         <source>Delete &amp;All...</source>
         <translation>すべて削除(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="83"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="78"/>
         <source>Export All Polygons...</source>
         <translation>すべてのポリゴンをエクスポート...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="86"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="81"/>
         <source>&amp;Color Setting...</source>
         <translation>表示色設定(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="88"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="83"/>
         <source>Set Up Scalarbar...</source>
         <translation>凡例の設定...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="123"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="118"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="179"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="174"/>
         <source>All importable files (%1)</source>
         <translation>全てのインポート可能なファイル (%1)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="179"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="196"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="912"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="196"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
         <source>File type can not be recognized from the file extension. : %1</source>
         <translation>データの種類が拡張子から認識できません。 : %1</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
         <source>Import failed</source>
         <translation>インポート失敗</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="211"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="252"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
         <source>Importing data from %1 failed.</source>
         <translation>%1 からデータをインポートするのに失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="217"/>
         <source>Importing data...</source>
         <translation>データをインポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="336"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <source>Select data to export</source>
         <translation>エクスポートするデータの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="336"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
         <source>Please select which data to export.</source>
         <translation>エクスポートするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="675"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="668"/>
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="857"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
         <source>Export Polygons</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="857"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="912"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>
@@ -813,7 +812,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="39"/>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="40"/>
         <source>Geographic Data</source>
         <translation>地理情報</translation>
     </message>
@@ -821,27 +820,27 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="103"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="98"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation>格子生成条件と格子形状の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="197"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="192"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="197"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="192"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation>本当に格子生成条件と格子を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="212"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="207"/>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="212"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="207"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation>地理情報の格子属性へのマッピングを実行しますか?</translation>
     </message>
@@ -849,37 +848,37 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="52"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="49"/>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="56"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="53"/>
         <source>Edit value by specifying variation...</source>
         <translation>変化量を指定して値を編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="77"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="74"/>
         <source>Grid Cell Attribute Display Setting</source>
         <translation>格子セル属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="197"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="185"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="198"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="186"/>
         <source>Input the new value of %1 at the selected grid cells.</source>
         <translation>選択された格子セルでの、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="210"/>
         <source>Apply variation to %1</source>
         <translation>%1 に変化量を適用</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="223"/>
+        <location filename="../datamodel/preprocessorgridattributecelldataitem.cpp" line="211"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
@@ -892,12 +891,12 @@ Do you really want to import grid from this file?</source>
         <translation>ダイアログ</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="50"/>
+        <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="49"/>
         <source>Attribute</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="51"/>
+        <location filename="../datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp" line="50"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -910,12 +909,12 @@ Do you really want to import grid from this file?</source>
         <translation>セルの属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="89"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="85"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="101"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="97"/>
         <source>Cell Attribute Change</source>
         <translation>セル属性の変更</translation>
     </message>
@@ -946,52 +945,52 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="43"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="42"/>
         <source>Execute mapping</source>
         <translation>マッピングを実行する</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="46"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="45"/>
         <source>&amp;Execute...</source>
         <translation>実行(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="155"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="224"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="279"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="153"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="204"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="222"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="277"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="155"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="153"/>
         <source>Dimension %1 of geographic data %2 has no value. Can not start mapping.</source>
         <translation>地理情報データ %2 の次元 %1 には値がありません。マッピングを開始できません。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="279"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="204"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="277"/>
         <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="224"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="222"/>
         <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
         <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="268"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="266"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="268"/>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="292"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="266"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="290"/>
         <source>Mapping geographic data finished successfully.</source>
         <translation>地形データのマッピングが完了しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="292"/>
+        <location filename="../datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp" line="290"/>
         <source>Mapping geographic data finished</source>
         <translation>地形データマッピングの完了</translation>
     </message>
@@ -1072,89 +1071,89 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="69"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="64"/>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="73"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="68"/>
         <source>Export...</source>
         <translation>エクスポート...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="76"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="71"/>
         <source>Edit value by specifying variation...</source>
         <translation>変化量を指定して値を編集...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="80"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="75"/>
         <source>Open &amp;Crosssection Window</source>
         <translation>横断面ウィンドウを開く(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="84"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="79"/>
         <source>Open &amp;Vertical Crosssection Window</source>
         <translation>縦断面ウィンドウを開く(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="111"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="106"/>
         <source>Grid Node Attribute Display Setting</source>
         <translation>格子点属性の表示設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="266"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="261"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="267"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="262"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、新しい %1 の値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="292"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="287"/>
         <source>Apply variation to %1</source>
         <translation>%1 に変化量を適用</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="293"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="288"/>
         <source>Input the variation of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、%1 の変化量を入力してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="326"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="352"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="321"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="347"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="326"/>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="352"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="321"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="347"/>
         <source>To open a Crosssection Window, Please select only one grid node.</source>
         <translation>断面ウィンドウを開くには、格子点を一つだけ選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="419"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="414"/>
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="421"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="416"/>
         <source>Export as Topography Data</source>
         <translation>地勢データとしてエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="427"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="422"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="445"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="440"/>
         <source>Grid condition successfully exported to %1.</source>
         <translation>格子属性は %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="449"/>
+        <location filename="../datamodel/preprocessorgridattributenodedataitem.cpp" line="444"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1167,7 +1166,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>格子点の属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="91"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="87"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -1240,54 +1239,54 @@ This algorithm can be used only for structured grids.</source>
         <translation type="obsolete">格子生成条件</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="43"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="40"/>
         <source>&amp;Create Grid...</source>
         <translation>格子生成(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="47"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="44"/>
         <source>&amp;Select Algorithm to Create Grid...</source>
         <translation>格子生成アルゴリズムの選択(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="50"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="47"/>
         <source>Reset to &amp;Default...</source>
         <translation>初期状態に戻す(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="52"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="49"/>
         <source>&amp;Delete Grid Creating Condition...</source>
         <translation>格子生成条件の削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="157"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="186"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="330"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="154"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="183"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="327"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="158"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="155"/>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
         <translation>この操作を実行すると、既に存在する格子は上書きされます。よろしいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="187"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="184"/>
         <source>Are you sure you want to discard the grid creating condition?</source>
         <translation>本当に格子生成条件を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="205"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="202"/>
         <source>Confirm</source>
         <translation>確認</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="206"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="203"/>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
         <translation>本当に格子生成条件を初期状態に戻していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="330"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="327"/>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
         <translation>格子生成アルゴリズムを切り替えると、現在の格子と格子生成条件は破棄されます。</translation>
     </message>
@@ -1344,27 +1343,27 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
-        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="118"/>
+        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="119"/>
         <source>&amp;Edit...</source>
         <translation>編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="428"/>
+        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="429"/>
         <source>Left Bank Side</source>
         <translation>左岸側</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="432"/>
+        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="433"/>
         <source>Right Bank Side</source>
         <translation>右岸側</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="962"/>
+        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="963"/>
         <source>Edit %1</source>
         <translation>%1 の編集</translation>
     </message>
     <message>
-        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="963"/>
+        <location filename="../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp" line="964"/>
         <source>Input the new value of %1 at the selected grid nodes.</source>
         <translation>選択された格子点での、新しい %1 の値を入力してください。</translation>
     </message>
@@ -1372,132 +1371,132 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1349"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1342"/>
         <source>Grid</source>
         <translation>格子</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="248"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="241"/>
         <source>Select file to import</source>
         <translation>インポートするファイルの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="312"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="411"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="434"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="305"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="404"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="427"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="312"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="305"/>
         <source>Importing grid failed.</source>
         <translation>格子のインポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="348"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="341"/>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
         <translation>以下の問題がこの格子で見つかりました。本当にこの格子をエクスポートしますか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="356"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="349"/>
         <source>Show Detail</source>
         <translation>詳細を表示</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="357"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="453"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="350"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="446"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="379"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="372"/>
         <source>Select File to Export</source>
         <translation>エクスポートするファイル名の選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="390"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="383"/>
         <source>Exporting Grid...</source>
         <translation>格子をエクスポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="430"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="423"/>
         <source>Grid successfully exported to %1.</source>
         <translation>格子は、%1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="434"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="427"/>
         <source>Exporting grid to %1 failed.</source>
         <translation>格子の %1 へのエクスポートが失敗しました。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="453"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="446"/>
         <source>Are you sure you want to discard the grid?</source>
         <translation>本当に格子を削除していいですか?</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1067"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1060"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1071"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1064"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1075"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1068"/>
         <source>Grid &amp;Shape...</source>
         <translation>格子形状(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1078"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1071"/>
         <source>&amp;Select Polygon Region</source>
         <translation>ポリゴン領域選択(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1080"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1073"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1077"/>
         <source>&amp;Grid</source>
         <translation>格子(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1085"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1086"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1078"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1079"/>
         <source>&amp;Node Attribute...</source>
         <translation>格子点属性(&amp;N)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1088"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1089"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1081"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1082"/>
         <source>&amp;Cell Attribute...</source>
         <translation>セル属性(&amp;C)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1091"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1084"/>
         <source>Set &amp;Up Scalarbar...</source>
         <translation>凡例の設定(&amp;U)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1095"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1088"/>
         <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>鳥瞰図ウィンドウを開く(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1352"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1345"/>
         <source> [No Data]</source>
         <translation> [データなし]</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1362"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1355"/>
         <source> (%1 x %2 = %3)</source>
         <translation> (%1 x %2 = %3)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1365"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1358"/>
         <source> (%1)</source>
         <translation> (%1)</translation>
     </message>
@@ -1653,22 +1652,22 @@ This algorithm can be used only for structured grids.</source>
         <translation>格子形状</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="89"/>
+        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="65"/>
         <source>&amp;Edit Coordinates...</source>
         <translation>座標の編集(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="92"/>
+        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="68"/>
         <source>Open &amp;Crosssection Window</source>
         <translation>横断面ウィンドウを開く(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="96"/>
+        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="72"/>
         <source>Open &amp;Vertical Crosssection Window</source>
         <translation>縦断面ウィンドウを開く(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="160"/>
+        <location filename="../datamodel/preprocessorgridshapedataitem.cpp" line="89"/>
         <source>Move Grid Point(s)</source>
         <translation>格子点の移動</translation>
     </message>
@@ -1742,17 +1741,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="63"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="58"/>
         <source>Add New Grid</source>
         <translation>新しい格子を追加</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="134"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="129"/>
         <source>Region</source>
         <translation>領域</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="139"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="134"/>
         <source>Region%1</source>
         <translation>領域%1</translation>
     </message>
@@ -1818,12 +1817,11 @@ This algorithm can be used only for structured grids.</source>
         <translation>実測値</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="39"/>
         <source>MEASUREDDATAS</source>
-        <translation>MEASUREDDATAS</translation>
+        <translation type="vanished">MEASUREDDATAS</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="48"/>
+        <location filename="../datamodel/preprocessormeasureddatatopdataitem.cpp" line="43"/>
         <source>&amp;Import...</source>
         <translation>インポート(&amp;I)...</translation>
     </message>
@@ -1844,7 +1842,7 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorNormal15DGridWithCrossSectionShapeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp" line="24"/>
+        <location filename="../datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp" line="26"/>
         <source>Display &amp;Cross Section</source>
         <translation>横断面の表示 (&amp;C)</translation>
     </message>
@@ -2235,27 +2233,31 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>ProjectGridImporter</name>
     <message>
-        <location filename="../gridimporter/projectgridimporter.cpp" line="30"/>
+        <location filename="../gridimporter/projectgridimporter.cpp" line="28"/>
         <source>Project file</source>
         <translation>プロジェクトファイル</translation>
+    </message>
+    <message>
+        <location filename="../gridimporter/projectgridimporter.cpp" line="34"/>
+        <source>iRIC Project files (*.ipro)</source>
+        <translation>iRIC プロジェクトファイル (*.ipro)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="296"/>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="406"/>
+        <location filename="../datamodel/preprocessorgridattributecellgroupdataitem.cpp" line="291"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="402"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="105"/>
+        <location filename="../datamodel/preprocessorgridattributenodegroupdataitem.cpp" line="101"/>
         <source>Node Attribute Change</source>
         <translation>格子点属性の選択変更</translation>
     </message>
     <message>
-        <location filename="../gridexporter/cgnsgridexporter.cpp" line="25"/>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="33"/>
+        <location filename="../gridexporter/cgnsgridexporter.cpp" line="29"/>
         <source>CGNS files (*.cgn)</source>
         <translation>CGNS ファイル (*.cgn)</translation>
     </message>
@@ -2284,9 +2286,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">VTKファイル (*.vtk)</translation>
     </message>
     <message>
-        <location filename="../gridimporter/projectgridimporter.cpp" line="36"/>
         <source>iRIC Project files (*.ipro)</source>
-        <translation>iRIC プロジェクトファイル (*.ipro)</translation>
+        <translation type="vanished">iRIC プロジェクトファイル (*.ipro)</translation>
     </message>
     <message>
         <location filename="../preprocessorwindow.cpp" line="295"/>
@@ -2391,7 +2392,7 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView</name>
     <message>
-        <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp" line="34"/>
+        <location filename="../subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp" line="36"/>
         <source>&amp;Move</source>
         <translation>移動(&amp;M)</translation>
     </message>

@@ -12,7 +12,7 @@
 <context>
     <name>Axis2dDataItem</name>
     <message>
-        <location filename="../axis2d/axis2ddataitem.cpp" line="15"/>
+        <location filename="../axis2d/axis2ddataitem.cpp" line="17"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>
@@ -28,23 +28,23 @@
 <context>
     <name>BackgroundImageInfo</name>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="78"/>
-        <location filename="../project/backgroundimageinfo.cpp" line="80"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="79"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="81"/>
         <source>Fix Image position</source>
         <translation>位置の固定</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="128"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="129"/>
         <source>Unable to read image %1</source>
         <translation>%1 を読み込めませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="228"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="228"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="229"/>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
         <translation>ファイル %1 で、X方向のピクセルごとの増分と、Y方向のピクセル方向の増分が一致していません。このままでも読み込むことはできますが、恐らく設定が間違っています。</translation>
     </message>
@@ -434,17 +434,17 @@ Do you really want to import this file?</source>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="12"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="25"/>
         <source>Distance Measures</source>
         <translation>距離計測</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="20"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="21"/>
         <source>&amp;Add Measure...</source>
         <translation>計測の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="30"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="48"/>
         <source>Measure%1</source>
         <translation>計測%1</translation>
     </message>
@@ -452,7 +452,7 @@ Do you really want to import this file?</source>
 <context>
     <name>GeoData</name>
     <message>
-        <location filename="../pre/geodata/geodata.cpp" line="34"/>
+        <location filename="../pre/geodata/geodata.cpp" line="38"/>
         <source>Edit &amp;Name...</source>
         <translation>名前の編集(&amp;N)...</translation>
     </message>
@@ -465,18 +465,23 @@ Do you really want to import this file?</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="22"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="21"/>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="123"/>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="134"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="89"/>
+        <source>Background edit value</source>
+        <translation>背景の値の編集</translation>
+    </message>
+    <message>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="130"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="141"/>
         <source>Edit %1 default value</source>
         <translation>%1 のデフォルト値の編集</translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="124"/>
+        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="131"/>
         <source>Please input new default value.</source>
         <translation>新しいデフォルト値を入力してください。</translation>
     </message>
@@ -566,9 +571,8 @@ Do you really want to import this file?</source>
 <context>
     <name>GridAttributeEditCommand</name>
     <message>
-        <location filename="../pre/gridcond/base/gridattributeeditwidgett.h" line="24"/>
         <source>Edit grid attribute value(s)</source>
-        <translation>格子属性の編集</translation>
+        <translation type="vanished">格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -588,7 +592,14 @@ Do you really want to import this file?</source>
 <context>
     <name>GridAttributeEditVariationCommand</name>
     <message>
-        <location filename="../pre/gridcond/base/gridattributevariationeditwidgett.h" line="25"/>
+        <source>Edit grid attribute value(s)</source>
+        <translation type="vanished">格子属性の編集</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeEditWidget</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributeeditwidgett.h" line="23"/>
         <source>Edit grid attribute value(s)</source>
         <translation>格子属性の編集</translation>
     </message>
@@ -605,6 +616,14 @@ Do you really want to import this file?</source>
         <location filename="../pre/gridcond/base/gridattributevariationeditdialog.ui" line="42"/>
         <source>TextLabel</source>
         <translation>テキストラベル</translation>
+    </message>
+</context>
+<context>
+    <name>GridAttributeVariationEditWidget</name>
+    <message>
+        <location filename="../pre/gridcond/base/gridattributevariationeditwidgett.h" line="24"/>
+        <source>Edit grid attribute value(s)</source>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -680,7 +699,7 @@ Do you really want to import this file?</source>
 <context>
     <name>GridCreatingCondition</name>
     <message>
-        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="17"/>
+        <location filename="../pre/gridcreatingcondition/gridcreatingcondition.cpp" line="15"/>
         <source>&amp;Grid Creating Condition</source>
         <translation>格子生成条件(&amp;G)</translation>
     </message>
@@ -832,59 +851,59 @@ Do you really want to import this file?</source>
         <translation>計算条件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="43"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="46"/>
         <source>&amp;Save and Close</source>
         <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="122"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="146"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="232"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="239"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="123"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="128"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="224"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="249"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="129"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="147"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="224"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="232"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="239"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="249"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
     </message>
@@ -1077,27 +1096,27 @@ Do you really want to import this file?</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="43"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="42"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="75"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="73"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="76"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="74"/>
         <source>Export Measured Data</source>
         <translation>実測値のエクスポート</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="81"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="79"/>
         <source>Measured Data successfully exported to %1.</source>
         <translation>実測値は、 %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="83"/>
+        <location filename="../measureddata/measureddatafiledataitem.cpp" line="81"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1105,9 +1124,19 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="46"/>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="70"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="433"/>
+        <source>Update Contour Setting</source>
+        <translation>コンターの設定変更</translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="488"/>
+        <source>Contour Physical Value Change</source>
+        <translation>コンター 物理量変更</translation>
     </message>
 </context>
 <context>
@@ -1138,12 +1167,12 @@ Do you really want to import this file?</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="94"/>
+        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="138"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="94"/>
+        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="138"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -1151,9 +1180,14 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="38"/>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="64"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
+    </message>
+    <message>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="112"/>
+        <source>Arrow Physical Value Change</source>
+        <translation>ベクトル 物理量変更</translation>
     </message>
 </context>
 <context>
@@ -1858,7 +1892,7 @@ Do you really want to import this file?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/graphicswindowdataitem.h" line="185"/>
+        <location filename="../datamodel/graphicswindowdataitem.h" line="196"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
@@ -1899,53 +1933,49 @@ Do you really want to import this file?</source>
         <translation>距離計測の移動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="589"/>
+        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="588"/>
         <source>Edit Distance Measure Property</source>
         <translation>距離計測プロパティの編集</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="772"/>
+        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="771"/>
         <source>Redefine Distance Measure</source>
         <translation>距離計測の再定義</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="440"/>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="544"/>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="132"/>
         <source>Arrow Physical Value Change</source>
-        <translation>ベクトル 物理量変更</translation>
+        <translation type="vanished">ベクトル 物理量変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="473"/>
+        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="443"/>
         <source>Update Arrow Setting</source>
         <translation>ベクトルの設定変更</translation>
     </message>
     <message>
-        <location filename="../pre/geodatabackground/geodatabackground.cpp" line="90"/>
         <source>Background edit value</source>
-        <translation>背景の値の編集</translation>
+        <translation type="vanished">背景の値の編集</translation>
     </message>
     <message>
-        <location filename="../project/backgroundimageinfo.cpp" line="274"/>
+        <location filename="../project/backgroundimageinfo.cpp" line="275"/>
         <source>Reallocate Background Image</source>
         <translation>背景画像の再配置</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="14"/>
-        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="40"/>
+        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="28"/>
+        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="83"/>
         <source>Default</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="40"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="74"/>
         <source>(Undefined)</source>
         <translation>(未定義)</translation>
     </message>
@@ -2006,7 +2036,7 @@ Do you really want to import this file?</source>
 <context>
     <name>SolverDefinition</name>
     <message>
-        <location filename="../solverdef/solverdefinition.cpp" line="62"/>
+        <location filename="../solverdef/solverdefinition.cpp" line="97"/>
         <source>%1 Grids</source>
         <translation>%1 格子</translation>
     </message>
@@ -2014,78 +2044,78 @@ Do you really want to import this file?</source>
 <context>
     <name>Structured2DGrid</name>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="202"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="209"/>
         <source>An edge line intersects with that of another cell in this grid.</source>
         <translation>格子線が、他のセルの格子線と交差しています。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="208"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="215"/>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
         <translation>辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="215"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="222"/>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
         <translation>セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="221"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="228"/>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
         <translation>格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="230"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="237"/>
         <source>* Cells where edges intersect</source>
         <translation>* 格子線が交差しているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="251"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="297"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="333"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="368"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="397"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="258"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="304"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="340"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="375"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="404"/>
         <source>Not exist</source>
         <translation>ありません</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="262"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="269"/>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
         <translation>* 辺のアスペクト比が %1 以上のセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="277"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="287"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="284"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="294"/>
         <source>I, J, Aspect ratio</source>
         <translation>I, J, アスペクト比</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="279"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="286"/>
         <source>Edge length too small</source>
         <translation>辺の長さが小さすぎます</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="306"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="313"/>
         <source>* Cells where angle of cell vertex is below %1</source>
         <translation>* セルの頂点の角度が %1 以下になっているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="324"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="331"/>
         <source>I, J, Angle</source>
         <translation>I, J, 角度</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="342"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="349"/>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
         <translation>セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="358"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="387"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="365"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="394"/>
         <source>I, J, Variation</source>
         <translation>I, J, 変化率</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="373"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="380"/>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>

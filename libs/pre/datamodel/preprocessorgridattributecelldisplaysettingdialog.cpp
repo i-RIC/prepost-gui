@@ -46,8 +46,8 @@ PreProcessorGridAttributeCellDisplaySettingDialog::PreProcessorGridAttributeCell
 	ui->setupUi(this);
 
 	QStringList hlabels;
-	hlabels << tr("Attribute");
-	hlabels << tr("Color");
+	hlabels << PreProcessorGridAttributeCellDisplaySettingDialog::tr("Attribute");
+	hlabels << PreProcessorGridAttributeCellDisplaySettingDialog::tr("Color");
 
 	ui->tableWidget->setColumnCount(2);
 	ui->tableWidget->setColumnWidth(0, ATTRWIDTH);

@@ -37,7 +37,7 @@ PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* p
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
-	m_exportAction = new QAction(tr("&Export..."), this);
+	m_exportAction = new QAction(PreProcessorGeoDataDataItem::tr("&Export..."), this);
 	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportGeoData()));
 }

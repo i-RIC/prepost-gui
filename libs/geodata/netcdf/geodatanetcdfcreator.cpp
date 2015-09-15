@@ -12,7 +12,7 @@
 GeoDataNetcdfCreator::GeoDataNetcdfCreator() :
 	GeoDataCreator {}
 {
-	m_caption = tr("Raster data");
+	m_caption = GeoDataNetcdfCreator::tr("Raster data");
 }
 
 QString GeoDataNetcdfCreator::name(unsigned int index)
