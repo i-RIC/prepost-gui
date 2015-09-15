@@ -132,17 +132,17 @@
         <translation>このポリゴン内での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1774"/>
+        <location filename="../geodatapolygon.cpp" line="1770"/>
         <source>Polygon property edit</source>
         <translation>ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1839"/>
+        <location filename="../geodatapolygon.cpp" line="1841"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1839"/>
+        <location filename="../geodatapolygon.cpp" line="1841"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -155,7 +155,7 @@
 <context>
     <name>GeoDataPolygonAbstractPolygon</name>
     <message>
-        <location filename="../geodatapolygonabstractpolygon.cpp" line="120"/>
+        <location filename="../geodatapolygonabstractpolygon.cpp" line="121"/>
         <source>Please specify a closed polygon!</source>
         <translation>閉じたポリゴンを指定してください!</translation>
     </message>
@@ -217,33 +217,39 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="21"/>
+        <location filename="../geodatapolygonimporter.cpp" line="29"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="44"/>
-        <location filename="../geodatapolygonimporter.cpp" line="58"/>
+        <location filename="../geodatapolygonimporter.cpp" line="52"/>
+        <location filename="../geodatapolygonimporter.cpp" line="66"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="44"/>
+        <location filename="../geodatapolygonimporter.cpp" line="52"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>このシェープファイルに含まれているデータは、ポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="58"/>
+        <location filename="../geodatapolygonimporter.cpp" line="66"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>*shp ファイルと *.dbf ファイルで、含まれているポリゴンの数が一致していません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="140"/>
+        <location filename="../geodatapolygonimporter.cpp" line="118"/>
+        <location filename="../geodatapolygonimporter.cpp" line="173"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="140"/>
+        <location filename="../geodatapolygonimporter.cpp" line="118"/>
+        <source>Importing Polygon failed. Could not read data</source>
+        <translation>ポリゴンのインポートが失敗しました。データが読み込めません。</translation>
+    </message>
+    <message>
+        <location filename="../geodatapolygonimporter.cpp" line="173"/>
         <source>Importing Polygon failed: %1</source>
         <translation>ポリゴンのインポートが失敗しました。: %1</translation>
     </message>
@@ -261,28 +267,28 @@
         <translation>エンコーディング:</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="51"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="64"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="57"/>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="119"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="70"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
         <translation>シェープファイルの属性から読み込む</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="103"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
         <translation>自動的に設定する (例: ポリゴン1)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="113"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="126"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="167"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
         <translation>値を指定する</translation>
     </message>

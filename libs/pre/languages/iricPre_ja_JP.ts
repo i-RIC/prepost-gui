@@ -742,7 +742,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="916"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -753,13 +753,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="252"/>
         <source>Import failed</source>
         <translation>インポート失敗</translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
         <source>Importing data from %1 failed.</source>
         <translation>%1 からデータをインポートするのに失敗しました。</translation>
     </message>
@@ -769,42 +768,57 @@ Do you really want to import grid from this file?</source>
         <translation>データをインポートしています...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="227"/>
+        <source>Canceled</source>
+        <translation>キャンセル</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="227"/>
+        <source>Importing canceled.</source>
+        <translation>インポートがキャンセルされました。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
         <source>Information</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="239"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation>この地理情報データをインポートするには、先に座標系を指定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="252"/>
+        <source>Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.</source>
+        <translation>%1からのデータのインポートが失敗しました。「無視」ボタンを押すと、このデータを無視し、残りのデータのインポートを試みます。</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="340"/>
         <source>Select data to export</source>
         <translation>エクスポートするデータの選択</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="340"/>
         <source>Please select which data to export.</source>
         <translation>エクスポートするデータを選択してください。</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="668"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="679"/>
         <source>%1 Color Setting</source>
         <translation>%1 表示色設定</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="861"/>
         <source>Export Polygons</source>
         <translation>ポリゴンのエクスポート</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="861"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="916"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation>本当に %1 に含まれるすべての項目を削除していいですか?</translation>
     </message>
@@ -1983,7 +1997,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>設定(&amp;S)...</translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrootdataitem.cpp" line="267"/>
+        <location filename="../datamodel/preprocessorrootdataitem.cpp" line="269"/>
         <source>Change Attribute Mapping Setting</source>
         <translation>格子属性のマッピング設定</translation>
     </message>
