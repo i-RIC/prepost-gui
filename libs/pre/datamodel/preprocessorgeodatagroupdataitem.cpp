@@ -244,10 +244,12 @@ void PreProcessorGeoDataGroupDataItem::import()
 		bool ret = importer->importData(geodata, i, w);
 		if (! ret) {
 			// failed.
-			QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
+			int result = QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.").arg(QDir::toNativeSeparators(filename)), QMessageBox::Abort | QMessageBox::Ignore);
 			delete item;
 			item = nullptr;
-			goto ERROR;
+			if (result == QMessageBox::Abort) {
+				goto ERROR;
+			}
 		} else {
 			QVector2D o = offset();
 			geodata->applyOffset(o.x(), o.y());
