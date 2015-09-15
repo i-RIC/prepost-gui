@@ -16,6 +16,7 @@
 #include "iricmainwindow.h"
 
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
+#include <guibase/cursorchanger.h>
 #include <guibase/coordinatesystembuilder.h>
 #include <guibase/irictoolbar.h>
 #include <guibase/itemselectingdialog.h>
@@ -283,7 +284,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	// close project first.
 	if (! closeProject()) {return;}
 
-	setCursor(Qt::WaitCursor);
+	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	m_isOpening = true;
 	// create projectdata
 	QFileInfo fileinfo(filename);
@@ -300,7 +301,6 @@ void iRICMainWindow::openProject(const QString& filename)
 			if (! m_projectData->copyTo(wFolder, true)) {
 				// copying failed or canceled.
 				closeProject();
-				setCursor(Qt::ArrowCursor);
 				return;
 			}
 		} else {
@@ -325,7 +325,6 @@ void iRICMainWindow::openProject(const QString& filename)
 		if (! m_projectData->unzipFrom(filename)) {
 			// unzipping failed or canceled.
 			closeProject();
-			setCursor(Qt::ArrowCursor);
 			return;
 		}
 	}
@@ -337,7 +336,6 @@ void iRICMainWindow::openProject(const QString& filename)
 		QMessageBox::warning(this, tr("Error"), m);
 		// opening project failed.
 		closeProject();
-		setCursor(Qt::ArrowCursor);
 		return;
 	}
 	// make sure whether supporting solver exists.
@@ -349,7 +347,6 @@ void iRICMainWindow::openProject(const QString& filename)
 			.arg(m_projectData->mainfile()->solverName())
 			.arg(m_projectData->mainfile()->solverVersion().toString()));
 		closeProject();
-		setCursor(Qt::ArrowCursor);
 		return;
 	}
 	// create solver definition data
@@ -363,7 +360,6 @@ void iRICMainWindow::openProject(const QString& filename)
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Error"), m);
 		closeProject();
-		setCursor(Qt::ArrowCursor);
 		return;
 	}
 
@@ -373,7 +369,6 @@ void iRICMainWindow::openProject(const QString& filename)
 	bool ok = m_projectData->switchToDefaultCgnsFile();
 	if (! ok) {
 		closeProject();
-		setCursor(Qt::ArrowCursor);
 		return;
 	}
 
@@ -401,7 +396,6 @@ void iRICMainWindow::openProject(const QString& filename)
 	// update recently opened projects.
 	updateRecentProjects(filename);
 	updatePostActionStatus();
-	setCursor(Qt::ArrowCursor);
 }
 
 void iRICMainWindow::importCalcCondition()
@@ -674,7 +668,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 {
 	m_isSaving = true;
 	bool ret;
-	setCursor(Qt::WaitCursor);
+	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	// save data to work folder.
 	ret = m_projectData->save();
 	if (! ret) {
@@ -706,7 +700,6 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 	} else {
 		if (m_projectData->hasHugeCgns()) {
 			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot saved as a file (*.ipro). Please save as a project."));
-			setCursor(Qt::ArrowCursor);
 			m_isSaving = false;
 			return false;
 		}
@@ -726,7 +719,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		m_projectData->setFilename(filename, folder);
 	}
 
-	setCursor(Qt::ArrowCursor);
+	cursorChanger.restoreCursor();
 	if (! ret) {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
 		m_isSaving = false;
@@ -1992,9 +1985,8 @@ QString iRICMainWindow::tmpFileName(int len) const
 void iRICMainWindow::checkCgnsStepsUpdate()
 {
 	if (m_projectData == nullptr) {return;}
-	setCursor(Qt::WaitCursor);
+	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	m_projectData->mainfile()->postSolutionInfo()->checkCgnsStepsUpdate();
-	setCursor(Qt::ArrowCursor);
 }
 
 void iRICMainWindow::importMeasuredData()

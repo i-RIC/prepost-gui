@@ -84,6 +84,7 @@ HEADERS += centeredcheckbox.h \
            coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
+           cursorchanger.h \
            dirnameeditwidget.h \
            doublespinboxwithhelp.h \
            filenameeditwidget.h \
@@ -148,6 +149,7 @@ SOURCES += centeredcheckbox.cpp \
            coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
+           cursorchanger.cpp \
            dirnameeditwidget.cpp \
            doublespinboxwithhelp.cpp \
            filenameeditwidget.cpp \
@@ -171,6 +173,7 @@ SOURCES += centeredcheckbox.cpp \
            scalarbarsetting.cpp \
            scalarbarwidget.cpp \
            sliderwithvalue.cpp \
+           structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
            transparencywidget.cpp \
            vtk2dinteractorstyle.cpp \
@@ -181,8 +184,7 @@ SOURCES += centeredcheckbox.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            waitdialog.cpp \
-           xyaxisdisplaysettingdialog.cpp \
-    structuredgridregion.cpp
+           xyaxisdisplaysettingdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \
