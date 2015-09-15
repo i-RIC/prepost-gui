@@ -169,6 +169,9 @@ void SolverConsoleWindow::terminateSolver()
 	if (QMessageBox::No == button) {
 		return;
 	}
+	// In case solver stops before pressing "Yes" button.
+	if (m_process == nullptr) { return; }
+
 	m_solverKilled = true;
 	QString wd = m_projectData->workDirectory();
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
