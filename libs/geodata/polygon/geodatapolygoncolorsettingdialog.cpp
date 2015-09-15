@@ -11,6 +11,18 @@ GeoDataPolygonColorSettingDialog::Setting::Setting() :
 	opacity = 50;
 }
 
+GeoDataPolygonColorSettingDialog::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+GeoDataPolygonColorSettingDialog::Setting& GeoDataPolygonColorSettingDialog::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 GeoDataPolygonColorSettingDialog::GeoDataPolygonColorSettingDialog(QWidget* parent) :
 	QDialog {parent},
 	ui {new Ui::GeoDataPolygonColorSettingDialog}

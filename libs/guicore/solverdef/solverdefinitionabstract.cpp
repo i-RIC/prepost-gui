@@ -18,9 +18,10 @@ class SolverDefinitionAbstract::Impl
 {
 public:
 	/// Constructor
-	Impl(const QString& solverfolder, const QLocale& locale, SolverDefinitionAbstract* parent);
+	Impl(SolverDefinitionAbstract* parent);
 	/// Destructor
 	~Impl() {}
+	void load(const QString& solverfolder, const QLocale& locale);
 
 	QString m_folderName;
 	QString m_name;
@@ -35,15 +36,12 @@ public:
 	QString loadFile(const QString& filename);
 
 private:
-	void load(const QString& solverfolder, const QLocale& locale);
 	SolverDefinitionAbstract* m_parent;
 };
 
-SolverDefinitionAbstract::Impl::Impl(const QString &solverfolder, const QLocale &locale, SolverDefinitionAbstract* parent) :
+SolverDefinitionAbstract::Impl::Impl(SolverDefinitionAbstract* parent) :
 	m_parent {parent}
-{
-	load(solverfolder, locale);
-}
+{}
 
 QString SolverDefinitionAbstract::Impl::loadFile(const QString& filename)
 {
@@ -102,8 +100,10 @@ void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLo
 
 SolverDefinitionAbstract::SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent) :
 	QObject {parent},
-	m_impl {new Impl {solverfolder, locale, this}}
-{}
+	m_impl {new Impl {this}}
+{
+	m_impl->load(solverfolder, locale);
+}
 
 const QString& SolverDefinitionAbstract::folderName() const
 {

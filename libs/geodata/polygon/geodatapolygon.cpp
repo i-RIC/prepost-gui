@@ -77,7 +77,6 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	if (stcc != nullptr) {
 		m_gridRegionPolygon->setLookupTable(stcc->vtkDarkObj());
 	}
-	updateActorSettings();
 
 	m_selectMode = smPolygon;
 	m_selectedPolygon = m_gridRegionPolygon;
@@ -136,6 +135,7 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 	actorCollection()->AddItem(m_paintActor);
 	renderer()->AddActor(m_paintActor);
 
+	updateActorSettings();
 	updateActionStatus();
 }
 

@@ -25,7 +25,12 @@ public:
 
 	struct Setting : public CompositeContainer
 	{
+		/// Constructor
 		Setting();
+		/// Copy constructor
+		Setting(const Setting& s);
+		/// Copy operator
+		Setting& operator=(const Setting& s);
 
 		EnumContainerT<SamplingMode> samplingMode;
 		IntContainer samplingRate;

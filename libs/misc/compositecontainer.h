@@ -32,11 +32,13 @@ protected:
 	//@{
 	/// Constructor (initializer list)
 	CompositeContainer(std::initializer_list<XmlAttributeContainer*> list);
+	/// Constructor (copy)
+	CompositeContainer(const CompositeContainer& c) = delete;
 	//@}
 
-private:
 	void copyValue(const XmlAttributeContainer& c) override;
 
+private:
 	class Impl;
 	Impl* m_impl;
 };

@@ -46,9 +46,7 @@ private:
 SolverDefinition::Impl::Impl(const QString& solverfolder, const QLocale& locale, SolverDefinition *p) :
 	m_abstract {solverfolder, locale, 0},
 	m_parent {p}
-{
-	load(locale);
-}
+{}
 
 SolverDefinition::Impl::~Impl()
 {
@@ -145,7 +143,9 @@ SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& 
 
 SolverDefinition::SolverDefinition(const QString& solverfolder, const QLocale& locale) :
 	m_impl {new Impl {solverfolder, locale, this}}
-{}
+{
+	m_impl->load(locale);
+}
 
 SolverDefinition::~SolverDefinition()
 {

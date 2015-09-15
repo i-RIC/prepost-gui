@@ -30,6 +30,18 @@ Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting() :
 	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
 }
 
+Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting& Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem()
 {
 	renderer()->RemoveActor(m_previewActor);

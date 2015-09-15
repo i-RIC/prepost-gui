@@ -8,6 +8,18 @@ StructuredGridRegion::Range2d::Range2d() :
 	jMax {"jMax"}
 {}
 
+StructuredGridRegion::Range2d::Range2d(const Range2d& r) :
+	Range2d()
+{
+	CompositeContainer::copyValue(r);
+}
+
+StructuredGridRegion::Range2d& StructuredGridRegion::Range2d::operator=(const Range2d& r)
+{
+	CompositeContainer::copyValue(r);
+	return *this;
+}
+
 StructuredGridRegion::Range3d::Range3d() :
 	CompositeContainer ({&iMin, &iMax, &jMin, &jMax, &kMin, &kMax}),
 	iMin {"iMin"},
@@ -17,3 +29,15 @@ StructuredGridRegion::Range3d::Range3d() :
 	kMin {"kMin"},
 	kMax {"kMax"}
 {}
+
+StructuredGridRegion::Range3d::Range3d(const Range3d& r) :
+	Range3d()
+{
+	CompositeContainer::copyValue(r);
+}
+
+StructuredGridRegion::Range3d& StructuredGridRegion::Range3d::operator=(const Range3d& r)
+{
+	CompositeContainer::copyValue(r);
+	return *this;
+}

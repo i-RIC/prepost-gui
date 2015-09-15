@@ -33,6 +33,8 @@ public:
 	void setGridType(const QDomElement& elem);
 	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
 	void setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
+	void buildGridRelatedConditions(Grid* grid) const;
+	Grid* createEmptyGrid();
 
 	QString m_name;
 	QString m_caption;
@@ -90,7 +92,7 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& node, const SolverD
 	setupGridRelatedConditions(grcNode, translator);
 	// setup boundary conditions;
 	setupBoundaryConditions(node, translator);
-	m_emptyGrid = m_parent->createEmptyGrid();
+	m_emptyGrid = createEmptyGrid();
 }
 
 void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
@@ -184,6 +186,44 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomNode& nod
 	}
 }
 
+void SolverDefinitionGridType::Impl::buildGridRelatedConditions(Grid* grid) const
+{
+	for (SolverDefinitionGridAttribute* cond : m_gridRelatedConditions) {
+		grid->addGridRelatedCondition(cond->container(grid));
+	}
+	for (SolverDefinitionGridComplexAttribute* cond : m_gridRelatedComplexConditions) {
+		grid->addGridRelatedCondition(cond->container(grid));
+	}
+}
+
+Grid* SolverDefinitionGridType::Impl::createEmptyGrid()
+{
+	Grid* ret = nullptr;
+	switch (m_defaultGridType) {
+	case gtNormal1DGrid:
+		// @todo not implemented yet.
+		break;
+	case gtNormal1_5DGrid:
+		// @todo not implemented yet.
+		break;
+	case gtNormal1_5DGridWithCrosssection:
+		ret = new Structured15DGridWithCrossSection(nullptr);
+		break;
+	case gtStructured2DGrid:
+		ret = new Structured2DGrid(nullptr);
+		break;
+	case gtUnstructured2DGrid:
+		ret = new Unstructured2DGrid(nullptr);
+		break;
+	case gtUnknownGrid:
+		break;
+	}
+	if (ret != nullptr) {
+		buildGridRelatedConditions(ret);
+	}
+	return ret;
+}
+
 // Public interfaces
 
 SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QString& caption) :
@@ -273,14 +313,8 @@ bool SolverDefinitionGridType::isOptional() const
 
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const
 {
-	for (SolverDefinitionGridAttribute* cond : m_impl->m_gridRelatedConditions) {
-		grid->addGridRelatedCondition(cond->container(grid));
-	}
-	for (SolverDefinitionGridComplexAttribute* cond : m_impl->m_gridRelatedComplexConditions) {
-		grid->addGridRelatedCondition(cond->container(grid));
-	}
+	m_impl->buildGridRelatedConditions(grid);
 }
-
 
 Grid* SolverDefinitionGridType::emptyGrid() const
 {
@@ -289,30 +323,7 @@ Grid* SolverDefinitionGridType::emptyGrid() const
 
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
-	Grid* ret = nullptr;
-	switch (m_impl->m_defaultGridType) {
-	case gtNormal1DGrid:
-		// @todo not implemented yet.
-		break;
-	case gtNormal1_5DGrid:
-		// @todo not implemented yet.
-		break;
-	case gtNormal1_5DGridWithCrosssection:
-		ret = new Structured15DGridWithCrossSection(nullptr);
-		break;
-	case gtStructured2DGrid:
-		ret = new Structured2DGrid(nullptr);
-		break;
-	case gtUnstructured2DGrid:
-		ret = new Unstructured2DGrid(nullptr);
-		break;
-	case gtUnknownGrid:
-		break;
-	}
-	if (ret != nullptr) {
-		buildGridRelatedConditions(ret);
-	}
-	return ret;
+	return m_impl->createEmptyGrid();
 }
 
 QString SolverDefinitionGridType::solutionCaption(const QString& name) const

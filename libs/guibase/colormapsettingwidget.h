@@ -50,6 +50,10 @@ public:
 		{
 			/// Constructor
 			CustomColor();
+			/// Copy constructor
+			CustomColor(const CustomColor& c);
+			/// Copy operator
+			CustomColor& operator=(const CustomColor& c);
 
 			/// The value that corresponds to the color
 			DoubleContainer value;

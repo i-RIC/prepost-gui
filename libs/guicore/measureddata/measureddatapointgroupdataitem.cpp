@@ -54,6 +54,18 @@ MeasuredDataPointGroupDataItem::Setting::Setting() :
 	scalarBarSetting {}
 {}
 
+MeasuredDataPointGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+MeasuredDataPointGroupDataItem::Setting& MeasuredDataPointGroupDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p) :
 	GraphicsWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {

@@ -132,7 +132,8 @@ void GraphicsWindowDataItem::init()
 	if (m_standardItem) {
 		auto p = dynamic_cast<GraphicsWindowRootDataItem*>(parent());
 		if (p == nullptr) {
-			p->standardItem()->appendRow(m_standardItem);
+			auto p2 = dynamic_cast<GraphicsWindowDataItem*>(parent());
+			p2->standardItem()->appendRow(m_standardItem);
 		}
 		m_standardItem->setEditable(false);
 	}

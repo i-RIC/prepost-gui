@@ -23,6 +23,18 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::Setting() :
 	samplingNumber {"samplingNumber", 100}
 {}
 
+Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* p)
 	: Post2dWindowNodeVectorArrowGroupDataItem(p)
 {

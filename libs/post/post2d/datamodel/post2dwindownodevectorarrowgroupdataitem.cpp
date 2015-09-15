@@ -62,6 +62,18 @@ Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
 	scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
 }
 
+Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorArrowGroupDataItem::Setting& Post2dWindowNodeVectorArrowGroupDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {

@@ -13,6 +13,19 @@ PostParticleBasicPropertyDialog::Setting::Setting() :
 	size = settings.value("graphics/particlesize", 3).toInt();
 }
 
+PostParticleBasicPropertyDialog::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+
+PostParticleBasicPropertyDialog::Setting& PostParticleBasicPropertyDialog::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 PostParticleBasicPropertyDialog::PostParticleBasicPropertyDialog(QWidget* parent) :
 	QDialog {parent},
 	ui {new Ui::PostParticleBasicPropertyDialog}

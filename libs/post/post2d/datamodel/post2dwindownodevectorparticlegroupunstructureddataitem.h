@@ -21,6 +21,10 @@ public:
 	{
 		/// Constructor
 		Setting();
+		/// Copy constructor
+		Setting(const Setting& s);
+		/// Copy operator
+		Setting& operator=(const Setting& s);
 
 		QPointFContainer point1;
 		QPointFContainer point2;

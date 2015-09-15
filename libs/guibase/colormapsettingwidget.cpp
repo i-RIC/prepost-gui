@@ -12,6 +12,18 @@ ColorMapSettingWidget::CustomSetting::CustomColor::CustomColor() :
 	color {"color", Qt::black}
 {}
 
+ColorMapSettingWidget::CustomSetting::CustomColor::CustomColor(const CustomColor& c) :
+	CustomColor ()
+{
+	CompositeContainer::copyValue(c);
+}
+
+ColorMapSettingWidget::CustomSetting::CustomColor& ColorMapSettingWidget::CustomSetting::CustomColor::operator=(const CustomColor& c)
+{
+	CompositeContainer::copyValue(c);
+	return *this;
+}
+
 ColorMapSettingWidget::CustomSetting::CustomSetting() :
 	type {"type", ColorMapSettingWidget::CustomSetting::tTwoColors},
 	maxColor {"maxColor", Qt::red},

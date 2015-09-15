@@ -16,6 +16,18 @@ GridShapeEditDialog::Setting::Setting() :
 	indexColor = setting.value("graphics/gridindexcolor", QColor(Qt::black)).value<QColor>();
 }
 
+GridShapeEditDialog::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+GridShapeEditDialog::Setting& GridShapeEditDialog::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 GridShapeEditDialog::GridShapeEditDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridShapeEditDialog)

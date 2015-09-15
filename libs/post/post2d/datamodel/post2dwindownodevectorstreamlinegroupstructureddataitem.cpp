@@ -29,6 +29,18 @@ Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting() :
 	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
 }
 
+Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting& Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(Post2dWindowDataItem* parent) :
 	Post2dWindowNodeVectorStreamlineGroupDataItem {parent}
 {

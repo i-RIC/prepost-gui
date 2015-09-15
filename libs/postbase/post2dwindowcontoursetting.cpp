@@ -18,3 +18,15 @@ Post2dWindowContourSetting::Post2dWindowContourSetting() :
 	titleTextSetting.setPrefix("titleText");
 	labelTextSetting.setPrefix("labelText");
 }
+
+Post2dWindowContourSetting::Post2dWindowContourSetting(const Post2dWindowContourSetting& s) :
+	Post2dWindowContourSetting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowContourSetting& Post2dWindowContourSetting::operator=(const Post2dWindowContourSetting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}

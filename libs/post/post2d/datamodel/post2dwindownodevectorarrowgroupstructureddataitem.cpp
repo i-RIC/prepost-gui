@@ -28,6 +28,18 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::Setting() :
 	range.setPrefix("region");
 }
 
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowNodeVectorArrowGroupDataItem {p}
 {

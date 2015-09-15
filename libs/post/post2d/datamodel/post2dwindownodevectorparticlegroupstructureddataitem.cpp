@@ -26,6 +26,18 @@ Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::Setting() :
 	color = settings.value("post2d/particlecolor", QColor(Qt::black)).value<QColor>();
 }
 
+Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting& Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowParticleStructuredSettingDialog* dialog = new Post2dWindowParticleStructuredSettingDialog(p);

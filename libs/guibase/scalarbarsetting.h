@@ -25,10 +25,12 @@ public:
 
 	/// Constructor
 	ScalarBarSetting();
-	/// Constructor (copy)
+	/// Copy constructor
 	ScalarBarSetting(const ScalarBarSetting& setting);
 	/// Destructor
 	~ScalarBarSetting() {}
+	/// Copy operator
+	ScalarBarSetting& operator=(const ScalarBarSetting& setting);
 	void initForLegendBox();
 	/// Load setting from vtkScalarBarRepresentation
 	void loadFromRepresentation(vtkScalarBarRepresentation* rep);

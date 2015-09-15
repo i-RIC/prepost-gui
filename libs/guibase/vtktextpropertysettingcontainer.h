@@ -24,10 +24,12 @@ public:
 	};
 	/// Constructor
 	vtkTextPropertySettingContainer();
-	/// Constructor (copy)
+	/// Copy constructor
 	vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer& c);
 	/// Destructor
 	virtual ~vtkTextPropertySettingContainer() {}
+	/// Copy operator
+	vtkTextPropertySettingContainer& operator=(const vtkTextPropertySettingContainer& c);
 
 	/// The font family
 	FontFamily fontFamily() const {return m_fontFamily;}

@@ -31,7 +31,12 @@ public:
 
 	struct GUIBASEDLL_EXPORT Setting : public CompositeContainer
 	{
+		/// Constructor
 		Setting();
+		/// Copy constructor
+		Setting(const Setting& s);
+		/// Copy operator
+		Setting& operator=(const Setting& s);
 
 		ColorContainer color;
 		EnumContainerT<GridShapeEditDialog::Shape> shape;

@@ -31,6 +31,18 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
 
+Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {

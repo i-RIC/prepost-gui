@@ -19,6 +19,18 @@ PostTimeDataItem::Setting::Setting() :
 	color {"color", Qt::black}
 {}
 
+PostTimeDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+PostTimeDataItem::Setting& PostTimeDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 PostTimeDataItem::PostTimeDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem {tr("Time"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {

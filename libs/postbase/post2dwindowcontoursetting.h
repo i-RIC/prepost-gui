@@ -21,6 +21,10 @@ public:
 	const static int DEFAULT_NUMOFDIV;
 	/// Constructor
 	Post2dWindowContourSetting();
+	/// Copy constructor
+	Post2dWindowContourSetting(const Post2dWindowContourSetting& s);
+	/// Copy operator
+	Post2dWindowContourSetting& operator=(const Post2dWindowContourSetting& s);
 
 	IntContainer numberOfDivisions;
 	StringContainer currentSolution;

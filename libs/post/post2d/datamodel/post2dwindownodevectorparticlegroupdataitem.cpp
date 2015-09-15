@@ -44,6 +44,18 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
 
+Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorParticleGroupDataItem::Setting& Post2dWindowNodeVectorParticleGroupDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_previousStep {-2},

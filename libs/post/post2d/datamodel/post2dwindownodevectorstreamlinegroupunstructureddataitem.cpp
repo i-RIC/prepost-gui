@@ -32,6 +32,18 @@ Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::Setting() :
 	width {"width", 1}
 {}
 
+Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::Setting(const Setting& s) :
+	Setting()
+{
+	CompositeContainer::copyValue(s);
+}
+
+Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting& Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::operator=(const Setting& s)
+{
+	CompositeContainer::copyValue(s);
+	return *this;
+}
+
 Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
 	: Post2dWindowNodeVectorStreamlineGroupDataItem(parent)
 {

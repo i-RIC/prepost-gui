@@ -31,7 +31,13 @@ ScalarBarSetting::ScalarBarSetting() :
 ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
 	ScalarBarSetting {}
 {
-	operator=(setting);
+	CompositeContainer::copyValue(setting);
+}
+
+ScalarBarSetting& ScalarBarSetting::operator=(const ScalarBarSetting& setting)
+{
+	CompositeContainer::copyValue(setting);
+	return *this;
 }
 
 void ScalarBarSetting::initForLegendBox()

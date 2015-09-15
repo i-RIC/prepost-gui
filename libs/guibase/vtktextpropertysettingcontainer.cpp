@@ -18,10 +18,16 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
 	m_isShadow {"fontIsShadow", false}
 {}
 
-vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer &c) :
+vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer& c) :
 	vtkTextPropertySettingContainer {}
 {
-	*this = c;
+	CompositeContainer::copyValue(c);
+}
+
+vtkTextPropertySettingContainer& vtkTextPropertySettingContainer::operator=(const vtkTextPropertySettingContainer& c)
+{
+	CompositeContainer::copyValue(c);
+	return *this;
 }
 
 QColor vtkTextPropertySettingContainer::fontColor() const
