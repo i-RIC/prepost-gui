@@ -27,6 +27,7 @@ private:
 	void loadMetaData(iRICMainWindow *mainW);
 	void loadIricInfoXml();
 	void loadDefinitionXml(iRICMainWindow *mainW);
+	void checkVersionNumber();
 
 	VersionNumber m_versionNumber;
 	QString m_displayVersionNumber;

@@ -1,3 +1,4 @@
+#include "misc/wrongsettingexception.h"
 #include <vtkAutoInit.h>
 
 VTK_MODULE_INIT(vtkRenderingOpenGL);
@@ -12,6 +13,7 @@ VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #include <QFileInfo>
 #include <QLibraryInfo>
 #include <QLocale>
+#include <QMessageBox>
 #include <QPixmap>
 #include <QSettings>
 #include <QSplashScreen>
@@ -47,37 +49,42 @@ int main(int argc, char* argv[])
 		a.installTranslator(translator);
 	}
 
-	iRICMainWindow w;
-	w.show();
-	splash.finish(&w);
-	if (w.checkWorkFolderWorks()) {
-		// work folder is good. project file can be opened.
-		bool projectFound = false;
-		if (argc > 1) {
-			// project file or cgns file specified.
-			QTextCodec* codec = QTextCodec::codecForLocale();
-			int i = 1;
-			while (i < argc && ! projectFound) {
-				QString arg(argv[i]);
-				if (arg.left(1) != "-") {
-					// This is the project file name.
-					QString projectFile = codec->toUnicode(argv[i]);
-					QFileInfo finfo(projectFile);
-					if (finfo.suffix() == "cgn") {
-						// cgns file specified.
-						w.importCalculationResult(projectFile);
-					} else {
-						// project file specified.
-						w.openProject(projectFile);
+	try {
+		iRICMainWindow w;
+		w.show();
+		splash.finish(&w);
+		if (w.checkWorkFolderWorks()) {
+			// work folder is good. project file can be opened.
+			bool projectFound = false;
+			if (argc > 1) {
+				// project file or cgns file specified.
+				QTextCodec* codec = QTextCodec::codecForLocale();
+				int i = 1;
+				while (i < argc && ! projectFound) {
+					QString arg(argv[i]);
+					if (arg.left(1) != "-") {
+						// This is the project file name.
+						QString projectFile = codec->toUnicode(argv[i]);
+						QFileInfo finfo(projectFile);
+						if (finfo.suffix() == "cgn") {
+							// cgns file specified.
+							w.importCalculationResult(projectFile);
+						} else {
+							// project file specified.
+							w.openProject(projectFile);
+						}
+						projectFound = true;
 					}
-					projectFound = true;
+					++i;
 				}
-				++i;
+			}
+			if (! projectFound) {
+				w.openStartDialog();
 			}
 		}
-		if (! projectFound) {
-			w.openStartDialog();
-		}
+		return a.exec();
+	} catch (const WrongSettingException& e) {
+		QMessageBox::critical(&splash, iRICMainWindow::tr("Error"), e.what());
+		return 0;
 	}
-	return a.exec();
 }

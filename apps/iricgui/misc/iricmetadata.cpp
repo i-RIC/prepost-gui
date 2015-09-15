@@ -1,6 +1,7 @@
 #include "iricmetadata.h"
 
 #include "main/iricmainwindow.h"
+#include "misc/wrongsettingexception.h"
 #include <guicore/solverdef/solverdefinitionabstract.h>
 
 #include <QFile>
@@ -22,6 +23,8 @@ void iRICMetaData::loadMetaData(iRICMainWindow *mainW)
 	loadIricInfoXml();
 	// load definition.xml if it exists, and overwrite.
 	loadDefinitionXml(mainW);
+	// check the version number.
+	checkVersionNumber();
 }
 
 void iRICMetaData::loadIricInfoXml()
@@ -63,5 +66,12 @@ void iRICMetaData::loadDefinitionXml(iRICMainWindow *mainW)
 	} catch (...) {
 		// if error occurs, skip and exit.
 		return;
+	}
+}
+
+void iRICMetaData::checkVersionNumber()
+{
+	if (m_versionNumber.build() == 0) {
+		throw WrongSettingException(iRICMainWindow::tr("Build number of the version number is not specified."));
 	}
 }

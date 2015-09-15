@@ -258,6 +258,7 @@ HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
            misc/networksetting.h \
            misc/newprojectsolverselectingdialog.h \
            misc/projecttypeselectdialog.h \
+           misc/wrongsettingexception.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
            pref/preferencepagegeneral.h \
