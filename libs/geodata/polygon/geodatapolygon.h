@@ -130,8 +130,6 @@ private slots:
 
 protected:
 	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadExternalData(const QString& filename) override;
 	void saveExternalData(const QString& filename) override;
 	void setMapping(GeoDataPolygonColorSettingDialog::Mapping m);
@@ -141,6 +139,8 @@ protected:
 	void doApplyOffset(double x, double y) override;
 
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	const QPolygonF polygon() const;
 	void setPolygon(const QPolygonF& p);
 
