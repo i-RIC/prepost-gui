@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/libs/rawdata/riversurvey">
+    <qresource prefix="/libs/geodata/riversurvey">
         <file>images/cursorCrosssectionRotate.png</file>
         <file>images/cursorExpand.png</file>
         <file>images/cursorShiftCenter.png</file>

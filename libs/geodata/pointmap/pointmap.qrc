@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/libs/rawdata/pointmap">
+    <qresource prefix="/libs/geodata/pointmap">
         <file>images/iconAddPoint.png</file>
         <file>images/iconBreakLineAdd.png</file>
         <file>images/iconBreakLineDelete.png</file>
