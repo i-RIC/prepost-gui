@@ -191,8 +191,10 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
 		// Current solver support only one grid type, and it does not allow multiple grids to input.
 		// The only, and hidden gridtype node should be checked always.
-		PreProcessorGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
-		gtItem->standardItem()->setCheckState(Qt::Checked);
+		if (m_gridTypeDataItems.size() == 1) {
+			PreProcessorGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
+			gtItem->standardItem()->setCheckState(Qt::Checked);
+		}
 	}
 	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
 	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}

@@ -16,7 +16,6 @@ Post2dWindowArrowUnstructuredSettingDialog::Post2dWindowArrowUnstructuredSetting
 	ui(new Ui::Post2dWindowArrowUnstructuredSettingDialog)
 {
 	ui->setupUi(this);
-	ui->colorbarSettingButton->hide();
 
 	connect(ui->specificRadioButton, SIGNAL(toggled(bool)), ui->colorEditWidget, SLOT(setEnabled(bool)));
 	connect(ui->scalarRadioButton, SIGNAL(toggled(bool)), ui->scalarComboBox, SLOT(setEnabled(bool)));

@@ -75,6 +75,12 @@ bool SolverConsoleWindow::isSolverRunning()
 
 void SolverConsoleWindow::startSolver()
 {
+	// Check post only mode
+	if (m_projectData->isPostOnlyMode()) {
+		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not run the solver."));
+		return;
+	}
+
 	// Check grid is ready
 	bool ok = m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
 	if (! ok) {return;}

@@ -17,7 +17,6 @@ Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDial
 	ui(new Ui::Post2dWindowArrowStructuredSettingDialog)
 {
 	ui->setupUi(this);
-	ui->colorbarSettingButton->hide();
 	connect(ui->samplingAllRadioButton, SIGNAL(toggled(bool)), this, SLOT(samplingAllToggle(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
 	m_activeAvailable = true;

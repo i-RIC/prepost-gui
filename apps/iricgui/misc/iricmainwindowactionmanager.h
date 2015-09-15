@@ -24,6 +24,7 @@ class iRICMainWindowActionManager : public QObject
 	Q_OBJECT
 
 public:
+	enum class Mode {Default, PostOnly};
 	/// Constructor
 	iRICMainWindowActionManager(iRICMainWindow* parent);
 	/// Return the menubar it manages.
@@ -50,6 +51,7 @@ public:
 		m_additionalToolBar = nullptr;
 	}
 	QMenu* recentProjectsMenu() {return m_recentProjectsMenu;}
+	void setMode(Mode mode);
 	void informSubWindowChange(QWidget* subwindow);
 	/// Signal mapper to map signals to create new project.
 	QSignalMapper* newProjectSignals() {return m_newProjectSignals;}

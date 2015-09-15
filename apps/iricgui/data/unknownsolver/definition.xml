@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SolverDefinition 
+	xmlns="www.iric.net/SolverDefinition/1.0"
+	name="unknown" caption="Post Only" version="1.0" copyright="iRIC organization"
+	release="2015.7.30" homepage="http://i-ric.org"
+	executable="unknown.exe"
+	iterationtype="time"
+	gridtype="nogrid"
+>
+	<CalculationCondition>
+	</CalculationCondition>
+	<GridRelatedCondition>
+	</GridRelatedCondition>
+</SolverDefinition>

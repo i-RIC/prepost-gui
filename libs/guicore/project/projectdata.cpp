@@ -75,6 +75,7 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent
 	m_workDirectory = workdir;
 	m_solverDefinition = nullptr;
 	m_folderProject = false;
+	m_isPostOnlyMode = false;
 	// if the workdirectory doesn't exists, make it.
 	QDir wdir(m_workDirectory);
 	if (! wdir.exists()) {
@@ -112,6 +113,16 @@ QString ProjectData::absoluteFileName(const QString& relativeFileName) const
 {
 	QDir workdir(m_workDirectory);
 	return workdir.absoluteFilePath(relativeFileName);
+}
+
+void ProjectData::setPostOnlyMode()
+{
+	m_isPostOnlyMode = true;
+}
+
+bool ProjectData::isPostOnlyMode() const
+{
+	return m_isPostOnlyMode;
 }
 
 bool ProjectData::unzipFrom(const QString& filename)

@@ -83,6 +83,7 @@ public:
 	void setProjectData(ProjectData* projectData) override;
 	/// Check whether work folder is set to a good folder. If it is good returns true.
 	bool checkWorkFolderWorks();
+	bool isPostOnlyMode() const;
 	void importCalculationResult(const QString& filename);
 	const QProcessEnvironment& processEnvironment() const override {return m_processEnvironment;}
 

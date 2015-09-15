@@ -340,17 +340,18 @@ void iRICMainWindow::openProject(const QString& filename)
 	}
 	// make sure whether supporting solver exists.
 	QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData);
-	if (folder.isNull()) {
+	QString solFolder;
+	if (folder.isNull()){
 		QMessageBox::warning(
 			this, tr("Warning"),
-			tr("This project files needs solver %1 %2, but it does not exists in this system.")
+			tr("This project is for solver %1 %2, but it does not exists in this system. Entering post only mode.")
 			.arg(m_projectData->mainfile()->solverName())
 			.arg(m_projectData->mainfile()->solverVersion().toString()));
-		closeProject();
-		return;
+		m_projectData->setPostOnlyMode();
+		solFolder = ":/data/unknownsolver";
+	} else {
+		solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
 	}
-	// create solver definition data
-	QString solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
 	SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
 	m_projectData->setSolverDefinition(def);
 
@@ -376,12 +377,19 @@ void iRICMainWindow::openProject(const QString& filename)
 	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
 
+	if (m_projectData->isPostOnlyMode()) {
+		// hide pre-processor.
+		m_preProcessorWindow->parentWidget()->hide();
+	}
+
 	// hide condole window.
 	m_solverConsoleWindow->setupDefaultGeometry();
 	m_solverConsoleWindow->parentWidget()->hide();
 
-	// show preprocessor window.
-	focusPreProcessorWindow();
+	if (! m_projectData->isPostOnlyMode()) {
+		// show preprocessor window.
+		focusPreProcessorWindow();
+	}
 	// open post-processors.
 	m_projectData->openPostProcessors();
 	//	reflectWindowZIndices();
@@ -440,30 +448,29 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	VersionNumber versionNumber;
 	bool bret = ProjectCgnsFile::readSolverInfo(fname, solverName, versionNumber);
 
-	if (bret == true) {
+	if (bret == false) {
+		QMessageBox::warning(this, tr("Warning"), tr("Loading solver information from CGNS file failed. Entering post only mode."));
+		m_projectData->setPostOnlyMode();
+	} else {
 		// loading succeeded.
 		m_projectData->mainfile()->setSolverName(solverName);
 		m_projectData->mainfile()->setSolverVersion(versionNumber);
-	} else {
-		QMessageBox::critical(this, tr("Error"), tr("Loading solver information from CGNS file failed. This file can not be imported."));
-		return;
-	}
-	// make sure whether supporting solver exists.
-	QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData);
-	if (folder.isNull()) {
-		QMessageBox::warning(
-			this, tr("Warning"),
-			tr("This CGNS file needs solver %1 %2, but it does not exists in this system.")
-			.arg(m_projectData->mainfile()->solverName())
-			.arg(m_projectData->mainfile()->solverVersion().toString()));
-		closeProject();
-		return;
-	}
-	// create solver definition data
-	QString solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
-	SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
-	m_projectData->setSolverDefinition(def);
 
+		// make sure whether supporting solver exists.
+		QString folder = m_solverDefinitionList->supportingSolverFolder(m_projectData);
+		if (folder.isNull()){
+			QMessageBox::warning(
+				this, tr("Warning"),
+				tr("This CGNS file needs solver %1 %2, but it does not exists in this system. Entering post only mode.")
+				.arg(m_projectData->mainfile()->solverName())
+				.arg(m_projectData->mainfile()->solverVersion().toString()));
+			m_projectData->setPostOnlyMode();
+		}
+		// create solver definition data
+		QString solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
+		SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
+		m_projectData->setSolverDefinition(def);
+	}
 	m_projectData->setVersion(m_versionNumber);
 
 	setupForNewProjectData();
@@ -477,12 +484,15 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
 
 	// show pre-processor window first.
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->setupDefaultGeometry();
-	pre->parentWidget()->show();
-	m_actionManager->informSubWindowChange(m_preProcessorWindow);
-	m_solverConsoleWindow->setupDefaultGeometry();
-	m_solverConsoleWindow->parentWidget()->hide();
+	if (! m_projectData->isPostOnlyMode()) {
+		// show pre-processor window first.
+		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*> (m_preProcessorWindow);
+		pre->setupDefaultGeometry();
+		pre->parentWidget()->show();
+		m_actionManager->informSubWindowChange(m_preProcessorWindow);
+		m_solverConsoleWindow->setupDefaultGeometry();
+		m_solverConsoleWindow->parentWidget()->hide();
+	}
 
 	m_isOpening = false;
 	LastIODirectory::set(QFileInfo(fname).absolutePath());
@@ -496,7 +506,7 @@ bool iRICMainWindow::closeProject()
 {
 	if (m_projectData == nullptr) {return true;}
 	bool result = true;
-	if (m_projectData->mainfile()->isModified()) {
+	if (! m_projectData->isPostOnlyMode() && m_projectData->mainfile()->isModified()) {
 		if (! m_projectData->isInWorkspace()) {
 			// always save.
 			result = saveProject();
@@ -550,10 +560,11 @@ bool iRICMainWindow::closeProject()
 
 void iRICMainWindow::setupForNewProjectData()
 {
-	// set project data to static windows.
-
 	// Inform that project file is opened.
 	m_actionManager->projectFileOpen();
+	if (m_projectData->isPostOnlyMode()) {
+		m_actionManager->setMode(iRICMainWindowActionManager::Mode::PostOnly);
+	}
 	// Update post-processor related action status.
 	updatePostActionStatus();
 
@@ -666,6 +677,10 @@ bool iRICMainWindow::saveProject()
 
 bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 {
+	if (m_projectData->isPostOnlyMode()) {
+		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not save."));
+		return false;
+	}
 	m_isSaving = true;
 	bool ret;
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
@@ -2168,4 +2183,10 @@ void iRICMainWindow::setupProcessEnvironment()
 	path.append(";");
 	path.append(m_processEnvironment.value("PATH"));
 	m_processEnvironment.insert("PATH", path);
+}
+
+bool iRICMainWindow::isPostOnlyMode() const
+{
+	if (m_projectData == 0) {return false;}
+	return m_projectData->isPostOnlyMode();
 }

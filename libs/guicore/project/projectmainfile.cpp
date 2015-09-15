@@ -369,18 +369,18 @@ void ProjectMainFile::importCgnsFile(const QString& fname)
 	VersionNumber versionNumber;
 
 	bool ret = ProjectCgnsFile::readSolverInfo(to, solverName, versionNumber);
-	if (ret == true) {
-		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))) {
-			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"),
-														tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
-			return;
+	if (ret == true){
+		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))){
+			QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
+				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.").arg(solverName).arg(versionNumber.toString()));
+			projectData()->setPostOnlyMode();
 		}
 	} else {
 		// error occured reading solver information.
-		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-																	 tr("This CGNS file does not have solver information. "
-																			"We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.\nDo you really want to import this file?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
-		if (ret == QMessageBox::No) {return;}
+		QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
+			tr("This CGNS file does not have solver information. "
+				"We can not check whether this CGNS file is compatible with the solver."));
+		projectData()->setPostOnlyMode();
 	}
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
@@ -546,6 +546,7 @@ void ProjectMainFile::loadFromCgnsFile(const int fn)
 
 void ProjectMainFile::saveToCgnsFile(const int fn)
 {
+	if (projectData()->isPostOnlyMode()) {return;}
 	m_projectData->mainWindow()->saveToCgnsFile(fn);
 }
 

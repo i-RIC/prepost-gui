@@ -48,6 +48,10 @@ public:
 		m_filename = fname;
 		m_folderProject = isFolder;
 	}
+	/// Enter post only mode
+	void setPostOnlyMode();
+	/// Returns true if in post only mode
+	bool isPostOnlyMode() const;
 	/// Unzip the specified file into workfolder.
 	bool unzipFrom(const QString& zipFilename);
 	/// Load solver information from a project file.
@@ -129,6 +133,8 @@ private:
 	bool m_finished;
 	/// When opening or saving is canceled, it's true.
 	bool m_canceled;
+	/// Post only mode (i. e. solver definition does not exist);
+	bool m_isPostOnlyMode;
 	/// Wait dialog shown when opening or saving project.
 	WaitDialog* m_waitDialog;
 };

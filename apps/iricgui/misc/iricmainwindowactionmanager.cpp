@@ -844,6 +844,20 @@ void iRICMainWindowActionManager::updateMenuBar()
 	m_menuBar->addMenu(m_helpMenu);
 }
 
+void iRICMainWindowActionManager::setMode(Mode mode)
+{
+	switch (mode) {
+	case Mode::Default:
+		windowFocusPreProcessorAction->setEnabled(true);
+		windowFocusSolverConsoleAction->setEnabled(true);
+		break;
+	case Mode::PostOnly:
+		windowFocusPreProcessorAction->setEnabled(false);
+		windowFocusSolverConsoleAction->setEnabled(false);
+		break;
+	}
+}
+
 void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 {
 	if (subwindow == nullptr) {
@@ -981,6 +995,10 @@ void iRICMainWindowActionManager::updateWindowList()
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
 	int i = 1;
 	for (QMdiSubWindow* w : windowList) {
+		if (m_parent->isPostOnlyMode()) {
+			if (dynamic_cast<PreProcessorWindow*> (w->widget()) != 0) {continue;}
+			if (dynamic_cast<SolverConsoleWindow*> (w->widget()) != 0) {continue;}
+		}
 		QString tmp = QString("%1%2 ").append(w->windowTitle());
 		QString title;
 		if (i < 10) {
