@@ -233,35 +233,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()
 	iRICUndoStack::instance().clear();
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
+bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridImporterInterface* importer, const QString& filename, const QString& selectedFilter)
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()){
-		mw->warnSolverRunning();
-		return;
-	}
-	QString dir = LastIODirectory::get();
-	QString selectedFilter;
-	QStringList filters;
-	QList<GridImporterInterface*> importers;
-
-	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
-	QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
-
-	for (GridImporterInterface* iface : importerList) {
-		QStringList flist = iface->fileDialogFilters();
-		for (const QString& filter : flist) {
-			filters.append(filter);
-			importers.append(iface);
-		}
-	}
-
-	// Select the file to import.
-	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()){return;}
-	int index = filters.indexOf(selectedFilter);
-	GridImporterInterface* importer = importers[index];
-
 	// create new empty grid.
 	SolverDefinitionGridType::GridType gt = importer->supportedGridType();
 	Grid* importedGrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType()->createEmptyGrid(gt);
@@ -269,7 +242,6 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	importedGrid->setParent(this);
 	// set zone name.
 	importedGrid->setZoneName(zoneName());
-
 	setupGridDataItem(importedGrid);
 
 	// now, import grid data.
@@ -311,23 +283,70 @@ IMPORT_SUCCEED:
 			gridItem->setGrid(importedGrid);
 		}
 	}
+	return ret;
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
+{
+	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	if (mw->isSolverRunning()){
+		mw->warnSolverRunning();
+		return;
+	}
+	QString dir = LastIODirectory::get();
+	QSet<QString> filters;
+	QMap<QString, QList<GridImporterInterface*> > importers;
+
+	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
+
+	QList<GridImporterInterface*>::const_iterator it;
+	for (it = importerList.begin(); it != importerList.end(); ++it) {
+		QStringList flist = (*it)->fileDialogFilters();
+		for (QStringList::iterator fit = flist.begin(); fit != flist.end(); ++fit) {
+			filters.insert(*fit);
+			if (! importers.contains(*fit)) {
+				QList<GridImporterInterface*> emptyList;
+				importers.insert(*fit, emptyList);
+			}
+			QList<GridImporterInterface*>& imps = importers[*fit];
+			imps.append(*it);
+		}
+	}
+	QStringList filterList;
+	QSet<QString>::iterator sit;
+	for (sit = filters.begin(); sit != filters.end(); ++sit) {
+		filterList.append(*sit);
+	}
+	// Select the file to import.
+	QString selectedFilter;
+	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filterList.join(";;"), &selectedFilter);
+	if (filename.isNull()){return;}
+	QList<GridImporterInterface*> impsForFilter = importers[selectedFilter];
+
+	bool ret = false;
+	for (int i = 0; i < impsForFilter.size(); ++i) {
+		GridImporterInterface* importer = impsForFilter.at(i);
+		ret = importFromImporter(importer, filename, selectedFilter);
+		if (ret) {break;}
+	}
 
 	if (! ret){
 		// import failed.
-		gridItem->silentDeleteGrid();
+		m_gridDataItem->silentDeleteGrid();
 		QMessageBox::critical(dataModel()->mainWindow(), tr("Error"), tr("Importing grid failed."));
 		return;
 	}
 
 	// import succeeded.
-	importedGrid->setModified();
+	m_gridDataItem->grid()->setModified();
 
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
 	dataModel()->graphicsView()->cameraFit();
 
 	mainWindow()->setFocus();
-	gridItem->informGridChange();
+	dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem)->informGridChange();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()

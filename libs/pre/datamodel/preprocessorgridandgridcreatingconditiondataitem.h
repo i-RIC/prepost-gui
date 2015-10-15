@@ -4,6 +4,7 @@
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
 
 class Grid;
+class GridImporterInterface;
 class PreProcessorGridCreatingConditionDataItem;
 class PreProcessorBCSettingGroupDataItem;
 class PreProcessorGridAttributeMappingSettingTopDataItem;
@@ -50,7 +51,7 @@ protected:
 	void saveExternalData(const QString&) override;
 
 private:
-	void silentDeleteGrid();
+	bool importFromImporter(GridImporterInterface* importer, const QString& filename, const QString& selectedFilter);
 
 	QAction* m_deleteAction;
 	QString m_caption;
