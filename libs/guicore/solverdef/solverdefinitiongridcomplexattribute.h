@@ -9,7 +9,7 @@ class GUICOREDLL_EXPORT SolverDefinitionGridComplexAttribute : public SolverDefi
 
 public:
 	/// Constructor
-	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator);
+	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order);
 	/// Destructor
 	~SolverDefinitionGridComplexAttribute();
 

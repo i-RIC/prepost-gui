@@ -2,8 +2,8 @@
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridattributerealoptioncell.h"
 
-SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator) :
-	SolverDefinitionGridAttributeRealCell {node, translator, true}
+SolverDefinitionGridAttributeRealOptionCell::SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeRealCell {node, translator, true, order}
 {
 	loadEnumeration(node, translator);
 }

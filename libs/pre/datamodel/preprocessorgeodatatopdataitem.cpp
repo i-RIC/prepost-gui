@@ -36,6 +36,84 @@
 
 #include <iriclib.h>
 
+#include <map>
+
+// namespace for local functions
+namespace {
+
+void setupChildrenInGroups(
+		const QList<SolverDefinitionGridAttribute*>& stdAtts,
+		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		QList <GraphicsWindowDataItem*>* children,
+		std::map<QString, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		PreProcessorDataItem* parent)
+{
+	// node simple items
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+	}
+	// node complex items
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+	}
+	// cell simple items
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+	}
+	// cell complex items
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+	}
+}
+void setupChildrenInOrder(
+		const QList<SolverDefinitionGridAttribute*>& stdAtts,
+		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		QList <GraphicsWindowDataItem*>* children,
+		std::map<QString, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		PreProcessorDataItem* parent)
+{
+	std::map<int, PreProcessorDataItem*> itemsInOrder;
+
+	// simple items
+	for (auto att : stdAtts){
+		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+		itemsInOrder.insert({att->order(), i});
+	}
+	// complex items
+	for (auto att : clxAtts) {
+		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
+		children->append(i);
+		nameMap->insert({att->name(), i});
+		itemsInOrder.insert({att->order(), i});
+	}
+
+	int rowC = parent->standardItem()->rowCount();
+	for (int i = 0; i < rowC; ++i) {
+		parent->standardItem()->takeRow(0);
+	}
+
+	for (auto pair : itemsInOrder) {
+		PreProcessorDataItem* item = pair.second;
+		parent->standardItem()->appendRow(item->standardItem());
+	}
+}
+
+} // namespace
+
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_visible {"visible", true},
@@ -44,40 +122,14 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath("geographicdata");
 
-	// add child nodes.
-	QList<SolverDefinitionGridAttribute*> list = gridType()->gridRelatedConditions();
-	QList<SolverDefinitionGridComplexAttribute*> list2 = gridType()->gridRelatedComplexConditions();
-
-	// node simple items
-	for (auto att : list) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
-		auto item = new PreProcessorGeoDataGroupDataItem(att, this);
-		m_childItems.append(item);
-		m_itemNameMap.insert(att->name(), item);
-	}
-	// node complex items
-	for (auto att : list2) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
-		auto item = new PreProcessorGeoDataComplexGroupDataItem(att, this);
-		m_childItems.append(item);
-		m_itemNameMap.insert(att->name(), item);
-	}
-	// cell simple items
-	for (auto att : list) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
-		auto item = new PreProcessorGeoDataGroupDataItem(att, this);
-		m_childItems.append(item);
-		m_itemNameMap.insert(att->name(), item);
-	}
-	// cell complex items
-	for (auto att : list2) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
-		auto item = new PreProcessorGeoDataComplexGroupDataItem(att, this);
-		m_childItems.append(item);
-		m_itemNameMap.insert(att->name(), item);
-	}
 	m_titleTextSetting.setPrefix("title");
 	m_labelTextSetting.setPrefix("label");
+
+	if (gridType()->isKeepOrder()) {
+		setupChildrenInOrder(gridType()->gridRelatedConditions(), gridType()->gridRelatedComplexConditions(), &m_childItems, &m_itemNameMap, this);
+	} else {
+		setupChildrenInGroups(gridType()->gridRelatedConditions(), gridType()->gridRelatedComplexConditions(), &m_childItems, &m_itemNameMap, this);
+	}
 
 	setupActors();
 }
@@ -97,9 +149,9 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
 		QString name = child.attribute("name");
-		PreProcessorGeoDataGroupDataItemInterface* item = m_itemNameMap.value(name);
-		if (item != nullptr) {
-			item->loadFromProjectMainFile(child);
+		auto it = m_itemNameMap.find(name);
+		if (it != m_itemNameMap.end()) {
+			it->second->loadFromProjectMainFile(child);
 		}
 	}
 }
@@ -128,7 +180,9 @@ const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDa
 
 PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const QString& name)
 {
-	return m_itemNameMap.value(name, nullptr);
+	auto it = m_itemNameMap.find(name);
+	if (it == m_itemNameMap.end()) {return nullptr;}
+	return it->second;
 }
 
 void PreProcessorGeoDataTopDataItem::informValueRangeChange(const QString& name)

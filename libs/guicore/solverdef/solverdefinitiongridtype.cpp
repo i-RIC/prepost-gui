@@ -41,6 +41,7 @@ public:
 	bool m_isPrimary {true};
 	bool m_multiple {false};
 	bool m_isOptional {false};
+	bool m_isKeepOrder {false};
 	QList<GridType> m_availableGridTypes;
 	GridType m_defaultGridType {gtUnknownGrid};
 	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
@@ -119,7 +120,10 @@ void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
 
 void SolverDefinitionGridType::Impl::setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator)
 {
+	QDomElement elem = node.toElement();
+	m_isKeepOrder = (elem.attribute("keepOrder") == "true");
 	QDomNode itemNode = node.firstChild();
+	int order = 1;
 	while (! itemNode.isNull()) {
 		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 		QDomElement itemElem = itemNode.toElement();
@@ -127,7 +131,7 @@ void SolverDefinitionGridType::Impl::setupGridRelatedConditions(const QDomNode& 
 
 		if (defElem.attribute("valueType") == "complex") {
 			// Complex condition
-			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, translator);
+			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, translator, order);
 			m_gridRelatedComplexConditions.append(c);
 			m_gridRelatedComplexConditionNameMap.insert(c->name(), c);
 		} else {
@@ -136,35 +140,36 @@ void SolverDefinitionGridType::Impl::setupGridRelatedConditions(const QDomNode& 
 			if (defElem.attribute("position") == "cell") {
 				if (defElem.attribute("valueType") == "integer") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, translator, order);
 					} else {
-						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, translator, order);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, translator, order);
 					} else {
-						c = new SolverDefinitionGridAttributeRealCell(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealCell(itemElem, translator, order);
 					}
 				}
 			} else if (defElem.attribute("position") == "node") {
 				if (defElem.attribute("valueType") == "integer") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, translator, order);
 					} else {
-						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, translator);
+						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, translator, order);
 					}
 				} else if (defElem.attribute("valueType") == "real") {
 					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, translator, order);
 					} else {
-						c = new SolverDefinitionGridAttributeRealNode(itemElem, translator);
+						c = new SolverDefinitionGridAttributeRealNode(itemElem, translator, order);
 					}
 				}
 			}
 			if (c != nullptr) {
 				m_gridRelatedConditions.append(c);
 				m_gridRelatedConditionNameMap.insert(c->name(), c);
+				++ order;
 			}
 		}
 		itemNode = itemNode.nextSibling();
@@ -309,6 +314,11 @@ bool SolverDefinitionGridType::multiple() const
 bool SolverDefinitionGridType::isOptional() const
 {
 	return m_impl->m_isOptional;
+}
+
+bool SolverDefinitionGridType::isKeepOrder() const
+{
+	return m_impl->m_isKeepOrder;
 }
 
 void SolverDefinitionGridType::buildGridRelatedConditions(Grid* grid) const

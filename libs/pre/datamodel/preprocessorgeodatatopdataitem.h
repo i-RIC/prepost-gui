@@ -61,7 +61,7 @@ protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	QMap<QString, PreProcessorGeoDataGroupDataItemInterface*> m_itemNameMap;
+	std::map<QString, PreProcessorGeoDataGroupDataItemInterface*> m_itemNameMap;
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	vtkSmartPointer<vtkLegendBoxWidget> m_legendBoxWidget;

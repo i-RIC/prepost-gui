@@ -52,6 +52,7 @@ public:
 	bool isPrimary() const;
 	bool multiple() const;
 	bool isOptional() const;
+	bool isKeepOrder() const;
 	void setCaption(const QString& caption);
 	//@}
 

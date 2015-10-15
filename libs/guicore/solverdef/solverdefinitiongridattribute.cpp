@@ -32,6 +32,7 @@ public:
 	QVariant m_variantMaximumValue;
 	QVariant m_variantMinimumValue;
 	Position m_position {Node};
+	int m_order {0};
 	QList<SolverDefinitionGridAttributeDimension*> m_dimensions;
 
 	SolverDefinitionGridAttribute* m_parent;
@@ -75,12 +76,13 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& node, const So
 
 // Public interfaces
 
-SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
+SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
 	SolverDefinitionNode {node, translator},
 	m_impl {new Impl {node, translator, this}}
 {
 	m_impl->m_position = pos;
 	m_impl->m_isOption = isOption;
+	m_impl->m_order = order;
 }
 
 SolverDefinitionGridAttribute::~SolverDefinitionGridAttribute()
@@ -126,6 +128,11 @@ SolverDefinitionGridAttribute::Position SolverDefinitionGridAttribute::position(
 bool SolverDefinitionGridAttribute::isOption() const
 {
 	return m_impl->m_isOption;
+}
+
+int SolverDefinitionGridAttribute::order() const
+{
+	return m_impl->m_order;
 }
 
 const QList<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const

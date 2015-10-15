@@ -8,16 +8,16 @@ class SolverDefinitionGridAttributeIntegerNode : public SolverDefinitionGridAttr
 
 public:
 	/// Constructor
-	SolverDefinitionGridAttributeIntegerNode(QDomElement node, const SolverDefinitionTranslator& translator) :
-		SolverDefinitionGridAttributeInteger {node, translator, Node, false}
+	SolverDefinitionGridAttributeIntegerNode(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
+		SolverDefinitionGridAttributeInteger {node, translator, Node, false, order}
 	{}
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
 	/// Constructor
-	SolverDefinitionGridAttributeIntegerNode(QDomElement node, const SolverDefinitionTranslator& translator, bool isOption) :
-		SolverDefinitionGridAttributeInteger {node, translator, Node, isOption}
+	SolverDefinitionGridAttributeIntegerNode(QDomElement node, const SolverDefinitionTranslator& translator, bool isOption, int order) :
+		SolverDefinitionGridAttributeInteger {node, translator, Node, isOption, order}
 	{}
 
 private:

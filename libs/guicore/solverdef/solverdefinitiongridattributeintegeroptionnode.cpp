@@ -3,8 +3,8 @@
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridattributeintegeroptionnode.h"
 
-SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(QDomElement node, const SolverDefinitionTranslator& translator) :
-	SolverDefinitionGridAttributeIntegerNode {node, translator, true}
+SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeIntegerNode {node, translator, true, order}
 {
 	loadEnumeration(node, translator);
 }

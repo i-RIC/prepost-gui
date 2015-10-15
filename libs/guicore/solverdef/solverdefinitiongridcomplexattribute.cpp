@@ -29,8 +29,8 @@ void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, S
 	m_element = defNode;
 }
 
-SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator) :
-	SolverDefinitionGridAttributeInteger {node, translator, Node, false},
+SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeInteger {node, translator, Node, false, order},
 	m_impl {new Impl {node, this}}
 {}
 

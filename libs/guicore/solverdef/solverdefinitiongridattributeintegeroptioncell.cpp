@@ -5,8 +5,8 @@
 
 #include <vtkColorTransferFunction.h>
 
-SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator) :
-	SolverDefinitionGridAttributeIntegerCell(node, translator, true)
+SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeIntegerCell(node, translator, true, order)
 {
 	loadEnumeration(node, translator);
 }

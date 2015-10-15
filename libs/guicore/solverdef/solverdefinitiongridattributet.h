@@ -10,8 +10,8 @@ class SolverDefinitionGridAttributeT : public SolverDefinitionGridAttribute
 {
 
 public:
-	SolverDefinitionGridAttributeT(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
-		SolverDefinitionGridAttribute {node, translator, pos, isOption}
+	SolverDefinitionGridAttributeT(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+		SolverDefinitionGridAttribute {node, translator, pos, isOption, order}
 	{}
 	virtual V fromVariant(const QVariant& v) const = 0;
 	V defaultValue() const {
@@ -23,8 +23,8 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefi
 {
 
 public:
-	SolverDefinitionGridAttributeInteger(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
-		SolverDefinitionGridAttributeT<int> (node, translator, pos, isOption)
+	SolverDefinitionGridAttributeInteger(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+		SolverDefinitionGridAttributeT<int> (node, translator, pos, isOption, order)
 	{}
 	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
@@ -36,8 +36,8 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinit
 {
 
 public:
-	SolverDefinitionGridAttributeReal(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption) :
-		SolverDefinitionGridAttributeT<double> (node, translator, pos, isOption)
+	SolverDefinitionGridAttributeReal(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+		SolverDefinitionGridAttributeT<double> (node, translator, pos, isOption, order)
 	{}
 	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();

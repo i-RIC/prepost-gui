@@ -33,7 +33,7 @@ public:
 		CellCenter      ///< Cell center
 	};
 	/// Constructor
-	SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption);
+	SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
 	virtual ~SolverDefinitionGridAttribute();
 
 	/// @name Properties
@@ -46,6 +46,7 @@ public:
 	const QVariant& variantMinimumValue() const;
 	Position position() const;
 	bool isOption() const;
+	int order() const;
 
 	const QList<SolverDefinitionGridAttributeDimension*>& dimensions() const;
 	QList<SolverDefinitionGridAttributeDimension*>& dimensions();

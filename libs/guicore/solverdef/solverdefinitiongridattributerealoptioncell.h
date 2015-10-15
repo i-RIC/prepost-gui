@@ -8,7 +8,7 @@ class SolverDefinitionGridAttributeRealOptionCell : public SolverDefinitionGridA
 {
 
 public:
-	SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator);
+	SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order);
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
