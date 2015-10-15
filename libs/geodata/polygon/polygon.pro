@@ -91,10 +91,13 @@ LIBS += -liriclib
 
 # shapelib
 
-
 win32{
 LIBS += -lshapelib_i
 }
+
+# geos
+
+LIBS += -lgeos
 
 # Input
 HEADERS += geodatapolygon.h \

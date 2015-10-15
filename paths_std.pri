@@ -25,6 +25,9 @@ CONFIG(debug, debug|release) {
 
 	# netcdf
 	LIBS += -L"E:/iricdev_2013/lib/install/netcdf-4.3.2/debug/lib"
+
+	# geos
+	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/debug/lib"
 }
 else {
 	# gdal
@@ -53,6 +56,9 @@ else {
 
 	# netcdf
 	LIBS += -L"E:/iricdev_2013/lib/install/netcdf-4.3.2/release/lib"
+
+	# geos
+	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/release/lib"
 }
 
 INCLUDEPATH += .
@@ -80,6 +86,9 @@ INCLUDEPATH += "E:/iricdev_2013/lib/install/proj-4.8.0/release/include"
 
 # netcdf
 INCLUDEPATH += "E:/iricdev_2013/lib/install//netcdf-4.3.2/release/include"
+
+# geos
+INCLUDEPATH += "E:/iricdev_2013/lib/install/geos-3.4.2/release/include"
 
 #internal libs
 INCLUDEPATH += "E:/iricdev_2013/src/libs"
