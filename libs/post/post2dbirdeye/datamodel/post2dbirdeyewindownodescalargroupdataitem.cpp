@@ -498,7 +498,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
 		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper;
+			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
 			clipper->SetInputConnection(geoFilter->GetOutputPort());
 			clipper->SetValue(PostZoneDataContainer::IBCLimit);
 			clipper->InsideOutOff();
