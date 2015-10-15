@@ -161,7 +161,6 @@ public:
 			if (dimension != info.dimension) {return false;}
 			if (zoneId != info.zoneId) {return false;}
 			if (zoneName != info.zoneName) {return false;}
-			if (dataNames != info.dataNames) {return false;}
 			return true;
 		}
 	};
