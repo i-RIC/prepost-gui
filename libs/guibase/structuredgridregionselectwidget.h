@@ -51,6 +51,8 @@ private slots:
 	void handleJMaxChange(int jmax);
 
 private:
+	StructuredGridRegion::Range2d m_region;
+
 	Ui::StructuredGridRegionSelectWidget* ui;
 };
 

@@ -56,6 +56,8 @@ void StructuredGridRegionSelectWidget::setjMax(int jmax)
 
 void StructuredGridRegionSelectWidget::setRegion(const StructuredGridRegion::Range2d& region)
 {
+	m_region = region;
+
 	setiMin(region.iMin);
 	setiMax(region.iMax);
 	setjMin(region.jMin);
@@ -84,7 +86,7 @@ int StructuredGridRegionSelectWidget::jMax() const
 
 StructuredGridRegion::Range2d StructuredGridRegionSelectWidget::region() const
 {
-	StructuredGridRegion::Range2d r;
+	StructuredGridRegion::Range2d r {m_region};
 	r.iMin = iMin();
 	r.iMax = iMax();
 	r.jMin = jMin();
