@@ -31,6 +31,11 @@ QString Unstructured2dGridTriangleImporter::caption() const
 	return tr("TRIANGLE output (*.node, *.ele)");
 }
 
+SolverDefinitionGridType::GridType Unstructured2dGridTriangleImporter::supportedGridType() const
+{
+	return SolverDefinitionGridType::gtUnstructured2DGrid;
+}
+
 bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
 	Unstructured2DGrid* grid2d = dynamic_cast<Unstructured2DGrid*>(grid);

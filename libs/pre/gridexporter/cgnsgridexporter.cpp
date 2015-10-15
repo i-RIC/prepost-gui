@@ -69,6 +69,14 @@ bool CgnsGridExporter::closeAndMoveCgns(const QString& tmpname, int fn, const QS
 {
 	cg_close(fn);
 
+	// if the target file already exists, remove it.
+	if (QFile::exists(cgnsname)) {
+		bool deleteOk = QFile::remove(cgnsname);
+		if (! deleteOk) {
+			QFile::remove(tmpname);
+			return false;
+		}
+	}
 	// if it already exists, remove it first.
 	QFile cgnsfile(cgnsname);
 	if (cgnsfile.exists()) {

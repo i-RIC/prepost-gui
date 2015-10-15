@@ -4,6 +4,11 @@
 
 #include <cgnslib.h>
 
+SolverDefinitionGridType::GridType Structured2DGridCgnsImporter::supportedGridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
+}
+
 bool Structured2DGridCgnsImporter::isZoneCompatible(int fn, int B, int Z)
 {
 	ZoneType_t type;

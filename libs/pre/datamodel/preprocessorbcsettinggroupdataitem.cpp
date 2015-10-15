@@ -72,6 +72,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 {
 	PreProcessorGridAndGridCreatingConditionDataItem* gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
+	if (gItem == nullptr) {return;}
 	PreProcessorBCGroupDataItem* bcgitem = gItem->bcGroupDataItem();
 	if (bcgitem == nullptr) {return;}
 

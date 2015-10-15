@@ -22,6 +22,11 @@ QString Structured2DGridNaysCSVImporter::caption() const
 	return tr("iRIC Grid CSV file");
 }
 
+SolverDefinitionGridType::GridType Structured2DGridNaysCSVImporter::supportedGridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
+}
+
 QStringList Structured2DGridNaysCSVImporter::fileDialogFilters() const
 {
 	QStringList ret;

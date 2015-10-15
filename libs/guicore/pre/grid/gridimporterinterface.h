@@ -16,7 +16,7 @@ public:
 	virtual ~GridImporterInterface() {}
 	virtual QString caption() const = 0;
 	/// Can be used for importing the specified grid type.
-	virtual bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const = 0;
+	virtual SolverDefinitionGridType::GridType supportedGridType() const = 0;
 	/// Return filter string for QFileDialog
 	virtual QStringList fileDialogFilters() const = 0;
 	/// Import grid data from external file.

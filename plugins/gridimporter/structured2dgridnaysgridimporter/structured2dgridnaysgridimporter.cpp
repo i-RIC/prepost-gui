@@ -32,6 +32,11 @@ QStringList Structured2DGridNaysGridImporter::fileDialogFilters() const
 	return ret;
 }
 
+SolverDefinitionGridType::GridType Structured2DGridNaysGridImporter::supportedGridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
+}
+
 bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
 	// Show warning dialog first.

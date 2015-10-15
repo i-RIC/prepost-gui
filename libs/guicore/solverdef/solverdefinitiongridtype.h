@@ -62,6 +62,7 @@ public:
 	/// Returns a pointer to a grid that has no data.
 	Grid* emptyGrid() const;
 	Grid* createEmptyGrid();
+	Grid* createEmptyGrid(GridType type);
 	//@}
 
 	/// Returns the caption for the solution (calculation result)

@@ -68,8 +68,6 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 
 void PreProcessorStructured2dGridDataItem::updateActionStatus()
 {
-//	m_selectMenu->setEnabled(m_grid != nullptr);
-//	m_regionSelectAction->setEnabled(m_grid != nullptr);
 	m_editMenu->setEnabled(m_grid != nullptr);
 	m_displayMenu->setEnabled(m_grid != nullptr);
 

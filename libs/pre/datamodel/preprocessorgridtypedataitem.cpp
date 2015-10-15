@@ -49,7 +49,6 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 			zonename = nextChildZonename();
 		}
 		PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(zonename, nextChildCaption(), this);
-		connect(cond->gridDataItem(), SIGNAL(gridRelatedConditionChanged(QString)), this, SLOT(changeValueRange(QString)));
 		m_conditions.append(cond);
 		m_childItems.append(cond);
 	}
@@ -113,7 +112,6 @@ void PreProcessorGridTypeDataItem::addNewCondition()
 		int imgRow = rootItem->backgroundImagesDataItem()->standardItem()->row();
 		dataModel()->itemModel()->insertRow(imgRow, cond->standardItem());
 	}
-	connect(cond->gridDataItem(), SIGNAL(gridRelatedConditionChanged(QString)), this, SLOT(changeValueRange(QString)));
 	m_conditions.append(cond);
 	m_childItems.append(cond);
 	updateNewGridActionStatus();
@@ -221,7 +219,6 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 					int imgRow = rootItem->backgroundImagesDataItem()->standardItem()->row();
 					dataModel()->itemModel()->insertRow(imgRow, cond->standardItem());
 				}
-				connect(cond->gridDataItem(), SIGNAL(gridRelatedConditionChanged(QString)), this, SLOT(changeValueRange(QString)));
 				m_conditions.append(cond);
 				m_childItems.append(cond);
 			}

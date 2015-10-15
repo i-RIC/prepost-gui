@@ -217,6 +217,7 @@ void PreProcessorGridCreatingConditionDataItem::handleNewGrid(Grid* newgrid)
 {
 	if (newgrid == nullptr) {return;}
 	PreProcessorGridAndGridCreatingConditionDataItem* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	tmp_parent->setupGridDataItem(newgrid);
 	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
 	bool ok = gridDataItem->setGrid(newgrid);
 	if (! ok) {

@@ -10,9 +10,7 @@ class Unstructured2DGridProjectImporter : public ProjectGridImporter
 
 public:
 	Unstructured2DGridProjectImporter() : ProjectGridImporter() {}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override {
-		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
-	}
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:
 	CgnsGridImporter* getCgnsImporter() override;

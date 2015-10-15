@@ -19,6 +19,7 @@ class Grid;
 class QSignalMapper;
 
 class QAction;
+class PreProcessorGridAndGridCreatingConditionDataItem;
 class PreProcessorGridShapeDataItem;
 class PreProcessorGridAttributeNodeGroupDataItem;
 class PreProcessorGridAttributeNodeDataItem;
@@ -145,7 +146,6 @@ signals:
 	void gridRelatedConditionChanged(const QString& name);
 
 public slots:
-	void importGrid();
 	void exportGrid();
 
 private slots:
@@ -238,6 +238,7 @@ private:
 public:
 	friend class GridPointMouseMoveCommand;
 	friend class GridAttributeEditCommand;
+	friend class PreProcessorGridAndGridCreatingConditionDataItem;
 };
 
 #endif // PREPROCESSORGRIDDATAITEM_H

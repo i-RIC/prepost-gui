@@ -13,10 +13,7 @@ public:
 	Unstructured2dGridTriangleImporter();
 	~Unstructured2dGridTriangleImporter(){}
 	QString caption() const override;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
-	{
-		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
-	}
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 	QStringList fileDialogFilters() const override;
 	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };

@@ -215,116 +215,6 @@ void PreProcessorGridDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_deleteAction);
 }
 
-void PreProcessorGridDataItem::importGrid()
-{
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
-	if (mw->isSolverRunning()) {
-		mw->warnSolverRunning();
-		return;
-	}
-	QString dir = LastIODirectory::get();
-	QString selectedFilter;
-	QStringList filters;
-	QList<GridImporterInterface*> importers;
-
-	Grid* tmpgrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType()->emptyGrid();
-	const QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(tmpgrid->gridType());
-	for (auto it = importerList.begin(); it != importerList.end(); ++it) {
-		QStringList flist = (*it)->fileDialogFilters();
-		for (auto fit = flist.begin(); fit != flist.end(); ++fit) {
-			filters.append(*fit);
-			importers.append(*it);
-		}
-	}
-
-	// Select the file to import.
-	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filters.join(";;"), &selectedFilter);
-	if (filename.isNull()) {return;}
-	GridImporterInterface* importer = nullptr;
-	for (int i = 0; i < filters.count(); ++i) {
-		if (filters[i] == selectedFilter) {
-			importer = importers[i];
-		}
-	}
-	Q_ASSERT(importer != nullptr);
-
-	// execute import.
-	if (m_grid) {
-		// delete the current grid first.
-		silentDeleteGrid();
-	}
-	// create new empty grid.
-	Grid* importedGrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType()->createEmptyGrid();
-	// set parent.
-	importedGrid->setParent(this);
-	// set zone name.
-	QString zname = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
-	importedGrid->setZoneName(zname);
-	// now, import grid data.
-	bool ret = true;
-	CgnsGridImporter* cgnsImpoter = dynamic_cast<CgnsGridImporter*>(importer);
-	if (cgnsImpoter != nullptr) {
-		// CGNS importer is a little special.
-		// Boundary condition should be imported too.
-		QString tmpname;
-		int fn, B, zoneid;
-		// create temporary CGNS file.
-		bool internal_ret = cgnsImpoter->openCgnsFileForImporting(importedGrid, filename, tmpname, fn, B, zoneid, mainWindow());
-		if (! internal_ret) {goto IMPORT_ERROR_BEFORE_OPEN;}
-
-		// load grid
-		internal_ret = importedGrid->loadFromCgnsFile(fn, B, zoneid);
-		if (! internal_ret) {goto IMPORT_ERROR_AFTER_OPEN;}
-
-		m_grid = importedGrid;
-
-		// import boundary condition
-		if (m_bcGroupDataItem != nullptr) {
-			m_bcGroupDataItem->clear();
-			m_bcGroupDataItem->loadFromCgnsFile(fn);
-		}
-		cgnsImpoter->closeAndRemoveTempCgnsFile(fn, tmpname);
-		goto IMPORT_SUCCEED;
-
-IMPORT_ERROR_AFTER_OPEN:
-		cgnsImpoter->closeAndRemoveTempCgnsFile(fn, tmpname);
-IMPORT_ERROR_BEFORE_OPEN:
-		ret = false;
-IMPORT_SUCCEED:
-		;
-
-	} else {
-		ret = importer->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-		m_grid = importedGrid;
-	}
-
-	if (! ret) {
-		// import failed.
-		delete m_grid;
-		m_grid = nullptr;
-		QMessageBox::critical(dataModel()->mainWindow(), tr("Error"), tr("Importing grid failed."));
-		return;
-	}
-	// import succeeded.
-	m_grid->setModified();
-	// loading data finished.
-	// now call vtk related functions, and render new grid.
-	finishGridLoading();
-
-	QFileInfo finfo(filename);
-	LastIODirectory::set(finfo.absolutePath());
-	dataModel()->graphicsView()->cameraFit();
-
-	m_shapeDataItem->updateActionStatus();
-	updateObjectBrowserTree();
-
-	updateActionStatus();
-
-	mainWindow()->setFocus();
-
-	informGridChange();
-}
-
 void PreProcessorGridDataItem::exportGrid()
 {
 	// Check whether the grid shape is valid.
@@ -399,6 +289,7 @@ void PreProcessorGridDataItem::exportGrid()
 		// output boundary condition
 		if (m_bcGroupDataItem != nullptr) {
 			try {
+				cg_iRIC_Init(fn);
 				m_bcGroupDataItem->saveToCgnsFile(fn);
 			} catch (ErrorMessage& m) {
 				QMessageBox::critical(mainWindow(), tr("Error"), m);
@@ -474,6 +365,7 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	// update the object browser tree structure.
 	updateObjectBrowserTree();
 	updateActionStatus();
+	m_shapeDataItem->updateActionStatus();
 	informGridChange();
 	return true;
 }
@@ -1057,9 +949,11 @@ void PreProcessorGridDataItem::setupActors()
 
 void PreProcessorGridDataItem::setupActions()
 {
+	PreProcessorGridAndGridCreatingConditionDataItem* gagcItem =
+			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
 	m_importAction = new QAction(tr("&Import..."), this);
 	m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.png"));
-	connect(m_importAction, SIGNAL(triggered()), this, SLOT(importGrid()));
+	connect(m_importAction, SIGNAL(triggered()), gagcItem, SLOT(importGrid()));
 
 	m_exportAction = new QAction(tr("&Export..."), this);
 	m_exportAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
@@ -1134,9 +1028,7 @@ void PreProcessorGridDataItem::finishGridLoading()
 
 bool PreProcessorGridDataItem::isImportAvailable()
 {
-	Grid* tmpgrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType()->emptyGrid();
-	const QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(tmpgrid->gridType());
-	return importerList.count() > 0;
+	return true;
 }
 
 bool PreProcessorGridDataItem::isExportAvailable()

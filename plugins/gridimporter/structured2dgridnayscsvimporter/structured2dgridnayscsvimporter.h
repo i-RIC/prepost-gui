@@ -15,10 +15,7 @@ public:
 	Structured2DGridNaysCSVImporter();
 	~Structured2DGridNaysCSVImporter(){}
 	QString caption() const override;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
-	{
-		return gt == SolverDefinitionGridType::gtStructured2DGrid;
-	}
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 	QStringList fileDialogFilters() const override;
 	/// Import grid data from external file.
 	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;

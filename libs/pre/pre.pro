@@ -335,6 +335,10 @@ HEADERS += griddisplaysetting.h \
            datamodel/preprocessorbcsettingdataitem.h \
            datamodel/preprocessorbcsettinggroupdataitem.h \
            datamodel/preprocessorcustommappingsetting.h \
+           datamodel/preprocessorgeodatacomplexgroupdataitem.h \
+           datamodel/preprocessorgeodatadataitem.h \
+           datamodel/preprocessorgeodatagroupdataitem.h \
+           datamodel/preprocessorgeodatatopdataitem.h \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.h \
            datamodel/preprocessorgridattributecelldataitem.h \
            datamodel/preprocessorgridattributecelldisplaysettingdialog.h \
@@ -355,20 +359,17 @@ HEADERS += griddisplaysetting.h \
            datamodel/preprocessormeasureddatatopdataitem.h \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.h \
            datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.h \
-           datamodel/preprocessorgeodatacomplexgroupdataitem.h \
-           datamodel/preprocessorgeodatadataitem.h \
-           datamodel/preprocessorgeodatagroupdataitem.h \
-           datamodel/preprocessorgeodatatopdataitem.h \
            datamodel/preprocessorrootdataitem.h \
            datamodel/preprocessorstructured2dgriddataitem.h \
            datamodel/preprocessorstructured2dgridshapedataitem.h \
            datamodel/preprocessorunstructured2dgriddataitem.h \
            datamodel/preprocessorunstructured2dgridshapedataitem.h \
+           factory/geodatafactory.h \
            factory/gridcreatingconditionfactory.h \
            factory/gridexporterfactory.h \
            factory/gridimporterfactory.h \
            factory/hydraulicdataimporterfactory.h \
-           factory/geodatafactory.h \
+           factory/preprocessorgriddataitemfactory.h \
            gridexporter/cgnsgridexporter.h \
            gridimporter/cgnsgridimporter.h \
            gridimporter/projectgridimporter.h \
@@ -438,6 +439,10 @@ SOURCES += griddisplaysetting.cpp \
            datamodel/preprocessorbcsettingdataitem.cpp \
            datamodel/preprocessorbcsettinggroupdataitem.cpp \
            datamodel/preprocessorcustommappingsetting.cpp \
+           datamodel/preprocessorgeodatacomplexgroupdataitem.cpp \
+           datamodel/preprocessorgeodatadataitem.cpp \
+           datamodel/preprocessorgeodatagroupdataitem.cpp \
+           datamodel/preprocessorgeodatatopdataitem.cpp \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp \
            datamodel/preprocessorgridattributecelldataitem.cpp \
            datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp \
@@ -458,20 +463,17 @@ SOURCES += griddisplaysetting.cpp \
            datamodel/preprocessormeasureddatatopdataitem.cpp \
            datamodel/preprocessornormal15dgridwithcrosssectiondataitem.cpp \
            datamodel/preprocessornormal15dgridwithcrosssectionshapedataitem.cpp \
-           datamodel/preprocessorgeodatacomplexgroupdataitem.cpp \
-           datamodel/preprocessorgeodatadataitem.cpp \
-           datamodel/preprocessorgeodatagroupdataitem.cpp \
-           datamodel/preprocessorgeodatatopdataitem.cpp \
            datamodel/preprocessorrootdataitem.cpp \
            datamodel/preprocessorstructured2dgriddataitem.cpp \
            datamodel/preprocessorstructured2dgridshapedataitem.cpp \
            datamodel/preprocessorunstructured2dgriddataitem.cpp \
            datamodel/preprocessorunstructured2dgridshapedataitem.cpp \
+           factory/geodatafactory.cpp \
            factory/gridcreatingconditionfactory.cpp \
            factory/gridexporterfactory.cpp \
            factory/gridimporterfactory.cpp \
            factory/hydraulicdataimporterfactory.cpp \
-           factory/geodatafactory.cpp \
+           factory/preprocessorgriddataitemfactory.cpp \
            gridexporter/cgnsgridexporter.cpp \
            gridimporter/cgnsgridimporter.cpp \
            gridimporter/projectgridimporter.cpp \

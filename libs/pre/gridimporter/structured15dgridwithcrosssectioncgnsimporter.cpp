@@ -4,6 +4,11 @@
 
 #include <cgnslib.h>
 
+SolverDefinitionGridType::GridType Structured15DGridWithCrossSectionCgnsImporter::supportedGridType() const
+{
+	return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
+}
+
 bool Structured15DGridWithCrossSectionCgnsImporter::isZoneCompatible(int fn, int B, int Z)
 {
 	ZoneType_t type;

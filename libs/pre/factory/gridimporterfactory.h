@@ -14,7 +14,7 @@ class PREDLL_EXPORT GridImporterFactory : public QObject
 
 public:
 	virtual ~GridImporterFactory();
-	const QList<GridImporterInterface*> list(SolverDefinitionGridType::GridType gt) const;
+	const QList<GridImporterInterface*> list(const SolverDefinitionGridType& gt) const;
 	static void init();
 	static GridImporterFactory& instance() {return *m_instance;}
 

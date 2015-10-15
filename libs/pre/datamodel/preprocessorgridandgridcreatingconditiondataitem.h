@@ -3,6 +3,7 @@
 
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
 
+class Grid;
 class PreProcessorGridCreatingConditionDataItem;
 class PreProcessorBCSettingGroupDataItem;
 class PreProcessorGridAttributeMappingSettingTopDataItem;
@@ -36,10 +37,12 @@ public:
 	void handleStandardItemChange() override;
 	bool gridEdited() const  override;
 	void toggleGridEditFlag() override;
+	void setupGridDataItem(Grid* grid);
 
 public slots:
 	void informGridCreation();
 	void deleteGridAndCondition();
+	void importGrid();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -47,6 +50,8 @@ protected:
 	void saveExternalData(const QString&) override;
 
 private:
+	void silentDeleteGrid();
+
 	QAction* m_deleteAction;
 	QString m_caption;
 	QString m_zoneName;

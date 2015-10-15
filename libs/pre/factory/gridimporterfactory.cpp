@@ -86,12 +86,17 @@ GridImporterFactory::~GridImporterFactory()
 	m_importerList.clear();
 }
 
-const QList<GridImporterInterface*> GridImporterFactory::list(SolverDefinitionGridType::GridType gt) const
+const QList<GridImporterInterface*> GridImporterFactory::list(const SolverDefinitionGridType& gt) const
 {
 	QList<GridImporterInterface*> ret;
+
+	auto types = gt.availableGridTypes();
 	for (GridImporterInterface* iface : m_importerList) {
-		if (iface->isGridTypeSupported(gt)) {
-			ret.append(iface);
+		for (SolverDefinitionGridType::GridType gt : types) {
+			if (iface->supportedGridType() == gt) {
+				ret.append(iface);
+				break;
+			}
 		}
 	}
 	return ret;

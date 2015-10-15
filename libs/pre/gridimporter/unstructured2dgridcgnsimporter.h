@@ -8,9 +8,7 @@ class Unstructured2DGridCgnsImporter : public CgnsGridImporter
 
 public:
 	Unstructured2DGridCgnsImporter() : CgnsGridImporter() {}
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override {
-		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
-	}
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:
 	bool isZoneCompatible(int fn, int B, int Z) override;

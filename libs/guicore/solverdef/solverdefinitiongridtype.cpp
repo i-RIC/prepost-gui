@@ -346,7 +346,36 @@ Grid* SolverDefinitionGridType::emptyGrid() const
 
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
-	return m_impl->createEmptyGrid();
+	return createEmptyGrid(m_impl->m_defaultGridType);
+}
+
+Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
+{
+	Grid* ret = 0;
+	switch (type)
+	{
+	case gtNormal1DGrid:
+		// @todo not implemented yet.
+		break;
+	case gtNormal1_5DGrid:
+		// @todo not implemented yet.
+		break;
+	case gtNormal1_5DGridWithCrosssection:
+		ret = new Structured15DGridWithCrossSection(0);
+		break;
+	case gtStructured2DGrid:
+		ret = new Structured2DGrid(0);
+		break;
+	case gtUnstructured2DGrid:
+		ret = new Unstructured2DGrid(0);
+		break;
+	case gtUnknownGrid:
+		break;
+	}
+	if (ret != 0){
+		buildGridRelatedConditions(ret);
+	}
+	return ret;
 }
 
 QString SolverDefinitionGridType::solutionCaption(const QString& name) const
