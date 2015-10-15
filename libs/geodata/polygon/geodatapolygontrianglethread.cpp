@@ -178,7 +178,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	*(in->regionlist + 3) = resultPol->getEnvelope()->getArea();
 	int pOffset = 2 * (eLS->getNumPoints() - 1);
 	int sOffset = (eLS->getNumPoints() - 1);
-	std::vector<RawDataPolygonAbstractPolygon*> emptyHoles;
+	std::vector<GeoDataPolygonAbstractPolygon*> emptyHoles;
 	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
 		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
 		for (int j = 0; j < iLS->getNumPoints() - 1; ++j){
@@ -196,7 +196,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	delete resultPol;
 }
 
-geos::geom::LinearRing* createLinearRing(RawDataPolygonAbstractPolygon* pol, const QPointF& offset, const geos::geom::GeometryFactory* f)
+geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, const QPointF& offset, const geos::geom::GeometryFactory* f)
 {
 	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
 	QPolygonF regionPol = pol->polygon(offset);
@@ -209,23 +209,23 @@ geos::geom::LinearRing* createLinearRing(RawDataPolygonAbstractPolygon* pol, con
 	return f->createLinearRing(cs);
 }
 
-geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(RawDataPolygon* pol, const QPointF& offset)
+geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset)
 {
 	geos::geom::LinearRing* regionRing = createLinearRing(pol->m_gridRegionPolygon, offset, m_geomFactory);
 	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
 	for (int i = 0; i < pol->m_holePolygons.size(); ++i) {
-		RawDataPolygonAbstractPolygon* h = pol->m_holePolygons.at(i);
+		GeoDataPolygonAbstractPolygon* h = pol->m_holePolygons.at(i);
 		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
 	}
 	return m_geomFactory->createPolygon(regionRing, holesVec);
 }
 
-QPointF GeoDataPolygonTriangleThread::polygonInnerPoint(RawDataPolygonAbstractPolygon* region, const std::vector<RawDataPolygonAbstractPolygon*>& holes, const QPointF& offset)
+QPointF GeoDataPolygonTriangleThread::polygonInnerPoint(GeoDataPolygonAbstractPolygon* region, const std::vector<GeoDataPolygonAbstractPolygon*>& holes, const QPointF& offset)
 {
 	geos::geom::LinearRing* regionRing = createLinearRing(region, offset, m_geomFactory);
 	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
 	for (int i = 0; i < holes.size(); ++i) {
-		RawDataPolygonAbstractPolygon* h = holes.at(i);
+		GeoDataPolygonAbstractPolygon* h = holes.at(i);
 		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
 	}
 	geos::geom::Polygon* poly = m_geomFactory->createPolygon(regionRing, holesVec);
