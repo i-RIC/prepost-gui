@@ -215,7 +215,7 @@ void PointRing::clean(std::unordered_set<vtkIdType> finished)
 
 void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<vtkIdType> finished)
 {
-	for (int i = 0; i < m_points.size() - 3; ++i) {
+	for (int i = 0; i < static_cast<int>(m_points.size()) - 3; ++i) {
 		vtkIdType p1 = m_points.at(i);
 		if (finished.find(p1) != finished.end()) {continue;}
 
