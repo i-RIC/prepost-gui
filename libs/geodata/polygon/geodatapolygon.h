@@ -96,7 +96,7 @@ public:
 	bool ready() const {return true;}
 	void showInitialDialog() override;
 	const QVariant& variantValue() const;
-	void setVariantValue(const QVariant& v);
+	void setVariantValue(const QVariant& v, bool disableInform = false);
 	void addHolePolygon(const QPolygonF& p);
 	vtkUnstructuredGrid* grid() const {return m_grid;}
 	bool getValueRange(double* min, double* max) override;

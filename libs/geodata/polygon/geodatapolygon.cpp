@@ -1116,8 +1116,8 @@ void GeoDataPolygon::saveExternalData(const QString& filename)
 		iRICLib::InternalPolygon* holePolygon = new iRICLib::InternalPolygon();
 		QPolygonF hqpol = m_holePolygons[i]->polygon();
 		holePolygon->pointCount = hqpol.count();
-		holePolygon->x = new double[regionPolygon->pointCount];
-		holePolygon->y = new double[regionPolygon->pointCount];
+		holePolygon->x = new double[holePolygon->pointCount];
+		holePolygon->y = new double[holePolygon->pointCount];
 		for (int j = 0; j < holePolygon->pointCount; ++j) {
 			*(holePolygon->x + j) = hqpol.at(j).x();
 			*(holePolygon->y + j) = hqpol.at(j).y();
@@ -1576,10 +1576,10 @@ bool GeoDataPolygon::checkCondition()
 //			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon shape is invalid."));
 			return false;
 		}
-		if (gridPol.intersected(hpol->polygon()) != hpol->polygon()) {
+//		if (gridPol.intersected(hpol->polygon()) != hpol->polygon()) {
 //			QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Hole polygon have to be inside grid region."));
-			return false;
-		}
+//			return false;
+//		}
 		polygons.append(hpol->polygon());
 	}
 	for (int i = 0; i < polygons.count(); ++i) {
@@ -1643,7 +1643,7 @@ const QVariant& GeoDataPolygon::variantValue() const
 	return m_variantValues.at(index);
 }
 
-void GeoDataPolygon::setVariantValue(const QVariant& v)
+void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
 {
 	int index = 0;
 	GridAttributeDimensionsContainer* dims = dimensions();
@@ -1652,9 +1652,11 @@ void GeoDataPolygon::setVariantValue(const QVariant& v)
 	}
 	m_variantValues[index] = v;
 	updateScalarValues();
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	p->informValueRangeChange();
-	p->informDataChange();
+	if (! disableInform) {
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+		p->informValueRangeChange();
+		p->informDataChange();
+	}
 }
 
 void GeoDataPolygon::editValue()

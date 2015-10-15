@@ -15,11 +15,91 @@
 
 #include <shapefil.h>
 
+#include <algorithm>
 #include <cmath>
 
 namespace {
 
 const double LOCATION_DELTA = 1.0E-6;
+
+QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec) {
+	DBFFieldType type = DBFGetFieldInfo(handle, fieldid, NULL, NULL, NULL);
+	QVariant val;
+	if (type == FTString) {
+		QString strval = codec->toUnicode(DBFReadStringAttribute(handle, dataid, fieldid));
+		val = strval;
+	} else if (type == FTInteger) {
+		int intval = DBFReadIntegerAttribute(handle, dataid, fieldid);
+		val = intval;
+	} else if (type == FTDouble) {
+		double doubleval = DBFReadDoubleAttribute(handle, dataid, fieldid);
+		val = doubleval;
+	} else if (type == FTLogical) {
+		QString logval = DBFReadLogicalAttribute(handle, dataid, fieldid);
+		val = logval;
+	}
+	return val;
+}
+
+bool isRectContained(const QRectF& rbig, const QRectF& rsmall)
+{
+	return (rbig.left() <= rsmall.left() && rbig.right() >= rsmall.right() && rbig.top() <= rsmall.top() && rbig.bottom() >= rsmall.bottom());
+}
+
+bool isPolygonContained(const QPolygonF& pbig, const QPolygonF& psmall)
+{
+	for (int i = 0; i < psmall.size(); ++i) {
+		QPointF p = psmall.at(i);
+		if (! pbig.containsPoint(p, Qt::OddEvenFill)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+struct RectIndex
+{
+	RectIndex(const QRectF& r, const QPolygonF& p, int idx) :
+		rect(r), polygon(p), index(idx)
+	{}
+	QRectF rect;
+	QPolygonF polygon;
+	int index;
+};
+
+struct RectIndexAreaReverseSorter
+{
+	bool operator() (const RectIndex& r1, const RectIndex& r2)
+	{
+		double r1Area = r1.rect.width() * r1.rect.height();
+		double r2Area = r2.rect.width() * r2.rect.height();
+		return r1Area > r2Area;
+	}
+};
+
+QPolygonF readPolygon(SHPObject* shpo, int partIndex)
+{
+	QPolygonF ret;
+
+	int start = *(shpo->panPartStart + partIndex);
+	int end = shpo->nVertices;
+	if (partIndex != shpo->nParts - 1) {
+		end = *(shpo->panPartStart + partIndex + 1);
+	}
+	QPointF lastPoint;
+	for (int i = start; i < end; ++i) {
+		QPointF point(*(shpo->padfX + i), *(shpo->padfY + i));
+		QPointF diff = lastPoint - point;
+		bool veryNear = (std::fabs(diff.x()) < LOCATION_DELTA && std::fabs(diff.y()) < LOCATION_DELTA);
+		if (i != start && veryNear) {continue;}
+		ret.append(point);
+		lastPoint = point;
+	}
+	if (ret.at(0) != ret.at(ret.count() - 1)){
+		ret.append(ret.at(0));
+	}
+	return ret;
+}
 
 } // namespace
 
@@ -52,9 +132,6 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 		QMessageBox::critical(w, tr("Error"), tr("The shape type contained in this shape file is not polygon."));
 		return false;
 	}
-	*count = numEntities;
-	m_count = numEntities;
-
 	QString dbfFilename = filename;
 	dbfFilename.replace(QRegExp(".shp$"), ".dbf");
 	std::string dbfname = iRIC::toStr(dbfFilename);
@@ -67,6 +144,10 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 		return false;
 	}
 	DBFClose(dbfh);
+
+	m_shapeInfos = buildPolygonShapeInfos(fname);
+	*count = m_shapeInfos.size();
+
 	GridAttributeEditWidget* widget = condition->editWidget(0);
 	item->setupEditWidget(widget);
 	widget->setVariantValue(condition->variantDefaultValue());
@@ -84,89 +165,28 @@ bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*se
 	return true;
 }
 
-QVariant readData(DBFHandle handle, int dataid, int fieldid, QTextCodec* codec)
-{
-	DBFFieldType type = DBFGetFieldInfo(handle, fieldid, NULL, NULL, NULL);
-	QVariant val;
-	if (type == FTString) {
-		QString strval = codec->toUnicode(DBFReadStringAttribute(handle, dataid, fieldid));
-		val = strval;
-	} else if (type == FTInteger) {
-		int intval = DBFReadIntegerAttribute(handle, dataid, fieldid);
-		val = intval;
-	} else if (type == FTDouble) {
-		double doubleval = DBFReadDoubleAttribute(handle, dataid, fieldid);
-		val = doubleval;
-	} else if (type == FTLogical) {
-		QString logval = DBFReadLogicalAttribute(handle, dataid, fieldid);
-		val = logval;
-	}
-	return val;
-}
-
 bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 {
 	QTextCodec* codec = QTextCodec::codecForLocale();
 	GeoDataPolygon* poly = dynamic_cast<GeoDataPolygon*>(data);
 
+	PolygonShapeInfo info = m_shapeInfos.at(index);
+
 	std::string fname = iRIC::toStr(m_filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");
 
-	SHPObject* shpo = SHPReadObject(shph, index);
+	SHPObject* shpo = SHPReadObject(shph, info.item);
 
-	if (shpo == 0){
-		QMessageBox::warning(w, tr("Warning"), tr("Importing Polygon failed. Could not read data"));
-		return false;
-	}
-
-	// Currently, polygon without holes are supported.
-	QList<QPolygonF> polygons;
-	QList<QPolygonF> holes;
-	QPolygonF region;
-	GeoDataPolygonHolePolygon* tmpp = new GeoDataPolygonHolePolygon(poly);
-	for (int i = 0; i < shpo->nParts; ++i) {
-		int start = *(shpo->panPartStart + i);
-		int end = shpo->nVertices;
-		if (i != shpo->nParts - 1) {
-			end = *(shpo->panPartStart + i + 1);
-		}
-		QPolygonF tmppoly;
-		QPointF lastPoint;
-		for (int j = start; j < end; ++j) {
-			QPointF point(*(shpo->padfX + j), *(shpo->padfY + j));
-			QPointF diff = lastPoint - point;
-			bool veryNear = (std::fabs(diff.x()) < LOCATION_DELTA && std::fabs(diff.y()) < LOCATION_DELTA);
-			if (j != start && veryNear) {continue;}
-			tmppoly.append(point);
-			lastPoint = point;
-		}
-		if (tmppoly.at(0) != tmppoly.at(tmppoly.count() - 1)) {
-			tmppoly.append(tmppoly.at(0));
-		}
-		tmpp->setPolygon(tmppoly);
-		polygons.append(tmppoly);
-	}
-	QRectF tmprect;
-	int regionIndex = -1;
-	for (int i = 0; i < polygons.size(); ++i) {
-		QPolygonF pol = polygons.at(i);
-		QRectF rect = pol.boundingRect();
-		bool bigger = (rect.left() <= tmprect.left() && rect.right() >= tmprect.right() && rect.top() <= tmprect.top() && rect.bottom() >= tmprect.bottom());
-		if (i == 0 || bigger) {
-			regionIndex = i;
-			tmprect = rect;
-		}
-	}
-	region = polygons.at(regionIndex);
-	for (int i = 0; i < polygons.size(); ++i) {
-		if (i == regionIndex) {continue;}
-		holes.append(polygons.at(i));
+	QPolygonF region = readPolygon(shpo, info.region);
+	std::vector<QPolygonF> holes;
+	for (int i = 0; i < info.holes.size(); ++i) {
+		int holeIndex = info.holes.at(i);
+		holes.push_back(readPolygon(shpo, holeIndex));
 	}
 
-	delete tmpp;
 	try {
 		poly->setPolygon(region);
-		for (int i = 0; i < holes.count(); ++i) {
+		for (int i = 0; i < holes.size(); ++i){
 			poly->addHolePolygon(holes.at(i));
 		}
 	} catch (ErrorMessage& msg) {
@@ -184,21 +204,78 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 
 	// read name.
 	if (m_nameSetting == GeoDataPolygonImporterSettingDialog::nsLoadFromDBF) {
-		QVariant name = readData(dbfh, index, m_nameAttribute, codec);
+		QVariant name = readData(dbfh, info.item, m_nameAttribute, codec);
 		poly->setCaption(name.toString());
 	}
 	// read value.
 	QVariant value;
 	if (m_valueSetting == GeoDataPolygonImporterSettingDialog::vsLoadFromDBF) {
-		value = readData(dbfh, index, m_valueAttribute, codec);
+		value = readData(dbfh, info.item, m_valueAttribute, codec);
 	} else {
 		value = m_specifiedValue;
 	}
-	poly->setVariantValue(value);
+	DBFClose(dbfh);
+
+	poly->setVariantValue(value, index != (m_shapeInfos.size() - 1));
 	poly->restoreMouseEventMode();
 	poly->setupDataItem();
-	poly->updateGrid(index != (m_count - 1));
+	poly->updateGrid(index != (m_shapeInfos.size() - 1));
 
-	DBFClose(dbfh);
 	return true;
+}
+
+std::vector<GeoDataPolygonImporter::PolygonShapeInfo> GeoDataPolygonImporter::buildPolygonShapeInfos(const std::string& shpFileName)
+{
+	SHPHandle shph = SHPOpen(shpFileName.c_str(), "rb");
+	int numEntities;
+	int shapeType;
+	double minBound[4];
+	double maxBound[4];
+
+	SHPGetInfo(shph, &numEntities, &shapeType, minBound, maxBound);
+	std::vector<PolygonShapeInfo> ret;
+
+	for (int i = 0; i < numEntities; ++i) {
+		std::vector<RectIndex> rectVec;
+		std::vector<bool> holeVec;
+
+		SHPObject* shpo = SHPReadObject(shph, i);
+		if (shpo == 0) {
+			// read error. skip this data.
+			continue;
+		}
+
+		for (int j = 0; j < shpo->nParts; ++j){
+			QPolygonF tmppoly = readPolygon(shpo, j);
+			QRectF rect = tmppoly.boundingRect();
+			rectVec.push_back(RectIndex(rect, tmppoly, j));
+			holeVec.push_back(false);
+		}
+		std::sort(rectVec.begin(), rectVec.end(), RectIndexAreaReverseSorter());
+
+		for (int j = 0; j < rectVec.size(); ++j) {
+			bool hole = holeVec.at(j);
+			if (hole) {continue;}
+			const RectIndex& ri = rectVec.at(j);
+			PolygonShapeInfo info;
+			QRectF regionRect = ri.rect;
+			QPolygonF regionPolygon = ri.polygon;
+			info.item = i;
+			info.region = ri.index;
+
+			for (int k = j + 1; k < rectVec.size(); ++k) {
+				const RectIndex& ri2 = rectVec.at(k);
+				QRectF holeRect = ri2.rect;
+				QPolygonF holePolygon = ri2.polygon;
+				if (isRectContained(regionRect, holeRect) && isPolygonContained(regionPolygon, holePolygon)){
+					info.holes.push_back(ri2.index);
+					holeVec[k] = true;
+				}
+			}
+			ret.push_back(info);
+		}
+		SHPDestroyObject(shpo);
+	}
+	SHPClose(shph);
+	return ret;
 }

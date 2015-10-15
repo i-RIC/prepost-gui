@@ -12,6 +12,13 @@
 #include <QMutexLocker>
 #include <QPointF>
 
+#include <geos/geom/CoordinateSequence.h>
+#include <geos/geom/CoordinateSequenceFactory.h>
+#include <geos/geom/GeometryFactory.h>
+#include <geos/geom/LinearRing.h>
+#include <geos/geom/Point.h>
+#include <geos/geom/Polygon.h>
+
 #include <vtkProperty.h>
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
@@ -134,14 +141,17 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	int segmentCount = 0;
 	int regionCount = 1;
 
-	QPolygonF pol = p->m_gridRegionPolygon->polygon();
-	pointCount += (pol.count() - 1);
-	segmentCount += (pol.count() - 1);
-	*offset = pol.boundingRect().topLeft();
-	for (int i = 0; i < p->m_holePolygons.count(); ++i){
-		pol = p->m_holePolygons[i]->polygon();
-		pointCount += (pol.count() - 1);
-		segmentCount += (pol.count() - 1);
+	*offset = p->polygon().boundingRect().topLeft();
+	geos::geom::Polygon* resultPol = getGeosPolygon(p, *offset);
+
+	const geos::geom::LineString* eLS = resultPol->getExteriorRing();
+
+	pointCount += (eLS->getNumPoints() - 1);
+	segmentCount += (eLS->getNumPoints() - 1);
+	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
+		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
+		pointCount += (iLS->getNumPoints() - 1);
+		segmentCount += (iLS->getNumPoints() - 1);
 	}
 	clearTrianglateio(in);
 
@@ -154,36 +164,75 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 	in->regionlist = new double[regionCount * 4];
 	in->numberofregions = regionCount;
 
-	pol = p->m_gridRegionPolygon->polygon(*offset);
-	for (int i = 0; i < pol.count() - 1; ++i){
-		*(in->pointlist + i * 2)	 = pol.at(i).x();
-		*(in->pointlist + i * 2 + 1) = pol.at(i).y();
+	for (int i = 0; i < eLS->getNumPoints() - 1; ++i){
+		*(in->pointlist + i * 2)	   = eLS->getCoordinateN(i).x;
+		*(in->pointlist + i * 2 + 1) = eLS->getCoordinateN(i).y;
 		*(in->segmentlist + i * 2) = i + 1;
-		*(in->segmentlist + i * 2 + 1) = (i + 1) % (pol.count() - 1) + 1;
+		*(in->segmentlist + i * 2 + 1) = (i + 1) % (eLS->getNumPoints() - 1) + 1;
 	}
-	QPointF innerP = p->m_gridRegionPolygon->innerPoint(*offset);
+	geos::geom::Point* ip = resultPol->getInteriorPoint();
+	QPointF innerP(ip->getX(), ip->getY());
 	*(in->regionlist)	 = innerP.x();
 	*(in->regionlist + 1) = innerP.y();
 	*(in->regionlist + 2) = 0;
-	QRectF rect = pol.boundingRect();
-	*(in->regionlist + 3) = rect.width() * rect.height();
-	int pOffset = 2 * (pol.count() - 1);
-	int sOffset = (pol.count() - 1);
-	for (int i = 0; i < p->m_holePolygons.count(); ++i){
-		GeoDataPolygonHolePolygon* hpol = p->m_holePolygons[i];
-		pol = hpol->polygon(*offset);
-		for (int j = 0; j < pol.count() - 1; ++j){
-			*(in->pointlist + j * 2 + pOffset)	 = pol.at(j).x();
-			*(in->pointlist + j * 2 + 1 + pOffset) = pol.at(j).y();
+	*(in->regionlist + 3) = resultPol->getEnvelope()->getArea();
+	int pOffset = 2 * (eLS->getNumPoints() - 1);
+	int sOffset = (eLS->getNumPoints() - 1);
+	std::vector<RawDataPolygonAbstractPolygon*> emptyHoles;
+	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
+		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
+		for (int j = 0; j < iLS->getNumPoints() - 1; ++j){
+			*(in->pointlist + j * 2 + pOffset)	   = iLS->getCoordinateN(j).x;
+			*(in->pointlist + j * 2 + 1 + pOffset) = iLS->getCoordinateN(j).y;
 			*(in->segmentlist + j * 2 + sOffset * 2) = j + sOffset + 1;
-			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (pol.count() - 1) + sOffset + 1;
+			*(in->segmentlist + j * 2 + 1 + sOffset * 2) = (j + 1) % (iLS->getNumPoints() - 1) + sOffset + 1;
 		}
-		innerP = hpol->innerPoint(*offset);
+		innerP = polygonInnerPoint(p->m_holePolygons.at(i), emptyHoles, *offset);
 		*(in->holelist + i * 2	) = innerP.x();
 		*(in->holelist + i * 2 + 1) = innerP.y();
-		pOffset += 2 * (pol.count() - 1);
-		sOffset += (pol.count() - 1);
+		pOffset += 2 * (iLS->getNumPoints() - 1);
+		sOffset += (iLS->getNumPoints() - 1);
 	}
+	delete resultPol;
+}
+
+geos::geom::LinearRing* createLinearRing(RawDataPolygonAbstractPolygon* pol, const QPointF& offset, const geos::geom::GeometryFactory* f)
+{
+	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
+	QPolygonF regionPol = pol->polygon(offset);
+	geos::geom::CoordinateSequence* cs = csf->create(regionPol.size() , 2);
+	for (unsigned int i = 0; i < regionPol.size(); ++i) {
+		QPointF p = regionPol.at(i);
+		geos::geom::Coordinate c(p.x(), p.y(), 0);
+		cs->setAt(c, i);
+	}
+	return f->createLinearRing(cs);
+}
+
+geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(RawDataPolygon* pol, const QPointF& offset)
+{
+	geos::geom::LinearRing* regionRing = createLinearRing(pol->m_gridRegionPolygon, offset, m_geomFactory);
+	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
+	for (int i = 0; i < pol->m_holePolygons.size(); ++i) {
+		RawDataPolygonAbstractPolygon* h = pol->m_holePolygons.at(i);
+		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
+	}
+	return m_geomFactory->createPolygon(regionRing, holesVec);
+}
+
+QPointF GeoDataPolygonTriangleThread::polygonInnerPoint(RawDataPolygonAbstractPolygon* region, const std::vector<RawDataPolygonAbstractPolygon*>& holes, const QPointF& offset)
+{
+	geos::geom::LinearRing* regionRing = createLinearRing(region, offset, m_geomFactory);
+	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
+	for (int i = 0; i < holes.size(); ++i) {
+		RawDataPolygonAbstractPolygon* h = holes.at(i);
+		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
+	}
+	geos::geom::Polygon* poly = m_geomFactory->createPolygon(regionRing, holesVec);
+	geos::geom::Point* ip = poly->getInteriorPoint();
+	QPointF ret(ip->getX(), ip->getY());
+	delete poly;
+	return ret;
 }
 
 GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread()
@@ -192,6 +241,7 @@ GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread()
 	m_abort = false;
 	m_canceled = false;
 	m_isOutputting = false;
+	m_geomFactory = geos::geom::GeometryFactory::getDefaultInstance();
 
 	start(LowestPriority);
 }

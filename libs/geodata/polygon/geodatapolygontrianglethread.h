@@ -6,10 +6,21 @@
 #include <QWaitCondition>
 
 #include <list>
+#include <vector>
 
 class GeoDataPolygon;
+class GeoDataPolygonAbstractPolygon;
 class QPointF;
 struct triangulateio;
+
+namespace geos {
+namespace geom{
+
+class Polygon;
+class GeometryFactory;
+
+} // geom
+} // geos
 
 class GeoDataPolygonTriangleThread : public QThread
 {
@@ -50,8 +61,11 @@ private:
 	Job* m_currentJob;
 	bool m_isOutputting;
 	bool m_abort;
+	const geos::geom::GeometryFactory* m_geomFactory;
 
 	void setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset);
+	geos::geom::Polygon* getGeosPolygon(RawDataPolygon* pol, const QPointF& offset);
+	QPointF polygonInnerPoint(RawDataPolygonAbstractPolygon* region, const std::vector<RawDataPolygonAbstractPolygon*>& holes, const QPointF& offset);
 
 	explicit GeoDataPolygonTriangleThread();
 	~GeoDataPolygonTriangleThread();

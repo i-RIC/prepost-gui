@@ -220,7 +220,6 @@ void PreProcessorGeoDataGroupDataItem::import()
 		wDialog->show();
 		qApp->processEvents();
 	}
-	// All imports succeeded.
 	QFileInfo finfo(filename);
 	for (int i = 0; i < dataCount; ++i) {
 		if (m_cancelImport) {

@@ -7,6 +7,12 @@
 class GeoDataPolygonImporter : public GeoDataImporter
 {
 	Q_OBJECT
+private:
+	struct PolygonShapeInfo {
+		int item;
+		int region;
+		std::vector<int> holes;
+	};
 
 public:
 	GeoDataPolygonImporter(GeoDataCreator* creator) :
@@ -20,10 +26,12 @@ protected:
 	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 
 private:
+	static std::vector<PolygonShapeInfo> buildPolygonShapeInfos(const std::string& shpFileName);
+
 	GeoDataPolygonImporterSettingDialog::NameSetting m_nameSetting;
 	int m_nameAttribute;
 	GeoDataPolygonImporterSettingDialog::ValueSetting m_valueSetting;
-	int m_count;
+	std::vector<PolygonShapeInfo> m_shapeInfos;
 	int m_valueAttribute;
 	QVariant m_specifiedValue;
 };
