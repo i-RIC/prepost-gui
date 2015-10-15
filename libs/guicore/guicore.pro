@@ -143,11 +143,9 @@ HEADERS += guicore_global.h \
            base/animationcontrollerinterface.h \
            base/clipboardoperatablewindowinterface.h \
            base/iricmainwindowinterface.h \
-           base/particleexportwindowinterface.h \
            base/propertybrowser.h \
            base/snapshotenabledwindowinterface.h \
            base/svgsnapshotenabledwindowinterface.h \
-           base/svkmlexportwindowinterface.h \
            base/windowwithobjectbrowserinterface.h \
            base/windowwithpropertybrowser.h \
            base/windowwithzindexinterface.h \
