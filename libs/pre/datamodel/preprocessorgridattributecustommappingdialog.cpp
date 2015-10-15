@@ -16,7 +16,7 @@ PreProcessorGridAttributeCustomMappingDialog::PreProcessorGridAttributeCustomMap
 	ui {new Ui::PreProcessorGridAttributeCustomMappingDialog}
 {
 	ui->setupUi(this);
-	connect(ui->selectAllButton, SIGNAL(clicked()), this, SLOT(checkAll()));
+	connect(ui->checkAllButton, SIGNAL(clicked()), this, SLOT(checkAll()));
 }
 
 PreProcessorGridAttributeCustomMappingDialog::~PreProcessorGridAttributeCustomMappingDialog()
@@ -35,7 +35,7 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 			if (setting.attSettings.contains(item->condition()->name())) {
 				checkBox->setChecked(setting.attSettings.value(item->condition()->name()));
 			} else {
-				checkBox->setChecked(true);
+				checkBox->setChecked(false);
 			}
 			m_attMap.insert(item, checkBox);
 			glayout->addWidget(checkBox);
@@ -54,7 +54,7 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 			if (setting.bcSettings.contains(item->bcDataItem()->uniqueName())) {
 				checkBox->setChecked(setting.bcSettings.value(item->bcDataItem()->uniqueName()));
 			} else {
-				checkBox->setChecked(true);
+				checkBox->setChecked(false);
 			}
 			m_bcMap.insert(item, checkBox);
 			blayout->addWidget(checkBox);
