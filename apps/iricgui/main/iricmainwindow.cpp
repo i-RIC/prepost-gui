@@ -451,9 +451,11 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	VersionNumber versionNumber;
 	bool bret = ProjectCgnsFile::readSolverInfo(fname, solverName, versionNumber);
 
+	QString solFolder;
 	if (bret == false) {
 		QMessageBox::warning(this, tr("Warning"), tr("Loading solver information from CGNS file failed. Entering post only mode."));
 		m_projectData->setPostOnlyMode();
+		solFolder = ":/data/unknownsolver";
 	} else {
 		// loading succeeded.
 		m_projectData->mainfile()->setSolverName(solverName);
@@ -468,12 +470,14 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 				.arg(m_projectData->mainfile()->solverName())
 				.arg(m_projectData->mainfile()->solverVersion().toString()));
 			m_projectData->setPostOnlyMode();
+			solFolder = ":/data/unknownsolver";
+		} else {
+			// create solver definition data
+			solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
 		}
-		// create solver definition data
-		QString solFolder = m_solverDefinitionList->absoluteSolverPath(folder);
-		SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
-		m_projectData->setSolverDefinition(def);
 	}
+	SolverDefinition* def = new SolverDefinition(solFolder, m_locale);
+	m_projectData->setSolverDefinition(def);
 	m_projectData->setVersion(m_versionNumber);
 
 	setupForNewProjectData();
