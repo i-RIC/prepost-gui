@@ -412,7 +412,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 {
 	m_setting.load(node);
 	setCurrentSolution(m_setting.currentSolution);
-	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
