@@ -47,6 +47,7 @@ public:
 	//@{
 	const QList<GridType>& availableGridTypes() const;
 	GridType defaultGridType() const;
+	const QList<QString>& availableGridGenerators() const;
 	const QString& name() const;
 	const QString& caption() const;
 	bool isPrimary() const;

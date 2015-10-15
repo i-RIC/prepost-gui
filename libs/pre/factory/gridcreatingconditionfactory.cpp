@@ -56,13 +56,27 @@ void GridCreatingConditionFactory::setupNameMap()
 const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(const SolverDefinitionGridType& gridType) const
 {
 	QList<GridCreatingConditionCreator*> ret;
-	for (GridCreatingConditionCreator* creator : m_creators) {
-		QList<SolverDefinitionGridType::GridType> types = gridType.availableGridTypes();
-		QList<SolverDefinitionGridType::GridType>::const_iterator it2;
-		for (it2 = types.begin(); it2 != types.end(); ++it2) {
-			if (creator->gridType() == *it2) {
-				ret.append(creator);
-				break;
+	QList<GridCreatingConditionCreator*>::const_iterator it;
+
+	if (gridType.availableGridGenerators().size() > 0) {
+		// gridgenerators specified. select the generators in the list only.
+		QList<QString> availableGenerators = gridType.availableGridGenerators();
+		for (it = m_creators.begin(); it != m_creators.end(); ++it){
+			QString genName = (*it)->name();
+			if (availableGenerators.contains(genName)) {
+				ret.append(*it);
+			}
+		}
+	} else {
+		// select grid generators that can generate grids that are supported by the solver.
+		for (it = m_creators.begin(); it != m_creators.end(); ++it){
+			QList<SolverDefinitionGridType::GridType> types = gridType.availableGridTypes();
+			QList<SolverDefinitionGridType::GridType>::const_iterator it2;
+			for (it2 = types.begin(); it2 != types.end(); ++it2) {
+				if ((*it)->gridType() == *it2) {
+					ret.append(*it);
+					break;
+				}
 			}
 		}
 	}

@@ -53,6 +53,7 @@ public:
 
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
 	void setGridType(const QDomElement& elem);
+	void setGridGenerators(const QDomElement& elem);
 	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
 	void setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
 	void buildGridRelatedConditions(Grid* grid) const;
@@ -65,6 +66,7 @@ public:
 	bool m_isOptional {false};
 	bool m_isKeepOrder {false};
 	QList<GridType> m_availableGridTypes;
+	QList<QString> m_availableGridGenerators;
 	GridType m_defaultGridType {gtUnknownGrid};
 	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
 	QMap<QString, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
@@ -110,6 +112,8 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& node, const SolverD
 	m_isOptional = (optstr == "true");
 	// set grid type
 	setGridType(node);
+	// set grid generators
+	setGridGenerators(node);
 	// setup grid related conditions
 	QDomNode grcNode = iRIC::getChildNode(node, "GridRelatedCondition");
 	setupGridRelatedConditions(grcNode, translator);
@@ -128,6 +132,18 @@ void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
 	}
 	if (m_availableGridTypes.size() > 0) {
 		m_defaultGridType = m_availableGridTypes.at(0);
+	}
+}
+
+void SolverDefinitionGridType::Impl::setGridGenerators(const QDomElement& elem)
+{
+	QString gens = elem.attribute("gridgenerators", "");
+	QStringList genList = gens.split(",");
+	m_availableGridGenerators.clear();
+	for (int i = 0; i < genList.size(); ++i) {
+		QString gen = genList.at(i).trimmed();
+		if (gen.isNull()) {continue;}
+		m_availableGridGenerators.append(gen);
 	}
 }
 
@@ -297,6 +313,11 @@ const QList<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::avail
 SolverDefinitionGridType::GridType SolverDefinitionGridType::defaultGridType() const
 {
 	return m_impl->m_defaultGridType;
+}
+
+const QList<QString>& SolverDefinitionGridType::availableGridGenerators() const
+{
+	return m_impl->m_availableGridGenerators;
 }
 
 const QString& SolverDefinitionGridType::name() const
