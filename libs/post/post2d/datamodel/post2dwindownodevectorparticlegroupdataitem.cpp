@@ -84,15 +84,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 
 Post2dWindowNodeVectorParticleGroupDataItem::~Post2dWindowNodeVectorParticleGroupDataItem()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
+	for (int i = 0; i < m_particleActors.size(); ++i) {
 		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-	}
-	for (int i = 0; i < m_particleMappers.count(); ++i) {
-		m_particleMappers[i]->Delete();
-	}
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
 	}
 }
 
@@ -134,10 +127,8 @@ void Post2dWindowNodeVectorParticleGroupDataItem::exclusivelyCheck(Post2dWindowN
 
 void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
+	for (auto actor : m_particleActors) {
+		renderer()->RemoveActor(actor);
 	}
 	m_actorCollection->RemoveAllItems();
 	m_particleActors.clear();
@@ -187,13 +178,13 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_particleActors.count() == 0) {return;}
-	if (m_particleActors.count() == 1) {
+	if (m_particleActors.size() == 0) {return;}
+	if (m_particleActors.size() == 1) {
 		m_particleActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		double depth = range.min() + static_cast<double>(i) / (m_particleActors.count() - 1) * (range.max() - range.min());
+	for (int i = 0; i < m_particleActors.size(); ++i) {
+		double depth = range.min() + static_cast<double>(i) / (m_particleActors.size() - 1) * (range.max() - range.min());
 		m_particleActors[i]->SetPosition(0, 0, depth);
 	}
 }
@@ -213,10 +204,8 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setupStreamTracer()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 {
-	for (int i = 0; i < m_particleActors.count(); ++i) {
-		renderer()->RemoveActor(m_particleActors[i]);
-		m_particleActors[i]->Delete();
-		m_particleMappers[i]->Delete();
+	for (auto actor : m_particleActors) {
+		renderer()->RemoveActor(actor);
 	}
 	m_actorCollection->RemoveAllItems();
 	m_particleActors.clear();
@@ -281,11 +270,8 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QStri
 
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 {
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
-		m_particleGrids[i]->Delete();
-	}
 	m_particleGrids.clear();
-	for (int i = 0; i < m_particleActors.count(); ++i) {
+	for (int i = 0; i < m_particleActors.size(); ++i) {
 		vtkPolyData* grid = vtkPolyData::New();
 		vtkPointSet* pointsGrid = newParticles(i);
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -307,7 +293,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
 		grid->BuildLinks();
 		grid->Modified();
 		m_particleMappers[i]->SetInputData(grid);
-		m_particleGrids.append(grid);
+		m_particleGrids.push_back(grid);
 	}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
@@ -330,7 +316,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 	QList<double> timeSteps = tSteps->timesteps();
 	double timeDiv = timeSteps[currentStep] - m_previousTime;
 
-	for (int i = 0; i < m_particleActors.count(); ++i) {
+	for (int i = 0; i < m_particleActors.size(); ++i) {
 		// Find the new positions of points already exists.
 		m_streamPoints->SetSourceData(m_particleGrids[i]);
 		m_streamPoints->SetMaximumPropagationTime(timeDiv * 1.1);
@@ -381,7 +367,6 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		newPoints->SetVerts(ca);
 		newPoints->Modified();
 		m_particleMappers[i]->SetInputData(newPoints);
-		m_particleGrids[i]->Delete();
 		m_particleGrids[i] = newPoints;
 	}
 	if (m_setting.timeMode == tmSkip) {
@@ -395,7 +380,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 
 bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString& filePrefix, int fileIndex, double time)
 {
-	for (int i = 0; i < m_particleGrids.count(); ++i) {
+	for (int i = 0; i < m_particleGrids.size(); ++i) {
 		QString tmpFile = projectData()->tmpFileName();
 
 		vtkSmartPointer<vtkPolyDataWriter> writer = vtkSmartPointer<vtkPolyDataWriter>::New();
@@ -409,7 +394,7 @@ bool Post2dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString&
 		writer->Update();
 
 		QString filename = filePrefix;
-		if (m_particleGrids.count() == 1) {
+		if (m_particleGrids.size() == 1) {
 			filename.append(QString("%1.vtk").arg(fileIndex));
 		} else {
 			filename.append(QString("Group%1_%2.vtk").arg(i + 1).arg(fileIndex));

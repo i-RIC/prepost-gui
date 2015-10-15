@@ -69,15 +69,8 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamlineGroupDataItem()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i) {
-		renderer()->RemoveActor(m_streamlineActors[i]);
-		m_streamlineActors[i]->Delete();
-	}
-	for (int i = 0; i < m_streamlineMappers.count(); ++i) {
-		m_streamlineMappers[i]->Delete();
-	}
-	for (int i = 0; i < m_streamTracers.count(); ++i) {
-		m_streamTracers[i]->Delete();
+	for (auto actor : m_streamlineActors) {
+		renderer()->RemoveActor(actor);
 	}
 }
 
@@ -123,16 +116,11 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 {
-	for (int i = 0; i < m_streamlineActors.count(); ++i) {
-		renderer()->RemoveActor(m_streamlineActors[i]);
-		m_streamlineActors[i]->Delete();
-		m_streamlineMappers[i]->Delete();
-		m_streamTracers[i]->Delete();
+	for (auto actor : m_streamlineActors) {
+		renderer()->RemoveActor(actor);
 	}
 	m_actorCollection->RemoveAllItems();
 	m_streamlineActors.clear();
-	m_streamlineMappers.clear();
-	m_streamTracers.clear();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr) {return;}
@@ -161,13 +149,13 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_streamlineActors.count() == 0) {return;}
-	if (m_streamlineActors.count() == 1) {
+	if (m_streamlineActors.size() == 0) {return;}
+	if (m_streamlineActors.size() == 1) {
 		m_streamlineActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_streamlineActors.count(); ++i) {
-		double depth = range.min() + static_cast<double>(i) / (m_streamlineActors.count() - 1) * (range.max() - range.min());
+	for (int i = 0; i < m_streamlineActors.size(); ++i) {
+		double depth = range.min() + static_cast<double>(i) / (m_streamlineActors.size() - 1) * (range.max() - range.min());
 		m_streamlineActors[i]->SetPosition(0, 0, depth);
 	}
 }

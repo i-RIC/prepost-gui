@@ -112,6 +112,8 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 	}
 	m_sourcePoints.clear();
 
+	m_streamlineActors.reserve(m_unstSettings.size());
+
 	for (int i = 0; i < m_unstSettings.count(); ++i) {
 		Setting& setting = m_unstSettings[i];
 
@@ -153,9 +155,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
-		m_streamlineActors.append(actor);
-		m_streamlineMappers.append(mapper);
-		m_streamTracers.append(tracer);
+		m_streamlineActors.push_back(actor);
 	}
 }
 

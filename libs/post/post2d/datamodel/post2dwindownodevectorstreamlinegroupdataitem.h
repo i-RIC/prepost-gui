@@ -9,7 +9,6 @@
 
 #include <QMap>
 #include <QColor>
-#include <QList>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -17,6 +16,8 @@
 #include <vtkStreamTracer.h>
 #include <vtkClipPolyData.h>
 #include <vtkPolyData.h>
+
+#include <vector>
 
 class Post2dWindowNodeVectorStreamlineDataItem;
 
@@ -71,9 +72,7 @@ protected:
 
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 
-	QList<vtkActor*> m_streamlineActors;
-	QList<vtkDataSetMapper*> m_streamlineMappers;
-	QList<vtkStreamTracer*> m_streamTracers;
+	std::vector<vtkActor*> m_streamlineActors;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
 
 private:

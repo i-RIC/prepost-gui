@@ -122,9 +122,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
-		m_streamlineActors.append(actor);
-		m_streamlineMappers.append(mapper);
-		m_streamTracers.append(tracer);
+		m_streamlineActors.push_back(actor);
 	}
 }
 
