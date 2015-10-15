@@ -34,7 +34,6 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	// @todo Currently, the default condition is the algorithm
 	// that is found first, that is compatible with the type of grid.
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	SolverDefinitionGridType::GridType gType = gTypeItem->gridType()->defaultGridType();
 
 	// setup actions.
 	m_createAction = new QAction(PreProcessorGridCreatingConditionDataItem::tr("&Create Grid..."), this);
@@ -51,7 +50,7 @@ PreProcessorGridCreatingConditionDataItem::PreProcessorGridCreatingConditionData
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCondition()));
 
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
-	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(gType);
+	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
 
 	// default condition is not set.
 	m_condition = nullptr;
@@ -328,9 +327,8 @@ void PreProcessorGridCreatingConditionDataItem::switchAlgorithm()
 		return;
 	}
 	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	SolverDefinitionGridType::GridType gType = gTypeItem->gridType()->defaultGridType();
 	GridCreatingConditionFactory& factory = GridCreatingConditionFactory::instance(iricMainWindow());
-	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(gType);
+	QList<GridCreatingConditionCreator*> cList = factory.compatibleCreators(*(gTypeItem->gridType()));
 	PreProcessorGridCreatingConditionAlgorithmSelectDialog dialog;
 	dialog.setCreators(cList);
 	if (m_condition != nullptr) {

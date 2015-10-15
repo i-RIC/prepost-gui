@@ -53,12 +53,17 @@ void GridCreatingConditionFactory::setupNameMap()
 	}
 }
 
-const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(SolverDefinitionGridType::GridType gt) const
+const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(const SolverDefinitionGridType& gridType) const
 {
 	QList<GridCreatingConditionCreator*> ret;
 	for (GridCreatingConditionCreator* creator : m_creators) {
-		if (creator->gridType() == gt) {
-			ret.append(creator);
+		QList<SolverDefinitionGridType::GridType> types = gridType.availableGridTypes();
+		QList<SolverDefinitionGridType::GridType>::const_iterator it2;
+		for (it2 = types.begin(); it2 != types.end(); ++it2) {
+			if (creator->gridType() == *it2) {
+				ret.append(creator);
+				break;
+			}
 		}
 	}
 	return ret;

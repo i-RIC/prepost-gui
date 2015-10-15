@@ -18,6 +18,28 @@
 
 #include <misc/xmlsupport.h>
 
+// namespace for local functions
+namespace {
+
+SolverDefinitionGridType::GridType stringToGridType(const QString& name)
+{
+	if (name == "1d") {
+		return SolverDefinitionGridType::gtNormal1DGrid;
+	} else if (name == "1.5d") {
+		return SolverDefinitionGridType::gtNormal1_5DGrid;
+	} else if (name == "1.5d_withcrosssection") {
+		return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
+	} else if (name == "structured2d") {
+		return SolverDefinitionGridType::gtStructured2DGrid;
+	} else if (name == "unstructured2d") {
+		return SolverDefinitionGridType::gtUnstructured2DGrid;
+	} else {
+		return SolverDefinitionGridType::gtUnknownGrid;
+	}
+}
+
+} // namespace
+
 class SolverDefinitionGridType::Impl
 {
 public:
@@ -99,22 +121,13 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& node, const SolverD
 void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
 {
 	QString gtype = elem.attribute("gridtype", "structured2d");
-	m_availableGridTypes.clear();
-	if (gtype == "1d") {
-		m_defaultGridType = gtNormal1DGrid;
-	} else if (gtype == "1.5d") {
-		m_defaultGridType = gtNormal1_5DGrid;
-	} else if (gtype == "1.5d_withcrosssection") {
-		m_defaultGridType = gtNormal1_5DGridWithCrosssection;
-	} else if (gtype == "structured2d") {
-		m_defaultGridType = gtStructured2DGrid;
-	} else if (gtype == "unstructured2d") {
-		m_defaultGridType = gtUnstructured2DGrid;
-	} else {
-		m_defaultGridType = gtUnknownGrid;
+	QStringList types = gtype.split(",");
+	for (int i = 0; i < types.size(); ++i) {
+		GridType gt = stringToGridType(types.at(i).trimmed());
+		m_availableGridTypes.append(gt);
 	}
-	if (m_defaultGridType != gtUnknownGrid) {
-		m_availableGridTypes.append(m_defaultGridType);
+	if (m_availableGridTypes.size() > 0) {
+		m_defaultGridType = m_availableGridTypes.at(0);
 	}
 }
 

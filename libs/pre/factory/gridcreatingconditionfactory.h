@@ -29,7 +29,7 @@ public:
 		}
 		return *m_instance;
 	}
-	const QList<GridCreatingConditionCreator*> compatibleCreators(SolverDefinitionGridType::GridType gt) const;
+	const QList<GridCreatingConditionCreator*> compatibleCreators(const SolverDefinitionGridType& gridType) const;
 	GridCreatingConditionCreator* getCreator(const QString& name) const;
 	GridCreatingCondition* restore(const QDomNode& node, ProjectDataItem* item) const;
 	void setMainWindow(QWidget* mw) {m_mainWindow = mw;}
