@@ -411,7 +411,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-
+	setCurrentSolution(m_setting.currentSolution);
 	updateActorSettings();
 }
 
