@@ -202,7 +202,7 @@ public:
 		m_item {item}
 	{}
 	void redo() {
-		m_item->m_setting = m_oldSetting;
+		m_item->m_setting = m_newSetting;
 		m_item->setEnabled(true);
 		m_item->updateActorSettings();
 	}
