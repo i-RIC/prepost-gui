@@ -2,10 +2,11 @@
 #define POST2DWINDOWSTREAMLINEUNSTRUCTUREDSETTINGDIALOG_H
 
 #include <QDialog>
-#include <QList>
 #include <QPointF>
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
+
+#include <vector>
 
 namespace Ui
 {
@@ -29,9 +30,9 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& unsts);
+	void setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& unsts);
 	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting setting() const;
-	const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings() const {return m_unstSettings;}
+	const std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings() const {return m_unstSettings;}
 
 	void informButtonDown(const QPointF &p);
 	void informButtonUp(const QPointF &p);
@@ -72,7 +73,7 @@ private:
 	bool m_applying;
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_setting;
-	QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_unstSettings;
+	std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_unstSettings;
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting* m_activeSetting;
 	bool m_activeAvailable;
 

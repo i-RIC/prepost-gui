@@ -14,6 +14,8 @@
 #include <vtkDataSetMapper.h>
 #include <QPointF>
 
+#include <vector>
+
 class Post2dWindowStreamlineUnstructuredSettingDialog;
 
 struct Post2dWindowUnstructuredStreamlineSetSetting {
@@ -65,12 +67,12 @@ private slots:
 private:
 	void setupDefaultValues();
 	void setupTmpSource();
-	QList<vtkUnstructuredGrid*> m_sourcePoints;
+	std::vector<vtkUnstructuredGrid*> m_sourcePoints;
 	vtkSmartPointer<vtkUnstructuredGrid> m_previewPoints;
 	vtkSmartPointer<vtkDataSetMapper> m_previewMapper;
 	vtkSmartPointer<vtkActor> m_previewActor;
 
-	QList<Setting> m_unstSettings;
+	std::vector<Setting> m_unstSettings;
 
 	Post2dWindowStreamlineUnstructuredSettingDialog* m_dialog;
 

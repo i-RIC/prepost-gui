@@ -55,6 +55,8 @@ public:
 	void setPrefix(const QString& prefix) override;
 
 private:
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	DoubleContainer m_xValue {"x"};
 	DoubleContainer m_yValue {"y"};
 };

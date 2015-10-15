@@ -85,7 +85,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupDefaultValu
 	s.width = 1;
 	s.pointsSet = false;
 	s.numberOfPoints = 10;
-	m_unstSettings.append(s);
+	m_unstSettings.push_back(s);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
@@ -107,14 +107,14 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupTmpSource()
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 {
-	for (int i = 0; i < m_sourcePoints.count(); ++i) {
+	for (int i = 0; i < m_sourcePoints.size(); ++i) {
 		m_sourcePoints[i]->Delete();
 	}
 	m_sourcePoints.clear();
 
 	m_streamlineActors.reserve(m_unstSettings.size());
 
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
+	for (int i = 0; i < m_unstSettings.size(); ++i) {
 		Setting& setting = m_unstSettings[i];
 
 		vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
@@ -133,7 +133,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 			vertex->GetPointIds()->SetId(0, j);
 			grid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 		}
-		m_sourcePoints.append(grid);
+		m_sourcePoints.push_back(grid);
 
 		vtkActor* actor = vtkActor::New();
 		vtkProperty* prop = actor->GetProperty();
@@ -175,7 +175,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doLoadFromProjec
 		for (int i = 0; i < streamlines.length(); ++i) {
 			Setting s;
 			s.load(streamlines.at(i));
-			m_unstSettings.append(s);
+			m_unstSettings.push_back(s);
 		}
 	}
 	updateActorSettings();
@@ -186,7 +186,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::doSaveToProjectM
 	Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(writer);
 
 	writer.writeStartElement("Streamlines");
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
+	for (int i = 0; i < m_unstSettings.size(); ++i) {
 		Setting& setting = m_unstSettings[i];
 		writer.writeStartElement("Streamline");
 		setting.save(writer);

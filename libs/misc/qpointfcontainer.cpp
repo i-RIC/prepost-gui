@@ -97,3 +97,10 @@ void QPointFContainer::setPrefix(const QString& prefix)
 	m_yValue.setPrefix(prefix);
 	XmlAttributeContainer::setPrefix(prefix);
 }
+
+void QPointFContainer::copyValue(const XmlAttributeContainer& c)
+{
+	const QPointFContainer& c2 = dynamic_cast<const QPointFContainer&> (c);
+	m_xValue = c2.m_xValue;
+	m_yValue = c2.m_yValue;
+}

@@ -49,7 +49,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setZoneData(PostZoneDataCo
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowStreamlineUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& unsts)
+void Post2dWindowStreamlineUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& unsts)
 {
 	m_setting = s;
 	m_unstSettings = unsts;
@@ -106,7 +106,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::updateMousePosition(const 
 class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SetSettingCommand  : public QUndoCommand
 {
 public:
-	SetSettingCommand(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings, Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item) :
+	SetSettingCommand(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& s, const std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting>& settings, Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* item) :
 		QUndoCommand(Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::tr("Update Streamline Setting")),
 		m_newSetting {s},
 		m_newUnstSettings (settings),
@@ -134,11 +134,11 @@ public:
 
 private:
 	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_newSetting;
-	QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_newUnstSettings;
+	std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_newUnstSettings;
 
 	bool m_oldEnabled;
 	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_oldSetting;
-	QList<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_oldUnstSettings;
+	std::vector<Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting> m_oldUnstSettings;
 
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* m_item;
 };
@@ -159,7 +159,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::reject()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::activeDataChanged(int index)
 {
-	if (index == -1 || index >= m_unstSettings.count()) {
+	if (index == -1 || index >= m_unstSettings.size()) {
 		m_activeSetting = nullptr;
 		return;
 	}
@@ -210,7 +210,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::addData()
 {
 	if (m_activeSetting == nullptr) {return;}
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting setting = *m_activeSetting;
-	m_unstSettings.append(setting);
+	m_unstSettings.push_back(setting);
 	QListWidgetItem* tmpitem = ui->startPositionListWidget->item(ui->startPositionListWidget->count() - 1);
 	int tmpint = tmpitem->text().toInt();
 	++ tmpint;
@@ -226,8 +226,8 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::removeData()
 	QListWidgetItem* item = ui->startPositionListWidget->takeItem(current);
 	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
-	m_unstSettings.removeAt(current);
-	if (current >= m_unstSettings.count()) {current = m_unstSettings.count() - 1;}
+	m_unstSettings.erase(m_unstSettings.begin() + current);
+	if (current >= m_unstSettings.size()) { current = m_unstSettings.size() - 1; }
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_unstSettings[current]);
 	applySettings();
@@ -281,7 +281,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::setupSettingList()
 {
-	for (int i = 0; i < m_unstSettings.count(); ++i) {
+	for (int i = 0; i < m_unstSettings.size(); ++i) {
 		ui->startPositionListWidget->addItem(QString("%1").arg(i + 1));
 	}
 	// select the first one.
@@ -314,5 +314,5 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::applySettings()
 
 void Post2dWindowStreamlineUnstructuredSettingDialog::updateRemoveButtonStatus()
 {
-	ui->removePushButton->setEnabled(m_unstSettings.count() > 1);
+	ui->removePushButton->setEnabled(m_unstSettings.size() > 1);
 }
