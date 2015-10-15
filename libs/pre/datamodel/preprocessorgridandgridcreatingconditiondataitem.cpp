@@ -22,9 +22,11 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/gridimporterinterface.h>
 #include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/gridcgnsestimater.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectcgnsfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
@@ -42,6 +44,9 @@
 
 #include <vtkStructuredGrid.h>
 #include <vtkUnstructuredGrid.h>
+
+#include <cgnslib.h>
+#include <iriclib.h>
 
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
@@ -213,6 +218,28 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		connect(gridItem->bcGroupDataItem(), SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
 	}
 	updateItemMap();
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const int fn)
+{
+	int B;
+	int nzones;
+	cg_iRIC_GotoBase(fn, &B);
+	cg_nzones(fn, B, &nzones);
+	char zonename[ProjectCgnsFile::BUFFERLEN];
+	int size[9];
+	for (int i = 1; i <= nzones; ++i){
+		// read zone information.
+		cg_zone_read(fn, 1, i, zonename, size);
+		if (m_zoneName == zonename){
+			Grid* grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
+			if (grid == 0) {return;}
+
+			setupGridDataItem(grid);
+			m_gridDataItem->loadFromCgnsFile(fn);
+			delete grid;
+		}
+	}
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()

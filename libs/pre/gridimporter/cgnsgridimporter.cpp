@@ -95,7 +95,6 @@ bool CgnsGridImporter::openCgnsFileForImporting(Grid* grid, const QString& filen
 	}
 	if (zonenames.count() == 0) {
 		// there is no compatible zone.
-		QMessageBox::critical(parent, tr("Error"), tr("There is no grid that can be imported."));
 		goto OPEN_ERROR_AFTER_OPENING;
 	}
 	if (zonenames.count() == 1) {

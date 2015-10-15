@@ -21,6 +21,7 @@
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/grid/grid2d.h>
+#include <guicore/pre/grid/gridcgnsestimater.h>
 #include <guicore/pre/grid/gridexporterinterface.h>
 #include <guicore/pre/grid/gridimporterinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
@@ -149,14 +150,9 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 		// read zone information.
 		cg_zone_read(fn, 1, i, zonename, size);
 		if (zoneName == zonename) {
-			// I've found the zone!
-			// check the type of the grid contained in this zone.
-			ZoneType_t type;
-			cg_zone_type(fn, 1, i, &type);
-			// the grid type knows what kind of grid it should have.
+			m_grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
 			SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
-			// create grid first.
-			m_grid = gridType->createEmptyGrid();
+			gridType->buildGridRelatedConditions(m_grid);
 			m_grid->setParent(this);
 			m_grid->setZoneName(zoneName);
 

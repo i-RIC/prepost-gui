@@ -276,6 +276,7 @@ HEADERS += guicore_global.h \
            pre/grid/grid.h \
            pre/grid/grid2d.h \
            pre/grid/grid3d.h \
+           pre/grid/gridcgnsestimater.h \
            pre/grid/gridexporterinterface.h \
            pre/grid/gridimporterinterface.h \
            pre/grid/gridinternalexporter.h \
@@ -483,6 +484,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/grid/grid.cpp \
            pre/grid/grid2d.cpp \
            pre/grid/grid3d.cpp \
+           pre/grid/gridcgnsestimater.cpp \
            pre/grid/gridinternalexporter.cpp \
            pre/grid/gridinternalimporter.cpp \
            pre/grid/structured15dgridwithcrosssection.cpp \

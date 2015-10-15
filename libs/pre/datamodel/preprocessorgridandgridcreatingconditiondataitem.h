@@ -39,6 +39,7 @@ public:
 	bool gridEdited() const  override;
 	void toggleGridEditFlag() override;
 	void setupGridDataItem(Grid* grid);
+	void loadFromCgnsFile(const int fn);
 
 public slots:
 	void informGridCreation();
