@@ -20,7 +20,7 @@
 
 Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
 	PostProcessorWindowProjectDataItem {parent, parentWindow},
-	m_geometry {parentWindow}
+	m_geometry {}
 {
 	Post2dWindow* w = new Post2dWindow(parentWindow, index, this);
 	m_window = w;
@@ -57,6 +57,7 @@ void Post2dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
 	/// load Window settings
+	m_geometry.setWidget(w->parentWidget());
 	m_geometry.load(node);
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
@@ -83,6 +84,7 @@ void Post2dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);
 
 	/// save Window geometry
+	m_geometry.setWidget(w->parentWidget());
 	m_geometry.save(writer);
 
 	/// save Camera settings

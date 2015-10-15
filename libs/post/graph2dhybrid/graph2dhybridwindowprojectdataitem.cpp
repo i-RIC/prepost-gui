@@ -16,7 +16,7 @@
 
 Graph2dHybridWindowProjectDataItem::Graph2dHybridWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
 	PostProcessorWindowProjectDataItem(parent, parentWindow),
-	m_geometry {parentWindow}
+	m_geometry {}
 {
 	Graph2dHybridWindow* w = new Graph2dHybridWindow(parentWindow, index, this);
 	m_window = w;
@@ -66,7 +66,7 @@ void Graph2dHybridWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	if (! widgetNode.isNull()) {
 		w->controlWidget()->loadFromProjectMainFile(widgetNode);
 	}
-
+	m_geometry.setWidget(w->parentWidget());
 	m_geometry.load(node);
 }
 
@@ -76,6 +76,7 @@ void Graph2dHybridWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(m_window);
 	iRIC::setIntAttribute(writer, "index", w->index());
 
+	m_geometry.setWidget(w->parentWidget());
 	m_geometry.save(writer);
 
 	writer.writeStartElement("DataModel");

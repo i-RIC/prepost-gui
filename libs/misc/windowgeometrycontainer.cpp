@@ -5,6 +5,10 @@
 #include <QWidget>
 #include <QXmlStreamWriter>
 
+WindowGeometryContainer::WindowGeometryContainer() :
+	WindowGeometryContainer(nullptr)
+{}
+
 WindowGeometryContainer::WindowGeometryContainer(QWidget* w, bool ignoreMax) :
 	m_ignoreMax {ignoreMax},
 	m_window {w}
@@ -38,4 +42,14 @@ void WindowGeometryContainer::save(QXmlStreamWriter& writer) const
 	iRIC::setIntAttribute(writer, "top", rect.top());
 	iRIC::setIntAttribute(writer, "width", rect.width());
 	iRIC::setIntAttribute(writer, "height", rect.height());
+}
+
+void WindowGeometryContainer::setWidget(QWidget* w)
+{
+	m_window = w;
+}
+
+void WindowGeometryContainer::setIgnoreMax(bool ignoreMax)
+{
+	m_ignoreMax = ignoreMax;
 }
