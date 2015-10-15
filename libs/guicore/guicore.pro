@@ -65,6 +65,21 @@ LIBS += -liricGuibase
 # External libraries #
 ######################
 
+# Shapelib
+
+win32{
+	LIBS += -lshapelib_i
+}
+
+#gdal
+
+win32 {
+	LIBS += -lgdal_i
+}
+unix {
+	LIBS += -lgdal
+}
+
 # Qwt
 
 CONFIG(debug, debug|release) {
@@ -225,6 +240,7 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiontranslator.h \
            postcontainer/exporter/postzonedatacsvexporter.h \
            postcontainer/exporter/postzonedataexporter.h \
+           postcontainer/exporter/postzonedatashapeexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
            pre/base/preprocessordataitem.h \
            pre/base/preprocessordatamodelinterface.h \
@@ -443,6 +459,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitiontranslator.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
+           postcontainer/exporter/postzonedatashapeexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
            pre/base/preprocessordataitem.cpp \
            pre/base/preprocessordatamodelinterface.cpp \
@@ -504,6 +521,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \
+           pre/gridcond/complex/gridcomplexattributecontainer.cpp \
            pre/gridcond/complex/gridcomplexattributeeditwidget.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.cpp \
@@ -514,8 +532,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
-    pre/gridcond/complex/gridcomplexattributecontainer.cpp
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

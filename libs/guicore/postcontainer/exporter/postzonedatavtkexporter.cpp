@@ -27,7 +27,7 @@ QString PostZoneDataVtkExporter::filename(const QString& prefix, int index) cons
 	return fname;
 }
 
-bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax) const
+bool PostZoneDataVtkExporter::exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*) const
 {
 	std::string tmpFile = iRIC::toStr(iRIC::getTempFileName(m_workDir));
 	vtkPointSet* ps = data->data();

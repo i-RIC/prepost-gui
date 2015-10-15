@@ -40,6 +40,11 @@
          <string>CSV files</string>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>ESRI Shape files</string>
+        </property>
+       </item>
       </widget>
      </item>
      <item>

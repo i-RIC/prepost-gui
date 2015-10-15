@@ -1,12 +1,14 @@
 #include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
+#include "../project/projectmainfile.h"
 #include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridattributet.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
 
+#include <guibase/coordinatesystem.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -33,6 +35,8 @@
 
 #include <cgnslib.h>
 #include <iriclib.h>
+#include <ogr_spatialref.h>
+#include <shapefil.h>
 #include <vector>
 
 #define ELEMNODENAME "Element"
@@ -1329,3 +1333,4 @@ bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) co
 	}
 	return false;
 }
+

@@ -199,6 +199,8 @@ public:
 	QAction* calcResultExportActionInCalcMenu;
 	/// Action to export Particles data into VTK files
 	QAction* particleExportAction;
+	/// Action to export Contour Figure (in post2d window) into ESRI Shape files
+	QAction* cfShapeExportAction;
 	/// Action to export Google Earth KML for street view.
 	QAction* svKmlExportAction;
 	/// Action to reload Calculation Result.

@@ -188,6 +188,24 @@ bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, dou
 	return pItem->exportParticles(filePrefix, fileIndex, time);
 }
 
+QList<QString> Post2dWindow::contourFigureDrawingZones()
+{
+	QList<QString> ret;
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
+	for (int i = 0; i < gtItems.count(); ++i) {
+		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
+		QList<Post2dWindowZoneDataItem*> zItems = gtItem->zoneDatas();
+		for (Post2dWindowZoneDataItem* zItem : zItems) {
+			Post2dWindowNodeScalarGroupDataItem* gItem = zItem->scalarGroupDataItem();
+			if (gItem->contour() == ContourSettingWidget::ContourFigure) {
+				ret.append(zItem->zoneName());
+			}
+		}
+	}
+	return ret;
+}
+
 QList<QString> Post2dWindow::particleDrawingZones()
 {
 	QList<QString> ret;
@@ -237,6 +255,16 @@ bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, dou
 	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
 	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
 	return sItem->exportKMLForTimestep(writer, index, time);
+}
+
+bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zonename)
+{
+	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
+	QString filePrefix2 = filePrefix;
+	filePrefix2.append(QString("%1.shp").arg(index));
+	return sItem->exportContourFigureToShape(filePrefix2, time);
 }
 
 QList<QString> Post2dWindow::contourDrawingZones()

@@ -120,7 +120,10 @@ HEADERS += centeredcheckbox.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
            waitdialog.h \
-           xyaxisdisplaysettingdialog.h
+           xyaxisdisplaysettingdialog.h \
+           geometry/pointring.h \
+           geometry/polygonregion.h \
+           geometry/rect.h
 FORMS += cgnszoneselectdialog.ui \
          colormapcustomsettingdialog.ui \
          colormapsettingwidget.ui \
@@ -184,7 +187,10 @@ SOURCES += centeredcheckbox.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            waitdialog.cpp \
-           xyaxisdisplaysettingdialog.cpp
+           xyaxisdisplaysettingdialog.cpp \
+           geometry/pointring.cpp \
+           geometry/polygonregion.cpp \
+           geometry/rect.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

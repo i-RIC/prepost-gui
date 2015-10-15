@@ -6,7 +6,7 @@
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowinterface.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
-#include <guicore/base/particleexportwindowinterface.h>
+#include <postbase/particleexportwindowinterface.h>
 
 class QAction;
 class QToolBar;

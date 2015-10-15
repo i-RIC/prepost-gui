@@ -9,4 +9,5 @@ CONFIG += ordered
 SUBDIRS = \
 	libs \
 	apps \
-	plugins
+	plugins \
+	tests

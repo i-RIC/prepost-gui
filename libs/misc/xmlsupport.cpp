@@ -83,7 +83,7 @@ int iRIC::getIntAttribute(const QDomNode& node, const QString& name, int default
 	bool ok;
 	double intVal = val.toInt(&ok);
 	if (! ok || std::isnan(intVal)) {intVal = defaultVal;}
-	return intVal;
+	return static_cast<int> (intVal);
 }
 
 void iRIC::setIntAttribute(QXmlStreamWriter& writer, const QString& name, int value)

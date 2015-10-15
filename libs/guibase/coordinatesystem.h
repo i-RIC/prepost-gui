@@ -19,6 +19,9 @@ public:
 	const QString& searchTarget() const {return m_searchTarget;}
 	void setName(const QString& name) {m_name = name;}
 	void setCaption(const QString& caption);
+	const QString& proj4LonLatStr() const {return m_proj4LonLatStr;}
+	const QString& proj4PlaneStr() const {return m_proj4PlaneStr;}
+
 	void init();
 	void free();
 

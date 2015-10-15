@@ -8,8 +8,9 @@
 #include <guicore/base/additionalmenuwindowinterface.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
-#include <guicore/base/particleexportwindowinterface.h>
-#include <guicore/base/svkmlexportwindowinterface.h>
+#include <postbase/cfshapeexportwindowinterface.h>
+#include <postbase/particleexportwindowinterface.h>
+#include <postbase/svkmlexportwindowinterface.h>
 
 class QAction;
 class QToolBar;
@@ -26,6 +27,7 @@ class Post2dWindow :
 	public AdditionalMenuWindowInterface,
 	public WindowWithObjectBrowserInterface,
 	public WindowWithPropertyBrowser,
+	public CfShapeExportWindowInterface,
 	public ParticleExportWindowInterface,
 	public SVKmlExportWindowInterface
 {
@@ -45,14 +47,15 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	ObjectBrowser* objectBrowser() const override;
 	int index() const {return m_index;}
-	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
 	QList<QString> particleDrawingZones() override;
+	QList<QString> contourFigureDrawingZones() override;
+	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zonename) override;
+	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
 	bool checkKmlExportCondition(const QString &zonename) const override;
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
 	QList<QString> contourDrawingZones() override;
-
 	bool hasTransparentPart();
 
 public slots:

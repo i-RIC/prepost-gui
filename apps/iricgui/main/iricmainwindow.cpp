@@ -21,9 +21,9 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowinterface.h>
-#include <guicore/base/particleexportwindowinterface.h>
-#include <guicore/base/svkmlexportwindowinterface.h>
 #include <guicore/base/windowwithzindexinterface.h>
+#include <postbase/particleexportwindowinterface.h>
+#include <postbase/svkmlexportwindowinterface.h>
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -44,6 +44,9 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
+#include <postbase/cfshapeexportwindowinterface.h>
+#include <postbase/svkmlexportwindow.h>
+#include <postbase/particleexportwindowinterface.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/post2d/post2dwindow.h>
@@ -1853,6 +1856,99 @@ void iRICMainWindow::exportParticles()
 		QString prefixName = pInfo->particleExportPrefix();
 		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
 		bool ok = ew->exportParticles(outputFolder.absoluteFilePath(prefixName), fileIndex, time, zoneName);
+		if (! ok) {
+			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
+			m_continuousSnapshotInProgress = false;
+			return;
+		}
+		step += s.skipRate;
+		++ fileIndex;
+	}
+	m_continuousSnapshotInProgress = false;
+}
+
+void iRICMainWindow::exportCfShape()
+{
+	if (m_solverConsoleWindow->isSolverRunning()) {
+		warnSolverRunning();
+		return;
+	}
+	CfShapeExportWindowInterface* ew = dynamic_cast<CfShapeExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
+	if (ew == nullptr) {
+		QMessageBox::information(this, tr("Information"), tr("Currently active sub-window does not support exporting contour figure."));
+		return;
+	}
+
+	// check whether it has result.
+	if (! m_projectData->mainfile()->postSolutionInfo()->hasResults()) {
+		QMessageBox::information(this, tr("Information"), tr("Calculation result does not exists."));
+		return;
+	}
+
+	QList<QString> zones = ew->contourFigureDrawingZones();
+	QString zoneName;
+	if (zones.count() == 0) {
+		// No valid grid.
+		QMessageBox::warning(this, tr("Error"), tr("No contour figure is drawn now."));
+		return;
+	} else if (zones.count() == 1) {
+		zoneName = zones.at(0);
+	} if (zones.count() > 1) {
+		ItemSelectingDialog dialog;
+		dialog.setItems(zones);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {
+			return;
+		}
+		zoneName = zones.at(dialog.selectIndex());
+	}
+	// show setting dialog
+	PostDataExportDialog expDialog(this);
+
+	PostSolutionInfo* pInfo = m_projectData->mainfile()->postSolutionInfo();
+	expDialog.hideFormat();
+	expDialog.setTimeValues(pInfo->timeSteps()->timesteps());
+
+	PostExportSetting s = pInfo->exportSetting();
+	if (s.folder == "") {
+		s.folder = LastIODirectory::get();
+	}
+
+	expDialog.setExportSetting(s);
+	expDialog.hideDataRange();
+
+	expDialog.setWindowTitle(tr("Export contour figure to ESRI Shape files"));
+
+	if (expDialog.exec() != QDialog::Accepted) {return;}
+
+	s = expDialog.exportSetting();
+	pInfo->setExportSetting(s);
+
+	// start exporting.
+	QProgressDialog dialog(this);
+	dialog.setRange(s.startStep, s.endStep);
+	dialog.setWindowTitle(tr("Export contour figure"));
+	dialog.setLabelText(tr("Saving contour figure as ESRI Shape files..."));
+	dialog.setFixedSize(300, 100);
+	dialog.setModal(true);
+	dialog.show();
+
+	m_continuousSnapshotInProgress = true;
+
+	int step = s.startStep;
+	int fileIndex = 1;
+	QDir outputFolder(s.folder);
+	while (step <= s.endStep) {
+		dialog.setValue(step);
+		qApp->processEvents();
+		if (dialog.wasCanceled()) {
+			m_continuousSnapshotInProgress = false;
+			return;
+		}
+		m_animationController->setCurrentStepIndex(step);
+		QString prefixName = s.prefix;
+		double time = m_projectData->mainfile()->postSolutionInfo()->currentTimeStep();
+		bool ok = ew->exportContourFigureToShape(outputFolder.absoluteFilePath(prefixName), fileIndex, time, zoneName);
 		if (! ok) {
 			QMessageBox::critical(this, tr("Error"), tr("Error occured while saving."));
 			m_continuousSnapshotInProgress = false;

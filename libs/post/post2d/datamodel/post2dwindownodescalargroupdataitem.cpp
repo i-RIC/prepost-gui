@@ -3,6 +3,7 @@
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodescalardataitem.h"
 #include "post2dwindownodescalargroupdataitem.h"
+#include "post2dwindownodescalargroupdataitem_shapeexporter.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/coordinatesystem.h>
@@ -22,12 +23,14 @@
 
 #include <QDateTime>
 #include <QDomNode>
+#include <QFileInfo>
 #include <QList>
 #include <QMainWindow>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QStandardItem>
+#include <QTextStream>
 #include <QUndoCommand>
 #include <QVector3D>
 #include <QXmlStreamWriter>
@@ -54,6 +57,8 @@
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
+#include <vtkPolyDataWriter.h>
+
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
 {
@@ -75,6 +80,8 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 		m_childItems.append(item);
 		m_colorbarTitleMap.insert(name, name);
 	}
+
+	m_shapeExporter = new ShapeExporter(this);
 }
 
 Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
@@ -84,6 +91,8 @@ Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
 	r->RemoveActor(m_contourActor);
 	r->RemoveActor(m_fringeActor);
 	m_scalarBarWidget->SetInteractor(0);
+
+	delete m_shapeExporter;
 }
 
 void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
@@ -102,22 +111,25 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSettings()
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	createRangeClippedPolyData();
-	createValueClippedPolyData();
+	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
+	vtkPolyData* rcp = createRangeClippedPolyData(polyData);
+	vtkPolyData* vcp = createValueClippedPolyData(rcp);
+	rcp->Delete();
 	switch (ContourSettingWidget::Contour(m_setting.contour)) {
 	case ContourSettingWidget::Points:
 		// do nothing
 		break;
 	case ContourSettingWidget::Isolines:
-		setupIsolineSetting();
+		setupIsolineSetting(vcp);
 		break;
 	case ContourSettingWidget::ContourFigure:
-		setupColorContourSetting();
+		setupColorContourSetting(vcp);
 		break;
 	case ContourSettingWidget::ColorFringe:
-		setupColorFringeSetting();
+		setupColorFringeSetting(vcp);
 		break;
 	}
+	vcp->Delete();
 	if (m_setting.scalarBarSetting.visible && (m_setting.currentSolution != "")) {
 		m_scalarBarWidget->SetEnabled(1);
 		setupScalarBarSetting();
@@ -185,10 +197,6 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 	m_contourMapper->SetScalarVisibility(true);
 	m_contourActor->SetMapper(m_contourMapper);
 
-	m_regionClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-	m_valueClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-	m_colorContourPolyData = vtkSmartPointer<vtkPolyData>::New();
-
 	m_fringeActor = vtkSmartPointer<vtkLODActor>::New();
 	m_fringeActor->SetNumberOfCloudPoints(5000);
 	m_fringeActor->GetProperty()->SetPointSize(2);
@@ -232,14 +240,14 @@ void Post2dWindowNodeScalarGroupDataItem::update()
 	updateActorSettings();
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting()
+void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting(vtkPolyData* polyData)
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
-	m_isolineFilter->SetInputData(m_valueClippedPolyData);
+	m_isolineFilter->SetInputData(polyData);
 	m_isolineFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.currentSolution).c_str());
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
 	m_isolineMapper->SetLookupTable(stc->vtkObj());
@@ -247,7 +255,43 @@ void Post2dWindowNodeScalarGroupDataItem::setupIsolineSetting()
 	m_actorCollection->AddItem(m_isolineActor);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
+vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupLowerClippedPolygon(vtkPolyData* inputData, double value)
+{
+	vtkClipPolyData* clipper = vtkClipPolyData::New();
+	clipper->SetValue(value);
+	clipper->SetInputData(inputData);
+	clipper->InsideOutOff();
+
+	vtkCleanPolyData* cleaner = vtkCleanPolyData::New();
+	cleaner->SetInputConnection(clipper->GetOutputPort());
+	cleaner->Update();
+
+	vtkPolyData* data = cleaner->GetOutput();
+	data->Register(0);
+	clipper->Delete();
+	cleaner->Delete();
+	return data;
+}
+
+vtkPolyData* Post2dWindowNodeScalarGroupDataItem::setupHigherClippedPolygon(vtkPolyData* inputData, double value)
+{
+	vtkClipPolyData* clipper = vtkClipPolyData::New();
+	clipper->SetValue(value);
+	clipper->SetInputData(inputData);
+	clipper->InsideOutOn();
+
+	vtkCleanPolyData* cleaner = vtkCleanPolyData::New();
+	cleaner->SetInputConnection(clipper->GetOutputPort());
+	cleaner->Update();
+
+	vtkPolyData* data = cleaner->GetOutput();
+	data->Register(0);
+	clipper->Delete();
+	cleaner->Delete();
+	return data;
+}
+
+void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting(vtkPolyData* polyData)
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
@@ -255,56 +299,7 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
-	m_valueClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
-	vtkSmartPointer<vtkAppendPolyData> appendFilledContours = vtkSmartPointer<vtkAppendPolyData>::New();
-	double delta = (range[1] - range[0]) / static_cast<double>(m_setting.numberOfDivisions);
-	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
-	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersHi;
-
-	for (int i = 0; i < m_setting.numberOfDivisions; i++) {
-		double valueLo = range[0] + static_cast<double>(i) * delta;
-		double valueHi = range[0] + static_cast<double>(i + 1) * delta;
-		clippersLo.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if (i == 0) {
-			clippersLo[i]->SetValue(-HUGE_VAL);
-			clippersLo[i]->SetInputData(m_valueClippedPolyData);
-		} else {
-			clippersLo[i]->SetValue(valueLo);
-			clippersLo[i]->SetInputConnection(clippersLo[i - 1]->GetOutputPort());
-		}
-		clippersLo[i]->InsideOutOff();
-		clippersLo[i]->Update();
-
-		clippersHi.push_back(vtkSmartPointer<vtkClipPolyData>::New());
-		if (i < m_setting.numberOfDivisions - 1) {
-			clippersHi[i]->SetValue(valueHi);
-		} else {
-			clippersHi[i]->SetValue(HUGE_VAL);
-		}
-		clippersHi[i]->SetInputConnection(clippersLo[i]->GetOutputPort());
-		clippersHi[i]->GenerateClippedOutputOn();
-		clippersHi[i]->InsideOutOn();
-		clippersHi[i]->Update();
-		if (clippersHi[i]->GetOutput()->GetNumberOfCells() == 0) {
-			continue;
-		}
-
-		vtkSmartPointer<vtkDoubleArray> cd = vtkSmartPointer<vtkDoubleArray>::New();
-		cd->SetNumberOfComponents(1);
-		cd->SetNumberOfTuples(clippersHi[i]->GetOutput()->GetNumberOfCells());
-		cd->FillComponent(0, range[0] + (range[1] - range[0]) * (i / (m_setting.numberOfDivisions - 1.0)));
-
-		clippersHi[i]->GetOutput()->GetCellData()->SetScalars(cd);
-		appendFilledContours->AddInputConnection(clippersHi[i]->GetOutputPort());
-	}
-
-	vtkSmartPointer<vtkCleanPolyData> filledContours = vtkSmartPointer<vtkCleanPolyData>::New();
-	filledContours->SetInputConnection(appendFilledContours->GetOutputPort());
-	filledContours->Update();
-	m_colorContourPolyData->DeepCopy(filledContours->GetOutput());
-	m_valueClippedPolyData->GetPointData()->SetActiveScalars("");
-
-	m_contourMapper->SetInputData(m_colorContourPolyData);
+	m_contourMapper->SetInputData(createColorContourPolyData(polyData));
 	m_contourMapper->SetScalarRange(range[0], range[1]);
 	m_contourMapper->SetScalarModeToUseCellData();
 	m_contourActor->GetProperty()->SetInterpolationToFlat();
@@ -314,12 +309,12 @@ void Post2dWindowNodeScalarGroupDataItem::setupColorContourSetting()
 	m_actorCollection->AddItem(m_contourActor);
 }
 
-void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting()
+void Post2dWindowNodeScalarGroupDataItem::setupColorFringeSetting(vtkPolyData* polyData)
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
 	if (stc == nullptr) {return;}
-	m_fringeMapper->SetInputData(m_valueClippedPolyData);
+	m_fringeMapper->SetInputData(polyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
 	m_fringeMapper->SelectColorArray(iRIC::toStr(m_setting.currentSolution).c_str());
 	m_fringeMapper->SetLookupTable(stc->vtkObj());
@@ -488,74 +483,59 @@ void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& curr
 	m_setting.currentSolution = currentSol;
 }
 
-void Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
+vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createRangeClippedPolyData(vtkPolyData* polyData)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkPolyData* polyData = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
-	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
-		// unstructured grid.
-		vtkPointSet* ps = polyData;
-		vtkSmartPointer<vtkGeometryFilter> geoFilter = vtkSmartPointer<vtkGeometryFilter>::New();
-		geoFilter->SetInputData(ps);
-		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
-			geoFilter->Update();
-			m_regionClippedPolyData = geoFilter->GetOutput();
-		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-			clipper->SetInputConnection(geoFilter->GetOutputPort());
-			clipper->SetValue(PostZoneDataContainer::IBCLimit);
-			clipper->InsideOutOff();
-			ps->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-			clipper->Update();
-			m_regionClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-			m_regionClippedPolyData->DeepCopy(clipper->GetOutput());
-		}
-	} else {
-		// structured grid.
-		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
-			m_regionClippedPolyData = polyData;
-		} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-			vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
-			clipper->SetInputData(polyData);
-			clipper->SetValue(PostZoneDataContainer::IBCLimit);
-			clipper->InsideOutOff();
-			cont->data()->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-			clipper->Update();
-			m_regionClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-			m_regionClippedPolyData->DeepCopy(clipper->GetOutput());
-		} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
-			vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-			geoFilter->SetInputData(cont->data());
-			StructuredGridRegion::Range2d r = m_setting.range;
-			geoFilter->SetExtent(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
-			geoFilter->Update();
-			m_regionClippedPolyData = geoFilter->GetOutput();
-		}
+	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
+		polyData->Register(0);
+		return polyData;
+	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
+		vtkSmartPointer<vtkClipPolyData> clipper = vtkSmartPointer<vtkClipPolyData>::New();
+		clipper->SetInputData(polyData);
+		clipper->SetValue(PostZoneDataContainer::IBCLimit);
+		clipper->InsideOutOff();
+		polyData->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+		clipper->Update();
+		vtkPolyData* clippedData = clipper->GetOutput();
+		clippedData->Register(0);
+		return clippedData;
+	} else if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
+		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
+		geoFilter->SetInputData(cont->data());
+		StructuredGridRegion::Range2d r = m_setting.range;
+		geoFilter->SetExtent(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
+		geoFilter->Update();
+		vtkPolyData* clippedData = geoFilter->GetOutput();
+		clippedData->Register(0);
+		return clippedData;
 	}
 }
 
-void Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
+vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData(vtkPolyData* polyData)
 {
 	vtkSmartPointer<vtkPolyData> upperClipped;
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
-	if (stc == 0) {return;}
+	if (stc == 0) {
+		polyData->Register(0);
+		return polyData;
+	}
 	double min, max;
 	stc->getValueRange(&min, &max);
 	if (m_setting.fillLower) {
-		lowerClipped = m_regionClippedPolyData;
+		lowerClipped = polyData;
 	} else {
 		vtkSmartPointer<vtkClipPolyData> lowerClipper = vtkSmartPointer<vtkClipPolyData>::New();
 		lowerClipper->SetValue(min);
-		lowerClipper->SetInputData(m_regionClippedPolyData);
+		lowerClipper->SetInputData(polyData);
 		lowerClipper->InsideOutOff();
-		m_regionClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
+		polyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
 
 		lowerClipper->Update();
 		lowerClipped = lowerClipper->GetOutput();
-		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
+		polyData->GetPointData()->SetActiveScalars("");
 	}
 	if (m_setting.fillUpper) {
 		upperClipped = lowerClipped;
@@ -569,7 +549,64 @@ void Post2dWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 		upperClipped = upperClipper->GetOutput();
 		lowerClipped->GetPointData()->SetActiveScalars("");
 	}
-	m_valueClippedPolyData->DeepCopy(upperClipped);
+	upperClipped->Register(0);
+	return upperClipped;
+}
+
+vtkPolyData* Post2dWindowNodeScalarGroupDataItem::createColorContourPolyData(vtkPolyData* polyData)
+{
+	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
+	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
+	if (stc == nullptr) {
+		polyData->Register(0);
+		return polyData;
+	}
+	double range[2];
+	stc->getValueRange(&range[0], &range[1]);
+
+	polyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
+
+	vtkSmartPointer<vtkAppendPolyData> appendFilledContours = vtkSmartPointer<vtkAppendPolyData>::New();
+	double delta = (range[1] - range[0]) / static_cast<double>(m_setting.numberOfDivisions);
+
+	vtkPolyData* inputPolyData = polyData;
+	inputPolyData->Register(0);
+
+	for (int i = 0; i < m_setting.numberOfDivisions; i++) {
+		double lowValue = range[0] + static_cast<double>(i) * delta;
+		double highValue = range[0] + static_cast<double>(i + 1) * delta;
+		if (i == 0){
+			lowValue = - HUGE_VAL;
+		}
+		if (i == m_setting.numberOfDivisions - 1){
+			highValue = HUGE_VAL;
+		}
+		vtkPolyData* lowClipped = setupLowerClippedPolygon(inputPolyData, lowValue);
+		vtkPolyData* bothClipped = setupHigherClippedPolygon(lowClipped, highValue);
+
+		vtkSmartPointer<vtkDoubleArray> cd = vtkSmartPointer<vtkDoubleArray>::New();
+		cd->SetNumberOfComponents(1);
+		cd->SetNumberOfTuples(bothClipped->GetNumberOfCells());
+		cd->FillComponent(0, range[0] + (range[1] - range[0]) * (i / (m_setting.numberOfDivisions - 1.0)));
+		bothClipped->GetCellData()->SetScalars(cd);
+		appendFilledContours->AddInputData(bothClipped);
+		bothClipped->UnRegister(0);
+
+		inputPolyData->UnRegister(0);
+		inputPolyData = lowClipped;
+		inputPolyData->Register(0);
+	}
+	inputPolyData->UnRegister(0);
+
+	vtkSmartPointer<vtkCleanPolyData> filledContours = vtkSmartPointer<vtkCleanPolyData>::New();
+	filledContours->SetInputConnection(appendFilledContours->GetOutputPort());
+	filledContours->Update();
+
+	vtkPolyData* ret = filledContours->GetOutput();
+	ret->Register(0);
+	polyData->GetPointData()->SetActiveScalars("");
+
+	return ret;
 }
 
 bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
@@ -833,4 +870,9 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	// Folder end
 	writer.writeEndElement();
 	return true;
+}
+
+bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
+{
+	return m_shapeExporter->exportContourFigure(filename, time);
 }

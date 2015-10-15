@@ -105,6 +105,8 @@ void PostDataExportDialog::setFormat(Format f)
 		ui->formatComboBox->setCurrentIndex(1);
 	} else if (f == Format::CSV) {
 		ui->formatComboBox->setCurrentIndex(2);
+	} else if (f == Format::ESRIShape) {
+		ui->formatComboBox->setCurrentIndex(3);
 	}
 }
 
@@ -161,6 +163,9 @@ PostDataExportDialog::Format PostDataExportDialog::format() const
 		break;
 	case 2:
 		return Format::CSV;
+		break;
+	case 3:
+		return Format::ESRIShape;
 		break;
 	}
 }

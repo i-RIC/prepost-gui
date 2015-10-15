@@ -13,7 +13,7 @@ public:
 	PostZoneDataCsvExporter() {}
 	~PostZoneDataCsvExporter() {}
 	QString filename(const QString& prefix, int index) const override;
-	bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax) const override;
+	bool exportToFile(PostZoneDataContainer* data, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData* pd) const override;
 
 private:
 	static void exportStructuredGrid(PostZoneDataContainer* data, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax);

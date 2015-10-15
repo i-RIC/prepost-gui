@@ -13,6 +13,7 @@
 class Post2dWindowNodeScalarDataItem;
 class vtkLODActor;
 class vtkActor;
+class vtkAlgorithm;
 class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
@@ -49,6 +50,7 @@ public:
 	bool exportKMLHeader(QXmlStreamWriter& writer);
 	bool exportKMLFooter(QXmlStreamWriter& writer);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time);
+	bool exportContourFigureToShape(const QString& filename, double time);
 
 public slots:
 	void exclusivelyCheck(Post2dWindowNodeScalarDataItem* item);
@@ -61,12 +63,15 @@ protected:
 private:
 	void setupActors();
 	void updateActorSettings();
-	void createRangeClippedPolyData();
-	void createValueClippedPolyData();
-	void setupIsolineSetting();
-	void setupColorContourSetting();
-	void setupColorFringeSetting();
+	vtkPolyData* createRangeClippedPolyData(vtkPolyData* polyData);
+	vtkPolyData* createValueClippedPolyData(vtkPolyData* polyData);
+	vtkPolyData* createColorContourPolyData(vtkPolyData* polyData);
+	void setupIsolineSetting(vtkPolyData* polyData);
+	void setupColorContourSetting(vtkPolyData* polyData);
+	void setupColorFringeSetting(vtkPolyData* polyData);
 	void setupScalarBarSetting();
+	static vtkPolyData* setupLowerClippedPolygon(vtkPolyData* inputData, double value);
+	static vtkPolyData* setupHigherClippedPolygon(vtkPolyData* inputData, double value);
 
 	// Settings
 	Post2dWindowContourSetting m_setting;
@@ -83,9 +88,9 @@ private:
 	vtkDataSetMapper* m_fringeMapper;
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
-	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-	vtkSmartPointer<vtkPolyData> m_valueClippedPolyData;
-	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
+	class ShapeExporter;
+
+	ShapeExporter* m_shapeExporter;
 
 	class SetSettingCommand;
 	class SelectSolutionCommand;

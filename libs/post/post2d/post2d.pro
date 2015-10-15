@@ -76,6 +76,25 @@ LIBS += -liricPostbase
 # External libraries #
 ######################
 
+# Shapelib
+
+win32{
+	LIBS += -lshapelib_i
+}
+
+#gdal
+
+win32 {
+	LIBS += -lgdal_i
+}
+unix {
+	LIBS += -lgdal
+}
+
+#geos
+
+LIBS += -lgeos
+
 # VTK
 
 LIBS += \
@@ -122,12 +141,16 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowcellflaggroupdataitem.h \
            datamodel/post2dwindowcellflagsettingdialog.h \
            datamodel/post2dwindowcontoursettingdialog.h \
+           datamodel/post2dwindowgeodatadataitem.h \
+           datamodel/post2dwindowgeodatagroupdataitem.h \
+           datamodel/post2dwindowgeodatatopdataitem.h \
            datamodel/post2dwindowgridshapedataitem.h \
            datamodel/post2dwindowgridtypedataitem.h \
            datamodel/post2dwindowgridtypedataiteminterface.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
            datamodel/post2dwindownodescalardataitem.h \
            datamodel/post2dwindownodescalargroupdataitem.h \
+           datamodel/post2dwindownodescalargroupdataitem_shapeexporter.h \
            datamodel/post2dwindownodevectorarrowdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.h \
@@ -143,9 +166,6 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowparticlestructuredsettingdialog.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
-           datamodel/post2dwindowgeodatadataitem.h \
-           datamodel/post2dwindowgeodatagroupdataitem.h \
-           datamodel/post2dwindowgeodatatopdataitem.h \
            datamodel/post2dwindowrootdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
@@ -177,11 +197,15 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowcellflaggroupdataitem.cpp \
            datamodel/post2dwindowcellflagsettingdialog.cpp \
            datamodel/post2dwindowcontoursettingdialog.cpp \
+           datamodel/post2dwindowgeodatadataitem.cpp \
+           datamodel/post2dwindowgeodatagroupdataitem.cpp \
+           datamodel/post2dwindowgeodatatopdataitem.cpp \
            datamodel/post2dwindowgridshapedataitem.cpp \
            datamodel/post2dwindowgridtypedataitem.cpp \
            datamodel/post2dwindowmeasureddatatopdataitem.cpp \
            datamodel/post2dwindownodescalardataitem.cpp \
            datamodel/post2dwindownodescalargroupdataitem.cpp \
+           datamodel/post2dwindownodescalargroupdataitem_shapeexporter.cpp \
            datamodel/post2dwindownodevectorarrowdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp \
@@ -197,9 +221,6 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowparticlestopdataitem.cpp \
            datamodel/post2dwindowparticlestructuredsettingdialog.cpp \
            datamodel/post2dwindowparticleunstructuredsettingdialog.cpp \
-           datamodel/post2dwindowgeodatadataitem.cpp \
-           datamodel/post2dwindowgeodatagroupdataitem.cpp \
-           datamodel/post2dwindowgeodatatopdataitem.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
