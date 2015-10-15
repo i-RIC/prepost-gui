@@ -37,6 +37,8 @@ void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer
 
 void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts)
 {
+	m_setting = s;
+	m_stSetting = sts;
 	// currentSolution
 	int index = m_solutions.indexOf(s.currentSolution);
 	if (index == -1) {index = 0;}
