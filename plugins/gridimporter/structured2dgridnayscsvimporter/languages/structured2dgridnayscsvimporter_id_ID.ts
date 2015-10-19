@@ -9,17 +9,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="28"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Cell flag values will not be loaded.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -21,12 +21,12 @@
         <translation>RIC-Nays 格子ファイル (*.grid)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Cell flag values will not be loaded.</source>
         <translation>セルフラグの値は読み込まれません。</translation>
     </message>

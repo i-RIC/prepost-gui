@@ -82,8 +82,7 @@
     </message>
     <message>
         <location filename="../gridimporter/cgnsgridimporter.cpp" line="52"/>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="98"/>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="118"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -93,23 +92,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="98"/>
-        <source>There is no grid that can be imported.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="120"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="119"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="124"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridimporter/cgnsgridimporter.cpp" line="126"/>
+        <location filename="../gridimporter/cgnsgridimporter.cpp" line="125"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
@@ -335,17 +329,17 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="128"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="129"/>
         <source>Add %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="160"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="161"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="160"/>
+        <location filename="../datamodel/preprocessorbcsettinggroupdataitem.cpp" line="161"/>
         <source>Mapping can not be executed when there is no grid.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -740,7 +734,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="191"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="915"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -751,13 +745,12 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
         <source>Import failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="206"/>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="247"/>
         <source>Importing data from %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -767,42 +760,57 @@ Do you really want to import grid from this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <source>Canceled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="226"/>
+        <source>Importing canceled.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="234"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="238"/>
         <source>To import the geographic data, specify coodrinate system first.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="251"/>
+        <source>Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
         <source>Select data to export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="329"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="339"/>
         <source>Please select which data to export.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="668"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="678"/>
         <source>%1 Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="860"/>
         <source>Export Polygons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="850"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="860"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="905"/>
+        <location filename="../datamodel/preprocessorgeodatagroupdataitem.cpp" line="915"/>
         <source>Are you sure you want to delete all items in %1 group?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -810,7 +818,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGeoDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="40"/>
+        <location filename="../datamodel/preprocessorgeodatatopdataitem.cpp" line="118"/>
         <source>Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -818,27 +826,42 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>PreProcessorGridAndGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="98"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="92"/>
         <source>&amp;Delete Grid Creating Condition and Grid Shape...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="192"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="252"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="192"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="252"/>
         <source>Are you sure you want to discard grid creating condition and grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="207"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="350"/>
+        <source>Select file to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="364"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="364"/>
+        <source>Importing grid failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="386"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="207"/>
+        <location filename="../datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp" line="386"/>
         <source>Do you want to map geographic data to grid attributes now?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -926,7 +949,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <location filename="../datamodel/preprocessorgridattributecustommappingdialog.ui" line="25"/>
-        <source>Select &amp;All</source>
+        <source>Check &amp;All</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1228,49 +1251,49 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridCreatingConditionDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="40"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="39"/>
         <source>&amp;Create Grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="44"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="43"/>
         <source>&amp;Select Algorithm to Create Grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="47"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="46"/>
         <source>Reset to &amp;Default...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="49"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="48"/>
         <source>&amp;Delete Grid Creating Condition...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="154"/>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="183"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="153"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="182"/>
         <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="327"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="155"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="154"/>
         <source>This operation will discard the grid that already exists. Are you sure?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="184"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="183"/>
         <source>Are you sure you want to discard the grid creating condition?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="202"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="201"/>
         <source>Confirm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="203"/>
+        <location filename="../datamodel/preprocessorgridcreatingconditiondataitem.cpp" line="202"/>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1360,132 +1383,121 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1342"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1230"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="241"/>
-        <source>Select file to import</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="305"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="404"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="427"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="291"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="314"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="305"/>
-        <source>Importing grid failed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="341"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="227"/>
         <source>The following problems found in this grid. Do you really want to export the grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="349"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="235"/>
         <source>Show Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="350"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="236"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="333"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="372"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="258"/>
         <source>Select File to Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="383"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="269"/>
         <source>Exporting Grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="423"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="310"/>
         <source>Grid successfully exported to %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="427"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="314"/>
         <source>Exporting grid to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="446"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="333"/>
         <source>Are you sure you want to discard the grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1060"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="950"/>
         <source>&amp;Import...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1064"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="954"/>
         <source>&amp;Export...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1068"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="958"/>
         <source>Grid &amp;Shape...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1071"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="961"/>
         <source>&amp;Select Polygon Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1073"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="963"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1077"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="967"/>
         <source>&amp;Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1078"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1079"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="968"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="969"/>
         <source>&amp;Node Attribute...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1081"/>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1082"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="971"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="972"/>
         <source>&amp;Cell Attribute...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1084"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="974"/>
         <source>Set &amp;Up Scalarbar...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1088"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="978"/>
         <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1345"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1233"/>
         <source> [No Data]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1355"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1243"/>
         <source> (%1 x %2 = %3)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1358"/>
+        <location filename="../datamodel/preprocessorgriddataitem.cpp" line="1246"/>
         <source> (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1587,17 +1599,17 @@ This algorithm can be used only for structured grids.</source>
 <context>
     <name>PreProcessorGridTypeDataItem</name>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="58"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="57"/>
         <source>Add New Grid</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="129"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="127"/>
         <source>Region</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="134"/>
+        <location filename="../datamodel/preprocessorgridtypedataitem.cpp" line="132"/>
         <source>Region%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1697,7 +1709,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/preprocessorrootdataitem.cpp" line="267"/>
+        <location filename="../datamodel/preprocessorrootdataitem.cpp" line="269"/>
         <source>Change Attribute Mapping Setting</source>
         <translation type="unfinished"></translation>
     </message>

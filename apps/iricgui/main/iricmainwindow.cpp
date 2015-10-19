@@ -1893,7 +1893,7 @@ void iRICMainWindow::exportCfShape()
 	QString zoneName;
 	if (zones.count() == 0) {
 		// No valid grid.
-		QMessageBox::warning(this, tr("Error"), tr("No contour figure is drawn now."));
+		QMessageBox::warning(this, tr("Error"), tr("To export shape file, switch \"Display setting\" to \"Contour Figure\", not \"Color Fringe\" or \"Isolines\"."));
 		return;
 	} else if (zones.count() == 1) {
 		zoneName = zones.at(0);

@@ -9,17 +9,17 @@
         <translation>iRIC 格子 CSVファイル</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="28"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="33"/>
         <source>iRIC Grid CSV files (*.csv)</source>
         <translation>iRIC 格子 CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../structured2dgridnayscsvimporter.cpp" line="35"/>
+        <location filename="../structured2dgridnayscsvimporter.cpp" line="40"/>
         <source>Cell flag values will not be loaded.</source>
         <translation>セルフラグの値は読み込まれません。</translation>
     </message>

@@ -122,27 +122,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1664"/>
+        <location filename="../geodatapolygon.cpp" line="1666"/>
         <source>Edit %1 value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1665"/>
+        <location filename="../geodatapolygon.cpp" line="1667"/>
         <source>Please input new value in this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1774"/>
+        <location filename="../geodatapolygon.cpp" line="1772"/>
         <source>Polygon property edit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1839"/>
+        <location filename="../geodatapolygon.cpp" line="1843"/>
         <source>Select Geographic Data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1839"/>
+        <location filename="../geodatapolygon.cpp" line="1843"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -155,7 +155,7 @@
 <context>
     <name>GeoDataPolygonAbstractPolygon</name>
     <message>
-        <location filename="../geodatapolygonabstractpolygon.cpp" line="120"/>
+        <location filename="../geodatapolygonabstractpolygon.cpp" line="121"/>
         <source>Please specify a closed polygon!</source>
         <translation type="unfinished"></translation>
     </message>
@@ -217,33 +217,33 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="21"/>
+        <location filename="../geodatapolygonimporter.cpp" line="109"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="44"/>
-        <location filename="../geodatapolygonimporter.cpp" line="58"/>
+        <location filename="../geodatapolygonimporter.cpp" line="132"/>
+        <location filename="../geodatapolygonimporter.cpp" line="143"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="44"/>
+        <location filename="../geodatapolygonimporter.cpp" line="132"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="58"/>
+        <location filename="../geodatapolygonimporter.cpp" line="143"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="140"/>
+        <location filename="../geodatapolygonimporter.cpp" line="193"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="140"/>
+        <location filename="../geodatapolygonimporter.cpp" line="193"/>
         <source>Importing Polygon failed: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -261,28 +261,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="51"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="64"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="57"/>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="119"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="70"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="132"/>
         <source>Load from Shape file attribute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="103"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="116"/>
         <source>Name is set automatically (ex. Polygon1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="113"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="126"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimportersettingdialog.ui" line="167"/>
+        <location filename="../geodatapolygonimportersettingdialog.ui" line="180"/>
         <source>Specify value</source>
         <translation type="unfinished"></translation>
     </message>

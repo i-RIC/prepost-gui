@@ -152,7 +152,7 @@ bool outputPrjFile(CoordinateSystem* cs, const QString& shpFileName)
 	return true;
 }
 
-void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, const std::string& valueStr, int polygonId)
+void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double min, double max, int polygonId)
 {
 	int nParts = region->holes().size() + 1;
 	std::vector<int> partStart (nParts);
@@ -190,7 +190,19 @@ void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, const 
 	SHPWriteObject(shph, -1, obj);
 	SHPDestroyObject(obj);
 
-	DBFWriteStringAttribute(dbfh, polygonId, 0, valueStr.c_str());
+	QString valueStr;
+	if (min == - HUGE_VAL && max == HUGE_VAL) {
+		valueStr = "All range";
+	} else if (min == - HUGE_VAL) {
+		valueStr = QString("- %1").arg(max);
+	} else if (max == HUGE_VAL) {
+		valueStr = QString("%1 -").arg(min);
+	} else {
+		valueStr = QString("%1 - %2").arg(min).arg(max);
+	}
+	DBFWriteStringAttribute(dbfh, polygonId, 0, iRIC::toStr(valueStr).c_str());
+	DBFWriteDoubleAttribute(dbfh, polygonId, 1, min);
+	DBFWriteDoubleAttribute(dbfh, polygonId, 2, max);
 }
 
 
@@ -231,6 +243,8 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	DBFHandle dbfh = DBFCreate(iRIC::toStr(dbfFile).c_str());
 	if (dbfh == NULL) {return false;}
 	DBFAddField(dbfh, "Value", FTString, 255, 0);
+	DBFAddField(dbfh, "ValueMin", FTDouble, 40, 6);
+	DBFAddField(dbfh, "ValueMax", FTDouble, 40, 6);
 
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_parent->parent()->parent());
 	LookupTableContainer* stc = typedi->lookupTable(m_parent->m_setting.currentSolution);
@@ -258,7 +272,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 
 		double lowValue = range[0] + static_cast<double>(i) * delta;
 		double highValue = range[0] + static_cast<double>(i + 1) * delta;
-		std::string valueStr = iRIC::toStr(QString("%1 - %2").arg(lowValue).arg(highValue));
+
 		if (i == 0) {
 			lowValue = - HUGE_VAL;
 		}
@@ -271,7 +285,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 
 		std::vector<PolygonRegion*> regions = setupMergedPolygons(bothClipped);
 		for (PolygonRegion* r : regions) {
-			outputPolygon(r, shph, dbfh, valueStr, polygonId);
+			outputPolygon(r, shph, dbfh, lowValue, highValue, polygonId);
 			++ polygonId;
 			delete r;
 		}

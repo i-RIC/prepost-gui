@@ -14,12 +14,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../structured2dgridnaysgridimporter.cpp" line="38"/>
+        <location filename="../structured2dgridnaysgridimporter.cpp" line="43"/>
         <source>Cell flag values will not be loaded.</source>
         <translation type="unfinished"></translation>
     </message>

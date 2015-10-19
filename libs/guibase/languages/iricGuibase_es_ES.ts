@@ -413,13 +413,13 @@
     </message>
     <message>
         <location filename="../scalarbarwidget.ui" line="53"/>
-        <location filename="../scalarbarwidget.ui" line="197"/>
+        <location filename="../scalarbarwidget.ui" line="216"/>
         <source>Font Setting:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../scalarbarwidget.ui" line="65"/>
-        <location filename="../scalarbarwidget.ui" line="209"/>
+        <location filename="../scalarbarwidget.ui" line="228"/>
         <source>Edit...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -434,82 +434,89 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="136"/>
+        <location filename="../scalarbarwidget.ui" line="138"/>
         <source>Format:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="150"/>
+        <location filename="../scalarbarwidget.ui" line="145"/>
+        <source>Specify the number format in printf format. For example:
+   &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
+   &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scalarbarwidget.ui" line="169"/>
         <source>Orientation :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="162"/>
+        <location filename="../scalarbarwidget.ui" line="181"/>
         <source>Vertical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="175"/>
+        <location filename="../scalarbarwidget.ui" line="194"/>
         <source>Horizontal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="242"/>
+        <location filename="../scalarbarwidget.ui" line="261"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="248"/>
+        <location filename="../scalarbarwidget.ui" line="267"/>
         <source>Specify Color bar size as rate against window size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="260"/>
+        <location filename="../scalarbarwidget.ui" line="279"/>
         <source>Width :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="267"/>
+        <location filename="../scalarbarwidget.ui" line="286"/>
         <source>If you specify 1, Color bar width is the same to window width.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="299"/>
+        <location filename="../scalarbarwidget.ui" line="318"/>
         <source>Height :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="306"/>
+        <location filename="../scalarbarwidget.ui" line="325"/>
         <source>If you specify 1, Color bar height is the same to window height.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="343"/>
+        <location filename="../scalarbarwidget.ui" line="362"/>
         <source>Position</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="349"/>
+        <location filename="../scalarbarwidget.ui" line="368"/>
         <source>Specify Color bar left bottom position as rate against window size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="367"/>
+        <location filename="../scalarbarwidget.ui" line="386"/>
         <source>X :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="374"/>
+        <location filename="../scalarbarwidget.ui" line="393"/>
         <source>If you specify 0, Color bar left edge is located at window left edge.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="412"/>
+        <location filename="../scalarbarwidget.ui" line="431"/>
         <source>Y :</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="419"/>
+        <location filename="../scalarbarwidget.ui" line="438"/>
         <source>If you specify 0, Color bar bottom is located at window bottom.</source>
         <translation type="unfinished"></translation>
     </message>

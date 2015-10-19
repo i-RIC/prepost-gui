@@ -122,27 +122,27 @@
         <translation>ポリゴン値編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1664"/>
+        <location filename="../geodatapolygon.cpp" line="1666"/>
         <source>Edit %1 value</source>
         <translation>%1 の値の編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1665"/>
+        <location filename="../geodatapolygon.cpp" line="1667"/>
         <source>Please input new value in this polygon.</source>
         <translation>このポリゴン内での値を入力してください。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1770"/>
+        <location filename="../geodatapolygon.cpp" line="1772"/>
         <source>Polygon property edit</source>
         <translation>ポリゴン属性編集</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1841"/>
+        <location filename="../geodatapolygon.cpp" line="1843"/>
         <source>Select Geographic Data</source>
         <translation>地理情報の選択</translation>
     </message>
     <message>
-        <location filename="../geodatapolygon.cpp" line="1841"/>
+        <location filename="../geodatapolygon.cpp" line="1843"/>
         <source>Please select which geographic data to copy this polygon.</source>
         <translation>どの地理情報にコピーするか、選択してください。</translation>
     </message>
@@ -217,39 +217,37 @@
 <context>
     <name>GeoDataPolygonImporter</name>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="29"/>
+        <location filename="../geodatapolygonimporter.cpp" line="109"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="52"/>
-        <location filename="../geodatapolygonimporter.cpp" line="66"/>
+        <location filename="../geodatapolygonimporter.cpp" line="132"/>
+        <location filename="../geodatapolygonimporter.cpp" line="143"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="52"/>
+        <location filename="../geodatapolygonimporter.cpp" line="132"/>
         <source>The shape type contained in this shape file is not polygon.</source>
         <translation>このシェープファイルに含まれているデータは、ポリゴンではありません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="66"/>
+        <location filename="../geodatapolygonimporter.cpp" line="143"/>
         <source>The number of polygons mismatches between shp file and dbf file.</source>
         <translation>*shp ファイルと *.dbf ファイルで、含まれているポリゴンの数が一致していません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="118"/>
-        <location filename="../geodatapolygonimporter.cpp" line="173"/>
+        <location filename="../geodatapolygonimporter.cpp" line="193"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="118"/>
         <source>Importing Polygon failed. Could not read data</source>
-        <translation>ポリゴンのインポートが失敗しました。データが読み込めません。</translation>
+        <translation type="vanished">ポリゴンのインポートが失敗しました。データが読み込めません。</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonimporter.cpp" line="173"/>
+        <location filename="../geodatapolygonimporter.cpp" line="193"/>
         <source>Importing Polygon failed: %1</source>
         <translation>ポリゴンのインポートが失敗しました。: %1</translation>
     </message>
