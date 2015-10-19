@@ -62,13 +62,6 @@ bool PointRing::merge(PointRing* otherRing, PointRing** another, int rotateCount
 		auto nextId = (p1Id + 1) % m_points.size();
 		if (m_points[prevId] != p2 && m_points[nextId] != p2) {continue;}
 
-		if (i == 0 && rotateCount < otherRing->m_points.size()) {
-			int myFirst = otherRing->m_points.front();
-			otherRing->m_points.erase(otherRing->m_points.begin());
-			otherRing->m_points.push_back(myFirst);
-			return merge(otherRing, another, rotateCount + 1);
-		}
-
 		reOrder(p1, p2);
 		otherRing->reOrder(p1, p2);
 		// now, p1 is first, p2 is second in both this and otherRing
@@ -80,89 +73,44 @@ bool PointRing::merge(PointRing* otherRing, PointRing** another, int rotateCount
 		{
 			++ last;
 		}
-		bool aFound = false;
-		int aMyFirst, aMyLast, aOtherFirst, aOtherLast;
-		// the first point of another loop on the otherRing
-		aOtherFirst = last + 1;
-		for (; aOtherFirst < otherSize; ++aOtherFirst) {
-			vtkIdType ap1 = otherRing->points().at(aOtherFirst);
-			if (! contains(ap1)) {continue;}
-			// the first point of another loop on this ring
-			aMyFirst = std::find(m_points.begin(), m_points.end(), ap1) - m_points.begin();
-			aOtherLast = aOtherFirst;
-			aMyLast = aMyFirst;
-			while (
-				aMyLast < m_points.size() - 1 &&
-				aOtherLast < otherSize - 1 &&
-				m_points.at(aMyLast + 1) == otherRing->points().at(aOtherLast + 1))
-			{
-				++ aMyLast;
-				++ aOtherLast;
-			}
-			if (aMyFirst == aMyLast) {
-				// no loop found.
-				continue;
-			}
-			aFound = true;
-			break;
-		}
-		if (aFound == false) {
-			// another loop is not found. simply connect.
-			std::vector<vtkIdType> newPoints;
-			if (last == m_points.size() - 1 && last == otherRing->points().size() - 1) {
-				// empty ring.
-				m_points = newPoints;
-				updateSortedPoints();
-				return true;
-			}
-			newPoints.reserve(m_points.size() + otherRing->points().size());
-			for (int id = last; id < m_points.size(); ++id) {
-				newPoints.push_back(m_points.at(id));
-			}
-			newPoints.push_back(m_points.at(0));
-			for (int id = otherRing->points().size() - 1; id > last; --id) {
-				newPoints.push_back(otherRing->points().at(id));
-			}
+		// another loop is not found. simply connect.
+		std::vector<vtkIdType> newPoints;
+		if (last == m_points.size() - 1 && last == otherRing->points().size() - 1) {
+			// empty ring.
 			m_points = newPoints;
 			updateSortedPoints();
 			return true;
-		} else {
-			std::vector<vtkIdType> newPoints;
-			for (int id = aMyLast; id < m_points.size(); ++id) {
-				newPoints.push_back(m_points.at(id));
-			}
-			newPoints.push_back(m_points.at(0));
-			for (int id = otherRing->points().size() - 1; id > aOtherLast; --id) {
-				newPoints.push_back(otherRing->points().at(id));
-			}
-
-			std::vector<vtkIdType> anotherPoints;
-			for (int id = last; id <= aMyFirst; ++id) {
-				anotherPoints.push_back(m_points.at(id));
-			}
-			for (int id = aOtherFirst - 1; id > last; --id) {
-				anotherPoints.push_back(otherRing->points().at(id));
-			}
-
-			m_points = newPoints;
-			updateSortedPoints();
-
-			*another = new PointRing(anotherPoints, m_vtkPoints);
-			return true;
 		}
+		newPoints.reserve(m_points.size() + otherRing->points().size());
+		for (int id = last; id < m_points.size(); ++id) {
+			newPoints.push_back(m_points.at(id));
+		}
+		newPoints.push_back(m_points.at(0));
+		for (int id = otherRing->points().size() - 1; id > last; --id) {
+			newPoints.push_back(otherRing->points().at(id));
+		}
+		m_points = newPoints;
+		updateSortedPoints();
+		return true;
 	}
 	return false;
 }
 
-void PointRing::reOrder(vtkIdType first, vtkIdType second)
+void PointRing::reOrder(vtkIdType first, vtkIdType second, int searchStart)
 {
 	auto size = m_points.size();
-	auto it = std::find(m_points.begin(), m_points.end(), first);
+	auto it = std::find(m_points.begin() + searchStart, m_points.end(), first);
 	int index = it - m_points.begin();
 
-	int inc = -1; // increment. -1 for reverse.
-	if (m_points[(index + 1) % size] == second) {inc = 1;} // forward order, so increment = 1.
-
+	int inc = 0;
+	if (m_points[(index - 1 + size) % size] == second) {
+		inc = -1; // reverse order
+	}	else if (m_points[(index + 1) % size] == second) {
+		inc = 1;  // forward order
+	} else {
+		// this is not appropriate. retry.
+		return reOrder(first, second, index + 1);
+	}
 	std::vector<vtkIdType> newPoints(size);
 	for (int i = 0; i < size; ++i) {
 		newPoints[i] = m_points[(index + size + i * inc) % size];
@@ -171,14 +119,16 @@ void PointRing::reOrder(vtkIdType first, vtkIdType second)
 	updateSortedPoints();
 }
 
-void PointRing::clean(std::unordered_set<vtkIdType> finished)
+void PointRing::clean(std::unordered_set<vtkIdType>* finished)
 {
 	for (int i = 0; i < m_points.size(); ++i) {
 		vtkIdType id = m_points.at(i);
-		if (finished.find(id) != finished.end()) {continue;}
-		finished.insert(id);
+		if (finished->find(id) != finished->end()) {continue;}
 		auto it = std::find(m_points.begin() + i + 1, m_points.end(), id);
-		if (it == m_points.end()) {continue;}
+		if (it == m_points.end()) {
+			finished->insert(id);
+			continue;
+		}
 		int other = static_cast<int> (it - m_points.begin());
 		if ((other - i) % 2 == 1) {continue;}
 
@@ -193,7 +143,7 @@ void PointRing::clean(std::unordered_set<vtkIdType> finished)
 		if (rightOk) {
 			// Erase the items between i + 1 to other
 			m_points.erase(m_points.begin() + i, m_points.begin() + other);
-			continue;
+			return clean(finished);
 		}
 		// try left side
 		bool leftOk = true;
@@ -213,15 +163,15 @@ void PointRing::clean(std::unordered_set<vtkIdType> finished)
 	updateSortedPoints();
 }
 
-void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<vtkIdType> finished)
+void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<vtkIdType>* finished)
 {
 	for (int i = 0; i < static_cast<int>(m_points.size()) - 3; ++i) {
 		vtkIdType p1 = m_points.at(i);
-		if (finished.find(p1) != finished.end()) {continue;}
+		if (finished->find(p1) != finished->end()) {continue;}
 
 		auto p1It = std::find(m_points.begin() + i + 1, m_points.end(), p1);
 		if (p1It == m_points.end()) {
-			finished.insert(p1);
+			finished->insert(p1);
 			continue;
 		}
 
@@ -245,10 +195,7 @@ void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<v
 		}
 
 		vtkIdType p2 = m_points.at(i + 1);
-		if (*(p1It - 1) != p2) {
-			finished.insert(p1);
-			continue;
-		}
+		if (*(p1It - 1) != p2) {continue;}
 
 		int otherP1Id = p1It - m_points.begin();
 		int edgeLength = 1;
@@ -269,8 +216,11 @@ void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<v
 			v2.push_back(m_points.at(j));
 		}
 		m_points = v1;
-		rings->push_back(new PointRing(v2, m_vtkPoints));
-		return exportHoles(rings, finished);
+		auto newRing = new PointRing(v2, m_vtkPoints);
+		rings->push_back(newRing);
+		exportHoles(rings, finished);
+		newRing->exportHoles(rings, finished);
+		return;
 	}
 	updateSortedPoints();
 }
@@ -278,9 +228,10 @@ void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<v
 std::vector<PointRing*> PointRing::clean()
 {
 	std::unordered_set<vtkIdType> emptySet;
-	clean(emptySet);
+	clean(&emptySet);
+	emptySet.clear();
 	std::vector<PointRing*> holes;
-	exportHoles(&holes, emptySet);
+	exportHoles(&holes, &emptySet);
 	return holes;
 }
 

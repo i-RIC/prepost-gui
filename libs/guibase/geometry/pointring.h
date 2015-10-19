@@ -21,12 +21,12 @@ public:
 	vtkPoints* getVtkPoints() const;
 	Rect boundingRect() const;
 	bool merge(PointRing* otherRing, PointRing** another, int rotateCount = 0);
-	void reOrder(vtkIdType first, vtkIdType second);
+	void reOrder(vtkIdType first, vtkIdType second, int searchStart = 0);
 	std::vector<PointRing*> clean();
 
 private:
-	void clean(std::unordered_set<vtkIdType> finished);
-	void exportHoles(std::vector<PointRing*>* rings, std::unordered_set<vtkIdType> finished);
+	void clean(std::unordered_set<vtkIdType>* finished);
+	void exportHoles(std::vector<PointRing*>* rings, std::unordered_set<vtkIdType>* finished);
 	bool contains(vtkIdType point);
 	void updateSortedPoints();
 

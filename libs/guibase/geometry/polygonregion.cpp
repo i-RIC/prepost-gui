@@ -52,15 +52,6 @@ bool PolygonRegion::merge(PolygonRegion* region)
 		}
 		return true;
 	}
-	if (region->holes().size() > 0) {return false;}
-
-	for (auto h : m_holes) {
-		PointRing* another = nullptr;
-		bool ok = h->merge(region->region(), &another);
-		if (! ok) {continue;}
-		if (another != nullptr) {m_holes.push_back(another);}
-		return true;
-	}
 	return false;
 }
 
