@@ -82,6 +82,13 @@ void PolygonRegion::clean()
 	Rect largestRect;
 	for (int i = 0; i < allRings.size(); ++i) {
 		PointRing* r = allRings.at(i);
+		if (r->points().size() < 3) {
+			// this is not a valid region.
+			delete r;
+			allRings.erase(allRings.begin() + i);
+			-- i;
+			continue;
+		}
 		Rect rect = r->boundingRect();
 		if (i == 0 || largestRect <= rect) {
 			largestId = i;

@@ -272,6 +272,7 @@ void PointRing::exportHoles(std::vector<PointRing*>* rings, std::unordered_set<v
 		rings->push_back(new PointRing(v2, m_vtkPoints));
 		return exportHoles(rings, finished);
 	}
+	updateSortedPoints();
 }
 
 std::vector<PointRing*> PointRing::clean()
