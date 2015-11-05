@@ -35,8 +35,8 @@ public:
 	const QVector<double>& param() const;
 	QVector<double>& value(int index);
 	const QVector<double>& value(int index) const;
-	void importFromYaml(const YAML::Node& doc);
-	void exportToYaml(QTextStream* stream);
+	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
+	void exportToYaml(QTextStream* stream, const QDir& dir) override;
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);
 

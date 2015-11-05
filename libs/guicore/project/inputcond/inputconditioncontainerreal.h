@@ -23,8 +23,8 @@ public:
 	double value() const;
 	void setDefaultValue(double d);
 	double defaultValue() const;
-	void importFromYaml(const YAML::Node& doc);
-	void exportToYaml(QTextStream* stream);
+	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
+	void exportToYaml(QTextStream* stream, const QDir& dir) override;
 
 signals:
 	void valueChanged(double newvalue);

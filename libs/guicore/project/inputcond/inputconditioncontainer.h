@@ -9,6 +9,7 @@
 
 #include <string>
 
+class QDir;
 class QTextStream;
 
 namespace YAML {
@@ -58,8 +59,8 @@ public:
 	virtual int load() = 0;
 	virtual int save() = 0;
 	virtual QVariant variantValue() const = 0;
-	virtual void importFromYaml(const YAML::Node& doc) = 0;
-	virtual void exportToYaml(QTextStream* stream) = 0;
+	virtual void importFromYaml(const YAML::Node& doc, const QDir& dir) = 0;
+	virtual void exportToYaml(QTextStream* stream, const QDir& dir) = 0;
 
 protected:
 	QString m_name;

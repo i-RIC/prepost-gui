@@ -115,7 +115,7 @@ int InputConditionContainerInteger::defaultValue() const
 	return m_default;
 }
 
-void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc)
+void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir&)
 {
 	if (doc[iRIC::toStr(m_name).c_str()]) {
 		m_value = doc[iRIC::toStr(m_name).c_str()].as<int>();
@@ -124,7 +124,7 @@ void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc)
 	}
 }
 
-void InputConditionContainerInteger::exportToYaml(QTextStream* stream)
+void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir&)
 {
 	*stream << m_name << ": " << m_value << "\r\n";
 }

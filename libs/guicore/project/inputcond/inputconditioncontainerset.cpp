@@ -6,10 +6,12 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDir>
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QFile>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QTextStream>
 
@@ -218,27 +220,24 @@ void InputConditionContainerSet::copyValues(const InputConditionContainerSet* se
 bool InputConditionContainerSet::importFromYaml(const QString& filename)
 {
 	YAML::Node config = YAML::LoadFile(iRIC::toStr(filename));
-	QMap<QString, InputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it) {
-		InputConditionContainer* c = *it;
-		c->importFromYaml(config);
+	QFileInfo finfo(filename);
+	for (InputConditionContainer* c : m_containers) {
+		c->importFromYaml(config, finfo.absoluteDir());
 	}
 	return true;
 }
 
 bool InputConditionContainerSet::exportToYaml(const QString& filename)
 {
-	QFile csvFile(filename);
-	bool ok = csvFile.open(QFile::WriteOnly);
+	QFile yamlFile(filename);
+	bool ok = yamlFile.open(QFile::WriteOnly);
 	if (! ok) {return false;}
 
-	QTextStream stream(&csvFile);
-	QMap<QString, InputConditionContainer*>::iterator it;
-	for (it = m_containers.begin(); it != m_containers.end(); ++it) {
-		InputConditionContainer* c = *it;
-		c->exportToYaml(&stream);
+	QFileInfo finfo(filename);
+	QTextStream stream(&yamlFile);
+	for (InputConditionContainer* c : m_containers) {
+		c->exportToYaml(&stream, finfo.absoluteDir());
 	}
-
-	csvFile.close();
+	yamlFile.close();
 	return true;
 }

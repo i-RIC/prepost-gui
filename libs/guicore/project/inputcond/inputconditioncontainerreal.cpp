@@ -117,7 +117,7 @@ int InputConditionContainerReal::save()
 	}
 }
 
-void InputConditionContainerReal::importFromYaml(const YAML::Node& doc)
+void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QDir&)
 {
 	if (doc[iRIC::toStr(m_name).c_str()]) {
 		m_value = doc[iRIC::toStr(m_name).c_str()].as<double>();
@@ -126,7 +126,7 @@ void InputConditionContainerReal::importFromYaml(const YAML::Node& doc)
 	}
 }
 
-void InputConditionContainerReal::exportToYaml(QTextStream* stream)
+void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir&)
 {
 	*stream << m_name << ": " << m_value << "\r\n";
 }

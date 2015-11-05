@@ -14,34 +14,6 @@
 
 #include <yaml-cpp/yaml.h>
 
-namespace {
-
-void importDataFromYaml(const YAML::Node& node, InputConditionContainerFunctional::Data* data)
-{
-	if (! node[iRIC::toStr(data->name).c_str()]) {
-		return;
-	}
-	const YAML::Node& myNode = node[iRIC::toStr(data->name).c_str()];
-	YAML::Node::const_iterator it;
-	data->values.clear();
-	for (it = myNode.begin(); it != myNode.end(); ++it) {
-		const YAML::Node& vNode = *it;
-		data->values.append(vNode.as<double>());
-	}
-}
-
-void exportDataToYaml(QTextStream* stream, const InputConditionContainerFunctional::Data& data)
-{
-	*stream << "  " << data.name << ": [";
-	for (int i = 0 ; i < data.values.size(); ++i) {
-		if (i != 0) {*stream << ", ";}
-		*stream << data.values.at(i);
-	}
-	*stream << "]\r\n";
-}
-
-} // namespace
-
 InputConditionContainerFunctional::InputConditionContainerFunctional()
 	: InputConditionContainer()
 {
@@ -265,32 +237,19 @@ const QVector<double>& InputConditionContainerFunctional::value(int index) const
 	return m_values[index].values;
 }
 
-void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc)
+void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc, const QDir& dir)
 {
 	if (doc[iRIC::toStr(m_name).c_str()]) {
-		const YAML::Node& myNode = doc[iRIC::toStr(m_name).c_str()];
-		importDataFromYaml(myNode, &m_param);
-		for (int i = 0; i < m_values.size(); ++i) {
-			importDataFromYaml(myNode, &(m_values[i]));
-		}
-	}
-	bool allLenSame = true;
-	int paramLen = m_param.values.size();
-	for (int i = 0; i < m_values.size(); ++i){
-		allLenSame = allLenSame && (paramLen == m_values[i].values.size());
-	}
-	if (! allLenSame){
-		clear();
+		QString filename = doc[iRIC::toStr(m_name).c_str()].as<std::string>().c_str();
+		loadDataFromCsvFile(dir.absoluteFilePath(filename));
 	}
 }
 
-void InputConditionContainerFunctional::exportToYaml(QTextStream* stream)
+void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const QDir& dir)
 {
-	*stream << m_name << ": " << "\r\n";
-	exportDataToYaml(stream, m_param);
-	for (int i = 0; i < m_values.length(); ++i) {
-		exportDataToYaml(stream, m_values.at(i));
-	}
+	*stream << m_name << ": " << m_name << ".csv\r\n";
+	QString filename = QString("%1.csv").arg(m_name);
+	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 
 void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)

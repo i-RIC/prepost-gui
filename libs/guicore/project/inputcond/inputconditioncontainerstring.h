@@ -21,8 +21,8 @@ public:
 	virtual QVariant variantValue() const override;
 	void setValue(const QString& v);
 	const QString& value() const;
-	void importFromYaml(const YAML::Node& doc);
-	void exportToYaml(QTextStream* stream);
+	void importFromYaml(const YAML::Node& doc, const QDir& dir);
+	void exportToYaml(QTextStream* stream, const QDir& dir);
 
 signals:
 	void valueChanged(const QString& newvalue);

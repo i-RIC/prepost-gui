@@ -96,7 +96,7 @@ const QString& InputConditionContainerString::value() const {
 	return m_value;
 }
 
-void InputConditionContainerString::importFromYaml(const YAML::Node& doc)
+void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const QDir&)
 {
 	if (doc[iRIC::toStr(m_name)]) {
 		m_value = doc[iRIC::toStr(m_name)].as<std::string>().c_str();
@@ -105,7 +105,7 @@ void InputConditionContainerString::importFromYaml(const YAML::Node& doc)
 	}
 }
 
-void InputConditionContainerString::exportToYaml(QTextStream* stream)
+void InputConditionContainerString::exportToYaml(QTextStream* stream, const QDir&)
 {
 	*stream << m_name << ": " << m_value << "\r\n";
 }
