@@ -12,7 +12,7 @@ class GUICOREDLL_EXPORT InputConditionContainerReal : public InputConditionConta
 
 public:
 	InputConditionContainerReal();
-	InputConditionContainerReal(QString n, const QDomNode& defNode);
+	InputConditionContainerReal(const QString& n, const QString& c, const QDomNode& defNode);
 	InputConditionContainerReal(const InputConditionContainerReal& i);
 	InputConditionContainerReal& operator=(const InputConditionContainerReal& i);
 	void clear();

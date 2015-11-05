@@ -503,6 +503,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/gridnodeattributepropertydialog.cpp \
            pre/gridcreatingcondition/gridcreatingcondition.cpp \
            pre/gridcreatingcondition/gridcreatingconditioncreator.cpp \
+           project/inputcond/inputconditioncontainer.cpp \
            project/inputcond/inputconditioncontainerfunctional.cpp \
            project/inputcond/inputconditioncontainerinteger.cpp \
            project/inputcond/inputconditioncontainerreal.cpp \

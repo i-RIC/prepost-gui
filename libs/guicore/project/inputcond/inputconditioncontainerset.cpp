@@ -1,6 +1,7 @@
 #include "inputconditioncontainerset.h"
 #include "inputconditiondialog.h"
 #include "../../solverdef/solverdefinition.h"
+#include "../../solverdef/solverdefinitiontranslator.h"
 
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
@@ -13,6 +14,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QMessageBox>
+#include <QTextCodec>
 #include <QTextStream>
 
 #include <yaml-cpp/yaml.h>
@@ -32,19 +34,19 @@ void InputConditionContainerSet::clear()
 	m_functionals.clear();
 	m_containers.clear();
 }
-void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDefinition& def, bool forBC)
+void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
 {
 	// setup containers;
 	clear();
 	if (forBC) {
-		setupCustom(condNode, def);
+		setupCustom(condNode, def, t);
 	} else {
 		// multiple pages exists.
 		QDomNodeList pages = condNode.childNodes();
 		for (int i = 0; i < pages.length(); ++i) {
 			QDomNode page = pages.item(i);
 			// access content/items/
-			setupCustom(page, def);
+			setupCustom(page, def, t);
 		}
 	}
 }
@@ -63,7 +65,7 @@ void InputConditionContainerSet::setComplexProperty(const QString& compname, int
 	}
 }
 
-void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const SolverDefinition& def)
+void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");
 	if (itemsNode.isNull()) {return;}
@@ -71,16 +73,16 @@ void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const Sol
 	QDomNodeList items = itemsNode.childNodes();
 	for (int j = 0; j < items.length(); ++j) {
 		QDomNode itemNode = items.item(j);
-		setupContaner(itemNode, def);
+		setupContaner(itemNode, def, t);
 	}
 }
 
-void InputConditionContainerSet::setupCustom(const QDomNode& contNode, const SolverDefinition& def)
+void InputConditionContainerSet::setupCustom(const QDomNode& contNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
-	setupCustomRec(contNode, def);
+	setupCustomRec(contNode, def, t);
 }
 
-void InputConditionContainerSet::setupCustomRec(const QDomNode& node, const SolverDefinition& def)
+void InputConditionContainerSet::setupCustomRec(const QDomNode& node, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.length(); ++i) {
@@ -88,20 +90,22 @@ void InputConditionContainerSet::setupCustomRec(const QDomNode& node, const Solv
 		if (c.nodeType() == QDomNode::ElementNode) {
 			if (c.nodeName() == "Item") {
 				// build item.
-				setupContaner(c, def);
+				setupContaner(c, def, t);
 			} else {
-				setupCustomRec(c, def);
+				setupCustomRec(c, def, t);
 			}
 		}
 	}
 }
-void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const SolverDefinition& def)
+void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QString parameterName;
+	QString parameterCaption;
 	try {
 		/// get the name;
 		QDomElement itemElem = itemNode.toElement();
 		parameterName = itemElem.attribute("name");
+		parameterCaption = t.translate(itemElem.attribute("caption"));
 		// get the definition node;
 		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 		if (defNode.isNull()) {
@@ -112,25 +116,25 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 		QString type = defElem.attribute("conditionType");
 		// setup container depending on the type
 		if (type == "functional") {
-			m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode, def.folder()));
+			m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder()));
 			m_containers.insert(parameterName, &(m_functionals[parameterName]));
 			connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 		} else if (type == "constant" || type == "") {
 			QString valuetype = defElem.attribute("valueType");
 			if (valuetype == "integer") {
-				m_integers.insert(parameterName, InputConditionContainerInteger(parameterName, defNode));
+				m_integers.insert(parameterName, InputConditionContainerInteger(parameterName, parameterCaption, defNode));
 				m_containers.insert(parameterName, &(m_integers[parameterName]));
 				connect(&(m_integers[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "real") {
-				m_reals.insert(parameterName, InputConditionContainerReal(parameterName, defNode));
+				m_reals.insert(parameterName, InputConditionContainerReal(parameterName, parameterCaption, defNode));
 				m_containers.insert(parameterName, &(m_reals[parameterName]));
 				connect(&(m_reals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "string" || valuetype == "filename" || valuetype == "filename_all" || valuetype == "foldername") {
-				m_strings.insert(parameterName, InputConditionContainerString(parameterName, defNode));
+				m_strings.insert(parameterName, InputConditionContainerString(parameterName, parameterCaption, defNode));
 				m_containers.insert(parameterName, &(m_strings[parameterName]));
 				connect(&(m_strings[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "functional") {
-				m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode, def.folder()));
+				m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder()));
 				m_containers.insert(parameterName, &(m_functionals[parameterName]));
 				connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else {
@@ -235,6 +239,9 @@ bool InputConditionContainerSet::exportToYaml(const QString& filename)
 
 	QFileInfo finfo(filename);
 	QTextStream stream(&yamlFile);
+	QTextCodec* codec = QTextCodec::codecForName("UTF-8");
+	stream.setCodec(codec);
+
 	for (InputConditionContainer* c : m_containers) {
 		c->exportToYaml(&stream, finfo.absoluteDir());
 	}

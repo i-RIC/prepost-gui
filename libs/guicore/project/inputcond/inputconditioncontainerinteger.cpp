@@ -15,8 +15,8 @@ InputConditionContainerInteger::InputConditionContainerInteger() :
 	m_value {0}
 {}
 
-InputConditionContainerInteger::InputConditionContainerInteger(QString n, const QDomNode& defNode) :
-	InputConditionContainer(n)
+InputConditionContainerInteger::InputConditionContainerInteger(const QString& n, const QString& c, const QDomNode& defNode) :
+	InputConditionContainer(n, c)
 {
 	setup(defNode);
 }
@@ -42,7 +42,7 @@ void InputConditionContainerInteger::setup(const QDomNode& defNode)
 
 void InputConditionContainerInteger::copyValues(const InputConditionContainerInteger& i)
 {
-	m_name = i.m_name;
+	InputConditionContainer::copyValues(i);
 	m_value = i.m_value;
 	m_default = i.m_default;
 }
@@ -60,11 +60,11 @@ int InputConditionContainerInteger::load()
 {
 	int ret;
 	if (m_isBoundaryCondition) {
-		ret = cg_iRIC_Read_BC_Integer(const_cast<char*>(iRIC::toStr(m_bcName).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(m_name).c_str()), &m_value);
+		ret = cg_iRIC_Read_BC_Integer(const_cast<char*>(iRIC::toStr(bcName()).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
 	} else if (m_isComplexCondition) {
-		ret = cg_iRIC_Read_Complex_Integer(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(m_name).c_str()), &m_value);
+		ret = cg_iRIC_Read_Complex_Integer(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
 	} else {
-		ret = cg_iRIC_Read_Integer(const_cast<char*>(iRIC::toStr(m_name).c_str()), &m_value);
+		ret = cg_iRIC_Read_Integer(const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
 	}
 	if (ret != 0) {
 		clear();
@@ -78,11 +78,11 @@ int InputConditionContainerInteger::load()
 int InputConditionContainerInteger::save()
 {
 	if (m_isBoundaryCondition) {
-		return cg_iRIC_Write_BC_Integer(const_cast<char*>(iRIC::toStr(m_bcName).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(m_name).c_str()), m_value);
+		return cg_iRIC_Write_BC_Integer(const_cast<char*>(iRIC::toStr(bcName()).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
 	} else if (m_isComplexCondition) {
-		return cg_iRIC_Write_Complex_Integer(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(m_name).c_str()), m_value);
+		return cg_iRIC_Write_Complex_Integer(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
 	} else {
-		return cg_iRIC_Write_Integer(const_cast<char*>(iRIC::toStr(m_name).c_str()), m_value);
+		return cg_iRIC_Write_Integer(const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
 	}
 }
 
@@ -117,8 +117,8 @@ int InputConditionContainerInteger::defaultValue() const
 
 void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir&)
 {
-	if (doc[iRIC::toStr(m_name).c_str()]) {
-		m_value = doc[iRIC::toStr(m_name).c_str()].as<int>();
+	if (doc[iRIC::toStr(name()).c_str()]) {
+		m_value = doc[iRIC::toStr(name()).c_str()].as<int>();
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
@@ -126,5 +126,5 @@ void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const
 
 void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << m_name << ": " << m_value << "\r\n";
+	*stream << name() << ": " << m_value << "\t#[integer] " << caption() << "\r\n";
 }

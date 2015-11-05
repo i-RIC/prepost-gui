@@ -14,14 +14,12 @@
 
 #include <yaml-cpp/yaml.h>
 
-InputConditionContainerFunctional::InputConditionContainerFunctional()
-	: InputConditionContainer()
-{
+InputConditionContainerFunctional::InputConditionContainerFunctional() :
+	InputConditionContainer()
+{}
 
-}
-
-InputConditionContainerFunctional::InputConditionContainerFunctional(QString n, QDomNode defNode, const QDir& dir)
-	: InputConditionContainer(n)
+InputConditionContainerFunctional::InputConditionContainerFunctional(const QString& n, const QString& c, QDomNode defNode, const QDir& dir) :
+	InputConditionContainer(n, c)
 {
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();
 	m_param.name = paramElem.attribute("name", "Param");
@@ -82,11 +80,11 @@ int InputConditionContainerFunctional::load()
 //	double* data;
 	int result;
 
-	std::string tmpbcnameStr = iRIC::toStr(m_bcName);
+	std::string tmpbcnameStr = iRIC::toStr(bcName());
 	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
 	std::string tmpcomplexnameStr = iRIC::toStr(m_complexName);
 	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
-	std::string tmpnameStr = iRIC::toStr(m_name);
+	std::string tmpnameStr = iRIC::toStr(name());
 	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
 	std::vector<double> data;
 
@@ -146,11 +144,11 @@ ERROR:
 
 int InputConditionContainerFunctional::save()
 {
-	std::string tmpbcnameStr = iRIC::toStr(m_bcName);
+	std::string tmpbcnameStr = iRIC::toStr(bcName());
 	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
 	std::string tmpcomplexnameStr = iRIC::toStr(m_complexName);
 	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
-	std::string tmpnameStr = iRIC::toStr(m_name);
+	std::string tmpnameStr = iRIC::toStr(name());
 	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
 	cgsize_t length = m_param.values.count();
 	cgsize_t tmplength = length;
@@ -239,28 +237,27 @@ const QVector<double>& InputConditionContainerFunctional::value(int index) const
 
 void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc, const QDir& dir)
 {
-	if (doc[iRIC::toStr(m_name).c_str()]) {
-		QString filename = doc[iRIC::toStr(m_name).c_str()].as<std::string>().c_str();
+	if (doc[iRIC::toStr(name()).c_str()]) {
+		QString filename = doc[iRIC::toStr(name()).c_str()].as<std::string>().c_str();
 		loadDataFromCsvFile(dir.absoluteFilePath(filename));
 	}
 }
 
 void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const QDir& dir)
 {
-	*stream << m_name << ": " << m_name << ".csv\r\n";
-	QString filename = QString("%1.csv").arg(m_name);
+	*stream << name() << ": " << name() << ".csv" << "\t#[function] " << caption() << "\r\n";
+	QString filename = QString("%1.csv").arg(name());
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 
 void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
 {
-	m_name = f.m_name;
+	InputConditionContainer::copyValues(f);
 	m_param = f.m_param;
 	m_values = f.m_values;
 	m_paramDefault = f.m_paramDefault;
 	m_valuesDefault = f.m_valuesDefault;
 }
-
 
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
 {

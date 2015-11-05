@@ -19,7 +19,7 @@ public:
 		QVector<double> values;
 	};
 	InputConditionContainerFunctional();
-	InputConditionContainerFunctional(QString n, QDomNode defNode, const QDir& dir);
+	InputConditionContainerFunctional(const QString& n, const QString& c, QDomNode defNode, const QDir& dir);
 	InputConditionContainerFunctional(const InputConditionContainerFunctional& i);
 	InputConditionContainerFunctional& operator=(const InputConditionContainerFunctional& i);
 	void removeAllValues();

@@ -52,7 +52,7 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 	SolverDefinitionTranslator t(def.folder().absolutePath(), locale);
 	QDomNode condNode = iRIC::getChildNode(def.document().documentElement(), "GridGeneratingCondition");
 	// setup ContainerSet first.
-	m_containerSet->setup(condNode, def);
+	m_containerSet->setup(condNode, def, t);
 	// setup WidgetSet.
 	m_widgetSet->setup(condNode, *m_containerSet, t);
 	// setup PageList.

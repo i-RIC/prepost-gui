@@ -12,7 +12,7 @@ class GUICOREDLL_EXPORT InputConditionContainerString : public InputConditionCon
 
 public:
 	InputConditionContainerString();
-	InputConditionContainerString(QString n, const QDomNode& defNode);
+	InputConditionContainerString(const QString& n, const QString& c, const QDomNode& defNode);
 	InputConditionContainerString(const InputConditionContainerString& i);
 	InputConditionContainerString& operator=(const InputConditionContainerString& i);
 	void clear();

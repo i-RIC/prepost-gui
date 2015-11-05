@@ -13,7 +13,7 @@ class GUICOREDLL_EXPORT InputConditionContainerInteger : public InputConditionCo
 public:
 	InputConditionContainerInteger();
 	/// Constructor
-	InputConditionContainerInteger(QString n, const QDomNode& defNode);
+	InputConditionContainerInteger(const QString& n, const QString& c, const QDomNode& defNode);
 	/// Constructor (with copying)
 	InputConditionContainerInteger(const InputConditionContainerInteger& i);
 	/// Copyer
