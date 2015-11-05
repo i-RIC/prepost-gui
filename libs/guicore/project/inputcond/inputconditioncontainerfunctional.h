@@ -37,13 +37,17 @@ public:
 	const QVector<double>& value(int index) const;
 	void importFromYaml(const YAML::Node& doc);
 	void exportToYaml(QTextStream* stream);
+	bool loadDataFromCsvFile(const QString& filename);
+	bool saveDataToCsvFile(const QString& filename);
 
 signals:
 	void valueChanged();
 
 private:
 	void copyValues(const InputConditionContainerFunctional& f);
-	void loadDefaultFromCsvFile(const QString& filename);
+	bool loadDefaultFromCsvFile(const QString& filename);
+	static bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values);
+	static bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values);
 
 	Data m_param;
 	QList<Data> m_values;

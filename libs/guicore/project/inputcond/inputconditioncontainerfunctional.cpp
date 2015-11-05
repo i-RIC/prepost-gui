@@ -302,11 +302,27 @@ void InputConditionContainerFunctional::copyValues(const InputConditionContainer
 	m_valuesDefault = f.m_valuesDefault;
 }
 
-void InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
+
+bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
+{
+	return loadFromCsvFile(filename, &m_param, &m_values);
+}
+
+bool InputConditionContainerFunctional::saveDataToCsvFile(const QString& filename)
+{
+	return saveToCsvFile(filename, m_param, m_values);
+}
+
+bool InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
+{
+	return loadFromCsvFile(filename, &m_paramDefault, &m_valuesDefault);
+}
+
+bool InputConditionContainerFunctional::loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values)
 {
 	QFile csvFile(filename);
 	bool ok = csvFile.open(QFile::ReadOnly | QFile::Text);
-	if (! ok) {return;}
+	if (! ok) {return false;}
 
 	QTextStream stream(&csvFile);
 	QString line;
@@ -314,11 +330,30 @@ void InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& fi
 		line = stream.readLine();
 		if (line.isEmpty()) {break;}
 		QStringList frags = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-		if (frags.length() < m_values.length() + 1) {break;}
-		m_paramDefault.values.push_back(frags[0].toDouble());
-		for (int i = 0; i < m_values.length(); ++i) {
-			m_valuesDefault[i].values.push_back(frags[i + 1].toDouble());
+		if (frags.length() < values->length() + 1) {break;}
+		param->values.push_back(frags[0].toDouble());
+		for (int i = 0; i < values->length(); ++i) {
+			(*values)[i].values.push_back(frags[i + 1].toDouble());
 		}
 	} while (true);
 	csvFile.close();
+	return true;
+}
+
+bool InputConditionContainerFunctional::saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values)
+{
+	QFile csvFile(filename);
+	bool ok = csvFile.open(QFile::WriteOnly | QFile::Text);
+	if (! ok) {return false;}
+
+	QTextStream stream(&csvFile);
+	for (int i = 0; i < param.values.size(); ++i) {
+		stream  << param.values.at(i);
+		for (int j = 0; j < values.size(); ++j){
+			stream << "," << values.at(j).values.at(i);
+		}
+		stream << "\n";
+	}
+	csvFile.close();
+	return true;
 }
