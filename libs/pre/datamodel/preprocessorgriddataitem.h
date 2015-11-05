@@ -46,7 +46,6 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
 	void addCustomMenuItems(QMenu* menu) override;
-	QStringList containedFiles() override;
 
 	// Standard mouse event handlers
 	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;

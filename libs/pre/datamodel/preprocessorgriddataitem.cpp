@@ -212,15 +212,6 @@ void PreProcessorGridDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_deleteAction);
 }
 
-QStringList PreProcessorGridDataItem::containedFiles()
-{
-	QStringList ret = PreProcessorDataItem::containedFiles();
-	if (m_bcGroupDataItem != 0) {
-		ret.append(m_bcGroupDataItem->containedFiles());
-	}
-	return ret;
-}
-
 void PreProcessorGridDataItem::exportGrid()
 {
 	// Check whether the grid shape is valid.
@@ -1336,11 +1327,13 @@ void PreProcessorGridDataItem::setBCGroupDataItem(PreProcessorBCGroupDataItem* i
 	item->setParent(this);
 	m_bcGroupDataItem = item;
 	m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
+	m_childItems.append(m_bcGroupDataItem);
 }
 
 void PreProcessorGridDataItem::unsetBCGroupDataItem()
 {
 	if (m_bcGroupDataItem == 0) {return;}
+	m_childItems.removeAll(m_bcGroupDataItem);
 	m_bcGroupDataItem->setParent(0);
 	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
 	m_bcGroupDataItem = 0;
