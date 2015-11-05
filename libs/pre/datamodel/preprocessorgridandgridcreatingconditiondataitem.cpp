@@ -33,6 +33,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/xmlsupport.h>
 
+#include <QApplication>
 #include <QAction>
 #include <QDir>
 #include <QDomElement>
@@ -180,6 +181,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		tmpItem->unsetBCGroupDataItem();
 		m_childItems.removeOne(tmpItem);
 		m_gridDataItem = 0;
+		updateItemMap();
 		delete tmpItem;
 	}
 
@@ -211,6 +213,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 
 	connect(gridItem, SIGNAL(gridRelatedConditionChanged(QString)), gtItem, SLOT(changeValueRange(QString)));
 	updateItemMap();
+	qApp->processEvents();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const int fn)
