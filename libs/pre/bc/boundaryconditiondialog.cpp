@@ -68,7 +68,7 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	// open solve definition file
 	SolverDefinitionTranslator t(def->folder().absolutePath(), locale);
 	// setup ContainerSet first.
-	m_containerSet->setup(elem, true);
+	m_containerSet->setup(elem, *def, true);
 	// setup WidgetSet.
 	m_widgetSet->setup(elem, *m_containerSet, t, true);
 

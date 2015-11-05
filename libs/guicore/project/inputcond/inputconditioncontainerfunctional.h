@@ -28,17 +28,11 @@ public:
 		emit valueChanged();
 		return *this;
 	}
-	void clear() {
-		m_param.values.clear();
-		for (int i = 0; i < m_values.count(); ++i) {
-			m_values[i].values.clear();
-		}
-	}
+	void clear();
 	int load() override;
 	int save() override;
 	QVariant variantValue() const override {return QVariant(0);}
 
-public:
 	void setValue(const QVector<double>& x, const QVector<double>& y) {
 		m_param.name = "Param";
 		m_param.values = x;
@@ -69,9 +63,16 @@ private:
 		m_name = f.m_name;
 		m_param = f.m_param;
 		m_values = f.m_values;
+		m_paramDefault = f.m_paramDefault;
+		m_valuesDefault = f.m_valuesDefault;
 	}
+	void loadDefaultFromCsvFile(const QString& filename);
+
 	Data m_param;
 	QList<Data> m_values;
+
+	Data m_paramDefault;
+	QList<Data> m_valuesDefault;
 };
 
 #endif // CGNSFILEINPUTCONDITIONCONTAINERFUNCTIONAL_H

@@ -5,6 +5,9 @@
 
 #include <QDir>
 #include <QDomNode>
+#include <QFile>
+#include <QRegExp>
+#include <QTextStream>
 
 #include <iriclib.h>
 #include <stdlib.h>
@@ -30,6 +33,23 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(QString n, 
 			m_values.append(valData);
 		}
 		valNode = valNode.nextSibling();
+	}
+	m_paramDefault = m_param;
+	m_valuesDefault = m_values;
+
+	// load default from CSV file if exist
+	QDomElement elem = defNode.toElement();
+	QString defaultCsv = elem.attribute("default");
+	if (! defaultCsv.isNull()) {
+		loadDefaultFromCsvFile(dir.absoluteFilePath(defaultCsv));
+	}
+}
+
+void InputConditionContainerFunctional::clear()
+{
+	m_param.values = m_paramDefault.values;
+	for (int i = 0; i < m_values.count(); ++i){
+		m_values[i].values = m_valuesDefault[i].values;
 	}
 }
 
@@ -141,4 +161,25 @@ int InputConditionContainerFunctional::save()
 		}
 	}
 	return 0;
+}
+
+void InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)
+{
+	QFile csvFile(filename);
+	bool ok = csvFile.open(QFile::ReadOnly | QFile::Text);
+	if (! ok) {return;}
+
+	QTextStream stream(&csvFile);
+	QString line;
+	do {
+		line = stream.readLine();
+		if (line.isEmpty()) {break;}
+		QStringList frags = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
+		if (frags.length() < m_values.length() + 1) {break;}
+		m_paramDefault.values.push_back(frags[0].toDouble());
+		for (int i = 0; i < m_values.length(); ++i) {
+			m_valuesDefault[i].values.push_back(frags[i + 1].toDouble());
+		}
+	} while (true);
+	csvFile.close();
 }

@@ -1,5 +1,6 @@
 #include "inputconditioncontainerset.h"
 #include "inputconditiondialog.h"
+#include "../../solverdef/solverdefinition.h"
 
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
