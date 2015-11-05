@@ -4,8 +4,10 @@
 #include "../../guicore_global.h"
 
 #include "inputconditioncontainer.h"
-class QDomNode;
 #include <QVector>
+
+class QDir;
+class QDomNode;
 
 class GUICOREDLL_EXPORT InputConditionContainerFunctional : public InputConditionContainer
 {
@@ -17,7 +19,7 @@ public:
 		QVector<double> values;
 	};
 	InputConditionContainerFunctional();
-	InputConditionContainerFunctional(QString n, QDomNode defNode);
+	InputConditionContainerFunctional(QString n, QDomNode defNode, const QDir& dir);
 	InputConditionContainerFunctional(const InputConditionContainerFunctional& i) : InputConditionContainer(i) {
 		copyValues(i);
 	}

@@ -22,19 +22,19 @@ void InputConditionContainerSet::clear()
 	m_functionals.clear();
 	m_containers.clear();
 }
-void InputConditionContainerSet::setup(const QDomNode& condNode, bool forBC)
+void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDefinition& def, bool forBC)
 {
 	// setup containers;
 	clear();
 	if (forBC) {
-		setupCustom(condNode);
+		setupCustom(condNode, def);
 	} else {
 		// multiple pages exists.
 		QDomNodeList pages = condNode.childNodes();
 		for (int i = 0; i < pages.length(); ++i) {
 			QDomNode page = pages.item(i);
 			// access content/items/
-			setupCustom(page);
+			setupCustom(page, def);
 		}
 	}
 }
@@ -53,7 +53,7 @@ void InputConditionContainerSet::setComplexProperty(const QString& compname, int
 	}
 }
 
-void InputConditionContainerSet::setupSimple(const QDomNode& contNode)
+void InputConditionContainerSet::setupSimple(const QDomNode& contNode, const SolverDefinition& def)
 {
 	QDomNode itemsNode = iRIC::getChildNode(contNode, "Items");
 	if (itemsNode.isNull()) {return;}
@@ -61,16 +61,16 @@ void InputConditionContainerSet::setupSimple(const QDomNode& contNode)
 	QDomNodeList items = itemsNode.childNodes();
 	for (int j = 0; j < items.length(); ++j) {
 		QDomNode itemNode = items.item(j);
-		setupContaner(itemNode);
+		setupContaner(itemNode, def);
 	}
 }
 
-void InputConditionContainerSet::setupCustom(const QDomNode& contNode)
+void InputConditionContainerSet::setupCustom(const QDomNode& contNode, const SolverDefinition& def)
 {
-	setupCustomRec(contNode);
+	setupCustomRec(contNode, def);
 }
 
-void InputConditionContainerSet::setupCustomRec(const QDomNode& node)
+void InputConditionContainerSet::setupCustomRec(const QDomNode& node, const SolverDefinition& def)
 {
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.length(); ++i) {
@@ -78,14 +78,14 @@ void InputConditionContainerSet::setupCustomRec(const QDomNode& node)
 		if (c.nodeType() == QDomNode::ElementNode) {
 			if (c.nodeName() == "Item") {
 				// build item.
-				setupContaner(c);
+				setupContaner(c, def);
 			} else {
-				setupCustomRec(c);
+				setupCustomRec(c, def);
 			}
 		}
 	}
 }
-void InputConditionContainerSet::setupContaner(const QDomNode& itemNode)
+void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const SolverDefinition& def)
 {
 	QString parameterName;
 	try {
@@ -102,7 +102,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode)
 		QString type = defElem.attribute("conditionType");
 		// setup container depending on the type
 		if (type == "functional") {
-			m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode));
+			m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode, def.folder()));
 			m_containers.insert(parameterName, &(m_functionals[parameterName]));
 			connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 		} else if (type == "constant" || type == "") {
@@ -120,7 +120,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode)
 				m_containers.insert(parameterName, &(m_strings[parameterName]));
 				connect(&(m_strings[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else if (valuetype == "functional") {
-				m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode));
+				m_functionals.insert(parameterName, InputConditionContainerFunctional(parameterName, defNode, def.folder()));
 				m_containers.insert(parameterName, &(m_functionals[parameterName]));
 				connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
 			} else {

@@ -72,7 +72,7 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	SolverDefinitionTranslator t(def.folder().absolutePath(), locale);
 	QDomNode condNode = iRIC::getChildNode(def.document().documentElement(), "CalculationCondition");
 	// setup ContainerSet first.
-	m_containerSet->setup(condNode);
+	m_containerSet->setup(condNode, def);
 	// setup WidgetSet.
 	m_widgetSet->setup(condNode, *m_containerSet, t);
 	// setup PageList.
@@ -95,12 +95,6 @@ void InputConditionDialog::load(const int fn)
 
 void InputConditionDialog::save(const int fn)
 {
-	/*
-		if (! m_modified){
-			// not modified. do nothing.
-			return;
-		}
-	 */
 	cg_iRIC_GotoCC(fn);
 	m_containerSet->save();
 	m_modified = false;

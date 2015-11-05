@@ -3,6 +3,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDir>
 #include <QDomNode>
 
 #include <iriclib.h>
@@ -14,7 +15,7 @@ InputConditionContainerFunctional::InputConditionContainerFunctional()
 
 }
 
-InputConditionContainerFunctional::InputConditionContainerFunctional(QString n, QDomNode defNode)
+InputConditionContainerFunctional::InputConditionContainerFunctional(QString n, QDomNode defNode, const QDir& dir)
 	: InputConditionContainer(n)
 {
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();

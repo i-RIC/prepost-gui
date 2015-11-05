@@ -11,10 +11,10 @@
 #include <QMap>
 #include <QString>
 
-
 class QDomNode;
-class InputConditionDialog;
 class QWidget;
+class InputConditionDialog;
+class SolverDefinition;
 
 class GUICOREDLL_EXPORT InputConditionContainerSet : public QObject
 {
@@ -23,17 +23,17 @@ class GUICOREDLL_EXPORT InputConditionContainerSet : public QObject
 public:
 	InputConditionContainerSet(QWidget* widget);
 	void clear();
-	void setup(const QDomNode& condNode, bool forBC = false);
+	void setup(const QDomNode& condNode, const SolverDefinition& def, bool forBC = false);
 	void setBCProperty(const QString& bcname, int bcindex);
 	void setComplexProperty(const QString& compname, int compindex);
 	InputConditionContainerSet* clone() const;
 	void copyValues(const InputConditionContainerSet* set);
 
 private:
-	void setupSimple(const QDomNode& contNode);
-	void setupCustom(const QDomNode& contNode);
-	void setupCustomRec(const QDomNode& node);
-	void setupContaner(const QDomNode& node);
+	void setupSimple(const QDomNode& contNode, const SolverDefinition& def);
+	void setupCustom(const QDomNode& contNode, const SolverDefinition& def);
+	void setupCustomRec(const QDomNode& node, const SolverDefinition& def);
+	void setupContaner(const QDomNode& node, const SolverDefinition& def);
 
 public:
 	void setDefaultValues();
