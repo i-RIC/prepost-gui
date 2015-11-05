@@ -21,21 +21,15 @@ public:
 	/// Constructor
 	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* parent);
 	/// The caption of the dataitem.
-	const QString& caption() override {return m_caption;}
+	const QString& caption() const override;
 	/// The name of the zone that stores the grid information.
-	const QString& zoneName() override {return m_zoneName;}
-	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override {
-		return m_creatingConditionDataItem;
-	}
-	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const {
-		return m_bcSettingGroupDataItem;
-	}
+	const QString& zoneName() const override;
+	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override;
+	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
-	PreProcessorGridAttributeMappingSettingTopDataItem* mappingSettingDataItem() const {
-		return m_mappingSettingDataItem;
-	}
+	PreProcessorGridAttributeMappingSettingTopDataItem* mappingSettingDataItem() const;
 	void addCustomMenuItems(QMenu* menu) override;
-	PreProcessorGridDataItemInterface* gridDataItem() const override {return m_gridDataItem;}
+	PreProcessorGridDataItemInterface* gridDataItem() const override;
 	bool isDeletable() const override;
 	void handleStandardItemChange() override;
 	bool gridEdited() const  override;

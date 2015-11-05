@@ -14,9 +14,9 @@ class GUICOREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItemInterfac
 public:
 	PreProcessorGridAndGridCreatingConditionDataItemInterface(const QString& caption, PreProcessorDataItem* parent);
 	virtual ~PreProcessorGridAndGridCreatingConditionDataItemInterface();
-	virtual const QString& caption() = 0;
+	virtual const QString& caption() const = 0;
 	virtual PreProcessorGridDataItemInterface* gridDataItem() const = 0;
-	virtual const QString& zoneName() = 0;
+	virtual const QString& zoneName() const = 0;
 	virtual PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const = 0;
 	virtual bool gridEdited() const = 0;
 	virtual void toggleGridEditFlag() = 0;

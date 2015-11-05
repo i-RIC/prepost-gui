@@ -106,50 +106,46 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	setupGridDataItem(gType->emptyGrid());
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+const QString& PreProcessorGridAndGridCreatingConditionDataItem::caption() const
 {
-	QDomElement elem = node.toElement();
-	m_zoneName = elem.attribute("zoneName");
-	// load grid creating condition information.
-	QDomNode condNode = iRIC::getChildNode(node, "GridCreatingCondition");
-	if (! condNode.isNull()) {m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
-	// load boundary condition setting information.
-	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditionSetting");
-	if (! bcNode.isNull()) {m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
-	// load grid information.
-	QDomNode gridNode = iRIC::getChildNode(node, "Grid");
-	if (! gridNode.isNull()) {m_gridDataItem->loadFromProjectMainFile(gridNode);}
+	return m_caption;
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+const QString& PreProcessorGridAndGridCreatingConditionDataItem::zoneName() const
 {
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
-	if (gItem->bcGroupDataItem()) {
-		gItem->bcGroupDataItem()->renumberItemsForProject();
-	}
-
-	writer.writeAttribute("zoneName", m_zoneName);
-	writer.writeAttribute("caption", m_caption);
-
-	// save grid creating condition information
-	writer.writeStartElement("GridCreatingCondition");
-	m_creatingConditionDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-
-	// save boundary condition setting information
-	writer.writeStartElement("BoundaryConditionSettings");
-	m_bcSettingGroupDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-
-	// save grid information
-	writer.writeStartElement("Grid");
-	m_gridDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
+	return m_zoneName;
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString&)
+PreProcessorGridCreatingConditionDataItemInterface* PreProcessorGridAndGridCreatingConditionDataItem::creatingConditionDataItem() const
 {
+	return m_creatingConditionDataItem;
+}
 
+PreProcessorBCSettingGroupDataItem* PreProcessorGridAndGridCreatingConditionDataItem::bcSettingGroupDataItem() const
+{
+	return m_bcSettingGroupDataItem;
+}
+
+PreProcessorBCGroupDataItem* PreProcessorGridAndGridCreatingConditionDataItem::bcGroupDataItem() const
+{
+	return m_bcGroupDataItem;
+}
+
+PreProcessorGridAttributeMappingSettingTopDataItem* PreProcessorGridAndGridCreatingConditionDataItem::mappingSettingDataItem() const
+{
+	return m_mappingSettingDataItem;
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
+{
+	// add "Add Grid" menu.
+	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	gtItem->addCustomMenuItems(menu);
+}
+
+PreProcessorGridDataItemInterface* PreProcessorGridAndGridCreatingConditionDataItem::gridDataItem() const
+{
+	return m_gridDataItem;
 }
 
 bool PreProcessorGridAndGridCreatingConditionDataItem::isDeletable() const
@@ -161,13 +157,6 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::isDeletable() const
 void PreProcessorGridAndGridCreatingConditionDataItem::handleStandardItemChange()
 {
 	PreProcessorDataItem::handleStandardItemChange();
-}
-
-void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
-{
-	// add "Add Grid" menu.
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
-	gtItem->addCustomMenuItems(menu);
 }
 
 bool PreProcessorGridAndGridCreatingConditionDataItem::gridEdited() const
@@ -244,6 +233,52 @@ void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const in
 			delete grid;
 		}
 	}
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	QDomElement elem = node.toElement();
+	m_zoneName = elem.attribute("zoneName");
+	// load grid creating condition information.
+	QDomNode condNode = iRIC::getChildNode(node, "GridCreatingCondition");
+	if (! condNode.isNull()) {m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
+	// load boundary condition setting information.
+	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditionSetting");
+	if (! bcNode.isNull()) {m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
+	// load grid information.
+	QDomNode gridNode = iRIC::getChildNode(node, "Grid");
+	if (! gridNode.isNull()) {m_gridDataItem->loadFromProjectMainFile(gridNode);}
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	if (gItem->bcGroupDataItem()) {
+		gItem->bcGroupDataItem()->renumberItemsForProject();
+	}
+
+	writer.writeAttribute("zoneName", m_zoneName);
+	writer.writeAttribute("caption", m_caption);
+
+	// save grid creating condition information
+	writer.writeStartElement("GridCreatingCondition");
+	m_creatingConditionDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	// save boundary condition setting information
+	writer.writeStartElement("BoundaryConditionSettings");
+	m_bcSettingGroupDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	// save grid information
+	writer.writeStartElement("Grid");
+	m_gridDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+}
+
+void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString&)
+{
+
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()
