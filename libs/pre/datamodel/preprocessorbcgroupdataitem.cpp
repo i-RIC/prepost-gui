@@ -25,7 +25,7 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 
 	m_colorSource = new ColorSource(this);
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent()->parent());
+	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
 	SolverDefinitionGridType* gtype = gtItem->gridType();
 	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
 		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);

@@ -73,6 +73,7 @@ PreProcessorGridDataItem::PreProcessorGridDataItem(PreProcessorDataItem* parent)
 	m_nodeDataItem {nullptr},
 	m_cellDataItem {nullptr},
 	m_shiftPressed {false},
+	m_bcGroupDataItem {nullptr},
 	m_birdEyeWindow {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -209,6 +210,15 @@ void PreProcessorGridDataItem::addCustomMenuItems(QMenu* menu)
 
 	menu->addSeparator();
 	menu->addAction(m_deleteAction);
+}
+
+QStringList PreProcessorGridDataItem::containedFiles()
+{
+	QStringList ret = PreProcessorDataItem::containedFiles();
+	if (m_bcGroupDataItem != 0) {
+		ret.append(m_bcGroupDataItem->containedFiles());
+	}
+	return ret;
 }
 
 void PreProcessorGridDataItem::exportGrid()
@@ -1318,6 +1328,22 @@ QVector<Edge> PreProcessorGridDataItem::getEdgesFromVertices(const QSet<vtkIdTyp
 	}
 	qSort(ret);
 	return ret;
+}
+
+void PreProcessorGridDataItem::setBCGroupDataItem(PreProcessorBCGroupDataItem* item)
+{
+	if (item == 0) {return;}
+	item->setParent(this);
+	m_bcGroupDataItem = item;
+	m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
+}
+
+void PreProcessorGridDataItem::unsetBCGroupDataItem()
+{
+	if (m_bcGroupDataItem == 0) {return;}
+	m_bcGroupDataItem->setParent(0);
+	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
+	m_bcGroupDataItem = 0;
 }
 
 void PreProcessorGridDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)

@@ -20,13 +20,6 @@ PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(P
 	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
 	m_childItems.append(m_cellGroupDataItem);
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0) {
-		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
-		m_childItems.append(m_bcGroupDataItem);
-	} else {
-		m_bcGroupDataItem = 0;
-	}
 	setupMenu();
 	updateObjectBrowserTree();
 }
@@ -44,7 +37,7 @@ void PreProcessorUnstructured2dGridDataItem::setupMenu()
 	m_editMenu->addAction(m_nodeEditAction);
 	m_editMenu->addAction(m_cellEditAction);
 
-	if (m_bcGroupDataItem != 0) {
+	if (m_bcGroupDataItem != nullptr) {
 		m_editMenu->addMenu(m_bcGroupDataItem->bcMenu());
 	}
 	m_menu->addAction(m_deleteAction);
@@ -60,9 +53,9 @@ void PreProcessorUnstructured2dGridDataItem::setupMenu()
 
 void PreProcessorUnstructured2dGridDataItem::updateActionStatus()
 {
-	m_selectMenu->setEnabled(m_grid != 0);
-	m_editMenu->setEnabled(m_grid != 0);
-	m_displayMenu->setEnabled(m_grid != 0);
+	m_selectMenu->setEnabled(m_grid != nullptr);
+	m_editMenu->setEnabled(m_grid != nullptr);
+	m_displayMenu->setEnabled(m_grid != nullptr);
 
 	PreProcessorGridDataItem::updateActionStatus();
 }

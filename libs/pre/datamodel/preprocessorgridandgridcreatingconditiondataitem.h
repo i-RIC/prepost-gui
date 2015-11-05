@@ -6,6 +6,7 @@
 class Grid;
 class GridImporterInterface;
 class PreProcessorGridCreatingConditionDataItem;
+class PreProcessorBCGroupDataItem;
 class PreProcessorBCSettingGroupDataItem;
 class PreProcessorGridAttributeMappingSettingTopDataItem;
 class PreProcessorGridDataItem;
@@ -29,6 +30,7 @@ public:
 	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const {
 		return m_bcSettingGroupDataItem;
 	}
+	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
 	PreProcessorGridAttributeMappingSettingTopDataItem* mappingSettingDataItem() const {
 		return m_mappingSettingDataItem;
 	}
@@ -59,6 +61,7 @@ private:
 	QString m_zoneName;
 	PreProcessorGridCreatingConditionDataItemInterface* m_creatingConditionDataItem;
 	PreProcessorBCSettingGroupDataItem* m_bcSettingGroupDataItem;
+	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 	PreProcessorGridAttributeMappingSettingTopDataItem* m_mappingSettingDataItem;
 	PreProcessorGridDataItemInterface* m_gridDataItem;
 };

@@ -21,14 +21,6 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
 	m_childItems.append(m_cellGroupDataItem);
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0) {
-		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
-		m_childItems.append(m_bcGroupDataItem);
-	} else {
-		m_bcGroupDataItem = nullptr;
-	}
-
 	m_selectMenu = nullptr;
 	m_regionSelectAction = new QAction(PreProcessorStructured2dGridDataItem::tr("Select I-J &Region..."), this);
 	// @todo not implemented, so disabled.
@@ -42,11 +34,6 @@ PreProcessorStructured2dGridDataItem::~PreProcessorStructured2dGridDataItem()
 
 void PreProcessorStructured2dGridDataItem::setupMenu()
 {
-	/*
-		m_selectMenu = m_menu->addMenu(tr("Select vertices"));
-		m_selectMenu->addAction(m_polygonSelectAction);
-		m_selectMenu->addAction(m_regionSelectAction);
-	 */
 	m_editMenu = m_menu->addMenu(tr("&Edit"));
 	m_editMenu->addAction(m_shapeDataItem->editAction());
 	m_editMenu->addAction(m_nodeEditAction);

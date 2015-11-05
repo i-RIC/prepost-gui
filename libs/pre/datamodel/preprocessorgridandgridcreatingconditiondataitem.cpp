@@ -87,6 +87,12 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 
 	if (gType->boundaryConditions().size() == 0) {
 		m_standardItem->takeChild(m_bcSettingGroupDataItem->standardItem()->row());
+		m_bcGroupDataItem = nullptr;
+	} else {
+		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
+		connect(m_bcGroupDataItem, SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
+		connect(m_bcGroupDataItem, SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
+		m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
 	}
 
 	m_deleteAction = new QAction(PreProcessorGridAndGridCreatingConditionDataItem::tr("&Delete Grid Creating Condition and Grid Shape..."), this);
@@ -180,8 +186,9 @@ void PreProcessorGridAndGridCreatingConditionDataItem::toggleGridEditFlag()
 
 void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* grid)
 {
-	if (m_gridDataItem != 0) {
+	if (m_gridDataItem != nullptr) {
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
+		tmpItem->unsetBCGroupDataItem();
 		m_childItems.removeOne(tmpItem);
 		m_gridDataItem = 0;
 		delete tmpItem;
@@ -189,6 +196,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 
 	PreProcessorGridDataItem* gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
 	m_gridDataItem = gridItem;
+	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
 	m_childItems.append(gridItem);
 
 	// put the grid data item after grid creating condition
@@ -213,10 +221,6 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	}
 
 	connect(gridItem, SIGNAL(gridRelatedConditionChanged(QString)), gtItem, SLOT(changeValueRange(QString)));
-	if (gridItem->bcGroupDataItem() != 0){
-		connect(gridItem->bcGroupDataItem(), SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
-		connect(gridItem->bcGroupDataItem(), SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
-	}
 	updateItemMap();
 }
 

@@ -141,6 +141,7 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 
 GeoDataPolygon::~GeoDataPolygon()
 {
+	m_triangleThread->cancelJobs(this);
 	delete m_gridRegionPolygon;
 	clearHolePolygons();
 

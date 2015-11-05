@@ -6,6 +6,7 @@
 
 class Grid;
 class GridAttributeContainer;
+class PreProcessorBCGroupDataItem;
 
 class GUICOREDLL_EXPORT PreProcessorGridDataItemInterface : public PreProcessorDataItem
 {
@@ -20,6 +21,8 @@ public:
 	virtual Grid* grid() const = 0;
 	virtual bool setGrid(Grid* newGrid) = 0;
 	virtual void silentDeleteGrid() = 0;
+	virtual void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) = 0;
+	virtual void unsetBCGroupDataItem() = 0;
 
 	friend class Grid;
 	friend class GridAttributeContainer;

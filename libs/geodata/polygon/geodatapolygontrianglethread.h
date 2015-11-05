@@ -28,6 +28,7 @@ class GeoDataPolygonTriangleThread : public QThread
 public:
 	void addJob(GeoDataPolygon* polygon, bool noDraw);
 	void cancel(GeoDataPolygon* polygon);
+	void cancelJobs(GeoDataPolygon* polygon);
 	bool isOutputting(GeoDataPolygon* polygon);
 
 	static GeoDataPolygonTriangleThread* instance();

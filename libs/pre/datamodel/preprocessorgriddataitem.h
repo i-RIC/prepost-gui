@@ -46,6 +46,7 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
 	void addCustomMenuItems(QMenu* menu) override;
+	QStringList containedFiles() override;
 
 	// Standard mouse event handlers
 	void mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/) override;
@@ -108,6 +109,8 @@ public:
 	void setSelectedVertices(const QVector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
 	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
+	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item);
+	void unsetBCGroupDataItem();
 
 	bool isImportAvailable();
 	bool isExportAvailable();

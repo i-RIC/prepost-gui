@@ -97,6 +97,20 @@ void GeoDataPolygonTriangleThread::cancel(GeoDataPolygon* polygon)
 	}
 }
 
+void GeoDataPolygonTriangleThread::cancelJobs(GeoDataPolygon* polygon)
+{
+	cancel(polygon);
+	QMutexLocker locker(&m_mutex);
+	std::list<Job>::iterator it;
+	for (it = m_jobQueue.begin(); it != m_jobQueue.end(); ++it) {
+		if (it->targetPolygon == polygon) {
+			std::list<Job>::iterator it2 = it;
+			m_jobQueue.erase(it2);
+			it = m_jobQueue.begin();
+		}
+	}
+}
+
 bool GeoDataPolygonTriangleThread::isOutputting(GeoDataPolygon *polygon)
 {
 	if (m_currentJob == 0) {return false;}
