@@ -111,13 +111,8 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->filteredData();
 
-	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
-		m_wireframeMapper->SetInputData(ps);
-		m_wireframeActor->GetProperty()->SetColor(m_setting.color);
-		m_actorCollection->AddItem(m_wireframeActor);
-	} else {
-		vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(cont->data());
+	if (grid != 0){
 		vtkSmartPointer<vtkStructuredGrid> tmpgrid = grid;
 		switch (GridShapeEditDialog::Shape(m_setting.shape)) {
 		case GridShapeEditDialog::Outline:
@@ -135,6 +130,10 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 			m_actorCollection->AddItem(m_wireframeActor);
 			break;
 		}
+	} else {
+		m_wireframeMapper->SetInputData(ps);
+		m_wireframeActor->GetProperty()->SetColor(m_setting.color);
+		m_actorCollection->AddItem(m_wireframeActor);
 	}
 	if (m_setting.indexVisible) {
 		vtkPointSet* labeldata = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
@@ -184,8 +183,7 @@ QDialog* Post2dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 	dialog->setSetting(m_setting);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (dynamic_cast<vtkStructuredGrid*> (cont->data()) == nullptr) {
 		dialog->hideShape();
 	}
 	return dialog;

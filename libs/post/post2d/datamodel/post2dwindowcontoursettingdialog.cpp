@@ -56,13 +56,12 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 		m_solutions.append(name);
 	}
 	ui->physicalValueComboBox->blockSignals(false);
-	if (gtype->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	vtkStructuredGrid* stG = dynamic_cast<vtkStructuredGrid*> (zoneData->data());
+	if (stG != 0) {
+		stG->GetDimensions(m_gridDims);
+	} else {
 		// unstructured grid!
 		m_unstructured = true;
-	} else {
-		// structured grid!
-		vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
-		g->GetDimensions(m_gridDims);
 	}
 }
 
