@@ -264,6 +264,7 @@ void InputConditionContainerFunctional::copyValues(const InputConditionContainer
 
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
 {
+	removeAllValues();
 	return loadFromCsvFile(filename, &m_param, &m_values);
 }
 
