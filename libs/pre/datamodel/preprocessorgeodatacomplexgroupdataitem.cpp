@@ -138,9 +138,6 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 	QMap<double, QString> englishEnums;
 	QMap<double, QColor> colors;
 
-//	colors.insert(0, m_undefinedColor);
-//	enums.insert(0, cond->undefinedString());
-//	englishEnums.insert(0, cond->undefinedEnglishString());
 	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
 		double val = i + 1;
