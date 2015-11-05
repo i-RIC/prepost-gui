@@ -126,6 +126,7 @@ iRICMainWindow::iRICMainWindow(QWidget* parent) :
 
 	setMenuBar(m_actionManager->menuBar());
 	addToolBar(m_actionManager->mainToolBar());
+	addToolBar(m_actionManager->windowsToolBar());
 	addToolBarBreak(Qt::TopToolBarArea);
 
 	// Setup solver definition list.
@@ -395,7 +396,12 @@ void iRICMainWindow::openProject(const QString& filename)
 	}
 	// open post-processors.
 	m_projectData->openPostProcessors();
-	//	reflectWindowZIndices();
+	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList();
+	QList<QMdiSubWindow*>::iterator it;
+	for (QMdiSubWindow* subw : wlist) {
+		if (dynamic_cast<PostProcessorWindow*> (subw->widget()) == nullptr) {continue;}
+		connect(subw, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+	}
 
 	iRICUndoStack::instance().clear();
 
@@ -594,6 +600,7 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		// project is not open.
 		return;
 	}
+	m_actionManager->updateWindowList();
 	if (newActiveWindow == nullptr) {
 		// Window of other program is activated.
 		m_actionManager->informSubWindowChange(nullptr);
@@ -1297,6 +1304,7 @@ void iRICMainWindow::create2dPostWindow()
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
 	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::create2dBirdEyePostWindow()
@@ -1312,6 +1320,7 @@ void iRICMainWindow::create2dBirdEyePostWindow()
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
 	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::create3dPostWindow()
@@ -1327,6 +1336,7 @@ void iRICMainWindow::create3dPostWindow()
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
 	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::createGraph2dHybridWindow()
@@ -1350,6 +1360,7 @@ void iRICMainWindow::createGraph2dHybridWindow()
 
 	item->window()->setupDefaultGeometry(index);
 	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::createGraph2dScatteredWindow()
@@ -1373,6 +1384,7 @@ void iRICMainWindow::createGraph2dScatteredWindow()
 
 	item->window()->setupDefaultGeometry(index);
 	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
 void iRICMainWindow::openVerificationDialog()

@@ -31,6 +31,8 @@ public:
 	QMenuBar* menuBar() {return m_menuBar;}
 	/// Return the main toolbar.
 	QToolBar* mainToolBar() {return m_mainToolBar;}
+	/// Return the toolbar of window list
+	QToolBar* windowsToolBar(){return m_windowsToolBar;}
 	/// Set new project data, and create appropriate connections.
 	void setProjectData(ProjectData* d);
 	/// Set the pointer of animation menu.
@@ -55,6 +57,7 @@ public:
 	void informSubWindowChange(QWidget* subwindow);
 	/// Signal mapper to map signals to create new project.
 	QSignalMapper* newProjectSignals() {return m_newProjectSignals;}
+	void updateWindowsToolBar();
 	/// Action to create new project data
 	QAction* newAction;
 	/// Action to open project data
@@ -113,6 +116,8 @@ public:
 
 	/// Action to show/hide the main toolbar
 	QAction* viewMainToolBarAction;
+	/// Action to show/hide the windows toolbar
+	QAction* viewWindowsToolBarAction;
 	/// Action to show/hide the animation toolbar.
 	QAction* viewAnimationToolBarAction;
 	/// Action to show/hide the object browser.
@@ -245,13 +250,13 @@ public slots:
 	void updateAdditionalMenus(const QList<QMenu*>& menus);
 	void handleSolverStart();
 	void handleSolverFinish();
+	void updateWindowList();
 
 private slots:
 	/// Setup import menu
 	void setupImportMenu();
 	/// Setup export menu
 	void setupExportMenu();
-	void updateWindowList();
 	void activateWindow(QWidget* w);
 
 private:
@@ -285,6 +290,8 @@ private:
 	void setupHelpMenu();
 	/// Setup main toolbar
 	void setupMainToolBar();
+	/// Setup windows toolbar
+	void setupWindowsToolBar();
 
 	void addGridImportMenu(QMenu* menu);
 	void addGridExportMenu(QMenu* menu);
@@ -354,6 +361,8 @@ private:
 	QList<QMenu*> m_additionalMenus;
 
 	QToolBar* m_mainToolBar;
+
+	QToolBar* m_windowsToolBar;
 
 	QToolBar* m_additionalToolBar;
 	/**

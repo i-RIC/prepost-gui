@@ -57,7 +57,7 @@ void iRICMainWindowActionManager::init()
 
 	updateMenuBar();
 	setupMainToolBar();
-//	setupCameraControlToolBar();
+	setupWindowsToolBar();
 }
 
 void iRICMainWindowActionManager::setupFileMenu()
@@ -294,6 +294,11 @@ void iRICMainWindowActionManager::setupViewMenu()
 	viewMainToolBarAction->setCheckable(true);
 	viewMainToolBarAction->setChecked(true);
 	toolBarMenu->addAction(viewMainToolBarAction);
+
+	viewWindowsToolBarAction = new QAction(tr("&Windows list Toolbar"), toolBarMenu);
+	viewWindowsToolBarAction->setCheckable(true);
+	viewWindowsToolBarAction->setChecked(true);
+	toolBarMenu->addAction(viewWindowsToolBarAction);
 
 	viewAnimationToolBarAction = new QAction(tr("&Animation Toolbar"), toolBarMenu);
 	viewAnimationToolBarAction->setCheckable(true);
@@ -777,6 +782,17 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(aboutMouseAction);
 }
 
+void iRICMainWindowActionManager::setupWindowsToolBar()
+{
+	m_windowsToolBar = new iRICToolBar(tr("Window list Toolbar"), m_parent);
+
+	connect(viewWindowsToolBarAction, SIGNAL(triggered(bool)), m_windowsToolBar , SLOT(setVisible(bool)));
+	connect(m_windowsToolBar, SIGNAL(visibilityChanged(bool)), viewWindowsToolBarAction, SLOT(setChecked(bool)));
+
+	m_windowsToolBar->setAllowedAreas(Qt::AllToolBarAreas);
+	m_windowsToolBar->setFloatable(false);
+}
+
 void iRICMainWindowActionManager::setProjectData(ProjectData* d)
 {
 	importImageAction->disconnect();
@@ -996,6 +1012,7 @@ void iRICMainWindowActionManager::updateWindowList()
 	// now, build window list.
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
+	m_windowsToolBar->clear();
 	int i = 1;
 	for (QMdiSubWindow* w : windowList) {
 		if (m_parent->isPostOnlyMode()) {
@@ -1013,6 +1030,7 @@ void iRICMainWindowActionManager::updateWindowList()
 		a->setEnabled(m_isProjectFileOpen);
 		a->setIcon(w->windowIcon());
 		m_viewMenu->addAction(a);
+		m_windowsToolBar->addAction(a);
 		connect(a, SIGNAL(triggered()), m_windowActivationMapper, SLOT(map()));
 		m_windowActivationMapper->setMapping(a, w);
 		++i;
