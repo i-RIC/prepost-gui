@@ -28,10 +28,21 @@ private:
 public:
 	InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent = 0);
 	~InputConditionWidgetFunctionalDialog();
-	const InputConditionContainerFunctional& container() {
-		return m_container;
-	}
+	const InputConditionContainerFunctional& container() const;
 	void setData(const InputConditionContainerFunctional& c);
+
+public slots:
+	void accept() override;
+
+private slots:
+	void clear();
+	void importFromCsv();
+	void exportToCsv();
+	void selectionChange(const QItemSelection& selected, const QItemSelection& deselected);
+	void removeSelected();
+	void add();
+	void sort();
+	void updateGraph();
 
 private:
 	void setupData();
@@ -41,31 +52,12 @@ private:
 	void saveModel();
 	void clearGraphData();
 
-	InputConditionContainerFunctional m_container;
-	QStandardItemModel* m_model;
-	QItemSelectionModel* m_selectionModel;
-	Ui::InputConditionWidgetFunctionalDialog ui;
-
-public slots:
-	void accept() override {
-		saveModel();
-		emit accepted();
-		hide();
-	}
-
-private slots:
-	void clear();
-	void import();
-	void selectionChange(const QItemSelection& selected, const QItemSelection& deselected);
-	void removeSelected();
-	void add();
-	void sort();
-	void updateGraph();
+	static void setInt(const QVariant& v, QVariant& target);
+	static void setDouble(const QVariant& v, QVariant& target);
 
 private:
 	static const int defaultRowHeight = 26;
-	static void setInt(const QVariant& v, QVariant& target);
-	static void setDouble(const QVariant& v, QVariant& target);
+
 	void (*m_paramfunc)(const QVariant&, QVariant&);
 	QList<void (*)(const QVariant&, QVariant&)> m_valuefuncs;
 	QStyledItemDelegate* tableViewDelegate;
@@ -75,6 +67,11 @@ private:
 	QList<QString> m_valueCaptions;
 	QList<bool> m_valueIsSteps;
 	QList<bool> m_axisReverses;
+
+	InputConditionContainerFunctional m_container;
+	QStandardItemModel* m_model;
+	QItemSelectionModel* m_selectionModel;
+	Ui::InputConditionWidgetFunctionalDialog ui;
 
 	bool m_preventGraph;
 	bool m_preventSort;

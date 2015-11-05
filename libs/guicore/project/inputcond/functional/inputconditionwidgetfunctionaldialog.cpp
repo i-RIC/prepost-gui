@@ -49,6 +49,7 @@ void InputConditionWidgetFunctionalDialog::setInt(const QVariant& v, QVariant& t
 {
 	target = v.toInt();
 }
+
 void InputConditionWidgetFunctionalDialog::setDouble(const QVariant& v, QVariant& target)
 {
 	target = v.toDouble();
@@ -60,7 +61,8 @@ void InputConditionWidgetFunctionalDialog::setupConnections()
 	connect(
 		m_selectionModel, SIGNAL(selectionChanged(const QItemSelection&, const QItemSelection&)),
 		this, SLOT(selectionChange(const QItemSelection&, const QItemSelection&)));
-	connect(ui.importButton, SIGNAL(clicked()), this, SLOT(import()));
+	connect(ui.importButton, SIGNAL(clicked()), this, SLOT(importFromCsv()));
+	connect(ui.exportButton, SIGNAL(clicked()), this, SLOT(exportToCsv()));
 	connect(ui.addButton, SIGNAL(clicked()), this, SLOT(add()));
 	connect(ui.removeButton, SIGNAL(clicked()), this, SLOT(removeSelected()));
 
@@ -69,6 +71,7 @@ void InputConditionWidgetFunctionalDialog::setupConnections()
 
 	connect(m_model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(updateGraph()));
 }
+
 void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
 {
 	int valueCount = 0;
@@ -270,7 +273,7 @@ void InputConditionWidgetFunctionalDialog::removeSelected()
 	updateGraph();
 }
 
-void InputConditionWidgetFunctionalDialog::import()
+void InputConditionWidgetFunctionalDialog::importFromCsv()
 {
 	QString fileName;
 	QString dir = LastIODirectory::get();
@@ -321,6 +324,33 @@ void InputConditionWidgetFunctionalDialog::import()
 	sort();
 }
 
+void InputConditionWidgetFunctionalDialog::exportToCsv()
+{
+	QString fileName;
+	QString dir = LastIODirectory::get();
+	fileName = QFileDialog::getSaveFileName(this, tr("Specify file name to save"), dir, tr("CSV files (*.csv)"));
+	if (fileName.isEmpty()){
+		return;
+	}
+	dir = QFileInfo(fileName).absolutePath();
+	LastIODirectory::set(dir);
+
+	QFile file(fileName);
+	if (! file.open(QFile::WriteOnly | QFile::Text)){
+		QMessageBox::critical(this, tr("Error"), tr("Error occured while opening the file."));
+		return;
+	}
+	QTextStream stream(&file);
+	for (int i = 0; i < m_model->rowCount(); ++i){
+		for (int j = 0; j < m_model->columnCount(); ++j) {
+			if (j != 0) {stream << ",";}
+			stream << m_model->data(m_model->index(i, j)).toDouble();
+		}
+		stream << "\n";
+	}
+	file.close();
+}
+
 void InputConditionWidgetFunctionalDialog::add()
 {
 	int lastrow = m_model->rowCount();
@@ -349,10 +379,22 @@ void InputConditionWidgetFunctionalDialog::sort()
 	updateGraph();
 }
 
+const InputConditionContainerFunctional& InputConditionWidgetFunctionalDialog::container() const
+{
+	return m_container;
+}
+
 void InputConditionWidgetFunctionalDialog::setData(const InputConditionContainerFunctional& c)
 {
 	m_container = c;
 	setupData();
+}
+
+void InputConditionWidgetFunctionalDialog::accept()
+{
+	saveModel();
+	emit accepted();
+	hide();
 }
 
 void InputConditionWidgetFunctionalDialog::updateGraph()
