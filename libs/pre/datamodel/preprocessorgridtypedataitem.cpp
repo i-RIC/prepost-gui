@@ -187,6 +187,19 @@ bool PreProcessorGridTypeDataItem::isChildCaptionAvailable(const QString& captio
 
 void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	// load colormap data
+	QDomNode cmNode = iRIC::getChildNode(node, "ColorMaps");
+	if (! cmNode.isNull()){
+		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
+			QDomElement elem = cmNode.childNodes().at(i).toElement();
+			QString name = elem.attribute("name");
+			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, 0);
+			if (cont != 0) {
+				cont->loadFromProjectMainFile(elem);
+			}
+		}
+	}
+
 	// load raw data.
 	QDomNode gdNode = iRIC::getChildNode(node, "GeoData");
 	QDomNode rdNode = iRIC::getChildNode(node, "RawData");
@@ -195,6 +208,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 	} else if (! rdNode.isNull()) {
 		m_geoDataTop->loadFromProjectMainFile(rdNode);
 	}
+
 	// load region datas.
 	QDomNode c = node.firstChild();
 	while (! c.isNull()) {
@@ -225,6 +239,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		}
 		c = c.nextSibling();
 	}
+
 	// Reset GeoData dimensions
 	m_geoDataTop->setDimensionsToFirst();
 }
@@ -233,10 +248,23 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 {
 	// write name.
 	writer.writeAttribute("name", name());
+
+	// write colormap data.
+	writer.writeStartElement("ColorMaps");
+	QMap<QString, ScalarsToColorsContainer*>::iterator c_it;
+	for (c_it = m_scalarsToColors.begin(); c_it != m_scalarsToColors.end(); ++c_it) {
+		writer.writeStartElement("ColorMap");
+		writer.writeAttribute("name", c_it.key());
+		c_it.value()->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
+
 	// write raw data.
 	writer.writeStartElement("GeoData");
 	m_geoDataTop->saveToProjectMainFile(writer);
 	writer.writeEndElement();
+
 	// write region datas.
 	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		writer.writeStartElement("Region");
