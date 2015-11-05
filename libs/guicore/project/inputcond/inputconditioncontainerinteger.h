@@ -11,51 +11,35 @@ class GUICOREDLL_EXPORT InputConditionContainerInteger : public InputConditionCo
 	Q_OBJECT
 
 public:
-	InputConditionContainerInteger() : InputConditionContainer() {
-		m_default = 0;
-		m_value = 0;
-	}
+	InputConditionContainerInteger();
 	/// Constructor
-	InputConditionContainerInteger(QString n, const QDomNode& defNode) : InputConditionContainer(n) {
-		setup(defNode);
-	}
+	InputConditionContainerInteger(QString n, const QDomNode& defNode);
 	/// Constructor (with copying)
-	InputConditionContainerInteger(const InputConditionContainerInteger& i) : InputConditionContainer(i) {
-		copyValues(i);
-	}
+	InputConditionContainerInteger(const InputConditionContainerInteger& i);
 	/// Copyer
-	InputConditionContainerInteger& operator=(const InputConditionContainerInteger& i) {
-		copyValues(i);
-		return *this;
-	}
+	InputConditionContainerInteger& operator=(const InputConditionContainerInteger& i);
 	void clear();
 	int load() override;
 	int save() override;
-	QVariant variantValue() const override {return QVariant(m_value);}
-	void setValue(int v) {
-		if (m_value != v) {
-			m_value = v;
-			emit valueChanged(m_value);
-			emit valueChanged();
-		}
-	}
-	int value() const {return m_value;}
-	void setDefaultValue(int d) {m_default = d;}
-	int defaultValue() const {return m_default;}
-
-protected:
-	void setup(const QDomNode& defNode);
-	void copyValues(const InputConditionContainerInteger& i) {
-		m_name = i.m_name;
-		m_value = i.m_value;
-		m_default = i.m_default;
-	}
-	int m_default;
-	int m_value;
+	QVariant variantValue() const override;
+	void setValue(int v);
+	int value() const;
+	void setDefaultValue(int d);
+	int defaultValue() const;
+	void importFromYaml(const YAML::Node& doc);
+	void exportToYaml(QTextStream* stream);
 
 signals:
 	void valueChanged(int newvalue);
 	void valueChanged();
+
+protected:
+	void setup(const QDomNode& defNode);
+	void copyValues(const InputConditionContainerInteger& i);
+
+private:
+	int m_default;
+	int m_value;
 };
 
 #endif // CGNSFILEINPUTCONDITIONCONTAINERINTEGER_H

@@ -33,8 +33,12 @@ public:
 	void save(const int fn);
 	/// Import input condition from extra file.
 	bool import(const QString& filename);
+	/// Import input condition from yaml file.
+	bool importFromYaml(const QString& filename);
 	/// Export input condition into extra file.
 	bool doExport(const QString& filename);
+	/// Export input condition to yaml file.
+	bool exportToYaml(const QString& filename);
 	/// Set Readonly mode
 	void setReadOnly(bool readonly);
 

@@ -3,10 +3,17 @@
 
 #include "../../guicore_global.h"
 
+#include <QString>
+#include <QObject>
+#include <QVariant>
+
 #include <string>
-#include <QtCore/QString>
-#include <QtCore/QObject>
-#include <QtCore/QVariant>
+
+class QTextStream;
+
+namespace YAML {
+	class Node;
+} // namespace YAML
 
 class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 {
@@ -51,6 +58,8 @@ public:
 	virtual int load() = 0;
 	virtual int save() = 0;
 	virtual QVariant variantValue() const = 0;
+	virtual void importFromYaml(const YAML::Node& doc) = 0;
+	virtual void exportToYaml(QTextStream* stream) = 0;
 
 protected:
 	QString m_name;

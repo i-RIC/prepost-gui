@@ -93,6 +93,7 @@ protected:
 private:
 	void importCalcConditionFromOtherProject(const QString& fname);
 	void importCalcConditionFromCGNS(const QString& fname);
+	void importCalcConditionFromYaml(const QString& fname);
 
 	GraphicsWindowRootDataItem* rootDataItem() {return m_rootDataItem;}
 	void setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item);

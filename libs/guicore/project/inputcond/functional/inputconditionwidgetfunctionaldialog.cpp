@@ -233,7 +233,7 @@ void InputConditionWidgetFunctionalDialog::saveModel()
 {
 	sort();
 	int rows = m_model->rowCount(QModelIndex());
-	m_container.clear();
+	m_container.removeAllValues();
 	for (int i = 0; i < rows; ++i) {
 		m_container.param().push_back(m_model->data(m_model->index(i, 0, QModelIndex())).toDouble());
 		for (int j = 0; j < m_valuefuncs.count(); ++j) {

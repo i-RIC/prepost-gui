@@ -138,13 +138,14 @@ void PreProcessorDataModel::importCalcCondition()
 {
 	QString selectedFilter;
 	QString fname = QFileDialog::getOpenFileName(
-										iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn)"), &selectedFilter
-									);
+		iricMainWindow(), tr("Select file to import"), LastIODirectory::get(), tr("iRIC project file (*.ipro);;CGNS file (*.cgn);;YAML file (*.yml)"), &selectedFilter);
 	if (fname == "") {return;}
 	if (selectedFilter == tr("iRIC project file (*.ipro)")) {
 		importCalcConditionFromOtherProject(fname);
 	} else if (selectedFilter == tr("CGNS file (*.cgn)")) {
 		importCalcConditionFromCGNS(fname);
+	} else if (selectedFilter == tr("YAML file (*.yml)")) {
+		importCalcConditionFromYaml(fname);
 	} else {
 		// invalid!
 		Q_ASSERT(0);
@@ -206,6 +207,19 @@ void PreProcessorDataModel::importCalcConditionFromCGNS(const QString& fname)
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	if (pre->importInputCondition(fname)) {
 		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from %1.").arg(QDir::toNativeSeparators(fname)));
+		QFileInfo finfo(fname);
+		LastIODirectory::set(finfo.absolutePath());
+		setModified();
+	} else {
+		QMessageBox::critical(projectData()->mainWindow(), tr("Fail"), tr("Importing calculation condition failed."));
+	}
+}
+
+void PreProcessorDataModel::importCalcConditionFromYaml(const QString& fname)
+{
+	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
+	if (pre->importInputCondition(fname)){
+		QMessageBox::information(projectData()->mainWindow(), tr("Success"), tr("Calculation Condition is successfully imported from the specified file."));
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
 		setModified();

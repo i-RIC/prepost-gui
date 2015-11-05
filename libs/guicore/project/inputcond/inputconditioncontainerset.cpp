@@ -3,12 +3,19 @@
 #include "../../solverdef/solverdefinition.h"
 
 #include <misc/errormessage.h>
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
+#include <QFile>
 #include <QMessageBox>
+#include <QTextStream>
+
+#include <yaml-cpp/yaml.h>
+
+#include <fstream>
 
 InputConditionContainerSet::InputConditionContainerSet(QWidget* widget)
 {
@@ -206,4 +213,32 @@ void InputConditionContainerSet::copyValues(const InputConditionContainerSet* se
 	for (auto it_func = m_functionals.begin(); it_func != m_functionals.end(); ++it_func) {
 		it_func.value() = set->m_functionals.value(it_func.key());
 	}
+}
+
+bool InputConditionContainerSet::importFromYaml(const QString& filename)
+{
+	YAML::Node config = YAML::LoadFile(iRIC::toStr(filename));
+	QMap<QString, InputConditionContainer*>::iterator it;
+	for (it = m_containers.begin(); it != m_containers.end(); ++it) {
+		InputConditionContainer* c = *it;
+		c->importFromYaml(config);
+	}
+	return true;
+}
+
+bool InputConditionContainerSet::exportToYaml(const QString& filename)
+{
+	QFile csvFile(filename);
+	bool ok = csvFile.open(QFile::WriteOnly);
+	if (! ok) {return false;}
+
+	QTextStream stream(&csvFile);
+	QMap<QString, InputConditionContainer*>::iterator it;
+	for (it = m_containers.begin(); it != m_containers.end(); ++it) {
+		InputConditionContainer* c = *it;
+		c->exportToYaml(&stream);
+	}
+
+	csvFile.close();
+	return true;
 }

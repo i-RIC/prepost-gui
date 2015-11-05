@@ -172,6 +172,30 @@ ERROR_BEFORE_CLOSE:
 	return false;
 }
 
+bool InputConditionDialog::importFromYaml(const QString& filename)
+{
+	// load data from yaml file
+	bool ret = m_containerSet->importFromYaml(filename);
+	if (! ret) {return false;}
+	int fn;
+
+	// now save the loaded data to the current CGNS file.
+	ret = cg_open(iRIC::toStr(m_fileName).c_str(), CG_MODE_MODIFY, &fn);
+	if (ret != 0){return false;}
+	ret = cg_iRIC_GotoCC(fn);
+	if (ret != 0){goto ERROR_BEFORE_CLOSE;}
+	ret = m_containerSet->save();
+	if (ret != 0){goto ERROR_BEFORE_CLOSE;}
+	ret = cg_close(fn);
+	if (ret != 0){return false;}
+
+	return true;
+
+ERROR_BEFORE_CLOSE:
+	cg_close(fn);
+	return false;
+}
+
 bool InputConditionDialog::doExport(const QString& filename)
 {
 	// Create an empty CGNS file first. Use temporary name,
@@ -207,6 +231,11 @@ bool InputConditionDialog::doExport(const QString& filename)
 	bret = QFile::remove(tmpname);
 	if (! bret) {return false;}
 	return true;
+}
+
+bool InputConditionDialog::exportToYaml(const QString& filename)
+{
+	return m_containerSet->exportToYaml(filename);
 }
 
 void InputConditionDialog::handleButtonClick(QAbstractButton* button)

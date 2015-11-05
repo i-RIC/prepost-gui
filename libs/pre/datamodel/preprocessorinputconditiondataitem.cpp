@@ -11,6 +11,7 @@
 #include <misc/stringtool.h>
 
 #include <QAction>
+#include <QFileInfo>
 #include <QLocale>
 #include <QMenu>
 #include <QStandardItem>
@@ -85,7 +86,14 @@ bool PreProcessorInputConditionDataItem::importInputCondition(const QString& fil
 	projectData()->mainfile()->postSolutionInfo()->close();
 	QString fname = projectData()->currentCgnsFileName();
 	m_dialog->setFileName(fname);
-	bool ret = m_dialog->import(filename);
+
+	bool ret;
+	QFileInfo finfo(filename);
+	if (finfo.suffix() == "yml") {
+		ret = m_dialog->importFromYaml(filename);
+	} else {
+		ret = m_dialog->import(filename);
+	}
 	if (ret) {m_isSet = true;}
 	return ret;
 }
@@ -94,5 +102,11 @@ bool PreProcessorInputConditionDataItem::exportInputCondition(const QString& fil
 {
 	QString fname = projectData()->currentCgnsFileName();
 	m_dialog->setFileName(fname);
-	return m_dialog->doExport(filename);
+
+	QFileInfo finfo(filename);
+	if (finfo.suffix() == "yml") {
+		return m_dialog->exportToYaml(filename);
+	} else {
+		return m_dialog->doExport(filename);
+	}
 }

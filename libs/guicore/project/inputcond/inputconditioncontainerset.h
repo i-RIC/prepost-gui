@@ -28,6 +28,8 @@ public:
 	void setComplexProperty(const QString& compname, int compindex);
 	InputConditionContainerSet* clone() const;
 	void copyValues(const InputConditionContainerSet* set);
+	bool importFromYaml(const QString& filename);
+	bool exportToYaml(const QString& filename);
 
 private:
 	void setupSimple(const QDomNode& contNode, const SolverDefinition& def);

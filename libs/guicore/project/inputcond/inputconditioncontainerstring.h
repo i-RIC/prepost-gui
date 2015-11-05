@@ -11,46 +11,30 @@ class GUICOREDLL_EXPORT InputConditionContainerString : public InputConditionCon
 	Q_OBJECT
 
 public:
-	InputConditionContainerString() : InputConditionContainer() {}
-	InputConditionContainerString(QString n, const QDomNode& defNode) : InputConditionContainer(n) {
-		setup(defNode);
-	}
-	InputConditionContainerString(const InputConditionContainerString& i) : InputConditionContainer(i) {
-		copyValues(i);
-	}
-	InputConditionContainerString& operator=(const InputConditionContainerString& i) {
-		copyValues(i);
-		return *this;
-	}
-	void clear() {
-		m_value = m_default;
-		emit valueChanged(m_value);
-	}
+	InputConditionContainerString();
+	InputConditionContainerString(QString n, const QDomNode& defNode);
+	InputConditionContainerString(const InputConditionContainerString& i);
+	InputConditionContainerString& operator=(const InputConditionContainerString& i);
+	void clear();
 	int load() override;
 	int save() override;
-	virtual QVariant variantValue() const override {return QVariant(m_value);}
-	void setValue(const QString& v) {
-		if (m_value != v) {
-			m_value = v;
-			emit valueChanged(m_value);
-			emit valueChanged();
-		}
-	}
-	const QString& value() const {return m_value;}
-
-protected:
-	void setup(const QDomNode& defNode);
-	void copyValues(const InputConditionContainerString& i) {
-		m_name = i.m_name;
-		m_value = i.m_value;
-		m_default = i.m_default;
-	}
-	QString m_default;
-	QString m_value;
+	virtual QVariant variantValue() const override;
+	void setValue(const QString& v);
+	const QString& value() const;
+	void importFromYaml(const YAML::Node& doc);
+	void exportToYaml(QTextStream* stream);
 
 signals:
 	void valueChanged(const QString& newvalue);
 	void valueChanged();
+
+protected:
+	void setup(const QDomNode& defNode);
+	void copyValues(const InputConditionContainerString& i);
+
+private:
+	QString m_default;
+	QString m_value;
 };
 
 #endif // CGNSFILEINPUTCONDITIONCONTAINERSTRING_H

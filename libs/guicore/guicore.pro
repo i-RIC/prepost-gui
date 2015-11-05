@@ -8,6 +8,7 @@ TEMPLATE = lib
 
 DEFINES += GUICORE_LIBRARY
 DEFINES += ANSI_DECLARATORS
+DEFINES += YAML_CPP_DLL
 
 include( ../../paths.pri )
 
@@ -80,6 +81,15 @@ unix {
 	LIBS += -lgdal
 }
 
+# yaml-cpp
+
+win32 {
+	LIBS += -lyaml-cpp
+}
+unix {
+	LIBS += -lgdal
+}
+
 # Qwt
 
 CONFIG(debug, debug|release) {
@@ -129,7 +139,6 @@ LIBS += -lcgnsdll
 unix{
 LIBS += -lcgns
 }
-
 
 # iriclib
 

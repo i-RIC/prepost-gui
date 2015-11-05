@@ -28,6 +28,9 @@ CONFIG(debug, debug|release) {
 
 	# geos
 	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/debug/lib"
+
+	# yaml-cpp
+	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/debug/lib"
 }
 else {
 	# gdal
@@ -59,6 +62,9 @@ else {
 
 	# geos
 	LIBS += -L"E:/iricdev_2013/lib/install/geos-3.4.2/release/lib"
+
+	# yaml-cpp
+	LIBS += -L"E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/lib"
 }
 
 INCLUDEPATH += .
@@ -85,10 +91,16 @@ INCLUDEPATH += "E:/iricdev_2013/lib/install/shapelib-1.3.0/release"
 INCLUDEPATH += "E:/iricdev_2013/lib/install/proj-4.8.0/release/include"
 
 # netcdf
-INCLUDEPATH += "E:/iricdev_2013/lib/install//netcdf-4.3.2/release/include"
+INCLUDEPATH += "E:/iricdev_2013/lib/install/netcdf-4.3.2/release/include"
 
 # geos
 INCLUDEPATH += "E:/iricdev_2013/lib/install/geos-3.4.2/release/include"
+
+# yaml-cpp
+INCLUDEPATH += "E:/iricdev_2013/lib/install/yaml-cpp-0.5.2/release/include"
+
+# boost
+INCLUDEPATH += "C:/usr/src/boost-1.59.0"
 
 #internal libs
 INCLUDEPATH += "E:/iricdev_2013/src/libs"

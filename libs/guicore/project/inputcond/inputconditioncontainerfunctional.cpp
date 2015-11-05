@@ -12,6 +12,36 @@
 #include <iriclib.h>
 #include <stdlib.h>
 
+#include <yaml-cpp/yaml.h>
+
+namespace {
+
+void importDataFromYaml(const YAML::Node& node, InputConditionContainerFunctional::Data* data)
+{
+	if (! node[iRIC::toStr(data->name).c_str()]) {
+		return;
+	}
+	const YAML::Node& myNode = node[iRIC::toStr(data->name).c_str()];
+	YAML::Node::const_iterator it;
+	data->values.clear();
+	for (it = myNode.begin(); it != myNode.end(); ++it) {
+		const YAML::Node& vNode = *it;
+		data->values.append(vNode.as<double>());
+	}
+}
+
+void exportDataToYaml(QTextStream* stream, const InputConditionContainerFunctional::Data& data)
+{
+	*stream << "  " << data.name << ": [";
+	for (int i = 0 ; i < data.values.size(); ++i) {
+		if (i != 0) {*stream << ", ";}
+		*stream << data.values.at(i);
+	}
+	*stream << "]\r\n";
+}
+
+} // namespace
+
 InputConditionContainerFunctional::InputConditionContainerFunctional()
 	: InputConditionContainer()
 {
@@ -45,11 +75,31 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(QString n, 
 	}
 }
 
+InputConditionContainerFunctional::InputConditionContainerFunctional(const InputConditionContainerFunctional& i) :
+	InputConditionContainer(i)
+{
+	copyValues(i);
+}
+
+InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(const InputConditionContainerFunctional& i)
+{
+	copyValues(i);
+	emit valueChanged();
+	return *this;
+}
+
 void InputConditionContainerFunctional::clear()
 {
 	m_param.values = m_paramDefault.values;
 	for (int i = 0; i < m_values.count(); ++i){
 		m_values[i].values = m_valuesDefault[i].values;
+	}
+}
+
+void InputConditionContainerFunctional::removeAllValues(){
+	m_param.values.clear();
+	for (int i = 0; i < m_values.count(); ++i){
+		m_values[i].values.clear();
 	}
 }
 
@@ -161,6 +211,95 @@ int InputConditionContainerFunctional::save()
 		}
 	}
 	return 0;
+}
+
+QVariant InputConditionContainerFunctional::variantValue() const
+{
+	return QVariant(0);
+}
+
+void InputConditionContainerFunctional::setValue(const QVector<double>& x, const QVector<double>& y)
+{
+	m_param.name = "Param";
+	m_param.values = x;
+
+	m_values.clear();
+	Data val;
+	val.name = "Value";
+	val.values = y;
+	m_values.append(val);
+}
+
+QVector<double>& InputConditionContainerFunctional::x()
+{
+	return param();
+}
+
+QVector<double>& InputConditionContainerFunctional::y()
+{
+	return value(0);
+}
+
+int InputConditionContainerFunctional::valueCount() const
+{
+	return m_values.count();
+}
+
+QVector<double>& InputConditionContainerFunctional::param()
+{
+	return m_param.values;
+}
+
+const QVector<double>& InputConditionContainerFunctional::param() const
+{
+	return m_param.values;
+}
+
+QVector<double>& InputConditionContainerFunctional::value(int index)
+{
+	return m_values[index].values;
+}
+
+const QVector<double>& InputConditionContainerFunctional::value(int index) const
+{
+	return m_values[index].values;
+}
+
+void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc)
+{
+	if (doc[iRIC::toStr(m_name).c_str()]) {
+		const YAML::Node& myNode = doc[iRIC::toStr(m_name).c_str()];
+		importDataFromYaml(myNode, &m_param);
+		for (int i = 0; i < m_values.size(); ++i) {
+			importDataFromYaml(myNode, &(m_values[i]));
+		}
+	}
+	bool allLenSame = true;
+	int paramLen = m_param.values.size();
+	for (int i = 0; i < m_values.size(); ++i){
+		allLenSame = allLenSame && (paramLen == m_values[i].values.size());
+	}
+	if (! allLenSame){
+		clear();
+	}
+}
+
+void InputConditionContainerFunctional::exportToYaml(QTextStream* stream)
+{
+	*stream << m_name << ": " << "\r\n";
+	exportDataToYaml(stream, m_param);
+	for (int i = 0; i < m_values.length(); ++i) {
+		exportDataToYaml(stream, m_values.at(i));
+	}
+}
+
+void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
+{
+	m_name = f.m_name;
+	m_param = f.m_param;
+	m_values = f.m_values;
+	m_paramDefault = f.m_paramDefault;
+	m_valuesDefault = f.m_valuesDefault;
 }
 
 void InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)

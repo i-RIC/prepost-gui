@@ -4,14 +4,78 @@
 
 #include <QDomElement>
 #include <QDomNode>
+#include <QTextStream>
+
+#include <yaml-cpp/yaml.h>
 
 #include <iriclib.h>
+
+
+InputConditionContainerReal::InputConditionContainerReal() :
+	InputConditionContainer(),
+	m_value {0},
+	m_default {0}
+{}
+
+InputConditionContainerReal::InputConditionContainerReal(QString n, const QDomNode& defNode) :
+	InputConditionContainer(n)
+{
+	setup(defNode);
+}
+
+InputConditionContainerReal::InputConditionContainerReal(const InputConditionContainerReal& i) :
+	InputConditionContainer(i)
+{
+	copyValues(i);
+}
+
+InputConditionContainerReal& InputConditionContainerReal::operator=(const InputConditionContainerReal& i)
+{
+	copyValues(i);
+	return *this;
+}
 
 void InputConditionContainerReal::setup(const QDomNode& defNode)
 {
 	QDomElement e = defNode.toElement();
 	m_default = e.attribute("default", "0").toDouble();
 	m_value = m_default;
+}
+
+void InputConditionContainerReal::copyValues(const InputConditionContainerReal& i)
+{
+	m_name = i.m_name;
+	m_value = i.m_value;
+	m_default = i.m_default;
+}
+
+QVariant InputConditionContainerReal::variantValue() const
+{
+	return QVariant(m_value);
+}
+
+void InputConditionContainerReal::setValue(double v)
+{
+	if (m_value != v) {
+		m_value = v;
+		emit valueChanged(m_value);
+		emit valueChanged();
+	}
+}
+
+double InputConditionContainerReal::value() const
+{
+	return m_value;
+}
+
+void InputConditionContainerReal::setDefaultValue(double d)
+{
+	m_default = d;
+}
+
+double InputConditionContainerReal::defaultValue() const
+{
+	return m_default;
 }
 
 void InputConditionContainerReal::clear()
@@ -22,6 +86,7 @@ void InputConditionContainerReal::clear()
 		emit valueChanged();
 	}
 }
+
 int InputConditionContainerReal::load()
 {
 	int ret;
@@ -40,6 +105,7 @@ int InputConditionContainerReal::load()
 	}
 	return ret;
 }
+
 int InputConditionContainerReal::save()
 {
 	if (m_isBoundaryCondition) {
@@ -49,4 +115,18 @@ int InputConditionContainerReal::save()
 	} else {
 		return cg_iRIC_Write_Real(const_cast<char*>(iRIC::toStr(m_name).c_str()), m_value);
 	}
+}
+
+void InputConditionContainerReal::importFromYaml(const YAML::Node& doc)
+{
+	if (doc[iRIC::toStr(m_name).c_str()]) {
+		m_value = doc[iRIC::toStr(m_name).c_str()].as<double>();
+		emit valueChanged(m_value);
+		emit valueChanged();
+	}
+}
+
+void InputConditionContainerReal::exportToYaml(QTextStream* stream)
+{
+	*stream << m_name << ": " << m_value << "\r\n";
 }
