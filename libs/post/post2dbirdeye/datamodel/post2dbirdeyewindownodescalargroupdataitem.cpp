@@ -489,11 +489,10 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QStrin
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (dynamic_cast<vtkStructuredGrid*> (cont->data()) == nullptr) {
 		// unstructured grid.
-		vtkPointSet* ps = cont->data();
 		vtkSmartPointer<vtkGeometryFilter> geoFilter = vtkSmartPointer<vtkGeometryFilter>::New();
-		geoFilter->SetInputData(ps);
+		geoFilter->SetInputData(cont->data());
 		geoFilter->Update();
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();
@@ -508,9 +507,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
 		}
 	} else {
 		// structured grid.
-		vtkPointSet* ps = cont->data();
 		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		geoFilter->SetInputData(ps);
+		geoFilter->SetInputData(cont->data());
 		geoFilter->Update();
 		if (m_setting.regionMode == StructuredGridRegion::rmFull) {
 			m_regionClippedPolyData = geoFilter->GetOutput();

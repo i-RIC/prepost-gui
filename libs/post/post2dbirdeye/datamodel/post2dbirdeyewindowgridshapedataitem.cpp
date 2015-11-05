@@ -24,8 +24,7 @@ Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent)->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (dynamic_cast<vtkStructuredGrid*>(cont->data()) == nullptr) {
 		m_setting.shape = GridShapeEditDialog::Wireframe;
 	}
 
@@ -57,8 +56,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
 	m_outlineActor->GetProperty()->SetLineWidth(normalOutlineWidth);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() != SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (dynamic_cast<vtkStructuredGrid*> (cont->data()) != nullptr){
 		renderer()->AddActor(m_outlineActor);
 	}
 	// build mapper too.
@@ -196,8 +194,7 @@ QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 	dialog->setSetting(m_setting);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	if (gt->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+	if (dynamic_cast<vtkStructuredGrid*> (cont->data()) == nullptr) {
 		dialog->hideShape();
 	}
 	return dialog;
