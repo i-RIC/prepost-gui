@@ -67,7 +67,8 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNum
 		m_scalarGroupDataItem = nullptr;
 	}
 	if (cont->vectorValueExists()) {
-		if (cont->gridType()->defaultGridType() == SolverDefinitionGridType::gtUnstructured2DGrid) {
+		vtkPointSet* data = cont->data();
+		if (dynamic_cast<vtkUnstructuredGrid*> (data) != nullptr){
 			m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(this);
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(this);
