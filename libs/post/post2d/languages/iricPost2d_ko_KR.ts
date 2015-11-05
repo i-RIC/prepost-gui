@@ -429,12 +429,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="171"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="170"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="171"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="170"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1135,8 +1135,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="105"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="107"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="106"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="108"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1144,7 +1144,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="198"/>
+        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="196"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>

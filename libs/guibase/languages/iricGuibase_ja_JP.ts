@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
@@ -323,23 +323,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="vanished">X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="vanished">Y: ------</translation>
     </message>
 </context>
 <context>

@@ -110,7 +110,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="210"/>
+        <location filename="../datamodel/post2dbirdeyewindowgridshapedataitem.cpp" line="207"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>

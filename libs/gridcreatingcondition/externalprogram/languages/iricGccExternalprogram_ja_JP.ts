@@ -54,27 +54,27 @@
         <translation>格子生成(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="128"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="128"/>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
         <translation>本当に格子生成条件を初期状態に戻していいですか?</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="138"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="138"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="150"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="148"/>
         <source>Unknown error (Error code: %1)</source>
         <translation>不明なエラー (エラーコード %1)</translation>
     </message>

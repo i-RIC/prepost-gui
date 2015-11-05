@@ -53,27 +53,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="128"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="130"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="128"/>
         <source>Are you sure you want to reset all grid creating conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="138"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="140"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="138"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="150"/>
+        <location filename="../gridcreatingconditionexternalprogramsettingdialog.cpp" line="148"/>
         <source>Unknown error (Error code: %1)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -546,28 +546,28 @@
 <context>
     <name>InputConditionContainerSet</name>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="99"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="113"/>
         <source>Definition node is not stored</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="127"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="141"/>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="130"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="144"/>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="133"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="147"/>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="134"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="148"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -585,53 +585,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="119"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="143"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="258"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="120"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="250"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="144"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="250"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="258"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
         <source>Error occured while saving.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
         <source>Modifications you made will be discarded.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -697,32 +697,49 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="72"/>
-        <source>Import</source>
+        <source>&amp;Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="79"/>
+        <source>&amp;Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="86"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="277"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
         <source>Choose a text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="277"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="286"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="286"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
         <source>Error occured while opening the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <source>Specify file name to save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <source>CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1325,7 +1342,7 @@ Do you really want to import this file?</source>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
-        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="15"/>
+        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="16"/>
         <source>Grid</source>
         <translation type="unfinished"></translation>
     </message>

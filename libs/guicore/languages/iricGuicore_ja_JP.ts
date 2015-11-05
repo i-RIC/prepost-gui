@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -118,81 +118,81 @@
     <name>CgnsFileInputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="vanished">Definition 要素が見つかりません</translation>
+        <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="vanished">ソルバー定義ファイルの読み込み中にエラーが発生しました。
+        <translation>ソルバー定義ファイルの読み込み中にエラーが発生しました。
 %1: %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="vanished">計算条件</translation>
+        <translation>計算条件</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">保存して閉じる(&amp;S)</translation>
+        <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
+        <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="vanished">この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
+        <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="vanished">この CGNS ファイルには、計算条件がありません。</translation>
+        <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="vanished">すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
+        <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="vanished">ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
+        <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="vanished">保存中にエラーが発生しました。</translation>
+        <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="vanished">行った変更は破棄されます。</translation>
+        <translation>行った変更は破棄されます。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="vanished">グループ</translation>
+        <translation>グループ</translation>
     </message>
 </context>
 <context>
@@ -213,11 +213,11 @@ Do you really want to import this file?</source>
     <name>CgnsFileInputConditionWidgetFilenameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="vanished">ファイル名には、 英数字と記号しか使用できません。</translation>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
@@ -237,68 +237,68 @@ Do you really want to import this file?</source>
     <name>CgnsFileInputConditionWidgetFoldernameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation type="vanished">フォルダ名には、 英数字と記号しか使用できません。</translation>
+        <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation type="vanished">編集</translation>
+        <translation>編集</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="vanished">計算条件</translation>
+        <translation>計算条件</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="vanished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="vanished">削除</translation>
+        <translation>削除</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="vanished">インポート</translation>
+        <translation>インポート</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="vanished">クリア</translation>
+        <translation>クリア</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="vanished">テキストファイルの選択</translation>
+        <translation>テキストファイルの選択</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="vanished">テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
+        <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="vanished">ファイルを開く時にエラーが発生しました。</translation>
+        <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetString</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="vanished">文字列には、英数字と記号しか使用できません。</translation>
+        <translation>文字列には、英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
@@ -572,7 +572,7 @@ Do you really want to import this file?</source>
     <name>GridAttributeEditCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -593,7 +593,7 @@ Do you really want to import this file?</source>
     <name>GridAttributeEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -721,124 +721,124 @@ Do you really want to import this file?</source>
     <name>GridRelatedCellConditionPropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="vanished">ラベル:</translation>
+        <translation>ラベル:</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="vanished">一つ前へ(&amp;B)</translation>
+        <translation>一つ前へ(&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="vanished">一つ次へ(&amp;F)</translation>
+        <translation>一つ次へ(&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="vanished">先頭へ(&amp;R)</translation>
+        <translation>先頭へ(&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="vanished">最後のステップへ(&amp;L)</translation>
+        <translation>最後のステップへ(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="vanished">開始/停止(&amp;S)</translation>
+        <translation>開始/停止(&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="vanished">停止(&amp;T)</translation>
+        <translation>停止(&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="vanished">再生の速度の編集(&amp;A)...</translation>
+        <translation>再生の速度の編集(&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="vanished">テキストラベル</translation>
+        <translation>テキストラベル</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="vanished">テキストラベル</translation>
+        <translation>テキストラベル</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedNodeConditionPropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="vanished">コンター設定</translation>
+        <translation>コンター設定</translation>
     </message>
 </context>
 <context>
     <name>InputConditionContainerSet</name>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="99"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="113"/>
         <source>Definition node is not stored</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="127"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="141"/>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
         <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="130"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="144"/>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
         <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="133"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="147"/>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
         <translation>ソルバー定義ファイルの読み込み中にエラーが発生しました。
 %1: %2</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="134"/>
+        <location filename="../project/inputcond/inputconditioncontainerset.cpp" line="148"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -856,54 +856,54 @@ Do you really want to import this file?</source>
         <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="149"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="119"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="143"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="258"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="120"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="131"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="125"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="250"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="132"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="126"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
         <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="150"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="144"/>
         <source>This CGNS file does not contain calculation condition data.</source>
         <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="227"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="250"/>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
         <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="235"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="258"/>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
         <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="242"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="265"/>
         <source>Error occured while saving.</source>
         <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditiondialog.cpp" line="252"/>
+        <location filename="../project/inputcond/inputconditiondialog.cpp" line="275"/>
         <source>Modifications you made will be discarded.</source>
         <translation>行った変更は破棄されます。</translation>
     </message>
@@ -969,33 +969,54 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="72"/>
+        <source>&amp;Import</source>
+        <translation>インポート(&amp;I)</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="79"/>
+        <source>&amp;Export</source>
+        <translation>エクスポート(&amp;E)</translation>
+    </message>
+    <message>
         <source>Import</source>
         <translation>インポート</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="79"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="86"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="277"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="277"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="286"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="286"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <source>Specify file name to save</source>
+        <translation>保存するファイルの名前を指定</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <source>CSV files (*.csv)</source>
+        <translation>CSV ファイル (*.csv)</translation>
     </message>
 </context>
 <context>
@@ -1363,7 +1384,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>VTK files</source>
-        <translation type="vanished">VTKファイル</translation>
+        <translation>VTKファイル</translation>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="40"/>
@@ -1601,7 +1622,7 @@ Do you really want to import this file?</source>
 <context>
     <name>PreProcessorDataItem</name>
     <message>
-        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="15"/>
+        <location filename="../pre/base/preprocessorgriddataiteminterface.h" line="16"/>
         <source>Grid</source>
         <translation>格子</translation>
     </message>
@@ -1618,7 +1639,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridDataItemInterface</name>
     <message>
         <source>Grid</source>
-        <translation type="vanished">格子</translation>
+        <translation>格子</translation>
     </message>
 </context>
 <context>
@@ -1701,7 +1722,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
+        <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="374"/>
@@ -1732,7 +1753,7 @@ Do you really want to import this file?</source>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.
 Do you really want to import this file?</source>
-        <translation type="vanished">この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込むと、 iRIC が異常終了することがあります。
+        <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込むと、 iRIC が異常終了することがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
@@ -1958,15 +1979,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="vanished">コンターの設定変更</translation>
+        <translation>コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="vanished">コンター 物理量変更</translation>
+        <translation>コンター 物理量変更</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="vanished">ベクトル 物理量変更</translation>
+        <translation>ベクトル 物理量変更</translation>
     </message>
     <message>
         <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="443"/>
@@ -1975,7 +1996,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="vanished">背景の値の編集</translation>
+        <translation>背景の値の編集</translation>
     </message>
     <message>
         <location filename="../project/backgroundimageinfo.cpp" line="275"/>
@@ -1998,45 +2019,45 @@ Do you really want to import this file?</source>
     <name>RawData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="vanished">名前の編集(&amp;N)...</translation>
+        <translation>名前の編集(&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>RawDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="vanished">デフォルト</translation>
+        <translation>デフォルト</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="vanished">値の編集...</translation>
+        <translation>値の編集...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="vanished">%1 のデフォルト値の編集</translation>
+        <translation>%1 のデフォルト値の編集</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="vanished">新しいデフォルト値を入力してください。</translation>
+        <translation>新しいデフォルト値を入力してください。</translation>
     </message>
 </context>
 <context>
     <name>RawDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="vanished">地理情報の最小値</translation>
+        <translation>地理情報の最小値</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="vanished">地理情報の最大値</translation>
+        <translation>地理情報の最大値</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="vanished">指定した値</translation>
+        <translation>指定した値</translation>
     </message>
 </context>
 <context>
