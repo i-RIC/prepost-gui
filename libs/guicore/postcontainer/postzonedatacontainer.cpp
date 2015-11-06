@@ -27,6 +27,7 @@
 #include <vtkGeometryFilter.h>
 #include <vtkIntArray.h>
 #include <vtkPointData.h>
+#include <vtkQuad.h>
 #include <vtkSmartPointer.h>
 #include <vtkStringArray.h>
 #include <vtkStructuredGrid.h>
@@ -40,6 +41,47 @@
 #include <vector>
 
 #define ELEMNODENAME "Element"
+
+// namespace for local funcitions
+namespace {
+
+void setPointIds(vtkIdList* idlist, int* points, int num)
+{
+	for (int i = 0; i < num; ++i) {
+		int id = *(points + i) - 1;
+		idlist->SetId(i, id);
+	}
+}
+
+void insertTriangleCells(int fn, int baseId, int zoneId, int secId, vtkUnstructuredGrid* grid)
+{
+	cgsize_t numCells;
+	cg_ElementDataSize(fn, baseId, zoneId, secId, &numCells);
+	numCells = numCells / 3;
+	std::vector<cgsize_t> elements(3 * numCells, 0);
+	cg_elements_read(fn, baseId, zoneId, secId, elements.data(), NULL);
+	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
+	for (int i = 0; i < numCells; ++i) {
+		setPointIds(tri->GetPointIds(), &(elements[i * 3]), 3);
+		grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+	}
+}
+
+void insertQuadCells(int fn, int baseId, int zoneId, int secId, vtkUnstructuredGrid* grid)
+{
+	cgsize_t numCells;
+	cg_ElementDataSize(fn, baseId, zoneId, secId, &numCells);
+	numCells = numCells / 4;
+	std::vector<cgsize_t> elements(4 * numCells, 0);
+	cg_elements_read(fn, baseId, zoneId, secId, elements.data(), NULL);
+	vtkSmartPointer<vtkQuad> quad = vtkSmartPointer<vtkQuad>::New();
+	for (int i = 0; i < numCells; ++i) {
+		setPointIds(quad->GetPointIds(), &(elements[i * 4]), 4);
+		grid->InsertNextCell(quad->GetCellType(), quad->GetPointIds());
+	}
+}
+
+} // namespace
 
 const QString PostZoneDataContainer::labelName {"_LABEL"};
 const QString PostZoneDataContainer::IBC {"IBC"};
@@ -318,25 +360,12 @@ bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int current
 		int nBndry, parent_flag;
 		char buffer[32];
 		cg_section_read(fn, m_baseId, m_zoneId, S, buffer, &eType, &startIndex, &endIndex, &nBndry, &parent_flag);
-		if (QString(buffer) == ELEMNODENAME) {
-			// the target element node found!
-			// eType must be TRI3.
-			cgsize_t numCells;
-			cg_ElementDataSize(fn, m_baseId, m_zoneId, S, &numCells);
-			numCells = numCells / 3;
-			std::vector<cgsize_t> elements(3 * numCells, 0);
-			cg_elements_read(fn, m_baseId, m_zoneId, S, elements.data(), NULL);
-			grid->Allocate(numCells);
-			vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
-			for (int i = 0; i < numCells; ++i) {
-				int id0 = elements[i * 3] - 1;
-				int id1 = elements[i * 3 + 1] - 1;
-				int id2 = elements[i * 3 + 2] - 1;
-				triangle->GetPointIds()->SetId(0, id0);
-				triangle->GetPointIds()->SetId(1, id1);
-				triangle->GetPointIds()->SetId(2, id2);
-				grid->InsertNextCell(triangle->GetCellType(), triangle->GetPointIds());
-			}
+		if (eType == TRI_3) {
+			// Triangle
+			insertTriangleCells(fn, m_baseId, m_zoneId, S, grid);
+		} else if (eType == QUAD_4) {
+			// Quadrangle
+			insertQuadCells(fn, m_baseId, m_zoneId, S, grid);
 		}
 	}
 	return true;
