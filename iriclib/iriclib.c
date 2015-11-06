@@ -87,11 +87,11 @@ static int local_gotoccbase_Mul(int fid){
 }
 
 static int local_gotobaseiterative_Mul(int fid){
-	return cg_goto(fid, *(baseid + fileindex[fid]), BINAME, 0, "end");
+	return cg_goto(fid, *(baseid + fileindex[fid]), "BaseIterativeData_t", 1, "end");
 }
 
 static int local_gotoccbaseiterative_Mul(int fid){
-	return cg_goto(fid, *(ccbaseid + fileindex[fid]), BINAME, 0, "end");
+	return cg_goto(fid, *(ccbaseid + fileindex[fid]), "BaseIterativeData_t", 1, "end");
 }
 
 static int local_gotozoneiterative_Mul(int fid){
@@ -1939,6 +1939,27 @@ int cg_iRIC_WriteGridCoord3d_Mul(int fid, cgsize_t isize, cgsize_t jsize, cgsize
 	return 0;
 }
 
+int cg_iRIC_InitGrid_Mul(int fid, int zoneId)
+{
+	int ier;
+
+	*(zoneid + fileindex[fid]) = zoneId;
+
+	// initializes gridconditions
+	ier = local_gc_add_gcnode_Mul(fid);
+	if (ier != 0){return ier;}
+	// initialized gridcomplexconditions
+	ier = local_complex_add_gccnode_Mul(fid);
+	if (ier != 0){return ier;}
+	// initializes base iterative data.
+	ier = local_init_biter_Mul(fid);
+	if (ier != 0){return ier;}
+	// initializes zone iterativedata.
+	ier = local_init_ziter_Mul(fid);
+	if (ier != 0){return ier;}
+	return 0;
+}
+
 int cg_iRIC_Write_Grid_Real_Node_Mul(int fid, char* name, double* values)
 {
 	int ier;
@@ -3105,6 +3126,11 @@ int cg_iRIC_WriteGridCoord2d(cgsize_t isize, cgsize_t jsize, double* x, double* 
 int cg_iRIC_WriteGridCoord3d(cgsize_t isize, cgsize_t jsize, cgsize_t ksize, double* x, double* y, double* z)
 {
 	return cg_iRIC_WriteGridCoord3d_Mul(lastfileid, isize, jsize, ksize, x, y, z);
+}
+
+int cg_iRIC_InitGrid(int zoneId)
+{
+	return cg_iRIC_InitGrid_Mul(lastfileid, zoneId);
 }
 
 int cg_iRIC_Write_Grid_Real_Node(char* name, double* values)

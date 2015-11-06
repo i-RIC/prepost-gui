@@ -179,6 +179,8 @@ int IRICLIBDLL cg_iRIC_WriteGridCoord2d_Mul(int fid, cgsize_t isize, cgsize_t js
 
 int IRICLIBDLL cg_iRIC_WriteGridCoord3d_Mul(int fid, cgsize_t isize, cgsize_t jsize, cgsize_t ksize, double* x, double* y, double* z);
 
+int IRICLIBDLL cg_iRIC_InitGrid_Mul(int fid, int zoneId);
+
 int IRICLIBDLL cg_iRIC_Write_Grid_Real_Node_Mul(int fid, char* name, double* values);
 
 int IRICLIBDLL cg_iRIC_Write_Grid_Integer_Node_Mul(int fid, char* name, int* values);
@@ -458,6 +460,8 @@ int IRICLIBDLL cg_iRIC_WriteGridCoord1d(cgsize_t isize, double* x);
 int IRICLIBDLL cg_iRIC_WriteGridCoord2d(cgsize_t isize, cgsize_t jsize, double* x, double* y);
 
 int IRICLIBDLL cg_iRIC_WriteGridCoord3d(cgsize_t isize, cgsize_t jsize, cgsize_t ksize, double* x, double* y, double* z);
+
+int IRICLIBDLL cg_iRIC_InitGrid(int zoneId);
 
 int IRICLIBDLL cg_iRIC_Write_Grid_Real_Node(char* name, double* values);
 

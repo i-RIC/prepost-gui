@@ -540,6 +540,10 @@ void IRICLIBDLL FMNAME(cg_iric_writegridcoord3d_mul_f, CG_IRIC_WRITEGRIDCOORD3D_
 	*ier = cg_iRIC_WriteGridCoord3d_Mul(*fid, c_isize, c_jsize, c_ksize, x, y, z);
 }
 
+void IRICLIBDLL FMNAME(cg_iric_initgrid_mul_f, CG_IRIC_INITGRID_MUL_F) (int *fid, int *zoneId, int *ier) {
+	*ier = cg_iRIC_InitGrid_Mul(*fid, *zoneId);
+}
+
 void IRICLIBDLL FMNAME(cg_iric_write_grid_real_node_mul_f, CG_IRIC_WRITE_GRID_REAL_NODE_MUL_F) (int *fid, STR_PSTR(name), double *values, int *ier STR_PLEN(name)) {
 	char c_name[CGIO_MAX_NAME_LENGTH+1];
 	string_2_C_string(STR_PTR(name), STR_LEN(name),
@@ -1400,6 +1404,10 @@ void IRICLIBDLL FMNAME(cg_iric_writegridcoord3d_f, CG_IRIC_WRITEGRIDCOORD3D_F) (
 	c_jsize = (cgsize_t)(*jsize);
 	c_ksize = (cgsize_t)(*ksize);
 	*ier = cg_iRIC_WriteGridCoord3d(c_isize, c_jsize, c_ksize, x, y, z);
+}
+
+void IRICLIBDLL FMNAME(cg_iric_initgrid_f, CG_IRIC_INITGRID_F) (int *zoneId, int *ier) {
+	*ier = cg_iRIC_InitGrid(*zoneId);
 }
 
 void IRICLIBDLL FMNAME(cg_iric_write_grid_real_node_f, CG_IRIC_WRITE_GRID_REAL_NODE_F) (STR_PSTR(name), double *values, int *ier STR_PLEN(name)) {
