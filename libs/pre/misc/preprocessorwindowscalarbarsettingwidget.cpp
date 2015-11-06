@@ -193,6 +193,16 @@ PreProcessorWindowScalarBarSettingWidget::Setting PreProcessorWindowScalarBarSet
 	return s;
 }
 
+const vtkTextPropertySettingContainer& PreProcessorWindowScalarBarSettingWidget::titleTextSetting() const
+{
+	return m_titleTextSetting;
+}
+
+const vtkTextPropertySettingContainer& PreProcessorWindowScalarBarSettingWidget::labelTextSetting() const
+{
+	return m_labelTextSetting;
+}
+
 void PreProcessorWindowScalarBarSettingWidget::editTitleTextSetting()
 {
 	vtkTextPropertySettingDialog dialog(this);

@@ -17,12 +17,12 @@ public:
 	QAction* backgroundColorAction;
 	QAction* editZScaleAction;
 
-	QMenu* drawMenu() {return m_drawMenu;}
-//	void connectWithDataModel() override;
+	QMenu* drawMenu() const;
 
 private:
 	void init();
 	void setupDrawMenu();
+
 	QMenu* m_drawMenu;
 	GridBirdEyeWindow* m_gridBirdEyeWindow;
 };

@@ -442,6 +442,11 @@ bool PreProcessorWindow::checkMappingStatus()
 	return model()->checkMappingStatus();
 }
 
+PreProcessorDataModelInterface* PreProcessorWindow::dataModel() const
+{
+	return m_dataModel;
+}
+
 PreProcessorDataModel* PreProcessorWindow::model() const
 {
 	if (m_dataModel == nullptr){return nullptr;}

@@ -8,7 +8,6 @@
 /// river survey data.
 class PreAbstractGeoData : public ProjectDataItem
 {
-
 public:
 	/// Constructor
 	PreAbstractGeoData(ProjectDataItem* parent);

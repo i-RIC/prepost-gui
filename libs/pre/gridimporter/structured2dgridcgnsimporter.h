@@ -7,7 +7,7 @@ class Structured2DGridCgnsImporter : public CgnsGridImporter
 {
 
 public:
-	Structured2DGridCgnsImporter() : CgnsGridImporter() {}
+	Structured2DGridCgnsImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:

@@ -217,6 +217,21 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 	cameraFit();
 }
 
+const QString& PreProcessorGridCrosssectionWindow::condition() const
+{
+	return m_condition;
+}
+
+PreProcessorGridCrosssectionWindow::Direction PreProcessorGridCrosssectionWindow::targetDirection() const
+{
+	return m_direction;
+}
+
+int PreProcessorGridCrosssectionWindow::targetIndex() const
+{
+	return m_blackLineIndex;
+}
+
 struct SelectionRange {
 	int top;
 	int left;
@@ -497,7 +512,7 @@ void GeoDataRiverSurveyCrosssectionEditCommand::undo()
 }
 */
 
-QTableView* PreProcessorGridCrosssectionWindow::tableView()
+QTableView* PreProcessorGridCrosssectionWindow::tableView() const
 {
 	return ui->tableView;
 }
@@ -505,6 +520,11 @@ QTableView* PreProcessorGridCrosssectionWindow::tableView()
 void PreProcessorGridCrosssectionWindow::informFocusIn()
 {
 //	m_riverSurvey->setColoredPoints(m_blackLinePoint, m_redLinePoint, m_blueLinePoint);
+}
+
+Structured2DGrid* PreProcessorGridCrosssectionWindow::grid() const
+{
+	return m_grid;
 }
 
 void PreProcessorGridCrosssectionWindow::update()

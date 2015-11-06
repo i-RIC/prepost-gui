@@ -7,7 +7,7 @@ class Structured2DGridProjectImporter : public ProjectGridImporter
 {
 
 public:
-	Structured2DGridProjectImporter() : ProjectGridImporter() {}
+	Structured2DGridProjectImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:

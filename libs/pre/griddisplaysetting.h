@@ -15,17 +15,17 @@ public:
 	};
 	/// Constructor
 	GridDisplaySetting();
-	ShapeMode shapeMode() const {return m_shapeMode;}
-	void setShapeLineStyle(const LineStyleInformation& ls) {m_shapeLineStyle = ls;}
-	const LineStyleInformation& shapeLineStyle() const {return m_shapeLineStyle;}
-	void setShapePointStyle(const PointStyleInformation& ps) {m_shapePointStyle = ps;}
-	const PointStyleInformation& shapePointStyle() const {return m_shapePointStyle;}
-	bool showNodeValue() const {return m_showNodeValue;}
-	const QString& shownNodeValueName() const {return m_shownNodeValueName;}
-	void setShownNodeValueName(const QString& n) {m_shownNodeValueName = n;}
-	bool showCellValue() const {return m_showCellValue;}
-	const QString& shownCellValueName() const {return m_shownCellValueName;}
-	void setShownCellValueName(const QString& n) {m_shownCellValueName = n;}
+	ShapeMode shapeMode() const;
+	void setShapeLineStyle(const LineStyleInformation& ls);
+	const LineStyleInformation& shapeLineStyle() const;
+	void setShapePointStyle(const PointStyleInformation& ps);
+	const PointStyleInformation& shapePointStyle() const;
+	bool showNodeValue() const;
+	const QString& shownNodeValueName() const;
+	void setShownNodeValueName(const QString& n);
+	bool showCellValue() const;
+	const QString& shownCellValueName() const;
+	void setShownCellValueName(const QString& n);
 
 private:
 	ShapeMode m_shapeMode;

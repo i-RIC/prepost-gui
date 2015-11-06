@@ -16,9 +16,9 @@ public:
 	explicit GridBirdEyeWindowAxesSettingDialog(QWidget* parent = nullptr);
 	~GridBirdEyeWindowAxesSettingDialog();
 	void setAxesVisible(bool visible);
-	bool axesVisible();
+	bool axesVisible() const;
 	void setColor(const QColor& col);
-	QColor color();
+	QColor color() const;
 
 private:
 	Ui::GridBirdEyeWindowAxesSettingDialog* ui;

@@ -4,6 +4,10 @@
 
 #include <cgnslib.h>
 
+Structured15DGridWithCrossSectionCgnsImporter::Structured15DGridWithCrossSectionCgnsImporter() :
+	CgnsGridImporter()
+{}
+
 SolverDefinitionGridType::GridType Structured15DGridWithCrossSectionCgnsImporter::supportedGridType() const
 {
 	return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;

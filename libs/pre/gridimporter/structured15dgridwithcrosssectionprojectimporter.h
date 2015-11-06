@@ -7,7 +7,7 @@ class Structured15DGridWithCrossSectionProjectImporter : public ProjectGridImpor
 {
 
 public:
-	Structured15DGridWithCrossSectionProjectImporter() : ProjectGridImporter() {}
+	Structured15DGridWithCrossSectionProjectImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const;
 
 protected:

@@ -69,6 +69,16 @@ SolverDefinitionGridAttribute* PreProcessorScalarBarLegendBoxSettingDialog::cond
 	return group->condition();
 }
 
+const vtkTextPropertySettingContainer& PreProcessorScalarBarLegendBoxSettingDialog::titleTextSetting() const
+{
+	return m_titleTextSetting;
+}
+
+const vtkTextPropertySettingContainer& PreProcessorScalarBarLegendBoxSettingDialog::labelTextSetting() const
+{
+	return m_labelTextSetting;
+}
+
 void PreProcessorScalarBarLegendBoxSettingDialog::setActor2DVisibility(bool vis)
 {
 	if (vis) {

@@ -15,12 +15,17 @@
 #include <QSettings>
 #include <QTranslator>
 
-GridImporterFactory* GridImporterFactory::m_instance = 0;
+GridImporterFactory* GridImporterFactory::m_instance = nullptr;
 
 void GridImporterFactory::init()
 {
 	delete m_instance;
 	m_instance = new GridImporterFactory();
+}
+
+GridImporterFactory& GridImporterFactory::instance()
+{
+	return *m_instance;
 }
 
 GridImporterFactory::GridImporterFactory()

@@ -30,7 +30,7 @@ public:
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	void updateGrid();
-	const QIcon& icon() const {return m_icon;}
+	const QIcon& icon() const;
 
 public slots:
 	void cameraFit();
@@ -49,6 +49,7 @@ public slots:
 
 private:
 	void init(PreProcessorGridDataItem* item);
+
 	GridBirdEyeWindowGraphicsView* m_graphicsView;
 	GridBirdEyeWindowActionManager* m_actionManager;
 	GridBirdEyeWindowDataModel* m_dataModel;

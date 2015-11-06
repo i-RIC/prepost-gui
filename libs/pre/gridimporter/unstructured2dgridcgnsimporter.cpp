@@ -4,6 +4,10 @@
 
 #include <cgnslib.h>
 
+Unstructured2DGridCgnsImporter::Unstructured2DGridCgnsImporter() :
+	CgnsGridImporter()
+{}
+
 SolverDefinitionGridType::GridType Unstructured2DGridCgnsImporter::supportedGridType() const
 {
 	return SolverDefinitionGridType::gtUnstructured2DGrid;

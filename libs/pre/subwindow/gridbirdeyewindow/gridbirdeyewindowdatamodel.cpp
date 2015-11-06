@@ -301,9 +301,15 @@ void GridBirdEyeWindowDataModel::setAxesColor(const QColor& col)
 	m_cubeAxesActor->GetAxisTitleTextProperty()->SetColor(col.redF(), col.greenF(), col.blueF());
 }
 
-QColor GridBirdEyeWindowDataModel::axesColor()
+QColor GridBirdEyeWindowDataModel::axesColor() const
 {
 	double col[3];
 	m_cubeAxesActor->GetProperty()->GetColor(col);
 	return QColor(col[0] * 255, col[1] * 255, col[2] * 255);
 }
+
+void GridBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void GridBirdEyeWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

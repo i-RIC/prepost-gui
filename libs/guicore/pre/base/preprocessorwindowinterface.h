@@ -14,10 +14,9 @@ public:
 	/// constructor
 	PreProcessorWindowInterface(QWidget* widget);
 	/// destructor
-	~PreProcessorWindowInterface() {}
+	virtual ~PreProcessorWindowInterface();
 
-	virtual const PreProcessorDataModelInterface* dataModel() const = 0;
-	virtual PreProcessorDataModelInterface* dataModel() = 0;
+	virtual PreProcessorDataModelInterface* dataModel() const = 0;
 	virtual bool checkMappingStatus() = 0;
 	virtual QString checkGrid(bool detail) = 0;
 };

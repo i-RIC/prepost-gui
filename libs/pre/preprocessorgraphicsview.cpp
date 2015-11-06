@@ -1,7 +1,10 @@
 #include "preprocessorgraphicsview.h"
 
-PreProcessorGraphicsView::PreProcessorGraphicsView(QWidget* parent)
-	: PreProcessorGraphicsViewInterface(parent)
+PreProcessorGraphicsView::PreProcessorGraphicsView(QWidget* parent) :
+	PreProcessorGraphicsViewInterface {parent}
 {
 	setInteractive(true);
 }
+
+PreProcessorGraphicsView::~PreProcessorGraphicsView()
+{}

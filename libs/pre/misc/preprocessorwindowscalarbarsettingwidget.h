@@ -55,8 +55,8 @@ public:
 	double positionX() const;
 	double positionY() const;
 	Setting setting() const;
-	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
-	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
+	const vtkTextPropertySettingContainer& titleTextSetting() const;
+	const vtkTextPropertySettingContainer& labelTextSetting() const;
 	QString labelFormat() const;
 	void hideDisplayCheckBox();
 

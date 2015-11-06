@@ -15,17 +15,16 @@ class PreObjectBrowser : public ObjectBrowser
 
 public:
 	/// Constructor
-	PreObjectBrowser(QWidget* parent) : ObjectBrowser(parent) {init();}
+	PreObjectBrowser(QWidget* parent);
 	/// Destructor
-	~PreObjectBrowser() {}
+	~PreObjectBrowser();
 	void setModel(QStandardItemModel* model);
-	PreObjectBrowserView* view() {return m_view;}
+	PreObjectBrowserView* view() const;
 
 public slots:
 	void expandAll();
 
 private:
-	void init();
 	/// The widget to show in the dockarea
 	PreObjectBrowserView* m_view;
 };

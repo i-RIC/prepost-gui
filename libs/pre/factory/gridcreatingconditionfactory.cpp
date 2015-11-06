@@ -46,11 +46,12 @@ GridCreatingConditionFactory::GridCreatingConditionFactory(QWidget* mainWindow)
 	setupNameMap();
 }
 
-void GridCreatingConditionFactory::setupNameMap()
+GridCreatingConditionFactory& GridCreatingConditionFactory::instance(QWidget* mainWindow)
 {
-	for (auto it = m_creators.begin(); it != m_creators.end(); ++it) {
-		m_creatorNameMap.insert((*it)->name(), *it);
+	if (m_instance == nullptr) {
+		m_instance = new GridCreatingConditionFactory(mainWindow);
 	}
+	return *m_instance;
 }
 
 const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compatibleCreators(const SolverDefinitionGridType& gridType) const
@@ -94,4 +95,16 @@ GridCreatingCondition* GridCreatingConditionFactory::restore(const QDomNode& nod
 	GridCreatingConditionCreator* creator = getCreator(creatorName);
 	if (creator == nullptr) {return nullptr;}
 	return creator->restore(node, item);
+}
+
+void GridCreatingConditionFactory::setMainWindow(QWidget* mw)
+{
+	m_mainWindow = mw;
+}
+
+void GridCreatingConditionFactory::setupNameMap()
+{
+	for (auto it = m_creators.begin(); it != m_creators.end(); ++it) {
+		m_creatorNameMap.insert((*it)->name(), *it);
+	}
 }

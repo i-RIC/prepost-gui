@@ -39,6 +39,11 @@ void PreProcessorWindowActionManager::setupCalcCondMenu()
 	m_calcCondMenu->addAction(calcCondExportAction);
 }
 
+QMenu* PreProcessorWindowActionManager::calcCondMenu() const
+{
+	return m_calcCondMenu;
+}
+
 void PreProcessorWindowActionManager::connectWithDataModel()
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preWindow->m_dataModel);

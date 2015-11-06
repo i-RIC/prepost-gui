@@ -16,8 +16,8 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item)
-	: QMainWindow(parent)
+GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item) :
+	QMainWindow(parent)
 {
 	init(item);
 }
@@ -65,6 +65,11 @@ void GridBirdEyeWindow::updateGrid()
 {
 	m_dataModel->updateGrid();
 	cameraFit();
+}
+
+const QIcon& GridBirdEyeWindow::icon() const
+{
+	return m_icon;
 }
 
 QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const

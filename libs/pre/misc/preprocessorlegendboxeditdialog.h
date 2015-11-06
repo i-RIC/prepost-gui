@@ -23,11 +23,11 @@ public:
 	void setPositionY(double y);
 	void setEntryTextSetting(const vtkTextPropertySettingContainer& cont);
 
-	double width();
-	double height();
-	double positionX();
-	double positionY();
-	const vtkTextPropertySettingContainer& entryTextSetting() const {return m_entryTextSetting;}
+	double width() const;
+	double height() const;
+	double positionX() const;
+	double positionY() const;
+	const vtkTextPropertySettingContainer& entryTextSetting() const;
 
 private slots:
 	void editEntryTextSetting();

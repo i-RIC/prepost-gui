@@ -16,7 +16,7 @@ public:
 	~GridExporterFactory();
 	const QList<GridExporterInterface*> list(SolverDefinitionGridType::GridType gt) const;
 	static void init();
-	static GridExporterFactory& instance() {return *m_instance;}
+	static GridExporterFactory& instance();
 
 private:
 	// Constructor is private

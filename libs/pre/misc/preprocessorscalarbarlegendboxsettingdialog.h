@@ -30,8 +30,8 @@ public:
 	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 	bool actor2DVisibility();
 	SolverDefinitionGridAttribute* condition();
-	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
-	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
+	const vtkTextPropertySettingContainer& titleTextSetting() const;
+	const vtkTextPropertySettingContainer& labelTextSetting() const;
 
 public slots:
 	void setDisplay(bool disp);

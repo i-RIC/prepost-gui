@@ -85,17 +85,17 @@ void GridBirdEyeWindowColorSettingDialog::setAxisColor(const QColor& c)
 	ui->axesColorWidget->setColor(c);
 }
 
-bool GridBirdEyeWindowColorSettingDialog::axesVisible()
+bool GridBirdEyeWindowColorSettingDialog::axesVisible() const
 {
 	return ui->axesVisibleCheckBox->isChecked();
 }
 
-QColor GridBirdEyeWindowColorSettingDialog::axesColor()
+QColor GridBirdEyeWindowColorSettingDialog::axesColor() const
 {
 	return ui->axesColorWidget->color();
 }
 
-GridBirdEyeWindowDataModel::ColorType GridBirdEyeWindowColorSettingDialog::colorType()
+GridBirdEyeWindowDataModel::ColorType GridBirdEyeWindowColorSettingDialog::colorType() const
 {
 	if (ui->nodeAttRadioButton->isChecked()) {
 		return GridBirdEyeWindowDataModel::ctNode;

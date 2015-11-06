@@ -19,7 +19,7 @@ void GridBirdEyeWindowAxesSettingDialog::setAxesVisible(bool visible)
 	ui->visibleCheckBox->setChecked(visible);
 }
 
-bool GridBirdEyeWindowAxesSettingDialog::axesVisible()
+bool GridBirdEyeWindowAxesSettingDialog::axesVisible() const
 {
 	return ui->visibleCheckBox->isChecked();
 }
@@ -29,7 +29,7 @@ void GridBirdEyeWindowAxesSettingDialog::setColor(const QColor& col)
 	ui->colorWidget->setColor(col);
 }
 
-QColor GridBirdEyeWindowAxesSettingDialog::color()
+QColor GridBirdEyeWindowAxesSettingDialog::color() const
 {
 	return ui->colorWidget->color();
 }

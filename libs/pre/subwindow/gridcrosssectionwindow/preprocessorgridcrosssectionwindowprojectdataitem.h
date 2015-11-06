@@ -15,10 +15,8 @@ public:
 	~PreProcessorGridCrosssectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();
-	PreProcessorGridCrosssectionWindow* window() {
-		return m_window;
-	}
-	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem() {return m_item;}
+	PreProcessorGridCrosssectionWindow* window() const;
+	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem() const;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -7,7 +7,7 @@ class Unstructured2DGridCgnsImporter : public CgnsGridImporter
 {
 
 public:
-	Unstructured2DGridCgnsImporter() : CgnsGridImporter() {}
+	Unstructured2DGridCgnsImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:

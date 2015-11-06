@@ -17,13 +17,8 @@ private:
 	HydraulicDataImporterFactory();
 
 public:
-	static HydraulicDataImporterFactory& instance() {
-		if (m_instance == nullptr) {
-			m_instance = new HydraulicDataImporterFactory();
-		}
-		return *m_instance;
-	}
-	const QList<HydraulicDataImporter*> importers() const {return m_importers;}
+	static HydraulicDataImporterFactory& instance();
+	const QList<HydraulicDataImporter*> importers() const;
 
 private:
 	QList<HydraulicDataImporter*> m_importers;

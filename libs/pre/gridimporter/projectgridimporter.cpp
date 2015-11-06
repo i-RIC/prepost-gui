@@ -23,6 +23,9 @@ ProjectGridImporter::ProjectGridImporter() :
 	GridInternalImporter {}
 {}
 
+ProjectGridImporter::~ProjectGridImporter()
+{}
+
 QString ProjectGridImporter::caption() const
 {
 	return tr("Project file");

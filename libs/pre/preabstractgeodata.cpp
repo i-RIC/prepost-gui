@@ -1,4 +1,5 @@
 #include "preabstractgeodata.h"
 
-PreAbstractGeoData::PreAbstractGeoData(ProjectDataItem* parent) : ProjectDataItem(parent)
+PreAbstractGeoData::PreAbstractGeoData(ProjectDataItem* parent) :
+	ProjectDataItem(parent)
 {}

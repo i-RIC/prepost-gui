@@ -9,7 +9,7 @@ class Unstructured2DGridProjectImporter : public ProjectGridImporter
 	Q_INTERFACES(GridImporterInterface)
 
 public:
-	Unstructured2DGridProjectImporter() : ProjectGridImporter() {}
+	Unstructured2DGridProjectImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
 protected:

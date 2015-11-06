@@ -23,16 +23,11 @@ private:
 	GridCreatingConditionFactory(QWidget* mainWindow);
 
 public:
-	static GridCreatingConditionFactory& instance(QWidget* mainWindow) {
-		if (m_instance == nullptr) {
-			m_instance = new GridCreatingConditionFactory(mainWindow);
-		}
-		return *m_instance;
-	}
+	static GridCreatingConditionFactory& instance(QWidget* mainWindow);
 	const QList<GridCreatingConditionCreator*> compatibleCreators(const SolverDefinitionGridType& gridType) const;
 	GridCreatingConditionCreator* getCreator(const QString& name) const;
 	GridCreatingCondition* restore(const QDomNode& node, ProjectDataItem* item) const;
-	void setMainWindow(QWidget* mw) {m_mainWindow = mw;}
+	void setMainWindow(QWidget* mw);
 
 private:
 	void setupNameMap();

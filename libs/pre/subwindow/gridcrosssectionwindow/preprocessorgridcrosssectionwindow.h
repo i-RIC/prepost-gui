@@ -39,14 +39,14 @@ public:
 	explicit PreProcessorGridCrosssectionWindow(Structured2DGrid* g, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~PreProcessorGridCrosssectionWindow();
 	void setTarget(Direction dir, int index);
-	const QString& condition() {return m_condition;}
-	Direction targetDirection() {return m_direction;}
-	int targetIndex() {return m_blackLineIndex;}
+	const QString& condition() const;
+	Direction targetDirection() const;
+	int targetIndex() const;
 	void setupData();
 	bool updateComboBoxes();
-	QTableView* tableView();
+	QTableView* tableView() const;
 	void informFocusIn();
-	Structured2DGrid* grid() {return m_grid;}
+	Structured2DGrid* grid() const;
 	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem();
 	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
 	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem() {return m_projectDataItem;}

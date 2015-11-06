@@ -16,7 +16,7 @@ public:
 	virtual ~GridImporterFactory();
 	const QList<GridImporterInterface*> list(const SolverDefinitionGridType& gt) const;
 	static void init();
-	static GridImporterFactory& instance() {return *m_instance;}
+	static GridImporterFactory& instance();
 
 private:
 	// Constructor is private

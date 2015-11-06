@@ -5,11 +5,16 @@
 #include <QAction>
 #include <QMenu>
 
-GridBirdEyeWindowActionManager::GridBirdEyeWindowActionManager(GridBirdEyeWindow* parent)
-	: QObject(parent)
+GridBirdEyeWindowActionManager::GridBirdEyeWindowActionManager(GridBirdEyeWindow* parent) :
+	QObject(parent)
 {
 	m_gridBirdEyeWindow = parent;
 	init();
+}
+
+QMenu* GridBirdEyeWindowActionManager::drawMenu() const
+{
+	return m_drawMenu;
 }
 
 void GridBirdEyeWindowActionManager::init()

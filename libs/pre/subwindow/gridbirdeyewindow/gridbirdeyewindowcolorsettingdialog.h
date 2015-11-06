@@ -26,10 +26,10 @@ public:
 	void setCustomColor(const QColor& c);
 	void setAxesVisible(bool visible);
 	void setAxisColor(const QColor& c);
-	bool axesVisible();
-	QColor axesColor();
+	bool axesVisible() const;
+	QColor axesColor() const;
 
-	GridBirdEyeWindowDataModel::ColorType colorType();
+	GridBirdEyeWindowDataModel::ColorType colorType() const;
 	QString attributeName() const;
 	QColor customColor() const;
 

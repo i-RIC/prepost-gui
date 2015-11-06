@@ -40,6 +40,16 @@ void PreProcessorGridCrosssectionWindowProjectDataItem::requestWindowClose()
 	m_item->requestCrosssectionWindowDelete(this);
 }
 
+PreProcessorGridCrosssectionWindow* PreProcessorGridCrosssectionWindowProjectDataItem::window() const
+{
+	return m_window;
+}
+
+PreProcessorGridAttributeNodeDataItem* PreProcessorGridCrosssectionWindowProjectDataItem::conditionNodeDataItem() const
+{
+	return m_item;
+}
+
 void PreProcessorGridCrosssectionWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
 {}
 

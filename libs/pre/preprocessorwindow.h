@@ -70,8 +70,6 @@ public:
 	QString checkGrid(bool detail) override;
 	void showEvent(QShowEvent* e) override;
 	void hideEvent(QHideEvent* e) override;
-	//public slots:
-//	void switchGridMode(SolverDefinition::GridType /*gt*/){}
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
@@ -82,8 +80,7 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
-	const PreProcessorDataModelInterface* dataModel() const override {return m_dataModel;}
-	PreProcessorDataModelInterface* dataModel() override { return m_dataModel; }
+	PreProcessorDataModelInterface* dataModel() const override;
 
 public slots:
 	void cameraFit();

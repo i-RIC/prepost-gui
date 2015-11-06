@@ -37,24 +37,29 @@ void PreProcessorLegendBoxEditDialog::setPositionY(double y)
 	ui->positionYSpinBox->setValue(y);
 }
 
-double PreProcessorLegendBoxEditDialog::width()
+double PreProcessorLegendBoxEditDialog::width() const
 {
 	return ui->widthSpinBox->value();
 }
 
-double PreProcessorLegendBoxEditDialog::height()
+double PreProcessorLegendBoxEditDialog::height() const
 {
 	return ui->heightSpinBox->value();
 }
 
-double PreProcessorLegendBoxEditDialog::positionX()
+double PreProcessorLegendBoxEditDialog::positionX() const
 {
 	return ui->positionXSpinBox->value();
 }
 
-double PreProcessorLegendBoxEditDialog::positionY()
+double PreProcessorLegendBoxEditDialog::positionY() const
 {
 	return ui->positionYSpinBox->value();
+}
+
+const vtkTextPropertySettingContainer& PreProcessorLegendBoxEditDialog::entryTextSetting() const
+{
+	return m_entryTextSetting;
 }
 
 void PreProcessorLegendBoxEditDialog::setEntryTextSetting(const vtkTextPropertySettingContainer& cont)

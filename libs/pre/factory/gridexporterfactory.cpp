@@ -18,6 +18,11 @@ void GridExporterFactory::init()
 	m_instance = new GridExporterFactory();
 }
 
+GridExporterFactory& GridExporterFactory::instance()
+{
+	return *m_instance;
+}
+
 GridExporterFactory::GridExporterFactory()
 {
 	// load built-in exporters first.

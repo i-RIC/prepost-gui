@@ -23,7 +23,7 @@ public:
 	QAction* calcCondEditAction;
 	QAction* calcCondImportAction;
 	QAction* calcCondExportAction;
-	QMenu* calcCondMenu() {return m_calcCondMenu;}
+	QMenu* calcCondMenu() const;
 	void connectWithDataModel();
 
 private slots:
@@ -33,6 +33,7 @@ private:
 	/// Initialization
 	void init();
 	void setupCalcCondMenu();
+
 	QMenu* m_calcCondMenu;
 	PreProcessorWindow* m_preWindow;
 };

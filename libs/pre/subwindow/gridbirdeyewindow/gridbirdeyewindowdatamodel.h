@@ -43,17 +43,18 @@ public:
 	void updateGrid();
 	void updateAxes();
 	void setAxesColor(const QColor& col);
-	QColor axesColor();
+	QColor axesColor() const;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 
 private:
 	void init();
 	void setDefaultColor();
 	void updateColor();
 	void updateScalarBar();
+
 	ColorType m_colorType;
 	QString m_attributeName;
 	QColor m_customColor;
