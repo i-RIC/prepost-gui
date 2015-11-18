@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETFUNCTIONAL_H
-#define CGNSFILEINPUTCONDITIONWIDGETFUNCTIONAL_H
+#ifndef INPUTCONDITIONWIDGETFUNCTIONAL_H
+#define INPUTCONDITIONWIDGETFUNCTIONAL_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
@@ -32,4 +32,4 @@ public:
 	friend class InputConditionWidgetFunctionalDialog;
 };
 
-#endif
+#endif // INPUTCONDITIONWIDGETFUNCTIONAL_H

@@ -71,13 +71,13 @@ void PreProcessorInputConditionDataItem::showDialog(bool readonly)
 	loadFromCgnsFile(fn);
 	cg_close(fn);
 	// set default folder for filename input conditions.
-	CgnsFileInputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
 	m_dialog->setFileName(fname);
 	// show dialog
 	m_dialog->setReadOnly(readonly);
 	m_dialog->exec();
 	// set the default folder back.
-	LastIODirectory::set(CgnsFileInputConditionWidgetFilename::defaultFolder);
+	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
 	m_isSet = true;
 }
 

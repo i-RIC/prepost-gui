@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETREAL_H
-#define CGNSFILEINPUTCONDITIONWIDGETREAL_H
+#ifndef INPUTCONDITIONWIDGETREAL_H
+#define INPUTCONDITIONWIDGETREAL_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
@@ -36,4 +36,4 @@ private:
 	RealNumberEditWidget* m_lineEdit;
 };
 
-#endif // CGNSFILEINPUTCONDITIONWIDGETREAL_H
+#endif // INPUTCONDITIONWIDGETREAL_H

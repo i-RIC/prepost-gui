@@ -1,49 +1,34 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETFILENAME_H
-#define CGNSFILEINPUTCONDITIONWIDGETFILENAME_H
+#ifndef INPUTCONDITIONWIDGETFILENAME_H
+#define INPUTCONDITIONWIDGETFILENAME_H
 
 #include "../../guicore_global.h"
 
 #include "inputconditionwidget.h"
 #include <QLineEdit>
 
+class AsciiOnlyLineEdit;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;
 
-class GUICOREDLL_EXPORT InputConditionWidgetFilenameEdit : public QLineEdit
+class GUICOREDLL_EXPORT InputConditionWidgetFilename : public InputConditionWidget
 {
 	Q_OBJECT
 
 public:
-	InputConditionWidgetFilenameEdit(QWidget* parent = nullptr) : QLineEdit(parent) {}
-	bool checkContent();
-
-protected:
-	void focusOutEvent(QFocusEvent* e) override;
-
-signals:
-	void valueChanged(QString txt);
-};
-
-class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFilename : public InputConditionWidget
-{
-	Q_OBJECT
-
-public:
-	CgnsFileInputConditionWidgetFilename(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
-	void setDisabled(bool disable) {m_edit->setDisabled(disable);}
 	static QString defaultFolder;
+	InputConditionWidgetFilename(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 
 public slots:
-	void setValue(const QString& newvalue) {m_edit->setText(newvalue);}
-	void getWidgetValue(const QString& newvalue);
+	void setValue(const QString& newvalue);
 
 private slots:
+	void handleEditingFinished();
 	void openFileDialog();
 
 private:
 	InputConditionContainerString* m_container;
-	InputConditionWidgetFilenameEdit* m_edit;
+	AsciiOnlyLineEdit* m_lineEdit;
 	bool m_all;
 };
 
-#endif // CGNSFILEINPUTCONDITIONWIDGETFILENAME_H
+#endif // INPUTCONDITIONWIDGETFILENAME_H

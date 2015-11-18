@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETINTEGER_H
-#define CGNSFILEINPUTCONDITIONWIDGETINTEGER_H
+#ifndef INPUTCONDITIONWIDGETINTEGER_H
+#define INPUTCONDITIONWIDGETINTEGER_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
@@ -30,4 +30,4 @@ private slots:
 	void informChange(int);
 };
 
-#endif // CGNSFILEINPUTCONDITIONWIDGETINTEGER_H
+#endif // INPUTCONDITIONWIDGETINTEGER_H

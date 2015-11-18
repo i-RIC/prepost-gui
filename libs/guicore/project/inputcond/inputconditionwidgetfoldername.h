@@ -1,47 +1,32 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETFOLDERNAME_H
-#define CGNSFILEINPUTCONDITIONWIDGETFOLDERNAME_H
+#ifndef INPUTCONDITIONWIDGETFOLDERNAME_H
+#define INPUTCONDITIONWIDGETFOLDERNAME_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
-#include <QLineEdit>
 
+class AsciiOnlyLineEdit;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;
 
-class GUICOREDLL_EXPORT InputConditionWidgetFoldernameEdit : public QLineEdit
+class GUICOREDLL_EXPORT InputConditionWidgetFoldername : public InputConditionWidget
 {
 	Q_OBJECT
 
 public:
-	InputConditionWidgetFoldernameEdit(QWidget* parent = nullptr) : QLineEdit(parent) {}
-	bool checkContent();
-
-protected:
-	void focusOutEvent(QFocusEvent* e) override;
-
-signals:
-	void valueChanged(QString txt);
-};
-
-class GUICOREDLL_EXPORT CgnsFileInputConditionWidgetFoldername : public InputConditionWidget
-{
-	Q_OBJECT
-
-public:
-	CgnsFileInputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
-	void setDisabled(bool disable) {m_edit->setDisabled(disable);}
 	static QString defaultFolder;
+	InputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 
 public slots:
-	void setValue(const QString& newvalue) {m_edit->setText(newvalue);}
-	void getWidgetValue(const QString& newvalue);
+
+	void setValue(const QString& newvalue);
 
 private slots:
+	void handleEditingFinished();
 	void openDirDialog();
 
 private:
 	InputConditionContainerString* m_container;
-	InputConditionWidgetFoldernameEdit* m_edit;
+	AsciiOnlyLineEdit* m_lineEdit;
 };
 
-#endif // CGNSFILEINPUTCONDITIONWIDGETFOLDERNAME_H
+#endif // INPUTCONDITIONWIDGETFOLDERNAME_H

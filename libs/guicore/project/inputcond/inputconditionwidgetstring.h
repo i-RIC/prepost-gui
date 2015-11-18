@@ -1,10 +1,10 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETSTRING_H
-#define CGNSFILEINPUTCONDITIONWIDGETSTRING_H
+#ifndef INPUTCONDITIONWIDGETSTRING_H
+#define INPUTCONDITIONWIDGETSTRING_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
 
-class QLineEdit;
+class AsciiOnlyLineEdit;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;
 
@@ -14,17 +14,15 @@ class GUICOREDLL_EXPORT InputConditionWidgetString : public InputConditionWidget
 
 public:
 	InputConditionWidgetString(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
-	void setDisabled(bool disable);
 
 public slots:
 	void setValue(const QString& newvalue);
 
 private slots:
-	void getWidgetValue(const QString& newvalue);
-	void checkContent();
+	void handleEditingFinished();
 
 private:
 	InputConditionContainerString* m_container;
-	QLineEdit* m_lineEdit;
+	AsciiOnlyLineEdit* m_lineEdit;
 };
-#endif // CGNSFILEINPUTCONDITIONWIDGETSTRING_H
+#endif // INPUTCONDITIONWIDGETSTRING_H

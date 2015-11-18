@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONDIALOG_H
-#define CGNSFILEINPUTCONDITIONDIALOG_H
+#ifndef INPUTCONDITIONDIALOG_H
+#define INPUTCONDITIONDIALOG_H
 
 #include "../../guicore_global.h"
 
@@ -75,4 +75,4 @@ public:
 	friend class InputConditionContainerSet;
 };
 
-#endif // CGNSFILEINPUTCONDITIONDIALOG_H
+#endif // INPUTCONDITIONDIALOG_H

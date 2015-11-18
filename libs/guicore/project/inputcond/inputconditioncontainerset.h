@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONCONTAINERSET_H
-#define CGNSFILEINPUTCONDITIONCONTAINERSET_H
+#ifndef INPUTCONDITIONCONTAINERSET_H
+#define INPUTCONDITIONCONTAINERSET_H
 
 #include "../../guicore_global.h"
 #include "inputconditioncontainerinteger.h"
@@ -74,4 +74,4 @@ private:
 	QWidget* m_parentWidget;
 };
 
-#endif // CGNSFILEINPUTCONDITIONCONTAINERSET_H
+#endif // INPUTCONDITIONCONTAINERSET_H

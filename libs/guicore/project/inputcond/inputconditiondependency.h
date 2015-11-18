@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONDEPENDENCY_H
-#define CGNSFILEINPUTCONDITIONDEPENDENCY_H
+#ifndef INPUTCONDITIONDEPENDENCY_H
+#define INPUTCONDITIONDEPENDENCY_H
 
 #include "../../guicore_global.h"
 #include "inputconditionwidget.h"
@@ -10,7 +10,7 @@ class QDomNode;
 class InputConditionWidgetSet;
 class InputConditionContainer;
 class InputConditionContainerSet;
-class CgnsFileInputConditionDependencyBuilder;
+class InputConditionDependencyBuilder;
 
 /// This class holds the dependencies between input conditions.
 class GUICOREDLL_EXPORT InputConditionDependency : public QObject
@@ -46,7 +46,7 @@ public:
 	public:
 		virtual ~Condition() {}
 		virtual bool match() = 0;
-		friend class CgnsFileInputConditionDependencyBuilder;
+		friend class InputConditionDependencyBuilder;
 	};
 	class ActionEnable : public Action
 	{
@@ -103,4 +103,4 @@ private:
 	QList<Action*> m_actions;
 };
 
-#endif // CGNSFILEINPUTCONDITIONDEPENDENCY_H
+#endif // INPUTCONDITIONDEPENDENCY_H

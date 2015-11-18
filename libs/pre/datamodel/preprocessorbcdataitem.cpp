@@ -712,7 +712,7 @@ int PreProcessorBCDataItem::opacityPercent() const
 bool PreProcessorBCDataItem::showDialog()
 {
 	// set default folder for filename input conditions.
-	CgnsFileInputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
+	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
 	// show dialog
 	m_dialog->setOpacityPercent(m_opacityPercent);
 	m_dialog->setEditMode();
@@ -729,7 +729,7 @@ bool PreProcessorBCDataItem::showDialog()
 	updateActorSettings();
 
 	// set the default folder back.
-	LastIODirectory::set(CgnsFileInputConditionWidgetFilename::defaultFolder);
+	LastIODirectory::set(InputConditionWidgetFilename::defaultFolder);
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
 

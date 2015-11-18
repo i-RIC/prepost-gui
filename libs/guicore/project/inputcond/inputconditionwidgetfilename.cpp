@@ -2,92 +2,87 @@
 #include "inputconditioncontainerstring.h"
 #include "inputconditionwidgetfilename.h"
 
+#include <guibase/asciionlylineedit.h>
+
 #include <QFileDialog>
 #include <QHBoxLayout>
-#include <QLineEdit>
 #include <QMessageBox>
 #include <QPushButton>
-#include <QTextCodec>
 
-QString CgnsFileInputConditionWidgetFilename::defaultFolder;
+QString InputConditionWidgetFilename::defaultFolder;
 
-bool InputConditionWidgetFilenameEdit::checkContent()
+InputConditionWidgetFilename::InputConditionWidgetFilename(QDomNode defNode, const SolverDefinitionTranslator&, InputConditionContainerString* cont) :
+	InputConditionWidget(defNode),
+	m_all (false)
 {
-	QString txt = text();
-	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
-	bool ok = asciiCodec->canEncode(txt);
-	if (! ok) {
-		QMessageBox::warning(this, tr("Warning"), tr("File name has to consist of only English characters."));
-		setText("");
-	}
-	return ok;
-}
-
-void InputConditionWidgetFilenameEdit::focusOutEvent(QFocusEvent* e)
-{
-	checkContent();
-
-	emit valueChanged(text());
-	QLineEdit::focusOutEvent(e);
-}
-
-CgnsFileInputConditionWidgetFilename::CgnsFileInputConditionWidgetFilename(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerString* cont) : InputConditionWidget(defnode)
-{
-	m_container = cont;
-	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
-
-	m_edit = new InputConditionWidgetFilenameEdit(this);
-	QPushButton* button = new QPushButton(QString(tr("...")), this);
-	if (defnode.toElement().attribute("valueType") == "filename_all") {
+	if (defNode.toElement().attribute("valueType") == "filename_all"){
 		m_all = true;
-	} else {
+	}else{
 		m_all = false;
 	}
+
+	m_container = cont;
+
+	m_lineEdit = new AsciiOnlyLineEdit(this);
+	m_lineEdit->setErrorMessage(tr("File name has to consist of only English characters."));
+
+	QPushButton* button = new QPushButton(QString(tr("...")), this);
 	button->setFixedWidth(30);
 	button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
-	// Should setup QLineEdit and a button;
-	QHBoxLayout* l = new QHBoxLayout(0);
-	l->setMargin(InputConditionWidget::margin);
-	l->addWidget(m_edit, 10);
-	l->addWidget(button, 0);
-	setLayout(l);
+
+	QHBoxLayout * layout = new QHBoxLayout(0);
+	layout->setMargin(InputConditionWidget::margin);
+	layout->addWidget(m_lineEdit, 10);
+	layout->addWidget(button, 0);
+	setLayout(layout);
+
 	setValue(cont->value());
-	connect(m_edit, SIGNAL(textChanged(QString)), this, SLOT(getWidgetValue(const QString&)));
-	connect(button, SIGNAL(clicked()), this, SLOT(openFileDialog()));
+
+	connect(m_lineEdit, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
+	connect(button, SIGNAL(clicked(bool)), this, SLOT(openFileDialog()));
+	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
 }
-void CgnsFileInputConditionWidgetFilename::openFileDialog()
+
+void InputConditionWidgetFilename::setValue(const QString& newvalue)
 {
-	QString originalFile = QDir::fromNativeSeparators(m_edit->text());
+	m_lineEdit->setText(newvalue);
+}
+
+void InputConditionWidgetFilename::handleEditingFinished()
+{
+	m_container->setValue(m_lineEdit->text());
+}
+
+void InputConditionWidgetFilename::openFileDialog()
+{
+	// Get dir from the current text.
 	QString dir;
-	if (! originalFile.isEmpty()) {
+	QString originalFile = QDir::fromNativeSeparators(m_lineEdit->text());
+	if (! originalFile.isEmpty()){
 		QFileInfo finfo(originalFile);
-		if (finfo.isAbsolute()) {
+		if (finfo.isAbsolute()){
 			dir = finfo.absolutePath();
 		}
 	}
-	if (! QFile::exists(dir)) {
+	if (! QFile::exists(dir)){
 		dir = defaultFolder;
 	}
-	if (m_all) {
-		QString fname = QFileDialog::getSaveFileName(this, tr("Select File"), dir);
-		if (! fname.isEmpty()) {
-			m_edit->setText(QDir::toNativeSeparators(fname));
-			m_edit->checkContent();
-			QFileInfo finfo(fname);
-			defaultFolder = finfo.absolutePath();
-		}
-	} else {
-		QString fname = QFileDialog::getOpenFileName(this, tr("Select File"), dir);
-		if (! fname.isEmpty()) {
-			m_edit->setText(QDir::toNativeSeparators(fname));
-			m_edit->checkContent();
-			QFileInfo finfo(fname);
-			defaultFolder = finfo.absolutePath();
-		}
-	}
-}
 
-void CgnsFileInputConditionWidgetFilename::getWidgetValue(const QString& newvalue)
-{
-	m_container->setValue(newvalue);
+	// Select file name withdialog
+	QString fname;
+	if (m_all){
+		fname = QFileDialog::getSaveFileName(this, tr("Select File"), dir);
+	} else {
+		fname = QFileDialog::getOpenFileName(this, tr("Select File"), dir);
+	}
+	if (fname.isEmpty()) {
+		// canceled.
+		return;
+	}
+
+	m_lineEdit->setText(QDir::toNativeSeparators(fname));
+	handleEditingFinished();
+
+	QFileInfo finfo(fname);
+	defaultFolder = finfo.absolutePath();
 }

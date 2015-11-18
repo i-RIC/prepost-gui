@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGETSET_H
-#define CGNSFILEINPUTCONDITIONWIDGETSET_H
+#ifndef INPUTCONDITIONWIDGETSET_H
+#define INPUTCONDITIONWIDGETSET_H
 
 #include "../../guicore_global.h"
 #include <QMap>
@@ -40,4 +40,4 @@ private:
 	void addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
 	QMap<QString, InputConditionWidget*> m_widgets;
 };
-#endif // CGNSFILEINPUTCONDITIONWIDGETSET_H
+#endif // INPUTCONDITIONWIDGETSET_H

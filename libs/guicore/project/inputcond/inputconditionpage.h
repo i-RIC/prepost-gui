@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONPAGE_H
-#define CGNSFILEINPUTCONDITIONPAGE_H
+#ifndef INPUTCONDITIONPAGE_H
+#define INPUTCONDITIONPAGE_H
 
 #include "../../guicore_global.h"
 
@@ -36,4 +36,4 @@ private:
 	QString m_name;
 };
 
-#endif // CGNSFILEINPUTCONDITIONPAGE_H
+#endif // INPUTCONDITIONPAGE_H

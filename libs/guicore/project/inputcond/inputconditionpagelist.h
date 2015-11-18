@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONPAGELIST_H
-#define CGNSFILEINPUTCONDITIONPAGELIST_H
+#ifndef INPUTCONDITIONPAGELIST_H
+#define INPUTCONDITIONPAGELIST_H
 
 #include "../../guicore_global.h"
 
@@ -12,7 +12,7 @@ class SolverDefinitionTranslator;
 class QTreeWidgetItem;
 
 /// This class handles the list of pages displayed in the left side of
-/// CgnsFileInputConditionDialog.
+/// InputConditionDialog.
 class GUICOREDLL_EXPORT InputConditionPageList : public QTreeWidget
 {
 	Q_OBJECT
@@ -37,4 +37,4 @@ private:
 	QMap<QTreeWidgetItem*, QString> m_nameMap;
 };
 
-#endif // CGNSFILEINPUTCONDITIONPAGELIST_H
+#endif // INPUTCONDITIONPAGELIST_H

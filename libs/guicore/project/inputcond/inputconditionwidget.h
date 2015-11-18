@@ -1,5 +1,5 @@
-#ifndef CGNSFILEINPUTCONDITIONWIDGET_H
-#define CGNSFILEINPUTCONDITIONWIDGET_H
+#ifndef INPUTCONDITIONWIDGET_H
+#define INPUTCONDITIONWIDGET_H
 
 #include "../../guicore_global.h"
 
@@ -31,4 +31,4 @@ public:
 protected:
 	InputConditionDependency* m_dependency;
 };
-#endif // CGNSFILEINPUTCONDITIONWIDGET_H
+#endif // INPUTCONDITIONWIDGET_H

@@ -124,9 +124,9 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 		} else if (valuetype == "string") {
 			widget = new InputConditionWidgetString(defNode, t, &(cset.string(parameterName)));
 		} else if (valuetype == "filename" || valuetype == "filename_all") {
-			widget = new CgnsFileInputConditionWidgetFilename(defNode, t, &(cset.string(parameterName)));
+			widget = new InputConditionWidgetFilename(defNode, t, &(cset.string(parameterName)));
 		} else if (valuetype == "foldername") {
-			widget = new CgnsFileInputConditionWidgetFoldername(defNode, t, &(cset.string(parameterName)));
+			widget = new InputConditionWidgetFoldername(defNode, t, &(cset.string(parameterName)));
 		} else if (valuetype == "functional") {
 			widget = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
 		} else {

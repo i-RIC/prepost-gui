@@ -73,7 +73,8 @@ LIBS += \
 	-lvtkRenderingCore-6.1
 
 # Input
-HEADERS += centeredcheckbox.h \
+HEADERS += asciionlylineedit.h \
+           centeredcheckbox.h \
            cgnszoneselectdialog.h \
            coloreditwidget.h \
            colormapcustomsettingdialog.h \
@@ -141,7 +142,8 @@ FORMS += cgnszoneselectdialog.ui \
          vtktextpropertysettingdialog.ui \
          waitdialog.ui \
          xyaxisdisplaysettingdialog.ui
-SOURCES += centeredcheckbox.cpp \
+SOURCES += asciionlylineedit.cpp \
+           centeredcheckbox.cpp \
            cgnszoneselectdialog.cpp \
            coloreditwidget.cpp \
            colormapcustomsettingdialog.cpp \
