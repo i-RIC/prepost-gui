@@ -265,7 +265,7 @@ bool PostZoneDataContainer::loadStructuredGrid(const int fn, const int currentSt
 bool PostZoneDataContainer::loadUnstructuredGrid(const int fn, const int currentStep)
 {
 	if (m_data != 0) {
-		m_data->Initialize();
+		vtkUnstructuredGrid::SafeDownCast(m_data)->Reset();
 	} else {
 		m_data = vtkSmartPointer<vtkUnstructuredGrid>::New();
 		m_labelData = m_data;
