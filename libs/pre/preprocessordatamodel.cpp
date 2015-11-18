@@ -722,14 +722,14 @@ bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcess
 bool PreProcessorDataModel::addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
-	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
-	if (! gdi->isImportAvailable()) {return false;}
 	QAction* action = new QAction(cap, menu);
-	connect(action, SIGNAL(triggered()), gdi, SLOT(importGrid()));
+
+	PreProcessorGridAndGridCreatingConditionDataItem* dii =
+			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (di);
+	connect(action, SIGNAL(triggered()), dii, SLOT(importGrid()));
 	menu->addAction(action);
 	return true;
 }
-
 
 void PreProcessorDataModel::addGridExportMenu(QMenu* menu)
 {
