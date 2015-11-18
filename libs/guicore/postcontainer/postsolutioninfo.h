@@ -25,11 +25,11 @@ public:
 	/// Constructor
 	PostSolutionInfo(ProjectDataItem* parent);
 	~PostSolutionInfo();
-	SolverDefinition::IterationType iterationType() const {return m_iterationType;}
+	SolverDefinition::IterationType iterationType() const;
 	void setIterationType(SolverDefinition::IterationType type);
-	PostIterationSteps* iterationSteps() const {return m_iterationSteps;}
-	PostTimeSteps* timeSteps() const {return m_timeSteps;}
-	int currentStep() const {return m_currentStep;}
+	PostIterationSteps* iterationSteps() const;
+	PostTimeSteps* timeSteps() const;
+	int currentStep() const;
 	double currentTimeStep();
 	/// Returns true if the current CGNS file has results.
 	bool hasResults();
@@ -37,37 +37,31 @@ public:
 	void informCgnsSteps();
 	void loadFromCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
-	const QList<PostZoneDataContainer*>& zoneContainers1D() {return m_zoneContainers1D;}
-	const QList<PostZoneDataContainer*>& zoneContainers2D() {return m_zoneContainers2D;}
-	const QList<PostZoneDataContainer*>& zoneContainers3D() {return m_zoneContainers3D;}
-	const QList<PostZoneDataContainer*>& zoneContainers(Dimension dim);
-	PostZoneDataContainer* zoneContainer1D(const QString& zonename) {
-		return m_zoneContainerNameMap1D.value(zonename, 0);
-	}
-	PostZoneDataContainer* zoneContainer2D(const QString& zonename) {
-		return m_zoneContainerNameMap2D.value(zonename, 0);
-	}
-	PostZoneDataContainer* zoneContainer3D(const QString& zonename) {
-		return m_zoneContainerNameMap3D.value(zonename, 0);
-	}
-	PostZoneDataContainer* zoneContainer(Dimension dim, const QString& zoneName);
-	bool isDataAvailable();
-	bool isDataAvailable1D();
-	bool isDataAvailable2D();
-	bool isDataAvailable3D();
-	bool isDataAvailableBase();
+	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
+	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
+	const QList<PostZoneDataContainer*>& zoneContainers3D() const;
+	const QList<PostZoneDataContainer*>& zoneContainers(Dimension dim) const;
+	PostZoneDataContainer* zoneContainer1D(const QString& zonename) const;
+	PostZoneDataContainer* zoneContainer2D(const QString& zonename) const;
+	PostZoneDataContainer* zoneContainer3D(const QString& zonename) const;
+	PostZoneDataContainer* zoneContainer(Dimension dim, const QString& zoneName) const;
+	bool isDataAvailable() const;
+	bool isDataAvailable1D() const;
+	bool isDataAvailable2D() const;
+	bool isDataAvailable3D() const;
+	bool isDataAvailableBase() const;
 	static int toIntDimension(Dimension dim);
 	static Dimension fromIntDimension(int dim);
 	bool open();
 	void close();
 
-	const PostExportSetting& exportSetting() const {return m_exportSetting;}
-	const QString& particleExportPrefix() const {return m_particleExportPrefix;}
-	void setExportSetting(const PostExportSetting& setting) {m_exportSetting = setting;}
-	void setParticleExportPrefix(const QString& prefix) {m_particleExportPrefix = prefix;}
+	const PostExportSetting& exportSetting() const;
+	const QString& particleExportPrefix() const;
+	void setExportSetting(const PostExportSetting& setting);
+	void setParticleExportPrefix(const QString& prefix);
 
 	/// File ID that can be used with cgnslib functions.
-	int fileId() const {return m_fileId;}
+	int fileId() const;
 
 protected:
 	void timerEvent(QTimerEvent*) override;

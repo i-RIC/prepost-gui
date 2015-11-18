@@ -14,8 +14,8 @@ public:
 
 protected:
 	bool loadData(const int fn) override;
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 protected:
 	QString m_baseIterativeName;

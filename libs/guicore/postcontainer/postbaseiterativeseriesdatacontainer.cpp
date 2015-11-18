@@ -48,3 +48,9 @@ bool PostBaseIterativeSeriesDataContainer::loadData(const int fn)
 	}
 	return false;
 }
+
+void PostBaseIterativeSeriesDataContainer::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+{}
+
+void PostBaseIterativeSeriesDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+{}

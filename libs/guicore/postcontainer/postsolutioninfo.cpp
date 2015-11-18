@@ -52,6 +52,11 @@ PostSolutionInfo::~PostSolutionInfo()
 	close();
 }
 
+SolverDefinition::IterationType PostSolutionInfo::iterationType() const
+{
+	return m_iterationType;
+}
+
 void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 {
 	m_iterationType = type;
@@ -77,6 +82,21 @@ void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 	default:
 		break;
 	}
+}
+
+PostIterationSteps* PostSolutionInfo::iterationSteps() const
+{
+	return m_iterationSteps;
+}
+
+PostTimeSteps* PostSolutionInfo::timeSteps() const
+{
+	return m_timeSteps;
+}
+
+int PostSolutionInfo::currentStep() const
+{
+	return m_currentStep;
 }
 
 bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
@@ -484,6 +504,36 @@ void PostSolutionInfo::closeCgnsFile()
 	emit zoneList3DUpdated();
 }
 
+const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers1D() const
+{
+	return m_zoneContainers1D;
+}
+
+const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers2D() const
+{
+	return m_zoneContainers2D;
+}
+
+const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers3D() const
+{
+	return m_zoneContainers3D;
+}
+
+PostZoneDataContainer* PostSolutionInfo::zoneContainer1D(const QString& zonename) const
+{
+	return m_zoneContainerNameMap1D.value(zonename, 0);
+}
+
+PostZoneDataContainer* PostSolutionInfo::zoneContainer2D(const QString& zonename) const
+{
+	return m_zoneContainerNameMap2D.value(zonename, 0);
+}
+
+PostZoneDataContainer* PostSolutionInfo::zoneContainer3D(const QString& zonename) const
+{
+	return m_zoneContainerNameMap3D.value(zonename, 0);
+}
+
 void PostSolutionInfo::informSolverStart()
 {
 //	m_timerId = startTimer(TIMERINTERVAL);
@@ -504,27 +554,27 @@ void PostSolutionInfo::timerEvent(QTimerEvent* /*e*/)
 	*/
 }
 
-bool PostSolutionInfo::isDataAvailable()
+bool PostSolutionInfo::isDataAvailable() const
 {
 	return (isDataAvailableBase() || isDataAvailable1D() || isDataAvailable2D() || isDataAvailable3D());
 }
 
-bool PostSolutionInfo::isDataAvailableBase()
+bool PostSolutionInfo::isDataAvailableBase() const
 {
 	return stepsExist() && m_baseIterativeDataExists;
 }
 
-bool PostSolutionInfo::isDataAvailable1D()
+bool PostSolutionInfo::isDataAvailable1D() const
 {
 	return stepsExist() && (m_zoneContainers1D.count() > 0);
 }
 
-bool PostSolutionInfo::isDataAvailable2D()
+bool PostSolutionInfo::isDataAvailable2D() const
 {
 	return stepsExist() && (m_zoneContainers2D.count() > 0);
 }
 
-bool PostSolutionInfo::isDataAvailable3D()
+bool PostSolutionInfo::isDataAvailable3D() const
 {
 	return stepsExist() && (m_zoneContainers3D.count() > 0);
 }
@@ -548,14 +598,14 @@ double PostSolutionInfo::currentTimeStep()
 	return m_timeSteps->timesteps().at(m_currentStep);
 }
 
-const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers(Dimension dim)
+const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers(Dimension dim) const
 {
 	if (dim == dim1D) {return zoneContainers1D();}
 	else if (dim == dim2D) {return zoneContainers2D();}
 	else {return zoneContainers3D();}
 }
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const QString& zoneName)
+PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const QString& zoneName) const
 {
 	if (dim == dim1D) {return zoneContainer1D(zoneName);}
 	else if (dim == dim2D) {return zoneContainer2D(zoneName);}
@@ -606,6 +656,31 @@ void PostSolutionInfo::close()
 		cg_close(m_fileId);
 		m_fileId = 0;
 	}
+}
+
+const PostExportSetting& PostSolutionInfo::exportSetting() const
+{
+	return m_exportSetting;
+}
+
+const QString& PostSolutionInfo::particleExportPrefix() const
+{
+	return m_particleExportPrefix;
+}
+
+void PostSolutionInfo::setExportSetting(const PostExportSetting& setting)
+{
+	m_exportSetting = setting;
+}
+
+void PostSolutionInfo::setParticleExportPrefix(const QString& prefix)
+{
+	m_particleExportPrefix = prefix;
+}
+
+int PostSolutionInfo::fileId() const
+{
+	return m_fileId;
 }
 
 void PostSolutionInfo::exportCalculationResult()
