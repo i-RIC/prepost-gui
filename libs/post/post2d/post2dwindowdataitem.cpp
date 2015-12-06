@@ -1,17 +1,28 @@
 #include "post2dwindow.h"
 #include "post2dwindowdataitem.h"
 #include "post2dwindowdatamodel.h"
-#include "post2dwindowgraphicsview.h"
 
-#include <guicore/project/projectdata.h>
-#include <guicore/project/projectmainfile.h>
+Post2dWindowDataItem::Post2dWindowDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(parent)
+{}
 
-Post2dWindow* Post2dWindowDataItem::postProcessorWindow()
+Post2dWindowDataItem::Post2dWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(itemlabel, parent)
+{}
+
+Post2dWindowDataItem::Post2dWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(itemlabel, icon, parent)
+{}
+
+Post2dWindowDataItem::~Post2dWindowDataItem()
+{}
+
+Post2dWindow* Post2dWindowDataItem::postProcessorWindow() const
 {
 	return dynamic_cast<Post2dWindow*>(dataModel()->mainWindow());
 }
 
-Post2dWindowDataModel* Post2dWindowDataItem::dataModel()
+Post2dWindowDataModel* Post2dWindowDataItem::dataModel() const
 {
 	return dynamic_cast<Post2dWindowDataModel*>(GraphicsWindowDataItem::dataModel());
 }

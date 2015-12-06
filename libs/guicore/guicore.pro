@@ -163,6 +163,7 @@ HEADERS += guicore_global.h \
            datamodel/graphics2dwindowdatamodel.h \
            datamodel/graphics3dwindowdatamodel.h \
            datamodel/graphicswindowdataitem.h \
+           datamodel/graphicswindowdataitemstandarditemchangecommand.h \
            datamodel/graphicswindowdatamodel.h \
            datamodel/graphicswindowdrawcommands.h \
            datamodel/graphicswindowrootdataitem.h \
@@ -185,6 +186,8 @@ HEADERS += guicore_global.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
            misc/qundocommandhelper.h \
+           named/namedgraphicswindowdataitemtool.h \
+           named/namedgraphicwindowdataitem.h \
            post/postprocessorwindow.h \
            post/postprocessorwindowfactoryinterface.h \
            post/postprocessorwindowprojectdataitem.h \
@@ -387,6 +390,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
            datamodel/graphics3dwindowdatamodel.cpp \
            datamodel/graphicswindowdataitem.cpp \
+           datamodel/graphicswindowdataitemstandarditemchangecommand.cpp \
            datamodel/graphicswindowdatamodel.cpp \
            datamodel/graphicswindowdrawcommands.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
@@ -409,6 +413,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
            misc/qundocommandhelper.cpp \
+           named/namedgraphicswindowdataitemtool.cpp \
+           named/namedgraphicwindowdataitem.cpp \
            post/postprocessorwindow.cpp \
            post/postprocessorwindowfactoryinterface.cpp \
            post/postprocessorwindowprojectdataitem.cpp \

@@ -2,36 +2,25 @@
 #define POST2DWINDOWDATAITEM_H
 
 #include "post2d_global.h"
-#include <guicore/project/projectdataitem.h>
-#include <guicore/datamodel/graphicswindowdataitem.h>
+#include "post2dwindow.h"
 #include "post2dwindowdatamodel.h"
-#include <QList>
 
-class Post2dWindow;
-class Post2dWindowDataModel;
-class PostSolutionInfo;
+#include <guicore/datamodel/graphicswindowdataitem.h>
 
 class POST2D_EXPORT Post2dWindowDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post2dWindowDataItem(GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(parent)
-	{}
-	/// Constructor
-	Post2dWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(itemlabel, parent)
-	{}
-	/// Constructor
-	Post2dWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
-		: GraphicsWindowDataItem(itemlabel, icon, parent)
-	{}
-	Post2dWindow* postProcessorWindow();
+	Post2dWindowDataItem(GraphicsWindowDataItem* parent);
+	Post2dWindowDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent);
+	Post2dWindowDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
+	virtual ~Post2dWindowDataItem();
+
+	Post2dWindow* postProcessorWindow() const;
 
 protected:
-	Post2dWindowDataModel* dataModel();
+	Post2dWindowDataModel* dataModel() const;
 };
 
 #endif // POST2DWINDOWDATAITEM_H

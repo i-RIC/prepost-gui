@@ -122,7 +122,7 @@ public:
 	virtual QStringList containedFiles() override;
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* /*view*/) {}
-	void setIsCommandExecuting(bool exec) {m_isCommandExecuting = exec;}
+	void setIsCommandExecuting(bool exec);
 	void update2Ds();
 	void updateZScale(double scale);
 	void loadCheckState(const QDomNode& node);
@@ -138,7 +138,7 @@ protected:
 
 	PostSolutionInfo* postSolutionInfo();
 	virtual void assignActorZValues(const ZDepthRange& range);
-	virtual GraphicsWindowDataModel* dataModel() const {return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();}
+	virtual GraphicsWindowDataModel* dataModel() const;
 	vtkRenderer* renderer() const;
 	virtual void unregisterChild(GraphicsWindowDataItem* child);
 	/// Returns true when alal ancient nodes are checked.
@@ -147,10 +147,10 @@ protected:
 	virtual void init();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
-	virtual void innerUpdate2Ds() {}
-	virtual void innerUpdateZScale(double /*scale*/) {}
-	virtual bool myHasTransparentPart() const {return false;}
-	virtual void doViewOperationEndedGlobal(VTKGraphicsView* /*v*/) {}
+	virtual void innerUpdate2Ds();
+	virtual void innerUpdateZScale(double scale);
+	virtual bool myHasTransparentPart() const;
+	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 
@@ -182,71 +182,6 @@ public:
 	friend class GraphicsWindowDrawOnRedo;
 	friend class GraphicsWindowDrawOnUndo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
-};
-
-/// The class to store standard item change information.
-/**
-	* This class stores only displayRole data and checkState data.
-	*/
-class GraphicsWindowDataItemStandardItemChangeCommand : public QUndoCommand
-{
-
-public:
-	GraphicsWindowDataItemStandardItemChangeCommand(GraphicsWindowDataItem* item)
-		: QUndoCommand(QObject::tr("Object Browser Item Change")) {
-		m_oldDisplayText = item->m_standardItemCopy->data(Qt::DisplayRole);
-		m_oldCheckState = item->m_standardItemCopy->data(Qt::CheckStateRole);
-
-		m_newDisplayText = item->m_standardItem->data(Qt::DisplayRole);
-		m_newCheckState = item->m_standardItem->data(Qt::CheckStateRole);
-
-		m_item = item;
-	}
-
-	void redoStandardItem() {
-		m_item->m_standardItemCopy->setData(m_newDisplayText, Qt::DisplayRole);
-		m_item->m_standardItemCopy->setData(m_newCheckState, Qt::CheckStateRole);
-
-		m_item->m_standardItem->setData(m_newDisplayText, Qt::DisplayRole);
-		m_item->m_standardItem->setData(m_newCheckState, Qt::CheckStateRole);
-
-		m_item->setModified();
-	}
-
-	void redo() override {
-		m_item->setIsCommandExecuting(true);
-
-		redoStandardItem();
-
-		m_item->updateVisibility();
-		m_item->setIsCommandExecuting(false);
-	}
-
-	void undoStandardItem() {
-		m_item->m_standardItemCopy->setData(m_oldDisplayText, Qt::DisplayRole);
-		m_item->m_standardItemCopy->setData(m_oldCheckState, Qt::CheckStateRole);
-
-		m_item->m_standardItem->setData(m_oldDisplayText, Qt::DisplayRole);
-		m_item->m_standardItem->setData(m_oldCheckState, Qt::CheckStateRole);
-
-		m_item->setModified();
-	}
-	void undo() override {
-		m_item->setIsCommandExecuting(true);
-
-		undoStandardItem();
-
-		m_item->updateVisibility();
-		m_item->setIsCommandExecuting(false);
-	}
-
-private:
-	QVariant m_oldDisplayText;
-	QVariant m_oldCheckState;
-
-	QVariant m_newDisplayText;
-	QVariant m_newCheckState;
-	GraphicsWindowDataItem* m_item;
 };
 
 #endif // GRAPHICSWINDOWDATAITEM_H

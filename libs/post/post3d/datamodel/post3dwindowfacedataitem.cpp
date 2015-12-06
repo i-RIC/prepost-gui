@@ -4,6 +4,7 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/datamodel/graphicswindowdataitem.h>
+#include <guicore/datamodel/graphicswindowdataitemstandarditemchangecommand.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>

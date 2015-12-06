@@ -1,6 +1,7 @@
 #include "../project/projectdata.h"
 #include "../project/projectmainfile.h"
 #include "graphicswindowdataitem.h"
+#include "graphicswindowdataitemstandarditemchangecommand.h"
 #include "graphicswindowdatamodel.h"
 #include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
@@ -436,6 +437,11 @@ void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 	}
 }
 
+GraphicsWindowDataModel* GraphicsWindowDataItem::dataModel() const
+{
+	return dynamic_cast<GraphicsWindowDataItem*>(parent())->dataModel();
+}
+
 QStringList GraphicsWindowDataItem::containedFiles()
 {
 	QStringList ret;
@@ -455,6 +461,11 @@ void GraphicsWindowDataItem::updateZDepthRangeItemCount()
 		sum += child->zDepthRange().itemCount();
 	}
 	m_zDepthRange.setItemCount(sum);
+}
+
+void GraphicsWindowDataItem::setIsCommandExecuting(bool exec)
+{
+	m_isCommandExecuting = exec;
 }
 
 void GraphicsWindowDataItem::update2Ds()
@@ -637,6 +648,20 @@ private:
 };
 
 }
+
+void GraphicsWindowDataItem::innerUpdate2Ds()
+{}
+
+void GraphicsWindowDataItem::innerUpdateZScale(double )
+{}
+
+bool GraphicsWindowDataItem::myHasTransparentPart() const
+{
+	return false;
+}
+
+void GraphicsWindowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* )
+{}
 
 void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)
 {
