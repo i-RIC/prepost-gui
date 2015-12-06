@@ -35,48 +35,48 @@ public:
 	static const int MAX_DRAWCELLCOUNT;
 	static const int MAX_DRAWINDEXCOUNT;
 	static const char LABEL_NAME[];
-	/// Constructor
+
 	Grid(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	Grid(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
-	/// Destructor
 	virtual ~Grid();
-	const std::string& zoneName() {return m_zoneName;}
-	void setZoneName(const std::string& name) {m_zoneName = name;}
+
+	SolverDefinitionGridType::GridType gridType() const;
+	const std::string& zoneName() const;
+	void setZoneName(const std::string& name);
+
+	void setParent(QObject* parent);
+
 	void loadFromCgnsFile(const int fn) override;
 	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
-	virtual void saveToCgnsFile(const int fn) override;
+	void saveToCgnsFile(const int fn) override;
 	virtual bool saveToCgnsFile(const int fn, int base, const char* zonename) = 0;
-	/// The pointer to VTK container that holds the data in deed.
-	vtkPointSet* vtkGrid() const {return m_vtkGrid;}
 
-	vtkAlgorithm* vtkFilteredShapeAlgorithm() const {return m_vtkFilteredShapeAlgorithm;}
-	vtkAlgorithm* vtkFilteredPointsAlgorithm() const {return m_vtkFilteredPointsAlgorithm;}
-	vtkAlgorithm* vtkFilteredCellsAlgorithm() const {return m_vtkFilteredCellsAlgorithm;}
-	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const {return 0;}
+	vtkPointSet* vtkGrid() const;
 
-	/// The list of grid related conditions
-	QList<GridAttributeContainer*>& gridRelatedConditions() {
-		return m_gridRelatedConditions;
-	}
-	/// Get grid related condition by name.
-	GridAttributeContainer* gridRelatedCondition(const std::string& name) {
-		return m_gridRelatedConditionNameMap.value(name);
-	}
+	vtkAlgorithm* vtkFilteredShapeAlgorithm() const;
+	vtkAlgorithm* vtkFilteredPointsAlgorithm() const;
+	vtkAlgorithm* vtkFilteredCellsAlgorithm() const;
+	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const;
+
+	QList<GridAttributeContainer*>& gridRelatedConditions();
+	GridAttributeContainer* gridRelatedCondition(const std::string& name) const;
 	void addGridRelatedCondition(GridAttributeContainer* cond);
-	/// Returns the number of nodes
+
 	unsigned int nodeCount() const;
-	/// Returns the number of cells
 	virtual unsigned int cellCount() const = 0;
-	virtual void setModified(bool modified = true) override;
-	bool isModified() const {return m_isModified;}
+
+	bool isModified() const;
+	void setModified(bool modified = true) override;
+
 	virtual const QStringList checkShape(QTextStream& stream);
-	virtual bool isValid(QTextStream& /*stream*/) const {return true;}
+	virtual bool isValid(QTextStream& stream) const;
+
 	bool isCustomModified();
 	void setCustomModified(bool modified);
+
 	virtual void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax);
-	bool isMasked() const {return m_isMasked;}
-	SolverDefinitionGridType::GridType gridType() const {return m_gridType;}
-	void setParent(QObject* parent);
+	bool isMasked() const;
+
 	static void getCullSetting(bool* enable, int* cellLimit, int* indexLimit);
 
 protected:
@@ -95,9 +95,6 @@ protected:
 	SolverDefinitionGridType::GridType m_gridType;
 	bool m_isModified;
 	bool m_isMasked;
-
-private:
-	void initPointers();
 
 public:
 	friend class GridInternalImporter;
