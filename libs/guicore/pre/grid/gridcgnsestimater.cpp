@@ -9,7 +9,7 @@
 Grid* GridCgnsEstimater::buildGrid(int fn, int baseId, int zoneId, ProjectDataItem* parent)
 {
 	int ier;
-	int size[9];
+	cgsize_t size[9];
 	ZoneType_t zoneType;
 	char buffer[ProjectCgnsFile::BUFFERLEN];
 

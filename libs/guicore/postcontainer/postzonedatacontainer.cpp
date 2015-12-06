@@ -45,7 +45,7 @@
 // namespace for local funcitions
 namespace {
 
-void setPointIds(vtkIdList* idlist, int* points, int num)
+void setPointIds(vtkIdList* idlist, cgsize_t* points, int num)
 {
 	for (int i = 0; i < num; ++i) {
 		int id = *(points + i) - 1;
