@@ -5,6 +5,7 @@
 #include "graph2dhybridwindow.h"
 #include "graph2dhybridwindowresultsetting.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/qwtplotcustomcurve.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/colorsource.h>
@@ -151,16 +152,9 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			ti.zoneId = cont->zoneId();
 			ti.zoneName = cont->zoneName();
 			if (cont->data() == nullptr) {return false;}
-			vtkPointData* pd = cont->data()->GetPointData();
-			int narrays = pd->GetNumberOfArrays();
-			for (int i = 0; i < narrays; ++i) {
-				vtkDataArray* da = pd->GetArray(i);
-				if (da == nullptr) {continue;}
-				if (da->GetNumberOfComponents() != 1) {
-					// not scalar value.
-					continue;
-				}
-				ti.dataNames.append(da->GetName());
+
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
+				ti.dataNames.append(name.c_str());
 			}
 			m_dataTypeInfos.append(ti);
 		}

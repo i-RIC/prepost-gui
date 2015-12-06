@@ -3,6 +3,8 @@
 #include "post3dwindowcontourgroupsettingdialog.h"
 #include "post3dwindowgridtypedataitem.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
@@ -40,26 +42,15 @@ void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* z
 {
 	ui->faceSettingWidget->setZoneData(zoneData);
 
-	vtkPointData* pd = zoneData->data()->GetPointData();
-	int num = pd->GetNumberOfArrays();
-	ui->physicalValueComboBox->clear();
-	m_solutions.clear();
-	ui->physicalValueComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkDataArray* a = pd->GetArray(i);
-		if (a == nullptr) {continue;}
-		if (a->GetNumberOfComponents() != 1) {continue;}
-		std::string name = a->GetName();
-		ui->physicalValueComboBox->addItem(name.c_str());
-		m_solutions.append(name);
-	}
-	ui->physicalValueComboBox->blockSignals(false);
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zoneData->data()->GetPointData());
+	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 }
 
 void Post3dWindowContourGroupSettingDialog::setCurrentSolution(const std::string& sol)
 {
-	int index = m_solutions.indexOf(sol);
-	ui->physicalValueComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
 }
 
 void Post3dWindowContourGroupSettingDialog::setContour(ContourSettingWidget::Contour c)

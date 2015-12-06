@@ -13,6 +13,9 @@
 #include <QDialog>
 #include <QList>
 
+#include <string>
+#include <vector>
+
 namespace Ui
 {
 	class Post2dWindowContourSettingDialog;
@@ -53,7 +56,7 @@ private:
 	std::string currentSolution() const;
 
 	int m_gridDims[3];
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 	Post2dWindowGridTypeDataItemInterface* m_gridTypeDataItem;
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;

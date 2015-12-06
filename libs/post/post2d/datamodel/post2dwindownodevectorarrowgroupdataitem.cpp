@@ -4,6 +4,7 @@
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -81,15 +82,8 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		// Check if it is a scalar attribute
-		if (tmparray->GetNumberOfComponents() == 1) {continue;}
-		std::string name = pd->GetArray(i)->GetName();
-		Post2dWindowNodeVectorArrowDataItem* item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
+		auto item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
 	setupActors();

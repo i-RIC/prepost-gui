@@ -6,11 +6,13 @@
 #include <QList>
 
 #include <string>
+#include <vector>
 
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
 class Grid;
+class QStringList;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridType : public SolverDefinitionNode
 {
@@ -70,6 +72,7 @@ public:
 
 	/// Returns the caption for the solution (calculation result)
 	QString solutionCaption(const std::string& name) const;
+	QStringList solutionCaptions(const std::vector<std::string>& names) const;
 
 private:
 	class Impl;

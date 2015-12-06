@@ -6,6 +6,7 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 
+#include <string>
 #include <vector>
 
 namespace Ui
@@ -63,7 +64,7 @@ private:
 
 	Ui::Post2dWindowStreamlineUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* m_dataItem;
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 	bool m_isPointsSet;
 
 	QPointF m_oldPoint1;

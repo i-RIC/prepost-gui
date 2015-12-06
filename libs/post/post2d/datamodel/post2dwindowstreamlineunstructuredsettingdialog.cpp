@@ -4,9 +4,12 @@
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 #include "post2dwindowstreamlineunstructuredsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 
 #include <QPushButton>
 #include <QVector2D>
@@ -54,9 +57,9 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setSettings(const Post2dWi
 	m_setting = s;
 	m_unstSettings = unsts;
 
-	int index = m_solutions.indexOf(s.currentSolution);
-	if (index == -1) {index = 0;}
-	ui->solutionComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
 	setupSettingList();
 }
@@ -259,21 +262,11 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
-	int num = pd->GetNumberOfArrays();
-	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkDataArray* da = pd->GetArray(i);
-		if (da == nullptr) {continue;}
-		std::string name = da->GetName();
-		if (da->GetNumberOfComponents() <= 1) {
-			// scalar attributes.
-			continue;
-		}
-		ui->solutionComboBox->addItem(gt->solutionCaption(name));
-		m_solutions.append(name);
-	}
-	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1) {
+
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+
+	if (m_solutions.size() < 2) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}

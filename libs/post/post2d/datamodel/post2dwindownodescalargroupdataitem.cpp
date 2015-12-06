@@ -8,6 +8,7 @@
 
 #include <guibase/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -67,16 +68,8 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 	setupActors();
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		// Check whether it is a vector attribute.
-		if (tmparray->GetNumberOfComponents() > 1) {continue;}
-		std::string name = pd->GetArray(i)->GetName();
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		Post2dWindowNodeScalarDataItem* item = new Post2dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-
 		m_childItems.append(item);
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}

@@ -6,6 +6,8 @@
 #include "../post3dwindowdataitem.h"
 #include "post3dwindownodevectorparticlegroupstructureddataitem.h"
 
+#include <vector>
+
 namespace Ui
 {
 	class Post3dWindowParticleStructuredSettingDialog;
@@ -63,7 +65,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post3dWindowParticleStructuredSettingDialog* ui;
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;
 	QList<Post3dWindowStructuredParticleSetSetting> m_settings;

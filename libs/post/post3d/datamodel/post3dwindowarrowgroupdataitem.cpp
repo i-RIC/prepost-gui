@@ -5,6 +5,7 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -54,28 +55,19 @@ Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataI
 	m_legendLength = STANDARD_LENGTH;
 	m_minimumValue = 0.01;
 	m_scaleFactor = 1;
-
+	m_currentSolution = "";
 	m_mapping = Specific;
-	QSettings setting;
-	m_color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
 	m_sampleRate = 1;
 
+	QSettings setting;
+	m_color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
+
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	bool first = true;
-	for (int i = 0; i < number; i++) {
-		if (pd->GetArray(i)->GetNumberOfComponents() == 1) {
-			if (! first) { continue; }
-			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr) {continue;}
-			m_scalarValueName = tmparray->GetName();
-			first = false;
-			continue;
-		}
-		m_currentSolution = "";
-		break;
+	auto scalarNames = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData());
+	if (scalarNames.size() > 0) {
+		m_scalarValueName = scalarNames.at(0);
 	}
+
 	setupActors();
 }
 

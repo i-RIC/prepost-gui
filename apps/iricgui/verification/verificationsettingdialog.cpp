@@ -2,6 +2,7 @@
 
 #include "verificationsettingdialog.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -139,25 +140,13 @@ void VerificationSettingDialog::selectZone(int zoneid)
 {
 	ui->physicalValueComboBox->clear();
 	PostZoneDataContainer* cont = m_postSolutionInfo->zoneContainers2D().at(zoneid);
-	vtkPointSet* ps = cont->data();
-	vtkPointData* pd = ps->GetPointData();
+	vtkPointData* pd = cont->data()->GetPointData();
 
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() > 1) {
-			// vector attribute.
-			continue;
-		}
-		if (vtkDoubleArray::SafeDownCast(tmparray) == 0) {
-			// not double
-			continue;
-		}
-		QString name = pd->GetArray(i)->GetName();
-		ui->physicalValueComboBox->addItem(name);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+		auto arr = pd->GetArray(name.c_str());
+		if (vtkDoubleArray::SafeDownCast(arr) == nullptr) {continue;}
+
+		ui->physicalValueComboBox->addItem(name.c_str());
 	}
 	ui->physicalValueComboBox->setCurrentIndex(0);
 }

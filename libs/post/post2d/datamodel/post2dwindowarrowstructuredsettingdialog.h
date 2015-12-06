@@ -63,8 +63,8 @@ private slots:
 	void samplingAllToggle(bool toggled);
 
 private:
-	QList<std::string> m_solutions;
-	QList<std::string> m_scalars;
+	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_scalars;
 
 	int m_gridDims[3];
 	bool m_activeAvailable;

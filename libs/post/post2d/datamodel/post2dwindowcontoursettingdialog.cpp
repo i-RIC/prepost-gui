@@ -4,7 +4,9 @@
 #include "post2dwindowcontoursettingdialog.h"
 #include "post2dwindowgridtypedataiteminterface.h"
 
+#include <guibase/comboboxtool.h>
 #include <guibase/scalarbardialog.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -38,31 +40,16 @@ Post2dWindowContourSettingDialog::~Post2dWindowContourSettingDialog()
 void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
-	int num = pd->GetNumberOfArrays();
-	ui->physicalValueComboBox->clear();
-	m_solutions.clear();
-	ui->physicalValueComboBox->blockSignals(true);
 	SolverDefinitionGridType* gtype = m_gridTypeDataItem->gridType();
 
-	for (int i = 0; i < num; ++i) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		std::string name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() > 1) {
-			// vector attributes.
-			continue;
-		}
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	ComboBoxTool::setupItems(gtype->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 
-		ui->physicalValueComboBox->addItem(gtype->solutionCaption(name));
-		m_solutions.append(name);
-	}
-	ui->physicalValueComboBox->blockSignals(false);
 	vtkStructuredGrid* stG = dynamic_cast<vtkStructuredGrid*> (zoneData->data());
-	if (stG != 0) {
+	m_unstructured = (stG == nullptr);
+
+	if (stG != nullptr) {
 		stG->GetDimensions(m_gridDims);
-	} else {
-		// unstructured grid!
-		m_unstructured = true;
 	}
 }
 
@@ -87,28 +74,15 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 {
 	m_setting = s;
 
-	// currentSolution
-	int index = m_solutions.indexOf(iRIC::toStr(s.currentSolution));
-	if (index == -1) {
-		// not set yet. select the first one.
-		index = 0;
-	}
-	ui->physicalValueComboBox->setCurrentIndex(index);
-	solutionChanged(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), std::string(s.currentSolution));
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
+	solutionChanged(it - m_solutions.begin());
 
-	// contour
 	ui->contourWidget->setContour(s.contour);
-
-	// numberOfDivision
 	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
-
-	// fillUpper
 	ui->colormapWidget->setFillUpper(s.fillUpper);
-
-	// fillLower
 	ui->colormapWidget->setFillLower(s.fillLower);
-
-	// opacity
 	ui->transparencyWidget->setOpacity(s.opacity);
 }
 

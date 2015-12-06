@@ -4,6 +4,7 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/graphicswindowdrawcommands.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
@@ -54,20 +55,10 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowD
 	m_numberOfDivision = 10;
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() > 1) {
-			// vector attribute.
-			continue;
-		}
-		std::string name = pd->GetArray(i)->GetName();
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorBarTitleMap.insert(name, name.c_str());
 	}
+
 	m_titleTextSetting.setPrefix("titleText");
 	m_labelTextSetting.setPrefix("labelText");
 

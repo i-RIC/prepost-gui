@@ -8,6 +8,7 @@
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/coordinatesystem.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -1065,53 +1066,29 @@ void PostZoneDataContainer::getCellIJKIndex(int index, int* i, int* j, int* k) c
 
 bool PostZoneDataContainer::scalarValueExists() const
 {
-	vtkPointData* data = m_data->GetPointData();
-	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i) {
-		vtkDataArray* array = data->GetArray(i);
-		if (array == 0) {continue;}
-		if (array->GetNumberOfComponents() == 1) {
-			// This is a scalar value.
-			return true;
-		}
-	}
-	return false;
+	return vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData()).size() > 0;
 }
 
 bool PostZoneDataContainer::vectorValueExists() const
 {
-	vtkPointData* data = m_data->GetPointData();
-	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i) {
-		vtkDataArray* array = data->GetArray(i);
-		if (array == 0) {continue;}
-		if (array->GetNumberOfComponents() == 3) {
-			// This is a vector value.
-			return true;
-		}
-	}
-	return false;
+	return vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(m_data->GetPointData()).size() > 0;
 }
 
 bool PostZoneDataContainer::IBCExists() const
 {
-	vtkPointData* data = m_data->GetPointData();
-	int n = data->GetNumberOfArrays();
-	for (int i = 0; i < n; ++i) {
-		vtkDataArray* array = data->GetArray(i);
-		if (array == nullptr) {continue;}
-		if (IBC == array->GetName()) {return true;}
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
+		if (IBC == name.c_str()) {return true;}
 	}
+
 	return false;
 }
 
 QString PostZoneDataContainer::elevationName() const
 {
-	int num = m_data->GetPointData()->GetNumberOfArrays();
-	for (int i = 0; i < num; ++i) {
-		QString tmpname = m_data->GetPointData()->GetAbstractArray(i)->GetName();
-		if (tmpname.toLower().left(9) == "elevation") {
-			return tmpname;
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_data->GetPointData())) {
+		QString tmpName = name.c_str();
+		if (tmpName.toLower().left(9) == "elevation") {
+			return tmpName;
 		}
 	}
 	return "";

@@ -4,6 +4,7 @@
 #include "post2dwindownodevectorparticlegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -69,15 +70,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		// check if it is a vector attribute
-		if (tmparray->GetNumberOfComponents() == 1) {continue;}
-		std::string name = pd->GetArray(i)->GetName();
-		Post2dWindowNodeVectorParticleDataItem* item = new Post2dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
+		auto item = new Post2dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
 }

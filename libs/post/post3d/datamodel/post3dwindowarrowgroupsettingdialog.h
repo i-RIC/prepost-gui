@@ -7,6 +7,9 @@
 #include <QDialog>
 #include <QMap>
 
+#include <string>
+#include <vector>
+
 class PostZoneDataContainer;
 class Post3dWindowGridTypeDataItem;
 class QListWidgetItem;
@@ -62,8 +65,8 @@ private slots:
 	void updateFaceMap();
 
 private:
-	QList<std::string> m_solutions;
-	QList<std::string> m_scalars;
+	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_scalars;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
 	bool m_isRemoving;
 

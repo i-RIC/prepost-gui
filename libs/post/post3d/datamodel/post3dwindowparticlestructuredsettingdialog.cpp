@@ -2,6 +2,8 @@
 
 #include "post3dwindowparticlestructuredsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
@@ -58,9 +60,9 @@ void Post3dWindowParticleStructuredSettingDialog::setZoneData(PostZoneDataContai
 
 void Post3dWindowParticleStructuredSettingDialog::setSolution(const std::string& sol)
 {
-	int index = m_solutions.indexOf(sol);
-	if (index == -1) {index = 0;}
-	ui->solutionComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 }
 
 std::string Post3dWindowParticleStructuredSettingDialog::solution() const
@@ -267,21 +269,11 @@ void Post3dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
-	int num = pd->GetNumberOfArrays();
-	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		std::string name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() <= 1) {
-			// scalar attributes.
-			continue;
-		}
-		ui->solutionComboBox->addItem(gt->solutionCaption(name));
-		m_solutions.append(name);
-	}
-	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() < 2) {
+
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+
+	if (m_solutions.size() < 2) {
 		// solution selection is needless.
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();

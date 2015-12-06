@@ -7,6 +7,8 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorparticlegroupunstructureddataitem.h"
 
+#include <vector>
+
 namespace Ui
 {
 	class Post2dWindowParticleUnstructuredSettingDialog;
@@ -28,21 +30,7 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-//	void setSolution(const QString& sol);
-//	void setTimeMode(Post2dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
-//	void setTimeSamplingRate(int sr);
-//	void setTimeDivision(int sd);
-//	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
 	void setSettings(const Post2dWindowNodeVectorParticleGroupDataItem::Setting& s, const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting> & unsts);
-//	void setSettings(const QList<Post2dWindowUnstructuredParticleSetSetting>& settings) {
-//		m_settings = settings;
-//		setupSettingList();
-//	}
-//	QString solution() const;
-//	Post2dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
-//	int timeSamplingRate() const;
-//	int timeDivision() const;
-//	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
 	Post2dWindowNodeVectorParticleGroupDataItem::Setting setting() const;
 	const QList<Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Setting>& unstSettings() const {return m_unstSettings;}
 
@@ -77,7 +65,7 @@ private:
 
 	Ui::Post2dWindowParticleUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* m_dataItem;
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 
 	QPointF m_oldPoint1;
 	QPointF m_oldPoint2;

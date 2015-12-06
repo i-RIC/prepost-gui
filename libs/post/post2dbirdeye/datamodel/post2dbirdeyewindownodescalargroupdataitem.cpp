@@ -4,6 +4,7 @@
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -55,18 +56,8 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() > 1) {
-			// vector attribute.
-			continue;
-		}
-		std::string name = pd->GetArray(i)->GetName();
-		Post2dBirdEyeWindowNodeScalarDataItem* item = new Post2dBirdEyeWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+		auto item = new Post2dBirdEyeWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}

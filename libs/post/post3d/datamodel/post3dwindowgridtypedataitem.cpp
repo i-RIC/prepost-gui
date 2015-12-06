@@ -2,6 +2,7 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
@@ -33,19 +34,14 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	// add raw data node and grid data node.
 	// setup ScalarsToColors instances
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers3D();
-	if (containers.size() != 0) {
-		vtkPointSet* ps = containers.at(0)->data();
-		if (ps == nullptr) {return;}
-		vtkPointData* pd = ps->GetPointData();
-		int num = pd->GetNumberOfArrays();
-		for (int i = 0; i < num; ++i) {
-			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr) {continue;}
-			std::string name = tmparray->GetName();
+	if (containers.size() == 0) {return;}
 
-			setupScalarsToColors(name);
-			setValueRange(name);
-		}
+	vtkPointSet* ps = containers.at(0)->data();
+	if (ps == nullptr) {return;}
+
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(ps->GetPointData())) {
+		setupScalarsToColors(name);
+		setValueRange(name);
 	}
 }
 

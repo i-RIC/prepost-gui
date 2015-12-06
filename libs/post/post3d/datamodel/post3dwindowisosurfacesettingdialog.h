@@ -8,6 +8,8 @@
 #include <QDialog>
 #include <QList>
 
+#include <vector>
+
 namespace Ui
 {
 	class Post3dWindowIsosurfaceSettingDialog;
@@ -59,7 +61,7 @@ private slots:
 	void kMaxChanged(int max);
 
 private:
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 	Ui::Post3dWindowIsosurfaceSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 

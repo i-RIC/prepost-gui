@@ -6,6 +6,8 @@
 #include "../post3dwindowdataitem.h"
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
 
+#include <vector>
+
 namespace Ui
 {
 	class Post3dWindowStreamlineStructuredSettingDialog;
@@ -55,7 +57,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post3dWindowStreamlineStructuredSettingDialog* ui;
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_settings;
 	Post3dWindowStructuredStreamlineSetSetting* m_activeSetting;

@@ -6,6 +6,9 @@
 #include "../post2dwindowdataitem.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
 
+#include <string>
+#include <vector>
+
 namespace Ui
 {
 	class Post2dWindowParticleStructuredSettingDialog;
@@ -50,7 +53,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post2dWindowParticleStructuredSettingDialog* ui;
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 
 	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_setting;
 	QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting> m_stSettings;

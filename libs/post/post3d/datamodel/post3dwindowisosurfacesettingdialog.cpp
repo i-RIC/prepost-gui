@@ -3,6 +3,8 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowisosurfacesettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/structuredgridregion.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -36,26 +38,12 @@ Post3dWindowIsosurfaceSettingDialog::~Post3dWindowIsosurfaceSettingDialog()
 	delete ui;
 }
 
-
 void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
-	int num = pd->GetNumberOfArrays();
-	ui->physicalValueComboBox->clear();
-	m_solutions.clear();
 
-	ui->physicalValueComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		std::string name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() > 1) {
-			continue;		// vector attributes.
-		}
-		ui->physicalValueComboBox->addItem(m_gridTypeDataItem->gridType()->solutionCaption(name));
-		m_solutions.append(name);
-	}
-	ui->physicalValueComboBox->blockSignals(false);
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_solutions), ui->physicalValueComboBox);
 
 	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
 	int dims[3];
@@ -76,13 +64,10 @@ void Post3dWindowIsosurfaceSettingDialog::setEnabled(bool enabled)
 
 void Post3dWindowIsosurfaceSettingDialog::setCurrentSolution(const std::string& sol)
 {
-	int index = m_solutions.indexOf(sol);
-	if (index == -1) {
-		// not set yet. select the first one.
-		index = 0;
-	}
-	ui->physicalValueComboBox->setCurrentIndex(index);
-	solutionChanged(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
+	solutionChanged(it - m_solutions.begin());
 }
 
 void Post3dWindowIsosurfaceSettingDialog::setGridTypeDataItem(Post3dWindowGridTypeDataItem* item)

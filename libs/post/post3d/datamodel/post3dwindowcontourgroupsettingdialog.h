@@ -10,11 +10,12 @@
 #include <QList>
 #include <QMap>
 
+#include <vector>
+
 namespace Ui
 {
 	class Post3dWindowContourGroupSettingDialog;
 }
-
 
 class iRICMainWindow;
 class PostZoneDataContainer;
@@ -71,7 +72,7 @@ private slots:
 	void showColorBarDialog();
 
 private:
-	QList<std::string> m_solutions;
+	std::vector<std::string> m_solutions;
 	Ui::Post3dWindowContourGroupSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;

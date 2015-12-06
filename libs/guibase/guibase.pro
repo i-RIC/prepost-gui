@@ -80,6 +80,7 @@ HEADERS += asciionlylineedit.h \
            colormapcustomsettingdialog.h \
            colormapsettingwidget.h \
            colortool.h \
+           comboboxtool.h \
            contoursettingwidget.h \
            coordinateeditwidget.h \
            coordinatesystem.h \
@@ -115,6 +116,7 @@ HEADERS += asciionlylineedit.h \
            transparencywidget.h \
            vtk2dinteractorstyle.h \
            vtkCustomStreamPoints.h \
+           vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
            vtklegendboxwidget.h \
            vtksubdividegrid.h \
@@ -149,6 +151,7 @@ SOURCES += asciionlylineedit.cpp \
            colormapcustomsettingdialog.cpp \
            colormapsettingwidget.cpp \
            colortool.cpp \
+           comboboxtool.cpp \
            contoursettingwidget.cpp \
            coordinateeditwidget.cpp \
            coordinatesystem.cpp \
@@ -183,6 +186,7 @@ SOURCES += asciionlylineedit.cpp \
            transparencywidget.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomStreamPoints.cxx \
+           vtkdatasetattributestool.cpp \
            vtklegendboxrepresentation.cpp \
            vtklegendboxwidget.cpp \
            vtksubdividegrid.cpp \

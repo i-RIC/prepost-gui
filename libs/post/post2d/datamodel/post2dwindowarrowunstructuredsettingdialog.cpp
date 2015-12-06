@@ -3,6 +3,8 @@
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowarrowunstructuredsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -43,14 +45,14 @@ void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
 void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss)
 {
 	// solution
-	int index = m_solutions.indexOf(iRIC::toStr(s.currentSolution));
-	if (index == -1) {index = 0;}
-	ui->solutionComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
 	// scalarValue
-	index = m_scalars.indexOf(iRIC::toStr(s.scalarValueName));
-	if (index == -1) { index = 0; }
-	ui->scalarComboBox->setCurrentIndex(index);
+	it = std::find(m_scalars.begin(), m_scalars.end(), iRIC::toStr(s.scalarValueName));
+	if (it == m_scalars.end()) {it = m_scalars.begin();}
+	ui->scalarComboBox->setCurrentIndex(it - m_scalars.begin());
 
 	// color
 	ui->colorEditWidget->setColor(s.color);
@@ -169,24 +171,14 @@ void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneD
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
-	int num = pd->GetNumberOfArrays();
-	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {continue;}
-		std::string name = tmparray->GetName();
-		if (pd->GetArray(i)->GetNumberOfComponents() <= 1) {
-			// scalar attributes.
-			ui->scalarComboBox->addItem(gt->solutionCaption(name));
-			m_scalars.append(name);
-		} else {
-			// vector attributes.
-			ui->solutionComboBox->addItem(gt->solutionCaption(name));
-			m_solutions.append(name);
-		}
-	}
-	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1) {
+
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+
+	m_scalars = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	ComboBoxTool::setupItems(gt->solutionCaptions(m_scalars), ui->scalarComboBox);
+
+	if (m_solutions.size() < 2) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}

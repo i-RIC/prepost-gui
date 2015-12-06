@@ -6,6 +6,7 @@
 #include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
 
 #include <QDialog>
+#include <vector>
 
 class PostZoneDataContainer;
 class ArrowSettingContainer;
@@ -34,8 +35,8 @@ private slots:
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
-	QList<std::string> m_solutions;
-	QList<std::string> m_scalars;
+	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_scalars;
 	bool m_activeAvailable;
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_setting;
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_unsSetting;

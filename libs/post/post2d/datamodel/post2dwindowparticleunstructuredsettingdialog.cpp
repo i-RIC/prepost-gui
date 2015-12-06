@@ -3,9 +3,12 @@
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowparticleunstructuredsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 
 #include <QPushButton>
 #include <QVector2D>
@@ -58,10 +61,9 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSettings(const Post2dWind
 	m_setting = s;
 	m_unstSettings = unsts;
 
-	// solution
-	int index = m_solutions.indexOf(s.currentSolution);
-	if (index == -1) {index = 0;}
-	ui->solutionComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
 	// timemode
 	if (s.timeMode == Post2dWindowNodeVectorParticleGroupDataItem::tmNormal) {
@@ -79,7 +81,6 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSettings(const Post2dWind
 			}
 		}
 	}
-
 
 	setupSettingList();
 }
@@ -315,21 +316,15 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
-	int num = pd->GetNumberOfArrays();
-	ui->solutionComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkDataArray* da = pd->GetArray(i);
-		if (da == nullptr) {continue;}
-		std::string name = da->GetName();
-		if (da->GetNumberOfComponents() <= 1) {
-			// scalar attributes.
-			continue;
-		}
-		ui->solutionComboBox->addItem(gt->solutionCaption(name));
-		m_solutions.append(name);
+
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	QStringList captions;
+	for (auto s : m_solutions) {
+		captions.push_back(gt->solutionCaption(s));
 	}
-	ui->solutionComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1) {
+	ComboBoxTool::setupItems(captions, ui->solutionComboBox);
+
+	if (m_solutions.size() < 2) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}

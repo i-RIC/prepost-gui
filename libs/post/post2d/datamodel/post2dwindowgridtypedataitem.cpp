@@ -3,6 +3,7 @@
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -44,17 +45,13 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	// add raw data node and grid data node.
 	// setup ScalarsToColors instances
 	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers2D();
-	if (containers.size() != 0) {
-		vtkPointData* pd = containers.at(0)->data()->GetPointData();
-		int num = pd->GetNumberOfArrays();
-		for (int i = 0; i < num; ++i) {
-			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr) {continue;}
-			std::string name = tmparray->GetName();
-			setupScalarsToColors(name);
-		}
-		updateLookupTableRanges();
+	if (containers.size() == 0) {return;}
+
+	vtkPointData* pd = containers.at(0)->data()->GetPointData();
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+		setupScalarsToColors(name);
 	}
+	updateLookupTableRanges();
 }
 
 Post2dWindowGridTypeDataItem::~Post2dWindowGridTypeDataItem()
@@ -91,11 +88,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	if (m_lookupTables.count() == 0 && zones.size() != 0) {
 		vtkPointData* pd = zones.at(0)->data()->GetPointData();
-		int num = pd->GetNumberOfArrays();
-		for (int i = 0; i < num; ++i) {
-			vtkAbstractArray* tmparray = pd->GetArray(i);
-			if (tmparray == nullptr) {continue;}
-			std::string name = tmparray->GetName();
+		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 			setupScalarsToColors(name);
 		}
 		updateLookupTableRanges();

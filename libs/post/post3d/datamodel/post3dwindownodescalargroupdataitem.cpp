@@ -5,6 +5,7 @@
 #include "post3dwindownodescalargroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
@@ -54,19 +55,8 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->data()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() > 1) {
-			// vector attribute.
-			continue;
-		}
-		std::string name = tmparray->GetName();
-		Post3dWindowNodeScalarDataItem* item = new Post3dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
+		auto item = new Post3dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
 }

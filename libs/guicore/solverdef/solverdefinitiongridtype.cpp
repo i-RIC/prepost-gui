@@ -16,6 +16,8 @@
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridtype.h"
 
+#include <QStringList>
+
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -403,4 +405,13 @@ Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
 QString SolverDefinitionGridType::solutionCaption(const std::string& name) const
 {
 	return name.c_str();
+}
+
+QStringList SolverDefinitionGridType::solutionCaptions(const std::vector<std::string>& names) const
+{
+	QStringList ret;
+	for (auto name : names) {
+		ret.push_back(solutionCaption(name));
+	}
+	return ret;
 }

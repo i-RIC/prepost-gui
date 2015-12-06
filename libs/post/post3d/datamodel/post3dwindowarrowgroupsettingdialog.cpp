@@ -2,6 +2,8 @@
 
 #include "post3dwindowarrowgroupsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/arrowsettingcontainer.h>
 #include <misc/stringtool.h>
@@ -92,9 +94,9 @@ int Post3dWindowArrowGroupSettingDialog::sampleRate()
 
 void Post3dWindowArrowGroupSettingDialog::setCurrentSolution(const std::string& sol)
 {
-	int index = m_solutions.indexOf(sol);
-	if (index == -1) {index = 0;}
-	ui->physicalValueComboBox->setCurrentIndex(index);
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
+	if (it == m_solutions.end()) {it = m_solutions.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
 }
 
 const std::string Post3dWindowArrowGroupSettingDialog::currentSolution() const
@@ -123,29 +125,16 @@ void Post3dWindowArrowGroupSettingDialog::setZoneData(PostZoneDataContainer* zon
 {
 	ui->faceSettingWidget->setZoneData(zoneData);
 
+	SolverDefinitionGridType* gType = zoneData->gridType();
 	vtkPointData* pd = zoneData->data()->GetPointData();
-	int num = pd->GetNumberOfArrays();
-	ui->physicalValueComboBox->clear();
-	ui->scalarComboBox->clear();
-	m_solutions.clear();
-	m_scalars.clear();
-	ui->physicalValueComboBox->blockSignals(true);
-	ui->scalarComboBox->blockSignals(true);
-	for (int i = 0; i < num; ++i) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == 0) {continue;}
-		std::string name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() == 1) {
-			ui->scalarComboBox->addItem(name.c_str());
-			m_scalars.append(name);
-		} else {
-			ui->physicalValueComboBox->addItem(name.c_str());
-			m_solutions.append(name);
-		}
-	}
-	ui->physicalValueComboBox->blockSignals(false);
-	ui->scalarComboBox->blockSignals(false);
-	if (m_solutions.count() <= 1) {
+
+	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gType->solutionCaptions(m_solutions), ui->physicalValueComboBox);
+
+	m_scalars = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	ComboBoxTool::setupItems(gType->solutionCaptions(m_scalars), ui->scalarComboBox);
+
+	if (m_solutions.size() < 2) {
 		ui->physicalValueLabel->hide();
 		ui->physicalValueComboBox->hide();
 	}
