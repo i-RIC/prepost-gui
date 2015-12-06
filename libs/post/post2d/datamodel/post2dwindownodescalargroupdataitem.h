@@ -2,7 +2,10 @@
 #define POST2DWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
+
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/post2dwindowcontoursetting.h>
+
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkLODActor.h>
@@ -18,10 +21,8 @@ class vtkAlgorithm;
 class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
-class Post2dWindowContourSetProperty;
-class Post2dWindowContourSelectSolution;
 
-class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -29,28 +30,33 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
-	std::string currentSolution() const {return m_setting.currentSolution;}
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const std::string& currentSol);
 	bool hasTransparentPart() override;
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+
 	void addCustomMenuItems(QMenu* menu) override;
+
 	bool checkKmlExportCondition();
 	bool exportKMLHeader(QXmlStreamWriter& writer);
 	bool exportKMLFooter(QXmlStreamWriter& writer);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time);
+
 	bool exportContourFigureToShape(const QString& filename, double time);
 
 public slots:
@@ -90,15 +96,9 @@ private:
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
 	class ShapeExporter;
-
 	ShapeExporter* m_shapeExporter;
 
 	class SetSettingCommand;
-	class SelectSolutionCommand;
-
-public:
-	friend class Post2dWindowContourSetProperty;
-	friend class Post2dWindowContourSelectSolution;
 };
 
 #endif // POST2DWINDOWNODESCALARGROUPDATAITEM_H

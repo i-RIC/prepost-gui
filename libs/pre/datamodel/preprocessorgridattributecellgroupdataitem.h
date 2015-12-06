@@ -1,6 +1,7 @@
 #ifndef PREPROCESSORGRIDRELATEDCONDITIONCELLGROUPDATAITEM_H
 #define PREPROCESSORGRIDRELATEDCONDITIONCELLGROUPDATAITEM_H
 
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/opacitycontainer.h>
 #include <QMap>
@@ -14,17 +15,18 @@ class QAction;
 class NamedGraphicWindowDataItem;
 class PreProcessorGridAttributeCellDataItem;
 
-class PreProcessorGridAttributeCellGroupDataItem : public PreProcessorDataItem
+class PreProcessorGridAttributeCellGroupDataItem : public PreProcessorDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridAttributeCellGroupDataItem();
 
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	void updateActorSettings();
-	const std::string& currentCondition() {return m_currentCondition;}
 	void informDataChange(const std::string& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
@@ -34,7 +36,6 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void informGridUpdate();
-	void setCurrentCondition(const std::string& cond);
 	const QList<PreProcessorGridAttributeCellDataItem*> conditions() const;
 	PreProcessorGridAttributeCellDataItem* cellDataItem(const std::string& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange() override;
@@ -61,7 +62,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	std::string m_currentCondition;
+	std::string m_target;
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 	QMap<std::string, PreProcessorGridAttributeCellDataItem*> m_nameMap;
@@ -69,9 +70,6 @@ private:
 	OpacityContainer m_opacity;
 	QAction* m_showAttributeBrowserAction;
 	bool m_attributeBrowserFixed;
-
-public:
-	friend class PreProcessorGridRelatedConditionCellGroupSelectCondition;
 };
 
 #endif // PREPROCESSORGRIDRELATEDCONDITIONCELLGROUPDATAITEM_H

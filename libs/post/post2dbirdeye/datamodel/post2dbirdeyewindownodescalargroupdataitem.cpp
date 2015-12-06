@@ -7,6 +7,7 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -74,6 +75,18 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupD
 	m_scalarBarWidget->SetInteractor(nullptr);
 }
 
+std::string Post2dBirdEyeWindowNodeScalarGroupDataItem::target() const
+{
+	return m_setting.target;
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.target = target.c_str();
+	updateActorSettings();
+}
+
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 {
 	// make all the items invisible
@@ -86,7 +99,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
@@ -115,40 +128,6 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSettings()
 		setupScalarBarSetting();
 	}
 	updateVisibilityWithoutRendering();
-}
-
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_setting.load(node);
-	setCurrentSolution(m_setting.currentSolution);
-
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	QDomNodeList titles = node.childNodes();
-	for (int i = 0; i < titles.count(); ++i) {
-		QDomElement titleElem = titles.at(i).toElement();
-		std::string val = iRIC::toStr(titleElem.attribute("value"));
-		QString title = titleElem.attribute("title");
-		m_colorbarTitleMap[val] = title;
-	}
-	updateActorSettings();
-}
-
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-
-	m_setting.save(writer);
-
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
-	}
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
@@ -220,7 +199,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
+	LookupTableContainer* stc = typedi->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -228,22 +207,22 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 	m_warp->SetInputData(m_valueClippedPolyData);
 	m_warp->Update();
 	m_isolineFilter->SetInputData(m_warp->GetOutput());
-	m_isolineFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.currentSolution).c_str());
+	m_isolineFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_setting.target).c_str());
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
 	m_isolineMapper->SetLookupTable(stc->vtkObj());
-	m_isolineMapper->SelectColorArray(iRIC::toStr(m_setting.currentSolution).c_str());
+	m_isolineMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
 	m_actorCollection->AddItem(m_isolineActor);
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(m_setting.currentSolution);
+	LookupTableContainer* stc = typedi->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
-	m_valueClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
+	m_valueClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 	vtkSmartPointer<vtkAppendPolyData> appendFilledContours = vtkSmartPointer<vtkAppendPolyData>::New();
 	double delta = (range[1] - range[0]) / static_cast<double>(m_setting.numberOfDivisions);
 	std::vector< vtkSmartPointer<vtkClipPolyData> > clippersLo;
@@ -306,13 +285,13 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(currentSolution());
+	LookupTableContainer* stc = typedi->lookupTable(target());
 	if (stc == nullptr) {return;}
 	m_warp->SetInputData(m_valueClippedPolyData);
 	m_warp->Update();
 	m_fringeMapper->SetInputData(m_warp->GetOutput());
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
-	m_fringeMapper->SelectColorArray(currentSolution().c_str());
+	m_fringeMapper->SelectColorArray(target().c_str());
 	m_fringeMapper->SetLookupTable(stc->vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
 //_	m_fringeActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
@@ -322,11 +301,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(currentSolution());
+	LookupTableContainer* stc = typedi->lookupTable(target());
 	if (stc == nullptr) {return;}
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(currentSolution())).c_str());
+	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(target())).c_str());
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
 	m_setting.titleTextSetting.applySetting(a->GetTitleTextProperty());
@@ -380,27 +359,27 @@ public:
 		m_newLookupTable {ltc},
 		m_newScalarBarTitle {colorbarTitle},
 		m_oldSetting {item->m_setting},
-		m_oldScalarBarTitle {item->m_colorbarTitleMap[s.currentSolution]},
+		m_oldScalarBarTitle {item->m_colorbarTitleMap[s.target]},
 		m_item {item}
 	{
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(s.currentSolution);
+		LookupTableContainer* lut = gtItem->lookupTable(s.target);
 		m_oldLookupTable = *lut;
 	}
 	void redo() {
 		m_item->m_setting = m_newSetting;
-		applySettings(m_newSetting.currentSolution, m_newLookupTable, m_newScalarBarTitle);
+		applySettings(m_newSetting.target, m_newLookupTable, m_newScalarBarTitle);
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
-		applySettings(m_oldSetting.currentSolution, m_oldLookupTable, m_oldScalarBarTitle);
+		applySettings(m_oldSetting.target, m_oldLookupTable, m_oldScalarBarTitle);
 		m_item->updateActorSettings();
 	}
 private:
 	void applySettings(const std::string& sol, const LookupTableContainer& c, QString& title)
 	{
-		m_item->setCurrentSolution(sol);
+		m_item->setTarget(sol);
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
 		LookupTableContainer* lut = gtItem->lookupTable(sol);
 		*lut = c;
@@ -428,43 +407,12 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QD
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-class Post2dBirdEyeWindowNodeScalarGroupDataItem::SelectSolutionCommand : public QUndoCommand
-{
-public:
-	SelectSolutionCommand(const std::string& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
-		QUndoCommand{ QObject::tr("Contour Physical Value Change") },
-		m_newCurrentSolution(newsol),
-		m_oldCurrentSolution(m_item->currentSolution()),
-		m_item{ item }
-	{}
-	void redo() override {
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-	}
-	void undo() override {
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-	}
-private:
-	std::string m_newCurrentSolution;
-	std::string m_oldCurrentSolution;
-
-	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
-};
-
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
-}
+	if (m_isCommandExecuting) {return;}
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
-	m_setting.currentSolution = currentSol.c_str();
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()
@@ -516,7 +464,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(currentSolution());
+	LookupTableContainer* stc = typedi->lookupTable(target());
 	if (stc == nullptr) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);
@@ -527,7 +475,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 		lowerClipper->SetValue(min);
 		lowerClipper->SetInputData(m_regionClippedPolyData);
 		lowerClipper->InsideOutOff();
-		m_regionClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
+		m_regionClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 
 		lowerClipper->Update();
 		lowerClipped = lowerClipper->GetOutput();
@@ -540,7 +488,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 		upperClipper->SetValue(max);
 		upperClipper->SetInputData(lowerClipped);
 		upperClipper->InsideOutOn();
-		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.currentSolution).c_str());
+		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 		upperClipper->Update();
 		upperClipped = upperClipper->GetOutput();
 		lowerClipped->GetPointData()->SetActiveScalars("");
@@ -585,4 +533,37 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* ev
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	v->standardMouseReleaseEvent(event);
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_setting.load(node);
+	setTarget(m_setting.target);
+
+	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+
+	QDomNodeList titles = node.childNodes();
+	for (int i = 0; i < titles.count(); ++i) {
+		QDomElement titleElem = titles.at(i).toElement();
+		std::string val = iRIC::toStr(titleElem.attribute("value"));
+		QString title = titleElem.attribute("title");
+		m_colorbarTitleMap[val] = title;
+	}
+	updateActorSettings();
+}
+
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	m_setting.save(writer);
+
+	// scalar bar titles
+	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
+	while (i.hasNext()) {
+		i.next();
+		writer.writeStartElement("ScalarBarTitle");
+		writer.writeAttribute("value", i.key().c_str());
+		writer.writeAttribute("title", i.value());
+		writer.writeEndElement();
+	}
 }

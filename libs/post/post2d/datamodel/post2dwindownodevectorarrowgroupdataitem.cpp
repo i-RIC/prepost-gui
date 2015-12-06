@@ -5,6 +5,7 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
@@ -95,37 +96,12 @@ Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataI
 	renderer()->RemoveActor(m_arrowActor);
 }
 
-class Post2dWindowNodeVectorArrowGroupDataItem::SelectSolutionCommand : public QUndoCommand
-{
-public:
-	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorArrowGroupDataItem::tr("Arrow Physical Value Change")},
-		m_newCurrentSolution (newsol),
-		m_oldCurrentSolution (item->m_setting.currentSolution),
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-	}
-private:
-	std::string m_newCurrentSolution;
-	std::string m_oldCurrentSolution;
-
-	Post2dWindowNodeVectorArrowGroupDataItem* m_item;
-};
-
 void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
@@ -311,10 +287,16 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const std::string& currentSol)
+std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
-	m_setting.currentSolution = currentSol.c_str();
+	return m_setting.currentSolution;
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.currentSolution = target.c_str();
+	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
@@ -395,7 +377,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	setCurrentSolution(m_setting.currentSolution);
+	setTarget(m_setting.currentSolution);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -4,10 +4,10 @@ const int Post2dWindowContourSetting::DEFAULT_NUMOFDIV = 15;
 
 Post2dWindowContourSetting::Post2dWindowContourSetting() :
 	CompositeContainer
-		({&numberOfDivisions, &currentSolution, &contour, &fillUpper, &fillLower,
+		({&numberOfDivisions, &target, &contour, &fillUpper, &fillLower,
 		 &opacity, &regionMode, &range, &scalarBarSetting, &titleTextSetting, &labelTextSetting}),
 	numberOfDivisions {"numberOfDivisions", DEFAULT_NUMOFDIV},
-	currentSolution {"solution"},
+	target {"solution"},
 	contour {"contour", ContourSettingWidget::ColorFringe},
 	fillUpper {"fillUpper", true},
 	fillLower {"fillLower", true},
@@ -24,6 +24,9 @@ Post2dWindowContourSetting::Post2dWindowContourSetting(const Post2dWindowContour
 {
 	CompositeContainer::copyValue(s);
 }
+
+Post2dWindowContourSetting::~Post2dWindowContourSetting()
+{}
 
 Post2dWindowContourSetting& Post2dWindowContourSetting::operator=(const Post2dWindowContourSetting& s)
 {

@@ -168,13 +168,13 @@ public:
 	void redo() {
 		m_item->m_setting = m_newSetting;
 		m_item->m_unsSetting = m_newUnsSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.currentSolution);
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
 		m_item->m_unsSetting = m_oldUnsSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+		m_item->setTarget(m_oldSetting.currentSolution);
 		m_item->updateActorSettings();
 	}
 

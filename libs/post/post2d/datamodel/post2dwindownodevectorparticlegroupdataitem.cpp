@@ -6,6 +6,7 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -37,8 +38,8 @@
 #include <vtkVertex.h>
 
 Post2dWindowNodeVectorParticleGroupDataItem::Setting::Setting() :
-	CompositeContainer ({&currentSolution, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode}),
-	currentSolution {"solution"},
+	CompositeContainer ({&target, &timeMode, &timeSamplingRate, &timeDivision, &particleSize, &regionMode}),
+	target {"solution"},
 	timeMode {"timeMode", tmNormal},
 	timeSamplingRate {"timeSamplingRate", 2},
 	timeDivision {"timeDivision", 2},
@@ -84,39 +85,12 @@ Post2dWindowNodeVectorParticleGroupDataItem::~Post2dWindowNodeVectorParticleGrou
 	}
 }
 
-class Post2dWindowNodeVectorParticleGroupDataItem::SelectSolutionCommand : public QUndoCommand
-{
-public:
-	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorParticleGroupDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorParticleGroupDataItem::tr("Particle Physical Value Change")},
-		m_newCurrentSolution (newsol),
-		m_oldCurrentSolution (item->m_setting.currentSolution),
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-	}
-
-private:
-	std::string m_newCurrentSolution;
-	std::string m_oldCurrentSolution;
-
-	Post2dWindowNodeVectorParticleGroupDataItem* m_item;
-};
-
-
 void Post2dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Particle Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
@@ -131,7 +105,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointSet* ps = cont->data();
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
@@ -148,7 +122,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 void Post2dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	setCurrentSolution(m_setting.currentSolution);
+	setTarget(m_setting.target);
 	updateActorSettings();
 }
 
@@ -206,7 +180,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	m_particleMappers.clear();
 
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (zoneContainer == nullptr) {return;}
 	unsigned int currentStep = 0;
@@ -246,10 +220,16 @@ void Post2dWindowNodeVectorParticleGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const std::string& currentSol)
+std::string Post2dWindowNodeVectorParticleGroupDataItem::target() const
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
-	m_setting.currentSolution = currentSol.c_str();
+	return m_setting.target;
+}
+
+void Post2dWindowNodeVectorParticleGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.target = target.c_str();
+	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()
@@ -292,7 +272,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointSet* ps = zoneContainer->data();
-	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
+	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
 	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
 

@@ -1,6 +1,7 @@
 #ifndef PREPROCESSORGRIDRELATEDCONDITIONNODEGROUPDATAITEM_H
 #define PREPROCESSORGRIDRELATEDCONDITIONNODEGROUPDATAITEM_H
 
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/opacitycontainer.h>
 #include <QMap>
@@ -17,16 +18,18 @@ class QAction;
 class NamedGraphicWindowDataItem;
 class PreProcessorGridAttributeNodeDataItem;
 
-class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem
+class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem , public TargetedItemI
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridAttributeNodeGroupDataItem();
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	void updateActorSettings();
-	const std::string& currentCondition() {return m_currentCondition;}
 	void informDataChange(const std::string& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
@@ -36,7 +39,6 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
-	void setCurrentCondition(const std::string& currentCond);
 	const QList<PreProcessorGridAttributeNodeDataItem*> conditions() const;
 	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange() override;
@@ -64,7 +66,7 @@ protected:
 private:
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 
-	std::string m_currentCondition;
+	std::string m_target;
 	vtkSmartPointer<vtkPolyData> m_contourPolyData;
 	vtkSmartPointer<vtkActor> m_contourActor;
 	vtkSmartPointer<vtkDataSetMapper> m_contourMapper;
@@ -78,9 +80,6 @@ private:
 	OpacityContainer m_opacity;
 	bool m_attributeBrowserFixed;
 	QMap<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
-
-public:
-	friend class PreProcessorSelectCondition;
 };
 
 #endif // PREPROCESSORGRIDRELATEDCONDITIONNODEGROUPDATAITEM_H

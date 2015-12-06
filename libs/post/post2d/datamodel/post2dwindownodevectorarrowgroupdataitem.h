@@ -3,6 +3,7 @@
 
 #include "../post2dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/arrowsettingcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/colorcontainer.h>
@@ -32,7 +33,7 @@ class vtkPointSet;
 class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorArrowDataItem;
 
-class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -68,10 +69,9 @@ public:
 		ArrowSettingContainer arrowSetting;
 	};
 
-
-	/// Constructor
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -86,14 +86,15 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	void innerUpdate2Ds() override;
 	void updateColorSetting();
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
 	virtual void updateActivePoints() = 0;
-	void setCurrentSolution(const std::string& currentSol);
-	std::string currentSolution() const {return m_setting.currentSolution;}
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
@@ -120,9 +121,6 @@ protected:
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 
 	Setting m_setting;
-
-private:
-	class SelectSolutionCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPDATAITEM_H

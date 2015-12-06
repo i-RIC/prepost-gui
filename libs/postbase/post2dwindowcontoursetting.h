@@ -19,15 +19,14 @@ class POSTBASEDLL_EXPORT Post2dWindowContourSetting : public CompositeContainer
 
 public:
 	const static int DEFAULT_NUMOFDIV;
-	/// Constructor
 	Post2dWindowContourSetting();
-	/// Copy constructor
 	Post2dWindowContourSetting(const Post2dWindowContourSetting& s);
-	/// Copy operator
+	~Post2dWindowContourSetting();
+
 	Post2dWindowContourSetting& operator=(const Post2dWindowContourSetting& s);
 
+	StringContainer target;
 	IntContainer numberOfDivisions;
-	StringContainer currentSolution;
 	EnumContainerT<ContourSettingWidget::Contour> contour;
 	BoolContainer fillUpper;
 	BoolContainer fillLower;

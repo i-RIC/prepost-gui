@@ -74,7 +74,7 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 {
 	m_setting = s;
 
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), std::string(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), std::string(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
 	solutionChanged(it - m_solutions.begin());
@@ -95,7 +95,7 @@ Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 {
 	Post2dWindowContourSetting ret = m_setting;
 
-	ret.currentSolution = currentSolution().c_str();
+	ret.target = currentSolution().c_str();
 	ret.contour = ui->contourWidget->contour();
 	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
 	ret.fillUpper = ui->colormapWidget->fillUpper();

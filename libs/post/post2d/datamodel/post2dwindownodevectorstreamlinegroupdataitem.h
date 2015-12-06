@@ -3,6 +3,7 @@
 
 #include "../post2dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/compositecontainer.h>
 #include <misc/stringcontainer.h>
 #include <misc/enumcontainert.h>
@@ -22,21 +23,19 @@
 class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorStreamlineDataItem;
 
-class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
 public:
 	struct Setting : public CompositeContainer
 	{
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
+
 		Setting& operator=(const Setting& s);
 
-		StringContainer currentSolution;
+		StringContainer target;
 		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	};
 
@@ -58,12 +57,12 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
+	std::string target() const override;
+	void setTarget(const std::string& target);
+
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
-
-	std::string currentSolution() const;
-	void setCurrentSolution(const std::string& currentSol);
 
 	void setupStreamTracer(vtkStreamTracer* tracer);
 
@@ -76,9 +75,6 @@ protected:
 
 	std::vector<vtkActor*> m_streamlineActors;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
-
-private:
-	class SelectSolutionCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H

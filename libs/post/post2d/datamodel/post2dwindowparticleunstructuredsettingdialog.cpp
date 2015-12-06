@@ -61,7 +61,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setSettings(const Post2dWind
 	m_setting = s;
 	m_unstSettings = unsts;
 
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
@@ -91,7 +91,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleUnstruc
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_solutions.at(index).c_str();
 
 	// timeMode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
@@ -152,14 +152,14 @@ public:
 	void redo() {
 		m_item->setEnabled(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->m_unstSettings = m_newUnstSettings;
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->m_unstSettings = m_newUnstSettings;
 		m_item->updateActorSettings();
 	}

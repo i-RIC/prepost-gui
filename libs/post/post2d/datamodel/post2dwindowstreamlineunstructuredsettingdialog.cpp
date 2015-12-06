@@ -57,7 +57,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setSettings(const Post2dWi
 	m_setting = s;
 	m_unstSettings = unsts;
 
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
@@ -70,7 +70,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting Post2dWindowStreamlineUns
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_solutions.at(index).c_str();
 
 	return ret;
 }
@@ -121,7 +121,7 @@ public:
 	void redo() {
 		m_item->setEnabled(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->m_unstSettings = m_newUnstSettings;
 
 		m_item->updateActorSettings();
@@ -129,7 +129,7 @@ public:
 	void undo() {
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+		m_item->setTarget(m_oldSetting.target);
 		m_item->m_unstSettings = m_oldUnstSettings;
 
 		m_item->updateActorSettings();

@@ -248,6 +248,9 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitiontranslator.h \
+           misc/targeted/targeteditemi.h \
+           misc/targeted/targeteditemsettargetcommand.h \
+           misc/targeted/targeteditemsettargetcommandtool.h \
            postcontainer/exporter/postzonedatacsvexporter.h \
            postcontainer/exporter/postzonedataexporter.h \
            postcontainer/exporter/postzonedatashapeexporter.h \
@@ -473,6 +476,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitiontranslator.cpp \
+           misc/targeted/targeteditemsettargetcommand.cpp \
+           misc/targeted/targeteditemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
            postcontainer/exporter/postzonedatashapeexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \

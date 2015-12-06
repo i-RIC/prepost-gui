@@ -1354,11 +1354,6 @@ void PreProcessorGridDataItem::updateSimplifiedGrid(VTKGraphicsView* v)
 	double xmin, xmax, ymin, ymax;
 	view->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 	m_grid->updateSimplifiedGrid(xmin, xmax, ymin, ymax);
-	/*
-		if (m_grid->isMasked()){
-			clearSelection();
-		}
-	*/
 
 	m_shapeDataItem->informGridUpdate();
 	m_nodeGroupDataItem->informGridUpdate();

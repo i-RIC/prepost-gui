@@ -5,6 +5,7 @@
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
 #include <guibase/vtkCustomStreamPoints.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
@@ -27,7 +28,7 @@
 class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorParticleDataItem;
 
-class Post2dWindowNodeVectorParticleGroupDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeVectorParticleGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -46,7 +47,7 @@ public:
 		/// Copy operator
 		Setting& operator=(const Setting& s);
 
-		StringContainer currentSolution;
+		StringContainer target;
 		EnumContainerT<TimeMode> timeMode;
 
 		IntContainer timeSamplingRate;
@@ -55,9 +56,12 @@ public:
 		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	};
 
-	/// Constructor
 	Post2dWindowNodeVectorParticleGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorParticleGroupDataItem();
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	void updateActorSettings();
 	void setupClipper();
 	void informSelection(VTKGraphicsView* v) override;
@@ -69,7 +73,6 @@ public:
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	std::string currentSolution() {return m_setting.currentSolution;}
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -79,7 +82,6 @@ protected:
 	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const std::string& currentSol);
 
 	virtual vtkPointSet* newParticles(int i) = 0;
 	virtual void setupActors() = 0;
@@ -102,8 +104,6 @@ protected:
 	unsigned int m_previousStep;
 	double m_previousTime;
 	int m_nextStepToAddParticles;
-
-	class SelectSolutionCommand;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEGROUPDATAITEM_H

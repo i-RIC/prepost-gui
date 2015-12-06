@@ -69,14 +69,14 @@ public:
 	void redo() {
 		m_item->setEnabled(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->m_stSettings = m_newStSettings;
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+		m_item->setTarget(m_oldSetting.target);
 		m_item->m_stSettings = m_oldStSettings;
 		m_item->updateActorSettings();
 	}

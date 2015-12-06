@@ -5,6 +5,7 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -28,8 +29,8 @@
 #include <vtkStructuredGridGeometryFilter.h>
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
-	CompositeContainer ({&currentSolution, &regionMode}),
-	currentSolution {"solution"},
+	CompositeContainer ({&target, &regionMode}),
+	target {"solution"},
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {}
 
@@ -67,38 +68,12 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamline
 	}
 }
 
-class Post2dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
-{
-public:
-	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item) :
-		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
-		m_newCurrentSolution (newsol),
-		m_oldCurrentSolution (item->m_setting.currentSolution),
-		m_item {item}
-	{}
-	void redo() {
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-	}
-
-private:
-	std::string m_newCurrentSolution;
-	std::string m_oldCurrentSolution;
-
-	Post2dWindowNodeVectorStreamlineGroupDataItem* m_item;
-};
-
 void Post2dWindowNodeVectorStreamlineGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Streamline Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
@@ -118,7 +93,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
@@ -157,15 +132,16 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 	informGridUpdate();
 }
 
-std::string Post2dWindowNodeVectorStreamlineGroupDataItem::currentSolution() const
+std::string Post2dWindowNodeVectorStreamlineGroupDataItem::target() const
 {
-	return m_setting.currentSolution;
+	return m_setting.target;
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const std::string& currentSol)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
-	m_setting.currentSolution = currentSol.c_str();
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.target = target.c_str();
+	updateActorSettings();
 }
 
 vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()

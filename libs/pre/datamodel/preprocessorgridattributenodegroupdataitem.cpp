@@ -10,6 +10,7 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
@@ -95,56 +96,24 @@ PreProcessorGridAttributeNodeGroupDataItem::~PreProcessorGridAttributeNodeGroupD
 	renderer()->RemoveActor(m_fringeActor);
 }
 
-class PreProcessorSelectCondition : public QUndoCommand
-{
-public:
-	PreProcessorSelectCondition(const std::string& newcond, PreProcessorGridAttributeNodeGroupDataItem* item) :
-		QUndoCommand(QObject::tr("Node Attribute Change")),
-		m_newCurrentCondition(newcond),
-		m_oldCurrentCondition(item->m_currentCondition),
-		m_item {item}
-	{}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentCondition(m_oldCurrentCondition);
-		m_item->updateActorSettings();
-		PreProcessorGridDataItem* gItem =
-			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplifiedGrid();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentCondition(m_newCurrentCondition);
-		m_item->updateActorSettings();
-		PreProcessorGridDataItem* gItem =
-			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplifiedGrid();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	std::string m_newCurrentCondition;
-	std::string m_oldCurrentCondition;
-
-	PreProcessorGridAttributeNodeGroupDataItem* m_item;
-};
-
 void PreProcessorGridAttributeNodeGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new PreProcessorSelectCondition("", this));
-	} else {
-		stack.push(new PreProcessorSelectCondition(item->name(), this));
-	}
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Node Attribute Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::setCurrentCondition(const std::string& currentCond)
+std::string PreProcessorGridAttributeNodeGroupDataItem::target() const
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(currentCond, m_childItems);
-	m_currentCondition = currentCond;
+	return m_target;
+}
+
+void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_target = target;
+	updateActorSettings();
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
@@ -159,16 +128,16 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 		// grid is not setup yet.
 		return;
 	}
-	if (m_currentCondition == "") {
+	if (m_target == "") {
 		updateVisibilityWithoutRendering();
 		return;
 	}
 	// update current active scalar
 	vtkPointData* data = g->vtkGrid()->GetPointData();
-	data->SetActiveScalars(m_currentCondition.c_str());
+	data->SetActiveScalars(m_target.c_str());
 	PreProcessorGridAttributeNodeDataItem* activeItem = activeChildItem();
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_currentCondition.c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_target.c_str());
 
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -234,7 +203,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 			m_contourActor->GetProperty()->SetOpacity(m_opacity);
 			m_contourMapper->SetLookupTable(stc->vtkObj());
 			m_contourMapper->UseLookupTableScalarRangeOn();
-			if (m_nameMap.value(m_currentCondition)->condition()->isOption()) {} else {
+			if (m_nameMap.value(m_target)->condition()->isOption()) {} else {
 				m_contourMapper->SetLookupTable(stc->vtkObj());
 			}
 			m_actorCollection->AddItem(m_contourActor);
@@ -265,7 +234,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 		PreProcessorGridAttributeNodeDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it);
 		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
 			// this is the current Condition!
-			setCurrentCondition(tmpItem->condition()->name());
+			setTarget(tmpItem->condition()->name());
 		}
 	}
 }
@@ -330,12 +299,12 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(2);
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeNodeGroupDataItem::informSelection(VTKGraphicsView*)
 {
 	initAttributeBrowser();
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void PreProcessorGridAttributeNodeGroupDataItem::informDeselection(VTKGraphicsView*)
 {
 	clearAttributeBrowser();
 }
@@ -361,8 +330,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != 0) {
-//		m_isolineFilter->SetInputData(g->vtkGrid());
-//		m_fringeMapper->SetInputData(g->vtkGrid());
 		vtkAlgorithm* cellsAlgo = g->vtkFilteredCellsAlgorithm();
 		if (cellsAlgo != 0) {
 			m_isolineFilter->SetInputConnection(cellsAlgo->GetOutputPort());
@@ -374,7 +341,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 
 PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::activeChildItem()
 {
-	return m_nameMap.value(m_currentCondition);
+	return m_nameMap.value(m_target);
 }
 
 const QList<PreProcessorGridAttributeNodeDataItem*> PreProcessorGridAttributeNodeGroupDataItem::conditions() const

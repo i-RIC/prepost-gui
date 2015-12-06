@@ -569,7 +569,6 @@ private:
 	bool m_wasModified;
 };
 
-
 class StandardItemModifyCommand : public QUndoCommand
 {
 public:

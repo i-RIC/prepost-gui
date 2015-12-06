@@ -61,7 +61,7 @@ void Post2dWindowParticleStructuredSettingDialog::setSettings(const Post2dWindow
 	m_stSettings = sts;
 
 	// solution
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
@@ -91,7 +91,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleStructu
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_solutions.at(index).c_str();
 
 	// timemode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {

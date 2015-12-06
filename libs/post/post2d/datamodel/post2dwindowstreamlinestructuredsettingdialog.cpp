@@ -58,7 +58,7 @@ void Post2dWindowStreamlineStructuredSettingDialog::setSettings(const Post2dWind
 	m_setting = s;
 	m_stSettings = settings;
 
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
@@ -71,7 +71,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting Post2dWindowStreamlineStr
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_solutions.at(index).c_str();
 
 	return ret;
 }

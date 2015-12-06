@@ -218,7 +218,7 @@ QList<QString> Post2dWindow::particleDrawingZones()
 		for (int j = 0; j < zItems.count(); ++j) {
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
 			Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
-			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != "") {
+			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());
 			}
 		}
@@ -279,7 +279,7 @@ QList<QString> Post2dWindow::contourDrawingZones()
 		for (int j = 0; j < zItems.count(); ++j) {
 			Post2dWindowZoneDataItem* zItem = zItems.at(j);
 			Post2dWindowNodeScalarGroupDataItem* sItem = zItem->scalarGroupDataItem();
-			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->currentSolution() != "") {
+			if (sItem->standardItem()->checkState() == Qt::Checked && sItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());
 			}
 		}

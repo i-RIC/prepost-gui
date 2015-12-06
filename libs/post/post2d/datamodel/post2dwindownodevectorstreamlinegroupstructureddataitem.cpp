@@ -118,7 +118,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.currentSolution).c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.target).c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
@@ -176,7 +176,7 @@ public:
 	void redo() {
 		m_item->setEnabled(true);
 		m_item->m_setting = m_newSetting;
-		m_item->setCurrentSolution(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->m_stSettings = m_newStSettings;
 
 		m_item->updateActorSettings();
@@ -184,7 +184,7 @@ public:
 	void undo() {
 		m_item->setEnabled(m_oldEnabled);
 		m_item->m_setting = m_oldSetting;
-		m_item->setCurrentSolution(m_oldSetting.currentSolution);
+		m_item->setTarget(m_oldSetting.target);
 		m_item->m_stSettings = m_oldStSettings;
 
 		m_item->updateActorSettings();

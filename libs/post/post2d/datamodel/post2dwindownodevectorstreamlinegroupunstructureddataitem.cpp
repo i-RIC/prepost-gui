@@ -151,7 +151,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.currentSolution).c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_setting.target).c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 

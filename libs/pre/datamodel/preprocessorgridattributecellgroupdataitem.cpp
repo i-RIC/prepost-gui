@@ -10,6 +10,7 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
@@ -91,56 +92,24 @@ PreProcessorGridAttributeCellGroupDataItem::~PreProcessorGridAttributeCellGroupD
 	renderer()->RemoveActor(m_actor);
 }
 
-class PreProcessorGridRelatedConditionCellGroupSelectCondition : public QUndoCommand
+std::string PreProcessorGridAttributeCellGroupDataItem::target() const
 {
-public:
-	PreProcessorGridRelatedConditionCellGroupSelectCondition(const std::string& newcond, PreProcessorGridAttributeCellGroupDataItem* item) :
-		QUndoCommand(PreProcessorGridAttributeCellGroupDataItem::tr("Cell Attribute Change")),
-		m_newCurrentCondition (newcond),
-		m_oldCurrentCondition (item->m_currentCondition),
-		m_item {item}
-	{}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentCondition(m_oldCurrentCondition);
-		m_item->updateActorSettings();
-		PreProcessorGridDataItem* gItem =
-			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplifiedGrid();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentCondition(m_newCurrentCondition);
-		m_item->updateActorSettings();
-		PreProcessorGridDataItem* gItem =
-			dynamic_cast<PreProcessorGridDataItem*>(m_item->parent());
-		gItem->updateSimplifiedGrid();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	std::string m_newCurrentCondition;
-	std::string m_oldCurrentCondition;
+	return m_target;
+}
 
-	PreProcessorGridAttributeCellGroupDataItem* m_item;
-};
+void PreProcessorGridAttributeCellGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_target = target;
+	updateActorSettings();
+}
 
 void PreProcessorGridAttributeCellGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new PreProcessorGridRelatedConditionCellGroupSelectCondition("", this));
-	} else {
-		stack.push(new PreProcessorGridRelatedConditionCellGroupSelectCondition(item->name(), this));
-	}
-}
+	if (m_isCommandExecuting) {return;}
 
-void PreProcessorGridAttributeCellGroupDataItem::setCurrentCondition(const std::string& sol)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(sol, m_childItems);
-	m_currentCondition = sol;
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Cell Attribute Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
@@ -152,7 +121,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 		// grid is not setup yet.
 		return;
 	}
-	if (m_currentCondition == "") {
+	if (m_target == "") {
 		updateVisibilityWithoutRendering();
 		return;
 	}
@@ -160,9 +129,9 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 	// update current active scalar
 
 	vtkCellData* data = g->vtkGrid()->GetCellData();
-	data->SetActiveScalars(m_currentCondition.c_str());
+	data->SetActiveScalars(m_target.c_str());
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_currentCondition.c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_target.c_str());
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -235,7 +204,7 @@ void PreProcessorGridAttributeCellGroupDataItem::informGridUpdate()
 
 PreProcessorGridAttributeCellDataItem* PreProcessorGridAttributeCellGroupDataItem::activeChildItem()
 {
-	return m_nameMap.value(m_currentCondition);
+	return m_nameMap.value(m_target);
 }
 
 const QList<PreProcessorGridAttributeCellDataItem*> PreProcessorGridAttributeCellGroupDataItem::conditions() const
@@ -431,7 +400,7 @@ void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const
 		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
 		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
 			// this is the current Condition!
-			setCurrentCondition(tmpItem->condition()->name());
+			setTarget(tmpItem->condition()->name());
 		}
 	}
 }

@@ -6,8 +6,11 @@
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/post2dwindowcontoursetting.h>
+
 #include <QMap>
+
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkWarpScalar.h>
@@ -21,7 +24,7 @@ class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
-class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem
+class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -29,14 +32,15 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	/// Constructor
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
-	std::string currentSolution() const {return m_setting.currentSolution;}
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const std::string& currentSol);
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -48,8 +52,6 @@ public slots:
 
 protected:
 	void updateVisibility(bool visible) override;
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdateZScale(double scale) override;
 
 private:
@@ -61,6 +63,9 @@ private:
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
 	void setupScalarBarSetting();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dWindowContourSetting m_setting;
 	// for scalar bar
@@ -80,7 +85,6 @@ private:
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
 	class SetSettingCommand;
-	class SelectSolutionCommand;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H
