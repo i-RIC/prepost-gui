@@ -65,11 +65,11 @@ int InputConditionContainerReal::load()
 {
 	int ret;
 	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_BC_Real(toC(bcName()), bcIndex(), toC(name()), &m_value);
 	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_Real(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_Complex_Real(toC(complexName()), complexIndex(), toC(name()), &m_value);
 	} else {
-		ret = cg_iRIC_Read_Real(const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_Real(toC(name()), &m_value);
 	}
 	if (ret != 0) {
 		clear();
@@ -83,11 +83,11 @@ int InputConditionContainerReal::load()
 int InputConditionContainerReal::save()
 {
 	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_BC_Real(toC(bcName()), bcIndex(), toC(name()), m_value);
 	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Real(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_Complex_Real(toC(complexName()), complexIndex(), toC(name()), m_value);
 	} else {
-		return cg_iRIC_Write_Real(const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_Real(toC(name()), m_value);
 	}
 }
 
@@ -107,8 +107,8 @@ QVariant InputConditionContainerReal::variantValue() const
 
 void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QDir&)
 {
-	if (doc[iRIC::toStr(name()).c_str()]) {
-		m_value = doc[iRIC::toStr(name()).c_str()].as<double>();
+	if (doc[name()]) {
+		m_value = doc[name()].as<double>();
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
@@ -116,7 +116,7 @@ void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QD
 
 void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << name() << ": " << m_value << "\t#[real] " << caption() << "\r\n";
+	*stream << name().c_str() << ": " << m_value << "\t#[real] " << caption() << "\r\n";
 }
 
 void InputConditionContainerReal::setup(const QDomNode& defNode)

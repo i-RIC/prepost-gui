@@ -22,14 +22,14 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const QStri
 	InputConditionContainer(n, c)
 {
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();
-	m_param.name = paramElem.attribute("name", "Param");
+	m_param.name = iRIC::toStr(paramElem.attribute("name", "Param"));
 
 	QDomNode valNode = defNode.firstChild();
 	while (! valNode.isNull()) {
 		if (valNode.nodeName() == "Value") {
 			QDomElement valElem = valNode.toElement();
 			Data valData;
-			valData.name = valElem.attribute("name", "Value");
+			valData.name = iRIC::toStr(valElem.attribute("name", "Value"));
 			m_values.append(valData);
 		}
 		valNode = valNode.nextSibling();
@@ -121,31 +121,25 @@ int InputConditionContainerFunctional::load()
 	double* tmpdata;
 	int result;
 
-	std::string tmpbcnameStr = iRIC::toStr(bcName());
-	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
-	std::string tmpcomplexnameStr = iRIC::toStr(complexName());
-	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
-	std::string tmpnameStr = iRIC::toStr(name());
-	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
 	std::vector<double> data;
 
 	if (isBoundaryCondition()) {
-		result = cg_iRIC_Read_BC_FunctionalSize(tmpbcname, bcIndex(), tmpname, &length);
+		result = cg_iRIC_Read_BC_FunctionalSize(toC(bcName()), bcIndex(), toC(name()), &length);
 	} else if (isComplexCondition()) {
-		result = cg_iRIC_Read_Complex_FunctionalSize(tmpcomplexname, complexIndex(), tmpname, &length);
+		result = cg_iRIC_Read_Complex_FunctionalSize(toC(complexName()), complexIndex(), toC(name()), &length);
 	} else {
-		result = cg_iRIC_Read_FunctionalSize(tmpname, &length);
+		result = cg_iRIC_Read_FunctionalSize(toC(name()), &length);
 	}
 	if (result != 0 || length == 0) {goto ERROR;}
 	data.assign(length, 0);
 
 	// load parameter.
 	if (isBoundaryCondition()) {
-		result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
+		result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(m_param.name), data.data());
 	} else if (isComplexCondition()) {
-		result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
+		result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(m_param.name), data.data());
 	} else {
-		result = cg_iRIC_Read_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
+		result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(m_param.name), data.data());
 	}
 	if (result != 0) {goto ERROR;}
 
@@ -159,11 +153,11 @@ int InputConditionContainerFunctional::load()
 	for (int i = 0; i < m_values.count(); ++i) {
 		Data& val = m_values[i];
 		if (isBoundaryCondition()) {
-			result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
+			result = cg_iRIC_Read_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), data.data());
 		} else if (isComplexCondition()) {
-			result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
+			result = cg_iRIC_Read_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(val.name), data.data());
 		} else {
-			result = cg_iRIC_Read_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
+			result = cg_iRIC_Read_FunctionalWithName(toC(name()), toC(val.name), data.data());
 		}
 		if (result != 0) {goto ERROR;}
 
@@ -185,12 +179,6 @@ ERROR:
 
 int InputConditionContainerFunctional::save()
 {
-	std::string tmpbcnameStr = iRIC::toStr(bcName());
-	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
-	std::string tmpcomplexnameStr = iRIC::toStr(complexName());
-	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
-	std::string tmpnameStr = iRIC::toStr(name());
-	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
 	cgsize_t length = m_param.values.count();
 	cgsize_t tmplength = length;
 	if (tmplength == 0) {tmplength = 1;}
@@ -200,11 +188,11 @@ int InputConditionContainerFunctional::save()
 		data[i] = m_param.values.at(i);
 	}
 	if (isBoundaryCondition()) {
-		cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
+		cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(m_param.name), length, data.data());
 	} else if (isComplexCondition()) {
-		cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
+		cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(m_param.name), length, data.data());
 	} else {
-		cg_iRIC_Write_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
+		cg_iRIC_Write_FunctionalWithName(toC(name()), toC(m_param.name), length, data.data());
 	}
 
 	// write values;
@@ -214,11 +202,11 @@ int InputConditionContainerFunctional::save()
 			data[i] = val.values.at(i);
 		}
 		if (isBoundaryCondition()) {
-			cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
+			cg_iRIC_Write_BC_FunctionalWithName(toC(bcName()), bcIndex(), toC(name()), toC(val.name), length, data.data());
 		} else if (isComplexCondition()) {
-			cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
+			cg_iRIC_Write_Complex_FunctionalWithName(toC(complexName()), complexIndex(), toC(name()), toC(val.name), length, data.data());
 		} else {
-			cg_iRIC_Write_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
+			cg_iRIC_Write_FunctionalWithName(toC(name()), toC(val.name), length, data.data());
 		}
 	}
 	return 0;
@@ -239,16 +227,16 @@ QVariant InputConditionContainerFunctional::variantValue() const
 
 void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc, const QDir& dir)
 {
-	if (doc[iRIC::toStr(name()).c_str()]) {
-		QString filename = doc[iRIC::toStr(name()).c_str()].as<std::string>().c_str();
+	if (doc[toC(name())]) {
+		QString filename = doc[toC(name())].as<std::string>().c_str();
 		loadDataFromCsvFile(dir.absoluteFilePath(filename));
 	}
 }
 
 void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const QDir& dir)
 {
-	*stream << name() << ": " << name() << ".csv" << "\t#[function] " << caption() << "\r\n";
-	QString filename = QString("%1.csv").arg(name());
+	*stream << name().c_str() << ": " << name().c_str() << ".csv" << "\t#[function] " << caption() << "\r\n";
+	QString filename = QString("%1.csv").arg(name().c_str());
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 

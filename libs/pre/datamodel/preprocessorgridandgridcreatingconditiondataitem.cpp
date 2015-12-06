@@ -223,7 +223,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const in
 	cg_iRIC_GotoBase(fn, &B);
 	cg_nzones(fn, B, &nzones);
 	char zonename[ProjectCgnsFile::BUFFERLEN];
-	int size[9];
+	cgsize_t size[9];
 	for (int i = 1; i <= nzones; ++i){
 		// read zone information.
 		cg_zone_read(fn, 1, i, zonename, size);

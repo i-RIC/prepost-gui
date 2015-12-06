@@ -64,11 +64,11 @@ int InputConditionContainerInteger::load()
 {
 	int ret;
 	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_Integer(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_BC_Integer(toC(bcName()), bcIndex(), toC(name()), &m_value);
 	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_Integer(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), &m_value);
 	} else {
-		ret = cg_iRIC_Read_Integer(const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+		ret = cg_iRIC_Read_Integer(toC(name()), &m_value);
 	}
 	if (ret != 0) {
 		clear();
@@ -82,11 +82,11 @@ int InputConditionContainerInteger::load()
 int InputConditionContainerInteger::save()
 {
 	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_Integer(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_BC_Integer(toC(bcName()), bcIndex(), toC(name()), m_value);
 	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_Integer(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_Complex_Integer(toC(complexName()), complexIndex(), toC(name()), m_value);
 	} else {
-		return cg_iRIC_Write_Integer(const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+		return cg_iRIC_Write_Integer(toC(name()), m_value);
 	}
 }
 
@@ -106,8 +106,8 @@ QVariant InputConditionContainerInteger::variantValue() const
 
 void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir&)
 {
-	if (doc[iRIC::toStr(name()).c_str()]) {
-		m_value = doc[iRIC::toStr(name()).c_str()].as<int>();
+	if (doc[name()]) {
+		m_value = doc[name()].as<int>();
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
@@ -115,7 +115,7 @@ void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const
 
 void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << name() << ": " << m_value << "\t#[integer] " << caption() << "\r\n";
+	*stream << name().c_str() << ": " << m_value << "\t#[integer] " << caption() << "\r\n";
 }
 
 void InputConditionContainerInteger::setup(const QDomNode& defNode)

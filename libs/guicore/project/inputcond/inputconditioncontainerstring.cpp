@@ -52,11 +52,11 @@ int InputConditionContainerString::load()
 	char buffer[200];
 	int ret;
 	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_String(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), buffer);
+		ret = cg_iRIC_Read_BC_String(toC(bcName()), bcIndex(), toC(name()), buffer);
 	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_String(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), buffer);
+		ret = cg_iRIC_Read_Complex_String(toC(complexName()), complexIndex(), toC(name()), buffer);
 	} else {
-		ret = cg_iRIC_Read_String(const_cast<char*>(iRIC::toStr(name()).c_str()), buffer);
+		ret = cg_iRIC_Read_String(toC(name()), buffer);
 	}
 	if (ret != 0) {
 		clear();
@@ -72,11 +72,11 @@ int InputConditionContainerString::save()
 {
 	std::string value = m_value.toUtf8().constData();
 	if (isBoundaryCondition()) {
-		return cg_iRIC_Write_BC_String(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), const_cast<char*>(value.c_str()));
+		return cg_iRIC_Write_BC_String(toC(bcName()), bcIndex(), toC(name()), toC(value));
 	} else if (isComplexCondition()) {
-		return cg_iRIC_Write_Complex_String(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), const_cast<char*>(value.c_str()));
+		return cg_iRIC_Write_Complex_String(toC(complexName()), complexIndex(), toC(name()), toC(value));
 	} else {
-		return cg_iRIC_Write_String(const_cast<char*>(iRIC::toStr(name()).c_str()), const_cast<char*>(value.c_str()));
+		return cg_iRIC_Write_String(toC(name()), toC(value));
 	}
 }
 
@@ -93,8 +93,8 @@ QVariant InputConditionContainerString::variantValue() const
 
 void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const QDir&)
 {
-	if (doc[iRIC::toStr(name())]) {
-		m_value = doc[iRIC::toStr(name())].as<std::string>().c_str();
+	if (doc[name()]) {
+		m_value = doc[name()].as<std::string>().c_str();
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
@@ -102,7 +102,7 @@ void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const 
 
 void InputConditionContainerString::exportToYaml(QTextStream* stream, const QDir&)
 {
-	*stream << name() << ": " << m_value << "\t#[string] " << caption() << "\r\n";
+	*stream << name().c_str() << ": " << m_value << "\t#[string] " << caption() << "\r\n";
 }
 
 void InputConditionContainerString::setup(const QDomNode& defNode)

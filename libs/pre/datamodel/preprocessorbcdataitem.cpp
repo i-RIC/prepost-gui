@@ -647,7 +647,7 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 			tmplist.append(e.vertex2());
 		}
 	}
-	std::vector<int> indices;
+	std::vector<cgsize_t> indices;
 	if (sgrid == nullptr) {
 		// this is an unstructured grid.
 		indices.assign(tmplist.count(), 0);

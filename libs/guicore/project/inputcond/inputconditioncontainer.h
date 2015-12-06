@@ -45,27 +45,29 @@ signals:
 	void valueChanged();
 
 protected:
-	const QString& name() const;
+	const std::string& name() const;
 	const QString& caption() const;
 
 	bool isBoundaryCondition() const;
-	const QString& bcName() const;
+	const std::string& bcName() const;
 	int bcIndex() const;
 
 	bool isComplexCondition() const;
-	const QString& complexName() const;
+	const std::string& complexName() const;
 	int complexIndex() const;
 
+	static char* toC(const std::string& str);
+
 private:
-	QString m_name;
+	std::string m_name;
 	QString m_caption;
 
 	bool m_isBoundaryCondition;
-	QString m_bcName;
+	std::string m_bcName;
 	int m_bcIndex;
 
 	bool m_isComplexCondition;
-	QString m_complexName;
+	std::string m_complexName;
 	int m_complexIndex;
 };
 #endif // INPUTCONDITIONCONTAINER_H

@@ -15,7 +15,7 @@ class GUICOREDLL_EXPORT InputConditionContainerFunctional : public InputConditio
 
 public:
 	struct Data {
-		QString name;
+		std::string name;
 		QVector<double> values;
 	};
 	InputConditionContainerFunctional();

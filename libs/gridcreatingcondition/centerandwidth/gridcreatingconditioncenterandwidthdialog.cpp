@@ -36,7 +36,7 @@ double GridCreatingConditionCenterAndWidthDialog::width() const
 	return ui->gridWidthSpinBox->value();
 }
 
-double GridCreatingConditionCenterAndWidthDialog::length()
+double GridCreatingConditionCenterAndWidthDialog::length() const
 {
 	return m_length;
 }

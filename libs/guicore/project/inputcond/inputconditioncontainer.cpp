@@ -1,12 +1,14 @@
 #include "inputconditioncontainer.h"
 
+#include <misc/stringtool.h>
+
 InputConditionContainer::InputConditionContainer() :
 	InputConditionContainer("", "")
 {}
 
 InputConditionContainer::InputConditionContainer(const QString& name, const QString& caption) :
 	QObject(nullptr),
-	m_name {name},
+	m_name (iRIC::toStr(name)),
 	m_caption {caption},
 	m_isBoundaryCondition {false},
 	m_isComplexCondition {false}
@@ -14,7 +16,7 @@ InputConditionContainer::InputConditionContainer(const QString& name, const QStr
 
 InputConditionContainer::InputConditionContainer(const InputConditionContainer& c) :
 	QObject(nullptr),
-	m_name {c.m_name},
+	m_name (c.m_name),
 	m_caption {c.m_caption},
 	m_isBoundaryCondition {false},
 	m_isComplexCondition {false}
@@ -25,13 +27,13 @@ InputConditionContainer::~InputConditionContainer()
 
 void InputConditionContainer::setName(const QString& name)
 {
-	m_name = name;
+	m_name = iRIC::toStr(name);
 }
 
 void InputConditionContainer::setBCProperty(const QString& bcname, int bcindex)
 {
 	m_isBoundaryCondition = true;
-	m_bcName = bcname;
+	m_bcName = iRIC::toStr(bcname);
 	m_bcIndex = bcindex;
 
 	m_isComplexCondition = false;
@@ -40,7 +42,7 @@ void InputConditionContainer::setBCProperty(const QString& bcname, int bcindex)
 void InputConditionContainer::setComplexProperty(const QString& compname, int compindex)
 {
 	m_isComplexCondition = true;
-	m_complexName = compname;
+	m_complexName = iRIC::toStr(compname);
 	m_complexIndex = compindex;
 
 	m_isBoundaryCondition = false;
@@ -53,7 +55,7 @@ void InputConditionContainer::copyValues(const InputConditionContainer& c)
 	m_caption = c.m_caption;
 }
 
-const QString& InputConditionContainer::name() const
+const std::string& InputConditionContainer::name() const
 {
 	return m_name;
 }
@@ -68,7 +70,7 @@ bool InputConditionContainer::isBoundaryCondition() const
 	return m_isBoundaryCondition;
 }
 
-const QString& InputConditionContainer::bcName() const
+const std::string& InputConditionContainer::bcName() const
 {
 	return m_bcName;
 }
@@ -83,7 +85,7 @@ bool InputConditionContainer::isComplexCondition() const
 	return m_isComplexCondition;
 }
 
-const QString& InputConditionContainer::complexName() const
+const std::string& InputConditionContainer::complexName() const
 {
 	return m_complexName;
 }
@@ -91,4 +93,9 @@ const QString& InputConditionContainer::complexName() const
 int InputConditionContainer::complexIndex() const
 {
 	return m_complexIndex;
+}
+
+char* InputConditionContainer::toC(const std::string& str)
+{
+	return const_cast<char*> (str.c_str());
 }
