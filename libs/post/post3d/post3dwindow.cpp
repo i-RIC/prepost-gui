@@ -14,6 +14,7 @@
 #include <guibase/graphicsmisc.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 
 #include <QAction>
 #include <QColorDialog>
@@ -190,7 +191,7 @@ void Post3dWindow::editZScale()
 bool Post3dWindow::exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename)
 {
 	Post3dWindowRootDataItem* rItem = dynamic_cast<Post3dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post3dWindowZoneDataItem* zItem = rItem->zoneDataItem(zonename);
+	Post3dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zonename));
 	Post3dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleGroupDataItem();
 	return pItem->exportParticles(filename, fileIndex, time);
 }
@@ -207,7 +208,7 @@ QList<QString> Post3dWindow::particleDrawingZones()
 			Post3dWindowZoneDataItem* zItem = zItems.at(j);
 			Post3dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleGroupDataItem();
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != "") {
-				ret.append(zItem->zoneName());
+				ret.append(zItem->zoneName().c_str());
 			}
 		}
 	}

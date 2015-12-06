@@ -66,7 +66,7 @@ QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 	PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
 	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(iRIC::toStr(m_condition->name()).c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_condition->name());
 	stcWidget->setContainer(stc);
 	GridCellAttributePropertyDialog* dialog = new GridCellAttributePropertyDialog(p);
 	dialog->setOpacityPercent(gitem->opacityPercent());

@@ -31,7 +31,7 @@ public:
 	explicit Post3dWindowContourGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowContourGroupSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
-	void setCurrentSolution(QString sol);
+	void setCurrentSolution(const std::string& sol);
 	void setContour(ContourSettingWidget::Contour c);
 	void setNumberOfDivision(int div);
 	void setLookupTable(const LookupTableContainer& c);
@@ -40,7 +40,7 @@ public:
 	void setFillUpper(bool fill);
 	void setFillLower(bool fill);
 
-	QString currentSolution();
+	std::string currentSolution() const;
 	ContourSettingWidget::Contour contour();
 	int numberOfDivision();
 	LookupTableContainer& lookupTable();
@@ -48,7 +48,7 @@ public:
 	bool fillUpper();
 	bool fillLower();
 
-	void setColorBarTitleMap(const QMap<QString, QString>& titleMap);
+	void setColorBarTitleMap(const QMap<std::string, QString>& titleMap);
 	void setScalarBarSetting(const ScalarBarSetting& setting);
 	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
 	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
@@ -71,11 +71,11 @@ private slots:
 	void showColorBarDialog();
 
 private:
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 	Ui::Post3dWindowContourGroupSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
-	QMap<QString, QString> m_colorBarTitleMap;
+	QMap<std::string, QString> m_colorBarTitleMap;
 	LookupTableContainer m_lookupTable;
 	bool m_isRemoving;
 

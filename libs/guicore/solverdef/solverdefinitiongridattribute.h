@@ -7,6 +7,8 @@
 #include <QVariant>
 #include <QList>
 
+#include <string>
+
 class QString;
 class QWidget;
 class ColorTransferFunctionContainer;
@@ -38,8 +40,8 @@ public:
 
 	/// @name Properties
 	//@{
-	const QString& name() const;
-	const QString& englishCaption() const;
+	const std::string& name() const;
+	const std::string& englishCaption() const;
 	const QString& caption() const;
 	const QVariant& variantDefaultValue() const;
 	const QVariant& variantMaximumValue() const;

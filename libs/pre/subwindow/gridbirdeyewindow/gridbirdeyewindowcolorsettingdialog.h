@@ -20,18 +20,23 @@ class GridBirdEyeWindowColorSettingDialog : public QDialog
 public:
 	explicit GridBirdEyeWindowColorSettingDialog(QWidget* parent = nullptr);
 	~GridBirdEyeWindowColorSettingDialog();
+
 	void setGridType(SolverDefinitionGridType* type);
-	void setColorType(GridBirdEyeWindowDataModel::ColorType type);
-	void setAttributeName(const QString& name);
-	void setCustomColor(const QColor& c);
-	void setAxesVisible(bool visible);
-	void setAxisColor(const QColor& c);
-	bool axesVisible() const;
-	QColor axesColor() const;
 
 	GridBirdEyeWindowDataModel::ColorType colorType() const;
-	QString attributeName() const;
+	void setColorType(GridBirdEyeWindowDataModel::ColorType type);
+
+	std::string attributeName() const;
+	void setAttributeName(const std::string& name);
+
 	QColor customColor() const;
+	void setCustomColor(const QColor& c);
+
+	bool axesVisible() const;
+	void setAxesVisible(bool visible);
+
+	QColor axesColor() const;
+	void setAxisColor(const QColor& c);
 
 private:
 	QList<SolverDefinitionGridAttribute*> m_nodeConds;

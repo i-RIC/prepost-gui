@@ -62,8 +62,8 @@ protected:
 	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const QString& currentSol);
-	QString currentSolution() const {return m_setting.currentSolution;}
+	void setCurrentSolution(const std::string& currentSol);
+	std::string currentSolution() const {return m_setting.currentSolution;}
 
 protected:
 	void setupStreamTracer(vtkStreamTracer* tracer);

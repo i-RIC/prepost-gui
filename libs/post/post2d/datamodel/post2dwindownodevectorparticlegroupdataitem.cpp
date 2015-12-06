@@ -76,7 +76,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 		if (tmparray == nullptr) {continue;}
 		// check if it is a vector attribute
 		if (tmparray->GetNumberOfComponents() == 1) {continue;}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post2dWindowNodeVectorParticleDataItem* item = new Post2dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -92,10 +92,10 @@ Post2dWindowNodeVectorParticleGroupDataItem::~Post2dWindowNodeVectorParticleGrou
 class Post2dWindowNodeVectorParticleGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorParticleGroupDataItem* item) :
+	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorParticleGroupDataItem* item) :
 		QUndoCommand {Post2dWindowNodeVectorParticleGroupDataItem::tr("Particle Physical Value Change")},
-		m_newCurrentSolution {newsol},
-		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_newCurrentSolution (newsol),
+		m_oldCurrentSolution (item->m_setting.currentSolution),
 		m_item {item}
 	{}
 	void redo() {
@@ -108,8 +108,8 @@ public:
 	}
 
 private:
-	QString m_newCurrentSolution;
-	QString m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorParticleGroupDataItem* m_item;
 };
@@ -252,7 +252,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post2dWindowNodeVectorParticleDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -265,7 +265,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QStri
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_setting.currentSolution = currentSol;
+	m_setting.currentSolution = currentSol.c_str();
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::resetParticles()

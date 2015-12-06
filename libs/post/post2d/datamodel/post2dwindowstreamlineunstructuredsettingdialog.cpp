@@ -67,7 +67,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting Post2dWindowStreamlineUns
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index);
+	ret.currentSolution = m_solutions.at(index).c_str();
 
 	return ret;
 }
@@ -264,7 +264,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::setupSolutionComboBox(Post
 	for (int i = 0; i < num; ++i) {
 		vtkDataArray* da = pd->GetArray(i);
 		if (da == nullptr) {continue;}
-		QString name = da->GetName();
+		std::string name = da->GetName();
 		if (da->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;

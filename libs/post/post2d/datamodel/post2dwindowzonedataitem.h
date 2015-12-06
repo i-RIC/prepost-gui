@@ -27,7 +27,7 @@ class Post2dWindowZoneDataItem : public Post2dWindowDataItem
 
 public:
 	/// Constructor
-	Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent);
+	Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent);
 	~Post2dWindowZoneDataItem();
 	void addCustomMenuItems(QMenu* menu) override;
 
@@ -42,7 +42,7 @@ public:
 	vtkPolyData* filteredData() const {return m_filteredData;}
 	bool isMasked() const {return m_isMasked;}
 	int zoneNumber() const {return m_zoneNumber;}
-	QString zoneName() const {return m_zoneName;}
+	std::string zoneName() const {return m_zoneName;}
 	void update(bool noparticle = false);
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
 	Post2dWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
@@ -100,7 +100,7 @@ private:
 	QAction* m_showNodeAttributeBrowserAction;
 	QAction* m_showCellAttributeBrowserAction;
 
-	QString m_zoneName;
+	std::string m_zoneName;
 	int m_zoneNumber;
 	bool m_attributeBrowserFixed;
 	bool m_isMasked;

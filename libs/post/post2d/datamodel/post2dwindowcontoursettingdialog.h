@@ -35,7 +35,7 @@ public:
 	void hideOpacity();
 
 	void setSetting(const Post2dWindowContourSetting& setting);
-	void setColorBarTitleMap(const QMap<QString, QString>& titlemap);
+	void setColorBarTitleMap(const QMap<std::string, QString>& titlemap);
 
 	Post2dWindowContourSetting setting() const;
 	const LookupTableContainer& lookupTable();
@@ -50,17 +50,17 @@ private slots:
 	void showScalarBarDialog();
 
 private:
-	QString currentSolution() const;
+	std::string currentSolution() const;
 
 	int m_gridDims[3];
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 	Post2dWindowGridTypeDataItemInterface* m_gridTypeDataItem;
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;
 	bool m_unstructured;
 
 	Post2dWindowContourSetting m_setting;
-	QMap<QString, QString> m_colorBarTitleMap;
+	QMap<std::string, QString> m_colorBarTitleMap;
 	Ui::Post2dWindowContourSettingDialog* ui;
 };
 

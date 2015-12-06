@@ -18,19 +18,19 @@ public:
 		GridAttributeContainerT<V> (grid, cond)
 	{
 		DA* da = DA::New();
-		da->SetName(iRIC::toStr(GridAttributeContainerT<V>::name()).c_str());
+		da->SetName(GridAttributeContainerT<V>::name().c_str());
 		grid->vtkGrid()->GetCellData()->AddArray(da);
 		da->Delete();
 	}
 	/// Destructor
 	virtual ~GridAttributeCellContainerT() {}
 	void allocate() override {
-		vtkDataArray* a = GridAttributeContainerT<V>::m_grid->vtkGrid()->GetCellData()->GetArray(iRIC::toStr(GridAttributeContainerT<V>::name()).c_str());
+		vtkDataArray* a = GridAttributeContainerT<V>::m_grid->vtkGrid()->GetCellData()->GetArray(GridAttributeContainerT<V>::name().c_str());
 		DA* da = DA::SafeDownCast(a);
 		if (da == nullptr) {
 			// not found maybe reset?
 			da = DA::New();
-			da->SetName(iRIC::toStr(GridAttributeContainerT<V>::name()).c_str());
+			da->SetName(GridAttributeContainerT<V>::name().c_str());
 			GridAttributeContainerT<V>::m_grid->vtkGrid()->GetCellData()->AddArray(da);
 			da->Delete();
 		}
@@ -52,7 +52,7 @@ public:
 	}
 	DA* dataArray() const override {
 		vtkPointSet* ps = const_cast<vtkPointSet*> (GridAttributeContainerT<V>::m_grid->vtkGrid());
-		vtkDataArray* da = ps->GetCellData()->GetArray(iRIC::toStr(GridAttributeContainerT<V>::name()).c_str());
+		vtkDataArray* da = ps->GetCellData()->GetArray(GridAttributeContainerT<V>::name().c_str());
 		DA* da2 = DA::SafeDownCast(da);
 		return da2;
 	}

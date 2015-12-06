@@ -19,7 +19,7 @@ public:
 		QVector<double> values;
 	};
 	InputConditionContainerFunctional();
-	InputConditionContainerFunctional(const QString& n, const QString& c, QDomNode defNode, const QDir& dir);
+	InputConditionContainerFunctional(const std::string& n, const QString& c, QDomNode defNode, const QDir& dir);
 	InputConditionContainerFunctional(const InputConditionContainerFunctional& i);
 	~InputConditionContainerFunctional();
 

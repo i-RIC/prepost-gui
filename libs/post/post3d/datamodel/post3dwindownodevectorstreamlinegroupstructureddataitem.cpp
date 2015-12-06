@@ -103,7 +103,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, iRIC::toStr(m_currentSolution).c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, m_currentSolution.c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
@@ -154,8 +154,9 @@ QDialog* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 class Post3dWindowStreamlineStructuredSetProperty : public QUndoCommand
 {
 public:
-	Post3dWindowStreamlineStructuredSetProperty(const QString& sol, const QList<Post3dWindowStructuredStreamlineSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post3dWindowNodeVectorStreamlineGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Streamline Setting")) {
+	Post3dWindowStreamlineStructuredSetProperty(const std::string& sol, const QList<Post3dWindowStructuredStreamlineSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post3dWindowNodeVectorStreamlineGroupStructuredDataItem* item) :
+		QUndoCommand(QObject::tr("Update Streamline Setting"))
+	{
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newSettings = settings;
@@ -192,12 +193,12 @@ public:
 	}
 private:
 	bool m_oldEnabled;
-	QString m_oldSolution;
+	std::string m_oldSolution;
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_oldSettings;
 	StructuredGridRegion::RegionMode m_oldRegionMode;
 
 	bool m_newEnabled;
-	QString m_newSolution;
+	std::string m_newSolution;
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_newSettings;
 	StructuredGridRegion::RegionMode m_newRegionMode;
 

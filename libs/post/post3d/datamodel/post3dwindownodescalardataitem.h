@@ -16,9 +16,9 @@ class Post3dWindowNodeScalarDataItem : public Post3dWindowDataItem
 
 public:
 	/// Constructor
-	Post3dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent);
+	Post3dWindowNodeScalarDataItem(const std::string& name, const QString& caption, Post3dWindowDataItem* parent);
 	void handleStandardItemChange() override;
-	const QString& name() const {return m_name;}
+	const std::string& name() const {return m_name;}
 
 signals:
 	void changed(Post3dWindowNodeScalarDataItem*);
@@ -28,7 +28,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
 
 private:
-	QString m_name;
+	std::string m_name;
 };
 
 #endif // POST3DWINDOWNODESCALARDATAITEM_H

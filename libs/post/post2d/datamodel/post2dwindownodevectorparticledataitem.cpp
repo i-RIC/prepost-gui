@@ -11,9 +11,9 @@
 
 #include <vtkStructuredGrid.h>
 
-Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent) :
+Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name {name}
+	m_name (name)
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
@@ -52,3 +52,9 @@ void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 }
+
+void Post2dWindowNodeVectorParticleDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void Post2dWindowNodeVectorParticleDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

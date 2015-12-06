@@ -22,13 +22,13 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
+	void setSolution(const std::string& sol);
 	void setRegionMode(StructuredGridRegion::RegionMode mode) {m_regionMode = mode;}
 	void setSettings(const QList<Post3dWindowStructuredStreamlineSetSetting>& settings) {
 		m_settings = settings;
 		setupSettingList();
 	}
-	QString solution() const;
+	std::string solution() const;
 	StructuredGridRegion::RegionMode regionMode() const {return m_regionMode;}
 	const QList<Post3dWindowStructuredStreamlineSetSetting>& settings() const {return m_settings;}
 
@@ -55,7 +55,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post3dWindowStreamlineStructuredSettingDialog* ui;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 
 	QList<Post3dWindowStructuredStreamlineSetSetting> m_settings;
 	Post3dWindowStructuredStreamlineSetSetting* m_activeSetting;

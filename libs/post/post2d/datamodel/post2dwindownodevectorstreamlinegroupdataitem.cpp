@@ -61,7 +61,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 			// scalar attribute.
 			continue;
 		}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post2dWindowNodeVectorStreamlineDataItem* item = new Post2dWindowNodeVectorStreamlineDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -77,10 +77,10 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::~Post2dWindowNodeVectorStreamline
 class Post2dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item) :
+	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorStreamlineGroupDataItem* item) :
 		QUndoCommand {Post2dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
-		m_newCurrentSolution {newsol},
-		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_newCurrentSolution (newsol),
+		m_oldCurrentSolution (item->m_setting.currentSolution),
 		m_item {item}
 	{}
 	void redo() {
@@ -93,8 +93,8 @@ public:
 	}
 
 private:
-	QString m_newCurrentSolution;
-	QString m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };
@@ -165,7 +165,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post2dWindowNodeVectorStreamlineDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -178,7 +178,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QSt
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_setting.currentSolution = currentSol;
+	m_setting.currentSolution = currentSol.c_str();
 }
 
 vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()

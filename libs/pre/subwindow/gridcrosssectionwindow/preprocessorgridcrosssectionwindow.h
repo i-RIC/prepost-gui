@@ -36,10 +36,10 @@ class PreProcessorGridCrosssectionWindow : public QMainWindow
 public:
 	const static int DEFAULT_TABLE_WIDTH;
 	enum Direction {dirI, dirJ};
-	explicit PreProcessorGridCrosssectionWindow(Structured2DGrid* g, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
+	explicit PreProcessorGridCrosssectionWindow(Structured2DGrid* g, const std::string& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~PreProcessorGridCrosssectionWindow();
 	void setTarget(Direction dir, int index);
-	const QString& condition() const;
+	const std::string& condition() const;
 	Direction targetDirection() const;
 	int targetIndex() const;
 	void setupData();
@@ -90,7 +90,7 @@ private:
 	QIcon m_icon;
 
 	Structured2DGrid* m_grid;
-	QString m_condition;
+	std::string m_condition;
 
 	Direction m_direction;
 	int m_blackLineIndex;

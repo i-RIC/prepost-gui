@@ -96,7 +96,7 @@ void Post3dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()) {
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name().c_str()) {
 				(*it)->loadFromProjectMainFile(c);
 			}
 			c = c.nextSibling();
@@ -132,7 +132,7 @@ void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
-Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const QString& name) const
+Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const std::string& name) const
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		if ((*it)->name() == name) {return *it;}
@@ -172,7 +172,7 @@ void Post3dWindowRootDataItem::update()
 	renderGraphicsView();
 }
 
-Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const QString& name)
+Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const std::string& name)
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		Post3dWindowGridTypeDataItem* gtItem = *it;

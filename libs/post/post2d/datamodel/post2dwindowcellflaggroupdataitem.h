@@ -6,7 +6,7 @@
 #include <QColor>
 
 struct Post2dWindowCellFlagSetting {
-	QString attributeName;
+	std::string attributeName;
 	int value;
 	QColor color;
 	bool enabled;
@@ -21,7 +21,6 @@ struct Post2dWindowCellFlagSetting {
 	}
 };
 
-class Post2dWindowCellFlagGroupSettingCommand;
 class Post2dWindowCellFlagDataItem;
 
 class Post2dWindowCellFlagGroupDataItem : public Post2dWindowDataItem
@@ -49,8 +48,7 @@ private:
 	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings, int opacity);
 	int m_opacityPercent;
 
-public:
-	friend class Post2dWindowCellFlagGroupSettingCommand;
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWCELLFLAGGROUPDATAITEM_H

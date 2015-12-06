@@ -29,7 +29,7 @@ Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
 	init();
 }
 
-Unstructured2DGrid::Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent) :
+Unstructured2DGrid::Unstructured2DGrid(const std::string& zonename, ProjectDataItem* parent) :
 	Grid2D {zonename, SolverDefinitionGridType::gtUnstructured2DGrid, parent}
 {
 	init();

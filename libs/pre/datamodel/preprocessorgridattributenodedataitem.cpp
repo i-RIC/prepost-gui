@@ -92,7 +92,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
 	ScalarsToColorsEditWidget* stcWidget = m_condition->createScalarsToColorsEditWidget(0);
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(iRIC::toStr(m_condition->name()).c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_condition->name().c_str());
 	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(stcWidget);
 	if (ltWidget != nullptr) {
 		ltWidget->showDivisionNumber();
@@ -425,7 +425,7 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 
 		PreProcessorGridDataItem* gitem =  dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 		vtkPointSet* vtkGrid = gitem->grid()->vtkGrid();
-		vtkDataArray* da = vtkGrid->GetPointData()->GetArray(iRIC::toStr(m_condition->name()).c_str());
+		vtkDataArray* da = vtkGrid->GetPointData()->GetArray(m_condition->name().c_str());
 		// output datacount;
 		stream << vtkGrid->GetNumberOfPoints() << endl;
 

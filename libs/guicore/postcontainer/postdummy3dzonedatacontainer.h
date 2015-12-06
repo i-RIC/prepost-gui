@@ -8,8 +8,8 @@ class GUICOREDLL_EXPORT PostDummy3DZoneDataContainer : public PostZoneDataContai
 {
 
 public:
-	PostDummy3DZoneDataContainer(const QString& baseName, const QString& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent)
-		: PostZoneDataContainer(baseName, zoneName, gridtype, parent)
+	PostDummy3DZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
+		PostZoneDataContainer(baseName, zoneName, gridtype, parent)
 	{}
 
 protected:

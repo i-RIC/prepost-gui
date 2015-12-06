@@ -180,7 +180,7 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name()) {
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name().c_str()) {
 				(*it)->loadFromProjectMainFile(c);
 			}
 			c = c.nextSibling();
@@ -254,10 +254,10 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
-PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const QString& name)
+PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const std::string& name)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		if ((*it)->name() == name) {return *it;}
+	for (auto gridType : m_gridTypeDataItems) {
+		if (gridType->name() == name) {return gridType;}
 	}
 	return nullptr;
 }

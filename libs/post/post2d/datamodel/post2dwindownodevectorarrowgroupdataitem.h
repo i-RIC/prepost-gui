@@ -91,8 +91,8 @@ protected:
 	void updateLegendData();
 	void informGridUpdate();
 	virtual void updateActivePoints() = 0;
-	void setCurrentSolution(const QString& currentSol);
-	QString currentSolution() const {return m_setting.currentSolution;}
+	void setCurrentSolution(const std::string& currentSol);
+	std::string currentSolution() const {return m_setting.currentSolution;}
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 

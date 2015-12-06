@@ -20,7 +20,7 @@ class GUICOREDLL_EXPORT PostZonePointSeriesDataContainer : public PostSeriesData
 {
 
 public:
-	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent);
+	PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent);
 	const QList<double>& data() const {return m_data;}
 	bool handleCurrentStepUpdate(const int /*fn*/) override {
 		// do nothing.
@@ -29,10 +29,10 @@ public:
 	void update(const int fn) {
 		loadFromCgnsFile(fn);
 	}
-	const QString& zoneName() const {return m_zoneName;}
+	const std::string& zoneName() const {return m_zoneName;}
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
-	QString caption() const {return zoneName();}
+	QString caption() const {return zoneName().c_str();}
 	void setPointIndex(int index) {m_pointIndex = index;}
 	int pointIndex() const {return m_pointIndex;}
 
@@ -46,7 +46,7 @@ private:
 
 protected:
 	QList<double> m_data;
-	QString m_zoneName;
+	std::string m_zoneName;
 	int m_zoneId;
 	QString m_physName;
 	int m_pointIndex;

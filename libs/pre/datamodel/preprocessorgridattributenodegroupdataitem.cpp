@@ -97,12 +97,12 @@ PreProcessorGridAttributeNodeGroupDataItem::~PreProcessorGridAttributeNodeGroupD
 class PreProcessorSelectCondition : public QUndoCommand
 {
 public:
-	PreProcessorSelectCondition(const QString& newcond, PreProcessorGridAttributeNodeGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Node Attribute Change")) {
-		m_newCurrentCondition = newcond;
-		m_oldCurrentCondition = item->m_currentCondition;
-		m_item = item;
-	}
+	PreProcessorSelectCondition(const std::string& newcond, PreProcessorGridAttributeNodeGroupDataItem* item) :
+		QUndoCommand(QObject::tr("Node Attribute Change")),
+		m_newCurrentCondition(newcond),
+		m_oldCurrentCondition(item->m_currentCondition),
+		m_item {item}
+	{}
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentCondition(m_oldCurrentCondition);
@@ -124,8 +124,8 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	QString m_oldCurrentCondition;
-	QString m_newCurrentCondition;
+	std::string m_newCurrentCondition;
+	std::string m_oldCurrentCondition;
 
 	PreProcessorGridAttributeNodeGroupDataItem* m_item;
 };
@@ -141,7 +141,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::exclusivelyCheck(PreProcessorGr
 	}
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::setCurrentCondition(const QString& currentCond)
+void PreProcessorGridAttributeNodeGroupDataItem::setCurrentCondition(const std::string& currentCond)
 {
 	PreProcessorGridAttributeNodeDataItem* current = 0;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -175,10 +175,10 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSettings()
 	}
 	// update current active scalar
 	vtkPointData* data = g->vtkGrid()->GetPointData();
-	data->SetActiveScalars(iRIC::toStr(m_currentCondition).c_str());
+	data->SetActiveScalars(m_currentCondition.c_str());
 	PreProcessorGridAttributeNodeDataItem* activeItem = activeChildItem();
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(iRIC::toStr(m_currentCondition).c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_currentCondition.c_str());
 
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -267,8 +267,8 @@ void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 {
 	m_opacity.load(node);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		QString name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name();
-		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name);
+		std::string name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name();
+		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name.c_str());
 		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -285,13 +285,13 @@ void PreProcessorGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStr
 	m_opacity.save(writer);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		writer.writeStartElement("NodeAttribute");
-		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name());
+		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name().c_str());
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const QString& name)
+void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const std::string& name)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->informgridRelatedConditionChange(name);
 }

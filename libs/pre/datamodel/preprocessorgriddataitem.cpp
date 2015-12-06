@@ -139,7 +139,7 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 {
-	QString zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
+	std::string zoneName = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->zoneName();
 	// There is only one base_t node.
 	int B;
 	int nzones;
@@ -349,7 +349,7 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	m_grid->updateSimplifiedGrid(xmin, xmax, ymin, ymax);
 	m_grid->setModified();
 	// set zone name.
-	QString zname = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(parent())->zoneName();
+	std::string zname = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(parent())->zoneName();
 	m_grid->setZoneName(zname);
 	if (m_bcGroupDataItem != nullptr) {
 		m_bcGroupDataItem->setGrid(newGrid);
@@ -996,7 +996,7 @@ void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 	}
 }
 
-void PreProcessorGridDataItem::informgridRelatedConditionChange(const QString& name)
+void PreProcessorGridDataItem::informgridRelatedConditionChange(const std::string& name)
 {
 	emit gridRelatedConditionChanged(name);
 	PreProcessorGridAttributeNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);

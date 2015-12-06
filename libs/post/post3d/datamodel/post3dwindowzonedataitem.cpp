@@ -43,9 +43,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
-	Post3dWindowDataItem {zoneName, QIcon(":/images/iconGrid.png"), parent},
-	m_zoneName {zoneName},
+Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
+	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
+	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -101,7 +101,7 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 
 void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_zoneName);
+	writer.writeAttribute("name", m_zoneName.c_str());
 	writer.writeStartElement("Shape");
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();

@@ -63,7 +63,7 @@ private:
 
 	Ui::Post2dWindowStreamlineUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem* m_dataItem;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 	bool m_isPointsSet;
 
 	QPointF m_oldPoint1;

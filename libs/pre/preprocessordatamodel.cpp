@@ -1209,7 +1209,7 @@ void PreProcessorDataModel::importHydraulicData()
 	}
 }
 
-PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem(const QString& type) const
+PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem(const std::string& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
@@ -1217,7 +1217,7 @@ PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataIt
 	return tItem->geoDataTop();
 }
 
-PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const
+PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	return root->gridTypeDataItem(typeName)->condition(zoneName);

@@ -7,6 +7,7 @@
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
 
 #include <QMessageBox>
 
@@ -46,7 +47,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() > 1) {
 			// vector attributes.
 			continue;
@@ -87,7 +88,7 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 	m_setting = s;
 
 	// currentSolution
-	int index = m_solutions.indexOf(s.currentSolution);
+	int index = m_solutions.indexOf(iRIC::toStr(s.currentSolution));
 	if (index == -1) {
 		// not set yet. select the first one.
 		index = 0;
@@ -111,7 +112,7 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 	ui->transparencyWidget->setOpacity(s.opacity);
 }
 
-void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titlemap)
+void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)
 {
 	m_colorBarTitleMap = titlemap;
 }
@@ -119,22 +120,12 @@ void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<QString, Q
 Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 {
 	Post2dWindowContourSetting ret = m_setting;
-	// solution
-	ret.currentSolution = currentSolution();
 
-	// contour
+	ret.currentSolution = currentSolution().c_str();
 	ret.contour = ui->contourWidget->contour();
-
-	// numberOfDivision
 	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
-
-	// fillUpper
 	ret.fillUpper = ui->colormapWidget->fillUpper();
-
-	// fillLower
 	ret.fillLower = ui->colormapWidget->fillLower();
-
-	// opacity
 	ret.opacity = ui->transparencyWidget->opacity();
 
 	return ret;
@@ -145,7 +136,7 @@ QString Post2dWindowContourSettingDialog::scalarBarTitle()
 	return m_colorBarTitleMap[currentSolution()];
 }
 
-QString Post2dWindowContourSettingDialog::currentSolution() const
+std::string Post2dWindowContourSettingDialog::currentSolution() const
 {
 	return m_solutions.at(ui->physicalValueComboBox->currentIndex());
 }
@@ -157,7 +148,7 @@ const LookupTableContainer& Post2dWindowContourSettingDialog::lookupTable()
 
 void Post2dWindowContourSettingDialog::solutionChanged(int index)
 {
-	QString sol = m_solutions.at(index);
+	std::string sol = m_solutions.at(index);
 	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);

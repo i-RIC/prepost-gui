@@ -5,6 +5,8 @@
 #include "solverdefinitionnode.h"
 #include <QList>
 
+#include <string>
+
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
@@ -23,7 +25,7 @@ public:
 		gtUnstructured2DGrid
 	};
 	/// Constructor for dummy grid
-	SolverDefinitionGridType(const QString& name, const QString& caption);
+	SolverDefinitionGridType(const std::string& name, const QString& caption);
 	/// Constructor
 	SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary);
 	/// Destructor
@@ -32,15 +34,15 @@ public:
 	/// @name Grid attributes
 	//@{
 	const QList<SolverDefinitionGridAttribute*>& gridRelatedConditions() const;
-	SolverDefinitionGridAttribute* gridRelatedCondition(const QString& name) const;
+	SolverDefinitionGridAttribute* gridRelatedCondition(const std::string& name) const;
 	const QList<SolverDefinitionGridComplexAttribute*>& gridRelatedComplexConditions() const;
-	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const QString& name) const;
+	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const std::string& name) const;
 	//@{
 
 	/// @name Boundary conditions
 	//@{
 	const QList<SolverDefinitionBoundaryCondition*>& boundaryConditions() const;
-	SolverDefinitionBoundaryCondition* boundaryCondition(const QString& name) const;
+	SolverDefinitionBoundaryCondition* boundaryCondition(const std::string& name) const;
 	//@}
 
 	/// @name Properties
@@ -48,7 +50,7 @@ public:
 	const QList<GridType>& availableGridTypes() const;
 	GridType defaultGridType() const;
 	const QList<QString>& availableGridGenerators() const;
-	const QString& name() const;
+	const std::string& name() const;
 	const QString& caption() const;
 	bool isPrimary() const;
 	bool multiple() const;
@@ -67,7 +69,7 @@ public:
 	//@}
 
 	/// Returns the caption for the solution (calculation result)
-	QString solutionCaption(const QString& name) const;
+	QString solutionCaption(const std::string& name) const;
 
 private:
 	class Impl;

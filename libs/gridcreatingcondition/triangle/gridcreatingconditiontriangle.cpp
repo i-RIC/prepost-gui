@@ -1943,11 +1943,11 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	thread->setIOs(&in, &out);
 
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(m_conditionDataItem->parent());
-	QString zoneName = di->zoneName();
+	std::string zoneName = di->zoneName();
 
 	QString triExe = QCoreApplication::instance()->applicationDirPath().append("/triangle.exe");
 	QString workFolder = projectData()->workDirectory();
-	QString polyFileName = QString("%1.poly").arg(zoneName);
+	QString polyFileName = QString("%1.poly").arg(zoneName.c_str());
 	QString fileArgs = "-ve";
 	fileArgs.append(argstr);
 

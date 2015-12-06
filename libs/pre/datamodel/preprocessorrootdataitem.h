@@ -39,7 +39,7 @@ public:
 		return m_measuredDataTopDataItem;
 	}
 	void setupStandardModel(QStandardItemModel* model);
-	PreProcessorGridTypeDataItem* gridTypeDataItem(const QString& name);
+	PreProcessorGridTypeDataItem* gridTypeDataItem(const std::string& name);
 	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
 	PreProcessorInputConditionDataItem* inputConditionDataItem() {return m_inputConditionDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}

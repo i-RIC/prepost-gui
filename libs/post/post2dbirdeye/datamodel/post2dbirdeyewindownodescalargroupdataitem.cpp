@@ -65,10 +65,10 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 			// vector attribute.
 			continue;
 		}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post2dBirdEyeWindowNodeScalarDataItem* item = new Post2dBirdEyeWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
-		m_colorbarTitleMap.insert(name, name);
+		m_colorbarTitleMap.insert(name, name.c_str());
 	}
 	m_setting.opacity = 0;
 }
@@ -135,7 +135,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const
 	QDomNodeList titles = node.childNodes();
 	for (int i = 0; i < titles.count(); ++i) {
 		QDomElement titleElem = titles.at(i).toElement();
-		QString val = titleElem.attribute("value");
+		std::string val = iRIC::toStr(titleElem.attribute("value"));
 		QString title = titleElem.attribute("title");
 		m_colorbarTitleMap[val] = title;
 	}
@@ -149,11 +149,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStr
 	m_setting.save(writer);
 
 	// scalar bar titles
-	QMapIterator<QString, QString> i(m_colorbarTitleMap);
+	QMapIterator<std::string, QString> i(m_colorbarTitleMap);
 	while (i.hasNext()) {
 		i.next();
 		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key());
+		writer.writeAttribute("value", i.key().c_str());
 		writer.writeAttribute("title", i.value());
 		writer.writeEndElement();
 	}
@@ -320,7 +320,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 	m_warp->Update();
 	m_fringeMapper->SetInputData(m_warp->GetOutput());
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
-	m_fringeMapper->SelectColorArray(iRIC::toStr(currentSolution()).c_str());
+	m_fringeMapper->SelectColorArray(currentSolution().c_str());
 	m_fringeMapper->SetLookupTable(stc->vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
 //_	m_fringeActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
@@ -406,7 +406,8 @@ public:
 		m_item->updateActorSettings();
 	}
 private:
-	void applySettings(const QString& sol, const LookupTableContainer& c, QString& title) {
+	void applySettings(const std::string& sol, const LookupTableContainer& c, QString& title)
+	{
 		m_item->setCurrentSolution(sol);
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
 		LookupTableContainer* lut = gtItem->lookupTable(sol);
@@ -438,24 +439,23 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QD
 class Post2dBirdEyeWindowNodeScalarGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	SelectSolutionCommand(const QString& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
-		QUndoCommand {QObject::tr("Contour Physical Value Change")}
-	{
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = m_item->currentSolution();
-		m_item = item;
-	}
-	void redo() {
+	SelectSolutionCommand(const std::string& newsol, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
+		QUndoCommand{ QObject::tr("Contour Physical Value Change") },
+		m_newCurrentSolution(newsol),
+		m_oldCurrentSolution(m_item->currentSolution()),
+		m_item{ item }
+	{}
+	void redo() override {
 		m_item->setCurrentSolution(m_newCurrentSolution);
 		m_item->updateActorSettings();
 	}
-	void undo() {
+	void undo() override {
 		m_item->setCurrentSolution(m_oldCurrentSolution);
 		m_item->updateActorSettings();
 	}
 private:
-	QString m_newCurrentSolution;
-	QString m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
 
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
 };
@@ -470,7 +470,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeW
 	}
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post2dBirdEyeWindowNodeScalarDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -483,7 +483,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const QStrin
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_setting.currentSolution = currentSol;
+	m_setting.currentSolution = currentSol.c_str();
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::createRangeClippedPolyData()

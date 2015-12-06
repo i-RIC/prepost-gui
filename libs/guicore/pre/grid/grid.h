@@ -11,6 +11,8 @@
 #include <QMap>
 #include <cgnslib.h>
 
+#include <string>
+
 #if CGNS_VERSION < 3100
 #define cgsize_t int
 #endif
@@ -34,12 +36,12 @@ public:
 	static const int MAX_DRAWINDEXCOUNT;
 	static const char LABEL_NAME[];
 	/// Constructor
-	Grid(const QString& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
+	Grid(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	Grid(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	/// Destructor
 	virtual ~Grid();
-	const QString& zoneName() {return m_zoneName;}
-	void setZoneName(const QString& name) {m_zoneName = name;}
+	const std::string& zoneName() {return m_zoneName;}
+	void setZoneName(const std::string& name) {m_zoneName = name;}
 	void loadFromCgnsFile(const int fn) override;
 	virtual bool loadFromCgnsFile(const int fn, int base, int zoneid) = 0;
 	virtual void saveToCgnsFile(const int fn) override;
@@ -57,7 +59,7 @@ public:
 		return m_gridRelatedConditions;
 	}
 	/// Get grid related condition by name.
-	GridAttributeContainer* gridRelatedCondition(const QString& name) {
+	GridAttributeContainer* gridRelatedCondition(const std::string& name) {
 		return m_gridRelatedConditionNameMap.value(name);
 	}
 	void addGridRelatedCondition(GridAttributeContainer* cond);
@@ -82,14 +84,14 @@ protected:
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
 	bool loadGridRelatedConditions(int fn, int B, int Z);
 	bool saveGridRelatedConditions(int fn, int B, int Z);
-	static int zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9]);
+	static int zoneId(const std::string& zonename, int fn, int B, cgsize_t sizes[9]);
 	vtkPointSet* m_vtkGrid;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredShapeAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredPointsAlgorithm;
 	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredCellsAlgorithm;
 	QList<GridAttributeContainer*> m_gridRelatedConditions;
-	QMap<QString, GridAttributeContainer*> m_gridRelatedConditionNameMap;
-	QString m_zoneName;
+	QMap<std::string, GridAttributeContainer*> m_gridRelatedConditionNameMap;
+	std::string m_zoneName;
 	SolverDefinitionGridType::GridType m_gridType;
 	bool m_isModified;
 	bool m_isMasked;

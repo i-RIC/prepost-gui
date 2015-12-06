@@ -16,6 +16,7 @@
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridtype.h"
 
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 // namespace for local functions
@@ -44,7 +45,7 @@ class SolverDefinitionGridType::Impl
 {
 public:
 	/// Constructor
-	Impl(const QString& name, const QString& caption, SolverDefinitionGridType* parent);
+	Impl(const std::string& name, const QString& caption, SolverDefinitionGridType* parent);
 	/// Constructor
 	Impl(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent);
 
@@ -59,7 +60,7 @@ public:
 	void buildGridRelatedConditions(Grid* grid) const;
 	Grid* createEmptyGrid();
 
-	QString m_name;
+	std::string m_name;
 	QString m_caption;
 	bool m_isPrimary {true};
 	bool m_multiple {false};
@@ -69,19 +70,19 @@ public:
 	QList<QString> m_availableGridGenerators;
 	GridType m_defaultGridType {gtUnknownGrid};
 	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
-	QMap<QString, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
+	QMap<std::string, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
 	QList<SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditions;
-	QMap<QString, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
+	QMap<std::string, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
 	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
-	QMap<QString, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
-	QMap<QString, QString> m_solutionCaptions;
+	QMap<std::string, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
+	QMap<std::string, QString> m_solutionCaptions;
 
 	Grid* m_emptyGrid {nullptr};
 	SolverDefinitionGridType* m_parent;
 };
 
-SolverDefinitionGridType::Impl::Impl(const QString& name, const QString& caption, SolverDefinitionGridType* parent) :
-	m_name {name},
+SolverDefinitionGridType::Impl::Impl(const std::string& name, const QString& caption, SolverDefinitionGridType* parent) :
+	m_name (name),
 	m_caption {caption},
 	m_parent {parent}
 {}
@@ -104,7 +105,7 @@ SolverDefinitionGridType::Impl::~Impl()
 void SolverDefinitionGridType::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
 {
 	// set basic informations.
-	m_name = node.attribute("name", "default");
+	m_name = iRIC::toStr(node.attribute("name", "default"));
 	m_caption = translator.translate(node.attribute("caption", QObject::tr("Default")));
 	QString multistr = node.attribute("multiple", "false");
 	m_multiple = (multistr == "true");
@@ -260,7 +261,7 @@ Grid* SolverDefinitionGridType::Impl::createEmptyGrid()
 
 // Public interfaces
 
-SolverDefinitionGridType::SolverDefinitionGridType(const QString& name, const QString& caption) :
+SolverDefinitionGridType::SolverDefinitionGridType(const std::string& name, const QString& caption) :
 	SolverDefinitionNode {},
 	m_impl {new Impl{name, caption, this}}
 {}
@@ -280,7 +281,7 @@ const QList<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridRelat
 	return m_impl->m_gridRelatedConditions;
 }
 
-SolverDefinitionGridAttribute* SolverDefinitionGridType::gridRelatedCondition(const QString& name) const
+SolverDefinitionGridAttribute* SolverDefinitionGridType::gridRelatedCondition(const std::string& name) const
 {
 	return m_impl->m_gridRelatedConditionNameMap.value(name);
 }
@@ -290,7 +291,7 @@ const QList<SolverDefinitionGridComplexAttribute*>& SolverDefinitionGridType::gr
 	return m_impl->m_gridRelatedComplexConditions;
 }
 
-SolverDefinitionGridComplexAttribute* SolverDefinitionGridType::gridRelatedComplexCondition(const QString& name) const
+SolverDefinitionGridComplexAttribute* SolverDefinitionGridType::gridRelatedComplexCondition(const std::string& name) const
 {
 	return m_impl->m_gridRelatedComplexConditionNameMap.value(name);
 }
@@ -300,7 +301,7 @@ const QList<SolverDefinitionBoundaryCondition*>& SolverDefinitionGridType::bound
 	return m_impl->m_boundaryConditions;
 }
 
-SolverDefinitionBoundaryCondition* SolverDefinitionGridType::boundaryCondition(const QString& name) const
+SolverDefinitionBoundaryCondition* SolverDefinitionGridType::boundaryCondition(const std::string& name) const
 {
 	return m_impl->m_boundaryConditionNameMap.value(name);
 }
@@ -320,7 +321,7 @@ const QList<QString>& SolverDefinitionGridType::availableGridGenerators() const
 	return m_impl->m_availableGridGenerators;
 }
 
-const QString& SolverDefinitionGridType::name() const
+const std::string& SolverDefinitionGridType::name() const
 {
 	return m_impl->m_name;
 }
@@ -399,7 +400,7 @@ Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
 	return ret;
 }
 
-QString SolverDefinitionGridType::solutionCaption(const QString& name) const
+QString SolverDefinitionGridType::solutionCaption(const std::string& name) const
 {
-	return name;
+	return name.c_str();
 }

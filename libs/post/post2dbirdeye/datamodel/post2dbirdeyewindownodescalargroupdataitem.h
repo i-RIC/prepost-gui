@@ -31,11 +31,11 @@ public:
 	/// Constructor
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
-	QString currentSolution() const {return m_setting.currentSolution;}
+	std::string currentSolution() const {return m_setting.currentSolution;}
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const QString& currentSol);
+	void setCurrentSolution(const std::string& currentSol);
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -63,7 +63,7 @@ private:
 
 	Post2dWindowContourSetting m_setting;
 	// for scalar bar
-	QMap<QString, QString> m_colorbarTitleMap;
+	QMap<std::string, QString> m_colorbarTitleMap;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkLODActor* m_contourActor;

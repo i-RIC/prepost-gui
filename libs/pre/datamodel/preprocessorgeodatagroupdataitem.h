@@ -42,7 +42,7 @@ public:
 	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
 	void editScalarBarLegendBox(PreProcessorScalarBarLegendBoxSettingDialog* dialog);
 	ScalarBarSetting& scalarBarSetting() {return m_scalarBarSetting;}
-	QString title() {return m_title;}
+	const QString& title() const {return m_title;}
 	QAction* importAction() {return m_importAction;}
 	void addImportAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();

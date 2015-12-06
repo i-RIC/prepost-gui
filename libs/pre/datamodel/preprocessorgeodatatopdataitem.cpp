@@ -45,7 +45,7 @@ void setupChildrenInGroups(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		QList <GraphicsWindowDataItem*>* children,
-		std::map<QString, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		PreProcessorDataItem* parent)
 {
 	// node simple items
@@ -81,7 +81,7 @@ void setupChildrenInOrder(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		QList <GraphicsWindowDataItem*>* children,
-		std::map<QString, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		PreProcessorDataItem* parent)
 {
 	std::map<int, PreProcessorDataItem*> itemsInOrder;
@@ -148,7 +148,7 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
-		QString name = child.attribute("name");
+		std::string name = iRIC::toStr(child.attribute("name"));
 		auto it = m_itemNameMap.find(name);
 		if (it != m_itemNameMap.end()) {
 			it->second->loadFromProjectMainFile(child);
@@ -178,14 +178,14 @@ const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDa
 	return ret;
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const QString& name)
+PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const std::string& name)
 {
 	auto it = m_itemNameMap.find(name);
 	if (it == m_itemNameMap.end()) {return nullptr;}
 	return it->second;
 }
 
-void PreProcessorGeoDataTopDataItem::informValueRangeChange(const QString& name)
+void PreProcessorGeoDataTopDataItem::informValueRangeChange(const std::string& name)
 {
 	emit valueRangeChanged(name);
 }
@@ -235,7 +235,7 @@ void PreProcessorGeoDataTopDataItem::setupActors()
 	m_legendBoxWidget->SetInteractor(iren);
 
 	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = groupDataItems();
-	QString attName;
+	std::string attName;
 
 	// for legend box
 	for (auto it = groups.begin(); it != groups.end(); ++it) {

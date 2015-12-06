@@ -41,10 +41,10 @@ public:
 	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers3D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers(Dimension dim) const;
-	PostZoneDataContainer* zoneContainer1D(const QString& zonename) const;
-	PostZoneDataContainer* zoneContainer2D(const QString& zonename) const;
-	PostZoneDataContainer* zoneContainer3D(const QString& zonename) const;
-	PostZoneDataContainer* zoneContainer(Dimension dim, const QString& zoneName) const;
+	PostZoneDataContainer* zoneContainer1D(const std::string& zoneName) const;
+	PostZoneDataContainer* zoneContainer2D(const std::string& zoneName) const;
+	PostZoneDataContainer* zoneContainer3D(const std::string& zoneName) const;
+	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
 	bool isDataAvailable() const;
 	bool isDataAvailable1D() const;
 	bool isDataAvailable2D() const;
@@ -65,12 +65,12 @@ public:
 
 protected:
 	void timerEvent(QTimerEvent*) override;
-	bool innerSetupZoneDataContainers(int fn, int dimiension, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
-	bool innerSetupDummy3DZoneDataContainers(int fn, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap);
+	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
+	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void informStepsUpdated();
-	static void clearContainers(QList<PostZoneDataContainer*>& conts);
+	static void clearContainers(QList<PostZoneDataContainer*>* conts);
 
 public slots:
 	void informSolverStart();
@@ -110,12 +110,13 @@ private:
 	int m_timerId;
 	int m_fileId;
 
-	QStringList m_zoneNames1D;
-	QStringList m_zoneNames2D;
-	QStringList m_zoneNames3D;
-	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap1D;
-	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap2D;
-	QMap<QString, PostZoneDataContainer*> m_zoneContainerNameMap3D;
+	std::vector<std::string> m_zoneNames1D;
+	std::vector<std::string> m_zoneNames2D;
+	std::vector<std::string> m_zoneNames3D;
+
+	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap1D;
+	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap2D;
+	QMap<std::string, PostZoneDataContainer*> m_zoneContainerNameMap3D;
 
 	PostDataExportDialog::Format m_exportFormat;
 

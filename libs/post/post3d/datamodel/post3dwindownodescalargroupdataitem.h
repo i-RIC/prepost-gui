@@ -33,7 +33,7 @@ public:
 	Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeScalarGroupDataItem();
 	void updateActorSettings();
-	const QString& currentCondition() const {return m_currentSolution;}
+	const std::string& currentCondition() const {return m_currentSolution;}
 	void informDataChange(const QString& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
@@ -41,7 +41,7 @@ public:
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const QString& currentSol);
+	void setCurrentSolution(const std::string& currentSol);
 
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeScalarDataItem* item);
@@ -58,7 +58,7 @@ private:
 	void setDefaultValues();
 	void setupIsosurfaceSetting();
 
-	QString m_currentSolution;
+	std::string m_currentSolution;
 	bool m_fullRange;
 	StructuredGridRegion::Range3d m_range;
 	double m_isoValue;

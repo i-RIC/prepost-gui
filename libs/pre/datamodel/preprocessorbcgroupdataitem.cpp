@@ -71,7 +71,7 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 		for (int i = 0; i < conditions.count(); ++i) {
 			SolverDefinitionBoundaryCondition* bc = conditions.at(i);
 			int number;
-			cg_iRIC_Read_BC_Count(const_cast<char*>(iRIC::toStr(bc->name()).c_str()), &number);
+			cg_iRIC_Read_BC_Count(const_cast<char*>(bc->name().c_str()), &number);
 			for (int j = 0; j < number; ++j) {
 				PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
 				bcItem->setProjectNumber(j + 1);
@@ -160,7 +160,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	QDomNodeList childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomElement childElem = childNodes.at(i).toElement();
-		QString condType = childElem.attribute("type");
+		std::string condType = iRIC::toStr(childElem.attribute("type"));
 		SolverDefinitionBoundaryCondition* bc = gtItem->gridType()->boundaryCondition(condType);
 		PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
 		bcItem->loadFromProjectMainFile(childElem);
@@ -222,7 +222,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	SolverDefinitionGridType* gtype = gtItem->gridType();
 	SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(index);
 	PreProcessorBCDataItem* item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, hideSetting);
-	QString tmpName(QString("New %1").arg(bc->englishCaption()));
+	QString tmpName(QString("New %1").arg(bc->englishCaption().c_str()));
 	item->setName(tmpName);
 	int number = 1;
 	auto it = m_childItems.begin();

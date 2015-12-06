@@ -31,14 +31,14 @@ public:
 	/// Constructor
 	Post2dWindowNodeScalarGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
-	QString currentSolution() const {return m_setting.currentSolution;}
+	std::string currentSolution() const {return m_setting.currentSolution;}
 	ContourSettingWidget::Contour contour() const {return m_setting.contour;}
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const QString& currentSol);
+	void setCurrentSolution(const std::string& currentSol);
 	bool hasTransparentPart() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -77,7 +77,7 @@ private:
 	Post2dWindowContourSetting m_setting;
 
 	// for scalar bar
-	QMap<QString, QString> m_colorbarTitleMap;
+	QMap<std::string, QString> m_colorbarTitleMap;
 
 	vtkSmartPointer<vtkLODActor> m_contourActor;
 	vtkDataSetMapper* m_contourMapper;

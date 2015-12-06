@@ -12,9 +12,9 @@ class Post2dWindowNodeVectorParticleDataItem : public Post2dWindowDataItem
 
 public:
 	/// Constructor
-	Post2dWindowNodeVectorParticleDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent);
 	void handleStandardItemChange() override;
-	const QString& name() const {return m_name;}
+	const std::string& name() const {return m_name;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -24,12 +24,11 @@ public:
 signals:
 	void changed(Post2dWindowNodeVectorParticleDataItem*);
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
-
 private:
-	QString m_name;
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
+
+	std::string m_name;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEDATAITEM_H

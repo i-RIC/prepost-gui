@@ -15,7 +15,7 @@ InputConditionContainerInteger::InputConditionContainerInteger() :
 	m_value {0}
 {}
 
-InputConditionContainerInteger::InputConditionContainerInteger(const QString& n, const QString& c, const QDomNode& defNode) :
+InputConditionContainerInteger::InputConditionContainerInteger(const std::string& n, const QString& c, const QDomNode& defNode) :
 	InputConditionContainer(n, c)
 {
 	setup(defNode);

@@ -11,11 +11,9 @@ class GUICOREDLL_EXPORT Grid3D : public Grid
 
 public:
 	/// Constructor
-	Grid3D(const QString& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
+	Grid3D(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	virtual unsigned int vertexCount() const = 0;
 	virtual const QVector3D vertex(unsigned int index) const = 0;
-	virtual void load() = 0;
-	virtual void save() = 0;
 };
 
 #endif // GRID2D_H

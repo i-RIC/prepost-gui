@@ -63,7 +63,7 @@ bool ProjectCgnsFile::writeSolverInfo(int fn, const SolverDefinitionAbstract* so
 	cgsize_t dim[3];
 	QString versionString;
 
-	QString solverName = solverDef->name();
+	std::string solverName = solverDef->name();
 	VersionNumber version = solverDef->version();
 
 	// goto "iRIC" base".
@@ -80,7 +80,7 @@ bool ProjectCgnsFile::writeSolverInfo(int fn, const SolverDefinitionAbstract* so
 	if (ret != 0) {return false;}
 	// add name node
 	dim[0] = solverName.length() + 1;
-	ret = cg_array_write("Name", Character, 1, dim, iRIC::toStr(solverName).c_str());
+	ret = cg_array_write("Name", Character, 1, dim, solverName.c_str());
 	if (ret != 0) {return false;}
 	// add version node
 	versionString = version.toString();
@@ -98,7 +98,7 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 	DataType_t dataType;
 	char arrayName[BUFFERLEN];
 	std::vector<char> buffer;
-	QString solverName = solverDef->name();
+	std::string solverName = solverDef->name();
 	VersionNumber version = solverDef->version();
 
 	// goto "iRIC/SolverInformation" base".
@@ -130,7 +130,7 @@ bool ProjectCgnsFile::checkSolverInfo(int fn, const SolverDefinitionAbstract* so
 }
 
 
-bool ProjectCgnsFile::readSolverInfo(const QString& filename, QString& solverName, VersionNumber& version)
+bool ProjectCgnsFile::readSolverInfo(const QString& filename, std::string* solverName, VersionNumber* version)
 {
 	int fn;
 	int ret;
@@ -151,7 +151,7 @@ ERROR_OPENING:
 	return false;
 }
 
-bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber& version)
+bool ProjectCgnsFile::readSolverInfo(int fn, std::string* solverName, VersionNumber* version)
 {
 	int ret;
 	int dim;
@@ -170,7 +170,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	buffer.assign(dimVec[0] + 1, 0);
 	ret = cg_array_read(1, buffer.data());
 	if (ret != 0) {return false;}
-	solverName = buffer.data();
+	*solverName = buffer.data();
 
 	// the second one is "Version" array.
 	ret = cg_array_info(2, arrayName, &dataType, &dim, dimVec);
@@ -179,7 +179,7 @@ bool ProjectCgnsFile::readSolverInfo(int fn, QString& solverName, VersionNumber&
 	buffer.assign(dimVec[0] + 1, 0);
 	ret = cg_array_read(2, buffer.data());
 	if (ret != 0) {return false;}
-	version = VersionNumber {buffer.data()};
+	*version = VersionNumber {buffer.data()};
 
 	return true;
 }

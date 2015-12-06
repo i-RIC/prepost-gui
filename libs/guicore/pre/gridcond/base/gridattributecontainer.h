@@ -21,7 +21,7 @@ public:
 	/// Constructor
 	GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond);
 	Grid* grid() const {return m_grid;}
-	const QString& name() const;
+	const std::string& name() const;
 	bool mapped() const {return m_mapped;}
 	virtual void setMapped(bool mapped) {
 		m_mapped = mapped;

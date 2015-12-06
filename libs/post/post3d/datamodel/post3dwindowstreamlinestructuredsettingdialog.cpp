@@ -52,14 +52,14 @@ void Post3dWindowStreamlineStructuredSettingDialog::setZoneData(PostZoneDataCont
 	setupSolutionComboBox(zoneData);
 }
 
-void Post3dWindowStreamlineStructuredSettingDialog::setSolution(const QString& sol)
+void Post3dWindowStreamlineStructuredSettingDialog::setSolution(const std::string& sol)
 {
 	int index = m_solutions.indexOf(sol);
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 }
 
-QString Post3dWindowStreamlineStructuredSettingDialog::solution() const
+std::string Post3dWindowStreamlineStructuredSettingDialog::solution() const
 {
 	int index = ui->solutionComboBox->currentIndex();
 	return m_solutions.at(index);
@@ -198,7 +198,7 @@ void Post3dWindowStreamlineStructuredSettingDialog::setupSolutionComboBox(PostZo
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			continue;

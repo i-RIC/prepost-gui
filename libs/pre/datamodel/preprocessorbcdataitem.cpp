@@ -101,18 +101,18 @@ void PreProcessorBCDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	m_isCustomModified = iRIC::getBooleanAttribute(node, "isCustomModified");
 	m_mapped = iRIC::getBooleanAttribute(node, "isMapped", true);
 	m_hideSetting = iRIC::getBooleanAttribute(node, "settingHidden", false);
-	setFilename(QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber));
+	setFilename(QString("%1%2.dat").arg(m_condition->name().c_str()).arg(m_projectNumber));
 }
 
 void PreProcessorBCDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("type", m_condition->name());
+	writer.writeAttribute("type", m_condition->name().c_str());
 	iRIC::setIntAttribute(writer, "number", m_projectNumber);
 	iRIC::setIntAttribute(writer, "cgnsNumber", m_cgnsNumber);
 	iRIC::setBooleanAttribute(writer, "isCustomModified", m_isCustomModified);
 	iRIC::setBooleanAttribute(writer, "isMapped", m_mapped);
 	iRIC::setBooleanAttribute(writer, "settingHidden", m_hideSetting);
-	setFilename(QString("%1%2.dat").arg(m_condition->name()).arg(m_projectNumber));
+	setFilename(QString("%1%2.dat").arg(m_condition->name().c_str()).arg(m_projectNumber));
 }
 
 void PreProcessorBCDataItem::loadExternalData(const QString& filename)
@@ -562,12 +562,12 @@ void PreProcessorBCDataItem::loadFromCgnsFile(const int fn)
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
 	cgsize_t size;
-	int err = cg_iRIC_Read_BC_IndicesSize(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, &size);
+	int err = cg_iRIC_Read_BC_IndicesSize(const_cast<char*>(m_condition->name().c_str()), m_cgnsNumber, &size);
 	if (err != 0) {return;}
 	if (sgrid == nullptr) {
 		// this is an unstructured grid.
 		std::vector<cgsize_t> indices (size, 0);
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices.data());
+		cg_iRIC_Read_BC_Indices(const_cast<char*>(m_condition->name().c_str()), m_cgnsNumber, indices.data());
 
 		if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 				m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
@@ -584,7 +584,7 @@ void PreProcessorBCDataItem::loadFromCgnsFile(const int fn)
 	} else {
 		// this is a structured grid.
 		std::vector<cgsize_t> indices(size * 2, 0);
-		cg_iRIC_Read_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, indices.data());
+		cg_iRIC_Read_BC_Indices(const_cast<char*>(m_condition->name().c_str()), m_cgnsNumber, indices.data());
 		m_indices.clear();
 		if (m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 			for (int idx = 0; idx < size; ++idx) {
@@ -672,7 +672,7 @@ void PreProcessorBCDataItem::saveToCgnsFile(const int fn)
 		}
 	}
 	gitem->grid();
-	cg_iRIC_Write_BC_Indices(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), m_cgnsNumber, tmplist.count(), indices.data());
+	cg_iRIC_Write_BC_Indices(const_cast<char*>(m_condition->name().c_str()), m_cgnsNumber, tmplist.count(), indices.data());
 
 	m_dialog->setNameAndNumber(m_condition->name(), m_cgnsNumber);
 	m_dialog->save(fn);
@@ -805,11 +805,11 @@ QString PreProcessorBCDataItem::caption() const
 	return m_dialog->caption();
 }
 
-QString PreProcessorBCDataItem::uniqueName() const
+std::string PreProcessorBCDataItem::uniqueName() const
 {
 	QString name("%1_%2");
-	QString ret = name.arg(m_condition->name()).arg(m_projectNumber);
-	return ret;
+	QString ret = name.arg(m_condition->name().c_str()).arg(m_projectNumber);
+	return iRIC::toStr(ret);
 }
 
 void PreProcessorBCDataItem::doApplyOffset(double /*x*/, double /*y*/)

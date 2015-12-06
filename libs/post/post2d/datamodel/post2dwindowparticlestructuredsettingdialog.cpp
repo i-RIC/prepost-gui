@@ -88,7 +88,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Setting Post2dWindowParticleStructu
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index);
+	ret.currentSolution = m_solutions.at(index).c_str();
 
 	// timemode
 	if (ui->timeSlider->value() == m_skipNominations.count()) {
@@ -231,11 +231,9 @@ void Post2dWindowParticleStructuredSettingDialog::setupSolutionComboBox(PostZone
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		QString name = tmparray->GetName();
-		if (tmparray->GetNumberOfComponents() <= 1) {
-			// scalar attributes.
-			continue;
-		}
+		if (tmparray->GetNumberOfComponents() <= 1) {continue;}
+
+		std::string name = tmparray->GetName();
 		ui->solutionComboBox->addItem(gt->solutionCaption(name));
 		m_solutions.append(name);
 	}

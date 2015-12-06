@@ -48,7 +48,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post2dWindowStreamlineStructuredSettingDialog* ui;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 
 	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting m_setting;
 	QList<Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting> m_stSettings;

@@ -50,7 +50,7 @@ public:
 	/// Constructor
 	Structured2DGrid(ProjectDataItem* parent);
 	/// Constructor
-	Structured2DGrid(const QString& zonename, ProjectDataItem* parent);
+	Structured2DGrid(const std::string& zonename, ProjectDataItem* parent);
 	/// Return VTK container object to store the grid.
 	vtkStructuredGrid* vtkGrid() const {return dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);}
 	unsigned int vertexCount() const override {return m_dimensionI * m_dimensionJ;}

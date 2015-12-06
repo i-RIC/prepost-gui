@@ -83,7 +83,8 @@ class Post3dWindowArrowGroupSetSetting : public QUndoCommand
 {
 public:
 	Post3dWindowArrowGroupSetSetting(
-		const QString& newsol, Post3dWindowArrowGroupDataItem::LengthMode lm, double stdLen, int legendLen, double minLen, Post3dWindowArrowGroupDataItem::Mapping newMapping, const QColor& newColor, const QString& newScalar, int newRate, const ArrowSettingContainer& arrowSetting, Post3dWindowArrowGroupDataItem* g) {
+		const std::string& newsol, Post3dWindowArrowGroupDataItem::LengthMode lm, double stdLen, int legendLen, double minLen, Post3dWindowArrowGroupDataItem::Mapping newMapping, const QColor& newColor, const std::string& newScalar, int newRate, const ArrowSettingContainer& arrowSetting, Post3dWindowArrowGroupDataItem* g)
+	{
 		m_oldEnabled = (g->standardItem()->checkState() == Qt::Checked);
 		m_oldSolution = g->m_currentSolution;
 		m_oldLengthMode = g->m_lengthMode;
@@ -150,36 +151,36 @@ public:
 	}
 private:
 	bool m_oldEnabled;
-	QString m_oldSolution;
+	std::string m_oldSolution;
 	Post3dWindowArrowGroupDataItem::LengthMode m_oldLengthMode;
 	double m_oldStandardValue;
 	int m_oldLegendLength;
 	double m_oldMinimumValue;
 	Post3dWindowArrowGroupDataItem::Mapping m_oldMapping;
 	QColor m_oldColor;
-	QString m_oldScalar;
+	std::string m_oldScalar;
 	int m_oldSampleRate;
 	ArrowSettingContainer m_oldArrowSetting;
 
 	bool m_newEnabled;
-	QString m_newSolution;
+	std::string m_newSolution;
 	Post3dWindowArrowGroupDataItem::LengthMode m_newLengthMode;
 	double m_newStandardValue;
 	double m_newMinimumValue;
 	int m_newLegendLength;
 	Post3dWindowArrowGroupDataItem::Mapping m_newMapping;
 	QColor m_newColor;
-	QString m_newScalar;
+	std::string m_newScalar;
 	int m_newSampleRate;
 	ArrowSettingContainer m_newArrowSetting;
 
 	Post3dWindowArrowGroupDataItem* m_group;
 };
 
-void Post3dWindowArrowGroupDataItem::setSetting(const QString& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const QString& scalar, int rate, const ArrowSettingContainer& arrowSetting)
+void Post3dWindowArrowGroupDataItem::setSetting(const std::string& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const std::string& scalar, int rate, const ArrowSettingContainer& arrowSetting)
 {
 	iRICUndoStack::instance().push(new Post3dWindowArrowGroupSetSetting(
-																	 sol, lenMode, stdVal, legendLen, minVal, mapping, color, scalar, rate, arrowSetting, this));
+		sol, lenMode, stdVal, legendLen, minVal, mapping, color, scalar, rate, arrowSetting, this));
 }
 
 void Post3dWindowArrowGroupDataItem::showSettingDialog()
@@ -274,12 +275,12 @@ QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowArrowGroupDataItem:
 class Post3dWindowArrowGroupSetFaceMap : public QUndoCommand
 {
 public:
-	Post3dWindowArrowGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, Post3dWindowArrowGroupDataItem* item) {
-		m_oldMap = oldMap;
-		m_newMap = newMap;
-		m_item = item;
-	}
-	void redo() {
+	Post3dWindowArrowGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, Post3dWindowArrowGroupDataItem* item) :
+		m_oldMap (oldMap),
+		m_newMap (newMap),
+		m_item {item}
+	{}
+	void redo() override {
 		removeChildren();
 		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it) {
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
@@ -289,7 +290,7 @@ public:
 		m_item->updateItemMap();
 		m_item->setupAppendFilter();
 	}
-	void undo() {
+	void undo() override {
 		removeChildren();
 		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it) {
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
@@ -443,9 +444,9 @@ void Post3dWindowArrowGroupDataItem::updateColorSetting()
 		break;
 	case Scalar:
 		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = typedi->lookupTable(iRIC::toStr(m_scalarValueName).c_str());
+		LookupTableContainer* stc = typedi->lookupTable(m_scalarValueName);
 		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_scalarValueName).c_str());
+		m_arrowMapper->SelectColorArray(m_scalarValueName.c_str());
 		m_arrowMapper->SetLookupTable(stc->vtkObj());
 		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
@@ -468,7 +469,7 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 	if (m_appendFilter->GetNumberOfInputConnections(0) == 0) {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
+	pd->SetActiveVectors(m_currentSolution.c_str());
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdDistance(m_arrowSetting.arrowSize());
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
@@ -479,7 +480,7 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 
 	m_maskPoints->Update();
 	vtkPointSet* inPS = m_maskPoints->GetOutput();
-	vtkDataArray* vectorArray = inPS->GetPointData()->GetArray(iRIC::toStr(m_currentSolution).c_str());
+	vtkDataArray* vectorArray = inPS->GetPointData()->GetArray(m_currentSolution.c_str());
 	QSet<vtkIdType> pointIds;
 	double minlimitsqr = m_minimumValue * m_minimumValue;
 	for (vtkIdType i = 0; i < inPS->GetNumberOfPoints(); ++i) {
@@ -570,7 +571,7 @@ void Post3dWindowArrowGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution).arg(m_standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution.c_str()).arg(m_standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
 	if (m_mapping == Specific) {
@@ -591,7 +592,7 @@ void Post3dWindowArrowGroupDataItem::calculateStandardValue()
 	vtkPointSet* ps = cont->data();
 	if (m_currentSolution == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_currentSolution).c_str());
+	vtkDataArray* da = pd->GetArray(m_currentSolution.c_str());
 
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
@@ -637,8 +638,8 @@ void Post3dWindowArrowGroupDataItem::updateScaleFactor()
 void Post3dWindowArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	m_currentSolution = elem.attribute("solution");
-	m_scalarValueName = elem.attribute("scalarValueName");
+	m_currentSolution = iRIC::toStr(elem.attribute("solution"));
+	m_scalarValueName = iRIC::toStr(elem.attribute("scalarValueName"));
 	m_color = loadColorAttribute("color", node, m_color);
 	m_oldCameraScale = elem.attribute("oldCameraScale").toDouble();
 	m_scaleFactor = elem.attribute("scaleFactor").toDouble();
@@ -664,8 +665,8 @@ void Post3dWindowArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void Post3dWindowArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
-	writer.writeAttribute("scalarValueName", m_scalarValueName);
+	writer.writeAttribute("solution", m_currentSolution.c_str());
+	writer.writeAttribute("scalarValueName", m_scalarValueName.c_str());
 	writeColorAttribute("color", m_color, writer);
 	writer.writeAttribute("oldCameraScale", QString::number(m_oldCameraScale));
 	writer.writeAttribute("scaleFactor", QString::number(m_scaleFactor));

@@ -4,6 +4,8 @@
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
 
+#include <string>
+
 class QDomElement;
 class QString;
 
@@ -11,16 +13,17 @@ class GUICOREDLL_EXPORT SolverDefinitionBoundaryCondition : public SolverDefinit
 {
 public:
 	enum Position {pNode, pCell, pEdge};
-	/// Constructor
 	SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator);
-	/// Destructor
 	~SolverDefinitionBoundaryCondition();
-	const QString& name() const;
+
+	const std::string& name() const;
 	const QString& caption() const;
-	const QString& englishCaption() const;
-	void setCaption(const QString& caption);
-	const QDomElement& element() const;
+	const std::string& englishCaption() const;
 	Position position() const;
+
+	void setCaption(const QString& caption);
+
+	const QDomElement& element() const;
 
 private:
 	class Impl;

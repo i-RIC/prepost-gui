@@ -60,7 +60,7 @@ public:
 		int ier;
 		bool found = false;
 		cgsize_t count = dataCount();
-		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, iRIC::toStr(name()).c_str(), 0, "end");
+		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, name().c_str(), 0, "end");
 		QString aName = arrayNameForIndex(index);
 		if (ier == 0) {
 			// the corresponding node found.
@@ -115,12 +115,12 @@ public:
 		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, "end");
 		if (ier != 0) {return false;}
 		// Delete the array if it already exists.
-		cg_delete_node(const_cast<char*>(iRIC::toStr(name()).c_str()));
+		cg_delete_node(const_cast<char*>(name().c_str()));
 		// Create the user defined data node.
-		ier = cg_user_data_write(const_cast<char*>(iRIC::toStr(name()).c_str()));
+		ier = cg_user_data_write(const_cast<char*>(name().c_str()));
 		if (ier != 0) {return false;}
 		// Go to the user defined data node.
-		ier = cg_gorel(fn, const_cast<char*>(iRIC::toStr(name()).c_str()), 0, "end");
+		ier = cg_gorel(fn, const_cast<char*>(name().c_str()), 0, "end");
 		if (ier != 0) {return false;}
 
 		GridAttributeDimensionsContainer* dims = dimensions();

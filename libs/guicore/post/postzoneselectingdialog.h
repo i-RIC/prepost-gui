@@ -6,6 +6,8 @@
 #include <QList>
 #include <QMap>
 
+#include <string>
+
 namespace Ui
 {
 	class PostZoneSelectingDialog;
@@ -24,8 +26,8 @@ public:
 	explicit PostZoneSelectingDialog(QWidget* parent = nullptr);
 	~PostZoneSelectingDialog();
 	void setContainers(const QList<PostZoneDataContainer*>& containers);
-	QString gridTypeName() const;
-	QString zoneName() const;
+	std::string gridTypeName() const;
+	std::string zoneName() const;
 
 private slots:
 	void setupZoneList(int index);

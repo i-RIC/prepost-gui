@@ -12,11 +12,10 @@ class GUICOREDLL_EXPORT Unstructured2DGrid : public Grid2D
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Unstructured2DGrid(ProjectDataItem* parent);
-	/// Constructor
-	Unstructured2DGrid(const QString& zonename, ProjectDataItem* parent);
+	Unstructured2DGrid(const std::string& zonename, ProjectDataItem* parent);
 	virtual ~Unstructured2DGrid() {}
+
 	/// Return VTK container object to store the grid.
 	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
 	unsigned int vertexCount() const override;

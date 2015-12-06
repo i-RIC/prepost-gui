@@ -159,8 +159,8 @@ Post3dWindowZoneDataItem* Post3dWindowDataModel::getZoneDataItem()
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
 		if (ret != QDialog::Accepted) {return nullptr;}
-		QString gridType = dialog.gridTypeName();
-		QString zone = dialog.zoneName();
+		std::string gridType = dialog.gridTypeName();
+		std::string zone = dialog.zoneName();
 		Post3dWindowRootDataItem* root = dynamic_cast<Post3dWindowRootDataItem*>(m_rootDataItem);
 		Post3dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		zitem = gt->zoneData(zone);

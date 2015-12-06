@@ -158,11 +158,11 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 void SettingPage::init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist)
 {
 	QList<SolverDefinitionAbstract*> slist = list->solverList();
-for (SolverDefinitionAbstract* abst : slist) {
-		m_solverCombobox->addItem(abst->caption(), abst->name());
+	for (SolverDefinitionAbstract* abst : slist) {
+		m_solverCombobox->addItem(abst->caption(), abst->name().c_str());
 	}
 
-for (GridCreatingConditionCreator* c : gclist) {
+	for (GridCreatingConditionCreator* c : gclist) {
 		m_gridGenComboBox->addItem(c->caption(), c->name());
 	}
 }

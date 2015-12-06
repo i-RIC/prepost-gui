@@ -31,8 +31,8 @@ public:
 		return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
 	}
 	const QList<PreProcessorGeoDataGroupDataItemInterface*> groupDataItems() const override;
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const QString& name) override;
-	void informValueRangeChange(const QString& name);
+	PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) override;
+	void informValueRangeChange(const std::string& name);
 	void informDataChange();
 	void setupActors();
 	void updateActorSettings();
@@ -54,14 +54,14 @@ public slots:
 	void setupScalarBar();
 
 signals:
-	void valueRangeChanged(const QString& name);
+	void valueRangeChanged(const std::string& name);
 	void dataChanged();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	std::map<QString, PreProcessorGeoDataGroupDataItemInterface*> m_itemNameMap;
+	std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*> m_itemNameMap;
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	vtkSmartPointer<vtkLegendBoxWidget> m_legendBoxWidget;

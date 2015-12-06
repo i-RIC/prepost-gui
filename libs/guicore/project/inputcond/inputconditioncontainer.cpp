@@ -6,9 +6,9 @@ InputConditionContainer::InputConditionContainer() :
 	InputConditionContainer("", "")
 {}
 
-InputConditionContainer::InputConditionContainer(const QString& name, const QString& caption) :
+InputConditionContainer::InputConditionContainer(const std::string& name, const QString& caption) :
 	QObject(nullptr),
-	m_name (iRIC::toStr(name)),
+	m_name (name),
 	m_caption {caption},
 	m_isBoundaryCondition {false},
 	m_isComplexCondition {false}
@@ -25,24 +25,24 @@ InputConditionContainer::InputConditionContainer(const InputConditionContainer& 
 InputConditionContainer::~InputConditionContainer()
 {}
 
-void InputConditionContainer::setName(const QString& name)
+void InputConditionContainer::setName(const std::string& name)
 {
-	m_name = iRIC::toStr(name);
+	m_name = name;
 }
 
-void InputConditionContainer::setBCProperty(const QString& bcname, int bcindex)
+void InputConditionContainer::setBCProperty(const std::string& bcname, int bcindex)
 {
 	m_isBoundaryCondition = true;
-	m_bcName = iRIC::toStr(bcname);
+	m_bcName = bcname;
 	m_bcIndex = bcindex;
 
 	m_isComplexCondition = false;
 }
 
-void InputConditionContainer::setComplexProperty(const QString& compname, int compindex)
+void InputConditionContainer::setComplexProperty(const std::string& compname, int compindex)
 {
 	m_isComplexCondition = true;
-	m_complexName = iRIC::toStr(compname);
+	m_complexName = compname;
 	m_complexIndex = compindex;
 
 	m_isBoundaryCondition = false;

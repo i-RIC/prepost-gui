@@ -30,15 +30,15 @@ public:
 	/// Constructor
 	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowContourGroupDataItem();
-	QString currentSolution() const {return m_currentSolution;}
+	const std::string& currentSolution() const {return m_currentSolution;}
 	ContourSettingWidget::Contour contour() const {return m_contour;}
 	int numberOfDivision() const {return m_numberOfDivision;}
 	LookupTableContainer* lookupTable();
-	void setSetting(const QString& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleC, const vtkTextPropertySettingContainer& labelC, bool draw);
+	void setSetting(const std::string& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleC, const vtkTextPropertySettingContainer& labelC, bool draw);
 	void updateChildActors();
 	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);
 	void showSettingDialog();
-	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap();
+	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap() const;
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
@@ -59,7 +59,7 @@ protected:
 	void innerUpdateZScale(double scale) override;
 
 private:
-	QString m_currentSolution;
+	std::string m_currentSolution;
 	int m_numberOfDivision;
 	ContourSettingWidget::Contour m_contour;
 	bool m_fillUpper;
@@ -70,7 +70,7 @@ private:
 	vtkTextPropertySettingContainer m_titleTextSetting;
 	vtkTextPropertySettingContainer m_labelTextSetting;
 
-	QMap<QString, QString> m_colorBarTitleMap;
+	QMap<std::string, QString> m_colorBarTitleMap;
 
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
 	void loadContourFromProjectMainFile(const QDomNode& node);

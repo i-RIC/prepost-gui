@@ -22,13 +22,13 @@ class GUICOREDLL_EXPORT InputConditionContainer : public QObject
 
 public:
 	InputConditionContainer();
-	InputConditionContainer(const QString& name, const QString& caption);
+	InputConditionContainer(const std::string& name, const QString& caption);
 	InputConditionContainer(const InputConditionContainer& c);
 	virtual ~InputConditionContainer();
 
-	void setName(const QString& name);
-	void setBCProperty(const QString& bcname, int bcindex);
-	void setComplexProperty(const QString& compname, int compindex);
+	void setName(const std::string& name);
+	void setBCProperty(const std::string& bcname, int bcindex);
+	void setComplexProperty(const std::string& compname, int compindex);
 
 	void copyValues(const InputConditionContainer& c);
 

@@ -11,6 +11,8 @@
 #include <vtkSmartPointer.h>
 #include <vtkContourFilter.h>
 
+#include <string>
+
 class QAction;
 class PreProcessorGridAttributeNodeDataItem;
 
@@ -23,8 +25,8 @@ public:
 	PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridAttributeNodeGroupDataItem();
 	void updateActorSettings();
-	const QString& currentCondition() {return m_currentCondition;}
-	void informDataChange(const QString& name);
+	const std::string& currentCondition() {return m_currentCondition;}
+	void informDataChange(const std::string& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
 	void informSelection(VTKGraphicsView* v) override;
@@ -33,9 +35,9 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
-	void setCurrentCondition(const QString& currentCond);
+	void setCurrentCondition(const std::string& currentCond);
 	const QList<PreProcessorGridAttributeNodeDataItem*> conditions() const;
-	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const QString& name) {return m_nameMap.value(name, 0);}
+	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange() override;
 	void setOpacity(int o) {m_opacity = o;}
 	int opacity() {return m_opacity;}
@@ -61,7 +63,7 @@ protected:
 private:
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 
-	QString m_currentCondition;
+	std::string m_currentCondition;
 	vtkSmartPointer<vtkPolyData> m_contourPolyData;
 	vtkSmartPointer<vtkActor> m_contourActor;
 	vtkSmartPointer<vtkDataSetMapper> m_contourMapper;
@@ -74,7 +76,7 @@ private:
 	QAction* m_showAttributeBrowserAction;
 	OpacityContainer m_opacity;
 	bool m_attributeBrowserFixed;
-	QMap<QString, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
+	QMap<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
 
 public:
 	friend class PreProcessorSelectCondition;

@@ -87,11 +87,11 @@ const QString PostZoneDataContainer::labelName {"_LABEL"};
 const QString PostZoneDataContainer::IBC {"IBC"};
 const double PostZoneDataContainer::IBCLimit {0.99};
 
-PostZoneDataContainer::PostZoneDataContainer(const QString& baseName, const QString& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
+PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent) :
 	PostDataContainer {parent},
 	m_gridType {gridtype},
-	m_baseName {baseName},
-	m_zoneName {zoneName},
+	m_baseName (baseName),
+	m_zoneName (zoneName),
 	m_baseId {0},
 	m_zoneId {0},
 	m_cellDim {0},
@@ -869,7 +869,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 
 		// this is a cell flag to load.
 		int ier;
-		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridConditions", 0, iRIC::toStr(cond->name()).c_str(), 0, "end");
+		ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "GridConditions", 0, cond->name().c_str(), 0, "end");
 		if (ier != 0) {
 			// Corresponding node does not exists.
 			return false;
@@ -893,7 +893,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 				for (int val : data) {
 					iarray->InsertNextValue(val);
 				}
-				iarray->SetName(iRIC::toStr(cond->name()).c_str());
+				iarray->SetName(cond->name().c_str());
 
 				m_data->GetCellData()->AddArray(iarray);
 			}

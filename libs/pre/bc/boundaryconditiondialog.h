@@ -30,7 +30,7 @@ public:
 	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
 	/// Destructor
 	~BoundaryConditionDialog();
-	void setNameAndNumber(QString name, int number);
+	void setNameAndNumber(const std::string& name, int number);
 	/// Load data fron CGNS file.
 	void load(const int fn);
 	/// Save data into CGNS file.

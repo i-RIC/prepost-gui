@@ -42,7 +42,7 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 			// scalar attribute.
 			continue;
 		}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post3dWindowNodeVectorStreamlineDataItem* item = new Post3dWindowNodeVectorStreamlineDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -65,10 +65,10 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::~Post3dWindowNodeVectorStreamline
 class Post3dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	SelectSolutionCommand(const QString& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item) :
+	SelectSolutionCommand(const std::string& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item) :
 		QUndoCommand {Post3dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
-		m_newSolution {newsol},
-		m_oldSolution {item->m_currentSolution},
+		m_newSolution (newsol),
+		m_oldSolution (item->m_currentSolution),
 		m_item {item}
 	{}
 	void redo() override {
@@ -79,12 +79,13 @@ public:
 	}
 
 private:
-	void applySetting (const QString &sol) {
+	void applySetting(const std::string& sol)
+	{
 		m_item->setCurrentSolution(sol);
 		m_item->updateActorSettings();
 	}
-	QString m_newSolution;
-	QString m_oldSolution;
+	std::string m_newSolution;
+	std::string m_oldSolution;
 
 	Post3dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };
@@ -167,7 +168,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post3dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post3dWindowNodeVectorStreamlineDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -231,12 +232,12 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamT
 void Post3dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
+	setCurrentSolution(iRIC::toStr(elem.attribute("solution")));
 	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
+	writer.writeAttribute("solution", m_currentSolution.c_str());
 	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
 }

@@ -19,10 +19,10 @@ public:
 	Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dBirdEyeWindowGridTypeDataItem();
 	const QList<Post2dBirdEyeWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
-	const QString& name() const;
-	Post2dBirdEyeWindowZoneDataItem* zoneData(const QString& name) const {return m_zoneDataNameMap.value(name);}
+	const std::string& name() const;
+	Post2dBirdEyeWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
-	LookupTableContainer* lookupTable(const QString& attName) const override {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const std::string& attName) const override {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
 
@@ -32,10 +32,11 @@ protected:
 
 private:
 	void updateLookupTableRanges();
-	void setupScalarsToColors(const QString& name);
+	void setupScalarsToColors(const std::string& name);
+
 	SolverDefinitionGridType* m_gridType;
-	QMap<QString, LookupTableContainer*> m_lookupTables;
-	QMap<QString, Post2dBirdEyeWindowZoneDataItem*> m_zoneDataNameMap;
+	QMap<std::string, LookupTableContainer*> m_lookupTables;
+	QMap<std::string, Post2dBirdEyeWindowZoneDataItem*> m_zoneDataNameMap;
 	QList<Post2dBirdEyeWindowZoneDataItem*> m_zoneDatas;
 	bool m_isZoneDataItemsSetup;
 };

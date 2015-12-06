@@ -3,6 +3,7 @@
 #include "inputconditionwidget.h"
 #include "inputconditionwidgetset.h"
 
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNodeList>
@@ -68,7 +69,7 @@ QLayout* InputConditionPage::loadSimple(const QDomNode& node, InputConditionWidg
 	for (int i = 0; i < items.length(); ++i) {
 		elem = items.item(i).toElement();
 		if (elem.nodeName() == "Item") {
-			QString itemname = elem.attribute("name");
+			std::string itemname = iRIC::toStr(elem.attribute("name"));
 			layout->addRow(t.translate(elem.attribute("caption")), ws->widget(itemname));
 		} else if (elem.nodeName() == "GroupBox") {
 			QString caption = t.translate(elem.attribute("caption"));
@@ -98,7 +99,7 @@ QObject* InputConditionPage::loadRec(const QDomNode& node, InputConditionWidgetS
 	QString nodeName = node.nodeName();
 	QDomElement elem = node.toElement();
 	if (nodeName == "Item") {
-		QString itemName = elem.attribute("name");
+		std::string itemName = iRIC::toStr(elem.attribute("name"));
 		return ws->widget(itemName);
 	} else if (nodeName == "Label") {
 		QString caption = t.translate(elem.attribute("caption"));

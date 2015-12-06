@@ -99,7 +99,7 @@ public:
 		// Goto "GridConditions" node.
 		int ier;
 		bool found = false;
-		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, iRIC::toStr(condition()->name()).c_str(), 0, "end");
+		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, condition()->name().c_str(), 0, "end");
 		if (ier == 0) {
 			// the corresponding node found.
 			// Find "Dimension_(name)" array.
@@ -137,7 +137,7 @@ public:
 
 		int ier;
 		// Goto "GridConditions" node.
-		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, iRIC::toStr(m_condition->name()).c_str(), 0, "end");
+		ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, m_condition->name().c_str(), 0, "end");
 		if (ier != 0) {return false;}
 		// Delete the array if it already exists.
 		cg_delete_node(const_cast<char*>(iRIC::toStr(arrayName).c_str()));

@@ -110,14 +110,14 @@ bool InputConditionDialog::import(const QString& filename)
 	if (! bret) {return false;}
 
 	// Check the compatibility.
-	QString solverName;
+	std::string solverName;
 	VersionNumber versionNumber;
-	bret = ProjectCgnsFile::readSolverInfo(tmpname, solverName, versionNumber);
+	bret = ProjectCgnsFile::readSolverInfo(tmpname, &solverName, &versionNumber);
 
 	if (bret == true) {
 		if (m_solverDefinition->name() != solverName || (! m_solverDefinition->version().compatibleWith(versionNumber))) {
 			QMessageBox::critical(parentWidget(), tr("Error"),
-														tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName).arg(versionNumber.toString()));
+					tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver.").arg(solverName.c_str()).arg(versionNumber.toString()));
 			return false;
 		}
 	} else {

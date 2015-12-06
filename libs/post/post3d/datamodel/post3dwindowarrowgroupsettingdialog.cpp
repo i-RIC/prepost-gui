@@ -4,6 +4,7 @@
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/arrowsettingcontainer.h>
+#include <misc/stringtool.h>
 
 #include <vtkPointData.h>
 
@@ -63,15 +64,15 @@ Post3dWindowArrowGroupDataItem::Mapping Post3dWindowArrowGroupSettingDialog::map
 	return Post3dWindowArrowGroupDataItem::Specific;
 }
 
-void Post3dWindowArrowGroupSettingDialog::setScalarValueName(const QString& name)
+void Post3dWindowArrowGroupSettingDialog::setScalarValueName(const std::string& name)
 {
-	int index = ui->scalarComboBox->findText(name);
+	int index = ui->scalarComboBox->findText(name.c_str());
 	ui->scalarComboBox->setCurrentIndex(index);
 }
 
-QString Post3dWindowArrowGroupSettingDialog::scalarValueName()
+std::string Post3dWindowArrowGroupSettingDialog::scalarValueName()
 {
-	return ui->scalarComboBox->currentText();
+	return iRIC::toStr(ui->scalarComboBox->currentText());
 }
 
 void Post3dWindowArrowGroupSettingDialog::setSampleRate(int rate)
@@ -89,16 +90,16 @@ int Post3dWindowArrowGroupSettingDialog::sampleRate()
 	return ui->sampleRateSpinBox->value();
 }
 
-void Post3dWindowArrowGroupSettingDialog::setCurrentSolution(QString sol)
+void Post3dWindowArrowGroupSettingDialog::setCurrentSolution(const std::string& sol)
 {
 	int index = m_solutions.indexOf(sol);
 	if (index == -1) {index = 0;}
 	ui->physicalValueComboBox->setCurrentIndex(index);
 }
 
-QString Post3dWindowArrowGroupSettingDialog::currentSolution()
+const std::string Post3dWindowArrowGroupSettingDialog::currentSolution() const
 {
-	return ui->physicalValueComboBox->currentText();
+	return iRIC::toStr(ui->physicalValueComboBox->currentText());
 }
 
 void Post3dWindowArrowGroupSettingDialog::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map)
@@ -133,12 +134,12 @@ void Post3dWindowArrowGroupSettingDialog::setZoneData(PostZoneDataContainer* zon
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == 0) {continue;}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() == 1) {
-			ui->scalarComboBox->addItem(name);
+			ui->scalarComboBox->addItem(name.c_str());
 			m_scalars.append(name);
 		} else {
-			ui->physicalValueComboBox->addItem(name);
+			ui->physicalValueComboBox->addItem(name.c_str());
 			m_solutions.append(name);
 		}
 	}

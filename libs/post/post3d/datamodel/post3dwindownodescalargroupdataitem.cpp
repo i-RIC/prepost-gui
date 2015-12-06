@@ -65,7 +65,7 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 			// vector attribute.
 			continue;
 		}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		Post3dWindowNodeScalarDataItem* item = new Post3dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -108,7 +108,7 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
+	setCurrentSolution(iRIC::toStr(elem.attribute("solution")));
 	m_fullRange = iRIC::getBooleanAttribute(node, "fullRange", true);
 	m_range.iMin = iRIC::getIntAttribute(node, "iMin");
 	m_range.iMax = iRIC::getIntAttribute(node, "iMax");
@@ -123,7 +123,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void Post3dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
+	writer.writeAttribute("solution", m_currentSolution.c_str());
 	iRIC::setBooleanAttribute(writer, "fullRange", m_fullRange);
 	iRIC::setIntAttribute(writer, "iMin", m_range.iMin);
 	iRIC::setIntAttribute(writer, "iMax", m_range.iMax);
@@ -183,7 +183,7 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 
 	// Create the isosurface
 	vtkSmartPointer<vtkContourFilter> contourFilter = vtkSmartPointer<vtkContourFilter>::New();
-	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_currentSolution).c_str());
+	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, m_currentSolution.c_str());
 	contourFilter->SetInputConnection(voi->GetOutputPort());
 	contourFilter->GenerateValues(1, m_isoValue, m_isoValue);
 
@@ -242,7 +242,7 @@ class Post3dWindowIsosurfaceSetProperty : public QUndoCommand
 {
 public:
 	Post3dWindowIsosurfaceSetProperty(
-		bool enabled, const QString& sol,
+		bool enabled, const std::string& sol,
 		bool fullrange, StructuredGridRegion::Range3d range,
 		double isovalue, const QColor& color, Post3dWindowNodeScalarGroupDataItem* item)
 		: QUndoCommand(QObject::tr("Update Contour Setting")) {
@@ -290,14 +290,14 @@ public:
 	}
 private:
 	bool m_oldEnabled;
-	QString m_oldCurrentSolution;
+	std::string m_oldCurrentSolution;
 	bool m_oldFullRange;
 	StructuredGridRegion::Range3d m_oldRange;
 	double m_oldIsoValue;
 	QColor m_oldColor;
 
 	bool m_newEnabled;
-	QString m_newCurrentSolution;
+	std::string m_newCurrentSolution;
 	bool m_newFullRange;
 	StructuredGridRegion::Range3d m_newRange;
 	double m_newIsoValue;
@@ -319,7 +319,7 @@ void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* 
 class Post3dWindowIsosurfaceSelectSolution : public QUndoCommand
 {
 public:
-	Post3dWindowIsosurfaceSelectSolution(const QString& newsol, Post3dWindowNodeScalarGroupDataItem* item)
+	Post3dWindowIsosurfaceSelectSolution(const std::string& newsol, Post3dWindowNodeScalarGroupDataItem* item)
 		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
@@ -340,8 +340,8 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	QString m_oldCurrentSolution;
-	QString m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
 
 	Post3dWindowNodeScalarGroupDataItem* m_item;
 };
@@ -357,7 +357,7 @@ void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScala
 	}
 }
 
-void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post3dWindowNodeScalarDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {

@@ -9,6 +9,8 @@
 #include <QModelIndex>
 #include <QVector2D>
 
+#include <string>
+
 class QDomDocument;
 
 class ProjectData;
@@ -55,9 +57,9 @@ public:
 	/// Set information about the solver used for the calculation in this project
 	void setSolverInformation(const SolverDefinitionAbstract&);
 	/// Solver name
-	const QString& solverName() const {return m_solverName;}
+	const std::string& solverName() const {return m_solverName;}
 	/// Set solver name
-	void setSolverName(const QString& name) {m_solverName = name;}
+	void setSolverName(const std::string& name) {m_solverName = name;}
 	/// Solver version number
 	const VersionNumber& solverVersion() const {return m_solverVersion;}
 	/// Set solver version number
@@ -156,7 +158,7 @@ private:
 	bool clearResultsIfGridIsEdited();
 
 	/// Solver name
-	QString m_solverName;
+	std::string m_solverName;
 	/// Solver version
 	VersionNumber m_solverVersion;
 	/// iRIC version

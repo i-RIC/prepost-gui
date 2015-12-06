@@ -16,7 +16,7 @@ InputConditionContainerReal::InputConditionContainerReal() :
 	m_default {0}
 {}
 
-InputConditionContainerReal::InputConditionContainerReal(const QString& n, const QString& c, const QDomNode& defNode) :
+InputConditionContainerReal::InputConditionContainerReal(const std::string& n, const QString& c, const QDomNode& defNode) :
 	InputConditionContainer(n, c)
 {
 	setup(defNode);

@@ -50,7 +50,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post2dWindowParticleStructuredSettingDialog* ui;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 
 	Post2dWindowNodeVectorParticleGroupDataItem::Setting m_setting;
 	QList<Post2dWindowNodeVectorParticleGroupStructuredDataItem::Setting> m_stSettings;

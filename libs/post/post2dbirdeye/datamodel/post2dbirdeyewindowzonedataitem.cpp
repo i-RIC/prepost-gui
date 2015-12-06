@@ -32,9 +32,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
-	Post2dBirdEyeWindowDataItem {zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_zoneName{zoneName},
+Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent) :
+	Post2dBirdEyeWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -68,7 +68,7 @@ void Post2dBirdEyeWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& 
 
 void Post2dBirdEyeWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_zoneName);
+	writer.writeAttribute("name", m_zoneName.c_str());
 	writer.writeStartElement("Shape");
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();

@@ -25,14 +25,25 @@ void GridBirdEyeWindowColorSettingDialog::setGridType(SolverDefinitionGridType* 
 		SolverDefinitionGridAttribute* c = conds.at(i);
 		if (c->position() == SolverDefinitionGridAttribute::Node) {
 			m_nodeConds.append(c);
-			ui->nodeAttComboBox->addItem(c->caption(), c->name());
+			ui->nodeAttComboBox->addItem(c->caption(), c->name().c_str());
 		} else if (c->position() == SolverDefinitionGridAttribute::CellCenter) {
 			m_cellConds.append(c);
-			ui->cellAttComboBox->addItem(c->caption(), c->name());
+			ui->cellAttComboBox->addItem(c->caption(), c->name().c_str());
 		}
 	}
 	if (m_nodeConds.count() == 0) {ui->nodeAttRadioButton->setDisabled(true);}
 	if (m_cellConds.count() == 0) {ui->cellAttRadioButton->setDisabled(true);}
+}
+
+GridBirdEyeWindowDataModel::ColorType GridBirdEyeWindowColorSettingDialog::colorType() const
+{
+	if (ui->nodeAttRadioButton->isChecked()) {
+		return GridBirdEyeWindowDataModel::ctNode;
+	} else if (ui->cellAttRadioButton->isChecked()) {
+		return GridBirdEyeWindowDataModel::ctCell;
+	} else {
+		return GridBirdEyeWindowDataModel::ctCustom;
+	}
 }
 
 void GridBirdEyeWindowColorSettingDialog::setColorType(GridBirdEyeWindowDataModel::ColorType type)
@@ -53,7 +64,17 @@ void GridBirdEyeWindowColorSettingDialog::setColorType(GridBirdEyeWindowDataMode
 	}
 }
 
-void GridBirdEyeWindowColorSettingDialog::setAttributeName(const QString& name)
+std::string GridBirdEyeWindowColorSettingDialog::attributeName() const
+{
+	if (ui->nodeAttRadioButton->isChecked()) {
+		return m_nodeConds.at(ui->nodeAttComboBox->currentIndex())->name();
+	} else if (ui->cellAttRadioButton->isChecked()) {
+		return m_cellConds.at(ui->cellAttComboBox->currentIndex())->name();
+	}
+	return "";
+}
+
+void GridBirdEyeWindowColorSettingDialog::setAttributeName(const std::string& name)
 {
 	if (ui->nodeAttRadioButton->isChecked()) {
 		for (int i = 0; i < m_nodeConds.count(); ++i) {
@@ -70,19 +91,14 @@ void GridBirdEyeWindowColorSettingDialog::setAttributeName(const QString& name)
 	}
 }
 
+QColor GridBirdEyeWindowColorSettingDialog::customColor() const
+{
+	return ui->customColorLabel->color();
+}
+
 void GridBirdEyeWindowColorSettingDialog::setCustomColor(const QColor& c)
 {
 	ui->customColorLabel->setColor(c);
-}
-
-void GridBirdEyeWindowColorSettingDialog::setAxesVisible(bool visible)
-{
-	ui->axesVisibleCheckBox->setChecked(visible);
-}
-
-void GridBirdEyeWindowColorSettingDialog::setAxisColor(const QColor& c)
-{
-	ui->axesColorWidget->setColor(c);
 }
 
 bool GridBirdEyeWindowColorSettingDialog::axesVisible() const
@@ -90,33 +106,17 @@ bool GridBirdEyeWindowColorSettingDialog::axesVisible() const
 	return ui->axesVisibleCheckBox->isChecked();
 }
 
+void GridBirdEyeWindowColorSettingDialog::setAxesVisible(bool visible)
+{
+	ui->axesVisibleCheckBox->setChecked(visible);
+}
+
 QColor GridBirdEyeWindowColorSettingDialog::axesColor() const
 {
 	return ui->axesColorWidget->color();
 }
 
-GridBirdEyeWindowDataModel::ColorType GridBirdEyeWindowColorSettingDialog::colorType() const
+void GridBirdEyeWindowColorSettingDialog::setAxisColor(const QColor& c)
 {
-	if (ui->nodeAttRadioButton->isChecked()) {
-		return GridBirdEyeWindowDataModel::ctNode;
-	} else if (ui->cellAttRadioButton->isChecked()) {
-		return GridBirdEyeWindowDataModel::ctCell;
-	} else {
-		return GridBirdEyeWindowDataModel::ctCustom;
-	}
-}
-
-QString GridBirdEyeWindowColorSettingDialog::attributeName() const
-{
-	if (ui->nodeAttRadioButton->isChecked()) {
-		return m_nodeConds.at(ui->nodeAttComboBox->currentIndex())->name();
-	} else if (ui->cellAttRadioButton->isChecked()) {
-		return m_cellConds.at(ui->cellAttComboBox->currentIndex())->name();
-	}
-	return "";
-}
-
-QColor GridBirdEyeWindowColorSettingDialog::customColor() const
-{
-	return ui->customColorLabel->color();
+	ui->axesColorWidget->setColor(c);
 }

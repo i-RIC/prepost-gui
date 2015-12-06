@@ -17,6 +17,7 @@
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QAction>
@@ -29,19 +30,19 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	m_gridType {type}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	setSubPath(type->name());
+	setSubPath(type->name().c_str());
 
 	// setup ScalarsToColors instances
 	setupScalarsToColors(type);
 
 	// add raw data node and grid data node.
 	m_geoDataTop = new PreProcessorGeoDataTopDataItem(this);
-	connect(m_geoDataTop, SIGNAL(valueRangeChanged(QString)), this, SLOT(changeValueRange(QString)));
+	connect(m_geoDataTop, SIGNAL(valueRangeChanged(std::string)), this, SLOT(changeValueRange(std::string)));
 	m_childItems.append(m_geoDataTop);
 
 	// add default grid, if this gridtype is not optional
 	if (! type->isOptional()) {
-		QString zonename;
+		std::string zonename;
 		if (type->isPrimary()) {
 			// use the special name
 			zonename = "iRICZone";
@@ -66,12 +67,12 @@ PreProcessorGridTypeDataItem::~PreProcessorGridTypeDataItem()
 	}
 }
 
-const QString& PreProcessorGridTypeDataItem::name() const
+const std::string& PreProcessorGridTypeDataItem::name() const
 {
 	return m_gridType->name();
 }
 
-PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const QString& zonename) const
+PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const std::string& zonename) const
 {
 	for (auto cond : m_conditions) {
 		if (cond->zoneName() == zonename) {return cond;}
@@ -120,7 +121,7 @@ void PreProcessorGridTypeDataItem::addNewCondition()
 	iRICUndoStack::instance().clear();
 }
 
-const QString PreProcessorGridTypeDataItem::nextChildCaption()
+QString PreProcessorGridTypeDataItem::nextChildCaption()
 {
 	bool ok = true;
 	// first, try "Region".
@@ -144,15 +145,15 @@ const QString PreProcessorGridTypeDataItem::nextChildCaption()
 	return nom;
 }
 
-const QString PreProcessorGridTypeDataItem::nextChildZonename()
+std::string PreProcessorGridTypeDataItem::nextChildZonename()
 {
-	QString nametemplate(m_gridType->name());
+	QString nametemplate(m_gridType->name().c_str());
 	nametemplate.append("%1");
-	QString nom;
+	std::string nom;
 	bool ok = false;
 	int i = 1;
 	while (! ok) {
-		nom = nametemplate.arg(i);
+		nom = iRIC::toStr(nametemplate.arg(i));
 		ok = true;
 		for (auto cond : m_conditions) {
 			ok = ok && (cond->zoneName() != nom);
@@ -160,7 +161,6 @@ const QString PreProcessorGridTypeDataItem::nextChildZonename()
 		++i;
 	}
 	return nom;
-
 }
 
 void PreProcessorGridTypeDataItem::unregisterChild(GraphicsWindowDataItem* child)
@@ -192,7 +192,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 	if (! cmNode.isNull()){
 		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
 			QDomElement elem = cmNode.childNodes().at(i).toElement();
-			QString name = elem.attribute("name");
+			std::string name = iRIC::toStr(elem.attribute("name"));
 			ScalarsToColorsContainer* cont = m_scalarsToColors.value(name, 0);
 			if (cont != 0) {
 				cont->loadFromProjectMainFile(elem);
@@ -216,7 +216,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 			// find whether a corresponding condition already exists.
 			bool found = false;
 			for (auto cond : m_conditions) {
-				if (cond->zoneName() == c.toElement().attribute("zoneName")) {
+				if (cond->zoneName() == iRIC::toStr(c.toElement().attribute("zoneName"))) {
 					// found!
 					found = true;
 					cond->loadFromProjectMainFile(c);
@@ -247,14 +247,13 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// write name.
-	writer.writeAttribute("name", name());
+	writer.writeAttribute("name", name().c_str());
 
 	// write colormap data.
 	writer.writeStartElement("ColorMaps");
-	QMap<QString, ScalarsToColorsContainer*>::iterator c_it;
-	for (c_it = m_scalarsToColors.begin(); c_it != m_scalarsToColors.end(); ++c_it) {
+	for (auto c_it = m_scalarsToColors.begin(); c_it != m_scalarsToColors.end(); ++c_it) {
 		writer.writeStartElement("ColorMap");
-		writer.writeAttribute("name", c_it.key());
+		writer.writeAttribute("name", c_it.key().c_str());
 		c_it.value()->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
@@ -287,7 +286,7 @@ void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType
 	}
 }
 
-void PreProcessorGridTypeDataItem::changeValueRange(const QString& name)
+void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 {
 	// The value range of the specified grid related condition is changed.
 	// Check the new min and max values.

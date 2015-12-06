@@ -57,13 +57,13 @@ SolverDefinitionGridType* PostZoneSelectingDialog::currentGridType() const
 	return m_gridTypes.at(index);
 }
 
-QString PostZoneSelectingDialog::gridTypeName() const
+std::string PostZoneSelectingDialog::gridTypeName() const
 {
 	return currentGridType()->name();
 }
 
-QString PostZoneSelectingDialog::zoneName() const
+std::string PostZoneSelectingDialog::zoneName() const
 {
-	const QList<PostZoneDataContainer*>& list = m_zoneLists.value(currentGridType());
+	auto& list = m_zoneLists.value(currentGridType());
 	return list.at(ui->zoneList->currentRow())->zoneName();
 }

@@ -44,7 +44,7 @@ Structured2DGrid::Structured2DGrid(ProjectDataItem* parent) :
 	init();
 }
 
-Structured2DGrid::Structured2DGrid(const QString& zonename, ProjectDataItem* parent) :
+Structured2DGrid::Structured2DGrid(const std::string& zonename, ProjectDataItem* parent) :
 	Grid2D {zonename, SolverDefinitionGridType::gtStructured2DGrid, parent}
 {
 	init();

@@ -13,7 +13,7 @@ InputConditionContainerString::InputConditionContainerString() :
 	InputConditionContainer()
 {}
 
-InputConditionContainerString::InputConditionContainerString(const QString& n, const QString& c, const QDomNode& defNode) :
+InputConditionContainerString::InputConditionContainerString(const std::string& n, const QString& c, const QDomNode& defNode) :
 	InputConditionContainer(n, c)
 {
 	setup(defNode);

@@ -19,11 +19,11 @@ class PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGrid
 
 public:
 	/// Constructor
-	PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* parent);
+	PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zonename, const QString& caption, PreProcessorDataItem* parent);
 	/// The caption of the dataitem.
 	const QString& caption() const override;
 	/// The name of the zone that stores the grid information.
-	const QString& zoneName() const override;
+	const std::string& zoneName() const override;
 	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override;
 	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
@@ -52,7 +52,8 @@ private:
 
 	QAction* m_deleteAction;
 	QString m_caption;
-	QString m_zoneName;
+	std::string m_zoneName;
+
 	PreProcessorGridCreatingConditionDataItemInterface* m_creatingConditionDataItem;
 	PreProcessorBCSettingGroupDataItem* m_bcSettingGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;

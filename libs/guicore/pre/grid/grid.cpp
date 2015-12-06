@@ -24,8 +24,8 @@ const int Grid::MAX_DRAWCELLCOUNT = 40000;
 const int Grid::MAX_DRAWINDEXCOUNT = 300;
 const char Grid::LABEL_NAME[] = "_LABEL";
 
-Grid::Grid(const QString& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent)
-	: ProjectDataItem(parent)
+Grid::Grid(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent) :
+	ProjectDataItem(parent)
 {
 	initPointers();
 	m_gridType = type;
@@ -61,7 +61,7 @@ void Grid::addGridRelatedCondition(GridAttributeContainer* cond)
 	m_gridRelatedConditionNameMap.insert(cond->name(), cond);
 }
 
-int Grid::zoneId(const QString& zonename, int fn, int B, cgsize_t sizes[9])
+int Grid::zoneId(const std::string& zonename, int fn, int B, cgsize_t sizes[9])
 {
 	char zn[ProjectCgnsFile::BUFFERLEN];
 	// get the number of zones;
@@ -109,7 +109,7 @@ void Grid::saveToCgnsFile(const int fn)
 	int B;
 	// goto Base.
 	cg_iRIC_GotoBase(fn, &B);
-	saveToCgnsFile(fn, B, const_cast<char*>(iRIC::toStr(m_zoneName).c_str()));
+	saveToCgnsFile(fn, B, const_cast<char*>(m_zoneName.c_str()));
 	cgsize_t size[9];
 	int Z = zoneId(m_zoneName, fn, B, size);
 	cg_ziter_write(fn, B, Z, "ZoneIterativeData");

@@ -50,9 +50,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(QString zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {zoneName, QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_zoneName {zoneName},
+Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
+	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
 	m_attributeBrowserFixed {false}
 {
@@ -171,7 +171,7 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_zoneName);
+	writer.writeAttribute("name", m_zoneName.c_str());
 	writer.writeStartElement("Shape");
 	m_shapeDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
@@ -576,7 +576,7 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 
-		vtkIntArray* cellVals = vtkIntArray::SafeDownCast(cont->data()->GetCellData()->GetArray(iRIC::toStr(icond->name()).c_str()));
+		vtkIntArray* cellVals = vtkIntArray::SafeDownCast(cont->data()->GetCellData()->GetArray(icond->name().c_str()));
 		int val = cellVals->GetValue(cellid);
 		if (el != nullptr) {
 			PropertyBrowserAttribute att(cond->caption(), el->enumerations().value(val));

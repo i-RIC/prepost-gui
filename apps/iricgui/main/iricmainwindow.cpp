@@ -349,7 +349,7 @@ void iRICMainWindow::openProject(const QString& filename)
 		QMessageBox::warning(
 			this, tr("Warning"),
 			tr("This project is for solver %1 %2, but it does not exists in this system. Entering post only mode.")
-			.arg(m_projectData->mainfile()->solverName())
+			.arg(m_projectData->mainfile()->solverName().c_str())
 			.arg(m_projectData->mainfile()->solverVersion().toString()));
 		m_projectData->setPostOnlyMode();
 		solFolder = ":/data/unknownsolver";
@@ -453,9 +453,9 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	m_projectData = new ProjectData(wFolder, this);
 
 	// load solver information from CGNS file.
-	QString solverName;
+	std::string solverName;
 	VersionNumber versionNumber;
-	bool bret = ProjectCgnsFile::readSolverInfo(fname, solverName, versionNumber);
+	bool bret = ProjectCgnsFile::readSolverInfo(fname, &solverName, &versionNumber);
 
 	QString solFolder;
 	if (bret == false) {
@@ -473,7 +473,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 			QMessageBox::warning(
 				this, tr("Warning"),
 				tr("This CGNS file needs solver %1 %2, but it does not exists in this system. Entering post only mode.")
-				.arg(m_projectData->mainfile()->solverName())
+				.arg(m_projectData->mainfile()->solverName().c_str())
 				.arg(m_projectData->mainfile()->solverVersion().toString()));
 			m_projectData->setPostOnlyMode();
 			solFolder = ":/data/unknownsolver";

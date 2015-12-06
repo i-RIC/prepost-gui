@@ -267,7 +267,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	}
 }
 
-void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const QString& attName, bool nomessage)
+void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std::string& attName, bool nomessage)
 {
 	// Get the grid.
 	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());

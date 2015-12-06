@@ -39,8 +39,8 @@ protected:
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
-	void setCurrentSolution(const QString& currentSol);
-	const QString& currentSolution() {return m_currentSolution;}
+	void setCurrentSolution(const std::string& currentSol);
+	const std::string& currentSolution() const {return m_currentSolution;}
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 
@@ -49,7 +49,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void setupStreamTracer(vtkStreamTracer* tracer);
 
-	QString m_currentSolution;
+	std::string m_currentSolution;
 	StructuredGridRegion::RegionMode m_regionMode;
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 

@@ -51,14 +51,14 @@ void InputConditionContainerSet::setup(const QDomNode& condNode, const SolverDef
 	}
 }
 
-void InputConditionContainerSet::setBCProperty(const QString& bcname, int bcindex)
+void InputConditionContainerSet::setBCProperty(const std::string& bcname, int bcindex)
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
 		it.value()->setBCProperty(bcname, bcindex);
 	}
 }
 
-void InputConditionContainerSet::setComplexProperty(const QString& compname, int compindex)
+void InputConditionContainerSet::setComplexProperty(const std::string& compname, int compindex)
 {
 	for (auto it = m_containers.begin(); it != m_containers.end(); ++it) {
 		it.value()->setComplexProperty(compname, compindex);
@@ -99,12 +99,12 @@ void InputConditionContainerSet::setupCustomRec(const QDomNode& node, const Solv
 }
 void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
-	QString parameterName;
+	std::string parameterName;
 	QString parameterCaption;
 	try {
 		/// get the name;
 		QDomElement itemElem = itemNode.toElement();
-		parameterName = itemElem.attribute("name");
+		parameterName = iRIC::toStr(itemElem.attribute("name"));
 		parameterCaption = t.translate(itemElem.attribute("caption"));
 		// get the definition node;
 		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
@@ -145,7 +145,7 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 		}
 	} catch (ErrorMessage& e) {
 		QString msg(tr("Error occured while loading solver definition file.\n%1: %2"));
-		QMessageBox::critical(parentWidget(), tr("Error"), msg.arg(parameterName).arg(e));
+		QMessageBox::critical(parentWidget(), tr("Error"), msg.arg(parameterName.c_str()).arg(e));
 		throw;
 	}
 }
@@ -247,4 +247,74 @@ bool InputConditionContainerSet::exportToYaml(const QString& filename)
 	}
 	yamlFile.close();
 	return true;
+}
+
+QMap<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers()
+{
+	return m_integers;
+}
+
+const QMap<std::string, InputConditionContainerInteger>& InputConditionContainerSet::integers() const
+{
+	return m_integers;
+}
+
+InputConditionContainerInteger& InputConditionContainerSet::integer(const std::string& name)
+{
+	return m_integers[name];
+}
+
+QMap<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals()
+{
+	return m_reals;
+}
+
+const QMap<std::string, InputConditionContainerReal>& InputConditionContainerSet::reals() const
+{
+	return m_reals;
+}
+
+InputConditionContainerReal& InputConditionContainerSet::real(const std::string& name)
+{
+	return m_reals[name];
+}
+
+QMap<std::string, InputConditionContainerString>& InputConditionContainerSet::strings()
+{
+	return m_strings;
+}
+
+const QMap<std::string, InputConditionContainerString>& InputConditionContainerSet::strings() const
+{
+	return m_strings;
+}
+
+InputConditionContainerString& InputConditionContainerSet::string(const std::string& name)
+{
+	return m_strings[name];
+}
+
+QMap<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals()
+{
+	return m_functionals;
+}
+
+const QMap<std::string, InputConditionContainerFunctional>& InputConditionContainerSet::functionals() const
+{
+	return m_functionals;
+}
+
+InputConditionContainerFunctional& InputConditionContainerSet::functional(const std::string& name)
+{
+	return m_functionals[name];
+}
+
+InputConditionContainer* InputConditionContainerSet::container(const std::string& name)
+{
+	return m_containers[name];
+}
+
+QWidget* InputConditionContainerSet::parentWidget() const
+{
+	return m_parentWidget;
 }

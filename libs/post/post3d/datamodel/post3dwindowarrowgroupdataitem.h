@@ -41,8 +41,8 @@ public:
 	enum LengthMode {lenAuto, lenCustom};
 	/// Constructor
 	Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* parent);
-	const QString& currentSolution() {return m_currentSolution;}
-	void setSetting(const QString& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const QString& scalar, int rate, const ArrowSettingContainer& arrowSetting);
+	const std::string& currentSolution() const {return m_currentSolution;}
+	void setSetting(const std::string& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const std::string& scalar, int rate, const ArrowSettingContainer& arrowSetting);
 	void updateActorSettings();
 	void showSettingDialog();
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap();
@@ -51,8 +51,6 @@ public:
 
 protected:
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
 	void innerUpdateZScale(double scale) override;
 	void innerUpdate2Ds() override;
@@ -66,6 +64,9 @@ private:
 	void updateColorSetting();
 	void calculateStandardValue();
 	void updateScaleFactor();
+
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
 
 	vtkSmartPointer<vtkActor> m_arrowActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
@@ -90,8 +91,8 @@ private:
 
 	LengthMode m_lengthMode;
 	Mapping m_mapping;
-	QString m_scalarValueName;
-	QString m_currentSolution;
+	std::string m_scalarValueName;
+	std::string m_currentSolution;
 	QColor m_color;
 	int m_sampleRate;
 	double m_standardValue;

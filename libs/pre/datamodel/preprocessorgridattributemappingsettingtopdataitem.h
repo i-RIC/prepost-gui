@@ -21,7 +21,7 @@ public slots:
 	void informGeoDataChange();
 	void executeMapping();
 	void customMapping(bool nomessage = false);
-	void customMapping(const QString& attName, bool nomessage = false);
+	void customMapping(const std::string& attName, bool nomessage = false);
 	QAction* customMappingAction() {return m_customMappingAction;}
 
 protected:
@@ -30,7 +30,7 @@ protected:
 	bool checkDimensions();
 
 	PreProcessorCustomMappingSetting m_mappingSetting;
-	QMap<QString, PreProcessorGridAttributeMappingSettingDataItem*> m_itemNameMap;
+	QMap<std::string, PreProcessorGridAttributeMappingSettingDataItem*> m_itemNameMap;
 	QAction* m_executeMappingAction;
 	QAction* m_customMappingAction;
 };

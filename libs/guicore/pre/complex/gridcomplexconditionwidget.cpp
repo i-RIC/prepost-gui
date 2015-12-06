@@ -69,7 +69,7 @@ void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement&
 	ui->settingGroupBox->setLayout(layout);
 }
 
-void GridComplexConditionWidget::setNameAndNumber(QString name, int number)
+void GridComplexConditionWidget::setNameAndNumber(const std::string& name, int number)
 {
 	m_containerSet->setComplexProperty(name, number);
 	m_captionContainer.setComplexProperty(name, number);

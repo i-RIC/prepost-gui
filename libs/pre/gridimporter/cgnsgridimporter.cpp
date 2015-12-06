@@ -69,7 +69,7 @@ bool CgnsGridImporter::openCgnsFileForImporting(Grid* grid, const QString& filen
 	// Copy to a temporary file.
 	bool bret = QFile::copy(filename, tmpname);
 	if (! bret) {return false;}
-	QString solverName;
+	std::string solverName;
 	VersionNumber versionNumber;
 	QList<int> zoneids;
 	QStringList zonenames;
@@ -111,12 +111,12 @@ bool CgnsGridImporter::openCgnsFileForImporting(Grid* grid, const QString& filen
 	}
 	cg_iRIC_Set_ZoneId_Mul(fn, zoneid);
 	// Check the compatibility.
-	bret = ProjectCgnsFile::readSolverInfo(fn, solverName, versionNumber);
+	bret = ProjectCgnsFile::readSolverInfo(fn, &solverName, &versionNumber);
 	if (bret == true) {
 		SolverDefinition* solverDef = getProjectData(grid)->solverDefinition();
 		if (solverDef->name() != solverName || (! solverDef->version().compatibleWith(versionNumber))) {
 			int ret = QMessageBox::warning(parent, tr("Error"),
-																		 tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?").arg(solverName).arg(versionNumber.toString()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+					tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.\nDo you really want to import grid from this file?").arg(solverName.c_str()).arg(versionNumber.toString()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::No) {goto OPEN_ERROR_AFTER_OPENING;}
 		}
 	} else {

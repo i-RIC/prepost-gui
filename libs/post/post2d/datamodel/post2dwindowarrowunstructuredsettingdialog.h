@@ -34,8 +34,8 @@ private slots:
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
-	QList<QString> m_solutions;
-	QList<QString> m_scalars;
+	QList<std::string> m_solutions;
+	QList<std::string> m_scalars;
 	bool m_activeAvailable;
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_setting;
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_unsSetting;

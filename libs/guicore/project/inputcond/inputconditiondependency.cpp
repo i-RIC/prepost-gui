@@ -2,6 +2,7 @@
 #include "inputconditiondependency.h"
 
 #include <misc/errormessage.h>
+#include <misc/stringtool.h>
 
 #include <QList>
 
@@ -33,9 +34,10 @@ class InputConditionDependencyConditionAlways : public InputConditionDependency:
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionAlways(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
-		QString targName = node.toElement().attribute("target");
+	InputConditionDependencyConditionAlways(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
+		std::string targName = iRIC::toStr(node.toElement().attribute("target"));
 		InputConditionContainer* target = cs->container(targName);
 		QObject::connect(target, SIGNAL(valueChanged()), dep, SLOT(check()));
 	}
@@ -48,8 +50,9 @@ class InputConditionDependencyConditionNot : public InputConditionDependency::Co
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionNot(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionNot(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		m_child = nullptr;
 		const QDomNodeList& list = node.childNodes();
 		for (int i = 0; i < list.count(); ++i) {
@@ -133,10 +136,11 @@ class InputConditionDependencyConditionIsEqual : public InputConditionDependency
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionIsEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionIsEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		QDomElement elem = node.toElement();
-		QString targName = elem.attribute("target");
+		std::string targName = iRIC::toStr(elem.attribute("target"));
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
 		if (m_target == 0) {
@@ -161,10 +165,11 @@ class InputConditionDependencyConditionIsGreaterEqual : public InputConditionDep
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionIsGreaterEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionIsGreaterEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		QDomElement elem = node.toElement();
-		QString targName = elem.attribute("target");
+		std::string targName = iRIC::toStr(elem.attribute("target"));
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
 		m_value = QVariant(valueStr);
@@ -186,10 +191,11 @@ class InputConditionDependencyConditionIsGreaterThan : public InputConditionDepe
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionIsGreaterThan(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionIsGreaterThan(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		QDomElement elem = node.toElement();
-		QString targName = elem.attribute("target");
+		std::string targName = iRIC::toStr(elem.attribute("target"));
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
 		m_value = QVariant(valueStr);
@@ -211,10 +217,11 @@ class InputConditionDependencyConditionIsLessEqual : public InputConditionDepend
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionIsLessEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionIsLessEqual(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		QDomElement elem = node.toElement();
-		QString targName = elem.attribute("target");
+		std::string targName = iRIC::toStr(elem.attribute("target"));
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
 		m_value = QVariant(valueStr);
@@ -236,10 +243,11 @@ class InputConditionDependencyConditionIsLessThan : public InputConditionDepende
 {
 public:
 	/// Constructor
-	InputConditionDependencyConditionIsLessThan(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep)
-		: InputConditionDependency::Condition(dep) {
+	InputConditionDependencyConditionIsLessThan(const QDomNode& node, InputConditionContainerSet* cs, InputConditionDependency* dep) :
+		InputConditionDependency::Condition(dep)
+	{
 		QDomElement elem = node.toElement();
-		QString targName = elem.attribute("target");
+		std::string targName = iRIC::toStr(elem.attribute("target"));
 		QString valueStr = elem.attribute("value");
 		m_target = cs->container(targName);
 		m_value = QVariant(valueStr);

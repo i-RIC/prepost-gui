@@ -11,8 +11,8 @@ class PreProcessorCustomMappingSetting : XmlAttributeContainer
 public:
 	PreProcessorCustomMappingSetting();
 
-	QMap<QString, bool> attSettings;
-	QMap<QString, bool> bcSettings;
+	QMap<std::string, bool> attSettings;
+	QMap<std::string, bool> bcSettings;
 
 	void load(const QDomNode& node) override;
 	void save(QXmlStreamWriter& writer) const override;

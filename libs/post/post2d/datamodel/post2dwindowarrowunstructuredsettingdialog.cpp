@@ -5,6 +5,7 @@
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
 
 #include <QtGlobal>
 
@@ -42,12 +43,12 @@ void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
 void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss)
 {
 	// solution
-	int index = m_solutions.indexOf(s.currentSolution);
+	int index = m_solutions.indexOf(iRIC::toStr(s.currentSolution));
 	if (index == -1) {index = 0;}
 	ui->solutionComboBox->setCurrentIndex(index);
 
 	// scalarValue
-	index = m_scalars.indexOf(s.scalarValueName);
+	index = m_scalars.indexOf(iRIC::toStr(s.scalarValueName));
 	if (index == -1) { index = 0; }
 	ui->scalarComboBox->setCurrentIndex(index);
 
@@ -107,11 +108,11 @@ Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowUnstructuredS
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index);
+	ret.currentSolution = m_solutions.at(index).c_str();
 
 	// scalarValue
 	index = ui->scalarComboBox->currentIndex();
-	ret.scalarValueName = m_scalars.at(index);
+	ret.scalarValueName = m_scalars.at(index).c_str();
 
 	// color
 	ret.color = ui->colorEditWidget->color();
@@ -173,7 +174,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneD
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		if (pd->GetArray(i)->GetNumberOfComponents() <= 1) {
 			// scalar attributes.
 			ui->scalarComboBox->addItem(gt->solutionCaption(name));

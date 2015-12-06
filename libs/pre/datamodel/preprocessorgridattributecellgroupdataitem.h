@@ -22,8 +22,8 @@ public:
 	PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridAttributeCellGroupDataItem();
 	void updateActorSettings();
-	const QString& currentCondition() {return m_currentCondition;}
-	void informDataChange(const QString& name);
+	const std::string& currentCondition() {return m_currentCondition;}
+	void informDataChange(const std::string& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -32,9 +32,9 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void informGridUpdate();
-	void setCurrentCondition(const QString& currentCond);
+	void setCurrentCondition(const std::string& cond);
 	const QList<PreProcessorGridAttributeCellDataItem*> conditions() const;
-	PreProcessorGridAttributeCellDataItem* cellDataItem(const QString& name) {return m_nameMap.value(name, 0);}
+	PreProcessorGridAttributeCellDataItem* cellDataItem(const std::string& name) {return m_nameMap.value(name, 0);}
 	void handleStandardItemChange() override;
 	void setOpacityPercent(int o) {m_opacity = o;}
 	int opacityPercent() {return m_opacity;}
@@ -52,17 +52,17 @@ public slots:
 
 protected:
 	PreProcessorGridAttributeCellDataItem* activeChildItem();
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
 	void updateAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	QString m_currentCondition;
+	std::string m_currentCondition;
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
-	QMap<QString, PreProcessorGridAttributeCellDataItem*> m_nameMap;
+	QMap<std::string, PreProcessorGridAttributeCellDataItem*> m_nameMap;
 
 	OpacityContainer m_opacity;
 	QAction* m_showAttributeBrowserAction;

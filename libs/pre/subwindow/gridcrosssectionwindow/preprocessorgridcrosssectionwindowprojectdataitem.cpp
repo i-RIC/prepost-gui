@@ -6,8 +6,8 @@
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 
-PreProcessorGridCrosssectionWindowProjectDataItem::PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const QString& cond, QWidget* parentWindow)
-	: ProjectDataItem(0)
+PreProcessorGridCrosssectionWindowProjectDataItem::PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const std::string& cond, QWidget* parentWindow) :
+	ProjectDataItem(0)
 {
 	m_item = item;
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->parent()->parent());

@@ -22,7 +22,7 @@ public:
 	void setZoneData(PostZoneDataContainer* data);
 	void setActiveAvailable(bool available) {m_activeAvailable = available;}
 
-	void setSolution(const QString& sol);
+	void setSolution(const std::string& sol);
 	void setTimeMode(Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm);
 	void setTimeSamplingRate(int sr);
 	void setTimeDivision(int sd);
@@ -31,7 +31,7 @@ public:
 		m_settings = settings;
 		setupSettingList();
 	}
-	QString solution() const;
+	std::string solution() const;
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode timeMode() const;
 	int timeSamplingRate() const;
 	int timeDivision() const;
@@ -63,7 +63,7 @@ private:
 	void updateRemoveButtonStatus();
 
 	Ui::Post3dWindowParticleStructuredSettingDialog* ui;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_timeMode;
 	QList<Post3dWindowStructuredParticleSetSetting> m_settings;

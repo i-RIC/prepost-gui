@@ -48,7 +48,7 @@ void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zon
 	for (int i = 0; i < num; ++i) {
 		vtkAbstractArray* tmparray = pd->GetArray(i);
 		if (tmparray == nullptr) {continue;}
-		QString name = tmparray->GetName();
+		std::string name = tmparray->GetName();
 		if (tmparray->GetNumberOfComponents() > 1) {
 			continue;		// vector attributes.
 		}
@@ -74,7 +74,7 @@ void Post3dWindowIsosurfaceSettingDialog::setEnabled(bool enabled)
 	setEnableCheckBox(enabled);
 }
 
-void Post3dWindowIsosurfaceSettingDialog::setCurrentSolution(QString sol)
+void Post3dWindowIsosurfaceSettingDialog::setCurrentSolution(const std::string& sol)
 {
 	int index = m_solutions.indexOf(sol);
 	if (index == -1) {
@@ -95,7 +95,7 @@ bool Post3dWindowIsosurfaceSettingDialog::enabled()
 	return ui->enabledCheckBox->isChecked();
 }
 
-QString Post3dWindowIsosurfaceSettingDialog::currentSolution()
+std::string Post3dWindowIsosurfaceSettingDialog::currentSolution() const
 {
 	return m_solutions.at(ui->physicalValueComboBox->currentIndex());
 }
@@ -107,7 +107,7 @@ void Post3dWindowIsosurfaceSettingDialog::setEnableCheckBox(bool enable)
 
 void Post3dWindowIsosurfaceSettingDialog::solutionChanged(int index)
 {
-	QString sol = m_solutions.at(index);
+	std::string sol = m_solutions.at(index);
 	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
 
 	//ui->isoValueEdit->setValue();
@@ -126,7 +126,7 @@ void Post3dWindowIsosurfaceSettingDialog::setFullRange(bool full)
 	fullRangeChanged(full);
 }
 
-bool Post3dWindowIsosurfaceSettingDialog::fullRange()
+bool Post3dWindowIsosurfaceSettingDialog::fullRange() const
 {
 	return ui->fullRangeCheckBox->isChecked();
 }
@@ -142,7 +142,7 @@ void Post3dWindowIsosurfaceSettingDialog::setRange(StructuredGridRegion::Range3d
 	ui->kmaxSlider->setValue(range.kMax + 1);
 }
 
-StructuredGridRegion::Range3d Post3dWindowIsosurfaceSettingDialog::range()
+StructuredGridRegion::Range3d Post3dWindowIsosurfaceSettingDialog::range() const
 {
 	StructuredGridRegion::Range3d range;
 	range.iMin = ui->iminSlider->value() - 1;
@@ -159,7 +159,7 @@ void Post3dWindowIsosurfaceSettingDialog::setIsoValue(double val)
 	ui->isoValueEdit->setValue(val);
 }
 
-double Post3dWindowIsosurfaceSettingDialog::isoValue()
+double Post3dWindowIsosurfaceSettingDialog::isoValue() const
 {
 	return ui->isoValueEdit->text().toDouble();
 }

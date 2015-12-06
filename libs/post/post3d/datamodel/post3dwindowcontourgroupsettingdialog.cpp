@@ -5,6 +5,7 @@
 
 #include <guibase/scalarbardialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <misc/stringtool.h>
 
 #include <vtkPointData.h>
 
@@ -48,14 +49,14 @@ void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* z
 		vtkDataArray* a = pd->GetArray(i);
 		if (a == nullptr) {continue;}
 		if (a->GetNumberOfComponents() != 1) {continue;}
-		QString name = a->GetName();
-		ui->physicalValueComboBox->addItem(name);
+		std::string name = a->GetName();
+		ui->physicalValueComboBox->addItem(name.c_str());
 		m_solutions.append(name);
 	}
 	ui->physicalValueComboBox->blockSignals(false);
 }
 
-void Post3dWindowContourGroupSettingDialog::setCurrentSolution(QString sol)
+void Post3dWindowContourGroupSettingDialog::setCurrentSolution(const std::string& sol)
 {
 	int index = m_solutions.indexOf(sol);
 	ui->physicalValueComboBox->setCurrentIndex(index);
@@ -82,9 +83,9 @@ void Post3dWindowContourGroupSettingDialog::setGridTypeDataItem(Post3dWindowGrid
 	m_gridTypeDataItem = item;
 }
 
-QString Post3dWindowContourGroupSettingDialog::currentSolution()
+std::string Post3dWindowContourGroupSettingDialog::currentSolution() const
 {
-	return ui->physicalValueComboBox->currentText();
+	return iRIC::toStr(ui->physicalValueComboBox->currentText());
 }
 
 ContourSettingWidget::Contour Post3dWindowContourGroupSettingDialog::contour()
@@ -104,7 +105,7 @@ LookupTableContainer& Post3dWindowContourGroupSettingDialog::lookupTable()
 
 void Post3dWindowContourGroupSettingDialog::solutionChanged(int index)
 {
-	QString sol = m_solutions.at(index);
+	auto sol = m_solutions.at(index);
 	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);
@@ -235,7 +236,7 @@ bool Post3dWindowContourGroupSettingDialog::fillLower()
 	return ui->colormapWidget->fillLower();
 }
 
-void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<QString, QString>& titleMap)
+void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titleMap)
 {
 	m_colorBarTitleMap = titleMap;
 }

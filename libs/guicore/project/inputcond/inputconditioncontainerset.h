@@ -11,6 +11,8 @@
 #include <QMap>
 #include <QString>
 
+#include <string>
+
 class QDomNode;
 class QWidget;
 class InputConditionDialog;
@@ -25,12 +27,41 @@ public:
 	InputConditionContainerSet(QWidget* widget);
 	void clear();
 	void setup(const QDomNode& condNode, const SolverDefinition& def, const SolverDefinitionTranslator &t, bool forBC = false);
-	void setBCProperty(const QString& bcname, int bcindex);
-	void setComplexProperty(const QString& compname, int compindex);
+	void setBCProperty(const std::string& bcname, int bcindex);
+	void setComplexProperty(const std::string& compname, int compindex);
 	InputConditionContainerSet* clone() const;
 	void copyValues(const InputConditionContainerSet* set);
+
+	int load();
+	int save();
+	void reset();
+	void setDefaultValues();
+
 	bool importFromYaml(const QString& filename);
 	bool exportToYaml(const QString& filename);
+
+	QMap<std::string, InputConditionContainerInteger>& integers();
+	const QMap<std::string, InputConditionContainerInteger>& integers() const;
+	InputConditionContainerInteger& integer(const std::string& name);
+
+	QMap<std::string, InputConditionContainerReal>& reals();
+	const QMap<std::string, InputConditionContainerReal>& reals() const;
+	InputConditionContainerReal& real(const std::string& name);
+
+	QMap<std::string, InputConditionContainerString>& strings();
+	const QMap<std::string, InputConditionContainerString>& strings() const;
+	InputConditionContainerString& string(const std::string& name);
+
+	QMap<std::string, InputConditionContainerFunctional>& functionals();
+	const QMap<std::string, InputConditionContainerFunctional>& functionals() const;
+	InputConditionContainerFunctional& functional(const std::string& name);
+
+	InputConditionContainer* container(const std::string& name);
+
+	QWidget* parentWidget() const;
+
+signals:
+	void modified();
 
 private:
 	void setupSimple(const QDomNode& contNode, const SolverDefinition& def, const SolverDefinitionTranslator& t);
@@ -38,38 +69,13 @@ private:
 	void setupCustomRec(const QDomNode& node, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void setupContaner(const QDomNode& node, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 
-public:
-	void setDefaultValues();
-	int load();
-	int save();
-	void reset();
-	QMap<QString, InputConditionContainerInteger>& integers() {return m_integers;}
-	const QMap<QString, InputConditionContainerInteger>& integers() const {return m_integers;}
-	InputConditionContainerInteger& integer(const QString& name) {return m_integers[name];}
-	QMap<QString, InputConditionContainerReal>& reals() {return m_reals;}
-	const QMap<QString, InputConditionContainerReal>& reals() const {return m_reals;}
-	InputConditionContainerReal& real(const QString& name) {return m_reals[name];}
-	QMap<QString, InputConditionContainerString>& strings() {return m_strings;}
-	const QMap<QString, InputConditionContainerString>& strings() const {return m_strings;}
-	InputConditionContainerString& string(const QString& name) {return m_strings[name];}
-	QMap<QString, InputConditionContainerFunctional>& functionals() {return m_functionals;}
-	const QMap<QString, InputConditionContainerFunctional>& functionals() const {return m_functionals;}
-	InputConditionContainerFunctional& functional(const QString& name) {return m_functionals[name];}
-	InputConditionContainer* container(const QString& name) {return m_containers[name];}
-	QWidget* parentWidget() const {return m_parentWidget;}
-
-signals:
-	void modified();
-
 private:
-	QMap<QString, InputConditionContainerInteger> m_integers;
-	QMap<QString, InputConditionContainerReal> m_reals;
-	QMap<QString, InputConditionContainerString> m_strings;
-	QMap<QString, InputConditionContainerFunctional> m_functionals;
-	/**
-	 * pointer to one of upper four.
-	 */
-	QMap<QString, InputConditionContainer*> m_containers;
+	QMap<std::string, InputConditionContainerInteger> m_integers;
+	QMap<std::string, InputConditionContainerReal> m_reals;
+	QMap<std::string, InputConditionContainerString> m_strings;
+	QMap<std::string, InputConditionContainerFunctional> m_functionals;
+	// pointer to one of upper four.
+	QMap<std::string, InputConditionContainer*> m_containers;
 
 	QWidget* m_parentWidget;
 };

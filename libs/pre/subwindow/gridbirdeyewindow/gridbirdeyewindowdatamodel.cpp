@@ -26,8 +26,8 @@
 
 #define ELEVATION "Elevation"
 
-GridBirdEyeWindowDataModel::GridBirdEyeWindowDataModel(GridBirdEyeWindow* w, ProjectDataItem* parent)
-	: GraphicsWindowSimpleDataModel(w, parent)
+GridBirdEyeWindowDataModel::GridBirdEyeWindowDataModel(GridBirdEyeWindow* w, ProjectDataItem* parent) :
+	GraphicsWindowSimpleDataModel(w, parent)
 {
 	init();
 	updateGrid();
@@ -37,9 +37,7 @@ GridBirdEyeWindowDataModel::GridBirdEyeWindowDataModel(GridBirdEyeWindow* w, Pro
 }
 
 GridBirdEyeWindowDataModel::~GridBirdEyeWindowDataModel()
-{
-
-}
+{}
 
 GridBirdEyeWindowGraphicsView* GridBirdEyeWindowDataModel::graphicsView() const
 {
@@ -157,7 +155,7 @@ void GridBirdEyeWindowDataModel::editZScale()
 class GridBirdEyeWindowEditColorCommand : public QUndoCommand
 {
 public:
-	GridBirdEyeWindowEditColorCommand(GridBirdEyeWindowDataModel::ColorType ct, QString attName, QColor customColor, bool axesVisible, QColor axesColor, GridBirdEyeWindowDataModel* m)
+	GridBirdEyeWindowEditColorCommand(GridBirdEyeWindowDataModel::ColorType ct, const std::string& attName, QColor customColor, bool axesVisible, QColor axesColor, GridBirdEyeWindowDataModel* m)
 		: QUndoCommand(GridBirdEyeWindowDataModel::tr("Edit Color Setting")) {
 		m_model = m;
 
@@ -195,13 +193,13 @@ public:
 	}
 private:
 	GridBirdEyeWindowDataModel::ColorType m_oldColorType;
-	QString m_oldAttName;
+	std::string m_oldAttName;
 	QColor m_oldCustomColor;
 	bool m_oldAxesVisible;
 	QColor m_oldAxesColor;
 
 	GridBirdEyeWindowDataModel::ColorType m_newColorType;
-	QString m_newAttName;
+	std::string m_newAttName;
 	QColor m_newCustomColor;
 	bool m_newAxesVisible;
 	QColor m_newAxesColor;
@@ -256,7 +254,7 @@ void GridBirdEyeWindowDataModel::updateColor()
 		m_mapper->SetScalarModeToUsePointFieldData();
 		m_mapper->SetLookupTable(gtItem->scalarsToColors(m_attributeName)->vtkObj());
 		m_mapper->UseLookupTableScalarRangeOn();
-		m_mapper->SelectColorArray(iRIC::toStr(m_attributeName).c_str());
+		m_mapper->SelectColorArray(m_attributeName.c_str());
 		m_actor->GetProperty()->SetInterpolationToGouraud();
 		break;
 	case ctCell:
@@ -264,7 +262,7 @@ void GridBirdEyeWindowDataModel::updateColor()
 		m_mapper->SetScalarModeToUseCellFieldData();
 		m_mapper->SetLookupTable(gtItem->scalarsToColors(m_attributeName)->vtkObj());
 		m_mapper->UseLookupTableScalarRangeOn();
-		m_mapper->SelectColorArray(iRIC::toStr(m_attributeName).c_str());
+		m_mapper->SelectColorArray(m_attributeName.c_str());
 		m_actor->GetProperty()->SetInterpolationToFlat();
 		break;
 	case ctCustom:

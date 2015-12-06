@@ -151,7 +151,7 @@ public:
 		DataType dataType;
 		PostSolutionInfo::Dimension dimension;
 		int zoneId;
-		QString zoneName;
+		std::string zoneName;
 		QStringList dataNames;
 		SolverDefinitionGridType* gridType;
 		void loadFromProjectMainFile(const QDomNode& node);

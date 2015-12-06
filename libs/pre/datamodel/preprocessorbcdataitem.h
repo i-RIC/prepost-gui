@@ -47,7 +47,7 @@ public:
 	int opacityPercent() const;
 	SolverDefinitionBoundaryCondition* condition() {return m_condition;}
 	bool isValid() const;
-	QString uniqueName() const;
+	std::string uniqueName() const;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;

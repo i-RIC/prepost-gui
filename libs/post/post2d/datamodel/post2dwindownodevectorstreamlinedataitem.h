@@ -12,9 +12,11 @@ class Post2dWindowNodeVectorStreamlineDataItem : public Post2dWindowDataItem
 
 public:
 	/// Constructor
-	Post2dWindowNodeVectorStreamlineDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent);
+
+	const std::string& name() const;
+
 	void handleStandardItemChange() override;
-	const QString& name() const {return m_name;}
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -24,12 +26,11 @@ public:
 signals:
 	void changed(Post2dWindowNodeVectorStreamlineDataItem*);
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
-
 private:
-	QString m_name;
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
+
+	std::string m_name;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H

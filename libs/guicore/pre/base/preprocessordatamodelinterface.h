@@ -15,9 +15,10 @@ class GUICOREDLL_EXPORT PreProcessorDataModelInterface : public Graphics2DWindow
 
 public:
 	PreProcessorDataModelInterface(PreProcessorWindowInterface* w, ProjectDataItem* parent);
+	virtual ~PreProcessorDataModelInterface() {}
 	virtual MouseBoundingBox* mouseBoundingBox() = 0;
-	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const QString& type) const = 0;
-	virtual PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const QString& typeName, const QString& zoneName) const = 0;
+	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const std::string& type) const = 0;
+	virtual PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const = 0;
 	virtual PreProcessorGraphicsViewInterface* graphicsView() const = 0;
 	virtual void applyOffset(double x, double y) = 0;
 };

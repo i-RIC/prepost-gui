@@ -224,7 +224,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	list = m[Graph2dHybridWindowResultSetting::dimBase];
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
-		ui->pointDataComboBox->addItem(info->zoneName);
+		ui->pointDataComboBox->addItem(info->zoneName.c_str());
 	}
 	ui->pointDataComboBox->blockSignals(false);
 	if (list.count() == 0) {
@@ -251,7 +251,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	list = m[Graph2dHybridWindowResultSetting::dim1D];
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
-		ui->oneDimDataComboBox->addItem(info->zoneName);
+		ui->oneDimDataComboBox->addItem(info->zoneName.c_str());
 	}
 	ui->oneDimDataComboBox->blockSignals(false);
 	if (list.count() == 0) {
@@ -278,7 +278,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	list = m[Graph2dHybridWindowResultSetting::dim2D];
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
-		ui->twoDimDataComboBox->addItem(info->zoneName);
+		ui->twoDimDataComboBox->addItem(info->zoneName.c_str());
 	}
 	ui->twoDimDataComboBox->blockSignals(false);
 	if (list.count() == 0) {
@@ -305,7 +305,7 @@ void Graph2dHybridWindowDataSourceDialog::changeAxis(int index)
 	list = m[Graph2dHybridWindowResultSetting::dim3D];
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::DataTypeInfo* info = list[i];
-		ui->threeDimDataComboBox->addItem(info->zoneName);
+		ui->threeDimDataComboBox->addItem(info->zoneName.c_str());
 	}
 	ui->threeDimDataComboBox->blockSignals(false);
 	if (list.count() == 0) {

@@ -129,7 +129,7 @@ void PostAllZoneSelectingDialog::setupZoneList(int index)
 	ui->zoneList->clear();
 	for (int i = 0; i < zoneList.size(); ++i) {
 		PostZoneDataContainer* cont = zoneList.at(i);
-		ui->zoneList->addItem(cont->zoneName());
+		ui->zoneList->addItem(cont->zoneName().c_str());
 	}
 	ui->zoneList->setCurrentRow(0);
 }

@@ -2,15 +2,17 @@
 #include "solverdefinitiontranslator.h"
 #include "solverdefinition.h"
 
+#include <misc/stringtool.h>
+
 class SolverDefinitionBoundaryCondition::Impl
 {
 public:
 	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator);
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
 
-	QString m_name;
+	std::string m_name;
 	QString m_caption;
-	QString m_englishCaption;
+	std::string  m_englishCaption;
 	Position m_position;
 	QDomElement m_element;
 	SolverDefinition* m_definition;
@@ -23,11 +25,12 @@ SolverDefinitionBoundaryCondition::Impl::Impl(const QDomElement& node, const Sol
 
 void SolverDefinitionBoundaryCondition::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
 {
-	m_name = node.attribute("name", "default");
-	m_englishCaption = node.attribute("caption");
+	m_name = iRIC::toStr(node.attribute("name", "default"));
+	m_englishCaption = iRIC::toStr(node.attribute("caption"));
 	m_caption = translator.translate(node.attribute("caption")), QObject::tr("Default");
 
 	m_element = node;
+
 	QString pos = node.attribute("position").toLower();
 	if (pos == "node") {
 		m_position = pNode;
@@ -48,7 +51,7 @@ SolverDefinitionBoundaryCondition::~SolverDefinitionBoundaryCondition()
 	delete m_impl;
 }
 
-const QString& SolverDefinitionBoundaryCondition::name() const
+const std::string& SolverDefinitionBoundaryCondition::name() const
 {
 	return m_impl->m_name;
 }
@@ -58,7 +61,7 @@ const QString& SolverDefinitionBoundaryCondition::caption() const
 	return m_impl->m_caption;
 }
 
-const QString& SolverDefinitionBoundaryCondition::englishCaption() const
+const std::string& SolverDefinitionBoundaryCondition::englishCaption() const
 {
 	return m_impl->m_englishCaption;
 }

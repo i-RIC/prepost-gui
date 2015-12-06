@@ -31,7 +31,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	setSubPath(type->name());
+	setSubPath(type->name().c_str());
 
 	PreProcessorGeoDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->geoDataTopDataItem(type->name());
 	if (tItem != nullptr) {
@@ -50,7 +50,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 		for (int i = 0; i < num; ++i) {
 			vtkAbstractArray* tmparray = pd->GetArray(i);
 			if (tmparray == nullptr) {continue;}
-			QString name = tmparray->GetName();
+			std::string name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
 		updateLookupTableRanges();
@@ -64,7 +64,7 @@ Post2dWindowGridTypeDataItem::~Post2dWindowGridTypeDataItem()
 	}
 }
 
-const QString& Post2dWindowGridTypeDataItem::name()
+const std::string& Post2dWindowGridTypeDataItem::name()
 {
 	return m_gridType->name();
 }
@@ -95,7 +95,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 		for (int i = 0; i < num; ++i) {
 			vtkAbstractArray* tmparray = pd->GetArray(i);
 			if (tmparray == nullptr) {continue;}
-			QString name = tmparray->GetName();
+			std::string name = tmparray->GetName();
 			setupScalarsToColors(name);
 		}
 		updateLookupTableRanges();
@@ -121,7 +121,7 @@ void Post2dWindowGridTypeDataItem::update()
 void Post2dWindowGridTypeDataItem::updateLookupTableRanges()
 {
 	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it) {
-		QString name = it.key();
+		std::string name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
 		bool first = true;
 		double range[2], min, max;
@@ -129,7 +129,7 @@ void Post2dWindowGridTypeDataItem::updateLookupTableRanges()
 		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
 			Post2dWindowZoneDataItem* zitem = *zit;
 			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->data() == nullptr) {continue;}
-			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(iRIC::toStr(name).c_str());
+			vtkDataArray* dArray = zitem->dataContainer()->data()->GetPointData()->GetArray(name.c_str());
 			if (dArray != nullptr) {
 				dArray->GetRange(range);
 				if (first || range[0] < min) {min = range[0];}
@@ -158,7 +158,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		QDomNodeList tables = ltNode.childNodes();
 		for (int i = 0; i < tables.length(); ++i) {
 			QDomNode ltNode = tables.at(i);
-			QString ltName = ltNode.toElement().attribute("name");
+			std::string ltName = iRIC::toStr(ltNode.toElement().attribute("name"));
 			LookupTableContainer* cont = m_lookupTables.value(ltName, 0);
 			if (cont != nullptr) {
 				cont->loadFromProjectMainFile(ltNode);
@@ -174,7 +174,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		QDomNodeList zones = zonesNode.childNodes();
 		for (int i = 0; i < zones.length(); ++i) {
 			QDomNode zoneNode = zones.at(i);
-			QString zoneName = zoneNode.toElement().attribute("name");
+			std::string zoneName = iRIC::toStr(zoneNode.toElement().attribute("name"));
 			Post2dWindowZoneDataItem* zdi = m_zoneDataNameMap.value(zoneName, nullptr);
 			if (zdi != nullptr) {
 				zdi->loadFromProjectMainFile(zoneNode);
@@ -185,11 +185,11 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 
 void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_gridType->name());
+	writer.writeAttribute("name", m_gridType->name().c_str());
 	writer.writeStartElement("LookupTables");
 	for (auto lit = m_lookupTables.begin(); lit != m_lookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
-		writer.writeAttribute("name", lit.key());
+		writer.writeAttribute("name", lit.key().c_str());
 		LookupTableContainer* cont = lit.value();
 		cont->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -208,7 +208,7 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	writer.writeEndElement();
 }
 
-void Post2dWindowGridTypeDataItem::setupScalarsToColors(const QString& name)
+void Post2dWindowGridTypeDataItem::setupScalarsToColors(const std::string& name)
 {
 	LookupTableContainer* c = new LookupTableContainer(this);
 	m_lookupTables.insert(name, c);

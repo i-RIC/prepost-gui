@@ -25,7 +25,7 @@ class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
 
 public:
 	/// Constructor
-	Post2dBirdEyeWindowZoneDataItem(QString zoneName, int zoneNumber, GraphicsWindowDataItem* parent);
+	Post2dBirdEyeWindowZoneDataItem(const std::string& zoneName, int zoneNumber, GraphicsWindowDataItem* parent);
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
@@ -37,7 +37,7 @@ public:
 
 	PostZoneDataContainer* dataContainer();
 	int zoneNumber() const {return m_zoneNumber;}
-	QString zoneName() const {return m_zoneName;}
+	std::string zoneName() const {return m_zoneName;}
 	void update();
 	Post2dBirdEyeWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* scalarGroupDataItem() const {return m_scalarGroupDataItem;}
@@ -59,7 +59,7 @@ protected:
 	Post2dBirdEyeWindowCellFlagGroupDataItem* m_cellFlagGroupDataItem;
 
 private:
-	QString m_zoneName;
+	std::string m_zoneName;
 	int m_zoneNumber;
 };
 

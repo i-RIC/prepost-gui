@@ -32,8 +32,8 @@ public:
 	}
 	void setupStandardModel(QStandardItemModel* model);
 	const QList<Post2dBirdEyeWindowGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
-	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem(const QString& name) const;
-	Post2dBirdEyeWindowZoneDataItem* zoneDataItem(const QString& name) const;
+	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem(const std::string& name) const;
+	Post2dBirdEyeWindowZoneDataItem* zoneDataItem(const std::string& name) const;
 	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
 	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
 

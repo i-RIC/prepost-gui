@@ -38,8 +38,9 @@ QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 class Post3dWindowParticleStructuredSetProperty : public QUndoCommand
 {
 public:
-	Post3dWindowParticleStructuredSetProperty(const QString& sol, Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm, int tsr, int tdiv, const QList<Post3dWindowStructuredParticleSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post3dWindowNodeVectorParticleGroupStructuredDataItem* item)
-		: QUndoCommand(QObject::tr("Update Particle Setting")) {
+	Post3dWindowParticleStructuredSetProperty(const std::string& sol, Post3dWindowNodeVectorParticleGroupDataItem::TimeMode tm, int tsr, int tdiv, const QList<Post3dWindowStructuredParticleSetSetting>& settings, StructuredGridRegion::RegionMode rm, Post3dWindowNodeVectorParticleGroupStructuredDataItem* item) :
+		QUndoCommand(QObject::tr("Update Particle Setting"))
+	{
 		m_newEnabled = true;
 		m_newSolution = sol;
 		m_newTimeMode = tm;
@@ -87,7 +88,7 @@ public:
 
 private:
 	bool m_oldEnabled;
-	QString m_oldSolution;
+	std::string m_oldSolution;
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_oldTimeMode;
 	int m_oldTimeSamplingRate;
 	int m_oldTimeDivision;
@@ -95,7 +96,7 @@ private:
 	StructuredGridRegion::RegionMode m_oldRegionMode;
 
 	bool m_newEnabled;
-	QString m_newSolution;
+	std::string m_newSolution;
 	Post3dWindowNodeVectorParticleGroupDataItem::TimeMode m_newTimeMode;
 	int m_newTimeSamplingRate;
 	int m_newTimeDivision;

@@ -77,7 +77,7 @@ private:
 
 	Ui::Post2dWindowParticleUnstructuredSettingDialog* ui;
 	Post2dWindowNodeVectorParticleGroupUnstructuredDataItem* m_dataItem;
-	QList<QString> m_solutions;
+	QList<std::string> m_solutions;
 
 	QPointF m_oldPoint1;
 	QPointF m_oldPoint2;

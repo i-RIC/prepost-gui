@@ -97,7 +97,7 @@ void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == item->name()) {
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == item->name().c_str()) {
 				item->loadFromProjectMainFile(c);
 			}
 			c = c.nextSibling();
@@ -133,9 +133,9 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	writer.writeEndElement();
 }
 
-Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDataItem(const QString& name) const
+Post2dBirdEyeWindowGridTypeDataItem* Post2dBirdEyeWindowRootDataItem::gridTypeDataItem(const std::string& name) const
 {
-	for (Post2dBirdEyeWindowGridTypeDataItem* item : m_gridTypeDataItems) {
+	for (auto item : m_gridTypeDataItems) {
 		if (item->name() == name) {return item;}
 	}
 	return 0;
@@ -170,11 +170,11 @@ void Post2dBirdEyeWindowRootDataItem::update()
 	qDebug("Rendering:%d", time.elapsed());
 }
 
-Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowRootDataItem::zoneDataItem(const QString& name) const
+Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowRootDataItem::zoneDataItem(const std::string& name) const
 {
-	for (Post2dBirdEyeWindowGridTypeDataItem* gtItem : m_gridTypeDataItems) {
+	for (auto gtItem : m_gridTypeDataItems) {
 		Post2dBirdEyeWindowZoneDataItem* i = gtItem->zoneData(name);
 		if (i != 0) {return i;}
 	}
-	return 0;
+	return nullptr;
 }

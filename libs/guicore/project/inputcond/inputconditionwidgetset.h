@@ -5,6 +5,8 @@
 #include <QMap>
 #include <QVector>
 
+#include <string>
+
 class QWidget;
 class QDomNode;
 class InputConditionContainerSet;
@@ -15,12 +17,11 @@ class GUICOREDLL_EXPORT InputConditionWidgetSet
 {
 
 public:
-	/// Constructor
-	InputConditionWidgetSet() {}
-	/// Destructor
+	InputConditionWidgetSet();
 	~InputConditionWidgetSet();
+
 	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC = false);
-	InputConditionWidget* widget(const QString& name) const {return m_widgets.value(name);}
+	InputConditionWidget* widget(const std::string& name) const;
 	void clear();
 	void disableWidgets();
 	void enableWidgets();
@@ -38,6 +39,6 @@ private:
 	void buildDepsItem(const QDomNode& itemNode, InputConditionContainerSet& cset);
 	void buildDep(const QDomNode&, InputConditionContainerSet& cset, InputConditionWidget* w);
 	void addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
-	QMap<QString, InputConditionWidget*> m_widgets;
+	QMap<std::string, InputConditionWidget*> m_widgets;
 };
 #endif // INPUTCONDITIONWIDGETSET_H

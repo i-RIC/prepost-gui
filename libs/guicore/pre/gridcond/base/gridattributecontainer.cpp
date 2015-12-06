@@ -19,7 +19,7 @@ GridAttributeContainer::GridAttributeContainer(Grid* grid, SolverDefinitionGridA
 	m_isCustomModified = false;
 }
 
-const QString& GridAttributeContainer::name() const
+const std::string& GridAttributeContainer::name() const
 {
 	return condition()->name();
 }
@@ -42,7 +42,7 @@ QString GridAttributeContainer::temporaryExternalFilename(int index) const
 	ProjectDataItem* item = m_grid->parent();
 	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);
 	QString format("%1_%2.dat");
-	QString filename = format.arg(m_condition->name()).arg(index + 1);
+	QString filename = format.arg(m_condition->name().c_str()).arg(index + 1);
 	QDir subDir(gItem->subPath());
 	return subDir.absoluteFilePath(filename);
 }

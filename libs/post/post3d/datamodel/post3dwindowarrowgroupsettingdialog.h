@@ -24,16 +24,17 @@ class Post3dWindowArrowGroupSettingDialog : public QDialog
 public:
 	Post3dWindowArrowGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowArrowGroupSettingDialog();
+
 	void setColor(const QColor& color);
 	QColor color();
 	void setMapping(Post3dWindowArrowGroupDataItem::Mapping m);
 	Post3dWindowArrowGroupDataItem::Mapping mapping();
-	void setScalarValueName(const QString& name);
-	QString scalarValueName();
+	void setScalarValueName(const std::string& name);
+	std::string scalarValueName();
 	void setSampleRate(int rate);
 	int sampleRate();
-	void setCurrentSolution(QString sol);
-	QString currentSolution();
+	void setCurrentSolution(const std::string& sol);
+	const std::string currentSolution() const;
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap();
 	void setZoneData(PostZoneDataContainer* zoneData);
@@ -61,8 +62,8 @@ private slots:
 	void updateFaceMap();
 
 private:
-	QList<QString> m_solutions;
-	QList<QString> m_scalars;
+	QList<std::string> m_solutions;
+	QList<std::string> m_scalars;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
 	bool m_isRemoving;
 

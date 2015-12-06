@@ -79,7 +79,7 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	ui->settingGroupBox->setLayout(layout);
 }
 
-void BoundaryConditionDialog::setNameAndNumber(QString name, int number)
+void BoundaryConditionDialog::setNameAndNumber(const std::string& name, int number)
 {
 	m_containerSet->setBCProperty(name, number);
 	m_captionContainer.setBCProperty(name, number);

@@ -5,9 +5,9 @@
 #include <QMouseEvent>
 #include <QStandardItem>
 
-Post2dWindowNodeVectorArrowDataItem::Post2dWindowNodeVectorArrowDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent) :
+Post2dWindowNodeVectorArrowDataItem::Post2dWindowNodeVectorArrowDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name {name}
+	m_name (name)
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
@@ -46,3 +46,9 @@ void Post2dWindowNodeVectorArrowDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 }
+
+void Post2dWindowNodeVectorArrowDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void Post2dWindowNodeVectorArrowDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

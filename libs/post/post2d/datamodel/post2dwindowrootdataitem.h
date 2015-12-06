@@ -24,9 +24,7 @@ class Post2dWindowRootDataItem : public GraphicsWindowRootDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindowRootDataItem(Post2dWindow* window, ProjectDataItem* parent);
-	/// Destructor
 	~Post2dWindowRootDataItem();
 
 	/// Background image data item
@@ -39,8 +37,8 @@ public:
 	}
 	void setupStandardModel(QStandardItemModel* model);
 	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
-	Post2dWindowGridTypeDataItem* gridTypeDataItem(const QString& name);
-	Post2dWindowZoneDataItem* zoneDataItem(const QString& name);
+	Post2dWindowGridTypeDataItem* gridTypeDataItem(const std::string& name);
+	Post2dWindowZoneDataItem* zoneDataItem(const std::string& name);
 	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
 	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
 	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}

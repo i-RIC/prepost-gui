@@ -18,7 +18,7 @@ InputConditionContainerFunctional::InputConditionContainerFunctional() :
 	InputConditionContainer()
 {}
 
-InputConditionContainerFunctional::InputConditionContainerFunctional(const QString& n, const QString& c, QDomNode defNode, const QDir& dir) :
+InputConditionContainerFunctional::InputConditionContainerFunctional(const std::string& n, const QString& c, QDomNode defNode, const QDir& dir) :
 	InputConditionContainer(n, c)
 {
 	QDomElement paramElem = iRIC::getChildNode(defNode, "Parameter").toElement();

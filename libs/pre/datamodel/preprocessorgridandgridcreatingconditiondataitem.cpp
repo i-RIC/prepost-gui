@@ -31,6 +31,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QApplication>
@@ -49,9 +50,9 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
-PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const QString& zonename, const QString& caption, PreProcessorDataItem* p) :
+PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zoneName, const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
-	m_zoneName {zonename},
+	m_zoneName (zoneName),
 	m_caption {caption},
 	m_gridDataItem {nullptr}
 {
@@ -61,7 +62,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	setSubPath("gridandgridcreatingconditiondataitem");
 	QDir subdir1(workdir.absoluteFilePath(relativeSubPath()));
 
-	setSubPath(m_zoneName);
+	setSubPath(m_zoneName.c_str());
 	QDir subdir2(workdir.absoluteFilePath(relativeSubPath()));
 
 	if (subdir1.exists()) {
@@ -71,7 +72,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 		} else {
 			// old folder only exists. rename the old folder.
 			subdir1.cdUp();
-			subdir1.rename("gridandgridcreatingconditiondataitem", m_zoneName);
+			subdir1.rename("gridandgridcreatingconditiondataitem", m_zoneName.c_str());
 		}
 	}
 
@@ -112,7 +113,7 @@ const QString& PreProcessorGridAndGridCreatingConditionDataItem::caption() const
 	return m_caption;
 }
 
-const QString& PreProcessorGridAndGridCreatingConditionDataItem::zoneName() const
+const std::string& PreProcessorGridAndGridCreatingConditionDataItem::zoneName() const
 {
 	return m_zoneName;
 }
@@ -211,7 +212,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		prevItem->model()->insertRow(prevRow + 1, gItem);
 	}
 
-	connect(gridItem, SIGNAL(gridRelatedConditionChanged(QString)), gtItem, SLOT(changeValueRange(QString)));
+	connect(gridItem, SIGNAL(gridRelatedConditionChanged(std::string)), gtItem, SLOT(changeValueRange(std::string)));
 	updateItemMap();
 	qApp->processEvents();
 }
@@ -241,7 +242,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const in
 void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	m_zoneName = elem.attribute("zoneName");
+	m_zoneName = iRIC::toStr(elem.attribute("zoneName"));
 	// load grid creating condition information.
 	QDomNode condNode = iRIC::getChildNode(node, "GridCreatingCondition");
 	if (! condNode.isNull()) {m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
@@ -260,7 +261,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(Q
 		gItem->bcGroupDataItem()->renumberItemsForProject();
 	}
 
-	writer.writeAttribute("zoneName", m_zoneName);
+	writer.writeAttribute("zoneName", m_zoneName.c_str());
 	writer.writeAttribute("caption", m_caption);
 
 	// save grid creating condition information

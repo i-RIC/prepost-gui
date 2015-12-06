@@ -14,29 +14,31 @@ class Post2dWindowCellFlagDataItem : public Post2dWindowDataItem
 {
 
 public:
-	Post2dWindowCellFlagDataItem(const QString& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent);
+	Post2dWindowCellFlagDataItem(const std::string& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent);
 	~Post2dWindowCellFlagDataItem();
-	const QString& attributeName() const {return m_attributeName;}
-	int value() const {return m_value;}
-	const QColor& color() const {return m_color;}
+
+	const std::string& attributeName() const;
+	int value() const;
+	const QColor& color() const;
 	void setColor(const QColor& col);
 	void setOpacity(int o);
+
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
 private:
 	void setupActors();
 
-	QString m_attributeName;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	std::string m_attributeName;
 	int m_value;
 	QColor m_color;
 

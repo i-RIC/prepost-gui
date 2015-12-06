@@ -9,6 +9,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/stringtool.h>
 
 #include <QMouseEvent>
 #include <QUndoCommand>
@@ -32,11 +33,12 @@ QDialog* Post2dWindowCellFlagGroupDataItem::propertyDialog(QWidget* p)
 	return d;
 }
 
-class Post2dWindowCellFlagGroupSettingCommand : public QUndoCommand
+class Post2dWindowCellFlagGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	Post2dWindowCellFlagGroupSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, int newo, Post2dWindowCellFlagGroupDataItem* item)
-		:QUndoCommand(Post2dWindowCellFlagGroupDataItem::tr("Cell Flag Setting")) {
+	SetSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, int newo, Post2dWindowCellFlagGroupDataItem* item) :
+		QUndoCommand(Post2dWindowCellFlagGroupDataItem::tr("Cell Flag Setting"))
+	{
 		m_newSettings = newsettings;
 		m_newOpacityPercent = newo;
 
@@ -64,7 +66,7 @@ private:
 void Post2dWindowCellFlagGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
 {
 	Post2dWindowCellFlagSettingDialog* dialog = dynamic_cast<Post2dWindowCellFlagSettingDialog*>(d);
-	iRICUndoStack::instance().push(new Post2dWindowCellFlagGroupSettingCommand(dialog->settings(), dialog->opacityPercent(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->settings(), dialog->opacityPercent(), this), this);
 }
 
 QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
@@ -167,7 +169,7 @@ void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomNode cnode = childNodes.at(i);
 		QDomElement celem = cnode.toElement();
-		QString attName = celem.attribute("attributeName");
+		std::string attName = iRIC::toStr(celem.attribute("attributeName"));
 		int value = celem.attribute("value").toInt();
 
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {

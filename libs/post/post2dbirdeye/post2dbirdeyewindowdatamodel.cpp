@@ -137,8 +137,8 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
 		if (ret != QDialog::Accepted) {return nullptr;}
-		QString gridType = dialog.gridTypeName();
-		QString zone = dialog.zoneName();
+		std::string gridType = dialog.gridTypeName();
+		std::string zone = dialog.zoneName();
 		Post2dBirdEyeWindowRootDataItem* root = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
 		Post2dBirdEyeWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		zitem = gt->zoneData(zone);

@@ -38,7 +38,7 @@ protected:
 private:
 	static int readErrorCode(int fn);
 	void deleteGrid(const QString& fname);
-	QString m_name;
+	std::string m_name;
 	QLocale m_locale;
 	SolverDefinition* m_definition;
 	bool m_canceled;

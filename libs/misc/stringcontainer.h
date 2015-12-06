@@ -33,6 +33,7 @@ public:
 	//@{
 	StringContainer& operator=(const QString& val);
 	bool operator!=(const QString& val);
+	operator std::string() const;
 	//@}
 
 private:

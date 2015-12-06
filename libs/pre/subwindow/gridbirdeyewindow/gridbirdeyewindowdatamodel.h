@@ -16,6 +16,7 @@
 #include <vtkAxesActor.h>
 #include <vtkOrientationMarkerWidget.h>
 
+#include <string>
 
 class ProjectDataItem;
 class GridBirdEyeWindow;
@@ -56,7 +57,7 @@ private:
 	void updateScalarBar();
 
 	ColorType m_colorType;
-	QString m_attributeName;
+	std::string m_attributeName;
 	QColor m_customColor;
 
 	vtkSmartPointer<vtkActor> m_actor;

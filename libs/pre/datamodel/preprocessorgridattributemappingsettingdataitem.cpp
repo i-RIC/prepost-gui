@@ -25,7 +25,7 @@ void PreProcessorGridAttributeMappingSettingDataItem::doLoadFromProjectMainFile(
 
 void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_condition->name());
+	writer.writeAttribute("name", m_condition->name().c_str());
 	m_mappingMode.save(writer);
 }
 

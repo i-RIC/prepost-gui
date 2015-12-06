@@ -31,6 +31,8 @@
 
 #include <vtkStructuredGrid.h>
 #include <memory>
+#include <string>
+#include <vector>
 
 #include <cgnslib.h>
 #include <iriclib.h>
@@ -174,13 +176,13 @@ void PostSolutionInfo::informStepsUpdated()
 	close();
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
 {
 	int ier, nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {return false;}
 	int baseid = 0;
-	QString baseName;
+	std::string baseName;
 	for (int B = 1; B <= nbases; ++B) {
 		char bname[32];
 		int cell_dim;
@@ -195,16 +197,16 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 	}
 	if (baseid == 0) {
 		// no base for dimension dim.
-		if (zonenames.count() == 0) {return false;}
-		zonenames.clear();
+		if (zoneNames->size() == 0) {return false;}
+		zoneNames->clear();
 		clearContainers(containers);
-		containerNameMap.clear();
+		containerNameMap->clear();
 		return true;
 	}
 	int nzones;
 	ier = cg_nzones(fn, baseid, &nzones);
 	if (ier != 0) {return false;}
-	QStringList tmpzonenames;
+	std::vector<std::string> tmpZoneNames;
 	for (int Z = 1; Z <= nzones; ++Z) {
 		cgsize_t sizes[9];
 		char zoneName[32];
@@ -216,41 +218,42 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 		ier = cg_narrays(&narrays);
 		if (ier != 0) {return false;}
 		if (narrays == 0) {continue;}
-		tmpzonenames.append(QString(zoneName));
+		tmpZoneNames.push_back(std::string(zoneName));
 	}
-	if (zonenames == tmpzonenames) {
+	if (*zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
-		for (int i = 0; i < containers.count(); ++i) {
-			containers[i]->loadIfEmpty(fn);
+		for (int i = 0; i < containers->count(); ++i) {
+			(*containers)[i]->loadIfEmpty(fn);
 		}
 		return false;
 	}
-	zonenames = tmpzonenames;
+	*zoneNames = tmpZoneNames;
 	// clear the current zone containers first.
 	clearContainers(containers);
-	containerNameMap.clear();
+	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit) {
-		QString zoneName = *slit;
+	for (std::string zoneName : *zoneNames) {
 		bool found = false;
 		if (zoneName == "iRICZone") {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
 				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
 					cont->loadFromCgnsFile(fn);
-					containers.append(cont);
-					containerNameMap.insert(zoneName, cont);
+					containers->push_back(cont);
+					containerNameMap->insert(zoneName, cont);
 					found = true;
+					break;
 				}
 			}
 		} else {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.contains((*gtit)->name())) {
+				if (zoneName.find((*gtit)->name()) != std::string::npos) {
 					PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, *gtit, this);
 					cont->loadFromCgnsFile(fn);
-					containers.append(cont);
-					containerNameMap.insert(zoneName, cont);
+					containers->append(cont);
+					containerNameMap->insert(zoneName, cont);
 					found = true;
+					break;
 				}
 			}
 		}
@@ -258,21 +261,21 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, QStringList
 			// no appropriate gridtype found. use the dummy grid type.
 			PostZoneDataContainer* cont = new PostZoneDataContainer(baseName, zoneName, projectData()->solverDefinition()->dummyGridType(), this);
 			cont->loadFromCgnsFile(fn);
-			containers.append(cont);
-			containerNameMap.insert(zoneName, cont);
+			containers->append(cont);
+			containerNameMap->insert(zoneName, cont);
 		}
 	}
 	return true;
 }
 
-bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& zonenames, QList<PostZoneDataContainer*>& containers, QMap<QString, PostZoneDataContainer*>& containerNameMap)
+bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
 {
 	int ier;
 	int nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {return false;}
 	int baseid = 0;
-	QString baseName;
+	std::string baseName;
 	for (int B = 1; B <= nbases; ++B) {
 		char bname[32];
 		int cell_dim;
@@ -287,46 +290,45 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, QStringList& 
 	}
 	if (baseid == 0) {
 		// no base for dimension dim.
-		if (zonenames.count() == 0) {return false;}
-		zonenames.clear();
+		if (zoneNames->size() == 0) {return false;}
+		zoneNames->clear();
 		clearContainers(containers);
 		return true;
 	}
 	int nzones;
 	ier = cg_nzones(fn, baseid, &nzones);
 	if (ier != 0) {return false;}
-	QStringList tmpzonenames;
+	std::vector<std::string> tmpZoneNames;
 	for (int Z = 1; Z <= nzones; ++Z) {
 		cgsize_t sizes[9];
 		char zoneName[32];
 		cg_zone_read(fn, baseid, Z, zoneName, sizes);
-		tmpzonenames.append(QString(zoneName));
+		tmpZoneNames.push_back(std::string(zoneName));
 	}
-	if (zonenames == tmpzonenames) {
+	if (*zoneNames == tmpZoneNames) {
 		// zone names are equal to those already read.
 		return false;
 	}
-	zonenames = tmpzonenames;
+	*zoneNames = tmpZoneNames;
 	// clear the current zone containers first.
 	clearContainers(containers);
-	containerNameMap.clear();
+	containerNameMap->clear();
 	QList<SolverDefinitionGridType*> gtypes = projectData()->solverDefinition()->gridTypes();
-	for (auto slit = zonenames.begin(); slit != zonenames.end(); ++slit) {
-		QString zoneName = *slit;
+	for (std::string zoneName : *zoneNames) {
 		if (zoneName == "iRICZone") {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
 				if ((*gtit)->isPrimary() && !(*gtit)->isOptional()) {
 					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers.append(cont);
-					containerNameMap.insert(zoneName, cont);
+					containers->append(cont);
+					containerNameMap->insert(zoneName, cont);
 				}
 			}
 		} else {
 			for (auto gtit = gtypes.begin(); gtit != gtypes.end(); ++gtit) {
-				if (zoneName.contains((*gtit)->name())) {
+				if (zoneName.find((*gtit)->name()) != std::string::npos) {
 					PostZoneDataContainer* cont = new PostDummy3DZoneDataContainer(baseName, zoneName, *gtit, this);
-					containers.append(cont);
-					containerNameMap.insert(zoneName, cont);
+					containers->append(cont);
+					containerNameMap->insert(zoneName, cont);
 				}
 			}
 		}
@@ -338,13 +340,13 @@ void PostSolutionInfo::setupZoneDataContainers(int fn)
 {
 	bool ret;
 	// setup 1D containers.
-	ret = innerSetupZoneDataContainers(fn, 1, m_zoneNames1D, m_zoneContainers1D, m_zoneContainerNameMap1D);
+	ret = innerSetupZoneDataContainers(fn, 1, &m_zoneNames1D, &m_zoneContainers1D, &m_zoneContainerNameMap1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
-	ret = innerSetupZoneDataContainers(fn, 2, m_zoneNames2D, m_zoneContainers2D, m_zoneContainerNameMap2D);
+	ret = innerSetupZoneDataContainers(fn, 2, &m_zoneNames2D, &m_zoneContainers2D, &m_zoneContainerNameMap2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
-	ret = innerSetupZoneDataContainers(fn, 3, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
+	ret = innerSetupZoneDataContainers(fn, 3, &m_zoneNames3D, &m_zoneContainers3D, &m_zoneContainerNameMap3D);
 	// only for 3D demonstration.
 //	ret = innerSetupDummy3DZoneDataContainers(fn, m_zoneNames3D, m_zoneContainers3D, m_zoneContainerNameMap3D);
 	if (ret) {emit zoneList3DUpdated();}
@@ -490,11 +492,11 @@ void PostSolutionInfo::loadFromCgnsFile(const int fn)
 void PostSolutionInfo::closeCgnsFile()
 {
 	// clear the current zone containers first.
-	clearContainers(m_zoneContainers1D);
+	clearContainers(&m_zoneContainers1D);
 	m_zoneContainerNameMap1D.clear();
-	clearContainers(m_zoneContainers2D);
+	clearContainers(&m_zoneContainers2D);
 	m_zoneContainerNameMap2D.clear();
-	clearContainers(m_zoneContainers3D);
+	clearContainers(&m_zoneContainers3D);
 	m_zoneContainerNameMap3D.clear();
 	m_zoneNames1D.clear();
 	m_zoneNames2D.clear();
@@ -519,19 +521,19 @@ const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers3D() const
 	return m_zoneContainers3D;
 }
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer1D(const QString& zonename) const
+PostZoneDataContainer* PostSolutionInfo::zoneContainer1D(const std::string& zoneName) const
 {
-	return m_zoneContainerNameMap1D.value(zonename, 0);
+	return m_zoneContainerNameMap1D.value(zoneName, 0);
 }
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer2D(const QString& zonename) const
+PostZoneDataContainer* PostSolutionInfo::zoneContainer2D(const std::string& zoneName) const
 {
-	return m_zoneContainerNameMap2D.value(zonename, 0);
+	return m_zoneContainerNameMap2D.value(zoneName, 0);
 }
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer3D(const QString& zonename) const
+PostZoneDataContainer* PostSolutionInfo::zoneContainer3D(const std::string& zoneName) const
 {
-	return m_zoneContainerNameMap3D.value(zonename, 0);
+	return m_zoneContainerNameMap3D.value(zoneName, 0);
 }
 
 void PostSolutionInfo::informSolverStart()
@@ -605,7 +607,7 @@ const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers(Dimension 
 	else {return zoneContainers3D();}
 }
 
-PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const QString& zoneName) const
+PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const std::string& zoneName) const
 {
 	if (dim == dim1D) {return zoneContainer1D(zoneName);}
 	else if (dim == dim2D) {return zoneContainer2D(zoneName);}
@@ -737,7 +739,7 @@ void PostSolutionInfo::exportCalculationResult()
 			tmpContainers.append(cont);
 		}
 	}
-	QString zoneName;
+	std::string zoneName;
 	if (tmpContainers.count() == 0) {
 		// No valid grid.
 		QMessageBox::warning(iricMainWindow(), tr("Error"), tr("Calculation result does not contain grid data."));
@@ -748,14 +750,14 @@ void PostSolutionInfo::exportCalculationResult()
 		ItemSelectingDialog dialog;
 		QList<QString> zonelist;
 		for (auto it = tmpContainers.begin(); it != tmpContainers.end(); ++it) {
-			zonelist.append((*it)->zoneName());
+			zonelist.append((*it)->zoneName().c_str());
 		}
 		dialog.setItems(zonelist);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {
 			return;
 		}
-		zoneName = zonelist.at(dialog.selectIndex());
+		zoneName = iRIC::toStr(zonelist.at(dialog.selectIndex()));
 	}
 	PostZoneDataContainer* zoneC = zoneContainer(dim, zoneName);
 	// show setting dialog
@@ -891,10 +893,10 @@ bool PostSolutionInfo::open()
 	return true;
 }
 
-void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>& conts)
+void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)
 {
-	for (auto c : conts) {
+	for (auto c : *conts) {
 		delete c;
 	}
-	conts.clear();
+	conts->clear();
 }

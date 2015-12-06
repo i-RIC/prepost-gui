@@ -11,10 +11,10 @@ class GUICOREDLL_EXPORT Structured15DGridWithCrossSection : public Grid2D
 {
 
 public:
-	/// Constructor
 	Structured15DGridWithCrossSection(ProjectDataItem* parent);
-	/// Constructor
-	Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent);
+	Structured15DGridWithCrossSection(const std::string& zonename, ProjectDataItem* parent);
+	~Structured15DGridWithCrossSection();
+
 	/// Return VTK container object to store the grid.
 	vtkUnstructuredGrid* vtkGrid() const {return dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);}
 	vtkUnstructuredGrid* vertexGrid() const {return m_vertexGrid;}

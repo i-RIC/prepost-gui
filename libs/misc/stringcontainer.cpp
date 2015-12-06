@@ -1,4 +1,5 @@
 #include "stringcontainer.h"
+#include "stringtool.h"
 #include "xmlsupport.h"
 
 #include <QDomNode>
@@ -40,6 +41,11 @@ StringContainer& StringContainer::operator=(const QString& val)
 bool StringContainer::operator!=(const QString& val)
 {
 	return SimpleValueContainerT<QString>::operator !=(val);
+}
+
+StringContainer::operator std::string() const
+{
+	return iRIC::toStr(m_value);
 }
 
 void StringContainer::copyValue(const XmlAttributeContainer& c)

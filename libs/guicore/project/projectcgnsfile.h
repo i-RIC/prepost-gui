@@ -5,6 +5,8 @@
 
 #include <QString>
 
+#include <string>
+
 class SolverDefinitionAbstract;
 class VersionNumber;
 
@@ -17,8 +19,8 @@ public:
 	static bool createNewFile(const QString& filename, int cell_dim, int phys_dim);
 	static bool writeSolverInfo(const QString& filename, const SolverDefinitionAbstract* solverDef);
 	static bool writeSolverInfo(int fn, const SolverDefinitionAbstract* solverDef);
-	static bool readSolverInfo(const QString& filename, QString& solverName, VersionNumber& version);
-	static bool readSolverInfo(int fn, QString& solverName, VersionNumber& version);
+	static bool readSolverInfo(const QString& filename, std::string* solverName, VersionNumber* version);
+	static bool readSolverInfo(int fn, std::string* solverName, VersionNumber* version);
 	static QString acceptablePattern();
 
 private:

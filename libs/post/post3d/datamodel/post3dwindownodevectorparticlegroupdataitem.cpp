@@ -56,7 +56,7 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 			// vector attribute.
 			continue;
 		}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post3dWindowNodeVectorParticleDataItem* item = new Post3dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -79,8 +79,9 @@ Post3dWindowNodeVectorParticleGroupDataItem::~Post3dWindowNodeVectorParticleGrou
 class Post3dWindowGridParticleSelectSolution : public QUndoCommand
 {
 public:
-	Post3dWindowGridParticleSelectSolution(const QString& newsol, Post3dWindowNodeVectorParticleGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Particle Physical Value Change")) {
+	Post3dWindowGridParticleSelectSolution(const std::string& newsol, Post3dWindowNodeVectorParticleGroupDataItem* item) :
+		QUndoCommand(QObject::tr("Particle Physical Value Change"))
+	{
 		m_newCurrentSolution = newsol;
 		m_oldCurrentSolution = item->m_currentSolution;
 		m_item = item;
@@ -100,8 +101,8 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	QString m_oldCurrentSolution;
-	QString m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
 
 	Post3dWindowNodeVectorParticleGroupDataItem* m_item;
 };
@@ -158,7 +159,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSettings()
 void Post3dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	setCurrentSolution(elem.attribute("solution"));
+	setCurrentSolution(iRIC::toStr(elem.attribute("solution")));
 	m_timeMode = static_cast<TimeMode>(elem.attribute("timeMode").toInt());
 	m_timeSamplingRate = elem.attribute("timeSamplingRate").toInt();
 	m_timeDivision = elem.attribute("timeDivision").toInt();
@@ -167,7 +168,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::doLoadFromProjectMainFile(cons
 
 void Post3dWindowNodeVectorParticleGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution);
+	writer.writeAttribute("solution", m_currentSolution.c_str());
 	writer.writeAttribute("timeMode", QString::number(static_cast<int>(m_timeMode)));
 	writer.writeAttribute("timeSamplingRate", QString::number(m_timeSamplingRate));
 	writer.writeAttribute("timeDivision", QString::number(m_timeDivision));
@@ -265,7 +266,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post3dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post3dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post3dWindowNodeVectorParticleDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -337,7 +338,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
 	PostZoneDataContainer* zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkPointSet* ps = zoneContainer->data();
-	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_currentSolution).c_str());
+	ps->GetPointData()->SetActiveVectors(m_currentSolution.c_str());
 
 	int currentStep = zoneContainer->solutionInfo()->currentStep();
 

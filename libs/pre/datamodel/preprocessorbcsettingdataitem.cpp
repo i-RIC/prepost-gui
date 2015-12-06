@@ -200,7 +200,7 @@ void PreProcessorBCSettingDataItem::saveExternalData(const QString& filename)
 
 void PreProcessorBCSettingDataItem::updateFilename()
 {
-	setFilename(QString("%1%2.dat").arg(m_bcDataItem->condition()->name()).arg(m_bcDataItem->projectNumber()));
+	setFilename(QString("%1%2.dat").arg(m_bcDataItem->condition()->name().c_str()).arg(m_bcDataItem->projectNumber()));
 }
 
 void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dialog)

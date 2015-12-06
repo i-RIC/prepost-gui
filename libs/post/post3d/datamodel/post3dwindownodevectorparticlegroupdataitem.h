@@ -41,7 +41,7 @@ public:
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	const QString& currentSolution() {return m_currentSolution;}
+	const std::string& currentSolution() {return m_currentSolution;}
 
 public slots:
 	void exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*);
@@ -51,7 +51,7 @@ protected:
 	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const QString& currentSol);
+	void setCurrentSolution(const std::string& currentSol);
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 
@@ -72,7 +72,7 @@ protected:
 	vtkSmartPointer<vtkStreamPoints> m_streamTracer;
 	vtkSmartPointer<vtkCustomStreamPoints> m_streamPoints;
 
-	QString m_currentSolution;
+	std::string m_currentSolution;
 	TimeMode m_timeMode;
 
 	int m_timeSamplingRate;

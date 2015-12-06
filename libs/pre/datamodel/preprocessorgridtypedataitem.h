@@ -20,21 +20,21 @@ public:
 	PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~PreProcessorGridTypeDataItem();
 	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override {return m_conditions;}
-	const QString& name() const;
+	const std::string& name() const;
 	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override {return m_geoDataTop;}
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const QString& name) const;
+	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const std::string& name) const;
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
-	ScalarsToColorsContainer* scalarsToColors(const QString& attName) const override {return m_scalarsToColors.value(attName, 0);}
+	ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const override {return m_scalarsToColors.value(attName, 0);}
 	QAction* addNewGridAction() {return m_addNewGridAction;}
 	bool gridEdited() const;
 	void toggleGridEditFlag();
 
 public slots:
 	void addNewCondition();
-	void changeValueRange(const QString& name);
+	void changeValueRange(const std::string& name);
 
 protected:
 	void unregisterChild(GraphicsWindowDataItem* child) override;
@@ -45,11 +45,11 @@ protected:
 private:
 	void updateNewGridActionStatus();
 	void setupScalarsToColors(SolverDefinitionGridType* type);
-	const QString nextChildCaption();
-	const QString nextChildZonename();
+	QString nextChildCaption();
+	std::string nextChildZonename();
 	SolverDefinitionGridType* m_gridType;
 	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
-	QMap<QString, ScalarsToColorsContainer*> m_scalarsToColors;
+	QMap<std::string, ScalarsToColorsContainer*> m_scalarsToColors;
 	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
 	/// Action to add new condition.
 	QAction* m_addNewGridAction;

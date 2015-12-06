@@ -8,6 +8,8 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkDataSetMapper.h>
 
+#include <string>
+
 class QSignalMapper;
 
 class Post3dWindowGridShapeDataItem;
@@ -25,7 +27,7 @@ class Post3dWindowZoneDataItem : public Post3dWindowDataItem
 
 public:
 	/// Constructor
-	Post3dWindowZoneDataItem(QString zoneName, int zoneNumber, Post3dWindowDataItem* parent);
+	Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent);
 
 	// Standard mouse event handlers
 	void informSelection(VTKGraphicsView*) override;
@@ -35,7 +37,7 @@ public:
 
 	PostZoneDataContainer* dataContainer();
 	int zoneNumber() const {return m_zoneNumber;}
-	QString zoneName() const {return m_zoneName;}
+	const std::string& zoneName() const {return m_zoneName;}
 	void update();
 	Post3dWindowGridShapeDataItem* gridShapeDataItem() const {return m_shapeDataItem;}
 	Post3dWindowContourGroupDataItem* contourGroupItem() const {return m_contourGroupItem;}
@@ -58,7 +60,7 @@ private:
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post3dWindowParticlesTopDataItem* m_particlesDataItem;
 
-	QString m_zoneName;
+	std::string m_zoneName;
 	int m_zoneNumber;
 };
 

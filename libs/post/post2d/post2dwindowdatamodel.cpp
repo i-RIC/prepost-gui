@@ -173,8 +173,8 @@ Post2dWindowZoneDataItem* Post2dWindowDataModel::getZoneDataItem()
 		dialog.setContainers(containers);
 		int ret = dialog.exec();
 		if (ret != QDialog::Accepted) {return nullptr;}
-		QString gridType = dialog.gridTypeName();
-		QString zone = dialog.zoneName();
+		std::string gridType = dialog.gridTypeName();
+		std::string zone = dialog.zoneName();
 		Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
 		Post2dWindowGridTypeDataItem* gt = root->gridTypeDataItem(gridType);
 		zitem = gt->zoneData(zone);

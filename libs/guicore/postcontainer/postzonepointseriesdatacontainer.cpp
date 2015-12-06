@@ -9,14 +9,13 @@
 #include <cgnslib.h>
 #include <cmath>
 
-PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const QString& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent)
-	: PostSeriesDataContainer(dim, parent)
-{
-	m_zoneName = zoneName;
-	m_zoneId = 0;
-	m_physName = pName;
-	m_pointIndex = pointIndex;
-}
+PostZonePointSeriesDataContainer::PostZonePointSeriesDataContainer(PostSolutionInfo::Dimension dim, const std::string& zoneName, const QString& pName, int pointIndex, ProjectDataItem* parent) :
+	PostSeriesDataContainer(dim, parent),
+	m_zoneName (zoneName),
+	m_zoneId {0},
+	m_physName {pName},
+	m_pointIndex {pointIndex}
+{}
 
 bool PostZonePointSeriesDataContainer::setZoneId(const int fn)
 {

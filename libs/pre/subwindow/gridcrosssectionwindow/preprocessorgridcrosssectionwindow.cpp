@@ -20,12 +20,12 @@
 
 const int PreProcessorGridCrosssectionWindow::DEFAULT_TABLE_WIDTH = 200;
 
-PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structured2DGrid* grid, const QString& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
+PreProcessorGridCrosssectionWindow::PreProcessorGridCrosssectionWindow(Structured2DGrid* grid, const std::string& condName, PreProcessorGridCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindow(parent),
-	ui(new Ui::PreProcessorGridCrosssectionWindow)
+	ui(new Ui::PreProcessorGridCrosssectionWindow),
+	m_condition (condName)
 {
 	m_grid = grid;
-	m_condition = condName;
 	m_settingUp = false;
 	m_projectDataItem = pdi;
 
@@ -217,7 +217,7 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 	cameraFit();
 }
 
-const QString& PreProcessorGridCrosssectionWindow::condition() const
+const std::string& PreProcessorGridCrosssectionWindow::condition() const
 {
 	return m_condition;
 }

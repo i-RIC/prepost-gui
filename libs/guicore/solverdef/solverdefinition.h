@@ -34,7 +34,7 @@ public:
 	/// Destructor
 	~SolverDefinition();
 	/// Solver name in adequate locale
-	const QString& name() const;
+	const std::string& name() const;
 	/// Solver caption in adequate locale
 	const QString& caption() const;
 	/// Solver version
@@ -57,7 +57,7 @@ public:
 	const QList<SolverDefinitionGridType*> gridTypes() const;
 	SolverDefinitionGridType* dummyGridType() const;
 	/// Get grid type from name
-	SolverDefinitionGridType* gridType(const QString& name) const;
+	SolverDefinitionGridType* gridType(const std::string& name) const;
 	/// XML Document
 	const QDomDocument& document() const;
 

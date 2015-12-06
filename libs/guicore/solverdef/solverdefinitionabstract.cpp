@@ -3,8 +3,9 @@
 #include "solverdefinitiontranslator.h"
 
 #include <misc/errormessage.h>
-#include <misc/xmlsupport.h>
+#include <misc/stringtool.h>
 #include <misc/versionnumber.h>
+#include <misc/xmlsupport.h>
 
 #include <QDir>
 #include <QDate>
@@ -13,6 +14,8 @@
 #include <QFile>
 #include <QString>
 #include <QTextStream>
+
+#include <string>
 
 class SolverDefinitionAbstract::Impl
 {
@@ -24,7 +27,7 @@ public:
 	void load(const QString& solverfolder, const QLocale& locale);
 
 	QString m_folderName;
-	QString m_name;
+	std::string m_name;
 	QString m_caption;
 	VersionNumber m_version;
 	QString m_copyright;
@@ -87,7 +90,7 @@ void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLo
 	QDomNode SDNode = doc.documentElement();
 	QDomElement SDElem = SDNode.toElement();
 
-	m_name = SDElem.attribute("name");
+	m_name = iRIC::toStr(SDElem.attribute("name"));
 	m_caption = translator.translate(SDElem.attribute("caption"));
 	m_version = VersionNumber {SDElem.attribute("version")};
 	m_copyright = SDElem.attribute("copyright");
@@ -110,7 +113,7 @@ const QString& SolverDefinitionAbstract::folderName() const
 	return m_impl->m_folderName;
 }
 
-const QString& SolverDefinitionAbstract::name() const
+const std::string& SolverDefinitionAbstract::name() const
 {
 	return m_impl->m_name;
 }

@@ -19,11 +19,11 @@ public:
 	Post2dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	virtual ~Post2dWindowGridTypeDataItem();
 	const QList<Post2dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
-	const QString& name();
-	Post2dWindowZoneDataItem* zoneData(const QString& name) const {return m_zoneDataNameMap.value(name);}
+	const std::string& name();
+	Post2dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const {return m_geoDataItem;}
-	LookupTableContainer* lookupTable(const QString& attName) const override {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const std::string& attName) const override {return m_lookupTables.value(attName, 0);}
 	void setupZoneDataItems();
 	void update();
 
@@ -33,10 +33,10 @@ protected:
 
 private:
 	void updateLookupTableRanges();
-	void setupScalarsToColors(const QString& name);
+	void setupScalarsToColors(const std::string& name);
 	SolverDefinitionGridType* m_gridType;
-	QMap<QString, LookupTableContainer*> m_lookupTables;
-	QMap<QString, Post2dWindowZoneDataItem*> m_zoneDataNameMap;
+	QMap<std::string, LookupTableContainer*> m_lookupTables;
+	QMap<std::string, Post2dWindowZoneDataItem*> m_zoneDataNameMap;
 	Post2dWindowGeoDataTopDataItem* m_geoDataItem;
 	QList<Post2dWindowZoneDataItem*> m_zoneDatas;
 	bool m_isZoneDataItemsSetup;

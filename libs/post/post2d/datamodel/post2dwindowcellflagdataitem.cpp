@@ -15,9 +15,9 @@
 #include <vtkProperty.h>
 #include <vtkRenderer.h>
 
-Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const QString& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent) :
+Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const std::string& attname, int val, const QColor& col, const QString& caption, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_attributeName {attname},
+	m_attributeName (attname),
 	m_value {val},
 	m_color {col}
 {
@@ -29,6 +29,32 @@ Post2dWindowCellFlagDataItem::Post2dWindowCellFlagDataItem(const QString& attnam
 Post2dWindowCellFlagDataItem::~Post2dWindowCellFlagDataItem()
 {
 	renderer()->RemoveActor(m_actor);
+}
+
+const std::string& Post2dWindowCellFlagDataItem::attributeName() const
+{
+	return m_attributeName;
+}
+
+int Post2dWindowCellFlagDataItem::value() const
+{
+	return m_value;
+}
+
+const QColor& Post2dWindowCellFlagDataItem::color() const
+{
+	return m_color;
+}
+
+void Post2dWindowCellFlagDataItem::setColor(const QColor& col)
+{
+	m_color = col;
+	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+}
+
+void Post2dWindowCellFlagDataItem::setOpacity(int o)
+{
+	m_actor->GetProperty()->SetOpacity(o / 100.);
 }
 
 void Post2dWindowCellFlagDataItem::setupActors()
@@ -59,7 +85,7 @@ void Post2dWindowCellFlagDataItem::update()
 	if (cont == nullptr) {return;}
 	vtkPointSet* set = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->filteredData();
 	if (set == nullptr) {return;}
-	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(iRIC::toStr(m_attributeName).c_str()));
+	vtkIntArray* cellvals = vtkIntArray::SafeDownCast(set->GetCellData()->GetArray(m_attributeName.c_str()));
 	if (cellvals == nullptr) {
 		// no data available.
 		return;
@@ -89,18 +115,6 @@ void Post2dWindowCellFlagDataItem::assignActorZValues(const ZDepthRange& range)
 }
 
 
-void Post2dWindowCellFlagDataItem::setColor(const QColor& col)
-{
-	m_color = col;
-	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
-}
-
-void Post2dWindowCellFlagDataItem::setOpacity(int o)
-{
-	m_actor->GetProperty()->SetOpacity(o / 100.);
-}
-
-
 void Post2dWindowCellFlagDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QColor col = loadColorAttribute("color", node, Qt::red);
@@ -109,7 +123,7 @@ void Post2dWindowCellFlagDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 
 void Post2dWindowCellFlagDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("attributeName", m_attributeName);
+	writer.writeAttribute("attributeName", m_attributeName.c_str());
 	iRIC::setIntAttribute(writer, "value", m_value);
 	writeColorAttribute("color", m_color, writer);
 }

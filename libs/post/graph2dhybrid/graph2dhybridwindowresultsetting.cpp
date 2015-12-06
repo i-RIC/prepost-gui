@@ -679,7 +679,7 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 	dataType = static_cast<DataType>(iRIC::getIntAttribute(node, "dataType"));
 	dimension = static_cast<PostSolutionInfo::Dimension>(iRIC::getIntAttribute(node, "dimension"));
 	zoneId = iRIC::getIntAttribute(node, "zoneId");
-	zoneName = elem.attribute("zoneName");
+	zoneName = iRIC::toStr(elem.attribute("zoneName"));
 	QDomNode namesNode = iRIC::getChildNode(node, "DataNames");
 	dataNames.clear();
 	if (! namesNode.isNull()) {
@@ -697,7 +697,7 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlS
 	iRIC::setIntAttribute(writer, "dataType", static_cast<int>(dataType));
 	iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
 	iRIC::setIntAttribute(writer, "zoneId", zoneId);
-	writer.writeAttribute("zoneName", zoneName);
+	writer.writeAttribute("zoneName", zoneName.c_str());
 	writer.writeStartElement("DataNames");
 	for (int i = 0; i < dataNames.count(); ++i) {
 		QString name = dataNames.at(i);

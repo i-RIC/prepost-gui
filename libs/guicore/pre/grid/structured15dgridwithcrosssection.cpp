@@ -20,11 +20,14 @@ Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectData
 	init();
 }
 
-Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const QString& zonename, ProjectDataItem* parent) :
+Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const std::string& zonename, ProjectDataItem* parent) :
 	Grid2D {zonename, SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
 {
 	init();
 }
+
+Structured15DGridWithCrossSection::~Structured15DGridWithCrossSection()
+{}
 
 void Structured15DGridWithCrossSection::init()
 {

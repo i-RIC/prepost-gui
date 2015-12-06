@@ -88,7 +88,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 		if (tmparray == nullptr) {continue;}
 		// Check if it is a scalar attribute
 		if (tmparray->GetNumberOfComponents() == 1) {continue;}
-		QString name = pd->GetArray(i)->GetName();
+		std::string name = pd->GetArray(i)->GetName();
 		Post2dWindowNodeVectorArrowDataItem* item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.append(item);
 	}
@@ -103,10 +103,10 @@ Post2dWindowNodeVectorArrowGroupDataItem::~Post2dWindowNodeVectorArrowGroupDataI
 class Post2dWindowNodeVectorArrowGroupDataItem::SelectSolutionCommand : public QUndoCommand
 {
 public:
-	SelectSolutionCommand(const QString& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item) :
+	SelectSolutionCommand(const std::string& newsol, Post2dWindowNodeVectorArrowGroupDataItem* item) :
 		QUndoCommand {Post2dWindowNodeVectorArrowGroupDataItem::tr("Arrow Physical Value Change")},
-		m_newCurrentSolution {newsol},
-		m_oldCurrentSolution {item->m_setting.currentSolution},
+		m_newCurrentSolution (newsol),
+		m_oldCurrentSolution (item->m_setting.currentSolution),
 		m_item {item}
 	{}
 	void redo() {
@@ -118,8 +118,8 @@ public:
 		m_item->updateActorSettings();
 	}
 private:
-	QString m_newCurrentSolution;
-	QString m_oldCurrentSolution;
+	std::string m_newCurrentSolution;
+	std::string m_oldCurrentSolution;
 
 	Post2dWindowNodeVectorArrowGroupDataItem* m_item;
 };
@@ -317,7 +317,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString& currentSol)
+void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
 	Post2dWindowNodeVectorArrowDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
@@ -330,7 +330,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const QString&
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_setting.currentSolution = currentSol;
+	m_setting.currentSolution = currentSol.c_str();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()

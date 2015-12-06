@@ -68,7 +68,7 @@ public:
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	QString currentSolution() {return m_setting.currentSolution;}
+	std::string currentSolution() {return m_setting.currentSolution;}
 
 public slots:
 	void exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*);
@@ -78,7 +78,7 @@ protected:
 	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const QString& currentSol);
+	void setCurrentSolution(const std::string& currentSol);
 
 	virtual vtkPointSet* newParticles(int i) = 0;
 	virtual void setupActors() = 0;

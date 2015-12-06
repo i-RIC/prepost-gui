@@ -6,6 +6,8 @@
 #include <QString>
 #include <QMap>
 
+#include <string>
+
 class PreProcessorGeoDataTopDataItemInterface;
 class Post2dWindowGeoDataGroupDataItem;
 
@@ -25,7 +27,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
-	QMap<QString, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
+	QMap<std::string, Post2dWindowGeoDataGroupDataItem*> m_itemNameMap;
 	PreProcessorGeoDataTopDataItemInterface* m_preGeoDataTopDataItem;
 };
 

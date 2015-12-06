@@ -30,7 +30,7 @@ void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	m_postSolutionInfo = info;
 	ui->gridComboBox->clear();
 	for (PostZoneDataContainer* cont : info->zoneContainers2D()) {
-		ui->gridComboBox->addItem(cont->zoneName());
+		ui->gridComboBox->addItem(cont->zoneName().c_str());
 	}
 	selectZone(0);
 	if (ui->gridComboBox->count() == 1) {

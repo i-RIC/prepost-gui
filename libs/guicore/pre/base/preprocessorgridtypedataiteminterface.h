@@ -18,7 +18,8 @@ public:
 	PreProcessorGridTypeDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent)
 		: PreProcessorDataItem(itemlabel, icon, parent)
 	{}
-	virtual ScalarsToColorsContainer* scalarsToColors(const QString& attName) const = 0;
+	virtual ~PreProcessorGridTypeDataItemInterface() {}
+	virtual ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const = 0;
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const = 0;
 	virtual PreProcessorGeoDataTopDataItemInterface* geoDataTop() const = 0;

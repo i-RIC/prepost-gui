@@ -11,6 +11,8 @@
 #include <vtkSmartPointer.h>
 #include <cgnslib.h>
 
+#include <string>
+
 class RectRegion;
 class SolverDefinitionGridType;
 class PostExportSetting;
@@ -22,7 +24,7 @@ public:
 	const static QString labelName;
 	const static QString IBC;
 	const static double IBCLimit;
-	PostZoneDataContainer(const QString& baseName, const QString& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent);
+	PostZoneDataContainer(const std::string& baseName, const std::string& zoneName, SolverDefinitionGridType* gridtype, ProjectDataItem* parent);
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	vtkPointSet* data() const {return m_data;}
 	vtkPointSet* labelData() const {return m_labelData;}
@@ -35,10 +37,10 @@ public:
 		return m_loadOK;
 	}
 	void loadFromCgnsFile(const int fn) override;
-	const QString& zoneName() const {return m_zoneName;}
+	const std::string& zoneName() const {return m_zoneName;}
 	/// Caption is the region name in pre-processor.
 	/// Currently, zone name is used instead, temporally.
-	QString caption() const {return zoneName();}
+	QString caption() const {return zoneName().c_str();}
 	bool scalarValueExists() const;
 	bool vectorValueExists() const;
 	int nodeIndex(int i, int j, int k) const;
@@ -78,8 +80,8 @@ protected:
 	vtkSmartPointer<vtkPointSet> m_data;
 	vtkSmartPointer<vtkPointSet> m_labelData;
 	vtkSmartPointer<vtkPolyData> m_particleData;
-	QString m_baseName;
-	QString m_zoneName;
+	std::string m_baseName;
+	std::string m_zoneName;
 	int m_baseId;
 	int m_zoneId;
 	int m_cellDim;

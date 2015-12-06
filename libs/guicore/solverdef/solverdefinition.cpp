@@ -34,7 +34,7 @@ public:
 	QString m_executableFilename {};
 	QList<SolverDefinitionGridType*> m_gridTypes {};
 	SolverDefinitionGridType* m_dummyGridType {nullptr};
-	QMap<QString, SolverDefinitionGridType*> m_gridTypeNameMap {};
+	QMap<std::string, SolverDefinitionGridType*> m_gridTypeNameMap {};
 	QDomDocument m_document {};
 
 	SolverDefinitionAbstract m_abstract;
@@ -152,7 +152,7 @@ SolverDefinition::~SolverDefinition()
 	delete m_impl;
 }
 
-const QString& SolverDefinition::name() const
+const std::string& SolverDefinition::name() const
 {
 	return m_impl->m_abstract.name();
 }
@@ -212,7 +212,7 @@ SolverDefinitionGridType* SolverDefinition::dummyGridType() const
 	return m_impl->m_dummyGridType;
 }
 
-SolverDefinitionGridType* SolverDefinition::gridType(const QString& name) const
+SolverDefinitionGridType* SolverDefinition::gridType(const std::string& name) const
 {
 	return m_impl->m_gridTypeNameMap.value(name);
 }

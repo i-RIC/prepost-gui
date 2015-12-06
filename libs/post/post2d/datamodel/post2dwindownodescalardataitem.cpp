@@ -6,9 +6,9 @@
 #include <QMenu>
 #include <QMouseEvent>
 
-Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const QString& name, const QString& caption, Post2dWindowDataItem* parent) :
+Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name {name}
+	m_name (name)
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 

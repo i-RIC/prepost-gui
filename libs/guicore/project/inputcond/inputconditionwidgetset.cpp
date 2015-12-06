@@ -12,11 +12,15 @@
 #include "inputconditionwidgetstring.h"
 
 #include <misc/errormessage.h>
+#include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
 #include <QDomNode>
 #include <QDomNodeList>
+
+InputConditionWidgetSet::InputConditionWidgetSet()
+{}
 
 InputConditionWidgetSet::~InputConditionWidgetSet()
 {
@@ -29,6 +33,11 @@ void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionCont
 	buildWidgets(condNode, cset, t, forBC);
 	// build dependencies between the widgets.
 	buildDeps(condNode, cset, forBC);
+}
+
+InputConditionWidget* InputConditionWidgetSet::widget(const std::string& name) const
+{
+	return m_widgets.value(name);
 }
 
 void InputConditionWidgetSet::clear()
@@ -93,7 +102,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	static QString truestr("true");
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
-	QString parameterName = itemElem.attribute("name");
+	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
 	// get the definition node;
 	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 	if (defNode.isNull()) {
@@ -195,8 +204,7 @@ void InputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, InputCond
 }
 void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputConditionContainerSet& cset)
 {
-	// get the name;
-	QString parameterName = itemNode.toElement().attribute("name");
+	std::string parameterName = iRIC::toStr(itemNode.toElement().attribute("name"));
 	// get the definition node;
 	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 	if (defNode.isNull()) {

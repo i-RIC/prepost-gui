@@ -55,7 +55,6 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues(int fn)
 	m_dataContainer->setPointIndex(s.gridIndex());
 	m_dataContainer->update(fn);
 	QList<double> timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
-	const Graph2dHybridWindowResultSetting& setting = dataModel()->setting();
 
 	if (m_dataContainer->data().count() > timesteps.count()) {
 		return;
@@ -76,12 +75,8 @@ Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridPointResultDataIte
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
 
-	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
 	Graph2dHybridWindow* w = dynamic_cast<Graph2dHybridWindow*>(dataModel()->mainWindow());
 	Graph2dHybridWindowControlWidget* c = w->controlWidget();
-
-	int currentStep = postInfo->currentStep();
-	const QList<double>& timesteps = postInfo->timeSteps()->timesteps();
 
 	QStringList args;
 	args.append(m_standardItem->text());

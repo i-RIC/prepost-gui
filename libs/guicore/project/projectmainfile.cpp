@@ -151,7 +151,7 @@ void ProjectMainFile::loadSolverInformation()
 	}
 	QDomElement element = doc.documentElement().toElement();
 	m_iRICVersion = element.attribute("version", "1.0");
-	m_solverName = element.attribute("solverName");
+	m_solverName = iRIC::toStr(element.attribute("solverName"));
 	m_solverVersion = element.attribute("solverVersion");
 }
 
@@ -243,7 +243,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 	m_iRICVersion = element.attribute("version");
 	checkVersionCompatibility();
 
-	m_solverName = element.attribute("solverName");
+	m_solverName = iRIC::toStr(element.attribute("solverName"));
 	m_solverVersion = element.attribute("solverVersion");
 
 	// coordinate system
@@ -282,7 +282,7 @@ void ProjectMainFile::doLoadFromProjectMainFile(const QDomNode& node)
 void ProjectMainFile::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("version", m_iRICVersion.toString());
-	writer.writeAttribute("solverName", m_solverName);
+	writer.writeAttribute("solverName", m_solverName.c_str());
 	writer.writeAttribute("solverVersion", m_solverVersion.toString());
 
 	if (m_coordinateSystem != nullptr) {
@@ -365,14 +365,14 @@ void ProjectMainFile::importCgnsFile(const QString& fname)
 	QString to = m_projectData->workCgnsFileName(fnamebody);
 	QFile::copy(fname, to);
 
-	QString solverName;
+	std::string solverName;
 	VersionNumber versionNumber;
 
-	bool ret = ProjectCgnsFile::readSolverInfo(to, solverName, versionNumber);
+	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
 	if (ret == true){
 		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))){
 			QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.").arg(solverName).arg(versionNumber.toString()));
+				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.").arg(solverName.c_str()).arg(versionNumber.toString()));
 			projectData()->setPostOnlyMode();
 		}
 	} else {
@@ -407,10 +407,10 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 	QString to = m_projectData->workCgnsFileName(fnamebody);
 	QFile::copy(fname, to);
 
-	QString solverName;
+	std::string solverName;
 	VersionNumber versionNumber;
 
-	bool ret = ProjectCgnsFile::readSolverInfo(to, solverName, versionNumber);
+	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
 	if (ret == true) {
 		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))) {
 			projectData()->setPostOnlyMode();
@@ -973,12 +973,12 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 		return false;
 	}
 	QDomElement elem = doc.documentElement();
-	QString solvername = elem.attribute("solverName");
+	std::string solvername = iRIC::toStr(elem.attribute("solverName"));
 	QString solverVersion = elem.attribute("solverVersion");
 	VersionNumber vn(solverVersion);
 
 	if (solvername != m_solverName || ! m_solverVersion.compatibleWith(vn)) {
-		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?").arg(solvername).arg(solverVersion), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?").arg(solvername.c_str()).arg(solverVersion), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return false;}
 	}
 	m_postProcessors->loadFromProjectMainFile(doc.documentElement(), true);
@@ -1003,7 +1003,7 @@ bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 	w.setAutoFormatting(true);
 	w.writeStartDocument("1.0");
 	w.writeStartElement("iRICPostProcessingSettings");
-	w.writeAttribute("solverName", m_solverName);
+	w.writeAttribute("solverName", m_solverName.c_str());
 	w.writeAttribute("solverVersion", m_solverVersion.toString());
 	m_postProcessors->saveToProjectMainFile(w);
 	w.writeEndElement();

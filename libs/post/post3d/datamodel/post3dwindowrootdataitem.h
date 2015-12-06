@@ -32,8 +32,8 @@ public:
 //	}
 	void setupStandardModel(QStandardItemModel* model);
 	const QList<Post3dWindowGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
-	Post3dWindowGridTypeDataItem* gridTypeDataItem(const QString& name) const;
-	Post3dWindowZoneDataItem* zoneDataItem(const QString& name);
+	Post3dWindowGridTypeDataItem* gridTypeDataItem(const std::string& name) const;
+	Post3dWindowZoneDataItem* zoneDataItem(const std::string& name);
 	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
 	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
 

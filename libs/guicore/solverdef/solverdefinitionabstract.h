@@ -35,7 +35,7 @@ public:
 	/// (ex. definition.xml, translation_ja_JP.xml, solver.exe)
 	const QString& folderName() const;
 	/// Solver name
-	const QString& name() const;
+	const std::string& name() const;
 	/// Solver caption in adequate locale
 	const QString& caption() const;
 	/// Solver version

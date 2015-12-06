@@ -93,12 +93,12 @@ PreProcessorGridAttributeCellGroupDataItem::~PreProcessorGridAttributeCellGroupD
 class PreProcessorGridRelatedConditionCellGroupSelectCondition : public QUndoCommand
 {
 public:
-	PreProcessorGridRelatedConditionCellGroupSelectCondition(const QString& newcond, PreProcessorGridAttributeCellGroupDataItem* item)
-		: QUndoCommand(PreProcessorGridAttributeCellGroupDataItem::tr("Cell Attribute Change")) {
-		m_newCurrentCondition = newcond;
-		m_oldCurrentCondition = item->m_currentCondition;
-		m_item = item;
-	}
+	PreProcessorGridRelatedConditionCellGroupSelectCondition(const std::string& newcond, PreProcessorGridAttributeCellGroupDataItem* item) :
+		QUndoCommand(PreProcessorGridAttributeCellGroupDataItem::tr("Cell Attribute Change")),
+		m_newCurrentCondition (newcond),
+		m_oldCurrentCondition (item->m_currentCondition),
+		m_item {item}
+	{}
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setCurrentCondition(m_oldCurrentCondition);
@@ -120,8 +120,8 @@ public:
 		m_item->setIsCommandExecuting(false);
 	}
 private:
-	QString m_oldCurrentCondition;
-	QString m_newCurrentCondition;
+	std::string m_newCurrentCondition;
+	std::string m_oldCurrentCondition;
 
 	PreProcessorGridAttributeCellGroupDataItem* m_item;
 };
@@ -137,12 +137,12 @@ void PreProcessorGridAttributeCellGroupDataItem::exclusivelyCheck(PreProcessorGr
 	}
 }
 
-void PreProcessorGridAttributeCellGroupDataItem::setCurrentCondition(const QString& currentCond)
+void PreProcessorGridAttributeCellGroupDataItem::setCurrentCondition(const std::string& sol)
 {
 	PreProcessorGridAttributeCellDataItem* current = nullptr;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
-		if (tmpItem->condition()->name() == currentCond) {
+		if (tmpItem->condition()->name() == sol) {
 			current = tmpItem;
 		}
 		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
@@ -150,7 +150,7 @@ void PreProcessorGridAttributeCellGroupDataItem::setCurrentCondition(const QStri
 	if (current != nullptr) {
 		current->standardItem()->setCheckState(Qt::Checked);
 	}
-	m_currentCondition = currentCond;
+	m_currentCondition = sol;
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
@@ -170,9 +170,9 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 	// update current active scalar
 
 	vtkCellData* data = g->vtkGrid()->GetCellData();
-	data->SetActiveScalars(iRIC::toStr(m_currentCondition).c_str());
+	data->SetActiveScalars(m_currentCondition.c_str());
 	PreProcessorGridTypeDataItem* typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(iRIC::toStr(m_currentCondition).c_str());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(m_currentCondition.c_str());
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
 
@@ -184,35 +184,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSettings()
 	updateVisibilityWithoutRendering();
 }
 
-void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_opacity.load(node);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		QString name = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name();
-		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "CellAttribute", "name", name);
-		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
-	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
-		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
-			// this is the current Condition!
-			setCurrentCondition(tmpItem->condition()->name());
-		}
-	}
-}
-
-void PreProcessorGridAttributeCellGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	m_opacity.save(writer);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		writer.writeStartElement("CellAttribute");
-		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name());
-		(*it)->saveToProjectMainFile(writer);
-		writer.writeEndElement();
-	}
-}
-
-void PreProcessorGridAttributeCellGroupDataItem::informDataChange(const QString& name)
+void PreProcessorGridAttributeCellGroupDataItem::informDataChange(const std::string& name)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent())->informgridRelatedConditionChange(name);
 }
@@ -455,4 +427,32 @@ bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* too
 		action->setVisible(true);
 	}
 	return true;
+}
+
+void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_opacity.load(node);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		std::string name = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name();
+		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "CellAttribute", "name", name.c_str());
+		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
+	}
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
+		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
+			// this is the current Condition!
+			setCurrentCondition(tmpItem->condition()->name());
+		}
+	}
+}
+
+void PreProcessorGridAttributeCellGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	m_opacity.save(writer);
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+		writer.writeStartElement("CellAttribute");
+		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name().c_str());
+		(*it)->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }

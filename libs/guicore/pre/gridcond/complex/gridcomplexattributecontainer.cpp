@@ -35,7 +35,7 @@ void GridComplexAttributeContainer::allocate()
 	if (da == nullptr) {
 		// not found maybe reset?
 		da = vtkIntArray::New();
-		da->SetName(iRIC::toStr(name()).c_str());
+		da->SetName(name().c_str());
 		if (condition()->position() == SolverDefinitionGridAttribute::Node) {
 			m_grid->vtkGrid()->GetPointData()->AddArray(da);
 		} else {
@@ -55,9 +55,9 @@ vtkIntArray* GridComplexAttributeContainer::dataArray() const
 	vtkPointSet* ps = const_cast<vtkPointSet*> (GridAttributeContainer::m_grid->vtkGrid());
 	vtkDataArray* da = nullptr;
 	if (condition()->position() == SolverDefinitionGridAttribute::Node) {
-		da = ps->GetPointData()->GetArray(iRIC::toStr(GridComplexAttributeContainer::name()).c_str());
+		da = ps->GetPointData()->GetArray(GridComplexAttributeContainer::name().c_str());
 	} else {
-		da = ps->GetCellData()->GetArray(iRIC::toStr(GridComplexAttributeContainer::name()).c_str());
+		da = ps->GetCellData()->GetArray(GridComplexAttributeContainer::name().c_str());
 	}
 	return vtkIntArray::SafeDownCast(da);
 }

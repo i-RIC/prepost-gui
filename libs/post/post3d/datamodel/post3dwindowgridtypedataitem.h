@@ -18,12 +18,12 @@ public:
 	Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent);
 	~Post3dWindowGridTypeDataItem();
 	const QList<Post3dWindowZoneDataItem*>& zoneDatas() const {return m_zoneDatas;}
-	const QString& name() const;
-	Post3dWindowZoneDataItem* zoneData(const QString& name) const {return m_zoneDataNameMap.value(name);}
+	const std::string& name() const;
+	Post3dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* lookupTable(const QString& attName) const {return m_lookupTables.value(attName, 0);}
-	void setValueRange(const QString& name);
+	LookupTableContainer* lookupTable(const std::string& attName) const {return m_lookupTables.value(attName, 0);}
+	void setValueRange(const std::string& name);
 	void setupZoneDataItems();
 	void update();
 
@@ -33,12 +33,12 @@ protected:
 
 private:
 	void updateLookupTableRanges();
-	void setupScalarsToColors(const QString& name);
+	void setupScalarsToColors(const std::string& name);
 	const QString nextChildCaption();
 	const QString nextChildZonename();
 	SolverDefinitionGridType* m_gridType;
-	QMap<QString, LookupTableContainer*> m_lookupTables;
-	QMap<QString, Post3dWindowZoneDataItem*> m_zoneDataNameMap;
+	QMap<std::string, LookupTableContainer*> m_lookupTables;
+	QMap<std::string, Post3dWindowZoneDataItem*> m_zoneDataNameMap;
 	QList<Post3dWindowZoneDataItem*> m_zoneDatas;
 	/// Action to add new condition.
 	QAction* m_addConditionAction;

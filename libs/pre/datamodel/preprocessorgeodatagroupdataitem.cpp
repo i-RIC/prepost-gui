@@ -64,7 +64,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	m_condition {cond}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-	setSubPath(cond->name());
+	setSubPath(cond->name().c_str());
 
 	m_addSignalMapper = nullptr;
 
@@ -93,7 +93,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 		m_scalarBarSetting.initForLegendBox();
 	}
 	// for scalar bar / legend box
-	m_title = m_condition->englishCaption();
+	m_title = m_condition->englishCaption().c_str();
 
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
@@ -443,10 +443,10 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_condition->name());
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	writer.writeAttribute("name", m_condition->name().c_str());
+	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
-		(*it)->saveToProjectMainFile(writer);
+		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -939,8 +939,8 @@ bool PreProcessorGeoDataGroupDataItem::polygonExists() const
 void PreProcessorGeoDataGroupDataItem::saveToCgnsFile(const int fn)
 {
 	int index = 1;
-	cg_user_data_write(iRIC::toStr(m_condition->name()).c_str());
-	cg_gorel(fn, iRIC::toStr(m_condition->name()).c_str(), 0, NULL);
+	cg_user_data_write(m_condition->name().c_str());
+	cg_gorel(fn, m_condition->name().c_str(), 0, NULL);
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGeoDataDataItem* ritem = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		ritem->setIndex(index);

@@ -55,7 +55,7 @@ void PreProcessorGeoDataComplexGroupDataItem::loadFromCgnsFile(const int fn)
 	int defId = -1;
 
 	clear();
-	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(iRIC::toStr(m_condition->name()).c_str()), &count);
+	int ret = cg_iRIC_Read_Complex_Count(const_cast<char*>(m_condition->name().c_str()), &count);
 	if (ret != 0) {
 		goto INITGROUPS;
 	}

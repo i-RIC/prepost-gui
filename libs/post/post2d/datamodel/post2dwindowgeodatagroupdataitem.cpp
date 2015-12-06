@@ -81,7 +81,7 @@ void Post2dWindowGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Post2dWindowGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_condition->name());
+	writer.writeAttribute("name", m_condition->name().c_str());
 	for (auto child : m_childItems) {
 		writer.writeStartElement("GeoData");
 		child->saveToProjectMainFile(writer);

@@ -11,8 +11,9 @@ class PreProcessorGridCrosssectionWindowProjectDataItem : public ProjectDataItem
 {
 
 public:
-	PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const QString& cond, QWidget* parentWindow);
+	PreProcessorGridCrosssectionWindowProjectDataItem(PreProcessorGridAttributeNodeDataItem* item, const std::string& cond, QWidget* parentWindow);
 	~PreProcessorGridCrosssectionWindowProjectDataItem();
+
 	void informWindowClose();
 	void requestWindowClose();
 	PreProcessorGridCrosssectionWindow* window() const;
