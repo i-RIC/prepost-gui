@@ -20,26 +20,32 @@ InputConditionContainer::InputConditionContainer(const InputConditionContainer& 
 	m_isComplexCondition {false}
 {}
 
-void InputConditionContainer::setBCProperty(const QString& bcname, int bcindex)
-{
-	m_bcName = bcname;
-	m_bcIndex = bcindex;
-	m_isBoundaryCondition = true;
-	m_isComplexCondition = false;
-}
-
-void InputConditionContainer::setComplexProperty(const QString& compname, int compindex)
-{
-	m_complexName = compname;
-	m_complexIndex = compindex;
-	m_isBoundaryCondition = false;
-	m_isComplexCondition = true;
-}
+InputConditionContainer::~InputConditionContainer()
+{}
 
 void InputConditionContainer::setName(const QString& name)
 {
 	m_name = name;
 }
+
+void InputConditionContainer::setBCProperty(const QString& bcname, int bcindex)
+{
+	m_isBoundaryCondition = true;
+	m_bcName = bcname;
+	m_bcIndex = bcindex;
+
+	m_isComplexCondition = false;
+}
+
+void InputConditionContainer::setComplexProperty(const QString& compname, int compindex)
+{
+	m_isComplexCondition = true;
+	m_complexName = compname;
+	m_complexIndex = compindex;
+
+	m_isBoundaryCondition = false;
+}
+
 
 void InputConditionContainer::copyValues(const InputConditionContainer& c)
 {
@@ -52,12 +58,37 @@ const QString& InputConditionContainer::name() const
 	return m_name;
 }
 
+const QString& InputConditionContainer::caption() const
+{
+	return m_caption;
+}
+
+bool InputConditionContainer::isBoundaryCondition() const
+{
+	return m_isBoundaryCondition;
+}
+
 const QString& InputConditionContainer::bcName() const
 {
 	return m_bcName;
 }
 
-const QString& InputConditionContainer::caption() const
+int InputConditionContainer::bcIndex() const
 {
-	return m_caption;
+	return m_bcIndex;
+}
+
+bool InputConditionContainer::isComplexCondition() const
+{
+	return m_isComplexCondition;
+}
+
+const QString& InputConditionContainer::complexName() const
+{
+	return m_complexName;
+}
+
+int InputConditionContainer::complexIndex() const
+{
+	return m_complexIndex;
 }

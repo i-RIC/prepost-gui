@@ -21,22 +21,32 @@ public:
 	InputConditionContainerFunctional();
 	InputConditionContainerFunctional(const QString& n, const QString& c, QDomNode defNode, const QDir& dir);
 	InputConditionContainerFunctional(const InputConditionContainerFunctional& i);
+	~InputConditionContainerFunctional();
+
 	InputConditionContainerFunctional& operator=(const InputConditionContainerFunctional& i);
-	void removeAllValues();
-	void clear();
-	int load() override;
-	int save() override;
-	QVariant variantValue() const override;
-	void setValue(const QVector<double>& x, const QVector<double>& y);
+
+	int valueCount() const;
 	QVector<double>& x();
 	QVector<double>& y();
-	int valueCount() const;
+
 	QVector<double>& param();
 	const QVector<double>& param() const;
+
 	QVector<double>& value(int index);
 	const QVector<double>& value(int index) const;
+	void setValue(const QVector<double>& x, const QVector<double>& y);
+
+	void removeAllValues();
+
+	int load() override;
+	int save() override;
+	void clear() override;
+
+	QVariant variantValue() const override;
+
 	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
 	void exportToYaml(QTextStream* stream, const QDir& dir) override;
+
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);
 
@@ -45,7 +55,9 @@ signals:
 
 private:
 	void copyValues(const InputConditionContainerFunctional& f);
+
 	bool loadDefaultFromCsvFile(const QString& filename);
+
 	static bool loadFromCsvFile(const QString& filename, Data* param, QList<Data>* values);
 	static bool saveToCsvFile(const QString& filename, const Data& param, const QList<Data>& values);
 

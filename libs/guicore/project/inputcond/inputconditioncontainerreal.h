@@ -14,15 +14,22 @@ public:
 	InputConditionContainerReal();
 	InputConditionContainerReal(const QString& n, const QString& c, const QDomNode& defNode);
 	InputConditionContainerReal(const InputConditionContainerReal& i);
+	~InputConditionContainerReal();
+
 	InputConditionContainerReal& operator=(const InputConditionContainerReal& i);
-	void clear();
+
+	double value() const;
+	void setValue(double v);
+
+	double defaultValue() const;
+	void setDefaultValue(double d);
+
 	int load() override;
 	int save() override;
+	void clear() override;
+
 	virtual QVariant variantValue() const override;
-	void setValue(double v);
-	double value() const;
-	void setDefaultValue(double d);
-	double defaultValue() const;
+
 	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
 	void exportToYaml(QTextStream* stream, const QDir& dir) override;
 
@@ -30,13 +37,13 @@ signals:
 	void valueChanged(double newvalue);
 	void valueChanged();
 
-protected:
+private:
 	void setup(const QDomNode& defNode);
 	void copyValues(const InputConditionContainerReal& i);
 
 private:
-	double m_default;
 	double m_value;
+	double m_default;
 };
 
 #endif

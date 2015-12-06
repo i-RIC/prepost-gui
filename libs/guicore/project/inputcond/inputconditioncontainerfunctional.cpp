@@ -51,6 +51,9 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const Input
 	copyValues(i);
 }
 
+InputConditionContainerFunctional::~InputConditionContainerFunctional()
+{}
+
 InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(const InputConditionContainerFunctional& i)
 {
 	copyValues(i);
@@ -58,12 +61,51 @@ InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(
 	return *this;
 }
 
-void InputConditionContainerFunctional::clear()
+int InputConditionContainerFunctional::valueCount() const
 {
-	m_param.values = m_paramDefault.values;
-	for (int i = 0; i < m_values.count(); ++i){
-		m_values[i].values = m_valuesDefault[i].values;
-	}
+	return m_values.count();
+}
+
+QVector<double>& InputConditionContainerFunctional::x()
+{
+	return param();
+}
+
+QVector<double>& InputConditionContainerFunctional::y()
+{
+	return value(0);
+}
+
+QVector<double>& InputConditionContainerFunctional::param()
+{
+	return m_param.values;
+}
+
+const QVector<double>& InputConditionContainerFunctional::param() const
+{
+	return m_param.values;
+}
+
+QVector<double>& InputConditionContainerFunctional::value(int index)
+{
+	return m_values[index].values;
+}
+
+const QVector<double>& InputConditionContainerFunctional::value(int index) const
+{
+	return m_values[index].values;
+}
+
+void InputConditionContainerFunctional::setValue(const QVector<double>& x, const QVector<double>& y)
+{
+	m_param.name = "Param";
+	m_param.values = x;
+
+	m_values.clear();
+	Data val;
+	val.name = "Value";
+	val.values = y;
+	m_values.append(val);
 }
 
 void InputConditionContainerFunctional::removeAllValues(){
@@ -77,21 +119,20 @@ int InputConditionContainerFunctional::load()
 {
 	cgsize_t length;
 	double* tmpdata;
-//	double* data;
 	int result;
 
 	std::string tmpbcnameStr = iRIC::toStr(bcName());
 	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
-	std::string tmpcomplexnameStr = iRIC::toStr(m_complexName);
+	std::string tmpcomplexnameStr = iRIC::toStr(complexName());
 	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
 	std::string tmpnameStr = iRIC::toStr(name());
 	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
 	std::vector<double> data;
 
-	if (m_isBoundaryCondition) {
-		result = cg_iRIC_Read_BC_FunctionalSize(tmpbcname, m_bcIndex, tmpname, &length);
-	} else if (m_isComplexCondition) {
-		result = cg_iRIC_Read_Complex_FunctionalSize(tmpcomplexname, m_complexIndex, tmpname, &length);
+	if (isBoundaryCondition()) {
+		result = cg_iRIC_Read_BC_FunctionalSize(tmpbcname, bcIndex(), tmpname, &length);
+	} else if (isComplexCondition()) {
+		result = cg_iRIC_Read_Complex_FunctionalSize(tmpcomplexname, complexIndex(), tmpname, &length);
 	} else {
 		result = cg_iRIC_Read_FunctionalSize(tmpname, &length);
 	}
@@ -99,10 +140,10 @@ int InputConditionContainerFunctional::load()
 	data.assign(length, 0);
 
 	// load parameter.
-	if (m_isBoundaryCondition) {
-		result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, m_bcIndex, tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
-	} else if (m_isComplexCondition) {
-		result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, m_complexIndex, tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
+	if (isBoundaryCondition()) {
+		result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
+	} else if (isComplexCondition()) {
+		result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
 	} else {
 		result = cg_iRIC_Read_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), data.data());
 	}
@@ -117,10 +158,10 @@ int InputConditionContainerFunctional::load()
 	// load values.
 	for (int i = 0; i < m_values.count(); ++i) {
 		Data& val = m_values[i];
-		if (m_isBoundaryCondition) {
-			result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, m_bcIndex, tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
-		} else if (m_isComplexCondition) {
-			result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, m_complexIndex, tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
+		if (isBoundaryCondition()) {
+			result = cg_iRIC_Read_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
+		} else if (isComplexCondition()) {
+			result = cg_iRIC_Read_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
 		} else {
 			result = cg_iRIC_Read_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), data.data());
 		}
@@ -146,7 +187,7 @@ int InputConditionContainerFunctional::save()
 {
 	std::string tmpbcnameStr = iRIC::toStr(bcName());
 	char* tmpbcname = const_cast<char*>(tmpbcnameStr.c_str());
-	std::string tmpcomplexnameStr = iRIC::toStr(m_complexName);
+	std::string tmpcomplexnameStr = iRIC::toStr(complexName());
 	char* tmpcomplexname = const_cast<char*>(tmpcomplexnameStr.c_str());
 	std::string tmpnameStr = iRIC::toStr(name());
 	char* tmpname = const_cast<char*>(tmpnameStr.c_str());
@@ -158,10 +199,10 @@ int InputConditionContainerFunctional::save()
 	for (int i = 0; i < length; ++i) {
 		data[i] = m_param.values.at(i);
 	}
-	if (m_isBoundaryCondition) {
-		cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, m_bcIndex, tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
-	} else if (m_isComplexCondition) {
-		cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, m_complexIndex, tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
+	if (isBoundaryCondition()) {
+		cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
+	} else if (isComplexCondition()) {
+		cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
 	} else {
 		cg_iRIC_Write_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(m_param.name).c_str()), length, data.data());
 	}
@@ -172,10 +213,10 @@ int InputConditionContainerFunctional::save()
 		for (int i = 0; i < length; ++i) {
 			data[i] = val.values.at(i);
 		}
-		if (m_isBoundaryCondition) {
-			cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, m_bcIndex, tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
-		} else if (m_isComplexCondition) {
-			cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, m_complexIndex, tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
+		if (isBoundaryCondition()) {
+			cg_iRIC_Write_BC_FunctionalWithName(tmpbcname, bcIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
+		} else if (isComplexCondition()) {
+			cg_iRIC_Write_Complex_FunctionalWithName(tmpcomplexname, complexIndex(), tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
 		} else {
 			cg_iRIC_Write_FunctionalWithName(tmpname, const_cast<char*>(iRIC::toStr(val.name).c_str()), length, data.data());
 		}
@@ -183,56 +224,17 @@ int InputConditionContainerFunctional::save()
 	return 0;
 }
 
+void InputConditionContainerFunctional::clear()
+{
+	m_param.values = m_paramDefault.values;
+	for (int i = 0; i < m_values.count(); ++i){
+		m_values[i].values = m_valuesDefault[i].values;
+	}
+}
+
 QVariant InputConditionContainerFunctional::variantValue() const
 {
 	return QVariant(0);
-}
-
-void InputConditionContainerFunctional::setValue(const QVector<double>& x, const QVector<double>& y)
-{
-	m_param.name = "Param";
-	m_param.values = x;
-
-	m_values.clear();
-	Data val;
-	val.name = "Value";
-	val.values = y;
-	m_values.append(val);
-}
-
-QVector<double>& InputConditionContainerFunctional::x()
-{
-	return param();
-}
-
-QVector<double>& InputConditionContainerFunctional::y()
-{
-	return value(0);
-}
-
-int InputConditionContainerFunctional::valueCount() const
-{
-	return m_values.count();
-}
-
-QVector<double>& InputConditionContainerFunctional::param()
-{
-	return m_param.values;
-}
-
-const QVector<double>& InputConditionContainerFunctional::param() const
-{
-	return m_param.values;
-}
-
-QVector<double>& InputConditionContainerFunctional::value(int index)
-{
-	return m_values[index].values;
-}
-
-const QVector<double>& InputConditionContainerFunctional::value(int index) const
-{
-	return m_values[index].values;
 }
 
 void InputConditionContainerFunctional::importFromYaml(const YAML::Node& doc, const QDir& dir)
@@ -250,15 +252,6 @@ void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const 
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 
-void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
-{
-	InputConditionContainer::copyValues(f);
-	m_param = f.m_param;
-	m_values = f.m_values;
-	m_paramDefault = f.m_paramDefault;
-	m_valuesDefault = f.m_valuesDefault;
-}
-
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
 {
 	removeAllValues();
@@ -268,6 +261,15 @@ bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filen
 bool InputConditionContainerFunctional::saveDataToCsvFile(const QString& filename)
 {
 	return saveToCsvFile(filename, m_param, m_values);
+}
+
+void InputConditionContainerFunctional::copyValues(const InputConditionContainerFunctional& f)
+{
+	InputConditionContainer::copyValues(f);
+	m_param = f.m_param;
+	m_values = f.m_values;
+	m_paramDefault = f.m_paramDefault;
+	m_valuesDefault = f.m_valuesDefault;
 }
 
 bool InputConditionContainerFunctional::loadDefaultFromCsvFile(const QString& filename)

@@ -12,20 +12,24 @@ class GUICOREDLL_EXPORT InputConditionContainerInteger : public InputConditionCo
 
 public:
 	InputConditionContainerInteger();
-	/// Constructor
 	InputConditionContainerInteger(const QString& n, const QString& c, const QDomNode& defNode);
-	/// Constructor (with copying)
 	InputConditionContainerInteger(const InputConditionContainerInteger& i);
-	/// Copyer
+	~InputConditionContainerInteger();
+
 	InputConditionContainerInteger& operator=(const InputConditionContainerInteger& i);
-	void clear();
+
+	int value() const;
+	void setValue(int v);
+
+	int defaultValue() const;
+	void setDefaultValue(int d);
+
 	int load() override;
 	int save() override;
+	void clear() override;
+
 	QVariant variantValue() const override;
-	void setValue(int v);
-	int value() const;
-	void setDefaultValue(int d);
-	int defaultValue() const;
+
 	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
 	void exportToYaml(QTextStream* stream, const QDir& dir) override;
 
@@ -38,8 +42,8 @@ protected:
 	void copyValues(const InputConditionContainerInteger& i);
 
 private:
-	int m_default;
 	int m_value;
+	int m_default;
 };
 
 #endif // INPUTCONDITIONCONTAINERINTEGER_H

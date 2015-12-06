@@ -10,7 +10,6 @@
 
 #include <iriclib.h>
 
-
 InputConditionContainerReal::InputConditionContainerReal() :
 	InputConditionContainer(),
 	m_value {0},
@@ -29,29 +28,18 @@ InputConditionContainerReal::InputConditionContainerReal(const InputConditionCon
 	copyValues(i);
 }
 
+InputConditionContainerReal::~InputConditionContainerReal()
+{}
+
 InputConditionContainerReal& InputConditionContainerReal::operator=(const InputConditionContainerReal& i)
 {
 	copyValues(i);
 	return *this;
 }
 
-void InputConditionContainerReal::setup(const QDomNode& defNode)
+double InputConditionContainerReal::value() const
 {
-	QDomElement e = defNode.toElement();
-	m_default = e.attribute("default", "0").toDouble();
-	m_value = m_default;
-}
-
-void InputConditionContainerReal::copyValues(const InputConditionContainerReal& i)
-{
-	InputConditionContainer::copyValues(i);
-	m_value = i.m_value;
-	m_default = i.m_default;
-}
-
-QVariant InputConditionContainerReal::variantValue() const
-{
-	return QVariant(m_value);
+	return m_value;
 }
 
 void InputConditionContainerReal::setValue(double v)
@@ -63,9 +51,9 @@ void InputConditionContainerReal::setValue(double v)
 	}
 }
 
-double InputConditionContainerReal::value() const
+double InputConditionContainerReal::defaultValue() const
 {
-	return m_value;
+	return m_default;
 }
 
 void InputConditionContainerReal::setDefaultValue(double d)
@@ -73,27 +61,13 @@ void InputConditionContainerReal::setDefaultValue(double d)
 	m_default = d;
 }
 
-double InputConditionContainerReal::defaultValue() const
-{
-	return m_default;
-}
-
-void InputConditionContainerReal::clear()
-{
-	if (m_default != m_value) {
-		m_value = m_default;
-		emit valueChanged(m_value);
-		emit valueChanged();
-	}
-}
-
 int InputConditionContainerReal::load()
 {
 	int ret;
-	if (m_isBoundaryCondition) {
-		ret = cg_iRIC_Read_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
-	} else if (m_isComplexCondition) {
-		ret = cg_iRIC_Read_Complex_Real(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+	if (isBoundaryCondition()) {
+		ret = cg_iRIC_Read_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
+	} else if (isComplexCondition()) {
+		ret = cg_iRIC_Read_Complex_Real(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
 	} else {
 		ret = cg_iRIC_Read_Real(const_cast<char*>(iRIC::toStr(name()).c_str()), &m_value);
 	}
@@ -108,13 +82,27 @@ int InputConditionContainerReal::load()
 
 int InputConditionContainerReal::save()
 {
-	if (m_isBoundaryCondition) {
-		return cg_iRIC_Write_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), m_bcIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
-	} else if (m_isComplexCondition) {
-		return cg_iRIC_Write_Complex_Real(const_cast<char*>(iRIC::toStr(m_complexName).c_str()), m_complexIndex, const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+	if (isBoundaryCondition()) {
+		return cg_iRIC_Write_BC_Real(const_cast<char*>(iRIC::toStr(bcName()).c_str()), bcIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
+	} else if (isComplexCondition()) {
+		return cg_iRIC_Write_Complex_Real(const_cast<char*>(iRIC::toStr(complexName()).c_str()), complexIndex(), const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
 	} else {
 		return cg_iRIC_Write_Real(const_cast<char*>(iRIC::toStr(name()).c_str()), m_value);
 	}
+}
+
+void InputConditionContainerReal::clear()
+{
+	if (m_default != m_value) {
+		m_value = m_default;
+		emit valueChanged(m_value);
+		emit valueChanged();
+	}
+}
+
+QVariant InputConditionContainerReal::variantValue() const
+{
+	return QVariant(m_value);
 }
 
 void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QDir&)
@@ -129,4 +117,18 @@ void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QD
 void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir&)
 {
 	*stream << name() << ": " << m_value << "\t#[real] " << caption() << "\r\n";
+}
+
+void InputConditionContainerReal::setup(const QDomNode& defNode)
+{
+	QDomElement e = defNode.toElement();
+	m_default = e.attribute("default", "0").toDouble();
+	m_value = m_default;
+}
+
+void InputConditionContainerReal::copyValues(const InputConditionContainerReal& i)
+{
+	InputConditionContainer::copyValues(i);
+	m_value = i.m_value;
+	m_default = i.m_default;
 }
