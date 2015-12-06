@@ -371,18 +371,18 @@ void PreProcessorGridTypeDataItem::updateNewGridActionStatus()
 	m_addNewGridAction->setEnabled(enable);
 }
 
-bool PreProcessorGridTypeDataItem::gridEdited() const
+bool PreProcessorGridTypeDataItem::isGridEdited() const
 {
 	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
-		bool edited = (*cit)->gridEdited();
+		bool edited = (*cit)->isGridEdited();
 		if (edited) {return true;}
 	}
 	return false;
 }
 
-void PreProcessorGridTypeDataItem::toggleGridEditFlag()
+void PreProcessorGridTypeDataItem::setGridEdited()
 {
 	for (auto cit = m_conditions.begin(); cit != m_conditions.end(); ++cit) {
-		(*cit)->toggleGridEditFlag();
+		(*cit)->setGridEdited();
 	}
 }

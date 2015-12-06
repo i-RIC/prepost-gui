@@ -12,17 +12,11 @@ class GUICOREDLL_EXPORT Grid2D : public Grid
 
 public:
 	Grid2D(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
-	/// Constructor
 	Grid2D(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
-	/// Returns the number of vertices in this grid.
+	virtual ~Grid2D();
+
 	virtual unsigned int vertexCount() const = 0;
-	/// Returns the coordinates of the vertex specified by the index.
 	virtual QVector2D vertex(unsigned int index) const = 0;
-	/// Set the coordinates of the vertex specified by the index.
-	/**
-	 * @param index The index of vertex. It starts from 0, not 1.
-	 * @param v The coordinates of the vertex.
-	 */
 	virtual void setVertex(unsigned int index, const QVector2D& v) = 0;
 };
 

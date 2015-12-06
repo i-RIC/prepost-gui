@@ -89,13 +89,13 @@ PreProcessorGraphicsViewInterface* PreProcessorDataModel::graphicsView() const
 void PreProcessorDataModel::init()
 {
 	// setup the basic itemModel structure.
-	PreProcessorRootDataItem* root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(m_mainWindow), this);
+	PreProcessorRootDataItem* root = new PreProcessorRootDataItem(dynamic_cast<PreProcessorWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
 	m_geoDataAddSignalMapper = nullptr;
 	root->setZDepthRange(m_dataRange);
 	root->setupStandardModel(m_itemModel);
 	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
-	connect(this, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), m_mainWindow, SLOT(handleAdditionalMenusUpdate(QList<QMenu*>)));
+	connect(this, SIGNAL(additionalMenusUpdated(QList<QMenu*>)), mainWindow(), SLOT(handleAdditionalMenusUpdate(QList<QMenu*>)));
 
 	m_graphicsView->setActiveDataItem(root);
 	m_graphicsView->setModel(this);
@@ -267,6 +267,11 @@ void PreProcessorDataModel::setupAdditinalMenus()
 		}
 	}
 	emit additionalMenusUpdated(m_additionalMenus);
+}
+
+void PreProcessorDataModel::handleObjectBrowserSelectionChange()
+{
+	setupAdditinalMenus();
 }
 
 void PreProcessorDataModel::setupGeoDataMenus()
@@ -1033,16 +1038,16 @@ void PreProcessorDataModel::setupGeoDataAddActions(PreProcessorGeoDataGroupDataI
 	connect(m_geoDataAddSignalMapper, SIGNAL(mapped(QObject*)), item, SLOT(addGeoData(QObject*)));
 }
 
-bool PreProcessorDataModel::gridEdited()
+bool PreProcessorDataModel::isGridEdited() const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
-	return root->gridEdited();
+	return root->isGridEdited();
 }
 
-void PreProcessorDataModel::toggleGridEditFlag()
+void PreProcessorDataModel::setGridEdited()
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
-	root->toggleGridEditFlag();
+	root->setGridEdited();
 }
 
 void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
@@ -1092,7 +1097,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 		}
 		if (notMapped.count() > 0) {
 			// geodata in this grid type is not mapped.
-			int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("%1 are not mapped after they are edited last time. Do you want to execute mapping now?").arg(notMapped.join(", ")), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
+			int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("%1 are not mapped after they are edited last time. Do you want to execute mapping now?").arg(notMapped.join(", ")), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				// execute mapping for each grids.
 				const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
@@ -1118,7 +1123,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit) {
 				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
 				if (! bcsdi->isMapped()) {
-					int ret = QMessageBox::warning(m_mainWindow, PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
+					int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 					if (ret == QMessageBox::Yes) {
 						bcsdi->executeMapping(true, 0);
 						mapExexuted = true;

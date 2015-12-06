@@ -152,14 +152,14 @@ QStringList PreProcessorWindowProjectDataItem::containedFiles()
 	return model->m_rootDataItem->containedFiles();
 }
 
-bool PreProcessorWindowProjectDataItem::gridEdited()
+bool PreProcessorWindowProjectDataItem::isGridEdited() const
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
-	return model->gridEdited();
+	return model->isGridEdited();
 }
 
-void PreProcessorWindowProjectDataItem::toggleGridEditFlag()
+void PreProcessorWindowProjectDataItem::setGridEdited()
 {
 	PreProcessorDataModel* model = dynamic_cast<PreProcessorDataModel*>(m_preProcessorWindow->m_dataModel);
-	model->toggleGridEditFlag();
+	model->setGridEdited();
 }

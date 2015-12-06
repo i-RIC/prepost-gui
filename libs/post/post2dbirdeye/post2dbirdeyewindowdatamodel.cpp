@@ -54,7 +54,7 @@ void Post2dBirdEyeWindowDataModel::init()
 	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
 
 	// setup the basic itemModel structure.
-	Post2dBirdEyeWindowRootDataItem* root = new Post2dBirdEyeWindowRootDataItem(dynamic_cast<Post2dBirdEyeWindow*>(m_mainWindow), this);
+	Post2dBirdEyeWindowRootDataItem* root = new Post2dBirdEyeWindowRootDataItem(dynamic_cast<Post2dBirdEyeWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
 	root->setupStandardModel(m_itemModel);
 	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));

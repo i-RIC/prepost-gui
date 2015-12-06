@@ -2243,7 +2243,7 @@ void iRICMainWindow::closeCgnsFile()
 void iRICMainWindow::toggleGridEditFlag()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	pre->projectDataItem()->toggleGridEditFlag();
+	pre->projectDataItem()->setGridEdited();
 }
 
 void iRICMainWindow::clearResults()
@@ -2254,7 +2254,7 @@ void iRICMainWindow::clearResults()
 bool iRICMainWindow::clearResultsIfGridIsEdited()
 {
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-	bool gridEdited = pre->projectDataItem()->gridEdited();
+	bool gridEdited = pre->projectDataItem()->isGridEdited();
 	bool hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
 	if (gridEdited && hasResult) {
 		// grid is edited, and the CGNS has calculation result.

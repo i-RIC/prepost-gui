@@ -20,8 +20,8 @@ public:
 	virtual PreProcessorGridDataItemInterface* gridDataItem() const = 0;
 	virtual const std::string& zoneName() const = 0;
 	virtual PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const = 0;
-	virtual bool gridEdited() const = 0;
-	virtual void toggleGridEditFlag() = 0;
+	virtual bool isGridEdited() const = 0;
+	virtual void setGridEdited() = 0;
 };
 
 #endif // PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEMINTERFACE_H

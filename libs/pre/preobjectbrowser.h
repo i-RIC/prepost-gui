@@ -14,10 +14,9 @@ class PreObjectBrowser : public ObjectBrowser
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreObjectBrowser(QWidget* parent);
-	/// Destructor
 	~PreObjectBrowser();
+
 	void setModel(QStandardItemModel* model);
 	PreObjectBrowserView* view() const;
 

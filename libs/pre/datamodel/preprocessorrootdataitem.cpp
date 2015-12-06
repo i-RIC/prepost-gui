@@ -42,8 +42,8 @@
 
 #include <vtkRenderWindow.h>
 
-PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, ProjectDataItem* parent)
-	: GraphicsWindowRootDataItem(window, parent)
+PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, ProjectDataItem* parent) :
+	GraphicsWindowRootDataItem(window, parent)
 {
 	QSettings settings;
 	int mm = settings.value("general/gridmappingmode", 0).value<int>();
@@ -110,6 +110,39 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 	}
 }
 
+PreProcessorBackgroundImagesDataItem* PreProcessorRootDataItem::backgroundImagesDataItem() const
+{
+	return m_backgroundImagesDataItem;
+}
+
+PreProcessorMeasuredDataTopDataItem* PreProcessorRootDataItem::measuredDataTopDataItem() const
+{
+	return m_measuredDataTopDataItem;
+}
+
+PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const std::string& name) const
+{
+	for (auto gridType : m_gridTypeDataItems) {
+		if (gridType->name() == name) {return gridType;}
+	}
+	return nullptr;
+}
+
+const QList<PreProcessorGridTypeDataItem*>& PreProcessorRootDataItem::gridTypeDataItems() const
+{
+	return m_gridTypeDataItems;
+}
+
+PreProcessorInputConditionDataItem* PreProcessorRootDataItem::inputConditionDataItem() const
+{
+	return m_inputConditionDataItem;
+}
+
+AttributeBrowserTargetDataItem* PreProcessorRootDataItem::attributeBrowserTargetDataItem() const
+{
+	return m_attributeBrowserTargetDataItem;
+}
+
 void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 {
 	model->clear();
@@ -160,106 +193,9 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_attributeBrowserTargetDataItem->standardItem());
 }
 
-void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+QAction* PreProcessorRootDataItem::editGridAttributeMappingSettingAction() const
 {
-	QDomElement elem = node.toElement();
-	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(elem.attribute("mappingMode", "0").toInt());
-	GeoDataPointmapMappingMode::mode = static_cast<GeoDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
-	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
-	setting.tempAutoMode = static_cast<bool>(elem.attribute("tempAutoRegion", "1").toInt());
-	double tmpdbl = elem.attribute("tempStreamWiseLength", "0").toDouble();
-	if (tmpdbl != 0) {setting.tempStreamWiseLength = tmpdbl;}
-	tmpdbl = elem.attribute("tempCrossStreamLength", "0").toDouble();
-	if (tmpdbl != 0) {setting.tempCrossStreamLength = tmpdbl;}
-	setting.tempNumExpansion = elem.attribute("numExpansion", "3").toInt();
-	setting.tempWeightExponent = elem.attribute("weightExponent", "1").toDouble();
-
-	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
-	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
-
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		QDomNode c = node.firstChild();
-		while (! c.isNull()) {
-			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name().c_str()) {
-				(*it)->loadFromProjectMainFile(c);
-			}
-			c = c.nextSibling();
-		}
-	}
-	SolverDefinition* def = projectData()->solverDefinition();
-	const SolverDefinitionGridType* firstType = *(def->gridTypes().begin());
-	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
-		// Current solver support only one grid type, and it does not allow multiple grids to input.
-		// The only, and hidden gridtype node should be checked always.
-		if (m_gridTypeDataItems.size() == 1) {
-			PreProcessorGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
-			gtItem->standardItem()->setCheckState(Qt::Checked);
-		}
-	}
-	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
-	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
-	QDomNode icNode = iRIC::getChildNode(node, "InputCondition");
-	if (! icNode.isNull()) {m_inputConditionDataItem->loadFromProjectMainFile(icNode);}
-	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
-	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
-	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
-	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
-	updateItemMap();
-	updateZDepthRange();
-//	dataModel()->graphicsView()->ResetCameraClippingRange();
-//	updateVisibility();
-}
-void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	QString tmpstr;
-	tmpstr.setNum(PreProcessorGridAttributeMappingMode::mode);
-	writer.writeAttribute("mappingMode", tmpstr);
-	tmpstr.setNum(GeoDataPointmapMappingMode::mode);
-	writer.writeAttribute("geoMappingMode", tmpstr);
-
-	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
-	tmpstr.setNum(setting.tempAutoMode);
-	writer.writeAttribute("tempAutoRegion", tmpstr);
-	tmpstr.setNum(setting.tempStreamWiseLength);
-	writer.writeAttribute("tempStreamWiseLength", tmpstr);
-	tmpstr.setNum(setting.tempCrossStreamLength);
-	writer.writeAttribute("tempCrossStreamLength", tmpstr);
-	tmpstr.setNum(setting.tempNumExpansion);
-	writer.writeAttribute("numExpansion", tmpstr);
-	tmpstr.setNum(setting.tempWeightExponent);
-	writer.writeAttribute("weightExponent", tmpstr);
-
-	writer.writeStartElement("BackgroundImages");
-	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		writer.writeStartElement("GridType");
-		(*it)->saveToProjectMainFile(writer);
-		writer.writeEndElement();
-	}
-	writer.writeStartElement("MeasuredDatas");
-	m_measuredDataTopDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-
-	writer.writeStartElement("InputCondition");
-	m_inputConditionDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-
-	writer.writeStartElement("Axes");
-	m_axesDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-	writer.writeStartElement("DistanceMeasures");
-	m_distanceMeasureGroupDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
-}
-
-PreProcessorGridTypeDataItem* PreProcessorRootDataItem::gridTypeDataItem(const std::string& name)
-{
-	for (auto gridType : m_gridTypeDataItems) {
-		if (gridType->name() == name) {return gridType;}
-	}
-	return nullptr;
+	return m_editGridAttributeMappingSettingAction;
 }
 
 class PreProcessorRootDataItemSetMappingSettingCommand : public QUndoCommand
@@ -346,19 +282,19 @@ void PreProcessorRootDataItem::editGridAttributeMappingSetting()
 	iRICUndoStack::instance().push(new PreProcessorRootDataItemSetMappingSettingCommand(dialog.mappingMode(), dialog.pointmapMappingMode(), dialog.autoMode(), dialog.streamWiseLength(), dialog.crossStreamLength(), dialog.numExpansion(), dialog.weightExponent(), this));
 }
 
-bool PreProcessorRootDataItem::gridEdited()
+bool PreProcessorRootDataItem::isGridEdited() const
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		bool edited = (*it)->gridEdited();
+		bool edited = (*it)->isGridEdited();
 		if (edited) {return true;}
 	}
 	return false;
 }
 
-void PreProcessorRootDataItem::toggleGridEditFlag()
+void PreProcessorRootDataItem::setGridEdited()
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		(*it)->toggleGridEditFlag();
+		(*it)->setGridEdited();
 	}
 }
 
@@ -389,3 +325,101 @@ void PreProcessorRootDataItem::saveToCgnsFile(const int fn)
 	cg_iRIC_Clear_Complex();
 	GraphicsWindowDataItem::saveToCgnsFile(fn);
 }
+
+PreProcessorDataModel* PreProcessorRootDataItem::dataModel() const
+{
+	return dynamic_cast<PreProcessorDataModel*>(GraphicsWindowRootDataItem::dataModel());
+}
+
+void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	QDomElement elem = node.toElement();
+	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(elem.attribute("mappingMode", "0").toInt());
+	GeoDataPointmapMappingMode::mode = static_cast<GeoDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
+	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
+	setting.tempAutoMode = static_cast<bool>(elem.attribute("tempAutoRegion", "1").toInt());
+	double tmpdbl = elem.attribute("tempStreamWiseLength", "0").toDouble();
+	if (tmpdbl != 0) {setting.tempStreamWiseLength = tmpdbl;}
+	tmpdbl = elem.attribute("tempCrossStreamLength", "0").toDouble();
+	if (tmpdbl != 0) {setting.tempCrossStreamLength = tmpdbl;}
+	setting.tempNumExpansion = elem.attribute("numExpansion", "3").toInt();
+	setting.tempWeightExponent = elem.attribute("weightExponent", "1").toDouble();
+
+	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
+	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
+
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		QDomNode c = node.firstChild();
+		while (! c.isNull()) {
+			if (c.nodeName() == "GridType" && c.toElement().attribute("name") == (*it)->name().c_str()) {
+				(*it)->loadFromProjectMainFile(c);
+			}
+			c = c.nextSibling();
+		}
+	}
+	SolverDefinition* def = projectData()->solverDefinition();
+	const SolverDefinitionGridType* firstType = *(def->gridTypes().begin());
+	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
+		// Current solver support only one grid type, and it does not allow multiple grids to input.
+		// The only, and hidden gridtype node should be checked always.
+		if (m_gridTypeDataItems.size() == 1) {
+			PreProcessorGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
+			gtItem->standardItem()->setCheckState(Qt::Checked);
+		}
+	}
+	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
+	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
+	QDomNode icNode = iRIC::getChildNode(node, "InputCondition");
+	if (! icNode.isNull()) {m_inputConditionDataItem->loadFromProjectMainFile(icNode);}
+	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
+	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
+	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
+	updateItemMap();
+	updateZDepthRange();
+}
+void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	QString tmpstr;
+	tmpstr.setNum(PreProcessorGridAttributeMappingMode::mode);
+	writer.writeAttribute("mappingMode", tmpstr);
+	tmpstr.setNum(GeoDataPointmapMappingMode::mode);
+	writer.writeAttribute("geoMappingMode", tmpstr);
+
+	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
+	tmpstr.setNum(setting.tempAutoMode);
+	writer.writeAttribute("tempAutoRegion", tmpstr);
+	tmpstr.setNum(setting.tempStreamWiseLength);
+	writer.writeAttribute("tempStreamWiseLength", tmpstr);
+	tmpstr.setNum(setting.tempCrossStreamLength);
+	writer.writeAttribute("tempCrossStreamLength", tmpstr);
+	tmpstr.setNum(setting.tempNumExpansion);
+	writer.writeAttribute("numExpansion", tmpstr);
+	tmpstr.setNum(setting.tempWeightExponent);
+	writer.writeAttribute("weightExponent", tmpstr);
+
+	writer.writeStartElement("BackgroundImages");
+	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		writer.writeStartElement("GridType");
+		(*it)->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeStartElement("MeasuredDatas");
+	m_measuredDataTopDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("InputCondition");
+	m_inputConditionDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Axes");
+	m_axesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+	writer.writeStartElement("DistanceMeasures");
+	m_distanceMeasureGroupDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+}
+

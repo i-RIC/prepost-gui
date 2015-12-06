@@ -22,8 +22,8 @@ public:
 	void saveToCgnsFile(const int fn) override;
 	void closeCgnsFile() override;
 	QStringList containedFiles() override;
-	bool gridEdited();
-	void toggleGridEditFlag();
+	bool isGridEdited() const;
+	void setGridEdited();
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

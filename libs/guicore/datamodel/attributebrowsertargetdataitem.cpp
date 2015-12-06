@@ -13,8 +13,8 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
-AttributeBrowserTargetDataItem::AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(parent)
+AttributeBrowserTargetDataItem::AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(parent)
 {
 	setupContainers();
 	setupActors();
@@ -185,3 +185,9 @@ void AttributeBrowserTargetDataItem::assignActorZValues(const ZDepthRange& range
 	m_edgeActor->SetPosition(0, 0, range.max());
 	m_vertexActor->SetPosition(0, 0, range.max());
 }
+
+void AttributeBrowserTargetDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{}
+
+void AttributeBrowserTargetDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{}

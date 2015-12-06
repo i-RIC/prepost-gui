@@ -13,5 +13,15 @@ GraphicsWindowSimpleDataModel::GraphicsWindowSimpleDataModel(QMainWindow* w, Pro
 GraphicsWindowSimpleDataModel::~GraphicsWindowSimpleDataModel()
 {}
 
+VTKGraphicsView* GraphicsWindowSimpleDataModel::graphicsView() const
+{
+	return m_graphicsView;
+}
+
+QMainWindow* GraphicsWindowSimpleDataModel::mainWindow() const
+{
+	return m_mainWindow;
+}
+
 void GraphicsWindowSimpleDataModel::viewOperationEndedGlobal()
 {}

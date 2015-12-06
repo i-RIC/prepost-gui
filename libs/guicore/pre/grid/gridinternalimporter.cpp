@@ -1,11 +1,9 @@
 #include "grid.h"
 #include "gridinternalimporter.h"
 
-GridInternalImporter::GridInternalImporter()
-	: QObject(0), GridImporterInterface()
-{
-
-}
+GridInternalImporter::GridInternalImporter() :
+	QObject(nullptr), GridImporterInterface()
+{}
 
 ProjectData* GridInternalImporter::getProjectData(Grid* g)
 {

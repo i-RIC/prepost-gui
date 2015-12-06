@@ -26,47 +26,36 @@ class PreProcessorRootDataItem : public GraphicsWindowRootDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorRootDataItem(PreProcessorWindow* window, ProjectDataItem* parent);
 	~PreProcessorRootDataItem();
 
-	/// Background image data item
-	PreProcessorBackgroundImagesDataItem* backgroundImagesDataItem() {
-		return m_backgroundImagesDataItem;
-	}
-	/// Measured values data item;
-	PreProcessorMeasuredDataTopDataItem* measuredDataTopDataItem() {
-		return m_measuredDataTopDataItem;
-	}
-	void setupStandardModel(QStandardItemModel* model);
-	PreProcessorGridTypeDataItem* gridTypeDataItem(const std::string& name);
-	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
-	PreProcessorInputConditionDataItem* inputConditionDataItem() {return m_inputConditionDataItem;}
-	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
+	PreProcessorBackgroundImagesDataItem* backgroundImagesDataItem() const;
+	PreProcessorMeasuredDataTopDataItem* measuredDataTopDataItem() const;
+	PreProcessorGridTypeDataItem* gridTypeDataItem(const std::string& name) const;
+	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const;
+	PreProcessorInputConditionDataItem* inputConditionDataItem() const;
+	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const;
 
-//	GridAttributeMappingMode gridAttributeMappingMode(){return m_mappingMode;}
-//	GeoGraphicDataMappingMode geodataMappingMode(){return m_geodataMappingMode;}
-	QAction* editGridAttributeMappingSettingAction() {return m_editGridAttributeMappingSettingAction;}
-	bool gridEdited();
-	void toggleGridEditFlag();
+	void setupStandardModel(QStandardItemModel* model);
+
+	QAction* editGridAttributeMappingSettingAction() const;
+
+	bool isGridEdited() const;
+	void setGridEdited();
+
 	void deleteItem(QStandardItem* item) override;
 	void saveToCgnsFile(const int fn) override;
-
-//	bool tempAutoMode;
-//	double tempStreamWiseLength;
-//	double tempCrossStreamLength;
-//	int tempNumExpansion;
-//	double tempWeightExponent;
 
 private slots:
 	void editGridAttributeMappingSetting();
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	PreProcessorDataModel* dataModel() const override {return dynamic_cast<PreProcessorDataModel*>(m_dataModel);}
+	PreProcessorDataModel* dataModel() const override;
 
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	PreProcessorBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	PreProcessorMeasuredDataTopDataItem* m_measuredDataTopDataItem;
 	PreProcessorInputConditionDataItem* m_inputConditionDataItem;

@@ -22,6 +22,7 @@ class GUICOREDLL_EXPORT AttributeBrowserTargetDataItem : public GraphicsWindowDa
 public:
 	AttributeBrowserTargetDataItem(GraphicsWindowDataItem* parent);
 	~AttributeBrowserTargetDataItem();
+
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
@@ -29,13 +30,12 @@ public:
 	void setPolygon(const QPolygonF& p);
 	void clear();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
-
 private:
 	void setupContainers();
 	void setupActors();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	vtkSmartPointer<vtkPolygon> m_polygon;
 

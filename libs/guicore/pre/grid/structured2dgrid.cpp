@@ -50,6 +50,9 @@ Structured2DGrid::Structured2DGrid(const std::string& zonename, ProjectDataItem*
 	init();
 }
 
+Structured2DGrid::~Structured2DGrid()
+{}
+
 void Structured2DGrid::init()
 {
 	m_vtkGrid = vtkStructuredGrid::New();

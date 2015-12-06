@@ -50,8 +50,8 @@ public:
 	/// Import input condition from the specified CGNS file.
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
-	bool gridEdited();
-	void toggleGridEditFlag();
+	bool isGridEdited() const;
+	void setGridEdited();
 	bool isInputConditionSet();
 	MouseBoundingBox* mouseBoundingBox() override {return m_mouseBoundingBox;}
 	const QList<QMenu*>& additionalMenus() const {
@@ -76,10 +76,8 @@ public slots:
 	void exportCalcCondition();
 	void setupAdditinalMenus();
 
-protected slots:
-	virtual void handleObjectBrowserSelectionChange() override {
-		setupAdditinalMenus();
-	}
+	void handleObjectBrowserSelectionChange() override;
+
 	void setupGridCreationMenuContent();
 	void setupBoundaryConditionSettingMenuContent();
 	void importHydraulicData();

@@ -32,8 +32,8 @@ public:
 	PreProcessorGridDataItemInterface* gridDataItem() const override;
 	bool isDeletable() const override;
 	void handleStandardItemChange() override;
-	bool gridEdited() const  override;
-	void toggleGridEditFlag() override;
+	bool isGridEdited() const  override;
+	void setGridEdited() override;
 	void setupGridDataItem(Grid* grid);
 	void loadFromCgnsFile(const int fn);
 

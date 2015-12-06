@@ -161,14 +161,14 @@ void PreProcessorGridAndGridCreatingConditionDataItem::handleStandardItemChange(
 	PreProcessorDataItem::handleStandardItemChange();
 }
 
-bool PreProcessorGridAndGridCreatingConditionDataItem::gridEdited() const
+bool PreProcessorGridAndGridCreatingConditionDataItem::isGridEdited() const
 {
 	Grid* g = m_gridDataItem->grid();
 	if (g == nullptr) {return false;}
 	return g->isModified();
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::toggleGridEditFlag()
+void PreProcessorGridAndGridCreatingConditionDataItem::setGridEdited()
 {
 	Grid* g = m_gridDataItem->grid();
 	if (g == nullptr) {return;}

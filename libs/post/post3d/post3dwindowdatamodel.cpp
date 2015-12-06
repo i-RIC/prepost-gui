@@ -57,9 +57,8 @@ void Post3dWindowDataModel::init()
 	m_graphicsView = new Post3dWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
 
 	// setup the basic itemModel structure.
-	Post3dWindowRootDataItem* root = new Post3dWindowRootDataItem(dynamic_cast<Post3dWindow*>(m_mainWindow), this);
+	Post3dWindowRootDataItem* root = new Post3dWindowRootDataItem(dynamic_cast<Post3dWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
-//	root->setZDepthRange(m_dataRange);
 	root->setupStandardModel(m_itemModel);
 	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
 

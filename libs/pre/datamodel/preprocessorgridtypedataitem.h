@@ -29,8 +29,8 @@ public:
 	bool isChildCaptionAvailable(const QString& caption);
 	ScalarsToColorsContainer* scalarsToColors(const std::string& attName) const override {return m_scalarsToColors.value(attName, 0);}
 	QAction* addNewGridAction() {return m_addNewGridAction;}
-	bool gridEdited() const;
-	void toggleGridEditFlag();
+	bool isGridEdited() const;
+	void setGridEdited();
 
 public slots:
 	void addNewCondition();

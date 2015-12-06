@@ -47,13 +47,17 @@ class GUICOREDLL_EXPORT Structured2DGrid : public Grid2D
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Structured2DGrid(ProjectDataItem* parent);
-	/// Constructor
 	Structured2DGrid(const std::string& zonename, ProjectDataItem* parent);
-	/// Return VTK container object to store the grid.
+	~Structured2DGrid();
+
 	vtkStructuredGrid* vtkGrid() const {return dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);}
+
 	unsigned int vertexCount() const override {return m_dimensionI * m_dimensionJ;}
+	unsigned int cellCount() const override {
+		return m_vtkGrid->GetNumberOfCells();
+	}
+
 	unsigned int vertexIndex(unsigned int i, unsigned int j) const {
 		return m_dimensionI * j + i;
 	}
@@ -62,20 +66,21 @@ public:
 		return (m_dimensionI - 1) * j + i;
 	}
 	void getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j);
+
 	QVector2D vertex(unsigned int index) const override;
 	QVector2D vertex(unsigned int i, unsigned int j) const;
+
 	void setVertex(unsigned int i, unsigned int j, const QVector2D& v) {setVertex(vertexIndex(i, j), v);}
 	void setVertex(unsigned int index, const QVector2D& v) override;
+
 	bool loadFromCgnsFile(const int fn, int base, int zoneid) override;
 	bool saveToCgnsFile(const int fn, int base, const char* zonename) override;
-	/// getDimension of this grid.
+
 	void dimensions(unsigned int* i, unsigned int* j);
 	unsigned int dimensionI() const {return m_dimensionI;}
 	unsigned int dimensionJ() const {return m_dimensionJ;}
 	void setDimensions(unsigned int i, unsigned int j);
-	unsigned int cellCount() const override {
-		return m_vtkGrid->GetNumberOfCells();
-	}
+
 	const QStringList checkShape(QTextStream& stream) override;
 	bool isValid(QTextStream& stream) const override;
 	bool isAspectRatioOk(double limit, QTextStream& stream);
