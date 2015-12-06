@@ -44,10 +44,10 @@ const double Post2dWindowNodeVectorArrowGroupDataItem::MINLIMIT = 1.0E-6;
 
 Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
 	CompositeContainer
-		({&scalarValueName, &currentSolution, &color,&oldCameraScale, &scaleFactor, &regionMode,
+		({&scalarValueName, &target, &color,&oldCameraScale, &scaleFactor, &regionMode,
 		 &mapping, &legendMode, &lengthMode, &standardValue, &legendLength, &minimumValue, &arrowSetting}),
 	scalarValueName {"scalarValueName"},
-	currentSolution {"solution"},
+	target {"solution"},
 	color {"color"},
 	oldCameraScale {"oldCameraScale", 1},
 	scaleFactor {"scaleFactor", 1},
@@ -178,9 +178,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.currentSolution).c_str());
+	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.target).c_str());
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -235,10 +235,10 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(m_setting.currentSolution).c_str());
+	pd->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
 	updateActivePoints();
 
@@ -289,13 +289,13 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 
 std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 {
-	return m_setting.currentSolution;
+	return m_setting.target;
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.currentSolution = target.c_str();
+	m_setting.target = target.c_str();
 	updateActorSettings();
 }
 
@@ -314,7 +314,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
-	if (m_setting.currentSolution == "") {return;}
+	if (m_setting.target == "") {return;}
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdRadius(m_setting.arrowSetting.arrowSize());
 	m_hedgeHog->SetScaleFactor(m_setting.scaleFactor);
@@ -362,7 +362,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_setting.currentSolution).arg(m_setting.standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_setting.target).arg(m_setting.standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
 	if (m_setting.mapping == Specific) {
@@ -377,7 +377,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
 void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	setTarget(m_setting.currentSolution);
+	setTarget(m_setting.target);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

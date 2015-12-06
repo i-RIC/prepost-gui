@@ -23,7 +23,7 @@ Post3dWindowIsosurfaceSettingDialog::Post3dWindowIsosurfaceSettingDialog(QWidget
 	ui->maxValueEdit->setDisabled(true);
 
 	connect(ui->enabledCheckBox, SIGNAL(clicked(bool)), this, SLOT(setEnableCheckBox(bool)));
-	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(solutionChanged(int)));
+	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(targetChanged(int)));
 	connect(ui->fullRangeCheckBox, SIGNAL(clicked(bool)), this, SLOT(fullRangeChanged(bool)));
 	connect(ui->iminSlider, SIGNAL(valueChanged(int)), this, SLOT(iMinChanged(int)));
 	connect(ui->imaxSlider, SIGNAL(valueChanged(int)), this, SLOT(iMaxChanged(int)));
@@ -42,8 +42,8 @@ void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zon
 {
 	vtkPointData* pd = zoneData->data()->GetPointData();
 
-	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
-	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_solutions), ui->physicalValueComboBox);
+	m_targets = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
+	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_targets), ui->physicalValueComboBox);
 
 	vtkStructuredGrid* g = dynamic_cast<vtkStructuredGrid*>(zoneData->data());
 	int dims[3];
@@ -62,12 +62,12 @@ void Post3dWindowIsosurfaceSettingDialog::setEnabled(bool enabled)
 	setEnableCheckBox(enabled);
 }
 
-void Post3dWindowIsosurfaceSettingDialog::setCurrentSolution(const std::string& sol)
+void Post3dWindowIsosurfaceSettingDialog::setTarget(const std::string& target)
 {
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
-	if (it == m_solutions.end()) {it = m_solutions.begin();}
-	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
-	solutionChanged(it - m_solutions.begin());
+	auto it = std::find(m_targets.begin(), m_targets.end(), target);
+	if (it == m_targets.end()) {it = m_targets.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_targets.begin());
+	targetChanged(it - m_targets.begin());
 }
 
 void Post3dWindowIsosurfaceSettingDialog::setGridTypeDataItem(Post3dWindowGridTypeDataItem* item)
@@ -80,9 +80,9 @@ bool Post3dWindowIsosurfaceSettingDialog::enabled()
 	return ui->enabledCheckBox->isChecked();
 }
 
-std::string Post3dWindowIsosurfaceSettingDialog::currentSolution() const
+std::string Post3dWindowIsosurfaceSettingDialog::target() const
 {
-	return m_solutions.at(ui->physicalValueComboBox->currentIndex());
+	return m_targets.at(ui->physicalValueComboBox->currentIndex());
 }
 
 void Post3dWindowIsosurfaceSettingDialog::setEnableCheckBox(bool enable)
@@ -90,12 +90,11 @@ void Post3dWindowIsosurfaceSettingDialog::setEnableCheckBox(bool enable)
 	ui->physicalValueComboBox->setEnabled(enable);
 }
 
-void Post3dWindowIsosurfaceSettingDialog::solutionChanged(int index)
+void Post3dWindowIsosurfaceSettingDialog::targetChanged(int index)
 {
-	std::string sol = m_solutions.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
+	std::string target = m_targets.at(index);
+	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(target);
 
-	//ui->isoValueEdit->setValue();
 	ui->minValueEdit->setValue(c->autoMin());
 	ui->maxValueEdit->setValue(c->autoMax());
 }

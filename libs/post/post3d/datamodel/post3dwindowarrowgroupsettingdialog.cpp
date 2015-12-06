@@ -92,14 +92,14 @@ int Post3dWindowArrowGroupSettingDialog::sampleRate()
 	return ui->sampleRateSpinBox->value();
 }
 
-void Post3dWindowArrowGroupSettingDialog::setCurrentSolution(const std::string& sol)
+void Post3dWindowArrowGroupSettingDialog::setTarget(const std::string& target)
 {
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), sol);
-	if (it == m_solutions.end()) {it = m_solutions.begin();}
-	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
+	auto it = std::find(m_targets.begin(), m_targets.end(), target);
+	if (it == m_targets.end()) {it = m_targets.begin();}
+	ui->physicalValueComboBox->setCurrentIndex(it - m_targets.begin());
 }
 
-const std::string Post3dWindowArrowGroupSettingDialog::currentSolution() const
+const std::string Post3dWindowArrowGroupSettingDialog::target() const
 {
 	return iRIC::toStr(ui->physicalValueComboBox->currentText());
 }
@@ -128,13 +128,13 @@ void Post3dWindowArrowGroupSettingDialog::setZoneData(PostZoneDataContainer* zon
 	SolverDefinitionGridType* gType = zoneData->gridType();
 	vtkPointData* pd = zoneData->data()->GetPointData();
 
-	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
-	ComboBoxTool::setupItems(gType->solutionCaptions(m_solutions), ui->physicalValueComboBox);
+	m_targets = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gType->solutionCaptions(m_targets), ui->physicalValueComboBox);
 
 	m_scalars = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
 	ComboBoxTool::setupItems(gType->solutionCaptions(m_scalars), ui->scalarComboBox);
 
-	if (m_solutions.size() < 2) {
+	if (m_targets.size() < 2) {
 		ui->physicalValueLabel->hide();
 		ui->physicalValueComboBox->hide();
 	}

@@ -39,9 +39,9 @@ public:
 
 	enum Mapping {Specific, Scalar};
 	enum LengthMode {lenAuto, lenCustom};
-	/// Constructor
+
 	Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* parent);
-	const std::string& currentSolution() const {return m_currentSolution;}
+	const std::string& target() const;
 	void setSetting(const std::string& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const std::string& scalar, int rate, const ArrowSettingContainer& arrowSetting);
 	void updateActorSettings();
 	void showSettingDialog();
@@ -91,8 +91,8 @@ private:
 
 	LengthMode m_lengthMode;
 	Mapping m_mapping;
+	std::string m_target;
 	std::string m_scalarValueName;
-	std::string m_currentSolution;
 	QColor m_color;
 	int m_sampleRate;
 	double m_standardValue;

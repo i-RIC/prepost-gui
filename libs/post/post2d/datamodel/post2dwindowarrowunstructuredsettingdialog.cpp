@@ -45,7 +45,7 @@ void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
 void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss)
 {
 	// solution
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
 
@@ -110,7 +110,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowUnstructuredS
 
 	// solution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_solutions.at(index).c_str();
 
 	// scalarValue
 	index = ui->scalarComboBox->currentIndex();

@@ -3,6 +3,7 @@
 
 #include "../post3dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 
 #include <QMap>
 #include <QColor>
@@ -15,10 +16,11 @@
 #include <vtkClipPolyData.h>
 #include <vtkPolyData.h>
 
+class NamedGraphicWindowDataItem;
 class Post3dWindowNodeVectorStreamlineDataItem;
 class Post3dWindowStreamlineStructuredSetProperty;
 
-class Post3dWindowNodeVectorStreamlineGroupDataItem : public Post3dWindowDataItem
+class Post3dWindowNodeVectorStreamlineGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -33,23 +35,23 @@ public:
 	void update();
 
 public slots:
-	void exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
-	void setCurrentSolution(const std::string& currentSol);
-	const std::string& currentSolution() const {return m_currentSolution;}
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
-
-protected:
+	void setupStreamTracer(vtkStreamTracer* tracer);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setupStreamTracer(vtkStreamTracer* tracer);
 
-	std::string m_currentSolution;
+protected:
+	std::string m_target;
 	StructuredGridRegion::RegionMode m_regionMode;
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 
@@ -59,11 +61,7 @@ protected:
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
 
 private:
-	void setDefaultValues();
-
 	double m_zScale;
-
-	class SelectSolutionCommand;
 
 public:
 	friend class Post3dWindowStreamlineStructuredSetProperty;

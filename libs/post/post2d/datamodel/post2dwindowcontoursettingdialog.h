@@ -48,12 +48,12 @@ public slots:
 	void accept() override;
 
 private slots:
-	void solutionChanged(int index);
+	void targetChanged(int index);
 	void showRegionDialog();
 	void showScalarBarDialog();
 
 private:
-	std::string currentSolution() const;
+	std::string target() const;
 
 	int m_gridDims[3];
 	std::vector<std::string> m_solutions;

@@ -213,7 +213,7 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 
 	dialog->setEnabled(true);
 	dialog->setZoneData(zItem->dataContainer());
-	dialog->setCurrentSolution(m_currentSolution);
+	dialog->setTarget(m_currentSolution);
 
 	// it's made enabled ALWAYS.
 	//	dialog->setEnabled(isEnabled());
@@ -301,7 +301,7 @@ void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* 
 	Post3dWindowIsosurfaceSettingDialog* dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
 	iRICUndoStack::instance().push(
 		new Post3dWindowIsosurfaceSetProperty(
-			dialog->enabled(), dialog->currentSolution(),
+			dialog->enabled(), dialog->target(),
 			dialog->fullRange(), dialog->range(),
 			dialog->isoValue(), dialog->color(), this));
 }

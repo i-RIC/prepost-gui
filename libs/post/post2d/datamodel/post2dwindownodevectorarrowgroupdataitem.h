@@ -55,7 +55,7 @@ public:
 		Setting& operator=(const Setting& s);
 
 		StringContainer scalarValueName;
-		StringContainer currentSolution;
+		StringContainer target;
 		ColorContainer color;
 		DoubleContainer oldCameraScale;
 		DoubleContainer scaleFactor;

@@ -32,7 +32,7 @@ public:
 	explicit Post3dWindowContourGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowContourGroupSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
-	void setCurrentSolution(const std::string& sol);
+	void setTarget(const std::string& target);
 	void setContour(ContourSettingWidget::Contour c);
 	void setNumberOfDivision(int div);
 	void setLookupTable(const LookupTableContainer& c);
@@ -41,7 +41,7 @@ public:
 	void setFillUpper(bool fill);
 	void setFillLower(bool fill);
 
-	std::string currentSolution() const;
+	std::string target() const;
 	ContourSettingWidget::Contour contour();
 	int numberOfDivision();
 	LookupTableContainer& lookupTable();
@@ -72,7 +72,7 @@ private slots:
 	void showColorBarDialog();
 
 private:
-	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_targets;
 	Ui::Post3dWindowContourGroupSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;

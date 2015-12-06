@@ -80,9 +80,9 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_setting.currentSolution).c_str()));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
 	if (vectorArray == nullptr) {
-		m_setting.currentSolution = "";
+		m_setting.target = "";
 		return;
 	}
 	QSet<vtkIdType> pointIds;
@@ -168,13 +168,13 @@ public:
 	void redo() {
 		m_item->m_setting = m_newSetting;
 		m_item->m_unsSetting = m_newUnsSetting;
-		m_item->setTarget(m_newSetting.currentSolution);
+		m_item->setTarget(m_newSetting.target);
 		m_item->updateActorSettings();
 	}
 	void undo() {
 		m_item->m_setting = m_oldSetting;
 		m_item->m_unsSetting = m_oldUnsSetting;
-		m_item->setTarget(m_oldSetting.currentSolution);
+		m_item->setTarget(m_oldSetting.target);
 		m_item->updateActorSettings();
 	}
 

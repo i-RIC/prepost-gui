@@ -30,7 +30,7 @@ public:
 	void setZoneData(PostZoneDataContainer* zoneData);
 	void setEnabled(bool enabled);
 
-	void setCurrentSolution(const std::string& sol);
+	void setTarget(const std::string& target);
 	void setGridTypeDataItem(Post3dWindowGridTypeDataItem* item);
 	void setFullRange(bool full);
 	void setRange(StructuredGridRegion::Range3d range);
@@ -41,7 +41,7 @@ public:
 	void setColor(const QColor& color);
 	const QColor color() const;
 
-	std::string currentSolution() const;
+	std::string target() const;
 	bool fullRange() const;
 	StructuredGridRegion::Range3d range() const;
 	double isoValue() const;
@@ -51,7 +51,7 @@ public slots:
 
 private slots:
 	void setEnableCheckBox(bool);
-	void solutionChanged(int index);
+	void targetChanged(int index);
 	void fullRangeChanged(bool full);
 	void iMinChanged(int min);
 	void iMaxChanged(int max);
@@ -61,7 +61,7 @@ private slots:
 	void kMaxChanged(int max);
 
 private:
-	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_targets;
 	Ui::Post3dWindowIsosurfaceSettingDialog* ui;
 	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
 

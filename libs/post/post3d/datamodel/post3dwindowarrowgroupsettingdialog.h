@@ -36,8 +36,8 @@ public:
 	std::string scalarValueName();
 	void setSampleRate(int rate);
 	int sampleRate();
-	void setCurrentSolution(const std::string& sol);
-	const std::string currentSolution() const;
+	void setTarget(const std::string& target);
+	const std::string target() const;
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap();
 	void setZoneData(PostZoneDataContainer* zoneData);
@@ -65,7 +65,7 @@ private slots:
 	void updateFaceMap();
 
 private:
-	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_targets;
 	std::vector<std::string> m_scalars;
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
 	bool m_isRemoving;

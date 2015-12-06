@@ -41,10 +41,10 @@ void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNod
 {
 	m_setting = s;
 	m_stSetting = sts;
-	// currentSolution
-	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(s.currentSolution));
-	if (it == m_solutions.end()) {it = m_solutions.begin();}
-	ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
+	// target
+	auto it = std::find(m_targets.begin(), m_targets.end(), iRIC::toStr(s.target));
+	if (it == m_targets.end()) {it = m_targets.begin();}
+	ui->solutionComboBox->setCurrentIndex(it - m_targets.begin());
 
 	// scalarValue
 	it = std::find(m_scalars.begin(), m_scalars.end(), iRIC::toStr(s.scalarValueName));
@@ -99,7 +99,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowStructuredSet
 
 	// currentSolution
 	int index = ui->solutionComboBox->currentIndex();
-	ret.currentSolution = m_solutions.at(index).c_str();
+	ret.target = m_targets.at(index).c_str();
 
 	// scalarValue
 	index = ui->scalarComboBox->currentIndex();
@@ -151,13 +151,13 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 	vtkPointData* pd = zoneData->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
-	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
-	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+	m_targets = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
+	ComboBoxTool::setupItems(gt->solutionCaptions(m_targets), ui->solutionComboBox);
 
 	m_scalars = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
 	ComboBoxTool::setupItems(gt->solutionCaptions(m_scalars), ui->scalarComboBox);
 
-	if (m_solutions.size() < 2) {
+	if (m_targets.size() < 2) {
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}

@@ -5,6 +5,8 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -25,11 +27,12 @@
 
 Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_target {},
+	m_regionMode {StructuredGridRegion::rmFull},
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	setDefaultValues();
 	setupClipper();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
@@ -54,49 +57,12 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::~Post3dWindowNodeVectorStreamline
 	}
 }
 
-class Post3dWindowNodeVectorStreamlineGroupDataItem::SelectSolutionCommand : public QUndoCommand
-{
-public:
-	SelectSolutionCommand(const std::string& newsol, Post3dWindowNodeVectorStreamlineGroupDataItem* item) :
-		QUndoCommand {Post3dWindowNodeVectorStreamlineGroupDataItem::tr("Streamline Physical Value Change")},
-		m_newSolution (newsol),
-		m_oldSolution (item->m_currentSolution),
-		m_item {item}
-	{}
-	void redo() override {
-		applySetting(m_newSolution);
-	}
-	void undo() override {
-		applySetting(m_oldSolution);
-	}
-
-private:
-	void applySetting(const std::string& sol)
-	{
-		m_item->setCurrentSolution(sol);
-		m_item->updateActorSettings();
-	}
-	std::string m_newSolution;
-	std::string m_oldSolution;
-
-	Post3dWindowNodeVectorStreamlineGroupDataItem* m_item;
-};
-
-
-void Post3dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post3dWindowNodeVectorStreamlineDataItem* item)
+void Post3dWindowNodeVectorStreamlineGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
-}
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::setDefaultValues()
-{
-	m_currentSolution= "";
-	m_regionMode = StructuredGridRegion::rmFull;
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Streamline Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
@@ -121,7 +87,7 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
@@ -160,20 +126,16 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post3dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const std::string& currentSol)
+std::string Post3dWindowNodeVectorStreamlineGroupDataItem::target() const
 {
-	Post3dWindowNodeVectorStreamlineDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post3dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post3dWindowNodeVectorStreamlineDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
-	m_currentSolution = currentSol;
+	return m_target;
+}
+
+void Post3dWindowNodeVectorStreamlineGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_target = target;
+	updateActorSettings();
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::innerUpdateZScale(double zscale)
@@ -224,12 +186,12 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamT
 void Post3dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	setCurrentSolution(iRIC::toStr(elem.attribute("solution")));
+	setTarget(iRIC::toStr(elem.attribute("solution")));
 	m_regionMode = static_cast<StructuredGridRegion::RegionMode>(elem.attribute("regionMode").toInt());
 }
 
 void Post3dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution.c_str());
+	writer.writeAttribute("solution", m_target.c_str());
 	writer.writeAttribute("regionMode", QString::number(static_cast<int>(m_regionMode)));
 }

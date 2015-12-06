@@ -26,7 +26,7 @@ Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* pare
 	ui->setupUi(this);
 	ui->contourWidget->hidePoints();
 
-	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(solutionChanged(int)));
+	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(targetChanged(int)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
 	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showScalarBarDialog()));
 	connect(ui->contourWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ui->colormapWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
@@ -77,7 +77,7 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 	auto it = std::find(m_solutions.begin(), m_solutions.end(), std::string(s.target));
 	if (it == m_solutions.end()) {it = m_solutions.begin();}
 	ui->physicalValueComboBox->setCurrentIndex(it - m_solutions.begin());
-	solutionChanged(it - m_solutions.begin());
+	targetChanged(it - m_solutions.begin());
 
 	ui->contourWidget->setContour(s.contour);
 	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
@@ -95,7 +95,7 @@ Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 {
 	Post2dWindowContourSetting ret = m_setting;
 
-	ret.target = currentSolution().c_str();
+	ret.target = target().c_str();
 	ret.contour = ui->contourWidget->contour();
 	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
 	ret.fillUpper = ui->colormapWidget->fillUpper();
@@ -107,10 +107,10 @@ Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 
 QString Post2dWindowContourSettingDialog::scalarBarTitle()
 {
-	return m_colorBarTitleMap[currentSolution()];
+	return m_colorBarTitleMap[target()];
 }
 
-std::string Post2dWindowContourSettingDialog::currentSolution() const
+std::string Post2dWindowContourSettingDialog::target() const
 {
 	return m_solutions.at(ui->physicalValueComboBox->currentIndex());
 }
@@ -120,7 +120,7 @@ const LookupTableContainer& Post2dWindowContourSettingDialog::lookupTable()
 	return m_lookupTable;
 }
 
-void Post2dWindowContourSettingDialog::solutionChanged(int index)
+void Post2dWindowContourSettingDialog::targetChanged(int index)
 {
 	std::string sol = m_solutions.at(index);
 	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
@@ -161,7 +161,7 @@ void Post2dWindowContourSettingDialog::showRegionDialog()
 void Post2dWindowContourSettingDialog::showScalarBarDialog()
 {
 	ScalarBarDialog dialog(this);
-	dialog.setTitle(m_colorBarTitleMap[currentSolution()]);
+	dialog.setTitle(m_colorBarTitleMap[target()]);
 	dialog.setSetting(m_setting.scalarBarSetting);
 	dialog.setTitleTextSetting(m_setting.titleTextSetting);
 	dialog.setLabelTextSetting(m_setting.labelTextSetting);
@@ -169,7 +169,7 @@ void Post2dWindowContourSettingDialog::showScalarBarDialog()
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	m_colorBarTitleMap[currentSolution()] = dialog.title();
+	m_colorBarTitleMap[target()] = dialog.title();
 	m_setting.scalarBarSetting = dialog.setting();
 	m_setting.titleTextSetting = dialog.titleTextSetting();
 	m_setting.labelTextSetting = dialog.labelTextSetting();

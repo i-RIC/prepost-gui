@@ -55,7 +55,7 @@ Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataI
 	m_legendLength = STANDARD_LENGTH;
 	m_minimumValue = 0.01;
 	m_scaleFactor = 1;
-	m_currentSolution = "";
+	m_target = "";
 	m_mapping = Specific;
 	m_sampleRate = 1;
 
@@ -71,6 +71,11 @@ Post3dWindowArrowGroupDataItem::Post3dWindowArrowGroupDataItem(Post3dWindowDataI
 	setupActors();
 }
 
+const std::string& Post3dWindowArrowGroupDataItem::target() const
+{
+	return m_target;
+}
+
 class Post3dWindowArrowGroupSetSetting : public QUndoCommand
 {
 public:
@@ -78,7 +83,7 @@ public:
 		const std::string& newsol, Post3dWindowArrowGroupDataItem::LengthMode lm, double stdLen, int legendLen, double minLen, Post3dWindowArrowGroupDataItem::Mapping newMapping, const QColor& newColor, const std::string& newScalar, int newRate, const ArrowSettingContainer& arrowSetting, Post3dWindowArrowGroupDataItem* g)
 	{
 		m_oldEnabled = (g->standardItem()->checkState() == Qt::Checked);
-		m_oldSolution = g->m_currentSolution;
+		m_oldSolution = g->m_target;
 		m_oldLengthMode = g->m_lengthMode;
 		m_oldStandardValue = g->m_standardValue;
 		m_oldLegendLength = g->m_legendLength;
@@ -110,7 +115,7 @@ public:
 		} else {
 			m_group->standardItem()->setCheckState(Qt::Unchecked);
 		}
-		m_group->m_currentSolution = m_newSolution;
+		m_group->m_target = m_newSolution;
 		m_group->m_lengthMode = m_newLengthMode;
 		m_group->m_standardValue = m_newStandardValue;
 		m_group->m_legendLength = m_newLegendLength;
@@ -129,7 +134,7 @@ public:
 		} else {
 			m_group->standardItem()->setCheckState(Qt::Unchecked);
 		}
-		m_group->m_currentSolution = m_oldSolution;
+		m_group->m_target = m_oldSolution;
 		m_group->m_lengthMode = m_oldLengthMode;
 		m_group->m_standardValue = m_oldStandardValue;
 		m_group->m_legendLength = m_oldLegendLength;
@@ -196,7 +201,7 @@ QDialog* Post3dWindowArrowGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zoneData);
-	dialog->setCurrentSolution(m_currentSolution);
+	dialog->setTarget(m_target);
 	dialog->setLengthMode(m_lengthMode);
 	dialog->setStandardValue(m_standardValue);
 	dialog->setLegendLength(m_legendLength);
@@ -248,7 +253,7 @@ void Post3dWindowArrowGroupDataItem::handlePropertyDialogAccepted(QDialog* propD
 	iRICUndoStack& stack = iRICUndoStack::instance();
 	stack.beginMacro(tr("Arrow Setting"));
 	stack.push(new Post3dWindowArrowGroupDataItemUpdateOnUndo(this));
-	setSetting(dialog->currentSolution(), dialog->lengthMode(), dialog->standardValue(), dialog->legendLength(), dialog->minimumValue(), dialog->mapping(), dialog->color(), dialog->scalarValueName(), dialog->sampleRate(), dialog->arrowSetting());
+	setSetting(dialog->target(), dialog->lengthMode(), dialog->standardValue(), dialog->legendLength(), dialog->minimumValue(), dialog->mapping(), dialog->color(), dialog->scalarValueName(), dialog->sampleRate(), dialog->arrowSetting());
 	setFaceMap(dialog->faceMap());
 	stack.push(new Post3dWindowArrowGroupDataItemUpdateOnRedo(this));
 	stack.endMacro();
@@ -407,7 +412,7 @@ void Post3dWindowArrowGroupDataItem::updateActorSettings()
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 	m_maskPoints->SetOnRatio(m_sampleRate);
@@ -457,11 +462,11 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_target == "") {return;}
 	if (m_appendFilter->GetNumberOfInputConnections(0) == 0) {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(m_currentSolution.c_str());
+	pd->SetActiveVectors(m_target.c_str());
 	updateScaleFactor();
 	double height = dataModel()->graphicsView()->stdDistance(m_arrowSetting.arrowSize());
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
@@ -472,7 +477,7 @@ void Post3dWindowArrowGroupDataItem::updatePolyData()
 
 	m_maskPoints->Update();
 	vtkPointSet* inPS = m_maskPoints->GetOutput();
-	vtkDataArray* vectorArray = inPS->GetPointData()->GetArray(m_currentSolution.c_str());
+	vtkDataArray* vectorArray = inPS->GetPointData()->GetArray(m_target.c_str());
 	QSet<vtkIdType> pointIds;
 	double minlimitsqr = m_minimumValue * m_minimumValue;
 	for (vtkIdType i = 0; i < inPS->GetNumberOfPoints(); ++i) {
@@ -563,7 +568,7 @@ void Post3dWindowArrowGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	QString lenStr = QString("%1\n\n%2").arg(m_currentSolution.c_str()).arg(m_standardValue);
+	QString lenStr = QString("%1\n\n%2").arg(m_target.c_str()).arg(m_standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
 	if (m_mapping == Specific) {
@@ -582,9 +587,9 @@ void Post3dWindowArrowGroupDataItem::calculateStandardValue()
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
-	if (m_currentSolution == "") {return;}
+	if (m_target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(m_currentSolution.c_str());
+	vtkDataArray* da = pd->GetArray(m_target.c_str());
 
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
@@ -630,7 +635,7 @@ void Post3dWindowArrowGroupDataItem::updateScaleFactor()
 void Post3dWindowArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	m_currentSolution = iRIC::toStr(elem.attribute("solution"));
+	m_target = iRIC::toStr(elem.attribute("solution"));
 	m_scalarValueName = iRIC::toStr(elem.attribute("scalarValueName"));
 	m_color = loadColorAttribute("color", node, m_color);
 	m_oldCameraScale = elem.attribute("oldCameraScale").toDouble();
@@ -657,7 +662,7 @@ void Post3dWindowArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& n
 
 void Post3dWindowArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution.c_str());
+	writer.writeAttribute("solution", m_target.c_str());
 	writer.writeAttribute("scalarValueName", m_scalarValueName.c_str());
 	writeColorAttribute("color", m_color, writer);
 	writer.writeAttribute("oldCameraScale", QString::number(m_oldCameraScale));

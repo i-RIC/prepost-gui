@@ -27,10 +27,10 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	/// Constructor
 	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowContourGroupDataItem();
-	const std::string& currentSolution() const {return m_currentSolution;}
+
+	const std::string& target() const {return m_target;}
 	ContourSettingWidget::Contour contour() const {return m_contour;}
 	int numberOfDivision() const {return m_numberOfDivision;}
 	LookupTableContainer* lookupTable();
@@ -59,7 +59,7 @@ protected:
 	void innerUpdateZScale(double scale) override;
 
 private:
-	std::string m_currentSolution;
+	std::string m_target;
 	int m_numberOfDivision;
 	ContourSettingWidget::Contour m_contour;
 	bool m_fillUpper;

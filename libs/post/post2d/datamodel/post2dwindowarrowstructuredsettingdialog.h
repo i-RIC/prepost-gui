@@ -63,7 +63,7 @@ private slots:
 	void samplingAllToggle(bool toggled);
 
 private:
-	std::vector<std::string> m_solutions;
+	std::vector<std::string> m_targets;
 	std::vector<std::string> m_scalars;
 
 	int m_gridDims[3];

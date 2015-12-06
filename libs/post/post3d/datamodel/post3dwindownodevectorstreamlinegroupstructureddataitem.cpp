@@ -103,7 +103,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		setupStreamTracer(tracer);
 		tracer->SetSourceData(getSource(i));
 		tracer->SetInputData(getRegion());
-		tracer->SetInputArrayToProcess(0, 0, 0, 0, m_currentSolution.c_str());
+		tracer->SetInputArrayToProcess(0, 0, 0, 0, m_target.c_str());
 
 		mapper->SetInputConnection(tracer->GetOutputPort());
 
@@ -144,7 +144,7 @@ QDialog* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
-	dialog->setSolution(m_currentSolution);
+	dialog->setSolution(m_target);
 	dialog->setSettings(m_settings);
 	dialog->setRegionMode(m_regionMode);
 
@@ -163,7 +163,7 @@ public:
 		m_newRegionMode = rm;
 
 		m_oldEnabled = item->isEnabled();
-		m_oldSolution = item->m_currentSolution;
+		m_oldSolution = item->m_target;
 		m_oldSettings = item->m_settings;
 		m_oldRegionMode = item->m_regionMode;
 
@@ -172,7 +172,7 @@ public:
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
-		m_item->setCurrentSolution(m_oldSolution);
+		m_item->setTarget(m_oldSolution);
 		m_item->m_settings = m_oldSettings;
 		m_item->m_regionMode = m_oldRegionMode;
 
@@ -183,7 +183,7 @@ public:
 	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
-		m_item->setCurrentSolution(m_newSolution);
+		m_item->setTarget(m_newSolution);
 		m_item->m_settings = m_newSettings;
 		m_item->m_regionMode = m_newRegionMode;
 
