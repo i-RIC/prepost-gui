@@ -21,17 +21,17 @@ GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthD
 	delete ui;
 }
 
-int GridCreatingConditionCenterAndWidthDialog::iMax()
+int GridCreatingConditionCenterAndWidthDialog::iMax() const
 {
 	return ui->streamWiseSpinBox->value() + 1;
 }
 
-int GridCreatingConditionCenterAndWidthDialog::jMax()
+int GridCreatingConditionCenterAndWidthDialog::jMax() const
 {
 	return ui->crossStreamSpinBox->value() + 1;
 }
 
-double GridCreatingConditionCenterAndWidthDialog::width()
+double GridCreatingConditionCenterAndWidthDialog::width() const
 {
 	return ui->gridWidthSpinBox->value();
 }

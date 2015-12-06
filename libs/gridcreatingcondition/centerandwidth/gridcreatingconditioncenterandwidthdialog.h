@@ -18,10 +18,12 @@ class GridCreatingConditionCenterAndWidthDialog : public QDialog
 public:
 	GridCreatingConditionCenterAndWidthDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthDialog();
-	int iMax();
-	int jMax();
-	double width();
-	double length();
+
+	int iMax() const;
+	int jMax() const;
+	double width() const;
+	double length() const;
+
 	void setIMax(int i);
 	void setJMax(int j);
 	void setWidth(double w);
@@ -39,11 +41,10 @@ private slots:
 signals:
 	void applied(QDialog* d);
 
-protected:
-	double m_length;
-
 private:
 	void apply();
+
+	double m_length;
 	Ui::GridCreatingConditionCenterAndWidthDialog* ui;
 };
 
