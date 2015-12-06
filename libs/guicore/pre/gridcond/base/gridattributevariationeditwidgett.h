@@ -29,7 +29,7 @@ public:
 		m_name (name),
 		m_dataItem {dItem}
 	{
-		m_oldCustomModified = m_dataItem->grid()->gridRelatedCondition(m_name)->isCustomModified();
+		m_oldCustomModified = m_dataItem->grid()->gridAttribute(m_name)->isCustomModified();
 		m_oldValues->SetName(m_name.c_str());
 		m_newValues->SetName(m_name.c_str());
 	}
@@ -46,7 +46,7 @@ private:
 		m_dataItem->updateAttributeActorSettings();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
-		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(modified);
+		m_dataItem->grid()->gridAttribute(m_name)->setCustomModified(modified);
 	}
 
 	vtkSmartPointer<vtkDataArray> m_newValues;

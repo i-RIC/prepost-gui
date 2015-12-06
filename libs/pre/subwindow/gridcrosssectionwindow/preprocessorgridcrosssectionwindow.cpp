@@ -118,7 +118,7 @@ void PreProcessorGridCrosssectionWindow::setupToolBar()
 
 void PreProcessorGridCrosssectionWindow::setupModel()
 {
-	GridAttributeContainer* cont = m_grid->gridRelatedCondition(m_condition);
+	GridAttributeContainer* cont = m_grid->gridAttribute(m_condition);
 	m_model = new QStandardItemModel(0, 1, this);
 	m_model->setHeaderData(0, Qt::Horizontal, cont->condition()->caption());
 
@@ -209,7 +209,7 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 	m_blueLineComboBox->blockSignals(false);
 
 	// set window title.
-	QString caption = m_grid->gridRelatedCondition(m_condition)->condition()->caption();
+	QString caption = m_grid->gridAttribute(m_condition)->condition()->caption();
 	setWindowTitle(title.arg(caption).arg(m_blackLineIndex + 1));
 	setupData();
 
@@ -258,7 +258,7 @@ void PreProcessorGridCrosssectionWindow::setupData()
 	}
 	clear();
 	GridAttributeRealNodeContainer* cont =
-		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
+		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridAttribute(m_condition));
 	int row = 0;
 	if (m_direction == dirI) {
 		for (unsigned int i = 0; i < m_grid->dimensionI(); ++i) {
@@ -389,7 +389,7 @@ void PreProcessorGridCrosssectionWindow::handleDataChange()
 bool PreProcessorGridCrosssectionWindow::syncData()
 {
 	GridAttributeRealNodeContainer* cont =
-		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridRelatedCondition(m_condition));
+		dynamic_cast<GridAttributeRealNodeContainer*>(m_grid->gridAttribute(m_condition));
 	if (m_direction == dirI) {
 		for (int i = 0; i < m_model->rowCount(); ++i) {
 			double data = m_model->data(m_model->index(i, 0)).toDouble();

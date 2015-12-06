@@ -480,7 +480,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		return;
 	}
 	*/
-	GridAttributeContainer* container = grid->gridRelatedCondition(m_condition->name());
+	GridAttributeContainer* container = grid->gridAttribute(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
@@ -580,7 +580,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 
 void PreProcessorGeoDataGroupDataItem::setDefaultValue(Grid* grid)
 {
-	GridAttributeContainer* container = grid->gridRelatedCondition(m_condition->name());
+	GridAttributeContainer* container = grid->gridAttribute(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];

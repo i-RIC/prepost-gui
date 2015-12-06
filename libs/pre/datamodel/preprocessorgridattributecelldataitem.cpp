@@ -86,7 +86,7 @@ void PreProcessorGridAttributeCellDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
 	if (g != nullptr) {
-		GridAttributeContainer* cont = g->gridRelatedCondition(m_condition->name());
+		GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
 		m_isCustomModified = cont->isCustomModified();
 		m_isCustomModified.save(writer);
 	}
@@ -97,7 +97,7 @@ void PreProcessorGridAttributeCellDataItem::loadFromCgnsFile(const int /*fn*/)
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	Grid* g = tmpparent->grid();
 	if (g == nullptr) {return;}
-	GridAttributeContainer* cont = g->gridRelatedCondition(m_condition->name());
+	GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
 }
 
@@ -183,10 +183,10 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	QVector<vtkIdType> targets = tmpparent->selectedCells();
 	Grid* g = tmpparent->grid();
-	dialog->scanAndSetDefault(g->gridRelatedCondition(m_condition->name()), targets);
+	dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
 
 	if (QDialog::Accepted == dialog->exec()) {
-		dialog->applyValue(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
+		dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
 	}
 	delete dialog;
 }
@@ -206,7 +206,7 @@ void PreProcessorGridAttributeCellDataItem::editVariation()
 	Grid* g = tmpparent->grid();
 
 	if (QDialog::Accepted == dialog->exec()) {
-		dialog->applyVariation(g->gridRelatedCondition(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
+		dialog->applyVariation(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetCellData(), tmpparent);
 	}
 	delete dialog;
 }

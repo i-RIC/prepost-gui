@@ -496,7 +496,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdTyp
 	Grid* grid = gitem->grid();
 
 	QList<PropertyBrowserAttribute> atts;
-	const QList<GridAttributeContainer*> conds = grid->gridRelatedConditions();
+	const QList<GridAttributeContainer*> conds = grid->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		GridAttributeContainer* cond = *it;
 		GridAttributeIntegerNodeContainer* icond = dynamic_cast<GridAttributeIntegerNodeContainer*>(cond);
@@ -563,7 +563,7 @@ bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* too
 	if (activeItem == 0) {return false;}
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
-	GridAttributeContainer* cont = grid->gridRelatedCondition(activeItem->condition()->name());
+	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
 	const QList<GridAttributeDimensionSelectWidget*>& selectWidgets = cont->dimensions()->selectWidgets();
 	if (selectWidgets.size() == 0) {return false;}
 	for (int i = 0; i < selectWidgets.size(); ++i) {

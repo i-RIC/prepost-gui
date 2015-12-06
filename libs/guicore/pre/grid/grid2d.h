@@ -11,8 +11,8 @@ class GUICOREDLL_EXPORT Grid2D : public Grid
 {
 
 public:
-	Grid2D(SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
-	Grid2D(const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
+	Grid2D(vtkPointSet* ps, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
+	Grid2D(vtkPointSet* ps, const std::string& zonename, SolverDefinitionGridType::GridType type, ProjectDataItem* parent);
 	virtual ~Grid2D();
 
 	virtual unsigned int vertexCount() const = 0;

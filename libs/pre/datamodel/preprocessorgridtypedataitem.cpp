@@ -302,7 +302,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
 		Grid* g = (*it)->gridDataItem()->grid();
 		if (g != nullptr) {
-			GridAttributeContainer* c = g->gridRelatedCondition(name);
+			GridAttributeContainer* c = g->gridAttribute(name);
 			double tmpmin, tmpmax;
 			if (c->getValueRange(&tmpmin, &tmpmax)) {
 				if (tmpmin < min || (! valueExist)) {min = tmpmin;}

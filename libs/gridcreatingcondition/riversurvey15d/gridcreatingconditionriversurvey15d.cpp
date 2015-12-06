@@ -994,7 +994,7 @@ void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* star
 	grid->setModified();
 
 	// grid related conditions
-	QList<GridAttributeContainer*>& clist = grid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}

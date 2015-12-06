@@ -322,6 +322,7 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetrealoption.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
+           pre/grid/private/grid_impl.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \
            pre/gridcond/base/gridattributebaseobject.h \
            pre/gridcond/base/gridattributecellcontainert.h \

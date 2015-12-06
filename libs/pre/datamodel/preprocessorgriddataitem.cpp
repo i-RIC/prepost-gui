@@ -990,7 +990,7 @@ void PreProcessorGridDataItem::updateZDepthRangeItemCount()
 void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
 {
 	if (m_grid == nullptr) {return;}
-	QList<GridAttributeContainer*> conds = m_grid->gridRelatedConditions();
+	QList<GridAttributeContainer*> conds = m_grid->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		informgridRelatedConditionChange((*it)->name());
 	}

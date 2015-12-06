@@ -44,7 +44,7 @@ private:
 		m_dataItem->updateSimplifiedGrid();
 		m_dataItem->informgridRelatedConditionChange(m_name);
 		m_dataItem->grid()->setModified();
-		m_dataItem->grid()->gridRelatedCondition(m_name)->setCustomModified(modified);
+		m_dataItem->grid()->gridAttribute(m_name)->setCustomModified(modified);
 	}
 	vtkSmartPointer<vtkDataArray> m_newValues;
 	vtkSmartPointer<vtkDataArray> m_oldValues;

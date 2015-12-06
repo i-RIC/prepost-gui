@@ -112,7 +112,7 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	ugrid->BuildLinks();
 
 	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid2d->gridRelatedConditions()){
+	for (GridAttributeContainer* c : grid2d->gridAttributes()){
 		c->allocate();
 	}
 

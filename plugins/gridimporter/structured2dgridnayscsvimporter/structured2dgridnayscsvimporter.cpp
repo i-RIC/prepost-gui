@@ -42,7 +42,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 
 	QFile f(filename);
 	if (f.open(QFile::ReadOnly | QFile::Truncate | QIODevice::Text)){
-		GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
+		GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
 		if (c == 0){
 			// this grid does not have elevation. Impossible to import.
 			f.close();
@@ -82,7 +82,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 		grid2d->vtkGrid()->SetPoints(points);
 
 		// allocate memory for all grid related conditions.
-		QList<GridAttributeContainer*>& clist = grid2d->gridRelatedConditions();
+		QList<GridAttributeContainer*>& clist = grid2d->gridAttributes();
 		for (auto it = clist.begin(); it != clist.end(); ++it){
 			(*it)->allocate();
 		}

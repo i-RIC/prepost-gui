@@ -24,37 +24,41 @@
 #define ELEMNODENAME "Element"
 
 Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
-	Grid2D {SolverDefinitionGridType::gtUnstructured2DGrid, parent}
-{
-	init();
-}
+	Unstructured2DGrid("", parent)
+{}
 
 Unstructured2DGrid::Unstructured2DGrid(const std::string& zonename, ProjectDataItem* parent) :
-	Grid2D {zonename, SolverDefinitionGridType::gtUnstructured2DGrid, parent}
-{
-	init();
-}
+	Grid2D {vtkUnstructuredGrid::New(), zonename, SolverDefinitionGridType::gtUnstructured2DGrid, parent}
+{}
 
-void Unstructured2DGrid::init()
+Unstructured2DGrid::~Unstructured2DGrid()
+{}
+
+vtkUnstructuredGrid* Unstructured2DGrid::vtkGrid() const
 {
-	m_vtkGrid = vtkUnstructuredGrid::New();
+	return dynamic_cast<vtkUnstructuredGrid*>(Grid::vtkGrid());
 }
 
 unsigned int Unstructured2DGrid::vertexCount() const
 {
-	return m_vtkGrid->GetPoints()->GetNumberOfPoints();
+	return vtkGrid()->GetPoints()->GetNumberOfPoints();
+}
+
+unsigned int Unstructured2DGrid::cellCount() const
+{
+	return vtkGrid()->GetNumberOfCells();
 }
 
 QVector2D Unstructured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
-	m_vtkGrid->GetPoints()->GetPoint(index, v);
+	vtkGrid()->GetPoints()->GetPoint(index, v);
 	return QVector2D(v[0], v[1]);
 }
 
 void Unstructured2DGrid::setVertex(unsigned int index, const QVector2D& v)
 {
-	m_vtkGrid->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
+	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
 
 bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
@@ -66,7 +70,7 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 
 	if (ier != 0) {return false;}
 	// for unstructured 2d grid, size[0] = NVertex, size[1] = NCell
-	vtkUnstructuredGrid* grid = dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);
+	vtkUnstructuredGrid* grid = dynamic_cast<vtkUnstructuredGrid*>(vtkGrid());
 	grid->Initialize();
 
 	ier = cg_goto(fn, B, "Zone_t", Z, "GridCoordinates", 0, "end");
@@ -126,7 +130,7 @@ bool Unstructured2DGrid::loadFromCgnsFile(const int fn, int B, int Z)
 			}
 		}
 	}
-	loadGridRelatedConditions(fn, B, Z);
+	loadGridAttributes(fn, B, Z);
 
 	grid->BuildLinks();
 	return true;
@@ -144,8 +148,8 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonenam
 		if (ier != 0) {return false;}
 	}
 	// Now, create new zone.
-	sizes[0] = m_vtkGrid->GetNumberOfPoints();
-	sizes[1] = m_vtkGrid->GetNumberOfCells();
+	sizes[0] = vtkGrid()->GetNumberOfPoints();
+	sizes[1] = vtkGrid()->GetNumberOfCells();
 	sizes[2] = 0;
 	sizes[3] = 0;
 	sizes[4] = 0;
@@ -159,12 +163,12 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonenam
 	if (ier != 0) {return false;}
 	int C;
 	// save coordinates.
-	std::vector<double> dataX(m_vtkGrid->GetNumberOfPoints(), 0);
-	std::vector<double> dataY(m_vtkGrid->GetNumberOfPoints(), 0);
+	std::vector<double> dataX(vtkGrid()->GetNumberOfPoints(), 0);
+	std::vector<double> dataY(vtkGrid()->GetNumberOfPoints(), 0);
 	double points[3];
 
-	for (int i = 0; i < m_vtkGrid->GetNumberOfPoints(); ++i) {
-		m_vtkGrid->GetPoints()->GetPoint(i, points);
+	for (int i = 0; i < vtkGrid()->GetNumberOfPoints(); ++i) {
+		vtkGrid()->GetPoints()->GetPoint(i, points);
 		dataX[i] = points[0];
 		dataY[i] = points[1];
 	}
@@ -177,22 +181,22 @@ bool Unstructured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonenam
 	// Save grid node connectivity data.
 	// Unstructured grid that consists of triangles is supported.
 
-	std::vector<cgsize_t> elements(3 * m_vtkGrid->GetNumberOfCells());
-	for (int i = 0; i < m_vtkGrid->GetNumberOfCells(); ++i) {
-		vtkTriangle* tri = dynamic_cast<vtkTriangle*>(m_vtkGrid->GetCell(i));
+	std::vector<cgsize_t> elements(3 * vtkGrid()->GetNumberOfCells());
+	for (int i = 0; i < vtkGrid()->GetNumberOfCells(); ++i) {
+		vtkTriangle* tri = dynamic_cast<vtkTriangle*>(vtkGrid()->GetCell(i));
 		elements[i * 3]     = tri->GetPointId(0) + 1;
 		elements[i * 3 + 1] = tri->GetPointId(1) + 1;
 		elements[i * 3 + 2] = tri->GetPointId(2) + 1;
 	}
 	int startIndex = 1;
-	int endIndex = startIndex + m_vtkGrid->GetNumberOfCells() - 1;
+	int endIndex = startIndex + vtkGrid()->GetNumberOfCells() - 1;
 	int S;
 	ier = cg_section_write(fn, B, zoneid, ELEMNODENAME, TRI_3, startIndex, endIndex, 0, elements.data(), &S);
 	if (ier != 0) {return false;}
 
 	// Next grid related condition data is saved.
 	// Create "GridConditions" node under the zone node.
-	saveGridRelatedConditions(fn, B, zoneid);
+	saveGridAttributes(fn, B, zoneid);
 	return true;
 }
 
@@ -202,11 +206,16 @@ void Unstructured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double y
 	setupIndexArray();
 }
 
+vtkAlgorithm* Unstructured2DGrid::vtkFilteredIndexGridAlgorithm() const
+{
+	return m_vtkFilteredIndexGridAlgorithm;
+}
+
 void Unstructured2DGrid::setupIndexArray()
 {
-	if (m_vtkFilteredCellsAlgorithm == nullptr) {return;}
+	if (vtkFilteredCellsAlgorithm() == nullptr) {return;}
 
-	vtkAlgorithm* tmpalgo = m_vtkFilteredCellsAlgorithm;
+	vtkAlgorithm* tmpalgo = vtkFilteredCellsAlgorithm();
 	vtkPolyDataAlgorithm* algo = dynamic_cast<vtkPolyDataAlgorithm*>(tmpalgo);
 	algo->Update();
 	vtkSmartPointer<vtkPolyData> filteredCells = algo->GetOutput();
@@ -243,7 +252,7 @@ void Unstructured2DGrid::setupIndexArray()
 		for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
 			vtkIdType vid = cell->GetPointId(j);
 			if (! indices.contains(vid)) {
-				m_vtkGrid->GetPoint(vid, tmpp);
+				vtkGrid()->GetPoint(vid, tmpp);
 				igPoints->InsertNextPoint(tmpp);
 				ca->InsertNextCell(1, &cellid);
 				sa->InsertNextValue(iRIC::toStr(label.arg(vid + 1)));

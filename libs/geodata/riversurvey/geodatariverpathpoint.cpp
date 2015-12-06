@@ -729,7 +729,7 @@ void GeoDataRiverPathPoint::setName(const QString& newname)
 
 void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
 {
-	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridRelatedCondition("Elevation"));
+	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridAttribute("Elevation"));
 	QVector2D vec2d;
 	int index;
 	if (last) {

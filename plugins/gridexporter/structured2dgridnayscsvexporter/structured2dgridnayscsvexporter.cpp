@@ -33,14 +33,14 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 
 	QFile f(filename);
 	if (f.open(QFile::WriteOnly | QFile::Truncate | QIODevice::Text)){
-		GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
+		GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
 		if (c == nullptr){
 			// this grid does not have Elevation node. Impossible to export data.
 			return false;
 		}
 		GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
-		c = grid2d->gridRelatedCondition("CellCondition");
+		c = grid2d->gridAttribute("CellCondition");
 		GridAttributeIntegerCellContainer* cellcond = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 		QTextStream o(&f);
 		o.setRealNumberPrecision(8);

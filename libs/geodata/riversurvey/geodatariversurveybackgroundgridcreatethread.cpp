@@ -356,7 +356,7 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	points->InsertPoint(gridISize * gridJSize - 1, 0, 0, 0);
 	tmpgrid->vtkGrid()->SetPoints(points);
 
-	QList<GridAttributeContainer*>& clist = tmpgrid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = tmpgrid->gridAttributes();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}

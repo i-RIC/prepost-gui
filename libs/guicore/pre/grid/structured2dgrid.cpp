@@ -39,47 +39,75 @@ bool RectRegion::intersect(const QLineF& line) const
 }
 
 Structured2DGrid::Structured2DGrid(ProjectDataItem* parent) :
-	Grid2D {SolverDefinitionGridType::gtStructured2DGrid, parent}
-{
-	init();
-}
+	Structured2DGrid("", parent)
+{}
 
 Structured2DGrid::Structured2DGrid(const std::string& zonename, ProjectDataItem* parent) :
-	Grid2D {zonename, SolverDefinitionGridType::gtStructured2DGrid, parent}
-{
-	init();
-}
+	Grid2D {vtkStructuredGrid::New(), zonename, SolverDefinitionGridType::gtStructured2DGrid, parent},
+	m_dimensionI {0},
+	m_dimensionJ {0}
+{}
 
 Structured2DGrid::~Structured2DGrid()
 {}
 
-void Structured2DGrid::init()
+vtkStructuredGrid* Structured2DGrid::vtkGrid() const
 {
-	m_vtkGrid = vtkStructuredGrid::New();
-	m_dimensionI = 0;
-	m_dimensionJ = 0;
+	return dynamic_cast<vtkStructuredGrid*>(Grid::vtkGrid());
 }
 
-void Structured2DGrid::setDimensions(unsigned int i, unsigned int j)
+unsigned int Structured2DGrid::vertexCount() const
 {
-	m_dimensionI = i;
-	m_dimensionJ = j;
+	return m_dimensionI * m_dimensionJ;
+}
 
-	// prepare memory area.
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);
-	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
+unsigned int Structured2DGrid::cellCount() const
+{
+	return vtkGrid()->GetNumberOfCells();
+}
+
+unsigned int Structured2DGrid::vertexIndex(unsigned int i, unsigned int j) const
+{
+	return m_dimensionI * j + i;
+}
+
+void Structured2DGrid::getIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
+{
+	*i = index % m_dimensionI;
+	*j = index / m_dimensionI;
+}
+
+unsigned int Structured2DGrid::cellIndex(unsigned int i, unsigned int j) const
+{
+	return (m_dimensionI - 1) * j + i;
+}
+
+void Structured2DGrid::getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
+{
+	*i = index % (m_dimensionI - 1);
+	*j = index / (m_dimensionI - 1);
 }
 
 QVector2D Structured2DGrid::vertex(unsigned int index) const
 {
 	double v[3];
-	m_vtkGrid->GetPoints()->GetPoint(index, v);
+	vtkGrid()->GetPoints()->GetPoint(index, v);
 	return QVector2D(v[0], v[1]);
+}
+
+QVector2D Structured2DGrid::vertex(unsigned int i, unsigned int j) const
+{
+	return vertex(vertexIndex(i, j));
+}
+
+void Structured2DGrid::setVertex(unsigned int i, unsigned int j, const QVector2D& v)
+{
+	setVertex(vertexIndex(i, j), v);
 }
 
 void Structured2DGrid::setVertex(unsigned int index, const QVector2D& v)
 {
-	m_vtkGrid->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
+	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0);
 }
 
 bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
@@ -97,7 +125,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 	m_dimensionJ = size[1];
 
 	// prepare memory area.
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(m_vtkGrid);
+	vtkStructuredGrid* grid = vtkGrid();
 	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
 	ier = cg_goto(fn, base, "Zone_t", zoneid, "GridCoordinates", 0, "end");
 	if (ier != 0) {
@@ -129,7 +157,7 @@ bool Structured2DGrid::loadFromCgnsFile(const int fn, int base, int zoneid)
 
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
-	loadGridRelatedConditions(fn, base, zoneid);
+	loadGridAttributes(fn, base, zoneid);
 	return true;
 }
 
@@ -166,7 +194,7 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
 
 	for (unsigned int i = 0; i < m_dimensionI; ++i) {
 		for (unsigned int j = 0; j < m_dimensionJ; ++j) {
-			m_vtkGrid->GetPoints()->GetPoint(i + m_dimensionI * j, points);
+			vtkGrid()->GetPoints()->GetPoint(i + m_dimensionI * j, points);
 			dataX[i + m_dimensionI * j] = points[0];
 			dataY[i + m_dimensionI * j] = points[1];
 		}
@@ -179,26 +207,34 @@ bool Structured2DGrid::saveToCgnsFile(const int fn, int B, const char* zonename)
 	// Grid coordinates are saved.
 	// Next grid related condition data is saved.
 	// Create "GridConditions" node under the zone node.
-	saveGridRelatedConditions(fn, B, zoneid);
+	saveGridAttributes(fn, B, zoneid);
 	return true;
-}
-
-void Structured2DGrid::getIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
-{
-	*i = index % m_dimensionI;
-	*j = index / m_dimensionI;
-}
-
-void Structured2DGrid::getCellIJIndex(unsigned int index, unsigned int* i, unsigned int* j)
-{
-	*i = index % (m_dimensionI - 1);
-	*j = index / (m_dimensionI - 1);
 }
 
 void Structured2DGrid::dimensions(unsigned int* i, unsigned int* j)
 {
 	*i = m_dimensionI;
 	*j = m_dimensionJ;
+}
+
+unsigned int Structured2DGrid::dimensionI() const
+{
+	return m_dimensionI;
+}
+
+unsigned int Structured2DGrid::dimensionJ() const
+{
+	return m_dimensionJ;
+}
+
+void Structured2DGrid::setDimensions(unsigned int i, unsigned int j)
+{
+	m_dimensionI = i;
+	m_dimensionJ = j;
+
+	// prepare memory area.
+	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(vtkGrid());
+	grid->SetDimensions(m_dimensionI, m_dimensionJ, 1);
 }
 
 const QStringList Structured2DGrid::checkShape(QTextStream& stream)
@@ -410,10 +446,9 @@ bool Structured2DGrid::isVariationOk(double ilimit, double jlimit, QTextStream& 
 	return iAllOk && jAllOk;
 }
 
-
 void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
-	m_isMasked = false;
+	setMasked(false);
 
 	double xcenter = (xmin + xmax) * 0.5;
 	double ycenter = (ymin + ymax) * 0.5;
@@ -427,18 +462,18 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	ymax += ywidth * 0.2;
 
 	// 1. Find the grid vertex that is the nearest to the region center.
-	vtkIdType vid = m_vtkGrid->FindPoint(xcenter, ycenter, 0);
-	double* cv = m_vtkGrid->GetPoint(vid);
+	vtkIdType vid = vtkGrid()->FindPoint(xcenter, ycenter, 0);
+	double* cv = vtkGrid()->GetPoint(vid);
 	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
 		vtkSmartPointer<vtkTrivialProducer> emptyAlgo = vtkSmartPointer<vtkTrivialProducer>::New();
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
-		emptyPoly->SetPoints(m_vtkGrid->GetPoints());
+		emptyPoly->SetPoints(vtkGrid()->GetPoints());
 		emptyAlgo->SetOutput(emptyPoly);
 
-		m_vtkFilteredShapeAlgorithm = emptyAlgo;
-		m_vtkFilteredPointsAlgorithm = emptyAlgo;
-		m_vtkFilteredCellsAlgorithm = emptyAlgo;
+		setFilteredShapeAlgorithm(emptyAlgo);
+		setFilteredPointsAlgorithm(emptyAlgo);
+		setFilteredCellsAlgorithm(emptyAlgo);
 		return;
 	}
 
@@ -450,28 +485,28 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	double tmpv[3];
 
 	// test I = 0
-	m_vtkGrid->GetPoint(vertexIndex(0, centerJ), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(0, centerJ), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMin = 0;
 	} else {
 		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
 	}
 	// test I = imax
-	m_vtkGrid->GetPoint(vertexIndex(m_dimensionI - 1, centerJ), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(m_dimensionI - 1, centerJ), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitIMax = m_dimensionI - 1;
 	} else {
 		lineLimitIMax = lineLimitI(centerJ, centerI, m_dimensionI - 1, region);
 	}
 	// test J = 0
-	m_vtkGrid->GetPoint(vertexIndex(centerI, 0), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(centerI, 0), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMin = 0;
 	} else {
 		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
 	}
 	// test J = jmax
-	m_vtkGrid->GetPoint(vertexIndex(centerI, m_dimensionJ - 1), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(centerI, m_dimensionJ - 1), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		lineLimitJMax = m_dimensionJ - 1;
 	} else {
@@ -524,7 +559,7 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 
 	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
-	exGrid->SetInputData(m_vtkGrid);
+	exGrid->SetInputData(vtkGrid());
 	exGrid->Update();
 	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
 	int exRate = 1;
@@ -536,7 +571,8 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 		exGrid->SetSampleRate(exRate, exRate, 1);
 		exGrid->Update();
 		extractedGrid = exGrid->GetOutput();
-		m_isMasked = true;
+
+		setMasked(true);
 	}
 
 	vtkSmartPointer<vtkGeometryFilter> geo = vtkSmartPointer<vtkGeometryFilter>::New();
@@ -547,9 +583,9 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	m_drawnJMin = lineLimitJMin2;
 	m_drawnJMax = lineLimitJMax2;
 
-	m_vtkFilteredShapeAlgorithm = geo;
-	m_vtkFilteredPointsAlgorithm = geo;
-	m_vtkFilteredCellsAlgorithm = geo;
+	setFilteredShapeAlgorithm(geo);
+	setFilteredPointsAlgorithm(geo);
+	setFilteredCellsAlgorithm(geo);
 
 	int tmpIMin = (m_drawnIMin / exRate) * exRate;
 	int tmpIMax = qMin((m_drawnIMax / exRate + 1) * exRate, m_dimensionI - 1);
@@ -565,14 +601,14 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	double tmpp[3];
 	QString label("(%1,%2)");
 	for (int i = tmpIMin; i <= tmpIMax; i += exRate) {
-		m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpp);
+		vtkGrid()->GetPoint(vertexIndex(i, 0), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
 		sa->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1)));
 		++ cellid;
 	}
 	for (int j = tmpJMin; j <= tmpJMax; j += exRate) {
-		m_vtkGrid->GetPoint(vertexIndex(0, j), tmpp);
+		vtkGrid()->GetPoint(vertexIndex(0, j), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
 		sa->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1)));
@@ -588,6 +624,31 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	m_vtkFilteredIndexGridAlgorithm = prod;
 }
 
+int Structured2DGrid::drawnIMin() const
+{
+	return m_drawnIMin;
+}
+
+int Structured2DGrid::drawnIMax() const
+{
+	return m_drawnIMax;
+}
+
+int Structured2DGrid::drawnJMin() const
+{
+	return m_drawnJMin;
+}
+
+int Structured2DGrid::drawnJMax() const
+{
+	return m_drawnJMax;
+}
+
+vtkAlgorithm* Structured2DGrid::vtkFilteredIndexGridAlgorithm() const
+{
+	return m_vtkFilteredIndexGridAlgorithm;
+}
+
 int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& region)
 {
 	if (qAbs(iOut - iIn) == 1) {
@@ -595,7 +656,7 @@ int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& reg
 	}
 	int i = (iIn + iOut) / 2;
 	double tmpv[3];
-	m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitI(j, i, iOut, region);
 	} else {
@@ -610,7 +671,7 @@ int Structured2DGrid::lineLimitJ(int i, int jIn, int jOut, const RectRegion& reg
 	}
 	int j = (jIn + jOut) / 2;
 	double tmpv[3];
-	m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
 	if (region.pointIsInside(tmpv[0], tmpv[1])) {
 		return lineLimitJ(i, j, jOut, region);
 	} else {
@@ -648,10 +709,10 @@ bool Structured2DGrid::lineAtIIntersect(int i, const RectRegion& region)
 {
 	QPointF p1, p2;
 	double tmpv[3];
-	m_vtkGrid->GetPoint(vertexIndex(i, 0), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(i, 0), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
 	for (unsigned int j = 1; j < m_dimensionJ; ++j) {
-		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
+		vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
 		if (region.intersect(line)) {return true;}
@@ -663,18 +724,13 @@ bool Structured2DGrid::lineAtJIntersect(int j, const RectRegion& region)
 {
 	QPointF p1, p2;
 	double tmpv[3];
-	m_vtkGrid->GetPoint(vertexIndex(0, j), tmpv);
+	vtkGrid()->GetPoint(vertexIndex(0, j), tmpv);
 	p1 = QPointF(tmpv[0], tmpv[1]);
 	for (unsigned int i = 1; i < m_dimensionI; ++i) {
-		m_vtkGrid->GetPoint(vertexIndex(i, j), tmpv);
+		vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
 		p2 = QPointF(tmpv[0], tmpv[1]);
 		QLineF line(p1, p2);
 		if (region.intersect(line)) {return true;}
 	}
 	return false;
-}
-
-QVector2D Structured2DGrid::vertex(unsigned int i, unsigned int j) const
-{
-	return vertex(vertexIndex(i, j));
 }

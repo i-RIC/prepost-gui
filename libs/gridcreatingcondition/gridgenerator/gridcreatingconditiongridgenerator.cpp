@@ -119,11 +119,11 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridAttributes()) {
 		c->allocate();
 	}
 	GridAttributeContainer* c;
-	c = grid->gridRelatedCondition("Elevation");
+	c = grid->gridAttribute("Elevation");
 	GridAttributeRealNodeContainer* rnContainer = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 	if (rnContainer != 0) {
 		for (int j = 0; j < m_jMax; j++) {
@@ -134,7 +134,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 		rnContainer->dataArray()->Modified();
 		rnContainer->setMapped(true);
 	}
-	c = grid->gridRelatedCondition("CellCondition");
+	c = grid->gridAttribute("CellCondition");
 	GridAttributeIntegerCellContainer* icContainer = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	if (icContainer != 0) {
 		for (int j = 0; j < m_jMax - 1; j++) {

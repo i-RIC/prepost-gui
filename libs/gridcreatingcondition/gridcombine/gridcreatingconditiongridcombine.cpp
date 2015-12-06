@@ -55,12 +55,12 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 	grid->vtkGrid()->SetPoints(points);
 
 	// allocate memory for all grid related conditions.
-	QList<GridAttributeContainer*>& clist = grid->gridRelatedConditions();
+	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
 	for (auto it = clist.begin(); it != clist.end(); ++it) {
 		(*it)->allocate();
 	}
 	GridAttributeContainer* c;
-	c = grid->gridRelatedCondition("Elevation");
+	c = grid->gridAttribute("Elevation");
 	GridAttributeRealNodeContainer* rnContainer = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 	if (rnContainer != nullptr) {
 		for (int j = 0; j < m_jMax; j++) {
@@ -71,7 +71,7 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 		rnContainer->dataArray()->Modified();
 		rnContainer->setMapped(true);
 	}
-	c = grid->gridRelatedCondition("CellCondition");
+	c = grid->gridAttribute("CellCondition");
 	GridAttributeIntegerCellContainer* icContainer = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	if (icContainer != nullptr) {
 		for (int j = 0; j < m_jMax - 1; j++) {
@@ -123,7 +123,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 		y8_1[i] = new double[nj4_1 + 1];
 		z8_1[i] = new double[nj4_1 + 1];
 	}
-	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g1->gridRelatedCondition("Elevation"));
+	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g1->gridAttribute("Elevation"));
 	for (int i = 0; i < ni4_1 * nj4_1; i++) {
 		double point[3];
 		g1->vtkGrid()->GetPoint(i, point);
@@ -143,7 +143,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	for (int i = 0; i < ni4_1; i++) {
 		obst4_1[i] = new int[nj4_1];
 	}
-	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g1->gridRelatedCondition("CellCondition"));
+	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g1->gridAttribute("CellCondition"));
 	for (int i = 0; i < (ni4_1 - 1) * (nj4_1 - 1); i++) {
 		int ii = i % (ni4_1 - 1) + 1;
 		int jj = i / (ni4_1 - 1) + 1;
@@ -167,7 +167,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 		y8_2[i] = new double[nj4_2 + 1];
 		z8_2[i] = new double[nj4_2 + 1];
 	}
-	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g2->gridRelatedCondition("Elevation"));
+	rncont = dynamic_cast<GridAttributeRealNodeContainer*>(g2->gridAttribute("Elevation"));
 	for (int i = 0; i < ni4_2 * nj4_2; i++) {
 		double point[3];
 		g2->vtkGrid()->GetPoint(i, point);
@@ -183,7 +183,7 @@ void GridCreatingConditionGridCombine::setupParameters()
 	for (int i = 0; i < ni4_2; i++) {
 		obst4_2[i] = new int[nj4_2];
 	}
-	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g2->gridRelatedCondition("CellCondition"));
+	iccont = dynamic_cast<GridAttributeIntegerCellContainer*>(g2->gridAttribute("CellCondition"));
 	for (int i = 0; i < (ni4_2 - 1) * (nj4_2 - 1); i++) {
 		int ii = i % (ni4_2 - 1) + 1;
 		int jj = i / (ni4_2 - 1) + 1;

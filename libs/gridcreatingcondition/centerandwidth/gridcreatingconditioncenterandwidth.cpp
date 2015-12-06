@@ -267,7 +267,7 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 	points->Delete();
 
 	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridAttributes()) {
 		c->allocate();
 	}
 	grid->setModified();

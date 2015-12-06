@@ -15,13 +15,13 @@
 #include <vector>
 
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(ProjectDataItem* parent) :
-	Grid2D {SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
+	Grid2D {vtkUnstructuredGrid::New(), SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
 {
 	init();
 }
 
 Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const std::string& zonename, ProjectDataItem* parent) :
-	Grid2D {zonename, SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
+	Grid2D {vtkUnstructuredGrid::New(), zonename, SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection, parent}
 {
 	init();
 }
@@ -29,33 +29,51 @@ Structured15DGridWithCrossSection::Structured15DGridWithCrossSection(const std::
 Structured15DGridWithCrossSection::~Structured15DGridWithCrossSection()
 {}
 
+vtkUnstructuredGrid* Structured15DGridWithCrossSection::vtkGrid() const
+{
+	return dynamic_cast<vtkUnstructuredGrid*>(Grid::vtkGrid());
+}
+
+vtkUnstructuredGrid* Structured15DGridWithCrossSection::vertexGrid() const
+{
+	return m_vertexGrid;
+}
+
+unsigned int Structured15DGridWithCrossSection::vertexCount() const
+{
+	return m_vertexGrid->GetNumberOfPoints();
+}
+
+unsigned int Structured15DGridWithCrossSection::cellCount() const
+{
+	return nodeCount() - 1;
+}
+
 void Structured15DGridWithCrossSection::init()
 {
-	m_vtkGrid = vtkUnstructuredGrid::New();
 	m_vertexGrid = vtkUnstructuredGrid::New();
 }
 
 QVector2D Structured15DGridWithCrossSection::vertex(unsigned int index) const
 {
 	double points[3];
-	m_vtkGrid->GetPoints()->GetPoint(index, points);
+	vtkGrid()->GetPoints()->GetPoint(index, points);
 
 	return QVector2D(points[0], points[1]);
 }
 
 void Structured15DGridWithCrossSection::setVertex(unsigned int index, const QVector2D& v)
 {
-	m_vtkGrid->GetPoints()->SetPoint(index, v.x(), v.y(), 0.0);
+	vtkGrid()->GetPoints()->SetPoint(index, v.x(), v.y(), 0.0);
 }
 
 void Structured15DGridWithCrossSection::setPoints(vtkPoints* points)
 {
 	vtkIdType num = points->GetNumberOfPoints();
-	vtkUnstructuredGrid* edges = dynamic_cast<vtkUnstructuredGrid*>(m_vtkGrid);
-	vtkUnstructuredGrid* vertices = dynamic_cast<vtkUnstructuredGrid*>(m_vertexGrid);
+	vtkUnstructuredGrid* edges = vtkGrid();
 
 	edges->SetPoints(points);
-	vertices->SetPoints(points);
+	m_vertexGrid->SetPoints(points);
 
 	// for edges
 	vtkLine* line = vtkLine::New();
@@ -71,10 +89,33 @@ void Structured15DGridWithCrossSection::setPoints(vtkPoints* points)
 	vtkVertex* vertex = vtkVertex::New();
 	for (vtkIdType i = 0; i < num; i++) {
 		vertex->GetPointIds()->InsertId(0, i);
-		vertices->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
+		m_vertexGrid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 	}
 	vertex->Delete();
-	vertices->BuildLinks();
+	m_vertexGrid->BuildLinks();
+}
+
+QList<Structured15DGridWithCrossSectionCrossSection*>& Structured15DGridWithCrossSection::crossSections()
+{
+	return m_crossSections;
+}
+
+const QList<Structured15DGridWithCrossSectionCrossSection*>& Structured15DGridWithCrossSection::crossSections() const
+{
+	return m_crossSections;
+}
+
+Structured15DGridWithCrossSectionCrossSection* Structured15DGridWithCrossSection::crossSections(int i)
+{
+	return m_crossSections.at(i);
+}
+
+void Structured15DGridWithCrossSection::setModified(bool modified)
+{
+	Grid::setModified(modified);
+	if (modified) {
+		m_vertexGrid->Modified();
+	}
 }
 
 bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, int Z)
@@ -115,7 +156,7 @@ bool Structured15DGridWithCrossSection::loadFromCgnsFile(const int fn, int B, in
 
 	// Grid coordinates are loaded.
 	// Next, grid related condition data is loaded.
-	loadGridRelatedConditions(fn, B, Z);
+	loadGridAttributes(fn, B, Z);
 
 	// Grid related conditions are loaded.
 	// Next, cross section data is loaded.
@@ -141,7 +182,7 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, cons
 		if (ier != 0) {return false;}
 	}
 	// Now, create new zone.
-	int num = m_vtkGrid->GetNumberOfPoints();
+	int num = vtkGrid()->GetNumberOfPoints();
 	sizes[0] = num;
 	sizes[1] = 1;
 	sizes[2] = num - 1;
@@ -161,7 +202,7 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, cons
 	double points[3];
 
 	for (int i = 0; i < num; i++) {
-		m_vtkGrid->GetPoints()->GetPoint(i, points);
+		vtkGrid()->GetPoints()->GetPoint(i, points);
 		dataX[i] = points[0];
 		dataY[i] = points[1];
 	}
@@ -173,7 +214,7 @@ bool Structured15DGridWithCrossSection::saveToCgnsFile(const int fn, int B, cons
 	// Grid coordinates are saved.
 	// Next grid related condition data is saved.
 	// Create "GridConditions" node under the zone node.
-	saveGridRelatedConditions(fn, B, zoneid);
+	saveGridAttributes(fn, B, zoneid);
 
 	// Grid related conditions are saved.
 	// Next cross section data is saved.

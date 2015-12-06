@@ -1582,7 +1582,7 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 	points->InsertPoint(dimI * dimJ - 1, 0, 0, 0);
 	grid->vtkGrid()->SetPoints(points);
 
-	for (GridAttributeContainer* c : grid->gridRelatedConditions()) {
+	for (GridAttributeContainer* c : grid->gridAttributes()) {
 		c->allocate();
 	}
 	// update grid interpolator.

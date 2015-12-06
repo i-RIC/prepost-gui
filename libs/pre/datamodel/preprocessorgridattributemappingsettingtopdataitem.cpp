@@ -92,7 +92,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
+		GridAttributeContainer* container = grid->gridAttribute(cond->name());
 		if (!container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			count += item->mappingCount();
@@ -110,7 +110,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
+		GridAttributeContainer* container = grid->gridAttribute(cond->name());
 		if (! container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			item->executeMapping(grid, &dialog);
@@ -134,7 +134,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::setDefaultValues()
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridRelatedCondition(cond->name());
+		GridAttributeContainer* container = grid->gridAttribute(cond->name());
 		if (! container->mapped()) {
 			item->setDefaultValue(grid);
 		}
@@ -199,7 +199,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		if (!m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridAttributeContainer* cont = grid->gridRelatedCondition(item->condition()->name());
+		GridAttributeContainer* cont = grid->gridAttribute(item->condition()->name());
 		if (cont->isCustomModified()) {
 			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(item->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
@@ -244,7 +244,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		if (! m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridAttributeContainer* cont = grid->gridRelatedCondition(item->condition()->name());
+		GridAttributeContainer* cont = grid->gridAttribute(item->condition()->name());
 		item->executeMapping(grid, &dialog);
 		cont->setCustomModified(false);
 	}
@@ -273,16 +273,16 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	Grid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
-	if (grid->gridRelatedCondition(attName)->isCustomModified()) {
-		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridRelatedCondition(attName)->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (grid->gridAttribute(attName)->isCustomModified()) {
+		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		if (item->condition() == grid->gridRelatedCondition(attName)->condition()) {
+		if (item->condition() == grid->gridAttribute(attName)->condition()) {
 			// execute mapping.
 			item->executeMapping(grid, 0);
-			grid->gridRelatedCondition(attName)->setCustomModified(false);
+			grid->gridAttribute(attName)->setCustomModified(false);
 		}
 	}
 	grid->setModified();

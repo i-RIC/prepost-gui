@@ -230,7 +230,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		PreProcessorGridAndGridCreatingConditionDataItemInterface* ccItem = *ccit;
 		Grid* g = ccItem->gridDataItem()->grid();
 		if (g == nullptr) {continue;}
-		GridAttributeContainer* cont = g->gridRelatedCondition(m_condition->name());
+		GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
 		GridComplexAttributeContainer* cont2 = dynamic_cast<GridComplexAttributeContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i) {
 			int currval = cont2->value(i);

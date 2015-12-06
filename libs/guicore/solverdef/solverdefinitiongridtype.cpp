@@ -226,10 +226,10 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomNode& nod
 void SolverDefinitionGridType::Impl::buildGridRelatedConditions(Grid* grid) const
 {
 	for (SolverDefinitionGridAttribute* cond : m_gridRelatedConditions) {
-		grid->addGridRelatedCondition(cond->container(grid));
+		grid->addGridAttribute(cond->container(grid));
 	}
 	for (SolverDefinitionGridComplexAttribute* cond : m_gridRelatedComplexConditions) {
-		grid->addGridRelatedCondition(cond->container(grid));
+		grid->addGridAttribute(cond->container(grid));
 	}
 }
 

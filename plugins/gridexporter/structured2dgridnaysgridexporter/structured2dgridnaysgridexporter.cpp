@@ -37,14 +37,14 @@ bool Structured2DGridNaysGridExporter::doExport(Grid* grid, const QString& filen
 	QDataStream st(&f);
 	st.setByteOrder(QDataStream::LittleEndian);
 
-	GridAttributeContainer* c = grid2d->gridRelatedCondition("Elevation");
+	GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
 	if (c == nullptr){
 		// this grid does not have Elevation. Impossible to export.
 		return false;
 	}
 	GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
 
-	c = grid2d->gridRelatedCondition("CellCondition");
+	c = grid2d->gridAttribute("CellCondition");
 	GridAttributeIntegerCellContainer* cellcond = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
 	bool cellcondexists = false;
 	if (cellcond != nullptr){

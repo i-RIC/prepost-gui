@@ -240,7 +240,7 @@ void PreProcessorGridShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 			menu->addAction(m_editAction);
 
 			Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
-			if (grid2d != nullptr && grid2d->gridRelatedCondition("Elevation") != nullptr) {
+			if (grid2d != nullptr && grid2d->gridAttribute("Elevation") != nullptr) {
 				menu->addSeparator();
 
 				menu->addAction(m_openXsectionWindowAction);
