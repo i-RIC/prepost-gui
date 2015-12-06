@@ -1,7 +1,7 @@
 #ifndef PREPROCESSORGRIDRELATEDCONDITIONNODEDATAITEM_H
 #define PREPROCESSORGRIDRELATEDCONDITIONNODEDATAITEM_H
 
-#include <guicore/pre/base/preprocessordataitem.h>
+#include <guicore/named/namedgraphicwindowdataitem.h>
 #include <guibase/contoursettingwidget.h>
 
 #include <vtkIdList.h>
@@ -15,14 +15,14 @@ class vtkStructuredGrid;
 class PreProcessorGridCrosssectionWindowProjectDataItem;
 class Structured2DGridCrosssectionEditCommand;
 
-class PreProcessorGridAttributeNodeDataItem : public PreProcessorDataItem
+class PreProcessorGridAttributeNodeDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
-	void handleStandardItemChange() override;
+	PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent);
+	~PreProcessorGridAttributeNodeDataItem();
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	ContourSettingWidget::Contour contour() {return m_contour;}
@@ -53,9 +53,6 @@ private slots:
 	void editVariation();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 	void exportToFile();
-
-signals:
-	void changed(PreProcessorGridAttributeNodeDataItem*);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

@@ -49,17 +49,13 @@
 
 #include <string>
 
-PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
-	PreProcessorDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent)
 {
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 	m_definingBoundingBox = false;
 	m_condition = cond;
 	m_contour = ContourSettingWidget::ColorFringe;
 	m_numberOfDivision = 10;
-
-	connect(this, SIGNAL(changed(PreProcessorGridAttributeNodeDataItem*)),
-					parent, SLOT(exclusivelyCheck(PreProcessorGridAttributeNodeDataItem*)));
 
 	m_editValueAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -81,11 +77,8 @@ PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(Sol
 	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
 }
 
-void PreProcessorGridAttributeNodeDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
+PreProcessorGridAttributeNodeDataItem::~PreProcessorGridAttributeNodeDataItem()
+{}
 
 QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 {
@@ -257,7 +250,7 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeEditDialog* dialog = m_condition->editDialog(preProcessorWindow());
+	GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 	dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
 	PreProcessorGridTypeDataItem* tItem =
@@ -282,7 +275,7 @@ void PreProcessorGridAttributeNodeDataItem::editVariation()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(preProcessorWindow());
+	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(mainWindow());
 	if (dialog == nullptr) {return;}
 	dialog->setWindowTitle(QString(tr("Apply variation to %1").arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the variation of %1 at the selected grid nodes.")).arg(m_condition->caption()));
@@ -327,7 +320,7 @@ void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
 	Grid* g = gItem->grid();
 	Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
 	grid->getIJIndex(index, &i, &j);
-	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), preProcessorWindow());
+	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), mainWindow());
 
 	pdi->window()->setTarget(PreProcessorGridCrosssectionWindow::dirJ, i);
 	m_crosssectionWindows.append(pdi);
@@ -353,7 +346,7 @@ void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 	Grid* g = gItem->grid();
 	Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
 	grid->getIJIndex(index, &i, &j);
-	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), preProcessorWindow());
+	PreProcessorGridCrosssectionWindowProjectDataItem* pdi = new PreProcessorGridCrosssectionWindowProjectDataItem(this, m_condition->name(), mainWindow());
 
 	pdi->window()->setTarget(PreProcessorGridCrosssectionWindow::dirI, j);
 	m_crosssectionWindows.append(pdi);

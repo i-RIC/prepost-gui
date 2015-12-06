@@ -5,28 +5,19 @@
 #include <QMouseEvent>
 #include <QStandardItem>
 
-Post2dWindowNodeVectorArrowDataItem::Post2dWindowNodeVectorArrowDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name (name)
-{
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+Post2dWindowNodeVectorArrowDataItem::Post2dWindowNodeVectorArrowDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	connect(this, SIGNAL(changed(Post2dWindowNodeVectorArrowDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem*)));
-}
+Post2dWindowNodeVectorArrowDataItem::~Post2dWindowNodeVectorArrowDataItem()
+{}
 
-void Post2dWindowNodeVectorArrowDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
-
-void Post2dWindowNodeVectorArrowDataItem::informSelection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeVectorArrowDataItem::informSelection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
 
-void Post2dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeVectorArrowDataItem::informDeselection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
 }

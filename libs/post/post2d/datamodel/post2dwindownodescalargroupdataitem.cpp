@@ -10,6 +10,7 @@
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
@@ -449,10 +450,8 @@ private:
 	Post2dWindowNodeScalarGroupDataItem* m_item;
 };
 
-void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScalarDataItem* item)
+void Post2dWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
-
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
@@ -462,17 +461,7 @@ void Post2dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dWindowNodeScala
 
 void Post2dWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
-	Post2dWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
 	m_setting.currentSolution = currentSol.c_str();
 }
 

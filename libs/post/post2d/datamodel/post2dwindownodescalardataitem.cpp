@@ -7,26 +7,18 @@
 #include <QMouseEvent>
 
 Post2dWindowNodeScalarDataItem::Post2dWindowNodeScalarDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name (name)
-{
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	connect(this, SIGNAL(changed(Post2dWindowNodeScalarDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post2dWindowNodeScalarDataItem*)));
-}
+Post2dWindowNodeScalarDataItem::~Post2dWindowNodeScalarDataItem()
+{}
 
-void Post2dWindowNodeScalarDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-}
-
-void Post2dWindowNodeScalarDataItem::informSelection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeScalarDataItem::informSelection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
 
-void Post2dWindowNodeScalarDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeScalarDataItem::informDeselection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
 }
@@ -54,3 +46,8 @@ void Post2dWindowNodeScalarDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(abAction);
 }
 
+void Post2dWindowNodeScalarDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void Post2dWindowNodeScalarDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

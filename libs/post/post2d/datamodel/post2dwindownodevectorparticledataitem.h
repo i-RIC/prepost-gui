@@ -1,20 +1,19 @@
 #ifndef POST2DWINDOWNODEVECTORPARTICLEDATAITEM_H
 #define POST2DWINDOWNODEVECTORPARTICLEDATAITEM_H
 
-#include "../post2dwindowdataitem.h"
+#include <guicore/named/namedgraphicwindowdataitem.h>
 
 class QAction;
 class QColor;
 
-class Post2dWindowNodeVectorParticleDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeVectorParticleDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent);
-	void handleStandardItemChange() override;
-	const std::string& name() const {return m_name;}
+	Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent);
+	~Post2dWindowNodeVectorParticleDataItem();
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -27,8 +26,6 @@ signals:
 private:
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
-
-	std::string m_name;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEDATAITEM_H

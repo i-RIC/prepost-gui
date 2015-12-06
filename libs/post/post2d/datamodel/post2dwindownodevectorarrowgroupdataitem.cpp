@@ -5,6 +5,7 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -118,9 +119,8 @@ private:
 	Post2dWindowNodeVectorArrowGroupDataItem* m_item;
 };
 
-void Post2dWindowNodeVectorArrowGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem* item)
+void Post2dWindowNodeVectorArrowGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
@@ -313,17 +313,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
-	Post2dWindowNodeVectorArrowDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowNodeVectorArrowDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorArrowDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
 	m_setting.currentSolution = currentSol.c_str();
 }
 

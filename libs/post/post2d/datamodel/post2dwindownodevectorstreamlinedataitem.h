@@ -1,36 +1,25 @@
 #ifndef POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H
 #define POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H
 
-#include "../post2dwindowdataitem.h"
+#include <guicore/named/namedgraphicwindowdataitem.h>
 
-class QAction;
-class QColor;
-
-class Post2dWindowNodeVectorStreamlineDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeVectorStreamlineDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent);
+	~Post2dWindowNodeVectorStreamlineDataItem();
 
-	const std::string& name() const;
-
-	void handleStandardItemChange() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
 
-signals:
-	void changed(Post2dWindowNodeVectorStreamlineDataItem*);
-
 private:
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
-
-	std::string m_name;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H

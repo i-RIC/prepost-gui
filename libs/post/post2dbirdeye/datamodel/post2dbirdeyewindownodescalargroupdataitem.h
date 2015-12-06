@@ -14,6 +14,7 @@
 #include <vtkLODActor.h>
 #include <vtkScalarBarWidget.h>
 
+class NamedGraphicWindowDataItem;
 class Post2dBirdEyeWindowNodeScalarDataItem;
 class vtkActor;
 class vtkDataSetMapper;
@@ -43,7 +44,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 public slots:
-	void exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void updateVisibility(bool visible) override;

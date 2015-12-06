@@ -2,23 +2,17 @@
 #define POST2DWINDOWNODESCALARDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
-#include <guibase/contoursettingwidget.h>
 
-class SolverDefinitionGridAttribute;
-class PostZoneDataContainer;
-class QAction;
-class vtkMapper;
-class vtkStructuredGrid;
+#include <guicore/named/namedgraphicwindowdataitem.h>
 
-class Post2dWindowNodeScalarDataItem : public Post2dWindowDataItem
+class Post2dWindowNodeScalarDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindowNodeScalarDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent);
-	void handleStandardItemChange() override;
-	const std::string& name() const {return m_name;}
+	~Post2dWindowNodeScalarDataItem();
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -26,15 +20,9 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
 
-signals:
-	void changed(Post2dWindowNodeScalarDataItem*);
-
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
-
 private:
-	std::string m_name;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };
 
 #endif // POST2DWINDOWNODESCALARDATAITEM_H

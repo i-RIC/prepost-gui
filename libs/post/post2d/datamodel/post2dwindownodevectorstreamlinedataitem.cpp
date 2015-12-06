@@ -7,37 +7,22 @@
 #include <QAction>
 #include <QMenu>
 #include <QMouseEvent>
-#include <QStandardItem>
 
 #include <vtkStructuredGrid.h>
 
-Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name (name)
-{
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	connect(this, SIGNAL(changed(Post2dWindowNodeVectorStreamlineDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem*)));
-}
+Post2dWindowNodeVectorStreamlineDataItem::~Post2dWindowNodeVectorStreamlineDataItem()
+{}
 
-const std::string& Post2dWindowNodeVectorStreamlineDataItem::name() const
-{
-	return m_name;
-}
-
-void Post2dWindowNodeVectorStreamlineDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
-
-void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initNodeAttributeBrowser();
 }
 
-void Post2dWindowNodeVectorStreamlineDataItem::informDeselection(VTKGraphicsView* /*v*/)
+void Post2dWindowNodeVectorStreamlineDataItem::informDeselection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->clearNodeAttributeBrowser();
 }

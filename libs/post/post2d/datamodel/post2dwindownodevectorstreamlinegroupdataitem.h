@@ -19,6 +19,7 @@
 
 #include <vector>
 
+class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorStreamlineDataItem;
 
 class Post2dWindowNodeVectorStreamlineGroupDataItem : public Post2dWindowDataItem
@@ -39,9 +40,9 @@ public:
 		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	};
 
-	/// Constructor
 	Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorStreamlineGroupDataItem();
+
 	void updateActorSettings();
 	void setupClipper();
 	void updateZDepthRangeItemCount() override;
@@ -54,19 +55,20 @@ public:
 	void update();
 
 public slots:
-	void exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	vtkPointSet* getRegion();
+
+	std::string currentSolution() const;
+	void setCurrentSolution(const std::string& currentSol);
+
+	void setupStreamTracer(vtkStreamTracer* tracer);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const std::string& currentSol);
-	std::string currentSolution() const {return m_setting.currentSolution;}
-
-protected:
-	void setupStreamTracer(vtkStreamTracer* tracer);
 
 	Setting m_setting;
 

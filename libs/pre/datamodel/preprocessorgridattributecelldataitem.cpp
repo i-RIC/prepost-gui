@@ -35,17 +35,12 @@
 
 #include <string>
 
-PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
-	PreProcessorDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
 	m_isCustomModified {"isCustomModified", false},
 	m_definingBoundingBox {false},
 	m_condition {cond}
 {
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
-
-	connect(this, SIGNAL(changed(PreProcessorGridAttributeCellDataItem*)),
-					parent, SLOT(exclusivelyCheck(PreProcessorGridAttributeCellDataItem*)));
-
 	m_editValueAction = new QAction(PreProcessorGridAttributeCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
 	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
@@ -55,11 +50,8 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 	connect(m_editVariationAction, SIGNAL(triggered()), this, SLOT(editVariation()));
 }
 
-void PreProcessorGridAttributeCellDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
+PreProcessorGridAttributeCellDataItem::~PreProcessorGridAttributeCellDataItem()
+{}
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 {
@@ -181,7 +173,7 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeEditDialog* dialog = m_condition->editDialog(preProcessorWindow());
+	GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 	dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid cells.")).arg(m_condition->caption()));
 	PreProcessorGridTypeDataItem* tItem =
@@ -206,7 +198,7 @@ void PreProcessorGridAttributeCellDataItem::editVariation()
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(preProcessorWindow());
+	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(mainWindow());
 	dialog->setWindowTitle(QString(tr("Apply variation to %1").arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the variation of %1 at the selected grid nodes.")).arg(m_condition->caption()));
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
@@ -236,7 +228,6 @@ void PreProcessorGridAttributeCellDataItem::informDataChange()
 {
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->informDataChange(m_condition->name());
 }
-
 
 bool PreProcessorGridAttributeCellDataItem::addToolBarButtons(QToolBar* toolbar)
 {

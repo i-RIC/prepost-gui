@@ -11,21 +11,12 @@
 
 #include <vtkStructuredGrid.h>
 
-Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, Post2dWindowDataItem* parent) :
-	Post2dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name (name)
-{
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	connect(this, SIGNAL(changed(Post2dWindowNodeVectorParticleDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*)));
-}
-
-void Post2dWindowNodeVectorParticleDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
+Post2dWindowNodeVectorParticleDataItem::~Post2dWindowNodeVectorParticleDataItem()
+{}
 
 void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView* /*v*/)
 {

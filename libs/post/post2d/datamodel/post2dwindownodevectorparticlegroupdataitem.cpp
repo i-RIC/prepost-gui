@@ -6,6 +6,7 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -109,9 +110,8 @@ private:
 };
 
 
-void Post2dWindowNodeVectorParticleGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem* item)
+void Post2dWindowNodeVectorParticleGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
@@ -248,17 +248,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::update()
 
 void Post2dWindowNodeVectorParticleGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
-	Post2dWindowNodeVectorParticleDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowNodeVectorParticleDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorParticleDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
 	m_setting.currentSolution = currentSol.c_str();
 }
 

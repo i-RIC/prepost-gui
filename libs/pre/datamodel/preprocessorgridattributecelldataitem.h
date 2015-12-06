@@ -1,8 +1,7 @@
 #ifndef PREPROCESSORGRIDRELATEDCONDITIONCELLDATAITEM_H
 #define PREPROCESSORGRIDRELATEDCONDITIONCELLDATAITEM_H
 
-#include <guicore/pre/base/preprocessordataitem.h>
-#include <guibase/contoursettingwidget.h>
+#include <guicore/named/namedgraphicwindowdataitem.h>
 #include <misc/boolcontainer.h>
 
 class SolverDefinitionGridAttribute;
@@ -10,14 +9,14 @@ class QAction;
 class vtkMapper;
 class vtkStructuredGrid;
 
-class PreProcessorGridAttributeCellDataItem : public PreProcessorDataItem
+class PreProcessorGridAttributeCellDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
-	void handleStandardItemChange() override;
+	PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent);
+	~PreProcessorGridAttributeCellDataItem();
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -37,15 +36,13 @@ private slots:
 	void editVariation();
 	void showDisplaySettingDialog() {showPropertyDialog();}
 
-signals:
-	void changed(PreProcessorGridAttributeCellDataItem*);
-
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void loadFromCgnsFile(const int fn) override;
 
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	SolverDefinitionGridAttribute* m_condition;
 
 	BoolContainer m_isCustomModified;

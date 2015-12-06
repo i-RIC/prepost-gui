@@ -10,6 +10,7 @@
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
@@ -126,30 +127,19 @@ private:
 	PreProcessorGridAttributeCellGroupDataItem* m_item;
 };
 
-void PreProcessorGridAttributeCellGroupDataItem::exclusivelyCheck(PreProcessorGridAttributeCellDataItem* item)
+void PreProcessorGridAttributeCellGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
 	iRICUndoStack& stack = iRICUndoStack::instance();
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		stack.push(new PreProcessorGridRelatedConditionCellGroupSelectCondition("", this));
 	} else {
-		stack.push(new PreProcessorGridRelatedConditionCellGroupSelectCondition(item->condition()->name(), this));
+		stack.push(new PreProcessorGridRelatedConditionCellGroupSelectCondition(item->name(), this));
 	}
 }
 
 void PreProcessorGridAttributeCellGroupDataItem::setCurrentCondition(const std::string& sol)
 {
-	PreProcessorGridAttributeCellDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
-		if (tmpItem->condition()->name() == sol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(sol, m_childItems);
 	m_currentCondition = sol;
 }
 

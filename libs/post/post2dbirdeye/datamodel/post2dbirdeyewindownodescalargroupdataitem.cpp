@@ -7,6 +7,7 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
@@ -451,9 +452,8 @@ private:
 	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
 };
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeWindowNodeScalarDataItem* item)
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
@@ -463,17 +463,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::exclusivelyCheck(Post2dBirdEyeW
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
-	Post2dBirdEyeWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dBirdEyeWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post2dBirdEyeWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
 	m_setting.currentSolution = currentSol.c_str();
 }
 

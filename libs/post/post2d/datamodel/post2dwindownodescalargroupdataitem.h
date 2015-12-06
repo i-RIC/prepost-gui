@@ -10,6 +10,7 @@
 
 #include <QMap>
 
+class NamedGraphicWindowDataItem;
 class Post2dWindowNodeScalarDataItem;
 class vtkLODActor;
 class vtkActor;
@@ -53,7 +54,7 @@ public:
 	bool exportContourFigureToShape(const QString& filename, double time);
 
 public slots:
-	void exclusivelyCheck(Post2dWindowNodeScalarDataItem* item);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void updateVisibility(bool visible) override;

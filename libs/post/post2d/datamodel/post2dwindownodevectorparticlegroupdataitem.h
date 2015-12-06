@@ -24,6 +24,7 @@
 
 #include <vector>
 
+class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorParticleDataItem;
 
 class Post2dWindowNodeVectorParticleGroupDataItem : public Post2dWindowDataItem
@@ -71,7 +72,7 @@ public:
 	std::string currentSolution() {return m_setting.currentSolution;}
 
 public slots:
-	void exclusivelyCheck(Post2dWindowNodeVectorParticleDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void informGridUpdate();

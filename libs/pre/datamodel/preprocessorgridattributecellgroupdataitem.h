@@ -11,6 +11,7 @@
 #include <vtkContourFilter.h>
 
 class QAction;
+class NamedGraphicWindowDataItem;
 class PreProcessorGridAttributeCellDataItem;
 
 class PreProcessorGridAttributeCellGroupDataItem : public PreProcessorDataItem
@@ -21,6 +22,7 @@ public:
 	/// Constructor
 	PreProcessorGridAttributeCellGroupDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridAttributeCellGroupDataItem();
+
 	void updateActorSettings();
 	const std::string& currentCondition() {return m_currentCondition;}
 	void informDataChange(const std::string& name);
@@ -47,7 +49,7 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:
-	void exclusivelyCheck(PreProcessorGridAttributeCellDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showAttributeBrowser();
 
 protected:

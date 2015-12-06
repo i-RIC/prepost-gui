@@ -14,6 +14,7 @@
 #include <string>
 
 class QAction;
+class NamedGraphicWindowDataItem;
 class PreProcessorGridAttributeNodeDataItem;
 
 class PreProcessorGridAttributeNodeGroupDataItem : public PreProcessorDataItem
@@ -51,7 +52,7 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:
-	void exclusivelyCheck(PreProcessorGridAttributeNodeDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showAttributeBrowser();
 
 protected:

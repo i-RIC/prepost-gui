@@ -5,6 +5,7 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
@@ -91,9 +92,8 @@ private:
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_item;
 };
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::exclusivelyCheck(Post2dWindowNodeVectorStreamlineDataItem* item)
+void Post2dWindowNodeVectorStreamlineGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-	if (m_isCommandExecuting) {return;}
 	if (item->standardItem()->checkState() != Qt::Checked) {
 		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
 	} else {
@@ -157,19 +157,14 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::update()
 	informGridUpdate();
 }
 
+std::string Post2dWindowNodeVectorStreamlineGroupDataItem::currentSolution() const
+{
+	return m_setting.currentSolution;
+}
+
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setCurrentSolution(const std::string& currentSol)
 {
-	Post2dWindowNodeVectorStreamlineDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowNodeVectorStreamlineDataItem* tmpItem = dynamic_cast<Post2dWindowNodeVectorStreamlineDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
+	NamedGraphicsWindowDataItemTool::checkItemWithName(currentSol, m_childItems);
 	m_setting.currentSolution = currentSol.c_str();
 }
 
@@ -206,17 +201,6 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamT
 	integ->Delete();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_setting.load(node);
-	updateActorSettings();
-}
-
-void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	m_setting.save(writer);
-}
-
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeAttributeBrowser();
@@ -241,4 +225,15 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::addCustomMenuItems(QMenu* me
 {
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
+}
+
+void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_setting.load(node);
+	updateActorSettings();
+}
+
+void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	m_setting.save(writer);
 }

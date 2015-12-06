@@ -29,6 +29,7 @@
 #include <QColor>
 
 class vtkPointSet;
+class NamedGraphicWindowDataItem;
 class Post2dWindowNodeVectorArrowDataItem;
 
 class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem
@@ -82,7 +83,7 @@ public:
 	void update();
 
 public slots:
-	void exclusivelyCheck(Post2dWindowNodeVectorArrowDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void innerUpdate2Ds() override;

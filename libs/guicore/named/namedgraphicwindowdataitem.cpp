@@ -1,7 +1,9 @@
 #include "namedgraphicwindowdataitem.h"
 
+#include <QIcon>
+
 NamedGraphicWindowDataItem::NamedGraphicWindowDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem(caption, parent),
+	GraphicsWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent),
 	m_name (name)
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
