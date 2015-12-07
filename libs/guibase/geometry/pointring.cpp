@@ -143,8 +143,11 @@ void PointRing::clean(std::unordered_set<vtkIdType>* finished)
 		if (rightOk) {
 			// Erase the items between i + 1 to other
 			m_points.erase(m_points.begin() + i, m_points.begin() + other);
-			return clean(finished);
+			// restart from the first point.
+			i = -1;
+			continue;
 		}
+
 		// try left side
 		bool leftOk = true;
 		auto size = m_points.size();
@@ -157,7 +160,9 @@ void PointRing::clean(std::unordered_set<vtkIdType>* finished)
 		if (leftOk) {
 			m_points.erase(m_points.begin() + other, m_points.end());
 			m_points.erase(m_points.begin(), m_points.begin() + i);
-			return clean(finished);
+			// restart from the first point.
+			i = -1;
+			continue;
 		}
 	}
 	updateSortedPoints();
