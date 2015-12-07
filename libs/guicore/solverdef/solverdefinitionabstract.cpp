@@ -1,6 +1,7 @@
 #include "solverdefinition.h"
 #include "solverdefinitionabstract.h"
 #include "solverdefinitiontranslator.h"
+#include "private/solverdefinitionabstract_impl.h"
 
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
@@ -14,33 +15,6 @@
 #include <QFile>
 #include <QString>
 #include <QTextStream>
-
-#include <string>
-
-class SolverDefinitionAbstract::Impl
-{
-public:
-	/// Constructor
-	Impl(SolverDefinitionAbstract* parent);
-	/// Destructor
-	~Impl() {}
-	void load(const QString& solverfolder, const QLocale& locale);
-
-	QString m_folderName;
-	std::string m_name;
-	QString m_caption;
-	VersionNumber m_version;
-	QString m_copyright;
-	QString m_url;
-	QDate m_release;
-	QDir m_folder;
-	QLocale m_locale;
-
-	QString loadFile(const QString& filename);
-
-private:
-	SolverDefinitionAbstract* m_parent;
-};
 
 SolverDefinitionAbstract::Impl::Impl(SolverDefinitionAbstract* parent) :
 	m_parent {parent}

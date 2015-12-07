@@ -79,4 +79,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/solverdefinitiongridtype_impl.h"
+#endif // _DEBUG
+
 #endif // SOLVERDEFINITIONGRIDTYPE_H

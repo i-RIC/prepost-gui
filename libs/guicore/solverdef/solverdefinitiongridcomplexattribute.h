@@ -30,4 +30,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/solverdefinitiongridcomplexattribute_impl.h"
+#endif // _DEBUG
+
 #endif // SOLVERDEFINITIONGRIDRELATEDCOMPLEXCONDITION_H

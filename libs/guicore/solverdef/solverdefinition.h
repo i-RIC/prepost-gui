@@ -66,4 +66,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/solverdefinition_impl.h"
+#endif // _DEBUG
+
 #endif // SOLVERDEFINITION_H

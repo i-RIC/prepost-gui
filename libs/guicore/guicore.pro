@@ -326,6 +326,11 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
            pre/grid/private/grid_impl.h \
+           solverdef/private/solverdefinition_impl.h \
+           solverdef/private/solverdefinitionabstract_impl.h \
+           solverdef/private/solverdefinitionboundarycondition_impl.h \
+           solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
+           solverdef/private/solverdefinitiongridtype_impl.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \
            pre/gridcond/base/gridattributebaseobject.h \
            pre/gridcond/base/gridattributecellcontainert.h \

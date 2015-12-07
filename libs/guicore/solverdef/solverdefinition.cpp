@@ -2,6 +2,7 @@
 #include "solverdefinitionabstract.h"
 #include "solverdefinitiongridtype.h"
 #include "solverdefinitiontranslator.h"
+#include "private/solverdefinition_impl.h"
 
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
@@ -15,33 +16,6 @@
 const QString SolverDefinition::FILENAME {"definition.xml"};
 const QString SolverDefinition::README {"README"};
 const QString SolverDefinition::LICENSE {"LICENSE"};
-
-class SolverDefinition::Impl
-{
-public:
-	/// Constructor
-	Impl(const QString& solverfolder, const QLocale& locale, SolverDefinition* p);
-	/// Destructor
-	~Impl();
-
-	/// Load information from solver defintion file and translation files.
-	void load(const QLocale& locale);
-	void setupIterationType(const QDomElement& elem);
-	void setupGridTypes(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	SolverDefinitionGridType* setupGridType(const QDomNode& node, const SolverDefinitionTranslator& translator, bool isPrimary);
-
-	IterationType m_iterationType;
-	QString m_executableFilename {};
-	QList<SolverDefinitionGridType*> m_gridTypes {};
-	SolverDefinitionGridType* m_dummyGridType {nullptr};
-	QMap<std::string, SolverDefinitionGridType*> m_gridTypeNameMap {};
-	QDomDocument m_document {};
-
-	SolverDefinitionAbstract m_abstract;
-
-private:
-	SolverDefinition* m_parent;
-};
 
 SolverDefinition::Impl::Impl(const QString& solverfolder, const QLocale& locale, SolverDefinition *p) :
 	m_abstract {solverfolder, locale, 0},

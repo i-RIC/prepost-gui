@@ -3,17 +3,9 @@
 #include "../pre/geodatabackground/geodatabackgroundcomplexcreator.h"
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridcomplexattribute.h"
+#include "private/solverdefinitiongridcomplexattribute_impl.h"
 
 #include <misc/xmlsupport.h>
-
-class SolverDefinitionGridComplexAttribute::Impl
-{
-public:
-	Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
-	void load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
-
-	QDomElement m_element;
-};
 
 SolverDefinitionGridComplexAttribute::Impl::Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent)
 {

@@ -30,4 +30,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/solverdefinitionboundarycondition_impl.h"
+#endif // _DEBUG
+
 #endif // SOLVERDEFINITIONBOUNDARYCONDITION_H
