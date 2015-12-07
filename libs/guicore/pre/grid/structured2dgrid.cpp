@@ -461,10 +461,19 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 	ymin -= ywidth * 0.2;
 	ymax += ywidth * 0.2;
 
+	bool outOfRegion = false;
+
 	// 1. Find the grid vertex that is the nearest to the region center.
 	vtkIdType vid = vtkGrid()->FindPoint(xcenter, ycenter, 0);
-	double* cv = vtkGrid()->GetPoint(vid);
-	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
+
+	if (vid == -1) {outOfRegion = true;}
+	if (! outOfRegion) {
+		double* cv = vtkGrid()->GetPoint(vid);
+		if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
+			outOfRegion = true;
+		}
+	}
+	if (outOfRegion) {
 		// 2. If the point is out of the region, the whole grid is out of the region.
 		vtkSmartPointer<vtkTrivialProducer> emptyAlgo = vtkSmartPointer<vtkTrivialProducer>::New();
 		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();

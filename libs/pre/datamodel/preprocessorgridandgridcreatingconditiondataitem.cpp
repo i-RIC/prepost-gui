@@ -191,6 +191,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
 	m_childItems.append(gridItem);
 
+	grid->setParent(m_gridDataItem);
+
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
 
@@ -308,9 +310,6 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridIm
 	// create new empty grid.
 	SolverDefinitionGridType::GridType gt = importer->supportedGridType();
 	Grid* importedGrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType()->createEmptyGrid(gt);
-	// set parent.
-	importedGrid->setParent(this);
-	// set zone name.
 	importedGrid->setZoneName(zoneName());
 	setupGridDataItem(importedGrid);
 
