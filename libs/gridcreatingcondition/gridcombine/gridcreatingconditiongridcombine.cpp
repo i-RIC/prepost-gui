@@ -13,13 +13,14 @@
 #include <misc/xmlsupport.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
-#include <vtkPointData.h>
-#include <vtkFloatArray.h>
-#include <vtkIntArray.h>
-
+#include <QDomNode>
 #include <QMenu>
 #include <QXmlStreamWriter>
 #include <QMouseEvent>
+
+#include <vtkPointData.h>
+#include <vtkFloatArray.h>
+#include <vtkIntArray.h>
 
 GridCreatingConditionGridCombine::GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
 	: GridCreatingCondition(parent, creator)
@@ -41,7 +42,7 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	grid->setDimensions(m_iMax, m_jMax);
 	vtkPoints* points = vtkPoints::New();
@@ -203,10 +204,10 @@ void GridCreatingConditionGridCombine::setupParameters()
 	m_iMax = ni;
 	m_jMax = nj;
 	if (j_conf > GridCreatingConditionGridCombineSettingDialog::Right &&
-	    jx[3] != nj - 1){
+			jx[3] != nj - 1){
 		return;
 	} else if (j_conf == GridCreatingConditionGridCombineSettingDialog::Right &&
-	           jx[1] != nj - 1){
+						 jx[1] != nj - 1){
 		return;
 	}
 
@@ -469,11 +470,11 @@ void GridCreatingConditionGridCombine::loadGridCombineFromProjectMainFile(const 
 	tributaryGridName = node.toElement().attribute("tributaryGridName", "");
 
 	/*
-	   GridCreatingConditionGridCombineSettingDialog* dialog = new GridCreatingConditionGridCombineSettingDialog(parent);
-	   dialog->setupComboBox(m_conditionDataItem);
-	   mainstreamGrid = dialog->mainstreamGrid();
-	   tributaryGrid = dialog->tributaryGrid();
-	   delete dialog;
+		 GridCreatingConditionGridCombineSettingDialog* dialog = new GridCreatingConditionGridCombineSettingDialog(parent);
+		 dialog->setupComboBox(m_conditionDataItem);
+		 mainstreamGrid = dialog->mainstreamGrid();
+		 tributaryGrid = dialog->tributaryGrid();
+		 delete dialog;
 	 */
 
 	m_iMax = node.toElement().attribute("iMax", "0").toInt();

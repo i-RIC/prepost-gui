@@ -32,4 +32,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/triangleexecutethread_impl.h"
+#endif // _DEBUG
+
 #endif // TRIANGLEEXECUTETHREAD_H

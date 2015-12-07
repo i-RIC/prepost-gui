@@ -126,9 +126,9 @@ PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataI
 	m_labelTextSetting.setPrefix("label");
 
 	if (gridType()->isKeepOrder()) {
-		setupChildrenInOrder(gridType()->gridRelatedConditions(), gridType()->gridRelatedComplexConditions(), &m_childItems, &m_itemNameMap, this);
+		setupChildrenInOrder(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, this);
 	} else {
-		setupChildrenInGroups(gridType()->gridRelatedConditions(), gridType()->gridRelatedComplexConditions(), &m_childItems, &m_itemNameMap, this);
+		setupChildrenInGroups(gridType()->gridAttributes(), gridType()->gridComplexAttributes(), &m_childItems, &m_itemNameMap, this);
 	}
 
 	setupActors();

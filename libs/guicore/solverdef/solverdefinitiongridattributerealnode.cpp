@@ -3,11 +3,6 @@
 #include "../pre/gridcond/editwidget/gridattributerealvariationeditwidget.h"
 #include "solverdefinitiongridattributerealnode.h"
 
-GridAttributeContainer* SolverDefinitionGridAttributeRealNode::buildContainer(Grid* grid)
-{
-	return new GridAttributeRealNodeContainer(grid, this);
-}
-
 GridAttributeEditWidget* SolverDefinitionGridAttributeRealNode::editWidget(QWidget* parent)
 {
 	return new GridAttributeRealEditWidget(parent, this);
@@ -16,4 +11,9 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeRealNode::editWidget(QWidg
 GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealNode::variationEditWidget(QWidget* parent)
 {
 	return new GridAttributeRealVariationEditWidget(parent, this);
+}
+
+GridAttributeContainer* SolverDefinitionGridAttributeRealNode::buildContainer(Grid* grid)
+{
+	return new GridAttributeRealNodeContainer(grid, this);
 }

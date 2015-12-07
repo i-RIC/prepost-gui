@@ -1,5 +1,5 @@
-#ifndef SOLVERDEFINITIONGRIDRELATEDCONDITIONT_H
-#define SOLVERDEFINITIONGRIDRELATEDCONDITIONT_H
+#ifndef SOLVERDEFINITIONGRIDATTRIBUTET_H
+#define SOLVERDEFINITIONGRIDATTRIBUTET_H
 
 #include "../guicore_global.h"
 #include "solverdefinitiongridattribute.h"
@@ -8,9 +8,8 @@
 template <class V>
 class SolverDefinitionGridAttributeT : public SolverDefinitionGridAttribute
 {
-
 public:
-	SolverDefinitionGridAttributeT(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+	SolverDefinitionGridAttributeT(const QDomElement& node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
 		SolverDefinitionGridAttribute {node, translator, pos, isOption, order}
 	{}
 	virtual V fromVariant(const QVariant& v) const = 0;
@@ -21,10 +20,9 @@ public:
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefinitionGridAttributeT<int>
 {
-
 public:
-	SolverDefinitionGridAttributeInteger(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
-		SolverDefinitionGridAttributeT<int> (node, translator, pos, isOption, order)
+	SolverDefinitionGridAttributeInteger(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+		SolverDefinitionGridAttributeT<int> (elem, translator, pos, isOption, order)
 	{}
 	int fromVariant(const QVariant& v) const override {
 		return v.toInt();
@@ -34,10 +32,9 @@ public:
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinitionGridAttributeT<double>
 {
-
 public:
-	SolverDefinitionGridAttributeReal(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
-		SolverDefinitionGridAttributeT<double> (node, translator, pos, isOption, order)
+	SolverDefinitionGridAttributeReal(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+		SolverDefinitionGridAttributeT<double> (elem, translator, pos, isOption, order)
 	{}
 	double fromVariant(const QVariant& v) const override {
 		return v.toDouble();
@@ -45,4 +42,4 @@ public:
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 };
 
-#endif // SOLVERDEFINITIONGRIDRELATEDCONDITIONT_H
+#endif // SOLVERDEFINITIONGRIDATTRIBUTET_H

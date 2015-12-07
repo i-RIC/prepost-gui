@@ -19,7 +19,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	// add child nodes.
-	for (SolverDefinitionGridAttribute* att : ditem->gridType()->gridRelatedConditions()) {
+	for (SolverDefinitionGridAttribute* att : ditem->gridType()->gridAttributes()) {
 		std::string lowerName = att->name();
 		std::transform(lowerName.begin(), lowerName.end(), lowerName.begin(), ::tolower);
 		if (lowerName.substr(0, 9) != "elevation") {continue;}

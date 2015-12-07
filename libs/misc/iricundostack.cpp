@@ -19,3 +19,7 @@ void iRICUndoStack::initialize(QObject* w)
 	m_instance = new iRICUndoStack(w);
 }
 
+iRICUndoStack& iRICUndoStack::instance()
+{
+	return *m_instance;
+}

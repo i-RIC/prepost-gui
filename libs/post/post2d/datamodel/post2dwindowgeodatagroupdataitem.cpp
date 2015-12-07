@@ -9,6 +9,7 @@
 #include <guicore/pre/geodata/geodataproxy.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 
+#include <QDomNodeList>
 #include <QMap>
 #include <QXmlStreamWriter>
 

@@ -1785,7 +1785,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 {
 	Unstructured2DGrid* grid = new Unstructured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 	QPolygonF pol = m_gridRegionPolygon->polygon();
 	QVector<QPointF> line;
 	int pointCount = 0;

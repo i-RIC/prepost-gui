@@ -1,4 +1,5 @@
 #include "solverdefinitiontranslator.h"
+#include "private/solverdefinitiontranslator_impl.h"
 
 #include <misc/errormessage.h>
 #include <misc/xmlsupport.h>
@@ -8,15 +9,6 @@
 #include <QDomDocument>
 #include <QDomNode>
 #include <QString>
-
-class SolverDefinitionTranslator::Impl
-{
-public:
-	Impl(const QString& solverfolder, const QLocale& locale);
-	void load(const QString& solverfolder, const QLocale& locale);
-
-	QHash<QString, QString> m_dictionary;
-};
 
 SolverDefinitionTranslator::Impl::Impl(const QString &solverfolder, const QLocale &locale)
 {

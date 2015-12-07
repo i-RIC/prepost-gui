@@ -19,7 +19,7 @@ protected:
 		return dynamic_cast<GridAttributeContainerT<V>* >(m_container);
 	}
 	V fromVariant(const QVariant& val) {
-		SolverDefinitionGridAttribute* c = m_geodata->gridRelatedCondition();
+		SolverDefinitionGridAttribute* c = m_geodata->gridAttribute();
 		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(c);
 		return cond->fromVariant(val);
 	}

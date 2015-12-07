@@ -70,57 +70,10 @@ PreProcessorGridAttributeCellDisplaySettingDialog::~PreProcessorGridAttributeCel
 
 
 void PreProcessorGridAttributeCellDisplaySettingDialog::setupDialog()
-{
-	/*
-		// create list.
-		ui->tableWidget->clearContents();
-		ui->tableWidget->setRowCount(0);
-		for (auto it2 = m_settings.begin(); it2 != m_settings.end(); ++it2){
-			ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
-			int rownum = ui->tableWidget->rowCount() - 1;
-
-			Post2dWindowCellFlagSetting s = *it2;
-			const SolverDefinitionPreProcessorGridRelatedCondition* cond = m_gridType->PreProcessorGridRelatedCondition(s.attributeName);
-			const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
-			QMap<int, QString> enums = el->enumerations();
-			QTableWidgetItem* witem = new QTableWidgetItem();
-			QString caption = QString("%1 (%2)").arg(cond->caption(), enums.value(s.value));
-			witem->setData(Qt::DisplayRole, caption);
-			Qt::ItemFlags flags = witem->flags();
-			flags &= ~Qt::ItemIsEditable;
-	//		flags |= Qt::ItemIsUserCheckable;
-	//		flags &= ~Qt::ItemIsTristate;
-			witem->setFlags(flags);
-			ui->tableWidget->setItem(rownum, 0, witem);
-
-			witem = new QTableWidgetItem();
-			witem->setData(Qt::DisplayRole, s.color);
-			witem->setData(Qt::BackgroundRole, s.color);
-			ui->tableWidget->setItem(rownum, 1, witem);
-		}
-	*/
-}
-
-/*
-const QList<Post2dWindowCellFlagSetting>& Post2dWindowCellFlagSettingDialog::settings()
-{
-	return m_settings;
-}
-*/
+{}
 
 void PreProcessorGridAttributeCellDisplaySettingDialog::handleItemEdit(QTableWidgetItem* /*item*/)
-{
-	/*
-		Post2dWindowCellFlagSetting& s = m_settings[item->row()];
-		if (item->column() == 0){
-			// checkstate changed.
-	//		s.enabled = (item->checkState() == Qt::Checked);
-		}else if (item->column() == 1){
-			QColor col = item->data(Qt::DisplayRole).value<QColor>();
-			s.color = col;
-		}
-	*/
-}
+{}
 
 void PreProcessorGridAttributeCellDisplaySettingDialog::handleItemClick(QTableWidgetItem* item)
 {
@@ -134,12 +87,11 @@ void PreProcessorGridAttributeCellDisplaySettingDialog::handleItemClick(QTableWi
 void PreProcessorGridAttributeCellDisplaySettingDialog::handleShownSelectionChange(const QItemSelection& selected, const QItemSelection& /*deselected*/)
 {
 	QSet<int> rows;
-//	int lastrow = 0;
+
 	for (auto it = selected.begin(); it != selected.end(); ++it) {
 		QItemSelectionRange range = *it;
 		for (int row = range.top(); row <= range.bottom(); ++row) {
 			rows.insert(row);
-//			lastrow = row;
 		}
 	}
 }

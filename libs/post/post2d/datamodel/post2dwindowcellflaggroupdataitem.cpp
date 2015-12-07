@@ -126,7 +126,7 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 	m_opacityPercent = 50;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent())->gridType();
-	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridAttributes();
 	int index = 0;
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;

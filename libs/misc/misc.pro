@@ -29,9 +29,11 @@ HEADERS += arrowsettingcontainer.h \
            iricundostack.h \
            lastiodirectory.h \
            latitudelongitude.h \
+           latitudelongitudeangle.h \
            linearinterpolator.h \
            mathsupport.h \
            misc_global.h \
+           numericvaluecontainert.h \
            opacitycontainer.h \
            qpointfcontainer.h \
            simplevaluecontainert.h \
@@ -45,7 +47,16 @@ HEADERS += arrowsettingcontainer.h \
            xmlattributecontainer.h \
            xmlsupport.h \
            zdepthrange.h \
-           ziparchive.h
+           ziparchive.h \
+           private/colorcontainer_impl.h \
+           private/compositecontainer_impl.h \
+           private/latitudelongitude_impl.h \
+           private/latitudelongitudeangle_impl.h \
+           private/numericvaluecontainert_detail.h \
+           private/simplevaluecontainert_detail.h \
+           private/versionnumber_impl.h \
+           private/xmlattributecontainer_impl.h \
+           private/zdepthrange_impl.h
 FORMS += informationdialog.ui slowmotionspeededitdialog.ui
 SOURCES += arrowsettingcontainer.cpp \
            boolcontainer.cpp \
@@ -60,6 +71,7 @@ SOURCES += arrowsettingcontainer.cpp \
            iricundostack.cpp \
            lastiodirectory.cpp \
            latitudelongitude.cpp \
+           latitudelongitudeangle.cpp \
            linearinterpolator.cpp \
            mathsupport.cpp \
            opacitycontainer.cpp \

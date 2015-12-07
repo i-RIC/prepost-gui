@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONEDITWIDGETT_H
-#define GRIDRELATEDCONDITIONEDITWIDGETT_H
+#ifndef GRIDATTRIBUTEEDITWIDGETT_H
+#define GRIDATTRIBUTEEDITWIDGETT_H
 
 #include "gridattributeeditwidget.h"
 #include "gridattributecontainert.h"
@@ -42,7 +42,7 @@ private:
 	void copyValues(vtkDataArray* data, bool modified) {
 		m_attributes->GetArray(m_name.c_str())->DeepCopy(data);
 		m_dataItem->updateSimplifiedGrid();
-		m_dataItem->informgridRelatedConditionChange(m_name);
+		m_dataItem->informGridAttributeChange(m_name);
 		m_dataItem->grid()->setModified();
 		m_dataItem->grid()->gridAttribute(m_name)->setCustomModified(modified);
 	}
@@ -73,7 +73,7 @@ public:
 		return m_value;
 	}
 	void setVariantValue(const QVariant& v) override {
-		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridRelatedCondition);
+		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridAttribute);
 		V tmpval = cond->fromVariant(v);
 		setValue(tmpval);
 	}
@@ -122,4 +122,4 @@ protected:
 	V m_value {0};
 };
 
-#endif // GRIDRELATEDCONDITIONEDITWIDGETT_H
+#endif // GRIDATTRIBUTEEDITWIDGETT_H

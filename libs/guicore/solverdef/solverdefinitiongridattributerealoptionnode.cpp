@@ -15,6 +15,11 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeRealOptionNode::editWidget
 	return w;
 }
 
+GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealOptionNode::variationEditWidget(QWidget*)
+{
+	return nullptr;
+}
+
 ScalarsToColorsEditWidget* SolverDefinitionGridAttributeRealOptionNode::createScalarsToColorsEditWidget(QWidget* parent) const
 {
 	return createColorTransferFunctionEditWidget(parent);

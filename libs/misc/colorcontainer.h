@@ -62,9 +62,14 @@ private:
 	void setupVtkValue() const;
 	void updateVtkValue() const;
 
+	mutable double* m_double {nullptr};
+
 	class Impl;
 	Impl* m_impl;
-	mutable double* m_double {nullptr};
 };
+
+#ifdef _DEBUG
+	#include "private/colorcontainer_impl.h"
+#endif // _DEBUG
 
 #endif // COLORCONTAINER_H

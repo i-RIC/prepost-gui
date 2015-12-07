@@ -214,7 +214,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		prevItem->model()->insertRow(prevRow + 1, gItem);
 	}
 
-	connect(gridItem, SIGNAL(gridRelatedConditionChanged(std::string)), gtItem, SLOT(changeValueRange(std::string)));
+	connect(gridItem, SIGNAL(gridAttributeChanged(std::string)), gtItem, SLOT(changeValueRange(std::string)));
 	updateItemMap();
 	qApp->processEvents();
 }
@@ -432,5 +432,5 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 		}
 	}
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
-	gItem->informgridRelatedConditionChangeAll();
+	gItem->informGridAttributeChangeAll();
 }

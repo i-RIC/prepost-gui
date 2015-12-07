@@ -32,6 +32,7 @@
 #include <misc/zdepthrange.h>
 
 #include <QAction>
+#include <QDomElement>
 #include <QFile>
 #include <QMdiArea>
 #include <QMdiSubWindow>

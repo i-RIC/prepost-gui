@@ -1,11 +1,5 @@
 #include "compositecontainer.h"
-#include <vector>
-
-class CompositeContainer::Impl
-{
-public:
-	std::vector<XmlAttributeContainer*> m_containers {};
-};
+#include "private/compositecontainer_impl.h"
 
 CompositeContainer::~CompositeContainer()
 {

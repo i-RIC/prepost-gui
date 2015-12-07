@@ -1,6 +1,7 @@
 #include "../datamodel/graphicswindowdatamodel.h"
 #include "distancemeasuredataitem.h"
 #include "distancemeasuregroupdataitem.h"
+#include "private/distancemeasuregroupdataitem_impl.h"
 
 #include <guibase/objectbrowserview.h>
 #include <misc/iricundostack.h>
@@ -8,14 +9,6 @@
 #include <QDomNode>
 #include <QMenu>
 #include <QXmlStreamWriter>
-
-class DistanceMeasureGroupDataItem::Impl
-{
-public:
-	Impl(DistanceMeasureGroupDataItem* parent);
-
-	QAction* m_addAction;
-};
 
 DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :
 	m_addAction {new QAction {DistanceMeasureGroupDataItem::tr("&Add Measure..."), parent}}

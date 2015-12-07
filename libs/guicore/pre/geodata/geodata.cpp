@@ -32,7 +32,7 @@ GeoData::Setting::Setting() :
 GeoData::GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
 	ProjectDataItem {d},
 	m_creator {creator},
-	m_gridRelatedCondition {condition}
+	m_gridAttribute {condition}
 {
 	m_menu = new QMenu(projectData()->mainWindow());
 	m_editNameAction = new QAction(GeoData::tr("Edit &Name..."), this);

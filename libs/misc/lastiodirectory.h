@@ -14,10 +14,9 @@ public:
 	static void set(const QString& val);
 
 private:
-	/// Constructor
 	LastIODirectory();
-	/// Destructor
 	~LastIODirectory();
+
 	static QString m_value;
 };
 

@@ -1,5 +1,5 @@
-#ifndef SOLVERDEFINITIONGRIDRELATEDCONDITION_H
-#define SOLVERDEFINITIONGRIDRELATEDCONDITION_H
+#ifndef SOLVERDEFINITIONGRIDATTRIBUTE_H
+#define SOLVERDEFINITIONGRIDATTRIBUTE_H
 
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
@@ -28,14 +28,12 @@ class SolverDefinitionGridAttributeDimension;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttribute : public SolverDefinitionNode
 {
-
 public:
 	enum Position {
 		Node,           ///< Node (vertex)
 		CellCenter      ///< Cell center
 	};
-	/// Constructor
-	SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
+	SolverDefinitionGridAttribute(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order);
 	virtual ~SolverDefinitionGridAttribute();
 
 	/// @name Properties
@@ -81,4 +79,8 @@ private:
 	Impl* m_impl;
 };
 
-#endif // SOLVERDEFINITIONGRIDRELATEDCONDITION_H
+#ifdef _DEBUG
+	#include "private/solverdefinitiongridattribute_impl.h"
+#endif // _DEBUG
+
+#endif // SOLVERDEFINITIONGRIDATTRIBUTE_H

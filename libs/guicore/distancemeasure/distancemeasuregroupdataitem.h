@@ -29,4 +29,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/distancemeasuregroupdataitem_impl.h"
+#endif // _DEBUG
+
 #endif // DISTANCEMEASUREGROUPDATAITEM_H

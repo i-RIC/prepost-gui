@@ -9,38 +9,18 @@
 #include "solverdefinitiongridattributedimension.h"
 #include "solverdefinitiongridattributedimensioncreator.h"
 #include "solverdefinitiontranslator.h"
+#include "private/solverdefinitiongridattribute_impl.h"
 
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomElement>
 #include <QSettings>
 
-class SolverDefinitionGridAttribute::Impl
-{
-public:
-	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* parent);
-	~Impl();
-
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
-
-	std::string m_name;
-	QString m_caption;
-	std::string m_englishCaption;
-	bool m_isOption {false};
-	QVariant m_variantDefaultValue;
-	QVariant m_variantMaximumValue;
-	QVariant m_variantMinimumValue;
-	Position m_position {Node};
-	int m_order {0};
-	QList<SolverDefinitionGridAttributeDimension*> m_dimensions;
-
-	SolverDefinitionGridAttribute* m_parent;
-};
-
-SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute *parent) :
+SolverDefinitionGridAttribute::Impl::Impl(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute *parent) :
 	m_parent {parent}
 {
-	load(node, translator);
+	load(elem, translator);
 }
 
 SolverDefinitionGridAttribute::Impl::~Impl()
@@ -50,12 +30,12 @@ SolverDefinitionGridAttribute::Impl::~Impl()
 	}
 }
 
-void SolverDefinitionGridAttribute::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, const SolverDefinitionTranslator& translator)
 {
-	m_name = iRIC::toStr(node.attribute("name"));
-	m_englishCaption = iRIC::toStr(node.attribute("caption"));
-	m_caption = translator.translate(node.attribute("caption"));
-	QDomNode defNode = iRIC::getChildNode(node, "Definition");
+	m_name = iRIC::toStr(elem.attribute("name"));
+	m_englishCaption = iRIC::toStr(elem.attribute("caption"));
+	m_caption = translator.translate(elem.attribute("caption"));
+	QDomNode defNode = iRIC::getChildNode(elem, "Definition");
 	if (! defNode.isNull()) {
 		QDomElement e = defNode.toElement();
 		m_variantDefaultValue = e.attribute("default", "");
@@ -75,9 +55,9 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& node, const So
 
 // Public interfaces
 
-SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(QDomElement node, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
-	SolverDefinitionNode {node, translator},
-	m_impl {new Impl {node, translator, this}}
+SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
+	SolverDefinitionNode {elem, translator},
+	m_impl {new Impl {elem, translator, this}}
 {
 	m_impl->m_position = pos;
 	m_impl->m_isOption = isOption;

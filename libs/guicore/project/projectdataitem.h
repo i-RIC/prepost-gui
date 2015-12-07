@@ -143,4 +143,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/projectdataitem_impl.h"
+#endif // _DEBUG
+
 #endif // PROJECTDATAITEM_H

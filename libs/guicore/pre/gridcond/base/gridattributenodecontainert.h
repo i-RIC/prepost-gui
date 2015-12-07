@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONNODECONTAINERT_H
-#define GRIDRELATEDCONDITIONNODECONTAINERT_H
+#ifndef GRIDATTRIBUTENODECONTAINERT_H
+#define GRIDATTRIBUTENODECONTAINERT_H
 
 #include "gridattributecontainert.h"
 #include "../../../solverdef/solverdefinitiongridattributet.h"
@@ -67,4 +67,4 @@ public:
 	}
 };
 
-#endif // GRIDRELATEDCONDITIONNODECONTAINERT_H
+#endif // GRIDATTRIBUTENODECONTAINERT_H

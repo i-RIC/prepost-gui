@@ -370,7 +370,7 @@ void ProjectData::checkGridConditions()
 		const SolverDefinitionGridType* gt = *it;
 		bool ok = false;
 		ok = (gt->defaultGridType() != SolverDefinitionGridType::gtStructured2DGrid);
-		const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
+		const QList<SolverDefinitionGridAttribute*>& conds = gt->gridAttributes();
 		for (auto cit = conds.begin(); cit != conds.end(); ++cit) {
 			const SolverDefinitionGridAttribute* cond = *cit;
 			ok = ok || (cond->name() == "Elevation");

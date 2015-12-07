@@ -9,6 +9,7 @@
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QMouseEvent>
 #include <QSettings>
 #include <QXmlStreamWriter>

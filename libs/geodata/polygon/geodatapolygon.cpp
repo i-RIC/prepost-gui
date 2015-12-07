@@ -1662,7 +1662,7 @@ void GeoDataPolygon::setVariantValue(const QVariant &v, bool disableInform)
 
 void GeoDataPolygon::editValue()
 {
-	GridAttributeEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
+	GridAttributeEditDialog* dialog = m_gridAttribute->editDialog(preProcessorWindow());
 	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setLabel(tr("Please input new value in this polygon.").arg(i->condition()->caption()));

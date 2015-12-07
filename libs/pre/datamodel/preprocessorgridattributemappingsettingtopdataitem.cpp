@@ -49,14 +49,14 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 	PreProcessorGridTypeDataItem* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	SolverDefinitionGridType* gType = gtItem->gridType();
-	QList<SolverDefinitionGridAttribute*> conditions = gType->gridRelatedConditions();
+	QList<SolverDefinitionGridAttribute*> conditions = gType->gridAttributes();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
 		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*it)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, geodataGroup, this);
 		m_itemNameMap.insert((*it)->name(), item);
 		m_childItems.append(item);
 	}
-	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridRelatedComplexConditions();
+	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridComplexAttributes();
 	for (auto cit = cconditions.begin(); cit != cconditions.end(); ++cit) {
 		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*cit)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, geodataGroup, this);

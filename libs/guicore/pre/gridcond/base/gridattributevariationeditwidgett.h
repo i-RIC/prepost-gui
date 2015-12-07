@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONVARIATIONEDITWIDGETT_H
-#define GRIDRELATEDCONDITIONVARIATIONEDITWIDGETT_H
+#ifndef GRIDATTRIBUTEVARIATIONEDITWIDGETT_H
+#define GRIDATTRIBUTEVARIATIONEDITWIDGETT_H
 
 #include "gridattributevariationeditwidget.h"
 #include "gridattributecontainert.h"
@@ -44,7 +44,7 @@ private:
 	void copyData(vtkDataArray* data, bool modified) {
 		m_attributes->GetArray(m_name.c_str())->DeepCopy(data);
 		m_dataItem->updateAttributeActorSettings();
-		m_dataItem->informgridRelatedConditionChange(m_name);
+		m_dataItem->informGridAttributeChange(m_name);
 		m_dataItem->grid()->setModified();
 		m_dataItem->grid()->gridAttribute(m_name)->setCustomModified(modified);
 	}
@@ -75,7 +75,7 @@ public:
 		return m_value;
 	}
 	void setVariantValue(const QVariant& v) {
-		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridRelatedCondition);
+		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridAttribute);
 		V tmpval = cond->fromVariant(v);
 		setValue(tmpval);
 	}
@@ -101,4 +101,4 @@ protected:
 	V m_value {0};
 };
 
-#endif // GRIDRELATEDCONDITIONEDITWIDGETT_H
+#endif // GRIDATTRIBUTEEDITWIDGETT_H

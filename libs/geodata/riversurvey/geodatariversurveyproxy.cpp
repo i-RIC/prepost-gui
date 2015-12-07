@@ -6,6 +6,7 @@
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
+#include <QDomElement>
 #include <QMainWindow>
 #include <QUndoCommand>
 #include <QVector2D>

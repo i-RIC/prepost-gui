@@ -19,6 +19,7 @@ include( ../../paths.pri )
 # Input
 HEADERS += triangle.h \
            triangle_global.h \
-           triangleexecutethread.h
+           triangleexecutethread.h \
+           private/triangleexecutethread_impl.h
 SOURCES += triangle.cpp \
            triangleexecutethread.cpp

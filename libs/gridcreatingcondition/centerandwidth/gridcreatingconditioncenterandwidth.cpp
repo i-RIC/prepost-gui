@@ -18,6 +18,7 @@
 #include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 
+#include <QDomNode>
 #include <QFile>
 #include <QMenu>
 #include <QMessageBox>
@@ -227,7 +228,7 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	grid->setDimensions(m_iMax, m_jMax);
 	vtkPoints* points = vtkPoints::New();

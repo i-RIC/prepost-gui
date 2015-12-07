@@ -2,31 +2,23 @@
 #include "../pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.h"
 #include "solverdefinitiongridattributedimension.h"
 #include "solverdefinitiontranslator.h"
+#include "private/solverdefinitiongridattributedimension_impl.h"
 
-class SolverDefinitionGridAttributeDimension::Impl
-{
-public:
-	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att);
-	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
+#include <misc/stringtool.h>
 
-	QString m_name;
-	QString m_caption;
-	QString m_englishCaption;
+#include <QDomElement>
 
-	SolverDefinitionGridAttribute* m_attribute;
-};
-
-SolverDefinitionGridAttributeDimension::Impl::Impl(const QDomElement &node, const SolverDefinitionTranslator &translator, SolverDefinitionGridAttribute* att) :
+SolverDefinitionGridAttributeDimension::Impl::Impl(const QDomElement& elem, const SolverDefinitionTranslator &translator, SolverDefinitionGridAttribute* att) :
 	m_attribute {att}
 {
-	load(node, translator);
+	load(elem, translator);
 }
 
-void SolverDefinitionGridAttributeDimension::Impl::load(const QDomElement& node, const SolverDefinitionTranslator& translator)
+void SolverDefinitionGridAttributeDimension::Impl::load(const QDomElement& elem, const SolverDefinitionTranslator& translator)
 {
-	m_name = node.attribute("name");
-	m_englishCaption = node.attribute("caption");
-	m_caption = translator.translate(m_englishCaption);
+	m_name = iRIC::toStr(elem.attribute("name"));
+	m_englishCaption = iRIC::toStr(elem.attribute("caption"));
+	m_caption = translator.translate(m_englishCaption.c_str());
 }
 
 SolverDefinitionGridAttributeDimension::SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att) :
@@ -39,7 +31,7 @@ SolverDefinitionGridAttributeDimension::~SolverDefinitionGridAttributeDimension(
 	delete m_impl;
 }
 
-const QString& SolverDefinitionGridAttributeDimension::name() const
+const std::string& SolverDefinitionGridAttributeDimension::name() const
 {
 	return m_impl->m_name;
 }
@@ -49,7 +41,7 @@ const QString& SolverDefinitionGridAttributeDimension::caption() const
 	return m_impl->m_caption;
 }
 
-const QString& SolverDefinitionGridAttributeDimension::englishCaption() const
+const std::string& SolverDefinitionGridAttributeDimension::englishCaption() const
 {
 	return m_impl->m_englishCaption;
 }

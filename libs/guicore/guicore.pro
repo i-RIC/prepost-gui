@@ -248,6 +248,7 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitiontranslator.h \
+           distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
@@ -325,12 +326,16 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetrealoption.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
-           pre/grid/private/grid_impl.h \
+           project/private/projectdataitem_impl.h \
            solverdef/private/solverdefinition_impl.h \
            solverdef/private/solverdefinitionabstract_impl.h \
            solverdef/private/solverdefinitionboundarycondition_impl.h \
+           solverdef/private/solverdefinitiongridattribute_impl.h \
+           solverdef/private/solverdefinitiongridattributedimension_impl.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
+           solverdef/private/solverdefinitiontranslator_impl.h \
+           pre/grid/private/grid_impl.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \
            pre/gridcond/base/gridattributebaseobject.h \
            pre/gridcond/base/gridattributecellcontainert.h \
@@ -480,6 +485,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridattributet.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
+           solverdef/solverdefinitionnode.cpp \
            solverdef/solverdefinitiontranslator.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \

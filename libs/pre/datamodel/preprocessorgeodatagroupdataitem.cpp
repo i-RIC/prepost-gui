@@ -44,6 +44,7 @@
 #include <geodata/riversurvey/geodatariversurveycrosssectionwindowprojectdataitem.h>
 
 #include <QApplication>
+#include <QDomNode>
 #include <QFileDialog>
 #include <QInputDialog>
 #include <QMdiArea>
@@ -1016,7 +1017,7 @@ void PreProcessorGeoDataGroupDataItem::loadExternalData(const QString& /*filenam
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
-		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
+		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
 		cont->loadFromExternalFile(subDir.absoluteFilePath(fileName));
 	}
 }
@@ -1027,7 +1028,7 @@ void PreProcessorGeoDataGroupDataItem::saveExternalData(const QString& /*filenam
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
-		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
+		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
 		cont->saveToExternalFile(subDir.absoluteFilePath(fileName));
 	}
 }
@@ -1038,7 +1039,7 @@ QStringList PreProcessorGeoDataGroupDataItem::containedFiles()
 	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
-		QString fileName = QString("Dimension_%1.dat").arg(cont->name());
+		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
 		ret.append(fileName);
 	}
 	return ret;

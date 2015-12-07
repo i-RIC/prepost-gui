@@ -1,11 +1,7 @@
 #include "xmlattributecontainer.h"
-#include <QString>
+#include "private/xmlattributecontainer_impl.h"
 
-class XmlAttributeContainer::Impl
-{
-public:
-	QString m_prefix {};
-};
+#include <QString>
 
 XmlAttributeContainer::XmlAttributeContainer() :
 	m_impl {new Impl {}}

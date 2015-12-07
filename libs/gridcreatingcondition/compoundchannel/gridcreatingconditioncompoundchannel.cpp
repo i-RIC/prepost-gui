@@ -1819,52 +1819,6 @@ Grid* GridCreatingConditionCompoundChannel::createGrid()
 
 Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge)
 {
-	/*
-		int isize = m_streamWiseDivision + 1;
-		Structured2DGrid* grid = new Structured2DGrid(0);
-		PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-		gt->gridType()->buildGridRelatedConditions(grid);
-		grid->setDimensions(isize, 4);
-		vtkPoints* points = vtkPoints::New();
-		points->SetDataTypeToDouble();
-		int index = 0;
-
-		QVector<QPointF> pvec;
-		// left edge
-		pvec = leftEdge.getEquallySpacedPoints(isize);
-		for (int i = 0; i < isize; ++i){
-			QPointF p = pvec.at(i);
-			points->InsertNextPoint(p.x(), p.y(), 0);
-		}
-		// left bank
-		pvec = leftBank.getEquallySpacedPoints(isize);
-		for (int i = 0; i < isize; ++i){
-			QPointF p = pvec.at(i);
-			points->InsertNextPoint(p.x(), p.y(), 0);
-		}
-		// right bank
-		pvec = rightBank.getEquallySpacedPoints(isize);
-		for (int i = 0; i < isize; ++i){
-			QPointF p = pvec.at(i);
-			points->InsertNextPoint(p.x(), p.y(), 0);
-		}
-		// right edge
-		pvec = rightEdge.getEquallySpacedPoints(isize);
-		for (int i = 0; i < isize; ++i){
-			QPointF p = pvec.at(i);
-			points->InsertNextPoint(p.x(), p.y(), 0);
-		}
-		grid->vtkGrid()->SetPoints(points);
-		points->Delete();
-
-		// allocate memory for all grid related conditions.
-		QList<GridRelatedConditionContainer*>& clist = grid->gridRelatedConditions();
-		for (auto it = clist.begin(); it != clist.end(); ++it){
-			(*it)->allocate();
-		}
-		grid->setModified();
-		return grid;
-	*/
 	int isize = m_streamWiseDivision + 1;
 	int jsize = m_leftDivision + m_rightDivision + m_centerDivision + 1;
 	GridCreatingConditionCompoundChannelTemporaryGrid tmpGrid(isize, jsize);
@@ -1890,7 +1844,7 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 	waitDialog.hide();
 	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 	grid->setDimensions(isize, jsize);
 	vtkPoints* points = vtkPoints::New();
 	points->SetDataTypeToDouble();

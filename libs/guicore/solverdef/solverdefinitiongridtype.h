@@ -35,10 +35,10 @@ public:
 
 	/// @name Grid attributes
 	//@{
-	const QList<SolverDefinitionGridAttribute*>& gridRelatedConditions() const;
-	SolverDefinitionGridAttribute* gridRelatedCondition(const std::string& name) const;
-	const QList<SolverDefinitionGridComplexAttribute*>& gridRelatedComplexConditions() const;
-	SolverDefinitionGridComplexAttribute* gridRelatedComplexCondition(const std::string& name) const;
+	const QList<SolverDefinitionGridAttribute*>& gridAttributes() const;
+	SolverDefinitionGridAttribute* gridAttribute(const std::string& name) const;
+	const QList<SolverDefinitionGridComplexAttribute*>& gridComplexAttributes() const;
+	SolverDefinitionGridComplexAttribute* gridComplexAttribute(const std::string& name) const;
 	//@{
 
 	/// @name Boundary conditions
@@ -63,7 +63,7 @@ public:
 
 	/// @name Functions to build objects
 	//@{
-	void buildGridRelatedConditions(Grid* grid) const;
+	void buildGridAttributes(Grid* grid) const;
 	/// Returns a pointer to a grid that has no data.
 	Grid* emptyGrid() const;
 	Grid* createEmptyGrid();

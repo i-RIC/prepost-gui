@@ -2,15 +2,15 @@
 #include "xmlsupport.h"
 
 DoubleContainer::DoubleContainer(const QString& name) :
-	SimpleValueContainerT<double> {name}
+	NumericValueContainerT<double> {name}
 {}
 
 DoubleContainer::DoubleContainer(const QString& name, double defaultVal) :
-	SimpleValueContainerT<double> {name, defaultVal}
+	NumericValueContainerT<double> {name, defaultVal}
 {}
 
 DoubleContainer::DoubleContainer(const DoubleContainer& c) :
-	SimpleValueContainerT<double> {c}
+	NumericValueContainerT<double> {c}
 {}
 
 DoubleContainer::~DoubleContainer()
@@ -29,12 +29,6 @@ void DoubleContainer::save(QXmlStreamWriter& writer) const
 DoubleContainer& DoubleContainer::operator=(double val)
 {
 	SimpleValueContainerT<double>::operator =(val);
-	return *this;
-}
-
-DoubleContainer& DoubleContainer::operator-=(double val)
-{
-	m_value -= val;
 	return *this;
 }
 

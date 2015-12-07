@@ -33,8 +33,6 @@ public:
 	void informSelection(VTKGraphicsView*) override;
 	void informDeselection(VTKGraphicsView*) override;
 
-	void informgridRelatedConditionChange(const QString& name);
-
 	PostZoneDataContainer* dataContainer();
 	int zoneNumber() const {return m_zoneNumber;}
 	const std::string& zoneName() const {return m_zoneName;}

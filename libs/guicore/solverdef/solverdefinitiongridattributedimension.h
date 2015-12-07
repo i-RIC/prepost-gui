@@ -1,8 +1,10 @@
-#ifndef SOLVERDEFINITIONGRIDRELATEDCONDITIONDIMENSION_H
-#define SOLVERDEFINITIONGRIDRELATEDCONDITIONDIMENSION_H
+#ifndef SOLVERDEFINITIONGRIDATTRIBUTEDIMENSION_H
+#define SOLVERDEFINITIONGRIDATTRIBUTEDIMENSION_H
 
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
+
+#include <string>
 
 class QDomElement;
 class SolverDefinitionGridAttribute;
@@ -11,14 +13,16 @@ class GridAttributeDimensionSelectWidget;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimension : public SolverDefinitionNode
 {
-
 public:
 	SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att);
 	virtual ~SolverDefinitionGridAttributeDimension();
-	const QString& name() const;
+
+	const std::string& name() const;
 	const QString& caption() const;
-	const QString& englishCaption() const;
+	const std::string& englishCaption() const;
+
 	SolverDefinitionGridAttribute* attribute() const;
+
 	virtual GridAttributeDimensionContainer* buildContainer() = 0;
 	GridAttributeDimensionSelectWidget* buildSelectWidget(GridAttributeDimensionContainer* container);
 
@@ -27,4 +31,8 @@ private:
 	Impl* m_impl;
 };
 
-#endif // SOLVERDEFINITIONGRIDRELATEDCONDITIONDIMENSION_H
+#ifdef _DEBUG
+	#include "private/solverdefinitiongridattributedimension_impl.h"
+#endif // _DEBUG
+
+#endif // SOLVERDEFINITIONGRIDATTRIBUTEDIMENSION_H

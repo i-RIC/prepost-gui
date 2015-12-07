@@ -25,6 +25,7 @@
 #include <geodata/riversurvey/geodatariversurvey.h>
 #include <geodata/riversurvey/geodatariversurveyctrlpointbackup.h>
 
+#include <QDomElement>
 #include <QInputEvent>
 #include <QMenu>
 #include <QMessageBox>
@@ -1566,7 +1567,7 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 
 	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	GeoDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	unsigned int dimJ = static_cast<unsigned int>(p->CenterToLeftCtrlPoints.size() + p->CenterToRightCtrlPoints.size() + 3);
@@ -1598,12 +1599,7 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 	}
 	p->createGrid(grid, current, false, true);
 	grid->setModified();
-	/*
-		GridRelatedConditionContainerT<double>* elev = dynamic_cast<GridRelatedConditionContainerT<double>*>(grid->gridRelatedCondition("Elevation"));
-		if (elev != 0 && (GeoDataRiverPathPoint::ELEV_MAPPING == 1)){
-			elev->setMapped(true);
-		}
-	*/
+
 	emit gridCreated(grid);
 	iRICUndoStack::instance().clear();
 }

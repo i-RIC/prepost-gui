@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONEDITDIALOG_H
-#define GRIDRELATEDCONDITIONEDITDIALOG_H
+#ifndef GRIDATTRIBUTEEDITDIALOG_H
+#define GRIDATTRIBUTEEDITDIALOG_H
 
 #include "../../../guicore_global.h"
 #include "gridattributeeditwidget.h"
@@ -46,4 +46,4 @@ private:
 	Ui::GridAttributeEditDialog* ui;
 };
 
-#endif // GRIDRELATEDCONDITIONEDITDIALOG_H
+#endif // GRIDATTRIBUTEEDITDIALOG_H

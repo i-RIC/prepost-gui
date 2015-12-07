@@ -51,4 +51,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/xmlattributecontainer_impl.h"
+#endif // _DEBUG
+
 #endif // XMLATTRIBUTECONTAINER_H

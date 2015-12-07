@@ -965,7 +965,7 @@ void GridCreatingConditionRiverSurvey15D::createGrid(GeoDataRiverPathPoint* star
 
 	Structured15DGridWithCrossSection* grid = new Structured15DGridWithCrossSection(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	GeoDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();

@@ -34,6 +34,7 @@
 
 #include <QAction>
 #include <QApplication>
+#include <QDomNode>
 #include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>

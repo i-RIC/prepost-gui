@@ -61,7 +61,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	setupActors();
 	p->standardItem()->takeRow(m_standardItem->row());
 	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		SolverDefinitionGridAttribute* cond = *it;
 		if (cond->position() == SolverDefinitionGridAttribute::Node) {
@@ -72,7 +72,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 		}
 	}
 
-	const QList<SolverDefinitionGridComplexAttribute*>& compconds = typeItem->gridType()->gridRelatedComplexConditions();
+	const QList<SolverDefinitionGridComplexAttribute*>& compconds = typeItem->gridType()->gridComplexAttributes();
 	for (auto cit = compconds.begin(); cit != compconds.end(); ++cit) {
 		SolverDefinitionGridComplexAttribute* cond = *cit;
 		if (cond->position() == SolverDefinitionGridComplexAttribute::Node) {
@@ -252,7 +252,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStr
 
 void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const std::string& name)
 {
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->informgridRelatedConditionChange(name);
+	dynamic_cast<PreProcessorGridDataItem*>(parent())->informGridAttributeChange(name);
 }
 
 

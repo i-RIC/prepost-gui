@@ -124,8 +124,8 @@ private:
 
 void GeoDataBackground::editValue()
 {
-	if (m_gridRelatedCondition->isOption()) {
-		GridAttributeEditDialog* dialog = m_gridRelatedCondition->editDialog(preProcessorWindow());
+	if (m_gridAttribute->isOption()) {
+		GridAttributeEditDialog* dialog = m_gridAttribute->editDialog(preProcessorWindow());
 		PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 		dialog->setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		dialog->setLabel(tr("Please input new default value."));
@@ -139,7 +139,7 @@ void GeoDataBackground::editValue()
 		GeoDataBackgroundEditDialog dialog(preProcessorWindow());
 		PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
 		dialog.setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
-		GridAttributeEditWidget* widget = m_gridRelatedCondition->editWidget(0);
+		GridAttributeEditWidget* widget = m_gridAttribute->editWidget(0);
 		dialog.setWidget(widget);
 		dialog.setType(m_type);
 		dialog.setCustomValue(m_customValue);

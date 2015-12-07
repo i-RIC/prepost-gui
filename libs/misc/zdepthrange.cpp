@@ -1,13 +1,5 @@
 #include "zdepthrange.h"
-
-class ZDepthRange::Impl
-{
-public:
-	double m_min {0};
-	double m_max {1};
-	unsigned int m_itemCount {0};
-};
-
+#include "private/zdepthrange_impl.h"
 
 ZDepthRange::ZDepthRange() :
 	m_impl {new Impl {}}

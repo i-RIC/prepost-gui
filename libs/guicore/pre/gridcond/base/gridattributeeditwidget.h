@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONEDITWIDGET_H
-#define GRIDRELATEDCONDITIONEDITWIDGET_H
+#ifndef GRIDATTRIBUTEEDITWIDGET_H
+#define GRIDATTRIBUTEEDITWIDGET_H
 
 #include "../../../guicore_global.h"
 #include <QWidget>
@@ -14,9 +14,9 @@ class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 	Q_OBJECT
 
 public:
-	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition) :
+	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att) :
 		QWidget(parent),
-		m_gridRelatedCondition {condition}
+		m_gridAttribute {att}
 	{}
 	void clearValue() {
 		m_valueCleared = true;
@@ -27,7 +27,7 @@ public:
 		getValueFromInnerWidget();
 		return m_valueSelected;
 	}
-	SolverDefinitionGridAttribute* condition() {return m_gridRelatedCondition;}
+	SolverDefinitionGridAttribute* gridAttribute() {return m_gridAttribute;}
 	virtual void setVariantValue(const QVariant& v) = 0;
 	virtual void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) = 0;
 	virtual void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
@@ -39,7 +39,7 @@ protected:
 	bool m_valueCleared {false};
 	bool m_valueSelected {false};
 
-	SolverDefinitionGridAttribute* m_gridRelatedCondition;
+	SolverDefinitionGridAttribute* m_gridAttribute;
 };
 
-#endif // GRIDRELATEDCONDITIONEDITDIALOG_H
+#endif // GRIDATTRIBUTEEDITDIALOG_H

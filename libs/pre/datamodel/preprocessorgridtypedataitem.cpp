@@ -274,8 +274,8 @@ void PreProcessorGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 
 void PreProcessorGridTypeDataItem::setupScalarsToColors(SolverDefinitionGridType* type)
 {
-	QList<SolverDefinitionGridAttribute*> conditions = type->gridRelatedConditions();
-	QList<SolverDefinitionGridComplexAttribute*> conditions2 = type->gridRelatedComplexConditions();
+	QList<SolverDefinitionGridAttribute*> conditions = type->gridAttributes();
+	QList<SolverDefinitionGridComplexAttribute*> conditions2 = type->gridComplexAttributes();
 	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
 		ScalarsToColorsContainer* c = (*it)->createScalarsToColorsContainer(nullptr);
 		m_scalarsToColors.insert((*it)->name(), c);

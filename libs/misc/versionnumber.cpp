@@ -1,22 +1,13 @@
 #include "versionnumber.h"
+#include "private/versionnumber_impl.h"
 
 #include <QObject>
 #include <QString>
 #include <QStringList>
 
-class VersionNumber::Impl
-{
-public:
-	unsigned int m_major {};
-	unsigned int m_minor {};
-	unsigned int m_fix {};
-	unsigned int m_build {};
-};
-
 VersionNumber::VersionNumber() :
 	m_impl {new Impl {}}
 {}
-
 
 VersionNumber::VersionNumber(unsigned int major, unsigned int minor, unsigned int fix, unsigned int build) :
 	VersionNumber()
@@ -175,4 +166,9 @@ bool VersionNumber::operator ==(const VersionNumber& v) const
 		(m_impl->m_minor == v.m_impl->m_minor) &&
 		(m_impl->m_fix == v.m_impl->m_fix) &&
 		(m_impl->m_build == v.m_impl->m_build);
+}
+
+bool VersionNumber::operator !=(const VersionNumber& v) const
+{
+	return !(operator==(v));
 }

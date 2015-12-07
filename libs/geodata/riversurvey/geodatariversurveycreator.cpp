@@ -8,6 +8,7 @@
 #include <guibase/irictoolbar.h>
 
 #include <QAction>
+#include <QDomElement>
 #include <QIcon>
 
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :

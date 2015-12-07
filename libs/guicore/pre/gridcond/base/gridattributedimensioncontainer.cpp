@@ -1,19 +1,16 @@
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
 #include "gridattributedimensioncontainer.h"
 
-GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def)
-	: GridAttributeBaseObject(def->attribute())
-{
-	m_definition = def;
-	m_currentIndex = 0;
-}
+GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def) :
+	GridAttributeBaseObject(def->attribute()) ,
+	m_definition (def),
+	m_currentIndex {0}
+{}
 
 GridAttributeDimensionContainer::~GridAttributeDimensionContainer()
-{
+{}
 
-}
-
-const QString& GridAttributeDimensionContainer::name() const
+const std::string& GridAttributeDimensionContainer::name() const
 {
 	return m_definition->name();
 }

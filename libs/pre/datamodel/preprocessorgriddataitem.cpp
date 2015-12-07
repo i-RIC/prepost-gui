@@ -153,7 +153,7 @@ void PreProcessorGridDataItem::loadFromCgnsFile(const int fn)
 		if (zoneName == zonename) {
 			m_grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
 			SolverDefinitionGridType* gridType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent())->gridType();
-			gridType->buildGridRelatedConditions(m_grid);
+			gridType->buildGridAttributes(m_grid);
 			m_grid->setParent(this);
 			m_grid->setZoneName(zoneName);
 
@@ -987,18 +987,18 @@ void PreProcessorGridDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(m_zDepthRange.itemCount() + 1);
 }
 
-void PreProcessorGridDataItem::informgridRelatedConditionChangeAll()
+void PreProcessorGridDataItem::informGridAttributeChangeAll()
 {
 	if (m_grid == nullptr) {return;}
 	QList<GridAttributeContainer*> conds = m_grid->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		informgridRelatedConditionChange((*it)->name());
+		informGridAttributeChange((*it)->name());
 	}
 }
 
-void PreProcessorGridDataItem::informgridRelatedConditionChange(const std::string& name)
+void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name)
 {
-	emit gridRelatedConditionChanged(name);
+	emit gridAttributeChanged(name);
 	PreProcessorGridAttributeNodeDataItem* nItem = m_nodeGroupDataItem->nodeDataItem(name);
 	if (nItem != nullptr) {nItem->updateCrossectionWindows();}
 }
@@ -1015,7 +1015,7 @@ void PreProcessorGridDataItem::finishGridLoading()
 		m_selectedEdgesPolyData->SetPoints(nullptr);
 	}
 	// inform that all grid attributes are updated.
-	informgridRelatedConditionChangeAll();
+	informGridAttributeChangeAll();
 	// update vtk pipeline.
 	m_shapeDataItem->informGridUpdate();
 	m_nodeGroupDataItem->informGridUpdate();

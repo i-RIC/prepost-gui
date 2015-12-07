@@ -860,7 +860,7 @@ bool PostZoneDataContainer::loadCellFlagData(const int fn)
 		return true;
 	}
 
-	const QList<SolverDefinitionGridAttribute*>& conds = m_gridType->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = m_gridType->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;
 		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}

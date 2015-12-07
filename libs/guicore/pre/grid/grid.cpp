@@ -281,10 +281,10 @@ void Grid::setFilteredCellsAlgorithm(vtkAlgorithm* algo)
 	m_impl->m_vtkFilteredCellsAlgorithm = algo;
 }
 
-void Grid::doLoadFromProjectMainFile(const QDomNode& node)
+void Grid::doLoadFromProjectMainFile(const QDomNode&)
 {}
 
-void Grid::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void Grid::doSaveToProjectMainFile(QXmlStreamWriter&)
 {}
 
 void Grid::getCullSetting(bool* enable, int* cellLimit, int* indexLimit)

@@ -20,7 +20,7 @@ GridBirdEyeWindowColorSettingDialog::~GridBirdEyeWindowColorSettingDialog()
 void GridBirdEyeWindowColorSettingDialog::setGridType(SolverDefinitionGridType* type)
 {
 	ui->nodeAttComboBox->clear();
-	QList<SolverDefinitionGridAttribute*> conds = type->gridRelatedConditions();
+	QList<SolverDefinitionGridAttribute*> conds = type->gridAttributes();
 	for (int i = 0; i < conds.count(); ++i) {
 		SolverDefinitionGridAttribute* c = conds.at(i);
 		if (c->position() == SolverDefinitionGridAttribute::Node) {

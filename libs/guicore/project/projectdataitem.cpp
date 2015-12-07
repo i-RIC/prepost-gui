@@ -3,6 +3,7 @@
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"
+#include "private/projectdataitem_impl.h"
 
 #include <misc/xmlsupport.h>
 
@@ -14,13 +15,6 @@
 #include <QXmlStreamWriter>
 
 #include <vtkCamera.h>
-
-class ProjectDataItem::Impl
-{
-public:
-	QString m_filename {};
-	QString m_subPath {};
-};
 
 // Public interfaces
 

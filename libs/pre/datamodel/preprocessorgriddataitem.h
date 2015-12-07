@@ -98,8 +98,8 @@ public:
 	void setSelectedEdgesVisibility(bool visible);
 
 	void updateZDepthRangeItemCount() override;
-	void informgridRelatedConditionChangeAll();
-	void informgridRelatedConditionChange(const std::string& name) override;
+	void informGridAttributeChangeAll();
+	void informGridAttributeChange(const std::string& name) override;
 	void silentDeleteGrid() override;
 	PreProcessorGridShapeDataItem* shapeDataItem() {return m_shapeDataItem;}
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() {return m_nodeGroupDataItem;}
@@ -145,7 +145,7 @@ public:
 	void updateObjectBrowserTree();
 
 signals:
-	void gridRelatedConditionChanged(const std::string& name);
+	void gridAttributeChanged(const std::string& name);
 
 public slots:
 	void exportGrid();

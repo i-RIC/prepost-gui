@@ -2,11 +2,10 @@
 #define INTCONTAINER_H
 
 #include "misc_global.h"
-#include "simplevaluecontainert.h"
+#include "numericvaluecontainert.h"
 
-class MISCDLL_EXPORT IntContainer : public SimpleValueContainerT<int>
+class MISCDLL_EXPORT IntContainer : public NumericValueContainerT<int>
 {
-
 public:
 	/// @name Constructors and Destructor
 	//@{

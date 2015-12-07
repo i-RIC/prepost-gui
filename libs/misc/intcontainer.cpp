@@ -2,15 +2,15 @@
 #include "xmlsupport.h"
 
 IntContainer::IntContainer(const QString& name) :
-	SimpleValueContainerT<int> {name}
+	NumericValueContainerT<int> {name}
 {}
 
 IntContainer::IntContainer(const QString& name, int defaultVal) :
-	SimpleValueContainerT<int> {name, defaultVal}
+	NumericValueContainerT<int> {name, defaultVal}
 {}
 
 IntContainer::IntContainer(const IntContainer& c) :
-	SimpleValueContainerT<int> {c}
+	NumericValueContainerT<int> {c}
 {}
 
 IntContainer::~IntContainer()

@@ -13,7 +13,7 @@ class SolverDefinitionGridType::Impl
 {
 public:
 	Impl(const std::string& name, const QString& caption, SolverDefinitionGridType* parent);
-	Impl(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent);
+	Impl(const QDomElement& node, const SolverDefinitionTranslator& translator, bool isPrimary, SolverDefinitionGridType* parent);
 
 	/// Destructor
 	~Impl();
@@ -21,9 +21,9 @@ public:
 	void load(const QDomElement& node, const SolverDefinitionTranslator& translator);
 	void setGridType(const QDomElement& elem);
 	void setGridGenerators(const QDomElement& elem);
-	void setupGridRelatedConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	void setupBoundaryConditions(const QDomNode& node, const SolverDefinitionTranslator& translator);
-	void buildGridRelatedConditions(Grid* grid) const;
+	void setupGridAttributes(const QDomElement& elem, const SolverDefinitionTranslator& translator);
+	void setupBoundaryConditions(const QDomElement& elem, const SolverDefinitionTranslator& translator);
+	void buildGridAttributes(Grid* grid) const;
 	Grid* createEmptyGrid();
 
 	std::string m_name;
@@ -35,10 +35,10 @@ public:
 	QList<GridType> m_availableGridTypes;
 	QList<QString> m_availableGridGenerators;
 	GridType m_defaultGridType {gtUnknownGrid};
-	QList<SolverDefinitionGridAttribute*> m_gridRelatedConditions;
-	QMap<std::string, SolverDefinitionGridAttribute*> m_gridRelatedConditionNameMap;
-	QList<SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditions;
-	QMap<std::string, SolverDefinitionGridComplexAttribute*> m_gridRelatedComplexConditionNameMap;
+	QList<SolverDefinitionGridAttribute*> m_gridAttributes;
+	QMap<std::string, SolverDefinitionGridAttribute*> m_gridAttributeNameMap;
+	QList<SolverDefinitionGridComplexAttribute*> m_gridComplexAttributes;
+	QMap<std::string, SolverDefinitionGridComplexAttribute*> m_gridComplexAttributeNameMap;
 	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
 	QMap<std::string, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
 	QMap<std::string, QString> m_solutionCaptions;

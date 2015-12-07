@@ -6,7 +6,6 @@
 /// ZDepthRange stores the range of Z (depth) value.
 class MISCDLL_EXPORT ZDepthRange
 {
-
 public:
 	/// Constructor
 	ZDepthRange();
@@ -44,8 +43,11 @@ public:
 
 private:
 	class Impl;
-
 	Impl* m_impl;
 };
+
+#ifdef _DEBUG
+	#include "private/zdepthrange_impl.h"
+#endif // _DEBUG
 
 #endif // ZDEPTHRANGE_H

@@ -282,7 +282,7 @@ void GridBirdEyeWindowDataModel::updateScalarBar()
 	}
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(gItem->parent()->parent());
-	SolverDefinitionGridAttribute* cond = gtItem->gridType()->gridRelatedCondition(m_attributeName);
+	SolverDefinitionGridAttribute* cond = gtItem->gridType()->gridAttribute(m_attributeName);
 	if (cond->isOption()) {
 		// scalar bar is needless.
 		return;

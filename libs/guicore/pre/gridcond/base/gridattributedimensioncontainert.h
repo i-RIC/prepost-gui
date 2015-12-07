@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONDIMENSIONCONTAINERT_H
-#define GRIDRELATEDCONDITIONDIMENSIONCONTAINERT_H
+#ifndef GRIDATTRIBUTEDIMENSIONCONTAINERT_H
+#define GRIDATTRIBUTEDIMENSIONCONTAINERT_H
 
 #include "../../../guicore_global.h"
 #include "../../../project/projectcgnsfile.h"
@@ -103,7 +103,7 @@ public:
 		if (ier == 0) {
 			// the corresponding node found.
 			// Find "Dimension_(name)" array.
-			QString targetName = QString("Dimension_%1").arg(name());
+			QString targetName = QString("Dimension_%1").arg(name().c_str());
 			int narrays;
 			cg_narrays(&narrays);
 			for (int i = 1; i <= narrays; ++i) {
@@ -133,7 +133,7 @@ public:
 	}
 
 	bool saveFromCgnsFile(int fn, int B, int Z) override {
-		QString arrayName = QString("Dimension_%1").arg(name());
+		QString arrayName = QString("Dimension_%1").arg(name().c_str());
 
 		int ier;
 		// Goto "GridConditions" node.
@@ -186,4 +186,4 @@ protected:
 	DataType_t dataType() const override {return RealDouble;}
 };
 
-#endif // GRIDRELATEDCONDITIONDIMENSIONCONTAINERT_H
+#endif // GRIDATTRIBUTEDIMENSIONCONTAINERT_H

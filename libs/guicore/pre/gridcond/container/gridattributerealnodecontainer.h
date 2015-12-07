@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONREALNODECONTAINER_H
-#define GRIDRELATEDCONDITIONREALNODECONTAINER_H
+#ifndef GRIDATTRIBUTEREALNODECONTAINER_H
+#define GRIDATTRIBUTEREALNODECONTAINER_H
 
 #include "../base/gridattributenodecontainert.h"
 #include <vtkDoubleArray.h>
@@ -16,4 +16,4 @@ protected:
 	DataType_t dataType() const override {return RealDouble;}
 };
 
-#endif // GRIDRELATEDCONDITIONREALNODECONTAINER_H
+#endif // GRIDATTRIBUTEREALNODECONTAINER_H

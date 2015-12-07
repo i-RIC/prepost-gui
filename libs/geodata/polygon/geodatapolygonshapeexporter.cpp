@@ -87,7 +87,7 @@ bool GeoDataPolygonShapeExporter::doExport(GeoData* data, const QString& filenam
 
 	// Add name and value attributes.
 	DBFAddField(dbfh, "Name", FTString, 1000, 0);
-	SolverDefinitionGridAttribute* cond = data->gridRelatedCondition();
+	SolverDefinitionGridAttribute* cond = data->gridAttribute();
 	bool valueIsDouble = (dynamic_cast<SolverDefinitionGridAttributeReal*>(cond) != nullptr);
 	if (valueIsDouble) {
 		// Real

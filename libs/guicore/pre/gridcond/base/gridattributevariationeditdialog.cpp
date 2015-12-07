@@ -22,7 +22,7 @@ void GridAttributeVariationEditDialog::setWidget(GridAttributeVariationEditWidge
 {
 	m_widget = w;
 	ui->widget->setWidget(w);
-	QString label = w->condition()->caption();
+	QString label = w->gridAttribute()->caption();
 	label.append(" :");
 	ui->conditionLabel->setText(label);
 	adjustSize();

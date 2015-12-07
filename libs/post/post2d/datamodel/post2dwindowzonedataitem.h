@@ -35,7 +35,6 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 
-	void informgridRelatedConditionChange(const QString& name);
 	void updateZDepthRangeItemCount() override;
 
 	PostZoneDataContainer* dataContainer();

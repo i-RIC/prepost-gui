@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONCONTAINERT_H
-#define GRIDRELATEDCONDITIONCONTAINERT_H
+#ifndef GRIDATTRIBUTECONTAINERT_H
+#define GRIDATTRIBUTECONTAINERT_H
 
 #include "gridattributecontainer.h"
 #include "../../../solverdef/solverdefinitiongridattributet.h"
@@ -212,4 +212,4 @@ protected:
 	virtual DataType_t dataType() const = 0;
 };
 
-#endif // GRIDRELATEDCONDITIONCONTAINERT_H
+#endif // GRIDATTRIBUTECONTAINERT_H

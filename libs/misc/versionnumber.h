@@ -28,24 +28,14 @@ class MISCDLL_EXPORT VersionNumber
 {
 
 public:
-	/// Constructor
 	VersionNumber();
-	/// Constructor (with initialization)
 	VersionNumber(unsigned int major, unsigned int minor = 0, unsigned int fix = 0, unsigned int build = 0);
-	/// Constructor (with initialization with string version number)
 	VersionNumber(const QString& version);
-	/// Copy Constructor
 	VersionNumber(const VersionNumber& v);
-	/// Move Constructor
 	VersionNumber(VersionNumber&& v);
-
-	/// Destructor
 	~VersionNumber();
 
-	/// Copy operator
 	VersionNumber& operator=(const VersionNumber& v);
-
-	/// Move operator
 	VersionNumber& operator=(VersionNumber&& v);
 
 	/// Major version number
@@ -78,14 +68,15 @@ public:
 	 */
 	bool compatibleWith(const VersionNumber& v) const;
 	bool operator ==(const VersionNumber& v) const;
-	bool operator !=(const VersionNumber& v) const {
-		return !(operator==(v));
-	}
+	bool operator !=(const VersionNumber& v) const;
 
 private:
 	class Impl;
-
 	Impl* m_impl;
 };
+
+#ifdef _DEBUG
+	#include "private/versionnumber_impl.h"
+#endif // _DEBUG
 
 #endif // VERSIONNUMBER_H

@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONVARIATIONEDITWIDGET_H
-#define GRIDRELATEDCONDITIONVARIATIONEDITWIDGET_H
+#ifndef GRIDATTRIBUTEVARIATIONEDITWIDGET_H
+#define GRIDATTRIBUTEVARIATIONEDITWIDGET_H
 
 #include <QWidget>
 #include <vtkIdList.h>
@@ -15,12 +15,12 @@ class GridAttributeVariationEditWidget : public QWidget
 public:
 	GridAttributeVariationEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition) :
 		QWidget {parent},
-		m_gridRelatedCondition {condition}
+		m_gridAttribute {condition}
 	{}
 	void clearValue() {
 		setupWidget();
 	}
-	SolverDefinitionGridAttribute* condition() {return m_gridRelatedCondition;}
+	SolverDefinitionGridAttribute* gridAttribute() {return m_gridAttribute;}
 	virtual void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
 	virtual QVariant variantValue() = 0;
 
@@ -28,7 +28,7 @@ protected:
 	virtual void setupWidget() = 0;
 	virtual void getValueFromInnerWidget() = 0;
 
-	SolverDefinitionGridAttribute* m_gridRelatedCondition;
+	SolverDefinitionGridAttribute* m_gridAttribute;
 };
 
-#endif // GRIDRELATEDCONDITIONVARIATIONEDITWIDGET_H
+#endif // GRIDATTRIBUTEVARIATIONEDITWIDGET_H

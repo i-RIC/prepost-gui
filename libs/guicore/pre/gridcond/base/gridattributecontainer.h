@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONCONTAINER_H
-#define GRIDRELATEDCONDITIONCONTAINER_H
+#ifndef GRIDATTRIBUTECONTAINER_H
+#define GRIDATTRIBUTECONTAINER_H
 
 #include "../../../guicore_global.h"
 #include "gridattributebaseobject.h"
@@ -53,4 +53,4 @@ protected:
 	Grid* m_grid;
 };
 
-#endif // GRIDRELATEDCONDITIONCONTAINER_H
+#endif // GRIDATTRIBUTECONTAINER_H

@@ -1,43 +1,86 @@
 #include "latitudelongitude.h"
+#include "private/latitudelongitude_impl.h"
 
-#include <QString>
 #include <QVector2D>
-#include <cmath>
 
-double LatitudeLongitudeAngle::value() const
+LatitudeLongitude::Impl::Impl(double lat, double lon) :
+	m_latitude (lat), m_longitude (lon)
+{}
+
+LatitudeLongitude::LatitudeLongitude() :
+	LatitudeLongitude(0, 0)
+{}
+
+
+LatitudeLongitude::LatitudeLongitude(double latitude, double longitude) :
+	m_impl {new Impl(latitude, longitude)}
+{}
+
+LatitudeLongitude::LatitudeLongitude(const LatitudeLongitude& latlon) :
+	LatitudeLongitude()
 {
-	double tmpdbl = m_angle + m_minute / 60. + m_second / 3600.;
-	if (m_flag) {
-		return tmpdbl;
-	} else {
-		return - tmpdbl;
-	}
+	*m_impl = *latlon.m_impl;
 }
 
-void LatitudeLongitudeAngle::setValue(double value)
+LatitudeLongitude::LatitudeLongitude(LatitudeLongitude&& latlon) :
+	m_impl {latlon.m_impl}
 {
-	if (value >= 0) {
-		m_flag = true;
-	} else {
-		m_flag = false;
-		value = - value;
-	}
-	m_angle = static_cast<int>(std::floor(value));
-	double d = (value - m_angle) * 60;
-	m_minute = static_cast<int>(std::floor(d));
-	m_second = (d - m_minute) * 60;
+	latlon.m_impl = nullptr;
 }
 
-void LatitudeLongitudeAngle::setValue(bool f, const QString& a, const QString& m, const QString& s)
+LatitudeLongitude::~LatitudeLongitude()
 {
-	m_flag = f;
-	bool ok = true;
-	m_angle = a.toUInt(&ok, 10);
-	m_minute = m.toUInt(&ok, 10);
-	m_second = s.toDouble(&ok);
+	delete m_impl;
+}
+
+LatitudeLongitude& LatitudeLongitude::operator =(const LatitudeLongitude& latlon)
+{
+	*m_impl = *latlon.m_impl;
+
+	return *this;
+}
+
+LatitudeLongitude& LatitudeLongitude::operator =(LatitudeLongitude&& latlon)
+{
+	delete m_impl;
+	m_impl = latlon.m_impl;
+
+	latlon.m_impl = nullptr;
+
+	return *this;
+}
+
+LatitudeLongitudeAngle& LatitudeLongitude::latitude()
+{
+	return m_impl->m_latitude;
+}
+
+const LatitudeLongitudeAngle& LatitudeLongitude::latitude() const
+{
+	return m_impl->m_latitude;
+}
+
+LatitudeLongitudeAngle& LatitudeLongitude::longitude()
+{
+	return m_impl->m_longitude;
+}
+
+const LatitudeLongitudeAngle& LatitudeLongitude::longitude() const
+{
+	return m_impl->m_longitude;
+}
+
+void LatitudeLongitude::setLatitude(double latitude)
+{
+	m_impl->m_latitude.setValue(latitude);
+}
+
+void LatitudeLongitude::setLongitude(double longitude)
+{
+	m_impl->m_longitude.setValue(longitude);
 }
 
 QVector2D LatitudeLongitude::toQVector2D() const
 {
-	return QVector2D(m_latitude.value(), m_longitude.value());
+	return QVector2D(m_impl->m_longitude.value(), m_impl->m_latitude.value());
 }

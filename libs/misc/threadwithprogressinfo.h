@@ -13,6 +13,7 @@ class MISCDLL_EXPORT ThreadWithProgressInfo : public QThread
 public:
 	/// constructor
 	ThreadWithProgressInfo(QObject* parent);
+	virtual ~ThreadWithProgressInfo() {}
 
 signals:
 	/// This signal is emitted when the thread progresses to 5 percent, 10 percent, etc.

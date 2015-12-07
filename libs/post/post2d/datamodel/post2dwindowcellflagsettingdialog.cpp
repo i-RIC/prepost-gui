@@ -84,7 +84,6 @@ Post2dWindowCellFlagSettingDialog::~Post2dWindowCellFlagSettingDialog()
 
 void Post2dWindowCellFlagSettingDialog::setupDialog()
 {
-//	const QList<SolverDefinitionGridRelatedCondition*>& conds = m_gridType->gridRelatedConditions();
 	// create list.
 	ui->tableWidget->clearContents();
 	ui->tableWidget->setRowCount(0);
@@ -93,7 +92,7 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 		int rownum = ui->tableWidget->rowCount() - 1;
 
 		Post2dWindowCellFlagSetting s = *it2;
-		const SolverDefinitionGridAttribute* cond = m_gridType->gridRelatedCondition(s.attributeName);
+		const SolverDefinitionGridAttribute* cond = m_gridType->gridAttribute(s.attributeName);
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 		QMap<int, QString> enums = el->enumerations();
 		QTableWidgetItem* witem = new QTableWidgetItem();

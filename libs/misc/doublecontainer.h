@@ -2,11 +2,10 @@
 #define DOUBLECONTAINER_H
 
 #include "misc_global.h"
-#include "simplevaluecontainert.h"
+#include "numericvaluecontainert.h"
 
-class MISCDLL_EXPORT DoubleContainer : public SimpleValueContainerT<double>
+class MISCDLL_EXPORT DoubleContainer : public NumericValueContainerT<double>
 {
-
 public:
 	/// @name Constructors and Destructor
 	//@{
@@ -29,7 +28,6 @@ public:
 
 	/// @name Operators
 	DoubleContainer& operator=(double val);
-	DoubleContainer& operator-=(double val);
 
 private:
 	void copyValue(const XmlAttributeContainer& c) override;

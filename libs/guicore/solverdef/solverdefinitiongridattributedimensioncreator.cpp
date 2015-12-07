@@ -1,7 +1,9 @@
 #include "solverdefinitiongridattributedimensioncreator.h"
 #include "solverdefinitiongridattributedimensiont.h"
 
-SolverDefinitionGridAttributeDimension* SolverDefinitionGridAttributeDimensionCreator::create(const QDomElement &elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
+#include <QDomElement>
+
+SolverDefinitionGridAttributeDimension* SolverDefinitionGridAttributeDimensionCreator::create(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond)
 {
 	QString valueType = elem.attribute("valueType");
 	if (valueType == "integer") {

@@ -43,4 +43,8 @@ private:
 	Impl* m_impl;
 };
 
+#ifdef _DEBUG
+	#include "private/compositecontainer_impl.h"
+#endif // _DEBUG
+
 #endif // COMPOSITECONTAINER_H

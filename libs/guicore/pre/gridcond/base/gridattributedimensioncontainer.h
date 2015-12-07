@@ -1,5 +1,5 @@
-#ifndef GRIDRELATEDCONDITIONDIMENSIONCONTAINER_H
-#define GRIDRELATEDCONDITIONDIMENSIONCONTAINER_H
+#ifndef GRIDATTRIBUTEDIMENSIONCONTAINER_H
+#define GRIDATTRIBUTEDIMENSIONCONTAINER_H
 
 #include "../../../guicore_global.h"
 #include "gridattributebaseobject.h"
@@ -18,7 +18,7 @@ public:
 	GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def);
 	~GridAttributeDimensionContainer();
 	SolverDefinitionGridAttributeDimension* definition() const {return m_definition;}
-	const QString& name() const;
+	const std::string& name() const;
 	const QString& caption() const;
 	int currentIndex() const {return m_currentIndex;}
 	virtual int count() const = 0;
@@ -48,4 +48,4 @@ private:
 
 };
 
-#endif // GRIDRELATEDCONDITIONDIMENSIONCONTAINER_H
+#endif // GRIDATTRIBUTEDIMENSIONCONTAINER_H

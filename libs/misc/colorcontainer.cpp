@@ -1,30 +1,34 @@
 #include "colorcontainer.h"
 #include "simplevaluecontainert.h"
 #include "xmlsupport.h"
+#include "private/colorcontainer_impl.h"
 
-class ColorContainer::Impl : public SimpleValueContainerT<QColor>
+ColorContainer::Impl::Impl(const QString& name) :
+	SimpleValueContainerT<QColor> (name, Qt::black)
+{}
+
+ColorContainer::Impl::Impl(const QString& name, const QColor& defaultVal) :
+	SimpleValueContainerT<QColor> (name, defaultVal)
+{}
+
+ColorContainer::Impl::Impl(const Impl& i) :
+	SimpleValueContainerT<QColor> (i)
+{}
+
+ColorContainer::Impl::~Impl()
+{}
+
+void ColorContainer::Impl::load(const QDomNode& node)
 {
-public:
-	Impl(const QString& name) :
-		SimpleValueContainerT<QColor> (name, Qt::black)
-	{}
-	Impl(const QString& name, const QColor& defaultVal) :
-		SimpleValueContainerT<QColor> (name, defaultVal)
-	{}
-	Impl(const Impl& i) :
-		SimpleValueContainerT<QColor> (i)
-	{}
-	~Impl()
-	{}
-	void load(const QDomNode& node)
-	{
-		m_value = iRIC::getColorAttribute(node, attName(m_name), m_defaultValue);
-	}
-	void save(QXmlStreamWriter& writer) const
-	{
-		iRIC::setColorAttribute(writer, attName(m_name), m_value);
-	}
-};
+	m_value = iRIC::getColorAttribute(node, attName(m_name), m_defaultValue);
+}
+
+void ColorContainer::Impl::save(QXmlStreamWriter& writer) const
+{
+	iRIC::setColorAttribute(writer, attName(m_name), m_value);
+}
+
+// public interfaces
 
 ColorContainer::ColorContainer(const QString& name) :
 	XmlAttributeContainer {},

@@ -3,21 +3,9 @@
 
 #include "triangle.h"
 #include "triangleexecutethread.h"
+#include "private/triangleexecutethread_impl.h"
 
 #include <QProcess>
-
-class TriangleExecuteThread::Impl
-{
-public:
-	triangulateio* m_in {nullptr};
-	triangulateio* m_out {nullptr};
-	char* m_args {nullptr};
-
-	QString m_exeFile;
-	QString m_fileArgs;
-	QString m_fileName;
-	QString m_workFolder;
-};
 
 TriangleExecuteThread::TriangleExecuteThread(QObject* parent) :
 	QThread {parent},

@@ -52,7 +52,7 @@ GeoDataPointMapT<V, DA>::GeoDataPointMapT(ProjectDataItem* d, GeoDataCreator* cr
 template <class V, class DA>
 GeoDataMapper* GeoDataPointMapT<V, DA>::mapper()
 {
-	if (m_gridRelatedCondition->position() == SolverDefinitionGridAttribute::CellCenter) {
+	if (m_gridAttribute->position() == SolverDefinitionGridAttribute::CellCenter) {
 		return GeoData::mapper();
 	}
 	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());

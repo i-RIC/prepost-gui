@@ -1,18 +1,19 @@
-#ifndef SOLVERDEFINITIONREALOPTIONCELLGRIDRELATEDCONDITION_H
-#define SOLVERDEFINITIONREALOPTIONCELLGRIDRELATEDCONDITION_H
+#ifndef SOLVERDEFINITIONGRIDATTRIBUTEREALOPTIONCELL_H
+#define SOLVERDEFINITIONGRIDATTRIBUTEREALOPTIONCELL_H
 
 #include "solverdefinitiongridattributerealcell.h"
 #include "enumloader.h"
 
 class SolverDefinitionGridAttributeRealOptionCell : public SolverDefinitionGridAttributeRealCell, public RealEnumLoader
 {
-
 public:
-	SolverDefinitionGridAttributeRealOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order);
+	SolverDefinitionGridAttributeRealOptionCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
-	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
+	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 };
 
-#endif // SOLVERDEFINITIONREALOPTIONCELLGRIDRELATEDCONDITION_H
+#endif // SOLVERDEFINITIONGRIDATTRIBUTEREALOPTIONCELL_H

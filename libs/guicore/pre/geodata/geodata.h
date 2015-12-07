@@ -69,7 +69,7 @@ public:
 	}
 	QString caption() const {return m_setting.caption;}
 	void setCaption(const QString& cap) {m_setting.caption = cap;}
-	SolverDefinitionGridAttribute* gridRelatedCondition() const {return m_gridRelatedCondition;}
+	SolverDefinitionGridAttribute* gridAttribute() const {return m_gridAttribute;}
 	const QIcon icon() const;
 	/// Returns the pointer to the creator that created this instance.
 	GeoDataCreator* creator() const {return m_creator;}
@@ -156,7 +156,7 @@ protected:
 	Setting m_setting;
 
 	GeoDataCreator* m_creator;
-	SolverDefinitionGridAttribute* m_gridRelatedCondition;
+	SolverDefinitionGridAttribute* m_gridAttribute;
 	GeoDataMapper* m_mapper;
 
 	QMenu* m_menu;

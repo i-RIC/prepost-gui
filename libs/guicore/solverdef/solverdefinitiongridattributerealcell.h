@@ -1,5 +1,5 @@
-#ifndef SOLVERDEFINITIONREALCELLGRIDRELATEDCONDITION_H
-#define SOLVERDEFINITIONREALCELLGRIDRELATEDCONDITION_H
+#ifndef SOLVERDEFINITIONGRIDATTRIBUTEREALCELL_H
+#define SOLVERDEFINITIONGRIDATTRIBUTEREALCELL_H
 
 #include "solverdefinitiongridattributet.h"
 
@@ -7,21 +7,16 @@ class SolverDefinitionGridAttributeRealCell : public SolverDefinitionGridAttribu
 {
 
 public:
-	/// Constructor
-	SolverDefinitionGridAttributeRealCell(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
-		SolverDefinitionGridAttributeReal {node, translator, CellCenter, false, order}
-	{}
+	SolverDefinitionGridAttributeRealCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
-	/// Constructor
-	SolverDefinitionGridAttributeRealCell(QDomElement node, const SolverDefinitionTranslator& translator, bool isOption, int order) :
-		SolverDefinitionGridAttributeReal {node, translator, CellCenter, isOption, order}
-	{}
+	SolverDefinitionGridAttributeRealCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order);
 
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;
 };
 
-#endif // SOLVERDEFINITIONREALCELLGRIDRELATEDCONDITION_H
+#endif // SOLVERDEFINITIONGRIDATTRIBUTEREALCELL_H

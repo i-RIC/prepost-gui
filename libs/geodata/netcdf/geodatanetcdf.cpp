@@ -235,8 +235,8 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		int dDimId, dVarId;
-		ret = nc_inq_varid(ncid, iRIC::toStr(c->name()).c_str(), &dVarId);
-		ret = nc_inq_dimid(ncid, iRIC::toStr(c->name()).c_str(), &dDimId);
+		ret = nc_inq_varid(ncid, c->name().c_str(), &dVarId);
+		ret = nc_inq_dimid(ncid, c->name().c_str(), &dDimId);
 		size_t dimSize;
 		ret = nc_inq_dimlen(ncid, dDimId, &dimSize);
 
@@ -605,7 +605,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& va
 		size_t len = c->count();
 		// time is the special dimension: it is defined as unlimited.
 		if (c->definition()->name() == "time") {len = NC_UNLIMITED;}
-		ret = nc_def_dim(ncid, iRIC::toStr(c->definition()->name()).c_str(), len, &dimId);
+		ret = nc_def_dim(ncid, c->definition()->name().c_str(), len, &dimId);
 		if (ret != NC_NOERR) {return ret;}
 		dimIds.append(dimId);
 	}
@@ -614,7 +614,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& va
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		nc_type ncType = getNcType(c->definition());
 		int dimId = dimIds.at(i);
-		ret = nc_def_var(ncid, iRIC::toStr(c->definition()->name()).c_str(), ncType, 1, &dimId, &varId);
+		ret = nc_def_var(ncid, c->definition()->name().c_str(), ncType, 1, &dimId, &varId);
 		if (ret != NC_NOERR) {return ret;}
 		varIds.append(varId);
 
@@ -654,7 +654,7 @@ int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const QList<int>& dim
 		chunksizes[ndims - 2] = m_latValues.size();
 		chunksizes[ndims - 1] = m_lonValues.size();
 	}
-	ret = nc_def_var(ncid, VALUE, getNcType(gridRelatedCondition()), ndims, dimids.data(), varId);
+	ret = nc_def_var(ncid, VALUE, getNcType(gridAttribute()), ndims, dimids.data(), varId);
 	ret = nc_def_var_deflate(ncid, *varId, 0, 1, 2);
 	ret = nc_def_var_chunking(ncid, *varId, NC_CHUNKED, chunksizes.data());
 

@@ -15,14 +15,15 @@
 #include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
 
+#include <QDomNode>
 #include <QMenu>
 #include <QXmlStreamReader>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QMainWindow>
 
-GridCreatingConditionGridGenerator::GridCreatingConditionGridGenerator(ProjectDataItem* parent, GridCreatingConditionCreator* creator)
-	: GridCreatingCondition(parent, creator)
+GridCreatingConditionGridGenerator::GridCreatingConditionGridGenerator(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
+	GridCreatingCondition(parent, creator)
 {
 	m_rightClickingMenu = 0;
 	clear();
@@ -105,7 +106,7 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	}
 	Structured2DGrid* grid = new Structured2DGrid(0);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	grid->setDimensions(m_iMax, m_jMax);
 	vtkPoints* points = vtkPoints::New();

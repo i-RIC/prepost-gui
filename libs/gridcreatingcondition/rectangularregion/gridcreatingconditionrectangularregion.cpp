@@ -13,6 +13,7 @@
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 
+#include <QDomElement>
 #include <QMenu>
 #include <QMessageBox>
 #include <QMouseEvent>
@@ -275,7 +276,7 @@ Structured2DGrid* GridCreatingConditionRectangularRegion::createGridInner(double
 {
 	Structured2DGrid* grid = new Structured2DGrid(nullptr);
 	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridRelatedConditions(grid);
+	gt->gridType()->buildGridAttributes(grid);
 
 	unsigned int imax = floor((xmax - xmin) / stepSize);
 	unsigned int jmax = floor((ymax - ymin) / stepSize);

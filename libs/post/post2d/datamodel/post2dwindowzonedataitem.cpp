@@ -567,7 +567,7 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	QList<PropertyBrowserAttribute> atts;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent())->gridType();
-	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridRelatedConditions();
+	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridAttributes();
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;
 		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
