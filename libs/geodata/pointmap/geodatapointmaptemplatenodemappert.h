@@ -3,7 +3,7 @@
 
 #include <guicore/pre/geodata/geodatanodemappert.h>
 // #include "geodatapointmapt.h"
-#include <guicore/solverdef/enumloader.h>
+#include <guicore/solverdef/enumloadert.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <misc/doublemappingsetting.h>
 

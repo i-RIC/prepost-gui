@@ -9,7 +9,8 @@
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
-#include <guicore/solverdef/solverdefinitiongridattributet.h>
+#include <guicore/solverdef/solverdefinitiongridattributeinteger.h>
+#include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <misc/stringtool.h>
 
 #include <vtkCellArray.h>

@@ -2,15 +2,16 @@
 #define SOLVERDEFINITIONINTEGEROPTIONCELLGRIDATTRIBUTE_H
 
 #include "solverdefinitiongridattributeintegercell.h"
-#include "enumloader.h"
+#include "integerenumloader.h"
 
 class SolverDefinitionGridAttributeIntegerOptionCell : public SolverDefinitionGridAttributeIntegerCell, public IntegerEnumLoader
 {
-
 public:
-	SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order);
+	SolverDefinitionGridAttributeIntegerOptionCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
-	GridAttributeVariationEditWidget* variationEditWidget(QWidget* /*parent*/) override {return 0;}
+	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+
 	ScalarsToColorsEditWidget* createScalarsToColorsEditWidget(QWidget* parent) const override;
 	ScalarsToColorsContainer* createScalarsToColorsContainer(ProjectDataItem* d) override;
 };

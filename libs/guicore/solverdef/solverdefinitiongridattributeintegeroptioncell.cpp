@@ -5,17 +5,22 @@
 
 #include <vtkColorTransferFunction.h>
 
-SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeIntegerCell(node, translator, true, order)
+SolverDefinitionGridAttributeIntegerOptionCell::SolverDefinitionGridAttributeIntegerOptionCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeIntegerCell(elem, translator, true, order)
 {
-	loadEnumeration(node, translator);
+	loadEnumeration(elem, translator);
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::editWidget(QWidget* parent)
 {
 	GridAttributeIntegerOptionEditWidget* w = new GridAttributeIntegerOptionEditWidget(parent, this);
-	w->setEnumerations(m_enumerations);
+	w->setEnumerations(enumerations());
 	return w;
+}
+
+GridAttributeVariationEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::variationEditWidget(QWidget*)
+{
+	return nullptr;
 }
 
 ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionCell::createScalarsToColorsEditWidget(QWidget* parent) const
@@ -31,10 +36,10 @@ ScalarsToColorsContainer* SolverDefinitionGridAttributeIntegerOptionCell::create
 	QMap<double, QColor> cols;
 	ColorSource src(d);
 	src.load(":/libs/guicore/data/colorsource_cell.xml");
-	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it) {
+	for (auto it = englishEnumerations().begin(); it != englishEnumerations().end(); ++it) {
 		int num = it.key();
-		engEnums.insert(num, it.value());
-		enums.insert(num, m_enumerations.value(num));
+		engEnums.insert(num, it.value().c_str());
+		enums.insert(num, enumerations().value(num));
 		cols.insert(num, src.getColor(num));
 	}
 	cont->setEnglishEnumerations(engEnums);

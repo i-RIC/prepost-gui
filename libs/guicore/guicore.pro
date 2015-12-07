@@ -227,7 +227,9 @@ HEADERS += guicore_global.h \
            scalarstocolors/scalarstocolorseditdialog.h \
            scalarstocolors/scalarstocolorseditwidget.h \
            scalarstocolors/scalarstocolorseditwidgetcontainer.h \
-           solverdef/enumloader.h \
+           solverdef/enumloadert.h \
+           solverdef/integerenumloader.h \
+           solverdef/realenumloader.h \
            solverdef/solverdefinition.h \
            solverdef/solverdefinitionabstract.h \
            solverdef/solverdefinitionboundarycondition.h \
@@ -235,10 +237,12 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridattributedimension.h \
            solverdef/solverdefinitiongridattributedimensioncreator.h \
            solverdef/solverdefinitiongridattributedimensiont.h \
+           solverdef/solverdefinitiongridattributeinteger.h \
            solverdef/solverdefinitiongridattributeintegercell.h \
            solverdef/solverdefinitiongridattributeintegernode.h \
            solverdef/solverdefinitiongridattributeintegeroptioncell.h \
            solverdef/solverdefinitiongridattributeintegeroptionnode.h \
+           solverdef/solverdefinitiongridattributereal.h \
            solverdef/solverdefinitiongridattributerealcell.h \
            solverdef/solverdefinitiongridattributerealnode.h \
            solverdef/solverdefinitiongridattributerealoptioncell.h \
@@ -327,11 +331,13 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
            project/private/projectdataitem_impl.h \
+           solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
            solverdef/private/solverdefinitionabstract_impl.h \
            solverdef/private/solverdefinitionboundarycondition_impl.h \
            solverdef/private/solverdefinitiongridattribute_impl.h \
            solverdef/private/solverdefinitiongridattributedimension_impl.h \
+           solverdef/private/solverdefinitiongridattributet_detail.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
@@ -468,21 +474,24 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            scalarstocolors/scalarstocolorseditdialog.cpp \
            scalarstocolors/scalarstocolorseditwidget.cpp \
            scalarstocolors/scalarstocolorseditwidgetcontainer.cpp \
+           solverdef/integerenumloader.cpp \
+           solverdef/realenumloader.cpp \
            solverdef/solverdefinition.cpp \
            solverdef/solverdefinitionabstract.cpp \
            solverdef/solverdefinitionboundarycondition.cpp \
            solverdef/solverdefinitiongridattribute.cpp \
            solverdef/solverdefinitiongridattributedimension.cpp \
            solverdef/solverdefinitiongridattributedimensioncreator.cpp \
+           solverdef/solverdefinitiongridattributeinteger.cpp \
            solverdef/solverdefinitiongridattributeintegercell.cpp \
            solverdef/solverdefinitiongridattributeintegernode.cpp \
            solverdef/solverdefinitiongridattributeintegeroptioncell.cpp \
            solverdef/solverdefinitiongridattributeintegeroptionnode.cpp \
+           solverdef/solverdefinitiongridattributereal.cpp \
            solverdef/solverdefinitiongridattributerealcell.cpp \
            solverdef/solverdefinitiongridattributerealnode.cpp \
            solverdef/solverdefinitiongridattributerealoptioncell.cpp \
            solverdef/solverdefinitiongridattributerealoptionnode.cpp \
-           solverdef/solverdefinitiongridattributet.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitionnode.cpp \

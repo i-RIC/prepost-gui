@@ -1,11 +1,10 @@
 #ifndef SOLVERDEFINITIONGRIDATTRIBUTEREALCELL_H
 #define SOLVERDEFINITIONGRIDATTRIBUTEREALCELL_H
 
-#include "solverdefinitiongridattributet.h"
+#include "solverdefinitiongridattributereal.h"
 
 class SolverDefinitionGridAttributeRealCell : public SolverDefinitionGridAttributeReal
 {
-
 public:
 	SolverDefinitionGridAttributeRealCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
 

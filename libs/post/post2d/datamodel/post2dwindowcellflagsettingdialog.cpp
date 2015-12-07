@@ -4,9 +4,8 @@
 
 #include <guibase/coloreditwidget.h>
 #include <guicore/project/colorsource.h>
-#include <guicore/solverdef/enumloader.h>
+#include <guicore/solverdef/integerenumloader.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-//#include <guicore/solverdef/solverdefinitiongridattributet.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QBrush>
@@ -100,16 +99,7 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 		witem->setData(Qt::DisplayRole, caption);
 		Qt::ItemFlags flags = witem->flags();
 		flags &= ~Qt::ItemIsEditable;
-//		flags |= Qt::ItemIsUserCheckable;
-//		flags &= ~Qt::ItemIsTristate;
 		witem->setFlags(flags);
-		/*
-				if (s.enabled){
-					witem->setCheckState(Qt::Checked);
-				}else{
-					witem->setCheckState(Qt::Unchecked);
-				}
-		*/
 		ui->tableWidget->setItem(rownum, 0, witem);
 
 		witem = new QTableWidgetItem();

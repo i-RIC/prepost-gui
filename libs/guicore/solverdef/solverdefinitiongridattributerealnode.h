@@ -1,24 +1,18 @@
 #ifndef SOLVERDEFINITIONGRIDATTRIBUTEREALNODE_H
 #define SOLVERDEFINITIONGRIDATTRIBUTEREALNODE_H
 
-#include "solverdefinitiongridattributet.h"
+#include "solverdefinitiongridattributereal.h"
 
 class SolverDefinitionGridAttributeRealNode : public SolverDefinitionGridAttributeReal
 {
-
 public:
-	/// Constructor
-	SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-		SolverDefinitionGridAttributeReal {elem, translator, Node, false, order}
-	{}
+	SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
-	/// Constructor
-	SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order) :
-		SolverDefinitionGridAttributeReal {elem, translator, Node, isOption, order}
-	{}
+	SolverDefinitionGridAttributeRealNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order);
 
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;

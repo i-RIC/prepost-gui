@@ -1,24 +1,19 @@
 #ifndef SOLVERDEFINITIONINTEGERCELLGRIDATTRIBUTE_H
 #define SOLVERDEFINITIONINTEGERCELLGRIDATTRIBUTE_H
 
-#include "solverdefinitiongridattributet.h"
+#include "solverdefinitiongridattributeinteger.h"
 
 class SolverDefinitionGridAttributeIntegerCell : public SolverDefinitionGridAttributeInteger
 {
 
 public:
-	/// Constructor
-	SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
-		SolverDefinitionGridAttributeInteger{ elem, translator, CellCenter, false, order }
-	{}
+	SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
+
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
 
 protected:
-	/// Constructor
-	SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order) :
-		SolverDefinitionGridAttributeInteger{elem, translator, CellCenter, isOption, order }
-	{}
+	SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order);
 
 private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;

@@ -14,19 +14,18 @@ class GUICOREDLL_EXPORT InputConditionWidgetIntegerOption : public InputConditio
 
 public:
 	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
-	void setDisabled(bool disable) {
-		m_comboBox->setDisabled(disable);
-	}
+
+	void setDisabled(bool disable);
 
 public slots:
 	void setValue(int);
 
+private slots:
+	void informChange(int);
+
 private:
 	InputConditionContainerInteger* m_container;
 	QComboBox* m_comboBox;
-
-private slots:
-	void informChange(int);
 };
 
 #endif // INPUTCONDITIONWIDGETINTEGEROPTION_H

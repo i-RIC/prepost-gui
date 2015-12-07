@@ -3,10 +3,9 @@
 #include "../pre/gridcond/editwidget/gridattributeintegervariationeditwidget.h"
 #include "solverdefinitiongridattributeintegercell.h"
 
-GridAttributeContainer* SolverDefinitionGridAttributeIntegerCell::buildContainer(Grid* grid)
-{
-	return new GridAttributeIntegerCellContainer(grid, this);
-}
+SolverDefinitionGridAttributeIntegerCell::SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeInteger{ elem, translator, CellCenter, false, order }
+{}
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerCell::editWidget(QWidget* parent)
 {
@@ -16,4 +15,13 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerCell::editWidget(QW
 GridAttributeVariationEditWidget* SolverDefinitionGridAttributeIntegerCell::variationEditWidget(QWidget* parent)
 {
 	return new GridAttributeIntegerVariationEditWidget(parent, this);
+}
+
+SolverDefinitionGridAttributeIntegerCell::SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, bool isOption, int order) :
+	SolverDefinitionGridAttributeInteger{elem, translator, CellCenter, isOption, order }
+{}
+
+GridAttributeContainer* SolverDefinitionGridAttributeIntegerCell::buildContainer(Grid* grid)
+{
+	return new GridAttributeIntegerCellContainer(grid, this);
 }

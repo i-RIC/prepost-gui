@@ -1,12 +1,15 @@
 #ifndef GEODATAPOINTMAPNODEMAPPERT_H
 #define GEODATAPOINTMAPNODEMAPPERT_H
-#include <guicore/pre/geodata/geodatanodemappert.h>
+
 #include "geodatapointmapt.h"
-#include <guicore/solverdef/enumloader.h>
+
+#include <guicore/pre/geodata/geodatanodemappert.h>
+#include <misc/doublemappingsetting.h>
+
+#include <QSet>
+
 #include <vtkCell.h>
 #include <vtkSmartPointer.h>
-#include <QSet>
-#include <misc/doublemappingsetting.h>
 
 class GeoDataPointmapNodeMapperSetting : public GeoDataMapperSetting
 {

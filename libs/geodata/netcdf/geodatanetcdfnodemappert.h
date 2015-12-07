@@ -1,13 +1,15 @@
 #ifndef GEODATANETCDFNODEMAPPERT_H
 #define GEODATANETCDFNODEMAPPERT_H
 
-#include <guicore/pre/geodata/geodatanodemappert.h>
 #include "geodatanetcdft.h"
-#include <guicore/solverdef/enumloader.h>
+
+#include <guicore/pre/geodata/geodatanodemappert.h>
 #include <misc/doublemappingsetting.h>
+
+#include <QSet>
+
 #include <vtkCell.h>
 #include <vtkSmartPointer.h>
-#include <QSet>
 
 class GeoDataNetcdfNodeMapperSetting : public GeoDataMapperSetting
 {

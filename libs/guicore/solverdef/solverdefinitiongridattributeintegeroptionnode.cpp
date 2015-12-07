@@ -3,17 +3,22 @@
 #include "../scalarstocolors/colortransferfunctioncontainer.h"
 #include "solverdefinitiongridattributeintegeroptionnode.h"
 
-SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
-	SolverDefinitionGridAttributeIntegerNode {node, translator, true, order}
+SolverDefinitionGridAttributeIntegerOptionNode::SolverDefinitionGridAttributeIntegerOptionNode(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order) :
+	SolverDefinitionGridAttributeIntegerNode {elem, translator, true, order}
 {
-	loadEnumeration(node, translator);
+	loadEnumeration(elem, translator);
 }
 
 GridAttributeEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::editWidget(QWidget* parent)
 {
 	GridAttributeIntegerOptionEditWidget* w = new GridAttributeIntegerOptionEditWidget(parent, this);
-	w->setEnumerations(m_enumerations);
+	w->setEnumerations(enumerations());
 	return w;
+}
+
+GridAttributeVariationEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::variationEditWidget(QWidget*)
+{
+	return nullptr;
 }
 
 ScalarsToColorsEditWidget* SolverDefinitionGridAttributeIntegerOptionNode::createScalarsToColorsEditWidget(QWidget* parent) const
@@ -29,10 +34,10 @@ ScalarsToColorsContainer* SolverDefinitionGridAttributeIntegerOptionNode::create
 	QMap<double, QColor> cols;
 	ColorSource src(d);
 	src.load(":/libs/guicore/data/colorsource_cell.xml");
-	for (auto it = m_englishEnumerations.begin(); it != m_englishEnumerations.end(); ++it) {
+	for (auto it = englishEnumerations().begin(); it != englishEnumerations().end(); ++it) {
 		int num = it.key();
-		engEnums.insert(num, it.value());
-		enums.insert(num, m_enumerations.value(num));
+		engEnums.insert(num, it.value().c_str());
+		enums.insert(num, enumerations().value(num));
 		cols.insert(num, src.getColor(num));
 	}
 	cont->setEnglishEnumerations(engEnums);

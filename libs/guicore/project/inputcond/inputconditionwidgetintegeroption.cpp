@@ -36,6 +36,12 @@ InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode de
 	connect(m_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(informChange(int)));
 }
 
+
+void InputConditionWidgetIntegerOption::setDisabled(bool disable)
+{
+	m_comboBox->setDisabled(disable);
+}
+
 void InputConditionWidgetIntegerOption::setValue(int newvalue)
 {
 	int index = m_comboBox->findData(QVariant(newvalue));

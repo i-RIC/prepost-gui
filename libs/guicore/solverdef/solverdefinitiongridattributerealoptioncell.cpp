@@ -16,7 +16,7 @@ GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealOptionCell::v
 GridAttributeEditWidget* SolverDefinitionGridAttributeRealOptionCell::editWidget(QWidget* parent)
 {
 	GridAttributeRealOptionEditWidget* w = new GridAttributeRealOptionEditWidget(parent, this);
-	w->setEnumerations(m_enumerations);
+	w->setEnumerations(enumerations());
 	return w;
 }
 

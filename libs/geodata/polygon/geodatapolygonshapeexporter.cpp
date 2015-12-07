@@ -5,7 +5,8 @@
 
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/solverdef/solverdefinitiongridattributet.h>
+#include <guicore/solverdef/solverdefinitiongridattributeinteger.h>
+#include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <misc/stringtool.h>
 
 #include <QTextCodec>

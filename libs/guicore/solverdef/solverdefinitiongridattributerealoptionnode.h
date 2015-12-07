@@ -2,7 +2,7 @@
 #define SOLVERDEFINITIONGRIDATTRIBUTEREALOPTIONNODE_H
 
 #include "solverdefinitiongridattributerealnode.h"
-#include "enumloader.h"
+#include "realenumloader.h"
 
 class SolverDefinitionGridAttributeRealOptionNode : public SolverDefinitionGridAttributeRealNode, public RealEnumLoader
 {

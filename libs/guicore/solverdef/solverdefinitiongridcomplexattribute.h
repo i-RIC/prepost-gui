@@ -2,15 +2,13 @@
 #define SOLVERDEFINITIONGRIDRELATEDCOMPLEXCONDITION_H
 
 #include "../guicore_global.h"
-#include "solverdefinitiongridattributet.h"
+#include "solverdefinitiongridattributeinteger.h"
 
 class GUICOREDLL_EXPORT SolverDefinitionGridComplexAttribute : public SolverDefinitionGridAttributeInteger
 {
 
 public:
-	/// Constructor
 	SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order);
-	/// Destructor
 	~SolverDefinitionGridComplexAttribute();
 
 	const QDomElement& element() const;
