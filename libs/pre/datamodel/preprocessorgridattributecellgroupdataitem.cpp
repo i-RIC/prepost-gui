@@ -315,17 +315,17 @@ void PreProcessorGridAttributeCellGroupDataItem::updateAttributeBrowser(vtkIdTyp
 		GridAttributeIntegerCellContainer* icond = dynamic_cast<GridAttributeIntegerCellContainer*>(cond);
 		GridAttributeRealCellContainer* rcond = dynamic_cast<GridAttributeRealCellContainer*>(cond);
 		if (icond != nullptr) {
-			if (icond->condition()->isOption()) {
+			if (icond->gridAttribute()->isOption()) {
 				SolverDefinitionGridAttributeIntegerOptionCell* optCond =
-					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionCell*>(icond->condition());
-				PropertyBrowserAttribute att(icond->condition()->caption(), optCond->enumerations().value(icond->value(cellid)));
+					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionCell*>(icond->gridAttribute());
+				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), optCond->enumerations().value(icond->value(cellid)));
 				atts.append(att);
 			} else {
-				PropertyBrowserAttribute att(icond->condition()->caption(), icond->value(cellid));
+				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), icond->value(cellid));
 				atts.append(att);
 			}
 		} else if (rcond != nullptr) {
-			PropertyBrowserAttribute att(rcond->condition()->caption(), rcond->value(cellid));
+			PropertyBrowserAttribute att(rcond->gridAttribute()->caption(), rcond->value(cellid));
 			atts.append(att);
 		}
 	}

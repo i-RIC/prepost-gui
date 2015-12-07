@@ -36,10 +36,10 @@ void GridComplexAttributeContainer::allocate()
 		// not found maybe reset?
 		da = vtkIntArray::New();
 		da->SetName(name().c_str());
-		if (condition()->position() == SolverDefinitionGridAttribute::Node) {
-			m_grid->vtkGrid()->GetPointData()->AddArray(da);
+		if (gridAttribute()->position() == SolverDefinitionGridAttribute::Node) {
+			grid()->vtkGrid()->GetPointData()->AddArray(da);
 		} else {
-			m_grid->vtkGrid()->GetCellData()->AddArray(da);
+			grid()->vtkGrid()->GetCellData()->AddArray(da);
 		}
 		da->Delete();
 	}
@@ -52,9 +52,9 @@ void GridComplexAttributeContainer::allocate()
 
 vtkIntArray* GridComplexAttributeContainer::dataArray() const
 {
-	vtkPointSet* ps = const_cast<vtkPointSet*> (GridAttributeContainer::m_grid->vtkGrid());
+	vtkPointSet* ps = const_cast<vtkPointSet*> (GridAttributeContainer::grid()->vtkGrid());
 	vtkDataArray* da = nullptr;
-	if (condition()->position() == SolverDefinitionGridAttribute::Node) {
+	if (gridAttribute()->position() == SolverDefinitionGridAttribute::Node) {
 		da = ps->GetPointData()->GetArray(GridComplexAttributeContainer::name().c_str());
 	} else {
 		da = ps->GetCellData()->GetArray(GridComplexAttributeContainer::name().c_str());
@@ -71,10 +71,10 @@ vtkIntArray* GridComplexAttributeContainer::dataArrayCopy() const
 
 unsigned int GridComplexAttributeContainer::dataCount() const
 {
-	if (condition()->position() == SolverDefinitionGridAttribute::Node) {
-		return m_grid->nodeCount();
+	if (gridAttribute()->position() == SolverDefinitionGridAttribute::Node) {
+		return grid()->nodeCount();
 	} else {
-		return m_grid->cellCount();
+		return grid()->cellCount();
 	}
 }
 
@@ -97,7 +97,7 @@ DataType_t GridComplexAttributeContainer::dataType() const
 	return Integer;
 }
 
-SolverDefinitionGridComplexAttribute* GridComplexAttributeContainer::condition() const
+SolverDefinitionGridComplexAttribute* GridComplexAttributeContainer::gridAttribute() const
 {
-	return dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
+	return dynamic_cast<SolverDefinitionGridComplexAttribute*>(GridAttributeBaseObject::gridAttribute());
 }

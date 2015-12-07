@@ -239,11 +239,13 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridattributedimensiont.h \
            solverdef/solverdefinitiongridattributeinteger.h \
            solverdef/solverdefinitiongridattributeintegercell.h \
+           solverdef/solverdefinitiongridattributeintegerdimension.h \
            solverdef/solverdefinitiongridattributeintegernode.h \
            solverdef/solverdefinitiongridattributeintegeroptioncell.h \
            solverdef/solverdefinitiongridattributeintegeroptionnode.h \
            solverdef/solverdefinitiongridattributereal.h \
            solverdef/solverdefinitiongridattributerealcell.h \
+           solverdef/solverdefinitiongridattributerealdimension.h \
            solverdef/solverdefinitiongridattributerealnode.h \
            solverdef/solverdefinitiongridattributerealoptioncell.h \
            solverdef/solverdefinitiongridattributerealoptionnode.h \
@@ -337,6 +339,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitionboundarycondition_impl.h \
            solverdef/private/solverdefinitiongridattribute_impl.h \
            solverdef/private/solverdefinitiongridattributedimension_impl.h \
+           solverdef/private/solverdefinitiongridattributedimensiont_detail.h \
            solverdef/private/solverdefinitiongridattributet_detail.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
@@ -349,6 +352,8 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributecontainert.h \
            pre/gridcond/base/gridattributedimensioncontainer.h \
            pre/gridcond/base/gridattributedimensioncontainert.h \
+           pre/gridcond/base/gridattributedimensionintegercontainer.h \
+           pre/gridcond/base/gridattributedimensionrealcontainer.h \
            pre/gridcond/base/gridattributedimensionscontainer.h \
            pre/gridcond/base/gridattributedimensionselectwidget.h \
            pre/gridcond/base/gridattributeeditdialog.h \
@@ -375,7 +380,11 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.h \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
+           pre/gridcond/base/private/gridattributecellcontainert_detail.h \
+           pre/gridcond/base/private/gridattributecontainert_detail.h \
+           pre/gridcond/base/private/gridattributedimensioncontainert_detail.h \
+           pre/gridcond/base/private/gridattributenodecontainert_detail.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
@@ -484,11 +493,13 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridattributedimensioncreator.cpp \
            solverdef/solverdefinitiongridattributeinteger.cpp \
            solverdef/solverdefinitiongridattributeintegercell.cpp \
+           solverdef/solverdefinitiongridattributeintegerdimension.cpp \
            solverdef/solverdefinitiongridattributeintegernode.cpp \
            solverdef/solverdefinitiongridattributeintegeroptioncell.cpp \
            solverdef/solverdefinitiongridattributeintegeroptionnode.cpp \
            solverdef/solverdefinitiongridattributereal.cpp \
            solverdef/solverdefinitiongridattributerealcell.cpp \
+           solverdef/solverdefinitiongridattributerealdimension.cpp \
            solverdef/solverdefinitiongridattributerealnode.cpp \
            solverdef/solverdefinitiongridattributerealoptioncell.cpp \
            solverdef/solverdefinitiongridattributerealoptionnode.cpp \
@@ -557,12 +568,16 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditionwidgetset.cpp \
            project/inputcond/inputconditionwidgetstring.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
+           pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \
            pre/gridcond/base/gridattributedimensioncontainer.cpp \
+           pre/gridcond/base/gridattributedimensionintegercontainer.cpp \
+           pre/gridcond/base/gridattributedimensionrealcontainer.cpp \
            pre/gridcond/base/gridattributedimensionscontainer.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \
+           pre/gridcond/base/gridattributevariationeditwidget.cpp \
            pre/gridcond/complex/gridcomplexattributecontainer.cpp \
            pre/gridcond/complex/gridcomplexattributeeditwidget.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.cpp \

@@ -11,40 +11,69 @@
 
 #include <QDir>
 
-GridAttributeContainer::GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond)
-	: GridAttributeBaseObject(cond, grid)
-{
-	m_grid = grid;
-	m_mapped = false;
-	m_isCustomModified = false;
-}
+GridAttributeContainer::GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond) :
+	GridAttributeBaseObject(cond, grid),
+	m_grid {grid},
+	m_mapped {false},
+	m_isCustomModified {false}
+{}
+
+GridAttributeContainer::~GridAttributeContainer()
+{}
 
 const std::string& GridAttributeContainer::name() const
 {
-	return condition()->name();
+	return gridAttribute()->name();
+}
+
+Grid* GridAttributeContainer::grid() const
+{
+	return m_grid;
 }
 
 GridAttributeDimensionsContainer* GridAttributeContainer::dimensions() const
 {
 	ProjectDataItem* item = m_grid->parent();
-	if (item == 0) {return 0;}
+	if (item == 0) {return nullptr;}
 	item = item->parent();
-	if (item == 0) {return 0;}
+	if (item == 0) {return nullptr;}
 	item = item->parent();
-	if (item == 0) {return 0;}
+	if (item == 0) {return nullptr;}
 	PreProcessorGridTypeDataItemInterface* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
 	return gtItem->geoDataTop()->groupDataItem(name())->dimensions();
 }
 
-QString GridAttributeContainer::temporaryExternalFilename(int index) const
+bool GridAttributeContainer::mapped() const
 {
-	ProjectDataItem* item = m_grid->parent();
-	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);
-	QString format("%1_%2.dat");
-	QString filename = format.arg(m_condition->name().c_str()).arg(index + 1);
-	QDir subDir(gItem->subPath());
-	return subDir.absoluteFilePath(filename);
+	return m_mapped;
+}
+
+void GridAttributeContainer::setMapped(bool mapped)
+{
+	m_mapped = mapped;
+	setModified();
+}
+
+bool GridAttributeContainer::isCustomModified() const
+{
+	return m_isCustomModified;
+}
+
+void GridAttributeContainer::setCustomModified(bool c)
+{
+	m_isCustomModified = c;
+}
+
+void GridAttributeContainer::updateConnections()
+{
+	GridAttributeDimensionsContainer* dims = dimensions();
+	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
+	const QList<GridAttributeDimensionContainer*>& conts = dims->containers();
+	for (int i = 0; i < conts.size(); ++i) {
+		GridAttributeDimensionContainer* cont = conts.at(i);
+		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), this, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
+	}
 }
 
 void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
@@ -69,13 +98,12 @@ void GridAttributeContainer::handleDimensionValuesChange(const QList<QVariant>& 
 	// @todo not implemented yet!
 }
 
-void GridAttributeContainer::updateConnections()
+QString GridAttributeContainer::temporaryExternalFilename(int index) const
 {
-	GridAttributeDimensionsContainer* dims = dimensions();
-	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
-	const QList<GridAttributeDimensionContainer*>& conts = dims->containers();
-	for (int i = 0; i < conts.size(); ++i) {
-		GridAttributeDimensionContainer* cont = conts.at(i);
-		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), this, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
-	}
+	ProjectDataItem* item = m_grid->parent();
+	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);
+	QString format("%1_%2.dat");
+	QString filename = format.arg(gridAttribute()->name().c_str()).arg(index + 1);
+	QDir subDir(gItem->subPath());
+	return subDir.absoluteFilePath(filename);
 }

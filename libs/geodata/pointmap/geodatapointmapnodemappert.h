@@ -38,7 +38,7 @@ public:
 		}
 		vtkPolyData* tmpgrid = pointmap->delaunayedPolyData();
 		double* weights = new double[3];
-		if (GeoDataNodeMapperT<V, DA>::container()->condition()->isOption()) {
+		if (GeoDataNodeMapperT<V, DA>::container()->gridAttribute()->isOption()) {
 			// @todo not implemented yet.
 
 

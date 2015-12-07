@@ -23,25 +23,25 @@ GridAttributeDimensionComboboxSelectWidget::~GridAttributeDimensionComboboxSelec
 void GridAttributeDimensionComboboxSelectWidget::doApplyValues()
 {
 	ui->comboBox->clear();
-	for (int i = 0; i < m_container->count(); ++i) {
-		QVariant v = m_container->variantValue(i);
+	for (int i = 0; i < container()->count(); ++i) {
+		QVariant v = container()->variantValue(i);
 		ui->comboBox->addItem(v.toString());
 	}
-	int currentIndex = m_container->currentIndex();
-	if (currentIndex >= 0 && currentIndex < m_container->count()) {
+	int currentIndex = container()->currentIndex();
+	if (currentIndex >= 0 && currentIndex < container()->count()) {
 		ui->comboBox->setCurrentIndex(currentIndex);
 	}
 }
 
 void GridAttributeDimensionComboboxSelectWidget::doSetCurrentIndex(int newIndex)
 {
-	if (newIndex < 0 || newIndex >= m_container->count()) {
+	if (newIndex < 0 || newIndex >= container()->count()) {
 		return;
 	}
 	if (ui->comboBox->currentIndex() != newIndex) {
 		ui->comboBox->setCurrentIndex(newIndex);
 	}
-	if (m_container->currentIndex() != newIndex) {
-		m_container->setCurrentIndex(newIndex);
+	if (container()->currentIndex() != newIndex) {
+		container()->setCurrentIndex(newIndex);
 	}
 }

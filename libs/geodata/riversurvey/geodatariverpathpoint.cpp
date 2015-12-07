@@ -5,6 +5,7 @@
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainert.h>
 #include <misc/mathsupport.h>
+#include <misc/stringtool.h>
 
 #include <QList>
 #include <QVector>

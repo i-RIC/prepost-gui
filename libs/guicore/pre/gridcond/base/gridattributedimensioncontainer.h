@@ -13,19 +13,26 @@ class SolverDefinitionGridAttributeDimension;
 class GUICOREDLL_EXPORT GridAttributeDimensionContainer : public GridAttributeBaseObject
 {
 	Q_OBJECT
-
 public:
 	GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def);
-	~GridAttributeDimensionContainer();
-	SolverDefinitionGridAttributeDimension* definition() const {return m_definition;}
+	virtual ~GridAttributeDimensionContainer();
+
+	// basic properties
 	const std::string& name() const;
 	const QString& caption() const;
-	int currentIndex() const {return m_currentIndex;}
+	SolverDefinitionGridAttributeDimension* definition() const;
+
+	// indices
 	virtual int count() const = 0;
+	int currentIndex() const;
+
+	// value handling
 	virtual QVariant variantValue(int index) const = 0;
 	virtual QList<QVariant> variantValues() const = 0;
 	virtual void setVariantValues(const QList<QVariant>& vals) = 0;
-	QVariant currentVariantValue() const {return variantValue(currentIndex());}
+	QVariant currentVariantValue() const;
+
+	// I/O functions
 	virtual bool loadFromExternalFile(const QString& filename) = 0;
 	virtual bool saveToExternalFile(const QString& filename) = 0;
 	virtual bool loadFromCgnsFile(int fn, int B, int Z) = 0;
@@ -37,15 +44,13 @@ public slots:
 signals:
 	void valuesChanged();
 	void valuesChanged(const QList<QVariant> before, const QList<QVariant> after);
+
 	void currentIndexChanged(bool noDraw);
 	void currentIndexChanged(int newIndex, bool noDraw);
 
-protected:
-	SolverDefinitionGridAttributeDimension* m_definition;
-
 private:
+	SolverDefinitionGridAttributeDimension* m_definition;
 	int m_currentIndex;
-
 };
 
 #endif // GRIDATTRIBUTEDIMENSIONCONTAINER_H

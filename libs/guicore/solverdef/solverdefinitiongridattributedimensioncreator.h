@@ -10,15 +10,11 @@ class SolverDefinitionGridAttributeDimension;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeDimensionCreator
 {
-
 public:
-	/// Create dimension instance
 	static SolverDefinitionGridAttributeDimension* create(const QDomElement& elem, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* cond);
 
 private:
-	/// Constructor
 	SolverDefinitionGridAttributeDimensionCreator();
-	/// Destructor
 	~SolverDefinitionGridAttributeDimensionCreator();
 };
 

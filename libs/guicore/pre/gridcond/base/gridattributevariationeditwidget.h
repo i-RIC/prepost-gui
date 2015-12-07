@@ -1,32 +1,36 @@
 #ifndef GRIDATTRIBUTEVARIATIONEDITWIDGET_H
 #define GRIDATTRIBUTEVARIATIONEDITWIDGET_H
 
+#include "../../../guicore_global.h"
+
 #include <QWidget>
 #include <vtkIdList.h>
+
 class SolverDefinitionGridAttribute;
 class GridAttributeContainer;
 class vtkDataSetAttributes;
 class PreProcessorGridDataItemInterface;
 
-class GridAttributeVariationEditWidget : public QWidget
+class GUICOREDLL_EXPORT GridAttributeVariationEditWidget : public QWidget
 {
 	Q_OBJECT
 
 public:
-	GridAttributeVariationEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition) :
-		QWidget {parent},
-		m_gridAttribute {condition}
-	{}
-	void clearValue() {
-		setupWidget();
-	}
-	SolverDefinitionGridAttribute* gridAttribute() {return m_gridAttribute;}
-	virtual void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
+	GridAttributeVariationEditWidget(QWidget* parent, SolverDefinitionGridAttribute* condition);
+	virtual ~GridAttributeVariationEditWidget();
+
+	void clearValue();
+
+	SolverDefinitionGridAttribute* gridAttribute() const;
 	virtual QVariant variantValue() = 0;
 
+	virtual void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
+
 protected:
-	virtual void setupWidget() = 0;
 	virtual void getValueFromInnerWidget() = 0;
+
+private:
+	virtual void setupWidget() = 0;
 
 	SolverDefinitionGridAttribute* m_gridAttribute;
 };

@@ -22,7 +22,7 @@ GridAttributeDimensionTimeSliderSelectWidget::GridAttributeDimensionTimeSliderSe
 	m_slowInterval = 0.01;
 	m_timer = new QTimer(this);
 	m_timer->setSingleShot(true);
-	m_isTime = (m_container->name() == "Time");
+	m_isTime = (container->name() == "Time");
 
 	connect(m_animationActions->actionStepFirst, SIGNAL(triggered()), this, SLOT(stepFirst()));
 	connect(m_animationActions->actionStepBackward, SIGNAL(triggered()), this, SLOT(stepBackward()));
@@ -80,17 +80,17 @@ void GridAttributeDimensionTimeSliderSelectWidget::doApplyValues()
 {
 	m_slider->setEnabled(true);
 	m_slider->setMinimum(0);
-	if (m_container->count() == 0) {
+	if (container()->count() == 0) {
 		m_slider->setMaximum(0);
 		m_slider->setEnabled(false);
 	}
-	m_slider->setMaximum(m_container->count() - 1);
-	setCurrentIndex(m_container->currentIndex());
+	m_slider->setMaximum(container()->count() - 1);
+	setCurrentIndex(container()->currentIndex());
 }
 
 QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
 {
-	QVariant value = m_container->variantValue(index);
+	QVariant value = container()->variantValue(index);
 	if (m_isTime) {
 		double dblDatetime = value.toDouble();
 		int intDateTime = static_cast<int>(dblDatetime);
@@ -113,34 +113,34 @@ QString GridAttributeDimensionTimeSliderSelectWidget::stepLabel(int index) const
 
 QString GridAttributeDimensionTimeSliderSelectWidget::currentStepLabel() const
 {
-	if (m_container->count() == 0) {return "";}
+	if (container()->count() == 0) {return "";}
 	return stepLabel(currentStepIndex());
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::stepForward()
 {
-	if (m_container->count() == 0) {return;}
-	if (m_container->currentIndex() == m_container->count() - 1) { return; }
-	setCurrentIndex(m_container->currentIndex() + 1);
+	if (container()->count() == 0) {return;}
+	if (container()->currentIndex() == container()->count() - 1) { return; }
+	setCurrentIndex(container()->currentIndex() + 1);
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::stepBackward()
 {
-	if (m_container->currentIndex() == 0) { return; }
-	setCurrentIndex(m_container->currentIndex() - 1);
+	if (container()->currentIndex() == 0) { return; }
+	setCurrentIndex(container()->currentIndex() - 1);
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::stepFirst()
 {
-	if (m_container->currentIndex() == 0) { return; }
+	if (container()->currentIndex() == 0) { return; }
 	setCurrentIndex(0);
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::stepLast()
 {
-	if (m_container->count() == 0) { return; }
-	if (m_container->currentIndex() == m_container->count() - 1) { return; }
-	setCurrentIndex(m_container->count() - 1);
+	if (container()->count() == 0) { return; }
+	if (container()->currentIndex() == container()->count() - 1) { return; }
+	setCurrentIndex(container()->count() - 1);
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::startSlowmotionAnimation()
@@ -182,12 +182,12 @@ void GridAttributeDimensionTimeSliderSelectWidget::editSlowmotionSpeed()
 
 void GridAttributeDimensionTimeSliderSelectWidget::doSetCurrentIndex(int index)
 {
-	if (m_container->currentIndex() != index) {
-		m_container->setCurrentIndex(index);
+	if (container()->currentIndex() != index) {
+		container()->setCurrentIndex(index);
 	}
 
 	m_slider->setValue(index);
-	if (m_container->count() == 0) {
+	if (container()->count() == 0) {
 		updateStepLabel("");
 	} else {
 		updateStepLabel(currentStepLabel());
@@ -209,7 +209,7 @@ void GridAttributeDimensionTimeSliderSelectWidget::updateStepLabel(const QString
 
 void GridAttributeDimensionTimeSliderSelectWidget::handleSliderMove(int val)
 {
-	if (val < m_container->count()) {
+	if (val < container()->count()) {
 		updateStepLabel(stepLabel(val));
 	} else {
 		updateStepLabel("");
@@ -218,7 +218,7 @@ void GridAttributeDimensionTimeSliderSelectWidget::handleSliderMove(int val)
 
 void GridAttributeDimensionTimeSliderSelectWidget::handleSliderRelease()
 {
-	m_container->setCurrentIndex(m_slider->value());
+	container()->setCurrentIndex(m_slider->value());
 }
 
 void GridAttributeDimensionTimeSliderSelectWidget::handleSlideValueChange(int val)
@@ -261,7 +261,7 @@ void GridAttributeDimensionTimeSliderSelectWidget::animationStep()
 	// if the user stopped running, finish.
 	if (m_runMode == NotRunning) {return;}
 	// if it reached the last step, stop running.
-	if (m_container->currentIndex() == m_container->count() - 1) {
+	if (container()->currentIndex() == container()->count() - 1) {
 		stopAnimation();
 		return;
 	}
@@ -278,7 +278,7 @@ void GridAttributeDimensionTimeSliderSelectWidget::animationStep()
 
 int GridAttributeDimensionTimeSliderSelectWidget::currentStepIndex() const
 {
-	return m_container->currentIndex();
+	return container()->currentIndex();
 }
 
 GridAttributeDimensionTimeSliderSelectWidget::AnimationActions::AnimationActions(QObject* /* parent*/)

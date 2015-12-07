@@ -76,7 +76,7 @@ GeoDataMapperSetting* GeoDataPointmapTemplateNodeMapperT<V, DA>::initialize(bool
 	GeoDataPointMapT<V, DA>* pointmap = dynamic_cast<GeoDataPointMapT<V, DA>* >(GeoDataMapper::m_geodata);
 	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(GeoDataMapper::m_grid);
 	if (grid2d == nullptr) {return s;}
-	if (GeoDataNodeMapperT<V, DA>::container()->condition()->isOption()) {
+	if (GeoDataNodeMapperT<V, DA>::container()->gridAttribute()->isOption()) {
 		// @todo not implemented yet.
 
 	} else {

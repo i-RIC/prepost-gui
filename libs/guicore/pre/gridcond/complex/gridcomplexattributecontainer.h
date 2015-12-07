@@ -31,7 +31,7 @@ protected:
 	DataType_t dataType() const override;
 
 private:
-	SolverDefinitionGridComplexAttribute* condition() const;
+	SolverDefinitionGridComplexAttribute* gridAttribute() const;
 };
 
 #endif // GRIDRELATEDCOMPLEXCONDITIONCONTAINER_H

@@ -2,15 +2,16 @@
 
 #include <guibase/coordinatesystem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/gridcond/base/gridattributedimensioncontainert.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
-#include <guicore/solverdef/solverdefinitiongridattributedimension.h>
-#include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
 #include <guicore/solverdef/solverdefinitiongridattributeinteger.h>
+#include <guicore/solverdef/solverdefinitiongridattributeintegerdimension.h>
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
+#include <guicore/solverdef/solverdefinitiongridattributerealdimension.h>
 #include <misc/stringtool.h>
 
 #include <vtkCellArray.h>

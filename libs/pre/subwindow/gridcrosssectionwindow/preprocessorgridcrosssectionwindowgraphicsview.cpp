@@ -959,9 +959,9 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	}
 	Structured2DGrid* grid = m_parentWindow->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(m_parentWindow->condition());
-	GridAttributeEditDialog* dialog = cont->condition()->editDialog(this);
-	dialog->setWindowTitle(tr("Edit %1").arg(cont->condition()->caption()));
-	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->condition()->caption()));
+	GridAttributeEditDialog* dialog = cont->gridAttribute()->editDialog(this);
+	dialog->setWindowTitle(tr("Edit %1").arg(cont->gridAttribute()->caption()));
+	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->gridAttribute()->caption()));
 	QVector<vtkIdType> targets;
 	QModelIndexList selIndices = selectionModel()->selectedIndexes();
 	for (QModelIndex index : selIndices) {

@@ -5,7 +5,6 @@
 
 class SolverDefinitionGridAttributeIntegerCell : public SolverDefinitionGridAttributeInteger
 {
-
 public:
 	SolverDefinitionGridAttributeIntegerCell(const QDomElement& elem, const SolverDefinitionTranslator& translator, int order);
 

@@ -20,12 +20,11 @@ private:
 
 public:
 	const static int SLIDERWIDTH_MAX = 100;
-	explicit GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent);
+
+	GridAttributeDimensionTimeSliderSelectWidget(GridAttributeDimensionContainer* container, QWidget* parent);
 	~GridAttributeDimensionTimeSliderSelectWidget();
 
-	/// Returns the index of current step
 	int currentStepIndex() const;
-	/// Returns the label of current index
 	QString currentStepLabel() const;
 	QString stepLabel(int index) const;
 
@@ -51,25 +50,21 @@ private slots:
 	void handleSlideValueChange(int val);
 	void handleTimerTimeout();
 
-signals:
-//	void indexChanged(unsigned int index) override;
-
-protected:
+private:
 	void doApplyValues() override;
 	void doSetCurrentIndex(int newIndex) override;
 
-private:
 	void disableSteppingActions(bool disable = true);
 	void animationStep();
 	void updateStartButtonIcon();
 	void updateStepLabel(const QString& newLabel);
+
 	bool m_followLastStep;
 
 public:
 	/// Menu that has actions related to animation control
 	class AnimationActions : public QObject
 	{
-
 	public:
 		/// Constructor
 		AnimationActions(QObject* parent);

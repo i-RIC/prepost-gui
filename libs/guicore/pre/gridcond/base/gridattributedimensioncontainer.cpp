@@ -20,6 +20,21 @@ const QString& GridAttributeDimensionContainer::caption() const
 	return m_definition->caption();
 }
 
+SolverDefinitionGridAttributeDimension* GridAttributeDimensionContainer::definition() const
+{
+	return m_definition;
+}
+
+int GridAttributeDimensionContainer::currentIndex() const
+{
+	return m_currentIndex;
+}
+
+QVariant GridAttributeDimensionContainer::currentVariantValue() const
+{
+	return variantValue(currentIndex());
+}
+
 void GridAttributeDimensionContainer::setCurrentIndex(int index, bool noDraw)
 {
 	m_currentIndex = index;

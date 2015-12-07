@@ -120,7 +120,7 @@ void PreProcessorGridCrosssectionWindow::setupModel()
 {
 	GridAttributeContainer* cont = m_grid->gridAttribute(m_condition);
 	m_model = new QStandardItemModel(0, 1, this);
-	m_model->setHeaderData(0, Qt::Horizontal, cont->condition()->caption());
+	m_model->setHeaderData(0, Qt::Horizontal, cont->gridAttribute()->caption());
 
 	m_selectionModel = new QItemSelectionModel(m_model, this);
 	connect(m_selectionModel, SIGNAL(selectionChanged(QItemSelection, QItemSelection)), this, SLOT(updateActionStatus()));
@@ -209,7 +209,7 @@ void PreProcessorGridCrosssectionWindow::setTarget(PreProcessorGridCrosssectionW
 	m_blueLineComboBox->blockSignals(false);
 
 	// set window title.
-	QString caption = m_grid->gridAttribute(m_condition)->condition()->caption();
+	QString caption = m_grid->gridAttribute(m_condition)->gridAttribute()->caption();
 	setWindowTitle(title.arg(caption).arg(m_blackLineIndex + 1));
 	setupData();
 

@@ -1,5 +1,6 @@
 #include "solverdefinitiongridattributedimensioncreator.h"
-#include "solverdefinitiongridattributedimensiont.h"
+#include "solverdefinitiongridattributeintegerdimension.h"
+#include "solverdefinitiongridattributerealdimension.h"
 
 #include <QDomElement>
 

@@ -274,12 +274,12 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 	Grid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
 	if (grid->gridAttribute(attName)->isCustomModified()) {
-		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		if (item->condition() == grid->gridAttribute(attName)->condition()) {
+		if (item->condition() == grid->gridAttribute(attName)->gridAttribute()) {
 			// execute mapping.
 			item->executeMapping(grid, 0);
 			grid->gridAttribute(attName)->setCustomModified(false);

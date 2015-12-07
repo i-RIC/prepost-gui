@@ -469,17 +469,17 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdTyp
 		GridAttributeIntegerNodeContainer* icond = dynamic_cast<GridAttributeIntegerNodeContainer*>(cond);
 		GridAttributeRealNodeContainer* rcond = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 		if (icond != 0) {
-			if (icond->condition()->isOption()) {
+			if (icond->gridAttribute()->isOption()) {
 				SolverDefinitionGridAttributeIntegerOptionNode* optCond =
-					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionNode*>(icond->condition());
-				PropertyBrowserAttribute att(icond->condition()->caption(), optCond->enumerations().value(icond->value(vid)));
+					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionNode*>(icond->gridAttribute());
+				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), optCond->enumerations().value(icond->value(vid)));
 				atts.append(att);
 			} else {
-				PropertyBrowserAttribute att(icond->condition()->caption(), icond->value(vid));
+				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), icond->value(vid));
 				atts.append(att);
 			}
 		} else if (rcond != 0) {
-			PropertyBrowserAttribute att(rcond->condition()->caption(), rcond->value(vid));
+			PropertyBrowserAttribute att(rcond->gridAttribute()->caption(), rcond->value(vid));
 			atts.append(att);
 		}
 	}
