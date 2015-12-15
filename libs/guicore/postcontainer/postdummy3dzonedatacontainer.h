@@ -14,10 +14,10 @@ public:
 
 protected:
 	bool loadStructuredGrid(const int fn, const int currentStep) override;
-	bool loadScalarData(const int fn, const int solid) override;
-	bool loadVectorData(const int fn, const int solid) override;
+	bool loadGridScalarData(const int fn, const int solid) override;
+	bool loadGridVectorData(const int fn, const int solid) override;
 
-private:
+public:
 	static const int KMAX = 11;
 	static const int ZWIDTH = 1;
 };

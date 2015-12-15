@@ -107,6 +107,8 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	connect(m_showNodeAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
 	m_showCellAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showCellAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showCellAttributeBrowser()));
+	m_showParticleBrowserAction = new QAction(tr("Show Attribute Browser"), this);
+	connect(m_showParticleBrowserAction, SIGNAL(triggered()), this, SLOT(showParticleBrowser()));
 
 	setupActors();
 	updateRegionPolyData();
@@ -609,6 +611,121 @@ void Post2dWindowZoneDataItem::updateCellAttributeBrowser(vtkIdType cellid, VTKG
 	}
 }
 
+void Post2dWindowZoneDataItem::initParticleBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->resetForParticle();
+}
+
+void Post2dWindowZoneDataItem::clearParticleBrowser()
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->hideAll();
+}
+
+void Post2dWindowZoneDataItem::fixParticleBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+
+	vtkIdType pid = findParticle(p, v);
+	m_attributeBrowserFixed = (pid >= 0);
+	if (pid < 0) {
+		// no particle is near.
+		pb->view()->resetAttributes();
+		return;
+	}
+	double vertex[3];
+	dataContainer()->particleData()->GetPoint(pid, vertex);
+
+	updateParticleBrowser(pid, vertex[0], vertex[1], v);
+}
+
+void Post2dWindowZoneDataItem::updateParticleBrowser(const QPoint& p, VTKGraphicsView* v)
+{
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	if (! pb->isVisible()) {return;}
+	if (m_attributeBrowserFixed) {return;}
+
+	vtkIdType pid = findParticle(p, v);
+	if (pid < 0) {
+		// no particle is near.
+		pb->view()->resetAttributes();
+		return;
+	}
+	double vertex[3];
+	dataContainer()->particleData()->GetPoint(pid, vertex);
+
+	updateParticleBrowser(pid, vertex[0], vertex[1], v);
+}
+
+vtkIdType Post2dWindowZoneDataItem::findParticle(const QPoint& p, VTKGraphicsView* v)
+{
+	double x = p.x();
+	double y = p.y();
+	Post2dWindowGraphicsView* v2 = dynamic_cast<Post2dWindowGraphicsView*>(v);
+	v2->viewportToWorld(x, y);
+
+	PostZoneDataContainer* cont = dataContainer();
+	vtkIdType pid = cont->particleData()->FindPoint(x, y, 0);
+	if (pid < 0) {
+		// no particle is near.
+		return -1;
+	}
+	double vertex[3];
+	cont->particleData()->GetPoint(pid, vertex);
+
+	QVector2D vec1(x, y);
+	QVector2D vec2(vertex[0], vertex[1]);
+	double distance = (vec2 - vec1).length();
+	double limitDist = v2->stdRadius(5);
+	if (distance > limitDist) {
+		// no point is near.
+		return -1;
+	}
+	return pid;
+}
+
+void Post2dWindowZoneDataItem::updateParticleBrowser(vtkIdType pid, double x, double y, VTKGraphicsView* /*v*/)
+{
+	PostZoneDataContainer* cont = dataContainer();
+	QList<PropertyBrowserAttribute> atts;
+
+	int count = cont->particleData()->GetPointData()->GetNumberOfArrays();
+	for (int i = 0; i < count; ++i) {
+		vtkAbstractArray* arr = cont->particleData()->GetPointData()->GetAbstractArray(i);
+		vtkDataArray* da = dynamic_cast<vtkDataArray*>(arr);
+		if (da == nullptr) {continue;}
+		if (da->GetNumberOfComponents() == 1) {
+			// scalar value
+			double val = da->GetComponent(pid, 0);
+			PropertyBrowserAttribute att(da->GetName(), val);
+			atts.append(att);
+		} else if (da->GetNumberOfComponents() == 3) {
+			// vector value
+			double val = da->GetComponent(pid, 0);
+			QString attName = da->GetName();
+			attName.append("X");
+			PropertyBrowserAttribute att(attName, val);
+			atts.append(att);
+
+			val = da->GetComponent(pid, 1);
+			attName = da->GetName();
+			attName.append("Y");
+			att = PropertyBrowserAttribute(attName, val);
+			atts.append(att);
+		}
+	}
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	PropertyBrowser* pb = w->propertyBrowser();
+	pb->view()->setParticleAttributes(pid, x, y, atts);
+}
+
+
 void Post2dWindowZoneDataItem::showNodeAttributeBrowser()
 {
 	initNodeAttributeBrowser();
@@ -619,6 +736,13 @@ void Post2dWindowZoneDataItem::showNodeAttributeBrowser()
 void Post2dWindowZoneDataItem::showCellAttributeBrowser()
 {
 	initCellAttributeBrowser();
+	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
+	w->propertyBrowser()->show();
+}
+
+void Post2dWindowZoneDataItem::showParticleBrowser()
+{
+	initParticleBrowser();
 	Post2dWindow* w = dynamic_cast<Post2dWindow*>(mainWindow());
 	w->propertyBrowser()->show();
 }

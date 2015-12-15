@@ -117,7 +117,7 @@ public:
 		m_group->m_labelTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
 
 		Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(m_group->parent()->parent());
-		LookupTableContainer* lookup = gtItem->lookupTable(m_group->m_target);
+		LookupTableContainer* lookup = gtItem->nodeLookupTable(m_group->m_target);
 		*lookup = m_newLookupTable;
 		if (m_draw) {
 			m_group->renderGraphicsView();
@@ -138,7 +138,7 @@ public:
 		m_group->m_labelTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
 
 		Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(m_group->parent()->parent());
-		LookupTableContainer* lookup =  gtItem->lookupTable(m_group->m_target);
+		LookupTableContainer* lookup =  gtItem->nodeLookupTable(m_group->m_target);
 		*lookup = m_oldLookupTable;
 		if (m_draw) {
 			m_group->renderGraphicsView();
@@ -176,7 +176,7 @@ private:
 void Post3dWindowContourGroupDataItem::setSetting(const std::string& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleSetting, const vtkTextPropertySettingContainer& labelSetting, bool draw)
 {
 	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* oldlookup =  gtItem->lookupTable(m_target);
+	LookupTableContainer* oldlookup =  gtItem->nodeLookupTable(m_target);
 	iRICUndoStack::instance().push(new Post3dWindowContourGroupSetSetting(
 			m_target, m_contour, m_numberOfDivision, *oldlookup, m_fillUpper, m_fillLower, m_colorBarTitleMap[sol], m_scalarBarSetting, m_titleTextSetting, m_labelTextSetting,
 			sol, c, numOfDiv, lookup, upper, lower, title, setting, titleSetting, labelSetting, this, draw));
@@ -446,19 +446,19 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 		return;
 	}
 
-	GraphicsWindowDataItem::updateVisibility(visible);
-	/*
-		bool childVis = false;
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
-			Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
-			if (f->standardItem()->checkState() == Qt::Checked){
-				childVis = true;
-				break;
-			}
+	bool childVis = false;
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it){
+		Post3dWindowFaceDataItem* f = dynamic_cast<Post3dWindowFaceDataItem*>(*it);
+		if (f->standardItem()->checkState() == Qt::Checked){
+			childVis = true;
+			break;
 		}
-	*/
-	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
+	}
+
+	bool v = (m_standardItem->checkState() == Qt::Checked) && visible && childVis;
 	m_scalarBarWidget->SetEnabled(m_scalarBarSetting.visible && v);
+
+	GraphicsWindowDataItem::updateVisibility(visible);
 }
 
 void Post3dWindowContourGroupDataItem::handleStandardItemChange()
@@ -525,7 +525,7 @@ void Post3dWindowContourGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 LookupTableContainer* Post3dWindowContourGroupDataItem::lookupTable()
 {
 	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
-	return gtItem->lookupTable(m_target);
+	return gtItem->nodeLookupTable(m_target);
 }
 
 QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowContourGroupDataItem::faceMap() const

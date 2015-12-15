@@ -96,8 +96,8 @@ LookupTableContainer& Post3dWindowContourGroupSettingDialog::lookupTable()
 
 void Post3dWindowContourGroupSettingDialog::solutionChanged(int index)
 {
-	auto sol = m_targets.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
+	auto target = m_targets.at(index);
+	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(target);
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);
 }

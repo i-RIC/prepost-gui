@@ -71,32 +71,43 @@ LIBS += \
 	-lvtkRenderingFreeType-6.1
 
 # Input
-HEADERS += postallzoneselectingdialog.h \
-					 postbase_global.h \
-					 postparticlebasicpropertydialog.h \
-					 time/posttimedataitem.h \
-					 time/posttimeeditdialog.h \
-					 title/posttitledataitem.h \
-					 title/posttitleeditdialog.h \
-					 title/posttitlesetting.h \
-					 post2dwindowcontoursetting.h
+HEADERS += cfshapeexportwindowinterface.h \
+           particleexportwindowinterface.h \
+           post2dwindowcontoursetting.h \
+           postallzoneselectingdialog.h \
+           postbase_global.h \
+           postparticlebasicpropertydialog.h \
+           postparticlescalarpropertydialog.h \
+           postparticlevectorpropertydialog.h \
+           postwindowgridtypedataiteminterface.h \
+           svkmlexportwindow.h \
+           svkmlexportwindowinterface.h \
+           time/posttimedataitem.h \
+           time/posttimeeditdialog.h \
+           title/posttitledataitem.h \
+           title/posttitleeditdialog.h \
+           title/posttitlesetting.h
 FORMS += postallzoneselectingdialog.ui \
-				 postparticlebasicpropertydialog.ui \
-				 time/posttimeeditdialog.ui \
-				 title/posttitleeditdialog.ui
-SOURCES += postallzoneselectingdialog.cpp \
-					 postparticlebasicpropertydialog.cpp \
-					 time/posttimedataitem.cpp \
-					 time/posttimeeditdialog.cpp \
-					 title/posttitledataitem.cpp \
-					 title/posttitleeditdialog.cpp \
-					 post2dwindowcontoursetting.cpp
+         postparticlebasicpropertydialog.ui \
+         postparticlescalarpropertydialog.ui \
+         postparticlevectorpropertydialog.ui \
+         time/posttimeeditdialog.ui \
+         title/posttitleeditdialog.ui
+SOURCES += post2dwindowcontoursetting.cpp \
+           postallzoneselectingdialog.cpp \
+           postparticlebasicpropertydialog.cpp \
+           postparticlescalarpropertydialog.cpp \
+           postparticlevectorpropertydialog.cpp \
+           time/posttimedataitem.cpp \
+           time/posttimeeditdialog.cpp \
+           title/posttitledataitem.cpp \
+           title/posttitleeditdialog.cpp
 TRANSLATIONS += languages/iricPostbase_es_ES.ts \
-								languages/iricPostbase_fr_FR.ts \
-								languages/iricPostbase_id_ID.ts \
-								languages/iricPostbase_ja_JP.ts \
-								languages/iricPostbase_ko_KR.ts \
-								languages/iricPostbase_ru_RU.ts \
-								languages/iricPostbase_th_TH.ts \
-								languages/iricPostbase_vi_VN.ts \
-								languages/iricPostbase_zh_CN.ts
+                languages/iricPostbase_fr_FR.ts \
+                languages/iricPostbase_id_ID.ts \
+                languages/iricPostbase_ja_JP.ts \
+                languages/iricPostbase_ko_KR.ts \
+                languages/iricPostbase_ru_RU.ts \
+                languages/iricPostbase_th_TH.ts \
+                languages/iricPostbase_vi_VN.ts \
+                languages/iricPostbase_zh_CN.ts

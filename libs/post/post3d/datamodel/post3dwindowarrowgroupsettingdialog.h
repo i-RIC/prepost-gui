@@ -13,7 +13,7 @@
 class PostZoneDataContainer;
 class Post3dWindowGridTypeDataItem;
 class QListWidgetItem;
-class ArrowSettingContainer;
+class ArrowShapeContainer;
 
 namespace Ui
 {
@@ -28,30 +28,15 @@ public:
 	Post3dWindowArrowGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowArrowGroupSettingDialog();
 
-	void setColor(const QColor& color);
-	QColor color();
-	void setMapping(Post3dWindowArrowGroupDataItem::Mapping m);
-	Post3dWindowArrowGroupDataItem::Mapping mapping();
-	void setScalarValueName(const std::string& name);
-	std::string scalarValueName();
-	void setSampleRate(int rate);
-	int sampleRate();
-	void setTarget(const std::string& target);
-	const std::string target() const;
+	void setZoneData(PostZoneDataContainer* zoneData);
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap();
-	void setZoneData(PostZoneDataContainer* zoneData);
-	void setLengthMode(Post3dWindowArrowGroupDataItem::LengthMode lm);
-	Post3dWindowArrowGroupDataItem::LengthMode lengthMode();
-	void setStandardValue(double stdVal);
-	double standardValue();
-	void setLegendLength(int len);
-	int legendLength();
-	void setMinimumValue(double minVal);
-	double minimumValue();
-	void setArrowSetting(const ArrowSettingContainer& arrowSetting);
-	ArrowSettingContainer arrowSetting();
 
+	void setSetting(const ArrowSettingContainer& shape);
+	ArrowSettingContainer setting() const;
+
+	void setShape(const ArrowShapeContainer& shape);
+	ArrowShapeContainer shape() const;
 
 public slots:
 	void addFaceSetting();
@@ -59,7 +44,6 @@ public slots:
 	void switchFaceSetting(QListWidgetItem* current, QListWidgetItem* previous);
 
 private slots:
-	void solutionChanged(int index);
 	void checkSelectedNumber();
 	void allSamplingToggled(bool toggled);
 	void updateFaceMap();

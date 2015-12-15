@@ -40,25 +40,12 @@
 
 #include <cmath>
 
-const double Post2dWindowNodeVectorArrowGroupDataItem::MINLIMIT = 1.0E-6;
-
 Post2dWindowNodeVectorArrowGroupDataItem::Setting::Setting() :
-	CompositeContainer
-		({&scalarValueName, &target, &color,&oldCameraScale, &scaleFactor, &regionMode,
-		 &mapping, &legendMode, &lengthMode, &standardValue, &legendLength, &minimumValue, &arrowSetting}),
-	scalarValueName {"scalarValueName"},
-	target {"solution"},
-	color {"color"},
+	CompositeContainer({&arrowSetting, &oldCameraScale, &scaleFactor, &regionMode}),
+	arrowSetting {},
 	oldCameraScale {"oldCameraScale", 1},
 	scaleFactor {"scaleFactor", 1},
-	regionMode {"regionMode", StructuredGridRegion::rmFull},
-	mapping {"mapping", Specific},
-	legendMode {"legendMode", lmAuto},
-	lengthMode {"lengthMode", lenAuto},
-	standardValue {"standardValue", 1},
-	legendLength {"legendLength", STANDARD_LENGTH},
-	minimumValue {"minimumValue", 0.001},
-	arrowSetting {}
+	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {
 	QSettings setting;
 	color = setting.value("graphics/vectorcolor", QColor(Qt::black)).value<QColor>();
@@ -180,7 +167,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	vtkPointSet* ps = cont->data();
 	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.target).c_str());
+	vtkDataArray* da = pd->GetArray(m_setting.target);
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -238,7 +225,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
+	pd->SetActiveVectors(m_setting.target);
 
 	updateActivePoints();
 
@@ -256,16 +243,19 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSettings()
 void Post2dWindowNodeVectorArrowGroupDataItem::updateColorSetting()
 {
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent());
-	switch (Mapping(m_setting.mapping)) {
-	case Specific:
+
+	auto s = m_setting;
+
+	switch (m_setting.arrowSetting.ColorMode) {
+	case ArrowSettingContainer::ColorMode::Custom:
 		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(m_setting.color);
+		m_arrowActor->GetProperty()->SetColor(s.arrowSetting.customColor);
 		break;
-	case Scalar:
+	case ArrowSettingContainer::ColorMode::ByScalar:
 		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = typedi->lookupTable(iRIC::toStr(m_setting.scalarValueName).c_str());
+		LookupTableContainer* stc = typedi->nodeLookupTable(s.arrowSetting.colorTarget);
 		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.scalarValueName).c_str());
+		m_arrowMapper->SelectColorArray(s.arrowSetting.colorTarget);
 		m_arrowMapper->SetLookupTable(stc->vtkObj());
 		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
@@ -289,13 +279,13 @@ void Post2dWindowNodeVectorArrowGroupDataItem::update()
 
 std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 {
-	return m_setting.target;
+	return m_setting.arrowSetting.target;
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.target = target.c_str();
+	m_setting.arrowSetting.target = target.c_str();
 	updateActorSettings();
 }
 
@@ -331,8 +321,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updatePolyData()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateScaleFactor()
 {
+	const auto& s = m_arrowSetting;
 	double a = 1.0 / dataModel()->graphicsView()->stdRadius(1.0);
-	m_setting.scaleFactor = m_setting.legendLength / (a * m_setting.standardValue);
+	m_setting.scaleFactor = s.legendLength / (a * s.standardValue);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::updateLegendData()
@@ -378,6 +369,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 {
 	m_setting.load(node);
 	setTarget(m_setting.target);
+	updateScaleFactor();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -2,6 +2,8 @@
 #define POST3DWINDOWGRIDTYPEDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
+#include <postbase/postwindowgridtypedataiteminterface.h>
+
 #include <QList>
 #include <QMap>
 
@@ -10,7 +12,7 @@ class SolverDefinitionGridType;
 class Post3dWindowZoneDataItem;
 class LookupTableContainer;
 
-class Post3dWindowGridTypeDataItem : public Post3dWindowDataItem
+class Post3dWindowGridTypeDataItem : public Post3dWindowDataItem, public PostWindowGridTypeDataItemInterface
 {
 	Q_OBJECT
 
@@ -22,22 +24,25 @@ public:
 	Post3dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const {return m_gridType;}
 	bool isChildCaptionAvailable(const QString& caption);
-	LookupTableContainer* lookupTable(const std::string& attName) const {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* nodeLookupTable(const std::string& attName) const {return m_nodeLookupTables.value(attName, nullptr);}
+	LookupTableContainer* particleLookupTable(const std::string& attName) const override {return m_particleLookupTables.value(attName, nullptr);}
 	void setValueRange(const std::string& name);
 	void setupZoneDataItems();
 	void update();
 
-protected:
+private:
+	void updateNodeLookupTableRanges();
+	void updateParticleLookupTableRanges();
+
+	void setupNodeScalarsToColors(const std::string& name);
+	void setupParticleScalarsToColors(const std::string& name);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
-	void updateLookupTableRanges();
-	void setupScalarsToColors(const std::string& name);
-	const QString nextChildCaption();
-	const QString nextChildZonename();
 	SolverDefinitionGridType* m_gridType;
-	QMap<std::string, LookupTableContainer*> m_lookupTables;
+	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
+	QMap<std::string, LookupTableContainer*> m_particleLookupTables;
 	QMap<std::string, Post3dWindowZoneDataItem*> m_zoneDataNameMap;
 	QList<Post3dWindowZoneDataItem*> m_zoneDatas;
 	/// Action to add new condition.

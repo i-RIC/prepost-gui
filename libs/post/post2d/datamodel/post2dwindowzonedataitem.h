@@ -59,14 +59,20 @@ public:
 	void clearCellAttributeBrowser();
 	void fixCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateCellAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
+	void initParticleBrowser();
+	void clearParticleBrowser();
+	void fixParticleBrowser(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleBrowser(const QPoint& p, VTKGraphicsView* v);
 	void updateRegionPolyData();
 
 	QAction* showNodeAttributeBrowserAction() const {return m_showNodeAttributeBrowserAction;}
 	QAction* showCellAttributeBrowserAction() const {return m_showCellAttributeBrowserAction;}
+	QAction* showParticleBrowserAction() const {return m_showParticleBrowserAction;}
 
 public slots:
 	void showNodeAttributeBrowser();
 	void showCellAttributeBrowser();
+	void showParticleBrowser();
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -86,9 +92,11 @@ private:
 	void setupActors();
 
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
-	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
 	void updateNodeAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	vtkIdType findCell(const QPoint& p, VTKGraphicsView* v);
 	void updateCellAttributeBrowser(vtkIdType cellid, VTKGraphicsView* v);
+	vtkIdType findParticle(const QPoint& p, VTKGraphicsView* v);
+	void updateParticleBrowser(vtkIdType particleid, double x, double y, VTKGraphicsView* v);
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
@@ -98,6 +106,7 @@ private:
 
 	QAction* m_showNodeAttributeBrowserAction;
 	QAction* m_showCellAttributeBrowserAction;
+	QAction* m_showParticleBrowserAction;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

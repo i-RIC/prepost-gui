@@ -93,7 +93,7 @@ void Post3dWindowIsosurfaceSettingDialog::setEnableCheckBox(bool enable)
 void Post3dWindowIsosurfaceSettingDialog::targetChanged(int index)
 {
 	std::string target = m_targets.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(target);
+	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(target);
 
 	ui->minValueEdit->setValue(c->autoMin());
 	ui->maxValueEdit->setValue(c->autoMax());

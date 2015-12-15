@@ -23,7 +23,7 @@ namespace Ui
 
 class PostZoneDataContainer;
 class LookupTableContainer;
-class Post2dWindowGridTypeDataItemInterface;
+class PostWindowGridTypeDataItemInterface;
 
 class POST2D_EXPORT Post2dWindowContourSettingDialog : public QDialog
 {
@@ -33,7 +33,7 @@ public:
 	explicit Post2dWindowContourSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowContourSettingDialog();
 	void setZoneData(PostZoneDataContainer* zoneData);
-	void setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface* item);
+	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
 	void disableActive();
 	void hideOpacity();
 
@@ -57,7 +57,7 @@ private:
 
 	int m_gridDims[3];
 	std::vector<std::string> m_solutions;
-	Post2dWindowGridTypeDataItemInterface* m_gridTypeDataItem;
+	PostWindowGridTypeDataItemInterface* m_gridTypeDataItem;
 	LookupTableContainer m_lookupTable;
 	bool m_activeAvailable;
 	bool m_unstructured;

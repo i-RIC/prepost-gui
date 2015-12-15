@@ -59,8 +59,12 @@ protected:
 	bool loadUnstructuredGrid(const int fn, const int currentStep);
 	bool loadParticle(const int fn, const int currentStep);
 	bool getSoluionId(const int fn, const int currentStep, int* solid);
-	virtual bool loadScalarData(const int fn, const int solid);
-	virtual bool loadVectorData(const int fn, const int solid);
+	virtual bool loadGridScalarData(const int fn, const int solid);
+	virtual bool loadGridVectorData(const int fn, const int solid);
+
+	bool loadScalarData(vtkDataSetAttributes* atts, int firstAtt = 1);
+	bool loadVectorData(vtkDataSetAttributes* atts, int firstAtt = 1);
+
 	bool loadCellFlagData(const int fn);
 	bool setupIndexData();
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}

@@ -1,4 +1,6 @@
 #include "post3dwindowparticlestopdataitem.h"
+#include "post3dwindowparticlesscalargroupdataitem.h"
+#include "post3dwindowparticlesvectorgroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -18,17 +20,81 @@ Post3dWindowParticlesTopDataItem::Post3dWindowParticlesTopDataItem(Post3dWindowD
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	setupActors();
+	bool scalarExist = false;
+	bool vectorExist = false;
+	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	vtkPolyData* partD = cont->particleData();
+	vtkPointData* pd = partD->GetPointData();
+
+	int num = pd->GetNumberOfArrays();
+	for (int i = 0; i < num; i++) {
+		vtkAbstractArray* tmparray = pd->GetArray(i);
+		if (tmparray == nullptr) {
+			continue;
+		}
+		if (tmparray->GetNumberOfComponents() > 1) {
+			// vector attribute.
+			vectorExist = true;
+		}
+		scalarExist = true;
+	}
+	if (scalarExist) {
+		m_scalarGroupDataItem = new Post3dWindowParticlesScalarGroupDataItem(this);
+		m_childItems.append(m_scalarGroupDataItem);
+	} else {
+		m_scalarGroupDataItem = nullptr;
+		setupActors();
+	}
+	if (vectorExist) {
+		m_vectorGroupDataItem = new Post3dWindowParticlesVectorGroupDataItem(this);
+		m_childItems.append(m_vectorGroupDataItem);
+	}	else {
+		m_vectorGroupDataItem = nullptr;
+	}
+
 	updateActorSettings();
 }
 
 Post3dWindowParticlesTopDataItem::~Post3dWindowParticlesTopDataItem()
 {
+	if (m_actor == nullptr) {return;}
 	renderer()->RemoveActor(m_actor);
+}
+
+Post3dWindowParticlesScalarGroupDataItem* Post3dWindowParticlesTopDataItem::scalarGroupDataItem() const
+{
+	return m_scalarGroupDataItem;
+}
+
+Post3dWindowParticlesVectorGroupDataItem* Post3dWindowParticlesTopDataItem::vectorGroupDataItem() const
+{
+	return m_vectorGroupDataItem;
+}
+
+QColor Post3dWindowParticlesTopDataItem::color() const
+{
+	return m_setting.color;
+}
+
+void Post3dWindowParticlesTopDataItem::setColor(const QColor& c)
+{
+	m_setting.color = c;
+}
+
+int Post3dWindowParticlesTopDataItem::size() const
+{
+	return m_setting.size;
+}
+
+void Post3dWindowParticlesTopDataItem::setSize(int s)
+{
+	m_setting.size = s;
 }
 
 void Post3dWindowParticlesTopDataItem::updateActorSettings()
 {
+	if (m_actor == nullptr) {return;}
+
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
@@ -56,16 +122,46 @@ void Post3dWindowParticlesTopDataItem::assignActorZValues(const ZDepthRange& ran
 void Post3dWindowParticlesTopDataItem::update()
 {
 	updateActorSettings();
+	if (m_scalarGroupDataItem != nullptr) {
+		m_scalarGroupDataItem->update();
+	}
+	if (m_vectorGroupDataItem != nullptr) {
+		m_vectorGroupDataItem->update();
+	}
 }
 
 void Post3dWindowParticlesTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
+
+	if (m_scalarGroupDataItem != nullptr) {
+		QDomNode scalarNode = iRIC::getChildNode(node, "ScalarGroup");
+		if (! scalarNode.isNull()) {
+			m_scalarGroupDataItem->loadFromProjectMainFile(scalarNode);
+		}
+	}
+	if (m_vectorGroupDataItem != nullptr) {
+		QDomNode vectorNode = iRIC::getChildNode(node, "VectorGroup");
+		if (! vectorNode.isNull()) {
+			m_vectorGroupDataItem->loadFromProjectMainFile(vectorNode);
+		}
+	}
 }
 
 void Post3dWindowParticlesTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.save(writer);
+
+	if (m_scalarGroupDataItem != nullptr) {
+		writer.writeStartElement("ScalarGroup");
+		m_scalarGroupDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_vectorGroupDataItem != nullptr) {
+		writer.writeStartElement("VectorGroup");
+		m_vectorGroupDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }
 
 void Post3dWindowParticlesTopDataItem::setupActors()
@@ -80,6 +176,10 @@ void Post3dWindowParticlesTopDataItem::setupActors()
 
 QDialog* Post3dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 {
+	if (m_scalarGroupDataItem != nullptr){
+		return m_scalarGroupDataItem->propertyDialog(parent);
+	}
+
 	PostParticleBasicPropertyDialog* dialog = new PostParticleBasicPropertyDialog(parent);
 	dialog->setSetting(m_setting);
 
@@ -113,11 +213,17 @@ private:
 
 void Post3dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
+	if (m_scalarGroupDataItem != nullptr) {
+		m_scalarGroupDataItem->handlePropertyDialogAccepted(propDialog);
+		return;
+	}
 	PostParticleBasicPropertyDialog* dialog = dynamic_cast<PostParticleBasicPropertyDialog*>(propDialog);
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this);
 }
 
 void Post3dWindowParticlesTopDataItem::innerUpdateZScale(double scale)
 {
-	m_actor->SetScale(1, 1, scale);
+	if (m_scalarGroupDataItem == nullptr) {
+		m_actor->SetScale(1, 1, scale);
+	}
 }

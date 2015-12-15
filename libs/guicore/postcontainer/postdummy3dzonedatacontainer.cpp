@@ -22,8 +22,11 @@ bool PostDummy3DZoneDataContainer::loadStructuredGrid(const int fn, const int cu
 {
 	if (! m_loadedOnce) {
 		m_data = vtkSmartPointer<vtkStructuredGrid>::New();
-	} else {
+		m_labelData = vtkSmartPointer<vtkUnstructuredGrid>::New();
+	}
+	else {
 		m_data->Initialize();
+		m_labelData->Initialize();
 	}
 	vtkPointSet* p1 = m_data;
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*>(p1);
@@ -162,7 +165,7 @@ bool PostDummy3DZoneDataContainer::loadStructuredGrid(const int fn, const int cu
 	return true;
 }
 
-bool PostDummy3DZoneDataContainer::loadScalarData(const int fn, const int solid)
+bool PostDummy3DZoneDataContainer::loadGridScalarData(const int fn, const int solid)
 {
 	int ier;
 	char solname[32];
@@ -252,8 +255,7 @@ bool PostDummy3DZoneDataContainer::loadScalarData(const int fn, const int solid)
 	return true;
 }
 
-
-bool PostDummy3DZoneDataContainer::loadVectorData(const int fn, const int solid)
+bool PostDummy3DZoneDataContainer::loadGridVectorData(const int fn, const int solid)
 {
 	int ier;
 	char solname[32];

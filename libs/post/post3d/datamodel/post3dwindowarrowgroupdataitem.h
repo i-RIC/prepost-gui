@@ -5,6 +5,7 @@
 #include "post3dwindowfacedataitem.h"
 
 #include <misc/arrowsettingcontainer.h>
+#include <misc/arrowshapecontainer.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -34,15 +35,11 @@ class Post3dWindowArrowGroupDataItem : public Post3dWindowDataItem
 	Q_OBJECT
 
 public:
-	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
 
-	enum Mapping {Specific, Scalar};
-	enum LengthMode {lenAuto, lenCustom};
-
 	Post3dWindowArrowGroupDataItem(Post3dWindowDataItem* parent);
-	const std::string& target() const;
-	void setSetting(const std::string& sol, LengthMode lenMode, double stdVal, int legendLen, double minVal, Mapping mapping, const QColor& color, const std::string& scalar, int rate, const ArrowSettingContainer& arrowSetting);
+	void setSetting(const ArrowSettingContainer& setting, const ArrowShapeContainer& shape);
+
 	void updateActorSettings();
 	void showSettingDialog();
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap();
@@ -66,7 +63,8 @@ private:
 	void updateScaleFactor();
 
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	vtkSmartPointer<vtkActor> m_arrowActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
@@ -89,17 +87,9 @@ private:
 
 	double m_oldCameraScale;
 
-	LengthMode m_lengthMode;
-	Mapping m_mapping;
-	std::string m_target;
-	std::string m_scalarValueName;
-	QColor m_color;
-	int m_sampleRate;
-	double m_standardValue;
-	int m_legendLength;
-	double m_minimumValue;
 	double m_scaleFactor;
 	ArrowSettingContainer m_arrowSetting;
+	ArrowShapeContainer m_arrowShape;
 
 public:
 	friend class Post3dWindowArrowGroupSetSetting;

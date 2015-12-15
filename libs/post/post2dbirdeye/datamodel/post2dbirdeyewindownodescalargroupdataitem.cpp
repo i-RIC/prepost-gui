@@ -199,7 +199,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(m_setting.target);
+	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -217,7 +217,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupIsolineSetting()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(m_setting.target);
+	LookupTableContainer* stc = typedi->nodeLookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -285,7 +285,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorContourSetting()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(target());
+	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 	m_warp->SetInputData(m_valueClippedPolyData);
 	m_warp->Update();
@@ -301,7 +301,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupColorFringeSetting()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 {
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(target());
+	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
@@ -363,7 +363,7 @@ public:
 		m_item {item}
 	{
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(s.target);
+		LookupTableContainer* lut = gtItem->nodeLookupTable(s.target);
 		m_oldLookupTable = *lut;
 	}
 	void redo() {
@@ -381,7 +381,7 @@ private:
 	{
 		m_item->setTarget(sol);
 		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->lookupTable(sol);
+		LookupTableContainer* lut = gtItem->nodeLookupTable(sol);
 		*lut = c;
 		lut->update();
 		m_item->m_colorbarTitleMap[sol] = title;
@@ -464,7 +464,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::createValueClippedPolyData()
 	vtkSmartPointer<vtkPolyData> lowerClipped;
 
 	Post2dBirdEyeWindowGridTypeDataItem* typedi = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(target());
+	LookupTableContainer* stc = typedi->nodeLookupTable(target());
 	if (stc == nullptr) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);

@@ -35,8 +35,8 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& Post2dWindowNodeV
 	return *this;
 }
 
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* p)
-	: Post2dWindowNodeVectorArrowGroupDataItem(p)
+Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* p) :
+	Post2dWindowNodeVectorArrowGroupDataItem(p)
 {
 	m_arrowMask = vtkSmartPointer<vtkMaskPoints>::New();
 }
@@ -51,6 +51,7 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::informGridUpdate()
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 {
+	auto& s = m_arrowSetting;
 	m_activePoints->Initialize();
 	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
 	outPoints->SetDataTypeToDouble();
@@ -59,18 +60,21 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data();
 	m_arrowMask->SetInputData(ps);
 
-	// default Setting
-	m_arrowMask->SetOnRatio(1);
-	m_arrowMask->RandomModeOff();
-	m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
-
-	if (m_unsSetting.samplingMode == smRate) {
-		m_arrowMask->SetOnRatio(m_unsSetting.samplingRate);
+	if (s.samplingMode == ArrowSettingContainer::SamplingMode::All) {
+		m_arrowMask->SetOnRatio(1);
 		m_arrowMask->RandomModeOff();
 		m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
-	} else if (m_unsSetting.samplingMode == smNumber) {
+	} else if (s.samplingMode == ArrowSettingContainer::SamplingMode::Rate) {
+		m_arrowMask->SetOnRatio(s.samplingRate);
+		m_arrowMask->RandomModeOff();
+		m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
+	} else if (s.samplingMode == ArrowSettingContainer::SamplingMode::Number) {
 		m_arrowMask->RandomModeOn();
-		m_arrowMask->SetMaximumNumberOfPoints(m_unsSetting.samplingNumber);
+		m_arrowMask->SetMaximumNumberOfPoints(s.samplingNumber);
+	} else {
+		m_arrowMask->SetOnRatio(1);
+		m_arrowMask->RandomModeOff();
+		m_arrowMask->SetMaximumNumberOfPoints(ps->GetNumberOfPoints());
 	}
 	m_arrowMask->Update();
 	vtkPointSet* tmpgrid = m_arrowMask->GetOutput();
@@ -80,7 +84,7 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(m_setting.target));
 	if (vectorArray == nullptr) {
 		m_setting.target = "";
 		return;
@@ -134,21 +138,9 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 	}
 	Post2dWindowArrowUnstructuredSettingDialog* dialog = new Post2dWindowArrowUnstructuredSettingDialog(p);
 	dialog->setZoneData(cont);
-//	dialog->setMapping(m_mapping);
-//	dialog->setColor(m_color);
-//	dialog->setScalarValue(m_scalarValueName);
-//	dialog->setSamplingMode(m_samplingMode);
-//	dialog->setSamplingRate(m_samplingRate);
-//	dialog->setSamplingNumber(m_samplingNumber);
 	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
-//	dialog->setRegionMode(m_regionMode);
-//	dialog->setLengthMode(m_lengthMode);
-//	dialog->setStandardValue(m_standardValue);
-//	dialog->setLegendLength(m_legendLength);
-//	dialog->setMinimumValue(m_minimumValue);
-//	dialog->setArrowSetting(m_arrowSetting);
 	dialog->setSettings(m_setting, m_unsSetting);
 
 	return dialog;
@@ -165,17 +157,15 @@ public:
 		m_oldUnsSetting {item->m_unsSetting},
 		m_item {item}
 	{}
-	void redo() {
+	void redo() override {
 		m_item->m_setting = m_newSetting;
 		m_item->m_unsSetting = m_newUnsSetting;
 		m_item->setTarget(m_newSetting.target);
-		m_item->updateActorSettings();
 	}
-	void undo() {
+	void undo() override {
 		m_item->m_setting = m_oldSetting;
 		m_item->m_unsSetting = m_oldUnsSetting;
 		m_item->setTarget(m_oldSetting.target);
-		m_item->updateActorSettings();
 	}
 
 private:
@@ -197,7 +187,6 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::handlePropertyDialogA
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
-
 	m_unsSetting.load(node);
 	updateActorSettings();
 }
@@ -205,7 +194,5 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMain
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(writer);
-
 	m_unsSetting.save(writer);
 }
-

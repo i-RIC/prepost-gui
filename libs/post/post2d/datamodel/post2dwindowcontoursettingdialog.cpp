@@ -2,14 +2,13 @@
 
 #include "../post2dgridregionselectdialog.h"
 #include "post2dwindowcontoursettingdialog.h"
-#include "post2dwindowgridtypedataiteminterface.h"
 
 #include <guibase/comboboxtool.h>
 #include <guibase/scalarbardialog.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/stringtool.h>
+#include <postbase/postwindowgridtypedataiteminterface.h>
 
 #include <QMessageBox>
 
@@ -53,7 +52,7 @@ void Post2dWindowContourSettingDialog::setZoneData(PostZoneDataContainer* zoneDa
 	}
 }
 
-void Post2dWindowContourSettingDialog::setGridTypeDataItem(Post2dWindowGridTypeDataItemInterface* item)
+void Post2dWindowContourSettingDialog::setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item)
 {
 	m_gridTypeDataItem = item;
 }
@@ -123,7 +122,7 @@ const LookupTableContainer& Post2dWindowContourSettingDialog::lookupTable()
 void Post2dWindowContourSettingDialog::targetChanged(int index)
 {
 	std::string sol = m_solutions.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->lookupTable(sol);
+	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(sol);
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);
 }

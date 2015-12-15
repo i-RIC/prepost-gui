@@ -7,6 +7,9 @@
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
 
+class Post3dWindowParticlesScalarGroupDataItem;
+class Post3dWindowParticlesVectorGroupDataItem;
+
 class Post3dWindowParticlesTopDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
@@ -15,6 +18,16 @@ public:
 	/// Constructor
 	Post3dWindowParticlesTopDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowParticlesTopDataItem();
+
+	Post3dWindowParticlesScalarGroupDataItem* scalarGroupDataItem() const;
+	Post3dWindowParticlesVectorGroupDataItem* vectorGroupDataItem() const;
+
+	QColor color() const;
+	void setColor(const QColor& c);
+
+	int size() const;
+	void setSize(int s);
+
 	void updateActorSettings();
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -30,6 +43,10 @@ private:
 
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
+
+	Post3dWindowParticlesScalarGroupDataItem* m_scalarGroupDataItem;
+	Post3dWindowParticlesVectorGroupDataItem* m_vectorGroupDataItem;
+
 	PostParticleBasicPropertyDialog::Setting m_setting;
 
 	class SetSettingCommand;

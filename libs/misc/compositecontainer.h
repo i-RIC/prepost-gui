@@ -10,14 +10,11 @@ class MISCDLL_EXPORT CompositeContainer : public XmlAttributeContainer
 {
 
 public:
-	/// Destructor
 	virtual ~CompositeContainer();
 
 	/// @name XML file I/O functions
 	//@{
-	/// Load data from XML attributes
 	void load(const QDomNode&);
-	/// Save data into XML node as attributes
 	virtual void save(QXmlStreamWriter&) const;
 	//@}
 
@@ -30,9 +27,7 @@ public:
 protected:
 	/// @name Protected constructors
 	//@{
-	/// Constructor (initializer list)
 	CompositeContainer(std::initializer_list<XmlAttributeContainer*> list);
-	/// Constructor (copy)
 	CompositeContainer(const CompositeContainer& c) = delete;
 	//@}
 

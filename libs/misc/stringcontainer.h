@@ -6,38 +6,37 @@
 
 #include <QString>
 
+#include <string>
+
 class MISCDLL_EXPORT StringContainer : public SimpleValueContainerT<QString>
 {
-
 public:
 	/// @name Constructors and Destructor
 	//@{
-	/// Constructor
 	StringContainer(const QString& name);
-	/// Constructor (with default value)
 	StringContainer(const QString& name, const QString& defaultVal);
-	/// Constructor (copy)
 	StringContainer(const StringContainer& c);
-	/// Destructor
 	virtual ~StringContainer();
 	//@}
 
 	/// @name XML I/O functions
 	//@{
 	void load(const QDomNode&) override;
-	/// Save data into XML node as attributes
 	void save(QXmlStreamWriter&) const override;
 	//@}
 
 	/// @name Operators
 	//@{
 	StringContainer& operator=(const QString& val);
+	StringContainer& operator=(const std::string& val);
 	bool operator!=(const QString& val);
 	operator std::string() const;
+	operator const char*() const;
 	//@}
 
 private:
 	void copyValue(const XmlAttributeContainer& c) override;
+	std::string m_stdString;
 };
 
 #endif // STRINGCONTAINER_H

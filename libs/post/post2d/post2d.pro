@@ -146,7 +146,6 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowgeodatatopdataitem.h \
            datamodel/post2dwindowgridshapedataitem.h \
            datamodel/post2dwindowgridtypedataitem.h \
-           datamodel/post2dwindowgridtypedataiteminterface.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
            datamodel/post2dwindownodescalardataitem.h \
            datamodel/post2dwindownodescalargroupdataitem.h \
@@ -163,8 +162,12 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindownodevectorstreamlinegroupdataitem.h \
            datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.h \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.h \
+           datamodel/post2dwindowparticlesscalardataitem.h \
+           datamodel/post2dwindowparticlesscalargroupdataitem.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowparticlestructuredsettingdialog.h \
+           datamodel/post2dwindowparticlesvectordataitem.h \
+           datamodel/post2dwindowparticlesvectorgroupdataitem.h \
            datamodel/post2dwindowparticleunstructuredsettingdialog.h \
            datamodel/post2dwindowrootdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
@@ -218,8 +221,12 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.cpp \
+           datamodel/post2dwindowparticlesscalardataitem.cpp \
+           datamodel/post2dwindowparticlesscalargroupdataitem.cpp \
            datamodel/post2dwindowparticlestopdataitem.cpp \
            datamodel/post2dwindowparticlestructuredsettingdialog.cpp \
+           datamodel/post2dwindowparticlesvectordataitem.cpp \
+           datamodel/post2dwindowparticlesvectorgroupdataitem.cpp \
            datamodel/post2dwindowparticleunstructuredsettingdialog.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \

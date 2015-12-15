@@ -448,48 +448,15 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	m_particleData->SetPoints(points);
 	m_particleData->SetVerts(verts);
 
-	// load attributes
-	int numArrays;
-	ier = cg_narrays(&numArrays);
-	if (ier != 0) {return false;}
+	vtkPointData* pd = m_particleData->GetPointData();
 
-	for (int i = firstAttId; i <= numArrays; ++i) {
-		ier = cg_array_info(i, aName, &dType, &d, dVector);
-		if (ier != 0) {return false;}
-		if (dVector[0] != numParticles) {return false;}
-		if (dType == Integer) {
-			std::vector<int> att(numParticles, 0);
-			ier = cg_array_read(i, att.data());
-			if (ier != 0) {
-				return false;
-			}
-			vtkSmartPointer<vtkIntArray> attArray = vtkSmartPointer<vtkIntArray>::New();
-			attArray->SetName(aName);
-			attArray->Allocate(numParticles);
-			for (int val : att) {
-				attArray->InsertNextValue(val);
-			}
-			m_particleData->GetPointData()->AddArray(attArray);
-		} else if (dType == RealDouble) {
-			std::vector<double> att(numParticles, 0);
-			ier = cg_array_read(i, att.data());
-			if (ier != 0) {
-				return false;
-			}
-			vtkSmartPointer<vtkDoubleArray> attArray = vtkSmartPointer<vtkDoubleArray>::New();
-			attArray->SetName(aName);
-			attArray->Allocate(numParticles);
-			for (double val : att) {
-				attArray->InsertNextValue(val);
-			}
-			m_particleData->GetPointData()->AddArray(attArray);
-		}
-	}
+	loadScalarData(pd, firstAttId);
+	loadVectorData(pd, firstAttId);
+
 	m_particleData->Modified();
 
 	return true;
 }
-
 
 bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, int* solid)
 {
@@ -542,26 +509,34 @@ bool PostZoneDataContainer::getSoluionId(const int fn, const int currentStep, in
 	return false;
 }
 
-bool PostZoneDataContainer::loadScalarData(const int fn, const int solid)
+template<class T, class DA>
+static void loadScalarDataT(const QString& name, vtkDataSetAttributes* atts, int index, int datalen)
 {
-	int ier;
-	char solname[32];
-	GridLocation_t location;
-	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0) {return false;}
-	vtkDataSetAttributes* data;
-	if (location == Vertex) {
-		// vertex.
-		data = m_data->GetPointData();
+	std::vector<T> data(datalen, 0);
+	cg_array_read(index, data.data());
+	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->Allocate(datalen);
+	if (PostZoneDataContainer::IBC == name) {
+		// for IBC values, special handling is done: 0 is inactive the others are all active.
+		for (int i = 0; i < datalen; ++i) {
+			int val = static_cast<int>(data[i]);
+			if (val != 0) {val = 1;}
+			tmpArray->InsertNextValue(val);
+		}
 	} else {
-		// cell center.
-		data = m_data->GetCellData();
+		for (int i = 0; i < datalen; ++i) {
+			tmpArray->InsertNextValue(data[i]);
+		}
 	}
+	atts->AddArray(tmpArray);
+}
+
+bool PostZoneDataContainer::loadScalarData(vtkDataSetAttributes* atts, int firstAtt)
+{
 	int narrays;
 	cg_narrays(&narrays);
-	for (int i = 1; i <= narrays; ++i) {
+	for (int i = firstAtt; i <= narrays; ++i) {
 		DataType_t datatype;
 		int dimension;
 		cgsize_t dimVector[3];
@@ -571,90 +546,91 @@ bool PostZoneDataContainer::loadScalarData(const int fn, const int solid)
 
 		// skip vector values.
 		QRegExp rx;
-		// For example, "VelocityX"
-		rx = QRegExp("(.*)X$");
+		// For example, "VelocityX", "VelocityY", "VelocityZ"
+		rx = QRegExp("(.*)(X|Y|Z)$");
 		if (rx.indexIn(name) != -1) {continue;}
-		// For example, "VelocityY"
-		rx = QRegExp("(.*)Y$");
-		if (rx.indexIn(name) != -1) {continue;}
-		// For example, "VelocityZ"
-		rx = QRegExp("(.*)Z$");
-		if (rx.indexIn(name) != -1) {continue;}
-
 		int datalen = 1;
 		for (int j = 0; j < dimension; ++j) {
 			datalen *= dimVector[j];
 		}
 		if (datatype == Integer) {
-			int* data2 = new int[datalen];
-			cg_array_read(i, data2);
-			vtkSmartPointer<vtkIntArray> tmpArray = vtkSmartPointer<vtkIntArray>::New();
-			tmpArray->SetName(arrayname);
-			tmpArray->Allocate(datalen);
-			if (IBC == arrayname) {
-				// for IBC values, special handling is done: 0 is inactive the others are all active.
-				for (int j = 0; j < datalen; ++j) {
-					int val = *(data2 + j);
-					if (val != 0) {val = 1;}
-					tmpArray->InsertNextValue(val);
-				}
-			} else {
-				for (int j = 0; j < datalen; ++j) {
-					tmpArray->InsertNextValue(*(data2 + j));
-				}
-			}
-			delete data2;
-			data->AddArray(tmpArray);
+			loadScalarDataT<int, vtkIntArray>(arrayname, atts, i, datalen);
 		} else if (datatype == RealSingle) {
-			float* data2 = new float[datalen];
-			cg_array_read(i, data2);
-			vtkSmartPointer<vtkFloatArray> tmpArray = vtkSmartPointer<vtkFloatArray>::New();
-			tmpArray->SetName(arrayname);
-			tmpArray->Allocate(datalen);
-			for (int j = 0; j < datalen; ++j) {
-				tmpArray->InsertNextValue(*(data2 + j));
-			}
-			delete data2;
-			data->AddArray(tmpArray);
+			loadScalarDataT<float, vtkFloatArray>(arrayname, atts, i, datalen);
 		} else if (datatype == RealDouble) {
-			double* data2 = new double[datalen];
-			cg_array_read(i, data2);
-			vtkSmartPointer<vtkDoubleArray> tmpArray = vtkSmartPointer<vtkDoubleArray>::New();
-			tmpArray->SetName(arrayname);
-			tmpArray->Allocate(datalen);
-			for (int j = 0; j < datalen; ++j) {
-				tmpArray->InsertNextValue(*(data2 + j));
-			}
-			delete data2;
-			data->AddArray(tmpArray);
+			loadScalarDataT<double, vtkDoubleArray>(arrayname, atts, i, datalen);
 		}
 	}
-	data->Modified();
+	atts->Modified();
 	return true;
 }
 
-bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
+static int findArray(const QString& name, DataType_t dt, int dim, int narrays)
 {
-	int ier;
-	char solname[32];
-	GridLocation_t location;
-	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
-	if (ier != 0) {return false;}
-	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
-	if (ier != 0) {return false;}
-	vtkDataSetAttributes* data;
-	if (location == Vertex) {
-		// vertex.
-		data = m_data->GetPointData();
-	} else {
-		// cell center.
-		data = m_data->GetCellData();
+	for (int i = 1; i <= narrays; ++i) {
+		char arrayname[30];
+		DataType_t datatype;
+		int dimension;
+		cgsize_t dimVector[3];
+		cg_array_info(i, arrayname, &datatype, &dimension, dimVector);
+		if (name == arrayname && dt == datatype && dim == dimension) {
+			return i;
+		}
 	}
+	return 0;
+}
+
+template<class T, class DA>
+static void loadVectorDataT(const QString& name, vtkDataSetAttributes* atts, int iX, int iY, int iZ, int datalen)
+{
+	std::vector<T> dataX(datalen, 0);
+	std::vector<T> dataY(datalen, 0);
+	std::vector<T> dataZ(datalen, 0);
+	std::vector<double> dataMag(datalen, 0);
+	// read x.
+	cg_array_read(iX, dataX.data());
+	// read y.
+	if (iY != 0) {
+		cg_array_read(iY, dataY.data());
+	}
+	// read z
+	if (iZ != 0){
+		cg_array_read(iZ, dataZ.data());
+	}
+	for (int i = 0; i < datalen; ++i) {
+		double sum = 0;
+		sum += dataX[i] * dataX[i];
+		sum += dataY[i] * dataY[i];
+		sum += dataZ[i] * dataZ[i];
+		dataMag[i] = std::sqrt(sum);
+	}
+	vtkSmartPointer<DA> tmpArray = vtkSmartPointer<DA>::New();
+	tmpArray->SetName(iRIC::toStr(name).c_str());
+	tmpArray->SetNumberOfComponents(3);
+	tmpArray->Allocate(datalen);
+	for (int i = 0; i < datalen; ++i) {
+		tmpArray->InsertNextTuple3(dataX[i], dataY[i], dataZ[i]);
+	}
+	atts->AddArray(tmpArray);
+
+	vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
+	QString magName = name;
+	magName.append(" (magnitude)");
+	magArray->SetName(iRIC::toStr(magName).c_str());
+	magArray->Allocate(datalen);
+	for (int i = 0; i < datalen; ++i) {
+		magArray->InsertNextValue(dataMag[i]);
+	}
+	atts->AddArray(magArray);
+}
+
+bool PostZoneDataContainer::loadVectorData(vtkDataSetAttributes* atts, int firstAtt)
+{
 	int narrays;
 	cg_narrays(&narrays);
 
 	// try to find vector attributes.
-	for (int i = 1; i <= narrays; ++i) {
+	for (int i = firstAtt; i <= narrays; ++i) {
 		char arrayname[30];
 		DataType_t datatype;
 		int dimension;
@@ -676,181 +652,68 @@ bool PostZoneDataContainer::loadVectorData(const int fn, const int solid)
 			// try to find Y component. i.e. "VelocityY"
 			QString yname = vectorName;
 			yname.append("Y");
-			for (int j = 1; j <= narrays; ++j) {
-				char arrayname2[30];
-				DataType_t datatype2;
-				int dimension2;
-				cgsize_t dimVector2[3];
-				cg_array_info(j, arrayname2, &datatype2, &dimension2, dimVector2);
-				if (yname == arrayname2 && datatype == datatype2 && dimension == dimension2) {
-					indexY = j;
-				}
-			}
+			indexY = findArray(yname, datatype, dimension, narrays);
 			if (indexY != 0) {
 				// try to find Z component. i.e. "VelocityZ"
 				QString zname = vectorName;
 				zname.append("Z");
-				for (int j = 1; j <= narrays; ++j) {
-					char arrayname2[30];
-					DataType_t datatype2;
-					int dimension2;
-					cgsize_t dimVector2[3];
-					cg_array_info(j, arrayname2, &datatype2, &dimension2, dimVector2);
-					if (zname == arrayname2 && datatype == datatype2 && dimension == dimension2) {
-						indexZ = j;
-					}
-				}
+				indexZ = findArray(zname, datatype, dimension, narrays);
 			}
-			// OK, indexX, indexY, indexZ are set correctly.
+			// indexX, indexY, indexZ are set correctly.
 			unsigned int datalen = 1;
 			for (int j = 0; j < dimension; ++j) {
 				datalen *= dimVector[j];
 			}
 			if (datatype == Integer) {
-				int* dataX = new int[datalen];
-				int* dataY = new int[datalen];
-				int* dataZ = new int[datalen];
-				double* dataMag = new double[datalen];
-				// read x.
-				cg_array_read(indexX, dataX);
-				// read y.
-				if (indexY != 0) {
-					cg_array_read(indexY, dataY);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
-				}
-				// read z
-				if (indexZ != 0) {
-					cg_array_read(indexZ, dataZ);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
-				}
-				for (unsigned int j = 0; j < datalen; ++j) {
-					double sum = 0;
-					sum += *(dataX + j) * (*(dataX + j));
-					sum += *(dataY + j) * (*(dataY + j));
-					sum += *(dataZ + j) * (*(dataZ + j));
-					double v = sqrt(sum);
-					*(dataMag + j) = v;
-				}
-				vtkSmartPointer<vtkIntArray> tmpArray = vtkSmartPointer<vtkIntArray>::New();
-				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
-				tmpArray->SetNumberOfComponents(3);
-				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
-				}
-				delete dataX;
-				delete dataY;
-				delete dataZ;
-				data->AddArray(tmpArray);
-
-				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
-				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
-				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					magArray->InsertNextValue(*(dataMag + j));
-				}
-				delete dataMag;
-				data->AddArray(magArray);
+				loadVectorDataT<int, vtkIntArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			} else if (datatype == RealSingle) {
-				float* dataX = new float[datalen];
-				float* dataY = new float[datalen];
-				float* dataZ = new float[datalen];
-				double* dataMag = new double[datalen];
-				// read x.
-				cg_array_read(indexX, dataX);
-				// read y.
-				if (indexY != 0) {
-					cg_array_read(indexY, dataY);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
-				}
-				// read z
-				if (indexZ != 0) {
-					cg_array_read(indexZ, dataZ);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
-				}
-				for (unsigned int j = 0; j < datalen; ++j) {
-					double sum = 0;
-					sum += *(dataX + j) * (*(dataX + j));
-					sum += *(dataY + j) * (*(dataY + j));
-					sum += *(dataZ + j) * (*(dataZ + j));
-					double v = sqrt(sum);
-					*(dataMag + j) = v;
-				}
-				vtkSmartPointer<vtkFloatArray> tmpArray = vtkSmartPointer<vtkFloatArray>::New();
-				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
-				tmpArray->SetNumberOfComponents(3);
-				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
-				}
-				delete dataX;
-				delete dataY;
-				delete dataZ;
-				data->AddArray(tmpArray);
-
-				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
-				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
-				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					magArray->InsertNextValue(*(dataMag + j));
-				}
-				delete dataMag;
-				data->AddArray(magArray);
+				loadVectorDataT<float, vtkFloatArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			} else if (datatype == RealDouble) {
-				double* dataX = new double[datalen];
-				double* dataY = new double[datalen];
-				double* dataZ = new double[datalen];
-				double* dataMag = new double[datalen];
-				// read x.
-				cg_array_read(indexX, dataX);
-				// read y.
-				if (indexY != 0) {
-					cg_array_read(indexY, dataY);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataY + j) = 0;}
-				}
-				// read z
-				if (indexZ != 0) {
-					cg_array_read(indexZ, dataZ);
-				} else {
-					for (unsigned int j = 0; j < datalen; ++j) {*(dataZ + j) = 0;}
-				}
-				for (unsigned int j = 0; j < datalen; ++j) {
-					double sum = 0;
-					sum += *(dataX + j) * (*(dataX + j));
-					sum += *(dataY + j) * (*(dataY + j));
-					sum += *(dataZ + j) * (*(dataZ + j));
-					double v = sqrt(sum);
-					*(dataMag + j) = v;
-				}
-				vtkSmartPointer<vtkDoubleArray> tmpArray = vtkSmartPointer<vtkDoubleArray>::New();
-				tmpArray->SetName(iRIC::toStr(vectorName).c_str());
-				tmpArray->SetNumberOfComponents(3);
-				tmpArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					tmpArray->InsertNextTuple3(*(dataX + j), *(dataY + j), *(dataZ + j));
-				}
-				delete dataX;
-				delete dataY;
-				delete dataZ;
-				data->AddArray(tmpArray);
-
-				vtkSmartPointer<vtkDoubleArray> magArray = vtkSmartPointer<vtkDoubleArray>::New();
-				magArray->SetName(iRIC::toStr(vectorName.append(" (magnitude)")).c_str());
-				magArray->Allocate(datalen);
-				for (unsigned int j = 0; j < datalen; ++j) {
-					magArray->InsertNextValue(*(dataMag + j));
-				}
-				delete dataMag;
-				data->AddArray(magArray);
+				loadVectorDataT<double, vtkDoubleArray> (vectorName, atts, indexX, indexY, indexZ, datalen);
 			}
 		}
 	}
 	return true;
+}
+
+bool PostZoneDataContainer::loadGridScalarData(const int fn, const int solid)
+{
+	int ier;
+	char solname[32];
+	GridLocation_t location;
+	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
+	if (ier != 0) {return false;}
+	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
+	if (ier != 0) {return false;}
+	vtkDataSetAttributes* data;
+	if (location == Vertex) {
+		// vertex.
+		data = m_data->GetPointData();
+	} else {
+		// cell center.
+		data = m_data->GetCellData();
+	}
+	return loadScalarData(data);
+}
+
+bool PostZoneDataContainer::loadGridVectorData(const int fn, const int solid)
+{
+	int ier;
+	char solname[32];
+	GridLocation_t location;
+	ier = cg_sol_info(fn, m_baseId, m_zoneId, solid, solname, &location);
+	if (ier != 0) {return false;}
+	ier = cg_goto(fn, m_baseId, "Zone_t", m_zoneId, "FlowSolution_t", solid, "end");
+	if (ier != 0) {return false;}
+	vtkDataSetAttributes* data;
+	if (location == Vertex) {
+		// vertex.
+		data = m_data->GetPointData();
+	} else {
+		// cell center.
+		data = m_data->GetCellData();
+	}
+	return loadVectorData(data);
 }
 
 bool PostZoneDataContainer::loadCellFlagData(const int fn)
@@ -999,9 +862,9 @@ void PostZoneDataContainer::loadFromCgnsFile(const int fn)
 	int solid;
 	ret = getSoluionId(fn, currentStep, &solid);
 	if (ret == false) {goto ERROR;}
-	ret = loadScalarData(fn, solid);
+	ret = loadGridScalarData(fn, solid);
 	if (ret == false) {goto ERROR;}
-	ret = loadVectorData(fn, solid);
+	ret = loadGridVectorData(fn, solid);
 	if (ret == false) {goto ERROR;}
 	ret = loadCellFlagData(fn);
 	if (ret == false) {goto ERROR;}

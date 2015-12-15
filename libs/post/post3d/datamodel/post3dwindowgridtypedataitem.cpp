@@ -20,6 +20,20 @@
 
 #include <vtkPointData.h>
 
+namespace {
+
+PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
+{
+	for (auto container : conts) {
+		if (container->gridType() == gt) {
+			return container;
+		}
+	}
+	return nullptr;
+}
+
+} // namespace
+
 Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
 	Post3dWindowDataItem {type->caption(), parent},
 	m_gridType {type},
@@ -30,19 +44,6 @@ Post3dWindowGridTypeDataItem::Post3dWindowGridTypeDataItem(SolverDefinitionGridT
 	setSubPath(type->name().c_str());
 
 	setupZoneDataItems();
-
-	// add raw data node and grid data node.
-	// setup ScalarsToColors instances
-	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers3D();
-	if (containers.size() == 0) {return;}
-
-	vtkPointSet* ps = containers.at(0)->data();
-	if (ps == nullptr) {return;}
-
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(ps->GetPointData())) {
-		setupScalarsToColors(name);
-		setValueRange(name);
-	}
 }
 
 Post3dWindowGridTypeDataItem::~Post3dWindowGridTypeDataItem()
@@ -78,23 +79,25 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 			++ zoneNum;
 		}
 	}
-	if (m_lookupTables.count() == 0 && zoneNum != 0) {
-		vtkPointSet* ps = zones.at(0)->data();
-		if (ps != nullptr) {
-			vtkPointData* pd = ps->GetPointData();
-			int num = pd->GetNumberOfArrays();
-			for (int i = 0; i < num; ++i) {
-				vtkAbstractArray* tmparray = pd->GetArray(i);
-				if (tmparray == nullptr) {continue;}
-				std::string name = tmparray->GetName();
-				setupScalarsToColors(name);
+
+	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+
+	if (zCont != nullptr) {
+		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
+			vtkPointData* pd = zCont->data()->GetPointData();
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+				setupNodeScalarsToColors(name);
 			}
-			updateLookupTableRanges();
+			updateNodeLookupTableRanges();
+		}
+		if (m_particleLookupTables.count() == 0 && zones.size() != 0) {
+			vtkPointData* pd = zCont->particleData()->GetPointData();
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+				setupParticleScalarsToColors(name);
+			}
+			updateParticleLookupTableRanges();
 		}
 	}
-	//+++++
-	//assignActorZValues(m_zDepthRange);
-	//+++++
 	m_isZoneDataItemsSetup = (zoneNum != 0);
 }
 
@@ -104,16 +107,17 @@ void Post3dWindowGridTypeDataItem::update()
 		setupZoneDataItems();
 	}
 	// update LookupTable range.
-	updateLookupTableRanges();
+	updateNodeLookupTableRanges();
+	updateParticleLookupTableRanges();
 
-	for (auto it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it) {
-		(*it)->update();
+	for (Post3dWindowZoneDataItem* item : m_zoneDatas) {
+		item->update();
 	}
 }
 
-void Post3dWindowGridTypeDataItem::updateLookupTableRanges()
+void Post3dWindowGridTypeDataItem::updateNodeLookupTableRanges()
 {
-	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it) {
+	for (auto it = m_nodeLookupTables.begin(); it != m_nodeLookupTables.end(); ++it) {
 		std::string name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
 		bool first = true;
@@ -145,6 +149,39 @@ void Post3dWindowGridTypeDataItem::updateLookupTableRanges()
 	}
 }
 
+void Post3dWindowGridTypeDataItem::updateParticleLookupTableRanges()
+{
+	for (auto it = m_particleLookupTables.begin(); it != m_particleLookupTables.end(); ++it) {
+		std::string name = it.key();
+		ScalarsToColorsContainer* cont = it.value();
+		bool first = true;
+		double range[2], min, max;
+		min = 0; max = 0;
+		for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
+			Post3dWindowZoneDataItem* zitem = *zit;
+			if (zitem->dataContainer() == nullptr || zitem->dataContainer()->particleData() == nullptr) {continue;}
+			vtkDataArray* dArray = zitem->dataContainer()->particleData()->GetPointData()->GetArray(name.c_str());
+			if (dArray != nullptr) {
+				dArray->GetRange(range);
+				if (first || range[0] < min) {min = range[0];}
+				if (first || range[1] > max) {max = range[1];}
+				first = false;
+			}
+		}
+		if (max - min < 1E-4) {
+			// the width is too small.
+			double mid = (min + max) * 0.5;
+			double width = mid * 0.01;
+			if (width < 1E-4) {
+				width = 1E-4;
+			}
+			min = mid - width;
+			max = mid + width;
+		}
+		cont->setValueRange(min, max);
+	}
+}
+
 void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode ltNode = iRIC::getChildNode(node, "LookupTables");
@@ -153,7 +190,19 @@ void Post3dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < tables.length(); ++i) {
 			QDomNode ltNode = tables.at(i);
 			std::string ltName = iRIC::toStr(ltNode.toElement().attribute("name"));
-			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
+			LookupTableContainer* cont = m_nodeLookupTables.value(ltName, nullptr);
+			if (cont != nullptr) {
+				cont->loadFromProjectMainFile(ltNode);
+			}
+		}
+	}
+	QDomNode pltNode = iRIC::getChildNode(node, "ParticleLookupTables");
+	if (! pltNode.isNull()) {
+		QDomNodeList tables = pltNode.childNodes();
+		for (int i = 0; i < tables.length(); ++i) {
+			QDomNode ltNode = tables.at(i);
+			std::string ltName = iRIC::toStr(ltNode.toElement().attribute("name"));
+			LookupTableContainer* cont = m_particleLookupTables.value(ltName, nullptr);
 			if (cont != nullptr) {
 				cont->loadFromProjectMainFile(ltNode);
 			}
@@ -177,7 +226,16 @@ void Post3dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 {
 	writer.writeAttribute("name", m_gridType->name().c_str());
 	writer.writeStartElement("LookupTables");
-	for (auto lit = m_lookupTables.begin(); lit != m_lookupTables.end(); ++lit) {
+	for (auto lit = m_nodeLookupTables.begin(); lit != m_nodeLookupTables.end(); ++lit) {
+		writer.writeStartElement("LookupTable");
+		writer.writeAttribute("name", lit.key().c_str());
+		LookupTableContainer* cont = lit.value();
+		cont->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
+	writer.writeStartElement("ParticleLookupTables");
+	for (auto lit = m_particleLookupTables.begin(); lit != m_particleLookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
 		writer.writeAttribute("name", lit.key().c_str());
 		LookupTableContainer* cont = lit.value();
@@ -195,10 +253,16 @@ void Post3dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	writer.writeEndElement();
 }
 
-void Post3dWindowGridTypeDataItem::setupScalarsToColors(const std::string& name)
+void Post3dWindowGridTypeDataItem::setupNodeScalarsToColors(const std::string& name)
 {
 	LookupTableContainer* c = new LookupTableContainer(this);
-	m_lookupTables.insert(name, c);
+	m_nodeLookupTables.insert(name, c);
+}
+
+void Post3dWindowGridTypeDataItem::setupParticleScalarsToColors(const std::string& name)
+{
+	LookupTableContainer* c = new LookupTableContainer(this);
+	m_particleLookupTables.insert(name, c);
 }
 
 void Post3dWindowGridTypeDataItem::setValueRange(const std::string& name)
@@ -221,5 +285,5 @@ void Post3dWindowGridTypeDataItem::setValueRange(const std::string& name)
 		first = false;
 	}
 	// Now, new min, max are stored.
-	m_lookupTables.value(name)->setValueRange(min, max);
+	m_nodeLookupTables.value(name)->setValueRange(min, max);
 }

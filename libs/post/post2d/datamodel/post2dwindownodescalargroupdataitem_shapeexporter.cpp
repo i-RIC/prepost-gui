@@ -247,7 +247,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	DBFAddField(dbfh, "ValueMax", FTDouble, 40, 6);
 
 	Post2dWindowGridTypeDataItem* typedi = dynamic_cast<Post2dWindowGridTypeDataItem*>(m_parent->parent()->parent());
-	LookupTableContainer* stc = typedi->lookupTable(m_parent->m_setting.target);
+	LookupTableContainer* stc = typedi->nodeLookupTable(m_parent->m_setting.target);
 	if (stc == nullptr) {return false;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);

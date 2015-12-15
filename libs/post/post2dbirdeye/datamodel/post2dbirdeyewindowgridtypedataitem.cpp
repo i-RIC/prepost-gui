@@ -75,7 +75,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 			++ zoneNum;
 		}
 	}
-	if (m_lookupTables.count() == 0 && zones.size() != 0) {
+	if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
 		vtkPointData* pd = zones.at(0)->data()->GetPointData();
 		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 			setupScalarsToColors(name);
@@ -102,7 +102,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::update()
 
 void Post2dBirdEyeWindowGridTypeDataItem::updateLookupTableRanges()
 {
-	for (auto it = m_lookupTables.begin(); it != m_lookupTables.end(); ++it) {
+	for (auto it = m_nodeLookupTables.begin(); it != m_nodeLookupTables.end(); ++it) {
 		std::string name = it.key();
 		ScalarsToColorsContainer* cont = it.value();
 		bool first = true;
@@ -141,7 +141,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNo
 		for (int i = 0; i < tables.length(); ++i) {
 			QDomNode ltNode = tables.at(i);
 			std::string ltName = iRIC::toStr(ltNode.toElement().attribute("name"));
-			LookupTableContainer* cont = m_lookupTables.value(ltName, nullptr);
+			LookupTableContainer* cont = m_nodeLookupTables.value(ltName, nullptr);
 			if (cont != nullptr) {
 				cont->loadFromProjectMainFile(ltNode);
 			}
@@ -165,7 +165,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 {
 	writer.writeAttribute("name", m_gridType->name().c_str());
 	writer.writeStartElement("LookupTables");
-	for (auto lit = m_lookupTables.begin(); lit != m_lookupTables.end(); ++lit) {
+	for (auto lit = m_nodeLookupTables.begin(); lit != m_nodeLookupTables.end(); ++lit) {
 		writer.writeStartElement("LookupTable");
 		writer.writeAttribute("name", lit.key().c_str());
 		LookupTableContainer* cont = lit.value();
@@ -186,5 +186,5 @@ void Post2dBirdEyeWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 void Post2dBirdEyeWindowGridTypeDataItem::setupScalarsToColors(const std::string& name)
 {
 	LookupTableContainer* c = new LookupTableContainer(this);
-	m_lookupTables.insert(name, c);
+	m_nodeLookupTables.insert(name, c);
 }

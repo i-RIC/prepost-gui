@@ -7,8 +7,6 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/arrowsettingcontainer.h>
-#include <misc/stringtool.h>
 
 #include <QtGlobal>
 
@@ -41,45 +39,69 @@ void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNod
 {
 	m_setting = s;
 	m_stSetting = sts;
+
 	// target
-	auto it = std::find(m_targets.begin(), m_targets.end(), iRIC::toStr(s.target));
-	if (it == m_targets.end()) {it = m_targets.begin();}
-	ui->solutionComboBox->setCurrentIndex(it - m_targets.begin());
-
-	// scalarValue
-	it = std::find(m_scalars.begin(), m_scalars.end(), iRIC::toStr(s.scalarValueName));
-	if (it == m_scalars.end()) {it = m_scalars.begin();}
-	ui->scalarComboBox->setCurrentIndex(it - m_scalars.begin());
-
-	// color
-	ui->colorEditWidget->setColor(s.color);
+	ui->solutionComboBox->setCurrentText(s.arrowSetting.target);
+	ui->scalarComboBox->setCurrentIndex(s.arrowSetting.colorTarget);
+	ui->colorEditWidget->setColor(s.arrowSetting.customColor);
 
 	// mapping
-	switch (Post2dWindowNodeVectorArrowGroupDataItem::Mapping(s.mapping)) {
-	case Post2dWindowNodeVectorArrowGroupDataItem::Specific:
+	switch (ArrowSettingContainer::ColorMode(s.arrowSetting.ColorMode)) {
+	case ArrowSettingContainer::ColorMode::Custom:
 		ui->specificRadioButton->setChecked(true);
 		break;
-	case Post2dWindowNodeVectorArrowGroupDataItem::Scalar:
+	case ArrowSettingContainer::ColorMode::ByScalar:
 		ui->scalarRadioButton->setChecked(true);
 		break;
 	}
+	// standardValue
+	ui->stdValueSpinBox->setValue(s.arrowSetting.standardValue);
+
+	// legendLength
+	ui->legendLengthSpinBox->setValue(s.legendLength);
+	switch (setting.lengthMode()) {
+	case ArrowSettingContainer::LengthMode::Auto:
+		ui->lengthAutoCheckBox->setChecked(true);
+		break;
+	case ArrowSettingContainer::LengthMode::Custom:
+		ui->lengthAutoCheckBox->setChecked(false);
+		break;
+	}
+	ui->stdValueSpinBox->setValue(setting.standardValue());
+	ui->legendLengthSpinBox->setValue(setting.legendLength());
+	ui->minValueSpinBox->setValue(setting.minimumValue());
 
 	// arrowSetting
-	ui->arrowSizeSpinBox->setValue(s.arrowSetting.arrowSize());
-	ui->lineWidthSpinBox->setValue(s.arrowSetting.lineWidth());
+	ui->arrowSizeSpinBox->setValue(s.arrowShape.arrowSize);
+	ui->lineWidthSpinBox->setValue(s.arrowShape.lineWidth);
 
 	// lengthMode
-	if (s.lengthMode == Post2dWindowNodeVectorArrowGroupDataItem::lenAuto) {
+	if (s.arrowSetting.lengthMode == ArrowSettingContainer::LengthMode::Auto) {
 		ui->lengthAutoCheckBox->setChecked(true);
 	} else {
 		ui->lengthAutoCheckBox->setChecked(false);
 	}
+}
 
-	// standardValue
-	ui->stdValueSpinBox->setValue(s.standardValue);
-
-	// legendLength
-	ui->legendLengthSpinBox->setValue(s.legendLength);
+ArrowSettingContainer Post2dWindowArrowStructuredSettingDialog::setting() const
+{
+	ArrowSettingContainer ret;
+	ret.setAttribute(ui->solutionComboBox->currentText());
+	ret.setColorAttribute(ui->scalarComboBox->currentText());
+	ret.setCustomColor(ui->colorEditWidget->color());
+	if (ui->specificRadioButton->isChecked()) {
+		ret.setColorMode(ArrowSettingContainer::ColorMode::Custom);
+	} else if (ui->scalarRadioButton->isChecked()) {
+		ret.setColorMode(ArrowSettingContainer::ColorMode::ByScalar);
+	}
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.setLengthMode(ArrowSettingContainer::LengthMode::Auto);
+	} else {
+		ret.setLengthMode(ArrowSettingContainer::LengthMode::Custom);
+	}
+	ret.setStandardValue(ui->stdValueSpinBox->value());
+	ret.setLegendLength(ui->legendLengthSpinBox->value());
+	ret.setMinimumValue(ui->minValueSpinBox->value());
 
 	// minimumValue
 	return ui->minValueSpinBox->setValue(s.minimumValue);
@@ -91,6 +113,8 @@ void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNod
 	if (sts.iSampleRate == 1 && sts.jSampleRate == 1) {
 		ui->samplingAllRadioButton->setChecked(true);
 	}
+
+	return ret;
 }
 
 Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowStructuredSettingDialog::setting() const
@@ -179,8 +203,10 @@ void Post2dWindowArrowStructuredSettingDialog::showRegionDialog()
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
 	dialog.setRegionMode(m_setting.regionMode);
 	dialog.setRegion(m_stSetting.range);
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
+
 	m_setting.regionMode = dialog.regionMode();
 	m_stSetting.range = dialog.region();
 }

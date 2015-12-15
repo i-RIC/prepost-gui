@@ -1,7 +1,10 @@
 #ifndef POST2DWINDOWGRIDTYPEDATAITEM_H
 #define POST2DWINDOWGRIDTYPEDATAITEM_H
 
-#include "post2dwindowgridtypedataiteminterface.h"
+#include "../post2dwindowdataitem.h"
+
+#include <postbase/postwindowgridtypedataiteminterface.h>
+
 #include <QList>
 #include <QMap>
 
@@ -11,7 +14,7 @@ class Post2dWindowGeoDataTopDataItem;
 class Post2dWindowZoneDataItem;
 class LookupTableContainer;
 
-class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public Post2dWindowGridTypeDataItemInterface
+class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public PostWindowGridTypeDataItemInterface
 {
 	Q_OBJECT
 
@@ -23,7 +26,8 @@ public:
 	Post2dWindowZoneDataItem* zoneData(const std::string& name) const {return m_zoneDataNameMap.value(name);}
 	SolverDefinitionGridType* gridType() const override {return m_gridType;}
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const {return m_geoDataItem;}
-	LookupTableContainer* lookupTable(const std::string& attName) const override {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* nodeLookupTable(const std::string& attName) const {return m_nodeLookupTables.value(attName, nullptr);}
+	LookupTableContainer* particleLookupTable(const std::string& attName) const {return m_particleLookupTables.value(attName, nullptr);}
 	void setupZoneDataItems();
 	void update();
 
@@ -32,10 +36,15 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
-	void updateLookupTableRanges();
-	void setupScalarsToColors(const std::string& name);
+	void updateNodeLookupTableRanges();
+	void updateParticleLookupTableRanges();
+
+	void setupNodeScalarsToColors(const std::string& name);
+	void setupParticleScalarsToColors(const std::string& name);
+
 	SolverDefinitionGridType* m_gridType;
-	QMap<std::string, LookupTableContainer*> m_lookupTables;
+	QMap<std::string, LookupTableContainer*> m_nodeLookupTables;
+	QMap<std::string, LookupTableContainer*> m_particleLookupTables;
 	QMap<std::string, Post2dWindowZoneDataItem*> m_zoneDataNameMap;
 	Post2dWindowGeoDataTopDataItem* m_geoDataItem;
 	QList<Post2dWindowZoneDataItem*> m_zoneDatas;

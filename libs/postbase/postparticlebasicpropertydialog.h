@@ -22,11 +22,9 @@ class POSTBASEDLL_EXPORT PostParticleBasicPropertyDialog : public QDialog
 public:
 	struct POSTBASEDLL_EXPORT Setting : public CompositeContainer
 	{
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
+
 		Setting& operator=(const Setting& s);
 
 		ColorContainer color;

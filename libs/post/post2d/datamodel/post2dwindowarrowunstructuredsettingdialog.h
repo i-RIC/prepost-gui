@@ -9,7 +9,6 @@
 #include <vector>
 
 class PostZoneDataContainer;
-class ArrowSettingContainer;
 
 namespace Ui
 {

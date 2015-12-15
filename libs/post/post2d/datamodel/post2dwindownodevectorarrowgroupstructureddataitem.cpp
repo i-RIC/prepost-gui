@@ -3,7 +3,6 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/arrowsettingcontainer.h>
 #include <misc/stringtool.h>
 
 #include <QDomElement>
@@ -59,6 +58,7 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::~Post2dWindowNodeVectorArrow
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 {
+	auto& s = m_arrowSetting;
 	m_activePoints->Initialize();
 	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
 	outPoints->SetDataTypeToDouble();
@@ -86,7 +86,7 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(m_setting.target));
 	if (vectorArray == nullptr) {
 		m_setting.target = "";
 		return;
@@ -157,17 +157,15 @@ public:
 		m_oldStSetting {item->m_stSetting},
 		m_item {item}
 	{}
-	void redo() {
+	void redo() override {
 		m_item->m_setting = m_newSetting;
 		m_item->m_stSetting = m_newStSetting;
 		m_item->setTarget(m_newSetting.target);
-		m_item->updateActorSettings();
 	}
-	void undo() {
+	void undo() override {
 		m_item->m_setting = m_oldSetting;
 		m_item->m_stSetting = m_oldStSetting;
 		m_item->setTarget(m_oldSetting.target);
-		m_item->updateActorSettings();
 	}
 private:
 	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;

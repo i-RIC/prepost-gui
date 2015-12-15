@@ -4,6 +4,7 @@
 #include "../post2dwindowdataitem.h"
 #include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <misc/arrowshapecontainer.h>
 #include <misc/arrowsettingcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/colorcontainer.h>
@@ -38,35 +39,20 @@ class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem, pu
 	Q_OBJECT
 
 public:
-	const static int STANDARD_LENGTH = 100;
 	const static int AUTO_AVERAGECOUNT = 20;
-	const static double MINLIMIT;
-	enum Mapping {Specific, Scalar};
-	enum LegendMode {lmAuto, lmCustom};
-	enum LengthMode {lenAuto, lenCustom};
 
 	struct Setting : public CompositeContainer
 	{
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
 		Setting& operator=(const Setting& s);
 
-		StringContainer scalarValueName;
-		StringContainer target;
-		ColorContainer color;
+		ArrowSettingContainer arrowSetting;
+		ArrowShapeContainer arrowShape;
+
 		DoubleContainer oldCameraScale;
 		DoubleContainer scaleFactor;
 		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
-		EnumContainerT<Mapping> mapping;
-		EnumContainerT<LegendMode> legendMode;
-		EnumContainerT<LengthMode> lengthMode;
-		DoubleContainer standardValue;
-		DoubleContainer legendLength;
-		DoubleContainer minimumValue;
-		ArrowSettingContainer arrowSetting;
 	};
 
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);

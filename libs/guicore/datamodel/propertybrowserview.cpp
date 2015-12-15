@@ -45,6 +45,17 @@ void PropertyBrowserView::resetForCell(bool structured)
 	resetAttributes();
 }
 
+void PropertyBrowserView::resetForParticle()
+{
+	ui->indicesGroupBox->show();
+	ui->coordinatesGroupBox->show();
+	ui->attLabel->show();
+	ui->attributesTable->show();
+	resetBase(false);
+	updateGeometry();
+	resetAttributes();
+}
+
 void PropertyBrowserView::hideAll()
 {
 	ui->indicesGroupBox->hide();
@@ -125,6 +136,17 @@ void PropertyBrowserView::setCellAttributes(unsigned int i, unsigned int j, cons
 	updateAttributes(attr);
 	if (m_targetDataItem) {
 		m_targetDataItem->setPolygon(polygon);
+	}
+}
+
+void PropertyBrowserView::setParticleAttributes(vtkIdType index, double x, double y, const QList<PropertyBrowserAttribute>& attr)
+{
+	resetAttributes(true);
+	updateIndex(index);
+	updateCoords(x, y);
+	updateAttributes(attr);
+	if (m_targetDataItem) {
+		m_targetDataItem->setPoint(QVector2D(x, y));
 	}
 }
 
