@@ -20,12 +20,17 @@ Post2dWindowArrowStructuredSettingDialog::Post2dWindowArrowStructuredSettingDial
 	ui->setupUi(this);
 	connect(ui->samplingAllRadioButton, SIGNAL(toggled(bool)), this, SLOT(samplingAllToggle(bool)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
-	m_activeAvailable = true;
+	m_activeDisabled = false;
 }
 
 Post2dWindowArrowStructuredSettingDialog::~Post2dWindowArrowStructuredSettingDialog()
 {
 	delete ui;
+}
+
+void Post2dWindowArrowStructuredSettingDialog::setGridType(Post2dWindowGridTypeDataItem* item)
+{
+	m_gridTypeDataItem = item;
 }
 
 void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
@@ -35,31 +40,62 @@ void Post2dWindowArrowStructuredSettingDialog::setZoneData(PostZoneDataContainer
 	setupSolutionComboBox(zoneData);
 }
 
-void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts)
+void Post2dWindowArrowStructuredSettingDialog::disableActive()
+{
+	m_activeDisabled = true;
+}
+
+Post2dWindowNodeVectorArrowStructuredSetting Post2dWindowArrowStructuredSettingDialog::setting() const
+{
+	Post2dWindowNodeVectorArrowStructuredSetting ret = m_setting;
+
+	ret.target = ui->solutionComboBox->currentText();
+
+	// sampling mode setting not used
+
+	if (ui->specificRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::Custom;
+	} else if (ui->scalarRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::ByScalar;
+	}
+	ret.customColor = ui->colorEditWidget->color();
+	ret.colorTarget = ui->scalarComboBox->currentText();
+
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Auto;
+	} else {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Custom;
+	}
+	ret.standardValue = ui->stdValueSpinBox->value();
+	ret.legendLength = ui->legendLengthSpinBox->value();
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	ret.arrowSize = ui->arrowSizeSpinBox->value();
+	ret.lineWidth = ui->lineWidthSpinBox->value();
+
+	ret.iSampleRate = ui->iSamplingRateSpinBox->value();
+	ret.jSampleRate = ui->jSamplingRateSpinBox->value();
+
+	return ret;
+}
+
+void Post2dWindowArrowStructuredSettingDialog::setSetting(const Post2dWindowNodeVectorArrowStructuredSetting& s)
 {
 	m_setting = s;
-	m_stSetting = sts;
 
-	// target
-	ui->solutionComboBox->setCurrentText(s.arrowSetting.target);
-	ui->scalarComboBox->setCurrentIndex(s.arrowSetting.colorTarget);
-	ui->colorEditWidget->setColor(s.arrowSetting.customColor);
+	ui->solutionComboBox->setCurrentText(s.target);
 
-	// mapping
-	switch (ArrowSettingContainer::ColorMode(s.arrowSetting.ColorMode)) {
-	case ArrowSettingContainer::ColorMode::Custom:
-		ui->specificRadioButton->setChecked(true);
-		break;
-	case ArrowSettingContainer::ColorMode::ByScalar:
-		ui->scalarRadioButton->setChecked(true);
-		break;
+	if (s.iSampleRate == 1 && s.jSampleRate == 1) {
+		ui->samplingAllRadioButton->setChecked(true);
+	} else {
+		ui->samplingSkipRadioButton->setChecked(true);
 	}
-	// standardValue
-	ui->stdValueSpinBox->setValue(s.arrowSetting.standardValue);
+	// sampling mode setting not used
 
-	// legendLength
-	ui->legendLengthSpinBox->setValue(s.legendLength);
-	switch (setting.lengthMode()) {
+	ui->colorEditWidget->setColor(s.customColor);
+	ui->scalarComboBox->setCurrentText(s.colorTarget);
+
+	switch (s.lengthMode.value()) {
 	case ArrowSettingContainer::LengthMode::Auto:
 		ui->lengthAutoCheckBox->setChecked(true);
 		break;
@@ -67,107 +103,23 @@ void Post2dWindowArrowStructuredSettingDialog::setSettings(const Post2dWindowNod
 		ui->lengthAutoCheckBox->setChecked(false);
 		break;
 	}
-	ui->stdValueSpinBox->setValue(setting.standardValue());
-	ui->legendLengthSpinBox->setValue(setting.legendLength());
-	ui->minValueSpinBox->setValue(setting.minimumValue());
+	ui->stdValueSpinBox->setValue(s.standardValue);
+	ui->legendLengthSpinBox->setValue(s.legendLength);
+	ui->minValueSpinBox->setValue(s.minimumValue);
 
-	// arrowSetting
-	ui->arrowSizeSpinBox->setValue(s.arrowShape.arrowSize);
-	ui->lineWidthSpinBox->setValue(s.arrowShape.lineWidth);
+	ui->arrowSizeSpinBox->setValue(s.arrowSize);
+	ui->lineWidthSpinBox->setValue(s.lineWidth);
 
-	// lengthMode
-	if (s.arrowSetting.lengthMode == ArrowSettingContainer::LengthMode::Auto) {
-		ui->lengthAutoCheckBox->setChecked(true);
-	} else {
-		ui->lengthAutoCheckBox->setChecked(false);
+	switch (s.colorMode.value()) {
+	case ArrowSettingContainer::ColorMode::Custom:
+		ui->specificRadioButton->setChecked(true);
+		break;
+	case ArrowSettingContainer::ColorMode::ByScalar:
+		ui->scalarRadioButton->setChecked(true);
+		break;
 	}
-}
-
-ArrowSettingContainer Post2dWindowArrowStructuredSettingDialog::setting() const
-{
-	ArrowSettingContainer ret;
-	ret.setAttribute(ui->solutionComboBox->currentText());
-	ret.setColorAttribute(ui->scalarComboBox->currentText());
-	ret.setCustomColor(ui->colorEditWidget->color());
-	if (ui->specificRadioButton->isChecked()) {
-		ret.setColorMode(ArrowSettingContainer::ColorMode::Custom);
-	} else if (ui->scalarRadioButton->isChecked()) {
-		ret.setColorMode(ArrowSettingContainer::ColorMode::ByScalar);
-	}
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		ret.setLengthMode(ArrowSettingContainer::LengthMode::Auto);
-	} else {
-		ret.setLengthMode(ArrowSettingContainer::LengthMode::Custom);
-	}
-	ret.setStandardValue(ui->stdValueSpinBox->value());
-	ret.setLegendLength(ui->legendLengthSpinBox->value());
-	ret.setMinimumValue(ui->minValueSpinBox->value());
-
-	// minimumValue
-	return ui->minValueSpinBox->setValue(s.minimumValue);
-
-	// samplingRates
-	ui->iSamplingRateSpinBox->setValue(sts.iSampleRate);
-	ui->jSamplingRateSpinBox->setValue(sts.jSampleRate);
-	ui->samplingSkipRadioButton->setChecked(true);
-	if (sts.iSampleRate == 1 && sts.jSampleRate == 1) {
-		ui->samplingAllRadioButton->setChecked(true);
-	}
-
-	return ret;
-}
-
-Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowStructuredSettingDialog::setting() const
-{
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting ret = m_setting;
-
-	// currentSolution
-	int index = ui->solutionComboBox->currentIndex();
-	ret.target = m_targets.at(index).c_str();
-
-	// scalarValue
-	index = ui->scalarComboBox->currentIndex();
-	ret.scalarValueName = m_scalars.at(index).c_str();
-
-	// color
-	ret.color = ui->colorEditWidget->color();
-
-	// mapping
-	if (ui->specificRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Specific;}
-	if (ui->scalarRadioButton->isChecked()) {ret.mapping = Post2dWindowNodeVectorArrowGroupDataItem::Scalar;}
-
-	// arrowSetting
-	ret.arrowSetting.setArrowSize(ui->arrowSizeSpinBox->value());
-	ret.arrowSetting.setLineWidth(ui->lineWidthSpinBox->value());
-
-	// lengthMode
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenAuto;
-	} else {
-		ret.lengthMode = Post2dWindowNodeVectorArrowGroupDataItem::lenCustom;
-	}
-
-	// standardValue
-	ret.standardValue = ui->stdValueSpinBox->value();
-
-	// legendLength;
-	ret.legendLength = ui->legendLengthSpinBox->value();
-
-	// minimumValue
-	ret.minimumValue = ui->minValueSpinBox->value();
-
-	return ret;
-}
-
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting Post2dWindowArrowStructuredSettingDialog::stSetting() const
-{
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting ret = m_stSetting;
-
-	// samplingRates
-	ret.iSampleRate = ui->iSamplingRateSpinBox->value();
-	ret.jSampleRate = ui->jSamplingRateSpinBox->value();
-
-	return ret;
+	ui->iSamplingRateSpinBox->setValue(s.iSampleRate);
+	ui->jSamplingRateSpinBox->setValue(s.jSampleRate);
 }
 
 void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
@@ -187,31 +139,26 @@ void Post2dWindowArrowStructuredSettingDialog::setupSolutionComboBox(PostZoneDat
 	}
 }
 
-void Post2dWindowArrowStructuredSettingDialog::samplingAllToggle(bool toggled)
-{
-	if (! toggled) {return;}
-	ui->iSamplingRateSpinBox->setValue(1);
-	ui->jSamplingRateSpinBox->setValue(1);
-}
-
 void Post2dWindowArrowStructuredSettingDialog::showRegionDialog()
 {
 	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable) {
+	if (m_activeDisabled) {
 		dialog.disableActive();
 	}
 	dialog.setGridSize(m_gridDims[0], m_gridDims[1]);
 	dialog.setRegionMode(m_setting.regionMode);
-	dialog.setRegion(m_stSetting.range);
+	dialog.setRegion(m_setting.range);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
 	m_setting.regionMode = dialog.regionMode();
-	m_stSetting.range = dialog.region();
+	m_setting.range = dialog.region();
 }
 
-void Post2dWindowArrowStructuredSettingDialog::disableActive()
+void Post2dWindowArrowStructuredSettingDialog::samplingAllToggle(bool toggled)
 {
-	m_activeAvailable = false;
+	if (! toggled) {return;}
+	ui->iSamplingRateSpinBox->setValue(1);
+	ui->jSamplingRateSpinBox->setValue(1);
 }

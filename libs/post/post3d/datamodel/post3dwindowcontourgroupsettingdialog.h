@@ -1,7 +1,7 @@
 #ifndef POST3DWINDOWCONTOURGROUPSETTINGDIALOG_H
 #define POST3DWINDOWCONTOURGROUPSETTINGDIALOG_H
 
-#include <guibase/contoursettingwidget.h>
+#include <guibase/scalarsettingcontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include "post3dwindowfacedataitem.h"
 #include <guibase/scalarbarsetting.h>
@@ -10,6 +10,7 @@
 #include <QList>
 #include <QMap>
 
+#include <string>
 #include <vector>
 
 namespace Ui
@@ -31,58 +32,49 @@ class Post3dWindowContourGroupSettingDialog : public QDialog
 public:
 	explicit Post3dWindowContourGroupSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowContourGroupSettingDialog();
-	void setZoneData(PostZoneDataContainer* zoneData);
-	void setTarget(const std::string& target);
-	void setContour(ContourSettingWidget::Contour c);
-	void setNumberOfDivision(int div);
-	void setLookupTable(const LookupTableContainer& c);
+
 	void setGridTypeDataItem(Post3dWindowGridTypeDataItem* item);
-	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
-	void setFillUpper(bool fill);
-	void setFillLower(bool fill);
-
-	std::string target() const;
-	ContourSettingWidget::Contour contour();
-	int numberOfDivision();
-	LookupTableContainer& lookupTable();
-	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap();
-	bool fillUpper();
-	bool fillLower();
-
+	void setZoneData(PostZoneDataContainer* zoneData);
 	void setColorBarTitleMap(const QMap<std::string, QString>& titleMap);
-	void setScalarBarSetting(const ScalarBarSetting& setting);
-	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
-	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 
-	QString scalarBarTitle();
-	const ScalarBarSetting& scalarBarSetting() const {return m_scalarBarSetting;}
-	const vtkTextPropertySettingContainer titleTextSetting() const {return m_titleTextSetting;}
-	const vtkTextPropertySettingContainer labelTextSetting() const {return m_labelTextSetting;}
+	ScalarSettingContainer scalarSetting() const;
+	void setScalarSetting(const ScalarSettingContainer& setting);
+
+	LookupTableContainer lookupTable() const;
+	void setLookupTable(const LookupTableContainer& c);
+
+	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap() const;
+	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
+
+	QString scalarBarTitle() const;
 
 public slots:
 	void accept() override;
+
+private slots:
 	void addFaceSetting();
 	void removeFaceSetting();
 	void switchFaceSetting(QListWidgetItem* current, QListWidgetItem* previous);
 
-private slots:
 	void solutionChanged(int index);
 	void checkSelectedNumber();
 	void updateFaceMap();
 	void showColorBarDialog();
 
 private:
-	std::vector<std::string> m_targets;
-	Ui::Post3dWindowContourGroupSettingDialog* ui;
-	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
-	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
-	QMap<std::string, QString> m_colorBarTitleMap;
-	LookupTableContainer m_lookupTable;
-	bool m_isRemoving;
+	std::string target() const;
 
-	ScalarBarSetting m_scalarBarSetting;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
+	Ui::Post3dWindowContourGroupSettingDialog* ui;
+
+	ScalarSettingContainer m_scalarSetting;
+	LookupTableContainer m_lookupTable;
+	QMap<QString, Post3dWindowFaceDataItem::Setting> m_faceMap;
+
+	Post3dWindowGridTypeDataItem* m_gridTypeDataItem;
+	std::vector<std::string> m_targets;
+	QMap<std::string, QString> m_colorBarTitleMap;
+
+	bool m_isRemoving;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPSETTINGDIALOG_H

@@ -3,7 +3,7 @@
 
 #include "guibase_global.h"
 
-#include "vtktextpropertysettingcontainer.h"
+#include "scalarbarsetting.h"
 
 #include <QWidget>
 
@@ -23,23 +23,18 @@ public:
 	explicit ScalarBarWidget(QWidget* parent = nullptr);
 	~ScalarBarWidget();
 
+	ScalarBarSetting setting() const;
 	void setSetting(const ScalarBarSetting& setting);
-	void setTitle(const QString& title);
-	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
-	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
 
-	const ScalarBarSetting setting() const;
 	QString title() const;
-	const vtkTextPropertySettingContainer& titleTextSetting() const {return m_titleTextSetting;}
-	const vtkTextPropertySettingContainer& labelTextSetting() const {return m_labelTextSetting;}
+	void setTitle(const QString& title);
 
 private slots:
 	void editTitleTextSetting();
 	void editLabelTextSetting();
 
 private:
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
+	ScalarBarSetting m_setting;
 
 	Ui::ScalarBarWidget* ui;
 };

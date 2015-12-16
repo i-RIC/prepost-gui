@@ -2,6 +2,7 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorarrowgroupdataitem.h"
+#include "post2dwindownodevectorarrowstructuredsetting.h"
 
 #include <guibase/structuredgridregion.h>
 #include <misc/compositecontainer.h>
@@ -20,28 +21,20 @@ public:
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupStructuredDataItem();
 
-	struct Setting : public CompositeContainer
-	{
-		Setting();
-		Setting(const Setting& s);
-		Setting& operator=(const Setting& s);
-
-		IntContainer iSampleRate;
-		IntContainer jSampleRate;
-		StructuredGridRegion::Range2d range;
-	};
-
-protected:
-	virtual void updateActivePoints() override;
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
+private:
 	QDialog* propertyDialog(QWidget* p) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-private:
-	Setting m_stSetting;
+	virtual void updateActivePoints() override;
+	Post2dWindowNodeVectorArrowSetting& setting() override;
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
 	vtkSmartPointer<vtkExtractGrid> m_arrowExtract;
+
+	Post2dWindowNodeVectorArrowStructuredSetting m_setting;
 
 	class SetSettingCommand;
 };

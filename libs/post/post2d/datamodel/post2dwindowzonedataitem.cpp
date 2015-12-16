@@ -54,7 +54,8 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
-	m_attributeBrowserFixed {false}
+	m_attributeBrowserFixed {false},
+	m_particlesDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 

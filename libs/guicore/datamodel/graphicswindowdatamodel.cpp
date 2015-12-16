@@ -214,7 +214,7 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 	m_operationToolBar->addAction(m_objectBrowserView->moveDownAction());
 	m_operationToolBar->addAction(m_objectBrowserView->deleteAction());
 
-	if (dataItem != nullptr) {
+	if (dataItem == nullptr) {
 		m_objectBrowserView->moveUpAction()->setDisabled(true);
 		m_objectBrowserView->moveDownAction()->setDisabled(true);
 		m_objectBrowserView->deleteAction()->setDisabled(true);

@@ -90,7 +90,7 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 			}
 			updateNodeLookupTableRanges();
 		}
-		if (m_particleLookupTables.count() == 0 && zones.size() != 0) {
+		if (zCont->particleData() != nullptr && m_particleLookupTables.count() == 0 && zones.size() != 0) {
 			vtkPointData* pd = zCont->particleData()->GetPointData();
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 				setupParticleScalarsToColors(name);

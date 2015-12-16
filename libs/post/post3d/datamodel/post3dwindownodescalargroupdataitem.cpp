@@ -8,6 +8,8 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -76,14 +78,14 @@ void Post3dWindowNodeScalarGroupDataItem::setDefaultValues()
 
 void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 {
-	// make all the items invisible
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
+
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data();
 	if (ps == nullptr) {return;}
-	if (m_currentSolution == "") {return;}
+	if (m_target == "") {return;}
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();
@@ -98,7 +100,7 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	setCurrentSolution(iRIC::toStr(elem.attribute("solution")));
+	setTarget(iRIC::toStr(elem.attribute("solution")));
 	m_fullRange = iRIC::getBooleanAttribute(node, "fullRange", true);
 	m_range.iMin = iRIC::getIntAttribute(node, "iMin");
 	m_range.iMax = iRIC::getIntAttribute(node, "iMax");
@@ -113,7 +115,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 
 void Post3dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_currentSolution.c_str());
+	writer.writeAttribute("solution", m_target.c_str());
 	iRIC::setBooleanAttribute(writer, "fullRange", m_fullRange);
 	iRIC::setIntAttribute(writer, "iMin", m_range.iMin);
 	iRIC::setIntAttribute(writer, "iMax", m_range.iMax);
@@ -173,7 +175,7 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 
 	// Create the isosurface
 	vtkSmartPointer<vtkContourFilter> contourFilter = vtkSmartPointer<vtkContourFilter>::New();
-	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, m_currentSolution.c_str());
+	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, m_target.c_str());
 	contourFilter->SetInputConnection(voi->GetOutputPort());
 	contourFilter->GenerateValues(1, m_isoValue, m_isoValue);
 
@@ -213,7 +215,7 @@ QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 
 	dialog->setEnabled(true);
 	dialog->setZoneData(zItem->dataContainer());
-	dialog->setTarget(m_currentSolution);
+	dialog->setTarget(m_target);
 
 	// it's made enabled ALWAYS.
 	//	dialog->setEnabled(isEnabled());
@@ -244,7 +246,7 @@ public:
 		m_newColor = color;
 
 		m_oldEnabled = item->isEnabled();
-		m_oldCurrentSolution = item->m_currentSolution;
+		m_oldCurrentSolution = item->m_target;
 		m_oldFullRange = item->m_fullRange;
 		m_oldRange = item->m_range;
 		m_oldIsoValue = item->m_isoValue;
@@ -255,7 +257,7 @@ public:
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
+		m_item->setTarget(m_oldCurrentSolution);
 		m_item->m_fullRange = m_oldFullRange;
 		m_item->m_range = m_oldRange;
 		m_item->m_isoValue = m_oldIsoValue;
@@ -268,7 +270,7 @@ public:
 	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
-		m_item->setCurrentSolution(m_newCurrentSolution);
+		m_item->setTarget(m_newCurrentSolution);
 		m_item->m_fullRange = m_newFullRange;
 		m_item->m_range = m_newRange;
 		m_item->m_isoValue = m_newIsoValue;
@@ -306,61 +308,24 @@ void Post3dWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* 
 			dialog->isoValue(), dialog->color(), this));
 }
 
-class Post3dWindowIsosurfaceSelectSolution : public QUndoCommand
-{
-public:
-	Post3dWindowIsosurfaceSelectSolution(const std::string& newsol, Post3dWindowNodeScalarGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Contour Physical Value Change")) {
-		m_newCurrentSolution = newsol;
-		m_oldCurrentSolution = item->m_currentSolution;
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_oldCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->setCurrentSolution(m_newCurrentSolution);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	std::string m_oldCurrentSolution;
-	std::string m_newCurrentSolution;
-
-	Post3dWindowNodeScalarGroupDataItem* m_item;
-};
-
-void Post3dWindowNodeScalarGroupDataItem::exclusivelyCheck(Post3dWindowNodeScalarDataItem* item)
+void Post3dWindowNodeScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post3dWindowIsosurfaceSelectSolution("", this));
-	} else {
-		stack.push(new Post3dWindowIsosurfaceSelectSolution(item->name(), this));
-	}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Isosurface physical value change"));
+	pushRenderCommand(cmd, this, true);
 }
 
-void Post3dWindowNodeScalarGroupDataItem::setCurrentSolution(const std::string& currentSol)
+std::string Post3dWindowNodeScalarGroupDataItem::target() const
 {
-	Post3dWindowNodeScalarDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post3dWindowNodeScalarDataItem* tmpItem = dynamic_cast<Post3dWindowNodeScalarDataItem*>(*it);
-		if (tmpItem->name() == currentSol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
-	m_currentSolution = currentSol;
+	return m_target;
+}
+
+void Post3dWindowNodeScalarGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_target = target;
+	updateActorSettings();
 }
 
 void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)

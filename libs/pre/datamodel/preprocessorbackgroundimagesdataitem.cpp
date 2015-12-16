@@ -7,6 +7,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <misc/qttool.h>
 
 #include <QMenu>
 #include <QMessageBox>
@@ -125,19 +126,11 @@ void PreProcessorBackgroundImagesDataItem::updateChildCheckState(int idx, bool v
 {
 	dataModel()->itemModel()->blockSignals(true);
 	if (idx < 0) {
-		if (vis) {
-			m_standardItem->setCheckState(Qt::Checked);
-		} else {
-			m_standardItem->setCheckState(Qt::Unchecked);
-		}
+		QtTool::checkItem(m_standardItem, vis);
 	} else {
 		auto it = m_childItems.begin() + idx;
 		PreProcessorBackgroundImageDataItem* item = dynamic_cast<PreProcessorBackgroundImageDataItem*>(*it);
-		if (vis) {
-			item->standardItem()->setCheckState(Qt::Checked);
-		} else {
-			item->standardItem()->setCheckState(Qt::Unchecked);
-		}
+		QtTool::checkItem(item->standardItem(), vis);
 	}
 	dataModel()->itemModel()->blockSignals(false);
 	updateVisibility();

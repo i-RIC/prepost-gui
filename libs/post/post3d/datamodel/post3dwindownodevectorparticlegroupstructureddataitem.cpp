@@ -25,7 +25,7 @@ QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(Q
 	dialog->setZoneData(cont);
 	dialog->setActiveAvailable(cont->IBCExists());
 
-	dialog->setSolution(m_currentSolution);
+	dialog->setSolution(m_target);
 	dialog->setTimeMode(m_timeMode);
 	dialog->setTimeSamplingRate(m_timeSamplingRate);
 	dialog->setTimeDivision(m_timeDivision);
@@ -50,7 +50,7 @@ public:
 		m_newRegionMode = rm;
 
 		m_oldEnabled = item->isEnabled();
-		m_oldSolution = item->m_currentSolution;
+		m_oldSolution = item->m_target;
 		m_oldTimeMode = item->m_timeMode;
 		m_oldTimeSamplingRate = item->m_timeSamplingRate;
 		m_oldTimeDivision = item->m_timeDivision;
@@ -62,7 +62,7 @@ public:
 	void undo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_oldEnabled);
-		m_item->setCurrentSolution(m_oldSolution);
+		m_item->setTarget(m_oldSolution);
 		m_item->m_timeMode = m_oldTimeMode;
 		m_item->m_timeSamplingRate = m_oldTimeSamplingRate;
 		m_item->m_timeDivision = m_oldTimeDivision;
@@ -75,7 +75,7 @@ public:
 	void redo() {
 		m_item->setIsCommandExecuting(true);
 		m_item->setEnabled(m_newEnabled);
-		m_item->setCurrentSolution(m_newSolution);
+		m_item->setTarget(m_newSolution);
 		m_item->m_timeMode = m_newTimeMode;
 		m_item->m_timeSamplingRate = m_newTimeSamplingRate;
 		m_item->m_timeDivision = m_newTimeDivision;

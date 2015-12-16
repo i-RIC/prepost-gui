@@ -2,15 +2,9 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
-#include <guibase/structuredgridregion.h>
+#include "post2dwindownodevectorarrowsetting.h"
+
 #include <guicore/misc/targeted/targeteditemi.h>
-#include <misc/arrowshapecontainer.h>
-#include <misc/arrowsettingcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/colorcontainer.h>
-#include <misc/stringcontainer.h>
-#include <misc/doublecontainer.h>
-#include <misc/enumcontainert.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -41,20 +35,6 @@ class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem, pu
 public:
 	const static int AUTO_AVERAGECOUNT = 20;
 
-	struct Setting : public CompositeContainer
-	{
-		Setting();
-		Setting(const Setting& s);
-		Setting& operator=(const Setting& s);
-
-		ArrowSettingContainer arrowSetting;
-		ArrowShapeContainer arrowShape;
-
-		DoubleContainer oldCameraScale;
-		DoubleContainer scaleFactor;
-		EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
-	};
-
 	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
 
@@ -80,14 +60,15 @@ protected:
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	virtual void updateActivePoints() = 0;
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	void updateScaleFactor();
 
 private:
 	void setupActors();
 	void calculateStandardValue();
-	void updateScaleFactor();
+
+	virtual void updateActivePoints() = 0;
+	virtual Post2dWindowNodeVectorArrowSetting& setting() = 0;
 
 protected:
 	vtkSmartPointer<vtkActor> m_arrowActor;
@@ -106,7 +87,7 @@ protected:
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 	vtkSmartPointer<vtkPolyData> m_activePoints;
 
-	Setting m_setting;
+	double m_scaleFactor;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPDATAITEM_H

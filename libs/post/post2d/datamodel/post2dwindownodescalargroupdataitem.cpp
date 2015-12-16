@@ -341,8 +341,8 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(iRIC::toStr(m_setting.target))).c_str());
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
-	m_setting.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	m_setting.labelTextSetting.applySetting(a->GetLabelTextProperty());
+	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
+	m_setting.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
 
 	switch (ContourSettingWidget::Contour(m_setting.contour)) {
 	case ContourSettingWidget::Points:
@@ -418,8 +418,8 @@ private:
 		*lut = c;
 		lut->update();
 		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
-		m_item->m_setting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-		m_item->m_setting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
+		m_item->m_setting.scalarBarSetting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
+		m_item->m_setting.scalarBarSetting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
 	}
 
 	Post2dWindowContourSetting m_newSetting;

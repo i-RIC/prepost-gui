@@ -3,6 +3,7 @@
 #include "post2dbirdeyewindownodescalardataitem.h"
 #include "post2dbirdeyewindownodescalargroupdataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
+#include "private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
@@ -25,7 +26,6 @@
 #include <QDomNode>
 #include <QList>
 #include <QStandardItem>
-#include <QUndoCommand>
 #include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
@@ -308,8 +308,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap.value(target())).c_str());
 	a->SetLookupTable(stc->vtkObj());
 	a->SetNumberOfLabels(m_setting.scalarBarSetting.numberOfLabels);
-	m_setting.titleTextSetting.applySetting(a->GetTitleTextProperty());
-	m_setting.labelTextSetting.applySetting(a->GetLabelTextProperty());
+	m_setting.scalarBarSetting.titleTextSetting.applySetting(a->GetTitleTextProperty());
+	m_setting.scalarBarSetting.labelTextSetting.applySetting(a->GetLabelTextProperty());
 	switch (ContourSettingWidget::Contour(m_setting.contour)) {
 	case ContourSettingWidget::Points:
 		// do nothing
@@ -344,62 +344,10 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setSetting(m_setting);
-	// scalar bar setting
 	dialog->setColorBarTitleMap(m_colorbarTitleMap);
 
 	return dialog;
 }
-
-class Post2dBirdEyeWindowNodeScalarGroupDataItem::SetSettingCommand: public QUndoCommand
-{
-public:
-	SetSettingCommand(const Post2dWindowContourSetting& s, const LookupTableContainer& ltc, const QString& colorbarTitle, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
-		QUndoCommand {QObject::tr("Update Contour Setting")},
-		m_newSetting {s},
-		m_newLookupTable {ltc},
-		m_newScalarBarTitle {colorbarTitle},
-		m_oldSetting {item->m_setting},
-		m_oldScalarBarTitle {item->m_colorbarTitleMap[s.target]},
-		m_item {item}
-	{
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(item->parent()->parent());
-		LookupTableContainer* lut = gtItem->nodeLookupTable(s.target);
-		m_oldLookupTable = *lut;
-	}
-	void redo() {
-		m_item->m_setting = m_newSetting;
-		applySettings(m_newSetting.target, m_newLookupTable, m_newScalarBarTitle);
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->m_setting = m_oldSetting;
-		applySettings(m_oldSetting.target, m_oldLookupTable, m_oldScalarBarTitle);
-		m_item->updateActorSettings();
-	}
-private:
-	void applySettings(const std::string& sol, const LookupTableContainer& c, QString& title)
-	{
-		m_item->setTarget(sol);
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dBirdEyeWindowGridTypeDataItem*>(m_item->parent()->parent());
-		LookupTableContainer* lut = gtItem->nodeLookupTable(sol);
-		*lut = c;
-		lut->update();
-		m_item->m_colorbarTitleMap[sol] = title;
-		m_item->m_setting.scalarBarSetting.saveToRepresentation(m_item->m_scalarBarWidget->GetScalarBarRepresentation());
-		m_item->m_setting.titleTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-		m_item->m_setting.labelTextSetting.applySetting(m_item->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-	}
-
-	Post2dWindowContourSetting m_newSetting;
-	LookupTableContainer m_newLookupTable;
-	QString m_newScalarBarTitle;
-
-	Post2dWindowContourSetting m_oldSetting;
-	LookupTableContainer m_oldLookupTable;
-	QString m_oldScalarBarTitle;
-
-	Post2dBirdEyeWindowNodeScalarGroupDataItem* m_item;
-};
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {

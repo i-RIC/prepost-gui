@@ -20,6 +20,11 @@ StructuredGridRegion::Range2d& StructuredGridRegion::Range2d::operator=(const Ra
 	return *this;
 }
 
+XmlAttributeContainer& StructuredGridRegion::Range2d::operator=(const XmlAttributeContainer& r)
+{
+	return operator=(dynamic_cast<const StructuredGridRegion::Range2d&> (r));
+}
+
 StructuredGridRegion::Range3d::Range3d() :
 	CompositeContainer ({&iMin, &iMax, &jMin, &jMax, &kMin, &kMax}),
 	iMin {"iMin"},
@@ -40,4 +45,9 @@ StructuredGridRegion::Range3d& StructuredGridRegion::Range3d::operator=(const Ra
 {
 	CompositeContainer::copyValue(r);
 	return *this;
+}
+
+XmlAttributeContainer& StructuredGridRegion::Range3d::operator=(const XmlAttributeContainer& r)
+{
+	return operator=(dynamic_cast<const StructuredGridRegion::Range3d&> (r));
 }

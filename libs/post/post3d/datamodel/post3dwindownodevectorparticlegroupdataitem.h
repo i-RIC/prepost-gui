@@ -6,6 +6,8 @@
 #include <guibase/vtksubdividegrid.h>
 #include <guibase/structuredgridregion.h>
 #include <guibase/vtkCustomStreamPoints.h>
+#include <guicore/misc/targeted/targeteditemi.h>
+
 #include <QMap>
 #include <QColor>
 #include <QList>
@@ -19,11 +21,10 @@
 #include <vtkPolyData.h>
 #include <vtkClipPolyData.h>
 
-class Post3dWindowNodeVectorParticleDataItem;
-class Post3dWindowGridParticleSelectSolution;
+class NamedGraphicWindowDataItem;
 class Post3dWindowParticleStructuredSetProperty;
 
-class Post3dWindowNodeVectorParticleGroupDataItem : public Post3dWindowDataItem
+class Post3dWindowNodeVectorParticleGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -32,26 +33,28 @@ private:
 
 public:
 	enum TimeMode {tmNormal, tmSubdivide, tmSkip};
-	/// Constructor
+
 	Post3dWindowNodeVectorParticleGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeVectorParticleGroupDataItem();
+
 	void updateActorSettings();
 	void setupClipper();
 	void updateZDepthRangeItemCount() override;
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
-	const std::string& currentSolution() {return m_currentSolution;}
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
 
 public slots:
-	void exclusivelyCheck(Post3dWindowNodeVectorParticleDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void informGridUpdate();
 	vtkPointSet* getRegion();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void setCurrentSolution(const std::string& currentSol);
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
 
@@ -72,7 +75,7 @@ protected:
 	vtkSmartPointer<vtkStreamPoints> m_streamTracer;
 	vtkSmartPointer<vtkCustomStreamPoints> m_streamPoints;
 
-	std::string m_currentSolution;
+	std::string m_target;
 	TimeMode m_timeMode;
 
 	int m_timeSamplingRate;
@@ -86,7 +89,6 @@ protected:
 
 public:
 	friend class Post3dWindowParticleStructuredSetProperty;
-	friend class Post3dWindowGridParticleSelectSolution;
 };
 
 #endif // POST3DWINDOWNODEVECTORPARTICLEGROUPDATAITEM_H

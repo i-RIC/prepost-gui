@@ -42,13 +42,52 @@ void Post2dWindowArrowUnstructuredSettingDialog::disableActive()
 	m_activeAvailable = false;
 }
 
-void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss)
+Post2dWindowNodeVectorArrowUnstructuredSetting Post2dWindowArrowUnstructuredSettingDialog::setting() const
 {
-	ui->solutionComboBox->setCurrentText(s.arrowSetting.target);
-	ui->scalarComboBox->setCurrentText(s.arrowSetting.colorTarget);
-	ui->colorEditWidget->setColor(s.arrowSetting.customColor);
+	Post2dWindowNodeVectorArrowUnstructuredSetting ret = m_setting;
 
-	switch (setting.arrowSetting.samplingMode.value()) {
+	ret.target = ui->solutionComboBox->currentText();
+
+	if (ui->samplingAllRadioButton->isChecked()) {
+		ret.samplingMode = ArrowSettingContainer::SamplingMode::All;
+	} else if (ui->samplingRateRadioButton->isChecked()) {
+		ret.samplingMode = ArrowSettingContainer::SamplingMode::Rate;
+	}	else {
+		ret.samplingMode = ArrowSettingContainer::SamplingMode::Number;
+	}
+	ret.samplingRate = ui->samplingRateSpinBox->value();
+	ret.samplingNumber = ui->samplingNumberSpinBox->value();
+
+	if (ui->specificRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::Custom;
+	} else if (ui->scalarRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::ByScalar;
+	}
+	ret.customColor = ui->colorEditWidget->color();
+	ret.colorTarget = ui->scalarComboBox->currentText();
+
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Auto;
+	} else {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Custom;
+	}
+	ret.standardValue = ui->stdValueSpinBox->value();
+	ret.legendLength = ui->legendLengthSpinBox->value();
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	ret.arrowSize = ui->arrowSizeSpinBox->value();
+	ret.lineWidth = ui->lineWidthSpinBox->value();
+
+	return ret;
+}
+
+void Post2dWindowArrowUnstructuredSettingDialog::setSetting(const Post2dWindowNodeVectorArrowUnstructuredSetting& setting)
+{
+	m_setting = setting;
+
+	ui->solutionComboBox->setCurrentText(setting.target);
+
+	switch (setting.samplingMode.value()) {
 	case ArrowSettingContainer::SamplingMode::All:
 		ui->samplingAllRadioButton->setChecked(true);
 		break;
@@ -59,11 +98,10 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowN
 		ui->samplingNumberRadioButton->setChecked(true);
 		break;
 	}
+	ui->samplingRateSpinBox->setValue(setting.samplingRate);
+	ui->samplingNumberSpinBox->setValue(setting.samplingNumber);
 
-	ui->samplingRateSpinBox->setValue(setting.arrowSetting.samplingRate);
-	ui->samplingNumberSpinBox->setValue(setting.arrowSetting.samplingNumber);
-
-	switch (setting.arrowSetting.colorMode.value())) {
+	switch (setting.colorMode.value()) {
 	case ArrowSettingContainer::ColorMode::Custom:
 		ui->specificRadioButton->setChecked(true);
 		break;
@@ -71,48 +109,35 @@ void Post2dWindowArrowUnstructuredSettingDialog::setSettings(const Post2dWindowN
 		ui->scalarRadioButton->setChecked(true);
 		break;
 	}
+	ui->colorEditWidget->setColor(setting.customColor);
+	ui->scalarComboBox->setCurrentText(setting.colorTarget);
 
-	ui->stdValueSpinBox->setValue(setting.arrowSetting.standardValue);
-	ui->legendLengthSpinBox->setValue(setting.arrowSetting.legendLength);
-	ui->minValueSpinBox->setValue(setting.arrowSetting.minimumValue);
+	switch (setting.lengthMode.value()) {
+	case ArrowSettingContainer::LengthMode::Auto:
+		ui->lengthAutoCheckBox->setChecked(true);
+		break;
+	case ArrowSettingContainer::LengthMode::Custom:
+		ui->lengthAutoCheckBox->setChecked(false);
+		break;
+	}
+	ui->stdValueSpinBox->setValue(setting.standardValue);
+	ui->legendLengthSpinBox->setValue(setting.legendLength);
+	ui->minValueSpinBox->setValue(setting.minimumValue);
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem::Setting Post2dWindowArrowUnstructuredSettingDialog::setting() const
+void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
 {
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting ret = m_setting;
-
-	ret.arrowSetting.target = ui->solutionComboBox->currentText();
-	ret.arrowSetting.colorTarget = ui->scalarComboBox->currentText();
-	ret.arrowSetting.customColor = ui->colorEditWidget->color();
-
-	if (ui->samplingAllRadioButton->isChecked()) {
-		ret.arrowSetting.samplingMode = ArrowSettingContainer::SamplingMode::All;
-	} else if (ui->samplingRateRadioButton->isChecked()) {
-		ret.arrowSetting.samplingMode = ArrowSettingContainer::SamplingMode::Rate;
-	}	else {
-		ret.arrowSetting.samplingMode = ArrowSettingContainer::SamplingMode::Number;
+	Post2dGridRegionSelectDialog dialog(this);
+	if (! m_activeAvailable) {
+		dialog.disableActive();
 	}
+	dialog.hideCustom();
+	dialog.setRegionMode(m_setting.regionMode);
 
-	ret.arrowSetting.samplingRate = ui->samplingRateSpinBox->value();
-	ret.arrowSetting.samplingNumber = ui->samplingNumberSpinBox->value();
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
 
-	if (ui->specificRadioButton->isChecked()) {
-		ret.arrowSetting.colorMode = ArrowSettingContainer::ColorMode::Custom;
-	} else if (ui->scalarRadioButton->isChecked()) {
-		ret.arrowSetting.colorMode = ArrowSettingContainer::ColorMode::ByScalar;
-	}
-
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		ret.arrowSetting.lengthMode = ArrowSettingContainer::LengthMode::Auto;
-	} else {
-		ret.arrowSetting.lengthMode = ArrowSettingContainer::LengthMode::Custom;
-	}
-
-	ret.arrowSetting.standardValue = ui->stdValueSpinBox->value();
-	ret.arrowSetting.legendLength = ui->legendLengthSpinBox->value();
-	ret.arrowSetting.minimumValue = ui->minValueSpinBox->value();
-
-	return ret;
+	m_setting.regionMode = dialog.regionMode();
 }
 
 void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneDataContainer* zoneData)
@@ -132,16 +157,3 @@ void Post2dWindowArrowUnstructuredSettingDialog::setupSolutionComboBox(PostZoneD
 	}
 }
 
-void Post2dWindowArrowUnstructuredSettingDialog::showRegionDialog()
-{
-	Post2dGridRegionSelectDialog dialog(this);
-	if (! m_activeAvailable) {
-		dialog.disableActive();
-	}
-	dialog.hideCustom();
-	dialog.setRegionMode(m_setting.regionMode);
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return;}
-
-	m_setting.regionMode = dialog.regionMode();
-}

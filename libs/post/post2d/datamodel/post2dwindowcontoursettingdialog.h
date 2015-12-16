@@ -32,8 +32,9 @@ class POST2D_EXPORT Post2dWindowContourSettingDialog : public QDialog
 public:
 	explicit Post2dWindowContourSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowContourSettingDialog();
-	void setZoneData(PostZoneDataContainer* zoneData);
+
 	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
+	void setZoneData(PostZoneDataContainer* zoneData);
 	void disableActive();
 	void hideOpacity();
 

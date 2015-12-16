@@ -20,21 +20,19 @@ public:
 	{
 		enum SpaceMode {smNormal, smSubdivide, smSkip};
 
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
+
 		Setting& operator=(const Setting& s);
 
 		/// Range to generate
 		StructuredGridRegion::Range2d range;
+
 		EnumContainerT<SpaceMode> spaceMode;
 		IntContainer spaceSamplingRate;
 		IntContainer spaceDivision;
-		/// Streamline color.
+
 		ColorContainer color;
-		/// Streamline width on screen. Specify by pixels on screen.
 		IntContainer width;
 	};
 

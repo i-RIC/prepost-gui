@@ -1,39 +1,38 @@
 #ifndef POSTPARTICLEVECTORPROPERTYDIALOG_H
 #define POSTPARTICLEVECTORPROPERTYDIALOG_H
 
-#include "postbase_global.h"
+#include "../postbase_global.h"
+
 #include <misc/arrowsettingcontainer.h>
-#include <misc/arrowshapecontainer.h>
+
 #include <QDialog>
+
+#include <string>
+#include <vector>
 
 namespace Ui {
 class PostParticleVectorPropertyDialog;
 }
 
-class ArrowShapeContainer;
-class PostWindowGridTypeDataItemInterface;
 class PostZoneDataContainer;
 
 class POSTBASEDLL_EXPORT PostParticleVectorPropertyDialog : public QDialog
 {
 	Q_OBJECT
-
 public:
 	explicit PostParticleVectorPropertyDialog(QWidget *parent = nullptr);
 	~PostParticleVectorPropertyDialog();
+
 	void setZoneData(PostZoneDataContainer* data);
 
-	ArrowSettingContainer arrowSetting() const;
-	void setArrowSetting(const ArrowSettingContainer& arrowSetting);
-
-	ArrowShapeContainer arrowShape() const;
-	void setArrowShape(const ArrowShapeContainer& arrowShape);
+	ArrowSettingContainer setting() const;
+	void setSetting(const ArrowSettingContainer& setting);
 
 private:
 	void setupComboBoxes(PostZoneDataContainer *zoneData);
 
-	QList<QString> m_attributes;
-	QList<QString> m_scalars;
+	std::vector<std::string> m_targets;
+	std::vector<std::string> m_colorTargets;
 
 	Ui::PostParticleVectorPropertyDialog *ui;
 };

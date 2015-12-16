@@ -77,8 +77,6 @@ HEADERS += asciionlylineedit.h \
            centeredcheckbox.h \
            cgnszoneselectdialog.h \
            coloreditwidget.h \
-           colormapcustomsettingdialog.h \
-           colormapsettingwidget.h \
            colortool.h \
            comboboxtool.h \
            contoursettingwidget.h \
@@ -110,6 +108,7 @@ HEADERS += asciionlylineedit.h \
            scalarbardialog.h \
            scalarbarsetting.h \
            scalarbarwidget.h \
+           scalarsettingcontainer.h \
            sliderwithvalue.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
@@ -124,12 +123,14 @@ HEADERS += asciionlylineedit.h \
            vtktextpropertysettingdialog.h \
            waitdialog.h \
            xyaxisdisplaysettingdialog.h \
+           colormap/colormapcustomsetting.h \
+           colormap/colormapcustomsettingcolor.h \
+           colormap/colormapcustomsettingdialog.h \
+           colormap/colormapsettingwidget.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h
 FORMS += cgnszoneselectdialog.ui \
-         colormapcustomsettingdialog.ui \
-         colormapsettingwidget.ui \
          contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \
          dirnameeditwidget.ui \
@@ -143,13 +144,13 @@ FORMS += cgnszoneselectdialog.ui \
          transparencywidget.ui \
          vtktextpropertysettingdialog.ui \
          waitdialog.ui \
-         xyaxisdisplaysettingdialog.ui
+         xyaxisdisplaysettingdialog.ui \
+         colormap/colormapcustomsettingdialog.ui \
+         colormap/colormapsettingwidget.ui
 SOURCES += asciionlylineedit.cpp \
            centeredcheckbox.cpp \
            cgnszoneselectdialog.cpp \
            coloreditwidget.cpp \
-           colormapcustomsettingdialog.cpp \
-           colormapsettingwidget.cpp \
            colortool.cpp \
            comboboxtool.cpp \
            contoursettingwidget.cpp \
@@ -180,6 +181,7 @@ SOURCES += asciionlylineedit.cpp \
            scalarbardialog.cpp \
            scalarbarsetting.cpp \
            scalarbarwidget.cpp \
+           scalarsettingcontainer.cpp \
            sliderwithvalue.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
@@ -194,6 +196,10 @@ SOURCES += asciionlylineedit.cpp \
            vtktextpropertysettingdialog.cpp \
            waitdialog.cpp \
            xyaxisdisplaysettingdialog.cpp \
+           colormap/colormapcustomsetting.cpp \
+           colormap/colormapcustomsettingcolor.cpp \
+           colormap/colormapcustomsettingdialog.cpp \
+           colormap/colormapsettingwidget.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp

@@ -7,8 +7,7 @@
 #include <QRegExp>
 
 PreProcessorCustomMappingSetting::PreProcessorCustomMappingSetting()
-{
-}
+{}
 
 void PreProcessorCustomMappingSetting::load(const QDomNode& node)
 {

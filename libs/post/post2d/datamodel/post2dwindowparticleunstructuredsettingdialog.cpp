@@ -318,11 +318,7 @@ void Post2dWindowParticleUnstructuredSettingDialog::setupSolutionComboBox(PostZo
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
-	QStringList captions;
-	for (auto s : m_solutions) {
-		captions.push_back(gt->solutionCaption(s));
-	}
-	ComboBoxTool::setupItems(captions, ui->solutionComboBox);
+	ComboBoxTool::setupItems(m_solutions, ui->solutionComboBox);
 
 	if (m_solutions.size() < 2) {
 		ui->physValLabel->hide();

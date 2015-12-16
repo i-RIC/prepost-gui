@@ -154,6 +154,9 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindownodevectorarrowgroupdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.h \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.h \
+           datamodel/post2dwindownodevectorarrowsetting.h \
+           datamodel/post2dwindownodevectorarrowstructuredsetting.h \
+           datamodel/post2dwindownodevectorarrowunstructuredsetting.h \
            datamodel/post2dwindownodevectorparticledataitem.h \
            datamodel/post2dwindownodevectorparticlegroupdataitem.h \
            datamodel/post2dwindownodevectorparticlegroupstructureddataitem.h \
@@ -172,7 +175,12 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowrootdataitem.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
-           datamodel/post2dwindowzonedataitem.h
+           datamodel/post2dwindowzonedataitem.h \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.h
 FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowarrowstructuredsettingdialog.ui \
          datamodel/post2dwindowarrowunstructuredsettingdialog.ui \
@@ -213,6 +221,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindownodevectorarrowgroupdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp \
+           datamodel/post2dwindownodevectorarrowsetting.cpp \
+           datamodel/post2dwindownodevectorarrowstructuredsetting.cpp \
+           datamodel/post2dwindownodevectorarrowunstructuredsetting.cpp \
            datamodel/post2dwindownodevectorparticledataitem.cpp \
            datamodel/post2dwindownodevectorparticlegroupdataitem.cpp \
            datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp \
@@ -231,7 +242,12 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
-           datamodel/post2dwindowzonedataitem.cpp
+           datamodel/post2dwindowzonedataitem.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp
 RESOURCES += post2d.qrc
 TRANSLATIONS += languages/iricPost2d_es_ES.ts \
                 languages/iricPost2d_fr_FR.ts \

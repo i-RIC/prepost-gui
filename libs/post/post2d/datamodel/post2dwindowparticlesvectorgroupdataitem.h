@@ -4,10 +4,7 @@
 #include "../post2dwindowdataitem.h"
 
 #include <guicore/misc/targeted/targeteditemi.h>
-#include <misc/arrowshapecontainer.h>
 #include <misc/arrowsettingcontainer.h>
-
-#include <postbase/postparticlevectorpropertydialog.h>
 
 #include <vtkActor.h>
 #include <vtkSmartPointer.h>
@@ -22,8 +19,6 @@
 #include <vtkConeSource.h>
 
 class NamedGraphicWindowDataItem;
-class Post2dWindowParticlesVectorDataItem;
-class Post2dWindowParticlesVectorSetProperty;
 
 class Post2dWindowParticlesVectorGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -62,13 +57,14 @@ protected:
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
 
 private:
 	void setupActors();
 	void calculateStandardValue();
 	void updateScaleFactor();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 protected:
 	vtkSmartPointer<vtkActor> m_arrowActor;
@@ -87,14 +83,11 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 
-	ArrowSettingContainer m_arrowSetting;
-	ArrowShapeContainer m_arrowShape;
+	ArrowSettingContainer m_setting;
 
 	double m_scaleFactor;
-	double m_oldCameraScale;
 
-public:
-	friend class Post2dWindowParticlesVectorSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWPARTICLESVECTORGROUPDATAITEM_H

@@ -3,6 +3,7 @@
 #include "post3dwindowfacedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindowcontourgroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
@@ -45,22 +46,15 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowD
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	m_contour = ContourSettingWidget::ColorFringe;
 	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
 	PostZoneDataContainer* c = zItem->dataContainer();
-	m_target = c->data()->GetPointData()->GetArrayName(0);
-	m_fillUpper = true;
-	m_fillLower = true;
-
-	m_numberOfDivision = 10;
+	m_scalarSetting.target = c->data()->GetPointData()->GetArrayName(0);
+	m_scalarSetting.numberOfDivisions = 10;
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		m_colorBarTitleMap.insert(name, name.c_str());
 	}
-
-	m_titleTextSetting.setPrefix("titleText");
-	m_labelTextSetting.setPrefix("labelText");
 
 	setupScalarBarActor();
 }
@@ -70,116 +64,9 @@ Post3dWindowContourGroupDataItem::~Post3dWindowContourGroupDataItem()
 	m_scalarBarWidget->SetInteractor(0);
 }
 
-class Post3dWindowContourGroupSetSetting : public QUndoCommand
+const ScalarSettingContainer& Post3dWindowContourGroupDataItem::scalarSetting() const
 {
-public:
-	Post3dWindowContourGroupSetSetting(
-		const std::string& oldsol, ContourSettingWidget::Contour oldc, int oldNum, const LookupTableContainer& oldlookup, bool oldUpper, bool oldLower, const QString& oldTitle, const ScalarBarSetting& oldSetting, const vtkTextPropertySettingContainer& oldTitleSetting, const vtkTextPropertySettingContainer& oldLabelSetting,
-		const std::string& newsol, ContourSettingWidget::Contour newc, int newNum, const LookupTableContainer& newlookup, bool newUpper, bool newLower, const QString& newTitle, const ScalarBarSetting& newSetting, const vtkTextPropertySettingContainer& newTitleSetting, const vtkTextPropertySettingContainer& newLabelSetting,
-		Post3dWindowContourGroupDataItem* g, bool draw) {
-		m_oldSolution = oldsol;
-		m_oldContour = oldc;
-		m_oldNumOfDivision = oldNum;
-		m_oldLookupTable = oldlookup;
-		m_oldFillUpper = oldUpper;
-		m_oldFillLower = oldLower;
-		m_oldTitle = oldTitle;
-		m_oldScalarBarSetting = oldSetting;
-		m_oldTitleTextSetting = oldTitleSetting;
-		m_oldLabelTextSetting = oldLabelSetting;
-
-		m_newSolution = newsol;
-		m_newContour = newc;
-		m_newNumOfDivision = newNum;
-		m_newLookupTable = newlookup;
-		m_newFillUpper = newUpper;
-		m_newFillLower = newLower;
-		m_newTitle = newTitle;
-		m_newScalarBarSetting = newSetting;
-		m_newTitleTextSetting = newTitleSetting;
-		m_newLabelTextSetting = newLabelSetting;
-
-		m_group = g;
-		m_draw = draw;
-	}
-	void redo() {
-		m_group->m_target = m_newSolution;
-		m_group->m_contour = m_newContour;
-		m_group->m_numberOfDivision = m_newNumOfDivision;
-		m_group->m_fillUpper = m_newFillUpper;
-		m_group->m_fillLower = m_newFillLower;
-		m_group->m_colorBarTitleMap[m_newSolution] = m_newTitle;
-		m_group->m_scalarBarSetting = m_newScalarBarSetting;
-		m_group->m_scalarBarSetting.saveToRepresentation(m_group->m_scalarBarWidget->GetScalarBarRepresentation());
-		m_group->m_titleTextSetting = m_newTitleTextSetting;
-		m_group->m_titleTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-		m_group->m_labelTextSetting = m_newLabelTextSetting;
-		m_group->m_labelTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-
-		Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(m_group->parent()->parent());
-		LookupTableContainer* lookup = gtItem->nodeLookupTable(m_group->m_target);
-		*lookup = m_newLookupTable;
-		if (m_draw) {
-			m_group->renderGraphicsView();
-		}
-	}
-	void undo() {
-		m_group->m_target = m_oldSolution;
-		m_group->m_contour = m_oldContour;
-		m_group->m_numberOfDivision = m_oldNumOfDivision;
-		m_group->m_fillUpper = m_oldFillUpper;
-		m_group->m_fillLower = m_oldFillLower;
-		m_group->m_colorBarTitleMap[m_newSolution] = m_oldTitle;
-		m_group->m_scalarBarSetting = m_oldScalarBarSetting;
-		m_group->m_scalarBarSetting.saveToRepresentation(m_group->m_scalarBarWidget->GetScalarBarRepresentation());
-		m_group->m_titleTextSetting = m_oldTitleTextSetting;
-		m_group->m_titleTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetTitleTextProperty());
-		m_group->m_labelTextSetting = m_oldLabelTextSetting;
-		m_group->m_labelTextSetting.applySetting(m_group->m_scalarBarWidget->GetScalarBarActor()->GetLabelTextProperty());
-
-		Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(m_group->parent()->parent());
-		LookupTableContainer* lookup =  gtItem->nodeLookupTable(m_group->m_target);
-		*lookup = m_oldLookupTable;
-		if (m_draw) {
-			m_group->renderGraphicsView();
-		}
-	}
-private:
-	std::string m_oldSolution;
-	std::string m_newSolution;
-	ContourSettingWidget::Contour m_oldContour;
-	ContourSettingWidget::Contour m_newContour;
-	int m_oldNumOfDivision;
-	int m_newNumOfDivision;
-	LookupTableContainer m_oldLookupTable;
-	LookupTableContainer m_newLookupTable;
-	bool m_oldFillUpper;
-	bool m_newFillUpper;
-	bool m_oldFillLower;
-	bool m_newFillLower;
-
-	// for scalar bar
-	ScalarBarSetting m_oldScalarBarSetting;
-	vtkTextPropertySettingContainer m_oldTitleTextSetting;
-	vtkTextPropertySettingContainer m_oldLabelTextSetting;
-	ScalarBarSetting m_newScalarBarSetting;
-	vtkTextPropertySettingContainer m_newTitleTextSetting;
-	vtkTextPropertySettingContainer m_newLabelTextSetting;
-
-	QString m_oldTitle;
-	QString m_newTitle;
-
-	Post3dWindowContourGroupDataItem* m_group;
-	bool m_draw;
-};
-
-void Post3dWindowContourGroupDataItem::setSetting(const std::string& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleSetting, const vtkTextPropertySettingContainer& labelSetting, bool draw)
-{
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
-	LookupTableContainer* oldlookup =  gtItem->nodeLookupTable(m_target);
-	iRICUndoStack::instance().push(new Post3dWindowContourGroupSetSetting(
-			m_target, m_contour, m_numberOfDivision, *oldlookup, m_fillUpper, m_fillLower, m_colorBarTitleMap[sol], m_scalarBarSetting, m_titleTextSetting, m_labelTextSetting,
-			sol, c, numOfDiv, lookup, upper, lower, title, setting, titleSetting, labelSetting, this, draw));
+	return m_scalarSetting;
 }
 
 void Post3dWindowContourGroupDataItem::updateChildActors()
@@ -199,7 +86,7 @@ void Post3dWindowContourGroupDataItem::updateChildActors()
 
 vtkActor* Post3dWindowContourGroupDataItem::setupActorAndMapper(vtkAlgorithmOutput* algo)
 {
-	switch (m_contour) {
+	switch (m_scalarSetting.contour.value()) {
 	case ContourSettingWidget::Points:
 		// do nothing
 		break;
@@ -223,8 +110,8 @@ vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgor
 	// setup filter.
 	vtkContourFilter* contourFilter = vtkContourFilter::New();
 	contourFilter->SetInputConnection(algo);
-	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, m_target.c_str());
-	contourFilter->GenerateValues(m_numberOfDivision + 1, range);
+	contourFilter->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(m_scalarSetting.target).c_str());
+	contourFilter->GenerateValues(m_scalarSetting.numberOfDivisions + 1, range);
 
 	// setup mapper
 	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
@@ -232,7 +119,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupIsolinesActorAndMapper(vtkAlgor
 	contourFilter->Delete();
 	mapper->SetLookupTable(lookup->vtkObj());
 	mapper->SetScalarModeToUsePointFieldData();
-	mapper->SelectColorArray(m_target.c_str());
+	mapper->SelectColorArray(iRIC::toStr(m_scalarSetting.target).c_str());
 	mapper->UseLookupTableScalarRangeOn();
 
 	// setup actor
@@ -262,7 +149,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 	vtkPolyData* lowerClipped = vtkPolyData::New();
 	double min, max;
 	lookup->getValueRange(&min, &max);
-	if (m_fillLower) {
+	if (m_scalarSetting.fillLower) {
 		lowerClipped->DeepCopy(rangeClippedPolyData);
 		rangeClippedPolyData->Delete();
 	} else {
@@ -270,7 +157,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		lowerClipper->SetValue(min);
 		lowerClipper->SetInputData(rangeClippedPolyData);
 		lowerClipper->InsideOutOff();
-		rangeClippedPolyData->GetPointData()->SetActiveScalars(m_target.c_str());
+		rangeClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
 
 		lowerClipper->Update();
 		lowerClipped->DeepCopy(lowerClipper->GetOutput());
@@ -278,7 +165,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		lowerClipper->Delete();
 		rangeClippedPolyData->Delete();
 	}
-	if (m_fillUpper) {
+	if (m_scalarSetting.fillUpper) {
 		upperClipped->DeepCopy(lowerClipped);
 		lowerClipped->Delete();
 	} else {
@@ -286,7 +173,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		upperClipper->SetValue(max);
 		upperClipper->SetInputData(lowerClipped);
 		upperClipper->InsideOutOn();
-		lowerClipped->GetPointData()->SetActiveScalars(m_target.c_str());
+		lowerClipped->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
 		upperClipper->Update();
 		upperClipped->DeepCopy(upperClipper->GetOutput());
 		upperClipped->GetPointData()->SetActiveScalars("");
@@ -298,13 +185,13 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 	upperClipped->Delete();
 
 	// setup filter
-	valueClippedPolyData->GetPointData()->SetActiveScalars(m_target.c_str());
+	valueClippedPolyData->GetPointData()->SetActiveScalars(iRIC::toStr(m_scalarSetting.target).c_str());
 	vtkAppendPolyData* appendFilledContours = vtkAppendPolyData::New();
-	double delta = (max - min) / static_cast<double>(m_numberOfDivision);
+	double delta = (max - min) / static_cast<double>(m_scalarSetting.numberOfDivisions);
 	std::vector<vtkClipPolyData*> clippersLo;
 	std::vector<vtkClipPolyData*> clippersHi;
 
-	for (int i = 0; i < m_numberOfDivision; i++) {
+	for (int i = 0; i < m_scalarSetting.numberOfDivisions; i++) {
 		double valueLo = min + static_cast<double>(i) * delta;
 		double valueHi = min + static_cast<double>(i + 1) * delta;
 		clippersLo.push_back(vtkClipPolyData::New());
@@ -320,7 +207,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		clippersLo[i]->Update();
 
 		clippersHi.push_back(vtkClipPolyData::New());
-		if (i < m_numberOfDivision - 1) {
+		if (i < m_scalarSetting.numberOfDivisions - 1) {
 			clippersHi[i]->SetValue(valueHi);
 		} else {
 			clippersHi[i]->SetValue(HUGE_VAL);
@@ -336,12 +223,12 @@ vtkActor* Post3dWindowContourGroupDataItem::setupContourFigureActorAndMapper(vtk
 		vtkDoubleArray* da = vtkDoubleArray::New();
 		da->SetNumberOfComponents(1);
 		da->SetNumberOfTuples(clippersHi[i]->GetOutput()->GetNumberOfCells());
-		da->FillComponent(0, min + (max - min) * (i / (m_numberOfDivision - 1.0)));
+		da->FillComponent(0, min + (max - min) * (i / (m_scalarSetting.numberOfDivisions - 1.0)));
 		clippersHi[i]->GetOutput()->GetCellData()->SetScalars(da);
 		appendFilledContours->AddInputConnection(clippersHi[i]->GetOutputPort());
 		da->Delete();
 	}
-	for (int i = 0; i < m_numberOfDivision; i++) {
+	for (int i = 0; i < m_scalarSetting.numberOfDivisions; i++) {
 		clippersLo[i]->Delete();
 		clippersHi[i]->Delete();
 	}
@@ -379,7 +266,7 @@ vtkActor* Post3dWindowContourGroupDataItem::setupColorFringeActorAndMapper(vtkAl
 	vtkDataSetMapper* mapper = vtkDataSetMapper::New();
 	mapper->SetInputConnection(algo);
 	mapper->SetScalarModeToUsePointFieldData();
-	mapper->SelectColorArray(m_target.c_str());
+	mapper->SelectColorArray(iRIC::toStr(m_scalarSetting.target).c_str());
 	mapper->SetLookupTable(lookup->vtkObj());
 	mapper->UseLookupTableScalarRangeOn();
 
@@ -398,20 +285,24 @@ void Post3dWindowContourGroupDataItem::updateScalarBarActorSetting()
 	if (lookup == nullptr) { return; }
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
-	a->SetTitle(iRIC::toStr(m_colorBarTitleMap.value(m_target)).c_str());
+	std::string targetStr = iRIC::toStr(m_scalarSetting.target);
+	a->SetTitle(iRIC::toStr(m_colorBarTitleMap.value(targetStr)).c_str());
 	a->SetLookupTable(lookup->vtkObj());
-	a->SetNumberOfLabels(m_scalarBarSetting.numberOfLabels);
-	m_titleTextSetting.applySetting(a->GetTitleTextProperty());
-	m_labelTextSetting.applySetting(a->GetLabelTextProperty());
-	switch (m_contour) {
+
+	auto& s = m_scalarSetting.scalarBarSetting;
+
+	a->SetNumberOfLabels(s.numberOfLabels);
+	s.titleTextSetting.applySetting(a->GetTitleTextProperty());
+	s.labelTextSetting.applySetting(a->GetLabelTextProperty());
+	switch (m_scalarSetting.contour.value()) {
 	case ContourSettingWidget::Points:
 		// do nothing
 		break;
 	case ContourSettingWidget::Isolines:
-		a->SetMaximumNumberOfColors(m_numberOfDivision);
+		a->SetMaximumNumberOfColors(m_scalarSetting.numberOfDivisions);
 		break;
 	case ContourSettingWidget::ContourFigure:
-		a->SetMaximumNumberOfColors(m_numberOfDivision);
+		a->SetMaximumNumberOfColors(m_scalarSetting.numberOfDivisions);
 		break;
 	case ContourSettingWidget::ColorFringe:
 		a->SetMaximumNumberOfColors(256);
@@ -428,7 +319,7 @@ void Post3dWindowContourGroupDataItem::setupScalarBarActor()
 	m_scalarBarWidget->SetEnabled(0);
 	m_scalarBarWidget->SetInteractor(iren);
 
-	m_scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	m_scalarSetting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	updateScalarBarActorSetting();
 }
 
@@ -456,7 +347,7 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 	}
 
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible && childVis;
-	m_scalarBarWidget->SetEnabled(m_scalarBarSetting.visible && v);
+	m_scalarBarWidget->SetEnabled(m_scalarSetting.scalarBarSetting.visible && v);
 
 	GraphicsWindowDataItem::updateVisibility(visible);
 }
@@ -464,17 +355,6 @@ void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
 void Post3dWindowContourGroupDataItem::handleStandardItemChange()
 {
 	GraphicsWindowDataItem::updateVisibility();
-}
-
-void Post3dWindowContourGroupDataItem::showSettingDialog()
-{
-	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propertyDialog(mainWindow()));
-	if (dialog == nullptr) {return;}
-	int ret = dialog->exec();
-	if (ret == QDialog::Accepted) {
-		handlePropertyDialogAccepted(dialog);
-	}
-	delete dialog;
 }
 
 QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
@@ -489,21 +369,13 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 	dialog->setZoneData(zoneData);
-	dialog->setTarget(m_target);
-	dialog->setContour(m_contour);
-	dialog->setNumberOfDivision(m_numberOfDivision);
-	dialog->setLookupTable(*(lookupTable()));
-	dialog->setFillUpper(m_fillUpper);
-	dialog->setFillLower(m_fillLower);
 
-	dialog->setFaceMap(faceMap());
-
-	// for scalar bar setting
+	m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	dialog->setColorBarTitleMap(m_colorBarTitleMap);
-	m_scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	dialog->setScalarBarSetting(m_scalarBarSetting);
-	dialog->setTitleTextSetting(m_titleTextSetting);
-	dialog->setLabelTextSetting(m_labelTextSetting);
+
+	dialog->setScalarSetting(m_scalarSetting);
+	dialog->setLookupTable(*(lookupTable()));
+	dialog->setFaceMap(faceMap());
 
 	return dialog;
 }
@@ -512,9 +384,10 @@ void Post3dWindowContourGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 {
 	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propDialog);
 	iRICUndoStack& stack = iRICUndoStack::instance();
+
 	stack.beginMacro(tr("Contour Setting"));
 	stack.push(new GraphicsWindowDrawOnUndo(this));
-	setSetting(dialog->target(), dialog->contour(), dialog->numberOfDivision(), dialog->lookupTable(), dialog->fillUpper(), dialog->fillLower(), dialog->scalarBarTitle(), dialog->scalarBarSetting(), dialog->titleTextSetting(), dialog->labelTextSetting(), false);
+	stack.push(new SetSettingCommand(dialog->scalarSetting(), dialog->lookupTable(), dialog->scalarBarTitle(), this));
 	setFaceMap(dialog->faceMap());
 	stack.push(new GraphicsWindowDrawOnRedo(this));
 	stack.endMacro();
@@ -525,7 +398,7 @@ void Post3dWindowContourGroupDataItem::handlePropertyDialogAccepted(QDialog* pro
 LookupTableContainer* Post3dWindowContourGroupDataItem::lookupTable()
 {
 	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
-	return gtItem->nodeLookupTable(m_target);
+	return gtItem->nodeLookupTable(iRIC::toStr(m_scalarSetting.target));
 }
 
 QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowContourGroupDataItem::faceMap() const
@@ -615,16 +488,9 @@ void Post3dWindowContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 
 void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	m_target = iRIC::toStr(elem.attribute("solution"));
-	m_fillUpper = static_cast<bool>(elem.attribute("fillUpper").toInt());
-	m_fillLower = static_cast<bool>(elem.attribute("fillLower").toInt());
-	m_contour = static_cast<ContourSettingWidget::Contour>(elem.attribute("contour").toInt());
+	m_scalarSetting.load(node);
 
-	m_scalarBarSetting.load(node);
-	m_scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	m_titleTextSetting.load(node);
-	m_labelTextSetting.load(node);
+	m_scalarSetting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
@@ -646,15 +512,9 @@ void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Post3dWindowContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("solution", m_target.c_str());
-	writer.writeAttribute("fillUpper", QString::number(static_cast<int>(m_fillUpper)));
-	writer.writeAttribute("fillLower", QString::number(static_cast<int>(m_fillLower)));
-	writer.writeAttribute("contour", QString::number(static_cast<int>(m_contour)));
+	m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 
-	m_scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	m_scalarBarSetting.save(writer);
-	m_titleTextSetting.save(writer);
-	m_labelTextSetting.save(writer);
+	m_scalarSetting.save(writer);
 
 	// scalar bar titles
 	QMapIterator<std::string, QString> i(m_colorBarTitleMap);

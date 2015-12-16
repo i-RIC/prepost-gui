@@ -376,7 +376,7 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 {
 	int ier;
 
-	if (m_particleData != 0) {
+	if (m_particleData != nullptr) {
 		m_particleData->Initialize();
 	} else {
 		m_particleData = vtkSmartPointer<vtkPolyData>::New();
@@ -389,6 +389,8 @@ bool PostZoneDataContainer::loadParticle(const int fn, const int currentStep)
 	if (ier != 0) {
 		// particle data does not exists.
 		// and it is not an error, because particle is optional data.
+		m_particleData = vtkSmartPointer<vtkPolyData>();
+
 		return true;
 	}
 	// get array info in order to know the number of particles.

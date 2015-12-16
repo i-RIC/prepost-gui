@@ -2,7 +2,8 @@
 #define POST2DWINDOWPARTICLESTOPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
-#include <postbase/postparticlebasicpropertydialog.h>
+
+#include <postbase/particle/postparticlebasicsetting.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
@@ -10,7 +11,6 @@
 
 class Post2dWindowParticlesScalarGroupDataItem;
 class Post2dWindowParticlesVectorGroupDataItem;
-class Post2dWindowParticlesTopSetProperty;
 
 class Post2dWindowParticlesTopDataItem : public Post2dWindowDataItem
 {
@@ -20,14 +20,14 @@ public:
 	Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowParticlesTopDataItem();
 
-	int size() const;
-	void setSize(int size);
+	Post2dWindowParticlesScalarGroupDataItem* scalarGroupDataItem() const;
+	Post2dWindowParticlesVectorGroupDataItem* vectorGroupDataItem() const;
 
 	QColor color() const;
-	void setColor(const QColor& color);
+	void setColor(const QColor& c);
 
-	Post2dWindowParticlesScalarGroupDataItem* scalarGroupDataItem() const {m_scalarGroupDataItem;}
-	Post2dWindowParticlesVectorGroupDataItem* vectorGroupDataItem() const {m_vectorGroupDataItem;}
+	int size() const;
+	void setSize(int s);
 
 	void updateActorSettings();
 	void updateZDepthRangeItemCount(ZDepthRange& range);
@@ -39,18 +39,21 @@ public:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
 	void setupActors();
 
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 
-	PostParticleBasicPropertyDialog::Setting m_setting;
-
 	Post2dWindowParticlesScalarGroupDataItem* m_scalarGroupDataItem;
 	Post2dWindowParticlesVectorGroupDataItem* m_vectorGroupDataItem;
 
+	PostParticleBasicSetting m_setting;
+
 	class SetSettingCommand;
 };
+
+#ifdef _DEBUG
+	#include "private/post2dwindowparticlestopdataitem_setsettingcommand.h"
+#endif // _DEBUG
 
 #endif // POST2DWINDOWPARTICLESTOPDATAITEM_H

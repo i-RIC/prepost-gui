@@ -5,7 +5,7 @@
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/arrowshapecontainer.h>
+#include <misc/arrowsettingcontainer.h>
 
 #include <vtkPointData.h>
 
@@ -158,19 +158,47 @@ void Post3dWindowArrowGroupSettingDialog::updateFaceMap()
 	m_faceMap.insert(ui->faceListWidget->currentItem()->text(), ui->faceSettingWidget->setting());
 }
 
+ArrowSettingContainer Post3dWindowArrowGroupSettingDialog::setting() const
+{
+	ArrowSettingContainer ret;
+
+	ret.target = ui->physicalValueComboBox->currentText();
+
+	if (ui->samplingAllRadioButton->isChecked()) {
+		ret.samplingMode = ArrowSettingContainer::SamplingMode::All;
+	} else {
+		ret.samplingMode = ArrowSettingContainer::SamplingMode::Rate;
+	}
+	ret.samplingRate = ui->sampleRateSpinBox->value();
+
+	if (ui->specificRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::Custom;
+	}	else if (ui->scalarRadioButton->isChecked()) {
+		ret.colorMode = ArrowSettingContainer::ColorMode::ByScalar;
+	}
+	ret.customColor = ui->colorEditWidget->color();
+	ret.colorTarget = ui->scalarComboBox->currentText();
+
+	if (ui->lengthAutoCheckBox->isChecked()) {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Auto;
+	} else {
+		ret.lengthMode = ArrowSettingContainer::LengthMode::Custom;
+	}
+	ret.standardValue = ui->stdValueSpinBox->value();
+	ret.legendLength = ui->legendLengthSpinBox->value();
+	ret.minimumValue = ui->minValueSpinBox->value();
+
+	ret.arrowSize = ui->arrowSizeSpinBox->value();
+	ret.lineWidth = ui->lineWidthSpinBox->value();
+
+	return ret;
+}
+
 void Post3dWindowArrowGroupSettingDialog::setSetting(const ArrowSettingContainer& s)
 {
-	ui->colorEditWidget->setColor(s.customColor());
-	switch (s.colorMode()) {
-	case ArrowSettingContainer::ColorMode::Custom:
-		ui->specificRadioButton->setChecked(true);
-		break;
-	case ArrowSettingContainer::ColorMode::ByScalar:
-		ui->scalarRadioButton->setChecked(true);
-		break;
-	}
-	ui->scalarComboBox->setCurrentText(s.colorAttribute());
-	switch (s.samplingMode()) {
+	ui->physicalValueComboBox->setCurrentText(s.target);
+
+	switch (s.samplingMode.value()) {
 	case ArrowSettingContainer::SamplingMode::Rate:
 		ui->samplingSkipRadioButton->setChecked(true);
 		break;
@@ -178,9 +206,20 @@ void Post3dWindowArrowGroupSettingDialog::setSetting(const ArrowSettingContainer
 		ui->samplingAllRadioButton->setChecked(true);
 		break;
 	}
-	ui->sampleRateSpinBox->setValue(s.samplingRate());
-	ui->physicalValueComboBox->setCurrentText(s.attribute());
-	switch (s.lengthMode()) {
+	ui->sampleRateSpinBox->setValue(s.samplingRate);
+
+	switch (s.colorMode.value()) {
+	case ArrowSettingContainer::ColorMode::Custom:
+		ui->specificRadioButton->setChecked(true);
+		break;
+	case ArrowSettingContainer::ColorMode::ByScalar:
+		ui->scalarRadioButton->setChecked(true);
+		break;
+	}
+	ui->colorEditWidget->setColor(s.customColor);
+	ui->scalarComboBox->setCurrentText(s.colorTarget);
+
+	switch (s.lengthMode.value()) {
 	case ArrowSettingContainer::LengthMode::Auto:
 		ui->lengthAutoCheckBox->setChecked(true);
 		break;
@@ -188,50 +227,10 @@ void Post3dWindowArrowGroupSettingDialog::setSetting(const ArrowSettingContainer
 		ui->lengthAutoCheckBox->setChecked(false);
 		break;
 	}
-	ui->stdValueSpinBox->setValue(s.standardValue());
-	ui->legendLengthSpinBox->setValue(s.legendLength());
-	ui->minValueSpinBox->setValue(s.minimumValue());
-}
+	ui->stdValueSpinBox->setValue(s.standardValue);
+	ui->legendLengthSpinBox->setValue(s.legendLength);
+	ui->minValueSpinBox->setValue(s.minimumValue);
 
-ArrowSettingContainer Post3dWindowArrowGroupSettingDialog::setting() const
-{
-	ArrowSettingContainer ret;
-	ret.setCustomColor(ui->colorEditWidget->color());
-	if (ui->specificRadioButton->isChecked()) {
-		ret.setColorMode(ArrowSettingContainer::ColorMode::Custom);
-	}	else if (ui->scalarRadioButton->isChecked()) {
-		ret.setColorMode(ArrowSettingContainer::ColorMode::ByScalar);
-	}
-	ret.setColorAttribute(ui->scalarComboBox->currentText());
-	if (ui->samplingAllRadioButton->isChecked()) {
-		ret.setSamplingMode(ArrowSettingContainer::SamplingMode::All);
-	} else {
-		ret.setSamplingMode(ArrowSettingContainer::SamplingMode::Rate);
-	}
-	ret.setSamplingRate(ui->sampleRateSpinBox->value());
-	ret.setAttribute(ui->physicalValueComboBox->currentText());
-	if (ui->lengthAutoCheckBox->isChecked()) {
-		ret.setLengthMode(ArrowSettingContainer::LengthMode::Auto);
-	} else {
-		ret.setLengthMode(ArrowSettingContainer::LengthMode::Custom);
-	}
-	ret.setStandardValue(ui->stdValueSpinBox->value());
-	ret.setLegendLength(ui->legendLengthSpinBox->value());
-	ret.setMinimumValue(ui->minValueSpinBox->value());
-
-	return ret;
-}
-
-void Post3dWindowArrowGroupSettingDialog::setShape(const ArrowShapeContainer& shape)
-{
-	ui->arrowSizeSpinBox->setValue(shape.arrowSize());
-	ui->lineWidthSpinBox->setValue(shape.lineWidth());
-}
-
-ArrowShapeContainer Post3dWindowArrowGroupSettingDialog::shape() const
-{
-	ArrowShapeContainer c;
-	c.setArrowSize(ui->arrowSizeSpinBox->value());
-	c.setLineWidth(ui->lineWidthSpinBox->value());
-	return c;
+	ui->arrowSizeSpinBox->setValue(s.arrowSize);
+	ui->lineWidthSpinBox->setValue(s.lineWidth);
 }

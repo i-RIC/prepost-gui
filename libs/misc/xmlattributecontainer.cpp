@@ -45,5 +45,5 @@ QString XmlAttributeContainer::attName(const QString& name) const
 	return fullName;
 }
 
-void XmlAttributeContainer::copyValue(const XmlAttributeContainer& c)
+void XmlAttributeContainer::copyValue(const XmlAttributeContainer&)
 {}

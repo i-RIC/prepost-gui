@@ -1,21 +1,21 @@
 #include "post2dwindowparticlesvectordataitem.h"
+#include "post2dwindowzonedataitem.h"
+
+#include <guicore/datamodel/vtkgraphicsview.h>
+
+#include <QMenu>
+#include <QMouseEvent>
 
 Post2dWindowParticlesVectorDataItem::Post2dWindowParticlesVectorDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
 {}
 
-void Post2dWindowParticlesVectorDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
-
-void Post2dWindowParticlesVectorDataItem::informSelection(VTKGraphicsView* v)
+void Post2dWindowParticlesVectorDataItem::informSelection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent()->parent())->initParticleBrowser();
 }
 
-void Post2dWindowParticlesVectorDataItem::informDeselection(VTKGraphicsView* v)
+void Post2dWindowParticlesVectorDataItem::informDeselection(VTKGraphicsView*)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent()->parent())->clearParticleBrowser();
 }

@@ -140,7 +140,14 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post3dwindowsurfacedataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
-           datamodel/post3dwindowzonedataitem.h
+           datamodel/post3dwindowzonedataitem.h \
+           datamodel/private/post3dwindowarrowgroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.h \
+           datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.h \
+           datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.h \
+           datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.h
 FORMS += datamodel/post3dwindowarrowgroupsettingdialog.ui \
          datamodel/post3dwindowcontourgroupsettingdialog.ui \
          datamodel/post3dwindowfacesettingwidget.ui \
@@ -182,7 +189,14 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \
            datamodel/post3dwindowsurfacegroupdataitem.cpp \
-           datamodel/post3dwindowzonedataitem.cpp
+           datamodel/post3dwindowzonedataitem.cpp \
+           datamodel/private/post3dwindowarrowgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowarrowgroupdataitem_updateonredocommand.cpp \
+           datamodel/private/post3dwindowarrowgroupdataitem_updateonundocommand.cpp \
+           datamodel/private/post3dwindowcontourgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp
 RESOURCES += post3d.qrc
 TRANSLATIONS += languages/iricPost3d_es_ES.ts \
                 languages/iricPost3d_fr_FR.ts \

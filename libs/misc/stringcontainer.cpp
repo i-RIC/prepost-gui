@@ -16,9 +16,7 @@ StringContainer::StringContainer(const QString& name, const QString& defaultVal)
 
 StringContainer::StringContainer(const StringContainer& c) :
 	SimpleValueContainerT<QString> {c}
-{
-	m_stdString = iRIC::toStr(m_value);
-}
+{}
 
 StringContainer::~StringContainer()
 {}
@@ -37,13 +35,7 @@ void StringContainer::save(QXmlStreamWriter& writer) const
 StringContainer& StringContainer::operator=(const QString& val)
 {
 	SimpleValueContainerT<QString>::operator =(val);
-	m_stdString = iRIC::toStr(val);
 	return *this;
-}
-
-StringContainer& StringContainer::operator=(const std::string& val)
-{
-	return operator=(QString(val.c_str()));
 }
 
 bool StringContainer::operator!=(const QString& val)
@@ -53,12 +45,7 @@ bool StringContainer::operator!=(const QString& val)
 
 StringContainer::operator std::string() const
 {
-	return m_stdString;
-}
-
-StringContainer::operator const char*() const
-{
-	return m_stdString.c_str();
+	return iRIC::toStr(m_value);
 }
 
 void StringContainer::copyValue(const XmlAttributeContainer& c)

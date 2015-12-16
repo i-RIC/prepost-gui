@@ -7,6 +7,7 @@
 #include "vtkgraphicsview.h"
 
 #include <misc/iricundostack.h>
+#include <misc/qttool.h>
 #include <memory>
 
 #include <QAction>
@@ -86,11 +87,7 @@ void GraphicsWindowDataItem::setupStandardItem(CheckFlag cflag, ReorderFlag rfla
 	if (m_standardItem == nullptr) {return;}
 	setIsCommandExecuting(true);
 	m_standardItem->setCheckable(true);
-	if (cflag == Checked) {
-		m_standardItem->setCheckState(Qt::Checked);
-	} else {
-		m_standardItem->setCheckState(Qt::Unchecked);
-	}
+	QtTool::checkItem(m_standardItem, cflag == Checked);
 	m_isReorderable = (rflag == Reorderable);
 	m_isDeletable = (dflag == Deletable);
 
@@ -111,11 +108,8 @@ bool GraphicsWindowDataItem::isEnabled() const
 void GraphicsWindowDataItem::setEnabled(bool enabled)
 {
 	if (m_standardItem == nullptr) {return;}
-	if (enabled) {
-		m_standardItem->setCheckState(Qt::Checked);
-	} else {
-		m_standardItem->setCheckState(Qt::Unchecked);
-	}
+
+	QtTool::checkItem(m_standardItem, enabled);
 }
 
 void GraphicsWindowDataItem::unregisterChild(GraphicsWindowDataItem* child)

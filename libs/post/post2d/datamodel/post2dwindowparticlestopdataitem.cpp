@@ -2,14 +2,17 @@
 #include "post2dwindowparticlesscalargroupdataitem.h"
 #include "post2dwindowparticlesvectorgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindowparticlestopdataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
-#include <postbase/postparticlebasicpropertydialog.h>
+#include <postbase/particle/postparticlebasicsettingdialog.h>
 
+#include <QDomNode>
 #include <QSettings>
+#include <QXmlStreamWriter>
 
 #include <vtkPointData.h>
 #include <vtkProperty.h>
@@ -48,8 +51,7 @@ Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowD
 	if (vectorExist) {
 		m_vectorGroupDataItem = new Post2dWindowParticlesVectorGroupDataItem(this);
 		m_childItems.append(m_vectorGroupDataItem);
-	}
-	else {
+	} else {
 		m_vectorGroupDataItem = nullptr;
 	}
 
@@ -60,22 +62,19 @@ Post2dWindowParticlesTopDataItem::~Post2dWindowParticlesTopDataItem()
 {
 	if (m_actor == nullptr) {return;}
 	renderer()->RemoveActor(m_actor);
-	if (m_scalarGroupDataItem != nullptr) {
-		delete m_scalarGroupDataItem;
-	}
-	if (m_vectorGroupDataItem != nullptr) {
-		delete m_vectorGroupDataItem;
-	}
+
+//	delete m_scalarGroupDataItem;
+//	delete m_vectorGroupDataItem;
 }
 
-int Post2dWindowParticlesTopDataItem::size() const
+Post2dWindowParticlesScalarGroupDataItem* Post2dWindowParticlesTopDataItem::scalarGroupDataItem() const
 {
-	return m_setting.size;
+	return m_scalarGroupDataItem;
 }
 
-void Post2dWindowParticlesTopDataItem::setSize(int size)
+Post2dWindowParticlesVectorGroupDataItem* Post2dWindowParticlesTopDataItem::vectorGroupDataItem() const
 {
-	m_setting.size = size;
+	return m_vectorGroupDataItem;
 }
 
 QColor Post2dWindowParticlesTopDataItem::color() const
@@ -83,9 +82,19 @@ QColor Post2dWindowParticlesTopDataItem::color() const
 	return m_setting.color;
 }
 
-void Post2dWindowParticlesTopDataItem::setColor(const QColor& color)
+void Post2dWindowParticlesTopDataItem::setColor(const QColor& c)
 {
-	m_setting.color = color;
+	m_setting.color = c;
+}
+
+int Post2dWindowParticlesTopDataItem::size() const
+{
+	return m_setting.size;
+}
+
+void Post2dWindowParticlesTopDataItem::setSize(int s)
+{
+	m_setting.size = s;
 }
 
 void Post2dWindowParticlesTopDataItem::updateActorSettings()
@@ -96,7 +105,7 @@ void Post2dWindowParticlesTopDataItem::updateActorSettings()
 	m_actorCollection->RemoveAllItems();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == 0 || cont->particleData() == 0) {return;}
+	if (cont == nullptr || cont->particleData() == nullptr) {return;}
 
 	m_actor->GetProperty()->SetPointSize(m_setting.size);
 	m_actor->GetProperty()->SetColor(m_setting.color);
@@ -178,37 +187,11 @@ QDialog* Post2dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 		return m_scalarGroupDataItem->propertyDialog(parent);
 	}
 
-	PostParticleBasicPropertyDialog* dialog = new PostParticleBasicPropertyDialog(parent);
+	PostParticleBasicSettingDialog* dialog = new PostParticleBasicSettingDialog(parent);
 	dialog->setSetting(m_setting);
 
 	return dialog;
 }
-
-class Post2dWindowParticlesTopDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const PostParticleBasicPropertyDialog::Setting s, Post2dWindowParticlesTopDataItem* item) :
-		QUndoCommand {Post2dWindowParticlesTopDataItem::tr("Edit Particle Display Setting")},
-		m_newSetting {s},
-		m_oldSetting {item->m_setting},
-		m_item {item}
-	{}
-
-	void redo() {
-		m_item->m_setting = m_newSetting;
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->m_setting = m_oldSetting;
-		m_item->updateActorSettings();
-	}
-
-private:
-	PostParticleBasicPropertyDialog::Setting m_newSetting;
-	PostParticleBasicPropertyDialog::Setting m_oldSetting;
-
-	Post2dWindowParticlesTopDataItem* m_item;
-};
 
 void Post2dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
@@ -216,6 +199,6 @@ void Post2dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* pro
 		m_scalarGroupDataItem->handlePropertyDialogAccepted(propDialog);
 		return;
 	}
-	PostParticleBasicPropertyDialog* dialog = dynamic_cast<PostParticleBasicPropertyDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, false);
+	PostParticleBasicSettingDialog* dialog = dynamic_cast<PostParticleBasicSettingDialog*>(propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this);
 }

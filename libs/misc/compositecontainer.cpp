@@ -6,6 +6,12 @@ CompositeContainer::~CompositeContainer()
 	delete m_impl;
 }
 
+XmlAttributeContainer& CompositeContainer::operator=(const XmlAttributeContainer& c)
+{
+	copyValue(dynamic_cast<const CompositeContainer&> (c));
+	return *this;
+}
+
 void CompositeContainer::load(const QDomNode& node)
 {
 	for (XmlAttributeContainer* c : m_impl->m_containers) {
@@ -45,4 +51,9 @@ void CompositeContainer::copyValue(const XmlAttributeContainer& c)
 		XmlAttributeContainer* v2 = c2.m_impl->m_containers.at(i);
 		*(v1) = *(v2);
 	}
+}
+
+void CompositeContainer::addContainer(XmlAttributeContainer* c)
+{
+	m_impl->m_containers.push_back(c);
 }

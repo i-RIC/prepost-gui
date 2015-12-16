@@ -4,6 +4,22 @@
 #include "scalarbarwidget.h"
 #include "vtktextpropertysettingdialog.h"
 
+namespace {
+
+void editVtkTextPropertySetting(vtkTextPropertySettingContainer* c, QWidget* parent)
+{
+	vtkTextPropertySettingDialog dialog(parent);
+	dialog.setSetting(*c);
+
+	dialog.disableSize();
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	*c = dialog.setting();
+}
+
+} // namespace
+
 ScalarBarWidget::ScalarBarWidget(QWidget* parent) :
 	QWidget(parent),
 	ui(new Ui::ScalarBarWidget)
@@ -18,8 +34,30 @@ ScalarBarWidget::~ScalarBarWidget()
 	delete ui;
 }
 
+ScalarBarSetting ScalarBarWidget::setting() const
+{
+	ScalarBarSetting ret = m_setting;
+
+	ret.visible = ui->displayCheckBox->isChecked();
+	if (ui->horizontalRadioButton->isChecked()) {
+		ret.orientation = ScalarBarSetting::Orientation::Horizontal;
+	} else if (ui->verticalRadioButton->isChecked()) {
+		ret.orientation = ScalarBarSetting::Orientation::Vertical;
+	}
+	ret.numberOfLabels = ui->numberSpinBox->value();
+	ret.width = ui->widthSpinBox->value();
+	ret.height = ui->heightSpinBox->value();
+	ret.positionX = ui->positionXSpinBox->value();
+	ret.positionY = ui->positionYSpinBox->value();
+	ret.labelFormat = ui->labelFormatEdit->text();
+
+	return ret;
+}
+
 void ScalarBarWidget::setSetting(const ScalarBarSetting& setting)
 {
+	m_setting = setting;
+
 	ui->displayCheckBox->setChecked(setting.visible);
 	if (setting.orientation == ScalarBarSetting::Orientation::Horizontal) {
 		ui->horizontalRadioButton->setChecked(true);
@@ -34,60 +72,22 @@ void ScalarBarWidget::setSetting(const ScalarBarSetting& setting)
 	ui->labelFormatEdit->setText(setting.labelFormat);
 }
 
-void ScalarBarWidget::setTitle(const QString& title)
-{
-	ui->titleEdit->setText(title.trimmed());
-}
-
-const ScalarBarSetting ScalarBarWidget::setting() const
-{
-	ScalarBarSetting ret;
-	ret.visible = ui->displayCheckBox->isChecked();
-	if (ui->horizontalRadioButton->isChecked()) {
-		ret.orientation = ScalarBarSetting::Orientation::Horizontal;
-	} else if (ui->verticalRadioButton->isChecked()) {
-		ret.orientation = ScalarBarSetting::Orientation::Vertical;
-	}
-	ret.numberOfLabels = ui->numberSpinBox->value();
-	ret.width = ui->widthSpinBox->value();
-	ret.height = ui->heightSpinBox->value();
-	ret.positionX = ui->positionXSpinBox->value();
-	ret.positionY = ui->positionYSpinBox->value();
-	ret.labelFormat = ui->labelFormatEdit->text();
-	return ret;
-}
-
 QString ScalarBarWidget::title() const
 {
 	return ui->titleEdit->text().trimmed();
 }
 
-void ScalarBarWidget::setTitleTextSetting(const vtkTextPropertySettingContainer& cont)
+void ScalarBarWidget::setTitle(const QString& title)
 {
-	m_titleTextSetting = cont;
-}
-
-void ScalarBarWidget::setLabelTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	m_labelTextSetting = cont;
+	ui->titleEdit->setText(title.trimmed());
 }
 
 void ScalarBarWidget::editTitleTextSetting()
 {
-	vtkTextPropertySettingDialog dialog(this);
-	dialog.setSetting(m_titleTextSetting);
-	dialog.disableSize();
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return;}
-	m_titleTextSetting = dialog.setting();
+	editVtkTextPropertySetting(&(m_setting.titleTextSetting), this);
 }
 
 void ScalarBarWidget::editLabelTextSetting()
 {
-	vtkTextPropertySettingDialog dialog(this);
-	dialog.setSetting(m_labelTextSetting);
-	dialog.disableSize();
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return;}
-	m_labelTextSetting = dialog.setting();
+	editVtkTextPropertySetting(&(m_setting.labelTextSetting), this);
 }

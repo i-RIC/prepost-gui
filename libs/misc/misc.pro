@@ -13,7 +13,6 @@ include( ../../paths.pri )
 
 # Input
 HEADERS += arrowsettingcontainer.h \
-           arrowshapecontainer.h \
            boolcontainer.h \
            colorcontainer.h \
            compositecontainer.h \
@@ -37,6 +36,7 @@ HEADERS += arrowsettingcontainer.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
            qpointfcontainer.h \
+           qttool.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
            stringcontainer.h \
@@ -60,7 +60,6 @@ HEADERS += arrowsettingcontainer.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui slowmotionspeededitdialog.ui
 SOURCES += arrowsettingcontainer.cpp \
-           arrowshapecontainer.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
@@ -78,6 +77,7 @@ SOURCES += arrowsettingcontainer.cpp \
            mathsupport.cpp \
            opacitycontainer.cpp \
            qpointfcontainer.cpp \
+           qttool.cpp \
            slowmotionspeededitdialog.cpp \
            stringcontainer.cpp \
            stringtool.cpp \

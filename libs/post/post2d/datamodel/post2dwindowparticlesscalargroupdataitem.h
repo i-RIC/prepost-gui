@@ -3,9 +3,8 @@
 
 #include "../post2dwindowdataitem.h"
 
+#include <guibase/scalarsettingcontainer.h>
 #include <guicore/misc/targeted/targeteditemi.h>
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
 #include <QMenu>
@@ -18,8 +17,6 @@
 #include <vtkScalarBarWidget.h>
 
 class NamedGraphicWindowDataItem;
-class Post2dWindowParticlesScalarDataItem;
-class Post2dWindowParticlesSelectSolution;
 
 class Post2dWindowParticlesScalarGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -48,32 +45,25 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
-	void updateVisibility(bool visible);
+	void updateVisibility(bool visible) override;
 
 private:
 	void setupActors();
 	void updateActorSettings();
 	void setupScalarBarSetting();
 
-	void doLoadFromProjectMainFile(const QDomNode& node);
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer);
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	std::string m_target;
-
-	// for scalar bar
+	ScalarSettingContainer m_setting;
 	QMap<std::string, QString> m_scalarbarTitleMap;
-	ScalarBarSetting m_scalarbarSetting;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 
 	vtkSmartPointer<vtkActor> m_actor;
 	vtkSmartPointer<vtkPolyDataMapper> m_mapper;
 
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 
-public:
-	friend class Post2dWindowParticlesSelectSolution;
-	friend class Post2dWindowParticlesScalarSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWPARTICLESSCALARGROUPDATAITEM_H

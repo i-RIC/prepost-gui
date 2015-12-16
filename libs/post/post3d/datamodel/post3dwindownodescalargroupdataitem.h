@@ -4,6 +4,7 @@
 #include "../post3dwindowdataitem.h"
 #include <guibase/contoursettingwidget.h>
 #include <guibase/structuredgridregion.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 
 #include <QMap>
 #include <vtkPolyData.h>
@@ -11,7 +12,8 @@
 
 #include <QColor>
 
-class Post3dWindowNodeScalarDataItem;
+class NamedGraphicWindowDataItem;
+
 class vtkLODActor;
 class vtkActor;
 class vtkDataSetMapper;
@@ -19,9 +21,8 @@ class vtkPolyDataMapper;
 class vtkContourFilter;
 
 class Post3dWindowIsosurfaceSetProperty;
-class Post3dWindowIsosurfaceSelectSolution;
 
-class Post3dWindowNodeScalarGroupDataItem : public Post3dWindowDataItem
+class Post3dWindowNodeScalarGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -29,11 +30,10 @@ private:
 	static const int DEFAULT_NUMOFDIV = 15;
 
 public:
-	/// Constructor
 	Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeScalarGroupDataItem();
+
 	void updateActorSettings();
-	const std::string& currentCondition() const {return m_currentSolution;}
 	void informDataChange(const QString& name);
 	void setupActors();
 	void updateZDepthRangeItemCount() override;
@@ -41,10 +41,12 @@ public:
 	void update();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setCurrentSolution(const std::string& currentSol);
+
+	std::string target() const override;
+	void setTarget(const std::string& target);
 
 public slots:
-	void exclusivelyCheck(Post3dWindowNodeScalarDataItem* item);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -58,7 +60,7 @@ private:
 	void setDefaultValues();
 	void setupIsosurfaceSetting();
 
-	std::string m_currentSolution;
+	std::string m_target;
 	bool m_fullRange;
 	StructuredGridRegion::Range3d m_range;
 	double m_isoValue;

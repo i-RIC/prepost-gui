@@ -1,6 +1,7 @@
 #include "post2dwindowarrowunstructuredsettingdialog.h"
 #include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
@@ -16,25 +17,6 @@
 #include <vtkStructuredGrid.h>
 #include <vtkVertex.h>
 
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::Setting() :
-	CompositeContainer ({&samplingMode, &samplingRate, &samplingNumber}),
-	samplingMode {"samplingMode", smAll},
-	samplingRate {"samplingRate", 2},
-	samplingNumber {"samplingNumber", 100}
-{}
-
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::Setting(const Setting& s) :
-	Setting()
-{
-	CompositeContainer::copyValue(s);
-}
-
-Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting::operator=(const Setting& s)
-{
-	CompositeContainer::copyValue(s);
-	return *this;
-}
-
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowNodeVectorArrowGroupDataItem(p)
 {
@@ -44,14 +26,10 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArro
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem()
 {}
 
-void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::informGridUpdate()
-{
-	updateActorSettings();
-}
-
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 {
-	auto& s = m_arrowSetting;
+	auto& s = m_setting;
+
 	m_activePoints->Initialize();
 	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
 	outPoints->SetDataTypeToDouble();
@@ -84,17 +62,17 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(m_setting.target));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(s.target).c_str()));
 	if (vectorArray == nullptr) {
-		m_setting.target = "";
+		s.target = "";
 		return;
 	}
 	QSet<vtkIdType> pointIds;
-	double min = m_setting.minimumValue;
+	double min = s.minimumValue;
 	double minlimitsqr = min * min;
 	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i) {
 		bool active = true;
-		if (m_setting.regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
+		if (s.regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
 			active = false;
 		}
 		double val = 0;
@@ -127,6 +105,11 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::updateActivePoints()
 	m_activePoints->Modified();
 }
 
+Post2dWindowNodeVectorArrowSetting& Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::setting()
+{
+	return m_setting;
+}
+
 QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QWidget* p)
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
@@ -141,58 +124,25 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 	if (! cont->IBCExists()) {
 		dialog->disableActive();
 	}
-	dialog->setSettings(m_setting, m_unsSetting);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
 
-class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss, Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* item) :
-		QUndoCommand {QObject::tr("Update Arrow Setting")},
-		m_newSetting {s},
-		m_newUnsSetting {unss},
-		m_oldSetting {item->m_setting},
-		m_oldUnsSetting {item->m_unsSetting},
-		m_item {item}
-	{}
-	void redo() override {
-		m_item->m_setting = m_newSetting;
-		m_item->m_unsSetting = m_newUnsSetting;
-		m_item->setTarget(m_newSetting.target);
-	}
-	void undo() override {
-		m_item->m_setting = m_oldSetting;
-		m_item->m_unsSetting = m_oldUnsSetting;
-		m_item->setTarget(m_oldSetting.target);
-	}
-
-private:
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_newUnsSetting;
-
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_oldSetting;
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_oldUnsSetting;
-
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem* m_item;
-};
-
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	Post2dWindowArrowUnstructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowUnstructuredSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->unsSetting(), this), this, true);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
-	m_unsSetting.load(node);
-	updateActorSettings();
+	m_setting.load(node);
+	updateScaleFactor();
+	setTarget(m_setting.target);
 }
 
 void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(writer);
-	m_unsSetting.save(writer);
+	m_setting.save(writer);
 }

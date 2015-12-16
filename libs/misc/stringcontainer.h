@@ -28,15 +28,12 @@ public:
 	/// @name Operators
 	//@{
 	StringContainer& operator=(const QString& val);
-	StringContainer& operator=(const std::string& val);
 	bool operator!=(const QString& val);
 	operator std::string() const;
-	operator const char*() const;
 	//@}
 
 private:
 	void copyValue(const XmlAttributeContainer& c) override;
-	std::string m_stdString;
 };
 
 #endif // STRINGCONTAINER_H

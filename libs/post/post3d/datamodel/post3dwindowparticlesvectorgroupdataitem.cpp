@@ -3,18 +3,21 @@
 #include "post3dwindowparticlesvectorgroupdataitem.h"
 #include "post3dwindowparticlesvectordataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.h"
 
+#include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <postbase/postparticlevectorpropertydialog.h>
+#include <postbase/particle/postparticlevectorpropertydialog.h>
+#include <guibase/vtkdatasetattributestool.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 
 #include <QFile>
 #include <QMenu>
 #include <QMouseEvent>
-#include <QSettings>
 #include <QStandardItem>
 #include <QTextStream>
 #include <QUndoCommand>
@@ -40,35 +43,17 @@
 
 #include <cmath>
 
-Post3dWindowParticlesVectorGroupDataItem::Post3dWindowParticlesVectorGroupDataItem(Post3dWindowDataItem* p)
-	: Post3dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.png"), p)
+Post3dWindowParticlesVectorGroupDataItem::Post3dWindowParticlesVectorGroupDataItem(Post3dWindowDataItem* p) :
+	Post3dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.png"), p),
+	m_scaleFactor {1}
 {
-	m_isDeletable = false;
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_oldCameraScale = 1;
-	QSettings setting;
-	m_scaleFactor = setting.value("graphics/vectorfactor", 1).value<double>();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	vtkPointData* pd = cont->particleData()->GetPointData();
-	int number = pd->GetNumberOfArrays();
-	for (int i = 0; i < number; i++) {
-		vtkAbstractArray* tmparray = pd->GetArray(i);
-		if (tmparray == nullptr) {
-			continue;
-		}
-		if (tmparray->GetNumberOfComponents() == 1) {
-			// scalar attribute.
-			continue;
-		}
-		QString name = pd->GetArray(i)->GetName();
-		Post3dWindowParticlesVectorDataItem* item = new Post3dWindowParticlesVectorDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->particleData()->GetPointData())) {
+		auto item = new Post3dWindowParticlesVectorDataItem(name, gt->solutionCaption(name), this);
+		m_childItems.push_back(item);
 	}
 	setupActors();
 }
@@ -78,51 +63,20 @@ Post3dWindowParticlesVectorGroupDataItem::~Post3dWindowParticlesVectorGroupDataI
 	renderer()->RemoveActor(m_arrowActor);
 }
 
-class Post3dWindowParticlesVectorSelectAttribute : public QUndoCommand
-{
-public:
-	Post3dWindowParticlesVectorSelectAttribute(const QString& newAtt, Post3dWindowParticlesVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Vector Attribute Select Change")) {
-		m_newAttribute = newAtt;
-		m_oldAttribute = item->m_arrowSetting.attribute();
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_arrowSetting.setAttribute(m_oldAttribute);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_arrowSetting.setAttribute(m_newAttribute);
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	QString m_oldAttribute;
-	QString m_newAttribute;
-
-	Post3dWindowParticlesVectorGroupDataItem* m_item;
-};
-
-void Post3dWindowParticlesVectorGroupDataItem::exclusivelyCheck(Post3dWindowParticlesVectorDataItem* item)
+void Post3dWindowParticlesVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	iRICUndoStack& stack = iRICUndoStack::instance();
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		stack.push(new Post3dWindowParticlesVectorSelectAttribute("", this));
-	} else {
-		stack.push(new Post3dWindowParticlesVectorSelectAttribute(item->name(), this));
-	}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Vector Attribute Select Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::setupActors()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->particleData() == nullptr) {return;}
+
+	updateScaleFactor();
 
 	m_arrowActor = vtkSmartPointer<vtkActor>::New();
 	renderer()->AddActor(m_arrowActor);
@@ -198,14 +152,14 @@ void Post3dWindowParticlesVectorGroupDataItem::setupActors()
 
 void Post3dWindowParticlesVectorGroupDataItem::calculateStandardValue()
 {
-	if (m_arrowSetting.lengthMode() == ArrowSettingContainer::LengthMode::Custom) {return;}
+	if (m_setting.lengthMode == ArrowSettingContainer::LengthMode::Custom) {return;}
 	QVector<double> lenVec;
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->particleData() == nullptr) {return;}
 	vtkPointSet* ps = cont->particleData();
-	if (m_arrowSetting.attribute() == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
-	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_arrowSetting.attribute()).c_str());
+	vtkDataArray* da = pd->GetArray(iRIC::toStr(m_setting.target).c_str());
 	for (vtkIdType i = 0; i < da->GetNumberOfTuples(); ++i) {
 		double* v = da->GetTuple3(i);
 		QVector2D vec(*(v), *(v + 1));
@@ -238,13 +192,26 @@ void Post3dWindowParticlesVectorGroupDataItem::calculateStandardValue()
 		average *= p2;
 	}
 	// now average is calculated.
-	m_arrowSetting.setStandardValue(average);
+	m_setting.standardValue = average;
 	// minimum value is always 0.001 * standard value when auto mode.
-	m_arrowSetting.setMinimumValue(average * 0.001);
+	m_setting.minimumValue = average * 0.001;
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::informGridUpdate()
 {
+	updateActorSettings();
+}
+
+
+std::string Post3dWindowParticlesVectorGroupDataItem::target() const
+{
+	return m_setting.target;
+
+}
+void Post3dWindowParticlesVectorGroupDataItem::setTarget(const std::string& target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.target = target.c_str();
 	updateActorSettings();
 }
 
@@ -260,10 +227,10 @@ void Post3dWindowParticlesVectorGroupDataItem::updateActorSettings()
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->particleData() == nullptr) {return;}
 	vtkPointSet* ps = cont->particleData();
-	if (m_arrowSetting.attribute() == "") {return;}
+	if (m_setting.target == "") {return;}
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
-	pd->SetActiveVectors(iRIC::toStr(m_arrowSetting.attribute()).c_str());
+	pd->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
 	calculateStandardValue();
 	updateMaskSetting();
@@ -280,17 +247,16 @@ void Post3dWindowParticlesVectorGroupDataItem::updateActorSettings()
 void Post3dWindowParticlesVectorGroupDataItem::updateColorSetting()
 {
 	Post3dWindowGridTypeDataItem* typedi = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	const QColor& cColor = m_arrowSetting.customColor();
-	switch (m_arrowSetting.colorMode()) {
+	switch (m_setting.colorMode.value()) {
 	case ArrowSettingContainer::ColorMode::Custom:
 		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(cColor.redF(), cColor.greenF(), cColor.blueF());
+		m_arrowActor->GetProperty()->SetColor(m_setting.customColor);
 		break;
 	case ArrowSettingContainer::ColorMode::ByScalar:
 		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = typedi->particleLookupTable(iRIC::toStr(m_arrowSetting.colorAttribute()).c_str());
+		LookupTableContainer* stc = typedi->particleLookupTable(iRIC::toStr(m_setting.colorTarget).c_str());
 		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_arrowSetting.colorAttribute()).c_str());
+		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.colorTarget).c_str());
 		m_arrowMapper->SetLookupTable(stc->vtkObj());
 		m_arrowMapper->UseLookupTableScalarRangeOn();
 		break;
@@ -301,19 +267,19 @@ void Post3dWindowParticlesVectorGroupDataItem::updateMaskSetting()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	vtkPolyData* data = cont->particleData();
-	switch (m_arrowSetting.samplingMode()) {
+	switch (m_setting.samplingMode.value()) {
 	case ArrowSettingContainer::SamplingMode::All:
 		m_arrowMask->SetOnRatio(1);
 		m_arrowMask->RandomModeOff();
 		m_arrowMask->SetMaximumNumberOfPoints(data->GetNumberOfPoints());
 		break;
 	case ArrowSettingContainer::SamplingMode::Rate:
-		m_arrowMask->SetOnRatio(m_arrowSetting.samplingRate());
+		m_arrowMask->SetOnRatio(m_setting.samplingRate);
 		m_arrowMask->SetMaximumNumberOfPoints(data->GetNumberOfPoints());
 		break;
 	case ArrowSettingContainer::SamplingMode::Number:
 		m_arrowMask->RandomModeOn();
-		m_arrowMask->SetMaximumNumberOfPoints(m_arrowSetting.samplingNumber());
+		m_arrowMask->SetMaximumNumberOfPoints(m_setting.samplingNumber);
 		break;
 	}
 }
@@ -323,40 +289,24 @@ void Post3dWindowParticlesVectorGroupDataItem::update()
 	informGridUpdate();
 }
 
-void Post3dWindowParticlesVectorGroupDataItem::setAttribute(const QString& attribute)
-{
-	Post3dWindowParticlesVectorDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post3dWindowParticlesVectorDataItem* tmpItem = dynamic_cast<Post3dWindowParticlesVectorDataItem*>(*it);
-		if (tmpItem->name() == attribute) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
-	m_arrowSetting.setAttribute(attribute);
-}
-
 void Post3dWindowParticlesVectorGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
 	double scale = cam->GetParallelScale();
-	if (scale != m_oldCameraScale) {
+	if (scale != m_setting.oldCameraScale) {
 		updatePolyData();
 		updateLegendData();
 	}
-	m_oldCameraScale = scale;
+	m_setting.oldCameraScale = scale;
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::updatePolyData()
 {
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	if (cont == nullptr || cont->particleData() == nullptr) {return;}
-	if (m_arrowSetting.attribute() == "") {return;}
+	if (m_setting.target == "") {return;}
 	updateScaleFactor();
-	double height = dataModel()->graphicsView()->stdDistance(m_arrowShape.arrowSize());
+	double height = dataModel()->graphicsView()->stdDistance(m_setting.arrowSize);
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
 	m_warpVector->SetScaleFactor(m_scaleFactor);
 	m_arrowSource->SetHeight(height);
@@ -365,21 +315,21 @@ void Post3dWindowParticlesVectorGroupDataItem::updatePolyData()
 
 	m_appendPolyData->Update();
 	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
-	m_arrowActor->GetProperty()->SetLineWidth(m_arrowShape.lineWidth());
-	m_baseArrowActor->GetProperty()->SetLineWidth(m_arrowShape.lineWidth());
+	m_arrowActor->GetProperty()->SetLineWidth(m_setting.lineWidth);
+	m_baseArrowActor->GetProperty()->SetLineWidth(m_setting.lineWidth);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::updateScaleFactor()
 {
-	const auto& s = m_arrowSetting;
+	const auto& s = m_setting;
 	double a = 1.0 / dataModel()->graphicsView()->stdDistance(1.0);
-	m_scaleFactor = s.legendLength() / (a * s.standardValue());
+	m_scaleFactor = s.legendLength / (a * s.standardValue);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::updateLegendData()
 {
 	double vectorOffset = 18;
-	double arrowLen = m_arrowSetting.legendLength();
+	double arrowLen = m_setting.legendLength;
 	m_baseArrowPolyData->Initialize();
 	m_baseArrowPolyData->Allocate(3);
 
@@ -403,15 +353,15 @@ void Post3dWindowParticlesVectorGroupDataItem::updateLegendData()
 	tri->GetPointIds()->SetId(2, 3);
 	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 
-	const auto& s = m_arrowSetting;
-	QString lenStr = QString("%1\n\n%2").arg(s.attribute()).arg(s.standardValue());
+	const auto& s = m_setting;
+	QString lenStr = QString("%1\n\n%2").arg(s.target).arg(s.standardValue);
 	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
 
-	if (s.colorMode() == ArrowSettingContainer::ColorMode::Custom) {
+	if (s.colorMode == ArrowSettingContainer::ColorMode::Custom) {
 		// specified color.
-		const QColor& cColor = s.customColor();
+		const QColor& cColor = s.customColor;
 		m_baseArrowActor->GetProperty()->SetColor(cColor.red() / 255., cColor.green() / 255., cColor.blue() / 255.);
-	} else if (s.colorMode() == ArrowSettingContainer::ColorMode::ByScalar) {
+	} else if (s.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
 		// always black.
 		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	}
@@ -420,23 +370,15 @@ void Post3dWindowParticlesVectorGroupDataItem::updateLegendData()
 void Post3dWindowParticlesVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 
-	QDomElement elem = node.toElement();
-
-	m_arrowSetting.load(node);
-	m_arrowShape.load(node);
-	m_oldCameraScale = elem.attribute("oldCameraScale").toDouble();
+	m_setting.load(node);
 	updateScaleFactor();
 
-	setAttribute(m_arrowSetting.attribute());
-
-	updateActorSettings();
+	setTarget(m_setting.target);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_arrowSetting.save(writer);
-	m_arrowShape.save(writer);
-	writer.writeAttribute("oldCameraScale", QString::number(m_oldCameraScale));
+	m_setting.save(writer);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -460,58 +402,15 @@ QDialog* Post3dWindowParticlesVectorGroupDataItem::propertyDialog(QWidget* p)
 	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	dialog->setZoneData(cont);
 
-	dialog->setArrowSetting(m_arrowSetting);
-	dialog->setArrowShape(m_arrowShape);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
 
-
-class Post3dWindowParticlesVectorSetProperty : public QUndoCommand
-{
-public:
-	Post3dWindowParticlesVectorSetProperty(const ArrowSettingContainer& newSetting, const ArrowShapeContainer& newShape, Post3dWindowParticlesVectorGroupDataItem* item)
-		: QUndoCommand(QObject::tr("Update Vector Setting")) {
-
-		m_newSetting = newSetting;
-		m_newShape = newShape;
-
-		m_oldSetting = item->m_arrowSetting;
-		m_oldShape = item->m_arrowShape;
-		m_item = item;
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_arrowSetting = m_oldSetting;
-		m_item->m_arrowShape = m_oldShape;
-		m_item->setAttribute(m_item->m_arrowSetting.attribute());
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-		m_item->m_arrowSetting = m_newSetting;
-		m_item->m_arrowShape = m_newShape;
-		m_item->setAttribute(m_item->m_arrowSetting.attribute());
-		m_item->updateActorSettings();
-		m_item->renderGraphicsView();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	ArrowSettingContainer m_oldSetting;
-	ArrowShapeContainer m_oldShape;
-
-	ArrowSettingContainer m_newSetting;
-	ArrowShapeContainer m_newShape;
-
-	Post3dWindowParticlesVectorGroupDataItem* m_item;
-};
-
 void Post3dWindowParticlesVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	PostParticleVectorPropertyDialog* dialog = dynamic_cast<PostParticleVectorPropertyDialog*> (propDialog);
-	iRICUndoStack::instance().push(new Post3dWindowParticlesVectorSetProperty(dialog->arrowSetting(), dialog->arrowShape(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 void Post3dWindowParticlesVectorGroupDataItem::innerUpdateZScale(double zscale)

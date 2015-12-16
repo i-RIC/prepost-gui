@@ -9,13 +9,13 @@
 #include <vtkTextProperty.h>
 
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer() :
-	CompositeContainer({&m_fontFamily, &m_fontColor, &m_fontSize, &m_isBold, &m_isItalic, &m_isShadow}),
-	m_fontFamily {"fontFamily", ffArial},
-	m_fontColor {"fontColor", Qt::black},
-	m_fontSize {"fontSize", 10},
-	m_isBold {"fontIsBold", false},
-	m_isItalic {"fontIsItalic", false},
-	m_isShadow {"fontIsShadow", false}
+	CompositeContainer({&fontFamily, &fontColor, &fontSize, &isBold, &isItalic, &isShadow}),
+	fontFamily {"fontFamily", ffArial},
+	fontColor {"fontColor", Qt::black},
+	fontSize {"fontSize", 10},
+	isBold {"fontIsBold", false},
+	isItalic {"fontIsItalic", false},
+	isShadow {"fontIsShadow", false}
 {}
 
 vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPropertySettingContainer& c) :
@@ -24,30 +24,28 @@ vtkTextPropertySettingContainer::vtkTextPropertySettingContainer(const vtkTextPr
 	CompositeContainer::copyValue(c);
 }
 
+vtkTextPropertySettingContainer::~vtkTextPropertySettingContainer()
+{}
+
 vtkTextPropertySettingContainer& vtkTextPropertySettingContainer::operator=(const vtkTextPropertySettingContainer& c)
 {
 	CompositeContainer::copyValue(c);
 	return *this;
 }
 
-QColor vtkTextPropertySettingContainer::fontColor() const
+XmlAttributeContainer& vtkTextPropertySettingContainer::operator=(const XmlAttributeContainer& c)
 {
-	return m_fontColor;
-}
-
-void vtkTextPropertySettingContainer::setFontColor(const QColor& c)
-{
-	m_fontColor = c;
+	return operator=(dynamic_cast<const vtkTextPropertySettingContainer&>(c));
 }
 
 void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 {
 	if (prop->GetFontFamily() == VTK_ARIAL) {
-		m_fontFamily = ffArial;
+		fontFamily = ffArial;
 	} else if (prop->GetFontFamily() == VTK_COURIER) {
-		m_fontFamily = ffCourier;
+		fontFamily = ffCourier;
 	} else if (prop->GetFontFamily() == VTK_TIMES) {
-		m_fontFamily = ffTimes;
+		fontFamily = ffTimes;
 	}
 	double r, g, b;
 	prop->GetColor(r, g, b);
@@ -55,25 +53,25 @@ void vtkTextPropertySettingContainer::getSetting(vtkTextProperty* prop)
 	c.setRedF(r);
 	c.setGreenF(g);
 	c.setBlueF(b);
-	m_fontColor = c;
-	m_isBold = (prop->GetBold() == 1);
-	m_isItalic = (prop->GetItalic() == 1);
-	m_isShadow = (prop->GetShadow() == 1);
+	fontColor = c;
+	isBold = (prop->GetBold() == 1);
+	isItalic = (prop->GetItalic() == 1);
+	isShadow = (prop->GetShadow() == 1);
 }
 
 void vtkTextPropertySettingContainer::applySetting(vtkTextProperty* prop)
 {
-	if (m_fontFamily == ffArial) {
+	if (fontFamily == ffArial) {
 		prop->SetFontFamilyToArial();
-	} else if (m_fontFamily == ffCourier) {
+	} else if (fontFamily == ffCourier) {
 		prop->SetFontFamilyToCourier();
-	} else if (m_fontFamily == ffTimes) {
+	} else if (fontFamily == ffTimes) {
 		prop->SetFontFamilyToTimes();
 	}
-	prop->SetColor(m_fontColor);
-	prop->SetFontSize(m_fontSize);
-	prop->SetBold(m_isBold);
-	prop->SetItalic(m_isItalic);
-	prop->SetShadow(m_isShadow);
+	prop->SetColor(fontColor);
+	prop->SetFontSize(fontSize);
+	prop->SetBold(isBold);
+	prop->SetItalic(isItalic);
+	prop->SetShadow(isShadow);
 }
 

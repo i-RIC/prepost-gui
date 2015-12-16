@@ -33,7 +33,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="attributeComboBox"/>
+      <widget class="QComboBox" name="targetComboBox"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_4">
@@ -315,7 +315,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QComboBox" name="scalarComboBox">
+       <widget class="QComboBox" name="colorTargetComboBox">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -508,7 +508,7 @@
   <connection>
    <sender>scalarRadioButton</sender>
    <signal>toggled(bool)</signal>
-   <receiver>scalarComboBox</receiver>
+   <receiver>colorTargetComboBox</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

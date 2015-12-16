@@ -1,22 +1,13 @@
 #include "post2dwindowcontoursetting.h"
 
-const int Post2dWindowContourSetting::DEFAULT_NUMOFDIV = 15;
-
 Post2dWindowContourSetting::Post2dWindowContourSetting() :
-	CompositeContainer
-		({&numberOfDivisions, &target, &contour, &fillUpper, &fillLower,
-		 &opacity, &regionMode, &range, &scalarBarSetting, &titleTextSetting, &labelTextSetting}),
-	numberOfDivisions {"numberOfDivisions", DEFAULT_NUMOFDIV},
-	target {"solution"},
-	contour {"contour", ContourSettingWidget::ColorFringe},
-	fillUpper {"fillUpper", true},
-	fillLower {"fillLower", true},
+	ScalarSettingContainer(),
 	regionMode {"regionMode", StructuredGridRegion::rmFull}
 {
-	opacity = 50;
+	addContainer(&regionMode);
+	addContainer(&range);
+
 	range.setPrefix("region");
-	titleTextSetting.setPrefix("titleText");
-	labelTextSetting.setPrefix("labelText");
 }
 
 Post2dWindowContourSetting::Post2dWindowContourSetting(const Post2dWindowContourSetting& s) :
@@ -32,4 +23,9 @@ Post2dWindowContourSetting& Post2dWindowContourSetting::operator=(const Post2dWi
 {
 	CompositeContainer::copyValue(s);
 	return *this;
+}
+
+XmlAttributeContainer& Post2dWindowContourSetting::operator=(const XmlAttributeContainer& s)
+{
+	return operator=(dynamic_cast<const Post2dWindowContourSetting&>(s));
 }

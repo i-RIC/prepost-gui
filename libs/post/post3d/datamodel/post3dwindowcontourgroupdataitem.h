@@ -5,6 +5,7 @@
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 
+#include <guibase/scalarsettingcontainer.h>
 #include <guibase/contoursettingwidget.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include "post3dwindowfacedataitem.h"
@@ -30,16 +31,15 @@ public:
 	Post3dWindowContourGroupDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowContourGroupDataItem();
 
-	const std::string& target() const {return m_target;}
-	ContourSettingWidget::Contour contour() const {return m_contour;}
-	int numberOfDivision() const {return m_numberOfDivision;}
+	const ScalarSettingContainer& scalarSetting() const;
 	LookupTableContainer* lookupTable();
-	void setSetting(const std::string& sol, ContourSettingWidget::Contour c, int numOfDiv, const LookupTableContainer& lookup, bool upper, bool lower, const QString& title, const ScalarBarSetting& setting, const vtkTextPropertySettingContainer& titleC, const vtkTextPropertySettingContainer& labelC, bool draw);
-	void updateChildActors();
-	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);
-	void showSettingDialog();
+
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap() const;
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
+
+	void updateChildActors();
+	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);
+
 	void setupScalarBarActor();
 	void updateScalarBarActorSetting();
 	void handleStandardItemChange() override;
@@ -59,17 +59,7 @@ protected:
 	void innerUpdateZScale(double scale) override;
 
 private:
-	std::string m_target;
-	int m_numberOfDivision;
-	ContourSettingWidget::Contour m_contour;
-	bool m_fillUpper;
-	bool m_fillLower;
-
-	// for color bar
-	ScalarBarSetting m_scalarBarSetting;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
-
+	ScalarSettingContainer m_scalarSetting;
 	QMap<std::string, QString> m_colorBarTitleMap;
 
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
@@ -81,8 +71,9 @@ private:
 	vtkSmartPointer<vtkScalarBarWidget> m_scalarBarWidget;
 	double m_zScale;
 
+	class SetSettingCommand;
+
 public:
-	friend class Post3dWindowContourGroupSetSetting;
 	friend class Post3dWindowContourGroupSetFaceMap;
 };
 

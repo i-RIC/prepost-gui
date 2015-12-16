@@ -15,7 +15,7 @@ const int ScalarBarSetting::DEFAULT_NUMOFLABELS = 8;
 const QString ScalarBarSetting::DEFAULT_LABELFORMAT = "%-#6.3g";
 
 ScalarBarSetting::ScalarBarSetting() :
-	CompositeContainer({&visible, &orientation, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat}),
+	CompositeContainer({&visible, &orientation, &numberOfLabels, &width, &height, &positionX, &positionY, &labelFormat, &titleTextSetting, &labelTextSetting}),
 	visible {"visible", true},
 	orientation {"orientation", Orientation::Vertical},
 	numberOfLabels {"numberOfLabels", DEFAULT_NUMOFLABELS},
@@ -25,7 +25,8 @@ ScalarBarSetting::ScalarBarSetting() :
 	positionY {"positionY", 0.1},
 	labelFormat {"labelFormat", DEFAULT_LABELFORMAT}
 {
-	setPrefix("scalarBar");
+	titleTextSetting.setPrefix("titleText");
+	labelTextSetting.setPrefix("labelText");
 }
 
 ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
@@ -34,10 +35,18 @@ ScalarBarSetting::ScalarBarSetting(const ScalarBarSetting& setting) :
 	CompositeContainer::copyValue(setting);
 }
 
+ScalarBarSetting::~ScalarBarSetting()
+{}
+
 ScalarBarSetting& ScalarBarSetting::operator=(const ScalarBarSetting& setting)
 {
-	CompositeContainer::copyValue(setting);
+	CompositeContainer::copyValue(dynamic_cast<const ScalarBarSetting&> (setting));
 	return *this;
+}
+
+XmlAttributeContainer& ScalarBarSetting::operator=(const XmlAttributeContainer& c)
+{
+	return operator=(dynamic_cast<const ScalarBarSetting&>(c));
 }
 
 void ScalarBarSetting::initForLegendBox()
@@ -67,18 +76,6 @@ void ScalarBarSetting::loadFromRepresentation(vtkScalarBarRepresentation* rep)
 	labelFormat = rep->GetScalarBarActor()->GetLabelFormat();
 }
 
-void ScalarBarSetting::loadFromRepresentation(vtkLegendBoxRepresentation* rep)
-{
-	double* pos  = rep->GetPosition();
-	double* pos2 = rep->GetPosition2();
-
-	positionX = *(pos);
-	positionY = *(pos + 1);
-
-	width = *(pos2);
-	height = *(pos2 + 1);
-}
-
 void ScalarBarSetting::saveToRepresentation(vtkScalarBarRepresentation* rep) const
 {
 	if (orientation == Orientation::Vertical) {
@@ -89,6 +86,18 @@ void ScalarBarSetting::saveToRepresentation(vtkScalarBarRepresentation* rep) con
 	rep->SetPosition(positionX, positionY);
 	rep->SetPosition2(width, height);
 	rep->GetScalarBarActor()->SetLabelFormat(iRIC::toStr(labelFormat).c_str());
+}
+
+void ScalarBarSetting::loadFromRepresentation(vtkLegendBoxRepresentation* rep)
+{
+	double* pos  = rep->GetPosition();
+	double* pos2 = rep->GetPosition2();
+
+	positionX = *(pos);
+	positionY = *(pos + 1);
+
+	width = *(pos2);
+	height = *(pos2 + 1);
 }
 
 void ScalarBarSetting::saveToRepresentation(vtkLegendBoxRepresentation* rep)

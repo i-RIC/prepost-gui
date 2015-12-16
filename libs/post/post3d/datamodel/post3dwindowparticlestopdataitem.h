@@ -2,7 +2,9 @@
 #define POST3DWINDOWPARTICLESTOPDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
-#include <postbase/postparticlebasicpropertydialog.h>
+
+#include <postbase/particle/postparticlebasicsetting.h>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkPolyDataMapper.h>
@@ -47,9 +49,13 @@ private:
 	Post3dWindowParticlesScalarGroupDataItem* m_scalarGroupDataItem;
 	Post3dWindowParticlesVectorGroupDataItem* m_vectorGroupDataItem;
 
-	PostParticleBasicPropertyDialog::Setting m_setting;
+	PostParticleBasicSetting m_setting;
 
 	class SetSettingCommand;
 };
+
+#ifdef _DEBUG
+	#include "private/post3dwindowparticlestopdataitem_setsettingcommand.h"
+#endif // _DEBUG
 
 #endif // POST3DWINDOWPARTICLESTOPDATAITEM_H

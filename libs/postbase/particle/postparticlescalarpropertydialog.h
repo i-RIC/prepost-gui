@@ -1,10 +1,9 @@
 #ifndef POSTPARTICLESCALARPROPERTYDIALOG_H
 #define POSTPARTICLESCALARPROPERTYDIALOG_H
 
-#include "postbase_global.h"
+#include "../postbase_global.h"
 
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
+#include <guibase/scalarsettingcontainer.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 
 #include <QDialog>
@@ -12,6 +11,7 @@
 #include <QString>
 
 #include <string>
+#include <vector>
 
 class PostWindowGridTypeDataItemInterface;
 class PostZoneDataContainer;
@@ -28,23 +28,20 @@ public:
 	explicit PostParticleScalarPropertyDialog(QWidget *parent = 0);
 	~PostParticleScalarPropertyDialog();
 
-	std::string target() const;
-	void setTarget(const std::string& target);
-	const LookupTableContainer& lookupTable() const;
+	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
 	void setZoneData(PostZoneDataContainer* zoneData);
 
-	void setGridTypeDataItem(PostWindowGridTypeDataItemInterface* item);
+	ScalarSettingContainer setting() const;
+	void setSetting(const ScalarSettingContainer setting);
+
+	const LookupTableContainer& lookupTable() const;
 
 	QString scalarBarTitle() const;
 	void setScalarBarTitleMap(const QMap<std::string, QString>& titlemap);
-	const ScalarBarSetting& scalarBarSetting() const {return m_scalarBarSetting;}
-	void setScalarBarSetting(const ScalarBarSetting& setting);
-	const vtkTextPropertySettingContainer titleTextSetting() const {return m_titleTextSetting;}
-	void setTitleTextSetting(const vtkTextPropertySettingContainer& cont);
-	const vtkTextPropertySettingContainer labelTextSetting() const {return m_labelTextSetting;}
-	void setLabelTextSetting(const vtkTextPropertySettingContainer& cont);
+
 	int particleSize() const;
 	void setParticleSize(int size);
+
 	QColor customColor() const;
 	void setCustomColor(const QColor& c);
 
@@ -56,13 +53,13 @@ private slots:
 	void showScalarBarDialog();
 
 private:
-	QList<std::string> m_attributes;
+	std::string target() const;
 
-	ScalarBarSetting m_scalarBarSetting;
-	QMap<std::string, QString> m_scalarBarTitleMap;
-	vtkTextPropertySettingContainer m_titleTextSetting;
-	vtkTextPropertySettingContainer m_labelTextSetting;
 	PostWindowGridTypeDataItemInterface* m_gridTypeDataItem;
+
+	ScalarSettingContainer m_setting;
+	std::vector<std::string> m_targets;
+	QMap<std::string, QString> m_scalarBarTitleMap;
 	LookupTableContainer m_lookupTable;
 
 	Ui::PostParticleScalarPropertyDialog *ui;

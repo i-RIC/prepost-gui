@@ -160,16 +160,12 @@ void Post2dWindowContourSettingDialog::showRegionDialog()
 void Post2dWindowContourSettingDialog::showScalarBarDialog()
 {
 	ScalarBarDialog dialog(this);
-	dialog.setTitle(m_colorBarTitleMap[target()]);
 	dialog.setSetting(m_setting.scalarBarSetting);
-	dialog.setTitleTextSetting(m_setting.titleTextSetting);
-	dialog.setLabelTextSetting(m_setting.labelTextSetting);
+	dialog.setTitle(m_colorBarTitleMap[target()]);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	m_colorBarTitleMap[target()] = dialog.title();
 	m_setting.scalarBarSetting = dialog.setting();
-	m_setting.titleTextSetting = dialog.titleTextSetting();
-	m_setting.labelTextSetting = dialog.labelTextSetting();
+	m_colorBarTitleMap[target()] = dialog.title();
 }

@@ -123,7 +123,7 @@
   <customwidget>
    <class>ColorMapSettingWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/colormapsettingwidget.h</header>
+   <header>guibase/colormap/colormapsettingwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

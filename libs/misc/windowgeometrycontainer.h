@@ -21,7 +21,6 @@ public:
 
 private:
 	WindowGeometryContainer(const WindowGeometryContainer&) = delete;
-	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) = delete;
 
 	bool m_ignoreMax;
 	QWidget* m_window;

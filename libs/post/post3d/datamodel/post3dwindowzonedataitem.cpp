@@ -46,25 +46,45 @@
 Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
 	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
 	m_zoneName (zoneName),
-	m_zoneNumber {zoneNumber}
+	m_zoneNumber {zoneNumber},
+	m_particlesDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	m_shapeDataItem = new Post3dWindowGridShapeDataItem(this);
-	m_contourGroupItem = new Post3dWindowContourGroupDataItem(this);
-	m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupDataItem(this);
-	m_arrowGroupDataItem = new Post3dWindowArrowGroupDataItem(this);
-	m_streamlineGroupDataItem = new Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
-	m_particleGroupDataItem = new Post3dWindowNodeVectorParticleGroupStructuredDataItem(this);
-	m_particlesDataItem = new Post3dWindowParticlesTopDataItem(this);
+
+	PostZoneDataContainer* cont = dataContainer();
+	if (cont->scalarValueExists()) {
+		m_contourGroupItem = new Post3dWindowContourGroupDataItem(this);
+		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupDataItem(this);
+	}
+
+	if (cont->vectorValueExists()) {
+		m_arrowGroupDataItem = new Post3dWindowArrowGroupDataItem(this);
+		m_streamlineGroupDataItem = new Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
+		m_particleGroupDataItem = new Post3dWindowNodeVectorParticleGroupStructuredDataItem(this);
+	}
+
+	if (cont->particleData() != nullptr) {
+		m_particlesDataItem = new Post3dWindowParticlesTopDataItem(this);
+	}
 
 	m_childItems.append(m_shapeDataItem);
-	m_childItems.append(m_contourGroupItem);
-	m_childItems.append(m_scalarGroupDataItem);
-	m_childItems.append(m_arrowGroupDataItem);
-	m_childItems.append(m_streamlineGroupDataItem);
-	m_childItems.append(m_particleGroupDataItem);
-	m_childItems.append(m_particlesDataItem);
+
+	if (cont->scalarValueExists()) {
+		m_childItems.append(m_contourGroupItem);
+		m_childItems.append(m_scalarGroupDataItem);
+	}
+
+	if (cont->vectorValueExists()) {
+		m_childItems.append(m_arrowGroupDataItem);
+		m_childItems.append(m_streamlineGroupDataItem);
+		m_childItems.append(m_particleGroupDataItem);
+	}
+
+	if (m_particlesDataItem != nullptr) {
+		m_childItems.append(m_particlesDataItem);
+	}
 }
 
 void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -3,10 +3,8 @@
 
 #include "../post3dwindowdataitem.h"
 
-#include <misc/arrowshapecontainer.h>
+#include <guicore/misc/targeted/targeteditemi.h>
 #include <misc/arrowsettingcontainer.h>
-
-#include <postbase/postparticlevectorpropertydialog.h>
 
 #include <vtkActor.h>
 #include <vtkSmartPointer.h>
@@ -21,18 +19,18 @@
 #include <vtkConeSource.h>
 #include <vtkTransformFilter.h>
 
-class Post3dWindowParticlesVectorDataItem;
-class Post3dWindowParticlesVectorSelectAttribute;
-class Post3dWindowParticlesVectorSetProperty;
+class NamedGraphicWindowDataItem;
 
-class Post3dWindowParticlesVectorGroupDataItem : public Post3dWindowDataItem
+class Post3dWindowParticlesVectorGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
 public:
 	const static int AUTO_AVERAGECOUNT = 20;
+
 	Post3dWindowParticlesVectorGroupDataItem(Post3dWindowDataItem* p);
 	~Post3dWindowParticlesVectorGroupDataItem();
+
 	void updateActorSettings();
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -42,7 +40,7 @@ public:
 	void handlePropertyDialogAccepted(QDialog* propDialog);
 
 public slots:
-	void exclusivelyCheck(Post3dWindowParticlesVectorDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void innerUpdateZScale(double zscale) override;
@@ -52,15 +50,17 @@ protected:
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	void setAttribute(const QString& attribute);
-	QString attribute() const {return m_arrowSetting.attribute();}
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
+	std::string target() const override;
+	void setTarget(const std::string& target);
+
 	void setupActors();
 	void calculateStandardValue();
 	void updateScaleFactor();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 protected:
 	vtkSmartPointer<vtkActor> m_arrowActor;
@@ -80,15 +80,12 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 
-	ArrowSettingContainer m_arrowSetting;
-	ArrowShapeContainer m_arrowShape;
+
+	ArrowSettingContainer m_setting;
 
 	double m_scaleFactor;
-	double m_oldCameraScale;
 
-public:
-	friend class Post3dWindowParticlesVectorSelectAttribute;
-	friend class Post3dWindowParticlesVectorSetProperty;
+	class SetSettingCommand;
 };
 
 #endif // POST3DWINDOWPARTICLESVECTORGROUPDATAITEM_H

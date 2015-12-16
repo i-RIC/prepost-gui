@@ -19,6 +19,7 @@ Post3dWindowContourGroupSettingDialog::Post3dWindowContourGroupSettingDialog(QWi
 	ui->faceListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	ui->faceSettingWidget->setEnabled(false);
 	ui->contourWidget->hidePoints();
+	ui->colormapWidget->setContainer(&m_lookupTable);
 
 	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(solutionChanged(int)));
 	connect(ui->contourWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ui->colormapWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
@@ -38,6 +39,11 @@ Post3dWindowContourGroupSettingDialog::~Post3dWindowContourGroupSettingDialog()
 	delete ui;
 }
 
+void Post3dWindowContourGroupSettingDialog::setGridTypeDataItem(Post3dWindowGridTypeDataItem* item)
+{
+	m_gridTypeDataItem = item;
+}
+
 void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
 {
 	ui->faceSettingWidget->setZoneData(zoneData);
@@ -46,21 +52,38 @@ void Post3dWindowContourGroupSettingDialog::setZoneData(PostZoneDataContainer* z
 	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_targets), ui->physicalValueComboBox);
 }
 
-void Post3dWindowContourGroupSettingDialog::setTarget(const std::string& target)
+void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titleMap)
 {
-	auto it = std::find(m_targets.begin(), m_targets.end(), target);
-	if (it == m_targets.end()) {it = m_targets.begin();}
-	ui->physicalValueComboBox->setCurrentIndex(it - m_targets.begin());
+	m_colorBarTitleMap = titleMap;
 }
 
-void Post3dWindowContourGroupSettingDialog::setContour(ContourSettingWidget::Contour c)
+ScalarSettingContainer Post3dWindowContourGroupSettingDialog::scalarSetting() const
 {
-	ui->contourWidget->setContour(c);
+	ScalarSettingContainer ret = m_scalarSetting;
+
+	ret.target = ui->physicalValueComboBox->currentText();
+	ret.contour = ui->contourWidget->contour();
+	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
+	ret.fillUpper = ui->colormapWidget->fillUpper();
+	ret.fillLower = ui->colormapWidget->fillLower();
+
+	return ret;
 }
 
-void Post3dWindowContourGroupSettingDialog::setNumberOfDivision(int div)
+void Post3dWindowContourGroupSettingDialog::setScalarSetting(const ScalarSettingContainer& setting)
 {
-	ui->colormapWidget->setDivisionNumber(div);
+	m_scalarSetting = setting;
+
+	ui->physicalValueComboBox->setCurrentText(setting.target);
+	ui->contourWidget->setContour(setting.contour);
+	ui->colormapWidget->setDivisionNumber(setting.numberOfDivisions);
+	ui->colormapWidget->setFillLower(setting.fillLower);
+	ui->colormapWidget->setFillUpper(setting.fillUpper);
+}
+
+LookupTableContainer Post3dWindowContourGroupSettingDialog::lookupTable() const
+{
+	return m_lookupTable;
 }
 
 void Post3dWindowContourGroupSettingDialog::setLookupTable(const LookupTableContainer& c)
@@ -69,43 +92,9 @@ void Post3dWindowContourGroupSettingDialog::setLookupTable(const LookupTableCont
 	ui->colormapWidget->setContainer(&m_lookupTable);
 }
 
-void Post3dWindowContourGroupSettingDialog::setGridTypeDataItem(Post3dWindowGridTypeDataItem* item)
+const QMap<QString, Post3dWindowFaceDataItem::Setting>& Post3dWindowContourGroupSettingDialog::faceMap() const
 {
-	m_gridTypeDataItem = item;
-}
-
-std::string Post3dWindowContourGroupSettingDialog::target() const
-{
-	return iRIC::toStr(ui->physicalValueComboBox->currentText());
-}
-
-ContourSettingWidget::Contour Post3dWindowContourGroupSettingDialog::contour()
-{
-	return ui->contourWidget->contour();
-}
-
-int Post3dWindowContourGroupSettingDialog::numberOfDivision()
-{
-	return ui->colormapWidget->divisionNumber();
-}
-
-LookupTableContainer& Post3dWindowContourGroupSettingDialog::lookupTable()
-{
-	return m_lookupTable;
-}
-
-void Post3dWindowContourGroupSettingDialog::solutionChanged(int index)
-{
-	auto target = m_targets.at(index);
-	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(target);
-	m_lookupTable = *c;
-	ui->colormapWidget->setContainer(&m_lookupTable);
-}
-
-void Post3dWindowContourGroupSettingDialog::accept()
-{
-	ui->colormapWidget->save();
-	QDialog::accept();
+	return m_faceMap;
 }
 
 void Post3dWindowContourGroupSettingDialog::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map)
@@ -120,9 +109,15 @@ void Post3dWindowContourGroupSettingDialog::setFaceMap(const QMap<QString, Post3
 	ui->faceListWidget->setCurrentRow(0, QItemSelectionModel::SelectCurrent);
 }
 
-const QMap<QString, Post3dWindowFaceDataItem::Setting>& Post3dWindowContourGroupSettingDialog::faceMap()
+QString Post3dWindowContourGroupSettingDialog::scalarBarTitle() const
 {
-	return m_faceMap;
+	return m_colorBarTitleMap[iRIC::toStr(m_scalarSetting.target)];
+}
+
+void Post3dWindowContourGroupSettingDialog::accept()
+{
+	ui->colormapWidget->save();
+	QDialog::accept();
 }
 
 void Post3dWindowContourGroupSettingDialog::addFaceSetting()
@@ -186,6 +181,14 @@ void Post3dWindowContourGroupSettingDialog::switchFaceSetting(QListWidgetItem* c
 	ui->faceListWidget->setCurrentItem(current, QItemSelectionModel::SelectCurrent);
 }
 
+void Post3dWindowContourGroupSettingDialog::solutionChanged(int index)
+{
+	auto target = m_targets.at(index);
+	LookupTableContainer* c = m_gridTypeDataItem->nodeLookupTable(target);
+	m_lookupTable = *c;
+	ui->colormapWidget->setContainer(&m_lookupTable);
+}
+
 void Post3dWindowContourGroupSettingDialog::checkSelectedNumber()
 {
 	QList<QListWidgetItem*> items = ui->faceListWidget->selectedItems();
@@ -207,62 +210,21 @@ void Post3dWindowContourGroupSettingDialog::updateFaceMap()
 	m_faceMap.insert(ui->faceListWidget->currentItem()->text(), ui->faceSettingWidget->setting());
 }
 
-void Post3dWindowContourGroupSettingDialog::setFillUpper(bool fill)
-{
-	ui->colormapWidget->setFillUpper(fill);
-}
-
-void Post3dWindowContourGroupSettingDialog::setFillLower(bool fill)
-{
-	ui->colormapWidget->setFillLower(fill);
-}
-
-bool Post3dWindowContourGroupSettingDialog::fillUpper()
-{
-	return ui->colormapWidget->fillUpper();
-}
-
-bool Post3dWindowContourGroupSettingDialog::fillLower()
-{
-	return ui->colormapWidget->fillLower();
-}
-
-void Post3dWindowContourGroupSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titleMap)
-{
-	m_colorBarTitleMap = titleMap;
-}
-
-QString Post3dWindowContourGroupSettingDialog::scalarBarTitle()
-{
-	return m_colorBarTitleMap[target()];
-}
-
-void Post3dWindowContourGroupSettingDialog::setScalarBarSetting(const ScalarBarSetting& setting)
-{
-	m_scalarBarSetting = setting;
-}
-
-void Post3dWindowContourGroupSettingDialog::setTitleTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	m_titleTextSetting = cont;
-}
-
-void Post3dWindowContourGroupSettingDialog::setLabelTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	m_labelTextSetting = cont;
-}
-
 void Post3dWindowContourGroupSettingDialog::showColorBarDialog()
 {
 	ScalarBarDialog dialog(this);
+
+	dialog.setSetting(m_scalarSetting.scalarBarSetting);
 	dialog.setTitle(m_colorBarTitleMap[target()]);
-	dialog.setSetting(m_scalarBarSetting);
-	dialog.setTitleTextSetting(m_titleTextSetting);
-	dialog.setLabelTextSetting(m_labelTextSetting);
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
+
+	m_scalarSetting.scalarBarSetting = dialog.setting();
 	m_colorBarTitleMap[target()] = dialog.title();
-	m_scalarBarSetting = dialog.setting();
-	m_titleTextSetting = dialog.titleTextSetting();
-	m_labelTextSetting = dialog.labelTextSetting();
+}
+
+std::string Post3dWindowContourGroupSettingDialog::target() const
+{
+	return iRIC::toStr(ui->physicalValueComboBox->currentText());
 }

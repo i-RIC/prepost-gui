@@ -14,12 +14,11 @@ public:
 	/// Two-dimensional structured grid range
 	struct GUIBASEDLL_EXPORT Range2d : public CompositeContainer
 	{
-		/// Constructor
 		Range2d();
-		/// Copy constructor
 		Range2d(const Range2d& r);
-		/// Copy operator
+
 		Range2d& operator=(const Range2d& r);
+		XmlAttributeContainer& operator=(const XmlAttributeContainer& r) override;
 
 		IntContainer iMin;
 		IntContainer iMax;
@@ -30,12 +29,11 @@ public:
 	/// Three-dimensional structured grid range
 	struct GUIBASEDLL_EXPORT Range3d : public CompositeContainer
 	{
-		/// Constructor
 		Range3d();
-		/// Copy constructor
 		Range3d(const Range3d& r);
-		/// Copy operator
+
 		Range3d& operator=(const Range3d& r);
+		XmlAttributeContainer& operator=(const XmlAttributeContainer& r) override;
 
 		IntContainer iMin;
 		IntContainer iMax;

@@ -1,16 +1,11 @@
 #include "post3dwindownodescalardataitem.h"
 
-Post3dWindowNodeScalarDataItem::Post3dWindowNodeScalarDataItem(const std::string& name, const QString& caption, Post3dWindowDataItem* parent) :
-	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_name (name)
-{
-	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
+Post3dWindowNodeScalarDataItem::Post3dWindowNodeScalarDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	connect(this, SIGNAL(changed(Post3dWindowNodeScalarDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post3dWindowNodeScalarDataItem*)));
-}
+void Post3dWindowNodeScalarDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
 
-void Post3dWindowNodeScalarDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-}
+void Post3dWindowNodeScalarDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

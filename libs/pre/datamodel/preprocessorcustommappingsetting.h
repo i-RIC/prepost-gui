@@ -5,9 +5,8 @@
 #include <QMap>
 #include <QString>
 
-class PreProcessorCustomMappingSetting : XmlAttributeContainer
+class PreProcessorCustomMappingSetting : public XmlAttributeContainer
 {
-
 public:
 	PreProcessorCustomMappingSetting();
 

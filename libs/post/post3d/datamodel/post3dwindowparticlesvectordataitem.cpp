@@ -7,23 +7,12 @@
 #include <QMouseEvent>
 #include <QStandardItem>
 
-Post3dWindowParticlesVectorDataItem::Post3dWindowParticlesVectorDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent)
-	: Post3dWindowDataItem(caption, QIcon(":/libs/guibase/images/iconPaper.png"), parent)
-{
-	m_name = name;
-	m_isDeletable = false;
+Post3dWindowParticlesVectorDataItem::Post3dWindowParticlesVectorDataItem(const std::string& name, const QString& caption, Post3dWindowDataItem* parent) :
+	NamedGraphicWindowDataItem(name, caption, parent)
+{}
 
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Unchecked);
+void Post3dWindowParticlesVectorDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
 
-	m_standardItemCopy = m_standardItem->clone();
-
-	connect(this, SIGNAL(changed(Post3dWindowParticlesVectorDataItem*)),
-					parent, SLOT(exclusivelyCheck(Post3dWindowParticlesVectorDataItem*)));
-}
-
-void Post3dWindowParticlesVectorDataItem::handleStandardItemChange()
-{
-	emit changed(this);
-	setModified();
-}
+void Post3dWindowParticlesVectorDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

@@ -2,13 +2,13 @@
 #define POST2DWINDOWARROWSTRUCTUREDSETTINGDIALOG_H
 
 #include "../post2dwindowdataitem.h"
-#include "post2dwindownodevectorarrowgroupdataitem.h"
-#include "post2dwindownodevectorarrowgroupstructureddataitem.h"
+
+#include "post2dwindownodevectorarrowstructuredsetting.h"
 
 #include <QDialog>
 
 class PostZoneDataContainer;
-class ArrowShapeContainer;
+class Post2dWindowGridTypeDataItem;
 
 namespace Ui
 {
@@ -22,13 +22,14 @@ class Post2dWindowArrowStructuredSettingDialog : public QDialog
 public:
 	explicit Post2dWindowArrowStructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowStructuredSettingDialog();
+
+	void setGridType(Post2dWindowGridTypeDataItem* item);
 	void setZoneData(PostZoneDataContainer* data);
 
 	void disableActive();
 
-	void setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts);
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting setting() const;
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting stSetting() const;
+	Post2dWindowNodeVectorArrowStructuredSetting setting() const;
+	void setSetting(const Post2dWindowNodeVectorArrowStructuredSetting& s);
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
@@ -42,10 +43,11 @@ private:
 	std::vector<std::string> m_scalars;
 
 	int m_gridDims[3];
-	bool m_activeAvailable;
+	bool m_activeDisabled;
 
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_setting;
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting m_stSetting;
+	Post2dWindowGridTypeDataItem* m_gridTypeDataItem;
+
+	Post2dWindowNodeVectorArrowStructuredSetting m_setting;
 
 	Ui::Post2dWindowArrowStructuredSettingDialog* ui;
 };

@@ -10,10 +10,9 @@
 #include <string>
 #include <vector>
 
+class ArrowSettingContainer;
 class PostZoneDataContainer;
-class Post3dWindowGridTypeDataItem;
 class QListWidgetItem;
-class ArrowShapeContainer;
 
 namespace Ui
 {
@@ -32,11 +31,8 @@ public:
 	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
 	const QMap<QString, Post3dWindowFaceDataItem::Setting>& faceMap();
 
-	void setSetting(const ArrowSettingContainer& shape);
 	ArrowSettingContainer setting() const;
-
-	void setShape(const ArrowShapeContainer& shape);
-	ArrowShapeContainer shape() const;
+	void setSetting(const ArrowSettingContainer& shape);
 
 public slots:
 	void addFaceSetting();

@@ -7,9 +7,11 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
-#include <postbase/postparticlebasicpropertydialog.h>
+#include <postbase/particle/postparticlebasicsettingdialog.h>
 
+#include <QDomNode>
 #include <QSettings>
+#include <QXmlStreamWriter>
 
 #include <vtkPointData.h>
 #include <vtkProperty.h>
@@ -59,6 +61,9 @@ Post3dWindowParticlesTopDataItem::~Post3dWindowParticlesTopDataItem()
 {
 	if (m_actor == nullptr) {return;}
 	renderer()->RemoveActor(m_actor);
+
+//	delete m_scalarGroupDataItem;
+//	delete m_vectorGroupDataItem;
 }
 
 Post3dWindowParticlesScalarGroupDataItem* Post3dWindowParticlesTopDataItem::scalarGroupDataItem() const
@@ -180,36 +185,11 @@ QDialog* Post3dWindowParticlesTopDataItem::propertyDialog(QWidget* parent)
 		return m_scalarGroupDataItem->propertyDialog(parent);
 	}
 
-	PostParticleBasicPropertyDialog* dialog = new PostParticleBasicPropertyDialog(parent);
+	PostParticleBasicSettingDialog* dialog = new PostParticleBasicSettingDialog(parent);
 	dialog->setSetting(m_setting);
 
 	return dialog;
 }
-
-class Post3dWindowParticlesTopDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const PostParticleBasicPropertyDialog::Setting& s, Post3dWindowParticlesTopDataItem* item) :
-		QUndoCommand {Post3dWindowParticlesTopDataItem::tr("Edit Particle Setting")},
-		m_newSetting {s},
-		m_oldSetting {item->m_setting},
-		m_item {item}
-	{}
-	void redo() {
-		m_item->m_setting = m_newSetting;
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->m_setting = m_oldSetting;
-		m_item->updateActorSettings();
-	}
-
-private:
-	PostParticleBasicPropertyDialog::Setting m_newSetting;
-	PostParticleBasicPropertyDialog::Setting m_oldSetting;
-
-	Post3dWindowParticlesTopDataItem* m_item;
-};
 
 void Post3dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
@@ -217,7 +197,7 @@ void Post3dWindowParticlesTopDataItem::handlePropertyDialogAccepted(QDialog* pro
 		m_scalarGroupDataItem->handlePropertyDialogAccepted(propDialog);
 		return;
 	}
-	PostParticleBasicPropertyDialog* dialog = dynamic_cast<PostParticleBasicPropertyDialog*>(propDialog);
+	PostParticleBasicSettingDialog* dialog = dynamic_cast<PostParticleBasicSettingDialog*>(propDialog);
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this);
 }
 

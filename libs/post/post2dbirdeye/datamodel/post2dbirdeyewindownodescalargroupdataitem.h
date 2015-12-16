@@ -68,7 +68,6 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dWindowContourSetting m_setting;
-	// for scalar bar
 	QMap<std::string, QString> m_colorbarTitleMap;
 
 	vtkSmartPointer<vtkWarpScalar> m_warp;

@@ -41,6 +41,19 @@ LookupTableContainer::LookupTableContainer(const LookupTableContainer& c) :
 	update();
 }
 
+LookupTableContainer& LookupTableContainer::operator=(const LookupTableContainer& c)
+{
+	m_colorMap = c.m_colorMap.value();
+	m_customSetting = c.m_customSetting;
+	m_autoRange = c.m_autoRange.value();
+	m_autoMin = c.m_autoMin.value();
+	m_autoMax = c.m_autoMax.value();
+	m_manualMin = c.m_manualMin.value();
+	m_manualMax = c.m_manualMax.value();
+	update();
+	return *this;
+}
+
 void LookupTableContainer::update()
 {
 	vtkColorTransferFunction* func = dynamic_cast<vtkColorTransferFunction*>(m_vtkObj);
@@ -84,8 +97,8 @@ void LookupTableContainer::update()
 		darkFunc->RemoveAllPoints();
 		darkFunc->SetColorSpaceToRGB();
 
-		switch (ColorMapSettingWidget::CustomSetting::Type(m_customSetting.type)) {
-		case ColorMapSettingWidget::CustomSetting::tTwoColors:
+		switch (m_customSetting.type.value()) {
+		case ColorMapCustomSetting::Type::TwoColors:
 			iRIC::QColorToVTKColor(m_customSetting.minColor, c);
 			func->AddRGBPoint(min, c[0], c[1], c[2]);
 			darkFunc->AddRGBPoint(min, c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);
@@ -94,7 +107,7 @@ void LookupTableContainer::update()
 			darkFunc->AddRGBPoint(max, c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);
 
 			break;
-		case ColorMapSettingWidget::CustomSetting::tThreeColors:
+		case ColorMapCustomSetting::Type::ThreeColors:
 			iRIC::QColorToVTKColor(m_customSetting.minColor, c);
 			func->AddRGBPoint(min, c[0], c[1], c[2]);
 			darkFunc->AddRGBPoint(min, c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);
@@ -106,10 +119,10 @@ void LookupTableContainer::update()
 			darkFunc->AddRGBPoint(max, c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);
 
 			break;
-		case ColorMapSettingWidget::CustomSetting::tArbitrary:
-			for (int i = 0; i < m_customSetting.arbitrarySettings.count(); ++i) {
-				double val = m_customSetting.arbitrarySettings.at(i).value;
-				QColor col = m_customSetting.arbitrarySettings.at(i).color;
+		case ColorMapCustomSetting::Type::Arbitrary:
+			for (auto& s : m_customSetting.arbitrarySettings) {
+				double val = s.value;
+				QColor col = s.color;
 				iRIC::QColorToVTKColor(col, c);
 				func->AddRGBPoint(val, c[0], c[1], c[2]);
 				darkFunc->AddRGBPoint(val, c[0] * 0.8, c[1] * 0.8, c[2] * 0.8);
@@ -117,37 +130,8 @@ void LookupTableContainer::update()
 			break;
 		}
 	}
-	func->Modified();;
+	func->Modified();
 	darkFunc->Modified();
-}
-
-void LookupTableContainer::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_autoRange.load(node);
-	m_autoMin.load(node);
-	m_autoMax.load(node);
-	m_manualMin.load(node);
-	m_manualMax.load(node);
-	m_colorMap.load(node);
-
-	if (m_colorMap == ColorMapSettingWidget::Custom) {
-		m_customSetting.load(node);
-	}
-	update();
-}
-
-void LookupTableContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	m_autoRange.save(writer);
-	m_autoMin.save(writer);
-	m_autoMax.save(writer);
-	m_manualMin.save(writer);
-	m_manualMax.save(writer);
-	m_colorMap.save(writer);
-
-	if (m_colorMap == ColorMapSettingWidget::Custom) {
-		m_customSetting.save(writer);
-	}
 }
 
 void LookupTableContainer::getValueRange(double* min, double* max) const
@@ -178,16 +162,92 @@ void LookupTableContainer::setValueRange(double min, double max)
 	}
 }
 
-LookupTableContainer& LookupTableContainer::operator=(const LookupTableContainer& c)
+ColorMapSettingWidget::ColorMap LookupTableContainer::colorMap() const
 {
-	m_colorMap = c.m_colorMap.value();
-	m_customSetting = c.m_customSetting;
-	m_autoRange = c.m_autoRange.value();
-	m_autoMin = c.m_autoMin.value();
-	m_autoMax = c.m_autoMax.value();
-	m_manualMin = c.m_manualMin.value();
-	m_manualMax = c.m_manualMax.value();
+	return m_colorMap;
+}
+
+void LookupTableContainer::setColorMap(ColorMapSettingWidget::ColorMap cm)
+{
+	m_colorMap = cm;
+}
+
+const ColorMapCustomSetting& LookupTableContainer::customSetting() const
+{
+	return m_customSetting;
+}
+
+void LookupTableContainer::setCustomSetting(const ColorMapCustomSetting& cs)
+{
+	m_customSetting = cs;
+}
+
+bool LookupTableContainer::autoRange() const
+{
+	return m_autoRange;
+}
+
+void LookupTableContainer::setAutoRange(bool ar)
+{
+	m_autoRange = ar;
+}
+
+double LookupTableContainer::autoMin() const
+{
+	return m_autoMin;
+}
+
+double LookupTableContainer::autoMax() const
+{
+	return m_autoMax;
+}
+
+double LookupTableContainer::manualMin() const
+{
+	return m_manualMin;
+}
+
+void LookupTableContainer::setManualMin(double min)
+{
+	m_manualMin = min;
+}
+
+double LookupTableContainer::manualMax() const
+{
+	return m_manualMax;
+}
+
+void LookupTableContainer::setManualMax(double max)
+{
+	m_manualMax = max;
+}
+
+void LookupTableContainer::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_autoRange.load(node);
+	m_autoMin.load(node);
+	m_autoMax.load(node);
+	m_manualMin.load(node);
+	m_manualMax.load(node);
+	m_colorMap.load(node);
+
+	if (m_colorMap == ColorMapSettingWidget::Custom) {
+		m_customSetting.load(node);
+	}
 	update();
-	return *this;
+}
+
+void LookupTableContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	m_autoRange.save(writer);
+	m_autoMin.save(writer);
+	m_autoMax.save(writer);
+	m_manualMin.save(writer);
+	m_manualMax.save(writer);
+	m_colorMap.save(writer);
+
+	if (m_colorMap == ColorMapSettingWidget::Custom) {
+		m_customSetting.save(writer);
+	}
 }
 

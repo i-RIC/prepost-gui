@@ -207,7 +207,7 @@ QList<QString> Post3dWindow::particleDrawingZones()
 		for (int j = 0; j < zItems.count(); ++j) {
 			Post3dWindowZoneDataItem* zItem = zItems.at(j);
 			Post3dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleGroupDataItem();
-			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->currentSolution() != "") {
+			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());
 			}
 		}

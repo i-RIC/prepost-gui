@@ -2,10 +2,7 @@
 #define POST2DWINDOWNODEVECTORARROWGROUPUNSTRUCTUREDDATAITEM_H
 
 #include "post2dwindownodevectorarrowgroupdataitem.h"
-
-#include <misc/intcontainer.h>
-#include <misc/enumcontainert.h>
-#include <misc/compositecontainer.h>
+#include "post2dwindownodevectorarrowunstructuredsetting.h"
 
 #include <vtkSmartPointer.h>
 #include <vtkExtractGrid.h>
@@ -17,38 +14,22 @@ class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem : public Post2dWindow
 	Q_OBJECT
 
 public:
-	enum SamplingMode {
-		smAll,
-		smRate,
-		smNumber,
-	};
-
-	struct Setting : public CompositeContainer
-	{
-		Setting();
-		Setting(const Setting& s);
-		Setting& operator=(const Setting& s);
-
-		EnumContainerT<SamplingMode> samplingMode;
-		IntContainer samplingRate;
-		IntContainer samplingNumber;
-	};
-
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
 	virtual ~Post2dWindowNodeVectorArrowGroupUnstructuredDataItem();
 
-protected:
+private:
 	void updateActivePoints() override;
-	void informGridUpdate();
-	void updateFilterSettings();
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	Post2dWindowNodeVectorArrowSetting& setting() override;
+
 	QDialog* propertyDialog(QWidget* p) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-private:
-	Setting m_unsSetting;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	vtkSmartPointer<vtkMaskPoints> m_arrowMask;
+
+	Post2dWindowNodeVectorArrowUnstructuredSetting m_setting;
 
 	class SetSettingCommand;
 };

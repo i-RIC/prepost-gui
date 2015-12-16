@@ -4,42 +4,23 @@
 #include "postbase_global.h"
 
 #include <guibase/structuredgridregion.h>
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/boolcontainer.h>
-#include <misc/intcontainer.h>
-#include <misc/stringcontainer.h>
-#include <misc/opacitycontainer.h>
+#include <guibase/scalarsettingcontainer.h>
 #include <misc/enumcontainert.h>
-#include <guibase/contoursettingwidget.h>
 
-class POSTBASEDLL_EXPORT Post2dWindowContourSetting : public CompositeContainer
+class POSTBASEDLL_EXPORT Post2dWindowContourSetting : public ScalarSettingContainer
 {
 
 public:
-	const static int DEFAULT_NUMOFDIV;
 	Post2dWindowContourSetting();
 	Post2dWindowContourSetting(const Post2dWindowContourSetting& s);
 	~Post2dWindowContourSetting();
 
 	Post2dWindowContourSetting& operator=(const Post2dWindowContourSetting& s);
-
-	StringContainer target;
-	IntContainer numberOfDivisions;
-	EnumContainerT<ContourSettingWidget::Contour> contour;
-	BoolContainer fillUpper;
-	BoolContainer fillLower;
-	OpacityContainer opacity;
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& s) override;
 
 	// Region setting
 	EnumContainerT<StructuredGridRegion::RegionMode> regionMode;
 	StructuredGridRegion::Range2d range;
-
-	// for scalar bar
-	ScalarBarSetting scalarBarSetting;
-	vtkTextPropertySettingContainer titleTextSetting;
-	vtkTextPropertySettingContainer labelTextSetting;
 };
 
 

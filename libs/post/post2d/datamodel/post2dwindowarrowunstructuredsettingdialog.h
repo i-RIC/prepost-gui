@@ -2,8 +2,7 @@
 #define POST2DWINDOWARROWUNSTRUCTUREDSETTINGDIALOG_H
 
 #include "../post2dwindowdataitem.h"
-#include "post2dwindownodevectorarrowgroupdataitem.h"
-#include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
+#include "post2dwindownodevectorarrowunstructuredsetting.h"
 
 #include <QDialog>
 #include <vector>
@@ -18,27 +17,28 @@ namespace Ui
 class Post2dWindowArrowUnstructuredSettingDialog : public QDialog
 {
 	Q_OBJECT
-
 public:
 	explicit Post2dWindowArrowUnstructuredSettingDialog(QWidget* parent = nullptr);
 	~Post2dWindowArrowUnstructuredSettingDialog();
+
 	void setZoneData(PostZoneDataContainer* data);
 	void disableActive();
 
-	void setSettings(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting& unss);
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting setting() const;
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting unsSetting() const;
+	Post2dWindowNodeVectorArrowUnstructuredSetting setting() const;
+	void setSetting(const Post2dWindowNodeVectorArrowUnstructuredSetting& setting);
 
 private slots:
 	void showRegionDialog();
 
 private:
 	void setupSolutionComboBox(PostZoneDataContainer* zoneData);
+
 	std::vector<std::string> m_solutions;
 	std::vector<std::string> m_scalars;
+
 	bool m_activeAvailable;
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_setting;
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Setting m_unsSetting;
+
+	Post2dWindowNodeVectorArrowUnstructuredSetting m_setting;
 
 	Ui::Post2dWindowArrowUnstructuredSettingDialog* ui;
 };

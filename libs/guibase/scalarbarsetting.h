@@ -2,6 +2,9 @@
 #define SCALARBARSETTING_H
 
 #include "guibase_global.h"
+
+#include "vtktextpropertysettingcontainer.h"
+
 #include <misc/boolcontainer.h>
 #include <misc/intcontainer.h>
 #include <misc/doublecontainer.h>
@@ -23,37 +26,36 @@ public:
 	static const QString DEFAULT_LABELFORMAT;
 	enum class Orientation {Vertical, Horizontal};
 
-	/// Constructor
 	ScalarBarSetting();
-	/// Copy constructor
 	ScalarBarSetting(const ScalarBarSetting& setting);
-	/// Destructor
-	~ScalarBarSetting() {}
-	/// Copy operator
+	~ScalarBarSetting();
+
 	ScalarBarSetting& operator=(const ScalarBarSetting& setting);
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& setting) override;
+
 	void initForLegendBox();
-	/// Load setting from vtkScalarBarRepresentation
+
 	void loadFromRepresentation(vtkScalarBarRepresentation* rep);
-	/// Load setting from vtkLegendBoxRepresentation
-	void loadFromRepresentation(vtkLegendBoxRepresentation* rep);
-	/// Apply setting to vtkScalarBarRepresentation
 	void saveToRepresentation(vtkScalarBarRepresentation* rep) const;
-	/// Apply setting to vtkLegendBoxRepresentation
+
+	void loadFromRepresentation(vtkLegendBoxRepresentation* rep);
 	void saveToRepresentation(vtkLegendBoxRepresentation* rep);
 
 	BoolContainer visible;
+
 	EnumContainerT<Orientation> orientation;
 	IntContainer numberOfLabels;
-	/// relative width (0 < width < 1)
-	DoubleContainer width;
-	/// relative width (0 < height < 1)
-	DoubleContainer height;
-	/// relative position (0 < positionX < 1)
-	DoubleContainer positionX;
-	/// relative position (0 < positionY < 1)
-	DoubleContainer positionY;
-	/// labelFormat
+
+	DoubleContainer width;      ///< relative width (0 < width < 1)
+	DoubleContainer height;     ///< relative width (0 < height < 1)
+
+	DoubleContainer positionX;  ///< relative position (0 < positionX < 1)
+	DoubleContainer positionY;  ///< relative position (0 < positionY < 1)
+
 	StringContainer labelFormat;
+
+	vtkTextPropertySettingContainer titleTextSetting;
+	vtkTextPropertySettingContainer labelTextSetting;
 };
 
 #endif // SCALARBARSETTING_H

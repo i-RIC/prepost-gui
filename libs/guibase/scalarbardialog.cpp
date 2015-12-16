@@ -14,29 +14,14 @@ ScalarBarDialog::~ScalarBarDialog()
 	delete ui;
 }
 
+ScalarBarSetting ScalarBarDialog::setting() const
+{
+	return ui->widget->setting();
+}
+
 void ScalarBarDialog::setSetting(const ScalarBarSetting& setting)
 {
 	ui->widget->setSetting(setting);
-}
-
-void ScalarBarDialog::setTitle(const QString& title)
-{
-	ui->widget->setTitle(title);
-}
-
-void ScalarBarDialog::setTitleTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	ui->widget->setTitleTextSetting(cont);
-}
-
-void ScalarBarDialog::setLabelTextSetting(const vtkTextPropertySettingContainer& cont)
-{
-	ui->widget->setLabelTextSetting(cont);
-}
-
-const ScalarBarSetting ScalarBarDialog::setting()
-{
-	return ui->widget->setting();
 }
 
 QString ScalarBarDialog::title() const
@@ -44,12 +29,7 @@ QString ScalarBarDialog::title() const
 	return ui->widget->title();
 }
 
-const vtkTextPropertySettingContainer& ScalarBarDialog::titleTextSetting() const
+void ScalarBarDialog::setTitle(const QString& title)
 {
-	return ui->widget->titleTextSetting();
-}
-
-const vtkTextPropertySettingContainer& ScalarBarDialog::labelTextSetting() const
-{
-	return ui->widget->labelTextSetting();
+	ui->widget->setTitle(title);
 }

@@ -134,7 +134,8 @@ HEADERS += post2dbirdeye_global.h \
            datamodel/post2dbirdeyewindownodescalardataitem.h \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.h \
            datamodel/post2dbirdeyewindowrootdataitem.h \
-           datamodel/post2dbirdeyewindowzonedataitem.h
+           datamodel/post2dbirdeyewindowzonedataitem.h \
+           datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.h
 SOURCES += post2dbirdeyeobjectbrowser.cpp \
            post2dbirdeyeobjectbrowserview.cpp \
            post2dbirdeyewindow.cpp \
@@ -149,14 +150,15 @@ SOURCES += post2dbirdeyeobjectbrowser.cpp \
            datamodel/post2dbirdeyewindownodescalardataitem.cpp \
            datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp \
            datamodel/post2dbirdeyewindowrootdataitem.cpp \
-           datamodel/post2dbirdeyewindowzonedataitem.cpp
+           datamodel/post2dbirdeyewindowzonedataitem.cpp \
+           datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp
 RESOURCES += post2dbirdeye.qrc
 TRANSLATIONS += languages/iricPost2dbirdeye_es_ES.ts \
-								languages/iricPost2dbirdeye_fr_FR.ts \
-								languages/iricPost2dbirdeye_id_ID.ts \
-								languages/iricPost2dbirdeye_ja_JP.ts \
-								languages/iricPost2dbirdeye_ko_KR.ts \
-								languages/iricPost2dbirdeye_ru_RU.ts \
-								languages/iricPost2dbirdeye_th_TH.ts \
-								languages/iricPost2dbirdeye_vi_VN.ts \
-								languages/iricPost2dbirdeye_zh_CN.ts
+                languages/iricPost2dbirdeye_fr_FR.ts \
+                languages/iricPost2dbirdeye_id_ID.ts \
+                languages/iricPost2dbirdeye_ja_JP.ts \
+                languages/iricPost2dbirdeye_ko_KR.ts \
+                languages/iricPost2dbirdeye_ru_RU.ts \
+                languages/iricPost2dbirdeye_th_TH.ts \
+                languages/iricPost2dbirdeye_vi_VN.ts \
+                languages/iricPost2dbirdeye_zh_CN.ts

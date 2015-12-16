@@ -1,28 +1,22 @@
 #ifndef POST3DWINDOWPARTICLESVECTORDATAITEM_H
 #define POST3DWINDOWPARTICLESVECTORDATAITEM_H
 
+#include <guicore/named/namedgraphicwindowdataitem.h>
 #include "../post3dwindowdataitem.h"
 
 class SolverDefinitionGridRelatedCondition;
 class QAction;
 
-class Post3dWindowParticlesVectorDataItem : public Post3dWindowDataItem
+class Post3dWindowParticlesVectorDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post3dWindowParticlesVectorDataItem(const QString& name, const QString& caption, Post3dWindowDataItem* parent);
-	void handleStandardItemChange() override;
-	const QString& name() const {return m_name;}
+	Post3dWindowParticlesVectorDataItem(const std::string& name, const QString& caption, Post3dWindowDataItem* parent);
 
-signals:
-	void changed(Post3dWindowParticlesVectorDataItem*);
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) {}
 private:
-	QString m_name;
+	void doLoadFromProjectMainFile(const QDomNode&) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 };
 
 #endif // POST3DWINDOWPARTICLESVECTORDATAITEM_H

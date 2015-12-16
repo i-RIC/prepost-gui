@@ -1,6 +1,7 @@
 #include "post2dwindowarrowstructuredsettingdialog.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
@@ -18,37 +19,17 @@
 #include <vtkStructuredGrid.h>
 #include <vtkVertex.h>
 
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::Setting() :
-	CompositeContainer ({&iSampleRate, &jSampleRate, &range}),
-	iSampleRate {"iSampleRate", 1},
-	jSampleRate {"jSampleRate", 1},
-	range {}
-{
-	range.setPrefix("region");
-}
-
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::Setting(const Setting& s) :
-	Setting()
-{
-	CompositeContainer::copyValue(s);
-}
-
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting::operator=(const Setting& s)
-{
-	CompositeContainer::copyValue(s);
-	return *this;
-}
-
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowNodeVectorArrowGroupDataItem {p}
 {
 	int dim[3];
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	dynamic_cast<vtkStructuredGrid*>(cont->data())->GetDimensions(dim);
-	m_stSetting.range.iMin = 0;
-	m_stSetting.range.iMax = dim[0] - 1;
-	m_stSetting.range.jMin = 0;
-	m_stSetting.range.jMax = dim[1] - 1;
+
+	m_setting.range.iMin = 0;
+	m_setting.range.iMax = dim[0] - 1;
+	m_setting.range.jMin = 0;
+	m_setting.range.jMax = dim[1] - 1;
 
 	m_arrowExtract = vtkSmartPointer<vtkExtractGrid>::New();
 }
@@ -56,9 +37,31 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowG
 Post2dWindowNodeVectorArrowGroupStructuredDataItem::~Post2dWindowNodeVectorArrowGroupStructuredDataItem()
 {}
 
+QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWidget* p)
+{
+	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	if (cont == nullptr || cont->data() == nullptr) {
+		return nullptr;
+	}
+	Post2dWindowArrowStructuredSettingDialog* dialog = new Post2dWindowArrowStructuredSettingDialog(p);
+	dialog->setZoneData(cont);
+	if (! cont->IBCExists()) {
+		dialog->disableActive();
+	}
+	dialog->setSetting(m_setting);
+
+	return dialog;
+}
+
+void Post2dWindowNodeVectorArrowGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	Post2dWindowArrowStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowStructuredSettingDialog*>(propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
+}
+
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 {
-	auto& s = m_arrowSetting;
+	auto& s = m_setting;
 	m_activePoints->Initialize();
 	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
 	outPoints->SetDataTypeToDouble();
@@ -70,10 +73,10 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	grid->GetDimensions(dims);
 
 	m_arrowExtract->SetInputData(ps);
-	m_arrowExtract->SetSampleRate(m_stSetting.iSampleRate, m_stSetting.jSampleRate, 1);
+	m_arrowExtract->SetSampleRate(s.iSampleRate, s.jSampleRate, 1);
 
-	if (m_setting.regionMode == StructuredGridRegion::rmCustom) {
-		const auto& r = m_stSetting.range;
+	if (s.regionMode == StructuredGridRegion::rmCustom) {
+		const auto& r = s.range;
 		m_arrowExtract->SetVOI(r.iMin, r.iMax, r.jMin, r.jMax, 0, 0);
 	} else {
 		m_arrowExtract->SetVOI(0, dims[0] - 1, 0, dims[1] - 1, 0, dims[2] - 1);
@@ -86,17 +89,17 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	if (da != nullptr) {
 		IBCArray = vtkIntArray::SafeDownCast(da);
 	}
-	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(m_setting.target));
+	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(tmpgrid->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
 	if (vectorArray == nullptr) {
-		m_setting.target = "";
+		s.target = "";
 		return;
 	}
 	QSet<vtkIdType> pointIds;
-	const double& min = m_setting.minimumValue;
+	const double& min = s.minimumValue;
 	double minlimitsqr = min * min;
 	for (vtkIdType i = 0; i < tmpgrid->GetNumberOfPoints(); ++i) {
 		bool active = true;
-		if (m_setting.regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
+		if (s.regionMode == StructuredGridRegion::rmActive && IBCArray->GetValue(i) == 0) {
 			active = false;
 		}
 		double val = 0;
@@ -130,70 +133,19 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::updateActivePoints()
 	m_activePoints->Modified();
 }
 
-QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWidget* p)
+Post2dWindowNodeVectorArrowSetting& Post2dWindowNodeVectorArrowGroupStructuredDataItem::setting()
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {
-		return nullptr;
-	}
-	Post2dWindowArrowStructuredSettingDialog* dialog = new Post2dWindowArrowStructuredSettingDialog(p);
-	dialog->setZoneData(cont);
-	if (! cont->IBCExists()) {
-		dialog->disableActive();
-	}
-	dialog->setSettings(m_setting, m_stSetting);
-
-	return dialog;
-}
-
-class Post2dWindowNodeVectorArrowGroupStructuredDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const Post2dWindowNodeVectorArrowGroupDataItem::Setting& s, const Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting& sts, Post2dWindowNodeVectorArrowGroupStructuredDataItem* item) :
-		QUndoCommand {QObject::tr("Update Arrow Setting")},
-		m_newSetting {s},
-		m_newStSetting {sts},
-		m_oldSetting {item->m_setting},
-		m_oldStSetting {item->m_stSetting},
-		m_item {item}
-	{}
-	void redo() override {
-		m_item->m_setting = m_newSetting;
-		m_item->m_stSetting = m_newStSetting;
-		m_item->setTarget(m_newSetting.target);
-	}
-	void undo() override {
-		m_item->m_setting = m_oldSetting;
-		m_item->m_stSetting = m_oldStSetting;
-		m_item->setTarget(m_oldSetting.target);
-	}
-private:
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_newSetting;
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting m_newStSetting;
-
-	Post2dWindowNodeVectorArrowGroupDataItem::Setting m_oldSetting;
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem::Setting m_oldStSetting;
-
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem* m_item;
-};
-
-void Post2dWindowNodeVectorArrowGroupStructuredDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	Post2dWindowArrowStructuredSettingDialog* dialog = dynamic_cast<Post2dWindowArrowStructuredSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->stSetting(), this), this, true);
+	return m_setting;
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
-
-	m_stSetting.load(node);
-	updateActorSettings();
+	m_setting.load(node);
+	updateScaleFactor();
+	setTarget(m_setting.target);
 }
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	Post2dWindowNodeVectorArrowGroupDataItem::doSaveToProjectMainFile(writer);
-
-	m_stSetting.save(writer);
+	m_setting.save(writer);
 }

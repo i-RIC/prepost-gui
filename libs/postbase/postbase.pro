@@ -76,28 +76,30 @@ HEADERS += cfshapeexportwindowinterface.h \
            post2dwindowcontoursetting.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
-           postparticlebasicpropertydialog.h \
-           postparticlescalarpropertydialog.h \
-           postparticlevectorpropertydialog.h \
            postwindowgridtypedataiteminterface.h \
            svkmlexportwindow.h \
            svkmlexportwindowinterface.h \
+           particle/postparticlebasicsetting.h \
+           particle/postparticlebasicsettingdialog.h \
+           particle/postparticlescalarpropertydialog.h \
+           particle/postparticlevectorpropertydialog.h \
            time/posttimedataitem.h \
            time/posttimeeditdialog.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
            title/posttitlesetting.h
 FORMS += postallzoneselectingdialog.ui \
-         postparticlebasicpropertydialog.ui \
-         postparticlescalarpropertydialog.ui \
-         postparticlevectorpropertydialog.ui \
+         particle/postparticlebasicsettingdialog.ui \
+         particle/postparticlescalarpropertydialog.ui \
+         particle/postparticlevectorpropertydialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
 SOURCES += post2dwindowcontoursetting.cpp \
            postallzoneselectingdialog.cpp \
-           postparticlebasicpropertydialog.cpp \
-           postparticlescalarpropertydialog.cpp \
-           postparticlevectorpropertydialog.cpp \
+           particle/postparticlebasicsetting.cpp \
+           particle/postparticlebasicsettingdialog.cpp \
+           particle/postparticlescalarpropertydialog.cpp \
+           particle/postparticlevectorpropertydialog.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \

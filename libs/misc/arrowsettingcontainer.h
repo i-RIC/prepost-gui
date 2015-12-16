@@ -17,9 +17,13 @@ class MISCDLL_EXPORT ArrowSettingContainer : public CompositeContainer
 public:
 	const static int DEFAULT_SAMPLING_RATE;
 	const static int DEFAULT_SAMPLING_NUMBER;
+
 	const static double DEFAULT_LEGEND_STANDARD;
 	const static int DEFAULT_LEGEND_LENGTH;
 	const static double DEFAULT_LEGEND_MINIMUM;
+
+	static const int DEFAULT_ARROWSIZE;
+	static const int DEFAULT_LINEWIDTH;
 
 	enum class SamplingMode {
 		All  = 1,
@@ -39,8 +43,10 @@ public:
 
 	ArrowSettingContainer();
 	ArrowSettingContainer(const ArrowSettingContainer& c);
+	virtual ~ArrowSettingContainer();
 
 	ArrowSettingContainer& operator=(const ArrowSettingContainer& c);
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	StringContainer target;
 
@@ -49,7 +55,6 @@ public:
 	IntContainer samplingNumber;
 
 	EnumContainerT<ColorMode> colorMode;
-
 	ColorContainer customColor;
 	StringContainer colorTarget;
 
@@ -57,6 +62,11 @@ public:
 	DoubleContainer standardValue;
 	DoubleContainer legendLength;
 	DoubleContainer minimumValue;
+
+	IntContainer arrowSize;
+	IntContainer lineWidth;
+
+	DoubleContainer oldCameraScale;
 };
 
 #endif // ARROWSETTINGCONTAINER_H

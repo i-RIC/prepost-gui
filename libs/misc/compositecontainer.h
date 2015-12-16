@@ -12,6 +12,8 @@ class MISCDLL_EXPORT CompositeContainer : public XmlAttributeContainer
 public:
 	virtual ~CompositeContainer();
 
+	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+
 	/// @name XML file I/O functions
 	//@{
 	void load(const QDomNode&);
@@ -32,6 +34,8 @@ protected:
 	//@}
 
 	void copyValue(const XmlAttributeContainer& c) override;
+
+	void addContainer(XmlAttributeContainer* c);
 
 private:
 	class Impl;

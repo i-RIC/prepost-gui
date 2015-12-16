@@ -99,7 +99,7 @@ void Post3dWindowDataModel::contourSetting()
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
 	Post3dWindowContourGroupDataItem* citem = item->contourGroupItem();
-	citem->showSettingDialog();
+	citem->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::arrowSetting()
@@ -107,7 +107,7 @@ void Post3dWindowDataModel::arrowSetting()
 	Post3dWindowZoneDataItem* item = getZoneDataItem();
 	if (item == nullptr) {return;}
 	Post3dWindowArrowGroupDataItem* aitem = item->arrowGroupDataItem();
-	aitem->showSettingDialog();
+	aitem->showPropertyDialog();
 }
 
 void Post3dWindowDataModel::streamlineSetting()
