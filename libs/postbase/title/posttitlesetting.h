@@ -2,24 +2,23 @@
 #define POSTTITLESETTING_H
 
 #include "../postbase_global.h"
-#include <QString>
-#include <QColor>
 
-class POSTBASEDLL_EXPORT PostTitleSetting
+#include <misc/colorcontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/intcontainer.h>
+#include <misc/stringcontainer.h>
+
+class POSTBASEDLL_EXPORT PostTitleSetting : public CompositeContainer
 {
-
 public:
-	/// Constructor
-	PostTitleSetting() {
-		fontSize = 20;
-		color = Qt::black;
-	}
-	/// Title
-	QString title;
-	/// Font size (px)
-	int fontSize;
-	/// Color
-	QColor color;
+	PostTitleSetting();
+	PostTitleSetting(const PostTitleSetting& setting);
+
+	PostTitleSetting& operator=(const PostTitleSetting& setting);
+
+	StringContainer title;
+	IntContainer fontSize;
+	ColorContainer color;
 };
 
 #endif // POSTTITLESETTING_H

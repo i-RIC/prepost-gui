@@ -45,7 +45,6 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <postbase/cfshapeexportwindowinterface.h>
-#include <postbase/svkmlexportwindow.h>
 #include <postbase/particleexportwindowinterface.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>

@@ -19,10 +19,10 @@ namespace Ui
 class POSTBASEDLL_EXPORT PostAllZoneSelectingDialog : public QDialog
 {
 	Q_OBJECT
-
 public:
 	explicit PostAllZoneSelectingDialog(QWidget* parent = 0);
 	~PostAllZoneSelectingDialog();
+
 	bool setPostSolutionInfo(PostSolutionInfo* info);
 	bool needToSelect() const {return m_needToSelect;}
 	PostSolutionInfo::Dimension dimension();

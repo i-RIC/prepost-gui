@@ -1,5 +1,6 @@
 #include "posttitledataitem.h"
 #include "posttitleeditdialog.h"
+#include "private/posttitledataitem_setsettingcommand.h"
 
 #include <guibase/colortool.h>
 #include <misc/iricundostack.h>
@@ -15,37 +16,25 @@
 #include <vtkRenderer.h>
 #include <vtkTextProperty.h>
 
-PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent)
-	: GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.png"),parent)
+PostTitleDataItem::PostTitleDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(tr("Title"), QIcon(":/libs/guibase/images/iconPaper.png"), parent)
 {
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-	m_isDeletable = false;
-
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setupActors();
 }
 
 PostTitleDataItem::~PostTitleDataItem()
-{
-
-}
+{}
 
 void PostTitleDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	QDomElement elem = node.toElement();
-	m_setting.title = elem.attribute("title");
-	m_setting.fontSize = elem.attribute("fontSize").toInt();
-	m_setting.color = loadColorAttribute("color", elem, Qt::black);
+	m_setting.load(node);
 	updateActorSettings();
 }
 
 void PostTitleDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("title", m_setting.title);
-	writer.writeAttribute("fontSize", QString::number(m_setting.fontSize));
-	writeColorAttribute("color", m_setting.color, writer);
+	m_setting.save(writer);
 }
 
 void PostTitleDataItem::setupActors()
@@ -64,54 +53,17 @@ QDialog* PostTitleDataItem::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
-class PostCommonTitleEditCommand : public QUndoCommand
-{
-public:
-	PostCommonTitleEditCommand(bool enable, const PostTitleSetting& setting, PostTitleDataItem* item)
-		: QUndoCommand(PostTitleDataItem::tr("Edit title setting")) {
-		m_newEnabled = enable;
-		m_newSetting = setting;
-
-		m_oldEnabled = item->isEnabled();
-		m_oldSetting = item->m_setting;
-
-		m_dataItem = item;
-	}
-	void redo() {
-		m_dataItem->setIsCommandExecuting(true);
-		m_dataItem->setEnabled(m_newEnabled);
-		m_dataItem->m_setting = m_newSetting;
-		m_dataItem->updateActorSettings();
-		m_dataItem->setIsCommandExecuting(false);
-	}
-	void undo() {
-		m_dataItem->setIsCommandExecuting(true);
-		m_dataItem->setEnabled(m_oldEnabled);
-		m_dataItem->m_setting = m_oldSetting;
-		m_dataItem->updateActorSettings();
-		m_dataItem->setIsCommandExecuting(false);
-	}
-private:
-	bool m_newEnabled;
-	PostTitleSetting m_newSetting;
-
-	bool m_oldEnabled;
-	PostTitleSetting m_oldSetting;
-
-	PostTitleDataItem* m_dataItem;
-};
-
 void PostTitleDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	PostTitleEditDialog* dialog = dynamic_cast<PostTitleEditDialog*>(propDialog);
-	iRICUndoStack::instance().push(new PostCommonTitleEditCommand(dialog->isEnabled(), dialog->setting(), this));
+	pushRenderCommand(new SetSettingCommand(dialog->isEnabled(), dialog->setting(), this), this, true);
 }
 
 void PostTitleDataItem::updateActorSettings()
 {
 	actor2DCollection()->RemoveAllItems();
 	// To avoid VTK warning
-	if (m_setting.title.isEmpty()) {
+	if (m_setting.title.value().isEmpty()) {
 		m_titleActor->VisibilityOff();
 		updateVisibility();
 		return;
@@ -132,4 +84,3 @@ void PostTitleDataItem::updateActorSettings()
 	prop->SetVerticalJustificationToTop();
 	updateVisibility();
 }
-

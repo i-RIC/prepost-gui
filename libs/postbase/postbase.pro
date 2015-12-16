@@ -77,7 +77,6 @@ HEADERS += cfshapeexportwindowinterface.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
            postwindowgridtypedataiteminterface.h \
-           svkmlexportwindow.h \
            svkmlexportwindowinterface.h \
            particle/postparticlebasicsetting.h \
            particle/postparticlebasicsettingdialog.h \
@@ -87,7 +86,8 @@ HEADERS += cfshapeexportwindowinterface.h \
            time/posttimeeditdialog.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
-           title/posttitlesetting.h
+           title/posttitlesetting.h \
+           title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
          particle/postparticlebasicsettingdialog.ui \
          particle/postparticlescalarpropertydialog.ui \
@@ -103,7 +103,9 @@ SOURCES += post2dwindowcontoursetting.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \
-           title/posttitleeditdialog.cpp
+           title/posttitleeditdialog.cpp \
+           title/posttitlesetting.cpp \
+           title/private/posttitledataitem_setsettingcommand.cpp
 TRANSLATIONS += languages/iricPostbase_es_ES.ts \
                 languages/iricPostbase_fr_FR.ts \
                 languages/iricPostbase_id_ID.ts \
