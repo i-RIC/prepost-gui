@@ -196,7 +196,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
 
-	PreProcessorGridTypeDataItem*	gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
+	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
 	SolverDefinitionGridType* gt = gtItem->gridType();
 	QStandardItem* prevItem = 0;
 	if (gt->boundaryConditions().size() > 0) {
@@ -422,7 +422,6 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 {
 	// set default values first. this is done, always.
 	m_mappingSettingDataItem->setDefaultValues();
-
 
 	if (PreProcessorGridAttributeMappingMode::mode == PreProcessorGridAttributeMappingMode::mAuto) {
 		int ret = QMessageBox::information(mainWindow(), tr("Confirmation"), tr("Do you want to map geographic data to grid attributes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);

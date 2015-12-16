@@ -18,11 +18,9 @@ class PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGrid
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zonename, const QString& caption, PreProcessorDataItem* parent);
-	/// The caption of the dataitem.
+
 	const QString& caption() const override;
-	/// The name of the zone that stores the grid information.
 	const std::string& zoneName() const override;
 	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override;
 	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const;
