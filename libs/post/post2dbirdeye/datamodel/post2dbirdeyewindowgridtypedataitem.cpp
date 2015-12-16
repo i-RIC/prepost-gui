@@ -21,6 +21,20 @@
 
 #include <vtkPointData.h>
 
+namespace {
+
+PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
+{
+	for (auto container : conts) {
+		if (container->gridType() == gt) {
+			return container;
+		}
+	}
+	return nullptr;
+}
+
+} // namespace
+
 Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {type->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_gridType {type},
@@ -30,17 +44,6 @@ Post2dBirdEyeWindowGridTypeDataItem::Post2dBirdEyeWindowGridTypeDataItem(SolverD
 	setSubPath(type->name().c_str());
 
 	setupZoneDataItems();
-
-	// add raw data node and grid data node.
-	// setup ScalarsToColors instances
-	QList<PostZoneDataContainer*> containers = postSolutionInfo()->zoneContainers2D();
-	if (containers.size() == 0) {return;}
-
-	vtkPointData* pd = containers.at(0)->data()->GetPointData();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-		setupScalarsToColors(name);
-	}
-	updateLookupTableRanges();
 }
 
 Post2dBirdEyeWindowGridTypeDataItem::~Post2dBirdEyeWindowGridTypeDataItem()
@@ -75,13 +78,19 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 			++ zoneNum;
 		}
 	}
-	if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
-		vtkPointData* pd = zones.at(0)->data()->GetPointData();
-		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
-			setupScalarsToColors(name);
+
+	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+
+	if (zCont != nullptr) {
+		if (m_nodeLookupTables.count() == 0 && zones.size() != 0) {
+			vtkPointData* pd = zCont->data()->GetPointData();
+			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
+				setupScalarsToColors(name);
+			}
+			updateLookupTableRanges();
 		}
-		updateLookupTableRanges();
 	}
+
 	assignActorZValues(m_zDepthRange);
 	m_isZoneDataItemsSetup = (zoneNum != 0);
 }
