@@ -180,7 +180,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	if (m_gridDataItem != nullptr) {
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
 		tmpItem->unsetBCGroupDataItem();
-		m_childItems.removeOne(tmpItem);
+		m_childItems.removeAll(tmpItem);
 		m_gridDataItem = 0;
 		updateItemMap();
 		delete tmpItem;
@@ -190,8 +190,6 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	m_gridDataItem = gridItem;
 	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
 	m_childItems.append(gridItem);
-
-	grid->setParent(m_gridDataItem);
 
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
@@ -232,11 +230,13 @@ void PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile(const in
 		cg_zone_read(fn, 1, i, zonename, size);
 		if (m_zoneName == zonename){
 			Grid* grid = GridCgnsEstimater::buildGrid(fn, B, i, 0);
-			if (grid == 0) {return;}
+			if (grid == nullptr) {return;}
 
 			setupGridDataItem(grid);
 			m_gridDataItem->loadFromCgnsFile(fn);
 			delete grid;
+
+			break;
 		}
 	}
 }
