@@ -76,13 +76,27 @@ HEADERS += gcc_centerandwidth_global.h \
            gridcreatingconditioncenterandwidth.h \
            gridcreatingconditioncenterandwidthcoordinateseditdialog.h \
            gridcreatingconditioncenterandwidthdialog.h \
-           gridcreatingconditioncreatorcenterandwidth.h
+           gridcreatingconditioncreatorcenterandwidth.h \
+           private/gridcreatingconditioncenterandwidth_addvertexcommand.h \
+           private/gridcreatingconditioncenterandwidth_definenewpointcommand.h \
+           private/gridcreatingconditioncenterandwidth_finishdefiningcommand.h \
+           private/gridcreatingconditioncenterandwidth_movecommand.h \
+           private/gridcreatingconditioncenterandwidth_movevertexcommand.h \
+           private/gridcreatingconditioncenterandwidth_removevertexcommand.h \
+           private/gridcreatingconditioncenterandwidth_updateshapecommand.h
 FORMS += gridcreatingconditioncenterandwidthcoordinateseditdialog.ui \
          gridcreatingconditioncenterandwidthdialog.ui
 SOURCES += gridcreatingconditioncenterandwidth.cpp \
            gridcreatingconditioncenterandwidthcoordinateseditdialog.cpp \
            gridcreatingconditioncenterandwidthdialog.cpp \
-           gridcreatingconditioncreatorcenterandwidth.cpp
+           gridcreatingconditioncreatorcenterandwidth.cpp \
+           private/gridcreatingconditioncenterandwidth_addvertexcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_definenewpointcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_finishdefiningcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_movecommand.cpp \
+           private/gridcreatingconditioncenterandwidth_movevertexcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_removevertexcommand.cpp \
+           private/gridcreatingconditioncenterandwidth_updateshapecommand.cpp
 RESOURCES += centerandwidth.qrc
 TRANSLATIONS += languages/iricGccCenterandwidth_es_ES.ts \
                 languages/iricGccCenterandwidth_fr_FR.ts \

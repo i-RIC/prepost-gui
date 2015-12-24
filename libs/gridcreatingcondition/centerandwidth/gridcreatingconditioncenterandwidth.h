@@ -154,6 +154,8 @@ private:
 	void updateMouseEventMode();
 	void updateActionStatus();
 
+	void pushUpdateShapeCommand(QUndoCommand* com);
+
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
 
@@ -171,6 +173,7 @@ private:
 	bool m_isGridCreated;
 
 private:
+	class UpdateShapeCommand;
 	class AddVertexCommand;
 	class DefineNewPointCommand;
 	class EditCoordinatesCommand;
