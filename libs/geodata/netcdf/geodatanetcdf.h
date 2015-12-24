@@ -85,6 +85,9 @@ public:
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
 	virtual double thresholdValue() = 0;
 
+	void updateZDepthRangeItemCount(ZDepthRange& range) override;
+	void assignActorZValues(const ZDepthRange& range) override;
+
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
 	void handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override;

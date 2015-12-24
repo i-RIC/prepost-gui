@@ -13,6 +13,7 @@
 #include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridattributerealdimension.h>
 #include <misc/stringtool.h>
+#include <misc/zdepthrange.h>
 
 #include <vtkCellArray.h>
 #include <vtkCellData.h>
@@ -763,6 +764,17 @@ void GeoDataNetcdf::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* 
 	double xmin, xmax, ymin, ymax;
 	v->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 	updateSimpifiedGrid(xmin, xmax, ymin, ymax);
+}
+
+void GeoDataNetcdf::updateZDepthRangeItemCount(ZDepthRange& range)
+{
+	range.setItemCount(1);
+}
+
+void GeoDataNetcdf::assignActorZValues(const ZDepthRange& range)
+{
+	m_actor->SetPosition(0, 0, range.min());
+	m_regionActor->SetPosition(0, 0, range.min());
 }
 
 void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, double ymax)
