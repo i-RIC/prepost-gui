@@ -20,6 +20,7 @@
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
+#include <QDomElement>
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>

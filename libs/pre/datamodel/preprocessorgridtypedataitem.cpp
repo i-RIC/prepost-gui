@@ -21,6 +21,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QAction>
+#include <QDomNode>
 #include <QMenu>
 #include <QStandardItem>
 #include <QXmlStreamWriter>

@@ -23,6 +23,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QDomNode>
 #include <QIcon>
 #include <QStandardItem>
 #include <QXmlStreamWriter>

@@ -11,6 +11,8 @@
 
 #include <qwt_plot.h>
 
+#include <QDomNode>
+
 const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X = "_positionX";
 const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y = "_positionY";
 const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z = "_positionZ";

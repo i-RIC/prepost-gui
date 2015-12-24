@@ -15,6 +15,7 @@
 #include <misc/xmlsupport.h>
 #include <post/graph2d/datamodel/graph2dwindowmarkergroupdataitem.h>
 
+#include <QDomNode>
 #include <QStandardItemModel>
 #include <QXmlStreamWriter>
 

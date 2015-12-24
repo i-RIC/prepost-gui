@@ -14,6 +14,7 @@
 #include <misc/xmlsupport.h>
 
 #include <QAction>
+#include <QDomNode>
 #include <QList>
 #include <QMenu>
 #include <QStandardItem>

@@ -14,6 +14,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QList>
 
 #include <vtkPointData.h>

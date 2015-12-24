@@ -2,6 +2,7 @@
 #include "post3dwindowparticlesscalargroupdataitem.h"
 #include "post3dwindowparticlesvectorgroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
+#include "private/post3dwindowparticlestopdataitem_setsettingcommand.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

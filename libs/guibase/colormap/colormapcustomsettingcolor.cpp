@@ -1,5 +1,7 @@
 #include "colormapcustomsettingcolor.h"
 
+#include <QColor>
+
 ColorMapCustomSettingColor::ColorMapCustomSettingColor() :
 	CompositeContainer ({&value, &color}),
 	value {"value", 0},

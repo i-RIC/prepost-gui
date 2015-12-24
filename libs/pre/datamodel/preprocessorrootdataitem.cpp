@@ -35,6 +35,7 @@
 #include <geodata/pointmap/geodatapointmaptemplatemappingsetting.h>
 
 #include <QAction>
+#include <QDomNode>
 #include <QSettings>
 #include <QStandardItemModel>
 #include <QUndoCommand>

@@ -1,5 +1,6 @@
 #include "colormapcustomsetting.h"
 
+#include <QColor>
 #include <QDomNode>
 #include <QXmlStreamWriter>
 

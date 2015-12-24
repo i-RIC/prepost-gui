@@ -4,6 +4,8 @@
 #include "../../guicore_global.h"
 #include "grid2d.h"
 
+#include <vtkAlgorithm.h>
+#include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
 
 class QLineF;

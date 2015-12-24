@@ -17,6 +17,7 @@
 #include <postbase/time/posttimedataitem.h>
 #include <postbase/title/posttitledataitem.h>
 
+#include <QDomNode>
 #include <QStandardItemModel>
 #include <QXmlStreamWriter>
 

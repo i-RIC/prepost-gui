@@ -10,6 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QStandardItemModel>
 #include <QXmlStreamWriter>
 

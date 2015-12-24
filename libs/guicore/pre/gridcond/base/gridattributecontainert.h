@@ -4,6 +4,8 @@
 #include "gridattributecontainer.h"
 #include "../../../solverdef/solverdefinitiongridattributet.h"
 
+class vtkDataArray;
+
 template <class V>
 class GridAttributeContainerT : public GridAttributeContainer
 {

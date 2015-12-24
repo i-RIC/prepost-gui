@@ -18,6 +18,7 @@
 #include <misc/stringtool.h>
 
 #include <QDir>
+#include <QDomNode>
 #include <QFile>
 #include <QSettings>
 #include <QStandardItem>

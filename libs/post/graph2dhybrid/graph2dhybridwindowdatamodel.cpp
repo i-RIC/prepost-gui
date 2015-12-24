@@ -43,6 +43,7 @@
 #include <post/graph2d/graph2dwindowmarkersetting.h>
 
 #include <QApplication>
+#include <QDomNode>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QProgressDialog>

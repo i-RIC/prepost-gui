@@ -11,6 +11,7 @@
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
+#include <QDomNode>
 #include <QMainWindow>
 #include <QMenu>
 #include <QXmlStreamWriter>

@@ -1,5 +1,7 @@
 #include "posttitlesetting.h"
 
+#include <QColor>
+
 PostTitleSetting::PostTitleSetting() :
 	CompositeContainer({&title, &fontSize, &color}),
 	title {"title"},

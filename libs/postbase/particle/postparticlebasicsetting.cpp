@@ -1,5 +1,6 @@
 #include "postparticlebasicsetting.h"
 
+#include <QColor>
 #include <QSettings>
 
 PostParticleBasicSetting::PostParticleBasicSetting() :

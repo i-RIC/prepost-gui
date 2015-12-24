@@ -60,6 +60,7 @@
 
 #include <QApplication>
 #include <QCryptographicHash>
+#include <QDomNode>
 #include <QDesktopWidget>
 #include <QFileDialog>
 #include <QInputDialog>
