@@ -371,15 +371,10 @@ void ProjectMainFile::importCgnsFile(const QString& fname)
 	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
 	if (ret == true){
 		if (m_solverName != solverName || (! m_solverVersion.compatibleWith(versionNumber))){
-			QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-				tr("This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.").arg(solverName.c_str()).arg(versionNumber.toString()));
 			projectData()->setPostOnlyMode();
 		}
 	} else {
 		// error occured reading solver information.
-		QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"),
-			tr("This CGNS file does not have solver information. "
-				"We can not check whether this CGNS file is compatible with the solver."));
 		projectData()->setPostOnlyMode();
 	}
 	QFileInfo finfo(fname);
