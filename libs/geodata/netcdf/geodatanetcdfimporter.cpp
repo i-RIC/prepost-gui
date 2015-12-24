@@ -401,19 +401,19 @@ QList<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, QList<QV
 	QString since = rx.cap(2);
 	QDateTime zeroDate;
 
-	QRegExp rxDateTime("([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+))");
-	QRegExp rxDateTime2("([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+))");
-	QRegExp rxDate("([0-9]{4})-([0-9]{1,2})-([0-9]{1,2})");
-	QRegExp rxDate2("([0-9]{4})/([0-9]{1,2})/([0-9]{1,2})");
+	QRegExp rxDateTime("(([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+)))(| +0:00)");
+	QRegExp rxDateTime2("(([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})(|\\.([0-9]+)))(| +0:00)");
+	QRegExp rxDate("(([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}))");
+	QRegExp rxDate2("(([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}))");
 
 	if (rxDateTime.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(since, "yyyy-M-d H:m:s");
+		zeroDate = QDateTime::fromString(rxDateTime.cap(1), "yyyy-M-d H:m:s");
 	} else if (rxDateTime2.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(since, "yyyy/M/d H:m:s");
+		zeroDate = QDateTime::fromString(rxDateTime2.cap(1), "yyyy/M/d H:m:s");
 	} else if (rxDate.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(since, "yyyy-M-d");
+		zeroDate = QDateTime::fromString(rxDate.cap(1), "yyyy-M-d");
 	} else if (rxDate2.indexIn(since) != -1) {
-		zeroDate = QDateTime::fromString(since, "yyyy/M/d");
+		zeroDate = QDateTime::fromString(rxDate2.cap(1), "yyyy/M/d");
 	}
 
 	QList<QVariant> ret;
