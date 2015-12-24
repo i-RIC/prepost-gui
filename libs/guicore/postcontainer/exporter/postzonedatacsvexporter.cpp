@@ -8,41 +8,9 @@
 #include <vtkUnstructuredGrid.h>
 #include <vtkPointData.h>
 
-QString PostZoneDataCsvExporter::filename(const QString& prefix, int index) const
-{
-	QString fname = prefix;
-	fname.append(QString("%1.csv").arg(index));
-	return fname;
-}
+namespace {
 
-bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*) const
-{
-	if (QFile::exists(filename)){
-		bool ok = QFile::remove(filename);
-		if (! ok){
-			return false;
-		}
-	}
-	QFile f(filename);
-	bool ok = f.open(QIODevice::WriteOnly);
-	if (! ok){return false;}
-	QTextStream stream(&f);
-	stream.setRealNumberPrecision(12);
-	stream << "iRIC output t = " << time << "\r\n";
-
-	vtkPointSet* ps = c->data();
-	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
-	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
-	if (sgrid != 0){
-		exportStructuredGrid(c, stream, sgrid, imin, imax, jmin, jmax, kmin, kmax);
-	} else if (ugrid != 0){
-		exportUnstructuredGrid(stream, ugrid);
-	}
-	f.close();
-	return true;
-}
-
-void PostZoneDataCsvExporter::exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
+void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
 {
 	int dim[3];
 	sgrid->GetDimensions(dim);
@@ -50,6 +18,7 @@ void PostZoneDataCsvExporter::exportStructuredGrid(PostZoneDataContainer* c, QTe
 	if (dim[1] != 1){stream << "," << dim[1];}
 	if (dim[2] != 1){stream << "," << dim[2];}
 	stream << "\r\n";
+
 	// header
 	stream << "I";
 	if (dim[1] != 1){stream << ",J";}
@@ -74,6 +43,7 @@ void PostZoneDataCsvExporter::exportStructuredGrid(PostZoneDataContainer* c, QTe
 		}
 	}
 	stream << "\r\n";
+
 	// data
 	for (int k = kmin; k <= kmax; ++k){
 		for (int j = jmin; j <= jmax; ++j){
@@ -107,7 +77,7 @@ void PostZoneDataCsvExporter::exportStructuredGrid(PostZoneDataContainer* c, QTe
 	}
 }
 
-void PostZoneDataCsvExporter::exportUnstructuredGrid(QTextStream& stream, vtkUnstructuredGrid* ugrid)
+void exportUnstructuredGrid(QTextStream& stream, vtkUnstructuredGrid* ugrid)
 {
 	stream << ugrid->GetNumberOfPoints();
 	stream << "\r\n";
@@ -153,4 +123,48 @@ void PostZoneDataCsvExporter::exportUnstructuredGrid(QTextStream& stream, vtkUns
 		}
 		stream << "\r\n";
 	}
+}
+
+
+} // namespace
+
+
+PostZoneDataCsvExporter::PostZoneDataCsvExporter()
+{}
+
+PostZoneDataCsvExporter::~PostZoneDataCsvExporter()
+{}
+
+QString PostZoneDataCsvExporter::filename(const QString& prefix, int index) const
+{
+	QString fname = prefix;
+	fname.append(QString("%1.csv").arg(index));
+	return fname;
+}
+
+bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QString& filename, double time, int imin, int imax, int jmin, int jmax, int kmin, int kmax, ProjectData*) const
+{
+	if (QFile::exists(filename)){
+		bool ok = QFile::remove(filename);
+		if (! ok){
+			return false;
+		}
+	}
+	QFile f(filename);
+	bool ok = f.open(QIODevice::WriteOnly);
+	if (! ok){return false;}
+	QTextStream stream(&f);
+	stream.setRealNumberPrecision(12);
+	stream << "iRIC output t = " << time << "\r\n";
+
+	vtkPointSet* ps = c->data();
+	vtkStructuredGrid* sgrid = vtkStructuredGrid::SafeDownCast(ps);
+	vtkUnstructuredGrid* ugrid = vtkUnstructuredGrid::SafeDownCast(ps);
+	if (sgrid != 0){
+		exportStructuredGrid(c, stream, sgrid, imin, imax, jmin, jmax, kmin, kmax);
+	} else if (ugrid != 0){
+		exportUnstructuredGrid(stream, ugrid);
+	}
+	f.close();
+	return true;
 }
