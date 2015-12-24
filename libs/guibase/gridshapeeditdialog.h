@@ -31,11 +31,9 @@ public:
 
 	struct GUIBASEDLL_EXPORT Setting : public CompositeContainer
 	{
-		/// Constructor
 		Setting();
-		/// Copy constructor
 		Setting(const Setting& s);
-		/// Copy operator
+
 		Setting& operator=(const Setting& s);
 
 		ColorContainer color;
@@ -46,33 +44,12 @@ public:
 
 	GridShapeEditDialog(QWidget* parent = nullptr);
 	~GridShapeEditDialog();
-	/// Hide the widget to select grid shape
+
 	void hideShape();
-	/// Hide the widget to toggle indices display on/off
 	void hideIndex();
-	/// Set the setting
 	void setSetting(const Setting& setting);
-	/// Get the setting
 	Setting setting() const;
 
-/*
-	/// Set the grid color
-	void setGridColor(const QColor& color);
-	/// The grid color
-	QColor gridColor();
-	/// Set the grid shape display type
-	void setShape(Shape shape);
-	/// The grid shape display type
-	Shape shape();
-	/// Set whether the grid indices are visible
-	void setIndexVisible(bool visible);
-	/// Whether the grid indices are visible
-	bool indexVisible();
-	/// Set the grid indices color
-	void setIndexColor(const QColor& color);
-	/// The grid indices color
-	QColor indexColor();
-*/
 private slots:
 	void outlineToggled(bool toggled);
 
