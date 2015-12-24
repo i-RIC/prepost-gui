@@ -4,14 +4,10 @@
 #include "geodatapolygoncreatort.h"
 #include <vtkIntArray.h>
 
-class GeoDataPolygonIntegerCreator : public GeoDataPolygonCreatorT<int, vtkIntArray>
+class GD_POLYGON_EXPORT GeoDataPolygonIntegerCreator : public GeoDataPolygonCreatorT<int, vtkIntArray>
 {
-
 public:
-	GeoDataPolygonIntegerCreator()
-		: GeoDataPolygonCreatorT<int, vtkIntArray>() {
-		m_typeName = "integerPolygon";
-	}
+	GeoDataPolygonIntegerCreator();
 };
 
 #endif // GEODATAPOLYGONINTEGERCREATOR_H

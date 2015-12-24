@@ -17,14 +17,6 @@ GeoDataPolygonCreator::GeoDataPolygonCreator() :
 	m_exporters.append(new GeoDataPolygonShapeExporter(this));
 }
 
-GeoData* GeoDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
-{
-	GeoDataPolygon* polygon = new GeoDataPolygon(parent, this, condition);
-	polygon->setPosition(condition->position());
-	polygon->setDefaultMapper();
-	return polygon;
-}
-
 QString GeoDataPolygonCreator::name(unsigned int index)
 {
 	return QString("polygon%1").arg(index);
@@ -33,4 +25,17 @@ QString GeoDataPolygonCreator::name(unsigned int index)
 QString GeoDataPolygonCreator::defaultCaption(unsigned int index)
 {
 	return QString(tr("Polygon%1")).arg(index);
+}
+
+bool GeoDataPolygonCreator::isCreatable() const
+{
+	return true;
+}
+
+GeoData* GeoDataPolygonCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
+{
+	GeoDataPolygon* polygon = new GeoDataPolygon(parent, this, condition);
+	polygon->setPosition(condition->position());
+	polygon->setDefaultMapper();
+	return polygon;
 }

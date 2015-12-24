@@ -63,8 +63,8 @@
 #include <vtkTriangle.h>
 #include <vtkVertex.h>
 
-GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition)
-	: GeoData(d, creator, condition)
+GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
+	GeoData(d, creator, condition)
 {
 	initParams();
 
@@ -1721,7 +1721,7 @@ void GeoDataPolygon::updateGrid(bool noDraw)
 	}
 	if (m_triangleThread == 0){
 		m_triangleThread = GeoDataPolygonTriangleThread::instance();
-		connect(m_triangleThread, SIGNAL(shapeUpdated(RawDataPolygon*)), this, SLOT(renderGraphics(RawDataPolygon*)));
+		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*)), this, SLOT(renderGraphics(GeoDataPolygon*)));
 	}
 	m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){

@@ -4,14 +4,10 @@
 #include "geodatapolygoncreatort.h"
 #include <vtkDoubleArray.h>
 
-class GeoDataPolygonRealCreator : public GeoDataPolygonCreatorT<double, vtkDoubleArray>
+class GD_POLYGON_EXPORT GeoDataPolygonRealCreator : public GeoDataPolygonCreatorT<double, vtkDoubleArray>
 {
-
 public:
-	GeoDataPolygonRealCreator()
-		: GeoDataPolygonCreatorT<double, vtkDoubleArray>() {
-		m_typeName = "realPolygon";
-	}
+	GeoDataPolygonRealCreator();
 };
 
 #endif // GEODATAPOLYGONREALCREATOR_H
