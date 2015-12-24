@@ -50,6 +50,8 @@
 #include <cgnslib.h>
 #include <iriclib.h>
 
+#include <typeinfo>
+
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zoneName, const QString& caption, PreProcessorDataItem* p) :
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
 	m_zoneName (zoneName),
@@ -177,6 +179,11 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setGridEdited()
 
 void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* grid)
 {
+	if (grid == nullptr) {return;}
+
+	PreProcessorGridDataItem* gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
+	if (m_gridDataItem != nullptr && typeid(*m_gridDataItem).name() == typeid(*gridItem).name()) {return;}
+
 	if (m_gridDataItem != nullptr) {
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
 		tmpItem->unsetBCGroupDataItem();
@@ -186,7 +193,6 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		delete tmpItem;
 	}
 
-	PreProcessorGridDataItem* gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
 	m_gridDataItem = gridItem;
 	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
 	m_childItems.append(gridItem);
