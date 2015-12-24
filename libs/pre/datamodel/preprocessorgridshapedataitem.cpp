@@ -62,6 +62,8 @@ PreProcessorGridShapeDataItem::PreProcessorGridShapeDataItem(PreProcessorDataIte
 
 	parent->standardItem()->takeRow(m_standardItem->row());
 
+	m_setting.shape = GridShapeEditDialog::Wireframe;
+
 	m_editAction = new QAction(PreProcessorGridShapeDataItem::tr("&Edit Coordinates..."), this);
 	connect(m_editAction, SIGNAL(triggered()), this, SLOT(editShape()));
 
