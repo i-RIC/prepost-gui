@@ -17,8 +17,9 @@ class POSTBASEDLL_EXPORT PostTimeEditDialog : public QDialog
 public:
 	explicit PostTimeEditDialog(QWidget* parent = nullptr);
 	~PostTimeEditDialog();
-	void setSetting(const PostTimeDataItem::Setting& setting);
+
 	PostTimeDataItem::Setting setting() const;
+	void setSetting(const PostTimeDataItem::Setting& setting);
 
 private:
 	Ui::PostTimeEditDialog* ui;
