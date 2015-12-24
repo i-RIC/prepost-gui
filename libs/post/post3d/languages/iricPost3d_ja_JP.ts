@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -12,12 +12,12 @@
 <context>
     <name>Post3dWindow</name>
     <message>
-        <location filename="../post3dwindow.cpp" line="39"/>
+        <location filename="../post3dwindow.cpp" line="40"/>
         <source>Post-processing (3D): %1</source>
         <translation>可視化ウィンドウ (3D): %1</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="178"/>
+        <location filename="../post3dwindow.cpp" line="179"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -73,12 +73,12 @@
 <context>
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="47"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="52"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="97"/>
         <source>Arrow Setting</source>
         <translation>ベクトル設定</translation>
     </message>
@@ -192,7 +192,7 @@
         <translation>削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="162"/>
+        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="81"/>
         <source>Face%1</source>
         <translation>面%1</translation>
     </message>
@@ -200,12 +200,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="44"/>
         <source>Contour</source>
         <translation>コンター</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="525"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="388"/>
         <source>Contour Setting</source>
         <translation>コンター設定</translation>
     </message>
@@ -244,7 +244,7 @@
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupsettingdialog.cpp" line="145"/>
+        <location filename="../datamodel/post3dwindowcontourgroupsettingdialog.cpp" line="132"/>
         <source>Face%1</source>
         <translation>面%1</translation>
     </message>
@@ -252,12 +252,12 @@
 <context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
         <source>Z-direction Scale</source>
         <translation>Z方向の倍率</translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
         <source>Input new Z-direction scale.</source>
         <translation>Z方向の倍率を入力してください。</translation>
     </message>
@@ -265,7 +265,7 @@
 <context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="25"/>
+        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="26"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
@@ -430,38 +430,48 @@
     </message>
     <message>
         <source>Value Color</source>
-        <translation type="vanished">値の色</translation>
+        <translation>値の色</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="48"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="51"/>
         <source>Isosurface</source>
         <translation>等値面</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="315"/>
+        <source>Isosurface physical value change</source>
+        <translation>等値面物理量の変更</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="vanished">パーティクル</translation>
+        <translation>パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="36"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="39"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="77"/>
+        <source>Particle Physical Value Change</source>
+        <translation>パーティクル 物理量の変更</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="26"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="29"/>
         <source>Streamlines</source>
         <translation>流線</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="69"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="64"/>
         <source>Streamline Physical Value Change</source>
         <translation>流線 物理量の変更</translation>
     </message>
@@ -651,20 +661,51 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesScalarGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="29"/>
+        <source>Scalar</source>
+        <translation>スカラー</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="127"/>
+        <source>Particle Scalar value change</source>
+        <translation>スカラー値の変更</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="17"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="21"/>
         <source>Particles</source>
         <translation>粒子</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="93"/>
+        <location filename="../datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
         <source>Edit Particle Setting</source>
         <translation>パーティクル設定の編集</translation>
     </message>
     <message>
         <source>Particles (auto)</source>
-        <translation type="vanished">パーティクル (自動)</translation>
+        <translation>パーティクル (自動)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="47"/>
+        <source>Vector</source>
+        <translation>ベクトル</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="70"/>
+        <source>Vector Attribute Select Change</source>
+        <translation>ベクトル属性の変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
+        <translation>ベクトル設定変更</translation>
     </message>
 </context>
 <context>
@@ -820,17 +861,15 @@ p, li { white-space: pre-wrap; }
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="240"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="323"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="83"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
     </message>
@@ -841,7 +880,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation type="vanished">流線 物理量の変更</translation>
+        <translation>流線 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
@@ -849,9 +888,14 @@ p, li { white-space: pre-wrap; }
         <translation>流線の設定変更</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="152"/>
+        <location filename="../post3dwindow.cpp" line="153"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <source>Update Particles Scalar Setting</source>
+        <translation>スカラー設定変更</translation>
     </message>
 </context>
 </TS>

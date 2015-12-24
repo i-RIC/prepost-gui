@@ -304,12 +304,12 @@
 <context>
     <name>GeoDataPolygonShapeExporter</name>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="18"/>
+        <location filename="../geodatapolygonshapeexporter.cpp" line="19"/>
         <source>ESRI Shape file</source>
         <translation>ESRI シェープファイル</translation>
     </message>
     <message>
-        <location filename="../geodatapolygonshapeexporter.cpp" line="135"/>
+        <location filename="../geodatapolygonshapeexporter.cpp" line="136"/>
         <source>ESRI Shape file (*.shp)</source>
         <translation>ESRI シェープファイル (*.shp)</translation>
     </message>

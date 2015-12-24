@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -102,9 +102,19 @@
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="50"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="53"/>
         <source>Contour</source>
         <translation>コンター</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="362"/>
+        <source>Contour Physical Value Change</source>
+        <translation>コンター 物理量変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <source>Update Contour Setting</source>
+        <translation>コンターの設定変更</translation>
     </message>
 </context>
 <context>
@@ -115,12 +125,10 @@
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="386"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="442"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>

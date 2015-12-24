@@ -198,13 +198,10 @@ Do you really want to import this file?</source>
 <context>
     <name>CgnsFileInputConditionWidgetFilename</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="40"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="72"/>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="80"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
@@ -223,12 +220,10 @@ Do you really want to import this file?</source>
 <context>
     <name>CgnsFileInputConditionWidgetFoldername</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="40"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="64"/>
         <source>Select Directory</source>
         <translation>フォルダを選択してください</translation>
     </message>
@@ -434,17 +429,17 @@ Do you really want to import this file?</source>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="25"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="18"/>
         <source>Distance Measures</source>
         <translation>距離計測</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="21"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="14"/>
         <source>&amp;Add Measure...</source>
         <translation>計測の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="48"/>
+        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="41"/>
         <source>Measure%1</source>
         <translation>計測%1</translation>
     </message>
@@ -507,6 +502,14 @@ Do you really want to import this file?</source>
         <location filename="../pre/geodatabackground/geodatabackgroundeditdialog.ui" line="36"/>
         <source>Custom value</source>
         <translation>指定した値</translation>
+    </message>
+</context>
+<context>
+    <name>GraphicsWindowDataItem</name>
+    <message>
+        <location filename="../datamodel/graphicswindowdataitemstandarditemchangecommand.cpp" line="15"/>
+        <source>Object Browser Item Change</source>
+        <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
 </context>
 <context>
@@ -917,27 +920,60 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetFilename</name>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="27"/>
+        <source>File name has to consist of only English characters.</source>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="29"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="74"/>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="76"/>
+        <source>Select File</source>
+        <translation>ファイルを選択してください</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionWidgetFilenameEdit</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="20"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="20"/>
         <source>File name has to consist of only English characters.</source>
         <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
+    <name>InputConditionWidgetFoldername</name>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="19"/>
+        <source>Folder name has to consist of only English characters.</source>
+        <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="21"/>
+        <source>...</source>
+        <translation>...</translation>
+    </message>
+    <message>
+        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="58"/>
+        <source>Select Directory</source>
+        <translation>フォルダを選択してください</translation>
+    </message>
+</context>
+<context>
     <name>InputConditionWidgetFoldernameEdit</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="20"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="20"/>
         <source>Folder name has to consist of only English characters.</source>
         <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
@@ -1022,12 +1058,10 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionWidgetString</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetstring.cpp" line="30"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetstring.cpp" line="30"/>
         <source>String has to consist of only English characters.</source>
         <translation>文字列には、英数字と記号しか使用できません。</translation>
     </message>
@@ -1534,56 +1568,56 @@ Do you really want to import this file?</source>
 <context>
     <name>PostSolutionInfo</name>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="132"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="394"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="668"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="765"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="154"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="416"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="745"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="842"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="132"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="394"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="154"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="416"/>
         <source>Error occured while loading calculation result.</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="634"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="711"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="634"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="711"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="668"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="745"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="717"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="794"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="721"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="798"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="724"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="727"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="765"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="842"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -1690,33 +1724,33 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="345"/>
-        <location filename="../project/projectmainfile.cpp" line="434"/>
+        <location filename="../project/projectmainfile.cpp" line="429"/>
         <source>CGNS file (*.cgn)</source>
         <translation>CGNS ファイル(*.cgn)</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="355"/>
         <location filename="../project/projectmainfile.cpp" line="360"/>
+        <location filename="../project/projectmainfile.cpp" line="392"/>
         <location filename="../project/projectmainfile.cpp" line="397"/>
-        <location filename="../project/projectmainfile.cpp" line="402"/>
-        <location filename="../project/projectmainfile.cpp" line="440"/>
-        <location filename="../project/projectmainfile.cpp" line="471"/>
-        <location filename="../project/projectmainfile.cpp" line="925"/>
-        <location filename="../project/projectmainfile.cpp" line="972"/>
-        <location filename="../project/projectmainfile.cpp" line="992"/>
-        <location filename="../project/projectmainfile.cpp" line="999"/>
+        <location filename="../project/projectmainfile.cpp" line="435"/>
+        <location filename="../project/projectmainfile.cpp" line="466"/>
+        <location filename="../project/projectmainfile.cpp" line="920"/>
+        <location filename="../project/projectmainfile.cpp" line="967"/>
+        <location filename="../project/projectmainfile.cpp" line="987"/>
+        <location filename="../project/projectmainfile.cpp" line="994"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="355"/>
-        <location filename="../project/projectmainfile.cpp" line="397"/>
+        <location filename="../project/projectmainfile.cpp" line="392"/>
         <source>Solution %1 already exists.</source>
         <translation>ソリューション %1 は既に存在します。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="360"/>
-        <location filename="../project/projectmainfile.cpp" line="402"/>
+        <location filename="../project/projectmainfile.cpp" line="397"/>
         <source>CGNS file whose name contains characters other than alphabets and numbers can not be imported.</source>
         <translation>英数字以外の文字を名前に含む CGNS ファイルは、インポートできません。</translation>
     </message>
@@ -1725,28 +1759,24 @@ Do you really want to import this file?</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="374"/>
-        <location filename="../project/projectmainfile.cpp" line="380"/>
-        <location filename="../project/projectmainfile.cpp" line="497"/>
-        <location filename="../project/projectmainfile.cpp" line="519"/>
-        <location filename="../project/projectmainfile.cpp" line="607"/>
-        <location filename="../project/projectmainfile.cpp" line="614"/>
-        <location filename="../project/projectmainfile.cpp" line="624"/>
-        <location filename="../project/projectmainfile.cpp" line="635"/>
-        <location filename="../project/projectmainfile.cpp" line="638"/>
+        <location filename="../project/projectmainfile.cpp" line="492"/>
+        <location filename="../project/projectmainfile.cpp" line="514"/>
+        <location filename="../project/projectmainfile.cpp" line="602"/>
+        <location filename="../project/projectmainfile.cpp" line="609"/>
+        <location filename="../project/projectmainfile.cpp" line="619"/>
+        <location filename="../project/projectmainfile.cpp" line="630"/>
+        <location filename="../project/projectmainfile.cpp" line="633"/>
+        <location filename="../project/projectmainfile.cpp" line="826"/>
         <location filename="../project/projectmainfile.cpp" line="831"/>
-        <location filename="../project/projectmainfile.cpp" line="836"/>
-        <location filename="../project/projectmainfile.cpp" line="981"/>
+        <location filename="../project/projectmainfile.cpp" line="976"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="375"/>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.</source>
         <translation>この CGNS ファイルは、 %1 version %2 用に作られたもので、現在利用しているソルバーと互換性がありません。可視化専用モードに移行します。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="381"/>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver.</source>
         <translation>このCGNSファイルには、ソルバ情報がありません。このCGNSファイルが現在のソルバと互換性があるか確認できません。</translation>
     </message>
@@ -1757,94 +1787,94 @@ Do you really want to import this file?</source>
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="434"/>
+        <location filename="../project/projectmainfile.cpp" line="429"/>
         <source>Export CGNS file</source>
         <translation>CNGS ファイルのエクスポート</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="440"/>
+        <location filename="../project/projectmainfile.cpp" line="435"/>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
         <translation>CGNS ファイルのエクスポートが失敗しました。指定されたファイルは、他のプロセスが使用中です。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="471"/>
+        <location filename="../project/projectmainfile.cpp" line="466"/>
         <source>Error occured while opening CGNS file in project file : %1</source>
         <translation>プロジェクト内の CGNS ファイルの読み込み中にエラーが発生しました。: %1</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="497"/>
-        <location filename="../project/projectmainfile.cpp" line="519"/>
+        <location filename="../project/projectmainfile.cpp" line="492"/>
+        <location filename="../project/projectmainfile.cpp" line="514"/>
         <source>%1 Saving project file failed.</source>
         <translation>%1 プロジェクトファイルの保存が失敗しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="595"/>
+        <location filename="../project/projectmainfile.cpp" line="590"/>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
         <translation>すべての画像(*.jpg *.jpeg *.png *.tif);;JPEG 画像(*.jpg *.jpeg);;PNG 画像(*.png);;TIFF 画像(*.tif)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="597"/>
+        <location filename="../project/projectmainfile.cpp" line="592"/>
         <source>Open Image file</source>
         <translation>画像ファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="607"/>
+        <location filename="../project/projectmainfile.cpp" line="602"/>
         <source>A background image with the same name already exists.</source>
         <translation>同じファイル名の背景画像が既に存在します。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="614"/>
-        <location filename="../project/projectmainfile.cpp" line="624"/>
+        <location filename="../project/projectmainfile.cpp" line="609"/>
+        <location filename="../project/projectmainfile.cpp" line="619"/>
         <source>The background image was not added. Please try again.</source>
         <translation>背景画像は追加されませんでした。もう一度試してみてください。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="638"/>
+        <location filename="../project/projectmainfile.cpp" line="633"/>
         <source>Invalid image file is specified.</source>
         <translation>不正な画像ファイルが指定されました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="805"/>
+        <location filename="../project/projectmainfile.cpp" line="800"/>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。古い iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="807"/>
+        <location filename="../project/projectmainfile.cpp" line="802"/>
         <source>This project file cannot be read, because it was created by newer iRIC (version %1).</source>
         <translation>このプロジェクトファイルを読み込むことができません。新しい iRIC (バージョン %1) で作成されたファイルです。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="835"/>
+        <location filename="../project/projectmainfile.cpp" line="830"/>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="912"/>
+        <location filename="../project/projectmainfile.cpp" line="907"/>
         <source>Text Files (*.csv *.txt);;All Files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="913"/>
+        <location filename="../project/projectmainfile.cpp" line="908"/>
         <source>Open Measured Data File</source>
         <translation>実測値データファイルを開く</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="972"/>
+        <location filename="../project/projectmainfile.cpp" line="967"/>
         <source>Error occured while loading %1.</source>
         <translation>%1 の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="981"/>
+        <location filename="../project/projectmainfile.cpp" line="976"/>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
         <translation>このファイルは、ソルバ %1 %2 用のものです。現在お使いのソルバと互換性がないため、インポートは失敗する可能性があります。本当にこのファイルをインポートしますか?</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="992"/>
+        <location filename="../project/projectmainfile.cpp" line="987"/>
         <source>There is no visualization/graph windows.</source>
         <translation>可視化・グラフウィンドウがありません。</translation>
     </message>
     <message>
-        <location filename="../project/projectmainfile.cpp" line="999"/>
+        <location filename="../project/projectmainfile.cpp" line="994"/>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
@@ -1927,7 +1957,6 @@ Do you really want to import this file?</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/graphicswindowdataitem.h" line="196"/>
         <source>Object Browser Item Change</source>
         <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
@@ -1938,12 +1967,12 @@ Do you really want to import this file?</source>
         <translation>描画</translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="72"/>
+        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="22"/>
         <source>Move up item</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="106"/>
+        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="48"/>
         <source>Move down item</source>
         <translation>下に移動</translation>
     </message>
@@ -2004,13 +2033,13 @@ Do you really want to import this file?</source>
         <translation>背景画像の再配置</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="28"/>
-        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="108"/>
+        <location filename="../solverdef/solverdefinitionboundarycondition.cpp" line="17"/>
+        <location filename="../solverdef/solverdefinitiongridtype.cpp" line="72"/>
         <source>Default</source>
         <translation>デフォルト</translation>
     </message>
     <message>
-        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="74"/>
+        <location filename="../solverdef/solverdefinitiongridcomplexattribute.cpp" line="66"/>
         <source>(Undefined)</source>
         <translation>(未定義)</translation>
     </message>
@@ -2071,7 +2100,14 @@ Do you really want to import this file?</source>
 <context>
     <name>SolverDefinition</name>
     <message>
-        <location filename="../solverdef/solverdefinition.cpp" line="97"/>
+        <source>%1 Grids</source>
+        <translation>%1 格子</translation>
+    </message>
+</context>
+<context>
+    <name>SolverDefinition::Impl</name>
+    <message>
+        <location filename="../solverdef/solverdefinition.cpp" line="71"/>
         <source>%1 Grids</source>
         <translation>%1 格子</translation>
     </message>
@@ -2079,78 +2115,78 @@ Do you really want to import this file?</source>
 <context>
     <name>Structured2DGrid</name>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="209"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="248"/>
         <source>An edge line intersects with that of another cell in this grid.</source>
         <translation>格子線が、他のセルの格子線と交差しています。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="215"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="254"/>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
         <translation>辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="222"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="261"/>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
         <translation>セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="228"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="267"/>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
         <translation>格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="237"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="276"/>
         <source>* Cells where edges intersect</source>
         <translation>* 格子線が交差しているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="258"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="304"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="340"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="375"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="404"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="297"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="343"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="379"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="414"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="443"/>
         <source>Not exist</source>
         <translation>ありません</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="269"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="308"/>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
         <translation>* 辺のアスペクト比が %1 以上のセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="284"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="294"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="323"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="333"/>
         <source>I, J, Aspect ratio</source>
         <translation>I, J, アスペクト比</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="286"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="325"/>
         <source>Edge length too small</source>
         <translation>辺の長さが小さすぎます</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="313"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="352"/>
         <source>* Cells where angle of cell vertex is below %1</source>
         <translation>* セルの頂点の角度が %1 以下になっているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="331"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="370"/>
         <source>I, J, Angle</source>
         <translation>I, J, 角度</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="349"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="388"/>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
         <translation>セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="365"/>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="394"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="404"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="433"/>
         <source>I, J, Variation</source>
         <translation>I, J, 変化率</translation>
     </message>
     <message>
-        <location filename="../pre/grid/structured2dgrid.cpp" line="380"/>
+        <location filename="../pre/grid/structured2dgrid.cpp" line="419"/>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
         <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>

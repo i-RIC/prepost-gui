@@ -256,7 +256,7 @@
     </message>
     <message>
         <location filename="../geodatariverpathpointrotatedialog.cpp" line="45"/>
-        <location filename="../geodatariversurvey.cpp" line="702"/>
+        <location filename="../geodatariversurvey.cpp" line="703"/>
         <source>Rotate Traversal Line</source>
         <translation></translation>
     </message>
@@ -266,149 +266,149 @@
         <translation>河川横断線の中心点のシフト</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="407"/>
+        <location filename="../geodatariversurvey.cpp" line="408"/>
         <source>&amp;River Survey</source>
         <translation>河川測量データ (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="436"/>
-        <location filename="../geodatariversurvey.cpp" line="466"/>
+        <location filename="../geodatariversurvey.cpp" line="437"/>
+        <location filename="../geodatariversurvey.cpp" line="467"/>
         <source>Interpolation Mode</source>
         <translation>補間モード</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="634"/>
+        <location filename="../geodatariversurvey.cpp" line="635"/>
         <source>Move Traversal Line</source>
         <translation>横断線の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="767"/>
+        <location filename="../geodatariversurvey.cpp" line="768"/>
         <source>Shift Center Point</source>
         <translation>河川中心点のシフト</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="837"/>
+        <location filename="../geodatariversurvey.cpp" line="838"/>
         <source>Move Extension Line End</source>
         <translation>延長線の端点の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1049"/>
+        <location filename="../geodatariversurvey.cpp" line="1050"/>
         <source>Selection Change</source>
         <translation>選択状態の変更</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1546"/>
+        <location filename="../geodatariversurvey.cpp" line="1547"/>
         <source>  </source>
         <translation>  </translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1722"/>
+        <location filename="../geodatariversurvey.cpp" line="1723"/>
         <source>Insert Upstream Side(&amp;B)...</source>
         <translation>上流側に挿入(&amp;B)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1724"/>
+        <location filename="../geodatariversurvey.cpp" line="1725"/>
         <source>Insert Downstream Side(&amp;A)...</source>
         <translation>下流側に挿入(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1726"/>
+        <location filename="../geodatariversurvey.cpp" line="1727"/>
         <source>&amp;Move...</source>
         <translation>移動(&amp;M)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1728"/>
+        <location filename="../geodatariversurvey.cpp" line="1729"/>
         <source>&amp;Rotate...</source>
         <translation>回転(&amp;R)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1730"/>
+        <location filename="../geodatariversurvey.cpp" line="1731"/>
         <source>S&amp;hift Center...</source>
         <translation>中心点のシフト(&amp;H)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1732"/>
+        <location filename="../geodatariversurvey.cpp" line="1733"/>
         <source>E&amp;xtend Horizontally...</source>
         <translation>左右への伸縮(&amp;X)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1734"/>
+        <location filename="../geodatariversurvey.cpp" line="1735"/>
         <source>Dele&amp;te Cross Section</source>
         <translation>横断線の削除(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1736"/>
+        <location filename="../geodatariversurvey.cpp" line="1737"/>
         <source>R&amp;ename Cross Section...</source>
         <translation>横断線の名前の変更(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1738"/>
+        <location filename="../geodatariversurvey.cpp" line="1739"/>
         <source>Add &amp;Left Bank Extension Line...</source>
         <translation>左岸延長線追加(&amp;K)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1740"/>
+        <location filename="../geodatariversurvey.cpp" line="1741"/>
         <source>Add &amp;Right Bank Extension Line...</source>
         <translation>右岸延長線追加(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1742"/>
+        <location filename="../geodatariversurvey.cpp" line="1743"/>
         <source>Remo&amp;ve Left Bank Extension Line</source>
         <translation>左岸延長線削除(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1744"/>
+        <location filename="../geodatariversurvey.cpp" line="1745"/>
         <source>Rem&amp;ove Right Bank Extension Line</source>
         <translation>右岸延長線削除(&amp;J)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1746"/>
+        <location filename="../geodatariversurvey.cpp" line="1747"/>
         <source>Display &amp;Cross Section</source>
         <translation>横断面の表示 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1750"/>
+        <location filename="../geodatariversurvey.cpp" line="1751"/>
         <source>Display &amp;Setting</source>
         <translation>表示設定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1752"/>
+        <location filename="../geodatariversurvey.cpp" line="1753"/>
         <source>Spline</source>
         <translation>スプライン補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1756"/>
+        <location filename="../geodatariversurvey.cpp" line="1757"/>
         <source>Linear Curve</source>
         <translation>線形補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1825"/>
+        <location filename="../geodatariversurvey.cpp" line="1826"/>
         <source>Delete Traversal Lines</source>
         <translation>河川横断線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1910"/>
-        <location filename="../geodatariversurvey.cpp" line="2087"/>
+        <location filename="../geodatariversurvey.cpp" line="1911"/>
+        <location filename="../geodatariversurvey.cpp" line="2088"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1910"/>
+        <location filename="../geodatariversurvey.cpp" line="1911"/>
         <source>River survey data need at least 2 center points.</source>
         <translation>最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1990"/>
+        <location filename="../geodatariversurvey.cpp" line="1991"/>
         <source>Remove Extension Line</source>
         <translation>延長線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2087"/>
+        <location filename="../geodatariversurvey.cpp" line="2088"/>
         <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
         <translation>追加対象の名前が &quot;0&quot; です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2297"/>
+        <location filename="../geodatariversurvey.cpp" line="2298"/>
         <source>Edit Display Setting</source>
         <translation>表示設定の編集</translation>
     </message>
@@ -416,12 +416,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="16"/>
+        <location filename="../geodatariversurveycreator.cpp" line="17"/>
         <source>River Survey data</source>
         <translation>河川測量データ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="40"/>
+        <location filename="../geodatariversurveycreator.cpp" line="41"/>
         <source>RiverSurvey %1</source>
         <translation>河川測量データ %1</translation>
     </message>

@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>AsciiOnlyLineEdit</name>
+    <message>
+        <location filename="../asciionlylineedit.cpp" line="9"/>
+        <source>String has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../asciionlylineedit.cpp" line="22"/>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <location filename="../cgnszoneselectdialog.ui" line="14"/>
@@ -17,113 +30,113 @@
 <context>
     <name>ColorMapCustomSettingDialog</name>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="14"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="14"/>
         <source>Custom Color Map</source>
         <translation>カスタムカラーマップ</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="22"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="22"/>
         <source>Type:</source>
         <translation>種類:</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="30"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="30"/>
         <source>Two Colors</source>
         <translation>2色</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="35"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="35"/>
         <source>Three Colors</source>
         <translation>3色</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="40"/>
-        <location filename="../colormapcustomsettingdialog.ui" line="131"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="40"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="131"/>
         <source>Arbitrary</source>
         <translation>任意</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="63"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="63"/>
         <source>Two Colors/ Three Colors</source>
         <translation>2色/3色</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="69"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="69"/>
         <source>Maximum Value</source>
         <translation>最大値</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="83"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="83"/>
         <source>Medium Value</source>
         <translation>中間値</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="102"/>
-        <location filename="../colormapcustomsettingdialog.ui" line="138"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="102"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="138"/>
         <source>Value</source>
         <translation>値</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="114"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="114"/>
         <source>Minimum Value</source>
         <translation>最小値</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="143"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="143"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="153"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="153"/>
         <source>&amp;Add</source>
         <translation>追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="160"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="160"/>
         <source>&amp;Remove</source>
         <translation>削除(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="167"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="167"/>
         <source>&amp;Import</source>
         <translation>インポート(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="174"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="174"/>
         <source>&amp;Export</source>
         <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="241"/>
         <source>Import Colormap Setting</source>
         <translation>カラーマップ設定のインポート</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="241"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="310"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="247"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="254"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="316"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="247"/>
         <source>File %1 does not exists.</source>
         <translation>%1 は存在しません。</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="254"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="316"/>
         <source>File %1 could not be opened.</source>
         <translation>%1 を開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="310"/>
         <source>Export Colormap Setting</source>
         <translation>カラーマップ設定のエクスポート</translation>
     </message>
@@ -131,17 +144,17 @@
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="20"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="20"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="154"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="154"/>
         <source>Custom</source>
         <translation>手動</translation>
     </message>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="167"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="167"/>
         <source>Setting...</source>
         <translation>設定...</translation>
     </message>

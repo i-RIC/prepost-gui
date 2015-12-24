@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
@@ -42,19 +42,166 @@
 <context>
     <name>PostParticleBasicPropertyDialog</name>
     <message>
-        <location filename="../postparticlebasicpropertydialog.ui" line="14"/>
         <source>Particles Setting</source>
         <translation>粒子設定</translation>
     </message>
     <message>
-        <location filename="../postparticlebasicpropertydialog.ui" line="22"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../postparticlebasicpropertydialog.ui" line="53"/>
         <source>Size:</source>
         <translation>サイズ:</translation>
+    </message>
+</context>
+<context>
+    <name>PostParticleBasicSettingDialog</name>
+    <message>
+        <location filename="../particle/postparticlebasicsettingdialog.ui" line="14"/>
+        <source>Particles Setting</source>
+        <translation>粒子設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlebasicsettingdialog.ui" line="22"/>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlebasicsettingdialog.ui" line="53"/>
+        <source>Size:</source>
+        <translation>サイズ:</translation>
+    </message>
+</context>
+<context>
+    <name>PostParticleScalarPropertyDialog</name>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="14"/>
+        <source>Particle Scalar Setting</source>
+        <translation>スカラー設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="26"/>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="64"/>
+        <source>Color by attribute value</source>
+        <translation>属性値により自動設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="89"/>
+        <source>Attribute:</source>
+        <translation>属性:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="127"/>
+        <source>Size:</source>
+        <translation>サイズ:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlescalarpropertydialog.ui" line="171"/>
+        <source>&amp;Color Bar Setting</source>
+        <translation>カラーバー設定(&amp;C)</translation>
+    </message>
+</context>
+<context>
+    <name>PostParticleVectorPropertyDialog</name>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="17"/>
+        <source>Arrow Setting</source>
+        <translation>ベクトル設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="31"/>
+        <source>Attribute value:</source>
+        <translation>属性値:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="56"/>
+        <source>Length</source>
+        <translation>長さ</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="62"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="76"/>
+        <source>Standard value:</source>
+        <translation>標準値:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="105"/>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="168"/>
+        <source>[m/s]</source>
+        <translation>[m/s]</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="112"/>
+        <source>Length on screen:</source>
+        <translation>画面上での長さ:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="132"/>
+        <source>[pixel]</source>
+        <translation>[ピクセル]</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="139"/>
+        <source>Minimum value to draw:</source>
+        <translation>表示する最小値:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="195"/>
+        <source>Sampling</source>
+        <translation>サンプリング</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="203"/>
+        <source>All particles</source>
+        <translation>全粒子に表示</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="213"/>
+        <source>Sampling rate:</source>
+        <translation>間引き間隔:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="233"/>
+        <source>Specify number of particles</source>
+        <translation>表示する粒子数を指定:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="271"/>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="283"/>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="313"/>
+        <source>By scalar value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="336"/>
+        <source>Arrow Shape</source>
+        <translation>矢印形状</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="344"/>
+        <source>Arrow size:</source>
+        <translation>矢印の大きさ:</translation>
+    </message>
+    <message>
+        <location filename="../particle/postparticlevectorpropertydialog.ui" line="361"/>
+        <source>Line width:</source>
+        <translation>線の幅:</translation>
     </message>
 </context>
 <context>
@@ -111,12 +258,11 @@
 <context>
     <name>PostTitleDataItem</name>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="19"/>
+        <location filename="../title/posttitledataitem.cpp" line="20"/>
         <source>Title</source>
         <translation>タイトル</translation>
     </message>
     <message>
-        <location filename="../title/posttitledataitem.cpp" line="71"/>
         <source>Edit title setting</source>
         <translation>時刻表示の設定変更</translation>
     </message>
