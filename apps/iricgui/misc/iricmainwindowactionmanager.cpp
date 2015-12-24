@@ -23,6 +23,7 @@
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenuBar>
+#include <QPainter>
 #include <QStatusBar>
 
 iRICMainWindowActionManager::iRICMainWindowActionManager(iRICMainWindow* parent)
@@ -997,6 +998,9 @@ void iRICMainWindowActionManager::updateCameraAction(QAction* a, QWidget* w, con
 
 void iRICMainWindowActionManager::updateWindowList()
 {
+	QPixmap shortcutPixmap(":/images/iconShortcut.png");
+	QSize iconSize = m_mainToolBar->iconSize();
+
 	QList<QAction*> actions = m_viewMenu->actions();
 	auto it = actions.begin();
 	while ((*it) != m_windowMenuSeparetor) {
@@ -1013,7 +1017,9 @@ void iRICMainWindowActionManager::updateWindowList()
 	QMdiArea* mdiArea = dynamic_cast<QMdiArea*>(m_parent->centralWidget());
 	QList<QMdiSubWindow*>windowList = mdiArea->subWindowList();
 	m_windowsToolBar->clear();
+
 	int i = 1;
+	QPainter painter;
 	for (QMdiSubWindow* w : windowList) {
 		if (m_parent->isPostOnlyMode()) {
 			if (dynamic_cast<PreProcessorWindow*> (w->widget()) != 0) {continue;}
@@ -1028,7 +1034,13 @@ void iRICMainWindowActionManager::updateWindowList()
 		}
 		QAction* a = new QAction(title, m_viewMenu);
 		a->setEnabled(m_isProjectFileOpen);
-		a->setIcon(w->windowIcon());
+
+		QPixmap iconWithShortcut(w->windowIcon().pixmap(iconSize));
+		painter.begin(&iconWithShortcut);
+		painter.drawPixmap(0, 0, iconSize.width(), iconSize.height(), shortcutPixmap);
+		painter.end();
+		a->setIcon(QIcon(iconWithShortcut));
+
 		m_viewMenu->addAction(a);
 		m_windowsToolBar->addAction(a);
 		connect(a, SIGNAL(triggered()), m_windowActivationMapper, SLOT(map()));

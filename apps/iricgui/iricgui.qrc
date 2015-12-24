@@ -54,5 +54,6 @@
         <file>images/iconGraphVerification.png</file>
         <file>images/iconVisGraphScattered.png</file>
         <file>data/unknownsolver/definition.xml</file>
+        <file>images/iconShortcut.png</file>
     </qresource>
 </RCC>
