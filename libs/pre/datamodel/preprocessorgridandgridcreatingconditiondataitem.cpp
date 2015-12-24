@@ -182,7 +182,10 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	if (grid == nullptr) {return;}
 
 	PreProcessorGridDataItem* gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
-	if (m_gridDataItem != nullptr && typeid(*m_gridDataItem).name() == typeid(*gridItem).name()) {return;}
+	if (m_gridDataItem != nullptr && typeid(*m_gridDataItem).name() == typeid(*gridItem).name()) {
+		delete gridItem;
+		return;
+	}
 
 	if (m_gridDataItem != nullptr) {
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
