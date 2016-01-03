@@ -19,13 +19,6 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-
-signals:
-	void changed(Post2dWindowNodeVectorParticleDataItem*);
-
-private:
-	void doLoadFromProjectMainFile(const QDomNode&) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEDATAITEM_H

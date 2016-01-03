@@ -45,9 +45,3 @@ void Post2dWindowParticlesScalarDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent()->parent())->showParticleBrowserAction();
 	menu->addAction(abAction);
 }
-
-void Post2dWindowParticlesScalarDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
-
-void Post2dWindowParticlesScalarDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
-{}

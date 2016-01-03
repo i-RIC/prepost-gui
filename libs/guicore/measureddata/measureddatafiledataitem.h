@@ -14,24 +14,21 @@ class GUICOREDLL_EXPORT MeasuredDataFileDataItem : public GraphicsWindowDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent);
-	/// Destructor
 	~MeasuredDataFileDataItem();
-	MeasuredData* measuredData() const {return m_measuredData;}
-	MeasuredDataPointGroupDataItem* pointGroupDataItem() const {return m_pointGroupDataItem;}
-	MeasuredDataVectorGroupDataItem* vectorGroupDataItem() const {return m_vectorGroupDataItem;}
-	void addCustomMenuItems(QMenu* menu) override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	void doApplyOffset(double x, double y) override;
+	MeasuredData* measuredData() const;
+	MeasuredDataPointGroupDataItem* pointGroupDataItem() const;
+	MeasuredDataVectorGroupDataItem* vectorGroupDataItem() const;
+	void addCustomMenuItems(QMenu* menu) override;
 
 private slots:
 	void exportToFile();
 
-protected:
+private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void doApplyOffset(double x, double y) override;
 
 	MeasuredData* m_measuredData;
 

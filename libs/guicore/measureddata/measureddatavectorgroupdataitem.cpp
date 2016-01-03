@@ -1,6 +1,8 @@
 #include "../datamodel/graphicswindowdatamodel.h"
 #include "../datamodel/vtk2dgraphicsview.h"
 #include "../scalarstocolors/lookuptablecontainer.h"
+#include "../named/namedgraphicswindowdataitemtool.h"
+#include "../misc/targeted/targeteditemsettargetcommandtool.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
@@ -77,14 +79,13 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 
 	for (int i = 0; i < md->vectorNames().count(); ++i) {
 		QString name = md->vectorNames().at(i);
-		MeasuredDataVectorDataItem* item = new MeasuredDataVectorDataItem(name, name, this);
+		MeasuredDataVectorDataItem* item = new MeasuredDataVectorDataItem(iRIC::toStr(name), name, this);
 		m_childItems.append(item);
 	}
 	setupActors();
 	if (md->vectorNames().count() > 0) {
 		QString name = md->vectorNames().at(0);
-		setSolution(name);
-		updateActorSettings();
+		setTarget(iRIC::toStr(name));
 	}
 }
 
@@ -96,8 +97,7 @@ MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
 void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	setSolution(m_setting.solution);
-	updateActorSettings();
+	setTarget(iRIC::toStr(m_setting.solution));
 }
 
 void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -105,42 +105,24 @@ void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 	m_setting.save(writer);
 }
 
-class MeasuredDataVectorGroupDataItem::SelectSolutionCommand : public QUndoCommand
+std::string MeasuredDataVectorGroupDataItem::target() const
 {
-public:
-	SelectSolutionCommand(const QString& newsol, MeasuredDataVectorGroupDataItem* item) :
-		QUndoCommand {MeasuredDataVectorGroupDataItem::tr("Arrow Physical Value Change")},
-		m_newSolution {newsol},
-		m_oldSolution {item->m_setting.solution},
-		m_item {item}
-	{}
-	void redo() override {
-		applySetting(m_newSolution);
-	}
-	void undo() override {
-		applySetting(m_oldSolution);
-	}
+	return m_setting.solution;
+}
 
-private:
-	void applySetting(QString& sol) {
-		m_item->setSolution(sol);
-		m_item->updateActorSettings();
-	}
+void MeasuredDataVectorGroupDataItem::setTarget(const std::string &target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.solution = target.c_str();
+	updateActorSettings();
+}
 
-	QString m_newSolution;
-	QString m_oldSolution;
-
-	MeasuredDataVectorGroupDataItem* m_item;
-};
-
-void MeasuredDataVectorGroupDataItem::exclusivelyCheck(MeasuredDataVectorDataItem* item)
+void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
 void MeasuredDataVectorGroupDataItem::setupActors()
@@ -326,22 +308,6 @@ void MeasuredDataVectorGroupDataItem::update()
 	informGridUpdate();
 }
 
-void MeasuredDataVectorGroupDataItem::setSolution(const QString& sol)
-{
-	MeasuredDataVectorDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		MeasuredDataVectorDataItem* tmpItem = dynamic_cast<MeasuredDataVectorDataItem*>(*it);
-		if (tmpItem->name() == sol) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != 0) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
-	m_setting.solution = sol;
-}
-
 void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 {
 	vtkCamera* cam = renderer()->GetActiveCamera();
@@ -455,7 +421,7 @@ private:
 	void applySetting(const MeasuredDataVectorGroupDataItem::Setting& s)
 	{
 		m_item->m_setting = s;
-		m_item->setSolution(s.solution);
+		m_item->setTarget(iRIC::toStr(s.solution));
 		m_item->updateActorSettings();
 	}
 	MeasuredDataVectorGroupDataItem::Setting m_newSetting;

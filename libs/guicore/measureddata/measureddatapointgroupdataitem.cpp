@@ -1,4 +1,6 @@
 #include "../datamodel/vtkgraphicsview.h"
+#include "../named/namedgraphicswindowdataitemtool.h"
+#include "../misc/targeted/targeteditemsettargetcommandtool.h"
 #include "../pre/grid/grid.h"
 #include "../project/measureddata.h"
 #include "../scalarstocolors/lookuptablecontainer.h"
@@ -82,7 +84,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 
 	for (int i = 0; i < md->pointNames().count(); ++i) {
 		QString name = md->pointNames().at(i);
-		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(name, name, this);
+		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(iRIC::toStr(name), name, this);
 		m_childItems.append(item);
 		m_colorbarTitleMap.insert(name, name);
 
@@ -96,8 +98,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 	}
 	if (md->pointNames().count() > 0) {
 		QString name = md->pointNames().at(0);
-		setSolution(name);
-		updateActorSettings();
+		setTarget(iRIC::toStr(name));
 	}
 }
 
@@ -458,7 +459,7 @@ private:
 	void applySetting(const MeasuredDataPointGroupDataItem::Setting& s, const LookupTableContainer& ltc, const QString& title)
 	{
 		m_item->m_setting = s;
-		m_item->setSolution(s.currentMeasuredValue);
+		m_item->setTarget(s.currentMeasuredValue);
 		LookupTableContainer* lut = m_item->lookupTable(s.currentMeasuredValue);
 		*lut = ltc;
 		lut->update();
@@ -484,53 +485,24 @@ void MeasuredDataPointGroupDataItem::handlePropertyDialogAccepted(QDialog* propD
 	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
 }
 
-class MeasuredDataPointGroupDataItem::SelectSolutionCommand : public QUndoCommand
+void MeasuredDataPointGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
 {
-public:
-	SelectSolutionCommand(const QString& newsol, MeasuredDataPointGroupDataItem* item) :
-		QUndoCommand {MeasuredDataPointGroupDataItem::tr("Contour Physical Value Change")},
-		m_newSolution {newsol},
-		m_oldSolution {item->m_setting.currentMeasuredValue},
-		m_item {item}
-	{}
-	void redo() override {
-		m_item->setSolution(m_newSolution);
-		m_item->updateActorSettings();
-	}
-	void undo() override {
-		m_item->setSolution(m_oldSolution);
-		m_item->updateActorSettings();
-	}
-private:
-	QString m_newSolution;
-	QString m_oldSolution;
+	if (m_isCommandExecuting) {return;}
 
-	MeasuredDataPointGroupDataItem* m_item;
-};
-
-void MeasuredDataPointGroupDataItem::exclusivelyCheck(MeasuredDataPointDataItem* item)
-{
-	if (item->standardItem()->checkState() != Qt::Checked) {
-		pushRenderCommand(new SelectSolutionCommand("", this), this, true);
-	} else {
-		pushRenderCommand(new SelectSolutionCommand(item->name(), this), this, true);
-	}
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
 }
 
-void MeasuredDataPointGroupDataItem::setSolution(const QString& value)
+std::string MeasuredDataPointGroupDataItem::target() const
 {
-	MeasuredDataPointDataItem* current = nullptr;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		MeasuredDataPointDataItem* tmpItem = dynamic_cast<MeasuredDataPointDataItem*>(*it);
-		if (tmpItem->name() == value) {
-			current = tmpItem;
-		}
-		tmpItem->standardItem()->setCheckState(Qt::Unchecked);
-	}
-	if (current != nullptr) {
-		current->standardItem()->setCheckState(Qt::Checked);
-	}
-	m_setting.currentMeasuredValue = value;
+	return iRIC::toStr(m_setting.currentMeasuredValue);
+}
+
+void MeasuredDataPointGroupDataItem::setTarget(const std::string &target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	m_setting.currentMeasuredValue = target.c_str();
+	updateActorSettings();
 }
 
 void MeasuredDataPointGroupDataItem::createValueClippedPolyData()

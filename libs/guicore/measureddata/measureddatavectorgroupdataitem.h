@@ -3,6 +3,7 @@
 
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../project/measureddata.h"
+#include "../misc/targeted/targeteditemi.h"
 
 #include <misc/enumcontainert.h>
 #include <misc/colorcontainer.h>
@@ -25,10 +26,11 @@
 
 #include <QColor>
 
-class vtkPointSet;
 class MeasuredDataVectorDataItem;
+class NamedGraphicWindowDataItem;
+class vtkPointSet;
 
-class MeasuredDataVectorGroupDataItem : public GraphicsWindowDataItem
+class MeasuredDataVectorGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -57,16 +59,19 @@ public:
 		DoubleContainer minimumValue;
 	};
 
-	/// Constructor
 	MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataVectorGroupDataItem();
+
 	void updateActorSettings();
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 
+	std::string target() const override;
+	void setTarget(const std::string &target) override;
+
 public slots:
-	void exclusivelyCheck(MeasuredDataVectorDataItem*);
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showSettingDialog() {showPropertyDialog();}
 
 private:
@@ -80,7 +85,6 @@ private:
 	void updatePolyData();
 	void updateLegendData();
 	void informGridUpdate();
-	void setSolution(const QString& sol);
 	void doApplyOffset(double x, double y) override;
 
 	void setupActors();
@@ -106,7 +110,6 @@ private:
 	Setting m_setting;
 
 	class SetSettingCommand;
-	class SelectSolutionCommand;
 };
 
 #endif // MEASUREDDATAVECTORGROUPDATAITEM_H

@@ -1,27 +1,13 @@
 #ifndef MEASUREDDATAPOINTDATAITEM_H
 #define MEASUREDDATAPOINTDATAITEM_H
 
-#include "../datamodel/graphicswindowdataitem.h"
+#include "../named/namedgraphicwindowdataitem.h"
 
-class MeasuredDataPointDataItem : public GraphicsWindowDataItem
+class MeasuredDataPointDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
-
 public:
-	/// Constructor
-	MeasuredDataPointDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent);
-	void handleStandardItemChange() override;
-	const QString& name() const {return m_name;}
-
-signals:
-	void changed(MeasuredDataPointDataItem*);
-
-protected:
-	void doLoadFromProjectMainFile(const QDomNode&) override {}
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override {}
-
-private:
-	QString m_name;
+	MeasuredDataPointDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent);
 };
 
 #endif // MEASUREDDATAPOINTDATAITEM_H

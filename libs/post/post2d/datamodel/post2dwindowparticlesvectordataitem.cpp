@@ -42,9 +42,3 @@ void Post2dWindowParticlesVectorDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent()->parent())->showParticleBrowserAction();
 	menu->addAction(abAction);
 }
-
-void Post2dWindowParticlesVectorDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
-
-void Post2dWindowParticlesVectorDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
-{}

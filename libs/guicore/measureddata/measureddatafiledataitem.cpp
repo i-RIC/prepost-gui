@@ -82,6 +82,22 @@ void MeasuredDataFileDataItem::exportToFile()
 	}
 }
 
+
+MeasuredData* MeasuredDataFileDataItem::measuredData() const
+{
+	return m_measuredData;
+}
+
+MeasuredDataPointGroupDataItem* MeasuredDataFileDataItem::pointGroupDataItem() const
+{
+	return m_pointGroupDataItem;
+}
+
+MeasuredDataVectorGroupDataItem* MeasuredDataFileDataItem::vectorGroupDataItem() const
+{
+	return m_vectorGroupDataItem;
+}
+
 void MeasuredDataFileDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(m_exportAction);

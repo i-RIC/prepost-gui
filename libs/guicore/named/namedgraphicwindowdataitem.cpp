@@ -22,3 +22,9 @@ void NamedGraphicWindowDataItem::handleStandardItemChange()
 {
 	emit changed(this);
 }
+
+void NamedGraphicWindowDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void NamedGraphicWindowDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

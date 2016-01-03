@@ -16,10 +16,6 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-
-private:
-	void doLoadFromProjectMainFile(const QDomNode&) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H

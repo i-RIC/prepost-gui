@@ -11,7 +11,7 @@ class GUICOREDLL_EXPORT NamedGraphicWindowDataItem : public GraphicsWindowDataIt
 	Q_OBJECT
 public:
 	NamedGraphicWindowDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent);
-	~NamedGraphicWindowDataItem();
+	virtual ~NamedGraphicWindowDataItem();
 
 	const std::string& name() const;
 	void handleStandardItemChange() override;
@@ -20,6 +20,9 @@ signals:
 	void changed(NamedGraphicWindowDataItem*);
 
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	std::string m_name;
 };
 

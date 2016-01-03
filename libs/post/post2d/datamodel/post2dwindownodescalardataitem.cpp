@@ -45,9 +45,3 @@ void Post2dWindowNodeScalarDataItem::addCustomMenuItems(QMenu* menu)
 	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showNodeAttributeBrowserAction();
 	menu->addAction(abAction);
 }
-
-void Post2dWindowNodeScalarDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
-
-void Post2dWindowNodeScalarDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
-{}

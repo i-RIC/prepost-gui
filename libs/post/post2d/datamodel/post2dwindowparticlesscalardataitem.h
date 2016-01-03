@@ -17,10 +17,6 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
 	void addCustomMenuItems(QMenu* menu);
-
-private:
-	void doLoadFromProjectMainFile(const QDomNode&) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 };
 
 #endif // POST2DWINDOWPARTICLESSCALARDATAITEM_H

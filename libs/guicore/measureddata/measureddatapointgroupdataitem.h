@@ -2,6 +2,7 @@
 #define MEASUREDDATAPOINTGROUPDATAITEM_H
 
 #include "../datamodel/graphicswindowdataitem.h"
+#include "../misc/targeted/targeteditemi.h"
 #include <guibase/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 
@@ -19,6 +20,7 @@
 
 class MeasuredData;
 class MeasuredDataPointDataItem;
+class NamedGraphicWindowDataItem;
 class vtkLODActor;
 class vtkActor;
 class vtkDataSetMapper;
@@ -26,7 +28,7 @@ class vtkPolyDataMapper;
 class vtkContourFilter;
 class LookupTableContainer;
 
-class GUICOREDLL_EXPORT MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem
+class GUICOREDLL_EXPORT MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
@@ -54,16 +56,19 @@ public:
 		ScalarBarSetting scalarBarSetting;
 	};
 
-	/// Constructor
 	MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataPointGroupDataItem();
-//	const QString& currentMeasuredValue() const {return m_setting.currentMeasuredValue;}
+
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+
+	std::string target() const override;
+	void setTarget(const std::string& target) override;
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setSolution(const QString& value);
+
 	bool hasTransparentPart() override;
 	LookupTableContainer* lookupTable(const QString& attName) const {return m_lookupTables.value(attName, 0);}
 	void informSelection(VTKGraphicsView* v) override;
@@ -74,13 +79,10 @@ public:
 	void doApplyOffset(double x, double y) override;
 
 public slots:
-	void exclusivelyCheck(MeasuredDataPointDataItem* item);
-	void showSettingDialog() {showPropertyDialog();}
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void updateVisibility(bool visible) override;
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 private:
 	void setupActors();
@@ -92,6 +94,9 @@ private:
 	void setupColorContourSetting();
 	void setupColorFringeSetting();
 	void setupScalarBarSetting();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Setting m_setting;
 
@@ -116,7 +121,6 @@ private:
 	vtkSmartPointer<vtkPolyData> m_colorContourPolyData;
 
 	class SetSettingCommand;
-	class SelectSolutionCommand;
 };
 
 #endif // MEASUREDDATAPOINTGROUPDATAITEM_H
