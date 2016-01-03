@@ -3,7 +3,7 @@
 
 #include <QDialog>
 
-#include "../project/measureddata.h"
+#include "../project/measured/measureddata.h"
 #include "measureddatavectorgroupdataitem.h"
 #include "measureddatavectorsetting.h"
 

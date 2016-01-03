@@ -5,7 +5,7 @@
 #include "verificationsettingdialog.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/measureddata.h>
+#include <guicore/project/measured/measureddata.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 

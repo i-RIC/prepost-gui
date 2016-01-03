@@ -2,7 +2,7 @@
 #include "../named/namedgraphicswindowdataitemtool.h"
 #include "../misc/targeted/targeteditemsettargetcommandtool.h"
 #include "../pre/grid/grid.h"
-#include "../project/measureddata.h"
+#include "../project/measured/measureddata.h"
 #include "../scalarstocolors/lookuptablecontainer.h"
 #include "../scalarstocolors/lookuptablecontainer.h"
 #include "measureddatafiledataitem.h"

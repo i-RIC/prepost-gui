@@ -9,7 +9,7 @@
 #include <guicore/measureddata/measureddatapointgroupdataitem.h>
 #include <guicore/measureddata/measureddatavectorgroupdataitem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/project/measureddata.h>
+#include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>

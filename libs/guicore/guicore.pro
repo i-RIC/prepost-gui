@@ -210,7 +210,6 @@ HEADERS += guicore_global.h \
            project/backgroundimageinfodialog.h \
            project/cgnsfilelist.h \
            project/colorsource.h \
-           project/measureddata.h \
            project/offsetsettingdialog.h \
            project/projectcgnsfile.h \
            project/projectdata.h \
@@ -336,6 +335,7 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetrealoption.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
+           project/measured/measureddata.h \
            project/private/projectdataitem_impl.h \
            solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
@@ -478,7 +478,6 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/backgroundimageinfodialog.cpp \
            project/cgnsfilelist.cpp \
            project/colorsource.cpp \
-           project/measureddata.cpp \
            project/offsetsettingdialog.cpp \
            project/projectcgnsfile.cpp \
            project/projectdata.cpp \
@@ -583,6 +582,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditionwidgetrealoption.cpp \
            project/inputcond/inputconditionwidgetset.cpp \
            project/inputcond/inputconditionwidgetstring.cpp \
+           project/measured/measureddata.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \

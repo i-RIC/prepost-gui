@@ -7,7 +7,7 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/project/measureddata.h>
+#include <guicore/project/measured/measureddata.h>
 
 #include <QMessageBox>
 

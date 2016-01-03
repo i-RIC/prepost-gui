@@ -1,6 +1,6 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../datamodel/graphicswindowdatamodel.h"
-#include "../project/measureddata.h"
+#include "../project/measured/measureddata.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectorgroupdataitem.h"

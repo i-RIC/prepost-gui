@@ -5,7 +5,7 @@
 #include "../solverdef/solverdefinitionabstract.h"
 #include "backgroundimageinfo.h"
 #include "cgnsfilelist.h"
-#include "measureddata.h"
+#include "measured/measureddata.h"
 #include "offsetsettingdialog.h"
 #include "projectcgnsfile.h"
 #include "projectdata.h"

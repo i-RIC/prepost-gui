@@ -2,7 +2,7 @@
 #define MEASUREDDATAVECTORGROUPDATAITEM_H
 
 #include "../datamodel/graphicswindowdataitem.h"
-#include "../project/measureddata.h"
+#include "../project/measured/measureddata.h"
 #include "../misc/targeted/targeteditemi.h"
 #include "measureddatavectorsetting.h"
 

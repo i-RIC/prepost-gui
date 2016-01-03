@@ -1,6 +1,6 @@
 #include "ui_measureddatapointsettingdialog.h"
 
-#include "../project/measureddata.h"
+#include "../project/measured/measureddata.h"
 #include "measureddatapointsettingdialog.h"
 
 #include <guibase/comboboxtool.h>
