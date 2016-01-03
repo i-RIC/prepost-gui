@@ -45,7 +45,7 @@ void GeoDataPolygonColorSettingDialog::setSetting(const Setting& setting)
 	}
 
 	// opacity
-	ui->transparencyWidget->setOpacity(setting.opacity);
+	ui->transparencyWidget->setOpacityPercent(setting.opacity);
 
 	// color
 	ui->colorEditWidget->setColor(setting.color);
@@ -59,7 +59,7 @@ GeoDataPolygonColorSettingDialog::Setting GeoDataPolygonColorSettingDialog::sett
 	if (ui->arbitraryRadioButton->isChecked()) {ret.mapping = Arbitrary;}
 
 	// opacity
-	ret.opacity = ui->transparencyWidget->opacity();
+	ret.opacity = ui->transparencyWidget->opacityPercent();
 
 	// color
 	ret.color = ui->colorEditWidget->color();

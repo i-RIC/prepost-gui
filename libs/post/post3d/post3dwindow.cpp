@@ -86,6 +86,11 @@ QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 	return menus;
 }
 
+QToolBar* Post3dWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
 void Post3dWindow::cameraFit()
 {
 	m_dataModel->graphicsView()->cameraFit();

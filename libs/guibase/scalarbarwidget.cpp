@@ -12,6 +12,7 @@ void editVtkTextPropertySetting(vtkTextPropertySettingContainer* c, QWidget* par
 	dialog.setSetting(*c);
 
 	dialog.disableSize();
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
@@ -25,6 +26,7 @@ ScalarBarWidget::ScalarBarWidget(QWidget* parent) :
 	ui(new Ui::ScalarBarWidget)
 {
 	ui->setupUi(this);
+
 	connect(ui->titleFontButton, SIGNAL(clicked()), this, SLOT(editTitleTextSetting()));
 	connect(ui->labelFontButton, SIGNAL(clicked()), this, SLOT(editLabelTextSetting()));
 }

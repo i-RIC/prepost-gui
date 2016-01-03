@@ -4,7 +4,7 @@
 #include "pre_global.h"
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/base/snapshotenabledwindowinterface.h>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithzindexinterface.h>
@@ -32,7 +32,7 @@ class PreProcessorWindowEditBackgroundColorCommand;
 class PREDLL_EXPORT PreProcessorWindow :
 	public PreProcessorWindowInterface,
 	public SnapshotEnabledWindowInterface,
-	public AdditionalMenuWindowInterface,
+	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
 	public WindowWithPropertyBrowser,
 	public WindowWithZIndexInterface

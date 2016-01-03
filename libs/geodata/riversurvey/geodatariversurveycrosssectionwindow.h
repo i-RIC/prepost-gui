@@ -5,7 +5,7 @@
 #include "geodatariversurvey.h"
 #include "geodatarivercrosssection.h"
 #include <guicore/base/snapshotenabledwindowinterface.h>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/project/colorsource.h>
 
 #include <QMainWindow>
@@ -36,7 +36,7 @@ namespace Ui
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCrosssectionWindow :
 	public QMainWindow,
 	public SnapshotEnabledWindowInterface,
-	public AdditionalMenuWindowInterface
+	public AdditionalMenuWindowI
 {
 	Q_OBJECT
 
@@ -48,6 +48,7 @@ public:
 
 	explicit GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~GeoDataRiverSurveyCrosssectionWindow();
+
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
 	void setCrosssection(double name);
 	GeoDataRiverPathPoint* target() const {return m_editTargetPoint;}
@@ -62,10 +63,12 @@ public:
 	bool canInactivateSelectedRows(GeoDataRiverCrosssection& cross, QList<int> indices);
 	void informFocusIn();
 	void toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs);
-	const QIcon& icon() const {return m_icon;}
+	const QIcon& icon() const;
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const {return m_groupDataItem;}
+	QToolBar* getAdditionalToolBar() const override;
+
+	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
 
 public slots:
 	void updateView();
@@ -94,7 +97,6 @@ private slots:
 	void handleSurveyTableItemEdit(QTableWidgetItem* item);
 	void handleSurveyTableItemClick(QTableWidgetItem* item);
 	void handleSurveyTablecurrentCellChange(int currentRow, int currentColumn, int previousRow, int previousColumn);
-
 
 private:
 	static const int defaultRowHeight = 20;

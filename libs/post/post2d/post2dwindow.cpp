@@ -94,6 +94,11 @@ QList<QMenu*> Post2dWindow::getAdditionalMenus() const
 	return menus;
 }
 
+QToolBar* Post2dWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
 void Post2dWindow::cameraFit()
 {
 	m_dataModel->graphicsView()->cameraFit();

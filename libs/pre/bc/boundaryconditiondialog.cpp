@@ -101,7 +101,7 @@ void BoundaryConditionDialog::load(const int /*fn*/)
 	setCaption(m_captionContainer.value());
 	QColor color(m_colorContainer.value());
 	ui->colorWidget->setColor(color);
-	ui->transparencyWidget->setOpacity(m_opacityContainer.value());
+	ui->transparencyWidget->setOpacityPercent(m_opacityContainer.value());
 	ui->showNameCheckBox->setChecked(m_showNameContainer.value() == 1);
 	ui->pointSizeSpinBox->setValue(m_pointSizeContainer.value());
 
@@ -115,7 +115,7 @@ void BoundaryConditionDialog::save(const int /*fn*/)
 	m_captionContainer.save();
 	m_colorContainer.setValue(ui->colorWidget->color().name());
 	m_colorContainer.save();
-	m_opacityContainer.setValue(ui->transparencyWidget->opacity());
+	m_opacityContainer.setValue(ui->transparencyWidget->opacityPercent());
 	m_opacityContainer.save();
 	if (ui->showNameCheckBox->isChecked()) {
 		m_showNameContainer.setValue(1);
@@ -163,12 +163,12 @@ QString BoundaryConditionDialog::caption() const
 
 void BoundaryConditionDialog::setOpacityPercent(int opacity)
 {
-	ui->transparencyWidget->setOpacity(opacity);
+	ui->transparencyWidget->setOpacityPercent(opacity);
 }
 
 int BoundaryConditionDialog::opacityPercent() const
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 QColor BoundaryConditionDialog::color()

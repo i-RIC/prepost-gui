@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QByteArray>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
-#include <postbase/particleexportwindowinterface.h>
+#include <postbase/particleexportwindowi.h>
 
 class QAction;
 class QToolBar;
@@ -19,9 +19,9 @@ class Post3dWindowEditBackgroundColorCommand;
 /// This class represents the two-dimensional post-processing window.
 class Post3dWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindowInterface,
+	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
-	public ParticleExportWindowInterface
+	public ParticleExportWindowI
 {
 	Q_OBJECT
 
@@ -36,7 +36,10 @@ public:
 	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
+
 	QList<QMenu*> getAdditionalMenus() const override;
+	QToolBar* getAdditionalToolBar() const override;
+
 	ObjectBrowser* objectBrowser() const override;
 	int index() {return m_index;}
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename) override;

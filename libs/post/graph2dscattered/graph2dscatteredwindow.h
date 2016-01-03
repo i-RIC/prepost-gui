@@ -2,7 +2,7 @@
 #define GRAPH2DSCATTEREDWINDOW_H
 
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 
 class ObjectBrowser;
 class Graph2dScatteredWindowObjectBrowser;
@@ -13,16 +13,19 @@ class Graph2dScatteredWindowControlWidget;
 
 class Graph2dScatteredWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindowInterface
+	public AdditionalMenuWindowI
 {
 	Q_OBJECT
 
 public:
 	explicit Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi);
 	~Graph2dScatteredWindow();
+
 	QPixmap snapshot() override;
 	QList<QMenu*> getAdditionalMenus() const override;
-	Graph2dScatteredWindowControlWidget* controlWidget() const {return m_controlWidget;}
+	QToolBar* getAdditionalToolBar() const override;
+
+	Graph2dScatteredWindowControlWidget* controlWidget() const;
 
 signals:
 	void closeButtonClicked();

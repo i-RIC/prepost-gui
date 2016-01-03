@@ -12,6 +12,16 @@ RealNumberDisplayLabel::RealNumberDisplayLabel(QWidget* parent) :
 	clear();
 }
 
+RealNumberDisplayLabel::ClearMode RealNumberDisplayLabel::clearMode() const
+{
+	return m_clearMode;
+}
+
+void RealNumberDisplayLabel::setClearMode(ClearMode cm)
+{
+	m_clearMode = cm;
+}
+
 void RealNumberDisplayLabel::setValue(double value)
 {
 	setText(QString("%1").arg(value));

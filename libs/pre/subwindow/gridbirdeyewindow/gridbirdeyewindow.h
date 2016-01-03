@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QIcon>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/snapshotenabledwindowinterface.h>
 #include "../../datamodel/preprocessorgriddataitem.h"
 
@@ -17,7 +17,7 @@ class GridBirdEyeWindowEditBackgroundColorCommand;
 class GridBirdEyeWindow :
 	public QMainWindow,
 	public SnapshotEnabledWindowInterface,
-	public AdditionalMenuWindowInterface
+	public AdditionalMenuWindowI
 {
 	Q_OBJECT
 
@@ -28,7 +28,10 @@ public:
 	~GridBirdEyeWindow();
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
+
 	QList<QMenu*> getAdditionalMenus() const override;
+	virtual QToolBar* getAdditionalToolBar() const override;
+
 	void updateGrid();
 	const QIcon& icon() const;
 

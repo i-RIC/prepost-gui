@@ -19,6 +19,21 @@ GridComplexAttributeEditWidget::GridComplexAttributeEditWidget(QWidget* parent, 
 GridComplexAttributeEditWidget::~GridComplexAttributeEditWidget()
 {}
 
+const QMap<int, QString>& GridComplexAttributeEditWidget::enumerations() const
+{
+	return m_enumerations;
+}
+
+void GridComplexAttributeEditWidget::setEnumerations(const QMap<int, QString>& enums)
+{
+	m_enumerations = enums;
+}
+
+void GridComplexAttributeEditWidget::setDefaultIndex(int idx)
+{
+	m_defaultIndex = idx;
+}
+
 void GridComplexAttributeEditWidget::setupWidget()
 {
 	m_widget->clear();

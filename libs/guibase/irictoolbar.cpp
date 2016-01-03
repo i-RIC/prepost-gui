@@ -1,16 +1,14 @@
 #include "irictoolbar.h"
 
-iRICToolBar::iRICToolBar(const QString& t, QWidget* parent)
-	: QToolBar(t, parent)
+iRICToolBar::iRICToolBar(const QString& t, QWidget* parent) :
+	QToolBar(t, parent)
 {
-	init();
+	setIconSize(QSize(16, 16));
 }
 
-iRICToolBar::iRICToolBar(QWidget* parent)
-	: QToolBar(parent)
-{
-	init();
-}
+iRICToolBar::iRICToolBar(QWidget* parent) :
+	iRICToolBar("", parent)
+{}
 
 void iRICToolBar::hideEvent(QHideEvent* e)
 {
@@ -22,9 +20,4 @@ void iRICToolBar::showEvent(QShowEvent* e)
 {
 	emit visibilityChanged(true);
 	QToolBar::showEvent(e);
-}
-
-void iRICToolBar::init()
-{
-	setIconSize(QSize(16, 16));
 }

@@ -1,5 +1,5 @@
-#ifndef SVKMLEXPORTWINDOWINTERFACE_H
-#define SVKMLEXPORTWINDOWINTERFACE_H
+#ifndef SVKMLEXPORTWINDOWI_H
+#define SVKMLEXPORTWINDOWI_H
 
 #include <QList>
 
@@ -7,10 +7,10 @@ class QString;
 class QXmlStreamWriter;
 
 /// Window that support KML for street view.
-class SVKmlExportWindowInterface
+class SVKmlExportWindowI
 {
 public:
-	virtual ~SVKmlExportWindowInterface() {}
+	virtual ~SVKmlExportWindowI() {}
 
 	virtual bool checkKmlExportCondition(const QString &zonename) const = 0;
 	virtual bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) = 0;
@@ -19,4 +19,4 @@ public:
 	virtual QList<QString> contourDrawingZones() = 0;
 };
 
-#endif // SVKMLEXPORTWINDOWINTERFACE_H
+#endif // SVKMLEXPORTWINDOWI_H

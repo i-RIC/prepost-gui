@@ -79,6 +79,11 @@ QList<QMenu*> GridBirdEyeWindow::getAdditionalMenus() const
 	return menus;
 }
 
+QToolBar* GridBirdEyeWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
 void GridBirdEyeWindow::cameraFit()
 {
 	m_graphicsView->cameraFit();

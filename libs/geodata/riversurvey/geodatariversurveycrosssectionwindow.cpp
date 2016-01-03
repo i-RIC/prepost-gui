@@ -636,6 +636,11 @@ void GeoDataRiverSurveyCrosssectionWindow::update()
 	QWidget::update();
 }
 
+const QIcon& GeoDataRiverSurveyCrosssectionWindow::icon() const
+{
+	return m_icon;
+}
+
 QPixmap GeoDataRiverSurveyCrosssectionWindow::snapshot()
 {
 	GeoDataRiverSurveyCrosssectionWindowGraphicsView* g = ui->graphicsView;
@@ -652,6 +657,16 @@ QList<QMenu*> GeoDataRiverSurveyCrosssectionWindow::getAdditionalMenus() const
 	QList<QMenu*> menus;
 	menus.append(m_elevationPointMenu);
 	return menus;
+}
+
+QToolBar* GeoDataRiverSurveyCrosssectionWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
+PreProcessorGeoDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
+{
+	return m_groupDataItem;
 }
 
 void GeoDataRiverSurveyCrosssectionWindow::weCheckboxChange(bool checked)

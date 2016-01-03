@@ -21,12 +21,11 @@ class GUIBASEDLL_EXPORT CoordinateSystemSelectDialog : public QDialog
 public:
 	explicit CoordinateSystemSelectDialog(QWidget* parent = nullptr);
 	~CoordinateSystemSelectDialog();
-	/// Set the builder to build the list of well-known coordinate systems
-	void setBuilder(CoordinateSystemBuilder* builder) {m_builder = builder;}
-	/// Set the coordinate system
+
+	void setBuilder(CoordinateSystemBuilder* builder);
+
+	CoordinateSystem* coordinateSystem() const;
 	void setCoordinateSystem(CoordinateSystem* cs);
-	/// The coordinate system
-	CoordinateSystem* coordinateSystem() {return m_currentSystem;}
 
 private slots:
 	void updateList();

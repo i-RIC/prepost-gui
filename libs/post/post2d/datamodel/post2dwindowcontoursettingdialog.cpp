@@ -23,7 +23,7 @@ Post2dWindowContourSettingDialog::Post2dWindowContourSettingDialog(QWidget* pare
 	m_unstructured = false;
 
 	ui->setupUi(this);
-	ui->contourWidget->hidePoints();
+	ui->contourWidget->hidePointsRadioButton();
 
 	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(targetChanged(int)));
 	connect(ui->regionSettingButton, SIGNAL(clicked()), this, SLOT(showRegionDialog()));
@@ -82,7 +82,7 @@ void Post2dWindowContourSettingDialog::setSetting(const Post2dWindowContourSetti
 	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
 	ui->colormapWidget->setFillUpper(s.fillUpper);
 	ui->colormapWidget->setFillLower(s.fillLower);
-	ui->transparencyWidget->setOpacity(s.opacity);
+	ui->transparencyWidget->setOpacityPercent(s.opacity);
 }
 
 void Post2dWindowContourSettingDialog::setColorBarTitleMap(const QMap<std::string, QString>& titlemap)
@@ -99,7 +99,7 @@ Post2dWindowContourSetting Post2dWindowContourSettingDialog::setting() const
 	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
 	ret.fillUpper = ui->colormapWidget->fillUpper();
 	ret.fillLower = ui->colormapWidget->fillLower();
-	ret.opacity = ui->transparencyWidget->opacity();
+	ret.opacity = ui->transparencyWidget->opacityPercent();
 
 	return ret;
 }

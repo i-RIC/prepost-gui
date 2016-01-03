@@ -84,6 +84,11 @@ QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus() const
 	return menus;
 }
 
+QToolBar* Post2dBirdEyeWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
 void Post2dBirdEyeWindow::cameraFit()
 {
 	m_dataModel->graphicsView()->cameraFit();

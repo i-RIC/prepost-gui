@@ -76,3 +76,13 @@ QList<QMenu*> Graph2dScatteredWindow::getAdditionalMenus() const
 	menus.append(m_actionManager->drawMenu());
 	return menus;
 }
+
+QToolBar* Graph2dScatteredWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
+Graph2dScatteredWindowControlWidget* Graph2dScatteredWindow::controlWidget() const
+{
+	return m_controlWidget;
+}

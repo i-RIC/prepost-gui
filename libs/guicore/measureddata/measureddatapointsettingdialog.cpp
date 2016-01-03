@@ -38,9 +38,9 @@ void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
 	ui->measuredValueComboBox->blockSignals(false);
 }
 
-void MeasuredDataPointSettingDialog::setNoPolyData(bool noPolyData)
+void MeasuredDataPointSettingDialog::forceSelectPointsOnly()
 {
-	ui->contourWidget->setNoPolyData(noPolyData);
+	ui->contourWidget->forceSelectPointsOnly();
 }
 
 void MeasuredDataPointSettingDialog::setSetting(const MeasuredDataPointGroupDataItem::Setting& s)
@@ -71,7 +71,7 @@ void MeasuredDataPointSettingDialog::setSetting(const MeasuredDataPointGroupData
 	ui->pointSizeSpinBox->setValue(s.pointSize);
 
 	// opacity
-	ui->transparencyWidget->setOpacity(s.opacity);
+	ui->transparencyWidget->setOpacityPercent(s.opacity);
 }
 
 void MeasuredDataPointSettingDialog::setScalarBarTitleMap(const QMap<QString, QString>& titlemap)
@@ -107,7 +107,7 @@ MeasuredDataPointGroupDataItem::Setting MeasuredDataPointSettingDialog::setting(
 	ret.pointSize = ui->pointSizeSpinBox->value();
 
 	// opacity
-	ret.opacity = ui->transparencyWidget->opacity();
+	ret.opacity = ui->transparencyWidget->opacityPercent();
 
 	return ret;
 }

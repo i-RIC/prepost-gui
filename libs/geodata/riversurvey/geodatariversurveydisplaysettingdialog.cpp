@@ -21,7 +21,7 @@ void GeoDataRiverSurveyDisplaySettingDialog::setColormapVisible(bool visible)
 
 void GeoDataRiverSurveyDisplaySettingDialog::setOpacityPercent(int opacity)
 {
-	ui->transparencyWidget->setOpacity(opacity);
+	ui->transparencyWidget->setOpacityPercent(opacity);
 }
 
 bool GeoDataRiverSurveyDisplaySettingDialog::colormapVisible()
@@ -31,7 +31,7 @@ bool GeoDataRiverSurveyDisplaySettingDialog::colormapVisible()
 
 int GeoDataRiverSurveyDisplaySettingDialog::opacityPercent()
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GeoDataRiverSurveyDisplaySettingDialog::setLinesVisible(bool visible)

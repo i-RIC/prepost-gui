@@ -76,3 +76,13 @@ QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus() const
 	menus.append(m_actionManager->drawMenu());
 	return menus;
 }
+
+QToolBar* Graph2dHybridWindow::getAdditionalToolBar() const
+{
+	return nullptr;
+}
+
+Graph2dHybridWindowControlWidget* Graph2dHybridWindow::controlWidget() const
+{
+	return m_controlWidget;
+}

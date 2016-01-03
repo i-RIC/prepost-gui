@@ -886,7 +886,7 @@ void iRICMainWindowActionManager::informSubWindowChange(QWidget* subwindow)
 		return;
 	}
 	// handle additional menus.
-	AdditionalMenuWindowInterface* menuWindow = dynamic_cast<AdditionalMenuWindowInterface*>(subwindow);
+	AdditionalMenuWindowI* menuWindow = dynamic_cast<AdditionalMenuWindowI*>(subwindow);
 	QList<QMenu*> additionalMenus;
 	QToolBar* toolBar = nullptr;
 	if (menuWindow != nullptr) {

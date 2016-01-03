@@ -116,12 +116,12 @@ const QList<Post2dWindowCellFlagSetting>& Post2dWindowCellFlagSettingDialog::set
 
 void Post2dWindowCellFlagSettingDialog::setOpacityPercent(int o)
 {
-	ui->transparencyWidget->setOpacity(o);
+	ui->transparencyWidget->setOpacityPercent(o);
 }
 
 int Post2dWindowCellFlagSettingDialog::opacityPercent()
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void Post2dWindowCellFlagSettingDialog::moveUp()

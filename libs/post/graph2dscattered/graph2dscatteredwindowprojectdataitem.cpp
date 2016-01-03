@@ -27,7 +27,7 @@ Graph2dScatteredWindowProjectDataItem::Graph2dScatteredWindowProjectDataItem(Pro
 
 	QWidget* oldCenter = w->centralWidget();
 	MarginWidget* marginw = new MarginWidget(parentWindow);
-	marginw->setMargin(8);
+	marginw->setMarginPixels(8);
 	marginw->setWidget(w->m_dataModel->view());
 	w->setCentralWidget(marginw);
 

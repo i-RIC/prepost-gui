@@ -6,10 +6,11 @@
 
 CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
 	QDialog(parent),
+	m_currentSystem {nullptr},
 	ui(new Ui::CoordinateSystemSelectDialog)
 {
 	ui->setupUi(this);
-	m_currentSystem = nullptr;
+
 	connect(ui->searchEdit, SIGNAL(textEdited(QString)), this, SLOT(updateList()));
 	connect(ui->listWidget, SIGNAL(currentRowChanged(int)), this, SLOT(updateCurrent(int)));
 }
@@ -17,6 +18,16 @@ CoordinateSystemSelectDialog::CoordinateSystemSelectDialog(QWidget* parent) :
 CoordinateSystemSelectDialog::~CoordinateSystemSelectDialog()
 {
 	delete ui;
+}
+
+void CoordinateSystemSelectDialog::setBuilder(CoordinateSystemBuilder* builder)
+{
+	m_builder = builder;
+}
+
+CoordinateSystem* CoordinateSystemSelectDialog::coordinateSystem() const
+{
+	return m_currentSystem;
 }
 
 void CoordinateSystemSelectDialog::setCoordinateSystem(CoordinateSystem* cs)

@@ -7,7 +7,7 @@ GeoDataPointmapRepresentationDialog::GeoDataPointmapRepresentationDialog(QWidget
 	ui(new Ui::GeoDataPointmapRepresentationDialog)
 {
 	ui->setupUi(this);
-	ui->transparencyWidget->setOpacity(100);
+	ui->transparencyWidget->setOpacityPercent(100);
 }
 
 GeoDataPointmapRepresentationDialog::~GeoDataPointmapRepresentationDialog()
@@ -42,13 +42,13 @@ GeoDataPointmapRepresentationDialog::Representation GeoDataPointmapRepresentatio
 void GeoDataPointmapRepresentationDialog::setOpacityPercent(int opacity)
 {
 	if (ui->surfaceRadioButton->isChecked()) {
-		ui->transparencyWidget->setOpacity(opacity);
+		ui->transparencyWidget->setOpacityPercent(opacity);
 	}
 }
 
 int GeoDataPointmapRepresentationDialog::opacityPercent()
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GeoDataPointmapRepresentationDialog::setHideBreakLines(bool hide)

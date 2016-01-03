@@ -18,21 +18,9 @@ class GUIBASEDLL_EXPORT RealNumberEditWidget : public QLineEdit
 
 public:
 	RealNumberEditWidget(QWidget* parent = nullptr);
-	/**
-	 * @brief Set check event flag
-	 *
-	 * Whe the flag is off, even when user input invalid value,
-	 * no warning will be shown.
-	 */
-	void setEventCheck(bool check = true) {
-		m_eventCheck = check;
-	}
-	/// Set the value
+
+	double value() const;
 	void setValue(double newvalue);
-	/// The value
-	double value() const {
-		return m_doubleValue;
-	}
 
 signals:
 	void valueChanged(double value);
@@ -40,13 +28,12 @@ signals:
 private slots:
 	void handleTextChange();
 
-protected:
+private:
 	void closeEvent(QCloseEvent* e) override;
 	void focusOutEvent(QFocusEvent* e) override;
 	bool updateValue();
 
 	double m_doubleValue;
-	bool m_eventCheck;
 };
 
 #endif // REALNUMBEREDITWIDGET_H

@@ -1669,7 +1669,7 @@ void GeoDataPolygon::editValue()
 	i->setupEditWidget(dialog->widget());
 	dialog->setVariantValue(variantValue());
 	if (m_mouseEventMode == meDefining || m_mouseEventMode == meBeforeDefining) {
-		dialog->inhibitCancel();
+		dialog->disableCancel();
 	}
 	int ret = dialog->exec();
 	if (ret == QDialog::Rejected) {return;}

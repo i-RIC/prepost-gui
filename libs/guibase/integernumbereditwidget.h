@@ -15,7 +15,6 @@
 class GUIBASEDLL_EXPORT IntegerNumberEditWidget : public QSpinBox
 {
 	Q_OBJECT
-
 public:
 	IntegerNumberEditWidget(QWidget* parent);
 };

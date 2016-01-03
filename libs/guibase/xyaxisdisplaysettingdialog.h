@@ -19,27 +19,23 @@ public:
 	/// Setting information container
 	class Setting
 	{
-
 	public:
+		Setting() :
+			isAuto {true}, numOfLabels {2}
+		{}
+
 		bool isAuto;
 		double min;
 		double max;
 		int numOfLabels;
-		/// Constructor
-		Setting() {
-			isAuto = true;
-			numOfLabels = 2;
-		}
 	};
 	explicit XYAxisDisplaySettingDialog(QWidget* parent = nullptr);
 	~XYAxisDisplaySettingDialog();
-	/// The setting for X-axis
-	const Setting xAxisSetting() const;
-	/// Set the setting for X-axis
+
+	Setting xAxisSetting() const;
 	void setXAxisSetting(const Setting& xSetting);
-	/// The setting for Y-axis
-	const Setting yAxisSetting() const;
-	/// Set the setting for Y-axis
+
+	Setting yAxisSetting() const;
 	void setYAxisSetting(const Setting& ySetting);
 
 private:

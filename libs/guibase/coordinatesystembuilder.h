@@ -15,9 +15,10 @@ class GUIBASEDLL_EXPORT CoordinateSystemBuilder : public QObject
 
 public:
 	CoordinateSystemBuilder(QObject* parent);
-	virtual ~CoordinateSystemBuilder();
+	~CoordinateSystemBuilder();
+
 	/// Returns the list of well-known coordinate systems.
-	const QList<CoordinateSystem*>& systems() const {return m_systems;}
+	const QList<CoordinateSystem*>& systems() const;
 	/**
 	 * @brief Get the coordinate system from name
 	 * @param name the name of coordinate system
@@ -31,11 +32,9 @@ public:
 	CoordinateSystem* buildFromProj4String(const QString& str);
 
 private:
-	/// Setup the list of coordinate systems
 	void setupMap();
-	/// The list of well-known coordinate systems
+
 	QList<CoordinateSystem*> m_systems;
-	/// The dictionary from name to coordinate system
 	QMap<QString, CoordinateSystem*> m_systemsMap;
 };
 

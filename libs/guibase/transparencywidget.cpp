@@ -15,18 +15,18 @@ TransparencyWidget::~TransparencyWidget()
 	delete ui;
 }
 
-void TransparencyWidget::setOpacity(int opacity)
+void TransparencyWidget::setOpacityPercent(int opacityPercent)
 {
-	if (opacity == 100) {
+	if (opacityPercent == 100) {
 		ui->checkBox->setChecked(false);
 		ui->horizontalSlider->setValue(0);
 	} else {
 		ui->checkBox->setChecked(true);
-		ui->horizontalSlider->setValue(100 - opacity);
+		ui->horizontalSlider->setValue(100 - opacityPercent);
 	}
 }
 
-int TransparencyWidget::opacity()
+int TransparencyWidget::opacityPercent() const
 {
 	return 100 - ui->horizontalSlider->value();
 }

@@ -148,13 +148,12 @@ LIBS += -liriclib
 HEADERS += guicore_global.h \
            axis2d/axis2ddataitem.h \
            axis3d/axis3ddataitem.h \
-           base/additionalmenuwindowinterface.h \
+           base/additionalmenuwindowi.h \
            base/animationcontrollerinterface.h \
            base/clipboardoperatablewindowinterface.h \
            base/iricmainwindowinterface.h \
            base/propertybrowser.h \
            base/snapshotenabledwindowinterface.h \
-           base/svgsnapshotenabledwindowinterface.h \
            base/windowwithobjectbrowserinterface.h \
            base/windowwithpropertybrowser.h \
            base/windowwithzindexinterface.h \

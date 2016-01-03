@@ -53,25 +53,26 @@ void ContourSettingWidget::handleContourChange()
 	emit contourChanged();
 }
 
-ContourSettingWidget::Contour ContourSettingWidget::contour()
+ContourSettingWidget::Contour ContourSettingWidget::contour() const
 {
-	if (ui->pointsButton->isChecked()) { return Points; }
-	if (ui->isolinesButton->isChecked()) { return Isolines; }
-	if (ui->contourFigureButton->isChecked()) { return ContourFigure; }
-	if (ui->colorFringeButton->isChecked()) { return ColorFringe; }
-	//default
+	if (ui->pointsButton->isChecked()) {return Points;}
+	if (ui->isolinesButton->isChecked()) {return Isolines;}
+	if (ui->contourFigureButton->isChecked()) {return ContourFigure;}
+	if (ui->colorFringeButton->isChecked()) {return ColorFringe;}
+
+	// default
 	return Isolines;
 }
 
-void ContourSettingWidget::hidePoints()
+void ContourSettingWidget::hidePointsRadioButton()
 {
 	ui->pointsButton->hide();
 }
 
-void ContourSettingWidget::setNoPolyData(bool nopolydata)
+void ContourSettingWidget::forceSelectPointsOnly()
 {
-	if (! nopolydata) {return;}
 	ui->pointsButton->setChecked(true);
+
 	ui->isolinesButton->setDisabled(true);
 	ui->contourFigureButton->setDisabled(true);
 	ui->colorFringeButton->setDisabled(true);

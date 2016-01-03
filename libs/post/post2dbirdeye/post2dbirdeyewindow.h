@@ -5,7 +5,7 @@
 #include <QByteArray>
 #include <QVector2D>
 #include <guicore/post/postprocessorwindow.h>
-#include <guicore/base/additionalmenuwindowinterface.h>
+#include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 
 class QAction;
@@ -20,23 +20,25 @@ class Post2dBirdEyeWindowEditBackgroundColorCommand;
 /// This class represents the two-dimensional post-processing window.
 class Post2dBirdEyeWindow :
 	public PostProcessorWindow,
-	public AdditionalMenuWindowInterface,
+	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi);
-	/// Destructor
 	~Post2dBirdEyeWindow();
+
 	/// Informed that CGNS file is switched.
 	void handleCgnsSwitch() {}
 	/// switch to the new index.
 	void changeIndex(uint /*newindex*/) {}
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
+
 	QList<QMenu*> getAdditionalMenus() const override;
+	QToolBar* getAdditionalToolBar() const override;
+
 	ObjectBrowser* objectBrowser() const override;
 	int index() const {return m_index;}
 

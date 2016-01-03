@@ -18,7 +18,6 @@ public:
 public slots:
 	/// Update the position to display in the widget
 	void updatePosition(const QVector2D& position);
-	/// Clear the content
 	void clear();
 };
 

@@ -22,31 +22,27 @@ namespace Ui
 class GUIBASEDLL_EXPORT FilenameEditWidget : public QWidget
 {
 	Q_OBJECT
-
 public:
 	explicit FilenameEditWidget(QWidget* parent = nullptr);
 	~FilenameEditWidget();
-	/// Set the file name
-	void setFilename(const QString& filename);
-	/**
-	 * @brief Set the filter for files to select
-	 * @param filter Filter string. For example, "CSV files (*.csv)"
-	 */
-	void setFilter(const QString& filter);
-	/// The file name
+
 	QString filename() const;
-	/// Set the base directory, that is used when file selecting dialog is open by calling openDialog()
-	void setBaseDir(const QString& basedir) {
-		m_baseDir = basedir;
-	}
+	void setFilename(const QString& filename);
+
+	/// Filter string like "CSV files (*.csv)"
+	void setFilter(const QString& filter);
+
+	// if a file under baseFolder is selected, file name fill be the relative file name.
+	void setBaseFolder(const QString& folder);
 
 private slots:
 	void openDialog();
 
 private:
-	Ui::FilenameEditWidget* ui;
 	QString m_filter;
-	QString m_baseDir;
+	QString m_baseFolder;
+
+	Ui::FilenameEditWidget* ui;
 };
 
 #endif // FILENAMEEDITWIDGET_H

@@ -27,12 +27,12 @@ ScalarsToColorsEditWidget* GridCellAttributePropertyDialog::scalarsToColorsEditW
 
 void GridCellAttributePropertyDialog::setOpacityPercent(int opacity)
 {
-	return ui->transparencyWidget->setOpacity(opacity);
+	return ui->transparencyWidget->setOpacityPercent(opacity);
 }
 
 int GridCellAttributePropertyDialog::opacityPercent()
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GridCellAttributePropertyDialog::accept()

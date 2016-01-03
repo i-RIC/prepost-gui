@@ -18,10 +18,9 @@ class GUIBASEDLL_EXPORT TransparencyWidget : public QWidget
 public:
 	explicit TransparencyWidget(QWidget* parent = nullptr);
 	~TransparencyWidget();
-	/// Set the opacity value (0 to 100)
-	void setOpacity(int opacity);
-	/// The opacity value (0 to 100)
-	int opacity();
+
+	int opacityPercent() const;
+	void setOpacityPercent(int opacityPercent);
 
 private slots:
 	void handleCheck(bool checked);

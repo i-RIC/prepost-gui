@@ -12,6 +12,16 @@ IntegerNumberDisplayLabel::IntegerNumberDisplayLabel(QWidget* parent) :
 	clear();
 }
 
+IntegerNumberDisplayLabel::ClearMode IntegerNumberDisplayLabel::clearMode() const
+{
+	return m_clearMode;
+}
+
+void IntegerNumberDisplayLabel::setClearMode(ClearMode cm)
+{
+	m_clearMode = cm;
+}
+
 void IntegerNumberDisplayLabel::setValue(unsigned int value)
 {
 	setText(QString("%1").arg(value));

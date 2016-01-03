@@ -22,7 +22,7 @@ void XYAxisDisplaySettingDialog::setXAxisSetting(const Setting& xSetting)
 	ui->xNumLabelsSlider->setValue(xSetting.numOfLabels);
 }
 
-const XYAxisDisplaySettingDialog::Setting XYAxisDisplaySettingDialog::xAxisSetting() const
+XYAxisDisplaySettingDialog::Setting XYAxisDisplaySettingDialog::xAxisSetting() const
 {
 	Setting s;
 	s.isAuto = ui->xAutoCheckBox->isChecked();
@@ -40,7 +40,7 @@ void XYAxisDisplaySettingDialog::setYAxisSetting(const Setting& ySetting)
 	ui->yNumLabelsSlider->setValue(ySetting.numOfLabels);
 }
 
-const XYAxisDisplaySettingDialog::Setting XYAxisDisplaySettingDialog::yAxisSetting() const
+XYAxisDisplaySettingDialog::Setting XYAxisDisplaySettingDialog::yAxisSetting() const
 {
 	Setting s;
 	s.isAuto = ui->yAutoCheckBox->isChecked();

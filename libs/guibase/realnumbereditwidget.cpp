@@ -5,17 +5,22 @@
 
 #include <cmath>
 
-RealNumberEditWidget::RealNumberEditWidget(QWidget* parent)
-	: QLineEdit(parent)
+RealNumberEditWidget::RealNumberEditWidget(QWidget* parent) :
+	QLineEdit(parent)
 {
-	m_eventCheck = true;
 	setValidator(new QDoubleValidator(this));
 	connect(this, SIGNAL(textChanged(QString)), this, SLOT(handleTextChange()));
+}
+
+double RealNumberEditWidget::value() const
+{
+	return m_doubleValue;
 }
 
 void RealNumberEditWidget::setValue(double newvalue)
 {
 	if (m_doubleValue == newvalue) {return;}
+
 	m_doubleValue = newvalue;
 	QString txt("%1");
 	setText(txt.arg(m_doubleValue));
@@ -33,10 +38,8 @@ void RealNumberEditWidget::focusOutEvent(QFocusEvent* e)
 	if (updateValue()) {
 		QLineEdit::focusOutEvent(e);
 	} else {
-		if (m_eventCheck) {
-			QMessageBox::warning(this, tr("Error"), tr("It is not a real value"));
-			setFocus(Qt::OtherFocusReason);
-		}
+		QMessageBox::warning(this, tr("Error"), tr("It is not a real value"));
+		setFocus(Qt::OtherFocusReason);
 	}
 }
 
@@ -48,12 +51,13 @@ bool RealNumberEditWidget::updateValue()
 		emit valueChanged(m_doubleValue);
 		return true;
 	}
+
 	bool ok;
 	double tmpval = txt.toDouble(&ok);
 	if (! ok) {
-		// Invalid!
-		return false;
+		return false; // invalid value
 	}
+
 	m_doubleValue = tmpval;
 	emit valueChanged(m_doubleValue);
 	return true;

@@ -138,6 +138,11 @@ CoordinateSystemBuilder::~CoordinateSystemBuilder()
 	}
 }
 
+const QList<CoordinateSystem*>& CoordinateSystemBuilder::systems() const
+{
+	return m_systems;
+}
+
 CoordinateSystem* CoordinateSystemBuilder::system(const QString& name) const
 {
 	return m_systemsMap.value(name, 0);

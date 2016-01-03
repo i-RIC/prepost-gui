@@ -1,11 +1,12 @@
 #ifndef MEASUREDDATAPOINTSETTINGDIALOG_H
 #define MEASUREDDATAPOINTSETTINGDIALOG_H
 
-#include <guibase/contoursettingwidget.h>
 #include "../scalarstocolors/lookuptablecontainer.h"
 #include "measureddatapointgroupdataitem.h"
+#include <guibase/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
+
 #include <QDialog>
 #include <QList>
 #include <QMap>
@@ -25,11 +26,14 @@ class MeasuredDataPointSettingDialog : public QDialog
 public:
 	explicit MeasuredDataPointSettingDialog(QWidget* parent = nullptr);
 	~MeasuredDataPointSettingDialog();
+
 	void setData(MeasuredData* md);
 	void setNoPolyData(bool noPolyData);
 	void setSetting(const MeasuredDataPointGroupDataItem::Setting& setting);
 	void setScalarBarTitleMap(const QMap<QString, QString>& titlemap);
 	void setLookupTables(const QMap<QString, LookupTableContainer*>& lookuptables);
+
+	void forceSelectPointsOnly();
 
 	MeasuredDataPointGroupDataItem::Setting setting() const;
 	LookupTableContainer lookupTable() const;
@@ -48,7 +52,6 @@ private:
 	MeasuredDataPointGroupDataItem::Setting m_setting;
 	QMap<QString, QString> m_scalarBarTitleMap;
 	QMap<QString, LookupTableContainer*> m_lookupTables;
-
 	LookupTableContainer m_lookupTable;
 	QList<QString> m_measuredValues;
 };

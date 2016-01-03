@@ -12,17 +12,15 @@ class GUIBASEDLL_EXPORT MarginWidget : public QWidget
 
 public:
 	explicit MarginWidget(QWidget* parent = nullptr);
-	/// The margin (in pixels)
-	int margin() const {return m_margin;}
-	/// Set the margin (in pixels)
-	void setMargin(int m) {m_margin = m;}
-	/// Thw widget shown in the center
-	QWidget* widget() const {return m_widget;}
-	/// Set the widget shown in the center
+
+	int marginPixels() const;
+	void setMarginPixels(int m);
+
+	QWidget* widget() const;
 	void setWidget(QWidget* w);
 
 private:
-	int m_margin;
+	int m_marginPixels;
 	QWidget* m_widget;
 };
 

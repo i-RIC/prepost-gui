@@ -417,8 +417,11 @@ QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
 	}
 	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
 	MeasuredDataPointSettingDialog* dialog = new MeasuredDataPointSettingDialog(p);
+
 	dialog->setData(md);
-	dialog->setNoPolyData(md->noPolyData());
+	if (md->noPolyData()) {
+		dialog->forceSelectPointsOnly();
+	}
 
 	dialog->setSetting(m_setting);
 	dialog->setLookupTables(m_lookupTables);

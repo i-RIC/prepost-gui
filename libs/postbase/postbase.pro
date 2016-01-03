@@ -71,13 +71,13 @@ LIBS += \
 	-lvtkRenderingFreeType-6.1
 
 # Input
-HEADERS += cfshapeexportwindowinterface.h \
-           particleexportwindowinterface.h \
+HEADERS += cfshapeexportwindowi.h \
+           particleexportwindowi.h \
            post2dwindowcontoursetting.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
            postwindowgridtypedataiteminterface.h \
-           svkmlexportwindowinterface.h \
+           svkmlexportwindowi.h \
            particle/postparticlebasicsetting.h \
            particle/postparticlebasicsettingdialog.h \
            particle/postparticlescalarpropertydialog.h \

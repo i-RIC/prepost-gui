@@ -22,8 +22,8 @@
 #include <guibase/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowinterface.h>
 #include <guicore/base/windowwithzindexinterface.h>
-#include <postbase/particleexportwindowinterface.h>
-#include <postbase/svkmlexportwindowinterface.h>
+#include <postbase/particleexportwindowi.h>
+#include <postbase/svkmlexportwindowi.h>
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -44,8 +44,7 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-#include <postbase/cfshapeexportwindowinterface.h>
-#include <postbase/particleexportwindowinterface.h>
+#include <postbase/cfshapeexportwindowi.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/post2d/post2dwindow.h>
@@ -1782,7 +1781,7 @@ void iRICMainWindow::exportParticles()
 		warnSolverRunning();
 		return;
 	}
-	ParticleExportWindowInterface* ew = dynamic_cast<ParticleExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
+	ParticleExportWindowI* ew = dynamic_cast<ParticleExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;
@@ -1878,7 +1877,7 @@ void iRICMainWindow::exportCfShape()
 		warnSolverRunning();
 		return;
 	}
-	CfShapeExportWindowInterface* ew = dynamic_cast<CfShapeExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
+	CfShapeExportWindowI* ew = dynamic_cast<CfShapeExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Currently active sub-window does not support exporting contour figure."));
 		return;
@@ -1977,7 +1976,7 @@ void iRICMainWindow::exportStKML()
 		warnSolverRunning();
 		return;
 	}
-	SVKmlExportWindowInterface* ew = dynamic_cast<SVKmlExportWindowInterface*>(m_centralWidget->activeSubWindow()->widget());
+	SVKmlExportWindowI* ew = dynamic_cast<SVKmlExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Please select this menu when Visualization Window is active."));
 		return;

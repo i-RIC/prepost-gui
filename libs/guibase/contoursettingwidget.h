@@ -36,14 +36,12 @@ public:
 	};
 	ContourSettingWidget(QWidget* parent = nullptr);
 	~ContourSettingWidget();
-	/// Set the contour type setting
+
+	Contour contour() const;
 	void setContour(Contour contour);
-	/// The contour type setting
-	Contour contour();
-	/// Hide "Points" radio button
-	void hidePoints();
-	/// Set whether no polydata exists. If nopolydata is true, Users can select only "Points".
-	void setNoPolyData(bool nopolydata);
+
+	void hidePointsRadioButton();
+	void forceSelectPointsOnly();
 
 signals:
 	void contourChanged();

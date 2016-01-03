@@ -21,12 +21,9 @@ public:
 signals:
 	void visibilityChanged(bool visible);
 
-protected:
+private:
 	void hideEvent(QHideEvent* e) override;
 	void showEvent(QShowEvent* e) override;
-
-private:
-	void init();
 };
 
 #endif // IRICTOOLBAR_H

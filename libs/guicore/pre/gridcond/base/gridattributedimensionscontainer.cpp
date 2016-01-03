@@ -30,6 +30,26 @@ GridAttributeDimensionsContainer::~GridAttributeDimensionsContainer()
 	}
 }
 
+const QList<GridAttributeDimensionContainer*>& GridAttributeDimensionsContainer::containers() const
+{
+	return m_containers;
+}
+
+QList<GridAttributeDimensionContainer*> GridAttributeDimensionsContainer::containers()
+{
+	return m_containers;
+}
+
+const QList<GridAttributeDimensionSelectWidget*>& GridAttributeDimensionsContainer::selectWidgets() const
+{
+	return m_selectWidgets;
+}
+
+QList<GridAttributeDimensionSelectWidget*>& GridAttributeDimensionsContainer::selectWidgets()
+{
+	return m_selectWidgets;
+}
+
 int GridAttributeDimensionsContainer::currentIndex() const
 {
 	return calculateIndex();

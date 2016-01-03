@@ -1,5 +1,5 @@
-#ifndef CFSHAPEEXPORTWINDOWINTERFACE_H
-#define CFSHAPEEXPORTWINDOWINTERFACE_H
+#ifndef CFSHAPEEXPORTWINDOWI_H
+#define CFSHAPEEXPORTWINDOWI_H
 
 #include <QList>
 #include <QString>
@@ -7,10 +7,10 @@
 class QString;
 
 /// Window that can export Contour Figure to ESRI Shape files
-class CfShapeExportWindowInterface
+class CfShapeExportWindowI
 {
 public:
-	CfShapeExportWindowInterface() {}
+	virtual ~CfShapeExportWindowI() {}
 	/**
 	 * @brief Export contour figure to ESRI Shape files
 	 * @param filePrefix Prefix of the exported files. For example "C:/Result_". The exported files will be "C:/Result_1.shp", "C:/Result_1.shx", "C:/Result_1.dbf", "C:/Result_1.prj". etc.
@@ -24,4 +24,4 @@ public:
 	virtual QList<QString> contourFigureDrawingZones() = 0;
 };
 
-#endif // CFSHAPEEXPORTWINDOWINTERFACE_H
+#endif // CFSHAPEEXPORTWINDOWI_H

@@ -16,16 +16,18 @@ public:
 	GridAttributeDimensionsContainer(SolverDefinitionGridAttribute* conddef, QObject* parent);
 	~GridAttributeDimensionsContainer();
 
-	const QList<GridAttributeDimensionContainer*>& containers() const {return m_containers;}
-	QList<GridAttributeDimensionContainer*> containers() {return m_containers;}
-	const QList<GridAttributeDimensionSelectWidget*>& selectWidgets() const {return m_selectWidgets;}
-	QList<GridAttributeDimensionSelectWidget*>& selectWidgets() {return m_selectWidgets;}
+	const QList<GridAttributeDimensionContainer*>& containers() const;
+	QList<GridAttributeDimensionContainer*> containers();
 
-	void setCurrentIndex(int newIndex, bool noDraw = false);
+	const QList<GridAttributeDimensionSelectWidget*>& selectWidgets() const;
+	QList<GridAttributeDimensionSelectWidget*>& selectWidgets();
+
 	int currentIndex() const;
+	void setCurrentIndex(int newIndex, bool noDraw = false);
+
+	int calculateIndex(GridAttributeDimensionContainer* cont = nullptr, int index = 0, int size = 0) const;
 	QList<int> calculateIndices(int index);
 	int maxIndex() const;
-	int calculateIndex(GridAttributeDimensionContainer* cont = nullptr, int index = 0, int size = 0) const;
 
 signals:
 	void currentIndexChanged();
@@ -39,7 +41,6 @@ private:
 	int m_currentIndex;
 	QList<GridAttributeDimensionContainer*> m_containers;
 	QList<GridAttributeDimensionSelectWidget*> m_selectWidgets;
-
 };
 
 #endif // GRIDATTRIBUTEDIMENSIONSCONTAINER_H

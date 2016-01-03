@@ -29,6 +29,7 @@ public:
 	explicit WaitDialog(QWidget* parent = nullptr);
 	~WaitDialog();
 	void setMessage(const QString& message);
+
 	/// Show progress bar
 	void showProgressBar();
 	/// Disable cancel button

@@ -18,7 +18,7 @@ Post3dWindowContourGroupSettingDialog::Post3dWindowContourGroupSettingDialog(QWi
 	ui->setupUi(this);
 	ui->faceListWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
 	ui->faceSettingWidget->setEnabled(false);
-	ui->contourWidget->hidePoints();
+	ui->contourWidget->hidePointsRadioButton();
 	ui->colormapWidget->setContainer(&m_lookupTable);
 
 	connect(ui->physicalValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(solutionChanged(int)));

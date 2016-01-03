@@ -10,13 +10,12 @@ class GUIBASEDLL_EXPORT PointStyleInformation
 {
 
 public:
-	/// Point shape
 	enum PointShape {
 		ShapeCircle, ///< Circle
 		ShapeBox     ///< Box (Square)
 	};
-	/// Constructor
 	PointStyleInformation();
+
 	/// Point size in pixels
 	qreal size() const {return m_size;}
 	/// Set point size in pixels

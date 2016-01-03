@@ -8,7 +8,7 @@ GridNodeAttributePropertyDialog::GridNodeAttributePropertyDialog(QWidget* parent
 	ui(new Ui::GridNodeAttributePropertyDialog)
 {
 	ui->setupUi(this);
-	ui->contourSettingWidget->hidePoints();
+	ui->contourSettingWidget->hidePointsRadioButton();
 }
 
 GridNodeAttributePropertyDialog::~GridNodeAttributePropertyDialog()
@@ -59,12 +59,12 @@ void GridNodeAttributePropertyDialog::setScalarsToColorsEditWidget(ScalarsToColo
 
 void GridNodeAttributePropertyDialog::setOpacityPercent(int opacity)
 {
-	return ui->transparencyWidget->setOpacity(opacity);
+	return ui->transparencyWidget->setOpacityPercent(opacity);
 }
 
 int GridNodeAttributePropertyDialog::opacityPercent()
 {
-	return ui->transparencyWidget->opacity();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GridNodeAttributePropertyDialog::handleContourChange()
