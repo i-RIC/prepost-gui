@@ -420,7 +420,6 @@ void Post2dWindowParticlesVectorGroupDataItem::addCustomMenuItems(QMenu* menu)
 QDialog* Post2dWindowParticlesVectorGroupDataItem::propertyDialog(QWidget* p)
 {
 	PostParticleVectorPropertyDialog* dialog = new PostParticleVectorPropertyDialog(p);
-	Post2dWindowGridTypeDataItem* gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent()->parent());
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->dataContainer();
 	dialog->setZoneData(cont);
 
