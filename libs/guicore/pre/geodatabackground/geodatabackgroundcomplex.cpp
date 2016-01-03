@@ -2,10 +2,13 @@
 #include "../complex/gridcomplexconditionwidget.h"
 #include "geodatabackgroundcomplex.h"
 
-GeoDataBackgroundComplex::GeoDataBackgroundComplex(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att)
-	: GeoDataBackground(d, creator, att)
-{
+GeoDataBackgroundComplex::GeoDataBackgroundComplex(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att) :
+	GeoDataBackground(d, creator, att)
+{}
 
+void GeoDataBackgroundComplex::setItem(PreProcessorGeoDataComplexGroupDataItemInterface* item)
+{
+	m_item = item;
 }
 
 QVariant GeoDataBackgroundComplex::variantValue()

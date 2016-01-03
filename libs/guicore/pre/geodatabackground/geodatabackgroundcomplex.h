@@ -10,11 +10,9 @@ class GeoDataBackgroundComplex : public GeoDataBackground
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GeoDataBackgroundComplex(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
-	void setItem(PreProcessorGeoDataComplexGroupDataItemInterface* item) {
-		m_item = item;
-	}
+
+	void setItem(PreProcessorGeoDataComplexGroupDataItemInterface* item);
 
 	QVariant variantValue() override;
 

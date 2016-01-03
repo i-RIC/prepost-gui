@@ -28,6 +28,11 @@ bool GeoDataBackgroundComplexCreator::isCompatibleWith(SolverDefinitionGridAttri
 	return true;
 }
 
+QString GeoDataBackgroundComplexCreator::defaultCaption(unsigned int)
+{
+	return "";
+}
+
 GeoDataBackgroundComplexCreator* GeoDataBackgroundComplexCreator::instance()
 {
 	if (! m_instance) {
