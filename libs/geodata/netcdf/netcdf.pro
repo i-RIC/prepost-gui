@@ -123,6 +123,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdft.h \
            geodatanetcdfxbandimporter.h \
            private/geodatanetcdfcellmappert_detail.h \
+           private/geodatanetcdfcreatort_detail.h \
            private/geodatanetcdfnodemappert_detail.h
 FORMS += geodatanetcdfimporterdateselectdialog.ui \
          geodatanetcdfimportersettingdialog.ui

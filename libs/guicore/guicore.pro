@@ -348,6 +348,7 @@ HEADERS += guicore_global.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
            pre/geodatabackground/private/geodatabackgroundcellmappert_detail.h \
+           pre/geodatabackground/private/geodatabackgroundcreatort_detail.h \
            pre/geodatabackground/private/geodatabackgroundnodemappert_detail.h \
            pre/grid/private/grid_impl.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \

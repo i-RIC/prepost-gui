@@ -7,9 +7,9 @@
 
 class GD_NETCDF_EXPORT GeoDataNetcdfIntegerCreator : public GeoDataNetcdfCreatorT<int, vtkIntArray>
 {
-
 public:
 	GeoDataNetcdfIntegerCreator();
+
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 

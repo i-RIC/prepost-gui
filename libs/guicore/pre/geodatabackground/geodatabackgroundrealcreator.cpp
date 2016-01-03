@@ -3,10 +3,8 @@
 GeoDataBackgroundRealCreator* GeoDataBackgroundRealCreator::m_instance = nullptr;
 
 GeoDataBackgroundRealCreator::GeoDataBackgroundRealCreator() :
-	GeoDataBackgroundCreatorT<double, vtkDoubleArray> {}
-{
-	m_typeName = "realBackground";
-}
+	GeoDataBackgroundCreatorT<double, vtkDoubleArray> {"realBackground"}
+{}
 
 GeoDataBackgroundRealCreator* GeoDataBackgroundRealCreator::instance()
 {

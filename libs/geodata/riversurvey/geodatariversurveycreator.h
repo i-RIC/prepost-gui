@@ -10,11 +10,13 @@ class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCreator : public GeoDataCreator
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GeoDataRiverSurveyCreator();
-	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) override;
-	QString name(unsigned int index) override;
-	QString defaultCaption(unsigned int index) override;
+
+	QString name(unsigned int index) const override;
+	QString defaultCaption(unsigned int index) const override;
+
+	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
+
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 	virtual GeoData* restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };

@@ -9,10 +9,10 @@ class GD_NETCDF_EXPORT GeoDataNetcdfCreator : public GeoDataCreator
 	Q_OBJECT
 
 public:
-	/// Constructor
-	GeoDataNetcdfCreator();
-	QString name(unsigned int index) override;
-	QString defaultCaption(unsigned int index) override;
+	GeoDataNetcdfCreator(const QString& typeName);
+
+	QString name(unsigned int index) const override;
+	QString defaultCaption(unsigned int index) const override;
 };
 
 #endif // GEODATANETCDFCREATOR_H

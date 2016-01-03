@@ -9,10 +9,10 @@ class GD_POLYGON_EXPORT GeoDataPolygonCreator : public GeoDataCreator
 	Q_OBJECT
 
 public:
-	GeoDataPolygonCreator();
+	GeoDataPolygonCreator(const QString& typeName);
 
-	QString name(unsigned int index) override;
-	QString defaultCaption(unsigned int index) override;
+	QString name(unsigned int index) const override;
+	QString defaultCaption(unsigned int index) const override;
 
 	bool isCreatable() const override;
 

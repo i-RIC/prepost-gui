@@ -6,12 +6,10 @@
 GeoDataBackgroundComplexCreator* GeoDataBackgroundComplexCreator::m_instance = nullptr;
 
 GeoDataBackgroundComplexCreator::GeoDataBackgroundComplexCreator() :
-	GeoDataCreator{}
+	GeoDataCreator{"complexBackground", tr("Background")}
 {
-	m_caption = "Background";
-	m_nodeMappers.append(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
-	m_cellMappers.append(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
-	m_typeName = "complexBackground";
+	nodeMappers().append(new GeoDataBackgroundNodeMapperT<int, vtkIntArray>(this));
+	cellMappers().append(new GeoDataBackgroundCellMapperT<int, vtkIntArray>(this));
 }
 
 GeoData* GeoDataBackgroundComplexCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
@@ -23,12 +21,12 @@ GeoData* GeoDataBackgroundComplexCreator::create(ProjectDataItem* parent, Solver
 	return geodata;
 }
 
-bool GeoDataBackgroundComplexCreator::isCompatibleWith(SolverDefinitionGridAttribute*)
+bool GeoDataBackgroundComplexCreator::isCompatibleWith(SolverDefinitionGridAttribute*) const
 {
 	return true;
 }
 
-QString GeoDataBackgroundComplexCreator::defaultCaption(unsigned int)
+QString GeoDataBackgroundComplexCreator::defaultCaption(unsigned int) const
 {
 	return "";
 }

@@ -5,10 +5,8 @@
 GeoDataBackgroundIntegerCreator* GeoDataBackgroundIntegerCreator::m_instance = nullptr;
 
 GeoDataBackgroundIntegerCreator::GeoDataBackgroundIntegerCreator() :
-	GeoDataBackgroundCreatorT<int, vtkIntArray> {}
-{
-	m_typeName = "integerBackground";
-}
+	GeoDataBackgroundCreatorT<int, vtkIntArray> {"integerBackground"}
+{}
 
 GeoDataBackgroundIntegerCreator* GeoDataBackgroundIntegerCreator::instance()
 {

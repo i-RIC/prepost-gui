@@ -8,21 +8,19 @@
 #include <QAction>
 #include <QIcon>
 
-GeoDataPolygonCreator::GeoDataPolygonCreator() :
-	GeoDataCreator {}
+GeoDataPolygonCreator::GeoDataPolygonCreator(const QString& typeName) :
+	GeoDataCreator {typeName, tr("Polygon")}
 {
-	m_caption = GeoDataPolygonCreator::tr("Polygon");
-
-	m_importers.append(new GeoDataPolygonImporter(this));
-	m_exporters.append(new GeoDataPolygonShapeExporter(this));
+	importers().append(new GeoDataPolygonImporter(this));
+	exporters().append(new GeoDataPolygonShapeExporter(this));
 }
 
-QString GeoDataPolygonCreator::name(unsigned int index)
+QString GeoDataPolygonCreator::name(unsigned int index) const
 {
 	return QString("polygon%1").arg(index);
 }
 
-QString GeoDataPolygonCreator::defaultCaption(unsigned int index)
+QString GeoDataPolygonCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("Polygon%1")).arg(index);
 }

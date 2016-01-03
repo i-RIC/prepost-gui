@@ -21,11 +21,14 @@ class GridCreatingConditionRiverSurveyRegionDialog : public QDialog
 public:
 	explicit GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyRegionDialog();
+
 	void setData(GeoDataRiverSurvey* rs);
-	void setStartPoint(GeoDataRiverPathPoint* p);
-	void setEndPoint(GeoDataRiverPathPoint* p);
+
 	GeoDataRiverPathPoint* startPoint();
+	void setStartPoint(GeoDataRiverPathPoint* p);
+
 	GeoDataRiverPathPoint* endPoint();
+	void setEndPoint(GeoDataRiverPathPoint* p);
 
 public slots:
 	void accept() override;

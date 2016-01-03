@@ -8,13 +8,15 @@
 
 class GeoDataBackgroundComplexCreator : public GeoDataCreator
 {
+	Q_OBJECT
+
 private:
 	GeoDataBackgroundComplexCreator();
 
 public:
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
-	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) override;
-	QString defaultCaption(unsigned int /*index*/) override;
+	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
+	QString defaultCaption(unsigned int) const override;
 
 	static GeoDataBackgroundComplexCreator* instance();
 

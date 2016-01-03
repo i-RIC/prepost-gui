@@ -12,15 +12,14 @@
 #include <QIcon>
 
 GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
-	GeoDataCreator {}
+	GeoDataCreator {"riversurvey", tr("River Survey data")}
 {
-	m_caption = GeoDataRiverSurveyCreator::tr("River Survey data");
-	m_typeName = "riversurvey";
+	importers().append(new GeoDataRiverSurveyImporter(this));
 
-	m_importers.append(new GeoDataRiverSurveyImporter(this));
-	m_exporters.append(new GeoDataRiverSurveyExporter(this));
-	m_exporters.append(new GeoDataRiverSurveyVTKExporter(this));
-	m_nodeMappers.append(new GeoDataRiverSurveyNodeMapper(this));
+	exporters().append(new GeoDataRiverSurveyExporter(this));
+	exporters().append(new GeoDataRiverSurveyVTKExporter(this));
+
+	nodeMappers().append(new GeoDataRiverSurveyNodeMapper(this));
 }
 
 GeoData* GeoDataRiverSurveyCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
@@ -31,12 +30,12 @@ GeoData* GeoDataRiverSurveyCreator::create(ProjectDataItem* parent, SolverDefini
 	return rs;
 }
 
-QString GeoDataRiverSurveyCreator::name(unsigned int index)
+QString GeoDataRiverSurveyCreator::name(unsigned int index) const
 {
 	return QString("riversurvey%1").arg(index);
 }
 
-QString GeoDataRiverSurveyCreator::defaultCaption(unsigned int index)
+QString GeoDataRiverSurveyCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("RiverSurvey %1")).arg(index);
 }
@@ -53,7 +52,7 @@ GeoData* GeoDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataIte
 	return nullptr;
 }
 
-bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition)
+bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
 	if (condition->position() == SolverDefinitionGridAttribute::CellCenter) {return false;}

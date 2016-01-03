@@ -2,10 +2,9 @@
 #include "geodatanetcdft.h"
 
 GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
-	GeoDataNetcdfCreatorT<int, vtkIntArray> {}
+	GeoDataNetcdfCreatorT<int, vtkIntArray> {"integerNetcdf"}
 {
-	m_typeName = "integerNetcdf";
-	m_importers.append(new GeoDataNetcdfIntegerImporter(this));
+	importers().append(new GeoDataNetcdfIntegerImporter(this));
 }
 
 GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)

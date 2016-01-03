@@ -9,18 +9,16 @@
 #include <QAction>
 #include <QIcon>
 
-GeoDataNetcdfCreator::GeoDataNetcdfCreator() :
-	GeoDataCreator {}
-{
-	m_caption = GeoDataNetcdfCreator::tr("Raster data");
-}
+GeoDataNetcdfCreator::GeoDataNetcdfCreator(const QString& typeName) :
+	GeoDataCreator {typeName, tr("Raster data")}
+{}
 
-QString GeoDataNetcdfCreator::name(unsigned int index)
+QString GeoDataNetcdfCreator::name(unsigned int index) const
 {
 	return QString("rasterdata%1").arg(index);
 }
 
-QString GeoDataNetcdfCreator::defaultCaption(unsigned int index)
+QString GeoDataNetcdfCreator::defaultCaption(unsigned int index) const
 {
 	return QString(tr("Raster data%1")).arg(index);
 }

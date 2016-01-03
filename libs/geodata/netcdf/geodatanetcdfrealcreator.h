@@ -7,9 +7,9 @@
 
 class GD_NETCDF_EXPORT GeoDataNetcdfRealCreator : public GeoDataNetcdfCreatorT<double, vtkDoubleArray>
 {
-
 public:
 	GeoDataNetcdfRealCreator();
+
 	GeoData* create(ProjectDataItem* parent, SolverDefinitionGridAttribute* condition) override;
 };
 

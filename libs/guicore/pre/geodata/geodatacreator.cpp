@@ -2,23 +2,33 @@
 #include "../base/preprocessorgeodatadataiteminterface.h"
 #include "geodata.h"
 #include "geodatacreator.h"
-//#include "pre/datamodel/preprocessorgeodatadataitem.h"
-//#include "pre/datamodel/preprocessorgeodatagroupdataitem.h"
-//#include "geodatafactory.h"
 
 #include <QDomElement>
 #include <QDomNode>
 #include <QSet>
 
-GeoDataCreator::GeoDataCreator()
-	: QObject(nullptr)
-{
-	m_emptyData = nullptr;
-}
+GeoDataCreator::GeoDataCreator(const QString& typeName, const QString& caption) :
+	QObject(nullptr),
+	m_typeName {typeName},
+	m_caption {caption}
+{}
 
 GeoDataCreator::~GeoDataCreator()
+{}
+
+QString GeoDataCreator::name(unsigned int) const
 {
-	delete m_emptyData;
+	return "";
+}
+
+const QString& GeoDataCreator::typeName() const
+{
+	return m_typeName;
+}
+
+const QString& GeoDataCreator::caption() const
+{
+	return m_caption;
 }
 
 GeoData* GeoDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, SolverDefinitionGridAttribute* condition)
@@ -27,7 +37,7 @@ GeoData* GeoDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, 
 	if (elem.attribute("type") == m_typeName) {
 		return create(parent, condition);
 	}
-	return 0;
+	return nullptr;
 }
 
 void GeoDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem*>& list, GeoData* data)
@@ -53,4 +63,49 @@ void GeoDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem
 		}
 		++idx;
 	}
+}
+
+const QList<GeoDataMapper*>& GeoDataCreator::nodeMappers() const
+{
+	return m_nodeMappers;
+}
+
+QList<GeoDataMapper*>& GeoDataCreator::nodeMappers()
+{
+	return m_nodeMappers;
+}
+
+const QList<GeoDataMapper*>& GeoDataCreator::cellMappers() const
+{
+	return m_cellMappers;
+}
+
+QList<GeoDataMapper*>& GeoDataCreator::cellMappers()
+{
+	return m_cellMappers;
+}
+
+const QList<GeoDataImporter*>& GeoDataCreator::importers() const
+{
+	return m_importers;
+}
+
+QList<GeoDataImporter*>& GeoDataCreator::importers()
+{
+	return m_importers;
+}
+
+const QList<GeoDataExporter*>& GeoDataCreator::exporters() const
+{
+	return m_exporters;
+}
+
+QList<GeoDataExporter*>& GeoDataCreator::exporters()
+{
+	return m_exporters;
+}
+
+bool GeoDataCreator::isCreatable() const
+{
+	return false;
 }

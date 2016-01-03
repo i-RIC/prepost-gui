@@ -7,10 +7,10 @@ template <class V, class DA>
 class GeoDataPolygonCreatorT : public GeoDataPolygonCreator
 {
 public:
-	GeoDataPolygonCreatorT();
+	GeoDataPolygonCreatorT(const QString& typeName);
 	virtual ~GeoDataPolygonCreatorT();
 
-	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) override;
+	bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const override;
 };
 
 #include "private/geodatapolygoncreatort_detail.h"

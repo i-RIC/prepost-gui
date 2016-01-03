@@ -70,7 +70,6 @@ public:
 	QString caption() const {return m_setting.caption;}
 	void setCaption(const QString& cap) {m_setting.caption = cap;}
 	SolverDefinitionGridAttribute* gridAttribute() const {return m_gridAttribute;}
-	const QIcon icon() const;
 	/// Returns the pointer to the creator that created this instance.
 	GeoDataCreator* creator() const {return m_creator;}
 	virtual GeoDataMapper* mapper() const {return m_mapper;}

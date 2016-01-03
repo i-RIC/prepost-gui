@@ -94,12 +94,6 @@ QList<GeoDataExporter*> GeoData::exporters()
 	return m_creator->exporters();
 }
 
-const QIcon GeoData::icon() const
-{
-	if (m_creator == nullptr) {return QIcon();}
-	return m_creator->icon();
-}
-
 void GeoData::setupDataItem()
 {
 	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
