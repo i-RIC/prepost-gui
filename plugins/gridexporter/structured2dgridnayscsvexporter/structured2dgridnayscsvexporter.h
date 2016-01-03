@@ -10,14 +10,11 @@ class Structured2DGridNaysCSVExporter : public QObject, public GridExporterInter
 	Q_PLUGIN_METADATA(IID GridExporterInterface_iid FILE "extrafilters.json")
 	Q_INTERFACES(GridExporterInterface)
 public:
-	/// Constructor
 	Structured2DGridNaysCSVExporter();
-	~Structured2DGridNaysCSVExporter(){}
+	~Structured2DGridNaysCSVExporter();
+
 	QString caption() const override;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
-	{
-		return gt == SolverDefinitionGridType::gtStructured2DGrid;
-	}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override;
 	QStringList fileDialogFilters() const override;
 	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };

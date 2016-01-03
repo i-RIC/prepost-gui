@@ -6,15 +6,14 @@
 class Unstructured2DGridVTKExporter : public QObject, public GridExporterInterface
 {
 	Q_OBJECT
+	Q_PLUGIN_METADATA(IID GridExporterInterface_iid FILE "extrafilters.json")
+	Q_INTERFACES(GridExporterInterface)
 public:
-	/// Constructor
 	Unstructured2DGridVTKExporter();
 	~Unstructured2DGridVTKExporter(){}
+
 	QString caption() const override;
-	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override
-	{
-		return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
-	}
+	bool isGridTypeSupported(SolverDefinitionGridType::GridType gt) const override;
 	QStringList fileDialogFilters() const override;
 	bool doExport(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };

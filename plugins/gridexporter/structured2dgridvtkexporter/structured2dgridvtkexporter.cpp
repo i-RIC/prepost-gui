@@ -9,15 +9,21 @@
 
 #include <vtkStructuredGridWriter.h>
 
-Structured2DGridVTKExporter::Structured2DGridVTKExporter()
-	: GridExporterInterface(), QObject()
-{
+Structured2DGridVTKExporter::Structured2DGridVTKExporter() :
+	QObject()
+{}
 
-}
+Structured2DGridVTKExporter::~Structured2DGridVTKExporter()
+{}
 
 QString Structured2DGridVTKExporter::caption() const
 {
 	return tr("VTK file");
+}
+
+bool Structured2DGridVTKExporter::isGridTypeSupported(SolverDefinitionGridType::GridType gt) const
+{
+	return gt == SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 QStringList Structured2DGridVTKExporter::fileDialogFilters() const

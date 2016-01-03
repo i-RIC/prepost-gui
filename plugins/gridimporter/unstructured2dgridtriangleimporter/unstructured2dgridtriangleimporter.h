@@ -12,6 +12,7 @@ class Unstructured2dGridTriangleImporter : public QObject, public GridImporterIn
 public:
 	Unstructured2dGridTriangleImporter();
 	~Unstructured2dGridTriangleImporter(){}
+
 	QString caption() const override;
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 	QStringList fileDialogFilters() const override;

@@ -11,9 +11,9 @@ class Structured2DGridNaysGridImporter : public QObject, public GridImporterInte
 	Q_INTERFACES(GridImporterInterface)
 
 public:
-	/// Constructor
 	Structured2DGridNaysGridImporter();
 	~Structured2DGridNaysGridImporter(){}
+
 	QString caption() const override;
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 	QStringList fileDialogFilters() const override;

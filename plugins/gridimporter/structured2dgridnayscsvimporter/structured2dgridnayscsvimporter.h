@@ -11,13 +11,12 @@ class Structured2DGridNaysCSVImporter : public QObject, public GridImporterInter
 	Q_INTERFACES(GridImporterInterface)
 
 public:
-	/// Constructor
 	Structured2DGridNaysCSVImporter();
 	~Structured2DGridNaysCSVImporter(){}
+
 	QString caption() const override;
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 	QStringList fileDialogFilters() const override;
-	/// Import grid data from external file.
 	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 };
 

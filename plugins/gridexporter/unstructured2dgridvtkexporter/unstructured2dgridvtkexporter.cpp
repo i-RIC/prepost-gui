@@ -19,6 +19,11 @@ QString Unstructured2DGridVTKExporter::caption() const
 	return tr("VTK file");
 }
 
+bool Unstructured2DGridVTKExporter::isGridTypeSupported(SolverDefinitionGridType::GridType gt) const
+{
+	return gt == SolverDefinitionGridType::gtUnstructured2DGrid;
+}
+
 QStringList Unstructured2DGridVTKExporter::fileDialogFilters() const
 {
 	QStringList ret;

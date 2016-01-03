@@ -8,13 +8,21 @@
 #include <QTextStream>
 #include <QVector2D>
 
-Structured2DGridNaysCSVExporter::Structured2DGridNaysCSVExporter()
-	: QObject(), GridExporterInterface()
+Structured2DGridNaysCSVExporter::Structured2DGridNaysCSVExporter() :
+	QObject()
+{}
+
+Structured2DGridNaysCSVExporter::~Structured2DGridNaysCSVExporter()
 {}
 
 QString Structured2DGridNaysCSVExporter::caption() const
 {
 	return tr("RIC-Nays CSV");
+}
+
+bool Structured2DGridNaysCSVExporter::isGridTypeSupported(SolverDefinitionGridType::GridType gt) const
+{
+	return gt == SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 QStringList Structured2DGridNaysCSVExporter::fileDialogFilters() const
