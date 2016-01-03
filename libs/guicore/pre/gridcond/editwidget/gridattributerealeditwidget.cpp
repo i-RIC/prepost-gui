@@ -18,19 +18,9 @@ GridAttributeRealEditWidget::GridAttributeRealEditWidget(QWidget* parent, Solver
 GridAttributeRealEditWidget::~GridAttributeRealEditWidget()
 {}
 
-QSize GridAttributeRealEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeRealEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
 void GridAttributeRealEditWidget::setupWidget()
 {
-	if (m_valueCleared) {
+	if (isValueCleared()) {
 		m_widget->setText("");
 	} else {
 		m_widget->setValue(m_value);
@@ -40,9 +30,14 @@ void GridAttributeRealEditWidget::setupWidget()
 void GridAttributeRealEditWidget::getValueFromInnerWidget() const
 {
 	if (m_widget->text() == "") {
-		m_valueSelected = false;
+		setValueSelected(false);
 	} else {
-		m_valueSelected = true;
+		setValueSelected(true);
 		m_value = m_widget->value();
 	}
+}
+
+QWidget* GridAttributeRealEditWidget::editWidget() const
+{
+	return m_widget;
 }

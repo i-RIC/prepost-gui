@@ -14,25 +14,25 @@ GridCellAttributePropertyDialog::~GridCellAttributePropertyDialog()
 	delete ui;
 }
 
+ScalarsToColorsEditWidget* GridCellAttributePropertyDialog::scalarsToColorsEditWidget() const
+{
+	return ui->scalarsToColorsWidget->widget();
+}
+
 void GridCellAttributePropertyDialog::setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget)
 {
 	ui->scalarsToColorsWidget->setWidget(widget);
 	adjustSize();
 }
 
-ScalarsToColorsEditWidget* GridCellAttributePropertyDialog::scalarsToColorsEditWidget() const
+int GridCellAttributePropertyDialog::opacityPercent() const
 {
-	return ui->scalarsToColorsWidget->widget();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GridCellAttributePropertyDialog::setOpacityPercent(int opacity)
 {
 	return ui->transparencyWidget->setOpacityPercent(opacity);
-}
-
-int GridCellAttributePropertyDialog::opacityPercent()
-{
-	return ui->transparencyWidget->opacityPercent();
 }
 
 void GridCellAttributePropertyDialog::accept()

@@ -57,9 +57,9 @@ void GridAttributeEditDialog::reject()
 	QDialog::reject();
 }
 
-bool GridAttributeEditDialog::valueSelected() const
+bool GridAttributeEditDialog::isValueSelected() const
 {
-	return m_widget->valueSelected();
+	return m_widget->isValueSelected();
 }
 
 void GridAttributeEditDialog::setLabel(const QString& label)

@@ -12,7 +12,6 @@ namespace Ui
 
 class iRICMainWindowInterface;
 class GridComplexConditionWidget;
-//class PreProcessorGeoDataComplexGroupDataItemInterface;
 class PreProcessorGeoDataComplexGroupDataItemInterface;
 class ColorSource;
 
@@ -23,8 +22,9 @@ class GUICOREDLL_EXPORT GridComplexConditionDialog : public QDialog
 public:
 	explicit GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent);
 	~GridComplexConditionDialog();
+
+	QList<GridComplexConditionWidget*> widgets() const;
 	void setWidgets(QList<GridComplexConditionWidget*> widgets);
-	QList<GridComplexConditionWidget*> widgets() const {return m_widgets;}
 
 public slots:
 	void accept() override;
@@ -38,6 +38,7 @@ private slots:
 
 private:
 	void updateList();
+
 	QList<GridComplexConditionWidget*> m_widgets;
 
 	PreProcessorGeoDataComplexGroupDataItemInterface* m_dataItem;

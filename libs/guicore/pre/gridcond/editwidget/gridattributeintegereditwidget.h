@@ -11,12 +11,11 @@ public:
 	GridAttributeIntegerEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond);
 	~GridAttributeIntegerEditWidget();
 
-	QSize sizeHint() const override;
-	QSize minimumSizeHint() const override;
-
 private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() const override;
+
+	QWidget* editWidget() const override;
 
 	IntegerNumberEditWidget* m_widget;
 };

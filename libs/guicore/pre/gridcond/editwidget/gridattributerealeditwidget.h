@@ -11,12 +11,11 @@ public:
 	GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);
 	~GridAttributeRealEditWidget();
 
-	QSize sizeHint() const override;
-	QSize minimumSizeHint() const override;
-
 private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() const override;
+
+	QWidget* editWidget() const override;
 
 	RealNumberEditWidget* m_widget;
 };

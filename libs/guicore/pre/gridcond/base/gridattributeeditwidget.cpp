@@ -12,13 +12,38 @@ SolverDefinitionGridAttribute* GridAttributeEditWidget::gridAttribute() const
 
 void GridAttributeEditWidget::clearValue()
 {
-	m_valueCleared = true;
-	m_valueSelected = false;
+	m_isValueCleared = true;
+	m_isValueSelected = false;
 	setupWidget();
 }
 
-bool GridAttributeEditWidget::valueSelected() const
+bool GridAttributeEditWidget::isValueSelected() const
 {
 	getValueFromInnerWidget();
-	return m_valueSelected;
+	return m_isValueSelected;
+}
+
+QSize GridAttributeEditWidget::sizeHint() const
+{
+	return editWidget()->sizeHint();
+}
+
+QSize GridAttributeEditWidget::minimumSizeHint() const
+{
+	return editWidget()->sizeHint();
+}
+
+bool GridAttributeEditWidget::isValueCleared() const
+{
+	return m_isValueCleared;
+}
+
+void GridAttributeEditWidget::setValueCleared(bool cleared)
+{
+	m_isValueCleared = cleared;
+}
+
+void GridAttributeEditWidget::setValueSelected(bool selected) const
+{
+	m_isValueSelected = selected;
 }

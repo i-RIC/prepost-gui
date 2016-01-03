@@ -40,24 +40,25 @@ public:
 		InputConditionContainerInteger isDefaultContainer;
 	};
 
-	/// Constructor
 	GridComplexConditionWidget(iRICMainWindowInterface* mw, QWidget* parent = nullptr);
-	/// Destructor
 	~GridComplexConditionWidget();
+
 	void setNameAndNumber(const std::string& name, int number);
-	/// Load data fron CGNS file.
+
 	void load(const int fn);
-	/// Save data into CGNS file.
 	void save(const int fn);
-	/// Setup the widget.
+
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
 
-	void setCaption(const QString& caption);
 	QString caption() const;
-	void setColor(const QColor& color);
+	void setCaption(const QString& caption);
+
 	QColor color() const;
-	void setIsDefault(bool def);
+	void setColor(const QColor& color);
+
 	bool isDefault() const;
+	void setIsDefault(bool def);
+
 	Setting setting();
 	void setSetting(const Setting& setting);
 

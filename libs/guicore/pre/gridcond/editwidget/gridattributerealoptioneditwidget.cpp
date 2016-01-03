@@ -29,23 +29,13 @@ void GridAttributeRealOptionEditWidget::setEnumerations(const QMap<double, QStri
 	m_enumerations = enums;
 }
 
-QSize GridAttributeRealOptionEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeRealOptionEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
 void GridAttributeRealOptionEditWidget::setupWidget()
 {
 	m_widget->clear();
 	m_values.clear();
 
 	int i = 0;
-	if (m_valueCleared) {
+	if (isValueCleared()) {
 		m_widget->addItem("");
 		m_values.append(0);
 		++i;
@@ -63,6 +53,11 @@ void GridAttributeRealOptionEditWidget::setupWidget()
 void GridAttributeRealOptionEditWidget::getValueFromInnerWidget() const
 {
 	int index = m_widget->currentIndex();
-	m_valueSelected = !(m_valueCleared && index == 1);
+	setValueSelected(! (isValueCleared() && index == 1));
 	m_value = m_values.at(index);
+}
+
+QWidget* GridAttributeRealOptionEditWidget::editWidget() const
+{
+	return m_widget;
 }

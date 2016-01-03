@@ -28,22 +28,13 @@ void GridAttributeIntegerOptionEditWidget::setEnumerations(const QMap<int, QStri
 	m_enumerations = enums;
 }
 
-QSize GridAttributeIntegerOptionEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-QSize GridAttributeIntegerOptionEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
 void GridAttributeIntegerOptionEditWidget::setupWidget()
 {
 	m_widget->clear();
 	m_values.clear();
 
 	int i = 0;
-	if (m_valueCleared) {
+	if (isValueCleared()) {
 		m_widget->addItem("");
 		m_values.append(0);
 		++i;
@@ -52,7 +43,7 @@ void GridAttributeIntegerOptionEditWidget::setupWidget()
 	for (auto it = m_enumerations.begin(); it != m_enumerations.end(); ++it) {
 		m_widget->addItem(it.value());
 		m_values.append(it.key());
-		if (! m_valueCleared && it.key() == m_value) {index = i;}
+		if (! isValueCleared() && it.key() == m_value) {index = i;}
 		++i;
 	}
 	m_widget->setCurrentIndex(index);
@@ -61,6 +52,11 @@ void GridAttributeIntegerOptionEditWidget::setupWidget()
 void GridAttributeIntegerOptionEditWidget::getValueFromInnerWidget() const
 {
 	int index = m_widget->currentIndex();
-	m_valueSelected = !(m_valueCleared && index == 0);
+	setValueSelected(! (isValueCleared() && index == 0));
 	m_value = m_values.at(index);
+}
+
+QWidget* GridAttributeIntegerOptionEditWidget::editWidget() const
+{
+	return m_widget;
 }

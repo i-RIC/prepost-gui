@@ -16,12 +16,11 @@ public:
 	const QMap<double, QString>& enumerations() const;
 	void setEnumerations(const QMap<double, QString>& enums);
 
-	QSize sizeHint() const override;
-	QSize minimumSizeHint() const override;
-
 private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() const override;
+
+	QWidget* editWidget() const override;
 
 	QMap<double, QString> m_enumerations;
 	QList<double> m_values;

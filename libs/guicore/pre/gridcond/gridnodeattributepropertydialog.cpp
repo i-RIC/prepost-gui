@@ -16,17 +16,28 @@ GridNodeAttributePropertyDialog::~GridNodeAttributePropertyDialog()
 	delete ui;
 }
 
+void GridNodeAttributePropertyDialog::setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget)
+{
+	ui->scalarsToColorsWidget->setWidget(widget);
+	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(widget);
+	if (ltWidget != nullptr) {
+		connect(ui->contourSettingWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ltWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
+	}
+
+	adjustSize();
+}
+
+ContourSettingWidget::Contour GridNodeAttributePropertyDialog::contour() const
+{
+	return ui->contourSettingWidget->contour();
+}
+
 void GridNodeAttributePropertyDialog::setContour(ContourSettingWidget::Contour contour)
 {
 	ui->contourSettingWidget->setContour(contour);
 }
 
-ContourSettingWidget::Contour GridNodeAttributePropertyDialog::contour()
-{
-	return ui->contourSettingWidget->contour();
-}
-
-int GridNodeAttributePropertyDialog::numberOfDivision()
+int GridNodeAttributePropertyDialog::numberOfDivision() const
 {
 	ScalarsToColorsEditWidget* w = ui->scalarsToColorsWidget->widget();
 	LookupTableEditWidget* widget = dynamic_cast<LookupTableEditWidget*>(w);
@@ -46,15 +57,9 @@ void GridNodeAttributePropertyDialog::setNumberOfDivision(int n)
 	}
 }
 
-void GridNodeAttributePropertyDialog::setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget)
+int GridNodeAttributePropertyDialog::opacityPercent() const
 {
-	ui->scalarsToColorsWidget->setWidget(widget);
-	LookupTableEditWidget* ltWidget = dynamic_cast<LookupTableEditWidget*>(widget);
-	if (ltWidget != nullptr) {
-		connect(ui->contourSettingWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ltWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
-	}
-
-	adjustSize();
+	return ui->transparencyWidget->opacityPercent();
 }
 
 void GridNodeAttributePropertyDialog::setOpacityPercent(int opacity)
@@ -62,9 +67,10 @@ void GridNodeAttributePropertyDialog::setOpacityPercent(int opacity)
 	return ui->transparencyWidget->setOpacityPercent(opacity);
 }
 
-int GridNodeAttributePropertyDialog::opacityPercent()
+void GridNodeAttributePropertyDialog::accept()
 {
-	return ui->transparencyWidget->opacityPercent();
+	ui->scalarsToColorsWidget->save();
+	QDialog::accept();
 }
 
 void GridNodeAttributePropertyDialog::handleContourChange()
@@ -74,10 +80,4 @@ void GridNodeAttributePropertyDialog::handleContourChange()
 	} else {
 		ui->transparencyWidget->setEnabled(true);
 	}
-}
-
-void GridNodeAttributePropertyDialog::accept()
-{
-	ui->scalarsToColorsWidget->save();
-	QDialog::accept();
 }

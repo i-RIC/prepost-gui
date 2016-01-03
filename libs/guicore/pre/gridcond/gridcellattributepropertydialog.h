@@ -19,10 +19,13 @@ class GUICOREDLL_EXPORT GridCellAttributePropertyDialog : public QDialog
 public:
 	GridCellAttributePropertyDialog(QWidget* parent = nullptr);
 	~GridCellAttributePropertyDialog();
-	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
+
 	ScalarsToColorsEditWidget* scalarsToColorsEditWidget() const;
+	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
+
+	int opacityPercent() const;
 	void setOpacityPercent(int opacity);
-	int opacityPercent();
+
 	void accept() override;
 
 private:

@@ -8,10 +8,9 @@ class GridComplexConditionWidgetContainer : public QWidget
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GridComplexConditionWidgetContainer(QWidget* w);
-	/// Destructor
 	~GridComplexConditionWidgetContainer();
+
 	void setWidget(QWidget* widget);
 
 private:

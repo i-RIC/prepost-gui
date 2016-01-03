@@ -28,7 +28,7 @@ public:
 	void clearValue();
 	void disableCancel();
 
-	bool valueSelected() const;
+	bool isValueSelected() const;
 
 	void setLabel(const QString& label);
 	void setVariantValue(const QVariant& v);

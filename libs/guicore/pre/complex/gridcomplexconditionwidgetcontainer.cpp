@@ -2,8 +2,8 @@
 
 #include <QHBoxLayout>
 
-GridComplexConditionWidgetContainer::GridComplexConditionWidgetContainer(QWidget* w)
-	: QWidget(w)
+GridComplexConditionWidgetContainer::GridComplexConditionWidgetContainer(QWidget* w) :
+	QWidget(w)
 {
 	QHBoxLayout* layout = new QHBoxLayout(this);
 	setLayout(layout);
@@ -12,9 +12,7 @@ GridComplexConditionWidgetContainer::GridComplexConditionWidgetContainer(QWidget
 }
 
 GridComplexConditionWidgetContainer::~GridComplexConditionWidgetContainer()
-{
-
-}
+{}
 
 void GridComplexConditionWidgetContainer::setWidget(QWidget* widget)
 {

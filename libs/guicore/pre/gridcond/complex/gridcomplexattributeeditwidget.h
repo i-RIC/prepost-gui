@@ -21,12 +21,11 @@ public:
 
 	void setDefaultIndex(int idx);
 
-	QSize sizeHint() const override;
-	QSize minimumSizeHint() const override;
-
 private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() const override;
+
+	QWidget* editWidget() const override;
 
 	QMap<int, QString> m_enumerations;
 	int m_defaultIndex;

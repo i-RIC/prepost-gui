@@ -12,9 +12,9 @@
 #include <QTextCodec>
 #include <QWidget>
 
-GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent)
-	: QDialog(parent),
-		ui(new Ui::GridComplexConditionDialog)
+GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, iRICMainWindowInterface* mainWindow, QWidget* parent) :
+	QDialog(parent),
+	ui(new Ui::GridComplexConditionDialog)
 {
 	ui->setupUi(this);
 	m_dataItem = item;
@@ -31,6 +31,11 @@ GridComplexConditionDialog::~GridComplexConditionDialog()
 	delete m_colorSource;
 }
 
+QList<GridComplexConditionWidget*> GridComplexConditionDialog::widgets() const
+{
+	return m_widgets;
+}
+
 void GridComplexConditionDialog::setWidgets(QList<GridComplexConditionWidget*> widgets)
 {
 	m_widgets = widgets;
@@ -41,12 +46,42 @@ void GridComplexConditionDialog::setWidgets(QList<GridComplexConditionWidget*> w
 	}
 }
 
-void GridComplexConditionDialog::updateList()
+void GridComplexConditionDialog::accept()
 {
-	ui->listWidget->clear();
+	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
+	bool allok = true;
 	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
-		ui->listWidget->addItem(w->caption());
+		allok = allok && asciiCodec->canEncode(w->caption());
+	}
+	if (! allok) {
+		QMessageBox::warning(this, tr("Warning"), tr("Name has to consist of only English characters."));
+		return;
+	}
+	// Check whether one of the items are set to be default.
+	int defIndex = -1;
+	for (int i = 0; i < m_widgets.count(); ++i) {
+		if (m_widgets[i]->isDefault()) {
+			defIndex = i;
+		}
+	}
+
+	disconnect(this, SLOT(defaultChecked(bool)));
+	if (defIndex == -1) {
+		// if no default specified and there is more than one widget, make the first one default.
+		m_widgets[0]->setIsDefault(true);
+	}
+	QDialog::accept();
+}
+
+void GridComplexConditionDialog::defaultChecked(bool checked)
+{
+	if (! checked) {return;}
+	int current = ui->listWidget->currentRow();
+	for (int i = 0; i < m_widgets.count(); ++i) {
+		if (i != current) {
+			m_widgets[i]->setIsDefault(false);
+		}
 	}
 }
 
@@ -105,41 +140,12 @@ void GridComplexConditionDialog::updateCurrentName(const QString& name)
 	ui->listWidget->item(ui->listWidget->currentRow())->setText(name);
 }
 
-void GridComplexConditionDialog::accept()
+void GridComplexConditionDialog::updateList()
 {
-	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
-	bool allok = true;
+	ui->listWidget->clear();
 	for (int i = 0; i < m_widgets.count(); ++i) {
 		GridComplexConditionWidget* w = m_widgets.at(i);
-		allok = allok && asciiCodec->canEncode(w->caption());
-	}
-	if (! allok) {
-		QMessageBox::warning(this, tr("Warning"), tr("Name has to consist of only English characters."));
-		return;
-	}
-	// Check whether one of the items are set to be default.
-	int defIndex = -1;
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		if (m_widgets[i]->isDefault()) {
-			defIndex = i;
-		}
-	}
-
-	disconnect(this, SLOT(defaultChecked(bool)));
-	if (defIndex == -1) {
-		// if no default specified and there is more than one widget, make the first one default.
-		m_widgets[0]->setIsDefault(true);
-	}
-	QDialog::accept();
-}
-
-void GridComplexConditionDialog::defaultChecked(bool checked)
-{
-	if (! checked) {return;}
-	int current = ui->listWidget->currentRow();
-	for (int i = 0; i < m_widgets.count(); ++i) {
-		if (i != current) {
-			m_widgets[i]->setIsDefault(false);
-		}
+		ui->listWidget->addItem(w->caption());
 	}
 }
+

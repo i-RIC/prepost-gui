@@ -37,18 +37,13 @@ void GridAttributeIntegerEditWidget::getValueFromInnerWidget() const
 	m_value = m_widget->value();
 }
 
+QWidget* GridAttributeIntegerEditWidget::editWidget() const
+{
+	return m_widget;
+}
+
 void GridAttributeIntegerEditWidget::setupWidget()
 {
 	// this widget does not allowed "cleared" status.
 	m_widget->setValue(m_value);
-}
-
-QSize GridAttributeIntegerEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeIntegerEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
 }

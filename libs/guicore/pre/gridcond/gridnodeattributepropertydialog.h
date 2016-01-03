@@ -20,13 +20,18 @@ class GUICOREDLL_EXPORT GridNodeAttributePropertyDialog : public QDialog
 public:
 	GridNodeAttributePropertyDialog(QWidget* parent = nullptr);
 	~GridNodeAttributePropertyDialog();
-	void setContour(ContourSettingWidget::Contour contour);
-	ContourSettingWidget::Contour contour();
-	int numberOfDivision();
-	void setNumberOfDivision(int n);
+
 	void setScalarsToColorsEditWidget(ScalarsToColorsEditWidget* widget);
+
+	ContourSettingWidget::Contour contour() const;
+	void setContour(ContourSettingWidget::Contour contour);
+
+	int numberOfDivision() const;
+	void setNumberOfDivision(int n);
+
+	int opacityPercent() const;
 	void setOpacityPercent(int opacity);
-	int opacityPercent();
+
 	void accept() override;
 
 private slots:

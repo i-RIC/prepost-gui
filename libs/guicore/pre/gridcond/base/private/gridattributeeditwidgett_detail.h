@@ -19,8 +19,8 @@ template <class V>
 void GridAttributeEditWidgetT<V>::setValue(V value)
 {
 	m_value = value;
-	m_valueCleared = false;
-	m_valueSelected = true;
+	setValueCleared(false);
+	setValueSelected(true);
 	setupWidget();
 }
 
@@ -68,7 +68,7 @@ void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* cont
 template <class V>
 void GridAttributeEditWidgetT<V>::applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 {
-	if (! m_valueSelected) {return;}
+	if (! isValueSelected()) {return;}
 
 	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
 	vtkDataArray* oldValues = c->dataArrayCopy();
