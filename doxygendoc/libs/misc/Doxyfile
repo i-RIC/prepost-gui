@@ -1,0 +1,13 @@
+@INCLUDE = ../../doxyfile.inc
+
+#---------------------------------------------------------------------------
+# Project settings
+#---------------------------------------------------------------------------
+
+PROJECT_NAME           = "iricMisc library"
+PROJECT_NUMBER         =
+PROJECT_BRIEF          =
+PROJECT_LOGO           =
+
+INPUT                  = . ../../../libs/misc
+EXCLUDE                =
