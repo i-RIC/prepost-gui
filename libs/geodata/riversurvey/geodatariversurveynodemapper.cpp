@@ -1,26 +1,33 @@
 #include "geodatariversurveynodemapper.h"
 
-class GeoDataRiverSurveyNodeMapperSetting : public GeoDataMapperSetting
+#include <guicore/pre/geodata/geodatamappersettingi.h>
+
+class GeoDataRiverSurveyNodeMapperSetting : public GeoDataMapperSettingI
 {
 public:
-	GeoDataRiverSurveyNodeMapperSetting() : GeoDataMapperSetting() {}
+	GeoDataRiverSurveyNodeMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataRiverSurveyNodeMapperSetting() {}
+
 	QList<DoubleMappingSetting> settings;
 };
 
-GeoDataMapperSetting* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
+GeoDataRiverSurveyNodeMapper::GeoDataRiverSurveyNodeMapper(GeoDataCreator* parent) :
+	GeoDataNodeMapperT<double, vtkDoubleArray>("River survey node mapper", parent)
+{}
+
+GeoDataMapperSettingI* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 {
 	GeoDataRiverSurveyNodeMapperSetting* s = new GeoDataRiverSurveyNodeMapperSetting();
 
 	unsigned int count = GeoDataNodeMapperT<double, vtkDoubleArray>::container()->dataCount();
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(GeoDataMapper::m_geodata);
+	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(GeoDataMapper::geoData());
 	vtkStructuredGrid* grid = rs->backgroundGrid();
 	double weights[4];
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
 			double point[3];
-			m_grid->vtkGrid()->GetPoint(i, point);
+			GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
 			// investigate whether the point is inside one of the cells.
 			vtkIdType cellid;
 			double pcoords[3];
@@ -44,12 +51,12 @@ GeoDataMapperSetting* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 	return s;
 }
 
-void GeoDataRiverSurveyNodeMapper::map(bool* boolMap, GeoDataMapperSetting* s)
+void GeoDataRiverSurveyNodeMapper::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	GeoDataRiverSurveyNodeMapperSetting* s2 =
 		dynamic_cast<GeoDataRiverSurveyNodeMapperSetting*>(s);
 	vtkDoubleArray* da = GeoDataNodeMapperT<double, vtkDoubleArray>::container()->dataArray();
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(GeoDataNodeMapperT<double, vtkDoubleArray>::m_geodata);
+	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(GeoDataNodeMapperT<double, vtkDoubleArray>::geoData());
 	vtkStructuredGrid* grid = rs->backgroundGrid();
 	vtkDoubleArray* vals = vtkDoubleArray::SafeDownCast(grid->GetPointData()->GetArray("Data"));
 	for (const DoubleMappingSetting& setting : s2->settings) {
@@ -65,7 +72,7 @@ void GeoDataRiverSurveyNodeMapper::map(bool* boolMap, GeoDataMapperSetting* s)
 	da->Modified();
 }
 
-void GeoDataRiverSurveyNodeMapper::terminate(GeoDataMapperSetting* s)
+void GeoDataRiverSurveyNodeMapper::terminate(GeoDataMapperSettingI* s)
 {
 	delete s;
 }

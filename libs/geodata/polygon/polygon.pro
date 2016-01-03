@@ -118,7 +118,10 @@ HEADERS += gd_polygon_global.h \
            geodatapolygonregionpolygon.h \
            geodatapolygonshapeexporter.h \
            geodatapolygontrianglethread.h \
-           private/geodatapolygoncreatort_detail.h
+           private/geodatapolygoncreatort_detail.h \
+           private/geodatapolygoncellmappert_detail.h \
+           private/geodatapolygoncreatort_detail.h \
+           private/geodatapolygonnodemappert_detail.h
 FORMS += geodatapolygoncolorsettingdialog.ui \
          geodatapolygoncoordinateseditdialog.ui \
          geodatapolygonimportersettingdialog.ui

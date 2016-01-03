@@ -106,7 +106,8 @@ unix {
 }
 
 # Input
-HEADERS += geodatanetcdf.h \
+HEADERS += gd_netcdf_global.h \
+           geodatanetcdf.h \
            geodatanetcdfcellmappert.h \
            geodatanetcdfcreator.h \
            geodatanetcdfcreatort.h \
@@ -121,7 +122,8 @@ HEADERS += geodatanetcdf.h \
            geodatanetcdfrealcreator.h \
            geodatanetcdft.h \
            geodatanetcdfxbandimporter.h \
-           gd_netcdf_global.h
+           private/geodatanetcdfcellmappert_detail.h \
+           private/geodatanetcdfnodemappert_detail.h
 FORMS += geodatanetcdfimporterdateselectdialog.ui \
          geodatanetcdfimportersettingdialog.ui
 SOURCES += geodatanetcdf.cpp \

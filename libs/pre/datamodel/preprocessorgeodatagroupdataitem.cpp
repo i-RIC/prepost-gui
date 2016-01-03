@@ -485,7 +485,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
-	QList<GeoDataMapperSetting*> settings;
+	QList<GeoDataMapperSettingI*> settings;
 	if (dimensions()->containers().count() == 0) {
 		// initialize
 
@@ -592,7 +592,7 @@ void PreProcessorGeoDataGroupDataItem::setDefaultValue(Grid* grid)
 	for (int i = 0; i < dataCount; ++i) {
 		*(boolMap + i) = false;
 	}
-	GeoDataMapperSetting* s = mapper->initialize(boolMap);
+	GeoDataMapperSettingI* s = mapper->initialize(boolMap);
 	for (int i = 0; i < dataCount; ++i) {
 		*(boolMap + i) = false;
 	}

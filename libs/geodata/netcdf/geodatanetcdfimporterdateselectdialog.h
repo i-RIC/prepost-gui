@@ -15,6 +15,7 @@ class GeoDataNetcdfImporterDateSelectDialog : public QDialog
 public:
 	explicit GeoDataNetcdfImporterDateSelectDialog(QWidget* parent = 0);
 	~GeoDataNetcdfImporterDateSelectDialog();
+
 	void setUnit(const QString& unit);
 	void setOriginalDateTime(const QDateTime& orig);
 	QDateTime originalDateTime() const;

@@ -18,9 +18,10 @@ GeoDataPolygonCreatorT<V, DA>::~GeoDataPolygonCreatorT()
 template <class V, class DA>
 bool GeoDataPolygonCreatorT<V, DA>::isCompatibleWith(SolverDefinitionGridAttribute* condition)
 {
-	SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
+	auto cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(condition);
 	if (cond == nullptr) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
+
 	return true;
 }
 

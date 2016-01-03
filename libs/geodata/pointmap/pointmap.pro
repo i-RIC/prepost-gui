@@ -110,7 +110,8 @@ unix {
 }
 
 # Input
-HEADERS += geodatapointmap.h \
+HEADERS += gd_pointmap_global.h \
+           geodatapointmap.h \
            geodatapointmapaddpointdialog.h \
            geodatapointmapbreakline.h \
            geodatapointmapcellmappert.h \
@@ -131,7 +132,9 @@ HEADERS += geodatapointmap.h \
            geodatapointmaptemplatemappingsetting.h \
            geodatapointmaptemplatenodemappert.h \
            geodatapointmapvtkexporter.h \
-           gd_pointmap_global.h
+           private/geodatapointmapcellmappert_detail.h \
+           private/geodatapointmapnodemappert_detail.h \
+           private/geodatapointmaptemplatenodemappert_detail.h
 FORMS += geodatapointmapaddpointdialog.ui \
          geodatapointmapdelptsgreaterthandialog.ui \
          geodatapointmapdelptslessthandialog.ui \

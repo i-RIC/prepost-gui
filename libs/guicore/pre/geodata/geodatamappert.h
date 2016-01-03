@@ -2,27 +2,19 @@
 #define GEODATAMAPPERT_H
 
 #include "geodatamapper.h"
-#include "geodata.h"
 #include "../gridcond/base/gridattributecontainert.h"
 
 template <class V>
 class GeoDataMapperT : public GeoDataMapper
 {
-
 public:
-	GeoDataMapperT(GeoDataCreator* parent) :
-		GeoDataMapper {parent}
-	{}
+	GeoDataMapperT(const QString& caption, GeoDataCreator* parent);
 
 protected:
-	GridAttributeContainerT<V>* container() const {
-		return dynamic_cast<GridAttributeContainerT<V>* >(m_container);
-	}
-	V fromVariant(const QVariant& val) {
-		SolverDefinitionGridAttribute* c = m_geodata->gridAttribute();
-		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(c);
-		return cond->fromVariant(val);
-	}
+	GridAttributeContainerT<V>* container() const;
+	V fromVariant(const QVariant& val) const;
 };
+
+#include "private/geodatamappert_detail.h"
 
 #endif // GEODATAMAPPERT_H

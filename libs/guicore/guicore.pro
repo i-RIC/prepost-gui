@@ -282,6 +282,7 @@ HEADERS += guicore_global.h \
            pre/geodata/geodataexporter.h \
            pre/geodata/geodataimporter.h \
            pre/geodata/geodatamapper.h \
+           pre/geodata/geodatamappersettingi.h \
            pre/geodata/geodatamappert.h \
            pre/geodata/geodatanodemappert.h \
            pre/geodata/geodataproxy.h \
@@ -343,6 +344,11 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
+           pre/geodata/private/geodatacellmappert_detail.h \
+           pre/geodata/private/geodatamappert_detail.h \
+           pre/geodata/private/geodatanodemappert_detail.h \
+           pre/geodatabackground/private/geodatabackgroundcellmappert_detail.h \
+           pre/geodatabackground/private/geodatabackgroundnodemappert_detail.h \
            pre/grid/private/grid_impl.h \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h \
            pre/gridcond/base/gridattributebaseobject.h \
@@ -526,6 +532,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/geodata/geodatacreator.cpp \
            pre/geodata/geodataexporter.cpp \
            pre/geodata/geodataimporter.cpp \
+           pre/geodata/geodatamapper.cpp \
            pre/geodata/geodataproxy.cpp \
            pre/geodatabackground/geodatabackground.cpp \
            pre/geodatabackground/geodatabackgroundcomplex.cpp \

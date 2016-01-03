@@ -7,16 +7,14 @@
 template <class V, class DA>
 class GeoDataNodeMapperT : public GeoDataMapperT<V>
 {
-
 public:
-	GeoDataNodeMapperT(GeoDataCreator* parent)
-		: GeoDataMapperT<V>(parent)
-	{}
+	GeoDataNodeMapperT(const QString& caption, GeoDataCreator* parent);
+	virtual ~GeoDataNodeMapperT();
 
 protected:
-	GridAttributeNodeContainerT<V, DA>* container() {
-		return dynamic_cast<GridAttributeNodeContainerT<V, DA>* >(GeoDataMapperT<V>::container());
-	}
+	GridAttributeNodeContainerT<V, DA>* container() const;
 };
+
+#include "private/geodatanodemappert_detail.h"
 
 #endif // GEODATANODEMAPPERT_H

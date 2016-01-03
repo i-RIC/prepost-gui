@@ -1,6 +1,8 @@
 #ifndef GEODATAMAPPER_H
 #define GEODATAMAPPER_H
 
+#include "../../guicore_global.h"
+
 #include "geodatacreator.h"
 
 #include <QObject>
@@ -8,46 +10,33 @@
 class GeoData;
 class Grid;
 class GridAttributeContainer;
+class GeoDataMapperSettingI;
 
-class GeoDataMapperSetting
+class GUICOREDLL_EXPORT GeoDataMapper : public QObject
 {
-
 public:
-	GeoDataMapperSetting() {}
-	virtual ~GeoDataMapperSetting() {}
-};
+	GeoDataMapper(const QString& caption, GeoDataCreator* parent);
+	virtual ~GeoDataMapper();
 
-class GeoDataMapper : public QObject
-{
+	const QString& caption() const;
 
-public:
-	/// Constructor
-	GeoDataMapper(GeoDataCreator* parent) :
-		QObject {parent}
-	{}
-	virtual ~GeoDataMapper(){}
-	void setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata) {
-		m_grid = grid;
-		m_container = container;
-		m_geodata = geodata;
-	}
-	/// Initialize mapping setting
-	virtual GeoDataMapperSetting* initialize(bool* boolMap) = 0;
-	/// Map values to grid related condition.
-	virtual void map(bool* boolMap, GeoDataMapperSetting* setting) = 0;
-	/// Terminate mapping setting
-	virtual void terminate(GeoDataMapperSetting* setting) = 0;
-	const QString& caption() const {return m_caption;}
+	void setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata);
+
+	virtual GeoDataMapperSettingI* initialize(bool* boolMap) = 0;
+	virtual void map(bool* boolMap, GeoDataMapperSettingI* setting) = 0;
+	virtual void terminate(GeoDataMapperSettingI* setting) = 0;
 
 protected:
-	GeoDataCreator* creator() const {
-		return dynamic_cast<GeoDataCreator*>(parent());
-	}
+	GeoDataCreator* creator() const;
+	Grid* grid() const;
+	GridAttributeContainer* container() const;
+	GeoData* geoData() const;
 
+private:
 	QString m_caption;
-	Grid* m_grid {nullptr};
-	GridAttributeContainer* m_container {nullptr};
-	GeoData* m_geodata {nullptr};
+	Grid* m_grid;
+	GridAttributeContainer* m_container;
+	GeoData* m_geoData;
 };
 
 #endif // GEODATAMAPPER_H

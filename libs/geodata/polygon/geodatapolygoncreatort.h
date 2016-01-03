@@ -2,8 +2,6 @@
 #define GEODATAPOLYGONCREATORT_H
 
 #include "geodatapolygoncreator.h"
-#include "geodatapolygonnodemappert.h"
-#include "geodatapolygoncellmappert.h"
 
 template <class V, class DA>
 class GeoDataPolygonCreatorT : public GeoDataPolygonCreator
