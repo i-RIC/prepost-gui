@@ -8,7 +8,7 @@ namespace Ui
 	class GeoDataRiverSurveyDisplaySettingDialog;
 }
 
-class QColor;
+class GeoDataRiverSurveyDisplaySetting;
 
 class GeoDataRiverSurveyDisplaySettingDialog : public QDialog
 {
@@ -17,17 +17,9 @@ class GeoDataRiverSurveyDisplaySettingDialog : public QDialog
 public:
 	explicit GeoDataRiverSurveyDisplaySettingDialog(QWidget* parent = nullptr);
 	~GeoDataRiverSurveyDisplaySettingDialog();
-	void setColormapVisible(bool visible);
-	void setOpacityPercent(int opacity);
-	void setLinesVisible(bool visible);
-	void setLineColor(const QColor& color);
-	void setZScale(int scale);
 
-	bool colormapVisible();
-	int opacityPercent();
-	bool linesVisible();
-	QColor lineColor();
-	int zScale();
+	GeoDataRiverSurveyDisplaySetting setting() const;
+	void setSetting(const GeoDataRiverSurveyDisplaySetting& setting);
 
 private:
 	Ui::GeoDataRiverSurveyDisplaySettingDialog* ui;

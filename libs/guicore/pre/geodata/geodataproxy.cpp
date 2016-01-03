@@ -2,6 +2,21 @@
 #include "geodata.h"
 #include "geodataproxy.h"
 
+
+GeoDataProxy::GeoDataProxy(GeoData* geodata) :
+	ProjectDataItem(nullptr),
+	m_geoData {geodata}
+{}
+
+GeoDataProxy::~GeoDataProxy()
+{}
+
+void GeoDataProxy::setupActors()
+{}
+
+void GeoDataProxy::setupMenu()
+{}
+
 QMainWindow* GeoDataProxy::mainWindow() const
 {
 	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
@@ -58,6 +73,16 @@ bool GeoDataProxy::isVisible()
 	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
 }
 
+void GeoDataProxy::pushCommand(QUndoCommand* com)
+{
+	m_geoData->pushCommand(com);
+}
+
+void GeoDataProxy::pushRenderCommand(QUndoCommand* com)
+{
+	m_geoData->pushRenderCommand(com);
+}
+
 vtkRenderer* GeoDataProxy::renderer()
 {
 	GeoDataProxyDataItem* item = dynamic_cast<GeoDataProxyDataItem*>(parent());
@@ -70,6 +95,20 @@ void GeoDataProxy::updateZDepthRangeItemCount(ZDepthRange& range)
 }
 
 void GeoDataProxy::assignActorZValues(const ZDepthRange& /*range*/)
-{
+{}
 
+GeoData* GeoDataProxy::geoData() const
+{
+	return m_geoData;
 }
+
+QDialog* GeoDataProxy::propertyDialog(QWidget*)
+{
+	return nullptr;
+}
+
+void GeoDataProxy::handlePropertyDialogAccepted(QDialog*)
+{}
+
+void GeoDataProxy::updateGraphics()
+{}

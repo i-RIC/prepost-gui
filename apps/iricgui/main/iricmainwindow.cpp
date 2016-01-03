@@ -85,8 +85,6 @@
 #include <vtkObject.h>
 #include <vtkSmartPointer.h>
 
-class SolverDefinitionAbstract;
-
 const int iRICMainWindow::MAX_RECENT_PROJECTS = 10;
 const int iRICMainWindow::MAX_RECENT_SOLVERS = 10;
 
@@ -194,7 +192,7 @@ void iRICMainWindow::newProject()
 		dialog.setSolver(firstSolver);
 	}
 	if (dialog.exec() == QDialog::Accepted) {
-		SolverDefinitionAbstract* selectedSolver = dialog.selectedSolver();
+		auto selectedSolver = dialog.selectedSolver();
 		updateRecentSolvers(selectedSolver->folderName());
 		newProject(selectedSolver);
 	}
@@ -1615,27 +1613,24 @@ void iRICMainWindow::openStartDialog()
 	StartPageDialog dialog(this);
 	dialog.setSolverList(m_solverDefinitionList);
 	dialog.setLocale(m_locale.name());
-	int ret = dialog.exec();
-	SolverDefinitionAbstract* solverDef;
-	QString filename;
-	if (ret == QDialog::Accepted) {
-		switch (dialog.commandMode()) {
-		case StartPageDialog::cmNewProject:
-			solverDef = dialog.solverDefinition();
-			newProject(solverDef);
-			break;
-		case StartPageDialog::cmNewOtherProject:
-			newProject();
-			break;
 
-		case StartPageDialog::cmOpenProject:
-			filename = dialog.projectFileName();
-			openProject(filename);
-			break;
-		case StartPageDialog::cmOpenOtherProject:
-			openProject();
-			break;
-		}
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return;}
+
+	switch (dialog.commandMode()) {
+	case StartPageDialog::cmNewProject:
+		newProject(dialog.solverDefinition());
+		break;
+	case StartPageDialog::cmNewOtherProject:
+		newProject();
+		break;
+
+	case StartPageDialog::cmOpenProject:
+		openProject(dialog.projectFileName());
+		break;
+	case StartPageDialog::cmOpenOtherProject:
+		openProject();
+		break;
 	}
 }
 

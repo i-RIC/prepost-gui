@@ -12,6 +12,7 @@
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 #include "geodatariversurveydisplaysettingdialog.h"
 #include "geodatariversurveyproxy.h"
+#include "private/geodatariversurvey_setdisplaysettingcommand.h"
 
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -97,11 +98,6 @@ GeoDataRiverSurvey::GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creat
 
 	m_definingBoundingBox = false;
 	m_leftButtonDown = false;
-	m_showBackground = false;
-	m_showLines = false;
-	m_opacityPercent = 50;
-	m_crosssectionLinesScale = 10;
-	m_crosssectionLinesColor = Qt::red;
 	m_mouseEventMode = meNormal;
 
 	m_gridCreatingCondition = nullptr;
@@ -378,20 +374,6 @@ void GeoDataRiverSurvey::setupActors()
 	m_backgroundActor->VisibilityOff();
 	r->AddActor(m_backgroundActor);
 
-	vtkActorCollection* col = actorCollection();
-	col->AddItem(m_leftBankLineActor);
-	col->AddItem(m_rightBankLineActor);
-	col->AddItem(m_firstAndLastCrosssectionsActor);
-	col->AddItem(m_crossectionsActor);
-	if (m_showBackground) {
-		col->AddItem(m_backgroundActor);
-	}
-	if (m_showLines) {
-		col->AddItem(m_crosssectionLinesActor);
-	}
-	vtkActor2DCollection* col2 = actor2DCollection();
-	col2->AddItem(m_labelActor);
-
 	// crosssection lines
 	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
 	mapper->SetInputData(m_crosssectionLines);
@@ -485,6 +467,7 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col->RemoveAllItems();
+
 	col->AddItem(m_riverCenterActor);
 	col->AddItem(m_selectedRiverCenterActor);
 	col->AddItem(m_selectedLeftBankActor);
@@ -494,12 +477,13 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	col->AddItem(m_rightBankLineActor);
 	col->AddItem(m_crossectionsActor);
 	col->AddItem(m_selectedCrossectionsActor);
-	if (m_showBackground) {
+	if (m_setting.showBackground) {
 		col->AddItem(m_backgroundActor);
 	}
-	if (m_showLines) {
+	if (m_setting.showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 	}
+
 	col2->RemoveAllItems();
 	col2->AddItem(m_labelActor);
 
@@ -512,14 +496,15 @@ void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*
 	vtkActorCollection* col = actorCollection();
 	vtkActor2DCollection* col2 = actor2DCollection();
 	col->RemoveAllItems();
+
 	col->AddItem(m_leftBankLineActor);
 	col->AddItem(m_rightBankLineActor);
 	col->AddItem(m_firstAndLastCrosssectionsActor);
 	col->AddItem(m_crossectionsActor);
-	if (m_showBackground) {
+	if (m_setting.showBackground) {
 		col->AddItem(m_backgroundActor);
 	}
-	if (m_showLines) {
+	if (m_setting.showLines) {
 		col->AddItem(m_crosssectionLinesActor);
 	}
 	col2->RemoveAllItems();
@@ -1231,10 +1216,12 @@ void GeoDataRiverSurvey::addCustomMenuItems(QMenu* menu)
 void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
+
+	m_setting.load(node);
+
+	m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
+
 	QDomElement elem = node.toElement();
-	m_showBackground = static_cast<bool>(elem.attribute("showBackground").toInt());
-	m_opacityPercent = loadOpacityPercent(node);
-	m_backgroundActor->GetProperty()->SetOpacity(m_opacityPercent / 100.);
 	int linearMode = elem.attribute("interpolateLinear").toInt();
 	bool lMode = (linearMode != 0);
 	RiverSplineSolver::setLinearMode(lMode, m_headPoint);
@@ -1242,19 +1229,13 @@ void GeoDataRiverSurvey::doLoadFromProjectMainFile(const QDomNode& node)
 		m_interpolateSplineAction->setChecked(false);
 		m_interpolateLinearAction->setChecked(true);
 	}
-	m_showLines = static_cast<bool>(elem.attribute("showLines").toInt());
-	m_crosssectionLinesScale = elem.attribute("lineZScale", "10").toInt();
-	m_crosssectionLinesColor = loadColorAttribute("lineColor", node, Qt::red);
 }
 
 void GeoDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	GeoData::doSaveToProjectMainFile(writer);
-	writer.writeAttribute("showBackground", QString::number(static_cast<int>(m_showBackground)));
-	writeOpacityPercent(m_opacityPercent, writer);
-	writer.writeAttribute("showLines", QString::number(static_cast<int>(m_showLines)));
-	writer.writeAttribute("lineZScale", QString::number(static_cast<int>(m_crosssectionLinesScale)));
-	writeColorAttribute("lineColor", m_crosssectionLinesColor, writer);
+
+	m_setting.save(writer);
 
 	int lMode = 0;
 	if (RiverSplineSolver::linearMode()) {
@@ -1343,15 +1324,13 @@ bool GeoDataRiverSurvey::getValueRange(double* min, double* max)
 	return true;
 }
 
-QDialog* GeoDataRiverSurvey::propertyDialog(QWidget* /*parent*/)
+QDialog* GeoDataRiverSurvey::propertyDialog(QWidget*)
 {
 	return nullptr;
 }
 
-void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog* /*propDialog*/)
-{
-
-}
+void GeoDataRiverSurvey::handlePropertyDialogAccepted(QDialog*)
+{}
 
 void GeoDataRiverSurvey::updateShapeData()
 {
@@ -1573,13 +1552,13 @@ void GeoDataRiverSurvey::updateShapeData()
 
 		double offset;
 		GeoDataRiverCrosssection::Altitude alt = alist[0];
-		offset = (maxHeight - alt.height()) * m_crosssectionLinesScale;
+		offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
 		QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 		points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 		++ pointNum;
 		for (int i = 1; i < alist.count(); ++i) {
 			GeoDataRiverCrosssection::Altitude alt = alist[i];
-			offset = (maxHeight - alt.height()) * m_crosssectionLinesScale;
+			offset = (maxHeight - alt.height()) * m_setting.crosssectionLinesScale;
 			QVector2D tmpp = p->crosssectionPosition(alt.position()) + offsetDir * offset;
 			points->InsertNextPoint(tmpp.x(), tmpp.y(), 0);
 			++ pointNum;
@@ -1594,6 +1573,27 @@ void GeoDataRiverSurvey::updateShapeData()
 	points->Modified();
 	m_crosssectionLines->Modified();
 	m_crosssectionLines->BuildLinks();
+
+	vtkActorCollection* col = actorCollection();
+	col->RemoveAllItems();
+
+	col->AddItem(m_leftBankLineActor);
+	col->AddItem(m_rightBankLineActor);
+	col->AddItem(m_firstAndLastCrosssectionsActor);
+	col->AddItem(m_crossectionsActor);
+	if (m_setting.showBackground) {
+		col->AddItem(m_backgroundActor);
+		m_backgroundActor->GetProperty()->SetOpacity(m_setting.opacity);
+	}
+	if (m_setting.showLines) {
+		col->AddItem(m_crosssectionLinesActor);
+		m_crosssectionLinesActor->GetProperty()->SetColor(m_setting.crosssectionLinesColor);
+	}
+
+	vtkActor2DCollection* col2 = actor2DCollection();
+	col2->AddItem(m_labelActor);
+
+	updateVisibilityWithoutRendering();
 
 	emit dataUpdated();
 	m_gridThread->update();
@@ -1771,7 +1771,6 @@ void GeoDataRiverSurvey::setupActions()
 	m_removeLeftExtensionPointAction->setEnabled(false);
 	m_removeRightExtensionPointAction->setEnabled(false);
 	m_openCrossSectionWindowAction->setEnabled(false);
-//	m_openVerticalSectionWindowAction->setEnabled(false);
 }
 
 void GeoDataRiverSurvey::updateActionStatus()
@@ -2241,7 +2240,7 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 	m_gridThread->finishBGGridCopy();
 	vtkDataSetMapper* mapper = vtkDataSetMapper::SafeDownCast(m_backgroundActor->GetMapper());
 	mapper->SetInputData(m_backgroundGrid);
-	if (isVisible() && m_showBackground) {
+	if (isVisible() && m_setting.showBackground) {
 		m_backgroundActor->VisibilityOn();
 	}
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
@@ -2291,103 +2290,15 @@ void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 	gItem->informCtrlPointUpdateToCrosssectionWindows();
 }
 
-class GeoDataRiverSurvey::EditDisplaySettingCommand : public QUndoCommand
-{
-public:
-	EditDisplaySettingCommand(bool bgvisible, int opacityP, bool linevisible, QColor col, int scale, GeoDataRiverSurvey* s) :
-		QUndoCommand {GeoDataRiverSurvey::tr("Edit Display Setting")}
-	{
-		m_survey = s;
-		m_newBgVisible = bgvisible;
-		m_newOpacityPercent = opacityP;
-		m_newLinesVisible = linevisible;
-		m_newLineColor = col;
-		m_newZScale = scale;
-
-		m_oldBgVisible = m_survey->m_backgroundActor->GetVisibility();
-		m_oldOpacityPercent = m_survey->m_opacityPercent;
-		m_oldLinesVisible = m_survey->m_showLines;
-		m_oldLineColor = m_survey->m_crosssectionLinesColor;
-		m_oldZScale = m_survey->m_crosssectionLinesScale;
-	}
-	void redo() {
-		m_survey->m_backgroundActor->SetVisibility(m_newBgVisible);
-		m_survey->m_backgroundActor->GetProperty()->SetOpacity(m_newOpacityPercent / 100.);
-		m_survey->m_showBackground = m_newBgVisible;
-		m_survey->m_opacityPercent = m_newOpacityPercent;
-		m_survey->m_showLines = m_newLinesVisible;
-		m_survey->m_crosssectionLinesColor = m_newLineColor;
-		m_survey->m_crosssectionLinesActor->SetVisibility(m_newLinesVisible);
-		m_survey->m_crosssectionLinesActor->GetProperty()->SetColor(m_newLineColor.redF(), m_newLineColor.greenF(), m_newLineColor.blueF());
-		m_survey->m_crosssectionLinesScale = m_newZScale;
-
-		vtkActorCollection* ac = m_survey->actorCollection();
-		if (m_newBgVisible) {
-			ac->AddItem(m_survey->m_backgroundActor);
-		} else {
-			ac->RemoveItem(m_survey->m_backgroundActor);
-		}
-		if (m_newLinesVisible) {
-			ac->AddItem(m_survey->m_crosssectionLinesActor);
-		} else {
-			ac->RemoveItem(m_survey->m_crosssectionLinesActor);
-		}
-		m_survey->updateShapeData();
-		m_survey->renderGraphicsView();
-	}
-	void undo() {
-		m_survey->m_backgroundActor->SetVisibility(m_oldBgVisible);
-		m_survey->m_backgroundActor->GetProperty()->SetOpacity(m_oldOpacityPercent / 100.);
-		m_survey->m_showBackground = m_oldBgVisible;
-		m_survey->m_opacityPercent = m_oldOpacityPercent;
-		m_survey->m_showLines = m_oldLinesVisible;
-		m_survey->m_crosssectionLinesColor = m_oldLineColor;
-		m_survey->m_crosssectionLinesActor->SetVisibility(m_oldLinesVisible);
-		m_survey->m_crosssectionLinesActor->GetProperty()->SetColor(m_oldLineColor.redF(), m_oldLineColor.greenF(), m_oldLineColor.blueF());
-		m_survey->m_crosssectionLinesScale = m_oldZScale;
-
-		vtkActorCollection* ac = m_survey->actorCollection();
-		if (m_oldBgVisible) {
-			ac->AddItem(m_survey->m_backgroundActor);
-		} else {
-			ac->RemoveItem(m_survey->m_backgroundActor);
-		}
-		if (m_oldLinesVisible) {
-			ac->AddItem(m_survey->m_crosssectionLinesActor);
-		} else {
-			ac->RemoveItem(m_survey->m_crosssectionLinesActor);
-		}
-		m_survey->updateShapeData();
-		m_survey->renderGraphicsView();
-	}
-private:
-	bool m_oldBgVisible;
-	int m_oldOpacityPercent;
-	bool m_oldLinesVisible;
-	QColor m_oldLineColor;
-	int m_oldZScale;
-
-	bool m_newBgVisible;
-	int m_newOpacityPercent;
-	bool m_newLinesVisible;
-	QColor m_newLineColor;
-	int m_newZScale;
-
-	GeoDataRiverSurvey* m_survey;
-};
-
 void GeoDataRiverSurvey::displaySetting()
 {
 	GeoDataRiverSurveyDisplaySettingDialog dialog(preProcessorWindow());
-	dialog.setColormapVisible(m_showBackground);
-	dialog.setOpacityPercent(m_opacityPercent);
-	dialog.setLinesVisible(m_showLines);
-	dialog.setLineColor(m_crosssectionLinesColor);
-	dialog.setZScale(m_crosssectionLinesScale);
+	dialog.setSetting(m_setting);
 
 	int ret = dialog.exec();
 	if (ret != dialog.Accepted) {return;}
-	iRICUndoStack::instance().push(new EditDisplaySettingCommand(dialog.colormapVisible(), dialog.opacityPercent(), dialog.linesVisible(), dialog.lineColor(), dialog.zScale(), this));
+
+	pushRenderCommand(new SetDisplaySettingCommand(dialog.setting(), this));
 }
 
 void GeoDataRiverSurvey::switchInterpolateModeToLinear()

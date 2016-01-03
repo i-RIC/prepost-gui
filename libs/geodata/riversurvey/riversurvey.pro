@@ -81,7 +81,7 @@ LIBS += \
 LIBS += -liriclib
 
 # Input
-HEADERS += gridcreatingconditionriversurveyinterface.h \
+HEADERS += gd_riversurvey_global.h \
            geodatarivercrosssection.h \
            geodatarivercrosssectionaltitudemovedialog.h \
            geodatariverpathpoint.h \
@@ -102,6 +102,7 @@ HEADERS += gridcreatingconditionriversurveyinterface.h \
            geodatariversurveycrosssectionwindowprojectdataitem.h \
            geodatariversurveycrosssectionwindowtableview.h \
            geodatariversurveyctrlpointbackup.h \
+           geodatariversurveydisplaysetting.h \
            geodatariversurveydisplaysettingdialog.h \
            geodatariversurveyexporter.h \
            geodatariversurveyimporter.h \
@@ -109,7 +110,9 @@ HEADERS += gridcreatingconditionriversurveyinterface.h \
            geodatariversurveynodemapper.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
-           gd_riversurvey_global.h
+           gridcreatingconditionriversurveyinterface.h \
+           private/geodatariversurvey_setdisplaysettingcommand.h \
+           private/geodatariversurveyproxy_setsettingcommand.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
          geodatariverpathpointextensionadddialog.ui \
@@ -141,13 +144,16 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveycrosssectionwindowprojectdataitem.cpp \
            geodatariversurveycrosssectionwindowtableview.cpp \
            geodatariversurveyctrlpointbackup.cpp \
+           geodatariversurveydisplaysetting.cpp \
            geodatariversurveydisplaysettingdialog.cpp \
            geodatariversurveyexporter.cpp \
            geodatariversurveyimporter.cpp \
            geodatariversurveyimportersettingdialog.cpp \
            geodatariversurveynodemapper.cpp \
            geodatariversurveyproxy.cpp \
-           geodatariversurveyvtkexporter.cpp
+           geodatariversurveyvtkexporter.cpp \
+           private/geodatariversurvey_setdisplaysettingcommand.cpp \
+           private/geodatariversurveyproxy_setsettingcommand.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGdRiversurvey_es_ES.ts \
                 languages/iricGdRiversurvey_fr_FR.ts \

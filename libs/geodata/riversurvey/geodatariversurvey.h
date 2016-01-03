@@ -5,6 +5,7 @@
 #include <guicore/pre/geodata/geodata.h>
 #include "geodatariverpathpoint.h"
 #include "geodatarivershapeinterpolator.h"
+#include "geodatariversurveydisplaysetting.h"
 
 #include <vtkSmartPointer.h>
 #include <vtkPolygon.h>
@@ -80,9 +81,9 @@ public:
 		meShiftDialog,
 		meExpansionDialog
 	};
-	/// Constructor
 	GeoDataRiverSurvey(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
-	virtual ~GeoDataRiverSurvey();
+	~GeoDataRiverSurvey();
+
 	void setupActors() override;
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
@@ -212,8 +213,8 @@ private:
 	void updateSplineSolvers();
 	void setupCursors();
 	void setupActions();
-	/// Enable or disable actions depending on the selection status.
 	void updateMouseEventMode();
+	/// Enable or disable actions depending on the selection status.
 	void updateActionStatus();
 
 	QPixmap m_pixmapMove;
@@ -255,11 +256,8 @@ private:
 
 	bool m_definingBoundingBox;
 	bool m_leftButtonDown;
-	bool m_showBackground;
-	bool m_showLines;
-	int m_opacityPercent;
-	int m_crosssectionLinesScale;
-	QColor m_crosssectionLinesColor;
+
+	GeoDataRiverSurveyDisplaySetting m_setting;
 
 	QPoint m_dragStartPoint;
 	QPoint m_currentPoint;
@@ -284,6 +282,7 @@ private:
 	class RemoveExtensionCommand;
 	class RenameRiverPathPointCommand;
 	class RotateRiverCrosssectionCommand;
+	class SetDisplaySettingCommand;
 	class ShiftRiverPathCenterCommand;
 	class TranslateRiverPathPointCommand;
 

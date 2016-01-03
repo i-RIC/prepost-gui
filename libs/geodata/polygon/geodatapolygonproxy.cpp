@@ -5,7 +5,8 @@
 
 void GeoDataPolygonProxy::setupActors()
 {
-	GeoDataPolygon* pol = dynamic_cast<GeoDataPolygon*>(m_geoData);
+	GeoDataPolygon* pol = dynamic_cast<GeoDataPolygon*>(geoData());
+
 	m_paintActor = vtkSmartPointer<vtkActor>::New();
 	m_paintActor->SetProperty(pol->m_paintActor->GetProperty());
 	m_paintActor->SetMapper(pol->m_paintMapper);

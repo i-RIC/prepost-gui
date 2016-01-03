@@ -1,5 +1,5 @@
 #include "ui_geodatariversurveydisplaysettingdialog.h"
-
+#include "geodatariversurveydisplaysetting.h"
 #include "geodatariversurveydisplaysettingdialog.h"
 
 GeoDataRiverSurveyDisplaySettingDialog::GeoDataRiverSurveyDisplaySettingDialog(QWidget* parent) :
@@ -14,52 +14,24 @@ GeoDataRiverSurveyDisplaySettingDialog::~GeoDataRiverSurveyDisplaySettingDialog(
 	delete ui;
 }
 
-void GeoDataRiverSurveyDisplaySettingDialog::setColormapVisible(bool visible)
+GeoDataRiverSurveyDisplaySetting GeoDataRiverSurveyDisplaySettingDialog::setting() const
 {
-	ui->bgVisibleCheckBox->setChecked(visible);
+	GeoDataRiverSurveyDisplaySetting ret;
+
+	ret.showBackground = ui->bgVisibleCheckBox->isChecked();
+	ret.showLines = ui->clVisibleCheckBox->isChecked();
+	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.crosssectionLinesScale = ui->zScaleSpinBox->value();
+	ret.crosssectionLinesColor = ui->colorWidget->color();
+
+	return ret;
 }
 
-void GeoDataRiverSurveyDisplaySettingDialog::setOpacityPercent(int opacity)
+void GeoDataRiverSurveyDisplaySettingDialog::setSetting(const GeoDataRiverSurveyDisplaySetting& setting)
 {
-	ui->transparencyWidget->setOpacityPercent(opacity);
-}
-
-bool GeoDataRiverSurveyDisplaySettingDialog::colormapVisible()
-{
-	return ui->bgVisibleCheckBox->isChecked();
-}
-
-int GeoDataRiverSurveyDisplaySettingDialog::opacityPercent()
-{
-	return ui->transparencyWidget->opacityPercent();
-}
-
-void GeoDataRiverSurveyDisplaySettingDialog::setLinesVisible(bool visible)
-{
-	ui->clVisibleCheckBox->setChecked(visible);
-}
-
-void GeoDataRiverSurveyDisplaySettingDialog::setLineColor(const QColor& color)
-{
-	ui->colorWidget->setColor(color);
-}
-
-void GeoDataRiverSurveyDisplaySettingDialog::setZScale(int scale)
-{
-	ui->zScaleSpinBox->setValue(scale);
-}
-
-bool GeoDataRiverSurveyDisplaySettingDialog::linesVisible()
-{
-	return ui->clVisibleCheckBox->isChecked();
-}
-
-int GeoDataRiverSurveyDisplaySettingDialog::zScale()
-{
-	return ui->zScaleSpinBox->value();
-}
-
-QColor GeoDataRiverSurveyDisplaySettingDialog::lineColor()
-{
-	return ui->colorWidget->color();
+	ui->bgVisibleCheckBox->setChecked(setting.showBackground);
+	ui->clVisibleCheckBox->setChecked(setting.showLines);
+	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->zScaleSpinBox->setValue(setting.crosssectionLinesScale);
+	ui->colorWidget->setColor(setting.crosssectionLinesColor);
 }

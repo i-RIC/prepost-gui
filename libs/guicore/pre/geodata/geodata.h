@@ -161,6 +161,9 @@ protected:
 
 	QMenu* m_menu;
 	QAction* m_editNameAction;
+
+public:
+	friend class GeoDataProxy;
 };
 
 #endif // GEODATA_H

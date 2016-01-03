@@ -1,6 +1,8 @@
 #ifndef GEODATARIVERSURVEYPROXY_H
 #define GEODATARIVERSURVEYPROXY_H
 
+#include "geodatariversurveydisplaysetting.h"
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkActor2D.h>
@@ -9,15 +11,14 @@
 #include <guicore/pre/geodata/geodataproxy.h>
 #include "geodatariversurvey.h"
 
-class GeoDataRiverSurveyProxyDisplaySettingCommand;
-
 class GeoDataRiverSurveyProxy : public GeoDataProxy
 {
 	Q_OBJECT
 
 public:
-	GeoDataRiverSurveyProxy(GeoDataRiverSurvey* geodata) : GeoDataProxy(geodata) {}
+	GeoDataRiverSurveyProxy(GeoDataRiverSurvey* geodata);
 	~GeoDataRiverSurveyProxy();
+
 	void setupActors() override;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
@@ -27,17 +28,13 @@ public:
 public slots:
 	void updateGraphics() override;
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
-private:
-	bool m_showBackground;
-	bool m_showLines;
-	int m_opacityPercent;
-	int m_crosssectionLinesScale;
-	QColor m_crosssectionLinesColor;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	GeoDataRiverSurveyDisplaySetting m_setting;
 
 	vtkSmartPointer<vtkActor> m_riverCenterLineActor;
 	vtkSmartPointer<vtkActor> m_leftBankLineActor;
@@ -53,8 +50,7 @@ private:
 
 	vtkSmartPointer<vtkUnstructuredGrid> m_crosssectionLines;
 
-public:
-	friend class GeoDataRiverSurveyProxyDisplaySettingCommand;
+	class SetSettingCommand;
 };
 
 #endif // GEODATARIVERSURVEYPROXY_H
