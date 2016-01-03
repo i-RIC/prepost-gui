@@ -15,7 +15,6 @@
 #include <vtkPoints.h>
 #include <QVector2D>
 #include <vtkLabeledDataMapper.h>
-//#include <vtkCubeAxesActor2D.h>
 #include <vtkWarpScalar.h>
 #include <vtkTransform.h>
 #include <vtkTransformFilter.h>
@@ -32,26 +31,28 @@ private:
 	static const int selectedOutlineWidth = 2;
 
 public:
-	/// Constructor
 	Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowGridShapeDataItem();
-	/// Inform that the grid is updated.
+
 	void update();
+
 	void handleStandardItemDoubleClicked() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-	void updateZDepthRangeItemCount() override {m_zDepthRange.setItemCount(2);}
-
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void innerUpdateZScale(double scale) override;
+	void updateZDepthRangeItemCount() override;
 
 private:
 	void setupActors();
 	void updateActorSettings();
+
+	QDialog* propertyDialog(QWidget* parent) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
+	void innerUpdateZScale(double scale) override;
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	vtkSmartPointer<vtkWarpScalar> m_warp;
 	vtkSmartPointer<vtkWarpScalar> m_labelWarp;
 	vtkSmartPointer<vtkActor> m_outlineActor;
@@ -77,9 +78,6 @@ private:
 	QVector2D m_dragStartPoint;
 
 	class SetSettingCommand;
-
-public:
-	friend class Post2dBirdEyeWindowGridShapeDataSetSetting;
 };
 
 #endif // POST2DBIRDEYEWINDOWGRIDSHAPEDATAITEM_H

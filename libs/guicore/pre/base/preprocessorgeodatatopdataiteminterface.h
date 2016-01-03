@@ -14,6 +14,7 @@ class GUICOREDLL_EXPORT PreProcessorGeoDataTopDataItemInterface : public PreProc
 public:
 	PreProcessorGeoDataTopDataItemInterface(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorGeoDataTopDataItemInterface();
+
 	virtual SolverDefinitionGridType* gridType() = 0;
 	virtual const QList<PreProcessorGeoDataGroupDataItemInterface*> groupDataItems() const = 0;
 	virtual PreProcessorGeoDataGroupDataItemInterface* groupDataItem(const std::string& name) = 0;

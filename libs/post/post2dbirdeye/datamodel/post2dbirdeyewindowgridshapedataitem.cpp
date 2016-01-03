@@ -246,6 +246,11 @@ void Post2dBirdEyeWindowGridShapeDataItem::informDeselection(VTKGraphicsView* /*
 	m_outlineActor->GetProperty()->SetLineWidth(normalOutlineWidth);
 }
 
+void Post2dBirdEyeWindowGridShapeDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
 void Post2dBirdEyeWindowGridShapeDataItem::innerUpdateZScale(double scale)
 {
 	m_outlineActor->SetScale(1, 1, scale);

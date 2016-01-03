@@ -17,14 +17,16 @@ class Post2dGridRegionSelectDialog : public QDialog
 public:
 	explicit Post2dGridRegionSelectDialog(QWidget* parent = nullptr);
 	~Post2dGridRegionSelectDialog();
+
 	void disableActive();
 	void hideCustom();
-	void setRegionMode(StructuredGridRegion::RegionMode rm);
+	void setGridSize(int isize, int jsize);
+
 	StructuredGridRegion::RegionMode regionMode();
+	void setRegionMode(StructuredGridRegion::RegionMode rm);
 
 	StructuredGridRegion::Range2d region();
 	void setRegion(const StructuredGridRegion::Range2d& region);
-	void setGridSize(int isize, int jsize);
 
 private:
 	Ui::Post2dGridRegionSelectDialog* ui;

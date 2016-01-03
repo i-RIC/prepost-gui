@@ -16,6 +16,7 @@ public:
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	WindowGeometryContainer m_geometry;
 };
 

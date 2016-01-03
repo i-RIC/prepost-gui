@@ -12,8 +12,8 @@ class Post2dWindowActionManager : public QObject
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindowActionManager(Post2dWindow* parent);
+
 	QAction* drawGridAction;
 	QAction* drawContourAction;
 	QAction* drawArrowAction;

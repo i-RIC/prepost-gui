@@ -8,16 +8,16 @@
 #include <QIcon>
 #include <QMenu>
 
-Post2dBirdEyeWindowActionManager::Post2dBirdEyeWindowActionManager(Post2dBirdEyeWindow* parent)
-	: QObject(parent)
-{
-	m_post2dWindow = parent;
-	init();
-}
-
-void Post2dBirdEyeWindowActionManager::init()
+Post2dBirdEyeWindowActionManager::Post2dBirdEyeWindowActionManager(Post2dBirdEyeWindow* parent) :
+	QObject(parent),
+	m_post2dWindow {parent}
 {
 	setupDrawMenu();
+}
+
+QMenu* Post2dBirdEyeWindowActionManager::drawMenu() const
+{
+	return m_drawMenu;
 }
 
 void Post2dBirdEyeWindowActionManager::setupDrawMenu()

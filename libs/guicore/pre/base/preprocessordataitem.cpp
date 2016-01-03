@@ -5,6 +5,26 @@
 
 #include <QStandardItem>
 
+
+PreProcessorDataItem::PreProcessorDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {parent}
+{}
+
+PreProcessorDataItem::PreProcessorDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {itemlabel, parent}
+{}
+
+PreProcessorDataItem::PreProcessorDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {itemlabel, icon, parent}
+{}
+
+PreProcessorDataItem::PreProcessorDataItem(ProjectDataItem* parent) :
+	GraphicsWindowDataItem {parent}
+{}
+
+PreProcessorDataItem::~PreProcessorDataItem()
+{}
+
 void PreProcessorDataItem::editCaption()
 {
 	ObjectBrowserView* view = dataModel()->objectBrowserView();

@@ -8,12 +8,8 @@ class Post2dPropertyBrowser : public PropertyBrowser
 	Q_OBJECT
 
 public:
-	/// Constructor
-	Post2dPropertyBrowser(QWidget* parent) : PropertyBrowser(parent) {
-
-	}
-	/// Destructor
-	~Post2dPropertyBrowser() {}
+	Post2dPropertyBrowser(QWidget* parent);
+	~Post2dPropertyBrowser();
 };
 
 #endif // POST2DPROPERTYBROWSER_H

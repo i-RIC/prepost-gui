@@ -2,6 +2,7 @@
 #define GEODATAPOLYGONCELLMAPPERT_DETAIL_H
 
 #include "../geodatapolygoncellmappert.h"
+#include "../geodatapolygoncellmappersetting.h"
 
 template <class V, class DA>
 GeoDataPolygonCellMapperT<V, DA>::GeoDataPolygonCellMapperT(GeoDataCreator* parent) :

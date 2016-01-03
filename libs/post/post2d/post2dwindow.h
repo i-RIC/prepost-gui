@@ -34,10 +34,9 @@ class Post2dWindow :
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi);
-	/// Destructor
 	~Post2dWindow();
+
 	/// Informed that CGNS file is switched.
 	void handleCgnsSwitch() {}
 	/// switch to the new index.
@@ -50,16 +49,19 @@ public:
 
 	ObjectBrowser* objectBrowser() const override;
 	int index() const {return m_index;}
+
 	QList<QString> particleDrawingZones() override;
 	QList<QString> contourFigureDrawingZones() override;
+	QList<QString> contourDrawingZones() override;
+	bool hasTransparentPart();
+
 	bool exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zonename) override;
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zonename) override;
+
 	bool checkKmlExportCondition(const QString &zonename) const override;
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
-	QList<QString> contourDrawingZones() override;
-	bool hasTransparentPart();
 
 public slots:
 	void cameraFit();
@@ -78,11 +80,12 @@ signals:
 
 private:
 	void init();
-	/// Background color
+
 	const QColor backgroundColor() const;
-	/// Set background color;
 	void setBackgroundColor(QColor& c);
+
 	void setupDefaultGeometry(int index) override;
+
 	Post2dObjectBrowser* m_objectBrowser;
 	Post2dWindowDataModel* m_dataModel;
 	Post2dWindowActionManager* m_actionManager;

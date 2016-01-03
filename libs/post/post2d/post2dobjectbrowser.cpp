@@ -6,7 +6,8 @@
 #include <QtGui/QIcon>
 #include <QtGui/QStandardItemModel>
 
-void Post2dObjectBrowser::init()
+Post2dObjectBrowser::Post2dObjectBrowser(QWidget* parent) :
+	ObjectBrowser(parent)
 {
 	// window properties
 	setFeatures(QDockWidget::DockWidgetClosable | QDockWidget::DockWidgetMovable);
@@ -20,13 +21,20 @@ void Post2dObjectBrowser::init()
 	setWidget(m_view);
 }
 
+Post2dObjectBrowser::~Post2dObjectBrowser()
+{}
+
 void Post2dObjectBrowser::setModel(QStandardItemModel* model)
 {
 	m_view->setModel(model);
+}
+
+Post2dObjectBrowserView* Post2dObjectBrowser::view() const
+{
+	return m_view;
 }
 
 void Post2dObjectBrowser::expandAll()
 {
 	m_view->expandAll();
 }
-

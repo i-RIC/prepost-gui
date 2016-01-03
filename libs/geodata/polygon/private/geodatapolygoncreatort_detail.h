@@ -2,6 +2,8 @@
 #define GEODATAPOLYGONCREATORT_DETAIL_H
 
 #include "../geodatapolygoncreatort.h"
+#include "../geodatapolygoncellmappert.h"
+#include "../geodatapolygonnodemappert.h"
 
 template <class V, class DA>
 GeoDataPolygonCreatorT<V, DA>::GeoDataPolygonCreatorT() :

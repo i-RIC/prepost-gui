@@ -103,6 +103,7 @@ LIBS += -lgeos
 HEADERS += gd_polygon_global.h \
            geodatapolygon.h \
            geodatapolygonabstractpolygon.h \
+           geodatapolygoncellmappersetting.h \
            geodatapolygoncellmappert.h \
            geodatapolygoncolorsettingdialog.h \
            geodatapolygoncoordinateseditdialog.h \
@@ -118,7 +119,6 @@ HEADERS += gd_polygon_global.h \
            geodatapolygonregionpolygon.h \
            geodatapolygonshapeexporter.h \
            geodatapolygontrianglethread.h \
-           private/geodatapolygoncreatort_detail.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
            private/geodatapolygonnodemappert_detail.h
@@ -127,6 +127,7 @@ FORMS += geodatapolygoncolorsettingdialog.ui \
          geodatapolygonimportersettingdialog.ui
 SOURCES += geodatapolygon.cpp \
            geodatapolygonabstractpolygon.cpp \
+           geodatapolygoncellmappersetting.cpp \
            geodatapolygoncolorsettingdialog.cpp \
            geodatapolygoncoordinateseditdialog.cpp \
            geodatapolygoncreator.cpp \

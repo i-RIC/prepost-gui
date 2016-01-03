@@ -12,8 +12,8 @@ class Post2dBirdEyeWindowActionManager : public QObject
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dBirdEyeWindowActionManager(Post2dBirdEyeWindow* parent);
+
 	QAction* drawGridAction;
 	QAction* drawContourAction;
 
@@ -23,13 +23,13 @@ public:
 	QAction* backgroundColorAction;
 	QAction* editZScaleAction;
 
-	QMenu* drawMenu() const {return m_drawMenu;}
+	QMenu* drawMenu() const;
 	void connectWithDataModel();
 
 private:
-	void init();
 	void setupDrawMenu();
 	void setupViewToolBar();
+
 	QMenu* m_drawMenu;
 	Post2dBirdEyeWindow* m_post2dWindow;
 };

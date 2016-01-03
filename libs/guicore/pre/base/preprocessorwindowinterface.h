@@ -11,9 +11,7 @@ class GUICOREDLL_EXPORT PreProcessorWindowInterface : public QMainWindow
 {
 
 public:
-	/// constructor
 	PreProcessorWindowInterface(QWidget* widget);
-	/// destructor
 	virtual ~PreProcessorWindowInterface();
 
 	virtual PreProcessorDataModelInterface* dataModel() const = 0;

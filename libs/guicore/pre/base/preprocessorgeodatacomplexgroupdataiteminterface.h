@@ -11,8 +11,9 @@ class GridComplexConditionWidget;
 
 class PreProcessorGeoDataComplexGroupDataItemInterface
 {
-
 public:
+	virtual ~PreProcessorGeoDataComplexGroupDataItemInterface() {}
+
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual ProjectData* projectData() const = 0;
 

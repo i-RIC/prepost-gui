@@ -17,22 +17,11 @@ class GUICOREDLL_EXPORT PreProcessorDataItem : public GraphicsWindowDataItem
 	Q_OBJECT
 
 public:
-	PreProcessorDataItem(GraphicsWindowDataItem* parent) :
-		GraphicsWindowDataItem {parent}
-	{}
-	/// Constructor
-	PreProcessorDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent) :
-		GraphicsWindowDataItem {itemlabel, parent}
-	{}
-	/// Constructor
-	PreProcessorDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
-		GraphicsWindowDataItem {itemlabel, icon, parent}
-	{}
-	/// Constructor for root node.
-	PreProcessorDataItem(ProjectDataItem* parent) :
-		GraphicsWindowDataItem {parent}
-	{}
-	virtual ~PreProcessorDataItem() {}
+	PreProcessorDataItem(GraphicsWindowDataItem* parent);
+	PreProcessorDataItem(const QString& itemlabel, GraphicsWindowDataItem* parent);
+	PreProcessorDataItem(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
+	PreProcessorDataItem(ProjectDataItem* parent);
+	virtual ~PreProcessorDataItem();
 
 	PreProcessorWindowInterface* preProcessorWindow() const;
 
