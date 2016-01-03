@@ -2,6 +2,7 @@
 
 #include "verificationsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
@@ -153,11 +154,8 @@ void VerificationSettingDialog::selectZone(int zoneid)
 
 void VerificationSettingDialog::selectFile(int fileid)
 {
-	ui->measuredValueComboBox->clear();
 	MeasuredData* md = m_measuredData.at(fileid);
-	for (int i = 0; i < md->pointNames().count(); ++i) {
-		ui->measuredValueComboBox->addItem(md->pointNames().at(i));
-	}
+	ComboBoxTool::setupItems(md->scalarNames(), ui->measuredValueComboBox);
 	ui->measuredValueComboBox->setCurrentIndex(0);
 }
 

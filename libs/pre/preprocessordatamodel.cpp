@@ -553,8 +553,8 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 		pointAction->setDisabled(true);
 		vectorAction->setDisabled(true);
 	} else {
-		connect(pointAction, SIGNAL(triggered()), fitem->pointGroupDataItem(), SLOT(showSettingDialog()));
-		connect(vectorAction, SIGNAL(triggered()), fitem->vectorGroupDataItem(), SLOT(showSettingDialog()));
+		connect(pointAction, SIGNAL(triggered()), fitem->pointGroupDataItem(), SLOT(showPropertyDialog()));
+		connect(vectorAction, SIGNAL(triggered()), fitem->vectorGroupDataItem(), SLOT(showPropertyDialog()));
 	}
 	m_additionalMenus.append(m_measuredValuesMenu);
 	m_dummyMenus.append(m_measuredValuesMenu);

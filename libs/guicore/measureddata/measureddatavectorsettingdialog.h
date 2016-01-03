@@ -5,6 +5,10 @@
 
 #include "../project/measureddata.h"
 #include "measureddatavectorgroupdataitem.h"
+#include "measureddatavectorsetting.h"
+
+#include <string>
+#include <vector>
 
 namespace Ui
 {
@@ -18,36 +22,19 @@ class MeasuredDataVectorSettingDialog : public QDialog
 public:
 	explicit MeasuredDataVectorSettingDialog(QWidget* parent = nullptr);
 	~MeasuredDataVectorSettingDialog();
+
 	void setData(MeasuredData* data);
 
-	MeasuredDataVectorGroupDataItem::Setting setting() const;
-	void setSetting(const MeasuredDataVectorGroupDataItem::Setting& setting);
-
-//	bool isEnabled() const;
-//	void setSolution(const QString& sol);
-//	QString solution() const;
-//	void setScalarValue(const QString& scalar);
-//	QString scalarValue() const;
-//	void setColor(const QColor& color);
-//	QColor color() const;
-
-//	void setLengthMode(MeasuredData::ArrowLengthMode lm);
-//	MeasuredData::ArrowLengthMode lengthMode() const;
-//	void setStandardValue(double stdVal);
-//	double standardValue() const;
-//	void setLegendLength(int len);
-//	int legendLength() const;
-//	void setMinimumValue(double minVal);
-//	double minimumValue() const;
-
-//	void setColorMode(MeasuredData::ArrowColorMode cm);
-//	MeasuredData::ArrowColorMode colorMode() const;
+	MeasuredDataVectorSetting setting() const;
+	void setSetting(const MeasuredDataVectorSetting& setting);
 
 private:
 	void setupSolutionComboBox(MeasuredData* data);
-	MeasuredDataVectorGroupDataItem::Setting m_setting;
-	QList<QString> m_solutions;
-	QList<QString> m_scalars;
+
+	MeasuredDataVectorSetting m_setting;
+
+	std::vector<std::string> m_targets;
+	std::vector<std::string> m_scalars;
 
 	Ui::MeasuredDataVectorSettingDialog* ui;
 };

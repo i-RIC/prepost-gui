@@ -2,14 +2,15 @@
 #define MEASUREDDATAPOINTSETTINGDIALOG_H
 
 #include "../scalarstocolors/lookuptablecontainer.h"
-#include "measureddatapointgroupdataitem.h"
+#include "measureddatapointsetting.h"
 #include <guibase/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 
 #include <QDialog>
-#include <QList>
-#include <QMap>
+
+#include <unordered_map>
+#include <vector>
 
 namespace Ui
 {
@@ -29,31 +30,34 @@ public:
 
 	void setData(MeasuredData* md);
 	void setNoPolyData(bool noPolyData);
-	void setSetting(const MeasuredDataPointGroupDataItem::Setting& setting);
-	void setScalarBarTitleMap(const QMap<QString, QString>& titlemap);
-	void setLookupTables(const QMap<QString, LookupTableContainer*>& lookuptables);
-
 	void forceSelectPointsOnly();
 
-	MeasuredDataPointGroupDataItem::Setting setting() const;
-	LookupTableContainer lookupTable() const;
+	MeasuredDataPointSetting setting() const;
+	void setSetting(const MeasuredDataPointSetting& setting);
+
 	QString scalarBarTitle() const;
+	void setScalarBarTitleMap(const std::unordered_map<std::string, QString>& titleMap);
+
+	LookupTableContainer lookupTable() const;
+	void setLookupTables(const std::unordered_map<std::string, LookupTableContainer*>& lookupTables);
 
 public slots:
 	void accept() override;
 
 private slots:
-	void measuredValueChanged(int index);
+	void targetChanged(int index);
 	void showColorBarDialog();
 
 private:
 	Ui::MeasuredDataPointSettingDialog* ui;
 
-	MeasuredDataPointGroupDataItem::Setting m_setting;
-	QMap<QString, QString> m_scalarBarTitleMap;
-	QMap<QString, LookupTableContainer*> m_lookupTables;
+	MeasuredDataPointSetting m_setting;
+
+	std::unordered_map<std::string, QString> m_scalarBarTitleMap;
+	std::unordered_map<std::string, LookupTableContainer*> m_lookupTables;
+	std::vector<std::string> m_targets;
+
 	LookupTableContainer m_lookupTable;
-	QList<QString> m_measuredValues;
 };
 
 #endif // MEASUREDDATAPOINTSETTINGDIALOG_H

@@ -4,6 +4,7 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../project/measureddata.h"
 #include "../misc/targeted/targeteditemi.h"
+#include "measureddatavectorsetting.h"
 
 #include <misc/enumcontainert.h>
 #include <misc/colorcontainer.h>
@@ -39,26 +40,6 @@ public:
 	const static int AUTO_AVERAGECOUNT = 20;
 	const static double MINLIMIT;
 
-	class Setting : public CompositeContainer
-	{
-	public:
-		Setting();
-		Setting(const Setting& s);
-		MeasuredDataVectorGroupDataItem::Setting& operator=(const Setting& s);
-
-		StringContainer scalarValueName;
-		StringContainer solution;
-		ColorContainer color;
-		DoubleContainer oldCameraScale;
-		DoubleContainer scaleFactor;
-
-		EnumContainerT<MeasuredData::ArrowColorMode> colorMode;
-		EnumContainerT<MeasuredData::ArrowLengthMode> lengthMode;
-		DoubleContainer standardValue;
-		DoubleContainer legendLength;
-		DoubleContainer minimumValue;
-	};
-
 	MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataVectorGroupDataItem();
 
@@ -72,7 +53,6 @@ public:
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
-	void showSettingDialog() {showPropertyDialog();}
 
 private:
 	QDialog* propertyDialog(QWidget* p) override;
@@ -107,7 +87,8 @@ private:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 
-	Setting m_setting;
+	MeasuredDataVectorSetting m_setting;
+	double m_scaleFactor;
 
 	class SetSettingCommand;
 };

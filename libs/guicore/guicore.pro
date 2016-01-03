@@ -178,9 +178,11 @@ HEADERS += guicore_global.h \
            measureddata/measureddatafiledataitem.h \
            measureddata/measureddatapointdataitem.h \
            measureddata/measureddatapointgroupdataitem.h \
+           measureddata/measureddatapointsetting.h \
            measureddata/measureddatapointsettingdialog.h \
            measureddata/measureddatavectordataitem.h \
            measureddata/measureddatavectorgroupdataitem.h \
+           measureddata/measureddatavectorsetting.h \
            measureddata/measureddatavectorsettingdialog.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
@@ -254,6 +256,8 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitiontranslator.h \
            distancemeasure/private/distancemeasuregroupdataitem_impl.h \
+           measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
+           measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
@@ -442,9 +446,11 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            measureddata/measureddatafiledataitem.cpp \
            measureddata/measureddatapointdataitem.cpp \
            measureddata/measureddatapointgroupdataitem.cpp \
+           measureddata/measureddatapointsetting.cpp \
            measureddata/measureddatapointsettingdialog.cpp \
            measureddata/measureddatavectordataitem.cpp \
            measureddata/measureddatavectorgroupdataitem.cpp \
+           measureddata/measureddatavectorsetting.cpp \
            measureddata/measureddatavectorsettingdialog.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
@@ -514,6 +520,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitionnode.cpp \
            solverdef/solverdefinitiontranslator.cpp \
+           measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
+           measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \

@@ -1,8 +1,10 @@
 #ifndef MEASUREDDATAPOINTGROUPDATAITEM_H
 #define MEASUREDDATAPOINTGROUPDATAITEM_H
 
+#include "measureddatapointsetting.h"
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../misc/targeted/targeteditemi.h"
+
 #include <guibase/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 
@@ -13,10 +15,12 @@
 #include <misc/boolcontainer.h>
 #include <misc/opacitycontainer.h>
 
-#include <QMap>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
 #include <vtkScalarBarWidget.h>
+
+#include <unordered_map>
+#include <string>
 
 class MeasuredData;
 class MeasuredDataPointDataItem;
@@ -32,30 +36,7 @@ class GUICOREDLL_EXPORT MeasuredDataPointGroupDataItem : public GraphicsWindowDa
 {
 	Q_OBJECT
 
-private:
-	static const int DEFAULT_NUMOFDIV = 15;
-
 public:
-	struct Setting : public CompositeContainer
-	{
-		/// Constructor
-		Setting();
-		/// Copy constructor
-		Setting(const Setting& s);
-		/// Copy operator
-		Setting& operator=(const Setting& s);
-
-		IntContainer numberOfDivisions;
-		StringContainer currentMeasuredValue;
-		EnumContainerT<ContourSettingWidget::Contour> contour;
-		BoolContainer fillUpper;
-		BoolContainer fillLower;
-		IntContainer pointSize;
-		OpacityContainer opacity;
-
-		ScalarBarSetting scalarBarSetting;
-	};
-
 	MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* parent);
 	~MeasuredDataPointGroupDataItem();
 
@@ -70,7 +51,8 @@ public:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	bool hasTransparentPart() override;
-	LookupTableContainer* lookupTable(const QString& attName) const {return m_lookupTables.value(attName, 0);}
+	LookupTableContainer* lookupTable(const std::string& target) const;
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -98,11 +80,11 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Setting m_setting;
+	MeasuredDataPointSetting m_setting;
 
 	// for scalar bar
-	QMap<QString, LookupTableContainer*> m_lookupTables;
-	QMap<QString, QString> m_colorbarTitleMap;
+	std::unordered_map<std::string, LookupTableContainer*> m_lookupTables;
+	std::unordered_map<std::string, QString> m_colorbarTitleMap;
 
 	vtkLODActor* m_contourActor;
 	vtkPolyDataMapper* m_contourMapper;

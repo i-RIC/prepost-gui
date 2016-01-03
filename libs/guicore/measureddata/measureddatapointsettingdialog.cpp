@@ -3,7 +3,9 @@
 #include "../project/measureddata.h"
 #include "measureddatapointsettingdialog.h"
 
+#include <guibase/comboboxtool.h>
 #include <guibase/scalarbardialog.h>
+#include <misc/stringtool.h>
 
 #include <QMessageBox>
 
@@ -27,15 +29,9 @@ MeasuredDataPointSettingDialog::~MeasuredDataPointSettingDialog()
 
 void MeasuredDataPointSettingDialog::setData(MeasuredData* md)
 {
-	ui->measuredValueComboBox->clear();
-	m_measuredValues.clear();
-	ui->measuredValueComboBox->blockSignals(true);
+	ComboBoxTool::setupItems(md->scalarNames(), ui->measuredValueComboBox);
 
-	m_measuredValues = md->pointNames();
-	for (int i = 0; i < m_measuredValues.count(); ++i) {
-		ui->measuredValueComboBox->addItem(m_measuredValues.at(i));
-	}
-	ui->measuredValueComboBox->blockSignals(false);
+	m_targets = md->scalarNames();
 }
 
 void MeasuredDataPointSettingDialog::forceSelectPointsOnly()
@@ -43,71 +39,42 @@ void MeasuredDataPointSettingDialog::forceSelectPointsOnly()
 	ui->contourWidget->forceSelectPointsOnly();
 }
 
-void MeasuredDataPointSettingDialog::setSetting(const MeasuredDataPointGroupDataItem::Setting& s)
+void MeasuredDataPointSettingDialog::setSetting(const MeasuredDataPointSetting &s)
 {
 	m_setting = s;
 
-	// numberOfDivisions
-	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
-
-	// currentMeasuredValue
-	int index = m_measuredValues.indexOf(s.currentMeasuredValue);
-	if (index == -1) {
-		index = 0;
-	}
-	ui->measuredValueComboBox->setCurrentIndex(index);
-	measuredValueChanged(index);
-
-	// contour
+	ui->measuredValueComboBox->setCurrentText(s.target);
 	ui->contourWidget->setContour(s.contour);
-
-	// fillUpper
+	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
 	ui->colormapWidget->setFillUpper(s.fillUpper);
-
-	// fillLower
 	ui->colormapWidget->setFillLower(s.fillLower);
-
-	// pointSize
+	ui->transparencyWidget->setOpacityPercent(s.opacity);
 	ui->pointSizeSpinBox->setValue(s.pointSize);
 
-	// opacity
-	ui->transparencyWidget->setOpacityPercent(s.opacity);
+	targetChanged(ui->measuredValueComboBox->currentIndex());
 }
 
-void MeasuredDataPointSettingDialog::setScalarBarTitleMap(const QMap<QString, QString>& titlemap)
+void MeasuredDataPointSettingDialog::setScalarBarTitleMap(const std::unordered_map<std::string, QString>& titlemap)
 {
 	m_scalarBarTitleMap = titlemap;
 }
 
-void MeasuredDataPointSettingDialog::setLookupTables(const QMap<QString, LookupTableContainer*>& lookuptables)
+void MeasuredDataPointSettingDialog::setLookupTables(const std::unordered_map<std::string, LookupTableContainer*>& lookuptables)
 {
 	m_lookupTables = lookuptables;
 }
 
-MeasuredDataPointGroupDataItem::Setting MeasuredDataPointSettingDialog::setting() const
+MeasuredDataPointSetting MeasuredDataPointSettingDialog::setting() const
 {
-	MeasuredDataPointGroupDataItem::Setting ret = m_setting;
+	MeasuredDataPointSetting ret = m_setting;
 
-	// numberOfDivisions
-	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
-
-	// currentMeasuredValue
-	ret.currentMeasuredValue = m_measuredValues.at(ui->measuredValueComboBox->currentIndex());
-
-	// contour
+	ret.target = ui->measuredValueComboBox->currentText();
 	ret.contour = ui->contourWidget->contour();
-
-	// fillUpper
+	ret.numberOfDivisions = ui->colormapWidget->divisionNumber();
 	ret.fillUpper = ui->colormapWidget->fillUpper();
-
-	// fillLower
 	ret.fillLower = ui->colormapWidget->fillLower();
-
-	// pointSize
-	ret.pointSize = ui->pointSizeSpinBox->value();
-
-	// opacity
 	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.pointSize = ui->pointSizeSpinBox->value();
 
 	return ret;
 }
@@ -119,14 +86,14 @@ LookupTableContainer MeasuredDataPointSettingDialog::lookupTable() const
 
 QString MeasuredDataPointSettingDialog::scalarBarTitle() const
 {
-	MeasuredDataPointGroupDataItem::Setting s = setting();
-	return m_scalarBarTitleMap[s.currentMeasuredValue];
+	auto s = setting();
+	return m_scalarBarTitleMap.at(iRIC::toStr(s.target));
 }
 
-void MeasuredDataPointSettingDialog::measuredValueChanged(int index)
+void MeasuredDataPointSettingDialog::targetChanged(int index)
 {
-	QString sol = m_measuredValues.at(index);
-	LookupTableContainer* c = m_lookupTables.value(sol, 0);
+	auto target = m_targets.at(index);
+	LookupTableContainer* c = m_lookupTables.at(target);
 	m_lookupTable = *c;
 	ui->colormapWidget->setContainer(&m_lookupTable);
 }
@@ -146,12 +113,14 @@ void MeasuredDataPointSettingDialog::accept()
 void MeasuredDataPointSettingDialog::showColorBarDialog()
 {
 	ScalarBarDialog dialog(this);
-	MeasuredDataPointGroupDataItem::Setting s = setting();
+	MeasuredDataPointSetting s = setting();
 
-	dialog.setTitle(m_scalarBarTitleMap[s.currentMeasuredValue]);
+	dialog.setTitle(m_scalarBarTitleMap[s.target]);
 	dialog.setSetting(m_setting.scalarBarSetting);
+
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
-	m_scalarBarTitleMap[s.currentMeasuredValue] = dialog.title();
+
+	m_scalarBarTitleMap[s.target] = dialog.title();
 	m_setting.scalarBarSetting = dialog.setting();
 }

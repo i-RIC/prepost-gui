@@ -31,21 +31,67 @@
 #include <triangle/triangle.h>
 #include <triangle/triangleexecutethread.h>
 
-MeasuredData::MeasuredData(ProjectDataItem* parent)
-	: ProjectDataItem(parent)
+MeasuredData::MeasuredData(ProjectDataItem* parent) :
+	ProjectDataItem(parent)
 {
 	m_pointData = vtkSmartPointer<vtkPolyData>::New();
 	m_polyData = vtkSmartPointer<vtkPolyData>::New();
 	m_noPolyData = false;
 }
 
+const QString& MeasuredData::name() const
+{
+	return m_name;
+}
+
+vtkPolyData* MeasuredData::pointData() const
+{
+	return m_pointData;
+}
+
+vtkPolyData* MeasuredData::polyData() const
+{
+	return m_polyData;
+}
+
+const std::vector<std::string>& MeasuredData::scalarNames() const
+{
+	return m_scalarNames;
+}
+
+const std::vector<std::string>& MeasuredData::vectorNames() const
+{
+	return m_vectorNames;
+}
+
+int MeasuredData::index() const
+{
+	return m_index;
+}
+
+void MeasuredData::setIndex(int index)
+{
+	m_index = index;
+	setFilename(QString("MeasuredData_%1.vtk").arg(m_index));
+}
+
+bool MeasuredData::noPolyData() const
+{
+	return m_noPolyData;
+}
+
+void MeasuredData::applyOffset(double x, double y)
+{
+	doApplyOffset(x, y);
+}
+
 struct ScalarData {
-	QString name;
+	std::string name;
 	unsigned int column;
 };
 
 struct VectorData {
-	QString name;
+	std::string name;
 	unsigned int columnX;
 	unsigned int columnY;
 };
@@ -73,7 +119,7 @@ void MeasuredData::importFromFile(const QString& filename)
 	QList<ScalarData> scalarDatas;
 	QList<VectorData> vectorDatas;
 
-	QMap<QString, vtkDoubleArray*> datas;
+	std::map<std::string, vtkDoubleArray*> datas;
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
 	QSet<unsigned int> columnsDone;
 	QRegExp xname("(.*)X$");
@@ -82,12 +128,12 @@ void MeasuredData::importFromFile(const QString& filename)
 		bool isVector = false;
 		if (xname.indexIn(pieces[j]) != -1) {
 			// check whether it is vector.
-			QString vdataName = xname.cap(1);
-			QString yname = vdataName;
+			std::string vdataName = iRIC::toStr(xname.cap(1));
+			std::string yname = vdataName;
 			yname.append("Y");
 			for (int k = 2; k < pieces.size(); ++k) {
 				if (columnsDone.contains(k)) {continue;}
-				if (pieces[k] == yname) {
+				if (pieces[k] == yname.c_str()) {
 					// X component, Y compoment both are found.
 					isVector = true;
 					VectorData vData;
@@ -96,25 +142,25 @@ void MeasuredData::importFromFile(const QString& filename)
 					vData.columnY = k;
 					vectorDatas.append(vData);
 					vtkDoubleArray* da = vtkDoubleArray::New();
-					da->SetName(iRIC::toStr(vdataName).c_str());
+					da->SetName(vdataName.c_str());
 					da->SetNumberOfComponents(3);
-					datas.insert(vData.name, da);
+					datas.insert({vData.name, da});
 					columnsDone.insert(j);
 					columnsDone.insert(k);
-					m_vectorNames.append(vData.name);
+					m_vectorNames.push_back(vData.name);
 				}
 			}
 		}
 		if (! isVector) {
 			ScalarData sData;
-			sData.name = pieces[j];
+			sData.name = iRIC::toStr(pieces[j]);
 			sData.column = j;
 			scalarDatas.append(sData);
 			vtkDoubleArray* da = vtkDoubleArray::New();
-			da->SetName(iRIC::toStr(sData.name).c_str());
-			datas.insert(sData.name, da);
+			da->SetName(sData.name.c_str());
+			datas.insert({sData.name, da});
 			columnsDone.insert(j);
-			m_pointNames.append(sData.name);
+			m_scalarNames.push_back(sData.name);
 		}
 	}
 	try {
@@ -132,14 +178,14 @@ void MeasuredData::importFromFile(const QString& filename)
 				points->InsertNextPoint(x, y, 0);
 				for (int i = 0; i < scalarDatas.size(); ++i) {
 					ScalarData& sData = scalarDatas[i];
-					vtkDoubleArray* da = datas.value(sData.name);
+					vtkDoubleArray* da = datas[sData.name];
 					double val = pieces[sData.column].toDouble(&ok);
 					if (! ok) {throw pieces[sData.column];}
 					da->InsertNextValue(val);
 				}
 				for (int i = 0; i < vectorDatas.size(); ++i) {
 					VectorData& vData = vectorDatas[i];
-					vtkDoubleArray* da = datas.value(vData.name);
+					vtkDoubleArray* da = datas[vData.name];
 					double valX = pieces[vData.columnX].toDouble(&ok);
 					if (! ok) {throw pieces[vData.columnX];}
 					double valY = pieces[vData.columnY].toDouble(&ok);
@@ -156,9 +202,9 @@ void MeasuredData::importFromFile(const QString& filename)
 	}
 	m_pointData->SetPoints(points);
 	m_pointData->SetVerts(cells);
-	QList<vtkDoubleArray*> vals = datas.values();
-	for (int i = 0; i < vals.size(); ++i) {
-		vtkDoubleArray* da = vals[i];
+	std::vector<vtkDoubleArray*> vals;
+	for (auto pair : datas) {
+		vtkDoubleArray* da = pair.second;
 		m_pointData->GetPointData()->AddArray(da);
 		da->Delete();
 	}
@@ -247,15 +293,15 @@ void MeasuredData::loadExternalData(const QString& filename)
 	reader->SetFileName(iRIC::toStr(filename).c_str());
 	reader->Update();
 	m_pointData->DeepCopy(reader->GetOutput());
-	m_pointNames.clear();
+	m_scalarNames.clear();
 	m_vectorNames.clear();
 	vtkPointData* pd = m_pointData->GetPointData();
 	for (int i = 0; i < pd->GetNumberOfArrays(); ++i) {
 		vtkDataArray* da = pd->GetArray(i);
 		if (da->GetNumberOfComponents() == 1) {
-			m_pointNames.append(da->GetName());
+			m_scalarNames.push_back(da->GetName());
 		} else if (da->GetNumberOfComponents() == 3) {
-			m_vectorNames.append(da->GetName());
+			m_vectorNames.push_back(da->GetName());
 		}
 	}
 	setupPolyData();
