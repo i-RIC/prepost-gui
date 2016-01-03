@@ -1,4 +1,4 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../../base/iricmainwindowinterface.h"
 #include "measureddata.h"
 
 #include <guibase/waitdialog.h>
@@ -44,6 +44,11 @@ const QString& MeasuredData::name() const
 	return m_name;
 }
 
+void MeasuredData::setName(const QString& name)
+{
+	m_name = name;
+}
+
 vtkPolyData* MeasuredData::pointData() const
 {
 	return m_pointData;
@@ -59,7 +64,17 @@ const std::vector<std::string>& MeasuredData::scalarNames() const
 	return m_scalarNames;
 }
 
+std::vector<std::string>& MeasuredData::scalarNames()
+{
+	return m_scalarNames;
+}
+
 const std::vector<std::string>& MeasuredData::vectorNames() const
+{
+	return m_vectorNames;
+}
+
+std::vector<std::string>& MeasuredData::vectorNames()
 {
 	return m_vectorNames;
 }
@@ -83,194 +98,6 @@ bool MeasuredData::noPolyData() const
 void MeasuredData::applyOffset(double x, double y)
 {
 	doApplyOffset(x, y);
-}
-
-struct ScalarData {
-	std::string name;
-	unsigned int column;
-};
-
-struct VectorData {
-	std::string name;
-	unsigned int columnX;
-	unsigned int columnY;
-};
-
-void MeasuredData::importFromFile(const QString& filename)
-{
-	QFile file(filename);
-	if (! file.open(QFile::ReadOnly | QFile::Text)) {
-		throw ErrorMessage(tr("Error occured while opening the file."));
-	}
-	QTextStream stream(&file);
-	QString line = stream.readLine();
-	QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-	// check whether the first two are "X" and "Y".
-	if (!(pieces[0] == "X" && pieces[1] == "Y")) {
-		throw ErrorMessage(tr("The first two columns must be \"X\" and \"Y\"."));
-	}
-	// check whether the header consists of ASCII charactors
-	QTextCodec* asciiCodec = QTextCodec::codecForName("latin1");
-	bool ok = asciiCodec->canEncode(line);
-	if (! ok) {
-		throw ErrorMessage(tr("The data file has to consist of only English characters."));
-	}
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	QList<ScalarData> scalarDatas;
-	QList<VectorData> vectorDatas;
-
-	std::map<std::string, vtkDoubleArray*> datas;
-	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
-	QSet<unsigned int> columnsDone;
-	QRegExp xname("(.*)X$");
-	for (int j = 2; j < pieces.size(); ++j) {
-		if (columnsDone.contains(j)) {continue;}
-		bool isVector = false;
-		if (xname.indexIn(pieces[j]) != -1) {
-			// check whether it is vector.
-			std::string vdataName = iRIC::toStr(xname.cap(1));
-			std::string yname = vdataName;
-			yname.append("Y");
-			for (int k = 2; k < pieces.size(); ++k) {
-				if (columnsDone.contains(k)) {continue;}
-				if (pieces[k] == yname.c_str()) {
-					// X component, Y compoment both are found.
-					isVector = true;
-					VectorData vData;
-					vData.name = vdataName;
-					vData.columnX = j;
-					vData.columnY = k;
-					vectorDatas.append(vData);
-					vtkDoubleArray* da = vtkDoubleArray::New();
-					da->SetName(vdataName.c_str());
-					da->SetNumberOfComponents(3);
-					datas.insert({vData.name, da});
-					columnsDone.insert(j);
-					columnsDone.insert(k);
-					m_vectorNames.push_back(vData.name);
-				}
-			}
-		}
-		if (! isVector) {
-			ScalarData sData;
-			sData.name = iRIC::toStr(pieces[j]);
-			sData.column = j;
-			scalarDatas.append(sData);
-			vtkDoubleArray* da = vtkDoubleArray::New();
-			da->SetName(sData.name.c_str());
-			datas.insert({sData.name, da});
-			columnsDone.insert(j);
-			m_scalarNames.push_back(sData.name);
-		}
-	}
-	try {
-		vtkIdType cellId = 0;
-		do {
-			line = stream.readLine();
-			if (! line.isEmpty()) {
-				QStringList pieces = line.split(QRegExp("(\\s+)|,"), QString::SkipEmptyParts);
-				bool ok;
-				double x = pieces[0].toDouble(&ok);
-				if (! ok) {throw pieces[0];}
-				double y = pieces[1].toDouble(&ok);
-				if (! ok) {throw pieces[1];}
-
-				points->InsertNextPoint(x, y, 0);
-				for (int i = 0; i < scalarDatas.size(); ++i) {
-					ScalarData& sData = scalarDatas[i];
-					vtkDoubleArray* da = datas[sData.name];
-					double val = pieces[sData.column].toDouble(&ok);
-					if (! ok) {throw pieces[sData.column];}
-					da->InsertNextValue(val);
-				}
-				for (int i = 0; i < vectorDatas.size(); ++i) {
-					VectorData& vData = vectorDatas[i];
-					vtkDoubleArray* da = datas[vData.name];
-					double valX = pieces[vData.columnX].toDouble(&ok);
-					if (! ok) {throw pieces[vData.columnX];}
-					double valY = pieces[vData.columnY].toDouble(&ok);
-					if (! ok) {throw pieces[vData.columnY];}
-					double valZ = 0;
-					da->InsertNextTuple3(valX, valY, valZ);
-				}
-				cells->InsertNextCell(1, &cellId);
-			}
-			++ cellId;
-		} while (! line.isEmpty());
-	} catch (QString& pointData) {
-		throw ErrorMessage(tr("Wrong data found: %1").arg(pointData));
-	}
-	m_pointData->SetPoints(points);
-	m_pointData->SetVerts(cells);
-	std::vector<vtkDoubleArray*> vals;
-	for (auto pair : datas) {
-		vtkDoubleArray* da = pair.second;
-		m_pointData->GetPointData()->AddArray(da);
-		da->Delete();
-	}
-
-	m_name = QDir::toNativeSeparators(filename);
-	setupPolyData();
-}
-
-void MeasuredData::exportToFile(const QString& filename)
-{
-	QFile file(filename);
-	if (! file.open(QFile::WriteOnly | QFile::Text)) {
-		throw ErrorMessage(tr("Error occured while opening the file."));
-	}
-	QTextStream stream(&file);
-	vtkPointData* pd = m_pointData->GetPointData();
-	int nArrays = pd->GetNumberOfArrays();
-	vtkIdType dataCount = 0;
-
-	// output header.
-	QStringList headers;
-	headers << "X" << "Y";
-	for (int i = 0; i < nArrays; ++i) {
-		vtkDoubleArray* da = vtkDoubleArray::SafeDownCast(pd->GetArray(i));
-		if (da->GetNumberOfComponents() == 3) {
-			// Vector component
-			QString compName = da->GetName();
-			QString compNameX = compName;
-			compNameX.append("X");
-			QString compNameY = compName;
-			compNameY.append("Y");
-			headers << compNameX << compNameY;
-		} else if (da->GetNumberOfComponents() == 1) {
-			QString compName = da->GetName();
-			headers << compName;
-		}
-		if (i == 0) {
-			dataCount = da->GetNumberOfTuples();
-		}
-	}
-	stream << headers.join(",") << endl;
-	// output data.
-	for (vtkIdType i = 0; i < dataCount; ++i) {
-		QVector<double> vals;
-		// output X, Y
-		double* p = m_pointData->GetPoint(i);
-		vals << *(p);
-		vals << *(p + 1);
-		// output scalar and vector data.
-		for (int j = 0; j < nArrays; ++j) {
-			vtkDoubleArray* da = vtkDoubleArray::SafeDownCast(pd->GetArray(j));
-			if (da->GetNumberOfComponents() == 3) {
-				double* tuple = da->GetTuple3(i);
-				vals << *(tuple);
-				vals << *(tuple + 1);
-			} else if (da->GetNumberOfComponents() == 1) {
-				vals << da->GetTuple1(i);
-			}
-		}
-		for (int j = 0; j < vals.size(); ++j) {
-			if (j != 0) {stream << ",";}
-			stream << vals.at(j);
-		}
-		stream << endl;
-	}
-	file.close();
 }
 
 void MeasuredData::doLoadFromProjectMainFile(const QDomNode& node)

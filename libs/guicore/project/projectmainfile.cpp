@@ -6,6 +6,7 @@
 #include "backgroundimageinfo.h"
 #include "cgnsfilelist.h"
 #include "measured/measureddata.h"
+#include "measured/measureddatacsvimporter.h"
 #include "offsetsettingdialog.h"
 #include "projectcgnsfile.h"
 #include "projectdata.h"
@@ -910,8 +911,8 @@ void ProjectMainFile::addMeasuredData()
 
 	QFileInfo finfo(fname);
 	try {
-		MeasuredData* md = new MeasuredData(this);
-		md->importFromFile(fname);
+		MeasuredDataCsvImporter importer;
+		MeasuredData* md = importer.importData(fname);
 		m_measuredDatas.append(md);
 		emit measuredDataAdded();
 		setModified();

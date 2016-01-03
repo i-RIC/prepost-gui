@@ -21,12 +21,16 @@ public:
 	MeasuredData(ProjectDataItem* parent);
 
 	const QString& name() const;
+	void setName(const QString& name);
 
 	vtkPolyData* pointData() const;
 	vtkPolyData* polyData() const;
 
 	const std::vector<std::string>& scalarNames() const;
+	std::vector<std::string>& scalarNames();
+
 	const std::vector<std::string>& vectorNames() const;
+	std::vector<std::string>& vectorNames();
 
 	int index() const;
 	void setIndex(int index);
@@ -34,9 +38,6 @@ public:
 	void setupPolyData();
 	bool noPolyData() const;
 	void applyOffset(double x, double y);
-
-	void importFromFile(const QString& filename);
-	void exportToFile(const QString& filename);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

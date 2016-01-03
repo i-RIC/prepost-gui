@@ -1,6 +1,7 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../datamodel/graphicswindowdatamodel.h"
 #include "../project/measured/measureddata.h"
+#include "../project/measured/measureddatacsvexporter.h"
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectorgroupdataitem.h"
@@ -75,7 +76,9 @@ void MeasuredDataFileDataItem::exportToFile()
 	if (fname == "") { return; }
 
 	try {
-		m_measuredData->exportToFile(fname);
+		MeasuredDataCsvExporter exporter;
+		exporter.exportData(fname, *m_measuredData);
+
 		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);

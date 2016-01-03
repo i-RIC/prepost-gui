@@ -1,5 +1,7 @@
 #include "geodatariversurveydisplaysetting.h"
 
+#include <QColor>
+
 GeoDataRiverSurveyDisplaySetting::GeoDataRiverSurveyDisplaySetting() :
 	CompositeContainer ({&showBackground, &showLines, &opacity, &crosssectionLinesScale, &crosssectionLinesColor}) ,
 	showBackground {"showBackground", false},

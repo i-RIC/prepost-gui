@@ -336,6 +336,10 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetset.h \
            project/inputcond/inputconditionwidgetstring.h \
            project/measured/measureddata.h \
+           project/measured/measureddatacsvexporter.h \
+           project/measured/measureddatacsvimporter.h \
+           project/measured/measureddataexporteri.h \
+           project/measured/measureddataimporteri.h \
            project/private/projectdataitem_impl.h \
            solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
@@ -583,6 +587,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditionwidgetset.cpp \
            project/inputcond/inputconditionwidgetstring.cpp \
            project/measured/measureddata.cpp \
+           project/measured/measureddatacsvexporter.cpp \
+           project/measured/measureddatacsvimporter.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \
