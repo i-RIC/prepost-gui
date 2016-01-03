@@ -26,27 +26,29 @@ class BoundaryConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	/// Constructor
 	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
-	/// Destructor
 	~BoundaryConditionDialog();
+
 	void setNameAndNumber(const std::string& name, int number);
-	/// Load data fron CGNS file.
-	void load(const int fn);
-	/// Save data into CGNS file.
-	void save(const int fn);
-	/// Setup the dialog.
+
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
+	void load(const int fn);
+	void save(const int fn);
 
 	void setType(const QString& type);
-	void setCaption(const QString& caption);
+
 	QString caption() const;
-	void setOpacityPercent(int opacity);
+	void setCaption(const QString& caption);
+
 	int opacityPercent() const;
-	QColor color();
+	void setOpacityPercent(int opacity);
+
+	QColor color() const;
 	void setColor(const QColor& color);
+
 	int pointSize() const;
 	void setPointSize(int size);
+
 	bool showName() const;
 	void setShowName(bool showName);
 

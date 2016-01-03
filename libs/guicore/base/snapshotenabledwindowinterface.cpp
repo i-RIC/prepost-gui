@@ -10,6 +10,29 @@ SnapshotEnabledWindowInterface::SnapshotEnabledWindowInterface() :
 	m_isTransparent {false}
 {}
 
+SnapshotEnabledWindowInterface::~SnapshotEnabledWindowInterface()
+{}
+
+vtkRenderWindow* SnapshotEnabledWindowInterface::getVtkRenderWindow() const
+{
+	return nullptr;
+}
+
+bool SnapshotEnabledWindowInterface::hasTransparentPart() const
+{
+	return false;
+}
+
+void SnapshotEnabledWindowInterface::setTransparent(bool b)
+{
+	m_isTransparent = b;
+}
+
+bool SnapshotEnabledWindowInterface::isTransparent() const
+{
+	return m_isTransparent;
+}
+
 void SnapshotEnabledWindowInterface::makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap)
 {
 	int w = pixmap.size().width();

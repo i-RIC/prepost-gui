@@ -14,12 +14,7 @@
 Axis3dDataItem::Axis3dDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem {tr("Axes"), QIcon(":/libs/guibase/images/iconPaper.png"), parent}
 {
-	m_isDeletable = false;
-
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	setupActors();
 }
@@ -76,3 +71,8 @@ void Axis3dDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 	v->standardMouseReleaseEvent(event);
 }
 
+void Axis3dDataItem::doLoadFromProjectMainFile(const QDomNode&)
+{}
+
+void Axis3dDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
+{}

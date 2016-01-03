@@ -13,20 +13,20 @@ class GUICOREDLL_EXPORT SnapshotEnabledWindowInterface
 {
 
 public:
-	/// Constructor
 	SnapshotEnabledWindowInterface();
-	/// Take snapshot
-	virtual QPixmap snapshot() = 0;
-	virtual vtkRenderWindow* getVtkRenderWindow() const {return nullptr;}
-	virtual bool hasTransparentPart() const {return false;}
+	virtual ~SnapshotEnabledWindowInterface();
 
-	void setTransparent(bool b) {m_isTransparent = b;}
-	bool transparent() const {return m_isTransparent;}
+	virtual QPixmap snapshot() = 0;
+	virtual vtkRenderWindow* getVtkRenderWindow() const;
+	virtual bool hasTransparentPart() const;
+
+	bool isTransparent() const;
+	void setTransparent(bool b);
 
 protected:
-	bool m_isTransparent;
+	static void makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap);
 
-	void makeBackgroundTransparent(VTKGraphicsView* view, QPixmap& pixmap);
+	bool m_isTransparent;
 };
 
 #endif // SNAPSHOTENABLEDWINDOWINTERFACE_H

@@ -8,9 +8,7 @@ class PrePropertyBrowser : public PropertyBrowser
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PrePropertyBrowser(QWidget* parent);
-	/// Destructor
 	~PrePropertyBrowser();
 };
 

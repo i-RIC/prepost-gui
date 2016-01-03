@@ -171,7 +171,7 @@ int BoundaryConditionDialog::opacityPercent() const
 	return ui->transparencyWidget->opacityPercent();
 }
 
-QColor BoundaryConditionDialog::color()
+QColor BoundaryConditionDialog::color() const
 {
 	return ui->colorWidget->color();
 }

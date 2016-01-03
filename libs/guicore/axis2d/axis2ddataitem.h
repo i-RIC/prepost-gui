@@ -22,12 +22,14 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateVisibility(bool visible) override;
 
 private:
 	void setupActors();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	vtkSmartPointer<vtkAxesActor> m_actor;
 	vtkSmartPointer<vtkOrientationMarkerWidget> m_widget;
 };

@@ -17,6 +17,11 @@ PropertyBrowser::PropertyBrowser(QWidget* parent) :
 PropertyBrowser::~PropertyBrowser()
 {}
 
+PropertyBrowserView* PropertyBrowser::view() const
+{
+	return m_view;
+}
+
 void PropertyBrowser::hideEvent(QHideEvent*)
 {
 	m_view->resetAttributes();
