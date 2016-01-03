@@ -3,8 +3,8 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 
-GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond)
-	: GridAttributeEditWidgetT<double>(parent, cond)
+GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
+	GridAttributeEditWidgetT<double>(parent, cond)
 {
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);
@@ -17,6 +17,27 @@ GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* pa
 
 GridAttributeRealOptionEditWidget::~GridAttributeRealOptionEditWidget()
 {}
+
+
+const QMap<double, QString>& GridAttributeRealOptionEditWidget::enumerations() const
+{
+	return m_enumerations;
+}
+
+void GridAttributeRealOptionEditWidget::setEnumerations(const QMap<double, QString>& enums)
+{
+	m_enumerations = enums;
+}
+
+QSize GridAttributeRealOptionEditWidget::sizeHint() const
+{
+	return m_widget->sizeHint();
+}
+
+QSize GridAttributeRealOptionEditWidget::minimumSizeHint() const
+{
+	return m_widget->sizeHint();
+}
 
 void GridAttributeRealOptionEditWidget::setupWidget()
 {
@@ -39,20 +60,9 @@ void GridAttributeRealOptionEditWidget::setupWidget()
 	m_widget->setCurrentIndex(index);
 }
 
-void GridAttributeRealOptionEditWidget::getValueFromInnerWidget()
+void GridAttributeRealOptionEditWidget::getValueFromInnerWidget() const
 {
 	int index = m_widget->currentIndex();
 	m_valueSelected = !(m_valueCleared && index == 1);
 	m_value = m_values.at(index);
 }
-
-QSize GridAttributeRealOptionEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeRealOptionEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
-}
-

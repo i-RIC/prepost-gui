@@ -9,22 +9,20 @@ class QComboBox;
 
 class GridAttributeRealOptionEditWidget : public GridAttributeEditWidgetT<double>
 {
-
 public:
 	GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);
 	~GridAttributeRealOptionEditWidget();
-	void setEnumerations(const QMap<double, QString>& enums) {
-		m_enumerations = enums;
-	}
-	const QMap<double, QString>& enumerations() const {return m_enumerations;}
+
+	const QMap<double, QString>& enumerations() const;
+	void setEnumerations(const QMap<double, QString>& enums);
+
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
 
-protected:
-	void setupWidget() override;
-	void getValueFromInnerWidget() override;
-
 private:
+	void setupWidget() override;
+	void getValueFromInnerWidget() const override;
+
 	QMap<double, QString> m_enumerations;
 	QList<double> m_values;
 	QComboBox* m_widget;

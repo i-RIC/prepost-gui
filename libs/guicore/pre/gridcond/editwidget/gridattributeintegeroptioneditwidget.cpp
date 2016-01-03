@@ -3,8 +3,8 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 
-GridAttributeIntegerOptionEditWidget::GridAttributeIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond)
-	: GridAttributeEditWidgetT<int>(parent, cond)
+GridAttributeIntegerOptionEditWidget::GridAttributeIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
+	GridAttributeEditWidgetT<int>(parent, cond)
 {
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);
@@ -17,6 +17,25 @@ GridAttributeIntegerOptionEditWidget::GridAttributeIntegerOptionEditWidget(QWidg
 
 GridAttributeIntegerOptionEditWidget::~GridAttributeIntegerOptionEditWidget()
 {}
+
+const QMap<int, QString>& GridAttributeIntegerOptionEditWidget::enumerations() const
+{
+	return m_enumerations;
+}
+
+void GridAttributeIntegerOptionEditWidget::setEnumerations(const QMap<int, QString>& enums)
+{
+	m_enumerations = enums;
+}
+
+QSize GridAttributeIntegerOptionEditWidget::sizeHint() const
+{
+	return m_widget->sizeHint();
+}
+QSize GridAttributeIntegerOptionEditWidget::minimumSizeHint() const
+{
+	return m_widget->sizeHint();
+}
 
 void GridAttributeIntegerOptionEditWidget::setupWidget()
 {
@@ -39,19 +58,9 @@ void GridAttributeIntegerOptionEditWidget::setupWidget()
 	m_widget->setCurrentIndex(index);
 }
 
-void GridAttributeIntegerOptionEditWidget::getValueFromInnerWidget()
+void GridAttributeIntegerOptionEditWidget::getValueFromInnerWidget() const
 {
 	int index = m_widget->currentIndex();
 	m_valueSelected = !(m_valueCleared && index == 0);
 	m_value = m_values.at(index);
 }
-
-QSize GridAttributeIntegerOptionEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-QSize GridAttributeIntegerOptionEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
-}
-

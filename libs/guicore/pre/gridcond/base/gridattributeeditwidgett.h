@@ -57,69 +57,22 @@ private:
 template <class V>
 class GridAttributeEditWidgetT : public GridAttributeEditWidget
 {
-
 public:
-	GridAttributeEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
-		GridAttributeEditWidget {parent, cond}
-	{}
-	void setValue(V value) {
-		m_value = value;
-		m_valueCleared = false;
-		m_valueSelected = true;
-		setupWidget();
-	}
-	V value() {
-		getValueFromInnerWidget();
-		return m_value;
-	}
-	void setVariantValue(const QVariant& v) override {
-		SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(m_gridAttribute);
-		V tmpval = cond->fromVariant(v);
-		setValue(tmpval);
-	}
+	GridAttributeEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond);
 
-	QVariant variantValue() override {
-		return QVariant(value());
-	}
-	void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) override {
-		GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
-		bool same = true;
-		V val;
-		auto it = indices.begin();
-		if (it == indices.end()) {
-			// no point is selected!
-			clearValue();
-			return;
-		}
-		val = c->value(*it);
-		++it;
-		while (same && it != indices.end()) {
-			same &= (val == c->value(*it));
-			++it;
-		}
-		if (same) {
-			setValue(val);
-		} else {
-			clearValue();
-		}
-	}
+	V value() const;
+	void setValue(V value);
 
-	void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override {
-		if (! m_valueSelected) {return;}
-		GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
-		vtkDataArray* oldValues = c->dataArrayCopy();
-		V val = value();
-		for (auto it = indices.begin(); it != indices.end(); ++it) {
-			c->setValue(*it, val);
-		}
-		vtkDataArray* newValues = c->dataArrayCopy();
-		iRICUndoStack::instance().push(new GridAttributeEditCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));
-		oldValues->Delete();
-		newValues->Delete();
-	}
+	QVariant variantValue() const override;
+	void setVariantValue(const QVariant& v) override;
+
+	void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) override;
+	void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
 
 protected:
-	V m_value {0};
+	mutable V m_value {0};
 };
+
+#include "private/gridattributeeditwidgett_detail.h"
 
 #endif // GRIDATTRIBUTEEDITWIDGETT_H

@@ -10,12 +10,14 @@ class GridAttributeRealVariationEditWidget : public GridAttributeVariationEditWi
 public:
 	GridAttributeRealVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);
 	~GridAttributeRealVariationEditWidget();
+
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
 
-protected:
+private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() override;
+
 	RealNumberEditWidget* m_widget;
 };
 

@@ -4,8 +4,8 @@
 
 #include <QVBoxLayout>
 
-GridAttributeRealVariationEditWidget::GridAttributeRealVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond)
-	: GridAttributeVariationEditWidgetT<double>(parent, cond)
+GridAttributeRealVariationEditWidget::GridAttributeRealVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
+	GridAttributeVariationEditWidgetT<double>(parent, cond)
 {
 	m_widget = new RealNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
@@ -17,6 +17,16 @@ GridAttributeRealVariationEditWidget::GridAttributeRealVariationEditWidget(QWidg
 
 GridAttributeRealVariationEditWidget::~GridAttributeRealVariationEditWidget()
 {}
+
+QSize GridAttributeRealVariationEditWidget::sizeHint() const
+{
+	return m_widget->sizeHint();
+}
+
+QSize GridAttributeRealVariationEditWidget::minimumSizeHint() const
+{
+	return m_widget->sizeHint();
+}
 
 void GridAttributeRealVariationEditWidget::setupWidget()
 {
@@ -30,14 +40,4 @@ void GridAttributeRealVariationEditWidget::getValueFromInnerWidget()
 	} else {
 		m_value = m_widget->value();
 	}
-}
-
-QSize GridAttributeRealVariationEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeRealVariationEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
 }

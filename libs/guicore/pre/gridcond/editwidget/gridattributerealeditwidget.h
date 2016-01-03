@@ -7,16 +7,17 @@ class RealNumberEditWidget;
 
 class GridAttributeRealEditWidget : public GridAttributeEditWidgetT<double>
 {
-
 public:
 	GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);
 	~GridAttributeRealEditWidget();
+
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
 
-protected:
+private:
 	void setupWidget() override;
-	void getValueFromInnerWidget() override;
+	void getValueFromInnerWidget() const override;
+
 	RealNumberEditWidget* m_widget;
 };
 

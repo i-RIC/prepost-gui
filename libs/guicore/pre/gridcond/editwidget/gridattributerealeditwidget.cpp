@@ -4,8 +4,8 @@
 
 #include <QVBoxLayout>
 
-GridAttributeRealEditWidget::GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond)
-	: GridAttributeEditWidgetT<double>(parent, cond)
+GridAttributeRealEditWidget::GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
+	GridAttributeEditWidgetT<double>(parent, cond)
 {
 	m_widget = new RealNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
@@ -18,6 +18,16 @@ GridAttributeRealEditWidget::GridAttributeRealEditWidget(QWidget* parent, Solver
 GridAttributeRealEditWidget::~GridAttributeRealEditWidget()
 {}
 
+QSize GridAttributeRealEditWidget::sizeHint() const
+{
+	return m_widget->sizeHint();
+}
+
+QSize GridAttributeRealEditWidget::minimumSizeHint() const
+{
+	return m_widget->sizeHint();
+}
+
 void GridAttributeRealEditWidget::setupWidget()
 {
 	if (m_valueCleared) {
@@ -27,7 +37,7 @@ void GridAttributeRealEditWidget::setupWidget()
 	}
 }
 
-void GridAttributeRealEditWidget::getValueFromInnerWidget()
+void GridAttributeRealEditWidget::getValueFromInnerWidget() const
 {
 	if (m_widget->text() == "") {
 		m_valueSelected = false;
@@ -35,14 +45,4 @@ void GridAttributeRealEditWidget::getValueFromInnerWidget()
 		m_valueSelected = true;
 		m_value = m_widget->value();
 	}
-}
-
-QSize GridAttributeRealEditWidget::sizeHint() const
-{
-	return m_widget->sizeHint();
-}
-
-QSize GridAttributeRealEditWidget::minimumSizeHint() const
-{
-	return m_widget->sizeHint();
 }

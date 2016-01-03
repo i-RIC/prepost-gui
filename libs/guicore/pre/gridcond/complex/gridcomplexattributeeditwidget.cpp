@@ -61,7 +61,7 @@ void GridComplexAttributeEditWidget::setupWidget()
 	m_widget->setCurrentIndex(index);
 }
 
-void GridComplexAttributeEditWidget::getValueFromInnerWidget()
+void GridComplexAttributeEditWidget::getValueFromInnerWidget() const
 {
 	int index = m_widget->currentIndex();
 	m_valueSelected = !(m_valueCleared && index == 0);

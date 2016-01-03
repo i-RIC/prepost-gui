@@ -4,8 +4,8 @@
 
 #include <QVBoxLayout>
 
-GridAttributeIntegerVariationEditWidget::GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond)
-	: GridAttributeVariationEditWidgetT<int>(parent, cond)
+GridAttributeIntegerVariationEditWidget::GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
+	GridAttributeVariationEditWidgetT<int>(parent, cond)
 {
 	m_widget = new IntegerNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
@@ -32,17 +32,6 @@ GridAttributeIntegerVariationEditWidget::GridAttributeIntegerVariationEditWidget
 GridAttributeIntegerVariationEditWidget::~GridAttributeIntegerVariationEditWidget()
 {}
 
-void GridAttributeIntegerVariationEditWidget::getValueFromInnerWidget()
-{
-	m_value = m_widget->value();
-}
-
-void GridAttributeIntegerVariationEditWidget::setupWidget()
-{
-	// this widget does not allowed "cleared" status.
-	m_widget->setValue(m_value);
-}
-
 QSize GridAttributeIntegerVariationEditWidget::sizeHint() const
 {
 	return m_widget->sizeHint();
@@ -51,4 +40,15 @@ QSize GridAttributeIntegerVariationEditWidget::sizeHint() const
 QSize GridAttributeIntegerVariationEditWidget::minimumSizeHint() const
 {
 	return m_widget->sizeHint();
+}
+
+void GridAttributeIntegerVariationEditWidget::setupWidget()
+{
+	// this widget does not allowed "cleared" status.
+	m_widget->setValue(m_value);
+}
+
+void GridAttributeIntegerVariationEditWidget::getValueFromInnerWidget()
+{
+	m_value = m_widget->value();
 }

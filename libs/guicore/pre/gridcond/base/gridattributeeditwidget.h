@@ -14,31 +14,28 @@ class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 	Q_OBJECT
 
 public:
-	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att) :
-		QWidget(parent),
-		m_gridAttribute {att}
-	{}
-	void clearValue() {
-		m_valueCleared = true;
-		m_valueSelected = false;
-		setupWidget();
-	}
-	bool valueSelected() {
-		getValueFromInnerWidget();
-		return m_valueSelected;
-	}
-	SolverDefinitionGridAttribute* gridAttribute() {return m_gridAttribute;}
+	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att);
+
+	SolverDefinitionGridAttribute* gridAttribute() const;
+
+	void clearValue();
+	bool valueSelected() const;
+
+	virtual QVariant variantValue() const = 0;
 	virtual void setVariantValue(const QVariant& v) = 0;
+
 	virtual void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) = 0;
 	virtual void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
-	virtual QVariant variantValue() = 0;
 
 protected:
+	virtual void getValueFromInnerWidget() const = 0;
 	virtual void setupWidget() = 0;
-	virtual void getValueFromInnerWidget() = 0;
-	bool m_valueCleared {false};
-	bool m_valueSelected {false};
 
+protected:
+	bool m_valueCleared {false};
+	mutable bool m_valueSelected {false};
+
+private:
 	SolverDefinitionGridAttribute* m_gridAttribute;
 };
 

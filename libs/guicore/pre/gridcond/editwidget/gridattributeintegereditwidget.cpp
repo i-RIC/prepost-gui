@@ -32,7 +32,7 @@ GridAttributeIntegerEditWidget::GridAttributeIntegerEditWidget(QWidget* parent, 
 GridAttributeIntegerEditWidget::~GridAttributeIntegerEditWidget()
 {}
 
-void GridAttributeIntegerEditWidget::getValueFromInnerWidget()
+void GridAttributeIntegerEditWidget::getValueFromInnerWidget() const
 {
 	m_value = m_widget->value();
 }

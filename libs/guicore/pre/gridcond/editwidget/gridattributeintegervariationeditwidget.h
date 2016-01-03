@@ -6,16 +6,17 @@ class IntegerNumberEditWidget;
 
 class GridAttributeIntegerVariationEditWidget : public GridAttributeVariationEditWidgetT<int>
 {
-
 public:
 	GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond);
 	~GridAttributeIntegerVariationEditWidget();
+
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
 
-protected:
+private:
 	void setupWidget() override;
 	void getValueFromInnerWidget() override;
+
 	IntegerNumberEditWidget* m_widget;
 };
 

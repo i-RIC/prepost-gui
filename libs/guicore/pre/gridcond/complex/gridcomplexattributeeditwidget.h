@@ -1,6 +1,8 @@
 #ifndef GRIDRELATEDCOMPLEXCONDITIONINTEGEROPTIONEDITWIDGET_H
 #define GRIDRELATEDCOMPLEXCONDITIONINTEGEROPTIONEDITWIDGET_H
 
+#include "../../../guicore_global.h"
+
 #include "../base/gridattributeeditwidgett.h"
 #include <QMap>
 #include <QList>
@@ -8,9 +10,8 @@
 class QComboBox;
 class SolverDefinitionGridComplexAttribute;
 
-class GridComplexAttributeEditWidget : public GridAttributeEditWidgetT<int>
+class GUICOREDLL_EXPORT GridComplexAttributeEditWidget : public GridAttributeEditWidgetT<int>
 {
-
 public:
 	GridComplexAttributeEditWidget(QWidget* parent, SolverDefinitionGridComplexAttribute* cond);
 	~GridComplexAttributeEditWidget();
@@ -23,11 +24,10 @@ public:
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
 
-protected:
-	void setupWidget() override;
-	void getValueFromInnerWidget() override;
-
 private:
+	void setupWidget() override;
+	void getValueFromInnerWidget() const override;
+
 	QMap<int, QString> m_enumerations;
 	int m_defaultIndex;
 	QList<int> m_values;

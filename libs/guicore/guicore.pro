@@ -383,6 +383,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
            pre/gridcond/base/private/gridattributedimensioncontainert_detail.h \
+           pre/gridcond/base/private/gridattributeeditwidgett_detail.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
@@ -575,8 +576,10 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/base/gridattributedimensionscontainer.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
+           pre/gridcond/base/gridattributeeditwidget.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \
            pre/gridcond/base/gridattributevariationeditwidget.cpp \
+           pre/gridcond/base/gridattributevariationeditwidgetcontainer.cpp \
            pre/gridcond/complex/gridcomplexattributecontainer.cpp \
            pre/gridcond/complex/gridcomplexattributeeditwidget.cpp \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.cpp \
