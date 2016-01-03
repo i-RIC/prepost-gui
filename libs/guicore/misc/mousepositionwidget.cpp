@@ -4,10 +4,10 @@
 
 MousePositionWidget::MousePositionWidget(QWidget* parent) :
 	QWidget(parent),
-	ui(new Ui::MousePositionWidget)
+	ui(new Ui::MousePositionWidget),
+	m_projectData {nullptr}
 {
 	ui->setupUi(this);
-	m_projectData = nullptr;
 }
 
 MousePositionWidget::~MousePositionWidget()
@@ -15,6 +15,10 @@ MousePositionWidget::~MousePositionWidget()
 	delete ui;
 }
 
+void MousePositionWidget::setProjectData(ProjectData* data)
+{
+	m_projectData = data;
+}
 
 void MousePositionWidget::updatePosition(const QVector2D& position)
 {

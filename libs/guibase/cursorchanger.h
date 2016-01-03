@@ -10,8 +10,9 @@ class GUIBASEDLL_EXPORT CursorChanger
 {
 public:
 	CursorChanger(const QCursor& cursor, QWidget* widget);
-	void restoreCursor();
 	~CursorChanger();
+
+	void restoreCursor();
 
 private:
 	CursorChanger(const CursorChanger& c) = delete;

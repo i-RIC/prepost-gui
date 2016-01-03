@@ -11,6 +11,7 @@ CursorChanger::CursorChanger(const QCursor& cursor, QWidget* widget) :
 void CursorChanger::restoreCursor()
 {
 	if (m_widget == nullptr) {return;}
+
 	m_widget->setCursor(m_origCursor);
 	m_widget = nullptr;
 }

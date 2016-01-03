@@ -22,7 +22,7 @@ void ColorEditWidget::setColor(const QColor& c)
 	setStyleSheet(str);
 }
 
-QColor ColorEditWidget::color()
+QColor ColorEditWidget::color() const
 {
 	return m_color;
 }

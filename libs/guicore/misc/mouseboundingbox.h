@@ -17,19 +17,25 @@ class GUICOREDLL_EXPORT MouseBoundingBox : public QObject
 
 public:
 	MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent);
+
+	QPoint startPoint() const;
 	void setStartPoint(int x, int y);
+
+	QPoint endPoint() const;
 	void setEndPoint(int x, int y);
-	const QPoint& startPoint() const {return m_startPoint;}
-	const QPoint& endPoint() const {return m_endPoint;}
+
 	void enable();
 	void disable();
-	void setZDepth(double z);
-	bool isInsideBox(double x, double y);
-	vtkUnstructuredGrid* vtkGrid() const {return m_lineGrid;}
-	vtkUnstructuredGrid* vtkRegionGrid() const {return m_regionGrid;}
-	vtkPolygon* getPolygon() const {return m_polygon;}
 
-protected:
+	void setZDepth(double z);
+
+	bool isInsideBox(double x, double y) const;
+
+	vtkUnstructuredGrid* vtkGrid() const;
+	vtkUnstructuredGrid* vtkRegionGrid() const;
+	vtkPolygon* getPolygon() const;
+
+private:
 	vtkSmartPointer<vtkPolygon> m_polygon;
 	vtkSmartPointer<vtkUnstructuredGrid> m_lineGrid;
 	vtkSmartPointer<vtkUnstructuredGrid> m_regionGrid;
@@ -40,6 +46,7 @@ protected:
 	vtkSmartPointer<vtkDataSetMapper> m_paintMapper;
 
 	VTK2DGraphicsView* m_graphicsView;
+
 	QPoint m_startPoint;
 	QPoint m_endPoint;
 };

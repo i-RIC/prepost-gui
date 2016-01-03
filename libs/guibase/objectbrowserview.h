@@ -15,31 +15,24 @@ class GUIBASEDLL_EXPORT ObjectBrowserView : public QTreeView
 
 public:
 	ObjectBrowserView(QWidget* parent);
-	/// Action to delete the selected item
-	QAction* deleteAction() const {return m_deleteAction;}
-	/// Action to move up the selected item
-	QAction* moveUpAction() const {return m_moveUpAction;}
-	/// Action to move down the selected item
-	QAction* moveDownAction() const {return m_moveDownAction;}
-	/// Action to show property dialog about the selected item
-	QAction* propertyAction() const {return m_propertyAction;}
-	/// Size hint about the widget
-	QSize sizeHint() const override {return QSize(250, 200);}
-	/// Set command execution mode true
-	void setCommandExecution(bool exec) {m_commandExecution = exec;}
-	/// Select the item with the specified index
+
+	QAction* deleteAction() const;
+	QAction* moveUpAction() const;
+	QAction* moveDownAction() const;
+	QAction* propertyAction() const;
+
+	QSize sizeHint() const override;
 	void select(const QModelIndex& index);
+
+	void setCommandExecution(bool exec);
 
 protected slots:
 	/// Emit signal pressed()
 	void handlePress(const QModelIndex& index);
-	/// Delete the selected item
+
 	void deleteCurrentItem();
-	/// Move up the selected item
 	void moveUpCurrentItem();
-	/// Move down the selected item
 	void moveDownCurrentItem();
-	/// Open property dialog for the selected item
 	void showPropertyForCurrentItem();
 
 signals:
@@ -58,16 +51,17 @@ signals:
 	void requestMoveUpMeasuredData(const QModelIndex& index);
 	void requestMoveDownMeasuredData(const QModelIndex& index);
 
-protected:
+private:
 	void mousePressEvent(QMouseEvent* event) override;
 	void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
+
 	QPoint m_pressGlobalPos;
+
 	QAction* m_moveUpAction;
 	QAction* m_moveDownAction;
 	QAction* m_deleteAction;
 	QAction* m_propertyAction;
 
-private:
 	bool m_commandExecution;
 	bool m_isPushing;
 };

@@ -19,16 +19,16 @@ class GUIBASEDLL_EXPORT ColorEditWidget : public QLabel
 
 public:
 	ColorEditWidget(QWidget* parent = nullptr);
-	/// Set the color
+
+	QColor color() const;
 	void setColor(const QColor& c);
-	/// The color
-	QColor color();
 
 signals:
 	void colorChanged(const QColor& c);
 
 private:
 	void mousePressEvent(QMouseEvent* ev) override;
+
 	QColor m_color;
 };
 

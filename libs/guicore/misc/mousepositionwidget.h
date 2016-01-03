@@ -22,7 +22,8 @@ class GUICOREDLL_EXPORT MousePositionWidget : public QWidget
 public:
 	explicit MousePositionWidget(QWidget* parent = nullptr);
 	~MousePositionWidget();
-	void setProjectData(ProjectData* data) {m_projectData = data;}
+
+	void setProjectData(ProjectData* data);
 
 public slots:
 	void updatePosition(const QVector2D& position);

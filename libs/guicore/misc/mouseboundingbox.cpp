@@ -7,10 +7,10 @@
 #include <vtkRenderer.h>
 #include <vtkTriangle.h>
 
-MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent)
-	: QObject(parent)
+MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent) :
+	QObject(parent),
+	m_graphicsView {view}
 {
-	m_graphicsView = view;
 	m_polygon = vtkSmartPointer<vtkPolygon>::New();
 	vtkIdList* idlist = m_polygon->GetPointIds();
 	vtkPoints* points = m_polygon->GetPoints();
@@ -81,16 +81,25 @@ MouseBoundingBox::MouseBoundingBox(VTK2DGraphicsView* view, QObject* parent)
 	disable();
 }
 
+QPoint MouseBoundingBox::startPoint() const
+{
+	return m_startPoint;
+}
+
 void MouseBoundingBox::setStartPoint(int x, int y)
 {
-	m_startPoint.setX(x);
-	m_startPoint.setY(y);
+	m_startPoint = QPoint(x, y);
 	setEndPoint(x, y);
 }
+
+QPoint MouseBoundingBox::endPoint() const
+{
+	return m_endPoint;
+}
+
 void MouseBoundingBox::setEndPoint(int x, int y)
 {
-	m_endPoint.setX(x);
-	m_endPoint.setY(y);
+	m_endPoint = QPoint(x, y);
 
 	// update points.
 	double dx, dy;
@@ -139,7 +148,7 @@ void MouseBoundingBox::setZDepth(double z)
 	m_paintActor->SetPosition(0, 0, z);
 }
 
-bool MouseBoundingBox::isInsideBox(double x, double y)
+bool MouseBoundingBox::isInsideBox(double x, double y) const
 {
 	double p[3];
 	vtkCell* hintCell = 0;
@@ -151,4 +160,19 @@ bool MouseBoundingBox::isInsideBox(double x, double y)
 	p[2] = 0;
 	vtkIdType cellid = m_regionGrid->FindCell(p, hintCell, 0, 1e-4, subid, pcoords, weights);
 	return (cellid >= 0);
+}
+
+vtkUnstructuredGrid* MouseBoundingBox::vtkGrid() const
+{
+	return m_lineGrid;
+}
+
+vtkUnstructuredGrid* MouseBoundingBox::vtkRegionGrid() const
+{
+	return m_regionGrid;
+}
+
+vtkPolygon* MouseBoundingBox::getPolygon() const
+{
+	return m_polygon;
 }
