@@ -34,12 +34,9 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	Q_OBJECT
 
 public:
-	/// Constructor
-	SolverConsoleWindow() {init();}
-	/// Constructor
-	SolverConsoleWindow(QWidget* /*parent*/) {init();}
-	/// Destructor
+	SolverConsoleWindow(QWidget* parent);
 	~SolverConsoleWindow();
+
 	/// Set newly created project data.
 	void setProjectData(ProjectData* d);
 	SolverConsoleWindowProjectDataItem* projectDataItem();
@@ -58,17 +55,14 @@ public:
 	/// Clear the console log.
 	void clear();
 
-	/// Save smapshot to pixmap
 	QPixmap snapshot() override;
 
 	QAction* exportLogAction;
 
 public slots:
-	/// Start the solver execution
 	void startSolver();
-	/// Terminate the solver execution
 	void terminateSolver();
-	/// Show dialog to edit background color
+
 	void editBackgroundColor();
 
 private slots:
@@ -80,38 +74,36 @@ private slots:
 	void handleSolverFinish(int, QProcess::ExitStatus);
 
 signals:
-	/// Solver started the calculation;
 	void solverStarted();
-	/// Solver finished the calculation;
 	void solverFinished();
 
 private:
 	/// Initialization
 	void init();
-	/// create ".cancel" file to ask solver to stop.
-	void createCancelFile();
-	/// remove ".cancel" file.
-	void removeCancelFile();
-	/// remove ".cancel_ok" file.
-	void removeCancelOkFile();
-	/// Append a log line
+
+	void createCancelFile();	  ///< create ".cancel" file to ask solver to stop.
+	void removeCancelFile();   	///< remove ".cancel" file.
+	void removeCancelOkFile();  ///< remove ".cancel_ok" file.
+
 	void appendLogLine(const QString& line);
-	/// Background color
-	const QColor backgroundColor() const;
-	/// Set background color;
+
+	QColor backgroundColor() const;
 	void setBackgroundColor(const QColor& c);
+
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
 	/// ProjectData instance
 	ProjectData* m_projectData;
 	/// Plain text edit widget to display solver STDOUT output
 	QPlainTextEdit* m_console;
+
 	QProcess* m_process;
 	bool m_solverKilled;
 	bool m_destructing;
 
+	class SetBackgroundColorCommand;
+
 public:
 	friend class SolverConsoleWindowProjectDataItem;
-	friend class SolverConsoleWindowBackgroundColorCommand;
 };
 
 #endif // SOLVERCONSOLEWINDOW_H

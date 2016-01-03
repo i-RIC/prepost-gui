@@ -47,9 +47,11 @@ LIBS += -liricGuicore
 # Input
 HEADERS += solverconsole_global.h \
            solverconsolewindow.h \
-           solverconsolewindowprojectdataitem.h
+           solverconsolewindowprojectdataitem.h \
+           private/solverconsolewindow_setbackgroundcolorcommand.h
 SOURCES += solverconsolewindow.cpp \
-           solverconsolewindowprojectdataitem.cpp
+           solverconsolewindowprojectdataitem.cpp \
+           private/solverconsolewindow_setbackgroundcolorcommand.cpp
 RESOURCES += solverconsole.qrc
 TRANSLATIONS += languages/iricSolverconsole_es_ES.ts \
                 languages/iricSolverconsole_fr_FR.ts \

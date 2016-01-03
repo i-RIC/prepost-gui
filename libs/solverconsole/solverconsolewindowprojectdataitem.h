@@ -17,11 +17,12 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindowProjectDataItem : public Projec
 
 public:
 	const static int MAXLINES = 200;
-	/// Constructor
-	explicit SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent);
+	SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent);
 	~SolverConsoleWindowProjectDataItem();
+
 	void initForSolverDefinition();
 	void loadExternalData(const QString& filename) override;
+
 	void open();
 	void close();
 	void clear();
@@ -30,12 +31,12 @@ public:
 public slots:
 	void exportConsoleLog();
 
-protected:
+private:
+	void appendToLines(const QString& line);
+
 	void doLoadFromProjectMainFile(const QDomNode& element) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
-	void appendToLines(const QString& line);
 	SolverConsoleWindow* m_solverConsoleWindow;
 	WindowGeometryContainer m_geometry;
 	QStringList m_lines;

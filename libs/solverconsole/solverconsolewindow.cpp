@@ -1,5 +1,6 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
+#include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -14,7 +15,6 @@
 #include <QAction>
 #include <QColorDialog>
 #include <QFile>
-#include <QFileDialog>
 #include <QFont>
 #include <QIODevice>
 #include <QLocale>
@@ -24,12 +24,14 @@
 #include <QProcessEnvironment>
 #include <QSettings>
 #include <QString>
-#include <QUndoCommand>
+
+SolverConsoleWindow::SolverConsoleWindow(QWidget*)
+{
+	init();
+}
 
 SolverConsoleWindow::~SolverConsoleWindow()
-{
-
-}
+{}
 
 void SolverConsoleWindow::init()
 {
@@ -216,12 +218,11 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	m_process = nullptr;
 	m_projectDataItem->close();
 
-	// remove cancel file.
 	removeCancelFile();
-	// remove cancel_ok file.
 	removeCancelOkFile();
 
 	if (m_destructing) {return;}
+
 	updateWindowTitle();
 	QWidget* parent = parentWidget();
 	parent->show();
@@ -241,10 +242,9 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 void SolverConsoleWindow::updateWindowTitle()
 {
-	ProjectData* data = m_projectData;
-	if (data == nullptr) {
+	if (m_projectData == nullptr) {
 		// Project is not loaded yet.
-		setWindowTitle(QString(tr("Solver Console")));
+		setWindowTitle(tr("Solver Console"));
 		return;
 	}
 	QString solver = m_projectData->solverDefinition()->caption();
@@ -254,7 +254,7 @@ void SolverConsoleWindow::updateWindowTitle()
 	} else {
 		status = tr("stopped");
 	}
-	setWindowTitle(QString(tr("Solver Console [%1] (%2)")).arg(solver, status));
+	setWindowTitle(tr("Solver Console [%1] (%2)").arg(solver, status));
 }
 
 void SolverConsoleWindow::setupDefaultGeometry()
@@ -287,37 +287,16 @@ void SolverConsoleWindow::appendLogLine(const QString& line)
 	m_projectDataItem->append(line);
 }
 
-/// Command to edit background color of solver console window
-class SolverConsoleWindowBackgroundColorCommand : public QUndoCommand
-{
-public:
-	SolverConsoleWindowBackgroundColorCommand(QColor newc, QColor oldc, SolverConsoleWindow* w)
-		: QUndoCommand(QObject::tr("Background Color Setting")) {
-		m_newColor = newc;
-		m_oldColor = oldc;
-		m_window = w;
-	}
-	void redo() {
-		m_window->setBackgroundColor(m_newColor);
-	}
-	void undo() {
-		m_window->setBackgroundColor(m_oldColor);
-	}
-private:
-	QColor m_newColor;
-	QColor m_oldColor;
-	SolverConsoleWindow* m_window;
-};
-
 void SolverConsoleWindow::editBackgroundColor()
 {
 	QColor c = backgroundColor();
 	QColor newc = QColorDialog::getColor(c, this, tr("Background Color"));
 	if (! newc.isValid()) {return;}
-	iRICUndoStack::instance().push(new SolverConsoleWindowBackgroundColorCommand(newc, c, this));
+
+	iRICUndoStack::instance().push(new SetBackgroundColorCommand(newc, this));
 }
 
-const QColor SolverConsoleWindow::backgroundColor() const
+QColor SolverConsoleWindow::backgroundColor() const
 {
 	QPalette p = m_console->palette();
 	return p.color(QPalette::Base);
