@@ -29,3 +29,13 @@ void ScalarsToColorsContainer::setValueRange(double, double)
 
 void ScalarsToColorsContainer::getValueRange(double*, double* ) const
 {}
+
+void ScalarsToColorsContainer::setVtkObj(vtkScalarsToColors* obj)
+{
+	m_vtkObj = obj;
+}
+
+void ScalarsToColorsContainer::setVtkDarkObj(vtkScalarsToColors* obj)
+{
+	m_vtkDarkObj = obj;
+}

@@ -11,14 +11,15 @@
 ColorTransferFunctionContainer::ColorTransferFunctionContainer(ProjectDataItem* d) :
 	ScalarsToColorsContainer {d}
 {
-	m_vtkObj = vtkColorTransferFunction::New();
-	m_vtkDarkObj = vtkColorTransferFunction::New();
+	setVtkObj(vtkColorTransferFunction::New());
+	setVtkDarkObj(vtkColorTransferFunction::New());
 }
 
 void ColorTransferFunctionContainer::update()
 {
-	vtkColorTransferFunction* ctf = dynamic_cast<vtkColorTransferFunction*>(m_vtkObj);
-	vtkColorTransferFunction* ctfDark = dynamic_cast<vtkColorTransferFunction*>(m_vtkDarkObj);
+	vtkColorTransferFunction* ctf = dynamic_cast<vtkColorTransferFunction*>(vtkObj());
+	vtkColorTransferFunction* ctfDark = dynamic_cast<vtkColorTransferFunction*>(vtkDarkObj());
+
 	ctf->RemoveAllPoints();
 	ctfDark->RemoveAllPoints();
 	double c[3];
@@ -29,20 +30,15 @@ void ColorTransferFunctionContainer::update()
 	}
 }
 
+const QMap<double, QColor> ColorTransferFunctionContainer::colors() const
+{
+	return m_colors;
+}
+
 void ColorTransferFunctionContainer::setColors(const QMap<double, QColor>& map)
 {
 	m_colors = map;
 	update();
-}
-
-void ColorTransferFunctionContainer::setEnumerations(const QMap<double, QString>& map)
-{
-	m_enumerations = map;
-}
-
-void ColorTransferFunctionContainer::setEnglishEnumerations(const QMap<double, QString>& map)
-{
-	m_englishEnumerations = map;
 }
 
 const QMap<double, QString>& ColorTransferFunctionContainer::enumerations() const
@@ -50,14 +46,19 @@ const QMap<double, QString>& ColorTransferFunctionContainer::enumerations() cons
 	return m_enumerations;
 }
 
-const QMap<double, QColor> ColorTransferFunctionContainer::colors() const
+void ColorTransferFunctionContainer::setEnumerations(const QMap<double, QString>& map)
 {
-	return m_colors;
+	m_enumerations = map;
 }
 
 const QMap<double, QString>& ColorTransferFunctionContainer::englishEnumerations() const
 {
 	return m_englishEnumerations;
+}
+
+void ColorTransferFunctionContainer::setEnglishEnumerations(const QMap<double, QString>& map)
+{
+	m_englishEnumerations = map;
 }
 
 void ColorTransferFunctionContainer::doLoadFromProjectMainFile(const QDomNode& node)
@@ -74,8 +75,7 @@ void ColorTransferFunctionContainer::doLoadFromProjectMainFile(const QDomNode& n
 
 void ColorTransferFunctionContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QMap<double, QColor>::iterator it;
-	for (it = m_colors.begin(); it != m_colors.end(); ++it){
+	for (auto it = m_colors.begin(); it != m_colors.end(); ++it){
 		writer.writeStartElement("Color");
 		iRIC::setDoubleAttribute(writer, "value", it.key());
 		iRIC::setColorAttribute(writer, "color", it.value());

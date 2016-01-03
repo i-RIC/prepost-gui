@@ -5,14 +5,8 @@
 
 class ColorTransferFunctionEditDialog : public ScalarsToColorsEditDialog
 {
-
 public:
-	ColorTransferFunctionEditDialog(QWidget* parent)
-		: ScalarsToColorsEditDialog(parent)
-	{}
-
-protected:
-	void setupDialog();
+	ColorTransferFunctionEditDialog(QWidget* parent);
 };
 
 #endif // COLORTRANSFERFUNCTIONEDITDIALOG_H

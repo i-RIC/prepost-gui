@@ -5,6 +5,9 @@ ScalarsToColorsEditWidget::ScalarsToColorsEditWidget(QWidget* parent) :
 	m_container {nullptr}
 {}
 
+ScalarsToColorsEditWidget::~ScalarsToColorsEditWidget()
+{}
+
 ScalarsToColorsContainer* ScalarsToColorsEditWidget::container() const
 {
 	return m_container;

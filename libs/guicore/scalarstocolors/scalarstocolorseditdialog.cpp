@@ -7,10 +7,18 @@
 
 ScalarsToColorsEditDialog::ScalarsToColorsEditDialog(QWidget* parent) :
 	QDialog(parent),
-	ui(new Ui::ScalarsToColorsEditDialog)
+	ui(new Ui::ScalarsToColorsEditDialog),
+	m_widget {nullptr}
 {
-	m_widget = 0;
 	ui->setupUi(this);
+}
+
+ScalarsToColorsEditDialog::~ScalarsToColorsEditDialog()
+{}
+
+ScalarsToColorsEditWidget* ScalarsToColorsEditDialog::widget() const
+{
+	return m_widget;
 }
 
 void ScalarsToColorsEditDialog::setWidget(ScalarsToColorsEditWidget* w)

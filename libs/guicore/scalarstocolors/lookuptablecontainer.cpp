@@ -21,8 +21,8 @@ LookupTableContainer::LookupTableContainer(ProjectDataItem* d) :
 	m_manualMax {"manualMax", 0},
 	m_colorMap {"colorMap", ColorMapSettingWidget::Rainbow}
 {
-	m_vtkObj = vtkColorTransferFunction::New();
-	m_vtkDarkObj = vtkColorTransferFunction::New();
+	setVtkObj(vtkColorTransferFunction::New());
+	setVtkDarkObj(vtkColorTransferFunction::New());
 
 	update();
 }
@@ -56,8 +56,8 @@ LookupTableContainer& LookupTableContainer::operator=(const LookupTableContainer
 
 void LookupTableContainer::update()
 {
-	vtkColorTransferFunction* func = dynamic_cast<vtkColorTransferFunction*>(m_vtkObj);
-	vtkColorTransferFunction* darkFunc = dynamic_cast<vtkColorTransferFunction*>(m_vtkDarkObj);
+	vtkColorTransferFunction* func = dynamic_cast<vtkColorTransferFunction*>(vtkObj());
+	vtkColorTransferFunction* darkFunc = dynamic_cast<vtkColorTransferFunction*>(vtkDarkObj());
 	double min;
 	double max;
 	if (m_autoRange) {
@@ -158,7 +158,7 @@ void LookupTableContainer::setValueRange(double min, double max)
 	}
 	if (m_autoRange) {
 		update();
-		if (m_autoMin != tmpmin || m_autoMax != tmpmax) { emit rangeChanged(); }
+		if (m_autoMin != tmpmin || m_autoMax != tmpmax) {emit rangeChanged();}
 	}
 }
 
@@ -250,4 +250,3 @@ void LookupTableContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		m_customSetting.save(writer);
 	}
 }
-

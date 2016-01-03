@@ -13,16 +13,23 @@ class GUICOREDLL_EXPORT ScalarsToColorsContainer : public ProjectDataItem
 public:
 	ScalarsToColorsContainer(ProjectDataItem* d);
 	virtual ~ScalarsToColorsContainer();
+
 	vtkScalarsToColors* vtkObj() const;
 	vtkScalarsToColors* vtkDarkObj() const;
+
 	virtual void update() = 0;
-	virtual void setValueRange(double min, double max);
+
 	virtual void getValueRange(double* min, double* max) const;
+	virtual void setValueRange(double min, double max);
 
 signals:
 	void rangeChanged();
 
 protected:
+	void setVtkObj(vtkScalarsToColors* obj);
+	void setVtkDarkObj(vtkScalarsToColors* obj);
+
+private:
 	vtkScalarsToColors* m_vtkObj;
 	vtkScalarsToColors* m_vtkDarkObj;
 };

@@ -9,6 +9,11 @@ ScalarsToColorsEditWidgetContainer::ScalarsToColorsEditWidgetContainer(QWidget* 
 	m_widget {nullptr}
 {}
 
+ScalarsToColorsEditWidget* ScalarsToColorsEditWidgetContainer::widget() const
+{
+	return m_widget;
+}
+
 void ScalarsToColorsEditWidgetContainer::setWidget(ScalarsToColorsEditWidget* w)
 {
 	m_widget = w;
@@ -18,17 +23,12 @@ void ScalarsToColorsEditWidgetContainer::setWidget(ScalarsToColorsEditWidget* w)
 	setLayout(l);
 }
 
-ScalarsToColorsEditWidget* ScalarsToColorsEditWidgetContainer::widget() const
+void ScalarsToColorsEditWidgetContainer::save()
 {
-	return m_widget;
+	m_widget->save();
 }
 
 QSize ScalarsToColorsEditWidgetContainer::sizeHint() const
 {
 	return m_widget->sizeHint();
-}
-
-void ScalarsToColorsEditWidgetContainer::save()
-{
-	m_widget->save();
 }

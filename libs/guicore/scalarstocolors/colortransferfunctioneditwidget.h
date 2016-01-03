@@ -19,21 +19,23 @@ class GUICOREDLL_EXPORT ColorTransferFunctionEditWidget : public ScalarsToColors
 {
 	Q_OBJECT
 
+private:
+	static const int ATTRWIDTH;
+	static const int COLORWIDTH;
+
 public:
-	static const int ATTRWIDTH = 170;
-	static const int COLORWIDTH = 50;
 	explicit ColorTransferFunctionEditWidget(QWidget* parent = nullptr);
 	virtual ~ColorTransferFunctionEditWidget();
-	void save() override;
 
-protected:
-	void setupWidget() override;
+	void save() override;
 
 private slots:
 	void handleItemEdit(QTableWidgetItem* item);
 	void handleItemClick(QTableWidgetItem* item);
 
 private:
+	void setupWidget() override;
+
 	Ui::ColorTransferFunctionEditWidget* ui;
 	QList<QColor> m_colors;
 };

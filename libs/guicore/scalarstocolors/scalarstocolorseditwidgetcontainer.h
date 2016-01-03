@@ -8,13 +8,15 @@
 
 class GUICOREDLL_EXPORT ScalarsToColorsEditWidgetContainer : public QWidget
 {
-
 public:
 	ScalarsToColorsEditWidgetContainer(QWidget* parent);
-	void setWidget(ScalarsToColorsEditWidget* w);
+
 	ScalarsToColorsEditWidget* widget() const;
-	QSize sizeHint() const override;
+	void setWidget(ScalarsToColorsEditWidget* w);
+
 	void save();
+
+	QSize sizeHint() const override;
 
 private:
 	ScalarsToColorsEditWidget* m_widget;

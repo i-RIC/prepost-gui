@@ -40,6 +40,9 @@ public:
 	}
 };
 
+const int ColorTransferFunctionEditWidget::ATTRWIDTH = 170;
+const int ColorTransferFunctionEditWidget::COLORWIDTH = 50;
+
 ColorTransferFunctionEditWidget::ColorTransferFunctionEditWidget(QWidget* parent) :
 	ScalarsToColorsEditWidget {parent},
 	ui {new Ui::ColorTransferFunctionEditWidget}
@@ -69,7 +72,7 @@ ColorTransferFunctionEditWidget::~ColorTransferFunctionEditWidget()
 
 void ColorTransferFunctionEditWidget::setupWidget()
 {
-	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(m_container);
+	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(container());
 	QMap<double, QString> enums = cont->enumerations();
 	m_colors.clear();
 	ui->tableWidget->blockSignals(true);
@@ -96,7 +99,7 @@ void ColorTransferFunctionEditWidget::setupWidget()
 
 void ColorTransferFunctionEditWidget::save()
 {
-	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(m_container);
+	ColorTransferFunctionContainer* cont = dynamic_cast<ColorTransferFunctionContainer*>(container());
 	QMap<double, QString> enums = cont->enumerations();
 	QMap<double, QColor> colors;
 

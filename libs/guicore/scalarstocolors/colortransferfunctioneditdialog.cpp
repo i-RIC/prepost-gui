@@ -1,4 +1,5 @@
 #include "colortransferfunctioneditdialog.h"
 
-void ColorTransferFunctionEditDialog::setupDialog()
+ColorTransferFunctionEditDialog::ColorTransferFunctionEditDialog(QWidget* parent) :
+	ScalarsToColorsEditDialog {parent}
 {}

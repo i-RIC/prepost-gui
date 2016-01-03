@@ -17,7 +17,7 @@ LookupTableEditWidget::~LookupTableEditWidget()
 
 void LookupTableEditWidget::setupWidget()
 {
-	LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(container());
 	ui->colorMapSetting->setColorMap(cont->colorMap());
 	ui->colorMapSetting->setCustomSetting(cont->customSetting());
 	ui->autoCheckBox->setChecked(cont->autoRange());
@@ -54,7 +54,7 @@ void LookupTableEditWidget::autoRangeUpdate(bool a)
 
 void LookupTableEditWidget::save()
 {
-	LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* cont = dynamic_cast<LookupTableContainer*>(container());
 	cont->setColorMap(ui->colorMapSetting->colorMap());
 	cont->setCustomSetting(ui->colorMapSetting->customSetting());
 	cont->setAutoRange(ui->autoCheckBox->isChecked());
@@ -67,25 +67,25 @@ void LookupTableEditWidget::save()
 
 void LookupTableEditWidget::setFillUpper(bool fill)
 {
-	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(container());
 	ui->fillUpperCheckBox->setChecked(c->autoRange() || fill);
 }
 
 void LookupTableEditWidget::setFillLower(bool fill)
 {
-	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(container());
 	ui->fillLowerCheckBox->setChecked(c->autoRange() || fill);
 }
 
 bool LookupTableEditWidget::fillUpper()
 {
-	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(container());
 	return c->autoRange() || ui->fillUpperCheckBox->isChecked();
 }
 
 bool LookupTableEditWidget::fillLower()
 {
-	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(m_container);
+	LookupTableContainer* c = dynamic_cast<LookupTableContainer*>(container());
 	return c->autoRange() || ui->fillLowerCheckBox->isChecked();
 }
 
