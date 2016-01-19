@@ -45,9 +45,15 @@
 
 Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post3dWindowDataItem* parent) :
 	Post3dWindowDataItem {zoneName.c_str(), QIcon(":/images/iconGrid.png"), parent},
+	m_shapeDataItem {nullptr},
+	m_contourGroupItem {nullptr},
+	m_scalarGroupDataItem {nullptr},
+	m_arrowGroupDataItem {nullptr},
+	m_streamlineGroupDataItem {nullptr},
+	m_particleGroupDataItem {nullptr},
+	m_particlesDataItem {nullptr},
 	m_zoneName (zoneName),
-	m_zoneNumber {zoneNumber},
-	m_particlesDataItem {nullptr}
+	m_zoneNumber {zoneNumber}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -176,10 +182,23 @@ PostZoneDataContainer* Post3dWindowZoneDataItem::dataContainer()
 void Post3dWindowZoneDataItem::update()
 {
 	m_shapeDataItem->update();
-	m_contourGroupItem->update();
-	m_scalarGroupDataItem->update();
-	m_arrowGroupDataItem->update();
-	m_streamlineGroupDataItem->update();
-	m_particleGroupDataItem->update();
-	m_particlesDataItem->update();
+
+	if (m_contourGroupItem != nullptr) {
+		m_contourGroupItem->update();
+	}
+	if (m_scalarGroupDataItem != nullptr) {
+		m_scalarGroupDataItem->update();
+	}
+	if (m_arrowGroupDataItem != nullptr) {
+		m_arrowGroupDataItem->update();
+	}
+	if (m_streamlineGroupDataItem != nullptr) {
+		m_streamlineGroupDataItem->update();
+	}
+	if (m_particleGroupDataItem != nullptr) {
+		m_particleGroupDataItem->update();
+	}
+	if (m_particlesDataItem != nullptr) {
+		m_particlesDataItem->update();
+	}
 }
