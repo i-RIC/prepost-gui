@@ -191,7 +191,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
 		tmpItem->unsetBCGroupDataItem();
 		m_childItems.removeAll(tmpItem);
-		m_gridDataItem = 0;
+		m_gridDataItem = nullptr;
 		updateItemMap();
 		delete tmpItem;
 	}
@@ -328,7 +328,8 @@ bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridIm
 	CgnsGridImporter* cgnsImpoter = dynamic_cast<CgnsGridImporter*> (importer);
 
 	auto gridItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
-	if (cgnsImpoter != 0){
+	importedGrid->setParent(gridItem);
+	if (cgnsImpoter != nullptr){
 		// CGNS importer is a little special.
 		// Boundary condition should be imported too.
 		QString tmpname;
