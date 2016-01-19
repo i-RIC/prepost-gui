@@ -123,7 +123,7 @@ iRICMainWindow::iRICMainWindow(QWidget* parent) :
 
 	setMenuBar(m_actionManager->menuBar());
 	addToolBar(m_actionManager->mainToolBar());
-	addToolBar(m_actionManager->windowsToolBar());
+	addToolBar(Qt::RightToolBarArea, m_actionManager->windowsToolBar());
 	addToolBarBreak(Qt::TopToolBarArea);
 
 	// Setup solver definition list.
