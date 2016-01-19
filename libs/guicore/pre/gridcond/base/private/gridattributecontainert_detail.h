@@ -6,9 +6,11 @@
 #include "../../../../project/projectcgnsfile.h"
 
 #include <misc/stringtool.h>
+#include <misc/filesystemfunction.h>
 
 #include <QDataStream>
 #include <QFile>
+#include <QFileInfo>
 
 template <class V>
 GridAttributeContainerT<V>::GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond) :
@@ -30,7 +32,10 @@ bool GridAttributeContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
 		for (int index = 0; index <= dims->maxIndex(); ++index) {
 			bool ok = loadFromCgnsFileForIndex(fn, B, Z, index);
 			if (ok) {
-				ok = saveToExternalFile(temporaryExternalFilename(index));
+				auto fileName = temporaryExternalFilename(index);
+				QFileInfo finfo(fileName);
+				iRIC::mkdirRecursively(finfo.absolutePath());
+				ok = saveToExternalFile(fileName);
 			}
 			allok = allok && ok;
 		}
