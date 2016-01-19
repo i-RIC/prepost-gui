@@ -372,6 +372,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributedimensionselectwidget.h \
            pre/gridcond/base/gridattributeeditcommand.h \
            pre/gridcond/base/gridattributeeditdialog.h \
+           pre/gridcond/base/gridattributeeditvariationcommand.h \
            pre/gridcond/base/gridattributeeditwidget.h \
            pre/gridcond/base/gridattributeeditwidgetcontainer.h \
            pre/gridcond/base/gridattributeeditwidgett.h \
@@ -401,7 +402,8 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributedimensioncontainert_detail.h \
            pre/gridcond/base/private/gridattributeeditwidget_impl.h \
            pre/gridcond/base/private/gridattributeeditwidgett_detail.h \
-           pre/gridcond/base/private/gridattributenodecontainert_detail.h
+           pre/gridcond/base/private/gridattributenodecontainert_detail.h \
+           pre/gridcond/base/private/gridattributevariationeditwidgett_detail.h
 FORMS += datamodel/propertybrowserview.ui \
          distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
@@ -601,6 +603,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
            pre/gridcond/base/gridattributeeditcommand.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
+           pre/gridcond/base/gridattributeeditvariationcommand.cpp \
            pre/gridcond/base/gridattributeeditwidget.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \
            pre/gridcond/base/gridattributevariationeditwidget.cpp \

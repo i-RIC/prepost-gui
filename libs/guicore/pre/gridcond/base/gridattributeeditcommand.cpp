@@ -24,7 +24,7 @@ void GridAttributeEditCommand::redo()
 
 void GridAttributeEditCommand::undo()
 {
-	copyValues(m_newValues, m_oldCustomModified);
+	copyValues(m_oldValues, m_oldCustomModified);
 }
 
 void GridAttributeEditCommand::copyValues(vtkDataArray* data, bool modified)
