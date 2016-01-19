@@ -30,11 +30,11 @@ void GeoDataNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridAttrib
 		ui->dimGridLayout->addWidget(label, i, 0);
 		QComboBox* comboBox = new QComboBox(this);
 		ui->dimGridLayout->addWidget(comboBox, i, 1);
-		m_dimComboBoxes.append(comboBox);
+		m_dimComboBoxes.push_back(comboBox);
 	}
 }
 
-void GeoDataNetcdfImporterSettingDialog::setVariables(const QList<NcVariable>& vars)
+void GeoDataNetcdfImporterSettingDialog::setVariables(const std::vector<NcVariable>& vars)
 {
 	m_variables = vars;
 	for (int i = 0; i < vars.size(); ++i) {
@@ -66,9 +66,9 @@ QString GeoDataNetcdfImporterSettingDialog::variableName() const
 	return m_variables.at(index).name;
 }
 
-QList<QString> GeoDataNetcdfImporterSettingDialog::dimensionMappingSetting() const
+std::vector<QString> GeoDataNetcdfImporterSettingDialog::dimensionMappingSetting() const
 {
-	QList<QString> ret;
+	std::vector<QString> ret;
 	int index = ui->valueComboBox->currentIndex();
 	if (index == -1) {return ret;}
 	const NcVariable& var = m_variables.at(index);
@@ -76,7 +76,7 @@ QList<QString> GeoDataNetcdfImporterSettingDialog::dimensionMappingSetting() con
 	for (int i = 0; i < m_dimComboBoxes.size(); ++i) {
 		QComboBox* comboBox = m_dimComboBoxes.at(i);
 		int current = comboBox->currentIndex();
-		ret.append(var.dimensions.at(current));
+		ret.push_back(var.dimensions.at(current));
 	}
 	return ret;
 }

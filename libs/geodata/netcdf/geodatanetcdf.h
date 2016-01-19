@@ -59,15 +59,15 @@ public:
 	GeoDataNetcdf(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~GeoDataNetcdf();
 
-	const QList<double> lonValues() const {return m_lonValues;}
-	const QList<double> latValues() const {return m_latValues;}
-	QList<double> lonValues() {return m_lonValues;}
-	QList<double> latValues() {return m_latValues;}
+	const std::vector<double> lonValues() const {return m_lonValues;}
+	const std::vector<double> latValues() const {return m_latValues;}
+	std::vector<double> lonValues() {return m_lonValues;}
+	std::vector<double> latValues() {return m_latValues;}
 
-	const QList<double> xValues() const {return m_xValues;}
-	const QList<double> yValues() const {return m_yValues;}
-	QList<double> xValues() {return m_xValues;}
-	QList<double> yValues() {return m_yValues;}
+	const std::vector<double> xValues() const {return m_xValues;}
+	const std::vector<double> yValues() const {return m_yValues;}
+	std::vector<double> xValues() {return m_xValues;}
+	std::vector<double> yValues() {return m_yValues;}
 
 	int xSize() const;
 	int ySize() const;
@@ -76,10 +76,10 @@ public:
 	QString coordinateSystemName() const {return m_coordinateSystemName;}
 
 	int defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimId, int* latDimId, int* xVarId, int* yVarId, int* lonVarId, int* latVarId);
-	int defineDimensions(int ncid, QList<int>& dimIds, QList<int>& varIds);
-	int defineValue(int ncid, int xId, int yId, const QList<int>& dimIds, int* varId);
+	int defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds);
+	int defineValue(int ncid, int xId, int yId, const std::vector<int>& dimIds, int* varId);
 	int outputCoords(int ncid, int xId, int yId, int lonId, int latId);
-	int outputDimensions(int ncid, const QList<int>& varIds);
+	int outputDimensions(int ncid, const std::vector<int>& varIds);
 	bool requestCoordinateSystem() const override {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
@@ -90,7 +90,7 @@ public:
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
-	void handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override;
+	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
 
 private:
 	void setupActors() override;
@@ -122,7 +122,7 @@ protected:
 	bool lineAtJIntersect(int j, int dimI, int dimJ, const RectRegion& region) const;
 
 	virtual void doHandleDimensionCurrentIndexChange(int oldIndex, int newIndex) = 0;
-	virtual void doHandleDimensionValuesChange(GridAttributeDimensionContainer* cont, const QList<QVariant>& before, const QList<QVariant>& after) = 0;
+	virtual void doHandleDimensionValuesChange(GridAttributeDimensionContainer* cont, const std::vector<QVariant>& before, const std::vector<QVariant>& after) = 0;
 
 	vtkSmartPointer<vtkStructuredGrid> m_grid;
 	vtkSmartPointer<vtkStructuredGrid> m_simplifiedGrid;
@@ -136,11 +136,11 @@ protected:
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
 	vtkSmartPointer<vtkActor> m_regionActor;
 
-	QList<double> m_lonValues;
-	QList<double> m_latValues;
+	std::vector<double> m_lonValues;
+	std::vector<double> m_latValues;
 
-	QList<double> m_xValues;
-	QList<double> m_yValues;
+	std::vector<double> m_xValues;
+	std::vector<double> m_yValues;
 
 	CoordinateSystemType m_coordinateSystemType;
 	QString m_coordinateSystemName;

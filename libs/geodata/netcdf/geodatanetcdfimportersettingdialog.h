@@ -21,24 +21,24 @@ public:
 
 	public:
 		QString name;
-		QList<QString> dimensions;
+		std::vector<QString> dimensions;
 	};
 
 	explicit GeoDataNetcdfImporterSettingDialog(QWidget* parent = 0);
 	~GeoDataNetcdfImporterSettingDialog();
 
 	void setCondition(SolverDefinitionGridAttribute*	condition);
-	void setVariables(const QList<NcVariable>& vars);
+	void setVariables(const std::vector<NcVariable>& vars);
 	bool needToShow() const;
 	QString variableName() const;
-	QList<QString> dimensionMappingSetting() const;
+	std::vector<QString> dimensionMappingSetting() const;
 
 private slots:
 	void handleVarChange(int index);
 
 private:
-	QList<QComboBox*> m_dimComboBoxes;
-	QList<NcVariable> m_variables;
+	std::vector<QComboBox*> m_dimComboBoxes;
+	std::vector<NcVariable> m_variables;
 
 	Ui::GeoDataNetcdfImporterSettingDialog* ui;
 };

@@ -130,8 +130,8 @@ protected:
 		Q_UNUSED(ret)
 	}
 
-	void doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) override {
-
+	void doHandleDimensionValuesChange(GridAttributeDimensionContainer* /*cont*/, const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/) override {
+		// @todo implement this
 	}
 };
 

@@ -118,19 +118,19 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 
 	netcdf->m_lonValues.clear();
 	for (size_t i = 0; i < lonLen; ++i) {
-		netcdf->m_lonValues.append(lons[i]);
+		netcdf->m_lonValues.push_back(lons[i]);
 	}
 	netcdf->m_latValues.clear();
 	for (size_t i = 0; i < latLen; ++i) {
-		netcdf->m_latValues.append(lats[i]);
+		netcdf->m_latValues.push_back(lats[i]);
 	}
 
 	// Xband x rader time valuesa are already unix time stamp. No conversion.
 	GridAttributeDimensionsContainer* dims = m_groupDataItem->dimensions();
 	GridAttributeDimensionContainer* c = dims->containers().at(0);
-	QList<QVariant> timeVals;
+	std::vector<QVariant> timeVals;
 	for (size_t i = 0; i < timeLen; ++i) {
-		timeVals.append(times[i]);
+		timeVals.push_back(times[i]);
 	}
 
 	if (c->variantValues().size() == 0) {
@@ -145,13 +145,13 @@ bool GeoDataNetcdfXbandImporter::importData(GeoData* data, int /*index*/, QWidge
 	// save coordinates and dimensions to the netcdf file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
-	QList<int> dimIds;
-	QList<int> varIds;
+	std::vector<int> dimIds;
+	std::vector<int> varIds;
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
 	netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-	netcdf->defineDimensions(ncid_out, dimIds, varIds);
+	netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
 	ret = netcdf->defineValue(ncid_out, out_lonDimId, out_latDimId, dimIds, &varOutId);
 
 	ret = nc_enddef(ncid_out);

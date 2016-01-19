@@ -1,6 +1,8 @@
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
 #include "gridattributedimensioncontainer.h"
 
+#include <QVariant>
+
 GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def) :
 	GridAttributeBaseObject(def->attribute()) ,
 	m_definition (def),

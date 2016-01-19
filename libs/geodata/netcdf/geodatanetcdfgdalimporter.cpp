@@ -89,11 +89,11 @@ bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int index, QWidget* /*
 	netcdf->m_coordinateSystemName = m_coordinateSystem->name();
 	netcdf->m_xValues.clear();
 	for (int i = 0; i < xsize; ++i) {
-		netcdf->m_xValues.append(m_transform[0] + m_transform[1] * i);
+		netcdf->m_xValues.push_back(m_transform[0] + m_transform[1] * i);
 	}
 	netcdf->m_yValues.clear();
 	for (int i = 0; i < ysize; ++i) {
-		netcdf->m_yValues.append(m_transform[3] + m_transform[5] * (ysize - 1 - i));
+		netcdf->m_yValues.push_back(m_transform[3] + m_transform[5] * (ysize - 1 - i));
 	}
 
 	netcdf->m_lonValues.clear();
@@ -103,8 +103,8 @@ bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int index, QWidget* /*
 			double x = netcdf->m_xValues.at(i);
 			double lon, lat;
 			m_coordinateSystem->mapGridToGeo(x, y, &lon, &lat);
-			netcdf->m_lonValues.append(lon);
-			netcdf->m_latValues.append(lat);
+			netcdf->m_lonValues.push_back(lon);
+			netcdf->m_latValues.push_back(lat);
 		}
 	}
 
@@ -125,7 +125,7 @@ bool GeoDataNetcdfGdalImporter::importData(GeoData* data, int index, QWidget* /*
 	// save coordinates and dimensions to the netcdf file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
-	QList<int> dimIds;
+	std::vector<int> dimIds;
 
 	int varOutId;
 

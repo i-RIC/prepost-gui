@@ -3,6 +3,8 @@
 
 #include "../gridattributedimensioncontainert.h"
 
+#include <QFile>
+
 template <class V>
 GridAttributeDimensionContainerT<V>::GridAttributeDimensionContainerT(SolverDefinitionGridAttributeDimension* def) :
 	GridAttributeDimensionContainer(def)
@@ -13,23 +15,23 @@ GridAttributeDimensionContainerT<V>::~GridAttributeDimensionContainerT()
 {}
 
 template <class V>
-const QList<V>& GridAttributeDimensionContainerT<V>::values() const
+const std::vector<V> &GridAttributeDimensionContainerT<V>::values() const
 {
 	return m_values;
 }
 
 template <class V>
-QList<V>& GridAttributeDimensionContainerT<V>::values()
+std::vector<V> &GridAttributeDimensionContainerT<V>::values()
 {
 	return m_values;
 }
 
 template <class V>
-void GridAttributeDimensionContainerT<V>::setValues(const QList<V>& vals)
+void GridAttributeDimensionContainerT<V>::setValues(const std::vector<V> &vals)
 {
-	QList<QVariant> oldVals = variantValues();
+	std::vector<QVariant> oldVals = variantValues();
 	m_values = vals;
-	QList<QVariant> newVals = variantValues();
+	std::vector<QVariant> newVals = variantValues();
 	emit valuesChanged();
 	emit valuesChanged(oldVals, newVals);
 }
@@ -61,24 +63,25 @@ QVariant GridAttributeDimensionContainerT<V>::variantValue(int index) const
 }
 
 template <class V>
-QList<QVariant> GridAttributeDimensionContainerT<V>::variantValues() const
+std::vector<QVariant> GridAttributeDimensionContainerT<V>::variantValues() const
 {
-	QList<QVariant> ret;
+	std::vector<QVariant> ret;
+	ret.reserve(count());
 	for (int i = 0; i < count(); ++i) {
 		QVariant v = variantValue(i);
-		ret.append(v);
+		ret.push_back(v);
 	}
 	return ret;
 }
 
 template <class V>
-void GridAttributeDimensionContainerT<V>::setVariantValues(const QList<QVariant>& vals)
+void GridAttributeDimensionContainerT<V>::setVariantValues(const std::vector<QVariant> &vals)
 {
-	QList<QVariant> currentVals = variantValues();
+	std::vector<QVariant> currentVals = variantValues();
 	if (currentVals == vals) {return;}
-	QList<V> nativeVals;
+	std::vector<V> nativeVals;
 	for (int i = 0; i < vals.size(); ++i) {
-		nativeVals.append(fromVariant(vals.at(i)));
+		nativeVals.push_back(fromVariant(vals.at(i)));
 	}
 	setValues(nativeVals);
 }
@@ -86,7 +89,7 @@ void GridAttributeDimensionContainerT<V>::setVariantValues(const QList<QVariant>
 template <class V>
 int GridAttributeDimensionContainerT<V>::count() const
 {
-	return m_values.count();
+	return static_cast<int> (m_values.size());
 }
 
 template <class V>
@@ -97,12 +100,13 @@ bool GridAttributeDimensionContainerT<V>::loadFromExternalFile(const QString& fi
 	if (!ok) { return false; }
 	QDataStream s(&f);
 	int count;
-	QList<V> vals;
+	std::vector<V> vals;
 	V value;
 	s >> count;
+	vals.reserve(count);
 	for (int i = 0; i < count; ++i) {
 		s >> value;
-		vals.append(value);
+		vals.push_back(value);
 	}
 	f.close();
 	setValues(vals);
@@ -116,7 +120,7 @@ bool GridAttributeDimensionContainerT<V>::saveToExternalFile(const QString& file
 	bool ok = f.open(QIODevice::WriteOnly);
 	if (!ok) { return false;}
 	QDataStream s(&f);
-	int count = m_values.size();
+	int count = static_cast<int> (m_values.size());
 	s << count;
 	for (int i = 0; i < count; ++i) {
 		s << m_values.at(i);
@@ -150,14 +154,15 @@ bool GridAttributeDimensionContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
 				// We've found the array!
 				dataCount = dimensionVector[0];
 				// load data.
-				V* data = new V[dataCount];
-				ier = cg_array_read(i, data);
+				std::vector<V> data(dataCount, 0);
+				ier = cg_array_read(i, data.data());
 				m_values.clear();
-				for (cgsize_t j = 0; j < dataCount; ++j) {
-					m_values.append(*(data + j));
+				m_values.reserve(dataCount);
+				for (auto j = 0; j < dataCount; ++j) {
+					m_values.push_back(data[j]);
 				}
-				delete[] data;
 				found = true;
+				break;
 			}
 		}
 	}
@@ -165,7 +170,7 @@ bool GridAttributeDimensionContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
 }
 
 template <class V>
-bool GridAttributeDimensionContainerT<V>::saveFromCgnsFile(int fn, int B, int Z)
+bool GridAttributeDimensionContainerT<V>::saveToCgnsFile(int fn, int B, int Z)
 {
 	QString arrayName = QString("Dimension_%1").arg(name().c_str());
 
@@ -177,13 +182,12 @@ bool GridAttributeDimensionContainerT<V>::saveFromCgnsFile(int fn, int B, int Z)
 	cg_delete_node(const_cast<char*>(iRIC::toStr(arrayName).c_str()));
 	// Create the "array" array
 	int dataCount = count();
-	cgsize_t dimensions = m_values.count();
-	V* data = new V[dataCount];
+	cgsize_t dimensions = static_cast<cgsize_t> (m_values.size());
+	std::vector<V> data(dataCount, 0);
 	for (int i = 0; i < dataCount; ++i) {
 		data[i] = m_values.at(i);
 	}
-	ier = cg_array_write(iRIC::toStr(arrayName).c_str(), dataType(), 1, &dimensions, data);
-	delete[] data;
+	ier = cg_array_write(iRIC::toStr(arrayName).c_str(), dataType(), 1, &dimensions, data.data());
 	if (ier != 0) {return false;}
 	return true;
 }

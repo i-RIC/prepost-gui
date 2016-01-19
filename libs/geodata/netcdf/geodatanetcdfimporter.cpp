@@ -57,8 +57,8 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	ret = nc_inq_dimids(ncid, &ndims, dimids.data(), 0);
 	if (ret != 0) {return false;}
 
-	QList<QString> dims;
-	QList<int> dimIds;
+	std::vector<QString> dims;
+	std::vector<int> dimIds;
 
 	for (int i = 0; i < ndims; ++i) {
 		int dimid = dimids[i];
@@ -78,8 +78,8 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			// latitude found
 			m_latDimId = dimid;
 		}	else {
-			dims.append(name);
-			dimIds.append(dimid);
+			dims.push_back(name);
+			dimIds.push_back(dimid);
 		}
 	}
 
@@ -102,7 +102,7 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 	dimids.assign(10, 0);
 	int nAtts;
 
-	QList<GeoDataNetcdfImporterSettingDialog::NcVariable> variables;
+	std::vector<GeoDataNetcdfImporterSettingDialog::NcVariable> variables;
 	for (int i = 0; i < nvars; ++i) {
 		ret = nc_inq_var(ncid, varids[i], &(nameBuffer[0]), &ncType, &nDims, dimids.data(), &nAtts);
 		if (nDims != 2 + condition->dimensions().size()) {
@@ -119,13 +119,17 @@ bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*sel
 			else if (m_csType == GeoDataNetcdf::XY && dimid == m_yDimId) {yOk = true;}
 			else if (m_csType == GeoDataNetcdf::LonLat && dimid == m_lonDimId) {xOk = true;}
 			else if (m_csType == GeoDataNetcdf::LonLat && dimid == m_latDimId) {yOk = true;}
-			int dimIdx = dimIds.indexOf(dimid);
-			if (dimIdx != -1) {
-				v.dimensions.append(dims.at(dimIdx));
+
+			auto it = std::find(dimids.begin(), dimids.end(), dimid);
+			if (it != dimids.end()) {
+				auto idx = it - dimids.begin();
+				if (idx < dims.size()) {
+					v.dimensions.push_back(dims[it - dimids.begin()]);
+				}
 			}
 		}
 		if (xOk && yOk) {
-			variables.append(v);
+			variables.push_back(v);
 		}
 	}
 
@@ -193,11 +197,11 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 		netcdf->m_xValues.clear();
 		for (size_t i = 0; i < xlen; ++i) {
-			netcdf->m_xValues.append(xs[i]);
+			netcdf->m_xValues.push_back(xs[i]);
 		}
 		netcdf->m_yValues.clear();
 		for (size_t i = 0; i < ylen; ++i) {
-			netcdf->m_yValues.append(ys[i]);
+			netcdf->m_yValues.push_back(ys[i]);
 		}
 
 		// load Lon and Lat
@@ -219,11 +223,11 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 		netcdf->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.append(lons[i]);
+			netcdf->m_lonValues.push_back(lons[i]);
 		}
 		netcdf->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.append(lats[i]);
+			netcdf->m_latValues.push_back(lats[i]);
 		}
 	} else if (m_csType == GeoDataNetcdf::LonLat) {
 		// load Lon and Lat
@@ -246,11 +250,11 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 
 		netcdf->m_lonValues.clear();
 		for (size_t i = 0; i < lonLen; ++i) {
-			netcdf->m_lonValues.append(lons[i]);
+			netcdf->m_lonValues.push_back(lons[i]);
 		}
 		netcdf->m_latValues.clear();
 		for (size_t i = 0; i < latLen; ++i) {
-			netcdf->m_latValues.append(lats[i]);
+			netcdf->m_latValues.push_back(lats[i]);
 		}
 	}
 
@@ -267,8 +271,8 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 		ret = nc_inq_dimlen(ncid_in, dimid, &dimlen);
 		ret = nc_inq_varid(ncid_in, iRIC::toStr(dim).c_str(), &varid);
 
-		QList<QVariant> vals;
-		QList<QVariant> convertedVals;
+		std::vector<QVariant> vals;
+		std::vector<QVariant> convertedVals;
 		ret = ncGetVariableAsQVariant(ncid_in, varid, dimlen, vals);
 		convertedVals = vals;
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
@@ -298,13 +302,13 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 	// save coordinates and dimensions to the netcdf file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;
 	int out_xVarId, out_yVarId, out_lonVarId, out_latVarId;
-	QList<int> dimIds;
-	QList<int> varIds;
+	std::vector<int> dimIds;
+	std::vector<int> varIds;
 	int varOutId;
 
 	ret = nc_redef(ncid_out);
 	netcdf->defineCoords(ncid_out, &out_xDimId, &out_yDimId, &out_lonDimId, &out_latDimId, &out_xVarId, &out_yVarId, &out_lonVarId, &out_latVarId);
-	netcdf->defineDimensions(ncid_out, dimIds, varIds);
+	netcdf->defineDimensions(ncid_out, &dimIds, &varIds);
 	if (m_csType == GeoDataNetcdf::XY) {
 		ret = netcdf->defineValue(ncid_out, out_xDimId, out_yDimId, dimIds, &varOutId);
 	} else if (m_csType == GeoDataNetcdf::LonLat) {
@@ -337,7 +341,7 @@ int GeoDataNetcdfImporter::ncGetVariableAsDouble(int ncid, int varid, size_t len
 	return NC_NOERR;
 }
 
-int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t len, QList<QVariant>& list)
+int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list)
 {
 	int ret;
 	nc_type ncType;
@@ -348,48 +352,48 @@ int GeoDataNetcdfImporter::ncGetVariableAsQVariant(int ncid, int varid, size_t l
 		ret = nc_get_var_int(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	} else if (ncType == NC_UINT) {
 		std::vector<unsigned int> tmpbuffer(len);
 		ret = nc_get_var_uint(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	} else if (ncType == NC_INT64) {
 		std::vector<long long> tmpbuffer(len);
 		ret = nc_get_var_longlong(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	} else if (ncType == NC_UINT64) {
 		std::vector<unsigned long long> tmpbuffer(len);
 		ret = nc_get_var_ulonglong(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	}	else if (ncType == NC_FLOAT) {
 		std::vector<float> tmpbuffer(len);
 		ret = nc_get_var_float(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	} else if (ncType == NC_DOUBLE) {
 		std::vector<double> tmpbuffer(len);
 		ret = nc_get_var_double(ncid, varid, tmpbuffer.data());
 		if (ret != NC_NOERR) {return ret;}
 		for (size_t i = 0; i < len; ++i) {
-			list.append(QVariant(tmpbuffer[i]));
+			list.push_back(QVariant(tmpbuffer[i]));
 		}
 	}
 	return NC_NOERR;
 }
 
-QList<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, QList<QVariant>& values, QWidget* parent, bool* canceled)
+std::vector<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled)
 {
 	*canceled = false;
 	QRegExp rx("(.+) since (.+)");
@@ -416,7 +420,7 @@ QList<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, QList<QV
 		zeroDate = QDateTime::fromString(rxDate2.cap(1), "yyyy/M/d");
 	}
 
-	QList<QVariant> ret;
+	std::vector<QVariant> ret;
 	if (!zeroDate.isValid()) {
 		GeoDataNetcdfImporterDateSelectDialog dialog(parent);
 		dialog.setUnit(units);
@@ -446,7 +450,7 @@ QList<QVariant> GeoDataNetcdfImporter::convertTimeValues(QString units, QList<QV
 			int years = val.toInt();
 			d = d.addYears(years);
 		}
-		ret.append(d.toTime_t());
+		ret.push_back(d.toTime_t());
 	}
 	return ret;
 }

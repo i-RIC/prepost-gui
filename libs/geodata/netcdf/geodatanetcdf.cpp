@@ -159,12 +159,12 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		m_xValues.clear();
 		m_xValues.reserve(static_cast<int>(xSize));
 		for (size_t i = 0; i < xSize; ++i) {
-			m_xValues.append(xs[i]);
+			m_xValues.push_back(xs[i]);
 		}
 		m_yValues.clear();
 		m_yValues.reserve(static_cast<int>(ySize));
 		for (size_t i = 0; i < ySize; ++i) {
-			m_yValues.append(ys[i]);
+			m_yValues.push_back(ys[i]);
 		}
 
 		// load Lon Lat Values
@@ -189,12 +189,12 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
 		for (size_t i = 0; i < lonSize; ++i) {
-			m_lonValues.append(lons[i]);
+			m_lonValues.push_back(lons[i]);
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
 		for (size_t i = 0; i < latSize; ++i) {
-			m_latValues.append(lats[i]);
+			m_latValues.push_back(lats[i]);
 		}
 	} else {
 		// the coordinate system type is LonLat.
@@ -220,12 +220,12 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		m_lonValues.clear();
 		m_lonValues.reserve(static_cast<int>(lonSize));
 		for (size_t i = 0; i < lonSize; ++i) {
-			m_lonValues.append(lons[i]);
+			m_lonValues.push_back(lons[i]);
 		}
 		m_latValues.clear();
 		m_latValues.reserve(static_cast<int>(latSize));
 		for (size_t i = 0; i < latSize; ++i) {
-			m_latValues.append(lats[i]);
+			m_latValues.push_back(lats[i]);
 		}
 	}
 
@@ -251,13 +251,13 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		if (dynamic_cast<GridAttributeDimensionIntegerContainer*>(c) != nullptr) {
 			std::vector<int> vals(dimSize);
 			ret = nc_get_var_int(ncid, dVarId, vals.data());
-			QList<QVariant> vals1;
+			std::vector<QVariant> vals1(dimSize, 0);
 			for (size_t j = 0; j < dimSize; ++j) {
 				QVariant v(vals[j]);
-				vals1.append(v);
+				vals1.push_back(v);
 			}
 
-			QList<QVariant> vals2 = c->variantValues();
+			auto vals2 = c->variantValues();
 			if (vals1 != vals2) {
 				// invalid!
 				// @todo add error handling!
@@ -265,13 +265,13 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 		} else if (dynamic_cast<GridAttributeDimensionRealContainer*>(c) != nullptr) {
 			std::vector<double> vals(dimSize);
 			ret = nc_get_var_double(ncid, dVarId, vals.data());
-			QList<QVariant> vals1;
+			std::vector<QVariant> vals1(dimSize, 0);
 			for (size_t j = 0; j < dimSize; ++j) {
 				QVariant v(vals[j]);
-				vals1.append(v);
+				vals1.push_back(v);
 			}
 
-			QList<QVariant> vals2 = c->variantValues();
+			auto vals2 = c->variantValues();
 			if (vals1 != vals2) {
 				// invalid!
 				// @todo add error handling!
@@ -304,7 +304,7 @@ void GeoDataNetcdf::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writeOpacityPercent(m_opacityPercent, writer);
 }
 
-void GeoDataNetcdf::doApplyOffset(double x, double y)
+void GeoDataNetcdf::doApplyOffset(double /*x*/, double /*y*/)
 {
 	// @todo implement this
 
@@ -316,7 +316,7 @@ void GeoDataNetcdf::updateShapeData()
 
 	vtkPoints* points = m_grid->GetPoints();
 	if (m_coordinateSystemType == XY) {
-		m_grid->SetDimensions(m_xValues.size() + 1, m_yValues.size() + 1, 1);
+		m_grid->SetDimensions(static_cast<int> (m_xValues.size()) + 1, static_cast<int> (m_yValues.size()) + 1, 1);
 		points->Initialize();
 		points->Allocate((m_xValues.size() + 1) * (m_yValues.size() + 1));
 		double* longitudes = new double[(m_xValues.size() + 1) * (m_yValues.size() + 1)];
@@ -434,7 +434,7 @@ void GeoDataNetcdf::updateShapeData()
 		delete latitudes;
 		delete longitudes;
 	} else if (m_coordinateSystemType == LonLat) {
-		m_grid->SetDimensions(m_lonValues.size() + 1, m_latValues.size() + 1, 1);
+		m_grid->SetDimensions(static_cast<int> (m_lonValues.size()) + 1, static_cast<int> (m_latValues.size()) + 1, 1);
 		points->Initialize();
 		points->Allocate((m_lonValues.size() + 1) * (m_latValues.size() + 1));
 		for (int j = 0; j < m_latValues.size() + 1; ++j) {
@@ -598,7 +598,7 @@ int GeoDataNetcdf::defineCoords(int ncid, int* xDimId, int* yDimId, int* lonDimI
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& varIds)
+int GeoDataNetcdf::defineDimensions(int ncid, std::vector<int>* dimIds, std::vector<int>* varIds)
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
 	int ret;
@@ -610,16 +610,16 @@ int GeoDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& va
 		if (c->definition()->name() == "time") {len = NC_UNLIMITED;}
 		ret = nc_def_dim(ncid, c->definition()->name().c_str(), len, &dimId);
 		if (ret != NC_NOERR) {return ret;}
-		dimIds.append(dimId);
+		dimIds->push_back(dimId);
 	}
 	for (int i = 0; i < dims->containers().size(); ++i) {
 		int varId;
 		GridAttributeDimensionContainer* c = dims->containers().at(i);
 		nc_type ncType = getNcType(c->definition());
-		int dimId = dimIds.at(i);
+		int dimId = dimIds->at(i);
 		ret = nc_def_var(ncid, c->definition()->name().c_str(), ncType, 1, &dimId, &varId);
 		if (ret != NC_NOERR) {return ret;}
-		varIds.append(varId);
+		varIds->push_back(varId);
 
 		// for special dimensions
 		QString tmp;
@@ -636,7 +636,7 @@ int GeoDataNetcdf::defineDimensions(int ncid, QList<int>& dimIds, QList<int>& va
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const QList<int>& dimIds, int* varId)
+int GeoDataNetcdf::defineValue(int ncid, int xId, int yId, const std::vector<int> &dimIds, int* varId)
 {
 	int ret;
 	int ndims = dimensions()->containers().size() + 2;
@@ -706,7 +706,7 @@ int GeoDataNetcdf::outputCoords(int ncid, int xId, int yId, int lonId, int latId
 	return NC_NOERR;
 }
 
-int GeoDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
+int GeoDataNetcdf::outputDimensions(int ncid, const std::vector<int> &varIds)
 {
 	const GridAttributeDimensionsContainer* dims = dimensions();
 	for (int i = 0; i < dims->containers().size(); ++i) {
@@ -717,7 +717,7 @@ int GeoDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 			GridAttributeDimensionIntegerContainer* c2 =
 				dynamic_cast<GridAttributeDimensionIntegerContainer*>(c);
 			std::vector<int> vals(c->count());
-			const QList<int>& listVals = c2->values();
+			const std::vector<int>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
 				vals[j] = listVals.at(j);
 			}
@@ -728,7 +728,7 @@ int GeoDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 			GridAttributeDimensionRealContainer* c2 =
 				dynamic_cast<GridAttributeDimensionRealContainer*>(c);
 			std::vector<double> vals(c->count());
-			const QList<double>& listVals = c2->values();
+			const std::vector<double>& listVals = c2->values();
 			for (int j = 0; j < listVals.size(); ++j) {
 				vals[j] = listVals.at(j);
 			}
@@ -741,13 +741,12 @@ int GeoDataNetcdf::outputDimensions(int ncid, const QList<int>& varIds)
 	return NC_NOERR;
 }
 
-
 void GeoDataNetcdf::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
 	doHandleDimensionCurrentIndexChange(oldIndex, newIndex);
 }
 
-void GeoDataNetcdf::handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after)
+void GeoDataNetcdf::handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after)
 {
 	GridAttributeDimensionContainer* dim =
 		dynamic_cast<GridAttributeDimensionContainer*>(sender());
@@ -803,11 +802,11 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 	int dimI = 1, dimJ = 1;
 
 	if (m_coordinateSystemType == GeoDataNetcdf::XY) {
-		dimI = m_xValues.size();
-		dimJ = m_yValues.size();
+		dimI = static_cast<int> (m_xValues.size());
+		dimJ = static_cast<int> (m_yValues.size());
 	} else if (m_coordinateSystemType == LonLat) {
-		dimI = m_lonValues.size();
-		dimJ = m_latValues.size();
+		dimI = static_cast<int> (m_lonValues.size());
+		dimJ = static_cast<int> (m_latValues.size());
 	}
 
 	RectRegion region(xmin, xmax, ymin, ymax);
@@ -911,9 +910,9 @@ void GeoDataNetcdf::getIJIndex(vtkIdType id, unsigned int* i, unsigned int* j) c
 {
 	int dimI = 1;
 	if (m_coordinateSystemType == XY) {
-		dimI = m_xValues.size() + 1;
+		dimI = static_cast<int> (m_xValues.size()) + 1;
 	} else if (m_coordinateSystemType == LonLat) {
-		dimI = m_lonValues.size() + 1;
+		dimI = static_cast<int> (m_lonValues.size()) + 1;
 	}
 
 	*i = id % dimI;
@@ -924,9 +923,9 @@ unsigned int GeoDataNetcdf::vertexIndex(unsigned int i, unsigned int j) const
 {
 	int dimI = 1;
 	if (m_coordinateSystemType == XY) {
-		dimI = m_xValues.size() + 1;
+		dimI = static_cast<int> (m_xValues.size()) + 1;
 	} else if (m_coordinateSystemType == LonLat) {
-		dimI = m_lonValues.size() + 1;
+		dimI = static_cast<int> (m_lonValues.size()) + 1;
 	}
 	return dimI * j + i;
 }
@@ -1042,18 +1041,18 @@ void GeoDataNetcdf::updateRegionPolyData()
 int GeoDataNetcdf::xSize() const
 {
 	if (m_coordinateSystemType == XY) {
-		return m_xValues.size();
+		return static_cast<int> (m_xValues.size());
 	} else if (m_coordinateSystemType == LonLat) {
-		return m_lonValues.size();
+		return static_cast<int> (m_lonValues.size());
 	}
 	return 0;
 }
 int GeoDataNetcdf::ySize() const
 {
 	if (m_coordinateSystemType == XY) {
-		return m_yValues.size();
+		return static_cast<int> (m_yValues.size());
 	} else if (m_coordinateSystemType == LonLat) {
-		return m_lonValues.size();
+		return static_cast<int> (m_lonValues.size());
 	}
 	return 0;
 }

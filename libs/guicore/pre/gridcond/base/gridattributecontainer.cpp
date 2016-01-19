@@ -72,7 +72,7 @@ void GridAttributeContainer::updateConnections()
 	const QList<GridAttributeDimensionContainer*>& conts = dims->containers();
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
-		connect(cont, SIGNAL(valuesChanged(QList<QVariant>,QList<QVariant>)), this, SLOT(handleDimensionValuesChange(QList<QVariant>,QList<QVariant>)));
+		connect(cont, SIGNAL(valuesChanged(std::vector<QVariant>,std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>,std::vector<QVariant>)));
 	}
 }
 
@@ -90,7 +90,7 @@ void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int
 	gItem->updateSimplifiedGrid();
 }
 
-void GridAttributeContainer::handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/)
+void GridAttributeContainer::handleDimensionValuesChange(const std::vector<QVariant> & /*before*/, const std::vector<QVariant> & /*after*/)
 {
 	QString fname = temporaryExternalFilename(dimensions()->currentIndex());
 	saveToExternalFile(fname);

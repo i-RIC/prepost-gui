@@ -6,6 +6,8 @@
 #include "../../grid/grid.h"
 #include <QObject>
 
+#include <vector>
+
 class PreProcessorGeoDataGroupDataItemInterface;
 class GridAttributeDimensionsContainer;
 
@@ -44,7 +46,7 @@ public:
 
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
-	void handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after);
+	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after);
 
 protected:
 	QString temporaryExternalFilename(int index) const;

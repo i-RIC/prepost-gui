@@ -54,76 +54,85 @@ public:
 		BoolContainer mapped;
 	};
 
-	/// Constructor
 	GeoData(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoData();
-	QString name() const {return m_setting.name;}
+
+	QString name() const;
 	void setName(const QString& name);
+
 	const QString& typeName() const;
-	void setPosition(SolverDefinitionGridAttribute::Position pos) {
-		if (pos == SolverDefinitionGridAttribute::Node) {
-			mapperFunc = &GeoData::nodeMappers;
-		} else {
-			mapperFunc = &GeoData::cellMappers;
-		}
-	}
-	QString caption() const {return m_setting.caption;}
-	void setCaption(const QString& cap) {m_setting.caption = cap;}
-	SolverDefinitionGridAttribute* gridAttribute() const {return m_gridAttribute;}
-	/// Returns the pointer to the creator that created this instance.
-	GeoDataCreator* creator() const {return m_creator;}
-	virtual GeoDataMapper* mapper() const {return m_mapper;}
-	void setMapper(GeoDataMapper* m) {m_mapper = m;}
-	QList<GeoDataMapper*> mappers() const {
-		return (this->*mapperFunc)();
-	}
+
+	void setPosition(SolverDefinitionGridAttribute::Position pos);
+
+	QString caption() const;
+	void setCaption(const QString& cap);
+
+	SolverDefinitionGridAttribute* gridAttribute() const;
+	GeoDataCreator* creator() const;
+
+	virtual GeoDataMapper* mapper() const;
+	void setMapper(GeoDataMapper* m);
+	QList<GeoDataMapper*> mappers() const;
 	void setDefaultMapper();
+
 	QList<GeoDataMapper*> nodeMappers() const;
 	QList<GeoDataMapper*> cellMappers() const;
-	QList<GeoDataImporter*> importers();
-	QList<GeoDataExporter*> exporters();
+
+	QList<GeoDataImporter*> importers() const;
+	QList<GeoDataExporter*> exporters() const;
+
 	virtual void setupDataItem();
 	/// setup VTK actors.
-	virtual void setupActors() {}
-	virtual void setupMenu() {}
-	virtual void showInitialDialog() {}
-	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
-	QMenu* menu() {return m_menu;}
-	virtual void handleStandardItemChange() {}
-	virtual void handleStandardItemClicked() {}
-	virtual void handleStandardItemDoubleClicked() {}
-	virtual void informSelection(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
+	virtual void setupActors();
+	virtual void setupMenu();
+	virtual void showInitialDialog();
+	virtual bool addToolBarButtons(QToolBar* parent);
+
+	QMenu* menu() const;
+
+	virtual void handleStandardItemChange();
+	virtual void handleStandardItemClicked();
+	virtual void handleStandardItemDoubleClicked();
+	virtual void informSelection(PreProcessorGraphicsViewInterface* v);
+	virtual void informDeselection(PreProcessorGraphicsViewInterface* v);
+
+	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* v);
+	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v);
+
+	virtual void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	virtual void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+
+	virtual void addCustomMenuItems(QMenu* menu);
+
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
-	virtual void assignActorZValues(const ZDepthRange& /*range*/) {}
-	virtual bool getValueRange(double* /*min*/, double* /*max*/) {return false;}
-	virtual QDialog* propertyDialog(QWidget* /*parent*/) {return 0;}
-	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
+	virtual void assignActorZValues(const ZDepthRange& range);
+	virtual bool getValueRange(double* min, double* max);
+	virtual QDialog* propertyDialog(QWidget* parent);
+	virtual void handlePropertyDialogAccepted(QDialog* propDialog);
 	ScalarsToColorsContainer* scalarsToColorsContainer();
-	virtual void update2Ds() {}
-	bool isVisible();
-	void setMapped(bool mapped = true) {m_setting.mapped = mapped;}
-	bool isMapped() const {return m_setting.mapped;}
-	virtual GeoDataProxy* getProxy() {return nullptr;}
+	virtual void update2Ds();
+
+	bool isVisible() const;
+	bool isMapped() const;
+	void setMapped(bool mapped = true);
+
+	virtual GeoDataProxy* getProxy();
+
 	void saveToCgnsFile(const int fn) override;
-	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* /*v*/) {}
-	void applyOffset(double x, double y) {doApplyOffset(x, y);}
-	virtual bool requestCoordinateSystem() const {return false;}
+	void applyOffset(double x, double y);
+	virtual bool requestCoordinateSystem() const;
 
 signals:
 	void graphicsUpdated();
 
 public slots:
-	virtual void handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*newIndex*/) {}
-	virtual void handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/) {}
+	virtual void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
+	virtual void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after);
 
 protected slots:
 	void editName();
@@ -149,7 +158,7 @@ protected:
 	PreProcessorDataModelInterface* dataModel();
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	virtual int iRICLibType() const {return IRIC_GEO_UNKNOWN;}
+	virtual int iRICLibType() const;
 	GridAttributeDimensionsContainer* dimensions() const;
 
 	Setting m_setting;

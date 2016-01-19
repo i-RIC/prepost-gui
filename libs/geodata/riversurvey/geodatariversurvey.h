@@ -118,6 +118,7 @@ public:
 	void cancelBackgroundGridUpdate();
 	void toggleCrosssectionWindowsGridCreatingMode(bool gridMode);
 	void informCtrlPointUpdateToCrosssectionWindows();
+	GeoDataProxy* getProxy() override;
 
 private slots:
 	void moveSelectedPoints();
@@ -138,7 +139,6 @@ private slots:
 	void displaySetting();
 	void switchInterpolateModeToLinear();
 	void switchInterpolateModeToSpline();
-	GeoDataProxy* getProxy() override;
 
 signals:
 	void dataUpdated();

@@ -114,6 +114,12 @@ bool GridAttributeContainerT<V>::saveToCgnsFile(int fn, int B, int Z)
 	if (ier != 0) {return false;}
 
 	GridAttributeDimensionsContainer* dims = dimensions();
+
+	// output dimension values
+	for (GridAttributeDimensionContainer* dim : dims->containers()) {
+		dim->saveToCgnsFile(fn, B, Z);
+	}
+
 	if (dims->containers().size() == 0) {
 		return saveToCgnsFileForIndex(0);
 	} else {

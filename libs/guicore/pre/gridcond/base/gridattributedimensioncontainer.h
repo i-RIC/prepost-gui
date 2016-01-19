@@ -5,8 +5,10 @@
 #include "gridattributebaseobject.h"
 
 #include <QObject>
-#include <QVariant>
-#include <QList>
+
+#include <vector>
+
+class QVariant;
 
 class SolverDefinitionGridAttributeDimension;
 
@@ -28,22 +30,22 @@ public:
 
 	// value handling
 	virtual QVariant variantValue(int index) const = 0;
-	virtual QList<QVariant> variantValues() const = 0;
-	virtual void setVariantValues(const QList<QVariant>& vals) = 0;
+	virtual std::vector<QVariant> variantValues() const = 0;
+	virtual void setVariantValues(const std::vector<QVariant>& vals) = 0;
 	QVariant currentVariantValue() const;
 
 	// I/O functions
 	virtual bool loadFromExternalFile(const QString& filename) = 0;
 	virtual bool saveToExternalFile(const QString& filename) = 0;
 	virtual bool loadFromCgnsFile(int fn, int B, int Z) = 0;
-	virtual bool saveFromCgnsFile(int fn, int B, int Z) = 0;
+	virtual bool saveToCgnsFile(int fn, int B, int Z) = 0;
 
 public slots:
 	void setCurrentIndex(int index, bool noDraw = false);
 
 signals:
 	void valuesChanged();
-	void valuesChanged(const QList<QVariant> before, const QList<QVariant> after);
+	void valuesChanged(const std::vector<QVariant>& before, const std::vector<QVariant>& after);
 
 	void currentIndexChanged(bool noDraw);
 	void currentIndexChanged(int newIndex, bool noDraw);

@@ -47,15 +47,70 @@ GeoData::~GeoData()
 	delete m_menu;
 }
 
+QString GeoData::name() const
+{
+	return m_setting.name;
+}
+void GeoData::setName(const QString& name)
+{
+	m_setting.name = name;
+	updateFilename();
+}
+
 const QString& GeoData::typeName() const
 {
 	return m_creator->typeName();
 }
 
-void GeoData::setName(const QString& name)
+void GeoData::setPosition(SolverDefinitionGridAttribute::Position pos)
 {
-	m_setting.name = name;
-	updateFilename();
+	if (pos == SolverDefinitionGridAttribute::Node) {
+		mapperFunc = &GeoData::nodeMappers;
+	} else {
+		mapperFunc = &GeoData::cellMappers;
+	}
+}
+
+QString GeoData::caption() const
+{
+	return m_setting.caption;
+}
+
+void GeoData::setCaption(const QString& cap)
+{
+	m_setting.caption = cap;
+}
+
+SolverDefinitionGridAttribute* GeoData::gridAttribute() const
+{
+	return m_gridAttribute;
+}
+
+GeoDataCreator* GeoData::creator() const
+{
+	return m_creator;
+}
+
+GeoDataMapper* GeoData::mapper() const
+{
+	return m_mapper;
+}
+
+void GeoData::setMapper(GeoDataMapper* m)
+{
+	m_mapper = m;
+}
+
+QList<GeoDataMapper*> GeoData::mappers() const
+{
+	return (this->*mapperFunc)();
+}
+
+void GeoData::setDefaultMapper()
+{
+	QList<GeoDataMapper*> tmpmappers = mappers();
+	if (tmpmappers.count() == 0) {m_mapper = nullptr;}
+	m_mapper = *(tmpmappers.begin());
 }
 
 QList<GeoDataMapper*> GeoData::nodeMappers() const
@@ -76,7 +131,7 @@ QList<GeoDataMapper*> GeoData::cellMappers() const
 	return m_creator->cellMappers();
 }
 
-QList<GeoDataImporter*> GeoData::importers()
+QList<GeoDataImporter*> GeoData::importers() const
 {
 	if (m_creator == nullptr) {
 		QList<GeoDataImporter*> l;
@@ -85,7 +140,7 @@ QList<GeoDataImporter*> GeoData::importers()
 	return m_creator->importers();
 }
 
-QList<GeoDataExporter*> GeoData::exporters()
+QList<GeoDataExporter*> GeoData::exporters() const
 {
 	if (m_creator == nullptr) {
 		QList<GeoDataExporter*> l;
@@ -107,6 +162,148 @@ void GeoData::setupDataItem()
 
 	item->copyStandardItem();
 }
+
+void GeoData::setupActors()
+{}
+
+void GeoData::setupMenu()
+{}
+
+void GeoData::showInitialDialog()
+{}
+
+bool GeoData::addToolBarButtons(QToolBar*)
+{
+	return false;
+}
+
+QMenu* GeoData::menu() const
+{
+	return m_menu;
+}
+
+void GeoData::handleStandardItemChange()
+{}
+
+void GeoData::handleStandardItemClicked()
+{}
+
+void GeoData::handleStandardItemDoubleClicked()
+{}
+
+void GeoData::informSelection(PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::informDeselection(PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::viewOperationEnded(PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::keyPressEvent(QKeyEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::keyReleaseEvent(QKeyEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::mouseDoubleClickEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::mouseMoveEvent(QMouseEvent*, PreProcessorGraphicsViewInterface* )
+{}
+
+void GeoData::mousePressEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::mouseReleaseEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::addCustomMenuItems(QMenu*)
+{}
+
+void GeoData::updateZDepthRangeItemCount(ZDepthRange& range)
+{
+	range.setItemCount(0);
+}
+
+void GeoData::assignActorZValues(const ZDepthRange&)
+{}
+
+bool GeoData::getValueRange(double*, double*)
+{
+	return false;
+}
+
+QDialog* GeoData::propertyDialog(QWidget*)
+{
+	return nullptr;
+}
+
+void GeoData::handlePropertyDialogAccepted(QDialog*)
+{}
+
+ScalarsToColorsContainer* GeoData::scalarsToColorsContainer()
+{
+	ProjectDataItem* groupdi1 = parent()->parent();
+	PreProcessorGeoDataGroupDataItemInterface* groupdi2 = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(groupdi1);
+	if (groupdi2 == nullptr) {return nullptr;}
+	PreProcessorGridTypeDataItemInterface* typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi1->parent()->parent());
+	ScalarsToColorsContainer* stc = typedi->scalarsToColors(groupdi2->condition()->name());
+	return stc;
+}
+
+void GeoData::update2Ds()
+{}
+
+bool GeoData::isVisible() const
+{
+	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
+}
+
+bool GeoData::isMapped() const
+{
+	return m_setting.mapped;
+}
+
+void GeoData::setMapped(bool mapped)
+{
+	m_setting.mapped = mapped;
+}
+
+GeoDataProxy* GeoData::getProxy()
+{
+	return nullptr;
+}
+
+void GeoData::saveToCgnsFile(const int)
+{
+	QString filename = relativeFilename();
+	cgsize_t strlen = filename.length() + 1;
+	int type = iRICLibType();
+	cgsize_t valuelen = 1;
+	cg_array_write("filename", Character, 1, &strlen, iRIC::toStr(filename).c_str());
+	cg_array_write("type", Integer, 1, &valuelen, &type);
+}
+
+void GeoData::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface*)
+{}
+
+void GeoData::applyOffset(double x, double y)
+{
+	doApplyOffset(x, y);
+}
+
+bool GeoData::requestCoordinateSystem() const
+{
+	return false;
+}
+
+void GeoData::handleDimensionCurrentIndexChange(int, int)
+{}
+
+void GeoData::handleDimensionValuesChange(const std::vector<QVariant>&, const std::vector<QVariant>&)
+{}
 
 PreProcessorWindowInterface* GeoData::preProcessorWindow()
 {
@@ -153,42 +350,10 @@ vtkActor2DCollection* GeoData::actor2DCollection()
 	return geoDataDataItem()->actor2DCollection();
 }
 
-void GeoData::setDefaultMapper()
-{
-	QList<GeoDataMapper*> tmpmappers = mappers();
-	if (tmpmappers.count() == 0) {m_mapper = nullptr;}
-	m_mapper = *(tmpmappers.begin());
-}
-
 void GeoData::editName()
 {
 	ObjectBrowserView* view = dataModel()->objectBrowserView();
 	view->edit(geoDataDataItem()->standardItem()->index());
-}
-
-//void GeoData::loadName(const QDomNode& node)
-//{
-//	setName(node.toElement().attribute("name"));
-//}
-
-//void GeoData::saveName(QXmlStreamWriter& writer)
-//{
-//	writer.writeAttribute("name", m_name);
-//}
-
-void GeoData::updateZDepthRangeItemCount(ZDepthRange& range)
-{
-	range.setItemCount(0);
-}
-
-ScalarsToColorsContainer* GeoData::scalarsToColorsContainer()
-{
-	ProjectDataItem* groupdi1 = parent()->parent();
-	PreProcessorGeoDataGroupDataItemInterface* groupdi2 = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(groupdi1);
-	if (groupdi2 == nullptr) {return nullptr;}
-	PreProcessorGridTypeDataItemInterface* typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi1->parent()->parent());
-	ScalarsToColorsContainer* stc = typedi->scalarsToColors(groupdi2->condition()->name());
-	return stc;
 }
 
 QAction* GeoData::deleteAction()
@@ -221,12 +386,6 @@ void GeoData::updateVisibilityWithoutRendering()
 	item->updateVisibilityWithoutRendering();
 }
 
-bool GeoData::isVisible()
-{
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
-	return item->isAncientChecked() && item->standardItem()->checkState() == Qt::Checked;
-}
-
 void GeoData::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
@@ -238,14 +397,9 @@ void GeoData::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	m_setting.save(writer);
 }
 
-void GeoData::saveToCgnsFile(const int /*fn*/)
+int GeoData::iRICLibType() const
 {
-	QString filename = relativeFilename();
-	cgsize_t strlen = filename.length() + 1;
-	int type = iRICLibType();
-	cgsize_t valuelen = 1;
-	cg_array_write("filename", Character, 1, &strlen, iRIC::toStr(filename).c_str());
-	cg_array_write("type", Integer, 1, &valuelen, &type);
+	return IRIC_GEO_UNKNOWN;
 }
 
 GridAttributeDimensionsContainer* GeoData::dimensions() const

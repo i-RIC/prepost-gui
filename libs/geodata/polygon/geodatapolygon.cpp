@@ -1891,7 +1891,7 @@ void GeoDataPolygon::handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*n
 	// @todo implement this!
 }
 
-void GeoDataPolygon::handleDimensionValuesChange(const QList<QVariant>& /*before*/, const QList<QVariant>& /*after*/)
+void GeoDataPolygon::handleDimensionValuesChange(const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
 {
 	// @todo implement this!
 }

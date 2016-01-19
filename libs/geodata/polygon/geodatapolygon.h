@@ -115,7 +115,7 @@ public slots:
 	void editValue();
 	void restoreMouseEventMode();
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;
-	void handleDimensionValuesChange(const QList<QVariant>& before, const QList<QVariant>& after) override;
+	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
 
 private slots:
 	void updateGrid(bool noDraw = false);

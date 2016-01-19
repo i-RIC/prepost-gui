@@ -19,12 +19,12 @@ public:
 protected:
 	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
-	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, QList<QVariant>& list);
-	static QList<QVariant> convertTimeValues(QString units, QList<QVariant>& values, QWidget* parent, bool* canceled);
+	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list);
+	static std::vector<QVariant> convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled);
 
-	virtual int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, GeoDataNetcdf* dat) = 0;
+	virtual int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataNetcdf* dat) = 0;
 
-	QList<QString> m_dims;
+	std::vector<QString> m_dims;
 	QString m_valueVariable;
 
 	GeoDataNetcdf::CoordinateSystemType m_csType;

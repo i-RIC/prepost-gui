@@ -8,11 +8,6 @@
 #include "../../../solverdef/solverdefinitiongridattribute.h"
 #include <misc/stringtool.h>
 
-#include <QList>
-#include <QFile>
-#include <QDataStream>
-#include <QVariant>
-
 #include <cgnslib.h>
 
 template <class V>
@@ -22,30 +17,30 @@ public:
 	GridAttributeDimensionContainerT(SolverDefinitionGridAttributeDimension* def);
 	virtual ~GridAttributeDimensionContainerT();
 
-	const QList<V>& values() const;
-	QList<V>& values();
-	void setValues(const QList<V>& vals);
+	const std::vector<V>& values() const;
+	std::vector<V>& values();
+	void setValues(const std::vector<V>& vals);
 	V value(int index) const;
 
 	static V fromVariant(const QVariant& val);
 	QVariant toVariant(V val) const;
 
 	QVariant variantValue(int index) const override;
-	QList<QVariant> variantValues() const override;
-	void setVariantValues(const QList<QVariant>& vals) override;
+	std::vector<QVariant> variantValues() const override;
+	void setVariantValues(const std::vector<QVariant>& vals) override;
 
 	int count() const override;
 
 	bool loadFromExternalFile(const QString& filename) override;
 	bool saveToExternalFile(const QString& filename) override;
 	bool loadFromCgnsFile(int fn, int B, int Z) override;
-	bool saveFromCgnsFile(int fn, int B, int Z) override;
+	bool saveToCgnsFile(int fn, int B, int Z) override;
 
 private:
 	virtual DataType_t dataType() const = 0;
 
 private:
-	QList<V> m_values;
+	std::vector<V> m_values;
 };
 
 #include "private/gridattributedimensioncontainert_detail.h"

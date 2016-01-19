@@ -24,7 +24,7 @@ public:
 	GeoDataNetcdfImporterT(GeoDataCreator* creator) : GeoDataNetcdfImporter(creator) {}
 
 protected:
-	int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const QList<int> dimIds, GeoDataNetcdf* dat) override {
+	int importValues(int ncid_in, int icid_out, int varIdOut, int xDimId, int yDimId, int lonDimId, int latDimId, const std::vector<int>& dimIds, GeoDataNetcdf* dat) override {
 		std::vector<size_t> start_in(dimIds.size() + 2);
 		std::vector<size_t> start_out(dimIds.size() + 2);
 		std::vector<size_t> len_in(dimIds.size() + 2);
