@@ -370,6 +370,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/gridattributedimensionrealcontainer.h \
            pre/gridcond/base/gridattributedimensionscontainer.h \
            pre/gridcond/base/gridattributedimensionselectwidget.h \
+           pre/gridcond/base/gridattributeeditcommand.h \
            pre/gridcond/base/gridattributeeditdialog.h \
            pre/gridcond/base/gridattributeeditwidget.h \
            pre/gridcond/base/gridattributeeditwidgetcontainer.h \
@@ -597,6 +598,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/base/gridattributedimensionrealcontainer.cpp \
            pre/gridcond/base/gridattributedimensionscontainer.cpp \
            pre/gridcond/base/gridattributedimensionselectwidget.cpp \
+           pre/gridcond/base/gridattributeeditcommand.cpp \
            pre/gridcond/base/gridattributeeditdialog.cpp \
            pre/gridcond/base/gridattributeeditwidget.cpp \
            pre/gridcond/base/gridattributevariationeditdialog.cpp \

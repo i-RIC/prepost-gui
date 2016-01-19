@@ -1,7 +1,11 @@
 #ifndef GRIDATTRIBUTEEDITWIDGETT_DETAIL_H
 #define GRIDATTRIBUTEEDITWIDGETT_DETAIL_H
 
+#include "../gridattributecontainert.h"
+#include "../gridattributeeditcommand.h"
 #include "../gridattributeeditwidgett.h"
+
+#include <misc/iricundostack.h>
 
 template <class V>
 GridAttributeEditWidgetT<V>::GridAttributeEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
