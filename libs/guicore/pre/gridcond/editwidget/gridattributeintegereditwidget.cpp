@@ -4,8 +4,8 @@
 
 #include <QVBoxLayout>
 
-GridAttributeIntegerEditWidget::GridAttributeIntegerEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond)
-	: GridAttributeEditWidgetT<int>(parent, cond)
+GridAttributeIntegerEditWidget::GridAttributeIntegerEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
+	GridAttributeEditWidgetT<int>(parent, cond)
 {
 	m_widget = new IntegerNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();
@@ -34,6 +34,12 @@ GridAttributeIntegerEditWidget::~GridAttributeIntegerEditWidget()
 
 void GridAttributeIntegerEditWidget::getValueFromInnerWidget() const
 {
+	if (m_widget->cleanText() == "") {
+		return;
+	}
+	setValueCleared(false);
+	setValueSelected(true);
+
 	m_value = m_widget->value();
 }
 
@@ -44,6 +50,9 @@ QWidget* GridAttributeIntegerEditWidget::editWidget() const
 
 void GridAttributeIntegerEditWidget::setupWidget()
 {
-	// this widget does not allowed "cleared" status.
-	m_widget->setValue(m_value);
+	if (isValueCleared()) {
+		m_widget->clear();
+	} else {
+		m_widget->setValue(m_value);
+	}
 }
