@@ -1,26 +1,38 @@
 #include "gridattributeeditwidget.h"
+#include "private/gridattributeeditwidget_impl.h"
 
-GridAttributeEditWidget::GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att) :
-	QWidget(parent),
+GridAttributeEditWidget::Impl::Impl(SolverDefinitionGridAttribute *att) :
+	m_isValueSelected {false},
+	m_isValueCleared {false},
 	m_gridAttribute {att}
 {}
 
+GridAttributeEditWidget::GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att) :
+	QWidget {parent},
+	impl {new Impl {att}}
+{}
+
+GridAttributeEditWidget::~GridAttributeEditWidget()
+{
+	delete impl;
+}
+
 SolverDefinitionGridAttribute* GridAttributeEditWidget::gridAttribute() const
 {
-	return m_gridAttribute;
+	return impl->m_gridAttribute;
 }
 
 void GridAttributeEditWidget::clearValue()
 {
-	m_isValueCleared = true;
-	m_isValueSelected = false;
+	impl->m_isValueCleared = true;
+	impl->m_isValueSelected = false;
 	setupWidget();
 }
 
 bool GridAttributeEditWidget::isValueSelected() const
 {
 	getValueFromInnerWidget();
-	return m_isValueSelected;
+	return impl->m_isValueSelected;
 }
 
 QSize GridAttributeEditWidget::sizeHint() const
@@ -35,15 +47,15 @@ QSize GridAttributeEditWidget::minimumSizeHint() const
 
 bool GridAttributeEditWidget::isValueCleared() const
 {
-	return m_isValueCleared;
+	return impl->m_isValueCleared;
 }
 
-void GridAttributeEditWidget::setValueCleared(bool cleared)
+void GridAttributeEditWidget::setValueCleared(bool cleared) const
 {
-	m_isValueCleared = cleared;
+	impl->m_isValueCleared = cleared;
 }
 
 void GridAttributeEditWidget::setValueSelected(bool selected) const
 {
-	m_isValueSelected = selected;
+	impl->m_isValueSelected = selected;
 }

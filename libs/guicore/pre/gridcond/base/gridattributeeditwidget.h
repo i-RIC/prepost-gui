@@ -15,6 +15,7 @@ class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 
 public:
 	GridAttributeEditWidget(QWidget* parent, SolverDefinitionGridAttribute* att);
+	virtual ~GridAttributeEditWidget();
 
 	SolverDefinitionGridAttribute* gridAttribute() const;
 
@@ -35,17 +36,19 @@ protected:
 	virtual void setupWidget() = 0;
 
 	bool isValueCleared() const;
-	void setValueCleared(bool cleared);
+	void setValueCleared(bool cleared) const;
 
 	void setValueSelected(bool selected) const;
 
 private:
 	virtual QWidget* editWidget() const = 0;
 
-	mutable bool m_isValueSelected {false};
-	bool m_isValueCleared {false};
-
-	SolverDefinitionGridAttribute* m_gridAttribute;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/gridattributeeditwidget_impl.h"
+#endif // _DEBUG
 
 #endif // GRIDATTRIBUTEEDITDIALOG_H
