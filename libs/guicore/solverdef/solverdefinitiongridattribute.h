@@ -5,9 +5,9 @@
 #include "solverdefinitionnode.h"
 
 #include <QVariant>
-#include <QList>
 
 #include <string>
+#include <vector>
 
 class QString;
 class QWidget;
@@ -48,8 +48,8 @@ public:
 	bool isOption() const;
 	int order() const;
 
-	const QList<SolverDefinitionGridAttributeDimension*>& dimensions() const;
-	QList<SolverDefinitionGridAttributeDimension*>& dimensions();
+	const std::vector<SolverDefinitionGridAttributeDimension*>& dimensions() const;
+	std::vector<SolverDefinitionGridAttributeDimension*>& dimensions();
 	//@}
 
 	/// @name Interface building functions

@@ -66,7 +66,7 @@ int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, V* vals)
 }
 
 template <class V, class DA>
-int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, const QList<int>& indices, V* vals)
+int GeoDataNetcdfT<V, DA>::outputValues(int ncid, int varid, const std::vector<int>& indices, V* vals)
 {
 	std::vector<size_t> start(indices.size() + 2);
 	std::vector<size_t> len(indices.size() + 2);

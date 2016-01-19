@@ -20,7 +20,7 @@ public:
 	explicit VerificationSettingDialog(QWidget* parent = nullptr);
 	~VerificationSettingDialog();
 	void setPostSolutionInfo(PostSolutionInfo* info);
-	void setMeasuredDatas(const QList<MeasuredData*>& data);
+	void setMeasuredDatas(const std::vector<MeasuredData*>& data);
 
 	void setTimeStep(int step);
 	void setPostZoneDataContainer(PostZoneDataContainer* cont);
@@ -45,7 +45,7 @@ private slots:
 
 private:
 	PostSolutionInfo* m_postSolutionInfo;
-	QList<MeasuredData*> m_measuredData;
+	std::vector<MeasuredData*> m_measuredData;
 
 	Ui::VerificationSettingDialog* ui;
 };

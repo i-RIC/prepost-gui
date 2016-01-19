@@ -37,7 +37,7 @@ const QStringList GeoDataNetcdfGdalImporter::acceptableExtensions()
 bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
 	// investigate the condition.
-	const QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
+	const auto& dims = condition->dimensions();
 	if (dims.size() != 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("GDAL data files can be imported for grid conditions without dimensions."));
 		return false;

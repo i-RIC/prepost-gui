@@ -20,9 +20,9 @@ GeoDataNetcdfImporterSettingDialog::~GeoDataNetcdfImporterSettingDialog()
 	delete ui;
 }
 
-void GeoDataNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridAttribute*	condition)
+void GeoDataNetcdfImporterSettingDialog::setCondition(SolverDefinitionGridAttribute* condition)
 {
-	QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
+	auto& dims = condition->dimensions();
 	for (int i = 0; i < dims.size(); ++i) {
 		SolverDefinitionGridAttributeDimension* dim = dims.at(i);
 		QLabel* label = new QLabel(this);

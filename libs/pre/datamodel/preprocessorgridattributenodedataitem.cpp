@@ -302,9 +302,19 @@ void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
 }
 
+SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
+{
+	return m_condition;
+}
+
 void PreProcessorGridAttributeNodeDataItem::informDataChange()
 {
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->informDataChange(m_condition->name());
+}
+
+int PreProcessorGridAttributeNodeDataItem::numberOfDivision() const
+{
+	return m_numberOfDivision;
 }
 
 void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()

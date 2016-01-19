@@ -34,9 +34,9 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-	SolverDefinitionGridAttribute* condition() {return m_condition;}
+	SolverDefinitionGridAttribute* condition() const;
 	void informDataChange();
-	int numberOfDivision() {return m_numberOfDivision;}
+	int numberOfDivision() const;
 
 	void updateCrossectionWindows();
 	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);

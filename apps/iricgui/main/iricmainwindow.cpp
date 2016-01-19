@@ -1599,7 +1599,7 @@ void iRICMainWindow::updatePostActionStatus()
 	m_actionManager->windowCreateNew2dBirdEyePostProcessorAction->setEnabled(info->isDataAvailable2D());
 	m_actionManager->windowCreateNew3dPostProcessorAction->setEnabled(info->isDataAvailable3D());
 	m_actionManager->windowCreateNewGraph2dHybridWindowAction->setEnabled(info->isDataAvailable());
-	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().count() > 0);
+	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().size() > 0);
 }
 
 void iRICMainWindow::setupAboutDialog()

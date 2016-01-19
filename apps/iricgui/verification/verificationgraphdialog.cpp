@@ -70,6 +70,20 @@ VerificationGraphDialog::~VerificationGraphDialog()
 	clearData();
 }
 
+void VerificationGraphDialog::setPostSolutionInfo(PostSolutionInfo* info)
+{
+	m_postSolutionInfo = info;
+	m_activePostData = nullptr;
+	m_activeResult = "";
+}
+
+void VerificationGraphDialog::setMeasuredValues(const std::vector<MeasuredData*>& measuredData)
+{
+	m_measuredData = measuredData;
+	m_activeMeasuredData = nullptr;
+	m_activeValue = "";
+}
+
 bool VerificationGraphDialog::setting()
 {
 	VerificationSettingDialog dialog(this);
@@ -300,8 +314,8 @@ void VerificationGraphDialog::updateGraph()
 		measuredVals.append(mval);
 		calcVals.append(cval);
 		errorVals.append(cval - mval);
-		xVals.append(point[0]);
-		yVals.append(point[1]);
+		xVals.push_back(point[0]);
+		yVals.push_back(point[1]);
 
 		errorSquareSum += (cval - mval) * (cval - mval);
 		meanCalcVal += cval;

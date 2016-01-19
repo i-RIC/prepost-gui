@@ -9,9 +9,7 @@ GridAttributeDimensionsContainer::GridAttributeDimensionsContainer(SolverDefinit
 	QObject {parent},
 	impl {new Impl {}}
 {
-	const QList<SolverDefinitionGridAttributeDimension*>& dims = conddef->dimensions();
-	for (int i = 0; i < dims.count(); ++i) {
-		SolverDefinitionGridAttributeDimension* dim = dims.at(i);
+	for (auto dim : conddef->dimensions()) {
 		GridAttributeDimensionContainer* cont = dim->buildContainer();
 		impl->m_containers.push_back(cont);
 		GridAttributeDimensionSelectWidget* widget = dim->buildSelectWidget(cont);

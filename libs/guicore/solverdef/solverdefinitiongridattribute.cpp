@@ -46,8 +46,8 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, const So
 			QDomNode childNode = children.at(i);
 			if (childNode.nodeName() == "Dimension") {
 				// add dimension
-				SolverDefinitionGridAttributeDimension* dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), translator, m_parent);
-				m_dimensions.append(dim);
+				auto dim = SolverDefinitionGridAttributeDimensionCreator::create(childNode.toElement(), translator, m_parent);
+				m_dimensions.push_back(dim);
 			}
 		}
 	}
@@ -114,12 +114,12 @@ int SolverDefinitionGridAttribute::order() const
 	return m_impl->m_order;
 }
 
-const QList<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const
+const std::vector<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const
 {
 	return m_impl->m_dimensions;
 }
 
-QList<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions()
+std::vector<SolverDefinitionGridAttributeDimension *>& SolverDefinitionGridAttribute::dimensions()
 {
 	return m_impl->m_dimensions;
 }

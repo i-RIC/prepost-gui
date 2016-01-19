@@ -3,9 +3,10 @@
 
 #include "../solverdefinitiongridattribute.h"
 
-#include <QList>
 #include <QString>
 #include <QVariant>
+
+#include <vector>
 
 class SolverDefinitionGridAttribute::Impl
 {
@@ -24,7 +25,7 @@ public:
 	QVariant m_variantMinimumValue;
 	Position m_position {Node};
 	int m_order {0};
-	QList<SolverDefinitionGridAttributeDimension*> m_dimensions;
+	std::vector<SolverDefinitionGridAttributeDimension*> m_dimensions;
 
 	SolverDefinitionGridAttribute* m_parent;
 };

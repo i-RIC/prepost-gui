@@ -55,13 +55,12 @@ PreProcessorMeasuredDataTopDataItem::~PreProcessorMeasuredDataTopDataItem()
 
 void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	const QList<MeasuredData*>& mdlist = projectData()->mainfile()->measuredDatas();
+	const auto& mdlist = projectData()->mainfile()->measuredDatas();
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement child = children.at(i).toElement();
 		int index = child.attribute("index").toInt();
-		for (int j = 0; j < mdlist.count(); ++j) {
-			MeasuredData* md = mdlist.at(j);
+		for (MeasuredData* md : mdlist) {
 			if (md->index() == index) {
 				MeasuredDataFileDataItem* fitem = new MeasuredDataFileDataItem(md, this);
 				fitem->loadFromProjectMainFile(child);
@@ -102,7 +101,7 @@ void PreProcessorMeasuredDataTopDataItem::updateActorSettings()
 
 void PreProcessorMeasuredDataTopDataItem::addChildItem()
 {
-	MeasuredData* md = projectData()->mainfile()->measuredDatas().last();
+	MeasuredData* md = *(projectData()->mainfile()->measuredDatas().rbegin());
 	MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(md, this);
 	m_childItems.append(fItem);
 

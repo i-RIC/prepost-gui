@@ -45,7 +45,7 @@ void VerificationSettingDialog::setPostSolutionInfo(PostSolutionInfo* info)
 	ui->timestepSlider->setValue(0);
 }
 
-void VerificationSettingDialog::setMeasuredDatas(const QList<MeasuredData*>& data)
+void VerificationSettingDialog::setMeasuredDatas(const std::vector<MeasuredData*>& data)
 {
 	m_measuredData = data;
 	ui->fileComboBox->clear();
@@ -89,7 +89,7 @@ void VerificationSettingDialog::setActiveResult(const QString& result)
 
 void VerificationSettingDialog::setMeasuredData(MeasuredData* md)
 {
-	for (int i = 0; i < m_measuredData.count(); ++i) {
+	for (int i = 0; i < m_measuredData.size(); ++i) {
 		MeasuredData* d = m_measuredData.at(i);
 		if (d == md) {
 			selectFile(i);

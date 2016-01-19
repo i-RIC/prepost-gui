@@ -34,8 +34,8 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	m_groupDataItem = item;
 
 	// investigate the condition.
-	const QList<SolverDefinitionGridAttributeDimension*>& dims = condition->dimensions();
-	if (!(dims.size() == 1 && dims.at(0)->name() == "Time")) {
+	const auto& dims = condition->dimensions();
+	if (! (dims.size() == 1 && dims.at(0)->name() == "Time")) {
 		QMessageBox::warning(w, tr("Warning"), tr("X band MP rader data can be imported for grid conditions with dimension \"Time\"."));
 		return false;
 	}

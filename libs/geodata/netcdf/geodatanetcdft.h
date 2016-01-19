@@ -33,7 +33,7 @@ public:
 	bool getValueRange(double* min, double* max) override;
 
 	int outputValues(int ncid, int varid, V* vals);
-	int outputValues(int ncid, int varid, const QList<int>& indices, V* vals);
+	int outputValues(int ncid, int varid, const std::vector<int>& indices, V* vals);
 
 private:
 	void doHandleDimensionCurrentIndexChange(int oldIndex, int newIndex) override;

@@ -2,7 +2,8 @@
 #define VERIFICATIONGRAPHDIALOG_H
 
 #include <QDialog>
-#include <QList>
+
+#include <vector>
 
 class iRICMainWindow;
 class PostSolutionInfo;
@@ -23,18 +24,12 @@ class VerificationGraphDialog : public QDialog
 
 public:
 	enum GraphType {gtSWDvsValues, gtSWDvsError, gtMVvsCR, gtMVvsError};
+
 	explicit VerificationGraphDialog(iRICMainWindow* mainWindow);
 	~VerificationGraphDialog();
-	void setPostSolutionInfo(PostSolutionInfo* info) {
-		m_postSolutionInfo = info;
-		m_activePostData = nullptr;
-		m_activeResult = "";
-	}
-	void setMeasuredValues(const QList<MeasuredData*> measuredData) {
-		m_measuredData = measuredData;
-		m_activeMeasuredData = nullptr;
-		m_activeValue = "";
-	}
+
+	void setPostSolutionInfo(PostSolutionInfo* info);
+	void setMeasuredValues(const std::vector<MeasuredData*>& measuredData);
 
 public slots:
 	/// Open setting dialog.
@@ -50,7 +45,7 @@ private:
 
 	GraphType m_graphType;
 	PostSolutionInfo* m_postSolutionInfo;
-	QList<MeasuredData*> m_measuredData;
+	std::vector<MeasuredData*> m_measuredData;
 
 	int m_timeStep;
 	PostZoneDataContainer* m_activePostData;
@@ -67,8 +62,8 @@ private:
 	QwtPlotCurve* m_dotLineCurve;
 	QwtPlotMarker* m_zeroMarker;
 
-	QVector<double> xVals;
-	QVector<double> yVals;
+	std::vector<double> xVals;
+	std::vector<double> yVals;
 
 	iRICMainWindow* m_mainWindow;
 

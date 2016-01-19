@@ -50,8 +50,8 @@ Post2dWindowMeasuredDataTopDataItem::~Post2dWindowMeasuredDataTopDataItem()
 
 void Post2dWindowMeasuredDataTopDataItem::setupChildItem()
 {
-	if (projectData()->mainfile()->measuredDatas().count() == 0) {return;}
-	const QList<MeasuredData*>& measuredDatas = projectData()->mainfile()->measuredDatas();
+	if (projectData()->mainfile()->measuredDatas().size() == 0) {return;}
+	const auto& measuredDatas = projectData()->mainfile()->measuredDatas();
 	for (auto it = measuredDatas.begin(); it != measuredDatas.end(); ++it) {
 		MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(*it, this);
 		// there is no need to make the standard item top.
@@ -100,7 +100,7 @@ void Post2dWindowMeasuredDataTopDataItem::updateActorSettings()
 
 void Post2dWindowMeasuredDataTopDataItem::addChildItem()
 {
-	MeasuredData* md = projectData()->mainfile()->measuredDatas().last();
+	MeasuredData* md = *(projectData()->mainfile()->measuredDatas().rbegin());
 	MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(md, this);
 	m_childItems.append(fItem);
 

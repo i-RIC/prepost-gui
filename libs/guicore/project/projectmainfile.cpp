@@ -552,6 +552,22 @@ void ProjectMainFile::closeCgnsFile()
 	m_postSolutionInfo->closeCgnsFile();
 }
 
+
+const QList<BackgroundImageInfo*>& ProjectMainFile::backgroundImages() const
+{
+	return m_backgroundImages;
+}
+
+const std::vector<MeasuredData*>& ProjectMainFile::measuredDatas() const
+{
+	return m_measuredDatas;
+}
+
+const QList<vtkRenderer*>& ProjectMainFile::renderers() const
+{
+	return m_renderers;
+}
+
 void ProjectMainFile::clearResults()
 {
 	// close CGNS file when the solution opened it.
@@ -733,10 +749,12 @@ void ProjectMainFile::moveUpMeasuredData(const QModelIndex& index)
 		// Can not move up
 		return;
 	}
-	auto it = m_backgroundImages.begin();
-	int i = m_backgroundImages.indexOf(*(it + index.row()));
-	int j = m_backgroundImages.indexOf(*(it + index.row() - 1));
-	m_backgroundImages.swap(i, j);
+	int row = index.row();
+	MeasuredData* data = m_measuredDatas.at(row);
+
+	m_measuredDatas.erase(m_measuredDatas.begin() + row);
+	m_measuredDatas.insert(m_measuredDatas.begin() + row - 1, data);
+
 	emit measuredDataMovedUp(index.row());
 	setModified();
 }
@@ -747,11 +765,13 @@ void ProjectMainFile::moveDownMeasuredData(const QModelIndex& index)
 		// Can not move down
 		return;
 	}
-	auto it = m_measuredDatas.begin();
-	int i = m_measuredDatas.indexOf(*(it + index.row()));
-	int j = m_measuredDatas.indexOf(*(it + index.row() + 1));
-	m_measuredDatas.swap(i, j);
-	emit measuredDataMovedDown(index.row());
+	int row = index.row();
+	MeasuredData* data = m_measuredDatas.at(row);
+
+	m_measuredDatas.erase(m_measuredDatas.begin() + row);
+	m_measuredDatas.insert(m_measuredDatas.begin() + row + 1, data);
+
+	emit measuredDataMovedDown(row);
 	setModified();
 }
 
@@ -852,7 +872,7 @@ void ProjectMainFile::loadMeasuredDatas(const QDomNode& node)
 	for (int i = 0; i < len; ++i) {
 		QDomNode child = children.at(len - 1 - i);
 		MeasuredData* md = new MeasuredData(this);
-		m_measuredDatas.push_front(md);
+		m_measuredDatas.insert(m_measuredDatas.begin(), md);
 		md->loadFromProjectMainFile(child);
 	}
 }
@@ -913,7 +933,7 @@ void ProjectMainFile::addMeasuredData()
 	try {
 		MeasuredDataCsvImporter importer;
 		MeasuredData* md = importer.importData(fname);
-		m_measuredDatas.append(md);
+		m_measuredDatas.push_back(md);
 		emit measuredDataAdded();
 		setModified();
 		LastIODirectory::set(finfo.absolutePath());

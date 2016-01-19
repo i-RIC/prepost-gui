@@ -10,6 +10,7 @@
 #include <QVector2D>
 
 #include <string>
+#include <vector>
 
 class QDomDocument;
 
@@ -89,11 +90,11 @@ public:
 	void toggleGridEditFlag();
 	void closeCgnsFile() override;
 	/// Background images
-	const QList<BackgroundImageInfo*>& backgroundImages() const {return m_backgroundImages;}
+	const QList<BackgroundImageInfo*>& backgroundImages() const;
 	/// Measured data
-	const QList<MeasuredData*>& measuredDatas() const {return m_measuredDatas;}
+	const std::vector<MeasuredData*>& measuredDatas() const;
 	/// Renderers for background images
-	const QList<vtkRenderer*>& renderers() const {return m_renderers;}
+	const QList<vtkRenderer*>& renderers() const;
 
 	void updateActorVisibility(int idx, bool vis);
 	void importCgnsFile(const QString& filename);
@@ -174,7 +175,7 @@ private:
 	/// Background images
 	QList<BackgroundImageInfo*> m_backgroundImages;
 	/// Measured datas
-	QList<MeasuredData*> m_measuredDatas;
+	std::vector<MeasuredData*> m_measuredDatas;
 	/// Renderers for background images
 	QList<vtkRenderer*> m_renderers;
 	/// Load data from CGNS file
