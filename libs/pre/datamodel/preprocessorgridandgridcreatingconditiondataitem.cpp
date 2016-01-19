@@ -223,6 +223,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 
 	connect(gridItem, SIGNAL(gridAttributeChanged(std::string)), gtItem, SLOT(changeValueRange(std::string)));
 	updateItemMap();
+	updateZDepthRange();
 	qApp->processEvents();
 }
 
