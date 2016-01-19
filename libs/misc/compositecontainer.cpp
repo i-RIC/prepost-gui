@@ -3,7 +3,7 @@
 
 CompositeContainer::~CompositeContainer()
 {
-	delete m_impl;
+	delete impl;
 }
 
 XmlAttributeContainer& CompositeContainer::operator=(const XmlAttributeContainer& c)
@@ -14,14 +14,14 @@ XmlAttributeContainer& CompositeContainer::operator=(const XmlAttributeContainer
 
 void CompositeContainer::load(const QDomNode& node)
 {
-	for (XmlAttributeContainer* c : m_impl->m_containers) {
+	for (XmlAttributeContainer* c : impl->m_containers) {
 		c->load(node);
 	}
 }
 
 void CompositeContainer::save(QXmlStreamWriter& writer) const
 {
-	for (XmlAttributeContainer* c : m_impl->m_containers) {
+	for (XmlAttributeContainer* c : impl->m_containers) {
 		c->save(writer);
 	}
 }
@@ -29,31 +29,31 @@ void CompositeContainer::save(QXmlStreamWriter& writer) const
 void CompositeContainer::setPrefix(const QString& prefix)
 {
 	XmlAttributeContainer::setPrefix(prefix);
-	for (XmlAttributeContainer* c : m_impl->m_containers) {
+	for (XmlAttributeContainer* c : impl->m_containers) {
 		c->setPrefix(prefix);
 	}
 }
 
 CompositeContainer::CompositeContainer(std::initializer_list<XmlAttributeContainer*> list) :
 	XmlAttributeContainer {},
-	m_impl {new Impl {}}
+	impl {new Impl {}}
 {
 	for (XmlAttributeContainer* c : list) {
-		m_impl->m_containers.push_back(c);
+		impl->m_containers.push_back(c);
 	}
 }
 
 void CompositeContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const CompositeContainer& c2 = dynamic_cast<const CompositeContainer&> (c);
-	for (size_t i = 0; i < m_impl->m_containers.size(); ++i){
-		XmlAttributeContainer* v1 = m_impl->m_containers.at(i);
-		XmlAttributeContainer* v2 = c2.m_impl->m_containers.at(i);
+	for (size_t i = 0; i < impl->m_containers.size(); ++i){
+		XmlAttributeContainer* v1 = impl->m_containers.at(i);
+		XmlAttributeContainer* v2 = c2.impl->m_containers.at(i);
 		*(v1) = *(v2);
 	}
 }
 
 void CompositeContainer::addContainer(XmlAttributeContainer* c)
 {
-	m_impl->m_containers.push_back(c);
+	impl->m_containers.push_back(c);
 }

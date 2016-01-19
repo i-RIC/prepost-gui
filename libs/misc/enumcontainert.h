@@ -10,53 +10,26 @@ class EnumContainerT : public IntContainer
 public:
 	/// @name Constructors and Destructor
 	//@{
-	/// Constructor
-	EnumContainerT(const QString& name) :
-		IntContainer {name}
-	{}
-	/// Constructor (with default value)
-	EnumContainerT(const QString& name, V defaultVal) :
-		IntContainer {name, static_cast<int> (defaultVal)}
-	{}
-	/// Constructor (copy)
-	EnumContainerT(const EnumContainerT<V>& c) :
-		IntContainer {c}
-	{}
-	/// Destructor
-	~EnumContainerT() {}
+	EnumContainerT(const QString& name);
+	EnumContainerT(const QString& name, V defaultVal);
+	EnumContainerT(const EnumContainerT<V>& c);
+	virtual ~EnumContainerT();
 
 	/// @name Operators
 	//@{
-	EnumContainerT<V>& operator=(V val)
-	{
-		IntContainer::operator=(static_cast<int>(val));
-		return *this;
-	}
-	bool operator==(V val) {
-		return IntContainer::operator ==(static_cast<int> (val));
-	}
-	bool operator!=(V val) {
-		return IntContainer::operator !=(static_cast<int> (val));
-	}
-	operator V() const
-	{
-		return static_cast<V>(IntContainer::operator int());
-	}
+	EnumContainerT<V>& operator=(V val);
+	bool operator==(V val) const;
+	bool operator!=(V val) const;
+	operator V() const;
 	//@}
 
 	/// @name Getter and Setter
-	/// Value getter
-	V value() const
-	{
-		return static_cast<V> (IntContainer::value());
-	}
-	/// Value setter
-	void setValue(const V& val)
-	{
-		IntContainer::setValue(static_cast<int> (val));
-	}
+	//@{
+	V value() const;
+	void setValue(const V& val);
+	//@}
 };
 
+#include "private/enumcontainert_detail.h"
 
 #endif // ENUMCONTAINERT_H
-

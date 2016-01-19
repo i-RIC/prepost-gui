@@ -32,53 +32,53 @@ void ColorContainer::Impl::save(QXmlStreamWriter& writer) const
 
 ColorContainer::ColorContainer(const QString& name) :
 	XmlAttributeContainer {},
-	m_impl {new Impl {name}}
+	impl {new Impl {name}}
 {}
 
 ColorContainer::ColorContainer(const QString& name, const QColor& defaultVal) :
 	XmlAttributeContainer {},
-	m_impl {new Impl {name, defaultVal}}
+	impl {new Impl {name, defaultVal}}
 {}
 
 ColorContainer::ColorContainer(const ColorContainer& c) :
 	XmlAttributeContainer (c),
-	m_impl {new Impl {*(c.m_impl)}}
+	impl {new Impl {*(c.impl)}}
 {}
 
 ColorContainer::~ColorContainer()
 {
-	delete m_impl;
+	delete impl;
 	delete[] m_double;
 }
 
 void ColorContainer::load(const QDomNode& node)
 {
-	m_impl->load(node);
+	impl->load(node);
 	updateVtkValue();
 }
 
 void ColorContainer::save(QXmlStreamWriter& writer) const
 {
-	m_impl->save(writer);
+	impl->save(writer);
 }
 
 ColorContainer& ColorContainer::operator=(const ColorContainer& c)
 {
-	*(m_impl) = *(c.m_impl);
+	*(impl) = *(c.impl);
 	updateVtkValue();
 	return *this;
 }
 
 ColorContainer& ColorContainer::operator=(const QColor& v)
 {
-	m_impl->setValue(v);
+	impl->setValue(v);
 	updateVtkValue();
 	return *this;
 }
 
 ColorContainer::operator QColor() const
 {
-	return QColor(*m_impl);
+	return QColor(*impl);
 }
 
 ColorContainer::operator double*() const
@@ -89,33 +89,33 @@ ColorContainer::operator double*() const
 
 const QColor& ColorContainer::value() const
 {
-	return m_impl->value();
+	return impl->value();
 }
 
 void ColorContainer::setValue(const QColor& val)
 {
-	m_impl->setValue(val);
+	impl->setValue(val);
 }
 
 const QString& ColorContainer::prefix() const
 {
-	return m_impl->prefix();
+	return impl->prefix();
 }
 
 void ColorContainer::setPrefix(const QString& prefix)
 {
-	m_impl->setPrefix(prefix);
+	impl->setPrefix(prefix);
 }
 
 QString ColorContainer::attName(const QString& name) const
 {
-	return m_impl->attName(name);
+	return impl->attName(name);
 }
 
 void ColorContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const ColorContainer& c2 = dynamic_cast<const ColorContainer&> (c);
-	m_impl->setValue(c2.m_impl->value());
+	impl->setValue(c2.impl->value());
 }
 
 void ColorContainer::setupVtkValue() const
@@ -129,7 +129,7 @@ void ColorContainer::setupVtkValue() const
 void ColorContainer::updateVtkValue() const
 {
 	if (m_double == nullptr) {return;}
-	QColor c = m_impl->value();
+	QColor c = impl->value();
 	*(m_double) = c.redF();
 	*(m_double + 1) = c.greenF();
 	*(m_double + 2) = c.blueF();

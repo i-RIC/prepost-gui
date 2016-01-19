@@ -1,7 +1,9 @@
 #include "qpointfcontainer.h"
+#include "private/qpointfcontainer_impl.h"
 
 QPointFContainer::QPointFContainer() :
-	XmlAttributeContainer {}
+	XmlAttributeContainer {},
+	impl {new Impl {}}
 {}
 
 QPointFContainer::QPointFContainer(const QString& name) :
@@ -13,15 +15,15 @@ QPointFContainer::QPointFContainer(const QString& name) :
 QPointFContainer::QPointFContainer(const QPointF& val) :
 	QPointFContainer {}
 {
-	m_xValue = val.x();
-	m_yValue = val.y();
+	impl->m_xValue = val.x();
+	impl->m_yValue = val.y();
 }
 
 QPointFContainer::QPointFContainer(const QPointFContainer& c) :
 	QPointFContainer {}
 {
-	m_xValue = c.m_xValue.value();
-	m_yValue = c.m_yValue.value();
+	impl->m_xValue = c.impl->m_xValue.value();
+	impl->m_yValue = c.impl->m_yValue.value();
 }
 
 QPointFContainer::~QPointFContainer()
@@ -29,78 +31,78 @@ QPointFContainer::~QPointFContainer()
 
 QPointFContainer& QPointFContainer::operator=(const QPointFContainer& c)
 {
-	m_xValue = c.m_xValue.value();
-	m_yValue = c.m_yValue.value();
+	impl->m_xValue = c.impl->m_xValue.value();
+	impl->m_yValue = c.impl->m_yValue.value();
 	return *this;
 }
 
 QPointFContainer& QPointFContainer::operator=(const QPointF& v)
 {
-	m_xValue = v.x();
-	m_yValue = v.y();
+	impl->m_xValue = v.x();
+	impl->m_yValue = v.y();
 	return *this;
 }
 
 QPointFContainer& QPointFContainer::operator+=(const QPointF& v)
 {
-	m_xValue += v.x();
-	m_yValue += v.y();
+	impl->m_xValue += v.x();
+	impl->m_yValue += v.y();
 	return *this;
 }
 
 QPointFContainer& QPointFContainer::operator-=(const QPointF& v)
 {
-	m_xValue -= v.x();
-	m_yValue -= v.y();
+	impl->m_xValue -= v.x();
+	impl->m_yValue -= v.y();
 	return *this;
 }
 
 bool QPointFContainer::operator==(const QPointF& v) const
 {
-	return (m_xValue == v.x() && m_yValue == v.y());
+	return (impl->m_xValue == v.x() && impl->m_yValue == v.y());
 }
 bool QPointFContainer::operator!=(const QPointF& v) const
 {
-	return (m_xValue != v.x() || m_yValue != v.y());
+	return (impl->m_xValue != v.x() || impl->m_yValue != v.y());
 }
 QPointFContainer::operator QPointF() const
 {
-	return QPointF(m_xValue, m_yValue);
+	return QPointF(impl->m_xValue, impl->m_yValue);
 }
 
 void QPointFContainer::load(const QDomNode& node)
 {
-	m_xValue.load(node);
-	m_yValue.load(node);
+	impl->m_xValue.load(node);
+	impl->m_yValue.load(node);
 }
 
 void QPointFContainer::save(QXmlStreamWriter& writer) const
 {
-	m_xValue.save(writer);
-	m_yValue.save(writer);
+	impl->m_xValue.save(writer);
+	impl->m_yValue.save(writer);
 }
 
 QPointF QPointFContainer::value() const
 {
-	return QPointF(m_xValue, m_yValue);
+	return QPointF(impl->m_xValue, impl->m_yValue);
 }
 
 void QPointFContainer::setValue(const QPointF& val)
 {
-	m_xValue = val.x();
-	m_yValue = val.y();
+	impl->m_xValue = val.x();
+	impl->m_yValue = val.y();
 }
 
 void QPointFContainer::setPrefix(const QString& prefix)
 {
-	m_xValue.setPrefix(prefix);
-	m_yValue.setPrefix(prefix);
+	impl->m_xValue.setPrefix(prefix);
+	impl->m_yValue.setPrefix(prefix);
 	XmlAttributeContainer::setPrefix(prefix);
 }
 
 void QPointFContainer::copyValue(const XmlAttributeContainer& c)
 {
 	const QPointFContainer& c2 = dynamic_cast<const QPointFContainer&> (c);
-	m_xValue = c2.m_xValue;
-	m_yValue = c2.m_yValue;
+	impl->m_xValue = c2.impl->m_xValue;
+	impl->m_yValue = c2.impl->m_yValue;
 }

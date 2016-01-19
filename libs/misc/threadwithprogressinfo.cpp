@@ -3,3 +3,6 @@
 ThreadWithProgressInfo::ThreadWithProgressInfo(QObject* parent) :
 	QThread {parent}
 {}
+
+ThreadWithProgressInfo::~ThreadWithProgressInfo()
+{}

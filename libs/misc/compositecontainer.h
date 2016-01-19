@@ -8,7 +8,6 @@
 
 class MISCDLL_EXPORT CompositeContainer : public XmlAttributeContainer
 {
-
 public:
 	virtual ~CompositeContainer();
 
@@ -39,7 +38,7 @@ protected:
 
 private:
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 };
 
 #ifdef _DEBUG

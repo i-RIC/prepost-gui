@@ -51,9 +51,12 @@ HEADERS += arrowsettingcontainer.h \
            ziparchive.h \
            private/colorcontainer_impl.h \
            private/compositecontainer_impl.h \
+           private/edge_detail.h \
+           private/enumcontainert_detail.h \
            private/latitudelongitude_impl.h \
            private/latitudelongitudeangle_impl.h \
            private/numericvaluecontainert_detail.h \
+           private/qpointfcontainer_impl.h \
            private/simplevaluecontainert_detail.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
