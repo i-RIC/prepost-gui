@@ -83,7 +83,7 @@ public:
 	bool requestCoordinateSystem() const override {return true;}
 	vtkStructuredGrid* grid() const {return m_grid;}
 	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
-	virtual double thresholdValue() = 0;
+	virtual double thresholdValue() const = 0;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;

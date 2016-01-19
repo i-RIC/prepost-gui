@@ -10,14 +10,15 @@ class GD_NETCDF_EXPORT GeoDataNetcdfImporter : public GeoDataImporter
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfImporter(GeoDataCreator* creator) : GeoDataImporter(creator) {}
-	virtual ~GeoDataNetcdfImporter() {}
+	GeoDataNetcdfImporter(GeoDataCreator* creator);
+	virtual ~GeoDataNetcdfImporter();
+
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
 protected:
-	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 	static int ncGetVariableAsDouble(int ncid, int varid, size_t len, double* buffer);
 	static int ncGetVariableAsQVariant(int ncid, int varid, size_t len, std::vector<QVariant>& list);
 	static std::vector<QVariant> convertTimeValues(QString units, const std::vector<QVariant>& values, QWidget* parent, bool* canceled);

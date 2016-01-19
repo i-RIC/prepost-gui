@@ -146,7 +146,7 @@ bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*c_it);
 		PreProcessorGeoDataGroupDataItem* gItem = item->geodataGroupDataItem();
-		const QList<GridAttributeDimensionContainer*>& conts = gItem->dimensions()->containers();
+		const auto& conts = gItem->dimensions()->containers();
 		for (int i = 0; i < conts.size(); ++i) {
 			GridAttributeDimensionContainer* c = conts.at(i);
 			if (c->count() == 0) {

@@ -1,35 +1,42 @@
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
 #include "gridattributedimensioncontainer.h"
+#include "private/gridattributedimensioncontainer_impl.h"
 
 #include <QVariant>
 
-GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def) :
-	GridAttributeBaseObject(def->attribute()) ,
-	m_definition (def),
+GridAttributeDimensionContainer::Impl::Impl(SolverDefinitionGridAttributeDimension* def) :
+	m_definition {def},
 	m_currentIndex {0}
 {}
 
-GridAttributeDimensionContainer::~GridAttributeDimensionContainer()
+GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitionGridAttributeDimension* def) :
+	GridAttributeBaseObject(def->attribute()),
+	impl {new Impl {def}}
 {}
 
-const std::string& GridAttributeDimensionContainer::name() const
+GridAttributeDimensionContainer::~GridAttributeDimensionContainer()
 {
-	return m_definition->name();
+	delete impl;
 }
 
-const QString& GridAttributeDimensionContainer::caption() const
+std::string GridAttributeDimensionContainer::name() const
 {
-	return m_definition->caption();
+	return impl->m_definition->name();
+}
+
+QString GridAttributeDimensionContainer::caption() const
+{
+	return impl->m_definition->caption();
 }
 
 SolverDefinitionGridAttributeDimension* GridAttributeDimensionContainer::definition() const
 {
-	return m_definition;
+	return impl->m_definition;
 }
 
 int GridAttributeDimensionContainer::currentIndex() const
 {
-	return m_currentIndex;
+	return impl->m_currentIndex;
 }
 
 QVariant GridAttributeDimensionContainer::currentVariantValue() const
@@ -39,7 +46,7 @@ QVariant GridAttributeDimensionContainer::currentVariantValue() const
 
 void GridAttributeDimensionContainer::setCurrentIndex(int index, bool noDraw)
 {
-	m_currentIndex = index;
+	impl->m_currentIndex = index;
 
 	emit currentIndexChanged(noDraw);
 	emit currentIndexChanged(index, noDraw);

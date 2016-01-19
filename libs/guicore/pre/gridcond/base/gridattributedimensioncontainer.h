@@ -20,8 +20,8 @@ public:
 	virtual ~GridAttributeDimensionContainer();
 
 	// basic properties
-	const std::string& name() const;
-	const QString& caption() const;
+	std::string name() const;
+	QString caption() const;
 	SolverDefinitionGridAttributeDimension* definition() const;
 
 	// indices
@@ -51,8 +51,12 @@ signals:
 	void currentIndexChanged(int newIndex, bool noDraw);
 
 private:
-	SolverDefinitionGridAttributeDimension* m_definition;
-	int m_currentIndex;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/gridattributedimensioncontainer_impl.h"
+#endif // _DEBUG
 
 #endif // GRIDATTRIBUTEDIMENSIONCONTAINER_H

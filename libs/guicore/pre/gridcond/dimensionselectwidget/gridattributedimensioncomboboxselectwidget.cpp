@@ -10,8 +10,10 @@ GridAttributeDimensionComboboxSelectWidget::GridAttributeDimensionComboboxSelect
 {
 	ui->setupUi(this);
 	connect(ui->comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setCurrentIndex(int)));
-	ui->captionLabel->setText(container->definition()->caption());
+
 	setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+	ui->captionLabel->setText(container->definition()->caption());
 	applyValues();
 }
 

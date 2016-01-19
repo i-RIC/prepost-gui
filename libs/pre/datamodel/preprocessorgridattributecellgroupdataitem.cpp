@@ -378,7 +378,7 @@ bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* too
 	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
 	Grid* grid = gitem->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
-	const QList<GridAttributeDimensionSelectWidget*>& selectWidgets = cont->dimensions()->selectWidgets();
+	const auto& selectWidgets = cont->dimensions()->selectWidgets();
 	if (selectWidgets.size() == 0) {return false;}
 	for (int i = 0; i < selectWidgets.size(); ++i) {
 		GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);

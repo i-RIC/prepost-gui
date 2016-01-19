@@ -11,7 +11,6 @@
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
-#include "preprocessorstructured2dgridshapedataitem.h"
 
 #include <guibase/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -28,7 +27,6 @@
 #include <guicore/pre/geodatabackground/geodatabackground.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/scalarstocolors/scalarstocolorseditdialog.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -436,10 +434,6 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	// The last node must be the background item.
 	QDomNode child = children.at(children.count() - 1);
 	m_backgroundItem->loadFromProjectMainFile(child);
-
-	// the background item should be at the last always.
-//	moveBackgroundToLast();
-//	informValueRangeChange();
 }
 
 void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -465,7 +459,7 @@ bool PreProcessorGeoDataGroupDataItem::isChildCaptionAvailable(const QString& ca
 int PreProcessorGeoDataGroupDataItem::mappingCount() const
 {
 	int dimCount = 1;
-	if (dimensions()->containers().count() > 0) {
+	if (dimensions()->containers().size() > 0) {
 		dimCount = dimensions()->maxIndex() + 1;
 	}
 	int geodataCount = m_childItems.count();
@@ -486,7 +480,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
 	QList<GeoDataMapperSettingI*> settings;
-	if (dimensions()->containers().count() == 0) {
+	if (dimensions()->containers().size() == 0) {
 		// initialize
 
 		// reset the boolmap.
@@ -1013,7 +1007,7 @@ bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* parent)
 
 void PreProcessorGeoDataGroupDataItem::loadExternalData(const QString& /*filename*/)
 {
-	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
+	const auto& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
@@ -1024,7 +1018,7 @@ void PreProcessorGeoDataGroupDataItem::loadExternalData(const QString& /*filenam
 
 void PreProcessorGeoDataGroupDataItem::saveExternalData(const QString& /*filename*/)
 {
-	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
+	const auto& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
@@ -1036,11 +1030,13 @@ void PreProcessorGeoDataGroupDataItem::saveExternalData(const QString& /*filenam
 QStringList PreProcessorGeoDataGroupDataItem::containedFiles()
 {
 	QStringList ret = PreProcessorDataItem::containedFiles();
-	const QList<GridAttributeDimensionContainer*>& conts = m_dimensions->containers();
+	const auto& conts = m_dimensions->containers();
 	for (int i = 0; i < conts.size(); ++i) {
 		GridAttributeDimensionContainer* cont = conts.at(i);
+
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
-		ret.append(fileName);
+		QDir subdir(relativeSubPath());
+		ret.append(subdir.filePath(fileName));
 	}
 	return ret;
 }

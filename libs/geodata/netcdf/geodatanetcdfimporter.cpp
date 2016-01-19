@@ -18,6 +18,13 @@
 #include <QString>
 #include <QStringList>
 
+GeoDataNetcdfImporter::GeoDataNetcdfImporter(GeoDataCreator* creator) :
+	GeoDataImporter(creator)
+{}
+
+GeoDataNetcdfImporter::~GeoDataNetcdfImporter()
+{}
+
 const QStringList GeoDataNetcdfImporter::fileDialogFilters()
 {
 	QStringList ret;

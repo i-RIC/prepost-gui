@@ -69,9 +69,7 @@ void GridAttributeContainer::updateConnections()
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
 	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
-	const QList<GridAttributeDimensionContainer*>& conts = dims->containers();
-	for (int i = 0; i < conts.size(); ++i) {
-		GridAttributeDimensionContainer* cont = conts.at(i);
+	for (auto cont : dims->containers()) {
 		connect(cont, SIGNAL(valuesChanged(std::vector<QVariant>,std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>,std::vector<QVariant>)));
 	}
 }

@@ -97,7 +97,7 @@ bool GridAttributeDimensionContainerT<V>::loadFromExternalFile(const QString& fi
 {
 	QFile f(filename);
 	bool ok = f.open(QIODevice::ReadOnly);
-	if (!ok) { return false; }
+	if (! ok) {return false;}
 	QDataStream s(&f);
 	int count;
 	std::vector<V> vals;
@@ -118,7 +118,7 @@ bool GridAttributeDimensionContainerT<V>::saveToExternalFile(const QString& file
 {
 	QFile f(filename);
 	bool ok = f.open(QIODevice::WriteOnly);
-	if (!ok) { return false;}
+	if (! ok) {return false;}
 	QDataStream s(&f);
 	int count = static_cast<int> (m_values.size());
 	s << count;
@@ -136,35 +136,37 @@ bool GridAttributeDimensionContainerT<V>::loadFromCgnsFile(int fn, int B, int Z)
 	int ier;
 	bool found = false;
 	ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, gridAttribute()->name().c_str(), 0, "end");
-	if (ier == 0) {
-		// the corresponding node found.
-		// Find "Dimension_(name)" array.
-		QString targetName = QString("Dimension_%1").arg(name().c_str());
-		int narrays;
-		cg_narrays(&narrays);
-		for (int i = 1; i <= narrays; ++i) {
-			char arrayName[ProjectCgnsFile::BUFFERLEN];
-			DataType_t dt;
-			int dataDimension;
-			cgsize_t dimensionVector[3];
-			cgsize_t dataCount;
-			cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
-			if (dataDimension != 1) {return false;}
-			if (dt == dataType() && QString(arrayName) == targetName) {
-				// We've found the array!
-				dataCount = dimensionVector[0];
-				// load data.
-				std::vector<V> data(dataCount, 0);
-				ier = cg_array_read(i, data.data());
-				m_values.clear();
-				m_values.reserve(dataCount);
-				for (auto j = 0; j < dataCount; ++j) {
-					m_values.push_back(data[j]);
-				}
-				found = true;
-				break;
-			}
+	if (ier != 0) {
+		return false;
+	}
+	// the corresponding node found.
+	// Find "Dimension_(name)" array.
+	QString targetName = QString("Dimension_%1").arg(name().c_str());
+	int narrays;
+	cg_narrays(&narrays);
+	for (int i = 1; i <= narrays; ++i) {
+		char arrayName[ProjectCgnsFile::BUFFERLEN];
+		DataType_t dt;
+		int dataDimension;
+		cgsize_t dimensionVector[3];
+		cgsize_t dataCount;
+		cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
+
+		if (dataDimension != 1) {continue;}
+		if (dt != dataType() || QString(arrayName) != targetName) {continue;}
+
+		// We've found the array!
+		dataCount = dimensionVector[0];
+		// load data.
+		std::vector<V> data(dataCount, 0);
+		ier = cg_array_read(i, data.data());
+		m_values.clear();
+		m_values.reserve(dataCount);
+		for (auto j = 0; j < dataCount; ++j) {
+			m_values.push_back(data[j]);
 		}
+		found = true;
+		break;
 	}
 	return found;
 }

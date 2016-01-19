@@ -399,7 +399,9 @@ HEADERS += guicore_global.h \
            project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
+           pre/gridcond/base/private/gridattributedimensioncontainer_impl.h \
            pre/gridcond/base/private/gridattributedimensioncontainert_detail.h \
+           pre/gridcond/base/private/gridattributedimensionscontainer_impl.h \
            pre/gridcond/base/private/gridattributeeditwidget_impl.h \
            pre/gridcond/base/private/gridattributeeditwidgett_detail.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h \

@@ -1,4 +1,4 @@
-#include "geodatanetcdft.h"
+#include "geodatanetcdfreal.h"
 #include "geodatanetcdfxbandimporter.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>

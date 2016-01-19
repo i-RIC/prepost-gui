@@ -6,7 +6,8 @@
 #include "gridattributedimensionselectwidget.h"
 
 #include <QObject>
-#include <QList>
+
+#include <vector>
 
 class GUICOREDLL_EXPORT GridAttributeDimensionsContainer : public QObject
 {
@@ -16,17 +17,17 @@ public:
 	GridAttributeDimensionsContainer(SolverDefinitionGridAttribute* conddef, QObject* parent);
 	~GridAttributeDimensionsContainer();
 
-	const QList<GridAttributeDimensionContainer*>& containers() const;
-	QList<GridAttributeDimensionContainer*> containers();
+	const std::vector<GridAttributeDimensionContainer*>& containers() const;
+	std::vector<GridAttributeDimensionContainer*>& containers();
 
-	const QList<GridAttributeDimensionSelectWidget*>& selectWidgets() const;
-	QList<GridAttributeDimensionSelectWidget*>& selectWidgets();
+	const std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets() const;
+	std::vector<GridAttributeDimensionSelectWidget*>& selectWidgets();
 
 	int currentIndex() const;
 	void setCurrentIndex(int newIndex, bool noDraw = false);
 
 	int calculateIndex(GridAttributeDimensionContainer* cont = nullptr, int index = 0, int size = 0) const;
-	QList<int> calculateIndices(int index);
+	std::vector<int> calculateIndices(int index) const;
 	int maxIndex() const;
 
 signals:
@@ -38,9 +39,12 @@ private slots:
 	void handleIndexChange(bool noDraw);
 
 private:
-	int m_currentIndex;
-	QList<GridAttributeDimensionContainer*> m_containers;
-	QList<GridAttributeDimensionSelectWidget*> m_selectWidgets;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/gridattributedimensionscontainer_impl.h"
+#endif // _DEBUG
 
 #endif // GRIDATTRIBUTEDIMENSIONSCONTAINER_H
