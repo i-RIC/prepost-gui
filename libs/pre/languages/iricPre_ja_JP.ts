@@ -387,7 +387,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>iRIC project file (*.ipro);;CGNS file (*.cgn)</source>
-        <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル(*.cgn)</translation>
+        <translation>iRIC プロジェクトファイル (*.ipro);;CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="143"/>
@@ -398,7 +398,7 @@ Do you really want to import grid from this file?</source>
         <location filename="../preprocessordatamodel.cpp" line="145"/>
         <location filename="../preprocessordatamodel.cpp" line="234"/>
         <source>CGNS file (*.cgn)</source>
-        <translation>CGNS ファイル(*.cgn)</translation>
+        <translation>CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <location filename="../preprocessordatamodel.cpp" line="147"/>

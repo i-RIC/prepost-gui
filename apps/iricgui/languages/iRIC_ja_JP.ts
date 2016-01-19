@@ -12272,7 +12272,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CGNS file (*.cgn)</source>
-        <translation type="obsolete">CGNS ファイル(*.cgn)</translation>
+        <translation type="obsolete">CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -15822,7 +15822,7 @@ Do you really want to import grid from this file?</source>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="427"/>
         <source>CGNS file (*.cgn)</source>
-        <translation>CGNS ファイル(*.cgn)</translation>
+        <translation>CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <location filename="../main/iricmainwindow.cpp" line="438"/>

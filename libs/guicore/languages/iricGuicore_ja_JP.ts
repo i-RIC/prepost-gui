@@ -1726,7 +1726,7 @@ Do you really want to import this file?</source>
         <location filename="../project/projectmainfile.cpp" line="345"/>
         <location filename="../project/projectmainfile.cpp" line="429"/>
         <source>CGNS file (*.cgn)</source>
-        <translation>CGNS ファイル(*.cgn)</translation>
+        <translation>CGNS ファイル (*.cgn)</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="355"/>
