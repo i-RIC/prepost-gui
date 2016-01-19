@@ -231,8 +231,7 @@ void PreProcessorDataModel::importCalcConditionFromYaml(const QString& fname)
 void PreProcessorDataModel::exportCalcCondition()
 {
 	QString fname = QFileDialog::getSaveFileName(
-										projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgn)")
-									);
+		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgn);;YAML file (*.yml)"));
 	if (fname == "") {return;}
 	iRICMainWindowInterface* mainW = projectData()->mainWindow();
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(mainW->preProcessorWindow());
