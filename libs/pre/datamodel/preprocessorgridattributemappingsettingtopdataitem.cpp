@@ -143,6 +143,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::setDefaultValues()
 
 bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 {
+	return true;
+/*
 	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*c_it);
 		PreProcessorGeoDataGroupDataItem* gItem = item->geodataGroupDataItem();
@@ -156,6 +158,7 @@ bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 		}
 	}
 	return true;
+*/
 }
 
 void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nomessage)
