@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
     <message>
@@ -421,12 +421,12 @@
 <context>
     <name>GeoDataPointmapRealCreator</name>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="16"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="14"/>
         <source>Points</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../geodatapointmaprealcreator.cpp" line="44"/>
+        <location filename="../geodatapointmaprealcreator.cpp" line="41"/>
         <source>Points%1</source>
         <translation>地勢データ%1</translation>
     </message>
@@ -532,9 +532,13 @@
         <translation>表示方法</translation>
     </message>
     <message>
+        <source>Pointaaaa</source>
+        <translation>点だよーーん</translation>
+    </message>
+    <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="26"/>
         <source>Points</source>
-        <translation></translation>
+        <translation>点</translation>
     </message>
     <message>
         <location filename="../geodatapointmaprepresentationdialog.ui" line="36"/>
@@ -636,474 +640,474 @@
     <name>RawDataPointMapDelPtsLessThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="vanished">点の削除</translation>
+        <translation>点の削除</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="vanished">選択された点の属性</translation>
+        <translation>選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="vanished">点の数:</translation>
+        <translation>点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="vanished">最小値:</translation>
+        <translation>最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="vanished">最大値:</translation>
+        <translation>最大値:</translation>
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="vanished">この値以下の点を削除:</translation>
+        <translation>この値以下の点を削除:</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmap</name>
     <message>
         <source>Edit Points</source>
-        <translation type="vanished">点の編集</translation>
+        <translation>点の編集</translation>
     </message>
     <message>
         <source>Select Refecence Point</source>
-        <translation type="vanished">参照点の選択</translation>
+        <translation>参照点の選択</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
-        <translation type="vanished">分割線の点の追加</translation>
+        <translation>分割線の点の追加</translation>
     </message>
     <message>
         <source>Finish Defining Break Line</source>
-        <translation type="vanished">分割線の定義の完了</translation>
+        <translation>分割線の定義の完了</translation>
     </message>
     <message>
         <source>Cancel Defining Break Line</source>
-        <translation type="vanished">分割線の定義のキャンセル</translation>
+        <translation>分割線の定義のキャンセル</translation>
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="vanished">新しい補間線の点の追加</translation>
+        <translation>新しい補間線の点の追加</translation>
     </message>
     <message>
         <source>Add New Selection Polygon Point</source>
-        <translation type="vanished">選択用ポリゴンの点の追加</translation>
+        <translation>選択用ポリゴンの点の追加</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation type="vanished">分割線は、他の分割線と交差していてはいけません。</translation>
+        <translation>分割線は、他の分割線と交差していてはいけません。</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation type="vanished">TIN を再生成しています...</translation>
+        <translation>TIN を再生成しています...</translation>
     </message>
     <message>
         <source>P&amp;ointset Data</source>
-        <translation type="vanished">DEM データ(&amp;O)</translation>
+        <translation>DEM データ(&amp;O)</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="vanished">情報</translation>
+        <translation>情報</translation>
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">このモードに切り替えるには、 TIN を再生成する必要があります。再生成しますか?</translation>
+        <translation>このモードに切り替えるには、 TIN を再生成する必要があります。再生成しますか?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
-        <translation type="vanished">新しい点の追加(&amp;A)</translation>
+        <translation>新しい点の追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation type="vanished">点の補間追加(&amp;I)</translation>
+        <translation>点の補間追加(&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation type="vanished">表示設定(&amp;S)...</translation>
+        <translation>表示設定(&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
-        <translation type="vanished">点の選択</translation>
+        <translation>点の選択</translation>
     </message>
     <message>
         <source>Select Points With &amp;Polygon</source>
-        <translation type="vanished">ポリゴン領域で点を選択(&amp;P)</translation>
+        <translation>ポリゴン領域で点を選択(&amp;P)</translation>
     </message>
     <message>
         <source>&amp;Edit Selected Points...</source>
-        <translation type="vanished">選択された点の編集(&amp;E)...</translation>
+        <translation>選択された点の編集(&amp;E)...</translation>
     </message>
     <message>
         <source>Delete Selected P&amp;oints</source>
-        <translation type="vanished">選択された点の削除(&amp;O)</translation>
+        <translation>選択された点の削除(&amp;O)</translation>
     </message>
     <message>
         <source>E&amp;xport Selected Points...</source>
-        <translation type="vanished">選択された点のエクスポート(&amp;X)...</translation>
+        <translation>選択された点のエクスポート(&amp;X)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Less Than Value...</source>
-        <translation type="vanished">選択された点のうち、指定した値以下の点を削除(&amp;L)...</translation>
+        <translation>選択された点のうち、指定した値以下の点を削除(&amp;L)...</translation>
     </message>
     <message>
         <source>Delete Selected Points &amp;Greater Than Value...</source>
-        <translation type="vanished">選択された点のうち、指定した値以上の点を削除(&amp;G)...</translation>
+        <translation>選択された点のうち、指定した値以上の点を削除(&amp;G)...</translation>
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation type="vanished">TIN の再生成(&amp;T)</translation>
+        <translation>TIN の再生成(&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
-        <translation type="vanished">分割線の追加(&amp;B)</translation>
+        <translation>分割線の追加(&amp;B)</translation>
     </message>
     <message>
         <source>&amp;Remove Break Line</source>
-        <translation type="vanished">分割線の削除(&amp;R)</translation>
+        <translation>分割線の削除(&amp;R)</translation>
     </message>
     <message>
         <source>Rem&amp;ove All Break Lines...</source>
-        <translation type="vanished">全分割線の削除(&amp;O)...</translation>
+        <translation>全分割線の削除(&amp;O)...</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation type="vanished">本当にこの分割線を削除していいですか?</translation>
+        <translation>本当にこの分割線を削除していいですか?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
-        <translation type="vanished">ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
+        <translation>ポリゴンは、最低3つの頂点を持たなくてはなりません。</translation>
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation type="vanished">TIN の再生成が完了しました。</translation>
+        <translation>TIN の再生成が完了しました。</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="vanished">分割線を追加するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>分割線を追加するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
-        <translation type="vanished">分割線は、分割線を作成したい点を順にクリックして定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation>分割線は、分割線を作成したい点を順にクリックして定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="vanished">分割線を削除するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>分割線を削除するには、ワイヤーフレームを表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
-        <translation type="vanished">削除したい分割線をクリックしてください。</translation>
+        <translation>削除したい分割線をクリックしてください。</translation>
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation type="vanished">本当に全ての分割線を削除していいですか?</translation>
+        <translation>本当に全ての分割線を削除していいですか?</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">点を削除する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>点を削除する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
-        <translation type="vanished">分割線に使用されている点は、削除できません。</translation>
+        <translation>分割線に使用されている点は、削除できません。</translation>
     </message>
     <message>
         <source>Delete Points</source>
-        <translation type="vanished">点の削除</translation>
+        <translation>点の削除</translation>
     </message>
     <message>
         <source>Select File to Export</source>
-        <translation type="vanished">エクスポートするファイル名の選択</translation>
+        <translation>エクスポートするファイル名の選択</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="vanished">地勢データ (*.tpo)</translation>
+        <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">%1 へのエクスポート中にエラーが発生しました。</translation>
+        <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
-        <translation type="vanished">%1 以下の点の削除</translation>
+        <translation>%1 以下の点の削除</translation>
     </message>
     <message>
         <source>Delete points greater than %1</source>
-        <translation type="vanished">%1 以上の点の削除</translation>
+        <translation>%1 以上の点の削除</translation>
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">点を補間するには、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>点を補間するには、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
-        <translation type="vanished">点を補間するには、既存の点を順にクリックしてください。ダブルクリックするか、改行キーを押して完了します。</translation>
+        <translation>点を補間するには、既存の点を順にクリックしてください。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
+        <translation>点を追加する時は、点を表示するモードに切り替える必要があります。切り替えますか?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation type="vanished">新しい点を追加するには、まずは既に存在する点を一つ選択してください。選択した点での値が、これから新しく追加する点での値のデフォルト値になります。そのあと、新しい点を追加したい任意の場所でクリックして点を追加し、ダブルクリックもしくはリターンキーを押して追加を完了してください。</translation>
+        <translation>新しい点を追加するには、まずは既に存在する点を一つ選択してください。選択した点での値が、これから新しく追加する点での値のデフォルト値になります。そのあと、新しい点を追加したい任意の場所でクリックして点を追加し、ダブルクリックもしくはリターンキーを押して追加を完了してください。</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
-        <translation type="vanished">点の追加</translation>
+        <translation>点の追加</translation>
     </message>
     <message>
         <source>Value of new points:</source>
-        <translation type="vanished">新しい点の値:</translation>
+        <translation>新しい点の値:</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
-        <translation type="vanished">点の削除</translation>
+        <translation>点の削除</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="vanished">選択された点の属性</translation>
+        <translation>選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="vanished">点の数:</translation>
+        <translation>点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="vanished">最小値:</translation>
+        <translation>最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="vanished">最大値:</translation>
+        <translation>最大値:</translation>
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="vanished">この値以上の点を削除:</translation>
+        <translation>この値以上の点を削除:</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapEditPtsDialog</name>
     <message>
         <source>Edit Points</source>
-        <translation type="vanished">点の編集</translation>
+        <translation>点の編集</translation>
     </message>
     <message>
         <source>Selected point properties</source>
-        <translation type="vanished">選択された点の属性</translation>
+        <translation>選択された点の属性</translation>
     </message>
     <message>
         <source>Number of Points:</source>
-        <translation type="vanished">点の数:</translation>
+        <translation>点の数:</translation>
     </message>
     <message>
         <source>Minimum:</source>
-        <translation type="vanished">最小値:</translation>
+        <translation>最小値:</translation>
     </message>
     <message>
         <source>Maximum:</source>
-        <translation type="vanished">最大値:</translation>
+        <translation>最大値:</translation>
     </message>
     <message>
         <source>X-location</source>
-        <translation type="vanished">X座標</translation>
+        <translation>X座標</translation>
     </message>
     <message>
         <source>Y-location</source>
-        <translation type="vanished">Y座標</translation>
+        <translation>Y座標</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="vanished">値</translation>
+        <translation>値</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapInterpolatePoints</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="vanished">補間の増分</translation>
+        <translation>補間の増分</translation>
     </message>
     <message>
         <source>Interpolation Line Length:</source>
-        <translation type="vanished">補間線の長さ:</translation>
+        <translation>補間線の長さ:</translation>
     </message>
     <message>
         <source>Set Interpolation Increment:</source>
-        <translation type="vanished">補間の増分:</translation>
+        <translation>補間の増分:</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapRealCreator</name>
     <message>
         <source>Points</source>
-        <translation type="vanished">地勢データ (DEM など)</translation>
+        <translation>地勢データ (DEM など)</translation>
     </message>
     <message>
         <source>Points%1</source>
-        <translation type="vanished">地勢データ%1</translation>
+        <translation>地勢データ%1</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapRealExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="vanished">地勢データ (DEM など)</translation>
+        <translation>地勢データ (DEM など)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="vanished">地勢データ (*.tpo)</translation>
+        <translation>地勢データ (*.tpo)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">%1 へのエクスポート中にエラーが発生しました。</translation>
+        <translation>%1 へのエクスポート中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat)</source>
-        <translation type="vanished">RIC-Nays DEM データ (*.dat)</translation>
+        <translation>RIC-Nays DEM データ (*.dat)</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapRealImporter</name>
     <message>
         <source>DEM etc. (*.tpo, *.anc, *.dat, *.stl)</source>
-        <translation type="vanished">DEM など (*.tpo, *.anc, *.dat, *.stl)</translation>
+        <translation>DEM など (*.tpo, *.anc, *.dat, *.stl)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo *.anc)</source>
-        <translation type="vanished">地勢データ (*.tpo *.anc)</translation>
+        <translation>地勢データ (*.tpo *.anc)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="vanished">%1 を開いている時にエラーが発生しました。</translation>
+        <translation>%1 を開いている時にエラーが発生しました。</translation>
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
-        <translation type="vanished">RIC-Nays DEM データ (*.dat *.txt)</translation>
+        <translation>RIC-Nays DEM データ (*.dat *.txt)</translation>
     </message>
     <message>
         <source>USGS NED (*.adf)</source>
-        <translation type="vanished">USGS NED (*.adf)</translation>
+        <translation>USGS NED (*.adf)</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation type="vanished">間引き設定</translation>
+        <translation>間引き設定</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="vanished">データの間引きを行いたい場合、1より大きい値を指定してください。</translation>
+        <translation>データの間引きを行いたい場合、1より大きい値を指定してください。</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation type="vanished">間引き:</translation>
+        <translation>間引き:</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">表示設定</translation>
+        <translation>表示設定</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="vanished">表示方法</translation>
+        <translation>表示方法</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="vanished">点</translation>
+        <translation>点</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="vanished">ワイヤーフレーム</translation>
+        <translation>ワイヤーフレーム</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="vanished">補間された面</translation>
+        <translation>補間された面</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">点のサイズ:</translation>
+        <translation>点のサイズ:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation type="vanished">分割線を隠す</translation>
+        <translation>分割線を隠す</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapSTLExporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="vanished">STLデータ</translation>
+        <translation>STLデータ</translation>
     </message>
     <message>
         <source>Binary STL (*.stl)</source>
-        <translation type="vanished">バイナリ型式 STLファイル (*.stl)</translation>
+        <translation>バイナリ型式 STLファイル (*.stl)</translation>
     </message>
     <message>
         <source>ASCII STL (*.stl)</source>
-        <translation type="vanished">アスキー型式 STLファイル (*.stl)</translation>
+        <translation>アスキー型式 STLファイル (*.stl)</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapSTLImporter</name>
     <message>
         <source>Stereolithography (STL)</source>
-        <translation type="vanished">STLデータ</translation>
+        <translation>STLデータ</translation>
     </message>
     <message>
         <source>Stereolithography file (*.stl)</source>
-        <translation type="vanished">STLファイル (*.stl)</translation>
+        <translation>STLファイル (*.stl)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="vanished">%1 を開いている時にエラーが発生しました。</translation>
+        <translation>%1 を開いている時にエラーが発生しました。</translation>
     </message>
     <message>
         <source>solid</source>
-        <translation type="vanished">solid</translation>
+        <translation>solid</translation>
     </message>
 </context>
 <context>
     <name>RawDataPointmapVTKExporter</name>
     <message>
         <source>Pointset (DEM etc.)</source>
-        <translation type="vanished">地勢データ (DEM など)</translation>
+        <translation>地勢データ (DEM など)</translation>
     </message>
     <message>
         <source>VTK File (*.vtk)</source>
-        <translation type="vanished">VTKファイル (*.vtk)</translation>
+        <translation>VTKファイル (*.vtk)</translation>
     </message>
 </context>
 </TS>
