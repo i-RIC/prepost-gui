@@ -3,6 +3,14 @@
 
 #include "../geodatanetcdfcellmappert.h"
 
+#include <vector>
+
+class GeoDataNetcdfCellMapperSetting : public GeoDataMapperSettingI
+{
+public:
+	std::vector<DoubleMappingSetting> settings;
+};
+
 template <class V, class DA>
 GeoDataNetcdfCellMapperT<V, DA>::GeoDataNetcdfCellMapperT(GeoDataCreator* parent) :
 	GeoDataCellMapperT<V, DA> ("Raster data cell mapper", parent)
@@ -42,7 +50,7 @@ GeoDataMapperSettingI* GeoDataNetcdfCellMapperT<V, DA>::initialize(bool* boolMap
 			DoubleMappingSetting setting;
 			setting.target = i;
 			setting.indices.append(cellid);
-			s->settings.append(setting);
+			s->settings.push_back(setting);
 		}
 	}
 	return s;

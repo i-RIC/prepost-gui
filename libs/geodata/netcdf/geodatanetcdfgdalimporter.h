@@ -23,8 +23,9 @@ public:
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;
 
-protected:
+private:
 	bool doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+
 	virtual int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) = 0;
 	GDALDataset* m_dataset;
 	OGRSpatialReference* m_sr;

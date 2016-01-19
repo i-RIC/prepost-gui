@@ -7,16 +7,6 @@
 #include <guicore/pre/geodata/geodatacellmappert.h>
 #include <misc/doublemappingsetting.h>
 
-#include <QList>
-
-class GeoDataNetcdfCellMapperSetting : public GeoDataMapperSettingI
-{
-public:
-	GeoDataNetcdfCellMapperSetting() : GeoDataMapperSettingI() {}
-	~GeoDataNetcdfCellMapperSetting() {}
-	QList<DoubleMappingSetting> settings;
-};
-
 template <class V, class DA>
 class GeoDataNetcdfCellMapperT : public GeoDataCellMapperT<V, DA>
 {

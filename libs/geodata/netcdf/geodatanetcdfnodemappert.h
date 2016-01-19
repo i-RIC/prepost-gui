@@ -7,16 +7,6 @@
 #include <guicore/pre/geodata/geodatanodemappert.h>
 #include <misc/doublemappingsetting.h>
 
-#include <QList>
-
-class GeoDataNetcdfNodeMapperSetting : public GeoDataMapperSettingI
-{
-public:
-	GeoDataNetcdfNodeMapperSetting() : GeoDataMapperSettingI() {}
-	~GeoDataNetcdfNodeMapperSetting() {}
-	QList<DoubleMappingSetting> settings;
-};
-
 template <class V, class DA>
 class GeoDataNetcdfNodeMapperT : public GeoDataNodeMapperT<V, DA>
 {

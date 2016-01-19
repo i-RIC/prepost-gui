@@ -3,6 +3,12 @@
 
 #include <gdal_priv.h>
 
+GeoDataNetcdfGdalRealImporter::GeoDataNetcdfGdalRealImporter(GeoDataCreator* creator) : GeoDataNetcdfGdalImporter(creator)
+{}
+
+GeoDataNetcdfGdalRealImporter::~GeoDataNetcdfGdalRealImporter()
+{}
+
 int GeoDataNetcdfGdalRealImporter::outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data)
 {
 	int ret = NC_NOERR;

@@ -119,13 +119,16 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfimportert.h \
            geodatanetcdfinteger.h \
            geodatanetcdfintegercreator.h \
+           geodatanetcdfintegerimporter.h \
            geodatanetcdfnodemappert.h \
            geodatanetcdfreal.h \
            geodatanetcdfrealcreator.h \
+           geodatanetcdfrealimporter.h \
            geodatanetcdft.h \
            geodatanetcdfxbandimporter.h \
            private/geodatanetcdfcellmappert_detail.h \
            private/geodatanetcdfcreatort_detail.h \
+           private/geodatanetcdfimportert_detail.h \
            private/geodatanetcdfnodemappert_detail.h \
            private/geodatanetcdft_detail.h
 FORMS += geodatanetcdfimporterdateselectdialog.ui \
@@ -139,8 +142,10 @@ SOURCES += geodatanetcdf.cpp \
            geodatanetcdfimportersettingdialog.cpp \
            geodatanetcdfinteger.cpp \
            geodatanetcdfintegercreator.cpp \
+           geodatanetcdfintegerimporter.cpp \
            geodatanetcdfreal.cpp \
            geodatanetcdfrealcreator.cpp \
+           geodatanetcdfrealimporter.cpp \
            geodatanetcdfxbandimporter.cpp
 TRANSLATIONS += languages/iricGdNetcdf_es_ES.ts \
                 languages/iricGdNetcdf_fr_FR.ts \
