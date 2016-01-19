@@ -22,8 +22,11 @@ void RealNumberEditWidget::setValue(double newvalue)
 	if (m_doubleValue == newvalue) {return;}
 
 	m_doubleValue = newvalue;
-	QString txt("%1");
-	setText(txt.arg(m_doubleValue));
+	if (m_doubleValue == 0) {
+		setText("0");
+	} else {
+		setText(QString::number(m_doubleValue, 'g', 10));
+	}
 }
 
 void RealNumberEditWidget::closeEvent(QCloseEvent* e)
