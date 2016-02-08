@@ -98,8 +98,6 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 
 void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t)
 {
-	static QString optstr("option");
-	static QString truestr("true");
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
 	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
