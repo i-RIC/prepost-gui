@@ -1755,12 +1755,12 @@ int cg_iRIC_Read_Grid_FunctionalDimension_Real_Mul(int fid, char* name, char* di
 
 int cg_iRIC_Read_Grid_FunctionalTimeSize_Mul(int fid, char* name, cgsize_t* count)
 {
-	return cg_iRIC_Read_Grid_FunctionalDimensionSize_Mul(fid, name, "time", count);
+	return cg_iRIC_Read_Grid_FunctionalDimensionSize_Mul(fid, name, "Time", count);
 }
 
 int cg_iRIC_Read_Grid_FunctionalTime_Mul(int fid, char* name, double* time)
 {
-	return cg_iRIC_Read_Grid_FunctionalDimension_Real_Mul(fid, name, "time", time);
+	return cg_iRIC_Read_Grid_FunctionalDimension_Real_Mul(fid, name, "Time", time);
 }
 
 static void local_get_gridfunctionaldata_name(int num, char* name){
