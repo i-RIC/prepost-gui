@@ -28,7 +28,7 @@ public slots:
 	void getWidgetValue(double);
 
 private:
-	InputConditionContainerReal* m_Container;
+	InputConditionContainerReal* m_container;
 	double maxValue;
 	bool maxIsSet;
 	double minValue;

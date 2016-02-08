@@ -18,11 +18,11 @@ InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defnode, const Solve
 	layout->addWidget(m_lineEdit, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);
-	// @todo min, max is not regarded yet.
-	m_Container = cont;
+
+	m_container = cont;
 	setValue(cont->value());
 	connect(m_lineEdit, SIGNAL(valueChanged(double)), this, SLOT(getWidgetValue(double)));
-	connect(m_Container, SIGNAL(valueChanged(double)), this, SLOT(setValue(double)));
+	connect(m_container, SIGNAL(valueChanged(double)), this, SLOT(setValue(double)));
 }
 void InputConditionWidgetReal::setValue(double v)
 {
@@ -31,7 +31,7 @@ void InputConditionWidgetReal::setValue(double v)
 
 void InputConditionWidgetReal::getWidgetValue(double v)
 {
-	m_Container->setValue(v);
+	m_container->setValue(v);
 }
 
 void InputConditionWidgetReal::setDisabled(bool disable)
