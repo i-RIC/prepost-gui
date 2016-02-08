@@ -99,6 +99,52 @@ PostZoneDataContainer::PostZoneDataContainer(const std::string& baseName, const 
 	m_loadedOnce {false}
 {}
 
+SolverDefinitionGridType* PostZoneDataContainer::gridType() const
+{
+	return m_gridType;
+}
+
+vtkPointSet* PostZoneDataContainer::data() const
+{
+	return m_data;
+}
+
+vtkPointSet* PostZoneDataContainer::labelData() const
+{
+	return m_labelData;
+}
+
+vtkPolyData* PostZoneDataContainer::particleData() const
+{
+	return m_particleData;
+}
+
+int PostZoneDataContainer::baseId() const
+{
+	return m_baseId;
+}
+
+int PostZoneDataContainer::zoneId() const
+{
+	return m_zoneId;
+}
+
+const std::string& PostZoneDataContainer::zoneName() const
+{
+	return m_zoneName;
+}
+
+QString PostZoneDataContainer::caption() const
+{
+	return zoneName().c_str();
+}
+
+bool PostZoneDataContainer::handleCurrentStepUpdate(const int fn)
+{
+	loadFromCgnsFile(fn);
+	return m_loadOK;
+}
+
 bool PostZoneDataContainer::setBaseId(const int fn)
 {
 	// if m_baseID is already set, we do not have to do it again.

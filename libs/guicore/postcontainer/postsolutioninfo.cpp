@@ -8,7 +8,7 @@
 #include "exporter/postzonedatavtkexporter.h"
 #include "postbaseselectingdialog.h"
 #include "postdataexportdialog.h"
-#include "postdummy3dzonedatacontainer.h"
+//#include "postdummy3dzonedatacontainer.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
 #include "posttimesteps.h"
@@ -269,6 +269,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int fn, int dim, std::vector
 	return true;
 }
 
+/*
 bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap)
 {
 	int ier;
@@ -336,6 +337,7 @@ bool PostSolutionInfo::innerSetupDummy3DZoneDataContainers(int fn, std::vector<s
 	}
 	return true;
 }
+*/
 
 void PostSolutionInfo::setupZoneDataContainers(int fn)
 {

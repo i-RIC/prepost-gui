@@ -66,7 +66,7 @@ public:
 protected:
 	void timerEvent(QTimerEvent*) override;
 	bool innerSetupZoneDataContainers(int fn, int dimiension, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
-	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
+//	bool innerSetupDummy3DZoneDataContainers(int fn, std::vector<std::string>* zoneNames, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap);
 	virtual void doLoadFromProjectMainFile(const QDomNode& node) override;
 	virtual void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void informStepsUpdated();
