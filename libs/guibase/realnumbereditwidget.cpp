@@ -19,7 +19,7 @@ double RealNumberEditWidget::value() const
 
 void RealNumberEditWidget::setValue(double newvalue)
 {
-	if (m_doubleValue == newvalue) {return;}
+	if (! text().isEmpty() && (m_doubleValue == newvalue)) {return;}
 
 	m_doubleValue = newvalue;
 	if (m_doubleValue == 0) {
