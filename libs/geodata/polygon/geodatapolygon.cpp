@@ -141,7 +141,9 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 
 GeoDataPolygon::~GeoDataPolygon()
 {
-	m_triangleThread->cancelJobs(this);
+	if (m_triangleThread != nullptr) {
+		m_triangleThread->cancelJobs(this);
+	}
 	delete m_gridRegionPolygon;
 	clearHolePolygons();
 
@@ -1729,7 +1731,7 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 			m_triangleThread->wait(100);
 		}
 	}
-	if (m_triangleThread == 0){
+	if (m_triangleThread == nullptr){
 		m_triangleThread = GeoDataPolygonTriangleThread::instance();
 		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*)), this, SLOT(renderGraphics(GeoDataPolygon*)));
 	}
