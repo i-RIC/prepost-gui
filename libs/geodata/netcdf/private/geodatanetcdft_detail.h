@@ -95,6 +95,8 @@ void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/
 	int ncid, ret, varId;
 
 	ret = nc_open(fname.c_str(), NC_NOWRITE, &ncid);
+	if (ret != NC_NOERR) {return;}
+
 	ret = getValueVarId(ncid, &varId);
 
 	GridAttributeDimensionsContainer* dims = dimensions();

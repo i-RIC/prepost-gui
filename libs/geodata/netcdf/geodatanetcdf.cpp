@@ -1,6 +1,7 @@
 #include "geodatanetcdf.h"
 
 #include <guibase/coordinatesystem.h>
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
@@ -24,7 +25,9 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
 
+#include <QDir>
 #include <QLineF>
+#include <QMessageBox>
 
 #include <netcdf.h>
 #include <vector>
@@ -123,6 +126,11 @@ void GeoDataNetcdf::loadExternalData(const QString& filename)
 	std::string fname = iRIC::toStr(filename);
 	int ncid, ret;
 	ret = nc_open(fname.c_str(), NC_NOWRITE, &ncid);
+	if (ret != NC_NOERR) {
+		// error occured while opening the file.
+		QMessageBox::critical(iricMainWindow(), tr("Error"), tr("Error occured while opening %1.").arg(QDir::toNativeSeparators(filename)));
+		return;
+	}
 
 	// ------------------------
 	// Load coordinates values
@@ -792,6 +800,8 @@ void GeoDataNetcdf::updateSimpifiedGrid(double xmin, double xmax, double ymin, d
 	ymax += ywidth * 0.2;
 
 	vtkIdType vid = m_grid->FindPoint(xcenter, ycenter, 0);
+	if (vid == -1) {return;}
+
 	double* cv = m_grid->GetPoint(vid);
 	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
 		m_simplifiedGrid = vtkSmartPointer<vtkStructuredGrid>::New();
