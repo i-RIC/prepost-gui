@@ -219,7 +219,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 	poly->setVariantValue(value, index != (m_shapeInfos.size() - 1));
 	poly->restoreMouseEventMode();
 	poly->setupDataItem();
-	poly->updateGrid(index != (m_shapeInfos.size() - 1));
+	poly->updatePolyData(index != (m_shapeInfos.size() - 1));
 
 	return true;
 }

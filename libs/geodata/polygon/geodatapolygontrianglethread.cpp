@@ -18,7 +18,9 @@
 #include <geos/geom/LinearRing.h>
 #include <geos/geom/Point.h>
 #include <geos/geom/Polygon.h>
+#include <geos/util/GEOSException.h>
 
+#include <vtkCellArray.h>
 #include <vtkProperty.h>
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
@@ -272,16 +274,17 @@ GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
 void GeoDataPolygonTriangleThread::runTriangle()
 {
 	GeoDataPolygon* p = m_currentJob->targetPolygon;
-	p->m_grid->Reset();
-	p->m_grid->Modified();
-	if (! p->checkCondition()){
-		return;
-	}
+	p->m_polyData->Reset();
+	p->m_polyData->Modified();
 
 	QPointF offset;
 	triangulateio in, out;
 
-	setupTriangleInput(&in, p, &offset);
+	try {
+		setupTriangleInput(&in, p, &offset);
+	} catch (geos::util::GEOSException&) {
+		return;
+	}
 	clearTrianglateio(&out);
 
 	char arg[] = "pD";
@@ -302,20 +305,23 @@ void GeoDataPolygonTriangleThread::runTriangle()
 	}
 	m_isOutputting = true;
 
-	p->m_grid->SetPoints(points);
-	p->m_grid->Allocate(out.numberoftriangles);
+	p->m_polyData->SetPoints(points);
+	vtkCellArray* ca = vtkCellArray::New();
+
+	p->m_polyData->Allocate(out.numberoftriangles);
+	vtkIdType ids[3];
 	for (int i = 0; i < out.numberoftriangles; ++i){
-		vtkIdType id1, id2, id3;
-		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-		id1 = *(out.trianglelist + i * 3) - 1;
-		id2 = *(out.trianglelist + i * 3 + 1) - 1;
-		id3 = *(out.trianglelist + i * 3 + 2) - 1;
-		tri->GetPointIds()->SetId(0, id1);
-		tri->GetPointIds()->SetId(1, id2);
-		tri->GetPointIds()->SetId(2, id3);
-		p->m_grid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+		ids[0] = *(out.trianglelist + i * 3) - 1;
+		ids[1] = *(out.trianglelist + i * 3 + 1) - 1;
+		ids[2] = *(out.trianglelist + i * 3 + 2) - 1;
+		ca->InsertNextCell(3, ids);
 	}
-	p->m_grid->BuildLinks();
+	p->m_polyData->SetPolys(ca);
+	ca->Delete();
+
+	p->m_polyData->DeleteCells();
+	p->m_polyData->BuildLinks();
+
 	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
 
 	freeTriangleOutput(&out);
@@ -325,5 +331,5 @@ void GeoDataPolygonTriangleThread::runTriangle()
 	if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
 		emit shapeUpdated(m_currentJob->targetPolygon);
 	}
-	m_currentJob = 0;
+	m_currentJob = nullptr;
 }

@@ -221,7 +221,7 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dial
 	}
 
 	vtkPointSet* pset = grid->vtkGrid();
-	vtkPointSet* polygonGrid = m_polygon->grid();
+	vtkPointSet* polygonGrid = m_polygon->polyData();
 	double bounds[6];
 	polygonGrid->GetBounds(bounds);
 

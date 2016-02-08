@@ -14,9 +14,9 @@ GeoDataMapperSettingI* GeoDataPolygonNodeMapperT<V, DA>::initialize(bool* boolMa
 	GeoDataPolygonNodeMapperSetting* s = new GeoDataPolygonNodeMapperSetting();
 	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapper::geoData());
-	vtkUnstructuredGrid* tmpgrid = polygon->grid();
+	vtkPointSet* pointSet = polygon->polyData();
 	double bounds[6];
-	tmpgrid->GetBounds(bounds);
+	pointSet->GetBounds(bounds);
 	double weights[3];
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
@@ -36,13 +36,13 @@ GeoDataMapperSettingI* GeoDataPolygonNodeMapperT<V, DA>::initialize(bool* boolMa
 				vtkIdType cellid;
 				double pcoords[3];
 				int subid;
-				cellid = tmpgrid->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
+				cellid = pointSet->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
 				in = (cellid >= 0);
 				if (! in) {
 					// Not found, but if the grid is ugly, sometimes FindCell()
 					// fails, even there is a cell that contains point.
-					for (cellid = 0; ! in && cellid < tmpgrid->GetNumberOfCells(); ++cellid) {
-						vtkCell* tmpcell = tmpgrid->GetCell(cellid);
+					for (cellid = 0; ! in && cellid < pointSet->GetNumberOfCells(); ++cellid) {
+						vtkCell* tmpcell = pointSet->GetCell(cellid);
 						double dist2;
 						double closestPoint[3];
 						int ret = tmpcell->EvaluatePosition(point, &(closestPoint[0]), subid, pcoords, dist2, weights);

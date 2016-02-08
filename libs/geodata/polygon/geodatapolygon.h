@@ -8,11 +8,10 @@
 #include <guicore/pre/grid/unstructured2dgrid.h>
 #include <misc/zdepthrange.h>
 
-#include <vtkSmartPointer.h>
-#include <vtkPolygon.h>
-#include <vtkUnstructuredGrid.h>
 #include <vtkActor.h>
-#include <vtkDataSetMapper.h>
+#include <vtkPolyData.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkSmartPointer.h>
 #include <QVector>
 #include <QPoint>
 #include <QPointF>
@@ -23,6 +22,8 @@
 #include <QList>
 
 #include <iriclib.h>
+
+#include <vector>
 
 class QMenu;
 class QAction;
@@ -73,36 +74,37 @@ public:
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoDataPolygon();
 	void setupMenu() override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;
 	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick, bool noEditVal = false);
-	QColor color() {return m_setting.color;}
+	QColor color() const;
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* d) override;
-//	GeoDataPolygonColorSettingDialog::Mapping mapping() {return m_setting.mapping;}
+
 	QColor doubleToColor(double d);
 	void clear();
 	bool ready() const {return true;}
 	void showInitialDialog() override;
+
 	const QVariant& variantValue() const;
 	void setVariantValue(const QVariant& v, bool disableInform = false);
+
 	void addHolePolygon(const QPolygonF& p);
-	vtkUnstructuredGrid* grid() const {return m_grid;}
+	vtkPolyData* polyData() const;
 	bool getValueRange(double* min, double* max) override;
-	void updateFilename() override {
-		setFilename(name().append(".dat"));
-	}
+	void updateFilename() override;
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
 	MouseEventMode mouseEventMode() const {return m_mouseEventMode;}
@@ -118,7 +120,7 @@ public slots:
 	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after) override;
 
 private slots:
-	void updateGrid(bool noDraw = false);
+	void updatePolyData(bool noDraw = false);
 	void addVertexMode(bool on);
 	void removeVertexMode(bool on);
 	void editCoordinates();
@@ -183,11 +185,11 @@ private:
 
 	GeoDataPolygonColorSettingDialog::Setting m_setting;
 
-	QList<QVariant> m_variantValues;
+	std::vector<QVariant> m_variantValues;
 
-	vtkSmartPointer<vtkUnstructuredGrid> m_grid;
+	vtkSmartPointer<vtkPolyData> m_polyData;
 	vtkSmartPointer<vtkActor> m_paintActor;
-	vtkSmartPointer<vtkDataSetMapper> m_paintMapper;
+	vtkSmartPointer<vtkPolyDataMapper> m_paintMapper;
 	vtkSmartPointer<vtkDoubleArray> m_scalarValues;
 
 	bool m_inhibitSelect {false};

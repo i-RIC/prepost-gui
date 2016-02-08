@@ -114,19 +114,19 @@ GeoDataPolygon::GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, Solv
 
 	m_mouseEventMode = meBeforeDefining;
 
-	m_grid = vtkSmartPointer<vtkUnstructuredGrid>::New();
+	m_polyData = vtkSmartPointer<vtkPolyData>::New();
 
 	m_scalarValues = vtkSmartPointer<vtkDoubleArray>::New();
 	m_scalarValues->SetName("polygonvalue");
-	m_grid->GetPointData()->AddArray(m_scalarValues);
-	m_grid->GetPointData()->SetActiveScalars("polygonvalue");
+	m_polyData->GetPointData()->AddArray(m_scalarValues);
+	m_polyData->GetPointData()->SetActiveScalars("polygonvalue");
 
-	m_paintMapper = vtkSmartPointer<vtkDataSetMapper>::New();
+	m_paintMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	if (stcc != nullptr) {
 		m_paintMapper->SetLookupTable(stcc->vtkObj());
 	}
 	m_paintMapper->SetUseLookupTableScalarRange(true);
-	m_paintMapper->SetInputData(m_grid);
+	m_paintMapper->SetInputData(m_polyData);
 
 	m_paintActor = vtkSmartPointer<vtkActor>::New();
 	m_paintActor->GetProperty()->SetLighting(false);
@@ -345,7 +345,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void undo() {
 		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
@@ -363,7 +363,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GeoDataPolygonPolygonDefineNewPoint");
@@ -414,7 +414,7 @@ public:
 		}
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void undo() {
 		m_polygon->setMapped(m_oldMapped);
@@ -426,7 +426,7 @@ public:
 		}
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void movePolygon(GeoDataPolygonAbstractPolygon* polygon, const QVector2D& offset) {
 		vtkPolygon* pol = polygon->getVtkPolygon();
@@ -497,7 +497,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void undo() {
 		m_polygon->setMapped(m_oldMapped);
@@ -515,7 +515,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	int id() const {
 		return iRIC::generateCommandId("GeoDataPolygonPolygonMoveVertex");
@@ -589,7 +589,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void undo() {
 		m_polygon->setMapped(m_oldMapped);
@@ -619,7 +619,7 @@ public:
 			m_targetPolygon->updateShapeData();
 			m_polygon->m_shapeUpdating = false;
 			m_polygon->renderGraphicsView();
-			m_polygon->updateGrid();
+			m_polygon->updatePolyData();
 		} else {
 			// this never happens.
 		}
@@ -734,7 +734,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 	void undo() {
 		m_polygon->setMapped(m_oldMapped);
@@ -762,7 +762,7 @@ public:
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
 		m_polygon->renderGraphicsView();
-		m_polygon->updateGrid();
+		m_polygon->updatePolyData();
 	}
 private:
 	vtkIdType m_vertexId;
@@ -975,6 +975,11 @@ void GeoDataPolygon::definePolygon(bool doubleClick, bool noEditVal)
 	}
 }
 
+QColor GeoDataPolygon::color() const
+{
+	return m_setting.color;
+}
+
 void GeoDataPolygon::addVertexMode(bool on)
 {
 	if (on) {
@@ -1024,7 +1029,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 		pol->load(iRIC::toStr(filename).c_str(), noDim);
 		m_variantValues.clear();
 		for (unsigned int i = 0; i < pol->values.size(); ++i) {
-			m_variantValues.append(pol->values[i]);
+			m_variantValues.push_back(pol->values[i]);
 		}
 		QPolygonF qpol;
 		iRICLib::InternalPolygon* regionPolygon = pol->polygon;
@@ -1091,7 +1096,7 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 		m_selectedPolygon = m_gridRegionPolygon;
 	}
 	deselectAll();
-	updateGrid(true);
+	updatePolyData(true);
 	updateActorSettings();
 	updateActionStatus();
 }
@@ -1329,7 +1334,7 @@ void GeoDataPolygon::editCoordinates()
 		iricMainWindow()->enterModelessDialogMode();
 		connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
 		connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-		connect(dialog, SIGNAL(destroyed()), this, SLOT(updateGrid()));
+		connect(dialog, SIGNAL(destroyed()), this, SLOT(updatePolyData()));
 	}
 }
 
@@ -1364,7 +1369,7 @@ void GeoDataPolygon::initParams()
 		maxIndex = dimensions()->maxIndex();
 	}
 	for (int i = 0; i <= maxIndex; ++i) {
-		m_variantValues.append(0);
+		m_variantValues.push_back(0);
 	}
 }
 
@@ -1429,6 +1434,11 @@ void GeoDataPolygon::addHolePolygon()
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
 
+vtkPolyData* GeoDataPolygon::polyData() const
+{
+	return m_polyData;
+}
+
 void GeoDataPolygon::setupHolePolygon(GeoDataPolygonHolePolygon* pol)
 {
 	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
@@ -1469,7 +1479,7 @@ void GeoDataPolygon::deletePolygon(bool force)
 	setMapped(false);
 
 	updateMouseCursor(graphicsView());
-	updateGrid();
+	updatePolyData();
 	updateActionStatus();
 	renderGraphicsView();
 }
@@ -1697,7 +1707,7 @@ const QPolygonF GeoDataPolygon::polygon() const
 
 void GeoDataPolygon::updateScalarValues()
 {
-	vtkPoints* points = m_grid->GetPoints();
+	vtkPoints* points = m_polyData->GetPoints();
 	if (points == nullptr) {return;}
 	m_scalarValues->Reset();
 	double doubleval = variantValue().toDouble();
@@ -1711,7 +1721,7 @@ void GeoDataPolygon::updateScalarValues()
 	}
 }
 
-void GeoDataPolygon::updateGrid(bool noDraw)
+void GeoDataPolygon::updatePolyData(bool noDraw)
 {
 	if (m_triangleThread != nullptr && m_triangleThread->isOutputting(this)){
 		// it has already started outputting. Wait until it ends.
@@ -1810,6 +1820,11 @@ bool GeoDataPolygon::getValueRange(double* min, double* max)
 	}
 }
 
+void GeoDataPolygon::updateFilename()
+{
+	setFilename(name().append(".dat"));
+}
+
 void GeoDataPolygon::renderGraphics()
 {
 	m_paintActor->SetVisibility(1);
@@ -1863,7 +1878,7 @@ void GeoDataPolygon::copyShape(GeoDataPolygon* polygon)
 		holePol->setSelected(false);
 		m_holePolygons.append(holePol);
 	}
-	updateGrid();
+	updatePolyData();
 	m_mouseEventMode = meNormal;
 	editValue();
 	// copy command is not undo-able.
@@ -1877,7 +1892,7 @@ void GeoDataPolygon::doApplyOffset(double x, double y)
 	for (auto it = m_holePolygons.begin(); it != m_holePolygons.end(); ++it) {
 		applyOffsetToAbstractPolygon(*it, x, y);
 	}
-	updateGrid(true);
+	updatePolyData(true);
 }
 
 void GeoDataPolygon::applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y)
