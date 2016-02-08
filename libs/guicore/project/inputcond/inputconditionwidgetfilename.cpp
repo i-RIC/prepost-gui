@@ -80,7 +80,7 @@ void InputConditionWidgetFilename::openFileDialog()
 		return;
 	}
 
-	m_lineEdit->setText(QDir::toNativeSeparators(fname));
+	m_lineEdit->setText(QDir::toNativeSeparators(fname), true);
 	handleEditingFinished();
 
 	QFileInfo finfo(fname);

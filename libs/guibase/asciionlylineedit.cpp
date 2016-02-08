@@ -28,10 +28,10 @@ void AsciiOnlyLineEdit::setErrorMessage(const QString& msg)
 	m_errorMessage = msg;
 }
 
-void AsciiOnlyLineEdit::setText(const QString& text)
+void AsciiOnlyLineEdit::setText(const QString& text, bool warnIfNotAscii)
 {
 	QLineEdit::setText(text);
-	clearIfNotAscii(true);
+	clearIfNotAscii(! warnIfNotAscii);
 }
 
 void AsciiOnlyLineEdit::focusOutEvent(QFocusEvent* e)

@@ -15,7 +15,7 @@ public:
 	void setErrorMessage(const QString& msg);
 
 public slots:
-	void setText(const QString& text);
+	void setText(const QString& text, bool warnIfNotAscii = false);
 
 private:
 	void focusOutEvent(QFocusEvent* e);

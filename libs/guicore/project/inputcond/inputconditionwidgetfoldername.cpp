@@ -61,7 +61,7 @@ void InputConditionWidgetFoldername::openDirDialog(){
 		return;
 	}
 
-	m_lineEdit->setText(QDir::toNativeSeparators(dirname));
+	m_lineEdit->setText(QDir::toNativeSeparators(dirname), true);
 	handleEditingFinished();
 
 	defaultFolder = dirname;
