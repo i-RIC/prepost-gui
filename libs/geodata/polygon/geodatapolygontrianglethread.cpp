@@ -159,6 +159,9 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoData
 
 	*offset = p->polygon().boundingRect().topLeft();
 	geos::geom::Polygon* resultPol = getGeosPolygon(p, *offset);
+	if (resultPol->isEmpty()){
+		throw geos::util::GEOSException("No polygon specified");
+	}
 
 	const geos::geom::LineString* eLS = resultPol->getExteriorRing();
 
