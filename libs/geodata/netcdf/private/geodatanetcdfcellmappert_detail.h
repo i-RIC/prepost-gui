@@ -21,6 +21,7 @@ GeoDataMapperSettingI* GeoDataNetcdfCellMapperT<V, DA>::initialize(bool* boolMap
 {
 	GeoDataNetcdfCellMapperSetting* s = new GeoDataNetcdfCellMapperSetting();
 	unsigned int count = GeoDataCellMapperT<V, DA>::container()->dataCount();
+	s->settings.reserve(count);
 	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
 	vtkStructuredGrid* tmpgrid = netcdf->grid();
 	for (unsigned int i = 0; i < count; ++i) {
