@@ -6,6 +6,7 @@
 #include "../misc/animationcontroller.h"
 #include "../misc/iricmainwindowactionmanager.h"
 #include "../misc/iricmainwindowmiscdialogmanager.h"
+#include "../misc/networksetting.h"
 #include "../misc/newprojectsolverselectingdialog.h"
 #include "../misc/projecttypeselectdialog.h"
 #include "../pref/preferencedialog.h"
@@ -21,6 +22,7 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
@@ -113,6 +115,7 @@ iRICMainWindow::iRICMainWindow(QWidget* parent) :
 	parseArgs();
 	initSetting();
 
+	setupNetworkProxy();
 	setupBasicSubWindows();
 
 	// setup action manager
@@ -499,6 +502,16 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 
 	// update recently opened projects.
 	updatePostActionStatus();
+}
+
+const QProcessEnvironment& iRICMainWindow::processEnvironment() const
+{
+	return m_processEnvironment;
+}
+
+QNetworkProxy iRICMainWindow::networkProxy() const
+{
+	return m_networkProxy;
 }
 
 bool iRICMainWindow::closeProject()
@@ -1410,6 +1423,9 @@ void iRICMainWindow::showPreferenceDialog()
 {
 	PreferenceDialog dialog;
 	dialog.exec();
+
+	setupNetworkProxy();
+	updateTmsListForAllWindows();
 }
 
 void iRICMainWindow::loadPlugins()
@@ -2278,6 +2294,30 @@ void iRICMainWindow::setupProcessEnvironment()
 	path.append(";");
 	path.append(m_processEnvironment.value("PATH"));
 	m_processEnvironment.insert("PATH", path);
+}
+
+void iRICMainWindow::setupNetworkProxy()
+{
+	m_networkProxy = QNetworkProxy();
+	m_networkProxy.setType(QNetworkProxy::NoProxy);
+
+	NetworkSetting setting;
+
+	auto proxies = setting.queryProxy();
+	if (proxies.size() == 0) {return;}
+
+	m_networkProxy = proxies.first();
+}
+
+void iRICMainWindow::updateTmsListForAllWindows()
+{
+	for (auto w : m_centralWidget->subWindowList()) {
+		auto innerWindow = w->widget();
+		auto tmsW = dynamic_cast<WindowWithTmsI*> (innerWindow);
+		if (tmsW == nullptr) {continue;}
+
+		tmsW->updateTmsList();
+	}
 }
 
 bool iRICMainWindow::isPostOnlyMode() const

@@ -7,6 +7,7 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS = \
+	tmsloader \
 	misc \
 	triangle \
 	guibase \

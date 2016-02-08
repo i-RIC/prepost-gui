@@ -7,6 +7,7 @@
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
+#include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 
@@ -34,6 +35,7 @@ class PREDLL_EXPORT PreProcessorWindow :
 	public SnapshotEnabledWindowInterface,
 	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
+	public WindowWithTmsI,
 	public WindowWithPropertyBrowser,
 	public WindowWithZIndexInterface
 {
@@ -81,6 +83,8 @@ public:
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
 	PreProcessorDataModelInterface* dataModel() const override;
+
+	void updateTmsList() override;
 
 public slots:
 	void cameraFit();

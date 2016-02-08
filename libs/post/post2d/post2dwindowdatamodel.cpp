@@ -21,6 +21,7 @@
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <postbase/time/posttimedataitem.h>
 #include <postbase/title/posttitledataitem.h>
 
@@ -35,8 +36,8 @@
 
 
 
-Post2dWindowDataModel::Post2dWindowDataModel(Post2dWindow* w, ProjectDataItem* parent)
-	: Graphics2DWindowDataModel(w, parent)
+Post2dWindowDataModel::Post2dWindowDataModel(Post2dWindow* w, ProjectDataItem* parent) :
+	Graphics2DWindowDataModel(w, parent)
 {
 	m_objectBrowserView = nullptr;
 	init();
@@ -71,6 +72,11 @@ void Post2dWindowDataModel::init()
 	m_graphicsView->cameraFit();
 }
 
+Post2dWindowRootDataItem* Post2dWindowDataModel::rootDataItem() const
+{
+	return dynamic_cast<Post2dWindowRootDataItem*> (m_rootDataItem);
+}
+
 Post2dWindowGraphicsView* Post2dWindowDataModel::graphicsView() const
 {
 	return dynamic_cast<Post2dWindowGraphicsView*>(m_graphicsView);
@@ -79,6 +85,11 @@ Post2dWindowGraphicsView* Post2dWindowDataModel::graphicsView() const
 PostSolutionInfo* Post2dWindowDataModel::postSolutionInfo()
 {
 	return projectData()->mainfile()->postSolutionInfo();
+}
+
+void Post2dWindowDataModel::updateTmsList()
+{
+	rootDataItem()->tmsGroupDataItem()->rebuildChildItems();
 }
 
 void Post2dWindowDataModel::gridShapeSetting()

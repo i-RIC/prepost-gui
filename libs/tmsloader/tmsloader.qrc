@@ -1,0 +1,8 @@
+<RCC>
+	<qresource>
+		<file>data/bing.html</file>
+		<file>data/googlemap.html</file>
+		<file>data/xyz.html</file>
+		<file>data/openstreetmap.html</file>
+	</qresource>
+</RCC>

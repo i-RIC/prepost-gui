@@ -20,6 +20,7 @@ class PreProcessorRootDataItemSetMappingSettingCommand;
 class PreProcessorMeasuredDataTopDataItem;
 class DistanceMeasureGroupDataItem;
 class AttributeBrowserTargetDataItem;
+class TmsImageGroupDataItem;
 
 class PreProcessorRootDataItem : public GraphicsWindowRootDataItem
 {
@@ -30,6 +31,7 @@ public:
 	~PreProcessorRootDataItem();
 
 	PreProcessorBackgroundImagesDataItem* backgroundImagesDataItem() const;
+	TmsImageGroupDataItem* tmsGroupDataItem() const;
 	PreProcessorMeasuredDataTopDataItem* measuredDataTopDataItem() const;
 	PreProcessorGridTypeDataItem* gridTypeDataItem(const std::string& name) const;
 	const QList<PreProcessorGridTypeDataItem*>& gridTypeDataItems() const;
@@ -57,6 +59,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	PreProcessorBackgroundImagesDataItem* m_backgroundImagesDataItem;
+	TmsImageGroupDataItem* m_tmsGroupDataItem;
 	PreProcessorMeasuredDataTopDataItem* m_measuredDataTopDataItem;
 	PreProcessorInputConditionDataItem* m_inputConditionDataItem;
 	Axis2dDataItem* m_axesDataItem;

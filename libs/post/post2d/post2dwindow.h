@@ -8,6 +8,7 @@
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
+#include <guicore/base/windowwithtmsi.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
@@ -27,6 +28,7 @@ class Post2dWindow :
 	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
 	public WindowWithPropertyBrowser,
+	public WindowWithTmsI,
 	public CfShapeExportWindowI,
 	public ParticleExportWindowI,
 	public SVKmlExportWindowI
@@ -62,6 +64,8 @@ public:
 	bool exportKMLHeader(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLFooter(QXmlStreamWriter& writer, const QString& zonename) override;
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const QString& zonename) override;
+
+	void updateTmsList() override;
 
 public slots:
 	void cameraFit();

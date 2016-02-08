@@ -264,11 +264,8 @@ HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
            pref/preferencepagegeneral.h \
            pref/preferencepagegraphicsdefault.h \
            pref/preferencepagegridcheck.h \
-           pref/preferencepagepost2d.h \
-           pref/preferencepagepost3d.h \
-           pref/preferencepagepre.h \
            pref/preferencepageproxy.h \
-           pref/preferencepagesnapshot.h \
+           pref/preferencepagetms.h \
            projectproperty/projectpropertybasicinfowidget.h \
            projectproperty/projectpropertydialog.h \
            solverdef/solverdefinitionabstractdialog.h \
@@ -288,7 +285,9 @@ HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
            startpage/startpagerecentsolver.h \
            startpage/startpagerecentsolverlist.h \
            verification/verificationgraphdialog.h \
-           verification/verificationsettingdialog.h
+           verification/verificationsettingdialog.h \
+           misc/private/networksetting_impl.h \
+           pref/private/preferencepagetmsadddialog.h
 FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui \
          continuoussnapshot/continuoussnapshotmoviepropertypage.ui \
@@ -303,11 +302,8 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          pref/preferencepagegeneral.ui \
          pref/preferencepagegraphicsdefault.ui \
          pref/preferencepagegridcheck.ui \
-         pref/preferencepagepost2d.ui \
-         pref/preferencepagepost3d.ui \
-         pref/preferencepagepre.ui \
          pref/preferencepageproxy.ui \
-         pref/preferencepagesnapshot.ui \
+         pref/preferencepagetms.ui \
          projectproperty/projectpropertybasicinfowidget.ui \
          projectproperty/projectpropertydialog.ui \
          solverdef/solverdefinitionabstractdialog.ui \
@@ -316,7 +312,8 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          startpage/startpagedialog.ui \
          startpage/startpagelaunchtabwidget.ui \
          verification/verificationgraphdialog.ui \
-         verification/verificationsettingdialog.ui
+         verification/verificationsettingdialog.ui \
+         pref/private/preferencepagetmsadddialog.ui
 SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
            continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
@@ -339,14 +336,12 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            misc/newprojectsolverselectingdialog.cpp \
            misc/projecttypeselectdialog.cpp \
            pref/preferencedialog.cpp \
+           pref/preferencepage.cpp \
            pref/preferencepagegeneral.cpp \
            pref/preferencepagegraphicsdefault.cpp \
            pref/preferencepagegridcheck.cpp \
-           pref/preferencepagepost2d.cpp \
-           pref/preferencepagepost3d.cpp \
-           pref/preferencepagepre.cpp \
            pref/preferencepageproxy.cpp \
-           pref/preferencepagesnapshot.cpp \
+           pref/preferencepagetms.cpp \
            projectproperty/projectpropertybasicinfowidget.cpp \
            projectproperty/projectpropertydialog.cpp \
            solverdef/solverdefinitionabstractdialog.cpp \
@@ -366,7 +361,8 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            startpage/startpagerecentsolver.cpp \
            startpage/startpagerecentsolverlist.cpp \
            verification/verificationgraphdialog.cpp \
-           verification/verificationsettingdialog.cpp
+           verification/verificationsettingdialog.cpp \
+           pref/private/preferencepagetmsadddialog.cpp
 RESOURCES += iricgui.qrc
 TRANSLATIONS += languages/iRIC_es_ES.ts \
                 languages/iRIC_fr_FR.ts \

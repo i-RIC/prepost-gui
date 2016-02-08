@@ -29,6 +29,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
 #include <geodata/pointmap/geodatapointmapmappingmode.h>
@@ -78,6 +79,10 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	m_backgroundImagesDataItem = new PreProcessorBackgroundImagesDataItem(this);
 	m_childItems.append(m_backgroundImagesDataItem);
 
+	// Background images (internet)
+	m_tmsGroupDataItem = new TmsImageGroupDataItem(this);
+	m_childItems.append(m_tmsGroupDataItem);
+
 	m_editGridAttributeMappingSettingAction = new QAction(tr("&Setting..."), this);
 	connect(m_editGridAttributeMappingSettingAction, SIGNAL(triggered()), this, SLOT(editGridAttributeMappingSetting()));
 
@@ -103,6 +108,7 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 {
 	delete m_measuredDataTopDataItem;
 	delete m_backgroundImagesDataItem;
+	delete m_tmsGroupDataItem;
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
@@ -114,6 +120,11 @@ PreProcessorRootDataItem::~PreProcessorRootDataItem()
 PreProcessorBackgroundImagesDataItem* PreProcessorRootDataItem::backgroundImagesDataItem() const
 {
 	return m_backgroundImagesDataItem;
+}
+
+TmsImageGroupDataItem* PreProcessorRootDataItem::tmsGroupDataItem() const
+{
+	return m_tmsGroupDataItem;
 }
 
 PreProcessorMeasuredDataTopDataItem* PreProcessorRootDataItem::measuredDataTopDataItem() const
@@ -186,6 +197,8 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_measuredDataTopDataItem->standardItem());
 	// add background item row.
 	model->appendRow(m_backgroundImagesDataItem->standardItem());
+	// add background (internet) item row
+	model->appendRow(m_tmsGroupDataItem->standardItem());
 	// add axes item row.
 	model->appendRow(m_axesDataItem->standardItem());
 	// add distance measure
@@ -376,6 +389,9 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
 	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
 	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
+	QDomNode tmsNode = iRIC::getChildNode(node, "TmsBackground");
+	if (! tmsNode.isNull()) {m_tmsGroupDataItem->loadFromProjectMainFile(tmsNode);}
+
 	updateItemMap();
 	updateZDepthRange();
 }
@@ -419,8 +435,13 @@ void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeStartElement("Axes");
 	m_axesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
+
 	writer.writeStartElement("DistanceMeasures");
 	m_distanceMeasureGroupDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("TmsBackground");
+	m_tmsGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

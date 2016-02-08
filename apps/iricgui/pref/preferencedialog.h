@@ -15,6 +15,7 @@ class PreferenceDialog : public QDialog
 public:
 	explicit PreferenceDialog(QWidget* parent = nullptr);
 	~PreferenceDialog();
+
 	bool save();
 
 public slots:

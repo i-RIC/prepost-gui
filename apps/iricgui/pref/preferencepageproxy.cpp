@@ -9,13 +9,13 @@ PreferencePageProxy::PreferencePageProxy(QWidget* parent) :
 	ui->setupUi(this);
 
 	switch (m_setting.proxyMode()) {
-	case NetworkSetting::pmNoProxy:
+	case NetworkSetting::ProxyMode::NoProxy:
 		ui->noProxyRadioButton->setChecked(true);
 		break;
-	case NetworkSetting::pmSystemSetting:
+	case NetworkSetting::ProxyMode::SystemSetting:
 		ui->systemProxyRadioButton->setChecked(true);
 		break;
-	case NetworkSetting::pmCustomSetting:
+	case NetworkSetting::ProxyMode::CustomSetting:
 		ui->customProxyRadioButton->setChecked(true);
 		break;
 	}
@@ -35,11 +35,11 @@ PreferencePageProxy::~PreferencePageProxy()
 void PreferencePageProxy::update()
 {
 	if (ui->noProxyRadioButton->isChecked()) {
-		m_setting.setProxyMode(NetworkSetting::pmNoProxy);
+		m_setting.setProxyMode(NetworkSetting::ProxyMode::NoProxy);
 	} else if (ui->systemProxyRadioButton->isChecked()) {
-		m_setting.setProxyMode(NetworkSetting::pmSystemSetting);
+		m_setting.setProxyMode(NetworkSetting::ProxyMode::SystemSetting);
 	} else if (ui->customProxyRadioButton->isChecked()) {
-		m_setting.setProxyMode(NetworkSetting::pmCustomSetting);
+		m_setting.setProxyMode(NetworkSetting::ProxyMode::CustomSetting);
 	}
 	m_setting.setProxySite(ui->proxySiteEdit->text());
 	m_setting.setProxyPort(ui->proxyPortSpinBox->value());

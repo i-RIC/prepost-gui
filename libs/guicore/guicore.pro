@@ -18,6 +18,20 @@ QT += network widgets xml
 # Internal libraries #
 ######################
 
+# iricTmsLoader
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../tmsloader/debug"
+	} else {
+		LIBS += -L"../tmsloader/release"
+	}
+}
+unix {
+	LIBS += -L"../tmsloader"
+}
+LIBS += -liricTmsLoader
+
 # iricMisc
 
 win32 {
@@ -156,6 +170,7 @@ HEADERS += guicore_global.h \
            base/snapshotenabledwindowinterface.h \
            base/windowwithobjectbrowserinterface.h \
            base/windowwithpropertybrowser.h \
+           base/windowwithtmsi.h \
            base/windowwithzindexinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
            datamodel/geodataproxydataitem.h \
@@ -254,6 +269,10 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitiontranslator.h \
+           tmsimage/tmsimagedataitem.h \
+           tmsimage/tmsimagegroupdataitem.h \
+           tmsimage/tmsimagesetting.h \
+           tmsimage/tmsimagesettingmanager.h \
            distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
@@ -352,6 +371,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
+           tmsimage/private/tmsimagesetting_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
@@ -529,6 +549,10 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitionnode.cpp \
            solverdef/solverdefinitiontranslator.cpp \
+           tmsimage/tmsimagedataitem.cpp \
+           tmsimage/tmsimagegroupdataitem.cpp \
+           tmsimage/tmsimagesetting.cpp \
+           tmsimage/tmsimagesettingmanager.cpp \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \

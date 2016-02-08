@@ -230,7 +230,7 @@ void Post2dWindowStreamlineUnstructuredSettingDialog::removeData()
 	if (item != nullptr) {delete item;}
 	ui->startPositionListWidget->blockSignals(false);
 	m_unstSettings.erase(m_unstSettings.begin() + current);
-	if (current >= m_unstSettings.size()) { current = m_unstSettings.size() - 1; }
+	if (current >= m_unstSettings.size()) {current = static_cast<int>(m_unstSettings.size()) - 1;}
 	ui->startPositionListWidget->setCurrentRow(current);
 	m_activeSetting = &(m_unstSettings[current]);
 	applySettings();

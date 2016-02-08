@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QLocale>
 #include <QList>
+#include <QNetworkProxy>
 #include <QProcessEnvironment>
 
 #include <misc/versionnumber.h>
@@ -85,7 +86,8 @@ public:
 	bool checkWorkFolderWorks();
 	bool isPostOnlyMode() const;
 	void importCalculationResult(const QString& filename);
-	const QProcessEnvironment& processEnvironment() const override {return m_processEnvironment;}
+	const QProcessEnvironment& processEnvironment() const override;
+	QNetworkProxy networkProxy() const override;
 
 private:
 	void parseArgs();
@@ -230,6 +232,9 @@ private:
 	void saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QXmlStreamWriter* writer = nullptr);
 	void addKMLElement(int time, QString url, double north, double south, double west, double east, double angle, QXmlStreamWriter* writer);
 	void setupProcessEnvironment();
+	void setupNetworkProxy();
+	void updateTmsListForAllWindows();
+
 	QString timeString(int time);
 
 	MousePositionWidget* m_mousePositionWidget;
@@ -309,6 +314,7 @@ private:
 	bool m_debugMode;
 
 	QProcessEnvironment m_processEnvironment;
+	QNetworkProxy m_networkProxy;
 
 public:
 	friend class ProjectData;

@@ -29,8 +29,8 @@
 const double GoogleMapImageImporter::METERPERPIXEL_AT_EQUATOR_1 = 78272.137219; //
 const int GoogleMapImageImporter::MAX_GOOGLEAPI_COUNT = 50;
 
-GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMainWindowInterface* parent)
-	: QObject(parent)
+GoogleMapImageImporter::GoogleMapImageImporter(ProjectData* projectData, iRICMainWindowInterface* parent) :
+	QObject(parent)
 {
 	m_projectData = projectData;
 	m_googleMapAccessManager = new QNetworkAccessManager(this);

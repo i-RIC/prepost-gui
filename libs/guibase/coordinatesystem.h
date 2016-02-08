@@ -3,41 +3,39 @@
 
 #include "guibase_global.h"
 
-#include <QString>
-#include <proj_api.h>
+class QString;
 
 /// Coordinate system container
 class GUIBASEDLL_EXPORT CoordinateSystem
 {
-
 public:
 	CoordinateSystem(const QString& name, const QString& caption, const QString& lonlat, const QString& plane);
-	virtual ~CoordinateSystem();
-	/// The name of the coordinate system it will be like this: "EPSG:2222"
-	const QString& name() const {return m_name;}
-	const QString& caption() const {return m_caption;}
-	const QString& searchTarget() const {return m_searchTarget;}
-	void setName(const QString& name) {m_name = name;}
+	~CoordinateSystem();
+
+	const QString& name() const; // like "EPSG:2222"
+	void setName(const QString& name);
+
+	const QString& caption() const;
 	void setCaption(const QString& caption);
-	const QString& proj4LonLatStr() const {return m_proj4LonLatStr;}
-	const QString& proj4PlaneStr() const {return m_proj4PlaneStr;}
+
+	const QString& searchTarget() const;
+
+	const QString& proj4LonLatStr() const;
+	const QString& proj4PlaneStr() const;
 
 	void init();
 	void free();
 
-	void mapGeoToGrid(double fromX, double fromY, double* toX, double* toY);
-	void mapGridToGeo(double fromX, double fromY, double* toX, double* toY);
+	void mapGeoToGrid(double fromX, double fromY, double* toX, double* toY) const;
+	void mapGridToGeo(double fromX, double fromY, double* toX, double* toY) const;
 
 private:
-	QString m_name;
-	QString m_caption;
-	QString m_searchTarget;
-	bool m_initialized;
-
-	QString m_proj4LonLatStr;
-	QString m_proj4PlaneStr;
-	projPJ m_proj4LonLatPj;
-	projPJ m_proj4PlanePj;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/coordinatesystem_impl.h"
+#endif // _DEBUG
 
 #endif // COORDINATESYSTEM_H

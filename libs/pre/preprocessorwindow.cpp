@@ -447,6 +447,11 @@ PreProcessorDataModelInterface* PreProcessorWindow::dataModel() const
 	return m_dataModel;
 }
 
+void PreProcessorWindow::updateTmsList()
+{
+	model()->updateTmsList();
+}
+
 PreProcessorDataModel* PreProcessorWindow::model() const
 {
 	if (m_dataModel == nullptr){return nullptr;}

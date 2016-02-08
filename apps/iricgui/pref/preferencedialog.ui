@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>424</width>
-    <height>399</height>
+    <width>531</width>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,6 +18,9 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
       <number>0</number>
+     </property>
+     <property name="elideMode">
+      <enum>Qt::ElideNone</enum>
      </property>
      <widget class="PreferencePageGeneral" name="generalTab">
       <property name="accessibleName">
@@ -40,6 +43,11 @@
      <widget class="PreferencePageProxy" name="proxyTab">
       <attribute name="title">
        <string>Network Proxy</string>
+      </attribute>
+     </widget>
+     <widget class="PreferencePageTms" name="tmsTab">
+      <attribute name="title">
+       <string>Background Images (Internet)</string>
       </attribute>
      </widget>
     </widget>
@@ -79,6 +87,12 @@
    <class>PreferencePageProxy</class>
    <extends>QWidget</extends>
    <header>pref/preferencepageproxy.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageTms</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepagetms.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

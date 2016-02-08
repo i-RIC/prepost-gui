@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>iRIC Background</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ol3/3.7.0/ol.js"></script>
+</head>
+<body>
+	<div id="map" class="map"></div>
+	<style type="text/css">
+		body {margin: 0}
+		#map {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		.ol-overlaycontainer-stopevent {display: none}
+	</style>
+</div>
+<script>
+var xyzLayer = new ol.layer.Tile({
+	source: new ol.source.XYZ({
+		url: "%URL%",
+	})
+});
+
+var olCoordinates = ol.proj.transform([%LONGITUDE%, %LATITUDE%], 'EPSG:4326', 'EPSG:3857');
+
+var map = new ol.Map({
+	layers: [xyzLayer],
+	target: 'map',
+	view: new ol.View({
+		center: olCoordinates,
+		zoom: %ZOOMLEVEL%
+	})
+});
+
+</script>
+</body>
+</html>

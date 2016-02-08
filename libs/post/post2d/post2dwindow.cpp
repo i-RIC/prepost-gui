@@ -263,6 +263,11 @@ bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, dou
 	return sItem->exportKMLForTimestep(writer, index, time);
 }
 
+void Post2dWindow::updateTmsList()
+{
+	dynamic_cast<Post2dWindowDataModel*> (m_dataModel)->updateTmsList();
+}
+
 bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int index, double time, const QString& zoneName)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);

@@ -40,6 +40,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/project/projectworkspace.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
@@ -1019,6 +1020,11 @@ void PreProcessorDataModel::disableGridMenu()
 	m_gridMenu->setDisabled(true);
 }
 
+PreProcessorRootDataItem* PreProcessorDataModel::rootDataItem() const
+{
+	return dynamic_cast<PreProcessorRootDataItem*> (m_rootDataItem);
+}
+
 void PreProcessorDataModel::setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item)
 {
 	if (m_geoDataAddSignalMapper != nullptr) {delete m_geoDataAddSignalMapper;}
@@ -1230,4 +1236,9 @@ PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel
 void PreProcessorDataModel::applyOffset(double x, double y)
 {
 	m_rootDataItem->applyOffset(x, y);
+}
+
+void PreProcessorDataModel::updateTmsList()
+{
+	rootDataItem()->tmsGroupDataItem()->rebuildChildItems();
 }

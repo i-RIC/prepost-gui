@@ -17,6 +17,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <misc/xmlsupport.h>
 #include <postbase/time/posttimedataitem.h>
 #include <postbase/title/posttitledataitem.h>
@@ -65,6 +66,10 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 	m_backgroundImagesDataItem = new Post2dWindowBackgroundImagesDataItem(this);
 	m_childItems.append(m_backgroundImagesDataItem);
 
+	// Background images (internet)
+	m_tmsGroupDataItem = new TmsImageGroupDataItem(this);
+	m_childItems.append(m_tmsGroupDataItem);
+
 	m_titleDataItem = new PostTitleDataItem(this);
 	m_childItems.append(m_titleDataItem);
 
@@ -92,6 +97,7 @@ Post2dWindowRootDataItem::~Post2dWindowRootDataItem()
 {
 	delete m_measuredDataTopDataItem;
 	delete m_backgroundImagesDataItem;
+	delete m_tmsGroupDataItem;
 
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		delete *it;
@@ -101,6 +107,41 @@ Post2dWindowRootDataItem::~Post2dWindowRootDataItem()
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
 	delete m_attributeBrowserTargetDataItem;
+}
+
+Post2dWindowBackgroundImagesDataItem* Post2dWindowRootDataItem::backgroundImagesDataItem() const
+{
+	return m_backgroundImagesDataItem;
+}
+
+TmsImageGroupDataItem* Post2dWindowRootDataItem::tmsGroupDataItem() const
+{
+	return m_tmsGroupDataItem;
+}
+
+Post2dWindowMeasuredDataTopDataItem* Post2dWindowRootDataItem::measuredDataTopDataItem() const
+{
+	return m_measuredDataTopDataItem;
+}
+
+const QList<Post2dWindowGridTypeDataItem*>& Post2dWindowRootDataItem::gridTypeDataItems() const
+{
+	return m_gridTypeDataItems;
+}
+
+PostTitleDataItem* Post2dWindowRootDataItem::titleDataItem() const
+{
+	return m_titleDataItem;
+}
+
+PostTimeDataItem* Post2dWindowRootDataItem::timeDataItem() const
+{
+	return m_timeDataItem;
+}
+
+AttributeBrowserTargetDataItem* Post2dWindowRootDataItem::attributeBrowserTargetDataItem() const
+{
+	return m_attributeBrowserTargetDataItem;
 }
 
 void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
@@ -115,6 +156,8 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_measuredDataTopDataItem->standardItem());
 	// add background item row.
 	model->appendRow(m_backgroundImagesDataItem->standardItem());
+	// add background item (internet) row.
+	model->appendRow(m_tmsGroupDataItem->standardItem());
 	// add title item row.
 	model->appendRow(m_titleDataItem->standardItem());
 	// add time item row.
@@ -152,6 +195,8 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
 	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
 	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
+	QDomNode tmsNode = iRIC::getChildNode(node, "TmsBackground");
+	if (! tmsNode.isNull()) {m_tmsGroupDataItem->loadFromProjectMainFile(tmsNode);}
 	updateItemMap();
 	updateZDepthRange();
 }
@@ -176,6 +221,10 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	writer.writeStartElement("DistanceMeasures");
 	m_distanceMeasureGroupDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("TmsBackground");
+	m_tmsGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

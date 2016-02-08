@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
         <location filename="../asciionlylineedit.cpp" line="9"/>
         <source>String has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>文字列は英数字のみから構成される必要があります。</translation>
     </message>
     <message>
         <location filename="../asciionlylineedit.cpp" line="22"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
 </context>
 <context>
@@ -213,7 +213,7 @@
         <translation>検索:</translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="36"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
         <source>(Not Specified)</source>
         <translation>(指定されていない)</translation>
     </message>
@@ -262,12 +262,12 @@
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="15"/>
+        <location filename="../filenameeditwidget.cpp" line="27"/>
         <source>All files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="54"/>
+        <location filename="../filenameeditwidget.cpp" line="66"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
@@ -314,7 +314,7 @@
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
-        <location filename="../integernumberdisplaylabel.cpp" line="23"/>
+        <location filename="../integernumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation>------</translation>
     </message>
@@ -336,54 +336,54 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="vanished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="vanished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="vanished">X: ------</translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="vanished">Y: ------</translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowserView</name>
     <message>
-        <location filename="../objectbrowserview.cpp" line="19"/>
+        <location filename="../objectbrowserview.cpp" line="20"/>
         <source>&amp;Delete...</source>
         <translation>削除(&amp;D)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="21"/>
+        <location filename="../objectbrowserview.cpp" line="23"/>
         <source>Move up</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="26"/>
         <source>Move down</source>
         <translation>下に移動</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="26"/>
+        <location filename="../objectbrowserview.cpp" line="29"/>
         <source>&amp;Property...</source>
         <translation>プロパティ(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="36"/>
+        <location filename="../objectbrowserview.cpp" line="65"/>
         <source>Delete item</source>
         <translation>項目の削除</translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="36"/>
+        <location filename="../objectbrowserview.cpp" line="65"/>
         <source>Are you sure you want to delete this item?</source>
         <translation>本当にこの項目を削除していいですか?</translation>
     </message>
@@ -391,7 +391,6 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../objectbrowserview.cpp" line="101"/>
         <source>Selection Change</source>
         <translation>選択状態の変更</translation>
     </message>
@@ -399,7 +398,7 @@
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
-        <location filename="../realnumberdisplaylabel.cpp" line="23"/>
+        <location filename="../realnumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation>------</translation>
     </message>
@@ -407,12 +406,12 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="37"/>
+        <location filename="../realnumbereditwidget.cpp" line="41"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="37"/>
+        <location filename="../realnumbereditwidget.cpp" line="41"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
     </message>

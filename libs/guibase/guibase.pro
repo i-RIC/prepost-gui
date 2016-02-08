@@ -12,8 +12,6 @@ QT += widgets xml
 
 include( ../../paths.pri )
 
-QT += xml
-
 ######################
 # Internal libraries #
 ######################
@@ -129,7 +127,8 @@ HEADERS += asciionlylineedit.h \
            colormap/colormapsettingwidget.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
-           geometry/rect.h
+           geometry/rect.h \
+           private/coordinatesystem_impl.h
 FORMS += cgnszoneselectdialog.ui \
          contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \

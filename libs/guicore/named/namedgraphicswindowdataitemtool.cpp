@@ -1,7 +1,7 @@
 #include "namedgraphicswindowdataitemtool.h"
 #include "namedgraphicwindowdataitem.h"
 
-void NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name, const QList<GraphicsWindowDataItem*>& items)
+bool NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name, const QList<GraphicsWindowDataItem*>& items)
 {
 	NamedGraphicWindowDataItem* itemToCheck = nullptr;
 	for (auto item : items) {
@@ -11,7 +11,10 @@ void NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name,
 		}
 		namedItem->standardItem()->setCheckState(Qt::Unchecked);
 	}
-	if (itemToCheck == nullptr) {return;}
+	if (name == "") {return true;}
+
+	if (itemToCheck == nullptr) {return false;}
 
 	itemToCheck->standardItem()->setCheckState(Qt::Checked);
+	return true;
 }

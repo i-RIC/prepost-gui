@@ -18,8 +18,9 @@ class PreferencePageGeneral : public PreferencePage
 public:
 	explicit PreferencePageGeneral(QWidget* parent = nullptr);
 	~PreferencePageGeneral();
-	bool checkSetting() override;
+
 	void update() override;
+	bool checkSetting() override;
 
 private:
 	QString defaultWorkspace() const;

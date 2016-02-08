@@ -28,6 +28,8 @@ public:
 	Post2dWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
 
+	void updateTmsList();
+
 public slots:
 	void gridShapeSetting();
 	void contourSetting();
@@ -44,6 +46,8 @@ public slots:
 private:
 	void createCameraConnections();
 	void init();
+
+	Post2dWindowRootDataItem* rootDataItem() const;
 	Post2dWindowZoneDataItem* getZoneDataItem();
 	MeasuredDataFileDataItem* getMeasuredDataFileDataItem();
 

@@ -154,5 +154,86 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>customProxyRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>proxySiteEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>60</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>100</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>customProxyRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>proxyPortSpinBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>61</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>85</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>customProxyRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>proxyAuthCheckBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>58</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>9</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>proxyAuthCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>userNameEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>22</x>
+     <y>110</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>137</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>proxyAuthCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>passwordEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>103</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

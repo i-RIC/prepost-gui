@@ -70,6 +70,8 @@ public:
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const override;
 	void applyOffset(double x, double y) override;
 
+	void updateTmsList();
+
 public slots:
 	void showCalcConditionDialog();
 	void importCalcCondition();
@@ -93,7 +95,8 @@ private:
 	void importCalcConditionFromCGNS(const QString& fname);
 	void importCalcConditionFromYaml(const QString& fname);
 
-	GraphicsWindowRootDataItem* rootDataItem() {return m_rootDataItem;}
+	PreProcessorRootDataItem* rootDataItem() const;
+
 	void setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item);
 	void setupGeoDataMenus();
 	QMenu* setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* gcItem);
@@ -103,10 +106,12 @@ private:
 	static PreProcessorGridTypeDataItem* getGridTypeItem(GraphicsWindowDataItem* item);
 	PreProcessorGridDataItem* getGridItem(GraphicsWindowDataItem* item);
 	MeasuredDataFileDataItem* getMeasuredDataItem(GraphicsWindowDataItem* item);
+
 	static PreProcessorGridDataItem* getGridItemRecursively(GraphicsWindowDataItem* item);
 	static MeasuredDataFileDataItem* getMeasuredDataItemRecursively(GraphicsWindowDataItem* item);
 	static PreProcessorBackgroundImageDataItem* getBackgroundImageItem(GraphicsWindowDataItem* item);
 	static PreProcessorBCSettingDataItem* getBCSettingDataItem(GraphicsWindowDataItem* item);
+
 	bool addGridImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
 	bool addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
 	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool setname);

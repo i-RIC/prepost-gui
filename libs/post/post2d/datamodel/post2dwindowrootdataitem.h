@@ -18,6 +18,7 @@ class Post2dWindow;
 class Axis2dDataItem;
 class DistanceMeasureGroupDataItem;
 class AttributeBrowserTargetDataItem;
+class TmsImageGroupDataItem;
 
 class Post2dWindowRootDataItem : public GraphicsWindowRootDataItem
 {
@@ -28,20 +29,17 @@ public:
 	~Post2dWindowRootDataItem();
 
 	/// Background image data item
-	Post2dWindowBackgroundImagesDataItem* backgroundImagesDataItem() {
-		return m_backgroundImagesDataItem;
-	}
+	Post2dWindowBackgroundImagesDataItem* backgroundImagesDataItem() const;
+	TmsImageGroupDataItem* tmsGroupDataItem() const;
 	/// Measured values data item;
-	Post2dWindowMeasuredDataTopDataItem* measuredDataTopDataItem() {
-		return m_measuredDataTopDataItem;
-	}
+	Post2dWindowMeasuredDataTopDataItem* measuredDataTopDataItem() const;
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems() {return m_gridTypeDataItems;}
+	const QList<Post2dWindowGridTypeDataItem*>& gridTypeDataItems() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem(const std::string& name);
 	Post2dWindowZoneDataItem* zoneDataItem(const std::string& name);
-	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
-	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const {return m_attributeBrowserTargetDataItem;}
+	PostTitleDataItem* titleDataItem() const;
+	PostTimeDataItem* timeDataItem() const;
+	AttributeBrowserTargetDataItem* attributeBrowserTargetDataItem() const;
 
 private slots:
 	void updateZoneList();
@@ -50,12 +48,12 @@ private slots:
 signals:
 	void standardModelSetuped();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	Post2dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
+	TmsImageGroupDataItem* m_tmsGroupDataItem;
 	Post2dWindowMeasuredDataTopDataItem* m_measuredDataTopDataItem;
 	QList<Post2dWindowGridTypeDataItem*> m_gridTypeDataItems;
 	PostTitleDataItem* m_titleDataItem;

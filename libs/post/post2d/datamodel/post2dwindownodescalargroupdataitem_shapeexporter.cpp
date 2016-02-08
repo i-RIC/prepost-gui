@@ -154,7 +154,7 @@ bool outputPrjFile(CoordinateSystem* cs, const QString& shpFileName)
 
 void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double min, double max, int polygonId)
 {
-	int nParts = region->holes().size() + 1;
+	int nParts = static_cast<int>(region->holes().size()) + 1;
 	std::vector<int> partStart (nParts);
 	int nVertices = 0;
 	std::vector<double> xvec, yvec;
@@ -163,7 +163,7 @@ void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double
 	PointRing* regionRing = region->region();
 	partStart[0] = 0;
 	const std::vector<vtkIdType>& points = regionRing->points();
-	nVertices += (points.size() + 1);
+	nVertices += (static_cast<int>(points.size()) + 1);
 	double v[3];
 	for (int i = 0; i < points.size() + 1; ++i) {
 		vtkIdType id = points.at(i % points.size());
@@ -175,7 +175,7 @@ void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double
 		PointRing* holeRing = region->holes().at(i);
 		partStart[i + 1] = nVertices;
 		const std::vector<vtkIdType>& holePoints = holeRing->points();
-		nVertices += (holePoints.size() + 1);
+		nVertices += (static_cast<int>(holePoints.size()) + 1);
 		for (int i = 0; i < holePoints.size() + 1; ++i) {
 			vtkIdType id = holePoints.at(i % holePoints.size());
 			holeRing->getVtkPoints()->GetPoint(id, v);
@@ -230,7 +230,7 @@ Post2dWindowNodeScalarGroupDataItem::ShapeExporter::ShapeExporter(Post2dWindowNo
 	m_parent {parent}
 {}
 
-bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(const QString& filename, double time)
+bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(const QString& filename, double /*time*/)
 {
 	// define a temporary file names.
 	QString shpFile, shxFile, dbfFile;

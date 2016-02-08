@@ -4,25 +4,26 @@
 #include "../guicore_global.h"
 #include <QMainWindow>
 
-class QLocale;
-class QDomNode;
-class QXmlStreamWriter;
-class ProjectWorkspace;
-class PreProcessorWindowInterface;
 class AnimationControllerInterface;
 class CoordinateSystemBuilder;
-class VersionNumber;
+class PreProcessorWindowInterface;
 class ProjectData;
+class ProjectWorkspace;
+class VersionNumber;
+
+class QDomNode;
+class QLocale;
+class QNetworkProxy;
 class QProcessEnvironment;
+class QXmlStreamWriter;
 
 class GUICOREDLL_EXPORT iRICMainWindowInterface : public QMainWindow
 {
 
 public:
 	static const int STATUSBAR_DISPLAYTIME = 5000;
-	/// constructor
+
 	iRICMainWindowInterface(QWidget* widget);
-	/// destructor
 	virtual ~iRICMainWindowInterface() {}
 
 	virtual PreProcessorWindowInterface* preProcessorWindow() const = 0;
@@ -47,6 +48,7 @@ public:
 	virtual void setProjectData(ProjectData* projectData) = 0;
 	virtual const QLocale locale() const = 0;
 	virtual const QProcessEnvironment& processEnvironment() const = 0;
+	virtual QNetworkProxy networkProxy() const = 0;
 
 public slots:
 	virtual bool saveProject() = 0;

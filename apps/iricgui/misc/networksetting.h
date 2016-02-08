@@ -6,45 +6,47 @@
 
 class NetworkSetting : public QNetworkProxyFactory
 {
-
 public:
-	enum ProxyMode {
-		pmNoProxy,
-		pmSystemSetting,
-		pmCustomSetting
+	enum class ProxyMode {
+		NoProxy,
+		SystemSetting,
+		CustomSetting
 	};
 
 	NetworkSetting();
+	~NetworkSetting();
+
 	QList<QNetworkProxy> queryProxy(const QNetworkProxyQuery& query = QNetworkProxyQuery()) override;
 
 	void save();
 
-	ProxyMode proxyMode() const {return m_proxyMode;}
-	QString proxySite() const {return m_proxySite;}
-	int proxyPort() const {return m_proxyPort;}
+	ProxyMode proxyMode() const;
+	void setProxyMode(ProxyMode m);
 
-	bool needAuthentication() const {return m_needAuthentication;}
-	QString userName() const {return m_userName;}
-	QString password() const {return m_password;}
+	QString proxySite() const;
+	void setProxySite(const QString& site);
 
-	void setProxyMode(ProxyMode m) {m_proxyMode = m;}
-	void setProxySite(const QString& site) {m_proxySite = site;}
-	void setProxyPort(int port) {m_proxyPort = port;}
+	int proxyPort() const;
+	void setProxyPort(int port);
 
-	void setNeedAuthentication(bool auth) {m_needAuthentication = auth;}
-	void setUserName(const QString& name) {m_userName = name;}
-	void setPassword(const QString& p) {m_password = p;}
+	bool needAuthentication() const;
+	void setNeedAuthentication(bool auth);
+
+	QString userName() const;
+	void setUserName(const QString& name);
+
+	QString password() const;
+	void setPassword(const QString& p);
 
 private:
 	void load();
 
-	ProxyMode m_proxyMode;
-	QString m_proxySite;
-	int m_proxyPort;
-
-	bool m_needAuthentication;
-	QString m_userName;
-	QString m_password;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/networksetting_impl.h"
+#endif _DEBUG
 
 #endif // NETWORKSETTING_H
