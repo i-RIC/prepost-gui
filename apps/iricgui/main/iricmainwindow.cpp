@@ -1819,7 +1819,7 @@ void iRICMainWindow::exportParticles()
 		if (ret == QDialog::Rejected) {
 			return;
 		}
-		zoneName = particleZones.at(dialog.selectIndex());
+		zoneName = particleZones.at(dialog.selectedIndex());
 	}
 	// show setting dialog
 	PostDataExportDialog expDialog(this);
@@ -1915,7 +1915,7 @@ void iRICMainWindow::exportCfShape()
 		if (ret == QDialog::Rejected) {
 			return;
 		}
-		zoneName = zones.at(dialog.selectIndex());
+		zoneName = zones.at(dialog.selectedIndex());
 	}
 	// show setting dialog
 	PostDataExportDialog expDialog(this);
@@ -2014,7 +2014,7 @@ void iRICMainWindow::exportStKML()
 		if (ret == QDialog::Rejected) {
 			return;
 		}
-		zoneName = zones.at(dialog.selectIndex());
+		zoneName = zones.at(dialog.selectedIndex());
 	}
 	if (! ew->checkKmlExportCondition(zoneName)) {return;}
 

@@ -729,38 +729,30 @@ void PostSolutionInfo::exportCalculationResult()
 	}
 	// select zone.
 	QList<PostZoneDataContainer*> containers = zoneContainers(dim);
-	QList<PostZoneDataContainer*> tmpContainers;
+	std::vector<PostZoneDataContainer*> tmpContainers;
 	for (int i = 0; i < containers.count(); ++i) {
 		PostZoneDataContainer* cont = containers[i];
-		SolverDefinitionGridType::GridType gt = cont->gridType()->defaultGridType();
-		switch (gt) {
-		case SolverDefinitionGridType::gtUnknownGrid:
-			// NG
-			break;
-		default:
-			// OK
-			tmpContainers.append(cont);
-		}
+		tmpContainers.push_back(cont);
 	}
 	std::string zoneName;
-	if (tmpContainers.count() == 0) {
+	if (tmpContainers.size() == 0) {
 		// No valid grid.
 		QMessageBox::warning(iricMainWindow(), tr("Error"), tr("Calculation result does not contain grid data."));
 		return;
-	} else if (tmpContainers.count() == 1) {
+	} else if (tmpContainers.size() == 1) {
 		zoneName = containers.at(0)->zoneName();
-	} if (tmpContainers.count() > 1) {
+	} if (tmpContainers.size() > 1) {
 		ItemSelectingDialog dialog;
-		QList<QString> zonelist;
+		std::vector<QString> zonelist;
 		for (auto it = tmpContainers.begin(); it != tmpContainers.end(); ++it) {
-			zonelist.append((*it)->zoneName().c_str());
+			zonelist.push_back((*it)->zoneName().c_str());
 		}
 		dialog.setItems(zonelist);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {
 			return;
 		}
-		zoneName = iRIC::toStr(zonelist.at(dialog.selectIndex()));
+		zoneName = iRIC::toStr(zonelist.at(dialog.selectedIndex()));
 	}
 	PostZoneDataContainer* zoneC = zoneContainer(dim, zoneName);
 	// show setting dialog

@@ -6,6 +6,7 @@
 #include <QDialog>
 #include <QList>
 
+class QComboBox;
 class QString;
 
 namespace Ui
@@ -21,17 +22,24 @@ class GUIBASEDLL_EXPORT ItemSelectingDialog : public QDialog
 public:
 	explicit ItemSelectingDialog(QWidget* parent = nullptr);
 	~ItemSelectingDialog();
+
 	/// Set the message shown on the dialog
 	void setMessage(const QString& message);
+
 	/// Set the items to select
-	void setItems(const QList<QString>& items);
+	template <typename STRCONTAINER>
+	void setItems(const STRCONTAINER& items);
 	/// Set the selected item by index in the items
-	void setSelectIndex(int index);
+	void setSelectedIndex(int index);
 	/// The index of the selected item
-	int selectIndex();
+	int selectedIndex();
 
 private:
+	QComboBox* comboBox() const;
+
 	Ui::ItemSelectingDialog* ui;
 };
+
+#include "private/itemselectingdialog_detail.h"
 
 #endif // ITEMSELECTINGDIALOG_H

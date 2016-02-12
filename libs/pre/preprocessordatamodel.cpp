@@ -1197,7 +1197,7 @@ void PreProcessorDataModel::importHydraulicData()
 		dialog.setMessage(tr("Please select the geographic data to import hydraulic data."));
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {return;}
-		targetGeoData = geodatas.at(dialog.selectIndex());
+		targetGeoData = geodatas.at(dialog.selectedIndex());
 	} else {
 		// there was only one geodata.
 		targetGeoData = geodatas.at(0);

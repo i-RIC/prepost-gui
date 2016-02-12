@@ -128,7 +128,8 @@ HEADERS += asciionlylineedit.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
-           private/coordinatesystem_impl.h
+           private/coordinatesystem_impl.h \
+           private/itemselectingdialog_detail.h
 FORMS += cgnszoneselectdialog.ui \
          contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \
