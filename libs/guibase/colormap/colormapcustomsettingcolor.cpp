@@ -11,11 +11,16 @@ ColorMapCustomSettingColor::ColorMapCustomSettingColor() :
 ColorMapCustomSettingColor::ColorMapCustomSettingColor(const ColorMapCustomSettingColor& c) :
 	ColorMapCustomSettingColor()
 {
-	CompositeContainer::copyValue(c);
+	copyValue(c);
+}
+
+ColorMapCustomSettingColor& ColorMapCustomSettingColor::operator=(const ColorMapCustomSettingColor& c)
+{
+	copyValue(c);
+	return *this;
 }
 
 XmlAttributeContainer& ColorMapCustomSettingColor::operator=(const XmlAttributeContainer& c)
 {
-	CompositeContainer::copyValue(dynamic_cast<const ColorMapCustomSettingColor&> (c));
-	return *this;
+	return operator=(dynamic_cast<const ColorMapCustomSettingColor&> (c));
 }

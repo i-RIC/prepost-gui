@@ -13,6 +13,7 @@ public:
 	ColorMapCustomSettingColor();
 	ColorMapCustomSettingColor(const ColorMapCustomSettingColor& c);
 
+	ColorMapCustomSettingColor& operator=(const ColorMapCustomSettingColor& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	DoubleContainer value;
