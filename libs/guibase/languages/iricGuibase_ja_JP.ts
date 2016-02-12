@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -336,23 +336,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="vanished">X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="vanished">Y: ------</translation>
     </message>
 </context>
 <context>
@@ -392,7 +392,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation>選択状態の変更</translation>
+        <translation type="vanished">選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -406,12 +406,12 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="41"/>
+        <location filename="../realnumbereditwidget.cpp" line="44"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="41"/>
+        <location filename="../realnumbereditwidget.cpp" line="44"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
     </message>

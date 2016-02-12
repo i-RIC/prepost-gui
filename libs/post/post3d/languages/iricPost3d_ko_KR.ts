@@ -12,12 +12,12 @@
 <context>
     <name>Post3dWindow</name>
     <message>
-        <location filename="../post3dwindow.cpp" line="39"/>
+        <location filename="../post3dwindow.cpp" line="40"/>
         <source>Post-processing (3D): %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="178"/>
+        <location filename="../post3dwindow.cpp" line="184"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -73,12 +73,12 @@
 <context>
     <name>Post3dWindowArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="47"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="52"/>
         <source>Arrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="256"/>
+        <location filename="../datamodel/post3dwindowarrowgroupdataitem.cpp" line="97"/>
         <source>Arrow Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -192,7 +192,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="162"/>
+        <location filename="../datamodel/post3dwindowarrowgroupsettingdialog.cpp" line="81"/>
         <source>Face%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,12 +200,12 @@
 <context>
     <name>Post3dWindowContourGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="42"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="44"/>
         <source>Contour</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="525"/>
+        <location filename="../datamodel/post3dwindowcontourgroupdataitem.cpp" line="388"/>
         <source>Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -244,7 +244,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowcontourgroupsettingdialog.cpp" line="145"/>
+        <location filename="../datamodel/post3dwindowcontourgroupsettingdialog.cpp" line="132"/>
         <source>Face%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -252,12 +252,12 @@
 <context>
     <name>Post3dWindowDataModel</name>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindowdatamodel.cpp" line="193"/>
+        <location filename="../post3dwindowdatamodel.cpp" line="192"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -265,7 +265,7 @@
 <context>
     <name>Post3dWindowFaceDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="25"/>
+        <location filename="../datamodel/post3dwindowfacedataitem.cpp" line="26"/>
         <source>Object Browser Item Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -432,28 +432,38 @@
 <context>
     <name>Post3dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="48"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="51"/>
         <source>Isosurface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="315"/>
+        <source>Isosurface physical value change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="36"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="40"/>
         <source>Particles (auto)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="78"/>
+        <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="26"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="30"/>
         <source>Streamlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="69"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="65"/>
         <source>Streamline Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -623,15 +633,46 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesScalarGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="29"/>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesscalargroupdataitem.cpp" line="127"/>
+        <source>Particle Scalar value change</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="17"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="22"/>
         <source>Particles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="93"/>
+        <location filename="../datamodel/private/post3dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
         <source>Edit Particle Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="47"/>
+        <source>Vector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post3dwindowparticlesvectorgroupdataitem.cpp" line="70"/>
+        <source>Vector Attribute Select Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -776,18 +817,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="248"/>
+        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="240"/>
         <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindownodescalargroupdataitem.cpp" line="323"/>
-        <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="83"/>
-        <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -801,8 +832,13 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="152"/>
+        <location filename="../post3dwindow.cpp" line="158"/>
         <source>Edit Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post3dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <source>Update Particles Scalar Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

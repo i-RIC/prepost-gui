@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
@@ -17,7 +17,7 @@
         <translation>鳥瞰図可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="167"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="172"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -126,14 +126,14 @@
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation>コンターの設定変更</translation>
+        <translation type="vanished">コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="141"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="146"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
     </message>

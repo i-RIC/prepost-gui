@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>Post3dObjectBrowser</name>
     <message>
@@ -17,7 +17,7 @@
         <translation>可視化ウィンドウ (3D): %1</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="179"/>
+        <location filename="../post3dwindow.cpp" line="184"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -430,7 +430,7 @@
     </message>
     <message>
         <source>Value Color</source>
-        <translation>値の色</translation>
+        <translation type="vanished">値の色</translation>
     </message>
 </context>
 <context>
@@ -450,15 +450,15 @@
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles</source>
-        <translation>パーティクル</translation>
+        <translation type="vanished">パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="39"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="40"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="77"/>
+        <location filename="../datamodel/post3dwindownodevectorparticlegroupdataitem.cpp" line="78"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
     </message>
@@ -466,12 +466,12 @@
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="29"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="30"/>
         <source>Streamlines</source>
         <translation>流線</translation>
     </message>
     <message>
-        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="64"/>
+        <location filename="../datamodel/post3dwindownodevectorstreamlinegroupdataitem.cpp" line="65"/>
         <source>Streamline Physical Value Change</source>
         <translation>流線 物理量の変更</translation>
     </message>
@@ -676,7 +676,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post3dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="21"/>
+        <location filename="../datamodel/post3dwindowparticlestopdataitem.cpp" line="22"/>
         <source>Particles</source>
         <translation>粒子</translation>
     </message>
@@ -687,7 +687,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles (auto)</source>
-        <translation>パーティクル (自動)</translation>
+        <translation type="vanished">パーティクル (自動)</translation>
     </message>
 </context>
 <context>
@@ -867,11 +867,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation>コンター 物理量変更</translation>
+        <translation type="vanished">コンター 物理量変更</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation>パーティクル 物理量の変更</translation>
+        <translation type="vanished">パーティクル 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorparticlegroupstructureddataitem.cpp" line="42"/>
@@ -880,7 +880,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation>流線 物理量の変更</translation>
+        <translation type="vanished">流線 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post3dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="158"/>
@@ -888,7 +888,7 @@ p, li { white-space: pre-wrap; }
         <translation>流線の設定変更</translation>
     </message>
     <message>
-        <location filename="../post3dwindow.cpp" line="153"/>
+        <location filename="../post3dwindow.cpp" line="158"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
     </message>

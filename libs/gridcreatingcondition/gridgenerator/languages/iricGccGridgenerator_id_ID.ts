@@ -17,12 +17,12 @@
 <context>
     <name>GridCreatingConditionGridGenerator</name>
     <message>
-        <location filename="../gridcreatingconditiongridgenerator.cpp" line="222"/>
+        <location filename="../gridcreatingconditiongridgenerator.cpp" line="223"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditiongridgenerator.cpp" line="222"/>
+        <location filename="../gridcreatingconditiongridgenerator.cpp" line="223"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>

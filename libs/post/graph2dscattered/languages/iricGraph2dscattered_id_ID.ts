@@ -216,33 +216,33 @@
 <context>
     <name>Graph2dScatteredWindowDataModel</name>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="114"/>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="195"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="114"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="115"/>
         <source>Saving snapshot image to %1 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="179"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="180"/>
         <source>Time = %1 sec</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="189"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="189"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="190"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="195"/>
+        <location filename="../graph2dscatteredwindowdatamodel.cpp" line="196"/>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -299,22 +299,22 @@
 <context>
     <name>Graph2dScatteredWindowResultDataItem</name>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="251"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="253"/>
         <source>Position X</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="253"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="255"/>
         <source>Position Y</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="255"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="257"/>
         <source>Position Z</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="257"/>
+        <location filename="../graph2dscatteredwindowresultsetting.cpp" line="259"/>
         <source>Stream-wise Distance</source>
         <translation type="unfinished"></translation>
     </message>

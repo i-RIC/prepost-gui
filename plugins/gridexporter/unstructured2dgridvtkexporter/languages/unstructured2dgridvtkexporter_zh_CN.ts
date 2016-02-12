@@ -4,7 +4,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../unstructured2dgridvtkexporter.cpp" line="25"/>
+        <location filename="../unstructured2dgridvtkexporter.cpp" line="30"/>
         <source>VTK files (*.vtk)</source>
         <translation type="unfinished"></translation>
     </message>

@@ -256,7 +256,7 @@
     </message>
     <message>
         <location filename="../geodatariverpathpointrotatedialog.cpp" line="45"/>
-        <location filename="../geodatariversurvey.cpp" line="703"/>
+        <location filename="../geodatariversurvey.cpp" line="688"/>
         <source>Rotate Traversal Line</source>
         <translation></translation>
     </message>
@@ -266,38 +266,38 @@
         <translation>河川横断線の中心点のシフト</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="408"/>
+        <location filename="../geodatariversurvey.cpp" line="390"/>
         <source>&amp;River Survey</source>
         <translation>河川測量データ (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="437"/>
-        <location filename="../geodatariversurvey.cpp" line="467"/>
+        <location filename="../geodatariversurvey.cpp" line="419"/>
+        <location filename="../geodatariversurvey.cpp" line="449"/>
         <source>Interpolation Mode</source>
         <translation>補間モード</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="635"/>
+        <location filename="../geodatariversurvey.cpp" line="620"/>
         <source>Move Traversal Line</source>
         <translation>横断線の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="768"/>
+        <location filename="../geodatariversurvey.cpp" line="753"/>
         <source>Shift Center Point</source>
         <translation>河川中心点のシフト</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="838"/>
+        <location filename="../geodatariversurvey.cpp" line="823"/>
         <source>Move Extension Line End</source>
         <translation>延長線の端点の移動</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1050"/>
+        <location filename="../geodatariversurvey.cpp" line="1035"/>
         <source>Selection Change</source>
         <translation>選択状態の変更</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1547"/>
+        <location filename="../geodatariversurvey.cpp" line="1526"/>
         <source>  </source>
         <translation>  </translation>
     </message>
@@ -382,33 +382,33 @@
         <translation>線形補間</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1826"/>
+        <location filename="../geodatariversurvey.cpp" line="1825"/>
         <source>Delete Traversal Lines</source>
         <translation>河川横断線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1911"/>
-        <location filename="../geodatariversurvey.cpp" line="2088"/>
+        <location filename="../geodatariversurvey.cpp" line="1910"/>
+        <location filename="../geodatariversurvey.cpp" line="2087"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1911"/>
+        <location filename="../geodatariversurvey.cpp" line="1910"/>
         <source>River survey data need at least 2 center points.</source>
         <translation>最低2つの河川横断せんがなくてはいけません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="1991"/>
+        <location filename="../geodatariversurvey.cpp" line="1990"/>
         <source>Remove Extension Line</source>
         <translation>延長線の削除</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2088"/>
+        <location filename="../geodatariversurvey.cpp" line="2087"/>
         <source>Insert Target Point name is &quot;0&quot;. You have to change the name if you want to add a new point.</source>
         <translation>追加対象の名前が &quot;0&quot; です。ここに点を追加するには、まず追加対象の点の名前を変える必要があります。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurvey.cpp" line="2298"/>
+        <location filename="../private/geodatariversurvey_setdisplaysettingcommand.cpp" line="4"/>
         <source>Edit Display Setting</source>
         <translation>表示設定の編集</translation>
     </message>
@@ -416,12 +416,12 @@
 <context>
     <name>GeoDataRiverSurveyCreator</name>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="17"/>
+        <location filename="../geodatariversurveycreator.cpp" line="15"/>
         <source>River Survey data</source>
         <translation>河川測量データ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycreator.cpp" line="41"/>
+        <location filename="../geodatariversurveycreator.cpp" line="40"/>
         <source>RiverSurvey %1</source>
         <translation>河川測量データ %1</translation>
     </message>
@@ -548,12 +548,12 @@
         <translation>固定点と端点は無効化できません。</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="714"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="729"/>
         <source>River Survey Data</source>
         <translation>河川測量データ</translation>
     </message>
     <message>
-        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="715"/>
+        <location filename="../geodatariversurveycrosssectionwindow.cpp" line="730"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -691,6 +691,14 @@
         <location filename="../geodatariversurveyimportersettingdialog.ui" line="37"/>
         <source>Where the elevation is the smallest</source>
         <translation>最も標高が低い点</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataRiverSurveyProxy</name>
+    <message>
+        <location filename="../private/geodatariversurveyproxy_setsettingcommand.cpp" line="4"/>
+        <source>Edit display setting</source>
+        <translation>表示設定の編集</translation>
     </message>
 </context>
 <context>

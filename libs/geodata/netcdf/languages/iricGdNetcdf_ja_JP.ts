@@ -2,14 +2,27 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
+    <name>GeoDataNetcdf</name>
+    <message>
+        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <location filename="../geodatanetcdf.cpp" line="131"/>
+        <source>Error occured while opening %1.</source>
+        <translation>%1 を開くときにエラーが発生しました。</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataNetcdfCreator</name>
     <message>
-        <location filename="../geodatanetcdfcreator.cpp" line="15"/>
+        <location filename="../geodatanetcdfcreator.cpp" line="13"/>
         <source>Raster data</source>
         <translation>ラスターデータ</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfcreator.cpp" line="25"/>
+        <location filename="../geodatanetcdfcreator.cpp" line="23"/>
         <source>Raster data%1</source>
         <translation>ラスターデータ%1</translation>
     </message>
@@ -35,29 +48,29 @@
 <context>
     <name>GeoDataNetcdfImporter</name>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="24"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="31"/>
         <source>NetCDF file (*.nc)</source>
         <translation>NetCDF ファイル (*.nc)</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="87"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="133"/>
-        <location filename="../geodatanetcdfimporter.cpp" line="293"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="94"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="144"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="304"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="87"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="94"/>
         <source>%1 does not have longitude and latitude data.</source>
         <translation>%1 は、経度と緯度のデータを持っていません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="133"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="144"/>
         <source>%1 does not have variable that can be imported.</source>
         <translation>%1 には、インポート可能な変数がありません。</translation>
     </message>
     <message>
-        <location filename="../geodatanetcdfimporter.cpp" line="293"/>
+        <location filename="../geodatanetcdfimporter.cpp" line="304"/>
         <source>Dimension values for %1 mismatch.</source>
         <translation>次元 %1 の値が一致しません。</translation>
     </message>

@@ -27,7 +27,7 @@
 <context>
     <name>Post2dObjectBrowser</name>
     <message>
-        <location filename="../post2dobjectbrowser.cpp" line="14"/>
+        <location filename="../post2dobjectbrowser.cpp" line="15"/>
         <source>Object Browser</source>
         <translation>オブジェクトブラウザー</translation>
     </message>
@@ -35,12 +35,12 @@
 <context>
     <name>Post2dWindow</name>
     <message>
-        <location filename="../post2dwindow.cpp" line="41"/>
+        <location filename="../post2dwindow.cpp" line="42"/>
         <source>Post-processing (2D): %1</source>
         <translation>可視化ウィンドウ (2D): %1</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="176"/>
+        <location filename="../post2dwindow.cpp" line="182"/>
         <source>Background Color</source>
         <translation>背景色</translation>
     </message>
@@ -363,12 +363,12 @@
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="18"/>
+        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="19"/>
         <source>Cell attributes</source>
         <translation>セル属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="39"/>
+        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="40"/>
         <source>Cell Flag Setting</source>
         <translation>セル属性設定</translation>
     </message>
@@ -391,12 +391,12 @@
         <translation>下へ(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellflagsettingdialog.cpp" line="61"/>
+        <location filename="../datamodel/post2dwindowcellflagsettingdialog.cpp" line="60"/>
         <source>Attribute</source>
         <translation>属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellflagsettingdialog.cpp" line="62"/>
+        <location filename="../datamodel/post2dwindowcellflagsettingdialog.cpp" line="61"/>
         <source>Color</source>
         <translation>色</translation>
     </message>
@@ -429,12 +429,12 @@
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="170"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="134"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="170"/>
+        <location filename="../datamodel/post2dwindowcontoursettingdialog.cpp" line="134"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -442,30 +442,30 @@
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="99"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="111"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="123"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="135"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="110"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="99"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="110"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation>スカラー量の計算結果がないため、コンター設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="111"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、ベクトル設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="123"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、流線設定を行えません。</translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="135"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
         <translation>ベクトル量の計算結果がないため、パーティクル設定を行えません。</translation>
     </message>
@@ -473,7 +473,7 @@
 <context>
     <name>Post2dWindowGeoDataTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgeodatatopdataitem.cpp" line="13"/>
+        <location filename="../datamodel/post2dwindowgeodatatopdataitem.cpp" line="16"/>
         <source>Geographic Data</source>
         <translation>地理情報</translation>
     </message>
@@ -481,7 +481,7 @@
 <context>
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="37"/>
+        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="38"/>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -506,39 +506,39 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="63"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="380"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="388"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="438"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="446"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="673"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="678"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="667"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="673"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="678"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
@@ -546,14 +546,30 @@
 <context>
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="78"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="44"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="107"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="66"/>
         <source>Arrow Physical Value Change</source>
         <translation>矢印 物理量変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupStructuredDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Arrow Setting</source>
+        <translation>ベクトルの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Arrow Setting</source>
+        <translation>ベクトルの設定変更</translation>
     </message>
 </context>
 <context>
@@ -563,12 +579,12 @@
         <translation type="vanished">パーティクル</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="60"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="63"/>
         <source>Particles (auto)</source>
         <translation>パーティクル (自動)</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="96"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="92"/>
         <source>Particle Physical Value Change</source>
         <translation>パーティクル 物理量の変更</translation>
     </message>
@@ -576,7 +592,7 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp" line="61"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupstructureddataitem.cpp" line="63"/>
         <source>Update Particle Setting</source>
         <translation>パーティクル設定</translation>
     </message>
@@ -584,7 +600,7 @@
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="143"/>
+        <location filename="../datamodel/post2dwindowparticleunstructuredsettingdialog.cpp" line="144"/>
         <source>Update Particle Setting</source>
         <translation>パーティクル設定</translation>
     </message>
@@ -592,12 +608,12 @@
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="47"/>
+        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="50"/>
         <source>Streamlines</source>
         <translation>流線</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="81"/>
+        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="75"/>
         <source>Streamline Physical Value Change</source>
         <translation>流線 物理量の変更</translation>
     </message>
@@ -605,7 +621,7 @@
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp" line="110"/>
+        <location filename="../datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp" line="113"/>
         <source>Update Streamline Setting</source>
         <translation>流線の設定変更</translation>
     </message>
@@ -944,20 +960,55 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post2dWindowParticlesScalarGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="28"/>
+        <source>Scalar</source>
+        <translation>スカラー</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesscalargroupdataitem.cpp" line="146"/>
+        <source>Particle Scalar value change</source>
+        <translation>パーティクル属性値の変更</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowParticlesTopDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="17"/>
+        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="22"/>
         <source>Particles</source>
         <translation>粒子</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowparticlestopdataitem.cpp" line="93"/>
         <source>Edit Particle Display Setting</source>
-        <translation>パーティクル表示設定の編集</translation>
+        <translation type="vanished">パーティクル表示設定の編集</translation>
     </message>
     <message>
         <source>Particles (auto)</source>
         <translation type="vanished">パーティクル (自動)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Edit Particle Setting</source>
+        <translation>パーティクル設定の変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesVectorGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="45"/>
+        <source>Vector</source>
+        <translation>ベクトル</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowparticlesvectorgroupdataitem.cpp" line="67"/>
+        <source>Vector Attribute Select Change</source>
+        <translation>ベクトル属性の変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesvectorgroupdataitem_setsettingcommand.cpp" line="4"/>
+        <source>Update Vector Setting</source>
+        <translation>ベクトル設定の変更</translation>
     </message>
 </context>
 <context>
@@ -1202,8 +1253,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="106"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="108"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="107"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="109"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -1211,7 +1262,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="196"/>
+        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="197"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>
@@ -1228,10 +1279,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">矢印 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp" line="153"/>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp" line="161"/>
         <source>Update Arrow Setting</source>
-        <translation>ベクトルの設定変更</translation>
+        <translation type="vanished">ベクトルの設定変更</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
@@ -1246,14 +1295,19 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">流線 物理量の変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="168"/>
+        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="170"/>
         <source>Update Streamline Setting</source>
         <translation>流線の設定変更</translation>
     </message>
     <message>
-        <location filename="../post2dwindow.cpp" line="150"/>
+        <location filename="../post2dwindow.cpp" line="156"/>
         <source>Edit Background Color</source>
         <translation>背景色の設定</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp" line="10"/>
+        <source>Update Particles Scalar Setting</source>
+        <translation>パーティクルのスカラー設定の変更</translation>
     </message>
 </context>
 </TS>

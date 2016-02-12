@@ -29,62 +29,62 @@ Note: This algorithm is available only when river survey data is loaded!Please s
 <context>
     <name>GridCreatingConditionRiverSurvey</name>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="51"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="52"/>
         <source>Delete Selected Control Points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="282"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="283"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="282"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="283"/>
         <source>There is no river survey data. This grid creating condition is not available.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="876"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="877"/>
         <source>&amp;Add Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="877"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="878"/>
         <source>Add Division Points &amp;Regionally...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="878"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="879"/>
         <source>&amp;Move Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="879"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="880"/>
         <source>Re&amp;position Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="880"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="881"/>
         <source>R&amp;emove Division Points...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="988"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="989"/>
         <source>Confirmation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="989"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="990"/>
         <source>Are you sure you want to delete these control points?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1576"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1577"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditionriversurvey.cpp" line="1576"/>
+        <location filename="../gridcreatingconditionriversurvey.cpp" line="1577"/>
         <source>The maximum number of grid nodes is %1.</source>
         <translation type="unfinished"></translation>
     </message>

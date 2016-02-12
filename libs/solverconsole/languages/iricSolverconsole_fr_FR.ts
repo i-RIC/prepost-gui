@@ -2,100 +2,92 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
-    <name>QObject</name>
-    <message>
-        <location filename="../solverconsolewindow.cpp" line="295"/>
-        <source>Background Color Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>SolverConsoleWindow</name>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="40"/>
+        <location filename="../solverconsolewindow.cpp" line="42"/>
         <source>&amp;Export solver console log...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="93"/>
+        <location filename="../solverconsolewindow.cpp" line="95"/>
         <source>Show Detail</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="94"/>
-        <location filename="../solverconsolewindow.cpp" line="105"/>
+        <location filename="../solverconsolewindow.cpp" line="96"/>
+        <location filename="../solverconsolewindow.cpp" line="107"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="94"/>
+        <location filename="../solverconsolewindow.cpp" line="96"/>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="98"/>
+        <location filename="../solverconsolewindow.cpp" line="100"/>
         <source>The simulation has result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="98"/>
+        <location filename="../solverconsolewindow.cpp" line="100"/>
         <source>Current simulation already has result data. When you run the solver, the current result data is discarded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="105"/>
+        <location filename="../solverconsolewindow.cpp" line="107"/>
         <source>Error occured. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="80"/>
-        <location filename="../solverconsolewindow.cpp" line="109"/>
+        <location filename="../solverconsolewindow.cpp" line="82"/>
+        <location filename="../solverconsolewindow.cpp" line="111"/>
         <source>Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="80"/>
+        <location filename="../solverconsolewindow.cpp" line="82"/>
         <source>This project is opened in post only mode. You can not run the solver.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="109"/>
+        <location filename="../solverconsolewindow.cpp" line="111"/>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="123"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="123"/>
+        <location filename="../solverconsolewindow.cpp" line="125"/>
         <source>Solver executable file %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="171"/>
+        <location filename="../solverconsolewindow.cpp" line="173"/>
         <source>Confirm Solver Termination</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="172"/>
+        <location filename="../solverconsolewindow.cpp" line="174"/>
         <source>Do you really want to kill the solver?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="234"/>
-        <location filename="../solverconsolewindow.cpp" line="237"/>
+        <location filename="../solverconsolewindow.cpp" line="235"/>
+        <location filename="../solverconsolewindow.cpp" line="238"/>
         <source>Solver Finished</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="234"/>
+        <location filename="../solverconsolewindow.cpp" line="235"/>
         <source>The solver finished calculation.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="237"/>
+        <location filename="../solverconsolewindow.cpp" line="238"/>
         <source>The solver finished abnormally.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -120,8 +112,13 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../solverconsolewindow.cpp" line="315"/>
+        <location filename="../solverconsolewindow.cpp" line="293"/>
         <source>Background Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../private/solverconsolewindow_setbackgroundcolorcommand.cpp" line="4"/>
+        <source>Background Color Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

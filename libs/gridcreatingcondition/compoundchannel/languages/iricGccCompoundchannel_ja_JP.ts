@@ -98,11 +98,11 @@
     <message>
         <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1399"/>
         <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1422"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2154"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2159"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2163"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2169"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2176"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -132,32 +132,32 @@
         <translation>格子生成領域を定義してください。格子生成領域は、ポリゴンとしてマウスクリックにより定義します。ダブルクリックするか、改行キーを押して完了します。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1877"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1831"/>
         <source>Generating grid...</source>
         <translation>格子を生成しています...</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2154"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation>格子生成条件の定義が完了していません。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2159"/>
         <source>Grid creating region polygon shape is invalid.</source>
         <translation>格子生成領域の形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2163"/>
         <source>Low water channel region polygon shape is invalid.</source>
         <translation>低水域領域の形状が不正です。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2169"/>
         <source>Low water channel region have to be inside grid region.</source>
         <translation>低水域領域は、格子生成領域の内側にある必要があります。</translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2176"/>
         <source>Center line have to be inside low water channel region.</source>
         <translation>中心線は、低水域領域の内側にある必要があります。</translation>
     </message>

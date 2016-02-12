@@ -98,11 +98,11 @@
     <message>
         <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1399"/>
         <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1422"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2154"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2159"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2163"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2169"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2176"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -132,32 +132,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1877"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="1831"/>
         <source>Generating grid...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2200"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2154"/>
         <source>Grid creating condition definition not finished yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2205"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2159"/>
         <source>Grid creating region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2209"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2163"/>
         <source>Low water channel region polygon shape is invalid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2215"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2169"/>
         <source>Low water channel region have to be inside grid region.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2222"/>
+        <location filename="../gridcreatingconditioncompoundchannel.cpp" line="2176"/>
         <source>Center line have to be inside low water channel region.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
+    <name>AsciiOnlyLineEdit</name>
+    <message>
+        <location filename="../asciionlylineedit.cpp" line="9"/>
+        <source>String has to consist of only English characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../asciionlylineedit.cpp" line="22"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <location filename="../cgnszoneselectdialog.ui" line="14"/>
@@ -17,113 +30,113 @@
 <context>
     <name>ColorMapCustomSettingDialog</name>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="14"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="14"/>
         <source>Custom Color Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="22"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="22"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="30"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="30"/>
         <source>Two Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="35"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="35"/>
         <source>Three Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="40"/>
-        <location filename="../colormapcustomsettingdialog.ui" line="131"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="40"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="131"/>
         <source>Arbitrary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="63"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="63"/>
         <source>Two Colors/ Three Colors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="69"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="69"/>
         <source>Maximum Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="83"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="83"/>
         <source>Medium Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="102"/>
-        <location filename="../colormapcustomsettingdialog.ui" line="138"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="102"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="138"/>
         <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="114"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="114"/>
         <source>Minimum Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="143"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="143"/>
         <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="153"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="153"/>
         <source>&amp;Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="160"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="160"/>
         <source>&amp;Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="167"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="167"/>
         <source>&amp;Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.ui" line="174"/>
+        <location filename="../colormap/colormapcustomsettingdialog.ui" line="174"/>
         <source>&amp;Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="241"/>
         <source>Import Colormap Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="230"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="241"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="310"/>
         <source>CSV file (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="247"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="254"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="316"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="236"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="247"/>
         <source>File %1 does not exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="243"/>
-        <location filename="../colormapcustomsettingdialog.cpp" line="305"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="254"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="316"/>
         <source>File %1 could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapcustomsettingdialog.cpp" line="299"/>
+        <location filename="../colormap/colormapcustomsettingdialog.cpp" line="310"/>
         <source>Export Colormap Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -131,17 +144,17 @@
 <context>
     <name>ColorMapSettingWidget</name>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="20"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="20"/>
         <source>Form</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="154"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="154"/>
         <source>Custom</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../colormapsettingwidget.ui" line="167"/>
+        <location filename="../colormap/colormapsettingwidget.ui" line="167"/>
         <source>Setting...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,7 +213,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="36"/>
+        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
         <source>(Not Specified)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -249,12 +262,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="15"/>
+        <location filename="../filenameeditwidget.cpp" line="27"/>
         <source>All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="54"/>
+        <location filename="../filenameeditwidget.cpp" line="66"/>
         <source>Select File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -301,7 +314,7 @@
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
-        <location filename="../integernumberdisplaylabel.cpp" line="23"/>
+        <location filename="../integernumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation type="unfinished"></translation>
     </message>
@@ -322,48 +335,40 @@
 <context>
     <name>ObjectBrowserView</name>
     <message>
-        <location filename="../objectbrowserview.cpp" line="19"/>
+        <location filename="../objectbrowserview.cpp" line="20"/>
         <source>&amp;Delete...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="21"/>
+        <location filename="../objectbrowserview.cpp" line="23"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="23"/>
+        <location filename="../objectbrowserview.cpp" line="26"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="26"/>
+        <location filename="../objectbrowserview.cpp" line="29"/>
         <source>&amp;Property...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="36"/>
+        <location filename="../objectbrowserview.cpp" line="65"/>
         <source>Delete item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../objectbrowserview.cpp" line="36"/>
+        <location filename="../objectbrowserview.cpp" line="65"/>
         <source>Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <location filename="../objectbrowserview.cpp" line="101"/>
-        <source>Selection Change</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
-        <location filename="../realnumberdisplaylabel.cpp" line="23"/>
+        <location filename="../realnumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation type="unfinished"></translation>
     </message>
@@ -371,12 +376,12 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="37"/>
+        <location filename="../realnumbereditwidget.cpp" line="44"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="37"/>
+        <location filename="../realnumbereditwidget.cpp" line="44"/>
         <source>It is not a real value</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
@@ -43,15 +43,15 @@
     <name>PostParticleBasicPropertyDialog</name>
     <message>
         <source>Particles Setting</source>
-        <translation>粒子設定</translation>
+        <translation type="vanished">粒子設定</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>サイズ:</translation>
+        <translation type="vanished">サイズ:</translation>
     </message>
 </context>
 <context>
@@ -264,7 +264,7 @@
     </message>
     <message>
         <source>Edit title setting</source>
-        <translation>時刻表示の設定変更</translation>
+        <translation type="vanished">時刻表示の設定変更</translation>
     </message>
 </context>
 <context>

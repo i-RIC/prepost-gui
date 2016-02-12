@@ -17,7 +17,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="167"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="172"/>
         <source>Background Color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -102,8 +102,18 @@
 <context>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="50"/>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="53"/>
         <source>Contour</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="362"/>
+        <source>Contour Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dbirdeyewindownodescalargroupdataitem_setsettingcommand.cpp" line="7"/>
+        <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -115,17 +125,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="386"/>
-        <source>Update Contour Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../datamodel/post2dbirdeyewindownodescalargroupdataitem.cpp" line="442"/>
-        <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../post2dbirdeyewindow.cpp" line="141"/>
+        <location filename="../post2dbirdeyewindow.cpp" line="146"/>
         <source>Edit Background Color</source>
         <translation type="unfinished"></translation>
     </message>
