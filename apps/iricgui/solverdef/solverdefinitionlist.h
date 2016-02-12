@@ -2,8 +2,9 @@
 #define SOLVERDEFINITIONLIST_H
 
 #include <QObject>
-#include <QList>
 #include <QLocale>
+
+#include <vector>
 
 class QAction;
 class SolverDefinitionAbstract;
@@ -20,20 +21,18 @@ class SolverDefinitionList : public QObject
 	Q_OBJECT
 
 public:
-	/// constructor
 	/**
 	 * @param installDir install directory of iRIC
 	 */
 	SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent);
-	/// destructor
-	virtual ~SolverDefinitionList() {clean();}
-	/// Return absolute path of the folder that contains the solver information.
+	~SolverDefinitionList();
+
 	QString absoluteSolverPath(const QString& solverFolder);
-	/// The list of solvers;
-	QList<SolverDefinitionAbstract*> solverList() {return m_solverList;}
-	/// The list of actions to add in File -&gt; New Simulation menu
-	QList<QAction*> actionList();
-	/// The dialog to show solver definition list
+
+
+	const std::vector<SolverDefinitionAbstract*>& solverList() const;
+	std::vector<QAction*> actionList();
+
 	SolverDefinitionListDialog* dialog(QWidget* parent);
 	QString supportingSolverFolder(ProjectData* p);
 
@@ -54,17 +53,14 @@ signals:
 	void updated(SolverDefinitionList*);
 
 private:
-	/// A vector that stores the list of SolverDefinition Abstract.
-	QList<SolverDefinitionAbstract*> m_solverList;
+	std::vector<SolverDefinitionAbstract*> m_solverList;
 	/// Full path of the directory that contains solvers.
 	/**
 	 * please refer to @ref dirstructure for the directory structure
 	 * under install directory of iRIC.
 	 */
 	QString m_targetDirectory;
-	/// Locale currently used.
 	QLocale m_locale;
-	/// The dialog to show solver definition list
 	SolverDefinitionListDialog* m_dialog;
 };
 

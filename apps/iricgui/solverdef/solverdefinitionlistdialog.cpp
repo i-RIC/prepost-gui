@@ -42,7 +42,6 @@ void SolverDefinitionListDialog::changeEvent(QEvent* e)
 
 void SolverDefinitionListDialog::setup()
 {
-	QList<SolverDefinitionAbstract*> solvers = m_solverList->solverList();
 	QTableWidget* table = ui->solverListTable;
 
 	table->clear();
@@ -60,7 +59,8 @@ void SolverDefinitionListDialog::setup()
 	table->setColumnWidth(0, 200);
 	table->setColumnWidth(1, 80);
 
-	table->setRowCount(solvers.count());
+	auto solvers = m_solverList->solverList();
+	table->setRowCount(solvers.size());
 	QTableWidgetItem* item;
 	int i = 0;
 	for (SolverDefinitionAbstract* abst : solvers) {

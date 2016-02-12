@@ -38,15 +38,12 @@ void SolverDefinitionTranslationUpdateWizard::init(SolverDefinitionList* list, c
 
 void SolverDefinitionTranslationUpdateWizard::accept()
 {
-	QList<SolverDefinitionAbstract*> slist = solverList()->solverList();
-	const QList<GridCreatingConditionCreator*>& clist = gridCreatorList();
-
 	QDir folderDir;
 	if (field("solverSel").toBool() == true) {
-		SolverDefinitionAbstract* solver = slist.at(field("solver").toInt());
+		auto solver = solverList()->solverList().at(field("solver").toInt());
 		folderDir = QDir(solver->folder());
 	} else if (field("gridGenSel").toBool() == true) {
-		GridCreatingConditionCreator* creator = clist.at(field("gridgen").toInt());
+		auto creator = gridCreatorList().at(field("gridgen").toInt());
 		GridCreatingConditionCreatorExternalProgram* pc = dynamic_cast<GridCreatingConditionCreatorExternalProgram*>(creator);
 		folderDir = QDir(pc->folderName());
 	}
@@ -157,8 +154,7 @@ QList<QLocale> SolverDefinitionTranslationUpdateWizard::supportedLanguages()
 
 void SettingPage::init(SolverDefinitionList* list, const QList<GridCreatingConditionCreator*>& gclist)
 {
-	QList<SolverDefinitionAbstract*> slist = list->solverList();
-	for (SolverDefinitionAbstract* abst : slist) {
+	for (SolverDefinitionAbstract* abst : list->solverList()) {
 		m_solverCombobox->addItem(abst->caption(), abst->name().c_str());
 	}
 
@@ -170,9 +166,6 @@ void SettingPage::init(SolverDefinitionList* list, const QList<GridCreatingCondi
 void SettingPage::initializePage()
 {
 	SolverDefinitionTranslationUpdateWizard* w = dynamic_cast<SolverDefinitionTranslationUpdateWizard*>(wizard());
-	QList<SolverDefinitionAbstract*> slist = w->solverList()->solverList();
-	const QList<GridCreatingConditionCreator*>& clist = w->gridCreatorList();
-	QDir folderDir;
 	if (field("solverSel").toBool() == true) {
 		m_solverRadioButton->setChecked(true);
 		int solverId = field("solver").toInt();
@@ -209,14 +202,12 @@ ConfirmPage::ConfirmPage(QWidget* /*parent*/)
 void ConfirmPage::initializePage()
 {
 	SolverDefinitionTranslationUpdateWizard* w = dynamic_cast<SolverDefinitionTranslationUpdateWizard*>(wizard());
-	QList<SolverDefinitionAbstract*> slist = w->solverList()->solverList();
-	const QList<GridCreatingConditionCreator*>& clist = w->gridCreatorList();
 	QDir folderDir;
 	if (field("solverSel").toBool() == true) {
-		SolverDefinitionAbstract* solver = slist.at(field("solver").toInt());
+		auto solver = w->solverList()->solverList().at(field("solver").toInt());
 		folderDir = QDir(solver->folder());
 	} else if (field("gridGenSel").toBool() == true) {
-		GridCreatingConditionCreator* creator = clist.at(field("gridgen").toInt());
+		auto creator = w->gridCreatorList().at(field("gridgen").toInt());
 		GridCreatingConditionCreatorExternalProgram* pc = dynamic_cast<GridCreatingConditionCreatorExternalProgram*>(creator);
 		folderDir = QDir(pc->folderName());
 	}

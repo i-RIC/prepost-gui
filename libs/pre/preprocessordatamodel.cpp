@@ -280,7 +280,6 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_additionalMenus.append(m_geographicDataMenu);
 	m_dummyMenus.append(m_geographicDataMenu);
 
-	GeoDataCreator* polygonCreator = nullptr;
 	PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_selectedItem);
 
 	QAction* editGroupAction = new QAction(tr("Edit &Groups..."), m_geographicDataMenu);
@@ -291,12 +290,14 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addAction(editGroupAction);
 	m_geographicDataMenu->addSeparator();
 
+	GeoDataCreator* polygonCreator = nullptr;
+
 	if (item != nullptr) {
 		// GeoData dataitem is selected.
-		QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
-		for (auto it = creators.begin(); it != creators.end(); ++it) {
-			if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
-				polygonCreator = *it;
+		auto creators = GeoDataFactory::instance().compatibleCreators(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent())->condition());
+		for (auto creator : creators) {
+			if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
+				polygonCreator = creator;
 			}
 		}
 		setupGeoDataAddActions(dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item->parent()));
@@ -335,10 +336,10 @@ void PreProcessorDataModel::setupGeoDataMenus()
 		PreProcessorGeoDataGroupDataItem* gitem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(m_selectedItem);
 		if (gitem != nullptr) {
 			// GeoDatagroup dataitem is selected.
-			QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
-			for (auto it = creators.begin(); it != creators.end(); ++it) {
-				if (dynamic_cast<GeoDataPolygonCreator*>(*it) != nullptr) {
-					polygonCreator = *it;
+			auto creators = GeoDataFactory::instance().compatibleCreators(gitem->condition());
+			for (auto creator : creators) {
+				if (dynamic_cast<GeoDataPolygonCreator*>(creator) != nullptr) {
+					polygonCreator = creator;
 				}
 			}
 			setupGeoDataAddActions(gitem);
@@ -1033,11 +1034,11 @@ void PreProcessorDataModel::setupGeoDataAddActions(PreProcessorGeoDataGroupDataI
 		delete *it;
 	}
 	m_geoDataAddActions.clear();
-	QList<GeoDataCreator*> creators = GeoDataFactory::instance().compatibleCreators(item->condition());
-	for (auto cit = creators.begin(); cit != creators.end(); ++cit) {
-		QAction* action = new QAction(tr("Add New %1").arg((*cit)->caption()), this);
-		m_geoDataAddActions.insert(*cit, action);
-		m_geoDataAddSignalMapper->setMapping(action, *cit);
+	auto creators = GeoDataFactory::instance().compatibleCreators(item->condition());
+	for (auto creator : creators) {
+		QAction* action = new QAction(tr("Add New %1").arg(creator->caption()), this);
+		m_geoDataAddActions.insert(creator, action);
+		m_geoDataAddSignalMapper->setMapping(action, creator);
 		connect(action, SIGNAL(triggered()), m_geoDataAddSignalMapper, SLOT(map()));
 	}
 	connect(m_geoDataAddSignalMapper, SIGNAL(mapped(QObject*)), item, SLOT(addGeoData(QObject*)));

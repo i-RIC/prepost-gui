@@ -92,19 +92,17 @@ void PreProcessorGeoDataComplexGroupDataItem::saveComplexGroupsToCgnsFile(const 
 
 void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	GeoDataFactory& factory = GeoDataFactory::instance();
-	// create add menu.
-	const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (auto it = creators.begin(); it != creators.end(); ++it) {
-		if ((*it)->isCreatable()) {
-			QString title = (*it)->caption();
+	GeoDataFactory& factory = GeoDataFactory::instance();
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		if (creator->isCreatable()) {
+			QString title = creator->caption();
 			QAction* addAction = m_addMenu->addAction(title.append("..."));
-			m_addSignalMapper->setMapping(addAction, *it);
+			m_addSignalMapper->setMapping(addAction, creator);
 			connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
 		}
 	}

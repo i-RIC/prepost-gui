@@ -12,8 +12,8 @@
 #include <QFileSystemWatcher>
 #include <QMessageBox>
 
-SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent)
-	: QObject(parent)
+SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLocale& locale, QObject* parent) :
+	QObject(parent)
 {
 	m_locale = locale;
 	QString solversFolder("solvers");
@@ -36,6 +36,11 @@ SolverDefinitionList::SolverDefinitionList(const QString& installDir, const QLoc
 	updateSolverList();
 }
 
+SolverDefinitionList::~SolverDefinitionList()
+{
+	clean();
+}
+
 void SolverDefinitionList::updateSolverList()
 {
 	clean();
@@ -50,7 +55,7 @@ void SolverDefinitionList::updateSolverList()
 			// definition.xml exists.
 			try {
 				SolverDefinitionAbstract* abst = new SolverDefinitionAbstract(solversdir.absoluteFilePath(subdir), m_locale, this);
-				m_solverList.append(abst);
+				m_solverList.push_back(abst);
 			} catch (ErrorMessage& e) {
 				QMessageBox::warning(parentWidget, tr("Warning"), tr("Error occured while loading solver definition file in folder \"%1\". This solver is ignored.\n%2").arg(subdir).arg(e));
 			}
@@ -69,20 +74,24 @@ void SolverDefinitionList::clean()
 	m_solverList.clear();
 }
 
-QList<QAction*> SolverDefinitionList::actionList()
-{
-	QList<QAction*> ret;
-	for (SolverDefinitionAbstract* def : m_solverList) {
-		QAction* act = new QAction(def->caption(), this);
-		ret.append(act);
-	}
-	return ret;
-}
-
-
 QString SolverDefinitionList::absoluteSolverPath(const QString& solverFolder)
 {
 	return QDir(m_targetDirectory).absoluteFilePath(solverFolder);
+}
+
+const std::vector<SolverDefinitionAbstract*>& SolverDefinitionList::solverList() const
+{
+	return m_solverList;
+}
+
+std::vector<QAction*> SolverDefinitionList::actionList()
+{
+	std::vector<QAction*> ret;
+	for (SolverDefinitionAbstract* def : m_solverList) {
+		QAction* act = new QAction(def->caption(), this);
+		ret.push_back(act);
+	}
+	return ret;
 }
 
 SolverDefinitionListDialog* SolverDefinitionList::dialog(QWidget* parent)

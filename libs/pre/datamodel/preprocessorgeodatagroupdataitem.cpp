@@ -113,19 +113,18 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	// create add menu.
-	const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
 	m_addMenu = new QMenu(tr("&Add"), menu);
 
 	if (m_addSignalMapper) {delete m_addSignalMapper;}
 	m_addSignalMapper = new QSignalMapper(this);
 
-	for (auto it = creators.begin(); it != creators.end(); ++it) {
-		if ((*it)->isCreatable()) {
-			QString title = (*it)->caption();
-			QAction* addAction = m_addMenu->addAction(title.append("..."));
-			m_addSignalMapper->setMapping(addAction, *it);
-			connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
-		}
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		if (! creator->isCreatable()) {continue;}
+
+		QString title = creator->caption();
+		QAction* addAction = m_addMenu->addAction(title.append("..."));
+		m_addSignalMapper->setMapping(addAction, creator);
+		connect(addAction, SIGNAL(triggered()), m_addSignalMapper, SLOT(map()));
 	}
 	connect(m_addSignalMapper, SIGNAL(mapped(QObject*)), this, SLOT(addGeoData(QObject*)));
 	menu->addAction(m_importAction);
@@ -150,23 +149,20 @@ void PreProcessorGeoDataGroupDataItem::import()
 	QList<GeoDataImporter*> importers;
 
 	GeoDataFactory& factory = GeoDataFactory::instance();
-	// create add menu.
-	const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
-
 	QStringList availableExtensions;
 	QMap<QString, GeoDataImporter*> extMap;
-	for (auto it = creators.begin(); it != creators.end(); ++it) {
-		const QList<GeoDataImporter*>& imps = (*it)->importers();
-		for (auto imp_it = imps.begin(); imp_it != imps.end(); ++imp_it) {
-			QStringList fils = (*imp_it)->fileDialogFilters();
-			QStringList exts = (*imp_it)->acceptableExtensions();
-			for (auto f_it = fils.begin(); f_it != fils.end(); ++f_it) {
-				filters.append(*f_it);
-				importers.append(*imp_it);
+
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		for (auto importer : creator->importers()) {
+			QStringList fils = importer->fileDialogFilters();
+			QStringList exts = importer->acceptableExtensions();
+			for (auto filter : fils) {
+				filters.append(filter);
+				importers.append(importer);
 			}
-			for (auto f_it = exts.begin(); f_it != exts.end(); ++f_it) {
-				availableExtensions << QString("*.").append(*f_it);
-				extMap.insert(*f_it, *imp_it);
+			for (auto ext : exts) {
+				availableExtensions << QString("*.").append(ext);
+				extMap.insert(ext, importer);
 			}
 		}
 	}
@@ -740,11 +736,10 @@ void PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
 bool PreProcessorGeoDataGroupDataItem::importAvailable()
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
-	// create add menu.
-	const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
-	for (auto it = creators.begin(); it != creators.end(); ++it) {
-		const QList<GeoDataImporter*>& imps = (*it)->importers();
-		if (imps.count() > 0) {return true;}
+
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		const auto& imps = creator->importers();
+		if (imps.size() > 0) {return true;}
 	}
 	return false;
 }
@@ -765,11 +760,9 @@ QStringList PreProcessorGeoDataGroupDataItem::getGeoDatasNotMapped()
 void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 {
 	GeoDataFactory& factory = GeoDataFactory::instance();
-	// create add menu.
-	const QList<GeoDataCreator*> creators = factory.compatibleCreators(m_condition);
 	GeoDataPolygonCreator* c = nullptr;
-	for (int i = 0; i < creators.count(); ++i) {
-		c = dynamic_cast<GeoDataPolygonCreator*>(creators[i]);
+	for (auto creator : factory.compatibleCreators(m_condition)) {
+		c = dynamic_cast<GeoDataPolygonCreator*>(creator);
 		if (c != nullptr) {break;}
 	}
 	if (c == nullptr) {return;}
