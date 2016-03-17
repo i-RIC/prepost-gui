@@ -609,6 +609,16 @@ GeoDataPointmap::~GeoDataPointmap()
 	col->RemoveAllItems();
 }
 
+vtkPolyData* GeoDataPointmap::vtkGrid() const
+{
+	return m_vtkGrid;
+}
+
+vtkPolyData* GeoDataPointmap::delaunayedPolyData() const
+{
+	return m_vtkDelaunayedPolyData;
+}
+
 void GeoDataPointmap::updateInterpShapeData()
 {
 	vtkPoints* interpPoints = m_vtkInterpPolygon->GetPoints();
@@ -2769,6 +2779,26 @@ void GeoDataPointmap::enablePointSelectedActions(bool val)
 	this->m_editPointsGreaterThanAction->setEnabled(val);
 	this->m_editPointsLessThanAction->setEnabled(val);
 
+}
+
+vtkPolygon* GeoDataPointmap::getVtkPolygon() const
+{
+	return m_vtkPolygon;
+}
+
+vtkPolygon* GeoDataPointmap::getVtkInterpPolygon() const
+{
+	return m_vtkInterpPolygon;
+}
+
+vtkDoubleArray* GeoDataPointmap::getVtkInterpValue() const
+{
+	return m_vtkInterpValue;
+}
+
+vtkPolyData* GeoDataPointmap::selectedVerticesGrid() const
+{
+	return m_selectedVerticesGrid;
 }
 
 QVector<vtkIdType> GeoDataPointmap::selectedVertices()

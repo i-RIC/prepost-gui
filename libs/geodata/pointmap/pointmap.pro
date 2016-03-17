@@ -134,6 +134,7 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmapvtkexporter.h \
            private/geodatapointmapcellmappert_detail.h \
            private/geodatapointmapnodemappert_detail.h \
+           private/geodatapointmapt_detail.h \
            private/geodatapointmaptemplatenodemappert_detail.h
 FORMS += geodatapointmapaddpointdialog.ui \
          geodatapointmapdelptsgreaterthandialog.ui \

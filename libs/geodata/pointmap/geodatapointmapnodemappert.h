@@ -3,6 +3,7 @@
 
 #include "geodatapointmapt.h"
 
+#include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <guicore/pre/geodata/geodatanodemappert.h>
 #include <misc/doublemappingsetting.h>
 

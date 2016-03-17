@@ -66,11 +66,11 @@ public:
 		meBreakLineRemoveNotPossible,
 		meBreakLineRemove
 	};
-	/// Constructor
 	GeoDataPointmap(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 	virtual ~GeoDataPointmap();
-	vtkPolyData* vtkGrid() {return m_vtkGrid;}
-	vtkPolyData* delaunayedPolyData() {return m_vtkDelaunayedPolyData;}
+
+	vtkPolyData* vtkGrid() const;
+	vtkPolyData* delaunayedPolyData() const;
 	const QPolygonF polygon();
 
 	/// Execute the delaunay division.
@@ -78,7 +78,7 @@ public:
 	void setupActors() override;
 	void setupActions();
 	void setupMenu() override;
-	bool addToolBarButtons(QToolBar* /*parent*/) override;
+	bool addToolBarButtons(QToolBar* parent) override;
 	void setPoints(vtkPoints* points, vtkDataArray* values);
 	void setSTLData(vtkPolyData* data, vtkDataArray* values);
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
@@ -94,10 +94,12 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
-	vtkPolygon* getVtkInterpPolygon() {return m_vtkInterpPolygon;}
-	vtkDoubleArray* getVtkInterpValue() {return m_vtkInterpValue;}
-	vtkPolyData* selectedVerticesGrid() {return m_selectedVerticesGrid;}
+
+	vtkPolygon* getVtkPolygon() const;
+	vtkPolygon* getVtkInterpPolygon() const;
+	vtkDoubleArray* getVtkInterpValue() const;
+	vtkPolyData* selectedVerticesGrid() const;
+
 	QVector<vtkIdType> selectedVertices();
 	void definePolygon(bool doubleClick, bool xOr);
 	void showPolygonSelectedPoints(bool xOr);

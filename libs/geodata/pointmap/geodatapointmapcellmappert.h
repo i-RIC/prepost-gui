@@ -4,6 +4,7 @@
 #include "geodatapointmapt.h"
 
 #include <guicore/pre/geodata/geodatacellmappert.h>
+#include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <misc/doublemappingsetting.h>
 
 #include <QList>
