@@ -160,6 +160,7 @@ void TmsImageGroupDataItem::rebuildChildItems()
 		auto item = new TmsImageDataItem(s.setting(), s.caption(), this);
 		m_childItems.append(item);
 	}
+	updateItemMap();
 
 	if (m_target == "") {return;}
 	if (projectData()->mainfile()->coordinateSystem() == nullptr) {return;}
