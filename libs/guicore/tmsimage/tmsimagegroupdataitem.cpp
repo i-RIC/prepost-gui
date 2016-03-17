@@ -152,6 +152,7 @@ void TmsImageGroupDataItem::setTarget(const std::string &target)
 void TmsImageGroupDataItem::rebuildChildItems()
 {
 	clearChildItems();
+	updateItemMap();
 
 	TmsImageSettingManager manager;
 	for (TmsImageSetting s : manager.settings()) {
