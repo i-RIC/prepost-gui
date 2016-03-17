@@ -1,10 +1,12 @@
 #ifndef TMSLOADER_API_H
 #define TMSLOADER_API_H
 
+#include <QtCore/QtGlobal>
+
 #if defined(TMSLOADER_LIBRARY)
-#  define TMSLOADER_API __declspec(dllexport)
+#  define TMSLOADER_API Q_DECL_EXPORT
 #else
-#  define TMSLOADER_API __declspec(dllimport)
+#  define TMSLOADER_API Q_DECL_IMPORT
 #endif
 
 #endif // TMSLOADER_API_H
