@@ -1329,11 +1329,16 @@ void GeoDataPointmap::buildGridFromPolydata()
 	m_vtkGrid->SetPoints(m_vtkDelaunayedPolyData->GetPoints());
 	m_vtkGrid->GetPointData()->Reset();
 	m_vtkGrid->GetPointData()->AddArray(m_vtkDelaunayedPolyData->GetPointData()->GetArray(VALUES));
+	m_vtkGrid->GetPointData()->SetActiveScalars(VALUES);
+	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
+	m_vtkGrid->SetVerts(ca);
 	for (int i = 0; i < m_vtkGrid->GetPoints()->GetNumberOfPoints(); ++i) {
 		vtkSmartPointer<vtkVertex> vertex = vtkSmartPointer<vtkVertex>::New();
 		vertex->GetPointIds()->SetId(0, i);
 		m_vtkGrid->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
 	}
+	m_vtkGrid->BuildCells();
+	m_vtkGrid->Modified();
 }
 
 void GeoDataPointmap::setupActors()
@@ -1556,9 +1561,20 @@ void GeoDataPointmap::setPoints(vtkPoints* points, vtkDataArray* values)
 void GeoDataPointmap::setSTLData(vtkPolyData* data, vtkDataArray* values)
 {
 	m_vtkDelaunayedPolyData->DeepCopy(data);
+
+	auto points = m_vtkDelaunayedPolyData->GetPoints();
+	double v[3];
+	for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
+		points->GetPoint(i, v);
+		v[2] = 0;
+		points->SetPoint(i, v);
+	}
+
 	values->SetName(VALUES);
 	m_vtkDelaunayedPolyData->GetPointData()->Reset();
 	m_vtkDelaunayedPolyData->GetPointData()->AddArray(values);
+	m_vtkDelaunayedPolyData->GetPointData()->SetActiveScalars(VALUES);
+	m_vtkDelaunayedPolyData->BuildCells();
 
 	buildGridFromPolydata();
 }

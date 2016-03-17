@@ -7,13 +7,14 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+#include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkSTLReader.h>
 #include <vtkSmartPointer.h>
 #include <vtkVertex.h>
 
-GeoDataPointmapSTLImporter::GeoDataPointmapSTLImporter(GeoDataCreator* creator)
-	: GeoDataImporter(creator)
+GeoDataPointmapSTLImporter::GeoDataPointmapSTLImporter(GeoDataCreator* creator) :
+	GeoDataImporter(creator)
 {
 	m_caption = tr("Stereolithography (STL)");
 }
@@ -49,8 +50,9 @@ bool GeoDataPointmapSTLImporter::importData(GeoData* data, int /*index*/, QWidge
 	}
 	points->Modified();
 	values->Modified();
-	pmap->setPoints(points, values);
-	pmap->doDelaunay();
+
+	pmap->setSTLData(polydata, values);
+
 	reader->Delete();
 	values->Delete();
 	return true;
