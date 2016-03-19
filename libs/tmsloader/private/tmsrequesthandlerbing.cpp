@@ -1,13 +1,13 @@
 #include "tmsrequesthandlerbing.h"
 
-#include <unordered_map>
+#include <map>
 
 using namespace tmsloader;
 
 TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QNetworkAccessManager* manager, QObject *parent) :
 	TmsRequestHandler {centerLonLat, size, scale, "bing.html", requestId, manager, parent}
 {
-	std::unordered_map<TmsRequestBing::ImagerySet, QString> imagerySetMap;
+	std::map<TmsRequestBing::ImagerySet, QString> imagerySetMap;
 
 	imagerySetMap.insert({TmsRequestBing::ImagerySet::AERIAL, "Aerial"});
 	imagerySetMap.insert({TmsRequestBing::ImagerySet::AERIALWITHLABELS, "AerialWithLabels"});

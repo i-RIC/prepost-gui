@@ -4,6 +4,8 @@ QT       += core gui webkitwidgets network
 
 DEFINES += TMSLOADER_LIBRARY
 
+include( ../../paths.pri )
+
 # Input
 HEADERS += tmsloader.h \
            tmsloader_api.h \

@@ -4,14 +4,14 @@
 
 #include <QString>
 
-#include <unordered_map>
+#include <map>
 
 using namespace tmsloader;
 
 TmsRequestGSI::Impl::Impl(const QPointF &centerLonLat, const QSize &size, double scale, TmsRequestGSI::TileType tileType)
 {
-	std::unordered_map<TmsRequestGSI::TileType, QString> tileTypeUrlMap;
-	std::unordered_map<TmsRequestGSI::TileType, QString> tileTypeExtMap;
+	std::map<TmsRequestGSI::TileType, QString> tileTypeUrlMap;
+	std::map<TmsRequestGSI::TileType, QString> tileTypeExtMap;
 
 	tileTypeUrlMap.insert({TmsRequestGSI::TileType::STD, "std"});
 	tileTypeUrlMap.insert({TmsRequestGSI::TileType::PALE, "pale"});
