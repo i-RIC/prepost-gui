@@ -79,7 +79,7 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapperT<V, DA>::initialize(bool* boolM
 				cPoints.insert(nearestpoint);
 				while (cPoints.count() > 0) {
 					QSet<vtkIdType> nextCPoints;
-					foreach(vtkIdType point, cPoints) {
+                    for (vtkIdType point : cPoints) {
 						if (triedPoints.contains(point)) {continue;}
 						vtkSmartPointer<vtkIdList> tmpCells = vtkSmartPointer<vtkIdList>::New();
 						tmpgrid->GetPointCells(point, tmpCells);

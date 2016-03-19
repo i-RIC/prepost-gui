@@ -3,6 +3,8 @@
 
 #include "../geodatapointmapcellmappert.h"
 
+#include <QSet>
+
 template <class V, class DA>
 GeoDataPointmapCellMapperT<V, DA>::GeoDataPointmapCellMapperT(GeoDataCreator* parent) :
 	GeoDataCellMapperT<V, DA>("Pointmap cell mapper", parent)

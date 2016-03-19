@@ -2,7 +2,11 @@
 #define GEODATAPOINTMAPT_DETAIL_H
 
 #include "../geodatapointmapt.h"
+#include "../geodatapointmapmappingmode.h"
+#include "../geodatapointmaptemplatemappingsetting.h"
 #include "../geodatapointmaptemplatenodemappert.h"
+
+#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 
 template <class V, class DA>
 GeoDataPointMapT<V, DA>::GeoDataPointMapT(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition) :
