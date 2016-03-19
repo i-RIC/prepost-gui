@@ -2,7 +2,7 @@
 
 #include <misc/stringtool.h>
 
-MeasuredDataVectorGroupDataItem::SetSettingCommand::SetSettingCommand(MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item) :
+MeasuredDataVectorGroupDataItem::SetSettingCommand::SetSettingCommand(const MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item) :
 	QUndoCommand {MeasuredDataVectorGroupDataItem::tr("Update Arrow Setting")},
 	m_newSetting {setting},
 	m_oldSetting {item->m_setting},

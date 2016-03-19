@@ -36,6 +36,6 @@ private:
 
 #ifdef _DEBUG
 	#include "private/solverdefinitiontranslator_impl.h"
-#endif _DEBUG
+#endif // _DEBUG
 
 #endif // SOLVERDEFINITIONTRANSLATOR_H

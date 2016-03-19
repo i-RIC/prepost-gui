@@ -8,7 +8,7 @@
 class MeasuredDataVectorGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item);
+    SetSettingCommand(const MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item);
 
 	void redo() override;
 	void undo() override;

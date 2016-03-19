@@ -8,7 +8,9 @@ TEMPLATE = lib
 
 DEFINES += GUICORE_LIBRARY
 DEFINES += ANSI_DECLARATORS
-DEFINES += YAML_CPP_DLL
+win32 {
+	DEFINES += YAML_CPP_DLL
+}
 
 include( ../../paths.pri )
 
@@ -101,7 +103,7 @@ win32 {
 	LIBS += -lyaml-cpp
 }
 unix {
-	LIBS += -lgdal
+	LIBS += -lyaml-cpp
 }
 
 # Qwt
