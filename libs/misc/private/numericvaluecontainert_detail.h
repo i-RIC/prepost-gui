@@ -25,14 +25,14 @@ NumericValueContainerT<V>::~NumericValueContainerT()
 template <typename V>
 NumericValueContainerT<V>& NumericValueContainerT<V>::operator+=(const V& v)
 {
-	m_value += v;
+	this->m_value += v;
 	return *this;
 }
 
 template <typename V>
 NumericValueContainerT<V>& NumericValueContainerT<V>::operator-=(const V& v)
 {
-	m_value -= v;
+	this->m_value -= v;
 	return *this;
 }
 
