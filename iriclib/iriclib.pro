@@ -48,7 +48,7 @@ unix {
 
 unix {
   inst_headers.path = /usr/local/iRIC/include
-  inst_headers.files = iriclib.h iriclib_global.h iriclib_f.h
+  inst_headers.files = iriclib.h iriclib_global.h iriclib_f.h iriclib_pointmap.h iriclib_riversurvey.h iriclib_polygon.h iriclib_bstream.h
 	INSTALLS += inst_headers
 
 	target.path = /usr/local/iRIC/lib
