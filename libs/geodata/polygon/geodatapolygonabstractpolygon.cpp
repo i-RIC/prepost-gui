@@ -131,7 +131,6 @@ void GeoDataPolygonAbstractPolygon::setPolygon(const QPolygonF& p)
 	updateShapeData();
 }
 
-
 void GeoDataPolygonAbstractPolygon::setupContainers()
 {
 	m_vtkPolygon = vtkSmartPointer<vtkPolygon>::New();
