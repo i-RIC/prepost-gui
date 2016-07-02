@@ -120,6 +120,7 @@ HEADERS += gd_polygon_global.h \
            geodatapolygonshapeexporter.h \
            geodatapolygontrianglethread.h \
            private/geodatapolygon_addholepolygoncommand.h \
+           private/geodatapolygon_addvertexcommand.h \
            private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
@@ -145,6 +146,7 @@ SOURCES += geodatapolygon.cpp \
            geodatapolygonshapeexporter.cpp \
            geodatapolygontrianglethread.cpp \
            private/geodatapolygon_addholepolygoncommand.cpp \
+           private/geodatapolygon_addvertexcommand.cpp \
            private/geodatapolygon_editpropertycommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp
