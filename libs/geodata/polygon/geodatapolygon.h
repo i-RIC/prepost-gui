@@ -208,7 +208,7 @@ private:
 private:
 	class AddHolePolygonCommand;
 	class AddVertexCommand;
-	class DefineNewPointCommand;
+	class PushNewPointCommand;
 	class EditCoordinatesCommand;
 	class EditPropertyCommand;
 	class EditValueCommand;

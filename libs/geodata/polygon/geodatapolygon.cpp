@@ -16,6 +16,7 @@
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
 #include "private/geodatapolygon_movepolygoncommand.h"
 #include "private/geodatapolygon_movevertexcommand.h"
+#include "private/geodatapolygon_pushnewpointcommand.h"
 #include "private/geodatapolygon_removevertexcommand.h"
 
 #include <iriclib_polygon.h>
@@ -257,14 +258,7 @@ void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
 		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
 		p->setActive(false);
 	}
-	switch (m_selectMode) {
-	case smPolygon:
-		m_selectedPolygon->setSelected(false);
-		break;
-	case smNone:
-		// do nothing.
-		break;
-	}
+	m_selectedPolygon->setSelected(false);
 	v->unsetCursor();
 }
 
@@ -296,78 +290,6 @@ void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorG
 	}
 }
 
-class GeoDataPolygon::DefineNewPointCommand : public QUndoCommand
-{
-public:
-	DefineNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol) :
-		QUndoCommand {GeoDataPolygon::tr("Add New Polygon Point")}
-	{
-		m_keyDown = keyDown;
-		double dx = point.x();
-		double dy = point.y();
-		pol->graphicsView()->viewportToWorld(dx, dy);
-		m_newPoint = QVector2D(dx, dy);
-		m_polygon = pol;
-		m_oldMapped = m_polygon->isMapped();
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void redo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// add new point.
-			pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		} else {
-			// modify the last point.
-			vtkIdType lastId = pol->GetNumberOfPoints() - 1;
-			pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-			pol->GetPoints()->Modified();
-		}
-		pol->Modified();
-		m_polygon->setMapped(false);
-		m_polygon->m_shapeUpdating = true;
-		m_targetPolygon->updateShapeData();
-		m_polygon->m_shapeUpdating = false;
-		m_polygon->renderGraphicsView();
-		m_polygon->updatePolyData();
-	}
-	void undo() {
-		vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-		if (m_keyDown) {
-			// decrease the number of points. i. e. remove the last point.
-			vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
-			pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-			pol->GetPoints()->Modified();
-		} else {
-			// this does not happen. no implementation needed.
-		}
-		pol->Modified();
-		m_polygon->setMapped(m_oldMapped);
-		m_polygon->m_shapeUpdating = true;
-		m_targetPolygon->updateShapeData();
-		m_polygon->m_shapeUpdating = false;
-		m_polygon->renderGraphicsView();
-		m_polygon->updatePolyData();
-	}
-	int id() const {
-		return iRIC::generateCommandId("GeoDataPolygonPolygonDefineNewPoint");
-	}
-	bool mergeWith(const QUndoCommand* other) {
-		const DefineNewPointCommand* comm = dynamic_cast<const DefineNewPointCommand*>(other);
-		if (comm == nullptr) {return false;}
-		if (comm->m_keyDown) {return false;}
-		if (comm->m_polygon != m_polygon) {return false;}
-		if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-		m_newPoint = comm->m_newPoint;
-		return true;
-	}
-private:
-	bool m_keyDown;
-	GeoDataPolygon* m_polygon;
-	GeoDataPolygonAbstractPolygon* m_targetPolygon;
-	QVector2D m_newPoint;
-	bool m_oldMapped;
-};
 
 void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
@@ -389,7 +311,7 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	case meDefining:
 		// update the position of the last point.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new DefineNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			iRICUndoStack::instance().push(new PushNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslate:
@@ -441,11 +363,11 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 		case meDefining:
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new DefineNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				iRICUndoStack::instance().push(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meTranslatePrepare:
