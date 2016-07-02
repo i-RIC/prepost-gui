@@ -10,6 +10,7 @@
 #include "geodatapolygontrianglethread.h"
 
 #include "private/geodatapolygon_editpropertycommand.h"
+#include "private/geodatapolygon_finishpolygondefinitioncommand.h"
 
 #include <iriclib_polygon.h>
 
@@ -265,33 +266,6 @@ void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
 {
 	updateMouseCursor(v);
 }
-
-class GeoDataPolygon::FinishPolygonDefiningCommand : public QUndoCommand
-{
-public:
-	FinishPolygonDefiningCommand(GeoDataPolygon* polygon) :
-		QUndoCommand {GeoDataPolygon::tr("Finish Defining Polygon")}
-	{
-		m_polygon = polygon;
-		m_targetPolygon = m_polygon->m_selectedPolygon;
-	}
-	void undo() {
-		m_polygon->m_mouseEventMode = GeoDataPolygon::meDefining;
-		m_polygon->m_selectedPolygon = m_targetPolygon;
-		m_polygon->m_selectedPolygon->setSelected(true);
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-	void redo() {
-		m_polygon->m_mouseEventMode = GeoDataPolygon::meNormal;
-		m_targetPolygon->finishDefinition();
-		m_polygon->updateMouseCursor(m_polygon->graphicsView());
-		m_polygon->updateActionStatus();
-	}
-private:
-	GeoDataPolygon* m_polygon;
-	GeoDataPolygonAbstractPolygon* m_targetPolygon;
-};
 
 void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
 {
