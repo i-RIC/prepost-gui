@@ -7,7 +7,6 @@
 
 #include <misc/zdepthrange.h>
 
-#include <QUndoCommand>
 #include <QStandardItem>
 #include <QList>
 #include <QVariant>
@@ -22,6 +21,7 @@ class QTreeView;
 class QKeyEvent;
 class QMainWindow;
 class QMouseEvent;
+class QUndoCommand;
 class QWheelEvent;
 class QXmlStreamWriter;
 
@@ -182,6 +182,9 @@ public:
 	friend class GraphicsWindowDrawOnRedo;
 	friend class GraphicsWindowDrawOnUndo;
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
+
+private:
+	class RenderCommand;
 };
 
 #endif // GRAPHICSWINDOWDATAITEM_H

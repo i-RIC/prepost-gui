@@ -6,6 +6,8 @@
 #include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
 
+#include "private/graphicswindowdataitem_rendercommand.h"
+
 #include <misc/iricundostack.h>
 #include <misc/qttool.h>
 #include <memory>
@@ -592,44 +594,6 @@ public:
 	bool mergeWith(const QUndoCommand *other)
 	{
 		const StandardItemModifyCommand* modc = dynamic_cast<const StandardItemModifyCommand*> (other);
-		if (modc == nullptr) {return false;}
-
-		return m_command.get()->mergeWith(modc->m_command.get());
-	}
-
-private:
-	std::unique_ptr<QUndoCommand> m_command;
-	GraphicsWindowDataItem* m_item;
-};
-
-class RenderCommand : public QUndoCommand
-{
-public:
-	explicit RenderCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
-		QUndoCommand {child->text()},
-		m_command {child},
-		m_item {item}
-	{}
-	~RenderCommand()
-	{}
-	void undo() override
-	{
-		m_command.get()->undo();
-		m_item->renderGraphicsView();
-	}
-	void redo() override
-	{
-		m_command.get()->redo();
-		m_item->renderGraphicsView();
-	}
-
-	int id() const
-	{
-		return m_command->id();
-	}
-	bool mergeWith(const QUndoCommand *other)
-	{
-		const RenderCommand* modc = dynamic_cast<const RenderCommand*> (other);
 		if (modc == nullptr) {return false;}
 
 		return m_command.get()->mergeWith(modc->m_command.get());
