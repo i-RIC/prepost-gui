@@ -213,6 +213,7 @@ private:
 	class EditPropertyCommand;
 	class EditValueCommand;
 	class FinishPolygonDefiningCommand;
+	class ModifyAbstractPolygonCommand;
 	class MovePolygonCommand;
 	class MoveVertexCommand;
 	class RemoveVertexCommand;

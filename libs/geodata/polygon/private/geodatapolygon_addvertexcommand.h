@@ -1,29 +1,21 @@
 #ifndef GEODATAPOLYGON_ADDVERTEXCOMMAND_H
 #define GEODATAPOLYGON_ADDVERTEXCOMMAND_H
 
+#include "geodatapolygon_modifyabstractpolygoncommand.h"
 #include "../geodatapolygon.h"
 
-#include <QUndoCommand>
 #include <QVector2D>
 
-class GeoDataPolygon::AddVertexCommand : public QUndoCommand
+class GeoDataPolygon::AddVertexCommand : public GeoDataPolygon::ModifyAbstractPolygonCommand
 {
 public:
 	AddVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GeoDataPolygon* pol);
-
-	void redo() override;
-	void undo() override;
 
 	int id() const override;
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
 	bool m_keyDown;
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
-	GeoDataPolygon* m_polygon;
-	GeoDataPolygonAbstractPolygon* m_targetPolygon;
-	bool m_oldMapped;
 };
 
 #endif // GEODATAPOLYGON_ADDVERTEXCOMMAND_H

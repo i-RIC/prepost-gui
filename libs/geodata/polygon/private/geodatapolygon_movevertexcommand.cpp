@@ -7,14 +7,12 @@
 #include <QPointF>
 
 GeoDataPolygon::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GeoDataPolygon* pol) :
-	QUndoCommand {GeoDataPolygon::tr("Move Polygon Vertex")},
-	m_keyDown {keyDown},
-	m_newPolygon {pol->m_selectedPolygon->polygon()},
-	m_oldPolygon {pol->m_selectedPolygon->polygon()},
-	m_polygon {pol},
-	m_targetPolygon {pol->m_selectedPolygon},
-	m_oldMapped {pol->isMapped()}
+	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Move Polygon Vertex")),
+	m_keyDown {keyDown}
 {
+	QPolygonF oldPolygon = (pol->m_selectedPolygon->polygon());
+	QPolygonF newPolygon = oldPolygon;
+
 	double dx = from.x();
 	double dy = from.y();
 	pol->graphicsView()->viewportToWorld(dx, dy);
@@ -26,27 +24,14 @@ GeoDataPolygon::MoveVertexCommand::MoveVertexCommand(bool keyDown, const QPoint&
 
 	auto offset = toVec - fromVec;
 
-	auto oldP = m_oldPolygon.at(vertexId);
+	auto oldP = oldPolygon.at(vertexId);
 	auto newP = oldP + offset;
 
-	m_newPolygon[vertexId] = newP;
+	newPolygon[vertexId] = newP;
 	if (vertexId == 0) {
-		m_newPolygon[m_newPolygon.size() - 1] = newP;
+		newPolygon[newPolygon.size() - 1] = newP;
 	}
-}
-
-void GeoDataPolygon::MoveVertexCommand::redo()
-{
-	m_polygon->setMapped(false);
-	m_targetPolygon->setPolygon(m_newPolygon);
-	m_polygon->updatePolyData();
-}
-
-void GeoDataPolygon::MoveVertexCommand::undo()
-{
-	m_polygon->setMapped(m_oldMapped);
-	m_targetPolygon->setPolygon(m_oldPolygon);
-	m_polygon->updatePolyData();
+	setNewPolygon(newPolygon);
 }
 
 int GeoDataPolygon::MoveVertexCommand::id() const
@@ -59,8 +44,6 @@ bool GeoDataPolygon::MoveVertexCommand::mergeWith(const QUndoCommand* other)
 	const MoveVertexCommand* comm = dynamic_cast<const MoveVertexCommand*>(other);
 	if (comm == nullptr) {return false;}
 	if (comm->m_keyDown) {return false;}
-	if (comm->m_polygon != m_polygon) {return false;}
-	if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-	m_newPolygon = comm->m_newPolygon;
-	return true;
+
+	return ModifyAbstractPolygonCommand::mergeWith(other);
 }

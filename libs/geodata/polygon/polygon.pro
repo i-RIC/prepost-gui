@@ -124,6 +124,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
+           private/geodatapolygon_modifyabstractpolygoncommand.h \
            private/geodatapolygon_movepolygoncommand.h \
            private/geodatapolygon_movevertexcommand.h \
            private/geodatapolygon_pushnewpointcommand.h \
@@ -154,6 +155,7 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_editpropertycommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp \
+           private/geodatapolygon_modifyabstractpolygoncommand.cpp \
            private/geodatapolygon_movepolygoncommand.cpp \
            private/geodatapolygon_movevertexcommand.cpp \
            private/geodatapolygon_pushnewpointcommand.cpp \

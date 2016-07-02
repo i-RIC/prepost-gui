@@ -5,56 +5,20 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
 GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolygon* pol) :
-	QUndoCommand {GeoDataPolygon::tr("Add New Polygon Point")}
+	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->m_selectedPolygon, pol, GeoDataPolygon::tr("Add New Polygon Point")),
+	m_keyDown {keyDown}
 {
-	m_keyDown = keyDown;
 	double dx = point.x();
 	double dy = point.y();
 	pol->graphicsView()->viewportToWorld(dx, dy);
-	m_newPoint = QVector2D(dx, dy);
-	m_polygon = pol;
-	m_oldMapped = m_polygon->isMapped();
-	m_targetPolygon = m_polygon->m_selectedPolygon;
-}
 
-void GeoDataPolygon::PushNewPointCommand::redo()
-{
-	vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-	if (m_keyDown) {
-		// add new point.
-		pol->GetPoints()->InsertNextPoint(m_newPoint.x(), m_newPoint.y(), 0);
-		pol->GetPoints()->Modified();
+	QPolygonF newPolygon(pol->m_selectedPolygon->polygon());
+	if (keyDown) {
+		newPolygon.insert(newPolygon.size() - 1, QPointF(dx, dy));
 	} else {
-		// modify the last point.
-		vtkIdType lastId = pol->GetNumberOfPoints() - 1;
-		pol->GetPoints()->SetPoint(lastId, m_newPoint.x(), m_newPoint.y(), 0);
-		pol->GetPoints()->Modified();
+		newPolygon[newPolygon.size() - 1] = QPointF(dx, dy);
 	}
-	pol->Modified();
-	m_polygon->setMapped(false);
-	m_polygon->m_shapeUpdating = true;
-	m_targetPolygon->updateShapeData();
-	m_polygon->m_shapeUpdating = false;
-	m_polygon->updatePolyData();
-}
-
-void GeoDataPolygon::PushNewPointCommand::undo()
-{
-	vtkPolygon* pol = m_targetPolygon->getVtkPolygon();
-	if (m_keyDown) {
-		// decrease the number of points. i. e. remove the last point.
-		vtkIdType numOfPoints = pol->GetPoints()->GetNumberOfPoints();
-		pol->GetPoints()->SetNumberOfPoints(numOfPoints - 1);
-		pol->GetPoints()->Modified();
-	} else {
-		// this does not happen. no implementation needed.
-	}
-	pol->Modified();
-	m_polygon->setMapped(m_oldMapped);
-	m_polygon->m_shapeUpdating = true;
-	m_targetPolygon->updateShapeData();
-	m_polygon->m_shapeUpdating = false;
-	m_polygon->updatePolyData();
+	setNewPolygon(newPolygon);
 }
 
 int GeoDataPolygon::PushNewPointCommand::id() const
@@ -67,8 +31,6 @@ bool GeoDataPolygon::PushNewPointCommand::mergeWith(const QUndoCommand* other)
 	const PushNewPointCommand* comm = dynamic_cast<const PushNewPointCommand*>(other);
 	if (comm == nullptr) {return false;}
 	if (comm->m_keyDown) {return false;}
-	if (comm->m_polygon != m_polygon) {return false;}
-	if (comm->m_targetPolygon != m_targetPolygon) {return false;}
-	m_newPoint = comm->m_newPoint;
-	return true;
+
+	return ModifyAbstractPolygonCommand::mergeWith(other);
 }
