@@ -1356,12 +1356,9 @@ void GeoDataPolygon::addHolePolygon()
 {
 	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
 	setupHolePolygon(pol);
-	pol->setSelected(true);
 	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setSelected(false);
 	}
-	m_selectMode = smPolygon;
-	m_selectedPolygon = pol;
 	iRICUndoStack::instance().push(new AddHolePolygonCommand(pol, this));
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
