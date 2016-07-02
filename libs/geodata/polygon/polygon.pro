@@ -125,6 +125,7 @@ HEADERS += gd_polygon_global.h \
            private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
            private/geodatapolygon_movevertexcommand.h \
+           private/geodatapolygon_removevertexcommand.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
            private/geodatapolygonnodemappert_detail.h
@@ -151,7 +152,8 @@ SOURCES += geodatapolygon.cpp \
            private/geodatapolygon_editpropertycommand.cpp \
            private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp \
-           private/geodatapolygon_movevertexcommand.cpp
+           private/geodatapolygon_movevertexcommand.cpp \
+           private/geodatapolygon_removevertexcommand.cpp
 TRANSLATIONS += languages/iricGdPolygon_es_ES.ts \
                 languages/iricGdPolygon_fr_FR.ts \
                 languages/iricGdPolygon_id_ID.ts \
