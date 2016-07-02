@@ -184,6 +184,7 @@ public:
 	friend class GraphicsWindowDataItemStandardItemChangeCommand;
 
 private:
+	class ModifyCommand;
 	class RenderCommand;
 	class StandardItemModifyCommand;
 };

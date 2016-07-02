@@ -6,6 +6,7 @@
 #include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
 
+#include "private/graphicswindowdataitem_modifycommand.h"
 #include "private/graphicswindowdataitem_rendercommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 
@@ -525,49 +526,6 @@ void GraphicsWindowDataItem::clearChildItems()
 	m_childItems.clear();
 }
 
-namespace {
-
-class ModificationCommand : public QUndoCommand
-{
-public:
-	explicit ModificationCommand(QUndoCommand *child, ProjectMainFile* main) :
-		m_command {child},
-		m_mainFile {main},
-		m_wasModified {main->isModified()}
-	{}
-	~ModificationCommand()
-	{}
-	void undo() override
-	{
-		m_command.get()->undo();
-		m_mainFile->setModified(m_wasModified);
-	}
-	void redo() override
-	{
-		m_command.get()->redo();
-		m_mainFile->setModified();
-	}
-
-	int id() const
-	{
-		return m_command->id();
-	}
-	bool mergeWith(const QUndoCommand *other)
-	{
-		const ModificationCommand* modc = dynamic_cast<const ModificationCommand*> (other);
-		if (modc == nullptr) {return false;}
-
-		return m_command.get()->mergeWith(modc->m_command.get());
-	}
-
-private:
-	std::unique_ptr<QUndoCommand> m_command;
-	ProjectMainFile* m_mainFile;
-	bool m_wasModified;
-};
-
-}
-
 void GraphicsWindowDataItem::innerUpdate2Ds()
 {}
 
@@ -584,7 +542,7 @@ void GraphicsWindowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* )
 
 void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)
 {
-	QUndoCommand* com2 = new ModificationCommand(com, projectData()->mainfile());
+	QUndoCommand* com2 = new ModifyCommand(com, projectData()->mainfile());
 	if (item != nullptr) {
 		com2 = new StandardItemModifyCommand(com2, item);
 	}
