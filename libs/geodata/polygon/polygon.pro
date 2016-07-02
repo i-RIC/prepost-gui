@@ -121,6 +121,7 @@ HEADERS += gd_polygon_global.h \
            geodatapolygontrianglethread.h \
            private/geodatapolygon_addholepolygoncommand.h \
            private/geodatapolygon_editpropertycommand.h \
+           private/geodatapolygon_editvaluecommand.h \
            private/geodatapolygon_finishpolygondefinitioncommand.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
@@ -145,6 +146,7 @@ SOURCES += geodatapolygon.cpp \
            geodatapolygontrianglethread.cpp \
            private/geodatapolygon_addholepolygoncommand.cpp \
            private/geodatapolygon_editpropertycommand.cpp \
+           private/geodatapolygon_editvaluecommand.cpp \
            private/geodatapolygon_finishpolygondefinitioncommand.cpp
 TRANSLATIONS += languages/iricGdPolygon_es_ES.ts \
                 languages/iricGdPolygon_fr_FR.ts \

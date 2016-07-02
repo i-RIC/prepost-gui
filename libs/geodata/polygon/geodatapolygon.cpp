@@ -11,6 +11,7 @@
 
 #include "private/geodatapolygon_addholepolygoncommand.h"
 #include "private/geodatapolygon_editpropertycommand.h"
+#include "private/geodatapolygon_editvaluecommand.h"
 #include "private/geodatapolygon_finishpolygondefinitioncommand.h"
 
 #include <iriclib_polygon.h>
@@ -1548,31 +1549,6 @@ void GeoDataPolygon::showInitialDialog()
 {
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "geodatapolygoninit");
 }
-
-class GeoDataPolygon::EditValueCommand : public QUndoCommand
-{
-public:
-	EditValueCommand(const QVariant& newvalue, GeoDataPolygon* polygon) :
-		QUndoCommand {GeoDataPolygon::tr("Polygon value change")},
-		m_newValue {newvalue},
-		m_oldValue {polygon->variantValue()},
-		m_oldMapped {polygon->isMapped()},
-		m_polygon {polygon}
-	{}
-	void redo() {
-		m_polygon->setVariantValue(m_newValue);
-		m_polygon->setMapped(false);
-	}
-	void undo() {
-		m_polygon->setVariantValue(m_oldValue);
-		m_polygon->setMapped(m_oldMapped);
-	}
-private:
-	QVariant m_newValue;
-	QVariant m_oldValue;
-	bool m_oldMapped;
-	GeoDataPolygon* m_polygon;
-};
 
 const QVariant& GeoDataPolygon::variantValue() const
 {
