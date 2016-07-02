@@ -119,6 +119,7 @@ HEADERS += gd_polygon_global.h \
            geodatapolygonregionpolygon.h \
            geodatapolygonshapeexporter.h \
            geodatapolygontrianglethread.h \
+           private/geodatapolygon_editpropertycommand.h \
            private/geodatapolygoncellmappert_detail.h \
            private/geodatapolygoncreatort_detail.h \
            private/geodatapolygonnodemappert_detail.h
@@ -139,7 +140,8 @@ SOURCES += geodatapolygon.cpp \
            geodatapolygonrealcreator.cpp \
            geodatapolygonregionpolygon.cpp \
            geodatapolygonshapeexporter.cpp \
-           geodatapolygontrianglethread.cpp
+           geodatapolygontrianglethread.cpp \
+           private/geodatapolygon_editpropertycommand.cpp
 TRANSLATIONS += languages/iricGdPolygon_es_ES.ts \
                 languages/iricGdPolygon_fr_FR.ts \
                 languages/iricGdPolygon_id_ID.ts \

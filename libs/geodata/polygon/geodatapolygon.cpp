@@ -9,6 +9,8 @@
 #include "geodatapolygonregionpolygon.h"
 #include "geodatapolygontrianglethread.h"
 
+#include "private/geodatapolygon_editpropertycommand.h"
+
 #include <iriclib_polygon.h>
 
 #include <guibase/waitdialog.h>
@@ -1777,29 +1779,6 @@ QDialog* GeoDataPolygon::propertyDialog(QWidget* parent)
 
 	return dialog;
 }
-
-class GeoDataPolygon::EditPropertyCommand : public QUndoCommand
-{
-public:
-	EditPropertyCommand(const GeoDataPolygonColorSettingDialog::Setting& s, GeoDataPolygon* p) :
-		QUndoCommand {GeoDataPolygon::tr("Polygon property edit")},
-		m_newSetting {s},
-		m_oldSetting {p->m_setting},
-		m_polygon {p}
-	{}
-	void redo() {
-		m_polygon->m_setting = m_newSetting;
-		m_polygon->updateActorSettings();
-	}
-	void undo() {
-		m_polygon->m_setting = m_oldSetting;
-		m_polygon->updateActorSettings();
-	}
-private:
-	GeoDataPolygonColorSettingDialog::Setting m_newSetting;
-	GeoDataPolygonColorSettingDialog::Setting m_oldSetting;
-	GeoDataPolygon* m_polygon;
-};
 
 void GeoDataPolygon::handlePropertyDialogAccepted(QDialog* propDialog)
 {
