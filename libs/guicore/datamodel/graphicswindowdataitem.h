@@ -185,6 +185,7 @@ public:
 
 private:
 	class RenderCommand;
+	class StandardItemModifyCommand;
 };
 
 #endif // GRAPHICSWINDOWDATAITEM_H

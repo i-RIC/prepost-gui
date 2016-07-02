@@ -275,6 +275,7 @@ HEADERS += guicore_global.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
+           datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
@@ -555,6 +556,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
+           datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \

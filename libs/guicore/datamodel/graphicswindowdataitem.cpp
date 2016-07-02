@@ -7,6 +7,7 @@
 #include "vtkgraphicsview.h"
 
 #include "private/graphicswindowdataitem_rendercommand.h"
+#include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 
 #include <misc/iricundostack.h>
 #include <misc/qttool.h>
@@ -563,45 +564,6 @@ private:
 	std::unique_ptr<QUndoCommand> m_command;
 	ProjectMainFile* m_mainFile;
 	bool m_wasModified;
-};
-
-class StandardItemModifyCommand : public QUndoCommand
-{
-public:
-	explicit StandardItemModifyCommand(QUndoCommand *child, GraphicsWindowDataItem* item) :
-		QUndoCommand {child->text()},
-		m_command {child},
-		m_item {item}
-	{}
-	~StandardItemModifyCommand()
-	{}
-	void redo() override
-	{
-		m_item->setIsCommandExecuting(true);
-		m_command.get()->redo();
-		m_item->setIsCommandExecuting(false);
-	}
-	void undo() override
-	{
-		m_item->setIsCommandExecuting(true);
-		m_command.get()->undo();
-		m_item->setIsCommandExecuting(false);
-	}
-	int id() const
-	{
-		return m_command->id();
-	}
-	bool mergeWith(const QUndoCommand *other)
-	{
-		const StandardItemModifyCommand* modc = dynamic_cast<const StandardItemModifyCommand*> (other);
-		if (modc == nullptr) {return false;}
-
-		return m_command.get()->mergeWith(modc->m_command.get());
-	}
-
-private:
-	std::unique_ptr<QUndoCommand> m_command;
-	GraphicsWindowDataItem* m_item;
 };
 
 }
