@@ -156,7 +156,7 @@ private:
 	void initParams();
 	void updateMouseEventMode();
 	void updateActionStatus();
-	void setupHolePolygon(GeoDataPolygonHolePolygon* p);
+	GeoDataPolygonHolePolygon* setupHolePolygon();
 	void applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y);
 	void clearHolePolygons();
 	ZDepthRange m_depthRange;

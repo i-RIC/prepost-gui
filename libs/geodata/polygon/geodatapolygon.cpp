@@ -1023,12 +1023,11 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			for (int j = 0; j < holePolygon->pointCount; ++j) {
 				qpol << QPointF(*(holePolygon->x + j), *(holePolygon->y + j));
 			}
-			GeoDataPolygonHolePolygon* tmpPol = new GeoDataPolygonHolePolygon(this);
-			setupHolePolygon(tmpPol);
-			tmpPol->setPolygon(qpol);
-			tmpPol->setActive(false);
-			tmpPol->setSelected(false);
-			m_holePolygons.append(tmpPol);
+			auto holePol = setupHolePolygon();
+			holePol->setPolygon(qpol);
+			holePol->setActive(false);
+			holePol->setSelected(false);
+			m_holePolygons.append(holePol);
 		}
 		delete pol;
 	} else {
@@ -1055,12 +1054,11 @@ void GeoDataPolygon::loadExternalData(const QString& filename)
 			for (int i = 0; i < holePolygons; ++i) {
 				QPolygonF pol;
 				s >> pol;
-				GeoDataPolygonHolePolygon* tmpPol = new GeoDataPolygonHolePolygon(this);
-				setupHolePolygon(tmpPol);
-				tmpPol->setPolygon(pol);
-				tmpPol->setActive(false);
-				tmpPol->setSelected(false);
-				m_holePolygons.append(tmpPol);
+				auto holePol = setupHolePolygon();
+				holePol->setPolygon(pol);
+				holePol->setActive(false);
+				holePol->setSelected(false);
+				m_holePolygons.append(holePol);
 			}
 		}
 		f.close();
@@ -1354,12 +1352,11 @@ void GeoDataPolygon::initParams()
 
 void GeoDataPolygon::addHolePolygon()
 {
-	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
-	setupHolePolygon(pol);
+	auto holePol = setupHolePolygon();
 	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setSelected(false);
 	}
-	iRICUndoStack::instance().push(new AddHolePolygonCommand(pol, this));
+	iRICUndoStack::instance().push(new AddHolePolygonCommand(holePol, this));
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
 
@@ -1368,8 +1365,10 @@ vtkPolyData* GeoDataPolygon::polyData() const
 	return m_polyData;
 }
 
-void GeoDataPolygon::setupHolePolygon(GeoDataPolygonHolePolygon* pol)
+GeoDataPolygonHolePolygon* GeoDataPolygon::setupHolePolygon()
 {
+	GeoDataPolygonHolePolygon* pol = new GeoDataPolygonHolePolygon(this);
+
 	pol->setZDepthRange(m_depthRange.min(), m_depthRange.max());
 	ScalarsToColorsContainer* stcc = scalarsToColorsContainer();
 	if (stcc != nullptr) {
@@ -1378,6 +1377,8 @@ void GeoDataPolygon::setupHolePolygon(GeoDataPolygonHolePolygon* pol)
 	pol->setActive(true);
 	pol->setMapping(m_setting.mapping);
 	pol->setColor(m_setting.color);
+
+	return pol;
 }
 
 void GeoDataPolygon::deletePolygon(bool force)
@@ -1622,11 +1623,10 @@ void GeoDataPolygon::setPolygon(const QPolygonF& p)
 
 void GeoDataPolygon::addHolePolygon(const QPolygonF& p)
 {
-	GeoDataPolygonHolePolygon* tmpPol = new GeoDataPolygonHolePolygon(this);
-	setupHolePolygon(tmpPol);
-	tmpPol->setSelected(false);
-	tmpPol->setPolygon(p);
-	m_holePolygons.append(tmpPol);
+	auto newPol = setupHolePolygon();
+	newPol->setSelected(false);
+	newPol->setPolygon(p);
+	m_holePolygons.append(newPol);
 }
 
 const QPolygonF GeoDataPolygon::polygon() const
@@ -1777,8 +1777,7 @@ void GeoDataPolygon::copyShape(GeoDataPolygon* polygon)
 	setPolygon(polygon->polygon());
 	for (int i = 0; i < polygon->m_holePolygons.count(); ++i) {
 		GeoDataPolygonHolePolygon* p = polygon->m_holePolygons.at(i);
-		GeoDataPolygonHolePolygon* holePol = new GeoDataPolygonHolePolygon(this);
-		setupHolePolygon(holePol);
+		auto holePol = setupHolePolygon();
 		holePol->setPolygon(p->polygon());
 		holePol->setActive(false);
 		holePol->setSelected(false);
