@@ -4,7 +4,7 @@
 #include "../geodatapolygon.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
+#include <QPolygonF>
 
 class GeoDataPolygon::MoveVertexCommand : public QUndoCommand
 {
@@ -19,10 +19,12 @@ public:
 
 private:
 	bool m_keyDown;
-	vtkIdType m_vertexId;
+
+	QPolygonF m_newPolygon;
+	QPolygonF m_oldPolygon;
+
 	GeoDataPolygon* m_polygon;
 	GeoDataPolygonAbstractPolygon* m_targetPolygon;
-	QVector2D m_offset;
 	bool m_oldMapped;
 };
 
