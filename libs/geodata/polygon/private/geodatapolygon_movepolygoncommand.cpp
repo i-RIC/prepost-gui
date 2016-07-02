@@ -32,7 +32,6 @@ void GeoDataPolygon::MovePolygonCommand::redo()
 		movePolygon(hp, m_offset);
 	}
 	m_polygon->m_shapeUpdating = false;
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 
@@ -46,7 +45,6 @@ void GeoDataPolygon::MovePolygonCommand::undo()
 		movePolygon(hp, - m_offset);
 	}
 	m_polygon->m_shapeUpdating = false;
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 

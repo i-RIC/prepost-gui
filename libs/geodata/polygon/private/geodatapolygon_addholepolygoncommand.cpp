@@ -30,7 +30,6 @@ void GeoDataPolygon::AddHolePolygonCommand::redo()
 	m_polygon->m_holePolygons.append(m_targetPolygon);
 	m_polygon->updateActionStatus();
 	m_polygon->updateMouseCursor(m_polygon->graphicsView());
-	m_polygon->renderGraphicsView();
 	m_undoed = false;
 }
 
@@ -42,6 +41,5 @@ void GeoDataPolygon::AddHolePolygonCommand::undo()
 	m_polygon->m_holePolygons.removeOne(m_targetPolygon);
 	m_polygon->updateActionStatus();
 	m_polygon->updateMouseCursor(m_polygon->graphicsView());
-	m_polygon->renderGraphicsView();
 	m_undoed = true;
 }

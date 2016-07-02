@@ -35,7 +35,6 @@ void GeoDataPolygon::PushNewPointCommand::redo()
 	m_polygon->m_shapeUpdating = true;
 	m_targetPolygon->updateShapeData();
 	m_polygon->m_shapeUpdating = false;
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 
@@ -55,7 +54,6 @@ void GeoDataPolygon::PushNewPointCommand::undo()
 	m_polygon->m_shapeUpdating = true;
 	m_targetPolygon->updateShapeData();
 	m_polygon->m_shapeUpdating = false;
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 

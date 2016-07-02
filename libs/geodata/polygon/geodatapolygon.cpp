@@ -55,7 +55,6 @@
 #include <QPolygonF>
 #include <QTextStream>
 #include <QToolBar>
-#include <QUndoCommand>
 #include <QVector>
 #include <QVector2D>
 #include <QXmlStreamWriter>
@@ -311,25 +310,25 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	case meDefining:
 		// update the position of the last point.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new PushNewPointCommand(false, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new PushNewPointCommand(false, QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslate:
 		// execute translation.
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new MovePolygonCommand(false, m_currentPoint, QPoint(event->x(), event->y()), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meMoveVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
+			pushRenderCommand(new MoveVertexCommand(false, m_currentPoint, QPoint(event->x(), event->y()), m_selectedPolygon->selectedVertexId(), this));
 		}
 		m_currentPoint = QPoint(event->x(), event->y());
 		break;
 	case meAddVertex:
 		if (m_selectMode == smPolygon) {
-			iRICUndoStack::instance().push(new AddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+			pushRenderCommand(new AddVertexCommand(false, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 		}
 		break;
 	case meTranslateDialog:
@@ -363,11 +362,11 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			// enter defining mode.
 			m_mouseEventMode = meDefining;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 		case meDefining:
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meTranslatePrepare:
@@ -384,7 +383,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 				updateMouseCursor(v);
 				// push the first translation command.
 				if (m_selectMode == smPolygon) {
-					iRICUndoStack::instance().push(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
+					pushRenderCommand(new MovePolygonCommand(true, m_currentPoint, m_currentPoint, this));
 				}
 			}
 			break;
@@ -944,7 +943,7 @@ void GeoDataPolygon::addHolePolygon()
 	if (m_selectedPolygon != nullptr) {
 		m_selectedPolygon->setSelected(false);
 	}
-	iRICUndoStack::instance().push(new AddHolePolygonCommand(holePol, this));
+	pushRenderCommand(new AddHolePolygonCommand(holePol, this));
 	InformationDialog::information(preProcessorWindow(), GeoDataPolygon::tr("Information"), GeoDataPolygon::tr("Please define hole region. Hole region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key."), "gctriangle_addholepolygon");
 }
 

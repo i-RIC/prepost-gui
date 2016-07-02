@@ -39,7 +39,6 @@ void GeoDataPolygon::MoveVertexCommand::redo()
 {
 	m_polygon->setMapped(false);
 	m_targetPolygon->setPolygon(m_newPolygon);
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 
@@ -47,7 +46,6 @@ void GeoDataPolygon::MoveVertexCommand::undo()
 {
 	m_polygon->setMapped(m_oldMapped);
 	m_targetPolygon->setPolygon(m_oldPolygon);
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 

@@ -52,7 +52,6 @@ void GeoDataPolygon::AddVertexCommand::redo()
 	m_targetPolygon->getVtkPolygon()->Modified();
 	m_targetPolygon->updateShapeData();
 	m_polygon->m_shapeUpdating = false;
-	m_polygon->renderGraphicsView();
 	m_polygon->updatePolyData();
 }
 
@@ -84,7 +83,6 @@ void GeoDataPolygon::AddVertexCommand::undo()
 		m_targetPolygon->getVtkPolygon()->Modified();
 		m_targetPolygon->updateShapeData();
 		m_polygon->m_shapeUpdating = false;
-		m_polygon->renderGraphicsView();
 		m_polygon->updatePolyData();
 	} else {
 		// this never happens.
