@@ -4,7 +4,7 @@
 #include "../geodatapolygon.h"
 
 #include <QUndoCommand>
-#include <QVector2D>
+#include <QPolygonF>
 
 class GeoDataPolygon::RemoveVertexCommand : public QUndoCommand
 {
@@ -15,8 +15,9 @@ public:
 	void undo() override;
 
 private:
-	vtkIdType m_vertexId;
-	QVector2D m_vertexPosition;
+	QPolygonF m_newPolygon;
+	QPolygonF m_oldPolygon;
+
 	GeoDataPolygon* m_polygon;
 	GeoDataPolygonAbstractPolygon* m_targetPolygon;
 	bool m_oldMapped;
