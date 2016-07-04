@@ -116,82 +116,82 @@ SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& 
 // Public interface implementation
 
 SolverDefinition::SolverDefinition(const QString& solverfolder, const QLocale& locale) :
-	m_impl {new Impl {solverfolder, locale, this}}
+	impl {new Impl {solverfolder, locale, this}}
 {
-	m_impl->load(locale);
+	impl->load(locale);
 }
 
 SolverDefinition::~SolverDefinition()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const std::string& SolverDefinition::name() const
 {
-	return m_impl->m_abstract.name();
+	return impl->m_abstract.name();
 }
 
 const QString& SolverDefinition::caption() const
 {
-	return m_impl->m_abstract.caption();
+	return impl->m_abstract.caption();
 }
 
 const VersionNumber& SolverDefinition::version() const
 {
-	return m_impl->m_abstract.version();
+	return impl->m_abstract.version();
 }
 
 QString SolverDefinition::description() const
 {
-	return m_impl->m_abstract.description();
+	return impl->m_abstract.description();
 }
 
 QString SolverDefinition::license() const
 {
-	return m_impl->m_abstract.license();
+	return impl->m_abstract.license();
 }
 
 const QString& SolverDefinition::copyright() const
 {
-	return m_impl->m_abstract.copyright();
+	return impl->m_abstract.copyright();
 }
 
 SolverDefinition::IterationType SolverDefinition::iterationType() const
 {
-	return m_impl->m_iterationType;
+	return impl->m_iterationType;
 }
 
 const QString& SolverDefinition::executableFilename() const
 {
-	return m_impl->m_executableFilename;
+	return impl->m_executableFilename;
 }
 
 const SolverDefinitionAbstract& SolverDefinition::abstract() const
 {
-	return m_impl->m_abstract;
+	return impl->m_abstract;
 }
 
 const QDir& SolverDefinition::folder() const
 {
-	return m_impl->m_abstract.folder();
+	return impl->m_abstract.folder();
 }
 
 const QList<SolverDefinitionGridType*> SolverDefinition::gridTypes() const
 {
-	return m_impl->m_gridTypes;
+	return impl->m_gridTypes;
 }
 
 SolverDefinitionGridType* SolverDefinition::dummyGridType() const
 {
-	return m_impl->m_dummyGridType;
+	return impl->m_dummyGridType;
 }
 
 SolverDefinitionGridType* SolverDefinition::gridType(const std::string& name) const
 {
-	return m_impl->m_gridTypeNameMap.value(name);
+	return impl->m_gridTypeNameMap.value(name);
 }
 
 const QDomDocument& SolverDefinition::document() const
 {
-	return m_impl->m_document;
+	return impl->m_document;
 }

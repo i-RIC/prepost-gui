@@ -76,7 +76,7 @@ private:
 	virtual GridAttributeContainer* buildContainer(Grid* grid) = 0;
 
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 };
 
 #ifdef _DEBUG

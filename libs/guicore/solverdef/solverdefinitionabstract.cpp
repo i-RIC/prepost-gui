@@ -77,59 +77,59 @@ void SolverDefinitionAbstract::Impl::load(const QString& solverfolder, const QLo
 
 SolverDefinitionAbstract::SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent) :
 	QObject {parent},
-	m_impl {new Impl {this}}
+	impl {new Impl {this}}
 {
-	m_impl->load(solverfolder, locale);
+	impl->load(solverfolder, locale);
 }
 
 const QString& SolverDefinitionAbstract::folderName() const
 {
-	return m_impl->m_folderName;
+	return impl->m_folderName;
 }
 
 const std::string& SolverDefinitionAbstract::name() const
 {
-	return m_impl->m_name;
+	return impl->m_name;
 }
 
 const QString& SolverDefinitionAbstract::caption() const
 {
-	return m_impl->m_caption;
+	return impl->m_caption;
 }
 
 const VersionNumber& SolverDefinitionAbstract::version() const
 {
-	return m_impl->m_version;
+	return impl->m_version;
 }
 
 QString SolverDefinitionAbstract::description() const
 {
-	return m_impl->loadFile(SolverDefinition::README);
+	return impl->loadFile(SolverDefinition::README);
 }
 
 const QString& SolverDefinitionAbstract::url() const
 {
-	return m_impl->m_url;
+	return impl->m_url;
 }
 
 const QString& SolverDefinitionAbstract::copyright() const
 {
-	return m_impl->m_copyright;
+	return impl->m_copyright;
 }
 
 const QDate& SolverDefinitionAbstract::release() const
 {
-	return m_impl->m_release;
+	return impl->m_release;
 }
 
 QString SolverDefinitionAbstract::license() const
 {
-	return m_impl->loadFile(SolverDefinition::LICENSE);
+	return impl->loadFile(SolverDefinition::LICENSE);
 }
 
 const QDir& SolverDefinitionAbstract::folder() const
 {
-	return m_impl->m_folder;
+	return impl->m_folder;
 }
 
 void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const
@@ -137,7 +137,7 @@ void SolverDefinitionAbstract::setupDomDocument(QDomDocument* doc) const
 	QString errorStr;
 	int errorLine;
 	int errorColumn;
-	QString filename = m_impl->m_folder.absoluteFilePath(SolverDefinition::FILENAME);
+	QString filename = impl->m_folder.absoluteFilePath(SolverDefinition::FILENAME);
 	QFile file(filename);
 	QString errorHeader = "Error occured while loading %1\n";
 	bool ok = doc->setContent(&file, &errorStr, &errorLine, &errorColumn);

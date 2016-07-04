@@ -23,37 +23,37 @@ void SolverDefinitionGridAttributeDimension::Impl::load(const QDomElement& elem,
 
 SolverDefinitionGridAttributeDimension::SolverDefinitionGridAttributeDimension(const QDomElement& node, const SolverDefinitionTranslator& translator, SolverDefinitionGridAttribute* att) :
 	SolverDefinitionNode {node, translator},
-	m_impl {new Impl {node, translator, att}}
+	impl {new Impl {node, translator, att}}
 {}
 
 SolverDefinitionGridAttributeDimension::~SolverDefinitionGridAttributeDimension()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const std::string& SolverDefinitionGridAttributeDimension::name() const
 {
-	return m_impl->m_name;
+	return impl->m_name;
 }
 
 const QString& SolverDefinitionGridAttributeDimension::caption() const
 {
-	return m_impl->m_caption;
+	return impl->m_caption;
 }
 
 const std::string& SolverDefinitionGridAttributeDimension::englishCaption() const
 {
-	return m_impl->m_englishCaption;
+	return impl->m_englishCaption;
 }
 
 SolverDefinitionGridAttribute* SolverDefinitionGridAttributeDimension::attribute() const
 {
-	return m_impl->m_attribute;
+	return impl->m_attribute;
 }
 
 GridAttributeDimensionSelectWidget* SolverDefinitionGridAttributeDimension::buildSelectWidget(GridAttributeDimensionContainer* container)
 {
-	if (m_impl->m_name == "Time") {
+	if (impl->m_name == "Time") {
 		return new GridAttributeDimensionTimeSliderSelectWidget(container, 0);
 	} else {
 		return new GridAttributeDimensionComboboxSelectWidget(container, 0);

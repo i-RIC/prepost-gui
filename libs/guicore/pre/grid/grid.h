@@ -94,7 +94,7 @@ private:
 
 private:
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 
 public:
 	friend class GridInternalImporter;

@@ -23,17 +23,17 @@ void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, S
 
 SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, const SolverDefinitionTranslator& translator, int order) :
 	SolverDefinitionGridAttributeInteger {node, translator, Node, false, order},
-	m_impl {new Impl {node, this}}
+	impl {new Impl {node, this}}
 {}
 
 SolverDefinitionGridComplexAttribute::~SolverDefinitionGridComplexAttribute()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const QDomElement& SolverDefinitionGridComplexAttribute::element() const
 {
-	return m_impl->m_element;
+	return impl->m_element;
 }
 
 GridAttributeEditWidget* SolverDefinitionGridComplexAttribute::editWidget(QWidget* parent)

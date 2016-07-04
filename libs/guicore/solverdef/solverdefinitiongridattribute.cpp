@@ -57,71 +57,71 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, const So
 
 SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, const SolverDefinitionTranslator& translator, Position pos, bool isOption, int order) :
 	SolverDefinitionNode {elem, translator},
-	m_impl {new Impl {elem, translator, this}}
+	impl {new Impl {elem, translator, this}}
 {
-	m_impl->m_position = pos;
-	m_impl->m_isOption = isOption;
-	m_impl->m_order = order;
+	impl->m_position = pos;
+	impl->m_isOption = isOption;
+	impl->m_order = order;
 }
 
 SolverDefinitionGridAttribute::~SolverDefinitionGridAttribute()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const std::string& SolverDefinitionGridAttribute::name() const
 {
-	return m_impl->m_name;
+	return impl->m_name;
 }
 
 const std::string& SolverDefinitionGridAttribute::englishCaption() const
 {
-	return m_impl->m_englishCaption;
+	return impl->m_englishCaption;
 }
 
 const QString& SolverDefinitionGridAttribute::caption() const
 {
-	return m_impl->m_caption;
+	return impl->m_caption;
 }
 
 const QVariant& SolverDefinitionGridAttribute::variantDefaultValue() const
 {
-	return m_impl->m_variantDefaultValue;
+	return impl->m_variantDefaultValue;
 }
 
 const QVariant& SolverDefinitionGridAttribute::variantMaximumValue() const
 {
-	return m_impl->m_variantMaximumValue;
+	return impl->m_variantMaximumValue;
 }
 
 const QVariant& SolverDefinitionGridAttribute::variantMinimumValue() const
 {
-	return m_impl->m_variantMinimumValue;
+	return impl->m_variantMinimumValue;
 }
 
 SolverDefinitionGridAttribute::Position SolverDefinitionGridAttribute::position() const
 {
-	return m_impl->m_position;
+	return impl->m_position;
 }
 
 bool SolverDefinitionGridAttribute::isOption() const
 {
-	return m_impl->m_isOption;
+	return impl->m_isOption;
 }
 
 int SolverDefinitionGridAttribute::order() const
 {
-	return m_impl->m_order;
+	return impl->m_order;
 }
 
 const std::vector<SolverDefinitionGridAttributeDimension*>& SolverDefinitionGridAttribute::dimensions() const
 {
-	return m_impl->m_dimensions;
+	return impl->m_dimensions;
 }
 
 std::vector<SolverDefinitionGridAttributeDimension *>& SolverDefinitionGridAttribute::dimensions()
 {
-	return m_impl->m_dimensions;
+	return impl->m_dimensions;
 }
 
 GridAttributeContainer* SolverDefinitionGridAttribute::container(Grid* grid)
@@ -170,7 +170,7 @@ ScalarsToColorsEditDialog* SolverDefinitionGridAttribute::createScalarsToColorsE
 
 void SolverDefinitionGridAttribute::setPosition(Position pos)
 {
-	m_impl->m_position = pos;
+	impl->m_position = pos;
 }
 
 ColorTransferFunctionContainer* SolverDefinitionGridAttribute::createColorTransferFunctionContainer(ProjectDataItem* d)

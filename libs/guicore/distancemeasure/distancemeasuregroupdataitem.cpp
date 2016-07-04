@@ -16,7 +16,7 @@ DistanceMeasureGroupDataItem::Impl::Impl(DistanceMeasureGroupDataItem *parent) :
 
 DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem {tr("Distance Measures"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_impl {new Impl {this}}
+	impl {new Impl {this}}
 {
 	m_standardItem->setCheckable(true);
 	m_standardItem->setCheckState(Qt::Checked);
@@ -24,7 +24,7 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 	m_standardItemCopy = m_standardItem->clone();
 	m_isDeletable = false;
 
-	connect(m_impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
+	connect(impl->m_addAction, SIGNAL(triggered()), this, SLOT(addMeasure()));
 
 	// set up the first item.
 	addMeasure();
@@ -32,7 +32,7 @@ DistanceMeasureGroupDataItem::DistanceMeasureGroupDataItem(GraphicsWindowDataIte
 
 DistanceMeasureGroupDataItem::~DistanceMeasureGroupDataItem()
 {
-	delete m_impl;
+	delete impl;
 }
 
 void DistanceMeasureGroupDataItem::addMeasure()
@@ -59,7 +59,7 @@ void DistanceMeasureGroupDataItem::updateZDepthRangeItemCount()
 
 void DistanceMeasureGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_impl->m_addAction);
+	menu->addAction(impl->m_addAction);
 }
 
 void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

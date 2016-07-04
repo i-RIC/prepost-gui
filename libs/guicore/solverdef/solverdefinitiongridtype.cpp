@@ -225,112 +225,112 @@ Grid* SolverDefinitionGridType::Impl::createEmptyGrid()
 
 SolverDefinitionGridType::SolverDefinitionGridType(const std::string& name, const QString& caption) :
 	SolverDefinitionNode {},
-	m_impl {new Impl{name, caption, this}}
+	impl {new Impl{name, caption, this}}
 {}
 
 SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, const SolverDefinitionTranslator& translator, bool isPrimary) :
 	SolverDefinitionNode {node,translator},
-	m_impl {new Impl {node, translator, isPrimary, this}}
+	impl {new Impl {node, translator, isPrimary, this}}
 {}
 
 SolverDefinitionGridType::~SolverDefinitionGridType()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const QList<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridAttributes() const
 {
-	return m_impl->m_gridAttributes;
+	return impl->m_gridAttributes;
 }
 
 SolverDefinitionGridAttribute* SolverDefinitionGridType::gridAttribute(const std::string& name) const
 {
-	return m_impl->m_gridAttributeNameMap.value(name);
+	return impl->m_gridAttributeNameMap.value(name);
 }
 
 const QList<SolverDefinitionGridComplexAttribute*>& SolverDefinitionGridType::gridComplexAttributes() const
 {
-	return m_impl->m_gridComplexAttributes;
+	return impl->m_gridComplexAttributes;
 }
 
 SolverDefinitionGridComplexAttribute* SolverDefinitionGridType::gridComplexAttribute(const std::string& name) const
 {
-	return m_impl->m_gridComplexAttributeNameMap.value(name);
+	return impl->m_gridComplexAttributeNameMap.value(name);
 }
 
 const QList<SolverDefinitionBoundaryCondition*>& SolverDefinitionGridType::boundaryConditions() const
 {
-	return m_impl->m_boundaryConditions;
+	return impl->m_boundaryConditions;
 }
 
 SolverDefinitionBoundaryCondition* SolverDefinitionGridType::boundaryCondition(const std::string& name) const
 {
-	return m_impl->m_boundaryConditionNameMap.value(name);
+	return impl->m_boundaryConditionNameMap.value(name);
 }
 
 const QList<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::availableGridTypes() const
 {
-	return m_impl->m_availableGridTypes;
+	return impl->m_availableGridTypes;
 }
 
 SolverDefinitionGridType::GridType SolverDefinitionGridType::defaultGridType() const
 {
-	return m_impl->m_defaultGridType;
+	return impl->m_defaultGridType;
 }
 
 const QList<QString>& SolverDefinitionGridType::availableGridGenerators() const
 {
-	return m_impl->m_availableGridGenerators;
+	return impl->m_availableGridGenerators;
 }
 
 const std::string& SolverDefinitionGridType::name() const
 {
-	return m_impl->m_name;
+	return impl->m_name;
 }
 
 const QString& SolverDefinitionGridType::caption() const
 {
-	return m_impl->m_caption;
+	return impl->m_caption;
 }
 
 void SolverDefinitionGridType::setCaption(const QString& caption)
 {
-	m_impl->m_caption = caption;
+	impl->m_caption = caption;
 }
 
 bool SolverDefinitionGridType::isPrimary() const
 {
-	return m_impl->m_isPrimary;
+	return impl->m_isPrimary;
 }
 
 bool SolverDefinitionGridType::multiple() const
 {
-	return m_impl->m_multiple;
+	return impl->m_multiple;
 }
 
 bool SolverDefinitionGridType::isOptional() const
 {
-	return m_impl->m_isOptional;
+	return impl->m_isOptional;
 }
 
 bool SolverDefinitionGridType::isKeepOrder() const
 {
-	return m_impl->m_isKeepOrder;
+	return impl->m_isKeepOrder;
 }
 
 void SolverDefinitionGridType::buildGridAttributes(Grid* grid) const
 {
-	m_impl->buildGridAttributes(grid);
+	impl->buildGridAttributes(grid);
 }
 
 Grid* SolverDefinitionGridType::emptyGrid() const
 {
-	return m_impl->m_emptyGrid;
+	return impl->m_emptyGrid;
 }
 
 Grid* SolverDefinitionGridType::createEmptyGrid()
 {
-	return createEmptyGrid(m_impl->m_defaultGridType);
+	return createEmptyGrid(impl->m_defaultGridType);
 }
 
 Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)

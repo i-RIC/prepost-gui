@@ -13,74 +13,74 @@ LatitudeLongitude::LatitudeLongitude() :
 
 
 LatitudeLongitude::LatitudeLongitude(double latitude, double longitude) :
-	m_impl {new Impl(latitude, longitude)}
+	impl {new Impl(latitude, longitude)}
 {}
 
 LatitudeLongitude::LatitudeLongitude(const LatitudeLongitude& latlon) :
 	LatitudeLongitude()
 {
-	*m_impl = *latlon.m_impl;
+	*impl = *latlon.impl;
 }
 
 LatitudeLongitude::LatitudeLongitude(LatitudeLongitude&& latlon) :
-	m_impl {latlon.m_impl}
+	impl {latlon.impl}
 {
-	latlon.m_impl = nullptr;
+	latlon.impl = nullptr;
 }
 
 LatitudeLongitude::~LatitudeLongitude()
 {
-	delete m_impl;
+	delete impl;
 }
 
 LatitudeLongitude& LatitudeLongitude::operator =(const LatitudeLongitude& latlon)
 {
-	*m_impl = *latlon.m_impl;
+	*impl = *latlon.impl;
 
 	return *this;
 }
 
 LatitudeLongitude& LatitudeLongitude::operator =(LatitudeLongitude&& latlon)
 {
-	delete m_impl;
-	m_impl = latlon.m_impl;
+	delete impl;
+	impl = latlon.impl;
 
-	latlon.m_impl = nullptr;
+	latlon.impl = nullptr;
 
 	return *this;
 }
 
 LatitudeLongitudeAngle& LatitudeLongitude::latitude()
 {
-	return m_impl->m_latitude;
+	return impl->m_latitude;
 }
 
 const LatitudeLongitudeAngle& LatitudeLongitude::latitude() const
 {
-	return m_impl->m_latitude;
+	return impl->m_latitude;
 }
 
 LatitudeLongitudeAngle& LatitudeLongitude::longitude()
 {
-	return m_impl->m_longitude;
+	return impl->m_longitude;
 }
 
 const LatitudeLongitudeAngle& LatitudeLongitude::longitude() const
 {
-	return m_impl->m_longitude;
+	return impl->m_longitude;
 }
 
 void LatitudeLongitude::setLatitude(double latitude)
 {
-	m_impl->m_latitude.setValue(latitude);
+	impl->m_latitude.setValue(latitude);
 }
 
 void LatitudeLongitude::setLongitude(double longitude)
 {
-	m_impl->m_longitude.setValue(longitude);
+	impl->m_longitude.setValue(longitude);
 }
 
 QVector2D LatitudeLongitude::toQVector2D() const
 {
-	return QVector2D(m_impl->m_longitude.value(), m_impl->m_latitude.value());
+	return QVector2D(impl->m_longitude.value(), impl->m_latitude.value());
 }

@@ -30,40 +30,40 @@ void SolverDefinitionBoundaryCondition::Impl::load(const QDomElement& node, cons
 
 SolverDefinitionBoundaryCondition::SolverDefinitionBoundaryCondition(QDomElement node, const SolverDefinitionTranslator& translator) :
 	SolverDefinitionNode {node, translator},
-	m_impl {new Impl {node, translator}}
+	impl {new Impl {node, translator}}
 {}
 
 SolverDefinitionBoundaryCondition::~SolverDefinitionBoundaryCondition()
 {
-	delete m_impl;
+	delete impl;
 }
 
 const std::string& SolverDefinitionBoundaryCondition::name() const
 {
-	return m_impl->m_name;
+	return impl->m_name;
 }
 
 const QString& SolverDefinitionBoundaryCondition::caption() const
 {
-	return m_impl->m_caption;
+	return impl->m_caption;
 }
 
 const std::string& SolverDefinitionBoundaryCondition::englishCaption() const
 {
-	return m_impl->m_englishCaption;
+	return impl->m_englishCaption;
 }
 
 void SolverDefinitionBoundaryCondition::setCaption(const QString& caption)
 {
-	m_impl->m_caption = caption;
+	impl->m_caption = caption;
 }
 
 const QDomElement& SolverDefinitionBoundaryCondition::element() const
 {
-	return m_impl->m_element;
+	return impl->m_element;
 }
 
 SolverDefinitionBoundaryCondition::Position SolverDefinitionBoundaryCondition::position() const
 {
-	return m_impl->m_position;
+	return impl->m_position;
 }

@@ -26,14 +26,14 @@ ProjectDataItem::ProjectDataItem(ProjectDataItem* d) :
 
 ProjectDataItem::ProjectDataItem(const QString& filename, ProjectDataItem* d) :
 	QObject {d},
-	m_impl {new Impl {}}
+	impl {new Impl {}}
 {
-	m_impl->m_filename = filename;
+	impl->m_filename = filename;
 }
 
 ProjectDataItem::~ProjectDataItem()
 {
-	delete m_impl;
+	delete impl;
 }
 
 void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
@@ -41,7 +41,7 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 	// load data from project main file.
 	doLoadFromProjectMainFile(node);
 	// when this item stores data in external file, load it.
-	if (m_impl->m_filename != "") {
+	if (impl->m_filename != "") {
 		loadExternalData(filename());
 	}
 }
@@ -49,14 +49,14 @@ void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 void ProjectDataItem::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// when this item defines a sub folder, create the subfolder.
-	if (m_impl->m_subPath != "") {
+	if (impl->m_subPath != "") {
 		QString parentFolder = QDir(projectData()->workDirectory()).absoluteFilePath(parent()->relativeSubPath());
-		QDir(parentFolder).mkdir(m_impl->m_subPath);
+		QDir(parentFolder).mkdir(impl->m_subPath);
 	}
 	// save data to project main file.
 	doSaveToProjectMainFile(writer);
 	// when this item stores data in external file, save it.
-	if (m_impl->m_filename != "") {
+	if (impl->m_filename != "") {
 		saveExternalData(filename());
 	}
 }
@@ -77,7 +77,7 @@ void ProjectDataItem::closeCgnsFile()
 
 QString ProjectDataItem::filename() const
 {
-	if (m_impl->m_filename == "") {return "";}
+	if (impl->m_filename == "") {return "";}
 
 	QDir workdir(projectData()->workDirectory());
 	return workdir.absoluteFilePath(relativeFilename());
@@ -86,18 +86,18 @@ QString ProjectDataItem::filename() const
 QString ProjectDataItem::relativeFilename() const
 {
 	QDir subdir(relativeSubPath());
-	return subdir.filePath(m_impl->m_filename);
+	return subdir.filePath(impl->m_filename);
 }
 
 void ProjectDataItem::setFilename(const QString& fname)
 {
-	m_impl->m_filename = fname;
+	impl->m_filename = fname;
 }
 
 QStringList ProjectDataItem::containedFiles()
 {
 	QStringList ret;
-	if (m_impl->m_filename != "") {
+	if (impl->m_filename != "") {
 		ret.append(relativeFilename());
 	}
 	return ret;
@@ -127,25 +127,25 @@ ProjectData* ProjectDataItem::projectData() const
 
 void ProjectDataItem::loadFilename(const QDomNode& node)
 {
-	m_impl->m_filename = node.toElement().attribute("filename");
+	impl->m_filename = node.toElement().attribute("filename");
 }
 
 void ProjectDataItem::saveFilename(QXmlStreamWriter& writer) const
 {
-	if (m_impl->m_filename.isNull()) {return;}
+	if (impl->m_filename.isNull()) {return;}
 
-	writer.writeAttribute("filename", m_impl->m_filename);
+	writer.writeAttribute("filename", impl->m_filename);
 }
 
 QString ProjectDataItem::relativeSubPath() const
 {
-	if (m_impl->m_subPath == "") {
+	if (impl->m_subPath == "") {
 		return parent()->relativeSubPath();
 	}
 
 	QString parentPath = parent()->relativeSubPath();
 	if (parentPath != "") {parentPath.append("/");}
-	return parentPath.append(m_impl->m_subPath);
+	return parentPath.append(impl->m_subPath);
 }
 
 QString ProjectDataItem::subPath() const
@@ -156,7 +156,7 @@ QString ProjectDataItem::subPath() const
 
 void ProjectDataItem::setSubPath(const QString& subPath)
 {
-	m_impl->m_subPath = subPath;
+	impl->m_subPath = subPath;
 }
 
 QVector2D ProjectDataItem::offset() const

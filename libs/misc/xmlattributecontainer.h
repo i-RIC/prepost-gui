@@ -40,7 +40,7 @@ private:
 	virtual void copyValue(const XmlAttributeContainer& c);
 
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 };
 
 #ifdef _DEBUG

@@ -27,7 +27,7 @@ private:
 	GridAttributeContainer* buildContainer(Grid* grid) override;
 
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 };
 
 #ifdef _DEBUG
