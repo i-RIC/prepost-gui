@@ -1,7 +1,7 @@
 #include "opacitycontainer.h"
 
 OpacityContainer::OpacityContainer() :
-	OpacityContainer("opacity")
+	OpacityContainer("opacityPercent")
 {}
 
 OpacityContainer::OpacityContainer(const QString& name) :
