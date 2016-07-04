@@ -2,6 +2,8 @@
 #include "post2dwindowzonedataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include "private/post2dwindowgridshapedataitem_setsettingcommand.h"
+
 #include <guibase/coloreditwidget.h>
 #include <guibase/graphicsmisc.h>
 #include <guibase/gridshapeeditdialog.h>
@@ -190,38 +192,10 @@ QDialog* Post2dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-class Post2dWindowGridShapeDataSetSetting : public QUndoCommand
-{
-public:
-	Post2dWindowGridShapeDataSetSetting(const GridShapeEditDialog::Setting& setting, Post2dWindowGridShapeDataItem* item) :
-		QUndoCommand {QObject::tr("Update Grid Shape Setting")},
-		m_newSetting {setting},
-		m_oldSetting {item->m_setting},
-		m_oldEnabled {item->isEnabled()},
-		m_item {item}
-	{}
-	void redo() {
-		m_item->m_setting = m_newSetting;
-		m_item->setEnabled(true);
-		m_item->updateActorSettings();
-	}
-	void undo() {
-		m_item->m_setting = m_oldSetting;
-		m_item->setEnabled(m_oldEnabled);
-		m_item->updateActorSettings();
-	}
-private:
-	GridShapeEditDialog::Setting m_newSetting;
-	GridShapeEditDialog::Setting m_oldSetting;
-	bool m_oldEnabled;
-
-	Post2dWindowGridShapeDataItem* m_item;
-};
-
 void Post2dWindowGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	pushRenderCommand(new Post2dWindowGridShapeDataSetSetting(dialog->setting(), this), this, true);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 void Post2dWindowGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)

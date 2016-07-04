@@ -78,6 +78,9 @@ private:
 
 public:
 	friend class Post2dWindowGridShapeDataSetSetting;
+
+private:
+	class SetSettingCommand;
 };
 
 #endif // POST2DWINDOWGRIDSHAPEDATAITEM_H

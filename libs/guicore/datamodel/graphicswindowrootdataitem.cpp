@@ -2,6 +2,9 @@
 #include "graphicswindowrootdataitem.h"
 #include "vtkgraphicsview.h"
 
+#include "private/graphicswindowrootdataitem_movedowncommand.h"
+#include "private/graphicswindowrootdataitem_moveupcommand.h"
+
 #include <guibase/objectbrowserview.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
@@ -12,62 +15,6 @@
 
 #include <QVTKWidget.h>
 #include <vtkRenderWindow.h>
-
-namespace {
-
-class MoveUpCommand : public QUndoCommand
-{
-public:
-	MoveUpCommand(GraphicsWindowDataItem* item, ObjectBrowserView* view) :
-		QUndoCommand(QObject::tr("Move up item")),
-		m_item {item},
-		m_view {view}
-	{}
-	void redo() override {
-		m_view->setCommandExecution(true);
-		m_item->moveUp();
-		m_view->select(m_item->standardItem()->index());
-		m_view->setCommandExecution(false);
-	}
-	void undo() override {
-		m_view->setCommandExecution(true);
-		m_item->moveDown();
-		m_view->select(m_item->standardItem()->index());
-		m_view->setCommandExecution(false);
-	}
-
-private:
-	GraphicsWindowDataItem* m_item;
-	ObjectBrowserView* m_view;
-};
-
-class MoveDownCommand : public QUndoCommand
-{
-public:
-	MoveDownCommand(GraphicsWindowDataItem* item, ObjectBrowserView* view) :
-		QUndoCommand(QObject::tr("Move down item")),
-		m_item {item},
-		m_view {view}
-	{}
-	void redo() override {
-		m_view->setCommandExecution(true);
-		m_item->moveDown();
-		m_view->select(m_item->standardItem()->index());
-		m_view->setCommandExecution(false);
-	}
-	void undo() override {
-		m_view->setCommandExecution(true);
-		m_item->moveUp();
-		m_view->select(m_item->standardItem()->index());
-		m_view->setCommandExecution(false);
-	}
-
-private:
-	GraphicsWindowDataItem* m_item;
-	ObjectBrowserView* m_view;
-};
-
-} // namespace
 
 GraphicsWindowRootDataItem::GraphicsWindowRootDataItem(QMainWindow* window, ProjectDataItem* parent) :
 	GraphicsWindowDataItem(parent),

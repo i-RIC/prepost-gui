@@ -43,6 +43,10 @@ private:
 
 public:
 	friend class GraphicsWindowDataModel;
+
+private:
+	class MoveUpCommand;
+	class MoveDownCommand;
 };
 
 #endif // GRAPHICSWINDOWROOTDATAITEM_H

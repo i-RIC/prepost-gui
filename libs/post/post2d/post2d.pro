@@ -176,6 +176,8 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
            datamodel/post2dwindowzonedataitem.h \
+           datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.h \
@@ -243,6 +245,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
            datamodel/post2dwindowzonedataitem.cpp \
+           datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowparticlesscalargroupdataitem_setsettingcommand.cpp \

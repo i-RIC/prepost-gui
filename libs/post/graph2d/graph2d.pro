@@ -105,7 +105,8 @@ HEADERS += graph2d_global.h \
            graph2dwindowverticalaxissettingdialog.h \
            graph2dwindowview.h \
            datamodel/graph2dwindowmarkerdataitem.h \
-           datamodel/graph2dwindowmarkergroupdataitem.h
+           datamodel/graph2dwindowmarkergroupdataitem.h \
+           private/graph2dwindowdataitem_standarditemchangecommand.h
 FORMS += graph2dwindowmarkersettingdialog.ui \
          graph2dwindowverticalaxissettingdialog.ui
 SOURCES += graph2dwindowdataitem.cpp \
@@ -117,7 +118,8 @@ SOURCES += graph2dwindowdataitem.cpp \
            graph2dwindowverticalaxissettingdialog.cpp \
            graph2dwindowview.cpp \
            datamodel/graph2dwindowmarkerdataitem.cpp \
-           datamodel/graph2dwindowmarkergroupdataitem.cpp
+           datamodel/graph2dwindowmarkergroupdataitem.cpp \
+           private/graph2dwindowdataitem_standarditemchangecommand.cpp
 TRANSLATIONS += languages/iricGraph2d_es_ES.ts \
                 languages/iricGraph2d_fr_FR.ts \
                 languages/iricGraph2d_id_ID.ts \

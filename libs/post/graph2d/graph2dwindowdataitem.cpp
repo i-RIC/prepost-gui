@@ -3,6 +3,8 @@
 #include "graph2dwindowrootdataitem.h"
 #include "graph2dwindowview.h"
 
+#include "private/graph2dwindowdataitem_standarditemchangecommand.h"
+
 #include <misc/iricundostack.h>
 
 #include <QAction>
@@ -121,59 +123,6 @@ void Graph2dWindowDataItem::innerUpdateItemMap(QMap<QStandardItem*, Graph2dWindo
 	}
 }
 
-/// The class to store standard item change information.
-/**
-	* This class stores only displayRole data and checkState data.
-	*/
-class Graph2dWindowDataItem::StandardItemChangeCommand : public QUndoCommand
-{
-public:
-	StandardItemChangeCommand(Graph2dWindowDataItem* item)
-		: QUndoCommand(QObject::tr("Object Browser Item Change")) {
-		m_oldDisplayText = item->m_standardItemCopy->data(Qt::DisplayRole);
-		m_oldCheckState = item->m_standardItemCopy->data(Qt::CheckStateRole);
-
-		m_newDisplayText = item->m_standardItem->data(Qt::DisplayRole);
-		m_newCheckState = item->m_standardItem->data(Qt::CheckStateRole);
-
-		m_item = item;
-	}
-	void redo() {
-		m_item->setIsCommandExecuting(true);
-
-		m_item->m_standardItemCopy->setData(m_newDisplayText, Qt::DisplayRole);
-		m_item->m_standardItemCopy->setData(m_newCheckState, Qt::CheckStateRole);
-
-		m_item->m_standardItem->setData(m_newDisplayText, Qt::DisplayRole);
-		m_item->m_standardItem->setData(m_newCheckState, Qt::CheckStateRole);
-
-		m_item->setModified();
-		m_item->updateVisibility();
-		m_item->setIsCommandExecuting(false);
-	}
-	void undo() {
-		m_item->setIsCommandExecuting(true);
-
-		m_item->m_standardItemCopy->setData(m_oldDisplayText, Qt::DisplayRole);
-		m_item->m_standardItemCopy->setData(m_oldCheckState, Qt::CheckStateRole);
-
-		m_item->m_standardItem->setData(m_oldDisplayText, Qt::DisplayRole);
-		m_item->m_standardItem->setData(m_oldCheckState, Qt::CheckStateRole);
-
-		m_item->setModified();
-		m_item->updateVisibility();
-		m_item->setIsCommandExecuting(false);
-	}
-private:
-	QVariant m_oldDisplayText;
-	QVariant m_oldCheckState;
-
-	QVariant m_newDisplayText;
-	QVariant m_newCheckState;
-	Graph2dWindowDataItem* m_item;
-};
-
-
 void Graph2dWindowDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
@@ -275,7 +224,6 @@ void Graph2dWindowDataItem::updateVisibility()
 
 	renderView();
 }
-
 
 void Graph2dWindowDataItem::updateVisibility(bool visible)
 {

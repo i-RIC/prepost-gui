@@ -279,6 +279,8 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
+           datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
+           datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
@@ -577,6 +579,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
+           datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
+           datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \

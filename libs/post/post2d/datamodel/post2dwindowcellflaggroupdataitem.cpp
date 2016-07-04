@@ -4,6 +4,8 @@
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include "private/post2dwindowcellflaggroupdataitem_setsettingcommand.h"
+
 #include <guicore/project/colorsource.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridattributeintegeroptioncell.h>
@@ -32,36 +34,6 @@ QDialog* Post2dWindowCellFlagGroupDataItem::propertyDialog(QWidget* p)
 	d->setOpacityPercent(m_opacityPercent);
 	return d;
 }
-
-class Post2dWindowCellFlagGroupDataItem::SetSettingCommand : public QUndoCommand
-{
-public:
-	SetSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, int newo, Post2dWindowCellFlagGroupDataItem* item) :
-		QUndoCommand(Post2dWindowCellFlagGroupDataItem::tr("Cell Flag Setting"))
-	{
-		m_newSettings = newsettings;
-		m_newOpacityPercent = newo;
-
-		m_oldSettings = item->settings();
-		m_oldOpacityPercent = item->m_opacityPercent;
-		m_item = item;
-	}
-	void redo() {
-		m_item->setSettings(m_newSettings, m_newOpacityPercent);
-		m_item->renderGraphicsView();
-	}
-	void undo() {
-		m_item->setSettings(m_oldSettings, m_oldOpacityPercent);
-		m_item->renderGraphicsView();
-	}
-private:
-	QList<Post2dWindowCellFlagSetting> m_newSettings;
-	int m_newOpacityPercent;
-
-	QList<Post2dWindowCellFlagSetting> m_oldSettings;
-	int m_oldOpacityPercent;
-	Post2dWindowCellFlagGroupDataItem* m_item;
-};
 
 void Post2dWindowCellFlagGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
 {
