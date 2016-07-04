@@ -276,7 +276,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	Grid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
-	if (grid->gridAttribute(attName)->isCustomModified()) {
+	if (grid->gridAttribute(attName)->isCustomModified() && ! iricMainWindow()->cuiMode()) {
 		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
@@ -289,7 +289,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 		}
 	}
 	grid->setModified();
-	if (! nomessage) {
+	if (! nomessage && ! iricMainWindow()->cuiMode()) {
 		QMessageBox::information(mainWindow(), tr("Mapping geographic data finished"), tr("Mapping geographic data finished successfully."));
 	}
 }

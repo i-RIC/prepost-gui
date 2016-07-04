@@ -45,6 +45,8 @@ public:
 	PostZoneDataContainer* zoneContainer2D(const std::string& zoneName) const;
 	PostZoneDataContainer* zoneContainer3D(const std::string& zoneName) const;
 	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
+	PostZoneDataContainer* firstZoneContainer() const;
+
 	bool isDataAvailable() const;
 	bool isDataAvailable1D() const;
 	bool isDataAvailable2D() const;
@@ -62,6 +64,8 @@ public:
 
 	/// File ID that can be used with cgnslib functions.
 	int fileId() const;
+
+	void exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format);
 
 protected:
 	void timerEvent(QTimerEvent*) override;

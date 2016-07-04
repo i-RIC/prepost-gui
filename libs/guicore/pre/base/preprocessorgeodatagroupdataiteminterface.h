@@ -26,6 +26,7 @@ public:
 	virtual void addCopyPolygon(GeoDataPolygon* polygon) = 0;
 	virtual const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const = 0;
 	virtual GridAttributeDimensionsContainer* dimensions() const = 0;
+	virtual PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() = 0;
 
 	// @todo ugly interface!
 	virtual void openCrossSectionWindow(GeoDataRiverSurvey* rs, double crosssection) = 0;

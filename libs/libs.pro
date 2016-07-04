@@ -18,4 +18,6 @@ SUBDIRS = \
 	solverconsole \
 	postbase \
 	post \
-	pre
+	pre \
+	gui \
+	iricpython

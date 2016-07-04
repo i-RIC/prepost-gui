@@ -12,13 +12,12 @@ class GeoDataNetcdf;
 
 class GD_NETCDF_EXPORT GeoDataNetcdfGdalImporter : public GeoDataImporter
 {
-
-public:
 	Q_OBJECT
 
 public:
-	GeoDataNetcdfGdalImporter(GeoDataCreator* creator) : GeoDataImporter(creator) {}
-	virtual ~GeoDataNetcdfGdalImporter() {}
+	GeoDataNetcdfGdalImporter(GeoDataCreator* creator);
+	virtual ~GeoDataNetcdfGdalImporter();
+
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;

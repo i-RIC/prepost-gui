@@ -1,6 +1,8 @@
 #ifndef PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEM_H
 #define PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEM_H
 
+#include "../pre_global.h"
+
 #include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
 
 class Grid;
@@ -13,7 +15,7 @@ class PreProcessorGridDataItem;
 
 class QAction;
 
-class PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemInterface
+class PREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemInterface
 {
 	Q_OBJECT
 

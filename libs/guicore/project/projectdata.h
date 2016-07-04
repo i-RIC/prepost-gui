@@ -33,21 +33,18 @@ class GUICOREDLL_EXPORT ProjectData : public QObject
 public:
 	/// File name of lock file (that is put just under the workfolder)
 	const static QString LOCKFILENAME;
-	/// Constructor
-	explicit ProjectData(const QString& workdir, iRICMainWindowInterface* parent);
-	/// Destructor
+
+	ProjectData(const QString& workdir, iRICMainWindowInterface* parent);
 	virtual ~ProjectData();
+
 	/// Returns the absolute file path of a file included in the project data.
 	QString absoluteFileName(const QString& relativeFileName) const;
 	/// Work directory
-	const QString& workDirectory() {return m_workDirectory;}
+	QString workDirectory() const;
 	/// File name to save (or loaded from)
-	const QString& filename() {return m_filename;}
+	QString filename() const;
 	/// Set file name to save
-	void setFilename(const QString& fname, bool isFolder) {
-		m_filename = fname;
-		m_folderProject = isFolder;
-	}
+	void setFilename(const QString& fname, bool isFolder);
 	/// Enter post only mode
 	void setPostOnlyMode();
 	/// Returns true if in post only mode
@@ -65,9 +62,9 @@ public:
 	/// Save project data into the work folder.
 	bool save();
 	/// Main file (project.xml)
-	ProjectMainFile* mainfile() const {return m_mainfile;}
+	ProjectMainFile* mainfile() const;
 	/// Solver definition
-	SolverDefinition* solverDefinition() const {return m_solverDefinition;}
+	SolverDefinition* solverDefinition() const;
 	/// Setter function for solver definition
 	void setSolverDefinition(SolverDefinition* def);
 	/// Switch to the default cgns file.
@@ -100,18 +97,15 @@ public slots:
 	/// Open work directory with Explorer.
 	void openWorkDirectory();
 
-private slots:
-	/// Cancel open / save operation.
-	void cancel() {m_canceled = true;}
-	/// Event handler for open / save operation finish signal.
-	void handleFinish() {m_finished = true;}
-
 private:
 	/// Open lock file as write mode, so that other process can know that this project
 	/// folder is active.
 	bool lock();
 	/// Close lock file.
 	void unlock();
+
+	QString lockFileName() const;
+
 	void checkGridConditions();
 	/// Initializes project data for the specified solver definition.
 	void initForSolverDefinition();
@@ -129,14 +123,8 @@ private:
 	QFile* m_lockFile;
 	/// iRIC MainWindow
 	iRICMainWindowInterface* m_mainWindow;
-	/// When opening or saving is finished, it's true.
-	bool m_finished;
-	/// When opening or saving is canceled, it's true.
-	bool m_canceled;
 	/// Post only mode (i. e. solver definition does not exist);
 	bool m_isPostOnlyMode;
-	/// Wait dialog shown when opening or saving project.
-	WaitDialog* m_waitDialog;
 };
 
 #endif // PROJECTDATA_H

@@ -8,16 +8,14 @@ class GeoDataPointmapSTLImporter : public GeoDataImporter
 	Q_OBJECT
 
 public:
-	/// Constructor
 	GeoDataPointmapSTLImporter(GeoDataCreator* creator);
+
 	bool importData(GeoData* data, int index, QWidget* w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 
-protected:
-	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
-
 private:
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 	bool checkHeader(const QString& filename, QWidget* w);
 };
 

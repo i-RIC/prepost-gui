@@ -2,6 +2,7 @@
 #include "gridexporterfactory.h"
 
 #include <guicore/pre/grid/gridexporterinterface.h>
+#include <misc/iricrootpath.h>
 
 #include <QApplication>
 #include <QDir>
@@ -31,7 +32,7 @@ GridExporterFactory::GridExporterFactory()
 	// load plug-in exporters.
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	QDir pluginsDir(qApp->applicationDirPath());
+	QDir pluginsDir(iRICRootPath::get());
 	pluginsDir.cdUp();
 	pluginsDir.cdUp();
 	pluginsDir.cd("gridexporter_plugins");

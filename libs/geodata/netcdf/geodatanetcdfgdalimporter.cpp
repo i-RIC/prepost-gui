@@ -20,6 +20,13 @@
 #include <gdal_priv.h>
 #include <ogr_spatialref.h>
 
+GeoDataNetcdfGdalImporter::GeoDataNetcdfGdalImporter(GeoDataCreator* creator) :
+	GeoDataImporter {"gdal", tr("GDAL"), creator}
+{}
+
+GeoDataNetcdfGdalImporter::~GeoDataNetcdfGdalImporter()
+{}
+
 const QStringList GeoDataNetcdfGdalImporter::fileDialogFilters()
 {
 	QStringList ret;

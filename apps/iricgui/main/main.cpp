@@ -1,4 +1,3 @@
-#include "misc/wrongsettingexception.h"
 #include <vtkAutoInit.h>
 
 VTK_MODULE_INIT(vtkRenderingOpenGL);
@@ -6,7 +5,10 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 VTK_MODULE_INIT(vtkRenderingFreeType);
 VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 
-#include "iricmainwindow.h"
+#include <gui/main/iricmainwindow.h>
+#include <misc/iricrootpath.h>
+
+#include <misc/errormessage.h>
 
 #include <QApplication>
 #include <QDir>
@@ -36,7 +38,10 @@ int main(int argc, char* argv[])
 	// install translators.
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
+
 	QString exeFolder = QApplication::applicationDirPath();
+	iRICRootPath::set(exeFolder);
+
 	QString langFolder = QDir(exeFolder).absoluteFilePath("languages");
 
 	QStringList nameFilters;
@@ -83,8 +88,8 @@ int main(int argc, char* argv[])
 			}
 		}
 		return a.exec();
-	} catch (const WrongSettingException& e) {
-		QMessageBox::critical(&splash, iRICMainWindow::tr("Error"), e.what());
+	} catch (const ErrorMessage& msg) {
+		QMessageBox::critical(&splash, iRICMainWindow::tr("Error"), msg);
 		return 0;
 	}
 }

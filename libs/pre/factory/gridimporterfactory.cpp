@@ -7,10 +7,12 @@
 #include "gridimporterfactory.h"
 
 #include <guicore/pre/grid/gridimporterinterface.h>
+#include <misc/iricrootpath.h>
 
 #include <QApplication>
 #include <QDir>
 #include <QFileInfo>
+#include <QLocale>
 #include <QPluginLoader>
 #include <QSettings>
 #include <QTranslator>
@@ -42,7 +44,7 @@ GridImporterFactory::GridImporterFactory()
 
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	QDir pluginsDir(qApp->applicationDirPath());
+	QDir pluginsDir(iRICRootPath::get());
 	pluginsDir.cdUp();
 	pluginsDir.cdUp();
 	pluginsDir.cd("gridimporter_plugins");

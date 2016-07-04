@@ -20,18 +20,17 @@ private:
 	};
 
 public:
-	/// Constructor
 	GeoDataPointmapRealImporter(GeoDataCreator* creator);
+
 	bool importData(GeoData* data, int index, QWidget* w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	GDALDataset* poDataset;
 	GDALRasterBand* poBand;
 
-protected:
+private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
 
-private:
 	int m_filterValue;
 };
 

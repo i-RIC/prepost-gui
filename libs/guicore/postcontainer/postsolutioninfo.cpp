@@ -617,6 +617,17 @@ PostZoneDataContainer* PostSolutionInfo::zoneContainer(Dimension dim, const std:
 	else {return zoneContainer3D(zoneName);}
 }
 
+PostZoneDataContainer* PostSolutionInfo::firstZoneContainer() const
+{
+	auto conts1d = zoneContainers1D();
+	if (conts1d.length() > 0) {return conts1d.first();}
+	auto conts2d = zoneContainers2D();
+	if (conts2d.length() > 0) {return conts2d.first();}
+	auto conts3d = zoneContainers3D();
+	if (conts3d.length() > 0) {return conts3d.first();}
+	return nullptr;
+}
+
 int PostSolutionInfo::toIntDimension(Dimension dim)
 {
 	switch (dim) {
@@ -839,6 +850,54 @@ void PostSolutionInfo::exportCalculationResult()
 			return;
 		}
 		step += m_exportSetting.skipRate;
+		++ fileIndex;
+	}
+	iricMainWindow()->setContinuousSnapshotInProgress(false);
+	setCurrentStep(stepBackup);
+}
+
+void PostSolutionInfo::exportCalculationResult(const std::string& folder, const std::string& prefix, const std::vector<int> steps, PostDataExportDialog::Format format)
+{
+	PostZoneDataContainer* cont = firstZoneContainer();
+	int iMin, iMax, jMin, jMax, kMin, kMax;
+
+	vtkStructuredGrid* sGrid = vtkStructuredGrid::SafeDownCast(cont->data());
+	if (sGrid != nullptr) {
+		// structured grid
+		int dim[3];
+		sGrid->GetDimensions(dim);
+		iMin = 0; iMax = dim[0] - 1;
+		jMin = 0; jMax = dim[1] - 1;
+		kMin = 0; kMax = dim[2] - 1;
+	}
+
+	iricMainWindow()->setContinuousSnapshotInProgress(true);
+	int stepBackup = currentStep();
+
+	QDir outputFolder(folder.c_str());
+	std::unique_ptr<PostZoneDataExporter> exporter;
+
+	if (format == PostDataExportDialog::Format::VTKASCII) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter{ projectData()->workDirectory(), PostZoneDataVtkExporter::Mode::ASCII }};
+	} else if (format == PostDataExportDialog::Format::VTKBinary) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataVtkExporter{ projectData()->workDirectory(), PostZoneDataVtkExporter::Mode::BINARY }};
+	} else if (format == PostDataExportDialog::Format::CSV) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataCsvExporter {}};
+	} else if (format == PostDataExportDialog::Format::ESRIShape) {
+		exporter = std::unique_ptr<PostZoneDataExporter> {new PostZoneDataShapeExporter {projectData()->workDirectory()}};
+	}
+
+	int fileIndex = 1;
+	for (int step : steps) {
+		setCurrentStep(step);
+		double time = currentTimeStep();
+		QString fileName = outputFolder.absoluteFilePath(exporter->filename(prefix.c_str(), fileIndex));
+		bool ok = exporter->exportToFile(cont, fileName, time, iMin, iMax, jMin, jMax, kMin, kMax, projectData());
+		if (! ok) {
+			setCurrentStep(stepBackup);
+			iricMainWindow()->setContinuousSnapshotInProgress(false);
+			return;
+		}
 		++ fileIndex;
 	}
 	iricMainWindow()->setContinuousSnapshotInProgress(false);

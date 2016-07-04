@@ -23,6 +23,7 @@
 #include <guicore/scalarstocolors/scalarstocolorscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
+#include <misc/iricrootpath.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -32,7 +33,7 @@
 #include <triangle/triangle.h>
 
 #include <QAction>
-#include <QCoreApplication>
+#include <QApplication>
 #include <QFile>
 #include <QMenu>
 #include <QMessageBox>
@@ -1945,7 +1946,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	PreProcessorGridAndGridCreatingConditionDataItemInterface* di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(m_conditionDataItem->parent());
 	std::string zoneName = di->zoneName();
 
-	QString triExe = QCoreApplication::instance()->applicationDirPath().append("/triangle.exe");
+	QString triExe = iRICRootPath::get().append("/triangle.exe");
 	QString workFolder = projectData()->workDirectory();
 	QString polyFileName = QString("%1.poly").arg(zoneName.c_str());
 	QString fileArgs = "-ve";

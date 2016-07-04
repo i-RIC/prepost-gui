@@ -1,9 +1,14 @@
 #ifndef PREPROCESSORDATAMODEL_H
 #define PREPROCESSORDATAMODEL_H
 
+#include "pre_global.h"
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <QList>
 #include <QMap>
+
+namespace iRICPython {
+	class Pre;
+} // iRICPython
 
 class SolverDefinitionGridType;
 class PreProcessorWindow;
@@ -32,7 +37,7 @@ class QSignalMapper;
 
 /// This class handles ALL informations that are handled
 /// inside pre-processing window.
-class PreProcessorDataModel : public PreProcessorDataModelInterface
+class PREDLL_EXPORT PreProcessorDataModel : public PreProcessorDataModelInterface
 {
 	Q_OBJECT
 
@@ -139,6 +144,8 @@ public:
 	friend class PreProcessorRootDataItem;
 	friend class PreProcessorWindow;
 	friend class PreProcessorWindowActionManager;
+
+	friend class iRICPython::Pre;
 };
 
 #endif // PREPROCESSORDATAMODEL_H

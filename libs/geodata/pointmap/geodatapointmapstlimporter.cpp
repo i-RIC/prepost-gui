@@ -14,12 +14,10 @@
 #include <vtkVertex.h>
 
 GeoDataPointmapSTLImporter::GeoDataPointmapSTLImporter(GeoDataCreator* creator) :
-	GeoDataImporter(creator)
-{
-	m_caption = tr("Stereolithography (STL)");
-}
+	GeoDataImporter("stl", tr("Stereolithography (STL)"), creator)
+{}
 
-bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, QWidget* w)
+bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
 {
 	return checkHeader(filename, w);
 }

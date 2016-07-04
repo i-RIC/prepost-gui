@@ -6,6 +6,9 @@
 
 class AnimationControllerInterface;
 class CoordinateSystemBuilder;
+class ExecuterErrorHandler;
+class ExecuterI;
+class ExecuterWatcher;
 class PreProcessorWindowInterface;
 class ProjectData;
 class ProjectWorkspace;
@@ -49,6 +52,9 @@ public:
 	virtual const QLocale locale() const = 0;
 	virtual const QProcessEnvironment& processEnvironment() const = 0;
 	virtual QNetworkProxy networkProxy() const = 0;
+
+	virtual ExecuterWatcher* buildExecuteWatcher(ExecuterI* executer) = 0;
+	virtual bool cuiMode() const = 0;
 
 public slots:
 	virtual bool saveProject() = 0;

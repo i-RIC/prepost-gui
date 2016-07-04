@@ -5,6 +5,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
 #include <misc/errormessage.h>
+#include <misc/iricrootpath.h>
 #include <misc/xmlsupport.h>
 
 #include <QCoreApplication>
@@ -93,7 +94,7 @@ QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram
 	QList<GridCreatingConditionCreator*> ret;
 	QString gcFolder("gridcreators");
 
-	QDir inst(QCoreApplication::instance()->applicationDirPath());
+	QDir inst(iRICRootPath::get());
 	inst.cdUp();
 	inst.cdUp();
 	QString targetDirectory = inst.absoluteFilePath(gcFolder);

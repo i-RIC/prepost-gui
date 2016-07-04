@@ -290,7 +290,7 @@ void GeoDataPolygonTriangleThread::runTriangle()
 	}
 	clearTrianglateio(&out);
 
-	char arg[] = "pD";
+	char arg[] = "pDQ";
 	triangulate(&(arg[0]), &in, &out, 0);
 
 	// free memory

@@ -7,75 +7,44 @@
 #include "projectdata.h"
 #include "projectmainfile.h"
 #include "projectworkspace.h"
-//#include "commongui/waitdialog.h"
-//#include "main/iricmainwindowactionmanager.h"
-//#include "project/projectpropertydialog.h"
-//#include "projectpropertydialog.h"
-//#include "solverconsole/solverconsolewindow.h"
+#include "private/projectdatacopythread.h"
+#include "private/projectdatamovethread.h"
 
-#include <guibase/waitdialog.h>
+#include <guibase/executer/executerwatcher.h>
+#include <guibase/executer/silentexecuterwatcher.h>
+#include <guibase/executer/threadexecuter.h>
+#include <guibase/executer/ziparchiveprocessexecuter.h>
+#include <guibase/executer/unziparchiveprocessexecuter.h>
 #include <misc/filesystemfunction.h>
 #include <misc/ziparchive.h>
 
+#include <memory>
+
 #include <QCoreApplication>
-#include <QCryptographicHash>
 #include <QDesktopServices>
 #include <QDir>
 #include <QFile>
 #include <QMessageBox>
 #include <QProcess>
-#include <QThread>
 #include <QTime>
 #include <QUrl>
 
-class ProjectDataMoveThread : public QThread
-{
-public:
-	ProjectDataMoveThread(const QString& from, const QString& to, QObject* parent)
-		: QThread(parent) {
-		m_from = from;
-		m_to = to;
-	}
-	bool result() {return m_result;}
-protected:
-	void run() {
-		m_result = iRIC::moveDirContent(m_from, m_to);
-	}
-private:
-	QString m_from;
-	QString m_to;
-	bool m_result;
-};
+namespace {
 
-class ProjectDataCopyThread : public QThread
-{
-public:
-	ProjectDataCopyThread(const QString& from, const QString& to, QObject* parent)
-		: QThread(parent) {
-		m_from = from;
-		m_to = to;
-	}
-	bool result() {return m_result;}
-protected:
-	void run() {
-		m_result = iRIC::copyDirRecursively(m_from, m_to);
-	}
-private:
-	QString m_from;
-	QString m_to;
-	bool m_result;
-};
+} // namespace
 
 const QString ProjectData::LOCKFILENAME = "lock";
 
 ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent) :
-	QObject(parent)
+	QObject(parent),
+	m_mainWindow {parent},
+	m_workDirectory {workdir},
+	m_solverDefinition {nullptr},
+	m_folderProject {false},
+	m_isPostOnlyMode {false},
+	m_lockFile {nullptr},
+	m_mainfile {new ProjectMainFile(this)}
 {
-	m_mainWindow = parent;
-	m_workDirectory = workdir;
-	m_solverDefinition = nullptr;
-	m_folderProject = false;
-	m_isPostOnlyMode = false;
 	// if the workdirectory doesn't exists, make it.
 	QDir wdir(m_workDirectory);
 	if (! wdir.exists()) {
@@ -83,9 +52,6 @@ ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent
 		parent.cdUp();
 		parent.mkdir(wdir.dirName());
 	}
-	// create ProjectMainFile.
-	m_mainfile = new ProjectMainFile(this);
-	m_lockFile = nullptr;
 	lock();
 	connect(m_mainfile, SIGNAL(cgnsFileSwitched()), parent, SLOT(handleCgnsSwitch()));
 
@@ -115,6 +81,22 @@ QString ProjectData::absoluteFileName(const QString& relativeFileName) const
 	return workdir.absoluteFilePath(relativeFileName);
 }
 
+QString ProjectData::workDirectory() const
+{
+	return m_workDirectory;
+}
+
+QString ProjectData::filename() const
+{
+	return m_filename;
+}
+
+void ProjectData::setFilename(const QString& fname, bool isFolder)
+{
+	m_filename = fname;
+	m_folderProject = isFolder;
+}
+
 void ProjectData::setPostOnlyMode()
 {
 	m_isPostOnlyMode = true;
@@ -127,48 +109,20 @@ bool ProjectData::isPostOnlyMode() const
 
 bool ProjectData::unzipFrom(const QString& filename)
 {
-	// Unzip archive file
-	QProcess* process = iRIC::createUnzipArchiveProcess(filename, workDirectory());
-	m_finished = false;
-	connect(process, SIGNAL(finished(int)), this, SLOT(handleFinish()));
-	// wait for 3 second first.
-	m_finished = process->waitForFinished(3000);
-	qApp->processEvents();
-	iRICMainWindowInterface* mw = mainWindow();
-	if (mw != nullptr) {mw->enterModelessDialogMode();}
-	if (! m_finished) {
-		int prog = 10;
-		// show dialog and wait.
-		m_canceled = false;
-		m_waitDialog = new WaitDialog(m_mainWindow);
-		m_waitDialog->showProgressBar();
-		m_waitDialog->setRange(0, 100);
-		m_waitDialog->setUnknownLimitMode(300);
-		m_waitDialog->setProgress(prog);
-		m_waitDialog->setMessage(tr("Loading project file..."));
+	auto executer = new UnzipArchiveProcessExecuter(filename, workDirectory());
+	auto mw = mainWindow();
 
-		m_waitDialog->show();
-		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled) {
-			qApp->processEvents();
-			process->waitForFinished(200);
-			m_waitDialog->setProgress(prog);
-			++prog;
-		}
-		m_waitDialog->hide();
-		delete m_waitDialog;
-		m_waitDialog = nullptr;
-		if (m_canceled) {
-			// not finished, but canceled.
-			process->kill();
-			delete process;
-			mainWindow()->exitModelessDialogMode();
-			return false;
-		}
+	std::unique_ptr<ExecuterWatcher> watcher;
+	if (mw == nullptr) {
+		watcher = std::unique_ptr<ExecuterWatcher> {new SilentExecuterWatcher(executer)};
+	} else {
+		watcher = std::unique_ptr<ExecuterWatcher> {mw->buildExecuteWatcher(executer)};
 	}
-	delete process;
-	if (mw != nullptr) {mw->exitModelessDialogMode();}
-	// save the filename.
+	watcher->setMessage(tr("Loading project file..."));
+	watcher->execute();
+
+	if (executer->isCanceled()) {return false;}
+
 	m_filename = filename;
 	return true;
 }
@@ -215,6 +169,16 @@ bool ProjectData::save()
 	return ret;
 }
 
+ProjectMainFile* ProjectData::mainfile() const
+{
+	return m_mainfile;
+}
+
+SolverDefinition* ProjectData::solverDefinition() const
+{
+	return m_solverDefinition;
+}
+
 bool ProjectData::zipTo(const QString& filename)
 {
 	QStringList filelist;
@@ -226,50 +190,22 @@ bool ProjectData::zipTo(const QString& filename)
 	QString outfile = m_mainWindow->workspace()->tmpFileName();
 	outfile.append(".zip");
 
-	// zip archive file
-	QProcess* process = iRIC::createZipArchiveProcess(outfile, workDirectory(), filelist);
-	m_finished = false;
-	connect(process, SIGNAL(finished(int)), this, SLOT(handleFinish()));
+	auto executer = new ZipArchiveProcessExecuter(outfile, workDirectory(), filelist);
+	auto mw = mainWindow();
 
-	// wait for 3 second first.
-	int waitTime = 3000;
-	m_finished = process->waitForFinished(waitTime);
-	qApp->processEvents();
-	if (! m_finished) {
-		int prog = 10;
-		// show dialog and wait.
-		m_canceled = false;
-		m_waitDialog = new WaitDialog(m_mainWindow);
-		m_waitDialog->showProgressBar();
-		m_waitDialog->setRange(0, 100);
-		m_waitDialog->setUnknownLimitMode(300);
-		m_waitDialog->setProgress(prog);
-		m_waitDialog->setMessage(tr("Saving project file..."));
-
-		m_waitDialog->show();
-		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled) {
-			qApp->processEvents();
-			process->waitForFinished(200);
-			m_waitDialog->setProgress(prog);
-			++ prog;
-		}
-		m_waitDialog->setFinished();
-		m_waitDialog->hide();
-		delete m_waitDialog;
-		m_waitDialog = nullptr;
-		if (m_canceled) {
-			// not finished, but canceled.
-			process->kill();
-			delete process;
-
-			// remove the temporary file that zip process used. it is created
-			// in the workspace.
-			mainWindow()->workspace()->removeZipTrashes();
-			return false;
-		}
+	std::unique_ptr<ExecuterWatcher> watcher;
+	if (mw == nullptr) {
+		watcher = std::unique_ptr<ExecuterWatcher> {new SilentExecuterWatcher(executer)};
+	} else {
+		watcher = std::unique_ptr<ExecuterWatcher> {mw->buildExecuteWatcher(executer)};
 	}
-	delete process;
+	watcher->setMessage(tr("Saving project file..."));
+	watcher->execute();
+
+	if (executer->isCanceled()) {
+		mainWindow()->workspace()->removeZipTrashes();
+		return false;
+	}
 	if (QFile::exists(filename)) {
 		bool ok = QFile::remove(filename);
 		if (! ok) {
@@ -291,18 +227,9 @@ bool ProjectData::zipTo(const QString& filename)
 
 QString ProjectData::newWorkfolderName(const QDir& workspace)
 {
-	QCryptographicHash hash(QCryptographicHash::Md5);
-	QTime current = QTime::currentTime();
-	qsrand(current.msec());
-	hash.addData(QByteArray(1, qrand()));
-
-	QString dirname = hash.result().toHex();
-	while (workspace.exists(dirname)) {
-		hash.addData(QByteArray(1, qrand()));
-		dirname = hash.result().toHex();
-	}
-	return workspace.absoluteFilePath(dirname);
+	return iRIC::getTempFileName(workspace.absolutePath());
 }
+
 bool ProjectData::switchToDefaultCgnsFile()
 {
 	QString current = m_mainfile->cgnsFileList()->current()->filename();
@@ -339,28 +266,8 @@ const VersionNumber ProjectData::version()
 
 QString ProjectData::tmpFileName() const
 {
-	QCryptographicHash hash(QCryptographicHash::Md5);
-	QTime current = QTime::currentTime();
-	qsrand(current.msec());
-	hash.addData(QByteArray(1, qrand()));
-	QDir workDir(m_workDirectory);
-
-	QString filename = hash.result().toHex();
-	while (workDir.exists(filename)) {
-		hash.addData(QByteArray(1, qrand()));
-		filename = hash.result().toHex();
-	}
-	return workDir.absoluteFilePath(filename);
+	return iRIC::getTempFileName(m_workDirectory);
 }
-
-/*
-void ProjectData::showPropertyDialog()
-{
-	ProjectPropertyDialog dialog(mainWindow());
-	dialog.setProjectData(this);
-	dialog.exec();
-}
-*/
 
 void ProjectData::checkGridConditions()
 {
@@ -379,7 +286,7 @@ void ProjectData::checkGridConditions()
 			ngtypes.append(gt->caption());
 		}
 	}
-	if (! ngtypes.empty()) {
+	if (! ngtypes.empty() && m_mainWindow) {
 		// NG grid types were found.
 		QMessageBox::warning(
 			m_mainWindow, tr("Warning"),
@@ -390,8 +297,7 @@ void ProjectData::checkGridConditions()
 bool ProjectData::lock()
 {
 	unlock();
-	QString lockFilename = QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
-	m_lockFile = new QFile(lockFilename, this);
+	m_lockFile = new QFile(lockFileName(), this);
 	bool ok = m_lockFile->open(QIODevice::WriteOnly);
 	if (! ok) {
 		delete m_lockFile;
@@ -406,9 +312,13 @@ void ProjectData::unlock()
 	if (m_lockFile == nullptr) {return;}
 	m_lockFile->close();
 	delete m_lockFile;
-	QString lockFilename = QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
-	QFile::remove(lockFilename);
+	QFile::remove(lockFileName());
 	m_lockFile = nullptr;
+}
+
+QString ProjectData::lockFileName() const
+{
+	return QDir(m_workDirectory).absoluteFilePath(ProjectData::LOCKFILENAME);
 }
 
 bool ProjectData::moveTo(const QString& newWorkFolder)
@@ -439,69 +349,36 @@ bool ProjectData::moveTo(const QString& newWorkFolder)
 		return true;
 	}
 #endif // Q_OS_WIN32
-
-	/*
-		if (QFile::exists(newWorkFolder))
-		{
-			// The specified folder or file already exists. Try to remove it first.
-			bool ok = iRIC::rmdirRecursively(newWorkFolder);
-			// removing the existing folder failed.
-			if (! ok){return false;}
-		}
-	*/
 	// move current folder to new folder.
 	unlock();
 	mainfile()->postSolutionInfo()->close();
 
 	ProjectDataMoveThread* thread = new ProjectDataMoveThread(m_workDirectory, newWorkFolder, this);
-	m_finished = false;
-	connect(thread, SIGNAL(finished()), this, SLOT(handleFinish()));
-	thread->start();
-	/// wait for 3 seconds first.
-	int waitTime = 3000;
-	m_finished = thread->wait(waitTime);
-	qApp->processEvents();
-	if (! m_finished) {
-		int prog = 10;
-		// show dialog and wait.
-		m_canceled = false;
-		m_waitDialog = new WaitDialog(m_mainWindow);
-		m_waitDialog->showProgressBar();
-		m_waitDialog->setRange(0, 100);
-		m_waitDialog->setUnknownLimitMode(300);
-		m_waitDialog->setProgress(prog);
-		m_waitDialog->setMessage(tr("Saving project..."));
+	ThreadExecuter* executer = new ThreadExecuter(thread);
+	auto mw = mainWindow();
 
-		m_waitDialog->show();
-		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled) {
-			qApp->processEvents();
-			thread->wait(200);
-			m_waitDialog->setProgress(prog);
-			++prog;
-		}
-		m_waitDialog->setFinished();
-		m_waitDialog->hide();
-		delete m_waitDialog;
-		m_waitDialog = nullptr;
-		if (m_canceled) {
-			// not finished, but canceled.
-			thread->terminate();
-			delete thread;
-			lock();
-			return false;
-		}
+	std::unique_ptr<ExecuterWatcher> watcher;
+	if (mw == nullptr) {
+		watcher = std::unique_ptr<ExecuterWatcher> {new SilentExecuterWatcher(executer)};
+	} else {
+		watcher = std::unique_ptr<ExecuterWatcher> {mw->buildExecuteWatcher(executer)};
 	}
-	bool ok = thread->result();
-	if (! ok) {
+	watcher->setMessage(tr("Saving project..."));
+	watcher->execute();
+
+	if (executer->isCanceled()) {
+		lock();
+		return false;
+	}
+
+	if (! thread->result()) {
 		// moving failed. keep the current workspace.
 		lock();
 		return false;
 	}
 	// moving succeeded.
 	m_workDirectory = newWorkFolder;
-	ok = lock();
-	return ok;
+	return lock();
 }
 
 bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
@@ -520,53 +397,28 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 		}
 		qApp->processEvents();
 	}
+
 	// copy current folder to new folder.
 	unlock();
 	mainfile()->postSolutionInfo()->close();
 
 	ProjectDataCopyThread* thread = new ProjectDataCopyThread(m_workDirectory, newWorkFolder, this);
-	m_finished = false;
-	connect(thread, SIGNAL(finished()), this, SLOT(handleFinish()));
-	thread->start();
-	/// wait for 3 seconds first.
-	int waitTime = 3000;
-	bool ok = false;
-	m_finished = thread->wait(waitTime);
-	qApp->processEvents();
-	if (! m_finished) {
-		int prog = 10;
-		// show dialog and wait.
-		m_canceled = false;
-		m_waitDialog = new WaitDialog(m_mainWindow);
-		m_waitDialog->showProgressBar();
-		m_waitDialog->setRange(0, 100);
-		m_waitDialog->setUnknownLimitMode(300);
-		m_waitDialog->setProgress(prog);
-		m_waitDialog->setMessage(tr("Saving project..."));
+	ThreadExecuter* executer = new ThreadExecuter(thread);
+	auto mw = mainWindow();
 
-		m_waitDialog->show();
-		connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
-		while (! m_finished && ! m_canceled) {
-			qApp->processEvents();
-			thread->wait(200);
-			m_waitDialog->setProgress(prog);
-			++prog;
-		}
-		m_waitDialog->setFinished();
-		m_waitDialog->hide();
-		delete m_waitDialog;
-		m_waitDialog = nullptr;
-		if (m_canceled) {
-			// not finished, but canceled.
-			thread->terminate();
-			thread->wait();
-			delete thread;
-
-			goto ERROR;
-		}
+	std::unique_ptr<ExecuterWatcher> watcher;
+	if (mw == nullptr) {
+		watcher = std::unique_ptr<ExecuterWatcher> {new SilentExecuterWatcher(executer)};
+	} else {
+		watcher = std::unique_ptr<ExecuterWatcher> {mw->buildExecuteWatcher(executer)};
 	}
-	ok = thread->result();
-	if (! ok) {
+	watcher->setMessage(tr("Saving project..."));
+	watcher->execute();
+
+	if (executer->isCanceled()) {
+		goto ERROR;
+	}
+	if (! thread->result()) {
 		goto ERROR;
 	}
 
@@ -574,9 +426,7 @@ bool ProjectData::copyTo(const QString& newWorkFolder, bool switchToNewFolder)
 	if (switchToNewFolder) {
 		m_workDirectory = newWorkFolder;
 	}
-
-	ok = lock();
-	return ok;
+	return lock();
 
 ERROR:
 	iRIC::rmdirRecursively(newWorkFolder);

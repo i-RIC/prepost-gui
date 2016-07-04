@@ -17,8 +17,10 @@ public:
 	/// Constructor
 	PreProcessorGeoDataDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGeoDataDataItem();
+
+	GeoData* geoData() const override {return m_geoData;}
 	void setGeoData(GeoData* geodata);
-	GeoData* geoData() override {return m_geoData;}
+
 	int index() const {return m_index;}
 	void setIndex(int index) {m_index = index;}
 	void addCustomMenuItems(QMenu* menu) override;

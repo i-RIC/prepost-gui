@@ -103,6 +103,13 @@ QPolygonF readPolygon(SHPObject* shpo, int partIndex)
 
 } // namespace
 
+GeoDataPolygonImporter::GeoDataPolygonImporter(GeoDataCreator* creator) :
+	GeoDataImporter {"esrishape", tr("ESRI Shape"), creator}
+{}
+
+GeoDataPolygonImporter::~GeoDataPolygonImporter()
+{}
+
 const QStringList GeoDataPolygonImporter::fileDialogFilters()
 {
 	QStringList ret;

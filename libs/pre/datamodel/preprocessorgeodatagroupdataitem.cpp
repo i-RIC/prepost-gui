@@ -146,7 +146,7 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 void PreProcessorGeoDataGroupDataItem::import()
 {
 	QStringList filters;
-	QList<GeoDataImporter*> importers;
+	std::vector<GeoDataImporter*> importers;
 
 	GeoDataFactory& factory = GeoDataFactory::instance();
 	QStringList availableExtensions;
@@ -158,7 +158,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 			QStringList exts = importer->acceptableExtensions();
 			for (auto filter : fils) {
 				filters.append(filter);
-				importers.append(importer);
+				importers.push_back(importer);
 			}
 			for (auto ext : exts) {
 				availableExtensions << QString("*.").append(ext);
@@ -201,7 +201,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return;
 	}
-	PreProcessorGeoDataDataItem* item = nullptr;
+	PreProcessorGeoDataDataItemInterface* item = nullptr;
 
 	WaitDialog* wDialog = nullptr;
 	m_cancelImport = false;
@@ -221,7 +221,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 			QMessageBox::warning(preProcessorWindow(), tr("Canceled"), tr("Importing canceled."));
 			goto ERROR;
 		}
-		item = new PreProcessorGeoDataDataItem(this);
+		item = buildGeoDataDataItem();
 		// first, create an empty geodata.
 		GeoData* geodata = importer->creator()->create(item, m_condition);
 		item->setGeoData(geodata);
@@ -341,6 +341,56 @@ void PreProcessorGeoDataGroupDataItem::doExport()
 		PreProcessorGeoDataDataItem* item = datas.at(index);
 		item->exportGeoData();
 	}
+}
+
+void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemInterface *geoData)
+{
+	// the standarditem is set at the last position, so make it the first.
+	QList<QStandardItem*> takenItems = m_standardItem->takeRow(geoData->standardItem()->row());
+	m_standardItem->insertRows(0, takenItems);
+	// add the item, in the front.
+	m_childItems.push_front(geoData);
+	setupConnectionToGeoData(geoData->geoData());
+	geoData->geoData()->setupDataItem();
+
+	// the background item should be at the last always.
+	// update item map.
+	updateItemMap();
+	// update ZDepthRange
+	updateZDepthRange();
+	informDataChange();
+
+	dataModel()->objectBrowserView()->select(geoData->standardItem()->index());
+	dataModel()->graphicsView()->ResetCameraClippingRange();
+	emit selectGeoData(geoData->standardItem()->index());
+	setModified();
+}
+
+std::vector<GeoDataImporter*> PreProcessorGeoDataGroupDataItem::importers() const
+{
+	std::vector<GeoDataImporter*> ret;
+
+	GeoDataFactory& f = GeoDataFactory::instance();
+
+	const auto creators = f.compatibleCreators(m_condition);
+	for (auto c : creators) {
+		auto importers = c->importers();
+		for (auto imp : importers) {
+			ret.push_back(imp);
+		}
+	}
+
+	return ret;
+}
+
+GeoDataImporter* PreProcessorGeoDataGroupDataItem::importer(const std::string& name) const
+{
+	for (auto imp : importers()) {
+		if (imp->name() == name) {
+			return imp;
+		}
+	}
+	return nullptr;
 }
 
 void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
@@ -799,6 +849,11 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 
 	// this operation is not undo-able.
 	iRICUndoStack::instance().clear();
+}
+
+PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()
+{
+	return new PreProcessorGeoDataDataItem(this);
 }
 
 void PreProcessorGeoDataGroupDataItem::informSelection(VTKGraphicsView* v)

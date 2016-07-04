@@ -1,9 +1,11 @@
 #ifndef PREPROCESSORGEODATAGROUPDATAITEM_H
 #define PREPROCESSORGEODATAGROUPDATAITEM_H
 
+#include "../pre_global.h"
+#include "../misc/preprocessorwindowscalarbarsettingwidget.h"
+
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guibase/scalarbarsetting.h>
-#include "../misc/preprocessorwindowscalarbarsettingwidget.h"
 
 #include <QSignalMapper>
 
@@ -14,12 +16,13 @@ class GridAttributeEditWidget;
 class Grid;
 class QMenu;
 class QModelIndex;
+class GeoDataImporter;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class WaitDialog;
 
-class PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDataGroupDataItemInterface
+class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDataGroupDataItemInterface
 {
 	Q_OBJECT
 
@@ -48,6 +51,7 @@ public:
 	QStringList getGeoDatasNotMapped();
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
 	GridAttributeDimensionsContainer* dimensions() const override {return m_dimensions;}
+	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -69,6 +73,10 @@ public:
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
 	QStringList containedFiles() override;
 	void setDimensionsToFirst();
+
+	void addGeoData(PreProcessorGeoDataDataItemInterface *geoData);
+	std::vector<GeoDataImporter*> importers() const;
+	GeoDataImporter* importer(const std::string& name) const;
 
 public slots:
 	void addGeoData(QObject* creator);

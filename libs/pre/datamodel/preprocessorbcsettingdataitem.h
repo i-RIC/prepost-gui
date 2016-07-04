@@ -54,7 +54,10 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	PreProcessorBCDataItem* bcDataItem() const {return m_bcDataItem;}
 	bool isMapped() const {return m_polygon->isMapped();}
-	GeoData* geoData() override {return m_polygon;}
+
+	GeoData* geoData() const override {return m_polygon;}
+	void setGeoData(GeoData *) override {}
+
 	void informValueRangeChange() override {}
 	void informDataChange() override {}
 

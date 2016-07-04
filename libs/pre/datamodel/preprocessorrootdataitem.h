@@ -1,8 +1,10 @@
 #ifndef PREPROCESSORROOTDATAITEM_H
 #define PREPROCESSORROOTDATAITEM_H
 
-#include <guicore/datamodel/graphicswindowrootdataitem.h>
+#include "../pre_global.h"
 #include "../preprocessordatamodel.h"
+
+#include <guicore/datamodel/graphicswindowrootdataitem.h>
 #include <QList>
 #include <QMap>
 
@@ -22,7 +24,7 @@ class DistanceMeasureGroupDataItem;
 class AttributeBrowserTargetDataItem;
 class TmsImageGroupDataItem;
 
-class PreProcessorRootDataItem : public GraphicsWindowRootDataItem
+class PREDLL_EXPORT PreProcessorRootDataItem : public GraphicsWindowRootDataItem
 {
 	Q_OBJECT
 

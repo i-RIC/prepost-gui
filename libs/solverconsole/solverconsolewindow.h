@@ -13,6 +13,7 @@
 #include <QProcessEnvironment>
 
 class QPlainTextEdit;
+class iRICMainWindowInterface;
 class ProjectData;
 class ProjectDataItem;
 class SolverConsoleWindowProjectDataItem;
@@ -34,7 +35,7 @@ class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	Q_OBJECT
 
 public:
-	SolverConsoleWindow(QWidget* parent);
+	SolverConsoleWindow(iRICMainWindowInterface* parent);
 	~SolverConsoleWindow();
 
 	/// Set newly created project data.
@@ -54,6 +55,10 @@ public:
 	void copy() const override;
 	/// Clear the console log.
 	void clear();
+
+	void startSolverSilently();
+	void terminateSolverSilently();
+	void waitForSolverFinish();
 
 	QPixmap snapshot() override;
 
@@ -99,6 +104,8 @@ private:
 	QProcess* m_process;
 	bool m_solverKilled;
 	bool m_destructing;
+
+	iRICMainWindowInterface* m_iricMainWindow;
 
 	class SetBackgroundColorCommand;
 

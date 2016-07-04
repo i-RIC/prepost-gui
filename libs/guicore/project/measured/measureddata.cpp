@@ -198,7 +198,7 @@ void MeasuredData::setupPolyData()
 	out.normlist = NULL;
 
 	QString argstr;
-	argstr.append("pcj");
+	argstr.append("pcjQ");
 	std::vector<char> arg (argstr.length() + 1);
 	strcpy(arg.data(), iRIC::toStr(argstr).c_str());
 	bool finished = false;

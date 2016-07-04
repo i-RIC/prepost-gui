@@ -26,8 +26,8 @@ class GeoDataRiverSurveyImporter : public GeoDataImporter
 private:
 
 public:
-	/// Constructor
 	GeoDataRiverSurveyImporter(GeoDataCreator* creator);
+
 	bool importData(GeoData* data, int index, QWidget* w) override;
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;

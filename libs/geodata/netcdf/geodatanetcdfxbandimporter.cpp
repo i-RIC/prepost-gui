@@ -1,11 +1,13 @@
 #include "geodatanetcdfreal.h"
 #include "geodatanetcdfxbandimporter.h"
 
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <misc/filesystemfunction.h>
+#include <misc/iricrootpath.h>
 #include <misc/stringtool.h>
 
 #include <QApplication>
@@ -14,6 +16,13 @@
 #include <QList>
 #include <QMessageBox>
 #include <QProcess>
+
+GeoDataNetcdfXbandImporter::GeoDataNetcdfXbandImporter(GeoDataCreator* creator) :
+	GeoDataImporter {"xband", tr("XBand MP RADER data"), creator}
+{}
+
+GeoDataNetcdfXbandImporter::~GeoDataNetcdfXbandImporter()
+{}
 
 const QStringList GeoDataNetcdfXbandImporter::fileDialogFilters()
 {
@@ -46,11 +55,13 @@ bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& 
 	QStringList filenames = dir.entryList(filter, QDir::Files, QDir::Name);
 	m_tmpFileName = dir.absoluteFilePath("tmp.nc");
 
-	int ret = QMessageBox::information(w, tr("Information"), tr("%1 files in the folder %2 are imported.").arg(filenames.size()).arg(QDir::toNativeSeparators(dir.absolutePath())), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-	if (ret == QMessageBox::Cancel) {return false;}
+	if (! item->iricMainWindow()->cuiMode()) {
+		int ret = QMessageBox::information(w, tr("Information"), tr("%1 files in the folder %2 are imported.").arg(filenames.size()).arg(QDir::toNativeSeparators(dir.absolutePath())), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
+		if (ret == QMessageBox::Cancel) {return false;}
+	}
 
 	// use mlitx2nc to convert files into NetCDF file.
-	QString exepath = qApp->applicationDirPath();
+	QString exepath = iRICRootPath::get();
 	QString exeName = QDir(exepath).absoluteFilePath("mlitx2nc.exe");
 	QProcess* mlitx2ncProcess = new QProcess();
 	QStringList args;

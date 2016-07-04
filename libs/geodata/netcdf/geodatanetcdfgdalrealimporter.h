@@ -8,7 +8,7 @@ class GD_NETCDF_EXPORT GeoDataNetcdfGdalRealImporter : public GeoDataNetcdfGdalI
 {
 public:
 	GeoDataNetcdfGdalRealImporter(GeoDataCreator* creator);
-	virtual ~GeoDataNetcdfGdalRealImporter();
+	~GeoDataNetcdfGdalRealImporter();
 
 private:
 	int outputValues(int ncid, int varId, GDALRasterBand* band, GeoDataNetcdf* data) override;

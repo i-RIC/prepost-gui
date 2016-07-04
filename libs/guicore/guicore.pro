@@ -192,6 +192,7 @@ HEADERS += guicore_global.h \
            distancemeasure/distancemeasurecopypropertydialog.h \
            distancemeasure/distancemeasuredataitem.h \
            distancemeasure/distancemeasuregroupdataitem.h \
+           executer/iricmainwindowexecuterwatcher.h \
            measureddata/measureddatafiledataitem.h \
            measureddata/measureddatapointdataitem.h \
            measureddata/measureddatapointgroupdataitem.h \
@@ -201,6 +202,7 @@ HEADERS += guicore_global.h \
            measureddata/measureddatavectorgroupdataitem.h \
            measureddata/measureddatavectorsetting.h \
            measureddata/measureddatavectorsettingdialog.h \
+           misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
            misc/qundocommandhelper.h \
@@ -363,7 +365,9 @@ HEADERS += guicore_global.h \
            project/measured/measureddatacsvimporter.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
+           project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
+           project/private/projectdatamovethread.h \
            solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
            solverdef/private/solverdefinitionabstract_impl.h \
@@ -477,6 +481,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            distancemeasure/distancemeasurecopypropertydialog.cpp \
            distancemeasure/distancemeasuredataitem.cpp \
            distancemeasure/distancemeasuregroupdataitem.cpp \
+           executer/iricmainwindowexecuterwatcher.cpp \
            measureddata/measureddatafiledataitem.cpp \
            measureddata/measureddatapointdataitem.cpp \
            measureddata/measureddatapointgroupdataitem.cpp \
@@ -486,6 +491,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            measureddata/measureddatavectorgroupdataitem.cpp \
            measureddata/measureddatavectorsetting.cpp \
            measureddata/measureddatavectorsettingdialog.cpp \
+           misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
            misc/qundocommandhelper.cpp \
@@ -625,6 +631,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/measured/measureddata.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
+           project/private/projectdatacopythread.cpp \
+           project/private/projectdatamovethread.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \

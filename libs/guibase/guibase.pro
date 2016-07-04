@@ -125,6 +125,14 @@ HEADERS += asciionlylineedit.h \
            colormap/colormapcustomsettingcolor.h \
            colormap/colormapcustomsettingdialog.h \
            colormap/colormapsettingwidget.h \
+           executer/executeri.h \
+           executer/executerwatcher.h \
+           executer/processexecuter.h \
+           executer/silentexecuterwatcher.h \
+           executer/threadexecuter.h \
+           executer/unziparchiveprocessexecuter.h \
+           executer/waitdialogexecuterwatcher.h \
+           executer/ziparchiveprocessexecuter.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
@@ -200,6 +208,13 @@ SOURCES += asciionlylineedit.cpp \
            colormap/colormapcustomsettingcolor.cpp \
            colormap/colormapcustomsettingdialog.cpp \
            colormap/colormapsettingwidget.cpp \
+           executer/executerwatcher.cpp \
+           executer/processexecuter.cpp \
+           executer/silentexecuterwatcher.cpp \
+           executer/threadexecuter.cpp \
+           executer/unziparchiveprocessexecuter.cpp \
+           executer/waitdialogexecuterwatcher.cpp \
+           executer/ziparchiveprocessexecuter.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp

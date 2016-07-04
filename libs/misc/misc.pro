@@ -26,6 +26,7 @@ HEADERS += arrowsettingcontainer.h \
            intcontainer.h \
            integerrangecontainer.h \
            interpolator.h \
+           iricrootpath.h \
            iricundostack.h \
            lastiodirectory.h \
            latitudelongitude.h \
@@ -72,6 +73,7 @@ SOURCES += arrowsettingcontainer.cpp \
            informationdialog.cpp \
            intcontainer.cpp \
            integerrangecontainer.cpp \
+           iricrootpath.cpp \
            iricundostack.cpp \
            lastiodirectory.cpp \
            latitudelongitude.cpp \

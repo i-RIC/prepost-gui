@@ -25,7 +25,9 @@
 #include <QSettings>
 #include <QString>
 
-SolverConsoleWindow::SolverConsoleWindow(QWidget*)
+SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
+	QMainWindow {parent},
+	m_iricMainWindow {parent}
 {
 	init();
 }
@@ -128,35 +130,8 @@ void SolverConsoleWindow::startSolver()
 
 	m_projectDataItem->open();
 
-	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
-	cgnsname.append(".cgn");
+	startSolverSilently();
 
-	m_process = new QProcess(this);
-	QString wd = m_projectData->workDirectory();
-	m_process->setWorkingDirectory(wd);
-
-	// set language setting to the environment.
-	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	QProcessEnvironment env = m_projectData->mainWindow()->processEnvironment();
-	env.insert("iRIC_LANG", locale);
-
-	m_process->setProcessEnvironment(env);
-
-	// create connections.
-	connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
-	connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
-	connect(m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
-
-	QStringList args;
-	args << cgnsname;
-
-	// remove cancel file.
-	removeCancelFile();
-	// remove cancel_ok file.
-	removeCancelOkFile();
-
-	m_solverKilled = false;
-	m_process->start(solver, args);
 	updateWindowTitle();
 	exportLogAction->setEnabled(true);
 
@@ -174,24 +149,12 @@ void SolverConsoleWindow::terminateSolver()
 																					tr("Do you really want to kill the solver?"),
 																					QMessageBox::Yes | QMessageBox::No,
 																					QMessageBox::No);
-	if (QMessageBox::No == button) {
-		return;
-	}
-	// In case solver stops before pressing "Yes" button.
-	if (m_process == nullptr) { return; }
+	if (QMessageBox::No == button) {return;}
 
-	m_solverKilled = true;
-	QString wd = m_projectData->workDirectory();
-	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
-	if (cancelOkFile.exists()) {
-		// this solver supports canceling through ".cancel". Create ".cancel".
-		createCancelFile();
-		// wait for 30 secs.
-		m_process->waitForFinished();
-	} else {
-		// this solver does not supports canceling through ".cancel". Kill the solver.
-		m_process->kill();
-	}
+	// In case solver stops before pressing "Yes" button.
+	if (m_process == nullptr) {return;}
+
+	terminateSolverSilently();
 }
 
 void SolverConsoleWindow::readStderr()
@@ -229,6 +192,9 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	parent->setFocus();
 
 	emit solverFinished();
+
+	if (m_iricMainWindow->cuiMode()) {return;}
+
 	if (! m_solverKilled) {
 		if (status == 0) {
 			// Finished normally.
@@ -280,6 +246,65 @@ void SolverConsoleWindow::clear()
 {
 	m_console->clear();
 	m_projectDataItem->clear();
+}
+
+void SolverConsoleWindow::startSolverSilently()
+{
+	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
+	cgnsname.append(".cgn");
+
+	m_process = new QProcess(this);
+	QString wd = m_projectData->workDirectory();
+	m_process->setWorkingDirectory(wd);
+
+	// set language setting to the environment.
+	QSettings settings;
+	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
+	QProcessEnvironment env = m_projectData->mainWindow()->processEnvironment();
+	env.insert("iRIC_LANG", locale);
+
+	m_process->setProcessEnvironment(env);
+
+	// create connections.
+	connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
+	connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
+	connect(m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
+
+	QStringList args;
+	args << cgnsname;
+
+	// remove cancel file.
+	removeCancelFile();
+	// remove cancel_ok file.
+	removeCancelOkFile();
+
+	m_solverKilled = false;
+
+	QString solver = m_projectData->solverDefinition()->executableFilename();
+	m_process->start(solver, args);
+}
+
+void SolverConsoleWindow::terminateSolverSilently()
+{
+	if (m_process == nullptr) {return;}
+
+	m_solverKilled = true;
+	QString wd = m_projectData->workDirectory();
+	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
+	if (cancelOkFile.exists()) {
+		// this solver supports canceling through ".cancel". Create ".cancel".
+		createCancelFile();
+		// wait for 30 secs.
+		m_process->waitForFinished();
+	} else {
+		// this solver does not supports canceling through ".cancel". Kill the solver.
+		m_process->kill();
+	}
+}
+
+void SolverConsoleWindow::waitForSolverFinish()
+{
+	m_process->waitForFinished(-1);
 }
 
 void SolverConsoleWindow::appendLogLine(const QString& line)

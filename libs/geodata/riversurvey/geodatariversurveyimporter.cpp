@@ -282,14 +282,9 @@ bool GeoDataRiverSurveyImporter::RivRead(const QString& name, bool* with4points)
 	return RivSort();
 }
 
-
-
-GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator)
-	: GeoDataImporter(creator)
-{
-	m_caption = tr("River Survey data (*.riv)");
-}
-
+GeoDataRiverSurveyImporter::GeoDataRiverSurveyImporter(GeoDataCreator* creator) :
+	GeoDataImporter("riversurvey", tr("River Survey data (*.riv)"), creator)
+{}
 
 bool GeoDataRiverSurveyImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 {

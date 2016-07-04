@@ -1,6 +1,7 @@
 #ifndef PREPROCESSORGRIDATTRIBUTEMAPPINGSETTINGTOPDATAITEM_H
 #define PREPROCESSORGRIDATTRIBUTEMAPPINGSETTINGTOPDATAITEM_H
 
+#include "../pre_global.h"
 #include "preprocessorcustommappingsetting.h"
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <QMap>
@@ -8,7 +9,7 @@
 class PreProcessorGridAttributeMappingSettingDataItem;
 class QAction;
 
-class PreProcessorGridAttributeMappingSettingTopDataItem : public PreProcessorDataItem
+class PREDLL_EXPORT PreProcessorGridAttributeMappingSettingTopDataItem : public PreProcessorDataItem
 {
 	Q_OBJECT
 

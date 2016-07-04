@@ -19,7 +19,7 @@
 #include <QStringList>
 
 GeoDataNetcdfImporter::GeoDataNetcdfImporter(GeoDataCreator* creator) :
-	GeoDataImporter(creator)
+	GeoDataImporter("netcdf", tr("NetCDF"), creator)
 {}
 
 GeoDataNetcdfImporter::~GeoDataNetcdfImporter()

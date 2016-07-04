@@ -15,9 +15,9 @@ private:
 	};
 
 public:
-	GeoDataPolygonImporter(GeoDataCreator* creator) :
-		GeoDataImporter {creator}
-	{}
+	GeoDataPolygonImporter(GeoDataCreator* creator);
+	virtual ~GeoDataPolygonImporter();
+
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 	bool importData(GeoData* data, int index, QWidget* w) override;

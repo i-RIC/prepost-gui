@@ -20,12 +20,10 @@
 #include <gdal_priv.h>
 
 GeoDataPointmapRealImporter::GeoDataPointmapRealImporter(GeoDataCreator* creator) :
-	GeoDataImporter(creator),
-	poDataset {NULL},
-	poBand {NULL}
-{
-	m_caption = tr("DEM etc. (*.tpo, *.anc, *.dat, *.stl)");
-}
+	GeoDataImporter("tpo", tr("DEM etc. (*.tpo, *.anc, *.dat, *.stl)"), creator),
+	poDataset(NULL),
+	poBand(NULL)
+{}
 
 bool GeoDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
 {

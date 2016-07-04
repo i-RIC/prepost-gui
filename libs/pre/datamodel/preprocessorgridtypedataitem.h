@@ -1,6 +1,7 @@
 #ifndef PREPROCESSORGRIDTYPEDATAITEM_H
 #define PREPROCESSORGRIDTYPEDATAITEM_H
 
+#include "../pre_global.h"
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
 
 #include <QList>
@@ -12,7 +13,7 @@ class PreProcessorGeoDataTopDataItemInterface;
 class PreProcessorGridAndGridCreatingConditionDataItemInterface;
 class ScalarsToColorsContainer;
 
-class PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterface
+class PREDLL_EXPORT PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterface
 {
 	Q_OBJECT
 

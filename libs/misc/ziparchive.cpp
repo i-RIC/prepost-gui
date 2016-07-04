@@ -1,3 +1,4 @@
+#include "iricrootpath.h"
 #include "ziparchive.h"
 
 #include <QCoreApplication>
@@ -26,7 +27,7 @@ namespace iRIC
 	}
 	QProcess* createZipArchiveProcess(const QString& zipfilename, const QString& path, const QStringList& filelist)
 	{
-		QString exepath = QCoreApplication::instance()->QCoreApplication::instance()->applicationDirPath();
+		QString exepath = iRICRootPath::get();
 		QString zipexe = QDir(exepath).absoluteFilePath("zip.exe");
 		QProcess* zipprocess = new QProcess();
 		zipprocess->setWorkingDirectory(path);
@@ -43,7 +44,7 @@ namespace iRIC
 	}
 	QProcess* createUnzipArchiveProcess(const QString& zipfilename, const QString& targetfolder)
 	{
-		QString exepath = QCoreApplication::instance()->QCoreApplication::instance()->applicationDirPath();
+		QString exepath = iRICRootPath::get();
 		QString unzipexe = QDir(exepath).absoluteFilePath("unzip.exe");
 		QProcess* zipprocess = new QProcess();
 		QStringList args;
