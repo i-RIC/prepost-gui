@@ -1,8 +1,9 @@
 #ifndef INPUTCONDITIONDEPENDENCYSETSUBIMAGEACTION_H
 #define INPUTCONDITIONDEPENDENCYSETSUBIMAGEACTION_H
 
-#include "inputconditiondependency.h"
-#include "inputconditionwidgetimage.h"
+#include "../inputconditiondependency.h"
+
+class InputConditionWidgetImage;
 
 class InputConditionDependencySetSubimageAction : public InputConditionDependency::Action
 {

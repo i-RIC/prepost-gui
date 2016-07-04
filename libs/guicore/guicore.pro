@@ -346,23 +346,13 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditioncontainerset.h \
            project/inputcond/inputconditioncontainerstring.h \
            project/inputcond/inputconditiondependency.h \
-           project/inputcond/inputconditiondependencychecksubimages.h \
-           project/inputcond/inputconditiondependencysetsubimageaction.h \
            project/inputcond/inputconditiondialog.h \
            project/inputcond/inputconditionpage.h \
            project/inputcond/inputconditionpagecontainer.h \
            project/inputcond/inputconditionpagelist.h \
            project/inputcond/inputconditionwidget.h \
            project/inputcond/inputconditionwidgetfilename.h \
-           project/inputcond/inputconditionwidgetfoldername.h \
-           project/inputcond/inputconditionwidgetfunctional.h \
-           project/inputcond/inputconditionwidgetimage.h \
-           project/inputcond/inputconditionwidgetinteger.h \
-           project/inputcond/inputconditionwidgetintegeroption.h \
-           project/inputcond/inputconditionwidgetreal.h \
-           project/inputcond/inputconditionwidgetrealoption.h \
            project/inputcond/inputconditionwidgetset.h \
-           project/inputcond/inputconditionwidgetstring.h \
            project/measured/measureddata.h \
            project/measured/measureddatacsvexporter.h \
            project/measured/measureddatacsvimporter.h \
@@ -426,8 +416,7 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealeditwidget.h \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
-           project/inputcond/functional/inputconditionwidgetfunctionaldelegate.h \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
+           project/inputcond/private/inputconditiondependencychecksubimages.h \
            project/inputcond/private/inputconditiondependencyconditionalways.h \
            project/inputcond/private/inputconditiondependencyconditionand.h \
            project/inputcond/private/inputconditiondependencyconditionisequal.h \
@@ -437,6 +426,17 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditiondependencyconditionislessthan.h \
            project/inputcond/private/inputconditiondependencyconditionnot.h \
            project/inputcond/private/inputconditiondependencyconditionor.h \
+           project/inputcond/private/inputconditiondependencysetsubimageaction.h \
+           project/inputcond/private/inputconditionwidgetfoldername.h \
+           project/inputcond/private/inputconditionwidgetfunctional.h \
+           project/inputcond/private/inputconditionwidgetfunctionaldelegate.h \
+           project/inputcond/private/inputconditionwidgetfunctionaldialog.h \
+           project/inputcond/private/inputconditionwidgetimage.h \
+           project/inputcond/private/inputconditionwidgetinteger.h \
+           project/inputcond/private/inputconditionwidgetintegeroption.h \
+           project/inputcond/private/inputconditionwidgetreal.h \
+           project/inputcond/private/inputconditionwidgetrealoption.h \
+           project/inputcond/private/inputconditionwidgetstring.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
            pre/gridcond/base/private/gridattributedimensioncontainer_impl.h \
@@ -468,7 +468,7 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
-         project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui
+         project/inputcond/private/inputconditionwidgetfunctionaldialog.ui
 SOURCES += axis2d/axis2ddataitem.cpp \
            axis3d/axis3ddataitem.cpp \
            base/iricmainwindowinterface.cpp \
@@ -626,23 +626,13 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditioncontainerset.cpp \
            project/inputcond/inputconditioncontainerstring.cpp \
            project/inputcond/inputconditiondependency.cpp \
-           project/inputcond/inputconditiondependencychecksubimages.cpp \
-           project/inputcond/inputconditiondependencysetsubimageaction.cpp \
            project/inputcond/inputconditiondialog.cpp \
            project/inputcond/inputconditionpage.cpp \
            project/inputcond/inputconditionpagecontainer.cpp \
            project/inputcond/inputconditionpagelist.cpp \
            project/inputcond/inputconditionwidget.cpp \
            project/inputcond/inputconditionwidgetfilename.cpp \
-           project/inputcond/inputconditionwidgetfoldername.cpp \
-           project/inputcond/inputconditionwidgetfunctional.cpp \
-           project/inputcond/inputconditionwidgetimage.cpp \
-           project/inputcond/inputconditionwidgetinteger.cpp \
-           project/inputcond/inputconditionwidgetintegeroption.cpp \
-           project/inputcond/inputconditionwidgetreal.cpp \
-           project/inputcond/inputconditionwidgetrealoption.cpp \
            project/inputcond/inputconditionwidgetset.cpp \
-           project/inputcond/inputconditionwidgetstring.cpp \
            project/measured/measureddata.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
@@ -673,8 +663,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridattributerealeditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
+           project/inputcond/private/inputconditiondependencychecksubimages.cpp \
            project/inputcond/private/inputconditiondependencyconditionalways.cpp \
            project/inputcond/private/inputconditiondependencyconditionand.cpp \
            project/inputcond/private/inputconditiondependencyconditionisequal.cpp \
@@ -683,7 +672,18 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/private/inputconditiondependencyconditionislessequal.cpp \
            project/inputcond/private/inputconditiondependencyconditionislessthan.cpp \
            project/inputcond/private/inputconditiondependencyconditionnot.cpp \
-           project/inputcond/private/inputconditiondependencyconditionor.cpp
+           project/inputcond/private/inputconditiondependencyconditionor.cpp \
+           project/inputcond/private/inputconditiondependencysetsubimageaction.cpp \
+           project/inputcond/private/inputconditionwidgetfoldername.cpp \
+           project/inputcond/private/inputconditionwidgetfunctional.cpp \
+           project/inputcond/private/inputconditionwidgetfunctionaldelegate.cpp \
+           project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp \
+           project/inputcond/private/inputconditionwidgetimage.cpp \
+           project/inputcond/private/inputconditionwidgetinteger.cpp \
+           project/inputcond/private/inputconditionwidgetintegeroption.cpp \
+           project/inputcond/private/inputconditionwidgetreal.cpp \
+           project/inputcond/private/inputconditionwidgetrealoption.cpp \
+           project/inputcond/private/inputconditionwidgetstring.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

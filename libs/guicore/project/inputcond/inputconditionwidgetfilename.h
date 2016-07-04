@@ -4,6 +4,7 @@
 #include "../../guicore_global.h"
 
 #include "inputconditionwidget.h"
+
 #include <QLineEdit>
 
 class AsciiOnlyLineEdit;

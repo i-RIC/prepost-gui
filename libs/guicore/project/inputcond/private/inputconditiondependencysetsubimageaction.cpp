@@ -1,4 +1,5 @@
 #include "inputconditiondependencysetsubimageaction.h"
+#include "inputconditionwidgetimage.h"
 
 InputConditionDependencySetSubimageAction::InputConditionDependencySetSubimageAction(InputConditionWidgetImage* w, const QString& name) :
 	InputConditionDependency::Action(w),

@@ -1,6 +1,6 @@
+#include "../solverdef/solverdefinitiontranslator.h"
 #include "inputconditiondependencychecksubimages.h"
 #include "inputconditionwidgetimage.h"
-#include "solverdef/solverdefinitiontranslator.h"
 
 #include <QDir>
 #include <QDomElement>

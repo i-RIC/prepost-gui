@@ -2,19 +2,19 @@
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondependency.h"
-#include "inputconditiondependencysetsubimageaction.h"
-#include "inputconditiondependencychecksubimages.h"
-
 #include "inputconditionwidgetfilename.h"
-#include "inputconditionwidgetfoldername.h"
-#include "inputconditionwidgetfunctional.h"
-#include "inputconditionwidgetimage.h"
-#include "inputconditionwidgetinteger.h"
-#include "inputconditionwidgetintegeroption.h"
-#include "inputconditionwidgetreal.h"
-#include "inputconditionwidgetrealoption.h"
 #include "inputconditionwidgetset.h"
-#include "inputconditionwidgetstring.h"
+
+#include "private/inputconditiondependencysetsubimageaction.h"
+#include "private/inputconditiondependencychecksubimages.h"
+#include "private/inputconditionwidgetfoldername.h"
+#include "private/inputconditionwidgetfunctional.h"
+#include "private/inputconditionwidgetimage.h"
+#include "private/inputconditionwidgetinteger.h"
+#include "private/inputconditionwidgetintegeroption.h"
+#include "private/inputconditionwidgetreal.h"
+#include "private/inputconditionwidgetrealoption.h"
+#include "private/inputconditionwidgetstring.h"
 
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>

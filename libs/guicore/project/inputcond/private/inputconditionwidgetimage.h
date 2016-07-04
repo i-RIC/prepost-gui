@@ -1,7 +1,7 @@
 #ifndef INPUTCONDITIONWIDGETIMAGE_H
 #define INPUTCONDITIONWIDGETIMAGE_H
 
-#include "inputconditionwidget.h"
+#include "../inputconditionwidget.h"
 
 #include <QPixmap>
 #include <QString>

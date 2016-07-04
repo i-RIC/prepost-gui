@@ -1,7 +1,7 @@
 #ifndef INPUTCONDITIONDEPENDENCYCHECKSUBIMAGES_H
 #define INPUTCONDITIONDEPENDENCYCHECKSUBIMAGES_H
 
-#include "inputconditiondependency.h"
+#include "../inputconditiondependency.h"
 
 class InputConditionWidgetImage;
 
