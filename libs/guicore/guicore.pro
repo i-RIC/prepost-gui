@@ -428,6 +428,15 @@ HEADERS += guicore_global.h \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.h \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.h \
            project/inputcond/functional/inputconditionwidgetfunctionaldialog.h \
+           project/inputcond/private/inputconditiondependencyconditionalways.h \
+           project/inputcond/private/inputconditiondependencyconditionand.h \
+           project/inputcond/private/inputconditiondependencyconditionisequal.h \
+           project/inputcond/private/inputconditiondependencyconditionisgreaterequal.h \
+           project/inputcond/private/inputconditiondependencyconditionisgreaterthan.h \
+           project/inputcond/private/inputconditiondependencyconditionislessequal.h \
+           project/inputcond/private/inputconditiondependencyconditionislessthan.h \
+           project/inputcond/private/inputconditiondependencyconditionnot.h \
+           project/inputcond/private/inputconditiondependencyconditionor.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
            pre/gridcond/base/private/gridattributedimensioncontainer_impl.h \
@@ -665,7 +674,16 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            pre/gridcond/editwidget/gridattributerealoptioneditwidget.cpp \
            pre/gridcond/editwidget/gridattributerealvariationeditwidget.cpp \
            project/inputcond/functional/inputconditionwidgetfunctionaldelegate.cpp \
-           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp
+           project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp \
+           project/inputcond/private/inputconditiondependencyconditionalways.cpp \
+           project/inputcond/private/inputconditiondependencyconditionand.cpp \
+           project/inputcond/private/inputconditiondependencyconditionisequal.cpp \
+           project/inputcond/private/inputconditiondependencyconditionisgreaterequal.cpp \
+           project/inputcond/private/inputconditiondependencyconditionisgreaterthan.cpp \
+           project/inputcond/private/inputconditiondependencyconditionislessequal.cpp \
+           project/inputcond/private/inputconditiondependencyconditionislessthan.cpp \
+           project/inputcond/private/inputconditiondependencyconditionnot.cpp \
+           project/inputcond/private/inputconditiondependencyconditionor.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \
