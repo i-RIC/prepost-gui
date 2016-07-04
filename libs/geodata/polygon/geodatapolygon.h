@@ -70,9 +70,9 @@ public:
 		meEditVerticesDialog
 	};
 
-	/// Constructor
 	GeoDataPolygon(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* condition);
 	virtual ~GeoDataPolygon();
+
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
 	void informSelection(PreProcessorGraphicsViewInterface* v) override;

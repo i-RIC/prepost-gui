@@ -15,7 +15,6 @@ public:
 	GeoDataPolygonProxy(GeoDataPolygon* geodata) : GeoDataProxy(geodata) {}
 	void setupActors() override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
-//	virtual void setupMenu(){}
 
 public slots:
 	void updateGraphics() override;
