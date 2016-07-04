@@ -267,28 +267,31 @@ GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread()
 
 GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
 {
-	m_mutex.lock();
 	m_abort = true;
-	m_mutex.unlock();
 
 	wait();
 }
 
 void GeoDataPolygonTriangleThread::runTriangle()
 {
-	GeoDataPolygon* p = m_currentJob->targetPolygon;
-	p->m_polyData->Reset();
-	p->m_polyData->Modified();
-
 	QPointF offset;
 	triangulateio in, out;
+	GeoDataPolygon* p = nullptr;
 
-	try {
-		setupTriangleInput(&in, p, &offset);
-	} catch (geos::util::GEOSException&) {
-		return;
+	{
+		QMutexLocker locker(&m_mutex);
+		if (m_canceled) {return;}
+
+		p = m_currentJob->targetPolygon;
+		p->m_polyData->Reset();
+		p->m_polyData->Modified();
+		try {
+			setupTriangleInput(&in, p, &offset);
+		} catch (geos::util::GEOSException&) {
+			return;
+		}
+		clearTrianglateio(&out);
 	}
-	clearTrianglateio(&out);
 
 	char arg[] = "pDQ";
 	triangulate(&(arg[0]), &in, &out, 0);
@@ -308,31 +311,39 @@ void GeoDataPolygonTriangleThread::runTriangle()
 	}
 	m_isOutputting = true;
 
-	p->m_polyData->SetPoints(points);
-	vtkCellArray* ca = vtkCellArray::New();
+	{
+		QMutexLocker locker(&m_mutex);
+		if (m_canceled) {
+			freeTriangleOutput(&out);
+			m_currentJob = nullptr;
+			return;
+		}
 
-	p->m_polyData->Allocate(out.numberoftriangles);
-	vtkIdType ids[3];
-	for (int i = 0; i < out.numberoftriangles; ++i){
-		ids[0] = *(out.trianglelist + i * 3) - 1;
-		ids[1] = *(out.trianglelist + i * 3 + 1) - 1;
-		ids[2] = *(out.trianglelist + i * 3 + 2) - 1;
-		ca->InsertNextCell(3, ids);
+		p->m_polyData->SetPoints(points);
+		vtkCellArray* ca = vtkCellArray::New();
+		p->m_polyData->Allocate(out.numberoftriangles);
+		vtkIdType ids[3];
+		for (int i = 0; i < out.numberoftriangles; ++i){
+			ids[0] = *(out.trianglelist + i * 3) - 1;
+			ids[1] = *(out.trianglelist + i * 3 + 1) - 1;
+			ids[2] = *(out.trianglelist + i * 3 + 2) - 1;
+			ca->InsertNextCell(3, ids);
+		}
+		p->m_polyData->SetPolys(ca);
+		ca->Delete();
+
+		p->m_polyData->DeleteCells();
+		p->m_polyData->BuildLinks();
+
+		p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
+
+		freeTriangleOutput(&out);
+
+		p->updateScalarValues();
+		m_isOutputting = false;
+		if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
+			emit shapeUpdated(m_currentJob->targetPolygon);
+		}
+		m_currentJob = nullptr;
 	}
-	p->m_polyData->SetPolys(ca);
-	ca->Delete();
-
-	p->m_polyData->DeleteCells();
-	p->m_polyData->BuildLinks();
-
-	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
-
-	freeTriangleOutput(&out);
-
-	p->updateScalarValues();
-	m_isOutputting = false;
-	if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
-		emit shapeUpdated(m_currentJob->targetPolygon);
-	}
-	m_currentJob = nullptr;
 }

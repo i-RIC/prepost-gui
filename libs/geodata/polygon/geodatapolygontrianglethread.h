@@ -43,7 +43,6 @@ private:
 	void runTriangle();
 
 	QMutex m_mutex;
-	QWaitCondition m_runCondition;
 	bool m_canceled;
 
 	struct Job
