@@ -11,10 +11,9 @@ class GUICOREDLL_EXPORT SolverDefinitionTranslator
 {
 
 public:
-	/// Constructor
 	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale);
-	/// Destructor
 	~SolverDefinitionTranslator();
+
 	/// Returns translated string corresponsing to the source string
 	/**
 	 * @param src Source string to translate
@@ -22,6 +21,10 @@ public:
 	 * was not found)
 	 */
 	QString translate(const QString& src) const;
+
+	/// Returns image file name for the locale
+	QString imageFilename(const QString& filename) const;
+
 	/// Returns translation file name (like "translation_ja_JP.xml") from locale
 	/**
 	 * @param locale Locale object
@@ -31,7 +34,7 @@ public:
 
 private:
 	class Impl;
-	Impl* m_impl;
+	Impl* impl;
 };
 
 #ifdef _DEBUG

@@ -60,7 +60,7 @@ void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement&
 	// setup ContainerSet first.
 	m_containerSet->setup(elem, *def, t, true);
 	// setup WidgetSet.
-	m_widgetSet->setup(elem, *m_containerSet, t, true);
+	m_widgetSet->setup(elem, *m_containerSet, *def, t, true);
 
 	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
 	QVBoxLayout* layout = new QVBoxLayout(this);

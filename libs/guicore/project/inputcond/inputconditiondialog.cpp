@@ -74,7 +74,7 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	// setup ContainerSet first.
 	m_containerSet->setup(condNode, def, t);
 	// setup WidgetSet.
-	m_widgetSet->setup(condNode, *m_containerSet, t);
+	m_widgetSet->setup(condNode, *m_containerSet, def, t);
 	// setup PageList.
 	ui->m_pageList->setup(condNode.toElement(), t);
 	// setup PageContainer.

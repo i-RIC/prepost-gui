@@ -346,6 +346,8 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditioncontainerset.h \
            project/inputcond/inputconditioncontainerstring.h \
            project/inputcond/inputconditiondependency.h \
+           project/inputcond/inputconditiondependencychecksubimages.h \
+           project/inputcond/inputconditiondependencysetsubimageaction.h \
            project/inputcond/inputconditiondialog.h \
            project/inputcond/inputconditionpage.h \
            project/inputcond/inputconditionpagecontainer.h \
@@ -354,6 +356,7 @@ HEADERS += guicore_global.h \
            project/inputcond/inputconditionwidgetfilename.h \
            project/inputcond/inputconditionwidgetfoldername.h \
            project/inputcond/inputconditionwidgetfunctional.h \
+           project/inputcond/inputconditionwidgetimage.h \
            project/inputcond/inputconditionwidgetinteger.h \
            project/inputcond/inputconditionwidgetintegeroption.h \
            project/inputcond/inputconditionwidgetreal.h \
@@ -614,6 +617,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditioncontainerset.cpp \
            project/inputcond/inputconditioncontainerstring.cpp \
            project/inputcond/inputconditiondependency.cpp \
+           project/inputcond/inputconditiondependencychecksubimages.cpp \
+           project/inputcond/inputconditiondependencysetsubimageaction.cpp \
            project/inputcond/inputconditiondialog.cpp \
            project/inputcond/inputconditionpage.cpp \
            project/inputcond/inputconditionpagecontainer.cpp \
@@ -622,6 +627,7 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/inputconditionwidgetfilename.cpp \
            project/inputcond/inputconditionwidgetfoldername.cpp \
            project/inputcond/inputconditionwidgetfunctional.cpp \
+           project/inputcond/inputconditionwidgetimage.cpp \
            project/inputcond/inputconditionwidgetinteger.cpp \
            project/inputcond/inputconditionwidgetintegeroption.cpp \
            project/inputcond/inputconditionwidgetreal.cpp \

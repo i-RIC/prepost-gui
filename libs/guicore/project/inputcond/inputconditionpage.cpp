@@ -104,6 +104,9 @@ QObject* InputConditionPage::loadRec(const QDomNode& node, InputConditionWidgetS
 	} else if (nodeName == "Label") {
 		QString caption = t.translate(elem.attribute("caption"));
 		return getCaption(caption);
+	} else if (nodeName == "Image"){
+		std::string itemName = iRIC::toStr(elem.attribute("src"));
+		return ws->widget(itemName);
 	} else if (nodeName == "GroupBox") {
 		QString caption = t.translate(elem.attribute("caption"));
 		QGroupBox* g = new QGroupBox(caption, this);
@@ -114,14 +117,14 @@ QObject* InputConditionPage::loadRec(const QDomNode& node, InputConditionWidgetS
 		QGridLayout* l = new QGridLayout();
 		loadGL(l, node.childNodes(), ws, t);
 		return l;
-	} else if (nodeName == QString("HBoxLayout")) {
+	} else if (nodeName == "HBoxLayout") {
 		QHBoxLayout* l = new QHBoxLayout();
 		loadBL(l, node.childNodes(), ws, t);
 		if (elem.attribute("withSpacer") == "true") {
 			l->addStretch(1);
 		}
 		return l;
-	} else if (nodeName == QString("VBoxLayout")) {
+	} else if (nodeName == "VBoxLayout") {
 		QVBoxLayout* l = new QVBoxLayout();
 		loadBL(l, node.childNodes(), ws, t);
 		if (elem.attribute("withSpacer") == "true") {
@@ -138,10 +141,11 @@ void InputConditionPage::loadBL(QBoxLayout* layout, const QDomNodeList& list, In
 		QDomNode c = list.item(i);
 		QObject* obj = loadRec(c, ws, t);
 		if (obj == nullptr) {continue;}
+		int stretch = c.toElement().attribute("stretch", "0").toInt();
 		if (QWidget* w = qobject_cast<QWidget*>(obj)) {
-			layout->addWidget(w);
+			layout->addWidget(w, stretch);
 		} else if (QLayout* l = qobject_cast<QLayout*>(obj)) {
-			layout->addLayout(l);
+			layout->addLayout(l, stretch);
 		}
 	}
 }

@@ -23,13 +23,10 @@ public:
 	{
 
 	protected:
-		/// Constructor
-		Action(InputConditionWidget* w) {
-			m_target = w;
-		}
+		Action(InputConditionWidget* w);
 
 	public:
-		virtual ~Action() {}
+		virtual ~Action();
 		virtual void positiveAction() = 0;
 		virtual void negativeAction() = 0;
 
@@ -44,34 +41,26 @@ public:
 		Condition(InputConditionDependency* d);
 
 	public:
-		virtual ~Condition() {}
+		virtual ~Condition();
 		virtual bool match() = 0;
 		friend class InputConditionDependencyBuilder;
 	};
+
 	class ActionEnable : public Action
 	{
-
 	public:
-		/// Constructor
-		ActionEnable(InputConditionWidget* w) : Action(w) {}
-		~ActionEnable() {}
-		void positiveAction() override {
-			m_target->setDisabled(false);
-		}
-		void negativeAction() override {
-			m_target->setDisabled(true);
-		}
+		ActionEnable(InputConditionWidget* w);
+		~ActionEnable();
+
+		void positiveAction() override;
+		void negativeAction() override;
 	};
 
 public:
-	/// Constructor
-	InputConditionDependency();
-	void setCondition(Condition* c) {
-		m_condition = c;
-	}
-	void addAction(Action* a) {
-		m_actions.push_back(a);
-	}
+	InputConditionDependency(QObject* parent = 0);
+	void setCondition(Condition* c);
+	void addAction(Action* a);
+
 	/// Build Action object and return the pointer to it.
 	static Action* buildAction(
 		const QDomNode& node,
@@ -86,17 +75,7 @@ public:
 	);
 
 public slots:
-	void check() {
-		if (m_condition->match()) {
-			for (auto it = m_actions.begin(); it != m_actions.end(); ++it) {
-				(*it)->positiveAction();
-			}
-		} else {
-			for (auto it = m_actions.begin(); it != m_actions.end(); ++it) {
-				(*it)->negativeAction();
-			}
-		}
-	}
+	virtual void check();
 
 private:
 	Condition* m_condition;

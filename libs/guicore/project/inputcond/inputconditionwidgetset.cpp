@@ -1,9 +1,14 @@
+#include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondependency.h"
+#include "inputconditiondependencysetsubimageaction.h"
+#include "inputconditiondependencychecksubimages.h"
+
 #include "inputconditionwidgetfilename.h"
 #include "inputconditionwidgetfoldername.h"
 #include "inputconditionwidgetfunctional.h"
+#include "inputconditionwidgetimage.h"
 #include "inputconditionwidgetinteger.h"
 #include "inputconditionwidgetintegeroption.h"
 #include "inputconditionwidgetreal.h"
@@ -27,10 +32,10 @@ InputConditionWidgetSet::~InputConditionWidgetSet()
 	clear();
 }
 
-void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC)
+void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
 {
 	// build widgets first.
-	buildWidgets(condNode, cset, t, forBC);
+	buildWidgets(condNode, cset, def, t, forBC);
 	// build dependencies between the widgets.
 	buildDeps(condNode, cset, forBC);
 }
@@ -48,15 +53,15 @@ void InputConditionWidgetSet::clear()
 	m_widgets.clear();
 }
 
-void InputConditionWidgetSet::buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC)
+void InputConditionWidgetSet::buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
 {
 	if (forBC) {
-		buildWidgetsCustom(condNode, cset, t);
+		buildWidgetsCustom(condNode, cset, def, t);
 	} else {
 		QDomNodeList pages = condNode.childNodes();
 		for (int i = 0; i < pages.length(); ++i) {
 			QDomNode page = pages.item(i);
-			buildWidgetsCustom(page, cset, t);
+			buildWidgetsCustom(page, cset, def, t);
 		}
 	}
 }
@@ -73,13 +78,13 @@ void InputConditionWidgetSet::buildWidgetsSimple(const QDomNode& contNode, Input
 	}
 }
 
-void InputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	// get Content Node.
-	buildWidgetsCustomRec(contNode, cset, t);
+	buildWidgetsCustomRec(contNode, cset, def, t);
 }
 
-void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.length(); ++i) {
@@ -88,9 +93,12 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 			if (c.nodeName() == "Item") {
 				// build item.
 				buildWidget(c, cset, t);
+			} else if (c.nodeName() == "Image"){
+				// build image.
+				buildImage(c, def, t);
 			} else {
 				// search item recursively.
-				buildWidgetsCustomRec(c, cset, t);
+				buildWidgetsCustomRec(c, cset, def, t);
 			}
 		}
 	}
@@ -110,7 +118,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	QDomElement defElem = defNode.toElement();
 	QString type = defElem.attribute("conditionType", "");
 	// setup container depending on the type
-	InputConditionWidget* widget;
+	InputConditionWidget* widget = nullptr;
 	if (type == "functional") {
 		widget = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
 		m_widgets.insert(parameterName, widget);
@@ -144,6 +152,14 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	} else {
 		throw(ErrorMessage("Wrong conditionType is set."));
 	}
+}
+
+void InputConditionWidgetSet::buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
+{
+	QDomElement itemElem = itemNode.toElement();
+	std::string src = iRIC::toStr(itemElem.attribute("src"));
+	InputConditionWidget* widget = new InputConditionWidgetImage(itemElem, t, def.folder());
+	m_widgets.insert(src, widget);
 }
 
 void InputConditionWidgetSet::buildDeps(const QDomNode& ccNode, InputConditionContainerSet& cset, bool forBC)
@@ -193,6 +209,9 @@ void InputConditionWidgetSet::buildDepsCustomRec(const QDomNode& node, InputCond
 			if (c.nodeName() == "Item") {
 				// build dependency.
 				buildDepsItem(c, cset);
+			} else if (c.nodeName() == "Image") {
+				// build dependency for image (subimages)
+				buildDepsImage(c, cset);
 			} else {
 				// search item recursively.
 				buildDepsCustomRec(c, cset);
@@ -225,6 +244,26 @@ void InputConditionWidgetSet::buildDepsItem(const QDomNode& itemNode, InputCondi
 	}
 }
 
+void InputConditionWidgetSet::buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset)
+{
+	std::string imageName = iRIC::toStr(imageNode.toElement().attribute("src"));
+	InputConditionWidgetImage* img = dynamic_cast<InputConditionWidgetImage*> (this->widget(imageName));
+
+	QDomNodeList children = imageNode.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		QDomNode subImageNode = children.at(i);
+		QDomNode condNode = iRIC::getChildNode(subImageNode, "Condition");
+		QString name = subImageNode.toElement().attribute("src");
+		InputConditionDependency* dep = new InputConditionDependency();
+		InputConditionDependency::Condition* cond = InputConditionDependency::buildCondition(condNode, &cset, img->checkSubImages());
+		dep->setCondition(cond);
+		InputConditionDependencySetSubimageAction* a = new InputConditionDependencySetSubimageAction(img, name);
+		dep->addAction(a);
+		img->addDependency(dep);
+	}
+	img->checkSubImages()->check();
+}
+
 void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionContainerSet& cset, InputConditionWidget* w)
 {
 	// Find condition node
@@ -234,7 +273,7 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 	// Action corresponding to Condition is now enabling only.
 	InputConditionDependency::Action* a = new InputConditionDependency::ActionEnable(w);
 	dep->addAction(a);
-	w->setDependency(dep);
+	w->addDependency(dep);
 	// Initial Check
 	dep->check();
 }
@@ -264,8 +303,7 @@ void InputConditionWidgetSet::enableWidgets()
 	}
 	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
 		InputConditionWidget* w = it.value();
-		InputConditionDependency* dep = w->dependency();
-		if (dep != nullptr) {
+		for (auto dep : w->dependencies()) {
 			dep->check();
 		}
 	}

@@ -4,6 +4,7 @@
 #include "../solverdefinitiontranslator.h"
 
 #include <QHash>
+#include <QLocale>
 
 class SolverDefinitionTranslator::Impl
 {
@@ -12,6 +13,7 @@ public:
 	void load(const QString& solverfolder, const QLocale& locale);
 
 	QHash<QString, QString> m_dictionary;
+	QLocale m_locale;
 };
 
 #endif // SOLVERDEFINITIONTRANSLATOR_IMPL_H

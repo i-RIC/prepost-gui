@@ -10,7 +10,8 @@
 #include <QDomNode>
 #include <QString>
 
-SolverDefinitionTranslator::Impl::Impl(const QString &solverfolder, const QLocale &locale)
+SolverDefinitionTranslator::Impl::Impl(const QString &solverfolder, const QLocale &locale) :
+	m_locale {locale}
 {
 	load(solverfolder, locale);
 }
@@ -88,21 +89,29 @@ void SolverDefinitionTranslator::Impl::load(const QString &solverfolder, const Q
 }
 
 SolverDefinitionTranslator::SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale) :
-	m_impl {new Impl {solverfolder, locale}}
+	impl {new Impl {solverfolder, locale}}
 {}
 
 SolverDefinitionTranslator::~SolverDefinitionTranslator()
 {
-	delete m_impl;
+	delete impl;
 }
 
 QString SolverDefinitionTranslator::translate(const QString& src) const
 {
-	if (m_impl->m_dictionary.contains(src)) {
-		return m_impl->m_dictionary.value(src);
+	if (impl->m_dictionary.contains(src)) {
+		return impl->m_dictionary.value(src);
 	} else {
 		return src;
 	}
+}
+
+
+QString SolverDefinitionTranslator::imageFilename(const QString& filename) const
+{
+	QFileInfo finfo(filename);
+	QString tmpName("%1_%2.%3");
+	return tmpName.arg(finfo.baseName()).arg(impl->m_locale.name()).arg(finfo.suffix());
 }
 
 QString SolverDefinitionTranslator::filenameFromLocale(const QLocale& locale)

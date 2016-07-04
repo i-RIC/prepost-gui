@@ -11,6 +11,7 @@ class QWidget;
 class QDomNode;
 class InputConditionContainerSet;
 class InputConditionWidget;
+class SolverDefinition;
 class SolverDefinitionTranslator;
 
 class GUICOREDLL_EXPORT InputConditionWidgetSet
@@ -20,23 +21,25 @@ public:
 	InputConditionWidgetSet();
 	~InputConditionWidgetSet();
 
-	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC = false);
+	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC = false);
 	InputConditionWidget* widget(const std::string& name) const;
 	void clear();
 	void disableWidgets();
 	void enableWidgets();
 
 private:
-	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t, bool forBC);
+	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);
 	void buildWidgetsSimple(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
-	void buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
-	void buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
+	void buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
+	void buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinitionTranslator& t);
+	void buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildDeps(const QDomNode&, InputConditionContainerSet& cset, bool forBC);
 	void buildDepsSimple(const QDomNode& tabNode, InputConditionContainerSet& cset);
 	void buildDepsCustom(const QDomNode& tabNode, InputConditionContainerSet& cset);
 	void buildDepsCustomRec(const QDomNode& node, InputConditionContainerSet& cset);
 	void buildDepsItem(const QDomNode& itemNode, InputConditionContainerSet& cset);
+	void buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset);
 	void buildDep(const QDomNode&, InputConditionContainerSet& cset, InputConditionWidget* w);
 	void addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
 	QMap<std::string, InputConditionWidget*> m_widgets;

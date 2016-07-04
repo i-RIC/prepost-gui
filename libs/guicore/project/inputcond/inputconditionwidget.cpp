@@ -3,11 +3,31 @@
 
 #include <misc/xmlsupport.h>
 
-void InputConditionWidget::setDependency(InputConditionDependency* dep)
+InputConditionWidget::InputConditionWidget(QDomNode)
+{}
+
+InputConditionWidget::~InputConditionWidget()
 {
-	if (m_dependency != nullptr) {delete m_dependency;}
-	m_dependency = dep;
+	for (auto dep : m_dependencies) {
+		delete dep;
+	}
 }
+
+void InputConditionWidget::addDependency(InputConditionDependency* dep)
+{
+	m_dependencies.push_back(dep);
+}
+
+const std::vector<InputConditionDependency*>& InputConditionWidget::dependencies() const
+{
+	return m_dependencies;
+}
+
+void InputConditionWidget::setMaximum(const QVariant&)
+{}
+
+void InputConditionWidget::setMinimum(const QVariant&)
+{}
 
 QList<QDomNode> InputConditionWidget::getEnums(QDomNode defNode)
 {

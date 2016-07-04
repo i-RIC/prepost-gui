@@ -6,15 +6,37 @@
 
 #include <QList>
 
-InputConditionDependency::InputConditionDependency()
-{
-	m_condition = 0;
-}
+InputConditionDependency::Action::Action(InputConditionWidget *w) :
+	m_target {w}
+{}
+
+InputConditionDependency::Action::~Action()
+{}
 
 InputConditionDependency::Condition::Condition(InputConditionDependency* c)
 {
 	c->setCondition(this);
 }
+
+InputConditionDependency::ActionEnable::ActionEnable(InputConditionWidget* w) :
+	Action {w}
+{}
+
+InputConditionDependency::ActionEnable::~ActionEnable()
+{}
+
+void InputConditionDependency::ActionEnable::positiveAction()
+{
+	m_target->setDisabled(false);
+}
+
+void InputConditionDependency::ActionEnable::negativeAction()
+{
+	m_target->setDisabled(true);
+}
+
+InputConditionDependency::Condition::~Condition()
+{}
 
 // Definitions of classes those inherit InputConditionDependency::Action
 
@@ -26,8 +48,37 @@ InputConditionDependency::Action* InputConditionDependency::buildAction(
 )
 {
 	// @todo not implemented yet.
-	return 0;
+	return nullptr;
 }
+
+InputConditionDependency::InputConditionDependency(QObject *parent) :
+	QObject {parent},
+	m_condition {nullptr}
+{}
+
+void InputConditionDependency::setCondition(Condition* c)
+{
+	m_condition = c;
+}
+
+void InputConditionDependency::addAction(Action* a)
+{
+	m_actions.push_back(a);
+}
+
+void InputConditionDependency::check()
+{
+	if (m_condition->match()) {
+		for (auto a : m_actions) {
+			a->positiveAction();
+		}
+	} else {
+		for (auto a : m_actions) {
+			a->negativeAction();
+		}
+	}
+}
+
 // Definitions of classes those inherit InputConditionDependency::Condition
 
 class InputConditionDependencyConditionAlways : public InputConditionDependency::Condition
