@@ -14,6 +14,7 @@ ScalarSettingContainer::ScalarSettingContainer() :
 	scalarBarSetting {}
 {
 	opacity = 50;
+	scalarBarSetting.setPrefix("scalarBar");
 }
 
 ScalarSettingContainer::ScalarSettingContainer(const ScalarSettingContainer &c) :
