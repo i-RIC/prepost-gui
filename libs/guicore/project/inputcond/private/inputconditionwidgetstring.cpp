@@ -3,6 +3,7 @@
 #include "inputconditionwidgetstring.h"
 
 #include <guibase/asciionlylineedit.h>
+#include <guibase/asciionlytextedit.h>
 
 #include <QHBoxLayout>
 #include <QMessageBox>
@@ -12,24 +13,34 @@ InputConditionWidgetString::InputConditionWidgetString(QDomNode defnode, const S
 {
 	m_container = cont;
 
-	m_lineEdit = new AsciiOnlyLineEdit(this);
 	QHBoxLayout* layout = new QHBoxLayout(this);
 	layout->setMargin(InputConditionWidget::margin);
-	layout->addWidget(m_lineEdit, 1);
+	if (defnode.toElement().attribute("multiline") == "true") {
+		AsciiOnlyTextEdit* te = new AsciiOnlyTextEdit(this);
+		connect(te, SIGNAL(textChanged()), this, SLOT(handleEditingFinished()));
+		layout->addWidget(te, 1);
+		m_textEdit = te;
+	}	else {
+		AsciiOnlyLineEdit* te = new AsciiOnlyLineEdit(this);
+		connect(te, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
+		layout->addWidget(te, 1);
+		m_textEdit = te;
+	}
 	setLayout(layout);
 
 	setValue(cont->value());
 
-	connect(m_lineEdit, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
 	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
 }
 
 void InputConditionWidgetString::setValue(const QString& newvalue)
 {
-	m_lineEdit->setText(newvalue);
+	if (newvalue == m_textEdit->text()) {return;}
+
+	m_textEdit->setText(newvalue);
 }
 
 void InputConditionWidgetString::handleEditingFinished()
 {
-	m_container->setValue(m_lineEdit->text());
+	m_container->setValue(m_textEdit->text());
 }

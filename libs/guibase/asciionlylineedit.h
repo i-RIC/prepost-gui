@@ -2,10 +2,11 @@
 #define ASCIIONLYLINEEDIT_H
 
 #include "guibase_global.h"
+#include "textediti.h"
 
 #include <QLineEdit>
 
-class GUIBASEDLL_EXPORT AsciiOnlyLineEdit : public QLineEdit
+class GUIBASEDLL_EXPORT AsciiOnlyLineEdit : public QLineEdit, public TextEditI
 {
 	Q_OBJECT
 
@@ -14,8 +15,11 @@ public:
 	void clearIfNotAscii(bool withoutMessage = false);
 	void setErrorMessage(const QString& msg);
 
+	QString text() const;
+
 public slots:
-	void setText(const QString& text, bool warnIfNotAscii = false);
+	void setText(const QString& text) override;
+	void setText(const QString& text, bool warnIfNotAscii);
 
 private:
 	void focusOutEvent(QFocusEvent* e);

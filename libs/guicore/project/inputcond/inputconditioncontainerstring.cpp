@@ -49,22 +49,41 @@ void InputConditionContainerString::setValue(const QString& v)
 
 int InputConditionContainerString::load()
 {
-	char buffer[200];
+	char* buffer;
 	int ret;
-	if (isBoundaryCondition()) {
-		ret = cg_iRIC_Read_BC_String(toC(bcName()), bcIndex(), toC(name()), buffer);
-	} else if (isComplexCondition()) {
-		ret = cg_iRIC_Read_Complex_String(toC(complexName()), complexIndex(), toC(name()), buffer);
+	int length;
+
+	if (isBoundaryCondition()){
+		ret = cg_iRIC_Read_BC_StringLen(const_cast<char*>(bcName().c_str()), bcIndex(), const_cast<char*>(name().c_str()), &length);
+	} else if (isComplexCondition()){
+		ret = cg_iRIC_Read_Complex_StringLen(const_cast<char*>(complexName().c_str()), complexIndex(), const_cast<char*>(name().c_str()), &length);
 	} else {
-		ret = cg_iRIC_Read_String(toC(name()), buffer);
+		ret = cg_iRIC_Read_StringLen(const_cast<char*>(name().c_str()), &length);
 	}
-	if (ret != 0) {
+
+	if (ret != 0){
+		clear();
+		return ret;
+	}
+
+	buffer = new char[length + 1];
+
+	if (isBoundaryCondition()){
+		ret = cg_iRIC_Read_BC_String(const_cast<char*>(bcName().c_str()), bcIndex(), const_cast<char*>(name().c_str()), buffer);
+	} else if (isComplexCondition()){
+		ret = cg_iRIC_Read_Complex_String(const_cast<char*>(complexName().c_str()), complexIndex(), const_cast<char*>(name().c_str()), buffer);
+	} else {
+		ret = cg_iRIC_Read_String(const_cast<char*>(name().c_str()), buffer);
+	}
+	if (ret != 0){
 		clear();
 	} else {
 		m_value = buffer;
 		emit valueChanged(m_value);
 		emit valueChanged();
 	}
+	delete buffer;
+
 	return ret;
 }
 

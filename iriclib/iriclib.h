@@ -61,6 +61,8 @@ int IRICLIBDLL cg_iRIC_Read_Real_Mul(int fid, char* name, double* realvalue);
 
 int IRICLIBDLL cg_iRIC_Read_RealSingle_Mul(int fid, char* name, float* realvalue);
 
+int IRICLIBDLL cg_iRIC_Read_StringLen_Mul(int fid, char* name, int* length);
+
 int IRICLIBDLL cg_iRIC_Read_String_Mul(int fid, char* name, char* strvalue);
 
 int IRICLIBDLL cg_iRIC_Read_FunctionalSize_Mul(int fid, char* name, cgsize_t* size);
@@ -96,6 +98,8 @@ int IRICLIBDLL cg_iRIC_Read_Complex_Integer_Mul(int fid, char* groupname, int nu
 int IRICLIBDLL cg_iRIC_Read_Complex_Real_Mul(int fid, char* groupname, int num, char* name, double* realvalue);
 
 int IRICLIBDLL cg_iRIC_Read_Complex_RealSingle_Mul(int fid, char* groupname, int num, char* name, float* realvalue);
+
+int IRICLIBDLL cg_iRIC_Read_Complex_StringLen_Mul(int fid, char* groupname, int num, char* name, int* length);
 
 int IRICLIBDLL cg_iRIC_Read_Complex_String_Mul(int fid, char* groupname, int num, char* name, char* strvalue);
 
@@ -251,6 +255,8 @@ int IRICLIBDLL cg_iRIC_Read_BC_Real_Mul(int fid, char* type, int num, char* name
 
 int IRICLIBDLL cg_iRIC_Read_BC_RealSingle_Mul(int fid, char* type, int num, char* name, float* realvalue);
 
+int IRICLIBDLL cg_iRIC_Read_BC_StringLen_Mul(int fid, char* type, int num, char* name, int* length);
+
 int IRICLIBDLL cg_iRIC_Read_BC_String_Mul(int fid, char* type, int num, char* name, char* strvalue);
 
 int IRICLIBDLL cg_iRIC_Read_BC_FunctionalSize_Mul(int fid, char* type, int num, char* name, cgsize_t* size);
@@ -363,6 +369,8 @@ int IRICLIBDLL cg_iRIC_Read_Real(char* name, double* realvalue);
 
 int IRICLIBDLL cg_iRIC_Read_RealSingle(char* name, float* realvalue);
 
+int IRICLIBDLL cg_iRIC_Read_StringLen(char* name, int* length);
+
 int IRICLIBDLL cg_iRIC_Read_String(char* name, char* strvalue);
 
 int IRICLIBDLL cg_iRIC_Read_FunctionalSize(char* name, cgsize_t* size);
@@ -390,6 +398,8 @@ int IRICLIBDLL cg_iRIC_Read_Complex_Integer(char* groupname, int num, char* name
 int IRICLIBDLL cg_iRIC_Read_Complex_Real(char* groupname, int num, char* name, double* realvalue);
 
 int IRICLIBDLL cg_iRIC_Read_Complex_RealSingle(char* groupname, int num, char* name, float* realvalue);
+
+int IRICLIBDLL cg_iRIC_Read_Complex_StringLen(char* groupname, int num, char* name, int* length);
 
 int IRICLIBDLL cg_iRIC_Read_Complex_String(char* groupname, int num, char* name, char* strvalue);
 
@@ -520,6 +530,8 @@ int IRICLIBDLL cg_iRIC_Read_BC_Integer(char* type, int num, char* name, int* int
 int IRICLIBDLL cg_iRIC_Read_BC_Real(char* type, int num, char* name, double* realvalue);
 
 int IRICLIBDLL cg_iRIC_Read_BC_RealSingle(char* type, int num, char* name, float* realvalue);
+
+int IRICLIBDLL cg_iRIC_Read_BC_StringLen(char* type, int num, char* name, int* length);
 
 int IRICLIBDLL cg_iRIC_Read_BC_String(char* type, int num, char* name, char* strvalue);
 

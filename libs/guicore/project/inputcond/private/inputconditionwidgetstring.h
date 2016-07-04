@@ -3,7 +3,7 @@
 
 #include "../inputconditionwidget.h"
 
-class AsciiOnlyLineEdit;
+class TextEditI;
 class InputConditionContainerString;
 class SolverDefinitionTranslator;
 
@@ -22,6 +22,6 @@ private slots:
 
 private:
 	InputConditionContainerString* m_container;
-	AsciiOnlyLineEdit* m_lineEdit;
+	TextEditI* m_textEdit;
 };
 #endif // INPUTCONDITIONWIDGETSTRING_H

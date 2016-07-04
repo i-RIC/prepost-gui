@@ -28,6 +28,16 @@ void AsciiOnlyLineEdit::setErrorMessage(const QString& msg)
 	m_errorMessage = msg;
 }
 
+QString AsciiOnlyLineEdit::text() const
+{
+	return QLineEdit::text();
+}
+
+void AsciiOnlyLineEdit::setText(const QString& text)
+{
+	setText(text, false);
+}
+
 void AsciiOnlyLineEdit::setText(const QString& text, bool warnIfNotAscii)
 {
 	QLineEdit::setText(text);

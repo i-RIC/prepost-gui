@@ -224,6 +224,24 @@ static int local_read_array_as(char* arrayname, DataType_t datatype, size_t leng
 	return 0;
 }
 
+static int local_read_string_len(char* arrayname, int* length)
+{
+	int ier;
+	int index;
+	DataType_t datatype;
+	int dim;
+	int dimVec[3];
+
+	ier = local_find_array(arrayname, &index, &datatype, &dim, &(dimVec[0]));
+	if (ier != 0){return ier;}
+
+	if (datatype != Character){return -1;}
+	if (dim != 1){return -2;}
+	*length = dimVec[0];
+
+	return ier;
+}
+
 static int local_read_string(char* arrayname, size_t bufferlen, char* buffer)
 {
 	int ier;
@@ -1277,6 +1295,16 @@ int cg_iRIC_Read_RealSingle_Mul(int fid, char* name, float* realvalue){
 	return ier;
 }
 
+int cg_iRIC_Read_StringLen_Mul(int fid, char* name, int* length){
+	int ier;
+
+	ier = local_gotoccchild_Mul(fid, name);
+	if (ier != 0){return ier;}
+
+	ier = local_read_string_len("Value", length);
+	return ier;
+}
+
 int cg_iRIC_Read_String_Mul(int fid, char* name, char* strvalue){
 	int ier;
 
@@ -1431,6 +1459,17 @@ int cg_iRIC_Read_Complex_RealSingle_Mul(int fid, char* groupname, int num, char*
 	if (ier != 0){return ier;}
 	// under this UserDefinedData_t, array with name "Value" will exists.
 	ier = local_read_array_as("Value", RealSingle, 1, realvalue);
+	return ier;
+}
+
+int cg_iRIC_Read_Complex_StringLen_Mul(int fid, char* groupname, int num, char* name, int* length)
+{
+	int ier;
+
+	ier = local_gotocomplexchild_Mul(fid, groupname, num, name);
+	if (ier != 0){return ier;}
+	// under this UserDefinedData_t, array with name "Value" will exists.
+	ier = local_read_string_len("Value", length);
 	return ier;
 }
 
@@ -2579,6 +2618,16 @@ int cg_iRIC_Read_BC_RealSingle_Mul(int fid, char* type, int num, char* name, flo
 	return ier;
 }
 
+int cg_iRIC_Read_BC_StringLen_Mul(int fid, char* type, int num, char* name, int* length){
+	int ier;
+
+	ier = local_gotobcchild_Mul(fid, type, num, name);
+	if (ier != 0){return ier;}
+	// under this UserDefinedData_t, array with name "Value" will exists.
+	ier = local_read_string_len("Value", length);
+	return ier;
+}
+
 int cg_iRIC_Read_BC_String_Mul(int fid, char* type, int num, char* name, char* strvalue){
 	int ier;
 
@@ -2883,6 +2932,11 @@ int cg_iRIC_Read_RealSingle(char* name, float* realvalue)
 	return cg_iRIC_Read_RealSingle_Mul(lastfileid, name, realvalue);
 }
 
+int cg_iRIC_Read_StringLen(char* name, int* length)
+{
+	return cg_iRIC_Read_StringLen_Mul(lastfileid, name, length);
+}
+
 int cg_iRIC_Read_String(char* name, char* strvalue)
 {
 	return cg_iRIC_Read_String_Mul(lastfileid, name, strvalue);
@@ -2951,6 +3005,11 @@ int cg_iRIC_Read_Complex_Real(char* groupname, int num, char* name, double* real
 int cg_iRIC_Read_Complex_RealSingle(char* groupname, int num, char* name, float* realvalue)
 {
 	return cg_iRIC_Read_Complex_RealSingle_Mul(lastfileid, groupname, num, name, realvalue);
+}
+
+int cg_iRIC_Read_Complex_StringLen(char* groupname, int num, char* name, int* length)
+{
+	return cg_iRIC_Read_Complex_StringLen_Mul(lastfileid, groupname, num, name, length);
 }
 
 int cg_iRIC_Read_Complex_String(char* groupname, int num, char* name, char* strvalue)
@@ -3276,6 +3335,11 @@ int cg_iRIC_Read_BC_Real(char* type, int num, char* name, double* realvalue)
 int cg_iRIC_Read_BC_RealSingle(char* type, int num, char* name, float* realvalue)
 {
 	return cg_iRIC_Read_BC_RealSingle_Mul(lastfileid, type, num, name, realvalue);
+}
+
+int cg_iRIC_Read_BC_StringLen(char* type, int num, char* name, int* length)
+{
+	return cg_iRIC_Read_BC_StringLen_Mul(lastfileid, type, num, name, length);
 }
 
 int cg_iRIC_Read_BC_String(char* type, int num, char* name, char* strvalue)

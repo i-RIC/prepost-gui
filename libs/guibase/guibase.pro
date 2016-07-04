@@ -72,6 +72,7 @@ LIBS += \
 
 # Input
 HEADERS += asciionlylineedit.h \
+           asciionlytextedit.h \
            centeredcheckbox.h \
            cgnszoneselectdialog.h \
            coloreditwidget.h \
@@ -110,6 +111,7 @@ HEADERS += asciionlylineedit.h \
            sliderwithvalue.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
+           textediti.h \
            transparencywidget.h \
            vtk2dinteractorstyle.h \
            vtkCustomStreamPoints.h \
@@ -156,6 +158,7 @@ FORMS += cgnszoneselectdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui
 SOURCES += asciionlylineedit.cpp \
+           asciionlytextedit.cpp \
            centeredcheckbox.cpp \
            cgnszoneselectdialog.cpp \
            coloreditwidget.cpp \
