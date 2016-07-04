@@ -17,7 +17,6 @@ public:
 	InputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 
 public slots:
-
 	void setValue(const QString& newvalue);
 
 private slots:

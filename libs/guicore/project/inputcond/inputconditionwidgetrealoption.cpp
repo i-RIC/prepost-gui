@@ -36,6 +36,11 @@ InputConditionWidgetRealOption::InputConditionWidgetRealOption(QDomNode defnode,
 	connect(m_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(informChange(int)));
 }
 
+void InputConditionWidgetRealOption::setDisabled(bool disable)
+{
+	m_comboBox->setDisabled(disable);
+}
+
 void InputConditionWidgetRealOption::setValue(double newvalue)
 {
 	int index = m_comboBox->findData(QVariant(newvalue));

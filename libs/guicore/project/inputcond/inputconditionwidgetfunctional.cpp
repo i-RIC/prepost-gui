@@ -25,6 +25,9 @@ InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode,
 
 InputConditionWidgetFunctional::~InputConditionWidgetFunctional() {}
 
+void InputConditionWidgetFunctional::setDisabled(bool /*disable*/)
+{}
+
 void InputConditionWidgetFunctional::openDialog()
 {
 	m_dialog->setData(*m_container);

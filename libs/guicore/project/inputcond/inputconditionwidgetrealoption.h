@@ -14,19 +14,17 @@ class GUICOREDLL_EXPORT InputConditionWidgetRealOption : public InputConditionWi
 
 public:
 	InputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont);
-	void setDisabled(bool disable) {
-		m_comboBox->setDisabled(disable);
-	}
+	void setDisabled(bool disable);
 
 public slots:
 	void setValue(double);
 
+private slots:
+	void informChange(int);
+
 private:
 	InputConditionContainerReal* m_container;
 	QComboBox* m_comboBox;
-
-private slots:
-	void informChange(int);
 };
 
 #endif // INPUTCONDITIONWIDGETREALOPTION_H

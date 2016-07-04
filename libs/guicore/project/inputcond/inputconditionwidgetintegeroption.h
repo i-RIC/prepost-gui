@@ -14,7 +14,6 @@ class GUICOREDLL_EXPORT InputConditionWidgetIntegerOption : public InputConditio
 
 public:
 	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
-
 	void setDisabled(bool disable);
 
 public slots:
