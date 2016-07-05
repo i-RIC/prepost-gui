@@ -11,6 +11,9 @@
 class GeoDataPolygon;
 class GeoDataPolygonAbstractPolygon;
 class QPointF;
+
+class vtkCellArray;
+class vtkPoints;
 struct triangulateio;
 
 namespace geos {
@@ -31,13 +34,16 @@ public:
 	void cancelJobs(GeoDataPolygon* polygon);
 	bool isOutputting(GeoDataPolygon* polygon);
 
+	void lockMutex();
+	void unlockMutex();
+
 	static GeoDataPolygonTriangleThread* instance();
 
 protected:
 	void run();
 
 signals:
-	void shapeUpdated(GeoDataPolygon* targetPolygon);
+	void shapeUpdated(GeoDataPolygon* targetPolygon, vtkPoints* points, vtkCellArray* ca);
 
 private:
 	void runTriangle();

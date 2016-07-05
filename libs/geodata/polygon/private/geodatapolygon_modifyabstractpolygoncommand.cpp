@@ -31,13 +31,17 @@ bool GeoDataPolygon::ModifyAbstractPolygonCommand::mergeWith(const QUndoCommand 
 void GeoDataPolygon::ModifyAbstractPolygonCommand::redo()
 {
 	m_polygon->setMapped(false);
+	m_polygon->lockMutex();
 	m_targetPolygon->setPolygon(m_newPolygon);
+	m_polygon->unlockMutex();
 	m_polygon->updatePolyData();
 }
 
 void GeoDataPolygon::ModifyAbstractPolygonCommand::undo()
 {
 	m_polygon->setMapped(m_wasMapped);
+	m_polygon->lockMutex();
 	m_targetPolygon->setPolygon(m_oldPolygon);
+	m_polygon->unlockMutex();
 	m_polygon->updatePolyData();
 }

@@ -119,6 +119,16 @@ bool GeoDataPolygonTriangleThread::isOutputting(GeoDataPolygon *polygon)
 	return m_currentJob->targetPolygon == polygon && m_isOutputting;
 }
 
+void GeoDataPolygonTriangleThread::lockMutex()
+{
+	m_mutex.lock();
+}
+
+void GeoDataPolygonTriangleThread::unlockMutex()
+{
+	m_mutex.unlock();
+}
+
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::instance()
 {
 	if (m_thread != 0) {return m_thread;}
@@ -274,32 +284,31 @@ GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
 
 void GeoDataPolygonTriangleThread::runTriangle()
 {
+	m_mutex.lock();
+	GeoDataPolygon* p = m_currentJob->targetPolygon;
+	p->m_polyData->Reset();
+	p->m_polyData->Modified();
+
 	QPointF offset;
 	triangulateio in, out;
-	GeoDataPolygon* p = nullptr;
 
-	{
-		QMutexLocker locker(&m_mutex);
-		if (m_canceled) {return;}
-
-		p = m_currentJob->targetPolygon;
-		p->m_polyData->Reset();
-		p->m_polyData->Modified();
-		try {
-			setupTriangleInput(&in, p, &offset);
-		} catch (geos::util::GEOSException&) {
-			return;
-		}
-		clearTrianglateio(&out);
+	try {
+		setupTriangleInput(&in, p, &offset);
+		m_mutex.unlock();
+	} catch (geos::util::GEOSException&) {
+		m_mutex.unlock();
+		return;
 	}
 
 	char arg[] = "pDQ";
+	clearTrianglateio(&out);
 	triangulate(&(arg[0]), &in, &out, 0);
 
 	// free memory
 	freeTriangleInput(&in);
 	// copy the result to VTK containers.
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	vtkPoints* points = vtkPoints::New();
+
 	points->Allocate(out.numberofpoints);
 	points->SetDataTypeToDouble();
 	for (int i = 0; i < out.numberofpoints; ++i){
@@ -311,39 +320,26 @@ void GeoDataPolygonTriangleThread::runTriangle()
 	}
 	m_isOutputting = true;
 
-	{
-		QMutexLocker locker(&m_mutex);
-		if (m_canceled) {
-			freeTriangleOutput(&out);
-			m_currentJob = nullptr;
-			return;
+	vtkCellArray* ca = vtkCellArray::New();
+
+	vtkIdType ids[3];
+	for (int i = 0; i < out.numberoftriangles; ++i){
+		for (int j = 0; j < 3; ++j) {
+			ids[j] = *(out.trianglelist + i * 3 + j) - 1;
 		}
+		ca->InsertNextCell(3, ids);
+	}
+	m_mutex.lock();
 
-		p->m_polyData->SetPoints(points);
-		vtkCellArray* ca = vtkCellArray::New();
-		p->m_polyData->Allocate(out.numberoftriangles);
-		vtkIdType ids[3];
-		for (int i = 0; i < out.numberoftriangles; ++i){
-			ids[0] = *(out.trianglelist + i * 3) - 1;
-			ids[1] = *(out.trianglelist + i * 3 + 1) - 1;
-			ids[2] = *(out.trianglelist + i * 3 + 2) - 1;
-			ca->InsertNextCell(3, ids);
-		}
-		p->m_polyData->SetPolys(ca);
-		ca->Delete();
-
-		p->m_polyData->DeleteCells();
-		p->m_polyData->BuildLinks();
-
-		p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
+//	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
 
 		freeTriangleOutput(&out);
 
-		p->updateScalarValues();
-		m_isOutputting = false;
-		if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
-			emit shapeUpdated(m_currentJob->targetPolygon);
-		}
-		m_currentJob = nullptr;
+	m_isOutputting = false;
+	if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
+		emit shapeUpdated(m_currentJob->targetPolygon, points, ca);
 	}
+	m_currentJob = nullptr;
+
+	m_mutex.unlock();
 }

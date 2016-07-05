@@ -128,7 +128,7 @@ private slots:
 	void deletePolygon(bool force = false);
 	void editColorSetting();
 	void renderGraphics();
-	void renderGraphics(GeoDataPolygon* polygon);
+	void updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca);
 	void copy();
 
 protected:
@@ -159,6 +159,10 @@ private:
 	GeoDataPolygonHolePolygon* setupHolePolygon();
 	void applyOffsetToAbstractPolygon(GeoDataPolygonAbstractPolygon* polygon, double x, double y);
 	void clearHolePolygons();
+
+	void lockMutex();
+	void unlockMutex();
+
 	ZDepthRange m_depthRange;
 
 	QPoint m_dragStartPoint;

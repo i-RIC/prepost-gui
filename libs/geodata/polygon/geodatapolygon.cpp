@@ -1226,7 +1226,7 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 	}
 	if (m_triangleThread == nullptr){
 		m_triangleThread = GeoDataPolygonTriangleThread::instance();
-		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*)), this, SLOT(renderGraphics(GeoDataPolygon*)));
+		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*)));
 	}
 	m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){
@@ -1303,9 +1303,28 @@ void GeoDataPolygon::renderGraphics()
 	renderGraphicsView();
 }
 
-void GeoDataPolygon::renderGraphics(GeoDataPolygon* polygon)
+void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca)
 {
 	if (polygon != this) {return;}
+
+	m_triangleThread->lockMutex();
+
+	m_polyData->SetPoints(points);
+	points->Delete();
+
+	m_polyData->SetPolys(ca);
+	ca->Delete();
+
+	updateScalarValues();
+
+	m_polyData->BuildCells();
+	m_polyData->BuildLinks();
+	m_polyData->Modified();
+
+	m_triangleThread->unlockMutex();
+
+	m_paintActor->GetProperty()->SetOpacity(m_setting.opacity);
+
 	renderGraphics();
 }
 
@@ -1356,7 +1375,6 @@ void GeoDataPolygon::copyShape(GeoDataPolygon* polygon)
 	iRICUndoStack::instance().clear();
 }
 
-
 void GeoDataPolygon::doApplyOffset(double x, double y)
 {
 	applyOffsetToAbstractPolygon(m_gridRegionPolygon, x, y);
@@ -1388,4 +1406,18 @@ void GeoDataPolygon::clearHolePolygons()
 		delete p;
 	}
 	m_holePolygons.clear();
+}
+
+void GeoDataPolygon::lockMutex()
+{
+	if (m_triangleThread == nullptr) {return;}
+
+	m_triangleThread->lockMutex();
+}
+
+void GeoDataPolygon::unlockMutex()
+{
+	if (m_triangleThread == nullptr) {return;}
+
+	m_triangleThread->unlockMutex();
 }
