@@ -19,7 +19,7 @@
 
 #define	SEPARATOR	" \t"
 
-PRivPath GeoDataRiverSurveyImporter::RivAlloc(double KP, char* str)
+PRivPath GeoDataRiverSurveyImporter::RivAlloc(double KP, const char* str)
 {
 	PRivPath node, p;
 

@@ -33,7 +33,7 @@ public:
 	const QStringList acceptableExtensions() override;
 
 private:
-	PRivPath RivAlloc(double KP, char* str);
+	PRivPath RivAlloc(double KP, const char* str);
 	void RivFree(PRivPath node);
 	void RivFreeAll();
 	bool RivSetBank(PRivPath node, PPoint2D left, PPoint2D right);
