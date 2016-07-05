@@ -128,7 +128,7 @@ private slots:
 	void deletePolygon(bool force = false);
 	void editColorSetting();
 	void renderGraphics();
-	void updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca);
+	void updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca, bool noDraw);
 	void copy();
 
 protected:

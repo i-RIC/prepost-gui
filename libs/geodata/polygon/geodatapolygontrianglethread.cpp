@@ -333,11 +333,11 @@ void GeoDataPolygonTriangleThread::runTriangle()
 
 //	p->m_paintActor->GetProperty()->SetOpacity(p->m_setting.opacity);
 
-		freeTriangleOutput(&out);
+	freeTriangleOutput(&out);
 
 	m_isOutputting = false;
-	if (! (m_abort || m_canceled) && (! m_currentJob->noDraw)) {
-		emit shapeUpdated(m_currentJob->targetPolygon, points, ca);
+	if (! (m_abort || m_canceled)) {
+		emit shapeUpdated(m_currentJob->targetPolygon, points, ca, m_currentJob->noDraw);
 	}
 	m_currentJob = nullptr;
 

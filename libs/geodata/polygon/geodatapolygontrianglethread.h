@@ -43,7 +43,7 @@ protected:
 	void run();
 
 signals:
-	void shapeUpdated(GeoDataPolygon* targetPolygon, vtkPoints* points, vtkCellArray* ca);
+	void shapeUpdated(GeoDataPolygon* targetPolygon, vtkPoints* points, vtkCellArray* ca, bool noDraw);
 
 private:
 	void runTriangle();

@@ -1223,7 +1223,7 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 	}
 	if (m_triangleThread == nullptr){
 		m_triangleThread = GeoDataPolygonTriangleThread::instance();
-		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*)));
+		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
 	}
 	m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){
@@ -1300,7 +1300,7 @@ void GeoDataPolygon::renderGraphics()
 	renderGraphicsView();
 }
 
-void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca)
+void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, vtkCellArray* ca, bool noDraw)
 {
 	if (polygon != this) {return;}
 
@@ -1321,6 +1321,8 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 	m_triangleThread->unlockMutex();
 
 	m_paintActor->GetProperty()->SetOpacity(m_setting.opacity);
+
+	if (noDraw) {return;}
 
 	renderGraphics();
 }
