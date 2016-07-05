@@ -31,7 +31,7 @@ public:
 	bool isEdgeSelectable(const QVector2D& pos, double distlimit);
 	bool isPolygonSelectable(const QVector2D& pos);
 
-	const QPolygonF polygon(QPointF offset = QPointF(0, 0)) const;
+	const QPolygonF polygon(QPointF offset = QPointF(0, 0), bool noClean = false) const;
 	vtkPolygon* getVtkPolygon() {return m_vtkPolygon;}
 	void setPolygon(const QPolygonF& p);
 	void setZDepthRange(double min, double max);

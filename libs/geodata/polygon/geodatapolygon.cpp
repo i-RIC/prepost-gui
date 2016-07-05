@@ -257,7 +257,9 @@ void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
 		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
 		p->setActive(false);
 	}
-	m_selectedPolygon->setSelected(false);
+	if (m_selectedPolygon != nullptr) {
+		m_selectedPolygon->setSelected(false);
+	}
 	v->unsetCursor();
 }
 
@@ -364,6 +366,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			if (m_selectMode == smPolygon) {
 				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
 			}
+			break;
 		case meDefining:
 			if (m_selectMode == smPolygon) {
 				pushRenderCommand(new PushNewPointCommand(true, QPoint(event->x(), event->y()), this));
@@ -392,13 +395,13 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 			m_currentPoint = QPoint(event->x(), event->y());
 			// push the first move command.
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
+				pushRenderCommand(new MoveVertexCommand(true, m_currentPoint, m_currentPoint, m_selectedPolygon->selectedVertexId(), this));
 			}
 			break;
 		case meAddVertexPrepare:
 			m_mouseEventMode = meAddVertex;
 			if (m_selectMode == smPolygon) {
-				iRICUndoStack::instance().push(new AddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
+				pushRenderCommand(new AddVertexCommand(true, m_selectedPolygon->selectedEdgeId(), QPoint(event->x(), event->y()), this));
 			}
 			break;
 		case meAddVertexNotPossible:
@@ -410,7 +413,8 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 					// you are going to remove the last point.
 					deletePolygon(true);
 				} else {
-					iRICUndoStack::instance().push(new RemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
+					m_mouseEventMode = meNormal;
+					pushRenderCommand(new RemoveVertexCommand(m_selectedPolygon->selectedVertexId(), this));
 				}
 			}
 			m_inhibitSelect = true;

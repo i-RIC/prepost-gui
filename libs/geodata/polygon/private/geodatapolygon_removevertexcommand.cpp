@@ -13,4 +13,5 @@ GeoDataPolygon::RemoveVertexCommand::RemoveVertexCommand(vtkIdType vertexId, Geo
 		newPolygon.removeLast();
 		newPolygon.push_back(newPolygon.at(0));
 	}
+	setNewPolygon(newPolygon);
 }

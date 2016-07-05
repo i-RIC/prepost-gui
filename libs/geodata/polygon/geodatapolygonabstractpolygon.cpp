@@ -81,7 +81,7 @@ bool GeoDataPolygonAbstractPolygon::isPolygonSelectable(const QVector2D& pos)
 	return pol.containsPoint(QPointF(pos.x(), pos.y()), Qt::OddEvenFill);
 }
 
-const QPolygonF GeoDataPolygonAbstractPolygon::polygon(QPointF offset) const
+const QPolygonF GeoDataPolygonAbstractPolygon::polygon(QPointF offset, bool noClean) const
 {
 	QMutexLocker locker(&m_mutex);
 	QPolygonF ret;
@@ -94,9 +94,10 @@ const QPolygonF GeoDataPolygonAbstractPolygon::polygon(QPointF offset) const
 		vtkIdType id = idlist->GetId(i);
 		double* p = points->GetPoint(id);
 		newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-		if (i == 0 || lastP != newP) {
-			ret << newP;
+		if (i != 0 && (lastP == newP) && ! noClean) {
+			continue;
 		}
+		ret << newP;
 		lastP = newP;
 	}
 	// For QPolygonF, the start vertex and end vertex should be the same point,
@@ -104,7 +105,7 @@ const QPolygonF GeoDataPolygonAbstractPolygon::polygon(QPointF offset) const
 	vtkIdType id = idlist->GetId(0);
 	double* p = points->GetPoint(id);
 	newP = QPointF(*p - offset.x(), *(p + 1) - offset.y());
-	if (lastP != newP) {
+	if (lastP != newP || noClean) {
 		ret << newP;
 	}
 	return ret;

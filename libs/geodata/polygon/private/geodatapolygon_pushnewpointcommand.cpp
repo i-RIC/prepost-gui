@@ -12,11 +12,21 @@ GeoDataPolygon::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPo
 	double dy = point.y();
 	pol->graphicsView()->viewportToWorld(dx, dy);
 
-	QPolygonF newPolygon(pol->m_selectedPolygon->polygon());
+	QPointF newPoint(dx, dy);
+	QPolygonF newPolygon(pol->m_selectedPolygon->polygon(QPointF(0, 0), true));
 	if (keyDown) {
-		newPolygon.insert(newPolygon.size() - 1, QPointF(dx, dy));
+		if (newPolygon.size() == 0) {
+			newPolygon.push_back(newPoint);
+			newPolygon.push_back(newPoint);
+			newPolygon.push_back(newPoint);
+		} else if (newPolygon.size() == 1) {
+			newPolygon.push_back(newPoint);
+			newPolygon.push_back(newPolygon.at(0));
+		} else {
+			newPolygon.insert(newPolygon.size() - 1, newPoint);
+		}
 	} else {
-		newPolygon[newPolygon.size() - 1] = QPointF(dx, dy);
+		newPolygon[newPolygon.size() - 2] = newPoint;
 	}
 	setNewPolygon(newPolygon);
 }

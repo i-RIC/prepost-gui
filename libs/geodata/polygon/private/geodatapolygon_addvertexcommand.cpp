@@ -14,7 +14,7 @@ GeoDataPolygon::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeI
 	pol->graphicsView()->viewportToWorld(dx, dy);
 	QPointF newPoint(dx, dy);
 
-	QPolygonF newPolygon(pol->m_selectedPolygon->polygon());
+	QPolygonF newPolygon(pol->m_selectedPolygon->polygon(QPointF(0, 0), true));
 
 	if (keyDown) {
 		newPolygon.insert(vertexId, newPoint);
@@ -25,6 +25,7 @@ GeoDataPolygon::AddVertexCommand::AddVertexCommand(bool keyDown, vtkIdType edgeI
 	}	else {
 		newPolygon[vertexId] = newPoint;
 	}
+	setNewPolygon(newPolygon);
 }
 
 int GeoDataPolygon::AddVertexCommand::id() const
