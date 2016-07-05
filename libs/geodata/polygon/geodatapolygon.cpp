@@ -239,14 +239,11 @@ void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
 		GeoDataPolygonHolePolygon* p = m_holePolygons.at(i);
 		p->setActive(true);
 	}
-	switch (m_selectMode) {
-	case smPolygon:
-		m_selectedPolygon->setSelected(true);
-		break;
-	case smNone:
-		// do nothing.
-		break;
-	}
+
+	m_selectMode = smPolygon;
+	m_gridRegionPolygon->setSelected(true);
+	m_selectedPolygon = m_gridRegionPolygon;
+
 	updateMouseCursor(v);
 }
 
