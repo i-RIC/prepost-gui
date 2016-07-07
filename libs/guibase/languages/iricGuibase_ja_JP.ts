@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
-        <location filename="../asciionlylineedit.cpp" line="9"/>
+        <location filename="../widget/asciionlylineedit.cpp" line="9"/>
         <source>String has to consist of only English characters.</source>
         <translation>文字列は英数字のみから構成される必要があります。</translation>
     </message>
     <message>
-        <location filename="../asciionlylineedit.cpp" line="22"/>
+        <location filename="../widget/asciionlylineedit.cpp" line="22"/>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+</context>
+<context>
+    <name>AsciiOnlyTextEdit</name>
+    <message>
+        <location filename="../widget/asciionlytextedit.cpp" line="10"/>
+        <source>String has to consist of only English characters.</source>
+        <translation>文字列は英数字のみから構成される必要があります。</translation>
+    </message>
+    <message>
+        <location filename="../widget/asciionlytextedit.cpp" line="22"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
@@ -17,12 +30,12 @@
 <context>
     <name>CgnsZoneSelectDialog</name>
     <message>
-        <location filename="../cgnszoneselectdialog.ui" line="14"/>
+        <location filename="../widget/cgnszoneselectdialog.ui" line="14"/>
         <source>Select grid to import</source>
         <translation>インポートする格子の選択</translation>
     </message>
     <message>
-        <location filename="../cgnszoneselectdialog.ui" line="20"/>
+        <location filename="../widget/cgnszoneselectdialog.ui" line="20"/>
         <source>Please select which grid to import</source>
         <translation>インポートする格子を選択してください</translation>
     </message>
@@ -162,27 +175,27 @@
 <context>
     <name>ContourSettingWidget</name>
     <message>
-        <location filename="../contoursettingwidget.ui" line="20"/>
+        <location filename="../widget/contoursettingwidget.ui" line="20"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../contoursettingwidget.ui" line="29"/>
+        <location filename="../widget/contoursettingwidget.ui" line="29"/>
         <source>Points</source>
         <translation>点</translation>
     </message>
     <message>
-        <location filename="../contoursettingwidget.ui" line="48"/>
+        <location filename="../widget/contoursettingwidget.ui" line="48"/>
         <source>Color Fringe</source>
         <translation>カラーフリンジ</translation>
     </message>
     <message>
-        <location filename="../contoursettingwidget.ui" line="70"/>
+        <location filename="../widget/contoursettingwidget.ui" line="70"/>
         <source>Contour Figure</source>
         <translation>面塗りコンター</translation>
     </message>
     <message>
-        <location filename="../contoursettingwidget.ui" line="89"/>
+        <location filename="../widget/contoursettingwidget.ui" line="89"/>
         <source>Isolines</source>
         <translation>コンター</translation>
     </message>
@@ -190,12 +203,12 @@
 <context>
     <name>CoordinateEditWidget</name>
     <message>
-        <location filename="../coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../coordinateeditwidget.cpp" line="47"/>
+        <location filename="../widget/coordinateeditwidget.cpp" line="47"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
     </message>
@@ -203,17 +216,14 @@
 <context>
     <name>CoordinateSystemSelectDialog</name>
     <message>
-        <location filename="../coordinatesystemselectdialog.ui" line="14"/>
         <source>Select Coordinate System</source>
         <translation>座標系の選択</translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.ui" line="22"/>
         <source>Search:</source>
         <translation>検索:</translation>
     </message>
     <message>
-        <location filename="../coordinatesystemselectdialog.cpp" line="47"/>
         <source>(Not Specified)</source>
         <translation>(指定されていない)</translation>
     </message>
@@ -221,17 +231,17 @@
 <context>
     <name>DirnameEditWidget</name>
     <message>
-        <location filename="../dirnameeditwidget.ui" line="14"/>
+        <location filename="../widget/dirnameeditwidget.ui" line="14"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../dirnameeditwidget.ui" line="35"/>
+        <location filename="../widget/dirnameeditwidget.ui" line="35"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../dirnameeditwidget.cpp" line="34"/>
+        <location filename="../widget/dirnameeditwidget.cpp" line="34"/>
         <source>Select Directory</source>
         <translation>フォルダを選択してください</translation>
     </message>
@@ -239,12 +249,12 @@
 <context>
     <name>DoubleSpinBoxWithHelp</name>
     <message>
-        <location filename="../doublespinboxwithhelp.ui" line="14"/>
+        <location filename="../widget/doublespinboxwithhelp.ui" line="14"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../doublespinboxwithhelp.cpp" line="63"/>
+        <location filename="../widget/doublespinboxwithhelp.cpp" line="63"/>
         <source>Min: %1, Max: %2</source>
         <translation>最小値: %1, 最大値: %2</translation>
     </message>
@@ -252,22 +262,22 @@
 <context>
     <name>FilenameEditWidget</name>
     <message>
-        <location filename="../filenameeditwidget.ui" line="14"/>
+        <location filename="../widget/filenameeditwidget.ui" line="14"/>
         <source>Form</source>
         <translation>フォーム</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.ui" line="41"/>
+        <location filename="../widget/filenameeditwidget.ui" line="41"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="27"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="27"/>
         <source>All files (*.*)</source>
         <translation>すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../filenameeditwidget.cpp" line="66"/>
+        <location filename="../widget/filenameeditwidget.cpp" line="66"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
@@ -275,38 +285,38 @@
 <context>
     <name>GridShapeEditDialog</name>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="20"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="20"/>
         <source>Grid Shape Display Setting</source>
         <translation>格子形状の表示設定</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="29"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="29"/>
         <source>Grid lines</source>
         <translation>格子線</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="35"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="35"/>
         <source>All</source>
         <translation>すべて</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="42"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="42"/>
         <source>Outline Only</source>
         <translation>外枠のみ</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="51"/>
-        <location filename="../gridshapeeditdialog.ui" line="104"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="51"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="104"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="86"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="86"/>
         <source>Grid indices</source>
         <translation>格子インデックス</translation>
     </message>
     <message>
-        <location filename="../gridshapeeditdialog.ui" line="95"/>
+        <location filename="../widget/gridshapeeditdialog.ui" line="95"/>
         <source>Visible</source>
         <translation>表示</translation>
     </message>
@@ -314,7 +324,7 @@
 <context>
     <name>IntegerNumberDisplayLabel</name>
     <message>
-        <location filename="../integernumberdisplaylabel.cpp" line="33"/>
+        <location filename="../widget/integernumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation>------</translation>
     </message>
@@ -322,12 +332,12 @@
 <context>
     <name>ItemSelectingDialog</name>
     <message>
-        <location filename="../itemselectingdialog.ui" line="14"/>
+        <location filename="../widget/itemselectingdialog.ui" line="14"/>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
     </message>
     <message>
-        <location filename="../itemselectingdialog.ui" line="20"/>
+        <location filename="../widget/itemselectingdialog.ui" line="20"/>
         <source>TextLabel</source>
         <translation>テキストラベル</translation>
     </message>
@@ -336,23 +346,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation type="vanished">X:</translation>
+        <translation>X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation type="vanished">Y:</translation>
+        <translation>Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation type="vanished">X: ------</translation>
+        <translation>X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation type="vanished">Y: ------</translation>
+        <translation>Y: ------</translation>
     </message>
 </context>
 <context>
@@ -392,13 +402,13 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation type="vanished">選択状態の変更</translation>
+        <translation>選択状態の変更</translation>
     </message>
 </context>
 <context>
     <name>RealNumberDisplayLabel</name>
     <message>
-        <location filename="../realnumberdisplaylabel.cpp" line="33"/>
+        <location filename="../widget/realnumberdisplaylabel.cpp" line="33"/>
         <source>------</source>
         <translation>------</translation>
     </message>
@@ -406,12 +416,12 @@
 <context>
     <name>RealNumberEditWidget</name>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="44"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../realnumbereditwidget.cpp" line="44"/>
+        <location filename="../widget/realnumbereditwidget.cpp" line="44"/>
         <source>It is not a real value</source>
         <translation>これは実数値ではありません</translation>
     </message>
@@ -589,7 +599,7 @@
 <context>
     <name>TransparencyWidget</name>
     <message>
-        <location filename="../transparencywidget.ui" line="29"/>
+        <location filename="../widget/transparencywidget.ui" line="29"/>
         <source>Transparent</source>
         <translation>半透明</translation>
     </message>
@@ -597,12 +607,12 @@
 <context>
     <name>WaitDialog</name>
     <message>
-        <location filename="../waitdialog.ui" line="14"/>
+        <location filename="../widget/waitdialog.ui" line="14"/>
         <source>Please wait</source>
         <translation>お待ちください</translation>
     </message>
     <message>
-        <location filename="../waitdialog.ui" line="20"/>
+        <location filename="../widget/waitdialog.ui" line="20"/>
         <source>Please wait...</source>
         <translation>お待ちください...</translation>
     </message>
