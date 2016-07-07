@@ -448,7 +448,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>IntegerNumberDisplayLabel</class>
    <extends>QLabel</extends>
-   <header>guibase/integernumberdisplaylabel.h</header>
+   <header>guibase/widget/integernumberdisplaylabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>
