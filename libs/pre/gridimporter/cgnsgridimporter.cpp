@@ -1,6 +1,6 @@
 #include "cgnsgridimporter.h"
 
-#include <guibase/cgnszoneselectdialog.h>
+#include <guibase/widget/cgnszoneselectdialog.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>

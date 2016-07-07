@@ -71,8 +71,7 @@ LIBS += \
 	-lvtkRenderingCore-6.1
 
 # Input
-HEADERS += cgnszoneselectdialog.h \
-           colortool.h \
+HEADERS += colortool.h \
            comboboxtool.h \
            contoursettingwidget.h \
            coordinateeditwidget.h \
@@ -138,10 +137,10 @@ HEADERS += cgnszoneselectdialog.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
+           widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
            widget/textediti.h
-FORMS += cgnszoneselectdialog.ui \
-         contoursettingwidget.ui \
+FORMS += contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \
          dirnameeditwidget.ui \
          doublespinboxwithhelp.ui \
@@ -156,9 +155,9 @@ FORMS += cgnszoneselectdialog.ui \
          waitdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
-         colormap/colormapsettingwidget.ui
-SOURCES += cgnszoneselectdialog.cpp \
-           colortool.cpp \
+         colormap/colormapsettingwidget.ui \
+         widget/cgnszoneselectdialog.ui
+SOURCES += colortool.cpp \
            comboboxtool.cpp \
            contoursettingwidget.cpp \
            coordinateeditwidget.cpp \
@@ -220,6 +219,7 @@ SOURCES += cgnszoneselectdialog.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
            widget/centeredcheckbox.cpp \
+           widget/cgnszoneselectdialog.cpp \
            widget/coloreditwidget.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
