@@ -79,7 +79,6 @@ HEADERS += colortool.h \
            cursorchanger.h \
            graphicsmisc.h \
            guibase_global.h \
-           integernumbereditwidget.h \
            irictoolbar.h \
            linestyleinformation.h \
            marginwidget.h \
@@ -137,6 +136,7 @@ HEADERS += colortool.h \
            widget/filenameeditwidget.h \
            widget/gridshapeeditdialog.h \
            widget/integernumberdisplaylabel.h \
+           widget/integernumbereditwidget.h \
            widget/itemselectingdialog.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
@@ -164,7 +164,6 @@ SOURCES += colortool.cpp \
            coordinatesystemselectdialog.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
-           integernumbereditwidget.cpp \
            irictoolbar.cpp \
            linestyleinformation.cpp \
            marginwidget.cpp \
@@ -220,6 +219,7 @@ SOURCES += colortool.cpp \
            widget/filenameeditwidget.cpp \
            widget/gridshapeeditdialog.cpp \
            widget/integernumberdisplaylabel.cpp \
+           widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \

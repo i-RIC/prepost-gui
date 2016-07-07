@@ -1,6 +1,6 @@
 #include "gridattributeintegereditwidget.h"
 
-#include <guibase/integernumbereditwidget.h>
+#include <guibase/widget/integernumbereditwidget.h>
 
 #include <QVBoxLayout>
 
