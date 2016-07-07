@@ -735,7 +735,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>SliderWithValue</class>
    <extends>QSlider</extends>
-   <header>guibase/sliderwithvalue.h</header>
+   <header>guibase/widget/sliderwithvalue.h</header>
   </customwidget>
  </customwidgets>
  <resources>

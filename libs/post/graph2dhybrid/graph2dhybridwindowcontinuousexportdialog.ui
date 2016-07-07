@@ -360,7 +360,7 @@
   <customwidget>
    <class>SliderWithValue</class>
    <extends>QSlider</extends>
-   <header>guibase/sliderwithvalue.h</header>
+   <header>guibase/widget/sliderwithvalue.h</header>
   </customwidget>
   <customwidget>
    <class>DirnameEditWidget</class>

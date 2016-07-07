@@ -93,7 +93,6 @@ HEADERS += colortool.h \
            scalarbarsetting.h \
            scalarbarwidget.h \
            scalarsettingcontainer.h \
-           sliderwithvalue.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
            vtk2dinteractorstyle.h \
@@ -136,6 +135,7 @@ HEADERS += colortool.h \
            widget/integernumbereditwidget.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
+           widget/sliderwithvalue.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
@@ -178,7 +178,6 @@ SOURCES += colortool.cpp \
            scalarbarsetting.cpp \
            scalarbarwidget.cpp \
            scalarsettingcontainer.cpp \
-           sliderwithvalue.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
            vtk2dinteractorstyle.cpp \
@@ -219,6 +218,7 @@ SOURCES += colortool.cpp \
            widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp
 RESOURCES += guibase.qrc
