@@ -4,7 +4,7 @@
 #include "gridcreatingconditioncompoundchannelabstractpolygon.h"
 #include "gridcreatingconditioncompoundchannelpolygoncoordinateseditdialog.h"
 
-#include <guibase/coordinateeditwidget.h>
+#include <guibase/widget/coordinateeditwidget.h>
 #include <misc/iricundostack.h>
 
 #include <QPolygonF>

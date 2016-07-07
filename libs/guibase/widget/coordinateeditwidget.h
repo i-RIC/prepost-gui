@@ -1,10 +1,9 @@
 #ifndef COORDINATEEDITWIDGET_H
 #define COORDINATEEDITWIDGET_H
 
-#include "guibase_global.h"
+#include "../guibase_global.h"
 
 #include <QLineEdit>
-#include <QString>
 
 class GUIBASEDLL_EXPORT CoordinateEditWidget : public QLineEdit
 {

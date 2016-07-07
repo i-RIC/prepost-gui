@@ -74,7 +74,6 @@ LIBS += \
 HEADERS += colortool.h \
            comboboxtool.h \
            contoursettingwidget.h \
-           coordinateeditwidget.h \
            coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
@@ -137,6 +136,7 @@ HEADERS += colortool.h \
            widget/centeredcheckbox.h \
            widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
+           widget/coordinateeditwidget.h \
            widget/itemselectingdialog.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
@@ -160,7 +160,6 @@ FORMS += contoursettingwidget.ui \
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
            contoursettingwidget.cpp \
-           coordinateeditwidget.cpp \
            coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
@@ -220,6 +219,7 @@ SOURCES += colortool.cpp \
            widget/centeredcheckbox.cpp \
            widget/cgnszoneselectdialog.cpp \
            widget/coloreditwidget.cpp \
+           widget/coordinateeditwidget.cpp \
            widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \

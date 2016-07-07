@@ -91,7 +91,7 @@
   <customwidget>
    <class>CoordinateEditWidget</class>
    <extends>QLineEdit</extends>
-   <header>guibase/coordinateeditwidget.h</header>
+   <header>guibase/widget/coordinateeditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
