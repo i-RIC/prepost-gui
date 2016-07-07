@@ -427,7 +427,7 @@
   <customwidget>
    <class>FilenameEditWidget</class>
    <extends>QLineEdit</extends>
-   <header>guibase/filenameeditwidget.h</header>
+   <header>guibase/widget/filenameeditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
