@@ -329,7 +329,7 @@
   <customwidget>
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
-   <header>realnumbereditwidget.h</header>
+   <header>widget/realnumbereditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -1,6 +1,6 @@
 #include "gridattributerealvariationeditwidget.h"
 
-#include <guibase/realnumbereditwidget.h>
+#include <guibase/widget/realnumbereditwidget.h>
 
 #include <QVBoxLayout>
 

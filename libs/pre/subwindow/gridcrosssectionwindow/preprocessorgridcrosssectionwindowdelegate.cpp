@@ -1,6 +1,6 @@
 #include "preprocessorgridcrosssectionwindowdelegate.h"
 
-#include <guibase/realnumbereditwidget.h>
+#include <guibase/widget/realnumbereditwidget.h>
 
 #include <QModelIndex>
 #include <QSpinBox>

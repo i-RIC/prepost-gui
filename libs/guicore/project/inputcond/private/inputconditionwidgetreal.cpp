@@ -2,7 +2,7 @@
 #include "../inputconditioncontainerreal.h"
 #include "inputconditionwidgetreal.h"
 
-#include <guibase/realnumbereditwidget.h>
+#include <guibase/widget/realnumbereditwidget.h>
 
 #include <QHBoxLayout>
 #include <QMessageBox>

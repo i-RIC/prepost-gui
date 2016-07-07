@@ -2,7 +2,7 @@
 #include "geodatariversurveycrosssectionwindowdelegate.h"
 
 #include <guibase/widget/centeredcheckbox.h>
-#include <guibase/realnumbereditwidget.h>
+#include <guibase/widget/realnumbereditwidget.h>
 
 #include <QPainter>
 

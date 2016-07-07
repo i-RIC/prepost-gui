@@ -2,7 +2,7 @@
 
 #include "../widget/coloreditwidget.h"
 #include "colormapcustomsettingdialog.h"
-#include "realnumbereditwidget.h"
+#include "widget/realnumbereditwidget.h"
 
 #include <misc/lastiodirectory.h>
 
