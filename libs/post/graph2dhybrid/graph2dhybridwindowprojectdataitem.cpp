@@ -8,7 +8,7 @@
 #include "graph2dhybridwindowview.h"
 #include "graph2dhybridwindowview.h"
 
-#include <guibase/marginwidget.h>
+#include <guibase/widget/marginwidget.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>

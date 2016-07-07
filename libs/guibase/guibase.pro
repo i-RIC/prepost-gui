@@ -81,7 +81,6 @@ HEADERS += colortool.h \
            guibase_global.h \
            irictoolbar.h \
            linestyleinformation.h \
-           marginwidget.h \
            mousepositionlabel.h \
            objectbrowser.h \
            objectbrowserview.h \
@@ -138,6 +137,7 @@ HEADERS += colortool.h \
            widget/integernumberdisplaylabel.h \
            widget/integernumbereditwidget.h \
            widget/itemselectingdialog.h \
+           widget/marginwidget.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += coordinatesystemselectdialog.ui \
@@ -166,7 +166,6 @@ SOURCES += colortool.cpp \
            graphicsmisc.cpp \
            irictoolbar.cpp \
            linestyleinformation.cpp \
-           marginwidget.cpp \
            mousepositionlabel.cpp \
            objectbrowser.cpp \
            objectbrowserview.cpp \
@@ -220,7 +219,8 @@ SOURCES += colortool.cpp \
            widget/gridshapeeditdialog.cpp \
            widget/integernumberdisplaylabel.cpp \
            widget/integernumbereditwidget.cpp \
-           widget/itemselectingdialog.cpp
+           widget/itemselectingdialog.cpp \
+           widget/marginwidget.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

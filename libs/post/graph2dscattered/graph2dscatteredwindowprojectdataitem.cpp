@@ -8,7 +8,7 @@
 #include "graph2dscatteredwindowview.h"
 #include "graph2dscatteredwindowview.h"
 
-#include <guibase/marginwidget.h>
+#include <guibase/widget/marginwidget.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
