@@ -2,7 +2,7 @@
 #include "inputconditioncontainerstring.h"
 #include "inputconditionwidgetfilename.h"
 
-#include <guibase/asciionlylineedit.h>
+#include <guibase/widget/asciionlylineedit.h>
 
 #include <QFileDialog>
 #include <QHBoxLayout>

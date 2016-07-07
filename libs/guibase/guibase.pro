@@ -71,9 +71,7 @@ LIBS += \
 	-lvtkRenderingCore-6.1
 
 # Input
-HEADERS += asciionlylineedit.h \
-           asciionlytextedit.h \
-           centeredcheckbox.h \
+HEADERS += centeredcheckbox.h \
            cgnszoneselectdialog.h \
            coloreditwidget.h \
            colortool.h \
@@ -111,7 +109,6 @@ HEADERS += asciionlylineedit.h \
            sliderwithvalue.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
-           textediti.h \
            transparencywidget.h \
            vtk2dinteractorstyle.h \
            vtkCustomStreamPoints.h \
@@ -139,7 +136,10 @@ HEADERS += asciionlylineedit.h \
            geometry/polygonregion.h \
            geometry/rect.h \
            private/coordinatesystem_impl.h \
-           private/itemselectingdialog_detail.h
+           private/itemselectingdialog_detail.h \
+           widget/asciionlylineedit.h \
+           widget/asciionlytextedit.h \
+           widget/textediti.h
 FORMS += cgnszoneselectdialog.ui \
          contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \
@@ -157,9 +157,7 @@ FORMS += cgnszoneselectdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui
-SOURCES += asciionlylineedit.cpp \
-           asciionlytextedit.cpp \
-           centeredcheckbox.cpp \
+SOURCES += centeredcheckbox.cpp \
            cgnszoneselectdialog.cpp \
            coloreditwidget.cpp \
            colortool.cpp \
@@ -220,7 +218,9 @@ SOURCES += asciionlylineedit.cpp \
            executer/ziparchiveprocessexecuter.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
-           geometry/rect.cpp
+           geometry/rect.cpp \
+           widget/asciionlylineedit.cpp \
+           widget/asciionlytextedit.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

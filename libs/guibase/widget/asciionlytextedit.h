@@ -1,7 +1,7 @@
 #ifndef ASCIIONLYTEXTEDIT_H
 #define ASCIIONLYTEXTEDIT_H
 
-#include "guibase_global.h"
+#include "../guibase_global.h"
 #include "textediti.h"
 
 #include <QTextEdit>

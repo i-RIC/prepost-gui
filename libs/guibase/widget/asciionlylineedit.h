@@ -1,7 +1,7 @@
 #ifndef ASCIIONLYLINEEDIT_H
 #define ASCIIONLYLINEEDIT_H
 
-#include "guibase_global.h"
+#include "../guibase_global.h"
 #include "textediti.h"
 
 #include <QLineEdit>

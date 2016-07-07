@@ -2,8 +2,8 @@
 #include "../inputconditioncontainerstring.h"
 #include "inputconditionwidgetstring.h"
 
-#include <guibase/asciionlylineedit.h>
-#include <guibase/asciionlytextedit.h>
+#include <guibase/widget/asciionlylineedit.h>
+#include <guibase/widget/asciionlytextedit.h>
 
 #include <QHBoxLayout>
 #include <QMessageBox>
