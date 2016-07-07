@@ -6,7 +6,7 @@
 #include "geodatariversurveycrosssectionwindowdelegate.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 
-#include <guibase/centeredcheckbox.h>
+#include <guibase/widget/centeredcheckbox.h>
 #include <guibase/coloreditwidget.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>

@@ -71,8 +71,7 @@ LIBS += \
 	-lvtkRenderingCore-6.1
 
 # Input
-HEADERS += centeredcheckbox.h \
-           cgnszoneselectdialog.h \
+HEADERS += cgnszoneselectdialog.h \
            coloreditwidget.h \
            colortool.h \
            comboboxtool.h \
@@ -139,6 +138,7 @@ HEADERS += centeredcheckbox.h \
            private/itemselectingdialog_detail.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
+           widget/centeredcheckbox.h \
            widget/textediti.h
 FORMS += cgnszoneselectdialog.ui \
          contoursettingwidget.ui \
@@ -157,8 +157,7 @@ FORMS += cgnszoneselectdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui
-SOURCES += centeredcheckbox.cpp \
-           cgnszoneselectdialog.cpp \
+SOURCES += cgnszoneselectdialog.cpp \
            coloreditwidget.cpp \
            colortool.cpp \
            comboboxtool.cpp \
@@ -220,7 +219,8 @@ SOURCES += centeredcheckbox.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
            widget/asciionlylineedit.cpp \
-           widget/asciionlytextedit.cpp
+           widget/asciionlytextedit.cpp \
+           widget/centeredcheckbox.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \
