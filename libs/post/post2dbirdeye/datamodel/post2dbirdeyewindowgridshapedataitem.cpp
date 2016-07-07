@@ -1,7 +1,7 @@
 #include "post2dbirdeyewindowgridshapedataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
-#include <guibase/gridshapeeditdialog.h>
+#include <guibase/widget/gridshapeeditdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>

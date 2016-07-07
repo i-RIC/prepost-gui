@@ -2,7 +2,7 @@
 #define POST3DWINDOWGRIDSHAPEDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
-#include <guibase/gridshapeeditdialog.h>
+#include <guibase/widget/gridshapeeditdialog.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkLODActor.h>

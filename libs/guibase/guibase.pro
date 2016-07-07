@@ -78,7 +78,6 @@ HEADERS += colortool.h \
            coordinatesystemselectdialog.h \
            cursorchanger.h \
            graphicsmisc.h \
-           gridshapeeditdialog.h \
            guibase_global.h \
            integernumbereditwidget.h \
            irictoolbar.h \
@@ -136,12 +135,12 @@ HEADERS += colortool.h \
            widget/dirnameeditwidget.h \
            widget/doublespinboxwithhelp.h \
            widget/filenameeditwidget.h \
+           widget/gridshapeeditdialog.h \
            widget/integernumberdisplaylabel.h \
            widget/itemselectingdialog.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += coordinatesystemselectdialog.ui \
-         gridshapeeditdialog.ui \
          scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
@@ -156,6 +155,7 @@ FORMS += coordinatesystemselectdialog.ui \
          widget/dirnameeditwidget.ui \
          widget/doublespinboxwithhelp.ui \
          widget/filenameeditwidget.ui \
+         widget/gridshapeeditdialog.ui \
          widget/itemselectingdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
@@ -164,7 +164,6 @@ SOURCES += colortool.cpp \
            coordinatesystemselectdialog.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
-           gridshapeeditdialog.cpp \
            integernumbereditwidget.cpp \
            irictoolbar.cpp \
            linestyleinformation.cpp \
@@ -219,6 +218,7 @@ SOURCES += colortool.cpp \
            widget/dirnameeditwidget.cpp \
            widget/doublespinboxwithhelp.cpp \
            widget/filenameeditwidget.cpp \
+           widget/gridshapeeditdialog.cpp \
            widget/integernumberdisplaylabel.cpp \
            widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc

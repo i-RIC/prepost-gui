@@ -6,7 +6,7 @@
 
 #include <guibase/widget/coloreditwidget.h>
 #include <guibase/graphicsmisc.h>
-#include <guibase/gridshapeeditdialog.h>
+#include <guibase/widget/gridshapeeditdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>

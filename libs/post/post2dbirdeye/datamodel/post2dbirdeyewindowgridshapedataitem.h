@@ -2,7 +2,7 @@
 #define POST2DBIRDEYEWINDOWGRIDSHAPEDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
-#include <guibase/gridshapeeditdialog.h>
+#include <guibase/widget/gridshapeeditdialog.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>

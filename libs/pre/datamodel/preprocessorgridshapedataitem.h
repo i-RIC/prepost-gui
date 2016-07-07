@@ -3,7 +3,7 @@
 
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guibase/xyaxisdisplaysettingdialog.h>
-#include <guibase/gridshapeeditdialog.h>
+#include <guibase/widget/gridshapeeditdialog.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkPoints.h>
