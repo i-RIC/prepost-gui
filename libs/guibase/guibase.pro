@@ -87,7 +87,6 @@ HEADERS += colortool.h \
            pointstyleinformation.h \
            qwtplotcustomcurve.h \
            qwtplotcustommarker.h \
-           realnumberdisplaylabel.h \
            scalarbardialog.h \
            scalarbarsetting.h \
            scalarbarwidget.h \
@@ -134,6 +133,7 @@ HEADERS += colortool.h \
            widget/integernumbereditwidget.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
+           widget/realnumberdisplaylabel.h \
            widget/realnumbereditwidget.h \
            widget/sliderwithvalue.h \
            widget/textediti.h \
@@ -172,7 +172,6 @@ SOURCES += colortool.cpp \
            pointstyleinformation.cpp \
            qwtplotcustomcurve.cpp \
            qwtplotcustommarker.cpp \
-           realnumberdisplaylabel.cpp \
            scalarbardialog.cpp \
            scalarbarsetting.cpp \
            scalarbarwidget.cpp \
@@ -217,6 +216,7 @@ SOURCES += colortool.cpp \
            widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/realnumberdisplaylabel.cpp \
            widget/realnumbereditwidget.cpp \
            widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \

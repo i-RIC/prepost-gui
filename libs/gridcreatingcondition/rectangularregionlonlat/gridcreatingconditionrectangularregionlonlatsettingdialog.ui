@@ -443,7 +443,7 @@ p, li { white-space: pre-wrap; }
   <customwidget>
    <class>RealNumberDisplayLabel</class>
    <extends>QLabel</extends>
-   <header>guibase/realnumberdisplaylabel.h</header>
+   <header>guibase/widget/realnumberdisplaylabel.h</header>
   </customwidget>
   <customwidget>
    <class>IntegerNumberDisplayLabel</class>
