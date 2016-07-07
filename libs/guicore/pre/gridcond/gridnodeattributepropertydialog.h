@@ -2,9 +2,11 @@
 #define GRIDRELATEDNODECONDITIONPROPERTYDIALOG_H
 
 #include "../../guicore_global.h"
-#include <QDialog>
-#include <guibase/contoursettingwidget.h>
 #include "../../scalarstocolors/scalarstocolorseditdialog.h"
+
+#include <guibase/widget/contoursettingwidget.h>
+
+#include <QDialog>
 
 class ScalarsToColorsEditWidget;
 

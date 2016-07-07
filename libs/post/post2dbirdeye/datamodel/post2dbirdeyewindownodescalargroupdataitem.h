@@ -2,7 +2,7 @@
 #define POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 #include <guibase/structuredgridregion.h>

@@ -6,7 +6,7 @@
 #include <guibase/vtktextpropertysettingcontainer.h>
 
 #include <guibase/scalarsettingcontainer.h>
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include "post3dwindowfacedataitem.h"
 

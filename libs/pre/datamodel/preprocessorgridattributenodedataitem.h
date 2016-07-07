@@ -1,8 +1,8 @@
 #ifndef PREPROCESSORGRIDATTRIBUTENODEDATAITEM_H
 #define PREPROCESSORGRIDATTRIBUTENODEDATAITEM_H
 
+#include <guibase/widget/contoursettingwidget.h>
 #include <guicore/named/namedgraphicwindowdataitem.h>
-#include <guibase/contoursettingwidget.h>
 
 #include <vtkIdList.h>
 

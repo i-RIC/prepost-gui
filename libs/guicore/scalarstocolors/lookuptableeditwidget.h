@@ -3,7 +3,8 @@
 
 #include "../guicore_global.h"
 #include "scalarstocolorseditwidget.h"
-#include <guibase/contoursettingwidget.h>
+
+#include <guibase/widget/contoursettingwidget.h>
 
 namespace Ui
 {

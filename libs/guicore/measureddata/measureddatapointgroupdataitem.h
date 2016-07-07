@@ -5,7 +5,7 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../misc/targeted/targeteditemi.h"
 
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 
 #include <misc/compositecontainer.h>

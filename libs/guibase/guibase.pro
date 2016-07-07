@@ -73,7 +73,6 @@ LIBS += \
 # Input
 HEADERS += colortool.h \
            comboboxtool.h \
-           contoursettingwidget.h \
            coordinatesystem.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
@@ -136,12 +135,12 @@ HEADERS += colortool.h \
            widget/centeredcheckbox.h \
            widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
+           widget/contoursettingwidget.h \
            widget/coordinateeditwidget.h \
            widget/itemselectingdialog.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
-FORMS += contoursettingwidget.ui \
-         coordinatesystemselectdialog.ui \
+FORMS += coordinatesystemselectdialog.ui \
          dirnameeditwidget.ui \
          doublespinboxwithhelp.ui \
          filenameeditwidget.ui \
@@ -156,10 +155,10 @@ FORMS += contoursettingwidget.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
          widget/cgnszoneselectdialog.ui \
+         widget/contoursettingwidget.ui \
          widget/itemselectingdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
-           contoursettingwidget.cpp \
            coordinatesystem.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
@@ -219,6 +218,7 @@ SOURCES += colortool.cpp \
            widget/centeredcheckbox.cpp \
            widget/cgnszoneselectdialog.cpp \
            widget/coloreditwidget.cpp \
+           widget/contoursettingwidget.cpp \
            widget/coordinateeditwidget.cpp \
            widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc

@@ -3,7 +3,7 @@
 
 #include "../scalarstocolors/lookuptablecontainer.h"
 #include "measureddatapointsetting.h"
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
 

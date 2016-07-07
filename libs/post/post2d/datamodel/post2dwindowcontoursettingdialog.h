@@ -4,10 +4,10 @@
 #include "../post2d_global.h"
 #include "post2dwindownodescalargroupdataitem.h"
 
-#include <guibase/contoursettingwidget.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtktextpropertysettingcontainer.h>
+#include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <postbase/post2dwindowcontoursetting.h>
 
 #include <QDialog>

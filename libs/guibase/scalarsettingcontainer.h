@@ -6,7 +6,7 @@
 #include "scalarbarsetting.h"
 #include "vtktextpropertysettingcontainer.h"
 
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/intcontainer.h>

@@ -2,7 +2,7 @@
 #define POST3DWINDOWNODESCALARGROUPDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 

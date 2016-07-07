@@ -7,7 +7,7 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 
-#include <guibase/contoursettingwidget.h>
+#include <guibase/widget/contoursettingwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
