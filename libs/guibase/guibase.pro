@@ -77,7 +77,6 @@ HEADERS += colortool.h \
            coordinatesystembuilder.h \
            coordinatesystemselectdialog.h \
            cursorchanger.h \
-           dirnameeditwidget.h \
            doublespinboxwithhelp.h \
            filenameeditwidget.h \
            graphicsmisc.h \
@@ -137,11 +136,11 @@ HEADERS += colortool.h \
            widget/coloreditwidget.h \
            widget/contoursettingwidget.h \
            widget/coordinateeditwidget.h \
+           widget/dirnameeditwidget.h \
            widget/itemselectingdialog.h \
            widget/textediti.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += coordinatesystemselectdialog.ui \
-         dirnameeditwidget.ui \
          doublespinboxwithhelp.ui \
          filenameeditwidget.ui \
          gridshapeeditdialog.ui \
@@ -156,6 +155,7 @@ FORMS += coordinatesystemselectdialog.ui \
          colormap/colormapsettingwidget.ui \
          widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
+         widget/dirnameeditwidget.ui \
          widget/itemselectingdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
@@ -163,7 +163,6 @@ SOURCES += colortool.cpp \
            coordinatesystembuilder.cpp \
            coordinatesystemselectdialog.cpp \
            cursorchanger.cpp \
-           dirnameeditwidget.cpp \
            doublespinboxwithhelp.cpp \
            filenameeditwidget.cpp \
            graphicsmisc.cpp \
@@ -220,6 +219,7 @@ SOURCES += colortool.cpp \
            widget/coloreditwidget.cpp \
            widget/contoursettingwidget.cpp \
            widget/coordinateeditwidget.cpp \
+           widget/dirnameeditwidget.cpp \
            widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \

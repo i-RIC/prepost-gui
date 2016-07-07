@@ -142,7 +142,7 @@
   <customwidget>
    <class>DirnameEditWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/dirnameeditwidget.h</header>
+   <header>guibase/widget/dirnameeditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
