@@ -26,7 +26,7 @@
 #include "preprocessorgraphicsview.h"
 #include "preprocessorwindow.h"
 
-#include <guibase/itemselectingdialog.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/measureddata/measureddatafiledataitem.h>
 #include <guicore/measureddata/measureddatapointgroupdataitem.h>

@@ -12,7 +12,7 @@
 #include "post2dwindowdatamodel.h"
 #include "post2dwindowgraphicsview.h"
 
-#include <guibase/itemselectingdialog.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/measureddata/measureddatafiledataitem.h>
 #include <guicore/measureddata/measureddatapointgroupdataitem.h>

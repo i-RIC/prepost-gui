@@ -21,7 +21,7 @@
 #include <guibase/coordinatesystembuilder.h>
 #include <guibase/executer/silentexecuterwatcher.h>
 #include <guibase/irictoolbar.h>
-#include <guibase/itemselectingdialog.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowinterface.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>

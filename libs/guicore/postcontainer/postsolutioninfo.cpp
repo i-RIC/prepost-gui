@@ -14,7 +14,7 @@
 #include "posttimesteps.h"
 #include "postzonedatacontainer.h"
 
-#include <guibase/itemselectingdialog.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>

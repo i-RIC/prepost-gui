@@ -88,7 +88,6 @@ HEADERS += colortool.h \
            integernumberdisplaylabel.h \
            integernumbereditwidget.h \
            irictoolbar.h \
-           itemselectingdialog.h \
            linestyleinformation.h \
            marginwidget.h \
            mousepositionlabel.h \
@@ -133,20 +132,20 @@ HEADERS += colortool.h \
            geometry/polygonregion.h \
            geometry/rect.h \
            private/coordinatesystem_impl.h \
-           private/itemselectingdialog_detail.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
            widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
-           widget/textediti.h
+           widget/itemselectingdialog.h \
+           widget/textediti.h \
+           widget/private/itemselectingdialog_detail.h
 FORMS += contoursettingwidget.ui \
          coordinatesystemselectdialog.ui \
          dirnameeditwidget.ui \
          doublespinboxwithhelp.ui \
          filenameeditwidget.ui \
          gridshapeeditdialog.ui \
-         itemselectingdialog.ui \
          scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
@@ -156,7 +155,8 @@ FORMS += contoursettingwidget.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
-         widget/cgnszoneselectdialog.ui
+         widget/cgnszoneselectdialog.ui \
+         widget/itemselectingdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
            contoursettingwidget.cpp \
@@ -173,7 +173,6 @@ SOURCES += colortool.cpp \
            integernumberdisplaylabel.cpp \
            integernumbereditwidget.cpp \
            irictoolbar.cpp \
-           itemselectingdialog.cpp \
            linestyleinformation.cpp \
            marginwidget.cpp \
            mousepositionlabel.cpp \
@@ -220,7 +219,8 @@ SOURCES += colortool.cpp \
            widget/asciionlytextedit.cpp \
            widget/centeredcheckbox.cpp \
            widget/cgnszoneselectdialog.cpp \
-           widget/coloreditwidget.cpp
+           widget/coloreditwidget.cpp \
+           widget/itemselectingdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \
