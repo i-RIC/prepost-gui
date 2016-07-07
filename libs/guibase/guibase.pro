@@ -81,7 +81,6 @@ HEADERS += colortool.h \
            guibase_global.h \
            irictoolbar.h \
            linestyleinformation.h \
-           mousepositionlabel.h \
            objectbrowser.h \
            objectbrowserview.h \
            pointstyleinformation.h \
@@ -133,6 +132,7 @@ HEADERS += colortool.h \
            widget/integernumbereditwidget.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
+           widget/mousepositionlabel.h \
            widget/realnumberdisplaylabel.h \
            widget/realnumbereditwidget.h \
            widget/sliderwithvalue.h \
@@ -166,7 +166,6 @@ SOURCES += colortool.cpp \
            graphicsmisc.cpp \
            irictoolbar.cpp \
            linestyleinformation.cpp \
-           mousepositionlabel.cpp \
            objectbrowser.cpp \
            objectbrowserview.cpp \
            pointstyleinformation.cpp \
@@ -216,6 +215,7 @@ SOURCES += colortool.cpp \
            widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/mousepositionlabel.cpp \
            widget/realnumberdisplaylabel.cpp \
            widget/realnumbereditwidget.cpp \
            widget/sliderwithvalue.cpp \
