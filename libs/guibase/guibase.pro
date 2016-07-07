@@ -96,7 +96,6 @@ HEADERS += colortool.h \
            sliderwithvalue.h \
            structuredgridregion.h \
            structuredgridregionselectwidget.h \
-           transparencywidget.h \
            vtk2dinteractorstyle.h \
            vtkCustomStreamPoints.h \
            vtkdatasetattributestool.h \
@@ -138,13 +137,13 @@ HEADERS += colortool.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
            widget/textediti.h \
+           widget/transparencywidget.h \
            widget/waitdialog.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += coordinatesystemselectdialog.ui \
          scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
-         transparencywidget.ui \
          vtktextpropertysettingdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
@@ -156,6 +155,7 @@ FORMS += coordinatesystemselectdialog.ui \
          widget/filenameeditwidget.ui \
          widget/gridshapeeditdialog.ui \
          widget/itemselectingdialog.ui \
+         widget/transparencywidget.ui \
          widget/waitdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
@@ -181,7 +181,6 @@ SOURCES += colortool.cpp \
            sliderwithvalue.cpp \
            structuredgridregion.cpp \
            structuredgridregionselectwidget.cpp \
-           transparencywidget.cpp \
            vtk2dinteractorstyle.cpp \
            vtkCustomStreamPoints.cxx \
            vtkdatasetattributestool.cpp \
@@ -220,6 +219,7 @@ SOURCES += colortool.cpp \
            widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp \
            widget/marginwidget.cpp \
+           widget/transparencywidget.cpp \
            widget/waitdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \

@@ -167,7 +167,7 @@
   <customwidget>
    <class>TransparencyWidget</class>
    <extends>QWidget</extends>
-   <header>guibase/transparencywidget.h</header>
+   <header>guibase/widget/transparencywidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
