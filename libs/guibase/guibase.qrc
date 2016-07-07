@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/libs/guibase">
-        <file>data/epsg.txt</file>
         <file>images/iconProperty.png</file>
         <file>images/iconDeleteItem.png</file>
         <file>images/iconItemMoveDown.png</file>

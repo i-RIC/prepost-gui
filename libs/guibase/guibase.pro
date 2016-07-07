@@ -49,15 +49,6 @@ unix {
 	LIBS += -lqwt
 }
 
-# proj.4
-
-win32 {
-	LIBS += -lproj_i
-}
-unix {
-	LIBS += -lproj
-}
-
 # VTK
 
 LIBS += \
@@ -73,9 +64,6 @@ LIBS += \
 # Input
 HEADERS += colortool.h \
            comboboxtool.h \
-           coordinatesystem.h \
-           coordinatesystembuilder.h \
-           coordinatesystemselectdialog.h \
            cursorchanger.h \
            graphicsmisc.h \
            guibase_global.h \
@@ -116,7 +104,6 @@ HEADERS += colortool.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
-           private/coordinatesystem_impl.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
@@ -140,8 +127,7 @@ HEADERS += colortool.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
            widget/private/itemselectingdialog_detail.h
-FORMS += coordinatesystemselectdialog.ui \
-         scalarbardialog.ui \
+FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
          vtktextpropertysettingdialog.ui \
@@ -159,9 +145,6 @@ FORMS += coordinatesystemselectdialog.ui \
          widget/waitdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
-           coordinatesystem.cpp \
-           coordinatesystembuilder.cpp \
-           coordinatesystemselectdialog.cpp \
            cursorchanger.cpp \
            graphicsmisc.cpp \
            irictoolbar.cpp \

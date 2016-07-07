@@ -3,7 +3,7 @@
 #include "post2dwindownodescalargroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

@@ -20,6 +20,20 @@ QT += network widgets xml
 # Internal libraries #
 ######################
 
+# iricCs
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../cs/debug"
+	} else {
+		LIBS += -L"../cs/release"
+	}
+}
+unix {
+	LIBS += -L"../cs"
+}
+LIBS += -liricCs
+
 # iricTmsLoader
 
 win32 {

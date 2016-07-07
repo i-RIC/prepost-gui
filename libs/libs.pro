@@ -8,6 +8,7 @@ CONFIG += ordered
 
 SUBDIRS = \
 	tmsloader \
+	cs \
 	misc \
 	triangle \
 	guibase \

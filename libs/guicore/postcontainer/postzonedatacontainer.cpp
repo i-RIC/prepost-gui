@@ -8,8 +8,8 @@
 #include "postsolutioninfo.h"
 #include "postzonedatacontainer.h"
 
+#include <cs/coordinatesystem.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guibase/coordinatesystem.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 

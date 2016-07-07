@@ -16,9 +16,9 @@
 #include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
 
+#include <cs/coordinatesystembuilder.h>
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
 #include <guibase/cursorchanger.h>
-#include <guibase/coordinatesystembuilder.h>
 #include <guibase/executer/silentexecuterwatcher.h>
 #include <guibase/irictoolbar.h>
 #include <guibase/widget/itemselectingdialog.h>

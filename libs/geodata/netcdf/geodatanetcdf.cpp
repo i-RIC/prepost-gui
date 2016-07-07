@@ -1,6 +1,6 @@
 #include "geodatanetcdf.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>

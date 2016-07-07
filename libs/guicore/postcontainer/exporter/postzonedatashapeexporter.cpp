@@ -5,7 +5,7 @@
 #include "project/projectdata.h"
 #include "project/projectmainfile.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 
 #include <QFileInfo>
 #include <QTextStream>

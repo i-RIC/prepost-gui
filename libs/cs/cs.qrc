@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/cs">
+        <file>data/epsg.txt</file>
+    </qresource>
+</RCC>

@@ -6,7 +6,7 @@
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommand.h>

@@ -3,7 +3,7 @@
 #include "../main/iricmainwindow.h"
 #include "projectpropertybasicinfowidget.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

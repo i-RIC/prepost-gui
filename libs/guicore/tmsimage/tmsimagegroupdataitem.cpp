@@ -3,7 +3,7 @@
 #include "../misc/targeted/targeteditemsettargetcommandtool.h"
 #include "../named/namedgraphicswindowdataitemtool.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

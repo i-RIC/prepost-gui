@@ -1,8 +1,8 @@
 #include "geodatanetcdf.h"
 #include "geodatanetcdfgdalimporter.h"
 
-#include <guibase/coordinatesystem.h>
-#include <guibase/coordinatesystembuilder.h>
+#include <cs/coordinatesystem.h>
+#include <cs/coordinatesystembuilder.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>

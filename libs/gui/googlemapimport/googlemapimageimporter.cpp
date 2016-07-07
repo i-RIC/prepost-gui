@@ -2,7 +2,7 @@
 #include "googlemapimageimporter.h"
 #include "googlemapimageimportsettingdialog.h"
 
-#include <guibase/coordinatesystem.h>
+#include <cs/coordinatesystem.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>

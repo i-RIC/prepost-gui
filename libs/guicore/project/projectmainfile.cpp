@@ -15,9 +15,9 @@
 #include "projectpostprocessors.h"
 #include "projectworkspace.h"
 
-#include <guibase/coordinatesystem.h>
-#include <guibase/coordinatesystembuilder.h>
-#include <guibase/coordinatesystemselectdialog.h>
+#include <cs/coordinatesystem.h>
+#include <cs/coordinatesystembuilder.h>
+#include <cs/coordinatesystemselectdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
