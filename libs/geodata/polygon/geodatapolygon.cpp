@@ -21,7 +21,7 @@
 
 #include <iriclib_polygon.h>
 
-#include <guibase/waitdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/qundocommandhelper.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>

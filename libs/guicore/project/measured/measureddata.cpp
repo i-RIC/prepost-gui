@@ -1,7 +1,7 @@
 #include "../../base/iricmainwindowinterface.h"
 #include "measureddata.h"
 
-#include <guibase/waitdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 

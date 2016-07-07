@@ -11,7 +11,7 @@
 #include "geodatapointmapinterpolatepoints.h"
 #include "geodatapointmaprepresentationdialog.h"
 
-#include <guibase/waitdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/misc/qundocommandhelper.h>

@@ -1,5 +1,5 @@
 #include "waitdialogexecuterwatcher.h"
-#include "../waitdialog.h"
+#include "../widget/waitdialog.h"
 #include "executeri.h"
 
 #include <QApplication>

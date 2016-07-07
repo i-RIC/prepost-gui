@@ -105,7 +105,6 @@ HEADERS += colortool.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
-           waitdialog.h \
            xyaxisdisplaysettingdialog.h \
            colormap/colormapcustomsetting.h \
            colormap/colormapcustomsettingcolor.h \
@@ -139,6 +138,7 @@ HEADERS += colortool.h \
            widget/itemselectingdialog.h \
            widget/marginwidget.h \
            widget/textediti.h \
+           widget/waitdialog.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += coordinatesystemselectdialog.ui \
          scalarbardialog.ui \
@@ -146,7 +146,6 @@ FORMS += coordinatesystemselectdialog.ui \
          structuredgridregionselectwidget.ui \
          transparencywidget.ui \
          vtktextpropertysettingdialog.ui \
-         waitdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui \
@@ -156,7 +155,8 @@ FORMS += coordinatesystemselectdialog.ui \
          widget/doublespinboxwithhelp.ui \
          widget/filenameeditwidget.ui \
          widget/gridshapeeditdialog.ui \
-         widget/itemselectingdialog.ui
+         widget/itemselectingdialog.ui \
+         widget/waitdialog.ui
 SOURCES += colortool.cpp \
            comboboxtool.cpp \
            coordinatesystem.cpp \
@@ -190,7 +190,6 @@ SOURCES += colortool.cpp \
            vtksubdividegrid.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
-           waitdialog.cpp \
            xyaxisdisplaysettingdialog.cpp \
            colormap/colormapcustomsetting.cpp \
            colormap/colormapcustomsettingcolor.cpp \
@@ -220,7 +219,8 @@ SOURCES += colortool.cpp \
            widget/integernumberdisplaylabel.cpp \
            widget/integernumbereditwidget.cpp \
            widget/itemselectingdialog.cpp \
-           widget/marginwidget.cpp
+           widget/marginwidget.cpp \
+           widget/waitdialog.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

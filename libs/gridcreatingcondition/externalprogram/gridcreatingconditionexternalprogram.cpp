@@ -1,7 +1,7 @@
 #include "gridcreatingconditionexternalprogram.h"
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
 
-#include <guibase/waitdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>

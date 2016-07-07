@@ -5,7 +5,7 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 
-#include <guibase/waitdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/mathsupport.h>
