@@ -4,7 +4,7 @@
 
 #include "private/post2dwindowgridshapedataitem_setsettingcommand.h"
 
-#include <guibase/coloreditwidget.h>
+#include <guibase/widget/coloreditwidget.h>
 #include <guibase/graphicsmisc.h>
 #include <guibase/gridshapeeditdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>

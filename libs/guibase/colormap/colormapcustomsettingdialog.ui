@@ -206,7 +206,7 @@
   <customwidget>
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
-   <header>coloreditwidget.h</header>
+   <header>widget/coloreditwidget.h</header>
   </customwidget>
   <customwidget>
    <class>RealNumberEditWidget</class>

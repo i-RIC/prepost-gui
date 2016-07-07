@@ -84,7 +84,7 @@
   <customwidget>
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
-   <header>guibase/coloreditwidget.h</header>
+   <header>guibase/widget/coloreditwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

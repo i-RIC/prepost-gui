@@ -1,6 +1,6 @@
 #include "ui_colormapcustomsettingdialog.h"
 
-#include "coloreditwidget.h"
+#include "../widget/coloreditwidget.h"
 #include "colormapcustomsettingdialog.h"
 #include "realnumbereditwidget.h"
 

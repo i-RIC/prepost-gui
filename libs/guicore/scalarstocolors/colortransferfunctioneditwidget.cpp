@@ -3,7 +3,7 @@
 #include "colortransferfunctioncontainer.h"
 #include "colortransferfunctioneditwidget.h"
 
-#include <guibase/coloreditwidget.h>
+#include <guibase/widget/coloreditwidget.h>
 
 #include <QColorDialog>
 #include <QItemDelegate>

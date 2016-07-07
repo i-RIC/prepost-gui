@@ -1,7 +1,7 @@
 #include "ui_preprocessorgridattributecelldisplaysettingdialog.h"
 #include "preprocessorgridattributecelldisplaysettingdialog.h"
 
-#include <guibase/coloreditwidget.h>
+#include <guibase/widget/coloreditwidget.h>
 
 #include <QColorDialog>
 #include <QItemDelegate>

@@ -72,7 +72,6 @@ LIBS += \
 
 # Input
 HEADERS += cgnszoneselectdialog.h \
-           coloreditwidget.h \
            colortool.h \
            comboboxtool.h \
            contoursettingwidget.h \
@@ -139,6 +138,7 @@ HEADERS += cgnszoneselectdialog.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
+           widget/coloreditwidget.h \
            widget/textediti.h
 FORMS += cgnszoneselectdialog.ui \
          contoursettingwidget.ui \
@@ -158,7 +158,6 @@ FORMS += cgnszoneselectdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
          colormap/colormapsettingwidget.ui
 SOURCES += cgnszoneselectdialog.cpp \
-           coloreditwidget.cpp \
            colortool.cpp \
            comboboxtool.cpp \
            contoursettingwidget.cpp \
@@ -220,7 +219,8 @@ SOURCES += cgnszoneselectdialog.cpp \
            geometry/rect.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
-           widget/centeredcheckbox.cpp
+           widget/centeredcheckbox.cpp \
+           widget/coloreditwidget.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_es_ES.ts \
                 languages/iricGuibase_fr_FR.ts \

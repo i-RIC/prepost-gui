@@ -7,7 +7,7 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridshapedataitem.h"
 
-#include <guibase/coloreditwidget.h>
+#include <guibase/widget/coloreditwidget.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>

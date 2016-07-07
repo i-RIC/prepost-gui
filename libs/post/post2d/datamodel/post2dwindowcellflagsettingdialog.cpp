@@ -2,7 +2,7 @@
 
 #include "post2dwindowcellflagsettingdialog.h"
 
-#include <guibase/coloreditwidget.h>
+#include <guibase/widget/coloreditwidget.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/solverdef/integerenumloader.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
