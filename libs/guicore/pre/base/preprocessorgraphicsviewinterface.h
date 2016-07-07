@@ -6,12 +6,9 @@
 
 class GUICOREDLL_EXPORT PreProcessorGraphicsViewInterface : public VTK2DGraphicsView
 {
-
 public:
-	/// constructor
 	PreProcessorGraphicsViewInterface(QWidget* widget);
-	/// destructor
-	~PreProcessorGraphicsViewInterface() {}
+	virtual ~PreProcessorGraphicsViewInterface();
 };
 
 #endif // PREPROCESSORGRAPHICSVIEWINTERFACE_H
