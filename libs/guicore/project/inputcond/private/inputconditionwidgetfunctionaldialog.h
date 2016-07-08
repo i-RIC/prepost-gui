@@ -64,6 +64,8 @@ private:
 	void setupXYStep(int row, std::vector<double>* x, std::vector<double>* y);
 	void setupXYSpan(int row, std::vector<double>* x, std::vector<double>* y);
 
+	void updateSpanColumns();
+
 	static void setInt(const QVariant& v, QVariant& target);
 	static void setDouble(const QVariant& v, QVariant& target);
 

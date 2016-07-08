@@ -390,6 +390,7 @@ void InputConditionWidgetFunctionalDialog::sort()
 	if (! m_preventSort) {
 		m_model->sort(0);
 	}
+	updateSpanColumns();
 	updateGraph();
 }
 
@@ -409,6 +410,31 @@ void InputConditionWidgetFunctionalDialog::accept()
 	saveModel();
 	emit accepted();
 	hide();
+}
+
+void InputConditionWidgetFunctionalDialog::updateSpanColumns()
+{
+	if (m_model->rowCount() == 0) {return;}
+
+	Qt::ItemFlags normalFlag = Qt::ItemIsEnabled | Qt::ItemIsEditable | Qt::ItemIsSelectable;
+	Qt::ItemFlags firstFlag = Qt::NoItemFlags;
+
+	for (int i = 0; i < m_valueIsSpans.size(); ++i) {
+		if (! m_valueIsSpans.at(i)) {
+			continue;
+		}
+		QVariant zeroVal;
+		(*m_valuefuncs[i])(0, zeroVal);
+		m_model->setData(m_model->index(0, i + 1), zeroVal);
+		m_model->setData(m_model->index(0, i + 1), QColor(Qt::gray), Qt::BackgroundColorRole);
+		QStandardItem* item = m_model->item(0, i + 1);
+		if (item != 0){item->setFlags(firstFlag);}
+		for (int j = 1; j < m_model->rowCount(); ++j) {
+			item = m_model->item(j, i + 1);
+			if (item != 0){item->setFlags(normalFlag);}
+			m_model->setData(m_model->index(j, i + 1), QColor(Qt::white), Qt::BackgroundColorRole);
+		}
+	}
 }
 
 void InputConditionWidgetFunctionalDialog::updateGraph()
