@@ -14,6 +14,9 @@ class InputConditionWidgetIntegerOption : public InputConditionWidget
 
 public:
 	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
+
+	void addTooltip(const QString& tooltip) override;
+
 	void setDisabled(bool disable);
 
 public slots:

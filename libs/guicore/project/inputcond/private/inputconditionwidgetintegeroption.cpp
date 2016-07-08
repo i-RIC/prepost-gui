@@ -1,6 +1,7 @@
 #include "../../../solverdef/solverdefinitiontranslator.h"
 #include "../inputconditioncontainerinteger.h"
 #include "inputconditionwidgetintegeroption.h"
+#include "inputconditionwidgettooltip.h"
 
 #include <misc/xmlsupport.h>
 
@@ -36,6 +37,13 @@ InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode de
 	connect(m_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(informChange(int)));
 }
 
+void InputConditionWidgetIntegerOption::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(1, tt);
+}
 
 void InputConditionWidgetIntegerOption::setDisabled(bool disable)
 {

@@ -20,6 +20,9 @@ class InputConditionWidgetReal : public InputConditionWidget
 
 public:
 	InputConditionWidgetReal(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont);
+
+	void addTooltip(const QString& tooltip) override;
+
 	void setDisabled(bool disable);
 
 public slots:
@@ -28,10 +31,6 @@ public slots:
 
 private:
 	InputConditionContainerReal* m_container;
-	double maxValue;
-	bool maxIsSet;
-	double minValue;
-	bool minIsSet;
 	RealNumberEditWidget* m_lineEdit;
 };
 

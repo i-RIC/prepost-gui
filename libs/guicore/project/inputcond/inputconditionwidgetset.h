@@ -41,7 +41,8 @@ private:
 	void buildDepsItem(const QDomNode& itemNode, InputConditionContainerSet& cset);
 	void buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset);
 	void buildDep(const QDomNode&, InputConditionContainerSet& cset, InputConditionWidget* w);
-	void addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
+	void addTooltip(InputConditionWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t);
+
 	QMap<std::string, InputConditionWidget*> m_widgets;
 };
 #endif // INPUTCONDITIONWIDGETSET_H

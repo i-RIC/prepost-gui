@@ -16,7 +16,8 @@ class InputConditionWidgetFunctional : public InputConditionWidget
 public:
 	InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont);
 	~InputConditionWidgetFunctional();
-	void setDisabled(bool disable);
+
+	void addTooltip(const QString& tooltip) override;
 
 private slots:
 	void openDialog();
@@ -24,7 +25,6 @@ private slots:
 
 private:
 	InputConditionContainerFunctional* m_container;
-	const SolverDefinitionTranslator* m_translator;
 	InputConditionWidgetFunctionalDialog* m_dialog;
 
 public:

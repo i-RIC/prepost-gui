@@ -1,6 +1,7 @@
 #include "../../../solverdef/solverdefinitiontranslator.h"
 #include "../inputconditioncontainerreal.h"
 #include "inputconditionwidgetrealoption.h"
+#include "inputconditionwidgettooltip.h"
 
 #include <misc/xmlsupport.h>
 
@@ -34,6 +35,14 @@ InputConditionWidgetRealOption::InputConditionWidgetRealOption(QDomNode defnode,
 	// connect
 	connect(m_container, SIGNAL(valueChanged(double)), m_comboBox, SLOT(setValue(double)));
 	connect(m_comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(informChange(int)));
+}
+
+void InputConditionWidgetRealOption::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(1, tt);
 }
 
 void InputConditionWidgetRealOption::setDisabled(bool disable)

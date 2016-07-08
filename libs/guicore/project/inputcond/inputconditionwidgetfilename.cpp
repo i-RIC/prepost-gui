@@ -1,6 +1,7 @@
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerstring.h"
 #include "inputconditionwidgetfilename.h"
+#include "private/inputconditionwidgettooltip.h"
 
 #include <guibase/widget/asciionlylineedit.h>
 
@@ -13,24 +14,17 @@ QString InputConditionWidgetFilename::defaultFolder;
 
 InputConditionWidgetFilename::InputConditionWidgetFilename(QDomNode defNode, const SolverDefinitionTranslator&, InputConditionContainerString* cont) :
 	InputConditionWidget(defNode),
-	m_all (false)
+	m_container {cont},
+	m_lineEdit {new AsciiOnlyLineEdit(this)},
+	m_all {defNode.toElement().attribute("valueType") == "filename_all"}
 {
-	if (defNode.toElement().attribute("valueType") == "filename_all"){
-		m_all = true;
-	}else{
-		m_all = false;
-	}
-
-	m_container = cont;
-
-	m_lineEdit = new AsciiOnlyLineEdit(this);
 	m_lineEdit->setErrorMessage(tr("File name has to consist of only English characters."));
 
 	QPushButton* button = new QPushButton(QString(tr("...")), this);
 	button->setFixedWidth(30);
 	button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-	QHBoxLayout * layout = new QHBoxLayout(0);
+	QHBoxLayout* layout = new QHBoxLayout(this);
 	layout->setMargin(InputConditionWidget::margin);
 	layout->addWidget(m_lineEdit, 10);
 	layout->addWidget(button, 0);
@@ -41,6 +35,14 @@ InputConditionWidgetFilename::InputConditionWidgetFilename(QDomNode defNode, con
 	connect(m_lineEdit, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
 	connect(button, SIGNAL(clicked(bool)), this, SLOT(openFileDialog()));
 	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
+}
+
+void InputConditionWidgetFilename::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(0, tt);
 }
 
 void InputConditionWidgetFilename::setValue(const QString& newvalue)

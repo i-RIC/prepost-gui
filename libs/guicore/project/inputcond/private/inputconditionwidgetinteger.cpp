@@ -1,6 +1,7 @@
 #include "../../../solverdef/solverdefinitiontranslator.h"
 #include "../inputconditioncontainerinteger.h"
 #include "inputconditionwidgetinteger.h"
+#include "inputconditionwidgettooltip.h"
 
 #include <QDomElement>
 #include <QHBoxLayout>
@@ -12,11 +13,13 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 	m_spinBox = new QSpinBox(this);
 	m_spinBox->setMinimumWidth(100);
 	m_spinBox->setAlignment(Qt::AlignRight);
+
 	QHBoxLayout* layout = new QHBoxLayout(this);
 	layout->addStretch(1);
 	layout->addWidget(m_spinBox, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);
+
 	QDomElement defElem = defnode.toElement();
 	// min
 	QString minstr = defElem.attribute("min");
@@ -27,11 +30,6 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 			m_spinBox->setMinimum(minval);
 		} else {
 			// todo build minimum container.
-			/*
-			   CalculationCondition::Dependency::buildMinimumContainer(
-			    atts.namedItem(minstr).nodeValue(), cs, this
-			   );
-			 */
 		}
 	}
 	// max
@@ -43,11 +41,6 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 			m_spinBox->setMaximum(maxval);
 		} else {
 			// todo build maximum container.
-			/*
-			   CalculationCondition::Dependency::buildMaximumContainer(
-			    atts.namedItem(maxstr).nodeValue(), cs, this
-			   );
-			 */
 		}
 	}
 	m_container = cont;
@@ -56,6 +49,15 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 	connect(m_container, SIGNAL(valueChanged(int)), m_spinBox, SLOT(setValue(int)));
 	connect(m_spinBox, SIGNAL(valueChanged(int)), this, SLOT(informChange(int)));
 }
+
+void InputConditionWidgetInteger::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(1, tt);
+}
+
 void InputConditionWidgetInteger::setMaximum(const QVariant& value)
 {
 	m_spinBox->setMaximum(value.toInt());

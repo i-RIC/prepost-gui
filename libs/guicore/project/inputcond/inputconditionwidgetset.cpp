@@ -147,7 +147,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 		} else {
 			throw(ErrorMessage("Wrong conditionType is set."));
 		}
-		addTooltip(widget, defNode, t);
+		addTooltip(widget, itemNode, t);
 		m_widgets.insert(parameterName, widget);
 	} else {
 		throw(ErrorMessage("Wrong conditionType is set."));
@@ -278,13 +278,13 @@ void InputConditionWidgetSet::buildDep(const QDomNode& condNode, InputConditionC
 	dep->check();
 }
 
-void InputConditionWidgetSet::addTooltip(QWidget* widget, QDomNode defNode, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode itemNode, const SolverDefinitionTranslator& t)
 {
-	QDomElement defElem = defNode.toElement();
-	QString tooltip = defElem.attribute("tooltips");
-	if (tooltip != "") {
-		widget->setToolTip(t.translate(tooltip));
-	}
+	QDomElement itemElem = itemNode.toElement();
+	QString tooltip = itemElem.attribute("tooltips");
+	if (tooltip == "") {return;}
+
+	widget->addTooltip(t.translate(tooltip));
 }
 
 void InputConditionWidgetSet::disableWidgets()

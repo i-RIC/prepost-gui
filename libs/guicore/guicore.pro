@@ -453,6 +453,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditionwidgetreal.h \
            project/inputcond/private/inputconditionwidgetrealoption.h \
            project/inputcond/private/inputconditionwidgetstring.h \
+           project/inputcond/private/inputconditionwidgettooltip.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
            pre/gridcond/base/private/gridattributedimensioncontainer_impl.h \
@@ -701,7 +702,8 @@ SOURCES += axis2d/axis2ddataitem.cpp \
            project/inputcond/private/inputconditionwidgetintegeroption.cpp \
            project/inputcond/private/inputconditionwidgetreal.cpp \
            project/inputcond/private/inputconditionwidgetrealoption.cpp \
-           project/inputcond/private/inputconditionwidgetstring.cpp
+           project/inputcond/private/inputconditionwidgetstring.cpp \
+           project/inputcond/private/inputconditionwidgettooltip.cpp
 RESOURCES += guicore.qrc
 TRANSLATIONS += languages/iricGuicore_es_ES.ts \
                 languages/iricGuicore_fr_FR.ts \

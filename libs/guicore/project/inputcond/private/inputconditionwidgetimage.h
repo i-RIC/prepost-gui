@@ -21,6 +21,8 @@ class InputConditionWidgetImage : public InputConditionWidget
 public:
 	InputConditionWidgetImage(QDomNode defNode, const SolverDefinitionTranslator& t, const QDir& dir);
 
+	void addTooltip(const QString& tooltip) override;
+
 	void activateSubImage(const QString& name);
 	void inactivateSubImages();
 

@@ -16,6 +16,9 @@ class InputConditionWidgetInteger : public InputConditionWidget
 
 public:
 	InputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont, const InputConditionContainerSet& cs);
+
+	void addTooltip(const QString& tooltip) override;
+
 	void setMaximum(const QVariant& value) override;
 	void setMinimum(const QVariant& value) override;
 

@@ -1,4 +1,4 @@
-#include "../solverdef/solverdefinitiontranslator.h"
+#include "../../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditiondependencychecksubimages.h"
 #include "inputconditionwidgetimage.h"
 
@@ -8,9 +8,9 @@
 #include <QLabel>
 
 InputConditionWidgetImage::InputConditionWidgetImage(QDomNode defNode, const SolverDefinitionTranslator& t, const QDir& dir) :
-	InputConditionWidget(defNode)
+	InputConditionWidget(defNode),
+	m_label {new QLabel(this)}
 {
-	m_label = new QLabel(this);
 	QHBoxLayout* layout = new QHBoxLayout(this);
 	layout->setMargin(0);
 	layout->addWidget(m_label);
@@ -49,6 +49,11 @@ InputConditionWidgetImage::InputConditionWidgetImage(QDomNode defNode, const Sol
 	m_label->setMaximumSize(m_image.size());
 
 	m_checkSubImages = new InputConditionDependencyCheckSubimages(this);
+}
+
+void InputConditionWidgetImage::addTooltip(const QString &)
+{
+	// do nothing
 }
 
 void InputConditionWidgetImage::activateSubImage(const QString& name)

@@ -1,6 +1,7 @@
 #include "../../../solverdef/solverdefinitiontranslator.h"
 #include "../inputconditioncontainerstring.h"
 #include "inputconditionwidgetfoldername.h"
+#include "inputconditionwidgettooltip.h"
 
 #include <guibase/widget/asciionlylineedit.h>
 
@@ -12,11 +13,10 @@
 QString InputConditionWidgetFoldername::defaultFolder;
 
 InputConditionWidgetFoldername::InputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerString* cont) :
-	InputConditionWidget(defnode)
+	InputConditionWidget(defnode),
+	m_container {cont},
+	m_lineEdit {new AsciiOnlyLineEdit(this)}
 {
-	m_container = cont;
-
-	m_lineEdit = new AsciiOnlyLineEdit(this);
 	m_lineEdit->setErrorMessage(tr("Folder name has to consist of only English characters."));
 
 	QPushButton* button = new QPushButton(QString(tr("...")), this);
@@ -34,6 +34,14 @@ InputConditionWidgetFoldername::InputConditionWidgetFoldername(QDomNode defnode,
 	connect(m_lineEdit, SIGNAL(editingFinished()), this, SLOT(handleEditingFinished()));
 	connect(button, SIGNAL(clicked(bool)), this, SLOT(openDirDialog()));
 	connect(m_container, SIGNAL(valueChanged(QString)), this, SLOT(setValue(QString)));
+}
+
+void InputConditionWidgetFoldername::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(0, tt);
 }
 
 void InputConditionWidgetFoldername::setValue(const QString& newvalue)

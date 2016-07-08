@@ -26,6 +26,8 @@ public:
 	virtual void setMaximum(const QVariant& value);
 	virtual void setMinimum(const QVariant& value);
 
+	virtual void addTooltip(const QString& tooltip) = 0;
+
 	static const int margin = 0;
 	static QList<QDomNode> getEnums(QDomNode defNode);
 	static bool hasEnums(QDomNode defNode);

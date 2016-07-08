@@ -15,6 +15,8 @@ public:
 	static QString defaultFolder;
 	InputConditionWidgetFoldername(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 
+	void addTooltip(const QString& tooltip) override;
+
 public slots:
 	void setValue(const QString& newvalue);
 

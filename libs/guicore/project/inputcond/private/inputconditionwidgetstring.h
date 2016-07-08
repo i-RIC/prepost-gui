@@ -14,6 +14,8 @@ class InputConditionWidgetString : public InputConditionWidget
 public:
 	InputConditionWidgetString(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont);
 
+	void addTooltip(const QString& tooltip) override;
+
 public slots:
 	void setValue(const QString& newvalue);
 

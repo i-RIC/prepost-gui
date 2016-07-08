@@ -2,14 +2,16 @@
 #include "../../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditionwidgetfunctionaldialog.h"
 #include "inputconditionwidgetfunctional.h"
+#include "inputconditionwidgettooltip.h"
 
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QPushButton>
 
-InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont) : InputConditionWidget(defnode)
+InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont) :
+	InputConditionWidget(defnode),
+	m_container {cont}
 {
-	m_container = cont;
 	QPushButton* button = new QPushButton(QString(tr("Edit")), this);
 	button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	QHBoxLayout* l = new QHBoxLayout(0);
@@ -23,10 +25,16 @@ InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode,
 	connect(m_dialog, SIGNAL(accepted()), this, SLOT(dialogAccepted()));
 }
 
-InputConditionWidgetFunctional::~InputConditionWidgetFunctional() {}
-
-void InputConditionWidgetFunctional::setDisabled(bool /*disable*/)
+InputConditionWidgetFunctional::~InputConditionWidgetFunctional()
 {}
+
+void InputConditionWidgetFunctional::addTooltip(const QString& tooltip)
+{
+	InputConditionWidgetTooltip* tt = new InputConditionWidgetTooltip(tooltip, this);
+
+	QHBoxLayout* l = dynamic_cast<QHBoxLayout*>(layout());
+	l->insertWidget(1, tt);
+}
 
 void InputConditionWidgetFunctional::openDialog()
 {
