@@ -2,6 +2,7 @@
 #define INPUTCONDITIONWIDGETFUNCTIONALDIALOG_H
 
 #include "../inputconditioncontainerfunctional.h"
+#include "../../colorsource.h"
 
 #include <QString>
 #include <QWidget>
@@ -89,6 +90,8 @@ private:
 
 	bool m_preventGraph;
 	bool m_preventSort;
+
+	ColorSource m_colorSource;
 
 	Ui::InputConditionWidgetFunctionalDialog* ui;
 };

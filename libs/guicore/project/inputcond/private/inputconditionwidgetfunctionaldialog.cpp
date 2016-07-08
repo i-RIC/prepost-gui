@@ -21,11 +21,13 @@
 #include <QTableView>
 
 #include <qwt_scale_engine.h>
+#include <qwt_legend.h>
 
 InputConditionWidgetFunctionalDialog::InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent) :
 	QDialog {parent},
 	m_preventGraph {false},
 	m_preventSort {false},
+	m_colorSource {nullptr},
 	ui {new Ui::InputConditionWidgetFunctionalDialog}
 {
 	ui->setupUi(this);
@@ -446,6 +448,9 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 
 	for (int j = 0; j < m_axisSettings.count(); ++j) {
 		QwtPlotCurve* pc = new QwtPlotCustomCurve();
+		pc->setTitle(m_valueCaptions.at(j));
+		QColor color = m_colorSource.getColor(j);
+		pc->setPen(color, 1);
 		if (m_valueIsSteps.at(j)) {
 			setupXYStep(j, &x, &y);
 		} else if (m_valueIsSpans.at(j)) {
@@ -469,6 +474,11 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 		x.clear();
 		y.clear();
 	}
+	if (m_axisSettings.size() > 1) {
+		QwtLegend* legend = new QwtLegend();
+		ui->graphView->insertLegend(legend, QwtPlot::RightLegend);
+	}
+
 	ui->graphView->replot();
 }
 
