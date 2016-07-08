@@ -18,6 +18,7 @@
 #include <QModelIndex>
 #include <QStandardItemModel>
 #include <QTextStream>
+#include <QTableView>
 
 #include <qwt_scale_engine.h>
 
@@ -78,6 +79,8 @@ void InputConditionWidgetFunctionalDialog::setupConnections()
 
 void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const SolverDefinitionTranslator& t)
 {
+	m_preventSort = (node.toElement().attribute("noSort") == "true");
+
 	int valueCount = 0;
 	QDomNode valueNode = node.firstChild();
 	while (! valueNode.isNull()) {
@@ -199,7 +202,7 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 void InputConditionWidgetFunctionalDialog::setupData()
 {
 	clear();
-	m_model->blockSignals(true);
+	ui->tableView->setModel(nullptr);
 	for (int i = 0; i < m_container.param().size(); ++i) {
 		QVariant doubletmpx;
 		QVariant tmpx;
@@ -218,7 +221,8 @@ void InputConditionWidgetFunctionalDialog::setupData()
 			m_model->setData(m_model->index(i, j + 1, QModelIndex()), tmpy);
 		}
 	}
-	m_model->blockSignals(false);
+	ui->tableView->setModel(m_model);
+	ui->tableView->setSelectionModel(m_selectionModel);
 	sort();
 	int rows = m_model->rowCount(QModelIndex());
 	for (int i = 0; i < rows; ++i) {
@@ -378,8 +382,9 @@ void InputConditionWidgetFunctionalDialog::add()
 
 void InputConditionWidgetFunctionalDialog::sort()
 {
-	if (m_preventSort) {return;}
-	m_model->sort(0);
+	if (! m_preventSort) {
+		m_model->sort(0);
+	}
 	updateGraph();
 }
 
