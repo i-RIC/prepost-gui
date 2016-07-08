@@ -10,6 +10,8 @@
 #include <QList>
 #include <qwt_plot_curve.h>
 
+#include <vector>
+
 namespace Ui
 {
 	class InputConditionWidgetFunctionalDialog;
@@ -58,6 +60,10 @@ private:
 	void saveModel();
 	void clearGraphData();
 
+	void setupXYStandard(int row, std::vector<double>* x, std::vector<double>* y);
+	void setupXYStep(int row, std::vector<double>* x, std::vector<double>* y);
+	void setupXYSpan(int row, std::vector<double>* x, std::vector<double>* y);
+
 	static void setInt(const QVariant& v, QVariant& target);
 	static void setDouble(const QVariant& v, QVariant& target);
 
@@ -72,6 +78,7 @@ private:
 	QList<AxisSetting> m_axisSettings;
 	QList<QString> m_valueCaptions;
 	QList<bool> m_valueIsSteps;
+	QList<bool> m_valueIsSpans;
 	QList<bool> m_axisReverses;
 
 	InputConditionContainerFunctional m_container;

@@ -149,6 +149,10 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 			if (valueElem.hasAttribute("step")) {
 				isStep = (valueElem.attribute("step") == "true");
 			}
+			bool isSpan = false;
+			if (valueElem.hasAttribute("span")){
+				isSpan = (valueElem.attribute("span") == "true");
+			}
 			bool isAxisLog = false;
 			if (valueElem.hasAttribute("axislog")) {
 				isAxisLog = (valueElem.attribute("axislog") == "true");
@@ -161,6 +165,7 @@ void InputConditionWidgetFunctionalDialog::setupModel(QDomNode node, const Solve
 				}
 			}
 			m_valueIsSteps.append(isStep);
+			m_valueIsSpans.append(isSpan);
 			bool isAxisReverse = false;
 			if (valueElem.hasAttribute("axisreverse")) {
 				isAxisReverse = (valueElem.attribute("axisreverse") == "true");
@@ -411,52 +416,18 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 	if (m_preventGraph) {return;}
 
 	clearGraphData();
-	int dataCount = m_model->rowCount();
 	std::vector<double> x, y;
 
 	for (int j = 0; j < m_axisSettings.count(); ++j) {
 		QwtPlotCurve* pc = new QwtPlotCustomCurve();
 		if (m_valueIsSteps.at(j)) {
-			x.assign(dataCount * 3 + 1, 0);
-			y.assign(dataCount * 3 + 1, 0);
-			double firstx = 0;
-			double x0 = m_model->data(m_model->index(0, 0)).toDouble();
-			if (dataCount == 1) {
-				firstx = x0 - 1;
-			} else if (dataCount > 0) {
-				double x1 = m_model->data(m_model->index(1, 0)).toDouble();
-				double firstwidth = x1 - x0;
-				firstx = x0 - firstwidth;
-			}
-			double xstart = firstx;
-			x[0] = xstart;
-			y[0] = 0;
-			for (int i = 0; i < dataCount; ++i) {
-				double xend = m_model->data(m_model->index(i, 0)).toDouble();
-				double yval =  m_model->data(m_model->index(i, j + 1)).toDouble();
-				double xdelta = 0;
-
-				x[i * 3 + 1] = xstart + xdelta;
-				y[i * 3 + 1] = yval;
-				x[i * 3 + 2] = xend - xdelta;
-				y[i * 3 + 2] = yval;
-				x[i * 3 + 3] = xend - xdelta;
-				y[i * 3 + 3] = 0;
-				xstart = xend;
-			}
-			pc->setSamples(x.data(), y.data(), dataCount * 3 + 1);
+			setupXYStep(j, &x, &y);
+		} else if (m_valueIsSpans.at(j)) {
+			setupXYSpan(j, &x, &y);
 		} else {
-			x.assign(dataCount, 0);
-			y.assign(dataCount, 0);
-
-			for (int i = 0; i < dataCount; ++i) {
-				x[i] = m_model->data(m_model->index(i, 0)).toDouble();
-			}
-			for (int i = 0; i < dataCount; ++i) {
-				y[i] = m_model->data(m_model->index(i, j + 1)).toDouble();
-			}
-			pc->setSamples(x.data(), y.data(), dataCount);
+			setupXYStandard(j, &x, &y);
 		}
+		pc->setSamples(x.data(), y.data(), x.size());
 
 		if (m_axisSettings[j] == asLeft) {
 			pc->setAxes(QwtPlot::xBottom, QwtPlot::yLeft);
@@ -468,7 +439,91 @@ void InputConditionWidgetFunctionalDialog::updateGraph()
 			// do not shown on graphs.
 		}
 		m_graphCurves.append(pc);
+
+		x.clear();
+		y.clear();
 	}
 	ui->graphView->replot();
+}
 
+void InputConditionWidgetFunctionalDialog::setupXYStandard(int row, std::vector<double>* x, std::vector<double>* y)
+{
+	int dataCount = m_model->rowCount();
+	int len = dataCount;
+
+	x->assign(len, 0);
+	y->assign(len, 0);
+
+	for (int i = 0; i < dataCount; ++i){
+		(*x)[i] = m_model->data(m_model->index(i, 0)).toDouble();
+		(*y)[i] = m_model->data(m_model->index(i, row + 1)).toDouble();
+	}
+}
+
+void InputConditionWidgetFunctionalDialog::setupXYStep(int row, std::vector<double>* x, std::vector<double>* y)
+{
+	int dataCount = m_model->rowCount();
+	int len = dataCount * 3 + 1;
+
+	x->assign(len, 0);
+	y->assign(len, 0);
+
+	double firstx = 0;
+	double x0 = m_model->data(m_model->index(0, 0)).toDouble();
+	if (dataCount == 1){
+		firstx = x0 - 1;
+	} else if (dataCount > 0){
+		double x1 = m_model->data(m_model->index(1, 0)).toDouble();
+		double firstwidth = x1 - x0;
+		firstx = x0 - firstwidth;
+	}
+	double xstart = firstx;
+	(*x)[0] = xstart;
+	(*y)[0] = 0;
+	for (int i = 0; i < dataCount; ++i){
+		double xend = m_model->data(m_model->index(i, 0)).toDouble();
+		double yval =  m_model->data(m_model->index(i, row + 1)).toDouble();
+
+		(*x)[i * 3 + 1] = xstart;
+		(*y)[i * 3 + 1] = yval;
+		(*x)[i * 3 + 2] = xend;
+		(*y)[i * 3 + 2] = yval;
+		(*x)[i * 3 + 3] = xend;
+		(*y)[i * 3 + 3] = 0;
+
+		xstart = xend;
+	}
+}
+
+void InputConditionWidgetFunctionalDialog::setupXYSpan(int row, std::vector<double>* x, std::vector<double>* y)
+{
+	int dataCount = m_model->rowCount();
+	int len = dataCount * 2 - 2;
+	if (len <= 0) {len = 1;}
+
+	x->assign(len, 0);
+	y->assign(len, 0);
+
+	if (dataCount == 0) {
+		(*x)[0] = 0;
+		(*y)[0] = 0;
+		return;
+	} else if (dataCount == 1) {
+		(*x)[0] = m_model->data(m_model->index(0, 0)).toDouble();
+		(*y)[0] = m_model->data(m_model->index(0, row * 1)).toDouble();
+		return;
+	}
+
+	double xstart = m_model->data(m_model->index(0, 0)).toDouble();
+	for (int i = 1; i < dataCount; ++i){
+		double xend = m_model->data(m_model->index(i, 0)).toDouble();
+		double yval =  m_model->data(m_model->index(i, row + 1)).toDouble();
+
+		(*x)[i * 2 - 2] = xstart;
+		(*y)[i * 2 - 2] = yval;
+		(*x)[i * 2 - 1] = xend;
+		(*y)[i * 2 - 1] = yval;
+
+		xstart = xend;
+	}
 }
