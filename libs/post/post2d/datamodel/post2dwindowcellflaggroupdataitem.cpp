@@ -92,8 +92,8 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 
 void Post2dWindowCellFlagGroupDataItem::initSetting()
 {
-	ColorSource* cs = new ColorSource(0);
-	cs->load(":/libs/guicore/data/colorsource_cell.xml");
+	ColorSource cs(0);
+	cs.load(":/libs/guicore/data/colorsource_cell.xml");
 
 	m_opacityPercent = 50;
 
@@ -110,7 +110,7 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);
 		QMap<int, QString> enums = el->enumerations();
 		for (auto it = enums.begin(); it != enums.end(); ++it) {
-			QColor color = cs->getColor(index ++);
+			QColor color = cs.getColor(index ++);
 			QString cap = QString("%1 (%2)").arg(icond->caption(), it.value());
 			Post2dWindowCellFlagDataItem* item = new Post2dWindowCellFlagDataItem(icond->name(), it.key(), color, cap, this);
 			item->setOpacity(m_opacityPercent);
