@@ -10,8 +10,9 @@ class GCC_GRIDGENERATOR_EXPORT GridCreatingConditionCreatorGridGenerator : publi
 
 public:
 	GridCreatingConditionCreatorGridGenerator();
-	~GridCreatingConditionCreatorGridGenerator() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorGridGenerator();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

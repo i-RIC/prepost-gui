@@ -17,8 +17,8 @@
 #include <QString>
 #include <QTextStream>
 
-GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExternalProgram(const QString& folderName, const QLocale& locale)
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExternalProgram(const QString& folderName, const QLocale& locale) :
+	GridCreatingConditionCreator()
 {
 	m_folderName = folderName;
 	QDir folder(m_folderName);
@@ -84,9 +84,22 @@ GridCreatingConditionCreatorExternalProgram::GridCreatingConditionCreatorExterna
 	}
 }
 
+GridCreatingConditionCreatorExternalProgram::~GridCreatingConditionCreatorExternalProgram()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorExternalProgram::gridType() const
+{
+	return m_gridType;
+}
+
 GridCreatingCondition* GridCreatingConditionCreatorExternalProgram::create(ProjectDataItem* parent)
 {
 	return new GridCreatingConditionExternalProgram(m_folderName,parent->iricMainWindow()->locale(), parent, this);
+}
+
+const QString& GridCreatingConditionCreatorExternalProgram::folderName() const
+{
+	return m_folderName;
 }
 
 QList<GridCreatingConditionCreator*> GridCreatingConditionCreatorExternalProgram::getList(const QLocale& locale, QWidget* mainWindow)

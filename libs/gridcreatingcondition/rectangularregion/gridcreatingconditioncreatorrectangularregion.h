@@ -10,8 +10,9 @@ class GCC_RECTANGULARREGION_EXPORT GridCreatingConditionCreatorRectangularRegion
 
 public:
 	GridCreatingConditionCreatorRectangularRegion();
-	~GridCreatingConditionCreatorRectangularRegion() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorRectangularRegion();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

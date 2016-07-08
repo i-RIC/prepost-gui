@@ -10,8 +10,9 @@ class GCC_COMPOUNDCHANNEL_EXPORT GridCreatingConditionCreatorCompoundChannel : p
 
 public:
 	GridCreatingConditionCreatorCompoundChannel();
-	~GridCreatingConditionCreatorCompoundChannel() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorCompoundChannel();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

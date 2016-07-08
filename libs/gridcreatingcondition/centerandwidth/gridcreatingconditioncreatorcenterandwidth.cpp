@@ -6,8 +6,8 @@
 #include <QAction>
 #include <QIcon>
 
-GridCreatingConditionCreatorCenterAndWidth::GridCreatingConditionCreatorCenterAndWidth()
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorCenterAndWidth::GridCreatingConditionCreatorCenterAndWidth() :
+	GridCreatingConditionCreator()
 {
 	m_name = "center_and_width";
 	m_caption = tr("Create grid from polygonal line and width");
@@ -15,8 +15,15 @@ GridCreatingConditionCreatorCenterAndWidth::GridCreatingConditionCreatorCenterAn
 		"First, please define polygonal line, by mouse-clicking. "
 		"The polygonal line is used as the center line of the grid. "
 		"Then, you define the width, division number of grid in I direction and "
-		"J direction."
-	    );
+		"J direction.");
+}
+
+GridCreatingConditionCreatorCenterAndWidth::~GridCreatingConditionCreatorCenterAndWidth()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorCenterAndWidth::gridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorCenterAndWidth::create(ProjectDataItem* parent)

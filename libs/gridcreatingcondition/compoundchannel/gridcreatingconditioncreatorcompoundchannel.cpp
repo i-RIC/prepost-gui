@@ -4,8 +4,8 @@
 #include <QAction>
 #include <QIcon>
 
-GridCreatingConditionCreatorCompoundChannel::GridCreatingConditionCreatorCompoundChannel()
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorCompoundChannel::GridCreatingConditionCreatorCompoundChannel() :
+	GridCreatingConditionCreator()
 {
 	m_name = "compoundchannel";
 	m_caption = tr("Create compound channel grid");
@@ -14,8 +14,15 @@ GridCreatingConditionCreatorCompoundChannel::GridCreatingConditionCreatorCompoun
 		"the low water channel region. "
 		"Then, please add a polygonal line as river center.\n"
 		"The low water channel region should be included in grid creation region, and"
-		"River center line should be included in the low water channel region."
-		);
+		"River center line should be included in the low water channel region.");
+}
+
+GridCreatingConditionCreatorCompoundChannel::~GridCreatingConditionCreatorCompoundChannel()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorCompoundChannel::gridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorCompoundChannel::create(ProjectDataItem* parent)

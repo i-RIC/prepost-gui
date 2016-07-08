@@ -10,8 +10,9 @@ class GCC_GRIDCOMBINE_EXPORT GridCreatingConditionCreatorGridCombine : public Gr
 
 public:
 	GridCreatingConditionCreatorGridCombine();
-	~GridCreatingConditionCreatorGridCombine() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorGridCombine();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

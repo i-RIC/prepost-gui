@@ -10,8 +10,9 @@ class GCC_RECTANGULARREGIONLONLAT_EXPORT GridCreatingConditionCreatorRectangular
 
 public:
 	GridCreatingConditionCreatorRectangularRegionLonLat();
-	~GridCreatingConditionCreatorRectangularRegionLonLat() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorRectangularRegionLonLat();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

@@ -10,8 +10,9 @@ class GCC_RIVERSURVEY15D_EXPORT GridCreatingConditionCreatorRiverSurvey15D : pub
 
 public:
 	GridCreatingConditionCreatorRiverSurvey15D();
-	virtual ~GridCreatingConditionCreatorRiverSurvey15D() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;}
+	virtual ~GridCreatingConditionCreatorRiverSurvey15D();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const override;
 };

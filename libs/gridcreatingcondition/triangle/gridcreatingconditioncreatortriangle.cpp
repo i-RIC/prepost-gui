@@ -14,7 +14,15 @@ GridCreatingConditionCreatorTriangle::GridCreatingConditionCreatorTriangle()
 	m_description = tr(
 		"Please define a polygon as the region to create grid."
 		"You can additionally define holes and refinement areas as restrictions."
-	    );
+			);
+}
+
+GridCreatingConditionCreatorTriangle::~GridCreatingConditionCreatorTriangle()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorTriangle::gridType() const
+{
+	return SolverDefinitionGridType::gtUnstructured2DGrid;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorTriangle::create(ProjectDataItem* parent)

@@ -10,8 +10,9 @@ class GCC_CENTERANDWIDTH_EXPORT GridCreatingConditionCreatorCenterAndWidth : pub
 
 public:
 	GridCreatingConditionCreatorCenterAndWidth();
-	~GridCreatingConditionCreatorCenterAndWidth() {}
-	SolverDefinitionGridType::GridType gridType() const override {return SolverDefinitionGridType::gtStructured2DGrid;}
+	~GridCreatingConditionCreatorCenterAndWidth();
+
+	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
 };
 

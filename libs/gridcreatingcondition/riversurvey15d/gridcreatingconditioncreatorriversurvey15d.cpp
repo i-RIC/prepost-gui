@@ -11,8 +11,8 @@
 #include <QMessageBox>
 #include <QMainWindow>
 
-GridCreatingConditionCreatorRiverSurvey15D::GridCreatingConditionCreatorRiverSurvey15D()
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorRiverSurvey15D::GridCreatingConditionCreatorRiverSurvey15D() :
+	GridCreatingConditionCreator()
 {
 	m_name = "riversurvey15d";
 	m_caption = tr("Create 1.5D grid from river survey data");
@@ -21,8 +21,15 @@ GridCreatingConditionCreatorRiverSurvey15D::GridCreatingConditionCreatorRiverSur
 		"You can specify the grid division number, by adding grid creation "
 		"control points on river center.\n"
 		"Note: This algorithm is available only when river survey data is loaded!"
-		"Please switch algorithm to this, after importing river survey data.\n"
-	    );
+		"Please switch algorithm to this, after importing river survey data.\n");
+}
+
+GridCreatingConditionCreatorRiverSurvey15D::~GridCreatingConditionCreatorRiverSurvey15D()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorRiverSurvey15D::gridType() const
+{
+	return SolverDefinitionGridType::gtNormal1_5DGridWithCrosssection;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorRiverSurvey15D::create(ProjectDataItem* parent)

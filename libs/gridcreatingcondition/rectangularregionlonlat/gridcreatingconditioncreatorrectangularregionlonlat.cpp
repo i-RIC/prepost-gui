@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncreatorrectangularregionlonlat.h"
 #include "gridcreatingconditionrectangularregionlonlat.h"
 
-GridCreatingConditionCreatorRectangularRegionLonLat::GridCreatingConditionCreatorRectangularRegionLonLat()
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorRectangularRegionLonLat::GridCreatingConditionCreatorRectangularRegionLonLat() :
+	GridCreatingConditionCreator()
 {
 	m_name = "rectangular_region_lonlat";
 	m_caption = tr("Create grid by dividing rectangular region (Longitude-Latitude)");
@@ -10,8 +10,15 @@ GridCreatingConditionCreatorRectangularRegionLonLat::GridCreatingConditionCreato
 		"Specify a rectangular region where to create a grid, "
 		"and the cell width. The cell width is used for both "
 		"X-direction and Y-direction. The coordinate system is"
-		"Longitude-Latitude system."
-			);
+		"Longitude-Latitude system.");
+}
+
+GridCreatingConditionCreatorRectangularRegionLonLat::~GridCreatingConditionCreatorRectangularRegionLonLat()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorRectangularRegionLonLat::gridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorRectangularRegionLonLat::create(ProjectDataItem* parent)

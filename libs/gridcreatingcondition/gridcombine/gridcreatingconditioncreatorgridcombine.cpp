@@ -1,8 +1,8 @@
 #include "gridcreatingconditioncreatorgridcombine.h"
 #include "gridcreatingconditiongridcombine.h"
 
-GridCreatingConditionCreatorGridCombine::GridCreatingConditionCreatorGridCombine()
-	: GridCreatingConditionCreator()
+GridCreatingConditionCreatorGridCombine::GridCreatingConditionCreatorGridCombine() :
+	GridCreatingConditionCreator()
 {
 	m_name = "grid_combine";
 	m_caption = tr("Create grid by combining two grids");
@@ -11,8 +11,15 @@ GridCreatingConditionCreatorGridCombine::GridCreatingConditionCreatorGridCombine
 		"using this algorithm. Please create or import two grids "
 		"first. Selecting the main channel grid and sub channel grid, "
 		"and specifying some parameters, you can create a "
-		"river meeting point grid."
-	    );
+		"river meeting point grid.");
+}
+
+GridCreatingConditionCreatorGridCombine::~GridCreatingConditionCreatorGridCombine()
+{}
+
+SolverDefinitionGridType::GridType GridCreatingConditionCreatorGridCombine::gridType() const
+{
+	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 GridCreatingCondition* GridCreatingConditionCreatorGridCombine::create(ProjectDataItem* parent)
