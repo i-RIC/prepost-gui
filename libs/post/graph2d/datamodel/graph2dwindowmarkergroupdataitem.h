@@ -35,7 +35,6 @@ protected:
 private:
 	Graph2dWindowMarkerSetting m_setting;
 	QString m_xLabel;
-	ColorSource* m_colorSource;
 };
 
 #endif // GRAPH2DWINDOWMARKERGROUPDATAITEM_H
