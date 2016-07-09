@@ -3,6 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QWebView>
+#include <QMutexLocker>
 
 #include <cmath>
 
@@ -59,6 +60,7 @@ int TmsRequestHandler::requestId() const
 
 QImage TmsRequestHandler::image() const
 {
+	QMutexLocker locker(&m_imageMutex);
 	return m_image;
 }
 
@@ -111,7 +113,10 @@ void TmsRequestHandler::checkImage()
 
 	if (newImage == m_image) {return;}
 
+	m_imageMutex.lock();
 	m_image = newImage.scaled(m_size);
+	m_imageMutex.unlock();
+
 	emit imageUpdated();
 }
 
@@ -120,7 +125,9 @@ void TmsRequestHandler::handleLoaded()
 	QImage image(m_webView->size(), QImage::Format_ARGB32);
 	m_webView->render(&image);
 
+	m_imageMutex.lock();
 	m_image = image.scaled(m_size);
+	m_imageMutex.unlock();
 
 	emit imageUpdated();
 }

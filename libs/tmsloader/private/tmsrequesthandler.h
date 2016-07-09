@@ -2,6 +2,7 @@
 #define TMSLOADER_TMSREQUESTHANDLER_H
 
 #include <QImage>
+#include <QMutex>
 #include <QObject>
 #include <QPointF>
 #include <QSize>
@@ -46,6 +47,7 @@ private:
 	std::map<QString, QString> m_args;
 	QWebView* m_webView;
 	QImage m_image;
+	mutable QMutex m_imageMutex;
 
 	QTimer m_timer;
 };
