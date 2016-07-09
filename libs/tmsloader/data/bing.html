@@ -1,167 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>iRIC Background</title>
-<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />]
-<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-<script type="text/javascript">
-L.BingLayer = L.TileLayer.extend({
-	options: {
-		subdomains: [0, 1, 2, 3],
-		type: 'Aerial',
-		attribution: 'Bing',
-		culture: ''
-	},
-
-	initialize: function (key, options) {
-		L.Util.setOptions(this, options);
-
-		this._key = key;
-		this._url = null;
-		this._providers = [];
-		this.metaRequested = false;
-	},
-
-	tile2quad: function (x, y, z) {
-		var quad = '';
-		for (var i = z; i > 0; i--) {
-			var digit = 0;
-			var mask = 1 << (i - 1);
-			if ((x & mask) !== 0) digit += 1;
-			if ((y & mask) !== 0) digit += 2;
-			quad = quad + digit;
-		}
-		return quad;
-	},
-
-	getTileUrl: function (tilePoint) {
-		var zoom = this._getZoomForUrl();
-		var subdomains = this.options.subdomains,
-			s = this.options.subdomains[Math.abs((tilePoint.x + tilePoint.y) % subdomains.length)];
-		return this._url.replace('{subdomain}', s)
-				.replace('{quadkey}', this.tile2quad(tilePoint.x, tilePoint.y, zoom))
-				.replace('{culture}', this.options.culture);
-	},
-
-	loadMetadata: function () {
-		if (this.metaRequested) return;
-		this.metaRequested = true;
-		var _this = this;
-		var cbid = '_bing_metadata_' + L.Util.stamp(this);
-		window[cbid] = function (meta) {
-			window[cbid] = undefined;
-			var e = document.getElementById(cbid);
-			e.parentNode.removeChild(e);
-			if (meta.errorDetails) {
-				throw new Error(meta.errorDetails);
-				return;
-			}
-			_this.initMetadata(meta);
-		};
-		var urlScheme = (document.location.protocol === 'file:') ? 'http' : document.location.protocol.slice(0, -1);
-		var url = urlScheme + '://dev.virtualearth.net/REST/v1/Imagery/Metadata/'
-					+ this.options.type + '?include=ImageryProviders&jsonp=' + cbid +
-					'&key=' + this._key + '&UriScheme=' + urlScheme;
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.src = url;
-		script.id = cbid;
-		document.getElementsByTagName('head')[0].appendChild(script);
-	},
-
-	initMetadata: function (meta) {
-		var r = meta.resourceSets[0].resources[0];
-		this.options.subdomains = r.imageUrlSubdomains;
-		this._url = r.imageUrl;
-		if (r.imageryProviders) {
-			for (var i = 0; i < r.imageryProviders.length; i++) {
-				var p = r.imageryProviders[i];
-				for (var j = 0; j < p.coverageAreas.length; j++) {
-					var c = p.coverageAreas[j];
-					var coverage = {zoomMin: c.zoomMin, zoomMax: c.zoomMax, active: false};
-					var bounds = new L.LatLngBounds(
-							new L.LatLng(c.bbox[0]+0.01, c.bbox[1]+0.01),
-							new L.LatLng(c.bbox[2]-0.01, c.bbox[3]-0.01)
-					);
-					coverage.bounds = bounds;
-					coverage.attrib = p.attribution;
-					this._providers.push(coverage);
-				}
-			}
-		}
-		this._update();
-	},
-
-	_update: function () {
-		if (this._url === null || !this._map) return;
-		this._update_attribution();
-		L.TileLayer.prototype._update.apply(this, []);
-	},
-
-	_update_attribution: function () {
-		var bounds = this._map.getBounds();
-		var zoom = this._map.getZoom();
-		for (var i = 0; i < this._providers.length; i++) {
-			var p = this._providers[i];
-			if ((zoom <= p.zoomMax && zoom >= p.zoomMin) &&
-					bounds.intersects(p.bounds)) {
-				if (!p.active && this._map.attributionControl)
-					this._map.attributionControl.addAttribution(p.attrib);
-				p.active = true;
-			} else {
-				if (p.active && this._map.attributionControl)
-					this._map.attributionControl.removeAttribution(p.attrib);
-				p.active = false;
-			}
-		}
-	},
-
-	onAdd: function (map) {
-		this.loadMetadata();
-		L.TileLayer.prototype.onAdd.apply(this, [map]);
-	},
-
-	onRemove: function (map) {
-		for (var i = 0; i < this._providers.length; i++) {
-			var p = this._providers[i];
-			if (p.active && this._map.attributionControl) {
-				this._map.attributionControl.removeAttribution(p.attrib);
-				p.active = false;
-			}
-		}
-		L.TileLayer.prototype.onRemove.apply(this, [map]);
-	}
-});
-
-L.bingLayer = function (key, options) {
-    return new L.BingLayer(key, options);
-};
-</script>
-</head>
-<body>
-    <div id="map" class="map"></div>
-    <style type="text/css">
-            body {margin: 0}
-            #map {
-                    position: fixed;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-            }
-            .leaflet-control-container {display: none}
+    <meta charset=utf-8 />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
+    <title>Leaflet Bing Maps Layer</title>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&mkt=ja-JP"></script>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
     </style>
-</div>
-<script>
-var map = new L.Map('map').setView([30, 135], 6);
-var imagerySet = "Aerial";
-var bing = new L.BingLayer("AmZwmsZTW68uMY-qCXegUhZyDfq2YKeIMr3BOHuTxXqByppyZxOUd_ybqFfYkHtA", {type: imagerySet});
-map.addLayer(bing);
-/*
-//L.tileLayer.bing('AmZwmsZTW68uMY-qCXegUhZyDfq2YKeIMr3BOHuTxXqByppyZxOUd_ybqFfYkHtA').addTo(map)
-var bing = L.BingLayer("AmZwmsZTW68uMY-qCXegUhZyDfq2YKeIMr3BOHuTxXqByppyZxOUd_ybqFfYkHtA", {type: "Aerial"});
-map.addLayer(bing);
-*/
-</script>
+</head>
+
+<body>
+    before
+    <div id="map"></div>
+    after
+
+    <script>
+    var BING_KEY = 'AuhiCJHlGzhg93IqUH_oCpl_-ZUrIE6SPftlyGYUvr9Amx5nzA-WqGcPquyFZl4L';
+
+var map = new Microsoft.Maps.Map(document.getElementById('map'), {
+  credentials: BING_KEY,
+  center: new Microsoft.Maps.Location(35.681382, 139.766084),
+  mapTypeId: Microsoft.Maps.MapTypeId.road,
+  zoom: 10
+});
+    </script>
 </body>
 </html>
