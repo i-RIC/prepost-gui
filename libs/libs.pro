@@ -9,6 +9,7 @@ CONFIG += ordered
 SUBDIRS = \
 	tmsloader \
 	cs \
+	geoio \
 	misc \
 	triangle \
 	guibase \

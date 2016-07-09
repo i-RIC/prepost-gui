@@ -12,6 +12,7 @@ class MISCDLL_EXPORT LastIODirectory
 public:
 	static QString get();
 	static void set(const QString& val);
+	static void setFromFilename(const QString& filename);
 
 private:
 	LastIODirectory();

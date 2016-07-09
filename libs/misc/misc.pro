@@ -40,6 +40,7 @@ HEADERS += arrowsettingcontainer.h \
            qttool.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
+           standarderrormessages.h \
            stringcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
@@ -84,6 +85,7 @@ SOURCES += arrowsettingcontainer.cpp \
            qpointfcontainer.cpp \
            qttool.cpp \
            slowmotionspeededitdialog.cpp \
+           standarderrormessages.cpp \
            stringcontainer.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
