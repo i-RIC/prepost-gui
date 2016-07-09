@@ -207,9 +207,7 @@ void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 
 	m_actor->SetScale(m_imageScale);
 	m_actor->SetOrientation(0, 0, 0);
-	m_actor->VisibilityOn();
-
-	renderGraphicsView();
+	updateVisibility();
 }
 
 void TmsImageGroupDataItem::requestImage()
