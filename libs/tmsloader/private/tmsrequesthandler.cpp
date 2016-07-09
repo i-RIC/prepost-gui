@@ -2,7 +2,7 @@
 
 #include <QFile>
 #include <QTextStream>
-#include <QWebView>
+#include <QWebEngineView>
 #include <QMutexLocker>
 
 #include <cmath>
@@ -39,10 +39,10 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 	m_scale {scale},
 	m_templateName {templateName},
 	m_requestId {requestId},
-	m_webView {new QWebView {nullptr}},
+	m_webView {new QWebEngineView {nullptr}},
 	m_timer {this}
 {
-	m_webView->page()->setNetworkAccessManager(manager);
+//	m_webView->page()->setNetworkAccessManager(manager);
 }
 
 TmsRequestHandler::~TmsRequestHandler()
@@ -79,7 +79,7 @@ void TmsRequestHandler::setup()
 
 	m_webView->resize(size);
 
-	// m_webView->show(); // uncomment this line when debugging.
+//	m_webView->show(); // uncomment this line when debugging.
 
 	connect(m_webView, SIGNAL(loadFinished(bool)), this, SLOT(handleLoaded()));
 

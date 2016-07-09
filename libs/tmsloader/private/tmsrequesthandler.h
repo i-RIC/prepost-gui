@@ -12,7 +12,7 @@
 #include <map>
 
 class QNetworkAccessManager;
-class QWebView;
+class QWebEngineView;
 
 namespace tmsloader {
 
@@ -45,7 +45,7 @@ private:
 	int m_requestId;
 
 	std::map<QString, QString> m_args;
-	QWebView* m_webView;
+	QWebEngineView* m_webView;
 	QImage m_image;
 	mutable QMutex m_imageMutex;
 
