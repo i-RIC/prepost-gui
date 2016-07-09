@@ -1597,7 +1597,8 @@ void iRICMainWindow::updateWindowZIndices()
 {
 	// @todo this fails! investigate the reason.
 	int index = 1;
-for (QMdiSubWindow* w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
+
+	for (QMdiSubWindow* w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
 		WindowWithZIndexInterface* w2 = dynamic_cast<WindowWithZIndexInterface*>(w->widget());
 		w2->setZindex(index++);
 	}
