@@ -5,6 +5,8 @@
 
 #include <vector>
 
+class QWidget;
+
 namespace tmsloader {
 
 class TmsRequestHandler;
@@ -16,6 +18,8 @@ public:
 	~Impl();
 
 	TmsRequestHandler* registerNewHandler(const TmsRequest& request);
+
+	QWidget* parentWidget() const;
 
 	std::vector<TmsRequestHandler*> m_handlers;
 	TmsLoader* m_loader;

@@ -4,9 +4,9 @@
 #include "tmsloader_api.h"
 
 class QNetworkAccessManager;
-class QObject;
 class QPointF;
 class QSize;
+class QWidget;
 
 namespace tmsloader {
 
@@ -18,7 +18,7 @@ public:
 	TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale);
 	virtual ~TmsRequest();
 
-	virtual TmsRequestHandler* buildHandler(int requestId, QObject* parent) const = 0;
+	virtual TmsRequestHandler* buildHandler(int requestId, QWidget* parent) const = 0;
 
 protected:
 	QPointF center() const;

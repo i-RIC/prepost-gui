@@ -5,10 +5,11 @@
 
 #include <QObject>
 
-class QNetworkProxy;
 class QImage;
+class QNetworkProxy;
 class QPointF;
 class QSize;
+class QWidget;
 
 namespace tmsloader {
 
@@ -19,7 +20,7 @@ class TMSLOADER_API TmsLoader : public QObject
 	Q_OBJECT
 
 public:
-	TmsLoader(QObject* parent = nullptr);
+	TmsLoader(QWidget* parent);
 	~TmsLoader();
 
 	void registerRequest(const TmsRequest& request, int* requestId);

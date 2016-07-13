@@ -4,6 +4,7 @@
 #include "private/tmsrequesthandler.h"
 
 #include <QPixmap>
+#include <QWidget>
 
 using namespace tmsloader;
 
@@ -34,13 +35,18 @@ TmsRequestHandler *TmsLoader::Impl::registerNewHandler(const TmsRequest &request
 		newId = static_cast<int>(m_handlers.size()) - 1;
 	}
 
-	TmsRequestHandler* handler = request.buildHandler(newId, m_loader);
+	TmsRequestHandler* handler = request.buildHandler(newId, parentWidget());
 	m_handlers[newId] = handler;
 
 	return handler;
 }
 
-TmsLoader::TmsLoader(QObject* parent) :
+QWidget* TmsLoader::Impl::parentWidget() const
+{
+	return dynamic_cast<QWidget*> (m_loader->parent());
+}
+
+TmsLoader::TmsLoader(QWidget* parent) :
 	QObject (parent),
 	impl (new Impl(this))
 {}

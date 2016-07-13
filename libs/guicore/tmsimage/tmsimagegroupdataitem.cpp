@@ -81,7 +81,7 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 
 TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem(tr("Background Images (Internet)"), QIcon(":/libs/guibase/images/iconFolder.png"), parent),
-	m_tmsLoader {this},
+	m_tmsLoader {iricMainWindow()},
 	m_tmsRequestId {-1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);

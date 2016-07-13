@@ -2,7 +2,7 @@
 
 using namespace tmsloader;
 
-TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QObject *parent) :
+TmsRequestHandlerXYZ::TmsRequestHandlerXYZ(const QString& url, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, const std::map<QString, QString>& options, QWidget* parent) :
 	TmsRequestHandler(centerLonLat, size, scale, "xyz.html", requestId, parent)
 {
 	std::map<QString, QString> args;

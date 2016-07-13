@@ -12,14 +12,16 @@
 #include <map>
 
 class QWebEngineView;
+class QWidget;
 
 namespace tmsloader {
 
 class TmsRequestHandler : public QObject
 {
 	Q_OBJECT
+
 public:
-	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QObject *parent = nullptr);
+	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWidget* parent);
 	~TmsRequestHandler();
 
 	int requestId() const;

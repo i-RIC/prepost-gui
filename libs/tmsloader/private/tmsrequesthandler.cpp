@@ -32,16 +32,24 @@ void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, c
 
 using namespace tmsloader;
 
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QObject *parent) :
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWidget *parent) :
 	QObject {parent},
 	m_center {centerLonLat},
 	m_size {size},
 	m_scale {scale},
 	m_templateName {templateName},
 	m_requestId {requestId},
-	m_webView {new QWebEngineView {nullptr}},
+	m_webView {new QWebEngineView {parent}},
 	m_timer {this}
-{}
+{
+	m_webView->move(parent->width() + 10, 0);
+
+	// To see the view for debugging,, comment out the following line.
+	// m_webView->move(0, 0);
+
+	m_webView->resize(1, 1);
+	m_webView->show();
+}
 
 TmsRequestHandler::~TmsRequestHandler()
 {
@@ -76,8 +84,6 @@ void TmsRequestHandler::setup()
 	calcSizeAndZoomLevel(m_size, m_scale, m_center, &size, &zoomLevel);
 
 	m_webView->resize(size);
-
-//	m_webView->show(); // uncomment this line when debugging.
 
 	connect(m_webView, SIGNAL(loadFinished(bool)), this, SLOT(handleLoaded()));
 
