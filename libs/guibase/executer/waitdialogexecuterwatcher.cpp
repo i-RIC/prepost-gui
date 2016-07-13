@@ -7,6 +7,7 @@
 WaitDialogExecuterWatcher::WaitDialogExecuterWatcher(ExecuterI* executer, QWidget* widget) :
 	ExecuterWatcher(executer),
 	m_initialWaitMsec {3000},
+	m_initialProgress {0},
 	m_waitMsec {200},
 	m_waitDialog {new WaitDialog(widget)}
 {
@@ -41,6 +42,7 @@ void WaitDialogExecuterWatcher::setProgressSpeed(int speedParam, int waitMsec)
 void WaitDialogExecuterWatcher::execute()
 {
 	auto e = executer();
+	e->start();
 
 	e->wait(m_initialWaitMsec);
 	qApp->processEvents();
@@ -54,7 +56,7 @@ void WaitDialogExecuterWatcher::execute()
 	m_waitDialog->setProgress(progress);
 	m_waitDialog->show();
 
-	while (! e->isFinished() && e->isCanceled()) {
+	while (! e->isFinished() && ! e->isCanceled()) {
 		e->wait(m_waitMsec);
 		m_waitDialog->setProgress(++ progress);
 		qApp->processEvents();
