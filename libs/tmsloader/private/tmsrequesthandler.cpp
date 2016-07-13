@@ -32,31 +32,24 @@ void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, c
 
 using namespace tmsloader;
 
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWidget *parent) :
-	QObject {parent},
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebEngineView* view) :
+	QObject {nullptr},
 	m_center {centerLonLat},
 	m_size {size},
 	m_scale {scale},
 	m_templateName {templateName},
 	m_requestId {requestId},
-	m_webView {new QWebEngineView {parent}},
+	m_webView {view},
 	m_timer {this}
 {
-	m_webView->move(parent->width() + 10, 0);
-
 	// To see the view for debugging,, comment out the following line.
 	// m_webView->move(0, 0);
-
-	m_webView->resize(1, 1);
-	m_webView->show();
 }
 
 TmsRequestHandler::~TmsRequestHandler()
 {
 	m_timer.stop();
 	m_webView->stop();
-
-	delete m_webView;
 }
 
 int TmsRequestHandler::requestId() const
@@ -68,6 +61,11 @@ QImage TmsRequestHandler::image() const
 {
 	QMutexLocker locker(&m_imageMutex);
 	return m_image;
+}
+
+QWebEngineView* TmsRequestHandler::webView() const
+{
+	return m_webView;
 }
 
 void TmsRequestHandler::setArgs(const std::map<QString, QString>& args)

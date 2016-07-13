@@ -21,7 +21,7 @@ TmsRequestXYZ::~TmsRequestXYZ()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWidget *parent) const
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QWebEngineView* view) const
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, parent);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, view);
 }

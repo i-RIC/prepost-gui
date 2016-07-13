@@ -21,11 +21,12 @@ class TmsRequestHandler : public QObject
 	Q_OBJECT
 
 public:
-	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWidget* parent);
+	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebEngineView* view);
 	~TmsRequestHandler();
 
 	int requestId() const;
 	QImage image() const;
+	QWebEngineView* webView() const;
 
 protected:
 	void setArgs(const std::map<QString, QString>& args);

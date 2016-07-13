@@ -5,6 +5,7 @@
 
 #include <vector>
 
+class QWebEngineView;
 class QWidget;
 
 namespace tmsloader {
@@ -21,7 +22,11 @@ public:
 
 	QWidget* parentWidget() const;
 
+	QWebEngineView* getWebView();
+
 	std::vector<TmsRequestHandler*> m_handlers;
+	std::vector<QWebEngineView*> m_webViewPool;
+
 	TmsLoader* m_loader;
 };
 

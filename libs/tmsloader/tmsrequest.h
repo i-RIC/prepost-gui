@@ -6,6 +6,7 @@
 class QNetworkAccessManager;
 class QPointF;
 class QSize;
+class QWebEngineView;
 class QWidget;
 
 namespace tmsloader {
@@ -18,7 +19,7 @@ public:
 	TmsRequest(const QPointF& centerLonLat, const QSize& size, double scale);
 	virtual ~TmsRequest();
 
-	virtual TmsRequestHandler* buildHandler(int requestId, QWidget* parent) const = 0;
+	virtual TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const = 0;
 
 protected:
 	QPointF center() const;
