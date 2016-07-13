@@ -20,7 +20,7 @@ TmsRequestBing::~TmsRequestBing()
 	delete impl;
 }
 
-TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const
+TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QObject* parent) const
 {
-	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, manager, parent);
+	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, parent);
 }

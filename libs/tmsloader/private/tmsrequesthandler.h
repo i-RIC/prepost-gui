@@ -11,7 +11,6 @@
 
 #include <map>
 
-class QNetworkAccessManager;
 class QWebEngineView;
 
 namespace tmsloader {
@@ -20,7 +19,7 @@ class TmsRequestHandler : public QObject
 {
 	Q_OBJECT
 public:
-	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QNetworkAccessManager* manager, QObject *parent = nullptr);
+	TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QObject *parent = nullptr);
 	~TmsRequestHandler();
 
 	int requestId() const;

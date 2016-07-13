@@ -9,7 +9,7 @@ namespace tmsloader {
 class TmsRequestHandlerGoogleMap : public TmsRequestHandler
 {
 public:
-	TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QNetworkAccessManager* manager, QObject *parent = nullptr);
+	TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QObject *parent = nullptr);
 };
 
 } // tmsloader

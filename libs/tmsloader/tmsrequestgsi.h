@@ -20,7 +20,7 @@ public:
 	TmsRequestGSI(const QPointF& centerLonLat, const QSize& size, double scale, TileType tileType = TileType::STD);
 	~TmsRequestGSI();
 
-	TmsRequestHandler* buildHandler(int requestId, QNetworkAccessManager* manager, QObject *parent) const override;
+	TmsRequestHandler* buildHandler(int requestId, QObject *parent) const override;
 
 private:
 	class Impl;

@@ -18,7 +18,7 @@ TmsRequestGoogleMap::~TmsRequestGoogleMap()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const
+TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QObject* parent) const
 {
-	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, manager, parent);
+	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, parent);
 }

@@ -32,7 +32,7 @@ void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, c
 
 using namespace tmsloader;
 
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QNetworkAccessManager *manager, QObject *parent) :
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QObject *parent) :
 	QObject {parent},
 	m_center {centerLonLat},
 	m_size {size},
@@ -41,9 +41,7 @@ TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& s
 	m_requestId {requestId},
 	m_webView {new QWebEngineView {nullptr}},
 	m_timer {this}
-{
-//	m_webView->page()->setNetworkAccessManager(manager);
-}
+{}
 
 TmsRequestHandler::~TmsRequestHandler()
 {

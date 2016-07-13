@@ -21,7 +21,7 @@ TmsRequestXYZ::~TmsRequestXYZ()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const
+TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QObject* parent) const
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, manager, parent);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, parent);
 }

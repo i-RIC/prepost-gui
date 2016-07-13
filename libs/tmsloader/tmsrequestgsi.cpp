@@ -57,7 +57,7 @@ TmsRequestGSI::~TmsRequestGSI()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QNetworkAccessManager* manager, QObject *parent) const
+TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QObject *parent) const
 {
-	return impl->m_requestXYZ->buildHandler(requestId, manager, parent);
+	return impl->m_requestXYZ->buildHandler(requestId, parent);
 }

@@ -8,8 +8,7 @@
 using namespace tmsloader;
 
 TmsLoader::Impl::Impl(TmsLoader* parent) :
-	m_loader (parent),
-	m_accessManager (parent)
+	m_loader (parent)
 {}
 
 TmsLoader::Impl::~Impl()
@@ -35,7 +34,7 @@ TmsRequestHandler *TmsLoader::Impl::registerNewHandler(const TmsRequest &request
 		newId = static_cast<int>(m_handlers.size()) - 1;
 	}
 
-	TmsRequestHandler* handler = request.buildHandler(newId, &m_accessManager, m_loader);
+	TmsRequestHandler* handler = request.buildHandler(newId, m_loader);
 	m_handlers[newId] = handler;
 
 	return handler;

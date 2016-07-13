@@ -9,7 +9,7 @@ namespace tmsloader {
 class TmsRequestHandlerBing : public TmsRequestHandler
 {
 public:
-	TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QNetworkAccessManager* manager, QObject *parent = nullptr);
+	TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QObject *parent = nullptr);
 };
 
 } // tmsloader

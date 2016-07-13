@@ -3,9 +3,6 @@
 
 #include "../tmsloader.h"
 
-#include <QNetworkProxy>
-#include <QNetworkAccessManager>
-
 #include <vector>
 
 namespace tmsloader {
@@ -22,7 +19,6 @@ public:
 
 	std::vector<TmsRequestHandler*> m_handlers;
 	TmsLoader* m_loader;
-	QNetworkAccessManager m_accessManager;
 };
 
 } // tmsloader

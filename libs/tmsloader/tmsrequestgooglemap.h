@@ -18,7 +18,7 @@ public:
 	TmsRequestGoogleMap(const QPointF& centerLonLat, const QSize& size, double scale, MapType mapType = MapType::ROADMAP);
 	~TmsRequestGoogleMap();
 
-	TmsRequestHandler* buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const override;
+	TmsRequestHandler* buildHandler(int requestId, QObject* parent) const override;
 
 private:
 	class Impl;
