@@ -9,9 +9,8 @@ TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imageryS
 {
 	std::map<TmsRequestBing::ImagerySet, QString> imagerySetMap;
 
-	imagerySetMap.insert({TmsRequestBing::ImagerySet::AERIAL, "Aerial"});
-	imagerySetMap.insert({TmsRequestBing::ImagerySet::AERIALWITHLABELS, "AerialWithLabels"});
-	imagerySetMap.insert({TmsRequestBing::ImagerySet::ROAD, "Road"});
+	imagerySetMap.insert({TmsRequestBing::ImagerySet::AERIAL, "aerial"});
+	imagerySetMap.insert({TmsRequestBing::ImagerySet::ROAD, "road"});
 
 	std::map<QString, QString> args;
 

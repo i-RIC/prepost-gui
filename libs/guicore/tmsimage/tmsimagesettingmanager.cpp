@@ -38,7 +38,6 @@ std::vector<TmsImageSetting> standardSettings()
 
 	// Bing
 	ret.push_back(buildSetting("tms=bing&imageryset=aerial&active=true", TmsImageSettingManager::tr("Bing (Aerial)")));
-	ret.push_back(buildSetting("tms=bing&imageryset=aerialwithlabels&active=true", TmsImageSettingManager::tr("Bing (Aerial with labels)")));
 	ret.push_back(buildSetting("tms=bing&imageryset=road&active=true", TmsImageSettingManager::tr("Bing (Road)")));
 
 	// GSI
@@ -133,8 +132,6 @@ TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& s
 		QString imagerySetStr = query.queryItemValue("imageryset");
 		if (imagerySetStr == "aerial") {
 			iset = TmsRequestBing::ImagerySet::AERIAL;
-		} else if (imagerySetStr == "aerialwithlabels") {
-			iset = TmsRequestBing::ImagerySet::AERIALWITHLABELS;
 		} else if (imagerySetStr == "road") {
 			iset = TmsRequestBing::ImagerySet::ROAD;
 		}

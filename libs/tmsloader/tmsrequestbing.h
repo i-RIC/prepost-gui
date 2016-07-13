@@ -11,7 +11,6 @@ class TMSLOADER_API TmsRequestBing : public TmsRequest
 public:
 	enum class ImagerySet {
 		AERIAL,
-		AERIALWITHLABELS,
 		ROAD
 	};
 
