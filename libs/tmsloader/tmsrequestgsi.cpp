@@ -57,7 +57,7 @@ TmsRequestGSI::~TmsRequestGSI()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestGSI::buildHandler(int requestId, QWebView* view) const
 {
 	return impl->m_requestXYZ->buildHandler(requestId, view);
 }

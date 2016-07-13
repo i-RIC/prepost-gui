@@ -4,7 +4,7 @@
 
 using namespace tmsloader;
 
-TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view) :
+TmsRequestHandlerBing::TmsRequestHandlerBing(TmsRequestBing::ImagerySet imagerySet, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view) :
 	TmsRequestHandler {centerLonLat, size, scale, "bing.html", requestId, view}
 {
 	std::map<TmsRequestBing::ImagerySet, QString> imagerySetMap;

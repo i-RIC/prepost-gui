@@ -7,7 +7,7 @@ TmsRequestOpenStreetMap::TmsRequestOpenStreetMap(const QPointF& centerLonLat, co
 	TmsRequest {centerLonLat, size, scale}
 {}
 
-TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestOpenStreetMap::buildHandler(int requestId, QWebView* view) const
 {
 	return new TmsRequestHandlerOpenStreetMap(center(), size(), scale(), requestId, view);
 }

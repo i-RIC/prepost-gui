@@ -16,7 +16,7 @@ public:
 	TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url, std::map<QString, QString>& options);
 	~TmsRequestXYZ();
 
-	TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
+	TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
 
 private:
 	class Impl;

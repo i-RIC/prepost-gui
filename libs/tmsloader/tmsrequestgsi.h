@@ -20,7 +20,7 @@ public:
 	TmsRequestGSI(const QPointF& centerLonLat, const QSize& size, double scale, TileType tileType = TileType::STD);
 	~TmsRequestGSI();
 
-	TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
+	TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
 
 private:
 	class Impl;

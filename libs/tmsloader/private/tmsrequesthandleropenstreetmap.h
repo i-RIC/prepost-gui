@@ -8,7 +8,7 @@ namespace tmsloader {
 class TmsRequestHandlerOpenStreetMap : public TmsRequestHandler
 {
 public:
-	TmsRequestHandlerOpenStreetMap(const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view);
+	TmsRequestHandlerOpenStreetMap(const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view);
 };
 
 } // tmsloader

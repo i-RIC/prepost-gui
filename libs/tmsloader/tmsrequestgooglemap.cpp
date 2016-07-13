@@ -18,7 +18,7 @@ TmsRequestGoogleMap::~TmsRequestGoogleMap()
 	delete impl;
 }
 
-TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler *TmsRequestGoogleMap::buildHandler(int requestId, QWebView* view) const
 {
 	return new TmsRequestHandlerGoogleMap(impl->m_mapType, center(), size(), scale(), requestId, view);
 }

@@ -20,7 +20,7 @@ TmsRequestBing::~TmsRequestBing()
 	delete impl;
 }
 
-TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebEngineView* view) const
+TmsRequestHandler* TmsRequestBing::buildHandler(int requestId, QWebView* view) const
 {
 	return new TmsRequestHandlerBing(impl->m_imagerySet, center(), size(), scale(), requestId, view);
 }

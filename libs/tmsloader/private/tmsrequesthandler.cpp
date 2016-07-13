@@ -2,7 +2,7 @@
 
 #include <QFile>
 #include <QTextStream>
-#include <QWebEngineView>
+#include <QWebView>
 #include <QMutexLocker>
 
 #include <cmath>
@@ -32,7 +32,7 @@ void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, c
 
 using namespace tmsloader;
 
-TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebEngineView* view) :
+TmsRequestHandler::TmsRequestHandler(const QPointF& centerLonLat, const QSize& size, double scale, const QString& templateName, int requestId, QWebView* view) :
 	QObject {nullptr},
 	m_center {centerLonLat},
 	m_size {size},
@@ -63,7 +63,7 @@ QImage TmsRequestHandler::image() const
 	return m_image;
 }
 
-QWebEngineView* TmsRequestHandler::webView() const
+QWebView* TmsRequestHandler::webView() const
 {
 	return m_webView;
 }

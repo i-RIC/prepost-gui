@@ -4,7 +4,7 @@
 
 using namespace tmsloader;
 
-TmsRequestHandlerGoogleMap::TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebEngineView* view) :
+TmsRequestHandlerGoogleMap::TmsRequestHandlerGoogleMap(TmsRequestGoogleMap::MapType mapType, const QPointF& centerLonLat, const QSize& size, double scale, int requestId, QWebView* view) :
 	TmsRequestHandler {centerLonLat, size, scale, "googlemap.html", requestId, view}
 {
 	std::map<TmsRequestGoogleMap::MapType, QString> mapTypeMap;

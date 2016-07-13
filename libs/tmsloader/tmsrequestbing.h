@@ -17,7 +17,7 @@ public:
 	TmsRequestBing(const QPointF& centerLonLat, const QSize& size, double scale, ImagerySet imagerySet = ImagerySet::AERIAL);
 	~TmsRequestBing();
 
-	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebEngineView* view) const override;
+	tmsloader::TmsRequestHandler* buildHandler(int requestId, QWebView* view) const override;
 
 private:
 	class Impl;

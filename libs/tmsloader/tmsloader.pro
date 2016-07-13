@@ -1,6 +1,6 @@
 TARGET = iricTmsLoader
 TEMPLATE = lib
-QT       += core gui network webenginewidgets
+QT       += core gui network webkitwidgets
 
 DEFINES += TMSLOADER_LIBRARY
 
