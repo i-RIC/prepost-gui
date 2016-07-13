@@ -16,7 +16,6 @@ class VersionNumber;
 
 class QDomNode;
 class QLocale;
-class QNetworkProxy;
 class QProcessEnvironment;
 class QXmlStreamWriter;
 
@@ -51,7 +50,6 @@ public:
 	virtual void setProjectData(ProjectData* projectData) = 0;
 	virtual const QLocale locale() const = 0;
 	virtual const QProcessEnvironment& processEnvironment() const = 0;
-	virtual QNetworkProxy networkProxy() const = 0;
 
 	virtual ExecuterWatcher* buildExecuteWatcher(ExecuterI* executer) = 0;
 	virtual bool cuiMode() const = 0;

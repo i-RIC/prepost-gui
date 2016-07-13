@@ -11,7 +11,6 @@
 #include <QMainWindow>
 #include <QLocale>
 #include <QList>
-#include <QNetworkProxy>
 #include <QProcessEnvironment>
 
 namespace iRICPython {
@@ -91,7 +90,6 @@ public:
 	bool isPostOnlyMode() const;
 	void importCalculationResult(const QString& filename);
 	const QProcessEnvironment& processEnvironment() const override;
-	QNetworkProxy networkProxy() const override;
 	ExecuterWatcher* buildExecuteWatcher(ExecuterI* executer) override;
 	bool cuiMode() const override;
 
@@ -322,7 +320,6 @@ private:
 	bool m_debugMode;
 
 	QProcessEnvironment m_processEnvironment;
-	QNetworkProxy m_networkProxy;
 
 public:
 	friend class ProjectData;

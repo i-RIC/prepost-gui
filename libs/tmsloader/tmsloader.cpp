@@ -79,11 +79,6 @@ QImage TmsLoader::getImage(int requestId) const
 	return handler->image();
 }
 
-void TmsLoader::setProxy(const QNetworkProxy& proxy)
-{
-	impl->m_accessManager.setProxy(proxy);
-}
-
 void TmsLoader::handleUpdate()
 {
 	TmsRequestHandler* handler = qobject_cast<TmsRequestHandler*> (sender());

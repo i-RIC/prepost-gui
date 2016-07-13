@@ -215,8 +215,6 @@ void TmsImageGroupDataItem::requestImage()
 	if (m_tmsRequestId != -1) {
 		m_tmsLoader.cancelRequest(m_tmsRequestId);
 	}
-	m_tmsLoader.setProxy(iricMainWindow()->networkProxy());
-
 	auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 	if (view == nullptr) {return;}
 

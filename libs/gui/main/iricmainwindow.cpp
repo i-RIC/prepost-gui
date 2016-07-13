@@ -75,6 +75,7 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
+#include <QNetworkProxy>
 #include <QPainter>
 #include <QProgressDialog>
 #include <QRegExp>
@@ -523,11 +524,6 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 const QProcessEnvironment& iRICMainWindow::processEnvironment() const
 {
 	return m_processEnvironment;
-}
-
-QNetworkProxy iRICMainWindow::networkProxy() const
-{
-	return m_networkProxy;
 }
 
 ExecuterWatcher* iRICMainWindow::buildExecuteWatcher(ExecuterI* executer)
@@ -2332,15 +2328,12 @@ void iRICMainWindow::setupProcessEnvironment()
 
 void iRICMainWindow::setupNetworkProxy()
 {
-	m_networkProxy = QNetworkProxy();
-	m_networkProxy.setType(QNetworkProxy::NoProxy);
-
 	NetworkSetting setting;
 
 	auto proxies = setting.queryProxy();
 	if (proxies.size() == 0) {return;}
 
-	m_networkProxy = proxies.first();
+	QNetworkProxy::setApplicationProxy(proxies.first());
 }
 
 void iRICMainWindow::updateTmsListForAllWindows()

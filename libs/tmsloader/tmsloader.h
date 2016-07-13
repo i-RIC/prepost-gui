@@ -27,8 +27,6 @@ public:
 
 	QImage getImage(int requestId) const;
 
-	void setProxy(const QNetworkProxy& proxy);
-
 private slots:
 	void handleUpdate();
 
