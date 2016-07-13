@@ -12,6 +12,7 @@ TmsRequestGSI::Impl::Impl(const QPointF &centerLonLat, const QSize &size, double
 {
 	std::map<TmsRequestGSI::TileType, QString> tileTypeUrlMap;
 	std::map<TmsRequestGSI::TileType, QString> tileTypeExtMap;
+	std::map<TmsRequestGSI::TileType, int> tileTypeMaxZoomMap;
 
 	tileTypeUrlMap.insert({TmsRequestGSI::TileType::STD, "std"});
 	tileTypeUrlMap.insert({TmsRequestGSI::TileType::PALE, "pale"});
@@ -25,9 +26,18 @@ TmsRequestGSI::Impl::Impl(const QPointF &centerLonLat, const QSize &size, double
 	tileTypeExtMap.insert({TmsRequestGSI::TileType::RELIEF, "png"});
 	tileTypeExtMap.insert({TmsRequestGSI::TileType::ORT, "jpg"});
 
-	QString url = QString("http://cyberjapandata.gsi.go.jp/xyz/%1/{z}/{x}/{y}.%2").arg(tileTypeUrlMap[tileType]).arg(tileTypeExtMap[tileType]);
+	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::STD, 18});
+	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::PALE, 18});
+	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::ENGLISH, 11});
+	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::RELIEF, 15});
+	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::ORT, 18});
 
-	m_requestXYZ = new TmsRequestXYZ(centerLonLat, size, scale, url);
+	QString url = QString("http://cyberjapandata.gsi.go.jp/xyz/%1/{z}/{x}/{y}.%2").arg(tileTypeUrlMap[tileType]).arg(tileTypeExtMap[tileType]);
+	std::map<QString, QString> options;
+
+	options.insert({"maxNativeZoom", QString::number(tileTypeMaxZoomMap[tileType])});
+
+	m_requestXYZ = new TmsRequestXYZ(centerLonLat, size, scale, url, options);
 }
 
 TmsRequestGSI::Impl::~Impl()

@@ -4,15 +4,16 @@
 
 using namespace tmsloader;
 
-TmsRequestXYZ::Impl::Impl(const QString &url) :
-	m_url {url}
+TmsRequestXYZ::Impl::Impl(const QString &url, const std::map<QString, QString>& options) :
+	m_url {url},
+	m_options (options)
 {}
 
 // public interfaces
 
-TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url) :
+TmsRequestXYZ::TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url, std::map<QString, QString>& options) :
 	TmsRequest {centerLonLat, size, scale},
-	impl {new Impl {url}}
+	impl {new Impl {url, options}}
 {}
 
 TmsRequestXYZ::~TmsRequestXYZ()
@@ -22,5 +23,5 @@ TmsRequestXYZ::~TmsRequestXYZ()
 
 TmsRequestHandler *TmsRequestXYZ::buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const
 {
-	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, manager, parent);
+	return new TmsRequestHandlerXYZ(impl->m_url, center(), size(), scale(), requestId, impl->m_options, manager, parent);
 }

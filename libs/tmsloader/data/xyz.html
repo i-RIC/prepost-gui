@@ -20,7 +20,7 @@
         </style>
 <script>
 var map = new L.Map('map').setView([%LATITUDE%, %LONGITUDE%], %ZOOMLEVEL%);
-L.tileLayer("%URL%", {}).addTo(map);
+L.tileLayer("%URL%", {%OPTIONS%}).addTo(map);
 </script>
 </body>
 </html>

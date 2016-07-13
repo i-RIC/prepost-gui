@@ -10,9 +10,10 @@ namespace tmsloader {
 class TmsRequestXYZ::Impl
 {
 public:
-	Impl(const QString& url);
+	Impl(const QString& url, const std::map<QString, QString>& options);
 
 	QString m_url;
+	std::map<QString, QString> m_options;
 };
 
 } // tmsloader

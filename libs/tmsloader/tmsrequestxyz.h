@@ -4,6 +4,8 @@
 #include "tmsloader_api.h"
 #include "tmsrequest.h"
 
+#include <map>
+
 class QString;
 
 namespace tmsloader {
@@ -11,7 +13,7 @@ namespace tmsloader {
 class TMSLOADER_API TmsRequestXYZ : public TmsRequest
 {
 public:
-	TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url);
+	TmsRequestXYZ(const QPointF& centerLonLat, const QSize& size, double scale, const QString& url, std::map<QString, QString>& options);
 	~TmsRequestXYZ();
 
 	TmsRequestHandler* buildHandler(int requestId, QNetworkAccessManager* manager, QObject* parent) const override;

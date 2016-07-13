@@ -153,7 +153,8 @@ TmsRequest* TmsImageSettingManager::buildRequest(QPointF& centerLonLat, QSize& s
 		return new TmsRequestGSI(centerLonLat, size, scale, tileType);
 	} else if (tms == "xyz") {
 		QString url = query.queryItemValue("url");
-		return new TmsRequestXYZ(centerLonLat, size, scale, url);
+		std::map<QString, QString> options;
+		return new TmsRequestXYZ(centerLonLat, size, scale, url, options);
 	}
 	return nullptr;
 }
