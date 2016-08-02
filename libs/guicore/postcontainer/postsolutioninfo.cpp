@@ -155,7 +155,7 @@ bool PostSolutionInfo::setCurrentStep(unsigned int step, int fn)
 		QMessageBox::critical(projectData()->mainWindow(), tr("Error"), tr("Error occured while loading calculation result."));
 		dialogShowing = false;
 	}
-	if (fn == 0){
+	if (fn == 0 && projectData()->mainWindow()->isSolverRunning()){
 		close();
 	}
 	return true;

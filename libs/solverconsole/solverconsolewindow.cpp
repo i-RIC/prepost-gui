@@ -3,6 +3,7 @@
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectcgnsfile.h>
@@ -250,6 +251,8 @@ void SolverConsoleWindow::clear()
 
 void SolverConsoleWindow::startSolverSilently()
 {
+	m_projectData->mainfile()->postSolutionInfo()->close();
+
 	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
 	cgnsname.append(".cgn");
 
