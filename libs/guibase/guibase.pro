@@ -85,6 +85,8 @@ HEADERS += colortool.h \
            vtkdatasetattributestool.h \
            vtklegendboxrepresentation.h \
            vtklegendboxwidget.h \
+           vtklinestylecontainer.h \
+           vtklinestylewidget.h \
            vtksubdividegrid.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
@@ -130,6 +132,7 @@ HEADERS += colortool.h \
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
+         vtklinestylewidget.ui \
          vtktextpropertysettingdialog.ui \
          xyaxisdisplaysettingdialog.ui \
          colormap/colormapcustomsettingdialog.ui \
@@ -165,6 +168,8 @@ SOURCES += colortool.cpp \
            vtkdatasetattributestool.cpp \
            vtklegendboxrepresentation.cpp \
            vtklegendboxwidget.cpp \
+           vtklinestylecontainer.cpp \
+           vtklinestylewidget.cpp \
            vtksubdividegrid.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \

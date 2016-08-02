@@ -15,16 +15,16 @@ template <typename V>
 SimpleValueContainerT<V>::SimpleValueContainerT(const QString& name, const V& defaultVal) :
 	XmlAttributeContainer {},
 	m_name {name},
-	m_value {defaultVal},
-	m_defaultValue {defaultVal}
+	m_value (defaultVal),
+	m_defaultValue (defaultVal)
 {}
 
 template <typename V>
 SimpleValueContainerT<V>::SimpleValueContainerT(const SimpleValueContainerT<V>& c) :
 	XmlAttributeContainer {c},
 	m_name {c.m_name},
-	m_value {c.m_value},
-	m_defaultValue {c.m_defaultValue}
+	m_value (c.m_value),
+	m_defaultValue (c.m_defaultValue)
 {}
 
 template <typename V>

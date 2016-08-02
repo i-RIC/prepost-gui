@@ -363,12 +363,12 @@
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="19"/>
+        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="21"/>
         <source>Cell attributes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp" line="4"/>
         <source>Cell Flag Setting</source>
         <translation type="unfinished"></translation>
     </message>
@@ -479,9 +479,163 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGraphGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="220"/>
+        <source>Graph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="391"/>
+        <source>Graph Physical Value Change</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp" line="5"/>
+        <source>Update Graph Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphSettingCustomRegionDialog</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="14"/>
+        <source>Custom Region Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="45"/>
+        <source>&amp;Select All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="52"/>
+        <source>&amp;Unselect All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphSettingDialog</name>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="14"/>
+        <source>Graph Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="26"/>
+        <source>Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="32"/>
+        <source>I direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="42"/>
+        <source>J direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="67"/>
+        <source>Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="73"/>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="83"/>
+        <source>Partial region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="110"/>
+        <source>Start:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="127"/>
+        <source>End:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="144"/>
+        <source>Skip:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="187"/>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="197"/>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="222"/>
+        <source>Draw Direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="228"/>
+        <source>Vertical to grid lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="238"/>
+        <source>Parallel to grid lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="265"/>
+        <source>Grid Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="271"/>
+        <source>Draw</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="304"/>
+        <source>Graph Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="312"/>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="339"/>
+        <source>Scale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="401"/>
+        <source>No modification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="411"/>
+        <source>Subtract maximum value in each line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="418"/>
+        <source>Subtract minimum value in each line</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="38"/>
+        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="40"/>
         <source>Grid shape</source>
         <translation type="unfinished"></translation>
     </message>
@@ -502,39 +656,39 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="66"/>
         <source>Scalar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="387"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="446"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="445"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1182,8 +1336,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="107"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="109"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="120"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="122"/>
         <source>Show Attribute Browser</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1191,7 +1345,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="197"/>
+        <location filename="../datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Grid Shape Setting</source>
         <translation type="unfinished"></translation>
     </message>

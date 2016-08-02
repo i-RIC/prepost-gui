@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>Post2dGridRegionSelectDialog</name>
     <message>
@@ -363,12 +363,12 @@
 <context>
     <name>Post2dWindowCellFlagGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="19"/>
+        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="21"/>
         <source>Cell attributes</source>
         <translation>セル属性</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowcellflaggroupdataitem.cpp" line="40"/>
+        <location filename="../datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp" line="4"/>
         <source>Cell Flag Setting</source>
         <translation>セル属性設定</translation>
     </message>
@@ -479,9 +479,167 @@
     </message>
 </context>
 <context>
+    <name>Post2dWindowGraphGroupDataItem</name>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="220"/>
+        <source>Graph</source>
+        <translation>グラフ</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="391"/>
+        <source>Graph Physical Value Change</source>
+        <translation>グラフ 物理量の変更</translation>
+    </message>
+    <message>
+        <source>Contour Physical Value Change</source>
+        <translation type="obsolete">コンター 物理量変更</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp" line="5"/>
+        <source>Update Graph Setting</source>
+        <translation>グラフの設定変更</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphSettingCustomRegionDialog</name>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="14"/>
+        <source>Custom Region Setting</source>
+        <translation>カスタム領域設定</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="45"/>
+        <source>&amp;Select All</source>
+        <translation>全て選択(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui" line="52"/>
+        <source>&amp;Unselect All</source>
+        <translation>全て選択解除(&amp;U)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowGraphSettingDialog</name>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="14"/>
+        <source>Graph Setting</source>
+        <translation>グラフ設定</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="26"/>
+        <source>Direction</source>
+        <translation>方向</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="32"/>
+        <source>I direction</source>
+        <translation>I 方向</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="42"/>
+        <source>J direction</source>
+        <translation>J 方向</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="67"/>
+        <source>Region</source>
+        <translation>領域</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="73"/>
+        <source>All</source>
+        <translation>全て</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="83"/>
+        <source>Partial region</source>
+        <translation>部分領域</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="110"/>
+        <source>Start:</source>
+        <translation>開始:</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="127"/>
+        <source>End:</source>
+        <translation>終了:</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="144"/>
+        <source>Skip:</source>
+        <translation>間引き:</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="187"/>
+        <source>Custom</source>
+        <translation>カスタム</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="197"/>
+        <source>&amp;Edit...</source>
+        <translation>編集(&amp;E)...</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="222"/>
+        <source>Draw Direction</source>
+        <translation>描画方向</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="228"/>
+        <source>Vertical to grid lines</source>
+        <translation>格子線に垂直</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="238"/>
+        <source>Parallel to grid lines</source>
+        <translation>格子線方向</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="265"/>
+        <source>Grid Lines</source>
+        <translation>格子線</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="271"/>
+        <source>Draw</source>
+        <translation>描画する</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="304"/>
+        <source>Graph Lines</source>
+        <translation>グラフ線</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="312"/>
+        <source>Physical Value:</source>
+        <translation>物理量:</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="339"/>
+        <source>Scale:</source>
+        <translation>倍率:</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="401"/>
+        <source>No modification</source>
+        <translation>そのまま表示</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="411"/>
+        <source>Subtract maximum value in each line</source>
+        <translation>各線での最大値を引く</translation>
+    </message>
+    <message>
+        <location filename="../datamodel/post2dwindowgraphsettingdialog.ui" line="418"/>
+        <source>Subtract minimum value in each line</source>
+        <translation>各線での最小値を引く</translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowGridShapeDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="38"/>
+        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="40"/>
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
@@ -495,7 +653,7 @@
     </message>
     <message>
         <source>MEASUREDDATAS</source>
-        <translation type="vanished">MEASUREDDATAS</translation>
+        <translation>MEASUREDDATAS</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindowmeasureddatatopdataitem.cpp" line="37"/>
@@ -506,39 +664,39 @@
 <context>
     <name>Post2dWindowNodeScalarGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="67"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="66"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="388"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="387"/>
         <source>Update Contour Setting</source>
         <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="446"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="445"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="631"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、面塗りコンターを表示して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、コンターの値の範囲を手動で設定して下さい。</translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="642"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation>ストリートビュー用KMLをエクスポートするには、座標系を指定する必要があります。</translation>
     </message>
@@ -576,7 +734,7 @@
     <name>Post2dWindowNodeVectorParticleGroupDataItem</name>
     <message>
         <source>Particles</source>
-        <translation type="vanished">パーティクル</translation>
+        <translation>パーティクル</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="63"/>
@@ -981,11 +1139,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit Particle Display Setting</source>
-        <translation type="vanished">パーティクル表示設定の編集</translation>
+        <translation>パーティクル表示設定の編集</translation>
     </message>
     <message>
         <source>Particles (auto)</source>
-        <translation type="vanished">パーティクル (自動)</translation>
+        <translation>パーティクル (自動)</translation>
     </message>
     <message>
         <location filename="../datamodel/private/post2dwindowparticlestopdataitem_setsettingcommand.cpp" line="4"/>
@@ -1015,7 +1173,7 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowRawDataTopDataItem</name>
     <message>
         <source>Geographic Data</source>
-        <translation type="vanished">地理情報</translation>
+        <translation>地理情報</translation>
     </message>
 </context>
 <context>
@@ -1253,8 +1411,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Post2dWindowZoneDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="107"/>
-        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="109"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="120"/>
+        <location filename="../datamodel/post2dwindowzonedataitem.cpp" line="122"/>
         <source>Show Attribute Browser</source>
         <translation>属性ブラウザの表示</translation>
     </message>
@@ -1262,37 +1420,37 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../datamodel/post2dwindowgridshapedataitem.cpp" line="197"/>
+        <location filename="../datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp" line="4"/>
         <source>Update Grid Shape Setting</source>
         <translation>格子形状の設定変更</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="vanished">コンターの設定変更</translation>
+        <translation>コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="vanished">コンター 物理量変更</translation>
+        <translation>コンター 物理量変更</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="vanished">矢印 物理量変更</translation>
+        <translation>矢印 物理量変更</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="vanished">ベクトルの設定変更</translation>
+        <translation>ベクトルの設定変更</translation>
     </message>
     <message>
         <source>Particle Physical Value Change</source>
-        <translation type="vanished">パーティクル 物理量の変更</translation>
+        <translation>パーティクル 物理量の変更</translation>
     </message>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="vanished">パーティクル設定</translation>
+        <translation>パーティクル設定</translation>
     </message>
     <message>
         <source>Streamline Physical Value Change</source>
-        <translation type="vanished">流線 物理量の変更</translation>
+        <translation>流線 物理量の変更</translation>
     </message>
     <message>
         <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="170"/>

@@ -12,6 +12,7 @@
 class QAction;
 class QSignalMapper;
 
+class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
 class Post2dWindowNodeScalarGroupDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem;
@@ -26,9 +27,9 @@ class Post2dWindowZoneDataItem : public Post2dWindowDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent);
 	~Post2dWindowZoneDataItem();
+
 	void addCustomMenuItems(QMenu* menu) override;
 
 	// Standard mouse event handlers
@@ -50,6 +51,7 @@ public:
 	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const {return m_particleGroupDataItem;}
 	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const {return m_cellFlagGroupDataItem;}
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const {return m_particlesDataItem;}
+	Post2dWindowGraphGroupDataItem* graphGroupDataItem() const {return m_graphGroupDataItem;}
 
 	void initNodeAttributeBrowser();
 	void clearNodeAttributeBrowser();
@@ -87,6 +89,7 @@ protected:
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post2dWindowCellFlagGroupDataItem* m_cellFlagGroupDataItem;
 	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
+	Post2dWindowGraphGroupDataItem* m_graphGroupDataItem;
 
 private:
 	void setupActors();

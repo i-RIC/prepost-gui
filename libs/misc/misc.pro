@@ -26,6 +26,7 @@ HEADERS += arrowsettingcontainer.h \
            intcontainer.h \
            integerrangecontainer.h \
            interpolator.h \
+           intvectorcontainer.h \
            iricrootpath.h \
            iricundostack.h \
            lastiodirectory.h \
@@ -74,6 +75,7 @@ SOURCES += arrowsettingcontainer.cpp \
            informationdialog.cpp \
            intcontainer.cpp \
            integerrangecontainer.cpp \
+           intvectorcontainer.cpp \
            iricrootpath.cpp \
            iricundostack.cpp \
            lastiodirectory.cpp \

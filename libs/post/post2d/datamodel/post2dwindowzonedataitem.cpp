@@ -2,6 +2,7 @@
 #include "../post2dwindowdatamodel.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowcellflaggroupdataitem.h"
+#include "post2dwindowgraphgroupdataitem.h"
 #include "post2dwindowgridshapedataitem.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodescalargroupdataitem.h"
@@ -52,21 +53,33 @@
 
 Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, int zoneNumber, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {zoneName.c_str(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
+	m_shapeDataItem {nullptr},
+	m_scalarGroupDataItem {nullptr},
+	m_arrowGroupDataItem {nullptr},
+	m_streamlineGroupDataItem {nullptr},
+	m_particleGroupDataItem {nullptr},
+	m_cellFlagGroupDataItem {nullptr},
+	m_particlesDataItem {nullptr},
+	m_graphGroupDataItem {nullptr},
 	m_zoneName (zoneName),
 	m_zoneNumber {zoneNumber},
-	m_attributeBrowserFixed {false},
-	m_particlesDataItem {nullptr}
+	m_attributeBrowserFixed {false}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dataContainer();
 	m_shapeDataItem = new Post2dWindowGridShapeDataItem(this);
+
+	PostZoneDataContainer* cont = dataContainer();
 
 	if (cont->scalarValueExists()) {
 		m_scalarGroupDataItem = new Post2dWindowNodeScalarGroupDataItem(this);
-	} else {
-		m_scalarGroupDataItem = nullptr;
+
+		vtkPointSet* data = cont->data();
+		if (dynamic_cast<vtkStructuredGrid*> (data) != nullptr){
+			m_graphGroupDataItem = new Post2dWindowGraphGroupDataItem(this);
+		}
 	}
+
 	if (cont->vectorValueExists()) {
 		vtkPointSet* data = cont->data();
 		if (dynamic_cast<vtkUnstructuredGrid*> (data) != nullptr){
@@ -78,14 +91,12 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupStructuredDataItem(this);
 		}
-	} else {
-		m_arrowGroupDataItem = nullptr;
-		m_streamlineGroupDataItem = nullptr;
-		m_particleGroupDataItem = nullptr;
 	}
 	if (cont->particleData() != nullptr) {
 		m_particlesDataItem = new Post2dWindowParticlesTopDataItem(this);
 	}
+
+	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 
 	m_childItems.append(m_shapeDataItem);
 	if (cont->vectorValueExists()) {
@@ -98,10 +109,12 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 	if (cont->particleData() != nullptr) {
 		m_childItems.append(m_particlesDataItem);
 	}
+	if (m_graphGroupDataItem != nullptr) {
+		m_childItems.append(m_graphGroupDataItem);
+	}
 	if (cont->scalarValueExists()) {
 		m_childItems.append(m_scalarGroupDataItem);
 	}
-	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 	m_childItems.append(m_cellFlagGroupDataItem);
 
 	m_showNodeAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
@@ -170,6 +183,10 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! particlesNode.isNull() && m_particlesDataItem != nullptr) {
 		m_particlesDataItem->loadFromProjectMainFile(particlesNode);
 	}
+	QDomNode graphNode = iRIC::getChildNode(node, "GraphGroup");
+	if (! graphNode.isNull() && m_graphGroupDataItem != nullptr) {
+		m_graphGroupDataItem->loadFromProjectMainFile(graphNode);
+	}
 }
 
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -207,6 +224,11 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	if (m_particlesDataItem != nullptr) {
 		writer.writeStartElement("SolverParticles");
 		m_particlesDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+	if (m_graphGroupDataItem != nullptr) {
+		writer.writeStartElement("GraphGroup");
+		m_graphGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -277,6 +299,11 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 		m_particlesDataItem->update();
 		qDebug("Solver Particles: %d", time.elapsed());
 	}
+	if (m_graphGroupDataItem != nullptr) {
+		time.restart();
+		m_graphGroupDataItem->update();
+		qDebug("Graphs: %d", time.elapsed());
+	}
 	updateRegionPolyData();
 }
 
@@ -340,6 +367,15 @@ void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 		r = m_streamlineGroupDataItem->zDepthRange();
 		r.setRange(min, max);
 		m_streamlineGroupDataItem->setZDepthRange(r);
+	}
+
+	if (m_graphGroupDataItem != nullptr) {
+		// graphs
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = m_graphGroupDataItem->zDepthRange();
+		r.setRange(min, max);
+		m_graphGroupDataItem->setZDepthRange(r);
 	}
 
 	// cells

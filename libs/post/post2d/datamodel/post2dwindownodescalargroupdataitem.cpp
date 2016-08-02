@@ -9,7 +9,6 @@
 #include <cs/coordinatesystem.h>
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommand.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>

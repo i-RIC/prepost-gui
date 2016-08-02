@@ -158,6 +158,10 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowgeodatadataitem.h \
            datamodel/post2dwindowgeodatagroupdataitem.h \
            datamodel/post2dwindowgeodatatopdataitem.h \
+           datamodel/post2dwindowgraphdataitem.h \
+           datamodel/post2dwindowgraphgroupdataitem.h \
+           datamodel/post2dwindowgraphsetting.h \
+           datamodel/post2dwindowgraphsettingdialog.h \
            datamodel/post2dwindowgridshapedataitem.h \
            datamodel/post2dwindowgridtypedataitem.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
@@ -191,6 +195,10 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.h \
            datamodel/post2dwindowzonedataitem.h \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowgraphgroupdataitem_impl.h \
+           datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.h \
+           datamodel/private/post2dwindowgraphsettingcustomregiondialog.h \
+           datamodel/private/post2dwindowgraphsettingdialog_impl.h \
            datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.h \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.h \
@@ -202,10 +210,12 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowarrowunstructuredsettingdialog.ui \
          datamodel/post2dwindowcellflagsettingdialog.ui \
          datamodel/post2dwindowcontoursettingdialog.ui \
+         datamodel/post2dwindowgraphsettingdialog.ui \
          datamodel/post2dwindowparticlestructuredsettingdialog.ui \
          datamodel/post2dwindowparticleunstructuredsettingdialog.ui \
          datamodel/post2dwindowstreamlinestructuredsettingdialog.ui \
-         datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui
+         datamodel/post2dwindowstreamlineunstructuredsettingdialog.ui \
+         datamodel/private/post2dwindowgraphsettingcustomregiondialog.ui
 SOURCES += post2dgridregionselectdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
@@ -227,6 +237,10 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowgeodatadataitem.cpp \
            datamodel/post2dwindowgeodatagroupdataitem.cpp \
            datamodel/post2dwindowgeodatatopdataitem.cpp \
+           datamodel/post2dwindowgraphdataitem.cpp \
+           datamodel/post2dwindowgraphgroupdataitem.cpp \
+           datamodel/post2dwindowgraphsetting.cpp \
+           datamodel/post2dwindowgraphsettingdialog.cpp \
            datamodel/post2dwindowgridshapedataitem.cpp \
            datamodel/post2dwindowgridtypedataitem.cpp \
            datamodel/post2dwindowmeasureddatatopdataitem.cpp \
@@ -260,6 +274,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowstreamlineunstructuredsettingdialog.cpp \
            datamodel/post2dwindowzonedataitem.cpp \
            datamodel/private/post2dwindowcellflaggroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp \
+           datamodel/private/post2dwindowgraphsettingcustomregiondialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupstructureddataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindownodevectorarrowgroupunstructureddataitem_setsettingcommand.cpp \
