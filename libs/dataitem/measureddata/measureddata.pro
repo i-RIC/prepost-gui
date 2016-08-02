@@ -98,3 +98,12 @@ SOURCES += measureddatafiledataitem.cpp \
            measureddatavectorsettingdialog.cpp \
            private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            private/measureddatavectorgroupdataitem_setsettingcommand.cpp
+TRANSLATIONS += languages/iricMeasureddata_es_ES.ts \
+                languages/iricMeasureddata_fr_FR.ts \
+                languages/iricMeasureddata_id_ID.ts \
+                languages/iricMeasureddata_ja_JP.ts \
+                languages/iricMeasureddata_ko_KR.ts \
+                languages/iricMeasureddata_ru_RU.ts \
+                languages/iricMeasureddata_th_TH.ts \
+                languages/iricMeasureddata_vi_VN.ts \
+                languages/iricMeasureddata_zh_CN.ts
