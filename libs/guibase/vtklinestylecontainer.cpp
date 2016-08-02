@@ -1,5 +1,7 @@
 #include "vtklinestylecontainer.h"
 
+#include <QColor>
+
 #include <vtkProperty.h>
 
 vtkLineStyleContainer::vtkLineStyleContainer() :
