@@ -442,40 +442,40 @@
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="95"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="109"/>
         <source>Z-direction Scale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="95"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="109"/>
         <source>Input new Z-direction scale.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
-        <location filename="../post2dwindowdatamodel.cpp" line="158"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="141"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="153"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="165"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="177"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="141"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="153"/>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="165"/>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="158"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="177"/>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -491,12 +491,12 @@
 <context>
     <name>Post2dWindowGraphGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="220"/>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="206"/>
         <source>Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="391"/>
+        <location filename="../datamodel/post2dwindowgraphgroupdataitem.cpp" line="388"/>
         <source>Graph Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -671,34 +671,34 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="387"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="394"/>
         <source>Update Contour Setting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="445"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="452"/>
         <source>Contour Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="643"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="648"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="630"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="637"/>
         <source>To export KML for street view, display with Contour Fringe.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="636"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="643"/>
         <source>To export KML for street view, value range should be set up manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="641"/>
+        <location filename="../datamodel/post2dwindownodescalargroupdataitem.cpp" line="648"/>
         <source>To export KML for street view, coordinate system should be specified.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -706,12 +706,12 @@
 <context>
     <name>Post2dWindowNodeVectorArrowGroupDataItem</name>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="44"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="46"/>
         <source>Arrow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="66"/>
+        <location filename="../datamodel/post2dwindownodevectorarrowgroupdataitem.cpp" line="68"/>
         <source>Arrow Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -740,7 +740,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="92"/>
+        <location filename="../datamodel/post2dwindownodevectorparticlegroupdataitem.cpp" line="93"/>
         <source>Particle Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -769,7 +769,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="75"/>
+        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupdataitem.cpp" line="76"/>
         <source>Streamline Physical Value Change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1360,7 +1360,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="170"/>
+        <location filename="../datamodel/post2dwindownodevectorstreamlinegroupstructureddataitem.cpp" line="171"/>
         <source>Update Streamline Setting</source>
         <translation type="unfinished"></translation>
     </message>
