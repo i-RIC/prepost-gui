@@ -1,0 +1,97 @@
+#ifndef MEASUREDDATAVECTORGROUPDATAITEM_H
+#define MEASUREDDATAVECTORGROUPDATAITEM_H
+
+#include "measureddata_api.h"
+#include "measureddatavectorsetting.h"
+
+#include <guicore/datamodel/graphicswindowdataitem.h>
+#include <guicore/misc/targeted/targeteditemi.h>
+#include <guicore/project/measured/measureddata.h>
+#include <misc/enumcontainert.h>
+#include <misc/colorcontainer.h>
+#include <misc/doublecontainer.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
+
+#include <vtkSmartPointer.h>
+#include <vtkActor.h>
+#include <vtkPolyDataMapper.h>
+#include <vtkGlyph3D.h>
+#include <vtkHedgeHog.h>
+#include <vtkConeSource.h>
+#include <vtkWarpVector.h>
+#include <vtkAppendPolyData.h>
+#include <vtkUnstructuredGrid.h>
+#include <vtkActor2D.h>
+#include <vtkTextActor.h>
+#include <vtkClipPolyData.h>
+
+#include <QColor>
+
+class MeasuredDataVectorDataItem;
+class NamedGraphicWindowDataItem;
+class vtkPointSet;
+
+class MEASUREDDATA_API MeasuredDataVectorGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
+{
+	Q_OBJECT
+
+public:
+	const static int STANDARD_LENGTH = 100;
+	const static int AUTO_AVERAGECOUNT = 20;
+	const static double MINLIMIT;
+
+	MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* parent);
+	~MeasuredDataVectorGroupDataItem();
+
+	void updateActorSettings();
+	void updateZDepthRangeItemCount() override;
+	void assignActorZValues(const ZDepthRange& range) override;
+	void update();
+
+	std::string target() const override;
+	void setTarget(const std::string &target) override;
+
+public slots:
+	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
+
+private:
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	vtkPointSet* getPointSet();
+	void innerUpdate2Ds() override;
+	void updateColorSetting();
+	void updatePolyData();
+	void updateLegendData();
+	void informGridUpdate();
+	void doApplyOffset(double x, double y) override;
+
+	void setupActors();
+	void calculateStandardValue();
+	void updateScaleFactor();
+
+	vtkSmartPointer<vtkActor> m_arrowActor;
+	vtkSmartPointer<vtkPolyDataMapper> m_arrowMapper;
+	vtkSmartPointer<vtkAppendPolyData> m_appendPolyData;
+	vtkSmartPointer<vtkPolyData> m_polyData;
+	vtkSmartPointer<vtkUnstructuredGrid> m_activePoints;
+
+	vtkSmartPointer<vtkHedgeHog> m_hedgeHog;
+	vtkSmartPointer<vtkGlyph3D> m_arrowGlyph;
+	vtkSmartPointer<vtkWarpVector> m_warpVector;
+	vtkSmartPointer<vtkConeSource> m_arrowSource;
+
+	vtkSmartPointer<vtkTextActor> m_legendTextActor;
+
+	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
+	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
+
+	MeasuredDataVectorSetting m_setting;
+	double m_scaleFactor;
+
+	class SetSettingCommand;
+};
+
+#endif // MEASUREDDATAVECTORGROUPDATAITEM_H

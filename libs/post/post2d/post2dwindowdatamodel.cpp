@@ -12,11 +12,11 @@
 #include "post2dwindowdatamodel.h"
 #include "post2dwindowgraphicsview.h"
 
+#include <dataitem/measureddata/measureddatafiledataitem.h>
+#include <dataitem/measureddata/measureddatapointgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guibase/objectbrowserview.h>
-#include <guicore/measureddata/measureddatafiledataitem.h>
-#include <guicore/measureddata/measureddatapointgroupdataitem.h>
-#include <guicore/measureddata/measureddatavectorgroupdataitem.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>

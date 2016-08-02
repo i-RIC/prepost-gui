@@ -3,11 +3,11 @@
 #include "preprocessormeasureddatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 
+#include <dataitem/measureddata/measureddatafiledataitem.h>
+#include <dataitem/measureddata/measureddatapointgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/measureddata/measureddatafiledataitem.h>
-#include <guicore/measureddata/measureddatapointgroupdataitem.h>
-#include <guicore/measureddata/measureddatavectorgroupdataitem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>

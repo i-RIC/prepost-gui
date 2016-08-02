@@ -9,4 +9,5 @@ CONFIG += ordered
 SUBDIRS = \
 	axis2d \
 	axis3d \
-	distancemeasure
+	distancemeasure \
+	measureddata

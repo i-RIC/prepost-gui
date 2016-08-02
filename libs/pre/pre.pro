@@ -44,6 +44,20 @@ unix {
 }
 LIBS += -liricDistancemeasure
 
+# iricMeasureddata
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../dataitem/measureddata/debug"
+	} else {
+		LIBS += -L"../dataitem/measureddata/release"
+	}
+}
+unix {
+	LIBS += -L"../measureddata/axis2d"
+}
+LIBS += -liricMeasureddata
+
 # iricMisc
 
 win32 {

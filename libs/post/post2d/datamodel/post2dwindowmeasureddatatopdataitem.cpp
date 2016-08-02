@@ -2,11 +2,11 @@
 #include "post2dwindowmeasureddatatopdataitem.h"
 #include "post2dwindowrootdataitem.h"
 
+#include <dataitem/measureddata/measureddatafiledataitem.h>
+#include <dataitem/measureddata/measureddatapointgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/measureddata/measureddatafiledataitem.h>
-#include <guicore/measureddata/measureddatapointgroupdataitem.h>
-#include <guicore/measureddata/measureddatavectorgroupdataitem.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colortransferfunctioncontainer.h>

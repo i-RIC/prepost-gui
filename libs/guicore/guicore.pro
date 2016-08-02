@@ -202,15 +202,6 @@ HEADERS += guicore_global.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
            executer/iricmainwindowexecuterwatcher.h \
-           measureddata/measureddatafiledataitem.h \
-           measureddata/measureddatapointdataitem.h \
-           measureddata/measureddatapointgroupdataitem.h \
-           measureddata/measureddatapointsetting.h \
-           measureddata/measureddatapointsettingdialog.h \
-           measureddata/measureddatavectordataitem.h \
-           measureddata/measureddatavectorgroupdataitem.h \
-           measureddata/measureddatavectorsetting.h \
-           measureddata/measureddatavectorsettingdialog.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
@@ -290,8 +281,6 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
-           measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
-           measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
@@ -459,8 +448,6 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h \
            pre/gridcond/base/private/gridattributevariationeditwidgett_detail.h
 FORMS += datamodel/propertybrowserview.ui \
-         measureddata/measureddatapointsettingdialog.ui \
-         measureddata/measureddatavectorsettingdialog.ui \
          misc/mousepositionwidget.ui \
          post/postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
@@ -500,15 +487,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
-           measureddata/measureddatafiledataitem.cpp \
-           measureddata/measureddatapointdataitem.cpp \
-           measureddata/measureddatapointgroupdataitem.cpp \
-           measureddata/measureddatapointsetting.cpp \
-           measureddata/measureddatapointsettingdialog.cpp \
-           measureddata/measureddatavectordataitem.cpp \
-           measureddata/measureddatavectorgroupdataitem.cpp \
-           measureddata/measureddatavectorsetting.cpp \
-           measureddata/measureddatavectorsettingdialog.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
@@ -585,8 +563,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
-           measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
-           measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
