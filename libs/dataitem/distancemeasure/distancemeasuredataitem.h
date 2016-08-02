@@ -23,8 +23,6 @@
 class QMenu;
 class QAction;
 class DistanceMeasureDialog;
-class DistanceMeasureDefineCommand;
-class DistanceMeasureMoveVertexCommand;
 
 class DISTANCEMEASURE_API DistanceMeasureDataItem : public GraphicsWindowDataItem
 {
@@ -117,13 +115,11 @@ private:
 	QPixmap m_movePointPixmap;
 	QCursor m_movePointCursor;
 
-public:
-	friend class DistanceMeasureCopyEditPropertyCommand;
-	friend class DistanceMeasureDefineCommand;
-	friend class DistanceMeasureMoveVertexCommand;
-
 private:
+	class DefineCommand;
+	class MoveVertexCommand;
 	class RedefineCommand;
+	class SetSettingCommand;
 	class TranslateCommand;
 };
 

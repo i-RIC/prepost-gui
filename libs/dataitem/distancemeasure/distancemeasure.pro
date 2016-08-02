@@ -72,7 +72,10 @@ HEADERS += distancemeasure_api.h \
            distancemeasuredataitem.h \
            distancemeasuregroupdataitem.h \
            distancemeasuresetting.h \
+           private/distancemeasuredataitem_definecommand.h \
+           private/distancemeasuredataitem_movevertexcommand.h \
            private/distancemeasuredataitem_redefinecommand.h \
+           private/distancemeasuredataitem_setsettingcommand.h \
            private/distancemeasuredataitem_translatecommand.h \
            private/distancemeasuregroupdataitem_impl.h
 FORMS += distancemeasurecopypropertydialog.ui
@@ -80,5 +83,8 @@ SOURCES += distancemeasurecopypropertydialog.cpp \
            distancemeasuredataitem.cpp \
            distancemeasuregroupdataitem.cpp \
            distancemeasuresetting.cpp \
+           private/distancemeasuredataitem_definecommand.cpp \
+           private/distancemeasuredataitem_movevertexcommand.cpp \
            private/distancemeasuredataitem_redefinecommand.cpp \
+           private/distancemeasuredataitem_setsettingcommand.cpp \
            private/distancemeasuredataitem_translatecommand.cpp
