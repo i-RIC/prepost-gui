@@ -8,4 +8,5 @@ CONFIG += ordered
 
 SUBDIRS = \
 	axis2d \
-	axis3d
+	axis3d \
+	distancemeasure

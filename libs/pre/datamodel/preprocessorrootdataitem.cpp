@@ -20,8 +20,8 @@
 #include "preprocessorrootdataitem.h"
 
 #include <dataitem/axis2d/axis2ddataitem.h>
+#include <dataitem/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
-#include <guicore/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
 #include <guicore/pre/base/preprocessorgriddataiteminterface.h>

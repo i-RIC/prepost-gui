@@ -9,9 +9,9 @@
 #include "post2dwindowrootdataitem.h"
 
 #include <dataitem/axis2d/axis2ddataitem.h>
+#include <dataitem/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
-#include <guicore/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>

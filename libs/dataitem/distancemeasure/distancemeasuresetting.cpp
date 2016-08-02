@@ -1,5 +1,7 @@
 #include "distancemeasuresetting.h"
 
+#include <QColor>
+
 DistanceMeasureSetting::DistanceMeasureSetting() :
 	CompositeContainer({&defined, &point1, &point2,
 		&showLabel, &labelMode, &labelPosition, &labelFontSize, &customLabel,

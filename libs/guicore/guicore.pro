@@ -201,10 +201,6 @@ HEADERS += guicore_global.h \
            datamodel/vtk2dgraphicsview.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
-           distancemeasure/distancemeasurecopypropertydialog.h \
-           distancemeasure/distancemeasuredataitem.h \
-           distancemeasure/distancemeasuregroupdataitem.h \
-           distancemeasure/distancemeasuresetting.h \
            executer/iricmainwindowexecuterwatcher.h \
            measureddata/measureddatafiledataitem.h \
            measureddata/measureddatapointdataitem.h \
@@ -294,9 +290,6 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
-           distancemeasure/private/distancemeasuredataitem_redefinecommand.h \
-           distancemeasure/private/distancemeasuredataitem_translatecommand.h \
-           distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
            misc/targeted/targeteditemi.h \
@@ -466,7 +459,6 @@ HEADERS += guicore_global.h \
            pre/gridcond/base/private/gridattributenodecontainert_detail.h \
            pre/gridcond/base/private/gridattributevariationeditwidgett_detail.h
 FORMS += datamodel/propertybrowserview.ui \
-         distancemeasure/distancemeasurecopypropertydialog.ui \
          measureddata/measureddatapointsettingdialog.ui \
          measureddata/measureddatavectorsettingdialog.ui \
          misc/mousepositionwidget.ui \
@@ -507,10 +499,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/vtk2dgraphicsview.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
-           distancemeasure/distancemeasurecopypropertydialog.cpp \
-           distancemeasure/distancemeasuredataitem.cpp \
-           distancemeasure/distancemeasuregroupdataitem.cpp \
-           distancemeasure/distancemeasuresetting.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
            measureddata/measureddatafiledataitem.cpp \
            measureddata/measureddatapointdataitem.cpp \
@@ -597,8 +585,6 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
-           distancemeasure/private/distancemeasuredataitem_redefinecommand.cpp \
-           distancemeasure/private/distancemeasuredataitem_translatecommand.cpp \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \

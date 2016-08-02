@@ -30,6 +30,20 @@ unix {
 }
 LIBS += -liricAxis2d
 
+# iricDistancemeasure
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../dataitem/distancemeasure/debug"
+	} else {
+		LIBS += -L"../../dataitem/distancemeasure/release"
+	}
+}
+unix {
+	LIBS += -L"../../distancemeasure/axis2d"
+}
+LIBS += -liricDistancemeasure
+
 # iricCs
 
 win32 {
