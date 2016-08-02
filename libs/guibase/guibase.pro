@@ -106,6 +106,10 @@ HEADERS += colortool.h \
            geometry/pointring.h \
            geometry/polygonregion.h \
            geometry/rect.h \
+           vtktool/vtkactorpolydatamapperpair.h \
+           vtktool/vtklinesactor.h \
+           vtktool/vtkpolydatalinesactor.h \
+           vtktool/vtkpolydatapointsactor.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
            widget/centeredcheckbox.h \
@@ -128,6 +132,8 @@ HEADERS += colortool.h \
            widget/textediti.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
+           vtktool/private/vtkactorpolydatamapperpair_impl.h \
+           vtktool/private/vtklinesactor_impl.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
@@ -188,6 +194,10 @@ SOURCES += colortool.cpp \
            geometry/pointring.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
+           vtktool/vtkactorpolydatamapperpair.cpp \
+           vtktool/vtklinesactor.cpp \
+           vtktool/vtkpolydatalinesactor.cpp \
+           vtktool/vtkpolydatapointsactor.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
            widget/centeredcheckbox.cpp \
