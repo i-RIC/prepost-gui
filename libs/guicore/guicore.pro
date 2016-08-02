@@ -176,7 +176,6 @@ LIBS += -liriclib
 
 # Input
 HEADERS += guicore_global.h \
-           axis2d/axis2ddataitem.h \
            axis3d/axis3ddataitem.h \
            base/additionalmenuwindowi.h \
            base/animationcontrollerinterface.h \
@@ -487,8 +486,7 @@ FORMS += datamodel/propertybrowserview.ui \
          pre/gridcond/base/gridattributevariationeditdialog.ui \
          pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.ui \
          project/inputcond/private/inputconditionwidgetfunctionaldialog.ui
-SOURCES += axis2d/axis2ddataitem.cpp \
-           axis3d/axis3ddataitem.cpp \
+SOURCES += axis3d/axis3ddataitem.cpp \
            base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
            base/snapshotenabledwindowinterface.cpp \

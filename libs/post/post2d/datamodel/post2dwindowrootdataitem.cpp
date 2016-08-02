@@ -8,8 +8,8 @@
 #include "post2dwindowmeasureddatatopdataitem.h"
 #include "post2dwindowrootdataitem.h"
 
+#include <dataitem/axis2d/axis2ddataitem.h>
 #include <guibase/objectbrowserview.h>
-#include <guicore/axis2d/axis2ddataitem.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
 #include <guicore/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>

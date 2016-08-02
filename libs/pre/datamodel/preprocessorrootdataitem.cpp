@@ -19,7 +19,7 @@
 #include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorrootdataitem.h"
 
-#include <guicore/axis2d/axis2ddataitem.h>
+#include <dataitem/axis2d/axis2ddataitem.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
 #include <guicore/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>

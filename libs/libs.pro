@@ -14,6 +14,7 @@ SUBDIRS = \
 	triangle \
 	guibase \
 	guicore \
+	dataitem \
 	geodata \
 	gridcreatingcondition \
 	hydraulicdata \
