@@ -88,3 +88,12 @@ SOURCES += distancemeasurecopypropertydialog.cpp \
            private/distancemeasuredataitem_redefinecommand.cpp \
            private/distancemeasuredataitem_setsettingcommand.cpp \
            private/distancemeasuredataitem_translatecommand.cpp
+TRANSLATIONS += languages/iricDistancemeasure_es_ES.ts \
+                languages/iricDistancemeasure_fr_FR.ts \
+                languages/iricDistancemeasure_id_ID.ts \
+                languages/iricDistancemeasure_ja_JP.ts \
+                languages/iricDistancemeasure_ko_KR.ts \
+                languages/iricDistancemeasure_ru_RU.ts \
+                languages/iricDistancemeasure_th_TH.ts \
+                languages/iricDistancemeasure_vi_VN.ts \
+                languages/iricDistancemeasure_zh_CN.ts
