@@ -10,9 +10,7 @@ class GUICOREDLL_EXPORT DistanceMeasureGroupDataItem : public GraphicsWindowData
 	Q_OBJECT
 
 public:
-	/// Constructor
 	DistanceMeasureGroupDataItem(GraphicsWindowDataItem* parent);
-	/// Destructor
 	~DistanceMeasureGroupDataItem();
 
 	void updateZDepthRangeItemCount() override;
