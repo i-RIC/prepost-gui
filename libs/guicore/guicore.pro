@@ -388,6 +388,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
+           tmsimage/private/tmsimagegroupdataitem_impl.h \
            tmsimage/private/tmsimagesetting_impl.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \

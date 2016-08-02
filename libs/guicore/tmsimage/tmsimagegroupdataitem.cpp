@@ -1,5 +1,7 @@
 #include "tmsimagegroupdataitem.h"
 #include "tmsimagedataitem.h"
+#include "private/tmsimagegroupdataitem_impl.h"
+
 #include "../misc/targeted/targeteditemsettargetcommandtool.h"
 #include "../named/namedgraphicswindowdataitemtool.h"
 
@@ -79,18 +81,15 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 
 } // namespace
 
-TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem(tr("Background Images (Internet)"), QIcon(":/libs/guibase/images/iconFolder.png"), parent),
-	m_tmsLoader {iricMainWindow()},
-	m_tmsRequestId {-1}
+TmsImageGroupDataItem::Impl::Impl(TmsImageGroupDataItem *parent) :
+	m_tmsLoader {parent->iricMainWindow()},
+	m_tmsRequestId {-1},
+	m_parent {parent}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
-
 	m_texture = vtkSmartPointer<vtkTexture>::New();
 	m_texture->InterpolateOn();
 
 	m_plane = vtkSmartPointer<vtkPlaneSource>::New();
-
 	m_plane->SetPoint1(m_image.width(), 0, 0);
 	m_plane->SetPoint2(0, m_image.height(), 0);
 
@@ -109,23 +108,32 @@ TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 	m_actor->SetMapper(mapper);
 	m_actor->SetTexture(m_texture);
 	m_actor->VisibilityOff();
+}
 
-	renderer()->AddActor(m_actor);
-	m_actorCollection->AddItem(m_actor);
+TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem(tr("Background Images (Internet)"), QIcon(":/libs/guibase/images/iconFolder.png"), parent),
+	impl {new Impl(this)}
+{
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	connect(&m_tmsLoader, SIGNAL(imageUpdated(int)), this, SLOT(handleImageUpdate(int)));
+	renderer()->AddActor(impl->m_actor);
+	m_actorCollection->AddItem(impl->m_actor);
+
+	connect(&impl->m_tmsLoader, SIGNAL(imageUpdated(int)), this, SLOT(handleImageUpdate(int)));
 
 	rebuildChildItems();
 }
 
 TmsImageGroupDataItem::~TmsImageGroupDataItem()
 {
-	renderer()->RemoveActor(m_actor);
+	renderer()->RemoveActor(impl->m_actor);
+
+	delete impl;
 }
 
 std::string TmsImageGroupDataItem::target() const
 {
-	return m_target;
+	return impl->m_target;
 }
 
 void TmsImageGroupDataItem::setTarget(const std::string &target)
@@ -137,13 +145,13 @@ void TmsImageGroupDataItem::setTarget(const std::string &target)
 
 	bool ok = NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	if (ok) {
-		m_target = target;
+		impl->m_target = target;
 	} else {
-		m_target = "";
+		impl->m_target = "";
 	}
 
-	if (m_target == ""){
-		m_actor->VisibilityOff();
+	if (impl->m_target == ""){
+		impl->m_actor->VisibilityOff();
 	}
 
 	requestImage();
@@ -163,10 +171,10 @@ void TmsImageGroupDataItem::rebuildChildItems()
 	}
 	updateItemMap();
 
-	if (m_target == "") {return;}
+	if (impl->m_target == "") {return;}
 	if (projectData()->mainfile()->coordinateSystem() == nullptr) {return;}
 
-	setTarget(m_target);
+	setTarget(impl->m_target);
 }
 
 void TmsImageGroupDataItem::viewOperationEndedGlobal(VTKGraphicsView*)
@@ -189,31 +197,31 @@ void TmsImageGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* it
 
 void TmsImageGroupDataItem::handleImageUpdate(int requestId)
 {
-	if (requestId != m_tmsRequestId) {return;}
+	if (requestId != impl->m_tmsRequestId) {return;}
 
-	m_image = m_tmsLoader.getImage(m_tmsRequestId);
+	impl->m_image = impl->m_tmsLoader.getImage(impl->m_tmsRequestId);
 	// m_image.save("E:/debug.png"); // only for debug
-	m_imgToImg->Modified();
+	impl->m_imgToImg->Modified();
 
-	m_plane->SetPoint1(m_image.width(), 0, 0);
-	m_plane->SetPoint2(0, m_image.height(), 0);
-	m_plane->Modified();
+	impl->m_plane->SetPoint1(impl->m_image.width(), 0, 0);
+	impl->m_plane->SetPoint2(0, impl->m_image.height(), 0);
+	impl->m_plane->Modified();
 
 	double pos[3];
-	m_actor->GetPosition(pos);
-	pos[0] = m_imageLowerLeft.x();
-	pos[1] = m_imageLowerLeft.y();
-	m_actor->SetPosition(pos);
+	impl->m_actor->GetPosition(pos);
+	pos[0] = impl->m_imageLowerLeft.x();
+	pos[1] = impl->m_imageLowerLeft.y();
+	impl->m_actor->SetPosition(pos);
 
-	m_actor->SetScale(m_imageScale);
-	m_actor->SetOrientation(0, 0, 0);
+	impl->m_actor->SetScale(impl->m_imageScale);
+	impl->m_actor->SetOrientation(0, 0, 0);
 	updateVisibility();
 }
 
 void TmsImageGroupDataItem::requestImage()
 {
-	if (m_tmsRequestId != -1) {
-		m_tmsLoader.cancelRequest(m_tmsRequestId);
+	if (impl->m_tmsRequestId != -1) {
+		impl->m_tmsLoader.cancelRequest(impl->m_tmsRequestId);
 	}
 	auto view = dynamic_cast<VTK2DGraphicsView*> (dataModel()->graphicsView());
 	if (view == nullptr) {return;}
@@ -224,13 +232,13 @@ void TmsImageGroupDataItem::requestImage()
 	QPointF center;
 	QSize size;
 
-	calcImageParameters(&center, &size, &m_imageLowerLeft, &m_imageScale, view, *cs);
+	calcImageParameters(&center, &size, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs);
 
 	TmsImageSettingManager manager;
-	tmsloader::TmsRequest* request = manager.buildRequest(center, size, m_imageScale, m_target);
+	tmsloader::TmsRequest* request = manager.buildRequest(center, size, impl->m_imageScale, impl->m_target);
 	if (request == nullptr) {return;}
 
-	m_tmsLoader.registerRequest(*request, &m_tmsRequestId);
+	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));
 
 	delete request;
 }
@@ -238,10 +246,10 @@ void TmsImageGroupDataItem::requestImage()
 void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	double pos[3];
-	m_actor->GetPosition(pos);
+	impl->m_actor->GetPosition(pos);
 	pos[2] = range.min();
 
-	m_actor->SetPosition(pos);
+	impl->m_actor->SetPosition(pos);
 }
 
 void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -252,5 +260,5 @@ void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 
 void TmsImageGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("target", m_target.c_str());
+	writer.writeAttribute("target", impl->m_target.c_str());
 }

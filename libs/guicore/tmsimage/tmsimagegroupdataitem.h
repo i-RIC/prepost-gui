@@ -5,17 +5,6 @@
 #include "../datamodel/graphicswindowdataitem.h"
 #include "../misc/targeted/targeteditemi.h"
 
-#include <tmsloader/tmsloader.h>
-
-#include <vtkActor.h>
-#include <vtkPlaneSource.h>
-#include <vtkQImageToImageSource.h>
-#include <vtkSmartPointer.h>
-#include <vtkTexture.h>
-
-#include <QImage>
-#include <QPointF>
-
 class NamedGraphicWindowDataItem;
 
 class GUICOREDLL_EXPORT TmsImageGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
@@ -49,18 +38,12 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	vtkSmartPointer<vtkActor> m_actor;
-	vtkSmartPointer<vtkPlaneSource> m_plane;
-	vtkSmartPointer<vtkTexture> m_texture;
-	vtkSmartPointer<vtkQImageToImageSource> m_imgToImg;
-
-	std::string m_target;
-	tmsloader::TmsLoader m_tmsLoader;
-	QImage m_image;
-	int m_tmsRequestId;
-
-	QPointF m_imageLowerLeft;
-	double m_imageScale;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/tmsimagegroupdataitem_impl.h"
+#endif // _DEBUG
 
 #endif // TMSIMAGEGROUPDATAITEM_H
