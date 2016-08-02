@@ -204,6 +204,7 @@ HEADERS += guicore_global.h \
            distancemeasure/distancemeasurecopypropertydialog.h \
            distancemeasure/distancemeasuredataitem.h \
            distancemeasure/distancemeasuregroupdataitem.h \
+           distancemeasure/distancemeasuresetting.h \
            executer/iricmainwindowexecuterwatcher.h \
            measureddata/measureddatafiledataitem.h \
            measureddata/measureddatapointdataitem.h \
@@ -293,6 +294,8 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
+           distancemeasure/private/distancemeasuredataitem_redefinecommand.h \
+           distancemeasure/private/distancemeasuredataitem_translatecommand.h \
            distancemeasure/private/distancemeasuregroupdataitem_impl.h \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.h \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.h \
@@ -507,6 +510,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            distancemeasure/distancemeasurecopypropertydialog.cpp \
            distancemeasure/distancemeasuredataitem.cpp \
            distancemeasure/distancemeasuregroupdataitem.cpp \
+           distancemeasure/distancemeasuresetting.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
            measureddata/measureddatafiledataitem.cpp \
            measureddata/measureddatapointdataitem.cpp \
@@ -593,6 +597,8 @@ SOURCES += base/iricmainwindowinterface.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
+           distancemeasure/private/distancemeasuredataitem_redefinecommand.cpp \
+           distancemeasure/private/distancemeasuredataitem_translatecommand.cpp \
            measureddata/private/measureddatapointgroupdataitem_setsettingcommand.cpp \
            measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \

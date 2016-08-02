@@ -23,11 +23,8 @@
 class QMenu;
 class QAction;
 class DistanceMeasureDialog;
-class PreProcessorGraphicsView;
 class DistanceMeasureDefineCommand;
-class DistanceMeasureRedefineCommand;
 class DistanceMeasureMoveVertexCommand;
-class DistanceMeasureTranslateCommand;
 
 class GUICOREDLL_EXPORT DistanceMeasureDataItem : public GraphicsWindowDataItem
 {
@@ -44,10 +41,8 @@ public:
 		meMoveVertexPrepare
 	};
 
-	/// Constructor
 	DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent);
-	/// Destructor
-	virtual ~DistanceMeasureDataItem();
+	~DistanceMeasureDataItem();
 
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -57,22 +52,25 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void keyPressEvent(QKeyEvent* event, VTKGraphicsView* v) override;
 	void keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v) override;
-	virtual void informSelection(VTKGraphicsView* v) override;
-	virtual void informDeselection(VTKGraphicsView* v) override;
+
+	void informSelection(VTKGraphicsView* v) override;
+	void informDeselection(VTKGraphicsView* v) override;
+
 	void setPoints(const QVector2D& v1, const QVector2D& v2);
+
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:
 	void showPropDialog();
 	void redefine();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override;
-
 private:
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	QVector2D updatePoint2ByShift(const QVector2D& v1, const QVector2D& v2);
 	void updateMouseEventMode(const QVector2D& v, VTKGraphicsView* view);
 	void setupActors();
@@ -122,9 +120,11 @@ private:
 public:
 	friend class DistanceMeasureCopyEditPropertyCommand;
 	friend class DistanceMeasureDefineCommand;
-	friend class DistanceMeasureRedefineCommand;
 	friend class DistanceMeasureMoveVertexCommand;
-	friend class DistanceMeasureTranslateCommand;
+
+private:
+	class RedefineCommand;
+	class TranslateCommand;
 };
 
 #endif // DISTANCEMEASUREDATAITEM_H
