@@ -297,7 +297,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	// check whether the project file exists.
 	if (! QFile::exists(filename)) {
 		// the project file does not exists!
-		QMessageBox::warning(this, tr("Warning"), tr("Project file %1 does not exists.").arg(filename));
+		QMessageBox::warning(this, tr("Warning"), tr("Project file %1 does not exists.").arg(QDir::toNativeSeparators(filename)));
 		removeFromRecentProjects(filename);
 		return;
 	}
@@ -453,7 +453,7 @@ void iRICMainWindow::importCalculationResult(const QString& fname)
 	// check whether the project file exists.
 	if (! QFile::exists(fname)) {
 		// the CGNS file does not exists!
-		QMessageBox::warning(this, tr("Warning"), tr("CGNS file %1 does not exists.").arg(fname));
+		QMessageBox::warning(this, tr("Warning"), tr("CGNS file %1 does not exists.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
 	// close project first.
