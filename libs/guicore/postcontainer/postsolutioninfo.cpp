@@ -542,7 +542,7 @@ PostZoneDataContainer* PostSolutionInfo::zoneContainer3D(const std::string& zone
 void PostSolutionInfo::informSolverStart()
 {
 //	m_timerId = startTimer(TIMERINTERVAL);
-	informStepsUpdated();
+//	informStepsUpdated();
 }
 
 void PostSolutionInfo::informSolverFinish()
