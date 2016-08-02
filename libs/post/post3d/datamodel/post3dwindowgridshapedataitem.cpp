@@ -80,16 +80,10 @@ void Post3dWindowGridShapeDataItem::setupActors()
 	m_indexMapper->SetInputConnection(m_indexTransformFilter->GetOutputPort());
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
-	vtkTextProperty* prop = m_indexMapper->GetLabelTextProperty();
-	prop->SetColor(0, 0, 0);
-	prop->SetFontSize(12);
-	prop->BoldOff();
-	prop->ItalicOff();
-	prop->ShadowOff();
-	prop->SetJustificationToLeft();
-	prop->SetVerticalJustificationToCentered();
+	iRIC::setupGridIndexTextProperty(m_indexMapper->GetLabelTextProperty());
 
 	m_indexActor->SetMapper(m_indexMapper);
+
 	m_outlineActor->VisibilityOff();
 	m_wireframeActor->VisibilityOff();
 	m_indexActor->VisibilityOff();
