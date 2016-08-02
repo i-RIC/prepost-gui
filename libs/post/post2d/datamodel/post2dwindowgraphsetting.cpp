@@ -1,5 +1,7 @@
 #include "post2dwindowgraphsetting.h"
 
+#include <QColor>
+
 Post2dWindowGraphSetting::Post2dWindowGraphSetting() :
 	CompositeContainer({&direction, &region,
 		&regionStartIndex, &regionEndIndex, &regionSkipIndex, &regionIndices,
