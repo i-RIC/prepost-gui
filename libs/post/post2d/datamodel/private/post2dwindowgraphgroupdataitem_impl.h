@@ -4,6 +4,9 @@
 #include "../post2dwindowgraphgroupdataitem.h"
 #include "../post2dwindowgraphsetting.h"
 
+#include <guibase/vtktool/vtkpolydatalinesactor.h>
+#include <guibase/vtktool/vtklinesactor.h>
+
 #include <vtkActor.h>
 #include <vtkPolyData.h>
 #include <vtkSmartPointer.h>
@@ -15,11 +18,10 @@ public:
 
 	Post2dWindowGraphSetting m_setting;
 
-	vtkSmartPointer<vtkActor> m_baseLinesActor;
-	vtkSmartPointer<vtkActor> m_graphLinesActor;
-
+	vtkPolyDataLinesActor m_baseLinesActor;
 	vtkSmartPointer<vtkPolyData> m_baseLinesPolyData;
-	vtkSmartPointer<vtkPolyData> m_graphLinesPolyData;
+
+	vtkLinesActor m_graphLinesActor;
 };
 
 #endif // POST2DWINDOWGRAPHGROUPDATAITEM_IMPL_H

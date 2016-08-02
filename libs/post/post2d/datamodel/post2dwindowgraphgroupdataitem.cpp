@@ -189,29 +189,15 @@ std::vector<int> getIndices(const Post2dWindowGraphSetting& setting, int isize, 
 
 } // namespace
 
-Post2dWindowGraphGroupDataItem::Impl::Impl()
+Post2dWindowGraphGroupDataItem::Impl::Impl() :
+	m_setting {},
+	m_baseLinesActor {},
+	m_baseLinesPolyData {vtkSmartPointer<vtkPolyData>::New()},
+	m_graphLinesActor {}
 {
-	m_baseLinesActor = vtkSmartPointer<vtkActor>::New();
-	m_graphLinesActor = vtkSmartPointer<vtkActor>::New();
+	m_baseLinesActor.setPolyData(m_baseLinesPolyData);
 
-	m_baseLinesPolyData = vtkSmartPointer<vtkPolyData>::New();
-	m_graphLinesPolyData = vtkSmartPointer<vtkPolyData>::New();
-
-	vtkSmartPointer<vtkPolyDataMapper> mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper->SetInputData(m_baseLinesPolyData);
-	mapper->SetScalarVisibility(0);
-	m_baseLinesActor->SetMapper(mapper);
-
-	auto prop = m_baseLinesActor->GetProperty();
-	prop->SetLighting(false);
-	prop->SetRepresentationToWireframe();
-
-	mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper->SetInputData(m_graphLinesPolyData);
-	mapper->SetScalarVisibility(0);
-	m_graphLinesActor->SetMapper(mapper);
-
-	prop = m_graphLinesActor->GetProperty();
+	auto prop = m_baseLinesActor.actor()->GetProperty();
 	prop->SetLighting(false);
 	prop->SetRepresentationToWireframe();
 }
@@ -230,11 +216,11 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	}
 
 	vtkRenderer* r = renderer();
-	r->AddActor(impl->m_baseLinesActor);
-	r->AddActor(impl->m_graphLinesActor);
+	r->AddActor(impl->m_baseLinesActor.actor());
+	r->AddActor(impl->m_graphLinesActor.linesActor());
 
-	actorCollection()->AddItem(impl->m_baseLinesActor);
-	actorCollection()->AddItem(impl->m_graphLinesActor);
+	vtkPoints* basePoints = cont->data()->GetPoints();
+	impl->m_baseLinesPolyData->SetPoints(basePoints);
 
 	setDefaultSetting();
 
@@ -244,8 +230,8 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 Post2dWindowGraphGroupDataItem::~Post2dWindowGraphGroupDataItem()
 {
 	vtkRenderer* r = renderer();
-	r->RemoveActor(impl->m_baseLinesActor);
-	r->RemoveActor(impl->m_graphLinesActor);
+	r->RemoveActor(impl->m_baseLinesActor.actor());
+	r->RemoveActor(impl->m_graphLinesActor.linesActor());
 
 	delete impl;
 }
@@ -253,26 +239,22 @@ Post2dWindowGraphGroupDataItem::~Post2dWindowGraphGroupDataItem()
 void Post2dWindowGraphGroupDataItem::update()
 {
 	auto col = actorCollection();
-	col->RemoveItem(impl->m_baseLinesActor);
-	col->RemoveItem(impl->m_graphLinesActor);
-	impl->m_baseLinesActor->VisibilityOff();
-	impl->m_graphLinesActor->VisibilityOff();
+	col->RemoveItem(impl->m_baseLinesActor.actor());
+	col->RemoveItem(impl->m_graphLinesActor.linesActor());
+
+	impl->m_baseLinesActor.actor()->VisibilityOff();
+	impl->m_graphLinesActor.linesActor()->VisibilityOff();
 
 	if (impl->m_setting.graphTarget == "") {return;}
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
+	vtkPoints* basePoints = cont->data()->GetPoints();
+
 	int dims[3];
 	grid->GetDimensions(dims);
 
-	vtkPoints* basePoints = cont->data()->GetPoints();
-	impl->m_baseLinesPolyData->SetPoints(basePoints);
-
-	vtkSmartPointer<vtkPoints> graphPoints = vtkSmartPointer<vtkPoints>::New();
-	graphPoints->SetDataTypeToDouble();
-	vtkIdType graphPointId = 0;
-
-	impl->m_graphLinesPolyData->SetPoints(graphPoints);
+	std::vector<std::vector<QPointF> > lines;
 
 	vtkDataArray *da = cont->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
 
@@ -286,9 +268,15 @@ void Post2dWindowGraphGroupDataItem::update()
 	if (impl->m_setting.direction == Post2dWindowGraphSetting::dirI) {
 		// dirI
 		for (int i : indices) {
+			// base line
 			std::vector<vtkIdType> baseIndices(dims[1]);
-			std::vector<vtkIdType> graphIndices(dims[1]);
+			for (int j = 0; j < dims[1]; ++j) {
+				int idx = cont->nodeIndex(i, j, 0);
+				baseIndices[j] = idx;
+			}
+			cellsBase->InsertNextCell(dims[1], baseIndices.data());
 
+			// graph line
 			std::vector<double> vals(dims[1]);
 			double offset = 0;
 			for (int j = 0; j < dims[1]; ++j) {
@@ -300,14 +288,12 @@ void Post2dWindowGraphGroupDataItem::update()
 				offset = - *(std::min_element(vals.begin(), vals.end()));
 			}
 
+			std::vector<QPointF> line(dims[1]);
 			for (int j = 0; j < dims[1]; ++j) {
 				double p[3];
 				double dx, dy;
 
 				int idx = cont->nodeIndex(i, j, 0);
-
-				baseIndices[j] = idx;
-
 				basePoints->GetPoint(idx, p);
 				getDirection(impl->m_setting, i, j, grid, &dx, &dy);
 
@@ -315,52 +301,63 @@ void Post2dWindowGraphGroupDataItem::update()
 				double x = p[0] + dx * val * scale;
 				double y = p[1] + dy * val * scale;
 
-				graphPoints->InsertNextPoint(x, y, 0);
-				graphIndices[j] = graphPointId ++;
+				line[j] = QPointF(x, y);
 			}
-			cellsBase->InsertNextCell(dims[1], baseIndices.data());
-			cellsGraph->InsertNextCell(dims[1], graphIndices.data());
+			lines.push_back(line);
 		}
 	} else {
 		// dirJ
 		for (int j : indices) {
+			// base line
 			std::vector<vtkIdType> baseIndices(dims[0]);
-			std::vector<vtkIdType> graphIndices(dims[0]);
+			for (int i = 0; i < dims[0]; ++i) {
+				int idx = cont->nodeIndex(i, j, 0);
+				baseIndices[i] = idx;
+			}
+			cellsBase->InsertNextCell(dims[0], baseIndices.data());
+
+			// graph line
+			std::vector<double> vals(dims[0]);
+			double offset = 0;
+			for (int i = 0; i < dims[0]; ++i) {
+				vals[i] = da->GetTuple1(cont->nodeIndex(i, j, 0));
+			}
+			if (impl->m_setting.graphValueFix == Post2dWindowGraphSetting::SubtractMax) {
+				offset = - *(std::max_element(vals.begin(), vals.end()));
+			} else if (impl->m_setting.graphValueFix == Post2dWindowGraphSetting::SubtractMin) {
+				offset = - *(std::min_element(vals.begin(), vals.end()));
+			}
+
+			std::vector<QPointF> line(dims[0]);
 			for (int i = 0; i < dims[0]; ++i) {
 				double p[3];
 				double dx, dy;
 
 				int idx = cont->nodeIndex(i, j, 0);
-
-				baseIndices[i] = cont->nodeIndex(i, j, 0);
-
 				basePoints->GetPoint(idx, p);
 				getDirection(impl->m_setting, i, j, grid, &dx, &dy);
 
-				double val = da->GetTuple1(idx);
+				double val = vals[i] + offset;
 				double x = p[0] + dx * val * scale;
 				double y = p[1] + dy * val * scale;
 
-				graphPoints->InsertNextPoint(x, y, 0);
-				graphIndices[j] = graphPointId ++;
+				line[i] = QPointF(x, y);
 			}
-			cellsBase->InsertNextCell(dims[0], baseIndices.data());
-			cellsGraph->InsertNextCell(dims[0], graphIndices.data());
+			lines.push_back(line);
 		}
 	}
 	impl->m_baseLinesPolyData->SetLines(cellsBase);
 	impl->m_baseLinesPolyData->Modified();
 
-	impl->m_graphLinesPolyData->SetLines(cellsGraph);
-	impl->m_graphLinesPolyData->Modified();
+	impl->m_graphLinesActor.setLines(lines);
 
-	impl->m_setting.gridLineStyle.applySetting(impl->m_baseLinesActor->GetProperty());
-	impl->m_setting.graphLineStyle.applySetting(impl->m_graphLinesActor->GetProperty());
+	impl->m_setting.gridLineStyle.applySetting(impl->m_baseLinesActor.actor()->GetProperty());
+	impl->m_setting.graphLineStyle.applySetting(impl->m_graphLinesActor.linesActor()->GetProperty());
 
 	if (impl->m_setting.drawGridLine) {
-		col->AddItem(impl->m_baseLinesActor);
+		col->AddItem(impl->m_baseLinesActor.actor());
 	}
-	col->AddItem(impl->m_graphLinesActor);
+	col->AddItem(impl->m_graphLinesActor.linesActor());
 
 	updateVisibilityWithoutRendering();
 }
@@ -441,8 +438,8 @@ void Post2dWindowGraphGroupDataItem::handlePropertyDialogAccepted(QDialog* propD
 
 void Post2dWindowGraphGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	impl->m_baseLinesActor->SetPosition(0, 0, range.min());
-	impl->m_graphLinesActor->SetPosition(0, 0, range.max());
+	impl->m_baseLinesActor.actor()->SetPosition(0, 0, range.min());
+	impl->m_graphLinesActor.linesActor()->SetPosition(0, 0, range.max());
 }
 
 void Post2dWindowGraphGroupDataItem::updateZDepthRangeItemCount()
@@ -452,6 +449,6 @@ void Post2dWindowGraphGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowGraphGroupDataItem::innerUpdateZScale(double scale)
 {
-	impl->m_baseLinesActor->SetScale(1, scale, 1);
-	impl->m_graphLinesActor->SetScale(1, scale, 1);
+	impl->m_baseLinesActor.actor()->SetScale(1, scale, 1);
+	impl->m_graphLinesActor.linesActor()->SetScale(1, scale, 1);
 }
