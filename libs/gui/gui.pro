@@ -251,7 +251,8 @@ LIBS += \
 INCLUDEPATH += ../../libs
 
 # Input
-HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
+HEADERS += gui_api.h \
+           continuoussnapshot/continuoussnapshotfilepropertypage.h \
            continuoussnapshot/continuoussnapshotgoogleearthsettingpage.h \
            continuoussnapshot/continuoussnapshotmoviepropertypage.h \
            continuoussnapshot/continuoussnapshottimestepsettingpage.h \
@@ -299,6 +300,7 @@ HEADERS += continuoussnapshot/continuoussnapshotfilepropertypage.h \
            startpage/startpagerecentsolverlist.h \
            verification/verificationgraphdialog.h \
            verification/verificationsettingdialog.h \
+           main/private/iricmainwindow_snapshotsaver.h \
            misc/private/networksetting_impl.h \
            pref/private/preferencepagetmsadddialog.h
 FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
@@ -373,14 +375,15 @@ SOURCES += continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
            startpage/startpagerecentsolverlist.cpp \
            verification/verificationgraphdialog.cpp \
            verification/verificationsettingdialog.cpp \
+           main/private/iricmainwindow_snapshotsaver.cpp \
            pref/private/preferencepagetmsadddialog.cpp
 RESOURCES += gui.qrc
-TRANSLATIONS += languages/iricGui\es_ES.ts \
-                languages/iricGui\fr_FR.ts \
-                languages/iricGui\id_ID.ts \
-                languages/iricGui\ja_JP.ts \
-                languages/iricGui\ko_KR.ts \
-                languages/iricGui\ru_RU.ts \
-                languages/iricGui\th_TH.ts \
-                languages/iricGui\vi_VN.ts \
-                languages/iricGui\zh_CN.ts
+TRANSLATIONS += languages/iricGui_es_ES.ts \
+                languages/iricGui_fr_FR.ts \
+                languages/iricGui_id_ID.ts \
+                languages/iricGui_ja_JP.ts \
+                languages/iricGui_ko_KR.ts \
+                languages/iricGui_ru_RU.ts \
+                languages/iricGui_th_TH.ts \
+                languages/iricGui_vi_VN.ts \
+                languages/iricGui_zh_CN.ts

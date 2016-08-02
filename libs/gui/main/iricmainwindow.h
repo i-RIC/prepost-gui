@@ -321,6 +321,8 @@ private:
 
 	QProcessEnvironment m_processEnvironment;
 
+	class SnapshotSaver;
+
 public:
 	friend class ProjectData;
 	friend class iRICMainWindowActionManager;

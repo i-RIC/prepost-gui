@@ -15,6 +15,7 @@
 #include "../startpage/startpagedialog.h"
 #include "../verification/verificationgraphdialog.h"
 #include "iricmainwindow.h"
+#include "private/iricmainwindow_snapshotsaver.h"
 
 #include <cs/coordinatesystembuilder.h>
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
@@ -846,60 +847,14 @@ void iRICMainWindow::snapshot()
 {
 	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
 	SnapshotEnabledWindowInterface* enabledWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
-	if (enabledWindow != nullptr) {
-		enabledWindow->setTransparent(false);
-		QPixmap pixmap = enabledWindow->snapshot();
-		QString defaultname = QDir(LastIODirectory::get()).absoluteFilePath("snapshot");
-		QString filename = QFileDialog::getSaveFileName(this, tr("Save Snapshot"), defaultname, tr("PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp);;Encapsulated Post Script file (*.eps);;Portable Document Format file (*.pdf);;Scalable Vector Graphics file (*.svg)"));
-		if (filename == "") {return;}
 
-		QFileInfo finfo(filename);
-		if (finfo.suffix() == "jpg" || finfo.suffix() == "png" || finfo.suffix() == "bmp") {
-			pixmap.save(filename);
-		} else if (finfo.suffix() == "pdf" || finfo.suffix() == "eps" || finfo.suffix() == "svg") {
-			vtkRenderWindow* renderWindow = enabledWindow->getVtkRenderWindow();
-			if (renderWindow == nullptr) {
-				QMessageBox::warning(this, tr("Warning"), tr("This window do not support snapshot with this file type."));
-				return;
-			}
-			vtkSmartPointer<vtkGL2PSExporter> exp = vtkSmartPointer<vtkGL2PSExporter>::New();
-			exp->SetRenderWindow(renderWindow);
-			exp->CompressOff();
-			exp->Write3DPropsAsRasterImageOff();
-			exp->TextOn();
-			if (finfo.suffix() == "pdf") {
-				exp->SetFileFormatToPDF();
-			} else if (finfo.suffix() == "eps") {
-				exp->SetFileFormatToEPS();
-			} else if (finfo.suffix() == "svg") {
-				exp->SetFileFormatToSVG();
-			}
-			QString tmppath = m_projectData->tmpFileName();
-			exp->SetFilePrefix(iRIC::toStr(tmppath).c_str());
-			exp->Write();
-			QString tmpname = QString("%1.%2").arg(tmppath).arg(finfo.suffix());
-			QFile tempFile(tmpname);
-			if (! tempFile.exists()) {
-				QMessageBox::critical(this, tr("Error"), tr("Saving snapshot failed."));
-				return;
-			}
-			QFile newFile(filename);
-			newFile.remove();
-
-			bool ok = QFile::rename(tmpname, filename);
-			if (! ok) {
-				QMessageBox::critical(this, tr("Error"), tr("Saving snapshot failed."));
-				return;
-			}
-		} else {
-			QMessageBox::warning(this, tr("Warning"), tr("Wrong file name specified."));
-			return;
-		}
-		statusBar()->showMessage(tr("Snapshot successfully saved to %1.").arg(filename), STATUSBAR_DISPLAYTIME);
-		LastIODirectory::set(QFileInfo(filename).absolutePath());
-	} else {
+	if (enabledWindow == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("This windows does not support snapshot function."));
+		return;
 	}
+
+	SnapshotSaver saver(this);
+	saver.save(enabledWindow);
 }
 
 void iRICMainWindow::snapshotSvg()
