@@ -315,8 +315,7 @@ win32 {
 }
 
 # Input
-HEADERS += griddisplaysetting.h \
-           pre_global.h \
+HEADERS += pre_global.h \
            preobjectbrowser.h \
            preobjectbrowserview.h \
            preprocessordatamodel.h \
@@ -419,8 +418,7 @@ FORMS += bc/boundaryconditiondialog.ui \
          subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui
-SOURCES += griddisplaysetting.cpp \
-           preobjectbrowser.cpp \
+SOURCES += preobjectbrowser.cpp \
            preobjectbrowserview.cpp \
            preprocessordatamodel.cpp \
            preprocessorgraphicsview.cpp \
