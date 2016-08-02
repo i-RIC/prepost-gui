@@ -16,6 +16,20 @@ QT += widgets xml
 # Internal libraries #
 ######################
 
+# iricAxis3d
+
+win32 {
+	CONFIG(debug, debug|release) {
+		LIBS += -L"../../dataitem/axis3d/debug"
+	} else {
+		LIBS += -L"../../dataitem/axis3d/release"
+	}
+}
+unix {
+	LIBS += -L"../../dataitem/axis3d"
+}
+LIBS += -liricAxis3d
+
 # iricMisc
 
 win32 {

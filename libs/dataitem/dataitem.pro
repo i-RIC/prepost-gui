@@ -7,4 +7,5 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS = \
-	axis2d
+	axis2d \
+	axis3d

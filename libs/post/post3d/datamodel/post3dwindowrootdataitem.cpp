@@ -6,8 +6,8 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowrootdataitem.h"
 
+#include <dataitem/axis3d/axis3ddataitem.h>
 #include <guibase/objectbrowserview.h>
-#include <guicore/axis3d/axis3ddataitem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
@@ -23,8 +23,8 @@
 
 #include <vtkRenderWindow.h>
 
-Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, ProjectDataItem* parent)
-	: GraphicsWindowRootDataItem(window, parent)
+Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, ProjectDataItem* parent) :
+	GraphicsWindowRootDataItem(window, parent)
 {
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post3dWindowDataModel*>(dataModel())->postSolutionInfo();
