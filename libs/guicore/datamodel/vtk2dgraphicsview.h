@@ -14,8 +14,8 @@ public:
 	VTK2DGraphicsView(QWidget* parent);
 	virtual ~VTK2DGraphicsView() {}
 	void resetCamera();
-	void viewportToWorld(double& x, double& y) const;
-	void worldToViewport(double& x, double& y) const;
+	virtual void viewportToWorld(double& x, double& y) const;
+	virtual void worldToViewport(double& x, double& y) const;
 	void getDataRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void getDrawnRegion(double* xmin, double* xmax, double* ymin, double* ymax);
 	void mouseMoveEvent(QMouseEvent* event) override;

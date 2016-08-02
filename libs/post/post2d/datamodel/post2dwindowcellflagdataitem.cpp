@@ -128,6 +128,11 @@ void Post2dWindowCellFlagDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	writeColorAttribute("color", m_color, writer);
 }
 
+void Post2dWindowCellFlagDataItem::innerUpdateZScale(double scale)
+{
+	m_actor->SetScale(1, scale, 1);
+}
+
 void Post2dWindowCellFlagDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->initCellAttributeBrowser();

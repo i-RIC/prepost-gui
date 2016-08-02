@@ -47,7 +47,8 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& Post2dWindowNodeVectorSt
 }
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineGroupDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+	Post2dWindowDataItem {tr("Streamlines"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -212,4 +213,13 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(co
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.save(writer);
+}
+
+void Post2dWindowNodeVectorStreamlineGroupDataItem::innerUpdateZScale(double scale)
+{
+	m_zScale = scale;
+
+	for (vtkActor* actor : m_streamlineActors) {
+		actor->SetScale(1, scale, 1);
+	}
 }

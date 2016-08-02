@@ -90,6 +90,10 @@ protected:
 	void resetParticles();
 	void addParticles();
 
+private:
+	void innerUpdateZScale(double scale) override;
+
+protected:
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
 	std::vector<vtkPolyData*> m_particleGrids;
@@ -104,6 +108,7 @@ protected:
 	unsigned int m_previousStep;
 	double m_previousTime;
 	int m_nextStepToAddParticles;
+	double m_zScale;
 };
 
 #endif // POST2DWINDOWNODEVECTORPARTICLEGROUPDATAITEM_H

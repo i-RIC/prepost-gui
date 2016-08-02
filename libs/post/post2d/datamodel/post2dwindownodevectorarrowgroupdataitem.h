@@ -14,6 +14,7 @@
 #include <vtkHedgeHog.h>
 #include <vtkMaskPoints.h>
 #include <vtkArrowSource.h>
+#include <vtkTransformFilter.h>
 #include <vtkConeSource.h>
 #include <vtkWarpVector.h>
 #include <vtkExtractGrid.h>
@@ -66,6 +67,7 @@ protected:
 private:
 	void setupActors();
 	void calculateStandardValue();
+	void innerUpdateZScale(double scale) override;
 
 	virtual void updateActivePoints() = 0;
 	virtual Post2dWindowNodeVectorArrowSetting& setting() = 0;
@@ -86,6 +88,7 @@ protected:
 	vtkSmartPointer<vtkUnstructuredGrid> m_baseArrowPolyData;
 	vtkSmartPointer<vtkActor2D> m_baseArrowActor;
 	vtkSmartPointer<vtkPolyData> m_activePoints;
+	vtkSmartPointer<vtkTransformFilter> m_transformedActivePoints;
 
 	double m_scaleFactor;
 };

@@ -63,7 +63,8 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	Post2dWindowDataItem {tr("Particles (auto)"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
 	m_previousStep {-2},
 	m_previousTime {0},
-	m_nextStepToAddParticles {0}
+	m_nextStepToAddParticles {0},
+	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -339,6 +340,14 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 		}
 	} else {
 		m_nextStepToAddParticles = currentStep + 1;
+	}
+}
+
+void Post2dWindowNodeVectorParticleGroupDataItem::innerUpdateZScale(double scale)
+{
+	m_zScale = scale;
+	for (vtkActor* actor : m_particleActors) {
+		actor->SetScale(1, scale, 1);
 	}
 }
 

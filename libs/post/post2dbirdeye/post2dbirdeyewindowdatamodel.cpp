@@ -183,8 +183,7 @@ void Post2dBirdEyeWindowDataModel::editZScale()
 void Post2dBirdEyeWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_zScale =  iRIC::getDoubleAttribute(node, "ZScale", 1);
-	Post2dBirdEyeWindowRootDataItem* ritem = dynamic_cast<Post2dBirdEyeWindowRootDataItem*>(m_rootDataItem);
-	ritem->updateZScale(m_zScale);
+	m_rootDataItem->updateZScale(m_zScale);
 	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
 }
 

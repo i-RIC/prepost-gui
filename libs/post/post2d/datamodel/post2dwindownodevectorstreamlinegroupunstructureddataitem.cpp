@@ -44,12 +44,12 @@ Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting& Post2dWindow
 	return *this;
 }
 
-Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent)
-	: Post2dWindowNodeVectorStreamlineGroupDataItem(parent)
+Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(Post2dWindowDataItem* parent) :
+	Post2dWindowNodeVectorStreamlineGroupDataItem(parent),
+	m_dialog {nullptr}
 {
 	setupDefaultValues();
 	setupTmpSource();
-	m_dialog = nullptr;
 }
 
 Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::~Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem()
@@ -135,11 +135,12 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 		}
 		m_sourcePoints.push_back(grid);
 
-		vtkActor* actor = vtkActor::New();
+		vtkSmartPointer<vtkActor> actor = vtkSmartPointer<vtkActor>::New();
 		vtkProperty* prop = actor->GetProperty();
 		prop->SetLighting(false);
 		prop->SetColor(setting.color);
 		prop->SetLineWidth(setting.width);
+		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);

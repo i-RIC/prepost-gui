@@ -82,7 +82,13 @@ void Post2dWindowGridShapeDataItem::setupActors()
 	m_indexActor = vtkSmartPointer<vtkActor2D>::New();
 	renderer()->AddActor2D(m_indexActor);
 
+	m_indexTransform = vtkSmartPointer<vtkTransform>::New();
+
+	m_indexTransformFilter = vtkSmartPointer<vtkTransformFilter>::New();
+	m_indexTransformFilter->SetTransform(m_indexTransform);
+
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
+	m_indexMapper->SetInputConnection(m_indexTransformFilter->GetOutputPort());
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(iRIC::toStr(PostZoneDataContainer::labelName).c_str());
 	iRIC::setupGridIndexTextProperty(m_indexMapper->GetLabelTextProperty());
@@ -140,7 +146,7 @@ void Post2dWindowGridShapeDataItem::updateActorSettings()
 	}
 	if (m_setting.indexVisible) {
 		vtkPointSet* labeldata = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->labelData();
-		m_indexMapper->SetInputData(labeldata);
+		m_indexTransformFilter->SetInputData(labeldata);
 		m_indexMapper->GetLabelTextProperty()->SetColor(m_setting.indexColor);
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
@@ -173,6 +179,14 @@ void Post2dWindowGridShapeDataItem::loadShapeFromProjectMainFile(const QDomNode&
 void Post2dWindowGridShapeDataItem::saveShapeToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_setting.save(writer);
+}
+
+void Post2dWindowGridShapeDataItem::innerUpdateZScale(double scale)
+{
+	m_outlineActor->SetScale(1, scale, 1);
+	m_wireframeActor->SetScale(1, scale, 1);
+	m_indexTransform->Identity();
+	m_indexTransform->Scale(1, scale, 1);
 }
 
 void Post2dWindowGridShapeDataItem::handleStandardItemDoubleClicked()

@@ -78,6 +78,7 @@ public slots:
 	void cameraMoveUp();
 	void cameraMoveDown();
 	void editBackgroundColor();
+	void editZScale();
 
 signals:
 	void worldPositionChangedForStatusBar(const QVector2D& pos);

@@ -109,6 +109,7 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 		prop->SetLighting(false);
 		prop->SetColor(s.color);
 		prop->SetLineWidth(s.width);
+		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);

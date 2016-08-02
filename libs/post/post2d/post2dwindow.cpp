@@ -186,6 +186,11 @@ void Post2dWindow::editBackgroundColor()
 	iRICUndoStack::instance().push(new Post2dWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
 }
 
+void Post2dWindow::editZScale()
+{
+	m_dataModel->editZScale();
+}
+
 bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zoneName)
 {
 	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);

@@ -442,30 +442,40 @@
 <context>
     <name>Post2dWindowDataModel</name>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="110"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="95"/>
+        <source>Z-direction Scale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../post2dwindowdatamodel.cpp" line="95"/>
+        <source>Input new Z-direction scale.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../post2dwindowdatamodel.cpp" line="122"/>
         <location filename="../post2dwindowdatamodel.cpp" line="134"/>
         <location filename="../post2dwindowdatamodel.cpp" line="146"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="158"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="110"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
         <source>Contour setting is not available, because this result does not contain scalar values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="122"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
         <source>Arrow setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="134"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
         <source>Streamline setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../post2dwindowdatamodel.cpp" line="146"/>
+        <location filename="../post2dwindowdatamodel.cpp" line="158"/>
         <source>Particle setting is not available, because this result does not contain vector values.</source>
         <translation type="unfinished"></translation>
     </message>

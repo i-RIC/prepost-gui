@@ -117,6 +117,7 @@ LIBS += \
 	-lvtkCommonExecutionModel-6.1 \
 	-lvtkCommonMath-6.1 \
 	-lvtkCommonMisc-6.1 \
+	-lvtkCommonTransforms-6.1 \
 	-lvtkFiltersCore-6.1 \
 	-lvtkFiltersGeometry-6.1 \
 	-lvtkFiltersGeneral-6.1 \

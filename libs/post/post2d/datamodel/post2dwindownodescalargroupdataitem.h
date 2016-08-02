@@ -77,6 +77,7 @@ private:
 	void setupColorContourSetting(vtkPolyData* polyData);
 	void setupColorFringeSetting(vtkPolyData* polyData);
 	void setupScalarBarSetting();
+	void innerUpdateZScale(double scale) override;
 	static vtkPolyData* setupLowerClippedPolygon(vtkPolyData* inputData, double value);
 	static vtkPolyData* setupHigherClippedPolygon(vtkPolyData* inputData, double value);
 

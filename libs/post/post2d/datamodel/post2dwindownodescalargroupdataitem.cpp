@@ -359,6 +359,13 @@ void Post2dWindowNodeScalarGroupDataItem::setupScalarBarSetting()
 	}
 }
 
+void Post2dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
+{
+	m_contourActor->SetScale(1, scale, 1);
+	m_isolineActor->SetScale(1, scale, 1);
+	m_fringeActor->SetScale(1, scale, 1);
+}
+
 QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
 	Post2dWindowContourSettingDialog* dialog = new Post2dWindowContourSettingDialog(p);

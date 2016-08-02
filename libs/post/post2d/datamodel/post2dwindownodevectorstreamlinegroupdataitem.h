@@ -68,8 +68,10 @@ protected:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+	void innerUpdateZScale(double scale) override;
 
 	Setting m_setting;
+	double m_zScale;
 
 	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
 

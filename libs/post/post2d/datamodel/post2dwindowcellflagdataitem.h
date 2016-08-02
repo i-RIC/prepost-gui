@@ -38,6 +38,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
+	void innerUpdateZScale(double scale) override;
+
 	std::string m_attributeName;
 	int m_value;
 	QColor m_color;

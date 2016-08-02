@@ -36,6 +36,8 @@ private:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void updateZDepthRangeItemCount() override;
 
+	void innerUpdateZScale(double scale) override;
+
 	class Impl;
 	Impl* impl;
 

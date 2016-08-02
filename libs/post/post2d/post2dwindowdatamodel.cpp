@@ -24,8 +24,10 @@
 #include <guicore/tmsimage/tmsimagegroupdataitem.h>
 #include <postbase/time/posttimedataitem.h>
 #include <postbase/title/posttitledataitem.h>
+#include <misc/xmlsupport.h>
 
 #include <QGraphicsItemGroup>
+#include <QInputDialog>
 #include <QMessageBox>
 #include <QStandardItem>
 #include <QStandardItemModel>
@@ -37,7 +39,8 @@
 
 
 Post2dWindowDataModel::Post2dWindowDataModel(Post2dWindow* w, ProjectDataItem* parent) :
-	Graphics2DWindowDataModel(w, parent)
+	Graphics2DWindowDataModel(w, parent),
+	m_zScale {1}
 {
 	m_objectBrowserView = nullptr;
 	init();
@@ -72,6 +75,19 @@ void Post2dWindowDataModel::init()
 	m_graphicsView->cameraFit();
 }
 
+void Post2dWindowDataModel::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_zScale = iRIC::getDoubleAttribute(node, "ZScale", 1);
+	m_rootDataItem->updateZScale(m_zScale);
+	GraphicsWindowDataModel::doLoadFromProjectMainFile(node);
+}
+
+void Post2dWindowDataModel::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	iRIC::setDoubleAttribute(writer, "ZScale", m_zScale);
+	GraphicsWindowDataModel::doSaveToProjectMainFile(writer);
+}
+
 Post2dWindowRootDataItem* Post2dWindowDataModel::rootDataItem() const
 {
 	return dynamic_cast<Post2dWindowRootDataItem*> (m_rootDataItem);
@@ -85,6 +101,21 @@ Post2dWindowGraphicsView* Post2dWindowDataModel::graphicsView() const
 PostSolutionInfo* Post2dWindowDataModel::postSolutionInfo()
 {
 	return projectData()->mainfile()->postSolutionInfo();
+}
+
+void Post2dWindowDataModel::editZScale()
+{
+	bool ok;
+	double newZscale = QInputDialog::getDouble(mainWindow(), tr("Z-direction Scale"), tr("Input new Z-direction scale."), m_zScale, 1E-6, 1E6, 3, &ok);
+	if (! ok) {return;}
+	m_zScale = newZscale;
+	m_rootDataItem->updateZScale(newZscale);
+	m_graphicsView->cameraFit();
+}
+
+double Post2dWindowDataModel::zScale() const
+{
+	return m_zScale;
 }
 
 void Post2dWindowDataModel::updateTmsList()

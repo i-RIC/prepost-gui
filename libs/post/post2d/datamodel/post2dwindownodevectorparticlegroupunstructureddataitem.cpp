@@ -84,6 +84,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupTmpSource()
 	prop->SetPointSize(3);
 	prop->SetLighting(false);
 	prop->SetColor(0, 0, 0);
+	m_previewActor->SetScale(1, m_zScale, 1);
 
 	m_previewActor->VisibilityOff();
 	renderer()->AddActor(m_previewActor);
@@ -98,6 +99,7 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::setupActors()
 		prop->SetLighting(false);
 		prop->SetColor(s.color);
 		prop->SetPointSize(s.size);
+		actor->SetScale(1, m_zScale, 1);
 
 		renderer()->AddActor(actor);
 		actorCollection()->AddItem(actor);

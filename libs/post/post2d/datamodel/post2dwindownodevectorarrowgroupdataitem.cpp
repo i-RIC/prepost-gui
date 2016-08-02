@@ -27,6 +27,7 @@
 #include <vtkDataSetMapper.h>
 #include <vtkDiskSource.h>
 #include <vtkGeometryFilter.h>
+#include <vtkIdentityTransform.h>
 #include <vtkLine.h>
 #include <vtkLineSource.h>
 #include <vtkPointData.h>
@@ -36,6 +37,7 @@
 #include <vtkRenderer.h>
 #include <vtkStructuredGrid.h>
 #include <vtkTextProperty.h>
+#include <vtkTransform.h>
 #include <vtkTriangle.h>
 
 #include <cmath>
@@ -128,8 +130,14 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setupActors()
 	m_baseArrowActor->VisibilityOff();
 
 	m_activePoints = vtkSmartPointer<vtkPolyData>::New();
-	m_hedgeHog->SetInputData(m_activePoints);
-	m_warpVector->SetInputData(m_activePoints);
+
+	m_transformedActivePoints = vtkSmartPointer<vtkTransformFilter>::New();
+	vtkSmartPointer<vtkIdentityTransform> transform = vtkSmartPointer<vtkIdentityTransform>::New();
+	m_transformedActivePoints->SetTransform(transform);
+	m_transformedActivePoints->SetInputData(m_activePoints);
+
+	m_hedgeHog->SetInputConnection(m_transformedActivePoints->GetOutputPort());
+	m_warpVector->SetInputConnection(m_transformedActivePoints->GetOutputPort());
 
 	renderer()->AddActor2D(m_baseArrowActor);
 }
@@ -183,6 +191,15 @@ void Post2dWindowNodeVectorArrowGroupDataItem::calculateStandardValue()
 	s.standardValue = average;
 	// minimum value is always 0.001 * standard value when auto mode.
 	s.minimumValue = 0.001 * s.standardValue;
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdateZScale(double scale)
+{
+	vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
+	transform->Scale(1, scale, 1);
+	m_transformedActivePoints->SetTransform(transform);
+
+	updateActorSettings();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informGridUpdate()

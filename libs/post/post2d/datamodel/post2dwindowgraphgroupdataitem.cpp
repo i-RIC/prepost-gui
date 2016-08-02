@@ -449,3 +449,9 @@ void Post2dWindowGraphGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);
 }
+
+void Post2dWindowGraphGroupDataItem::innerUpdateZScale(double scale)
+{
+	impl->m_baseLinesActor->SetScale(1, scale, 1);
+	impl->m_graphLinesActor->SetScale(1, scale, 1);
+}

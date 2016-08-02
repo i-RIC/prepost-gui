@@ -5,16 +5,19 @@
 
 #include <guibase/widget/gridshapeeditdialog.h>
 
+#include <QVector2D>
+
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkActor2D.h>
+#include <vtkLabeledDataMapper.h>
 #include <vtkMapper.h>
 #include <vtkStructuredGridOutlineFilter.h>
 #include <vtkUnstructuredGrid.h>
 #include <vtkDataSetMapper.h>
 #include <vtkPoints.h>
-#include <QVector2D>
-#include <vtkLabeledDataMapper.h>
+#include <vtkTransformFilter.h>
+#include <vtkTransform.h>
 
 class QDialog;
 class QAction;
@@ -56,12 +59,15 @@ private:
 	void loadShapeFromProjectMainFile(const QDomNode& shapeNode);
 	void saveShapeToProjectMainFile(QXmlStreamWriter& writer);
 	void updateAxesRegion();
+	void innerUpdateZScale(double scale) override;
 
 	vtkSmartPointer<vtkActor> m_outlineActor;
 	vtkSmartPointer<vtkActor> m_wireframeActor;
 	vtkSmartPointer<vtkMapper> m_outlineMapper;
 	vtkSmartPointer<vtkDataSetMapper> m_wireframeMapper;
 	vtkSmartPointer<vtkStructuredGridOutlineFilter> m_outlineFilter;
+	vtkSmartPointer<vtkTransformFilter> m_indexTransformFilter;
+	vtkSmartPointer<vtkTransform> m_indexTransform;
 	vtkSmartPointer<vtkActor2D> m_indexActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
 

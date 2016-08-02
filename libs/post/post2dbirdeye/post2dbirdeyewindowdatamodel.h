@@ -33,14 +33,14 @@ public slots:
 	void titleSetting();
 	void timeSetting();
 
-protected:
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
 private:
 	void createCameraConnections();
 	void init();
 	Post2dBirdEyeWindowZoneDataItem* getZoneDataItem();
+
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	double m_zScale;
 
 public:

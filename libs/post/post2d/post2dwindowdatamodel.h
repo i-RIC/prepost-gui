@@ -28,6 +28,9 @@ public:
 	Post2dWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
 
+	void editZScale();
+	double zScale() const;
+
 	void updateTmsList();
 
 public slots:
@@ -47,9 +50,13 @@ private:
 	void createCameraConnections();
 	void init();
 
+	void doLoadFromProjectMainFile(const QDomNode& node) override;
+	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	Post2dWindowRootDataItem* rootDataItem() const;
 	Post2dWindowZoneDataItem* getZoneDataItem();
 	MeasuredDataFileDataItem* getMeasuredDataFileDataItem();
+	double m_zScale;
 
 public:
 	friend class Post2dWindowDataModelProjectDataItem;
