@@ -4,6 +4,7 @@
 #include <misc/stringtool.h>
 
 #include <QPolygonF>
+#include <QStringList>
 #include <QTextCodec>
 
 #include <shapefil.h>

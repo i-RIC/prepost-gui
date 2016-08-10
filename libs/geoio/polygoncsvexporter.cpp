@@ -2,6 +2,8 @@
 #include "polylinecsvexporter.h"
 
 #include <QPolygonF>
+#include <QStringList>
+
 
 void PolygonCsvExporter::exportData(const QPolygonF& data, const QString& filename, const QString& selectedFilter, QWidget* w)
 {

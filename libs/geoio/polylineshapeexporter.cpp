@@ -4,6 +4,7 @@
 #include <misc/stringtool.h>
 
 #include <QPointF>
+#include <QStringList>
 #include <QTextCodec>
 #include <QVector>
 
@@ -48,7 +49,7 @@ void PolylineShapeExporter::exportData(const QVector<QPointF>& data, const QStri
 	SHPDestroyObject(obj);
 
 	QString dbfFilename = filename;
-	dbfFilename.replace(QRegExp("shp$"), "dbf");
+	dbfFilename.replace(QRegExp("shp$"), QString("dbf"));
 	std::string dbfname = iRIC::toStr(dbfFilename);
 
 	DBFHandle dbfh = DBFCreate(dbfname.c_str());

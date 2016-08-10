@@ -2,6 +2,7 @@
 #include "polylinecsvimporter.h"
 
 #include <QPolygonF>
+#include <QStringList>
 
 QPolygonF PolygonCsvImporter::importData(const QString& filename, const QString& selectedFilter, QWidget* w)
 {
