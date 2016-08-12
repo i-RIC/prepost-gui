@@ -443,6 +443,7 @@ HEADERS += guicore_global.h \
            project/inputcond/private/inputconditionwidgetrealoption.h \
            project/inputcond/private/inputconditionwidgetstring.h \
            project/inputcond/private/inputconditionwidgettooltip.h \
+           project/measured/private/measureddata_impl.h \
            pre/gridcond/base/private/gridattributecellcontainert_detail.h \
            pre/gridcond/base/private/gridattributecontainert_detail.h \
            pre/gridcond/base/private/gridattributedimensioncontainer_impl.h \

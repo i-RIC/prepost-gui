@@ -9,6 +9,7 @@
 
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
+#include <vtkPolyData.h>
 
 void MeasuredDataCsvExporter::exportData(const QString& filename, const MeasuredData& data) const
 {

@@ -13,6 +13,8 @@
 #include <vtkCellArray.h>
 #include <vtkDoubleArray.h>
 #include <vtkPointData.h>
+#include <vtkPolyData.h>
+#include <vtkSmartPointer.h>
 
 #include <unordered_set>
 

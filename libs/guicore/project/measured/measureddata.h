@@ -4,13 +4,12 @@
 #include "../../guicore_global.h"
 #include "../projectdataitem.h"
 
-#include <QString>
-
-#include <vtkSmartPointer.h>
-#include <vtkPolyData.h>
-
 #include <string>
 #include <vector>
+
+class QString;
+
+class vtkPolyData;
 
 /// This class stores the information about the specified workfolder.
 class GUICOREDLL_EXPORT MeasuredData : public ProjectDataItem
@@ -19,6 +18,7 @@ class GUICOREDLL_EXPORT MeasuredData : public ProjectDataItem
 
 public:
 	MeasuredData(ProjectDataItem* parent);
+	~MeasuredData();
 
 	const QString& name() const;
 	void setName(const QString& name);
@@ -48,16 +48,8 @@ private:
 
 	void doApplyOffset(double x, double y) override;
 
-	QString m_name;
-	int m_index;
-
-	bool m_noPolyData;
-
-	vtkSmartPointer<vtkPolyData> m_pointData;
-	vtkSmartPointer<vtkPolyData> m_polyData;
-
-	std::vector<std::string> m_scalarNames;
-	std::vector<std::string> m_vectorNames;
+	class Impl;
+	Impl* impl;
 };
 
 #endif // MEASUREDDATA_H

@@ -1,29 +1,20 @@
 #include "../../base/iricmainwindowinterface.h"
 #include "measureddata.h"
+#include "private/measureddata_impl.h"
 
 #include <guibase/widget/waitdialog.h>
 #include <misc/errormessage.h>
 #include <misc/stringtool.h>
 
 #include <QCoreApplication>
-#include <QDir>
 #include <QDomNode>
-#include <QFile>
-#include <QMap>
-#include <QRegExp>
-#include <QSet>
-#include <QTextCodec>
-#include <QTextStream>
 #include <QXmlStreamWriter>
 
 #include <vtkCellArray.h>
-#include <vtkDoubleArray.h>
 #include <vtkPointData.h>
-#include <vtkPoints.h>
+#include <vtkPolyData.h>
 #include <vtkPolyDataReader.h>
 #include <vtkPolyDataWriter.h>
-#include <vtkPolyDataWriter.h>
-#include <vtkSmartPointer.h>
 
 #define REAL double
 #define VOID void
@@ -31,68 +22,77 @@
 #include <triangle/triangle.h>
 #include <triangle/triangleexecutethread.h>
 
-MeasuredData::MeasuredData(ProjectDataItem* parent) :
-	ProjectDataItem(parent)
+MeasuredData::Impl::Impl() :
+	m_noPolyData {false}
 {
 	m_pointData = vtkSmartPointer<vtkPolyData>::New();
 	m_polyData = vtkSmartPointer<vtkPolyData>::New();
-	m_noPolyData = false;
+}
+
+MeasuredData::MeasuredData(ProjectDataItem* parent) :
+	ProjectDataItem(parent),
+	impl {new Impl()}
+{}
+
+MeasuredData::~MeasuredData()
+{
+	delete impl;
 }
 
 const QString& MeasuredData::name() const
 {
-	return m_name;
+	return impl->m_name;
 }
 
 void MeasuredData::setName(const QString& name)
 {
-	m_name = name;
+	impl->m_name = name;
 }
 
 vtkPolyData* MeasuredData::pointData() const
 {
-	return m_pointData;
+	return impl->m_pointData;
 }
 
 vtkPolyData* MeasuredData::polyData() const
 {
-	return m_polyData;
+	return impl->m_polyData;
 }
 
 const std::vector<std::string>& MeasuredData::scalarNames() const
 {
-	return m_scalarNames;
+	return impl->m_scalarNames;
 }
 
 std::vector<std::string>& MeasuredData::scalarNames()
 {
-	return m_scalarNames;
+	return impl->m_scalarNames;
 }
 
 const std::vector<std::string>& MeasuredData::vectorNames() const
 {
-	return m_vectorNames;
+	return impl->m_vectorNames;
 }
 
 std::vector<std::string>& MeasuredData::vectorNames()
 {
-	return m_vectorNames;
+	return impl->m_vectorNames;
 }
 
 int MeasuredData::index() const
 {
-	return m_index;
+	return impl->m_index;
 }
 
 void MeasuredData::setIndex(int index)
 {
-	m_index = index;
-	setFilename(QString("MeasuredData_%1.vtk").arg(m_index));
+	impl->m_index = index;
+	setFilename(QString("MeasuredData_%1.vtk").arg(impl->m_index));
 }
 
 bool MeasuredData::noPolyData() const
 {
-	return m_noPolyData;
+	return impl->m_noPolyData;
 }
 
 void MeasuredData::applyOffset(double x, double y)
@@ -103,15 +103,15 @@ void MeasuredData::applyOffset(double x, double y)
 void MeasuredData::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	m_name = elem.attribute("name");
+	impl->m_name = elem.attribute("name");
 	int index = elem.attribute("index").toInt();
 	setIndex(index);
 }
 
 void MeasuredData::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("name", m_name);
-	writer.writeAttribute("index", QString::number(m_index));
+	writer.writeAttribute("name", impl->m_name);
+	writer.writeAttribute("index", QString::number(impl->m_index));
 }
 
 void MeasuredData::loadExternalData(const QString& filename)
@@ -119,16 +119,16 @@ void MeasuredData::loadExternalData(const QString& filename)
 	vtkSmartPointer<vtkPolyDataReader> reader = vtkSmartPointer<vtkPolyDataReader>::New();
 	reader->SetFileName(iRIC::toStr(filename).c_str());
 	reader->Update();
-	m_pointData->DeepCopy(reader->GetOutput());
-	m_scalarNames.clear();
-	m_vectorNames.clear();
-	vtkPointData* pd = m_pointData->GetPointData();
+	impl->m_pointData->DeepCopy(reader->GetOutput());
+	impl->m_scalarNames.clear();
+	impl->m_vectorNames.clear();
+	vtkPointData* pd = impl->m_pointData->GetPointData();
 	for (int i = 0; i < pd->GetNumberOfArrays(); ++i) {
 		vtkDataArray* da = pd->GetArray(i);
 		if (da->GetNumberOfComponents() == 1) {
-			m_scalarNames.push_back(da->GetName());
+			impl->m_scalarNames.push_back(da->GetName());
 		} else if (da->GetNumberOfComponents() == 3) {
-			m_vectorNames.push_back(da->GetName());
+			impl->m_vectorNames.push_back(da->GetName());
 		}
 	}
 	setupPolyData();
@@ -138,7 +138,7 @@ void MeasuredData::saveExternalData(const QString& filename)
 {
 	vtkSmartPointer<vtkPolyDataWriter> writer = vtkSmartPointer<vtkPolyDataWriter>::New();
 	writer->SetFileName(iRIC::toStr(filename).c_str());
-	writer->SetInputData(m_pointData);
+	writer->SetInputData(impl->m_pointData);
 	writer->SetFileTypeToBinary();
 	writer->Write();
 }
@@ -146,10 +146,10 @@ void MeasuredData::saveExternalData(const QString& filename)
 void MeasuredData::setupPolyData()
 {
 	triangulateio in, out;
-	in.pointlist = new double[m_pointData->GetPoints()->GetNumberOfPoints() * 2];
+	in.pointlist = new double[impl->m_pointData->GetPoints()->GetNumberOfPoints() * 2];
 	in.pointattributelist = NULL;
 	in.pointmarkerlist = NULL;
-	in.numberofpoints = m_pointData->GetPoints()->GetNumberOfPoints();
+	in.numberofpoints = impl->m_pointData->GetPoints()->GetNumberOfPoints();
 	in.numberofpointattributes = 0;
 
 	in.trianglelist = NULL;
@@ -175,9 +175,9 @@ void MeasuredData::setupPolyData()
 	in.normlist = NULL;
 	in.numberofedges = 0;
 
-	for (vtkIdType i = 0; i < m_pointData->GetPoints()->GetNumberOfPoints(); ++i) {
+	for (vtkIdType i = 0; i < impl->m_pointData->GetPoints()->GetNumberOfPoints(); ++i) {
 		double v[3];
-		m_pointData->GetPoints()->GetPoint(i, v);
+		impl->m_pointData->GetPoints()->GetPoint(i, v);
 		*(in.pointlist + i * 2)     = v[0];
 		*(in.pointlist + i * 2 + 1) = v[1];
 	}
@@ -208,7 +208,7 @@ void MeasuredData::setupPolyData()
 	thread->setArgs(arg.data());
 	thread->setIOs(&in, &out);
 
-	if (m_pointData->GetPoints()->GetNumberOfPoints() < 3) {
+	if (impl->m_pointData->GetPoints()->GetNumberOfPoints() < 3) {
 		out.numberoftriangles = 0;
 		goto finalization;
 	}
@@ -241,9 +241,9 @@ void MeasuredData::setupPolyData()
 finalization:
 	delete in.pointlist;
 
-	m_polyData->Reset();
-	m_polyData->Allocate(out.numberoftriangles);
-	m_polyData->SetPoints(m_pointData->GetPoints());
+	impl->m_polyData->Reset();
+	impl->m_polyData->Allocate(out.numberoftriangles);
+	impl->m_polyData->SetPoints(impl->m_pointData->GetPoints());
 	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
 	for (int i = 0; i < out.numberoftriangles; ++i) {
 		vtkIdType nodeIds[3];
@@ -252,16 +252,16 @@ finalization:
 		nodeIds[2] = *(out.trianglelist + i * 3 + 2) - 1;
 		cells->InsertNextCell(3, nodeIds);
 	}
-	m_polyData->SetPolys(cells);
-	m_polyData->GetPointData()->Initialize();
-	for (int i = 0; i < m_pointData->GetPointData()->GetNumberOfArrays(); ++i) {
-		vtkDataArray* da = m_pointData->GetPointData()->GetArray(i);
-		m_polyData->GetPointData()->AddArray(da);
+	impl->m_polyData->SetPolys(cells);
+	impl->m_polyData->GetPointData()->Initialize();
+	for (int i = 0; i < impl->m_pointData->GetPointData()->GetNumberOfArrays(); ++i) {
+		vtkDataArray* da = impl->m_pointData->GetPointData()->GetArray(i);
+		impl->m_polyData->GetPointData()->AddArray(da);
 	}
-	m_polyData->BuildCells();
-	m_polyData->BuildLinks();
-	m_polyData->Modified();
-	m_polyData->GetPointData()->Modified();
+	impl->m_polyData->BuildCells();
+	impl->m_polyData->BuildLinks();
+	impl->m_polyData->Modified();
+	impl->m_polyData->GetPointData()->Modified();
 
 	trifree(out.pointmarkerlist);
 	trifree(out.trianglelist);
@@ -269,13 +269,13 @@ finalization:
 	trifree(out.segmentmarkerlist);
 
 	if (out.numberoftriangles == 0) {
-		m_noPolyData = true;
+		impl->m_noPolyData = true;
 	}
 }
 
 void MeasuredData::doApplyOffset(double x, double y)
 {
-	vtkPoints* points = this->m_polyData->GetPoints();
+	vtkPoints* points = impl->m_polyData->GetPoints();
 	vtkIdType numPoints = points->GetNumberOfPoints();
 	double v[3];
 	for (vtkIdType id = 0; id < numPoints; ++id) {
