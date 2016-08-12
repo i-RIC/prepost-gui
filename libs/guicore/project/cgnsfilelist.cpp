@@ -3,6 +3,11 @@
 #include <QDomElement>
 #include <QXmlStreamWriter>
 
+CgnsFileList::CgnsFileList(ProjectDataItem* parent) :
+	ProjectDataItem(parent),
+	m_current {nullptr}
+{}
+
 CgnsFileList::~CgnsFileList()
 {}
 
@@ -53,6 +58,11 @@ QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles() const
 		ret.push_back(*it);
 	}
 	return ret;
+}
+
+CgnsFileList::CgnsFileEntry* CgnsFileList::current() const
+{
+	return m_current;
 }
 
 bool CgnsFileList::exists(const QString& name) const

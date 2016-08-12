@@ -37,13 +37,11 @@ public:
 		QString m_filename;
 		QString m_comment;
 	};
-	/// Constructor
-	CgnsFileList(ProjectDataItem* parent) : ProjectDataItem(parent) {
-		m_current = nullptr;
-	}
+	CgnsFileList(ProjectDataItem* parent);
 	~CgnsFileList();
+
 	QList<CgnsFileEntry*> cgnsFiles() const;
-	CgnsFileEntry* current() const {return m_current;}
+	CgnsFileEntry* current() const;
 	bool exists(const QString& name) const;
 	CgnsFileEntry* setCurrent(const QString& name);
 	/// Add new cgns file.
