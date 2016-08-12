@@ -10,22 +10,6 @@
     </message>
 </context>
 <context>
-    <name>Axis2dDataItem</name>
-    <message>
-        <location filename="../axis2d/axis2ddataitem.cpp" line="17"/>
-        <source>Axes</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>Axis3dDataItem</name>
-    <message>
-        <location filename="../axis3d/axis3ddataitem.cpp" line="15"/>
-        <source>Axes</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>BackgroundImageInfo</name>
     <message>
         <location filename="../project/backgroundimageinfo.cpp" line="79"/>
@@ -129,136 +113,6 @@
     <message>
         <location filename="../scalarstocolors/colortransferfunctioneditwidget.cpp" line="54"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DistanceMeasureCopyPropertyDialog</name>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="14"/>
-        <source>Distance Measure Property</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="22"/>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="36"/>
-        <source>Start Point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="46"/>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="66"/>
-        <source>, </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="56"/>
-        <source>End Point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="78"/>
-        <source>Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="84"/>
-        <source>Show Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="94"/>
-        <source>Content</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="100"/>
-        <source>Auto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="114"/>
-        <source>Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="129"/>
-        <source>Position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="135"/>
-        <source>Center-Top</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="145"/>
-        <source>Middle-Left</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="152"/>
-        <source>Middle-Right</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="159"/>
-        <source>Center-Bottom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="186"/>
-        <source>Font Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="221"/>
-        <source>Show End Markers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="249"/>
-        <source>Marker Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="283"/>
-        <source>Color:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DistanceMeasureDataItem</name>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="61"/>
-        <source>Property</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="64"/>
-        <source>Redefine</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DistanceMeasureGroupDataItem</name>
-    <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="18"/>
-        <source>Distance Measures</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="14"/>
-        <source>&amp;Add Measure...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="41"/>
-        <source>Measure%1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -636,18 +490,8 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="27"/>
-        <source>File name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="29"/>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="74"/>
         <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="76"/>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="78"/>
         <source>Select File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -655,90 +499,72 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="19"/>
-        <source>Folder name has to consist of only English characters.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="21"/>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="58"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfoldername.cpp" line="67"/>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>InputConditionWidgetFunctional</name>
-    <message>
-        <location filename="../project/inputcond/inputconditionwidgetfunctional.cpp" line="13"/>
-        <source>Edit</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="14"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="14"/>
         <source>Calculation Condition</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="49"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="49"/>
         <source>Add</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="56"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="56"/>
         <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="72"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="72"/>
         <source>&amp;Import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="79"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="79"/>
         <source>&amp;Export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="86"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="86"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
         <source>Choose a text file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
         <source>Error occured while opening the file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
         <source>Specify file name to save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
         <source>CSV files (*.csv)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -817,177 +643,6 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../project/measured/measureddata.cpp" line="230"/>
         <source>Importing Measured Data...</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasuredDataFileDataItem</name>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="26"/>
-        <source>File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="43"/>
-        <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="74"/>
-        <source>CSV file (*.csv)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="75"/>
-        <source>Export Measured Data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="82"/>
-        <source>Measured Data successfully exported to %1.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="84"/>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasuredDataPointGroupDataItem</name>
-    <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="49"/>
-        <source>Scalar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="421"/>
-        <source>Contour Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasuredDataPointSettingDialog</name>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="14"/>
-        <source>Scalar Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="26"/>
-        <source>Measured Value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="54"/>
-        <source>Display Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="101"/>
-        <source>Point Size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="148"/>
-        <source>&amp;Color Bar Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="105"/>
-        <source>Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="105"/>
-        <source>For value range, max value is smaller than min value.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasuredDataVectorGroupDataItem</name>
-    <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="41"/>
-        <source>Arrow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="92"/>
-        <source>Arrow Physical Value Change</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp" line="6"/>
-        <source>Update Arrow Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasuredDataVectorSettingDialog</name>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="14"/>
-        <source>Arrow Setting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="32"/>
-        <source>Physical value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="57"/>
-        <source>Length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="63"/>
-        <source>Auto</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="74"/>
-        <source>Standard value:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="100"/>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="157"/>
-        <source>[m/s]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="107"/>
-        <source>Length on screen:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="124"/>
-        <source>[pixel]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="131"/>
-        <source>Minimum value to draw:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="184"/>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="196"/>
-        <source>Custom color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="226"/>
-        <source>By scalar value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="274"/>
-        <source>&amp;Color Bar Setting</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1243,8 +898,8 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="155"/>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="419"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="748"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="845"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1255,42 +910,42 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="714"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="714"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
         <source>No calculation result exists.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="748"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
         <source>Calculation result does not contain grid data.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="800"/>
         <source>Export Calculation Result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
         <source>Saving calculation result as VTK files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="807"/>
         <source>Saving calculation result as CSV files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="807"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="810"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="845"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
         <source>Error occured while saving %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1345,38 +1000,38 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectData</name>
     <message>
-        <location filename="../project/projectdata.cpp" line="148"/>
+        <location filename="../project/projectdata.cpp" line="121"/>
         <source>Loading project file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="247"/>
+        <location filename="../project/projectdata.cpp" line="202"/>
         <source>Saving project file...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="277"/>
+        <location filename="../project/projectdata.cpp" line="213"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="277"/>
+        <location filename="../project/projectdata.cpp" line="213"/>
         <source>Could not overwrite %1.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="385"/>
+        <location filename="../project/projectdata.cpp" line="292"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="386"/>
+        <location filename="../project/projectdata.cpp" line="293"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="473"/>
-        <location filename="../project/projectdata.cpp" line="545"/>
+        <location filename="../project/projectdata.cpp" line="366"/>
+        <location filename="../project/projectdata.cpp" line="415"/>
         <source>Saving project...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1528,6 +1183,19 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>ProjectWorkspace</name>
+    <message>
+        <location filename="../project/projectworkspace.cpp" line="55"/>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../project/projectworkspace.cpp" line="57"/>
+        <source>Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PropertyBrowser</name>
     <message>
         <location filename="../base/propertybrowser.cpp" line="10"/>
@@ -1611,43 +1279,18 @@ Do you really want to import this file?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="22"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp" line="6"/>
         <source>Move up item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="48"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp" line="6"/>
         <source>Move down item</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../datamodel/vtkgraphicsview.cpp" line="333"/>
         <source>Arbitrary Move</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="180"/>
-        <source>Define Distance Measure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="239"/>
-        <source>Move Distance Measure Point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="302"/>
-        <source>Translate Distance Measure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="588"/>
-        <source>Edit Distance Measure Property</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="771"/>
-        <source>Redefine Distance Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1765,23 +1408,23 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="83"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="114"/>
         <source>Background Images (Internet)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="134"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="134"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="184"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="194"/>
         <source>Background Image change</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1820,37 +1463,40 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
-        <source>Bing (Aerial with labels)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="42"/>
         <source>Bing (Road)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="45"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>GSI (Standard) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="46"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="45"/>
         <source>GSI (Pale) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="47"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="46"/>
         <source>GSI (English) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="48"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="47"/>
         <source>GSI (Relief) (Japan only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="49"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="48"/>
         <source>GSI (Ortho images) (Japan only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>iRICMetaData</name>
+    <message>
+        <location filename="../misc/iricmetadata.cpp" line="64"/>
+        <source>Build number of the version number is not specified.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

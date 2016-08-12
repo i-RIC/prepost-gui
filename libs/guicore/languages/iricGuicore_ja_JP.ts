@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ja_JP">
+<TS version="2.0" language="ja_JP">
 <context>
     <name>AttributeBrowserTargetDataItem</name>
     <message>
@@ -12,7 +12,6 @@
 <context>
     <name>Axis2dDataItem</name>
     <message>
-        <location filename="../axis2d/axis2ddataitem.cpp" line="17"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>
@@ -20,7 +19,6 @@
 <context>
     <name>Axis3dDataItem</name>
     <message>
-        <location filename="../axis3d/axis3ddataitem.cpp" line="15"/>
         <source>Axes</source>
         <translation>座標軸</translation>
     </message>
@@ -118,182 +116,182 @@
     <name>CgnsFileInputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation type="vanished">Definition 要素が見つかりません</translation>
+        <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
         <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation type="vanished">ソルバー定義ファイルの読み込み中にエラーが発生しました。
+        <translation>ソルバー定義ファイルの読み込み中にエラーが発生しました。
 %1: %2</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="vanished">計算条件</translation>
+        <translation>計算条件</translation>
     </message>
     <message>
         <source>&amp;Save and Close</source>
-        <translation type="vanished">保存して閉じる(&amp;S)</translation>
+        <translation>保存して閉じる(&amp;S)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
+        <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the conditions will be imported.
 Do you really want to import this file?</source>
-        <translation type="vanished">この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
+        <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込んだ場合、計算条件の一部のみがインポートされることがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
         <source>This CGNS file does not contain calculation condition data.</source>
-        <translation type="vanished">この CGNS ファイルには、計算条件がありません。</translation>
+        <translation>この CGNS ファイルには、計算条件がありません。</translation>
     </message>
     <message>
         <source>Are you sure you want to reset all calculation conditions to default values?</source>
-        <translation type="vanished">すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
+        <translation>すべての計算条件を、デフォルト値にリセットしていいですか?</translation>
     </message>
     <message>
         <source>The solver is running currently, so you can not save calculation condition. Please press Cancel button.</source>
-        <translation type="vanished">ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
+        <translation>ソルバが実行中のため、計算条件を保存できません。キャンセルボタンを押して下さい。</translation>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation type="vanished">保存中にエラーが発生しました。</translation>
+        <translation>保存中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>Modifications you made will be discarded.</source>
-        <translation type="vanished">行った変更は破棄されます。</translation>
+        <translation>行った変更は破棄されます。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionPageList</name>
     <message>
         <source>Groups</source>
-        <translation type="vanished">グループ</translation>
+        <translation>グループ</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFilename</name>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select File</source>
-        <translation type="vanished">ファイルを選択してください</translation>
+        <translation>ファイルを選択してください</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFilenameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="vanished">ファイル名には、 英数字と記号しか使用できません。</translation>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFoldername</name>
     <message>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <source>Select Directory</source>
-        <translation type="vanished">フォルダを選択してください</translation>
+        <translation>フォルダを選択してください</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFoldernameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation type="vanished">フォルダ名には、 英数字と記号しか使用できません。</translation>
+        <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFunctional</name>
     <message>
         <source>Edit</source>
-        <translation type="vanished">編集</translation>
+        <translation>編集</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetFunctionalDialog</name>
     <message>
         <source>Calculation Condition</source>
-        <translation type="vanished">計算条件</translation>
+        <translation>計算条件</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="vanished">追加</translation>
+        <translation>追加</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="vanished">削除</translation>
+        <translation>削除</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="vanished">インポート</translation>
+        <translation>インポート</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation type="vanished">クリア</translation>
+        <translation>クリア</translation>
     </message>
     <message>
         <source>Choose a text file</source>
-        <translation type="vanished">テキストファイルの選択</translation>
+        <translation>テキストファイルの選択</translation>
     </message>
     <message>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
-        <translation type="vanished">テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
+        <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="vanished">エラー</translation>
+        <translation>エラー</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="vanished">ファイルを開く時にエラーが発生しました。</translation>
+        <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
 </context>
 <context>
     <name>CgnsFileInputConditionWidgetString</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="vanished">文字列には、英数字と記号しか使用できません。</translation>
+        <translation>文字列には、英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
@@ -317,98 +315,78 @@ Do you really want to import this file?</source>
 <context>
     <name>DistanceMeasureCopyPropertyDialog</name>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="14"/>
         <source>Distance Measure Property</source>
         <translation>距離計測 プロパティ</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="22"/>
         <source>Name:</source>
         <translation>名前:</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="36"/>
         <source>Start Point:</source>
         <translation>開始点:</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="46"/>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="66"/>
         <source>, </source>
         <translation>, </translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="56"/>
         <source>End Point:</source>
         <translation>終了点:</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="78"/>
         <source>Label</source>
         <translation>ラベル</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="84"/>
         <source>Show Label</source>
         <translation>ラベルを表示</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="94"/>
         <source>Content</source>
         <translation>表示内容</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="100"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="114"/>
         <source>Custom</source>
         <translation>手動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="129"/>
         <source>Position</source>
         <translation>位置</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="135"/>
         <source>Center-Top</source>
         <translation>中央上</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="145"/>
         <source>Middle-Left</source>
         <translation>中央左</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="152"/>
         <source>Middle-Right</source>
         <translation>中央右</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="159"/>
         <source>Center-Bottom</source>
         <translation>中央下</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="186"/>
         <source>Font Size:</source>
         <translation>フォントサイズ:</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="221"/>
         <source>Show End Markers</source>
         <translation>両端のマーカを表示</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="249"/>
         <source>Marker Size:</source>
         <translation>マーカサイズ:</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasurecopypropertydialog.ui" line="283"/>
         <source>Color:</source>
         <translation>色:</translation>
     </message>
@@ -416,12 +394,10 @@ Do you really want to import this file?</source>
 <context>
     <name>DistanceMeasureDataItem</name>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="61"/>
         <source>Property</source>
         <translation>プロパティ</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="64"/>
         <source>Redefine</source>
         <translation>再定義</translation>
     </message>
@@ -429,17 +405,14 @@ Do you really want to import this file?</source>
 <context>
     <name>DistanceMeasureGroupDataItem</name>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="18"/>
         <source>Distance Measures</source>
         <translation>距離計測</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="14"/>
         <source>&amp;Add Measure...</source>
         <translation>計測の追加(&amp;A)...</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuregroupdataitem.cpp" line="41"/>
         <source>Measure%1</source>
         <translation>計測%1</translation>
     </message>
@@ -583,7 +556,7 @@ Do you really want to import this file?</source>
     <name>GridAttributeEditCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -604,7 +577,7 @@ Do you really want to import this file?</source>
     <name>GridAttributeEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
@@ -732,96 +705,96 @@ Do you really want to import this file?</source>
     <name>GridRelatedCellConditionPropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionDimensionComboboxSelectWidget</name>
     <message>
         <source>Form</source>
-        <translation type="vanished">フォーム</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>label:</source>
-        <translation type="vanished">ラベル:</translation>
+        <translation>ラベル:</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionDimensionTimeSliderSelectWidget</name>
     <message>
         <source>Step &amp;Backward</source>
-        <translation type="vanished">一つ前へ(&amp;B)</translation>
+        <translation>一つ前へ(&amp;B)</translation>
     </message>
     <message>
         <source>Step &amp;Forward</source>
-        <translation type="vanished">一つ次へ(&amp;F)</translation>
+        <translation>一つ次へ(&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Reset</source>
-        <translation type="vanished">先頭へ(&amp;R)</translation>
+        <translation>先頭へ(&amp;R)</translation>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation type="vanished">最後のステップへ(&amp;L)</translation>
+        <translation>最後のステップへ(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
-        <translation type="vanished">開始/停止(&amp;S)</translation>
+        <translation>開始/停止(&amp;S)</translation>
     </message>
     <message>
         <source>S&amp;top Animation</source>
-        <translation type="vanished">停止(&amp;T)</translation>
+        <translation>停止(&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Animation Speed Setting...</source>
-        <translation type="vanished">再生の速度の編集(&amp;A)...</translation>
+        <translation>再生の速度の編集(&amp;A)...</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="vanished">テキストラベル</translation>
+        <translation>テキストラベル</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionEditVariationCommand</name>
     <message>
         <source>Edit grid attribute value(s)</source>
-        <translation type="vanished">格子属性の編集</translation>
+        <translation>格子属性の編集</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedConditionVariationEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>TextLabel</source>
-        <translation type="vanished">テキストラベル</translation>
+        <translation>テキストラベル</translation>
     </message>
 </context>
 <context>
     <name>GridRelatedNodeConditionPropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Contour setting</source>
-        <translation type="vanished">コンター設定</translation>
+        <translation>コンター設定</translation>
     </message>
 </context>
 <context>
@@ -930,18 +903,16 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionWidgetFilename</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="27"/>
         <source>File name has to consist of only English characters.</source>
         <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="29"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="74"/>
         <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="76"/>
+        <location filename="../project/inputcond/inputconditionwidgetfilename.cpp" line="78"/>
         <source>Select File</source>
         <translation>ファイルを選択してください</translation>
     </message>
@@ -950,27 +921,25 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFilenameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>File name has to consist of only English characters.</source>
-        <translation type="vanished">ファイル名には、 英数字と記号しか使用できません。</translation>
+        <translation>ファイル名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFoldername</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="19"/>
         <source>Folder name has to consist of only English characters.</source>
         <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="21"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfoldername.cpp" line="58"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfoldername.cpp" line="67"/>
         <source>Select Directory</source>
         <translation>フォルダを選択してください</translation>
     </message>
@@ -979,17 +948,16 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetFoldernameEdit</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>Folder name has to consist of only English characters.</source>
-        <translation type="vanished">フォルダ名には、 英数字と記号しか使用できません。</translation>
+        <translation>フォルダ名には、 英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
     <name>InputConditionWidgetFunctional</name>
     <message>
-        <location filename="../project/inputcond/inputconditionwidgetfunctional.cpp" line="13"/>
         <source>Edit</source>
         <translation>編集</translation>
     </message>
@@ -997,68 +965,68 @@ Do you really want to import this file?</source>
 <context>
     <name>InputConditionWidgetFunctionalDialog</name>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="14"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="14"/>
         <source>Calculation Condition</source>
         <translation>計算条件</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="49"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="49"/>
         <source>Add</source>
         <translation>追加</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="56"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="56"/>
         <source>Remove</source>
         <translation>削除</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="72"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="72"/>
         <source>&amp;Import</source>
         <translation>インポート(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="79"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="79"/>
         <source>&amp;Export</source>
         <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="vanished">インポート</translation>
+        <translation>インポート</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.ui" line="86"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.ui" line="86"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
         <source>Choose a text file</source>
         <translation>テキストファイルの選択</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="280"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="295"/>
         <source>Text files (*.csv *.txt);;All files (*.*)</source>
         <translation>テキストファイル (*.csv *.txt);;すべてのファイル (*.*)</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="289"/>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="340"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="304"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="355"/>
         <source>Error occured while opening the file.</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
         <source>Specify file name to save</source>
         <translation>保存するファイルの名前を指定</translation>
     </message>
     <message>
-        <location filename="../project/inputcond/functional/inputconditionwidgetfunctionaldialog.cpp" line="331"/>
+        <location filename="../project/inputcond/private/inputconditionwidgetfunctionaldialog.cpp" line="346"/>
         <source>CSV files (*.csv)</source>
         <translation>CSV ファイル (*.csv)</translation>
     </message>
@@ -1067,11 +1035,11 @@ Do you really want to import this file?</source>
     <name>InputConditionWidgetString</name>
     <message>
         <source>Warning</source>
-        <translation type="vanished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <source>String has to consist of only English characters.</source>
-        <translation type="vanished">文字列には、英数字と記号しか使用できません。</translation>
+        <translation>文字列には、英数字と記号しか使用できません。</translation>
     </message>
 </context>
 <context>
@@ -1154,32 +1122,26 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataFileDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="26"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="43"/>
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="74"/>
         <source>CSV file (*.csv)</source>
         <translation>CSVファイル (*.csv)</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="75"/>
         <source>Export Measured Data</source>
         <translation>実測値のエクスポート</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="82"/>
         <source>Measured Data successfully exported to %1.</source>
         <translation>実測値は、 %1 にエクスポートされました。</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatafiledataitem.cpp" line="84"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1187,16 +1149,14 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataPointGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="49"/>
         <source>Scalar</source>
         <translation>スカラー</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="vanished">コンターの設定変更</translation>
+        <translation>コンターの設定変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointgroupdataitem.cpp" line="421"/>
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
@@ -1204,37 +1164,30 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="14"/>
         <source>Scalar Setting</source>
         <translation>スカラー設定</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="26"/>
         <source>Measured Value:</source>
         <translation>実測値:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="54"/>
         <source>Display Setting</source>
         <translation>表示設定</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="101"/>
         <source>Point Size:</source>
         <translation>点のサイズ:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.ui" line="148"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="105"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatapointsettingdialog.cpp" line="105"/>
         <source>For value range, max value is smaller than min value.</source>
         <translation>値の範囲で、最大値が最小値より小さくなっています。</translation>
     </message>
@@ -1242,17 +1195,14 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="41"/>
         <source>Arrow</source>
         <translation>ベクトル</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorgroupdataitem.cpp" line="92"/>
         <source>Arrow Physical Value Change</source>
         <translation>ベクトル 物理量変更</translation>
     </message>
     <message>
-        <location filename="../measureddata/private/measureddatavectorgroupdataitem_setsettingcommand.cpp" line="6"/>
         <source>Update Arrow Setting</source>
         <translation>ベクトルの設定変更</translation>
     </message>
@@ -1260,68 +1210,54 @@ Do you really want to import this file?</source>
 <context>
     <name>MeasuredDataVectorSettingDialog</name>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="14"/>
         <source>Arrow Setting</source>
         <translation>ベクトル設定</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="32"/>
         <source>Physical value:</source>
         <translation>物理量:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="57"/>
         <source>Length</source>
         <translation>長さ</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="63"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="74"/>
         <source>Standard value:</source>
         <translation>基準値:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="100"/>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="157"/>
         <source>[m/s]</source>
         <translation>[m/s]</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="107"/>
         <source>Length on screen:</source>
         <translation>画面上での長さ:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="124"/>
         <source>[pixel]</source>
         <translation>[ピクセル]</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="131"/>
         <source>Minimum value to draw:</source>
         <translation>表示する最小値:</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="184"/>
         <source>Color</source>
         <translation>表示色</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="196"/>
         <source>Custom color</source>
         <translation>色を指定</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="226"/>
         <source>By scalar value</source>
         <translation>スカラー値により設定</translation>
     </message>
     <message>
-        <location filename="../measureddata/measureddatavectorsettingdialog.ui" line="274"/>
         <source>&amp;Color Bar Setting</source>
         <translation>カラーバー設定(&amp;C)</translation>
     </message>
@@ -1430,7 +1366,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>VTK files</source>
-        <translation type="vanished">VTKファイル</translation>
+        <translation>VTKファイル</translation>
     </message>
     <message>
         <location filename="../postcontainer/postdataexportdialog.ui" line="40"/>
@@ -1582,8 +1518,8 @@ Do you really want to import this file?</source>
     <message>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="155"/>
         <location filename="../postcontainer/postsolutioninfo.cpp" line="419"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="748"/>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="845"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
@@ -1594,42 +1530,42 @@ Do you really want to import this file?</source>
         <translation>計算結果の読み込み中にエラーが発生しました。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="714"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="714"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="725"/>
         <source>No calculation result exists.</source>
         <translation>計算結果がありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="748"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="751"/>
         <source>Calculation result does not contain grid data.</source>
         <translation>計算結果に、格子データがありません。</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="797"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="800"/>
         <source>Export Calculation Result</source>
         <translation>計算結果のエクスポート</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="801"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
         <source>Saving calculation result as VTK files...</source>
         <translation>計算結果を VTKファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="804"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="807"/>
         <source>Saving calculation result as CSV files...</source>
         <translation>計算結果を CSVファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="807"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="810"/>
         <source>Saving calculation result as ESRI Shape files...</source>
         <translation>計算結果を ESRI シェープファイルに保存しています...</translation>
     </message>
     <message>
-        <location filename="../postcontainer/postsolutioninfo.cpp" line="845"/>
+        <location filename="../postcontainer/postsolutioninfo.cpp" line="848"/>
         <source>Error occured while saving %1</source>
         <translation>%1 の保存中にエラーが発生しました。</translation>
     </message>
@@ -1685,44 +1621,44 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridDataItemInterface</name>
     <message>
         <source>Grid</source>
-        <translation type="vanished">格子</translation>
+        <translation>格子</translation>
     </message>
 </context>
 <context>
     <name>ProjectData</name>
     <message>
-        <location filename="../project/projectdata.cpp" line="148"/>
+        <location filename="../project/projectdata.cpp" line="121"/>
         <source>Loading project file...</source>
         <translation>プロジェクトファイルを読み込んでいます...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="247"/>
+        <location filename="../project/projectdata.cpp" line="202"/>
         <source>Saving project file...</source>
         <translation>プロジェクトファイルを保存しています...</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="277"/>
+        <location filename="../project/projectdata.cpp" line="213"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="277"/>
+        <location filename="../project/projectdata.cpp" line="213"/>
         <source>Could not overwrite %1.</source>
         <translation>%1 を上書き保存できませんでした。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="385"/>
+        <location filename="../project/projectdata.cpp" line="292"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="386"/>
+        <location filename="../project/projectdata.cpp" line="293"/>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correnctly for these grid types.</source>
         <translation>格子属性 Elevation が、格子種類 %1 で定義されていません。格子の入出力機能、格子生成機能の一部は、これらの格子種類については正しく動作しません。</translation>
     </message>
     <message>
-        <location filename="../project/projectdata.cpp" line="473"/>
-        <location filename="../project/projectdata.cpp" line="545"/>
+        <location filename="../project/projectdata.cpp" line="366"/>
+        <location filename="../project/projectdata.cpp" line="415"/>
         <source>Saving project...</source>
         <translation>プロジェクトを保存しています...</translation>
     </message>
@@ -1768,7 +1704,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
+        <translation>この CGNS ファイルは、 %1 version %2 用に作られたものです。現在利用しているソルバーと互換性がありません。</translation>
     </message>
     <message>
         <location filename="../project/projectmainfile.cpp" line="493"/>
@@ -1786,16 +1722,16 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Entering post only mode.</source>
-        <translation type="vanished">この CGNS ファイルは、 %1 version %2 用に作られたもので、現在利用しているソルバーと互換性がありません。可視化専用モードに移行します。</translation>
+        <translation>この CGNS ファイルは、 %1 version %2 用に作られたもので、現在利用しているソルバーと互換性がありません。可視化専用モードに移行します。</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver.</source>
-        <translation type="vanished">このCGNSファイルには、ソルバ情報がありません。このCGNSファイルが現在のソルバと互換性があるか確認できません。</translation>
+        <translation>このCGNSファイルには、ソルバ情報がありません。このCGNSファイルが現在のソルバと互換性があるか確認できません。</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, iRIC may crash.
 Do you really want to import this file?</source>
-        <translation type="vanished">この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込むと、 iRIC が異常終了することがあります。
+        <translation>この CGNS ファイルはソルバー情報を持っていないため、この CGNS ファイルが現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルを読み込むと、 iRIC が異常終了することがあります。
 この CGNS ファイルをインポートしますか?</translation>
     </message>
     <message>
@@ -1892,6 +1828,19 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>ProjectWorkspace</name>
+    <message>
+        <location filename="../project/projectworkspace.cpp" line="55"/>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>ワークスペース %1&quot; には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
+    </message>
+    <message>
+        <location filename="../project/projectworkspace.cpp" line="57"/>
+        <source>Information</source>
+        <translation>情報</translation>
+    </message>
+</context>
+<context>
     <name>PropertyBrowser</name>
     <message>
         <location filename="../base/propertybrowser.cpp" line="10"/>
@@ -1970,7 +1919,7 @@ Do you really want to import this file?</source>
     <name>QObject</name>
     <message>
         <source>Object Browser Item Change</source>
-        <translation type="vanished">オブジェクトブラウザ 項目編集</translation>
+        <translation>オブジェクトブラウザ 項目編集</translation>
     </message>
     <message>
         <location filename="../datamodel/graphicswindowdrawcommands.cpp" line="5"/>
@@ -1979,12 +1928,12 @@ Do you really want to import this file?</source>
         <translation>描画</translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="22"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp" line="6"/>
         <source>Move up item</source>
         <translation>上に移動</translation>
     </message>
     <message>
-        <location filename="../datamodel/graphicswindowrootdataitem.cpp" line="48"/>
+        <location filename="../datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp" line="6"/>
         <source>Move down item</source>
         <translation>下に移動</translation>
     </message>
@@ -1994,49 +1943,44 @@ Do you really want to import this file?</source>
         <translation>移動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="180"/>
         <source>Define Distance Measure</source>
         <translation>距離計測の定義</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="239"/>
         <source>Move Distance Measure Point</source>
         <translation>距離計測の点の移動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="302"/>
         <source>Translate Distance Measure</source>
         <translation>距離計測の移動</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="588"/>
         <source>Edit Distance Measure Property</source>
         <translation>距離計測プロパティの編集</translation>
     </message>
     <message>
-        <location filename="../distancemeasure/distancemeasuredataitem.cpp" line="771"/>
         <source>Redefine Distance Measure</source>
         <translation>距離計測の再定義</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
-        <translation type="vanished">コンターの設定変更</translation>
+        <translation>コンターの設定変更</translation>
     </message>
     <message>
         <source>Contour Physical Value Change</source>
-        <translation type="vanished">コンター 物理量変更</translation>
+        <translation>コンター 物理量変更</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation type="vanished">ベクトル 物理量変更</translation>
+        <translation>ベクトル 物理量変更</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
-        <translation type="vanished">ベクトルの設定変更</translation>
+        <translation>ベクトルの設定変更</translation>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation type="vanished">背景の値の編集</translation>
+        <translation>背景の値の編集</translation>
     </message>
     <message>
         <location filename="../project/backgroundimageinfo.cpp" line="275"/>
@@ -2059,45 +2003,45 @@ Do you really want to import this file?</source>
     <name>RawData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation type="vanished">名前の編集(&amp;N)...</translation>
+        <translation>名前の編集(&amp;N)...</translation>
     </message>
 </context>
 <context>
     <name>RawDataBackground</name>
     <message>
         <source>Default</source>
-        <translation type="vanished">デフォルト</translation>
+        <translation>デフォルト</translation>
     </message>
     <message>
         <source>Edit value...</source>
-        <translation type="vanished">値の編集...</translation>
+        <translation>値の編集...</translation>
     </message>
     <message>
         <source>Edit %1 default value</source>
-        <translation type="vanished">%1 のデフォルト値の編集</translation>
+        <translation>%1 のデフォルト値の編集</translation>
     </message>
     <message>
         <source>Please input new default value.</source>
-        <translation type="vanished">新しいデフォルト値を入力してください。</translation>
+        <translation>新しいデフォルト値を入力してください。</translation>
     </message>
 </context>
 <context>
     <name>RawDataBackgroundEditDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="vanished">ダイアログ</translation>
+        <translation>ダイアログ</translation>
     </message>
     <message>
         <source>Minimum value of geographic data</source>
-        <translation type="vanished">地理情報の最小値</translation>
+        <translation>地理情報の最小値</translation>
     </message>
     <message>
         <source>Maximum value of geographic data</source>
-        <translation type="vanished">地理情報の最大値</translation>
+        <translation>地理情報の最大値</translation>
     </message>
     <message>
         <source>Custom value</source>
-        <translation type="vanished">指定した値</translation>
+        <translation>指定した値</translation>
     </message>
 </context>
 <context>
@@ -2112,7 +2056,7 @@ Do you really want to import this file?</source>
     <name>SolverDefinition</name>
     <message>
         <source>%1 Grids</source>
-        <translation type="vanished">%1 格子</translation>
+        <translation>%1 格子</translation>
     </message>
 </context>
 <context>
@@ -2216,24 +2160,24 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageGroupDataItem</name>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="83"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="114"/>
         <source>Background Images (Internet)</source>
         <translation>背景画像 (インターネット)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="134"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="134"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="142"/>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
         <translation>インターネットから背景画像を取得するには、以下のメニューから座標系を指定して下さい。
 ファイル -&gt; プロパティ</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="184"/>
+        <location filename="../tmsimage/tmsimagegroupdataitem.cpp" line="194"/>
         <source>Background Image change</source>
         <translation>背景画像の変更</translation>
     </message>
@@ -2271,39 +2215,46 @@ Do you really want to import this file?</source>
         <translation>Bing (航空写真)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
         <source>Bing (Aerial with labels)</source>
         <translation>Bing (航空写真 ラベル付き)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="42"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="41"/>
         <source>Bing (Road)</source>
         <translation>Bing (道路地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="45"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="44"/>
         <source>GSI (Standard) (Japan only)</source>
         <translation>国土地理院 (標準地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="46"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="45"/>
         <source>GSI (Pale) (Japan only)</source>
         <translation>国土地理院 (淡色地図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="47"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="46"/>
         <source>GSI (English) (Japan only)</source>
         <translation>国土地理院 (English)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="48"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="47"/>
         <source>GSI (Relief) (Japan only)</source>
         <translation>国土地理院 (色別標高図)</translation>
     </message>
     <message>
-        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="49"/>
+        <location filename="../tmsimage/tmsimagesettingmanager.cpp" line="48"/>
         <source>GSI (Ortho images) (Japan only)</source>
         <translation>国土地理院 (写真)</translation>
+    </message>
+</context>
+<context>
+    <name>iRICMetaData</name>
+    <message>
+        <location filename="../misc/iricmetadata.cpp" line="64"/>
+        <source>Build number of the version number is not specified.</source>
+        <translation>バージョン番号のビルド番号が指定されていません。</translation>
     </message>
 </context>
 </TS>
