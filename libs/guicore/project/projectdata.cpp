@@ -3,6 +3,7 @@
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "cgnsfileentry.h"
 #include "cgnsfilelist.h"
 #include "projectdata.h"
 #include "projectmainfile.h"
@@ -436,9 +437,9 @@ ERROR:
 
 bool ProjectData::hasHugeCgns() const
 {
-	QList<CgnsFileList::CgnsFileEntry*> cgnsFiles = m_mainfile->cgnsFileList()->cgnsFiles();
+	QList<CgnsFileEntry*> cgnsFiles = m_mainfile->cgnsFileList()->cgnsFiles();
 	for (int i = 0; i < cgnsFiles.count(); ++i) {
-		CgnsFileList::CgnsFileEntry* entry = cgnsFiles.at(i);
+		CgnsFileEntry* entry = cgnsFiles.at(i);
 		QString filename = workCgnsFileName(entry->filename());
 		QFileInfo finfo(filename);
 		if (finfo.size() > 2000000000) {

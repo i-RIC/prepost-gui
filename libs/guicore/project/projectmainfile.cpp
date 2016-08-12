@@ -4,6 +4,7 @@
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitionabstract.h"
 #include "backgroundimageinfo.h"
+#include "cgnsfileentry.h"
 #include "cgnsfilelist.h"
 #include "measured/measureddata.h"
 #include "measured/measureddatacsvimporter.h"
@@ -113,7 +114,7 @@ void ProjectMainFile::createDefaultCgnsFile()
 
 bool ProjectMainFile::switchCgnsFile(const QString& name)
 {
-	CgnsFileList::CgnsFileEntry* c = m_cgnsFileList->current();
+	CgnsFileEntry* c = m_cgnsFileList->current();
 	m_cgnsFileList->setCurrent(name);
 
 	// save data to the old cgns file.

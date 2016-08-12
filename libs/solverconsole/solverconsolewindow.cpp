@@ -5,6 +5,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/project/cgnsfileentry.h>
 #include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>

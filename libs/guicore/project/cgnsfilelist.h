@@ -7,43 +7,24 @@
 #include <QMap>
 #include <QDir>
 
+class CgnsFileEntry;
+
 /// This class handles the list of CGNS files in the project.
 class GUICOREDLL_EXPORT CgnsFileList : public ProjectDataItem
 {
 	Q_OBJECT
 
 public:
-	/// This class handles the information about a CGNS file in the project.
-	class CgnsFileEntry : public ProjectDataItem
-	{
-
-	public:
-		/// Constructor
-		CgnsFileEntry(ProjectDataItem* parent) : ProjectDataItem(parent) {}
-		/// Constructor
-		CgnsFileEntry(const QString& filename, ProjectDataItem* parent) : ProjectDataItem(parent) {
-			m_filename = filename;
-		}
-		/// file name (".cgn" is not included. For example "calculation1".
-		const QString& filename() {return m_filename;}
-		/// Comment for this calculation
-		const QString& comment() {return m_comment;}
-
-	protected:
-		void doLoadFromProjectMainFile(const QDomNode& node) override;
-		void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
-	private:
-		QString m_filename;
-		QString m_comment;
-	};
 	CgnsFileList(ProjectDataItem* parent);
 	~CgnsFileList();
 
 	QList<CgnsFileEntry*> cgnsFiles() const;
+
 	CgnsFileEntry* current() const;
-	bool exists(const QString& name) const;
 	CgnsFileEntry* setCurrent(const QString& name);
+
+	bool exists(const QString& name) const;
+
 	/// Add new cgns file.
 	void add(const QString& name);
 	/// Remove existing cgns file.
@@ -57,7 +38,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 signals:
-	void cgnsFilesUpdated(QList<CgnsFileList::CgnsFileEntry*>);
+	void cgnsFilesUpdated(QList<CgnsFileEntry*>);
 	void cgnsFileSwitched(QString newname);
 
 private:

@@ -1,14 +1,15 @@
 #ifndef PREPROCESSORWINDOWACTIONMANAGER_H
 #define PREPROCESSORWINDOWACTIONMANAGER_H
 
-#include <guicore/project/cgnsfilelist.h>
-
 #include <QList>
 #include <QObject>
+
+class CgnsFileEntry;
+class PreProcessorWindow;
+
 class QAction;
 class QMenu;
 class QToolBar;
-class PreProcessorWindow;
 
 /// This class manages the actions on iRIC pre-processor window,
 /// that is an instance of PreProcessorWindow.
@@ -27,7 +28,7 @@ public:
 	void connectWithDataModel();
 
 private slots:
-	void informCgnsListUpdate(const QList<CgnsFileList::CgnsFileEntry*>& list);
+	void informCgnsListUpdate(const QList<CgnsFileEntry*>& list);
 
 private:
 	/// Initialization

@@ -35,6 +35,7 @@
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/hydraulicdata/hydraulicdataimporter.h>
+#include <guicore/project/cgnsfileentry.h>
 #include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -167,7 +168,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 	// now it's loaded. find how many cgns files are included.
-	QList<CgnsFileList::CgnsFileEntry*> list = tmpProj.mainfile()->cgnsFileList()->cgnsFiles();
+	QList<CgnsFileEntry*> list = tmpProj.mainfile()->cgnsFileList()->cgnsFiles();
 	if (list.count() == 1) {
 		// automatically use the only cgns file.
 		QString fullname = tmpProj.workCgnsFileName(list.first()->filename());

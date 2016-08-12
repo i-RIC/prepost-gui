@@ -1,3 +1,4 @@
+#include "cgnsfileentry.h"
 #include "cgnsfilelist.h"
 
 #include <QDomElement>
@@ -11,66 +12,21 @@ CgnsFileList::CgnsFileList(ProjectDataItem* parent) :
 CgnsFileList::~CgnsFileList()
 {}
 
-void CgnsFileList::CgnsFileEntry::doLoadFromProjectMainFile(const QDomNode& node)
+QList<CgnsFileEntry*> CgnsFileList::cgnsFiles() const
 {
-	QDomElement element = node.toElement();
-	m_filename = element.attribute("filename");
-	m_comment = element.attribute("comment");
-}
-void CgnsFileList::CgnsFileEntry::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	writer.writeAttribute("filename", m_filename);
-	writer.writeAttribute("comment", m_comment);
-}
-
-void CgnsFileList::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_cgnsFiles.clear();
-	// All child nodes are CgnsFileEntry nodes.
-	QDomNode child = node.firstChild();
-	while (! child.isNull()) {
-		CgnsFileEntry* entry = new CgnsFileEntry(this);
-		entry->loadFromProjectMainFile(child);
-		m_cgnsFiles.insert(entry->filename(), entry);
-		child = child.nextSibling();
-	}
-	QDomElement elem = node.toElement();
-	QString curr = elem.attribute("current");
-	if (m_cgnsFiles.contains(curr)) {
-		m_current = m_cgnsFiles.value(curr);
-	}
-}
-void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	if (m_current != nullptr) {
-		writer.writeAttribute("current", m_current->filename());
-	}
-	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
-		writer.writeStartElement("CgnsFileEntry");
-		(*it)->saveToProjectMainFile(writer);
-		writer.writeEndElement();
-	}
-}
-QList<CgnsFileList::CgnsFileEntry*> CgnsFileList::cgnsFiles() const
-{
-	QList<CgnsFileList::CgnsFileEntry*> ret;
+	QList<CgnsFileEntry*> ret;
 	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
 		ret.push_back(*it);
 	}
 	return ret;
 }
 
-CgnsFileList::CgnsFileEntry* CgnsFileList::current() const
+CgnsFileEntry* CgnsFileList::current() const
 {
 	return m_current;
 }
 
-bool CgnsFileList::exists(const QString& name) const
-{
-	return m_cgnsFiles.contains(name);
-}
-
-CgnsFileList::CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
+CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
 {
 	if (m_cgnsFiles.contains(name) && (m_current == nullptr || m_current->filename() != name)) {
 		m_current = m_cgnsFiles.value(name);
@@ -78,6 +34,11 @@ CgnsFileList::CgnsFileEntry* CgnsFileList::setCurrent(const QString& name)
 		return m_current;
 	}
 	return nullptr;
+}
+
+bool CgnsFileList::exists(const QString& name) const
+{
+	return m_cgnsFiles.contains(name);
 }
 
 void CgnsFileList::add(const QString& name)
@@ -117,4 +78,34 @@ QString CgnsFileList::proposeFilename()
 		++i;
 	}
 	return name.arg(i);
+}
+
+void CgnsFileList::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_cgnsFiles.clear();
+	// All child nodes are CgnsFileEntry nodes.
+	QDomNode child = node.firstChild();
+	while (! child.isNull()) {
+		CgnsFileEntry* entry = new CgnsFileEntry(this);
+		entry->loadFromProjectMainFile(child);
+		m_cgnsFiles.insert(entry->filename(), entry);
+		child = child.nextSibling();
+	}
+	QDomElement elem = node.toElement();
+	QString curr = elem.attribute("current");
+	if (m_cgnsFiles.contains(curr)) {
+		m_current = m_cgnsFiles.value(curr);
+	}
+}
+
+void CgnsFileList::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	if (m_current != nullptr) {
+		writer.writeAttribute("current", m_current->filename());
+	}
+	for (auto it = m_cgnsFiles.begin(); it != m_cgnsFiles.end(); ++it) {
+		writer.writeStartElement("CgnsFileEntry");
+		(*it)->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 }

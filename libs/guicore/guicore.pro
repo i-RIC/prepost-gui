@@ -226,6 +226,7 @@ HEADERS += guicore_global.h \
            postcontainer/postzonepointseriesdatacontainer.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
+           project/cgnsfileentry.h \
            project/cgnsfilelist.h \
            project/colorsource.h \
            project/offsetsettingdialog.h \
@@ -357,6 +358,7 @@ HEADERS += guicore_global.h \
            project/measured/measureddatacsvimporter.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
+           project/private/cgnsfileentry_impl.h \
            project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
            project/private/projectdatamovethread.h \
@@ -513,6 +515,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
+           project/cgnsfileentry.cpp \
            project/cgnsfilelist.cpp \
            project/colorsource.cpp \
            project/offsetsettingdialog.cpp \

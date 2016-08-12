@@ -2,6 +2,7 @@
 #include "preprocessorwindow.h"
 #include "preprocessorwindowactionmanager.h"
 
+#include <guicore/project/cgnsfilelist.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -52,10 +53,10 @@ void PreProcessorWindowActionManager::connectWithDataModel()
 	connect(calcCondImportAction, SIGNAL(triggered()), model, SLOT(importCalcCondition()));
 	connect(calcCondExportAction, SIGNAL(triggered()), model, SLOT(exportCalcCondition()));
 
-	connect(model->projectData()->mainfile()->cgnsFileList(), SIGNAL(cgnsFilesUpdated(QList<CgnsFileList::CgnsFileEntry*>)), this, SLOT(informCgnsListUpdate(QList<CgnsFileList::CgnsFileEntry*>)));
+	connect(model->projectData()->mainfile()->cgnsFileList(), SIGNAL(cgnsFilesUpdated(QList<CgnsFileEntry*>)), this, SLOT(informCgnsListUpdate(QList<CgnsFileEntry*>)));
 }
 
-void PreProcessorWindowActionManager::informCgnsListUpdate(const QList<CgnsFileList::CgnsFileEntry*>& /*list*/)
+void PreProcessorWindowActionManager::informCgnsListUpdate(const QList<CgnsFileEntry*>& /*list*/)
 {
 //	calcCondImportFromCase->setEnabled(list.count() > 1);
 }
