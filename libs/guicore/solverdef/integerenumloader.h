@@ -5,9 +5,6 @@
 
 class IntegerEnumLoader : public EnumLoaderT<int>
 {
-public:
-	virtual ~IntegerEnumLoader();
-
 private:
 	int fromStr(const QString& str) const override;
 };

@@ -5,9 +5,6 @@
 
 class RealEnumLoader : public EnumLoaderT<double>
 {
-public:
-	virtual ~RealEnumLoader();
-
 private:
 	double fromStr(const QString& str) const override;
 };
