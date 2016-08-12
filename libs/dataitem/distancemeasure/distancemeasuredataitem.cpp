@@ -20,7 +20,6 @@
 #include <QMenu>
 #include <QMouseEvent>
 #include <QUndoCommand>
-#include <QVector2D>
 #include <QXmlStreamWriter>
 
 #include <vtkActor2DCollection.h>
@@ -80,8 +79,8 @@ DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWi
 DistanceMeasureDataItem::~DistanceMeasureDataItem()
 {
 	vtkRenderer* r = renderer();
-	r->RemoveActor(m_pointsActor);
-	r->RemoveActor(m_lineActor);
+	r->RemoveActor(m_lineActor.pointsActor());
+	r->RemoveActor(m_lineActor.lineActor());
 	r->RemoveActor2D(m_labelActor);
 
 	delete m_rightClickingMenu;
@@ -89,51 +88,19 @@ DistanceMeasureDataItem::~DistanceMeasureDataItem()
 
 void DistanceMeasureDataItem::setupActors()
 {
-	m_pointsActor = vtkSmartPointer<vtkActor>::New();
-	m_pointsActor->GetProperty()->SetLighting(false);
-	m_pointsActor->GetProperty()->SetPointSize(7);
-	m_pointsActor->GetProperty()->SetColor(0, 0, 0);
-	m_pointsActor->SetVisibility(0);
-	renderer()->AddActor(m_pointsActor);
+	vtkProperty* pointsProp = m_lineActor.pointsActor()->GetProperty();
+	pointsProp->SetLighting(false);
+	pointsProp->SetPointSize(7);
+	pointsProp->SetColor(0, 0, 0);
+	m_lineActor.pointsActor()->SetVisibility(0);
+	renderer()->AddActor(m_lineActor.pointsActor());
 
-	m_lineActor = vtkSmartPointer<vtkActor>::New();
-	m_lineActor->GetProperty()->SetLighting(false);
-	m_lineActor->GetProperty()->SetLineWidth(1);
-	m_lineActor->GetProperty()->SetColor(0, 0, 0);
-	m_lineActor->SetVisibility(0);
-	renderer()->AddActor(m_lineActor);
-
-	m_points = vtkSmartPointer<vtkPoints>::New();
-	m_line = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_dots = vtkSmartPointer<vtkUnstructuredGrid>::New();
-
-	vtkSmartPointer<vtkDataSetMapper> mapper;
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_dots);
-	m_pointsActor->SetMapper(mapper);
-
-	mapper = vtkSmartPointer<vtkDataSetMapper>::New();
-	mapper->SetInputData(m_line);
-	m_lineActor->SetMapper(mapper);
-
-	// just for test
-	m_points->InsertNextPoint(0, 0, 0);
-	m_points->InsertNextPoint(10, 0, 0);
-
-	m_dots->SetPoints(m_points);
-	vtkVertex* v = vtkVertex::New();
-	v->GetPointIds()->SetId(0, 0);
-	m_dots->InsertNextCell(v->GetCellType(), v->GetPointIds());
-	v->GetPointIds()->SetId(0, 1);
-	m_dots->InsertNextCell(v->GetCellType(), v->GetPointIds());
-	v->Delete();
-
-	m_line->SetPoints(m_points);
-	vtkLine* l = vtkLine::New();
-	l->GetPointIds()->SetId(0, 0);
-	l->GetPointIds()->SetId(1, 1);
-	m_line->InsertNextCell(l->GetCellType(), l->GetPointIds());
-	l->Delete();
+	vtkProperty* lineProp = m_lineActor.lineActor()->GetProperty();
+	lineProp->SetLighting(false);
+	lineProp->SetLineWidth(1);
+	lineProp->SetColor(0, 0, 0);
+	m_lineActor.lineActor()->SetVisibility(0);
+	renderer()->AddActor(m_lineActor.lineActor());
 
 	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
 	m_labelActor->GetProperty()->SetColor(0, 0, 0);
@@ -144,7 +111,7 @@ void DistanceMeasureDataItem::setupActors()
 	m_label = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	m_labelPoints->InsertNextPoint(5, 0, 0);
 	m_label->SetPoints(m_labelPoints);
-	v = vtkVertex::New();
+	vtkVertex* v = vtkVertex::New();
 	v->GetPointIds()->SetId(0, 0);
 	m_label->InsertNextCell(v->GetCellType(), v->GetPointIds());
 	v->Delete();
@@ -175,8 +142,8 @@ void DistanceMeasureDataItem::updateZDepthRangeItemCount()
 
 void DistanceMeasureDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_pointsActor->SetPosition(0, 0, range.max());
-	m_lineActor->SetPosition(0, 0, range.max());
+	m_lineActor.pointsActor()->SetPosition(0, 0, range.max());
+	m_lineActor.lineActor()->SetPosition(0, 0, range.max());
 }
 
 void DistanceMeasureDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -311,8 +278,10 @@ void DistanceMeasureDataItem::setPoints(const QVector2D& v1, const QVector2D& v2
 
 void DistanceMeasureDataItem::updateActorSettings()
 {
-	m_points->SetPoint(0, m_point1.x(), m_point1.y(), 0);
-	m_points->SetPoint(1, m_point2.x(), m_point2.y(), 0);
+	std::vector<QPointF> line;
+	line.push_back(QPointF(m_point1.x(), m_point1.y()));
+	line.push_back(QPointF(m_point2.x(), m_point2.y()));
+	m_lineActor.setLine(line);
 
 	QVector2D mid = (m_point1 + m_point2) * 0.5;
 	m_labelPoints->SetPoint(0, mid.x(), mid.y(), 0);
@@ -363,30 +332,28 @@ void DistanceMeasureDataItem::updateActorSettings()
 	txtProp->SetFontSize(m_fontSize);
 	txtProp->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
 
-	m_pointsActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
-	m_pointsActor->GetProperty()->SetPointSize(m_markerSize);
-	m_lineActor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+	m_lineActor.pointsActor()->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+	m_lineActor.pointsActor()->GetProperty()->SetPointSize(m_markerSize);
+	m_lineActor.lineActor()->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
 
-	m_pointsActor->VisibilityOff();
-	m_lineActor->VisibilityOff();
+	m_lineActor.pointsActor()->VisibilityOff();
+	m_lineActor.lineActor()->VisibilityOff();
 	m_labelActor->VisibilityOff();
-	actorCollection()->RemoveItem(m_pointsActor);
-	actorCollection()->RemoveItem(m_lineActor);
+	actorCollection()->RemoveItem(m_lineActor.pointsActor());
+	actorCollection()->RemoveItem(m_lineActor.lineActor());
 	actor2DCollection()->RemoveItem(m_labelActor);
 
 	if (m_defined) {
 		if (m_showMarkers) {
-			actorCollection()->AddItem(m_pointsActor);
+			actorCollection()->AddItem(m_lineActor.pointsActor());
 		}
-		actorCollection()->AddItem(m_lineActor);
+		actorCollection()->AddItem(m_lineActor.lineActor());
 		if (m_showLabel) {
 			actor2DCollection()->AddItem(m_labelActor);
 		}
 	}
 
 	updateVisibilityWithoutRendering();
-
-	m_points->Modified();
 	m_labelPoints->Modified();
 }
 
@@ -394,14 +361,10 @@ void DistanceMeasureDataItem::updateActorSettings()
 QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 {
 	QVector2D v1, v2;
-	double tmpv[3];
 
-	m_points->GetPoint(0, tmpv);
-	v1.setX(tmpv[0]);
-	v1.setY(tmpv[1]);
-	m_points->GetPoint(1, tmpv);
-	v2.setX(tmpv[0]);
-	v2.setY(tmpv[1]);
+	std::vector<QPointF> line = m_lineActor.line();
+	v1 = QVector2D(line.at(0).x(), line.at(0).y());
+	v2 = QVector2D(line.at(1).x(), line.at(1).y());
 
 	DistanceMeasureCopyPropertyDialog* dialog = new DistanceMeasureCopyPropertyDialog(parent);
 	dialog->setName(m_standardItem->text().trimmed());

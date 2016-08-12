@@ -4,6 +4,7 @@
 #include "distancemeasure_api.h"
 #include "distancemeasurecopypropertydialog.h"
 
+#include <guibase/vtktool/vtklineactor.h>
 #include <guicore/datamodel/graphicswindowdataitem.h>
 
 #include <vtkSmartPointer.h>
@@ -77,13 +78,10 @@ private:
 	void updateMouseCursor();
 	void updateMouseCursor(VTKGraphicsView* v);
 
-	vtkSmartPointer<vtkPoints> m_points;
+	vtkLineActor m_lineActor;
+
 	vtkSmartPointer<vtkPoints> m_labelPoints;
-	vtkSmartPointer<vtkUnstructuredGrid> m_dots;
-	vtkSmartPointer<vtkUnstructuredGrid> m_line;
 	vtkSmartPointer<vtkUnstructuredGrid> m_label;
-	vtkSmartPointer<vtkActor> m_pointsActor;
-	vtkSmartPointer<vtkActor> m_lineActor;
 	vtkSmartPointer<vtkActor2D> m_labelActor;
 	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
 	vtkSmartPointer<vtkStringArray> m_labelArray;
