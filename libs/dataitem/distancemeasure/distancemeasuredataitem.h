@@ -24,16 +24,6 @@ class DISTANCEMEASURE_API DistanceMeasureDataItem : public GraphicsWindowDataIte
 	Q_OBJECT
 
 public:
-	enum MouseEventMode {
-		meNormal,
-		meBeforeDefining,
-		meDefining,
-		meTranslate,
-		meTranslatePrepare,
-		meMoveVertex,
-		meMoveVertexPrepare
-	};
-
 	DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent);
 	~DistanceMeasureDataItem();
 
@@ -72,32 +62,19 @@ private:
 	void updateMouseCursor();
 	void updateMouseCursor(VTKGraphicsView* v);
 
-	vtkLabel2DActor m_labelActor;
-	vtkLineActor m_lineActor;
-
-	DistanceMeasureSetting m_setting;
-
-	MouseEventMode m_mouseEventMode;
-	bool m_shiftPressed;
-	int m_dragPointTarget;
-
-	QPoint m_dragStartPoint;
-	QPointF m_dragStartPoint1;
-	QPointF m_dragStartPoint2;
-
-	QMenu* m_rightClickingMenu;
-	QAction* m_redefineAction;
-	QAction* m_propertyAction;
-
-	QPixmap m_movePointPixmap;
-	QCursor m_movePointCursor;
-
 private:
+	class Impl;
+	Impl* impl;
+
 	class DefineCommand;
 	class MoveVertexCommand;
 	class RedefineCommand;
 	class SetSettingCommand;
 	class TranslateCommand;
 };
+
+#ifdef _DEBUG
+	#include "private/distancemeasuredataitem_impl.h"
+#endif // _DEBUG
 
 #endif // DISTANCEMEASUREDATAITEM_H

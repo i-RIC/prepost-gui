@@ -7,18 +7,18 @@ DistanceMeasureDataItem::RedefineCommand::RedefineCommand(DistanceMeasureDataIte
 
 void DistanceMeasureDataItem::RedefineCommand::redo()
 {
-	m_item->m_mouseEventMode = DistanceMeasureDataItem::meBeforeDefining;
+	m_item->impl->m_mouseEventMode = Impl::meBeforeDefining;
 	m_item->updateMouseCursor();
 
-	m_item->m_setting.defined = false;
+	m_item->impl->m_setting.defined = false;
 	m_item->updateActorSettings();
 }
 
 void DistanceMeasureDataItem::RedefineCommand::undo()
 {
-	m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
+	m_item->impl->m_mouseEventMode = Impl::meNormal;
 	m_item->updateMouseCursor();
 
-	m_item->m_setting.defined = true;
+	m_item->impl->m_setting.defined = true;
 	m_item->updateActorSettings();
 }

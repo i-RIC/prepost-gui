@@ -73,6 +73,7 @@ HEADERS += distancemeasure_api.h \
            distancemeasuregroupdataitem.h \
            distancemeasuresetting.h \
            private/distancemeasuredataitem_definecommand.h \
+           private/distancemeasuredataitem_impl.h \
            private/distancemeasuredataitem_movevertexcommand.h \
            private/distancemeasuredataitem_redefinecommand.h \
            private/distancemeasuredataitem_setsettingcommand.h \

@@ -2,6 +2,7 @@
 #define DISTANCEMEASUREDATAITEM_MOVEVERTEXCOMMAND_H
 
 #include "../distancemeasuredataitem.h"
+#include "distancemeasuredataitem_impl.h"
 
 #include <QUndoCommand>
 
@@ -17,7 +18,7 @@ public:
 	bool mergeWith(const QUndoCommand* other) override;
 
 private:
-	void apply(const QPointF& p, MouseEventMode mode);
+	void apply(const QPointF& p, Impl::MouseEventMode mode);
 
 	int m_point;
 	QPointF m_newPoint;

@@ -5,7 +5,7 @@ DistanceMeasureDataItem::SetSettingCommand::SetSettingCommand(const QString& nam
 	m_newName {name},
 	m_newSetting {setting},
 	m_oldName {item->standardItem()->text()},
-	m_oldSetting {item->m_setting},
+	m_oldSetting{ item->impl->m_setting },
 	m_item {item}
 {}
 
@@ -14,7 +14,7 @@ void DistanceMeasureDataItem::SetSettingCommand::redo()
 	m_item->m_isCommandExecuting = true;
 	m_item->standardItem()->setText(m_newName);
 	m_item->m_isCommandExecuting = false;
-	m_item->m_setting = m_newSetting;
+	m_item->impl->m_setting = m_newSetting;
 
 	m_item->updateActorSettings();
 	m_item->renderGraphicsView();
@@ -25,7 +25,7 @@ void DistanceMeasureDataItem::SetSettingCommand::undo()
 	m_item->m_isCommandExecuting = true;
 	m_item->standardItem()->setText(m_oldName);
 	m_item->m_isCommandExecuting = false;
-	m_item->m_setting = m_oldSetting;
+	m_item->impl->m_setting = m_oldSetting;
 
 	m_item->updateActorSettings();
 	m_item->renderGraphicsView();

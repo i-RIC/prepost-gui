@@ -10,24 +10,24 @@ DistanceMeasureDataItem::MoveVertexCommand::MoveVertexCommand(int point, const Q
 	m_item {item}
 {
 	if (point == 1) {
-		m_oldPoint = m_item->m_setting.point1;
+		m_oldPoint = m_item->impl->m_setting.point1;
 	} else if (point == 2) {
-		m_oldPoint = m_item->m_setting.point2;
+		m_oldPoint = m_item->impl->m_setting.point2;
 	}
 }
 
 void DistanceMeasureDataItem::MoveVertexCommand::redo()
 {
-	MouseEventMode mode = meMoveVertex;
+	Impl::MouseEventMode mode = Impl::meMoveVertex;
 	if (m_finish) {
-		mode = meNormal;
+		mode = Impl::meNormal;
 	}
 	apply(m_newPoint, mode);
 }
 
 void DistanceMeasureDataItem::MoveVertexCommand::undo()
 {
-	apply(m_oldPoint, meNormal);
+	apply(m_oldPoint, Impl::meNormal);
 }
 
 int DistanceMeasureDataItem::MoveVertexCommand::id() const
@@ -47,14 +47,14 @@ bool DistanceMeasureDataItem::MoveVertexCommand::mergeWith(const QUndoCommand* o
 	return true;
 }
 
-void DistanceMeasureDataItem::MoveVertexCommand::apply(const QPointF& p, MouseEventMode mode)
+void DistanceMeasureDataItem::MoveVertexCommand::apply(const QPointF& p, Impl::MouseEventMode mode)
 {
 	if (m_point == 1) {
-		m_item->m_setting.point1 = p;
+		m_item->impl->m_setting.point1 = p;
 	} else if (m_point == 2) {
-		m_item->m_setting.point2 = p;
+		m_item->impl->m_setting.point2 = p;
 	}
-	m_item->m_mouseEventMode = mode;
+	m_item->impl->m_mouseEventMode = mode;
 
 	m_item->updateMouseCursor();
 	m_item->updateActorSettings();

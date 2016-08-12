@@ -6,8 +6,8 @@ DistanceMeasureDataItem::TranslateCommand::TranslateCommand(const QPointF& p1, c
 	QUndoCommand(DistanceMeasureDataItem::tr("Translate Distance Measure")),
 	m_newPoint1 {p1},
 	m_newPoint2 {p2},
-	m_oldPoint1 {item->m_setting.point1},
-	m_oldPoint2 {item->m_setting.point2},
+	m_oldPoint1{ item->impl->m_setting.point1 },
+	m_oldPoint2{ item->impl->m_setting.point2 },
 	m_finish {finish},
 	m_item {item}
 {}
@@ -17,9 +17,9 @@ void DistanceMeasureDataItem::TranslateCommand::redo()
 	applyPoints(m_newPoint1, m_newPoint2);
 
 	if (m_finish) {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
+		m_item->impl->m_mouseEventMode = Impl::meNormal;
 	} else {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meTranslate;
+		m_item->impl->m_mouseEventMode = Impl::meTranslate;
 	}
 	m_item->updateMouseCursor();
 }
@@ -28,7 +28,7 @@ void DistanceMeasureDataItem::TranslateCommand::undo()
 {
 	applyPoints(m_oldPoint1, m_oldPoint2);
 
-	m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
+	m_item->impl->m_mouseEventMode = Impl::meNormal;
 	m_item->updateMouseCursor();
 }
 
@@ -52,8 +52,8 @@ bool DistanceMeasureDataItem::TranslateCommand::mergeWith(const QUndoCommand *ot
 
 void DistanceMeasureDataItem::TranslateCommand::applyPoints(const QPointF& p1, const QPointF& p2)
 {
-	m_item->m_setting.point1 = p1;
-	m_item->m_setting.point2 = p2;
+	m_item->impl->m_setting.point1 = p1;
+	m_item->impl->m_setting.point2 = p2;
 
 	m_item->updateActorSettings();
 }
