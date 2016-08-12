@@ -41,13 +41,12 @@ public:
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
-protected:
+private:
 	void innerUpdateZScale(double zscale) override;
 	void updateVisibility(bool visible) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
 	void setupActors();
 	void updateActorSettings();
 	void setupScalarBarSetting();

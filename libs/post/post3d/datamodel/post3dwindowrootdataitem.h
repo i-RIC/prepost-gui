@@ -21,32 +21,25 @@ class Post3dWindowRootDataItem : public GraphicsWindowRootDataItem
 	Q_OBJECT
 
 public:
-	/// Constructor
 	Post3dWindowRootDataItem(Post3dWindow* window, ProjectDataItem* parent);
-	/// Destructor
 	~Post3dWindowRootDataItem();
 
-	/// Background image data item
-//	Post3dWindowBackgroundImagesDataItem* backgroundImagesDataItem(){
-//		return m_backgroundImagesDataItem;
-//	}
 	void setupStandardModel(QStandardItemModel* model);
-	const QList<Post3dWindowGridTypeDataItem*>& gridTypeDataItems() const {return m_gridTypeDataItems;}
+	const QList<Post3dWindowGridTypeDataItem*>& gridTypeDataItems() const;
 	Post3dWindowGridTypeDataItem* gridTypeDataItem(const std::string& name) const;
 	Post3dWindowZoneDataItem* zoneDataItem(const std::string& name);
-	PostTitleDataItem* titleDataItem() const {return m_titleDataItem;}
-	PostTimeDataItem* timeDataItem() const {return m_timeDataItem;}
+
+	PostTitleDataItem* titleDataItem() const;
+	PostTimeDataItem* timeDataItem() const;
 
 private slots:
 	void updateZoneList();
 	void update();
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-private:
-//	Post3dWindowBackgroundImagesDataItem* m_backgroundImagesDataItem;
 	QList<Post3dWindowGridTypeDataItem*> m_gridTypeDataItems;
 	PostTitleDataItem* m_titleDataItem;
 	PostTimeDataItem* m_timeDataItem;

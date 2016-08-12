@@ -92,6 +92,71 @@ void Post3dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_axesDataItem->standardItem());
 }
 
+const QList<Post3dWindowGridTypeDataItem*>& Post3dWindowRootDataItem::gridTypeDataItems() const
+{
+	return m_gridTypeDataItems;
+}
+
+Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const std::string& name) const
+{
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		if ((*it)->name() == name) {return *it;}
+	}
+	return nullptr;
+}
+
+Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const std::string& name)
+{
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		Post3dWindowGridTypeDataItem* gtItem = *it;
+		Post3dWindowZoneDataItem* i = gtItem->zoneData(name);
+		if (i != nullptr) {return i;}
+	}
+	return nullptr;
+}
+
+PostTitleDataItem* Post3dWindowRootDataItem::titleDataItem() const
+{
+	return m_titleDataItem;
+}
+
+PostTimeDataItem* Post3dWindowRootDataItem::timeDataItem() const
+{
+	return m_timeDataItem;
+}
+
+void Post3dWindowRootDataItem::updateZoneList()
+{
+	// When zone list is updated, post3d window used to update tree structure.
+	// But, because of this, post3d window settings are all discarded every time
+	// when user starts solver execution. so, it is removed now.
+	/*
+		dataModel()->itemModel()->blockSignals(true);
+		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
+		{
+			(*it)->setupZoneDataItems();
+		}
+		dataModel()->itemModel()->blockSignals(false);
+		dataModel()->graphicsView()->setActiveDataItem(this);
+		updateItemMap();
+		updateZDepthRangeItemCount();
+		//+++++
+		//assignActorZValues(m_zDepthRange);
+		//+++++
+		dataModel()->objectBrowserView()->expandAll();
+		dataModel()->fit();
+	*/
+}
+
+void Post3dWindowRootDataItem::update()
+{
+	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
+		(*it)->update();
+	}
+	m_timeDataItem->update();
+	renderGraphicsView();
+}
+
 void Post3dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
@@ -133,52 +198,3 @@ void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
-Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const std::string& name) const
-{
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		if ((*it)->name() == name) {return *it;}
-	}
-	return nullptr;
-}
-
-void Post3dWindowRootDataItem::updateZoneList()
-{
-	// When zone list is updated, post3d window used to update tree structure.
-	// But, because of this, post3d window settings are all discarded every time
-	// when user starts solver execution. so, it is removed now.
-	/*
-		dataModel()->itemModel()->blockSignals(true);
-		for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it)
-		{
-			(*it)->setupZoneDataItems();
-		}
-		dataModel()->itemModel()->blockSignals(false);
-		dataModel()->graphicsView()->setActiveDataItem(this);
-		updateItemMap();
-		updateZDepthRangeItemCount();
-		//+++++
-		//assignActorZValues(m_zDepthRange);
-		//+++++
-		dataModel()->objectBrowserView()->expandAll();
-		dataModel()->fit();
-	*/
-}
-
-void Post3dWindowRootDataItem::update()
-{
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		(*it)->update();
-	}
-	m_timeDataItem->update();
-	renderGraphicsView();
-}
-
-Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const std::string& name)
-{
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		Post3dWindowGridTypeDataItem* gtItem = *it;
-		Post3dWindowZoneDataItem* i = gtItem->zoneData(name);
-		if (i != nullptr) {return i;}
-	}
-	return nullptr;
-}
