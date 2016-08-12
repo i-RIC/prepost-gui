@@ -20,9 +20,9 @@ DistanceMeasureCopyPropertyDialog::~DistanceMeasureCopyPropertyDialog()
 	delete ui;
 }
 
-void DistanceMeasureCopyPropertyDialog::setShowLabel(bool show)
+QString DistanceMeasureCopyPropertyDialog::name() const
 {
-	ui->showLabelCheckBox->setChecked(show);
+	return ui->nameLineEdit->text();
 }
 
 void DistanceMeasureCopyPropertyDialog::setName(const QString& name)
@@ -30,17 +30,60 @@ void DistanceMeasureCopyPropertyDialog::setName(const QString& name)
 	ui->nameLineEdit->setText(name.trimmed());
 }
 
-void DistanceMeasureCopyPropertyDialog::setPoints(const QVector2D& v1, const QVector2D& v2)
+DistanceMeasureSetting DistanceMeasureCopyPropertyDialog::setting() const
 {
-	ui->startPointXEdit->setValue(v1.x());
-	ui->startPointYEdit->setValue(v1.y());
-	ui->endPointXEdit->setValue(v2.x());
-	ui->endPointYEdit->setValue(v2.y());
+	DistanceMeasureSetting ret = m_setting;
+
+	ret.point1 = QPointF(ui->startPointXEdit->value(), ui->startPointYEdit->value());
+	ret.point2 = QPointF(ui->endPointXEdit->value(), ui->endPointYEdit->value());
+
+	ret.showLabel = ui->showLabelCheckBox->isChecked();
+
+	if (ui->labelAutoRadioButton->isChecked()) {
+		ret.labelMode = DistanceMeasureSetting::Auto;
+	} else if (ui->labelCustomRadioButton->isChecked()) {
+		ret.labelMode = DistanceMeasureSetting::Custom;
+	}
+
+	if (ui->lpCenterTop->isChecked()) {
+		ret.labelPosition = vtkLabel2DActor::lpTopCenter;
+	} else if (ui->lpCenterBottom->isChecked()) {
+		ret.labelPosition = vtkLabel2DActor::lpBottomCenter;
+	} else if (ui->lpMiddleLeft->isChecked()) {
+		ret.labelPosition = vtkLabel2DActor::lpMiddleLeft;
+	} else if (ui->lpMiddleRight->isChecked()) {
+		ret.labelPosition = vtkLabel2DActor::lpMiddleRight;
+	}
+
+	ret.labelFontSize = ui->fontSizeSpinBox->value();
+	ret.customLabel = ui->customLabelLineEdit->text();
+
+	ret.showMarkers = ui->showMarkersCheckBox->isChecked();
+	ret.markerSize = ui->markerSizeSpinBox->value();
+
+	ret.color = ui->colorWidget->color();
+
+	return ret;
 }
 
-void DistanceMeasureCopyPropertyDialog::setLabelPosition(vtkLabel2DActor::LabelPosition pos)
+void DistanceMeasureCopyPropertyDialog::setSetting(const DistanceMeasureSetting& setting)
 {
-	switch (pos) {
+	m_setting = setting;
+
+	ui->startPointXEdit->setValue(setting.point1.value().x());
+	ui->startPointYEdit->setValue(setting.point1.value().y());
+	ui->endPointXEdit->setValue(setting.point2.value().x());
+	ui->endPointYEdit->setValue(setting.point2.value().y());
+
+	ui->showLabelCheckBox->setChecked(setting.showLabel);
+
+	if (setting.labelMode == DistanceMeasureSetting::Auto) {
+		ui->labelAutoRadioButton->setChecked(true);
+	} else {
+		ui->labelCustomRadioButton->setChecked(true);
+	}
+
+	switch (setting.labelPosition.value()) {
 	case vtkLabel2DActor::lpTopCenter:
 		ui->lpCenterTop->setChecked(true);
 		break;
@@ -56,125 +99,26 @@ void DistanceMeasureCopyPropertyDialog::setLabelPosition(vtkLabel2DActor::LabelP
 	default:
 		ui->lpCenterTop->setChecked(true);
 	}
-}
 
-void DistanceMeasureCopyPropertyDialog::setLabelMode(LabelMode lm)
-{
-	switch (lm) {
-	case lmAuto:
-		ui->labelAutoRadioButton->setChecked(true);
-		break;
-	case lmCustom:
-		ui->labelCustomRadioButton->setChecked(true);
-		break;
-	default:
-		ui->labelAutoRadioButton->setChecked(true);
-	}
-}
+	ui->fontSizeSpinBox->setValue(setting.labelFontSize);
+	ui->customLabelLineEdit->setText(setting.customLabel);
 
-void DistanceMeasureCopyPropertyDialog::setCustomlabel(const QString& label)
-{
-	ui->customLabelLineEdit->setText(label);
-}
+	ui->showMarkersCheckBox->setChecked(setting.showMarkers);
+	ui->markerSizeSpinBox->setValue(setting.markerSize);
 
-void DistanceMeasureCopyPropertyDialog::setLabelFontSize(int fontSize)
-{
-	ui->fontSizeSpinBox->setValue(fontSize);
-}
-
-void DistanceMeasureCopyPropertyDialog::setShowMarkers(bool show)
-{
-	ui->showMarkersCheckBox->setChecked(show);
-}
-
-void DistanceMeasureCopyPropertyDialog::setMarkerSize(int size)
-{
-	ui->markerSizeSpinBox->setValue(size);
-}
-
-void DistanceMeasureCopyPropertyDialog::setColor(QColor color)
-{
-	ui->colorWidget->setColor(color);
-}
-
-QString DistanceMeasureCopyPropertyDialog::name() const
-{
-	return ui->nameLineEdit->text();
-}
-
-QVector2D DistanceMeasureCopyPropertyDialog::point1() const
-{
-	QVector2D ret(ui->startPointXEdit->value(), ui->startPointYEdit->value());
-	return ret;
-}
-
-QVector2D DistanceMeasureCopyPropertyDialog::point2() const
-{
-	QVector2D ret(ui->endPointXEdit->value(), ui->endPointYEdit->value());
-	return ret;
-}
-
-bool DistanceMeasureCopyPropertyDialog::showLabel() const
-{
-	return ui->showLabelCheckBox->isChecked();
-}
-
-vtkLabel2DActor::LabelPosition DistanceMeasureCopyPropertyDialog::labelPosition() const
-{
-	if (ui->lpCenterTop->isChecked()) {
-		return vtkLabel2DActor::lpTopCenter;
-	} else if (ui->lpCenterBottom->isChecked()) {
-		return vtkLabel2DActor::lpBottomCenter;
-	} else if (ui->lpMiddleLeft->isChecked()) {
-		return vtkLabel2DActor::lpMiddleLeft;
-	} else if (ui->lpMiddleRight->isChecked()) {
-		return vtkLabel2DActor::lpMiddleRight;
-	}
-	return vtkLabel2DActor::lpTopCenter;
-}
-
-DistanceMeasureCopyPropertyDialog::LabelMode DistanceMeasureCopyPropertyDialog::labelMode() const
-{
-	if (ui->labelAutoRadioButton->isChecked()) {
-		return lmAuto;
-	} else if (ui->labelCustomRadioButton->isChecked()) {
-		return lmCustom;
-	}
-	return lmAuto;
-}
-
-QString DistanceMeasureCopyPropertyDialog::autoLabel() const
-{
-	QVector2D v = point2() - point1();
-	return QString::number(v.length());
-}
-
-QString DistanceMeasureCopyPropertyDialog::customLabel() const
-{
-	return ui->customLabelLineEdit->text();
-}
-
-int DistanceMeasureCopyPropertyDialog::fontSize() const
-{
-	return ui->fontSizeSpinBox->value();
-}
-
-bool DistanceMeasureCopyPropertyDialog::showMarkers() const
-{
-	return ui->showMarkersCheckBox->isChecked();
-}
-
-int DistanceMeasureCopyPropertyDialog::markerSize() const
-{
-	return ui->markerSizeSpinBox->value();
-}
-
-QColor DistanceMeasureCopyPropertyDialog::color() const
-{
-	return ui->colorWidget->color();
+	ui->colorWidget->setColor(setting.color);
 }
 
 void DistanceMeasureCopyPropertyDialog::updateAutoLabel()
 {
 	ui->autoLabelLabel->setText(autoLabel());
+}
+
+QString DistanceMeasureCopyPropertyDialog::autoLabel() const
+{
+	QVector2D v1(ui->startPointXEdit->value(), ui->startPointYEdit->value());
+	QVector2D v2(ui->endPointXEdit->value(), ui->endPointYEdit->value());
+
+	QVector2D v = v2 - v1;
+	return QString::number(v.length());
 }

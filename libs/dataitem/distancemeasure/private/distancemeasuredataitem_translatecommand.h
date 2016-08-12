@@ -9,7 +9,7 @@
 class DistanceMeasureDataItem::TranslateCommand : public QUndoCommand
 {
 public:
-	TranslateCommand(const QVector2D& p1, const QVector2D& p2, bool finish, DistanceMeasureDataItem* item);
+	TranslateCommand(const QPointF& p1, const QPointF& p2, bool finish, DistanceMeasureDataItem* item);
 
 	void redo() override;
 	void undo() override;
@@ -18,13 +18,13 @@ public:
 	bool mergeWith(const QUndoCommand *other) override;
 
 private:
-	void applyPoints(const QVector2D& p1, const QVector2D& p2);
+	void applyPoints(const QPointF& p1, const QPointF& p2);
 
-	QVector2D m_newPoint1;
-	QVector2D m_newPoint2;
+	QPointF m_newPoint1;
+	QPointF m_newPoint2;
 
-	QVector2D m_oldPoint1;
-	QVector2D m_oldPoint2;
+	QPointF m_oldPoint1;
+	QPointF m_oldPoint2;
 
 	bool m_finish;
 

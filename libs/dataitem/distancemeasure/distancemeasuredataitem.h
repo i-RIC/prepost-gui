@@ -2,6 +2,7 @@
 #define DISTANCEMEASUREDATAITEM_H
 
 #include "distancemeasure_api.h"
+#include "distancemeasuresetting.h"
 #include "distancemeasurecopypropertydialog.h"
 
 #include <guibase/vtktool/vtklabel2dactor.h>
@@ -48,7 +49,7 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 
-	void setPoints(const QVector2D& v1, const QVector2D& v2);
+	void setPoints(const QPointF& v1, const QPointF& v2);
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
@@ -63,8 +64,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	QVector2D updatePoint2ByShift(const QVector2D& v1, const QVector2D& v2);
-	void updateMouseEventMode(const QVector2D& v, VTKGraphicsView* view);
+	QPointF updatePoint2ByShift(const QPointF& v1, const QPointF& v2);
+	void updateMouseEventMode(const QPointF& v, VTKGraphicsView* view);
 	void setupActors();
 	void updateActorSettings();
 	QString autoLabel() const;
@@ -74,24 +75,15 @@ private:
 	vtkLabel2DActor m_labelActor;
 	vtkLineActor m_lineActor;
 
-	bool m_showLabel;
-	DistanceMeasureCopyPropertyDialog::LabelMode m_labelMode;
-	QString m_customLabel;
-	int m_fontSize;
-	QVector2D m_point1;
-	QVector2D m_point2;
-	bool m_showMarkers;
-	int m_markerSize;
-	QColor m_color;
+	DistanceMeasureSetting m_setting;
 
 	MouseEventMode m_mouseEventMode;
-	bool m_defined;
 	bool m_shiftPressed;
 	int m_dragPointTarget;
 
 	QPoint m_dragStartPoint;
-	QVector2D m_dragStartPoint1;
-	QVector2D m_dragStartPoint2;
+	QPointF m_dragStartPoint1;
+	QPointF m_dragStartPoint2;
 
 	QMenu* m_rightClickingMenu;
 	QAction* m_redefineAction;

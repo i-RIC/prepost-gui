@@ -2,42 +2,28 @@
 
 #include <guicore/misc/qundocommandhelper.h>
 
-DistanceMeasureDataItem::DefineCommand::DefineCommand(const QVector2D& v1, const QVector2D& v2, bool finish, DistanceMeasureDataItem* item) :
+DistanceMeasureDataItem::DefineCommand::DefineCommand(const QPointF& v1, const QPointF& v2, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Define Distance Measure")),
 	m_newPoint1 {v1},
 	m_newPoint2 {v2},
-	m_oldPoint1 {item->m_point1},
-	m_oldPoint2 {item->m_point2},
+	m_oldPoint1 {item->m_setting.point1},
+	m_oldPoint2 {item->m_setting.point2},
 	m_finish {finish},
 	m_item {item}
 {}
 
 void DistanceMeasureDataItem::DefineCommand::redo()
 {
-	m_item->m_point1 = m_newPoint1;
-	m_item->m_point2 = m_newPoint2;
+	DistanceMeasureDataItem::MouseEventMode mode = DistanceMeasureDataItem::meDefining;
 	if (m_finish) {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
-	} else {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meDefining;
+		mode = DistanceMeasureDataItem::meNormal;
 	}
-	m_item->m_defined = true;
-
-	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
+	apply(m_newPoint1, m_newPoint2, mode, true);
 }
 
 void DistanceMeasureDataItem::DefineCommand::undo()
 {
-	m_item->m_point1 = m_oldPoint1;
-	m_item->m_point2 = m_oldPoint2;
-	m_item->m_mouseEventMode = DistanceMeasureDataItem::meBeforeDefining;
-	m_item->m_defined = false;
-
-	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
+	apply(m_oldPoint1, m_oldPoint2, DistanceMeasureDataItem::meBeforeDefining, false);
 }
 
 int DistanceMeasureDataItem::DefineCommand::id() const
@@ -54,4 +40,16 @@ bool DistanceMeasureDataItem::DefineCommand::mergeWith(const QUndoCommand* other
 	m_newPoint2 = other2->m_newPoint2;
 	m_finish = other2->m_finish;
 	return true;
+}
+
+void DistanceMeasureDataItem::DefineCommand::apply(const QPointF& p1, const QPointF& p2, DistanceMeasureDataItem::MouseEventMode mode, bool defined)
+{
+	m_item->m_setting.point1 = p1;
+	m_item->m_setting.point2 = p2;
+	m_item->m_mouseEventMode = mode;
+	m_item->m_setting.defined = defined;
+
+	m_item->updateMouseCursor();
+	m_item->updateActorSettings();
+	m_item->renderGraphicsView();
 }

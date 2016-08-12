@@ -2,12 +2,12 @@
 
 #include <guicore/misc/qundocommandhelper.h>
 
-DistanceMeasureDataItem::TranslateCommand::TranslateCommand(const QVector2D& p1, const QVector2D& p2, bool finish, DistanceMeasureDataItem* item) :
+DistanceMeasureDataItem::TranslateCommand::TranslateCommand(const QPointF& p1, const QPointF& p2, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Translate Distance Measure")),
 	m_newPoint1 {p1},
 	m_newPoint2 {p2},
-	m_oldPoint1 {item->m_point1},
-	m_oldPoint2 {item->m_point2},
+	m_oldPoint1 {item->m_setting.point1},
+	m_oldPoint2 {item->m_setting.point2},
 	m_finish {finish},
 	m_item {item}
 {}
@@ -50,10 +50,10 @@ bool DistanceMeasureDataItem::TranslateCommand::mergeWith(const QUndoCommand *ot
 	return true;
 }
 
-void DistanceMeasureDataItem::TranslateCommand::applyPoints(const QVector2D& p1, const QVector2D& p2)
+void DistanceMeasureDataItem::TranslateCommand::applyPoints(const QPointF& p1, const QPointF& p2)
 {
-	m_item->m_point1 = p1;
-	m_item->m_point2 = p2;
+	m_item->m_setting.point1 = p1;
+	m_item->m_setting.point2 = p2;
 
 	m_item->updateActorSettings();
 }

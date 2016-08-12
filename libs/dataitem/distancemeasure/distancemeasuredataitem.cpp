@@ -35,29 +35,23 @@
 
 #define LABEL "Label"
 
-DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {name, QIcon(":/libs/guibase/images/iconPaper.png"), parent}
+namespace {
+
+QVector2D toVec(const QPointF v)
 {
-	m_isDeletable = true;
+	return QVector2D(v.x(), v.y());
+}
 
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
+} // namespace
 
-	m_standardItemCopy = m_standardItem->clone();
-
-	m_showLabel = true;
-	m_labelActor.setLabelPosition(vtkLabel2DActor::lpTopCenter);
-	m_labelMode = DistanceMeasureCopyPropertyDialog::lmAuto;
-	m_fontSize = 12;
-	m_customLabel = "";
-	m_showMarkers = true;
-	m_markerSize = 7;
-	m_color = Qt::black;
-
-	m_shiftPressed = false;
-	m_defined = false;
-	m_mouseEventMode = meBeforeDefining;
-	m_dragPointTarget = 0;
+DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWindowDataItem* parent) :
+	GraphicsWindowDataItem {name, QIcon(":/libs/guibase/images/iconPaper.png"), parent},
+	m_setting {},
+	m_mouseEventMode {meBeforeDefining},
+	m_shiftPressed {false},
+	m_dragPointTarget {0}
+{
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	m_movePointPixmap = QPixmap(":/libs/guibase/images/cursorOpenHandPoint.png");
 	m_movePointCursor = QCursor(m_movePointPixmap);
@@ -125,25 +119,25 @@ void DistanceMeasureDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView
 	x = event->x();
 	y = event->y();
 	v2->viewportToWorld(x, y);
-	QVector2D globalPos(x, y);
+	QPointF globalPos(x, y);
 	if (m_mouseEventMode == meDefining) {
-		QVector2D newv2 = updatePoint2ByShift(m_point1, globalPos);
-		iRICUndoStack::instance().push(new DefineCommand(m_point1, newv2, false, this));
+		QPointF newv2 = updatePoint2ByShift(m_setting.point1, globalPos);
+		iRICUndoStack::instance().push(new DefineCommand(m_setting.point1, newv2, false, this));
 	} else if (m_mouseEventMode == meMoveVertex) {
-		QVector2D otherp;
+		QPointF otherp;
 		if (m_dragPointTarget == 1) {
-			otherp = m_point2;
+			otherp = m_setting.point2;
 		} else {
-			otherp = m_point1;
+			otherp = m_setting.point1;
 		}
-		QVector2D newv = updatePoint2ByShift(otherp, globalPos);
+		QPointF newv = updatePoint2ByShift(otherp, globalPos);
 		iRICUndoStack::instance().push(new MoveVertexCommand(m_dragPointTarget, newv, false, this));
 	} else if (m_mouseEventMode == meTranslate) {
 		x = m_dragStartPoint.x();
 		y = m_dragStartPoint.y();
 		v2->viewportToWorld(x, y);
-		QVector2D startGlobalPos(x, y);
-		QVector2D offset = globalPos - startGlobalPos;
+		QPointF startGlobalPos(x, y);
+		QPointF offset = globalPos - startGlobalPos;
 
 		pushRenderCommand(new TranslateCommand(m_dragStartPoint1 + offset, m_dragStartPoint2 + offset, false, this), this);
 	} else {
@@ -161,29 +155,29 @@ void DistanceMeasureDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsVie
 	x = event->x();
 	y = event->y();
 	v2->viewportToWorld(x, y);
-	QVector2D tmpv(x, y);
+	QPointF tmpv(x, y);
 
 	if (m_mouseEventMode == meBeforeDefining) {
 		iRICUndoStack::instance().push(new DefineCommand(tmpv, tmpv, false, this));
 	} else if (m_mouseEventMode == meMoveVertexPrepare) {
 		iRICUndoStack::instance().push(new MoveVertexCommand(m_dragPointTarget, tmpv, false, this));
 	} else if (m_mouseEventMode == meTranslatePrepare) {
-		m_dragStartPoint1 = m_point1;
-		m_dragStartPoint2 = m_point2;
-		pushRenderCommand(new TranslateCommand(m_point1, m_point2, false, this), this);
+		m_dragStartPoint1 = m_setting.point1;
+		m_dragStartPoint2 = m_setting.point2;
+		pushRenderCommand(new TranslateCommand(m_setting.point1, m_setting.point2, false, this), this);
 	}
 }
 
 void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_mouseEventMode == DistanceMeasureDataItem::meDefining && event->button() == Qt::LeftButton) {
-		iRICUndoStack::instance().push(new DefineCommand(m_point1, m_point2, true, this));
+		iRICUndoStack::instance().push(new DefineCommand(m_setting.point1, m_setting.point2, true, this));
 	} else if (m_mouseEventMode == DistanceMeasureDataItem::meMoveVertex && event->button() == Qt::LeftButton) {
-		QVector2D tmpv;
+		QPointF tmpv;
 		if (m_dragPointTarget == 1) {
-			tmpv = m_point1;
+			tmpv = m_setting.point1;
 		} else if (m_dragPointTarget == 2) {
-			tmpv = m_point2;
+			tmpv = m_setting.point2;
 		}
 		iRICUndoStack::instance().push(new MoveVertexCommand(m_dragPointTarget, tmpv, true, this));
 	} else if (m_mouseEventMode == DistanceMeasureDataItem::meTranslate && event->button() == Qt::LeftButton) {
@@ -192,18 +186,18 @@ void DistanceMeasureDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsV
 		x = event->x();
 		y = event->y();
 		v2->viewportToWorld(x, y);
-		QVector2D globalPos(x, y);
+		QPointF globalPos(x, y);
 		x = m_dragStartPoint.x();
 		y = m_dragStartPoint.y();
 		v2->viewportToWorld(x, y);
-		QVector2D startGlobalPos(x, y);
-		QVector2D offset = globalPos - startGlobalPos;
+		QPointF startGlobalPos(x, y);
+		QPointF offset = globalPos - startGlobalPos;
 
 		pushRenderCommand(new TranslateCommand(m_dragStartPoint1 + offset, m_dragStartPoint2 + offset, true, this), this);
 	}
 	if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
-			m_redefineAction->setEnabled(m_defined);
+			m_redefineAction->setEnabled(m_setting.defined);
 
 			m_rightClickingMenu->move(event->globalPos());
 			m_rightClickingMenu->show();
@@ -217,19 +211,19 @@ void DistanceMeasureDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* /
 		m_shiftPressed = true;
 	}
 	if (m_mouseEventMode == meDefining && event->key() == Qt::Key_Shift) {
-		QVector2D newv2 = updatePoint2ByShift(m_point1, m_point2);
-		iRICUndoStack::instance().push(new DefineCommand(m_point1, newv2, false, this));
+		QPointF newv2 = updatePoint2ByShift(m_setting.point1, m_setting.point2);
+		iRICUndoStack::instance().push(new DefineCommand(m_setting.point1, newv2, false, this));
 	} else if (m_mouseEventMode == meMoveVertex && event->key() == Qt::Key_Shift) {
-		QVector2D movep;
-		QVector2D otherp;
+		QPointF movep;
+		QPointF otherp;
 		if (m_dragPointTarget == 1) {
-			movep = m_point1;
-			otherp = m_point2;
+			movep = m_setting.point1;
+			otherp = m_setting.point2;
 		} else {
-			movep = m_point2;
-			otherp = m_point1;
+			movep = m_setting.point2;
+			otherp = m_setting.point1;
 		}
-		QVector2D newv = updatePoint2ByShift(otherp, movep);
+		QPointF newv = updatePoint2ByShift(otherp, movep);
 		iRICUndoStack::instance().push(new MoveVertexCommand(m_dragPointTarget, newv, false, this));
 	}
 }
@@ -240,10 +234,10 @@ void DistanceMeasureDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView*
 	}
 }
 
-void DistanceMeasureDataItem::setPoints(const QVector2D& v1, const QVector2D& v2)
+void DistanceMeasureDataItem::setPoints(const QPointF& v1, const QPointF& v2)
 {
-	m_point1 = v1;
-	m_point2 = v2;
+	m_setting.point1 = v1;
+	m_setting.point2 = v2;
 	updateActorSettings();
 	renderGraphicsView();
 }
@@ -251,28 +245,29 @@ void DistanceMeasureDataItem::setPoints(const QVector2D& v1, const QVector2D& v2
 void DistanceMeasureDataItem::updateActorSettings()
 {
 	std::vector<QPointF> line;
-	line.push_back(QPointF(m_point1.x(), m_point1.y()));
-	line.push_back(QPointF(m_point2.x(), m_point2.y()));
+	line.push_back(m_setting.point1);
+	line.push_back(m_setting.point2);
 	m_lineActor.setLine(line);
 
-	QVector2D mid = (m_point1 + m_point2) * 0.5;
-	m_labelActor.setPosition(QPointF(mid.x(), mid.y()));
+	QPointF mid = (m_setting.point1 + m_setting.point2) * 0.5;
+	m_labelActor.setPosition(mid);
 
 	QString label;
-	if (m_labelMode == DistanceMeasureCopyPropertyDialog::lmAuto) {
+	if (m_setting.labelMode == DistanceMeasureSetting::Auto) {
 		label = autoLabel();
 	} else {
-		label = m_customLabel;
+		label = m_setting.customLabel;
 	}
 	m_labelActor.setLabel(iRIC::toStr(label));
+	m_labelActor.setLabelPosition(m_setting.labelPosition);
 
 	vtkTextProperty* txtProp = m_labelActor.labelTextProperty();
-	txtProp->SetFontSize(m_fontSize);
-	txtProp->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+	txtProp->SetFontSize(m_setting.labelFontSize);
+	txtProp->SetColor(m_setting.color);
 
-	m_lineActor.pointsActor()->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
-	m_lineActor.pointsActor()->GetProperty()->SetPointSize(m_markerSize);
-	m_lineActor.lineActor()->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
+	m_lineActor.pointsActor()->GetProperty()->SetColor(m_setting.color);
+	m_lineActor.pointsActor()->GetProperty()->SetPointSize(m_setting.markerSize);
+	m_lineActor.lineActor()->GetProperty()->SetColor(m_setting.color);
 
 	m_lineActor.pointsActor()->VisibilityOff();
 	m_lineActor.lineActor()->VisibilityOff();
@@ -281,12 +276,12 @@ void DistanceMeasureDataItem::updateActorSettings()
 	actorCollection()->RemoveItem(m_lineActor.lineActor());
 	actor2DCollection()->RemoveItem(m_labelActor.actor());
 
-	if (m_defined) {
-		if (m_showMarkers) {
+	if (m_setting.defined) {
+		if (m_setting.showMarkers) {
 			actorCollection()->AddItem(m_lineActor.pointsActor());
 		}
 		actorCollection()->AddItem(m_lineActor.lineActor());
-		if (m_showLabel) {
+		if (m_setting.showLabel) {
 			actor2DCollection()->AddItem(m_labelActor.actor());
 		}
 	}
@@ -304,15 +299,7 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 
 	DistanceMeasureCopyPropertyDialog* dialog = new DistanceMeasureCopyPropertyDialog(parent);
 	dialog->setName(m_standardItem->text().trimmed());
-	dialog->setPoints(v1, v2);
-	dialog->setShowLabel(m_showLabel);
-	dialog->setLabelPosition(m_labelActor.labelPosition());
-	dialog->setLabelMode(m_labelMode);
-	dialog->setLabelFontSize(m_fontSize);
-	dialog->setCustomlabel(m_customLabel);
-	dialog->setShowMarkers(m_showMarkers);
-	dialog->setMarkerSize(m_markerSize);
-	dialog->setColor(m_color);
+	dialog->setSetting(m_setting);
 
 	return dialog;
 }
@@ -320,15 +307,12 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 void DistanceMeasureDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
 	DistanceMeasureCopyPropertyDialog* dialog = dynamic_cast<DistanceMeasureCopyPropertyDialog*>(propDialog);
-	iRICUndoStack::instance().push(new SetSettingCommand(dialog->name(), dialog->point1(), dialog->point2(),
-																 dialog->showLabel(), dialog->labelPosition(),
-																 dialog->labelMode(), dialog->fontSize(), dialog->customLabel(),
-																 dialog->showMarkers(), dialog->markerSize(), dialog->color(), this));
+	iRICUndoStack::instance().push(new SetSettingCommand(dialog->name(), dialog->setting(), this));
 }
 
 QString DistanceMeasureDataItem::autoLabel() const
 {
-	return QString::number((m_point2 - m_point1).length());
+	return QString::number(toVec(m_setting.point2 - m_setting.point1).length());
 }
 
 void DistanceMeasureDataItem::showPropDialog()
@@ -336,15 +320,15 @@ void DistanceMeasureDataItem::showPropDialog()
 	showPropertyDialog();
 }
 
-QVector2D DistanceMeasureDataItem::updatePoint2ByShift(const QVector2D& v1, const QVector2D& v2)
+QPointF DistanceMeasureDataItem::updatePoint2ByShift(const QPointF& v1, const QPointF& v2)
 {
 	if (! m_shiftPressed) {return v2;}
 	double xdist = qAbs(v2.x() - v1.x());
 	double ydist = qAbs(v2.y() - v1.y());
 	if (xdist >= ydist) {
-		return QVector2D(v2.x(), v1.y());
+		return QPointF(v2.x(), v1.y());
 	} else {
-		return QVector2D(v1.x(), v2.y());
+		return QPointF(v1.x(), v2.y());
 	}
 }
 
@@ -352,25 +336,10 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_isCommandExecuting = true;
 	m_standardItem->setText(node.toElement().attribute("name"));
-	m_showLabel = iRIC::getBooleanAttribute(node, "showLabel");
-	m_labelMode = static_cast<DistanceMeasureCopyPropertyDialog::LabelMode>(iRIC::getIntAttribute(node, "labelMode"));
-	m_labelActor.setLabelPosition(static_cast<vtkLabel2DActor::LabelPosition>(iRIC::getIntAttribute(node, "labelPosition")));
-	m_customLabel = node.toElement().attribute("customLabel");
-	m_fontSize = iRIC::getIntAttribute(node, "fontSize");
-	QVector2D p;
-	p.setX(iRIC::getDoubleAttribute(node, "point1x"));
-	p.setY(iRIC::getDoubleAttribute(node, "point1y"));
-	m_point1 = p;
-	p.setX(iRIC::getDoubleAttribute(node, "point2x"));
-	p.setY(iRIC::getDoubleAttribute(node, "point2y"));
-	m_point2 = p;
-	m_showMarkers = iRIC::getBooleanAttribute(node, "showMarkers");
-	m_markerSize = iRIC::getIntAttribute(node, "markerSize");
-	m_color = iRIC::getColorAttribute(node, "color");
-	m_defined = iRIC::getBooleanAttribute(node, "defined");
 	m_isCommandExecuting = false;
+	m_setting.load(node);
 
-	if (m_defined) {
+	if (m_setting.defined) {
 		m_mouseEventMode = meNormal;
 	} else {
 		m_mouseEventMode = meBeforeDefining;
@@ -382,24 +351,12 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void DistanceMeasureDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", standardItem()->text());
-	iRIC::setBooleanAttribute(writer, "showLabel", m_showLabel);
-	iRIC::setIntAttribute(writer, "labelMode", static_cast<int>(m_labelMode));
-	iRIC::setIntAttribute(writer, "labelPosition", static_cast<int>(m_labelActor.labelPosition()));
-	writer.writeAttribute("customLabel", m_customLabel);
-	iRIC::setIntAttribute(writer, "fontSize", m_fontSize);
-	iRIC::setDoubleAttribute(writer, "point1x", m_point1.x());
-	iRIC::setDoubleAttribute(writer, "point1y", m_point1.y());
-	iRIC::setDoubleAttribute(writer, "point2x", m_point2.x());
-	iRIC::setDoubleAttribute(writer, "point2y", m_point2.y());
-	iRIC::setBooleanAttribute(writer, "showMarkers", m_showMarkers);
-	iRIC::setIntAttribute(writer, "markerSize", m_markerSize);
-	iRIC::setColorAttribute(writer, "color", m_color);
-	iRIC::setBooleanAttribute(writer, "defined", m_defined);
+	m_setting.save(writer);
 }
 
 void DistanceMeasureDataItem::addCustomMenuItems(QMenu* menu)
 {
-	m_redefineAction->setEnabled(m_defined);
+	m_redefineAction->setEnabled(m_setting.defined);
 	menu->addAction(m_redefineAction);
 }
 
@@ -448,27 +405,27 @@ void DistanceMeasureDataItem::updateMouseCursor(VTKGraphicsView* v)
 	}
 }
 
-void DistanceMeasureDataItem::updateMouseEventMode(const QVector2D& v, VTKGraphicsView* view)
+void DistanceMeasureDataItem::updateMouseEventMode(const QPointF& v, VTKGraphicsView* view)
 {
 	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
 	switch (m_mouseEventMode) {
 	case meNormal:
 	case meMoveVertexPrepare:
 	case meTranslatePrepare:
-		if ((m_point1 - v).length() < view2->stdRadius(5)) {
+		if (toVec(m_setting.point1 - v).length() < view2->stdRadius(5)) {
 			m_mouseEventMode = meMoveVertexPrepare;
 			m_dragPointTarget = 1;
-		} else if ((m_point2 - v).length() < view2->stdRadius(5)) {
+		} else if (toVec(m_setting.point2 - v).length() < view2->stdRadius(5)) {
 			m_mouseEventMode = meMoveVertexPrepare;
 			m_dragPointTarget = 2;
 		} else {
-			QVector2D horizontal = m_point2 - m_point1;
+			QVector2D horizontal = toVec(m_setting.point2 - m_setting.point1);
 			QVector2D vertical = horizontal.normalized();
 			iRIC::rotateVector90(vertical);
 			double width = view2->stdRadius(5);
 			vertical *= width;
-			QVector2D posv = m_point1 - vertical * 0.5;
-			if (iRIC::isInsideParallelogram(v, posv, horizontal, vertical)) {
+			QVector2D posv = toVec(m_setting.point1) - vertical * 0.5;
+			if (iRIC::isInsideParallelogram(toVec(v), posv, horizontal, vertical)) {
 				m_mouseEventMode = meTranslatePrepare;
 			} else {
 				m_mouseEventMode = meNormal;

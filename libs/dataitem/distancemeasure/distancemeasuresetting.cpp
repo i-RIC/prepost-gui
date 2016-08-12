@@ -11,7 +11,7 @@ DistanceMeasureSetting::DistanceMeasureSetting() :
 	point2 {"point2"},
 	showLabel {"showLabel", true},
 	labelMode {"labelMode", Auto},
-	labelPosition {"labelPosition", lpTopCenter},
+	labelPosition {"labelPosition", vtkLabel2DActor::lpTopCenter},
 	labelFontSize {"fontSize", 12},
 	customLabel {"customLabel"},
 	showMarkers {"showMarkers", true},

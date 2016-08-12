@@ -1,6 +1,8 @@
 #ifndef DISTANCEMEASURESETTING_H
 #define DISTANCEMEASURESETTING_H
 
+#include <guibase/vtktool/vtklabel2dactor.h>
+
 #include <misc/boolcontainer.h>
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
@@ -12,13 +14,6 @@
 class DistanceMeasureSetting : public CompositeContainer
 {
 public:
-	enum LabelPosition {
-		lpMiddleLeft,
-		lpMiddleRight,
-		lpTopCenter,
-		lpBottomCenter
-	};
-
 	enum LabelMode {
 		Auto,
 		Custom
@@ -38,7 +33,7 @@ public:
 
 	BoolContainer showLabel;
 	EnumContainerT<LabelMode> labelMode;
-	EnumContainerT<LabelPosition> labelPosition;
+	EnumContainerT<vtkLabel2DActor::LabelPosition> labelPosition;
 	IntContainer labelFontSize;
 	StringContainer customLabel;
 

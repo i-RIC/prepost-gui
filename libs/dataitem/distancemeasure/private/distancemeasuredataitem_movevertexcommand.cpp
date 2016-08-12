@@ -2,7 +2,7 @@
 
 #include <guicore/misc/qundocommandhelper.h>
 
-DistanceMeasureDataItem::MoveVertexCommand::MoveVertexCommand(int point, const QVector2D& v, bool finish, DistanceMeasureDataItem* item) :
+DistanceMeasureDataItem::MoveVertexCommand::MoveVertexCommand(int point, const QPointF& v, bool finish, DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Move Distance Measure Point")),
 	m_point {point},
 	m_newPoint {v},
@@ -10,41 +10,24 @@ DistanceMeasureDataItem::MoveVertexCommand::MoveVertexCommand(int point, const Q
 	m_item {item}
 {
 	if (point == 1) {
-		m_oldPoint = m_item->m_point1;
+		m_oldPoint = m_item->m_setting.point1;
 	} else if (point == 2) {
-		m_oldPoint = m_item->m_point2;
+		m_oldPoint = m_item->m_setting.point2;
 	}
 }
 
 void DistanceMeasureDataItem::MoveVertexCommand::redo()
 {
-	if (m_point == 1) {
-		m_item->m_point1 = m_newPoint;
-	} else if (m_point == 2) {
-		m_item->m_point2 = m_newPoint;
-	}
+	MouseEventMode mode = meMoveVertex;
 	if (m_finish) {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
-	} else {
-		m_item->m_mouseEventMode = DistanceMeasureDataItem::meMoveVertex;
+		mode = meNormal;
 	}
-	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
+	apply(m_newPoint, mode);
 }
 
 void DistanceMeasureDataItem::MoveVertexCommand::undo()
 {
-	if (m_point == 1) {
-		m_item->m_point1 = m_oldPoint;
-	} else if (m_point == 2) {
-		m_item->m_point2 = m_oldPoint;
-	}
-	m_item->m_mouseEventMode = DistanceMeasureDataItem::meNormal;
-
-	m_item->updateMouseCursor();
-	m_item->updateActorSettings();
-	m_item->renderGraphicsView();
+	apply(m_oldPoint, meNormal);
 }
 
 int DistanceMeasureDataItem::MoveVertexCommand::id() const
@@ -62,4 +45,18 @@ bool DistanceMeasureDataItem::MoveVertexCommand::mergeWith(const QUndoCommand* o
 	m_newPoint = other2->m_newPoint;
 	m_finish = other2->m_finish;
 	return true;
+}
+
+void DistanceMeasureDataItem::MoveVertexCommand::apply(const QPointF& p, MouseEventMode mode)
+{
+	if (m_point == 1) {
+		m_item->m_setting.point1 = p;
+	} else if (m_point == 2) {
+		m_item->m_setting.point2 = p;
+	}
+	m_item->m_mouseEventMode = mode;
+
+	m_item->updateMouseCursor();
+	m_item->updateActorSettings();
+	m_item->renderGraphicsView();
 }
