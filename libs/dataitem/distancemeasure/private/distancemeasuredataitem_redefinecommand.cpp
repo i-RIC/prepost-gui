@@ -1,4 +1,5 @@
 #include "distancemeasuredataitem_redefinecommand.h"
+#include "distancemeasuredataitem_impl.h"
 
 DistanceMeasureDataItem::RedefineCommand::RedefineCommand(DistanceMeasureDataItem* item) :
 	QUndoCommand(DistanceMeasureDataItem::tr("Redefine Distance Measure")),

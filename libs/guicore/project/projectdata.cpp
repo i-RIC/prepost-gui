@@ -17,6 +17,7 @@
 #include <guibase/executer/ziparchiveprocessexecuter.h>
 #include <guibase/executer/unziparchiveprocessexecuter.h>
 #include <misc/filesystemfunction.h>
+#include <misc/versionnumber.h>
 #include <misc/ziparchive.h>
 
 #include <memory>

@@ -6,6 +6,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitionabstract.h>
 #include <misc/errormessage.h>
+#include <misc/versionnumber.h>
 
 #include <QAction>
 #include <QDir>

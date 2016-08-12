@@ -1,4 +1,5 @@
 #include "distancemeasuredataitem_translatecommand.h"
+#include "distancemeasuredataitem_impl.h"
 
 #include <guicore/misc/qundocommandhelper.h>
 

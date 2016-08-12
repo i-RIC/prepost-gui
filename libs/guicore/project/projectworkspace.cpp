@@ -8,6 +8,7 @@
 #include <QDir>
 #include <QMessageBox>
 #include <QSettings>
+#include <QTime>
 
 const QString ProjectWorkspace::FOLDERNAME = ".iRIC_workspace";
 
