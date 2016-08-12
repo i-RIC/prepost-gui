@@ -24,9 +24,7 @@ SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverCon
 	m_geometry {w->parentWidget(), true}
 {
 	setFilename("consoleLog.txt");
-	m_file.setFileName(filename());
 
-	clear();
 	m_solverConsoleWindow->setBackgroundColor(QColor(200, 200, 200));
 }
 
@@ -121,6 +119,7 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filenam
 
 void SolverConsoleWindowProjectDataItem::open()
 {
+	m_file.setFileName(filename());
 	m_file.open(QFile::Append | QFile::Text);
 	setModified();
 }
