@@ -13,9 +13,10 @@ public:
 	Impl();
 	~Impl();
 
-	vtkPolyDataLinesActor m_linesActor;
 	vtkPolyDataPointsActor m_pointsActor;
+	vtkPolyDataLinesActor m_linesActor;
 
+	vtkPolyData* m_pointsPolyData;
 	vtkPolyData* m_polyData;
 };
 
