@@ -4,31 +4,30 @@
 #include "../guicore_global.h"
 
 #include <QObject>
-#include <QString>
-#include <QDateTime>
+
+class QString;
+class QDateTime;
 
 /// This class stores the information about the specified workfolder.
 class GUICOREDLL_EXPORT WorkfolderInfo : public QObject
 {
 	Q_OBJECT
-
 public:
-	/// Constructor
 	WorkfolderInfo(const QString& workfolder, QObject* parent);
-	/// Folder name
-	const QString& folderName() const {return m_folderName;}
-	/// Last modified time
-	const QDateTime& lastModifiedTime() const {return m_lastModifiedTime;}
-	/// Absolute path of workfolder
-	const QString& absolutePath() const {return m_absolutePath;}
-	/// Whether the workfolder is locked.
-	bool isLocked() const {return m_isLocked;}
+	~WorkfolderInfo();
+
+	QString folderName() const;
+	QDateTime lastModifiedTime() const;
+	QString absolutePath() const;
+	bool isLocked() const;
 
 private:
-	QString m_folderName;
-	QDateTime m_lastModifiedTime;
-	QString m_absolutePath;
-	bool m_isLocked;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/workfolderinfo_impl.h"
+#endif // _DEBUG
 
 #endif // WORKFOLDERINFO_H
