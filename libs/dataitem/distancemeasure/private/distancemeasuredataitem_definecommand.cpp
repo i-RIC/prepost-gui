@@ -8,7 +8,8 @@ DistanceMeasureDataItem::DefineCommand::DefineCommand(const QVector2D& v1, const
 	m_newPoint2 {v2},
 	m_oldPoint1 {item->m_point1},
 	m_oldPoint2 {item->m_point2},
-	m_finish {finish}
+	m_finish {finish},
+	m_item {item}
 {}
 
 void DistanceMeasureDataItem::DefineCommand::redo()
