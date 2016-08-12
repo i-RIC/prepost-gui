@@ -24,4 +24,8 @@ private:
 	Impl* impl;
 };
 
+#ifdef _DEBUG
+	#include "private/vtklinesactor_impl.h"
+#endif // _DEBUG
+
 #endif // VTKLINESACTOR_H
