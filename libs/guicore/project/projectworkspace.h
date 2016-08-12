@@ -26,7 +26,7 @@ public:
 	/// Folder name of workspace.
 	const static QString FOLDERNAME;
 
-	explicit ProjectWorkspace(QObject* parent = nullptr);
+	explicit ProjectWorkspace(QWidget* parent = nullptr);
 	~ProjectWorkspace();
 
 	std::vector<WorkfolderInfo*> workfolders() const;

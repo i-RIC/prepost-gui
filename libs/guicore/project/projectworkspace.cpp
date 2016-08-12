@@ -6,6 +6,7 @@
 
 #include <QCryptographicHash>
 #include <QDir>
+#include <QMessageBox>
 #include <QSettings>
 
 const QString ProjectWorkspace::FOLDERNAME = ".iRIC_workspace";
@@ -43,10 +44,21 @@ void ProjectWorkspace::Impl::updateWorkfolderList()
 	}
 }
 
-ProjectWorkspace::ProjectWorkspace(QObject* parent) :
+ProjectWorkspace::ProjectWorkspace(QWidget* parent) :
 	QObject {parent},
 	impl {new Impl(this)}
-{}
+{
+	int trashCount = trashWorkfolders().size();
+	if (trashCount == 0) {return;}
+
+	QString workPath = QDir::toNativeSeparators(impl->m_workspace.absolutePath());
+	QString msg = ProjectWorkspace::tr("Workspace \"%1\" has %2 project folders that seems to be not used any more. Do you want to remove them?").arg(workPath).arg(trashCount);
+
+	int ret = QMessageBox::warning(parent, ProjectWorkspace::tr("Information"), msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (ret == QMessageBox::No) {return;}
+
+	trashAllTrashWorkfolders();
+}
 
 ProjectWorkspace::~ProjectWorkspace()
 {
