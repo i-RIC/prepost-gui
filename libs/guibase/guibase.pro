@@ -59,7 +59,8 @@ LIBS += \
 	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
 	-lvtkRenderingAnnotation-6.1 \
-	-lvtkRenderingCore-6.1
+	-lvtkRenderingCore-6.1 \
+	-lvtkRenderingLabel-6.1
 
 # Input
 HEADERS += colortool.h \
@@ -107,6 +108,7 @@ HEADERS += colortool.h \
            geometry/polygonregion.h \
            geometry/rect.h \
            vtktool/vtkactorpolydatamapperpair.h \
+           vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkpolydatalinesactor.h \
@@ -134,6 +136,7 @@ HEADERS += colortool.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
+           vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
            widget/private/itemselectingdialog_detail.h
@@ -197,6 +200,7 @@ SOURCES += colortool.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
+           vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
