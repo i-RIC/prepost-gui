@@ -64,11 +64,19 @@ Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
 bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString& cgnsFilename)
 {
 	int fn, ier;
-	ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
-	if (ier != 0) {
-		// error occured while opening.
-		return false;
+	bool myOpen = false;
+
+	if (sol->fileId() == 0) {
+		ier = cg_open(iRIC::toStr(cgnsFilename).c_str(), CG_MODE_READ, &fn);
+		if (ier != 0) {
+			// error occured while opening.
+			return false;
+		}
+		myOpen = true;
+	} else {
+		fn = sol->fileId();
 	}
+
 	int nbases;
 	ier = cg_nbases(fn, &nbases);
 	if (ier != 0) {
@@ -160,7 +168,9 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, const QString
 			m_dataTypeInfos.append(ti);
 		}
 	}
-	cg_close(fn);
+	if (myOpen) {
+		cg_close(fn);
+	}
 
 	setupMap();
 	return (m_dataTypeInfos.size() > 0);
