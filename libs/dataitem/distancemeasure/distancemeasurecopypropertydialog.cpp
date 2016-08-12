@@ -38,19 +38,19 @@ void DistanceMeasureCopyPropertyDialog::setPoints(const QVector2D& v1, const QVe
 	ui->endPointYEdit->setValue(v2.y());
 }
 
-void DistanceMeasureCopyPropertyDialog::setLabelPosition(LabelPosition pos)
+void DistanceMeasureCopyPropertyDialog::setLabelPosition(vtkLabel2DActor::LabelPosition pos)
 {
 	switch (pos) {
-	case lpTopCenter:
+	case vtkLabel2DActor::lpTopCenter:
 		ui->lpCenterTop->setChecked(true);
 		break;
-	case lpBottomCenter:
+	case vtkLabel2DActor::lpBottomCenter:
 		ui->lpCenterBottom->setChecked(true);
 		break;
-	case lpMiddleLeft:
+	case vtkLabel2DActor::lpMiddleLeft:
 		ui->lpMiddleLeft->setChecked(true);
 		break;
-	case lpMiddleRight:
+	case vtkLabel2DActor::lpMiddleRight:
 		ui->lpMiddleRight->setChecked(true);
 		break;
 	default:
@@ -119,18 +119,18 @@ bool DistanceMeasureCopyPropertyDialog::showLabel() const
 	return ui->showLabelCheckBox->isChecked();
 }
 
-DistanceMeasureCopyPropertyDialog::LabelPosition DistanceMeasureCopyPropertyDialog::labelPosition() const
+vtkLabel2DActor::LabelPosition DistanceMeasureCopyPropertyDialog::labelPosition() const
 {
 	if (ui->lpCenterTop->isChecked()) {
-		return lpTopCenter;
+		return vtkLabel2DActor::lpTopCenter;
 	} else if (ui->lpCenterBottom->isChecked()) {
-		return lpBottomCenter;
+		return vtkLabel2DActor::lpBottomCenter;
 	} else if (ui->lpMiddleLeft->isChecked()) {
-		return lpMiddleLeft;
+		return vtkLabel2DActor::lpMiddleLeft;
 	} else if (ui->lpMiddleRight->isChecked()) {
-		return lpMiddleRight;
+		return vtkLabel2DActor::lpMiddleRight;
 	}
-	return lpTopCenter;
+	return vtkLabel2DActor::lpTopCenter;
 }
 
 DistanceMeasureCopyPropertyDialog::LabelMode DistanceMeasureCopyPropertyDialog::labelMode() const

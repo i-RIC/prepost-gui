@@ -46,7 +46,7 @@ DistanceMeasureDataItem::DistanceMeasureDataItem(const QString& name, GraphicsWi
 	m_standardItemCopy = m_standardItem->clone();
 
 	m_showLabel = true;
-	m_labelPosition = DistanceMeasureCopyPropertyDialog::lpTopCenter;
+	m_labelActor.setLabelPosition(vtkLabel2DActor::lpTopCenter);
 	m_labelMode = DistanceMeasureCopyPropertyDialog::lmAuto;
 	m_fontSize = 12;
 	m_customLabel = "";
@@ -81,7 +81,7 @@ DistanceMeasureDataItem::~DistanceMeasureDataItem()
 	vtkRenderer* r = renderer();
 	r->RemoveActor(m_lineActor.pointsActor());
 	r->RemoveActor(m_lineActor.lineActor());
-	r->RemoveActor2D(m_labelActor);
+	r->RemoveActor2D(m_labelActor.actor());
 
 	delete m_rightClickingMenu;
 }
@@ -102,37 +102,9 @@ void DistanceMeasureDataItem::setupActors()
 	m_lineActor.lineActor()->SetVisibility(0);
 	renderer()->AddActor(m_lineActor.lineActor());
 
-	m_labelActor = vtkSmartPointer<vtkActor2D>::New();
-	m_labelActor->GetProperty()->SetColor(0, 0, 0);
-	m_labelActor->SetVisibility(0);
-	renderer()->AddActor2D(m_labelActor);
-
-	m_labelPoints = vtkSmartPointer<vtkPoints>::New();
-	m_label = vtkSmartPointer<vtkUnstructuredGrid>::New();
-	m_labelPoints->InsertNextPoint(5, 0, 0);
-	m_label->SetPoints(m_labelPoints);
-	vtkVertex* v = vtkVertex::New();
-	v->GetPointIds()->SetId(0, 0);
-	m_label->InsertNextCell(v->GetCellType(), v->GetPointIds());
-	v->Delete();
-
-	m_labelMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	m_labelMapper->SetLabelModeToLabelFieldData();
-	m_labelMapper->SetFieldDataName(LABEL);
-	vtkTextProperty* txtprop = m_labelMapper->GetLabelTextProperty();
-	txtprop->SetColor(0, 0, 0);
-	txtprop->SetFontSize(m_fontSize);
-	txtprop->BoldOff();
-	txtprop->ItalicOff();
-	txtprop->ShadowOff();
-
-	m_labelArray = vtkSmartPointer<vtkStringArray>::New();
-	m_labelArray->SetName(LABEL);
-	m_labelArray->InsertNextValue("");
-	m_label->GetPointData()->AddArray(m_labelArray);
-	m_labelMapper->SetInputData(m_label);
-
-	m_labelActor->SetMapper(m_labelMapper);
+	m_labelActor.actor()->GetProperty()->SetColor(0, 0, 0);
+	m_labelActor.actor()->SetVisibility(0);
+	renderer()->AddActor2D(m_labelActor.actor());
 }
 
 void DistanceMeasureDataItem::updateZDepthRangeItemCount()
@@ -284,31 +256,7 @@ void DistanceMeasureDataItem::updateActorSettings()
 	m_lineActor.setLine(line);
 
 	QVector2D mid = (m_point1 + m_point2) * 0.5;
-	m_labelPoints->SetPoint(0, mid.x(), mid.y(), 0);
-	vtkTextProperty* txtProp = m_labelMapper->GetLabelTextProperty();
-
-	switch (m_labelPosition) {
-	case DistanceMeasureCopyPropertyDialog::lpTopCenter:
-		txtProp->SetJustificationToCentered();
-		txtProp->SetVerticalJustificationToBottom();
-		txtProp->SetLineOffset(-5);
-		break;
-	case DistanceMeasureCopyPropertyDialog::lpBottomCenter:
-		txtProp->SetJustificationToCentered();
-		txtProp->SetVerticalJustificationToTop();
-		txtProp->SetLineOffset(5);
-		break;
-	case DistanceMeasureCopyPropertyDialog::lpMiddleLeft:
-		txtProp->SetJustificationToRight();
-		txtProp->SetVerticalJustificationToCentered();
-		txtProp->SetLineOffset(0);
-		break;
-	case DistanceMeasureCopyPropertyDialog::lpMiddleRight:
-		txtProp->SetJustificationToLeft();
-		txtProp->SetVerticalJustificationToCentered();
-		txtProp->SetLineOffset(0);
-		break;
-	}
+	m_labelActor.setPosition(QPointF(mid.x(), mid.y()));
 
 	QString label;
 	if (m_labelMode == DistanceMeasureCopyPropertyDialog::lmAuto) {
@@ -316,19 +264,9 @@ void DistanceMeasureDataItem::updateActorSettings()
 	} else {
 		label = m_customLabel;
 	}
-	switch (m_labelPosition) {
-	case DistanceMeasureCopyPropertyDialog::lpMiddleLeft:
-		label = label.append("   ");
-		break;
-	case DistanceMeasureCopyPropertyDialog::lpMiddleRight:
-		label = QString("   ").append(label);
-		break;
-	default:
-		// do nothing
-		break;
-	}
-	m_labelArray->SetValue(0, iRIC::toStr(label).c_str());
+	m_labelActor.setLabel(iRIC::toStr(label));
 
+	vtkTextProperty* txtProp = m_labelActor.labelTextProperty();
 	txtProp->SetFontSize(m_fontSize);
 	txtProp->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
 
@@ -338,10 +276,10 @@ void DistanceMeasureDataItem::updateActorSettings()
 
 	m_lineActor.pointsActor()->VisibilityOff();
 	m_lineActor.lineActor()->VisibilityOff();
-	m_labelActor->VisibilityOff();
+	m_labelActor.actor()->VisibilityOff();
 	actorCollection()->RemoveItem(m_lineActor.pointsActor());
 	actorCollection()->RemoveItem(m_lineActor.lineActor());
-	actor2DCollection()->RemoveItem(m_labelActor);
+	actor2DCollection()->RemoveItem(m_labelActor.actor());
 
 	if (m_defined) {
 		if (m_showMarkers) {
@@ -349,14 +287,12 @@ void DistanceMeasureDataItem::updateActorSettings()
 		}
 		actorCollection()->AddItem(m_lineActor.lineActor());
 		if (m_showLabel) {
-			actor2DCollection()->AddItem(m_labelActor);
+			actor2DCollection()->AddItem(m_labelActor.actor());
 		}
 	}
 
 	updateVisibilityWithoutRendering();
-	m_labelPoints->Modified();
 }
-
 
 QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 {
@@ -370,7 +306,7 @@ QDialog* DistanceMeasureDataItem::propertyDialog(QWidget* parent)
 	dialog->setName(m_standardItem->text().trimmed());
 	dialog->setPoints(v1, v2);
 	dialog->setShowLabel(m_showLabel);
-	dialog->setLabelPosition(m_labelPosition);
+	dialog->setLabelPosition(m_labelActor.labelPosition());
 	dialog->setLabelMode(m_labelMode);
 	dialog->setLabelFontSize(m_fontSize);
 	dialog->setCustomlabel(m_customLabel);
@@ -418,7 +354,7 @@ void DistanceMeasureDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	m_standardItem->setText(node.toElement().attribute("name"));
 	m_showLabel = iRIC::getBooleanAttribute(node, "showLabel");
 	m_labelMode = static_cast<DistanceMeasureCopyPropertyDialog::LabelMode>(iRIC::getIntAttribute(node, "labelMode"));
-	m_labelPosition = static_cast<DistanceMeasureCopyPropertyDialog::LabelPosition>(iRIC::getIntAttribute(node, "labelPosition"));
+	m_labelActor.setLabelPosition(static_cast<vtkLabel2DActor::LabelPosition>(iRIC::getIntAttribute(node, "labelPosition")));
 	m_customLabel = node.toElement().attribute("customLabel");
 	m_fontSize = iRIC::getIntAttribute(node, "fontSize");
 	QVector2D p;
@@ -448,7 +384,7 @@ void DistanceMeasureDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeAttribute("name", standardItem()->text());
 	iRIC::setBooleanAttribute(writer, "showLabel", m_showLabel);
 	iRIC::setIntAttribute(writer, "labelMode", static_cast<int>(m_labelMode));
-	iRIC::setIntAttribute(writer, "labelPosition", static_cast<int>(m_labelPosition));
+	iRIC::setIntAttribute(writer, "labelPosition", static_cast<int>(m_labelActor.labelPosition()));
 	writer.writeAttribute("customLabel", m_customLabel);
 	iRIC::setIntAttribute(writer, "fontSize", m_fontSize);
 	iRIC::setDoubleAttribute(writer, "point1x", m_point1.x());

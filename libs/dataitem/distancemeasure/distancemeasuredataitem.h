@@ -4,16 +4,9 @@
 #include "distancemeasure_api.h"
 #include "distancemeasurecopypropertydialog.h"
 
+#include <guibase/vtktool/vtklabel2dactor.h>
 #include <guibase/vtktool/vtklineactor.h>
 #include <guicore/datamodel/graphicswindowdataitem.h>
-
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkPoints.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkLabeledDataMapper.h>
-#include <vtkStringArray.h>
 
 #include <QVector2D>
 #include <QPoint>
@@ -78,17 +71,11 @@ private:
 	void updateMouseCursor();
 	void updateMouseCursor(VTKGraphicsView* v);
 
+	vtkLabel2DActor m_labelActor;
 	vtkLineActor m_lineActor;
-
-	vtkSmartPointer<vtkPoints> m_labelPoints;
-	vtkSmartPointer<vtkUnstructuredGrid> m_label;
-	vtkSmartPointer<vtkActor2D> m_labelActor;
-	vtkSmartPointer<vtkLabeledDataMapper> m_labelMapper;
-	vtkSmartPointer<vtkStringArray> m_labelArray;
 
 	bool m_showLabel;
 	DistanceMeasureCopyPropertyDialog::LabelMode m_labelMode;
-	DistanceMeasureCopyPropertyDialog::LabelPosition m_labelPosition;
 	QString m_customLabel;
 	int m_fontSize;
 	QVector2D m_point1;

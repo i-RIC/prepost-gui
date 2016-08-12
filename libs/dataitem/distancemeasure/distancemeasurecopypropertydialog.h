@@ -3,6 +3,8 @@
 
 #include "distancemeasure_api.h"
 
+#include <guibase/vtktool/vtklabel2dactor.h>
+
 #include <QDialog>
 class QVector2D;
 
@@ -16,12 +18,6 @@ class DISTANCEMEASURE_API DistanceMeasureCopyPropertyDialog : public QDialog
 	Q_OBJECT
 
 public:
-	enum LabelPosition {
-		lpMiddleLeft,
-		lpMiddleRight,
-		lpTopCenter,
-		lpBottomCenter
-	};
 	enum LabelMode {
 		lmAuto,
 		lmCustom
@@ -33,7 +29,7 @@ public:
 	void setName(const QString& name);
 	void setPoints(const QVector2D& v1, const QVector2D& v2);
 	void setShowLabel(bool show);
-	void setLabelPosition(LabelPosition pos);
+	void setLabelPosition(vtkLabel2DActor::LabelPosition pos);
 	void setLabelMode(LabelMode lm);
 	void setCustomlabel(const QString& label);
 	void setLabelFontSize(int fontSize);
@@ -45,7 +41,7 @@ public:
 	QVector2D point1() const;
 	QVector2D point2() const;
 	bool showLabel() const;
-	LabelPosition labelPosition() const;
+	vtkLabel2DActor::LabelPosition labelPosition() const;
 	LabelMode labelMode() const;
 	QString autoLabel() const;
 	QString customLabel() const;

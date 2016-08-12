@@ -8,7 +8,7 @@
 class DistanceMeasureDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const QString& name, const QVector2D& v1, const QVector2D& v2, bool showLabel, DistanceMeasureCopyPropertyDialog::LabelPosition lp, DistanceMeasureCopyPropertyDialog::LabelMode lm, int fontSize, const QString& customLabel, bool showMarker, int markerSize, QColor color, DistanceMeasureDataItem* item);
+	SetSettingCommand(const QString& name, const QVector2D& v1, const QVector2D& v2, bool showLabel, vtkLabel2DActor::LabelPosition lp, DistanceMeasureCopyPropertyDialog::LabelMode lm, int fontSize, const QString& customLabel, bool showMarker, int markerSize, QColor color, DistanceMeasureDataItem* item);
 
 	void redo() override;
 	void undo() override;
@@ -18,7 +18,7 @@ private:
 	QVector2D m_newPoint1;
 	QVector2D m_newPoint2;
 	bool m_newShowLabel;
-	DistanceMeasureCopyPropertyDialog::LabelPosition m_newLabelPosition;
+	vtkLabel2DActor::LabelPosition m_newLabelPosition;
 	DistanceMeasureCopyPropertyDialog::LabelMode m_newLabelMode;
 	int m_newFontSize;
 	QString m_newCustomLabel;
@@ -30,7 +30,7 @@ private:
 	QVector2D m_oldPoint1;
 	QVector2D m_oldPoint2;
 	bool m_oldShowLabel;
-	DistanceMeasureCopyPropertyDialog::LabelPosition m_oldLabelPosition;
+	vtkLabel2DActor::LabelPosition m_oldLabelPosition;
 	DistanceMeasureCopyPropertyDialog::LabelMode m_oldLabelMode;
 	int m_oldFontSize;
 	QString m_oldCustomLabel;
