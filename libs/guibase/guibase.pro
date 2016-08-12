@@ -112,6 +112,7 @@ HEADERS += colortool.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkpolydatalinesactor.h \
+           vtktool/vtkpolydatapaintactor.h \
            vtktool/vtkpolydatapointsactor.h \
            widget/asciionlylineedit.h \
            widget/asciionlytextedit.h \
@@ -204,6 +205,7 @@ SOURCES += colortool.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
+           vtktool/vtkpolydatapaintactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
            widget/asciionlylineedit.cpp \
            widget/asciionlytextedit.cpp \
