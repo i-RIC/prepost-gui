@@ -360,6 +360,7 @@ HEADERS += guicore_global.h \
            project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
            project/private/projectdatamovethread.h \
+           project/private/projectworkspace_impl.h \
            project/private/workfolderinfo_impl.h \
            solverdef/private/enumloadert_detail.h \
            solverdef/private/solverdefinition_impl.h \
