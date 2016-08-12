@@ -1,4 +1,5 @@
 #include "colorsource.h"
+#include "private/colorsource_impl.h"
 
 #include <misc/stringtool.h>
 
@@ -8,10 +9,16 @@
 #include <QFile>
 #include <QXmlStreamWriter>
 
-ColorSource::ColorSource(ProjectDataItem* d)
-	: ProjectDataItem(d)
+ColorSource::ColorSource(ProjectDataItem* d) :
+	ProjectDataItem {d},
+	impl {new Impl()}
 {
 	loadDefault();
+}
+
+ColorSource::~ColorSource()
+{
+	delete impl;
 }
 
 void ColorSource::loadDefault()
@@ -34,29 +41,26 @@ void ColorSource::load(const QString& filename)
 
 QColor ColorSource::getColor(int index) const
 {
-	int i = index % m_colors.count();
-	return m_colors.at(i);
+	int i = index % impl->m_colors.size();
+	return impl->m_colors.at(i);
 }
 
 void ColorSource::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_colors.clear();
+	impl->m_colors.clear();
 	QDomNodeList childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomNode child = childNodes.at(i);
 		QColor color = iRIC::QColorFromString(child.toElement().attribute("value", "#000000"));
-		m_colors.append(color);
+		impl->m_colors.push_back(color);
 	}
 }
 
 void ColorSource::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_colors.begin(); it != m_colors.end(); ++it) {
-		QColor c = *it;
+	for (QColor c : impl->m_colors) {
 		writer.writeStartElement("Color");
 		writer.writeAttribute("value", iRIC::QColorToString(c));
 		writer.writeEndElement();
 	}
 }
-
-QList<QColor> m_colors;

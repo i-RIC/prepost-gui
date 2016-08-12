@@ -359,6 +359,7 @@ HEADERS += guicore_global.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
            project/private/cgnsfileentry_impl.h \
+           project/private/colorsource_impl.h \
            project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
            project/private/projectdatamovethread.h \

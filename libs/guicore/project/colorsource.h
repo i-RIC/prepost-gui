@@ -3,22 +3,30 @@
 
 #include "../guicore_global.h"
 #include "projectdataitem.h"
-#include <QColor>
-#include <QList>
+
+class QColor;
+class QString;
 
 class GUICOREDLL_EXPORT ColorSource : public ProjectDataItem
 {
-
 public:
 	ColorSource(ProjectDataItem* d);
+	~ColorSource();
+
 	void load(const QString& filename);
 	void loadDefault();
 	QColor getColor(int index) const ;
 
-protected:
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	QList<QColor> m_colors;
+
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/colorsource_impl.h"
+#endif // _DEBUG
 
 #endif // COLORSOURCE_H
