@@ -107,6 +107,7 @@ HEADERS += colortool.h \
            geometry/polygonregion.h \
            geometry/rect.h \
            vtktool/vtkactorpolydatamapperpair.h \
+           vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapointsactor.h \
@@ -133,6 +134,7 @@ HEADERS += colortool.h \
            widget/transparencywidget.h \
            widget/waitdialog.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
+           vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
            widget/private/itemselectingdialog_detail.h
 FORMS += scalarbardialog.ui \
@@ -195,6 +197,7 @@ SOURCES += colortool.cpp \
            geometry/polygonregion.cpp \
            geometry/rect.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
+           vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapointsactor.cpp \
