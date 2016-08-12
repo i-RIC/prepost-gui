@@ -16,12 +16,6 @@ OffsetSettingDialog::~OffsetSettingDialog()
 	delete ui;
 }
 
-void OffsetSettingDialog::setOffset(double x, double y)
-{
-	ui->xEdit->setValue(x);
-	ui->yEdit->setValue(y);
-}
-
 double OffsetSettingDialog::offsetX() const
 {
 	return ui->xEdit->value();
@@ -30,6 +24,12 @@ double OffsetSettingDialog::offsetX() const
 double OffsetSettingDialog::offsetY() const
 {
 	return ui->yEdit->value();
+}
+
+void OffsetSettingDialog::setOffset(double x, double y)
+{
+	ui->xEdit->setValue(x);
+	ui->yEdit->setValue(y);
 }
 
 void OffsetSettingDialog::accept()

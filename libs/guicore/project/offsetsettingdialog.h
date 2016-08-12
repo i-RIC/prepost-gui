@@ -15,9 +15,11 @@ class OffsetSettingDialog : public QDialog
 public:
 	explicit OffsetSettingDialog(QWidget* parent = nullptr);
 	~OffsetSettingDialog();
-	void setOffset(double x, double y);
-	double offsetX() const; \
+
+	double offsetX() const;
 	double offsetY() const;
+
+	void setOffset(double x, double y);
 
 public slots:
 	void accept() override;
