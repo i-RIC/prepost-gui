@@ -70,6 +70,11 @@ LIBS += \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingFreeType-6.1
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += cfshapeexportwindowi.h \
            particleexportwindowi.h \

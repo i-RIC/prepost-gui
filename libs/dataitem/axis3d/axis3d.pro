@@ -52,6 +52,11 @@ LIBS += \
 	-lvtkRenderingAnnotation-6.1 \
 	-lvtkRenderingCore-6.1
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += axis3d_api.h axis3ddataitem.h private/axis3ddataitem_impl.h
 SOURCES += axis3ddataitem.cpp

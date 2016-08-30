@@ -44,6 +44,11 @@ win32{
 
 LIBS += -lgeos
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += geoio_global.h \
            io.h \

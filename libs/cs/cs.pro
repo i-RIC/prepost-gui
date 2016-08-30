@@ -43,6 +43,11 @@ unix {
 	LIBS += -lproj
 }
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += coordinatesystem.h \
            coordinatesystembuilder.h \

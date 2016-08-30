@@ -174,6 +174,11 @@ LIBS += -lcgns
 
 LIBS += -liriclib
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += guicore_global.h \
            base/additionalmenuwindowi.h \

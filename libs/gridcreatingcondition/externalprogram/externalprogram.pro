@@ -83,6 +83,11 @@ LIBS += \
 	-lvtkRenderingCore-6.1 \
 	-lvtkRenderingLabel-6.1
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += gcc_externalprogram_global.h \
            gridcreatingconditioncreatorexternalprogram.h \

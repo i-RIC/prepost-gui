@@ -94,6 +94,11 @@ unix {
 	DEFINES += QT_NO_WARNING_OUTPUT
 }
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += graph2d_global.h \
            graph2dwindowdataitem.h \

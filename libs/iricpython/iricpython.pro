@@ -91,6 +91,11 @@ LIBS += \
 	-lvtkRenderingFreeTypeOpenGL-6.1 \
 	-lvtkRenderingOpenGL-6.1
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += application.h \
            calculationresult.h \

@@ -99,6 +99,11 @@ LIBS += -lshapelib_i
 
 LIBS += -lgeos
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += gd_polygon_global.h \
            geodatapolygon.h \

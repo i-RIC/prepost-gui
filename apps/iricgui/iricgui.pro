@@ -59,5 +59,11 @@ LIBS += \
 	-lvtkRenderingFreeTypeOpenGL-6.1 \
 	-lvtkRenderingOpenGL-6.1
 
+
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += cd $$PWD/../../tools & copydlls.py
+}
+
 # Input
 SOURCES += main/main.cpp

@@ -119,6 +119,11 @@ unix {
 	LIBS += -lgdal
 }
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += gd_netcdf_global.h \
            geodatanetcdf.h \

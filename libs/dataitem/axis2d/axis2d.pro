@@ -52,6 +52,11 @@ LIBS += \
 	-lvtkRenderingAnnotation-6.1 \
 	-lvtkRenderingCore-6.1
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += axis2d_api.h axis2ddataitem.h private/axis2ddataitem_impl.h
 SOURCES += axis2ddataitem.cpp

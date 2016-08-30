@@ -356,6 +356,11 @@ win32 {
 	LIBS += -lshapelib_i
 }
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += pre_global.h \
            preobjectbrowser.h \

@@ -11,6 +11,11 @@ QT += widgets xml
 
 include( ../../paths.pri )
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += arrowsettingcontainer.h \
            boolcontainer.h \

@@ -44,6 +44,11 @@ unix {
 }
 LIBS += -liricGuicore
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += solverconsole_global.h \
            solverconsolewindow.h \

@@ -6,6 +6,11 @@ DEFINES += TMSLOADER_LIBRARY
 
 include( ../../paths.pri )
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += tmsloader.h \
            tmsloader_api.h \

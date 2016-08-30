@@ -250,6 +250,11 @@ LIBS += \
 
 INCLUDEPATH += ../../libs
 
+# Post-Build Event
+win32 {
+	QMAKE_POST_LINK += copy $(TargetPath) $(SolutionDir)\\libdlls\\$(Configuration)
+}
+
 # Input
 HEADERS += gui_api.h \
            continuoussnapshot/continuoussnapshotfilepropertypage.h \
