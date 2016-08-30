@@ -114,7 +114,7 @@ void MeasuredDataVectorGroupDataItem::setupActors()
 	m_arrowGlyph->SetInputConnection(m_warpVector->GetOutputPort());
 
 	m_arrowSource = vtkSmartPointer<vtkConeSource>::New();
-	m_arrowGlyph->SetSourceData(m_arrowSource->GetOutput());
+	m_arrowGlyph->SetSourceConnection(m_arrowSource->GetOutputPort());
 
 	m_appendPolyData = vtkSmartPointer<vtkAppendPolyData>::New();
 	m_appendPolyData->AddInputConnection(m_hedgeHog->GetOutputPort());
