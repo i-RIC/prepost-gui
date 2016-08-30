@@ -2,13 +2,14 @@
 #define MEASUREDDATAVECTORGROUPDATAITEM_SETSETTINGCOMMAND_H
 
 #include "../measureddatavectorgroupdataitem.h"
+#include "../measureddatavectorsetting.h"
 
 #include <QUndoCommand>
 
 class MeasuredDataVectorGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-    SetSettingCommand(const MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item);
+	SetSettingCommand(const MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item);
 
 	void redo() override;
 	void undo() override;
