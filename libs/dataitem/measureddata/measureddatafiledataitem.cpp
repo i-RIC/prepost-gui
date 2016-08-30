@@ -35,13 +35,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	impl {new Impl{md}}
 {
 	setSubPath("file");
-
-	m_isDeletable = true;
-	m_standardItem->setText(md->name());
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
+	setupStandardItem(Checked, NotReorderable, NotDeletable, md->name());
 
 	impl->m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
 	impl->m_vectorGroupDataItem = new MeasuredDataVectorGroupDataItem(this);
