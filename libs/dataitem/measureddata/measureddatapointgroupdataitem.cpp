@@ -2,6 +2,7 @@
 #include "measureddatapointdataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatapointsettingdialog.h"
+#include "private/measureddatapointgroupdataitem_impl.h"
 #include "private/measureddatapointgroupdataitem_setsettingcommand.h"
 
 #include <guibase/graphicsmisc.h>
@@ -37,48 +38,37 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkScalarBarActor.h>
+#include <vtkScalarBarWidget.h>
+#include <vtkSmartPointer.h>
 #include <vtkStringArray.h>
 #include <vtkStructuredGrid.h>
 #include <vtkStructuredGridGeometryFilter.h>
 #include <vtkTextProperty.h>
 
-MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p) :
-	GraphicsWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+MeasuredDataPointGroupDataItem::Impl::Impl(MeasuredDataPointGroupDataItem* item) :
+	m_contourActor {vtkLODActor::New()},
+	m_contourMapper {vtkPolyDataMapper::New()},
+	m_isolineActor {vtkActor::New()},
+	m_isolineMapper {vtkPolyDataMapper::New()},
+	m_isolineFilter {vtkContourFilter::New()},
+	m_fringeActor {vtkLODActor::New()},
+	m_fringeMapper {vtkPolyDataMapper::New()},
+	m_pointsActor {vtkActor::New()},
+	m_pointsMapper {vtkPolyDataMapper::New()},
+	m_blackPointsActor {vtkActor::New()},
+	m_blackPointsMapper {vtkPolyDataMapper::New()},
+	m_scalarBarWidget {vtkScalarBarWidget::New()},
+	m_valueClippedPolyData {vtkPolyData::New()},
+	m_colorContourPolyData {vtkPolyData::New()},
+	m_item {item}
 {
-	m_isDeletable = false;
 
-	m_standardItem->setCheckable(true);
-	m_standardItem->setCheckState(Qt::Checked);
-
-	m_standardItemCopy = m_standardItem->clone();
-
-	setupActors();
-
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(p)->measuredData();
-
-	for (int i = 0; i < md->scalarNames().size(); ++i) {
-		std::string name = md->scalarNames().at(i);
-		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(name, name.c_str(), this);
-		m_childItems.append(item);
-		m_colorbarTitleMap.insert({name, name.c_str()});
-
-		LookupTableContainer* cont = new LookupTableContainer(this);
-
-		vtkDataArray* da = md->polyData()->GetPointData()->GetArray(name.c_str());
-		double range[2];
-		da->GetRange(range);
-		cont->setValueRange(range[0], range[1]);
-		m_lookupTables.insert({name, cont});
-	}
-	if (md->scalarNames().size() > 0) {
-		auto name = md->scalarNames().at(0);
-		setTarget(name);
-	}
 }
 
-MeasuredDataPointGroupDataItem::~MeasuredDataPointGroupDataItem()
+MeasuredDataPointGroupDataItem::Impl::~Impl()
 {
-	vtkRenderer* r = renderer();
+	vtkRenderer* r = m_item->renderer();
+
 	r->RemoveActor(m_pointsActor);
 	r->RemoveActor(m_blackPointsActor);
 	r->RemoveActor(m_isolineActor);
@@ -91,9 +81,78 @@ MeasuredDataPointGroupDataItem::~MeasuredDataPointGroupDataItem()
 	m_isolineActor->Delete();
 	m_contourActor->Delete();
 	m_fringeActor->Delete();
+
+	m_scalarBarWidget->Delete();
+
+	m_valueClippedPolyData->Delete();
+	m_colorContourPolyData->Delete();
 }
 
-void MeasuredDataPointGroupDataItem::updateActorSettings()
+void MeasuredDataPointGroupDataItem::Impl::setupActors()
+{
+	vtkRenderer* r = m_item->renderer();
+
+	m_isolineActor->GetProperty()->SetLighting(false);
+	m_isolineActor->GetProperty()->SetLineWidth(1);
+	r->AddActor(m_isolineActor);
+
+	m_isolineMapper->UseLookupTableScalarRangeOn();
+	m_isolineMapper->SetScalarModeToUsePointFieldData();
+	m_isolineActor->SetMapper(m_isolineMapper);
+
+	m_isolineMapper->SetInputConnection(m_isolineFilter->GetOutputPort());
+
+	// Draw 5000 points from grid vertices.
+	m_contourActor->SetNumberOfCloudPoints(5000);
+	// Make the point size a little big.
+	m_contourActor->GetProperty()->SetPointSize(2);
+	m_contourActor->GetProperty()->SetLighting(false);
+	r->AddActor(m_contourActor);
+
+	m_contourMapper->SetScalarVisibility(true);
+	m_contourActor->SetMapper(m_contourMapper);
+
+	m_fringeActor->SetNumberOfCloudPoints(5000);
+	m_fringeActor->GetProperty()->SetPointSize(2);
+	m_fringeActor->GetProperty()->SetLighting(false);
+	r->AddActor(m_fringeActor);
+
+	m_fringeMapper->SetScalarVisibility(true);
+	m_fringeActor->SetMapper(m_fringeMapper);
+
+	m_pointsActor->GetProperty()->SetPointSize(2);
+	m_pointsActor->GetProperty()->SetLighting(false);
+	m_pointsActor->GetProperty()->SetRepresentationToPoints();
+	r->AddActor(m_pointsActor);
+
+	m_pointsMapper->SetScalarVisibility(true);
+	m_pointsActor->SetMapper(m_pointsMapper);
+
+	m_blackPointsActor->GetProperty()->SetPointSize(2);
+	m_blackPointsActor->GetProperty()->SetLighting(false);
+	m_blackPointsActor->GetProperty()->SetRepresentationToPoints();
+	m_blackPointsActor->GetProperty()->SetColor(0, 0, 0);
+	r->AddActor(m_blackPointsActor);
+
+	m_blackPointsMapper->SetScalarVisibility(false);
+	m_blackPointsActor->SetMapper(m_blackPointsMapper);
+
+	vtkRenderWindowInteractor* iren = r->GetRenderWindow()->GetInteractor();
+
+	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
+	m_scalarBarWidget->SetEnabled(0);
+	m_scalarBarWidget->SetInteractor(iren);
+
+	m_isolineActor->VisibilityOff();
+	m_contourActor->VisibilityOff();
+	m_fringeActor->VisibilityOff();
+	m_scalarBarWidget->SetEnabled(0);
+
+	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
+	updateActorSettings();
+}
+
+void MeasuredDataPointGroupDataItem::Impl::updateActorSettings()
 {
 	// make all the items invisible
 	m_pointsActor->VisibilityOff();
@@ -102,10 +161,10 @@ void MeasuredDataPointGroupDataItem::updateActorSettings()
 	m_contourActor->VisibilityOff();
 	m_fringeActor->VisibilityOff();
 	m_scalarBarWidget->SetEnabled(0);
-	m_actorCollection->RemoveAllItems();
-	m_actor2DCollection->RemoveAllItems();
+	m_item->m_actorCollection->RemoveAllItems();
+	m_item->m_actor2DCollection->RemoveAllItems();
 
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
 
 	if (md == nullptr || md->polyData() == nullptr) {return;}
 	vtkPointSet* ps = md->polyData();
@@ -133,123 +192,30 @@ void MeasuredDataPointGroupDataItem::updateActorSettings()
 		setupScalarBarSetting();
 	}
 
-	assignActorZValues(m_zDepthRange);
-	updateVisibilityWithoutRendering();
+	m_item->assignActorZValues(m_item->m_zDepthRange);
+	m_item->updateVisibilityWithoutRendering();
 }
 
-void MeasuredDataPointGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void MeasuredDataPointGroupDataItem::Impl::setupPointSetting()
 {
-	m_setting.load(node);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
+	if (stc == nullptr) {return;}
+	m_pointsActor->GetProperty()->SetPointSize(m_setting.pointSize);
+	m_pointsMapper->SetInputData(m_valueClippedPolyData);
+	m_pointsMapper->SetScalarModeToUsePointFieldData();
+	m_pointsMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
+	m_pointsMapper->SetLookupTable(stc->vtkObj());
+	m_pointsMapper->UseLookupTableScalarRangeOn();
+	m_item->m_actorCollection->AddItem(m_pointsActor);
 
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	updateActorSettings();
+	m_blackPointsActor->GetProperty()->SetPointSize(m_setting.pointSize + 2);
+	m_pointsMapper->SetInputData(m_valueClippedPolyData);
+	m_item->m_actorCollection->AddItem(m_blackPointsActor);
 }
 
-void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+void MeasuredDataPointGroupDataItem::Impl::setupIsolineSetting()
 {
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	m_setting.save(writer);
-}
-
-void MeasuredDataPointGroupDataItem::setupActors()
-{
-	m_isolineActor = vtkActor::New();
-	m_isolineActor->GetProperty()->SetLighting(false);
-	m_isolineActor->GetProperty()->SetLineWidth(1);
-	renderer()->AddActor(m_isolineActor);
-
-	m_isolineMapper = vtkPolyDataMapper::New();
-	m_isolineMapper->UseLookupTableScalarRangeOn();
-	m_isolineMapper->SetScalarModeToUsePointFieldData();
-	m_isolineActor->SetMapper(m_isolineMapper);
-
-	m_isolineFilter = vtkContourFilter::New();
-	m_isolineMapper->SetInputConnection(m_isolineFilter->GetOutputPort());
-
-	m_contourActor = vtkLODActor::New();
-	// Draw 5000 points from grid vertices.
-	m_contourActor->SetNumberOfCloudPoints(5000);
-	// Make the point size a little big.
-	m_contourActor->GetProperty()->SetPointSize(2);
-	m_contourActor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_contourActor);
-
-	m_contourMapper = vtkPolyDataMapper::New();
-	m_contourMapper->SetScalarVisibility(true);
-	m_contourActor->SetMapper(m_contourMapper);
-
-	m_valueClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-	m_colorContourPolyData = vtkSmartPointer<vtkPolyData>::New();
-
-	m_fringeActor = vtkLODActor::New();
-	m_fringeActor->SetNumberOfCloudPoints(5000);
-	m_fringeActor->GetProperty()->SetPointSize(2);
-	m_fringeActor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_fringeActor);
-
-	m_fringeMapper = vtkPolyDataMapper::New();
-	m_fringeMapper->SetScalarVisibility(true);
-	m_fringeActor->SetMapper(m_fringeMapper);
-
-	m_pointsActor = vtkActor::New();
-	m_pointsActor->GetProperty()->SetPointSize(2);
-	m_pointsActor->GetProperty()->SetLighting(false);
-	m_pointsActor->GetProperty()->SetRepresentationToPoints();
-	renderer()->AddActor(m_pointsActor);
-
-	m_pointsMapper = vtkPolyDataMapper::New();
-	m_pointsMapper->SetScalarVisibility(true);
-	m_pointsActor->SetMapper(m_pointsMapper);
-
-	m_blackPointsActor = vtkActor::New();
-	m_blackPointsActor->GetProperty()->SetPointSize(2);
-	m_blackPointsActor->GetProperty()->SetLighting(false);
-	m_blackPointsActor->GetProperty()->SetRepresentationToPoints();
-	m_blackPointsActor->GetProperty()->SetColor(0, 0, 0);
-	renderer()->AddActor(m_blackPointsActor);
-
-	m_blackPointsMapper = vtkPolyDataMapper::New();
-	m_blackPointsMapper->SetScalarVisibility(false);
-	m_blackPointsActor->SetMapper(m_blackPointsMapper);
-
-	vtkRenderWindowInteractor* iren = renderer()->GetRenderWindow()->GetInteractor();
-
-	m_scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
-	iRIC::setupScalarBarProperty(m_scalarBarWidget->GetScalarBarActor());
-	m_scalarBarWidget->SetEnabled(0);
-	m_scalarBarWidget->SetInteractor(iren);
-
-	m_isolineActor->VisibilityOff();
-	m_contourActor->VisibilityOff();
-	m_fringeActor->VisibilityOff();
-	m_scalarBarWidget->SetEnabled(0);
-
-	m_setting.scalarBarSetting.saveToRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	updateActorSettings();
-}
-
-void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
-{
-	m_zDepthRange.setItemCount(2);
-}
-
-void MeasuredDataPointGroupDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	m_pointsActor->SetPosition(0, 0, range.max());
-	m_blackPointsActor->SetPosition(0, 0, range.min());
-	m_contourActor->SetPosition(0, 0, range.min());
-	m_fringeActor->SetPosition(0, 0, range.min());
-	m_isolineActor->SetPosition(0, 0, range.min());
-}
-
-void MeasuredDataPointGroupDataItem::update()
-{
-	updateActorSettings();
-}
-
-void MeasuredDataPointGroupDataItem::setupIsolineSetting()
-{
-	LookupTableContainer* stc = lookupTable(m_setting.target);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -258,12 +224,12 @@ void MeasuredDataPointGroupDataItem::setupIsolineSetting()
 	m_isolineFilter->GenerateValues(m_setting.numberOfDivisions + 1, range);
 	m_isolineMapper->SetLookupTable(stc->vtkObj());
 	m_isolineMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
-	m_actorCollection->AddItem(m_isolineActor);
+	m_item->m_actorCollection->AddItem(m_isolineActor);
 }
 
-void MeasuredDataPointGroupDataItem::setupColorContourSetting()
+void MeasuredDataPointGroupDataItem::Impl::setupColorContourSetting()
 {
-	LookupTableContainer* stc = lookupTable(m_setting.target);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double range[2];
 	stc->getValueRange(&range[0], &range[1]);
@@ -324,29 +290,12 @@ void MeasuredDataPointGroupDataItem::setupColorContourSetting()
 	m_contourActor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_contourMapper->SetLookupTable(stc->vtkObj());
 	m_contourMapper->UseLookupTableScalarRangeOn();
-	m_actorCollection->AddItem(m_contourActor);
+	m_item->m_actorCollection->AddItem(m_contourActor);
 }
 
-void MeasuredDataPointGroupDataItem::setupPointSetting()
+void MeasuredDataPointGroupDataItem::Impl::setupColorFringeSetting()
 {
-	LookupTableContainer* stc = lookupTable(m_setting.target);
-	if (stc == nullptr) {return;}
-	m_pointsActor->GetProperty()->SetPointSize(m_setting.pointSize);
-	m_pointsMapper->SetInputData(m_valueClippedPolyData);
-	m_pointsMapper->SetScalarModeToUsePointFieldData();
-	m_pointsMapper->SelectColorArray(iRIC::toStr(m_setting.target).c_str());
-	m_pointsMapper->SetLookupTable(stc->vtkObj());
-	m_pointsMapper->UseLookupTableScalarRangeOn();
-	m_actorCollection->AddItem(m_pointsActor);
-
-	m_blackPointsActor->GetProperty()->SetPointSize(m_setting.pointSize + 2);
-	m_pointsMapper->SetInputData(m_valueClippedPolyData);
-	m_actorCollection->AddItem(m_blackPointsActor);
-}
-
-void MeasuredDataPointGroupDataItem::setupColorFringeSetting()
-{
-	LookupTableContainer* stc = lookupTable(m_setting.target);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	m_fringeMapper->SetInputData(m_valueClippedPolyData);
 	m_fringeMapper->SetScalarModeToUsePointFieldData();
@@ -354,12 +303,12 @@ void MeasuredDataPointGroupDataItem::setupColorFringeSetting()
 	m_fringeMapper->SetLookupTable(stc->vtkObj());
 	m_fringeMapper->UseLookupTableScalarRangeOn();
 	m_fringeActor->GetProperty()->SetOpacity(m_setting.opacity);
-	m_actorCollection->AddItem(m_fringeActor);
+	m_item->m_actorCollection->AddItem(m_fringeActor);
 }
 
-void MeasuredDataPointGroupDataItem::setupScalarBarSetting()
+void MeasuredDataPointGroupDataItem::Impl::setupScalarBarSetting()
 {
-	LookupTableContainer* stc = lookupTable(m_setting.target);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	a->SetTitle(iRIC::toStr(m_colorbarTitleMap[iRIC::toStr(m_setting.target)]).c_str());
@@ -381,62 +330,12 @@ void MeasuredDataPointGroupDataItem::setupScalarBarSetting()
 	}
 }
 
-QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
-{
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr) {
-		return nullptr;
-	}
-	if (md->scalarNames().size() == 0) {
-		return nullptr;
-	}
-	m_setting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	MeasuredDataPointSettingDialog* dialog = new MeasuredDataPointSettingDialog(p);
-
-	dialog->setData(md);
-	if (md->noPolyData()) {
-		dialog->forceSelectPointsOnly();
-	}
-
-	dialog->setSetting(m_setting);
-	dialog->setLookupTables(m_lookupTables);
-	dialog->setScalarBarTitleMap(m_colorbarTitleMap);
-
-	return dialog;
-}
-
-void MeasuredDataPointGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	MeasuredDataPointSettingDialog* dialog = dynamic_cast<MeasuredDataPointSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
-}
-
-void MeasuredDataPointGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
-}
-
-std::string MeasuredDataPointGroupDataItem::target() const
-{
-	return iRIC::toStr(m_setting.target);
-}
-
-void MeasuredDataPointGroupDataItem::setTarget(const std::string &target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.target = target.c_str();
-	updateActorSettings();
-}
-
-void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
+void MeasuredDataPointGroupDataItem::Impl::createValueClippedPolyData()
 {
 	vtkSmartPointer<vtkPointSet> upperClipped;
 	vtkSmartPointer<vtkPointSet> lowerClipped;
 
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
 	vtkPointSet* pd = nullptr;
 	if (md->noPolyData() || m_setting.contour == ContourSettingWidget::Points) {
 		pd = md->pointData();
@@ -445,7 +344,7 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 	}
 	pd->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.target).c_str());
 
-	LookupTableContainer* stc = lookupTable(m_setting.target);
+	LookupTableContainer* stc = m_item->lookupTable(m_setting.target);
 	if (stc == nullptr) {return;}
 	double min, max;
 	stc->getValueRange(&min, &max);
@@ -473,19 +372,139 @@ void MeasuredDataPointGroupDataItem::createValueClippedPolyData()
 	pd->GetPointData()->SetActiveScalars("");
 }
 
+// public interfaces
+
+MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDataItem* p) :
+	GraphicsWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	impl {new Impl(this)}
+{
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	impl->setupActors();
+
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(p)->measuredData();
+
+	for (int i = 0; i < md->scalarNames().size(); ++i) {
+		std::string name = md->scalarNames().at(i);
+		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(name, name.c_str(), this);
+		m_childItems.append(item);
+		impl->m_colorbarTitleMap.insert({name, name.c_str()});
+
+		LookupTableContainer* cont = new LookupTableContainer(this);
+
+		vtkDataArray* da = md->polyData()->GetPointData()->GetArray(name.c_str());
+		double range[2];
+		da->GetRange(range);
+		cont->setValueRange(range[0], range[1]);
+		impl->m_lookupTables.insert({name, cont});
+	}
+	if (md->scalarNames().size() > 0) {
+		auto name = md->scalarNames().at(0);
+		setTarget(name);
+	}
+}
+
+MeasuredDataPointGroupDataItem::~MeasuredDataPointGroupDataItem()
+{
+	delete impl;
+}
+
+void MeasuredDataPointGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	impl->m_setting.load(node);
+
+	impl->m_setting.scalarBarSetting.saveToRepresentation(impl->m_scalarBarWidget->GetScalarBarRepresentation());
+	impl->updateActorSettings();
+}
+
+void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	impl->m_setting.scalarBarSetting.loadFromRepresentation(impl->m_scalarBarWidget->GetScalarBarRepresentation());
+	impl->m_setting.save(writer);
+}
+
+void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
+void MeasuredDataPointGroupDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	impl->m_pointsActor->SetPosition(0, 0, range.max());
+	impl->m_blackPointsActor->SetPosition(0, 0, range.min());
+	impl->m_contourActor->SetPosition(0, 0, range.min());
+	impl->m_fringeActor->SetPosition(0, 0, range.min());
+	impl->m_isolineActor->SetPosition(0, 0, range.min());
+}
+
+void MeasuredDataPointGroupDataItem::update()
+{
+	impl->updateActorSettings();
+}
+
+QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
+{
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	if (md == nullptr || md->pointData() == nullptr) {
+		return nullptr;
+	}
+	if (md->scalarNames().size() == 0) {
+		return nullptr;
+	}
+	impl->m_setting.scalarBarSetting.loadFromRepresentation(impl->m_scalarBarWidget->GetScalarBarRepresentation());
+	MeasuredDataPointSettingDialog* dialog = new MeasuredDataPointSettingDialog(p);
+
+	dialog->setData(md);
+	if (md->noPolyData()) {
+		dialog->forceSelectPointsOnly();
+	}
+
+	dialog->setSetting(impl->m_setting);
+	dialog->setLookupTables(impl->m_lookupTables);
+	dialog->setScalarBarTitleMap(impl->m_colorbarTitleMap);
+
+	return dialog;
+}
+
+void MeasuredDataPointGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	MeasuredDataPointSettingDialog* dialog = dynamic_cast<MeasuredDataPointSettingDialog*>(propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), dialog->lookupTable(), dialog->scalarBarTitle(), this), this, true);
+}
+
+void MeasuredDataPointGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
+{
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Contour Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
+}
+
+std::string MeasuredDataPointGroupDataItem::target() const
+{
+	return iRIC::toStr(impl->m_setting.target);
+}
+
+void MeasuredDataPointGroupDataItem::setTarget(const std::string &target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	impl->m_setting.target = target.c_str();
+	impl->updateActorSettings();
+}
+
 bool MeasuredDataPointGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
-	if (m_setting.target == "") {return false;}
-	if (m_setting.contour == ContourSettingWidget::Isolines || m_setting.contour == ContourSettingWidget::Points) {return false;}
-	if (m_setting.opacity.value() == 100) {return false;}
+	if (impl->m_setting.target == "") {return false;}
+	if (impl->m_setting.contour == ContourSettingWidget::Isolines || impl->m_setting.contour == ContourSettingWidget::Points) {return false;}
+	if (impl->m_setting.opacity.value() == 100) {return false;}
 	return true;
 }
 
 LookupTableContainer* MeasuredDataPointGroupDataItem::lookupTable(const std::string& target) const
 {
-	auto it = m_lookupTables.find(target);
-	if (it == m_lookupTables.end()) {return nullptr;}
+	auto it = impl->m_lookupTables.find(target);
+	if (it == impl->m_lookupTables.end()) {return nullptr;}
 
 	return it->second;
 }
@@ -494,21 +513,21 @@ void MeasuredDataPointGroupDataItem::updateVisibility(bool visible)
 {
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
 	int scalarBarVisible = 0;
-	if (v && m_setting.scalarBarSetting.visible) {
+	if (v && impl->m_setting.scalarBarSetting.visible) {
 		scalarBarVisible = 1;
 	}
-	m_scalarBarWidget->SetEnabled(scalarBarVisible);
+	impl->m_scalarBarWidget->SetEnabled(scalarBarVisible);
 	GraphicsWindowDataItem::updateVisibility(visible);
 }
 
 void MeasuredDataPointGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	m_scalarBarWidget->SetRepositionable(1);
+	impl->m_scalarBarWidget->SetRepositionable(1);
 }
 
 void MeasuredDataPointGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	m_scalarBarWidget->SetRepositionable(0);
+	impl->m_scalarBarWidget->SetRepositionable(0);
 }
 
 void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -528,5 +547,5 @@ void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 
 void MeasuredDataPointGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	this->updateActorSettings();
+	impl->updateActorSettings();
 }
