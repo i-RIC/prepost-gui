@@ -17,13 +17,13 @@
 #include <misc/stringtool.h>
 
 #include <QDomElement>
-#include <QSet>
 #include <QSettings>
 #include <QVector2D>
 
 #include <vtkActor2DCollection.h>
 #include <vtkAppendPolyData.h>
 #include <vtkCamera.h>
+#include <vtkCellArray.h>
 #include <vtkConeSource.h>
 #include <vtkDoubleArray.h>
 #include <vtkGeometryFilter.h>
@@ -46,6 +46,7 @@
 #include <vtkWarpVector.h>
 
 #include <cmath>
+#include <vector>
 
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
@@ -57,7 +58,7 @@ MeasuredDataVectorGroupDataItem::Impl::Impl(MeasuredDataVectorGroupDataItem* ite
 	m_hedgeHog {vtkHedgeHog::New()},
 	m_arrowGlyph {vtkGlyph3D::New()},
 	m_warpVector {vtkWarpVector::New()},
-	m_activePoints {vtkUnstructuredGrid::New()},
+	m_activePoints {vtkPolyData::New()},
 	m_arrowSource {vtkConeSource::New()},
 	m_legendTextActor {vtkTextActor::New()},
 	m_baseArrowActor {vtkActor2D::New()},
@@ -276,11 +277,13 @@ void MeasuredDataVectorGroupDataItem::Impl::calculateStandardValue()
 
 vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 {
+	m_activePoints->Reset();
+
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
 	vtkPointSet* ps = md->polyData();
 
 	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
-	QSet<vtkIdType> points;
+	std::vector<vtkIdType> points;
 	double min = m_setting.minimumValue;
 	double minlimitsqr = min * min;
 	for (vtkIdType i = 0; i < ps->GetNumberOfPoints(); ++i) {
@@ -294,7 +297,7 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 			active = false;
 		}
 		if (active) {
-			points.insert(i);
+			points.push_back(i);
 		}
 	}
 
@@ -302,6 +305,7 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 	vtkPointData* outPD = m_activePoints->GetPointData();
 	vtkPoints* inPoints = ps->GetPoints();
 	vtkSmartPointer<vtkPoints> outPoints = vtkSmartPointer<vtkPoints>::New();
+	vtkSmartPointer<vtkCellArray> verts = vtkSmartPointer<vtkCellArray>::New();
 
 	outPoints->SetDataTypeToDouble();
 	outPD->CopyAllocate(inPD, points.size());
@@ -309,16 +313,13 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 	for (auto it = points.begin(); it != points.end(); ++it) {
 		vtkIdType pointid = *it;
 		outPoints->InsertNextPoint(inPoints->GetPoint(pointid));
+		verts->InsertNextCell(1, &pointid);
 		outPD->CopyData(inPD, pointid, newId);
-		vtkVertex* vertex = vtkVertex::New();
-		vertex->GetPointIds()->SetId(0, newId);
-		m_activePoints->InsertNextCell(vertex->GetCellType(), vertex->GetPointIds());
-		vertex->Delete();
 		++ newId;
 	}
 
 	m_activePoints->SetPoints(outPoints);
-	m_activePoints->BuildLinks();
+	m_activePoints->SetVerts(verts);
 	m_activePoints->Modified();
 	return m_activePoints;
 }

@@ -44,7 +44,7 @@ public:
 	vtkGlyph3D* m_arrowGlyph;
 	vtkWarpVector* m_warpVector;
 
-	vtkUnstructuredGrid* m_activePoints;
+	vtkPolyData* m_activePoints;
 	vtkConeSource* m_arrowSource;
 
 	vtkTextActor* m_legendTextActor;
