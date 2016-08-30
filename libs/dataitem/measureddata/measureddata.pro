@@ -80,7 +80,8 @@ win32 {
 }
 
 # Input
-HEADERS += measureddatafiledataitem.h \
+HEADERS += measureddata_api.h \
+           measureddatafiledataitem.h \
            measureddatapointdataitem.h \
            measureddatapointgroupdataitem.h \
            measureddatapointsetting.h \
@@ -89,6 +90,7 @@ HEADERS += measureddatafiledataitem.h \
            measureddatavectorgroupdataitem.h \
            measureddatavectorsetting.h \
            measureddatavectorsettingdialog.h \
+           private/measureddatafiledataitem_impl.h \
            private/measureddatapointgroupdataitem_setsettingcommand.h \
            private/measureddatavectorgroupdataitem_setsettingcommand.h
 FORMS += measureddatapointsettingdialog.ui measureddatavectorsettingdialog.ui

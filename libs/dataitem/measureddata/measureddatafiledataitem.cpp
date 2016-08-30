@@ -1,6 +1,7 @@
 #include "measureddatafiledataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectorgroupdataitem.h"
+#include "private/measureddatafiledataitem_impl.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
@@ -22,11 +23,16 @@
 #include <QStatusBar>
 #include <QXmlStreamWriter>
 
+MeasuredDataFileDataItem::Impl::Impl(MeasuredData* md) :
+	m_measuredData {md},
+	m_exportAction {nullptr}
+{}
+
+// public interfaces
+
 MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWindowDataItem* parent) :
 	GraphicsWindowDataItem {tr("File"), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
-	m_measuredData {md},
-	m_pointGroupDataItem {new MeasuredDataPointGroupDataItem {this}},
-	m_vectorGroupDataItem {new MeasuredDataVectorGroupDataItem {this}}
+	impl {new Impl{md}}
 {
 	setSubPath("file");
 
@@ -37,34 +43,39 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 
 	m_standardItemCopy = m_standardItem->clone();
 
-	m_childItems.append(m_pointGroupDataItem);
-	m_childItems.append(m_vectorGroupDataItem);
+	impl->m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
+	impl->m_vectorGroupDataItem = new MeasuredDataVectorGroupDataItem(this);
 
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), MeasuredDataFileDataItem::tr("&Export..."), this);
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
+	m_childItems.append(impl->m_pointGroupDataItem);
+	m_childItems.append(impl->m_vectorGroupDataItem);
+
+	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), MeasuredDataFileDataItem::tr("&Export..."), this);
+	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
 }
 
 MeasuredDataFileDataItem::~MeasuredDataFileDataItem()
-{}
+{
+	delete impl;
+}
 
 void MeasuredDataFileDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode pdNode = iRIC::getChildNode(node, "PointData");
-	if (! pdNode.isNull()) {m_pointGroupDataItem->loadFromProjectMainFile(pdNode);}
+	if (! pdNode.isNull()) {impl->m_pointGroupDataItem->loadFromProjectMainFile(pdNode);}
 	QDomNode vdNode = iRIC::getChildNode(node, "VectorData");
-	if (! vdNode.isNull()) {m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
+	if (! vdNode.isNull()) {impl->m_vectorGroupDataItem->loadFromProjectMainFile(vdNode);}
 }
 
 void MeasuredDataFileDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("index", QString::number(m_measuredData->index()));
+	writer.writeAttribute("index", QString::number(impl->m_measuredData->index()));
 
 	writer.writeStartElement("PointData");
-	m_pointGroupDataItem->saveToProjectMainFile(writer);
+	impl->m_pointGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	writer.writeStartElement("VectorData");
-	m_vectorGroupDataItem->saveToProjectMainFile(writer);
+	impl->m_vectorGroupDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 
@@ -77,7 +88,7 @@ void MeasuredDataFileDataItem::exportToFile()
 
 	try {
 		MeasuredDataCsvExporter exporter;
-		exporter.exportData(fname, *m_measuredData);
+		exporter.exportData(fname, *(impl->m_measuredData));
 
 		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
 	} catch (ErrorMessage& message) {
@@ -88,25 +99,25 @@ void MeasuredDataFileDataItem::exportToFile()
 
 MeasuredData* MeasuredDataFileDataItem::measuredData() const
 {
-	return m_measuredData;
+	return impl->m_measuredData;
 }
 
 MeasuredDataPointGroupDataItem* MeasuredDataFileDataItem::pointGroupDataItem() const
 {
-	return m_pointGroupDataItem;
+	return impl->m_pointGroupDataItem;
 }
 
 MeasuredDataVectorGroupDataItem* MeasuredDataFileDataItem::vectorGroupDataItem() const
 {
-	return m_vectorGroupDataItem;
+	return impl->m_vectorGroupDataItem;
 }
 
 void MeasuredDataFileDataItem::addCustomMenuItems(QMenu* menu)
 {
-	menu->addAction(m_exportAction);
+	menu->addAction(impl->m_exportAction);
 }
 
 void MeasuredDataFileDataItem::doApplyOffset(double x, double y)
 {
-	m_measuredData->applyOffset(x, y);
+	impl->m_measuredData->applyOffset(x, y);
 }

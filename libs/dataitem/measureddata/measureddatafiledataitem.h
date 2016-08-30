@@ -8,7 +8,6 @@
 class MeasuredData;
 class MeasuredDataPointGroupDataItem;
 class MeasuredDataVectorGroupDataItem;
-class QAction;
 
 class MEASUREDDATA_API MeasuredDataFileDataItem : public GraphicsWindowDataItem
 {
@@ -31,12 +30,12 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doApplyOffset(double x, double y) override;
 
-	MeasuredData* m_measuredData;
-
-	MeasuredDataPointGroupDataItem* m_pointGroupDataItem;
-	MeasuredDataVectorGroupDataItem* m_vectorGroupDataItem;
-
-	QAction* m_exportAction;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/measureddatafiledataitem_impl.h"
+#endif // _DEBUG
 
 #endif // MEASUREDDATAFILEDATAITEM_H
