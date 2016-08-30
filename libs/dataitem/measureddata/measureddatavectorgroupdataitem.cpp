@@ -4,12 +4,14 @@
 #include "measureddatavectordataitem.h"
 #include "measureddatavectorgroupdataitem.h"
 #include "measureddatavectorsettingdialog.h"
+#include "private/measureddatavectorgroupdataitem_impl.h"
 #include "private/measureddatavectorgroupdataitem_setsettingcommand.h"
 
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
+#include <guicore/project/measured/measureddata.h>
 #include <guicore/scalarstocolors/lookuptablecontainer.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -20,112 +22,95 @@
 #include <QVector2D>
 
 #include <vtkActor2DCollection.h>
+#include <vtkAppendPolyData.h>
 #include <vtkCamera.h>
+#include <vtkConeSource.h>
 #include <vtkDoubleArray.h>
 #include <vtkGeometryFilter.h>
+#include <vtkGlyph3D.h>
+#include <vtkHedgeHog.h>
 #include <vtkLine.h>
+#include <vtkPoints.h>
 #include <vtkPointData.h>
+#include <vtkPolyDataMapper.h>
 #include <vtkPolyDataMapper2D.h>
 #include <vtkProperty.h>
 #include <vtkProperty2D.h>
 #include <vtkRenderer.h>
+#include <vtkSmartPointer.h>
+#include <vtkTextActor.h>
 #include <vtkTextProperty.h>
 #include <vtkTriangle.h>
+#include <vtkUnstructuredGrid.h>
 #include <vtkVertex.h>
+#include <vtkWarpVector.h>
 
 #include <cmath>
 
 const double MeasuredDataVectorGroupDataItem::MINLIMIT = 1.0E-6;
 
-MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p) :
-	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p}
+MeasuredDataVectorGroupDataItem::Impl::Impl(MeasuredDataVectorGroupDataItem* item) :
+	m_arrowActor {vtkActor::New()},
+	m_arrowMapper {vtkPolyDataMapper::New()},
+	m_appendPolyData {vtkAppendPolyData::New()},
+	m_polyData {vtkPolyData::New()},
+	m_hedgeHog {vtkHedgeHog::New()},
+	m_arrowGlyph {vtkGlyph3D::New()},
+	m_warpVector {vtkWarpVector::New()},
+	m_activePoints {vtkUnstructuredGrid::New()},
+	m_arrowSource {vtkConeSource::New()},
+	m_legendTextActor {vtkTextActor::New()},
+	m_baseArrowActor {vtkActor2D::New()},
+	m_baseArrowPolyData {vtkUnstructuredGrid::New()},
+	m_item {item}
+{}
+
+MeasuredDataVectorGroupDataItem::Impl::~Impl()
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	m_item->renderer()->RemoveActor(m_arrowActor);
 
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	m_arrowActor->Delete();
+	m_arrowMapper->Delete();
 
-	for (std::string name : md->vectorNames()) {
-		auto item = new MeasuredDataVectorDataItem(name, name.c_str(), this);
-		m_childItems.append(item);
-	}
+	m_appendPolyData->Delete();
+	m_polyData->Delete();
 
-	setupActors();
+	m_hedgeHog->Delete();
+	m_arrowGlyph->Delete();
+	m_warpVector->Delete();
 
-	if (md->vectorNames().size() > 0) {
-		auto name = md->vectorNames().at(0);
-		setTarget(name);
-	}
+	m_activePoints->Delete();
+	m_arrowSource->Delete();
+
+	m_legendTextActor->Delete();
+	m_baseArrowActor->Delete();
+	m_baseArrowPolyData->Delete();
 }
 
-MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
+void MeasuredDataVectorGroupDataItem::Impl::setupActors()
 {
-	renderer()->RemoveActor(m_arrowActor);
-}
-
-void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
-{
-	m_setting.load(node);
-	setTarget(iRIC::toStr(m_setting.target));
-}
-
-void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	m_setting.save(writer);
-}
-
-std::string MeasuredDataVectorGroupDataItem::target() const
-{
-	return m_setting.target;
-}
-
-void MeasuredDataVectorGroupDataItem::setTarget(const std::string &target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.target = target.c_str();
-	updateActorSettings();
-}
-
-void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
-}
-
-void MeasuredDataVectorGroupDataItem::setupActors()
-{
-	m_arrowActor = vtkSmartPointer<vtkActor>::New();
-	renderer()->AddActor(m_arrowActor);
+	vtkRenderer* r = m_item->renderer();
+	r->AddActor(m_arrowActor);
 	m_arrowActor->GetProperty()->LightingOff();
 
-	m_arrowMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
 	m_arrowActor->SetMapper(m_arrowMapper);
 
-	m_hedgeHog = vtkSmartPointer<vtkHedgeHog>::New();
 	m_hedgeHog->SetVectorModeToUseVector();
 	m_hedgeHog->SetScaleFactor(m_scaleFactor);
 
-	m_warpVector = vtkSmartPointer<vtkWarpVector>::New();
-
-	m_arrowGlyph = vtkSmartPointer<vtkGlyph3D>::New();
 	m_arrowGlyph->SetScaleModeToDataScalingOff();
 	m_arrowGlyph->SetVectorModeToUseVector();
 	m_arrowGlyph->SetInputConnection(m_warpVector->GetOutputPort());
 
-	m_arrowSource = vtkSmartPointer<vtkConeSource>::New();
 	m_arrowGlyph->SetSourceConnection(m_arrowSource->GetOutputPort());
 
-	m_appendPolyData = vtkSmartPointer<vtkAppendPolyData>::New();
 	m_appendPolyData->AddInputConnection(m_hedgeHog->GetOutputPort());
 	m_appendPolyData->AddInputConnection(m_arrowGlyph->GetOutputPort());
 
-	m_polyData = vtkSmartPointer<vtkPolyData>::New();
 	m_arrowMapper->SetInputData(m_polyData);
 
 	m_arrowActor->VisibilityOff();
 
-	m_legendTextActor = vtkSmartPointer<vtkTextActor>::New();
 	m_legendTextActor->SetTextScaleModeToNone();
 	m_legendTextActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
 	m_legendTextActor->SetPosition(0.75, 0.02);
@@ -136,16 +121,13 @@ void MeasuredDataVectorGroupDataItem::setupActors()
 	prop->SetVerticalJustificationToBottom();
 
 	m_legendTextActor->VisibilityOff();
-	renderer()->AddActor2D(m_legendTextActor);
-
-	m_baseArrowPolyData = vtkSmartPointer<vtkUnstructuredGrid>::New();
+	r->AddActor2D(m_legendTextActor);
 
 	vtkSmartPointer<vtkPolyDataMapper2D> mapper = vtkSmartPointer<vtkPolyDataMapper2D>::New();
 	vtkSmartPointer<vtkGeometryFilter> f = vtkSmartPointer<vtkGeometryFilter>::New();
 	f->SetInputData(m_baseArrowPolyData);
 	mapper->SetInputConnection(f->GetOutputPort());
 
-	m_baseArrowActor = vtkSmartPointer<vtkActor2D>::New();
 	m_baseArrowActor->SetMapper(mapper);
 
 	m_baseArrowActor->GetPositionCoordinate()->SetCoordinateSystemToNormalizedViewport();
@@ -153,15 +135,103 @@ void MeasuredDataVectorGroupDataItem::setupActors()
 	m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
 	m_baseArrowActor->VisibilityOff();
 
-	renderer()->AddActor2D(m_baseArrowActor);
+	r->AddActor2D(m_baseArrowActor);
 }
 
-void MeasuredDataVectorGroupDataItem::calculateStandardValue()
+void MeasuredDataVectorGroupDataItem::Impl::updatePolyData()
+{
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
+	if (md == nullptr || md->pointData() == nullptr) {return;}
+	if (m_setting.target == "") {return;}
+	updateScaleFactor();
+	VTKGraphicsView* view = m_item->dataModel()->graphicsView();
+	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
+
+	double height = view2->stdRadius(8);
+	m_hedgeHog->SetScaleFactor(m_scaleFactor);
+	m_warpVector->SetScaleFactor(m_scaleFactor);
+	m_arrowSource->SetHeight(height);
+	m_arrowSource->SetAngle(15);
+	m_arrowSource->Modified();
+
+	m_appendPolyData->Update();
+	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
+}
+
+void MeasuredDataVectorGroupDataItem::Impl::updateLegendData()
+{
+	double vectorOffset = 18;
+	double arrowLen = m_setting.legendLength;
+	m_baseArrowPolyData->Initialize();
+	m_baseArrowPolyData->Allocate(3);
+
+	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
+	points->SetDataTypeToDouble();
+	m_baseArrowPolyData->SetPoints(points);
+	// add line
+	points->InsertNextPoint(- arrowLen * .5, vectorOffset, 0);
+	points->InsertNextPoint(arrowLen * .5, vectorOffset, 0);
+	vtkSmartPointer<vtkLine> line = vtkSmartPointer<vtkLine>::New();
+	line->GetPointIds()->SetId(0, 0);
+	line->GetPointIds()->SetId(1, 1);
+	m_baseArrowPolyData->InsertNextCell(line->GetCellType(), line->GetPointIds());
+
+	// add triangle
+	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset + 3, 0);
+	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset - 3, 0);
+	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
+	tri->GetPointIds()->SetId(0, 1);
+	tri->GetPointIds()->SetId(1, 2);
+	tri->GetPointIds()->SetId(2, 3);
+	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+
+	QString lenStr = QString("%1\n\n%2").arg(m_setting.target).arg(m_setting.standardValue);
+	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
+
+	if (m_setting.colorMode == ArrowSettingContainer::ColorMode::Custom) {
+		// specified color.
+		m_baseArrowActor->GetProperty()->SetColor(m_setting.customColor);
+	} else if (m_setting.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
+		// always black.
+		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
+	}
+}
+
+void MeasuredDataVectorGroupDataItem::Impl::updateScaleFactor()
+{
+	VTKGraphicsView* view = m_item->dataModel()->graphicsView();
+	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
+	double a = 1.0 / view2->stdRadius(1.0);
+	m_scaleFactor = m_setting.legendLength / (a * m_setting.standardValue);
+}
+
+void MeasuredDataVectorGroupDataItem::Impl::updateColorSetting()
+{
+	MeasuredDataFileDataItem* fdi = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent());
+	MeasuredDataPointGroupDataItem* pgdi = fdi->pointGroupDataItem();
+	switch (m_setting.colorMode.value()) {
+	case ArrowSettingContainer::ColorMode::Custom:
+		m_arrowMapper->ScalarVisibilityOff();
+		m_arrowActor->GetProperty()->SetColor(m_setting.customColor);
+		break;
+	case ArrowSettingContainer::ColorMode::ByScalar:
+		// not implemented yet.
+		m_arrowMapper->ScalarVisibilityOn();
+		LookupTableContainer* stc = pgdi->lookupTable(iRIC::toStr(m_setting.colorTarget));
+		m_arrowMapper->SetScalarModeToUsePointFieldData();
+		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.colorTarget).c_str());
+		m_arrowMapper->SetLookupTable(stc->vtkObj());
+		m_arrowMapper->UseLookupTableScalarRangeOn();
+		break;
+	}
+}
+
+void MeasuredDataVectorGroupDataItem::Impl::calculateStandardValue()
 {
 	if (m_setting.lengthMode == ArrowSettingContainer::LengthMode::Custom) {return;}
 
 	QVector<double> lenVec;
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
 	if (md == 0 || md->vectorNames().size() == 0) {return;}
 	vtkPointSet* ps = md->pointData();
 	if (m_setting.target == "") {return;}
@@ -204,182 +274,9 @@ void MeasuredDataVectorGroupDataItem::calculateStandardValue()
 	m_setting.minimumValue = 0.001 * m_setting.standardValue;
 }
 
-void MeasuredDataVectorGroupDataItem::informGridUpdate()
+vtkPointSet* MeasuredDataVectorGroupDataItem::Impl::getPointSet()
 {
-	updateActorSettings();
-}
-
-void MeasuredDataVectorGroupDataItem::updateActorSettings()
-{
-	m_arrowActor->VisibilityOff();
-	m_legendTextActor->VisibilityOff();
-	m_baseArrowActor->VisibilityOff();
-
-	m_actorCollection->RemoveAllItems();
-	m_actor2DCollection->RemoveAllItems();
-
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == 0 || md->pointData() == 0) {return;}
-	if (m_setting.target == "") {return;}
-	vtkPointSet* ps = getPointSet();
-	if (m_setting.target == "") {return;}
-	vtkPointData* pd = ps->GetPointData();
-	if (pd->GetNumberOfArrays() == 0) {return;}
-
-	pd->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
-	m_hedgeHog->SetInputData(ps);
-	m_warpVector->SetInputData(ps);
-
-	calculateStandardValue();
-	updateColorSetting();
-	updatePolyData();
-	updateLegendData();
-
-	m_actorCollection->AddItem(m_arrowActor);
-	m_actor2DCollection->AddItem(m_legendTextActor);
-	m_actor2DCollection->AddItem(m_baseArrowActor);
-	updateVisibilityWithoutRendering();
-}
-
-void MeasuredDataVectorGroupDataItem::updateColorSetting()
-{
-	MeasuredDataFileDataItem* fdi = dynamic_cast<MeasuredDataFileDataItem*>(parent());
-	MeasuredDataPointGroupDataItem* pgdi = fdi->pointGroupDataItem();
-	switch (m_setting.colorMode.value()) {
-	case ArrowSettingContainer::ColorMode::Custom:
-		m_arrowMapper->ScalarVisibilityOff();
-		m_arrowActor->GetProperty()->SetColor(m_setting.customColor);
-		break;
-	case ArrowSettingContainer::ColorMode::ByScalar:
-		// not implemented yet.
-		m_arrowMapper->ScalarVisibilityOn();
-		LookupTableContainer* stc = pgdi->lookupTable(iRIC::toStr(m_setting.colorTarget));
-		m_arrowMapper->SetScalarModeToUsePointFieldData();
-		m_arrowMapper->SelectColorArray(iRIC::toStr(m_setting.colorTarget).c_str());
-		m_arrowMapper->SetLookupTable(stc->vtkObj());
-		m_arrowMapper->UseLookupTableScalarRangeOn();
-		break;
-	}
-}
-
-void MeasuredDataVectorGroupDataItem::updateZDepthRangeItemCount()
-{
-	m_zDepthRange.setItemCount(2);
-}
-
-void MeasuredDataVectorGroupDataItem::assignActorZValues(const ZDepthRange& range)
-{
-	m_arrowActor->SetPosition(0, 0, range.max());
-}
-
-void MeasuredDataVectorGroupDataItem::update()
-{
-	informGridUpdate();
-}
-
-void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
-{
-	vtkCamera* cam = renderer()->GetActiveCamera();
-	double scale = cam->GetParallelScale();
-	if (scale != m_setting.oldCameraScale) {
-		updatePolyData();
-		updateLegendData();
-	}
-	m_setting.oldCameraScale = scale;
-}
-
-void MeasuredDataVectorGroupDataItem::updatePolyData()
-{
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr) {return;}
-	if (m_setting.target == "") {return;}
-	updateScaleFactor();
-	VTKGraphicsView* view = dataModel()->graphicsView();
-	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
-
-	double height = view2->stdRadius(8);
-	m_hedgeHog->SetScaleFactor(m_scaleFactor);
-	m_warpVector->SetScaleFactor(m_scaleFactor);
-	m_arrowSource->SetHeight(height);
-	m_arrowSource->SetAngle(15);
-	m_arrowSource->Modified();
-
-	m_appendPolyData->Update();
-	m_polyData->DeepCopy(m_appendPolyData->GetOutput());
-}
-
-void MeasuredDataVectorGroupDataItem::updateScaleFactor()
-{
-	VTKGraphicsView* view = dataModel()->graphicsView();
-	VTK2DGraphicsView* view2 = dynamic_cast<VTK2DGraphicsView*>(view);
-	double a = 1.0 / view2->stdRadius(1.0);
-	m_scaleFactor = m_setting.legendLength / (a * m_setting.standardValue);
-}
-
-void MeasuredDataVectorGroupDataItem::updateLegendData()
-{
-	double vectorOffset = 18;
-	double arrowLen = m_setting.legendLength;
-	m_baseArrowPolyData->Initialize();
-	m_baseArrowPolyData->Allocate(3);
-
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	m_baseArrowPolyData->SetPoints(points);
-	// add line
-	points->InsertNextPoint(- arrowLen * .5, vectorOffset, 0);
-	points->InsertNextPoint(arrowLen * .5, vectorOffset, 0);
-	vtkSmartPointer<vtkLine> line = vtkSmartPointer<vtkLine>::New();
-	line->GetPointIds()->SetId(0, 0);
-	line->GetPointIds()->SetId(1, 1);
-	m_baseArrowPolyData->InsertNextCell(line->GetCellType(), line->GetPointIds());
-
-	// add triangle
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset + 3, 0);
-	points->InsertNextPoint(arrowLen * .5 - 8, vectorOffset - 3, 0);
-	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
-	tri->GetPointIds()->SetId(0, 1);
-	tri->GetPointIds()->SetId(1, 2);
-	tri->GetPointIds()->SetId(2, 3);
-	m_baseArrowPolyData->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
-
-	QString lenStr = QString("%1\n\n%2").arg(m_setting.target).arg(m_setting.standardValue);
-	m_legendTextActor->SetInput(iRIC::toStr(lenStr).c_str());
-
-	if (m_setting.colorMode == ArrowSettingContainer::ColorMode::Custom) {
-		// specified color.
-		m_baseArrowActor->GetProperty()->SetColor(m_setting.customColor);
-	} else if (m_setting.colorMode == ArrowSettingContainer::ColorMode::ByScalar) {
-		// always black.
-		m_baseArrowActor->GetProperty()->SetColor(0, 0, 0);
-	}
-}
-
-QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
-{
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr) {
-		return 0;
-	}
-	if (md->vectorNames().size() == 0) {
-		return 0;
-	}
-	MeasuredDataVectorSettingDialog* dialog = new MeasuredDataVectorSettingDialog(p);
-	dialog->setData(md);
-	dialog->setSetting(m_setting);
-
-	return dialog;
-}
-
-void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	MeasuredDataVectorSettingDialog* dialog = dynamic_cast<MeasuredDataVectorSettingDialog*>(propDialog);
-	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
-}
-
-vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
-{
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
 	vtkPointSet* ps = md->polyData();
 
 	vtkDoubleArray* vectorArray = vtkDoubleArray::SafeDownCast(ps->GetPointData()->GetArray(iRIC::toStr(m_setting.target).c_str()));
@@ -401,7 +298,6 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 		}
 	}
 
-	m_activePoints = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	vtkPointData* inPD = ps->GetPointData();
 	vtkPointData* outPD = m_activePoints->GetPointData();
 	vtkPoints* inPoints = ps->GetPoints();
@@ -425,6 +321,150 @@ vtkPointSet* MeasuredDataVectorGroupDataItem::getPointSet()
 	m_activePoints->BuildLinks();
 	m_activePoints->Modified();
 	return m_activePoints;
+}
+
+// public interfaces
+
+MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p) :
+	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.png"), p},
+	impl {new Impl(this)}
+{
+	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+
+	for (std::string name : md->vectorNames()) {
+		auto item = new MeasuredDataVectorDataItem(name, name.c_str(), this);
+		m_childItems.append(item);
+	}
+
+	impl->setupActors();
+
+	if (md->vectorNames().size() > 0) {
+		auto name = md->vectorNames().at(0);
+		setTarget(name);
+	}
+}
+
+MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
+{
+	delete impl;
+}
+
+void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	impl->m_setting.load(node);
+	setTarget(iRIC::toStr(impl->m_setting.target));
+}
+
+void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	impl->m_setting.save(writer);
+}
+
+std::string MeasuredDataVectorGroupDataItem::target() const
+{
+	return impl->m_setting.target;
+}
+
+void MeasuredDataVectorGroupDataItem::setTarget(const std::string &target)
+{
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	impl->m_setting.target = target.c_str();
+	updateActorSettings();
+}
+
+void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
+{
+	if (m_isCommandExecuting) {return;}
+
+	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
+	pushRenderCommand(cmd, this, true);
+}
+
+void MeasuredDataVectorGroupDataItem::informGridUpdate()
+{
+	updateActorSettings();
+}
+
+void MeasuredDataVectorGroupDataItem::updateActorSettings()
+{
+	impl->m_arrowActor->VisibilityOff();
+	impl->m_legendTextActor->VisibilityOff();
+	impl->m_baseArrowActor->VisibilityOff();
+
+	m_actorCollection->RemoveAllItems();
+	m_actor2DCollection->RemoveAllItems();
+
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	if (md == 0 || md->pointData() == 0) {return;}
+	if (impl->m_setting.target == "") {return;}
+	vtkPointSet* ps = impl->getPointSet();
+	if (impl->m_setting.target == "") {return;}
+	vtkPointData* pd = ps->GetPointData();
+	if (pd->GetNumberOfArrays() == 0) {return;}
+
+	pd->SetActiveVectors(iRIC::toStr(impl->m_setting.target).c_str());
+	impl->m_hedgeHog->SetInputData(ps);
+	impl->m_warpVector->SetInputData(ps);
+
+	impl->calculateStandardValue();
+	impl->updateColorSetting();
+	impl->updatePolyData();
+	impl->updateLegendData();
+
+	m_actorCollection->AddItem(impl->m_arrowActor);
+	m_actor2DCollection->AddItem(impl->m_legendTextActor);
+	m_actor2DCollection->AddItem(impl->m_baseArrowActor);
+	updateVisibilityWithoutRendering();
+}
+
+void MeasuredDataVectorGroupDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
+}
+
+void MeasuredDataVectorGroupDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	impl->m_arrowActor->SetPosition(0, 0, range.max());
+}
+
+void MeasuredDataVectorGroupDataItem::update()
+{
+	informGridUpdate();
+}
+
+void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
+{
+	vtkCamera* cam = renderer()->GetActiveCamera();
+	double scale = cam->GetParallelScale();
+	if (scale != impl->m_setting.oldCameraScale) {
+		impl->updatePolyData();
+		impl->updateLegendData();
+	}
+	impl->m_setting.oldCameraScale = scale;
+}
+
+QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
+{
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	if (md == nullptr || md->pointData() == nullptr) {
+		return 0;
+	}
+	if (md->vectorNames().size() == 0) {
+		return 0;
+	}
+	MeasuredDataVectorSettingDialog* dialog = new MeasuredDataVectorSettingDialog(p);
+	dialog->setData(md);
+	dialog->setSetting(impl->m_setting);
+
+	return dialog;
+}
+
+void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+{
+	MeasuredDataVectorSettingDialog* dialog = dynamic_cast<MeasuredDataVectorSettingDialog*>(propDialog);
+	pushRenderCommand(new SetSettingCommand(dialog->setting(), this), this, true);
 }
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)

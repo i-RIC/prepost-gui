@@ -3,6 +3,7 @@
 #include "measureddatavectorsettingdialog.h"
 
 #include <guibase/comboboxtool.h>
+#include <guicore/project/measured/measureddata.h>
 
 #include <QtGlobal>
 

@@ -1,11 +1,11 @@
 #include "measureddatavectorgroupdataitem_setsettingcommand.h"
-
+#include "measureddatavectorgroupdataitem_impl.h"
 #include <misc/stringtool.h>
 
 MeasuredDataVectorGroupDataItem::SetSettingCommand::SetSettingCommand(const MeasuredDataVectorSetting& setting, MeasuredDataVectorGroupDataItem* item) :
 	QUndoCommand {MeasuredDataVectorGroupDataItem::tr("Update Arrow Setting")},
 	m_newSetting {setting},
-	m_oldSetting {item->m_setting},
+	m_oldSetting {item->impl->m_setting},
 	m_item {item}
 {}
 
@@ -21,7 +21,7 @@ void MeasuredDataVectorGroupDataItem::SetSettingCommand::undo()
 
 void MeasuredDataVectorGroupDataItem::SetSettingCommand::applySetting(const MeasuredDataVectorSetting& s)
 {
-	m_item->m_setting = s;
+	m_item->impl->m_setting = s;
 	m_item->setTarget(iRIC::toStr(s.target));
 	m_item->updateActorSettings();
 }
