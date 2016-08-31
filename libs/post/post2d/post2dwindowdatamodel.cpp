@@ -61,6 +61,7 @@ void Post2dWindowDataModel::init()
 	// if (m_rootDataItem != nullptr){delete m_rootDataItem;}
 	// build new data.
 	m_graphicsView = new Post2dWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
+	m_graphicsView->setModel(this);
 	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QVector2D)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QVector2D)));
 
 	// setup the basic itemModel structure.
@@ -71,7 +72,6 @@ void Post2dWindowDataModel::init()
 	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
 
 	m_graphicsView->setActiveDataItem(root);
-	m_graphicsView->setModel(this);
 	m_graphicsView->cameraFit();
 }
 
