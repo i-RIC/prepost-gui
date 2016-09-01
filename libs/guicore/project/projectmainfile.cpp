@@ -1013,7 +1013,7 @@ void ProjectMainFile::addMeasuredData()
 	QFileInfo finfo(fname);
 	try {
 		MeasuredDataCsvImporter importer;
-		MeasuredData* md = importer.importData(fname);
+		MeasuredData* md = importer.importData(fname, this);
 		impl->m_measuredDatas.push_back(md);
 		emit measuredDataAdded();
 		setModified();

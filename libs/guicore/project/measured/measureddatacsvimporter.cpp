@@ -33,9 +33,9 @@ struct VectorData {
 
 } // namespace
 
-MeasuredData* MeasuredDataCsvImporter::importData(const QString &filename) const
+MeasuredData* MeasuredDataCsvImporter::importData(const QString &filename, ProjectDataItem* parent) const
 {
-	MeasuredData* ret = new MeasuredData(nullptr);
+	MeasuredData* ret = new MeasuredData(parent);
 
 	QFile file(filename);
 	if (! file.open(QFile::ReadOnly | QFile::Text)) {
