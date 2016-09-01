@@ -3,13 +3,8 @@
 
 #include <QDialog>
 
-#include "measureddatavectorgroupdataitem.h"
-#include "measureddatavectorsetting.h"
-
-#include <string>
-#include <vector>
-
 class MeasuredData;
+class MeasuredDataVectorSetting;
 
 namespace Ui
 {
@@ -30,14 +25,14 @@ public:
 	void setSetting(const MeasuredDataVectorSetting& setting);
 
 private:
-	void setupSolutionComboBox(MeasuredData* data);
-
-	MeasuredDataVectorSetting m_setting;
-
-	std::vector<std::string> m_targets;
-	std::vector<std::string> m_scalars;
-
 	Ui::MeasuredDataVectorSettingDialog* ui;
+
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/measureddatavectorsettingdialog_impl.h"
+#endif // _DEBUG
 
 #endif // MEASUREDDATAVECTORSETTINGDIALOG_H

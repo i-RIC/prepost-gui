@@ -1,15 +1,41 @@
 #include "ui_measureddatavectorsettingdialog.h"
-
 #include "measureddatavectorsettingdialog.h"
+#include "private/measureddatavectorsettingdialog_impl.h"
 
 #include <guibase/comboboxtool.h>
 #include <guicore/project/measured/measureddata.h>
 
 #include <QtGlobal>
 
+MeasuredDataVectorSettingDialog::Impl::Impl(MeasuredDataVectorSettingDialog* dialog) :
+	m_dialog {dialog}
+{}
+
+void MeasuredDataVectorSettingDialog::Impl::setupSolutionComboBox(MeasuredData* data)
+{
+	ComboBoxTool::setupItems(data->scalarNames(), m_dialog->ui->scalarComboBox);
+	m_scalars = data->scalarNames();
+
+	ComboBoxTool::setupItems(data->vectorNames(), m_dialog->ui->solutionComboBox);
+	m_targets = data->vectorNames();
+
+	if (m_targets.size() <= 1) {
+		m_dialog->ui->physValLabel->hide();
+		m_dialog->ui->solutionComboBox->hide();
+	}
+
+	if (m_scalars.size() == 0) {
+		m_dialog->ui->specificRadioButton->isChecked();
+		m_dialog->ui->scalarRadioButton->setDisabled(true);
+	}
+}
+
+// public interfaces
+
 MeasuredDataVectorSettingDialog::MeasuredDataVectorSettingDialog(QWidget* parent) :
 	QDialog {parent},
-	ui {new Ui::MeasuredDataVectorSettingDialog}
+	ui {new Ui::MeasuredDataVectorSettingDialog},
+	impl {new Impl(this)}
 {
 	ui->setupUi(this);
 }
@@ -17,16 +43,17 @@ MeasuredDataVectorSettingDialog::MeasuredDataVectorSettingDialog(QWidget* parent
 MeasuredDataVectorSettingDialog::~MeasuredDataVectorSettingDialog()
 {
 	delete ui;
+	delete impl;
 }
 
 void MeasuredDataVectorSettingDialog::setData(MeasuredData* data)
 {
-	setupSolutionComboBox(data);
+	impl->setupSolutionComboBox(data);
 }
 
 MeasuredDataVectorSetting MeasuredDataVectorSettingDialog::setting() const
 {
-	MeasuredDataVectorSetting ret = m_setting;
+	MeasuredDataVectorSetting ret = impl->m_setting;
 
 	ret.target = ui->solutionComboBox->currentText();
 
@@ -52,7 +79,7 @@ MeasuredDataVectorSetting MeasuredDataVectorSettingDialog::setting() const
 
 void MeasuredDataVectorSettingDialog::setSetting(const MeasuredDataVectorSetting& setting)
 {
-	m_setting = setting;
+	impl->m_setting = setting;
 
 	ui->solutionComboBox->setCurrentText(setting.target);
 
@@ -74,21 +101,3 @@ void MeasuredDataVectorSettingDialog::setSetting(const MeasuredDataVectorSetting
 	ui->minValueSpinBox->setValue(setting.minimumValue);
 }
 
-void MeasuredDataVectorSettingDialog::setupSolutionComboBox(MeasuredData* data)
-{
-	ComboBoxTool::setupItems(data->scalarNames(), ui->scalarComboBox);
-	m_scalars = data->scalarNames();
-
-	ComboBoxTool::setupItems(data->vectorNames(), ui->solutionComboBox);
-	m_targets = data->vectorNames();
-
-	if (m_targets.size() <= 1) {
-		ui->physValLabel->hide();
-		ui->solutionComboBox->hide();
-	}
-
-	if (m_scalars.size() == 0) {
-		ui->specificRadioButton->isChecked();
-		ui->scalarRadioButton->setDisabled(true);
-	}
-}
