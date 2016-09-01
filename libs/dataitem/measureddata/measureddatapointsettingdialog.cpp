@@ -22,6 +22,7 @@ MeasuredDataPointSettingDialog::MeasuredDataPointSettingDialog(QWidget* parent) 
 	connect(ui->measuredValueComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(solutionChanged(int)));
 	connect(ui->colorbarSettingButton, SIGNAL(clicked()), this, SLOT(showColorBarDialog()));
 	connect(ui->contourWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), ui->colormapWidget, SLOT(setContourSetting(ContourSettingWidget::Contour)));
+	connect(ui->contourWidget, SIGNAL(contourChanged(ContourSettingWidget::Contour)), this, SLOT(handleContourChange(ContourSettingWidget::Contour)));
 }
 
 MeasuredDataPointSettingDialog::~MeasuredDataPointSettingDialog()
@@ -111,6 +112,11 @@ void MeasuredDataPointSettingDialog::accept()
 
 	ui->colormapWidget->save();
 	QDialog::accept();
+}
+
+void MeasuredDataPointSettingDialog::handleContourChange(ContourSettingWidget::Contour c)
+{
+	ui->pointSizeSpinBox->setEnabled(c == ContourSettingWidget::Points);
 }
 
 void MeasuredDataPointSettingDialog::showColorBarDialog()

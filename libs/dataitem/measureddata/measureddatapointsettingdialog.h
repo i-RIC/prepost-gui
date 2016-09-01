@@ -41,6 +41,7 @@ public slots:
 
 private slots:
 	void targetChanged(int index);
+	void handleContourChange(ContourSettingWidget::Contour c);
 	void showColorBarDialog();
 
 private:
