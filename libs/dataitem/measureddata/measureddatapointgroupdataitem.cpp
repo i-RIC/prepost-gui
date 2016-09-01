@@ -459,9 +459,9 @@ QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
 		dialog->forceSelectPointsOnly();
 	}
 
-	dialog->setSetting(impl->m_setting);
 	dialog->setLookupTables(impl->m_lookupTables);
 	dialog->setScalarBarTitleMap(impl->m_colorbarTitleMap);
+	dialog->setSetting(impl->m_setting);
 
 	return dialog;
 }

@@ -44,14 +44,14 @@ void MeasuredDataPointSettingDialog::setSetting(const MeasuredDataPointSetting &
 	m_setting = s;
 
 	ui->measuredValueComboBox->setCurrentText(s.target);
+	targetChanged(ui->measuredValueComboBox->currentIndex());
+
 	ui->contourWidget->setContour(s.contour);
 	ui->colormapWidget->setDivisionNumber(s.numberOfDivisions);
 	ui->colormapWidget->setFillUpper(s.fillUpper);
 	ui->colormapWidget->setFillLower(s.fillLower);
 	ui->transparencyWidget->setOpacityPercent(s.opacity);
 	ui->pointSizeSpinBox->setValue(s.pointSize);
-
-	targetChanged(ui->measuredValueComboBox->currentIndex());
 }
 
 void MeasuredDataPointSettingDialog::setScalarBarTitleMap(const std::unordered_map<std::string, QString>& titlemap)
