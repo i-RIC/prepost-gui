@@ -39,7 +39,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 	// add raw data node and grid data node.
 	m_geoDataTop = new PreProcessorGeoDataTopDataItem(this);
 	connect(m_geoDataTop, SIGNAL(valueRangeChanged(std::string)), this, SLOT(changeValueRange(std::string)));
-	m_childItems.append(m_geoDataTop);
+	m_childItems.push_back(m_geoDataTop);
 
 	// add default grid, if this gridtype is not optional
 	if (! type->isOptional()) {
@@ -52,7 +52,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 		}
 		PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(zonename, nextChildCaption(), this);
 		m_conditions.append(cond);
-		m_childItems.append(cond);
+		m_childItems.push_back(cond);
 	}
 
 	// setup action items.
@@ -115,7 +115,7 @@ void PreProcessorGridTypeDataItem::addNewCondition()
 		dataModel()->itemModel()->insertRow(imgRow, cond->standardItem());
 	}
 	m_conditions.append(cond);
-	m_childItems.append(cond);
+	m_childItems.push_back(cond);
 	updateNewGridActionStatus();
 	updateItemMap();
 	// this operation is not undo-able.
@@ -235,7 +235,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 					dataModel()->itemModel()->insertRow(imgRow, cond->standardItem());
 				}
 				m_conditions.append(cond);
-				m_childItems.append(cond);
+				m_childItems.push_back(cond);
 			}
 		}
 		c = c.nextSibling();
@@ -330,13 +330,13 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 
 void PreProcessorGridTypeDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_childItems.count() == 0) {return;}
+	if (m_childItems.size() == 0) { return; }
 
 	/// assign ZDepthRanges to child items.
 	double max = range.max();
 	double rangeWidth = range.width();
 	double divNum = 0;
-	divNum += m_childItems.count() - 1;
+	divNum += m_childItems.size() - 1;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		int itemCount = ((*it)->zDepthRange().itemCount() - 1);
 		if (itemCount >= 0) {

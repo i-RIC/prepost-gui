@@ -43,14 +43,14 @@ Post2dWindowParticlesTopDataItem::Post2dWindowParticlesTopDataItem(Post2dWindowD
 	}
 	if (scalarExist) {
 		m_scalarGroupDataItem = new Post2dWindowParticlesScalarGroupDataItem(this);
-		m_childItems.append(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupDataItem);
 	} else {
 		m_scalarGroupDataItem = nullptr;
 		setupActors();
 	}
 	if (vectorExist) {
 		m_vectorGroupDataItem = new Post2dWindowParticlesVectorGroupDataItem(this);
-		m_childItems.append(m_vectorGroupDataItem);
+		m_childItems.push_back(m_vectorGroupDataItem);
 	} else {
 		m_vectorGroupDataItem = nullptr;
 	}

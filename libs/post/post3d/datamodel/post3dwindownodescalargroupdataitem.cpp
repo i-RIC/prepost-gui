@@ -59,7 +59,7 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		auto item = new Post3dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 }
 

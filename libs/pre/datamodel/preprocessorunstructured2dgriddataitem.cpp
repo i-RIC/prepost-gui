@@ -14,11 +14,11 @@ PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(P
 	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorUnstructured2dGridShapeDataItem(this);
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
-	m_childItems.append(m_nodeGroupDataItem);
+	m_childItems.push_back(m_nodeGroupDataItem);
 	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
-	m_childItems.append(m_cellGroupDataItem);
+	m_childItems.push_back(m_cellGroupDataItem);
 
 	setupMenu();
 	updateObjectBrowserTree();

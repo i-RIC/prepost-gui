@@ -37,7 +37,7 @@ DistanceMeasureGroupDataItem::~DistanceMeasureGroupDataItem()
 
 void DistanceMeasureGroupDataItem::addMeasure()
 {
-	int count = m_childItems.count();
+	int count = m_childItems.size();
 	QString defaultName = tr("Measure%1").arg(count + 1);
 	auto child = new DistanceMeasureDataItem(defaultName, this);
 	m_childItems.push_back(child);
@@ -71,7 +71,7 @@ void DistanceMeasureGroupDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		QDomNode childNode = children.at(i);
 		auto item = new DistanceMeasureDataItem("", this);
 		item->loadFromProjectMainFile(childNode);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 }
 

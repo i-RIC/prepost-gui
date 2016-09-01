@@ -67,7 +67,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 		if (cond->position() == SolverDefinitionGridAttribute::Node) {
 			// this is a node condition.
 			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}
@@ -78,7 +78,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 		if (cond->position() == SolverDefinitionGridComplexAttribute::Node) {
 			// this is a node condition.
 			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}

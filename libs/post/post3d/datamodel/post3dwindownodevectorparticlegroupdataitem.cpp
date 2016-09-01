@@ -53,7 +53,7 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
 		auto item = new Post3dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 }
 

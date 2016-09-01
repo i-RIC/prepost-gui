@@ -60,7 +60,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	vtkPointData* pd = cont->data()->GetPointData();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd)) {
 		auto item = new Post2dBirdEyeWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
 	m_setting.opacity = 0;

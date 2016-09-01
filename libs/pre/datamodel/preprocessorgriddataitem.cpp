@@ -1327,13 +1327,14 @@ void PreProcessorGridDataItem::setBCGroupDataItem(PreProcessorBCGroupDataItem* i
 	item->setParent(this);
 	m_bcGroupDataItem = item;
 	m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
-	m_childItems.append(m_bcGroupDataItem);
+	m_childItems.push_back(m_bcGroupDataItem);
 }
 
 void PreProcessorGridDataItem::unsetBCGroupDataItem()
 {
 	if (m_bcGroupDataItem == 0) {return;}
-	m_childItems.removeAll(m_bcGroupDataItem);
+	auto it = std::find(m_childItems.begin(), m_childItems.end(), m_bcGroupDataItem);
+	if (it != m_childItems.end()) {m_childItems.erase(it);}
 	m_bcGroupDataItem->setParent(0);
 	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
 	m_bcGroupDataItem = 0;

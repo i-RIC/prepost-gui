@@ -698,8 +698,8 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	m_riverSurveyEnables.clear();
 	m_riverSurveys.clear();
 	m_riverSurveyColors.clear();
-	QList<GraphicsWindowDataItem*> items = m_groupDataItem->childItems();
-	for (int i = 0; i < items.count(); ++i) {
+	const auto& items = m_groupDataItem->childItems();
+	for (int i = 0; i < items.size(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(items.at(i));
 		GeoDataRiverSurvey* geodata = dynamic_cast<GeoDataRiverSurvey*>(item->geoData());
 		if (geodata != nullptr) {

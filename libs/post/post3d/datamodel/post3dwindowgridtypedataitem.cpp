@@ -76,7 +76,7 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 			Post3dWindowZoneDataItem* zdata = new Post3dWindowZoneDataItem(cont->zoneName(), num++, this);
 			m_zoneDatas.append(zdata);
 			m_zoneDataNameMap.insert(cont->zoneName(), zdata);
-			m_childItems.append(zdata);
+			m_childItems.push_back(zdata);
 			++ zoneNum;
 		}
 	}

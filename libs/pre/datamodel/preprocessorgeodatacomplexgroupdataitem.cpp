@@ -207,8 +207,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	}
 
 	// modify the geodata values.
-	QList<GraphicsWindowDataItem*>::Iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGeoDataDataItem* di = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 		GeoData* rd = di->geoData();
 		GeoDataPolygon* p = dynamic_cast<GeoDataPolygon*>(rd);
@@ -322,7 +321,7 @@ void PreProcessorGeoDataComplexGroupDataItem::addBackground()
 
 	// create an instance or GeoDataBackground, and add it.
 	m_backgroundItem = new PreProcessorGeoDataDataItem(this);
-	m_childItems.append(m_backgroundItem);
+	m_childItems.push_back(m_backgroundItem);
 	GeoData* geodata = m_condition->buildBackgroundGeoData(m_backgroundItem);
 	GeoDataBackgroundComplex* r = dynamic_cast<GeoDataBackgroundComplex*>(geodata);
 	r->setItem(this);

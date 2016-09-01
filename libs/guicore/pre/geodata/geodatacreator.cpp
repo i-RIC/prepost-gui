@@ -40,7 +40,7 @@ GeoData* GeoDataCreator::restore(const QDomNode& node, ProjectDataItem* parent, 
 	return nullptr;
 }
 
-void GeoDataCreator::setNameAndDefaultCaption(const QList<GraphicsWindowDataItem*>& list, GeoData* data)
+void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDataItem *> &list, GeoData* data)
 {
 	QSet<QString> nameSet;
 	QSet<QString> captionSet;

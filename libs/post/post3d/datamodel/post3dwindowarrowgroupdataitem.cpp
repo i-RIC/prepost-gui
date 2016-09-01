@@ -125,7 +125,7 @@ public:
 		for (auto it = m_newMap.begin(); it != m_newMap.end(); ++it) {
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
-			m_item->m_childItems.append(f);
+			m_item->m_childItems.push_back(f);
 		}
 		m_item->updateItemMap();
 		m_item->setupAppendFilter();
@@ -135,7 +135,7 @@ public:
 		for (auto it = m_oldMap.begin(); it != m_oldMap.end(); ++it) {
 			Post3dWindowFaceDataItem* f = new Post3dWindowFaceDataItem(it.key(), m_item);
 			f->setSetting(it.value(), true);
-			m_item->m_childItems.append(f);
+			m_item->m_childItems.push_back(f);
 		}
 		m_item->updateItemMap();
 		m_item->setupAppendFilter();
@@ -498,7 +498,7 @@ void Post3dWindowArrowGroupDataItem::doLoadFromProjectMainFile(const QDomNode& n
 			QString label = childElem.attribute("label");
 			Post3dWindowFaceDataItem* item = new Post3dWindowFaceDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 		}
 	}
 	updateActorSettings();
@@ -508,7 +508,7 @@ void Post3dWindowArrowGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 {
 	m_setting.save(writer);
 
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		Post3dWindowFaceDataItem* fitem = dynamic_cast<Post3dWindowFaceDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("FaceSetting");
 		fitem->saveToProjectMainFile(writer);

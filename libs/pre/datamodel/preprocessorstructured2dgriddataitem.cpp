@@ -15,11 +15,11 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorStructured2dGridShapeDataItem(this);
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
-	m_childItems.append(m_nodeGroupDataItem);
+	m_childItems.push_back(m_nodeGroupDataItem);
 	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
-	m_childItems.append(m_cellGroupDataItem);
+	m_childItems.push_back(m_cellGroupDataItem);
 
 	m_selectMenu = nullptr;
 	m_regionSelectAction = new QAction(PreProcessorStructured2dGridDataItem::tr("Select I-J &Region..."), this);

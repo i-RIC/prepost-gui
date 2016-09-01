@@ -48,9 +48,9 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 		m_scalarGroupDataItem = nullptr;
 	}
 
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 	if (cont->scalarValueExists()) {
-		m_childItems.append(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupDataItem);
 	}
 }
 
@@ -116,12 +116,12 @@ void Post2dBirdEyeWindowZoneDataItem::update()
 
 void Post2dBirdEyeWindowZoneDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount(m_childItems.count() + 1);
+	m_zDepthRange.setItemCount(m_childItems.size() + 1);
 }
 
 void Post2dBirdEyeWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	int itemCount = m_childItems.count();
+	int itemCount = m_childItems.size();
 	int gapCount = itemCount - 1;
 	float gapRate = .1; // the rate of gap width againt data width.
 

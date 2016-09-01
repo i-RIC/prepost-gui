@@ -1,7 +1,7 @@
 #include "namedgraphicswindowdataitemtool.h"
 #include "namedgraphicwindowdataitem.h"
 
-bool NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name, const QList<GraphicsWindowDataItem*>& items, bool noSignal)
+bool NamedGraphicsWindowDataItemTool::checkItemWithName(const std::string& name, const std::vector<GraphicsWindowDataItem*>& items, bool noSignal)
 {
 	NamedGraphicWindowDataItem* itemToCheck = nullptr;
 	for (auto item : items) {

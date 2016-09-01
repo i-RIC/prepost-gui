@@ -3,14 +3,14 @@
 
 #include "../guicore_global.h"
 
-#include <QList>
+#include <vector>
 
 class GraphicsWindowDataItem;
 
 class GUICOREDLL_EXPORT NamedGraphicsWindowDataItemTool
 {
 public:
-	static bool checkItemWithName(const std::string& name, const QList<GraphicsWindowDataItem*>& items, bool noSignal = false);
+	static bool checkItemWithName(const std::string& name, const std::vector<GraphicsWindowDataItem*>& items, bool noSignal = false);
 
 private:
 	NamedGraphicsWindowDataItemTool();

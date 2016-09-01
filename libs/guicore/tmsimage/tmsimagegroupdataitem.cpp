@@ -167,7 +167,7 @@ void TmsImageGroupDataItem::rebuildChildItems()
 		if (! s.isActive()) {continue;}
 
 		auto item = new TmsImageDataItem(s.setting(), s.caption(), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	updateItemMap();
 

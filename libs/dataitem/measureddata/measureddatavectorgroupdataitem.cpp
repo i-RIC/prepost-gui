@@ -336,7 +336,7 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 
 	for (std::string name : md->vectorNames()) {
 		auto item = new MeasuredDataVectorDataItem(name, name.c_str(), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 
 	impl->setupActors();

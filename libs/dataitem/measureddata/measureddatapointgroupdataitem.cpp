@@ -387,7 +387,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 	for (int i = 0; i < md->scalarNames().size(); ++i) {
 		std::string name = md->scalarNames().at(i);
 		MeasuredDataPointDataItem* item = new MeasuredDataPointDataItem(name, name.c_str(), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 		impl->m_colorbarTitleMap.insert({name, name.c_str()});
 
 		LookupTableContainer* cont = new LookupTableContainer(this);

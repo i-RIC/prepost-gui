@@ -13,6 +13,8 @@
 #include <QMap>
 #include <QXmlStreamWriter>
 
+#include <algorithm>
+
 Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconFolder.png"), parent},
 	m_condition {cond}
@@ -26,9 +28,9 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 	PreProcessorGeoDataTopDataItemInterface* rtItem = tItem->preGeoDataTopDataItem();
 	PreProcessorGeoDataGroupDataItemInterface* gItem = rtItem->groupDataItem(m_condition->name());
 
-	QList <GraphicsWindowDataItem*> oldChildren = m_childItems;
+	std::vector<GraphicsWindowDataItem*> oldChildren = m_childItems;
 	QMap<GeoData*, Post2dWindowGeoDataDataItem*> map;
-	for (int i = 0; i < oldChildren.count(); ++i) {
+	for (int i = 0; i < oldChildren.size(); ++i) {
 		Post2dWindowGeoDataDataItem* item = dynamic_cast<Post2dWindowGeoDataDataItem*>(oldChildren.at(i));
 		map.insert(item->geoDataProxy()->geoData(), item);
 		m_standardItem->takeRow(0);
@@ -36,14 +38,15 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 	m_childItems.clear();
 	m_itemNameMap.clear();
 
-	QList <GraphicsWindowDataItem*> origChildren = gItem->childItems();
-	for (int i = 0; i < origChildren.count(); ++i) {
+	std::vector<GraphicsWindowDataItem*> origChildren = gItem->childItems();
+	for (int i = 0; i < origChildren.size(); ++i) {
 		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(origChildren.at(i));
 		GeoData* geoData = item->geoData();
 		if (map.contains(geoData)) {
-			m_childItems.append(map.value(geoData));
+			m_childItems.push_back(map.value(geoData));
 			m_standardItem->appendRow(map.value(geoData)->standardItem());
-			oldChildren.removeOne(map.value(geoData));
+			auto it = std::find(oldChildren.begin(), oldChildren.end(), map.value(geoData));
+			oldChildren.erase(it);
 			m_itemNameMap.insert(geoData->name(), map.value(geoData));
 		} else {
 			// try to add.
@@ -53,13 +56,13 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 				Post2dWindowGeoDataDataItem* pItem = new Post2dWindowGeoDataDataItem(this);
 				pItem->setGeoDataProxy(proxy);
 				proxy->setupDataItem();
-				m_childItems.append(pItem);
+				m_childItems.push_back(pItem);
 				m_itemNameMap.insert(geoData->name(), pItem);
 				connect(item, SIGNAL(captionChanged(QString)), pItem, SLOT(updateCaption(QString)));
 			}
 		}
 	}
-	for (int i = 0; i < oldChildren.count(); ++i) {
+	for (int i = 0; i < oldChildren.size(); ++i) {
 		delete oldChildren.at(i);
 	}
 	assignActorZValues(m_zDepthRange);

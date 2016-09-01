@@ -34,7 +34,7 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 	for (auto it = types.begin(); it != types.end(); ++it) {
 		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(*it, this);
 		m_gridTypeDataItems.append(item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	// create grid type data item for dummy grid type if needed.
 	const QList<PostZoneDataContainer*>& conts = post->zoneContainers3D();
@@ -46,17 +46,17 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 	if (needDummy) {
 		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(def->dummyGridType(), this);
 		m_gridTypeDataItems.append(item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 
 	m_titleDataItem = new PostTitleDataItem(this);
-	m_childItems.append(m_titleDataItem);
+	m_childItems.push_back(m_titleDataItem);
 
 	m_timeDataItem = new PostTimeDataItem(this);
-	m_childItems.append(m_timeDataItem);
+	m_childItems.push_back(m_timeDataItem);
 
 	m_axesDataItem = new Axis3dDataItem(this);
-	m_childItems.append(m_axesDataItem);
+	m_childItems.push_back(m_axesDataItem);
 
 	updateZDepthRangeItemCount();
 	// update item map initially.

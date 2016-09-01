@@ -256,7 +256,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 			QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 			m_standardItem->insertRows(0, takenItems);
 			// add the item, in the front.
-			m_childItems.push_front(item);
+			m_childItems.insert(m_childItems.begin(), item);
 			if (i != dataCount - 1) {
 				geodata->informDeselection(dataModel()->graphicsView());
 			}
@@ -349,7 +349,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemInt
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(geoData->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
 	// add the item, in the front.
-	m_childItems.push_front(geoData);
+	m_childItems.insert(m_childItems.begin(), geoData);
 	setupConnectionToGeoData(geoData->geoData());
 	geoData->geoData()->setupDataItem();
 
@@ -402,7 +402,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(QObject* c)
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
 	// add the item, in the front.
-	m_childItems.push_front(item);
+	m_childItems.insert(m_childItems.begin(), item);
 	// create an empty geodata.
 	GeoData* geodata = creator->create(item, m_condition);
 	item->setGeoData(geodata);
@@ -429,7 +429,7 @@ void PreProcessorGeoDataGroupDataItem::addBackground()
 {
 	// create an instance or GeoDataBackground, and add it.
 	m_backgroundItem = new PreProcessorGeoDataDataItem(this);
-	m_childItems.append(m_backgroundItem);
+	m_childItems.push_back(m_backgroundItem);
 	GeoData* geodata = m_condition->buildBackgroundGeoData(m_backgroundItem);
 	setupConnectionToGeoData(geodata);
 	m_backgroundItem->setGeoData(geodata);
@@ -470,8 +470,7 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 			setupConnectionToGeoData(geodata);
 			item->loadCheckState(child);
 			// insert the new item BEFORE the background item.
-			int last = m_childItems.count() - 1;
-			m_childItems.insert(last, item);
+			m_childItems.insert(m_childItems.begin() + m_childItems.size() - 1, item);
 		} else {
 			// for some reason, it could not be restored.
 			delete item;
@@ -508,7 +507,7 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 	if (dimensions()->containers().size() > 0) {
 		dimCount = dimensions()->maxIndex() + 1;
 	}
-	int geodataCount = m_childItems.count();
+	int geodataCount = m_childItems.size();
 	return dimCount * geodataCount;
 }
 
@@ -823,7 +822,7 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
 	// add the item, in the front.
-	m_childItems.push_front(item);
+	m_childItems.insert(m_childItems.begin(), item);
 	// create an empty geodata.
 	GeoData* geodata = c->create(item, m_condition);
 	item->setGeoData(geodata);
@@ -923,7 +922,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 	shpHandle = exporter->getSHPHandle(filename);
 	dbfHandle = exporter->getDBFHandle(dbfFilename, condition(), &isDouble);
 
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataPolygon*>(rd) == nullptr) {continue;}
@@ -933,7 +932,7 @@ void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
 		codec = QTextCodec::codecForName("UTF-8");
 	}
 
-	for (int i = m_childItems.count() - 1; i >= 0; --i) {
+	for (int i = m_childItems.size() - 1; i >= 0; --i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		GeoDataPolygon* rdp = dynamic_cast<GeoDataPolygon*>(rd);
@@ -958,7 +957,7 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 	if (QMessageBox::No == QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all items in %1 group?").arg(standardItem()->text()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No)) {
 		return;
 	}
-	for (int i = m_childItems.count() - 1; i >= 0; --i) {
+	for (int i = m_childItems.size() - 1; i >= 0; --i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataBackground*>(rd) != nullptr) {continue;}
@@ -971,7 +970,7 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 bool PreProcessorGeoDataGroupDataItem::polygonExists() const
 {
 	bool ret = false;
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(m_childItems.at(i));
 		GeoData* rd = item->geoData();
 		ret = ret || (dynamic_cast<GeoDataPolygon*>(rd) != nullptr);

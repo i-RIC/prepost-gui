@@ -246,7 +246,7 @@ MeasuredDataFileDataItem* Post2dWindowDataModel::getMeasuredDataFileDataItem()
 	}
 	Post2dWindowRootDataItem* root = dynamic_cast<Post2dWindowRootDataItem*>(m_rootDataItem);
 	Post2dWindowMeasuredDataTopDataItem* mdItem = root->measuredDataTopDataItem();
-	if (mdItem->childItems().count() == 1) {
+	if (mdItem->childItems().size() == 1) {
 		return dynamic_cast<MeasuredDataFileDataItem*>(mdItem->childItems().at(0));
 	}
 	return nullptr;

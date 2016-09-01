@@ -11,6 +11,8 @@
 #include <QList>
 #include <QVariant>
 
+#include <vector>
+
 class QStandardItem;
 class VTKGraphicsView;
 class QIcon;
@@ -106,7 +108,7 @@ public:
 	virtual void handlePropertyDialogAccepted(QDialog* /*propDialog*/) {}
 	/// Returns the pointer to a toolbar specific to currently selected item.
 	virtual bool addToolBarButtons(QToolBar* /*parent*/) {return false;}
-	const QList <GraphicsWindowDataItem*>& childItems() const {return m_childItems;}
+	const std::vector<GraphicsWindowDataItem*>& childItems() const {return m_childItems;}
 	/// Move up the order in object browser.
 	virtual void moveUp();
 	/// Move down the order in object browser.
@@ -162,7 +164,7 @@ protected:
 	/// Delete child items
 	void clearChildItems();
 
-	QList <GraphicsWindowDataItem*> m_childItems;
+	std::vector<GraphicsWindowDataItem*> m_childItems;
 	QStandardItem* m_standardItem;
 	QStandardItem* m_standardItemCopy {nullptr};
 	bool m_isDeletable {true};

@@ -78,7 +78,7 @@ void PreProcessorBCGroupDataItem::loadFromCgnsFile(const int fn)
 				bcItem->setProjectNumber(j + 1);
 				bcItem->setCgnsNumber(j + 1);
 				bcItem->loadFromCgnsFile(fn);
-				m_childItems.append(bcItem);
+				m_childItems.push_back(bcItem);
 			}
 		}
 		assignActorZValues(m_zDepthRange);
@@ -144,7 +144,7 @@ void PreProcessorBCGroupDataItem::saveToCgnsFile(const int fn)
 {
 	renumberItemsForCgns();
 	cg_iRIC_Clear_BC();
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		m_childItems[i]->saveToCgnsFile(fn);
 	}
 }
@@ -165,7 +165,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 		SolverDefinitionBoundaryCondition* bc = gtItem->gridType()->boundaryCondition(condType);
 		PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this);
 		bcItem->loadFromProjectMainFile(childElem);
-		m_childItems.append(bcItem);
+		m_childItems.push_back(bcItem);
 	}
 	assignActorZValues(m_zDepthRange);
 	updateItemMap();
@@ -237,7 +237,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	}
 	item->setProjectNumber(number);
 	item->setCgnsNumber(number);
-	item->setColor(m_colorSource->getColor(m_childItems.count()));
+	item->setColor(m_colorSource->getColor(m_childItems.size()));
 	// add it simply.
 	m_childItems.insert(it, item);
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
@@ -250,7 +250,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	for (int row = rows - 1; row >= 0; --row) {
 		m_standardItem->takeRow(row);
 	}
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems.at(i);
 		m_standardItem->appendRow(item->standardItem());
 	}
@@ -304,8 +304,8 @@ void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
 
 void PreProcessorBCGroupDataItem::clear()
 {
-	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i) {
+	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
+	for (int i = 0; i < itemCopys.size(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
 		delete item;
 	}
@@ -315,8 +315,8 @@ void PreProcessorBCGroupDataItem::clear()
 
 void PreProcessorBCGroupDataItem::clearPoints()
 {
-	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i) {
+	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
+	for (int i = 0; i < itemCopys.size(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->clearPoints();
@@ -325,8 +325,8 @@ void PreProcessorBCGroupDataItem::clearPoints()
 
 void PreProcessorBCGroupDataItem::setGrid(Grid* grid)
 {
-	QList<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.count(); ++i) {
+	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
+	for (int i = 0; i < itemCopys.size(); ++i) {
 		GraphicsWindowDataItem* item = itemCopys[i];
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->setGrid(grid);

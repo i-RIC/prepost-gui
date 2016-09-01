@@ -98,24 +98,24 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_cellFlagGroupDataItem = new Post2dWindowCellFlagGroupDataItem(this);
 
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 	if (cont->vectorValueExists()) {
-		m_childItems.append(m_arrowGroupDataItem);
+		m_childItems.push_back(m_arrowGroupDataItem);
 		if (m_particleGroupDataItem != nullptr) {
-			m_childItems.append(m_particleGroupDataItem);
+			m_childItems.push_back(m_particleGroupDataItem);
 		}
-		m_childItems.append(m_streamlineGroupDataItem);
+		m_childItems.push_back(m_streamlineGroupDataItem);
 	}
 	if (cont->particleData() != nullptr) {
-		m_childItems.append(m_particlesDataItem);
+		m_childItems.push_back(m_particlesDataItem);
 	}
 	if (m_graphGroupDataItem != nullptr) {
-		m_childItems.append(m_graphGroupDataItem);
+		m_childItems.push_back(m_graphGroupDataItem);
 	}
 	if (cont->scalarValueExists()) {
-		m_childItems.append(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupDataItem);
 	}
-	m_childItems.append(m_cellFlagGroupDataItem);
+	m_childItems.push_back(m_cellFlagGroupDataItem);
 
 	m_showNodeAttributeBrowserAction = new QAction(Post2dWindowZoneDataItem::tr("Show Attribute Browser"), this);
 	connect(m_showNodeAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showNodeAttributeBrowser()));
@@ -309,14 +309,14 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 
 void Post2dWindowZoneDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount(m_childItems.count() + 1);
+	m_zDepthRange.setItemCount(m_childItems.size() + 1);
 }
 
 void Post2dWindowZoneDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	m_regionActor->SetPosition(0, 0, range.min());
 
-	int itemCount = m_childItems.count();
+	int itemCount = m_childItems.size();
 	int gapCount = itemCount - 1;
 	float gapRate = .1; // the rate of gap width againt data width.
 

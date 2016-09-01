@@ -72,7 +72,7 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(Post2dW
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		auto item = new Post2dWindowNodeScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 		m_colorbarTitleMap.insert(name, name.c_str());
 	}
 

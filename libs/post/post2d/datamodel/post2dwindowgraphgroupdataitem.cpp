@@ -212,7 +212,7 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
 		auto item = new Post2dWindowGraphDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 
 	vtkRenderer* r = renderer();

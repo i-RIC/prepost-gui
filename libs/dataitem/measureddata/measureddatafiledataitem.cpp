@@ -40,8 +40,8 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	impl->m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
 	impl->m_vectorGroupDataItem = new MeasuredDataVectorGroupDataItem(this);
 
-	m_childItems.append(impl->m_pointGroupDataItem);
-	m_childItems.append(impl->m_vectorGroupDataItem);
+	m_childItems.push_back(impl->m_pointGroupDataItem);
+	m_childItems.push_back(impl->m_vectorGroupDataItem);
 
 	impl->m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.png"), MeasuredDataFileDataItem::tr("&Export..."), this);
 	connect(impl->m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));

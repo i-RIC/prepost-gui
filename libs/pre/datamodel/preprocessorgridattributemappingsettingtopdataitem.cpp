@@ -54,14 +54,14 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*it)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, geodataGroup, this);
 		m_itemNameMap.insert((*it)->name(), item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridComplexAttributes();
 	for (auto cit = cconditions.begin(); cit != cconditions.end(); ++cit) {
 		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*cit)->name()));
 		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, geodataGroup, this);
 		m_itemNameMap.insert((*cit)->name(), item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 }
 
@@ -182,7 +182,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	}
 
 	QList<PreProcessorBCSettingDataItem*> bcs;
-	const QList<GraphicsWindowDataItem*>& bclist = conditiondi->bcSettingGroupDataItem()->childItems();
+	const std::vector<GraphicsWindowDataItem*>& bclist = conditiondi->bcSettingGroupDataItem()->childItems();
 	for (auto c_it = bclist.begin(); c_it != bclist.end(); ++c_it) {
 		PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*c_it);
 		if (bcsdi->bcDataItem()->hideSetting()) {continue;}

@@ -79,13 +79,13 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	}
 
 	m_creatingConditionDataItem = new PreProcessorGridCreatingConditionDataItem(this);
-	m_childItems.append(m_creatingConditionDataItem);
+	m_childItems.push_back(m_creatingConditionDataItem);
 
 	m_bcSettingGroupDataItem = new PreProcessorBCSettingGroupDataItem(this);
-	m_childItems.append(m_bcSettingGroupDataItem);
+	m_childItems.push_back(m_bcSettingGroupDataItem);
 
 	m_mappingSettingDataItem = new PreProcessorGridAttributeMappingSettingTopDataItem(this);
-	m_childItems.append(m_mappingSettingDataItem);
+	m_childItems.push_back(m_mappingSettingDataItem);
 
 	SolverDefinitionGridType* gType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType();
 
@@ -190,7 +190,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	if (m_gridDataItem != nullptr) {
 		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
 		tmpItem->unsetBCGroupDataItem();
-		m_childItems.removeAll(tmpItem);
+		auto it = std::find(m_childItems.begin(), m_childItems.end(), tmpItem);
+		if (it != m_childItems.end()) {m_childItems.erase(it);}
 		m_gridDataItem = nullptr;
 		updateItemMap();
 		delete tmpItem;
@@ -198,7 +199,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 
 	m_gridDataItem = gridItem;
 	m_gridDataItem->setBCGroupDataItem(m_bcGroupDataItem);
-	m_childItems.append(gridItem);
+	m_childItems.push_back(gridItem);
 
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());

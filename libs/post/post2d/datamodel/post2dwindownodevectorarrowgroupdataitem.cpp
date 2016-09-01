@@ -51,7 +51,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->GetPointData())) {
 		auto item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	setupActors();
 }

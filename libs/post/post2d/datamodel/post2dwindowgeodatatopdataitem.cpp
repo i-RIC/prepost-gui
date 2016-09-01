@@ -25,7 +25,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 		if (lowerName.substr(0, 9) != "elevation") {continue;}
 
 		auto item = new Post2dWindowGeoDataGroupDataItem(att, this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 		m_itemNameMap.insert(att->name(), item);
 	}
 	updateChildren();
@@ -34,7 +34,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 
 void Post2dWindowGeoDataTopDataItem::updateChildren()
 {
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*>(m_childItems.at(i));
 		gItem->updateChildren();
 	}

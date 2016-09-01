@@ -67,7 +67,7 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 		if (cond->position() == SolverDefinitionGridAttribute::CellCenter) {
 			// this is a cell condition.
 			PreProcessorGridAttributeCellDataItem* item = new PreProcessorGridAttributeCellDataItem(cond, this);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}
@@ -77,7 +77,7 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 		if (cond->position() == SolverDefinitionGridComplexAttribute::CellCenter) {
 			// this is a node condition.
 			PreProcessorGridAttributeCellDataItem* item = new PreProcessorGridAttributeCellDataItem(cond, this);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}

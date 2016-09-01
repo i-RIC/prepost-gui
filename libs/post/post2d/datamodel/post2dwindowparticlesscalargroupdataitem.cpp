@@ -34,7 +34,7 @@ Post2dWindowParticlesScalarGroupDataItem::Post2dWindowParticlesScalarGroupDataIt
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->particleData()->GetPointData())){
 		auto item = new Post2dWindowParticlesScalarDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 		m_scalarbarTitleMap.insert(name, name.c_str());
 	}
 }

@@ -45,7 +45,7 @@ namespace {
 void setupChildrenInGroups(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
-		QList <GraphicsWindowDataItem*>* children,
+		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		PreProcessorDataItem* parent)
 {
@@ -53,35 +53,35 @@ void setupChildrenInGroups(
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
 		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// node complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
 		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell simple items
 	for (auto att : stdAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell complex items
 	for (auto att : clxAtts) {
 		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
 		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 }
 void setupChildrenInOrder(
 		const QList<SolverDefinitionGridAttribute*>& stdAtts,
 		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
-		QList <GraphicsWindowDataItem*>* children,
+		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		PreProcessorDataItem* parent)
 {
@@ -90,14 +90,14 @@ void setupChildrenInOrder(
 	// simple items
 	for (auto att : stdAtts){
 		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 		itemsInOrder.insert({att->order(), i});
 	}
 	// complex items
 	for (auto att : clxAtts) {
 		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
-		children->append(i);
+		children->push_back(i);
 		nameMap->insert({att->name(), i});
 		itemsInOrder.insert({att->order(), i});
 	}
@@ -379,8 +379,7 @@ void PreProcessorGeoDataTopDataItem::saveToCgnsFile(const int fn)
 
 void PreProcessorGeoDataTopDataItem::setDimensionsToFirst()
 {
-	QList<GraphicsWindowDataItem*>::iterator it;
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGeoDataGroupDataItem* gItem =
 			dynamic_cast<PreProcessorGeoDataGroupDataItem*>(*it);
 		gItem->setDimensionsToFirst();

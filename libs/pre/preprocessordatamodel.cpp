@@ -625,7 +625,7 @@ MeasuredDataFileDataItem* PreProcessorDataModel::getMeasuredDataItem(GraphicsWin
 	// if there is only one Measured data, use that.
 	PreProcessorRootDataItem* rItem = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorMeasuredDataTopDataItem* mtItem = rItem->measuredDataTopDataItem();
-	if (mtItem->childItems().count() == 1) {
+	if (mtItem->childItems().size() == 1) {
 		MeasuredDataFileDataItem* ret = dynamic_cast<MeasuredDataFileDataItem*>(mtItem->childItems().at(0));
 		return ret;
 	}
@@ -1126,7 +1126,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 		const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
 		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
 			PreProcessorGridAndGridCreatingConditionDataItem* cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*cit);
-			const QList <GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
+			const std::vector<GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
 			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit) {
 				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
 				if (! bcsdi->isMapped()) {

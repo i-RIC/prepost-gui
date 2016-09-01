@@ -43,14 +43,14 @@ Post3dWindowParticlesTopDataItem::Post3dWindowParticlesTopDataItem(Post3dWindowD
 	}
 	if (scalarExist) {
 		m_scalarGroupDataItem = new Post3dWindowParticlesScalarGroupDataItem(this);
-		m_childItems.append(m_scalarGroupDataItem);
+		m_childItems.push_back(m_scalarGroupDataItem);
 	} else {
 		m_scalarGroupDataItem = nullptr;
 		setupActors();
 	}
 	if (vectorExist) {
 		m_vectorGroupDataItem = new Post3dWindowParticlesVectorGroupDataItem(this);
-		m_childItems.append(m_vectorGroupDataItem);
+		m_childItems.push_back(m_vectorGroupDataItem);
 	}	else {
 		m_vectorGroupDataItem = nullptr;
 	}

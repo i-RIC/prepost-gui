@@ -52,7 +52,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 	PreProcessorGeoDataTopDataItemInterface* tItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->geoDataTopDataItem(type->name());
 	if (tItem != nullptr) {
 		m_geoDataItem = new Post2dWindowGeoDataTopDataItem(tItem, this);
-		m_childItems.append(m_geoDataItem);
+		m_childItems.push_back(m_geoDataItem);
 	}
 
 	setupZoneDataItems();
@@ -86,7 +86,7 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 			Post2dWindowZoneDataItem* zdata = new Post2dWindowZoneDataItem(cont->zoneName(), num++, this);
 			m_zoneDatas.append(zdata);
 			m_zoneDataNameMap.insert(cont->zoneName(), zdata);
-			m_childItems.append(zdata);
+			m_childItems.push_back(zdata);
 			++ zoneNum;
 		}
 	}

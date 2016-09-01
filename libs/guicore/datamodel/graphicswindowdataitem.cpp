@@ -404,12 +404,12 @@ void GraphicsWindowDataItem::updateZDepthRange()
 
 void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	if (m_childItems.count() == 0) {return;}
+	if (m_childItems.size() == 0) {return;}
 
 	/// the default behavior is to set ZDepthRanges to child items.
 	double rangeWidth = range.width();
 	double divNum = 0;
-	divNum += m_childItems.count() - 1;
+	divNum += m_childItems.size() - 1;
 	for (GraphicsWindowDataItem* child : m_childItems) {
 		int itemCount = (child->zDepthRange().itemCount() - 1);
 		if (itemCount > 0) {
@@ -520,7 +520,8 @@ QVector2D GraphicsWindowDataItem::getOffset()
 
 void GraphicsWindowDataItem::clearChildItems()
 {
-	for (auto child : m_childItems) {
+	std::vector<GraphicsWindowDataItem*> copy = m_childItems;
+	for (auto child : copy) {
 		delete child;
 	}
 	m_childItems.clear();

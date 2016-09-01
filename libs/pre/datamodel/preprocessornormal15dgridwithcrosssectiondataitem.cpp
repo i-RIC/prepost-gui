@@ -15,18 +15,18 @@ PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWith
 	PreProcessorGridDataItem {parent}
 {
 	m_shapeDataItem = new PreProcessorNormal15DGridWithCrossSectionShapeDataItem(this);
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 	m_standardItem->takeRow(m_shapeDataItem->standardItem()->row());
 	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
-	m_childItems.append(m_nodeGroupDataItem);
+	m_childItems.push_back(m_nodeGroupDataItem);
 	m_standardItem->takeRow(m_nodeGroupDataItem->standardItem()->row());
 	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
-	m_childItems.append(m_cellGroupDataItem);
+	m_childItems.push_back(m_cellGroupDataItem);
 	m_standardItem->takeRow(m_cellGroupDataItem->standardItem()->row());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
 	if (gtItem->gridType()->boundaryConditions().count() > 0) {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
-		m_childItems.append(m_bcGroupDataItem);
+		m_childItems.push_back(m_bcGroupDataItem);
 		m_standardItem->takeRow(m_bcGroupDataItem->standardItem()->row());
 	} else {
 		m_bcGroupDataItem = nullptr;

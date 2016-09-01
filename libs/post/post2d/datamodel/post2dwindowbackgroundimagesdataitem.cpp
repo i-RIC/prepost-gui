@@ -69,7 +69,7 @@ void Post2dWindowBackgroundImagesDataItem::addChildItem()
 	// make the standard item top.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(iItem->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
-	m_childItems.push_front(iItem);
+	m_childItems.insert(m_childItems.begin(), iItem);
 
 	updateItemMap();
 	updateZDepthRange();
@@ -104,9 +104,8 @@ void Post2dWindowBackgroundImagesDataItem::moveUpChildItem(int i)
 	auto it = m_childItems.begin() + i;
 	auto it2 = it - 1;
 	GraphicsWindowDataItem* item = *it;
-	int idx = m_childItems.indexOf(*it);
-	int idx2 = m_childItems.indexOf(*it2);
-	m_childItems.swap(idx, idx2);
+	*it = *it2;
+	*it2 = item;
 
 	// update the ZDepthRange.
 	updateZDepthRange();
@@ -125,9 +124,8 @@ void Post2dWindowBackgroundImagesDataItem::moveDownChildItem(int i)
 	auto it = m_childItems.begin() + i;
 	auto it2 = it + 1;
 	GraphicsWindowDataItem* item = *it;
-	int idx = m_childItems.indexOf(*it);
-	int idx2 = m_childItems.indexOf(*it2);
-	m_childItems.swap(idx, idx2);
+	*it = *it2;
+	*it2 = item;
 
 	// update the ZDepthRange.
 	updateZDepthRange();
@@ -182,7 +180,7 @@ void Post2dWindowBackgroundImagesDataItem::deleteAll()
 	int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("Are you sure you want to delete all background images?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No) {return;}
 
-	while (m_childItems.count() > 0) {
+	while (m_childItems.size() > 0) {
 		GraphicsWindowDataItem* item = *(m_childItems.begin());
 		projectData()->mainfile()->deleteImage(item->standardItem()->index());
 	}

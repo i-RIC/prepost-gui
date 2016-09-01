@@ -102,7 +102,7 @@ void Post2dWindowMeasuredDataTopDataItem::addChildItem()
 {
 	MeasuredData* md = *(projectData()->mainfile()->measuredDatas().rbegin());
 	MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(md, this);
-	m_childItems.append(fItem);
+	m_childItems.push_back(fItem);
 
 	updateItemMap();
 	updateZDepthRange();

@@ -57,33 +57,33 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 	}
 	// Measured values data item node.
 	m_measuredDataTopDataItem = new Post2dWindowMeasuredDataTopDataItem(this);
-	m_childItems.append(m_measuredDataTopDataItem);
+	m_childItems.push_back(m_measuredDataTopDataItem);
 
 	for (int j = 0; j < gtitems.count(); ++j) {
-		m_childItems.append(gtitems.at(j));
+		m_childItems.push_back(gtitems.at(j));
 	}
 	// Background images data item node.
 	m_backgroundImagesDataItem = new Post2dWindowBackgroundImagesDataItem(this);
-	m_childItems.append(m_backgroundImagesDataItem);
+	m_childItems.push_back(m_backgroundImagesDataItem);
 
 	// Background images (internet)
 	m_tmsGroupDataItem = new TmsImageGroupDataItem(this);
-	m_childItems.append(m_tmsGroupDataItem);
+	m_childItems.push_back(m_tmsGroupDataItem);
 
 	m_titleDataItem = new PostTitleDataItem(this);
-	m_childItems.append(m_titleDataItem);
+	m_childItems.push_back(m_titleDataItem);
 
 	m_timeDataItem = new PostTimeDataItem(this);
-	m_childItems.append(m_timeDataItem);
+	m_childItems.push_back(m_timeDataItem);
 
 	m_axesDataItem = new Axis2dDataItem(this);
-	m_childItems.append(m_axesDataItem);
+	m_childItems.push_back(m_axesDataItem);
 
 	m_distanceMeasureGroupDataItem = new DistanceMeasureGroupDataItem(this);
-	m_childItems.push_front(m_distanceMeasureGroupDataItem);
+	m_childItems.insert(m_childItems.begin(), m_distanceMeasureGroupDataItem);
 
 	m_attributeBrowserTargetDataItem = new AttributeBrowserTargetDataItem(this);
-	m_childItems.push_front(m_attributeBrowserTargetDataItem);
+	m_childItems.insert(m_childItems.begin(), m_attributeBrowserTargetDataItem);
 
 	updateZDepthRangeItemCount();
 	// update item map initially.

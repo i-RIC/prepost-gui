@@ -35,7 +35,7 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	for (SolverDefinitionGridType* type : types) {
 		Post2dBirdEyeWindowGridTypeDataItem* item = new Post2dBirdEyeWindowGridTypeDataItem(type, this);
 		m_gridTypeDataItems.append(item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	// create grid type data item for dummy grid type if needed.
 	bool needDummy = false;
@@ -45,17 +45,17 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	if (needDummy) {
 		Post2dBirdEyeWindowGridTypeDataItem* item = new Post2dBirdEyeWindowGridTypeDataItem(def->dummyGridType(), this);
 		m_gridTypeDataItems.append(item);
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 
 	m_titleDataItem = new PostTitleDataItem(this);
-	m_childItems.append(m_titleDataItem);
+	m_childItems.push_back(m_titleDataItem);
 
 	m_timeDataItem = new PostTimeDataItem(this);
-	m_childItems.append(m_timeDataItem);
+	m_childItems.push_back(m_timeDataItem);
 
 	m_axesDataItem = new Post2dBirdEyeWindowAxesDataItem(this);
-	m_childItems.append(m_axesDataItem);
+	m_childItems.push_back(m_axesDataItem);
 
 	updateZDepthRangeItemCount();
 	// update item map initially.

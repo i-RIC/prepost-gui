@@ -49,7 +49,7 @@ void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNod
 
 void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		writer.writeStartElement("BoundaryConditionSetting");
 		m_childItems[i]->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -89,7 +89,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		tmpItemMap.insert(item->bcDataItem(), item);
 	}
 	m_childItems.clear();
-	const QList<GraphicsWindowDataItem*>& children = bcgitem->childItems();
+	const auto& children = bcgitem->childItems();
 	for (auto it = children.begin(); it != children.end(); ++it) {
 		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
@@ -101,7 +101,7 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 			}
 			tmpItemMap.remove(bcItem);
 		}
-		m_childItems.append(bcsItem);
+		m_childItems.push_back(bcsItem);
 		m_itemMap.insert(bcItem, bcsItem);
 	}
 	// needless items removed.

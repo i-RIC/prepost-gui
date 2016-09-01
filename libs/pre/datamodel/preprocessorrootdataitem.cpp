@@ -70,34 +70,34 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	}
 	// Measured values data item node.
 	m_measuredDataTopDataItem = new PreProcessorMeasuredDataTopDataItem(this);
-	m_childItems.append(m_measuredDataTopDataItem);
+	m_childItems.push_back(m_measuredDataTopDataItem);
 
 	for (int j = 0; j < gtitems.count(); ++j) {
-		m_childItems.append(gtitems.at(j));
+		m_childItems.push_back(gtitems.at(j));
 	}
 	// Background images data item node.
 	m_backgroundImagesDataItem = new PreProcessorBackgroundImagesDataItem(this);
-	m_childItems.append(m_backgroundImagesDataItem);
+	m_childItems.push_back(m_backgroundImagesDataItem);
 
 	// Background images (internet)
 	m_tmsGroupDataItem = new TmsImageGroupDataItem(this);
-	m_childItems.append(m_tmsGroupDataItem);
+	m_childItems.push_back(m_tmsGroupDataItem);
 
 	m_editGridAttributeMappingSettingAction = new QAction(tr("&Setting..."), this);
 	connect(m_editGridAttributeMappingSettingAction, SIGNAL(triggered()), this, SLOT(editGridAttributeMappingSetting()));
 
 	// Input condition
 	m_inputConditionDataItem = new PreProcessorInputConditionDataItem(this);
-	m_childItems.append(m_inputConditionDataItem);
+	m_childItems.push_back(m_inputConditionDataItem);
 
 	m_axesDataItem = new Axis2dDataItem(this);
-	m_childItems.append(m_axesDataItem);
+	m_childItems.push_back(m_axesDataItem);
 
 	m_distanceMeasureGroupDataItem = new DistanceMeasureGroupDataItem(this);
-	m_childItems.push_front(m_distanceMeasureGroupDataItem);
+	m_childItems.insert(m_childItems.begin(), m_distanceMeasureGroupDataItem);
 
 	m_attributeBrowserTargetDataItem = new AttributeBrowserTargetDataItem(this);
-	m_childItems.push_front(m_attributeBrowserTargetDataItem);
+	m_childItems.insert(m_childItems.begin(), m_attributeBrowserTargetDataItem);
 
 	updateZDepthRangeItemCount();
 	// update item map initially.

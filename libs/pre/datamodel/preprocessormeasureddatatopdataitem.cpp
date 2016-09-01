@@ -64,7 +64,7 @@ void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNo
 			if (md->index() == index) {
 				MeasuredDataFileDataItem* fitem = new MeasuredDataFileDataItem(md, this);
 				fitem->loadFromProjectMainFile(child);
-				m_childItems.append(fitem);
+				m_childItems.push_back(fitem);
 			}
 		}
 	}
@@ -103,7 +103,7 @@ void PreProcessorMeasuredDataTopDataItem::addChildItem()
 {
 	MeasuredData* md = *(projectData()->mainfile()->measuredDatas().rbegin());
 	MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(md, this);
-	m_childItems.append(fItem);
+	m_childItems.push_back(fItem);
 
 	updateItemMap();
 	updateZDepthRange();

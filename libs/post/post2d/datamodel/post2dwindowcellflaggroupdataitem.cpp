@@ -68,7 +68,7 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 		setting.enabled  = (item->standardItem()->checkState() == Qt::Checked);
 		map.insert(setting, item);
 	}
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		m_standardItem->takeRow(0);
 	}
 	m_childItems.clear();
@@ -84,7 +84,7 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 		}
 		item->updateVisibilityWithoutRendering();
 		m_standardItem->appendRow(item->standardItem());
-		m_childItems.append(item);
+		m_childItems.push_back(item);
 	}
 	m_opacityPercent = opacity;
 	updateZDepthRange();
@@ -114,7 +114,7 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 			QString cap = QString("%1 (%2)").arg(icond->caption(), it.value());
 			Post2dWindowCellFlagDataItem* item = new Post2dWindowCellFlagDataItem(icond->name(), it.key(), color, cap, this);
 			item->setOpacity(m_opacityPercent);
-			m_childItems.append(item);
+			m_childItems.push_back(item);
 		}
 	}
 
@@ -168,7 +168,7 @@ bool Post2dWindowCellFlagGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
 	if (m_opacityPercent == 100) {return false;}
-	for (int i = 0; i < m_childItems.count(); ++i) {
+	for (int i = 0; i < m_childItems.size(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems[i];
 		if (item->standardItem()->checkState() == Qt::Checked) {return true;}
 	}

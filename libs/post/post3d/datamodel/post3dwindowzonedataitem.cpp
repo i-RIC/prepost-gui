@@ -75,21 +75,21 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 		m_particlesDataItem = new Post3dWindowParticlesTopDataItem(this);
 	}
 
-	m_childItems.append(m_shapeDataItem);
+	m_childItems.push_back(m_shapeDataItem);
 
 	if (cont->scalarValueExists()) {
-		m_childItems.append(m_contourGroupItem);
-		m_childItems.append(m_scalarGroupDataItem);
+		m_childItems.push_back(m_contourGroupItem);
+		m_childItems.push_back(m_scalarGroupDataItem);
 	}
 
 	if (cont->vectorValueExists()) {
-		m_childItems.append(m_arrowGroupDataItem);
-		m_childItems.append(m_streamlineGroupDataItem);
-		m_childItems.append(m_particleGroupDataItem);
+		m_childItems.push_back(m_arrowGroupDataItem);
+		m_childItems.push_back(m_streamlineGroupDataItem);
+		m_childItems.push_back(m_particleGroupDataItem);
 	}
 
 	if (m_particlesDataItem != nullptr) {
-		m_childItems.append(m_particlesDataItem);
+		m_childItems.push_back(m_particlesDataItem);
 	}
 }
 
