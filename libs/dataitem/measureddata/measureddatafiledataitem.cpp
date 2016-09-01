@@ -35,7 +35,7 @@ MeasuredDataFileDataItem::MeasuredDataFileDataItem(MeasuredData* md, GraphicsWin
 	impl {new Impl{md}}
 {
 	setSubPath("file");
-	setupStandardItem(Checked, NotReorderable, NotDeletable, md->name());
+	setupStandardItem(Checked, NotReorderable, Deletable, md->name());
 
 	impl->m_pointGroupDataItem = new MeasuredDataPointGroupDataItem(this);
 	impl->m_vectorGroupDataItem = new MeasuredDataVectorGroupDataItem(this);
