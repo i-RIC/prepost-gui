@@ -259,6 +259,18 @@ void PreProcessorGeoDataDataItem::handlePropertyDialogAccepted(QDialog* propDial
 	renderGraphicsView();
 }
 
+void PreProcessorGeoDataDataItem::moveUp()
+{
+	PreProcessorDataItem::moveUp();
+	informDataChange();
+}
+
+void PreProcessorGeoDataDataItem::moveDown()
+{
+	PreProcessorDataItem::moveDown();
+	informDataChange();
+}
+
 bool PreProcessorGeoDataDataItem::setupExportMenu(QMenu* /*menu*/)
 {
 	bool ok = false;

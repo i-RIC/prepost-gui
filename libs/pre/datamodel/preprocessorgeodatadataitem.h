@@ -45,14 +45,8 @@ public:
 	bool getValueRange(double* min, double* max);
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void moveUp() override {
-		PreProcessorDataItem::moveUp();
-		informDataChange();
-	}
-	void moveDown() override {
-		PreProcessorDataItem::moveDown();
-		informDataChange();
-	}
+	void moveUp() override;
+	void moveDown() override;
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
 	void saveToCgnsFile(const int fn) override;
