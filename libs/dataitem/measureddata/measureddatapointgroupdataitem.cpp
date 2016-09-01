@@ -512,6 +512,7 @@ LookupTableContainer* MeasuredDataPointGroupDataItem::lookupTable(const std::str
 void MeasuredDataPointGroupDataItem::updateVisibility(bool visible)
 {
 	bool v = (m_standardItem->checkState() == Qt::Checked) && visible;
+	v = v && impl->m_setting.target != "";
 	int scalarBarVisible = 0;
 	if (v && impl->m_setting.scalarBarSetting.visible) {
 		scalarBarVisible = 1;
