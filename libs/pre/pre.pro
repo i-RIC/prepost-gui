@@ -550,6 +550,7 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowgraphicsview.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindowtableview.cpp
+RESOURCES += pre.qrc
 TRANSLATIONS += languages/iricPre_es_ES.ts \
                 languages/iricPre_fr_FR.ts \
                 languages/iricPre_id_ID.ts \
