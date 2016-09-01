@@ -93,6 +93,7 @@ HEADERS += measureddata_api.h \
            private/measureddatafiledataitem_impl.h \
            private/measureddatapointgroupdataitem_impl.h \
            private/measureddatapointgroupdataitem_setsettingcommand.h \
+           private/measureddatapointsettingdialog_impl.h \
            private/measureddatavectorgroupdataitem_impl.h \
            private/measureddatavectorgroupdataitem_setsettingcommand.h
 FORMS += measureddatapointsettingdialog.ui measureddatavectorsettingdialog.ui

@@ -2,15 +2,10 @@
 #define MEASUREDDATAPOINTSETTINGDIALOG_H
 
 #include "measureddatapointsetting.h"
-#include <guibase/widget/contoursettingwidget.h>
-#include <guibase/scalarbarsetting.h>
-#include <guibase/vtktextpropertysettingcontainer.h>
-#include <guicore/scalarstocolors/lookuptablecontainer.h>
 
 #include <QDialog>
 
 #include <unordered_map>
-#include <vector>
 
 namespace Ui
 {
@@ -51,13 +46,12 @@ private slots:
 private:
 	Ui::MeasuredDataPointSettingDialog* ui;
 
-	MeasuredDataPointSetting m_setting;
-
-	std::unordered_map<std::string, QString> m_scalarBarTitleMap;
-	std::unordered_map<std::string, LookupTableContainer*> m_lookupTables;
-	std::vector<std::string> m_targets;
-
-	LookupTableContainer m_lookupTable;
+	class Impl;
+	Impl* impl;
 };
+
+#ifdef _DEBUG
+	#include "private/measureddatapointsettingdialog_impl.h"
+#endif // _DEBUG
 
 #endif // MEASUREDDATAPOINTSETTINGDIALOG_H
