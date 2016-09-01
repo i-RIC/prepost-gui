@@ -339,15 +339,12 @@ void GraphicsWindowDataItem::moveUp()
 	parentItem->insertRows(currentRow - 1, items);
 
 	// reorder the m_childList of parent.
-	GraphicsWindowDataItem* tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
-	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it) {
-		if ((*it) == this) {
-			auto it2 = it;
-			-- it2;
-			tmpparent->m_childItems.erase(it);
-			tmpparent->m_childItems.insert(it2, this);
-			break;
-		}
+	auto tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	auto it = std::find(tmpparent->m_childItems.begin(), tmpparent->m_childItems.end(), this);
+	if (it != tmpparent->m_childItems.end()) {
+		auto it2 = it - 1;
+		*it = *it2;
+		*it2 = this;
 	}
 	// update the ZDepthRange.
 	tmpparent->updateZDepthRange();
@@ -363,16 +360,12 @@ void GraphicsWindowDataItem::moveDown()
 	parentItem->insertRows(currentRow + 1, items);
 
 	// reorder the m_childList of parent.
-	GraphicsWindowDataItem* tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
-	for (auto it = tmpparent->m_childItems.begin(); it != tmpparent->m_childItems.end(); ++it) {
-		if ((*it) == this) {
-			auto it2 = it;
-			++ it2;
-			++ it2;
-			tmpparent->m_childItems.erase(it);
-			tmpparent->m_childItems.insert(it2, this);
-			break;
-		}
+	auto tmpparent = dynamic_cast<GraphicsWindowDataItem*>(parent());
+	auto it = std::find(tmpparent->m_childItems.begin(), tmpparent->m_childItems.end(), this);
+	if (it != tmpparent->m_childItems.end()) {
+		auto it2 = it + 1;
+		*it = *it2;
+		*it2 = this;
 	}
 	// update the ZDepthRange.
 	tmpparent->updateZDepthRange();
