@@ -7,17 +7,12 @@
 #include <guicore/base/windowwithzindexinterface.h>
 
 #include <QMainWindow>
-#include <QCloseEvent>
-#include <QByteArray>
 #include <QProcess>
-#include <QProcessEnvironment>
 
-class QPlainTextEdit;
 class iRICMainWindowInterface;
 class ProjectData;
 class ProjectDataItem;
 class SolverConsoleWindowProjectDataItem;
-class SolverConsoleWindowBackgroundColorCommand;
 class QAction;
 
 /**

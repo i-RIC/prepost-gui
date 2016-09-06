@@ -3,6 +3,8 @@
 
 #include "../solverconsolewindow.h"
 
+class QPlainTextEdit;
+
 class SolverConsoleWindow::Impl
 {
 public:
