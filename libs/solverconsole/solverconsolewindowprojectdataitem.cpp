@@ -1,5 +1,6 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
+#include "private/solverconsolewindow_impl.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
@@ -35,7 +36,7 @@ SolverConsoleWindowProjectDataItem::~SolverConsoleWindowProjectDataItem()
 
 void SolverConsoleWindowProjectDataItem::initForSolverDefinition()
 {
-	m_solverConsoleWindow->m_projectData = projectData();
+	m_solverConsoleWindow->impl->m_projectData = projectData();
 	m_solverConsoleWindow->updateWindowTitle();
 }
 

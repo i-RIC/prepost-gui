@@ -74,13 +74,13 @@ void SolverConsoleWindow::init()
 
 void SolverConsoleWindow::setProjectData(ProjectData* d)
 {
-	m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
-	connect(exportLogAction, SIGNAL(triggered()), m_projectDataItem, SLOT(exportConsoleLog()));
+	impl->m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
+	connect(exportLogAction, SIGNAL(triggered()), impl->m_projectDataItem, SLOT(exportConsoleLog()));
 }
 
 SolverConsoleWindowProjectDataItem* SolverConsoleWindow::projectDataItem()
 {
-	return m_projectDataItem;
+	return impl->m_projectDataItem;
 }
 
 bool SolverConsoleWindow::isSolverRunning()
@@ -139,7 +139,7 @@ void SolverConsoleWindow::startSolver()
 		return;
 	}
 
-	m_projectDataItem->open();
+	impl->m_projectDataItem->open();
 
 	startSolverSilently();
 
@@ -190,7 +190,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 {
 	delete impl->m_process;
 	impl->m_process = nullptr;
-	m_projectDataItem->close();
+	impl->m_projectDataItem->close();
 
 	removeCancelFile();
 	removeCancelOkFile();
@@ -256,7 +256,7 @@ QPixmap SolverConsoleWindow::snapshot()
 void SolverConsoleWindow::clear()
 {
 	m_console->clear();
-	m_projectDataItem->clear();
+	impl->m_projectDataItem->clear();
 }
 
 void SolverConsoleWindow::startSolverSilently()
@@ -322,7 +322,7 @@ void SolverConsoleWindow::waitForSolverFinish()
 
 void SolverConsoleWindow::appendLogLine(const QString& line)
 {
-	m_projectDataItem->append(line);
+	impl->m_projectDataItem->append(line);
 }
 
 void SolverConsoleWindow::editBackgroundColor()
