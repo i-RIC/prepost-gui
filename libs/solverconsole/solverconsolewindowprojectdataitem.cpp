@@ -8,16 +8,13 @@
 #include <misc/xmlsupport.h>
 
 #include <QAction>
-#include <QDomElement>
 #include <QDomNode>
-#include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QStatusBar>
 #include <QTextStream>
-#include <QXmlStreamWriter>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent),

@@ -8,7 +8,6 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/cgnsfileentry.h>
 #include <guicore/project/cgnsfilelist.h>
-#include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -17,16 +16,11 @@
 
 #include <QAction>
 #include <QColorDialog>
-#include <QFile>
-#include <QFont>
-#include <QIODevice>
+#include <QDir>
 #include <QLocale>
 #include <QMessageBox>
 #include <QPlainTextEdit>
-#include <QProcess>
-#include <QProcessEnvironment>
 #include <QSettings>
-#include <QString>
 
 SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
 	m_iricMainWindow {mainW},
