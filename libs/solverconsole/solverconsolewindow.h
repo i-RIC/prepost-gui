@@ -107,10 +107,17 @@ private:
 
 	iRICMainWindowInterface* m_iricMainWindow;
 
+	class Impl;
+	Impl* impl;
+
 	class SetBackgroundColorCommand;
 
 public:
 	friend class SolverConsoleWindowProjectDataItem;
 };
+
+#ifdef _DEBUG
+	#include "private/solverconsolewindow_impl.h"
+#endif // _DEBUG
 
 #endif // SOLVERCONSOLEWINDOW_H

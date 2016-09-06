@@ -1,5 +1,6 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
+#include "private/solverconsolewindow_impl.h"
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
@@ -27,15 +28,24 @@
 #include <QSettings>
 #include <QString>
 
+SolverConsoleWindow::Impl::Impl(SolverConsoleWindow* w) :
+	m_window {w}
+{}
+
+// public interfaces
+
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
 	QMainWindow {parent},
-	m_iricMainWindow {parent}
+	m_iricMainWindow {parent},
+	impl {new Impl(this)}
 {
 	init();
 }
 
 SolverConsoleWindow::~SolverConsoleWindow()
-{}
+{
+	delete impl;
+}
 
 void SolverConsoleWindow::init()
 {
