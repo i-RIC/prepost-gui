@@ -62,6 +62,9 @@ public:
 
 	QPixmap snapshot() override;
 
+	QColor backgroundColor() const;
+	void setBackgroundColor(const QColor& c);
+
 	QAction* exportLogAction;
 
 public slots:
@@ -83,11 +86,6 @@ signals:
 	void solverFinished();
 
 private:
-	QColor backgroundColor() const;
-	void setBackgroundColor(const QColor& c);
-
-	/// Plain text edit widget to display solver STDOUT output
-
 	class Impl;
 	Impl* impl;
 
