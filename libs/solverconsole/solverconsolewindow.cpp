@@ -73,6 +73,13 @@ void SolverConsoleWindow::Impl::removeCancelFile()
 	cancelFile.remove();
 }
 
+void SolverConsoleWindow::Impl::removeCancelOkFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
+	cancelOkFile.remove();
+}
+
 // public interfaces
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
@@ -210,7 +217,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	impl->m_projectDataItem->close();
 
 	impl->removeCancelFile();
-	removeCancelOkFile();
+	impl->removeCancelOkFile();
 
 	if (impl->m_destructing) {return;}
 
@@ -304,8 +311,7 @@ void SolverConsoleWindow::startSolverSilently()
 	args << cgnsname;
 
 	impl->removeCancelFile();
-	// remove cancel_ok file.
-	removeCancelOkFile();
+	impl->removeCancelOkFile();
 
 	impl->m_solverKilled = false;
 
@@ -367,11 +373,4 @@ void SolverConsoleWindow::closeEvent(QCloseEvent* e)
 {
 	parentWidget()->hide();
 	e->ignore();
-}
-
-void SolverConsoleWindow::removeCancelOkFile()
-{
-	QString wd = impl->m_projectData->workDirectory();
-	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
-	cancelOkFile.remove();
 }

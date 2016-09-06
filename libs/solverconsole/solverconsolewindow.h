@@ -83,9 +83,6 @@ signals:
 	void solverFinished();
 
 private:
-
-	void removeCancelOkFile();  ///< remove ".cancel_ok" file.
-
 	void appendLogLine(const QString& line);
 
 	QColor backgroundColor() const;
