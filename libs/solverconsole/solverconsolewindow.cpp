@@ -99,8 +99,6 @@ SolverConsoleWindow::~SolverConsoleWindow()
 	delete impl;
 }
 
-
-
 void SolverConsoleWindow::setProjectData(ProjectData* d)
 {
 	impl->m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
