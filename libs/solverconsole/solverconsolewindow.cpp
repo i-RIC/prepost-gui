@@ -206,7 +206,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 	if (impl->m_iricMainWindow->cuiMode()) {return;}
 
-	if (! m_solverKilled) {
+	if (! impl->m_solverKilled) {
 		if (status == 0) {
 			// Finished normally.
 			QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation."));
@@ -291,7 +291,7 @@ void SolverConsoleWindow::startSolverSilently()
 	// remove cancel_ok file.
 	removeCancelOkFile();
 
-	m_solverKilled = false;
+	impl->m_solverKilled = false;
 
 	QString solver = m_projectData->solverDefinition()->executableFilename();
 	impl->m_process->start(solver, args);
@@ -301,7 +301,7 @@ void SolverConsoleWindow::terminateSolverSilently()
 {
 	if (impl->m_process == nullptr) {return;}
 
-	m_solverKilled = true;
+	impl->m_solverKilled = true;
 	QString wd = m_projectData->workDirectory();
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
 	if (cancelOkFile.exists()) {

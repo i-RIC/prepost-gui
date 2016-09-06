@@ -9,6 +9,7 @@ public:
 	Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w);
 
 	QProcess* m_process;
+	bool m_solverKilled;
 
 	iRICMainWindowInterface* m_iricMainWindow;
 
