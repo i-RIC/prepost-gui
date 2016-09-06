@@ -84,7 +84,6 @@ signals:
 
 private:
 
-	void removeCancelFile();   	///< remove ".cancel" file.
 	void removeCancelOkFile();  ///< remove ".cancel_ok" file.
 
 	void appendLogLine(const QString& line);

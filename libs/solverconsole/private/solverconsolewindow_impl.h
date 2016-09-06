@@ -11,6 +11,7 @@ public:
 	void init();
 
 	void createCancelFile();	  ///< create ".cancel" file to ask solver to stop.
+	void removeCancelFile();   	///< remove ".cancel" file.
 
 	QPlainTextEdit* m_console;
 
