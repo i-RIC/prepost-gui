@@ -105,8 +105,6 @@ private:
 	bool m_solverKilled;
 	bool m_destructing;
 
-	iRICMainWindowInterface* m_iricMainWindow;
-
 	class Impl;
 	Impl* impl;
 

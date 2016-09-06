@@ -28,7 +28,8 @@
 #include <QSettings>
 #include <QString>
 
-SolverConsoleWindow::Impl::Impl(SolverConsoleWindow* w) :
+SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
+	m_iricMainWindow {mainW},
 	m_window {w}
 {}
 
@@ -36,8 +37,7 @@ SolverConsoleWindow::Impl::Impl(SolverConsoleWindow* w) :
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
 	QMainWindow {parent},
-	m_iricMainWindow {parent},
-	impl {new Impl(this)}
+	impl {new Impl(parent, this)}
 {
 	init();
 }
@@ -205,7 +205,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 	emit solverFinished();
 
-	if (m_iricMainWindow->cuiMode()) {return;}
+	if (impl->m_iricMainWindow->cuiMode()) {return;}
 
 	if (! m_solverKilled) {
 		if (status == 0) {
