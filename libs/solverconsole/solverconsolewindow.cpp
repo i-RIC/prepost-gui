@@ -51,7 +51,7 @@ SolverConsoleWindow::~SolverConsoleWindow()
 void SolverConsoleWindow::init()
 {
 	setMinimumSize(480, 360);
-	m_projectData = nullptr;
+	impl->m_projectData = nullptr;
 	impl->m_destructing = false;
 
 	exportLogAction = new QAction(tr("&Export solver console log..."), this);
@@ -91,31 +91,31 @@ bool SolverConsoleWindow::isSolverRunning()
 void SolverConsoleWindow::startSolver()
 {
 	// Check post only mode
-	if (m_projectData->isPostOnlyMode()) {
+	if (impl->m_projectData->isPostOnlyMode()) {
 		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not run the solver."));
 		return;
 	}
 
 	// Check grid is ready
-	bool ok = m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
+	bool ok = impl->m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
 	if (! ok) {return;}
 
 	// Check grid shape
 	QSettings settings;
-	QString msg = m_projectData->mainWindow()->preProcessorWindow()->checkGrid(settings.value("gridcheck/beforeexec", true).value<bool>());
+	QString msg = impl->m_projectData->mainWindow()->preProcessorWindow()->checkGrid(settings.value("gridcheck/beforeexec", true).value<bool>());
 	if (! msg.isEmpty()) {
-		QString logFileName = m_projectData->absoluteFileName("gridcheck.txt");
+		QString logFileName = impl->m_projectData->absoluteFileName("gridcheck.txt");
 		msg.append(QString("<a href=\"%1\">").arg(QString("file:///").append(logFileName))).append(tr("Show Detail")).append("</a>");
-		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = QMessageBox::warning(impl->m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
 	// If the cgns file already has results, clear them first.
-	if (m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
 		return;
 	}
 	// discard result, and save now.
 	try {
-		m_projectData->mainfile()->clearResults();
+		impl->m_projectData->mainfile()->clearResults();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
@@ -124,14 +124,14 @@ void SolverConsoleWindow::startSolver()
 	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
 	if (ret == QMessageBox::Yes) {
 		// save the project file.
-		if (! m_projectData->mainWindow()->saveProject()) {return;}
+		if (! impl->m_projectData->mainWindow()->saveProject()) {return;}
 	} else if (ret == QMessageBox::Cancel) {
 		return;
 	}
 	clear();
 
 	// check solver executable existance
-	QString solver = m_projectData->solverDefinition()->executableFilename();
+	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
 	QFile solverExec(solver);
 	if (! solverExec.exists()) {
 		// solver executable does not exists!!
@@ -219,12 +219,12 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 void SolverConsoleWindow::updateWindowTitle()
 {
-	if (m_projectData == nullptr) {
+	if (impl->m_projectData == nullptr) {
 		// Project is not loaded yet.
 		setWindowTitle(tr("Solver Console"));
 		return;
 	}
-	QString solver = m_projectData->solverDefinition()->caption();
+	QString solver = impl->m_projectData->solverDefinition()->caption();
 	QString status;
 	if (impl->m_process != nullptr) {
 		status = tr("running");
@@ -261,19 +261,19 @@ void SolverConsoleWindow::clear()
 
 void SolverConsoleWindow::startSolverSilently()
 {
-	m_projectData->mainfile()->postSolutionInfo()->close();
+	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
-	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
+	QString cgnsname = impl->m_projectData->mainfile()->cgnsFileList()->current()->filename();
 	cgnsname.append(".cgn");
 
 	impl->m_process = new QProcess(this);
-	QString wd = m_projectData->workDirectory();
+	QString wd = impl->m_projectData->workDirectory();
 	impl->m_process->setWorkingDirectory(wd);
 
 	// set language setting to the environment.
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	QProcessEnvironment env = m_projectData->mainWindow()->processEnvironment();
+	QProcessEnvironment env = impl->m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
 	impl->m_process->setProcessEnvironment(env);
@@ -293,7 +293,7 @@ void SolverConsoleWindow::startSolverSilently()
 
 	impl->m_solverKilled = false;
 
-	QString solver = m_projectData->solverDefinition()->executableFilename();
+	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
 	impl->m_process->start(solver, args);
 }
 
@@ -302,7 +302,7 @@ void SolverConsoleWindow::terminateSolverSilently()
 	if (impl->m_process == nullptr) {return;}
 
 	impl->m_solverKilled = true;
-	QString wd = m_projectData->workDirectory();
+	QString wd = impl->m_projectData->workDirectory();
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
 	if (cancelOkFile.exists()) {
 		// this solver supports canceling through ".cancel". Create ".cancel".
@@ -355,7 +355,7 @@ void SolverConsoleWindow::closeEvent(QCloseEvent* e)
 
 void SolverConsoleWindow::createCancelFile()
 {
-	QString wd = m_projectData->workDirectory();
+	QString wd = impl->m_projectData->workDirectory();
 	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
 	cancelFile.open(QFile::WriteOnly);
 	cancelFile.close();
@@ -363,14 +363,14 @@ void SolverConsoleWindow::createCancelFile()
 
 void SolverConsoleWindow::removeCancelFile()
 {
-	QString wd = m_projectData->workDirectory();
+	QString wd = impl->m_projectData->workDirectory();
 	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
 	cancelFile.remove();
 }
 
 void SolverConsoleWindow::removeCancelOkFile()
 {
-	QString wd = m_projectData->workDirectory();
+	QString wd = impl->m_projectData->workDirectory();
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
 	cancelOkFile.remove();
 }

@@ -12,6 +12,7 @@ public:
 	bool m_solverKilled;
 	bool m_destructing;
 
+	ProjectData* m_projectData;
 	iRICMainWindowInterface* m_iricMainWindow;
 
 private:

@@ -96,8 +96,6 @@ private:
 	void setBackgroundColor(const QColor& c);
 
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
-	/// ProjectData instance
-	ProjectData* m_projectData;
 	/// Plain text edit widget to display solver STDOUT output
 	QPlainTextEdit* m_console;
 
