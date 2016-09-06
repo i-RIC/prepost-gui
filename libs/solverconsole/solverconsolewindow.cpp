@@ -34,13 +34,37 @@ SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWin
 	m_window {w}
 {}
 
+void SolverConsoleWindow::Impl::init()
+{
+	m_window->setMinimumSize(480, 360);
+	m_projectData = nullptr;
+	m_destructing = false;
+
+	m_window->exportLogAction = new QAction(SolverConsoleWindow::tr("&Export solver console log..."), m_window);
+	m_window->exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	m_window->exportLogAction->setDisabled(true);
+
+	m_console = new QPlainTextEdit(m_window);
+	m_console->setReadOnly(true);
+	m_console->setAutoFillBackground(true);
+	m_console->setWordWrapMode(QTextOption::WrapAnywhere);
+	m_console->setMaximumBlockCount(SolverConsoleWindowProjectDataItem::MAXLINES);
+	QFont font("Courier");
+	font.setStyleHint(QFont::Courier);
+	font.setPointSize(9);
+	m_console->setFont(font);
+	m_window->setCentralWidget(m_console);
+
+	m_window->updateWindowTitle();
+}
+
 // public interfaces
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
 	QMainWindow {parent},
 	impl {new Impl(parent, this)}
 {
-	init();
+	impl->init();
 }
 
 SolverConsoleWindow::~SolverConsoleWindow()
@@ -48,29 +72,7 @@ SolverConsoleWindow::~SolverConsoleWindow()
 	delete impl;
 }
 
-void SolverConsoleWindow::init()
-{
-	setMinimumSize(480, 360);
-	impl->m_projectData = nullptr;
-	impl->m_destructing = false;
 
-	exportLogAction = new QAction(tr("&Export solver console log..."), this);
-	exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
-	exportLogAction->setDisabled(true);
-
-	impl->m_console = new QPlainTextEdit(this);
-	impl->m_console->setReadOnly(true);
-	impl->m_console->setAutoFillBackground(true);
-	impl->m_console->setWordWrapMode(QTextOption::WrapAnywhere);
-	impl->m_console->setMaximumBlockCount(SolverConsoleWindowProjectDataItem::MAXLINES);
-	QFont font("Courier");
-	font.setStyleHint(QFont::Courier);
-	font.setPointSize(9);
-	impl->m_console->setFont(font);
-	setCentralWidget(impl->m_console);
-
-	updateWindowTitle();
-}
 
 void SolverConsoleWindow::setProjectData(ProjectData* d)
 {

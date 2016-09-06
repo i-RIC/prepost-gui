@@ -83,8 +83,6 @@ signals:
 	void solverFinished();
 
 private:
-	/// Initialization
-	void init();
 
 	void createCancelFile();	  ///< create ".cancel" file to ask solver to stop.
 	void removeCancelFile();   	///< remove ".cancel" file.

@@ -8,6 +8,8 @@ class SolverConsoleWindow::Impl
 public:
 	Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w);
 
+	void init();
+
 	QPlainTextEdit* m_console;
 
 	QProcess* m_process;
