@@ -7,17 +7,12 @@
 #include <guicore/base/windowwithzindexinterface.h>
 
 #include <QMainWindow>
-#include <QCloseEvent>
-#include <QByteArray>
 #include <QProcess>
-#include <QProcessEnvironment>
 
-class QPlainTextEdit;
 class iRICMainWindowInterface;
 class ProjectData;
 class ProjectDataItem;
 class SolverConsoleWindowProjectDataItem;
-class SolverConsoleWindowBackgroundColorCommand;
 class QAction;
 
 /**
@@ -62,6 +57,9 @@ public:
 
 	QPixmap snapshot() override;
 
+	QColor backgroundColor() const;
+	void setBackgroundColor(const QColor& c);
+
 	QAction* exportLogAction;
 
 public slots:
@@ -83,34 +81,17 @@ signals:
 	void solverFinished();
 
 private:
-	/// Initialization
-	void init();
-
-	void createCancelFile();	  ///< create ".cancel" file to ask solver to stop.
-	void removeCancelFile();   	///< remove ".cancel" file.
-	void removeCancelOkFile();  ///< remove ".cancel_ok" file.
-
-	void appendLogLine(const QString& line);
-
-	QColor backgroundColor() const;
-	void setBackgroundColor(const QColor& c);
-
-	SolverConsoleWindowProjectDataItem* m_projectDataItem;
-	/// ProjectData instance
-	ProjectData* m_projectData;
-	/// Plain text edit widget to display solver STDOUT output
-	QPlainTextEdit* m_console;
-
-	QProcess* m_process;
-	bool m_solverKilled;
-	bool m_destructing;
-
-	iRICMainWindowInterface* m_iricMainWindow;
+	class Impl;
+	Impl* impl;
 
 	class SetBackgroundColorCommand;
 
 public:
 	friend class SolverConsoleWindowProjectDataItem;
 };
+
+#ifdef _DEBUG
+	#include "private/solverconsolewindow_impl.h"
+#endif // _DEBUG
 
 #endif // SOLVERCONSOLEWINDOW_H

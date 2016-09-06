@@ -1,5 +1,6 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
+#include "private/solverconsolewindow_impl.h"
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
@@ -7,7 +8,6 @@
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/project/cgnsfileentry.h>
 #include <guicore/project/cgnsfilelist.h>
-#include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -16,38 +16,29 @@
 
 #include <QAction>
 #include <QColorDialog>
-#include <QFile>
-#include <QFont>
-#include <QIODevice>
+#include <QDir>
 #include <QLocale>
 #include <QMessageBox>
 #include <QPlainTextEdit>
-#include <QProcess>
-#include <QProcessEnvironment>
 #include <QSettings>
-#include <QString>
 
-SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
-	QMainWindow {parent},
-	m_iricMainWindow {parent}
-{
-	init();
-}
-
-SolverConsoleWindow::~SolverConsoleWindow()
+SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
+	m_iricMainWindow {mainW},
+	m_process {nullptr},
+	m_window {w}
 {}
 
-void SolverConsoleWindow::init()
+void SolverConsoleWindow::Impl::init()
 {
-	setMinimumSize(480, 360);
+	m_window->setMinimumSize(480, 360);
 	m_projectData = nullptr;
 	m_destructing = false;
 
-	exportLogAction = new QAction(tr("&Export solver console log..."), this);
-	exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
-	exportLogAction->setDisabled(true);
+	m_window->exportLogAction = new QAction(SolverConsoleWindow::tr("&Export solver console log..."), m_window);
+	m_window->exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
+	m_window->exportLogAction->setDisabled(true);
 
-	m_console = new QPlainTextEdit(this);
+	m_console = new QPlainTextEdit(m_window);
 	m_console->setReadOnly(true);
 	m_console->setAutoFillBackground(true);
 	m_console->setWordWrapMode(QTextOption::WrapAnywhere);
@@ -56,57 +47,96 @@ void SolverConsoleWindow::init()
 	font.setStyleHint(QFont::Courier);
 	font.setPointSize(9);
 	m_console->setFont(font);
-	setCentralWidget(m_console);
+	m_window->setCentralWidget(m_console);
 
-	m_process = nullptr;
+	m_window->updateWindowTitle();
+}
 
-	updateWindowTitle();
+void SolverConsoleWindow::Impl::createCancelFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
+	cancelFile.open(QFile::WriteOnly);
+	cancelFile.close();
+}
+
+void SolverConsoleWindow::Impl::removeCancelFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
+	cancelFile.remove();
+}
+
+void SolverConsoleWindow::Impl::removeCancelOkFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
+	cancelOkFile.remove();
+}
+
+void SolverConsoleWindow::Impl::appendLogLine(const QString& line)
+{
+	m_projectDataItem->append(line);
+}
+
+// public interfaces
+
+SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
+	QMainWindow {parent},
+	impl {new Impl(parent, this)}
+{
+	impl->init();
+}
+
+SolverConsoleWindow::~SolverConsoleWindow()
+{
+	delete impl;
 }
 
 void SolverConsoleWindow::setProjectData(ProjectData* d)
 {
-	m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
-	connect(exportLogAction, SIGNAL(triggered()), m_projectDataItem, SLOT(exportConsoleLog()));
+	impl->m_projectDataItem = new SolverConsoleWindowProjectDataItem(this, d->mainfile());
+	connect(exportLogAction, SIGNAL(triggered()), impl->m_projectDataItem, SLOT(exportConsoleLog()));
 }
 
 SolverConsoleWindowProjectDataItem* SolverConsoleWindow::projectDataItem()
 {
-	return m_projectDataItem;
+	return impl->m_projectDataItem;
 }
 
 bool SolverConsoleWindow::isSolverRunning()
 {
-	return m_process != nullptr;
+	return impl->m_process != nullptr;
 }
 
 void SolverConsoleWindow::startSolver()
 {
 	// Check post only mode
-	if (m_projectData->isPostOnlyMode()) {
+	if (impl->m_projectData->isPostOnlyMode()) {
 		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not run the solver."));
 		return;
 	}
 
 	// Check grid is ready
-	bool ok = m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
+	bool ok = impl->m_projectData->mainWindow()->preProcessorWindow()->checkMappingStatus();
 	if (! ok) {return;}
 
 	// Check grid shape
 	QSettings settings;
-	QString msg = m_projectData->mainWindow()->preProcessorWindow()->checkGrid(settings.value("gridcheck/beforeexec", true).value<bool>());
+	QString msg = impl->m_projectData->mainWindow()->preProcessorWindow()->checkGrid(settings.value("gridcheck/beforeexec", true).value<bool>());
 	if (! msg.isEmpty()) {
-		QString logFileName = m_projectData->absoluteFileName("gridcheck.txt");
+		QString logFileName = impl->m_projectData->absoluteFileName("gridcheck.txt");
 		msg.append(QString("<a href=\"%1\">").arg(QString("file:///").append(logFileName))).append(tr("Show Detail")).append("</a>");
-		int ret = QMessageBox::warning(m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+		int ret = QMessageBox::warning(impl->m_projectData->mainWindow(), tr("Warning"), tr("The following problems found in the grid(s). Do you really want to run the solver with this grid?") + msg, QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
 	// If the cgns file already has results, clear them first.
-	if (m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
+	if (impl->m_projectData->mainfile()->hasResults() && QMessageBox::Cancel == QMessageBox::warning(this, tr("The simulation has result"), tr("Current simulation already has result data. When you run the solver, the current result data is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel)) {
 		return;
 	}
 	// discard result, and save now.
 	try {
-		m_projectData->mainfile()->clearResults();
+		impl->m_projectData->mainfile()->clearResults();
 	} catch (ErrorMessage& m) {
 		QMessageBox::warning(this, tr("Warning"), tr("Error occured. %1").arg(m));
 		return;
@@ -115,14 +145,14 @@ void SolverConsoleWindow::startSolver()
 	int ret = QMessageBox::information(this, tr("Information"), tr("We recommend that you save the project before starting the solver. Do you want to save?"), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::Yes);
 	if (ret == QMessageBox::Yes) {
 		// save the project file.
-		if (! m_projectData->mainWindow()->saveProject()) {return;}
+		if (! impl->m_projectData->mainWindow()->saveProject()) {return;}
 	} else if (ret == QMessageBox::Cancel) {
 		return;
 	}
 	clear();
 
 	// check solver executable existance
-	QString solver = m_projectData->solverDefinition()->executableFilename();
+	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
 	QFile solverExec(solver);
 	if (! solverExec.exists()) {
 		// solver executable does not exists!!
@@ -130,7 +160,7 @@ void SolverConsoleWindow::startSolver()
 		return;
 	}
 
-	m_projectDataItem->open();
+	impl->m_projectDataItem->open();
 
 	startSolverSilently();
 
@@ -144,7 +174,7 @@ void SolverConsoleWindow::startSolver()
 }
 void SolverConsoleWindow::terminateSolver()
 {
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 	QMessageBox::StandardButton button =  QMessageBox::question(
 																					this,
 																					tr("Confirm Solver Termination"),
@@ -154,39 +184,39 @@ void SolverConsoleWindow::terminateSolver()
 	if (QMessageBox::No == button) {return;}
 
 	// In case solver stops before pressing "Yes" button.
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 
 	terminateSolverSilently();
 }
 
 void SolverConsoleWindow::readStderr()
 {
-	QString data = m_process->readAllStandardError();
+	QString data = impl->m_process->readAllStandardError();
 	// remove "\r",  "\n"
 	data.replace('\r', "").replace('\n', "");
-	appendLogLine(data);
+	impl->appendLogLine(data);
 }
 
 void SolverConsoleWindow::readStdout()
 {
-	while (m_process->canReadLine()) {
-		QString data = m_process->readLine(200);
+	while (impl->m_process->canReadLine()) {
+		QString data = impl->m_process->readLine(200);
 		// remove "\r",  "\n"
 		data.replace('\r', "").replace('\n', "");
-		appendLogLine(data);
+		impl->appendLogLine(data);
 	}
 }
 
 void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 {
-	delete m_process;
-	m_process = nullptr;
-	m_projectDataItem->close();
+	delete impl->m_process;
+	impl->m_process = nullptr;
+	impl->m_projectDataItem->close();
 
-	removeCancelFile();
-	removeCancelOkFile();
+	impl->removeCancelFile();
+	impl->removeCancelOkFile();
 
-	if (m_destructing) {return;}
+	if (impl->m_destructing) {return;}
 
 	updateWindowTitle();
 	QWidget* parent = parentWidget();
@@ -195,9 +225,9 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 	emit solverFinished();
 
-	if (m_iricMainWindow->cuiMode()) {return;}
+	if (impl->m_iricMainWindow->cuiMode()) {return;}
 
-	if (! m_solverKilled) {
+	if (! impl->m_solverKilled) {
 		if (status == 0) {
 			// Finished normally.
 			QMessageBox::information(this, tr("Solver Finished"), tr("The solver finished calculation."));
@@ -210,14 +240,14 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 
 void SolverConsoleWindow::updateWindowTitle()
 {
-	if (m_projectData == nullptr) {
+	if (impl->m_projectData == nullptr) {
 		// Project is not loaded yet.
 		setWindowTitle(tr("Solver Console"));
 		return;
 	}
-	QString solver = m_projectData->solverDefinition()->caption();
+	QString solver = impl->m_projectData->solverDefinition()->caption();
 	QString status;
-	if (m_process != nullptr) {
+	if (impl->m_process != nullptr) {
 		status = tr("running");
 	} else {
 		status = tr("stopped");
@@ -234,86 +264,79 @@ void SolverConsoleWindow::setupDefaultGeometry()
 
 void SolverConsoleWindow::copy() const
 {
-	m_console->copy();
+	impl->m_console->copy();
 }
 
 QPixmap SolverConsoleWindow::snapshot()
 {
-	QPixmap pixmap(m_console->size());
-	m_console->render(&pixmap);
+	QPixmap pixmap(impl->m_console->size());
+	impl->m_console->render(&pixmap);
 	return pixmap;
 }
 
 void SolverConsoleWindow::clear()
 {
-	m_console->clear();
-	m_projectDataItem->clear();
+	impl->m_console->clear();
+	impl->m_projectDataItem->clear();
 }
 
 void SolverConsoleWindow::startSolverSilently()
 {
-	m_projectData->mainfile()->postSolutionInfo()->close();
+	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
-	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
+	QString cgnsname = impl->m_projectData->mainfile()->cgnsFileList()->current()->filename();
 	cgnsname.append(".cgn");
 
-	m_process = new QProcess(this);
-	QString wd = m_projectData->workDirectory();
-	m_process->setWorkingDirectory(wd);
+	impl->m_process = new QProcess(this);
+	QString wd = impl->m_projectData->workDirectory();
+	impl->m_process->setWorkingDirectory(wd);
 
 	// set language setting to the environment.
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
-	QProcessEnvironment env = m_projectData->mainWindow()->processEnvironment();
+	QProcessEnvironment env = impl->m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
-	m_process->setProcessEnvironment(env);
+	impl->m_process->setProcessEnvironment(env);
 
 	// create connections.
-	connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
-	connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
-	connect(m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
+	connect(impl->m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
+	connect(impl->m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
+	connect(impl->m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
 
 	QStringList args;
 	args << cgnsname;
 
-	// remove cancel file.
-	removeCancelFile();
-	// remove cancel_ok file.
-	removeCancelOkFile();
+	impl->removeCancelFile();
+	impl->removeCancelOkFile();
 
-	m_solverKilled = false;
+	impl->m_solverKilled = false;
 
-	QString solver = m_projectData->solverDefinition()->executableFilename();
-	m_process->start(solver, args);
+	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
+	impl->m_process->start(solver, args);
 }
 
 void SolverConsoleWindow::terminateSolverSilently()
 {
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 
-	m_solverKilled = true;
-	QString wd = m_projectData->workDirectory();
+	impl->m_solverKilled = true;
+	QString wd = impl->m_projectData->workDirectory();
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
 	if (cancelOkFile.exists()) {
 		// this solver supports canceling through ".cancel". Create ".cancel".
-		createCancelFile();
+		impl->createCancelFile();
 		// wait for 30 secs.
-		m_process->waitForFinished();
+		impl->m_process->waitForFinished();
 	} else {
 		// this solver does not supports canceling through ".cancel". Kill the solver.
-		m_process->kill();
+		impl->m_process->kill();
 	}
 }
 
 void SolverConsoleWindow::waitForSolverFinish()
 {
-	m_process->waitForFinished(-1);
-}
-
-void SolverConsoleWindow::appendLogLine(const QString& line)
-{
-	m_projectDataItem->append(line);
+	impl->m_process->waitForFinished(-1);
 }
 
 void SolverConsoleWindow::editBackgroundColor()
@@ -327,41 +350,19 @@ void SolverConsoleWindow::editBackgroundColor()
 
 QColor SolverConsoleWindow::backgroundColor() const
 {
-	QPalette p = m_console->palette();
+	QPalette p = impl->m_console->palette();
 	return p.color(QPalette::Base);
 }
 
 void SolverConsoleWindow::setBackgroundColor(const QColor& c)
 {
-	QPalette p = m_console->palette();
+	QPalette p = impl->m_console->palette();
 	p.setColor(QPalette::Base, c);
-	m_console->setPalette(p);
+	impl->m_console->setPalette(p);
 }
 
 void SolverConsoleWindow::closeEvent(QCloseEvent* e)
 {
 	parentWidget()->hide();
 	e->ignore();
-}
-
-void SolverConsoleWindow::createCancelFile()
-{
-	QString wd = m_projectData->workDirectory();
-	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
-	cancelFile.open(QFile::WriteOnly);
-	cancelFile.close();
-}
-
-void SolverConsoleWindow::removeCancelFile()
-{
-	QString wd = m_projectData->workDirectory();
-	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
-	cancelFile.remove();
-}
-
-void SolverConsoleWindow::removeCancelOkFile()
-{
-	QString wd = m_projectData->workDirectory();
-	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
-	cancelOkFile.remove();
 }

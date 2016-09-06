@@ -1,5 +1,6 @@
 #include "solverconsolewindow.h"
 #include "solverconsolewindowprojectdataitem.h"
+#include "private/solverconsolewindow_impl.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/project/projectdata.h>
@@ -7,16 +8,13 @@
 #include <misc/xmlsupport.h>
 
 #include <QAction>
-#include <QDomElement>
 #include <QDomNode>
-#include <QFile>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPlainTextEdit>
 #include <QStatusBar>
 #include <QTextStream>
-#include <QXmlStreamWriter>
 
 SolverConsoleWindowProjectDataItem::SolverConsoleWindowProjectDataItem(SolverConsoleWindow* w, ProjectDataItem* parent) :
 	ProjectDataItem(parent),
@@ -35,7 +33,7 @@ SolverConsoleWindowProjectDataItem::~SolverConsoleWindowProjectDataItem()
 
 void SolverConsoleWindowProjectDataItem::initForSolverDefinition()
 {
-	m_solverConsoleWindow->m_projectData = projectData();
+	m_solverConsoleWindow->impl->m_projectData = projectData();
 	m_solverConsoleWindow->updateWindowTitle();
 }
 
@@ -84,7 +82,7 @@ void SolverConsoleWindowProjectDataItem::append(const QString& line)
 	ts << line << endl;
 
 	appendToLines(line);
-	m_solverConsoleWindow->m_console->appendPlainText(line);
+	m_solverConsoleWindow->impl->m_console->appendPlainText(line);
 }
 
 void SolverConsoleWindowProjectDataItem::appendToLines(const QString& line)
@@ -107,8 +105,8 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filenam
 	}
 	f.close();
 	QString log = m_lines.join("\n");
-	m_solverConsoleWindow->m_console->setPlainText(log);
-	m_solverConsoleWindow->m_console->moveCursor(QTextCursor::End);
+	m_solverConsoleWindow->impl->m_console->setPlainText(log);
+	m_solverConsoleWindow->impl->m_console->moveCursor(QTextCursor::End);
 
 	QFileInfo finfo(f);
 	if (finfo.size() != 0) {

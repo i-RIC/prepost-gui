@@ -53,6 +53,7 @@ win32 {
 HEADERS += solverconsole_global.h \
            solverconsolewindow.h \
            solverconsolewindowprojectdataitem.h \
+           private/solverconsolewindow_impl.h \
            private/solverconsolewindow_setbackgroundcolorcommand.h
 SOURCES += solverconsolewindow.cpp \
            solverconsolewindowprojectdataitem.cpp \
