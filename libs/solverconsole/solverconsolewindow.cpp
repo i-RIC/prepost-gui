@@ -58,6 +58,14 @@ void SolverConsoleWindow::Impl::init()
 	m_window->updateWindowTitle();
 }
 
+void SolverConsoleWindow::Impl::createCancelFile()
+{
+	QString wd = m_projectData->workDirectory();
+	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
+	cancelFile.open(QFile::WriteOnly);
+	cancelFile.close();
+}
+
 // public interfaces
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
@@ -308,7 +316,7 @@ void SolverConsoleWindow::terminateSolverSilently()
 	QFile cancelOkFile(QDir(wd).absoluteFilePath(".cancel_ok"));
 	if (cancelOkFile.exists()) {
 		// this solver supports canceling through ".cancel". Create ".cancel".
-		createCancelFile();
+		impl->createCancelFile();
 		// wait for 30 secs.
 		impl->m_process->waitForFinished();
 	} else {
@@ -353,14 +361,6 @@ void SolverConsoleWindow::closeEvent(QCloseEvent* e)
 {
 	parentWidget()->hide();
 	e->ignore();
-}
-
-void SolverConsoleWindow::createCancelFile()
-{
-	QString wd = impl->m_projectData->workDirectory();
-	QFile cancelFile(QDir(wd).absoluteFilePath(".cancel"));
-	cancelFile.open(QFile::WriteOnly);
-	cancelFile.close();
 }
 
 void SolverConsoleWindow::removeCancelFile()
