@@ -96,7 +96,6 @@ private:
 	void setBackgroundColor(const QColor& c);
 
 	/// Plain text edit widget to display solver STDOUT output
-	QPlainTextEdit* m_console;
 
 	class Impl;
 	Impl* impl;

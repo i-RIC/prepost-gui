@@ -58,16 +58,16 @@ void SolverConsoleWindow::init()
 	exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
 	exportLogAction->setDisabled(true);
 
-	m_console = new QPlainTextEdit(this);
-	m_console->setReadOnly(true);
-	m_console->setAutoFillBackground(true);
-	m_console->setWordWrapMode(QTextOption::WrapAnywhere);
-	m_console->setMaximumBlockCount(SolverConsoleWindowProjectDataItem::MAXLINES);
+	impl->m_console = new QPlainTextEdit(this);
+	impl->m_console->setReadOnly(true);
+	impl->m_console->setAutoFillBackground(true);
+	impl->m_console->setWordWrapMode(QTextOption::WrapAnywhere);
+	impl->m_console->setMaximumBlockCount(SolverConsoleWindowProjectDataItem::MAXLINES);
 	QFont font("Courier");
 	font.setStyleHint(QFont::Courier);
 	font.setPointSize(9);
-	m_console->setFont(font);
-	setCentralWidget(m_console);
+	impl->m_console->setFont(font);
+	setCentralWidget(impl->m_console);
 
 	updateWindowTitle();
 }
@@ -243,19 +243,19 @@ void SolverConsoleWindow::setupDefaultGeometry()
 
 void SolverConsoleWindow::copy() const
 {
-	m_console->copy();
+	impl->m_console->copy();
 }
 
 QPixmap SolverConsoleWindow::snapshot()
 {
-	QPixmap pixmap(m_console->size());
-	m_console->render(&pixmap);
+	QPixmap pixmap(impl->m_console->size());
+	impl->m_console->render(&pixmap);
 	return pixmap;
 }
 
 void SolverConsoleWindow::clear()
 {
-	m_console->clear();
+	impl->m_console->clear();
 	impl->m_projectDataItem->clear();
 }
 
@@ -336,15 +336,15 @@ void SolverConsoleWindow::editBackgroundColor()
 
 QColor SolverConsoleWindow::backgroundColor() const
 {
-	QPalette p = m_console->palette();
+	QPalette p = impl->m_console->palette();
 	return p.color(QPalette::Base);
 }
 
 void SolverConsoleWindow::setBackgroundColor(const QColor& c)
 {
-	QPalette p = m_console->palette();
+	QPalette p = impl->m_console->palette();
 	p.setColor(QPalette::Base, c);
-	m_console->setPalette(p);
+	impl->m_console->setPalette(p);
 }
 
 void SolverConsoleWindow::closeEvent(QCloseEvent* e)

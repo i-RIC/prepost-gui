@@ -85,7 +85,7 @@ void SolverConsoleWindowProjectDataItem::append(const QString& line)
 	ts << line << endl;
 
 	appendToLines(line);
-	m_solverConsoleWindow->m_console->appendPlainText(line);
+	m_solverConsoleWindow->impl->m_console->appendPlainText(line);
 }
 
 void SolverConsoleWindowProjectDataItem::appendToLines(const QString& line)
@@ -108,8 +108,8 @@ void SolverConsoleWindowProjectDataItem::loadExternalData(const QString& filenam
 	}
 	f.close();
 	QString log = m_lines.join("\n");
-	m_solverConsoleWindow->m_console->setPlainText(log);
-	m_solverConsoleWindow->m_console->moveCursor(QTextCursor::End);
+	m_solverConsoleWindow->impl->m_console->setPlainText(log);
+	m_solverConsoleWindow->impl->m_console->moveCursor(QTextCursor::End);
 
 	QFileInfo finfo(f);
 	if (finfo.size() != 0) {
