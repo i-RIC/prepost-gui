@@ -101,7 +101,6 @@ private:
 	/// Plain text edit widget to display solver STDOUT output
 	QPlainTextEdit* m_console;
 
-	QProcess* m_process;
 	bool m_solverKilled;
 	bool m_destructing;
 

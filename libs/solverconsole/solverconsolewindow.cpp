@@ -30,6 +30,7 @@
 
 SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
 	m_iricMainWindow {mainW},
+	m_process {nullptr},
 	m_window {w}
 {}
 
@@ -68,8 +69,6 @@ void SolverConsoleWindow::init()
 	m_console->setFont(font);
 	setCentralWidget(m_console);
 
-	m_process = nullptr;
-
 	updateWindowTitle();
 }
 
@@ -86,7 +85,7 @@ SolverConsoleWindowProjectDataItem* SolverConsoleWindow::projectDataItem()
 
 bool SolverConsoleWindow::isSolverRunning()
 {
-	return m_process != nullptr;
+	return impl->m_process != nullptr;
 }
 
 void SolverConsoleWindow::startSolver()
@@ -154,7 +153,7 @@ void SolverConsoleWindow::startSolver()
 }
 void SolverConsoleWindow::terminateSolver()
 {
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 	QMessageBox::StandardButton button =  QMessageBox::question(
 																					this,
 																					tr("Confirm Solver Termination"),
@@ -164,14 +163,14 @@ void SolverConsoleWindow::terminateSolver()
 	if (QMessageBox::No == button) {return;}
 
 	// In case solver stops before pressing "Yes" button.
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 
 	terminateSolverSilently();
 }
 
 void SolverConsoleWindow::readStderr()
 {
-	QString data = m_process->readAllStandardError();
+	QString data = impl->m_process->readAllStandardError();
 	// remove "\r",  "\n"
 	data.replace('\r', "").replace('\n', "");
 	appendLogLine(data);
@@ -179,8 +178,8 @@ void SolverConsoleWindow::readStderr()
 
 void SolverConsoleWindow::readStdout()
 {
-	while (m_process->canReadLine()) {
-		QString data = m_process->readLine(200);
+	while (impl->m_process->canReadLine()) {
+		QString data = impl->m_process->readLine(200);
 		// remove "\r",  "\n"
 		data.replace('\r', "").replace('\n', "");
 		appendLogLine(data);
@@ -189,8 +188,8 @@ void SolverConsoleWindow::readStdout()
 
 void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 {
-	delete m_process;
-	m_process = nullptr;
+	delete impl->m_process;
+	impl->m_process = nullptr;
 	m_projectDataItem->close();
 
 	removeCancelFile();
@@ -227,7 +226,7 @@ void SolverConsoleWindow::updateWindowTitle()
 	}
 	QString solver = m_projectData->solverDefinition()->caption();
 	QString status;
-	if (m_process != nullptr) {
+	if (impl->m_process != nullptr) {
 		status = tr("running");
 	} else {
 		status = tr("stopped");
@@ -267,9 +266,9 @@ void SolverConsoleWindow::startSolverSilently()
 	QString cgnsname = m_projectData->mainfile()->cgnsFileList()->current()->filename();
 	cgnsname.append(".cgn");
 
-	m_process = new QProcess(this);
+	impl->m_process = new QProcess(this);
 	QString wd = m_projectData->workDirectory();
-	m_process->setWorkingDirectory(wd);
+	impl->m_process->setWorkingDirectory(wd);
 
 	// set language setting to the environment.
 	QSettings settings;
@@ -277,12 +276,12 @@ void SolverConsoleWindow::startSolverSilently()
 	QProcessEnvironment env = m_projectData->mainWindow()->processEnvironment();
 	env.insert("iRIC_LANG", locale);
 
-	m_process->setProcessEnvironment(env);
+	impl->m_process->setProcessEnvironment(env);
 
 	// create connections.
-	connect(m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
-	connect(m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
-	connect(m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
+	connect(impl->m_process, SIGNAL(readyReadStandardError()), this, SLOT(readStderr()));
+	connect(impl->m_process, SIGNAL(readyReadStandardOutput()), this, SLOT(readStdout()));
+	connect(impl->m_process, SIGNAL(finished(int, QProcess::ExitStatus)), this, SLOT(handleSolverFinish(int, QProcess::ExitStatus)));
 
 	QStringList args;
 	args << cgnsname;
@@ -295,12 +294,12 @@ void SolverConsoleWindow::startSolverSilently()
 	m_solverKilled = false;
 
 	QString solver = m_projectData->solverDefinition()->executableFilename();
-	m_process->start(solver, args);
+	impl->m_process->start(solver, args);
 }
 
 void SolverConsoleWindow::terminateSolverSilently()
 {
-	if (m_process == nullptr) {return;}
+	if (impl->m_process == nullptr) {return;}
 
 	m_solverKilled = true;
 	QString wd = m_projectData->workDirectory();
@@ -309,16 +308,16 @@ void SolverConsoleWindow::terminateSolverSilently()
 		// this solver supports canceling through ".cancel". Create ".cancel".
 		createCancelFile();
 		// wait for 30 secs.
-		m_process->waitForFinished();
+		impl->m_process->waitForFinished();
 	} else {
 		// this solver does not supports canceling through ".cancel". Kill the solver.
-		m_process->kill();
+		impl->m_process->kill();
 	}
 }
 
 void SolverConsoleWindow::waitForSolverFinish()
 {
-	m_process->waitForFinished(-1);
+	impl->m_process->waitForFinished(-1);
 }
 
 void SolverConsoleWindow::appendLogLine(const QString& line)
