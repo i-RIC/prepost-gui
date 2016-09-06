@@ -10,6 +10,7 @@ public:
 
 	QProcess* m_process;
 	bool m_solverKilled;
+	bool m_destructing;
 
 	iRICMainWindowInterface* m_iricMainWindow;
 

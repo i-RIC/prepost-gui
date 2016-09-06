@@ -101,8 +101,6 @@ private:
 	/// Plain text edit widget to display solver STDOUT output
 	QPlainTextEdit* m_console;
 
-	bool m_destructing;
-
 	class Impl;
 	Impl* impl;
 

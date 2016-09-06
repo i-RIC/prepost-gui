@@ -52,7 +52,7 @@ void SolverConsoleWindow::init()
 {
 	setMinimumSize(480, 360);
 	m_projectData = nullptr;
-	m_destructing = false;
+	impl->m_destructing = false;
 
 	exportLogAction = new QAction(tr("&Export solver console log..."), this);
 	exportLogAction->setIcon(QIcon(":/libs/guibase/images/iconExport.png"));
@@ -195,7 +195,7 @@ void SolverConsoleWindow::handleSolverFinish(int, QProcess::ExitStatus status)
 	removeCancelFile();
 	removeCancelOkFile();
 
-	if (m_destructing) {return;}
+	if (impl->m_destructing) {return;}
 
 	updateWindowTitle();
 	QWidget* parent = parentWidget();
