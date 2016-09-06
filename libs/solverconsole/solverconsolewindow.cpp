@@ -80,6 +80,11 @@ void SolverConsoleWindow::Impl::removeCancelOkFile()
 	cancelOkFile.remove();
 }
 
+void SolverConsoleWindow::Impl::appendLogLine(const QString& line)
+{
+	m_projectDataItem->append(line);
+}
+
 // public interfaces
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
@@ -197,7 +202,7 @@ void SolverConsoleWindow::readStderr()
 	QString data = impl->m_process->readAllStandardError();
 	// remove "\r",  "\n"
 	data.replace('\r', "").replace('\n', "");
-	appendLogLine(data);
+	impl->appendLogLine(data);
 }
 
 void SolverConsoleWindow::readStdout()
@@ -206,7 +211,7 @@ void SolverConsoleWindow::readStdout()
 		QString data = impl->m_process->readLine(200);
 		// remove "\r",  "\n"
 		data.replace('\r', "").replace('\n', "");
-		appendLogLine(data);
+		impl->appendLogLine(data);
 	}
 }
 
@@ -340,11 +345,6 @@ void SolverConsoleWindow::terminateSolverSilently()
 void SolverConsoleWindow::waitForSolverFinish()
 {
 	impl->m_process->waitForFinished(-1);
-}
-
-void SolverConsoleWindow::appendLogLine(const QString& line)
-{
-	impl->m_projectDataItem->append(line);
 }
 
 void SolverConsoleWindow::editBackgroundColor()

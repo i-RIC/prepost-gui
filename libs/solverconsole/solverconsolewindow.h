@@ -83,8 +83,6 @@ signals:
 	void solverFinished();
 
 private:
-	void appendLogLine(const QString& line);
-
 	QColor backgroundColor() const;
 	void setBackgroundColor(const QColor& c);
 
