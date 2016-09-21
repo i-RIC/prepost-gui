@@ -182,3 +182,18 @@ void GridBirdEyeWindow::editZScale()
 {
 	m_dataModel->editZScale();
 }
+
+void GridBirdEyeWindow::cameraParallelProjection()
+{
+	m_dataModel->graphicsView()->cameraParallelProjection();
+}
+
+void GridBirdEyeWindow::cameraPerspectiveProjection()
+{
+	m_dataModel->graphicsView()->cameraPerspectiveProjection();
+}
+
+void GridBirdEyeWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
+{
+	m_dataModel->graphicsView()->updateProjectionMenu(parallel, perspective);
+}
