@@ -8,6 +8,7 @@
 #include <vtkCamera.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
+#include <QAction>
 #include <QVector3D>
 
 VTK3DGraphicsView::VTK3DGraphicsView(QWidget* parent)
@@ -174,6 +175,42 @@ void VTK3DGraphicsView::cameraToYZPlane()
 void VTK3DGraphicsView::cameraToZXPlane()
 {
 	toZXPlane();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::updateProjectionMenu(QAction* parallel, QAction* perspective)
+{
+	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	if (camera->GetParallelProjection()) {
+		parallel->setChecked(true);
+	} else {
+		perspective->setChecked(true);
+	}
+}
+
+void VTK3DGraphicsView::parallelProjection()
+{
+	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	camera->ParallelProjectionOn();
+}
+
+void VTK3DGraphicsView::perspectiveProjection()
+{
+	vtkCamera* camera = m_mainRenderer->GetActiveCamera();
+	camera->ParallelProjectionOff();
+}
+
+void VTK3DGraphicsView::cameraParallelProjection()
+{
+	parallelProjection();
+	model()->viewOperationEndedGlobal();
+	render();
+}
+
+void VTK3DGraphicsView::cameraPerspectiveProjection()
+{
+	perspectiveProjection();
 	model()->viewOperationEndedGlobal();
 	render();
 }

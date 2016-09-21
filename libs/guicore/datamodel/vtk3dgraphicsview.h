@@ -28,6 +28,12 @@ public slots:
 	void cameraToYZPlane();
 	/// Go to ZX plane
 	void cameraToZXPlane();
+	/// Set projection to parallel
+	void cameraParallelProjection();
+	/// Set projection to perspective
+	void cameraPerspectiveProjection();
+	/// Update menu
+	void updateProjectionMenu(QAction* parallel, QAction* perspective);
 
 private:
 	/// Fit camera.
@@ -42,6 +48,10 @@ private:
 	void toYZPlane();
 	/// Go to ZX plane
 	void toZXPlane();
+	/// Set projection to parallel
+	void parallelProjection();
+	/// Set projection to perspective
+	void perspectiveProjection();
 
 	void getFocalPointAndDistance(double focal[3], double* distance);
 };
