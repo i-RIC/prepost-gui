@@ -151,6 +151,21 @@ void Post3dWindow::cameraZXPlane()
 	m_dataModel->graphicsView()->cameraToZXPlane();
 }
 
+void Post3dWindow::cameraParallelProjection()
+{
+	m_dataModel->graphicsView()->cameraParallelProjection();
+}
+
+void Post3dWindow::cameraPerspectiveProjection()
+{
+	m_dataModel->graphicsView()->cameraPerspectiveProjection();
+}
+
+void Post3dWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
+{
+	m_dataModel->graphicsView()->updateProjectionMenu(parallel, perspective);
+}
+
 class Post3dWindowEditBackgroundColorCommand : public QUndoCommand
 {
 public:

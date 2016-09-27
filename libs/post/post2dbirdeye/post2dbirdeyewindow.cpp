@@ -201,3 +201,18 @@ ObjectBrowser* Post2dBirdEyeWindow::objectBrowser() const
 {
 	return m_objectBrowser;
 }
+
+void Post2dBirdEyeWindow::cameraParallelProjection()
+{
+	m_dataModel->graphicsView()->cameraParallelProjection();
+}
+
+void Post2dBirdEyeWindow::cameraPerspectiveProjection()
+{
+	m_dataModel->graphicsView()->cameraPerspectiveProjection();
+}
+
+void Post2dBirdEyeWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
+{
+	m_dataModel->graphicsView()->updateProjectionMenu(parallel, perspective);
+}

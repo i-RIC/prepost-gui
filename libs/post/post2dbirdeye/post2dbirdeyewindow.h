@@ -53,6 +53,9 @@ public slots:
 	void cameraXYPlane();
 	void cameraYZPlane();
 	void cameraZXPlane();
+	void cameraParallelProjection();
+	void cameraPerspectiveProjection();
+	void updateProjectionMenu(QAction* parallel, QAction* perspective);
 	void editBackgroundColor();
 	void editZScale();
 

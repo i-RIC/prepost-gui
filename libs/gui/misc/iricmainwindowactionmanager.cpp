@@ -334,6 +334,25 @@ void iRICMainWindowActionManager::setupViewMenu()
 
 	m_viewMenu->addSeparator();
 
+	m_setProjectionToMenu = m_viewMenu->addMenu(tr("Set &Projection To"));
+	m_setProjectionToMenu->setDisabled(true);
+
+	setParallelProjectionAction = new QAction(tr("Para&llel"), m_setProjectionToMenu);
+	setParallelProjectionAction->setShortcut(QKeySequence(tr("Ctrl+L")));
+	m_setProjectionToMenu->addAction(setParallelProjectionAction);
+	setParallelProjectionAction->setCheckable(true);
+
+	setPerspectiveProjectionAction = new QAction(tr("&Perspective"), m_setProjectionToMenu);
+	setPerspectiveProjectionAction->setShortcut(QKeySequence(tr("Ctrl+Shift+L")));
+	m_setProjectionToMenu->addAction(setPerspectiveProjectionAction);
+	setPerspectiveProjectionAction->setCheckable(true);
+
+	m_projectionActionGroup = new QActionGroup(m_setProjectionToMenu);
+	m_projectionActionGroup->addAction(setParallelProjectionAction);
+	m_projectionActionGroup->addAction(setPerspectiveProjectionAction);
+
+	m_viewMenu->addSeparator();
+
 	windowTileAction = new QAction(tr("&Tile Windows"), m_viewMenu);
 	m_viewMenu->addAction(windowTileAction);
 	connect(windowTileAction, SIGNAL(triggered()), m_parent, SLOT(tileSubWindows()));
@@ -992,6 +1011,32 @@ void iRICMainWindowActionManager::updateCameraAction(QAction* a, QWidget* w, con
 	a->setEnabled(success);
 }
 
+void iRICMainWindowActionManager::updateProjectionMenu(QWidget* w)
+{
+	// disconnect old connections.
+	bool status = disconnect(this, SIGNAL(updateProjectionMenuSignal(QAction*, QAction*)), 0, 0);
+
+	if (connect(this, SIGNAL(updateProjectionMenuSignal(QAction*, QAction*)), w, SLOT(updateProjectionMenu(QAction*, QAction*)))) {
+		m_setProjectionToMenu->setEnabled(true);
+		emit updateProjectionMenuSignal(setParallelProjectionAction, setPerspectiveProjectionAction);
+
+		// disconnect previous connections
+		setParallelProjectionAction->disconnect();
+		setPerspectiveProjectionAction->disconnect();
+
+		// need to re-add actions after disconnect
+		m_projectionActionGroup->removeAction(setParallelProjectionAction);
+		m_projectionActionGroup->removeAction(setPerspectiveProjectionAction);
+		m_projectionActionGroup->addAction(setParallelProjectionAction);
+		m_projectionActionGroup->addAction(setPerspectiveProjectionAction);
+
+		connect(setParallelProjectionAction, SIGNAL(triggered()), w, SLOT(cameraParallelProjection()));
+		connect(setPerspectiveProjectionAction, SIGNAL(triggered()), w, SLOT(cameraPerspectiveProjection()));
+	} else {
+		m_setProjectionToMenu->setEnabled(false);
+	}
+}
+
 void iRICMainWindowActionManager::updateWindowList()
 {
 	QPixmap shortcutPixmap(":/images/iconShortcut.png");
@@ -1067,6 +1112,7 @@ void iRICMainWindowActionManager::updateMiscActions(QWidget* w)
 {
 	updateCameraAction(viewBackgroundColorAction, w, SLOT(editBackgroundColor()));
 	updateCameraAction(viewZDirectionScaleAction, w, SLOT(editZScale()));
+	updateProjectionMenu(w);
 }
 
 void iRICMainWindowActionManager::updateAdditionalMenus(const QList<QMenu*>& menus)

@@ -13,6 +13,7 @@ class QMenu;
 class QMenuBar;
 class QToolBar;
 class QAction;
+class QActionGroup;
 class ProjectData;
 class SolverDefinitionList;
 class iRICMainWindow;
@@ -220,6 +221,11 @@ public:
 	/// Action to edit Z direction scale
 	QAction* viewZDirectionScaleAction;
 
+	/// Action to set parallel projection
+	QAction* setParallelProjectionAction;
+	/// Action to set perspective projection
+	QAction* setPerspectiveProjectionAction;
+
 	/// Action to check a solver definition file
 	QAction* checkDefinitionAction;
 	/// Action to show solver definition file translation update wizard
@@ -251,6 +257,9 @@ public slots:
 	void handleSolverStart();
 	void handleSolverFinish();
 	void updateWindowList();
+
+signals:
+	void updateProjectionMenuSignal(QAction* parallel, QAction* perspective);
 
 private slots:
 	/// Setup import menu
@@ -299,6 +308,7 @@ private:
 	void updateCameraConnections(QWidget* w);
 	void updateMiscActions(QWidget* w);
 	void updateObjectBrowserMenu(QWidget* w);
+	void updateProjectionMenu(QWidget* w);
 	void updatePropertyBrowserMenu(QWidget* w);
 	static void updateCameraAction(QAction* a, QWidget* w, const char* member);
 
@@ -316,6 +326,10 @@ private:
 	QMenu* m_editMenu;
 	/// View menu
 	QMenu* m_viewMenu;
+	/// Set Projection To menu
+	QMenu* m_setProjectionToMenu;
+	// Set Projection To menu helper (radio buttons)
+	QActionGroup *m_projectionActionGroup;
 	/// Camera control menu
 	QMenu* m_cameraControlMenu;
 	/// Setting menu

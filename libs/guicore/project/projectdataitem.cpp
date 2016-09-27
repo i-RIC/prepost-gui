@@ -209,6 +209,14 @@ void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 	double position[3];
 	double focalpoint[3];
 
+	// order based on vtkSynchronizedRenderers::RendererInfo::CopyTo()
+	// from ParaView v4.4.0
+	if (iRIC::getBooleanAttribute(node, "parallelprojection", true)) {
+		camera->ParallelProjectionOn();
+	} else {
+		camera->ParallelProjectionOff();
+	}
+
 	position[0] = iRIC::getDoubleAttribute(node, "positionX");
 	position[1] = iRIC::getDoubleAttribute(node, "positionY");
 	position[2] = iRIC::getDoubleAttribute(node, "positionZ", 200);
@@ -243,6 +251,11 @@ void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
 
 	iRIC::setDoubleAttribute(writer, "roll", camera->GetRoll());
 	iRIC::setDoubleAttribute(writer, "parallelscale", camera->GetParallelScale());
+	if (camera->GetParallelProjection()) {
+		iRIC::setBooleanAttribute(writer, "parallelprojection", true);
+	} else {
+		iRIC::setBooleanAttribute(writer, "parallelprojection", false);
+	}
 }
 
 void ProjectDataItem::loadExternalData()
