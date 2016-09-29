@@ -513,11 +513,10 @@ QVector2D GraphicsWindowDataItem::getOffset()
 
 void GraphicsWindowDataItem::clearChildItems()
 {
-	std::vector<GraphicsWindowDataItem*> copy = m_childItems;
+	auto copy = m_childItems;
 	for (auto child : copy) {
 		delete child;
 	}
-	m_childItems.clear();
 }
 
 void GraphicsWindowDataItem::innerUpdate2Ds()

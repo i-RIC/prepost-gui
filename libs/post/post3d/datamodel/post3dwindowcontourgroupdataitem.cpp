@@ -441,11 +441,10 @@ public:
 	}
 private:
 	void removeChildren() {
-		std::vector<GraphicsWindowDataItem*> copy = m_item->m_childItems;
+		auto copy = m_item->m_childItems;
 		for (auto child : copy) {
 			delete child;
 		}
-		m_item->m_childItems.clear();
 		m_item->updateItemMap();
 	}
 	QMap<QString, Post3dWindowFaceDataItem::Setting> m_oldMap;
