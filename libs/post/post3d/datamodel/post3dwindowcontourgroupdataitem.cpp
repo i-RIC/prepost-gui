@@ -441,8 +441,9 @@ public:
 	}
 private:
 	void removeChildren() {
-		for (auto it = m_item->m_childItems.begin(); it != m_item->m_childItems.end(); ++it) {
-			delete(*it);
+		auto copy = m_item->m_childItems;
+		for (auto child : copy) {
+			delete child;
 		}
 		m_item->updateItemMap();
 	}
