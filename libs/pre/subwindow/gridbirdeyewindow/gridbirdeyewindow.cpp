@@ -11,9 +11,7 @@
 #include <QColorDialog>
 #include <QLabel>
 #include <QToolBar>
-#include <QUndoCommand>
 
-#include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 
 GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item) :
@@ -134,43 +132,9 @@ void GridBirdEyeWindow::cameraZXPlane()
 	m_graphicsView->cameraToZXPlane();
 }
 
-class GridBirdEyeWindowEditBackgroundColorCommand : public QUndoCommand
-{
-public:
-	GridBirdEyeWindowEditBackgroundColorCommand(double oldc[3], double newc[3], GridBirdEyeWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color")) {
-		for (int i = 0; i < 3; ++i) {
-			m_oldColor[i] = oldc[i];
-			m_newColor[i] = newc[i];
-		}
-		m_window = w;
-	}
-	void undo() {
-		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_oldColor);
-		m_window->m_dataModel->graphicsView()->GetRenderWindow()->Render();
-	}
-	void redo() {
-		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_newColor);
-		m_window->m_dataModel->graphicsView()->GetRenderWindow()->Render();
-	}
-private:
-	double m_oldColor[3];
-	double m_newColor[3];
-	GridBirdEyeWindow* m_window;
-};
-
 void GridBirdEyeWindow::editBackgroundColor()
 {
-	double vtkOldColor[3];
-
-	m_dataModel->graphicsView()->mainRenderer()->GetBackground(vtkOldColor);
-	QColor oldcolor;
-	iRIC::VTKColorToQColor(vtkOldColor, oldcolor);
-	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()) {return;}
-	double vtkNewColor[3];
-	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
-	iRICUndoStack::instance().push(new GridBirdEyeWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
+	BackgroundColorEditInterface::editBackgroundColor(this);
 }
 
 void GridBirdEyeWindow::displaySetting()
@@ -196,4 +160,9 @@ void GridBirdEyeWindow::cameraPerspectiveProjection()
 void GridBirdEyeWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
 {
 	m_dataModel->graphicsView()->updateProjectionMenu(parallel, perspective);
+}
+
+VTKGraphicsView* GridBirdEyeWindow::viewForBackgroundColor() const
+{
+	return m_dataModel->graphicsView();
 }

@@ -1,23 +1,25 @@
 #ifndef GRIDBIRDEYEWINDOW_H
 #define GRIDBIRDEYEWINDOW_H
 
+#include "../../datamodel/preprocessorgriddataitem.h"
+
 #include <QMainWindow>
 #include <QIcon>
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/snapshotenabledwindowinterface.h>
-#include "../../datamodel/preprocessorgriddataitem.h"
+#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 
 class QAction;
 class GridBirdEyeWindowGraphicsView;
 class GridBirdEyeWindowActionManager;
 class GridBirdEyeWindowDataModel;
-class GridBirdEyeWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class GridBirdEyeWindow :
 	public QMainWindow,
 	public SnapshotEnabledWindowInterface,
-	public AdditionalMenuWindowI
+	public AdditionalMenuWindowI,
+	public BackgroundColorEditVtkInterface
 {
 	Q_OBJECT
 
@@ -55,6 +57,7 @@ public slots:
 
 private:
 	void init(PreProcessorGridDataItem* item);
+	VTKGraphicsView* viewForBackgroundColor() const override;
 
 	GridBirdEyeWindowGraphicsView* m_graphicsView;
 	GridBirdEyeWindowActionManager* m_actionManager;
@@ -63,8 +66,6 @@ private:
 
 public:
 	friend class GridBirdEyeWindowActionManager;
-//	friend class GridBirdEyeWindowDataModel;
-	friend class GridBirdEyeWindowEditBackgroundColorCommand;
 };
 
 #endif // GRIDBIRDEYEWINDOW_H
