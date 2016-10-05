@@ -312,7 +312,7 @@ void PreProcessorRootDataItem::setGridEdited()
 	}
 }
 
-void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
+void PreProcessorRootDataItem::deleteItem(QStandardItem* item, bool noDraw)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	PreProcessorGeoDataDataItem* dItem = dynamic_cast<PreProcessorGeoDataDataItem*>(dataItem);
@@ -323,12 +323,12 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item)
 	}
 
 	if (bcsitem != nullptr) {
-		GraphicsWindowRootDataItem::deleteItem(bcsitem->bcDataItem()->standardItem());
+		GraphicsWindowRootDataItem::deleteItem(bcsitem->bcDataItem()->standardItem(), noDraw);
 	} else {
-		GraphicsWindowRootDataItem::deleteItem(item);
+		GraphicsWindowRootDataItem::deleteItem(item, noDraw);
 	}
 
-	if (gItem != nullptr) {
+	if (gItem != nullptr && ! noDraw) {
 		gItem->informDataChange();
 	}
 }

@@ -33,7 +33,8 @@
 
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.png"), parent},
-	m_geoData {nullptr}
+	m_geoData {nullptr},
+	m_deleteSilently {false}
 {
 	setupStandardItem(Checked, Reorderable, Deletable);
 
@@ -47,7 +48,7 @@ PreProcessorGeoDataDataItem::~PreProcessorGeoDataDataItem()
 	delete m_geoData;
 	m_geoData = nullptr;
 	PreProcessorGeoDataGroupDataItem* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(parent());
-	if (gItem != nullptr) {
+	if (gItem != nullptr && ! m_deleteSilently) {
 		gItem->informValueRangeChange();
 	}
 }
@@ -318,4 +319,9 @@ void PreProcessorGeoDataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 void PreProcessorGeoDataDataItem::doApplyOffset(double x, double y)
 {
 	m_geoData->applyOffset(x, y);
+}
+
+void PreProcessorGeoDataDataItem::setDeleteSilently(bool silent)
+{
+	m_deleteSilently = silent;
 }

@@ -50,6 +50,7 @@ public:
 	bool setupExportMenu(QMenu* menu);
 	bool isExportAvailable();
 	void saveToCgnsFile(const int fn) override;
+	void setDeleteSilently(bool silent);
 
 signals:
 	void captionChanged(const QString& newcaption);
@@ -71,6 +72,7 @@ private:
 	/// Action to export current data
 	QAction* m_exportAction;
 	int m_index;
+	bool m_deleteSilently;
 };
 
 #endif // PREPROCESSORGEODATADATAITEM_H

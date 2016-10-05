@@ -962,9 +962,11 @@ void PreProcessorGeoDataGroupDataItem::deleteAll()
 		GeoData* rd = item->geoData();
 		if (dynamic_cast<GeoDataBackground*>(rd) != nullptr) {continue;}
 
+		item->setDeleteSilently(true);
 		QModelIndex index = item->standardItem()->index();
-		dataModel()->deleteItem(index);
+		dataModel()->deleteItem(index, true);
 	}
+	informValueRangeChange();
 }
 
 bool PreProcessorGeoDataGroupDataItem::polygonExists() const

@@ -47,7 +47,7 @@ public:
 	bool isGridEdited() const;
 	void setGridEdited();
 
-	void deleteItem(QStandardItem* item) override;
+	void deleteItem(QStandardItem* item, bool noDraw = false) override;
 	void saveToCgnsFile(const int fn) override;
 
 private slots:

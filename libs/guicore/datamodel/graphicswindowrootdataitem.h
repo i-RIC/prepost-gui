@@ -21,7 +21,7 @@ public:
 
 	void moveUpItem(QStandardItem* item);
 	void moveDownItem(QStandardItem* item);
-	virtual void deleteItem(QStandardItem* item);
+	virtual void deleteItem(QStandardItem* item, bool noDraw = false);
 
 	void updateItemMap() override;
 	GraphicsWindowDataItem* modelItemFromItem(QStandardItem* item);

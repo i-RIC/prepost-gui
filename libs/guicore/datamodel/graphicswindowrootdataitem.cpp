@@ -62,14 +62,16 @@ void GraphicsWindowRootDataItem::moveDownItem(QStandardItem* item)
 	iRICUndoStack::instance().push(new MoveDownCommand(dataItem, m_dataModel->objectBrowserView()));
 }
 
-void GraphicsWindowRootDataItem::deleteItem(QStandardItem* item)
+void GraphicsWindowRootDataItem::deleteItem(QStandardItem* item, bool noDraw)
 {
 	GraphicsWindowDataItem* dataItem = modelItemFromItem(item);
 	if (dataItem == nullptr) {return;}
 
 	delete dataItem;
 	updateItemMap();
-	dataModel()->graphicsView()->GetRenderWindow()->Render();
+	if (! noDraw) {
+		dataModel()->graphicsView()->GetRenderWindow()->Render();
+	}
 }
 
 void GraphicsWindowRootDataItem::updateItemMap()

@@ -171,10 +171,10 @@ void GraphicsWindowDataModel::handleObjectBrowserChange(QStandardItem* changedit
 	m_rootDataItem->handleItemChange(changeditem);
 }
 
-void GraphicsWindowDataModel::deleteItem(const QModelIndex& index)
+void GraphicsWindowDataModel::deleteItem(const QModelIndex& index, bool noDraw)
 {
 	QStandardItem* item = m_itemModel->itemFromIndex(index);
-	m_rootDataItem->deleteItem(item);
+	m_rootDataItem->deleteItem(item, noDraw);
 	graphicsView()->setActiveDataItem(nullptr);
 	// deleting operation is not undo-able!
 	iRICUndoStack::instance().clear();
