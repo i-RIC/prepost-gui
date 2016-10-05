@@ -365,6 +365,7 @@ HEADERS += guicore_global.h \
            project/measured/measureddatacsvimporter.h \
            project/measured/measureddataexporteri.h \
            project/measured/measureddataimporteri.h \
+           project/private/backgroundimageinfo_setactorpropertycommand.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
            project/private/projectdatacopythread.h \
@@ -637,6 +638,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddata.cpp \
            project/measured/measureddatacsvexporter.cpp \
            project/measured/measureddatacsvimporter.cpp \
+           project/private/backgroundimageinfo_setactorpropertycommand.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
            pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \

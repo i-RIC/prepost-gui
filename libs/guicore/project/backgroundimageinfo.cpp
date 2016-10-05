@@ -10,6 +10,7 @@
 #include "../datamodel/vtkgraphicsview.h"
 #include "../datamodel/vtk2dgraphicsview.h"
 #include "../pre/base/preprocessorgraphicsviewinterface.h"
+#include "private/backgroundimageinfo_setactorpropertycommand.h"
 
 #include "../base/iricmainwindowinterface.h"
 #include <misc/stringtool.h>
@@ -268,53 +269,6 @@ void BackgroundImageInfo::fitImageToData()
 	m_angle = 0;
 }
 
-class BackgroundImageInfoActorPropertySetting : public QUndoCommand
-{
-public:
-	BackgroundImageInfoActorPropertySetting(double posx, double posy, double scale, double theta, BackgroundImageInfo* info)
-		: QUndoCommand(QObject::tr("Reallocate Background Image")) {
-		m_oldTranslateX = info->m_oldTranslateX;
-		m_oldTranslateY = info->m_oldTranslateY;
-		m_oldScale = info->m_oldScale;
-		m_oldTheta = info->m_oldTheta;
-
-		m_newTranslateX = posx;
-		m_newTranslateY = posy;
-		m_newScale = scale;
-		m_newTheta = theta;
-
-		m_info = info;
-	}
-	void undo() {
-		m_info->m_translateX = m_oldTranslateX;
-		m_info->m_translateY = m_oldTranslateY;
-		m_info->m_scale = m_oldScale;
-		m_info->m_angle = m_oldTheta;
-
-		m_info->informChange();
-	}
-	void redo() {
-		m_info->m_translateX = m_newTranslateX;
-		m_info->m_translateY = m_newTranslateY;
-		m_info->m_scale = m_newScale;
-		m_info->m_angle = m_newTheta;
-
-		m_info->informChange();
-	}
-private:
-	double m_newTranslateX;
-	double m_newTranslateY;
-	double m_newScale;
-	double m_newTheta;
-
-	double m_oldTranslateX;
-	double m_oldTranslateY;
-	double m_oldScale;
-	double m_oldTheta;
-
-	BackgroundImageInfo* m_info;
-};
-
 void BackgroundImageInfo::mousePressEvent(vtkActor* actor, QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_fixed) {return;}
@@ -398,7 +352,7 @@ void BackgroundImageInfo::mouseReleaseEvent(vtkActor* /*actor*/, QMouseEvent* /*
 	m_isZooming = false;
 	m_isTranslating = false;
 
-	iRICUndoStack::instance().push(new BackgroundImageInfoActorPropertySetting(m_translateX, m_translateY, m_scale, m_angle, this));
+	iRICUndoStack::instance().push(new SetActorPropertyCommand(m_translateX, m_translateY, m_scale, m_angle, this));
 	m_isMoving = false;
 	v->unsetCursor();
 }
@@ -500,7 +454,7 @@ void BackgroundImageInfo::handlePropertyDialogAccepted(QDialog* d)
 	m_oldTranslateX = dialog->origLeftBottomX();
 	m_oldTranslateY = dialog->origLeftBottomY();
 
-	iRICUndoStack::instance().push(new BackgroundImageInfoActorPropertySetting(dialog->leftBottomX(), dialog->leftBottomY(), dialog->scale(), dialog->angle(), this));
+	iRICUndoStack::instance().push(new SetActorPropertyCommand(dialog->leftBottomX(), dialog->leftBottomY(), dialog->scale(), dialog->angle(), this));
 }
 
 void BackgroundImageInfo::applyOffset(double x, double y)
