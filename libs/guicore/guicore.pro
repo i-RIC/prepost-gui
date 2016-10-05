@@ -191,6 +191,7 @@ HEADERS += guicore_global.h \
            base/windowwithpropertybrowser.h \
            base/windowwithtmsi.h \
            base/windowwithzindexinterface.h \
+           bgcolor/backgroundcoloreditinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
            datamodel/geodataproxydataitem.h \
            datamodel/graphics2dwindowdatamodel.h \
@@ -283,6 +284,7 @@ HEADERS += guicore_global.h \
            tmsimage/tmsimagegroupdataitem.h \
            tmsimage/tmsimagesetting.h \
            tmsimage/tmsimagesettingmanager.h \
+           bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.h \
            datamodel/private/graphicswindowdataitem_modifycommand.h \
            datamodel/private/graphicswindowdataitem_rendercommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
@@ -487,6 +489,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            base/propertybrowser.cpp \
            base/snapshotenabledwindowinterface.cpp \
            base/windowwithzindexinterface.cpp \
+           bgcolor/backgroundcoloreditinterface.cpp \
            datamodel/attributebrowsertargetdataitem.cpp \
            datamodel/geodataproxydataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
@@ -576,6 +579,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            tmsimage/tmsimagegroupdataitem.cpp \
            tmsimage/tmsimagesetting.cpp \
            tmsimage/tmsimagesettingmanager.cpp \
+           bgcolor/private/backgroundcoloreditinterface_setbackgroundcolorcommand.cpp \
            datamodel/private/graphicswindowdataitem_modifycommand.cpp \
            datamodel/private/graphicswindowdataitem_rendercommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
