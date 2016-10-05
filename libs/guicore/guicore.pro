@@ -192,6 +192,7 @@ HEADERS += guicore_global.h \
            base/windowwithtmsi.h \
            base/windowwithzindexinterface.h \
            bgcolor/backgroundcoloreditinterface.h \
+           bgcolor/backgroundcoloreditvtkinterface.h \
            datamodel/attributebrowsertargetdataitem.h \
            datamodel/geodataproxydataitem.h \
            datamodel/graphics2dwindowdatamodel.h \
@@ -490,6 +491,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            base/snapshotenabledwindowinterface.cpp \
            base/windowwithzindexinterface.cpp \
            bgcolor/backgroundcoloreditinterface.cpp \
+           bgcolor/backgroundcoloreditvtkinterface.cpp \
            datamodel/attributebrowsertargetdataitem.cpp \
            datamodel/geodataproxydataitem.cpp \
            datamodel/graphics2dwindowdatamodel.cpp \
