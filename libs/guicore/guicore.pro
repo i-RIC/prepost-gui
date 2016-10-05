@@ -389,6 +389,7 @@ HEADERS += guicore_global.h \
            pre/geodata/private/geodatacellmappert_detail.h \
            pre/geodata/private/geodatamappert_detail.h \
            pre/geodata/private/geodatanodemappert_detail.h \
+           pre/geodatabackground/private/geodatabackground_editvaluecommand.h \
            pre/geodatabackground/private/geodatabackgroundcellmappert_detail.h \
            pre/geodatabackground/private/geodatabackgroundcreatort_detail.h \
            pre/geodatabackground/private/geodatabackgroundnodemappert_detail.h \
@@ -638,6 +639,7 @@ SOURCES += base/iricmainwindowinterface.cpp \
            project/measured/measureddatacsvimporter.cpp \
            project/private/projectdatacopythread.cpp \
            project/private/projectdatamovethread.cpp \
+           pre/geodatabackground/private/geodatabackground_editvaluecommand.cpp \
            pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.cpp \
            pre/gridcond/base/gridattributebaseobject.cpp \
            pre/gridcond/base/gridattributecontainer.cpp \
