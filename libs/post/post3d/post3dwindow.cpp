@@ -166,41 +166,9 @@ void Post3dWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
 	m_dataModel->graphicsView()->updateProjectionMenu(parallel, perspective);
 }
 
-class Post3dWindowEditBackgroundColorCommand : public QUndoCommand
-{
-public:
-	Post3dWindowEditBackgroundColorCommand(double oldc[3], double newc[3], Post3dWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color")) {
-		for (int i = 0; i < 3; ++i) {
-			m_oldColor[i] = oldc[i];
-			m_newColor[i] = newc[i];
-		}
-		m_window = w;
-	}
-	void undo() {
-		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_oldColor);
-	}
-	void redo() {
-		m_window->m_dataModel->graphicsView()->mainRenderer()->SetBackground(m_newColor);
-	}
-private:
-	double m_oldColor[3];
-	double m_newColor[3];
-	Post3dWindow* m_window;
-};
-
 void Post3dWindow::editBackgroundColor()
 {
-	double vtkOldColor[3];
-
-	m_dataModel->graphicsView()->mainRenderer()->GetBackground(vtkOldColor);
-	QColor oldcolor;
-	iRIC::VTKColorToQColor(vtkOldColor, oldcolor);
-	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()) {return;}
-	double vtkNewColor[3];
-	iRIC::QColorToVTKColor(newcolor, vtkNewColor);
-	iRICUndoStack::instance().push(new Post3dWindowEditBackgroundColorCommand(vtkOldColor, vtkNewColor, this));
+	BackgroundColorEditInterface::editBackgroundColor(this);
 }
 
 void Post3dWindow::editZScale()
@@ -241,23 +209,12 @@ bool Post3dWindow::hasTransparentPart()
 	return rItem->hasTransparentPart();
 }
 
-const QColor Post3dWindow::backgroundColor() const
-{
-	double vtkColor[3];
-	m_dataModel->graphicsView()->mainRenderer()->GetBackground(vtkColor);
-	QColor qColor;
-	iRIC::VTKColorToQColor(vtkColor, qColor);
-	return qColor;
-}
-
-void Post3dWindow::setBackgroundColor(QColor& c)
-{
-	double vtkColor[3];
-	iRIC::QColorToVTKColor(c, vtkColor);
-	m_dataModel->graphicsView()->mainRenderer()->SetBackground(vtkColor);
-}
-
 ObjectBrowser* Post3dWindow::objectBrowser() const
 {
 	return m_objectBrowser;
+}
+
+VTKGraphicsView* Post3dWindow::viewForBackgroundColor() const
+{
+	return m_dataModel->graphicsView();
 }

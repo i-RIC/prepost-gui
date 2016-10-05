@@ -6,6 +6,7 @@
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 #include <postbase/particleexportwindowi.h>
 
 class QAction;
@@ -14,14 +15,14 @@ class Post3dObjectBrowser;
 class Post3dWindowDataModel;
 class Post3dWindowProjectDataItem;
 class Post3dWindowActionManager;
-class Post3dWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class Post3dWindow :
 	public PostProcessorWindow,
 	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
-	public ParticleExportWindowI
+	public ParticleExportWindowI,
+	public BackgroundColorEditVtkInterface
 {
 	Q_OBJECT
 
@@ -68,10 +69,7 @@ public slots:
 
 private:
 	void init();
-	/// Background color
-	const QColor backgroundColor() const;
-	/// Set background color;
-	void setBackgroundColor(QColor& c);
+	VTKGraphicsView* viewForBackgroundColor() const override;
 	void setupDefaultGeometry(int index) override;
 	Post3dObjectBrowser* m_objectBrowser;
 	Post3dWindowDataModel* m_dataModel;
@@ -82,7 +80,6 @@ public:
 	friend class Post3dWindowProjectDataItem;
 	friend class Post3dWindowActionManager;
 	friend class Post3dWindowDataModel;
-	friend class Post3dWindowEditBackgroundColorCommand;
 };
 
 #endif // POST3DWINDOW_H
