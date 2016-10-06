@@ -1,11 +1,11 @@
 #ifndef GEODATAPOLYGONTRIANGLETHREAD_H
 #define GEODATAPOLYGONTRIANGLETHREAD_H
 
-#include <QThread>
 #include "gd_polygon_global.h"
+
 #include <QMutex>
+#include <QThread>
 #include <QTime>
-#include <QWaitCondition>
 
 #include <list>
 #include <vector>
