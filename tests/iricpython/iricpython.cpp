@@ -9,8 +9,6 @@
 
 int main(int argc, char* argv[])
 {
-	QApplication a(argc, argv);
-
 	iRICPython::Application::init("E:/iricdev_2013/src_git/apps/iricgui/debug");
 
 	iRICPython::Application app;
