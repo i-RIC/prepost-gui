@@ -1296,7 +1296,8 @@ void GeoDataPolygon::updateFilename()
 
 void GeoDataPolygon::renderGraphics()
 {
-	m_paintActor->SetVisibility(1);
+	int visibility = isVisible() ? 1 : 0;
+	m_paintActor->SetVisibility(visibility);
 	renderGraphicsView();
 }
 
