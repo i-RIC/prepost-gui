@@ -16830,27 +16830,27 @@ Option -&gt; Preferences</source>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="337"/>
         <source>Set &amp;Projection To</source>
-        <translation type="unfinished"></translation>
+        <translation>投影法の変更(&amp;P)</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="340"/>
         <source>Para&amp;llel</source>
-        <translation type="unfinished"></translation>
+        <translation>並行射影(&amp;L)</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="341"/>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="345"/>
         <source>&amp;Perspective</source>
-        <translation type="unfinished"></translation>
+        <translation>透視投影(&amp;P)</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="346"/>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
         <location filename="../misc/iricmainwindowactionmanager.cpp" line="563"/>
