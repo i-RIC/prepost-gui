@@ -39,6 +39,8 @@ public:
 	void lockMutex();
 	void unlockMutex();
 
+	void setLastJobDraw();
+
 	static GeoDataPolygonTriangleThread* instance();
 
 signals:

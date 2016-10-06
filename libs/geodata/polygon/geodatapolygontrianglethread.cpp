@@ -136,6 +136,17 @@ void GeoDataPolygonTriangleThread::unlockMutex()
 	m_mutex.unlock();
 }
 
+void GeoDataPolygonTriangleThread::setLastJobDraw()
+{
+	QMutexLocker locker(&m_mutex);
+
+	std::list<Job>::reverse_iterator last_it = m_jobQueue.rbegin();
+	if (last_it == m_jobQueue.rend()) {return;}
+
+	Job &lastJob = *last_it;
+	lastJob.noDraw = false;
+}
+
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::instance()
 {
 	if (m_thread != 0) {return m_thread;}
