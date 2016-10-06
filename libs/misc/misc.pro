@@ -51,6 +51,8 @@ HEADERS += arrowsettingcontainer.h \
            stringtool.h \
            threadwithprogressinfo.h \
            timeformat.h \
+           valuechangert.h \
+           valuerestorert.h \
            versionnumber.h \
            windowgeometrycontainer.h \
            xmlattributecontainer.h \
@@ -66,6 +68,8 @@ HEADERS += arrowsettingcontainer.h \
            private/numericvaluecontainert_detail.h \
            private/qpointfcontainer_impl.h \
            private/simplevaluecontainert_detail.h \
+           private/valuechangert_detail.h \
+           private/valuerestorert_detail.h \
            private/versionnumber_impl.h \
            private/xmlattributecontainer_impl.h \
            private/zdepthrange_impl.h
