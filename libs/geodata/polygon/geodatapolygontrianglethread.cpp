@@ -28,6 +28,8 @@
 // namespace for local functions
 namespace {
 
+const static int TRIANGLE_WAITTIME_MSEC = 200;
+
 void freeTriangleInput(triangulateio* in)
 {
 	delete in->pointlist;
@@ -87,6 +89,11 @@ void GeoDataPolygonTriangleThread::addJob(GeoDataPolygon *polygon, bool noDraw)
 	for (it = m_jobQueue.begin(); it != m_jobQueue.end(); ++it) {
 		if (it->targetPolygon == polygon && it->noDraw == noDraw) {return;}
 	}
+
+	if (m_currentJob != nullptr && m_currentJob->targetPolygon == polygon && m_currentJob->noDraw == noDraw) {
+		resetTimer();
+		return;
+	}
 	m_jobQueue.push_back(Job(polygon, noDraw));
 }
 
@@ -129,6 +136,17 @@ void GeoDataPolygonTriangleThread::unlockMutex()
 	m_mutex.unlock();
 }
 
+void GeoDataPolygonTriangleThread::setLastJobDraw()
+{
+	QMutexLocker locker(&m_mutex);
+
+	std::list<Job>::reverse_iterator last_it = m_jobQueue.rbegin();
+	if (last_it == m_jobQueue.rend()) {return;}
+
+	Job &lastJob = *last_it;
+	lastJob.noDraw = false;
+}
+
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::instance()
 {
 	if (m_thread != 0) {return m_thread;}
@@ -148,17 +166,34 @@ void GeoDataPolygonTriangleThread::run()
 			job = m_jobQueue.front();
 			m_currentJob = &job;
 			m_jobQueue.pop_front();
+			if (m_jobQueue.size() == 0) {
+				resetTimer();
+			} else {
+				m_timeToStartJob = QTime::currentTime();
+			}
 		} else {
-			m_currentJob = 0;
+			m_currentJob = nullptr;
 		}
 		m_mutex.unlock();
 
-		if (m_currentJob == 0) {
-			msleep(10);
+		if (m_currentJob == nullptr) {
+			msleep(50);
 			continue;
+		} else {
+			QTime curr = QTime::currentTime();
+			while (curr < m_timeToStartJob) {
+				msleep(20);
+				curr = QTime::currentTime();
+			}
+			runTriangle();
 		}
-		runTriangle();
 	}
+}
+
+void GeoDataPolygonTriangleThread::resetTimer()
+{
+	QTime curr = QTime::currentTime();
+	m_timeToStartJob = curr.addMSecs(TRIANGLE_WAITTIME_MSEC);
 }
 
 void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset)

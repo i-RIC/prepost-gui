@@ -1,9 +1,11 @@
 #ifndef GEODATAPOLYGONTRIANGLETHREAD_H
 #define GEODATAPOLYGONTRIANGLETHREAD_H
 
-#include <QThread>
+#include "gd_polygon_global.h"
+
 #include <QMutex>
-#include <QWaitCondition>
+#include <QThread>
+#include <QTime>
 
 #include <list>
 #include <vector>
@@ -25,7 +27,7 @@ class GeometryFactory;
 } // geom
 } // geos
 
-class GeoDataPolygonTriangleThread : public QThread
+class GD_POLYGON_EXPORT GeoDataPolygonTriangleThread : public QThread
 {
 	Q_OBJECT
 public:
@@ -37,16 +39,17 @@ public:
 	void lockMutex();
 	void unlockMutex();
 
-	static GeoDataPolygonTriangleThread* instance();
+	void setLastJobDraw();
 
-protected:
-	void run();
+	static GeoDataPolygonTriangleThread* instance();
 
 signals:
 	void shapeUpdated(GeoDataPolygon* targetPolygon, vtkPoints* points, vtkCellArray* ca, bool noDraw);
 
 private:
+	void run();
 	void runTriangle();
+	void resetTimer();
 
 	QMutex m_mutex;
 	bool m_canceled;
@@ -68,6 +71,7 @@ private:
 	bool m_isOutputting;
 	bool m_abort;
 	const geos::geom::GeometryFactory* m_geomFactory;
+	QTime m_timeToStartJob;
 
 	void setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset);
 	geos::geom::Polygon* getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset);

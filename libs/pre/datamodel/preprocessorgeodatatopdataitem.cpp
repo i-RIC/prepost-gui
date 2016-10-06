@@ -9,6 +9,7 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 
+#include <geodata/polygon/geodatapolygontrianglethread.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
@@ -155,6 +156,7 @@ void PreProcessorGeoDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& n
 			it->second->loadFromProjectMainFile(child);
 		}
 	}
+	GeoDataPolygonTriangleThread::instance()->setLastJobDraw();
 }
 
 void PreProcessorGeoDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
