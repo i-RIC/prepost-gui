@@ -755,7 +755,7 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		}
 	} else {
 		if (m_projectData->hasHugeCgns()) {
-			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot saved as a file (*.ipro). Please save as a project."));
+			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project."));
 			return false;
 		}
 		if (m_projectData->hasTooManyInnerFiles()) {
