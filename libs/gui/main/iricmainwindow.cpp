@@ -47,6 +47,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
+#include <misc/iricrootpath.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -135,7 +136,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	addToolBarBreak(Qt::TopToolBarArea);
 
 	// Setup solver definition list.
-	m_solverDefinitionList = new SolverDefinitionList(QCoreApplication::instance()->applicationDirPath(), m_locale, this);
+	m_solverDefinitionList = new SolverDefinitionList(iRICRootPath::get(), m_locale, this);
 	// Update "New" submenu using the solver definition list.
 	m_actionManager->updateSolverList(m_solverDefinitionList);
 	// create connections, to update solver list in "New" menu automatically.
@@ -1464,7 +1465,7 @@ void iRICMainWindow::initSetting()
 	m_east = 0;
 	m_west = 0;
 
-	m_metaData = new iRICMetaData(iRIC::toStr(qApp->applicationDirPath()), m_locale);
+	m_metaData = new iRICMetaData(iRIC::toStr(iRICRootPath::get()), m_locale);
 
 	m_continuousSnapshotInProgress = false;
 }
