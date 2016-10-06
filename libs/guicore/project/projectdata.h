@@ -88,6 +88,8 @@ public:
 	bool folderProject() const {return m_folderProject;}
 	/// Returns true when CGNS file size exceeds 2 GB.
 	bool hasHugeCgns() const;
+	/// Returns true when the number of files in the project exceeds 1000.
+	bool hasTooManyInnerFiles();
 	/// Open the post-processors using the settings in project file.
 	void openPostProcessors();
 	/// Project data work directory is inside workspace.
