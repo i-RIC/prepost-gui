@@ -50,6 +50,7 @@
 #include <misc/iricrootpath.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
@@ -722,14 +723,13 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		QMessageBox::information(this, tr("Information"), tr("This project is opened in post only mode. You can not save."));
 		return false;
 	}
-	m_isSaving = true;
+	ValueChangerT<bool> savingChanger(&m_isSaving, true);
 	bool ret;
 	CursorChanger cursorChanger(QCursor(Qt::WaitCursor), this);
 	// save data to work folder.
 	ret = m_projectData->save();
 	if (! ret) {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
-		m_isSaving = false;
 		return false;
 	}
 
@@ -755,8 +755,11 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		}
 	} else {
 		if (m_projectData->hasHugeCgns()) {
-			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot saved as a file (*.ipro). Please save as a project."));
-			m_isSaving = false;
+			QMessageBox::critical(this, tr("Error"), tr("This project has HUGE calculation result, so it cannot be saved as a file (*.ipro). Please save as a project."));
+			return false;
+		}
+		if (m_projectData->hasTooManyInnerFiles()) {
+			QMessageBox::critical(this, tr("Error"), tr("This project has too many files, so it cannot be saved as a file (*.ipro). Please save as a project."));
 			return false;
 		}
 		if (! m_projectData->isInWorkspace()) {
@@ -778,14 +781,12 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 	cursorChanger.restoreCursor();
 	if (! ret) {
 		QMessageBox::critical(this, tr("Error"), tr("Saving project failed."));
-		m_isSaving = false;
 		return false;
 	}
 	updateWindowTitle();
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	updateRecentProjects(filename);
 	statusBar()->showMessage(tr("Project successfully saved to %1.").arg(QDir::toNativeSeparators(filename)), STATUSBAR_DISPLAYTIME);
-	m_isSaving = false;
 	return true;
 }
 

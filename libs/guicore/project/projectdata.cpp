@@ -450,6 +450,11 @@ bool ProjectData::hasHugeCgns() const
 	return false;
 }
 
+bool ProjectData::hasTooManyInnerFiles()
+{
+	return m_mainfile->containedFiles().size() > 1000;
+}
+
 void ProjectData::openPostProcessors()
 {
 	// load post-processor settings
