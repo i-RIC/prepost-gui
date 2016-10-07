@@ -48,11 +48,13 @@ HEADERS += fortran_macros.h \
            iriclib_pointmap.h \
            iriclib_polygon.h \
            iriclib_riversurvey.h \
+           private/iriclib_cgnsfile_baseiterativet.h \
+           private/iriclib_cgnsfile_baseiterativet_detail.h \
            private/iriclib_cgnsfile_impl.h
 SOURCES += iric_ftoc.c \
            iriclib.c \
            iriclib_bstream.cpp \
-           iriclib_cgnsfile.cpp \
+           iriclib_cgnsfile_base.cpp \
            iriclib_geo.cpp \
            iriclib_pointmap.cpp \
            iriclib_polygon.cpp \

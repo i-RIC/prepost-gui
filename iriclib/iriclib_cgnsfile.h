@@ -3,6 +3,8 @@
 
 #include "iriclib_global.h"
 
+#include <cgnslib.h>
+
 namespace iRICLib {
 
 class CgnsFile
