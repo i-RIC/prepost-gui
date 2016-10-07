@@ -2,6 +2,7 @@
 #include "../base/preprocessorgeodatadataiteminterface.h"
 #include "geodata.h"
 #include "geodatacreator.h"
+#include "../geodatabackground/geodatabackground.h"
 
 #include <QDomElement>
 #include <QDomNode>
@@ -48,6 +49,8 @@ void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDa
 	// first, setup nameSet and captionSet.
 	for (auto it = list.begin(); it != list.end(); ++it) {
 		GeoData* geodata = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(*it)->geoData();
+		if (dynamic_cast<GeoDataBackground*> (geodata) != nullptr) {continue;}
+
 		if (geodata->name() != "") {nameSet.insert(geodata->name());}
 		if (geodata->caption() != "") {captionSet.insert(geodata->caption());}
 	}
