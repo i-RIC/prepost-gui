@@ -157,6 +157,15 @@ public:
 
 	int ErrorCode_Write(int errorcode);
 
+	// ----------------------
+	// Solution Particle I/O
+	// ----------------------
+
+	int Sol_Particle_Write_Pos2d(cgsize_t count, double* x, double* y);
+	int Sol_Particle_Write_Pos3d(cgsize_t count, double* x, double* y, double* z);
+	int Sol_Particle_Write_Real(char* name, double* value);
+	int Sol_Particle_Write_Integer(char* name, int* value);
+
 private:
 	Impl* impl;
 };
