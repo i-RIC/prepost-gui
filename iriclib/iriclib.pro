@@ -15,22 +15,6 @@ CONFIG += dll
 
 DEFINES += IRICLIBDLL_LIBRARY
 
-# Input
-HEADERS += iriclib.h \
-	iriclib_bstream.h \
-	iriclib_polygon.h \
-	iriclib_riversurvey.h \
-	iriclib_pointmap.h \
-	iriclib_f.h
-
-SOURCES += iriclib.c \
-	iriclib_bstream.cpp \
-	iriclib_geo.cpp \
-	iriclib_polygon.cpp \
-	iriclib_riversurvey.cpp \
-	iriclib_pointmap.cpp \
-	iric_ftoc.c
-
 QT =
 DEFINES += UPPERCASE
 
@@ -55,3 +39,20 @@ unix {
 	INSTALLS += target
 }
 
+# Input
+HEADERS += fortran_macros.h \
+           iriclib.h \
+           iriclib_bstream.h \
+           iriclib_cgnsfile.h \
+           iriclib_global.h \
+           iriclib_pointmap.h \
+           iriclib_polygon.h \
+           iriclib_riversurvey.h \
+SOURCES += iric_ftoc.c \
+           iriclib.c \
+           iriclib_bstream.cpp \
+           iriclib_cgnsfile.cpp \
+           iriclib_geo.cpp \
+           iriclib_pointmap.cpp \
+           iriclib_polygon.cpp \
+           iriclib_riversurvey.cpp
