@@ -167,9 +167,14 @@ public:
 	int Sol_Particle_Write_Integer(char* name, int* value);
 
 private:
+	class Impl;
 	Impl* impl;
 };
 
 } // iRICLib
+
+#ifdef _DEBUG
+	#include "private/iriclib_cgnsfile_impl.h"
+#endif // _DEBUG
 
 #endif // IRICLIB_CGNSFILE_H
