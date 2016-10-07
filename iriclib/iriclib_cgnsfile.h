@@ -71,6 +71,37 @@ public:
 	int Complex_CC_Write_Grid_Complex_Node(char* groupname, int* values);
 	int Complex_CC_Write_Grid_Complex_Cell(char *groupname, int* values);
 
+	// ---------
+	// Grid I/O
+	// ---------
+
+	int Grid_GotoCoord2d(cgsize_t* isize, cgsize_t* jsize);
+	int Grid_GetCoord2d(double *x, double *y);
+	int Grid_GotoCoord3d(cgsize_t* isize, cgsize_t* jsize, cgsize_t* ksize);
+	int Grid_GetGridCoord3d(double *x, double *y, double *z);
+	int Grid_Read_Real_Node(char* name, double* values);
+	int Grid_Read_Integer_Node(char* name, int* values);
+	int Grid_Read_Real_Cell(char *name, double* values);
+	int Grid_Read_Integer_Cell(char *name, int* values);
+	int Grid_Read_FunctionalDimensionSize(char* name, char* dimname, cgsize_t* count);
+	int Grid_Read_FunctionalDimension_Integer(char* name, char* dimname, int* value);
+	int Grid_Read_FunctionalDimension_Real(char* name, char* dimname, double* value);
+	int Grid_Read_FunctionalTimeSize(char* name, cgsize_t* count);
+	int Grid_Read_FunctionalTime(char* name, double* time);
+	int Grid_Read_Functional_Integer_Node(char* name, int Grid_dimid, int* value);
+	int Grid_Read_Functional_Real_Node(char* name, int Grid_dimid, double* value);
+	int Grid_Read_Functional_Integer_Cell(char* name, int Grid_dimid, int* value);
+	int Grid_Read_Functional_Real_Cell(char* name, int Grid_dimid, double* value);
+
+	int Grid_Init(int Grid_zoneId);
+	int Grid_WriteGridCoord1d(cgsize_t isize, double* x);
+	int Grid_WriteGridCoord2d(cgsize_t isize, cgsize_t jsize, double* x, double* y);
+	int Grid_WriteGridCoord3d(cgsize_t isize, cgsize_t jsize, cgsize_t ksize, double* x, double* y, double* z);
+	int Grid_Write_Real_Node(char* name, double* values);
+	int Grid_Write_Integer_Node(char* name, int* values);
+	int Grid_Write_Real_Cell(char *name, double* values);
+	int Grid_Write_Integer_Cell(char *name, int* values);
+
 private:
 	Impl* impl;
 };
