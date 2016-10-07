@@ -102,6 +102,32 @@ public:
 	int Grid_Write_Real_Cell(char *name, double* values);
 	int Grid_Write_Integer_Cell(char *name, int* values);
 
+	// -----------------------
+	// Boundary Condition I/O
+	// -----------------------
+
+	void BC_Init_Names();
+	void BC_Read_Count(char* type, int* num);
+	int BC_Read_IndicesSize(char* type, int num, cgsize_t* size);
+	int BC_Read_Indices(char* type, int num, cgsize_t* indices);
+	int BC_Read_Integer(char* type, int num, char* name, int* intvalue);
+	int BC_Read_Real(char* type, int num, char* name, double* realvalue);
+	int BC_Read_RealSingle(char* type, int num, char* name, float* realvalue);
+	int BC_Read_StringLen(char* type, int num, char* name, int* length);
+	int BC_Read_String(char* type, int num, char* name, char* strvalue);
+	int BC_Read_FunctionalSize(char* type, int num, char* name, cgsize_t* size);
+	int BC_Read_Functional(char* type, int num, char* name, double* x, double* y);
+	int BC_Read_FunctionalWithName(char* type, int num, char* name, char* paramname, double* data);
+	int BC_Read_Functional_RealSingle(char* type, int num, char* name, float* x, float* y);
+
+	int BC_Clear();
+	int BC_Write_Indices(char* type, int num, cgsize_t size, cgsize_t* indices);
+	int BC_Write_Integer(char* type, int num, char* name, int intvalue);
+	int BC_Write_Real(char* type, int num, char* name, double realvalue);
+	int BC_Write_String(char* type, int num, char* name, char* strvalue);
+	int BC_Write_Functional(char* type, int num, char* name, int length, double* realarray_x, double* realarray_y);
+	int BC_Write_FunctionalWithName(char* type, int num, char* name, char* paramname, int length, double* data);
+
 private:
 	Impl* impl;
 };
