@@ -136,6 +136,7 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowarrowgroupsettingdialog.h \
            datamodel/post3dwindowcontourgroupdataitem.h \
            datamodel/post3dwindowcontourgroupsettingdialog.h \
+           datamodel/post3dwindowcontourgrouptopdataitem.h \
            datamodel/post3dwindowfacedataitem.h \
            datamodel/post3dwindowfacesettingwidget.h \
            datamodel/post3dwindowgridshapedataitem.h \
@@ -185,6 +186,7 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowarrowgroupsettingdialog.cpp \
            datamodel/post3dwindowcontourgroupdataitem.cpp \
            datamodel/post3dwindowcontourgroupsettingdialog.cpp \
+           datamodel/post3dwindowcontourgrouptopdataitem.cpp \
            datamodel/post3dwindowfacedataitem.cpp \
            datamodel/post3dwindowfacesettingwidget.cpp \
            datamodel/post3dwindowgridshapedataitem.cpp \

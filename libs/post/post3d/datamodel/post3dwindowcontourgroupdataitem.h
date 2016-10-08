@@ -35,7 +35,7 @@ public:
 	LookupTableContainer* lookupTable();
 
 	QMap<QString, Post3dWindowFaceDataItem::Setting> faceMap() const;
-	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map);
+	void setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target);
 
 	void updateChildActors();
 	vtkActor* setupActorAndMapper(vtkAlgorithmOutput* algo);

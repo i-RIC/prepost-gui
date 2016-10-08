@@ -111,7 +111,7 @@ void Post3dWindowContourGroupSettingDialog::setFaceMap(const QMap<QString, Post3
 
 QString Post3dWindowContourGroupSettingDialog::scalarBarTitle() const
 {
-	return m_colorBarTitleMap[iRIC::toStr(m_scalarSetting.target)];
+	return m_colorBarTitleMap[target()];
 }
 
 void Post3dWindowContourGroupSettingDialog::accept()
