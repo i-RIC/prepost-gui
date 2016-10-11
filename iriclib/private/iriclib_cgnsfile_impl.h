@@ -13,6 +13,7 @@ class CgnsFile::Impl
 {
 public:
 	static const int NAME_MAXLENGTH = 200;
+	static const std::string IRICZONE;
 
 	int initBaseId(bool clearResults, char* baseName = NULL);
 	int initZoneId(bool clearResults);
@@ -44,6 +45,10 @@ public:
 	int gotoGridCondition(); // local_gotogc_Mul
 	int gotoGridConditionChild(const char* path); // local_gotogcchild_Mul
 	int gotoGridConditionNewChild(const char* path); // local_gotogcnewchild_Mul
+	int addGridConditionNodeIfNotExist(); // local_gc_add_gcnode_Mul
+
+	cgsize_t gridNodeValueCount();
+	cgsize_t gridCellValueCount();
 
 	int gotoZoneIter();
 
@@ -63,6 +68,8 @@ public:
 	static int writeString(const char* name, char* value); // local_write_string
 
 	static void getComplexName(int num, char *name); // local_get_complex_name
+	static void getDimensionArrayName(const char* dimName, char* name);
+	static void getFunctionalDataName(int num, char* name); // local_get_gridfunctionaldata_name
 
 	int m_fileId = 0;
 

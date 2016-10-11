@@ -57,6 +57,7 @@ SOURCES += iric_ftoc.c \
            iriclib_cgnsfile_base.cpp \
            iriclib_cgnsfile_cc.cpp \
            iriclib_cgnsfile_complex_cc.cpp \
+           iriclib_cgnsfile_grid.cpp \
            iriclib_geo.cpp \
            iriclib_pointmap.cpp \
            iriclib_polygon.cpp \

@@ -14,10 +14,6 @@ static const int FILEID_MAX = 100;
 static const int ARRAYINCREMENTSTEP = 3;
 
 static const std::string IRICBASE = "iRIC";
-static const std::string IRICZONE = "iRICZone";
-static const std::string iRICBASE1D = "iRIC1D";
-static const std::string iRICBASE2D = "iRIC2D";
-static const std::string iRICBASE3D = "iRIC3D";
 static const std::string BINAME = "BaseIterativeData";
 static const std::string ZINAME = "ZoneIterativeData";
 
@@ -28,6 +24,9 @@ static const std::string GCCNODE = "GridComplexConditions";
 static const std::string ECNODE = "ErrorCode";
 
 } // namespace
+
+const std::string CgnsFile::Impl::IRICZONE = "iRICZone";
+
 
 int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
 {
@@ -347,6 +346,46 @@ int CgnsFile::Impl::gotoGridConditionNewChild(const char* path)
 	return gotoGridConditionChild(path);
 }
 
+int CgnsFile::Impl::addGridConditionNodeIfNotExist()
+{
+	int ier = gotoZone();
+	RETURN_IF_ERR;
+
+	int usize;
+	ier = cg_nuser_data(&usize);
+	RETURN_IF_ERR;
+	for (int U = 1; U <= usize; ++U) {
+		char name[NAME_MAXLENGTH];
+		cg_user_data_read(U, name);
+		if (GCNODE == name) {return 0;}
+	}
+	return cg_user_data_write(GCNODE.c_str());
+}
+
+cgsize_t CgnsFile::Impl::gridNodeValueCount()
+{
+	if (m_baseCellDim == 1) {
+		return m_zoneSize[0];
+	} else if (m_baseCellDim == 2) {
+		return m_zoneSize[0] * m_zoneSize[1];
+	} else if (m_baseCellDim == 3) {
+		return m_zoneSize[0] * m_zoneSize[1] * m_zoneSize[2];
+	}
+	return 1;
+}
+
+cgsize_t CgnsFile::Impl::gridCellValueCount()
+{
+	if (m_baseCellDim == 1) {
+		return m_zoneSize[1];
+	} else if (m_baseCellDim == 2) {
+		return m_zoneSize[2] * m_zoneSize[3];
+	} else if (m_baseCellDim == 3) {
+		return m_zoneSize[3] * m_zoneSize[4] * m_zoneSize[5];
+	}
+	return 1;
+}
+
 int CgnsFile::Impl::gotoZoneIter()
 {
 	return cg_goto(m_fileId, m_baseId, "Zone_t", m_zoneId, ZINAME.c_str(), 0, NULL);
@@ -538,6 +577,20 @@ void CgnsFile::Impl::getComplexName(int num, char* name)
 	sprintf(name, "Item%d", num);
 }
 
+void CgnsFile::Impl::getDimensionArrayName(const char* dimName, char* name)
+{
+	sprintf(name, "%s_%s", "Dimension", dimName);
+}
+
+void CgnsFile::Impl::getFunctionalDataName(int num, char* name)
+{
+	if (num == 1){
+		strcpy(name, "Value");
+	} else {
+		sprintf(name, "Value%d", num - 1);
+	}
+}
+
 // public interfaces
 
 CgnsFile::CgnsFile() :
@@ -622,7 +675,7 @@ int CgnsFile::Set_ZoneId(int zoneid)
 	return 0;
 }
 
-int CgnsFile::Complex_CC_Clear_Complex(int fid)
+int CgnsFile::Complex_CC_Clear_Complex()
 {
 	int ier = impl->gotoBase();
 	RETURN_IF_ERR;
