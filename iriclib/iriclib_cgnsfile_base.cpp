@@ -505,7 +505,7 @@ int CgnsFile::Impl::readString(const char* name, size_t bufferLen, char* buffer)
 int CgnsFile::Impl::writeArray(const char* name, DataType_t dt, size_t length, void* memory)
 {
 	int dim = 1;
-	cgsize_t dimvec = length;
+	cgsize_t dimvec = static_cast<cgsize_t> (length);
 	// If array named arrayname exists, delete it first. It succeeds only when the node exist.
 	cg_delete_node(name);
 
@@ -577,16 +577,36 @@ int CgnsFile::GotoBase(int* B)
 int CgnsFile::GotoCC()
 {
 	int ier = impl->initBaseId(false);
+	RETURN_IF_ERR;
 
-	return ier;
+	ier = impl->gotoCC();
+	if (ier == 0) {return 0;}
+
+	// create node.
+	ier = impl->gotoCCBase();
+	RETURN_IF_ERR;
+	ier = cg_user_data_write(CCNODE.c_str());
+	RETURN_IF_ERR;
+	return impl->gotoCC();
 }
 
 int CgnsFile::GotoRawDataTop()
 {
-	return 0;
+	int ier = impl->initBaseId(false);
+	RETURN_IF_ERR;
+
+	ier = impl->gotoCCBase();
+	// delte RawData node first.
+	cg_delete_node(RDNODE.c_str());
+	// create RawData node again.
+	ier = cg_user_data_write(RDNODE.c_str());
+	RETURN_IF_ERR;
+
+	return impl->gotoGeoData();
 }
 
 int CgnsFile::Set_ZoneId(int zoneid)
 {
+	impl->m_zoneId = zoneid;
 	return 0;
 }
