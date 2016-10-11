@@ -525,7 +525,6 @@ int CgnsFile::Impl::addSolutionNode()
 	return cg_array_write("FlowSolutionPointers", Character, 2, dimVec, pointers.data());
 }
 
-
 int CgnsFile::Impl::addSolutionGridCoordNode()
 {
 	char coordname[NAME_MAXLENGTH];
@@ -548,6 +547,16 @@ int CgnsFile::Impl::addSolutionGridCoordNode()
 	dimVec[0] = 32;
 	dimVec[1] = m_solId;
 	return cg_array_write("GridCoordinatesPointers", Character, 2, dimVec, pointers.data());
+}
+
+int CgnsFile::Impl::addParticleSolutionNode()
+{
+	char solname[NAME_MAXLENGTH];
+	getParticleSolName(m_solId, solname);
+
+	int ier = gotoZone();
+	RETURN_IF_ERR;
+	return cg_user_data_write(solname);
 }
 
 int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
@@ -688,6 +697,11 @@ void CgnsFile::Impl::getFunctionalDataName(int num, char* name)
 void CgnsFile::Impl::getBcName(const char* typeName, int num, char* name)
 {
 	sprintf(name, "%s_%d", typeName, num);
+}
+
+void CgnsFile::Impl::getParticleSolName(int num, char* name)
+{
+	sprintf(name, "ParticleSolution%d", num);
 }
 
 // public interfaces

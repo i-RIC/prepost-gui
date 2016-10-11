@@ -66,6 +66,7 @@ public:
 
 	int addSolutionNode();
 	int addSolutionGridCoordNode();
+	int addParticleSolutionNode();
 
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array
 	static int readArray(const char* name, DataType_t dt, cgsize_t len, void* memory); // local_read_array
@@ -80,6 +81,7 @@ public:
 	static void getDimensionArrayName(const char* dimName, char* name);
 	static void getFunctionalDataName(int num, char* name); // local_get_gridfunctionaldata_name
 	static void getBcName(const char* typeName, int num, char* name); // local_get_bc_name
+	static void getParticleSolName(int num, char* name);
 
 	int m_fileId = 0;
 
