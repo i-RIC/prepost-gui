@@ -16,15 +16,14 @@ static const std::string IRICBASE = "iRIC";
 static const std::string ZINAME = "ZoneIterativeData";
 
 static const std::string CCNODE = "CalculationConditions";
-static const std::string RDNODE = "GeographicData";
 static const std::string GCNODE = "GridConditions";
 static const std::string GCCNODE = "GridComplexConditions";
 
 } // namespace
 
 const std::string CgnsFile::Impl::IRICZONE = "iRICZone";
+const std::string CgnsFile::Impl::RDNODE = "GeographicData";
 const std::string CgnsFile::Impl::BINAME = "BaseIterativeData";
-
 
 int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
 {
@@ -773,9 +772,9 @@ int CgnsFile::GotoRawDataTop()
 
 	ier = impl->gotoCCBase();
 	// delte RawData node first.
-	cg_delete_node(RDNODE.c_str());
+	cg_delete_node(Impl::RDNODE.c_str());
 	// create RawData node again.
-	ier = cg_user_data_write(RDNODE.c_str());
+	ier = cg_user_data_write(Impl::RDNODE.c_str());
 	RETURN_IF_ERR;
 
 	return impl->gotoGeoData();

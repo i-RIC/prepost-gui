@@ -15,6 +15,7 @@ public:
 	static const int NAME_MAXLENGTH = 200;
 	static const std::string IRICZONE;
 	static const std::string BINAME;
+	static const std::string RDNODE;
 
 	int initBaseId(bool clearResults, char* baseName = NULL);
 	int initZoneId(bool clearResults);

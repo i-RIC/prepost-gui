@@ -168,6 +168,13 @@ public:
 	int Sol_Particle_Write_Real(char* name, double* value);
 	int Sol_Particle_Write_Integer(char* name, int* value);
 
+	// --------------------
+	// Geographic data I/O
+	// --------------------
+
+	int Geo_Count(const char* name, int* count);
+	int Geo_Filename(const char* name, int geoid, char* filename, int* type);
+
 private:
 	class Impl;
 	Impl* impl;
