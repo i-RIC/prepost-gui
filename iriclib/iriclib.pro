@@ -53,7 +53,7 @@ HEADERS += error_macros.h \
            private/iriclib_cgnsfile_baseiterativet_detail.h \
            private/iriclib_cgnsfile_impl.h
 SOURCES += iric_ftoc.c \
-           iriclib.c \
+           iriclib.cpp \
            iriclib_bstream.cpp \
            iriclib_cgnsfile_base.cpp \
            iriclib_cgnsfile_bc.cpp \
@@ -65,4 +65,5 @@ SOURCES += iric_ftoc.c \
            iriclib_geo.cpp \
            iriclib_pointmap.cpp \
            iriclib_polygon.cpp \
-           iriclib_riversurvey.cpp
+           iriclib_riversurvey.cpp \
+           iriclib_single.c

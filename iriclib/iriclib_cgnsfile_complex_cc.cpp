@@ -4,11 +4,11 @@
 
 using namespace iRICLib;
 
-int CgnsFile::Complex_CC_Read_Count(const char *groupname, int* num)
+int CgnsFile::Complex_CC_Read_Count(const char *groupname, int* count)
 {
 	int ier = impl->gotoComplexGroup(groupname);
 	RETURN_IF_ERR;
-	return cg_nuser_data(num);
+	return cg_nuser_data(count);
 }
 
 int CgnsFile::Complex_CC_Read_Integer(const char *groupname, int num, const char *name, int* intvalue)
@@ -96,14 +96,14 @@ int CgnsFile::Complex_CC_Read_Functional_RealSingle(const char *groupname, int n
 	return 0;
 }
 
-int CgnsFile::Complex_CC_Read_Grid_Complex_Node(const char *groupname, int* values)
+int CgnsFile::Complex_CC_Read_Grid_Node(const char *groupname, int* values)
 {
 	return Grid_Read_Integer_Node(groupname, values);
 }
 
-int CgnsFile::Complex_CC_Read_Grid_Complex_Cell(const char *groupname, int* values)
+int CgnsFile::Complex_CC_Read_Grid_Cell(const char *groupname, int* values)
 {
-	return Complex_CC_Read_Grid_Complex_Node(groupname, values);
+	return Complex_CC_Read_Grid_Node(groupname, values);
 }
 
 int CgnsFile::Complex_CC_Write_Integer(const char *groupname, int num, const char *name, int intvalue)
@@ -144,12 +144,12 @@ int CgnsFile::Complex_CC_Write_FunctionalWithName(const char *groupname, int num
 	return Impl::writeArray(paramname, RealDouble, length, data);
 }
 
-int CgnsFile::Complex_CC_Write_Grid_Complex_Node(const char *groupname, int* values)
+int CgnsFile::Complex_CC_Write_Grid_Node(const char *groupname, int* values)
 {
 	return Grid_Write_Integer_Node(groupname, values);
 }
 
-int CgnsFile::Complex_CC_Write_Grid_Complex_Cell(const char *groupname, int* values)
+int CgnsFile::Complex_CC_Write_Grid_Cell(const char *groupname, int* values)
 {
 	return Grid_Write_Integer_Cell(groupname, values);
 }

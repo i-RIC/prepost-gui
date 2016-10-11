@@ -69,7 +69,7 @@ int CgnsFile::Grid_GotoCoord3d(cgsize_t* isize, cgsize_t* jsize, cgsize_t* ksize
 	return impl->gotoGridCondition();
 }
 
-int CgnsFile::Grid_GetGridCoord3d(double *x, double *y, double *z)
+int CgnsFile::Grid_GetCoord3d(double *x, double *y, double *z)
 {
 	int ncoords;
 	cgsize_t rangemin[3], rangemax[3];
