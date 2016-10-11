@@ -40,7 +40,8 @@ unix {
 }
 
 # Input
-HEADERS += fortran_macros.h \
+HEADERS += error_macros.h \
+           fortran_macros.h \
            iriclib.h \
            iriclib_bstream.h \
            iriclib_cgnsfile.h \

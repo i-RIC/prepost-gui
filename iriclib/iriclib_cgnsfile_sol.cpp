@@ -1,8 +1,7 @@
+#include "error_macros.h"
 #include "iriclib_cgnsfile.h"
 #include "private/iriclib_cgnsfile_impl.h"
 #include "private/iriclib_cgnsfile_baseiterativet.h"
-
-#define RETURN_IF_ERR if (ier != 0) {return ier;}
 
 using namespace iRICLib;
 
