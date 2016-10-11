@@ -50,7 +50,7 @@ public:
 	int gotoComplexGroup(const char* groupName); // local_gotocomplexgroup_Mul
 	int gotoComplex(const char* groupName, int num); // local_gotocomplex_Mul
 	int gotoComplexChild(const char* groupName, int num, const char* name); //local_gotocomplexchild_Mul
-	int gotoComplexNewChild(const char* groupName, int num, const char* name); // local_gotocomplexchild_create_Mul
+	int gotoComplexChildCreateIfNotExist(const char* groupName, int num, const char* name); // local_gotocomplexchild_create_Mul
 	int addComplexNodeIfNotExist(); // local_complex_add_gccnode_Mul
 
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array

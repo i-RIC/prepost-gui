@@ -364,15 +364,15 @@ int CgnsFile::Impl::gotoComplex(const char* groupName, int num)
 
 int CgnsFile::Impl::gotoComplexChild(const char* groupName, int num, const char* name)
 {
-	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, "UserDefinedData_t", num, name, 0, NULL);
+	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, 0, "UserDefinedData_t", num, name, 0, NULL);
 }
 
-int CgnsFile::Impl::gotoComplexNewChild(const char* groupName, int num, const char* name)
+int CgnsFile::Impl::gotoComplexChildCreateIfNotExist(const char* groupName, int num, const char* name)
 {
 	int ier = gotoComplexGroup(groupName);
 	if (ier != 0) {
 		// group node does not exist. create.
-		ier = gotoGridCondition();
+		ier = cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, NULL);
 		RETURN_IF_ERR;
 		ier = cg_user_data_write(groupName);
 		RETURN_IF_ERR;
@@ -620,4 +620,13 @@ int CgnsFile::Set_ZoneId(int zoneid)
 {
 	impl->m_zoneId = zoneid;
 	return 0;
+}
+
+int CgnsFile::Complex_CC_Clear_Complex(int fid)
+{
+	int ier = impl->gotoBase();
+	RETURN_IF_ERR;
+	cg_delete_node(GCCNODE.c_str());
+
+	return cg_user_data_write(GCCNODE.c_str());
 }
