@@ -456,6 +456,51 @@ int CgnsFile::Impl::addComplexNodeIfNotExist()
 	return cg_user_data_write(GCCNODE.c_str());
 }
 
+void CgnsFile::Impl::getBcIndex(const char* typeName, int num, int* BC)
+{
+	char tmpName[NAME_MAXLENGTH];
+	getBcName(typeName, num, tmpName);
+	for (int idx = 0; idx < m_bcNames.size(); ++idx) {
+		if (m_bcNames.at(idx) == tmpName) {
+			*BC = idx + 1;
+			return;
+		}
+	}
+	*BC = 0;
+}
+
+int CgnsFile::Impl::gotoBc(const char* typeName, int num)
+{
+	int BC;
+	getBcIndex(typeName, num, &BC);
+	if (BC == 0) {
+		return 1;
+	}
+	return cg_goto(m_fileId, m_baseId, "Zone_t", m_zoneId, "ZoneBC_t", 1, "BC_t", BC, NULL);
+}
+
+int CgnsFile::Impl::gotoBcChild(const char* typeName, int num, const char* name)
+{
+	int BC;
+	getBcIndex(typeName, num, &BC);
+	if (BC == 0) {
+		return 1;
+	}
+	return cg_goto(m_fileId, m_baseId, "Zone_t", m_zoneId, "ZoneBC_t", 1, "BC_t", BC, name, 0, NULL);
+}
+
+int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name)
+{
+	int ier = gotoBcChild(typeName, num, name);
+	if (ier == 0) {return 0;}
+
+	ier = gotoBc(typeName, num);
+	RETURN_IF_ERR;
+	ier = cg_user_data_write(name);
+	RETURN_IF_ERR;
+	return gotoBcChild(typeName, num, name);
+}
+
 int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
 {
 	char tmpName[NAME_MAXLENGTH];
@@ -589,6 +634,11 @@ void CgnsFile::Impl::getFunctionalDataName(int num, char* name)
 	} else {
 		sprintf(name, "Value%d", num - 1);
 	}
+}
+
+void CgnsFile::Impl::getBcName(const char* typeName, int num, char* name)
+{
+	sprintf(name, "%s_%d", typeName, num);
 }
 
 // public interfaces

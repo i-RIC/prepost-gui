@@ -55,6 +55,7 @@ SOURCES += iric_ftoc.c \
            iriclib.c \
            iriclib_bstream.cpp \
            iriclib_cgnsfile_base.cpp \
+           iriclib_cgnsfile_bc.cpp \
            iriclib_cgnsfile_cc.cpp \
            iriclib_cgnsfile_complex_cc.cpp \
            iriclib_cgnsfile_grid.cpp \

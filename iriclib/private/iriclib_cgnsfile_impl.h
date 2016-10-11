@@ -26,7 +26,7 @@ public:
 	int clearResultGrids();
 
 	int loadResultData(); // local_load_sol_Mul
-	int loadBcNames();
+	int loadBcNames(); // local_init_bc_names_Mul
 
 	int gotoBase();
 	int gotoBaseIter();
@@ -58,6 +58,11 @@ public:
 	int gotoComplexChildCreateIfNotExist(const char* groupName, int num, const char* name); // local_gotocomplexchild_create_Mul
 	int addComplexNodeIfNotExist(); // local_complex_add_gccnode_Mul
 
+	void getBcIndex(const char* typeName, int num, int* BC);
+	int gotoBc(const char* typeName, int num); // local_gotobc_Mul
+	int gotoBcChild(const char* typeName, int num, const char* name); // local_gotobcchild_Mul
+	int gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name); // local_gotobcchild_create_Mul
+
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array
 	static int readArray(const char* name, DataType_t dt, cgsize_t len, void* memory); // local_read_array
 	static int readArrayAs(const char* name, DataType_t dt, size_t length, void* memory); // local_read_array_as
@@ -70,6 +75,7 @@ public:
 	static void getComplexName(int num, char *name); // local_get_complex_name
 	static void getDimensionArrayName(const char* dimName, char* name);
 	static void getFunctionalDataName(int num, char* name); // local_get_gridfunctionaldata_name
+	static void getBcName(const char* typeName, int num, char* name); // local_get_bc_name
 
 	int m_fileId = 0;
 

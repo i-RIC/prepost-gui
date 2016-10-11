@@ -109,26 +109,26 @@ public:
 	// -----------------------
 
 	void BC_Init_Names();
-	void BC_Read_Count(char* type, int* num);
-	int BC_Read_IndicesSize(char* type, int num, cgsize_t* size);
-	int BC_Read_Indices(char* type, int num, cgsize_t* indices);
-	int BC_Read_Integer(char* type, int num, char* name, int* intvalue);
-	int BC_Read_Real(char* type, int num, char* name, double* realvalue);
-	int BC_Read_RealSingle(char* type, int num, char* name, float* realvalue);
-	int BC_Read_StringLen(char* type, int num, char* name, int* length);
-	int BC_Read_String(char* type, int num, char* name, char* strvalue);
-	int BC_Read_FunctionalSize(char* type, int num, char* name, cgsize_t* size);
-	int BC_Read_Functional(char* type, int num, char* name, double* x, double* y);
-	int BC_Read_FunctionalWithName(char* type, int num, char* name, char* paramname, double* data);
-	int BC_Read_Functional_RealSingle(char* type, int num, char* name, float* x, float* y);
+	void BC_Read_Count(const char* typeName, int* num);
+	int BC_Read_IndicesSize(const char* typeName, int num, cgsize_t* size);
+	int BC_Read_Indices(const char* typeName, int num, cgsize_t* indices);
+	int BC_Read_Integer(const char* typeName, int num, const char* name, int* intvalue);
+	int BC_Read_Real(const char* typeName, int num, const char* name, double* realvalue);
+	int BC_Read_RealSingle(const char* typeName, int num, const char* name, float* realvalue);
+	int BC_Read_StringLen(const char* typeName, int num, const char* name, int* length);
+	int BC_Read_String(const char* typeName, int num, const char* name, char* strvalue);
+	int BC_Read_FunctionalSize(const char* typeName, int num, const char* name, cgsize_t* size);
+	int BC_Read_Functional(const char* typeName, int num, const char* name, double* x, double* y);
+	int BC_Read_FunctionalWithName(const char* typeName, int num, const char* name, char* paramname, double* data);
+	int BC_Read_Functional_RealSingle(const char* typeName, int num, const char* name, float* x, float* y);
 
 	int BC_Clear();
-	int BC_Write_Indices(char* type, int num, cgsize_t size, cgsize_t* indices);
-	int BC_Write_Integer(char* type, int num, char* name, int intvalue);
-	int BC_Write_Real(char* type, int num, char* name, double realvalue);
-	int BC_Write_String(char* type, int num, char* name, char* strvalue);
-	int BC_Write_Functional(char* type, int num, char* name, int length, double* realarray_x, double* realarray_y);
-	int BC_Write_FunctionalWithName(char* type, int num, char* name, char* paramname, int length, double* data);
+	int BC_Write_Indices(const char* typeName, int num, cgsize_t size, cgsize_t* indices);
+	int BC_Write_Integer(const char* typeName, int num, const char* name, int intvalue);
+	int BC_Write_Real(const char* typeName, int num, const char* name, double realvalue);
+	int BC_Write_String(const char* typeName, int num, const char* name, char* strvalue);
+	int BC_Write_Functional(const char* typeName, int num, const char* name, int length, double* realarray_x, double* realarray_y);
+	int BC_Write_FunctionalWithName(const char* typeName, int num, const char* name, char* paramname, int length, double* data);
 
 	// -------------
 	// Solution I/O
