@@ -137,21 +137,21 @@ public:
 	int Sol_Read_Count(int* count);
 	int Sol_Read_Time(int step, double* time);
 	int Sol_Read_Iteration(int step, int* index);
-	int Sol_Read_BaseIterative_Integer(int step, char* name, int* value);
-	int Sol_Read_BaseIterative_Real(int step, char* name, double* value);
+	int Sol_Read_BaseIterative_Integer(int step, const char* name, int* value);
+	int Sol_Read_BaseIterative_Real(int step, const char* name, double* value);
 	int Sol_Read_GridCoord2d(int step, double* x, double* y);
 	int Sol_Read_GridCoord3d(int step, double* x, double* y, double* z);
-	int Sol_Read_Integer(int step, char *name, int* data);
-	int Sol_Read_Real(int step, char *name, double* data);
+	int Sol_Read_Integer(int step, const char *name, int* data);
+	int Sol_Read_Real(int step, const char *name, double* data);
 
 	int Sol_Write_Time(double time);
 	int Sol_Write_Iteration(int index);
-	int Sol_Write_BaseIterative_Integer(char *name, int value);
-	int Sol_Write_BaseIterative_Real(char *name, double value);
+	int Sol_Write_BaseIterative_Integer(const char *name, int value);
+	int Sol_Write_BaseIterative_Real(const char *name, double value);
 	int Sol_Write_GridCoord2d(double *x, double *y);
 	int Sol_Write_GridCoord3d(double *x, double *y, double *z);
-	int Sol_Write_Integer(char *name, int* data);
-	int Sol_Write_Real(char *name, double* data);
+	int Sol_Write_Integer(const char *name, int* data);
+	int Sol_Write_Real(const char *name, double* data);
 
 	// --------------
 	// ErrorCode I/O

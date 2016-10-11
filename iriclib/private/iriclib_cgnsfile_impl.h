@@ -14,6 +14,7 @@ class CgnsFile::Impl
 public:
 	static const int NAME_MAXLENGTH = 200;
 	static const std::string IRICZONE;
+	static const std::string BINAME;
 
 	int initBaseId(bool clearResults, char* baseName = NULL);
 	int initZoneId(bool clearResults);
@@ -63,6 +64,9 @@ public:
 	int gotoBcChild(const char* typeName, int num, const char* name); // local_gotobcchild_Mul
 	int gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name); // local_gotobcchild_create_Mul
 
+	int addSolutionNode();
+	int addSolutionGridCoordNode();
+
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array
 	static int readArray(const char* name, DataType_t dt, cgsize_t len, void* memory); // local_read_array
 	static int readArrayAs(const char* name, DataType_t dt, size_t length, void* memory); // local_read_array_as
@@ -91,7 +95,7 @@ public:
 
 	int m_solId;
 	std::vector<double> m_solTimes;
-	std::vector<double> m_solIndices;
+	std::vector<int> m_solIndices;
 	std::vector<std::string> m_solGridCoordPointers;
 	std::vector<std::string> m_solPointers;
 	std::vector<std::string> m_solParticlePointers;

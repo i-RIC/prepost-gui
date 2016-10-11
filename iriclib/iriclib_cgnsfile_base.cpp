@@ -14,18 +14,17 @@ static const int FILEID_MAX = 100;
 static const int ARRAYINCREMENTSTEP = 3;
 
 static const std::string IRICBASE = "iRIC";
-static const std::string BINAME = "BaseIterativeData";
 static const std::string ZINAME = "ZoneIterativeData";
 
 static const std::string CCNODE = "CalculationConditions";
 static const std::string RDNODE = "GeographicData";
 static const std::string GCNODE = "GridConditions";
 static const std::string GCCNODE = "GridComplexConditions";
-static const std::string ECNODE = "ErrorCode";
 
 } // namespace
 
 const std::string CgnsFile::Impl::IRICZONE = "iRICZone";
+const std::string CgnsFile::Impl::BINAME = "BaseIterativeData";
 
 
 int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
@@ -499,6 +498,56 @@ int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, c
 	ier = cg_user_data_write(name);
 	RETURN_IF_ERR;
 	return gotoBcChild(typeName, num, name);
+}
+
+int CgnsFile::Impl::addSolutionNode()
+{
+	char solname[NAME_MAXLENGTH];
+	sprintf(solname, "FlowSolution%d", m_solId);
+	m_solPointers.push_back(solname);
+
+	int ier = gotoZoneIter();
+	RETURN_IF_ERR;
+	int S;
+	ier = cg_sol_write(m_fileId, m_baseId, m_zoneId, solname, Vertex, &S);
+	RETURN_IF_ERR;
+
+	// Write FlowSolutionPointers
+	std::vector<char> pointers;
+	pointers.assign(32 * m_solId, ' ');
+	for (int i = 0; i < m_solId; ++i) {
+		std::string solName = m_solPointers.at(i);
+		memcpy(pointers.data() + 32 * i, solName.c_str(), solName.length());
+	}
+	cgsize_t dimVec[2];
+	dimVec[0] = 32;
+	dimVec[1] = m_solId;
+	return cg_array_write("FlowSolutionPointers", Character, 2, dimVec, pointers.data());
+}
+
+
+int CgnsFile::Impl::addSolutionGridCoordNode()
+{
+	char coordname[NAME_MAXLENGTH];
+	sprintf(coordname, "GridCoordinatesForSolution%d", m_solId);
+	m_solGridCoordPointers.push_back(coordname);
+
+	int G;
+	int ier = cg_grid_write(m_fileId, m_baseId, m_zoneId, coordname, &G);
+	RETURN_IF_ERR;
+
+	// Write CoordPointers
+	gotoZoneIter();
+	std::vector<char> pointers;
+	pointers.assign(32 * m_solId, ' ');
+	for (int i = 0; i < m_solId; ++i) {
+		std::string coordsName = m_solGridCoordPointers.at(i);
+		memcpy(pointers.data() + 32 * i, coordsName.c_str(), coordsName.length());
+	}
+	cgsize_t dimVec[2];
+	dimVec[0] = 32;
+	dimVec[1] = m_solId;
+	return cg_array_write("GridCoordinatesPointers", Character, 2, dimVec, pointers.data());
 }
 
 int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
