@@ -12,6 +12,8 @@ namespace iRICLib {
 class CgnsFile::Impl
 {
 public:
+	static const int NAME_MAXLENGTH = 200;
+
 	int initBaseId(bool clearResults, char* baseName = NULL);
 	int initZoneId(bool clearResults);
 
@@ -32,6 +34,7 @@ public:
 	int gotoCCBaseChild(const char* path); // local_gotoccb_Mul
 	int gotoCC(); // local_gotocc_Mul
 	int gotoCCChild(const char* path); // local_gotoccchild_Mul
+	int gotoCCChildCreateIfNotExist(const char* path); // local_gotoccchild_create_Mul
 	int gotoGeoData(); // local_gotord_Mul
 
 	int gotoCCBaseIter();

@@ -9,7 +9,6 @@ using namespace iRICLib;
 
 namespace {
 
-static const int NAME_MAXLENGTH = 200;
 static const int ZONESIZE_LENGTH = 9;
 static const int FILEID_MAX = 100;
 static const int ARRAYINCREMENTSTEP = 3;
@@ -288,6 +287,18 @@ int CgnsFile::Impl::gotoCCChild(const char* path)
 	int ier = gotoCC();
 	RETURN_IF_ERR;
 	return cg_gopath(m_fileId, path);
+}
+
+int CgnsFile::Impl::gotoCCChildCreateIfNotExist(const char* path)
+{
+	int ier = gotoCCChild(path);
+	if (ier == 0) {return 0;}
+
+	ier = gotoCC();
+	RETURN_IF_ERR;
+	ier = cg_user_data_write(path);
+	RETURN_IF_ERR;
+	return gotoCCChild(path);
 }
 
 int CgnsFile::Impl::gotoGeoData()
