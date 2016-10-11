@@ -271,6 +271,30 @@ int CgnsFile::Impl::gotoCCBase()
 	return cg_goto(m_fileId, m_ccBaseId, NULL);
 }
 
+int CgnsFile::Impl::gotoCCBaseChild(const char* path)
+{
+	int ier = gotoCCBase();
+	RETURN_IF_ERR;
+	return cg_gopath(m_fileId, path);
+}
+
+int CgnsFile::Impl::gotoCC()
+{
+	return gotoCCBaseChild(CCNODE.c_str());
+}
+
+int CgnsFile::Impl::gotoCCChild(const char* path)
+{
+	int ier = gotoCC();
+	RETURN_IF_ERR;
+	return cg_gopath(m_fileId, path);
+}
+
+int CgnsFile::Impl::gotoGeoData()
+{
+	return gotoCCBaseChild(RDNODE.c_str());
+}
+
 int CgnsFile::Impl::gotoCCBaseIter()
 {
 	return cg_goto(m_fileId, m_ccBaseId, "BaseIterativeData_t", 1, NULL);
@@ -281,9 +305,226 @@ int CgnsFile::Impl::gotoZone()
 	return cg_goto(m_fileId, m_baseId, "Zone_t", m_zoneId, NULL);
 }
 
+int CgnsFile::Impl::gotoZoneChild(const char* path)
+{
+	int ier = gotoZone();
+	RETURN_IF_ERR;
+	return cg_gopath(m_fileId, path);
+}
+
+int CgnsFile::Impl::gotoGridCondition()
+{
+	return gotoZoneChild(GCNODE.c_str());
+}
+
+int CgnsFile::Impl::gotoGridConditionChild(const char* path)
+{
+	int ier = gotoGridCondition();
+	RETURN_IF_ERR;
+	return cg_gopath(m_fileId, path);
+}
+
+int CgnsFile::Impl::gotoGridConditionNewChild(const char* path)
+{
+	int ier = gotoGridCondition();
+	RETURN_IF_ERR;
+	// delete if exists. maybe fail, so do not result.
+	cg_delete_node(path);
+	// add new node
+	ier = cg_user_data_write(path);
+	RETURN_IF_ERR;
+	return gotoGridConditionChild(path);
+}
+
 int CgnsFile::Impl::gotoZoneIter()
 {
 	return cg_goto(m_fileId, m_baseId, "Zone_t", m_zoneId, ZINAME.c_str(), 0, NULL);
+}
+
+int CgnsFile::Impl::gotoComplexGroup(const char* groupName)
+{
+	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, 0, NULL);
+}
+
+int CgnsFile::Impl::gotoComplex(const char* groupName, int num)
+{
+	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, "UserDefinedData_t", num, NULL);
+}
+
+int CgnsFile::Impl::gotoComplexChild(const char* groupName, int num, const char* name)
+{
+	return cg_goto(m_fileId, m_baseId, GCCNODE.c_str(), 0, groupName, "UserDefinedData_t", num, name, 0, NULL);
+}
+
+int CgnsFile::Impl::gotoComplexNewChild(const char* groupName, int num, const char* name)
+{
+	int ier = gotoComplexGroup(groupName);
+	if (ier != 0) {
+		// group node does not exist. create.
+		ier = gotoGridCondition();
+		RETURN_IF_ERR;
+		ier = cg_user_data_write(groupName);
+		RETURN_IF_ERR;
+	}
+	ier = gotoComplex(groupName, num);
+	if (ier != 0) {
+		// node does not exist. create.
+		ier = gotoComplexGroup(groupName);
+		RETURN_IF_ERR;
+		char tmpname[NAME_MAXLENGTH];
+		getComplexName(num, tmpname);
+		ier = cg_user_data_write(tmpname);
+		RETURN_IF_ERR;
+	}
+	ier = gotoComplexChild(groupName, num, name);
+	if (ier != 0) {
+		// node does not exist. create.
+		ier = gotoComplex(groupName, num);
+		RETURN_IF_ERR;
+		ier = cg_user_data_write(name);
+		RETURN_IF_ERR;
+	}
+	return gotoComplexChild(groupName, num, name);
+}
+
+int CgnsFile::Impl::addComplexNodeIfNotExist()
+{
+	int ier = gotoBase();
+	RETURN_IF_ERR;
+
+	// try to find GridComplexCondition node.
+	int usize;
+	ier = cg_nuser_data(&usize);
+	RETURN_IF_ERR;
+
+	for (int U = 1; U <= usize; ++U){
+		char name[NAME_MAXLENGTH];
+		cg_user_data_read(U, name);
+		if (GCCNODE == name) {return 0;}
+	}
+	// not exists. try to add node.
+	return cg_user_data_write(GCCNODE.c_str());
+}
+
+int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
+{
+	char tmpName[NAME_MAXLENGTH];
+	int narrays;
+
+	int ier = cg_narrays(&narrays);
+	RETURN_IF_ERR;
+
+	for (int i = 1; i <= narrays; ++i) {
+		ier = cg_array_info(i, tmpName, dt, dim, dimVec);
+		RETURN_IF_ERR;
+		if (strcmp(tmpName, name) == 0) {
+			*index = i;
+			return 0;
+		}
+	}
+	return -1;
+}
+
+int CgnsFile::Impl::readArray(const char* name, DataType_t dataType, cgsize_t len, void* memory)
+{
+	int index;
+	DataType_t dt;
+	int dim;
+	cgsize_t dimVec[3];
+
+	int ier = findArray(name, &index, &dt, &dim, &(dimVec[0]));
+	RETURN_IF_ERR;
+
+	// check datatype;
+	if (dataType != dt) {return -2;}
+	// check datalength if needed
+	if (len != -1){
+		if (dim != 1 || dimVec[0] != len) {return -3;}
+	}
+	// found. load data.
+	return cg_array_read(index, memory);
+}
+
+int CgnsFile::Impl::readArrayAs(const char* name, DataType_t dataType, size_t length, void* memory)
+{
+	int index;
+	DataType_t dt;
+	int dim;
+	cgsize_t dimVec[3];
+
+	int ier = findArray(name, &index, &dt, &dim, &(dimVec[0]));
+	RETURN_IF_ERR;
+
+	// check datalength if needed
+	if (length != -1){
+		if (dim != 1 || dimVec[0] != length) { return -3; }
+	}
+	// found. load data.
+	return cg_array_read_as(index, dataType, memory);
+}
+
+int CgnsFile::Impl::readStringLen(const char* name, int* length)
+{
+	int index;
+	DataType_t datatype;
+	int dim;
+	int dimVec[3];
+
+	int ier = findArray(name, &index, &datatype, &dim, &(dimVec[0]));
+	RETURN_IF_ERR;
+
+	if (datatype != Character){return -1;}
+	if (dim != 1){return -2;}
+	*length = dimVec[0];
+
+	return 0;
+}
+
+int CgnsFile::Impl::readString(const char* name, size_t bufferLen, char* buffer)
+{
+	int index;
+	DataType_t datatype;
+	int dim;
+	cgsize_t dimVec[3];
+
+	int ier = findArray(name, &index, &datatype, &dim, &(dimVec[0]));
+
+	// check datatype
+	if (datatype != Character){return -1;}
+	if (bufferLen != -1){
+		if (dim != 1 || (size_t)(dimVec[0]) >= bufferLen){ return -2; }
+	}
+
+	// found. load data.
+	ier = cg_array_read(index, buffer);
+	RETURN_IF_ERR;
+	*(buffer + dimVec[0]) = '\0';
+	return 0;
+}
+
+int CgnsFile::Impl::writeArray(const char* name, DataType_t dt, size_t length, void* memory)
+{
+	int dim = 1;
+	cgsize_t dimvec = length;
+	// If array named arrayname exists, delete it first. It succeeds only when the node exist.
+	cg_delete_node(name);
+
+	if (length == 0){
+		// If the length of the array is 0, cg_array_write fails.
+		return 0;
+	}
+	return cg_array_write(name, dt, dim, &dimvec, memory);
+}
+
+int CgnsFile::Impl::writeString(const char* name, char* value)
+{
+	size_t length = strlen(value);
+	return writeArray(name, Character, length, value);
+}
+
+void CgnsFile::Impl::getComplexName(int num, char* name)
+{
+	sprintf(name, "Item%d", num);
 }
 
 // public interfaces
@@ -337,14 +578,15 @@ int CgnsFile::GotoCC()
 {
 	int ier = impl->initBaseId(false);
 
+	return ier;
 }
 
 int CgnsFile::GotoRawDataTop()
 {
-
+	return 0;
 }
 
 int CgnsFile::Set_ZoneId(int zoneid)
 {
-
+	return 0;
 }
