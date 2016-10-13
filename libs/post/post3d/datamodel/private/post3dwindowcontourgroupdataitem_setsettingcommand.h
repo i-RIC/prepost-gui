@@ -5,6 +5,8 @@
 
 #include <QUndoCommand>
 
+class Post3dWindowContourGroupTopDataItem;
+
 class Post3dWindowContourGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
@@ -25,6 +27,7 @@ private:
 	QString m_oldScalarBarTitle;
 
 	Post3dWindowContourGroupDataItem* m_item;
+	Post3dWindowContourGroupTopDataItem* m_topItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPDATAITEM_SETSETTINGCOMMAND_H

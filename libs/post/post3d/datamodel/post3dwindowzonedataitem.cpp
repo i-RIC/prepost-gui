@@ -100,9 +100,16 @@ void Post3dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! shapeNode.isNull()) {
 		m_shapeDataItem->loadFromProjectMainFile(shapeNode);
 	}
-	QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
-	if (! contourGroupNode.isNull() && m_contourGroupTopItem != nullptr) {
-		m_contourGroupTopItem->loadFromProjectMainFile(contourGroupNode);
+	QDomNode contoursNode = iRIC::getChildNode(node, "Contours");
+	if (!contoursNode.isNull() && m_contourGroupTopItem != nullptr) {
+		// multi-contours
+		m_contourGroupTopItem->loadFromProjectMainFile(contoursNode);
+	} else {
+		// single-contour
+		QDomNode contourGroupNode = iRIC::getChildNode(node, "ContourGroup");
+		if (! contourGroupNode.isNull() && m_contourGroupTopItem != nullptr) {
+			m_contourGroupTopItem->loadFromProjectMainFile(contourGroupNode);
+		}
 	}
 	QDomNode scalarGroupNode = iRIC::getChildNode(node, "ScalarGroup");
 	if (! scalarGroupNode.isNull() && m_scalarGroupDataItem != nullptr) {
@@ -134,7 +141,7 @@ void Post3dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 
 	if (m_contourGroupTopItem != nullptr) {
-		writer.writeStartElement("ContourGroup");
+		writer.writeStartElement("Contours");
 		m_contourGroupTopItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}

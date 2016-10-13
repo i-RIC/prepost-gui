@@ -60,7 +60,6 @@ protected:
 
 private:
 	ScalarSettingContainer m_scalarSetting;
-	QMap<std::string, QString> m_colorBarTitleMap;
 
 	void saveContourToProjectMainFile(QXmlStreamWriter& writer);
 	void loadContourFromProjectMainFile(const QDomNode& node);

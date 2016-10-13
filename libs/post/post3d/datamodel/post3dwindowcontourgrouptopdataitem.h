@@ -17,7 +17,10 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
 
 private:
+	QMap<std::string, QString> m_colorBarTitleMap;
 	double m_zScale;
+
+	friend class Post3dWindowContourGroupDataItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPTOPDATAITEM_H

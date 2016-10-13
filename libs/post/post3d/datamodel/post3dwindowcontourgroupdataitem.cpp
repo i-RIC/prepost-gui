@@ -1,5 +1,6 @@
 #include "post3dwindowcontourgroupdataitem.h"
 #include "post3dwindowcontourgroupsettingdialog.h"
+#include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowfacedataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
@@ -80,11 +81,6 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(Post3dWindowD
 	PostZoneDataContainer* c = zItem->dataContainer();
 	m_scalarSetting.target = c->data()->GetPointData()->GetArrayName(0);
 	m_scalarSetting.numberOfDivisions = 10;
-
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->GetPointData())) {
-		m_colorBarTitleMap.insert(name, name.c_str());
-	}
 
 	setupScalarBarActor();
 }
@@ -316,10 +312,12 @@ void Post3dWindowContourGroupDataItem::updateScalarBarActorSetting()
 
 	vtkScalarBarActor* a = m_scalarBarWidget->GetScalarBarActor();
 	std::string targetStr = iRIC::toStr(m_scalarSetting.target);
-	a->SetTitle(iRIC::toStr(m_colorBarTitleMap.value(targetStr)).c_str());
+
+	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
+	a->SetTitle(iRIC::toStr(topitem->m_colorBarTitleMap.value(targetStr)).c_str());
 	a->SetLookupTable(lookup->vtkObj());
 
-	m_standardItem->setText(m_colorBarTitleMap.value(targetStr));
+	m_standardItem->setText(topitem->m_colorBarTitleMap.value(targetStr));
 
 	auto& s = m_scalarSetting.scalarBarSetting;
 
@@ -403,7 +401,8 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 	dialog->setZoneData(zoneData);
 
 	m_scalarSetting.scalarBarSetting.loadFromRepresentation(m_scalarBarWidget->GetScalarBarRepresentation());
-	dialog->setColorBarTitleMap(m_colorBarTitleMap);
+	Post3dWindowContourGroupTopDataItem* topitem = dynamic_cast<Post3dWindowContourGroupTopDataItem*>(parent());
+	dialog->setColorBarTitleMap(topitem->m_colorBarTitleMap);
 
 	dialog->setScalarSetting(m_scalarSetting);
 	dialog->setLookupTable(*(lookupTable()));
@@ -530,11 +529,7 @@ void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement childElem = children.at(i).toElement();
-		if (childElem.nodeName() == "ScalarBarTitle") {
-			std::string val = iRIC::toStr(childElem.attribute("value"));
-			QString title = childElem.attribute("title");
-			m_colorBarTitleMap[val] = title;
-		} else if (childElem.nodeName() == "FaceSetting") {
+		if (childElem.nodeName() == "FaceSetting") {
 			QString label = childElem.attribute("label");
 			Post3dWindowFaceDataItem* item = new Post3dWindowFaceDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
@@ -551,15 +546,6 @@ void Post3dWindowContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 
 	m_scalarSetting.save(writer);
 
-	// scalar bar titles
-	QMapIterator<std::string, QString> i(m_colorBarTitleMap);
-	while (i.hasNext()) {
-		i.next();
-		writer.writeStartElement("ScalarBarTitle");
-		writer.writeAttribute("value", i.key().c_str());
-		writer.writeAttribute("title", i.value());
-		writer.writeEndElement();
-	}
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		Post3dWindowFaceDataItem* fitem = dynamic_cast<Post3dWindowFaceDataItem*>(m_childItems.at(i));
 		writer.writeStartElement("FaceSetting");
