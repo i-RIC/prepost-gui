@@ -15,12 +15,16 @@ public:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode&) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter&) override;
+	QDialog* propertyDialog(QWidget* p) override;
+	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 private:
 	QMap<std::string, QString> m_colorBarTitleMap;
 	double m_zScale;
 
 	friend class Post3dWindowContourGroupDataItem;
+
+	class CreateCommand;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPTOPDATAITEM_H
