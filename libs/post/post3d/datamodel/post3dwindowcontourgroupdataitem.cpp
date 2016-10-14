@@ -44,8 +44,8 @@
 class Post3dWindowContourGroupUpdateOnRedo : public QUndoCommand
 {
 public:
-	Post3dWindowContourGroupUpdateOnRedo(Post3dWindowContourGroupDataItem *item)
-		: QUndoCommand(QObject::tr("Update"))
+	Post3dWindowContourGroupUpdateOnRedo(Post3dWindowContourGroupDataItem *item, QUndoCommand* parent = nullptr)
+		: QUndoCommand(QObject::tr("Update"), parent)
 		, m_item(item)
 	{}
 	void redo() {
@@ -59,8 +59,8 @@ private:
 class Post3dWindowContourGroupUpdateOnUndo : public QUndoCommand
 {
 public:
-	Post3dWindowContourGroupUpdateOnUndo(Post3dWindowContourGroupDataItem *item)
-		: QUndoCommand(QObject::tr("Update"))
+	Post3dWindowContourGroupUpdateOnUndo(Post3dWindowContourGroupDataItem *item, QUndoCommand* parent = nullptr)
+		: QUndoCommand(QObject::tr("Update"), parent)
 		, m_item(item)
 	{}
 	void undo() {
@@ -413,17 +413,9 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 
 void Post3dWindowContourGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propDialog);
-	iRICUndoStack& stack = iRICUndoStack::instance();
-
-	stack.beginMacro(tr("Contour Setting"));
-	stack.push(new GraphicsWindowDrawOnUndo(this));
-	stack.push(new Post3dWindowContourGroupUpdateOnUndo(this));
-	stack.push(new SetSettingCommand(dialog->scalarSetting(), dialog->lookupTable(), dialog->scalarBarTitle(), this));
-	setFaceMap(dialog->faceMap(), dialog->scalarSetting().target);
-	stack.push(new Post3dWindowContourGroupUpdateOnRedo(this));
-	stack.push(new GraphicsWindowDrawOnRedo(this));
-	stack.endMacro();
+	QUndoCommand* contourSetting = new QUndoCommand(tr("Contour Setting"));
+	undoCommands(propDialog, contourSetting);
+	iRICUndoStack::instance().push(contourSetting);
 }
 
 LookupTableContainer* Post3dWindowContourGroupDataItem::lookupTable()
@@ -445,7 +437,9 @@ QMap<QString, Post3dWindowFaceDataItem::Setting> Post3dWindowContourGroupDataIte
 class Post3dWindowContourGroupSetFaceMap : public QUndoCommand
 {
 public:
-	Post3dWindowContourGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, QString target, Post3dWindowContourGroupDataItem* item) {
+	Post3dWindowContourGroupSetFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& oldMap, const QMap<QString, Post3dWindowFaceDataItem::Setting>& newMap, QString target, Post3dWindowContourGroupDataItem* item, QUndoCommand* parent = nullptr) :
+		QUndoCommand(parent) 
+	{
 		m_oldMap = oldMap;
 		m_newMap = newMap;
 		m_item = item;
@@ -488,6 +482,20 @@ private:
 void Post3dWindowContourGroupDataItem::setFaceMap(const QMap<QString, Post3dWindowFaceDataItem::Setting>& map, QString target)
 {
 	iRICUndoStack::instance().push(new Post3dWindowContourGroupSetFaceMap(faceMap(), map, target, this));
+}
+
+void Post3dWindowContourGroupDataItem::undoCommands(QDialog* propDialog, QUndoCommand* parent)
+{
+	Post3dWindowContourGroupSettingDialog* dialog = dynamic_cast<Post3dWindowContourGroupSettingDialog*>(propDialog);
+
+	Q_ASSERT(parent != nullptr); // the following won't get deleted if parent is null
+
+	new GraphicsWindowDrawOnUndo(this, parent);
+	new Post3dWindowContourGroupUpdateOnUndo(this, parent);
+	new SetSettingCommand(dialog->scalarSetting(), dialog->lookupTable(), dialog->scalarBarTitle(), this, parent);
+	new Post3dWindowContourGroupSetFaceMap(faceMap(), dialog->faceMap(), dialog->scalarSetting().target, this, parent);
+	new Post3dWindowContourGroupUpdateOnRedo(this, parent);
+	new GraphicsWindowDrawOnRedo(this, parent);
 }
 
 void Post3dWindowContourGroupDataItem::innerUpdateZScale(double scale)

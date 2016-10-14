@@ -57,6 +57,7 @@ protected:
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void updateVisibility(bool visible) override;
 	void innerUpdateZScale(double scale) override;
+	void undoCommands(QDialog* propDialog, QUndoCommand* parent);
 
 private:
 	ScalarSettingContainer m_scalarSetting;
@@ -74,6 +75,7 @@ private:
 
 public:
 	friend class Post3dWindowContourGroupSetFaceMap;
+	friend class Post3dWindowContourGroupTopDataItem;
 };
 
 #endif // POST3DWINDOWCONTOURGROUPDATAITEM_H
