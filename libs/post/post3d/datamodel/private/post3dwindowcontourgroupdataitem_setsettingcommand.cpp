@@ -7,17 +7,18 @@
 
 #include <vtkScalarBarActor.h>
 
-Post3dWindowContourGroupDataItem::SetSettingCommand::SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item) :
-	QUndoCommand(),
+Post3dWindowContourGroupDataItem::SetSettingCommand::SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item, QUndoCommand* parent) :
+	QUndoCommand(parent),
 	m_newScalarSetting {scalarSetting},
 	m_newLookupTable {lookupTable},
 	m_newScalarBarTitle {scalarBarTitle},
 	m_oldScalarSetting {item->scalarSetting()},
 	m_oldLookupTable {*(item->lookupTable())},
-	m_oldScalarBarTitle {m_topItem->m_colorBarTitleMap[item->scalarSetting().target]},
-	m_item{ item },
+	m_item {item},
 	m_topItem {dynamic_cast<Post3dWindowContourGroupTopDataItem*>(item->parent())}
-{}
+{
+	m_oldScalarBarTitle = m_topItem->m_colorBarTitleMap[item->scalarSetting().target];
+}
 
 void Post3dWindowContourGroupDataItem::SetSettingCommand::redo()
 {

@@ -10,7 +10,7 @@ class Post3dWindowContourGroupTopDataItem;
 class Post3dWindowContourGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item);
+	SetSettingCommand(const ScalarSettingContainer& scalarSetting, const LookupTableContainer& lookupTable, const QString& scalarBarTitle, Post3dWindowContourGroupDataItem* item, QUndoCommand* parent = nullptr);
 
 	void redo() override;
 	void undo() override;
