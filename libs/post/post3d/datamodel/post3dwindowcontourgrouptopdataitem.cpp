@@ -13,6 +13,7 @@
 
 #include <QDomNode>
 #include <QDomElement>
+#include <QMessageBox>
 #include <QXmlStreamWriter>
 
 #include <vtkPointData.h>
@@ -114,15 +115,20 @@ void Post3dWindowContourGroupTopDataItem::innerUpdateZScale(double scale)
 
 QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
 {
+	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	if (zoneData == nullptr || zoneData->data() == nullptr) {
+		return nullptr;
+	}
+
+	if (children().size() >= 4) {
+		QMessageBox::warning(postProcessorWindow(), tr("Warning"), tr("A maximum of four contours may be defined."));
+		return nullptr;
+	}
+
 	Post3dWindowContourGroupSettingDialog* dialog = new Post3dWindowContourGroupSettingDialog(p);
 	dialog->setEnabled(true);
 	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
 	dialog->setGridTypeDataItem(gtItem);
-	PostZoneDataContainer* zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
-		delete dialog;
-		return nullptr;
-	}
 	dialog->setZoneData(zoneData);
 
 	ScalarSettingContainer scalarSetting;
@@ -132,6 +138,25 @@ QDialog* Post3dWindowContourGroupTopDataItem::propertyDialog(QWidget* p)
 	PostZoneDataContainer* c = zItem->dataContainer();
 	scalarSetting.target = c->data()->GetPointData()->GetArrayName(0);
 	scalarSetting.numberOfDivisions = 10;
+
+	switch (children().size() % 4) {
+	case 0:
+		scalarSetting.scalarBarSetting.positionX = 0.8;
+		scalarSetting.scalarBarSetting.positionY = 0.1;
+		break;
+	case 1:
+		scalarSetting.scalarBarSetting.positionX = 0.1;
+		scalarSetting.scalarBarSetting.positionY = 0.1;
+		break;
+	case 2:
+		scalarSetting.scalarBarSetting.positionX = 0.1;
+		scalarSetting.scalarBarSetting.positionY = 0.6;
+		break;
+	case 3:
+		scalarSetting.scalarBarSetting.positionX = 0.8;
+		scalarSetting.scalarBarSetting.positionY = 0.6;
+		break;
+	}
 
 	LookupTableContainer *lookupTable = gtItem->nodeLookupTable(iRIC::toStr(scalarSetting.target));
 	vtkSmartPointer<vtkScalarBarWidget> scalarBarWidget = vtkSmartPointer<vtkScalarBarWidget>::New();
