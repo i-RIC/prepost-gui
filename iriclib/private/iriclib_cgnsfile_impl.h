@@ -105,6 +105,8 @@ public:
 
 	std::vector<BaseIterativeT<int> > m_solBaseIterInts;
 	std::vector<BaseIterativeT<double> > m_solBaseIterReals;
+
+	SolutionWriter* m_solutionWriter;
 };
 
 } // iRICLib

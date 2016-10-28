@@ -177,6 +177,10 @@ public:
 
 private:
 	class Impl;
+	class SolutionWriter;
+	class SolutionWriterStd;
+	class SolutionWriterSeparate;
+
 	Impl* impl;
 };
 
