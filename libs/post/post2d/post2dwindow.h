@@ -9,6 +9,7 @@
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
+#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
@@ -20,7 +21,6 @@ class Post2dWindowDataModel;
 class Post2dWindowProjectDataItem;
 class Post2dWindowActionManager;
 class Post2dWindowGraphicsView;
-class Post2dWindowEditBackgroundColorCommand;
 
 /// This class represents the two-dimensional post-processing window.
 class Post2dWindow :
@@ -31,7 +31,8 @@ class Post2dWindow :
 	public WindowWithTmsI,
 	public CfShapeExportWindowI,
 	public ParticleExportWindowI,
-	public SVKmlExportWindowI
+	public SVKmlExportWindowI,
+	public BackgroundColorEditVtkInterface
 {
 	Q_OBJECT
 
@@ -86,9 +87,7 @@ signals:
 private:
 	void init();
 
-	const QColor backgroundColor() const;
-	void setBackgroundColor(QColor& c);
-
+	VTKGraphicsView* viewForBackgroundColor() const override;
 	void setupDefaultGeometry(int index) override;
 
 	Post2dObjectBrowser* m_objectBrowser;
@@ -100,7 +99,6 @@ public:
 	friend class Post2dWindowProjectDataItem;
 	friend class Post2dWindowActionManager;
 	friend class Post2dWindowDataModel;
-	friend class Post2dWindowEditBackgroundColorCommand;
 };
 
 #endif // POST2DWINDOW_H

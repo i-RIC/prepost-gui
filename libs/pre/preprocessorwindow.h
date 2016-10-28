@@ -10,6 +10,7 @@
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 
 #include <QCloseEvent>
 #include <QByteArray>
@@ -27,7 +28,6 @@ class PreProcessorDataModelInterface;
 class PreProcessorDataModel;
 class PreProcessorWindowActionManager;
 class PreProcessorGraphicsView;
-class PreProcessorWindowEditBackgroundColorCommand;
 
 /// PreProcessorWindow class implements the main window of pre-processor.
 class PREDLL_EXPORT PreProcessorWindow :
@@ -37,7 +37,8 @@ class PREDLL_EXPORT PreProcessorWindow :
 	public WindowWithObjectBrowserInterface,
 	public WindowWithTmsI,
 	public WindowWithPropertyBrowser,
-	public WindowWithZIndexInterface
+	public WindowWithZIndexInterface,
+	public BackgroundColorEditVtkInterface
 {
 	Q_OBJECT
 
@@ -112,10 +113,7 @@ signals:
 private:
 	void init();
 	PreProcessorDataModel* model() const;
-	/// Background color
-	const QColor backgroundColor() const;
-	/// Set background color;
-	void setBackgroundColor(const QColor& c);
+	VTKGraphicsView* viewForBackgroundColor() const override;
 	/// Object browser
 	PreObjectBrowser* m_objectBrowser;
 	PreProcessorDataModelInterface* m_dataModel;
@@ -129,7 +127,6 @@ private:
 public:
 	friend class PreProcessorWindowProjectDataItem;
 	friend class PreProcessorWindowActionManager;
-	friend class PreProcessorWindowEditBackgroundColorCommand;
 	friend class BackgroundImageInfo;
 };
 
