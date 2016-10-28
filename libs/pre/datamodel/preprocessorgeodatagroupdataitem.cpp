@@ -201,6 +201,11 @@ void PreProcessorGeoDataGroupDataItem::import()
 		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return;
 	}
+	if (dataCount == 0){
+		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("%1 contains no data to import.").arg(QDir::toNativeSeparators(filename)));
+		return;
+	}
+
 	PreProcessorGeoDataDataItemInterface* item = nullptr;
 
 	WaitDialog* wDialog = nullptr;
