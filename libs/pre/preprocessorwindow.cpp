@@ -20,7 +20,6 @@
 #include <misc/iricundostack.h>
 
 #include <QAction>
-#include <QColorDialog>
 #include <QFile>
 #include <QGraphicsView>
 #include <QLabel>
@@ -288,36 +287,9 @@ void PreProcessorWindow::cameraMoveDown()
 	m_dataModel->graphicsView()->cameraMoveDown();
 }
 
-class PreProcessorWindowEditBackgroundColorCommand : public QUndoCommand
-{
-public:
-	PreProcessorWindowEditBackgroundColorCommand(const QColor& newcolor, PreProcessorWindow* w)
-		: QUndoCommand(QObject::tr("Edit Background Color")) {
-		m_newColor = newcolor;
-		m_oldColor = w->backgroundColor();
-		m_window = w;
-	}
-	void undo() {
-		m_window->setBackgroundColor(m_oldColor);
-		m_window->m_graphicsView->update();
-	}
-	void redo() {
-		m_window->setBackgroundColor(m_newColor);
-		m_window->m_graphicsView->update();
-	}
-
-private:
-	QColor m_oldColor;
-	QColor m_newColor;
-	PreProcessorWindow* m_window;
-};
-
 void PreProcessorWindow::editBackgroundColor()
 {
-	QColor oldcolor = backgroundColor();
-	QColor newcolor = QColorDialog::getColor(oldcolor, this, tr("Background Color"));
-	if (! newcolor.isValid()) {return;}
-	iRICUndoStack::instance().push(new PreProcessorWindowEditBackgroundColorCommand(newcolor, this));
+	BackgroundColorEditInterface::editBackgroundColor(this);
 }
 
 class PreProcessorWindowCloseCommand : public QUndoCommand
@@ -421,22 +393,6 @@ bool PreProcessorWindow::isSetupCorrectly() const
 	return model()->isSetupCorrectly();
 }
 
-const QColor PreProcessorWindow::backgroundColor() const
-{
-	double vtkColor[3];
-	m_graphicsView->mainRenderer()->GetBackground(vtkColor);
-	QColor qColor;
-	iRIC::VTKColorToQColor(vtkColor, qColor);
-	return qColor;
-}
-
-void PreProcessorWindow::setBackgroundColor(const QColor& c)
-{
-	double vtkColor[3];
-	iRIC::QColorToVTKColor(c, vtkColor);
-	m_graphicsView->mainRenderer()->SetBackground(vtkColor);
-}
-
 bool PreProcessorWindow::checkMappingStatus()
 {
 	return model()->checkMappingStatus();
@@ -459,6 +415,11 @@ PreProcessorDataModel* PreProcessorWindow::model() const
 {
 	if (m_dataModel == nullptr){return nullptr;}
 	return dynamic_cast<PreProcessorDataModel*>(m_dataModel);
+}
+
+VTKGraphicsView* PreProcessorWindow::viewForBackgroundColor() const
+{
+	return m_dataModel->graphicsView();
 }
 
 ObjectBrowser* PreProcessorWindow::objectBrowser() const
