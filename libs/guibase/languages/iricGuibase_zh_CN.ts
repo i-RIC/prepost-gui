@@ -640,6 +640,44 @@
     </message>
 </context>
 <context>
+    <name>vtkLineStyleWidget</name>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="14"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="35"/>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="49"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="66"/>
+        <source>Style:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="74"/>
+        <source>Solid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="79"/>
+        <source>Dashed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="84"/>
+        <source>Dotted</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>vtkTextPropertySettingDialog</name>
     <message>
         <location filename="../vtktextpropertysettingdialog.ui" line="14"/>

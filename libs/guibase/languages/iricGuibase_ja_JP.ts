@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.1" language="ja_JP">
 <context>
     <name>AsciiOnlyLineEdit</name>
     <message>
@@ -217,15 +217,15 @@
     <name>CoordinateSystemSelectDialog</name>
     <message>
         <source>Select Coordinate System</source>
-        <translation>座標系の選択</translation>
+        <translation type="vanished">座標系の選択</translation>
     </message>
     <message>
         <source>Search:</source>
-        <translation>検索:</translation>
+        <translation type="vanished">検索:</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation>(指定されていない)</translation>
+        <translation type="vanished">(指定されていない)</translation>
     </message>
 </context>
 <context>
@@ -346,23 +346,23 @@
     <name>MousePositionWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>X: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y:</translation>
+        <translation type="vanished">Y:</translation>
     </message>
     <message>
         <source>X: ------</source>
-        <translation>X: ------</translation>
+        <translation type="vanished">X: ------</translation>
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y: ------</translation>
+        <translation type="vanished">Y: ------</translation>
     </message>
 </context>
 <context>
@@ -402,7 +402,7 @@
     <name>QObject</name>
     <message>
         <source>Selection Change</source>
-        <translation>選択状態の変更</translation>
+        <translation type="vanished">選択状態の変更</translation>
     </message>
 </context>
 <context>
@@ -684,6 +684,44 @@
         <location filename="../xyaxisdisplaysettingdialog.ui" line="283"/>
         <source>Scientific notation (ex. 1.38E+04)</source>
         <translation>指数表示 (例: 1.38E+04)</translation>
+    </message>
+</context>
+<context>
+    <name>vtkLineStyleWidget</name>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="14"/>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="35"/>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="49"/>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="66"/>
+        <source>Style:</source>
+        <translation>スタイル:</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="74"/>
+        <source>Solid</source>
+        <translation>実線</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="79"/>
+        <source>Dashed</source>
+        <translation>点線</translation>
+    </message>
+    <message>
+        <location filename="../vtklinestylewidget.ui" line="84"/>
+        <source>Dotted</source>
+        <translation>破線</translation>
     </message>
 </context>
 <context>
