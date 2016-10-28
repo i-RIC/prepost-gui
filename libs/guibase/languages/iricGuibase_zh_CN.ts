@@ -441,8 +441,8 @@
     <message>
         <location filename="../scalarbarwidget.ui" line="145"/>
         <source>Specify the number format in printf format. For example:
-   &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
-   &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

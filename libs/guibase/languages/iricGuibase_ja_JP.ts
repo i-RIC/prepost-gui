@@ -484,13 +484,29 @@
         <translation>表示形式:</translation>
     </message>
     <message>
-        <location filename="../scalarbarwidget.ui" line="145"/>
         <source>Specify the number format in printf format. For example:
    &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
    &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
    &quot;-%3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
    &quot;-%.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
+    </message>
+    <message>
+        <source>Specify the number format in printf format. For example:
+   &quot;%-.3f&quot; for 3.141592 --&gt; 3.141
+   &quot;%-.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation type="vanished">数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+   &quot;%-3.f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.141&quot;
+   &quot;%-.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
+    </message>
+    <message>
+        <location filename="../scalarbarwidget.ui" line="145"/>
+        <source>Specify the number format in printf format. For example:
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>数字の表示形式を、 printf のフォーマットで指定して下さい。例えば:
+   &quot;%5.2f&quot; を 値が 3.141592 の時に指定 --&gt; &quot;3.14&quot;
+   &quot;%4.2e&quot; を 値が 12300 の時に指定 --&gt; &quot;1.23e+004&quot;</translation>
     </message>
     <message>
         <location filename="../scalarbarwidget.ui" line="169"/>

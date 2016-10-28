@@ -143,8 +143,8 @@
          <widget class="QLabel" name="formatHelpLabel">
           <property name="toolTip">
            <string>Specify the number format in printf format. For example:
-   &quot;-%.3f&quot; for 3.141592 --&gt; 3.141
-   &quot;-%.2e&quot; for 12300  --&gt; 1.23e+004</string>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</string>
           </property>
           <property name="text">
            <string/>
@@ -159,7 +159,7 @@
       <item row="1" column="1">
        <widget class="QLineEdit" name="labelFormatEdit">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>
