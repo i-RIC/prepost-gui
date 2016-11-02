@@ -40,6 +40,7 @@ public:
 	void unlockMutex();
 
 	void setLastJobDraw();
+	geos::geom::Polygon* getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset);
 
 	static GeoDataPolygonTriangleThread* instance();
 
@@ -74,7 +75,6 @@ private:
 	QTime m_timeToStartJob;
 
 	void setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset);
-	geos::geom::Polygon* getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset);
 	QPointF polygonInnerPoint(GeoDataPolygonAbstractPolygon* region, const std::vector<GeoDataPolygonAbstractPolygon*>& holes, const QPointF& offset);
 
 	explicit GeoDataPolygonTriangleThread();

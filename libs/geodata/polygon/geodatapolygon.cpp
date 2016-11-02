@@ -1221,10 +1221,8 @@ void GeoDataPolygon::updatePolyData(bool noDraw)
 			m_triangleThread->wait(100);
 		}
 	}
-	if (m_triangleThread == nullptr){
-		m_triangleThread = GeoDataPolygonTriangleThread::instance();
-		connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
-	}
+	setupTriangleThread();
+
 	m_triangleThread->addJob(this, noDraw);
 	if (! noDraw){
 		m_paintActor->SetVisibility(0);
@@ -1420,4 +1418,18 @@ void GeoDataPolygon::unlockMutex()
 	if (m_triangleThread == nullptr) {return;}
 
 	m_triangleThread->unlockMutex();
+}
+
+geos::geom::Polygon* GeoDataPolygon::getGeosPolygon(const QPointF& offset)
+{
+	setupTriangleThread();
+	return m_triangleThread->getGeosPolygon(this, offset);
+}
+
+void GeoDataPolygon::setupTriangleThread()
+{
+	if (m_triangleThread != nullptr) {return;}
+
+	m_triangleThread = GeoDataPolygonTriangleThread::instance();
+	connect(m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
 }

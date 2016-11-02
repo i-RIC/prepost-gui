@@ -7,6 +7,7 @@
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <misc/errormessage.h>
+#include <misc/informationdialog.h>
 #include <misc/stringtool.h>
 
 #include <QMessageBox>
@@ -14,6 +15,9 @@
 #include <QTextCodec>
 
 #include <shapefil.h>
+
+#include <geos/geom/Polygon.h>
+#include <geos/util/GEOSException.h>
 
 #include <algorithm>
 #include <cmath>
@@ -191,13 +195,27 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 		holes.push_back(readPolygon(shpo, holeIndex));
 	}
 
+	QString warningMessage = tr(
+				"%th polygon can not be imported. Polygon like below can not be imported:\n"
+				"- It has less than three points\n"
+				"- It is not closed\n"
+				"- Lines of polygon intersect each other\n"
+				"- Hole polygon is outside of region polygon\n"
+				"- Polygon passes the same point several times"
+				);
+
 	try {
 		poly->setPolygon(region);
 		for (int i = 0; i < holes.size(); ++i){
 			poly->addHolePolygon(holes.at(i));
 		}
+		geos::geom::Polygon* polygon = poly->getGeosPolygon(QPointF(0, 0));
+		delete polygon;
+	} catch (geos::util::GEOSException& e){
+		InformationDialog::warning(w, tr("Warning"), warningMessage, "polygon_import_warn");
+		return false;
 	} catch (ErrorMessage& msg) {
-		QMessageBox::warning(w, tr("Warning"), tr("Importing Polygon failed: %1").arg(msg));
+		InformationDialog::warning(w, tr("Warning"), warningMessage, "polygon_import_warn");
 		return false;
 	}
 

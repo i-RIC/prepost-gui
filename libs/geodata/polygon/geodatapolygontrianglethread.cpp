@@ -25,6 +25,8 @@
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
 
+#include <set>
+
 // namespace for local functions
 namespace {
 
@@ -79,6 +81,14 @@ void clearTrianglateio(triangulateio* io)
 }
 
 } // namespace
+
+bool operator<(const QPointF& p1, const QPointF& p2)
+{
+	if (p1.x() != p2.x()) {
+		return p1.x() < p2.x();
+	}
+	return p1.y() < p2.y();
+}
 
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::m_thread = 0;
 
@@ -265,10 +275,21 @@ geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, con
 	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
 	QPolygonF regionPol = pol->polygon(offset);
 	geos::geom::CoordinateSequence* cs = csf->create(regionPol.size() , 2);
+
+	std::set<QPointF> points;
+
 	for (unsigned int i = 0; i < regionPol.size(); ++i) {
 		QPointF p = regionPol.at(i);
 		geos::geom::Coordinate c(p.x(), p.y(), 0);
 		cs->setAt(c, i);
+
+		if (i == regionPol.size() - 1) {continue;}
+
+		std::set<QPointF>::const_iterator it = points.find(p);
+		if (it != points.end()) {
+			throw geos::util::GEOSException("Invalid ring");
+		}
+		points.insert(p);
 	}
 	return f->createLinearRing(cs);
 }

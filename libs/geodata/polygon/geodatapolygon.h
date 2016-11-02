@@ -39,6 +39,15 @@ class GeoDataPolygonTriangleThread;
 class GeoDataPolygonProxy;
 class PreProcessorBCSettingDataItem;
 
+namespace geos {
+namespace geom{
+
+class Polygon;
+
+} // geom
+} // geos
+
+
 class GD_POLYGON_EXPORT GeoDataPolygon : public GeoData
 {
 	Q_OBJECT
@@ -112,6 +121,7 @@ public:
 	void setBCSettingMode(bool mode) {
 		m_bcSettingMode = mode;
 	}
+	geos::geom::Polygon* getGeosPolygon(const QPointF& offset);
 
 public slots:
 	void editValue();
@@ -162,6 +172,8 @@ private:
 
 	void lockMutex();
 	void unlockMutex();
+
+	void setupTriangleThread();
 
 	ZDepthRange m_depthRange;
 

@@ -207,6 +207,7 @@ void PreProcessorGeoDataGroupDataItem::import()
 	}
 
 	PreProcessorGeoDataDataItemInterface* item = nullptr;
+	std::vector<int> failedIds;
 
 	WaitDialog* wDialog = nullptr;
 	m_cancelImport = false;
@@ -245,15 +246,12 @@ void PreProcessorGeoDataGroupDataItem::import()
 			}
 		}
 		// import data from the specified file
-		bool ret = importer->importData(geodata, i, w);
+		bool ret = importer->importData(geodata, i, wDialog);
 		if (! ret) {
 			// failed.
-			int result = QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data from %1 failed. If you press Ignore button, this data will be ignored, and the try to import the remaining datas.").arg(QDir::toNativeSeparators(filename)), QMessageBox::Abort | QMessageBox::Ignore);
 			delete item;
 			item = nullptr;
-			if (result == QMessageBox::Abort) {
-				goto ERROR;
-			}
+			failedIds.push_back(i + 1);
 		} else {
 			QVector2D o = offset();
 			geodata->applyOffset(o.x(), o.y());
@@ -285,9 +283,19 @@ void PreProcessorGeoDataGroupDataItem::import()
 	informValueRangeChange();
 	informDataChange();
 
-	dataModel()->objectBrowserView()->select(item->standardItem()->index());
+	if (failedIds.size() > 0) {
+		QStringList idStrs;
+		for (int i = 0; i < failedIds.size(); ++i) {
+			idStrs.push_back(QString::number(failedIds[i]));
+		}
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Specified file has invalid data, and those were ignored. Ignored data is as follows:\n%1").arg(idStrs.join("\n")));
+	}
+
+	if (item != nullptr) {
+		dataModel()->objectBrowserView()->select(item->standardItem()->index());
+		emit selectGeoData(item->standardItem()->index());
+	}
 	dataModel()->graphicsView()->cameraFit();
-	emit selectGeoData(item->standardItem()->index());
 	setModified();
 
 	// import is not undo-able.
