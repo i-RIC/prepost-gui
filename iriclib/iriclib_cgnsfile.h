@@ -22,6 +22,10 @@ public:
 	int InitRead_Base(char* basename);
 	int InitRead();
 
+	void OptionDivideSolutions();
+
+	int Flush();
+
 	int GotoBase(int* B);
 	int GotoCC();
 	int GotoRawDataTop();
@@ -178,8 +182,8 @@ public:
 private:
 	class Impl;
 	class SolutionWriter;
-	class SolutionWriterStd;
-	class SolutionWriterSeparate;
+	class SolutionWriterStandard;
+	class SolutionWriterDivideSolutions;
 
 	Impl* impl;
 };

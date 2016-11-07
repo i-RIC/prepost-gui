@@ -1,6 +1,8 @@
 #include "error_macros.h"
 #include "iriclib_cgnsfile.h"
 #include "private/iriclib_cgnsfile_impl.h"
+#include "private/iriclib_cgnsfile_solutionwriterdividesolutions.h"
+#include "private/iriclib_cgnsfile_solutionwriterstandard.h"
 
 #include <string>
 
@@ -24,6 +26,17 @@ static const std::string GCCNODE = "GridComplexConditions";
 const std::string CgnsFile::Impl::IRICZONE = "iRICZone";
 const std::string CgnsFile::Impl::RDNODE = "GeographicData";
 const std::string CgnsFile::Impl::BINAME = "BaseIterativeData";
+
+
+CgnsFile::Impl::Impl()
+{
+	m_solutionWriter = new SolutionWriterStandard(this);
+}
+
+CgnsFile::Impl::~Impl()
+{
+	delete m_solutionWriter;
+}
 
 int CgnsFile::Impl::initBaseId(bool clearResults, char* bname)
 {
@@ -80,6 +93,18 @@ int CgnsFile::Impl::initZoneId(bool clearResults)
 		}
 	}
 	return 1;
+}
+
+
+void CgnsFile::Impl::optionDivideSolutions()
+{
+	delete m_solutionWriter;
+	m_solutionWriter = new SolutionWriterDivideSolutions(this);
+}
+
+int CgnsFile::Impl::Flush()
+{
+	return m_solutionWriter->Flush();
 }
 
 int CgnsFile::Impl::clearResultData()
@@ -735,6 +760,16 @@ int CgnsFile::InitRead_Base(char* bname)
 int CgnsFile::InitRead()
 {
 	return InitRead_Base(NULL);
+}
+
+void CgnsFile::OptionDivideSolutions()
+{
+	impl->optionDivideSolutions();
+}
+
+int CgnsFile::Flush()
+{
+	return impl->Flush();
 }
 
 int CgnsFile::GotoBase(int* B)

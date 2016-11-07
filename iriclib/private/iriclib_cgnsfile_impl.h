@@ -17,8 +17,15 @@ public:
 	static const std::string BINAME;
 	static const std::string RDNODE;
 
+	Impl();
+	~Impl();
+
 	int initBaseId(bool clearResults, char* baseName = NULL);
 	int initZoneId(bool clearResults);
+
+	void optionDivideSolutions();
+
+	int Flush();
 
 	int clearResultData();
 	int clearBaseIter(); // local_init_biter_Mul

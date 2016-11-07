@@ -52,7 +52,9 @@ HEADERS += error_macros.h \
            private/iriclib_cgnsfile_baseiterativet.h \
            private/iriclib_cgnsfile_baseiterativet_detail.h \
            private/iriclib_cgnsfile_impl.h \
-           private/iriclib_cgnsfile_solutionwriter.h
+           private/iriclib_cgnsfile_solutionwriter.h \
+           private/iriclib_cgnsfile_solutionwriterdividesolutions.h \
+           private/iriclib_cgnsfile_solutionwriterstandard.h
 SOURCES += iric_ftoc.c \
            iriclib.cpp \
            iriclib_bstream.cpp \
@@ -68,4 +70,6 @@ SOURCES += iric_ftoc.c \
            iriclib_polygon.cpp \
            iriclib_riversurvey.cpp \
            iriclib_single.c \
-           private/iriclib_cgnsfile_solutionwriter.cpp
+           private/iriclib_cgnsfile_solutionwriter.cpp \
+           private/iriclib_cgnsfile_solutionwriterdividesolutions.cpp \
+           private/iriclib_cgnsfile_solutionwriterstandard.cpp

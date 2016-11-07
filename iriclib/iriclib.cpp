@@ -17,6 +17,7 @@ namespace {
 
 const int FILES_LEN_UNIT = 10;
 std::vector<iRICLib::CgnsFile*> m_files;
+bool m_divideSolutions = false;
 
 void initFilesFor(int fid)
 {
@@ -42,6 +43,9 @@ iRICLib::CgnsFile* initCgnsFile(int fid)
 	}
 	f = new iRICLib::CgnsFile();
 	f->setFileId(fid);
+	if (m_divideSolutions) {
+		f->OptionDivideSolutions();
+	}
 	m_files[fid] = f;
 
 	lastfileid = fid;
@@ -82,6 +86,8 @@ int iRIC_InitOption(int option)
 		// close file.
 		fclose(fp);
 		return 0;
+	} else if (option == IRIC_OPTION_DIVIDESOLUTIONS){
+		m_divideSolutions = true;
 	}
 }
 

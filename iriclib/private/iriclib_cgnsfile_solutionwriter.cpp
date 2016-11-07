@@ -2,14 +2,14 @@
 
 using namespace iRICLib;
 
-CgnsFile::SolutionWriter::SolutionWriter(CgnsFile* cgnsFile) :
-	m_cgnsFile {cgnsFile}
+CgnsFile::SolutionWriter::SolutionWriter(CgnsFile::Impl *impl) :
+	m_impl {impl}
 {}
 
 CgnsFile::SolutionWriter::~SolutionWriter()
 {}
 
-CgnsFile* CgnsFile::SolutionWriter::cgnsFile() const
+CgnsFile::Impl* CgnsFile::SolutionWriter::impl() const
 {
-	return m_cgnsFile;
+	return m_impl;
 }
