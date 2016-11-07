@@ -2,6 +2,7 @@
 #include "iriclib_cgnsfile.h"
 #include "private/iriclib_cgnsfile_impl.h"
 #include "private/iriclib_cgnsfile_baseiterativet.h"
+#include "private/iriclib_cgnsfile_solutionwriter.h"
 
 using namespace iRICLib;
 
@@ -107,6 +108,8 @@ int CgnsFile::Sol_Read_Real(int step, const char *name, double* data)
 
 int CgnsFile::Sol_Write_Time(double time)
 {
+	return impl->m_solutionWriter->Sol_Write_Time(time);
+/*
 	impl->m_solTimes.push_back(time);
 	++ impl->m_solId;
 
@@ -129,10 +132,13 @@ int CgnsFile::Sol_Write_Time(double time)
 
 	// add solution node
 	return impl->addSolutionNode();
+*/
 }
 
 int CgnsFile::Sol_Write_Iteration(int index)
 {
+	return impl->m_solutionWriter->Sol_Write_Iteration(index);
+/*
 	impl->m_solIndices.push_back(index);
 	++ impl->m_solId;
 
@@ -155,6 +161,7 @@ int CgnsFile::Sol_Write_Iteration(int index)
 
 	// add solution node
 	return impl->addSolutionNode();
+*/
 }
 
 int CgnsFile::Sol_Write_BaseIterative_Integer(const char *name, int value)
@@ -205,6 +212,8 @@ int CgnsFile::Sol_Write_BaseIterative_Real(const char *name, double value)
 
 int CgnsFile::Sol_Write_GridCoord2d(double *x, double *y)
 {
+	return impl->m_solutionWriter->Sol_Write_GridCoord2d(x, y);
+/*
 	int ier = impl->addSolutionGridCoordNode();
 	RETURN_IF_ERR;
 
@@ -219,10 +228,13 @@ int CgnsFile::Sol_Write_GridCoord2d(double *x, double *y)
 	ier = cg_array_write("CoordinateY", RealDouble, 2, dimVec, y);
 	RETURN_IF_ERR;
 	return 0;
+*/
 }
 
 int CgnsFile::Sol_Write_GridCoord3d(double *x, double *y, double *z)
 {
+	return impl->m_solutionWriter->Sol_Write_GridCoord3d(x, y, z);
+/*
 	int ier = impl->addSolutionGridCoordNode();
 	RETURN_IF_ERR;
 
@@ -240,18 +252,25 @@ int CgnsFile::Sol_Write_GridCoord3d(double *x, double *y, double *z)
 	ier = cg_array_write("CoordinateZ", RealDouble, 3, dimVec, z);
 	RETURN_IF_ERR;
 	return 0;
+*/
 }
 
 int CgnsFile::Sol_Write_Integer(const char *name, int* data)
 {
+	return impl->m_solutionWriter->Sol_Write_Integer(name, data);
+/*
 	int F;
 	return cg_field_write(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, Integer, name, data, &F);
+*/
 }
 
 int CgnsFile::Sol_Write_Real(const char *name, double* data)
 {
+	return impl->m_solutionWriter->Sol_Write_Real(name, data);
+/*
 	int F;
 	return cg_field_write(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, RealDouble, name, data, &F);
+*/
 }
 
 int CgnsFile::ErrorCode_Write(int errorcode)
