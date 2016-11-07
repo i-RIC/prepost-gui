@@ -18,6 +18,17 @@ public:
 	int Sol_Write_Real(const char *name, double* data) override;
 
 	int Flush() override;
+
+private:
+	int closeFileIfOpen();
+	int addSolutionNode();
+
+	static int setupSolutionFile(const std::string& solFileName, CgnsFile::Impl* i, int* fileId, int* baseId, int* zoneId);
+
+	int m_fileId;
+	int m_baseId;
+	int m_zoneId;
+	int m_solId;
 };
 
 } // namespace iRICLib

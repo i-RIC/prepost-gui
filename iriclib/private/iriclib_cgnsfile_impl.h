@@ -89,7 +89,10 @@ public:
 	static void getDimensionArrayName(const char* dimName, char* name);
 	static void getFunctionalDataName(int num, char* name); // local_get_gridfunctionaldata_name
 	static void getBcName(const char* typeName, int num, char* name); // local_get_bc_name
+	static void getSolName(int num, char* name);
 	static void getParticleSolName(int num, char* name);
+
+	static int writeFlowSolutionPointers(const std::vector<std::string>& sols);
 
 	std::string m_fileName;
 	int m_fileId = 0;
