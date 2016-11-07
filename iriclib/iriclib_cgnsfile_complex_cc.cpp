@@ -77,7 +77,7 @@ int CgnsFile::Complex_CC_Read_Functional(const char *groupname, int num, const c
 	return 0;
 }
 
-int CgnsFile::Complex_CC_Read_FunctionalWithName(const char *groupname, int num, const char *name, char *paramname, double *data)
+int CgnsFile::Complex_CC_Read_FunctionalWithName(const char *groupname, int num, const char *name, const char *paramname, double *data)
 {
 	int ier = impl->gotoComplexChild(groupname, num, name);
 	RETURN_IF_ERR;
@@ -137,7 +137,7 @@ int CgnsFile::Complex_CC_Write_Functional(const char *groupname, int num, const 
 	return 0;
 }
 
-int CgnsFile::Complex_CC_Write_FunctionalWithName(const char *groupname, int num, const char *name, char* paramname, int length, double* data)
+int CgnsFile::Complex_CC_Write_FunctionalWithName(const char *groupname, int num, const char *name, const char* paramname, int length, double* data)
 {
 	int ier = impl->gotoComplexChildCreateIfNotExist(groupname, num, name);
 	RETURN_IF_ERR;

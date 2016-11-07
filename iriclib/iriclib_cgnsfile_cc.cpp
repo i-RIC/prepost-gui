@@ -113,9 +113,9 @@ int CgnsFile::CC_Write_String(const char *name, char* strvalue)
 int CgnsFile::CC_Write_Functional(const char *name, int length, double* realarray_x, double* realarray_y)
 {
 	int ier;
-	ier = CC_Write_FunctionalWithName(name, "Param", length, realarray_x);
+	ier = CC_Write_FunctionalWithName(name, const_cast<char*>("Param"), length, realarray_x);
 	RETURN_IF_ERR;
-	ier = CC_Write_FunctionalWithName(name, "Value", length, realarray_y);
+	ier = CC_Write_FunctionalWithName(name, const_cast<char*>("Value"), length, realarray_y);
 	RETURN_IF_ERR;
 	return 0;
 }

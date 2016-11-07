@@ -124,7 +124,7 @@ int CgnsFile::BC_Read_Functional(const char *typeName, int num, const char *name
 	return 0;
 }
 
-int CgnsFile::BC_Read_FunctionalWithName(const char *typeName, int num, const char *name, char* paramname, double* data)
+int CgnsFile::BC_Read_FunctionalWithName(const char *typeName, int num, const char *name, const char* paramname, double* data)
 {
 	int ier = impl->gotoBcChild(typeName, num, name);
 	RETURN_IF_ERR;
@@ -196,7 +196,7 @@ int CgnsFile::BC_Write_Functional(const char *typeName, int num, const char *nam
 	return 0;
 }
 
-int CgnsFile::BC_Write_FunctionalWithName(const char *typeName, int num, const char *name, char* paramname, int length, double* data)
+int CgnsFile::BC_Write_FunctionalWithName(const char *typeName, int num, const char *name, const char* paramname, int length, double* data)
 {
 	int ier = impl->gotoBcChildCreateIfNotExist(typeName, num, name);
 	RETURN_IF_ERR;
