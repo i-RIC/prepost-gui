@@ -12,6 +12,9 @@ using namespace iRICLib;
 
 namespace {
 
+const static std::string GRIDCOORD_NAME = "GridCoordinatesForSolution1";
+static const std::string ZINAME = "ZoneIterativeData";
+
 int copyBase(int fid_in, int bid_in, int fid_out, int* bid_out)
 {
 	char baseName[32];
@@ -120,9 +123,9 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
 
 	Impl* i = impl();
 	CgnsFile::SolutionWriterStandard::stdSolWriteTime(time, i);
-	std::string solFileName = solutionFileName(i->m_fileName, i->m_solId);
+	m_fileName = solutionFileName(i->m_fileName, i->m_solId);
 
-	ier = setupSolutionFile(solFileName, i, &m_fileId, &m_baseId, &m_zoneId);
+	ier = setupSolutionFile(m_fileName, i, &m_fileId, &m_baseId, &m_zoneId);
 	RETURN_IF_ERR;
 
 	ier = cg_biter_write(m_fileId, m_baseId, CgnsFile::Impl::BINAME.c_str(), 1);
@@ -137,7 +140,7 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
 	char solname[CgnsFile::Impl::NAME_MAXLENGTH];
 	CgnsFile::Impl::getSolName(i->m_solId, solname);
 
-	ier = linkSolution(solFileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
+	ier = linkSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
 	RETURN_IF_ERR;
 
 	ier = cg_goto(i->m_fileId, i->m_baseId, "BaseIterativeData_t", 1, NULL);
@@ -154,9 +157,9 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
 
 	Impl* i = impl();
 	CgnsFile::SolutionWriterStandard::stdSolWriteIteration(index, i);
-	std::string solFileName = solutionFileName(i->m_fileName, i->m_solId);
+	m_fileName = solutionFileName(i->m_fileName, i->m_solId);
 
-	ier = setupSolutionFile(solFileName, i, &m_fileId, &m_baseId, &m_zoneId);
+	ier = setupSolutionFile(m_fileName, i, &m_fileId, &m_baseId, &m_zoneId);
 	RETURN_IF_ERR;
 
 	ier = cg_biter_write(m_fileId, m_baseId, CgnsFile::Impl::BINAME.c_str(), 1);
@@ -171,7 +174,7 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
 	char solname[CgnsFile::Impl::NAME_MAXLENGTH];
 	CgnsFile::Impl::getSolName(i->m_solId, solname);
 
-	ier = linkSolution(solFileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
+	ier = linkSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
 	RETURN_IF_ERR;
 
 	ier = cg_goto(i->m_fileId, i->m_baseId, "BaseIterativeData_t", 1, NULL);
@@ -183,12 +186,40 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord2d(double *x, double *y)
 {
-	return 0;
+	std::vector<std::string> coords;
+	int ier = Impl::addSolutionGridCoordNode(m_fileId, m_baseId, m_zoneId, 1, &coords);
+	RETURN_IF_ERR;
+
+	Impl* i = impl();
+	ier = CgnsFile::SolutionWriterStandard::stdSolWriteGridCoord2d(x, y, m_fileId, m_baseId, m_zoneId, 2, i);
+	RETURN_IF_ERR;
+
+	char gridName[CgnsFile::Impl::NAME_MAXLENGTH];
+	CgnsFile::Impl::getSolGridCoordName(i->m_solId, gridName);
+	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, m_baseId, m_zoneId, gridName);
+	RETURN_IF_ERR;
+
+	i->m_solGridCoordPointers.push_back(gridName);
+	return i->writeGridCoordinatesPointers(m_fileId, m_baseId, m_zoneId, i->m_solGridCoordPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord3d(double *x, double *y, double *z)
 {
-	return 0;
+	std::vector<std::string> coords;
+	int ier = Impl::addSolutionGridCoordNode(m_fileId, m_baseId, m_zoneId, 1, &coords);
+	RETURN_IF_ERR;
+
+	Impl* i = impl();
+	ier = CgnsFile::SolutionWriterStandard::stdSolWriteGridCoord3d(x, y, z, m_fileId, m_baseId, m_zoneId, 2, i);
+	RETURN_IF_ERR;
+
+	char gridName[CgnsFile::Impl::NAME_MAXLENGTH];
+	CgnsFile::Impl::getSolGridCoordName(i->m_solId, gridName);
+	ier = linkGrid(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 2, i->m_fileId, m_baseId, m_zoneId, gridName);
+	RETURN_IF_ERR;
+
+	i->m_solGridCoordPointers.push_back(gridName);
+	return i->writeGridCoordinatesPointers(m_fileId, m_baseId, m_zoneId, i->m_solGridCoordPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Integer(const char *name, int* data)
@@ -243,4 +274,6 @@ int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string
 
 	ier = linkGrid(i->m_fileName.c_str(), i->m_fileId, i->m_baseId, i->m_zoneId, 1, *fileId, *baseId, *zoneId, nullptr);
 	RETURN_IF_ERR;
+
+	return cg_ziter_write(*fileId, *baseId, *zoneId, ZINAME.c_str());
 }

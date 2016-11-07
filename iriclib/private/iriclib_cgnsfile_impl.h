@@ -73,7 +73,7 @@ public:
 	int gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name); // local_gotobcchild_create_Mul
 
 	int addSolutionNode();
-	int addSolutionGridCoordNode();
+	static int addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords);
 	int addParticleSolutionNode();
 
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array
@@ -90,9 +90,11 @@ public:
 	static void getFunctionalDataName(int num, char* name); // local_get_gridfunctionaldata_name
 	static void getBcName(const char* typeName, int num, char* name); // local_get_bc_name
 	static void getSolName(int num, char* name);
+	static void getSolGridCoordName(int num, char* name);
 	static void getParticleSolName(int num, char* name);
 
 	static int writeFlowSolutionPointers(const std::vector<std::string>& sols);
+	static int writeGridCoordinatesPointers(int fid, int bid, int zid, const std::vector<std::string>& coords);
 
 	std::string m_fileName;
 	int m_fileId = 0;

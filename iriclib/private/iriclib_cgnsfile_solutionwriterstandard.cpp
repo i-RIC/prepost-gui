@@ -22,18 +22,20 @@ int CgnsFile::SolutionWriterStandard::Sol_Write_Iteration(int index)
 
 int CgnsFile::SolutionWriterStandard::Sol_Write_GridCoord2d(double *x, double *y)
 {
-	int ier = impl()->addSolutionGridCoordNode();
+	Impl* i = impl();
+	int ier = CgnsFile::Impl::addSolutionGridCoordNode(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solId, &(i->m_solGridCoordPointers));
 	RETURN_IF_ERR;
 
-	return stdSolWriteGridCoord2d(x, y, impl()->m_fileId, impl()->m_baseId, impl()->m_zoneId, impl()->m_solId + 1, impl());
+	return stdSolWriteGridCoord2d(x, y, i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solId + 1, i);
 }
 
 int CgnsFile::SolutionWriterStandard::Sol_Write_GridCoord3d(double *x, double *y, double *z)
 {
-	int ier = impl()->addSolutionGridCoordNode();
+	Impl* i = impl();
+	int ier = CgnsFile::Impl::addSolutionGridCoordNode(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solId, &(i->m_solGridCoordPointers));
 	RETURN_IF_ERR;
 
-	return stdSolWriteGridCoord3d(x, y, z, impl()->m_fileId, impl()->m_baseId, impl()->m_zoneId, impl()->m_solId + 1, impl());
+	return stdSolWriteGridCoord3d(x, y, z, i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solId + 1, i);
 }
 
 int CgnsFile::SolutionWriterStandard::Sol_Write_Integer(const char *name, int* data)

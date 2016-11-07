@@ -3,6 +3,8 @@
 
 #include "iriclib_cgnsfile_solutionwriter.h"
 
+#include <string>
+
 namespace iRICLib {
 
 class CgnsFile::SolutionWriterDivideSolutions : public CgnsFile::SolutionWriter
@@ -25,6 +27,7 @@ private:
 
 	static int setupSolutionFile(const std::string& solFileName, CgnsFile::Impl* i, int* fileId, int* baseId, int* zoneId);
 
+	std::string m_fileName;
 	int m_fileId;
 	int m_baseId;
 	int m_zoneId;

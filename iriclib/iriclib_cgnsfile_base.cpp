@@ -540,28 +540,19 @@ int CgnsFile::Impl::addSolutionNode()
 	return writeFlowSolutionPointers(m_solPointers);
 }
 
-int CgnsFile::Impl::addSolutionGridCoordNode()
+int CgnsFile::Impl::addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords)
 {
 	char coordname[NAME_MAXLENGTH];
-	sprintf(coordname, "GridCoordinatesForSolution%d", m_solId);
-	m_solGridCoordPointers.push_back(coordname);
+	getSolGridCoordName(sid, coordname);
 
 	int G;
-	int ier = cg_grid_write(m_fileId, m_baseId, m_zoneId, coordname, &G);
+	int ier = cg_grid_write(fid, bid, zid, coordname, &G);
 	RETURN_IF_ERR;
 
 	// Write CoordPointers
-	gotoZoneIter();
-	std::vector<char> pointers;
-	pointers.assign(32 * m_solId, ' ');
-	for (int i = 0; i < m_solId; ++i) {
-		std::string coordsName = m_solGridCoordPointers.at(i);
-		memcpy(pointers.data() + 32 * i, coordsName.c_str(), coordsName.length());
-	}
-	cgsize_t dimVec[2];
-	dimVec[0] = 32;
-	dimVec[1] = m_solId;
-	return cg_array_write("GridCoordinatesPointers", Character, 2, dimVec, pointers.data());
+	coords->push_back(coordname);
+
+	return writeGridCoordinatesPointers(fid, bid, zid, *coords);
 }
 
 int CgnsFile::Impl::addParticleSolutionNode()
@@ -719,6 +710,11 @@ void CgnsFile::Impl::getSolName(int num, char* name)
 	sprintf(name, "FlowSolution%d", num);
 }
 
+void CgnsFile::Impl::getSolGridCoordName(int num, char* name)
+{
+	sprintf(name, "GridCoordinatesForSolution%d", num);
+}
+
 void CgnsFile::Impl::getParticleSolName(int num, char* name)
 {
 	sprintf(name, "ParticleSolution%d", num);
@@ -737,6 +733,23 @@ int CgnsFile::Impl::writeFlowSolutionPointers(const std::vector<std::string>& so
 	dimVec[0] = 32;
 	dimVec[1] = static_cast<cgsize_t> (sols.size());
 	return cg_array_write("FlowSolutionPointers", Character, 2, dimVec, pointers.data());
+}
+
+int CgnsFile::Impl::writeGridCoordinatesPointers(int fid, int bid, int zid, const std::vector<std::string>& coords)
+{
+	int ier = cg_goto(fid, bid, zid, ZINAME, 0, NULL);
+	RETURN_IF_ERR;
+
+	std::vector<char> pointers;
+	pointers.assign(32 * coords.size(), ' ');
+	for (int i = 0; i < coords.size(); ++i) {
+		std::string coordsName = coords.at(i);
+		memcpy(pointers.data() + 32 * i, coordsName.c_str(), coordsName.length());
+	}
+	cgsize_t dimVec[2];
+	dimVec[0] = 32;
+	dimVec[1] = static_cast<cgsize_t>(coords.size());
+	return cg_array_write("GridCoordinatesPointers", Character, 2, dimVec, pointers.data());
 }
 
 // public interfaces
