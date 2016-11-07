@@ -524,37 +524,6 @@ int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, c
 	return gotoBcChild(typeName, num, name);
 }
 
-int CgnsFile::Impl::addSolutionNode(int fid, int bid, int zid, int sid, std::vector<std::string>* sols)
-{
-	char solname[NAME_MAXLENGTH];
-	getSolName(sid, solname);
-	sols->push_back(solname);
-
-	int ier = cg_goto(fid, bid, "Zone_t", zid, ZINAME.c_str(), 0, NULL);
-	RETURN_IF_ERR;
-
-	int S;
-	ier = cg_sol_write(fid, bid, zid, solname, Vertex, &S);
-	RETURN_IF_ERR;
-
-	return writeFlowSolutionPointers(fid, bid, zid, *sols);
-}
-
-int CgnsFile::Impl::addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords)
-{
-	char coordname[NAME_MAXLENGTH];
-	getSolGridCoordName(sid, coordname);
-
-	int G;
-	int ier = cg_grid_write(fid, bid, zid, coordname, &G);
-	RETURN_IF_ERR;
-
-	// Write CoordPointers
-	coords->push_back(coordname);
-
-	return writeGridCoordinatesPointers(fid, bid, zid, *coords);
-}
-
 int CgnsFile::Impl::addParticleSolutionNode()
 {
 	char solname[NAME_MAXLENGTH];
@@ -718,6 +687,37 @@ void CgnsFile::Impl::getSolGridCoordName(int num, char* name)
 void CgnsFile::Impl::getParticleSolName(int num, char* name)
 {
 	sprintf(name, "ParticleSolution%d", num);
+}
+
+int CgnsFile::Impl::addSolutionNode(int fid, int bid, int zid, int sid, std::vector<std::string>* sols)
+{
+	char solname[NAME_MAXLENGTH];
+	getSolName(sid, solname);
+	sols->push_back(solname);
+
+	int ier = cg_goto(fid, bid, "Zone_t", zid, ZINAME.c_str(), 0, NULL);
+	RETURN_IF_ERR;
+
+	int S;
+	ier = cg_sol_write(fid, bid, zid, solname, Vertex, &S);
+	RETURN_IF_ERR;
+
+	return writeFlowSolutionPointers(fid, bid, zid, *sols);
+}
+
+int CgnsFile::Impl::addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords)
+{
+	char coordname[NAME_MAXLENGTH];
+	getSolGridCoordName(sid, coordname);
+
+	int G;
+	int ier = cg_grid_write(fid, bid, zid, coordname, &G);
+	RETURN_IF_ERR;
+
+	// Write CoordPointers
+	coords->push_back(coordname);
+
+	return writeGridCoordinatesPointers(fid, bid, zid, *coords);
 }
 
 int CgnsFile::Impl::writeFlowSolutionPointers(int fid, int bid, int zid, const std::vector<std::string>& sols)
