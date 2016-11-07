@@ -72,8 +72,6 @@ public:
 	int gotoBcChild(const char* typeName, int num, const char* name); // local_gotobcchild_Mul
 	int gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name); // local_gotobcchild_create_Mul
 
-	int addParticleSolutionNode();
-
 	static int findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec); //local_find_array
 	static int readArray(const char* name, DataType_t dt, cgsize_t len, void* memory); // local_read_array
 	static int readArrayAs(const char* name, DataType_t dt, size_t length, void* memory); // local_read_array_as
@@ -93,6 +91,8 @@ public:
 
 	static int addSolutionNode(int fid, int bid, int zid, int sid, std::vector<std::string>* sols);
 	static int addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords);
+	static int addParticleSolutionNode(int fid, int bid, int zid, int sid);
+
 	static int writeFlowSolutionPointers(int fid, int bid, int zid, const std::vector<std::string>& sols);
 	static int writeGridCoordinatesPointers(int fid, int bid, int zid, const std::vector<std::string>& coords);
 

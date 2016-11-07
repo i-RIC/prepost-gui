@@ -197,70 +197,20 @@ int CgnsFile::ErrorCode_Write(int errorcode)
 
 int CgnsFile::Sol_Particle_Write_Pos2d(cgsize_t count, double* x, double* y)
 {
-	int ier = impl->addParticleSolutionNode();
-	RETURN_IF_ERR;
-
-	char particleNodeName[Impl::NAME_MAXLENGTH];
-	Impl::getParticleSolName(impl->m_solId, particleNodeName);
-
-	ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, particleNodeName, 0, NULL);
-
-	ier = Impl::writeArray("CoordinateX", RealDouble, static_cast<size_t>(count), x);
-	RETURN_IF_ERR;
-	ier = Impl::writeArray("CoordinateY", RealDouble, static_cast<size_t>(count), y);
-	RETURN_IF_ERR;
-	return 0;
+	return impl->m_solutionWriter->Sol_Particle_Write_Pos2d(count, x, y);
 }
 
 int CgnsFile::Sol_Particle_Write_Pos3d(cgsize_t count, double* x, double* y, double* z)
 {
-	int ier = impl->addParticleSolutionNode();
-	RETURN_IF_ERR;
-
-	char particleNodeName[Impl::NAME_MAXLENGTH];
-	Impl::getParticleSolName(impl->m_solId, particleNodeName);
-
-	ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, particleNodeName, 0, NULL);
-
-	ier = Impl::writeArray("CoordinateX", RealDouble, static_cast<size_t>(count), x);
-	RETURN_IF_ERR;
-	ier = Impl::writeArray("CoordinateY", RealDouble, static_cast<size_t>(count), y);
-	RETURN_IF_ERR;
-	ier = Impl::writeArray("CoordinateZ", RealDouble, static_cast<size_t>(count), z);
-	RETURN_IF_ERR;
-	return 0;
+	return impl->m_solutionWriter->Sol_Particle_Write_Pos3d(count, x, y, z);
 }
 
 int CgnsFile::Sol_Particle_Write_Real(char* name, double* value)
 {
-	char particleNodeName[Impl::NAME_MAXLENGTH];
-	Impl::getParticleSolName(impl->m_solId, particleNodeName);
-	int ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, particleNodeName, 0, NULL);
-	RETURN_IF_ERR;
-
-	char arrayname[32];
-	DataType_t datatype;
-	int dim;
-	cgsize_t dimVec;
-	ier = cg_array_info(1, arrayname, &datatype, &dim, &dimVec);
-	RETURN_IF_ERR;
-
-	return impl->writeArray(name, RealDouble, static_cast<size_t> (dimVec), value);
+	return impl->m_solutionWriter->Sol_Particle_Write_Real(name, value);
 }
 
 int CgnsFile::Sol_Particle_Write_Integer(char* name, int* value)
 {
-	char particleNodeName[Impl::NAME_MAXLENGTH];
-	Impl::getParticleSolName(impl->m_solId, particleNodeName);
-	int ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, particleNodeName, 0, NULL);
-	RETURN_IF_ERR;
-
-	char arrayname[32];
-	DataType_t datatype;
-	int dim;
-	cgsize_t dimVec;
-	ier = cg_array_info(1, arrayname, &datatype, &dim, &dimVec);
-	RETURN_IF_ERR;
-
-	return impl->writeArray(name, Integer, static_cast<size_t> (dimVec), value);
+	return impl->m_solutionWriter->Sol_Particle_Write_Integer(name, value);
 }

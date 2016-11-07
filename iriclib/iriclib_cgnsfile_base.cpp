@@ -524,16 +524,6 @@ int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, c
 	return gotoBcChild(typeName, num, name);
 }
 
-int CgnsFile::Impl::addParticleSolutionNode()
-{
-	char solname[NAME_MAXLENGTH];
-	getParticleSolName(m_solId, solname);
-
-	int ier = gotoZone();
-	RETURN_IF_ERR;
-	return cg_user_data_write(solname);
-}
-
 int CgnsFile::Impl::findArray(const char* name, int* index, DataType_t* dt, int* dim, cgsize_t* dimVec)
 {
 	char tmpName[NAME_MAXLENGTH];
@@ -718,6 +708,16 @@ int CgnsFile::Impl::addSolutionGridCoordNode(int fid, int bid, int zid, int sid,
 	coords->push_back(coordname);
 
 	return writeGridCoordinatesPointers(fid, bid, zid, *coords);
+}
+
+int CgnsFile::Impl::addParticleSolutionNode(int fid, int bid, int zid, int sid)
+{
+	char solname[NAME_MAXLENGTH];
+	getParticleSolName(sid, solname);
+
+	int ier = cg_goto(fid, bid, "Zone_t", zid, NULL);
+	RETURN_IF_ERR;
+	return cg_user_data_write(solname);
 }
 
 int CgnsFile::Impl::writeFlowSolutionPointers(int fid, int bid, int zid, const std::vector<std::string>& sols)

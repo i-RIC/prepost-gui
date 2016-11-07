@@ -64,7 +64,7 @@ int linkGrid(const char* filename_src, int fid_src, int bid_src, int zid_src, in
 	if (linkname == nullptr) {
 		linkname = &(name[0]);
 	}
-	cg_link_write(linkname, filename_src, path.c_str());
+	return cg_link_write(linkname, filename_src, path.c_str());
 }
 
 int linkSolution(const char* filename_src, int fid_src, int bid_src, int zid_src, int sid_src, int fid_tgt, int bid_tgt, int zid_tgt, char* linkname = nullptr)
@@ -112,8 +112,7 @@ CgnsFile::SolutionWriterDivideSolutions::SolutionWriterDivideSolutions(CgnsFile:
 	CgnsFile::SolutionWriter(impl),
 	m_fileId {0},
 	m_baseId {0},
-	m_zoneId {0},
-	m_solId {0}
+	m_zoneId {0}
 {}
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
@@ -230,6 +229,34 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Real(const char *name, do
 	return cg_field_write(m_fileId, m_baseId, m_zoneId, 1, RealDouble, name, data, &F);
 }
 
+int CgnsFile::SolutionWriterDivideSolutions::Sol_Particle_Write_Pos2d(cgsize_t count, double* x, double* y)
+{
+	SolutionWriterStandard::stdSolParticleWritePos2d(count, x, y, m_fileId, m_baseId, m_zoneId, 1);
+	Impl* i = impl();
+	char linkname[Impl::NAME_MAXLENGTH];
+	Impl::getParticleSolName(i->m_solId, linkname);
+	return linkParticleSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, linkname);
+}
+
+int CgnsFile::SolutionWriterDivideSolutions::Sol_Particle_Write_Pos3d(cgsize_t count, double* x, double* y, double* z)
+{
+	SolutionWriterStandard::stdSolParticleWritePos3d(count, x, y, z, m_fileId, m_baseId, m_zoneId, 1);
+	Impl* i = impl();
+	char linkname[Impl::NAME_MAXLENGTH];
+	Impl::getParticleSolName(i->m_solId, linkname);
+	return linkParticleSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, linkname);
+}
+
+int CgnsFile::SolutionWriterDivideSolutions::Sol_Particle_Write_Real(char* name, double* value)
+{
+	return SolutionWriterStandard::stdSolParticleWriteReal(name, value, m_fileId, m_baseId, m_zoneId, 1);
+}
+
+int CgnsFile::SolutionWriterDivideSolutions::Sol_Particle_Write_Integer(char* name, int* value)
+{
+	return SolutionWriterStandard::stdSolParticleWriteInteger(name, value, m_fileId, m_baseId, m_zoneId, 1);
+}
+
 int CgnsFile::SolutionWriterDivideSolutions::Flush()
 {
 	return closeFileIfOpen();
@@ -261,4 +288,32 @@ int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string
 	RETURN_IF_ERR;
 
 	return cg_ziter_write(*fileId, *baseId, *zoneId, ZINAME.c_str());
+}
+
+int CgnsFile::SolutionWriterDivideSolutions::linkParticleSolution(const char* filename_src, int fid_src, int bid_src, int zid_src, int sid_src, int fid_tgt, int bid_tgt, int zid_tgt, char* linkname)
+{
+	char name[32];
+	int celldim, physdim;
+	cgsize_t zoneSize[9];
+	GridLocation_t location;
+
+	std::string path;
+
+	int ier = cg_base_read(fid_src, bid_src, &(name[0]), &celldim, &physdim);
+	RETURN_IF_ERR;
+	path.append(name);
+
+	ier = cg_zone_read(fid_src, bid_src, zid_src, &(name[0]), &(zoneSize[0]));
+	RETURN_IF_ERR;
+	path.append("/");
+	path.append(name);
+
+	CgnsFile::Impl::getParticleSolName(sid_src, name);
+	path.append("/");
+	path.append(name);
+
+	if (linkname == nullptr) {
+		linkname = &(name[0]);
+	}
+	return cg_link_write(linkname, filename_src, path.c_str());
 }
