@@ -23,7 +23,6 @@ public:
 
 private:
 	int closeFileIfOpen();
-	int addSolutionNode();
 
 	static int setupSolutionFile(const std::string& solFileName, CgnsFile::Impl* i, int* fileId, int* baseId, int* zoneId);
 

@@ -524,20 +524,20 @@ int CgnsFile::Impl::gotoBcChildCreateIfNotExist(const char* typeName, int num, c
 	return gotoBcChild(typeName, num, name);
 }
 
-int CgnsFile::Impl::addSolutionNode()
+int CgnsFile::Impl::addSolutionNode(int fid, int bid, int zid, int sid, std::vector<std::string>* sols)
 {
 	char solname[NAME_MAXLENGTH];
+	getSolName(sid, solname);
+	sols->push_back(solname);
 
-	getSolName(m_solId, solname);
-	m_solPointers.push_back(solname);
-
-	int ier = gotoZoneIter();
+	int ier = cg_goto(fid, bid, "Zone_t", zid, ZINAME.c_str(), 0, NULL);
 	RETURN_IF_ERR;
+
 	int S;
-	ier = cg_sol_write(m_fileId, m_baseId, m_zoneId, solname, Vertex, &S);
+	ier = cg_sol_write(fid, bid, zid, solname, Vertex, &S);
 	RETURN_IF_ERR;
 
-	return writeFlowSolutionPointers(m_solPointers);
+	return writeFlowSolutionPointers(fid, bid, zid, *sols);
 }
 
 int CgnsFile::Impl::addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords)
@@ -720,8 +720,11 @@ void CgnsFile::Impl::getParticleSolName(int num, char* name)
 	sprintf(name, "ParticleSolution%d", num);
 }
 
-int CgnsFile::Impl::writeFlowSolutionPointers(const std::vector<std::string>& sols)
+int CgnsFile::Impl::writeFlowSolutionPointers(int fid, int bid, int zid, const std::vector<std::string>& sols)
 {
+	int ier = cg_goto(fid, bid, "Zone_t", zid, ZINAME.c_str(), 0, NULL);
+	RETURN_IF_ERR;
+
 	std::vector<char> pointers;
 	pointers.assign(32 * sols.size(), ' ');
 	for (int i = 0; i < sols.size(); ++i) {
@@ -737,7 +740,7 @@ int CgnsFile::Impl::writeFlowSolutionPointers(const std::vector<std::string>& so
 
 int CgnsFile::Impl::writeGridCoordinatesPointers(int fid, int bid, int zid, const std::vector<std::string>& coords)
 {
-	int ier = cg_goto(fid, bid, zid, ZINAME, 0, NULL);
+	int ier = cg_goto(fid, bid, "Zone_t", zid, ZINAME.c_str(), 0, NULL);
 	RETURN_IF_ERR;
 
 	std::vector<char> pointers;

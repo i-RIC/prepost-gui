@@ -134,7 +134,8 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
 	ier = cg_array_write("TimeValues", RealDouble, 1, &dimVec, &time);
 	RETURN_IF_ERR;
 
-	ier = addSolutionNode();
+	std::vector<std::string> sols;
+	ier = Impl::addSolutionNode(m_fileId, m_baseId, m_zoneId, 1, &sols);
 	RETURN_IF_ERR;
 
 	char solname[CgnsFile::Impl::NAME_MAXLENGTH];
@@ -143,11 +144,8 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Time(double time)
 	ier = linkSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
 	RETURN_IF_ERR;
 
-	ier = cg_goto(i->m_fileId, i->m_baseId, "BaseIterativeData_t", 1, NULL);
-	RETURN_IF_ERR;
-
 	i->m_solPointers.push_back(solname);
-	return CgnsFile::Impl::writeFlowSolutionPointers(i->m_solPointers);
+	return CgnsFile::Impl::writeFlowSolutionPointers(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
@@ -168,7 +166,8 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
 	ier = cg_array_write("IterationValues", Integer, 1, &dimVec, &index);
 	RETURN_IF_ERR;
 
-	ier = addSolutionNode();
+	std::vector<std::string> sols;
+	ier = Impl::addSolutionNode(m_fileId, m_baseId, m_zoneId, 1, &sols);
 	RETURN_IF_ERR;
 
 	char solname[CgnsFile::Impl::NAME_MAXLENGTH];
@@ -177,11 +176,8 @@ int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_Iteration(int index)
 	ier = linkSolution(m_fileName.c_str(), m_fileId, m_baseId, m_zoneId, 1, i->m_fileId, i->m_baseId, i->m_zoneId, solname);
 	RETURN_IF_ERR;
 
-	ier = cg_goto(i->m_fileId, i->m_baseId, "BaseIterativeData_t", 1, NULL);
-	RETURN_IF_ERR;
-
 	i->m_solPointers.push_back(solname);
-	return CgnsFile::Impl::writeFlowSolutionPointers(i->m_solPointers);
+	return CgnsFile::Impl::writeFlowSolutionPointers(i->m_fileId, i->m_baseId, i->m_zoneId, i->m_solPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::Sol_Write_GridCoord2d(double *x, double *y)
@@ -248,17 +244,6 @@ int CgnsFile::SolutionWriterDivideSolutions::closeFileIfOpen()
 	m_fileId = 0;
 
 	return 0;
-}
-
-int CgnsFile::SolutionWriterDivideSolutions::addSolutionNode()
-{
-	int ier = cg_sol_write(m_fileId, m_baseId, m_zoneId, "FlowSolution1", Vertex, &m_solId);
-	RETURN_IF_ERR;
-
-	std::vector<std::string> solPointers;
-	solPointers.push_back(std::string("FlowSolution1"));
-
-	return CgnsFile::Impl::writeFlowSolutionPointers(solPointers);
 }
 
 int CgnsFile::SolutionWriterDivideSolutions::setupSolutionFile(const std::string& solFileName, CgnsFile::Impl* i, int* fileId, int* baseId, int* zoneId)

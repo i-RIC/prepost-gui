@@ -78,7 +78,7 @@ int CgnsFile::SolutionWriterStandard::stdSolWriteTime(double time, CgnsFile::Imp
 	RETURN_IF_ERR;
 
 	// add solution node
-	return impl->addSolutionNode();
+	return Impl::addSolutionNode(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, &(impl->m_solPointers));
 }
 
 int CgnsFile::SolutionWriterStandard::stdSolWriteIteration(int index, CgnsFile::Impl* impl)
@@ -104,7 +104,7 @@ int CgnsFile::SolutionWriterStandard::stdSolWriteIteration(int index, CgnsFile::
 	RETURN_IF_ERR;
 
 	// add solution node
-	return impl->addSolutionNode();
+	return Impl::addSolutionNode(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, &(impl->m_solPointers));
 }
 
 int CgnsFile::SolutionWriterStandard::stdSolWriteGridCoord2d(double* x, double* y, int fid, int bid, int zid, int gcid, CgnsFile::Impl* impl)

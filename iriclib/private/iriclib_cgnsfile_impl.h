@@ -72,7 +72,7 @@ public:
 	int gotoBcChild(const char* typeName, int num, const char* name); // local_gotobcchild_Mul
 	int gotoBcChildCreateIfNotExist(const char* typeName, int num, const char* name); // local_gotobcchild_create_Mul
 
-	int addSolutionNode();
+	static int addSolutionNode(int fid, int bid, int zid, int sid, std::vector<std::string>* sols);
 	static int addSolutionGridCoordNode(int fid, int bid, int zid, int sid, std::vector<std::string>* coords);
 	int addParticleSolutionNode();
 
@@ -93,7 +93,7 @@ public:
 	static void getSolGridCoordName(int num, char* name);
 	static void getParticleSolName(int num, char* name);
 
-	static int writeFlowSolutionPointers(const std::vector<std::string>& sols);
+	static int writeFlowSolutionPointers(int fid, int bid, int zid, const std::vector<std::string>& sols);
 	static int writeGridCoordinatesPointers(int fid, int bid, int zid, const std::vector<std::string>& coords);
 
 	std::string m_fileName;
