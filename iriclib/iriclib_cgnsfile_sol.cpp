@@ -109,59 +109,11 @@ int CgnsFile::Sol_Read_Real(int step, const char *name, double* data)
 int CgnsFile::Sol_Write_Time(double time)
 {
 	return impl->m_solutionWriter->Sol_Write_Time(time);
-/*
-	impl->m_solTimes.push_back(time);
-	++ impl->m_solId;
-
-	// write to default base (with calculation condition)
-	int ier = cg_biter_write(impl->m_fileId, impl->m_ccBaseId, Impl::BINAME.c_str(), impl->m_solId);
-	RETURN_IF_ERR;
-	ier = impl->gotoCCBaseIter();
-	RETURN_IF_ERR
-	cgsize_t dimVec = impl->m_solId;
-	ier = cg_array_write("TimeValues", RealDouble, 1, &dimVec, impl->m_solTimes.data());
-	RETURN_IF_ERR;
-
-	// write to current base
-	ier = cg_biter_write(impl->m_fileId, impl->m_baseId, Impl::BINAME.c_str(), impl->m_solId);
-	RETURN_IF_ERR;
-	ier = impl->gotoBaseIter();
-	RETURN_IF_ERR
-	ier = cg_array_write("TimeValues", RealDouble, 1, &dimVec, impl->m_solTimes.data());
-	RETURN_IF_ERR;
-
-	// add solution node
-	return impl->addSolutionNode();
-*/
 }
 
 int CgnsFile::Sol_Write_Iteration(int index)
 {
 	return impl->m_solutionWriter->Sol_Write_Iteration(index);
-/*
-	impl->m_solIndices.push_back(index);
-	++ impl->m_solId;
-
-	// write to default base (with calculation condition)
-	int ier = cg_biter_write(impl->m_fileId, impl->m_ccBaseId, Impl::BINAME.c_str(), impl->m_solId);
-	RETURN_IF_ERR;
-	ier = impl->gotoCCBaseIter();
-	RETURN_IF_ERR
-	cgsize_t dimVec = impl->m_solId;
-	ier = cg_array_write("IterationValues", Integer, 1, &dimVec, impl->m_solIndices.data());
-	RETURN_IF_ERR;
-
-	// write to current base
-	ier = cg_biter_write(impl->m_fileId, impl->m_baseId, Impl::BINAME.c_str(), impl->m_solId);
-	RETURN_IF_ERR;
-	ier = impl->gotoBaseIter();
-	RETURN_IF_ERR
-	ier = cg_array_write("IterationValues", Integer, 1, &dimVec, impl->m_solIndices.data());
-	RETURN_IF_ERR;
-
-	// add solution node
-	return impl->addSolutionNode();
-*/
 }
 
 int CgnsFile::Sol_Write_BaseIterative_Integer(const char *name, int value)
@@ -213,64 +165,21 @@ int CgnsFile::Sol_Write_BaseIterative_Real(const char *name, double value)
 int CgnsFile::Sol_Write_GridCoord2d(double *x, double *y)
 {
 	return impl->m_solutionWriter->Sol_Write_GridCoord2d(x, y);
-/*
-	int ier = impl->addSolutionGridCoordNode();
-	RETURN_IF_ERR;
-
-	ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, "GridCoordinates_t", impl->m_solId + 1, NULL);
-
-	cgsize_t dimVec[2];
-	dimVec[0] = impl->m_zoneSize[0];
-	dimVec[1] = impl->m_zoneSize[1];
-
-	ier = cg_array_write("CoordinateX", RealDouble, 2, dimVec, x);
-	RETURN_IF_ERR;
-	ier = cg_array_write("CoordinateY", RealDouble, 2, dimVec, y);
-	RETURN_IF_ERR;
-	return 0;
-*/
 }
 
 int CgnsFile::Sol_Write_GridCoord3d(double *x, double *y, double *z)
 {
 	return impl->m_solutionWriter->Sol_Write_GridCoord3d(x, y, z);
-/*
-	int ier = impl->addSolutionGridCoordNode();
-	RETURN_IF_ERR;
-
-	ier = cg_goto(impl->m_fileId, impl->m_baseId, "Zone_t", impl->m_zoneId, "GridCoordinates_t", impl->m_solId + 1, NULL);
-
-	cgsize_t dimVec[3];
-	dimVec[0] = impl->m_zoneSize[0];
-	dimVec[1] = impl->m_zoneSize[1];
-	dimVec[2] = impl->m_zoneSize[2];
-
-	ier = cg_array_write("CoordinateX", RealDouble, 3, dimVec, x);
-	RETURN_IF_ERR;
-	ier = cg_array_write("CoordinateY", RealDouble, 3, dimVec, y);
-	RETURN_IF_ERR;
-	ier = cg_array_write("CoordinateZ", RealDouble, 3, dimVec, z);
-	RETURN_IF_ERR;
-	return 0;
-*/
 }
 
 int CgnsFile::Sol_Write_Integer(const char *name, int* data)
 {
 	return impl->m_solutionWriter->Sol_Write_Integer(name, data);
-/*
-	int F;
-	return cg_field_write(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, Integer, name, data, &F);
-*/
 }
 
 int CgnsFile::Sol_Write_Real(const char *name, double* data)
 {
 	return impl->m_solutionWriter->Sol_Write_Real(name, data);
-/*
-	int F;
-	return cg_field_write(impl->m_fileId, impl->m_baseId, impl->m_zoneId, impl->m_solId, RealDouble, name, data, &F);
-*/
 }
 
 int CgnsFile::ErrorCode_Write(int errorcode)
